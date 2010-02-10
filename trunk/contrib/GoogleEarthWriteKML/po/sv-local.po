@@ -1,0 +1,77 @@
+# Swedish translations for gramps package
+# Svenska �vers�ttningar f�r paket gramps.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-31 14:47+0100\n"
+"PO-Revision-Date: 2010-01-31 14:52+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Skapar datafil för GoogleEarth och öppnar den"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:82
+msgid "No place description"
+msgstr "Ingen platsbeskrivning"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:115
+msgid "GoogleEarth not installed!"
+msgstr "GoogleEarth ej installerat!"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:116
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"Skapa kmz/kml-fil ''%s''\n"
+"i användarmapp ''%s''?"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:139
+msgid "Yes"
+msgstr "Ja"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:120
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:140
+msgid "No"
+msgstr "Nej"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
+#, python-format
+msgid "Failure writing to %s"
+msgstr "Kunde inte skriva till %s"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
+msgid "Directory does not exist"
+msgstr "Mapp saknas"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:135
+msgid "GoogleEarth file exists!"
+msgstr "GoogelEarth-fil finns redan!"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:136
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"Skriva över kmz/kml-filen ''%s''\n"
+"i användarmapp ''%s''?"
+

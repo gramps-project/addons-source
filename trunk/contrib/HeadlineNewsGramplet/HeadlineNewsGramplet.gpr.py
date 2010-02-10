@@ -1,0 +1,12 @@
+register(GRAMPLET, 
+         id="Headline News Gramplet", 
+         name=_("Headline News Gramplet"), 
+         status = STABLE,
+         fname="HeadlineNewsGramplet.py",
+         height=300,
+         expand=True,
+         gramplet = 'HeadlineNewsGramplet',
+         gramplet_title=_("Headline News"),
+         version="1.0.2",
+         gramps_target_version="3.2",
+         )

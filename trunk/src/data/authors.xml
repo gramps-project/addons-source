@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: authors.xml 13897 2009-12-23 18:33:04Z dsblank $ -->
+<authors xmlns:html="http://www.w3.org/1999/xhtml">
+ <author uid="bmcage" title="author">
+  Benny Malengier &lt;<html:a href="mailto:benny.malengier@gramps-project.org">benny.malengier@gramps-project.org</html:a>&gt;
+ </author>
+ <author uid="pez4brian" title="author">
+  Brian Matherly &lt;<html:a href="mailto:brian@gramps-project.org">brian@gramps-project.org</html:a>&gt;
+ </author>
+ <author uid="dsblank" title="author">
+  Doug Blank &lt;<html:a href="mailto:doug.blank@gmail.com">doug.blank@gmail.com</html:a>&gt;
+ </author>
+<author uid="robhealey1" title="author">
+  Rob G. Healey &lt;<html:a href="mailto:robhealey1@gmail.com">robhealey1@gmail.com</html:a>&gt;
+</author>
+ <author uid="nick-h" title="contributor">
+  Nick Hall &lt;<html:a href="mailto:nick__hall@hotmail.com">nick__hall@hotmail.com</html:a>&gt;
+ </author>
+</authors>

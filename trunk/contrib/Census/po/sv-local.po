@@ -1,0 +1,245 @@
+# Swedish translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:27+0100\n"
+"PO-Revision-Date: 2010-01-31 15:50+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: Census/Census.py:51
+#: Census/Census.py:55
+#: Census/Census.py:61
+#: Census/Census.py:67
+#: Census/Census.py:73
+#: Census/Census.py:79
+#: Census/Census.py:85
+#: Census/Census.py:91
+#: Census/CensusGramplet.py:391
+#: Census/CensusGramplet.py:455
+#: Census/CensusReport.py:175
+#: Census/CensusReport.py:215
+msgid "Name"
+msgstr "Namn"
+
+#: Census/Census.py:52
+#: Census/Census.py:58
+#: Census/Census.py:64
+#: Census/Census.py:70
+#: Census/Census.py:76
+#: Census/Census.py:82
+#: Census/Census.py:88
+#: Census/Census.py:94
+msgid "Age"
+msgstr "Ålder"
+
+#: Census/Census.py:53
+#: Census/Census.py:59
+#: Census/Census.py:65
+#: Census/Census.py:71
+#: Census/Census.py:77
+#: Census/Census.py:83
+#: Census/Census.py:89
+#: Census/Census.py:95
+msgid "Occupation"
+msgstr "Yrke"
+
+#: Census/Census.py:54
+#: Census/Census.py:60
+#: Census/Census.py:66
+#: Census/Census.py:72
+#: Census/Census.py:78
+#: Census/Census.py:84
+#: Census/Census.py:90
+#: Census/Census.py:96
+msgid "Where Born"
+msgstr "Födelseplats"
+
+#: Census/Census.py:56
+#: Census/Census.py:62
+#: Census/Census.py:68
+#: Census/Census.py:74
+#: Census/Census.py:80
+#: Census/Census.py:86
+#: Census/Census.py:92
+msgid "Relation"
+msgstr "Släktskap"
+
+#: Census/Census.py:57
+#: Census/Census.py:63
+#: Census/Census.py:69
+#: Census/Census.py:75
+#: Census/Census.py:81
+#: Census/Census.py:87
+#: Census/Census.py:93
+msgid "Condition"
+msgstr "Tillstånd"
+
+#: Census/Census.py:97
+msgid "Years Married"
+msgstr "Antal år gift"
+
+#: Census/Census.py:98
+msgid "Children Alive"
+msgstr "Antal levande barn"
+
+#: Census/Census.py:99
+msgid "Children Dead"
+msgstr "Antal döda barn"
+
+#: Census/Census.py:115
+#: Census/CensusGramplet.py:89
+#: Census/CensusGramplet.py:660
+#: Census/CensusReport.py:122
+msgid "Census"
+msgstr "Folkräkning"
+
+#: Census/CensusGramplet.gpr.py:31
+#: Census/CensusGramplet.gpr.py:40
+msgid "Census Gramplet"
+msgstr "Census Gramplet"
+
+#: Census/CensusGramplet.py:78
+msgid "Census details for: "
+msgstr "Folkräkningsdetaljer för: "
+
+#: Census/CensusGramplet.py:92
+msgid "Date"
+msgstr "Datum"
+
+#: Census/CensusGramplet.py:95
+msgid "Place"
+msgstr "Plats"
+
+#: Census/CensusGramplet.py:156
+msgid "No active person set."
+msgstr "Ingen aktiv person bestämd."
+
+#: Census/CensusGramplet.py:258
+#, python-format
+msgid "Census: %s"
+msgstr "Folkräkning: %s"
+
+#: Census/CensusGramplet.py:260
+msgid "New Census"
+msgstr "Ny folkräkning"
+
+#: Census/CensusGramplet.py:267
+msgid "Edit Census"
+msgstr "Redigera folkräkning"
+
+#: Census/CensusGramplet.py:282
+msgid "Census:"
+msgstr "Folkräkning:"
+
+#: Census/CensusGramplet.py:304
+#: Census/CensusReport.py:133
+msgid "Date:"
+msgstr "Datum:"
+
+#: Census/CensusGramplet.py:313
+msgid "Place:"
+msgstr "Plats:"
+
+#: Census/CensusGramplet.py:338
+msgid "Source Ref:"
+msgstr "Källreferens:"
+
+#: Census/CensusGramplet.py:459
+#: Census/CensusGramplet.py:597
+#: Census/CensusReport.py:220
+msgid "Order"
+msgstr "Ordning"
+
+#: Census/CensusGramplet.py:481
+#: Census/CensusGramplet.py:501
+msgid "Cannot add a person to this census."
+msgstr "Kan ej lägga till en person till denna folkräkning."
+
+#: Census/CensusGramplet.py:482
+#: Census/CensusGramplet.py:502
+msgid "First select a census from the drop-down list."
+msgstr "Leta först reda på en folkräkning från rullgardinslistan."
+
+#: Census/CensusGramplet.py:507
+msgid "Select Person"
+msgstr "Välj person"
+
+#: Census/CensusReport.gpr.py:31
+msgid "Census Report"
+msgstr "Folkräkningsrapport"
+
+#: Census/CensusReport.gpr.py:32
+msgid "Report of census events for a person."
+msgstr "Rapport över folkräkningshändelser för en person"
+
+#: Census/CensusReport.py:82
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Personen %s saknas i databasen"
+
+#: Census/CensusReport.py:92
+#, python-format
+msgid "Census Report for %s"
+msgstr "Folkräkningsrapport för %s"
+
+#: Census/CensusReport.py:136
+msgid "Source Reference:"
+msgstr "Källreferens:"
+
+#: Census/CensusReport.py:140
+#: Census/CensusReport.py:142
+msgid "Address:"
+msgstr "Adress:"
+
+#: Census/CensusReport.py:245
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: Census/CensusReport.py:247
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: Census/CensusReport.py:248
+msgid "The starting person for the report."
+msgstr "Begynnelseperson för rapporten"
+
+#: Census/CensusReport.py:251
+msgid "Page break after each census."
+msgstr "Sidbrytning efter varje folkräkning"
+
+#: Census/CensusReport.py:252
+msgid "Start a new page after each census."
+msgstr "Börja på ny sida efter varje folkräkning"
+
+#: Census/CensusReport.py:271
+msgid "The style used for the title of the page."
+msgstr "Stil som används för sidans titel."
+
+#: Census/CensusReport.py:284
+msgid "The style used for headings."
+msgstr "Stil som används för rubriker."
+
+#: Census/CensusReport.py:294
+msgid "The style used for names."
+msgstr "Mall använd för namn."
+
+#: Census/CensusReport.py:304
+msgid "The style used for column headings."
+msgstr "Mall använd för kolumnrubriker."
+
+#: Census/CensusReport.py:315
+msgid "The default text style."
+msgstr "Standardtextmallen."
+
+

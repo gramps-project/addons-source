@@ -1,0 +1,106 @@
+# Slovak translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:26+0100\n"
+"PO-Revision-Date: 2009-11-25 17:27+0100\n"
+"Last-Translator: \n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:191
+#: AttachSourceTool/AttachSourceTool.py:215
+msgid "Attach Source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:219
+msgid "Attaches a shared source to multiple objects."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
+msgid "Options"
+msgstr "Nastavenia"
+
+#: AttachSourceTool/AttachSourceTool.py:69
+msgid "Person Filter"
+msgstr "Filtre osoby"
+
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Zvoliť filter pre zúženie výberu osôb"
+
+#: AttachSourceTool/AttachSourceTool.py:74
+msgid "Filter Person"
+msgstr "Použiť filter osoby"
+
+#: AttachSourceTool/AttachSourceTool.py:75
+msgid "The center person for the filter"
+msgstr "Ústredná osoba pre filter"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Nový zdroj"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Results"
+msgstr "Výsledky"
+
+#: AttachSourceTool/AttachSourceTool.py:158
+msgid "Processing...\n"
+msgstr "Pripravuje sa...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:173
+msgid "Attaching sources...\n"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources..."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:194
+msgid "Done!\n"
+msgstr "Ukončené!\n"
+
+#: AttachSourceTool/AttachSourceTool.py:216
+msgid "Beta"
+msgstr "Beta"
+

@@ -1,0 +1,122 @@
+# Catalan translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:10+0100\n"
+"PO-Revision-Date: 2009-11-23 21:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: Catalan <ca@dodds.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet de Connexions Profundes"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+msgid "Deep Connections"
+msgstr "Connexions Profundes"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+msgid "Double-click name for details"
+msgstr "Fer doble clic al nom per detalls"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "No s'ha carregat cap Arbre Genealògic."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+msgid "Pause"
+msgstr "Pausa"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Continue"
+msgstr "Continuar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+msgid "child"
+msgstr "fill"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+msgid "husband"
+msgstr "marit"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+msgid "wife"
+msgstr "muller"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+msgid "father"
+msgstr "pare"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+msgid "mother"
+msgstr "mare"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"   que és %s de "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+msgid "No Home Person set."
+msgstr "Persona base no fixada."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+msgid "No Active Person set."
+msgstr "No s'ha fixat Persona Activa."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "self"
+msgstr "la mateixa persona"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+msgid "Looking for relationship between\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b>  (Persona activa)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Trobat parentesc #%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"En pausa.\n"
+"Premi Continuar per buscar parentescs addicionals.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Cerca completada. S'han trobat %d parentescs."
+

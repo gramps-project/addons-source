@@ -1,0 +1,174 @@
+# Slovak translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:33+0100\n"
+"PO-Revision-Date: 2009-11-25 19:18+0100\n"
+"Last-Translator: \n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+msgid "Repositories Report Options"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+msgid "Produces a textual repositories report"
+msgstr "Poskytuje textovú správu o archívoch"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:41
+#: RepositoriesReport/RepositoriesReport.py:71
+#: RepositoriesReport/RepositoriesReportAlt.py:92
+msgid "Repositories Report"
+msgstr "Správa o archívoch"
+
+#: RepositoriesReport/RepositoriesReport.py:142
+#: RepositoriesReport/RepositoriesReportAlt.py:321
+msgid "Report Options"
+msgstr "Nastavenia zostavy"
+
+#: RepositoriesReport/RepositoriesReport.py:166
+#: RepositoriesReport/RepositoriesReportAlt.py:385
+msgid "The style used for the title of the report."
+msgstr "Štýl použitý pre nadpis zostavy."
+
+#: RepositoriesReport/RepositoriesReport.py:180
+#: RepositoriesReport/RepositoriesReportAlt.py:399
+msgid "The style used for repository title."
+msgstr "Štýl použitý pre nadpis archívu."
+
+#: RepositoriesReport/RepositoriesReport.py:194
+#: RepositoriesReport/RepositoriesReportAlt.py:414
+msgid "The style used for each section."
+msgstr "Štýl použitý pre každú sekciu."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:121
+msgid "Private"
+msgstr "Osobné"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:163
+#, python-format
+msgid ""
+"\n"
+"Address: %s"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:191
+#, fuzzy, python-format
+msgid "%s. Private"
+msgstr "Osobné"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:231
+#, fuzzy, python-format
+msgid "Author: %s"
+msgstr "Autor"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:233
+#, python-format
+msgid ""
+"\n"
+"Abbreviation: %s"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:235
+#, python-format
+msgid ""
+"\n"
+"Publication information: %s"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:237
+#, python-format
+msgid ""
+"\n"
+"Data: %s"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:323
+msgid "Include repository's urls"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:324
+msgid "Whether to include urls on repository."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:327
+msgid "Include repository's address"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:328
+msgid "Whether to include addresses on repository."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:331
+msgid "Include source's author"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:332
+msgid "Whether to include author."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:335
+msgid "Include source's abbreviation"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:336
+msgid "Whether to include abbreviation."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:339
+msgid "Include source's publication information"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:340
+msgid "Whether to include publication information."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:343
+msgid "Include source's data"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:344
+msgid "Whether to include keys and values."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:347
+msgid "Include notes"
+msgstr "Zahrnúť poznámky"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:348
+msgid "Whether to include notes on repositories and sources."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:351
+msgid "Include media"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:352
+msgid "Whether to include media on sources."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:355
+msgid "Include private records"
+msgstr "Vložiť súkromné záznamy"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:356
+msgid "Whether to include repositories and sources marked as private."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:429
+msgid "The style used for child section."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:441
+msgid "The basic style used for the note display."
+msgstr "Základný štýl pre zobrazenie textu."
+

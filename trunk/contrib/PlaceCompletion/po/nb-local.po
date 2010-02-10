@@ -1,0 +1,359 @@
+# Norwegian Bokmal translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:32+0100\n"
+"PO-Revision-Date: 2009-11-25 19:08+0100\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+msgid "PlaceCompletion"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:86
+msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:236
+#: PlaceCompletion/PlaceCompletion.py:275
+msgid "Error in PlaceCompletion.py"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:237
+msgid "Non existing group used in get"
+msgstr "Ikke-eksisterende gruppe brukt ved henting"
+
+#: PlaceCompletion/PlaceCompletion.py:276
+msgid "Non existing group used in set"
+msgstr "Ikke-eksisterende gruppe brukt ved angivelse"
+
+#: PlaceCompletion/PlaceCompletion.py:334
+msgid "Places tool"
+msgstr "Verktøy for stedsnavn"
+
+#: PlaceCompletion/PlaceCompletion.py:426
+msgid "Non Valid Title Regex"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:427
+msgid "Non valid regular expression given to match title. Quiting."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:442
+msgid "Missing regex groups in match lat/lon"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:443
+#, python-format
+msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:453
+msgid "Non valid regex for match lat/lon"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:454
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:512
+msgid "Finding Places and appropriate changes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:514
+msgid "Filtering"
+msgstr "Filterer"
+
+#: PlaceCompletion/PlaceCompletion.py:524
+msgid "Loading lat/lon file in Memory..."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:529
+msgid "Examining places"
+msgstr "Undersøker steder"
+
+#: PlaceCompletion/PlaceCompletion.py:549
+#: PlaceCompletion/PlaceCompletion.py:1113
+msgid "City"
+msgstr "By"
+
+#: PlaceCompletion/PlaceCompletion.py:552
+msgid "State"
+msgstr "Stat"
+
+#: PlaceCompletion/PlaceCompletion.py:556
+msgid "Country"
+msgstr "Land"
+
+#: PlaceCompletion/PlaceCompletion.py:717
+msgid "Doing Place changes"
+msgstr "Endrer steder"
+
+#: PlaceCompletion/PlaceCompletion.py:754
+#: PlaceCompletion/PlaceCompletion.py:764
+msgid "Change places"
+msgstr "Endre steder"
+
+#: PlaceCompletion/PlaceCompletion.py:759
+msgid "No place record was modified."
+msgstr "Ingen steder ble endret."
+
+#: PlaceCompletion/PlaceCompletion.py:761
+msgid "1 place record was modified."
+msgstr "1 sted ble endret."
+
+#: PlaceCompletion/PlaceCompletion.py:763
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d steder ble endret."
+
+#: PlaceCompletion/PlaceCompletion.py:836
+#: PlaceCompletion/PlaceCompletion.py:843
+#: PlaceCompletion/PlaceCompletion.py:849
+#: PlaceCompletion/PlaceCompletion.py:855
+msgid "Cannot open file"
+msgstr "Kan ikke åpne fil"
+
+#: PlaceCompletion/PlaceCompletion.py:837
+msgid "The selected file is a directory, not a file."
+msgstr "Den valgte fila er en katalog, ikke en fil."
+
+#: PlaceCompletion/PlaceCompletion.py:844
+msgid "You do not have read access to the selected file."
+msgstr "Du har ikke lesetilgang til den valgte fila."
+
+#: PlaceCompletion/PlaceCompletion.py:850
+msgid "The file you want to access is not a regular file."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:856
+msgid "The file does not exist."
+msgstr "Fila eksisterer ikke."
+
+#: PlaceCompletion/PlaceCompletion.py:875
+msgid "Problem reading file"
+msgstr "Feil ved lesing av fil"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+msgid "lat"
+msgstr "len"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+msgid "lon"
+msgstr "brd"
+
+#: PlaceCompletion/PlaceCompletion.py:993
+#: PlaceCompletion/PlaceCompletion.py:1005
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1074
+msgid "No lat/lon conversion"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1075
+msgid "All in degree notation"
+msgstr "Alle med gradernotasjon"
+
+#: PlaceCompletion/PlaceCompletion.py:1076
+msgid "All in decimal notation"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1077
+msgid "Correct -50° in 50°S"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1081
+msgid "No changes"
+msgstr "Ingen endringer"
+
+#: PlaceCompletion/PlaceCompletion.py:1082
+msgid "City[, State]"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1084
+msgid "TitleStart [, City] [, State]"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1107
+msgid "City [,|.] State"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1109
+#, fuzzy
+msgid "City [,|.] Country"
+msgstr "By (Land)"
+
+#: PlaceCompletion/PlaceCompletion.py:1111
+#, fuzzy
+msgid "City (Country)"
+msgstr "By (Land)"
+
+#: PlaceCompletion/PlaceCompletion.py:1117
+msgid "Don't search"
+msgstr "Ikke søk"
+
+#: PlaceCompletion/PlaceCompletion.py:1120
+msgid "GeoNames country file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1125
+msgid "GeoNames country file, city localized variants search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "GeoNames country file, title begin, general search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1141
+msgid "GeoNames USA state file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1155
+msgid "GNS Geonet country file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1164
+msgid "GNS Geonet country file, title begin, general search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1172
+msgid "Wikipedia CSV Dump"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1260
+msgid "All Places"
+msgstr "Alle steder"
+
+#: PlaceCompletion/PlaceCompletion.py:1263
+msgid "No Latitude/Longitude given"
+msgstr "Ikke angitt lengde- eller breddegrad"
+
+#: PlaceCompletion/placecompletion.glade.h:1
+msgid "<b>1. Look up latitude and longitude:</b>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:2
+msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:3
+msgid "<b>3. Set attributes of all selected places:</b>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:4
+msgid ""
+"<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:6
+msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:7
+msgid "Apply all suggested changes"
+msgstr "Aktivere alle foreslåtte endringer"
+
+#: PlaceCompletion/placecompletion.glade.h:8
+msgid "C_enter latitude:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:9
+msgid "C_ity:"
+msgstr "_By/Kommune:"
+
+#: PlaceCompletion/placecompletion.glade.h:10
+msgid "Center longitude:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:11
+msgid "Change title into:"
+msgstr "Endre tittel til:"
+
+#: PlaceCompletion/placecompletion.glade.h:12
+msgid "City:"
+msgstr "By/Kommune:"
+
+#: PlaceCompletion/placecompletion.glade.h:13
+msgid "Convert lat/lon as:"
+msgstr "Konvertere brd/len til:"
+
+#: PlaceCompletion/placecompletion.glade.h:14
+msgid "Count_ry:"
+msgstr "Land:"
+
+#: PlaceCompletion/placecompletion.glade.h:15
+msgid "Country:"
+msgstr "Land:"
+
+#: PlaceCompletion/placecompletion.glade.h:16
+msgid "County:"
+msgstr "Fylke:"
+
+#: PlaceCompletion/placecompletion.glade.h:17
+msgid "Height:"
+msgstr "Høyde:"
+
+#: PlaceCompletion/placecompletion.glade.h:18
+msgid "Parish"
+msgstr "Prestegjeld"
+
+#: PlaceCompletion/placecompletion.glade.h:19
+msgid "Parish:"
+msgstr "Prestegjeld:"
+
+#: PlaceCompletion/placecompletion.glade.h:20
+msgid "Parse as:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:21
+msgid "Parse title:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:22
+msgid "Place _filter:"
+msgstr "Steds_filter:"
+
+#: PlaceCompletion/placecompletion.glade.h:23
+msgid "Places in a rectangle:"
+msgstr "Steder i et rektangel:"
+
+#: PlaceCompletion/placecompletion.glade.h:24
+msgid "Search in:"
+msgstr "Søk i:"
+
+#: PlaceCompletion/placecompletion.glade.h:25
+msgid "Select A File"
+msgstr "Velg en fil"
+
+#: PlaceCompletion/placecompletion.glade.h:26
+msgid "State:"
+msgstr "Stat:"
+
+#: PlaceCompletion/placecompletion.glade.h:27
+msgid "Width:"
+msgstr "Bredde:"
+
+#: PlaceCompletion/placecompletion.glade.h:28
+msgid "ZIP/Postal Code:"
+msgstr "Postnummer:"
+
+#: PlaceCompletion/placecompletion.glade.h:29
+msgid "_Google Maps"
+msgstr "_Google Kart"
+

@@ -1,0 +1,357 @@
+# Croatian translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:32+0100\n"
+"PO-Revision-Date: 2009-12-10 11:28+0100\n"
+"Last-Translator: \n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+msgid "PlaceCompletion"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:86
+msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:236
+#: PlaceCompletion/PlaceCompletion.py:275
+msgid "Error in PlaceCompletion.py"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:237
+msgid "Non existing group used in get"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:276
+msgid "Non existing group used in set"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:334
+msgid "Places tool"
+msgstr "Alat Mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:426
+msgid "Non Valid Title Regex"
+msgstr "Neispravni regularni izraz za naziv"
+
+#: PlaceCompletion/PlaceCompletion.py:427
+msgid "Non valid regular expression given to match title. Quiting."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:442
+msgid "Missing regex groups in match lat/lon"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:443
+#, python-format
+msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:453
+msgid "Non valid regex for match lat/lon"
+msgstr "Neispravni regularni izraz za lat./lon."
+
+#: PlaceCompletion/PlaceCompletion.py:454
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "Zadan neispravni regularni izraz za zem. širinu/dužinu. Prekid."
+
+#: PlaceCompletion/PlaceCompletion.py:512
+msgid "Finding Places and appropriate changes"
+msgstr "Traženje mjesta i prikladne promjene"
+
+#: PlaceCompletion/PlaceCompletion.py:514
+msgid "Filtering"
+msgstr "Filtriranje"
+
+#: PlaceCompletion/PlaceCompletion.py:524
+msgid "Loading lat/lon file in Memory..."
+msgstr "Učitavanje datoteke sa zemljopisnim širinama i dužinama u memoriju..."
+
+#: PlaceCompletion/PlaceCompletion.py:529
+msgid "Examining places"
+msgstr "Pregledavanje mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:549
+#: PlaceCompletion/PlaceCompletion.py:1113
+msgid "City"
+msgstr "Grad"
+
+#: PlaceCompletion/PlaceCompletion.py:552
+msgid "State"
+msgstr "Pokrajina/Država"
+
+#: PlaceCompletion/PlaceCompletion.py:556
+msgid "Country"
+msgstr "Država"
+
+#: PlaceCompletion/PlaceCompletion.py:717
+msgid "Doing Place changes"
+msgstr "Mijenjanje mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:754
+#: PlaceCompletion/PlaceCompletion.py:764
+msgid "Change places"
+msgstr "Izmjene mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:759
+msgid "No place record was modified."
+msgstr "Nije promijenjen ni jedan zapis o mjestima."
+
+#: PlaceCompletion/PlaceCompletion.py:761
+msgid "1 place record was modified."
+msgstr "1 zapis o mjestima je promijenjen."
+
+#: PlaceCompletion/PlaceCompletion.py:763
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d zapisa o mjestima su promijenjena."
+
+#: PlaceCompletion/PlaceCompletion.py:836
+#: PlaceCompletion/PlaceCompletion.py:843
+#: PlaceCompletion/PlaceCompletion.py:849
+#: PlaceCompletion/PlaceCompletion.py:855
+msgid "Cannot open file"
+msgstr "Nije moguće otvoriti datoteku"
+
+#: PlaceCompletion/PlaceCompletion.py:837
+msgid "The selected file is a directory, not a file."
+msgstr "Odabrana stavka je mapa, a ne datoteka."
+
+#: PlaceCompletion/PlaceCompletion.py:844
+msgid "You do not have read access to the selected file."
+msgstr "Nemate pravo čitanja odabrane datoteke."
+
+#: PlaceCompletion/PlaceCompletion.py:850
+msgid "The file you want to access is not a regular file."
+msgstr "Datoteka kojoj želite pristupiti nije regularna datoteka."
+
+#: PlaceCompletion/PlaceCompletion.py:856
+msgid "The file does not exist."
+msgstr "Datoteka ne postoji."
+
+#: PlaceCompletion/PlaceCompletion.py:875
+msgid "Problem reading file"
+msgstr "Greška prilikom čitanja datoteke"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+msgid "lat"
+msgstr "lat"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+msgid "lon"
+msgstr "lon"
+
+#: PlaceCompletion/PlaceCompletion.py:993
+#: PlaceCompletion/PlaceCompletion.py:1005
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "neispravna vrijednost za zem. širinu ili dužinu, %(lat)s, %(lon)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1074
+msgid "No lat/lon conversion"
+msgstr "Bez konverzije lat/lon"
+
+#: PlaceCompletion/PlaceCompletion.py:1075
+msgid "All in degree notation"
+msgstr "Sve u stupnjevima"
+
+#: PlaceCompletion/PlaceCompletion.py:1076
+msgid "All in decimal notation"
+msgstr "Sve u decimalnoj notaciji"
+
+#: PlaceCompletion/PlaceCompletion.py:1077
+msgid "Correct -50° in 50°S"
+msgstr "Ispravak -50° u 50°S"
+
+#: PlaceCompletion/PlaceCompletion.py:1081
+msgid "No changes"
+msgstr "Bez promjena"
+
+#: PlaceCompletion/PlaceCompletion.py:1082
+msgid "City[, State]"
+msgstr "Grad[, Država]"
+
+#: PlaceCompletion/PlaceCompletion.py:1084
+msgid "TitleStart [, City] [, State]"
+msgstr "Početak naziva [, Grad] [, Država]"
+
+#: PlaceCompletion/PlaceCompletion.py:1107
+msgid "City [,|.] State"
+msgstr "Grad [,|.] Država"
+
+#: PlaceCompletion/PlaceCompletion.py:1109
+msgid "City [,|.] Country"
+msgstr "Grad [,|.] Zemlja"
+
+#: PlaceCompletion/PlaceCompletion.py:1111
+msgid "City (Country)"
+msgstr "Grad (Zemlja)"
+
+#: PlaceCompletion/PlaceCompletion.py:1117
+msgid "Don't search"
+msgstr "Bez pretrage"
+
+#: PlaceCompletion/PlaceCompletion.py:1120
+msgid "GeoNames country file, city search"
+msgstr "GeoNames datoteka, traženje mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:1125
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames datoteka, traženje lokaliziranih naziva mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames datoteka, početak naziva, općenita pretraga"
+
+#: PlaceCompletion/PlaceCompletion.py:1141
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames SAD-države datoteka, traženje mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:1155
+msgid "GNS Geonet country file, city search"
+msgstr "GNS Geonet datoteka, traženje mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:1164
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS Geonet datoteka, početak naziva, općenita pretraga"
+
+#: PlaceCompletion/PlaceCompletion.py:1172
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV"
+
+#: PlaceCompletion/PlaceCompletion.py:1260
+msgid "All Places"
+msgstr "Sva mjesta"
+
+#: PlaceCompletion/PlaceCompletion.py:1263
+msgid "No Latitude/Longitude given"
+msgstr "Nepoznata zemljopisna širina i visina"
+
+#: PlaceCompletion/placecompletion.glade.h:1
+msgid "<b>1. Look up latitude and longitude:</b>"
+msgstr "<b>1. Traženje zemljopisne širine i dužine:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:2
+msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
+msgstr "<b>2. Promjena postojećih naziva i pozicija:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:3
+msgid "<b>3. Set attributes of all selected places:</b>"
+msgstr "<b>3. Promjena postavki svih odabranih mjesta:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:4
+msgid ""
+"<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:6
+msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:7
+msgid "Apply all suggested changes"
+msgstr "Primjeni sve predložene promjene"
+
+#: PlaceCompletion/placecompletion.glade.h:8
+msgid "C_enter latitude:"
+msgstr "Središnja zemljopisna širina:"
+
+#: PlaceCompletion/placecompletion.glade.h:9
+msgid "C_ity:"
+msgstr "_Grad:"
+
+#: PlaceCompletion/placecompletion.glade.h:10
+msgid "Center longitude:"
+msgstr "Središnja zemljopisna dužina:"
+
+#: PlaceCompletion/placecompletion.glade.h:11
+msgid "Change title into:"
+msgstr "Promjena naziv u:"
+
+#: PlaceCompletion/placecompletion.glade.h:12
+msgid "City:"
+msgstr "Grad:"
+
+#: PlaceCompletion/placecompletion.glade.h:13
+msgid "Convert lat/lon as:"
+msgstr "Izmjeni lat/lon kao:"
+
+#: PlaceCompletion/placecompletion.glade.h:14
+msgid "Count_ry:"
+msgstr "Dr_žava:"
+
+#: PlaceCompletion/placecompletion.glade.h:15
+msgid "Country:"
+msgstr "Država:"
+
+#: PlaceCompletion/placecompletion.glade.h:16
+msgid "County:"
+msgstr "Pokrajina:"
+
+#: PlaceCompletion/placecompletion.glade.h:17
+msgid "Height:"
+msgstr "Visina:"
+
+#: PlaceCompletion/placecompletion.glade.h:18
+msgid "Parish"
+msgstr "Župa"
+
+#: PlaceCompletion/placecompletion.glade.h:19
+msgid "Parish:"
+msgstr "Župa:"
+
+#: PlaceCompletion/placecompletion.glade.h:20
+msgid "Parse as:"
+msgstr "Analizirati kao:"
+
+#: PlaceCompletion/placecompletion.glade.h:21
+msgid "Parse title:"
+msgstr "Analizirati naziv:"
+
+#: PlaceCompletion/placecompletion.glade.h:22
+msgid "Place _filter:"
+msgstr "Filtri: Mjesta"
+
+#: PlaceCompletion/placecompletion.glade.h:23
+msgid "Places in a rectangle:"
+msgstr "Mjesta u pravokutniku:"
+
+#: PlaceCompletion/placecompletion.glade.h:24
+msgid "Search in:"
+msgstr "Traži u:"
+
+#: PlaceCompletion/placecompletion.glade.h:25
+msgid "Select A File"
+msgstr "Odaberite datoteku"
+
+#: PlaceCompletion/placecompletion.glade.h:26
+msgid "State:"
+msgstr "Pokrajina/Država:"
+
+#: PlaceCompletion/placecompletion.glade.h:27
+msgid "Width:"
+msgstr "Širina:"
+
+#: PlaceCompletion/placecompletion.glade.h:28
+msgid "ZIP/Postal Code:"
+msgstr "Poštanski broj:"
+
+#: PlaceCompletion/placecompletion.glade.h:29
+msgid "_Google Maps"
+msgstr "_Google Mape"
+

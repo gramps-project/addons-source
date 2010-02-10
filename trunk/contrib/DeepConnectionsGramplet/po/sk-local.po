@@ -1,0 +1,123 @@
+# Slovak translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:29+0100\n"
+"PO-Revision-Date: 2009-11-25 17:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet Hlbšie vzťahy"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+msgid "Deep Connections"
+msgstr "Hlbšie vzťahy"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+msgid "Double-click name for details"
+msgstr "Dvojklik na meno sprístupní podrobnosti"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "Nebol otvorený nijaký rodinný strom."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+msgid "Pause"
+msgstr "Pauza"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Continue"
+msgstr "Pokračovať"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+msgid "child"
+msgstr "dieťa"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+msgid "husband"
+msgstr "manžel"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+msgid "wife"
+msgstr "manželka"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+msgid "father"
+msgstr "otec"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+msgid "mother"
+msgstr "matka"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"   je %s osoby "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+msgid "No Home Person set."
+msgstr "Nebola nastavená východzia osoba."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+msgid "No Active Person set."
+msgstr "Nie je označená aktívna osoba."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "self"
+msgstr "sám"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+msgid "Looking for relationship between\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "Aktívna osoba: <b>%s</b>\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"zistený vzťah #%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Prerušené.\n"
+"Pre hľadanie ďalšich vzťahov stlačiť Pokračovať.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Hľadanie ukončené. Zistené vzťahy v počte %d."
+

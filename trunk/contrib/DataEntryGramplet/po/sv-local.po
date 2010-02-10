@@ -1,0 +1,187 @@
+# Swedish translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:28+0100\n"
+"PO-Revision-Date: 2009-11-25 17:37+0100\n"
+"Last-Translator: \n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+msgid "Data Entry Gramplet"
+msgstr "Gramplet för datainmatning"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:12
+msgid "Data Entry"
+msgstr "Datainmatning"
+
+#: DataEntryGramplet/DataEntryGramplet.py:55
+msgid "Active person"
+msgstr "Aktiv person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:56
+msgid "Family:"
+msgstr "Familj:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:58
+#: DataEntryGramplet/DataEntryGramplet.py:85
+msgid "Surname, Given"
+msgstr "Efternamn, Förnamn"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "Gender"
+msgstr "Kön"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "female"
+msgstr "kvinna"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "male"
+msgstr "man"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "unknown"
+msgstr "okänd"
+
+#: DataEntryGramplet/DataEntryGramplet.py:60
+#: DataEntryGramplet/DataEntryGramplet.py:87
+msgid "Birth"
+msgstr "Födelse"
+
+#: DataEntryGramplet/DataEntryGramplet.py:61
+#: DataEntryGramplet/DataEntryGramplet.py:88
+msgid "Death"
+msgstr "Död"
+
+#: DataEntryGramplet/DataEntryGramplet.py:69
+msgid "Save"
+msgstr "Spara"
+
+#: DataEntryGramplet/DataEntryGramplet.py:72
+msgid "Abandon"
+msgstr "Överge"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+msgid "New person"
+msgstr "Ny person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:78
+msgid "Add relation"
+msgstr "Lägg till släktskap"
+
+#: DataEntryGramplet/DataEntryGramplet.py:79
+msgid "No relation to active person"
+msgstr "Ingen släktskap till aktiv person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:80
+msgid "Add as a Parent"
+msgstr "Lägg till som föräldrar"
+
+#: DataEntryGramplet/DataEntryGramplet.py:81
+msgid "Add as a Spouse"
+msgstr "Lägg till som  maka/make"
+
+#: DataEntryGramplet/DataEntryGramplet.py:82
+msgid "Add as a Sibling"
+msgstr "Lägg till som syskon"
+
+#: DataEntryGramplet/DataEntryGramplet.py:83
+msgid "Add as a Child"
+msgstr "Lägg till som barn"
+
+#: DataEntryGramplet/DataEntryGramplet.py:96
+msgid "Add"
+msgstr "Lägg till"
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "Copy Active Data"
+msgstr "Kopiera aktiva data"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Clear"
+msgstr "Rensa"
+
+#: DataEntryGramplet/DataEntryGramplet.py:145
+#: DataEntryGramplet/DataEntryGramplet.py:159
+#: DataEntryGramplet/DataEntryGramplet.py:266
+msgid "in"
+msgstr "i"
+
+#: DataEntryGramplet/DataEntryGramplet.py:387
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Grampletdataredigering: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+msgid "Please provide a name."
+msgstr "Ange ett namn."
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+msgid "Can't add new person."
+msgstr "Kan inte lägga till en ny person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:437
+msgid "Please set an active person."
+msgstr "Ange en person."
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:418
+msgid "Can't add new person as a parent."
+msgstr "Kan ej lägga till en ny person som förälder."
+
+#: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:427
+msgid "Please set the new person's gender."
+msgstr "Ange den nya personens kön."
+
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:596
+#: DataEntryGramplet/DataEntryGramplet.py:629
+msgid "Can't add new person as a spouse."
+msgstr "kan ej lägga till ny person som make/maka."
+
+#: DataEntryGramplet/DataEntryGramplet.py:432
+msgid "Can't add new person as a sibling."
+msgstr "Kan ej lägga till ny person som syskon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:675
+msgid "Can't add new person as a child."
+msgstr "kan ej lägga till ny person som barn."
+
+#: DataEntryGramplet/DataEntryGramplet.py:558
+msgid "Please set gender on Active or new person."
+msgstr "Ange kön på aktiv eller ny person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:595
+#: DataEntryGramplet/DataEntryGramplet.py:628
+msgid "Same genders on Active and new person."
+msgstr "Samma kön på aktiv och ny peson."
+
+#: DataEntryGramplet/DataEntryGramplet.py:674
+msgid "Please set gender on Active person."
+msgstr "Ange kön för aktiv person"
+
+#: DataEntryGramplet/DataEntryGramplet.py:696
+#, python-format
+msgid "Gramplet Data Entry: %s"
+msgstr "Grampletdatainmatning: %s"
+

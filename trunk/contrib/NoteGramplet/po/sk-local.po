@@ -1,0 +1,54 @@
+# Slovak translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:32+0100\n"
+"PO-Revision-Date: 2009-11-25 19:06+0100\n"
+"Last-Translator: \n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: NoteGramplet/NoteGramplet.gpr.py:3
+msgid "Note Gramplet"
+msgstr "Gramplet Poznámka"
+
+#: NoteGramplet/NoteGramplet.gpr.py:9
+msgid "Note"
+msgstr "Poznámka"
+
+#: NoteGramplet/NoteGramplet.py:59
+msgid "Active person"
+msgstr "Aktívna osoba"
+
+#: NoteGramplet/NoteGramplet.py:83
+msgid "Family"
+msgstr "Rodina"
+
+#: NoteGramplet/NoteGramplet.py:105
+msgid "Save"
+msgstr "Uložiť"
+
+#: NoteGramplet/NoteGramplet.py:108
+msgid "Abandon"
+msgstr "Zrušiť"
+
+#: NoteGramplet/NoteGramplet.py:167
+#: NoteGramplet/NoteGramplet.py:248
+msgid "Person Note"
+msgstr "Pozn. k osobe"
+
+#: NoteGramplet/NoteGramplet.py:252
+msgid "Add Note"
+msgstr "Pridať poznámku"
+
+#: NoteGramplet/NoteGramplet.py:257
+msgid "Edit Note"
+msgstr "Editovať poznámku"
+

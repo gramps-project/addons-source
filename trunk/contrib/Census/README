@@ -1,0 +1,16 @@
+To use the census report or census gramplet the sources that are used for
+censuses must be indicated to the add-ons.
+
+This is done by adding a data item to the Data tab of a source object.  The
+key should be set to 'Census' and the value should be one of the following:
+
+UK1841      England 1841 census
+UK1851      England 1851 census
+UK1861      England 1861 census
+UK1871      England 1871 census
+UK1881      England 1881 census
+UK1891      England 1891 census
+UK1901      England 1901 census
+UK1911      England 1911 census
+
+The file Census.py contains the definitions of each census.
