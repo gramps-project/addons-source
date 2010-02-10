@@ -1,0 +1,123 @@
+# Norwegian Bokmal translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:29+0100\n"
+"PO-Revision-Date: 2009-11-25 17:14+0100\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+msgid "Deep Connections"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+msgid "Double-click name for details"
+msgstr "Dobbeltklikk på navn for å se detaljer"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "Ingen Slektstre er lastet."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+msgid "Pause"
+msgstr "Pause"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Continue"
+msgstr "Fortsett"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+msgid "child"
+msgstr "barn"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+msgid "husband"
+msgstr "ektemann"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+msgid "wife"
+msgstr "kone"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+msgid "father"
+msgstr "far"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+msgid "mother"
+msgstr "mor"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"  som er en %s av "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+msgid "No Home Person set."
+msgstr "Startperson er ikke valgt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+msgid "No Active Person set."
+msgstr "Ingen aktiv person valgt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "self"
+msgstr "selv"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+msgid "Looking for relationship between\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "Aktiv person: <b>%s</b>\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Fant slektskap #%d: \n"
+"  "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pauset.\n"
+"Klikk Fortsett for å søke etter flere slektsforhold.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Søk gjennomført. %d slektskap funnet."
+

@@ -1,0 +1,1211 @@
+<?xml version="1.0" ?>
+<censuses>
+    <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
+        <heading>
+            <_attribute>City or Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>5</size>
+        </column>
+    </census>
+    <census id='UK1851' title='1851 UK Census' date='30 Mar 1851'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id='UK1861' title='1861 UK Census' date='7 Apr 1861'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Hamlet or Tything</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id='UK1871' title='1871 UK Census' date='2 Apr 1871'>
+        <heading>
+            <_attribute>Civil Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Local Board or Improvement Commissioners District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id='UK1881' title='1881 UK Census' date='3 Apr 1881'>
+        <heading>
+            <_attribute>Civil Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id='UK1891' title='1891 UK Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Employer</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Employed</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Neither</_attribute>
+            <_longname>Neither Employer nor Employed</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>7</size>
+        </column>
+    </census>
+    <census id='UK1901' title='1901 UK Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Hamlet or Tything</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Work Type</_attribute>
+            <_longname>Employer, Worker or Own Account</_longname>
+            <size>12</size>
+        </column>
+        <column>
+            <_attribute>At Home</_attribute>
+            <_longname>Working at Home</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>7</size>
+        </column>
+    </census>
+    <census id='UK1911' title='1911 UK Census' date='2 Apr 1911'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Years Married</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Children Total</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children Living</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children Died</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+    </census>
+    <census id='FR1790' title='1790 French Census' date='1790'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1793' title='1793 French Census' date='1793'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1796' title='1796 French Census' date='1796'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1801' title='1801 French Census' date='1801'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1806' title='1806 French Census' date='1806'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Can read and write</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1820' title='1820 French Census' date='1820'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Gender</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Military</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1826' title='1826 French Census' date='1826'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Gender</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Military</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1831' title='1831 French Census' date='1831'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Can read and write</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Taxes</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Type of roof</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1836' title='1836 French Census' date='1836'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1841' title='1841 French Census' date='1841'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Type of roof</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1846' title='1846 French Census' date='1846'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1851' title='1851 French Census' date='1851'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Religion</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1856' title='1856 French Census' date='1856'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1861' title='1861 French Census' date='1861'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1866' title='1866 French Census' date='1866'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1872' title='1872 French Census' date='1872'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1876' title='1876 French Census' date='1876'>
+         <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1881' title='1881 French Census' date='1881'>
+         <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1886' title='1886 French Census' date='1886'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1891' title='1891 French Census' date='1891'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1896' title='1896 French Census' date='1896'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Arrived since</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1901' title='1901 French Census' date='1901'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1906' title='1906 French Census' date='1906'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR' title='Custom French Census' date=''>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Date of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Status</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Religion</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Can read and write</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Taxes</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Type of roof</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='BE1846' title='1846 Belgian Census' date='1846-10-15'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1856' title='1856 Belgian Census' date='1856-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1866' title='1866 Belgian Census' date='1866-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1880' title='1880 Belgian Census' date='1880-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1890' title='1890 Belgian Census' date='1890-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1900' title='1900 Belgian Census' date='1900-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id='BE1910' title='1910 Belgian Census' date='1910-12-31'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+</censuses>

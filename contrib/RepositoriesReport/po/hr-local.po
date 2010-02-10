@@ -1,0 +1,182 @@
+# Croatian translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:33+0100\n"
+"PO-Revision-Date: 2009-12-10 11:31+0100\n"
+"Last-Translator: \n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+msgid "Repositories Report Options"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+msgid "Produces a textual repositories report"
+msgstr "Proizvodi tekstualno izvješće o spremištima"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:41
+#: RepositoriesReport/RepositoriesReport.py:71
+#: RepositoriesReport/RepositoriesReportAlt.py:92
+msgid "Repositories Report"
+msgstr "Izvješće o spremištima"
+
+#: RepositoriesReport/RepositoriesReport.py:142
+#: RepositoriesReport/RepositoriesReportAlt.py:321
+msgid "Report Options"
+msgstr "Opcije izvješća"
+
+#: RepositoriesReport/RepositoriesReport.py:166
+#: RepositoriesReport/RepositoriesReportAlt.py:385
+msgid "The style used for the title of the report."
+msgstr "Stil korišten za naslov izvješća."
+
+#: RepositoriesReport/RepositoriesReport.py:180
+#: RepositoriesReport/RepositoriesReportAlt.py:399
+msgid "The style used for repository title."
+msgstr "Korišteni stil naziva spremišta."
+
+#: RepositoriesReport/RepositoriesReport.py:194
+#: RepositoriesReport/RepositoriesReportAlt.py:414
+msgid "The style used for each section."
+msgstr "Stil korišten za odlomke."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:121
+msgid "Private"
+msgstr "Privatno"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:163
+#, python-format
+msgid ""
+"\n"
+"Address: %s"
+msgstr ""
+"\n"
+"Adresa: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:191
+#, python-format
+msgid "%s. Private"
+msgstr "%s. Privatno"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:231
+#, python-format
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:233
+#, python-format
+msgid ""
+"\n"
+"Abbreviation: %s"
+msgstr ""
+"\n"
+"Skraćenica: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:235
+#, python-format
+msgid ""
+"\n"
+"Publication information: %s"
+msgstr ""
+"\n"
+"Informacije o publikaciji: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:237
+#, python-format
+msgid ""
+"\n"
+"Data: %s"
+msgstr ""
+"\n"
+"Podaci: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:323
+msgid "Include repository's urls"
+msgstr "Uključi URL spremišta"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:324
+msgid "Whether to include urls on repository."
+msgstr "Uključiti URL adrese spremišta."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:327
+msgid "Include repository's address"
+msgstr "Uključi adrese spremišta"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:328
+msgid "Whether to include addresses on repository."
+msgstr "Uključiti adrese spremišta."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:331
+msgid "Include source's author"
+msgstr "Uključi autore izvora"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:332
+msgid "Whether to include author."
+msgstr "Uključiti autore izvora."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:335
+msgid "Include source's abbreviation"
+msgstr "Uključi skraćenice izvora"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:336
+msgid "Whether to include abbreviation."
+msgstr "Uključiti skraćenice izvora."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:339
+msgid "Include source's publication information"
+msgstr "Uključi informacije o publikaciji izvora"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:340
+msgid "Whether to include publication information."
+msgstr "Uključiti informacije o publikaciji izvora."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:343
+msgid "Include source's data"
+msgstr "Uključi podatke iz izvora"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:344
+msgid "Whether to include keys and values."
+msgstr "Uključiti ključeve i vrijednosti."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:347
+msgid "Include notes"
+msgstr "Uključi zabilješke"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:348
+msgid "Whether to include notes on repositories and sources."
+msgstr "Uključiti zabilješke o spremištima i izvorima."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:351
+msgid "Include media"
+msgstr "Uključi medije"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:352
+msgid "Whether to include media on sources."
+msgstr "Uključiti medije izvora."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:355
+msgid "Include private records"
+msgstr "Uključi privatne zapise"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:356
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Uključiti privatne zapise o spremištima i izvorima."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:429
+msgid "The style used for child section."
+msgstr "Stil korišten za odlomke."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:441
+msgid "The basic style used for the note display."
+msgstr "Osnovni stil prikaza zabilješki."
+

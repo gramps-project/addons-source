@@ -1,0 +1,119 @@
+# translation of de.po to Deutsch
+# translation of de.po to
+# German GRAMPS Translation
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-03 20:11-0500\n"
+"PO-Revision-Date: 2009-09-27 12:50+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: Deutsch <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:9
+msgid "Timeline"
+msgstr "Zeitleiste"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:10
+#, fuzzy
+msgid "Display a person's events on a timeline"
+msgstr "Zeigt Ereignisse einer Person; persönliche und Familäre."
+
+#: TimelineQuickview/TimelineQuickview.py:42
+msgid "Parents"
+msgstr "Eltern"
+
+#: TimelineQuickview/TimelineQuickview.py:44
+#, fuzzy
+msgid "Inlaw Parents"
+msgstr "Eltern"
+
+#: TimelineQuickview/TimelineQuickview.py:47
+#, fuzzy
+msgid "Grandparents"
+msgstr "Gramplets"
+
+#: TimelineQuickview/TimelineQuickview.py:49
+msgid "Inlaw Grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:52
+#, fuzzy
+msgid "Great grandparents"
+msgstr "Eltern neu ordnen"
+
+#: TimelineQuickview/TimelineQuickview.py:54
+msgid "Inlaw Great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:57
+msgid "Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:57
+#: TimelineQuickview/TimelineQuickview.py:59
+#, fuzzy
+msgid "great, "
+msgstr "größer als"
+
+#: TimelineQuickview/TimelineQuickview.py:57
+#: TimelineQuickview/TimelineQuickview.py:59
+#, fuzzy
+msgid "great grandparents"
+msgstr "Eltern neu ordnen"
+
+#: TimelineQuickview/TimelineQuickview.py:59
+msgid "Inlaw Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:89
+#, fuzzy
+msgid "Partner's spouse"
+msgstr "Familienname des Vaters"
+
+#: TimelineQuickview/TimelineQuickview.py:139
+#, fuzzy, python-format
+msgid "Timeline for %s"
+msgstr "Zeitleistengraph für %s"
+
+#: TimelineQuickview/TimelineQuickview.py:142
+msgid "Date"
+msgstr "Datum"
+
+#: TimelineQuickview/TimelineQuickview.py:143
+msgid "Event"
+msgstr "Ereignis"
+
+#: TimelineQuickview/TimelineQuickview.py:144
+msgid "Age"
+msgstr "Alter"
+
+#: TimelineQuickview/TimelineQuickview.py:145
+msgid "Place"
+msgstr "Ort"
+
+#: TimelineQuickview/TimelineQuickview.py:146
+#, fuzzy
+msgid "People involved"
+msgstr "Personenmenü"
+
+#: TimelineQuickview/TimelineQuickview.py:170
+#, fuzzy
+msgid "Today"
+msgstr "Gesamt"
+
+#: TimelineQuickview/TimelineQuickview.py:176
+msgid "Unknown"
+msgstr "Unbekannt"

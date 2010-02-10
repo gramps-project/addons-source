@@ -1,0 +1,106 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-02 07:34-0500\n"
+"PO-Revision-Date: 2009-11-18 12:14+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:28
+#: AttachSourceTool/AttachSourceTool.py:134
+#: AttachSourceTool/AttachSourceTool.py:188
+#: AttachSourceTool/AttachSourceTool.py:211
+msgid "Attach Source"
+msgstr "Attacher une source"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:29
+#: AttachSourceTool/AttachSourceTool.py:215
+msgid "Attaches a shared source to multiple objects."
+msgstr "Attache une source partagée à des objets multiples"
+
+#: AttachSourceTool/AttachSourceTool.py:64
+#: AttachSourceTool/AttachSourceTool.py:137
+msgid "Options"
+msgstr "Options"
+
+#: AttachSourceTool/AttachSourceTool.py:66
+msgid "Person Filter"
+msgstr "Filtre sur la personne"
+
+#: AttachSourceTool/AttachSourceTool.py:67
+msgid "Select filter to restrict people"
+msgstr "Sélectionne un filtre pour restreindre les individus"
+
+#: AttachSourceTool/AttachSourceTool.py:71
+msgid "Filter Person"
+msgstr "Filtre sur l'individu"
+
+#: AttachSourceTool/AttachSourceTool.py:72
+msgid "The center person for the filter"
+msgstr "L'individu central pour ce filtre"
+
+#: AttachSourceTool/AttachSourceTool.py:78
+msgid "Source type"
+msgstr "Type de source"
+
+#: AttachSourceTool/AttachSourceTool.py:79
+msgid "New source"
+msgstr "Nouvelle source"
+
+#: AttachSourceTool/AttachSourceTool.py:80
+msgid "Existing source"
+msgstr "Source existante"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Select the type of source to attach"
+msgstr "Sélectionnez le type de source à attacher"
+
+#: AttachSourceTool/AttachSourceTool.py:86
+msgid "New Source Title"
+msgstr "Nouveau titre de source"
+
+#: AttachSourceTool/AttachSourceTool.py:87
+msgid "Text of source to attach"
+msgstr "Texte de la source à attacher"
+
+#: AttachSourceTool/AttachSourceTool.py:91
+msgid "Existing Source ID"
+msgstr "Identifiant de la source existant"
+
+#: AttachSourceTool/AttachSourceTool.py:92
+msgid "ID of source to attach"
+msgstr "Identifiant de la source à attacher"
+
+#: AttachSourceTool/AttachSourceTool.py:154
+msgid "Results"
+msgstr "Résultats"
+
+#: AttachSourceTool/AttachSourceTool.py:155
+msgid "Processing...\n"
+msgstr "Traitement...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:170
+msgid "Attaching sources...\n"
+msgstr "Attachement des sources...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:171
+msgid "Attaching sources..."
+msgstr "Attachement des sources..."
+
+#: AttachSourceTool/AttachSourceTool.py:191
+msgid "Done!\n"
+msgstr "Terminé !\n"
+
+#: AttachSourceTool/AttachSourceTool.py:212
+msgid "Beta"
+msgstr "Beta"

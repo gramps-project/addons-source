@@ -1,0 +1,585 @@
+# Norwegian Bokmal translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:30+0100\n"
+"PO-Revision-Date: 2009-11-25 17:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr ""
+
+#: DenominoViso/DenominoViso.gpr.py:18
+msgid "Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:167
+msgid "No Source"
+msgstr "Ingen kilde"
+
+#: DenominoViso/DenominoViso.py:196
+msgid "Ancestor"
+msgstr "Ane"
+
+#: DenominoViso/DenominoViso.py:197
+msgid "Descendant"
+msgstr "Etterkommer"
+
+#: DenominoViso/DenominoViso.py:201
+msgid "Regular"
+msgstr "Vanlig"
+
+#: DenominoViso/DenominoViso.py:202
+msgid "Fan"
+msgstr "Vifte"
+
+#: DenominoViso/DenominoViso.py:203
+msgid "Growth Spiral"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:204
+msgid "Mandelbrot Tree"
+msgstr "Mandelbrottre"
+
+#: DenominoViso/DenominoViso.py:205
+msgid "Pythagoras Tree"
+msgstr "Pytagorastre"
+
+#: DenominoViso/DenominoViso.py:209
+msgid "right to left"
+msgstr "høyre til venstre"
+
+#: DenominoViso/DenominoViso.py:210
+msgid "left to right"
+msgstr "venstre til høyre"
+
+#: DenominoViso/DenominoViso.py:211
+msgid "top to bottom"
+msgstr "topp til bunn"
+
+#: DenominoViso/DenominoViso.py:212
+msgid "bottom to top"
+msgstr "bunn til topp"
+
+#: DenominoViso/DenominoViso.py:287
+#: DenominoViso/DenominoViso.py:962
+#: DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:2722
+msgid "type"
+msgstr "type"
+
+#: DenominoViso/DenominoViso.py:288
+#: DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1021
+#: DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:2721
+msgid "role"
+msgstr "rolle"
+
+#: DenominoViso/DenominoViso.py:289
+#: DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1026
+#: DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:2720
+msgid "date"
+msgstr "dato"
+
+#: DenominoViso/DenominoViso.py:290
+#: DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1032
+#: DenominoViso/DenominoViso.py:1245
+#: DenominoViso/DenominoViso.py:2724
+msgid "place"
+msgstr "sted"
+
+#: DenominoViso/DenominoViso.py:291
+#: DenominoViso/DenominoViso.py:962
+#: DenominoViso/DenominoViso.py:1041
+#: DenominoViso/DenominoViso.py:1245
+#: DenominoViso/DenominoViso.py:2723
+msgid "description"
+msgstr "beskrivelse"
+
+#: DenominoViso/DenominoViso.py:292
+#: DenominoViso/DenominoViso.py:963
+#: DenominoViso/DenominoViso.py:1048
+#: DenominoViso/DenominoViso.py:1246
+msgid "witnesses"
+msgstr "vitner"
+
+#: DenominoViso/DenominoViso.py:293
+#: DenominoViso/DenominoViso.py:310
+#: DenominoViso/DenominoViso.py:314
+#: DenominoViso/DenominoViso.py:963
+#: DenominoViso/DenominoViso.py:1053
+#: DenominoViso/DenominoViso.py:1246
+#: DenominoViso/DenominoViso.py:1342
+#: DenominoViso/DenominoViso.py:1417
+msgid "source"
+msgstr "kilde"
+
+#: DenominoViso/DenominoViso.py:363
+#: DenominoViso/DenominoViso.py:2489
+#, python-format
+msgid "Failure writing %s"
+msgstr "Det oppsto en feil under skrivingen av %s"
+
+#: DenominoViso/DenominoViso.py:755
+msgid "Unknown time direction"
+msgstr "Ukjent tidsretning"
+
+#: DenominoViso/DenominoViso.py:1130
+msgid "and"
+msgstr "og"
+
+#: DenominoViso/DenominoViso.py:1266
+msgid "Events"
+msgstr "Hendelser"
+
+#: DenominoViso/DenominoViso.py:1341
+msgid "Attributes"
+msgstr "Egenskaper"
+
+#: DenominoViso/DenominoViso.py:1416
+msgid "Addresses"
+msgstr "Adresser"
+
+#: DenominoViso/DenominoViso.py:1466
+msgid "Notes"
+msgstr "Notater"
+
+#: DenominoViso/DenominoViso.py:1547
+msgid "Sources"
+msgstr "Kilder"
+
+#: DenominoViso/DenominoViso.py:1548
+#: DenominoViso/DenominoViso.py:2728
+msgid "title"
+msgstr "tittel"
+
+#: DenominoViso/DenominoViso.py:1548
+msgid "volume"
+msgstr "volum"
+
+#: DenominoViso/DenominoViso.py:1548
+msgid "author"
+msgstr "forfatter"
+
+#: DenominoViso/DenominoViso.py:1549
+msgid "publication_info"
+msgstr "publikasjons_informasjon"
+
+#: DenominoViso/DenominoViso.py:1550
+msgid "abbreviation"
+msgstr "forkortelse"
+
+#: DenominoViso/DenominoViso.py:1739
+msgid "of"
+msgstr "av"
+
+#: DenominoViso/DenominoViso.py:1940
+msgid "the chart type runs out of bounds"
+msgstr "tavletypen går utenfor grensene"
+
+#: DenominoViso/DenominoViso.py:1985
+msgid "Search"
+msgstr "Søk"
+
+#: DenominoViso/DenominoViso.py:1985
+msgid "in"
+msgstr "i"
+
+#: DenominoViso/DenominoViso.py:2458
+msgid "Event"
+msgstr "Hendelse"
+
+#: DenominoViso/DenominoViso.py:2528
+msgid "DenominoViso Options"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2530
+msgid "Destination"
+msgstr "Mål"
+
+#: DenominoViso/DenominoViso.py:2532
+msgid "The destination file for the xhtml-content."
+msgstr "Målfilen for xhtml-innholdet."
+
+#: DenominoViso/DenominoViso.py:2535
+msgid "Central Person"
+msgstr "Senterperson"
+
+#: DenominoViso/DenominoViso.py:2536
+msgid "The central person for the tree"
+msgstr "Senterpersonen for treet"
+
+#: DenominoViso/DenominoViso.py:2539
+msgid "Title of the webpage"
+msgstr "Tittel på nettsiden"
+
+#: DenominoViso/DenominoViso.py:2540
+msgid "Any string you wish."
+msgstr "En tekst du selv velger."
+
+#: DenominoViso/DenominoViso.py:2544
+msgid "Either plot ancestor or descendants graph."
+msgstr "Plott graf for enten forfedre eller etterkommere."
+
+#: DenominoViso/DenominoViso.py:2549
+msgid "Display type"
+msgstr "Visningstype"
+
+#: DenominoViso/DenominoViso.py:2550
+msgid "The type of graph to create."
+msgstr "Graftypen som skal lages."
+
+#: DenominoViso/DenominoViso.py:2555
+msgid "Direction of time"
+msgstr "Tidsretning"
+
+#: DenominoViso/DenominoViso.py:2556
+msgid "Direction in which time increases."
+msgstr "Retning for økende tid."
+
+#: DenominoViso/DenominoViso.py:2561
+msgid "Generations"
+msgstr "Generasjoner"
+
+#: DenominoViso/DenominoViso.py:2562
+msgid "The number of generations to include in the tree"
+msgstr "Antall generasjoner som skal være med i treet"
+
+#: DenominoViso/DenominoViso.py:2565
+msgid "Max chart width (%)"
+msgstr "Største tavlebredde (%)"
+
+#: DenominoViso/DenominoViso.py:2566
+msgid "Width of the tree as fraction of the browser window"
+msgstr "Bredde på treet i forhold til vinduet"
+
+#: DenominoViso/DenominoViso.py:2569
+msgid "Max chart height (px)"
+msgstr "Største tavlehøyde (pt)"
+
+#: DenominoViso/DenominoViso.py:2570
+msgid "Height of the tree in pixels."
+msgstr "Hlyde for treet i antall punkt."
+
+#: DenominoViso/DenominoViso.py:2573
+msgid "Closing remarks"
+msgstr "Avsluttende kommentarer"
+
+#: DenominoViso/DenominoViso.py:2574
+msgid "List of strings, free text added at the bottom, for example for a copyright notice."
+msgstr "Liste med tekster, fritekst som legges til på bunnen, for eksempel en notis om opphavsrett."
+
+#: DenominoViso/DenominoViso.py:2577
+msgid "Include Options"
+msgstr "Ta med opsjoner"
+
+#: DenominoViso/DenominoViso.py:2580
+msgid "Include private records"
+msgstr "Ta med private poster"
+
+#: DenominoViso/DenominoViso.py:2581
+msgid "Wheater to leave out private data."
+msgstr "Om private data skal tas med."
+
+#: DenominoViso/DenominoViso.py:2584
+msgid "Include Events"
+msgstr "Ta med hendelser"
+
+#: DenominoViso/DenominoViso.py:2586
+msgid "Wheather to include a person's events."
+msgstr "Om en persons hendelser skal tas med."
+
+#: DenominoViso/DenominoViso.py:2594
+msgid "Include birth children"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2595
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Om barnas fødselsdato skal tas med i lista over hendelser."
+
+#: DenominoViso/DenominoViso.py:2598
+msgid "Include death relatives"
+msgstr "Ta med døde slektninger"
+
+#: DenominoViso/DenominoViso.py:2599
+msgid "Whether to include the death of relatives during the lifetime of person."
+msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
+
+#: DenominoViso/DenominoViso.py:2602
+msgid "Include witness note"
+msgstr "Ta med vitnenotat"
+
+#: DenominoViso/DenominoViso.py:2603
+msgid "Whether to include the note belonging to a witness (if the event_format contains <witnesses>)"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2607
+msgid "Include Attributes"
+msgstr "Ta med attributter"
+
+#: DenominoViso/DenominoViso.py:2608
+msgid "Whether to include a person's attributes"
+msgstr "Om en persons attributter skal tas med"
+
+#: DenominoViso/DenominoViso.py:2611
+msgid "Include Addresses"
+msgstr "Ta med adresser"
+
+#: DenominoViso/DenominoViso.py:2612
+msgid "Whether to include a person's addresses."
+msgstr "Om en persons adresser skal tas med."
+
+#: DenominoViso/DenominoViso.py:2615
+msgid "Include Note"
+msgstr "Ta med notat"
+
+#: DenominoViso/DenominoViso.py:2616
+msgid "Whether to include a person's note."
+msgstr "Om en persons notat skal tas med."
+
+#: DenominoViso/DenominoViso.py:2619
+msgid "Include URL"
+msgstr "Ta med URL"
+
+#: DenominoViso/DenominoViso.py:2620
+msgid "Whether to include a person's internet address."
+msgstr "Om en persons Internettadresse skal tas med."
+
+#: DenominoViso/DenominoViso.py:2623
+msgid "Include URL description"
+msgstr "Ta med URL-beskrivelse"
+
+#: DenominoViso/DenominoViso.py:2624
+msgid "Whether to include the description of the first URL"
+msgstr "Om beskrivelse av den første URLen skal tas med"
+
+#: DenominoViso/DenominoViso.py:2629
+msgid "Include Sources"
+msgstr "Ta med kilder"
+
+#: DenominoViso/DenominoViso.py:2630
+msgid "Whether to include a person's sources."
+msgstr "Om en persons kilder skal tas med."
+
+#: DenominoViso/DenominoViso.py:2633
+msgid "Image Options"
+msgstr "Bildevalg"
+
+#: DenominoViso/DenominoViso.py:2635
+msgid "Include Photos/Images from Gallery"
+msgstr "Ta med foto/bilder fra galleriet"
+
+#: DenominoViso/DenominoViso.py:2636
+msgid "Whether to include images"
+msgstr "Om bilder skal tas med"
+
+#: DenominoViso/DenominoViso.py:2639
+msgid "Copy Image"
+msgstr "Kopiere bilde"
+
+#: DenominoViso/DenominoViso.py:2640
+msgid "Copy the images to a designated directory."
+msgstr "Kopiere bildet til en valgt katalog."
+
+#: DenominoViso/DenominoViso.py:2646
+msgid "Images with Attribute"
+msgstr "Bilder med egenskap"
+
+#: DenominoViso/DenominoViso.py:2647
+msgid "Determine images with which attributes to in/exclude"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2650
+msgid "Include Image source references"
+msgstr "Ta med kildehenvisninger for bilde"
+
+#: DenominoViso/DenominoViso.py:2651
+msgid "Whether to include references for images"
+msgstr "Om bildereferanser skal tas med"
+
+#: DenominoViso/DenominoViso.py:2654
+msgid "Source reference attribute"
+msgstr "Egenskap for kildehenvisning"
+
+#: DenominoViso/DenominoViso.py:2655
+msgid "Image attribute that should be used as source reference"
+msgstr "Bildeegenskap som skal brukes som kildereferanse"
+
+#: DenominoViso/DenominoViso.py:2661
+msgid "Style Options"
+msgstr "Stilopsjoner"
+
+#: DenominoViso/DenominoViso.py:2663
+msgid "Color of active person:"
+msgstr "Farge for aktiv person:"
+
+#: DenominoViso/DenominoViso.py:2664
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "RGB-farge for geometrisk form til den aktive personen."
+
+#: DenominoViso/DenominoViso.py:2667
+msgid "Color of found persons:"
+msgstr "Farge til personer som ble funnet:"
+
+#: DenominoViso/DenominoViso.py:2668
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "RGB-farge for geometrisk form til de personene som ble funnet."
+
+#: DenominoViso/DenominoViso.py:2671
+msgid "Color of male persons:"
+msgstr "Farge til menn:"
+
+#: DenominoViso/DenominoViso.py:2672
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "RGB-farge for geometrisk form på mannlige personer."
+
+#: DenominoViso/DenominoViso.py:2675
+msgid "Colour of female persons:"
+msgstr "Farge til kvinner:"
+
+#: DenominoViso/DenominoViso.py:2676
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "RGB-farge for geometrisk form på kvinnelige personer."
+
+#: DenominoViso/DenominoViso.py:2679
+msgid "Width of rectangle (hrd):"
+msgstr "Bredde på rektangel:"
+
+#: DenominoViso/DenominoViso.py:2683
+msgid "Height of rectangle (hrd):"
+msgstr "Høyde på rektangel:"
+
+#: DenominoViso/DenominoViso.py:2687
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Loddrett avstand til rektangel:"
+
+#: DenominoViso/DenominoViso.py:2691
+msgid "Extra style settings:"
+msgstr "Ekstra stilinnstillinger:"
+
+#: DenominoViso/DenominoViso.py:2695
+msgid "Advanced Options"
+msgstr "Avanserte opsjoner:"
+
+#: DenominoViso/DenominoViso.py:2697
+msgid "Old browser friendly output"
+msgstr "Gammel nettleservennlig utskrift"
+
+#: DenominoViso/DenominoViso.py:2698
+msgid "Whether to create an ordinary html-file that includes the xhtml-file so that deprecated browsers can be presented with content they can swallow."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2701
+msgid "Mouse event handler"
+msgstr "Hendelsesbehandler for mus"
+
+#: DenominoViso/DenominoViso.py:2703
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2707
+msgid "Birth relationship linestyle"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2709
+msgid "List of lists where each sublist is a list with information about the dash pattern of lines connecting children to parents."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2715
+msgid "Source confidence color"
+msgstr "Kildekvalitetsfarge"
+
+#: DenominoViso/DenominoViso.py:2717
+msgid "List os lists where each sublist is a list with information on the color to use for a certain confidence level."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2720
+msgid "Event format"
+msgstr "Hendelsesformat"
+
+#: DenominoViso/DenominoViso.py:2721
+msgid "at"
+msgstr "ved"
+
+#: DenominoViso/DenominoViso.py:2725
+msgid "List os strings with placeholders for events. Known placeholders: <type>, <role>, <date>, <place>, <description>, <witnesses>, <source> and any <attribute-value>."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2728
+msgid "Source format"
+msgstr "Kildeformat"
+
+#: DenominoViso/DenominoViso.py:2729
+msgid "List of strings with placeholders for sources. Known placeholders: <title>, <volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2787
+msgid "restricted to:"
+msgstr "begrenset til:"
+
+#: DenominoViso/DenominoViso.py:2828
+msgid "to directory:"
+msgstr "til katalog:"
+
+#: DenominoViso/DenominoViso.py:2830
+msgid "Save images in ..."
+msgstr "Lagre bilder i ..."
+
+#: DenominoViso/DenominoViso.py:2876
+msgid "equal to"
+msgstr "er lik"
+
+#: DenominoViso/DenominoViso.py:2880
+msgid "should be"
+msgstr "skulle være"
+
+#: DenominoViso/DenominoViso.py:2922
+msgid "Name HTML-wrapper file"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2924
+msgid "Save HTML-wrapper file as ..."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2951
+msgid "Give a filename ..."
+msgstr "Angi et filnavn ..."
+
+#: DenominoViso/DenominoViso.py:3098
+msgid "Relation type"
+msgstr "Relasjonstype"
+
+#: DenominoViso/DenominoViso.py:3103
+msgid "Use dashed linestyle"
+msgstr "Bruk stiplet strek"
+
+#: DenominoViso/DenominoViso.py:3108
+msgid "Dash length"
+msgstr "Stiplelengde"
+
+#: DenominoViso/DenominoViso.py:3112
+msgid "Inter-dash length"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:3163
+msgid "Confidence"
+msgstr "Troverdighet"
+
+#: DenominoViso/DenominoViso.py:3165
+msgid "Color"
+msgstr "Farge"
+

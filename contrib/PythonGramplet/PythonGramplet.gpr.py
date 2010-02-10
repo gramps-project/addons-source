@@ -1,0 +1,11 @@
+register(GRAMPLET, 
+         id="Python Gramplet", 
+         name=_("Python Gramplet"), 
+         status = STABLE,
+         fname="PythonGramplet.py",
+         height=250,
+         gramplet = 'PythonGramplet',
+         gramplet_title=_("Python Shell"),
+         version = "1.0.0",
+         gramps_target_version = "3.2",
+         )

@@ -1,0 +1,43 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:26+0100\n"
+"PO-Revision-Date: 2009-11-23 20:47+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3
+#: AllNamesQuickview/AllNames.py:46
+msgid "All Names of All People"
+msgstr "Tous les noms pour tous les individus"
+
+#: AllNamesQuickview/AllNames.gpr.py:4
+msgid "Display all names of all people"
+msgstr "Affiche tous les noms de tous les individus"
+
+#: AllNamesQuickview/AllNames.py:49
+msgid "Name"
+msgstr "Nom"
+
+#: AllNamesQuickview/AllNames.py:49
+msgid "Primary Name"
+msgstr "Nom principal"
+
+#: AllNamesQuickview/AllNames.py:49
+msgid "Name Type"
+msgstr "Type de nom"
+
+#: AllNamesQuickview/AllNames.py:66
+#, python-format
+msgid "Total names %d"
+msgstr "Total des noms %d"
+

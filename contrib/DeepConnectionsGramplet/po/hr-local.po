@@ -1,0 +1,123 @@
+# Croatian translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:29+0100\n"
+"PO-Revision-Date: 2009-12-10 11:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "gramplet: duboka povezanost"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+msgid "Deep Connections"
+msgstr "Duboka Povezanost"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+msgid "Double-click name for details"
+msgstr "Dvoklik na ime za pojedinosti"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "Nije učitano obiteljsko stablo."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+msgid "Pause"
+msgstr "Zaustavi"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Continue"
+msgstr "Nastavi"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+msgid "child"
+msgstr "dijete"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+msgid "husband"
+msgstr "muž"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+msgid "wife"
+msgstr "žena"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+msgid "father"
+msgstr "otac"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+msgid "mother"
+msgstr "majka"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"   %s od"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+msgid "No Home Person set."
+msgstr "Početna osoba nije postavljena."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+msgid "No Active Person set."
+msgstr "Nije postavljena aktivne osoba."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "self"
+msgstr "Ista osoba"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+msgid "Looking for relationship between\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "Aktivna osoba: <b>%s</b>\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Pronađene poveznice #%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Zaustavljeno.\n"
+"Pritisnite gumb Nastavak za traženje dodatnih povezanosti.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Traženje završeno. %d poveznica pronađeno."
+

@@ -1,0 +1,24 @@
+# Catalan translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:09+0100\n"
+"PO-Revision-Date: 2009-11-23 21:08+0100\n"
+"Last-Translator: \n"
+"Language-Team: Catalan <ca@dodds.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ClockGramplet/ClockGramplet.gpr.py:3
+msgid "Clock Gramplet"
+msgstr "Gramplet de Rellotge"
+
+#: ClockGramplet/ClockGramplet.gpr.py:7
+msgid "Clock"
+msgstr "Rellotge"
+

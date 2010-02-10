@@ -1,0 +1,41 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-23 19:31+0100\n"
+"PO-Revision-Date: 2009-11-23 20:58+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ImportSql/ImportSql.gpr.py:3
+msgid "SQLite Import"
+msgstr "Importation SQLite"
+
+#: ImportSql/ImportSql.gpr.py:4
+msgid "SQLite is a common local database format"
+msgstr "SQLite est un format courant de base de données locale"
+
+#: ImportSql/ImportSql.py:126
+#, python-format
+msgid "%s could not be opened\n"
+msgstr "GRAMPS n'a pas pu ouvrir %s\n"
+
+#: ImportSql/ImportSql.py:824
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Importation terminée : %d seconde"
+msgstr[1] "Importation terminée : %d secondes"
+
+#: ImportSql/ImportSql.py:825
+msgid "SQL import"
+msgstr "Importation SQL"
+
