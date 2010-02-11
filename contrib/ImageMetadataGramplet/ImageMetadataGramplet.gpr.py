@@ -22,20 +22,18 @@
 #
 
 #------------------------------------------------------------------------
-#
 # Exif Image Metadata Gramplet
-#
 #------------------------------------------------------------------------
 register(GRAMPLET,
     id = "Image Metadata Gramplet",
     name = _("Image Metadata Gramplet"),
-    height = 300,
+    height = 290,
     expand = False,
     gramplet = 'imageMetadataGramplet',
     gramplet_title = _("Image Metadata Gramplet"),
     detached_width = 450,
-    detached_height = 415,
-    version = "0.2.r270",
+    detached_height = 395,
+    version = "0.2.r272",
     gramps_target_version = "3.2",
     status = UNSTABLE,
     fname = "ImageMetadataGramplet.py",
