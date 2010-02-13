@@ -162,7 +162,7 @@ from TransUtils import get_addon_translator
 # constants
 #
 #-------------------------------------------------------------------------
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 ext_confidence = confidence.copy()
 ext_confidence[len(confidence)] = _('No Source')
 

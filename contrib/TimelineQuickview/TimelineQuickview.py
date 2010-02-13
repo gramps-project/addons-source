@@ -32,7 +32,7 @@ import DateHandler
 import Relationship
 import gen.lib
 
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 rel_calc = Relationship.get_relationship_calculator()
 
 def levelname(inlaw, level):

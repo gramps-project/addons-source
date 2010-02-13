@@ -46,7 +46,7 @@ from Census import (get_census_ids, get_census_id, get_census_columns,
 #
 #------------------------------------------------------------------------
 from TransUtils import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
 #

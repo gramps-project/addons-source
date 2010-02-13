@@ -36,7 +36,8 @@ import gtk
 from gen.lib import EventType, FamilyRelType
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
-from gen.ggettext import sgettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 
 #------------------------------------------------------------------------
 #

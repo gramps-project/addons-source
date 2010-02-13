@@ -26,8 +26,9 @@
 # Standard Python Modules
 #
 #-------------------------------------------------------------------------
-from gettext import gettext as _
-from gettext import ngettext
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
+ngettext = get_addon_translator().ngettext
 import sqlite3 as sqlite
 import time
 

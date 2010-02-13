@@ -30,8 +30,9 @@ from Simple import SimpleAccess, SimpleDoc, SimpleTable
 from gen.display.name import displayer as nd
 from gen.lib import Person
 
-from gettext import gettext as _
-from gettext import ngettext
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
+ngettext = get_addon_translator().ngettext
 
 def run(database, document, *args, **kwargs):
     """

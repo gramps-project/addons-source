@@ -32,7 +32,8 @@
 import os
 import sys
 from xml.parsers.expat import ExpatError, ParserCreate
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 import gtk
 import string
 from subprocess import Popen, PIPE

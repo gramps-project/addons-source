@@ -20,7 +20,7 @@ if gtk.pygtk_version < (2,3,93):
 
 from TransUtils import get_addon_translator
 
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 TEXT = 'cairo'
 BORDER_WIDTH = 10
 
