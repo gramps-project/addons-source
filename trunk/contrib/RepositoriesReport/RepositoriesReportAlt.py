@@ -37,7 +37,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 
 class RepositoryReportAlt(Report):
     """

@@ -31,7 +31,9 @@ import sys
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from gen.ggettext import sgettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
+
 import gen
 
 #------------------------------------------------------------------------
@@ -52,7 +54,7 @@ class PythonGramplet(Gramplet):
                     "db": self.gui.dbstate.db,
                     "gc": self.gc,
                     "self": self,
-                    _("class name|Date"): gen.lib.Date,
+                    "Date": gen.lib.Date,
                     }
         # GUI setup:
         self.gui.textview.set_editable(True)

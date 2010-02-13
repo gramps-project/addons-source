@@ -24,11 +24,10 @@
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from gen.ggettext import sgettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 from QuickReports import run_quick_report_by_name
-
 from Simple import SimpleAccess, SimpleDoc, SimpleTable
-from gettext import gettext as _
 
 cache = {}
 

@@ -46,7 +46,7 @@ import gen.lib
 #
 #------------------------------------------------------------------------
 from TransUtils import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
 #

@@ -29,7 +29,8 @@ Display the number of a person's descendants.
 # Standard Python modules
 #
 #------------------------------------------------------------------------
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 import operator
 
 #------------------------------------------------------------------------

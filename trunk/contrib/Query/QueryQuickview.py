@@ -25,7 +25,7 @@ Run a query on the tables
 
 from Simple import SimpleAccess, SimpleDoc, SimpleTable
 from TransUtils import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+_ = get_addon_translator(__file__).ugettext
 import Utils
 import DateHandler
 import gen.lib
