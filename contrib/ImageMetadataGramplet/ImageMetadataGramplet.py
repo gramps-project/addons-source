@@ -26,7 +26,8 @@
 import os, datetime, time, calendar
 from decimal import Decimal
 
-from gettext import gettext as _gt
+from TransUtils import get_addon_translator
+_gt = get_addon_translator().ugettext
 import gen.mime
 
 # import the pyexiv2 python library classes that we will be needing
@@ -84,13 +85,7 @@ ImageLongitude =    "Exif.GPSInfo.GPSLongitude"
 XmpSubject =        "Xmp.dc.subject"
 
 _DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer, ImageCopyright, 
-    ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude ]
-
-# Get Abbreviated Month names for the year
-_ABBREV_MONTHS = []
-_ABBREV_MONTHS.append("")
-_ABBREV_MONTHS.extend(_dd.short_months[month]
-    for month in range(1, 13) )
+    ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude, XmpSubject ]
 
 #------------------------------------------------------------------------
 # Gramplet class
@@ -127,6 +122,7 @@ class imageMetadataGramplet(Gramplet):
         label = gtk.Label()
         label.set_text("<b>%s</b>" % _("Image Subject"))
         label.set_use_markup(True)
+        label.set_width_chars(15)
         row.pack_start(label, False)
         subject = gtk.Entry()
         self.xmp_widgets["Subject"] = subject
@@ -381,33 +377,27 @@ class imageMetadataGramplet(Gramplet):
         # return date as a string to its callers
         return date2str
  
-    def set_value(self, key, KeyValue):
+    def set_value(self, keytag, KeyValue):
         """
         sets the value for the Exif keys
 
-        @param: key      -- exif key
+        @param: keytag   -- exif key
         @param: KeyValue -- value to be set
         """
 
-        try:
-            self.image[key].value = KeyValue
+        if "Exif." in keytag:
+            try:
+                self.image[keytag].value = KeyValue
 
-        except KeyError:
-            self.image[key] = ExifTag(key, KeyValue)
+            except KeyError:
+                self.image[keytag] = ExifTag(keytag, KeyValue)
 
-    def set_Xmp(self, key, KeyValue):
-        """
-        set the value for XmpSubject
+        elif "Xmp." in keytag:
+            try:
+                self.image[keytag].value = KeyValue
 
-        @param: key -- XmpTag
-        @param: KeyValue -- Xmp.dc.subject value
-        """
-
-        try:
-            self.image[key].value = KeyValue
-
-        except KeyError:
-            self.image[key] = XmpTag(key, KeyValue)
+            except KeyError:
+                self.image[keytag] = XmpTag(keytag, KeyValue)
 
     def write_image_metadata(self, obj):
         """
@@ -418,73 +408,75 @@ class imageMetadataGramplet(Gramplet):
         can_write = os.access(self.orig_image, os.W_OK)
         if can_write:
 
-            # Image Description
-            start = self.exif_widgets["Description"].get_start_iter()
-            end = self.exif_widgets["Description"].get_end_iter()
-            meta_descr = self.exif_widgets["Description"].get_text(start, end)
-            if meta_descr:
-                self.set_value(ImageDescription, meta_descr)
+            for keytag in _DATAMAP:
 
-            # image Date/ Time
-            datetime = self.exif_widgets["Date"].get_text()
-            if datetime:
-                self.set_value(ImageDateTime, datetime)
+                # Image Description
+                start = self.exif_widgets["Description"].get_start_iter()
+                end = self.exif_widgets["Description"].get_end_iter()
+                meta_descr = self.exif_widgets["Description"].get_text(start, end)
+                if meta_descr:
+                    self.set_value(ImageDescription, meta_descr)
 
-            # Image Photographer
-            photographer = self.exif_widgets["Photographer"].get_text()
-            if photographer:
-                self.set_value(ImagePhotographer, photographer)
+                # image Date/ Time
+                datetime = self.exif_widgets["Date"].get_text()
+                if datetime:
+                    self.set_value(ImageDateTime, datetime)
 
-            # Image Copyright
-            copyright = self.exif_widgets["Copyright"].get_text()
-            if copyright:
-                self.set_value(ImageCopyright, copyright)
+                # Image Photographer
+                photographer = self.exif_widgets["Photographer"].get_text()
+                if photographer:
+                    self.set_value(ImagePhotographer, photographer)
 
-            # GPS Latitude
-            latitude = self.exif_widgets["Latitude"].get_text()
-            if latitude:
+                # Image Copyright
+                copyright = self.exif_widgets["Copyright"].get_text()
+                if copyright:
+                    self.set_value(ImageCopyright, copyright)
 
-                # Convert Decimal to DDMMSS 
-                if "." in latitude:
-                    degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS(latitude, "Latitude")
-                    latitude = ("%(deg)d %(mins)d %(secs)d") % {
-                        'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
-                    latitude = coords_to_rational(latitude)
-                else:
-                    latitude = coords_to_rational(latitude)
-                    latref = self.exif_widgets["LatitudeRef"].get_active()
-                if latref == 1:
-                    latref = "N"
-                elif latref == 2:
-                    latref = "S"
-                self.set_value(ImageLatitude, latitude)
-                self.set_value(ImageLatitudeRef, latref)
+                # GPS Latitude
+                latitude = self.image_dict[ImageLatitude]
+                if latitude:
 
-            # GPS Longitude
-            longitude = self.exif_widgets["Longitude"].get_text()
-            if longitude:
+                    # Convert Decimal to DDMMSS 
+                    if "." in latitude:
+                        degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS(latitude, "Latitude")
+                        latitude = ("%(deg)d %(mins)d %(secs)d") % {
+                            'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
+                        latitude = coords_to_rational(latitude)
+                    else:
+                        latitude = coords_to_rational(latitude)
+                        latref = self.exif_widgets["LatitudeRef"].get_active()
+                    if latref == 1:
+                        latref = "N"
+                    elif latref == 2:
+                        latref = "S"
+                    self.set_value(ImageLatitude, latitude)
+                    self.set_value(ImageLatitudeRef, latref)
 
-                # Convert Decimal to DDMMSS 
-                if "." in longitude:
-                    degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS(longitude, "Longitude")
-                    longitude = ("%(deg)d %(mins)d %(secs)d") % {
-                        'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
-                    longitude = coords_to_rational( longitude )
-                else:
-                    longitude = coords_to_rational( longitude )
-                    longref = self.exif_widgets["LongitudeRef"].get_active()
-                if longref == 1:
-                    longref = "E"
-                elif longref == 2:
-                    longref = "W"  
-                self.set_value(ImageLongitude, longitude)
-                self.set_value(ImageLongitudeRef, longref)
+                # GPS Longitude
+                longitude = self.image_dict[ImageLongitude]
+                if longitude:
 
-            # Xmp Subject
-            keywords = self.xmp_widgets["Subject"].get_text()
-            if keywords:
-                keywords = [(subject) for subject in keywords.split(",")]
-            self.set_Xmp(XmpSubject, keywords)  
+                    # Convert Decimal to DDMMSS 
+                    if "." in longitude:
+                        degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS(longitude, "Longitude")
+                        longitude = ("%(deg)d %(mins)d %(secs)d") % {
+                            'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
+                        longitude = coords_to_rational( longitude )
+                    else:
+                        longitude = coords_to_rational( longitude )
+                        longref = self.exif_widgets["LongitudeRef"].get_active()
+                    if longref == 1:
+                        longref = "E"
+                    elif longref == 2:
+                        longref = "W"  
+                    self.set_value(ImageLongitude, longitude)
+                    self.set_value(ImageLongitudeRef, longref)
+
+                # Xmp Subject
+                keywords = self.xmp_widgets["Subject"].get_text()
+                if keywords:
+                    keywords = [(subject) for subject in keywords.split(",")]
+                self.set_value(XmpSubject, keywords)  
 
             # write the metadata to the image
             self.image.write()
@@ -588,42 +580,33 @@ class imageMetadataGramplet(Gramplet):
                 # read the image metadata
                 self.image.read()
 
-                for keytag in _DATAMAP:
+                # set up image exif keys for use in this gramplet 
+                exifKeyTags = [(keytag) for keytag in self.image.exif_keys
+                               if keytag in _DATAMAP]
+
+                exifKeyTags += [(keytag) for keytag in self.image.xmp_keys
+                                if keytag in _DATAMAP]
+
+                # set up image value dictionary
+                self.image_dict = dict( (keytag, []) for keytag in exifKeyTags)
+
+                for keytag in exifKeyTags:
 
                     # Image description
                     if keytag == ImageDescription:
-                        description = self.get_value(keytag)
-                        if description:
-                            self.exif_widgets["Description"].set_text(description)
+                        self.exif_widgets["Description"].set_text( self.get_value(keytag) )
 
                     # Image DateTime
                     elif keytag == ImageDateTime:
-                        datetime = self.get_value(keytag)
-                        if datetime: 
-                            self.exif_widgets["Date"].set_text(datetime)
+                        self.exif_widgets["Date"].set_text( self.get_value (keytag ) )
 
                     # image photographer
                     elif keytag == ImagePhotographer:
-                        photographer = self.get_value(keytag)
-                        if photographer:
-                            self.exif_widgets["Photographer"].set_text(photographer)
+                        self.exif_widgets["Photographer"].set_text( self.get_value( keytag ) )
 
                     # Image Copyright
                     elif keytag == ImageCopyright:
-                        copyright = self.get_value(keytag)
-                        if copyright:
-                            self.exif_widgets["Copyright"].set_text(copyright)
-
-                    # GPS Latitude Reference
-                    elif keytag == ImageLatitudeRef:
-                        latref = self.get_value(keytag)
-                        if latref:  
-                            if latref == "N":
-                                self.exif_widgets["LatitudeRef"].set_active(1)
-                            elif latref == "S":
-                                self.exif_widgets["LatitudeRef"].set_active(2)
-                        else:
-                            self.exif_widgets["LatitudeRef"].set_active(0)
+                        self.exif_widgets["Copyright"].set_text( self.get_value( keytag ) )
 
                     # GPS Latitude
                     elif keytag == ImageLatitude:
@@ -635,18 +618,20 @@ class imageMetadataGramplet(Gramplet):
                             seconds, rest = seconds.split("/", 1)
                             latitude = "%(deg)s %(mins)s %(sec)s" % {
                                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
-                            self.exif_widgets["Latitude"].set_text( latitude )
+                            disp_lat = "%(deg)s° %(mins)s′ %(sec)s″" % {
+                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
+                            self.exif_widgets["Latitude"].set_text( disp_lat )
+                            self.image_dict[keytag].append(latitude)
 
-                    # GPS Longitude Reference
-                    elif keytag == ImageLongitudeRef:
-                        longref = self.get_value(keytag)
-                        if longref:
-                            if longref == "E":
-                                self.exif_widgets["LongitudeRef"].set_active(1)
-                            elif longref == "W":
-                                self.exif_widgets["LongitudeRef"].set_active(2)  
-                        else:
-                            self.exif_widgets["LongitudeRef"].set_active(0)
+                            # Latitude Reference
+                            latref = self.get_value(ImageLatitudeRef)
+                            if latref:
+                                if latref == "N":
+                                    self.exif_widgets["LatitudeRef"].set_active(1)
+                                elif latref == "S":
+                                    self.exif_widgets["LatitudeRef"].set_active(2)
+                            else:
+                                self.exif_widgets["LatitudeRef"].set_active(0)
 
                     # GPS Longitude
                     elif keytag == ImageLongitude:
@@ -658,16 +643,33 @@ class imageMetadataGramplet(Gramplet):
                             seconds, rest = seconds.split("/", 1)
                             longitude = "%(deg)s %(mins)s %(sec)s" % {
                                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
-                            self.exif_widgets["Longitude"].set_text( longitude )
+                            disp_long = "%(deg)s° %(mins)s′ %(sec)s″" % {
+                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
+                            self.exif_widgets["Longitude"].set_text( disp_long )
+                            self.image_dict[keytag].append( longitude )
+
+                            # Longitude Reference
+                            longref = self.get_value(ImageLongitudeRef)
+                            if longref:
+                                if longref == "E":
+                                    self.exif_widgets["LongitudeRef"].set_active(1)
+                                elif longref == "W":
+                                    self.exif_widgets["LongitudeRef"].set_active(2)
+                            else:
+                                self.exif_widgets["LongitudeRef"].set_active(0)
 
                 # Xmp Subject
                 xmpKeyTags = self.image.xmp_keys
+                xmpKeyTags = [(keytag) for keytag in xmpKeyTags
+                              if keytag in _DATAMAP]
                 for keytag in xmpKeyTags:
-
                     if keytag == XmpSubject:
-                        subject = self.get_value(XmpSubject)
-                        if subject:
-                            self.xmp_widgets["Subject"].set_text(subject)   
+                        keywords = self.get_value( keytag )
+                        if keywords:
+                            subject = ""
+                            for word in keywords:
+                                subject += word + ","
+                            self.xmp_widgets["Subject"].set_text(subject)
 
             # image is not readable
             else:
@@ -718,6 +720,12 @@ class imageMetadataGramplet(Gramplet):
                                    _('48.21"E, -18.2412 or -18:9:48.21)'))
 
     def Convert_Decimal_DDMMSS(self, Coordinates, CoordinateType):
+        """
+        Converts Decimal GPS Coordinates to Degrees, Minutes, Seconds GPS Coordinates
+
+        @param: Coordinates    -- GPS Decimal Coordinates
+        @param: CoordinateType -- either Latitude/ Longitude
+        """
 
         if CoordinateType == "Latitude":
             if Coordinates[0] == "-":
@@ -752,9 +760,11 @@ class imageMetadataGramplet(Gramplet):
         seconds = int(float(seconds))
 
         # change display
-        disp_coordinates = "%(deg)s %(mins)s %(sec)s" % {
+        disp_coordinates = "%(deg)s° %(mins)s′ %(sec)s″" % {
             'deg' : str(degrees), 'mins' : str(minutes), 'sec' : str(seconds) }
-        self.exif_widgets[CoordinateType].set_text(disp_coordinates)
+        coordinates = "%(deg)s %(mins)s %(sec)s" % {
+            'deg' : str(degrees), 'mins' : str(minutes), 'sec' : str(seconds) }
+        self.exif_widgets[CoordinateType].set_text(coordinates)
         self.exif_widgets["%sRef" % CoordinateType].set_active(CoordinateRef)
 
         # return degrees, minutes, seconds, CoordinateReference to its callers
