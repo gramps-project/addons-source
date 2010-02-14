@@ -51,27 +51,60 @@ def extend(class_):
             self.gramplet_pane.on_delete()
 
         def build_widget(self):
-            container = super(SidebarView, self).build_widget()
-            widget = gtk.HPaned()
+            self.top_level = gtk.Frame()
+            self.main_pane = super(SidebarView, self).build_widget()
             self.gramplet_pane = \
                 GrampletPane("%s_%s" % (self.navigation_type(), 
                                         self.__class__.__name__), 
                              self, self.dbstate, self.uistate, 
                              column_count=1,
                              default_gramplets=self.DEFAULT_GRAMPLETS)
-            widget.pack1(container, resize=True, shrink=True)
+            if self.gramplet_pane.pane_orientation == "horizontal":
+                widget = gtk.HPaned()
+            elif self.gramplet_pane.pane_orientation == "vertical":
+                widget = gtk.VPaned()
+            elif self.gramplet_pane.pane_orientation == "none":
+                self.top_level.add(self.main_pane)
+                return self.top_level
+            else:
+                raise AttributeError("invalid pane_orientation: '%s'" % 
+                                     self.gramplet_pane.pane_orientation)
+            widget.pack1(self.main_pane, resize=True, shrink=True)
             widget.pack2(self.gramplet_pane, resize=True, shrink=True)
             widget.set_position(self.gramplet_pane.pane_position)
             widget.connect("notify", self.move_handle)
-            return widget
+            self.multipane = widget
+            self.top_level.add(widget)
+            return self.top_level
+
+        def change_orientation(self, orientation):
+            self.gramplet_pane.pane_orientation = orientation
+            self.top_level.remove(self.multipane)
+            if isinstance(self.multipane, gtk.Paned):
+                self.multipane.remove(self.main_pane)
+                self.multipane.remove(self.gramplet_pane)
+            # else is just the main_pane
+            self.gramplet_pane.pane_position = -1
+            if self.gramplet_pane.pane_orientation == "horizontal":
+                self.multipane = gtk.HPaned()
+            elif self.gramplet_pane.pane_orientation == "vertical":
+                self.multipane = gtk.VPaned()
+            elif self.gramplet_pane.pane_orientation == "none":
+                self.multipane = self.main_pane
+                self.top_level.add(self.multipane)
+                return
+            else:
+                raise AttributeError("invalid pane_orientation: '%s'" % 
+                                     self.gramplet_pane.pane_orientation)
+            self.multipane.pack1(self.main_pane, resize=True, shrink=True)
+            self.multipane.pack2(self.gramplet_pane, resize=True, shrink=True)
+            self.multipane.set_position(self.gramplet_pane.pane_position)
+            self.multipane.connect("notify", self.move_handle)
+            self.top_level.add(self.multipane)
+            self.multipane.show()
 
         def move_handle(self, widget, notify_type):
             if notify_type.name == "position-set":
-                widget.get_child1().set_size_request(-1, -1)
-                widget.get_child2().set_size_request(-1, -1)
-                self.gramplet_pane.pane_width = widget.get_child2().allocation.width
-                self.gramplet_pane.pane_other_width = widget.get_child1().allocation.width
-                self.gramplet_pane.pane_width = widget.get_child2().allocation.width
                 self.gramplet_pane.pane_position = widget.get_position()
 
         def ui_definition(self):
@@ -117,6 +150,33 @@ def extend(class_):
             else:
                 return False
 
+        def split_panel(self, configdialog):
+            orientation = self.gramplet_pane.pane_orientation
+            table = gtk.Table(3, 2)
+            table.set_border_width(12)
+            table.set_col_spacings(6)
+            table.set_row_spacings(6)
+
+            from PluginUtils import make_gui_option
+            from gen.plug.menu import EnumeratedListOption
+            # Add types:
+            self.type_list = EnumeratedListOption(_("Split view"), 
+                                    self.gramplet_pane.pane_orientation)
+            for item in [("horizontal", _("Horizontal views")), 
+                         ("vertical", _("Vertical views")), 
+                         ("none", _("No split")), 
+                         ]:
+                self.type_list.add_item(item[0], item[1])
+            # Add particular lists:
+            self.type_widget, option = make_gui_option(self.type_list, 
+                            self.dbstate, self.uistate, [])
+            self.type_widget.value_changed = self.update_settings
+            table.attach(self.type_widget, 1, 4, 5, 6, yoptions=0)
+            return [_("Split View"), table]
+
+        def update_settings(self):
+            self.change_orientation(self.type_list.get_value())
+
         def _get_configure_page_funcs(self):
             """
             Return a list of functions that create gtk elements to use in the 
@@ -133,7 +193,7 @@ def extend(class_):
                     else:
                         retval += other
                 func = self.gramplet_pane._get_configure_page_funcs()
-                return retval + func()
+                return [self.split_panel] + retval + func()
             return get_configure_page_funcs
 
     return SidebarView
