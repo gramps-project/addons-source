@@ -65,6 +65,7 @@ def extend(class_):
                 widget = gtk.VPaned()
             elif self.gramplet_pane.pane_orientation == "none":
                 self.top_level.add(self.main_pane)
+                self.multipane = None
                 return self.top_level
             else:
                 raise AttributeError("invalid pane_orientation: '%s'" % 
@@ -79,7 +80,10 @@ def extend(class_):
 
         def change_orientation(self, orientation):
             self.gramplet_pane.pane_orientation = orientation
-            self.top_level.remove(self.multipane)
+            if self.multipane:
+                self.top_level.remove(self.multipane)
+            else:
+                self.top_level.remove(self.main_pane)
             if isinstance(self.multipane, gtk.Paned):
                 self.multipane.remove(self.main_pane)
                 self.multipane.remove(self.gramplet_pane)
@@ -90,8 +94,8 @@ def extend(class_):
             elif self.gramplet_pane.pane_orientation == "vertical":
                 self.multipane = gtk.VPaned()
             elif self.gramplet_pane.pane_orientation == "none":
-                self.multipane = self.main_pane
-                self.top_level.add(self.multipane)
+                self.multipane = None
+                self.top_level.add(self.main_pane)
                 return
             else:
                 raise AttributeError("invalid pane_orientation: '%s'" % 
@@ -101,7 +105,7 @@ def extend(class_):
             self.multipane.set_position(self.gramplet_pane.pane_position)
             self.multipane.connect("notify", self.move_handle)
             self.top_level.add(self.multipane)
-            self.multipane.show()
+            self.multipane.show_all()
 
         def move_handle(self, widget, notify_type):
             if notify_type.name == "position-set":
