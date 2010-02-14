@@ -164,22 +164,22 @@ def extend(class_):
             from PluginUtils import make_gui_option
             from gen.plug.menu import EnumeratedListOption
             # Add types:
-            self.type_list = EnumeratedListOption(_("Split view"), 
+            self.view_list = EnumeratedListOption(_("Split view"), 
                                     self.gramplet_pane.pane_orientation)
             for item in [("horizontal", _("Horizontal views")), 
                          ("vertical", _("Vertical views")), 
                          ("none", _("No split")), 
                          ]:
-                self.type_list.add_item(item[0], item[1])
+                self.view_list.add_item(item[0], item[1])
             # Add particular lists:
-            self.type_widget, option = make_gui_option(self.type_list, 
+            type_widget, option = make_gui_option(self.view_list, 
                             self.dbstate, self.uistate, [])
-            self.type_widget.value_changed = self.update_settings
-            table.attach(self.type_widget, 1, 4, 5, 6, yoptions=0)
+            type_widget.value_changed = self.update_settings
+            table.attach(type_widget, 1, 4, 5, 6, yoptions=0)
             return [_("Split View"), table]
 
         def update_settings(self):
-            self.change_orientation(self.type_list.get_value())
+            self.change_orientation(self.view_list.get_value())
 
         def _get_configure_page_funcs(self):
             """
