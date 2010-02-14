@@ -25,22 +25,23 @@
 import gtk
 import gobject
 
-from relview import RelationshipView
-from eventview import EventView
-from familyview import FamilyView
-from fanchartview import FanChartView
-from geoview import GeoView
-from htmlrenderer import HtmlView
-from mediaview import MediaView
-from noteview import NoteView
-from pedigreeview import PedigreeView
-from pedigreeviewext import PedigreeViewExt
-from personlistview import PersonListView
-from persontreeview import PersonTreeView
-from placelistview import PlaceListView
-from placetreeview import PlaceTreeView
-from repoview import RepositoryView
-from sourceview import SourceView
+views = [("relview", "RelationshipView", ["TODO Gramplet"]),
+         ("eventview", "EventView", ["TODO Gramplet"]),
+         ("familyview", "FamilyView", ["TODO Gramplet"]),
+         ("fanchartview", "FanChartView", ["TODO Gramplet"]),
+         ("geoview", "GeoView", ["TODO Gramplet"]),
+         ("htmlrenderer", "HtmlView", ["TODO Gramplet"]),
+         ("mediaview", "MediaView", ["TODO Gramplet"]),
+         ("noteview", "NoteView", ["TODO Gramplet"]),
+         ("pedigreeview", "PedigreeView", ["TODO Gramplet"]),
+         ("pedigreeviewext", "PedigreeViewExt", ["TODO Gramplet"]),
+         ("personlistview", "PersonListView", ["TODO Gramplet"]),
+         ("persontreeview", "PersonTreeView", ["TODO Gramplet"]),
+         ("placelistview", "PlaceListView", ["TODO Gramplet"]),
+         ("placetreeview", "PlaceTreeView", ["TODO Gramplet"]),
+         ("repoview", "RepositoryView", ["TODO Gramplet"]),
+         ("sourceview", "SourceView", ["TODO Gramplet"]),
+         ]
 
 from gui.widgets.grampletpane import GrampletPane
 
@@ -202,98 +203,13 @@ def extend(class_):
 
     return SidebarView
 
-class RelationshipViewSidebar(extend(RelationshipView)):
-    """
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
-class EventViewSidebar(extend(EventView)):
-    """
-    EventView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
-class FamilyViewSidebar(extend(FamilyView)):
-    """
-    FamilyView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class FanChartViewSidebar(extend(FanChartView)):
-    """
-    FanChartView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class GeoViewSidebar(extend(GeoView)):
-    """
-    GeoView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class HtmlViewSidebar(extend(HtmlView)):
-    """
-    HtmlView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class MediaViewSidebar(extend(MediaView)):
-    """
-    MediaView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class NoteViewSidebar(extend(NoteView)):
-    """
-    NoteView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PedigreeViewSidebar(extend(PedigreeView)):
-    """
-    PedigreeView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PedigreeViewExtSidebar(extend(PedigreeViewExt)):
-    """
-    PedigreeViewext with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PersonListViewSidebar(extend(PersonListView)):
-    """
-    PersonlistView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PersonTreeViewSidebar(extend(PersonTreeView)):
-    """
-    PersontreeView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PlaceListViewSidebar(extend(PlaceListView)):
-    """
-    PlacelistView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class PlaceTreeViewSidebar(extend(PlaceTreeView)):
-    """
-    PlacetreeView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class RepositoryViewSidebar(extend(RepositoryView)):
-    """
-    RepoView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
-class SourceViewSidebar(extend(SourceView)):
-    """
-    SourceView with Gramplet Sidebar.
-    """
-    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
-
+for library, name, gramplets in views:
+    try:
+        exec("from %s import %s" % (library, name))
+        exec("""class %sSidebar(extend(%s)):
+    DEFAULT_GRAMPLETS = %s
+""" % (name, name, gramplets))
+    except:
+        pass
