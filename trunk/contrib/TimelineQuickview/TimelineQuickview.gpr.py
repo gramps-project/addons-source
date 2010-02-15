@@ -15,5 +15,5 @@ register(QUICKREPORT,
          authors = ["Douglas Blank"],
          authors_email = ["dblank@cs.brynmawr.edu"],
          category = CATEGORY_QR_PERSON,
-         runfunc = 'run'
+         runfunc = 'run',
   )

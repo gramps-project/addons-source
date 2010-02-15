@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------------------------------
 
-pmgr = register(REPORT,
+register(REPORT,
     id='denominoviso',
     name = _('DenominoViso'),
     category = CATEGORY_WEB,
@@ -21,4 +21,4 @@ pmgr = register(REPORT,
                     'upon mouse-events.'),
     version = '2.0',
     gramps_target_version = '3.2',
-                )
+         )

@@ -38,5 +38,6 @@ register(GRAMPLET,
          detached_width = 510,
          detached_height = 480,
          expand = True,
-         gramplet_title = _("Census Gramplet")
+         gramplet_title = _("Census Gramplet"),
+         help_url="Census Gramplet",
         )

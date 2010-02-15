@@ -35,5 +35,5 @@ register(MAPSERVICE,
     description = _("Creates data file for GoogleEarth and opens it"),
     mapservice = 'GoogleEarthService',
     authors=[u"Peter Landgren"],
-    authors_email=["peter.talken@telia.com"]
+    authors_email=["peter.talken@telia.com"],
     )

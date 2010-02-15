@@ -26,7 +26,7 @@
 #------------------------------------------------------------------------
 import re
 import gobject
-import urllib
+import urllib2
 from xml.dom import minidom, Node
 # FIXME For Python 3:
 # Change:
@@ -117,7 +117,10 @@ class HeadlineNewsGramplet(Gramplet):
         fresh = True
         yield True
         for (feed_description, feed_type, feed_url, pretty_url) in self.feeds:
-            fp = urllib.urlopen(feed_url)
+            try:
+                fp = urllib2.urlopen(feed_url, timeout=5)
+            except:
+                continue
             if feed_type == "wiki":
                 text = fp.read()
                 if fresh:

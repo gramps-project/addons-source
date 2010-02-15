@@ -9,4 +9,5 @@ register(GRAMPLET,
          version="0.0.1",
          gramps_target_version = "3.2",
          fname="ClockGramplet.py",
+         help_url="Gramplets#GUI_Interface",
          )
