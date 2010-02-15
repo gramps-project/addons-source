@@ -433,44 +433,44 @@ class imageMetadataGramplet(Gramplet):
                     self.set_value(ImageCopyright, copyright)
 
                 # GPS Latitude
-                latitude = self.image_dict[ImageLatitude]
+                latitude = self.GPS_dict[ "Latitude" ]
                 if latitude:
 
                     # Convert Decimal to DDMMSS 
                     if "." in latitude:
-                        degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS(latitude, "Latitude")
-                        latitude = ("%(deg)d %(mins)d %(secs)d") % {
+                        degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS( latitude, "Latitude" )
+                        latitude = "%(deg)d %(mins)d %(secs)d" % {
                             'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
-                        latitude = coords_to_rational(latitude)
+                        latitude = coords_to_rational( latitude )
                     else:
-                        latitude = coords_to_rational(latitude)
-                        latref = self.exif_widgets["LatitudeRef"].get_active()
+                        latitude = coords_to_rational( latitude )
+                    latref = self.exif_widgets["LatitudeRef"].get_active()
                     if latref == 1:
                         latref = "N"
                     elif latref == 2:
                         latref = "S"
-                    self.set_value(ImageLatitude, latitude)
-                    self.set_value(ImageLatitudeRef, latref)
+                    self.set_value( ImageLatitude, latitude )
+                    self.set_value( ImageLatitudeRef, latref )
 
                 # GPS Longitude
-                longitude = self.image_dict[ImageLongitude]
+                longitude = self.GPS_dict[ "Longitude" ]
                 if longitude:
 
                     # Convert Decimal to DDMMSS 
                     if "." in longitude:
-                        degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS(longitude, "Longitude")
-                        longitude = ("%(deg)d %(mins)d %(secs)d") % {
+                        degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS( longitude, "Longitude" )
+                        longitude = "%(deg)d %(mins)d %(secs)d" % {
                             'deg' : degrees, 'mins' : minutes, 'secs' : seconds}
                         longitude = coords_to_rational( longitude )
                     else:
                         longitude = coords_to_rational( longitude )
-                        longref = self.exif_widgets["LongitudeRef"].get_active()
+                    longref = self.exif_widgets["LongitudeRef"].get_active()
                     if longref == 1:
                         longref = "E"
                     elif longref == 2:
                         longref = "W"  
-                    self.set_value(ImageLongitude, longitude)
-                    self.set_value(ImageLongitudeRef, longref)
+                    self.set_value( ImageLongitude, longitude )
+                    self.set_value( ImageLongitudeRef, longref )
 
                 # Xmp Subject
                 keywords = self.xmp_widgets["Subject"].get_text()
@@ -587,9 +587,10 @@ class imageMetadataGramplet(Gramplet):
                 exifKeyTags += [(keytag) for keytag in self.image.xmp_keys
                                 if keytag in _DATAMAP]
 
-                # set up image value dictionary
-                self.image_dict = dict( (keytag, []) for keytag in exifKeyTags)
-
+                # Set up GPS dictionary
+                self.GPS_dict = dict (keytag, []) for keytag in [ "LatitudeRef", "Latitude", 
+                                                                  "LongitudeRef", "Longitude" ] )
+ 
                 for keytag in exifKeyTags:
 
                     # Image description
@@ -610,7 +611,7 @@ class imageMetadataGramplet(Gramplet):
 
                     # GPS Latitude
                     elif keytag == ImageLatitude:
-                        latitude = self.get_value(keytag)
+                        latitude = self.get_value( ImageLatitude )
                         if latitude:
                             degrees, minutes, seconds = latitude.split(" ", 2)
                             degrees, rest = degrees.split("/", 1)
@@ -621,21 +622,19 @@ class imageMetadataGramplet(Gramplet):
                             disp_lat = "%(deg)s° %(mins)s′ %(sec)s″" % {
                                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
                             self.exif_widgets["Latitude"].set_text( disp_lat )
-                            self.image_dict[keytag].append(latitude)
+                            self.GPS_dict[ "Latitude" ] = latitude
 
                             # Latitude Reference
-                            latref = self.get_value(ImageLatitudeRef)
-                            if latref:
-                                if latref == "N":
-                                    self.exif_widgets["LatitudeRef"].set_active(1)
-                                elif latref == "S":
-                                    self.exif_widgets["LatitudeRef"].set_active(2)
-                            else:
-                                self.exif_widgets["LatitudeRef"].set_active(0)
+                            latref = self.get_value( ImageLatitudeRef )
+                            self.GPS_dict[ "LatitudeRef" ] = latref
+                            if latref == "N":
+                                self.exif_widgets["LatitudeRef"].set_active(1)
+                            elif latref == "S":
+                                self.exif_widgets["LatitudeRef"].set_active(2)
 
                     # GPS Longitude
                     elif keytag == ImageLongitude:
-                        longitude = self.get_value(keytag)
+                        longitude = self.get_value( ImageLongitude )
                         if longitude:
                             degrees, minutes, seconds = longitude.split(" ", 2)
                             degrees, rest = degrees.split("/", 1)
@@ -646,17 +645,15 @@ class imageMetadataGramplet(Gramplet):
                             disp_long = "%(deg)s° %(mins)s′ %(sec)s″" % {
                                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
                             self.exif_widgets["Longitude"].set_text( disp_long )
-                            self.image_dict[keytag].append( longitude )
+                            self.GPS_dict[ "Longitude" ] = longitude
 
                             # Longitude Reference
-                            longref = self.get_value(ImageLongitudeRef)
-                            if longref:
-                                if longref == "E":
-                                    self.exif_widgets["LongitudeRef"].set_active(1)
-                                elif longref == "W":
-                                    self.exif_widgets["LongitudeRef"].set_active(2)
-                            else:
-                                self.exif_widgets["LongitudeRef"].set_active(0)
+                            longref = self.get_value( ImageLongitudeRef )
+                            self.GPS_dict[ "LongitudeRef" ] = longref
+                            if longref == "E":
+                                self.exif_widgets["LongitudeRef"].set_active(1)
+                            elif longref == "W":
+                                self.exif_widgets["LongitudeRef"].set_active(2)
 
                 # Xmp Subject
                 xmpKeyTags = self.image.xmp_keys
@@ -727,32 +724,21 @@ class imageMetadataGramplet(Gramplet):
         @param: CoordinateType -- either Latitude/ Longitude
         """
 
-        if CoordinateType == "Latitude":
-            if Coordinates[0] == "-":
-                CoordinateRef = 2
-            else:
-                CoordinateRef = 1
+        if Coordinates[0] == "-":
+            CoordinateRef = 2
         else:
-            if Coordinates[0] == "-":
-                CoordinateRef = 2
-            else:
-                CoordinateRef = 1
+            CoordinateRef = 1
 
         degrees = int(float(Coordinates))
         degrees = str(degrees)
         if degrees[0] == "-":
             degrees = degrees[1:]
-        degrees = int(degrees)
         rest, minutes = Coordinates.split(".", 1)
         minutes = "." + minutes
-
-        minutes = Decimal(minutes)
 
         minutes = Decimal(minutes) * 60
         minutes = str(minutes)
         minutes, seconds = minutes.split(".", 1)
-
-        minutes = int(minutes)
 
         seconds = "." + seconds
         seconds = Decimal(seconds) * 60
@@ -760,10 +746,10 @@ class imageMetadataGramplet(Gramplet):
         seconds = int(float(seconds))
 
         # change display
-        disp_coordinates = "%(deg)s° %(mins)s′ %(sec)s″" % {
-            'deg' : str(degrees), 'mins' : str(minutes), 'sec' : str(seconds) }
         coordinates = "%(deg)s %(mins)s %(sec)s" % {
-            'deg' : str(degrees), 'mins' : str(minutes), 'sec' : str(seconds) }
+            'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
+        disp_coordinates = "%(deg)s° %(mins)s′ %(sec)s″" % {
+            'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
         self.exif_widgets[CoordinateType].set_text(coordinates)
         self.exif_widgets["%sRef" % CoordinateType].set_active(CoordinateRef)
 
@@ -772,23 +758,27 @@ class imageMetadataGramplet(Gramplet):
 
     def convert_gps(self, obj):
 
+        @staticmethod
         def convert_coordinates(Coordinates, CoordinateType):
 
             if Coordinates == "":
-                WarningDialog(_("There are no GPS Coordinates to Convert!"))
-                return
+                return None
 
             elif "." not in Coordinates:
-
-                WarningDialog(_("There is nothing to convert.  GPS Coordinates are already in "
-                                "Degrees, Minutes, Seconds Format!"))
-                return
+                return False
 
             elif "." in Coordinates:
-                deg, mins, sec, coorref = self.Convert_Decimal_DDMMSS(Coordinates, CoordinateType)
+                return True
 
-        convert_coordinates( self.exif_widgets["Latitude"].get_text(), "Latitude" )
-        convert_coordinates(self.exif_widgets["Longitude"].get_text(), "Longitude")
+        latitude = convert_coordinates( self.GPS_dict[ "Latitude" ],  "Latitude"  )
+        if latitude == False:
+            OkDialog(_("There is nothing to convert.  GPS Coordinates are already in "
+                       "Degrees, Minutes, Seconds Format!"))
+
+        elif latitude == None:
+            WarningDialog(_("There are no GPS Coordinates to Convert!"))
+
+        convert_coordinates( self.GPS_dict[ "Longitude" ], "Longitude" )
 
 def string_to_rational(Coordinate):
     """ convert string to rational variable for GPS """
