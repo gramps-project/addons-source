@@ -40,7 +40,7 @@ class ClockWidget(gtk.Widget):
         gtk.Widget.__init__(self)
         self.draw_gc = None
         self.layout = self.create_pango_layout(TEXT)
-        self.layout.set_font_description(pango.FontDescription("sans serif 8"))
+        self.layout.set_font_description(pango.FontDescription("sans 8"))
         self.timer = gobject.timeout_add (1000, progress_timeout, self)
                                            
     def do_realize(self):
