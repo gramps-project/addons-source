@@ -33,6 +33,6 @@ register(TOOL,
          category = TOOL_DBPROC,
          toolclass = 'SetAttributeWindow',
          optionclass = 'SetAttributeOptions',
-         tool_modes = [TOOL_MODE_GUI]
+         tool_modes = [TOOL_MODE_GUI],
          )
 

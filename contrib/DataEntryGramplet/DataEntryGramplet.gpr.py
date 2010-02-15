@@ -16,6 +16,7 @@ register(GRAMPLET,
          gramps_target_version = "3.2",
          status=STABLE,
          fname="DataEntryGramplet.py",
+         help_url="Data Entry Gramplet",
          )
 
 

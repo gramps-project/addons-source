@@ -8,4 +8,5 @@ register(GRAMPLET,
          gramplet_title=_("Python Shell"),
          version = "1.0.0",
          gramps_target_version = "3.2",
+         help_url="PythonGramplet",
          )
