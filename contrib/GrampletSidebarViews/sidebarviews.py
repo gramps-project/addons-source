@@ -55,8 +55,7 @@ def extend(class_):
             self.top_level = gtk.Frame()
             self.main_pane = super(SidebarView, self).build_widget()
             self.gramplet_pane = \
-                GrampletPane("%s_%s" % (self.navigation_type(), 
-                                        self.__class__.__name__), 
+                GrampletPane(self.ident + "_gramplets",
                              self, self.dbstate, self.uistate, 
                              column_count=1,
                              default_gramplets=self.DEFAULT_GRAMPLETS)
@@ -212,4 +211,4 @@ for library, name, gramplets in views:
     DEFAULT_GRAMPLETS = %s
 """ % (name, name, gramplets))
     except:
-        pass
+        print "ERROR: unable to create '%s'" % name
