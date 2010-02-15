@@ -212,3 +212,5 @@ for library, name, gramplets in views:
 """ % (name, name, gramplets))
     except:
         print "ERROR: unable to create '%s'" % name
+        import traceback
+        traceback.print_exc()
