@@ -1,0 +1,187 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <erik@ylana.telenet.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 17:35+0100\n"
+"PO-Revision-Date: 2010-02-18 17:35+0100\n"
+"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+msgid "Data Entry Gramplet"
+msgstr "Datumingave-gramplet"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:12
+msgid "Data Entry"
+msgstr "Datumingave"
+
+#: DataEntryGramplet/DataEntryGramplet.py:55
+msgid "Active person"
+msgstr "Actieve persoon"
+
+#: DataEntryGramplet/DataEntryGramplet.py:56
+msgid "Family:"
+msgstr "Familie:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:58
+#: DataEntryGramplet/DataEntryGramplet.py:85
+msgid "Surname, Given"
+msgstr "Achternaam, voornaam"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "Gender"
+msgstr "Geslacht"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "female"
+msgstr "vrouwelijk"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "male"
+msgstr "mannelijk"
+
+#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:86
+msgid "unknown"
+msgstr "onbekend"
+
+#: DataEntryGramplet/DataEntryGramplet.py:60
+#: DataEntryGramplet/DataEntryGramplet.py:87
+msgid "Birth"
+msgstr "Geboorte"
+
+#: DataEntryGramplet/DataEntryGramplet.py:61
+#: DataEntryGramplet/DataEntryGramplet.py:88
+msgid "Death"
+msgstr "Overlijden"
+
+#: DataEntryGramplet/DataEntryGramplet.py:69
+msgid "Save"
+msgstr "Opslaan"
+
+#: DataEntryGramplet/DataEntryGramplet.py:72
+msgid "Abandon"
+msgstr "Annuleren"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+msgid "New person"
+msgstr "Nieuwe persoon"
+
+#: DataEntryGramplet/DataEntryGramplet.py:78
+msgid "Add relation"
+msgstr "Realtie toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:79
+msgid "No relation to active person"
+msgstr "Geen relatie met de actieve persoon"
+
+#: DataEntryGramplet/DataEntryGramplet.py:80
+msgid "Add as a Parent"
+msgstr "Als een ouder toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:81
+msgid "Add as a Spouse"
+msgstr "Als een echtgeno(o)t(e) toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:82
+msgid "Add as a Sibling"
+msgstr "Als een broer/zus toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:83
+msgid "Add as a Child"
+msgstr "Als een kind toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:96
+msgid "Add"
+msgstr "Toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "Copy Active Data"
+msgstr "Kopieer de actieve gegevens"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Clear"
+msgstr "Wissen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:145
+#: DataEntryGramplet/DataEntryGramplet.py:159
+#: DataEntryGramplet/DataEntryGramplet.py:266
+msgid "in"
+msgstr "in"
+
+#: DataEntryGramplet/DataEntryGramplet.py:387
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Gramplet-gegevens bewerken: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+msgid "Please provide a name."
+msgstr "Geef een naam op."
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+msgid "Can't add new person."
+msgstr "Kan de nieuwe persoon niet toevoegen."
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:437
+msgid "Please set an active person."
+msgstr "Kies een actieve persoon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:418
+msgid "Can't add new person as a parent."
+msgstr "Kan de nieuwe persoon niet als ouder toevoegen."
+
+#: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:427
+msgid "Please set the new person's gender."
+msgstr "Kies een geslacht voor de nieuwe persoon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:596
+#: DataEntryGramplet/DataEntryGramplet.py:629
+msgid "Can't add new person as a spouse."
+msgstr "Kan de nieuwe persoon niet als echtgeno(o)t(e) toevoegen."
+
+#: DataEntryGramplet/DataEntryGramplet.py:432
+msgid "Can't add new person as a sibling."
+msgstr "Kan de nieuwe persoon niet als broer/zus toevoegen."
+
+#: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:675
+msgid "Can't add new person as a child."
+msgstr "Kan de nieuwe persoon niet als kind toevoegen."
+
+#: DataEntryGramplet/DataEntryGramplet.py:558
+msgid "Please set gender on Active or new person."
+msgstr "Kies een gesclacht voor actieve of nieuwe persoon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:595
+#: DataEntryGramplet/DataEntryGramplet.py:628
+msgid "Same genders on Active and new person."
+msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:674
+msgid "Please set gender on Active person."
+msgstr "Kies een geslacht voor de actieve persoon."
+
+#: DataEntryGramplet/DataEntryGramplet.py:696
+#, python-format
+msgid "Gramplet Data Entry: %s"
+msgstr "Gramplet-gegevens invoer: %s"

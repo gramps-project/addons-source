@@ -1,0 +1,106 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <frederik.de.richter@googlemail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 10:35+0100\n"
+"PO-Revision-Date: 2010-02-18 10:35+0100\n"
+"Last-Translator: erik <frederik.de.richter@googlemail.com>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:191
+#: AttachSourceTool/AttachSourceTool.py:215
+msgid "Attach Source"
+msgstr "Bron toevoegen"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:219
+msgid "Attaches a shared source to multiple objects."
+msgstr "Voegt een gedeelde bron toe aan verschillende objecten."
+
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
+msgid "Options"
+msgstr "Opties"
+
+#: AttachSourceTool/AttachSourceTool.py:69
+msgid "Person Filter"
+msgstr "Persoonsfilter"
+
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Kies een filter om het aantal personen te beperken"
+
+#: AttachSourceTool/AttachSourceTool.py:74
+msgid "Filter Person"
+msgstr "Filter persoon"
+
+#: AttachSourceTool/AttachSourceTool.py:75
+msgid "The center person for the filter"
+msgstr "De centrale persoon voor het filter"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr "Brontype"
+
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Nieuwe bron"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr "Bestaande bron"
+
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr "Kies het brontype dat toegevoegd wordt"
+
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr "Nieuwe brontitel"
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Brontekst die toegevoegd wordt"
+
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr "Bestaande bron-ID"
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr "ID van de bron die toegevoegd wordt"
+
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Results"
+msgstr "Resultaten"
+
+#: AttachSourceTool/AttachSourceTool.py:158
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:173
+msgid "Attaching sources...\n"
+msgstr "Bronnen worden toegevoegd...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources..."
+msgstr "Bronnen worden toegevoegd..."
+
+#: AttachSourceTool/AttachSourceTool.py:194
+msgid "Done!\n"
+msgstr "OK!\n"
+
+#: AttachSourceTool/AttachSourceTool.py:216
+msgid "Beta"
+msgstr "Beta"

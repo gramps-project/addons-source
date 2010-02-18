@@ -1,0 +1,384 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <frederik.de.richter@googlemail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 10:41+0100\n"
+"PO-Revision-Date: 2010-02-18 10:41+0100\n"
+"Last-Translator: erik <frederik.de.richter@googlemail.com>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Census/Census.py:55
+msgid "Order"
+msgstr "Volgorde"
+
+#: Census/Census.py:58
+msgid "Census"
+msgstr "Volkstelling"
+
+#: Census/CensusGramplet.gpr.py:31 Census/CensusGramplet.gpr.py:41
+msgid "Census Gramplet"
+msgstr "Volkstelling-gramplet"
+
+#: Census/CensusGramplet.py:79
+msgid "Census details for: "
+msgstr "Volktellingdetails voor:"
+
+#: Census/CensusGramplet.py:90 Census/CensusReport.py:291
+msgid "Source"
+msgstr "Bron"
+
+#: Census/CensusGramplet.py:93
+msgid "Date"
+msgstr "Datum"
+
+#: Census/CensusGramplet.py:96
+msgid "Place"
+msgstr "Locatie"
+
+#: Census/CensusGramplet.py:157
+msgid "No active person set."
+msgstr "Geen actieve persoon bepaald."
+
+#: Census/CensusGramplet.py:261
+#, python-format
+msgid "Census: %s"
+msgstr "Volkstelling: %s"
+
+#: Census/CensusGramplet.py:263
+msgid "New Census"
+msgstr "Nieuwe volkstelling"
+
+#: Census/CensusGramplet.py:270
+msgid "Edit Census"
+msgstr "Volkstelling bewerken"
+
+#: Census/CensusGramplet.py:285
+msgid "Source:"
+msgstr "Bron:"
+
+#: Census/CensusGramplet.py:307 Census/CensusReport.py:161
+msgid "Date:"
+msgstr "Datum:"
+
+#: Census/CensusGramplet.py:316
+msgid "Reference:"
+msgstr "Verwijzing:"
+
+#: Census/CensusGramplet.py:324
+msgid "Place:"
+msgstr "Locatie:"
+
+#: Census/CensusGramplet.py:483 Census/CensusGramplet.py:503
+msgid "Cannot add a person to this census."
+msgstr "Kan geen persoon toevoegen aan deze volkstelling."
+
+#: Census/CensusGramplet.py:484 Census/CensusGramplet.py:504
+msgid "First select a census from the drop-down list."
+msgstr "Selecteer eerst een volkstelling uit de lijst."
+
+#: Census/CensusGramplet.py:509
+msgid "Select Person"
+msgstr "Selecteer een persoon"
+
+#: Census/CensusReport.gpr.py:31
+msgid "Census Report"
+msgstr "Volkstellingsverslag"
+
+#: Census/CensusReport.gpr.py:32
+msgid "Report of census events for a person."
+msgstr "Verslag van de volkstellinggebeurtenissen van een persoon."
+
+#: Census/CensusReport.py:97
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Persson %s zit niet in het gegevensbestand"
+
+#: Census/CensusReport.py:109
+#, python-format
+msgid "Census Report for %s"
+msgstr "Volkstellingsverslag van %s"
+
+#: Census/CensusReport.py:164
+msgid "Source Reference:"
+msgstr "Bronverwijzing:"
+
+#: Census/CensusReport.py:168 Census/CensusReport.py:170
+msgid "Address:"
+msgstr "Adres:"
+
+#: Census/CensusReport.py:276
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: Census/CensusReport.py:278
+msgid "Census Selection"
+msgstr "Keuze volkstelling"
+
+#: Census/CensusReport.py:279
+msgid "By Person"
+msgstr "Volgens peroon"
+
+#: Census/CensusReport.py:280
+msgid "By Source"
+msgstr "Volgens bron"
+
+#: Census/CensusReport.py:281
+msgid "By Person and Source"
+msgstr "Volgens persson en bron"
+
+#: Census/CensusReport.py:282
+msgid "All Census records"
+msgstr "Alle volkstellingsgebeurtenissen"
+
+#: Census/CensusReport.py:283
+msgid "The type of report"
+msgstr "Het verslagstype"
+
+#: Census/CensusReport.py:286
+msgid "Person"
+msgstr "Persoon"
+
+#: Census/CensusReport.py:287
+msgid "The selected person for the report."
+msgstr "De geselecteerde persson voor het verslag."
+
+#: Census/CensusReport.py:296
+msgid "Page break after each census."
+msgstr "Een  nieuwe pagina voor elke volkstelling."
+
+#: Census/CensusReport.py:297
+msgid "Start a new page after each census."
+msgstr "Begin een nieuwe pagina na iedere volkstelling."
+
+#: Census/CensusReport.py:315
+msgid "The style used for the title of the page."
+msgstr "De gebruikte stijl voor de paginatitel."
+
+#: Census/CensusReport.py:328
+msgid "The style used for headings."
+msgstr "De gebruikte stijl voor de hoofdingen."
+
+#: Census/CensusReport.py:338
+msgid "The style used for names."
+msgstr "De gebruikte stijl voor de namen."
+
+#: Census/CensusReport.py:348
+msgid "The style used for column headings."
+msgstr "De gebruikte stijl voor de kolomhoofdingen."
+
+#: Census/CensusReport.py:359
+msgid "The default text style."
+msgstr "De standaard tekststijl."
+
+#: Census/census.xml.h:1
+msgid "Address"
+msgstr "Adres"
+
+#: Census/census.xml.h:2
+msgid "Age"
+msgstr "Leeftijd"
+
+#: Census/census.xml.h:3
+msgid "Arrived since"
+msgstr "Aangekomen sinds"
+
+#: Census/census.xml.h:4
+msgid "At Home"
+msgstr "Thuis"
+
+#: Census/census.xml.h:5
+msgid "Can read and write"
+msgstr "Kan lezen en schrijven"
+
+#: Census/census.xml.h:6
+msgid "Children Died"
+msgstr "Kinderen gestorven"
+
+#: Census/census.xml.h:7
+msgid "Children Living"
+msgstr "Kinderen nog in leven"
+
+#: Census/census.xml.h:8
+msgid "Children Total"
+msgstr "Totaal aantal kinderen"
+
+#: Census/census.xml.h:9
+msgid "City or Borough"
+msgstr "Stad of gemeente"
+
+#: Census/census.xml.h:10
+msgid "City or Municipal Borough"
+msgstr "Stad of kiesdistrict"
+
+#: Census/census.xml.h:11
+msgid "Civil Parish"
+msgstr "Parochie"
+
+#: Census/census.xml.h:12
+msgid "Civil Parish or Township"
+msgstr ""
+
+#: Census/census.xml.h:13
+msgid "Comments"
+msgstr "Kommentaar"
+
+#: Census/census.xml.h:14
+msgid "Condition"
+msgstr "Conditie"
+
+#: Census/census.xml.h:15
+msgid "Date of birth"
+msgstr "Geboortedatum"
+
+#: Census/census.xml.h:16
+msgid "Disability"
+msgstr ""
+
+#: Census/census.xml.h:17
+msgid "Ecclesiastical District"
+msgstr ""
+
+#: Census/census.xml.h:18
+msgid "Ecclesiastical Parish or District"
+msgstr ""
+
+#: Census/census.xml.h:19
+msgid "Employed"
+msgstr "Werknemer"
+
+#: Census/census.xml.h:20
+msgid "Employer"
+msgstr "Werkgever"
+
+#: Census/census.xml.h:21
+msgid "Employer, Worker or Own Account"
+msgstr ""
+
+#: Census/census.xml.h:22
+msgid "Gender"
+msgstr "Geslacht"
+
+#: Census/census.xml.h:23
+msgid "Hamlet or Tything"
+msgstr ""
+
+#: Census/census.xml.h:24
+msgid "Local Board or Improvement Commissioners District"
+msgstr ""
+
+#: Census/census.xml.h:25
+msgid "Military"
+msgstr "Militair"
+
+#: Census/census.xml.h:26
+msgid "Municipal Borough"
+msgstr ""
+
+#: Census/census.xml.h:27
+msgid "Municipal Ward"
+msgstr ""
+
+#: Census/census.xml.h:28
+msgid "Name"
+msgstr "Naam"
+
+#: Census/census.xml.h:29
+msgid "Nationality"
+msgstr "Nationaliteit"
+
+#: Census/census.xml.h:30
+msgid "Neither"
+msgstr "Noch"
+
+#: Census/census.xml.h:31
+msgid "Neither Employer nor Employed"
+msgstr "Geen werkgever noch werkend"
+
+#: Census/census.xml.h:32
+msgid "Occupation"
+msgstr "Beroep"
+
+#: Census/census.xml.h:33
+msgid "Parish or Township"
+msgstr ""
+
+#: Census/census.xml.h:34
+msgid "Parliamentary Borough"
+msgstr ""
+
+#: Census/census.xml.h:35
+msgid "Parliamentary Borough or Division"
+msgstr ""
+
+#: Census/census.xml.h:36
+msgid "Relation"
+msgstr "Relatie"
+
+#: Census/census.xml.h:37
+msgid "Religion"
+msgstr "Religie"
+
+#: Census/census.xml.h:38
+msgid "Rural Sanitary District"
+msgstr ""
+
+#: Census/census.xml.h:39
+msgid "Status"
+msgstr "Status"
+
+#: Census/census.xml.h:40
+msgid "Taxes"
+msgstr "Belastingen"
+
+#: Census/census.xml.h:41
+msgid "Town"
+msgstr "Stad"
+
+#: Census/census.xml.h:42
+msgid "Town, Village or Hamlet"
+msgstr ""
+
+#: Census/census.xml.h:43
+msgid "Type of roof"
+msgstr "Soort dak"
+
+#: Census/census.xml.h:44
+msgid "Urban Sanitary District"
+msgstr ""
+
+#: Census/census.xml.h:45
+msgid "Village"
+msgstr "Dorp"
+
+#: Census/census.xml.h:46
+msgid "Village or Hamlet"
+msgstr ""
+
+#: Census/census.xml.h:47
+msgid "Where Born"
+msgstr "Waar geboren"
+
+#: Census/census.xml.h:48
+msgid "Work Type"
+msgstr "Werktype"
+
+#: Census/census.xml.h:49
+msgid "Working at Home"
+msgstr "Werkt thuis"
+
+#: Census/census.xml.h:50
+msgid "Year of birth"
+msgstr "Geboortejaar"
+
+#: Census/census.xml.h:51
+msgid "Years Married"
+msgstr "Aantal jaren getrouwd"

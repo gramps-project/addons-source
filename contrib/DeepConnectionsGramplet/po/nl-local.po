@@ -1,0 +1,126 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <erik@ylana.telenet.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 17:44+0100\n"
+"PO-Revision-Date: 2010-02-18 17:44+0100\n"
+"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet verre relaties"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+msgid "Deep Connections"
+msgstr "Verre relaties"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "Double-click name for details"
+msgstr "Dubbelklikken op de naam voor details"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:53
+msgid "No Family Tree loaded."
+msgstr "Geen familiestamboom geladen."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:58
+msgid "Pause"
+msgstr "Pause"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
+msgid "Continue"
+msgstr "Verder gaan"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:81
+msgid "child"
+msgstr "kind"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:86
+msgid "husband"
+msgstr "echtgenoot"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
+msgid "wife"
+msgstr "echtgenote"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:97
+msgid "sibling"
+msgstr "broer of zus"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:102
+msgid "father"
+msgstr "vader"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mother"
+msgstr "moeder"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:124
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"   wie is een %s van " 
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:138
+msgid "No Home Person set."
+msgstr "Geen basispersoon gekozen."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:141
+msgid "No Active Person set."
+msgstr "Geen actieve persoon gekozen."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:144
+msgid "self"
+msgstr "zelf"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+msgid "Looking for relationship between\n"
+msgstr "Nakijken van de relatie tussen\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (basispersoon) en\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (actieve persoon)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Relatie gevonden#%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:164
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Gestopt.\n"
+"Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:177
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Het zoeken is gedaan. er zijn %d relaties gevonden."
