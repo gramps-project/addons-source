@@ -1,0 +1,41 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <frederik.de.richter@googlemail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-20 08:21+0100\n"
+"PO-Revision-Date: 2010-02-20 08:22+0100\n"
+"Last-Translator: erik <frederik.de.richter@googlemail.com>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ImportSql/ImportSql.gpr.py:3
+msgid "SQLite Import"
+msgstr "SQLite import"
+
+#: ImportSql/ImportSql.gpr.py:4
+msgid "SQLite is a common local database format"
+msgstr "SQLite is een veel gebruikt lokaal gegevensbestandsformaat"
+
+#: ImportSql/ImportSql.py:127
+#, python-format
+msgid "%s could not be opened\n"
+msgstr "%s kon niet geopend woren\n"
+
+#: ImportSql/ImportSql.py:825
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Import volledig: %d seconde"
+msgstr[1] "Import volledig: %d seconden"
+
+#: ImportSql/ImportSql.py:826
+msgid "SQL import"
+msgstr "SQL import"
