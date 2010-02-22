@@ -1,0 +1,104 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# erik <erik@ylana.telenet.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-22 16:53+0100\n"
+"PO-Revision-Date: 2010-02-22 16:53+0100\n"
+"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:9
+msgid "Timeline"
+msgstr "Tijdslijn"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:10
+msgid "Display a person's events on a timeline"
+msgstr "Toon de gebeurtenissen van een persoon op een tijdslijn"
+
+#: TimelineQuickview/TimelineQuickview.py:41
+msgid "Parents"
+msgstr "Ouders"
+
+#: TimelineQuickview/TimelineQuickview.py:43
+msgid "Inlaw Parents"
+msgstr "Schoonouders"
+
+#: TimelineQuickview/TimelineQuickview.py:46
+msgid "Grandparents"
+msgstr "Grootouders"
+
+#: TimelineQuickview/TimelineQuickview.py:48
+msgid "Inlaw Grandparents"
+msgstr "Schoongrootouders"
+
+#: TimelineQuickview/TimelineQuickview.py:51
+msgid "Great grandparents"
+msgstr "Overgrootouders"
+
+#: TimelineQuickview/TimelineQuickview.py:53
+msgid "Inlaw Great grandparents"
+msgstr "Schoonovergrootouders"
+
+#: TimelineQuickview/TimelineQuickview.py:56
+msgid "Great, "
+msgstr "Over, "
+
+#: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:58
+msgid "great, "
+msgstr "over, "
+
+#: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:58
+msgid "great grandparents"
+msgstr "overgrootouders"
+
+#: TimelineQuickview/TimelineQuickview.py:58
+msgid "Inlaw Great, "
+msgstr "Schoonover, "
+
+#: TimelineQuickview/TimelineQuickview.py:89
+msgid "Partner's spouse"
+msgstr "Partner van de echtgeno(o)t(e)"
+
+#: TimelineQuickview/TimelineQuickview.py:139
+#, python-format
+msgid "Timeline for %s"
+msgstr "Tijdslijn voor %s"
+
+#: TimelineQuickview/TimelineQuickview.py:142
+msgid "Date"
+msgstr "Datum"
+
+#: TimelineQuickview/TimelineQuickview.py:143
+msgid "Event"
+msgstr "Gebeurtenis"
+
+#: TimelineQuickview/TimelineQuickview.py:144
+msgid "Age"
+msgstr "leeftijd"
+
+#: TimelineQuickview/TimelineQuickview.py:145
+msgid "Place"
+msgstr "Locatie"
+
+#: TimelineQuickview/TimelineQuickview.py:146
+msgid "People involved"
+msgstr "Betrokkenen"
+
+#: TimelineQuickview/TimelineQuickview.py:170
+msgid "Today"
+msgstr "Vandaag"
+
+#: TimelineQuickview/TimelineQuickview.py:176
+msgid "Unknown"
+msgstr "Onbekend"
