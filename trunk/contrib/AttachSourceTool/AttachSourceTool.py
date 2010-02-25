@@ -39,15 +39,16 @@ from PluginUtils import Tool, PluginWindows, MenuToolOptions
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
-from gen.display.name import displayer as name_displayer
 import Errors
 from ReportBase import ReportUtils
 
 try:
+    from gen.display.name import displayer as name_displayer
     from TransUtils import get_addon_translator
     _ = get_addon_translator(__file__).ugettext
     from const import VERSION_TUPLE
 except:
+    from BasicUtils import name_displayer
     import gettext
     _ = gettext.gettext
     VERSION_TUPLE = (3, 1, 0)
