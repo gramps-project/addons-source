@@ -34,10 +34,17 @@ import gtk
 #
 #------------------------------------------------------------------------
 from gen.lib import EventType, FamilyRelType
-from gen.display.name import displayer as name_displayer
-from gen.plug import Gramplet
-from TransUtils import get_addon_translator
-_ = get_addon_translator().ugettext
+try:
+    from gen.display.name import displayer as name_displayer
+    from gen.plug import Gramplet
+    from TransUtils import get_addon_translator
+    _ = get_addon_translator().ugettext
+    from const import VERSION_TUPLE
+except:
+    from BasicUtils import name_displayer
+    from DataViews import register, Gramplet
+    from gettext import gettext as _
+    VERSION_TUPLE = (3, 1, 0)
 
 #------------------------------------------------------------------------
 #
@@ -133,7 +140,10 @@ class DeepConnectionsGramplet(Gramplet):
         self.total_relations_found = 0
         yield True
         default_person = self.dbstate.db.get_default_person()
-        active_person = self.get_active_object("Person")
+        if VERSION_TUPLE < (3, 2):
+            active_person = self.dbstate.get_active_person()
+        else: # later versions:
+            active_person = self.get_active_object("Person")
         if default_person == None:
             self.set_text(_("No Home Person set."))
             return
@@ -176,3 +186,14 @@ class DeepConnectionsGramplet(Gramplet):
             yield True
         self.append_text(_("\nSearch completed. %d relations found.") % self.total_relations_found)
         yield False
+
+if VERSION_TUPLE < (3, 2):
+    register(type="gramplet", 
+             name="Deep Connections Gramplet", 
+             tname=_("Deep Connections Gramplet"), 
+             height=250,
+             content = DeepConnectionsGramplet,
+             title=_("Deep Connections"),
+             gramps="3.1.0",
+             version="1.0.0",
+             )

@@ -46,10 +46,11 @@ from ReportBase import ReportUtils
 try:
     from TransUtils import get_addon_translator
     _ = get_addon_translator(__file__).ugettext
+    from const import VERSION_TUPLE
 except:
     import gettext
     _ = gettext.gettext
-
+    VERSION_TUPLE = (3, 1, 0)
 #------------------------------------------------------------------------
 #
 # Tool Classes
@@ -202,7 +203,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         self.db.add_event(event, self.trans)
         return event
 
-try:
+if VERSION_TUPLE < (3, 2):
     # Gramps 3.1 style:
     from gen.plug import PluginManager
     pmgr = PluginManager.get_instance()
@@ -218,5 +219,3 @@ try:
         author_email = "doug.blank@gmail.com",
         description= _("Attaches a shared source to multiple objects."),
         )
-except:
-    pass
