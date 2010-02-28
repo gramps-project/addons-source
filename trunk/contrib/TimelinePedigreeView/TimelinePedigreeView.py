@@ -28,8 +28,9 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-from gen.ggettext import sgettext as _
-from gen.ggettext import ngettext
+from TransUtils import get_addon_translator
+_ = get_addon_translator().gettext
+ngettext = get_addon_translator().ngettext
 from cgi import escape
 import math
 
