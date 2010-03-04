@@ -506,18 +506,18 @@ class TimelinePedigreeView(NavigationView):
         self.show_lifespan = True
         
         # Automatic resize
-        self.force_size = config.get('interface.pedviewext-tree-size') 
+        self.force_size = config.get('interface.pedview-tree-size') 
         # Nice tree
-        self.tree_style = config.get('interface.pedviewext-layout')
+        self.tree_style = config.get('interface.pedview-layout')
         # Show photos of persons
-        self.show_images = False # config.get('interface.pedviewext-show-images')
+        self.show_images = False # config.get('interface.pedview-show-images')
         # Hide marriage data by default
-        self.show_marriage_data = config.get('interface.pedviewext-show-marriage')
+        self.show_marriage_data = config.get('interface.pedview-show-marriage')
         # Tree draw direction
-        self.tree_direction = config.get('interface.pedviewext-tree-direction')
+        self.tree_direction = config.get('interface.pedview-tree-direction')
         # Show on not unknown peoples.
         # Default - not show, for mo fast display hight tree
-        self.show_unknown_peoples = config.get('interface.pedviewext-show-unknown-peoples')
+        self.show_unknown_peoples = config.get('interface.pedview-show-unknown-people')
         
         self.format_helper = FormattingHelper(self.dbstate)
         
@@ -528,7 +528,7 @@ class TimelinePedigreeView(NavigationView):
         self._last_y = 0
         self._in_move = False
         # Change or nor mouse whell scroll direction
-        self.scroll_direction = config.get('interface.pedviewext-scroll-direction')
+        self.scroll_direction = config.get('interface.pedview-scroll-direction')
         self.key_active_changed = None
         # GTK objects
         self.scrolledwindow = None
@@ -1445,7 +1445,7 @@ class TimelinePedigreeView(NavigationView):
     def change_tree_direction_cb(self, menuitem, data):
         """Change tree_direction option."""
         if data in [0, 1, 2, 3]:
-            config.set('interface.pedviewext-tree-direction', data)
+            config.set('interface.pedview-tree-direction', data)
             if self.tree_direction != data:
                 self.dirty = True
                 self.tree_direction = data
@@ -1454,14 +1454,14 @@ class TimelinePedigreeView(NavigationView):
     def change_show_images_cb(self, event):
         """Change show_images option."""
         self.show_images = not self.show_images
-        config.set('interface.pedviewext-show-images', self.show_images)
+        config.set('interface.pedview-show-images', self.show_images)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_show_marriage_cb(self, event):
         """Change show_marriage_data option."""
         self.show_marriage_data = not self.show_marriage_data
-        config.set('interface.pedviewext-show-marriage', 
+        config.set('interface.pedview-show-marriage', 
                     self.show_marriage_data)
         self.dirty = True
         self.Tree_Rebuild()
@@ -1469,14 +1469,14 @@ class TimelinePedigreeView(NavigationView):
     def change_show_unknown_peoples_cb(self, event):
         """Change show_unknown_peoples option."""
         self.show_unknown_peoples = not self.show_unknown_peoples
-        config.set('interface.pedviewext-show-unknown-peoples', 
+        config.set('interface.pedview-show-unknown-people', 
                     self.show_unknown_peoples)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_scroll_direction_cb(self, menuitem, data):
         """Change scroll_direction option."""
-        config.set('interface.pedviewext-scroll-direction', 
+        config.set('interface.pedview-scroll-direction', 
                     self.scroll_direction)
         if data:
             self.scroll_direction = True
