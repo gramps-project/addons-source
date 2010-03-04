@@ -108,11 +108,13 @@ class imageMetadataGramplet(Gramplet):
 
         rows = gtk.VBox()
         for items in [
-            ("Active image",  _("Active image"),      None, True,  [], False, 0),
-            ("Photographer",  _("Photographer"),      None, False, [], True,  0),
-            ("Select Date",   _("Select Date"),       None, True,  [("Select Date", "", self.select_date)], True, 0),
-            ("Date",          _("Date"),              None, False, [], True,  0),
-            ("Copyright",     _("Copyright"),         None, False, [], True,  0) ]:
+            ("Active image",  _("Active image"), None, True,  [], False, 0),
+            ("Photographer",  _("Photographer"), None, False, [], True,  0),
+            ("Date:Select",   "",                None, True,  
+            [("Select Date", _("Select Date"), self.select_date)], True, 0),
+
+            ("Date",          _("Date/ Time"),   None, False, [], True,  0),
+            ("Copyright",     _("Copyright"),    None, False, [], True,  0) ]:
 
             pos, text, choices, readonly, callback, dirty, default = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
@@ -121,7 +123,7 @@ class imageMetadataGramplet(Gramplet):
         # Xmp Subject
         row = gtk.HBox()
         label = gtk.Label()
-        label.set_text("<b>%s</b>" % _("Image Subject"))
+        label.set_text("<b>%s</b>" % _("Subject"))
         label.set_use_markup(True)
         label.set_width_chars(15)
         row.pack_start(label, False)
