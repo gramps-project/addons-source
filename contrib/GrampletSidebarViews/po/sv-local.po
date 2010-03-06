@@ -1,0 +1,61 @@
+# Swedish translations for PACKAGE package
+# Svenska �vers�ttningar f�r paket PACKAGE.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-06 16:10+0100\n"
+"PO-Revision-Date: 2010-03-06 16:12+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:20
+#, python-format
+msgid "%s Sidebar"
+msgstr "%s Sidopanel"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:21
+msgid "Splitviews"
+msgstr "Delad vy"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:22
+msgid "View with a Gramplet Sidebar"
+msgstr "Vy med en sidopanel med Gramplet"
+
+#: GrampletSidebarViews/sidebarviews.py:130
+msgid "Add a gramplet"
+msgstr "Lägg till ett Gramplet"
+
+#: GrampletSidebarViews/sidebarviews.py:131
+msgid "Restore a gramplet"
+msgstr "Återta ett Gramplet"
+
+#: GrampletSidebarViews/sidebarviews.py:166
+msgid "Split view"
+msgstr "Delad vy"
+
+#: GrampletSidebarViews/sidebarviews.py:168
+msgid "Horizontal views"
+msgstr "Horisontella vyer"
+
+#: GrampletSidebarViews/sidebarviews.py:169
+msgid "Vertical views"
+msgstr "Vertikala vyer"
+
+#: GrampletSidebarViews/sidebarviews.py:170
+msgid "No split"
+msgstr "Ingen delning"
+
+#: GrampletSidebarViews/sidebarviews.py:178
+msgid "Split View"
+msgstr "Delad vy"
+
