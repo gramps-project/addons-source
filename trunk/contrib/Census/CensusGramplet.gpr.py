@@ -29,7 +29,7 @@
 register(GRAMPLET, 
          id = "Census Gramplet", 
          name = _("Census Gramplet"), 
-         status = UNSTABLE,
+         status = STABLE,
          version = '1.0.0',
          gramps_target_version = '3.2',
          fname = "CensusGramplet.py",
