@@ -65,7 +65,7 @@ import Errors
 from gui.editors import EditPerson, EditFamily
 from DdTargets import DdTargets
 import cPickle as pickle
-import config
+from config import config
 import Bookmarks
 import const
 from QuestionDialog import RunDatabaseRepair, ErrorDialog
@@ -500,24 +500,47 @@ class TimelinePedigreeView(NavigationView):
         self.dbstate.connect('database-changed', self.change_db)
         # Current Tree Size
         #pdb.set_trace()
-        #self.generations_in_tree = config.get('interface.timelinepedview-tree-size')
-        self.generations_in_tree = [3, 4]
-        self.use_timeline = True
-        self.show_lifespan = True
         
-        # Automatic resize
-        self.force_size = config.get('interface.pedview-tree-size') 
-        # Nice tree
-        self.tree_style = config.get('interface.pedview-layout')
+        # Define configuration settings
+        self.cman = config.register_manager("timelinepedigreeview")
+        self.cman.register("interface.show-images", False)
+        self.cman.register("interface.show-marriage", False)
+        self.cman.register("interface.use-timeline", True)
+        self.cman.register("interface.show-lifespan", True)
+        self.cman.register("interface.scroll-direction", 0)
+        self.cman.register("interface.ancestor-size", 4)
+        self.cman.register("interface.descendant-size", 3)
+        
+        self.cman.register("interface.tree-size", 5)
+        self.cman.register("interface.layout", 0)
+        self.cman.register("interface.tree-direction", 0)
+        self.cman.register("interface.show-unknown-people", False)
+        self.cman.init()
+
         # Show photos of persons
-        self.show_images = False # config.get('interface.pedview-show-images')
+        self.show_images = self.cman.get('interface.show-images')
         # Hide marriage data by default
-        self.show_marriage_data = config.get('interface.pedview-show-marriage')
+        self.show_marriage_data = self.cman.get('interface.show-marriage')
+        # Position the person in the timeline
+        self.use_timeline = self.cman.get('interface.use-timeline')
+        # Show the lifespan of the person
+        self.show_lifespan = self.cman.get('interface.show-lifespan')
+        # Change or nor mouse whell scroll direction
+        self.scroll_direction = self.cman.get('interface.scroll-direction')
+        # Number of ancestor generations to display
+        self.generations_in_tree[1] = self.cman.get('interface.ancestor-size')
+        # Number of descendant generations to display
+        self.generations_in_tree[0] = self.cman.get('interface.descendant-size')
+
+        # Automatic resize
+        self.force_size = self.cman.get('interface.tree-size') 
+        # Nice tree
+        self.tree_style = self.cman.get('interface.layout')
         # Tree draw direction
-        self.tree_direction = config.get('interface.pedview-tree-direction')
+        self.tree_direction = self.cman.get('interface.tree-direction')
         # Show on not unknown peoples.
         # Default - not show, for mo fast display hight tree
-        self.show_unknown_peoples = config.get('interface.pedview-show-unknown-people')
+        self.show_unknown_peoples = self.cman.get('interface.show-unknown-people')
         
         self.format_helper = FormattingHelper(self.dbstate)
         
@@ -527,8 +550,6 @@ class TimelinePedigreeView(NavigationView):
         self._last_x = 0
         self._last_y = 0
         self._in_move = False
-        # Change or nor mouse whell scroll direction
-        self.scroll_direction = config.get('interface.pedview-scroll-direction')
         self.key_active_changed = None
         # GTK objects
         self.scrolledwindow = None
@@ -537,6 +558,10 @@ class TimelinePedigreeView(NavigationView):
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         self._birth_cache = {}
+
+    def on_delete(self):
+        """Save the configuration settings on shutdown."""
+        self.cman.save()
 
     def change_page(self):
         """Called when the page changes."""
@@ -1425,27 +1450,32 @@ class TimelinePedigreeView(NavigationView):
     def change_generations_in_tree_cb(self, menuitem, i, data):
         """Change force_size option."""
         if data in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and i in [0, 1]:
-            #config.set('interface.pedview-tree-size', data)
             self.generations_in_tree[i] = data
+            if i:
+                self.cman.set('interface.ancestor-size', data)
+            else:
+                self.cman.set('interface.descendant-size', data)
             self.dirty = True
             self.Tree_Rebuild()
     
     def change_show_lifespan_cb(self, menuitem):
         """Change show lifespan option."""
         self.show_lifespan = not self.show_lifespan
+        self.cman.set('interface.show-lifespan', self.show_lifespan)
         self.dirty = True
         self.Tree_Rebuild()
         
     def change_use_timeline_cb(self, menuitem):
         """Change use timeline option."""
         self.use_timeline = not self.use_timeline
+        self.cman.set('interface.use-timeline', self.use_timeline)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_tree_direction_cb(self, menuitem, data):
         """Change tree_direction option."""
         if data in [0, 1, 2, 3]:
-            config.set('interface.pedview-tree-direction', data)
+            self.cman.set('interface.tree-direction', data)
             if self.tree_direction != data:
                 self.dirty = True
                 self.tree_direction = data
@@ -1454,30 +1484,28 @@ class TimelinePedigreeView(NavigationView):
     def change_show_images_cb(self, event):
         """Change show_images option."""
         self.show_images = not self.show_images
-        config.set('interface.pedview-show-images', self.show_images)
+        self.cman.set('interface.show-images', self.show_images)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_show_marriage_cb(self, event):
         """Change show_marriage_data option."""
         self.show_marriage_data = not self.show_marriage_data
-        config.set('interface.pedview-show-marriage', 
-                    self.show_marriage_data)
+        self.cman.set('interface.show-marriage', self.show_marriage_data)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_show_unknown_peoples_cb(self, event):
         """Change show_unknown_peoples option."""
         self.show_unknown_peoples = not self.show_unknown_peoples
-        config.set('interface.pedview-show-unknown-people', 
+        self.cman.set('interface.show-unknown-people', 
                     self.show_unknown_peoples)
         self.dirty = True
         self.Tree_Rebuild()
 
     def change_scroll_direction_cb(self, menuitem, data):
         """Change scroll_direction option."""
-        config.set('interface.pedview-scroll-direction', 
-                    self.scroll_direction)
+        self.cman.set('interface.scroll-direction', self.scroll_direction)
         if data:
             self.scroll_direction = True
         else:
