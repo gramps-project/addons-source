@@ -24,6 +24,8 @@
 
 import gtk
 import gobject
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 
 views = [("relview", "RelationshipView", ["TODO Gramplet"]),
          ("eventview", "EventView", ["TODO Gramplet"]),
