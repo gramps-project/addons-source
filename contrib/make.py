@@ -3,10 +3,6 @@
 make.py for Gramps addons.
 
 Examples: 
-   python make.py dist-clean
-   python make.py dist-clean AddonDirectory
-   python make.py clean
-   python make.py clean AddonDirectory
    python make.py init AddonDirectory
 
       Creates the initial directories for the addon.
@@ -21,21 +17,37 @@ Examples:
       Updates AddonDirectory/po/fr-local.po with the latest
       translations.
 
-   python make.py compile AddonDirectory fr
+   python make.py build AddonDirectory
 
-      Compiles AddonDirectory/po/fr-local.po and puts the resulting
-      .mo file in AddonDirectory/locale/fr/LC_MESSAGES/addon.mo
+      Build ../download/AddonDirectory.addon.tgz
 
+   python make.py build all
+
+      Build ../download/*.addon.tgz
+
+   python make.py compile AddonDirectory
+   python make.py compile all
+
+      Compiles AddonDirectory/po/*-local.po and puts the resulting
+      .mo file in AddonDirectory/locale/*/LC_MESSAGES/addon.mo
+
+   python make.py dist-clean
+   python make.py dist-clean AddonDirectory
+   python make.py clean
+   python make.py clean AddonDirectory
 """
 
 import glob
 import sys
 import os
 
-GRAMPSPATH = "../.."
+if "GRAMPSPATH" in os.environ:
+    GRAMPSPATH = os.environ["GRAMPSPATH"]
+else:
+    GRAMPSPATH = "../../.."
 
-if not os.path.isdir(GRAMPSPATH):
-    raise ValueError("Where is GRAMPS?: '%s'" % GRAMPSPATH)
+if not os.path.isdir(GRAMPSPATH + "/po"):
+    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
@@ -170,20 +182,54 @@ elif command == "update":
            '''"%(addon)s/po/%(locale)s-local.po.2" ''')
     # # Done!
     echo('''\nYou can edit "%(addon)s/po/%(locale)s-local.po"''')
-elif command == "compile":
-    locale = sys.argv[3]
-    system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
-    system('''msgfmt "%(addon)s/po/%(locale)s-local.po" '''
-           '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+elif command in ["compile"]:
+    if addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+        for addon in dirs:
+            for po in glob.glob(r('''%(addon)s/po/*.po''')):
+                length= len(po)
+                locale = po[length-11:length-9]
+                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                system('''msgfmt %(po)s '''
+                       '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+    else:
+        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
+            system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+            system('''msgfmt %(po)s '''
+                   '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
 elif command == "build":
     files = sys.argv[3:]
-    files += glob.glob(r('''%(addon)s/*.py'''))
-    files += glob.glob(r('''%(addon)s/*.glade'''))
-    files += glob.glob(r('''%(addon)s/*.xml'''))
-    files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
-    files_str = " ".join(files)
-    system('''mkdir -p ../download ''')
-    system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
-           files=files_str)
+    if addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+        # Compile all:
+        for addon in dirs:
+            for po in glob.glob(r('''%(addon)s/po/*.po''')):
+                length= len(po)
+                locale = po[length-11:length-9]
+                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                system('''msgfmt %(po)s '''
+                       '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+        # Build all:
+        for addon in dirs:
+            files = []
+            files += glob.glob(r('''%(addon)s/*.py'''))
+            files += glob.glob(r('''%(addon)s/*.glade'''))
+            files += glob.glob(r('''%(addon)s/*.xml'''))
+            files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
+            files_str = " ".join(files)
+            system('''mkdir -p ../download ''')
+            system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
+                   files=files_str)
+    else:
+        files += glob.glob(r('''%(addon)s/*.py'''))
+        files += glob.glob(r('''%(addon)s/*.glade'''))
+        files += glob.glob(r('''%(addon)s/*.xml'''))
+        files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
+        files_str = " ".join(files)
+        system('''mkdir -p ../download ''')
+        system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
+               files=files_str)
 else:
     raise AttributeError("unknown command")
