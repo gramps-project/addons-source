@@ -22,7 +22,7 @@ for name in sidebar_list:
              description =  _("View with a Gramplet Sidebar"),
              version = '1.1',
              gramps_target_version = '3.2',
-             status = UNSTABLE,
+             status = STABLE,
              fname = 'sidebarviews.py',
              authors = [u"Doug Blank"],
              authors_email = ["doug.blank@gmail.com"],
