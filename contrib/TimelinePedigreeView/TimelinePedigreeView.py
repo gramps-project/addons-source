@@ -498,8 +498,8 @@ class TimelinePedigreeView(NavigationView):
 
         self.dbstate = dbstate
         self.dbstate.connect('database-changed', self.change_db)
-        # Current Tree Size
-        #pdb.set_trace()
+        # Tree Dimensions
+        self.generations_in_tree = [3, 4]
         
         # Define configuration settings
         self.cman = config.register_manager("timelinepedigreeview")
