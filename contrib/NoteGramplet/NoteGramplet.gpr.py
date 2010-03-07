@@ -1,6 +1,7 @@
 register(GRAMPLET, 
          id="Note Gramplet", 
          name=_("Note Gramplet"), 
+         description = _("Gramplet for editing active person's notes"),
          status = STABLE,
          fname="NoteGramplet.py",
          height=100,
