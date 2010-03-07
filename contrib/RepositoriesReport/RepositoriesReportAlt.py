@@ -3,7 +3,7 @@
 #
 # Copyright (C) 2006-2007  Alex Roitman
 # Copyright (C) 2008-2009  Gary Burton
-# Copyright (C) 2007-2009  Jerome Rapinat
+# Copyright (C) 2007-2010  Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,9 +30,10 @@ Display Sources related to repositories
 #
 #-------------------------------------------------------------------------
 
-from gen.plug.menu import BooleanOption
+from gen.plug.menu import BooleanOption, EnumeratedListOption
 from ReportBase import Report, ReportUtils, MenuReportOptions
-from TransUtils import get_addon_translator
+from libtranslate import Translator, get_language_string
+from TransUtils import get_addon_translator, get_available_translations
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
@@ -64,6 +65,7 @@ class RepositoryReportAlt(Report):
         inclunote    - Whether to include notes of source or repository.
         inclmedia    - Whether to include media of source.
         incprivat    - Whether to include private records.
+        trans        - Select translation
 
         """
 
@@ -79,6 +81,9 @@ class RepositoryReportAlt(Report):
         self.inclu_note = menu.get_option_by_name('inclunote').get_value()
         self.incl_media = menu.get_option_by_name('inclmedia').get_value()
         self.inc_privat = menu.get_option_by_name('incprivat').get_value()
+        language = menu.get_option_by_name('trans').get_value()
+        translator = Translator(language)
+        self._ = translator.gettext
 
     def write_report(self):
         """
@@ -89,7 +94,7 @@ class RepositoryReportAlt(Report):
         # Write the title line. Set in INDEX marker so that this section will be
         # identified as a major category if this is included in a Book report.
 
-        title = _('Repositories Report')
+        title = self._('Repositories Report')
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph('REPO-ReportTitle')
         self.doc.write_text(title, mark)
@@ -118,7 +123,7 @@ class RepositoryReportAlt(Report):
         # ignore private record
 
         if not self.inc_privat and repository.private:
-            self.doc.write_text(_('Private'))
+            self.doc.write_text(self._('Private'))
         else:
             self.doc.write_text(('%(repository)s (%(type)s)') % 
                                 {'repository' : repository.get_name(),
@@ -160,7 +165,7 @@ class RepositoryReportAlt(Report):
                     #if self.inc_intern:
                         #self.doc.write_text(_('Internet: %s') % internet)
                     if self.inc_addres:
-                        self.doc.write_text(_('\nAddress: %s') % address)
+                        self.doc.write_text(self._('\nAddress: %s') % address)
                 self.doc.end_paragraph()
 
     def __write_referenced_sources(self, handle):
@@ -188,7 +193,7 @@ class RepositoryReportAlt(Report):
                     # ignore private records
 
                     if not self.inc_privat and (src.private or repository.private):
-                        title = _('%s. Private') % source_nbr
+                        title = self._('%s. Private') % source_nbr
                     else:
                         title = (('%(nbr)s. %(name)s (%(type)s) : %(call)s') % 
                                     {'nbr' : source_nbr,
@@ -210,7 +215,7 @@ class RepositoryReportAlt(Report):
 
                     # list of tuples [('',''),('','')]
 
-                    listup = keyval.items()
+                    listup = list(keyval.items())
 
                     # format strings
 
@@ -228,13 +233,13 @@ class RepositoryReportAlt(Report):
                             pass
                         else:
                             if self.inc_author:
-                                self.doc.write_text(_('Author: %s') % author)
+                                self.doc.write_text(self._('Author: %s') % author)
                             if self.inc_abbrev:
-                                self.doc.write_text(_('\nAbbreviation: %s') % abbrev)
+                                self.doc.write_text(self._('\nAbbreviation: %s') % abbrev)
                             if self.inc_public:
-                                self.doc.write_text(_('\nPublication information: %s') % public)
+                                self.doc.write_text(self._('\nPublication information: %s') % public)
                             if self.inc_datamp:
-                                self.doc.write_text(_('\nData: %s') % data)
+                                self.doc.write_text(self._('\nData: %s') % data)
                         self.doc.end_paragraph()
 
                     # display notes and allows markups
@@ -356,6 +361,14 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
         menu.add_option(category_name, 'incprivat', incprivat)
 
+        trans = EnumeratedListOption(_("Translation"), 
+                                      Translator.DEFAULT_TRANSLATION_STR)
+        trans.add_item(Translator.DEFAULT_TRANSLATION_STR, _("default"))
+        for language in get_available_translations():
+            trans.add_item(language, get_language_string(language))
+        trans.set_help(_("The translation to be used for the report."))
+        menu.add_option(category_name, "trans", trans)
+
     def make_default_style(self, default_style):
         """
         Make the default output style for the report.
@@ -435,7 +448,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         """
 
         para = ParagraphStyle()
-        para.set(first_indent=-0.75, lmargin=.75)
+        para.set(first_indent=0.75, lmargin=.75)
         para.set_top_margin(ReportUtils.pt2cm(3))
         para.set_bottom_margin(ReportUtils.pt2cm(3))
         para.set_description(_('The basic style used for the note display.'))
