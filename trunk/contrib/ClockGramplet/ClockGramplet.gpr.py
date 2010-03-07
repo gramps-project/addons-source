@@ -1,6 +1,7 @@
 register(GRAMPLET, 
          id= "Clock Gramplet", 
          name=_("Clock Gramplet"), 
+         description = _("Gramplet for demonstrating Cairo graphics"),
          height=100,
          expand=False,
          gramplet = 'ClockGramplet',

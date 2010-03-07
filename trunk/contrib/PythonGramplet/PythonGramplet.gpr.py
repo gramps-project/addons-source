@@ -1,6 +1,7 @@
 register(GRAMPLET, 
          id="Python Gramplet", 
          name=_("Python Gramplet"), 
+         description = _("Interactive Python interpreter"),
          status = STABLE,
          fname="PythonGramplet.py",
          height=250,

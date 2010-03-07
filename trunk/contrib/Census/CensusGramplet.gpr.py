@@ -29,6 +29,7 @@
 register(GRAMPLET, 
          id = "Census Gramplet", 
          name = _("Census Gramplet"), 
+         description = _("Gramplet interface for census data"),
          status = STABLE,
          version = '1.0.0',
          gramps_target_version = '3.3',
