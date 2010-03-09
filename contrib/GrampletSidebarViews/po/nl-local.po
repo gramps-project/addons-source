@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 18:00+0100\n"
+"POT-Creation-Date: 2010-03-09 12:29+0100\n"
 "PO-Revision-Date: 2010-02-19 18:00+0100\n"
 "Last-Translator: erik <erik@ylana.telenet.be>\n"
 "Language-Team: Dutch\n"
@@ -16,43 +16,117 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: GrampletSidebarViews/sidebarviews.gpr.py:21
-#, python-format
-msgid "%s Sidebar"
-msgstr "%s zijbalk"
+#: GrampletSidebarViews/sidebarviews.gpr.py:1
+#, fuzzy
+msgid "Relationship Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:2
+#, fuzzy
+msgid "Event Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:3
+#, fuzzy
+msgid "Family Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:4
+#, fuzzy
+msgid "Fan Chart Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:5
+#, fuzzy
+msgid "Geo Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:6
+#, fuzzy
+msgid "Html Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:7
+#, fuzzy
+msgid "Media Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:8
+#, fuzzy
+msgid "Note Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:9
+#, fuzzy
+msgid "Pedigree Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:10
+#, fuzzy
+msgid "Person List Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:11
+#, fuzzy
+msgid "Person Tree Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:12
+#, fuzzy
+msgid "Place List Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:13
+#, fuzzy
+msgid "Place Tree Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:14
+#, fuzzy
+msgid "Repository Split View"
+msgstr "Schermdeling"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:15
+#, fuzzy
+msgid "Source Split View"
+msgstr "Schermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:22
 msgid "Splitviews"
 msgstr "Gedeelde schermen"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:23
-msgid "View with a Gramplet Sidebar"
+#, fuzzy, python-format
+msgid "%s with a Gramplet Pane"
 msgstr "Scherm met een Gramplet-zijbalk"
 
-#: GrampletSidebarViews/sidebarviews.py:131
+#: GrampletSidebarViews/sidebarviews.py:132
 msgid "Add a gramplet"
 msgstr "Een Gamplet toevoegen"
 
-#: GrampletSidebarViews/sidebarviews.py:132
+#: GrampletSidebarViews/sidebarviews.py:133
 msgid "Restore a gramplet"
 msgstr "Een Gramplet herstellen"
 
-#: GrampletSidebarViews/sidebarviews.py:167
+#: GrampletSidebarViews/sidebarviews.py:168
 msgid "Split view"
 msgstr "Gedeelde scherm"
 
-#: GrampletSidebarViews/sidebarviews.py:169
+#: GrampletSidebarViews/sidebarviews.py:170
 msgid "Horizontal views"
 msgstr "Horizontale schermen"
 
-#: GrampletSidebarViews/sidebarviews.py:170
+#: GrampletSidebarViews/sidebarviews.py:171
 msgid "Vertical views"
 msgstr "Vertikale schermen"
 
-#: GrampletSidebarViews/sidebarviews.py:171
+#: GrampletSidebarViews/sidebarviews.py:172
 msgid "No split"
 msgstr "Geen schermdeling"
 
-#: GrampletSidebarViews/sidebarviews.py:179
+#: GrampletSidebarViews/sidebarviews.py:180
 msgid "Split View"
 msgstr "Schermdeling"
+
+#~ msgid "%s Sidebar"
+#~ msgstr "%s zijbalk"
