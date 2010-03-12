@@ -3,7 +3,7 @@ Gramps Licensing Information
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright 2009 Rob G. Healey <robhealey1@gmail.com>
+# Copyright 2010 Rob G. Healey <robhealey1@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,34 +22,38 @@ Gramps Licensing Information
 # $Id: README 118 2010-01-21 06:42:00Z robhealey1 $
 --------------------------------------------------------------------------
 
-gramps-addons/contrib/ImageMetadataEditorGramplet-v0.1/imageMetadataeditorgramplet.py
+gramps-addons/trunk/contrib/ImageMetadataGramplet/imageMetadataGramplet.py
 Copyright (C) 2010 Rob G. Healey <robhealey1@gmail.com>
 *******
 
-Welcome to imageMetadataeditorgramplet.py.  By using pyexiv2-0.1, python binding library to exiv2,
+Welcome to imageMetadataGramplet.py.  By using pyexiv2 v0.2, python binding library to exiv2,
 created by Olivier Tilloy, you are able to read, write, and edit  the Exif Image Metadata stored 
-within *.jpg files...
+within image files...
 
 You may get this python library in either of two ways:
 1) Download, Compile, and Install from here: http://tilloy.net/dev/pyexiv2/
 2) try your linux software repository.
 
-    Fedora Core
+Windows Users
+---------------
+You will find the compiled libexiv2python.pyd along with the pyexiv2 module at http://tilloy.net/pyexiv2-win32-20100311.zip, just unzip the archive in the site-packages directory of your Python 2.6 setup (e.g. C:\Python26\lib\site-packages\).
+
+
+*** NOTE: Used linux to compile this one...
+For those interested in the cross-compilation process itself, the script I used is at 
+http://tilloy.net/cross_compile_pyexiv2.sh
+
+    Fedora Core 13
     ___________
-    yum install pyexiv2, you will get pyexiv2-0.1.3, among some other dependencies...
+    yum install pyexiv2, you will get pyexiv2-0.1.3, some other dependencies are required...
 
     Ubuntu, Debian based distros
     ____________________________
 
     package names are listed below
 
-    Windows users
-    _____________
-    Downloadable from its home site listed above
-
 Point your browser to http://exiv2.org/metadata.html for the complete metadata
 tag reference.
-
 
 Build dependencies
 ==================
@@ -58,6 +62,7 @@ pyexiv2 depends on the following libraries:
 
  * boost.python (http://www.boost.org/libs/python/doc/index.html)
  * exiv2 (http://www.exiv2.org/)
+ * expat-2.0.1-10, expat-devel-2.0.1-10
 
 It uses SCons (http://www.scons.org/) as a build system.
 
@@ -65,15 +70,15 @@ Some examples in src/ use PyGTK (http://www.pygtk.org/) and PyQt
 (http://www.riverbankcomputing.co.uk/software/pyqt/) to display image previews,
 those are optional dependencies.
 
-Fedora 12
+Fedora 13
 _________
-This is a typical list of build dependencies for a Fedora 12 system:
+This is a typical list of build dependencies for a Fedora 13 system:
 
-* python-2.6.2, and python-devel-2.6.2
-* scons
-* exiv2-0.19, and exiv2-devel-0.19
-* expat, and expat-devel
-* boost-python-1.39 or greater
+* python-2.6.4-20, and python-devel-2.6.4-20
+* scons-1.2.0-3
+* exiv2-0.19-1, and exiv2-devel-0.19-1
+* expat-2.0.1-10, and expat-devel-2.0.1-10
+* boost-python-1.41.0-7
 
 Ubuntu/ Debian
 ______________
