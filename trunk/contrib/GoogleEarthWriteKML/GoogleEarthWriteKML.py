@@ -42,8 +42,9 @@ _ = get_addon_translator().gettext
 #-------------------------------------------------------------------------
 from QuestionDialog import ErrorDialog, QuestionDialog2
 from libmapservice import MapService
+from gui.utils import open_file_with_default_application
 import Utils
-    
+
 # Check i zip is installed
 _ZIP_OK = False
 FILE_PATH = "zip"
@@ -112,31 +113,31 @@ class GoogleEarthService(MapService):
         filename = os.path.join(home_dir, default_filename)
         if not _GOOGLEEARTH_OK:
             qd2 = QuestionDialog2(
-                _("GoogleEarth not installed!"), 
-                (_("Create kmz/kml file ''%s''\n" 
+                _("GoogleEarth not installed!"),
+                (_("Create kmz/kml file ''%s''\n"
                   "in user directory ''%s''?")\
-                      % (default_filename, home_dir)), 
-                _("Yes"), 
+                      % (default_filename, home_dir)),
+                _("Yes"),
                 _("No"))
             if not qd2.run():
                 return
         base = os.path.dirname(filename)
         # Check if directory exists
         if not os.path.exists(os.path.normpath(base)):
-            ErrorDialog((_("Failure writing to %s") % base), 
+            ErrorDialog((_("Failure writing to %s") % base),
                          _("Directory does not exist"))
             return
- 
+
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
-        # Check if kml/kmz file exits 
+        # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(
-                _("GoogleEarth file exists!"), 
-                (_("Overwrite kmz/kml file ''%s''\n" 
+                _("GoogleEarth file exists!"),
+                (_("Overwrite kmz/kml file ''%s''\n"
                   "in user home directory ''%s''?")\
-                    % (default_filename, home_dir)), 
-                _("Yes"), 
+                    % (default_filename, home_dir)),
+                _("Yes"),
                 _("No"))
             if not qd2.run():
                 return
@@ -157,9 +158,9 @@ class GoogleEarthService(MapService):
         # Run GoogleEarth if on system, else keep created file
         if _GOOGLEEARTH_OK:
             if _ZIP_OK:
-                Utils.open_file_with_default_application(zip_filename)
+                open_file_with_default_application(zip_filename)
             else:
-                Utils.open_file_with_default_application(full_filename)
+                open_file_with_default_application(full_filename)
         # Remove the unzipped file.
         if _ZIP_OK:
             os.remove(full_filename)
@@ -196,7 +197,7 @@ class GoogleEarthService(MapService):
             country = place.get_main_location().get_country()
             placemark_descr = _combine(state.strip(), country.strip())
             self.kml_file.write('    <Placemark id="%s">\n' % placemark_descr)
-            self.kml_file.write("        <name>%s</name>\n" % title_descr) 
+            self.kml_file.write("        <name>%s</name>\n" % title_descr)
             self.kml_file.write("        <Point>\n")
             self.kml_file.write("            <coordinates>%s" % longitude)
             self.kml_file.write(",%s</coordinates>\n" % latitude)
