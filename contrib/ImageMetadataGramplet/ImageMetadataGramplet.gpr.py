@@ -2,7 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009 Rob G. Healey <robhealey1@gmail.com>
+# Copyright (C) 2009-2010 Rob G. Healey <robhealey1@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,8 +34,8 @@ register(GRAMPLET,
     gramplet_title = _("Image Metadata Gramplet"),
     detached_width = 450,
     detached_height = 440,
-    version = "0.2.0.r276",
-    gramps_target_version = "3.3",
-    status = STABLE,
+    version = "0.2.bzr278",
+    gramps_target_version = "3.2",
+    status = UNSTABLE,
     fname = "ImageMetadataGramplet.py",
     )

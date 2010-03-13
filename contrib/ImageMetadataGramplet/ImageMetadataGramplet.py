@@ -2,7 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009 Rob G. Healey <robhealey1@gmail.com>
+# Copyright (C) 2009-2010 Rob G. Healey <robhealey1@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,59 +20,65 @@
 
 # $Id$
 
-#*************************************************************************************************
+#*****************************************************************************
 # Python Modules
-#*************************************************************************************************
-import os, datetime, time, calendar
+#*****************************************************************************
+import os, datetime, time 
 from decimal import Decimal
 
 from TransUtils import get_addon_translator
 _gt = get_addon_translator().ugettext
-import gen.mime
 
 # import the pyexiv2 python library classes that we will be needing
 try:
-    from pyexiv2 import ImageMetadata, ExifTag, IptcTag, XmpTag, Rational
+    from pyexiv2 import ImageMetadata, ExifTag, XmpTag, Rational
 except ImportError:
-    pyexiv2msg = _gt("The, pyexiv2, python binding library, to exiv2 is not installed on "
-                     "this computer.\n  It can be downloaded either from your local repository "
-                     "or from here\n")
-    pyexiv2msg += " http://tilloy.net/dev/pyexiv2/"
-    raise Exception(pyexiv2msg)
+    pyexivmsg = _gt("The, pyexiv2, python binding library, to exiv2 is not "
+        "installed on this computer.\n It can be downloaded either from your "
+        "local repository or from here\n")
+    pyexivmsg += "http://tilloy.net/dev/pyexiv2"
+    raise Exception(pyexivmsg)
 
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 # Set up Logging
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 import logging
-LOG = logging.getLogger(".ImageMetadata")
+LOG = logging.getLogger(".ImageMetadataGramplet")
 
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 # GTK modules
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 import gtk
 
-#------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 # GRAMPS modules
-#------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 from gen.plug import Gramplet
 import Utils
-import GrampsLocale
+
+from DateHandler import displayer as _dd
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
-from Errors import ValidationError
 from QuestionDialog import OkDialog
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 # Constants
-#-----------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+# set up Abbreviated Months for select_date()
+_ABBREV_MONTHS = []
+_ABBREV_MONTHS.append("")
+_ABBREV_MONTHS.extend(
+                      [(_dd.long_months[month]) for month in range(1, 13)]
+                      )
+
 # first camera was created April 12, 1826
 # http://wiki.answers.com/Q/What_date_was_the_camera_invented 
 FIRST_DATE = datetime.datetime(1826, 4, 12, 14, 30, 00)
 
-FIRST_DESCRIPTION = _("Enter text describing this image and who might be in the image.  "
-                      "It might be best to enter a location for this image, especially "
-                      "if there is no GPS Latitude/ Longitude information available.")
+FIRST_DESCRIPTION = _("Enter text describing this image and who might be in "
+    "the image.  It might be best to enter a location for this image, "
+    "especially if there is no GPS Latitude/ Longitude information available.")
 
 # set up exif keys for the image
 ImageDescription =  "Exif.Image.ImageDescription"
@@ -85,8 +91,9 @@ ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
 ImageLongitude =    "Exif.GPSInfo.GPSLongitude"
 XmpSubject =        "Xmp.dc.subject"
 
-_DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer, ImageCopyright, 
-    ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude, XmpSubject ]
+_DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer, 
+    ImageCopyright, ImageLatitudeRef, ImageLatitude, ImageLongitudeRef,
+    ImageLongitude, XmpSubject ]
 
 #------------------------------------------------------------------------
 # Gramplet class
@@ -99,7 +106,9 @@ class imageMetadataGramplet(Gramplet):
     """     
 
     def init(self):
-        """ sets up the variables, widgets, and data fields """
+        """
+        sets up the variables, widgets, and data fields
+        """
         
         self.exif_column_width = 15
         self.dirty = False
@@ -203,30 +212,34 @@ class imageMetadataGramplet(Gramplet):
         rows.pack_start(description_box, True, True, 0)
 
         # set up tooltip information for the fields
-        self.exif_widgets["Photographer"].set_tooltip_text(_("Enter the name of the person who took this image."))
+        self.exif_widgets["Photographer"].set_tooltip_text(_("Enter the name "
+            "of the person who took this image."))
 
-        self.exif_widgets["Date"].set_tooltip_text(_("Press the Select Date Button to bring up a calendar "
-                                                     "where you can choose a date."))
+        self.exif_widgets["Date"].set_tooltip_text(_("Press the Select Date "
+            "Button to bring up a calendar where you can choose a date."))
 
-        self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright information for the image.  "
-                                                          "Example: (C) 2010 Smith and Wesson"))
+        self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
+            " information for the image.  xample: (C) 2010 Smith and Wesson"))
 
-        self.xmp_widgets["Subject"].set_tooltip_text(_("Enter words that describe this image, separated by comma.\n"
-                                                       "Example: Kids,house,dog,car ."))
+        self.xmp_widgets["Subject"].set_tooltip_text(_("Enter words that "
+            "describe this image, separated by comma.\n  Example: Kids,house,"
+            "dog,car"))
 
-        GPSLatRefMsg = _("If using decimal format in Latitude, leave blank.  If using Degrees, Minutes, Seconds, "
-                         "please enter either a ") + "N" + _(" or ") + "S"
+        GPSLatRefMsg = _("If using decimal format in Latitude, leave blank.  "
+            "If using Degrees, Minutes, Seconds, please enter either a N or S")
         self.exif_widgets["LatitudeRef"].set_tooltip_text(GPSLatRefMsg)
 
-        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS Latitude as either "
-                                                         "Degrees, Minutes, Seconds or Decimal formats."))
+        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS "
+            "Latitude as either Degrees, Minutes, Seconds or Decimal "
+            "formats."))
 
-        GPSLongRefMsg = _("If using decimal format in Longitude, leave blank.  If using Degrees, Minutes, Seconds, "
-                           "please enter either a ") + "W" + _(" or ") + "E"
+        GPSLongRefMsg = _("If using decimal format in Longitude, leave blank.  "
+            "If using Degrees, Minutes, Seconds,  please enter either a W or E")
         self.exif_widgets["LongitudeRef"].set_tooltip_text(GPSLongRefMsg)
 
-        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS Longitude as either in"
-                                                          "Degrees, Minutes, Seconds or Decimal formats."))
+        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS "
+            "Longitude as either in Degrees, Minutes, Seconds or Decimal "
+            "formats."))
 
         # Save, Clear, Convert GPS
         row = gtk.HBox()
@@ -256,16 +269,15 @@ class imageMetadataGramplet(Gramplet):
 
         # get media and pyexiv2 image
         self.media = self.dbstate.db.get_object_from_handle(handle)
-        self.orig_image, self.image = self._get_image(self.media)
-
-        # get metadata from image
-#        self.read_image_metadata(None)
+        self._get_image(self.media)
 
         # update all widgets
         self.update_widgets()
 
     def main(self):
-        """ gets media handle, media, pyexiv2.Image, and first values """
+        """
+        Does Nothing
+        """
 
         pass
 
@@ -288,7 +300,9 @@ class imageMetadataGramplet(Gramplet):
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[], 
                  mark_dirty=False, default=0):
-        """ creates the gtk row """
+        """
+        creates the gtk row
+        """
 
         row = gtk.HBox()
         label = gtk.Label()
@@ -337,24 +351,19 @@ class imageMetadataGramplet(Gramplet):
         row.show_all()
         return row
 
-    def mark_dirty(self, obj):
-        self.dirty = True
-
-    def edit_callback(self, person):
-        self.dirty = False
-        self.update()
-
     def str_to_date(self, str2date):
         """
         converts a date string to datetime.datetime
 
         @param: str2date -- a date string: will always bee in ISO format
         """
+
         if not str2date:
             return datetime.datetime.now()
 
         # return the date string to datetime.datetime format
-        return datetime.datetime(*time.strptime(str2date, "%Y %b %d %H:%M:%S")[0:6])
+        return datetime.datetime(*time.strptime(
+            str2date, "%Y %b %d %H:%M:%S")[0:6])
 
     def date_to_str(self, date2str):
         """
@@ -362,20 +371,24 @@ class imageMetadataGramplet(Gramplet):
 
         @param: date2str -- a datetime.datetime to string
         """
+
         if not date2str:
             return ""  
 
         dateType = date2str.__class__
         time = time.localtime()
         if dateType == datetime.datetime:
-            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, _ABBREV_MONTHS[date2str.month], date2str.day, 
-                date2str.hour, date2str.minute, date2str.second)
+            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, 
+                _ABBREV_MONTHS[date2str.month], date2str.day, date2str.hour, 
+                date2str.minute, date2str.second)
         elif dateType == datetime.date:
-            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, _ABBREV_MONTHS[date2str.month], date2str.day,
-            time[3], time[4], time[5])
+            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, 
+                _ABBREV_MONTHS[date2str.month], date2str.day, time[3], 
+                time[4], time[5])
         else:
-            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, _ABBREV_MONTHS[date2str.month], date2str.day,
-                time[3], time[4], time[5])
+            date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, 
+                _ABBREV_MONTHS[date2str.month], date2str.day, time[3], 
+                time[4], time[5])
 
         # return date as a string to its callers
         return date2str
@@ -437,9 +450,11 @@ class imageMetadataGramplet(Gramplet):
             latitude = self.exif_widgets["Latitude"].get_text()
             if latitude:
 
-                # Convert Decimal to DDMMSS 
+                # Convert Decimal to deg, min, sec
                 if "." in latitude:
-                    degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS( latitude, "Latitude" )
+                    degrees, minutes, seconds, latref = \
+                        self.convert_decimal_deg_min_sec( latitude )
+
                     latitude = "%(deg)s %(mins)s %(secs)s" % {
                         'deg' : degrees, 'mins' : minutes, 'secs' : seconds }
                     self.exif_widgets["Latitude"].set_text( latitude )
@@ -461,7 +476,9 @@ class imageMetadataGramplet(Gramplet):
 
                 # Convert Decimal to DDMMSS 
                 if "." in longitude:
-                    degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS( longitude, "Longitude" )
+                    degrees, minutes, seconds, longref = \
+                        self.convert_decimal_deg_min_sec( longitude )
+
                     longitude = "%(deg)s %(mins)s %(secs)s" % {
                         'deg' : degrees, 'mins' : minutes, 'secs' : seconds }
                     self.exif_widgets["Longitude"].set_text( longitude )
@@ -489,15 +506,18 @@ class imageMetadataGramplet(Gramplet):
 
         else:
             basename = os.path.basename(self.media)
-            LOG.warn(_("The image file %s does NOT have write access/ permissions. "
-                       "If you have access and rights to change the permissions, "
-                       "then please do it now." % basename))
+            LOG.warn(_("The image file %s does NOT have write access/ "
+                "permissions. If you have access and rights to change the "
+                "permissions, then please do it now." % basename))
             return None
 
     def clear_data_entry(self, obj):
-        """ clears all data fields to nothing """
+        """
+        clears all data fields to nothing
+        """
 
-        for key in [ "Description", "Date", "Photographer", "Copyright", "Latitude", "Longitude" ]:
+        for key in [ "Description", "Date", "Photographer", "Copyright", 
+            "Latitude", "Longitude" ]:
             self.exif_widgets[key].set_text("")
 
         for key in ["LatitudeRef", "LongitudeRef"]:
@@ -506,7 +526,9 @@ class imageMetadataGramplet(Gramplet):
         self.xmp_widgets["Subject"].set_text("")
 
     def _get_media(self, media_id):
-        """ returns an image object from the database """
+        """
+        returns an image object from the database
+        """
 
         if not media_id:
             return None 
@@ -526,13 +548,11 @@ class imageMetadataGramplet(Gramplet):
             return None, None
 
         # get full image path
-        originalimage = Utils.media_path_full(self.dbstate.db, media_obj.get_path() )
+        self.orig_image = Utils.media_path_full( self.dbstate.db, 
+            media_obj.get_path() )
 
         # get the pyexiv2 image file
-        grampletimage = ImageMetadata(originalimage)
-
-        # return originalimage and grampletimage to its callers
-        return originalimage, grampletimage  
+        self.image = ImageMetadata( self.orig_image )
 
     def get_value(self, key):
         """
@@ -577,19 +597,23 @@ class imageMetadataGramplet(Gramplet):
 
                     # Image description
                     if keytag == ImageDescription:
-                        self.exif_widgets["Description"].set_text( self.get_value( keytag ) )
+                        self.exif_widgets["Description"].set_text(
+                            self.get_value( keytag ) )
 
                     # Image DateTime
                     elif keytag == ImageDateTime:
-                        self.exif_widgets["Date"].set_text( self.get_value ( keytag ) )
+                        self.exif_widgets["Date"].set_text(
+                            self.get_value ( keytag ) )
 
                     # image photographer
                     elif keytag == ImagePhotographer:
-                        self.exif_widgets["Photographer"].set_text( self.get_value( keytag ) )
+                        self.exif_widgets["Photographer"].set_text(
+                            self.get_value( keytag ) )
 
                     # Image Copyright
                     elif keytag == ImageCopyright:
-                        self.exif_widgets["Copyright"].set_text( self.get_value( keytag ) )
+                        self.exif_widgets["Copyright"].set_text(
+                            self.get_value( keytag ) )
 
                     # GPS Latitude
                     elif keytag == ImageLatitude:
@@ -600,7 +624,8 @@ class imageMetadataGramplet(Gramplet):
                             minutes, rest = minutes.split("/")
                             seconds, rest = seconds.split("/")
                             latitude = "%(deg)s %(mins)s %(sec)s" % {
-                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
+                                'deg' : degrees, 'mins' : minutes, 
+                                'sec' : seconds }
                             self.exif_widgets["Latitude"].set_text( latitude )
 
                             # Latitude Reference
@@ -619,7 +644,8 @@ class imageMetadataGramplet(Gramplet):
                             minutes, rest = minutes.split("/")
                             seconds, rest = seconds.split("/")
                             longitude = "%(deg)s %(mins)s %(sec)s" % {
-                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
+                                'deg' : degrees, 'mins' : minutes, 
+                                'sec' : seconds}
                             self.exif_widgets["Longitude"].set_text( longitude )
 
                             # Longitude Reference
@@ -637,20 +663,20 @@ class imageMetadataGramplet(Gramplet):
                 for keytag in xmpKeyTags:
                     if keytag == XmpSubject:
                         keywords = self.get_value( keytag )
+                        subject = ""
                         if keywords:
-                            subject = ""
                             index = 0 
                             for word in keywords:
                                 subject += word
                                 if index is not len(keywords):
                                     subject += "," 
-                            self.xmp_widgets["Subject"].set_text( subject )
+                        self.xmp_widgets["Subject"].set_text( subject )
 
             # image is not readable
             else:
                 LOG.warn(_("The image file %s does NOT have read access/ permissions. "
-                           "If you have access and rights to change the permissions, "
-                           "then please do it now." % basename))
+                    "If you have access and rights to change the permissions, "
+                    "then please do it now." % basename))
 
         # image does not exists at all
         else:
@@ -659,7 +685,7 @@ class imageMetadataGramplet(Gramplet):
 
     def select_date(self, obj):
         """
-        will allow me to choose a date from the calendar widget
+        will allow you to choose a date from the calendar widget
         """
  
         self.app = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -673,48 +699,47 @@ class imageMetadataGramplet(Gramplet):
         self.app.show()
 
     def post_init(self):
+        """
+        disconnects the signal
+        """
+
         self.disconnect("active-changed")
 
     def double_click(self, obj):
-        """ receives double-clicked and returns the selected date to "Date" widget """
+        """
+        receives double-clicked and returns the selected date to "Date" 
+        widget
+        """
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
         now = datetime.datetime.now()
-        image_date = "%04d %s %02d %02d:%02d:%02d" % (year, _ABBREV_MONTHS[(month + 1)], day,
-            now.hour, now.minute, now.second)
+        image_date = "%04d %s %02d %02d:%02d:%02d" % (year, 
+            _ABBREV_MONTHS[(month + 1)], day, now.hour, now.minute, now.second)
 
         self.exif_widgets["Date"].set_text(image_date)
         self.app.destroy()
 
-    def _validate_coordinate(self, widget, text, typedeg):
-        if (typedeg == 'lat') and not conv_lat_lon(text, "0", "ISO-D"):
-            return ValidationError(_(u"Invalid latitude (syntax: 18\u00b09'") +
-                                   _('48.21"S, -18.2412 or -18:9:48.21)'))
-        elif (typedeg == 'lon') and not conv_lat_lon("0", text, "ISO-D"):
-            return ValidationError(_(u"Invalid longitude (syntax: 18\u00b09'") +
-                                   _('48.21"E, -18.2412 or -18:9:48.21)'))
-
-    def Convert_Decimal_DDMMSS(self, Coordinates, CoordinateType):
+    def convert_decimal_deg_min_sec(self, coordinates):
         """
-        Converts Decimal GPS Coordinates to Degrees, Minutes, Seconds GPS Coordinates
+        Converts Decimal GPS coordinates to Degrees, Minutes, Seconds 
+        GPS coordinates
 
-        @param: Coordinates    -- GPS Decimal Coordinates
-        @param: CoordinateType -- either Latitude/ Longitude
+        @param: coordinates    -- GPS Decimal coordinates
         """
 
-        if Coordinates is not None and Coordinates is not "":
+        if coordinates is not None and coordinates is not "":
 
-            if "." in Coordinates:
+            if "." in coordinates:
 
-                if Coordinates[0] == "-":
-                    CoordinateRef = 2
-                    Coordinates = Coordinates[1:]
+                if coordinates[0] == "-":
+                    coordinateref = 2
+                    coordinates = coordinates[1:]
                 else:
-                    CoordinateRef = 1
+                    coordinateref = 1
 
-                degrees = int(float(Coordinates))
+                degrees = int(float(coordinates))
                 degrees = str(degrees)
-                rest, minutes = Coordinates.split(".", 1)
+                rest, minutes = coordinates.split(".", 1)
                 minutes = "." + minutes
 
                 minutes = Decimal(minutes) * 60
@@ -727,43 +752,64 @@ class imageMetadataGramplet(Gramplet):
                 seconds = int(float(seconds))
                 seconds = str(seconds)  
 
-                # return degrees, minutes, seconds, CoordinateReference to its callers
-                return degrees, minutes, seconds, CoordinateRef
+                # return degrees, minutes, seconds, coordinatereference 
+                # to its callers
+                return degrees, minutes, seconds, coordinateref
 
-    def convert_latitude(self, Coordinates, CoordinateType):
+    def convert_latitude(self, coordinates):
+        """
+        converts GPS Latitude
 
-        if Coordinates and "." in Coordinates:
-            degrees, minutes, seconds, latref = self.Convert_Decimal_DDMMSS(Coordinates, CoordinateType)
+        @param: coordinate = Latitude GPS Coordinates
+        """
+
+        if coordinates and "." in coordinates:
+            degrees, minutes, seconds, latref = self.convert_decimal_deg_min_sec(
+                coordinates)
+
             latitude = "%(deg)s %(mins)s %(sec)s" % {
                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
-            self.exif_widgets["Latitude"].set_text( latitude )  
+            self.exif_widgets["Latitude"].set_text( latitude )
+            self.exif_widgets["LatitudeRef"].set_active( latref ) 
 
-    def convert_longitude(self, Coordinates, CoordinateType):
+    def convert_longitude(self, coordinates):
+        """
+        converts GPS Longitude
 
-        if Coordinates and "." in Coordinates:
-            degrees, minutes, seconds, longref = self.Convert_Decimal_DDMMSS(Coordinates, CoordinateType)
+        @param: coordinate = Longitude GPS Coordinates
+        """
+
+        if coordinates and "." in coordinates:
+            degrees, minutes, seconds, longref = self.convert_decimal_deg_min_sec(
+                coordinates)
+
             longitude = "%(deg)s %(mins)s %(sec)s" % {
                 'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
-            self.exif_widgets["Longitude"].set_text( longitude ) 
+            self.exif_widgets["Longitude"].set_text( longitude )
+            self.exif_widgets["LongitudeRef"].set_active( longref )
 
     def convert_gps(self, obj):
+        """
+        converts the GPS Coordinates passed to it
+        """
 
-        self.convert_latitude( self.exif_widgets["Latitude" ].get_text() , "Latitude" )
-        self.convert_longitude(self.exif_widgets["Longitude"].get_text(), "Longitude")
+        self.convert_latitude( self.exif_widgets["Latitude"].get_text()  )
+        self.convert_longitude(self.exif_widgets["Longitude"].get_text() )
   
-def string_to_rational(Coordinate):
-    """ convert string to rational variable for GPS """
+def string_to_rational(coordinate):
+    """
+    convert string to rational variable for GPS
+    """
 
-    if '.' in Coordinate:
-        value1, value2 = Coordinate.split('.')
-        value = Rational(int(float(value1 + value2)), 10**len(value2))
+    if '.' in coordinate:
+        value1, value2 = coordinate.split('.')
+        return Rational(int(float(value1 + value2)), 10**len(value2))
     else:
-        value = Rational(int(Coordinate), 1)
+        return Rational(int(coordinate), 1)
 
-    # return value to its caller
-    return value
+def coords_to_rational(coordinates):
+    """
+    returns the GPS coordinates to Latitude/ Longitude
+    """
 
-def coords_to_rational(Coordinates):
-    """ returns the GPS Coordinates to Latitude/ Longitude """
-
-    return [string_to_rational(coordinate) for coordinate in Coordinates.split(' ')]
+    return [string_to_rational(coordinate) for coordinate in coordinates.split(' ')]
