@@ -1,0 +1,157 @@
+# French translations for gramps package.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-03 10:46+0100\n"
+"PO-Revision-Date: 2010-02-03 11:01+0100\n"
+"Last-Translator:\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.gpr.py:31
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.gpr.py:35
+msgid "Image Metadata Gramplet"
+msgstr "Gramplet Image Metadata"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:68
+msgid "Enter text describing this image and who might be in the image.  It might be best to enter a location for this image, especially if there is no GPS Latitude/ Longitude information available."
+msgstr "Entrez du texte décrivant l'image and pourrait être dans l'image. Il est préférable d'entrer l'emplacement de cette image, surtout si il n'y a pas d'informations disponibles sur les coordonnées GPS (Latitude/Longitude)."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:121
+msgid "Active image"
+msgstr "Image active"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:122
+msgid "Photographer"
+msgstr "Photographe"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:123
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:673
+msgid "Select Date"
+msgstr "Sélection de la date"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:124
+msgid "Date"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:133
+msgid "Hour"
+msgstr "Heure"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:146
+msgid "Minutes"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:159
+msgid "Seconds"
+msgstr "Secondes"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:171
+msgid "Copyright"
+msgstr "Droit d'auteur"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:180
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:189
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:213
+msgid "Reference"
+msgstr "Référence"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:195
+msgid "N"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:195
+msgid "S"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:204
+msgid "Longitude"
+msgstr "Longitude"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:219
+msgid "W"
+msgstr "O"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:219
+msgid "E"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:231
+msgid "Description"
+msgstr ""
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:244
+msgid "Enter the name of the person who took this image."
+msgstr "Entrez le nom de la personne qui a pris cette image."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:246
+msgid "Press the Select Date Button to bring up a calendar where you can double-click a date."
+msgstr "Appuyez sur le bouton Sélectionner pour appeler le calendrier dans lequel vous pouvez cliquer deux fois sur une date."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:249
+msgid "Enter the hour between (00 - 23)."
+msgstr "Entrez une heure entre (00 et 23)."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:251
+msgid "Enter the minutes between (00 - 59)."
+msgstr "Entrez les minutes entre (00 et 59)."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:253
+msgid "Enter the seconds between (00 - 59)."
+msgstr "Entrez les secondes entre (00 et 59)."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:255
+msgid "Enter the copyright information for the image.  Example: (C) 2010 Smith and Wesson"
+msgstr "Entrez l'information sur le droit d'auteur pour cette image. Exemple: (C) 2010 Charlemagne "
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:258
+msgid "Enter the Degrees Minutes, and Seconds for the GPS Latitude."
+msgstr "Entrez les minutes et secondes en degrés, pour la latitude GPS. "
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:261
+msgid "Enter the Degrees Minutes, and Seconds for the GPS Longitude."
+msgstr "Entrez les minutes et secondes en degrés, pour la longitude GPS. "
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:266
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:269
+msgid "Clear"
+msgstr "Nettoyer"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:272
+msgid "Re- Display"
+msgstr "Re- Afficher"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:306
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:648
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:650
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:657
+msgid "Select Image"
+msgstr "Sélection de l'image"
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:491
+#, python-format
+msgid "The image file %s does NOT have write access/ permissions. If you have access and rights to change the permissions, then please do it now."
+msgstr "Le fichier image %s N'A PAS de permissions en écriture. Si vous avez un accès et les droits pour modifier les permissions, s'il vous plait effectuez le changement."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:634
+#, python-format
+msgid "The image file %s does NOT have read access/ permissions. If you have access and rights to change the permissions, then please do it now."
+msgstr "Le fichier image %s N'A PAS de permissions en lecture. Si vous avez un accès et les droits pour modifier les permissions, s'il vous plait effectuez le changement."
+
+#: ImageMetadataGramplet-v0.1/ImageMetadataGramplet.py:640
+msgid "The image file is missing.  Please select another image or edit the media object to fix this problem."
+msgstr "Le fichier image est manquant. S'il vous plait sélectionnez une autre image ou éditez l'objet media pour corriger ce problème."
+
