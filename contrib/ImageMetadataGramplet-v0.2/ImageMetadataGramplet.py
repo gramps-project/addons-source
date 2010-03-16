@@ -1,4 +1,5 @@
-# encoding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -764,11 +765,10 @@ class imageMetadataGramplet(Gramplet):
         """
 
         if coordinates and "." in coordinates:
-            degrees, minutes, seconds, latref = self.convert_decimal_deg_min_sec(
-                coordinates)
+            deg, min, sec, latref = self.convert_decimal_deg_min_sec( coordinates )
 
             latitude = "%(deg)s %(mins)s %(sec)s" % {
-                'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
+                'deg' : deg, 'mins' : min, 'sec' : sec }
             self.exif_widgets["Latitude"].set_text( latitude )
             self.exif_widgets["LatitudeRef"].set_active( latref ) 
 
@@ -780,11 +780,10 @@ class imageMetadataGramplet(Gramplet):
         """
 
         if coordinates and "." in coordinates:
-            degrees, minutes, seconds, longref = self.convert_decimal_deg_min_sec(
-                coordinates)
+            deg, min, sec, longref = self.convert_decimal_deg_min_sec( coordinates )
 
             longitude = "%(deg)s %(mins)s %(sec)s" % {
-                'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
+                'deg' : deg, 'mins' : min, 'sec' : sec }
             self.exif_widgets["Longitude"].set_text( longitude )
             self.exif_widgets["LongitudeRef"].set_active( longref )
 

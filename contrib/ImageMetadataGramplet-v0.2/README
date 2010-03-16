@@ -1,5 +1,6 @@
 Gramps Licensing Information
 --------------------------------------------------------------------------
+# https://gramps-addons.svn.sourceforge.net/svnroot/gramps-addons/trunk/contrib/ImageMetadataGramplet-v0.2/README
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -22,28 +23,23 @@ Gramps Licensing Information
 # $Id: README 330 2010-03-10 12:29:00Z robhealey1 $
 --------------------------------------------------------------------------
 
-gramps-addons/trunk/contrib/ImageMetadataGramplet/imageMetadataGramplet.py
-Copyright (C) 2010 Rob G. Healey <robhealey1@gmail.com>
-*******
-
-Welcome to imageMetadataGramplet.py.  By using pyexiv2 v0.2, python binding library to exiv2,
-created by Olivier Tilloy, you are able to read, write, and edit  the Exif Image Metadata stored 
-within image files...
+Welcome to imageMetadataGramplet v0.2.  By using pyexiv2, python binding library to exiv2,
+created by Olivier Tilloy, and ImageMetadataGramplet, you will be able to read, write, edit, and remove Exif Metadata stored 
+within your image files...
 
 You may get this python library in either of two ways:
 1) Download, Compile, and Install from here: http://tilloy.net/dev/pyexiv2/
-2) try your linux software repository.
+2) install from your linux software repository.
 
 Windows Users
 ---------------
 You will find the compiled libexiv2python.pyd along with the pyexiv2 module at http://tilloy.net/pyexiv2-win32-20100311.zip, just unzip the archive in the site-packages directory of your Python 2.6 setup (e.g. C:\Python26\lib\site-packages\).
 
-
 *** NOTE: Used linux to compile this one...
 For those interested in the cross-compilation process itself, the script I used is at 
 http://tilloy.net/cross_compile_pyexiv2.sh
 
-    Fedora Core 13
+    Fedora Core 14
     ___________
     yum install pyexiv2, you will get pyexiv2-0.1.3, some other dependencies are required...
 
