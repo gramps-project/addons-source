@@ -62,7 +62,7 @@ from DateHandler import displayer as _dd
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
-from QuestionDialog import OkDialog
+from QuestionDialog import OkDialog, WarningDialog
 #-----------------------------------------------------------------------------
 # Constants
 #-----------------------------------------------------------------------------
@@ -507,7 +507,7 @@ class imageMetadataGramplet(Gramplet):
 
         else:
             basename = os.path.basename(self.media)
-            LOG.warn(_("The image file %s does NOT have write access/ "
+            WarningDialog(_("The image file %s does NOT have write access/ "
                 "permissions. If you have access and rights to change the "
                 "permissions, then please do it now." % basename))
             return None
@@ -675,13 +675,13 @@ class imageMetadataGramplet(Gramplet):
 
             # image is not readable
             else:
-                LOG.warn(_("The image file %s does NOT have read access/ permissions. "
+                WarningDialog(_("The image file %s does NOT have read access/ permissions. "
                     "If you have access and rights to change the permissions, "
                     "then please do it now." % basename))
 
         # image does not exists at all
         else:
-            LOG.warn(_("The image file is missing.  Please select another image or "
+            WarningDialog(_("The image file is missing.  Please select another image or "
                        "edit the media object to fix this problem."))
 
     def select_date(self, obj):
