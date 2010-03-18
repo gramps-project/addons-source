@@ -401,7 +401,7 @@ class DataEntryGramplet(Gramplet):
         if self._dirty:
             current_person = self._dirty_person
         else:
-            current_person = self.dbstate.get_active_object("Person")
+            current_person = self.get_active_object("Person")
         # Pre-check to make sure everything is ok: -------------------------------------------
         if surname == "" and firstname == "":
             ErrorDialog(_("Please provide a name."), _("Can't add new person."))
