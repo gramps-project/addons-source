@@ -394,27 +394,31 @@ class imageMetadataGramplet(Gramplet):
         # return date as a string to its callers
         return date2str
  
-    def set_value(self, keytag, KeyValue):
+    def set_value(self, keytag, keyvalue):
         """
         sets the value for the Exif keys
 
         @param: keytag   -- exif key
-        @param: KeyValue -- value to be set
+        @param: keyvalue -- value to be saved
         """
+
+        # if keyvalue is equal to nothing, return without setting the value
+        if not keyvalue:
+            return
 
         if "Exif" in keytag:
             try:
-                self.image[keytag].value = KeyValue
+                self.image[keytag].value = keyvalue
 
             except KeyError:
-                self.image[keytag] = ExifTag(keytag, KeyValue)
+                self.image[keytag] = ExifTag(keytag, keyvalue)
 
         elif "Xmp" in keytag:
             try:
-                self.image[keytag].value = KeyValue
+                self.image[keytag].value = keyvalue
 
             except KeyError:
-                self.image[keytag] = XmpTag(keytag, KeyValue)
+                self.image[keytag] = XmpTag(keytag, keyvalue)
 
     def write_image_metadata(self, obj):
         """

@@ -22,22 +22,23 @@
 #
 
 #------------------------------------------------------------------------
-# Exif Image Metadata Gramplet
+# Register: Image Metadata Gramplet
 #------------------------------------------------------------------------
-register(GRAMPLET,
-    id = "Image Metadata Gramplet",
-    name = _("Image Metadata Gramplet"),
-    description = _("Gramplet for editing image EXIF metadata"),
-    height = 335,
-    expand = False,
-    gramplet = 'imageMetadataGramplet',
-    gramplet_title = _("Image Metadata Gramplet"),
-    detached_width = 450,
-    detached_height = 440,
-    version = "0.2.bzr279",
+register(                   GRAMPLET,
+    id =                    "Image Metadata Gramplet",
+    name =                  _("Image Metadata Gramplet"),
+    description =           _("Gramplet for editing image EXIF metadata"),
+    height =                335,
+    expand =                False,
+    gramplet =              'imageMetadataGramplet',
+    gramplet_title =        _("Image Metadata Gramplet"),
+    detached_width =        450,
+    detached_height =       440,
+    version =               "0.2.bzr286",
     gramps_target_version = "3.3",
-    status = UNSTABLE,
-    fname = "ImageMetadataGramplet.py",
-    authors = ["Rob G. Healey"],
-    authors_email = ["robhealey1@gmail.com"],
+    status =                UNSTABLE,
+    fname =                 "ImageMetadataGramplet.py",
+    authors =               ["Rob G. Healey"],
+    authors_email =         ["robhealey1@gmail.com"],
+    help_url =              "Image Metadata Gramplet",
     )
