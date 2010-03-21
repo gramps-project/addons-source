@@ -1,0 +1,90 @@
+# French translation for gramps
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-21 14:43+0100\n"
+"PO-Revision-Date: 2010-03-21 14:56+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+msgid "Todo Report"
+msgstr "Rapport À Faire"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc."
+msgstr "Produit une liste de toutes les notes avec un marqueur donné ainsi que les enregistrements qui les référencent, l'individu, la famille, l'événement, etc."
+
+#: ToDoReport/TodoReport.py:91
+#, python-format
+msgid "Report on Notes Marked %s"
+msgstr "Rapport sur les notes marquées %s"
+
+#: ToDoReport/TodoReport.py:192
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:198
+msgid "Text"
+msgstr "Texte"
+
+#: ToDoReport/TodoReport.py:324
+#, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr "%(relationship_type)s le %(relationship_date)s"
+
+#: ToDoReport/TodoReport.py:355
+msgid "date: "
+msgstr "date :"
+
+#: ToDoReport/TodoReport.py:366
+msgid "place: "
+msgstr "lieu :"
+
+#: ToDoReport/TodoReport.py:469
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: ToDoReport/TodoReport.py:471
+msgid "Marker"
+msgstr "Marqueur"
+
+#: ToDoReport/TodoReport.py:482
+msgid "The marker type to use for the report"
+msgstr "Le type de marqueur utilisé pour ce rapport"
+
+#: ToDoReport/TodoReport.py:485
+msgid "Group by reference type"
+msgstr "Grouper par type de référence"
+
+#: ToDoReport/TodoReport.py:486
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Grouper les notes par famille, individu, lieu, etc."
+
+#: ToDoReport/TodoReport.py:503
+msgid "The style used for the title of the page."
+msgstr "Le style utilisé pour les titres de page."
+
+#: ToDoReport/TodoReport.py:513
+msgid "The style used for the section headers."
+msgstr "Le style utilisé pour les en-têtes de section."
+
+#: ToDoReport/TodoReport.py:523
+msgid "The basic style used for the text display."
+msgstr "Le style de base pour afficher du texte."
+
+#: ToDoReport/TodoReport.py:534
+msgid "The basic style used for table headings."
+msgstr "Le style de base pour l'en-tête du tableau."
+
+#: ToDoReport/TodoReport.py:541
+msgid "The basic style used for the note display."
+msgstr "Le style de base pour afficher la note."
+

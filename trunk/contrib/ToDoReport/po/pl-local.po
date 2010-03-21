@@ -1,0 +1,104 @@
+# translation of pl.po to
+# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
+#
+# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
+# Piotr Czubaszek <piotrek@gmail.com>, 2007.
+# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008,2009
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-21 14:43+0100\n"
+"PO-Revision-Date: 2009-10-05 21:15+0100\n"
+"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+#, fuzzy
+msgid "Todo Report"
+msgstr "Raport książkowy"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given marker along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:91
+#, fuzzy, python-format
+msgid "Report on Notes Marked %s"
+msgstr "Nie udało się utworzyć raportu"
+
+#: ToDoReport/TodoReport.py:192
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:198
+msgid "Text"
+msgstr "Tekst"
+
+#: ToDoReport/TodoReport.py:324
+#, fuzzy, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr " (%(birth_date)s - %(death_date)s)"
+
+#: ToDoReport/TodoReport.py:355
+#, fuzzy
+msgid "date: "
+msgstr "Data"
+
+#: ToDoReport/TodoReport.py:366
+#, fuzzy
+msgid "place: "
+msgstr "Miejsce"
+
+#: ToDoReport/TodoReport.py:469
+msgid "Report Options"
+msgstr "Opcje raportu"
+
+#: ToDoReport/TodoReport.py:471
+msgid "Marker"
+msgstr "Oznaczenie"
+
+#: ToDoReport/TodoReport.py:482
+#, fuzzy
+msgid "The marker type to use for the report"
+msgstr "Marker używany do raportu"
+
+#: ToDoReport/TodoReport.py:485
+#, fuzzy
+msgid "Group by reference type"
+msgstr "Notatka o źródle"
+
+#: ToDoReport/TodoReport.py:486
+msgid "Group notes by Family, Person, Place, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:503
+msgid "The style used for the title of the page."
+msgstr "Styl używany do tytułu strony."
+
+#: ToDoReport/TodoReport.py:513
+msgid "The style used for the section headers."
+msgstr "Styl używany do nagłówka sekcji."
+
+#: ToDoReport/TodoReport.py:523
+msgid "The basic style used for the text display."
+msgstr "Podstawowy styl używany do wyświetlania tekstu."
+
+#: ToDoReport/TodoReport.py:534
+msgid "The basic style used for table headings."
+msgstr "Podstawowy styl używany do nagłówków tabeli."
+
+#: ToDoReport/TodoReport.py:541
+msgid "The basic style used for the note display."
+msgstr "Podstawowy styl używany do wyświetlania notatki."

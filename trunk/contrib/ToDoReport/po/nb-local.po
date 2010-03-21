@@ -1,0 +1,105 @@
+# translation of nb.po to
+# Gramps
+# Copyright (C) YEAR ORGANIZATION.
+#
+# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
+# Axel Bojer <axelb@skolelinux.no>, 2003.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Nils Kristian Tomren <project@nilsk.net>, 2006.
+# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-21 14:43+0100\n"
+"PO-Revision-Date: 2010-03-08 08:21+0100\n"
+"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+#, fuzzy
+msgid "Todo Report"
+msgstr "Bokrapport"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given marker along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:91
+#, fuzzy, python-format
+msgid "Report on Notes Marked %s"
+msgstr "Klarte ikke å lage rapport"
+
+#: ToDoReport/TodoReport.py:192
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:198
+msgid "Text"
+msgstr "Tekst"
+
+#: ToDoReport/TodoReport.py:324
+#, fuzzy, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr " (%(birth_date)s - %(death_date)s)"
+
+#: ToDoReport/TodoReport.py:355
+#, fuzzy
+msgid "date: "
+msgstr "dato"
+
+#: ToDoReport/TodoReport.py:366
+#, fuzzy
+msgid "place: "
+msgstr "sted"
+
+#: ToDoReport/TodoReport.py:469
+msgid "Report Options"
+msgstr "Innstillinger for rapporter"
+
+#: ToDoReport/TodoReport.py:471
+msgid "Marker"
+msgstr "Markering"
+
+#: ToDoReport/TodoReport.py:482
+#, fuzzy
+msgid "The marker type to use for the report"
+msgstr "Den markeringen som skal brukes for rapporten"
+
+#: ToDoReport/TodoReport.py:485
+#, fuzzy
+msgid "Group by reference type"
+msgstr "Notat for kildehenvisning"
+
+#: ToDoReport/TodoReport.py:486
+msgid "Group notes by Family, Person, Place, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:503
+msgid "The style used for the title of the page."
+msgstr "Stilen som brukes på sidens tittel."
+
+#: ToDoReport/TodoReport.py:513
+msgid "The style used for the section headers."
+msgstr "Stilen som brukes til kapitteloverskriften."
+
+#: ToDoReport/TodoReport.py:523
+msgid "The basic style used for the text display."
+msgstr "Den grunnleggende stilen for tekstvisning."
+
+#: ToDoReport/TodoReport.py:534
+msgid "The basic style used for table headings."
+msgstr "Basisstilen for kolonneoverskrifter i tabeller."
+
+#: ToDoReport/TodoReport.py:541
+msgid "The basic style used for the note display."
+msgstr "Den grunnleggende stilen for notatvisning."

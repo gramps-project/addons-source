@@ -1,0 +1,126 @@
+# translation of sv.po to svenska
+# translation of svny.1.po to
+# translation of sv.1.po to
+# translation of nytt_sv2.po to
+# translation of nytt_sv.po to
+# translation of ny_sv.po to
+# translation of svny1.po to
+# translation of sv99.po to
+# translation of svny.po to
+# translation of sv.po to
+# translation of sv1.po to
+# -*- coding: utf-8 -*-
+# Svenska meddelanden i Gramps.
+# Copyright (C) 2001-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Några tips i översättningen:#
+# Svenska datatermgruppen: http://www.nada.kth.se/dataterm/
+# Svensk-engelskt lexikon: http://lexin.nada.kth.se/sve-eng.shtml#
+# Några tveksamma eller inte helt uppenbara översättningar:#
+# city                stad/kommun
+# county              landskap
+# location            lokalisering
+# media object        medieobjekt
+# place               plats
+# plugin              insticksmodul
+# repository          arkivinstitution
+# state               län/delstat
+# undo history        redigeringshistorik#
+# $Id: sv.po 14847 2010-03-16 07:46:22Z ldnp $
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002-2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-21 14:43+0100\n"
+"PO-Revision-Date: 2010-03-16 08:46+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+#, fuzzy
+msgid "Todo Report"
+msgstr "Bokrapport"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given marker along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:91
+#, fuzzy, python-format
+msgid "Report on Notes Marked %s"
+msgstr "Rapporten kunde inte skapas"
+
+#: ToDoReport/TodoReport.py:192
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:198
+msgid "Text"
+msgstr "Text"
+
+#: ToDoReport/TodoReport.py:324
+#, fuzzy, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr " (%(birth_date)s - %(death_date)s)"
+
+#: ToDoReport/TodoReport.py:355
+#, fuzzy
+msgid "date: "
+msgstr "datum"
+
+#: ToDoReport/TodoReport.py:366
+#, fuzzy
+msgid "place: "
+msgstr "plats"
+
+#: ToDoReport/TodoReport.py:469
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: ToDoReport/TodoReport.py:471
+msgid "Marker"
+msgstr "Markör"
+
+#: ToDoReport/TodoReport.py:482
+#, fuzzy
+msgid "The marker type to use for the report"
+msgstr "Den markering, som skall användas för rapporten"
+
+#: ToDoReport/TodoReport.py:485
+#, fuzzy
+msgid "Group by reference type"
+msgstr "Källreferensnotis"
+
+#: ToDoReport/TodoReport.py:486
+msgid "Group notes by Family, Person, Place, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:503
+msgid "The style used for the title of the page."
+msgstr "Mall som används för sidans titel."
+
+#: ToDoReport/TodoReport.py:513
+msgid "The style used for the section headers."
+msgstr "Mall som används för sektionsrubriken."
+
+#: ToDoReport/TodoReport.py:523
+msgid "The basic style used for the text display."
+msgstr "Grundläggande mall som används för textvisning."
+
+#: ToDoReport/TodoReport.py:534
+msgid "The basic style used for table headings."
+msgstr "Grundläggande mall som används för tabellrubriker."
+
+#: ToDoReport/TodoReport.py:541
+msgid "The basic style used for the note display."
+msgstr "Grundläggande mall som används för visning av notiser."
