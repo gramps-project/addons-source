@@ -1,0 +1,153 @@
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
+#
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002;.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-21 14:43+0100\n"
+"PO-Revision-Date: 2010-03-13 18:09+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+#, fuzzy
+msgid "Todo Report"
+msgstr "Resoconto libro"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given marker along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:91
+#, fuzzy, python-format
+msgid "Report on Notes Marked %s"
+msgstr "Impossibile creare il resoconto"
+
+#: ToDoReport/TodoReport.py:192
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:198
+msgid "Text"
+msgstr "Testo"
+
+#: ToDoReport/TodoReport.py:324
+#, fuzzy, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr " (%(birth_date)s - %(death_date)s)"
+
+#: ToDoReport/TodoReport.py:355
+#, fuzzy
+msgid "date: "
+msgstr "data"
+
+#: ToDoReport/TodoReport.py:366
+#, fuzzy
+msgid "place: "
+msgstr "luogo"
+
+#: ToDoReport/TodoReport.py:469
+msgid "Report Options"
+msgstr "Opzioni resoconto"
+
+#: ToDoReport/TodoReport.py:471
+msgid "Marker"
+msgstr "Marcatore"
+
+#: ToDoReport/TodoReport.py:482
+#, fuzzy
+msgid "The marker type to use for the report"
+msgstr "Il marcatore da usare per questo resoconto"
+
+#: ToDoReport/TodoReport.py:485
+#, fuzzy
+msgid "Group by reference type"
+msgstr "Nota riferimento fonte"
+
+#: ToDoReport/TodoReport.py:486
+msgid "Group notes by Family, Person, Place, etc."
+msgstr ""
+
+#: ToDoReport/TodoReport.py:503
+msgid "The style used for the title of the page."
+msgstr "Lo stile usato per il titolo della pagina."
+
+#: ToDoReport/TodoReport.py:513
+msgid "The style used for the section headers."
+msgstr "Lo stile usato per le intestazioni di sezione."
+
+#: ToDoReport/TodoReport.py:523
+msgid "The basic style used for the text display."
+msgstr "Lo stile base usato per la visualizzazione del testo."
+
+#: ToDoReport/TodoReport.py:534
+msgid "The basic style used for table headings."
+msgstr "Lo stile base usato per le intestazioni delle tabelle."
+
+#: ToDoReport/TodoReport.py:541
+msgid "The basic style used for the note display."
+msgstr "Lo stile base usato per la visualizzazione delle note."
