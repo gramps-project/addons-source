@@ -629,8 +629,7 @@ class imageMetadataGramplet(Gramplet):
                             minutes, rest = minutes.split("/")
                             seconds, rest = seconds.split("/")
                             latitude = "%(deg)s %(mins)s %(sec)s" % {
-                                'deg' : degrees, 'mins' : minutes, 
-                                'sec' : seconds }
+                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds }
                             self.exif_widgets["Latitude"].set_text( latitude )
 
                             # Latitude Reference
@@ -649,8 +648,7 @@ class imageMetadataGramplet(Gramplet):
                             minutes, rest = minutes.split("/")
                             seconds, rest = seconds.split("/")
                             longitude = "%(deg)s %(mins)s %(sec)s" % {
-                                'deg' : degrees, 'mins' : minutes, 
-                                'sec' : seconds}
+                                'deg' : degrees, 'mins' : minutes, 'sec' : seconds}
                             self.exif_widgets["Longitude"].set_text( longitude )
 
                             # Longitude Reference
@@ -670,11 +668,12 @@ class imageMetadataGramplet(Gramplet):
                         keywords = self.get_value( keytag )
                         subject = ""
                         if keywords:
-                            index = 0 
+                            index = 1
                             for word in keywords:
                                 subject += word
                                 if index is not len(keywords):
                                     subject += "," 
+                                index += 1 
                         self.xmp_widgets["Subject"].set_text( subject )
 
             # image is not readable
