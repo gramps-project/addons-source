@@ -63,9 +63,14 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
 from QuestionDialog import OkDialog, WarningDialog
+import gen.mime
 #-----------------------------------------------------------------------------
 # Constants
 #-----------------------------------------------------------------------------
+
+# available image types for exiv2
+img_types = ["jpeg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
+
 # set up Abbreviated Months for select_date()
 _ABBREV_MONTHS = []
 _ABBREV_MONTHS.append("")
@@ -269,35 +274,33 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # get media and pyexiv2 image
-        self.media = self.dbstate.db.get_object_from_handle(handle)
-        self._get_image(self.media)
+        self.media = self.dbstate.db.get_object_from_handle( handle )
 
-        # update all widgets
-        self.update_widgets()
+        # get mime type and mime_type description
+        self.mime_type = self.media.get_mime_type()
+        if self.mime_type:
+            if self.mime_type.startswith("image/"):
+                self._get_image( self.media )
 
-    def main(self):
-        """
-        Does Nothing
-        """
+                # read and update all widgets
 
-        pass
+                # display image title/ description
+                image_descr = self.media.get_description()
+                if not image_descr:
+                    image_descr = self.media.get_path()
+                self.exif_widgets["Active image"].show()
+                self.exif_widgets["Active image"].set_text(image_descr)
 
-    def update_widgets(self):
-        """
-        update the image exif Metadata
-        """
-        if self.media is None:
-            return
+                # read image metadata
+                self.read_image_metadata(None)
 
-        # display image title/ description
-        image_descr = self.media.get_description()
-        if not image_descr:
-            image_descr = self.media.get_path()
-        self.exif_widgets["Active image"].show()
-        self.exif_widgets["Active image"].set_text(image_descr)
+            elif self.mime_type.startswith("application/"):
+                WarningDialog(_("The media object that you have chosen is not "
+                    "an image.  Please re-select a different media object."))
 
-        # read image metadata
-        self.read_image_metadata(None)
+        else:
+            WarningDialog(_("The type of this media object is not able to be "
+                "confirmed.  Please re-select a different media object."))
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[], 
                  mark_dirty=False, default=0):
@@ -427,6 +430,13 @@ class imageMetadataGramplet(Gramplet):
 
         # image is writable
         can_write = os.access(self.orig_image, os.W_OK)
+
+        # determine if the image type is writable from exiv2?
+        value1, value2 = self.mime_type.split("/")
+        if value1 == "image":
+            if value2 not in img_types:
+                can_write = False
+
         if can_write:
 
             # Image Description
@@ -530,20 +540,6 @@ class imageMetadataGramplet(Gramplet):
 
         self.xmp_widgets["Subject"].set_text("")
 
-    def _get_media(self, media_id):
-        """
-        returns an image object from the database
-        """
-
-        if not media_id:
-            return None 
-
-        # ge media object from the database
-        media = self.dbstate.db.get_object_from_gramps_id(media_id)
-
-        # return the media object to its callers
-        return media
-    
     def _get_image(self, media_obj):
         """
         creates the pyexiv2 image based on media object
@@ -586,6 +582,13 @@ class imageMetadataGramplet(Gramplet):
 
             # check to see if the image is readable
             can_read = os.access(self.orig_image, os.R_OK)
+
+            # determine if the image type is readable from exiv2?
+            value1, value2 = self.mime_type.split("/")
+            if value1 == "image":
+                if value2 not in img_types:       
+                    can_read = False
+ 
             if can_read:
 
                 # read the image metadata
@@ -678,14 +681,15 @@ class imageMetadataGramplet(Gramplet):
 
             # image is not readable
             else:
-                WarningDialog(_("The image file %s does NOT have read access/ permissions. "
-                    "If you have access and rights to change the permissions, "
-                    "then please do it now." % basename))
+                WarningDialog(_("The image file %(filename)s does NOT have read access/ "
+                    "permissions.  If you have access and rights to change "
+                    "the permissions,  then please do it now.")) % {
+                    'filename' : basename} 
 
         # image does not exists at all
         else:
-            WarningDialog(_("The image file is missing.  Please select another image or "
-                       "edit the media object to fix this problem."))
+            WarningDialog(_("The image file %(filename)s is missing.  Please select another image or "
+                       "edit the media object to fix this problem.")) % {'filename' : basename}
 
     def select_date(self, obj):
         """
