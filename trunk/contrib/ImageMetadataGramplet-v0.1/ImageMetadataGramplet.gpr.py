@@ -35,7 +35,7 @@ register(GRAMPLET,
     detached_width = 450,
     detached_height = 415,
     version = "0.1.3",
-    gramps_target_version = "3.2.0",
+    gramps_target_version = "3.3.0",
     status = STABLE,
     fname = "ImageMetadataGramplet.py",
     )
