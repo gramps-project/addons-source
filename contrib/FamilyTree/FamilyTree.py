@@ -35,6 +35,8 @@ import DateHandler
 from ReportBase import Report, MenuReportOptions, ReportUtils, CATEGORY_DRAW
 from gen.lib import Date, Event, EventType, FamilyRelType, Name
 from gen.plug.menu import BooleanOption, EnumeratedListOption, FamilyOption, NumberOption, StringOption
+from TransUtils import get_addon_translator
+_ = get_addon_translator().gettext
 
 
 #------------------------------------------------------------------------
@@ -1132,39 +1134,3 @@ class FamilyTreeOptions(MenuReportOptions):
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-footer", g)
-
-
-#------------------------------------------------------------------------
-#
-# Translation hack
-#
-#------------------------------------------------------------------------
-mytranslation = {
-        u"Family Tree for %s"              : u"Stammbaum f\xfcr %s",
-        u"Anonymous"                       : u"Anonym",
-        u"%(father)s and %(mother)s"       : u"%(father)s und %(mother)s",
-        u"born"                            : u"geboren",
-        u"baptised"                        : u"getauft",
-        u"died"                            : u"gestorben",
-        u"buried"                          : u"begraben",
-        u"cremated"                        : u"einge\xe4schert",
-        u"married"                         : u"geheiratet",
-        u"divorced"                        : u"geschieden",
-        u"resident"                        : u"wohnhaft",
-        u"on %(ymd_date)s"                 : u"am %(ymd_date)s",
-        u"in %(ym_date)s"                  : u"im %(ym_date)s",
-        u"in %(y_date)s"                   : u"im Jahre %(y_date)s",
-        u"on %(placeholder)s"              : u"am %(placeholder)s",
-        u"on %(placeholder)s (%(partial)s)": u"am %(placeholder)s (%(partial)s)",
-        u"in %(place)s"                    : u"in %(place)s"}
-
-from gettext import gettext
-import locale
-lang = locale.getdefaultlocale()[0]
-if lang:
-    lang = lang.split('_')[0]
-def _(string):
-    if lang == 'de':
-        return mytranslation.get(string, gettext(string))
-    else:
-        return gettext(string)
