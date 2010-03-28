@@ -1,0 +1,291 @@
+# Swedish translations for gramps package
+# Svenska �vers�ttningar f�r paket gramps.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-28 16:03+0200\n"
+"PO-Revision-Date: 2010-03-28 16:19+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: FamilyTree/FamilyTree.gpr.py:3
+msgid "Family Tree"
+msgstr "Släktträd"
+
+#: FamilyTree/FamilyTree.gpr.py:4
+msgid "Produces a graphical family tree."
+msgstr "Skapar ett grafiskt släktträd."
+
+#: FamilyTree/FamilyTree.py:90
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Släktträd för %s"
+
+#: FamilyTree/FamilyTree.py:624 FamilyTree/FamilyTree.py:629
+msgid "Unknown"
+msgstr "Okänd"
+
+#: FamilyTree/FamilyTree.py:631
+#, python-format
+msgid "%(father)s and %(mother)s"
+msgstr "%(father)s och %(mother)s"
+
+#: FamilyTree/FamilyTree.py:639
+msgid "Anonymous"
+msgstr "Anonym"
+
+#: FamilyTree/FamilyTree.py:836
+msgid "born"
+msgstr "född"
+
+#: FamilyTree/FamilyTree.py:838
+msgid "baptised"
+msgstr "döpt"
+
+#: FamilyTree/FamilyTree.py:840
+msgid "died"
+msgstr "dog"
+
+#: FamilyTree/FamilyTree.py:842
+msgid "buried"
+msgstr "begravd"
+
+#: FamilyTree/FamilyTree.py:844
+msgid "cremated"
+msgstr "kremerad"
+
+#: FamilyTree/FamilyTree.py:846
+msgid "married"
+msgstr "gift"
+
+#: FamilyTree/FamilyTree.py:848
+msgid "divorced"
+msgstr "skild"
+
+#: FamilyTree/FamilyTree.py:850
+msgid "resident"
+msgstr "boende"
+
+#: FamilyTree/FamilyTree.py:857
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "den %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:859
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "på %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:861
+#, python-format
+msgid "in %(y_date)s"
+msgstr "på %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:865
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "i %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:868
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "i %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:885
+#, python-format
+msgid "in %(place)s"
+msgstr "i %(place)s"
+
+#: FamilyTree/FamilyTree.py:896
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:973
+msgid "Tree Options"
+msgstr "Trädval"
+
+#: FamilyTree/FamilyTree.py:975
+msgid "Center Family"
+msgstr "Mittfamilj"
+
+#: FamilyTree/FamilyTree.py:976
+msgid "The center family for the tree"
+msgstr "Mittfamilj för trädet"
+
+#: FamilyTree/FamilyTree.py:979
+msgid "Ancestor Generations"
+msgstr "Färfädersgenertioner"
+
+#: FamilyTree/FamilyTree.py:980
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Antal förfädergenerationer som skall tas med i trädet"
+
+#: FamilyTree/FamilyTree.py:983
+msgid "Descendant Generations"
+msgstr "Ättlingagenerationer"
+
+#: FamilyTree/FamilyTree.py:984
+msgid "The number of descendant generations to include in the tree"
+msgstr "Antal ättlingagenerationer som skall tas med i trädet"
+
+#: FamilyTree/FamilyTree.py:987
+msgid "Sc_ale to fit on a single page"
+msgstr "Sk_ala till att rymmas på en sida"
+
+#: FamilyTree/FamilyTree.py:988
+msgid "Whether to scale to fit on a single page."
+msgstr "Huruvida skala så att det ryms på en sida."
+
+#: FamilyTree/FamilyTree.py:991
+msgid "Color"
+msgstr "Färg"
+
+#: FamilyTree/FamilyTree.py:993
+msgid "No color"
+msgstr "Ingen färg"
+
+#: FamilyTree/FamilyTree.py:994
+msgid "Generations"
+msgstr "Generationer"
+
+#: FamilyTree/FamilyTree.py:995
+msgid "First generation"
+msgstr "Första generation"
+
+#: FamilyTree/FamilyTree.py:996
+msgid "Second generation"
+msgstr "Andra generation"
+
+#: FamilyTree/FamilyTree.py:997
+msgid "Male line"
+msgstr "Manlig linje"
+
+#: FamilyTree/FamilyTree.py:998
+msgid "Male line and illegitimate children"
+msgstr "Manlig linje och u. ä. barn"
+
+#: FamilyTree/FamilyTree.py:999
+msgid "Female line"
+msgstr "Kvinnlig linje"
+
+#: FamilyTree/FamilyTree.py:1002
+msgid "Shuffle colors"
+msgstr "Blanda färger"
+
+#: FamilyTree/FamilyTree.py:1003
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Huruvida färger skall blandas i regnbågens färger."
+
+#: FamilyTree/FamilyTree.py:1006
+msgid "Content"
+msgstr "Innehåll"
+
+#: FamilyTree/FamilyTree.py:1008
+msgid "Use call name"
+msgstr "Använd tilltalsnamn"
+
+#: FamilyTree/FamilyTree.py:1010
+msgid "Don't use call name"
+msgstr "Använd inte tilltalsnamn"
+
+#: FamilyTree/FamilyTree.py:1011
+msgid "Replace first name with call name"
+msgstr "Byt ut förnamn mot tilltalsnamn"
+
+#: FamilyTree/FamilyTree.py:1012
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Stryk under tilltalsnamn i förnamn / lägg till tilltalsnamn till "
+"förnamn"
+
+#: FamilyTree/FamilyTree.py:1015
+msgid "Include Occupation"
+msgstr "Tag med yrke"
+
+#: FamilyTree/FamilyTree.py:1018
+msgid "Include Residence"
+msgstr "Tag med boende"
+
+#: FamilyTree/FamilyTree.py:1021
+msgid "Print event data (dead person)"
+msgstr "Skriv händelsedata (död person)"
+
+#: FamilyTree/FamilyTree.py:1023 FamilyTree/FamilyTree.py:1031
+msgid "None"
+msgstr "Inget"
+
+#: FamilyTree/FamilyTree.py:1024 FamilyTree/FamilyTree.py:1032
+msgid "Year only"
+msgstr "Bara år"
+
+#: FamilyTree/FamilyTree.py:1025 FamilyTree/FamilyTree.py:1033
+msgid "Full date"
+msgstr "Komplett datum"
+
+#: FamilyTree/FamilyTree.py:1026 FamilyTree/FamilyTree.py:1034
+msgid "Full date and place"
+msgstr "Komplett datum och plats"
+
+#: FamilyTree/FamilyTree.py:1029
+msgid "Print event data (living person)"
+msgstr "Skriv händelsedata (levande person)"
+
+#: FamilyTree/FamilyTree.py:1037
+msgid "Fall back to baptism if birth event missing"
+msgstr "Använd dop om födelsehändelse saknas"
+
+#: FamilyTree/FamilyTree.py:1040
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Använd begravning eller kremering om dödshändelse saknas"
+
+#: FamilyTree/FamilyTree.py:1045
+msgid "Print fields for missing information"
+msgstr "Skriv ut fält för saknad information"
+
+#: FamilyTree/FamilyTree.py:1046
+msgid "Whether to include fields for missing information."
+msgstr "Huruvida ta med fält för saknad information."
+
+#: FamilyTree/FamilyTree.py:1049
+msgid "Include event description"
+msgstr "Tag med händelsebeskrivning"
+
+#: FamilyTree/FamilyTree.py:1052
+msgid "Text Options"
+msgstr "Textval"
+
+#: FamilyTree/FamilyTree.py:1054
+msgid "Title text"
+msgstr "Titeltext"
+
+#: FamilyTree/FamilyTree.py:1057
+msgid "Footer text"
+msgstr "Fottext"
+
+#: FamilyTree/FamilyTree.py:1072
+msgid "The style used for the title."
+msgstr "Mall för titel."
+
+#: FamilyTree/FamilyTree.py:1080
+msgid "The style used for names."
+msgstr "Mall för namn."
+
+#: FamilyTree/FamilyTree.py:1088
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Mall använd till data (födelse, död, giftermål, skilsmässa)."
+
+#: FamilyTree/FamilyTree.py:1098
+msgid "The style used for the footer."
+msgstr "Mall för fottext"
+
