@@ -38,4 +38,7 @@ register(GRAMPLET,
     gramps_target_version = "3.3.0",
     status = STABLE,
     fname = "ImageMetadataGramplet.py",
+    authors = ["Rob G. Healey"],
+    authors_email = ["robhealey1@gmail.com"],
+    help_url = "Image Metadata Gramplet",
     )
