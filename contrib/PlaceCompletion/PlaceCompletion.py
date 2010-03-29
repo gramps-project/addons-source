@@ -37,7 +37,6 @@ import re
 #
 #------------------------------------------------------------------------
 import gtk
-import gtk.glade
 
 #------------------------------------------------------------------------
 #
@@ -45,6 +44,7 @@ import gtk.glade
 #
 #------------------------------------------------------------------------
 from gen.mime import *
+from glade import Glade
 from PluginUtils import Tool, PluginWindows
 import GrampsDisplay
 import ManagedWindow
@@ -86,15 +86,15 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         self.active_name = _("Place Completion by parsing, file lookup and"
                              " batch setting of place attributes")
 
-        ManagedWindow.ManagedWindow.__init__(self, uistate, [],self.__class__)
+        ManagedWindow.ManagedWindow.__init__(self, uistate, [], self.__class__)
         base = os.path.dirname(__file__)
         glade_file = base + os.sep + "placecompletion.glade"
 
-        self.glade = gtk.glade.XML(glade_file,"top","gramps")
+        self.glade = Glade(glade_file)
 
-        window = self.glade.get_widget("top")
+        window = self.glade.get_object("top")
         
-        self.tree = self.glade.get_widget("tree1")
+        self.tree = self.glade.get_object("tree1")
         self.tree.set_headers_visible(False)
         renderer = gtk.CellRendererText()
         #following does not work with foreground (KDE issue??), so set background
@@ -107,27 +107,27 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         self.coloroverwrite = "orange"
              
         #widgets we need to query
-        self.filter = self.glade.get_widget("filter")
-        self.countryfilter = self.glade.get_widget("countryfilter")
-        self.statefilter = self.glade.get_widget("statefilter")
-        self.countyfilter = self.glade.get_widget("countyfilter")
-        self.cityfilter = self.glade.get_widget("cityfilter")
-        self.parishfilter = self.glade.get_widget("parishfilter")
-        self.rectlatfilter= self.glade.get_widget("rectlat")
-        self.rectlonfilter= self.glade.get_widget("rectlon")
-        self.rectwidthfilter= self.glade.get_widget("rectwidth")
-        self.rectheightfilter= self.glade.get_widget("rectheight")
-        self.latlonfile = self.glade.get_widget("filecmb")
-        self.latlonfind = self.glade.get_widget("cmbe_latlon_find")
-        self.cmbetitleregex = self.glade.get_widget("cmbe_titleregex")
-        self.titleconstruct = self.glade.get_widget("titleconstruct")
-        self.latlonconv = self.glade.get_widget("latlonconv")
-        self.countryset = self.glade.get_widget("countryset")
-        self.stateset = self.glade.get_widget("stateset")
-        self.countyset = self.glade.get_widget("countyset")
-        self.cityset = self.glade.get_widget("cityset")
-        self.parishset = self.glade.get_widget("parishset")
-        self.zipset = self.glade.get_widget("zipset")
+        self.filter = self.glade.get_object("filter")
+        self.countryfilter = self.glade.get_object("countryfilter")
+        self.statefilter = self.glade.get_object("statefilter")
+        self.countyfilter = self.glade.get_object("countyfilter")
+        self.cityfilter = self.glade.get_object("cityfilter")
+        self.parishfilter = self.glade.get_object("parishfilter")
+        self.rectlatfilter= self.glade.get_object("rectlat")
+        self.rectlonfilter= self.glade.get_object("rectlon")
+        self.rectwidthfilter= self.glade.get_object("rectwidth")
+        self.rectheightfilter= self.glade.get_object("rectheight")
+        self.latlonfile = self.glade.get_object("filecmb")
+        self.latlonfind = self.glade.get_object("cmbe_latlon_find")
+        self.cmbetitleregex = self.glade.get_object("cmbe_titleregex")
+        self.titleconstruct = self.glade.get_object("titleconstruct")
+        self.latlonconv = self.glade.get_object("latlonconv")
+        self.countryset = self.glade.get_object("countryset")
+        self.stateset = self.glade.get_object("stateset")
+        self.countyset = self.glade.get_object("countyset")
+        self.cityset = self.glade.get_object("cityset")
+        self.parishset = self.glade.get_object("parishset")
+        self.zipset = self.glade.get_object("zipset")
         
         #load options from previous call and set up combo boxes
         filter_num = max(0,self.options.handler.options_dict['filternumber'])
@@ -190,7 +190,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         self.regextitlegroups = [('street'), ('city'), ('parish'), 
                     ('county'), ('state'), ('country'), ('zip'), ('title')]
 
-        self.glade.signal_autoconnect({
+        self.glade.connect_signals({
             "destroy_passed_object" : self.close,
             "on_help_clicked"       : self.on_help_clicked,
             "on_find_clicked"       : self.on_find_clicked,
