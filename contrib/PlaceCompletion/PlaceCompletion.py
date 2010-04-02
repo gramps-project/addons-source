@@ -201,7 +201,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         
         #some extra init of needed datafields
         self.latlonfile_datastr = None
-        
+
+#set translated labels
+        labelids = ['label28', 'label29','label30', 'label31', 'label32', 'label33', 'label34', 'label35'
+                          , 'label36', 'label37', 'label38', 'label39', 'label40', 'label41'
+                          , 'label42', 'label43', 'label16', 'label20', 'label19', 'label45'
+                          , 'label18', 'label22', 'label23', 'label24', 'label25',  'label1', 'label44'  ]
+        for labelid in labelids:
+             try:
+                 label = self.glade.get_object(labelid)
+             except:
+                 continue
+             label.set_text(_(label.get_text()))
+       
         self.show()
         
     def group_get(self, place, group):
