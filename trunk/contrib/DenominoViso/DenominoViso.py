@@ -148,8 +148,9 @@ import Errors
 from QuestionDialog import ErrorDialog, WarningDialog
 from ReportBase._FileEntry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
-from gen.display.name import displayer as name_displayer
-from gen.display.date import displayer as _dd
+from gen.display.name import displayer as _nd
+from DateHandler import _DateDisplay 
+_dd = _DateDisplay.DateDisplay()
 import AutoComp
 from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
 from Utils import confidence
@@ -3024,7 +3025,9 @@ class GuiTableOption(gtk.ScrolledWindow):
     def create_lstore(self,list_of_lists):
         lstore_args = []
         for cell in list_of_lists[0]:
-            if type(cell) == type("string"):
+            if type(cell) == type(u"unicode"):
+                lstore_args.append(gobject.TYPE_STRING)
+            elif type(cell) == type("string"):
                 lstore_args.append(gobject.TYPE_STRING)
             elif type(cell) == type(1):
                 lstore_args.append(gobject.TYPE_UINT)
@@ -3033,7 +3036,7 @@ class GuiTableOption(gtk.ScrolledWindow):
             elif type(cell) == type(False):
                 lstore_args.append(gobject.TYPE_BOOLEAN)
             else:
-                raise TypeError
+                raise TypeError("%s" % type(cell))
         lstore = gtk.ListStore(*lstore_args)
         for row in list_of_lists:
             iter = lstore.append()
@@ -3049,8 +3052,10 @@ class GuiTableOption(gtk.ScrolledWindow):
         treeview.set_rules_hint(True)
         treeview.get_selection().set_mode(gtk.SELECTION_SINGLE)
         for i,v in enumerate(list_of_lists[0]):
-            if type(v) == type("string") or type(v) == type(1) or \
-                    type(v) == type(1L):
+            if (type(v) == type("string") or 
+                type(v) == type(1) or 
+                type(v) == type(1L) or
+                type(v) == type(u"unicode")):
                 renderer = gtk.CellRendererText()
                 if editable_column or editable_column == 0:
                     column = gtk.TreeViewColumn('',renderer, text=i, \
