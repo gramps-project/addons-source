@@ -1,20 +1,53 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <erik@ylana.telenet.be>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-20 08:28+0100\n"
-"PO-Revision-Date: 2010-02-20 08:28+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2010-04-02 07:59+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
 msgid "PlaceCompletion"
@@ -25,7 +58,7 @@ msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
 msgstr ""
-"Geeft een lijst van geselecteerde locaties, met de mogelijkheid om de"
+"Een lijst van geselecteerde locaties, met de mogelijkheid om/de "
 "kenmerkenvelden de vervolledigen/bekijken/veranderen."
 
 #: PlaceCompletion/PlaceCompletion.py:86
@@ -33,8 +66,8 @@ msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
 msgstr ""
-"Locatie vervolledigen door 'parsing', bestandscontrole en "
-"veranderen van de locatiekenmerken"
+"Locatie vervolledigen door 'parsing', bestandscontrole en veranderen van de "
+"locatiekenmerken"
 
 #: PlaceCompletion/PlaceCompletion.py:236
 #: PlaceCompletion/PlaceCompletion.py:275
@@ -59,7 +92,8 @@ msgstr "Geen geldige reguliere uitdrukking voor de titel"
 
 #: PlaceCompletion/PlaceCompletion.py:427
 msgid "Non valid regular expression given to match title. Quiting."
-msgstr "Geen geldige reguliere uitdrukking opgegeven om titel te controleren. Stopt."
+msgstr ""
+"Geen geldige reguliere uitdrukking opgegeven om titel te controleren. Stopt."
 
 #: PlaceCompletion/PlaceCompletion.py:442
 msgid "Missing regex groups in match lat/lon"
@@ -70,19 +104,20 @@ msgstr "Ontbrekende reguliere uitdrukking voor breedte/lengte te controleren"
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
-"Reguliere uitdrukkingen %(lat)s en %(lon)s moeten aanwezig zijn voor de  breedte/lengte controle. Stopt"
+"Reguliere uitdrukkingen %(lat)s en %(lon)s moeten aanwezig zijn voor de  "
+"breedte/lengte controle. Stopt"
 
 #: PlaceCompletion/PlaceCompletion.py:453
 msgid "Non valid regex for match lat/lon"
-msgstr ""
+msgstr "Geen geldige reguliere uitdrukking voor lngt/brdt"
 
 #: PlaceCompletion/PlaceCompletion.py:454
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr ""
+msgstr "Geen geldige reguliere uitdrukking voor lngt/brdt. Stopt."
 
 #: PlaceCompletion/PlaceCompletion.py:512
 msgid "Finding Places and appropriate changes"
-msgstr ""
+msgstr "Locaties en geschikte aanpassingen zoeken"
 
 #: PlaceCompletion/PlaceCompletion.py:514
 msgid "Filtering"
@@ -90,20 +125,22 @@ msgstr "Filteren"
 
 #: PlaceCompletion/PlaceCompletion.py:524
 msgid "Loading lat/lon file in Memory..."
-msgstr ""
+msgstr "Lngt/brdt bestand in het geheugen laden..."
 
 #: PlaceCompletion/PlaceCompletion.py:529
 msgid "Examining places"
-msgstr "Locaties worden onderzocht"
+msgstr "Locaties onderzoeken"
 
+# stad
 #: PlaceCompletion/PlaceCompletion.py:549
 #: PlaceCompletion/PlaceCompletion.py:1113
 msgid "City"
-msgstr "Stad"
+msgstr "Dorp of stad"
 
+# Provincie
 #: PlaceCompletion/PlaceCompletion.py:552
 msgid "State"
-msgstr "Provincie"
+msgstr "Deelstaat"
 
 #: PlaceCompletion/PlaceCompletion.py:556
 msgid "Country"
@@ -136,7 +173,7 @@ msgstr "%d locatiegegevens werden aangepast."
 #: PlaceCompletion/PlaceCompletion.py:849
 #: PlaceCompletion/PlaceCompletion.py:855
 msgid "Cannot open file"
-msgstr "Kan het bestand niet openen"
+msgstr "Kan gegevensbestand niet openen"
 
 #: PlaceCompletion/PlaceCompletion.py:837
 msgid "The selected file is a directory, not a file."
@@ -144,7 +181,7 @@ msgstr "Het gekozen bestand is een map, geen bestand."
 
 #: PlaceCompletion/PlaceCompletion.py:844
 msgid "You do not have read access to the selected file."
-msgstr "U hebt geen leesrechten op het gekozen bestand."
+msgstr "U heeft geen leestoegangsrechten tot het geselecteerde bestand."
 
 #: PlaceCompletion/PlaceCompletion.py:850
 msgid "The file you want to access is not a regular file."
@@ -182,11 +219,11 @@ msgstr "Alles in gradennotatie"
 
 #: PlaceCompletion/PlaceCompletion.py:1076
 msgid "All in decimal notation"
-msgstr "alle sin decimale notatie"
+msgstr "Alles in decimale notatie"
 
 #: PlaceCompletion/PlaceCompletion.py:1077
 msgid "Correct -50° in 50°S"
-msgstr "Verander -50° in 50°Z"
+msgstr "-50° in 50°Z veranderen"
 
 #: PlaceCompletion/PlaceCompletion.py:1081
 msgid "No changes"
@@ -234,11 +271,11 @@ msgstr "GeoNames USA state file, city search"
 
 #: PlaceCompletion/PlaceCompletion.py:1155
 msgid "GNS Geonet country file, city search"
-msgstr ""
+msgstr "GNS Geonet landsbestand, stad zoeken"
 
 #: PlaceCompletion/PlaceCompletion.py:1164
 msgid "GNS Geonet country file, title begin, general search"
-msgstr "GNS GeoNet ladsbestand, titel, algemeen zoeken"
+msgstr "GNS GeoNet landsbestand, titel, algemeen zoeken"
 
 #: PlaceCompletion/PlaceCompletion.py:1172
 msgid "Wikipedia CSV Dump"
@@ -254,15 +291,15 @@ msgstr "Geen breedte/lengte opgegeven"
 
 #: PlaceCompletion/placecompletion.glade.h:1
 msgid "<b>1. Look up latitude and longitude:</b>"
-msgstr "<b>1. Zoek de lengte en de breedte op:</b>"
+msgstr "<b>1. Lengte en de breedte opzoeken:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:2
 msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
-msgstr "<b>2. Inlezen en omzetten van een bestaande titel of positie:</b>"
+msgstr "<b>2. Een bestaande titel of positie inlezen en omzetten:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:3
 msgid "<b>3. Set attributes of all selected places:</b>"
-msgstr "<b<3. Verander de kenmerken van alle geselcteerde locaties:</b>"
+msgstr "<b<3. Kenmerken van alle geselecteerde locaties veranderen:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:4
 msgid ""
@@ -273,16 +310,16 @@ msgid ""
 msgstr ""
 "<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie "
 "aan te passen met de ingevulde velden, \n"
-"Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart "
-"te zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
+"Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart te "
+"zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
 
 #: PlaceCompletion/placecompletion.glade.h:6
 msgid ""
 "<span size=\"large\"><b>Selection of the Places you want to complete:</b></"
 "span>"
 msgstr ""
-"<span size=\"groot\"><b>Selectie van de locaties die u wenst te vervolledigen:</b></"
-"span>"
+"<span size=\"large\"><b>Selectie van de locaties die u wenst te "
+"vervolledigen:</b></span>"
 
 #: PlaceCompletion/placecompletion.glade.h:7
 msgid "Apply all suggested changes"
@@ -292,9 +329,10 @@ msgstr "Pas alle voorgestelde veranderingen toe"
 msgid "C_enter latitude:"
 msgstr "C_entrale breedte:"
 
+# Stad
 #: PlaceCompletion/placecompletion.glade.h:9
 msgid "C_ity:"
-msgstr "S_tad"
+msgstr "_Stad, dorp:"
 
 #: PlaceCompletion/placecompletion.glade.h:10
 msgid "Center longitude:"
@@ -302,32 +340,37 @@ msgstr "Centrale lengte:"
 
 #: PlaceCompletion/placecompletion.glade.h:11
 msgid "Change title into:"
-msgstr "Verander titel in:"
+msgstr "Titel veranderen in:"
 
+# Stad
 #: PlaceCompletion/placecompletion.glade.h:12
 msgid "City:"
-msgstr "Stad"
+msgstr "Dorp of stad:"
 
 #: PlaceCompletion/placecompletion.glade.h:13
 msgid "Convert lat/lon as:"
-msgstr "Omzetten van lngt/brdt in:"
+msgstr "Lngt/brdt omzetten naar:"
 
 #: PlaceCompletion/placecompletion.glade.h:14
 msgid "Count_ry:"
-msgstr "Lan_d"
+msgstr "L_and:"
 
 #: PlaceCompletion/placecompletion.glade.h:15
 msgid "Country:"
-msgstr "Land"
+msgstr "Land:"
 
 #: PlaceCompletion/placecompletion.glade.h:16
 msgid "County:"
-msgstr "Deelstaat:"
+msgstr "Provincie:"
 
 #: PlaceCompletion/placecompletion.glade.h:17
 msgid "Height:"
 msgstr "Hoogte:"
 
+# Periode/Reikweidte/Bereik
+# wordt gebruikt in:
+# Maximum span in years for all childer.
+# Dus: de periode waarin men kinderen kan krijgen.
 #: PlaceCompletion/placecompletion.glade.h:18
 msgid "Parish"
 msgstr "Parochie"
@@ -342,7 +385,7 @@ msgstr "Verwerken als:"
 
 #: PlaceCompletion/placecompletion.glade.h:21
 msgid "Parse title:"
-msgstr "Verwerk titel:"
+msgstr "Titel verwerken:"
 
 #: PlaceCompletion/placecompletion.glade.h:22
 msgid "Place _filter:"
@@ -358,11 +401,12 @@ msgstr "Zoeken in:"
 
 #: PlaceCompletion/placecompletion.glade.h:25
 msgid "Select A File"
-msgstr "Selecteer een bestand"
+msgstr "Een bestand selecteren"
 
+# Provincie:
 #: PlaceCompletion/placecompletion.glade.h:26
 msgid "State:"
-msgstr "Provincie:"
+msgstr "Deelstaat:"
 
 #: PlaceCompletion/placecompletion.glade.h:27
 msgid "Width:"
@@ -370,7 +414,7 @@ msgstr "Breedte:"
 
 #: PlaceCompletion/placecompletion.glade.h:28
 msgid "ZIP/Postal Code:"
-msgstr "ZIP/Postcode"
+msgstr "Postcode:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 msgid "_Google Maps"
