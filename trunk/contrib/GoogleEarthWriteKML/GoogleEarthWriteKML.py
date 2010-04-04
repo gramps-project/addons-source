@@ -65,6 +65,12 @@ if os.sys.platform == 'win32':
                   % (os.getenv('ProgramFiles'))
     NORM_PATH = os.path.normpath(FILE_PATH)
     _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+    if not _GOOGLEEARTH_OK:
+        FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+                    % (os.getenv('ProgramFiles'))
+        NORM_PATH = os.path.normpath(FILE_PATH)
+        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+    
 else:
     FILE_PATH = "googleearth"
     SEARCH = os.environ['PATH'].split(':')
