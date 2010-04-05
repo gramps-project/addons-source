@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -523,7 +522,7 @@ class imageMetadataGramplet(Gramplet):
             basename = os.path.basename(self.media)
             WarningDialog(_("The image file %s does NOT have write access/ "
                 "permissions. If you have access and rights to change the "
-                "permissions, then please do it now." % basename))
+                "permissions, then please do it now.") % basename)
             return None
 
     def clear_data_entry(self, obj):
@@ -681,15 +680,14 @@ class imageMetadataGramplet(Gramplet):
 
             # image is not readable
             else:
-                WarningDialog(_("The image file %(filename)s does NOT have read access/ "
+                WarningDialog(_("The image file %s does NOT have read access/ "
                     "permissions.  If you have access and rights to change "
-                    "the permissions,  then please do it now.")) % {
-                    'filename' : basename} 
+                    "the permissions,  then please do it now.") % basename)
 
         # image does not exists at all
         else:
-            WarningDialog(_("The image file %(filename)s is missing.  Please select another image or "
-                       "edit the media object to fix this problem.")) % {'filename' : basename}
+            WarningDialog(_("The image file %s is missing.  Please select another image or "
+                       "edit the media object to fix this problem.") % basename)
 
     def select_date(self, obj):
         """
