@@ -29,7 +29,7 @@ msgstr ""
 #: ToDoReport/TodoReport.py:91
 #, fuzzy, python-format
 msgid "Report on Notes Marked %s"
-msgstr "Nebolo možné vytvoriť výstupnú zostavu"
+msgstr "Nebolo možné vytvoriť výstupnú zostavu %s"
 
 #: ToDoReport/TodoReport.py:192
 msgid "Id"
