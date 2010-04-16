@@ -58,7 +58,7 @@ msgstr ""
 #: ToDoReport/TodoReport.py:91
 #, fuzzy, python-format
 msgid "Report on Notes Marked %s"
-msgstr "Rapporten kunde inte skapas"
+msgstr "Rapporten kunde inte skapas %s"
 
 #: ToDoReport/TodoReport.py:192
 msgid "Id"
