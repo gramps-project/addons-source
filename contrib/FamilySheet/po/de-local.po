@@ -1,0 +1,192 @@
+# translation of de.po to Deutsch
+# German GRAMPS Translation
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-23 15:43-0400\n"
+"PO-Revision-Date: 2010-04-20 19:09+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: Deutsch <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: FamilySheet/FamilySheet.gpr.py:25
+#, fuzzy
+msgid "Family Sheet"
+msgstr "Familiäres Ereignis:"
+
+#: FamilySheet/FamilySheet.gpr.py:26
+#, fuzzy
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Erstellt einen Familiengruppenbericht, der Informationen über einen Satz "
+"Eltern und deren Kinder enthält."
+
+#: FamilySheet/FamilySheet.py:210 FamilySheet/FamilySheet.py:253
+#, python-format
+msgid "→ %s"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:374
+#, fuzzy, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adresse (%(date)s): %(location)s"
+
+#: FamilySheet/FamilySheet.py:378
+#, fuzzy, python-format
+msgid "Address: %(location)s"
+msgstr "Adresse: %(location)s"
+
+#: FamilySheet/FamilySheet.py:425
+#, fuzzy, python-format
+msgid "; %(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
+
+#: FamilySheet/FamilySheet.py:522
+#, fuzzy
+msgid "Source references:"
+msgstr "Quellenangaben:"
+
+#: FamilySheet/FamilySheet.py:535
+#, fuzzy, python-format
+msgid "%s: "
+msgstr "%s %s"
+
+#: FamilySheet/FamilySheet.py:539
+#, python-format
+msgid ", page %s"
+msgstr ", Seite %s"
+
+#: FamilySheet/FamilySheet.py:552
+#, fuzzy
+msgid "Notes:"
+msgstr "Notizen:"
+
+#: FamilySheet/FamilySheet.py:731
+#, fuzzy, python-format
+msgid "on %(ymd_date)s"
+msgstr "am %(ymd_date)s"
+
+#: FamilySheet/FamilySheet.py:733
+#, fuzzy, python-format
+msgid "in %(ym_date)s"
+msgstr "im %(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:735
+#, fuzzy, python-format
+msgid "in %(y_date)s"
+msgstr "im Jahre %(y_date)s"
+
+#: FamilySheet/FamilySheet.py:739
+#, fuzzy, python-format
+msgid "on %(placeholder)s"
+msgstr "am %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:741
+#, fuzzy, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "am %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:784 FamilySheet/FamilySheet.py:786
+#, fuzzy, python-format
+msgid "in %(place)s"
+msgstr "in %(place)s"
+
+#: FamilySheet/FamilySheet.py:814
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: FamilySheet/FamilySheet.py:817
+#, fuzzy
+msgid "Center person"
+msgstr "Hauptperson"
+
+#: FamilySheet/FamilySheet.py:818
+msgid "The person whose partners and children are printed"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:821
+#, fuzzy
+msgid "Print sheets for:"
+msgstr "Druckt die aktuelle Datei"
+
+#: FamilySheet/FamilySheet.py:823
+#, fuzzy
+msgid "Center person only"
+msgstr "Hauptperson"
+
+#: FamilySheet/FamilySheet.py:824
+msgid "Center person and descendants in side branches"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:825
+#, fuzzy
+msgid "Center person and all descendants"
+msgstr "Direkte Linie männliche Nachkommen"
+
+#: FamilySheet/FamilySheet.py:828
+msgid "Use call name"
+msgstr "Rufname"
+
+#: FamilySheet/FamilySheet.py:830
+msgid "Don't use call name"
+msgstr "nicht verwenden"
+
+#: FamilySheet/FamilySheet.py:831
+msgid "Replace first name with call name"
+msgstr "statt des Vornamens einsetzen"
+
+#: FamilySheet/FamilySheet.py:832
+msgid "Underline call name in first name / add call name to first name"
+msgstr "im Vornamen unterstreichen / zum Vornamen hinzufügen"
+
+#: FamilySheet/FamilySheet.py:835
+#, fuzzy
+msgid "Print placeholders for missing information"
+msgstr "Drucke Felder für fehlende Informationen"
+
+#: FamilySheet/FamilySheet.py:838
+msgid "Include sources"
+msgstr "Quellen einbeziehen"
+
+#: FamilySheet/FamilySheet.py:841
+msgid "Include notes"
+msgstr "Notizen aufnehmen"
+
+#: FamilySheet/FamilySheet.py:855
+#, fuzzy
+msgid "The basic style used for the text display"
+msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
+
+#: FamilySheet/FamilySheet.py:865
+#, fuzzy
+msgid "The style used for the page key on the top"
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+#: FamilySheet/FamilySheet.py:874
+#, fuzzy
+msgid "The style used for names"
+msgstr "Der Stil für Überschriften."
+
+#: FamilySheet/FamilySheet.py:884
+#, fuzzy
+msgid "The style used for numbers"
+msgstr "Der Stil für Überschriften."
+
+#: FamilySheet/FamilySheet.py:894
+#, fuzzy
+msgid "The style used for footnotes (notes and source references)"
+msgstr "Der Stil, der für Artikel und Werte verwendet wird."
