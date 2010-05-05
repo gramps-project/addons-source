@@ -26,7 +26,8 @@
 #------------------------------------------------------------------------
 from ExportOptions import WriterOptionBox
 
-def exportData(database, filename, option_box=None, callback=None):
+def exportData(database, filename, 
+               error_dialog=None, option_box=None, callback=None):
     if not callable(callback): 
         callback = lambda (percent): None # dummy
 
