@@ -436,6 +436,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                                                 (self.model, index + 1))
             column = gtk.TreeViewColumn(name, renderer, text=index + 1)
             self.view.append_column(column)
+        self.view.connect("row-activated", self.__edit_person)
 
     def __populate_gui(self, event):
         """
@@ -494,6 +495,17 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         self.model.append(self.__new_person_row(person))
         self.widgets['census_combo'].set_sensitive(False)
+
+    def __edit_person(self, treeview, path, view_column):
+        """
+        Edit a person from selection.
+        """
+        model, iter_ = self.selection.get_selected()
+        if iter_: 
+            handle = model.get_value(iter_, 0)
+            if handle:
+                person = self.dbstate.db.get_person_from_handle(handle)
+                EditPerson(self.dbstate, self.uistate, self.track, person)
         
     def __share_person(self, button):
         """
@@ -505,10 +517,19 @@ class CensusEditor(ManagedWindow.ManagedWindow):
             return
 
         skip_list = []
+        handle = None
+        if len(self.model) > 0:
+            model, iter_ = self.selection.get_selected()
+            if iter_: # get from selection:
+                handle = model.get_value(iter_, 0)
+            else: # get from first row
+                handle = self.model[0][0]
+        else: # no rows, let's try to get active person:
+            handle = self.uistate.get_active('Person')
+
         sel = self.SelectPerson(self.dbstate, self.uistate, self.track,
-                   _("Select Person"), skip=skip_list)
+                   _("Select Person"), skip=skip_list, default=handle)
         person = sel.run()
-        
         if person:
             self.model.append(self.__new_person_row(person))
             self.widgets['census_combo'].set_sensitive(False)
