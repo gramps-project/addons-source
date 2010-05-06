@@ -34,7 +34,8 @@ from gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                              TableCellStyle, FONT_SANS_SERIF, INDEX_TYPE_TOC,
                              PARA_ALIGN_CENTER)
-from ReportBase import Report, MenuReportOptions
+from gen.plug.report import Report
+from gui.plug.report import MenuReportOptions
 from Census import ORDER_ATTR
 from Census import (get_census_ids, get_census_id, get_census_columns,
                     get_report_columns, get_census_source_ref,

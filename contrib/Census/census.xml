@@ -1,5 +1,50 @@
 <?xml version="1.0" ?>
 <censuses>
+    <census id='US1880' title=' 1880 United States Census' date='1880'>
+        <heading>
+            <_attribute>Census Place</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>35</size>
+        </column>
+        <column>
+            <_attribute>Releation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Marital Status</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Gender</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Race</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Birthplace</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>35</size>
+        </column>
+        <column>
+            <_attribute>Father's Birthplace</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Mother's Birthplace</_attribute>
+            <size>10</size>
+        </column>
+    </census>
     <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
         <heading>
             <_attribute>City or Borough</_attribute>
