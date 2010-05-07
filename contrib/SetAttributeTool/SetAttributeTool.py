@@ -35,7 +35,8 @@ import time
 # GRAMPS modules
 #
 #-------------------------------------------------
-from PluginUtils import Tool, PluginWindows, MenuToolOptions
+from gen.plug.tool import Tool
+from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib

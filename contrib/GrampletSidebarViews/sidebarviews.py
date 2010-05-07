@@ -162,7 +162,7 @@ def extend(class_):
             table.set_col_spacings(6)
             table.set_row_spacings(6)
 
-            from PluginUtils import make_gui_option
+            from gui.plug import make_gui_option
             from gen.plug.menu import EnumeratedListOption
             # Add types:
             self.view_list = EnumeratedListOption(_("Split view"), 

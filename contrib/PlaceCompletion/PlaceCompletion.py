@@ -45,7 +45,8 @@ import gtk
 #------------------------------------------------------------------------
 from gen.mime import *
 from glade import Glade
-from PluginUtils import Tool, PluginWindows
+from gen.plug.tool import Tool
+from gui.plug import PluginWindows
 import GrampsDisplay
 import ManagedWindow
 from gen.lib import Location
