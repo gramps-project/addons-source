@@ -288,8 +288,12 @@ class CensusOptions(MenuReportOptions):
         pid.set_help(_("The selected person for the report."))
         menu.add_option(category_name, "pid", pid)
 
+        default = None
         sources = get_census_sources(self.database)
-        src_handle = EnumeratedListOption(_('Source'), sources[0][0])
+        if len(sources) > 0:
+            if len(sources[0]) > 0:
+                default = sources[0][0]
+        src_handle = EnumeratedListOption(_('Source'), default)
         for source in sources:
             src_handle.add_item(source[0], source[1])
         menu.add_option(category_name, "src_handle", src_handle)
