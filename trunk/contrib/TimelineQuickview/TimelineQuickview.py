@@ -30,6 +30,7 @@ from TransUtils import get_addon_translator
 from gen.lib.date import Today
 import DateHandler
 import Relationship
+from gen.utils.fallback import get_birth_or_fallback, get_death_or_fallback
 import gen.lib
 
 _ = get_addon_translator(__file__).ugettext
@@ -57,12 +58,19 @@ def levelname(inlaw, level):
         else:
             return (_("Inlaw Great, ") + (_("great, ") * (level - 4))) + _("great grandparents")
 
+def get_events(person, sa, all=False):
+    if all:
+        return sa.events(person)
+    else:
+        return [get_birth_or_fallback(sa.dbase, person), 
+                get_death_or_fallback(sa.dbase, person)]
+
 def process(database, sa, event_list, handled, center_person, inlaw, person, level=0, maxlevel=1):
     if person is None: return
     if person.handle not in handled:
         handled[person.handle] = person
         relation = rel_calc.get_one_relationship(database, center_person, person).title()
-        for event in sa.events(person):
+        for event in get_events(person, sa, person == center_person):
             if person.handle == center_person.handle:
                 event_list += [(event, person, event)]
             elif relation == "":
@@ -102,7 +110,7 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
                 handled[child.handle] = child
                 relation = rel_calc.get_one_relationship(database, center_person, child).title()
                 if relation != "": # otherwise, no official relationship
-                    for event in sa.events(child):
+                    for event in get_events(child, sa):
                         etype = sa.event_type(event)
                         event_list += [(event, child, "%s, %s" % (relation, etype))]
 
@@ -112,7 +120,9 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
             if family.handle not in handled:
                 handled[family.handle] = family
                 relation = levelname(inlaw, level + 1)
-                event_list += [(event, family, "%s, %s" % (relation, sa.event_type(event))) for event in sa.events(family)]
+                event_list += [(event, family, "%s, %s" % 
+                                (relation, sa.event_type(event))) 
+                               for event in sa.events(family)]
                 if level+1 <= maxlevel:
                     father = sa.father(family)
                     process(database, sa, event_list, handled, center_person, False, father, level=level+1)
@@ -126,7 +136,7 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
                     handled[child.handle] = child
                     relation = rel_calc.get_one_relationship(database, center_person, child).title()
                     if relation != "": # otherwise, no official relationship
-                        for event in sa.events(child):
+                        for event in get_events(child, sa):
                             etype = sa.event_type(event)
                             event_list += [(event, child, "%s, %s" % (relation, etype))]
 
