@@ -37,7 +37,10 @@ import string
 from gen.plug import docgen
 from gen.display.name import displayer as name_displayer
 import DateHandler
-from ReportBase import Report, ReportUtils, MenuReportOptions, CATEGORY_TEXT
+from gen.plug.report import Report
+from gen.plug.report import CATEGORY_TEXT
+from gui.plug.report import MenuReportOptions
+import gen.plug.report.utils as ReportUtils
 # from TransUtils import sgettext as _
 from gen.lib import AttributeType, Date, Event, EventType, FamilyRelType, \
     Name, StyledText, StyledTextTag, StyledTextTagType

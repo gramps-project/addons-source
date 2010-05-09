@@ -31,7 +31,9 @@ Display Sources related to repositories
 #-------------------------------------------------------------------------
 
 from gen.plug.menu import BooleanOption, EnumeratedListOption
-from ReportBase import Report, ReportUtils, MenuReportOptions
+from gen.plug.report import Report
+import gen.plug.report.utils as ReportUtils
+from gui.plug.report import MenuReportOptions
 from libtranslate import Translator, get_language_string
 from TransUtils import get_addon_translator, get_available_translations
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 

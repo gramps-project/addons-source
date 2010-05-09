@@ -40,7 +40,7 @@ import operator
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
 from Simple import SimpleDoc, SimpleTable
-from ReportBase import CATEGORY_QR_PERSON
+from gen.plug import CATEGORY_QR_PERSON
 from Utils import probably_alive
 from gen.plug import PluginManager
 

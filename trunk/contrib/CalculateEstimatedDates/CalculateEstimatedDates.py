@@ -37,7 +37,7 @@ import time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug.tool import Tool
+from gui.plug.tool import Tool
 from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import BooleanOption, NumberOption, StringOption, \
                          FilterOption, PersonOption, EnumeratedListOption
@@ -45,7 +45,7 @@ import gen.lib
 import config
 from gen.display.name import displayer as name_displayer
 import Errors
-from ReportBase import ReportUtils
+import gen.plug.report.utils as ReportUtils
 from docgen import TextBufDoc
 from Simple import make_basic_stylesheet, SimpleAccess, SimpleDoc, SimpleTable
 from QuestionDialog import QuestionDialog
