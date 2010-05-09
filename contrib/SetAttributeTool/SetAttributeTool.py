@@ -35,17 +35,14 @@ import time
 # GRAMPS modules
 #
 #-------------------------------------------------
-from gen.plug.tool import Tool
+from gui.plug.tool import Tool
 from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
-try:
-    from gen.display.name import displayer as name_displayer
-except:
-    from BasicUtils import name_displayer
+from gen.display.name import displayer as name_displayer
 import Errors
-from ReportBase import ReportUtils
+import gen.plug.report.utils as ReportUtils
 
 try:
     from TransUtils import get_addon_translator

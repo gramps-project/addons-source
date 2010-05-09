@@ -35,24 +35,17 @@ import time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug.tool import Tool
+from gui.plug.tool import Tool
 from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
 import Errors
-from ReportBase import ReportUtils
+import gen.plug.report.utils as ReportUtils
+from gen.display.name import displayer as name_displayer
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
-try:
-    from gen.display.name import displayer as name_displayer
-    from TransUtils import get_addon_translator
-    _ = get_addon_translator(__file__).ugettext
-    from const import VERSION_TUPLE
-except:
-    from BasicUtils import name_displayer
-    import gettext
-    _ = gettext.gettext
-    VERSION_TUPLE = (3, 1, 0)
 #------------------------------------------------------------------------
 #
 # Tool Classes
@@ -205,19 +198,3 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         self.db.add_event(event, self.trans)
         return event
 
-if VERSION_TUPLE < (3, 2):
-    # Gramps 3.1 style:
-    from gen.plug import PluginManager
-    pmgr = PluginManager.get_instance()
-    pmgr.register_tool(
-        name = 'Attach Source',
-        category = Tool.TOOL_DBPROC,
-        tool_class = AttachSourceWindow,
-        options_class = AttachSourceOptions,
-        modes = PluginManager.TOOL_MODE_GUI,
-        translated_name = _("Attach Source"),
-        status = _("Beta"),
-        author_name = "Douglas S. Blank",
-        author_email = "doug.blank@gmail.com",
-        description= _("Attaches a shared source to multiple objects."),
-        )

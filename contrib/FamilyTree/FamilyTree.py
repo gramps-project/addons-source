@@ -32,7 +32,10 @@ from gen.plug.docgen import FontStyle, ParagraphStyle, GraphicsStyle, \
         FONT_SANS_SERIF, PARA_ALIGN_CENTER
 from gen.display.name import displayer as name_displayer
 import DateHandler
-from ReportBase import Report, MenuReportOptions, ReportUtils, CATEGORY_DRAW
+from gen.plug.report import Report
+from gen.plug.report import CATEGORY_DRAW
+from gui.plug.report import MenuReportOptions
+import gen.plug.report.utils as ReportUtils
 from gen.lib import Date, Event, EventType, FamilyRelType, Name
 from gen.plug.menu import BooleanOption, EnumeratedListOption, FamilyOption, NumberOption, StringOption
 from TransUtils import get_addon_translator

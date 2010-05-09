@@ -142,11 +142,14 @@ import gtk
 #
 #-------------------------------------------------------------------------
 import Sort
-from ReportBase import Report, ReportUtils, MenuReportOptions, CATEGORY_WEB
+from gen.plug.report import Report
+from gen.plug import CATEGORY_WEB
+from gui.plug.report import MenuReportOptions
+import gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
 import Errors
 from QuestionDialog import ErrorDialog, WarningDialog
-from ReportBase._FileEntry import FileEntry
+from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gen.display.name import displayer as _nd
 from DateHandler import _DateDisplay 

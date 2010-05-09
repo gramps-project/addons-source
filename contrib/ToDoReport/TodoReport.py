@@ -34,9 +34,9 @@ from gen.plug import docgen
 import DateHandler
 from Filters import GenericFilterFactory
 from Filters import Rules
-from ReportBase import MenuReportOptions
-from ReportBase import Report
-from ReportBase import ReportUtils
+from gui.plug.report import MenuReportOptions
+from gen.plug.report import Report
+import gen.plug.report.utils as ReportUtils
 from gen.lib import MarkerType
 from gen.plug.menu import EnumeratedListOption, BooleanOption
 from gettext import gettext as _

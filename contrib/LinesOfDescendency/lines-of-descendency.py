@@ -6,7 +6,12 @@ from gen.plug.docgen import FontStyle, ParagraphStyle, FONT_SANS_SERIF, \
 from gen.plug.menu import PersonOption
 from gen.lib import FamilyRelType
 from gen.display.name import displayer as _nd
-from ReportBase import Report, ReportUtils, MenuReportOptions, CATEGORY_TEXT
+
+from gen.plug.report import Report
+from gen.plug.report import CATEGORY_TEXT
+from gui.plug.report import MenuReportOptions
+import gen.plug.report.utils as ReportUtils
+
 
 class LODOptions(MenuReportOptions):
     def __init__(self, name, dbase):
