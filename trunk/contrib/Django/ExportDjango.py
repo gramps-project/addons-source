@@ -68,7 +68,8 @@ except RuntimeError:
 
 from web.libdjango import DjangoInterface
 
-def export_all(database, filename, option_box=None, callback=None):
+def export_all(database, filename, error_dialog, 
+               option_box=None, callback=None):
     if not callable(callback): 
         callback = lambda (percent): None # dummy
 
