@@ -43,6 +43,8 @@ from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
 from gettext import gettext as _
 
+_UNKNOWN_FAMILY = "*unknown*"
+
 class LastChangeReport(Report):
     """
     Generate a list of the last records to be changed in the current database.
@@ -157,8 +159,18 @@ class LastChangeReport(Report):
                 family = self.database.get_family_from_handle(handle)
                 if family is not None:
                     father_handle = family.get_father_handle()
-                    father = self.database.get_person_from_handle(father_handle)
-                    family_name = father.get_primary_name().get_surname()
+                    if father_handle is not None:
+                        father = self.database.get_person_from_handle(father_handle)
+                        father_surname = father.get_primary_name().get_surname()
+                    else:
+                        father_surname = _UNKNOWN_FAMILY
+                    mother_handle = family.get_mother_handle()
+                    if mother_handle is not None:
+                        mother = self.database.get_person_from_handle(mother_handle)
+                        mother_surname = mother.get_primary_name().get_surname()
+                    else:
+                        mother_surname = _UNKNOWN_FAMILY
+                    family_name = _("%s and %s") % (father_surname, mother_surname)
 
                     self._table_row(family.gramps_id,
                                     family_name,
