@@ -26,7 +26,7 @@
 
 #------------------------------------------------------------------------
 #
-# standard python modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
@@ -58,7 +58,7 @@ class TodoReport(Report):
     particular marker (chosen at run-time).  The records that the note
     references are included in the report so you do not have to duplicate
     that information in the note.
-    
+
     """
 
     def __init__(self, database, options_class):
@@ -113,13 +113,16 @@ class TodoReport(Report):
         note_groups = dict()
         for note_handle in note_list:
             refs = self.database.find_backlink_handles(note_handle)
-            if len(list(refs)) > 0:
+            try:
                 # grouping by the first reference
                 (class_name, r_handle) = list(refs)[0]
                 if note_groups.has_key(class_name):
                     note_groups[class_name].append((r_handle, note_handle))
                 else:
                     note_groups[class_name] = [(r_handle, note_handle)]
+            except IndexError:
+                # no back-links were found
+                pass
         for k in sorted(note_groups.keys(), reverse=True):
             # now sort the handles based on the class name, if we don't find
             # a match, the data will not be sorted.
@@ -139,8 +142,8 @@ class TodoReport(Report):
         all_notes = []
         for note_handle in note_list:
             refs = self.database.find_backlink_handles(note_handle)
-            if len(list(refs)) > 0:
-                # grouping by the first reference
+            # grouping by the first reference
+            try:
                 (class_name, r_handle) = list(refs)[0]
                 if class_name == "Family":
                     key = self.getFamilyKey((r_handle,))
@@ -154,6 +157,11 @@ class TodoReport(Report):
                     note = self.database.get_note_from_handle(note_handle)
                     key = note.get_gramps_id()
                 all_notes.append((key, note_handle))
+            except IndexError:
+                # no back-link references were found, so we'll use the note ID
+                # as the key
+                note = self.database.get_note_from_handle(note_handle)
+                key = note.get_gramps_id()
         self._write_notes(sorted(all_notes))
 
     def _write_references(self, note_handle):
@@ -213,7 +221,7 @@ class TodoReport(Report):
             self.doc.start_paragraph('TR-Normal')
             self.doc.write_text(note.get_gramps_id())
             self.doc.end_paragraph()
-            self.doc.end_cell()            
+            self.doc.end_cell()
 
             self.doc.start_cell('TR-TableCell', 3)
             self.doc.write_styled_note(note.get_styledtext(),
@@ -316,9 +324,10 @@ class TodoReport(Report):
 
         # see if we can find a relationship event to include
         relationship_date = _PLACEHOLDER
-        for evt_handle in family.get_event_list():
+        for evt_ref in family.get_event_ref_list():
+            evt_handle = evt_ref.get_reference_handle()
             evt = self.database.get_event_from_handle(evt_handle)
-            # FIXME: where are these defined in Gramps,
+            # FIXME: where are the event types defined in Gramps,
             # and are these the only important ones?
             #print repr(evt.get_type().string)
             if evt.get_type().string in ["Marriage", "Civil Union"]:
@@ -346,7 +355,7 @@ class TodoReport(Report):
         self.doc.start_paragraph('TR-Normal')
         self.doc.write_text(event.get_gramps_id())
         self.doc.end_paragraph()
-        self.doc.end_cell()            
+        self.doc.end_cell()
 
         self.doc.start_cell('TR-TableCell')
         self.doc.start_paragraph('TR-Normal')
@@ -391,7 +400,7 @@ class TodoReport(Report):
         self.doc.start_paragraph('TR-Normal')
         self.doc.write_text(place.get_gramps_id())
         self.doc.end_paragraph()
-        self.doc.end_cell()            
+        self.doc.end_cell()
 
         self.doc.start_cell('TR-TableCell', 3)
         self.doc.start_paragraph('TR-Normal')
