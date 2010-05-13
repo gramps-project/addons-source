@@ -20,7 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: TodoReport.py 41 2010-01-21 21:25:36Z jfriant $
+# $Id$
 
 """Reports/Text Reports/Todo Report"""
 
