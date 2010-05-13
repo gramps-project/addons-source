@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program - Family Sheet plugin
 #
 # Copyright (C) 2008, 2009 Reinhard Mueller
+# Copyright (C) 2010       Jakim Friant
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,11 +39,10 @@ from gen.plug import docgen
 from gen.display.name import displayer as name_displayer
 import DateHandler
 from gen.plug.report import Report
-from gen.plug.report import CATEGORY_TEXT
 from gui.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 # from TransUtils import sgettext as _
-from gen.lib import AttributeType, Date, Event, EventType, FamilyRelType, \
+from gen.lib import Date, Event, EventType, FamilyRelType, \
     Name, StyledText, StyledTextTag, StyledTextTagType
 import Relationship
 from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
