@@ -33,9 +33,8 @@ from gen.plug.docgen import FontStyle, ParagraphStyle, GraphicsStyle, \
 from gen.display.name import displayer as name_displayer
 import DateHandler
 from gen.plug.report import Report
-from gen.plug.report import CATEGORY_DRAW
+from gen.plug.report.utils import pt2cm
 from gui.plug.report import MenuReportOptions
-import gen.plug.report.utils as ReportUtils
 from gen.lib import Date, Event, EventType, FamilyRelType, Name
 from gen.plug.menu import BooleanOption, EnumeratedListOption, FamilyOption, NumberOption, StringOption
 from TransUtils import get_addon_translator
@@ -47,9 +46,6 @@ _ = get_addon_translator().gettext
 # Constants
 #
 #------------------------------------------------------------------------
-pt2cm = ReportUtils.pt2cm
-cm2pt = ReportUtils.cm2pt
-
 empty_birth = Event()
 empty_birth.set_type(EventType.BIRTH)
 
@@ -1073,7 +1069,7 @@ class FamilyTreeOptions(MenuReportOptions):
         p = ParagraphStyle()
         p.set_font(f)
         p.set_alignment(PARA_ALIGN_CENTER)
-        p.set_bottom_margin(ReportUtils.pt2cm(8))
+        p.set_bottom_margin(pt2cm(8))
         p.set_description(_("The style used for the title."))
         default_style.add_paragraph_style("FTR-Title", p)
 
@@ -1099,7 +1095,7 @@ class FamilyTreeOptions(MenuReportOptions):
         p = ParagraphStyle()
         p.set_font(f)
         p.set_alignment(PARA_ALIGN_CENTER)
-        p.set_top_margin(ReportUtils.pt2cm(8))
+        p.set_top_margin(pt2cm(8))
         p.set_description(_("The style used for the footer."))
         default_style.add_paragraph_style("FTR-Footer", p)
 
