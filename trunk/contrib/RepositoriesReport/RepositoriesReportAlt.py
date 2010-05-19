@@ -35,6 +35,7 @@ from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
 from gui.plug.report import MenuReportOptions
 from libtranslate import Translator, get_language_string
+import gen.proxy
 from TransUtils import get_addon_translator, get_available_translations
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
@@ -96,6 +97,9 @@ class RepositoryReportAlt(Report):
         # Write the title line. Set in INDEX marker so that this section will be
         # identified as a major category if this is included in a Book report.
 
+        if not self.inc_privat:
+            self.database = gen.proxy.PrivateProxyDb(self.database)
+
         title = self._('Repositories Report')
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph('REPO-ReportTitle')
@@ -122,12 +126,7 @@ class RepositoryReportAlt(Report):
 
         self.doc.start_paragraph('REPO-RepositoryTitle')
 
-        # ignore private record
-
-        if not self.inc_privat and repository.private:
-            self.doc.write_text(self._('Private'))
-        else:
-            self.doc.write_text(('%(repository)s (%(type)s)') % 
+        self.doc.write_text(('%(repository)s (%(type)s)') % 
                                 {'repository' : repository.get_name(),
                                 'type' : repository.get_type()})
         self.doc.end_paragraph()
@@ -138,16 +137,10 @@ class RepositoryReportAlt(Report):
             notelist = repository.get_referenced_handles()
             for note_handle in notelist:
 
-            # ignore private records
+                # on tuple : [0] = classname ; [1] = handle
 
-                if not self.inc_privat and repository.private:
-                    pass
-                else:
-
-                    # on tuple : [0] = classname ; [1] = handle
-
-                    note_handle = note_handle[1] 
-                    self.__write_referenced_notes(note_handle)
+                note_handle = note_handle[1] 
+                self.__write_referenced_notes(note_handle)
 
         # additional repository informations
 
@@ -159,15 +152,10 @@ class RepositoryReportAlt(Report):
             if self.inc_intern or self.inc_addres:
                 self.doc.start_paragraph('REPO-Section2')
 
-                # ignore private records
-
-                if not self.inc_privat and (repository.private):
-                    pass
-                else:
-                    #if self.inc_intern:
-                        #self.doc.write_text(_('Internet: %s') % internet)
-                    if self.inc_addres:
-                        self.doc.write_text(self._('\nAddress: %s') % address)
+                #if self.inc_intern:
+                    #self.doc.write_text(_('Internet: %s') % internet)
+                if self.inc_addres:
+                    self.doc.write_text(self._('\nAddress: %s') % address)
                 self.doc.end_paragraph()
 
     def __write_referenced_sources(self, handle):
@@ -192,12 +180,7 @@ class RepositoryReportAlt(Report):
                     source_nbr += 1
                     self.doc.start_paragraph('REPO-Section')
 
-                    # ignore private records
-
-                    if not self.inc_privat and (src.private or repository.private):
-                        title = self._('%s. Private') % source_nbr
-                    else:
-                        title = (('%(nbr)s. %(name)s (%(type)s) : %(call)s') % 
+                    title = (('%(nbr)s. %(name)s (%(type)s) : %(call)s') % 
                                     {'nbr' : source_nbr,
                                      'name' : src.get_title(),
                                      'type' : str(reporef.get_media_type()),
@@ -231,17 +214,14 @@ class RepositoryReportAlt(Report):
 
                     if self.inc_author or self.inc_abbrev or self.inc_public or self.inc_datamp:
                         self.doc.start_paragraph('REPO-Section2')
-                        if not self.inc_privat and (src.private or repository.private):
-                            pass
-                        else:
-                            if self.inc_author:
-                                self.doc.write_text(self._('Author: %s') % author)
-                            if self.inc_abbrev:
-                                self.doc.write_text(self._('\nAbbreviation: %s') % abbrev)
-                            if self.inc_public:
-                                self.doc.write_text(self._('\nPublication information: %s') % public)
-                            if self.inc_datamp:
-                                self.doc.write_text(self._('\nData: %s') % data)
+                        if self.inc_author:
+                            self.doc.write_text(self._('Author: %s') % author)
+                        if self.inc_abbrev:
+                            self.doc.write_text(self._('\nAbbreviation: %s') % abbrev)
+                        if self.inc_public:
+                            self.doc.write_text(self._('\nPublication information: %s') % public)
+                        if self.inc_datamp:
+                            self.doc.write_text(self._('\nData: %s') % data)
                         self.doc.end_paragraph()
 
                     # display notes and allows markups
@@ -250,28 +230,16 @@ class RepositoryReportAlt(Report):
                         notelist = src.get_referenced_handles()
                         for note_handle in notelist:
 
-                            # ignore private records
+                            # on tuple : [0] = classname ; [1] = handle
 
-                            if not self.inc_privat and (src.private or repository.private):
-                                pass
-                            else:
-
-                                # on tuple : [0] = classname ; [1] = handle
-
-                                note_handle = note_handle[1] 
-                                self.__write_referenced_notes(note_handle)
+                            note_handle = note_handle[1] 
+                            self.__write_referenced_notes(note_handle)
 
                     if src.get_sourcref_child_list() and self.incl_media:
                         medialist = src.get_sourcref_child_list()
                         for media_handle in medialist:
-
-                            # ignore private records
-
-                            if not self.inc_privat and (src.private or repository.private):
-                                pass
-                            else:
-                                photo = src.get_media_list()
-                                self.__write_referenced_media(photo, media_handle)
+                            photo = src.get_media_list()
+                            self.__write_referenced_media(photo, media_handle)
 
     def __write_referenced_notes(self, note_handle):
         """
@@ -280,12 +248,7 @@ class RepositoryReportAlt(Report):
 
         note = self.database.get_note_from_handle(note_handle)
 
-        # ignore private records
-
-        if not self.inc_privat and note.private:
-            pass
-        else:
-            self.doc.write_styled_note(note.get_styledtext(),
+        self.doc.write_styled_note(note.get_styledtext(),
                                            note.get_format(), 'REPO-Note')
 
     def __write_referenced_media(self, photo, media_handle):
@@ -295,15 +258,9 @@ class RepositoryReportAlt(Report):
 
         photo = photo[0]
 
-        # ignore private records
+        #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
-        if not self.inc_privat and media_handle.private:
-            pass
-        else:
-            
-            #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
-
-            ReportUtils.insert_image(self.database, self.doc, photo)
+        ReportUtils.insert_image(self.database, self.doc, photo)
 
 #------------------------------------------------------------------------
 #
