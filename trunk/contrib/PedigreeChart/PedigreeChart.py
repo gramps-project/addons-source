@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id $
+# $Id$
 
 """Reports/Graphical Reports/Pedigree Chart"""
 
@@ -31,8 +31,6 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
-#import time
-import math
 import numpy as np
 from collections import deque
 
@@ -45,8 +43,9 @@ from gen.display.name import displayer as name_displayer
 import DateHandler
 #from gen.lib.date import Date
 from gen.plug import docgen
-from gen.plug.menu import NumberOption, PersonOption
-#from gen.plug.menu import BooleanOption, TextOption
+from gen.plug.docgen import fontscale
+from gen.plug.menu import BooleanOption, NumberOption, PersonOption
+#from gen.plug.menu import TextOption
 from gettext import gettext as _
 try:
     # v3.2
@@ -54,14 +53,16 @@ try:
     from ReportBase import Report
     from ReportBase import ReportUtils
     pt2cm = ReportUtils.pt2cm
+    cm2pt = ReportUtils.cm2pt
 except ImportError:
     # v3.3
     from gen.plug.report import Report
-    from gen.plug.report.utils import pt2cm
+    from gen.plug.report.utils import pt2cm, cm2pt
     from gui.plug.report import MenuReportOptions
 
 _LINKS_BEGIN = 8
 _PEOPLE_PER_PAGE = 15
+_MIN_PERSON_LIMIT = 1
 _GENERATIONS_PER_PAGE = 4
 _MAX_INDEX_PER_PAGE = 2**_GENERATIONS_PER_PAGE
 _MAX_PAGES = 1000
@@ -76,6 +77,7 @@ _ARROW = np.matrix([[-0.5 ,  0.55],
                     [-0.5 ,  0.55]])
 _SOURCE_ARROW_OFFSET = 2 # cm
 _LINE_X_OFFSET = 1 # cm
+_GUTTER_SIZE = 0.25 # cm
 
 def PageCounter(initial_value=0):
     v = initial_value
@@ -95,7 +97,7 @@ class PageLinks:
     that list the index where this person's tree resumes.
 
     """
-    def __init__(self, depth):
+    def __init__(self, depth, max_generations):
         """
         Create the indexes for each person handle and page link.
 
@@ -106,6 +108,7 @@ class PageLinks:
         self._index_by_handle = dict()
         self._index_by_page = dict()
         self.depth = depth
+        self.gen_limit = max_generations - (depth * _GENERATIONS_PER_PAGE)
 
     def add(self, person_handle, current_page, link_to_page):
         """
@@ -147,7 +150,7 @@ class PageLinks:
         return self._index_by_handle[p_handle][1]
 
     def getLink(self, p_handle):
-        if self._index_by_handle.has_key(p_handle):
+        if self.gen_limit > _MIN_PERSON_LIMIT and self._index_by_handle.has_key(p_handle):
             link_text = str(self._index_by_handle[p_handle][1])
         else:
             link_text = ""
@@ -187,21 +190,13 @@ class PersonBox:
             name = name_displayer.display(self.person)
         else:
             name = "ERROR"
-        width = pt2cm(self.report.doc.string_width(self.report.get_font(self.style_name), name))
-        if width > self.report.max_box_size:
-            letter_size = width / len(name)
-            end_pos = len(name) - int(math.ceil((width - self.report.max_box_size) / letter_size))
-            try:
-                cut_off = name.rindex(' ', 0, end_pos)
-            except ValueError, val:
-                print "[EXCEPTION]", str(val)
-                cut_off = 10
-            #print "[DEBUG]", name, letter_size, end_pos, name[:cut_off]
-            name = name[:cut_off]
+        width = cm2pt(self.report.max_box_size)
+        name = fontscale.string_trim(self.report.get_font(self.style_name), name, width)
         return name
 
     def getLine(self, refresh=False):
-        # TODO: The name should be distinguished from the rest of the information.
+        # TODO: Should the name should be distinguished from the rest of the
+        # information somehow?  For example:
         #   name
         #     birth date (location?)
         #     death date (location?)
@@ -246,6 +241,10 @@ class PersonBox:
         return self.line
 
     def getLongestLine(self):
+        """return the length of the longest line in the text.
+
+        *DEPRICATED*
+        """
         which = 0
         parts = self.getLine().split('\n')
         for i in range(len(parts)):
@@ -260,11 +259,9 @@ class PersonBox:
         return coord
 
     def getSize(self):
-        line = self.getLongestLine()
+        w = self.report.max_box_size
         lines = len(self.getLine().split("\n"))
-        w = pt2cm(self.report.doc.string_width(self.report.get_font(self.style_name), line.replace("<u>", "").replace("</u>", "")))
         h = self.report.get_font_height(self.style_name) * 1.4 * lines
-        #print "[DEBUG]", line, w, h
         return (w, h)
 
     def getDescendant(self):
@@ -292,12 +289,20 @@ class PedigreeChart(Report):
 
         menu = options_class.menu
 
-        self.max_generations = menu.get_option_by_name('maxgen').get_value()
+        # BUG: somehow when calculating if we've reached the max generations limit
+        # the report is stopping at one generation before the max requested, so I'm
+        # bumping this up by one to compensate until I find where the calculation
+        # is wrong.
+        self.max_generations = menu.get_option_by_name('maxgen').get_value() + 1
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
         if (self.center_person == None) :
             raise ReportError(_("Person %s is not in the Database") % pid )
+
+        self.show_parent_tags = menu.get_option_by_name('showcaptions').get_value()
+        self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
+        self.parent_tag_height = self.get_font_height('PC-box')
 
         self.title = "Pedigree Chart"
 
@@ -309,18 +314,20 @@ class PedigreeChart(Report):
         page_width = self.doc.get_usable_width()
         page_height = self.doc.get_usable_height()
 
-        self.columns = [0.25,
-            page_width *  3 / 20,
-            page_width *  6 / 20,
-            page_width * 12 / 20,
-            page_width * 16 / 20
+        self.columns = [_GUTTER_SIZE,
+            page_width *  6 / 40,
+            page_width * 12 / 40,
+            page_width * 25 / 40,
+            page_width * 32 / 40
             ]
+
+        #print "[DEBUG] page_width = %s, columns = %s" % (page_width, self.columns)
 
         # The third column (index 2) has the smallest space available, so I
         # base the box sizes on it.
-        self.em_size = pt2cm(self.doc.string_width(self.get_font('PC-box'), 'm'))
-        self.max_box_size = self.columns[3] - self.columns[2]
-        self.name_max_len = self.max_box_size / self.em_size
+        #self.em_size = pt2cm(self.doc.string_width(self.get_font('PC-box'), 'm'))
+        self.max_box_size = self.columns[3] - self.columns[2] - _GUTTER_SIZE
+        #self.name_max_len = self.max_box_size / self.em_size
 
         #print "[DEBUG] columns", repr(self.columns)
         #print "[DEBUG] em size: %s, max_box_size: %s, max_name_len: %s" % (self.em_size, self.max_box_size, self.name_max_len)
@@ -353,74 +360,81 @@ class PedigreeChart(Report):
         # 3) continue with each subsequent page and generate lists there too
         page_queue = deque([])
         # Generate the first page
-        page_links = self._fillPage(self.center_person.get_handle())
+        page_links = self._fill_page(self.center_person.get_handle())
         page_queue.append(page_links)
         while len(page_queue) > 0:
             page_links = page_queue.popleft()
             for person_handle in page_links.handlesByPage():
-                new_links = self._fillPage(person_handle, page_links.depth, page_links.getSourcePage(person_handle))
+                new_links = self._fill_page(person_handle, page_links.depth, page_links.getSourcePage(person_handle))
                 page_queue.append(new_links)
 
-    def _fillPage(self, person_handle, depth = 0, source_page = None):
+    def _fill_page(self, person_handle, depth = 0, source_page = None):
         """Create a tree of up to 15 people for this page"""
         current_page = self.page_number.next()
         self.map = {}
         gen_limit = self.max_generations - (depth * _GENERATIONS_PER_PAGE)
-        ###### DEBUG #######
-        #print "Depth=%d, gen_limit=%d" % (depth, gen_limit)
-        ###### DEBUG #######
-        self._getParents(person_handle, 1, gen_limit)
-        # create links to subsequent pages
-        page_links = PageLinks(depth + 1)
-        for i in range(_LINKS_BEGIN, _PEOPLE_PER_PAGE + 1):
-            if self.map.has_key(i):
-                if self.map[i].familyContinues():
-                    page_links.add(self.map[i].person_handle, current_page, self.page_link_counter.next())
-        # generate the page
-        self.doc.start_page()
-        self.doc.center_text('PC-title', self.title,
-                             self.doc.get_usable_width() / 2, 0)
-        self.doc.center_text('PC-box', "Page %d" % current_page,
-                            self.doc.get_usable_width() / 2, 0 + self.get_font_height('PC-box') * 2.2)
+        self._get_parents(person_handle, 1, gen_limit)
+        # create links to subsequent pages, if we haven't reached the genearation limit
+        # TODO: need to check the generation limit before creating the links!
+        #print '[DEBUG] depth = %2d, gen_limit = %2d, max_gen = %2d' % (depth, gen_limit, self.max_generations)
+        page_links = PageLinks(depth + 1, self.max_generations)
+        # we only want to print the page if it shows more than one person
+        if gen_limit > _MIN_PERSON_LIMIT:
+            for i in range(_LINKS_BEGIN, _PEOPLE_PER_PAGE + 1):
+                if self.map.has_key(i):
+                    if self.map[i].familyContinues():
+                        page_links.add(self.map[i].person_handle, current_page, self.page_link_counter.next())
+            # generate the page
+            self.doc.start_page()
+            self.doc.center_text('PC-title', self.title,
+                                 self.doc.get_usable_width() / 2, 0)
+            self.doc.center_text('PC-box', "Page %d" % current_page,
+                                self.doc.get_usable_width() / 2, 0 + self.get_font_height('PC-box') * 2.2)
 
-        # print a link back to the source page (if any)
-        if source_page is not None:
-            self.drawSourceArrow(str(source_page))
+            # print a link back to the source page (if any)
+            if source_page is not None:
+                self._draw_source_arrow(str(source_page))
 
-        for index in sorted(self.map.keys()):
-            person_box = self.map[index]
-            
-            (x, y) = person_box.getPos()
-            (w, h) = person_box.getSize()
-            self.doc.draw_box(person_box.style_name, person_box.getLine(), x, y, w, h)
+            for index in sorted(self.map.keys()):
+                person_box = self.map[index]
 
-            # show a page link if it's there
-            link_text = page_links.getLink(person_box.person_handle)
-            if link_text != "":
-                self.drawLinkArrow(link_text, y, w, h)
+                (x, y) = person_box.getPos()
+                (w, h) = person_box.getSize()
+                self.doc.draw_box(person_box.style_name, person_box.getLine(), x, y, w, h)
 
-            # draw the line back to the descendant box
-            if x > self.columns[0]:
-                descendant = self.map[person_box.getDescendant()]
-                (dx, dy) = descendant.getPos()
-                (dw, dh) = descendant.getSize()
-                x1 = x
-                y1 = y + h / 2
-                x2 = dx + _LINE_X_OFFSET
-                if person_box.isMother():
-                    y2 = dy + dh
-                else:
-                    y2 = dy
-                self.doc.draw_line("PC-line", x1, y1, x2, y1)
-                self.doc.draw_line("PC-line", x2, y2, x2, y1)
-            ###### DEBUG #######
-            # print index, person_box.getName(), link_text
-            ###### DEBUG #######
-        self.doc.end_page()
+                # show a page link if it's there
+                link_text = page_links.getLink(person_box.person_handle)
+                if link_text != "":
+                    self._draw_link_arrow(link_text, y, w, h)
+
+                # draw the line back to the descendant box
+                if x > self.columns[0]:
+                    descendant = self.map[person_box.getDescendant()]
+                    (dx, dy) = descendant.getPos()
+                    (dw, dh) = descendant.getSize()
+                    x1 = x
+                    y1 = y + h / 2
+                    x2 = dx + _LINE_X_OFFSET
+                    if person_box.isMother():
+                        y2 = dy + dh
+                    else:
+                        y2 = dy
+                    self.doc.draw_line("PC-line", x1, y1, x2, y1)
+                    self.doc.draw_line("PC-line", x2, y2, x2, y1)
+
+                    if self.show_parent_tags:
+                        if person_box.isMother():
+                            tx = x - self.parent_tag_len
+                            ty = y + (self.parent_tag_height * 3)
+                            self.doc.draw_text('PC-caption', _('Mother'), tx, ty)
+                        else:
+                            tx = x - self.parent_tag_len
+                            self.doc.draw_text('PC-caption', _('Father'), tx, y)
+            self.doc.end_page()
         # return the list of links
         return page_links
 
-    def _getParents(self, person_handle, index, gen_limit):
+    def _get_parents(self, person_handle, index, gen_limit):
         """
         Generate a list of the person's parents and their parents recursively up
         to max_generations.
@@ -442,8 +456,8 @@ class PedigreeChart(Report):
         family_handle = person.get_main_parents_family_handle()
         if family_handle:
             family = self.database.get_family_from_handle(family_handle)
-            self._getParents(family.get_father_handle(), index * 2, gen_limit)
-            self._getParents(family.get_mother_handle(), index * 2 + 1, gen_limit)
+            self._get_parents(family.get_father_handle(), index * 2, gen_limit)
+            self._get_parents(family.get_mother_handle(), index * 2 + 1, gen_limit)
 
     # helper function from FamilyTree by Reinhard Mueller
     def get_font_height(self, style_name):
@@ -459,7 +473,7 @@ class PedigreeChart(Report):
         paragraph_style = style_sheet.get_paragraph_style(paragraph_style_name)
         return paragraph_style.get_font()
 
-    def drawSourceArrow(self, link_text):
+    def _draw_source_arrow(self, link_text):
         link_x = 0.5
         link_y = self.doc.get_usable_height() / 2 + _SOURCE_ARROW_OFFSET + self.get_font_height('PC-box')
         # reverse the direction of the arrow
@@ -472,7 +486,7 @@ class PedigreeChart(Report):
         # write the text inside the arrow
         self.doc.draw_text('PC-box', link_text, link_x, link_y)
 
-    def drawLinkArrow(self, link_text, y, w, h):
+    def _draw_link_arrow(self, link_text, y, w, h):
         # calculate the size of the link text
         w = pt2cm(self.doc.string_width(self.get_font('PC-box'), link_text))
         link_x = self.doc.get_usable_width() - w
@@ -510,6 +524,10 @@ class PedigreeChartOptions(MenuReportOptions):
         max_gen.set_help(_("The number of generations to include in the tree"))
         menu.add_option(category_name, "maxgen", max_gen)
 
+        show_captions = BooleanOption(_("Show Mother/Father captions"), False)
+        show_captions.set_help(_("Show the title of mother or father beside each ancestor's box."))
+        menu.add_option(category_name, "showcaptions", show_captions)
+
     def make_default_style(self, default_style):
         """Make the default output style for the Ancestor Tree."""
 
@@ -531,6 +549,15 @@ class PedigreeChartOptions(MenuReportOptions):
         p.set_description(_('The basic style used for the title display.'))
         default_style.add_paragraph_style("PC-Title", p)
 
+        f = docgen.FontStyle()
+        f.set_size(8)
+        f.set_type_face(docgen.FONT_SANS_SERIF)
+        f.set_italic(1)
+        p = docgen.ParagraphStyle()
+        p.set_font(f)
+        p.set_description(_('Style used for labels and captions'))
+        default_style.add_paragraph_style("PC-Caption", p)
+
         g = docgen.GraphicsStyle()
         g.set_paragraph_style("PC-Normal")
         #g.set_shadow(1, 0.2)
@@ -543,6 +570,13 @@ class PedigreeChartOptions(MenuReportOptions):
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)
         default_style.add_draw_style("PC-title", g)
+
+        g = docgen.GraphicsStyle()
+        g.set_paragraph_style("PC-Caption")
+        g.set_color((0, 0, 0))
+        g.set_fill_color((255, 255, 255))
+        g.set_line_width(0)
+        default_style.add_draw_style("PC-caption", g)
 
         g = docgen.GraphicsStyle()
         default_style.add_draw_style("PC-line", g)
