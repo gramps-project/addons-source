@@ -31,7 +31,10 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
-import numpy as np
+try:
+    import numpy as np
+except ImportError:
+    import _matrixops as np
 from collections import deque
 
 #------------------------------------------------------------------------
@@ -304,7 +307,8 @@ class PedigreeChart(Report):
         self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
         self.parent_tag_height = self.get_font_height('PC-box')
 
-        self.title = "Pedigree Chart"
+        name = name_displayer.display_formal(self.center_person)
+        self.title = _("Pedigree Chart for %s") % name
 
         self.map = {}
         self.page_number = PageCounter(1)
@@ -480,7 +484,7 @@ class PedigreeChart(Report):
         flip = np.matrix([[-1,  0], [ 0,  1]])
         left_arrow = _ARROW * flip
         # calculate the position of the arrow
-        loc = np.array([link_x, link_y])
+        loc = np.matrix([link_x, link_y])
         path = left_arrow + loc
         self.doc.draw_path('PC-line', path.A)
         # write the text inside the arrow
@@ -492,7 +496,7 @@ class PedigreeChart(Report):
         link_x = self.doc.get_usable_width() - w
         link_y = y + h / 2
         # calculate the position of the arrow
-        loc = np.array([link_x, link_y])
+        loc = np.matrix([link_x, link_y])
         path = _ARROW + loc
         self.doc.draw_path('PC-line', path.A)
         # write the text inside the arrow
