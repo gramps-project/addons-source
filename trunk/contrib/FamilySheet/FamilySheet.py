@@ -1,8 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program - Family Sheet plugin
 #
-# Copyright (C) 2008, 2009 Reinhard Mueller
-# Copyright (C) 2010       Jakim Friant
+# Copyright (C) 2008,2009,2010 Reinhard Mueller
+# Copyright (C) 2010 Jakim Friant
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: $
+# $Id$
 
 """Reports/Text Reports/Family Sheet"""
 
@@ -41,12 +41,12 @@ import DateHandler
 from gen.plug.report import Report
 from gui.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
-# from TransUtils import sgettext as _
 from gen.lib import Date, Event, EventType, FamilyRelType, \
     Name, StyledText, StyledTextTag, StyledTextTagType
 import Relationship
 from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().gettext
 
 #------------------------------------------------------------------------
 #
@@ -935,34 +935,3 @@ class FamilySheetOptions(MenuReportOptions):
         table.set_column_width(1, 7)
         table.set_column_width(2, 86)
         default_style.add_table_style('FSR-Table', table)
-
-
-#------------------------------------------------------------------------
-#
-# Translation hack
-#
-#------------------------------------------------------------------------
-#mytranslation = {
-#        u"\u2192 %s"                       : u"\u2192 %s",
-#        u"Address (%(date)s): %(location)s": u"Adresse (%(date)s): %(location)s",
-#        u"Address: %(location)s"           : u"Adresse: %(location)s",
-#        u"on %(ymd_date)s"                 : u"am %(ymd_date)s",
-#        u"in %(ym_date)s"                  : u"im %(ym_date)s",
-#        u"in %(y_date)s"                   : u"im Jahre %(y_date)s",
-#        u"on %(placeholder)s"              : u"am %(placeholder)s",
-#        u"on %(placeholder)s (%(partial)s)": u"am %(placeholder)s (%(partial)s)",
-#        u"in %(place)s"                    : u"in %(place)s",
-#        u"Source references:"              : u"Quellenangaben:",
-#        u", page %s"                       : u", Seite %s",
-#        u"Notes:"                          : u"Notizen:"}
-#
-#from gettext import gettext
-#import locale
-#lang = locale.getdefaultlocale()[0]
-#if lang:
-#    lang = lang.split('_')[0]
-#def _(string):
-#    if lang == 'de':
-#        return mytranslation.get(string, gettext(string))
-#    else:
-#        return gettext(string)
