@@ -36,6 +36,8 @@ try:
 except ImportError:
     import _matrixops as np
 from collections import deque
+import time
+#from xml.sax.saxutils import escape
 
 #------------------------------------------------------------------------
 #
@@ -44,7 +46,7 @@ from collections import deque
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
 import DateHandler
-#from gen.lib.date import Date
+from gen.lib.date import Date
 from gen.plug import docgen
 from gen.plug.docgen import fontscale
 from gen.plug.menu import BooleanOption, NumberOption, PersonOption
@@ -83,6 +85,7 @@ _LINE_X_OFFSET = 1 # cm
 _GUTTER_SIZE = 0.25 # cm
 
 def PageCounter(initial_value=0):
+    """A generator to return sequential page numbers."""
     v = initial_value
     while v < initial_value + _MAX_PAGES:
         yield v
@@ -125,24 +128,28 @@ class PageLinks:
         self._index_by_page[link_to_page] = person_handle
 
     def __str__(self):
-        """returns a string with the person handles sorted by page order"""
+        """Return a string with the person handles sorted by page order."""
         links_out = self.handlesByPage()
         return repr(links_out)
 
     def empty(self):
+        """Return true if the length of the primary index is 0."""
         return (len(self._index_by_handle) > 0)
 
     def handlesByPage(self):
-        """Return a list of person handles in the order of their page number"""
+        """Return a list of person handles in the order of their page number."""
         return [self._index_by_page[k] for k in sorted(self._index_by_page.keys())]
 
     def getHandle(self, page):
+        """Return a person handle for the given page number."""
         return self._index_by_page[page]
 
     def getSourcePage(self, p_handle):
+        """Return the source page number for the given handle."""
         return self._index_by_handle[p_handle][0]
 
     def getSource(self, p_handle):
+        """Return a string with the page number for the given person handle."""
         if self._index_by_handle.has_key(p_handle):
             source_text = str(self._index_by_handle[p_handle][0])
         else:
@@ -150,9 +157,11 @@ class PageLinks:
         return source_text
 
     def getLinkPage(self, p_handle):
+        """Return the page number that this person handle is linked to"""
         return self._index_by_handle[p_handle][1]
 
     def getLink(self, p_handle):
+        """Return a string with the link page number if the page limit has not been reached"""
         if self.gen_limit > _MIN_PERSON_LIMIT and self._index_by_handle.has_key(p_handle):
             link_text = str(self._index_by_handle[p_handle][1])
         else:
@@ -165,7 +174,16 @@ class PageLinks:
 #
 #------------------------------------------------------------------------
 class PersonBox:
+    """Represents an entry on the pedigree chart"""
     def __init__(self, index, person_handle, report, page_link = None):
+        """Initialize the class members.
+
+        index - the person's place in the chart (1-15)
+        person_handle - the database identifier
+        report - a reference to the report object (used to find page dimentions)
+        page_link - NOT USED
+
+        """
         self.index = index
         self.person_handle = person_handle
         self.report = report
@@ -184,10 +202,16 @@ class PersonBox:
         return (family_handle is not None)
 
     def _getPersonRecord(self):
+        """Return the person record if we have a valid handle"""
         if self.person is None:
             self.person = self.report.database.get_person_from_handle(self.person_handle)
 
     def getName(self):
+        """Return the name formatted according to the user preferences.
+
+        The length of the name is checked and it will be trimmed if necessary.
+
+        """
         self._getPersonRecord()
         if self.person is not None:
             name = name_displayer.display(self.person)
@@ -197,7 +221,11 @@ class PersonBox:
         name = fontscale.string_trim(self.report.get_font(self.style_name), name, width)
         return name
 
-    def getLine(self, refresh=False):
+    def getLines(self, refresh=False):
+        """Return a string with the information for this person.
+
+        refresh - don't reuse cached information, re-read from the database
+        """
         # TODO: Should the name should be distinguished from the rest of the
         # information somehow?  For example:
         #   name
@@ -210,8 +238,8 @@ class PersonBox:
             birth_date = _PLACEHOLDER
             birth_ref = self.person.get_birth_ref()
             if birth_ref is not None:
-                for type, handle in birth_ref.get_referenced_handles():
-                    if type == 'Event':
+                for e_type, handle in birth_ref.get_referenced_handles():
+                    if e_type == 'Event':
                         birth_event = self.report.database.get_event_from_handle(handle)
                         birth_date = DateHandler.get_date(birth_event)
             self.line += "\nb. " + str(birth_date)
@@ -235,8 +263,8 @@ class PersonBox:
             death_date = _PLACEHOLDER
             death_ref = self.person.get_death_ref()
             if death_ref is not None:
-                for type, handle in death_ref.get_referenced_handles():
-                    if type == 'Event':
+                for e_type, handle in death_ref.get_referenced_handles():
+                    if e_type == 'Event':
                         death_event = self.report.database.get_event_from_handle(handle)
                         death_date = DateHandler.get_date(death_event)
             self.line += "\nd. " + str(death_date)
@@ -249,25 +277,32 @@ class PersonBox:
         *DEPRICATED*
         """
         which = 0
-        parts = self.getLine().split('\n')
+        parts = self.getLines().split('\n')
         for i in range(len(parts)):
             if len(parts[i]) >= len(parts[which]):
                 which = i
         return parts[which]
 
     def getPos(self):
+        """Return precalculated coordinates that are determined by the person's index"""
         # person's index determines which box they occupy on the page
         if self.report.coordinates.has_key(self.index):
             coord = self.report.coordinates[self.index]
         return coord
 
     def getSize(self):
+        """
+        Return a tuple with the height and width this person will occupy on the page
+        """
         w = self.report.max_box_size
-        lines = len(self.getLine().split("\n"))
+        lines = len(self.getLines().split("\n"))
         h = self.report.get_font_height(self.style_name) * 1.4 * lines
         return (w, h)
 
     def getDescendant(self):
+        """
+        Return the index of this person's descendant (one level up).
+        """
         if self.isMother():
             descendant_index = (self.index - 1) / 2
         else:
@@ -285,8 +320,16 @@ class PersonBox:
 #
 #------------------------------------------------------------------------
 class PedigreeChart(Report):
+    """Create an ancestor tree suitable for printing"""
 
     def __init__(self, database, options_class):
+        """
+        Initialize the report class.
+
+        database - the grampsdb instance
+        options_class - all the options from the report dialog
+
+        """
 
         Report.__init__(self, database, options_class)
 
@@ -309,6 +352,16 @@ class PedigreeChart(Report):
 
         name = name_displayer.display_formal(self.center_person)
         self.title = _("Pedigree Chart for %s") % name
+
+        report_date = Date()
+        report_date.set_yr_mon_day(*time.localtime()[0:3])
+        # researcher = self.database.get_researcher()
+
+#        self.footer = escape("%s: %s <%s>\n%s" % (_('Researcher'),
+#                             researcher.get_name(),
+#                             researcher.get_email(),
+#                             DateHandler.displayer.display(report_date)))
+        self.footer = DateHandler.displayer.display(report_date)
 
         self.map = {}
         self.page_number = PageCounter(1)
@@ -357,11 +410,16 @@ class PedigreeChart(Report):
         }
 
     def write_report(self):
-        # steps:
-        # 1) start with the center person and generate the first page
-        # 2) go through the map on the first page and select indexes 8-15 for
-        #    the next pages
-        # 3) continue with each subsequent page and generate lists there too
+        """
+        Create the report for the selected person
+          1) start with the center person and generate the first page
+
+          2) go through the map on the first page and select indexes 8-15 for
+             the next pages
+
+          3) continue with each subsequent page and generate lists there too
+
+        """
         page_queue = deque([])
         # Generate the first page
         page_links = self._fill_page(self.center_person.get_handle())
@@ -373,7 +431,13 @@ class PedigreeChart(Report):
                 page_queue.append(new_links)
 
     def _fill_page(self, person_handle, depth = 0, source_page = None):
-        """Create a tree of up to 15 people for this page"""
+        """Create a tree of up to 15 people for this page
+
+        person_handle - the base person for this page
+        depth - the current generation depth, used to figure out when to stop
+        source_page - the previous page where person_handle is listed
+
+        """
         current_page = self.page_number.next()
         self.map = {}
         gen_limit = self.max_generations - (depth * _GENERATIONS_PER_PAGE)
@@ -392,8 +456,6 @@ class PedigreeChart(Report):
             self.doc.start_page()
             self.doc.center_text('PC-title', self.title,
                                  self.doc.get_usable_width() / 2, 0)
-            self.doc.center_text('PC-box', "Page %d" % current_page,
-                                self.doc.get_usable_width() / 2, 0 + self.get_font_height('PC-box') * 2.2)
 
             # print a link back to the source page (if any)
             if source_page is not None:
@@ -404,12 +466,12 @@ class PedigreeChart(Report):
 
                 (x, y) = person_box.getPos()
                 (w, h) = person_box.getSize()
-                self.doc.draw_box(person_box.style_name, person_box.getLine(), x, y, w, h)
+                self.doc.draw_box(person_box.style_name, person_box.getLines(), x, y, w, h)
 
                 # show a page link if it's there
                 link_text = page_links.getLink(person_box.person_handle)
                 if link_text != "":
-                    self._draw_link_arrow(link_text, y, w, h)
+                    self._draw_link_arrow(link_text, y, h)
 
                 # draw the line back to the descendant box
                 if x > self.columns[0]:
@@ -434,6 +496,13 @@ class PedigreeChart(Report):
                         else:
                             tx = x - self.parent_tag_len
                             self.doc.draw_text('PC-caption', _('Father'), tx, y)
+            # write out the footer
+            footer = self.footer + "\n" + _("Page %d" % current_page)
+            footer_top = self.doc.get_usable_height() - (self.get_font_height('PC-box') * 1.2 * len(footer.split("\n")))
+            self.doc.draw_text('PC-box', footer, 0, footer_top)
+#            self.doc.center_text('PC-box', _("Page %d" % current_page),
+#                                 self.doc.get_usable_width() / 2,
+#                                 self.doc.get_usable_height() - self.get_font_height('PC-box') * 1.2)
             self.doc.end_page()
         # return the list of links
         return page_links
@@ -478,6 +547,13 @@ class PedigreeChart(Report):
         return paragraph_style.get_font()
 
     def _draw_source_arrow(self, link_text):
+        """Draw a path on the document that 'points' back to the source page.
+
+        link_text - a string with the page number.
+
+        The position for this arrow is the same on every page.
+
+        """
         link_x = 0.5
         link_y = self.doc.get_usable_height() / 2 + _SOURCE_ARROW_OFFSET + self.get_font_height('PC-box')
         # reverse the direction of the arrow
@@ -490,7 +566,14 @@ class PedigreeChart(Report):
         # write the text inside the arrow
         self.doc.draw_text('PC-box', link_text, link_x, link_y)
 
-    def _draw_link_arrow(self, link_text, y, w, h):
+    def _draw_link_arrow(self, link_text, y, h):
+        """Draw a path on the document that points to the next page where the ancestors continue.
+
+        link_text - a string with the page number
+        y - the vertical position of the referenced person box
+        h - the height of the person box, used to calculate the arrows position
+
+        """
         # calculate the size of the link text
         w = pt2cm(self.doc.string_width(self.get_font('PC-box'), link_text))
         link_x = self.doc.get_usable_width() - w
@@ -514,9 +597,11 @@ class PedigreeChartOptions(MenuReportOptions):
     """
 
     def __init__(self, name, dbase):
+        """Initialize the basic report options"""
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
+        """Add the menu options to the report dialog"""
 
         category_name = _("Tree Options")
 
