@@ -35,7 +35,6 @@ import time
 #
 #------------------------------------------------------------------------
 import DateHandler
-from gen.lib.date import Date
 from gen.plug import docgen
 from gen.plug.menu import BooleanListOption
 from gen.plug.report import Report
@@ -72,6 +71,10 @@ class LastChangeReport(Report):
         timestamp = self.database.get_place_from_handle(place_handle).change
         return timestamp
 
+    def _getMediaTimestamp(self, media_handle):
+        timestamp = self.database.get_object_from_handle(media_handle).change
+        return timestamp
+
     def write_report(self):
         self.doc.start_paragraph("LCR-Title")
         self.doc.write_text("Last Change Report")
@@ -85,6 +88,8 @@ class LastChangeReport(Report):
             self.write_event()
         if 'Places' in self.what_types:
             self.write_place()
+        if 'Media' in self.what_types:
+            self.write_media()
 
     def _table_begin(self, title, table_name):
             self.doc.start_paragraph('LCR-SecHeader')
@@ -210,8 +215,24 @@ class LastChangeReport(Report):
                 place = self.database.get_place_from_handle(handle)
                 if place is not None:
                     self._table_row(place.gramps_id,
-                    place.get_title(),
-                    self._convert_date(place.change))
+                                    place.get_title(),
+                                    self._convert_date(place.change))
+            self._table_end()
+
+    def write_media(self):
+        handles = sorted(self.database.get_media_object_handles(), key=self._getMediaTimestamp)
+
+        if len(handles) > 0:
+            self._table_begin(_("Media Changed"), "MediaTable")
+            self._table_header(_('ID'), _('Path'), _('Changed On'))
+
+            for handle in reversed(handles[-10:]):
+                media = self.database.get_object_from_handle(handle)
+                if media is not None:
+                    self._table_row(media.gramps_id,
+                                    media.get_description(),
+                                    #media.get_path(),
+                                    self._convert_date(media.change))
             self._table_end()
 
 class LastChangeOptions(MenuReportOptions):
@@ -229,6 +250,8 @@ class LastChangeOptions(MenuReportOptions):
         what_types.add_button(_('Families'), False)
         what_types.add_button(_('Places'), False)
         what_types.add_button(_('Events'), False)
+        what_types.add_button(_('Media'), False)
+        what_types.add_button(_('Sources'), False)
         menu.add_option(category_name, "what_types", what_types)
 
     def make_default_style(self, default_style):
