@@ -114,8 +114,8 @@ msgid "The person whose partners and children are printed"
 msgstr "Die Person, deren Partner und Kinder gedruckt werden"
 
 #: FamilySheet/FamilySheet.py:821
-msgid "Print sheets for:"
-msgstr "Blätter drucken:"
+msgid "Print sheets for"
+msgstr "Blätter drucken"
 
 #: FamilySheet/FamilySheet.py:823
 msgid "Center person only"
