@@ -22,10 +22,15 @@
 """
 Pure python implementation of matrix addition and multiplication.
 
-This module will only be used by PedigreeChart if the numpy package cannot be imported.
+This module will only be used by PedigreeChart if the numpy package
+cannot be imported.
+
 """
 
 class DimentionError(Exception):
+    """
+    Exception raised if the dimentions do not match between two matrices.
+    """
     pass
 
 class matrix:
@@ -61,7 +66,8 @@ class matrix:
         return str_out
 
     def __mul__(self, B):
-        """Return the result of simple multiplication between this matrix and the other.
+        """Return the result of simple multiplication between this
+        matrix and the other.
 
         A * B -> matrix()
 
@@ -83,9 +89,9 @@ class matrix:
 
         A + B -> matrix()
 
-        Note: adding a 1x2 matrix to this one will result in the other matrix
-        being added to each row individually, otherwise the matrices must be the
-        same dimentions.
+        Note: adding a 1x2 matrix to this one will result in the other
+        matrix being added to each row individually, otherwise the
+        matrices must be the same dimentions.
 
         """
         C = []
@@ -104,6 +110,7 @@ class matrix:
         return self.A[x]
 
 def test():
+    """Verify that the matrix operations return the expected results."""
     A = matrix([[-0.5 ,  0.55],
                     [ 0.0 ,  0.55],
                     [ 0.0 ,  0.75],
@@ -112,7 +119,7 @@ def test():
                     [ 0.0 , -0.05],
                     [-0.5 , -0.05],
                     [-0.5 ,  0.55]])
-    B = matrix([[-1, 0],[0, 1]])
+    B = matrix([[-1, 0], [0, 1]])
     C = matrix([[1, 3], [1, 0], [1, 2]])
     D = matrix([[0, 0], [7, 5], [2, 1]])
     E = matrix([3, 4])
