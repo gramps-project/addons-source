@@ -35,16 +35,16 @@ import string
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
+from gen.display.name import displayer
+from gen.lib import Date, Event, EventType, FamilyRelType, Name
+from gen.lib import StyledText, StyledTextTag, StyledTextTagType
 from gen.plug import docgen
-from gen.display.name import displayer as name_displayer
-import DateHandler
-from gen.plug.report import Report
-from gui.plug.report import MenuReportOptions
-import gen.plug.report.utils as ReportUtils
-from gen.lib import Date, Event, EventType, FamilyRelType, \
-    Name, StyledText, StyledTextTag, StyledTextTagType
-import Relationship
 from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
+from gen.plug.report import Report
+from gen.plug.report import utils
+from gui.plug.report import MenuReportOptions
+import DateHandler
+import Relationship
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 
@@ -176,7 +176,7 @@ class FamilySheet(Report):
 
             spouse_index += 1
 
-            spouse_handle = ReportUtils.find_spouse(person, family)
+            spouse_handle = utils.find_spouse(person, family)
             spouse = self.database.get_person_from_handle(spouse_handle)
 
             # Determine relationship between the center person and the spouse.
@@ -202,7 +202,7 @@ class FamilySheet(Report):
 
             self.doc.start_cell('FSR-NumberCell', 1)
             self.doc.start_paragraph('FSR-Number')
-            self.doc.write_text(ReportUtils.roman(spouse_index))
+            self.doc.write_text(utils.roman(spouse_index))
             self.doc.end_paragraph()
             self.doc.end_cell()
 
@@ -335,7 +335,7 @@ class FamilySheet(Report):
         name_text = _Name_get_styled(name, self.callname, self.placeholder)
 
         self.doc.start_paragraph('FSR-Name')
-        mark = ReportUtils.get_person_mark(self.database, person)
+        mark = utils.get_person_mark(self.database, person)
         self.doc.write_text("", mark)
         self.doc.write_markup(str(name_text), name_text.get_tags())
         self.__write_sources(name)
@@ -369,7 +369,7 @@ class FamilySheet(Report):
                 self.__dump_event_ref(event_ref)
 
             for addr in person.get_address_list():
-                location = ReportUtils.get_address_str(addr)
+                location = utils.get_address_str(addr)
                 date = DateHandler.get_date(addr)
 
                 self.doc.start_paragraph('FSR-Normal')
@@ -602,7 +602,7 @@ class FamilySheet(Report):
             for family_handle in default_person.get_family_handle_list():
                 index += 1
                 family = self.database.get_family_from_handle(family_handle)
-                spouse_handle = ReportUtils.find_spouse(default_person, family)
+                spouse_handle = utils.find_spouse(default_person, family)
                 spouse = self.database.get_person_from_handle(spouse_handle)
                 info, msg = relationship.get_relationship_distance_new(
                         self.database, spouse, person, all_dist=True)
@@ -610,7 +610,7 @@ class FamilySheet(Report):
                 (rank, ancestor_handle, default_rel, default_fam, person_rel,
                         person_fam) = info
                 if rank != -1:
-                    spousestring = ReportUtils.roman(index)
+                    spousestring = utils.roman(index)
                     break
             # If no relationship found at all, exit here.
             if rank == -1:
@@ -701,7 +701,7 @@ def _Name_get_styled(name, callname, placeholder=False):
                         'call':  n.call,
                         'first': n.first_name}
 
-    text = name_displayer.display_name(n)
+    text = displayer.display_name(n)
     tags = []
 
     if n.call:
@@ -821,7 +821,7 @@ class FamilySheetOptions(MenuReportOptions):
         pid.set_help(_("The person whose partners and children are printed"))
         menu.add_option(category_name, "pid", pid)
 
-        recurse = EnumeratedListOption(_("Print sheets for:"), self.RECURSE_NONE)
+        recurse = EnumeratedListOption(_("Print sheets for"), self.RECURSE_NONE)
         recurse.set_items([
             (self.RECURSE_NONE, _("Center person only")),
             (self.RECURSE_SIDE, _("Center person and descendants in side branches")),
