@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program - descendant counter plugin
 #
-# Copyright (C) 2008, 2009 Reinhard Mueller
+# Copyright (C) 2008,2009,2010 Reinhard Mueller, 2009 Doug Blank
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,20 +29,18 @@ Display the number of a person's descendants.
 # Standard Python modules
 #
 #------------------------------------------------------------------------
-from TransUtils import get_addon_translator
-_ = get_addon_translator().ugettext
-import operator
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer as name_displayer
-from Simple import SimpleDoc, SimpleTable
-from gen.plug import CATEGORY_QR_PERSON
-from Utils import probably_alive
+import gen.display.name
 from gen.plug import PluginManager
+from Simple import SimpleDoc, SimpleTable
+from TransUtils import get_addon_translator
+from Utils import probably_alive
+_ = get_addon_translator().ugettext
 
 #------------------------------------------------------------------------
 #
@@ -53,7 +51,7 @@ def run(database, document, person):
 
     sdoc = SimpleDoc(document)
 
-    name = name_displayer.display(person)
+    name = gen.display.name.displayer.display(person)
     death_date = _get_date(database, person.get_death_ref())
 
     sdoc.title(_("Number of %s's descendants") % name)
@@ -61,18 +59,18 @@ def run(database, document, person):
 
     total    = []
     seen     = []
-    survived = []
+    outlived = []
     alive    = []
-    handles  = {}
+    handles  = []
 
     _count_descendants(database, person, death_date, 0,
-            total, seen, survived, alive, handles)
+            total, seen, outlived, alive, handles)
 
     # Bring all lists to the same length. No list can be longer than "total".
     while len(seen) < len(total):
         seen.append(0)
-    while len(survived) < len(total):
-        survived.append(0)
+    while len(outlived) < len(total):
+        outlived.append(0)
     while len(alive) < len(total):
         alive.append(0)
 
@@ -84,7 +82,7 @@ def run(database, document, person):
                 _("Generation"),
                 _("Total"),
                 _("Seen"),
-                _("Survived"),
+                _("Outlived"),
                 _("Now alive"))
     else:
         stab.columns(
@@ -92,31 +90,34 @@ def run(database, document, person):
                 _("Total"),
                 _("Now alive"))
     n = 0
-    for (a, b, c, d) in zip(total, seen, survived, alive):
+    for (a, b, c, d, h) in zip(total, seen, outlived, alive, handles):
         n += 1
+        generation = rel_calc.get_plural_relationship_string(0, n)
         if death_date:
-            stab.row([rel_calc.get_plural_relationship_string(0, n), 
-                      "PersonList"] + handles.get(n-1, []), a, b, c, d)
+            # stab.row([generation, "PersonList"] + h, a, b, c, d) # Needs 3.2
+            stab.row(generation, a, b, c, d)
         else:
-            stab.row([rel_calc.get_plural_relationship_string(0, n), 
-                      "PersonList"] + handles.get(n-1, []), a, d)
+            # stab.row([generation, "PersonList"] + h, a, d) # Needs 3.2
+            stab.row(generation, a, d)
         stab.row_sort_val(0, n)
 
     if death_date:
-        stab.row([_("Total"), "PersonList"] + reduce(operator.add, handles.values(), []),
-                 sum(total), sum(seen), sum(survived), sum(alive))
+        # stab.row([_("Total"), "PersonList"] + sum(handles, []), # Needs 3.2
+        stab.row(_("Total"),
+                 sum(total), sum(seen), sum(outlived), sum(alive))
     else:
-        stab.row([_("Total"), "PersonList"] + reduce(operator.add, handles.values(), []),
+        # stab.row([_("Total"), "PersonList"] + sum(handles, []), # Needs 3.2
+        stab.row(_("Total"),
                  sum(total), sum(alive))
-    stab.row_sort_val(0, n+1)
+    stab.row_sort_val(0, n + 1)
 
     stab.write(sdoc)
 
     if death_date:
         sdoc.paragraph(_("Seen = number of descendants whose birth %s has "
             "lived to see") % name)
-        sdoc.paragraph(_("Survived = number of descendants who died while %s "
-            "was still being alive") % name)
+        sdoc.paragraph(_("Outlived = number of descendants who died while %s "
+            "was still alive") % name)
 
 
 #------------------------------------------------------------------------
@@ -125,11 +126,11 @@ def run(database, document, person):
 #
 #------------------------------------------------------------------------
 def _count_descendants(database, person, root_death_date, generation,
-        total, seen, survived, alive, handles):
+        total, seen, outlived, alive, handles):
 
-    # "total", "seen", "survived" and "alive" are lists with the respective
-    # descendant count per generation. These parameters are modified by this
-    # function!
+    # "total", "seen", "outlived" and "alive" are lists with the respective
+    # descendant count per generation. "handles" is a list of lists of person
+    # handles per generation. These parameters are modified by this function!
 
     for family_handle in person.get_family_handle_list():
         family = database.get_family_from_handle(family_handle)
@@ -141,34 +142,37 @@ def _count_descendants(database, person, root_death_date, generation,
             death_date = _get_date(database, child.get_death_ref())
 
             # Total number of descendants.
-            _increment(total, generation, handles, child.handle)
+            _increment(total, 0, 1, generation)
 
             # Number of descendants born during lifetime of queried person.
             if root_death_date and birth_date and \
                     birth_date.match(root_death_date, "<<"):
-                _increment(seen, generation)
+                _increment(seen, 0, 1, generation)
 
-            # Number of descendants that queried person survived.
+            # Number of descendants that queried person outlived.
             if root_death_date and death_date and \
                     death_date.match(root_death_date, "<<"):
-                _increment(survived, generation)
+                _increment(outlived, 0, 1, generation)
 
             # Number of descendants now alive.
             if probably_alive(child, database):
-                _increment(alive, generation)
+                _increment(alive, 0, 1, generation)
+
+            # Handle to this descendant.
+            _increment(handles, [], [child.handle], generation)
 
             _count_descendants(database, child, root_death_date, generation + 1,
-                    total, seen, survived, alive, handles)
+                    total, seen, outlived, alive, handles)
 
 
 # Helper function to increment the nth item of a list, and if necessary expand
 # the length of the list to n items beforehand.
-def _increment(variable, generation, handles=None, handle=None):
+# Used for counting (startwith=0, increment=1) and for building lists
+# (startwith=[], increment=[item_to_add]).
+def _increment(variable, startwith, increment, generation):
     while len(variable) <= generation:
-        variable.append(0)
-    variable[generation] += 1
-    if handles is not None:
-        handles[generation] = handles.get(generation, []) + [handle]
+        variable.append(startwith)
+    variable[generation] += increment
 
 
 #------------------------------------------------------------------------
@@ -186,19 +190,3 @@ def _get_date(database, event_ref):
         return date
     else:
         return None
-
-
-#------------------------------------------------------------------------
-#
-# Register the report
-#
-#------------------------------------------------------------------------
-PluginManager.get_instance().register_quick_report(
-    name = 'descendant_count',
-    category = CATEGORY_QR_PERSON,
-    run_func = run,
-    translated_name = _("Descendant count"),
-    status = _("Stable"),
-    description= _("Displays the number of a person's descendants"),
-    author_name = "Reinhard Mueller",
-    author_email = "reinhard.mueller@igal.at")
