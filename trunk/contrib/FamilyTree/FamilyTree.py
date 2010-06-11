@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program - Family Tree plugin
 #
-# Copyright (C) 2008, 2009 Reinhard Mueller
+# Copyright (C) 2008,2009,2010 Reinhard Mueller
 # Copyright (C) 2010 lcc <lcc.mailaddress@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: $
+# $Id$
 
 """Reports/Graphical Reports/Family Tree"""
 
@@ -28,15 +28,14 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug.docgen import FontStyle, ParagraphStyle, GraphicsStyle, \
-        FONT_SANS_SERIF, PARA_ALIGN_CENTER
-from gen.display.name import displayer as name_displayer
-import DateHandler
-from gen.plug.report import Report
-from gen.plug.report.utils import pt2cm
-from gui.plug.report import MenuReportOptions
+import gen.display.name
 from gen.lib import Date, Event, EventType, FamilyRelType, Name
-from gen.plug.menu import BooleanOption, EnumeratedListOption, FamilyOption, NumberOption, StringOption
+import gen.plug.docgen
+import gen.plug.menu
+import gen.plug.report
+from gen.plug.report.utils import pt2cm
+import gui.plug.report
+import DateHandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 
@@ -58,11 +57,11 @@ empty_marriage.set_type(EventType.MARRIAGE)
 # FamilyTree report
 #
 #------------------------------------------------------------------------
-class FamilyTree(Report):
+class FamilyTree(gen.plug.report.Report):
 
     def __init__(self, database, options_class):
 
-        Report.__init__(self, database, options_class)
+        gen.plug.report.Report.__init__(self, database, options_class)
 
         menu = options_class.menu
 
@@ -248,7 +247,8 @@ class FamilyTree(Report):
         if father_family and generation < self.max_ancestor_generations:
             if (self.color == FamilyTreeOptions.COLOR_FEMALE_LINE) or \
                     (self.color == FamilyTreeOptions.COLOR_FIRST_GEN and generation == 0) or \
-                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1):
+                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1) or \
+                    (self.color == FamilyTreeOptions.COLOR_THIRD_GEN and generation == 2):
                 self.ancestor_max_color += 1
                 father_color = self.ancestor_max_color
             else:
@@ -273,7 +273,8 @@ class FamilyTree(Report):
             if (self.color == FamilyTreeOptions.COLOR_MALE_LINE) or \
                     (self.color == FamilyTreeOptions.COLOR_MALE_LINE_WEAK and family.get_relationship() != FamilyRelType.UNMARRIED) or \
                     (self.color == FamilyTreeOptions.COLOR_FIRST_GEN and generation == 0) or \
-                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1):
+                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1) or \
+                    (self.color == FamilyTreeOptions.COLOR_THIRD_GEN and generation == 2):
                 self.ancestor_max_color += 1
                 mother_color = self.ancestor_max_color
             else:
@@ -349,7 +350,8 @@ class FamilyTree(Report):
 
             person_node['text'] = [('FTR-name', self.__person_get_display_name(person))] + [('FTR-data', p) for p in self.__person_get_display_data(person)]
             if (self.color == FamilyTreeOptions.COLOR_FIRST_GEN and generation == 0) or \
-                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1):
+                    (self.color == FamilyTreeOptions.COLOR_SECOND_GEN and generation == 1) or \
+                    (self.color == FamilyTreeOptions.COLOR_THIRD_GEN and generation == 2):
                 self.descendant_max_color += 1
                 person_node['color'] = self.descendant_max_color
             else:
@@ -664,7 +666,7 @@ class FamilyTree(Report):
                             'call':  n.call,
                             'first': n.first_name}
 
-        return name_displayer.display_name(n)
+        return gen.display.name.displayer.display_name(n)
 
 
     def __person_get_display_data(self, person):
@@ -943,7 +945,7 @@ class FamilyTree(Report):
 # FamilyTreeOptions
 #
 #------------------------------------------------------------------------
-class FamilyTreeOptions(MenuReportOptions):
+class FamilyTreeOptions(gui.plug.report.MenuReportOptions):
 
     CALLNAME_DONTUSE = 0
     CALLNAME_REPLACE = 1
@@ -958,13 +960,14 @@ class FamilyTreeOptions(MenuReportOptions):
     COLOR_GENERATION = 1
     COLOR_FIRST_GEN = 2
     COLOR_SECOND_GEN = 3
-    COLOR_MALE_LINE = 4
-    COLOR_MALE_LINE_WEAK = 5
-    COLOR_FEMALE_LINE = 6
+    COLOR_THIRD_GEN = 4
+    COLOR_MALE_LINE = 5
+    COLOR_MALE_LINE_WEAK = 6
+    COLOR_FEMALE_LINE = 7
 
 
     def __init__(self, name, dbase):
-        MenuReportOptions.__init__(self, name, dbase)
+        gui.plug.report.MenuReportOptions.__init__(self, name, dbase)
 
 
     def add_menu_options(self, menu):
@@ -973,53 +976,54 @@ class FamilyTreeOptions(MenuReportOptions):
         """
         category_name = _("Tree Options")
 
-        family_id = FamilyOption(_("Center Family"))
+        family_id = gen.plug.menu.FamilyOption(_("Center Family"))
         family_id.set_help(_("The center family for the tree"))
         menu.add_option(category_name, "family_id", family_id)
 
-        max_ancestor_generations = NumberOption(_("Ancestor Generations"), 5, 0, 50)
+        max_ancestor_generations = gen.plug.menu.NumberOption(_("Ancestor Generations"), 5, 0, 50)
         max_ancestor_generations.set_help(_("The number of ancestor generations to include in the tree"))
         menu.add_option(category_name, "max_ancestor_generations", max_ancestor_generations)
 
-        max_descendant_generations = NumberOption(_("Descendant Generations"), 10, 0, 50)
+        max_descendant_generations = gen.plug.menu.NumberOption(_("Descendant Generations"), 10, 0, 50)
         max_descendant_generations.set_help(_("The number of descendant generations to include in the tree"))
         menu.add_option(category_name, "max_descendant_generations", max_descendant_generations)
 
-        fit_on_page = BooleanOption(_("Sc_ale to fit on a single page"), True)
+        fit_on_page = gen.plug.menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
         menu.add_option(category_name, 'fit_on_page', fit_on_page)
 
-        color = EnumeratedListOption(_("Color"), self.COLOR_NONE)
+        color = gen.plug.menu.EnumeratedListOption(_("Color"), self.COLOR_NONE)
         color.set_items([
             (self.COLOR_NONE, _("No color")),
             (self.COLOR_GENERATION, _("Generations")),
             (self.COLOR_FIRST_GEN, _("First generation")),
             (self.COLOR_SECOND_GEN, _("Second generation")),
+            (self.COLOR_THIRD_GEN, _("Third generation")),
             (self.COLOR_MALE_LINE, _("Male line")),
             (self.COLOR_MALE_LINE_WEAK, _("Male line and illegitimate children")),
             (self.COLOR_FEMALE_LINE, _("Female line"))])
         menu.add_option(category_name, "color", color)
 
-        shuffle_colors = BooleanOption(_("Shuffle colors"), False)
+        shuffle_colors = gen.plug.menu.BooleanOption(_("Shuffle colors"), False)
         shuffle_colors.set_help(_("Whether to shuffle colors or order them in rainbow fashion."))
         menu.add_option(category_name, "shuffle_colors", shuffle_colors)
 
         category_name = _("Content")
 
-        callname = EnumeratedListOption(_("Use call name"), self.CALLNAME_DONTUSE)
+        callname = gen.plug.menu.EnumeratedListOption(_("Use call name"), self.CALLNAME_DONTUSE)
         callname.set_items([
             (self.CALLNAME_DONTUSE, _("Don't use call name")),
             (self.CALLNAME_REPLACE, _("Replace first name with call name")),
             (self.CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
         menu.add_option(category_name, "callname", callname)
 
-        include_occupation = BooleanOption(_("Include Occupation"), True)
+        include_occupation = gen.plug.menu.BooleanOption(_("Include Occupation"), True)
         menu.add_option(category_name, 'include_occupation', include_occupation)
 
-        include_residence = BooleanOption(_("Include Residence"), True)
+        include_residence = gen.plug.menu.BooleanOption(_("Include Residence"), True)
         menu.add_option(category_name, 'include_residence', include_residence)
 
-        eventstyle_dead = EnumeratedListOption(_("Print event data (dead person)"), self.EVENTSTYLE_DATEPLACE)
+        eventstyle_dead = gen.plug.menu.EnumeratedListOption(_("Print event data (dead person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_dead.set_items([
             (self.EVENTSTYLE_NONE, _("None")),
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
@@ -1027,7 +1031,7 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
         menu.add_option(category_name, "eventstyle_dead", eventstyle_dead)
 
-        eventstyle_living = EnumeratedListOption(_("Print event data (living person)"), self.EVENTSTYLE_DATEPLACE)
+        eventstyle_living = gen.plug.menu.EnumeratedListOption(_("Print event data (living person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_living.set_items([
             (self.EVENTSTYLE_NONE, _("None")),
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
@@ -1035,27 +1039,27 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
         menu.add_option(category_name, "eventstyle_living", eventstyle_living)
 
-        fallback_birth = BooleanOption(_("Fall back to baptism if birth event missing"), True)
+        fallback_birth = gen.plug.menu.BooleanOption(_("Fall back to baptism if birth event missing"), True)
         menu.add_option(category_name, 'fallback_birth', fallback_birth)
 
-        fallback_death = BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
+        fallback_death = gen.plug.menu.BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
         menu.add_option(category_name, 'fallback_death', fallback_death)
 
         # Fixme: the following 2 options should only be available if "Full date
         # and place" is selected above.
-        missinginfo = BooleanOption(_("Print fields for missing information"), True)
+        missinginfo = gen.plug.menu.BooleanOption(_("Print fields for missing information"), True)
         missinginfo.set_help(_("Whether to include fields for missing information."))
         menu.add_option(category_name, "missinginfo", missinginfo)
 
-        include_event_description = BooleanOption(_("Include event description"), True)
+        include_event_description = gen.plug.menu.BooleanOption(_("Include event description"), True)
         menu.add_option(category_name, 'include_event_description', include_event_description)
 
         category_name = _("Text Options")
 
-        title = StringOption(_("Title text"), "")
+        title = gen.plug.menu.StringOption(_("Title text"), "")
         menu.add_option(category_name, "title", title)
 
-        footer = StringOption(_("Footer text"), "")
+        footer = gen.plug.menu.StringOption(_("Footer text"), "")
         menu.add_option(category_name, "footer", footer)
 
 
@@ -1063,71 +1067,71 @@ class FamilyTreeOptions(MenuReportOptions):
         """Make the default output style for the Ancestor Tree."""
 
         ## Paragraph Styles:
-        f = FontStyle()
+        f = gen.plug.docgen.FontStyle()
         f.set_size(13)
-        f.set_type_face(FONT_SANS_SERIF)
-        p = ParagraphStyle()
+        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
+        p = gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
-        p.set_alignment(PARA_ALIGN_CENTER)
+        p.set_alignment(gen.plug.docgen.PARA_ALIGN_CENTER)
         p.set_bottom_margin(pt2cm(8))
         p.set_description(_("The style used for the title."))
         default_style.add_paragraph_style("FTR-Title", p)
 
-        f = FontStyle()
+        f = gen.plug.docgen.FontStyle()
         f.set_size(9)
-        f.set_type_face(FONT_SANS_SERIF)
-        p = ParagraphStyle()
+        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
+        p = gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
         p.set_description(_("The style used for names."))
         default_style.add_paragraph_style("FTR-Name", p)
 
-        f = FontStyle()
+        f = gen.plug.docgen.FontStyle()
         f.set_size(7)
-        f.set_type_face(FONT_SANS_SERIF)
-        p = ParagraphStyle()
+        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
+        p = gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
         p.set_description(_("The style used for data (birth, death, marriage, divorce)."))
         default_style.add_paragraph_style("FTR-Data", p)
 
-        f = FontStyle()
+        f = gen.plug.docgen.FontStyle()
         f.set_size(7)
-        f.set_type_face(FONT_SANS_SERIF)
-        p = ParagraphStyle()
+        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
+        p = gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
-        p.set_alignment(PARA_ALIGN_CENTER)
+        p.set_alignment(gen.plug.docgen.PARA_ALIGN_CENTER)
         p.set_top_margin(pt2cm(8))
         p.set_description(_("The style used for the footer."))
         default_style.add_paragraph_style("FTR-Footer", p)
 
         ## Draw styles
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Title")
         g.set_color((0, 0, 0))
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-title", g)
 
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         g.set_shadow(1,0.15)
         g.set_fill_color((255,255,255))
         default_style.add_draw_style("FTR-box", g)
 
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Name")
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-name", g)
 
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Data")
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-data", g)
 
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         default_style.add_draw_style("FTR-line", g)
 
-        g = GraphicsStyle()
+        g = gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Footer")
         g.set_color((0, 0, 0))
         g.set_fill_color((255, 255, 255))
