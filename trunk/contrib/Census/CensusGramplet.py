@@ -201,6 +201,7 @@ import ManagedWindow
 from gui.editors.objectentries import PlaceEntry
 from gui.widgets import MonitoredEntry
 from gui.editors import EditPerson
+import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_source_ref,
@@ -391,16 +392,20 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.view = gtk.TreeView()
         self.selection = self.view.get_selection()
         
+        scrollwin = gtk.ScrolledWindow()
+        scrollwin.add_with_viewport(self.view)
+        scrollwin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+
         #self.__create_table([_('Name')])
 
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_END)
         
         help_btn = gtk.Button(stock=gtk.STOCK_HELP)
-        help_btn.set_sensitive(False)
+        help_btn.connect('clicked', self.help_clicked)
         button_box.add(help_btn)
         button_box.set_child_secondary(help_btn, True)
-                
+
         cancel_btn = gtk.Button(stock=gtk.STOCK_CANCEL)
         cancel_btn.connect('clicked', self.close)
         button_box.add(cancel_btn)
@@ -411,7 +416,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
       
         vbox.pack_start(tab, expand=False, padding=10)
         vbox.pack_start(hbox, expand=False)
-        vbox.pack_start(self.view)
+        vbox.pack_start(scrollwin)
         vbox.pack_end(button_box, expand=False, fill=True, padding=10)
         
         root.add(vbox)
@@ -647,6 +652,12 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         Close the editor window.
         """
         ManagedWindow.ManagedWindow.close(self)
+
+    def help_clicked(self, obj):
+        """
+        Display the relevant portion of GRAMPS manual
+        """
+        GrampsDisplay.help(webpage='Census_Addons')
 
     def get_attribute(self, attrs, name):
         """
