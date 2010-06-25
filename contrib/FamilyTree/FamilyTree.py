@@ -589,10 +589,8 @@ class FamilyTree(gen.plug.report.Report):
         x = self.scale * (box_x + self.box_pad)
         y = self.scale * (box_y + self.box_pad)
         for (style_name, line) in text:
-            h = self.__get_font_height(style_name)
-            y += h * 0.15
             self.doc.draw_text(style_name, line, x, y)
-            y += h * 1.05
+            y += self.__get_font_height(style_name) * 1.2
 
 
     def __get_font_height(self, style_name):
