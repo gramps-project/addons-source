@@ -1,50 +1,5 @@
 <?xml version="1.0" ?>
 <censuses>
-    <census id='US1880' title=' 1880 United States Census' date='1880'>
-        <heading>
-            <_attribute>Census Place</_attribute>
-        </heading>
-        <column>
-            <_attribute>Name</_attribute>
-            <size>35</size>
-        </column>
-        <column>
-            <_attribute>Releation</_attribute>
-            <size>10</size>
-        </column>
-        <column>
-            <_attribute>Marital Status</_attribute>
-            <size>10</size>
-        </column>
-        <column>
-            <_attribute>Gender</_attribute>
-            <size>5</size>
-        </column>
-        <column>
-            <_attribute>Race</_attribute>
-            <size>5</size>
-        </column>
-        <column>
-            <_attribute>Age</_attribute>
-            <size>5</size>
-        </column>
-        <column>
-            <_attribute>Birthplace</_attribute>
-            <size>10</size>
-        </column>
-        <column>
-            <_attribute>Occupation</_attribute>
-            <size>35</size>
-        </column>
-        <column>
-            <_attribute>Father's Birthplace</_attribute>
-            <size>10</size>
-        </column>
-        <column>
-            <_attribute>Mother's Birthplace</_attribute>
-            <size>10</size>
-        </column>
-    </census>
     <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
         <heading>
             <_attribute>City or Borough</_attribute>
@@ -1250,6 +1205,1648 @@
     <census id='BE1910' title='1910 Belgian Census' date='1910-12-31'>
         <column>
             <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id="US1790" title="1790 US Census" date="1790-08-02">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males 16 &amp; up</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 16</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>All other free persons</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1800" title="1800 US Census" date="1800-08-04">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>All other free persons</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1810" title="1810 US Census" date="1810-08-06">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>All other free persons</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1820" title="1820 US Census" date="1820-08-07">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 16-18</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 10-15</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 16-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Foreigners not naturalized</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons engaged in Agriculture</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons engaged in Commerce</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons engaged in Manufactures</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 14-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 14-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 14-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 45 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 14-25</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 26-44</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 45 and over</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1830" title="1830 US Census" date="1830-06-01">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 5</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 5-9</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 10-14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 15-20</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 20-29</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 30-39</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 40-49</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 50-59</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 60-69</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 70-79</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 80-89</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 90-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females under 5</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 5-9</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 10-14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 15-20</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 20-29</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 30-39</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 40-49</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 50-59</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 60-69</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 70-79</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 80-89</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 90-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Total</_attribute>
+        <size>3</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb 14-24</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb 25 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons blind</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Aliens</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves and colored persons deaf/dumb under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves and colored persons deaf/dumb 14-24</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves and colored persons deaf/dumb 25 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slaves and colored persons blind</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1840" title="1840 US Census" date="1840-06-01">
+      <column>
+        <_attribute>Name</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Free white males under 5</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 5-9</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 10-14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 15-20</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 20-29</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 30-39</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 40-49</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 50-59</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 60-69</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 70-79</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 80-89</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 90-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females under 5</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 5-9</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 10-14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 15-20</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 20-29</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 30-39</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 40-49</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 50-59</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 60-69</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 70-79</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 80-89</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 90-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free white females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Free colored females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave males 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females under 10</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 10-23</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 24-35</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 36-54</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 55-99</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Slave females 100 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Total</_attribute>
+        <size>3</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Mining</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Agriculture</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Commerce</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Manufacture and trade</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Navigation of the ocean</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Persons employed in Navigation of canals, lakes, rivers</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Learned professional engineers</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Names of pensioners for Revolutionary or military services</_attribute>
+        <size>50</size>
+      </column>
+      <column>
+        <_attribute>Ages</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb under 14</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb 14-24</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons deaf/dumb 25 and over</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons blind</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons insane and idiots at public charge</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons insane and idiots at private charge</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Colored persons deaf/dumb</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Colored persons blind</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Colored persons insane and idiots at private charge</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Colored persons insane and idiots at public charge</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>Universities or college</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>Number of students</_attribute>
+        <size>4</size>
+      </column>
+      <column>
+        <_attribute>Academies and Grammar Schools</_attribute>
+        <size>25</size>
+      </column>
+      <column>
+        <_attribute>No. of scholars</_attribute>
+        <size>4</size>
+      </column>
+      <column>
+        <_attribute>Primary and Common Schools</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>No. of scholars at public charge</_attribute>
+        <size>2</size>
+      </column>
+      <column>
+        <_attribute>White persons illiterate over 20</_attribute>
+        <size>2</size>
+      </column>
+    </census>
+    <census id="US1850" title="1850 US Census" date="1850-06-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Value of real estate</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Married within the year</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Attended school within the year</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Illiterate and over 20</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Deaf, dumb, blind, insane, idiotic, pauper or convict</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Remarks</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id="US1860" title="1860 US Census" date="1860-06-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Value of real estate</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Value of personal estate</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Married within the year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Attended school within the year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Illiterate and over 20</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Deaf, dumb, blind, insane, idiotic, pauper or convict</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id="US1870" title="1870 US Census" date="1870-06-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Value of real estate</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Value of personal estate</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Father of foreign birth</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Month, if born within the year</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Month, if married within the year</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Attended school within the year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Cannot read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Cannot write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Deaf, dumb, blind, insane or idiotic</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Male citizen 21 and over</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Male citizen 21 and over where right to vote is denied on grounds other than rebellion or other crime</_attribute>
+            <size>1</size>
+        </column>
+    </census>
+    <census id="US1880" title="1880 US Census" date="1880-06-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Month, if born within the census year</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Relationship to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Single</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Married</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Widowed, divorced</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Married during the census year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Number of months unemployed during the census year</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Illness on day of enumeration</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Blind</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Deaf and dumb</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Idiotic</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Insane</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Maimed, crippled, bedridden, or otherwise disabled</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Attended school within the census year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Cannot read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Cannot write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id="US1890" title="1890 US Census" date="1890-06-02">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Veteran of Civil War or widow of a veteran</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Relationship to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Single, married, widowed or divorced</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Married during the census year</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Mother of how many children and number of children living</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Number of years in US</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Naturalized</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Naturalization papers taken out</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Number of months unemployed during the census year</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Able to read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to speak English; if not, the language spoken</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Suffering from disease</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Whether defective and name of defect</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Prisoner, convict, homeless child or pauper</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Supplemental schedule and page</_attribute>
+            <size>10</size>
+        </column>
+    </census>
+    <census id="US1900" title="1900 US Census" date="1900-06-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Month of birth</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Single, married, widowed or divorced</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Years of present marriage</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Mother of how many children</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Number of children living</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of immigration</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Number of years in US</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Naturalization</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Naturalization papers taken out</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Months not employed</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Attended school</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Can read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Can write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Can speak English</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Home owned or rented</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Owned free or mortgaged</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Farm or house</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Number of farm schedule</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id="US1910" title="1910 US Census" date="1910-04-15">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relationship to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Single, married, widowed or divorced</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Years of present marriage</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Mother of how many children</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Number of children living</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of immigration</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Naturalized or alien</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Able to speak English; if not, language spoken</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Nature of industry</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Employer, employee or working on own account</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Out of work</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Weeks out of work in 1909</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute>Able to read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Attended school since Sept. 1, 1909</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Home owned or rented</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Owned free or mortgaged</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Farm or house</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Number of farm schedule</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Civil War veteran</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Blind</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Deaf and dumb</_attribute>
+            <size>1</size>
+        </column>
+    </census>
+    <census id="US1920" title="1920 US Census" date="1920-01-05">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relationship to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Home owned or rented</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>If owned, free or mortgaged</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Single, married, widowed or divorced</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Year of immigration</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Naturalized or alien</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of naturalization</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Attended school since Sept. 1, 1919</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to read</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to write</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Mother tongue</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Father's mother tongue</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Mother's mother tongue</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Able to speak English</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Industry</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Employer, worker or working on own account</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Number of farm schedule</_attribute>
+            <size>25</size>
+        </column>
+    </census>
+    <census id="US1930" title="1930 US Census" date="1930-04-01">
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relationship to head</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Home owned or rented</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Value of home or monthly rental</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Radio set</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Farm?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Marital condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age at first marriage</_attribute>
+            <size>3</size>
+        </column>
+        <column>
+            <_attribute>Attended school since Sept. 1, 1929</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Able to read and write</_attribute>
+            <size>1</size>
+        </column>
+                <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of father</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Place of birth of mother</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Language before coming to US</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of immigration</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Naturalized or alien</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Able to speak English</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Industry</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Class of worker</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Employed</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Line number for unemployed</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Veteran</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>What war</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Number of farm schedule</_attribute>
             <size>25</size>
         </column>
     </census>
