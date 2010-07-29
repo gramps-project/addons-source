@@ -86,6 +86,8 @@ class MultiTreeView(gtk.TreeView):
         if event.type == gtk.gdk.KEY_PRESS:
             if event.keyval == gtk.keysyms.Delete:
                 model, paths = self.get_selection().get_selected_rows()
+                # reverse, to delete from the end
+                paths.sort(key=lambda x:-x[0])
                 for path in paths:
                     try:
                         node = model.get_iter(path)
@@ -114,7 +116,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditPerson(self.dbstate, 
                                            self.uistate, [], person)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Event':
@@ -123,7 +124,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditEvent(self.dbstate, 
                                           self.uistate, [], event)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Family':
@@ -132,7 +132,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditFamily(self.dbstate, 
                                            self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Source':
@@ -141,7 +140,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditSource(self.dbstate, 
                                            self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Place':
@@ -150,7 +148,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditPlace(self.dbstate, 
                                            self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Repository':
@@ -159,7 +156,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditRepository(self.dbstate, 
                                            self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass == 'Note':
@@ -168,7 +164,6 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditNote(self.dbstate, 
                                          self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
                     elif objclass in ['Media', 'MediaObject']:
@@ -177,10 +172,9 @@ class MultiTreeView(gtk.TreeView):
                             try:
                                 EditMedia(self.dbstate, 
                                           self.uistate, [], ref)
-                                return True # handled event
                             except Errors.WindowActiveError:
                                 pass
-            return False
+            return True
         # otherwise:
         if (target 
             and event.type == gtk.gdk.BUTTON_PRESS
