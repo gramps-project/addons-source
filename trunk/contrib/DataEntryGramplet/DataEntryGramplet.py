@@ -46,6 +46,8 @@ class DataEntryGramplet(Gramplet):
     AS_CHILD   = 4
     def init(self):
         self.de_column_width = 20
+        self.de_source_width = 10
+        self.show_source = True
         import gtk
         rows = gtk.VBox()
         self._dirty = False
@@ -53,15 +55,19 @@ class DataEntryGramplet(Gramplet):
         self._dirty_family = None
         self.de_widgets = {}
         for items in [("Active person", _("Active person"), None, True, 
-                       [("Edit person", "", self.edit_person), ("Edit family", _("Family:"), self.edit_family)], 
-                       False, 0), 
-                      ("APName", _("Surname, Given"), None, False, [], True, 0), 
-                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown")], False, [], True, 2),
-                      ("APBirth", _("Birth"), None, False, [], True, 0), 
-                      ("APDeath", _("Death"), None, False, [], True, 0)
+                       [("Edit person", "", "button", self.edit_person), 
+                        ("Edit family", _("Family:"), "button", self.edit_family),
+                        ("Show sources", _("Sources?"), "checkbox", self.toggle_sources)], 
+                       False, 0, None), 
+                      ("APName", _("Surname, Given"), None, False, [], True, 0, None),
+                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown")], 
+                       False, [], True, 2, (_("Source"), 
+                                            "APSource")), 
+                      ("APBirth", _("Birth"), None, False, [], True, 0, (_("Source"), "APBirthSource")), 
+                      ("APDeath", _("Death"), None, False, [], True, 0, (_("Source"), "APDeathSource"))
                      ]:
-            pos, text, choices, readonly, callback, dirty, default = items
-            row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
+            pos, text, choices, readonly, callback, dirty, default, source = items
+            row = self.make_row(pos, text, choices, readonly, callback, dirty, default, source)
             rows.pack_start(row, False)
 
         # Save and Abandon
@@ -74,21 +80,22 @@ class DataEntryGramplet(Gramplet):
         row.pack_start(button, True)
         rows.pack_start(row, False)
 
-        for items in [("New person", _("New person"), None, True, 0), 
+        for items in [("New person", _("New person"), None, True, 0, None), 
                       ("NPRelation", _("Add relation"), 
                        [_("No relation to active person"),
                         _("Add as a Parent"), 
                         _("Add as a Spouse"), 
                         _("Add as a Sibling"), 
                         _("Add as a Child")],
-                       False, 0),
-                      ("NPName", _("Surname, Given"), None, False, 0), 
-                      ("NPGender", _("Gender"), [_("female"), _("male"), _("unknown")], False, 2),
-                      ("NPBirth", _("Birth"), None, False, 0), 
-                      ("NPDeath", _("Death"), None, False, 0)
+                       False, 0, None),
+                      ("NPName", _("Surname, Given"), None, False, 0, None),
+                      ("NPGender", _("Gender"), 
+                       [_("female"), _("male"), _("unknown")], False, 2, (_("Source"), "NPSource")), 
+                      ("NPBirth", _("Birth"), None, False, 0, (_("Source"), "NPBirthSource")), 
+                      ("NPDeath", _("Death"), None, False, 0, (_("Source"), "NPDeathSource"))
                      ]:
-            pos, text, choices, readonly, default = items
-            row = self.make_row(pos, text, choices, readonly, default=default)
+            pos, text, choices, readonly, default, source = items
+            row = self.make_row(pos, text, choices, readonly, default=default, source=source)
             rows.pack_start(row, False)
 
         # Save, Abandon, Clear
@@ -169,6 +176,10 @@ class DataEntryGramplet(Gramplet):
                     self._dirty_family = self.dbstate.db.get_family_from_handle(family_list[0])
                     self.de_widgets["Active person:Edit family"].show()
                     self.de_widgets["Active person:Edit family:Label"].show()
+            # lookup sources:
+            self.de_widgets["APSource"].set_text(self.get_last_source_title(active_person))
+            self.de_widgets["APBirthSource"].set_text(self.get_last_source_title(birth))
+            self.de_widgets["APDeathSource"].set_text(self.get_last_source_title(death))
         else:
             self.clear_data_edit(None)
             self.de_widgets["Active person:Edit person"].hide()
@@ -177,7 +188,7 @@ class DataEntryGramplet(Gramplet):
         self._dirty = False
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
-                 mark_dirty=False, default=0):
+                 mark_dirty=False, default=0, source=None):
         import gtk
         # Data Entry: Active Person
         row = gtk.HBox()
@@ -212,22 +223,42 @@ class DataEntryGramplet(Gramplet):
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
                 row.pack_start(label, False)
-                row.pack_start(eventBox, True, True)
-        for name, text, callback in callback_list:
-            label = gtk.Label()
-            label.set_text(text)
-            self.de_widgets[pos + ":" + name + ":Label"] = label
-            row.pack_start(label, False)
-            icon = gtk.STOCK_EDIT
-            size = gtk.ICON_SIZE_MENU
-            button = gtk.Button()
-            image = gtk.Image()
-            image.set_from_stock(icon, size)
-            button.add(image)
-            button.set_relief(gtk.RELIEF_NONE)
-            button.connect("clicked", callback)
-            self.de_widgets[pos + ":" + name] = button
-            row.pack_start(button, False)
+                row.pack_start(eventBox, True)
+            if source:
+                label = gtk.Label()
+                label.set_text("%s: " % source[0])
+                label.set_width_chars(self.de_source_width)
+                label.set_alignment(1.0, 0.5) 
+                self.de_widgets[source[1] + ":Label"] = label
+                self.de_widgets[source[1]] = gtk.Entry()
+                if mark_dirty:
+                    self.de_widgets[source[1]].connect("changed", self.mark_dirty)
+                row.pack_start(label, False)
+                row.pack_start(self.de_widgets[source[1]], True)
+                if not self.show_source:
+                    self.de_widgets[source[1]].hide()
+        for name, text, cbtype, callback in callback_list:
+            if cbtype == "button":
+                label = gtk.Label()
+                label.set_text(text)
+                self.de_widgets[pos + ":" + name + ":Label"] = label
+                row.pack_start(label, False)
+                icon = gtk.STOCK_EDIT
+                size = gtk.ICON_SIZE_MENU
+                button = gtk.Button()
+                image = gtk.Image()
+                image.set_from_stock(icon, size)
+                button.add(image)
+                button.set_relief(gtk.RELIEF_NONE)
+                button.connect("clicked", callback)
+                self.de_widgets[pos + ":" + name] = button
+                row.pack_start(button, False)
+            elif cbtype == "checkbox":
+                button = gtk.CheckButton(text)
+                button.set_active(True)
+                button.connect("clicked", callback)
+                self.de_widgets[pos + ":" + name] = button
+                row.pack_start(button, False)
         row.show_all()
         return row
 
@@ -323,6 +354,28 @@ class DataEntryGramplet(Gramplet):
         self.dbstate.db.add_event(event, self.trans)
         return (1, event)
 
+    def get_last_source_title(self, obj):
+        if obj:
+            ref_list = obj.get_source_references()
+            if len(ref_list) > 0:
+                ref = ref_list[-1]
+                if ref:
+                    source = self.dbstate.db.get_source_from_handle(ref.ref)
+                    if source:
+                        return source.get_title()
+        return ""
+
+    def get_or_create_source(self, source_text):
+        source_list = self.dbstate.db.get_source_handles()
+        for source_handle in source_list:
+            source = self.dbstate.db.get_source_from_handle(source_handle)
+            if source.get_title() == source_text:
+                return (0, source)
+        source = gen.lib.Source()
+        source.set_title(source_text)
+        self.dbstate.db.add_source(source, self.trans)
+        return (1, source)
+
     def make_event(self, type, date, place):
         if date == place == None: return None
         event = gen.lib.Event()
@@ -372,6 +425,12 @@ class DataEntryGramplet(Gramplet):
                     birthref = gen.lib.EventRef()
                 birthref.set_reference_handle(birthevent.get_handle())
                 person.set_birth_ref(birthref)
+                # Only add if there is an event:
+                source_text = self.de_widgets["APBirthSource"].get_text().strip()
+                if source_text:
+                    new, source = self.get_or_create_source(source_text)
+                    self.add_source(birthevent, source)
+                    self.dbstate.db.commit_event(birthevent, self.trans)
             deathdate, deathplace = self.process_dateplace(self.de_widgets["APDeath"].get_text().strip())
             new, deathevent = self.get_or_create_event(person, gen.lib.EventType.DEATH, deathdate, deathplace)
             # reference it, if need be:
@@ -382,11 +441,33 @@ class DataEntryGramplet(Gramplet):
                     deathref = gen.lib.EventRef()
                 deathref.set_reference_handle(deathevent.get_handle())
                 person.set_death_ref(deathref)
+                # Only add if there is an event:
+                source_text = self.de_widgets["APDeathSource"].get_text().strip()
+                if source_text:
+                    new, source = self.get_or_create_source(source_text)
+                    self.add_source(deathevent, source)
+                    self.dbstate.db.commit_event(deathevent, self.trans)
+            source_text = self.de_widgets["APSource"].get_text().strip()
+            if source_text:
+                new, source = self.get_or_create_source(source_text)
+                self.add_source(person, source)
             self.dbstate.db.commit_person(person,self.trans)
             self.dbstate.db.transaction_commit(self.trans,
                     (_("Gramplet Data Edit: %s") %  name_displayer.display(person)))
         self._dirty = False
         self.update()
+
+    def add_source(self, obj, source):
+        source_refs = obj.get_source_references()
+        found = 0
+        for ref in source_refs:
+            if ref.ref == source.get_handle():
+                found = 1
+                break
+        if not found:
+            sref = gen.lib.SourceRef()
+            sref.set_reference_handle(source.get_handle())
+            obj.add_source_reference(sref)
 
     def add_data_entry(self, obj):
         from QuestionDialog import ErrorDialog
@@ -442,9 +523,23 @@ class DataEntryGramplet(Gramplet):
         # Add birth
         new_birth_date, new_birth_place = self.process_dateplace(self.de_widgets["NPBirth"].get_text().strip())
         birth_event = self.make_event(gen.lib.EventType.BIRTH, new_birth_date, new_birth_place)
+        if birth_event:
+            # Only add if there is an event:
+            source_text = self.de_widgets["NPBirthSource"].get_text().strip()
+            if source_text:
+                new, source = self.get_or_create_source(source_text)
+                self.add_source(birth_event, source)
+                self.dbstate.db.commit_event(birth_event, self.trans)
         # Add death
         new_death_date, new_death_place = self.process_dateplace(self.de_widgets["NPDeath"].get_text())
         death_event = self.make_event(gen.lib.EventType.DEATH, new_death_date, new_death_place)
+        if birth_event:
+            # Only add if there is an event:
+            source_text = self.de_widgets["NPDeathSource"].get_text().strip()
+            if source_text:
+                new, source = self.get_or_create_source(source_text)
+                self.add_source(death_event, source)
+                self.dbstate.db.commit_event(death_event, self.trans)
         # Now, create the person and events:
         person = self.make_person(firstname, surname, gender)
         # New birth for person:
@@ -691,6 +786,10 @@ class DataEntryGramplet(Gramplet):
         if current_person:
             self.dbstate.db.commit_person(current_person, self.trans)
         if person:
+            source_text = self.de_widgets["NPSource"].get_text().strip()
+            if source_text:
+                new, source = self.get_or_create_source(source_text)
+                self.add_source(person, source)
             self.dbstate.db.commit_person(person, self.trans)
         self.dbstate.db.transaction_commit(self.trans,
                  (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
@@ -700,6 +799,12 @@ class DataEntryGramplet(Gramplet):
         self.de_widgets["NPBirth"].set_text(self.de_widgets["APBirth"].get_text())
         self.de_widgets["NPDeath"].set_text(self.de_widgets["APDeath"].get_text())
         self.de_widgets["NPGender"].set_active(self.de_widgets["APGender"].get_active())
+        self.de_widgets["NPSource"].set_text(self.de_widgets["APSource"].get_text())
+        self.de_widgets["NPBirthSource"].set_text(self.de_widgets["APBirthSource"].get_text())
+        self.de_widgets["NPDeathSource"].set_text(self.de_widgets["APDeathSource"].get_text())
+        self.de_widgets["NPSource"].set_text(self.de_widgets["APSource"].get_text())
+        self.de_widgets["NPBirthSource"].set_text(self.de_widgets["APBirthSource"].get_text())
+        self.de_widgets["NPDeathSource"].set_text(self.de_widgets["APDeathSource"].get_text())
         # FIXME: put cursor in add surname
 
     def clear_data_edit(self, obj):
@@ -708,6 +813,9 @@ class DataEntryGramplet(Gramplet):
         self.de_widgets["APBirth"].set_text("")
         self.de_widgets["APDeath"].set_text("")
         self.de_widgets["APGender"].set_active(gen.lib.Person.UNKNOWN) 
+        self.de_widgets["APSource"].set_text("")
+        self.de_widgets["APBirthSource"].set_text("")
+        self.de_widgets["APDeathSource"].set_text("")
 
     def clear_data_entry(self, obj):
         self.de_widgets["NPName"].set_text("")
@@ -715,6 +823,9 @@ class DataEntryGramplet(Gramplet):
         self.de_widgets["NPDeath"].set_text("")
         self.de_widgets["NPRelation"].set_active(self.NO_REL) 
         self.de_widgets["NPGender"].set_active(gen.lib.Person.UNKNOWN) 
+        self.de_widgets["NPSource"].set_text("")
+        self.de_widgets["NPBirthSource"].set_text("")
+        self.de_widgets["NPDeathSource"].set_text("")
 
     def db_changed(self):
         """
@@ -735,4 +846,32 @@ class DataEntryGramplet(Gramplet):
     def active_changed(self, handle):
         self.update()
 
-
+    def toggle_sources(self, widget):
+        if widget.get_active():
+            self.de_widgets["NPSource"].show()
+            self.de_widgets["NPBirthSource"].show()
+            self.de_widgets["NPDeathSource"].show()
+            self.de_widgets["APSource"].show()
+            self.de_widgets["APBirthSource"].show()
+            self.de_widgets["APDeathSource"].show()
+            # Labels:
+            self.de_widgets["NPSource:Label"].show()
+            self.de_widgets["NPBirthSource:Label"].show()
+            self.de_widgets["NPDeathSource:Label"].show()
+            self.de_widgets["APSource:Label"].show()
+            self.de_widgets["APBirthSource:Label"].show()
+            self.de_widgets["APDeathSource:Label"].show()
+        else:
+            self.de_widgets["NPSource"].hide()
+            self.de_widgets["NPBirthSource"].hide()
+            self.de_widgets["NPDeathSource"].hide()
+            self.de_widgets["APSource"].hide()
+            self.de_widgets["APBirthSource"].hide()
+            self.de_widgets["APDeathSource"].hide()
+            # Labels:
+            self.de_widgets["NPSource:Label"].hide()
+            self.de_widgets["NPBirthSource:Label"].hide()
+            self.de_widgets["NPDeathSource:Label"].hide()
+            self.de_widgets["APSource:Label"].hide()
+            self.de_widgets["APBirthSource:Label"].hide()
+            self.de_widgets["APDeathSource:Label"].hide()
