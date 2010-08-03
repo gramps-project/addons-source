@@ -83,19 +83,18 @@ def increment_target(filenames):
         fp = open(filename, "r")
         newfp = open("%s.new" % filename, "w")
         for line in fp:
-            if (("gramps_target_version" in line) and 
-                ("=" in line) and 
-                (not line.strip().startswith('#'))):
+            if ((line.lstrip().startswith("version")) and 
+                ("=" in line)):
                 print "orig =", line.rstrip()
                 line, stuff = line.rsplit(",", 1)
                 line = line.rstrip()
-                pos = line.index("gramps_target_version")
+                pos = line.index("version")
                 indent = line[0:pos]
                 var, gtv = line[pos:].split('=', 1)
                 lyst = version(gtv.strip()[1:-1])
                 lyst[2] += 1
                 newv = ".".join(map(str, lyst))
-                newline = "%sgramps_target_version = '%s',\n" % (indent, newv)
+                newline = "%sversion = '%s',\n" % (indent, newv)
                 newfp.write(newline)
             else:
                 newfp.write(line)
