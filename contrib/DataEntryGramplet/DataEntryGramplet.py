@@ -354,17 +354,6 @@ class DataEntryGramplet(Gramplet):
         self.dbstate.db.add_event(event, self.trans)
         return (1, event)
 
-    def get_last_source_title(self, obj):
-        if obj:
-            ref_list = obj.get_source_references()
-            if len(ref_list) > 0:
-                ref = ref_list[-1]
-                if ref:
-                    source = self.dbstate.db.get_source_from_handle(ref.ref)
-                    if source:
-                        return source.get_title()
-        return ""
-
     def get_or_create_source(self, source_text):
         source_list = self.dbstate.db.get_source_handles()
         for source_handle in source_list:
@@ -375,6 +364,17 @@ class DataEntryGramplet(Gramplet):
         source.set_title(source_text)
         self.dbstate.db.add_source(source, self.trans)
         return (1, source)
+
+    def get_last_source_title(self, obj):
+        if obj:
+            ref_list = obj.get_source_references()
+            if len(ref_list) > 0:
+                ref = ref_list[-1]
+                if ref:
+                    source = self.dbstate.db.get_source_from_handle(ref.ref)
+                    if source:
+                        return source.get_title()
+        return ""
 
     def make_event(self, type, date, place):
         if date == place == None: return None
@@ -427,7 +427,7 @@ class DataEntryGramplet(Gramplet):
                 person.set_birth_ref(birthref)
                 # Only add if there is an event:
                 source_text = self.de_widgets["APBirthSource"].get_text().strip()
-                if source_text:
+                if source_text and self.de_widgets["Active person:Show sources"].get_active():
                     new, source = self.get_or_create_source(source_text)
                     self.add_source(birthevent, source)
                     self.dbstate.db.commit_event(birthevent, self.trans)
@@ -443,12 +443,12 @@ class DataEntryGramplet(Gramplet):
                 person.set_death_ref(deathref)
                 # Only add if there is an event:
                 source_text = self.de_widgets["APDeathSource"].get_text().strip()
-                if source_text:
+                if source_text and self.de_widgets["Active person:Show sources"].get_active():
                     new, source = self.get_or_create_source(source_text)
                     self.add_source(deathevent, source)
                     self.dbstate.db.commit_event(deathevent, self.trans)
             source_text = self.de_widgets["APSource"].get_text().strip()
-            if source_text:
+            if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(person, source)
             self.dbstate.db.commit_person(person,self.trans)
@@ -526,17 +526,17 @@ class DataEntryGramplet(Gramplet):
         if birth_event:
             # Only add if there is an event:
             source_text = self.de_widgets["NPBirthSource"].get_text().strip()
-            if source_text:
+            if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(birth_event, source)
                 self.dbstate.db.commit_event(birth_event, self.trans)
         # Add death
         new_death_date, new_death_place = self.process_dateplace(self.de_widgets["NPDeath"].get_text())
         death_event = self.make_event(gen.lib.EventType.DEATH, new_death_date, new_death_place)
-        if birth_event:
+        if death_event:
             # Only add if there is an event:
             source_text = self.de_widgets["NPDeathSource"].get_text().strip()
-            if source_text:
+            if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(death_event, source)
                 self.dbstate.db.commit_event(death_event, self.trans)
@@ -552,11 +552,11 @@ class DataEntryGramplet(Gramplet):
             death_ref = gen.lib.EventRef()
             death_ref.set_reference_handle(death_event.get_handle())
             person.set_death_ref(death_ref)
-        self.dbstate.db.add_person(person, self.trans)
+        #self.dbstate.db.add_person(person, self.trans)
         # All error checking done; just add relation:
         if self.de_widgets["NPRelation"].get_active() == self.NO_REL:
             # "No relation to active person"
-            pass
+            current_person = None
         elif self.de_widgets["NPRelation"].get_active() == self.AS_PARENT:
             # "Add as a Parent"
             # Go through current_person parent families
@@ -783,14 +783,15 @@ class DataEntryGramplet(Gramplet):
                         family.set_father_handle(current_person.get_handle())
                     self.dbstate.db.commit_family(family, self.trans)
         # Commit changes -------------------------------------------------
-        if current_person:
+        if current_person: # if related to current person
             self.dbstate.db.commit_person(current_person, self.trans)
         if person:
             source_text = self.de_widgets["NPSource"].get_text().strip()
-            if source_text:
+            if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(person, source)
-            self.dbstate.db.commit_person(person, self.trans)
+            self.dbstate.db.add_person(person, self.trans)
+            #self.dbstate.db.commit_person(person, self.trans)
         self.dbstate.db.transaction_commit(self.trans,
                  (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
 
@@ -875,3 +876,22 @@ class DataEntryGramplet(Gramplet):
             self.de_widgets["APSource:Label"].hide()
             self.de_widgets["APBirthSource:Label"].hide()
             self.de_widgets["APDeathSource:Label"].hide()
+
+    def hidden_widgets(self):
+        if not self.de_widgets["Active person:Show sources"].get_active():
+            return [self.de_widgets["NPSource"],
+                    self.de_widgets["NPBirthSource"],
+                    self.de_widgets["NPDeathSource"],
+                    self.de_widgets["APSource"],
+                    self.de_widgets["APBirthSource"],
+                    self.de_widgets["APDeathSource"],
+                    # Labels:
+                    self.de_widgets["NPSource:Label"],
+                    self.de_widgets["NPBirthSource:Label"],
+                    self.de_widgets["NPDeathSource:Label"],
+                    self.de_widgets["APSource:Label"],
+                    self.de_widgets["APBirthSource:Label"],
+                    self.de_widgets["APDeathSource:Label"]]
+        else:
+            return []
+
