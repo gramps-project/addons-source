@@ -77,6 +77,50 @@ def r(scmd, **kwargs):
     cmd = scmd % keywords
     return cmd
 
+def increment_target(filenames):
+    for filename in filenames:
+        print filename
+        fp = open(filename, "r")
+        newfp = open("%s.new" % filename, "w")
+        for line in fp:
+            if (("gramps_target_version" in line) and 
+                ("=" in line) and 
+                (not line.strip().startswith('#'))):
+                print "orig =", line.rstrip()
+                line, stuff = line.rsplit(",", 1)
+                line = line.rstrip()
+                pos = line.index("gramps_target_version")
+                indent = line[0:pos]
+                var, gtv = line[pos:].split('=', 1)
+                lyst = version(gtv.strip()[1:-1])
+                lyst[2] += 1
+                newv = ".".join(map(str, lyst))
+                newline = "%sgramps_target_version = '%s',\n" % (indent, newv)
+                newfp.write(newline)
+            else:
+                newfp.write(line)
+        fp.close()
+        newfp.close()
+        system('''mv -f "%(file1)s" "%(file2)s" ''',
+               file1="%s.new" % filename, file2=filename)
+
+
+def myint(s):
+    """
+    Protected version of int()
+    """
+    try:
+        v = int(s)
+    except:
+        v = s
+    return v
+
+def version(sversion):
+    """
+    Return the tuple version of a string version.
+    """
+    return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
+
 if command == "clean":
     if len(sys.argv) == 2:
         for addon in [name for name in os.listdir(".") 
@@ -220,6 +264,7 @@ elif command == "build":
             files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
             files_str = " ".join(files)
             system('''mkdir -p ../download ''')
+            increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
             system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                    files=files_str)
     else:
@@ -229,6 +274,7 @@ elif command == "build":
         files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
         files_str = " ".join(files)
         system('''mkdir -p ../download ''')
+        increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 else:
