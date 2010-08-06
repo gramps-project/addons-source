@@ -38,6 +38,6 @@ gramps_target_version = '3.3',
 status = STABLE,
 fname = 'TimelinePedigreeView.py',
 authors = [u"Felix Heß"],
-authors_email = ["xilef@nurfurspam.de"],
+authors_email = ["xilef@nurfuerspam.de"],
 viewclass = 'TimelinePedigreeView',
   )
