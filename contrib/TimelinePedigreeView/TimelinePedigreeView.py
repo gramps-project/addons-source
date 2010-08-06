@@ -789,7 +789,7 @@ class TimelinePedigreeView(NavigationView):
         self.Tree_MoveBranchBoxes(layout_widget, LstDescendants, ActivePersonX, D_Top, 1, 0)
         
         # Draw time line at top
-        if self.use_timeline:
+        if self.use_timeline and self.Tree_EstimateBirth( LstDescendants[0]):
             self.gtklayout_lines.append([10, 3*TimeLineHeight/4, RequiredWidth-10, 3*TimeLineHeight/4, 1])
             Pos50 = ActivePersonX + ( self.Tree_EstimateBirth( LstDescendants[0] ).get_year() - 1950 ) * 11
             Ticks = [ [1950, Pos50] ]
