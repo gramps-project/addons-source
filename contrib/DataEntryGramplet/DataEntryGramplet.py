@@ -552,7 +552,8 @@ class DataEntryGramplet(Gramplet):
             death_ref = gen.lib.EventRef()
             death_ref.set_reference_handle(death_event.get_handle())
             person.set_death_ref(death_ref)
-        #self.dbstate.db.add_person(person, self.trans)
+        # Need to add here to get a handle:
+        self.dbstate.db.add_person(person, self.trans)
         # All error checking done; just add relation:
         if self.de_widgets["NPRelation"].get_active() == self.NO_REL:
             # "No relation to active person"
@@ -649,7 +650,11 @@ class DataEntryGramplet(Gramplet):
                 self.dbstate.db.commit_family(family, self.trans)
             else:
                 if person.get_gender() == gen.lib.Person.UNKNOWN:
-                    if current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                    if current_person is None:
+                        ErrorDialog(_("Please set Active person."), 
+                                    _("Can't add new person as a spouse to no one."))
+                        return
+                    elif current_person.get_gender() == gen.lib.Person.UNKNOWN:
                         ErrorDialog(_("Please set gender on Active or new person."), 
                                     _("Can't add new person as a spouse."))
                         return
@@ -723,7 +728,7 @@ class DataEntryGramplet(Gramplet):
                         ErrorDialog(_("Same genders on Active and new person."), 
                                     _("Can't add new person as a spouse."))
                         return
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING:
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING and current_person is not None:
             # "Add as a Sibling"
             added = False
             for family_handle in current_person.get_parent_family_handle_list():
@@ -749,7 +754,7 @@ class DataEntryGramplet(Gramplet):
                 person.add_parent_family_handle(family.get_handle())
                 current_person.add_parent_family_handle(family.get_handle())
                 self.dbstate.db.commit_family(family, self.trans)
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_CHILD:
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_CHILD and current_person is not None:
             # "Add as a Child"
             added = False
             family = None
@@ -790,8 +795,7 @@ class DataEntryGramplet(Gramplet):
             if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(person, source)
-            self.dbstate.db.add_person(person, self.trans)
-            #self.dbstate.db.commit_person(person, self.trans)
+            self.dbstate.db.commit_person(person, self.trans)
         self.dbstate.db.transaction_commit(self.trans,
                  (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
 
