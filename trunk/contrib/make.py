@@ -306,6 +306,7 @@ elif command == "listing":
                          {"register": register})
                 p = plugins[-1]
                 plugin = {"n": p["name"], 
+                          "i": p["id"], 
                           "t": p["ptype"], 
                           "d": p["description"], 
                           "v": p["version"], 
