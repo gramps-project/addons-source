@@ -287,7 +287,7 @@ elif command == "listing":
         plugins.append(kwargs)
     # first, get a list of all of the possible languages
     dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
-    languages = set()
+    languages = set(['en'])
     for addon in dirs:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
             length= len(po)
