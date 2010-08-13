@@ -296,24 +296,24 @@ elif command == "listing":
     # next, create a file for all languages listing plugins
     for lang in languages:
         fp = open("../listings/addons-%s.txt" % lang, "w")
-        plugins = []
         for addon in dirs:
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
                 local_gettext = get_addon_translator(gpr,
                                        languages=[lang]).gettext
+                plugins = []
                 execfile(gpr.encode(sys.getfilesystemencoding()),
                          make_environment(_=local_gettext),
                          {"register": register})
-                p = plugins[-1]
-                plugin = {"n": p["name"], 
-                          "i": p["id"], 
-                          "t": p["ptype"], 
-                          "d": p["description"], 
-                          "v": p["version"], 
-                          "g": p["gramps_target_version"], 
-                          "z": "%s.addon.tgz" % gpr.split("/",1)[0], 
-                          }
-                print(plugin, file=fp)
+                for p in plugins:
+                    plugin = {"n": p["name"], 
+                              "i": p["id"], 
+                              "t": p["ptype"], 
+                              "d": p["description"], 
+                              "v": p["version"], 
+                              "g": p["gramps_target_version"], 
+                              "z": "%s.addon.tgz" % gpr.split("/",1)[0], 
+                              }
+                    print(plugin, file=fp)
         fp.close()
 else:
     raise AttributeError("unknown command")
