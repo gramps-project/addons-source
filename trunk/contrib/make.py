@@ -35,8 +35,9 @@ Examples:
    python make.py dist-clean AddonDirectory
    python make.py clean
    python make.py clean AddonDirectory
+   python make.py listing
 """
-
+from __future__ import print_function
 import glob
 import sys
 import os
@@ -58,7 +59,7 @@ def system(scmd, **kwargs):
     Replace and call system with scmd.
     """
     cmd = r(scmd, **kwargs)
-    print cmd
+    print(cmd)
     os.system(cmd)
 
 def echo(scmd, **kwargs):
@@ -66,7 +67,7 @@ def echo(scmd, **kwargs):
     Replace and echo.
     """
     cmd = r(scmd, **kwargs)
-    print cmd
+    print(cmd)
 
 def r(scmd, **kwargs):
     """
@@ -79,13 +80,13 @@ def r(scmd, **kwargs):
 
 def increment_target(filenames):
     for filename in filenames:
-        print filename
+        print(filename)
         fp = open(filename, "r")
         newfp = open("%s.new" % filename, "w")
         for line in fp:
             if ((line.lstrip().startswith("version")) and 
                 ("=" in line)):
-                print "orig =", line.rstrip()
+                print("orig = %s" % line.rstrip())
                 line, stuff = line.rsplit(",", 1)
                 line = line.rstrip()
                 pos = line.index("version")
@@ -276,5 +277,42 @@ elif command == "build":
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
+elif command == "listing":
+    sys.path.append(os.path.join(GRAMPSPATH, "src"))
+    from TransUtils import get_addon_translator
+    from gen.plug import make_environment, PTYPE_STR
+    def register(ptype, **kwargs):
+        global plugins
+        kwargs["ptype"] = PTYPE_STR[ptype]
+        plugins.append(kwargs)
+    # first, get a list of all of the possible languages
+    dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+    languages = set()
+    for addon in dirs:
+        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
+            languages.add(locale)
+    # next, create a file for all languages listing plugins
+    for lang in languages:
+        fp = open("../listings/addons-%s.txt" % lang, "w")
+        plugins = []
+        for addon in dirs:
+            for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
+                local_gettext = get_addon_translator(gpr,
+                                       languages=[lang]).gettext
+                execfile(gpr.encode(sys.getfilesystemencoding()),
+                         make_environment(_=local_gettext),
+                         {"register": register})
+                p = plugins[-1]
+                plugin = {"n": p["name"], 
+                          "t": p["ptype"], 
+                          "d": p["description"], 
+                          "v": p["version"], 
+                          "g": p["gramps_target_version"], 
+                          "z": "%s.addon.tgz" % gpr.split("/",1)[0], 
+                          }
+                print(plugin, file=fp)
+        fp.close()
 else:
     raise AttributeError("unknown command")
