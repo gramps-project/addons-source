@@ -52,6 +52,5 @@
 {'d': 'Set an attribute to a given value.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.1', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.1', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Provides a library for listening to low-level database transactions.', 'g': '3.3', 'i': 'libtransactions', 'n': 'Transaction Listener', 't': u'Plugin lib', 'v': '1.0.1', 'z': 'LibTransactions.addon.tgz'}
 {'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.1', 'z': 'GraphView.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Gramplet konsoli Pythona', 't': u'Gramplet', 'v': '1.0.1', 'z': 'PythonGramplet.addon.tgz'}
