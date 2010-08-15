@@ -1,0 +1,151 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# erik <erik@ylana.telenet.be>, 2010.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-20 18:25+0100\n"
+"PO-Revision-Date: 2010-03-03 00:37+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+msgid "Timeline Pedigree"
+msgstr "Zeitleistestammbaum"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+msgid "Ancestry"
+msgstr "Vorfahren"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:78
+msgid "short for born|b."
+msgstr "*"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:79
+msgid "short for died|d."
+msgstr "†"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:80
+msgid "short for baptized|bap."
+msgstr "~"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:81
+msgid "short for chistianized|chr."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for buried|bur."
+msgstr "⚰"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for cremated|crem."
+msgstr "⚱"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:484
+msgid "Timeline pedigree"
+msgstr "Zeitleistenstammbaum"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:642
+msgid "Person Filter Editor"
+msgstr "Personenfiltereditor"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:920
+msgid "Relationship loop detected"
+msgstr "Beziehungsschleife entdeckt"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:921
+msgid "A person was found to be his/her own ancestor."
+msgstr "Eine Person wurde gefunden, die ihr eigener Vorfahre ist."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1544
+msgid "Show images"
+msgstr "Zeige Bilder"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1546
+msgid "Show marriage data"
+msgstr "Zeige Heiratsdaten"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1548
+msgid "Order by timeline"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1550
+msgid "Show lifespan"
+msgstr "Zeige Lebensdauer"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1552
+msgid "Mouse scroll direction"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1560
+msgid "Top <-> Bottom"
+msgstr "Oben <-> Unten"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1567
+msgid "Left <-> Right"
+msgstr "Links <-> Rechts"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1579
+msgid "Descendant Generations"
+msgstr "Nachkommengenerationen"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1588
+#: TimelinePedigreeView/TimelinePedigreeView.py:1607
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d Generation"
+msgstr[1] "%d Generationen"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1598
+msgid "Ancestor Generations"
+msgstr "Vorfahrengenerationen"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1632
+#: TimelinePedigreeView/TimelinePedigreeView.py:1653
+msgid "People Menu"
+msgstr "Personenmenü"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1683
+msgid "Spouses"
+msgstr "Partner"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1718
+msgid "Siblings"
+msgstr "Geschwister"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1763
+msgid "Children"
+msgstr "Kinder"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1803
+msgid "Parents"
+msgstr "Eltern"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1840
+msgid "Add New Parents..."
+msgstr "Neue Eltern hinzufügen..."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1851
+msgid "Related"
+msgstr "Verwandt"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1900
+msgid "Family Menu"
+msgstr "Familiemenü"
+
