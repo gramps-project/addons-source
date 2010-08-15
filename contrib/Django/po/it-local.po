@@ -1,0 +1,108 @@
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
+#
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002;.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:48+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Django/ExportDjango.gpr.py:25
+#, fuzzy
+msgid "Django Export"
+msgstr "Importazione Django"
+
+#: Django/ExportDjango.gpr.py:26 Django/ImportDjango.gpr.py:26
+msgid "Django is a web framework working on a configured database"
+msgstr ""
+
+#: Django/ExportDjango.gpr.py:31
+msgid "Django options"
+msgstr "Opzioni Django"
+
+#: Django/ExportDjango.py:187
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Esportazione completata: %d secondo"
+msgstr[1] "Esportazione completata: %d secondi"
+
+#: Django/ImportDjango.gpr.py:25
+#, fuzzy
+msgid "Django Import"
+msgstr "Importazione Django"
+
+#: Django/ImportDjango.py:185
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Importazione completata: %d secondo"
+msgstr[1] "Importazione completata: %d secondi"
+
+#: Django/ImportDjango.py:186
+msgid "Django import"
+msgstr "Importazione Django"

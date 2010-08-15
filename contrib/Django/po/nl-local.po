@@ -1,0 +1,84 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:47+0100\n"
+"PO-Revision-Date: 2010-06-18 08:03+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: Django/ExportDjango.gpr.py:25
+msgid "Django Export"
+msgstr "Django-export"
+
+#: Django/ExportDjango.gpr.py:26
+#: Django/ImportDjango.gpr.py:26
+msgid "Django is a web framework working on a configured database"
+msgstr "Django is een webstructuur die draait op een geconfigureerd gegevensbestand"
+
+#: Django/ExportDjango.gpr.py:31
+msgid "Django options"
+msgstr "Django-opties"
+
+#: Django/ExportDjango.py:187
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Export voltooid: %d seconde"
+msgstr[1] "Export voltooid: %d seconden"
+
+#: Django/ImportDjango.gpr.py:25
+msgid "Django Import"
+msgstr "Django-import"
+
+#: Django/ImportDjango.py:185
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Import voltooid: %d seconde"
+msgstr[1] "Import voltooid: %d seconden"
+
+#: Django/ImportDjango.py:186
+msgid "Django import"
+msgstr "Django-import"
+
