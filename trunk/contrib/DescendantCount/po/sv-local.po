@@ -1,0 +1,106 @@
+# Swedish translations for gramps package
+# Svenska �vers�ttningar f�r paket gramps.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter@test>, 2010.
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-25 10:42+0100\n"
+"PO-Revision-Date: 2010-03-04 18:10+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: DescendantCount/DescendantCount.gpr.py:3
+#: DescendantCount/DescendantCount.gpr.py:23
+msgid "Descendant Count"
+msgstr "Ättlingsräknare"
+
+#: DescendantCount/DescendantCount.gpr.py:7
+msgid "Display descendant counts for each person."
+msgstr "Visa antal ättlingar för varje person"
+
+#: DescendantCount/DescendantCount.gpr.py:17
+msgid "Descendant Count Gramplet"
+msgstr "Gramplet för räkning av ättlingar"
+
+#: DescendantCount/descendant_count.py:59
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Antal av %ss ättlingar"
+
+#: DescendantCount/descendant_count.py:84
+#: DescendantCount/descendant_count.py:91
+msgid "Generation"
+msgstr "Generation"
+
+#: DescendantCount/descendant_count.py:85
+#: DescendantCount/descendant_count.py:92
+#: DescendantCount/descendant_count.py:106
+#: DescendantCount/descendant_count.py:109
+msgid "Total"
+msgstr "Totalt"
+
+#: DescendantCount/descendant_count.py:86
+msgid "Seen"
+msgstr "Sedda"
+
+#: DescendantCount/descendant_count.py:87
+msgid "Survived"
+msgstr "Överleda"
+
+#: DescendantCount/descendant_count.py:88
+#: DescendantCount/descendant_count.py:93
+msgid "Now alive"
+msgstr "Nu levande"
+
+#: DescendantCount/descendant_count.py:116
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Sedda = antal ättlingar vars födelse %s har kunnat uppleva"
+
+#: DescendantCount/descendant_count.py:118
+#, python-format
+msgid ""
+"Survived = number of descendants who died while %s was still being alive"
+msgstr ""
+"Överlevda = antal ättlingar vars död inträffade medan %s fortfarande "
+"levde"
+
+#: DescendantCount/descendant_count.py:200
+msgid "Descendant count"
+msgstr "Räkning av ättlingar"
+
+#: DescendantCount/descendant_count.py:201
+msgid "Stable"
+msgstr "Stabil"
+
+#: DescendantCount/descendant_count.py:202
+msgid "Displays the number of a person's descendants"
+msgstr "Visar antalet av en persons ättlingar"
+
+#: DescendantCount/DescendantCount.py:78
+msgid "Descendent Count"
+msgstr "Ättlingsräknare"
+
+#: DescendantCount/DescendantCount.py:80
+msgid "Person"
+msgstr "Person"
+
+#: DescendantCount/DescendantCount.py:80
+msgid "Number of Descendants"
+msgstr "Antal ättlingar"
+
+#: DescendantCount/DescendantCount.py:89
+#, python-format
+msgid "There are %d people.\n"
+msgstr "Det finns %d personer.\n"
+
