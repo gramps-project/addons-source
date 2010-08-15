@@ -1,0 +1,57 @@
+# translation of ca.po to Català
+# TRADUCCIÓ AL CATALÀ DE GRAMPS
+# Copyright (C) 2008 PEL GRUP DE GRAMPS
+# Aquest fitxer es distribueix segons la mateixa llicència que Gramps
+#
+# Joan Creus <joan punt creus a gmail punt com>, 2008.
+# Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:47+0100\n"
+"PO-Revision-Date: 2010-03-07 17:48+0100\n"
+"Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
+"Language-Team: Català <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Django/ExportDjango.gpr.py:25
+#, fuzzy
+msgid "Django Export"
+msgstr "Importació Django"
+
+#: Django/ExportDjango.gpr.py:26 Django/ImportDjango.gpr.py:26
+msgid "Django is a web framework working on a configured database"
+msgstr ""
+
+#: Django/ExportDjango.gpr.py:31
+#, fuzzy
+msgid "Django options"
+msgstr "Importació Django"
+
+#: Django/ExportDjango.py:187
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Exportació Finalitzada: %d segon"
+msgstr[1] "Exportació Finalitzada: %d segons"
+
+#: Django/ImportDjango.gpr.py:25
+#, fuzzy
+msgid "Django Import"
+msgstr "Importació Django"
+
+#: Django/ImportDjango.py:185
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Importació Finalitzada: %d segon"
+msgstr[1] "Importació Finalitzada: %d segons"
+
+#: Django/ImportDjango.py:186
+msgid "Django import"
+msgstr "Importació Django"
