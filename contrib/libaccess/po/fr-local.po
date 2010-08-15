@@ -1,0 +1,19 @@
+# French translation for gramps
+# Copyright (C) 2010 Free Software Foundation, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:59+0100\n"
+"PO-Revision-Date: 2010-03-07 18:14+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: libaccess/libaccess.gpr.py:32
+msgid "Provides a library for generic access to the database and gen.lib."
+msgstr "Fournit une bibliothèque pour un accès générique à la base de données et gen.lib."
