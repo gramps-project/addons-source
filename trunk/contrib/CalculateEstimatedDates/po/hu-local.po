@@ -1,0 +1,392 @@
+# translation of hu.po to magyar
+# Hungarian translation for GRAMPS
+# Copyright (C) 2003 the Gramps Project
+#
+#
+# Egyeki Gergely <egeri@elte.hu>, 2003, 2004.
+# Arpad Horvath <horvath.arpad@szgti.bmf.hu>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: hu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"PO-Revision-Date: 2009-11-10 09:48+0100\n"
+"Last-Translator: Kolesár András <translation@kolesar.hu>\n"
+"Language-Team: magyar <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;X-Generator: KBabel 1.11.2X-Generator: X-"
+"Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+msgid "Calculate Estimated Dates"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculates estimated dates for birth and death."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
+#, fuzzy
+msgid "Options"
+msgstr "Szöveg beállításai"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
+msgid "Filter"
+msgstr "Szűrő"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+msgid "Select filter to restrict people"
+msgstr "Szűrő kiválasztása személyek kizárására"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
+#, fuzzy
+msgid "Filter Person"
+msgstr "Első személy"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+#, fuzzy
+msgid "The center person for the filter"
+msgstr "Lábléchez használt stílus."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
+#, fuzzy
+msgid "Source text"
+msgstr "Forrás"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+msgid "Calculated Date Estimates"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+msgid "Source to remove and/or add"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+#, fuzzy
+msgid "Remove previously added events, notes, and source"
+msgstr "Korábban létrehozott könyvek kezelése"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Birth"
+msgstr "Születés"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#, fuzzy
+msgid "Do not add birth events"
+msgstr " megadta %s születési dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+#, fuzzy
+msgid "Add birth events without dates"
+msgstr "Becsült születési dátumok hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+#, fuzzy
+msgid "Add birth events with dates"
+msgstr "Becsült születési dátumok hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Add a birth events with or without estimated dates"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+msgid "Death"
+msgstr "Halál"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+#, fuzzy
+msgid "Do not add death events"
+msgstr " megadta %s halálozási dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#, fuzzy
+msgid "Add death events without dates"
+msgstr "Becsült születési dátumok hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#, fuzzy
+msgid "Add death events with dates"
+msgstr "Becsült születési dátumok hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add death events with or without estimated dates"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+msgid "Maximum age"
+msgstr "Legnagyobb életkor"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Maximum age that one can live to"
+msgstr "Legnagyobb kor, amíg valaki élt"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+msgid "Maximum sibling age difference"
+msgstr "Legnagyobb férj-feleség korkülönbség"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+msgid "Maximum age difference between siblings"
+msgstr "Legnagyobb korkülönbség a gyermekek között"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+#, fuzzy
+msgid "Average years between generations"
+msgstr "Oldaltörés generációk között"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+#, fuzzy
+msgid "Average years between two generations"
+msgstr "Oldaltörés generációk között"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+#, fuzzy
+msgid "Estimated Dates"
+msgstr "Körülbelül"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+msgid "Approximate (about)"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+msgid "Extremes (after and before)"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+msgid "Dates on events are either about or after/before"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
+#, fuzzy
+msgid "Help"
+msgstr "_Súgó"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+#, fuzzy
+msgid "Select All"
+msgstr "Fájl kiválasztása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+#, fuzzy
+msgid "Select None"
+msgstr "Anya kiválasztása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+#, fuzzy
+msgid "Toggle Selection"
+msgstr "Eszköz Kiválasztás"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+#, fuzzy
+msgid "Add Selected Events"
+msgstr "Esemény kiválasztása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#, fuzzy
+msgid "Remove and Run Select Again"
+msgstr "Kiválasztott személy törlése"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+#, fuzzy
+msgid "Reselect Data"
+msgstr "Apa kiválasztása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+#, fuzzy
+msgid "Are you sure you want to reselect data?"
+msgstr "Valóban törölni szeretné a Visszavonás-történetet?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#, fuzzy
+msgid "Run Select Again"
+msgstr "Összesítő kiválasztás"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
+msgid "Select"
+msgstr "Kijelölés"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Person"
+msgstr "Személy"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Action"
+msgstr "Cselekmény"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Birth Date"
+msgstr "Születési idő"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Death Date"
+msgstr "Halál dátuma"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#, fuzzy
+msgid "Evidence"
+msgstr "Lakóhely"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#, fuzzy
+msgid "Relative"
+msgstr "Séma"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#, fuzzy
+msgid "Processing...\n"
+msgstr "Nyomtatás..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+msgid "Removing old estimations... "
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#, python-format
+msgid "Removing '%s'..."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+#, fuzzy
+msgid "done!\n"
+msgstr "Nincs"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
+#, fuzzy
+msgid "Removed date estimates"
+msgstr "A kiválasztott név törlése"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+#, fuzzy
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr "Kiválasztás..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
+#, fuzzy
+msgid "Selecting..."
+msgstr "Kiválasztás..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+#, fuzzy
+msgid "Add birth and death events"
+msgstr "Új esemény hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+#, fuzzy
+msgid "Add birth event"
+msgstr "Egyének hiányzó születési dátummal"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+#, fuzzy
+msgid "Add death event"
+msgstr "Új esemény hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+#, fuzzy
+msgid "No events to be added."
+msgstr "Leírás nem érhető el"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+#, fuzzy
+msgid "Selecting... "
+msgstr "Kiválasztás..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#, fuzzy, python-format
+msgid "Adding events '%s'..."
+msgstr "Létező szülők hozzáadása..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#, fuzzy, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr " megadta %s születési dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#, fuzzy, python-format
+msgid "Added birth event based on %s"
+msgstr " megadta %s születési dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+msgid "Estimated birth date"
+msgstr "Becsült születési dátum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#, fuzzy, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr " megadta %s halálozási dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#, fuzzy, python-format
+msgid "Added death event based on %s"
+msgstr " megadta %s halálozási dátumát"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+msgid "Estimated death date"
+msgstr "Becsült halálozási dátum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+msgid " Done! Committing..."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, fuzzy
+msgid "Add date estimates"
+msgstr "Becsült halálozási dátumok hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, fuzzy, python-format
+msgid "Added %d events."
+msgstr "Új esemény hozzáadása"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+#, fuzzy
+msgid "Estimated date"
+msgstr "Körülbelül"
