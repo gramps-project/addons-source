@@ -1,0 +1,171 @@
+# French translations for gramps package.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-15 14:12+0200\n"
+"PO-Revision-Date: 2010-08-15 15:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: FamilySheet/FamilySheet.gpr.py:3
+msgid "Family Sheet"
+msgstr "Résumé familiale"
+
+#: FamilySheet/FamilySheet.gpr.py:4
+msgid "Produces a family sheet showing full information about a person and his/her partners and children."
+msgstr "Produit un résumé familial montrant les informations complètes sur l'individu, ses conjoints et enfants."
+
+#: FamilySheet/FamilySheet.py:213
+#: FamilySheet/FamilySheet.py:256
+#, python-format
+msgid "→ %s"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:377
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adresse (%(date)s): %(location)s"
+
+#: FamilySheet/FamilySheet.py:381
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Adresse : %(location)s"
+
+#: FamilySheet/FamilySheet.py:428
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:525
+msgid "Source references:"
+msgstr "Références de la source :"
+
+#: FamilySheet/FamilySheet.py:538
+#, python-format
+msgid "%s: "
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:542
+#, python-format
+msgid ", page %s"
+msgstr ""
+
+#: FamilySheet/FamilySheet.py:555
+msgid "Notes:"
+msgstr "Notes :"
+
+#: FamilySheet/FamilySheet.py:734
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "le %(ymd_date)s"
+
+#: FamilySheet/FamilySheet.py:736
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "en %(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:738
+#, python-format
+msgid "in %(y_date)s"
+msgstr "en %(y_date)s"
+
+#: FamilySheet/FamilySheet.py:742
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "à %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:744
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "à %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:787
+#: FamilySheet/FamilySheet.py:789
+#, python-format
+msgid "in %(place)s"
+msgstr "à %(place)s"
+
+#: FamilySheet/FamilySheet.py:817
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: FamilySheet/FamilySheet.py:820
+msgid "Center person"
+msgstr "Individu central"
+
+#: FamilySheet/FamilySheet.py:821
+msgid "The person whose partners and children are printed"
+msgstr "L'individu dont les partenaires et enfants sont imprimés"
+
+#: FamilySheet/FamilySheet.py:824
+msgid "Print sheets for"
+msgstr "Impression des feuilles pour"
+
+#: FamilySheet/FamilySheet.py:826
+msgid "Center person only"
+msgstr "Individu central seulement"
+
+#: FamilySheet/FamilySheet.py:827
+msgid "Center person and descendants in side branches"
+msgstr "Individu central et ses descendants par branches"
+
+#: FamilySheet/FamilySheet.py:828
+msgid "Center person and all descendants"
+msgstr "Individu central et tous ses descendants"
+
+#: FamilySheet/FamilySheet.py:831
+msgid "Use call name"
+msgstr "Utiliser le nom usuel"
+
+#: FamilySheet/FamilySheet.py:833
+msgid "Don't use call name"
+msgstr "Ne pas utiliser le nom usuel"
+
+#: FamilySheet/FamilySheet.py:834
+msgid "Replace first name with call name"
+msgstr "Remplacer le prénom par le nom usuel"
+
+#: FamilySheet/FamilySheet.py:835
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Souligner ou ajouter le nom usuel dans le prénom"
+
+#: FamilySheet/FamilySheet.py:838
+msgid "Print placeholders for missing information"
+msgstr "Imprime un espace pour l'information manquante"
+
+#: FamilySheet/FamilySheet.py:841
+msgid "Include sources"
+msgstr "Inclure les sources"
+
+#: FamilySheet/FamilySheet.py:844
+msgid "Include notes"
+msgstr "Inclure les notes"
+
+#: FamilySheet/FamilySheet.py:858
+msgid "The basic style used for the text display"
+msgstr "Le style de base pour afficher du texte."
+
+#: FamilySheet/FamilySheet.py:868
+msgid "The style used for the page key on the top"
+msgstr "Le style utilisé pour le haut de la page de référence"
+
+#: FamilySheet/FamilySheet.py:877
+msgid "The style used for names"
+msgstr "Le style utilisé pour les noms."
+
+#: FamilySheet/FamilySheet.py:887
+msgid "The style used for numbers"
+msgstr "Le style utilisé pour les numéros."
+
+#: FamilySheet/FamilySheet.py:897
+msgid "The style used for footnotes (notes and source references)"
+msgstr "Le style utilisé pour les bas de page (notes et références de la source)"
+
