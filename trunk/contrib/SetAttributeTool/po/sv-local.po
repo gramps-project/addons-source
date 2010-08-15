@@ -1,0 +1,110 @@
+# Swedish translations for gramps package
+# Svenska �vers�ttningar f�r paket gramps.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-25 11:22+0100\n"
+"PO-Revision-Date: 2010-02-25 11:28+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:119
+#: SetAttributeTool/SetAttributeTool.py:179
+#: SetAttributeTool/SetAttributeTool.py:196
+msgid "Set Attribute"
+msgstr "Sätt attribut"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Sätt ett attribut till ett givet värde."
+
+#: SetAttributeTool/SetAttributeTool.py:70
+#: SetAttributeTool/SetAttributeTool.py:122
+msgid "Options"
+msgstr "Val"
+
+#: SetAttributeTool/SetAttributeTool.py:72
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: SetAttributeTool/SetAttributeTool.py:73
+msgid "Select filter to restrict people"
+msgstr "Välj ett filter för att begränsa personer"
+
+#: SetAttributeTool/SetAttributeTool.py:77
+msgid "Filter Person"
+msgstr "Filtrera person"
+
+#: SetAttributeTool/SetAttributeTool.py:78
+msgid "The center person for the filter"
+msgstr "Huvudperson för filtret"
+
+#: SetAttributeTool/SetAttributeTool.py:82
+msgid "Attribute"
+msgstr "Attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Value"
+msgstr "Värde"
+
+#: SetAttributeTool/SetAttributeTool.py:85
+msgid "Attribute type to add or edit"
+msgstr "Attributtyp add lägga till eller redigera"
+
+#: SetAttributeTool/SetAttributeTool.py:86
+msgid "Attribute value to add or edit"
+msgstr "Attributvärde add lägga till eller redigera"
+
+#: SetAttributeTool/SetAttributeTool.py:127
+msgid "Results"
+msgstr "Result"
+
+#: SetAttributeTool/SetAttributeTool.py:128
+msgid "Processing...\n"
+msgstr "Bearbetar...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:143
+msgid "Setting attributes..."
+msgstr "Sätter attribut..."
+
+#: SetAttributeTool/SetAttributeTool.py:150
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Sätter '%s'- attribut till '%s'...\n"
+"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:182
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Satte %d '%s' attribut till '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:184
+msgid "Done!\n"
+msgstr "Klart\n"
+
+#: SetAttributeTool/SetAttributeTool.py:197
+msgid "Beta"
+msgstr "Beta"
+
+#: SetAttributeTool/SetAttributeTool.py:200
+msgid "Sets an attribute of a person to a given value."
+msgstr "Sätter ett attribut för en person till ett givet värde."
+
