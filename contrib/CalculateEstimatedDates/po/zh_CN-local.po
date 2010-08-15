@@ -1,0 +1,357 @@
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# grampscn <grampscn@gmail.com>, 2009, 2010, 2001, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS VERSION 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"PO-Revision-Date: 2010-03-09 22:25+0800\n"
+"Last-Translator: 黄友诚\n"
+"Language-Team: zh <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+msgid "Calculate Estimated Dates"
+msgstr "计算估计日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculates estimated dates for birth and death."
+msgstr "为出生和死亡的计算估计日期."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
+msgid "Options"
+msgstr "选项"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
+msgid "Filter"
+msgstr "过滤器"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+msgid "Select filter to restrict people"
+msgstr "为限制的人员选择过滤器"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
+msgid "Filter Person"
+msgstr "筛选人员"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+msgid "The center person for the filter"
+msgstr "中心任务筛选器"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
+msgid "Source text"
+msgstr "来源文字"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+msgid "Calculated Date Estimates"
+msgstr "评价计算的日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+msgid "Source to remove and/or add"
+msgstr "要移除或/和添加的来源"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+msgid "Remove previously added events, notes, and source"
+msgstr "移除之前添加的事件，笔记和来源"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Birth"
+msgstr "出生"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Do not add birth events"
+msgstr "不要添加出生事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+msgid "Add birth events without dates"
+msgstr "添加不含日期的出生事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+msgid "Add birth events with dates"
+msgstr "添加含有日期的出生事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Add a birth events with or without estimated dates"
+msgstr "添加出生时间包含或不包含推测的日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+msgid "Death"
+msgstr "死亡"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+msgid "Do not add death events"
+msgstr "不要添加死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Add death events without dates"
+msgstr "添加没有日期的死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add death events with dates"
+msgstr "添加含有日期的死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add death events with or without estimated dates"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+msgid "Maximum age"
+msgstr "最大年龄"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Maximum age that one can live to"
+msgstr "人类生存极限"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+msgid "Maximum sibling age difference"
+msgstr "表兄弟年岁最大差距"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+msgid "Maximum age difference between siblings"
+msgstr "表亲兄弟最大年龄差"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+msgid "Average years between generations"
+msgstr "代与代之间的平均相差年岁"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+msgid "Average years between two generations"
+msgstr "两代人之间的平均年限"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+msgid "Estimated Dates"
+msgstr "估计的日期 "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+msgid "Approximate (about)"
+msgstr "大约"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+msgid "Extremes (after and before)"
+msgstr "极端的（之后和之前）"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+msgid "Dates on events are either about or after/before"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
+msgid "Help"
+msgstr "帮助"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+msgid "Select All"
+msgstr "全选"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+msgid "Select None"
+msgstr "不选择"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+msgid "Toggle Selection"
+msgstr "开关选项"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+msgid "Add Selected Events"
+msgstr "添加选择的事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr "你确认希望移除之前的时间，笔记，和来源并重新选择数据吗？"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Remove and Run Select Again"
+msgstr "移除并再次运行选择"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+msgid "Reselect Data"
+msgstr "重选数据"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+msgid "Are you sure you want to reselect data?"
+msgstr "是否确认重新选择数据?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Run Select Again"
+msgstr "重新运行选择"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
+msgid "Select"
+msgstr "选择"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Person"
+msgstr "成员"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Action"
+msgstr "行动"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Birth Date"
+msgstr "出生日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Death Date"
+msgstr "死亡日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+msgid "Evidence"
+msgstr "证据"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+msgid "Relative"
+msgstr "亲属 "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+msgid "Processing...\n"
+msgstr "处理...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+msgid "Removing old estimations... "
+msgstr "移除旧的推测"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#, python-format
+msgid "Removing '%s'..."
+msgstr "移除 '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+msgid "done!\n"
+msgstr "完成!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
+msgid "Removed date estimates"
+msgstr "移除日期推测"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"选择... \n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
+msgid "Selecting..."
+msgstr "选择... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+msgid "Add birth and death events"
+msgstr "添加出生和死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+msgid "Add birth event"
+msgstr "添加出生事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+msgid "Add death event"
+msgstr "添加死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+msgid "No events to be added."
+msgstr "无事件要被添加."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+msgid "Selecting... "
+msgstr "选择..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "添加时间'%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "添加基于%(evidence)s的出生时间, 为%(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "基于%s 添加出生事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+msgid "Estimated birth date"
+msgstr "估测出生日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "基于证据 %(evidence)s，为  %(person)s添加的死亡时间"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#, python-format
+msgid "Added death event based on %s"
+msgstr "基于%s添加的死亡事件"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+msgid "Estimated death date"
+msgstr "估算的死亡日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+msgid " Done! Committing..."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+msgid "Add date estimates"
+msgstr "添加估算日期"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added %d events."
+msgstr "添加的%d件事件。"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+msgid "Estimated date"
+msgstr "估计的日期"

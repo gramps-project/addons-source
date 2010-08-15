@@ -1,0 +1,401 @@
+# translation of svnytt.po to svenska
+# translation of svny.1.po to
+# translation of sv.1.po to
+# translation of nytt_sv2.po to
+# translation of nytt_sv.po to
+# translation of ny_sv.po to
+# translation of svny1.po to
+# translation of sv99.po to
+# translation of svny.po to
+# translation of sv.po to
+# translation of sv1.po to
+# -*- coding: utf-8 -*-
+# Svenska meddelanden i Gramps.
+# Copyright (C) 2001-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Några tips i översättningen:#
+# Svenska datatermgruppen: http://www.nada.kth.se/dataterm/
+# Svensk-engelskt lexikon: http://lexin.nada.kth.se/sve-eng.shtml#
+# Några tveksamma eller inte helt uppenbara översättningar:#
+# city                stad/kommun
+# county              landskap
+# location            lokalisering
+# media object        medieobjekt
+# place               plats
+# plugin              insticksmodul
+# repository          arkivinstitution
+# state               län/delstat
+# undo history        redigeringshistorik#
+# $Id: sv.po 14624 2010-03-05 11:01:34Z ldnp $
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002-2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: svnytt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-05 12:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+msgid "Calculate Estimated Dates"
+msgstr "Beräknade uppskattade datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculates estimated dates for birth and death."
+msgstr "Beräkna uppskattningar av datum för födelse och död."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
+msgid "Options"
+msgstr "Alternativ"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
+msgid "Filter"
+msgstr "Filter"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+msgid "Select filter to restrict people"
+msgstr "Välj ett filter, som begränsar personurvalet"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
+msgid "Filter Person"
+msgstr "Filtrera person"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+msgid "The center person for the filter"
+msgstr "Huvudpersonen för filtret"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
+msgid "Source text"
+msgstr "Källtext"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+msgid "Calculated Date Estimates"
+msgstr "Beräknade datumuppskattningar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+msgid "Source to remove and/or add"
+msgstr "Källa som skall tas bort eller läggas till"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+msgid "Remove previously added events, notes, and source"
+msgstr "Tar bort tidigare tillagda händelser, notiser och källor"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Tag bort beräknade händelser, notiser och källor; sker omedelbart vi Utför"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Birth"
+msgstr "Födelse"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Do not add birth events"
+msgstr "Lägg inte till födelsehändelser"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+msgid "Add birth events without dates"
+msgstr "Lägg till födelsehändelser utan datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+msgid "Add birth events with dates"
+msgstr "Lägg till födelsehändelser med datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Add a birth events with or without estimated dates"
+msgstr "Lägg till födelsehändelser med eller utan uppskattade datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+msgid "Death"
+msgstr "Död"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+msgid "Do not add death events"
+msgstr "Lägg inte till dödshändelser"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Add death events without dates"
+msgstr "Lägg till dödshändelser utan datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add death events with dates"
+msgstr "Lägg till dödshändelser med datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add death events with or without estimated dates"
+msgstr "Lägg till dödshändelser med eller utan uppskattade datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+msgid "Maximum age"
+msgstr "Maximiålder"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Maximum age that one can live to"
+msgstr "Högsta tänkbara levnadsålder"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+msgid "Maximum sibling age difference"
+msgstr "Maximal åldersskillnad mellan syskon"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+msgid "Maximum age difference between siblings"
+msgstr "Största åldersskillnader mellan syskon"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+msgid "Average years between generations"
+msgstr "Antal år i medel mellan generationer"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+msgid "Average years between two generations"
+msgstr "Antal år i medel mellan två generationer"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+msgid "Estimated Dates"
+msgstr "Uppskattade datum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+msgid "Approximate (about)"
+msgstr "Approximativt (omkring)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+msgid "Extremes (after and before)"
+msgstr "Extremvärden (efter och före)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+msgid "Dates on events are either about or after/before"
+msgstr "Datum för händelser är antingen omkring eller efter/före"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
+msgid "Help"
+msgstr "Hjälp"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"Verktyget beräkna uppskattade datum används för att lägga till och ta bort "
+"födelse- och dödshändelser för personer som saknar dessa händelser.\n"
+"\n"
+"Vid användning:\n"
+"1. Gå till valfliken\n"
+"2. Markera i [ ] tag-bort-valet för att ta bort tidigare uppskattningar\n"
+"3. Välj lägg-till-valet för att datera händelser med eller utan datum.\n"
+"4. Klicka på Verkställ\n"
+"5. Välj de personer för vilka händelser skall läggas till\n"
+"6. Klicka på 'Lägg till valda händelser'-knappen för att skapa dem\n"
+"\n"
+"NOTERA: om du bestämmer dig för att göra en händelse permanent, tag bort den "
+"från källan. Annars kommer denna att tagas bort nästa gång du automatiskt "
+"tar bort dessa händelser.\n"
+"\n"
+"Du kan behöva köra detta verktyg flera gånger (utan att ta bort föregående "
+"händelser) för att lägga till alla möjliga händelser."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+msgid "Select All"
+msgstr "Välj allt"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+msgid "Select None"
+msgstr "Välj inget"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+msgid "Toggle Selection"
+msgstr "Skifta val"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+msgid "Add Selected Events"
+msgstr "Lägg till valda händelser"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Tag bort händelser, notiser och källor samt välj om data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Är du säker på att du vill ta bort händelser, notiser och källor samt välj "
+"om data?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Remove and Run Select Again"
+msgstr "Ta bort och kör välj igen"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+msgid "Reselect Data"
+msgstr "Väljer om data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+msgid "Are you sure you want to reselect data?"
+msgstr "Är du säker på att du vill välja om data?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Run Select Again"
+msgstr "Kör välj igen"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
+msgid "Select"
+msgstr "Välj"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Person"
+msgstr "Person"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+msgid "Action"
+msgstr "Åtgärd"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Birth Date"
+msgstr "Födelsedatum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+msgid "Death Date"
+msgstr "Dödsdatum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+msgid "Evidence"
+msgstr "Bevis"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+msgid "Relative"
+msgstr "Släkting"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+msgid "Processing...\n"
+msgstr "Arbetar...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+msgid "Removing old estimations... "
+msgstr "tar bort gamla uppskattningar... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Tar bort '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+msgid "done!\n"
+msgstr "klart!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
+msgid "Removed date estimates"
+msgstr "Borttagna datumuppskattningar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Väljer... \n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
+msgid "Selecting..."
+msgstr "Väljer..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+msgid "Add birth and death events"
+msgstr "Lägg till födelse- och dödshändelseer"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+msgid "Add birth event"
+msgstr "Lägg till födelsehändelse"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+msgid "Add death event"
+msgstr "Lägg till dödshändelse"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+msgid "No events to be added."
+msgstr "Inga händelser att lägga till."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+msgid "Selecting... "
+msgstr "Väljer... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Lägger till händelser '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Tillagd födelsehändelse grundat på %(evidence)s, från %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Lagt födelsehändelse grundat på %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+msgid "Estimated birth date"
+msgstr "Uppskattat födelsedatum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "Tillagd dödshändelse grundat på %(evidence)s, från %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Lagt till dödshändelse grundat på %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+msgid "Estimated death date"
+msgstr "Uppskattat dödsdatum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+msgid " Done! Committing..."
+msgstr " Klart! Uppdaterar..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+msgid "Add date estimates"
+msgstr "Lagt till datumuppskattningar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added %d events."
+msgstr "Lägg till %d händelser."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+msgid "Estimated date"
+msgstr "Uppskattat datum"
