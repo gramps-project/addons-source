@@ -113,9 +113,9 @@ _DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer,
 
 class imageMetadataGramplet(Gramplet):
     """
-    degrees symbol = [Ctrl] [Shift] u \00b0
-    minutes symbol =                  \2032
-    seconds symbol =                  \2033
+    degrees symbol = [Ctrl] [Shift] u \00b0 = °
+    minutes symbol =                  \2032 = ′
+    seconds symbol =                  \2033 = ″
     """     
 
     def init(self):
@@ -326,7 +326,6 @@ class imageMetadataGramplet(Gramplet):
         @param: keyTag   -- exif key
         @param: keyValue -- value to be saved
         """
-        print(keyTag, keyValue)
 
         # if keyValue is equal to nothing, return without setting the value
         if not keyValue:
@@ -507,6 +506,19 @@ class imageMetadataGramplet(Gramplet):
         except KeyError:
             return ""
 
+    def rational_to_dms(self, rational_coords):
+        """
+        will return a rational set of coordinates to degrees, minutes, seconds
+        """
+
+        rd, rm, rs = rational_coords.split(" ")
+        rd, rest = rd.split("/")
+        rm, rest = rm.split("/")
+        rs, rest = rs.split("/")
+
+        # return degrees, minutes, seconds to its callers
+        return rd, rm, rs
+
     def read_image_metadata(self, obj):
         """
         reads the image metadata after the pyexiv2.Image has been created
@@ -572,14 +584,13 @@ class imageMetadataGramplet(Gramplet):
                                 elif keyTag == ImageLatitude:
                                     latitude = self.get_value( keyTag )
                                     if latitude:
-                                        latitude = Rational.to_float( Rational.from_string(
-                                            latitude )
-                                        )
+                                        d, m, s = self.rational_to_dms( latitude )
 
                                         # Latitude Reference
                                         LatitudeRef = self.get_value( ImageLatitudeRef )
-                                        latitude += " " + LatitudeRef
+                                        self.latitude = "%s %s %s %s" % ( d, m, s, LatitudeRef )
 
+                                        latitude = """%s° %s′ %s″ %s""" % (d, m, s, LatitudeRef)
                                         self.exif_widgets["Latitude"].set_text( latitude )
 
 # <!--                                      Longitude                                  -->
@@ -587,14 +598,13 @@ class imageMetadataGramplet(Gramplet):
                                 elif keyTag == ImageLongitude:
                                     longitude = self.get_value( keyTag )
                                     if longitude:
-                                        longitude = Rational.to_float( Rational.from_string(
-                                            longitude )
-                                        )
+                                        d, m, s = self.rational_to_dms( longitude )
 
-                                        # Longitude Direction  Reference
+                                        # Longitude Direction Reference
                                         LongitudeRef = self.get_value( ImageLongitudeRef )
-                                        longitude += " " + LongitudeRef
+                                        self.longitude = "%s %s %s %s" % ( d, m, s, LongitudeRef )
 
+                                        longitude = """%s° %s′ %s″ %s""" % (d, m, s, LongitudeRef)
                                         self.exif_widgets["Longitude"].set_text( longitude )
 
 # <!--                                      Subject                                     -->
@@ -682,6 +692,7 @@ class imageMetadataGramplet(Gramplet):
         longitude = self.exif_widgets["Longitude"].get_text()
         lat_ref, long_ref = None, None
         self.latitude, self.longitude = None, None
+
         if latitude and longitude:
 
             if ("." in latitude and "." in longitude):
@@ -698,9 +709,11 @@ class imageMetadataGramplet(Gramplet):
                 if "-" in self.longitude:
                     self.longitude = self.longitude[1:]
 
-                latitude, longitude = conv_lat_lon( latitude,
-                                                    longitude,
-                                                    "DEG" )
+                # convert to 4 point decimal
+                latitude, longitude = conv_lat_lon( latitude, longitude, "D.D4" )
+
+                # convert to deg, mins, secs  
+                latitude, longitude = conv_lat_lon( latitude, longitude, "DEG" )
 
                 # get Latitude Direction Reference
                 if "N" in latitude:
@@ -745,5 +758,4 @@ def coords_to_rational(coordinates):
     returns the GPS coordinates to Latitude/ Longitude
     """
 
-    print(coordinates)
     return [string_to_rational(coordinate) for coordinate in coordinates.split( ":")]
