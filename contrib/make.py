@@ -289,10 +289,10 @@ elif command == "listing":
     dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
     languages = set(['en'])
     for addon in dirs:
-        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             length= len(po)
-            locale = po[length-11:length-9]
-            languages.add(locale)
+            locale_path, locale = po.rsplit("/", 1)
+            languages.add(locale[:-9])
     # next, create a file for all languages listing plugins
     for lang in languages:
         fp = open("../listings/addons-%s.txt" % lang, "w")
