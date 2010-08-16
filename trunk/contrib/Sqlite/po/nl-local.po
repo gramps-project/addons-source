@@ -27,7 +27,7 @@ msgstr "SQLite is een veel gebruikt lokaal gegevensbestandsformaat"
 #: ImportSql/ImportSql.py:127
 #, python-format
 msgid "%s could not be opened\n"
-msgstr "%s kon niet geopend woren\n"
+msgstr "%s kon niet geopend worden\n"
 
 #: ImportSql/ImportSql.py:825
 #, python-format
