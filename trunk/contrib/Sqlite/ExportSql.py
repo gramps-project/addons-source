@@ -31,6 +31,7 @@ _ = get_addon_translator().ugettext
 ngettext = get_addon_translator().ngettext
 import sqlite3 as sqlite
 import time
+from ExportOptions import WriterOptionBox
 
 #------------------------------------------------------------------------
 #
@@ -855,15 +856,19 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     if not callable(callback): 
         callback = lambda (percent): None # dummy
 
+    if option_box:
+        option_box.parse_options()
+        database = option_box.get_filtered_database(database)
+
     start = time.time()
-    total = (len(database.note_map) + 
-             len(database.person_map) +
-             len(database.event_map) + 
-             len(database.family_map) +
-             len(database.repository_map) +
-             len(database.place_map) +
-             len(database.media_map) +
-             len(database.source_map))
+    total = (len(database.get_note_handles()) + 
+             len(database.get_person_handles()) +
+             len(database.get_event_handles()) + 
+             len(database.get_family_handles()) +
+             len(database.get_repository_handles()) +
+             len(database.get_place_handles()) +
+             len(database.get_media_object_handles()) +
+             len(database.get_source_handles()))
     count = 0.0
 
     db = Database(filename)
@@ -872,39 +877,47 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Notes
     # ---------------------------------
-    for note_handle in database.note_map.keys():
-        data = database.note_map[note_handle]
-        export_note(db, data)
+    for note_handle in database.iter_note_handles():
+        data = database.get_note_from_handle(note_handle)
+        if data is None:
+            continue
+        export_note(db, data.serialize())
         count += 1
         callback(100 * count/total)
 
     # ---------------------------------
     # Event
     # ---------------------------------
-    for event_handle in database.event_map.keys():
-        data = database.event_map[event_handle]
-        export_event(db, data)
+    for event_handle in database.iter_event_handles():
+        data = database.get_event_from_handle(event_handle)
+        if data is None:
+            continue
+        export_event(db, data.serialize())
         count += 1
         callback(100 * count/total)
 
     # ---------------------------------
     # Person
     # ---------------------------------
-    for person_handle in database.person_map.keys():
-        person = database.person_map[person_handle]
-        export_person(db, person)
+    for person_handle in database.iter_person_handles():
+        person = database.get_person_from_handle(person_handle)
+        if person is None:
+            continue
+        export_person(db, person.serialize())
         count += 1
         callback(100 * count/total)
 
     # ---------------------------------
     # Family
     # ---------------------------------
-    for family_handle in database.family_map.keys():
-        family = database.family_map[family_handle]
+    for family_handle in database.iter_family_handles():
+        family = database.get_family_from_handle(family_handle)
+        if family is None:
+            continue
         (handle, gid, father_handle, mother_handle,
          child_ref_list, the_type, event_ref_list, media_list,
          attribute_list, lds_seal_list, source_list, note_list,
-         change, marker, private) = family
+         change, marker, private) = family.serialize()
         # father_handle and/or mother_handle can be None
         db.query("""INSERT INTO family (
                  handle, 
@@ -943,10 +956,12 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Repository
     # ---------------------------------
-    for repository_handle in database.repository_map.keys():
-        repository = database.repository_map[repository_handle]
+    for repository_handle in database.iter_repository_handles():
+        repository = database.get_repository_from_handle(repository_handle)
+        if repository is None:
+            continue
         (handle, gid, the_type, name, note_list,
-         address_list, urls, change, marker, private) = repository
+         address_list, urls, change, marker, private) = repository.serialize()
 
         db.query("""INSERT INTO repository (
                  handle, 
@@ -973,15 +988,17 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Place 
     # ---------------------------------
-    for place_handle in database.place_map.keys():
-        place = database.place_map[place_handle]
+    for place_handle in database.iter_place_handles():
+        place = database.get_place_from_handle(place_handle)
+        if place is None:
+            continue
         (handle, gid, title, long, lat,
          main_loc, alt_location_list,
          urls,
          media_list,
          source_list,
          note_list,
-         change, marker, private) = place
+         change, marker, private) = place.serialize()
 
         db.query("""INSERT INTO place (
                  handle, 
@@ -1013,8 +1030,10 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Source
     # ---------------------------------
-    for source_handle in database.source_map.keys():
-        source = database.source_map[source_handle]
+    for source_handle in database.iter_source_handles():
+        source = database.get_source_from_handle(source_handle)
+        if source is None:
+            continue
         (handle, gid, title,
          author, pubinfo,
          note_list,
@@ -1022,7 +1041,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          abbrev,
          change, datamap,
          reporef_list,
-         marker, private) = source
+         marker, private) = source.serialize()
 
         export_source(db, handle, gid, title, author, pubinfo, abbrev, change,
                       marker[0], marker[1], private)
@@ -1036,8 +1055,10 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Media
     # ---------------------------------
-    for media_handle in database.media_map.keys():
-        media = database.media_map[media_handle]
+    for media_handle in database.iter_media_object_handles():
+        media = database.get_object_from_handle(media_handle)
+        if media is None:
+            continue
         (handle, gid, path, mime, desc,
          attribute_list,
          source_list,
@@ -1045,7 +1066,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          change,
          date,
          marker,
-         private) = media
+         private) = media.serialize()
 
         db.query("""INSERT INTO media (
             handle, 
