@@ -46,7 +46,7 @@
 {'d': 'Produces a graphical family tree.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.3.1', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.4', 'z': 'LastChange.addon.tgz'}
-{'d': 'Zapewnia przegl\xc4\x85daln\xc4\x85 list\xc4\x99 wybranych miejsc, z mo\xc5\xbcliwo\xc5\x9bci\xc4\x85 uzupe\xc5\x82nienia/parsowania/ustawienia p\xc3\xb3l atrybut\xc3\xb3w.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.1', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': 'Zapewnia przegl\xc4\x85daln\xc4\x85 list\xc4\x99 wybranych miejsc, z mo\xc5\xbcliwo\xc5\x9bci\xc4\x85 uzupe\xc5\x82nienia/parsowania/ustawienia p\xc3\xb3l atrybut\xc3\xb3w.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.2', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Display all names of all people', 'g': '3.3', 'i': 'allnames', 'n': 'Wszystkie imiona wszystkich os\xc3\xb3b', 't': u'Quickreport', 'v': '1.0.1', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.3', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.1', 'z': 'Query.addon.tgz'}
