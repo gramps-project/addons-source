@@ -37,7 +37,7 @@ _ = get_addon_translator(__file__).ugettext
 from gen.plug import Gramplet
 from DdTargets import DdTargets
 from ScratchPad import (MultiTreeView, ScratchPadListModel, 
-                        ScratchPadListView, ScratchPadText)
+                        ScratchPadListView, ScratchText)
 import Errors
 
 #-------------------------------------------------------------------------
@@ -45,12 +45,6 @@ import Errors
 # Local Functions
 #
 #-------------------------------------------------------------------------
-def update_rows(model, path, iter):
-    """
-    Update the rows of a model.
-    """
-    model.row_changed(path, iter)
-
 def escape(data):
     """
     Remove newlines from text.
@@ -74,15 +68,14 @@ class ClipboardListView(ScratchPadListView):
     Subclass ScratchPadListView to override remove_invalid_objects.
     """
     def remove_invalid_objects(self, dummy=None):
-        """
-        Does not delete rows, but merely updates to show availability.
-        """
+        def update_rows(model, path, iter):
+            """
+            Update the rows of a model.
+            """
+            model.row_changed(path, iter)
+        # force refresh of each row:
         model = self._widget.get_model()
         if model:
-            for o in model:
-                o[1] = o[1].__class__(self.dbstate, o[1]._pickle)
-                o[3] = o[1]._type
-                o[4] = o[1]._value
             model.foreach(update_rows)
 
 #-------------------------------------------------------------------------
@@ -96,7 +89,8 @@ class ClipboardGramplet(Gramplet):
     """
     def init(self):
         self.object_list = ClipboardListView(self.dbstate, 
-                             MultiTreeView(self.dbstate, self.uistate))
+                 MultiTreeView(self.dbstate, self.uistate, 
+                 lambda: _("Clipboard Gramplet: %s") % self.gui.get_title()))
         self.otree = ScratchPadListModel()
         self.object_list.set_model(self.otree)
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -104,6 +98,9 @@ class ClipboardGramplet(Gramplet):
         self.object_list._widget.show()
 
     def on_load(self):
+        if len(self.gui.data) % 5 != 0:
+            print "Invalid Clipboard Gramplet data on load; skipping..."
+            return
         i = 0
         while i < len(self.gui.data):
             data = unescape(self.gui.data[i])
@@ -111,6 +108,10 @@ class ClipboardGramplet(Gramplet):
             title = unescape(self.gui.data[i])
             i += 1
             value = unescape(self.gui.data[i])
+            i += 1
+            dbid = unescape(self.gui.data[i])
+            i += 1
+            dbname = unescape(self.gui.data[i])
             i += 1
             try:
                 tuple_data = pickle.loads(data)
@@ -139,7 +140,8 @@ class ClipboardGramplet(Gramplet):
                     0, 0,            # x, y
                     Selection(data), # pickled data
                     None,            # info (not used)
-                    -1, title=title, value=value)              # time
+                    -1, title=title, value=value, dbid=dbid, 
+                    dbname=dbname) # time, data
 
     def on_save(self):
         self.gui.data = [] # clear out old data: data, title, value
@@ -149,13 +151,16 @@ class ClipboardGramplet(Gramplet):
                 # [0]: obj_type
                 # [1]: ScratchPad object, [1]._obj: pickle.dumps(data)
                 # [2]: tooltip callback
-                if isinstance(o[1], ScratchPadText):
+                # [5]: dbid
+                # [6]: dbname
+                if isinstance(o[1], ScratchText):
                     # type, timestamp, text, preview
                     data = pickle.dumps(("TEXT", o[1]._obj))
                 else:
                     # pickled: type, timestamp, handle, value
-                    data = o[1].pack()
+                    data = o[1]._pickle
                 self.gui.data.append(escape(data))
                 self.gui.data.append(escape(o[1]._title))
                 self.gui.data.append(escape(o[1]._value))
-
+                self.gui.data.append(escape(o[1]._dbid))
+                self.gui.data.append(escape(o[1]._dbname))
