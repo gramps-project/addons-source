@@ -34,17 +34,11 @@ import gtk
 #
 #------------------------------------------------------------------------
 from gen.lib import EventType, FamilyRelType
-try:
-    from gen.display.name import displayer as name_displayer
-    from gen.plug import Gramplet
-    from TransUtils import get_addon_translator
-    _ = get_addon_translator().ugettext
-    from const import VERSION_TUPLE
-except:
-    from BasicUtils import name_displayer
-    from DataViews import register, Gramplet
-    from gettext import gettext as _
-    VERSION_TUPLE = (3, 1, 0)
+from gen.display.name import displayer as name_displayer
+from gen.plug import Gramplet
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
+from gui.makefilter import make_filter
 
 #------------------------------------------------------------------------
 #
@@ -56,6 +50,7 @@ class DeepConnectionsGramplet(Gramplet):
     Finds deep connections people the home person and the active person.
     """
     def init(self):
+        self.selected_ids = set()
         self.set_tooltip(_("Double-click name for details"))
         self.set_text(_("No Family Tree loaded."))
         self.set_use_markup(True)
@@ -66,7 +61,17 @@ class DeepConnectionsGramplet(Gramplet):
         pause_button.connect("clicked", self.interrupt)
         continue_button = gtk.Button(_("Continue"))
         continue_button.connect("clicked", self.resume)
+        filter_button = gtk.Button(_("Filter"))
+        filter_button.connect("clicked", lambda widget: \
+              make_filter(self.dbstate, self.uistate, 'Person', 
+                          self.selected_ids, 
+                          title=lambda: (_("Deep Connections: %s to %s") % 
+       (name_displayer.display_name(
+                    self.dbstate.db.get_default_person().get_primary_name()), 
+        name_displayer.display_name(
+                    self.get_active_object("Person").get_primary_name())))))
         hbox.pack_start(pause_button, True)
+        hbox.pack_start(filter_button, True)
         hbox.pack_start(continue_button, True)
         vbox.pack_start(self.gui.textview, True)
         vbox.pack_start(hbox, False)
@@ -126,7 +131,10 @@ class DeepConnectionsGramplet(Gramplet):
         more_path, relation = path
         text, handle = relation
         person = self.dbstate.db.get_person_from_handle(handle)
+        if person is None:
+            return
         name = person.get_primary_name()
+        self.selected_ids.add(person.gramps_id)
         if text != "self":
             self.append_text(_("\n   who is a %s of ") % text)
             self.link(name_displayer.display_name(name), "Person", handle)
@@ -140,10 +148,7 @@ class DeepConnectionsGramplet(Gramplet):
         self.total_relations_found = 0
         yield True
         default_person = self.dbstate.db.get_default_person()
-        if VERSION_TUPLE < (3, 2):
-            active_person = self.dbstate.get_active_person()
-        else: # later versions:
-            active_person = self.get_active_object("Person")
+        active_person = self.get_active_object("Person")
         if default_person == None:
             self.set_text(_("No Home Person set."))
             return
@@ -168,6 +173,8 @@ class DeepConnectionsGramplet(Gramplet):
                 self.append_text(_("Found relation #%d: \n   ") % self.total_relations_found)
 
                 self.link(name_displayer.display_name(active_name), "Person", active_person.handle)
+                self.selected_ids.clear()
+                self.selected_ids.add(active_person.gramps_id)
                 self.pretty_print(current_path)
                 self.append_text("\n")
                 if default_person.handle != active_person.handle:
@@ -187,13 +194,3 @@ class DeepConnectionsGramplet(Gramplet):
         self.append_text(_("\nSearch completed. %d relations found.") % self.total_relations_found)
         yield False
 
-if VERSION_TUPLE < (3, 2):
-    register(type="gramplet", 
-             name="Deep Connections Gramplet", 
-             tname=_("Deep Connections Gramplet"), 
-             height=250,
-             content = DeepConnectionsGramplet,
-             title=_("Deep Connections"),
-             gramps="3.1.0",
-             version="1.0.0",
-             )
