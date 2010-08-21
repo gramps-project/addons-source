@@ -38,7 +38,6 @@ from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
-from gui.makefilter import make_filter
 
 #------------------------------------------------------------------------
 #
@@ -50,7 +49,7 @@ class DeepConnectionsGramplet(Gramplet):
     Finds deep connections people the home person and the active person.
     """
     def init(self):
-        self.selected_ids = set()
+        self.selected_handles = set()
         self.set_tooltip(_("Double-click name for details"))
         self.set_text(_("No Family Tree loaded."))
         self.set_use_markup(True)
@@ -61,17 +60,11 @@ class DeepConnectionsGramplet(Gramplet):
         pause_button.connect("clicked", self.interrupt)
         continue_button = gtk.Button(_("Continue"))
         continue_button.connect("clicked", self.resume)
-        filter_button = gtk.Button(_("Filter"))
-        filter_button.connect("clicked", lambda widget: \
-              make_filter(self.dbstate, self.uistate, 'Person', 
-                          self.selected_ids, 
-                          title=lambda: (_("Deep Connections: %s to %s") % 
-       (name_displayer.display_name(
-                    self.dbstate.db.get_default_person().get_primary_name()), 
-        name_displayer.display_name(
-                    self.get_active_object("Person").get_primary_name())))))
+        copy_button = gtk.Button(_("Copy"))
+        copy_button.connect("clicked", lambda widget: \
+              self.gui.pane.pageview.copy_to_clipboard('Person', self.selected_handles))
         hbox.pack_start(pause_button, True)
-        hbox.pack_start(filter_button, True)
+        hbox.pack_start(copy_button, True)
         hbox.pack_start(continue_button, True)
         vbox.pack_start(self.gui.textview, True)
         vbox.pack_start(hbox, False)
@@ -88,34 +81,34 @@ class DeepConnectionsGramplet(Gramplet):
         family_list = person.get_family_handle_list()
         for family_handle in family_list:
             family = self.dbstate.db.get_family_from_handle(family_handle)
-
-            children = family.get_child_ref_list()
-            retval.extend((child_ref.ref, (path, (_("child"), person_handle)))
-                for child_ref in children)
-
-            husband = family.get_father_handle()
-            if husband:
-                retval += [(husband, (path, (_("husband"), person_handle)))]
-
-            wife = family.get_mother_handle()
-            if wife:
-                retval += [(wife, (path, (_("wife"), person_handle)))]
+            if family:
+                children = family.get_child_ref_list()
+                husband = family.get_father_handle()
+                wife = family.get_mother_handle()
+                retval.extend((child_ref.ref, (path, (_("child"), person_handle, 
+                                                      husband, wife)))
+                              for child_ref in children)
+                if husband:
+                    retval += [(husband, (path, (_("husband"), person_handle)))]
+                if wife:
+                    retval += [(wife, (path, (_("wife"), person_handle)))]
 
         parent_family_list = person.get_parent_family_handle_list()
         for family_handle in parent_family_list:
             family = self.dbstate.db.get_family_from_handle(family_handle)
-
-            children = family.get_child_ref_list()
-            retval.extend((child_ref.ref, (path, (_("sibling"), person_handle)))
-                for child_ref in children)            
-
-            husband = family.get_father_handle()
-            if husband:
-                retval += [(husband, (path, (_("father"), person_handle)))]
-
-            wife = family.get_mother_handle()
-            if wife:
-                retval += [(wife, (path, (_("mother"), person_handle)))]
+            if family:
+                children = family.get_child_ref_list()
+                husband = family.get_father_handle()
+                wife = family.get_mother_handle()
+                retval.extend((child_ref.ref, (path, 
+                                    (_("sibling"), person_handle, husband, wife)))
+                              for child_ref in children)
+                if husband:
+                    retval += [(husband, 
+                                (path, (_("father"), person_handle, wife)))]
+                if wife:
+                    retval += [(wife, 
+                                (path, (_("mother"), person_handle, husband)))]
         return retval
 
     def active_changed(self, handle):
@@ -128,13 +121,22 @@ class DeepConnectionsGramplet(Gramplet):
         """
         Print a path to a person, with links.
         """
-        more_path, relation = path
-        text, handle = relation
+        # (path, (relation_text, handle, [p1, [p2]]))
+        more_path = path[0] 
+        text = path[1][0]
+        handle = path[1][1]
+        parents = path[1][2:]
         person = self.dbstate.db.get_person_from_handle(handle)
         if person is None:
             return
         name = person.get_primary_name()
-        self.selected_ids.add(person.gramps_id)
+        self.selected_handles.add(person.handle)
+        for parent in parents:
+            if parent:
+                p = self.dbstate.db.get_person_from_handle(parent)
+                if p:
+                    self.selected_handles.add(p.handle)
+
         if text != "self":
             self.append_text(_("\n   who is a %s of ") % text)
             self.link(name_displayer.display_name(name), "Person", handle)
@@ -156,7 +158,8 @@ class DeepConnectionsGramplet(Gramplet):
             self.set_text(_("No Active Person set."))
             return
         self.cache = set() 
-        self.queue = [(default_person.handle, (None, (_("self"), default_person.handle)))]
+        self.queue = [(default_person.handle, 
+                       (None, (_("self"), default_person.handle, [])))]
         default_name = default_person.get_primary_name()
         active_name = active_person.get_primary_name()
         self.set_text("")
@@ -173,8 +176,8 @@ class DeepConnectionsGramplet(Gramplet):
                 self.append_text(_("Found relation #%d: \n   ") % self.total_relations_found)
 
                 self.link(name_displayer.display_name(active_name), "Person", active_person.handle)
-                self.selected_ids.clear()
-                self.selected_ids.add(active_person.gramps_id)
+                self.selected_handles.clear()
+                self.selected_handles.add(active_person.handle)
                 self.pretty_print(current_path)
                 self.append_text("\n")
                 if default_person.handle != active_person.handle:
@@ -187,9 +190,11 @@ class DeepConnectionsGramplet(Gramplet):
                 continue
             self.cache.add(current_handle)
             relatives = self.get_relatives(current_handle, current_path)
-            for (person_handle, path) in relatives:
+            for items in relatives:
+                person_handle = items[0]
+                path = items[1] 
                 if person_handle is not None and person_handle not in self.cache: 
-                    self.queue.append( (person_handle, path))
+                    self.queue.append((person_handle, path))
             yield True
         self.append_text(_("\nSearch completed. %d relations found.") % self.total_relations_found)
         yield False
