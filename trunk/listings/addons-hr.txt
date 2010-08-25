@@ -21,7 +21,7 @@
 {'d': 'Source Split View with a Gramplet Pane', 'g': '3.3', 'i': 'SourceViewSidebar', 'n': 'Source Split View', 't': u'Gramps View', 'v': '1.1.2', 'z': 'GrampletSidebarViews.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.2', 'z': 'Django.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.2', 'z': 'Django.addon.tgz'}
-{'d': 'Library for web site collections', 'g': '3.3', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.1', 'z': 'libwebconnect.addon.tgz'}
+{'d': 'Library for web site collections', 'g': '3.3', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.2', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'gramplet: duboka povezanost', 't': u'Gramplet', 'v': '1.0.4', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'gramplet: Unos podataka', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Proizvodi tekstualno izvje\xc5\xa1\xc4\x87e o spremi\xc5\xa1tima', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.3', 'z': 'RepositoriesReport.addon.tgz'}
@@ -40,12 +40,13 @@
 {'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.0.2', 'z': 'DenominoViso.addon.tgz'}
 {'d': "Display a person's events on a timeline", 'g': '3.3', 'i': 'timelinequickview', 'n': 'Vremenska linija', 't': u'Quickreport', 'v': '1.0.2', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Filter on data in a clipboard gramplet', 'g': '3.3', 'i': 'Clipboard Filter', 'n': 'Clipboard Filter', 't': u'Plugin lib', 'v': '1.0.0', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Produces a family sheet showing full information about a person and his/her partners and children.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Family Sheet', 't': u'Report', 'v': '3.3.2', 'z': 'FamilySheet.addon.tgz'}
 {'d': 'Set Marker to a given value.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Set Marker', 't': u'Tool', 'v': '0.0.3', 'z': 'SetMarkerTool.addon.tgz'}
-{'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'UKWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.4', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.1.4', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'This is a raw python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.1', 'z': 'ExportRaw.addon.tgz'}
+{'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ClipboardGramplet.bak.addon.tgz'}
+{'d': 'Filter on data in a clipboard gramplet', 'g': '3.3', 'i': 'Clipboard Filter', 'n': 'Clipboard Filter', 't': u'Plugin lib', 'v': '1.0.0', 'z': 'ClipboardGramplet.bak.addon.tgz'}
 {'d': 'Produces a graphical family tree.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.3.1', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.4', 'z': 'LastChange.addon.tgz'}
@@ -54,7 +55,7 @@
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.3', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.1', 'z': 'Query.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.1', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'USWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.4', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.1', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.1', 'z': 'GraphView.addon.tgz'}
