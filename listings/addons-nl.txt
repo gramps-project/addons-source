@@ -41,6 +41,8 @@
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Filter on data in a clipboard gramplet', 'g': '3.3', 'i': 'Clipboard Filter', 'n': 'Clipboard Filter', 't': u'Plugin lib', 'v': '1.0.0', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Produces a family sheet showing full information about a person and his/her partners and children.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Family Sheet', 't': u'Report', 'v': '3.3.2', 'z': 'FamilySheet.addon.tgz'}
+{'d': 'Collection of Web sites for the US', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.2', 'z': 'WebConnectPacks.addon.tgz'}
+{'d': 'Collection of Web sites for the UK', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.2', 'z': 'WebConnectPacks.addon.tgz'}
 {'d': 'Set Marker to a given value.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Set Marker', 't': u'Tool', 'v': '0.0.3', 'z': 'SetMarkerTool.addon.tgz'}
 {'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevens-gramplet', 't': u'Gramplet', 'v': '1.1.1', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Dit is een ruwe python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Ruwe export', 't': u'Exporter', 'v': '1.0.1', 'z': 'ExportRaw.addon.tgz'}
