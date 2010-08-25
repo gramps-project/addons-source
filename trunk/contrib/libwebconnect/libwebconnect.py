@@ -56,7 +56,7 @@ from config import config as configman
 # Local config and functions
 #
 #---------------------------------------------------------------
-config = configman.register_manager("WebConnects", "WebConnects.ini")
+config = configman.register_manager("libwebconnect")
 # "leave alone", "separate", or "remove":
 config.register("behavior.middle-name", "remove") 
 config.load()
@@ -72,7 +72,7 @@ def escape(text):
 def make_callback(key, name):
     """
     Decorator for web connect callbacks. Adds the key and name for the
-    menu operations. key is a no-space unique id, and name is a
+    menu operations. key is a no-space unique key, and name is a
     translated name for the menu.
     """
     def decorator(func):
@@ -122,3 +122,36 @@ def make_person_dict(dbstate, handle):
         for key in results:
             results[key] = escape(results[key])
     return results
+
+class Search(object):
+    """
+    Necessary because Python scoping rules don't allow otherwise.
+    Keeps track of pattern, key, name, and other values as it 
+    is registered and then called.
+    """
+    def __init__(self, key, name, pattern):
+        self.key = key
+        self.name = name
+        self.pattern = pattern
+
+    def callback(self, widget):
+        results = make_person_dict(self.dbstate, self.handle)
+        url(self.pattern % results, self.uistate)
+
+    def __call__(self, dbstate, uistate, nav_type, handle):
+        self.dbstate = dbstate
+        self.uistate = uistate
+        self.nav_type = nav_type
+        self.handle = handle
+        return self.callback
+
+def make_search_functions(nav_type, patterns):
+    """
+    Given a WEBSITES list of [(nav_type, key, name, url_pattern), ...]
+    generates necessary search generator and callback.
+    """
+    retval = []
+    for (nt, key, name, pattern) in patterns:
+        if nt != nav_type: continue
+        retval.append(Search(key, name, pattern))
+    return retval
