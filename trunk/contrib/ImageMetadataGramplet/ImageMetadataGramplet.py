@@ -585,6 +585,7 @@ class imageMetadataGramplet(Gramplet):
                                     latitude = self.get_value( keyTag )
                                     if latitude:
                                         d, m, s = self.rational_to_dms( latitude )
+                                        s = s.replace("0", '')
 
                                         # Latitude Reference
                                         LatitudeRef = self.get_value( ImageLatitudeRef )
@@ -599,6 +600,7 @@ class imageMetadataGramplet(Gramplet):
                                     longitude = self.get_value( keyTag )
                                     if longitude:
                                         d, m, s = self.rational_to_dms( longitude )
+                                        s = s.replace("0", '')
 
                                         # Longitude Direction Reference
                                         LongitudeRef = self.get_value( ImageLongitudeRef )
