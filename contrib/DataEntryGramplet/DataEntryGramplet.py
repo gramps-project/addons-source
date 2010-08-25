@@ -795,7 +795,6 @@ class DataEntryGramplet(Gramplet):
             if source_text and self.de_widgets["Active person:Show sources"].get_active():
                 new, source = self.get_or_create_source(source_text)
                 self.add_source(person, source)
-            self.dbstate.db.commit_person(person, self.trans)
         self.dbstate.db.transaction_commit(self.trans,
                  (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
 
