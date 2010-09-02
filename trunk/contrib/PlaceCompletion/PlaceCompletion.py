@@ -733,7 +733,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         progress.set_pass('',self.db.get_number_of_places())
 
         store = self.tree.get_model()
-        node  = store.get_iter_first()
+        if store:
+            node  = store.get_iter_first()
+        else:
+            node = None
         while node :
             save_place = False
             place_handle = store.get_value(node, 1)
