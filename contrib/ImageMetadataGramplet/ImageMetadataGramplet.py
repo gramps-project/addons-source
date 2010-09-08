@@ -201,8 +201,8 @@ class ImageMetadataGramplet(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
         rows.show_all()
-        self.clear_data_entry(None)
 
+        self.clear_data_entry(None)
         self.connect_signal("Media", self.media_changed)
 
     def media_changed(self, handle):
@@ -279,12 +279,7 @@ class ImageMetadataGramplet(Gramplet):
 
         # Date
         if self.date:
-            disp_date = _dd.display( self.date )
-        elif self.orig_image.get_date_object():
-            disp_date = _dd.display( self.orig_image.get_date_object() )
-        else:
-            disp_date = _dd.display( _DATE )
-        self.exif_widgets["Date"].set_text( disp_date )
+            self.exif_widgets["Date"].set_text( self.date )
 
         # Latitude
         if self.latitude:
@@ -292,11 +287,11 @@ class ImageMetadataGramplet(Gramplet):
 
         # Longitude
         if self.longitude:
-            self.exif_widgets["Longitude"].set_text( longitude )
+            self.exif_widgets["Longitude"].set_text( self.longitude )
 
         # Xmp Subject
         if self.subject:
-            self.exif_widgets["Subject"].set_text( self.subject )
+            self.xmp_widgets["Subject"].set_text( self.subject )
 
         # Description
         self.description = self.description if self.description else _DESCRIPTION
@@ -311,7 +306,6 @@ class ImageMetadataGramplet(Gramplet):
         self._dirty_image = self.orig_image
         if self.orig_image:
             self.exif_widgets["Active:Image"].show()
-
             self.exif_widgets["Active:Image"].set_text( self.orig_image.get_description() )
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
@@ -397,9 +391,9 @@ class ImageMetadataGramplet(Gramplet):
         GPS coordinates
         """
 
-        latitude = self.image_latitude
-        longitude = self.image_longitude
         lat_ref, long_ref = None, None
+        latitude = self.exif_widgets["Latitude"].get_text()
+        longitude = self.exif_widgets["Longitude"].get_text()
         if latitude and longitude:
 
             if ("." in latitude and "." in longitude):
@@ -408,32 +402,25 @@ class ImageMetadataGramplet(Gramplet):
                 latitude, longitude = conv_lat_lon( latitude,
                                                     longitude,
                                                     "DEG" )
-
-                # get Latitude Direction Reference
-                if "N" in latitude:
-                    lat_ref = "N"
-                elif "S" in latitude:
-                    lat_ref = "S"
-                else:
-                    lat_ref = None 
-
-                # get Longitude Direction Reference
-                if "E" in longitude:
-                    long_ref = "E"
-                elif "W" in longitude:
-                    long_ref = "W"
-                else:
-                    long_ref = None
-
                 self.exif_widgets["Latitude"].set_text(   latitude )
                 self.exif_widgets["Longitude"].set_text( longitude )
 
-            else:
-                self.exif_widgets["Latitude"].set_text(  "" )
-                self.exif_widgets["Longitude"].set_text( "" )
-                WarningDialog(_( "There is an ERROR in Latitude/ Longitude conversion."))
+            # get Latitude Direction Reference
+            if "N" in latitude:
+                lat_ref = "N"
+            elif "S" in latitude:
+                lat_ref = "S"
 
-        # return Latitude Reference and Longitude Reference back to its caller
+            # get Longitude Direction Reference
+            if "E" in longitude:
+                long_ref = "E"
+            elif "W" in longitude:
+                long_ref = "W"
+
+            # return latitude and longitude reference directions
+            return lat_ref, long_ref
+
+        # return None
         return lat_ref, long_ref
 
     def set_value(self, keyTag, keyValue):
@@ -621,6 +608,12 @@ class ImageMetadataGramplet(Gramplet):
 # -----------------------------------------------------------------------------------------
             elif keyTag == ImageDateTime:
                 self.date = self.get_value( keyTag )
+                if self.date:
+                    pass
+                elif self.orig_image.get_date_object():
+                    self.date = self.orig_image.get_date_object()
+                else:
+                    self.date = _DATE  
 
 # <!--      Photographer                                -->
 # -----------------------------------------------------------------------------------------
