@@ -22,7 +22,7 @@
 
 """Reports/Graphical Reports/Pedigree Chart"""
 
-# Based in part on:
+# Based in part on the following ancestry charts:
 # http://www.kbyu.org/ancestors
 # http://www.legacyfamilytree.com/_images/GVPedChrt.gif
 
@@ -46,6 +46,7 @@ import time
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
 import DateHandler
+from gen.lib import ChildRefType
 from gen.lib.date import Date
 from gen.plug import docgen
 from gen.plug.docgen import fontscale
@@ -191,6 +192,8 @@ class PersonBox:
 
         self.style_name = 'PC-box'
 
+        self.relationship_style = 'PC-line'
+
         self.person = None
 
         self.line = None
@@ -310,9 +313,36 @@ class PersonBox:
         return descendant_index
 
     def isMother(self):
-        """Used to determine which way to draw lines and how to get back to the descendant."""
+        """Return true if the previously generated index number is odd.
+
+        Used to determine which way to draw lines and how to get back
+        to the descendant.
+
+        """
         result = self.index % 2 != 0
         return result
+
+    def getRelationshipStyle(self, descendant_handle):
+        """Returns a line style based on the birth status of this person.
+
+        The check for birth status is based on the code from the
+        GraphView add-on.
+        """
+        rel_style = 'PC-line'
+        rel = None
+        for family_handle in self.person.get_family_handle_list():
+            family = self.report.database.get_family_from_handle(family_handle)
+            for child_ref in family.get_child_ref_list():
+                    if child_ref.ref == descendant_handle:
+                        if self.isMother():
+                            rel = child_ref.mrel
+                        else:
+                            rel = child_ref.frel
+                        break
+        if rel is not None:
+            if rel != ChildRefType.BIRTH:
+                rel_style = 'PC-adopted_line'
+        return rel_style
 
 #------------------------------------------------------------------------
 #
@@ -335,10 +365,10 @@ class PedigreeChart(Report):
 
         menu = options_class.menu
 
-        # BUG: somehow when calculating if we've reached the max generations limit
-        # the report is stopping at one generation before the max requested, so I'm
-        # bumping this up by one to compensate until I find where the calculation
-        # is wrong.
+        # BUG: somehow when calculating if we've reached the max
+        # generations limit the report is stopping at one generation
+        # before the max requested, so I'm bumping this up by one to
+        # compensate until I find where the calculation is wrong.
         self.max_generations = menu.get_option_by_name('maxgen').get_value() + 1
 
         pid = menu.get_option_by_name('pid').get_value()
@@ -485,8 +515,11 @@ class PedigreeChart(Report):
                         y2 = dy + dh
                     else:
                         y2 = dy
-                    self.doc.draw_line("PC-line", x1, y1, x2, y1)
-                    self.doc.draw_line("PC-line", x2, y2, x2, y1)
+                    # determine if this person is adopted and draw a
+                    # dashed line if that is the case
+                    line_style = person_box.getRelationshipStyle(descendant.person_handle)
+                    self.doc.draw_line(line_style, x1, y1, x2, y1)
+                    self.doc.draw_line(line_style, x2, y2, x2, y1)
 
                     if self.show_parent_tags:
                         if person_box.isMother():
@@ -509,8 +542,8 @@ class PedigreeChart(Report):
 
     def _get_parents(self, person_handle, index, gen_limit):
         """
-        Generate a list of the person's parents and their parents recursively up
-        to max_generations.
+        Generate a list of the person's parents and their parents
+        recursively up to max_generations.
 
         person_handle: the center person
         index: the current index position of this person
@@ -567,7 +600,8 @@ class PedigreeChart(Report):
         self.doc.draw_text('PC-box', link_text, link_x, link_y)
 
     def _draw_link_arrow(self, link_text, y, h):
-        """Draw a path on the document that points to the next page where the ancestors continue.
+        """Draw a path on the document that points to the next page
+        where the ancestors continue.
 
         link_text - a string with the page number
         y - the vertical position of the referenced person box
@@ -669,3 +703,7 @@ class PedigreeChartOptions(MenuReportOptions):
 
         g = docgen.GraphicsStyle()
         default_style.add_draw_style("PC-line", g)
+
+        g = docgen.GraphicsStyle()
+        g.set_line_style(docgen.DOTTED)
+        default_style.add_draw_style("PC-adopted_line", g)
