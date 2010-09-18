@@ -8,7 +8,7 @@
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.3', 'i': 'Headline News Gramplet', 'n': 'Headline News Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.1', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Display all names of all people', 'g': '3.3', 'i': 'allnames', 'n': 'All Names of All People', 't': u'Quickreport', 'v': '1.0.1', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.2.4', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.2.6', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'Deep Connections Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.1', 'z': 'GraphView.addon.tgz'}
