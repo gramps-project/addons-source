@@ -244,13 +244,15 @@ class ImageMetadataGramplet(Gramplet):
                              "select another image."))
             return False
 
+        self.mime_type = self.orig_image.get_mime_type()
+
         # get image mime type and split into its pieces
-        mime_type = self.orig_image.get_mime_type()
-        ftype, imgtype = mime_type.split("/")
-        if imgtype not in img_types:
-            WarningDialog(_( "The image type of this media object is NOT usable "
-                             "by this addon.  Please select another image..." ))
-            return False
+        if self.mime_type.startswith("image/"):
+            self.ftype, self.imgtype = self.mime_type.split("/")
+            if self.imgtype not in img_types:
+                WarningDialog(_( "The image type of this media object is NOT usable "
+                                 "by this addon.  Please select another image..." ))
+                return False
 
         # get image read/ write permissions
         self.writable = os.access( self.image_path, os.W_OK )
@@ -279,7 +281,10 @@ class ImageMetadataGramplet(Gramplet):
 
         # Date
         if self.date:
-            self.exif_widgets["Date"].set_text( self.date )
+            try:
+                self.exif_widgets["Date"].set_text( self.date )
+            except TypeError:
+                self.exif_widgets["Date"].set_text( "" )
 
         # Latitude
         if self.latitude:
@@ -456,6 +461,11 @@ class ImageMetadataGramplet(Gramplet):
         if not self.writable:
             return
 
+        if self.imgtype not in img_types:
+            WarningDialog(_( "The image type of this media object is NOT usable "
+                             "by this addon.  Please select another image..." ))
+            return
+
         # check to see if we have both latitude/ longitude, if one exists
         latitude = self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
@@ -533,25 +543,25 @@ class ImageMetadataGramplet(Gramplet):
         clears all data fields to nothing
         """
 
-        for key in ["Description", "Select:Date", "Photographer", "Copyright",
-            "Latitude", "Longitude"]:
+        for key in ["Photographer", "Copyright", "Select:Date", "Date",
+            "Latitude", "Longitude", "Description"]:
             self.exif_widgets[key].set_text("")
-
-        self.LatitudeRef  = None
-        self.LongitudeRef = None
-        self.image_latitude = None
-        self.image_longitude = None
 
         self.xmp_widgets["Subject"].set_text("")
 
-        # set up variables for ImageMetadata
         self.photographer = None
         self.copyright = None
-        self.date = None
+        self.date = gen.lib.Date.EMPTY
         self.latitude = None
         self.longitude = None
         self.subject = None
-        self.description = _DESCRIPTION
+        self.description = None
+
+        self.image_latitude = None
+        self.image_longitude = None
+
+        self.LatitudeRef  = None
+        self.LongitudeRef = None
 
     def get_value(self, keyTag):
         """
@@ -590,86 +600,84 @@ class ImageMetadataGramplet(Gramplet):
         # clear all data fields first
         self.clear_data_entry( obj )
 
-        # read the image metadata
-        obj.read()
+        try:
 
-        # set up image exif keys for use in this gramplet 
-        exifKeyTags = [ keyTag for keyTag in self.plugin_image.exif_keys
-            if keyTag in _DATAMAP]
+            # read the image metadata
+            obj.read()
 
-        for keyTag in exifKeyTags:
-
-# <!--      Description                                 -->
-# -----------------------------------------------------------------------------------------
-            if keyTag == ImageDescription:
-                self.description = self.get_value( keyTag )
-
-# <!--      Date/ Time                                  -->
-# -----------------------------------------------------------------------------------------
-            elif keyTag == ImageDateTime:
-                self.date = self.get_value( keyTag )
-                if self.date:
-                    pass
-                elif self.orig_image.get_date_object():
-                    self.date = self.orig_image.get_date_object()
-                else:
-                    self.date = _DATE  
-
-# <!--      Photographer                                -->
-# -----------------------------------------------------------------------------------------
-            elif keyTag == ImagePhotographer:
-                self.photographer = self.get_value( keyTag )
-
-# <!--      Copyright                                   -->
-# -----------------------------------------------------------------------------------------
-            elif keyTag == ImageCopyright:
-                self.copyright = self.get_value( keyTag )
-
-# <!--      Latitude                                    -->
-# -----------------------------------------------------------------------------------------
-            elif keyTag == ImageLatitude:
-                latitude = self.get_value( keyTag )
-                if latitude:
-                    deg, min, sec = self.rational_to_dms( latitude )
-                    sec = sec.replace("0", '')
-
-                    # Latitude Reference
-                    LatitudeRef = self.get_value( ImageLatitudeRef )
-                    self.image_latitude = "%s %s %s" % ( deg, min, sec )
-
-                    self.latitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LatitudeRef)
-
-# <!--      Longitude                                  -->
-# -----------------------------------------------------------------------------------------
-            elif keyTag == ImageLongitude:
-                longitude = self.get_value( keyTag )
-                if longitude:
-                    deg, min, sec = self.rational_to_dms( longitude )
-                    sec = sec.replace("0", '')
-
-                    # Longitude Direction Reference
-                    LongitudeRef = self.get_value( ImageLongitudeRef )
-                    self.image_longitude = "%s %s %s" % ( deg, min, sec )
-
-                    self.longitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LongitudeRef)
-
-# <!--      Subject                                     -->
-# -----------------------------------------------------------------------------------------
-            xmpKeyTags = self.plugin_image.xmp_keys
-            xmpKeyTags = [ keyTag for keyTag in xmpKeyTags
+            # set up image exif keys for use in this gramplet 
+            exifKeyTags = [ keyTag for keyTag in self.plugin_image.exif_keys
                 if keyTag in _DATAMAP]
 
-            self.subject = ""
-            for keyTag in xmpKeyTags:
-                if keyTag == XmpSubject:
-                    keyWords = self.get_value( keyTag )
-                    if keyWords:
-                        index = 1
-                        for word in keyWords:
-                            self.subject += word
-                            if index is not len(keyWords):
-                                self.subject += "," 
-                                index += 1 
+            for keyTag in exifKeyTags:
+
+                # <!--      Description                                 -->
+                # -----------------------------------------------------------------------------------------
+                if keyTag == ImageDescription:
+                    self.description = self.get_value( keyTag )
+
+                # <!--      Date/ Time                                  -->
+                # -----------------------------------------------------------------------------------------
+                elif keyTag == ImageDateTime:
+                    self.date = self.get_value( keyTag )
+
+                # <!--      Photographer                                -->
+                # -----------------------------------------------------------------------------------------
+                elif keyTag == ImagePhotographer:
+                    self.photographer = self.get_value( keyTag )
+
+                # <!--      Copyright                                   -->
+                # -----------------------------------------------------------------------------------------
+                elif keyTag == ImageCopyright:
+                    self.copyright = self.get_value( keyTag )
+
+                # <!--      Latitude                                    -->
+                # -----------------------------------------------------------------------------------------
+                elif keyTag == ImageLatitude:
+                    latitude = self.get_value( keyTag )
+                    if latitude:
+                        deg, min, sec = self.rational_to_dms( latitude )
+                        sec = sec.replace("0", '')
+
+                        # Latitude Reference
+                        self.LatitudeRef = self.get_value( ImageLatitudeRef )
+                        self.image_latitude = "%s %s %s" % ( deg, min, sec )
+
+                        self.latitude = """%s° %s′ %s″ %s""" % (deg, min, sec, self.LatitudeRef)
+
+                # <!--      Longitude                                  -->
+                # -----------------------------------------------------------------------------------------
+                elif keyTag == ImageLongitude:
+                    longitude = self.get_value( keyTag )
+                    if longitude:
+                        deg, min, sec = self.rational_to_dms( longitude )
+                        sec = sec.replace("0", '')
+
+                        # Longitude Direction Reference
+                        self.LongitudeRef = self.get_value( ImageLongitudeRef )
+                        self.image_longitude = "%s %s %s" % ( deg, min, sec )
+
+                        self.longitude = """%s° %s′ %s″ %s""" % (deg, min, sec, self.LongitudeRef)
+
+                # <!--      Subject                                     -->
+                # -----------------------------------------------------------------------------------------
+                xmpKeyTags = self.plugin_image.xmp_keys
+                xmpKeyTags = [ keyTag for keyTag in xmpKeyTags
+                    if keyTag in _DATAMAP]
+
+                self.subject = ""
+                for keyTag in xmpKeyTags:
+                    if keyTag == XmpSubject:
+                        keyWords = self.get_value( keyTag )
+                        if keyWords:
+                            index = 1
+                            for word in keyWords:
+                                self.subject += word
+                                if index is not len(keyWords):
+                                    self.subject += "," 
+                                    index += 1
+        except IOError:
+            WarningDialog(_("The file type of this media object can not be determined!"))
 
     def select_date(self, obj):
         """
