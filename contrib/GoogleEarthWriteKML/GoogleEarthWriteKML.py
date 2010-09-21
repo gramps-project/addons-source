@@ -70,7 +70,7 @@ if os.sys.platform == 'win32':
                     % (os.getenv('ProgramFiles'))
         NORM_PATH = os.path.normpath(FILE_PATH)
         _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
-    
+
 else:
     FILE_PATH = "googleearth"
     SEARCH = os.environ['PATH'].split(':')
@@ -197,13 +197,26 @@ class GoogleEarthService(MapService):
                 continue
             if not descr:
                 descr = place.get_title()
+
+            parish_descr = place.get_main_location().get_parish().strip()
             city = place.get_main_location().get_city()
-            title_descr = _combine(descr.strip(), city.strip())
+            county = place.get_main_location().get_county()
+            city_county_descr = _combine(city.strip(), county.strip())
+
             state = place.get_main_location().get_state()
             country = place.get_main_location().get_country()
-            placemark_descr = _combine(state.strip(), country.strip())
-            self.kml_file.write('    <Placemark id="%s">\n' % placemark_descr)
-            self.kml_file.write("        <name>%s</name>\n" % title_descr)
+            state_country_descr = _combine(state.strip(), country.strip())
+            id = place.get_gramps_id()
+
+            self.kml_file.write('    <Placemark id="%s">\n' % id)
+            self.kml_file.write("        <name>%s</name>\n" % descr)
+            self.kml_file.write("        <description>\n")
+            self.kml_file.write("            <![CDATA[\n")
+            self.kml_file.write("              %s\n" %  parish_descr)
+            self.kml_file.write("              %s\n" %  city_county_descr)
+            self.kml_file.write("              %s\n" %  state_country_descr)
+            self.kml_file.write("            ]]>\n")
+            self.kml_file.write("        </description>\n")
             self.kml_file.write("        <Point>\n")
             self.kml_file.write("            <coordinates>%s" % longitude)
             self.kml_file.write(",%s</coordinates>\n" % latitude)
