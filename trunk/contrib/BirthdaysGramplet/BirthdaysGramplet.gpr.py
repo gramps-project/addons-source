@@ -4,10 +4,10 @@ register(GRAMPLET,
          name=_("Birthdays Gramplet"),
          description = _("a gramplet that displays the birthdays of the n following days"),
          status = STABLE,
-         version="0.0.1",
+         version = '1.0.1',
          fname="BirthdaysGramplet.py",
          height = 200, 
          gramplet = 'BirthdaysGramplet',
-         gramps_target_version="3.2",
+         gramps_target_version="3.3",
          gramplet_title=_("Birthdays Gramplet") 
          )
