@@ -59,7 +59,8 @@ def extend(class_):
                 GrampletPane(self.ident + "_gramplets",
                              self, self.dbstate, self.uistate, 
                              column_count=1,
-                             default_gramplets=self.DEFAULT_GRAMPLETS)
+                             default_gramplets=self.DEFAULT_GRAMPLETS,
+                             splitview=self)
             if self.gramplet_pane.pane_orientation == "horizontal":
                 widget = gtk.HPaned()
             elif self.gramplet_pane.pane_orientation == "vertical":
