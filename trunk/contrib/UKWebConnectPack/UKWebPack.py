@@ -23,9 +23,10 @@ from libwebconnect import *
 
 # Format: [[nav_type, id, name, url_pattern], ...]
 
-WEBSITES = [['Person', "UK-Google", _("UK Google"), 
-             '''http://www.google.co.uk/#hl=en&q="%(surname)s,+%(given)s"'''],
-            ]
+WEBSITES = [
+    ['Person', "UK-Google", _("UK Google"), '''http://www.google.co.uk/#hl=en&q="%(surname)s,+%(given)s"'''],
+    ["Person", "Userdb-rootsweb", _("British, UK, and Ireland"), "http://userdb.rootsweb.ancestry.com/uki/cgi-bin/uki.cgi?surname=%(surname)s&fname=%(given)s"],
+    ]
 
 def load_on_reg(dbstate, uistate, pdata):
     # do things at time of load
