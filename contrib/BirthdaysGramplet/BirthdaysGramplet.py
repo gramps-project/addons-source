@@ -20,6 +20,7 @@ from gen.plug import Gramplet
 from gen.ggettext import sgettext as _
 from gen.display.name import displayer as name_displayer
 from gen.ggettext import ngettext
+from gen.lib.date import Today, Date
 import DateHandler
 import time
 import datetime
@@ -51,7 +52,10 @@ class BirthdaysGramplet(Gramplet):
 
     def build_options(self):
 	from gen.plug.menu import NumberOption
+        # Consider removing this; why should the user think about it?
 	self.add_option(NumberOption(_("Number of days"), self.num_days, 0, 365))
+        # Consider using the system builtin maximum age:
+        # config.get('behavior.max-age-prob-alive')
 	self.add_option(NumberOption(_("Maximum age"), self.max_age, 0, 150))
 
     def save_options(self):
@@ -68,10 +72,9 @@ class BirthdaysGramplet(Gramplet):
 	self.set_text(_("Processing..."))
 	database = self.dbstate.db
 	personList = database.iter_people()
-        
-	result = {}
+	result = []
 	text = ''
-        
+        today = Today()
 	for cnt, person in enumerate(personList):
 	    birth_ref = person.get_birth_ref()
 	    death_ref = person.get_death_ref()
@@ -79,30 +82,26 @@ class BirthdaysGramplet(Gramplet):
 		birth = database.get_event_from_handle(birth_ref.ref)
 		birth_date = birth.get_date_object()
 		if birth_date.is_regular():
-		    birth_date.to_calendar('gregorian')
-		    birth_date_array = birth_date.get_ymd()
-		    today = datetime.date(time.localtime().tm_year, time.localtime().tm_mon, time.localtime().tm_mday)
-		    birthday_date = datetime.date(time.localtime().tm_year, birth_date_array[1], birth_date_array[2])
-		    diff = birthday_date - today
-		    age = time.localtime().tm_year - birth_date_array[0]
-		    #This deals with the birthdays of next year
-		    if diff.days < 0:
-			birthday_date = datetime.date(time.localtime().tm_year + 1, birth_date_array[1], birth_date_array[2])
-			age += 1
-		    diff = birthday_date - today
-		    if age < self.max_age and diff.days <= self.num_days:
-			primary_name = person.get_primary_name()
-			name = name_displayer.display_name(primary_name)
-			age = ngettext(' (%d year old)', ' (%d years old)', age ) % age
-			line = name + age + '\n'
-			#This allows several people to have the same birth date
-			key = birthday_date.isoformat() + "." + str(cnt)
-			result[key] = line
-	
-	dates = result.keys()
-	dates.sort()
-	for date in dates:
-	    text += date[0:10] + ': ' + result[date]
-	
+                    birthday_this_year = Date(today.get_year(), birth_date.get_month(), birth_date.get_day())
+                    age = birthday_this_year - birth_date
+                    # returns (years, months, days), all negative if after
+                    diff = today - birth_date
+                    # about number of days since today, not counting year:
+                    diff_days = abs(diff[1]) * 30 + abs(diff[2])
+                    if abs(diff[0]) < self.max_age:
+                        if diff[0] < 0: # missed for this year, next year:
+                            result.append((diff_days + 365, age, birth_date, person))
+                        elif diff_days == 0: # today
+                            result.append((diff_days + 365, age, birth_date, person))
+                        else:
+                            result.append((diff_days, age, birth_date, person))
+        # Reverse sort on number of days from now:
+	result.sort(key=lambda item: -item[0])
 	self.clear_text()
-	self.set_text(_("%s") % text)
+	for diff, age, date, person in result:
+            name = person.get_primary_name()
+            self.append_text("%s: " % DateHandler.displayer.display(date))
+            self.link(name_displayer.display_name(name), 
+                      "Person", person.handle)
+            self.append_text(" (%s)\n" % age)
+        self.append_text("", scroll_to="begin")
