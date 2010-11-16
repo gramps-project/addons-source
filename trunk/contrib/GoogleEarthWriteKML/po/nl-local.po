@@ -1,20 +1,51 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <erik@ylana.telenet.be>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-18 18:30+0100\n"
-"PO-Revision-Date: 2010-02-18 18:30+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2010-06-18 08:14+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
 msgid "GoogleEarth"
@@ -22,7 +53,7 @@ msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
 msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Maakt een gegevensbestand aan voor 'GoogleEarth' en opent dit bestand"
+msgstr "Gegevensbestand voor 'GoogleEarth' aanmaken en openen."
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:82
 msgid "No place description"
@@ -30,7 +61,7 @@ msgstr "Geen plaatsbeschrijving"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:115
 msgid "GoogleEarth not installed!"
-msgstr "GoogleEarth is niet geinstalleeerd!"
+msgstr "GoogleEarth is niet geïnstalleerd!"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:116
 #, python-format
@@ -46,6 +77,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Ja"
 
+# niet/geen
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:120
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:140
 msgid "No"
@@ -54,7 +86,7 @@ msgstr "Nee"
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
 #, python-format
 msgid "Failure writing to %s"
-msgstr "Foutmelding geschreven naar %s"
+msgstr "Fout bij schrijven naar %s"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
 msgid "Directory does not exist"
@@ -62,7 +94,7 @@ msgstr "Map bestaat niet"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:135
 msgid "GoogleEarth file exists!"
-msgstr "GoogleEarth-bestand bestaat!"
+msgstr "'GoogleEarth'-bestand bestaat!"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:136
 #, python-format
@@ -70,7 +102,6 @@ msgid ""
 "Overwrite kmz/kml file ''%s''\n"
 "in user home directory ''%s''?"
 msgstr ""
-"Kmz/kml-bestand ''%s''\n"
+"'Kmz/kml'-bestand ''%s''\n"
 "in gebruikersthuismap ''%s'' overschrijven?"
-
 
