@@ -119,32 +119,33 @@ class GoogleEarthService(MapService):
         filename = os.path.join(home_dir, default_filename)
         if not _GOOGLEEARTH_OK:
             qd2 = QuestionDialog2(
-                _("GoogleEarth not installed!"),
-                (_("Create kmz/kml file ''%s''\n"
-                  "in user directory ''%s''?")\
+                _(u"GoogleEarth not installed!"),
+                (_(u"Create kmz/kml file ''%s''\n"
+                  u"in user directory ''%s''?")\
                       % (default_filename, home_dir)),
-                _("Yes"),
-                _("No"))
+                _(u"Yes"),
+                _(u"No"))
             if not qd2.run():
                 return
         base = os.path.dirname(filename)
         # Check if directory exists
         if not os.path.exists(os.path.normpath(base)):
-            ErrorDialog((_("Failure writing to %s") % base),
-                         _("Directory does not exist"))
+            ErrorDialog((_(u"Failure writing to %s") % base),
+                         _(u"Directory does not exist"))
             return
 
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
+        home_dir = Utils.get_unicode_path_from_env_var(home_dir)
         # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(
-                _("GoogleEarth file exists!"),
-                (_("Overwrite kmz/kml file ''%s''\n"
-                  "in user home directory ''%s''?")\
+                _(u"GoogleEarth file exists!"),
+                (_(u"Overwrite kmz/kml file ''%s''\n"
+                  u"in user home directory ''%s''?")\
                     % (default_filename, home_dir)),
-                _("Yes"),
-                _("No"))
+                _(u"Yes"),
+                _(u"No"))
             if not qd2.run():
                 return
             # Delete olf zipped file before a new kmz.
