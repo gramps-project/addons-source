@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-02 21:30+0200\n"
-"PO-Revision-Date: 2010-10-02 21:41+0200\n"
-"Last-Translator: Peter Potrow <peter017@gmail.com>l\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2010-11-30 12:34+0100\n"
+"PO-Revision-Date: 2010-11-30 12:36+0100\n"
+"Last-Translator: Peter Potrowl <peter017@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 1.1\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
@@ -23,39 +23,27 @@ msgid "Birthdays Gramplet"
 msgstr "Gramplet Anniversaires"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
-msgid "a gramplet that displays the birthdays of the n following days"
-msgstr "Ce Gramplet affiche les anniversaires des n prochains jours"
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Ce Gramplet affiche les anniversaires des personnes en vie"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:34
+#: BirthdaysGramplet/BirthdaysGramplet.py:36
 msgid "No Family Tree loaded."
 msgstr "Aucun arbre chargé."
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:54
-#: BirthdaysGramplet/BirthdaysGramplet.py:58
-#: BirthdaysGramplet/BirthdaysGramplet.py:62
-msgid "Number of days"
-msgstr "Nombre de jours"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:55
-#: BirthdaysGramplet/BirthdaysGramplet.py:59
-#: BirthdaysGramplet/BirthdaysGramplet.py:63
-msgid "Maximum age"
-msgstr "Âge maximum"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:68
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
 msgid "Processing..."
 msgstr "Traitement en cours..."
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:96
-#, python-format
-msgid " (%d year old)"
-msgid_plural " (%d years old)"
-msgstr[0] " (%d an)"
-msgstr[1] " (%d ans)"
+#~ msgid "Number of days"
+#~ msgstr "Nombre de jours"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:108
-#, python-format
-msgid "%s"
-msgstr "%s"
+#~ msgid "Maximum age"
+#~ msgstr "Âge maximum"
 
+#~ msgid " (%d year old)"
+#~ msgid_plural " (%d years old)"
+#~ msgstr[0] " (%d an)"
+#~ msgstr[1] " (%d ans)"
 
+#~ msgid "%s"
+#~ msgstr "%s"
