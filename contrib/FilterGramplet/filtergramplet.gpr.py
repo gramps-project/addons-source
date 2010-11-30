@@ -7,7 +7,7 @@ register(GRAMPLET,
          gramplet = 'FilterGramplet',
          gramplet_title=_("Filter"),
          status=STABLE,
-         version = '1.0.1',
+         version = '1.0.2',
          gramps_target_version = "3.3",
          fname="filtergramplet.py",
          )
