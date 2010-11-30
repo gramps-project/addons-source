@@ -392,7 +392,7 @@ class DataEntryGramplet(Gramplet):
         name = gen.lib.Name()
         name.set_type(gen.lib.NameType(gen.lib.NameType.BIRTH))
         name.set_first_name(firstname)
-        name.set_surname(surname)
+        name.set_primary_surname(surname)
         person.set_primary_name(name)
         person.set_gender(gender)
         return person
@@ -412,7 +412,7 @@ class DataEntryGramplet(Gramplet):
             name = person.get_primary_name()
             # Now, edit it:
             self.trans = self.dbstate.db.transaction_begin()
-            name.set_surname(surname)
+            name.set_primary_surname(surname)
             name.set_first_name(firstname)
             person.set_gender(gender)
             birthdate, birthplace = self.process_dateplace(self.de_widgets["APBirth"].get_text().strip())
