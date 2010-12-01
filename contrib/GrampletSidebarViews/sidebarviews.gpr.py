@@ -21,7 +21,7 @@ for name, trans in sidebar_list:
              name  = trans, 
              category = ("Splitviews", _("Splitviews")),
              description =  _("%s with a Gramplet Pane") % trans,
-             version = '1.1.3',
+             version = '1.1.4',
              gramps_target_version = '3.3',
              status = STABLE,
              fname = 'sidebarviews.py',
