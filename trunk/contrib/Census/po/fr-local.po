@@ -4,12 +4,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-07 16:13+0100\n"
-"PO-Revision-Date: 2010-01-07 16:26+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-12-02 11:04+0100\n"
+"PO-Revision-Date: 2010-12-02 16:28+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,16 +25,20 @@ msgid "Census"
 msgstr "Recensement"
 
 #: Census/CensusGramplet.gpr.py:31
-#: Census/CensusGramplet.gpr.py:40
+#: Census/CensusGramplet.gpr.py:42
 msgid "Census Gramplet"
 msgstr "Gramplet Recensement"
+
+#: Census/CensusGramplet.gpr.py:32
+msgid "Gramplet interface for census data"
+msgstr "Gramplet servant d'interface aux données de recensement"
 
 #: Census/CensusGramplet.py:79
 msgid "Census details for: "
 msgstr "Détails du recensement pour : "
 
 #: Census/CensusGramplet.py:90
-#: Census/CensusReport.py:291
+#: Census/CensusReport.py:296
 msgid "Source"
 msgstr "Source"
 
@@ -49,47 +54,47 @@ msgstr "Lieu"
 msgid "No active person set."
 msgstr "Aucun individu actif défini."
 
-#: Census/CensusGramplet.py:261
+#: Census/CensusGramplet.py:262
 #, python-format
 msgid "Census: %s"
 msgstr "Recensement : %s"
 
-#: Census/CensusGramplet.py:263
+#: Census/CensusGramplet.py:264
 msgid "New Census"
 msgstr "Nouveau Recensement"
 
-#: Census/CensusGramplet.py:270
+#: Census/CensusGramplet.py:271
 msgid "Edit Census"
 msgstr "Éditer le recensement"
 
-#: Census/CensusGramplet.py:285
+#: Census/CensusGramplet.py:286
 msgid "Source:"
 msgstr "Source :"
 
-#: Census/CensusGramplet.py:307
-#: Census/CensusReport.py:161
+#: Census/CensusGramplet.py:308
+#: Census/CensusReport.py:162
 msgid "Date:"
 msgstr "Date :"
 
-#: Census/CensusGramplet.py:316
+#: Census/CensusGramplet.py:317
 msgid "Reference:"
 msgstr "Référence :"
 
-#: Census/CensusGramplet.py:324
+#: Census/CensusGramplet.py:325
 msgid "Place:"
 msgstr "Lieu :"
 
-#: Census/CensusGramplet.py:483
-#: Census/CensusGramplet.py:503
+#: Census/CensusGramplet.py:489
+#: Census/CensusGramplet.py:520
 msgid "Cannot add a person to this census."
 msgstr "Impossible d'ajouter un nouvel individu à ce recensement."
 
-#: Census/CensusGramplet.py:484
-#: Census/CensusGramplet.py:504
+#: Census/CensusGramplet.py:490
+#: Census/CensusGramplet.py:521
 msgid "First select a census from the drop-down list."
 msgstr "Sélectionnez d'abord un recensement de la liste déroulante"
 
-#: Census/CensusGramplet.py:509
+#: Census/CensusGramplet.py:536
 msgid "Select Person"
 msgstr "Sélectionner l'individu"
 
@@ -101,294 +106,86 @@ msgstr "Rapport de recensement"
 msgid "Report of census events for a person."
 msgstr "Les événements recensement de l'individu."
 
-#: Census/CensusReport.py:97
+#: Census/CensusReport.py:98
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "L'individu %s n'est pas présent dans la base de données"
 
-#: Census/CensusReport.py:109
+#: Census/CensusReport.py:110
 #, python-format
 msgid "Census Report for %s"
 msgstr "Rapport de recensement pour %s"
 
-#: Census/CensusReport.py:164
+#: Census/CensusReport.py:165
 msgid "Source Reference:"
 msgstr "Référence de source :"
 
-#: Census/CensusReport.py:168
-#: Census/CensusReport.py:170
+#: Census/CensusReport.py:169
+#: Census/CensusReport.py:171
 msgid "Address:"
 msgstr "Adresse :"
 
-#: Census/CensusReport.py:276
+#: Census/CensusReport.py:277
 msgid "Report Options"
 msgstr "Options du rapport"
 
-#: Census/CensusReport.py:278
+#: Census/CensusReport.py:279
 msgid "Census Selection"
 msgstr "Sélection du recensement"
 
-#: Census/CensusReport.py:279
+#: Census/CensusReport.py:280
 msgid "By Person"
 msgstr "Par Individu"
 
-#: Census/CensusReport.py:280
+#: Census/CensusReport.py:281
 msgid "By Source"
 msgstr "Par Source"
 
-#: Census/CensusReport.py:281
+#: Census/CensusReport.py:282
 msgid "By Person and Source"
 msgstr "Par Individu et Source"
 
-#: Census/CensusReport.py:282
+#: Census/CensusReport.py:283
 msgid "All Census records"
 msgstr "Toutes les entrées du recensement"
 
-#: Census/CensusReport.py:283
+#: Census/CensusReport.py:284
 msgid "The type of report"
 msgstr "Le type de rapport"
 
-#: Census/CensusReport.py:286
+#: Census/CensusReport.py:287
 msgid "Person"
 msgstr "Individu"
 
-#: Census/CensusReport.py:287
+#: Census/CensusReport.py:288
 msgid "The selected person for the report."
 msgstr "L'individu sélectionnée pour ce rapport."
 
-#: Census/CensusReport.py:296
+#: Census/CensusReport.py:301
 msgid "Page break after each census."
 msgstr "Ajouter une ligne après chaque nom."
 
-#: Census/CensusReport.py:297
+#: Census/CensusReport.py:302
 msgid "Start a new page after each census."
 msgstr "Démarrer ou non une nouvelle page après chaque recensement."
 
-#: Census/CensusReport.py:315
+#: Census/CensusReport.py:320
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
-#: Census/CensusReport.py:328
+#: Census/CensusReport.py:333
 msgid "The style used for headings."
 msgstr "Le style utilisé pour les en-têtes."
 
-#: Census/CensusReport.py:338
+#: Census/CensusReport.py:343
 msgid "The style used for names."
 msgstr "Le style utilisé pour les noms."
 
-#: Census/CensusReport.py:348
+#: Census/CensusReport.py:353
 msgid "The style used for column headings."
 msgstr "Le style utilisé pour les en-têtes de colonne."
 
-#: Census/CensusReport.py:359
+#: Census/CensusReport.py:364
 msgid "The default text style."
 msgstr "Le texte le style par défaut."
-
-#: Census/census.xml.h:1
-msgid "Address"
-msgstr "Adresse"
-
-#: Census/census.xml.h:2
-msgid "Age"
-msgstr "Âge"
-
-#: Census/census.xml.h:3
-msgid "Arrived since"
-msgstr "Arrivé depuis"
-
-#: Census/census.xml.h:4
-msgid "At Home"
-msgstr "À la maison"
-
-#: Census/census.xml.h:5
-msgid "Can read and write"
-msgstr "Sait lire et écrire"
-
-#: Census/census.xml.h:6
-msgid "Children Died"
-msgstr "Enfants décédés"
-
-#: Census/census.xml.h:7
-msgid "Children Living"
-msgstr "Enfants vivants"
-
-#: Census/census.xml.h:8
-msgid "Children Total"
-msgstr "Total des enfants"
-
-#: Census/census.xml.h:9
-msgid "City or Borough"
-msgstr "Ville ou arrondissement"
-
-#: Census/census.xml.h:10
-msgid "City or Municipal Borough"
-msgstr "Ville ou arrondissement"
-
-#: Census/census.xml.h:11
-msgid "Civil Parish"
-msgstr "Paroisse civile"
-
-#: Census/census.xml.h:12
-msgid "Civil Parish or Township"
-msgstr "Paroisse civile ou canton"
-
-#: Census/census.xml.h:13
-msgid "Comments"
-msgstr "Commentaires"
-
-#: Census/census.xml.h:14
-msgid "Condition"
-msgstr "Statut familial"
-
-#: Census/census.xml.h:15
-msgid "Date of birth"
-msgstr "Date de naissance"
-
-#: Census/census.xml.h:16
-msgid "Disability"
-msgstr "Handicap"
-
-#: Census/census.xml.h:17
-msgid "Ecclesiastical District"
-msgstr "District écclésiastique"
-
-#: Census/census.xml.h:18
-msgid "Ecclesiastical Parish or District"
-msgstr "Paroisse écclésiastique ou district"
-
-#: Census/census.xml.h:19
-msgid "Employed"
-msgstr "Employé"
-
-#: Census/census.xml.h:20
-msgid "Employer"
-msgstr "Employeur"
-
-#: Census/census.xml.h:21
-msgid "Employer, Worker or Own Account"
-msgstr "Employeur, travailleur ou à son propre compte"
-
-#: Census/census.xml.h:22
-msgid "Gender"
-msgstr "Genre"
-
-#: Census/census.xml.h:23
-msgid "Hamlet or Tything"
-msgstr "Hameau"
-
-#: Census/census.xml.h:24
-msgid "Local Board or Improvement Commissioners District"
-msgstr "District"
-
-#: Census/census.xml.h:25
-msgid "Military"
-msgstr "Militaire"
-
-#: Census/census.xml.h:26
-msgid "Municipal Borough"
-msgstr "Municipalité"
-
-#: Census/census.xml.h:27
-msgid "Municipal Ward"
-msgstr "Municipalité"
-
-#: Census/census.xml.h:28
-msgid "Name"
-msgstr "Nom"
-
-#: Census/census.xml.h:29
-msgid "Nationality"
-msgstr "Nationalité"
-
-#: Census/census.xml.h:30
-msgid "Neither"
-msgstr "Jamais"
-
-#: Census/census.xml.h:31
-msgid "Neither Employer nor Employed"
-msgstr "Ni employeur ni employé"
-
-#: Census/census.xml.h:32
-msgid "Note"
-msgstr "Note"
-
-#: Census/census.xml.h:33
-msgid "Occupation"
-msgstr "Profession"
-
-#: Census/census.xml.h:34
-msgid "Parish or Township"
-msgstr "Paroisse ou canton"
-
-#: Census/census.xml.h:35
-msgid "Parliamentary Borough"
-msgstr "Arrondissement"
-
-#: Census/census.xml.h:36
-msgid "Parliamentary Borough or Division"
-msgstr "Arrondissement ou section"
-
-#: Census/census.xml.h:37
-msgid "Relation"
-msgstr "Relation"
-
-#: Census/census.xml.h:38
-msgid "Religion"
-msgstr "Religion"
-
-#: Census/census.xml.h:39
-msgid "Rural Sanitary District"
-msgstr "District rural"
-
-#: Census/census.xml.h:40
-msgid "Status"
-msgstr "Statut"
-
-#: Census/census.xml.h:41
-msgid "Taxes"
-msgstr "Taxes"
-
-#: Census/census.xml.h:42
-msgid "Town"
-msgstr "Ville"
-
-#: Census/census.xml.h:43
-msgid "Town, Village or Hamlet"
-msgstr "Ville, village ou hameau"
-
-#: Census/census.xml.h:44
-msgid "Type of roof"
-msgstr "Type de toiture"
-
-#: Census/census.xml.h:45
-msgid "Urban Sanitary District"
-msgstr "District urbain"
-
-#: Census/census.xml.h:46
-msgid "Village"
-msgstr "Village"
-
-#: Census/census.xml.h:47
-msgid "Village or Hamlet"
-msgstr "Village ou hameau"
-
-#: Census/census.xml.h:48
-msgid "Where Born"
-msgstr "Lieu de naissance"
-
-#: Census/census.xml.h:49
-msgid "Work Type"
-msgstr "Type de travail"
-
-#: Census/census.xml.h:50
-msgid "Working at Home"
-msgstr "Travaillant à la maison"
-
-#: Census/census.xml.h:51
-msgid "Year of birth"
-msgstr "Année de naissance"
-
-#: Census/census.xml.h:52
-msgid "Years Married"
-msgstr "Années de mariage"
 

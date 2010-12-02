@@ -1,0 +1,163 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-02 11:09+0100\n"
+"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: LastChange/LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr "Gramplet Dernières modifications"
+
+#: LastChange/LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr "Liste les dix derniers individus modifiés"
+
+#: LastChange/LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr "Dernières modifications"
+
+#: LastChange/LastChange.gpr.py:39
+msgid "Last Change Report"
+msgstr "Rapport Dernières modifications"
+
+#: LastChange/LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr "Rapport pour les derniers enregistrements modifiés"
+
+#: LastChange/LastChangeGramplet.py:48
+msgid "Double-click name for details"
+msgstr "Double cliquez sur le nom pour les détails"
+
+#: LastChange/LastChangeGramplet.py:49
+msgid "No Family Tree loaded."
+msgstr "Aucun Arbre Familial chargé."
+
+#: LastChange/LastChangeGramplet.py:53
+msgid "Processing..."
+msgstr "Traitement en cours..."
+
+#: LastChange/LastChangeGramplet.py:65
+msgid "changed on"
+msgstr "changé le"
+
+#: LastChange/LastChangeReport.py:145
+msgid "People Changed"
+msgstr "Individus modifiés"
+
+#: LastChange/LastChangeReport.py:146
+#: LastChange/LastChangeReport.py:161
+#: LastChange/LastChangeReport.py:192
+#: LastChange/LastChangeReport.py:212
+#: LastChange/LastChangeReport.py:227
+msgid "ID"
+msgstr "Id"
+
+#: LastChange/LastChangeReport.py:146
+msgid "Person"
+msgstr "Individu"
+
+#: LastChange/LastChangeReport.py:146
+#: LastChange/LastChangeReport.py:161
+#: LastChange/LastChangeReport.py:192
+#: LastChange/LastChangeReport.py:212
+#: LastChange/LastChangeReport.py:227
+msgid "Changed On"
+msgstr "Changé le"
+
+#: LastChange/LastChangeReport.py:160
+msgid "Families Changed"
+msgstr "Familles modifiées"
+
+#: LastChange/LastChangeReport.py:161
+msgid "Family Surname"
+msgstr "Nom de famille"
+
+#: LastChange/LastChangeReport.py:178
+#, python-format
+msgid "%s and %s"
+msgstr "%s et %s"
+
+#: LastChange/LastChangeReport.py:191
+msgid "Events Changed"
+msgstr "Événements modifiés"
+
+#: LastChange/LastChangeReport.py:192
+msgid "Event"
+msgstr "Événement"
+
+#: LastChange/LastChangeReport.py:211
+msgid "Places Changed"
+msgstr "Lieux modifiés"
+
+#: LastChange/LastChangeReport.py:212
+msgid "Place"
+msgstr "Lieu"
+
+#: LastChange/LastChangeReport.py:226
+msgid "Media Changed"
+msgstr "Media modifiés"
+
+#: LastChange/LastChangeReport.py:227
+msgid "Path"
+msgstr "Chemin"
+
+#: LastChange/LastChangeReport.py:247
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: LastChange/LastChangeReport.py:248
+msgid "Select From:"
+msgstr "Sélectionner depuis:"
+
+#: LastChange/LastChangeReport.py:249
+msgid "People"
+msgstr "Individus"
+
+#: LastChange/LastChangeReport.py:250
+msgid "Families"
+msgstr "Familles"
+
+#: LastChange/LastChangeReport.py:251
+msgid "Places"
+msgstr "Lieux"
+
+#: LastChange/LastChangeReport.py:252
+msgid "Events"
+msgstr "Événements"
+
+#: LastChange/LastChangeReport.py:253
+msgid "Media"
+msgstr "Media"
+
+#: LastChange/LastChangeReport.py:254
+msgid "Sources"
+msgstr "Sources"
+
+#: LastChange/LastChangeReport.py:270
+msgid "The style used for the title of the page."
+msgstr "Le style utilisé pour les titres de page."
+
+#: LastChange/LastChangeReport.py:285
+msgid "The style used for the section headers."
+msgstr "Le style utilisé pour les en-têtes de section."
+
+#: LastChange/LastChangeReport.py:295
+msgid "The style used for normal text"
+msgstr "Le style de base pour afficher du texte normal."
+
+#: LastChange/LastChangeReport.py:307
+msgid "The basic style used for table headings."
+msgstr "Le style de base pour l'en-tête du tableau."
+

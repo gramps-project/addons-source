@@ -1,149 +1,129 @@
-# French translations for gramps package.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 32\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-03 10:46+0100\n"
-"PO-Revision-Date: 2010-02-03 11:04+0100\n"
-"Last-Translator:\n"
+"POT-Creation-Date: 2010-12-02 11:15+0100\n"
+"PO-Revision-Date: 2010-12-02 16:17+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.gpr.py:31
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.gpr.py:35
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:29
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:34
 msgid "Image Metadata Gramplet"
-msgstr "Gramplet Image Metadata 2"
+msgstr "Gramplet Image Metadata"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:69
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:30
+msgid "Gramplet for editing image EXIF metadata"
+msgstr "Gramplet pour l'édition des métadonnées EXIF de l'image"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:66
+msgid ""
+"The, pyexiv2, python binding library, to exiv2 is not installed on this computer.\n"
+" It can be downloaded either from your ocal repository or from here\n"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:93
 msgid "Enter text describing this image and who might be in the image.  It might be best to enter a location for this image, especially if there is no GPS Latitude/ Longitude information available."
-msgstr "Entrez du texte décrivant l'image and pourrait être dans l'image. Il est préférable d'entrer l'emplacement de cette image, surtout si il n'y a pas d'informations disponibles sur les coordonnées GPS (Latitude/Longitude)."
+msgstr "Entrez du texte décrivant l'image et qui pourrait être dans l'image. Il est préférable d'entrer l'emplacement de cette image, surtout si il n'y a pas d'informations disponibles sur les coordonnées GPS (Latitude/Longitude)."
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:120
-msgid "Active image"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:129
+msgid "Active Image"
 msgstr "Image active"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:121
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:131
 msgid "Photographer"
 msgstr "Photographe"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:122
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:665
-msgid "Select Date"
-msgstr "Sélection de la date"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:123
-msgid "Date"
-msgstr "Date"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:132
-msgid "Hour"
-msgstr "Heure"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:145
-msgid "Minutes"
-msgstr ""
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:158
-msgid "Seconds"
-msgstr "Secondes"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:170
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:132
 msgid "Copyright"
 msgstr "Licence"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:179
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:133
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:690
+msgid "Select Date"
+msgstr "Sélection de la date"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:136
+msgid "Date"
+msgstr "Date"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:137
 msgid "Latitude"
 msgstr "Latitude"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:188
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:212
-msgid "Reference"
-msgstr "Référence"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:194
-msgid "N"
-msgstr ""
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:194
-msgid "S"
-msgstr ""
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:203
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:138
 msgid "Longitude"
 msgstr "Longitude"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:218
-msgid "W"
-msgstr "O"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:147
+msgid "Subject"
+msgstr "Sujet"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:218
-msgid "E"
-msgstr ""
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:230
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:162
 msgid "Description"
 msgstr "Description"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:243
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:175
 msgid "Enter the name of the person who took this image."
 msgstr "Entrez le nom de la personne qui a pris cette image."
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:245
-msgid "Press the Select Date Button to bring up a calendar where you can choose a date."
-msgstr "Appuyer sur le bouton Sélection de la date va ouvrir un calendrier dans lequel vous pourrez choisir une date"
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:248
-msgid "Enter the hour between (00 - 23)."
-msgstr "Entrez une heure entre (00 et 23)."
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:250
-msgid "Enter the minutes between (00 - 59)."
-msgstr "Entrez les minutes entre (00 et 59)."
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:252
-msgid "Enter the seconds between (00 - 59)."
-msgstr "Entrez les secondes entre (00 et 59)."
-
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:254
-msgid "Enter the copyright information for the image.  Example: (C) 2010 Smith and Wesson"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:178
+msgid "Enter the copyright information for the image.  xample: (C) 2010 Smith and Wesson"
 msgstr "Entrez l'information sur le droit d'auteur pour cette image. Exemple: (C) 2010 Charlemagne "
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:259
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:181
+msgid ""
+"Enter words that describe this image, separated by comma.\n"
+"  Example: Kids,house,dog,car"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:185
+msgid "Enter the GPS Latitude as decimal format "
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:188
+msgid "Enter the GPS Longitude as decimal format "
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:193
 msgid "Save"
 msgstr "Enregistrer"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:262
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:196
 msgid "Clear"
 msgstr "Nettoyer"
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:265
-msgid "Re- Display"
-msgstr "Re- Afficher"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:243
+msgid "This image does NOT exists on this computer.  Please select another image."
+msgstr ""
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:299
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:640
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:642
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:649
-msgid "Select Image"
-msgstr "Sélection de l'image"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:253
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:465
+msgid "The image type of this media object is NOT usable by this addon.  Please select another image..."
+msgstr ""
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:480
-#, python-format
-msgid "The image file %s does NOT have write access/ permissions. If you have access and rights to change the permissions, then please do it now."
-msgstr "Le fichier image %s N'A PAS de permissions en écriture. Si vous avez un accès et les droits pour modifier les permissions, s'il vous plait effectuez le changement."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:473
+msgid "You have etered Latitude, but not longitude.  Please enter Longitude..."
+msgstr ""
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:626
-#, python-format
-msgid "The image file %s does NOT have read access/ permissions. If you have access and rights to change the permissions, then please do it now."
-msgstr "Le fichier image %s N'A PAS de permissions en lecture. Si vous avez un accès et les droits pour modifier les permissions, s'il vous plait effectuez le changement."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:475
+msgid "You have etered Longitude, but not Latitude.  Please enter Latitude..."
+msgstr ""
 
-#: ImageMetadataGramplet-v0.2/ImageMetadataGramplet.py:632
-msgid "The image file is missing.  Please select another image or edit the media object to fix this problem."
-msgstr "Le fichier image est manquant. S'il vous plait sélectionnez une autre image ou éditez l'objet media pour corriger ce problème."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:539
+msgid "Image metadata has been saved."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:680
+msgid "The file type of this media object can not be determined!"
+msgstr ""
 
