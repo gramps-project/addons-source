@@ -1,0 +1,95 @@
+# French translation for gramps
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-02 11:09+0100\n"
+"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: PedigreeChart/PedigreeChart.gpr.py:24
+msgid "Pedigree Chart"
+msgstr "Arbre graphique"
+
+#: PedigreeChart/PedigreeChart.gpr.py:25
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "Version alternative de l'arbre graphique traditionnel."
+
+#: PedigreeChart/PedigreeChart.py:377
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "L'individu %s n'est pas présent dans la base de données"
+
+#: PedigreeChart/PedigreeChart.py:380
+#: PedigreeChart/PedigreeChart.py:528
+msgid "Mother"
+msgstr "Mère"
+
+# de ou pour ?
+#: PedigreeChart/PedigreeChart.py:384
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "Arbre graphique de %s"
+
+#: PedigreeChart/PedigreeChart.py:531
+msgid "Father"
+msgstr "Père"
+
+#: PedigreeChart/PedigreeChart.py:533
+#, python-format
+msgid "Page %d"
+msgstr "Page %d"
+
+#: PedigreeChart/PedigreeChart.py:640
+msgid "Tree Options"
+msgstr "Options de l'arbre"
+
+#: PedigreeChart/PedigreeChart.py:642
+msgid "Center Person"
+msgstr "Centrer sur l'individu"
+
+#: PedigreeChart/PedigreeChart.py:643
+msgid "The center person for the tree"
+msgstr "L'individu central pour ce rapport"
+
+#: PedigreeChart/PedigreeChart.py:646
+msgid "Generations"
+msgstr "Générations"
+
+#: PedigreeChart/PedigreeChart.py:647
+msgid "The number of generations to include in the tree"
+msgstr "Le nombre de générations à inclure dans le rapport"
+
+#: PedigreeChart/PedigreeChart.py:650
+msgid "Show Mother/Father captions"
+msgstr "Afficher les en-têtes Mère/Père "
+
+#: PedigreeChart/PedigreeChart.py:651
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "Afficher la mère et le père à côté de l'aire de l'ascendant."
+
+#: PedigreeChart/PedigreeChart.py:663
+msgid "The basic style used for the text display."
+msgstr "Le style de base pour afficher du texte."
+
+#: PedigreeChart/PedigreeChart.py:672
+msgid "The basic style used for the title display."
+msgstr "Le style de base pour afficher les titres."
+
+#: PedigreeChart/PedigreeChart.py:681
+msgid "Style used for labels and captions"
+msgstr "Le style utilisé pour les étiquettes et en-têtes"
+
