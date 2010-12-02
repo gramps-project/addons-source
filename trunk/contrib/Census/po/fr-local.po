@@ -189,3 +189,211 @@ msgstr "Le style utilisé pour les en-têtes de colonne."
 msgid "The default text style."
 msgstr "Le texte le style par défaut."
 
+#: Census/census.xml.h:1
+msgid "Address"
+msgstr "Adresse"
+
+#: Census/census.xml.h:2
+msgid "Age"
+msgstr "Âge"
+
+#: Census/census.xml.h:3
+msgid "Arrived since"
+msgstr "Arrivé depuis"
+
+#: Census/census.xml.h:4
+msgid "At Home"
+msgstr "À la maison"
+
+#: Census/census.xml.h:5
+msgid "Can read and write"
+msgstr "Sait lire et écrire"
+
+#: Census/census.xml.h:6
+msgid "Children Died"
+msgstr "Enfants décédés"
+
+#: Census/census.xml.h:7
+msgid "Children Living"
+msgstr "Enfants vivants"
+
+#: Census/census.xml.h:8
+msgid "Children Total"
+msgstr "Total des enfants"
+
+#: Census/census.xml.h:9
+msgid "City or Borough"
+msgstr "Ville ou arrondissement"
+
+#: Census/census.xml.h:10
+msgid "City or Municipal Borough"
+msgstr "Ville ou arrondissement"
+
+#: Census/census.xml.h:11
+msgid "Civil Parish"
+msgstr "Paroisse civile"
+
+#: Census/census.xml.h:12
+msgid "Civil Parish or Township"
+msgstr "Paroisse civile ou canton"
+
+#: Census/census.xml.h:13
+msgid "Comments"
+msgstr "Commentaires"
+
+#: Census/census.xml.h:14
+msgid "Condition"
+msgstr "Statut familial"
+
+#: Census/census.xml.h:15
+msgid "Date of birth"
+msgstr "Date de naissance"
+
+#: Census/census.xml.h:16
+msgid "Disability"
+msgstr "Handicap"
+
+#: Census/census.xml.h:17
+msgid "Ecclesiastical District"
+msgstr "District écclésiastique"
+
+#: Census/census.xml.h:18
+msgid "Ecclesiastical Parish or District"
+msgstr "Paroisse écclésiastique ou district"
+
+#: Census/census.xml.h:19
+msgid "Employed"
+msgstr "Employé"
+
+#: Census/census.xml.h:20
+msgid "Employer"
+msgstr "Employeur"
+
+#: Census/census.xml.h:21
+msgid "Employer, Worker or Own Account"
+msgstr "Employeur, travailleur ou à son propre compte"
+
+#: Census/census.xml.h:22
+msgid "Gender"
+msgstr "Genre"
+
+#: Census/census.xml.h:23
+msgid "Hamlet or Tything"
+msgstr "Hameau"
+
+#: Census/census.xml.h:24
+msgid "Local Board or Improvement Commissioners District"
+msgstr "District"
+
+#: Census/census.xml.h:25
+msgid "Military"
+msgstr "Militaire"
+
+#: Census/census.xml.h:26
+msgid "Municipal Borough"
+msgstr "Municipalité"
+
+#: Census/census.xml.h:27
+msgid "Municipal Ward"
+msgstr "Municipalité"
+
+#: Census/census.xml.h:28
+msgid "Name"
+msgstr "Nom"
+
+#: Census/census.xml.h:29
+msgid "Nationality"
+msgstr "Nationalité"
+
+#: Census/census.xml.h:30
+msgid "Neither"
+msgstr "Jamais"
+
+#: Census/census.xml.h:31
+msgid "Neither Employer nor Employed"
+msgstr "Ni employeur ni employé"
+
+#: Census/census.xml.h:32
+msgid "Note"
+msgstr "Note"
+
+#: Census/census.xml.h:33
+msgid "Occupation"
+msgstr "Profession"
+
+#: Census/census.xml.h:34
+msgid "Parish or Township"
+msgstr "Paroisse ou canton"
+
+#: Census/census.xml.h:35
+msgid "Parliamentary Borough"
+msgstr "Arrondissement"
+
+#: Census/census.xml.h:36
+msgid "Parliamentary Borough or Division"
+msgstr "Arrondissement ou section"
+
+#: Census/census.xml.h:37
+msgid "Relation"
+msgstr "Relation"
+
+#: Census/census.xml.h:38
+msgid "Religion"
+msgstr "Religion"
+
+#: Census/census.xml.h:39
+msgid "Rural Sanitary District"
+msgstr "District rural"
+
+#: Census/census.xml.h:40
+msgid "Status"
+msgstr "Statut"
+
+#: Census/census.xml.h:41
+msgid "Taxes"
+msgstr "Taxes"
+
+#: Census/census.xml.h:42
+msgid "Town"
+msgstr "Ville"
+
+#: Census/census.xml.h:43
+msgid "Town, Village or Hamlet"
+msgstr "Ville, village ou hameau"
+
+#: Census/census.xml.h:44
+msgid "Type of roof"
+msgstr "Type de toiture"
+
+#: Census/census.xml.h:45
+msgid "Urban Sanitary District"
+msgstr "District urbain"
+
+#: Census/census.xml.h:46
+msgid "Village"
+msgstr "Village"
+
+#: Census/census.xml.h:47
+msgid "Village or Hamlet"
+msgstr "Village ou hameau"
+
+#: Census/census.xml.h:48
+msgid "Where Born"
+msgstr "Lieu de naissance"
+
+#: Census/census.xml.h:49
+msgid "Work Type"
+msgstr "Type de travail"
+
+#: Census/census.xml.h:50
+msgid "Working at Home"
+msgstr "Travaillant à la maison"
+
+#: Census/census.xml.h:51
+msgid "Year of birth"
+msgstr "Année de naissance"
+
+#: Census/census.xml.h:52
+msgid "Years Married"
+msgstr "Années de mariage"
+
