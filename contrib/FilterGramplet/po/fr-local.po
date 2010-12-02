@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-02 11:05+0100\n"
-"PO-Revision-Date: 2010-12-02 16:24+0100\n"
+"PO-Revision-Date: 2010-12-02 16:19+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ClockGramplet/ClockGramplet.gpr.py:3
-msgid "Clock Gramplet"
-msgstr "Gramplet Horloge"
+#: FilterGramplet/filtergramplet.gpr.py:3
+msgid "Filter Gramplet"
+msgstr "Gramplet Filtre"
 
-#: ClockGramplet/ClockGramplet.gpr.py:4
-msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Gramplet pour démontrer les graphiques Cairo"
+#: FilterGramplet/filtergramplet.gpr.py:4
+msgid "Gramplet for controlling filter for a splitview"
+msgstr "Gramplet pour contrôler le filtre dans la vue divisée"
 
-#: ClockGramplet/ClockGramplet.gpr.py:8
-msgid "Clock"
-msgstr "Horloge"
+#: FilterGramplet/filtergramplet.gpr.py:8
+msgid "Filter"
+msgstr "Filtre"
 
