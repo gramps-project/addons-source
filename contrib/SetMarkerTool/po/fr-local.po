@@ -1,0 +1,101 @@
+# French translation for gramps
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-02 11:09+0100\n"
+"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: SetMarkerTool/SetMarkerTool.gpr.py:25 SetMarkerTool/SetMarkerTool.py:113
+#: SetMarkerTool/SetMarkerTool.py:155 SetMarkerTool/SetMarkerTool.py:171
+msgid "Set Marker"
+msgstr "Définir un marqueur"
+
+#: SetMarkerTool/SetMarkerTool.gpr.py:26
+msgid "Set Marker to a given value."
+msgstr "Définir le marqueur avec une certaine valeur."
+
+#: SetMarkerTool/SetMarkerTool.py:68 SetMarkerTool/SetMarkerTool.py:116
+msgid "Options"
+msgstr "Options"
+
+#: SetMarkerTool/SetMarkerTool.py:70
+msgid "Person Filter"
+msgstr "Filtre sur la personne"
+
+#: SetMarkerTool/SetMarkerTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Sélectionne un filtre pour restreindre les individus"
+
+#: SetMarkerTool/SetMarkerTool.py:75
+msgid "Filter Person"
+msgstr "Filtre sur l'individu"
+
+#: SetMarkerTool/SetMarkerTool.py:76
+msgid "The center person for the filter"
+msgstr "L'individu central pour ce filtre"
+
+#: SetMarkerTool/SetMarkerTool.py:80
+msgid "Marker"
+msgstr "Marqueur"
+
+#: SetMarkerTool/SetMarkerTool.py:82
+msgid "Marker value to add or edit"
+msgstr "Valeur du marqueur à ajouter ou éditer"
+
+#: SetMarkerTool/SetMarkerTool.py:121
+msgid "Results"
+msgstr "Résultats"
+
+#: SetMarkerTool/SetMarkerTool.py:122
+msgid "Processing...\n"
+msgstr "Traitement en cours...\n"
+
+# Substantif (GNOME fr)
+#: SetMarkerTool/SetMarkerTool.py:137
+msgid "Setting markers..."
+msgstr "Définition des marqueurs..."
+
+#: SetMarkerTool/SetMarkerTool.py:141
+#, python-format
+msgid ""
+"Setting markers to '%s'...\n"
+"\n"
+msgstr ""
+"Définition du marqueur '%s'...\n"
+"\n"
+
+#: SetMarkerTool/SetMarkerTool.py:158
+#, python-format
+msgid ""
+"\n"
+"Set %d markers to '%s'\n"
+msgstr ""
+"\n"
+"A défini %d marqueurs '%s'\n"
+
+#: SetMarkerTool/SetMarkerTool.py:159
+msgid "Done!\n"
+msgstr "Terminé !\n"
+
+#: SetMarkerTool/SetMarkerTool.py:172
+msgid "Beta"
+msgstr "Bêta "
+
+#: SetMarkerTool/SetMarkerTool.py:175
+msgid "Sets an marker of a person to a given value."
+msgstr "Définit un marqueur pour une personne avec une valeur donnée."
