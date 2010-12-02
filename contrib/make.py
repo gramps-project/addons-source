@@ -181,15 +181,10 @@ elif command == "update":
         raise ValueError(r('''%(addon)s/po/template.pot'''
                            ''' is missing!\n  run '''
                            '''./make.py init %(addon)s'''))
-    # #intltool-extract --type=gettext/glade *.glade
-    system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
-    system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
-    system('''xgettext -j --language=Python --keyword=_ --keyword=N_'''
-           ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
-    system('''xgettext -j --language=Python --keyword=_ --keyword=N_'''
-           ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.glade.h''')
-    system('''xgettext -j --language=Python --keyword=_ --keyword=N_'''
-           ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.xml.h''')
+    # overwrite local translation with last template:
+    system('''msgmerge -U %(addon)s/po/template.pot''' 
+           ''' %(addon)s/po/%(locale)s-local.po'''
+           ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
     locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
     # Next, get all of the translations from other addons:
