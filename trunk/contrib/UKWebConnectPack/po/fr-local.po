@@ -1,0 +1,39 @@
+# French translation for gramps
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-02 11:09+0100\n"
+"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# trunk
+#: UKWebConnectPack/UKWebPack.gpr.py:10
+msgid "UK Web Connect Pack"
+msgstr "Ensemble de liens internet anglo-saxons"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"
+
+#: UKWebConnectPack/UKWebPack.py:27
+msgid "UK Google"
+msgstr "Google UK"
+
+#: UKWebConnectPack/UKWebPack.py:28
+msgid "British, UK, and Ireland"
+msgstr "Anglais, Royaume-uni, et Irlande"
+

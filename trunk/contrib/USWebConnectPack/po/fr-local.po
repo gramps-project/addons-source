@@ -1,0 +1,51 @@
+# French translation for gramps
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-02 11:09+0100\n"
+"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# trunk
+#: USWebConnectPack/USWebPack.gpr.py:10
+msgid "US Web Connect Pack"
+msgstr "Ensemble de liens internet US"
+
+#: USWebConnectPack/USWebPack.gpr.py:11
+msgid "Collection of Web sites for the US (requires libwebconnect)"
+msgstr "Collection de sites internet pour les États-Unis (nécessite libwebconnect)"
+
+#: USWebConnectPack/USWebPack.py:27
+msgid "Find A Grave"
+msgstr "Trouver une tombe"
+
+#: USWebConnectPack/USWebPack.py:28
+msgid "FamilySearch.org Beta"
+msgstr "FamilySearch.org (version test)"
+
+#: USWebConnectPack/USWebPack.py:29
+msgid "US Google"
+msgstr "Google US"
+
+#: USWebConnectPack/USWebPack.py:31
+msgid "German Immigrants"
+msgstr "Les immigrants allemands"
+
+#: USWebConnectPack/USWebPack.py:35
+msgid "Free Rootsweb Site Search"
+msgstr "Recherche sur Free Rootsweb"
+
