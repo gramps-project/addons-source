@@ -400,9 +400,9 @@ class GraphvizSvgParser(object):
 
         # This dictionary maps various specific fonts to their generic font
         # types. Will need to include any truetype fonts here.
-        self.font_family_map = {"Times New Roman"   : "Times",
-                                "Times Roman,serif" : "Times",
-                                "Arial"             : "Helvetica"}
+        self.font_family_map = {"Times New Roman,serif"   : "Times",
+                                "Times Roman,serif"       : "Times",
+                                "Arial"                   : "Helvetica"}
         self.active_person = None
 
     def parse(self, ifile):
