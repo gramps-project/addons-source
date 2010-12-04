@@ -33,6 +33,7 @@ import gtk
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
+from Relationship import get_relationship_calculator
 from gen.lib import EventType, FamilyRelType
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
@@ -50,6 +51,7 @@ class DeepConnectionsGramplet(Gramplet):
     """
     def init(self):
         self.selected_handles = set()
+        self.relationship_calc = get_relationship_calculator()
         self.set_tooltip(_("Double-click name for details"))
         self.set_text(_("No Family Tree loaded."))
         self.set_use_markup(True)
@@ -138,8 +140,12 @@ class DeepConnectionsGramplet(Gramplet):
                     self.selected_handles.add(p.handle)
 
         if text != "self":
-            self.append_text(_("\n   who is a %s of ") % text)
+            self.append_text(_("\n   %s of ") % text)
             self.link(name_displayer.display_name(name), "Person", handle)
+            relationship = self.relationship_calc.get_one_relationship(
+                self.dbstate.db, self.default_person, person)
+            if relationship:
+                self.append_text(" [%s]" % relationship)
             if more_path is not None:
                 self.pretty_print(more_path)
 
@@ -149,18 +155,18 @@ class DeepConnectionsGramplet(Gramplet):
         """
         self.total_relations_found = 0
         yield True
-        default_person = self.dbstate.db.get_default_person()
+        self.default_person = self.dbstate.db.get_default_person()
         active_person = self.get_active_object("Person")
-        if default_person == None:
+        if self.default_person == None:
             self.set_text(_("No Home Person set."))
             return
         if active_person == None:
             self.set_text(_("No Active Person set."))
             return
         self.cache = set() 
-        self.queue = [(default_person.handle, 
-                       (None, (_("self"), default_person.handle, [])))]
-        default_name = default_person.get_primary_name()
+        self.queue = [(self.default_person.handle, 
+                       (None, (_("self"), self.default_person.handle, [])))]
+        default_name = self.default_person.get_primary_name()
         active_name = active_person.get_primary_name()
         self.set_text("")
         self.render_text((_("Looking for relationship between\n") +
@@ -169,6 +175,8 @@ class DeepConnectionsGramplet(Gramplet):
                          (name_displayer.display_name(default_name), 
                           name_displayer.display_name(active_name)))
         yield True
+        relationship = self.relationship_calc.get_one_relationship(
+            self.dbstate.db, self.default_person, active_person)
         while self.queue:
             current_handle, current_path = self.queue.pop(0)
             if current_handle == active_person.handle: 
@@ -176,11 +184,13 @@ class DeepConnectionsGramplet(Gramplet):
                 self.append_text(_("Found relation #%d: \n   ") % self.total_relations_found)
 
                 self.link(name_displayer.display_name(active_name), "Person", active_person.handle)
+                if relationship:
+                    self.append_text(" [%s]" % relationship)
                 self.selected_handles.clear()
                 self.selected_handles.add(active_person.handle)
                 self.pretty_print(current_path)
                 self.append_text("\n")
-                if default_person.handle != active_person.handle:
+                if self.default_person.handle != active_person.handle:
                     self.append_text(_("Paused.\nPress Continue to search for additional relations.\n"))
                     self.pause()
                     yield False

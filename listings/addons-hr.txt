@@ -24,7 +24,7 @@
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'export_django', 'n': 'Django Izvoz', 't': u'Exporter', 'v': '1.0.3', 'z': 'Django.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Uvoz Django', 't': u'Importer', 'v': '1.0.3', 'z': 'Django.addon.tgz'}
 {'d': 'Library for web site collections', 'g': '3.3', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libwebconnect.addon.tgz'}
-{'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'gramplet: duboka povezanost', 't': u'Gramplet', 'v': '1.0.5', 'z': 'DeepConnectionsGramplet.addon.tgz'}
+{'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'gramplet: duboka povezanost', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'gramplet: Unos podataka', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Proizvodi tekstualno izvje\xc5\xa1\xc4\x87e o spremi\xc5\xa1tima', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Proizvodi tekstualno izvje\xc5\xa1\xc4\x87e o spremi\xc5\xa1tima', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Izvje\xc5\xa1\xc4\x87e o spremi\xc5\xa1tima', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
@@ -60,5 +60,5 @@
 {'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.2', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.3', 'z': 'GraphView.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'gramplet: Python', 't': u'Gramplet', 'v': '1.0.2', 'z': 'PythonGramplet.addon.tgz'}
