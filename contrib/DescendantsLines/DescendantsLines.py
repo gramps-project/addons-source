@@ -42,11 +42,13 @@ from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
 from SubstKeywords import SubstKeywords
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator().gettext
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
 from gen.display.name import displayer as name_displayer
+from Filters import GenericFilterFactory, Rules
 
 #-------------------------------------------------------------------------
 import os.path
@@ -76,7 +78,7 @@ base_font_size = 12
 
 class DescendantsLinesReport(Report):
     """
-    FamilyTree Report class
+    DescendantsLines Report class
     """
     def __init__(self, database, options_class):
         """
@@ -108,26 +110,45 @@ class DescendantsLinesReport(Report):
 
         Report.__init__(self, database, options_class)
         self.database = database
-        #self.filter_option =  options_class.menu.get_option_by_name('filter')
-        #self.filter = self.filter_option.get_filter()
-        #pid = options_class.menu.get_option_by_name('pid').get_value()
-        #self.center_person = database.get_person_from_gramps_id(pid)
 
     def write_report(self):
         """
         The routine the actually creates the report. At this point, the document
         is opened and ready for writing.
         """
-
-        people = self.database.get_person_handles()
-        #persons = self.filter.apply(self.database, people)
-        #for entry in persons:
+        
+        pid = self.options_class.menu.get_option_by_name('pid').get_value()
+        self.center_person = self.database.get_person_from_gramps_id(pid)
+        # Descendant Families of ID
+        filter_class = GenericFilterFactory('Person')
+        filter = filter_class()
+        filter.add_rule(Rules.Person.IsDescendantFamilyOf([self.center_person, 0]))
+        plist = self.database.get_person_handles(sort_handles=False)
+        ind_list = filter.apply(self.database, plist)
+        #filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.gramps')
+        #filename = filename.encode(sys.getfilesystemencoding())
+        #from ExportXml import XmlWriter
+        #writer = XmlWriter(ind_list, msg_callback="", callback="", strip_photos=0, compress=1)
+        #writer.write(filename)
+        #filename = Utils.get_unicode_path_from_env_var(filename)
+        #for entry in tmp_data:
             #person = self.database.get_person_from_handle(entry)
             #name = name_displayer.display(person)
             #self.doc.start_paragraph('FT-name')
             #self.doc.write_text(name)
             #self.doc.end_paragraph()
-        main(sys.argv[1:])
+        
+        global font_name, base_font_size
+
+        #PYTHONPATH
+        input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
+        #input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'data.gramps')
+        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
+        #output_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.png')
+        head = pid
+
+        p = load_gramps(input_fn, head)
+        draw_file(p, output_fn, PNGWriter())
 
 def draw_text(text, x, y):
     (total_w, total_h) = size_text(text)
@@ -568,7 +589,10 @@ def load_gramps(fn, start):
         tfamilies[id] = fo
 
     def do_person(pid, expected_last=None):
-        po = tpeople[pid]
+        try:
+            po = tpeople[pid]
+        except KeyError:
+            po = tpeople['I27']
         p = Person(po.text(expected_last))
         if pid in parents:
             for fid in parents[pid]:
@@ -606,36 +630,6 @@ def draw_tree(head):
     set_line_style(ctx)
     head.draw()
 
-
-def draw_gtk(p):
-    win = gtk.Window()
-    win.set_title('Family tree')
-    win.connect('destroy', lambda widget: gtk.main_quit())
-
-    sw = gtk.ScrolledWindow()
-    win.add(sw)
-
-    da = gtk.DrawingArea()
-
-    def draw(widget, event):
-        global ctx
-        ctx = da.window.cairo_create()
-        draw_tree(p)
-
-        w = int(p.get('w') + 1)
-        h = int(p.get('h') + 1)
-        da.set_size_request(w, h)
-        w = min(w, 1200)
-
-        sw.set_size_request(w, h + 60)
-
-    da.connect('expose_event', draw)
-    sw.add_with_viewport(da)
-
-    win.show_all()
-    gtk.main()
-
-
 class PNGWriter:
 
     def start(
@@ -653,20 +647,6 @@ class PNGWriter:
         self.surface.write_to_png(self.fn)
 
 
-class PSWriter:
-
-    def start(
-        self,
-        fn,
-        w,
-        h,
-        ):
-        return cairo.PSSurface(fn, w, h)
-
-    def finish(self):
-        pass
-
-
 def draw_file(p, fn, writer):
     global ctx
 
@@ -680,69 +660,11 @@ def draw_file(p, fn, writer):
     draw_tree(p)
     ctx.show_page()
     writer.finish()
-
-
-def usage():
-    print """Usage: familytree [OPTION]...
-Generate graphical family trees from GRAMPS databases.
-
--i INPUT                     Use INPUT as input "data.gramps" file
--o OUTPUT                    Write output to OUTPUT in Postscript or PNG
-                             format depending on the filename (default:
-                             use GTK to display the output)
--h HEAD                      Use person with ID of HEAD as the top of
-                             the tree (default: I0000)
--f FONT                      Select font to use
--s SIZE                      Select base font size to use
---help                       Display this help and exit
-
-Report bugs to <ats-familytree@offog.org>."""
-
-
-def main(args):
-    global font_name, base_font_size
-
-    #PYTHONPATH
-    input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
-    output_fn = os.path.join(const.USER_HOME, 'data.png')
-    head = 'I27'
-
-    try:
-        (opts, args) = getopt.getopt(args, 'i:o:h:f:s:', ['help'])
-    except getopt.GetoptError, s:
-        print s
-        usage()
-        sys.exit(1)
-
-    for (o, a) in opts:
-        if o == '--help':
-            usage()
-            sys.exit(0)
-        elif o == '-i':
-            input_fn = a
-        elif o == '-o':
-            output_fn = a
-        elif o == '-h':
-            head = a
-        elif o == '-f':
-            font_name = a
-        elif o == '-s':
-            base_font_size = float(a)
-
-    p = load_gramps(input_fn, head)
-    if output_fn is None:
-        draw_gtk(p)
-    elif output_fn.lower().endswith('.png'):
-        draw_file(p, output_fn, PNGWriter())
-    elif output_fn.lower().endswith('.ps'):
-        draw_file(p, output_fn, PSWriter())
-    else:
-        print 'Unknown output format'
-        sys.exit(1)
+ 
 
 #------------------------------------------------------------------------
 #
-# FamilyTreeOptions
+# DescendantsLines
 #
 #------------------------------------------------------------------------
 class DescendantsLinesOptions(MenuReportOptions):
@@ -754,7 +676,6 @@ class DescendantsLinesOptions(MenuReportOptions):
     def __init__(self, name, dbase):
         self.__db = dbase
         self.__pid = None
-        self.__filter = None
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
@@ -764,16 +685,9 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         category_name = _('Report Options')
 
-        #self.__filter = FilterOption(_("Filter"), 0)
-        #self.__filter.set_help(_("Select filter to restrict people"))
-        #menu.add_option(category_name, "filter", self.__filter)
-
-        #self.__pid = PersonOption(_('Center Person'))
-        #self.__pid.set_help(_('The center person for the report'))
-        #menu.add_option(category_name, 'pid', self.__pid)
-        #self.__pid.connect('value-changed', self.__update_filters)
-
-        #self.__update_filters()
+        self.__pid = PersonOption(_('Center Person'))
+        self.__pid.set_help(_('The center person for the report'))
+        menu.add_option(category_name, 'pid', self.__pid)
         
         #S_DOWN = NumberOption(_("?"), 20, 1, 50)
         #S_DOWN.set_help(_("The number of ??? down"))
@@ -792,12 +706,3 @@ class DescendantsLinesOptions(MenuReportOptions):
         para.set_alignment(PARA_ALIGN_LEFT)
         para.set_description(_('The style used for the name of person.'))
         default_style.add_paragraph_style('FT-name', para)
-
-    def __update_filters(self):
-        """
-        Update the filter list based on the selected person
-        """
-        gid = self.__pid.get_value()
-        person = self.__db.get_person_from_gramps_id(gid)
-        filter_list = ReportUtils.get_person_filters(person, False)
-        self.__filter.set_filters(filter_list)
