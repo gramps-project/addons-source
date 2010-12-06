@@ -113,7 +113,7 @@ class DescendantsLinesReport(Report):
 
     def write_report(self):
         """
-        The routine the actually creates the report. At this point, the document
+        This routine actually creates the report. At this point, the document
         is opened and ready for writing.
         """
         
@@ -122,33 +122,51 @@ class DescendantsLinesReport(Report):
         # Descendant Families of ID
         filter_class = GenericFilterFactory('Person')
         filter = filter_class()
-        filter.add_rule(Rules.Person.IsDescendantFamilyOf([self.center_person, 0]))
+        filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
         plist = self.database.get_person_handles(sort_handles=False)
         ind_list = filter.apply(self.database, plist)
-        #filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.gramps')
-        #filename = filename.encode(sys.getfilesystemencoding())
-        #from ExportXml import XmlWriter
-        #writer = XmlWriter(ind_list, msg_callback="", callback="", strip_photos=0, compress=1)
-        #writer.write(filename)
-        #filename = Utils.get_unicode_path_from_env_var(filename)
+        self.write_tmp_data()
+        #PYTHONPATH
+        input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
+        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
+        self.paths(input_fn, output_fn)
+        
         #for entry in tmp_data:
             #person = self.database.get_person_from_handle(entry)
             #name = name_displayer.display(person)
             #self.doc.start_paragraph('FT-name')
             #self.doc.write_text(name)
             #self.doc.end_paragraph()
-        
+            
         global font_name, base_font_size
 
-        #PYTHONPATH
-        input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
-        #input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'data.gramps')
-        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
-        #output_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.png')
-        head = pid
-
-        p = load_gramps(input_fn, head)
+        p = load_gramps(input_fn, pid)
         draw_file(p, output_fn, PNGWriter())
+        
+    def write_tmp_data(self):
+        """
+        This routine generates a tmp XML database with only families descendants.
+        """
+        
+        #filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.gramps')
+        #filename = filename.encode(sys.getfilesystemencoding())
+        #from ExportXml import XmlWriter
+        #writer = XmlWriter(ind_list, msg_callback="", callback="", strip_photos=0, compress=1)
+        #writer.write(filename)
+        #filename = Utils.get_unicode_path_from_env_var(filename)
+        
+        # an alternative will be to export only person_handles matching filter
+        # and theirs related events. 
+        # To ignore others handles = smaller DOM parsing (memory limitation)
+        
+    def paths(self, input_fn, output_fn):
+        """
+        Set paths for input/output
+        """
+
+        input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'data.gramps')
+        output_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.png')
+        return (input_fn, output_fn)
 
 def draw_text(text, x, y):
     (total_w, total_h) = size_text(text)
