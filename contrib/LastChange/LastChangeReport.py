@@ -34,6 +34,7 @@ import time
 # gramps modules
 #
 #------------------------------------------------------------------------
+from gen.lib import Date
 import DateHandler
 from gen.plug import docgen
 from gen.plug.menu import BooleanListOption
