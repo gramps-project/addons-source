@@ -28,6 +28,7 @@ from libwebconnect import *
 # http://www.gramps-project.org/wiki/index.php?title=Resource_and_related_sites#French_resources
 #
 # http://www.bigenet.org/index.php ?
+# http://www.cybergenealogie.fr/cailgeo/us/screch.php
 
 WEBSITES = [
     ["Person", u"Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/genealogie/?action_type=search&lang=fr&search_nom=%(surname)s&search_prenom=%(given)s"],
@@ -38,8 +39,10 @@ WEBSITES = [
     ["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"],
     ["Person", "Roglo", "Roglo", "http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN"],
     ["Person", "FamilySearch-Beta", _("FamilySearch.org Beta"), "http://beta.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
+    ["Person", "CAILGEO", _("Cyber genealogy"), "http://www.cybergenealogie.fr/cailgeo/fr/cail01n.php?nomr=%(surname)s"],
     ["Person", "Gallica", "Gallica", '''http://gallica.bnf.fr/Search?ArianeWireIndex=index&p=1&lang=FR&q="%(surname)s,+%(given)s"'''],
     ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
+    ["Person", "GeneaBook", "GeneaBook", "http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
     ["Person", "FR-Google", _("FR Google"), '''http://www.google.fr/#hl=fr&q="%(surname)s,+%(given)s"'''],
     #["Place", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&place=%(city)s"],
     #["Place", u"Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=villages&d=villages&c=villages&f=results&p=&page=&lieu2=%(city)s"],
