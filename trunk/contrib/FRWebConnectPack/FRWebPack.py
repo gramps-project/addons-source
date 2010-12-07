@@ -32,7 +32,7 @@ from libwebconnect import *
 
 WEBSITES = [
     ["Person", u"Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/genealogie/?action_type=search&lang=fr&search_nom=%(surname)s&search_prenom=%(given)s"],
-    ["Person", "Geneabank", _("Genealogical bank"), "http://searchgbk.geneanet.org/result.php3?name=%(surname)s&place=%(place_title)s&start=&end=&source=gbk*"],
+    ["Person", "Geneabank", _("Genealogical bank"), "http://searchgbk.geneanet.org/result.php3?name=%(surname)s&place=&start=&end=&source=gbk*"],
     #["Person", u"Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
     ["Person", "Fichier Origine", _("OrigineFile (Quebec)"), "http://www.fichierorigine.com/recherche.php?nom=%(surname)s"],
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
