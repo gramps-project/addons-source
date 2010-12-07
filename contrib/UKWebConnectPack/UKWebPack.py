@@ -26,6 +26,7 @@ from libwebconnect import *
 WEBSITES = [
     ['Person', "UK-Google", _("UK Google"), '''http://www.google.co.uk/#hl=en&q="%(surname)s,+%(given)s"'''],
     ["Person", "Userdb-rootsweb", _("British, UK, and Ireland"), "http://userdb.rootsweb.ancestry.com/uki/cgi-bin/uki.cgi?surname=%(surname)s&fname=%(given)s"],
+    ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
