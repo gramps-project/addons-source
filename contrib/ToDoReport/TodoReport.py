@@ -39,7 +39,8 @@ from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
 from gen.lib import MarkerType
 from gen.plug.menu import EnumeratedListOption, BooleanOption
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 _REF_HANDLE_POS = 0
 _NOTE_HANDLE_POS = 1
