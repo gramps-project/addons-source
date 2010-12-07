@@ -52,7 +52,8 @@ from gen.plug import docgen
 from gen.plug.docgen import fontscale
 from gen.plug.menu import BooleanOption, NumberOption, PersonOption
 #from gen.plug.menu import TextOption
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 try:
     # v3.2
     from ReportBase import MenuReportOptions

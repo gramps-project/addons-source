@@ -29,7 +29,6 @@
 # python modules
 #
 #------------------------------------------------------------------------
-from gen.ggettext import gettext as _
 import time
 
 #------------------------------------------------------------------------
@@ -51,6 +50,8 @@ from Simple import make_basic_stylesheet, SimpleAccess, SimpleDoc, SimpleTable
 from QuestionDialog import QuestionDialog
 from Utils import create_id, probably_alive_range
 import DateHandler
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
 #
