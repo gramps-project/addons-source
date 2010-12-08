@@ -32,7 +32,8 @@ import time
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.lib.date import Date
-from gen.ggettext import sgettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 import DateHandler
 
 #------------------------------------------------------------------------

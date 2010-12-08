@@ -41,7 +41,8 @@ from gen.plug.menu import BooleanListOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
-from gettext import gettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 _UNKNOWN_FAMILY = "*unknown*"
 
