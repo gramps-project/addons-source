@@ -31,6 +31,8 @@ import gzip
 import xml.dom.minidom
 import getopt
 import sys
+import codecs
+import os.path
 #-------------------------------------------------------------------------
 #
 # gramps modules
@@ -41,7 +43,7 @@ from gen.plug.menu import NumberOption, PersonOption, FilterOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
-from SubstKeywords import SubstKeywords
+# libsubstkeyword
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
@@ -49,10 +51,9 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
 from gen.display.name import displayer as name_displayer
 from Filters import GenericFilterFactory, Rules
-
-#-------------------------------------------------------------------------
-import os.path
 import const
+import gen.lib
+
 #-------------------------------------------------------------------------
 #
 # variables
@@ -75,6 +76,16 @@ TEXT_LINE_PAD = 2
 ctx = None
 font_name = 'sans-serif'
 base_font_size = 12
+
+_event_cache = {}
+
+def find_event(database, handle):
+    if handle in _event_cache:
+        obj = _event_cache[handle]
+    else:
+        obj = database.get_event_from_handle(handle)
+        _event_cache[handle] = obj
+    return obj
 
 class DescendantsLinesReport(Report):
     """
@@ -125,30 +136,49 @@ class DescendantsLinesReport(Report):
         filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
         plist = self.database.get_person_handles(sort_handles=False)
         ind_list = filter.apply(self.database, plist)
-        self.write_tmp_data()
-        #PYTHONPATH
-        input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
-        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
-        self.paths(input_fn, output_fn)
+        #filter.add_rule(Rules.Person.IsSpouseOfFilterMatch(ind_list))
+        #slist = filter.apply(self.database, ind_list)
+        #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(ind_list))
+        #alist = filter.apply(self.database, ind_list)
+        #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(slist))
+        #blist = filter.apply(self.database, nlist)
+        #ind_list = ind_list + slist + alist + blist
+        ind_list = plist
+                
+        # Pass 1
+        self.write_tmp_data(ind_list)
         
-        #for entry in tmp_data:
-            #person = self.database.get_person_from_handle(entry)
-            #name = name_displayer.display(person)
-            #self.doc.start_paragraph('FT-name')
-            #self.doc.write_text(name)
-            #self.doc.end_paragraph()
+        # For printing something !
+        nbr = 0
+        for children in ind_list:
+            nbr += 1
+            person = self.database.get_person_from_handle(children)
+            self.doc.start_paragraph('DL-name')
+            text = ("%(nbr)s. %(id)s - %(name)s" % 
+                                {'nbr' : nbr,
+                                 'id'  : person.get_gramps_id(),
+                                 'name' : name_displayer.display(person)})
+            self.doc.write_text(text)
+            self.doc.end_paragraph()
+        # end of print test
             
+        #PYTHONPATH
+        input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
+        #input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
+        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
+        
+        # Pass 2    
         global font_name, base_font_size
 
         p = load_gramps(input_fn, pid)
         draw_file(p, output_fn, PNGWriter())
         
-    def write_tmp_data(self):
+    def write_tmp_data(self, ind_list):
         """
         This routine generates a tmp XML database with only families descendants.
         """
         
-        #filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.gramps')
+        filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
         #filename = filename.encode(sys.getfilesystemencoding())
         #from ExportXml import XmlWriter
         #writer = XmlWriter(ind_list, msg_callback="", callback="", strip_photos=0, compress=1)
@@ -158,16 +188,111 @@ class DescendantsLinesReport(Report):
         # an alternative will be to export only person_handles matching filter
         # and theirs related events. 
         # To ignore others handles = smaller DOM parsing (memory limitation)
+                  
+        xml_file = open(filename, "w")
+        self.xml_file = codecs.getwriter("utf8")(xml_file)
+        self.write_xml_head()
+        self.xml_file.write('<events>\n')
+        for child in ind_list:
+            person = self.database.get_person_from_handle(child)
+            for event_ref in person.get_event_ref_list():
+                if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
+                    self.write_xml_event(event_ref)
+        self.xml_file.write('</events>\n')
+        self.xml_file.write('<people>\n')
+        for child in ind_list:
+            person = self.database.get_person_from_handle(child)
+            identifiant = person.get_gramps_id()
+            if person.get_gender() == gen.lib.Person.MALE:
+                gender = 'M'
+            elif person.get_gender() == gen.lib.Person.FEMALE:
+                gender = 'F'
+            else:
+                gender = 'U'
+            name = person.get_primary_name()
+            first = name.get_first_name()
+            for surname in name.get_surname_list():
+                surname = surname.get_surname()
+            event_list = person.get_event_ref_list()
+            self.write_xml_person(identifiant, child, gender, first, surname, event_list)
+        self.xml_file.write('</people>\n')
+        self.xml_file.write('<families>\n')
+        for child in ind_list:
+            person = self.database.get_person_from_handle(child)
+            # only family where person is the children
+            for handle in person.get_parent_family_handle_list():
+                fam = self.database.get_family_from_handle(handle)
+                self.write_xml_family(fam)
+        self.xml_file.write('</families>\n')
+        self.write_xml_end()
+        xml_file.close()
+    
+    def write_xml_head(self):
+        """
+        Writes the header part of the kml/kmz file.
+        """
+        self.xml_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        self.xml_file.write('<!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML 1.4.0//EN"\n')
+        self.xml_file.write('"http://gramps-project.org/xml/1.4.0/grampsxml.dtd">\n')
+        self.xml_file.write('<database xmlns="http://gramps-project.org/xml/1.4.0/">\n')
+
+    def write_xml_event(self, event_ref):
+        """
+        Writes the event part of the xml file.
+        """
         
-    def paths(self, input_fn, output_fn):
+        event = find_event(self.database, event_ref.ref)
+        etype = event.get_type().xml_str()
+        date = event.get_date_object()
+        
+        self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
+        self.xml_file.write('<type>%s</type>\n' % etype)
+        self.xml_file.write('<dateval val="%s"/>\n' % date)
+        self.xml_file.write('</event>\n')
+        
+    def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
         """
-        Set paths for input/output
+        Writes the person part of the xml file.
         """
-
-        input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'data.gramps')
-        output_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.png')
-        return (input_fn, output_fn)
-
+                 
+        self.xml_file.write('<person id="%s" handle="%s">\n' % (identifiant, child))
+        self.xml_file.write('<gender>%s</gender>\n' % gender)
+        self.xml_file.write('<name>\n')
+        if first:
+            self.xml_file.write('<first>%s</first>\n' % first)
+        if surname:
+            self.xml_file.write('<last>%s</last>\n' % surname)
+        self.xml_file.write('</name>\n')
+        for event_ref in event_list:
+                if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
+                    event = find_event(self.database, event_ref.ref)
+                    self.xml_file.write('<eventref hlink="%s"/>\n' % event.handle)
+        self.xml_file.write('</person>\n')
+        
+    def write_xml_family(self, fam):
+        """
+        Writes the family part of the xml file.
+        """
+        fhandle = fam.get_father_handle()
+        mhandle = fam.get_mother_handle()
+        children = fam.get_child_ref_list()
+        
+        self.xml_file.write('<family id="%s" handle="%s">\n' % (fam.get_gramps_id(), fam.handle))
+        if fhandle:
+            self.xml_file.write('<father hlink="%s"/>\n' % fhandle)
+        if mhandle:
+            self.xml_file.write('<mother hlink="%s"/>\n' % mhandle)
+        for handle in children:
+            child = self.database.get_person_from_handle(handle.ref)
+            self.xml_file.write('<childref hlink="%s"/>\n' % child.handle)
+        self.xml_file.write('</family>\n')
+        
+    def write_xml_end(self):
+        """
+        Writes the close part of the xml file.
+        """
+        self.xml_file.write('</database>\n')
+        
 def draw_text(text, x, y):
     (total_w, total_h) = size_text(text)
     for (size, color, line) in text:
@@ -473,7 +598,8 @@ class Family(Memorised):
 
 
 def load_gramps(fn, start):
-    f = gzip.open(fn, 'r')
+    f = open(fn, 'r')
+    #f = gzip.open(fn, 'r')
     x = xml.dom.minidom.parse(f)
     f.close()
 
@@ -558,10 +684,10 @@ def load_gramps(fn, start):
 
     events = x.getElementsByTagName('events')[0]
     for ev in events.getElementsByTagName('event'):
-        pid = eventtoid.get(ev.getAttribute('handle'))
-        if pid is None:
+        p_id = eventtoid.get(ev.getAttribute('handle'))
+        if p_id is None:
             continue
-        po = tpeople[pid]
+        po = tpeople[p_id]
         etype = get_text(ev.getElementsByTagName('type'))
         dvs = ev.getElementsByTagName('dateval')
         if len(dvs) == 0:
@@ -593,6 +719,9 @@ def load_gramps(fn, start):
     parents = {}
     tfamilies = {}
     families = x.getElementsByTagName('families')[0]
+    
+    # TODO: need to use new filter rules for matching this on tmp XML file
+    
     for f in families.getElementsByTagName('family'):
         id = f.getAttribute('id')
         fo = InFamily()
@@ -606,17 +735,14 @@ def load_gramps(fn, start):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
 
-    def do_person(pid, expected_last=None):
-        try:
-            po = tpeople[pid]
-        except KeyError:
-            po = tpeople['I27']
+    def do_person(p_id, expected_last=None):
+        po = tpeople[p_id]
         p = Person(po.text(expected_last))
-        if pid in parents:
-            for fid in parents[pid]:
+        if p_id in parents:
+            for fid in parents[p_id]:
                 fo = tfamilies[fid]
-                if fo.spouse(pid):
-                    spo = tpeople[fo.spouse(pid)]
+                if fo.spouse(p_id):
+                    spo = tpeople[fo.spouse(p_id)]
                     fm = Family(p, Person(spo.text()))
                     last = po.last
                     if spo.gender == 'M':
@@ -723,4 +849,4 @@ class DescendantsLinesOptions(MenuReportOptions):
         para.set_font(font)
         para.set_alignment(PARA_ALIGN_LEFT)
         para.set_description(_('The style used for the name of person.'))
-        default_style.add_paragraph_style('FT-name', para)
+        default_style.add_paragraph_style('DL-name', para)
