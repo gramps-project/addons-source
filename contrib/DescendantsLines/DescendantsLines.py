@@ -141,7 +141,7 @@ class DescendantsLinesReport(Report):
         #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(ind_list))
         #alist = filter.apply(self.database, ind_list)
         #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(slist))
-        #blist = filter.apply(self.database, nlist)
+        #blist = filter.apply(self.database, slist)
         #ind_list = ind_list + slist + alist + blist
         ind_list = plist
                 
@@ -229,7 +229,7 @@ class DescendantsLinesReport(Report):
     
     def write_xml_head(self):
         """
-        Writes the header part of the kml/kmz file.
+        Writes the header part of the xml file.
         """
         self.xml_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         self.xml_file.write('<!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML 1.4.0//EN"\n')
