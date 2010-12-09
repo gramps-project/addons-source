@@ -39,6 +39,7 @@ import os.path
 #
 #-------------------------------------------------------------------------
 
+import DateHandler
 from gen.plug.menu import NumberOption, PersonOption, FilterOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
@@ -244,10 +245,12 @@ class DescendantsLinesReport(Report):
         event = find_event(self.database, event_ref.ref)
         etype = event.get_type().xml_str()
         date = event.get_date_object()
+        local_date = DateHandler.displayer.display(date)
         
         self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
         self.xml_file.write('<type>%s</type>\n' % etype)
-        self.xml_file.write('<dateval val="%s"/>\n' % date)
+        if date:
+            self.xml_file.write('<dateval val="%s"/>\n' % local_date)
         self.xml_file.write('</event>\n')
         
     def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
