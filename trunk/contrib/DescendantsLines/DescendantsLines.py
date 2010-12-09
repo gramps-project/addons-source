@@ -130,7 +130,9 @@ class DescendantsLinesReport(Report):
         """
         
         pid = self.options_class.menu.get_option_by_name('pid').get_value()
+        
         self.center_person = self.database.get_person_from_gramps_id(pid)
+        
         # Descendant Families of ID
         filter_class = GenericFilterFactory('Person')
         filter = filter_class()
@@ -823,6 +825,19 @@ class DescendantsLinesOptions(MenuReportOptions):
     def __init__(self, name, dbase):
         self.__db = dbase
         self.__pid = None
+        self.__S_DOWN = 20
+        self.__S_UP = 10
+        self.__S_VPAD = 10
+        self.__FL_PAD = 20
+        self.__OL_PAD = 10
+        self.__O_DOWN = 30
+        self.__C_PAD = 10
+        self.__F_PAD = 20
+        self.__C_UP = 15
+        self.__SP_PAD = 10
+        self.__MIN_C_WIDTH = 40
+        self.__TEXT_PAD = 2
+        self.__TEXT_LINE_PAD = 2
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
@@ -835,10 +850,69 @@ class DescendantsLinesOptions(MenuReportOptions):
         self.__pid = PersonOption(_('Center Person'))
         self.__pid.set_help(_('The center person for the report'))
         menu.add_option(category_name, 'pid', self.__pid)
+
+        category_name = _('Options S')
+       
+        self.__S_DOWN = NumberOption(_("S_DOWN"), 20, 0, 50)
+        self.__S_DOWN.set_help(_("The number of ??? down"))
+        menu.add_option(category_name, "S_DOWN", self.__S_DOWN)
         
-        #S_DOWN = NumberOption(_("?"), 20, 1, 50)
-        #S_DOWN.set_help(_("The number of ??? down"))
-        #menu.add_option(category_name, "S_DOWN", S_DOWN)
+        self.__S_UP = NumberOption(_("S_UP"), 10, 0, 50)
+        self.__S_UP.set_help(_("The number of ??? up"))
+        menu.add_option(category_name, "S_UP", self.__S_UP)
+        
+        self.__S_VPAD = NumberOption(_("S_VPAD"), 10, 0, 50)
+        self.__S_VPAD.set_help(_("The number of ??? vpad"))
+        menu.add_option(category_name, "S_VPAD", self.__S_VPAD)
+        
+        self.__SP_PAD = NumberOption(_("SP_PAD"), 10, 0, 50)
+        self.__SP_PAD.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "SP_PAD", self.__SP_PAD)
+        
+        category_name = _('Options F')
+        
+        self.__F_PAD = NumberOption(_("F_PAD"), 20, 0, 50)
+        self.__F_PAD.set_help(_("The number of ??? down"))
+        menu.add_option(category_name, "F_PAD", self.__F_PAD)
+        
+        self.__FL_PAD = NumberOption(_("FL_PAD"), 20, 0, 50)
+        self.__FL_PAD.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "FL_PAD", self.__FL_PAD)
+        
+        category_name = _('Options O')
+        
+        self.__OL_PAD = NumberOption(_("OL_PAD"), 10, 0, 50)
+        self.__OL_PAD.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "OL_PAD", self.__OL_PAD)
+        
+        self.__O_DOWN = NumberOption(_("O_DOWN"), 30, 0, 50)
+        self.__O_DOWN.set_help(_("The number of ??? down"))
+        menu.add_option(category_name, "O_DOWN", self.__O_DOWN)
+        
+        category_name = _('Options C')
+        
+        self.__C_PAD = NumberOption(_("C_PAD"), 10, 0, 50)
+        self.__C_PAD.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "C_PAD", self.__C_PAD)
+    
+        self.__C_UP = NumberOption(_("C_UP"), 15, 0, 50)
+        self.__C_UP.set_help(_("The number of ??? up"))
+        menu.add_option(category_name, "C_UP", self.__C_UP)
+        
+        self.__MIN_C_WIDTH = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
+        self.__MIN_C_WIDTH.set_help(_("The number of ??? min width"))
+        menu.add_option(category_name, "MIN_C_WIDTH", self.__MIN_C_WIDTH)
+        
+        category_name = _('Options Text')
+        
+        self.__TEXT_PAD = NumberOption(_("TEXT_PAD"), 2, 0, 50)
+        self.__TEXT_PAD.set_help(_("The number of text pad ???"))
+        menu.add_option(category_name, "TEXT_PAD", self.__TEXT_PAD)
+        
+        self.__TEXT_LINE_PAD = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
+        self.__TEXT_LINE_PAD.set_help(_("The number of text line pad ??? "))
+        menu.add_option(category_name, "TEXT_LINE_PAD", self.__TEXT_LINE_PAD)
+        
 
     def make_default_style(self, default_style):
         """Make the default output style"""
