@@ -87,7 +87,8 @@ def find_event(database, handle):
         obj = database.get_event_from_handle(handle)
         _event_cache[handle] = obj
     return obj
-
+    
+    
 class DescendantsLinesReport(Report):
     """
     DescendantsLines Report class
@@ -133,25 +134,35 @@ class DescendantsLinesReport(Report):
         
         self.center_person = self.database.get_person_from_gramps_id(pid)
         
+        # Who is missing on filter ?
         # Descendant Families of ID
-        filter_class = GenericFilterFactory('Person')
-        filter = filter_class()
-        filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
-        plist = self.database.get_person_handles(sort_handles=False)
-        ind_list = filter.apply(self.database, plist)
+        #filter_class = GenericFilterFactory('Person')
+        #filter = filter_class()
+        #filter.add_rule(Rules.Person.IsDescendantOf([pid, 1]))
+        
+        plist = self.database.get_person_handles()
+        
+        #ind_list = filter.apply(self.database, plist)
         #filter.add_rule(Rules.Person.IsSpouseOfFilterMatch(ind_list))
         #slist = filter.apply(self.database, ind_list)
-        #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(ind_list))
+        #filter.add_rule(Rules.Person.IsAncestorOf([pid, 0]))
         #alist = filter.apply(self.database, ind_list)
         #filter.add_rule(Rules.Person.IsAncestorOfFilterMatch(slist))
         #blist = filter.apply(self.database, slist)
         #ind_list = ind_list + slist + alist + blist
+        
         ind_list = plist
                 
         # Pass 1
+        
         self.write_tmp_data(ind_list)
         
         # For printing something !
+        
+        self.doc.start_paragraph('DL-name')
+        text = "List of persons in the database:\n"
+        self.doc.write_text(text)
+        self.doc.end_paragraph()
         nbr = 0
         for children in ind_list:
             nbr += 1
@@ -163,14 +174,16 @@ class DescendantsLinesReport(Report):
                                  'name' : name_displayer.display(person)})
             self.doc.write_text(text)
             self.doc.end_paragraph()
+            
         # end of print test
             
         #PYTHONPATH
+        
         input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
-        #input_fn = os.path.join(const.PREFIXDIR, 'example', 'gramps', 'data.gramps')
         output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
         
-        # Pass 2    
+        # Pass 2  
+          
         global font_name, base_font_size
 
         p = load_gramps(input_fn, pid)
@@ -182,19 +195,11 @@ class DescendantsLinesReport(Report):
         """
         
         filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
-        #filename = filename.encode(sys.getfilesystemencoding())
-        #from ExportXml import XmlWriter
-        #writer = XmlWriter(ind_list, msg_callback="", callback="", strip_photos=0, compress=1)
-        #writer.write(filename)
-        #filename = Utils.get_unicode_path_from_env_var(filename)
-        
-        # an alternative will be to export only person_handles matching filter
-        # and theirs related events. 
-        # To ignore others handles = smaller DOM parsing (memory limitation)
                   
         xml_file = open(filename, "w")
         self.xml_file = codecs.getwriter("utf8")(xml_file)
         self.write_xml_head()
+        
         self.xml_file.write('<events>\n')
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
@@ -202,6 +207,7 @@ class DescendantsLinesReport(Report):
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
                     self.write_xml_event(event_ref)
         self.xml_file.write('</events>\n')
+        
         self.xml_file.write('<people>\n')
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
@@ -219,14 +225,24 @@ class DescendantsLinesReport(Report):
             event_list = person.get_event_ref_list()
             self.write_xml_person(identifiant, child, gender, first, surname, event_list)
         self.xml_file.write('</people>\n')
+        
         self.xml_file.write('<families>\n')
+        
+        # avoid duplicated families
+        
+        fams = self.database.get_family_handles()
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
+            
             # only family where person is the children
+            
             for handle in person.get_parent_family_handle_list():
                 fam = self.database.get_family_from_handle(handle)
-                self.write_xml_family(fam)
+                if handle in fams:
+                    self.write_xml_family(fam)
+                    fams.remove(handle)
         self.xml_file.write('</families>\n')
+        
         self.write_xml_end()
         xml_file.close()
     
@@ -252,6 +268,9 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
         self.xml_file.write('<type>%s</type>\n' % etype)
         if date:
+            
+            # DTD needs date object, use translated date for report 
+            
             self.xml_file.write('<dateval val="%s"/>\n' % local_date)
         self.xml_file.write('</event>\n')
         
@@ -872,7 +891,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         category_name = _('Options F')
         
         self.__F_PAD = NumberOption(_("F_PAD"), 20, 0, 50)
-        self.__F_PAD.set_help(_("The number of ??? down"))
+        self.__F_PAD.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "F_PAD", self.__F_PAD)
         
         self.__FL_PAD = NumberOption(_("FL_PAD"), 20, 0, 50)
