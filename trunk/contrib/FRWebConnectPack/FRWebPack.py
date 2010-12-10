@@ -22,6 +22,8 @@
 # $Id: $
 
 from libwebconnect import *
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 # Format: [[nav_type, id, name, url_pattern], ...]
 
