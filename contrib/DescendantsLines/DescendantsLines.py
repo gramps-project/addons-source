@@ -138,6 +138,7 @@ class DescendantsLinesReport(Report):
         # Descendant Families of ID
         #filter_class = GenericFilterFactory('Person')
         #filter = filter_class()
+        #filter.add_rule(Rules.Person.IsDescendantFamilysOf([pid, 1]))
         #filter.add_rule(Rules.Person.IsDescendantOf([pid, 1]))
         
         plist = self.database.get_person_handles()
@@ -160,13 +161,13 @@ class DescendantsLinesReport(Report):
         # For printing something !
         
         self.doc.start_paragraph('DL-name')
-        text = "List of persons in the database:\n"
+        text = _("List of persons in the database:\n")
         self.doc.write_text(text)
         self.doc.end_paragraph()
         nbr = 0
-        for children in ind_list:
+        for child in ind_list:
             nbr += 1
-            person = self.database.get_person_from_handle(children)
+            person = self.database.get_person_from_handle(child)
             self.doc.start_paragraph('DL-name')
             text = ("%(nbr)s. %(id)s - %(name)s" % 
                                 {'nbr' : nbr,
@@ -234,7 +235,7 @@ class DescendantsLinesReport(Report):
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
             
-            # only family where person is the children
+            # only family where person is the child
             
             for handle in person.get_parent_family_handle_list():
                 fam = self.database.get_family_from_handle(handle)
@@ -679,9 +680,9 @@ def load_gramps(fn, start):
                      last_col, last)]
 
             if self.birth is not None:
-                s.append((life_size, life_col, 'b. ' + self.birth))
+                s.append((life_size, life_col, _('b. ') + self.birth))
             if self.death is not None:
-                s.append((life_size, life_col, 'd. ' + self.death))
+                s.append((life_size, life_col, _('d. ') + self.death))
 
             return s
 
@@ -775,6 +776,7 @@ def load_gramps(fn, start):
                         cpo = tpeople[cpid]
                         fm.add_child(do_person(cpid, last))
                 else:
+                    print 'Unknown spouse:', p_id
                     pass
         return p
 
