@@ -1,0 +1,160 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-11 13:08+0100\n"
+"PO-Revision-Date: 2010-12-11 13:14+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: DescendantsLines/DescendantsLines.py:869
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: DescendantsLines/DescendantsLines.py:871
+msgid "Center Person"
+msgstr "Centrer sur l'individu"
+
+#: DescendantsLines/DescendantsLines
+msgid "The center person for the report"
+msgstr "L'individu central pour ce rapport"
+
+#: DescendantsLines/DescendantsLines.py:875
+msgid "Options S"
+msgstr "Options S"
+
+#: DescendantsLines/DescendantsLines.py:877
+msgid "S_DOWN"
+msgstr "S_BAS"
+
+#: DescendantsLines/DescendantsLines.py:878
+#: DescendantsLines/DescendantsLines.py:910
+msgid "The number of ??? down"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:881
+msgid "S_UP"
+msgstr "S_HAUT"
+
+#: DescendantsLines/DescendantsLines.py:882
+#: DescendantsLines/DescendantsLines.py:920
+msgid "The number of ??? up"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:885
+msgid "S_VPAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:886
+msgid "The number of ??? vpad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:889
+msgid "SP_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:890
+#: DescendantsLines/DescendantsLines.py:896
+#: DescendantsLines/DescendantsLines.py:900
+#: DescendantsLines/DescendantsLines.py:906
+#: DescendantsLines/DescendantsLines.py:916
+msgid "The number of ??? pad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:893
+msgid "Options F"
+msgstr "Options F"
+
+#: DescendantsLines/DescendantsLines.py:895
+msgid "F_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:899
+msgid "FL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:903
+msgid "Options O"
+msgstr "Options O"
+
+#: DescendantsLines/DescendantsLines.py:905
+msgid "OL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:909
+msgid "O_DOWN"
+msgstr "O_BAS"
+
+#: DescendantsLines/DescendantsLines.py:913
+msgid "Options C"
+msgstr "Options C"
+
+#: DescendantsLines/DescendantsLines.py:915
+msgid "C_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:919
+msgid "C_UP"
+msgstr "C_HAUT"
+
+#: DescendantsLines/DescendantsLines.py:923
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_LARGEUR"
+
+#: DescendantsLines/DescendantsLines.py:924
+msgid "The number of ??? min width"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:927
+msgid "Options Text"
+msgstr "Options du texte"
+
+#: DescendantsLines/DescendantsLines.py:929
+msgid "TEXT_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:930
+msgid "The number of text pad ???"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:933
+msgid "TEXT_LINE_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:934
+msgid "The number of text line pad ??? "
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:949
+msgid "The style used for the name of person."
+msgstr "Style pour le nom de l'individu."
+
+#: DescendantsLines/DescendantsLines.gpr.py:22
+msgid "Descendants Lines"
+msgstr "Lignes des descendants"
+
+#: DescendantsLines/DescendantsLines.gpr.py:23
+msgid "Produces descendants lines of a person"
+msgstr "Produit les lignes de descendants de l'individu"
+
+#: DescendantsLines/DescendantsLines.py:164
+msgid "List of persons in the database:\n"
+msgstr "Liste des individus dans la base de données:\n"
+
+#: DescendantsLines/DescendantsLines.py:683
+msgid "b. "
+msgstr "n. "
+
+#: DescendantsLines/DescendantsLines.py:685
+msgid "d. "
+msgstr "d. "
+
