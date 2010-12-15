@@ -190,7 +190,7 @@ elif command == "update":
     system('''msginit --locale=%(locale)s '''
                '''--input="%(addon)s/po/template.pot" '''
                '''--output="%(addon)s/po/%(locale)s.po"''')
-    # Overwrite existing local translation with last data:
+    # Merge existing local translation with last data:
     system('''msgmerge %(addon)s/po/%(locale)s-local.po '''
            '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
