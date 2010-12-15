@@ -181,13 +181,18 @@ elif command == "update":
         raise ValueError(r('''%(addon)s/po/template.pot'''
                            ''' is missing!\n  run '''
                            '''./make.py init %(addon)s'''))
-    # Update the local header:
-    system('''msginit --locale=%(locale)s ''' 
+    # Check existing translation
+    if not os.path.isfile(r('''%(addon)s/po/%(locale)s-local.po''')):
+        raise ValueError(r('''%(addon)s/po/%(locale)s-local.po'''
+                           ''' is missing!\n run '''
+                           '''./make.py init %(addon)s %(locale)s'''))
+    # Retrieve updated data for locale:
+    system('''msginit --locale=%(locale)s '''
                '''--input="%(addon)s/po/template.pot" '''
-               '''--output="%(addon)s/po/%(locale)s-local.po"''')
-    # Overwrite existing local translation with last template:
-    system('''msgmerge %(addon)s/po/template.pot''' 
-           ''' %(addon)s/po/%(locale)s-local.po'''
+               '''--output="%(addon)s/po/%(locale)s.po"''')
+    # Overwrite existing local translation with last data:
+    system('''msgmerge %(addon)s/po/%(locale)s-local.po '''
+           '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
     locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
