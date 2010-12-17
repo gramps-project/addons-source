@@ -43,6 +43,7 @@ from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
+from gen.lib import Date
 
 _UNKNOWN_FAMILY = "*unknown*"
 
