@@ -240,8 +240,8 @@ class ImageMetadataGramplet(Gramplet):
         media_exists = os.path.isfile( self.image_path )
 
         if not media_exists:
-            WarningDialog(_( "This image does NOT exists on this computer.  Please "
-                             "select another image."))
+            print(_( "This image does NOT exists on this computer.  Please "
+                     "select another image."))
             return False
 
         self.mime_type = self.orig_image.get_mime_type()
@@ -250,8 +250,8 @@ class ImageMetadataGramplet(Gramplet):
         if self.mime_type.startswith("image/"):
             self.ftype, self.imgtype = self.mime_type.split("/")
             if self.imgtype not in img_types:
-                WarningDialog(_( "The image type of this media object is NOT usable "
-                                 "by this addon.  Please select another image..." ))
+                print(_( "The image type of this media object is NOT usable "
+                         "by this addon.  Please select another image..." ))
                 return False
 
         # get image read/ write permissions
@@ -462,8 +462,8 @@ class ImageMetadataGramplet(Gramplet):
             return
 
         if self.imgtype not in img_types:
-            WarningDialog(_( "The image type of this media object is NOT usable "
-                             "by this addon.  Please select another image..." ))
+            print(_( "The image type of this media object is NOT usable "
+                     "by this addon.  Please select another image..." ))
             return
 
         # check to see if we have both latitude/ longitude, if one exists
@@ -677,7 +677,7 @@ class ImageMetadataGramplet(Gramplet):
                                     self.subject += "," 
                                     index += 1
         except IOError:
-            WarningDialog(_("The file type of this media object can not be determined!"))
+            print(_("The file type of this media object can not be determined!"))
 
     def select_date(self, obj):
         """
