@@ -3416,7 +3416,7 @@
     </census>
 
     <census id="CA1861EW"
-        title="1861 Canada West Census"
+        title="1861 Canada East and West Census"
         date="1/14/1861">
 
         <heading>
@@ -4956,8 +4956,8 @@
         </column>
     </census>
 
-    <census id="CA1901-A1"
-        title="1911 Canadian Census: Schedule A1 "
+    <census id="CA1911-A1"
+        title="1911 Canadian Census: Schedule A1"
         date="6/1/1911">
 
         <heading>
