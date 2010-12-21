@@ -435,14 +435,13 @@ class CensusEditor(ManagedWindow.ManagedWindow):
 
         for index, name in enumerate(columns):
             renderer = gtk.CellRendererText()
-            if index > 0:
-                renderer.set_property('editable', True)
-                renderer.connect('edited', self.__cell_edited,
-                                                (self.model, index + 1))
+            renderer.set_property('editable', True)
+            renderer.connect('edited', self.__cell_edited,
+                                            (self.model, index + 1))
             column = gtk.TreeViewColumn(name, renderer, text=index + 1)
             self.view.append_column(column)
         self.view.connect("row-activated", self.__edit_person)
-
+    
     def __populate_gui(self, event):
         """
         Populate the GUI for a given census event.
@@ -545,7 +544,12 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         row = [None] * (len(self.columns) + 1)
         row[0] = person.handle
-        row[1] = name_displayer.display(person)
+
+        # Insert name in column called "Name", if present
+        try:
+            row[self.columns.index("Name") + 1] = name_displayer.display(person)
+        except ValueError:
+            pass
         return row
 
     def __remove_person(self, button):
