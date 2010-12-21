@@ -2850,4 +2850,305 @@
             <size>25</size>
         </column>
     </census>
+
+    <census id="CA1851EW-A"
+        title="1851 Canadian Census"
+        date="11 Jan 1851">
+
+        <heading>
+            <_attribute>Schedule</_attribute>
+            <_longname>Schedule A: Personal Census</_longname>
+            <size>20</size>
+        </heading>
+
+        <heading>
+            <_attribute>EnumDistrictNo</_attribute>
+            <_longname>Enumeration District No.</_longname>
+            <size>3</size>
+        </heading>
+
+        <heading>
+            <_attribute>Township</_attribute>
+            <_longname>Township</_longname>
+            <size>20</size>
+        </heading>
+
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>County</_longname>
+            <size>20</size>
+        </heading>
+
+        <heading>
+            <_attribute>Comprising</_attribute>
+            <_longname>Comprising</_longname>
+            <size>20</size>
+        </heading>
+
+        <heading>
+            <_attribute>OfTheSaid</_attribute>
+            <_longname>of the said</_longname>
+            <size>20</size>
+        </heading>
+
+        <heading>
+            <_attribute>Enumerator</_attribute>
+            <_longname>Enumerator</_longname>
+            <size>20</size>
+        </heading>
+
+        <column>
+            <_attribute>Line</_attribute>
+            <_longname>Line</_longname>
+            <size>2</size>
+        </column>
+
+        <column>
+            <_attribute>Name</_attribute>
+            <_longname>Names of Inmates</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>Occupation</_attribute>
+            <_longname>Profession, Trade or Occupation</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>BirthPlace</_attribute>
+            <_longname>Place of Birth</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>Religion</_attribute>
+            <_longname>Religion</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>Residence</_attribute>
+            <_longname>Residence if Outside of Limits</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>Age</_attribute>
+            <_longname>Age at Next Birthday</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>SexMale</_attribute>
+            <_longname>Sex: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>SexFemale</_attribute>
+            <_longname>Sex: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>MaritalStatus</_attribute>
+            <_longname>Married or Single</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Coloured</_attribute>
+            <_longname>Coloured Persons - Negroes</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Indians</_attribute>
+            <_longname>Indians, if any</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>ResidentsMale</_attribute>
+            <_longname>Residents: Members, Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>ResidentsFemale</_attribute>
+            <_longname>Residents: Members, Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>NonMembersMale</_attribute>
+            <_longname>Not Members: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>NonMembersFemale</_attribute>
+            <_longname>Not Members: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>AbsentMembersMale</_attribute>
+            <_longname>Members Absent: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>AbsentMembersFemale</_attribute>
+            <_longname>Members Absent: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>DeafDumbMale</_attribute>
+            <_longname>Deaf and Dumb: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>DeafDumbFemale</_attribute>
+            <_longname>Deaf and Dumb: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>BlindMale</_attribute>
+            <_longname>Blind: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>BlindFemale</_attribute>
+            <_longname>Blind: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>LunaticsFemale</_attribute>
+            <_longname>Lunatics: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>LunaticsMale</_attribute>
+            <_longname>Lunatics: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>ScholarMale</_attribute>
+            <_longname>Attending School: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>ScholarFemale</_attribute>
+            <_longname>Attending School: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Birth1851Male</_attribute>
+            <_longname>Births During the Year 1851: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Birth1851Female</_attribute>
+            <_longname>Births During the Year 1851: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Death1851Male</_attribute>
+            <_longname>Deaths During the Year 1851: Male</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>Death1851Female</_attribute>
+            <_longname>Deaths During the Year 1851: Female</_longname>
+            <size>1</size>
+        </column>
+
+        <column>
+            <_attribute>DeathAgeCause</_attribute>
+            <_longname>Age and Cause of Deaths</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>Houses</_attribute>
+            <_longname>Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence</_longname>
+            <size>5</size>
+        </column>
+
+        <column>
+            <_attribute>HousesStories</_attribute>
+            <_longname>Houses: No. of Stories</_longname>
+            <size>2</size>
+        </column>
+
+        <column>
+            <_attribute>HousesFamilies</_attribute>
+            <_longname>No. of Families Occupying</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>HousesVacant</_attribute>
+            <_longname>Houses: Vacant</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>HousesBuilding</_attribute>
+            <_longname>Houses: Building</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>Shops</_attribute>
+            <_longname>Shops, Stores, Inns, Taverns etc.</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>PublicBuildings</_attribute>
+            <_longname>Public Buildings</_longname>
+            <size>3</size>
+        </column>
+
+        <column>
+            <_attribute>WorshipPlaces</_attribute>
+            <_longname>Places of Worship</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>BuisnessInfo</_attribute>
+            <_longname>Information on Mills, Factories etc., their cost, power, produce, etc.</_longname>
+            <size>25</size>
+        </column>
+
+        <column>
+            <_attribute>NumEmployees</_attribute>
+            <_longname>Number of Persons Usually Employed Therein</_longname>
+            <size>5</size>
+        </column>
+
+        <column>
+            <_attribute>Remarks</_attribute>
+            <_longname>General Remarks of the Enumerator</_longname>
+            <size>25</size>
+        </column>
+
+    </census>
+
 </censuses>
