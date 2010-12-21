@@ -205,7 +205,7 @@ import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_source_ref,
-                    get_census_sources)
+                    get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
 
 class CensusEditor(ManagedWindow.ManagedWindow):
@@ -425,10 +425,12 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         return root
 
     def __create_table(self, columns):
-
         self.columns = list(columns)
         self.model = gtk.ListStore(*[str] * (len(columns) + 1))
         self.view.set_model(self.model)
+        self.view.set_headers_visible(True)
+        self.view.set_has_tooltip(True)
+        self.view.connect('query-tooltip', self.on_query_tooltip)        
 
         for column in self.view.get_columns():
             self.view.remove_column(column)
@@ -441,6 +443,28 @@ class CensusEditor(ManagedWindow.ManagedWindow):
             column = gtk.TreeViewColumn(name, renderer, text=index + 1)
             self.view.append_column(column)
         self.view.connect("row-activated", self.__edit_person)
+
+    def on_query_tooltip(self, widget, x, y, keyboard_tip, tooltip):
+        if not widget.get_tooltip_context(x, y, keyboard_tip):
+            return False
+        else:
+            model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
+            bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
+            result = widget.get_path_at_pos(bin_x, bin_y)
+    
+            if result is not None:
+                path, column, cell_x, cell_y = result
+
+                if column is not None:
+                    longname = self.longnames.get(column.get_title(),'')
+                    tooltip.set_markup('<b>%s</b>' % longname)
+                    widget.set_tooltip_cell(tooltip, path, None, None)
+                return True
+
+    def __get_longnames(self, columns, report_columns):
+        self.longnames = dict(
+            [c, r[0]] for c, r in zip(columns, report_columns)
+            )
     
     def __populate_gui(self, event):
         """
@@ -597,7 +621,10 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.source_ref.ref = model[index][0]
 
         # Set new columns
-        self.__create_table(get_census_columns(census_id))
+        columns = get_census_columns(census_id)
+        report_columns = get_report_columns(census_id)
+        self.__create_table(columns)
+        self.__get_longnames(columns, report_columns)
         
     def __cell_edited(self, cell, path, new_text, data):
         """
