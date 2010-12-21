@@ -2898,207 +2898,207 @@
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Names of Inmates</_longname>
+            <_longname>1. Names of Inmates</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, Trade or Occupation</_longname>
+            <_longname>2. Profession, Trade or Occupation</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Place of Birth</_longname>
+            <_longname>3. Place of Birth</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>4. Religion</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Residence</_attribute>
-            <_longname>Residence if Outside of Limits</_longname>
+            <_longname>5. Residence if Outside of Limits</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age at Next Birthday</_longname>
+            <_longname>6. Age at Next Birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SexMale</_attribute>
-            <_longname>Sex: Male</_longname>
+            <_longname>7. Sex: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SexFemale</_attribute>
-            <_longname>Sex: Female</_longname>
+            <_longname>8. Sex: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married or Single</_longname>
+            <_longname>9. Married or Single</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Coloured</_attribute>
-            <_longname>Coloured Persons - Negroes</_longname>
+            <_longname>10. Coloured Persons - Negroes</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Indians</_attribute>
-            <_longname>Indians, if any</_longname>
+            <_longname>11. Indians, if any</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ResidentsMale</_attribute>
-            <_longname>Residents: Members, Male</_longname>
+            <_longname>12. Residents: Members, Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ResidentsFemale</_attribute>
-            <_longname>Residents: Members, Female</_longname>
+            <_longname>13. Residents: Members, Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>NonMembersMale</_attribute>
-            <_longname>Not Members: Male</_longname>
+            <_longname>14. Residents: Not Members: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>NonMembersFemale</_attribute>
-            <_longname>Not Members: Female</_longname>
+            <_longname>15. Residents: Not Members: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>AbsentMembersMale</_attribute>
-            <_longname>Members Absent: Male</_longname>
+            <_longname>16. Members Absent: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>AbsentMembersFemale</_attribute>
-            <_longname>Members Absent: Female</_longname>
+            <_longname>17. Members Absent: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumbMale</_attribute>
-            <_longname>Deaf and Dumb: Male</_longname>
+            <_longname>18. Deaf and Dumb: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumbFemale</_attribute>
-            <_longname>Deaf and Dumb: Female</_longname>
+            <_longname>19. Deaf and Dumb: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BlindMale</_attribute>
-            <_longname>Blind: Male</_longname>
+            <_longname>20. Blind: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BlindFemale</_attribute>
-            <_longname>Blind: Female</_longname>
+            <_longname>21. Blind: Female</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>LunaticsFemale</_attribute>
-            <_longname>Lunatics: Female</_longname>
+            <_attribute>LunaticMale</_attribute>
+            <_longname>22. Lunatics: Male</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>LunaticsMale</_attribute>
-            <_longname>Lunatics: Male</_longname>
+            <_attribute>LunaticFemale</_attribute>
+            <_longname>23. Lunatics: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ScholarMale</_attribute>
-            <_longname>Attending School: Male</_longname>
+            <_longname>24. Attending School: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ScholarFemale</_attribute>
-            <_longname>Attending School: Female</_longname>
+            <_longname>25. Attending School: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Birth1851Male</_attribute>
-            <_longname>Births During the Year 1851: Male</_longname>
+            <_longname>26. Births During the Year 1851: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Birth1851Female</_attribute>
-            <_longname>Births During the Year 1851: Female</_longname>
+            <_longname>27. Births During the Year 1851: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Death1851Male</_attribute>
-            <_longname>Deaths During the Year 1851: Male</_longname>
+            <_longname>28. Deaths During the Year 1851: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Death1851Female</_attribute>
-            <_longname>Deaths During the Year 1851: Female</_longname>
+            <_longname>29. Deaths During the Year 1851: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeathAgeCause</_attribute>
-            <_longname>Age and Cause of Deaths</_longname>
+            <_longname>30. Age and Cause of Deaths</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Houses</_attribute>
-            <_longname>Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence</_longname>
-            <size>5</size>
+            <_longname>31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence</_longname>
+            <size>8</size>
         </column>
         <column>
             <_attribute>HousesStories</_attribute>
-            <_longname>Houses: No. of Stories</_longname>
+            <_longname>32. Houses: No. of Stories</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesFamilies</_attribute>
-            <_longname>No. of Families Occupying</_longname>
+            <_longname>33. No. of Families Occupying</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HousesVacant</_attribute>
-            <_longname>Houses: Vacant</_longname>
+            <_longname>34. Houses: Vacant</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HousesBuilding</_attribute>
-            <_longname>Houses: Building</_longname>
+            <_longname>35. Houses: Building</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Shops</_attribute>
-            <_longname>Shops, Stores, Inns, Taverns etc.</_longname>
+            <_longname>36. Shops, Stores, Inns, Taverns etc.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>PublicBuildings</_attribute>
-            <_longname>Public Buildings</_longname>
+            <_longname>37. Public Buildings</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>WorshipPlaces</_attribute>
-            <_longname>Places of Worship</_longname>
+            <_longname>38. Places of Worship</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>BuisnessInfo</_attribute>
-            <_longname>Information on Mills, Factories etc., their cost, power, produce, etc.</_longname>
+            <_longname>39. Information on Mills, Factories etc., their cost, power, produce, etc.</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>NumEmployees</_attribute>
-            <_longname>Number of Persons Usually Employed Therein</_longname>
+            <_longname>40. Number of Persons Usually Employed Therein</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>Remarks</_attribute>
-            <_longname>General Remarks of the Enumerator</_longname>
+            <_longname>41. General Remarks of the Enumerator</_longname>
             <size>25</size>
         </column>
     </census>
@@ -3135,282 +3135,282 @@
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Name of Occupier</_longname>
+            <_longname>1. Name of Occupier</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Concession</_attribute>
-            <_longname>Concession or Range</_longname>
+            <_longname>2. Concession or Range</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Lot</_attribute>
-            <_longname>Lot or part of Lot</_longname>
+            <_longname>3. Lot or part of Lot</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>AcresHeld</_attribute>
-            <_longname>Number of Acres of Land: Held by each person or family</_longname>
+            <_longname>4. Number of Acres of Land: Held by each person or family</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>AcresCultivation</_attribute>
-            <_longname>Number of Acres of Land: Under Cultivation</_longname>
+            <_longname>5. Number of Acres of Land: Under Cultivation</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>AcresCrops</_attribute>
-            <_longname>Number of Acres of Land: Under Crops in 1851</_longname>
+            <_longname>6. Number of Acres of Land: Under Crops in 1851</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>AcresPasture</_attribute>
-            <_longname>Number of Acres of Land: Under Pasture in 1851</_longname>
+            <_longname>7. Number of Acres of Land: Under Pasture in 1851</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>AcresGardens</_attribute>
-            <_longname>Number of Acres of Land: Gardens or Orchards</_longname>
+            <_longname>8. Number of Acres of Land: Gardens or Orchards</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>AcresWood</_attribute>
-            <_longname>Number of Acres of Land: Under Wood or Wild</_longname>
+            <_longname>9. Number of Acres of Land: Under Wood or Wild</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>WheatAcres</_attribute>
-            <_longname>Wheat: Acres</_longname>
+            <_longname>10. Wheat: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>WheatBsh</_attribute>
-            <_longname>Wheat: Produce Bsh.</_longname>
+            <_longname>11. Wheat: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BarleyAcres</_attribute>
-            <_longname>Barley: Acres</_longname>
+            <_longname>12. Barley: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BarleyBsh</_attribute>
-            <_longname>Barley: Produce Bsh.</_longname>
+            <_longname>13. Barley: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>RyeAcres</_attribute>
-            <_longname>Rye: Acres</_longname>
+            <_longname>14. Rye: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>RyeBsh</_attribute>
-            <_longname>Rye: Produce Bsh.</_longname>
+            <_longname>15. Rye: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>PeasAcres</_attribute>
-            <_longname>Peas: Acres</_longname>
+            <_longname>16. Peas: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>PeasBush</_attribute>
-            <_longname>Peas: Produce Bsh.</_longname>
+            <_longname>17. Peas: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OatsAcres</_attribute>
-            <_longname>Oats: Acres</_longname>
+            <_longname>18. Oats: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OatsBush</_attribute>
-            <_longname>Oats: Produce Bsh.</_longname>
+            <_longname>19. Oats: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BWheatAcres</_attribute>
-            <_longname>B.Wheat: Acres</_longname>
+            <_longname>20. B.Wheat: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BWheatBush</_attribute>
-            <_longname>B.Wheat: Produce Bsh.</_longname>
+            <_longname>21. B.Wheat: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CornAcres</_attribute>
-            <_longname>Corn: Acres</_longname>
+            <_longname>22. Corn: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CornBush</_attribute>
-            <_longname>Corn: Produce Bsh.</_longname>
+            <_longname>23. Corn: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>PotatoesAcres</_attribute>
-            <_longname>Potatoes: Acres</_longname>
+            <_longname>24. Potatoes: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>PotatoesBush</_attribute>
-            <_longname>Potatoes: Produce Bsh.</_longname>
+            <_longname>25. Potatoes: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>TurnipsAcres</_attribute>
-            <_longname>Turnips: Acres</_longname>
+            <_longname>26. Turnips: Acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>TurnipsBush</_attribute>
-            <_longname>Turnips: Produce Bsh.</_longname>
+            <_longname>27. Turnips: Produce Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CloverBush</_attribute>
-            <_longname>Clover, Timothy or other grass seed - Bsh.</_longname>
+            <_longname>28. Clover, Timothy or other grass seed - Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CarrotsBush</_attribute>
-            <_longname>Carrots - Bsh.</_longname>
+            <_longname>29. Carrots - Bsh.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>MangleWurtzel</_attribute>
-            <_longname>Mangle Wurtzel</_longname>
+            <_longname>30. Mangle Wurtzel</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BeansBush</_attribute>
-            <_longname>Beans Bush</_longname>
+            <_longname>31. Beans Bush</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HopsLbs</_attribute>
-            <_longname>Hops Lbs.</_longname>
+            <_longname>32. Hops Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HayQty</_attribute>
-            <_longname>Hay, Bundles or Tons</_longname>
+            <_longname>33. Hay, Bundles or Tons</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>FlaxLbs</_attribute>
-            <_longname>Flax or Hemp, Lbs.</_longname>
+            <_longname>34. Flax or Hemp, Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>TobaccoLbs</_attribute>
-            <_longname>Tobacco Lbs.</_longname>
+            <_longname>35. Tobacco Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>WoolLbs.</_attribute>
-            <_longname>Wool Lbs.</_longname>
+            <_longname>36. Wool Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Column37</_attribute>
-            <_longname>Column 37</_longname>
+            <_longname>37.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Column38</_attribute>
-            <_longname>Column 38</_longname>
+            <_longname>38.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Column39</_attribute>
-            <_longname>Column 39</_longname>
+            <_longname>39.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>MapleSugarLbs</_attribute>
-            <_longname>Maple Sugar Lbs.</_longname>
+            <_longname>40. Maple Sugar Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CiderGalls</_attribute>
-            <_longname>Cider Galls.</_longname>
+            <_longname>41. Cider Galls.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>ClothYards</_attribute>
-            <_longname>Fulled Cloth Yards</_longname>
+            <_longname>42. Fulled Cloth Yards</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LinnenYards</_attribute>
-            <_longname>Linnen - Yds.</_longname>
+            <_longname>43. Linnen - Yds.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>FlannelYds</_attribute>
-            <_longname>Flannel - Yds.</_longname>
+            <_longname>44. Flannel - Yds.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Bulls</_attribute>
-            <_longname>Bulls, Oxen or Steers</_longname>
+            <_longname>45. Bulls, Oxen or Steers</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Milch Cows</_attribute>
-            <_longname>Milch Cows</_longname>
+            <_longname>46. Milch Cows</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Calves</_attribute>
-            <_longname>Calves or Heifers</_longname>
+            <_longname>47. Calves or Heifers</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Horses</_attribute>
-            <_longname>Horses of all ages</_longname>
+            <_longname>48. Horses of all ages</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Sheep</_attribute>
-            <_longname>Sheep</_longname>
+            <_longname>49. Sheep</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Pigs</_attribute>
-            <_longname>Pigs</_longname>
+            <_longname>50. Pigs</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>ButterLbs</_attribute>
-            <_longname>Butter - Lbs.</_longname>
+            <_longname>51. Butter - Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>CheeseLbs</_attribute>
-            <_longname>Cheese - Lbs.</_longname>
+            <_longname>52. Cheese - Lbs.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Beef</_attribute>
-            <_longname>Beef - Barrels or Cwts.</_longname>
+            <_longname>53. Beef - Barrels or Cwts.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Pork</_attribute>
-            <_longname>Pork - Barrels or Cwts.</_longname>
+            <_longname>54. Pork - Barrels or Cwts.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Fish</_attribute>
-            <_longname>Quantity of Fish Cured</_longname>
+            <_longname>55. Quantity of Fish Cured</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Remarks</_attribute>
-            <_longname>Remarks</_longname>
+            <_longname>56. Remarks</_longname>
             <size>25</size>
         </column>
     </census>
@@ -3447,182 +3447,182 @@
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Names of Inmates</_longname>
+            <_longname>1. Names of Inmates</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, trade or occupation</_longname>
+            <_longname>2. Profession, trade or occupation</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Place of Birth</_longname>
+            <_longname>3. Place of Birth</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Married1851</_attribute>
-            <_longname>Married during the year</_longname>
+            <_longname>4. Married during the year</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>5. Religion</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Residence</_attribute>
-            <_longname>Residence, if out of limits</_longname>
+            <_longname>6. Residence, if out of limits</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age next Birthday</_longname>
+            <_longname>7. Age next Birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SexMale</_attribute>
-            <_longname>Sex: Male</_longname>
+            <_longname>8. Sex: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SexFemail</_attribute>
-            <_longname>Sex:Female</_longname>
+            <_longname>9. Sex:Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married or Single</_longname>
+            <_longname>10. Married or Single</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Widowers</_attribute>
-            <_longname>Widowers</_longname>
+            <_longname>11. Widowers</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Widows</_attribute>
-            <_longname>Widows</_longname>
+            <_longname>12. Widows</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Coloured</_attribute>
-            <_longname>Coloured Persons, Mulato or Indians</_longname>
+            <_longname>13. Coloured Persons, Mulato or Indians</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MemberMale</_attribute>
-            <_longname>Members: Male</_longname>
+            <_longname>14. Members: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MemberFemale</_attribute>
-            <_longname>Members: Female</_longname>
+            <_longname>15. Members: Female</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>NotMembersMale</_attribute>
-            <_longname>Not Members: Male</_longname>
+            <_attribute>NotMemberMale</_attribute>
+            <_longname>16. Not Members: Male</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>NotMembersFemale</_attribute>
-            <_longname>Not Members: Female</_longname>
+            <_attribute>NotMemberFemale</_attribute>
+            <_longname>17. Not Members: Female</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>MembersAbsentMale</_attribute>
-            <_longname>Members Absent: Male</_longname>
+            <_attribute>MemberAbsentMale</_attribute>
+            <_longname>18. Members Absent: Male</_longname>
             <size>1</size>
         </column>
         <column>
-            <_attribute>MembersAbsentFemale</_attribute>
-            <_longname>Members Absent: Female</_longname>
+            <_attribute>MemberAbsentFemale</_attribute>
+            <_longname>19. Members Absent: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumb</_attribute>
-            <_longname>Deaf and Dumb</_longname>
+            <_longname>20. Deaf and Dumb</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Blind</_attribute>
-            <_longname>Blind</_longname>
+            <_longname>21. Blind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Lunatic</_attribute>
-            <_longname>Lunatics or Idiots</_longname>
+            <_longname>22. Lunatics or Idiots</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ScholarMale</_attribute>
-            <_longname>Attending School within the year: Male</_longname>
+            <_longname>23. Attending School within the year: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>ScholarFemale</_attribute>
-            <_longname>Attending School within the year: Female</_longname>
+            <_longname>24. Attending School within the year: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>CantReadMale</_attribute>
-            <_longname>Persons over 20, who cannot read or write: Male</_longname>
+            <_longname>25. Persons over 20, who cannot read or write: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>CantReadFemale</_attribute>
-            <_longname>Persons over 20, who cannot read or write: Female</_longname>
+            <_longname>26. Persons over 20, who cannot read or write: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Birth1860Male</_attribute>
-            <_longname>Births in 1860: Male</_longname>
+            <_longname>27. Births in 1860: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Birth1860Female</_attribute>
-            <_longname>Births in 1860: Female</_longname>
+            <_longname>28. Births in 1860: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Death1860Male</_attribute>
-            <_longname>Deaths in 1860: Male</_longname>
+            <_longname>29. Deaths in 1860: Male</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Death1860Female</_attribute>
-            <_longname>Deaths in 1860: Female</_longname>
+            <_longname>30. Deaths in 1860: Female</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeathAgeCause</_attribute>
-            <_longname>Age and cause of death</_longname>
+            <_longname>31. Age and cause of death</_longname>
             <size>20</size>
         </column>
         <column>
-            <_attribute>HouseConstruction</_attribute>
-            <_longname>Houses: Brick, Stone, Frame, Log, etc.</_longname>
+            <_attribute>Houses</_attribute>
+            <_longname>32. Houses: Brick, Stone, Frame, Log, etc.</_longname>
             <size>8</size>
         </column>
         <column>
-            <_attribute>HouseStories</_attribute>
-            <_longname>Houses: No. of Stories</_longname>
+            <_attribute>HousesStories</_attribute>
+            <_longname>33. Houses: No. of Stories</_longname>
             <size>3</size>
         </column>
         <column>
-            <_attribute>HouseFamilies</_attribute>
-            <_longname>Houses: No. of families living in the house</_longname>
+            <_attribute>HousesFamilies</_attribute>
+            <_longname>34. Houses: No. of families living in the house</_longname>
             <size>3</size>
         </column>
         <column>
-            <_attribute>HouseVacant</_attribute>
-            <_longname>Houses: Vacant</_longname>
-            <size>1</size>
+            <_attribute>HousesVacant</_attribute>
+            <_longname>35. Houses: Vacant</_longname>
+            <size>3</size>
         </column>
         <column>
             <_attribute>HouseBeingBuilt</_attribute>
-            <_longname>Houses: Being built</_longname>
+            <_longname>36. Houses: Being built</_longname>
             <size>1</size>
         </column>
     </census>
@@ -3668,108 +3668,118 @@
             <size>2</size>
         </column>
         <column>
-            <_attribute>Vessel</_attribute>
-            <_longname>Vessels</_longname>
+            <_attribute>Vessels</_attribute>
+            <_longname>1. Vessels</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Shanties</_attribute>
-            <_longname>Shanties</_longname>
+            <_longname>2. Shanties</_longname>
             <size>2</size>
         </column>
         <column>
-            <_attribute>HousesBuilding</_attribute>
-            <_longname>Dwelling houses in construction</_longname>
+            <_attribute>HousesBeingBuilt</_attribute>
+            <_longname>3. Dwelling houses in construction</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesVacant</_attribute>
-            <_longname>Dwelling houses unoccupied</_longname>
+            <_longname>4. Dwelling houses unoccupied</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesInhabited</_attribute>
-            <_longname>Dwelling houses inhabited</_longname>
+            <_longname>5. Dwelling houses inhabited</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Families</_attribute>
-            <_longname>Families</_longname>
+            <_longname>6.Families</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Names</_longname>
+            <_longname>7. Names</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>8. Sex</_longname>
             <size>1</size>
         </column>
         <column>
+            <_attribute>Age</_attribute>
+            <_longname>9. Age</_longname>
+            <size>3</size>
+        </column>
+        <column>
             <_attribute>Birth1871</_attribute>
-            <_longname>Born within last twelve months</_longname>
+            <_longname>10. Born within last twelve months</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or Province of Birth</_longname>
+            <_longname>11. Country or Province of Birth</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>12. Religion</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Origin</_attribute>
-            <_longname>Origin</_longname>
+            <_longname>13. Origin</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, Occupation or Trade</_longname>
+            <_longname>14. Profession, Occupation or Trade</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married or Widowed</_longname>
+            <_longname>15. Married or Widowed</_longname>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Maried1871</_attribute>
+            <_longname>16. Married within last twelve months</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Scholar</_attribute>
-            <_longname>Going to school</_longname>
+            <_longname>17. Going to school</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>CantRead</_attribute>
-            <_longname>Over 20 unable to read</_longname>
+            <_longname>18. Over 20 unable to read</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>CantWrite</_attribute>
-            <_longname>Over 20 unable to write</_longname>
+            <_longname>19. Over 20 unable to write</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumb</_attribute>
-            <_longname>Deaf and Dumb</_longname>
+            <_longname>20. Deaf and Dumb</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Blind</_attribute>
-            <_longname>Blind</_longname>
+            <_longname>21. Blind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Lunatic</_attribute>
-            <_longname>Unsound mind</_longname>
+            <_longname>22. Unsound mind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Date</_attribute>
-            <_longname>Date of Operations and Remarks</_longname>
+            <_longname>23. Date of Operations and Remarks</_longname>
             <size>20</size>
         </column>
     </census>
@@ -3815,104 +3825,104 @@
             <size>2</size>
         </column>
         <column>
-            <_attribute>Vessel</_attribute>
-            <_longname>Vessels</_longname>
+            <_attribute>Vessels</_attribute>
+            <_longname>1. Vessels</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Shanties</_attribute>
-            <_longname>Shanties</_longname>
+            <_longname>2. Shanties</_longname>
             <size>2</size>
         </column>
         <column>
-            <_attribute>HousesBuilding</_attribute>
-            <_longname>Hhouses in construction</_longname>
+            <_attribute>HousesBeingBuilt</_attribute>
+            <_longname>3. Houses    in construction</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesVacant</_attribute>
-            <_longname>Houses unoccupied</_longname>
+            <_longname>4. Houses unoccupied</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesInhabited</_attribute>
-            <_longname>Houses inhabited</_longname>
+            <_longname>5. Houses inhabited</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Families</_attribute>
-            <_longname>Families</_longname>
+            <_longname>6. Families</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Names</_longname>
+            <_longname>7. Names</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>8. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age</_longname>
+            <_longname>9. Age</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Birth1881</_attribute>
-            <_longname>Born within last twelve months</_longname>
+            <_longname>10. Born within last twelve months</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or Province of Birth</_longname>
+            <_longname>11. Country or Province of Birth</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>12. Religion</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Origin</_attribute>
-            <_longname>Origin</_longname>
+            <_longname>13. Origin</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, Occupation or Trade</_longname>
+            <_longname>14. Profession, Occupation or Trade</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married or Widowed</_longname>
+            <_longname>15. Married or Widowed</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Scholar</_attribute>
-            <_longname>Going to school</_longname>
+            <_longname>16. Going to school</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumb</_attribute>
-            <_longname>Deaf and Dumb</_longname>
+            <_longname>17. Deaf and Dumb</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Blind</_attribute>
-            <_longname>Blind</_longname>
+            <_longname>18. Blind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Lunatic</_attribute>
-            <_longname>Unsound mind</_longname>
+            <_longname>19/ Unsound mind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Date</_attribute>
-            <_longname>Date of Operations and Remarks</_longname>
-            <size>20</size>
+            <_longname>20. Date of Operations and Remarks</_longname>
+            <size>25</size>
         </column>
     </census>
 
@@ -3962,133 +3972,128 @@
             <size>2</size>
         </column>
         <column>
-            <_attribute>Vessel</_attribute>
-            <_longname>Vessels</_longname>
+            <_attribute>Vessels</_attribute>
+            <_longname>1. Vessels and Shanties</_longname>
             <size>2</size>
         </column>
         <column>
-            <_attribute>Shanties</_attribute>
-            <_longname>Shanties</_longname>
-            <size>2</size>
-        </column>
-        <column>
-            <_attribute>HousesBuilding</_attribute>
-            <_longname>Hhouses in construction</_longname>
+            <_attribute>HousesBeingBuilt</_attribute>
+            <_longname>2. Houses in construction</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesVacant</_attribute>
-            <_longname>Houses unoccupied</_longname>
+            <_longname>3. Houses unoccupied</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HousesInhabited</_attribute>
-            <_longname>Houses inhabited</_longname>
+            <_longname>4. Houses inhabited</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Families</_attribute>
-            <_longname>Families</_longname>
+            <_longname>5. Families</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Names</_longname>
+            <_longname>6. Names</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>7. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age</_longname>
+            <_longname>8. Age</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married or Widowed</_longname>
+            <_longname>9. Married or Widowed</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relationship to Head of Family</_longname>
+            <_longname>10. Relationship to Head of Family</_longname>
             <size>12</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or Province of Birth</_longname>
+            <_longname>11. Country or Province of Birth</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>French</_attribute>
-            <_longname>FrenchCanadian</_longname>
+            <_longname>12. FrenchCanadian</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthPlaceFather</_attribute>
-            <_longname>Birth Place of Father</_longname>
+            <_longname>13. Birth Place of Father</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>BirthPlaceMother</_attribute>
-            <_longname>Birth Place of Mother</_longname>
+            <_longname>14. Birth Place of Mother</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>15. Religion</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, Occupation or Trade</_longname>
+            <_longname>16. Profession, Occupation or Trade</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Employer</_attribute>
-            <_longname>Employers</_longname>
+            <_longname>17. Employers</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Employee</_attribute>
-            <_longname>Wage Earner</_longname>
+            <_longname>18. Wage Earner</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Unemployed</_attribute>
-            <_longname>Unemployed during week preceding Census</_longname>
+            <_longname>19. Unemployed during week preceding Census</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Employees</_attribute>
-            <_longname>Employer to state average number of hands employed during year</_longname>
+            <_longname>20. Employer to state average number of hands employed during year</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>CanRead</_attribute>
-            <_longname>instruction: Read</_longname>
+            <_longname>21. Instruction: Read</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>CanWrite</_attribute>
-            <_longname>Instruction: Write</_longname>
+            <_longname>22. Instruction: Write</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>DeafDumb</_attribute>
-            <_longname>Deaf and Dumb</_longname>
+            <_longname>23. Deaf and Dumb</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Blind</_attribute>
-            <_longname>Blind</_longname>
+            <_longname>24. Blind</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Lunatic</_attribute>
-            <_longname>Unsound mind</_longname>
+            <_longname>25. Unsound mind</_longname>
             <size>1</size>
         </column>
     </census>
@@ -4150,172 +4155,172 @@
         </column>
         <column>
             <_attribute>House</_attribute>
-            <_longname>Dwelling house</_longname>
+            <_longname>1. Dwelling house</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Family</_attribute>
-            <_longname>Family or household</_longname>
+            <_longname>2. Family or household</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Name of each person in family</_longname>
+            <_longname>3. Name of each person in family</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>4. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Colour</_attribute>
-            <_longname>Colour</_longname>
+            <_longname>5. Colour</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relation to head of family</_longname>
+            <_longname>6. Relation to head of family</_longname>
             <size>12</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Single, married, widowed, divorced or legally separated</_longname>
+            <_longname>7. Single, married, widowed, divorced or legally separated</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthMonth</_attribute>
-            <_longname>Month and Date of Birth</_longname>
+            <_longname>8. Month and Date of Birth</_longname>
             <size>8</size>
         </column>
         <column>
             <_attribute>BirthYear</_attribute>
-            <_longname>Year of birth</_longname>
+            <_longname>9. Year of birth</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age at last birthday</_longname>
+            <_longname>10. Age at last birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or place of birth</_longname>
+            <_longname>11. Country or place of birth</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Immigration</_attribute>
-            <_longname>Year of immigration to Canada, if an immigrant</_longname>
+            <_longname>12. Year of immigration to Canada, if an immigrant</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Naturalization</_attribute>
-            <_longname>Year of naturalization, if formerly an alien</_longname>
+            <_longname>13. Year of naturalization, if formerly an alien</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Race</_attribute>
-            <_longname>Racial or tribal origin</_longname>
+            <_longname>14. Racial or tribal origin</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Nationality</_attribute>
-            <_longname>Nationality</_longname>
+            <_longname>15. Nationality</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>16. Religion</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Profession, occupation, trade or means of living of each person</_longname>
+            <_longname>17. Profession, occupation, trade or means of living of each person</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>OwnMeans</_attribute>
-            <_longname>Living on own means</_longname>
+            <_longname>18. Living on own means</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Employer</_attribute>
-            <_longname>Employer</_longname>
+            <_longname>19. Employer</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Employee</_attribute>
-            <_longname>Employee</_longname>
+            <_longname>20. Employee</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SelfEmployed</_attribute>
-            <_longname>Working on own account</_longname>
+            <_longname>21. Working on own account</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>WhereEmployed</_attribute>
-            <_longname>Working at trade in factory or in home</_longname>
+            <_longname>22. Working at trade in factory or in home</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>MonthsFactory</_attribute>
-            <_longname>Months employed at trade in factory</_longname>
+            <_longname>23. Months employed at trade in factory</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>MonthsHome</_attribute>
-            <_longname>Months employed at trade in home</_longname>
+            <_longname>24. Months employed at trade in home</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>MonthsOther</_attribute>
-            <_longname>Months employed in other occupation than trace in factory or home</_longname>
+            <_longname>25. Months employed in other occupation than trace in factory or home</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>EarningsOccupation</_attribute>
-            <_longname>Earnings from occupation or trade</_longname>
+            <_longname>26. Earnings from occupation or trade</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>EarningsOther</_attribute>
-            <_longname>Extra earning (From other than chief occupation or trade)</_longname>
+            <_longname>27. Extra earning (From other than chief occupation or trade)</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>SchoolMonths</_attribute>
-            <_longname>Months at school in 1910</_longname>
+            <_longname>28. Months at school in 1910</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Read</_attribute>
-            <_longname>Can read</_longname>
+            <_longname>29. Can read</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Write</_attribute>
-            <_longname>Can write</_longname>
+            <_longname>30. Can write</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SpeakEnglish</_attribute>
-            <_longname>Can speak English</_longname>
+            <_longname>31. Can speak English</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SpeakFrench</_attribute>
-            <_longname>Can speak French</_longname>
+            <_longname>32. Can speak French</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Language</_attribute>
-            <_longname>Mother tongue (If spoken)</_longname>
+            <_longname>33. Mother tongue (If spoken)</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Infirmities</_attribute>
-            <_longname>Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind</_longname>
+            <_longname>34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind</_longname>
             <size>10</size>
         </column>
     </census>
@@ -4371,193 +4376,198 @@
         </heading>
 
         <column>
+            <_attribute>Name</_attribute>
+            <_longname>Name from Schedule 1</_longname>
+            <size>20</size>
+        </column>
+        <column>
             <_attribute>Line</_attribute>
-            <_longname>Line</_longname>
+            <_longname>Line on Schedule 2</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>PageRef</_attribute>
-            <_longname>Page</_longname>
+            <_longname>2. Page from Schedule 1</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>LineRef</_attribute>
-            <_longname>Line</_longname>
+            <_longname>3. Line from Schedule 1</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Place</_attribute>
-            <_longname>Place of Habitation</_longname>
+            <_longname>3. Place of Habitation</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>HousesConst</_attribute>
-            <_longname>Houses: In construction</_longname>
+            <_longname>4. Houses: In construction</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HousesVacant</_attribute>
-            <_longname>Houses: Vacant</_longname>
+            <_longname>5. Houses: Vacant</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>HousesInhabited</_attribute>
-            <_longname>Houses: Inhabited</_longname>
+            <_longname>6. Houses: Inhabited</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Institution</_attribute>
-            <_longname>Institution: Special or legal name</_longname>
+            <_longname>7. Institution: Special or legal name</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Buildings</_attribute>
-            <_longname>Institution: Number of buildings</_longname>
+            <_longname>8. Institution: Number of buildings</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Families</_attribute>
-            <_longname>Number of families in house or institution</_longname>
+            <_longname>9. Number of families in house or institution</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Rooms</_attribute>
-            <_longname>Number of rooms in house or institution for each famiy</_longname>
+            <_longname>10. Number of rooms in house or institution for each famiy</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Inmates</_attribute>
-            <_longname>Number of inmates in institution</_longname>
+            <_longname>11. Number of inmates in institution</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedAcres</_attribute>
-            <_longname>Real Estate Owned: Grand total of acres</_longname>
+            <_longname>12. Real Estate Owned: Grand total of acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedLots</_attribute>
-            <_longname>Real Estate Owned: Number of town or village lots</_longname>
+            <_longname>13. Real Estate Owned: Number of town or village lots</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedHouses</_attribute>
-            <_longname>Real Estate Owned: Number of dwelling houses</_longname>
+            <_longname>14. Real Estate Owned: Number of dwelling houses</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedStores</_attribute>
-            <_longname>Real Estate Owned: Number of stores, warehouses, etc.</_longname>
+            <_longname>15. Real Estate Owned: Number of stores, warehouses, etc.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedBars</_attribute>
-            <_longname>Real Estate Owned: Number of barns, stables and other outbuildings</_longname>
+            <_longname>16. Real Estate Owned: Number of barns, stables and other outbuildings</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>OwnedSilos</_attribute>
-            <_longname>Real Estate Owned: Number of silos and capacity in cubic feet</_longname>
+            <_longname>17. Real Estate Owned: Number of silos and capacity in cubic feet</_longname>
             <size>10</size>
         </column>
         <column>
             <_attribute>OwnedFactories</_attribute>
-            <_longname>Real Estate Owned: Number of manufacturing establishments</_longname>
+            <_longname>18. Real Estate Owned: Number of manufacturing establishments</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedAcres</_attribute>
-            <_longname>Real Estate Leased: Grand total of acres</_longname>
+            <_longname>19. Real Estate Leased: Grand total of acres</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedLots</_attribute>
-            <_longname>Real Estate Leased: Number of town or village lots</_longname>
+            <_longname>20. Real Estate Leased: Number of town or village lots</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedHouses</_attribute>
-            <_longname>Real Estate Leased: Number of dwelling houses</_longname>
+            <_longname>21. Real Estate Leased: Number of dwelling houses</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedStores</_attribute>
-            <_longname>Real Estate Leased: Number of stores, warehouses, etc.</_longname>
+            <_longname>22. Real Estate Leased: Number of stores, warehouses, etc.</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedBarns</_attribute>
-            <_longname>Real Estate Leased: Number of barns, stables and other outbuildings</_longname>
+            <_longname>23. Real Estate Leased: Number of barns, stables and other outbuildings</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>LeasedSilos</_attribute>
-            <_longname>Real Estate Leased: Number of silos and capacity in cubic feet</_longname>
+            <_longname>24. Real Estate Leased: Number of silos and capacity in cubic feet</_longname>
             <size>10</size>
         </column>
         <column>
             <_attribute>LeasedFactories</_attribute>
-            <_longname>Real Estate Leased: Number of manufacturing establishments</_longname>
+            <_longname>25. Real Estate Leased: Number of manufacturing establishments</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Denomination</_attribute>
-            <_longname>Church or place of worship: Religious denomination</_longname>
+            <_longname>26. Church or place of worship: Religious denomination</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Communicants</_attribute>
-            <_longname>Church or place of worship: Number of communicants</_longname>
+            <_longname>27. Church or place of worship: Number of communicants</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Seating</_attribute>
-            <_longname>Church or place of worship: Seating capacity</_longname>
+            <_longname>28. Church or place of worship: Seating capacity</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SSDenomination</_attribute>
-            <_longname>Sunday School: Religious Denomination</_longname>
+            <_longname>29. Sunday School: Religious Denomination</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>SSTeachers</_attribute>
-            <_longname>Sunday School: Number of officers and teachers</_longname>
+            <_longname>30. Sunday School: Number of officers and teachers</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SSScholars</_attribute>
-            <_longname>Sunday School: Number of Scholars</_longname>
+            <_longname>31. Sunday School: Number of Scholars</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SchoolRooms</_attribute>
-            <_longname>School: Number of rooms</_longname>
+            <_longname>32. School: Number of rooms</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SchoolTeachers</_attribute>
-            <_longname>School: Number of teachers</_longname>
+            <_longname>33. School: Number of teachers</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>SchoolStudents</_attribute>
-            <_longname>School: Number of Scholars</_longname>
+            <_longname>34. School: Number of Scholars</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>DateVisit</_attribute>
-            <_longname>Date of visit</_longname>
+            <_longname>35. Date of visit</_longname>
             <size>10</size>
         </column>
         <column>
             <_attribute>Reason</_attribute>
-            <_longname>The reason, if not enumerated on first visit</_longname>
+            <_longname>36. The reason, if not enumerated on first visit</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>DateEnum</_attribute>
-            <_longname>Date when enumerated</_longname>
+            <_longname>37. Date when enumerated</_longname>
             <size>10</size>
         </column>
     </census>
@@ -4609,92 +4619,92 @@
         </column>
         <column>
             <_attribute>Family</_attribute>
-            <_longname>No. of family in order of visitation</_longname>
+            <_longname>1. No. of family in order of visitation</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Name of each person in the family</_longname>
+            <_longname>2. Name of each person in the family</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relation to head of family</_longname>
+            <_longname>3.Relation to head of family</_longname>
             <size>12</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>4. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Married, single, widowed or divorced</_longname>
+            <_longname>5. Married, single, widowed or divorced</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age</_longname>
+            <_longname>6. Age</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or place of birth</_longname>
+            <_longname>7. Country or place of birth</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Immigration</_attribute>
-            <_longname>Year of immigration to Canada</_longname>
+            <_longname>8. Year of immigration to Canada</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>PostOffice</_attribute>
-            <_longname>Post office address</_longname>
+            <_longname>9. Post office address</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Section</_attribute>
-            <_longname>Location: Section</_longname>
+            <_longname>10. Location: Section</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>Township</_attribute>
-            <_longname>Location: Township</_longname>
+            <_longname>11. Location: Township</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Range</_attribute>
-            <_longname>Location: Range</_longname>
+            <_longname>12. Location: Range</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Meridian</_attribute>
-            <_longname>Meridian</_longname>
+            <_longname>13. Location: Meridian</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Horses</_attribute>
-            <_longname>Livestock: Horses, all ages</_longname>
+            <_longname>14. Livestock: Horses, all ages</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Cows</_attribute>
-            <_longname>Livestock: Milch cows</_longname>
+            <_longname>15. Livestock: Milch cows</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Other</_attribute>
-            <_longname>Other horned or meat cattle, all ages</_longname>
+            <_longname>16. Other horned or meat cattle, all ages</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Sheep</_attribute>
-            <_longname>Sheep and lambs, all ages</_longname>
+            <_longname>17. Sheep and lambs, all ages</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Pigs</_attribute>
-            <_longname>Hogs and pigs, all ages</_longname>
+            <_longname>18. Hogs and pigs, all ages</_longname>
             <size>3</size>
         </column>
     </census>
@@ -4756,203 +4766,208 @@
         </column>
         <column>
             <_attribute>House</_attribute>
-            <_longname>Dwelling house</_longname>
+            <_longname>1. Dwelling house</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Family</_attribute>
-            <_longname>Family or household</_longname>
+            <_longname>2. Family or household</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Name of each person in family</_longname>
+            <_longname>3. Name of each person in family</_longname>
             <size>25</size>
         </column>
         <column>
+            <_attribute>Place</_attribute>
+            <_longname>4. Place of habitation</_longname>
+            <size>1</size>
+        </column>
+        <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>5. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relation to head of family</_longname>
+            <_longname>6. Relation to head of family</_longname>
             <size>12</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Single, married, widowed, divorced or legally separated</_longname>
+            <_longname>7. Single, married, widowed, divorced or legally separated</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthMonth</_attribute>
-            <_longname>Month of birth</_longname>
+            <_longname>8. Month of birth</_longname>
             <size>8</size>
         </column>
         <column>
             <_attribute>BirthYear</_attribute>
-            <_longname>Year of birth</_longname>
+            <_longname>9. Year of birth</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age at last birthday</_longname>
+            <_longname>10. Age at last birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or place of birth</_longname>
+            <_longname>11   . Country or place of birth</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Immigration</_attribute>
-            <_longname>Year of immigration to Canada, if an immigrant</_longname>
+            <_longname>12. Year of immigration to Canada, if an immigrant</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Naturalization</_attribute>
-            <_longname>Year of naturalization, if formerly an alien</_longname>
+            <_longname>13. Year of naturalization, if formerly an alien</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Race</_attribute>
-            <_longname>Racial or tribal origin</_longname>
+            <_longname>14. Racial or tribal origin</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Nationality</_attribute>
-            <_longname>Nationality</_longname>
+            <_longname>15. Nationality</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>16. Religion</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Chief occupation or trade</_longname>
+            <_longname>16. Chief occupation or trade</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>OtherEmployment</_attribute>
-            <_longname>Employment other than at chief trade or occupation, if any</_longname>
+            <_longname>18. Employment other than at chief trade or occupation, if any</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Employer</_attribute>
-            <_longname>Employer</_longname>
+            <_longname>19. Employer</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Employee</_attribute>
-            <_longname>Employee</_longname>
+            <_longname>20. Employee</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SelfEmployed</_attribute>
-            <_longname>Working on own account</_longname>
+            <_longname>21. Working on own account</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>WhereEmployed</_attribute>
-            <_longname>State where person employed</_longname>
+            <_longname>22. State where person employed</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>WeeksOccupation</_attribute>
-            <_longname>Weeks employed in 1910 at chief occupation or trade</_longname>
+            <_longname>23. Weeks employed in 1910 at chief occupation or trade</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>WeeksOther</_attribute>
-            <_longname>Weeks employed in 1910 at other than chief occupation or trade</_longname>
+            <_longname>24. Weeks employed in 1910 at other than chief occupation or trade</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HoursOccupation</_attribute>
-            <_longname>Hours of working time per week at chief occupation</_longname>
+            <_longname>25. Hours of working time per week at chief occupation</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>HoursOther</_attribute>
-            <_longname>Hours of working time per week at other occupation, if any</_longname>
+            <_longname>26. Hours of working time per week at other occupation, if any</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>EarningsOccupation</_attribute>
-            <_longname>Total earnings in 1910 from chief occupation or trade</_longname>
+            <_longname>27. Total earnings in 1910 from chief occupation or trade</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>EarningsOther</_attribute>
-            <_longname>Total earnings in 1910 from other than chief occupation or trade</_longname>
+            <_longname>28. Total earnings in 1910 from other than chief occupation or trade</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>Wages</_attribute>
-            <_longname>Rate of earnings per hour when employed by the hour—Cents</_longname>
+            <_longname>29. Rate of earnings per hour when employed by the hour—Cents</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>InsuranceLife</_attribute>
-            <_longname>Insurance: Upon life</_longname>
+            <_longname>30. Insurance: Upon life</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>InsuranceAccident</_attribute>
-            <_longname>Insurance: Against accident or illness</_longname>
+            <_longname>31. Insurance: Against accident or illness</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>InsuranceCost</_attribute>
-            <_longname>Insurance: Cost of insurance in census year</_longname>
+            <_longname>32. Insurance: Cost of insurance in census year</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>SchoolMonths</_attribute>
-            <_longname>Months at school in 1910</_longname>
+            <_longname>33. Months at school in 1910</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Read</_attribute>
-            <_longname>Can Read</_longname>
+            <_longname>34. Can Read</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Write</_attribute>
-            <_longname>Can Write</_longname>
+            <_longname>35. Can Write</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Language</_attribute>
-            <_longname>Language commonly spoken</_longname>
+            <_longname>36. Language commonly spoken</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>SchoolCost</_attribute>
-            <_longname>Cost of education in 1910 for persons over 16 years of age at College, Convent or University</_longname>
+            <_longname>37. Cost of education in 1910 for persons over 16 years of age at College, Convent or University</_longname>
             <size>5</size>
         </column>
         <column>
             <_attribute>Blind</_attribute>
-            <_longname>Blind</_longname>
-            <size>1</size>
+            <_longname>38. Blind</_longname>
+            <size>3</size>
         </column>
         <column>
             <_attribute>DeafDumb</_attribute>
-            <_longname>Deaf and dumb</_longname>
-            <size>1</size>
+            <_longname>39. Deaf and dumb</_longname>
+            <size>3</size>
         </column>
         <column>
             <_attribute>Lunatic</_attribute>
-            <_longname>Crazy or lunatic</_longname>
-            <size>1</size>
+            <_longname>40. Crazy or lunatic</_longname>
+            <size>3</size>
         </column>
         <column>
             <_attribute>Idiotic</_attribute>
-            <_longname>Idiotic or silly</_longname>
-            <size>1</size>
+            <_longname>41. Idiotic or silly</_longname>
+            <size>3</size>
         </column>
     </census>
 
@@ -4997,83 +5012,83 @@
             <size>2</size>
         </column>
         <column>
-            <_attribute>House</_attribute>
+            <_attribute>1. House</_attribute>
             <_longname>Dwelling house</_longname>
             <size>2</size>
         </column>
         <column>
-            <_attribute>Family</_attribute>
+            <_attribute>2. Family</_attribute>
             <_longname>Family or household</_longname>
             <size>2</size>
         </column>
         <column>
-            <_attribute>Name</_attribute>
+            <_attribute>3. Name</_attribute>
             <_longname>Name of each person in family</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>4. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relation to head of family</_longname>
+            <_longname>5. Relation to head of family</_longname>
             <size>12</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Single, married, widowed, divorced or legally separated</_longname>
+            <_longname>6. Single, married, widowed, divorced or legally separated</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>BirthMonth</_attribute>
-            <_longname>Month of birth</_longname>
+            <_longname>7. Month of birth</_longname>
             <size>8</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age at last birthday</_longname>
+            <_longname>8. Age at last birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or place of birth</_longname>
+            <_longname>9. Country or place of birth</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Race</_attribute>
-            <_longname>Racial or tribal origin</_longname>
+            <_longname>10. Racial or tribal origin</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>11. Religion</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>SchoolMonths</_attribute>
-            <_longname>Months at school in 1910</_longname>
+            <_longname>12. Months at school in 1910</_longname>
             <size>2</size>
         </column>
         <column>
             <_attribute>Read</_attribute>
-            <_longname>Can Read</_longname>
+            <_longname>13. Can Read</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Write</_attribute>
-            <_longname>Can Write</_longname>
+            <_longname>14. Can Write</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Language</_attribute>
-            <_longname>Language commonly spoken</_longname>
+            <_longname>15. Language commonly spoken</_longname>
             <size>25</size>
         </column>
         <column>
             <_attribute>Infirmities</_attribute>
-            <_longname>a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or lunatic</_longname>
+            <_longname>16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or lunatic</_longname>
             <size>1</size>
         </column>
     </census>
@@ -5135,122 +5150,132 @@
         </column>
         <column>
             <_attribute>House</_attribute>
-            <_longname>Dwelling House</_longname>
+            <_longname>1. Dwelling House</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Family</_attribute>
-            <_longname>Family, Household or Institution</_longname>
+            <_longname>2. Family, Household or Institution</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Name</_attribute>
-            <_longname>Name of each person in family, household or institution</_longname>
+            <_longname>3. Name of each person in family, household or institution</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>MilitaryService</_attribute>
-            <_longname>Military Service</_longname>
+            <_longname>4. Military Service</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Township</_attribute>
-            <_longname>Place of Habitation: Township</_longname>
+            <_longname>5. Place of Habitation: Township</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Range</_attribute>
-            <_longname>Place of Habitation: Range</_longname>
+            <_longname>6. Place of Habitation: Range</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Meridian</_attribute>
-            <_longname>Place of Habitation: Meridian</_longname>
+            <_longname>7. Place of Habitation: Meridian</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>Municipality</_attribute>
-            <_longname>Place of Habitation: Municipality</_longname>
+            <_longname>8. Place of Habitation: Municipality</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <_longname>Relationship to head of family or household</_longname>
+            <_longname>9. Relationship to head of family or household</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Sex</_attribute>
-            <_longname>Sex</_longname>
+            <_longname>10. Sex</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>MaritalStatus</_attribute>
-            <_longname>Single, married, widowed, divorced or legally separated</_longname>
+            <_longname>11. Single, married, widowed, divorced or legally separated</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>Age</_attribute>
-            <_longname>Age at last birthday</_longname>
+            <_longname>12. Age at last birthday</_longname>
             <size>3</size>
         </column>
         <column>
             <_attribute>BirthPlace</_attribute>
-            <_longname>Country or place of birth</_longname>
+            <_longname>13. Country or place of birth</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Religion</_attribute>
-            <_longname>Religion</_longname>
+            <_longname>14. Religion</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Immigration</_attribute>
-            <_longname>Year of immigration to Canada</_longname>
+            <_longname>15. Year of immigration to Canada</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Naturalization</_attribute>
-            <_longname>Year of naturalization</_longname>
+            <_longname>16. Year of naturalization</_longname>
             <size>4</size>
         </column>
         <column>
             <_attribute>Nationality</_attribute>
-            <_longname>Nationality</_longname>
+            <_longname>17. Nationality</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Race</_attribute>
-            <_longname>Race or tribal origin</_longname>
+            <_longname>18. Race or tribal origin</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>SpeakEnglish</_attribute>
-            <_longname>Can speak English</_longname>
+            <_longname>19. Can speak English</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>SpeakFrench</_attribute>
-            <_longname>Can speak French</_longname>
+            <_longname>20. Can speak French</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>OtherLanguage</_attribute>
-            <_longname>Other language spoken as mother tongue</_longname>
+            <_longname>21. Other language spoken as mother tongue</_longname>
             <size>20</size>
         </column>
         <column>
+            <_attribute>CanRead</_attribute>
+            <_longname>22. Can Read</_longname>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>CanWrite</_attribute>
+            <_longname>23. Can Write</_longname>
+            <size>1</size>
+        </column>
+        <column>
             <_attribute>Occupation</_attribute>
-            <_longname>Chief occupation or trade</_longname>
+            <_longname>24. Chief occupation or trade</_longname>
             <size>20</size>
         </column>
         <column>
             <_attribute>Employment</_attribute>
-            <_longname>Employer, "E", Employee, "W"</_longname>
+            <_longname>25. Employer, "E", Employee, "W"</_longname>
             <size>1</size>
         </column>
         <column>
             <_attribute>EmploymentPlace</_attribute>
-            <_longname>State where person is employed</_longname>
+            <_longname>26. State where person is employed</_longname>
             <size>20</size>
         </column>
     </census>
