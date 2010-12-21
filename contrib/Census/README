@@ -13,4 +13,71 @@ UK1891      England 1891 census
 UK1901      England 1901 census
 UK1911      England 1911 census
 
-The file Census.py contains the definitions of each census.
+FR1790      1790 French Census
+FR1793      1793 French Census
+FR1796      1796 French Census
+FR1801      1801 French Census
+FR1806      1806 French Census
+FR1820      1820 French Census
+FR1826      1826 French Census
+FR1831      1831 French Census
+FR1836      1836 French Census
+FR1841      1841 French Census
+FR1846      1846 French Census
+FR1851      1851 French Census
+FR1856      1856 French Census
+FR1861      1861 French Census
+FR1866      1866 French Census
+FR1872      1872 French Census
+FR1876      1876 French Census
+FR1881      1881 French Census
+FR1886      1886 French Census
+FR1891      1891 French Census
+FR1896      1896 French Census
+FR1901      1901 French Census
+FR1906      1906 French Census
+
+BE1846      1846 Belgian Census
+BE1856      1856 Belgian Census
+BE1866      1866 Belgian Census
+BE1880      1880 Belgian Census
+BE1890      1890 Belgian Census
+BE1900      1900 Belgian Census
+BE1910      1910 Belgian Census
+
+US1790      1790 US Census
+US1800      1800 US Census
+US1810      1810 US Census
+US1820      1820 US Census
+US1830      1830 US Census
+US1840      1840 US Census
+US1850      1850 US Census
+US1860      1860 US Census
+US1870      1870 US Census
+US1880      1880 US Census
+US1890      1890 US Census
+US1900      1900 US Census
+US1910      1910 US Census
+US1920      1920 US Census
+US1930      1930 US Census
+
+CA1851EW-A  1851 Canada East and West Census: Personal Census
+CA1851EW-B  1851 Canada East and West Census: Agricultural Census
+CA1861EW    1861 Canada East and West Census
+CA1871      1871 Canadian Census
+CA1881      1881 Canadian Census
+CA1891      1891 Canadian Census
+CA1901-1    1901 Canadian Census: Schedule 1
+CA1901-2    1901 Canadian Census: Schedule 2
+CA1906      1906 Canadian Census: Manitoba, Saskatchewan and Alberta
+CA1911      1911 Canadian Census
+CA1911-A1   1911 Canadian Census: Schedule A1
+CA1916      1916 Canadian Census: Manitoba, Saskatchewan and Alberta
+
+Note: For Canadian censuses, there is a special gramps database included with
+this package called CanadaCensus.gramps.  This database may be safely imported
+into your database and contains source definitions matching the above list and
+repository definitions with Internet links to free websites that hold these
+censuses in various formats.
+
+The file census.xml contains the definitions of each census.
