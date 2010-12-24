@@ -192,7 +192,8 @@ class DescendantsLinesReport(Report):
         
     def write_tmp_data(self, ind_list):
         """
-        This routine generates a tmp XML database with only families descendants.
+        This routine generates a tmp XML database with only descendant families
+        (if that's what ind_list contains).
         """
         
         filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
@@ -221,8 +222,7 @@ class DescendantsLinesReport(Report):
                 gender = 'U'
             name = person.get_primary_name()
             first = name.get_first_name()
-            for surname in name.get_surname_list():
-                surname = surname.get_surname()
+            surname = name.get_surname()
             event_list = person.get_event_ref_list()
             self.write_xml_person(identifiant, child, gender, first, surname, event_list)
         self.xml_file.write('</people>\n')
@@ -662,12 +662,12 @@ def load_gramps(fn, start):
             life_col = (0.2, 0.2, 0.2)
 
             last = self.last
-            if last == expected_last:
-                last = None
+#            if last == expected_last:
+#                last = None
             if last is not None:
                 if self.prefix is not None:
                     last = self.prefix + ' ' + last
-                last = last.upper()
+#                last = last.upper()
             if self.first is None and last is None:
                 s = []
             elif self.first is None:
