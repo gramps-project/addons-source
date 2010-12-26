@@ -160,21 +160,21 @@ class DescendantsLinesReport(Report):
         
         # For printing something !
         
-        self.doc.start_paragraph('DL-name')
-        text = _("List of persons in the database:\n")
-        self.doc.write_text(text)
-        self.doc.end_paragraph()
-        nbr = 0
-        for child in ind_list:
-            nbr += 1
-            person = self.database.get_person_from_handle(child)
-            self.doc.start_paragraph('DL-name')
-            text = ("%(nbr)s. %(id)s - %(name)s" % 
-                                {'nbr' : nbr,
-                                 'id'  : person.get_gramps_id(),
-                                 'name' : name_displayer.display(person)})
-            self.doc.write_text(text)
-            self.doc.end_paragraph()
+#        self.doc.start_paragraph('DL-name')
+#        text = _("List of persons in the database:\n")
+#        self.doc.write_text(text)
+#        self.doc.end_paragraph()
+#        nbr = 0
+#        for child in ind_list:
+#            nbr += 1
+#            person = self.database.get_person_from_handle(child)
+#            self.doc.start_paragraph('DL-name')
+#            text = ("%(nbr)s. %(id)s - %(name)s" % 
+#                                {'nbr' : nbr,
+#                                 'id'  : person.get_gramps_id(),
+#                                 'name' : name_displayer.display(person)})
+#            self.doc.write_text(text)
+#            self.doc.end_paragraph()
             
         # end of print test
             
