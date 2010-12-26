@@ -687,6 +687,9 @@ def load_gramps(fn, start):
             return s
 
 
+    Unknown = InPerson()
+    Unknown.first = _('Unknown')
+
     handletoid = {}
     eventtoid = {}
     tpeople = {}
@@ -766,17 +769,19 @@ def load_gramps(fn, start):
         if p_id in parents:
             for fid in parents[p_id]:
                 fo = tfamilies[fid]
+                last = po.last
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
                     fm = Family(p, Person(spo.text()))
-                    last = po.last
                     if spo.gender == 'M':
                         last = spo.last
-                    for cpid in fo.children:
-                        cpo = tpeople[cpid]
-                        fm.add_child(do_person(cpid, last))
                 else:
                     print 'Unknown spouse:', p_id
+                    fm = Family(p, Person(Unknown.text()))
+                for cpid in fo.children:
+                    cpo = tpeople[cpid]
+                    fm.add_child(do_person(cpid, last))
+                else:
                     pass
         return p
 
