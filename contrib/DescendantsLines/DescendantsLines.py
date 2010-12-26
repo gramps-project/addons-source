@@ -781,8 +781,6 @@ def load_gramps(fn, start):
                 for cpid in fo.children:
                     cpo = tpeople[cpid]
                     fm.add_child(do_person(cpid, last))
-                else:
-                    pass
         return p
 
     return do_person(start)
