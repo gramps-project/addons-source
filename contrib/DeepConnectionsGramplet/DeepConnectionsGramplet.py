@@ -75,7 +75,7 @@ class DeepConnectionsGramplet(Gramplet):
 
     def get_relatives(self, person_handle, path):
         """
-        Gets all of the direct relatives of person_handle.
+        Gets all of the relations of person_handle.
         """
         retval = []
         person = self.dbstate.db.get_person_from_handle(person_handle)
@@ -90,9 +90,9 @@ class DeepConnectionsGramplet(Gramplet):
                 retval.extend((child_ref.ref, (path, (_("child"), person_handle, 
                                                       husband, wife)))
                               for child_ref in children)
-                if husband:
+                if husband and husband != person_handle:
                     retval += [(husband, (path, (_("husband"), person_handle)))]
-                if wife:
+                if wife and wife != person_handle:
                     retval += [(wife, (path, (_("wife"), person_handle)))]
 
         parent_family_list = person.get_parent_family_handle_list()
@@ -104,13 +104,20 @@ class DeepConnectionsGramplet(Gramplet):
                 wife = family.get_mother_handle()
                 retval.extend((child_ref.ref, (path, 
                                     (_("sibling"), person_handle, husband, wife)))
-                              for child_ref in children)
-                if husband:
+                              for child_ref in children if child_ref.ref != person_handle)
+                if husband and husband != person_handle:
                     retval += [(husband, 
                                 (path, (_("father"), person_handle, wife)))]
-                if wife:
+                if wife and wife != person_handle:
                     retval += [(wife, 
                                 (path, (_("mother"), person_handle, husband)))]
+
+        assoc_list = person.get_person_ref_list()
+        for assoc in assoc_list:
+            relation = assoc.get_relation()
+            assoc_handle = assoc.get_reference_handle()
+            retval += [(assoc_handle, (path, (relation, person_handle)))]
+
         return retval
 
     def active_changed(self, handle):
@@ -203,7 +210,7 @@ class DeepConnectionsGramplet(Gramplet):
             for items in relatives:
                 person_handle = items[0]
                 path = items[1] 
-                if person_handle is not None and person_handle not in self.cache: 
+                if person_handle is not None: # and person_handle not in self.cache: 
                     self.queue.append((person_handle, path))
             yield True
         self.append_text(_("\nSearch completed. %d relations found.") % self.total_relations_found)
