@@ -481,8 +481,9 @@ class TimelinePedigreeView(NavigationView):
     Displays the ancestors and descendants of a selected individual.
     """
 
-    def __init__(self, dbstate, uistate, nav_group=0):
-        NavigationView.__init__(self, _('Timeline pedigree'), dbstate, uistate, 
+    def __init__(self, pdata, dbstate, uistate, nav_group=0):
+        NavigationView.__init__(self, _('Timeline pedigree'),
+                                      pdata, dbstate, uistate, 
                                       dbstate.db.get_bookmarks(), 
                                       Bookmarks.PersonBookmarks,
                                       nav_group)
@@ -498,6 +499,9 @@ class TimelinePedigreeView(NavigationView):
 
         self.dbstate = dbstate
         self.dbstate.connect('database-changed', self.change_db)
+
+        self.additional_uis.append(self.additional_ui())
+
         # Tree Dimensions
         self.generations_in_tree = [3, 4]
         
@@ -561,6 +565,7 @@ class TimelinePedigreeView(NavigationView):
 
     def on_delete(self):
         """Save the configuration settings on shutdown."""
+        NavigationView.on_delete(self)
         self.cman.save()
 
     def change_page(self):
@@ -615,7 +620,7 @@ class TimelinePedigreeView(NavigationView):
 
         return self.scrolledwindow
 
-    def ui_definition(self):
+    def additional_ui(self):
         """
         Specifies the UIManager XML code that defines the menus and buttons
         associated with the interface.
