@@ -86,14 +86,16 @@ class GraphView(NavigationView):
     Displays the ancestors of a selected individual.
     """
 
-    def __init__(self, dbstate, uistate, nav_group=0):
-        NavigationView.__init__(self, _('Graph View'), dbstate, uistate, 
+    def __init__(self, pdata, dbstate, uistate, nav_group=0):
+        NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate, 
                                       dbstate.db.get_bookmarks(), 
                                       Bookmarks.PersonBookmarks, nav_group)
 
         self.dbstate = dbstate
         self.graph_widget = None
         self.dbstate.connect('database-changed', self.change_db)
+
+        self.additional_uis.append(self.additional_ui())
 
     def _connect_db_signals(self):
         """
@@ -133,7 +135,7 @@ class GraphView(NavigationView):
         """
         pass
 
-    def ui_definition(self):
+    def additional_ui(self):
         """
         Specifies the UIManager XML code that defines the menus and buttons
         associated with the interface.
