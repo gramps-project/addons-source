@@ -5279,5 +5279,161 @@
             <size>20</size>
         </column>
     </census>
-
+    <census id='SC1851' title='1851 SC Census' date='30 Mar 1851'>
+        <heading>
+            <_attribute>Researcher</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Microfilm number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village</_attribute>
+        </heading>
+        <column>
+           <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House</_attribute>
+            <size>12</size>
+        </column>    
+        <column>
+            <_attribute>Address</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>7</size>
+        </column>
+    </census>
+    <census id='SC1891' title='1891 SC Census' date='5 Apr 1891'>
+       <heading>
+            <_attribute>Researcher</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School board</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Microfilm number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House</_attribute>
+            <size>12</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Employer</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Employed</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Neither</_attribute>
+            <_longname>Neither Employer nor Employed</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Gaellic or G. &amp; E.</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Number of rooms with window</_attribute>
+            <size>5</size>
+        </column>
+    </census>
 </censuses>
