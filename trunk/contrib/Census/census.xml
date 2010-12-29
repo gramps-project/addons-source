@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <censuses>
     <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
         <heading>
@@ -4906,7 +4906,7 @@
         </column>
         <column>
             <_attribute>Wages</_attribute>
-            <_longname>29. Rate of earnings per hour when employed by the hour—Cents</_longname>
+            <_longname>29. Rate of earnings per hour when employed by the hour-Cents</_longname>
             <size>5</size>
         </column>
         <column>
