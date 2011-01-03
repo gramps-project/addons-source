@@ -5279,18 +5279,40 @@
             <size>20</size>
         </column>
     </census>
+    <census id='SC1841' title='1841 SC Census' date='6 Jun 1841'>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Place</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <column>
+           <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Born in County</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Foreigner, Born England or Ireland</_attribute>
+            <size>7</size>
+        </column>
+    </census>
     <census id='SC1851' title='1851 SC Census' date='30 Mar 1851'>
         <heading>
-            <_attribute>Researcher</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Civil Parish</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Royal Burgh</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Microfilm number</_attribute>
+            <_attribute>Parish</_attribute>
         </heading>
         <heading>
             <_attribute>Quoad Sacra Parish</_attribute>
@@ -5299,28 +5321,28 @@
             <_attribute>Parliamentary Burgh</_attribute>
         </heading>
         <heading>
-            <_attribute>Page number</_attribute>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+         <heading>
+            <_attribute>Town or Village</_attribute>
         </heading>
         <heading>
-            <_attribute>Town</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Village</_attribute>
+            <_attribute>GROS Data</_attribute>
         </heading>
         <column>
            <_attribute>Name</_attribute>
             <size>25</size>
         </column>
         <column>
-            <_attribute>House</_attribute>
-            <size>12</size>
+            <_attribute>House Schedule No</_attribute>
+            <size>7</size>
         </column>    
         <column>
             <_attribute>Address</_attribute>
             <size>25</size>
         </column>
         <column>
-            <_attribute>Relation</_attribute>
+            <_attribute>Relation to Head</_attribute>
             <size>7</size>
         </column>
         <column>
@@ -5340,25 +5362,13 @@
             <size>10</size>
         </column>
         <column>
-            <_attribute>Disability</_attribute>
+            <_attribute>Blind, or Deaf and Dumb</_attribute>
             <size>7</size>
         </column>
     </census>
-    <census id='SC1891' title='1891 SC Census' date='5 Apr 1891'>
-       <heading>
-            <_attribute>Researcher</_attribute>
-        </heading>
+    <census id='SC1861' title='1861 SC Census' date='7 Apr 1861'>
         <heading>
-            <_attribute>Civil Parish</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Royal Burgh</_attribute>
-        </heading>
-        <heading>
-            <_attribute>School board</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Microfilm number</_attribute>
+            <_attribute>Parish</_attribute>
         </heading>
         <heading>
             <_attribute>Quoad Sacra Parish</_attribute>
@@ -5367,10 +5377,7 @@
             <_attribute>Parliamentary Burgh</_attribute>
         </heading>
         <heading>
-            <_attribute>Police Burgh</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Page number</_attribute>
+            <_attribute>Royal Burgh</_attribute>
         </heading>
         <heading>
             <_attribute>Town</_attribute>
@@ -5378,20 +5385,36 @@
         <heading>
             <_attribute>Village</_attribute>
         </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
         <column>
             <_attribute>Name</_attribute>
             <size>25</size>
         </column>
         <column>
+            <_attribute>No. Of Schedule</_attribute>
+            <size>7</size>
+        </column>
+        <column>
             <_attribute>Address</_attribute>
+            <_longname>Road, Street, etc, and No. or Name of House</_longname>
             <size>25</size>
         </column>
         <column>
-            <_attribute>House</_attribute>
-            <size>12</size>
+            <_attribute>House Inhabited</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>House U or B</_attribute>
+            <size>5</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
             <size>7</size>
         </column>
         <column>
@@ -5404,6 +5427,277 @@
         </column>
         <column>
             <_attribute>Occupation</_attribute>
+            <_longname>Rank, Profession, or Occupation</_longname>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disabled</_attribute>
+            <_longname>Whether Blind, or Deaf and Dumb</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children</_attribute>
+            <_longname>No. of Children from 5 to 13 attending School</_longname><size>7</size>
+            <size>5</size>        
+        </column>
+        <column>
+            <_attribute>WindowRooms</_attribute>
+            <_longname>No. of Rooms with one or more Windows</_longname><size>7</size>
+            <size>5</size>
+        </column>
+    </census>
+    <census id='SC1871' title='1871 SC Census' date='2 Apr 1871'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>No. Of Schedule</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House Inhabited</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>House U or B</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <_longname>Rank, Profession, or Occupation</_longname>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disabled</_attribute>
+            <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children</_attribute>
+            <_longname>No. of Children from 5 to 13 attending School</_longname><size>7</size>
+            <size>5</size>        
+        </column>
+        <column>
+            <_attribute>WindowRooms</_attribute>
+            <_longname>No. of Rooms with one or more Windows</_longname><size>7</size>
+            <size>5</size>
+        </column>
+    </census>
+    <census id='SC1881' title='1881 SC Census' date='3 Apr 1881'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School Board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>No. Of Schedule</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House Inhabited</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>House U or B</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <_longname>Rank, Profession, or Occupation</_longname>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disabled</_attribute>
+            <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children</_attribute>
+            <_longname>No. of Children from 5 to 13 attending School</_longname><size>7</size>
+            <size>5</size>        
+        </column>
+        <column>
+            <_attribute>WindowRooms</_attribute>
+            <_longname>No. of Rooms with one or more Windows</_longname><size>7</size>
+            <size>5</size>
+        </column>
+    </census>
+    <census id='SC1891' title='1891 SC Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Burgh Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Island</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>No. Of Schedule</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House Inhabited</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>House U or B</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <_longname>Rank, Profession, or Occupation</_longname>
             <size>18</size>
         </column>
         <column>
@@ -5428,11 +5722,135 @@
             <size>7</size>
         </column>
         <column>
-            <_attribute>Disability</_attribute>
+            <_attribute>Disabled</_attribute>
+            <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
             <size>7</size>
         </column>
         <column>
-            <_attribute>Number of rooms with window</_attribute>
+            <_attribute>Children</_attribute>
+            <_longname>No. of Children from 5 to 13 attending School</_longname><size>7</size>
+            <size>5</size>        
+        </column>
+        <column>
+            <_attribute>WindowRooms</_attribute>
+            <_longname>No. of Rooms with one or more Windows</_longname><size>7</size>
+            <size>5</size>
+        </column>
+    </census>
+    <census id='SC1901' title='1901 SC Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Burgh Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Island</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>No. Of Schedule</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>House Inhabited</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>House U or B</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <_longname>Condition as to Marriage</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Profession or Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Employer, Worker or on Own Account</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Working at Home</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Gaellic or G. &amp; E.</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Disabled</_attribute>
+            <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Children</_attribute>
+            <_longname>No. of Children from 5 to 13 attending School</_longname><size>7</size>
+            <size>5</size>        
+        </column>
+        <column>
+            <_attribute>WindowRooms</_attribute>
+            <_longname>No. of Rooms with one or more Windows</_longname><size>7</size>
             <size>5</size>
         </column>
     </census>
