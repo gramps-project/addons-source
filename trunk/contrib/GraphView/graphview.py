@@ -513,6 +513,7 @@ class GraphvizSvgParser(object):
             line_width = 0  # No box
         item = goocanvas.Polyline(parent = self.current_parent(),
                                   points = points,
+                                  close_path = True,
                                   fill_color = fill_color,
                                   line_width = line_width,
                                   stroke_color = stroke_color)
