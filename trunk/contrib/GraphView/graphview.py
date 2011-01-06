@@ -644,8 +644,8 @@ class GraphvizSvgParser(object):
         """
         pos_x = float(attrs.get('x'))
         pos_y = float(attrs.get('y'))
-        width = int(attrs.get('width').rstrip(string.letters))
-        height = int(attrs.get('height').rstrip(string.letters))
+        width = int(attrs.get('width').encode('utf-8').rstrip(string.letters))
+        height = int(attrs.get('height').encode('utf-8').rstrip(string.letters))
         pixbuf = gtk.gdk.pixbuf_new_from_file(attrs.get('xlink:href'))
         item = goocanvas.Image(parent = self.current_parent(),
                                x = pos_x,
