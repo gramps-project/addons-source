@@ -295,6 +295,11 @@ elif command == "listing":
     for addon in dirs:
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             length= len(po)
+            # Compile
+            locale = po[length-11:length-9]
+            system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+            system('''msgfmt %(po)s '''
+                   '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
             locale_path, locale = po.rsplit("/", 1)
             languages.add(locale[:-9])
     # next, create a file for all languages listing plugins
