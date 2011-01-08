@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
@@ -22,9 +22,7 @@
 # $Id$
 
 # *****************************************************************************
-#
 # Python Modules
-#
 # *****************************************************************************
 
 import os
@@ -33,29 +31,24 @@ import time
 import re
 
 # -----------------------------------------------------------------------------
-#
-# GTK modules
-#
+# Set up logging
 # -----------------------------------------------------------------------------
+import logging
+log = logging.getLogger(".ImageMetadataGramplet")
 
+# -----------------------------------------------------------------------------
+# GTK modules
+# -----------------------------------------------------------------------------
 import gtk
 
 # -----------------------------------------------------------------------------
-#
 # GRAMPS modules
-#
 # -----------------------------------------------------------------------------
 
+# import Gramplet code
 from gen.plug import Gramplet
-import Utils
 
-from DateHandler import displayer as _dd
-
-from QuestionDialog import OkDialog, WarningDialog
-import gen.mime
-
-from PlaceUtils import conv_lat_lon
-
+# import Translation information and language
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 
@@ -69,14 +62,30 @@ except ImportError:
     pyexivmsg += "http://tilloy.net/dev/pyexiv2"
     raise Exception( pyexivmsg )
 
+# import date processing code
+from DateHandler import displayer as _dd
+from DateHandler import parser as _dp
 from gen.lib import Date
 
-# -----------------------------------------------------------------------------
-#
-# Constants
-#
-# -----------------------------------------------------------------------------
+# import QuestionDialog and Warning code
+from QuestionDialog import OkDialog, WarningDialog
 
+# import Graphic processing
+import gen.mime
+import ThumbNails
+
+# import utility code
+from PlaceUtils import conv_lat_lon
+import Utils
+from gui.utils import open_file_with_default_application
+
+# import software constants
+import const
+import constfunc
+
+# -----------------------------------------------------------------------------
+# Constants
+# -----------------------------------------------------------------------------
 # available image types for exiv2
 img_types = ["jpeg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
@@ -95,15 +104,15 @@ _DESCRIPTION = _( "Enter text describing this image and who might be in "
                   "especially if there is no GPS Latitude/ Longitude information available.")
 
 # set up exif keys for the image
-ImageDescription =  "Exif.Image.ImageDescription"
-ImageDateTime =     "Exif.Image.DateTime"
+ImageDescription  = "Exif.Image.ImageDescription"
+ImageDateTime     = "Exif.Image.DateTime"
 ImagePhotographer = "Exif.Image.Artist"
-ImageCopyright =    "Exif.Image.Copyright"
-ImageLatitudeRef =  "Exif.GPSInfo.GPSLatitudeRef"
-ImageLatitude =     "Exif.GPSInfo.GPSLatitude"
+ImageCopyright    = "Exif.Image.Copyright"
+ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
+ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
-ImageLongitude =    "Exif.GPSInfo.GPSLongitude"
-XmpSubject =        "Xmp.dc.subject"
+ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
+XmpSubject        = "Xmp.dc.subject"
 
 _DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer, 
              ImageCopyright, ImageLatitudeRef, ImageLatitude, ImageLongitudeRef,
@@ -115,6 +124,7 @@ _DATAMAP = [ ImageDescription, ImageDateTime, ImagePhotographer,
 #------------------------------------------------------------------------
 class ImageMetadataGramplet(Gramplet):
     def init(self):
+
         self.exif_column_width = 20
         self.exif_widgets = {}
         self.xmp_widgets  = {}
@@ -125,6 +135,9 @@ class ImageMetadataGramplet(Gramplet):
         self.orig_image = False
 
         rows = gtk.VBox()
+        rows.set_border_width(0)
+        rows.set_spacing(4)
+
         for items in [
             ("Active:Image", _("Active Image"),   None, True,  [],      False, 0, None), 
 
@@ -188,6 +201,10 @@ class ImageMetadataGramplet(Gramplet):
         self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS "
             "Longitude as decimal format "))
 
+        row = gtk.HBox()
+        row.pack_start( self.show_media_image(), False )
+        rows.pack_start( row, True )
+
         # Save, Clear
         row = gtk.HBox()
         button = gtk.Button(_("Save"))
@@ -214,7 +231,7 @@ class ImageMetadataGramplet(Gramplet):
 
         # get media image from database and get full media path
         self.orig_image = self.dbstate.db.get_object_from_handle( handle )
-        self.image_path = Utils.media_path_full( self.dbstate.db, self.orig_image.get_path() )
+        self.image_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
 
         # get the pyexiv2 image
         self.plugin_image = self.get_plugin_image( self.orig_image )
@@ -226,6 +243,137 @@ class ImageMetadataGramplet(Gramplet):
 
             # update all data fields
             self.update()
+
+    def show_media_image(self):
+        """
+        shows the media image thumbnail
+        """
+
+        self.image = gtk.Image()
+        self.image.set_size_request(int(const.THUMBSCALE),
+                                    int(const.THUMBSCALE))
+        previews = self.plugin_image.previews
+        if not previews:
+
+            if self.mime_type:
+
+                # make a thumbnail of this region
+                newpath = self.copy_thumbnail(self.report, photo_handle, photo, region)
+                newpath = self.report.build_url_fname(newpath, up = True)
+
+            self.image.set_from_file( newpath )
+
+        else:
+
+            thumbnail = previews[0]
+
+            # Create a pixbuf loader to read the thumbnail data
+            pbloader = gtk.gdk.PixbufLoader()
+            pbloader.write( thumbnail.data )
+
+            # Get the resulting pixbuf and build an image to be displayed
+            pixbuf = pbloader.get_pixbuf()
+            pbloader.close()
+
+            self.Image.set_from_pixbuf( pixbuf )
+
+        ebox = gtk.EventBox()
+        ebox.add(self.image)
+        ebox.connect('button-press-event', self.button_press_event)
+        ebox.set_tooltip_text(
+            _('Double click image to view in an external viewer'))
+        vbox.pack_start(ebox, False)
+        vbox.pack_start(base, True)
+
+    def copy_thumbnail(self, handle, photo, region=None):
+        """
+        Given a handle (and optional region) make (if needed) an
+        up-to-date cache of a thumbnail, and call report.copy_file
+        to copy the cached thumbnail to the website.
+        Return the new path to the image.
+        """
+
+        to_dir = self.build_path('thumb', handle)
+        to_path = os.path.join(to_dir, handle) + '.png'
+    
+        from_path = ThumbNails.get_thumbnail_path(Utils.media_path_full(
+                                                  self.database.db,
+                                                  self.image_path),
+                                                  self.mime_type ) )
+
+        if not os.path.isfile(from_path):
+            from_path = CSS["Document"]["filename"]
+    else:
+        from_path = CSS["Document"]["filename"]
+    report.copy_file(from_path, to_path)
+    return to_path
+
+    def copy_file(self, from_fname, to_fname, to_dir = ''):
+        """
+        Copy a file from a source to a (report) destination.
+        If to_dir is not present and if the target is not an archive,
+        then the destination directory will be created.
+
+        Normally 'to_fname' will be just a filename, without directory path.
+
+        'to_dir' is the relative path name in the destination root. It will
+        be prepended before 'to_fname'.
+        """
+
+        log.debug("copying '%s' to '%s/%s'" % (from_fname, to_dir, to_fname))
+
+        dest = os.path.join(self.html_dir, to_dir, to_fname)
+
+        destdir = os.path.dirname(dest)
+        if not os.path.isdir(destdir):
+            os.makedirs(destdir)
+
+        if from_fname != dest:
+            try:
+                shutil.copyfile(from_fname, dest)
+            except:
+                print("Copying error: %s" % sys.exc_info()[1])
+                print("Continuing...")
+
+    def build_subdirs(self, subdir, fname, up = False):
+        """
+        If subdir is given, then two extra levels of subdirectory are inserted
+        between 'subdir' and the filename. The reason is to prevent directories with
+        too many entries.
+
+        For example, this may return "8/1/aec934857df74d36618"
+
+        *** up = None = [./] for use in EventListPage
+        """
+        subdirs = []
+        if subdir:
+            subdirs.append(subdir)
+            subdirs.append(fname[-1].lower())
+            subdirs.append(fname[-2].lower())
+
+        if up == True:
+            subdirs = ['..']*3 + subdirs
+
+        # added for use in EventListPage
+        elif up is None:
+            subdirs = ['.'] + subdirs
+        return subdirs
+
+    def build_path(self, subdir, fname, up = False):
+        """
+        Return the name of the subdirectory.
+
+        Notice that we DO use os.path.join() here.
+        """
+        return os.path.join(*self.build_subdirs(subdir, fname, up))
+
+    def button_press_event(self, obj, event):
+        """
+        Event handler that catches a double click, and and launches a viewer for
+        the selected object.
+        """
+        if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
+            self.view_media(obj)
 
     def get_plugin_image(self, media_obj):
         """
