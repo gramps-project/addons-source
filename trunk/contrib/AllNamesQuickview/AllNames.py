@@ -28,7 +28,6 @@ Display all names of all people
 
 from Simple import SimpleAccess, SimpleDoc, SimpleTable
 from gen.display.name import displayer as nd
-from gen.lib import Person
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
