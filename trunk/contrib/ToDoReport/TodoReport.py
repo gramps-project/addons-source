@@ -75,21 +75,18 @@ class TodoReport(Report):
         """
         Report.__init__(self, database, options_class)
         menu = options_class.menu
-        self.marker = menu.get_option_by_name('marker').get_value()
+        self.tag = menu.get_option_by_name('tag').get_value()
+        if not self.tag:
+            raise ReportError(_('ToDo Report'),
+                _('You must first create a tag before running this report.'))
         self.can_group = menu.get_option_by_name('can_group').get_value()
 
     def write_report(self):
         """
         Generate the report document
         """
-        markerstr = self.marker
-        # Use localized name if this is not a custom marker
-        if self.marker in MarkerType._E2IMAP:
-            mtype = MarkerType._E2IMAP[self.marker]
-            markerstr = MarkerType._I2SMAP[mtype]
-
         self.doc.start_paragraph("TR-Title")
-        title = _("Report on Notes Marked %s") % markerstr
+        title = _("Report on Notes Tagged %s") % self.tag
         mark = docgen.IndexMark(title, docgen.INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -98,7 +95,7 @@ class TodoReport(Report):
         nlist = self.database.get_note_handles()
         FilterClass = GenericFilterFactory('Note')
         my_filter = FilterClass()
-        my_filter.add_rule(Rules.Note.HasMarkerOf([self.marker]))
+        my_filter.add_rule(Rules.Note.HasTag([self.tag]))
         note_list = my_filter.apply(self.database, nlist)
 
         if self.can_group:
@@ -480,19 +477,21 @@ class TodoOptions(MenuReportOptions):
         """
         category_name = _("Report Options")
 
-        marker = EnumeratedListOption(_('Marker'),
-                                      MarkerType._I2EMAP[MarkerType.TODO_TYPE])
-        # Add built-in marker types
-        for mtype in MarkerType._I2SMAP:
-            if mtype != MarkerType.NONE and mtype != MarkerType.CUSTOM:
-                # Use translated name for built-in marker types
-                marker.add_item(MarkerType._I2EMAP[mtype],
-                                MarkerType._I2SMAP[mtype] )
-        # Add custom marker types
-        for mtype in self.__db.get_marker_types():
-            marker.add_item( mtype, mtype )
-        marker.set_help( _("The marker type to use for the report"))
-        menu.add_option(category_name, "marker", marker)
+        all_tags = []
+        for handle in self.__db.get_tag_handles():
+            tag = self.__db.get_tag_from_handle(handle)
+            all_tags.append(tag.get_name())
+
+        if len(all_tags) > 0:
+            tag_option = EnumeratedListOption(_('Tag'), all_tags[0])
+            for tag_name in all_tags:
+                tag_option.add_item(tag_name, tag_name)
+        else:
+            tag_option = EnumeratedListOption(_('Tag'), '')
+            tag_option.add_item('', '')
+
+        tag_option.set_help( _("The tag to use for the report"))
+        menu.add_option(category_name, "tag", tag_option)
 
         can_group = BooleanOption(_("Group by reference type"), False)
         can_group.set_help( _("Group notes by Family, Person, Place, etc."))
