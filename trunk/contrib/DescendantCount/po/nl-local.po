@@ -5,6 +5,7 @@
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -19,7 +20,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon
+# Home person        beginpersoon : (EDR)
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -28,18 +29,21 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	     waarnaar verwezen wordt, verwijzingen
+# reference	     waarnaar verwezen wordt
 # count		     aantal maal
 # lineage	     lijn
-# reference          enekel voor de refentiestructuur
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-03 16:50+0100\n"
-"PO-Revision-Date: 2010-05-12 18:03+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"POT-Creation-Date: 2011-01-15 15:56+0100\n"
+"PO-Revision-Date: 2011-01-15 15:58+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,7 +52,7 @@ msgstr ""
 "X-Poedit-Country: België\n"
 
 #: DescendantCount/DescendantCount.gpr.py:3
-#: DescendantCount/DescendantCount.gpr.py:23
+#: DescendantCount/DescendantCount.gpr.py:24
 msgid "Descendant Count"
 msgstr "Afstammelingen tellen"
 
@@ -58,7 +62,11 @@ msgstr "Het aantal afstammelingen voor elke persoon tonen."
 
 #: DescendantCount/DescendantCount.gpr.py:17
 msgid "Descendant Count Gramplet"
-msgstr "'Afstammelingentelling'-gramplet"
+msgstr "Afstammelingentellingsgramplet"
+
+#: DescendantCount/DescendantCount.gpr.py:18
+msgid "Gramplet for showing people and descendant counts"
+msgstr "Gramplet om personen en afstammelingentelling te tonene"
 
 #: DescendantCount/DescendantCount.py:78
 msgid "Descendent Count"
@@ -77,57 +85,27 @@ msgstr "Aantal afstammelingen"
 msgid "There are %d people.\n"
 msgstr "Er zijn %d personen.\n"
 
-#: DescendantCount/descendant_count.py:59
-#, python-format
-msgid "Number of %s's descendants"
-msgstr "%s afstammelingen"
+#~ msgid "Number of %s's descendants"
+#~ msgstr "%s afstammelingen"
+#~ msgid "Generation"
+#~ msgstr "Generatie"
+#~ msgid "Total"
+#~ msgstr "Totaal"
+#~ msgid "Seen"
+#~ msgstr "Gezien"
+#~ msgid "Survived"
+#~ msgstr "Overlevend"
+#~ msgid "Now alive"
+#~ msgstr "Nog in leven"
+#~ msgid "Seen = number of descendants whose birth %s has lived to see"
+#~ msgstr ""
+#~ "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt "
+#~ "hebben"
+#~ msgid ""
+#~ "Survived = number of descendants who died while %s was still being alive"
+#~ msgstr ""
+#~ "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven "
+#~ "was"
+#~ msgid "Descendant count"
+#~ msgstr "Afstammelingen tellen"
 
-#: DescendantCount/descendant_count.py:84
-#: DescendantCount/descendant_count.py:91
-msgid "Generation"
-msgstr "Generatie"
-
-#: DescendantCount/descendant_count.py:85
-#: DescendantCount/descendant_count.py:92
-#: DescendantCount/descendant_count.py:106
-#: DescendantCount/descendant_count.py:109
-msgid "Total"
-msgstr "Totaal"
-
-#: DescendantCount/descendant_count.py:86
-msgid "Seen"
-msgstr "Gezien"
-
-#: DescendantCount/descendant_count.py:87
-msgid "Survived"
-msgstr "Overlevend"
-
-#: DescendantCount/descendant_count.py:88
-#: DescendantCount/descendant_count.py:93
-msgid "Now alive"
-msgstr "Nog in leven"
-
-#: DescendantCount/descendant_count.py:116
-#, python-format
-msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
-
-#: DescendantCount/descendant_count.py:118
-#, python-format
-msgid ""
-"Survived = number of descendants who died while %s was still being alive"
-msgstr ""
-"Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
-
-#: DescendantCount/descendant_count.py:200
-msgid "Descendant count"
-msgstr "Afstammelingen tellen"
-
-# Provincie
-#: DescendantCount/descendant_count.py:201
-msgid "Stable"
-msgstr "Stabiel"
-
-#: DescendantCount/descendant_count.py:202
-msgid "Displays the number of a person's descendants"
-msgstr "Het aantal afstammelingen van een persoon tonen"
