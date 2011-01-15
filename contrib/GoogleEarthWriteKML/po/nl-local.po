@@ -5,6 +5,7 @@
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -19,7 +20,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon
+# Home person        beginpersoon : (EDR)
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -28,18 +29,21 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	     waarnaar verwezen wordt, verwijzingen
+# reference	     waarnaar verwezen wordt
 # count		     aantal maal
 # lineage	     lijn
-# reference          enekel voor de refentiestructuur
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-18 18:30+0100\n"
-"PO-Revision-Date: 2010-06-18 08:14+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"POT-Creation-Date: 2011-01-15 20:10+0100\n"
+"PO-Revision-Date: 2011-01-15 20:12+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,15 +59,15 @@ msgstr "GoogleEarth"
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Gegevensbestand voor 'GoogleEarth' aanmaken en openen."
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:82
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
 msgid "No place description"
 msgstr "Geen plaatsbeschrijving"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:115
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:122
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth is niet geïnstalleerd!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:116
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:123
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -72,31 +76,31 @@ msgstr ""
 "Een 'kmz/kml'-bestand ''%s''\n"
 "in gebruikersmap ''%s'' aanmaken?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:139
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:147
 msgid "Yes"
 msgstr "Ja"
 
 # niet/geen
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:120
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:140
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:148
 msgid "No"
 msgstr "Nee"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:133
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Fout bij schrijven naar %s"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:134
 msgid "Directory does not exist"
 msgstr "Map bestaat niet"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:135
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:143
 msgid "GoogleEarth file exists!"
 msgstr "'GoogleEarth'-bestand bestaat!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:136
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
