@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 10:15+0100\n"
-"PO-Revision-Date: 2011-01-13 10:26+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-01-16 20:18+0100\n"
+"PO-Revision-Date: 2011-01-16 20:20+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -59,69 +59,81 @@ msgstr "'Nog te doen'-verslag"
 msgid "Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc."
 msgstr "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
 
-#: ToDoReport/TodoReport.py:92
-#, python-format
-msgid "Report on Notes Marked %s"
-msgstr "Verslag van de opmerking met aanduiding %s"
+#: ToDoReport/TodoReport.py:80
+msgid "ToDo Report"
+msgstr "'Nog-te-doen'-verslag"
 
-#: ToDoReport/TodoReport.py:203
+#: ToDoReport/TodoReport.py:81
+msgid "You must first create a tag before running this report."
+msgstr "U dient eerst een tag aan te maken vooraleer u dit verslag kunt draaien."
+
+#: ToDoReport/TodoReport.py:89
+#, python-format
+msgid "Report on Notes Tagged %s"
+msgstr "Verslag over opmerkingen met de tag %s"
+
+#: ToDoReport/TodoReport.py:200
 msgid "Id"
 msgstr "Id"
 
-#: ToDoReport/TodoReport.py:209
+#: ToDoReport/TodoReport.py:206
 msgid "Text"
 msgstr "Tekst"
 
-#: ToDoReport/TodoReport.py:336
+#: ToDoReport/TodoReport.py:333
 #, python-format
 msgid "%(relationship_type)s on %(relationship_date)s"
 msgstr "%(relationship_type)s op %(relationship_date)s"
 
-#: ToDoReport/TodoReport.py:367
+#: ToDoReport/TodoReport.py:364
 msgid "date: "
 msgstr "datum:"
 
-#: ToDoReport/TodoReport.py:378
+#: ToDoReport/TodoReport.py:375
 msgid "place: "
 msgstr "locatie:"
 
-#: ToDoReport/TodoReport.py:481
+#: ToDoReport/TodoReport.py:478
 msgid "Report Options"
 msgstr "Verslagopties"
 
-#: ToDoReport/TodoReport.py:483
-msgid "Marker"
-msgstr "Aanduiding"
+#: ToDoReport/TodoReport.py:486
+#: ToDoReport/TodoReport.py:490
+msgid "Tag"
+msgstr "Tag"
 
-#: ToDoReport/TodoReport.py:494
-msgid "The marker type to use for the report"
-msgstr "Het aanduidingstype voor dit verslag"
+#: ToDoReport/TodoReport.py:493
+msgid "The tag to use for the report"
+msgstr "De gebruikte tag voor dit verslag"
 
-#: ToDoReport/TodoReport.py:497
+#: ToDoReport/TodoReport.py:496
 msgid "Group by reference type"
 msgstr "Volgens verwijzingstype rangschikken"
 
-#: ToDoReport/TodoReport.py:498
+#: ToDoReport/TodoReport.py:497
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Opmerkingen volgens familie, persoon, locatie, ... rangschikken."
 
-#: ToDoReport/TodoReport.py:515
+#: ToDoReport/TodoReport.py:514
 msgid "The style used for the title of the page."
 msgstr "De gebruikte stijl voor de titel van de pagina."
 
-#: ToDoReport/TodoReport.py:525
+#: ToDoReport/TodoReport.py:524
 msgid "The style used for the section headers."
 msgstr "De gebruikte stijl voor de sectietitels."
 
-#: ToDoReport/TodoReport.py:535
+#: ToDoReport/TodoReport.py:534
 msgid "The basic style used for the text display."
 msgstr "De gebruikte basisstijl voor de tekstweergave."
 
-#: ToDoReport/TodoReport.py:546
+#: ToDoReport/TodoReport.py:545
 msgid "The basic style used for table headings."
 msgstr "De gebruikte basisstijl voor de tabelhoofdingen."
 
-#: ToDoReport/TodoReport.py:553
+#: ToDoReport/TodoReport.py:552
 msgid "The basic style used for the note display."
 msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
+
+#~ msgid "Marker"
+#~ msgstr "Aanduiding"
 
