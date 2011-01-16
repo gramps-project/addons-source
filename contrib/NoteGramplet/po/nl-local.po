@@ -1,26 +1,65 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <erik@ylana.telenet.be>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-20 08:26+0100\n"
-"PO-Revision-Date: 2010-02-20 08:26+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
-"Language-Team: Dutch\n"
+"POT-Creation-Date: 2011-01-16 09:04+0100\n"
+"PO-Revision-Date: 2011-01-16 09:05+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
-msgstr "Opmerkingen-Gramplet"
+msgstr "Opmerkingengramplet"
 
-#: NoteGramplet/NoteGramplet.gpr.py:9
+#: NoteGramplet/NoteGramplet.gpr.py:4
+msgid "Gramplet for editing active person's notes"
+msgstr "Gramplet om de opmerkingen van de actieve persoon te bewerken"
+
+#: NoteGramplet/NoteGramplet.gpr.py:10
 msgid "Note"
 msgstr "Opmerking"
 
@@ -40,7 +79,8 @@ msgstr "Opslaan"
 msgid "Abandon"
 msgstr "Annuleren"
 
-#: NoteGramplet/NoteGramplet.py:168 NoteGramplet/NoteGramplet.py:249
+#: NoteGramplet/NoteGramplet.py:168
+#: NoteGramplet/NoteGramplet.py:249
 msgid "Person Note"
 msgstr "Persoonsopmerking"
 
@@ -48,6 +88,8 @@ msgstr "Persoonsopmerking"
 msgid "Add Note"
 msgstr "Opmerking toevoegen"
 
+# Bronnen vermelden/citeren
 #: NoteGramplet/NoteGramplet.py:258
 msgid "Edit Note"
 msgstr "Opmerking bewerken"
+
