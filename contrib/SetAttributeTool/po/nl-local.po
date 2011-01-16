@@ -5,6 +5,7 @@
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -19,7 +20,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon
+# Home person        beginpersoon : (EDR)
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -28,18 +29,21 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	     waarnaar verwezen wordt, verwijzingen
+# reference	     waarnaar verwezen wordt
 # count		     aantal maal
 # lineage	     lijn
-# reference          enekel voor de refentiestructuur
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-03 17:01+0100\n"
-"PO-Revision-Date: 2010-04-10 08:42+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"POT-Creation-Date: 2011-01-16 10:53+0100\n"
+"PO-Revision-Date: 2011-01-16 10:54+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,9 +52,9 @@ msgstr ""
 "X-Poedit-Country: België\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:119
-#: SetAttributeTool/SetAttributeTool.py:179
-#: SetAttributeTool/SetAttributeTool.py:196
+#: SetAttributeTool/SetAttributeTool.py:117
+#: SetAttributeTool/SetAttributeTool.py:177
+#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Set Attribute"
 msgstr "Kenmerk vastleggen"
 
@@ -58,56 +62,56 @@ msgstr "Kenmerk vastleggen"
 msgid "Set an attribute to a given value."
 msgstr "Een kenmerk een bepaalde waarde toekennen."
 
-#: SetAttributeTool/SetAttributeTool.py:70
-#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:120
 msgid "Options"
 msgstr "Opties"
 
-#: SetAttributeTool/SetAttributeTool.py:72
+#: SetAttributeTool/SetAttributeTool.py:70
 msgid "Person Filter"
 msgstr "Persoonsfilter"
 
-#: SetAttributeTool/SetAttributeTool.py:73
+#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
-msgstr "Filter kiezen om aantal personen te beperken"
+msgstr "Filter om aantal personen te beperken, selecteren"
 
-#: SetAttributeTool/SetAttributeTool.py:77
+#: SetAttributeTool/SetAttributeTool.py:75
 msgid "Filter Person"
-msgstr "Personen filteren"
+msgstr "Personenfilter"
 
-#: SetAttributeTool/SetAttributeTool.py:78
+#: SetAttributeTool/SetAttributeTool.py:76
 msgid "The center person for the filter"
 msgstr "De centrale persoon voor de filter"
 
-#: SetAttributeTool/SetAttributeTool.py:82
+#: SetAttributeTool/SetAttributeTool.py:80
 msgid "Attribute"
 msgstr "Kenmerk"
 
-#: SetAttributeTool/SetAttributeTool.py:83
+#: SetAttributeTool/SetAttributeTool.py:81
 msgid "Value"
 msgstr "Waarde"
 
-#: SetAttributeTool/SetAttributeTool.py:85
+#: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Het kenmerktype dat toegevoegd of veranderd wordt"
 
-#: SetAttributeTool/SetAttributeTool.py:86
+#: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "De kenmerkwaarde die toegevoegd of veranderd wordt"
 
-#: SetAttributeTool/SetAttributeTool.py:127
+#: SetAttributeTool/SetAttributeTool.py:125
 msgid "Results"
 msgstr "Resultaten"
 
-#: SetAttributeTool/SetAttributeTool.py:128
+#: SetAttributeTool/SetAttributeTool.py:126
 msgid "Processing...\n"
 msgstr "Wordt verwerkt...\n"
 
-#: SetAttributeTool/SetAttributeTool.py:143
+#: SetAttributeTool/SetAttributeTool.py:141
 msgid "Setting attributes..."
 msgstr "Kenmerken worden aangepast..."
 
-#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.py:148
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -116,7 +120,7 @@ msgstr ""
 "'%s' kenmerken worden aangepast naar '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:182
+#: SetAttributeTool/SetAttributeTool.py:180
 #, python-format
 msgid ""
 "\n"
@@ -125,14 +129,15 @@ msgstr ""
 "\n"
 "%d '%s' kenmerken veranderd naar '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:182
 msgid "Done!\n"
 msgstr "OK!\n"
 
-#: SetAttributeTool/SetAttributeTool.py:197
+#: SetAttributeTool/SetAttributeTool.py:195
 msgid "Beta"
 msgstr "Beta"
 
-#: SetAttributeTool/SetAttributeTool.py:200
+#: SetAttributeTool/SetAttributeTool.py:198
 msgid "Sets an attribute of a person to a given value."
 msgstr "Een kenmerk van een persoon een bepaalde waarde toekennen."
+

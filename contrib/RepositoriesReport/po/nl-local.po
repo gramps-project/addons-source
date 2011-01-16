@@ -1,20 +1,55 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <erik@ylana.telenet.be>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-20 08:44+0100\n"
-"PO-Revision-Date: 2010-02-20 08:44+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
-"Language-Team: Dutch\n"
+"POT-Creation-Date: 2011-01-16 10:52+0100\n"
+"PO-Revision-Date: 2011-01-16 10:53+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:25
 msgid "Repositories Report Options"
@@ -23,39 +58,35 @@ msgstr "Opties voor het bibliotheekverslag"
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 #: RepositoriesReport/RepositoriesReport.gpr.py:43
 msgid "Produces a textual repositories report"
-msgstr "Levert een tekstverslag van de bibliotheken"
+msgstr "Tekstverslag van de bibliotheken wordt opgemaakt"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
-#: RepositoriesReport/RepositoriesReport.py:71
-#: RepositoriesReport/RepositoriesReportAlt.py:92
+#: RepositoriesReport/RepositoriesReport.py:75
+#: RepositoriesReport/RepositoriesReportAlt.py:103
 msgid "Repositories Report"
 msgstr "Bibliothekenverslag"
 
-#: RepositoriesReport/RepositoriesReport.py:142
-#: RepositoriesReport/RepositoriesReportAlt.py:321
+#: RepositoriesReport/RepositoriesReport.py:146
+#: RepositoriesReport/RepositoriesReportAlt.py:285
 msgid "Report Options"
 msgstr "Verslagopties"
 
-#: RepositoriesReport/RepositoriesReport.py:166
-#: RepositoriesReport/RepositoriesReportAlt.py:385
+#: RepositoriesReport/RepositoriesReport.py:170
+#: RepositoriesReport/RepositoriesReportAlt.py:357
 msgid "The style used for the title of the report."
-msgstr "De gebruikte titelstijl"
+msgstr "De gebruikte stijl voor de titel van het verslag."
 
-#: RepositoriesReport/RepositoriesReport.py:180
-#: RepositoriesReport/RepositoriesReportAlt.py:399
+#: RepositoriesReport/RepositoriesReport.py:184
+#: RepositoriesReport/RepositoriesReportAlt.py:371
 msgid "The style used for repository title."
 msgstr "De gebruikte stijl voor de bibliotheektitel"
 
-#: RepositoriesReport/RepositoriesReport.py:194
-#: RepositoriesReport/RepositoriesReportAlt.py:414
+#: RepositoriesReport/RepositoriesReport.py:198
+#: RepositoriesReport/RepositoriesReportAlt.py:386
 msgid "The style used for each section."
-msgstr "De gebruikte stijl voor elke deel"
+msgstr "De gebruikte stijl voor iedere sectie."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:121
-msgid "Private"
-msgstr "Privé"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:163
+#: RepositoriesReport/RepositoriesReportAlt.py:158
 #, python-format
 msgid ""
 "\n"
@@ -64,17 +95,12 @@ msgstr ""
 "\n"
 "Adres: %s"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:191
-#, python-format
-msgid "%s. Private"
-msgstr "%s. privé"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:231
+#: RepositoriesReport/RepositoriesReportAlt.py:218
 #, python-format
 msgid "Author: %s"
 msgstr "Auteur: %s"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:233
+#: RepositoriesReport/RepositoriesReportAlt.py:220
 #, python-format
 msgid ""
 "\n"
@@ -83,7 +109,7 @@ msgstr ""
 "\n"
 "Afkorting: %s"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:235
+#: RepositoriesReport/RepositoriesReportAlt.py:222
 #, python-format
 msgid ""
 "\n"
@@ -92,7 +118,7 @@ msgstr ""
 "\n"
 "Publicatie-informatie: %s"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:237
+#: RepositoriesReport/RepositoriesReportAlt.py:224
 #, python-format
 msgid ""
 "\n"
@@ -101,82 +127,100 @@ msgstr ""
 "\n"
 "Datum: %s"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:323
+#: RepositoriesReport/RepositoriesReportAlt.py:287
 msgid "Include repository's urls"
 msgstr "Bibliotheek-url's toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:324
+#: RepositoriesReport/RepositoriesReportAlt.py:288
 msgid "Whether to include urls on repository."
 msgstr "Al of niet bibliotheek-url toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:327
+#: RepositoriesReport/RepositoriesReportAlt.py:291
 msgid "Include repository's address"
 msgstr "Bibliotheekadres toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:328
+#: RepositoriesReport/RepositoriesReportAlt.py:292
 msgid "Whether to include addresses on repository."
 msgstr "Al of niet de adressen van de bibliotheken toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:331
+#: RepositoriesReport/RepositoriesReportAlt.py:295
 msgid "Include source's author"
 msgstr "De bronauteur toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:332
+#: RepositoriesReport/RepositoriesReportAlt.py:296
 msgid "Whether to include author."
 msgstr "Al of niet de bronauteur toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:335
+#: RepositoriesReport/RepositoriesReportAlt.py:299
 msgid "Include source's abbreviation"
 msgstr "De bronafkorting toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:336
+#: RepositoriesReport/RepositoriesReportAlt.py:300
 msgid "Whether to include abbreviation."
 msgstr "Al of niet de afkorting toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:339
+#: RepositoriesReport/RepositoriesReportAlt.py:303
 msgid "Include source's publication information"
 msgstr "De publicatie-informatie van de bron toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:340
+#: RepositoriesReport/RepositoriesReportAlt.py:304
 msgid "Whether to include publication information."
 msgstr "Al of niet de publicatie-informatie toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:343
+#: RepositoriesReport/RepositoriesReportAlt.py:307
 msgid "Include source's data"
 msgstr "De brongegevens toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:344
+#: RepositoriesReport/RepositoriesReportAlt.py:308
 msgid "Whether to include keys and values."
 msgstr "Al of niet de sleutels en de waarden toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:347
+#: RepositoriesReport/RepositoriesReportAlt.py:311
 msgid "Include notes"
-msgstr "Opmerkingen toevoegen"
+msgstr "Opmerkingen bijvoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:348
+#: RepositoriesReport/RepositoriesReportAlt.py:312
 msgid "Whether to include notes on repositories and sources."
 msgstr "Al of niet de opmerkingen van de bronnen en de bibliotheken toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:351
+#: RepositoriesReport/RepositoriesReportAlt.py:315
 msgid "Include media"
 msgstr "Media-objecten toevoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:352
+#: RepositoriesReport/RepositoriesReportAlt.py:316
 msgid "Whether to include media on sources."
 msgstr "Al of niet de media over de bronnen toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:355
+#: RepositoriesReport/RepositoriesReportAlt.py:319
 msgid "Include private records"
-msgstr "Privégegevens toeveoegen"
+msgstr "Privégegevens bijvoegen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:320
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Al of niet de bibliotheken en bronnen met de aanduising privaat toevoegen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:429
+#: RepositoriesReport/RepositoriesReportAlt.py:323
+msgid "Translation"
+msgstr "Vertaling"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:325
+msgid "default"
+msgstr "standaard"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:328
+msgid "The translation to be used for the report."
+msgstr "De gebruikte taal voor het verslag."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:401
 msgid "The style used for child section."
 msgstr "De gebruikte stijl voor het deel van de kinderen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:441
+#: RepositoriesReport/RepositoriesReportAlt.py:413
 msgid "The basic style used for the note display."
-msgstr "de gebruikte basisstijl voor het tonen van de opmerkingen."
+msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
+
+#~ msgid "Private"
+#~ msgstr "Privé"
+#~ msgid "%s. Private"
+#~ msgstr "%s. privé"
+
