@@ -1,0 +1,101 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-16 10:26+0100\n"
+"PO-Revision-Date: 2011-01-16 10:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+msgid "Number of descendants"
+msgstr "Aantal afstammelingen"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+msgid "Shows the number of descendants of the current person"
+msgstr "Aantal afstammelingen van de actieve persoon wordt getoond"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:57
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "%s afstammelingen"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:82
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Generatie"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:83
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:106
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:110
+msgid "Total"
+msgstr "Totaal"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:84
+msgid "Seen"
+msgstr "Gezien"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:85
+msgid "Outlived"
+msgstr "Overlevend"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:86
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+msgid "Now alive"
+msgstr "Nog in leven"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:119
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
+
