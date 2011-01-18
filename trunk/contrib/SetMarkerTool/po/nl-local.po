@@ -1,0 +1,135 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-16 10:55+0100\n"
+"PO-Revision-Date: 2011-01-16 10:58+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: SetMarkerTool/SetMarkerTool.gpr.py:25
+#: SetMarkerTool/SetMarkerTool.py:113
+#: SetMarkerTool/SetMarkerTool.py:155
+#: SetMarkerTool/SetMarkerTool.py:171
+msgid "Set Marker"
+msgstr "Aanduiding ingeven"
+
+#: SetMarkerTool/SetMarkerTool.gpr.py:26
+msgid "Set Marker to a given value."
+msgstr "Aanduiding een bepaalde waarde toekennen."
+
+#: SetMarkerTool/SetMarkerTool.py:68
+#: SetMarkerTool/SetMarkerTool.py:116
+msgid "Options"
+msgstr "Opties"
+
+#: SetMarkerTool/SetMarkerTool.py:70
+msgid "Person Filter"
+msgstr "Persoonsfilter"
+
+#: SetMarkerTool/SetMarkerTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Filter om aantal personen te beperken, selecteren"
+
+#: SetMarkerTool/SetMarkerTool.py:75
+msgid "Filter Person"
+msgstr "Personenfilter"
+
+#: SetMarkerTool/SetMarkerTool.py:76
+msgid "The center person for the filter"
+msgstr "De centrale persoon voor de filter"
+
+#: SetMarkerTool/SetMarkerTool.py:80
+msgid "Marker"
+msgstr "Aanduiding"
+
+#: SetMarkerTool/SetMarkerTool.py:82
+msgid "Marker value to add or edit"
+msgstr "Aanduisingswaarde die toegevoegd of veranderd wordt"
+
+#: SetMarkerTool/SetMarkerTool.py:121
+msgid "Results"
+msgstr "Resultaten"
+
+#: SetMarkerTool/SetMarkerTool.py:122
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
+
+#: SetMarkerTool/SetMarkerTool.py:137
+msgid "Setting markers..."
+msgstr "Aanduisingen worden aangepast..."
+
+#: SetMarkerTool/SetMarkerTool.py:141
+#, python-format
+msgid ""
+"Setting markers to '%s'...\n"
+"\n"
+msgstr ""
+"Aanduidingen worden aangepast naar '%s'...\n"
+"\n"
+
+#: SetMarkerTool/SetMarkerTool.py:158
+#, python-format
+msgid ""
+"\n"
+"Set %d markers to '%s'\n"
+msgstr ""
+"\n"
+"%d aanduidingen veranderd naar '%s'\n"
+
+#: SetMarkerTool/SetMarkerTool.py:159
+msgid "Done!\n"
+msgstr "OK!\n"
+
+#: SetMarkerTool/SetMarkerTool.py:172
+msgid "Beta"
+msgstr "Beta"
+
+#: SetMarkerTool/SetMarkerTool.py:175
+msgid "Sets an marker of a person to a given value."
+msgstr "Aanduiding van een persoon een bepaalde waarde toekennen."
+
