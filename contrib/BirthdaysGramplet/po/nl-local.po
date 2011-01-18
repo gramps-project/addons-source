@@ -1,0 +1,36 @@
+# Dutch translations for gramps package.
+# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+# erik <frederik.de.richter@telenet.be>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-13 16:59+0100\n"
+"PO-Revision-Date: 2011-01-13 17:01+0100\n"
+"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
+msgid "Birthdays Gramplet"
+msgstr "Verjaardagsgramplet"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:36
+msgid "No Family Tree loaded."
+msgstr "Geen familiestamboom geladen."
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
+msgid "Processing..."
+msgstr "Wordt verwerkt..."
+
