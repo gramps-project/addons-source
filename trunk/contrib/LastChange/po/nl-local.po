@@ -1,0 +1,203 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-15 20:39+0100\n"
+"PO-Revision-Date: 2011-01-15 20:46+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: LastChange/LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr "'Laatste-wijziging'-gramplet"
+
+#: LastChange/LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr "De tien laatst gewijzigde persoonsgegevens worden gelijst"
+
+#: LastChange/LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr "Laatste wijzigingen"
+
+#: LastChange/LastChange.gpr.py:39
+msgid "Last Change Report"
+msgstr "verslag laatste wijziging"
+
+#: LastChange/LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr "Verslag van de laatst gewijzigde gegevens"
+
+#: LastChange/LastChangeGramplet.py:49
+msgid "Double-click name for details"
+msgstr "Voor meer gegevens op achternaam klikken"
+
+#: LastChange/LastChangeGramplet.py:50
+msgid "No Family Tree loaded."
+msgstr "Geen familiestamboom geladen."
+
+#: LastChange/LastChangeGramplet.py:54
+msgid "Processing..."
+msgstr "Wordt verwerkt..."
+
+#: LastChange/LastChangeGramplet.py:66
+msgid "changed on"
+msgstr "gewijzigd op"
+
+#: LastChange/LastChangeReport.py:147
+msgid "People Changed"
+msgstr "Gewijzigde personen"
+
+#: LastChange/LastChangeReport.py:148
+#: LastChange/LastChangeReport.py:163
+#: LastChange/LastChangeReport.py:194
+#: LastChange/LastChangeReport.py:214
+#: LastChange/LastChangeReport.py:229
+msgid "ID"
+msgstr "ID"
+
+#: LastChange/LastChangeReport.py:148
+msgid "Person"
+msgstr "Persoon"
+
+#: LastChange/LastChangeReport.py:148
+#: LastChange/LastChangeReport.py:163
+#: LastChange/LastChangeReport.py:194
+#: LastChange/LastChangeReport.py:214
+#: LastChange/LastChangeReport.py:229
+msgid "Changed On"
+msgstr "Gewijzigd op"
+
+#: LastChange/LastChangeReport.py:162
+msgid "Families Changed"
+msgstr "Gewijzigde families"
+
+#: LastChange/LastChangeReport.py:163
+msgid "Family Surname"
+msgstr "Familieachternaam"
+
+#: LastChange/LastChangeReport.py:180
+#, python-format
+msgid "%s and %s"
+msgstr "%s en %s"
+
+#: LastChange/LastChangeReport.py:193
+msgid "Events Changed"
+msgstr "Gewijzigde gebeurtenissen"
+
+# Gebeuren (korter)
+#: LastChange/LastChangeReport.py:194
+msgid "Event"
+msgstr "Gebeurtenis"
+
+#: LastChange/LastChangeReport.py:213
+msgid "Places Changed"
+msgstr "Gewijzigde locaties"
+
+#: LastChange/LastChangeReport.py:214
+msgid "Place"
+msgstr "Locatie"
+
+#: LastChange/LastChangeReport.py:228
+msgid "Media Changed"
+msgstr "Gewijzigde media"
+
+# Locatie
+#: LastChange/LastChangeReport.py:229
+msgid "Path"
+msgstr "Pad"
+
+#: LastChange/LastChangeReport.py:249
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: LastChange/LastChangeReport.py:250
+msgid "Select From:"
+msgstr "Selecteren uit:"
+
+# Mensen
+#: LastChange/LastChangeReport.py:251
+msgid "People"
+msgstr "Personen"
+
+#: LastChange/LastChangeReport.py:252
+msgid "Families"
+msgstr "Families"
+
+# Plaatsen
+#: LastChange/LastChangeReport.py:253
+msgid "Places"
+msgstr "Locaties"
+
+# Gebeuren (korter)
+#: LastChange/LastChangeReport.py:254
+msgid "Events"
+msgstr "Gebeurtenissen"
+
+#: LastChange/LastChangeReport.py:255
+msgid "Media"
+msgstr "Media"
+
+#: LastChange/LastChangeReport.py:256
+msgid "Sources"
+msgstr "Bronnen"
+
+#: LastChange/LastChangeReport.py:272
+msgid "The style used for the title of the page."
+msgstr "De gebruikte stijl voor de titel van de pagina."
+
+#: LastChange/LastChangeReport.py:287
+msgid "The style used for the section headers."
+msgstr "De gebruikte stijl voor de sectietitels."
+
+#: LastChange/LastChangeReport.py:297
+msgid "The style used for normal text"
+msgstr "De stijl gebruikt voor gewone tekst"
+
+#: LastChange/LastChangeReport.py:309
+msgid "The basic style used for table headings."
+msgstr "De gebruikte basisstijl voor de tabelhoofdingen."
+
