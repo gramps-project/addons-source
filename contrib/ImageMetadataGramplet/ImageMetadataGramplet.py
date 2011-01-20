@@ -3,7 +3,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009-2010 Rob G. Healey <robhealey1@gmail.com>
+# Copyright (C) 2009-2011 Rob G. Healey <robhealey1@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
 # Python Modules
 # *****************************************************************************
 
-import os
-import datetime
+import os, sys
+from datetime import datetime, date
 import time
 import re
 
@@ -39,29 +39,29 @@ import gtk
 # -----------------------------------------------------------------------------
 # GRAMPS modules
 # -----------------------------------------------------------------------------
-
-from gen.plug import Gramplet
-import Utils
-
-from DateHandler import displayer as _dd
-
-from QuestionDialog import OkDialog, WarningDialog
-import gen.mime
-
-from PlaceUtils import conv_lat_lon
-
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 
 # import the pyexiv2 library classes for this addon
 try:
-    from pyexiv2 import ImageMetadata, ExifTag, XmpTag, Rational
+    from pyexiv2 import ImageMetadata, ExifTag, XmpTag, IptcTag, Rational
 except ImportError:
     pyexivmsg = _( "The, pyexiv2, python binding library, to exiv2 is not "
                    "installed on this computer.\n It can be downloaded either from your "
                    "ocal repository or from here\n")
     pyexivmsg += "http://tilloy.net/dev/pyexiv2"
     raise Exception( pyexivmsg )
+
+from gen.plug import Gramplet
+
+from DateHandler import displayer as _dd
+from DateHandler import parser as _dp
+
+from QuestionDialog import OkDialog, WarningDialog
+
+import gen.mime
+import Utils
+from PlaceUtils import conv_lat_lon
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -76,75 +76,96 @@ _ABBREV_MONTHS += [_dd.long_months[month] for month in range(1, 13)]
 
 # first camera was created April 12, 1826
 # http://wiki.answers.com/Q/What_date_was_the_camera_invented 
-_DATE = datetime.datetime(1826, 4, 12, 14, 30, 00)
+_DATE = datetime(1826, 4, 12, 00, 00, 00)
 
 _DESCRIPTION = _( "Enter text describing this image and who might be in "
                   "the image.  It might be best to enter a location for this image, "
                   "especially if there is no GPS Latitude/ Longitude information available.")
 
-# set up exif keys for the image
-ImagePhotographer = "Exif.Image.Artist"
-ImageCopyright =    "Exif.Image.Copyright"
-ImageDateTime =     "Exif.Image.DateTime"
-ImageLatitude =     "Exif.GPSInfo.GPSLatitude"
-ImageLatitudeRef =  "Exif.GPSInfo.GPSLatitudeRef"
-ImageLongitude =    "Exif.GPSInfo.GPSLongitude"
+# set up Exif keys for Image Exif keys
+ImageArtist        = "Exif.Image.Artist"
+ImageCopyright    = "Exif.Image.Copyright"
+ImageDateTime     = "Exif.Image.DateTime"
+ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
+ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
+ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
-XmpSubject =        "Xmp.dc.subject"
-ImageDescription =  "Exif.Image.ImageDescription"
+ImageDescription  = "Exif.Image.ImageDescription"
 
-_DATAMAP = [ ImagePhotographer, ImageCopyright, ImageDateTime,
-             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
-             XmpSubject, ImageDescription ]
+# set up keys for Image Xmp keys
+XmpTitle   = "Xmp.dc.title"
+XmpSubject = "Xmp.dc.subject"
 
+# set up keys for Image IPTC keys
+IptcDateCreated = "Iptc.Application2.DateCreated"
+IptcKeywords    = "Iptc.Application2.Keywords"
+
+__EXIFMAP = [ ImageArtist, ImageCopyright, ImageDateTime, ImageDescription,
+             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef ]
+
+__XMPMAP = [ XmpTitle, XmpSubject ]
+
+__IPTCMAP = [ IptcDateCreated, IptcKeywords ]
 # ------------------------------------------------------------------------
 # Gramplet class
 # ------------------------------------------------------------------------
 class imageMetadataGramplet(Gramplet):
 
     def init(self):
-        """
-        sets up the variables, widgets, and data fields
-        """
-        
-        self.exif_column_width = 15
-        self.dirty = True
-        self.exif_widgets = {}
-        self.xmp_widgets  = {}
 
-        self.orig_image = False
-        self.image_path = False
+        self.exif_column_width = 15
+        self.Exif_widgets = {}
+        self.Xmp_widgets  = {}
+        self.Iptc_widgets = {}
+
+        self.gui.WIDGET = self.build_gui()
+        self.gui.get_container_widget().remove(self.gui.textview)
+        self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
+        self.gui.WIDGET.show()
+        
+        self.orig_image   = False
+        self.image_path   = False
         self.plugin_image = False
-        self.mime_type = False
+        self.mime_type    = False
+
+    def build_gui(self):
+        """
+        builds the gui interface
+        """
+
+        tip = _("Click on an image, read its Exif Metadata, and edit if you want "
+            "to change some of its information.")
+        self.gui.tooltip = tip
 
         rows = gtk.VBox()
         for items in [
-            ("Active image",  _("Active image"), None, True,  [],    False, 0),
-            ("Photographer",  _("Photographer"), None, False, [],    True,  0),
-            ("Copyright",     _("Copyright"),    None, False, [],    True,  0),
+            ("Active image",    _("Active image"), None, True,  [],         False, 0),
+            ("Title",           _("Title"),        None, False, [],         True,  0),
+            ("Artist",          _("Artist"),       None, False, [],         True,  0),
+            ("Copyright",       _("Copyright"),    None, False, [],         True,  0),
 
+            # calendar date entry
             ("Date",   "",                       None, True,  
-            [("Select Date", _("Select Date"),   self.select_date)], True, 0),
-	    ("Select:Date",  _("Media Date"),    None, False, [],    True, 0), 
+            [("Select Date",    _("Select Date"),   self.select_date)],     True, 0),
 
-	    ("Latitude",      _("Latitude"),     None, False, [],    True,  0),
-	    ("Longitude",     _("Longitude"),    None, False, [],    True,  0) ]: 
+            # manual date entry, example: 12 Apr 1826 00:00:00
+	    ("Select:Date",     _("Creation Date"), None, False, [],        True, 0),
+
+            # thumbnail preview
+            ("Thumbnail",       "",                None, True,
+            [("Thumb:Preview",  _("Thumbnail"),    self.thumbnail_window)], True,  0),
+
+            # Latitude/ longitude GPS
+	    ("Latitude",        _("Latitude"),     None, False, [],         True,  0),
+	    ("Longitude",       _("Longitude"),    None, False, [],         True,  0),
+
+            # subject and keyword entry
+            ("Subject",         _("Subject"),      None, False, [],         True,  0),
+            ("Keywords",        _("Keywords"),     None, False, [],         True,  0) ]: 
 
             pos, text, choices, readonly, callback, dirty, default = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
-
-        # Xmp Subject
-        row = gtk.HBox()
-        label = gtk.Label()
-        label.set_text("<b>%s</b>" % _("Subject"))
-        label.set_use_markup(True)
-        label.set_width_chars(15)
-        row.pack_start(label, False)
-        subject = gtk.Entry()
-        self.xmp_widgets["Subject"] = subject
-        row.pack_start(self.xmp_widgets["Subject"], True)
-        rows.pack_start(row, True)
 
         # separator before description textbox
         separator = gtk.HSeparator()
@@ -156,30 +177,31 @@ class imageMetadataGramplet(Gramplet):
         label.set_use_markup(True)
         rows.pack_start(label, False)
 
-        # description textbox
+        # description textbox field
         description_box = gtk.TextView()
         description_box.set_wrap_mode(gtk.WRAP_WORD)
         description_box.set_editable(True)
-        self.exif_widgets["Description"] = description_box.get_buffer()
-        self.exif_widgets["Description"].set_text(_DESCRIPTION)
+        self.Exif_widgets["Description"] = description_box.get_buffer()
+        self.Exif_widgets["Description"].set_text(_DESCRIPTION)
         rows.pack_start(description_box, True, True, 0)
 
         # set up tooltip information for the fields
-        self.exif_widgets["Photographer"].set_tooltip_text(_("Enter the name "
+        self.Exif_widgets["Artist"].set_tooltip_text(_("Enter the name "
             "of the person who took this image."))
 
-        self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
+        self.Exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
             " information for the image.  xample: (C) 2010 Smith and Wesson"))
 
-        self.xmp_widgets["Subject"].set_tooltip_text(_("Enter words that "
-            "describe this image, separated by comma.\n  Example: Kids,house,"
-            "dog,car"))
+        self.Exif_widgets["Subject"].set_tooltip_text(_("Enter a subject for the image."))
 
-        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS "
-            "Latitude as decimal format "))
+        self.Exif_widgets["Keywords"].set_tooltip_text(_("Enter keywords for this image "
+            "seprated by a comma."))
 
-        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS "
-            "Longitude as decimal format "))
+        self.Exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS "
+            "Latitude as decimal format."))
+
+        self.Exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS "
+            "Longitude as decimal format."))
 
         # Save, Clear
         row = gtk.HBox()
@@ -190,12 +212,27 @@ class imageMetadataGramplet(Gramplet):
         button.connect("clicked", self.clear_data_entry)
         row.pack_start(button, True)
         rows.pack_start(row, True)
+        return rows
 
-        self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(rows)
-        rows.show_all()
+    def db_changed(self):
+        self.dbstate.db.connect('Media', self.update)
+        self.update()
 
-        self.connect_signal("pyexiv2_Media", self.media_changed)
+    def active_changed(self, handle):
+        self.update()
+
+    def main(self): # return false finishes
+        self.active_media = self.dbstate.db.get_object_from_handle( handle )
+        if not self.active_media:
+            return
+
+        self.mime_type = self.active_media.get_path().get_mime_type()
+        media, type = self.mime_type.split()
+        if not media.startswith("image/") or type not in __valid_types:
+            return
+
+        self.clear_data_entry( object )
+        self.read_image_metadata( self.active_media )
 
     def make_row(self, pos, text, choices = None, readonly = False, callback_list=[], 
                  mark_dirty = False, default = 0):
@@ -209,33 +246,33 @@ class imageMetadataGramplet(Gramplet):
             label.set_text("<b>%s</b>" % text)
             label.set_width_chars(self.exif_column_width)
             label.set_use_markup(True)
-            self.exif_widgets[pos] = gtk.Label()
-            self.exif_widgets[pos].set_alignment(0.0, 0.5)
-            self.exif_widgets[pos].set_use_markup(True)
+            self.Exif_widgets[pos] = gtk.Label()
+            self.Exif_widgets[pos].set_alignment(0.0, 0.5)
+            self.Exif_widgets[pos].set_use_markup(True)
             label.set_alignment(0.0, 0.5)
             row.pack_start(label, False)
-            row.pack_start(self.exif_widgets[pos], False)
+            row.pack_start(self.Exif_widgets[pos], False)
         else:
             label.set_text("%s: " % text)
             label.set_width_chars(self.exif_column_width)
             label.set_alignment(1.0, 0.5) 
             if choices == None:
-                self.exif_widgets[pos] = gtk.Entry()
+                self.Exif_widgets[pos] = gtk.Entry()
                 row.pack_start(label, False)
-                row.pack_start(self.exif_widgets[pos], True)
+                row.pack_start(self.Exif_widgets[pos], True)
             else:
                 eventBox = gtk.EventBox()
-                self.exif_widgets[pos] = gtk.combo_box_new_text()
-                eventBox.add(self.exif_widgets[pos])
+                self.Exif_widgets[pos] = gtk.combo_box_new_text()
+                eventBox.add(self.Exif_widgets[pos])
                 for add_type in choices:
-                    self.exif_widgets[pos].append_text(add_type)
-                self.exif_widgets[pos].set_active(default) 
+                    self.Exif_widgets[pos].append_text(add_type)
+                self.Exif_widgets[pos].set_active(default) 
                 row.pack_start(label, False)
                 row.pack_start(eventBox, True, True)
         for name, text, callback in callback_list:
             label = gtk.Label()
             label.set_text(text)
-            self.exif_widgets[pos + ":" + name + ":Label"] = label
+            self.Exif_widgets[pos + ":" + name + ":Label"] = label
             row.pack_start(label, False)
             icon = gtk.STOCK_EDIT
             size = gtk.ICON_SIZE_MENU
@@ -245,81 +282,30 @@ class imageMetadataGramplet(Gramplet):
             button.add(image)
             button.set_relief(gtk.RELIEF_NONE)
             button.connect("clicked", callback)
-            self.exif_widgets[pos + ":" + name] = button
+            self.Exif_widgets[pos + ":" + name] = button
             row.pack_start(button, False)
         row.show_all()
         return row
 
-    def media_changed(self, handle):
-        """
-        handles when an image has been changed
-
-        @param: handle -- handle for an image in the database
-        """
-        self.clear_data_entry( None )
-        self.make_clean( object )
-
-        # get media object from filesystem
-        self.orig_image = self.dbstate.db.get_object_from_handle( handle )
-
-        if not self.orig_image:
-            self.make_dirty( object )
-
-        self.mime_type = gen.mime.get_type( self.orig_image )
-        media, ext = self.mime_type.split("/")
-        if not media.startswith("image") and ext not in __valid_types:
-            self.make_dirty( object )
-
-        # if True, there are no errors ...
-        # if False, there are errors with this image ...
-        if self.dirty:
-
-            self.image_path = Utils.media_path_full( self.db, self.orig_image )
-
-            # get the pyexiv2 plugin image
-            self.plugin_image = self._get_image( self.orig_image )
-
-            # read image metadata
-            self.read_image_metadata( self.orig_image )
-
-        else:
-            WarningDialog(_( "There are errors with this image!")
-
-        print( "%s, %s, %s, %s" % (self.orig_image, self.image_path, self.mime_type, self.plugin_image ))
-
-    def make_dirty(self, obj):
-        """
-        there is a problem with the image
-        """
-
-        self.dirty = False
-
-    def make_clean(self, obj):
-        """
-        make sure the initial image settings are clean
-        """
-
-        self.dirty = True
-
     def str_to_date(self, str2date):
         """
-        converts a date string to datetime.datetime
+        converts a date string to datetime
 
         @param: str2date -- a date string: will always bee in ISO format
         """
 
         if not str2date:
-            return datetime.datetime.now()
+            return datetime.now()
 
-        # return the date string to datetime.datetime format
-        return datetime.datetime(*time.strptime(
+        # return the date string to datetime format
+        return datetime(*time.strptime(
             str2date, "%Y %b %d %H:%M:%S")[0:6])
 
     def date_to_str(self, date2str):
         """
-        converts a datetime.datetime to string
+        converts a datetime to string
 
-        @param: date2str -- a datetime.datetime to string
+        @param: date2str -- a datetime to string
         """
 
         if not date2str:
@@ -327,7 +313,7 @@ class imageMetadataGramplet(Gramplet):
 
         dateType = date2str.__class__
         time = time.localtime()
-        if dateType == datetime.datetime:
+        if dateType == datetime:
             date2str = "%04d %s %02d %02d:%02d:%02d" % (date2str.year, 
                 _ABBREV_MONTHS[date2str.month], date2str.day, date2str.hour, 
                 date2str.minute, date2str.second)
@@ -354,77 +340,84 @@ class imageMetadataGramplet(Gramplet):
         try:
             return self.plugin_image[key].raw_value
         except KeyError:
-            return ""
+            return self.plugin_image[key].value
 
     def read_image_metadata(self, obj):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
+        self.image_path = Utils.media_path_full( self.dbstate.db, obj.get_path() )
 
-        # check to see if the image is on the computer or not?
-        basename = os.path.basename(self.orig_image)
-        if not os.path.isfile(self.orig_image):
-            self.make_dirty( object )
-
-	# check to see if the image has read permissions?
-        if not os.access(self.orig_image, os.R_OK):
-            self.make_dirty( object )
-
-        # if True, there is no errors ...
+        # if True, the image has read permissions
         # if False, there are errors somewhere ...
-        if self.dirty:
+        if os.access( self.image_path, os.R_OK ):
+
+            self.plugin_image = ImageMetadata( self.image_path )
  
             # read the image metadata
             self.plugin_image.read()
 
             # set up image exif keys for use in this gramplet 
             exifKeyTags = [ keyTag for keyTag in self.plugin_image.exif_keys
-                if keyTag in _DATAMAP]
-
+                if keyTag in __EXIFMAP]
             for keyTag in exifKeyTags:
 
-                if keyTag == ImagePhotographer:
-                    self.exif_widgets["Photographer"].set_text(
+                if keyTag == ImageArtist:
+                    self.Exif_widgets["Artist"].set_text(
                         self.get_value( keyTag ) )
 
                 elif keyTag == ImageCopyright:
-                    self.exif_widgets["Copyright"].set_text(
+                    self.Exif_widgets["Copyright"].set_text(
                         self.get_value( keyTag ) )
 
                 elif keyTag == ImageDateTime:
-                    self.exif_widgets["Select:Date"].set_text(
+                    self.Exif_widgets["Select:Date"].set_text(
                         self.get_value ( keyTag ) )
 
                 elif keyTag == ImageLatitude:
                     latitude = self.get_value( keyTag )
-                    iif latitude:
-                        d, m, s = self.rational_to_dms( latitude )
+                    if latitude:
+                        deg, min, sec = self.rational_to_dms( latitude )
 
                         # Latitude Reference
                         LatitudeRef = self.get_value( ImageLatitudeRef )
-                                        self.latitude = "%s %s %s %s" % ( d, m, s, LatitudeRef )
+                        self.latitude = "%s %s %s %s" % ( deg, min, sec, LatitudeRef )
 
-                        latitude = """%s° %s′ %s″ %s""" % (d, m, s, LatitudeRef)
-                        self.exif_widgets["Latitude"].set_text( latitude )
+                        latitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LatitudeRef)
+                        self.Exif_widgets["Latitude"].set_text( latitude )
 
                 elif keyTag == ImageLongitude:
                     longitude = self.get_value( keyTag )
                     if longitude:
-                        d, m, s = self.rational_to_dms( longitude )
+                        deg, min, sec = self.rational_to_dms( longitude )
 
                         # Longitude Direction Reference
                         LongitudeRef = self.get_value( ImageLongitudeRef )
-                        self.longitude = "%s %s %s %s" % ( d, m, s, LongitudeRef )
+                        self.longitude = "%s %s %s %s" % ( deg, min, sec, LongitudeRef )
 
-                        longitude = """%s° %s′ %s″ %s""" % (d, m, s, LongitudeRef)
-                        self.exif_widgets["Longitude"].set_text( longitude )
+                        longitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LongitudeRef)
+                        self.Exif_widgets["Longitude"].set_text( longitude )
 
                 else:
-                    self.exif_widgets["Description"].set_text(
+
+                    self.Exif_widgets["Description"].set_text(
                         self.get_value( ImageDescription ) )
 
+                xmpKeyTags = [keytsg for keytag in self.plugin_image.xmp_keys
+                    if keytafg in __XMPMAP ]
+                for keytag in xmpKeyTags:
+
+                    if keytag == XmpTitle:
+                        self.Exif_widgets["Title"].set_text(
+                            self.get_value( keytag ) )
+
+                    else:
+
+                        self.Exif_widgets["Subject"].set_text(
+                            self.get_value( XmpSubject ) )
+
                 subject = ""
-                keyWords = self.get_value( xmpKeyTags )
+                keyWords = self.get_value( IptcKeywords )
                 if keyWords:
                     if "," in keywords:
                         index = 1
@@ -433,12 +426,13 @@ class imageMetadataGramplet(Gramplet):
                             if index is not len(keyWords):
                                 subject += "," 
                             index += 1 
-                        self.xmp_widgets["Subject"].set_text( subject )
+                        self.Iptc_widgets["Keywords"].set_text( subject )
                     else: 
-                        self.xmp_widgets["Subject"].set_text( keywords )
+                        self.Iptc_widgets["Keywords"].set_text( keywords )
 
         else:
-            WarningDialog(_( "There is an error with this image!"))
+            WarningDialog(_( "There is an error with this image!\n"
+                "You do not have read access to this image..."))
 
 
     def set_value(self, keyTag, keyValue):
@@ -455,45 +449,50 @@ class imageMetadataGramplet(Gramplet):
 
         if "Exif" in keyTag:
             try:
-                self.image[keyTag].value = keyValue
+                self.plugin_image[keyTag].value = keyValue
             except KeyError:
-                self.image[keyTag] = ExifTag(keyTag, keyValue)
+                self.plugin_image[keyTag] = ExifTag( keyTag, keyValue )
 
         elif "Xmp" in keyTag:
             try:
-                self.image[keyTag].value = keyValue
+                self.plugin_image[keyTag].value = keyValue
             except KeyError:
-                self.image[keyTag] = XmpTag(keyTag, keyValue)
+                self.plugin_image[keyTag] = XmpTag(keyTag, keyValue)
+
+        elif "Iptc" in KeyTag:
+            try:
+                self.plugin_image[KeyTag].value = KeyValue
+            except KeyError:
+                self.plugin_image[KeyTag] = IptcTag( KeyTag, KeyValue )
 
     def write_image_metadata(self, obj):
         """
         saves the data fields to the image
         """
 
-        if not os.access( self.orig_image, os.W_OK ):
-            self.make_dirty( object )
+        writable = os.access( self.orig_image, os.W_OK )
 
         # If True, there are no errors ...
         # if False, there are errors with this image ...
         if self.dirty:
 
             # check to see if we have both latitude/ longitude, if one exists
-            latitude = self.exif_widgets["Latitude"].get_text()
-            longitude = self.exif_widgets["Longitude"].get_text()
+            latitude = self.Exif_widgets["Latitude"].get_text()
+            longitude = self.Exif_widgets["Longitude"].get_text()
             if latitude and not longitude:
                 OkDialog(_( "You have etered Latitude, but not longitude.  Please enter Longitude..."))
             elif longitude and not latitude:
                 OkDialog(_( "You have etered Longitude, but not Latitude.  Please enter Latitude..."))
 
-            photographer = self.exif_widgets["Photographer"].get_text()
-            if photographer:
-                self.set_value(ImagePhotographer, photographer)
+            artist = self.Exif_widgets["Artist"].get_text()
+            if artist:
+                self.set_value(ImageArtist, artist)
 
-            copyright = self.exif_widgets["Copyright"].get_text()
+            copyright = self.Exif_widgets["Copyright"].get_text()
             if copyright:
                 self.set_value(ImageCopyright, copyright)
 
-            datetime = self.exif_widgets["Select:Date"].get_text()
+            datetime = self.Exif_widgets["Select:Date"].get_text()
             if datetime:
                 self.set_value(ImageDateTime, datetime)
 
@@ -518,14 +517,14 @@ class imageMetadataGramplet(Gramplet):
                 if long_ref is not None:
                     self.set_value( ImageLongitudeRef, long_ref ) 
 
-            keyWords = self.xmp_widgets["Subject"].get_text()
+            keyWords = self.Xmp_widgets["Subject"].get_text()
             if keyWords:
                 keyWords = [ subject for subject in keyWords.split(",")]
                 self.set_value( XmpSubject, keyWords )  
 
-            start = self.exif_widgets["Description"].get_start_iter()
-            end = self.exif_widgets["Description"].get_end_iter()
-            meta_descr = self.exif_widgets["Description"].get_text(start, end)
+            start = self.Exif_widgets["Description"].get_start_iter()
+            end = self.Exif_widgets["Description"].get_end_iter()
+            meta_descr = self.Exif_widgets["Description"].get_text(start, end)
             if meta_descr:
                 self.set_value(ImageDescription, meta_descr)
 
@@ -541,41 +540,25 @@ class imageMetadataGramplet(Gramplet):
         clears all data fields to nothing
         """
 
-        for key in [ "Description", "Select:Date", "Photographer", "Copyright", "Latitude", "Longitude" ]:
-            self.exif_widgets[key].set_text("")
+        for key in [ "Description", "Select:Date", "Artist", "Copyright", "Latitude", "Longitude" ]:
+            self.Exif_widgets[key].set_text("")
 
         for key in ["LatitudeRef", "LongitudeRef"]:
 	    self.LatitudeRef = ""
 	    self.LongitudeRef = "" 
 
-        self.xmp_widgets["Subject"].set_text("")
+        self.Xmp_widgets["Subject"].set_text("")
 
     def _get_image(self, media_obj):
         """
         creates the pyexiv2 image based on media object
         """
 
-        if not media_obj:
-            self.make_dirty ( object )
-
-        # get full image path
-        self.orig_image = Utils.media_path_full( self.dbstate.db, media_obj.get_path() )
-        self.media_exists = os.path.isfile( self.orig_image )
-        if not self.media_exists:
-            self.make_dirty( object )
-
-        # get image mime type and split into its pieces
-        self.mime_type = self.media.get_mime_type()
-        self.ftype, self.imgtype = self.mime_type.split("/")
-        if self.imgtype not in __valid_types:
-            self.make_dirty( object )
-
-        self.readable = os.access( self.orig_image, os.R_OK )
-        if not self.readable:
-            OkDialog(_( "This image not readable."))
+        # determine the image read/ write permissions
+        self.writable = os.access( self.image_path, os.W_OK )
 
         # get the pyexiv2 image file
-        self.image = ImageMetadata( self.orig_image )
+        return ImageMetadata( self.image_path )
 
     def rational_to_dms(self, rational_coords):
         """
@@ -590,6 +573,63 @@ class imageMetadataGramplet(Gramplet):
         # return degrees, minutes, seconds to its callers
         return rd, rm, rs
 
+	def pressButton(self, widget, data=None):
+		print "Pressed"
+
+    def delete_event(self, widget, event, data=None):
+        return False
+
+    def destroy(self, widget, data=None):
+        gtk.main_quit()
+
+    def thumbnail_window(self, obj):
+        """
+        display thumbnail preview if the image has  one or
+        create a thumbnail for it ...
+        """
+
+        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.connect("delete_event", self.delete_event)
+        self.window.connect("destroy", self.destroy)
+        self.window.set_border_width(10)
+        self.window.set_title(_("Thumbnail Preview"))
+        self.window.set_default_size(200, 200)
+
+
+        button = gtk.Button()
+        button.connect("clicked", self.pressButton, None)
+        button.connect_object("clicked", gtk.Widget.destroy, self.window)
+
+        imgwidget = gtk.Image()
+
+        # determine if there is a thumbnail within this image?
+        previews = self.plugin_image.previews
+        if previews:
+
+            # Get the largest preview available
+            preview = previews[-1]
+
+            # Create a pixbuf loader to read the thumbnail data
+            pbloader = gtk.gdk.PixbufLoader()
+            pbloader.write(preview.data)
+
+            # Get the resulting pixbuf and build an image to be displayed
+            pixbuf = pbloader.get_pixbuf()
+            pbloader.close()
+
+            imgwidget.set_from_pixbuf(pixbuf)
+
+        # create thumbnail from image
+        else:
+
+            imgwidget.set_from_file( self.orig_image )
+
+        button.add( imgwidget )
+        self.window.add( button )
+        button.show()
+        self.window.show()
+        sys.exit(gtk.main())
+
     def select_date(self, obj):
         """
         will allow you to choose a date from the calendar widget
@@ -601,10 +641,10 @@ class imageMetadataGramplet(Gramplet):
         self.app.set_title(_("Select Date"))
         self.app.set_default_size(450, 200)
         self.app.set_border_width(10)
-        self.exif_widgets["Calendar"] = gtk.Calendar()
-        self.exif_widgets["Calendar"].connect('day-selected-double-click', self.double_click)
-        self.app.add(self.exif_widgets["Calendar"])
-        self.exif_widgets["Calendar"].show()
+        self.Exif_widgets["Calendar"] = gtk.Calendar()
+        self.Exif_widgets["Calendar"].connect('day-selected-double-click', self.double_click)
+        self.app.add(self.Exif_widgets["Calendar"])
+        self.Exif_widgets["Calendar"].show()
         self.app.show()
 
     def post_init(self):
@@ -620,12 +660,12 @@ class imageMetadataGramplet(Gramplet):
         widget
         """
 
-        year, month, day = self.exif_widgets["Calendar"].get_date()
-        now = datetime.datetime.now()
-        image_date = "%04d %s %02d %02d:%02d:%02d" % (year, 
-            _ABBREV_MONTHS[(month + 1)], day, now.hour, now.minute, now.second)
+        year, month, day = self.Exif_widgets["Calendar"].get_date()
+        now = datetime.now()
+        image_date = "%04d %s %02d %02d:%02d:%02d" % (
+            year, _ABBREV_MONTHS[(month + 1)], day, now.hour, now.minute, now.second )
 
-        self.exif_widgets["Select:Date"].set_text(image_date)
+        self.Exif_widgets["Select:Date"].set_text( image_date )
         self.app.destroy()
 
     def convert_decimal_deg_min_sec(self, obj):
@@ -634,8 +674,8 @@ class imageMetadataGramplet(Gramplet):
         GPS coordinates
         """
 
-        latitude = self.exif_widgets["Latitude"].get_text()
-        longitude = self.exif_widgets["Longitude"].get_text()
+        latitude = self.Exif_widgets["Latitude"].get_text()
+        longitude = self.Exif_widgets["Longitude"].get_text()
         lat_ref, long_ref = None, None
         self.latitude, self.longitude = None, None
 
@@ -677,12 +717,12 @@ class imageMetadataGramplet(Gramplet):
                 else:
                     long_ref = None
 
-                self.exif_widgets["Latitude"].set_text(   latitude )
-                self.exif_widgets["Longitude"].set_text( longitude )
+                self.Exif_widgets["Latitude"].set_text(   latitude )
+                self.Exif_widgets["Longitude"].set_text( longitude )
 
             else:
-                self.exif_widgets["Latitude"].set_text(  "" )
-                self.exif_widgets["Longitude"].set_text( "" )
+                self.Exif_widgets["Latitude"].set_text(  "" )
+                self.Exif_widgets["Longitude"].set_text( "" )
                 WarningDialog(_( "There is an ERROR in Latitude/ Longitude conversion."))
 
         # return Latitude Reference and Longitude Reference back to its caller
