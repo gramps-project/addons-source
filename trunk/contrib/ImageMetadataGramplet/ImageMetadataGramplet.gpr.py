@@ -1,8 +1,9 @@
+#!/usr/bin/python
 # encoding: utf-8
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009 Rob G. Healey <robhealey1@gmail.com>
+# Copyright (C) 2009-2011 Rob G. Healey <robhealey1@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,22 +25,21 @@
 #------------------------------------------------------------------------
 # Register: Image Metadata Gramplet
 #------------------------------------------------------------------------
-register(                   GRAMPLET,
+register( GRAMPLET,
     id =                    "Image Metadata Gramplet",
     name =                  _("Image Metadata Gramplet"),
     description =           _("Gramplet for editing image EXIF metadata"),
-    height =                335,
+    height =                450,
     expand =                False,
     gramplet =              'imageMetadataGramplet',
     gramplet_title =        _("Image Metadata Gramplet"),
     detached_width =        450,
-    detached_height =       440,
-    version = '1.3.5',
+    detached_height =       525,
+    version = '1.3.7',
     gramps_target_version = "3.3.0",
-    status =                STABLE,
+    status =                UNSTABLE,
     fname =                 "ImageMetadataGramplet.py",
     authors =               ["Rob G. Healey"],
     authors_email =         ["robhealey1@gmail.com"],
     help_url =              "Image Metadata Gramplet",
-    )
-
+)

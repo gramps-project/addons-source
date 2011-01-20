@@ -7,21 +7,6 @@
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.2', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.3', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'RelatedRelativesGramplet.addon.tgz'}
-{'d': 'Delad sl\xc3\xa4ktskapsvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'RelationshipViewSidebar', 'n': 'Delad sl\xc3\xa4ktskapsvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad h\xc3\xa4ndelsevy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'EventViewSidebar', 'n': 'Delad h\xc3\xa4ndelsevy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad familjevy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'FamilyViewSidebar', 'n': 'Delad familjevy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad cirkeldiagramvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'FanChartViewSidebar', 'n': 'Delad cirkeldiagramvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad geografivy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'GeoViewSidebar', 'n': 'Delad geografivy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad html-vy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'HtmlViewSidebar', 'n': 'Delad html-vy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad mediavy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'MediaViewSidebar', 'n': 'Delad mediavy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad notisvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'NoteViewSidebar', 'n': 'Delad notisvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad antavelvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'PedigreeViewSidebar', 'n': 'Delad antavelvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad personlistevy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'PersonListViewSidebar', 'n': 'Delad personlistevy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad personvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'PersonTreeViewSidebar', 'n': 'Delad personvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad platslistevy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'PlaceListViewSidebar', 'n': 'Delad platslistevy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad platsvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'PlaceTreeViewSidebar', 'n': 'Delad platsvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad arkivplatsvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'RepositoryViewSidebar', 'n': 'Delad arkivplatsvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
-{'d': 'Delad k\xc3\xa4llvy med en Gramplet-sidopanel', 'g': '3.3', 'i': 'SourceViewSidebar', 'n': 'Delad k\xc3\xa4llvy', 't': u'Gramps View', 'v': '1.1.4', 'z': 'GrampletSidebarViews.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.8', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.8', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Produces a family sheet showing full information about a person and his/her partners and children.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Family Sheet', 't': u'Report', 'v': '3.3.3', 'z': 'FamilySheet.addon.tgz'}
@@ -30,7 +15,6 @@
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.4', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'F\xc3\xb6nster f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Gramplet for controlling filter for a splitview', 'g': '3.3', 'i': 'Filter Gramplet', 'n': 'Filter Gramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'FilterGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.9', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.3', 'z': 'Django.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.3', 'z': 'Django.addon.tgz'}
@@ -52,7 +36,7 @@
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.3', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.3.5', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.3.7', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
