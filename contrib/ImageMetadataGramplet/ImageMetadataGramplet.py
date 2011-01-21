@@ -128,6 +128,9 @@ class imageMetadataGramplet(Gramplet):
         self.plugin_image = False
         self.mime_type    = False
 
+    def post_init(self):
+        self.connect_signal("Media", self.update)
+        
     def build_gui(self):
         """
         builds the gui interface
@@ -214,18 +217,15 @@ class imageMetadataGramplet(Gramplet):
         rows.pack_start(row, True)
         return rows
 
-    def db_changed(self):
-        self.dbstate.db.connect('Media', self.update)
-        self.update()
-
-    def active_changed(self, handle):
-        self.update()
-
     def main(self): # return false finishes
-        self.active_media = self.dbstate.db.get_object_from_handle( handle )
+        # get active object handle of Media type
+        self.active_media = self.get_active("Media")
         if not self.active_media:
             return
-
+        else:
+            print 'CURRENT MEDIA HANDLE IS NOW: ', self.active_media
+            return
+            # HAPPY CODING
         self.mime_type = self.active_media.get_path().get_mime_type()
         media, type = self.mime_type.split()
         if not media.startswith("image/") or type not in __valid_types:
@@ -646,13 +646,6 @@ class imageMetadataGramplet(Gramplet):
         self.app.add(self.Exif_widgets["Calendar"])
         self.Exif_widgets["Calendar"].show()
         self.app.show()
-
-    def post_init(self):
-        """
-        disconnects the signal
-        """
-
-        self.disconnect("active-changed")
 
     def double_click(self, obj):
         """
