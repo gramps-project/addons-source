@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010       Gary Burton
+# Copyright (C) 2010-2011  Gary Burton
 #                          GraphvizSvgParser is based on the Gramps XML import
 #                          DotGenerator is based on the relationship graph
 #                          report.
@@ -507,10 +507,10 @@ class GraphvizSvgParser(object):
             fill_color = attrs.get('fill')
 
         if self.handle == self.widget.active_person:
-            stroke_color = 'black' 
-            line_width = 5  # Thick box
+            line_width = 3  # Thick box
         else:
             line_width = 1  # Thin box
+
         item = goocanvas.Polyline(parent = self.current_parent(),
                                   points = points,
                                   close_path = True,
@@ -632,6 +632,7 @@ class GraphvizSvgParser(object):
                               x = pos_x,
                               y = pos_y,
                               anchor = self.text_anchor_map[anchor],
+                              use_markup = True,
                               font = text_font)
 
         # Retain the active person for other use elsewhere
@@ -746,10 +747,14 @@ class DotGenerator(object):
         self.dot = StringIO()
 
         self.colors = {
-            'male':    '#e0e0ff',
-            'female':  '#ffe0e0',
-            'unknown': '#e0e0e0',
-            'family':  '#ffffe0',
+            'male_fill'      : '#b9cfe7',
+            'male_border'    : '#204a87',
+            'female_fill'    : '#ffcdf1',
+            'female_border'  : '#87206a',
+            'unknown_fill'   : '#f4dcb7',
+            'unknown_border' : '#000000',
+            'family_fill'    : '#ffffe0',
+            'family_border'  : '#000000',
         }
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
@@ -931,7 +936,7 @@ class DotGenerator(object):
                 label = self.get_event_string(event)
                 break
         color = ""
-        fill = self.colors['family']
+        fill = self.colors['family_fill']
         style = "filled"
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
         
@@ -969,16 +974,16 @@ class DotGenerator(object):
         color = ""
         fill = ""
 
-        if gender == person.UNKNOWN:
-            shape = "hexagon"
-
         style += ",filled"
         if gender == person.MALE:
-            fill = self.colors['male']
+            fill = self.colors['male_fill']
+            color = self.colors['male_border']
         elif gender == person.FEMALE:
-            fill = self.colors['female']
+            fill = self.colors['female_fill']
+            color = self.colors['female_border']
         else:
-            fill = self.colors['unknown']
+            fill = self.colors['unknown_fill']
+            color = self.colors['unknown_border']
         return(shape, style, color, fill)
 
     def get_person_label(self, person):
