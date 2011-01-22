@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009 Nick Hall
+#               2011 Gary Burton
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -276,6 +277,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         root = gtk.Window(type=gtk.WINDOW_TOPLEVEL)
         root.set_default_size(600, 400)
+        root.set_transient_for(self.uistate.window)
 
         vbox = gtk.VBox()
 
