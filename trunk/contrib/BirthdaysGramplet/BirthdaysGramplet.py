@@ -60,18 +60,16 @@ class BirthdaysGramplet(Gramplet):
 				birth_date = birth.get_date_object()
 				if birth_date.is_regular():
 					birthday_this_year = Date(today.get_year(), birth_date.get_month(), birth_date.get_day())
-					age = birthday_this_year - birth_date
-					# returns (years, months, days), all negative if after
-					diff = today - birth_date
-					# about number of days since today, not counting year:
-					diff_days = abs(diff[1]) * 30 + abs(diff[2])
-					if abs(diff[0]) < self.max_age:
-						if diff[0] < 0: # missed for this year, next year:
-							result.append((diff_days + 365, age, birth_date, person))
-						elif diff_days == 0: # today
-							result.append((diff_days + 365, age, birth_date, person))
-						else:
-							result.append((diff_days, age, birth_date, person))
+					next_age = birthday_this_year - birth_date
+					# (0 year, months, days) between now and birthday of this year (positive if passed):
+					diff = today - birthday_this_year
+					# about number of days the diff is:
+					diff_days = diff[1] * 30 + diff[2]
+					if next_age[0] < self.max_age:
+						if diff_days <= 0: #not yet passed
+							result.append((diff_days, next_age, birth_date, person))
+						else: #passed; add it for next year's birthday
+							result.append((diff_days - 365, next_age[0] + 1, birth_date, person))
 		# Reverse sort on number of days from now:
 		result.sort(key=lambda item: -item[0])
 		self.clear_text()
