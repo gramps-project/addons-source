@@ -2,7 +2,7 @@
 {'d': "Dit is een ruwe 'python object'-dump", 'g': '3.3', 'i': 'Raw Export', 'n': 'Ruwe export', 't': u'Exporter', 'v': '1.0.2', 'z': 'ExportRaw.addon.tgz'}
 {'d': "Verzameling van websites voor 'VS' (libwebconnect is nodig)", 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'V.S. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.10', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ", 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.0.3', 'z': 'DenominoViso.addon.tgz'}
-{'d': 'Dynamische grafiek van de relaties', 'g': '3.3', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.7', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamische grafiek van de relaties', 'g': '3.3', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.8', 'z': 'GraphView.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen", 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klokgramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.2', 'z': 'DescendantsLines.addon.tgz'}
@@ -36,14 +36,14 @@
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'Locatie vervolledigen', 't': u'Tool', 'v': '0.0.3', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': "Gramplet om de 'exif'-metagegevens van een beeld te bewerken", 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.3.7', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': "Gramplet om de 'exif'-metagegevens van een beeld te bewerken", 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.3.9', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.", 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
 {'d': 'Aanduiding een bepaalde waarde toekennen.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Aanduiding ingeven', 't': u'Tool', 'v': '0.0.4', 'z': 'SetMarkerTool.addon.tgz'}
 {'d': 'De namen van alle personen tonen', 'g': '3.3', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
+{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Opmerkingengramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'NoteGramplet.addon.tgz'}
 {'d': "Gramplet om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Zoekgramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
 {'d': "Snelscherm om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.3', 'i': 'Query Quickview', 'n': 'Snelscherm voor zoeken', 't': u'Quickreport', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
