@@ -2,7 +2,7 @@
 {'d': 'This is a raw python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.2', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.10', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.0.3', 'z': 'DenominoViso.addon.tgz'}
-{'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.7', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamic graph of relations', 'g': '3.3', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.8', 'z': 'GraphView.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Sm\xc3\xa5gramps for klokke', 't': u'Gramplet', 'v': '0.0.4', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.2', 'z': 'DescendantsLines.addon.tgz'}
@@ -36,14 +36,14 @@
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.3', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.3.7', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.3.9', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Lager en tekstbasert rapport over oppbevaringssteder', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Lager en tekstbasert rapport over oppbevaringssteder', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Oppbevaringsstedsrapport', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
 {'d': 'Set Marker to a given value.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Set Marker', 't': u'Tool', 'v': '0.0.4', 'z': 'SetMarkerTool.addon.tgz'}
 {'d': 'Display all names of all people', 'g': '3.3', 'i': 'allnames', 'n': 'Alle navn p\xc3\xa5 alle personer', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
+{'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.3', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.3', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
