@@ -24,7 +24,7 @@
 {'d': "Display a person's events on a timeline", 'g': '3.3', 'i': 'timelinequickview', 'n': 'Zeitleiste', 't': u'Quickreport', 'v': '1.0.3', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.3', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.3', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.3', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.3', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.3', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'BirthdaysGramplet.addon.tgz'}
+{'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.3', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
@@ -36,7 +36,7 @@
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Zeitleistestammbaum', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.3', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.3.9', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.3.10', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}

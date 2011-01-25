@@ -27,13 +27,10 @@
 
 import os, sys
 from datetime import datetime, date
-import time
-import re
 
 # -----------------------------------------------------------------------------
 # GTK modules
 # -----------------------------------------------------------------------------
-
 import gtk
 
 # -----------------------------------------------------------------------------
@@ -53,9 +50,7 @@ except ImportError:
     raise Exception( pyexivmsg )
 
 from gen.plug import Gramplet
-
 from DateHandler import displayer as _dd
-from DateHandler import parser as _dp
 
 from QuestionDialog import OkDialog, WarningDialog
 
@@ -553,9 +548,15 @@ class imageMetadataGramplet(Gramplet):
         lat_ref, long_ref = None, None
         self.latitude, self.longitude = None, None
 
-        if latitude and longitude:
+        if latitude:
+            WarningDialog(_( "You have only entered a Latitude GPS Coordinate!"))
 
-            if ("." in latitude or "." in longitude):
+        elif longitude:
+            WarningDialog(_( "You have only entered a Longitude GPS Coordinate!"))
+
+        elif latitude and longitude:
+
+            if ("." in latitude and longitude):
 
                 # convert to d, m, s with a seperator of : for saving to Exif Metadata 
                 self.latitude, self.longitude = conv_lat_lon( latitude, longitude, "DEG-:" )
@@ -572,20 +573,14 @@ class imageMetadataGramplet(Gramplet):
                 else:
                     long_ref = "E"
 
-                # convert to 4 point decimal
-                latitude, longitude = conv_lat_lon( latitude, longitude, "D.D4" )
+            # convert to 4 point decimal
+            latitude, longitude = conv_lat_lon( latitude, longitude, "D.D4" )
 
             # convert to deg, mins, secs  
+            self.latitude, self.longitude = conv_lat_lon( latitude, longitude, "DEG" )
+            print( latitude, longitude )
             latitude, longitude = conv_lat_lon( latitude, longitude, "DEG" )
-
-        elif latitude:
-            WarningDialog(_( "You have only entered a Latitude GPS Coordinate!"))
-            latitude = ""
-
-        elif longitude:
-            WarningDialog(_( "You have only entered a Longitude GPS Coordinate!"))
-            longitude = ""
-
+ 
         self.Exif_widgets["Latitude"].set_text(   latitude )
         self.Exif_widgets["Longitude"].set_text( longitude )
 
