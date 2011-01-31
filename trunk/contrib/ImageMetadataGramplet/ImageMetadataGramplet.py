@@ -27,6 +27,7 @@
 
 import os, sys
 from datetime import datetime, date
+import time
 
 # -----------------------------------------------------------------------------
 # GTK modules
@@ -70,11 +71,6 @@ log = logging.getLogger(".ImageMetadata")
 # available image types for exiv2
 __valid_types = ["jpeg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
-# set up Abbreviated Months for select_date()
-_ABBREV_MONTHS = []
-_ABBREV_MONTHS.append("")
-_ABBREV_MONTHS += [_dd.long_months[month] for month in range(1, 13)]
-
 # first camera was created April 12, 1826
 # http://wiki.answers.com/Q/What_date_was_the_camera_invented 
 _DATE = datetime(1826, 4, 12, 00, 00, 00)
@@ -93,11 +89,42 @@ ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
 ImageDescription  = "Exif.Image.ImageDescription"
 
+# set Xmp keys
+XmpSubject = "Xmp.dc.subject"
+
 # set up keys for Image IPTC keys
 IptcKeywords    = "Iptc.Application2.Keywords"
+IptcDateCreated = "Iptc.Application2.DateCreated"
 
-_EXIFMAP = [ ImageArtist, ImageCopyright, ImageDateTime, ImageDescription,
-             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef ]
+_DATAMAP = [ ImageArtist, ImageCopyright, ImageDateTime,
+             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
+             ImageDescription ]
+
+IptcMap = [ IptcDateCreated, IptcKeywords ]
+# ------------------------------------------------------------------------
+# Support functions
+# ------------------------------------------------------------------------
+
+def _check_readable(image_obj):
+    """
+    check to see if the image is readable
+
+    @param: image_obj -- image object and its full path
+    """
+
+    # if True, the image has read permissions
+    # if False, there are errors somewhere ...
+    return os.access( image_obj, os.R_OK )
+
+def _check_writable(image_obj):
+    """
+    determine if image is writable or not?
+
+    @param: image_object and its full image path
+    """
+
+    # make sure the image has write permissions
+    return os.access( image_obj, os.W_OK )
 
 # ------------------------------------------------------------------------
 # Gramplet class
@@ -113,6 +140,8 @@ class imageMetadataGramplet(Gramplet):
         self.image_path   = False
         self.plugin_image = False
         self.mime_type    = False
+        self.LATitude     = None
+        self.LONGitude    = None
 
         rows = gtk.VBox()
         for items in [
@@ -120,18 +149,39 @@ class imageMetadataGramplet(Gramplet):
             ("Artist",          _("Artist"),       None, False, [],         True,  0),
             ("Copyright",       _("Copyright"),    None, False, [],         True,  0),
 
-            # calendar date entry
-            ("Date",   "",                       None, True,  
-            [("Select Date",    _("Select Date"),   self.select_date)],     True, 0),
+            # calendar date clickable entry
+            ("Date",   "",                         None, True,  
+            [("Select Date",    _("Select Date"),  self.select_date)],     True, 0) ]:
 
-            # manual date entry, example: 12 Apr 1826 00:00:00
-	    ("Select:Date",     _("Creation Date"), None, False, [],        True, 0),
+            pos, text, choices, readonly, callback, dirty, default = items
+            row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
+            rows.pack_start(row, False)
 
-            # Latitude/ longitude GPS
+        # manual date entry, example: 1826 04 12
+        row = gtk.HBox()
+
+        now = time.localtime()
+        nyear, nmonth, nday, nhour, nminutes, nseconds = now[0:6]
+        self.make_event_box(row, _("Year"),  "Year",  [year  for year in range(1826, 2021)], (nyear - 1826) )
+        self.make_event_box(row, _("Month"), "Month", [month for month in range(1, 13)], (nmonth - 1) )
+        self.make_event_box(row, _("Day"),   "Day",   [day   for day in range(1, 32)], (nday - 1) )
+
+        rows.pack_start(row, True)
+
+        # manual time entry, Example: Hour Minutes Seconds
+        row = gtk.HBox()
+
+        self.make_event_box(row, _("Hour"), "Hour",    [hour for hour in range(0, 24)], nhour)
+        self.make_event_box(row, _("Mins"), "Minutes", [mins for mins in range(0, 60)], nminutes)
+        self.make_event_box(row, _("Secs"), "Seconds", [secs for secs in range(0, 60)], nseconds)
+        rows.pack_start(row, True)
+
+        # Latitude/ longitude GPS
+        for items in [
 	    ("Latitude",        _("Latitude"),     None, False, [],         True,  0),
 	    ("Longitude",       _("Longitude"),    None, False, [],         True,  0),
 
-            # keyword entry
+            # keywords entry
             ("Keywords",        _("Keywords"),     None, False, [],         True,  0) ]: 
 
             pos, text, choices, readonly, callback, dirty, default = items
@@ -157,12 +207,12 @@ class imageMetadataGramplet(Gramplet):
         rows.pack_start(description_box, True, True, 0)
 
         # provide tooltips for this gramplet
-        self.setup_tooltips(object)
+        self.setup_tooltips(self.plugin_image)
 
         # Save, Clear
         row = gtk.HBox()
         button = gtk.Button(_("Save"))
-        button.connect("clicked", self.write_image_metadata)
+        button.connect("clicked", self.write_metadata)
         row.pack_start(button, True)
         button = gtk.Button(_("Clear"))
         button.connect("clicked", self.clear_data_entry)
@@ -173,9 +223,6 @@ class imageMetadataGramplet(Gramplet):
         self.gui.get_container_widget().add_with_viewport(rows)
         rows.show_all()
 
-        # clear up the data fields
-        self.clear_data_entry(None)
-
     def post_init(self):
         self.connect_signal("Media", self.update)
         
@@ -185,7 +232,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         self.Exif_widgets["Artist"].set_tooltip_text(_("Enter the name "
-            "of the person who took this image."))
+            "of the person or company who took this image."))
 
         self.Exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
             " information for the image.  xample: (C) 2010 Smith and Wesson"))
@@ -209,8 +256,8 @@ class imageMetadataGramplet(Gramplet):
         self.active_media = self.get_active("Media")
         if not self.active_media:
             return
-        else:
-            log.debug( 'CURRENT MEDIA HANDLE IS NOW: ', self.active_media )
+
+        log.debug( 'CURRENT MEDIA HANDLE IS NOW: ', self.active_media )
 
         # get media object from database
         self.orig_image = self.dbstate.db.get_object_from_handle( self.active_media )
@@ -218,7 +265,7 @@ class imageMetadataGramplet(Gramplet):
         # get media object full path
         self.image_path = Utils.media_path_full( self.dbstate.db, self.orig_image.get_path() )
 
-        # clear data entry fields
+        # clear all data entry fields
         self.clear_data_entry( object )
 
         # get image mime type
@@ -230,11 +277,44 @@ class imageMetadataGramplet(Gramplet):
                 self.plugin_image = ImageMetadata( self.image_path )
 
                 # read the image metadata
-                self.read_image_metadata( self.image_path )
+                self.read_metadata( self.image_path )
 
             except IOError:
                 WarningDialog(_( "This media object is NOT usable by this addon!\n"
                                  "Choose another media object..."))
+
+    def make_event_box(self, row, text, pos, choices, default):
+        """
+        creates an eventBox for options such as Year, Month, Day, Hour, Minutes, and Seconds
+
+        @param: row -- current row being used to hold the line
+        @param: text -- translated text for use in the label
+        @param: pos -- the name of the widget to be created
+        @param: choices -- options for the eventBox
+        @param: default -- position for set in the choices
+        """
+
+        label = gtk.Label()
+        label.set_width_chars(6)
+        label.set_text("<b>%s</b>" % text)
+        label.set_use_markup(True)
+        label.show()
+
+        eventBox = gtk.EventBox()
+        self.Exif_widgets[pos] = gtk.combo_box_new_text()
+        eventBox.add(self.Exif_widgets[pos])
+        for option in choices:
+            if option.__class__ == int:
+
+                # if option is between 0 and 9, add a zero in front of integer?
+                if -1 < option <= 9:
+                    option = "%02d" % option
+                option = str( option )
+            self.Exif_widgets[pos].append_text( option )
+        self.Exif_widgets[pos].set_active( default )
+        row.pack_start(label, False)
+        row.pack_start(eventBox, True, True)
+        return row
 
     def make_row(self, pos, text, choices = None, readonly = False, callback_list=[], 
                  mark_dirty = False, default = 0):
@@ -289,102 +369,153 @@ class imageMetadataGramplet(Gramplet):
         row.show_all()
         return row
 
-    def _get_value(self, key):
+    def _get_value(self, KeyTag):
         """
         gets the value from the Exif Key, and returns it...
 
-        @param: key -- exif key
+        @param: KeyTag -- image metadata key
         """
 
-        # return the key value to its caller
-        try:
-            return self.plugin_image[key].raw_value
-        except KeyError:
-            return ""
+        # if keytag is from Iptc family?
+        if "Iptc" in KeyTag:
+            try:
+                KeyValue = self.plugin_image[KeyTag].value
 
-    def read_image_metadata(self, obj):
+            except KeyError:
+                KeyValue = ""
+
+        # Xmp Family
+        elif "Xmp" in KeyTag:
+
+            try:
+                KeyValue = self.plugin_image[KeyTag].raw_value
+
+            except KeyError:
+                KeyValue = "" 
+
+        # Exif Family
+        else:
+  
+            try:
+                KeyValue = self.plugin_image[KeyTag].raw_value
+
+            except KeyError:
+                KeyValue = self.plugin_image[KeyTag].value
+
+        # return metadata value back to its callers
+        return KeyValue
+
+    def read_metadata(self, obj):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
 
-        # if True, the image has read permissions
-        # if False, there are errors somewhere ...
-        if os.access( obj, os.R_OK ):
+        # check to see if the image is readable?
+        if _check_readable(self.image_path):
 
             log.debug("Image, ", self.image_path, ' has bean read...')
 
             self.Exif_widgets["Active:Image"].set_text( self.orig_image.get_description() )
 
-            log.debug( self.plugin_image, "is the ImageMetadata object!" )
+            log.debug( self.plugin_image, "is now the ImageMetadata object!" )
  
             # read the image metadata
             self.plugin_image.read()
 
-            # set up image exif keys for use in this gramplet 
-            exifKeyTags = [ KeyTag for KeyTag in self.plugin_image.exif_keys
-                if KeyTag in _EXIFMAP]
+            # set up image metadata keys for use in this gramplet only
+            dataKeyTags = [ KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
 
-            for KeyTag in exifKeyTags:
+            for KeyTag in dataKeyTags:
 
+                # Media image Artist
                 if KeyTag == ImageArtist:
-                    self.Exif_widgets["Artist"].set_text(
-                        self._get_value( KeyTag ) )
+                    self.Exif_widgets["Artist"].set_text( self._get_value( KeyTag ) )
 
+                # media image Copyright
                 elif KeyTag == ImageCopyright:
-                    self.Exif_widgets["Copyright"].set_text(
-                        self._get_value( KeyTag ) )
+                    self.Exif_widgets["Copyright"].set_text( self._get_value( KeyTag ) )
 
+                # media image DateTime
                 elif KeyTag == ImageDateTime:
-                    self.Exif_widgets["Select:Date"].set_text(
-                        self._get_value ( KeyTag )
-                    )
 
+                    # get the dates that an image can have in Gramps
+                    # date1 and date2 may come from the image metadata
+                    # date3 may come from the Gramps database 
+                    date1 = self._get_value( KeyTag )
+                    date2 = self._get_value( IptcDateCreated )
+                    date3 = self.orig_image.get_date_object()
+
+                    use_date = date1 or date2 or date3
+                    if use_date:
+                        self.process_date( use_date )
+                    else:
+                        self.process_date( None, False )
+
+                # Latitude and Latitude Reference
                 elif KeyTag == ImageLatitude:
+
+                    # self.LATitude is used for processing, and latitude is used for displaying
                     latitude = self._get_value( KeyTag )
                     if latitude:
-                        deg, min, sec = self.rational_to_dms( latitude )
+                        deg, min, sec = rational_to_dms( latitude )
+
+                        # if seconds has a period in it, get rid of it...
                         sec = sec.replace(".", "")
 
-                        # Latitude Reference
-                        LatitudeRef = self._get_value( ImageLatitudeRef )
-                        self.latitude = "%s %s %s %s" % ( deg, min, sec, LatitudeRef )
+                        # Latitude Direction Reference
+                        self.LatitudeRef = self._get_value( ImageLatitudeRef )
+                        self.LATitude = "%s %s %s" % ( deg, min, sec )
 
-                        latitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LatitudeRef)
-                        self.Exif_widgets["Latitude"].set_text( latitude )
+                        self.Exif_widgets["Latitude"].set_text(
+                                """%s° %s′ %s″ %s""" % ( deg, min, sec, self.LatitudeRef ) )
 
+                # Longitude and Longitude Reference
                 elif KeyTag == ImageLongitude:
+
+                    # lself.LONGitude is used for processing, and longitude is used for displaying
                     longitude = self._get_value( KeyTag )
                     if longitude:
-                        deg, min, sec = self.rational_to_dms( longitude )
+                        deg, min, sec = rational_to_dms( longitude )
+
+                        # if there is a persiod, get rid of it...
                         sec = sec.replace(".", "")
 
                         # Longitude Direction Reference
-                        LongitudeRef = self._get_value( ImageLongitudeRef )
-                        self.longitude = "%s %s %s %s" % ( deg, min, sec, LongitudeRef )
+                        self.LongitudeRef = self._get_value( ImageLongitudeRef )
+                        self.LONGitude = "%s %s %s" % ( deg, min, sec )
 
-                        longitude = """%s° %s′ %s″ %s""" % (deg, min, sec, LongitudeRef)
-                        self.Exif_widgets["Longitude"].set_text( longitude )
+                        self.Exif_widgets["Longitude"].set_text(
+                                """%s° %s′ %s″ %s""" % ( deg, min, sec, self.LongitudeRef ) )
 
-                else:
+                elif KeyTag == ImageDescription:
 
+                    # metadata Description field 
                     self.Exif_widgets["Description"].set_text(
                         self._get_value( ImageDescription ) )
 
-                subject = ""
-                keyWords = self._get_value( IptcKeywords )
-                if keyWords:
-                    index = 1 
-                    for word in keyWords:
-                        subject += word
-                        if index is not len(keyWords):
-                            subject += "," 
-                        index += 1 
-                self.Exif_widgets["Keywords"].set_text( subject )
+                # Subject
+                subject = self._get_value( XmpSubject )
+ 
+                for KeyTag in IptcMap:
 
+                    # Keywords 
+                    if KeyTag == IptcKeywords:
+                        words = ""
+                        keyWords = self._get_value( KeyTag )
+                        if keyWords:
+                            index = 1 
+                            for word in keyWords:
+                                words += word
+                                if index is not len(keyWords):
+                                    words += "," 
+                                index += 1 
+                        self.Exif_widgets["Keywords"].set_text( words )
+
+                    elif KeyTag == IptcDateCreated:
+                        self.DateCreated = self._get_value( KeyTag )
         else:
             WarningDialog(_( "There is an error with this image!\n"
-                "You do not have read access to this image..."))
-
+                "You do not have read access..."))
 
     def _set_value(self, KeyTag, KeyValue):
         """
@@ -393,119 +524,222 @@ class imageMetadataGramplet(Gramplet):
         @param: KeyTag   -- exif key
         @param: KeyValue -- value to be saved
         """
-        # if KeyValue is equal to nothing, return without setting the value
-        if not KeyValue:
-            return
 
         if "Exif" in KeyTag:
             try:
                 self.plugin_image[KeyTag].value = KeyValue
             except KeyError:
                 self.plugin_image[KeyTag] = ExifTag( KeyTag, KeyValue )
+            except ValueError:
+                pass
 
         elif "Xmp" in KeyTag:
             try:
                 self.plugin_image[KeyTag].value = KeyValue
             except KeyError:
                 self.plugin_image[KeyTag] = XmpTag(KeyTag, KeyValue)
+            except ValueError:
+                pass
 
-        else:
+        elif "Iptc" in KeyTag:
             try:
                 self.plugin_image[KeyTag].value = KeyValue
             except KeyError:
                 self.plugin_image[KeyTag] = IptcTag( KeyTag, KeyValue )
+            except ValueError:
+                pass
 
-    def write_image_metadata(self, obj):
+    def write_metadata(self, obj):
         """
-        saves the data fields to the image
+        gets the information from the plugin data fields
+        and sets the keytag = keyvalue image metadata
         """
 
-        # make sure the image is writable permissions
-        if os.access( self.image_path, os.W_OK ):
+        # Artist data field
+        artist = self.Exif_widgets["Artist"].get_text()
+        self._set_value( ImageArtist, artist )
 
-            # check to see if we have both latitude/ longitude, if one exists
-            latitude = self.Exif_widgets["Latitude"].get_text()
-            longitude = self.Exif_widgets["Longitude"].get_text()
-            if latitude and not longitude:
-                OkDialog(_( "You have etered Latitude, but not longitude.  Please enter Longitude..."))
-            elif longitude and not latitude:
-                OkDialog(_( "You have etered Longitude, but not Latitude.  Please enter Latitude..."))
+        # Copyright data field
+        copyright = self.Exif_widgets["Copyright"].get_text()
+        self._set_value( ImageCopyright, copyright )
 
-            artist = self.Exif_widgets["Artist"].get_text()
-            if artist:
-                self._set_value( ImageArtist, artist )
+        # get date from data field for saving
+        # the False flag signifies that we will get the date and time from process_date()
+        self._set_value( ImageDateTime, self.process_date( None, False ) )
 
-            copyright = self.Exif_widgets["Copyright"].get_text()
-            if copyright:
-                self._set_value( ImageCopyright, copyright )
+        # Convert GPS Latitude / Longitude Coordinates for display
+        self.get_LatRef_LongRef()
 
-            dtime = self.Exif_widgets["Select:Date"].get_text()
-            if dtime:
-                self._set_value( ImageDateTime, dtime )
+        # convert degrees, minutes, seconds to Rational for saving
+        if self.LATitude and self.LatitudeRef:
+            latitude = coords_to_rational( self.LATitude )
 
-            # Convert GPS Latitude / Longitude Coordinates for display
-            lat_ref, long_ref = self.convert_decimal_deg_min_sec( self.plugin_image )
+            self._set_value( ImageLatitude, latitude )
+            self._set_value( ImageLatitudeRef, self.LatitudeRef )
 
-            # convert d, m, s to Rational for saving
-            if self.latitude is not None:
-                latitude = coords_to_rational( self.latitude )
-                self._set_value( ImageLatitude, latitude )
+        else:
+            self._set_value( ImageLatitude,    "") 
+            self._set_value( ImageLatitudeRef, "")
 
-                # save Latitude Reference
-                if lat_ref is not None: 
-                    self._set_value( ImageLatitudeRef, lat_ref )   
+        if self.LONGitude and self.LongitudeRef:
+            longitude = coords_to_rational( self.LONGitude )
 
-            # convert d, m, s to Rational for saving
-            if self.longitude is not None:
-                longitude = coords_to_rational( self.longitude )
-                self._set_value( ImageLongitude, longitude )
+            self._set_value( ImageLongitude, longitude )
+            self._set_value( ImageLongitudeRef, self.LongitudeRef )
 
-                # save Longitude Reference
-                if long_ref is not None:
-                    self._set_value( ImageLongitudeRef, long_ref ) 
+        else:
+            self._set_value( ImageLongitude,    "") 
+            self._set_value( ImageLongitudeRef, "")
 
-            keywords = [ word for word in self.Exif_widgets["Keywords"].get_text().split(",") ]
-            self._set_value( IptcKeywords, keywords )
+        # keywords data field
+        keywords = [ word for word in self.Exif_widgets["Keywords"].get_text().split(",") ]
+        self._set_value( IptcKeywords, keywords )
 
-            start = self.Exif_widgets["Description"].get_start_iter()
-            end = self.Exif_widgets["Description"].get_end_iter()
-            meta_descr = self.Exif_widgets["Description"].get_text(start, end)
-            if meta_descr:
-                self._set_value(ImageDescription, meta_descr)
+        # description data field
+        start = self.Exif_widgets["Description"].get_start_iter()
+        end = self.Exif_widgets["Description"].get_end_iter()
+        meta_descr = self.Exif_widgets["Description"].get_text(start, end)
+        self._set_value( ImageDescription, meta_descr)
 
-            # write the metadata to the image
+        # check write permissions for this image
+        if _check_writable(self.image_path):
             self.plugin_image.write()
+
+            # notify the user of successful write 
             OkDialog(_("Image metadata has been saved."))
 
         else:
-            WarningDialog(_( "There are errors with this image!"))
+            WarningDialog(_( "There is an error with this image!\n"
+                "You do not have write access..."))
 
-    def clear_data_entry(self, obj):
+    def clear_data_entry(self, obj, cleartype = "All"):
         """
         clears all data fields to nothing
+
+        @param: cleartype -- 
+            "Date" = clears only Date entry fields
+            "All" = clears all data fields
         """
 
-        for key in [ "Active:Image", "Description", "Select:Date", "Artist", "Copyright",
-            "Latitude", "Longitude", "Keywords" ]:
-            self.Exif_widgets[key].set_text( "" )
+        if cleartype == "All":
+            for key in [ "Active:Image", "Artist", "Copyright",
+                "Latitude", "Longitude", "Keywords", "Description" ]:
+                self.Exif_widgets[key].set_text( "" )
 
-        for key in ["LatitudeRef", "LongitudeRef"]:
-	    self.LatitudeRef = ""
-	    self.LongitudeRef = "" 
+            for key in ["Year", "Month", "Day", "Hour", "Minutes", "Seconds"]:
+                self.Exif_widgets[key].set_active(0)
 
-    def rational_to_dms(self, rational_coords):
+            self.LATitude = ""
+            self.LatitudeRef = ""
+            self.LONGitude
+            self.LongitudeRef = ""
+
+        else:
+            for key in ["Year", "Month", "Day", "Hour", "Minutes", "Seconds"]:
+                self.Exif_widgets[key].set_active(0)
+
+    def process_date(self, tmpDate, read = True):
         """
-        will return a rational set of coordinates to degrees, minutes, seconds
+        Process the date for read and write processes
+        year, month, day, hour, minutes, seconds
+
+        @param: tmpDate = variable to be processed
+        @param: read -- if True, then process date from the read process...
+                     -- if False, then process date from the write process...  
         """
 
-        rd, rm, rs = rational_coords.split(" ")
-        rd, rest = rd.split("/")
-        rm, rest = rm.split("/")
-        rs, rest = rs.split("/")
+        # get date type
+        datetype = tmpDate.__class__
 
-        # return degrees, minutes, seconds to its callers
-        return rd, rm, rs
+        # if date type is either datetime.date or list,
+        # hour, minutes, seconds will need to be specified
+        if datetype in [date, list]:
 
+            rhour, rminutes, rseconds = time.localtime()[3:5]
+
+        # if type is datetime.datetime or datetime.date,
+        # we will get the year, month, and day from tmpDate
+        if datetype in [datetime, date]:
+            ryear = tmpDate.year
+            rmonth = tmpDate.month
+            rday = tmpDate.day
+
+        # process the image date for the read process...
+        if read:
+
+            # clear the date/ time fields only!
+            self.clear_data_entry(self.plugin_image, "Date")
+
+            # if type is equal to datetime.datetime,
+            # we need to get the time?
+            if datetype == datetime:
+
+                rhour = tmpDate.hour
+                rminutes = tmpDate.minute
+                seconds = tmpDate.second  
+
+            # if tpe is equal to list, get the date?
+            elif datetype == list:
+
+                ryear = tmpDate[0].year
+                rmonth = tmpDate[0].month
+                rday = tmpDate[0].day
+
+            # date was saved as a string instead
+            elif datetype == str:
+
+                # get the date from the string...
+                ddate, dtime = tmpDate.split(" ")
+                ryear, rmonth, rday = ddate.split(".")
+
+                # get the time from the string...
+                rhour, rminutes, rseconds = dtime.split(":")
+
+            # type is NoneType
+            else:
+
+                # set the values for the date
+                ryear, rmonth, rdat = 0, 0, 0
+
+                # set the values for the time
+                rhour, rminutes, rseconds = 0, 0, 0
+
+            # set the data fields for the date
+            self.Exif_widgets["Year"].set_active( (int(ryear) - 1826) )
+            self.Exif_widgets["Month"].set_active( (int(rmonth) - 1) )
+            self.Exif_widgets["Day"].set_active( (int(rday) - 1) )
+
+            # set data fields for the time
+            self.Exif_widgets["Hour"].set_active( (int(rhour) ) )
+            self.Exif_widgets["Minutes"].set_active( (int(rminutes) ) )
+            self.Exif_widgets["Seconds"].set_active( (int(rseconds) ) ) 
+        
+        # used for processing the date for the write process...
+        # used for creating datetime.datetime if possible, otherwise create a date string?
+        else:
+
+            wyear = self.Exif_widgets["Year"].get_active()
+            wmonth = self.Exif_widgets["Month"].get_active()
+            wday = self.Exif_widgets["Day"].get_active()
+
+            whour = self.Exif_widgets["Hour"].get_active()
+            wminutes = self.Exif_widgets["Minutes"].get_active()
+            wseconds = self.Exif_widgets["Seconds"].get_active()
+
+            if -1 < wyear <= 75:
+                wdate = "%04d.%02d.%02d %02d:%02d:%02d" % (
+                    (wyear + 1826), (wmonth + 1), (wday + 1), whour, wminutes, wseconds )
+            else:
+                wdate = datetime( (wyear + 1826), (wmonth +1), (wday +1), whour, wminutes, wseconds )
+                self._set_value( IptcDateCreated, 
+                       [date( (wyear + 1826), (wmonth +1), (wday +1) ) ]
+                ) 
+
+            self._set_value( ImageDateTime, wdate ) 
+
+# -------------------------------------------------------------------
+#                          Date Calendar functions
+# -------------------------------------------------------------------
     def select_date(self, obj):
         """
         will allow you to choose a date from the calendar widget
@@ -513,7 +747,10 @@ class imageMetadataGramplet(Gramplet):
         @param: obj -- media object from the database
         """
  
+        tip = _("Double click a date to return to Addon.")
+
         self.app = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.app.tooltip = tip
         self.app.set_title(_("Select Date"))
         self.app.set_default_size(450, 200)
         self.app.set_border_width(10)
@@ -530,63 +767,92 @@ class imageMetadataGramplet(Gramplet):
         """
 
         year, month, day = self.Exif_widgets["Calendar"].get_date()
-        now = datetime.now()
-        image_date = "%04d %s %02d %02d:%02d:%02d" % (
-            year, _ABBREV_MONTHS[(month + 1)], day, now.hour, now.minute, now.second )
+        self.Exif_widgets["Year"].set_active( ( year - 1826 ) )
+        self.Exif_widgets["Month"].set_active( month )
+        self.Exif_widgets["Day"].set_active( ( day - 1 ) )
 
-        self.Exif_widgets["Select:Date"].set_text( image_date )
+        now = time.localtime()
+        self.Exif_widgets["Hour"].set_active( now[3] )
+        self.Exif_widgets["Minutes"].set_active( now[4] )
+        self.Exif_widgets["Seconds"].set_active( now[5] )
         self.app.destroy()
 
-    def convert_decimal_deg_min_sec(self, obj):
+# -------------------------------------------------------------------
+#                            GPS Coordinate functions
+# -------------------------------------------------------------------
+    def get_LatRef_LongRef(self):
         """
         Converts decimal GPS coordinates to Degrees, Minutes, Seconds 
         GPS coordinates
         """
 
-        latitude = self.Exif_widgets["Latitude"].get_text()
-        longitude = self.Exif_widgets["Longitude"].get_text()
-        lat_ref, long_ref = None, None
-        self.latitude, self.longitude = None, None
+        if self.LatitudeRef and self.LongitudeRef:
+            return
 
-        if latitude:
-            WarningDialog(_( "You have only entered a Latitude GPS Coordinate!"))
+        if self.LATitude and self.LONGitude:
+            latitude   = self.LATitude
+            longitude = self.LONGitude
+        else:
+            latitude = self.Exif_widgets[  "Latitude"].get_text()
+            longitude = self.Exif_widgets["Longitude"].get_text()
 
-        elif longitude:
-            WarningDialog(_( "You have only entered a Longitude GPS Coordinate!"))
+        if latitude and longitude:
 
-        elif latitude and longitude:
-
+            # latitude and longitude are in decimal format
             if ("." in latitude and longitude):
 
-                # convert to d, m, s with a seperator of : for saving to Exif Metadata 
-                self.latitude, self.longitude = conv_lat_lon( latitude, longitude, "DEG-:" )
+                # convert to degress, minutes, seconds with a seperator of : for saving to Exif Metadata 
+                latitude, longitude = conv_lat_lon( latitude, longitude, "DEG-:" )
 
-                if "-" in latitude:
-                    self.latitude = self.latitude[1:]
-                    lat_ref = "S"
+                # remove negative symbol in there is one?
+                if "-" in latitude[0]:
+                    latitude = latitude.replace("-", "")
+                    self.LatitudeRef = "S"
                 else:
-                    lat_ref = "N"
+                    self.LatitudeRef = "N" 
 
-                if "-" in longitude:
-                    self.longitude = self.longitude[1:]
-                    long_ref = "W"
+                # remove negative symbol if there is one?
+                if "-" in longitude[0]:
+                    longitude = longitude.replace("-", "")
+                    self.LongitudeRef = "W"
                 else:
-                    long_ref = "E"
+                    self.LongitudeRef = "E"
 
-            # convert to 4 point decimal
-            latitude, longitude = conv_lat_lon( latitude, longitude, "D.D4" )
+            deg, min, sec = latitude.split(":")
+            sec, dump = sec.split(".")
+            self.LATitude = "%s %s %s" % ( deg, min, sec )
+            self.Exif_widgets["Latitude"].set_text(
+                    """%s° %s′ %s″ %s""" % ( deg, min, sec, self.LatitudeRef )
+            )
 
-            # convert to deg, mins, secs  
-            self.latitude, self.longitude = conv_lat_lon( latitude, longitude, "DEG" )
-            print( latitude, longitude )
-            latitude, longitude = conv_lat_lon( latitude, longitude, "DEG" )
- 
-        self.Exif_widgets["Latitude"].set_text(   latitude )
-        self.Exif_widgets["Longitude"].set_text( longitude )
+            deg, min, sec = longitude.split(":")
+            sec, dump = sec.split(".")
+            self.LONGitude = "%s %s %s" % ( deg, min, sec )
+            self.Exif_widgets["Longitude"].set_text(
+                    """%s° %s′ %s″ %s""" % ( deg, min, sec, self.LongitudeRef )
+            )
 
-        # return Latitude Reference and Longitude Reference back to its caller
-        return lat_ref, long_ref
-     
+            # ewmove Latitude Direction Reference so that it is not showing for save
+            direction = " S" or " N"
+            if direction:
+                self.LATitude.replace(direction, "")
+
+            # ewmove Longitude Direction Reference so that it is not showing for save
+            direction = " E" or " W"
+            if direction:
+                self.LONGitude.replace(direction, "")
+
+        elif latitude and not longitude:
+            WarningDialog(_( "You have only entered a Latitude but no Longitude."))
+            self.LatitudeRef, self.LongitudeRef = None, None
+
+        elif longitude and not latitude:
+            WarningDialog(_( "You have only entered a Longitude but no Latitude."))
+            self.LatitudeRef, self.LongitudeRef = None, None
+
+        else:
+            self.LatitudeRef, self.LongitudeRef = None, None
+
 def string_to_rational(coordinate):
     """
     convert string to rational variable for GPS
@@ -603,4 +869,18 @@ def coords_to_rational(coordinates):
     returns the GPS coordinates to Latitude/ Longitude
     """
 
-    return [string_to_rational(coordinate) for coordinate in coordinates.split( ":")]
+    return [string_to_rational(coordinate) for coordinate in coordinates.split( " ")]
+
+def rational_to_dms(rational_coords):
+    """
+    will return a rational set of coordinates to degrees, minutes, seconds
+    """
+
+    rd, rm, rs = rational_coords.split(" ")
+    rd, rest = rd.split("/")
+    rm, rest = rm.split("/")
+    rs, rest = rs.split("/")
+    rs = rs.replace(".", "")
+
+    # return degrees, minutes, seconds to its callers
+    return rd, rm, rs
