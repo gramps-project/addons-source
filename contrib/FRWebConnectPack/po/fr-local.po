@@ -37,7 +37,7 @@ msgid "OrigineFile (Quebec)"
 msgstr "FichierOrigine (Québec)"
 
 #: FRWebConnectPack/FRWebPack.py:41
-msgid "FamilySearch.org Beta"
+msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
 #: FRWebConnectPack/FRWebPack.py:42
