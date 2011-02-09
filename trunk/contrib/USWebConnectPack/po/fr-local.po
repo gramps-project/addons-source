@@ -34,8 +34,8 @@ msgid "Find A Grave"
 msgstr "Trouver une tombe"
 
 #: USWebConnectPack/USWebPack.py:28
-msgid "FamilySearch.org Beta"
-msgstr "FamilySearch.org (version test)"
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
 
 #: USWebConnectPack/USWebPack.py:29
 msgid "US Google"
