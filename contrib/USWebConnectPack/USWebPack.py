@@ -27,7 +27,7 @@ _ = get_addon_translator(__file__).ugettext
 
 WEBSITES = [
     ["Person", "Find-A-Grave", _("Find A Grave"), "http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth)s&GSbyrel=in&GSdy=%(death)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b"],
-    ["Person", "FamilySearch", _("FamilySearch.org Beta"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
+    ["Person", "FamilySearch", _("FamilySearch.org"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
     ["Person", "US-Google", _("US Google"), '''http://www.google.com/#hl=en&q="%(surname)s,+%(given)s"'''],
     ["Person", "GenCircles", "GenCircle", "http://www.gencircles.com/globaltree/gosearch?f=%(surname)s&l=%(given)s&by=%(birth)s&ba=0&bp=&fa=&dy=%(death)s&da=0&mo=&dp=&sp=&t=Marriage&oy=&oa=0&op=&g.x=6&g.y=12"],
     ["Person", "german-immigrants.com", _("German Immigrants"), "http://www.german-immigrants.com/tng/search.php?mylastname=%(surname)s&myfirstname=%(given)s&mybool=AND&offset=0&search=Search"],
