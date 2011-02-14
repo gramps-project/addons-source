@@ -3,7 +3,7 @@
 #
 # Copyright (C) 2006-2007  Alex Roitman
 # Copyright (C) 2008-2009  Gary Burton
-# Copyright (C) 2007-2010  Jerome Rapinat
+# Copyright (C) 2007-2011  Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -283,42 +283,44 @@ class RepositoryOptionsAlt(MenuReportOptions):
         """
 
         category_name = _('Report Options')
+        from functools import partial
+        addopt = partial(menu.add_option, _("Report Options"))
 
         incintern = BooleanOption(_("Include repository's urls"), False)
         incintern.set_help(_('Whether to include urls on repository.'))
-        menu.add_option(category_name, 'incintern', incintern)
+        addopt('incintern', incintern)
 
         incaddres = BooleanOption(_("Include repository's address"), False)
         incaddres.set_help(_('Whether to include addresses on repository.'))
-        menu.add_option(category_name, 'incaddres', incaddres)
+        addopt('incaddres', incaddres)
 
         incauthor = BooleanOption(_("Include source's author"), False)
         incauthor.set_help(_('Whether to include author.'))
-        menu.add_option(category_name, 'incauthor', incauthor)
+        addopt('incauthor', incauthor)
 
         incabbrev = BooleanOption(_("Include source's abbreviation"), False)
         incabbrev.set_help(_('Whether to include abbreviation.'))
-        menu.add_option(category_name, 'incabbrev', incabbrev)
+        addopt('incabbrev', incabbrev)
 
         incpublic = BooleanOption(_("Include source's publication information"), False)
         incpublic.set_help(_('Whether to include publication information.'))
-        menu.add_option(category_name, 'incpublic', incpublic)
+        addopt('incpublic', incpublic)
 
         incdatamp = BooleanOption(_("Include source's data"), False)
         incdatamp.set_help(_('Whether to include keys and values.'))
-        menu.add_option(category_name, 'incdatamp', incdatamp)
+        addopt('incdatamp', incdatamp)
 
         inclunote = BooleanOption(_('Include notes'), False)
         inclunote.set_help(_('Whether to include notes on repositories and sources.'))
-        menu.add_option(category_name, 'inclunote', inclunote)
+        addopt('inclunote', inclunote)
 
         inclmedia = BooleanOption(_('Include media'), False)
         inclmedia.set_help(_('Whether to include media on sources.'))
-        menu.add_option(category_name, 'inclmedia', inclmedia)
+        addopt('inclmedia', inclmedia)
 
         incprivat = BooleanOption(_('Include private records'), False)
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
-        menu.add_option(category_name, 'incprivat', incprivat)
+        addopt('incprivat', incprivat)
 
         trans = EnumeratedListOption(_("Translation"), 
                                       Translator.DEFAULT_TRANSLATION_STR)
@@ -326,7 +328,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         for language in get_available_translations():
             trans.add_item(language, get_language_string(language))
         trans.set_help(_("The translation to be used for the report."))
-        menu.add_option(category_name, "trans", trans)
+        addopt("trans", trans)
 
     def make_default_style(self, default_style):
         """
