@@ -1,0 +1,58 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-14 18:09+0100\n"
+"PO-Revision-Date: 2011-02-14 18:12+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+msgid "Related Relatives Gramplet"
+msgstr "Gramplet Parentés"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet affichant les parentés dans une relation"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr "Parentés"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:49
+msgid "No Family Tree loaded."
+msgstr "Aucun Arbre Familial chargé."
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:90
+msgid "Relations of related people in your database:"
+msgstr "Relations des individus liés dans cette base de données :"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:213
+msgid "and"
+msgstr "et"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "are partners and"
+msgstr "sont conjoints et"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:236
+msgid "Common ancestor"
+msgstr "Ascendant commun"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:247
+msgid "No relatives in a relation found"
+msgstr "Aucune parenté trouvée dans la relation"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:248
+msgid "END"
+msgstr "FIN"
+
