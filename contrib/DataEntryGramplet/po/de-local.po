@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-16 00:40+0100\n"
-"PO-Revision-Date: 2011-02-16 00:56+0100\n"
+"PO-Revision-Date: 2011-02-16 21:02+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -100,7 +100,7 @@ msgstr "Neue Person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:84
 msgid "Add relation"
-msgstr ""
+msgstr "Beziehung hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:85
 msgid "No relation to active person"
@@ -128,7 +128,7 @@ msgstr "Hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Copy Active Data"
-msgstr ""
+msgstr "Aktive Daten kopieren"
 
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Clear"
@@ -151,7 +151,7 @@ msgstr "Bitte nenn einen Namen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:492
 msgid "Can't add new person."
-msgstr ""
+msgstr "Kann neue Person nicht hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:500
 #: DataEntryGramplet/DataEntryGramplet.py:508
@@ -168,7 +168,7 @@ msgstr "Kann neue Person nicht als Elter hinzufügen."
 #: DataEntryGramplet/DataEntryGramplet.py:503
 #: DataEntryGramplet/DataEntryGramplet.py:512
 msgid "Please set the new person's gender."
-msgstr ""
+msgstr "Bitte Geschlecht der neuen Person angeben."
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 #: DataEntryGramplet/DataEntryGramplet.py:512
@@ -211,5 +211,6 @@ msgstr "Bitte das Geschlecht der aktiven Person angeben."
 #: DataEntryGramplet/DataEntryGramplet.py:803
 #, python-format
 msgid "Gramplet Data Entry: %s"
-msgstr ""
+msgstr "Gramplet Dateneingabe: %s"
+
 
