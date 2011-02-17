@@ -6,7 +6,7 @@
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.2', 'z': 'DescendantsLines.addon.tgz'}
-{'d': 'Gramplet showing relatives in a relation', 'g': '3.3', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'RelatedRelativesGramplet.addon.tgz'}
+{'d': 'Gramplet showing relatives in a relation', 'g': '3.3', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.8', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.8', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Produces a family sheet showing full information about a person and his/her partners and children.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Family Sheet', 't': u'Report', 'v': '3.3.3', 'z': 'FamilySheet.addon.tgz'}
@@ -36,8 +36,8 @@
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.4', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.3', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.3.12', 'z': 'ImageMetadataGramplet.addon.tgz'}
-{'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.4', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.3.13', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.5', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
 {'d': 'Set Marker to a given value.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Set Marker', 't': u'Tool', 'v': '0.0.4', 'z': 'SetMarkerTool.addon.tgz'}
