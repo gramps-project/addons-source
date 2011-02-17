@@ -1,0 +1,162 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-17 21:48+0100\n"
+"PO-Revision-Date: 2011-02-17 22:05+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: DescendantsLines/DescendantsLines.gpr.py:22
+msgid "Descendants Lines"
+msgstr "Nachkommen Linien"
+
+#: DescendantsLines/DescendantsLines.gpr.py:23
+msgid "Produces descendants lines of a person"
+msgstr "Erstellt Nachkommenlinien einer Person"
+
+#: DescendantsLines/DescendantsLines.py:683
+msgid "b. "
+msgstr "* "
+
+#: DescendantsLines/DescendantsLines.py:685
+msgid "d. "
+msgstr "† "
+
+#: DescendantsLines/DescendantsLines.py:691
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: DescendantsLines/DescendantsLines.py:872
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: DescendantsLines/DescendantsLines.py:874
+msgid "Center Person"
+msgstr "Zentrale Person"
+
+#: DescendantsLines/DescendantsLines.py:875
+msgid "The center person for the report"
+msgstr "Die zentrale Person für den Bericht"
+
+#: DescendantsLines/DescendantsLines.py:878
+msgid "Options S"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:880
+msgid "S_DOWN"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:881
+#: DescendantsLines/DescendantsLines.py:913
+msgid "The number of ??? down"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:884
+msgid "S_UP"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:885
+#: DescendantsLines/DescendantsLines.py:923
+msgid "The number of ??? up"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:888
+msgid "S_VPAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:889
+msgid "The number of ??? vpad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:892
+msgid "SP_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:893
+#: DescendantsLines/DescendantsLines.py:899
+#: DescendantsLines/DescendantsLines.py:903
+#: DescendantsLines/DescendantsLines.py:909
+#: DescendantsLines/DescendantsLines.py:919
+msgid "The number of ??? pad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:896
+msgid "Options F"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:898
+msgid "F_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:902
+msgid "FL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:906
+msgid "Options O"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:908
+msgid "OL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:912
+msgid "O_DOWN"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:916
+msgid "Options C"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:918
+msgid "C_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:922
+msgid "C_UP"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:926
+msgid "MIN_C_WIDTH"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:927
+msgid "The number of ??? min width"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:930
+msgid "Options Text"
+msgstr "Optionstext"
+
+#: DescendantsLines/DescendantsLines.py:932
+msgid "TEXT_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:933
+msgid "The number of text pad ???"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:936
+msgid "TEXT_LINE_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:937
+msgid "The number of text line pad ??? "
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:952
+msgid "The style used for the name of person."
+msgstr "Der Stil der für den Namen einer Person verwendet wird."
+
