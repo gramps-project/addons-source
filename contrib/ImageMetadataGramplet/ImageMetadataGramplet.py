@@ -30,6 +30,9 @@ import os, sys
 from datetime import datetime, date
 import time
 
+# abilty to escape certain characters from html output...
+from xml.sax.saxutils import escape as html_escape
+
 # -----------------------------------------------------------------------------
 # GTK modules
 # -----------------------------------------------------------------------------
@@ -50,9 +53,6 @@ except ImportError:
                    "ocal repository or from here\n")
     pyexiv2msg += "http://tilloy.net/dev/pyexiv2"
     raise Exception( pyexiv2msg )
-
-# import html_escape from libhtml
-from libhtml import html_escape as html_escape
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
