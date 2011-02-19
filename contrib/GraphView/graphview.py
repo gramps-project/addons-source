@@ -109,6 +109,12 @@ class GraphView(NavigationView):
         Set up callback for changes to the database
         """
         self._change_db(db)
+        if self.active:
+            self.graph_widget.clear()
+            if self.get_active() != "":
+                self.graph_widget.populate(self.get_active())
+        else:
+            self.dirty = True
 
     def get_stock(self):
         """
@@ -156,8 +162,12 @@ class GraphView(NavigationView):
 
     def goto_handle(self, handle):
         "Go to a named handle"
-        self.graph_widget.clear()
-        self.graph_widget.populate(self.get_active())
+        if self.active:
+            if self.get_active() != "":
+                self.graph_widget.clear()
+                self.graph_widget.populate(self.get_active())
+        else:
+            self.dirty = True
 
 #-------------------------------------------------------------------------
 #
@@ -176,7 +186,7 @@ class GraphWidget(object):
         self.view = view
         self.dbstate = dbstate
         self.uistate = uistate
-        self.active_person = None
+        self.active_person_handle = None
 
         scrolled_win = gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(gtk.SHADOW_IN)
@@ -206,7 +216,7 @@ class GraphWidget(object):
         Populate the graph with widgets derived from Graphviz
         """
         dot = DotGenerator(self.dbstate)
-        self.active_person = active_person
+        self.active_person_handle = active_person
         dot.build_graph(active_person)
 
         # Build the rest of the widget by parsing SVG data from Graphviz
@@ -302,7 +312,7 @@ class GraphWidget(object):
         if event.type != gtk.gdk.BUTTON_PRESS:
             pass
         if event.button == 1 and node_class == 'node': # Left mouse
-            if handle == self.active_person:
+            if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
                 # the active person, if no parents then leave as the current
                 # active person
@@ -405,7 +415,7 @@ class GraphvizSvgParser(object):
         self.font_family_map = {"Times New Roman,serif"   : "Times",
                                 "Times Roman,serif"       : "Times",
                                 "Arial"                   : "Helvetica"}
-        self.active_person = None
+        self.active_person_item = None
 
     def parse(self, ifile):
         """
@@ -506,7 +516,7 @@ class GraphvizSvgParser(object):
             stroke_color = attrs.get('stroke')
             fill_color = attrs.get('fill')
 
-        if self.handle == self.widget.active_person:
+        if self.handle == self.widget.active_person_handle:
             line_width = 3  # Thick box
         else:
             line_width = 1  # Thin box
@@ -636,8 +646,8 @@ class GraphvizSvgParser(object):
                               font = text_font)
 
         # Retain the active person for other use elsewhere
-        if self.handle == self.widget.active_person:
-            self.active_person = item 
+        if self.handle == self.widget.active_person_handle:
+            self.active_person_item = item 
 
     def start_image(self, attrs):
         """
@@ -719,14 +729,14 @@ class GraphvizSvgParser(object):
         Find the position of the centre of the active person in the horizontal
         dimension
         """
-        return self.active_person.props.x
+        return self.active_person_item.props.x
 
     def get_active_person_y(self):
         """
         Find the position of the centre of the active person in the vertical
         dimension
         """
-        return self.active_person.props.y
+        return self.active_person_item.props.y
 
 #------------------------------------------------------------------------
 #
