@@ -1,0 +1,40 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-28 18:58+0100\n"
+"PO-Revision-Date: 2011-02-28 19:09+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:3
+msgid "Headline News Gramplet"
+msgstr "Überschrift Nachrichten Gramplet"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
+msgid "Gramplet for showing latest the Gramps news"
+msgstr "Gramplet zum zeigen der neuesten Gramps Nachrichten"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:10
+msgid "Headline News"
+msgstr "Überschrift Nachrichten"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:100
+msgid "Read Gramps headline news"
+msgstr "Lese Gramps Überschrift Nachrichten"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:104
+msgid "No Family Tree loaded."
+msgstr "Kein Stammbaum geladen."
+
