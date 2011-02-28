@@ -1,0 +1,183 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-28 19:24+0100\n"
+"PO-Revision-Date: 2011-02-28 21:51+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:35
+#, python-format
+msgid ""
+"Your pyexiv2 version does not meet the minimum requirements. At least "
+"pyexiv2 %d.%d.%d is needed to run this Gramps plugin.\n"
+"\n"
+msgstr ""
+"Deine pyexiv2 Version erfüllt nicht die Grundvoraussetzungen. Es ist "
+"mindestens pyexiv2 %d.%d.%d erforderlich um dieses Gramps Plug-In laufen zu "
+"lassen.\n"
+"\n"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:52
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:57
+msgid "Image Metadata Gramplet"
+msgstr "Bilder Metadaten Gramplet"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:53
+msgid "Gramplet for editing image EXIF metadata"
+msgstr "Gramplet zum bearbeiten von EXIF Metadaten"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:51
+msgid ""
+"The, pyexiv2, python binding library, to exiv2 is not installed on this "
+"computer.\n"
+" It can be downloaded either from your ocal repository or from here\n"
+msgstr ""
+"Die pyexiv2 Python Bindung Bibliothek zu exiv2 ist auf diesem Rechner nicht "
+"installiert.\n"
+" Sie kann entweder von deinem lokalen Repository oder von hier herunterladen\n"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:140
+msgid "Active Image"
+msgstr "Aktives Bild"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:141
+msgid "Artist"
+msgstr "Künstler"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:142
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:146
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:703
+msgid "Select Date"
+msgstr "Datum wählen"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:150
+msgid "Date"
+msgstr "Datum"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:153
+msgid "Time"
+msgstr "Zeit"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:156
+msgid "Decimal"
+msgstr "Dezimal"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:157
+msgid "Deg. Min. Sec."
+msgstr "Grad Min. Sek."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:161
+msgid "Latitude"
+msgstr "Breitengrad"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:162
+msgid "Longitude"
+msgstr "Längengrad"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:165
+msgid "Keywords"
+msgstr "Stichwörter"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:176
+msgid "Description"
+msgstr "Beschreibung"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:192
+msgid "Save Metadata"
+msgstr "Metadaten speichern"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:198
+msgid "Clear Metadata"
+msgstr "Metadaten leeren"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:215
+msgid "Enter the name of the person or company who took this image."
+msgstr "Gib den Namen der Person oder der Firma die das Bild gemacht hat."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:219
+msgid ""
+"Enter the copyright information for the image.  xample: (C) 2010 Smith and "
+"Wesson"
+msgstr ""
+"Gib die Copyright Informationen für diese Bild ein. Z.B.: (c) 2010 Müller M."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:223
+msgid ""
+"Manual Date Entry, \n"
+"Example: 1826-Apr-12"
+msgstr ""
+"Manuelle Datumseingabe, \n"
+"Bsp.: 1826-Apr-12"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:227
+msgid ""
+"Manual Time entry, \n"
+"Example: 14:06:00"
+msgstr ""
+"Manuelle Zeiteingabe, \n"
+"Bsp.: 14:06:00"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:232
+msgid ""
+"Enter the GPS Latitude Coordinates for your image, \n"
+"Example: 43.722965, 43 43 22 N"
+msgstr ""
+"Gib die GPS Breitenkoordinaten für dein Bild ein, \n"
+"Bsp.: 43.722965, 43 43 22 N"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:236
+msgid ""
+"Enter the GPS Longitude Coordinates for your image, \n"
+"Example: 10.396378, 10 23 46 E"
+msgstr ""
+"Gib die GPS Längenkoordinaten für dein Bild ein, \n"
+"Bsp.: 10.396378, 10 23 46 N"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:240
+msgid "Enter keywords that describe this image seprated by a comma."
+msgstr ""
+"Gib die Stichwörter, die das Bild beschreiben durch Komma getrennt ein."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:529
+msgid "Image metadata has been saved."
+msgstr "Bild Metadaten wurden gespeichert."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:532
+msgid ""
+"There is an error with this image!\n"
+"You do not have write access..."
+msgstr ""
+"Es gibt einen Fehler mit diesem Bild!\n"
+"Du hast keinen Schreibzugriff..."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:688
+#, python-format
+msgid ""
+"The date is invalid.\n"
+" %s\n"
+"  Date will NOT be saved."
+msgstr ""
+"Das Datum ist ungültig.\n"
+" %s\n"
+"  Datum wird NICHT gespeichert."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:699
+msgid "Double click a date to return the date."
+msgstr "Klicke ein Datum doppelt um es zurück zu setzen."
+
