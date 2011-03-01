@@ -22,28 +22,6 @@
 # $Id$
 #
 
-#------------------------------------------------
-# Python modules
-#------------------------------------------------
-from gettext import gettext as _
-
-try:
-    import pyexiv2
-
-    MIN_pyexiv2_VERSION = "0.2.0"
-    if not pyexiv2.__version__ >= MIN_pyexiv2_VERSION:
-        VERSION_PRE_REQ = (_("Your pyexiv2 version does not meet the "
-             "minimum requirements. At least pyexiv2 %d.%d.%d is needed to"
-             " run this Gramps plugin.\n\n") % (
-            MIN_pyexiv2_VERSION[0], 
-            MIN_pyexiv2_VERSION[2],
-            MIN_pyexiv2_VERSION[4]))
-        raise Exception( VERSION_PRE_REQ )
-
-except ImportError:
-    raise Exception("pyexiv2 (http://tilloy.net/dev/pyexiv2/) is "
-                    "required for this gramplet to work.")
-
 #------------------------------------------------------------------------
 # Register: Image Metadata Gramplet
 #------------------------------------------------------------------------
@@ -55,9 +33,9 @@ register( GRAMPLET,
     expand =                False,
     gramplet =              'imageMetadataGramplet',
     gramplet_title =        _("Image Metadata Gramplet"),
-#    detached_width =        450,
-#    detached_height =       200,
-    version =                '1.3.13',
+    detached_width =        450,
+    detached_height =       200,
+    version = '1.4.1',
     gramps_target_version = "3.3.0",
     status =                STABLE,
     fname =                 "ImageMetadataGramplet.py",
