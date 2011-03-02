@@ -646,8 +646,8 @@ class FamilyTree(gen.plug.report.Report):
         if self.missinginfo:
             if not n.first_name:
                 n.first_name = "____________"
-            if not n.surname:
-                n.surname = "____________"
+            if not n.get_surname():
+                n.get_primary_surname().set_surname("____________")
 
         if n.call:
             if self.callname == FamilyTreeOptions.CALLNAME_REPLACE:
