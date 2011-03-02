@@ -43,7 +43,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 
 # import the pyexiv2 library classes for this addon
-_download_link = "http://tilloy.net/dev/pyexiv2/"
+_DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/"
 pyexiv2_required = True
 try:
     import pyexiv2
