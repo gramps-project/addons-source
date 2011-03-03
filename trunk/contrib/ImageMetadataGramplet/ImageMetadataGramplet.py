@@ -640,24 +640,26 @@ class imageMetadataGramplet(Gramplet):
 
             # separate date and time from the string
             if "/" in tmpDate:
-                separator = "/"
-            else:
-                separator = " "
-            rdate, rtime = tmpDate.split(separator)
+                rdate, rtime = tmpDate.split("/")
+            elif tmpDate.count(" ") == 1:
+                rdate, rtime = tmpDate.split(" ")
+            else: 
+                rdate = tmpDate
+                rtime = False
 
-            year, month, day       = _split_values(rdate)
-            hour, minutes, seconds = _split_values(rtime)
+            # split date elements
+            year, month, day = _split_values(rdate)
+
+            # split time elements if not False
+            if rtime is not False:
+                hour, minutes, seconds = _split_values(rtime)
+                hour, minutes, seconds = int(hour), int(minutes), int(seconds) 
  
-        # ImageDateTime is not in the image, so display current date/ time
-        else:
-            year, month, day, hour, minutes, seconds = now[0:6]
-
-        found = any(value == False for value in [year, month, day, hour, minutes, seconds])
+        found = any(value == False for value in [year, month, day] )
         if not found:
 
             # convert values to integers
             year, day = int(year), int(day)
-            hour, minutes, seconds = int(hour), int(minutes), int(seconds) 
             month = _return_month(month)
  
             if isinstance(month, int): 
