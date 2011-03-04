@@ -537,7 +537,7 @@ class imageMetadataGramplet(Gramplet):
         latitude =   self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
         if ((latitude and latitude.count(".") == 1) and (longitude and longitude.count(".") == 1)):
-            self.convert2dms(None)
+            self.convert2dms(self.plugin_image)
 
         # convert (degrees, minutes, seconds) to Rational for saving
         if (self.LATitude and self.LatitudeRef):
@@ -564,6 +564,9 @@ class imageMetadataGramplet(Gramplet):
         # check write permissions for this image
         if not self._dirty_write:
             self.plugin_image.write()
+
+            # update when completed saving
+            self.update() 
 
             # notify the user of successful write 
             OkDialog(_("Image metadata has been saved."))
