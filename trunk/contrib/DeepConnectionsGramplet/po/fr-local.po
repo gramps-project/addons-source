@@ -50,7 +50,7 @@ msgstr "Copier"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
 msgid "child"
-msgstr "enfant"
+msgstr "l'enfant"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:94
 msgid "husband"
@@ -62,15 +62,15 @@ msgstr "la femme"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
 msgid "sibling"
-msgstr "frère ou sœur"
+msgstr "le frère ou la sœur"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:110
 msgid "father"
-msgstr "père"
+msgstr "le père"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:113
 msgid "mother"
-msgstr "mère"
+msgstr "la mère"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
 #, python-format
@@ -91,7 +91,7 @@ msgstr "Aucun individu actif défini."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:175
 msgid "self"
-msgstr "L'individu actif"
+msgstr "l'individu actif"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
 msgid "Looking for relationship between\n"
