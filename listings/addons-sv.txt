@@ -16,7 +16,7 @@
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.3', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.3', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.3', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.2', 'z': 'Query.addon.tgz'}
-{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.4.3', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for editing image EXIF metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.4.4', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.3', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.0.3', 'z': 'DenominoViso.addon.tgz'}
