@@ -691,7 +691,7 @@ class imageMetadataGramplet(Gramplet):
         self.app.tooltip = tip
         self.app.set_title(_("Select Date"))
         self.app.set_default_size(450, 200)
-        selfapp.set_border_width(10)
+        self.app.set_border_width(10)
         self.exif_widgets["Calendar"] = gtk.Calendar()
         self.exif_widgets["Calendar"].connect('day-selected-double-click', self.double_click)
         self.app.add(self.exif_widgets["Calendar"])
@@ -829,15 +829,18 @@ def _get_value(KeyTag, image):
     if "Exif" in KeyTag:
         try:
             KeyValue = image[KeyTag].raw_value
+
         except KeyError:
-            KeyValue = image[KeyTag].value
+            KeyValue = "[not set]"
 
     # Iptc KeyValue family?
     else:
         try:
-            KeyValue = image[KeyTag].value
+            KeyValue = image[KeyTag]
+
         except KeyError:
-            KeyValue = ""
+            KeyValue = "[not set]"
+
     return KeyValue
 
 def _set_value(KeyTag, KeyValue, image):
