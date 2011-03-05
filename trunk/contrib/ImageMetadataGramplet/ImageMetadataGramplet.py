@@ -825,21 +825,11 @@ def _get_value(KeyTag, image):
     @param: image -- pyexiv2 ImageMetadata instance
     """
 
-    # Exif KeyValue Family?
-    if "Exif" in KeyTag:
-        try:
-            KeyValue = image[KeyTag].raw_value
+    try:
+        KeyValue = image[KeyTag].raw_value
 
-        except KeyError:
-            KeyValue = "[not set]"
-
-    # Iptc KeyValue family?
-    else:
-        try:
-            KeyValue = image[KeyTag]
-
-        except KeyError:
-            KeyValue = "[not set]"
+    except KeyError:
+        KeyValue = "[not set]"
 
     return KeyValue
 
@@ -856,8 +846,10 @@ def _set_value(KeyTag, KeyValue, image):
     if "Exif" in KeyTag:
         try:
             image[KeyTag].value = KeyValue
+
         except KeyError:
             image[KeyTag] = ExifTag(KeyTag, KeyValue)
+
         except ValueError:
             pass
 
@@ -865,8 +857,10 @@ def _set_value(KeyTag, KeyValue, image):
     else:
         try:
             image[KeyTag].value = KeyValue
+
         except KeyError:
             image[KeyTag] = IptcTag(KeyTag, KeyValue)
+
         except ValueError:
             pass
 
