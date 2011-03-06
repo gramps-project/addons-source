@@ -807,12 +807,15 @@ def rational_to_dms(rational_coords):
     will return a rational set of coordinates to degrees, minutes, seconds
     """
 
-    rd, rm, rs = rational_coords.split(" ")
-    rd, rest = rd.split("/")
-    rm, rest = rm.split("/")
-    rs, rest = rs.split("/")
+    ratdeg, ratmin, ratsec= _split_values( rational_coords )
+    ratdeg, rest = ratdeg.split("/")
+    ratmin, rest = ratmin.split("/")
+    ratsec, rest = ratsec.split("/")
 
-    return rd, rm, rs
+    if len(rest) > 1:
+        ratsec = str( float( int(ratsec) / int(rest) ) )
+
+    return ratdeg, ratmin, ratsec
 
 #------------------------------------------------
 # Get and Set image metadata KeyTags
