@@ -215,17 +215,15 @@ class imageMetadataGramplet(Gramplet):
         # provide tooltips for this gramplet
         self.setup_tooltips(object)
 
-        # Save Metadata
+        # Save and Abandon
         row = gtk.HBox()
-        button = gtk.Button(_("Save Metadata"))
+        button = gtk.Button(_("Save"))
         button.connect("clicked", self.save_metadata)
         row.pack_start(button, True)
-        rows.pack_start(row, True)
-
-        # Clear Image Metadata
-        button = gtk.Button(_("Clear Metadata"))
+        button = gtk.Button(_("Abandon"))
         button.connect("clicked", self.clear_metadata)
         row.pack_start(button, True)
+        rows.pack_start(row, False)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
