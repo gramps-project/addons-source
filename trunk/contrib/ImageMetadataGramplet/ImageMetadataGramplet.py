@@ -832,6 +832,9 @@ def _get_value(KeyTag, image):
     except KeyError:
         KeyValue = "[not set]"
 
+    except ValueError:
+        KeyValue = ""
+
     return KeyValue
 
 def _set_value(KeyTag, KeyValue, image):
