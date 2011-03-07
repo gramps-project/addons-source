@@ -687,8 +687,8 @@ def _Name_get_styled(name, callname, placeholder=False):
     if placeholder:
         if not n.first_name:
             n.first_name = "____________"
-        if not n.surname:
-            n.surname = "____________"
+        if not n.get_surname():
+            n.get_primary_surname().set_surname("____________")
 
     if n.call:
         if callname == _Name_CALLNAME_REPLACE:
