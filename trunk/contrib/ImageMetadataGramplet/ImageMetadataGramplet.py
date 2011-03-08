@@ -31,6 +31,8 @@ import time
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
 
+from fractions import Fraction
+
 # -----------------------------------------------------------------------------
 # GTK modules
 # -----------------------------------------------------------------------------
@@ -420,14 +422,13 @@ class imageMetadataGramplet(Gramplet):
 
         # image description
         self.exif_widgets["ActiveImage"].set_text(
-            _html_escape(self.orig_image.get_description() )
-        )
+            _html_escape(self.orig_image.get_description() ) )
 
         # read the image metadata
         self.plugin_image.read()
 
         # set up image metadata keys for use in this gramplet
-        dataKeyTags = [ KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
+        dataKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
 
         for KeyTag in dataKeyTags:
 
@@ -446,11 +447,10 @@ class imageMetadataGramplet(Gramplet):
 
                 # date1 may come from the image metadata
                 # date2 may come from the Gramps database 
-                date1 = _get_value( KeyTag, self.plugin_image )
-                date2 = _get_value("Iptc.Application2.DateCreated", self.plugin_image)
-                date3 = self.orig_image.get_date_object()
+                date1 = _get_value(KeyTag, self.plugin_image)
+                date2 = self.orig_image.get_date_object()
 
-                use_date = date1 or date2 or date3
+                use_date = date1 or date2
                 if use_date:
                     self.process_date(use_date)
                 else:
@@ -472,8 +472,7 @@ class imageMetadataGramplet(Gramplet):
                     self.LatitudeRef = _get_value(ImageLatitudeRef, self.plugin_image)
 
                     self.exif_widgets["Latitude"].set_text(
-                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LatitudeRef)
-                    )
+                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LatitudeRef) )
                     self.LATitude = "%s %s %s" % (deg, min, sec)
 
                     # split longitude metadata into degrees, minutes, and seconds
@@ -483,8 +482,7 @@ class imageMetadataGramplet(Gramplet):
                     self.LongitudeRef = _get_value(ImageLongitudeRef, self.plugin_image)
 
                     self.exif_widgets["Longitude"].set_text(
-                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LongitudeRef)
-                    )
+                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LongitudeRef) )
                     self.LONGitude = "%s %s %s" % (deg, min, sec)
 
             # Image Description Field
@@ -800,20 +798,22 @@ def coords_to_rational(Coordinates):
 
     return [string_to_rational(coordinate) for coordinate in Coordinates.split( " ")]
 
-def rational_to_dms(rational_coords):
+def convert_value(value):
+    """
+    will take a value from the coordinates and return its value
+    """
+
+    if isinstance(value, Rational):
+        value = value.numerator
+    else:
+        value = (value.numerator / value.denominator)
+    return value
+
+def rational_to_dms(coords):
     """
     will return a rational set of coordinates to degrees, minutes, seconds
     """
-
-    ratdeg, ratmin, ratsec= _split_values( rational_coords )
-    ratdeg, rest = ratdeg.split("/")
-    ratmin, rest = ratmin.split("/")
-    ratsec, rest = ratsec.split("/")
-
-    if len(rest) > 1:
-        ratsec = str( float( int(ratsec) / int(rest) ) )
-
-    return ratdeg, ratmin, ratsec
+    return convert_value(coords[0]), convert_value(coords[1]), convert_value(coords[2])
 
 #------------------------------------------------
 # Get and Set image metadata KeyTags
@@ -826,14 +826,26 @@ def _get_value(KeyTag, image):
     @param: image -- pyexiv2 ImageMetadata instance
     """
 
-    try:
-        KeyValue = image[KeyTag].raw_value
+    if "Exif" in KeyTag:
+        try:
+            KeyValue = image[KeyTag].value
 
-    except KeyError:
-        KeyValue = "[not set]"
+        except KeyError:
+            KeyValue = image[KeyTag].raw_value
 
-    except ValueError:
-        KeyValue = ""
+        except ValueError:
+            KeyValue = ""
+
+    # Iptc KeyTag
+    elif "Iptc" in KeyTag:
+        try:
+            KeyValue = image[KeyTag].value
+
+        except KeyError:
+            KeyValye = "[tag not set]"
+
+        except ValueError:
+            KeyValue = ""
 
     return KeyValue
 
