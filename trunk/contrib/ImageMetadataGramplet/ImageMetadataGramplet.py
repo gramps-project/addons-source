@@ -408,9 +408,46 @@ class imageMetadataGramplet(Gramplet):
     def _mark_dirty_write(self, object):
         self._dirty_write = True
 
-#------------------------------------------------
-#     Reads metadata from image
-#------------------------------------------------
+    def _get_value(self, KeyTag):
+        """
+        gets the value from the Exif Key, and returns it...
+
+        @param: KeyTag -- image metadata key
+        @param: image -- pyexiv2 ImageMetadata instance
+        """
+
+        self.ValueType = None
+        if "Exif" in KeyTag:
+            try:
+                KeyValue = self.plugin_image[KeyTag].value
+                self.ValueType = 0 
+
+            except KeyError:
+                KeyValue = self.plugin_image[KeyTag].raw_value
+                self.ValueType = 1
+
+            except ValueError:
+                KeyValue = ""
+
+            except AttributeError:
+                KeyValue = ""
+
+        # Iptc KeyTag
+        elif "Iptc" in KeyTag:
+            try:
+                KeyValue = self.plugin_image[KeyTag].value
+
+            except KeyError:
+                KeyValue = "[not set]"
+
+            except ValueError:
+                KeyValue = ""
+
+            except AttributeError:
+                KeyValue = ""
+
+        return KeyValue
+
     def read_metadata(self, obj):
         """
         reads the image metadata after the pyexiv2.Image has been created
@@ -434,12 +471,12 @@ class imageMetadataGramplet(Gramplet):
 
             # Media image Artist
             if KeyTag == ImageArtist:
-                self.artist = _get_value(KeyTag, self.plugin_image)
+                self.artist = self._get_value(KeyTag)
                 self.exif_widgets["Artist"].set_text(self.artist)
 
             # media image Copyright
             elif KeyTag == ImageCopyright:
-                self.copyright = _get_value(KeyTag, self.plugin_image)
+                self.copyright = self._get_value(KeyTag)
                 self.exif_widgets["Copyright"].set_text(self.copyright)
 
             # media image DateTime
@@ -447,7 +484,7 @@ class imageMetadataGramplet(Gramplet):
 
                 # date1 may come from the image metadata
                 # date2 may come from the Gramps database 
-                date1 = _get_value(KeyTag, self.plugin_image)
+                date1 = self._get_value(KeyTag)
                 date2 = self.orig_image.get_date_object()
 
                 use_date = date1 or date2
@@ -459,40 +496,46 @@ class imageMetadataGramplet(Gramplet):
             # Latitude and Latitude Reference
             elif KeyTag == ImageLatitude:
 
-                latitude  =  _get_value(ImageLatitude, self.plugin_image)
-                longitude = _get_value(ImageLongitude, self.plugin_image)
+                latitude  =  self._get_value(ImageLatitude)
+                longitude = self._get_value(ImageLongitude)
 
-                # if latitude and longitude exist, display them...
+                # if latitude and longitude exist, display them?
                 if (latitude and longitude):
 
                     # split latitude metadata into (degrees, minutes, and seconds) from Rational
-                    deg, min, sec = rational_to_dms(latitude)
-
-                    # Latitude Direction Reference
-                    self.LatitudeRef = _get_value(ImageLatitudeRef, self.plugin_image)
-
-                    self.exif_widgets["Latitude"].set_text(
-                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LatitudeRef) )
-                    self.LATitude = "%s %s %s" % (deg, min, sec)
+                    latdeg, latmin, latsec = rational_to_dms(latitude, self.ValueType)
 
                     # split longitude metadata into degrees, minutes, and seconds
-                    deg, min, sec = rational_to_dms(longitude)
+                    longdeg, longmin, longsec = rational_to_dms(longitude, self.ValueType)
 
-                    # Longitude Direction Reference
-                    self.LongitudeRef = _get_value(ImageLongitudeRef, self.plugin_image)
+                    # check to see if we have valid GPS Coordinates?
+                    self.LATitude, self.LONGitude = False, False
+                    latfail = any(coords == False for coords in [latdeg, latmin, latsec])
+                    longfail = any(coords == False for coords in [longdeg, longmin, longsec])
+                    if not latfail and not longfail:
 
-                    self.exif_widgets["Longitude"].set_text(
-                        """%s° %s′ %s″ %s""" % (deg, min, sec, self.LongitudeRef) )
-                    self.LONGitude = "%s %s %s" % (deg, min, sec)
+                        # Latitude Direction Reference
+                        self.LatitudeRef = self._get_value(ImageLatitudeRef)
+
+                        self.exif_widgets["Latitude"].set_text(
+                            """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, self.LatitudeRef) )
+                        self.LATitude = "%s %s %s" % (latdeg, latmin, latsec)
+
+                        # Longitude Direction Reference
+                        self.LongitudeRef = self._get_value(ImageLongitudeRef)
+
+                        self.exif_widgets["Longitude"].set_text(
+                            """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, self.LongitudeRef) )
+                        self.LONGitude = "%s %s %s" % (longdeg, longmin, longsec)
 
             # Image Description Field
             elif KeyTag == ImageDescription:
-                self.description = _get_value(ImageDescription, self.plugin_image)
+                self.description = self._get_value(ImageDescription)
                 self.exif_widgets["Description"].set_text(self.description)
 
             # image Keywords
             words = ""
-            keyWords = _get_value( IptcKeywords, self.plugin_image )
+            keyWords = self._get_value(IptcKeywords)
             if keyWords:
                 index = 1 
                 for word in keyWords:
@@ -809,46 +852,41 @@ def convert_value(value):
         value = (value.numerator / value.denominator)
     return value
 
-def rational_to_dms(coords):
+def rational_to_dms(coords, ValueType):
     """
-    will return a rational set of coordinates to degrees, minutes, seconds
+    takes a rational set of coordinates and returns (degrees, minutes, seconds)
     """
-    return convert_value(coords[0]), convert_value(coords[1]), convert_value(coords[2])
+
+    deg, min, sec = False, False, False
+    if ValueType is not None:
+        
+        # coordinates look like: '38/1 38/1 318/100'  
+        if ValueType == 1:
+
+            deg, min, sec = coords.split(" ")
+            deg, rest = deg.split("/")
+            min, rest = min.split("/")
+            sec, rest = sec.split("/")
+            sec, rest = int(sec), int(rest)
+
+            if rest > 1:
+                sec = str( (sec/ rest) )
+
+        # coordinates look like:
+        #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
+        # or [Fraction(38, 1), Fraction(38, 1), Fraction(318, 100)]   
+        elif (ValueType == 0 and isinstance(coords, list) ):
+    
+            if len(coords) == 3:
+                deg, min, sec = coords[0], coords[1], coords[2]
+                deg = convert_value(deg)
+                min = convert_value(min)
+                sec = convert_value(sec)
+    return deg, min, sec
 
 #------------------------------------------------
-# Get and Set image metadata KeyTags
+# Set image metadata KeyTags
 #------------------------------------------------
-def _get_value(KeyTag, image):
-    """
-    gets the value from the Exif Key, and returns it...
-
-    @param: KeyTag -- image metadata key
-    @param: image -- pyexiv2 ImageMetadata instance
-    """
-
-    if "Exif" in KeyTag:
-        try:
-            KeyValue = image[KeyTag].value
-
-        except KeyError:
-            KeyValue = image[KeyTag].raw_value
-
-        except ValueError:
-            KeyValue = ""
-
-    # Iptc KeyTag
-    elif "Iptc" in KeyTag:
-        try:
-            KeyValue = image[KeyTag].value
-
-        except KeyError:
-            KeyValye = "[tag not set]"
-
-        except ValueError:
-            KeyValue = ""
-
-    return KeyValue
-
 def _set_value(KeyTag, KeyValue, image):
     """
     sets the value for the Exif keys
