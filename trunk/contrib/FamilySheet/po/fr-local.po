@@ -17,7 +17,7 @@ msgstr ""
 
 #: FamilySheet/FamilySheet.gpr.py:3
 msgid "Family Sheet"
-msgstr "Résumé familiale"
+msgstr "Résumé familial"
 
 #: FamilySheet/FamilySheet.gpr.py:4
 msgid "Produces a family sheet showing full information about a person and his/her partners and children."
