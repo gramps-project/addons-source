@@ -435,7 +435,7 @@ class imageMetadataGramplet(Gramplet):
         # Iptc KeyTag
         elif "Iptc" in KeyTag:
             try:
-                KeyValue = self.plugin_image[KeyTag].value
+                KeyValue = self.plugin_image[KeyTag].values
 
             except KeyError:
                 KeyValue = "[not set]"
@@ -542,7 +542,7 @@ class imageMetadataGramplet(Gramplet):
                     words += word
                     if index is not len(keyWords):
                         words += "," 
-                    index += 1 
+                        index += 1 
                 self.exif_widgets["Keywords"].set_text(words)
 
 #------------------------------------------------
@@ -910,7 +910,7 @@ def _set_value(KeyTag, KeyValue, image):
     # Iptc KeyValue family?
     else:
         try:
-            image[KeyTag].value = KeyValue
+            image[KeyTag].values = KeyValue
 
         except KeyError:
             image[KeyTag] = IptcTag(KeyTag, KeyValue)
