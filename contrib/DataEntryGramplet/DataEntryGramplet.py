@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2007-2009  Douglas S. Blank <doug.blank@gmail.com>
+# Copyright (C) 2011       Gary Burton
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,6 +31,7 @@ import DateHandler
 import Errors
 import gen.lib
 from TransUtils import get_addon_translator
+from gen.db import DbTxn
 
 _ = get_addon_translator(__file__).ugettext
 
@@ -414,50 +416,48 @@ class DataEntryGramplet(Gramplet):
             firstname = firstname.strip()
             name = person.get_primary_name()
             # Now, edit it:
-            self.trans = self.dbstate.db.transaction_begin()
-            surname_obj = person.get_primary_surname()
-            surname_obj.set_surname(surname)
-            name.set_first_name(firstname)
-            person.set_gender(gender)
-            birthdate, birthplace = self.process_dateplace(self.de_widgets["APBirth"].get_text().strip())
-            new, birthevent = self.get_or_create_event(person, gen.lib.EventType.BIRTH, birthdate, birthplace)
-            # reference it, if need be:
-            birthref = person.get_birth_ref()
-            if birthevent:
-                if birthref is None:
-                    # need new
-                    birthref = gen.lib.EventRef()
-                birthref.set_reference_handle(birthevent.get_handle())
-                person.set_birth_ref(birthref)
-                # Only add if there is an event:
-                source_text = self.de_widgets["APBirthSource"].get_text().strip()
+            with DbTxn(_("Gramplet Data Edit: %s") %  name_displayer.display(person), self.dbstate.db) as self.trans:
+                surname_obj = name.get_primary_surname()
+                surname_obj.set_surname(surname)
+                name.set_first_name(firstname)
+                person.set_gender(gender)
+                birthdate, birthplace = self.process_dateplace(self.de_widgets["APBirth"].get_text().strip())
+                new, birthevent = self.get_or_create_event(person, gen.lib.EventType.BIRTH, birthdate, birthplace)
+                # reference it, if need be:
+                birthref = person.get_birth_ref()
+                if birthevent:
+                    if birthref is None:
+                        # need new
+                        birthref = gen.lib.EventRef()
+                    birthref.set_reference_handle(birthevent.get_handle())
+                    person.set_birth_ref(birthref)
+                    # Only add if there is an event:
+                    source_text = self.de_widgets["APBirthSource"].get_text().strip()
+                    if source_text and self.de_widgets["Active person:Show sources"].get_active():
+                        new, source = self.get_or_create_source(source_text)
+                        self.add_source(birthevent, source)
+                        self.dbstate.db.commit_event(birthevent, self.trans)
+                deathdate, deathplace = self.process_dateplace(self.de_widgets["APDeath"].get_text().strip())
+                new, deathevent = self.get_or_create_event(person, gen.lib.EventType.DEATH, deathdate, deathplace)
+                # reference it, if need be:
+                deathref = person.get_death_ref()
+                if deathevent:
+                    if deathref is None:
+                        # need new
+                        deathref = gen.lib.EventRef()
+                    deathref.set_reference_handle(deathevent.get_handle())
+                    person.set_death_ref(deathref)
+                    # Only add if there is an event:
+                    source_text = self.de_widgets["APDeathSource"].get_text().strip()
+                    if source_text and self.de_widgets["Active person:Show sources"].get_active():
+                        new, source = self.get_or_create_source(source_text)
+                        self.add_source(deathevent, source)
+                        self.dbstate.db.commit_event(deathevent, self.trans)
+                source_text = self.de_widgets["APSource"].get_text().strip()
                 if source_text and self.de_widgets["Active person:Show sources"].get_active():
                     new, source = self.get_or_create_source(source_text)
-                    self.add_source(birthevent, source)
-                    self.dbstate.db.commit_event(birthevent, self.trans)
-            deathdate, deathplace = self.process_dateplace(self.de_widgets["APDeath"].get_text().strip())
-            new, deathevent = self.get_or_create_event(person, gen.lib.EventType.DEATH, deathdate, deathplace)
-            # reference it, if need be:
-            deathref = person.get_death_ref()
-            if deathevent:
-                if deathref is None:
-                    # need new
-                    deathref = gen.lib.EventRef()
-                deathref.set_reference_handle(deathevent.get_handle())
-                person.set_death_ref(deathref)
-                # Only add if there is an event:
-                source_text = self.de_widgets["APDeathSource"].get_text().strip()
-                if source_text and self.de_widgets["Active person:Show sources"].get_active():
-                    new, source = self.get_or_create_source(source_text)
-                    self.add_source(deathevent, source)
-                    self.dbstate.db.commit_event(deathevent, self.trans)
-            source_text = self.de_widgets["APSource"].get_text().strip()
-            if source_text and self.de_widgets["Active person:Show sources"].get_active():
-                new, source = self.get_or_create_source(source_text)
-                self.add_source(person, source)
-            self.dbstate.db.commit_person(person,self.trans)
-            self.dbstate.db.transaction_commit(self.trans,
-                    (_("Gramplet Data Edit: %s") %  name_displayer.display(person)))
+                    self.add_source(person, source)
+                self.dbstate.db.commit_person(person,self.trans)
         self._dirty = False
         self.update()
 
@@ -522,285 +522,283 @@ class DataEntryGramplet(Gramplet):
                 ErrorDialog(_("Please set an active person."), _("Can't add new person as a child."))
                 return
         # Start the transaction: ------------------------------------------------------------
-        self.trans = self.dbstate.db.transaction_begin()
-        # New person --------------------------------------------------
-        # Add birth
-        new_birth_date, new_birth_place = self.process_dateplace(self.de_widgets["NPBirth"].get_text().strip())
-        birth_event = self.make_event(gen.lib.EventType.BIRTH, new_birth_date, new_birth_place)
-        if birth_event:
-            # Only add if there is an event:
-            source_text = self.de_widgets["NPBirthSource"].get_text().strip()
-            if source_text and self.de_widgets["Active person:Show sources"].get_active():
-                new, source = self.get_or_create_source(source_text)
-                self.add_source(birth_event, source)
-                self.dbstate.db.commit_event(birth_event, self.trans)
-        # Add death
-        new_death_date, new_death_place = self.process_dateplace(self.de_widgets["NPDeath"].get_text())
-        death_event = self.make_event(gen.lib.EventType.DEATH, new_death_date, new_death_place)
-        if death_event:
-            # Only add if there is an event:
-            source_text = self.de_widgets["NPDeathSource"].get_text().strip()
-            if source_text and self.de_widgets["Active person:Show sources"].get_active():
-                new, source = self.get_or_create_source(source_text)
-                self.add_source(death_event, source)
-                self.dbstate.db.commit_event(death_event, self.trans)
-        # Now, create the person and events:
         person = self.make_person(firstname, surname, gender)
-        # New birth for person:
-        if birth_event:
-            birth_ref = gen.lib.EventRef()
-            birth_ref.set_reference_handle(birth_event.get_handle())
-            person.set_birth_ref(birth_ref)
-        # New death for person:
-        if death_event:
-            death_ref = gen.lib.EventRef()
-            death_ref.set_reference_handle(death_event.get_handle())
-            person.set_death_ref(death_ref)
-        # Need to add here to get a handle:
-        self.dbstate.db.add_person(person, self.trans)
-        # All error checking done; just add relation:
-        if self.de_widgets["NPRelation"].get_active() == self.NO_REL:
-            # "No relation to active person"
-            current_person = None
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_PARENT:
-            # "Add as a Parent"
-            # Go through current_person parent families
-            added = False
-            for family_handle in current_person.get_parent_family_handle_list():
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family:
-                    # find one that person would fit as a parent
-                    fam_husband_handle = family.get_father_handle()
-                    fam_wife_handle = family.get_mother_handle()
-                    # can we add person as wife?
-                    if fam_wife_handle == None and person.get_gender() == gen.lib.Person.FEMALE:
-                        # add the person
-                        family.set_mother_handle(person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.add_family_handle(family.get_handle())
-                        added = True
-                        break
-                    elif fam_husband_handle == None and person.get_gender() == gen.lib.Person.MALE:
-                        # add the person
-                        family.set_father_handle(person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.add_family_handle(family.get_handle())
-                        added = True
-                        break
-            if added:
-                self.dbstate.db.commit_family(family, self.trans)
-            else:
-                family = gen.lib.Family()
-                self.dbstate.db.add_family(family, self.trans)
-                if person.get_gender() == gen.lib.Person.MALE:
-                    family.set_father_handle(person.get_handle())
-                elif person.get_gender() == gen.lib.Person.FEMALE:
-                    family.set_mother_handle(person.get_handle())
-                family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                # add curent_person as child
-                childref = gen.lib.ChildRef()
-                childref.set_reference_handle(current_person.get_handle())
-                family.add_child_ref( childref)
-                current_person.add_parent_family_handle(family.get_handle())
-                # finalize
-                person.add_family_handle(family.get_handle())
-                self.dbstate.db.commit_family(family, self.trans)
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_SPOUSE:
-            # "Add as a Spouse"
-            added = False
-            family = None
-            for family_handle in current_person.get_family_handle_list():
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family:
-                    fam_husband_handle = family.get_father_handle()
-                    fam_wife_handle = family.get_mother_handle()
-                    if current_person.get_handle() == fam_husband_handle:
+        with DbTxn(_("Gramplet Data Edit: %s") %  name_displayer.display(person), self.dbstate.db) as self.trans:
+            # New person --------------------------------------------------
+            # Add birth
+            new_birth_date, new_birth_place = self.process_dateplace(self.de_widgets["NPBirth"].get_text().strip())
+            birth_event = self.make_event(gen.lib.EventType.BIRTH, new_birth_date, new_birth_place)
+            if birth_event:
+                # Only add if there is an event:
+                source_text = self.de_widgets["NPBirthSource"].get_text().strip()
+                if source_text and self.de_widgets["Active person:Show sources"].get_active():
+                    new, source = self.get_or_create_source(source_text)
+                    self.add_source(birth_event, source)
+                    self.dbstate.db.commit_event(birth_event, self.trans)
+            # Add death
+            new_death_date, new_death_place = self.process_dateplace(self.de_widgets["NPDeath"].get_text())
+            death_event = self.make_event(gen.lib.EventType.DEATH, new_death_date, new_death_place)
+            if death_event:
+                # Only add if there is an event:
+                source_text = self.de_widgets["NPDeathSource"].get_text().strip()
+                if source_text and self.de_widgets["Active person:Show sources"].get_active():
+                    new, source = self.get_or_create_source(source_text)
+                    self.add_source(death_event, source)
+                    self.dbstate.db.commit_event(death_event, self.trans)
+            # Now, create the person and events:
+            # New birth for person:
+            if birth_event:
+                birth_ref = gen.lib.EventRef()
+                birth_ref.set_reference_handle(birth_event.get_handle())
+                person.set_birth_ref(birth_ref)
+            # New death for person:
+            if death_event:
+                death_ref = gen.lib.EventRef()
+                death_ref.set_reference_handle(death_event.get_handle())
+                person.set_death_ref(death_ref)
+            # Need to add here to get a handle:
+            self.dbstate.db.add_person(person, self.trans)
+            # All error checking done; just add relation:
+            if self.de_widgets["NPRelation"].get_active() == self.NO_REL:
+                # "No relation to active person"
+                current_person = None
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_PARENT:
+                # "Add as a Parent"
+                # Go through current_person parent families
+                added = False
+                for family_handle in current_person.get_parent_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        # find one that person would fit as a parent
+                        fam_husband_handle = family.get_father_handle()
+                        fam_wife_handle = family.get_mother_handle()
                         # can we add person as wife?
-                        if fam_wife_handle == None:
-                            if person.get_gender() == gen.lib.Person.FEMALE:
-                                # add the person
-                                family.set_mother_handle(person.get_handle())
-                                family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                                person.add_family_handle(family.get_handle())
-                                added = True
-                                break
-                            elif person.get_gender() == gen.lib.Person.UNKNOWN:
-                                family.set_mother_handle(person.get_handle())
-                                family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                                person.set_gender(gen.lib.Person.FEMALE)
-                                self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
-                                person.add_family_handle(family.get_handle())
-                                added = True
-                                break
-                    elif current_person.get_handle() == fam_wife_handle:
-                        # can we add person as husband?
-                        if fam_husband_handle == None:
-                            if person.get_gender() == gen.lib.Person.MALE:
-                                # add the person
-                                family.set_father_handle(person.get_handle())
-                                family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                                person.add_family_handle(family.get_handle())
-                                added = True
-                                break
-                            elif person.get_gender() == gen.lib.Person.UNKNOWN:
-                                family.set_father_handle(person.get_handle())
-                                family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                                person.add_family_handle(family.get_handle())
-                                person.set_gender(gen.lib.Person.MALE)
-                                self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
-                                added = True
-                                break
-            if added:
-                self.dbstate.db.commit_family(family, self.trans)
-            else:
-                if person.get_gender() == gen.lib.Person.UNKNOWN:
-                    if current_person is None:
-                        ErrorDialog(_("Please set Active person."), 
-                                    _("Can't add new person as a spouse to no one."))
-                        return
-                    elif current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                        ErrorDialog(_("Please set gender on Active or new person."), 
-                                    _("Can't add new person as a spouse."))
-                        return
-                    elif current_person.get_gender() == gen.lib.Person.MALE:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
-                        family.set_father_handle(current_person.get_handle())
-                        family.set_mother_handle(person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.set_gender(gen.lib.Person.FEMALE)
-                        self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                    elif current_person.get_gender() == gen.lib.Person.FEMALE:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
+                        if fam_wife_handle == None and person.get_gender() == gen.lib.Person.FEMALE:
+                            # add the person
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                        elif fam_husband_handle == None and person.get_gender() == gen.lib.Person.MALE:
+                            # add the person
+                            family.set_father_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    family = gen.lib.Family()
+                    self.dbstate.db.add_family(family, self.trans)
+                    if person.get_gender() == gen.lib.Person.MALE:
                         family.set_father_handle(person.get_handle())
-                        family.set_mother_handle(current_person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.set_gender(gen.lib.Person.MALE)
-                        self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                elif person.get_gender() == gen.lib.Person.MALE:
-                    if current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
-                        family.set_father_handle(person.get_handle())
-                        family.set_mother_handle(current_person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        current_person.set_gender(gen.lib.Person.FEMALE)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                    elif current_person.get_gender() == gen.lib.Person.MALE:
-                        ErrorDialog(_("Same genders on Active and new person."), 
-                                    _("Can't add new person as a spouse."))
-                        return
-                    elif current_person.get_gender() == gen.lib.Person.FEMALE:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
-                        family.set_father_handle(person.get_handle())
-                        family.set_mother_handle(current_person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                elif person.get_gender() == gen.lib.Person.FEMALE:
-                    if current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
-                        family.set_father_handle(current_person.get_handle())
+                    elif person.get_gender() == gen.lib.Person.FEMALE:
                         family.set_mother_handle(person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        current_person.set_gender(gen.lib.Person.MALE)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                    elif current_person.get_gender() == gen.lib.Person.MALE:
-                        family = gen.lib.Family()
-                        self.dbstate.db.add_family(family, self.trans)
-                        family.set_father_handle(current_person.get_handle())
-                        family.set_mother_handle(person.get_handle())
-                        family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                        person.add_family_handle(family.get_handle())
-                        current_person.add_family_handle(family.get_handle())
-                        self.dbstate.db.commit_family(family, self.trans)
-                    elif current_person.get_gender() == gen.lib.Person.FEMALE:
-                        ErrorDialog(_("Same genders on Active and new person."), 
-                                    _("Can't add new person as a spouse."))
-                        return
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING and current_person is not None:
-            # "Add as a Sibling"
-            added = False
-            for family_handle in current_person.get_parent_family_handle_list():
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family:
+                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    # add curent_person as child
                     childref = gen.lib.ChildRef()
-                    childref.set_reference_handle(person.get_handle())
+                    childref.set_reference_handle(current_person.get_handle())
                     family.add_child_ref( childref)
-                    person.add_parent_family_handle(family.get_handle())
-                    added = True
-                    break
-            if added:
-                self.dbstate.db.commit_family(family, self.trans)
-            else:
-                family = gen.lib.Family()
-                self.dbstate.db.add_family(family, self.trans)
-                childref = gen.lib.ChildRef()
-                childref.set_reference_handle(person.get_handle())
-                family.add_child_ref( childref)
-                childref = gen.lib.ChildRef()
-                childref.set_reference_handle(current_person.get_handle())
-                family.add_child_ref( childref)
-                person.add_parent_family_handle(family.get_handle())
-                current_person.add_parent_family_handle(family.get_handle())
-                self.dbstate.db.commit_family(family, self.trans)
-        elif self.de_widgets["NPRelation"].get_active() == self.AS_CHILD and current_person is not None:
-            # "Add as a Child"
-            added = False
-            family = None
-            for family_handle in current_person.get_family_handle_list():
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family:
-                    childref = gen.lib.ChildRef()
-                    childref.set_reference_handle(person.get_handle())
-                    family.add_child_ref( childref)
-                    person.add_parent_family_handle(family.get_handle())
-                    added = True
-                    break
-            if added:
-                self.dbstate.db.commit_family(family, self.trans)
-            else:
-                if current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                    ErrorDialog(_("Please set gender on Active person."), 
-                                _("Can't add new person as a child."))
-                    return
+                    current_person.add_parent_family_handle(family.get_handle())
+                    # finalize
+                    person.add_family_handle(family.get_handle())
+                    self.dbstate.db.commit_family(family, self.trans)
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_SPOUSE:
+                # "Add as a Spouse"
+                added = False
+                family = None
+                for family_handle in current_person.get_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        fam_husband_handle = family.get_father_handle()
+                        fam_wife_handle = family.get_mother_handle()
+                        if current_person.get_handle() == fam_husband_handle:
+                            # can we add person as wife?
+                            if fam_wife_handle == None:
+                                if person.get_gender() == gen.lib.Person.FEMALE:
+                                    # add the person
+                                    family.set_mother_handle(person.get_handle())
+                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    person.add_family_handle(family.get_handle())
+                                    added = True
+                                    break
+                                elif person.get_gender() == gen.lib.Person.UNKNOWN:
+                                    family.set_mother_handle(person.get_handle())
+                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    person.set_gender(gen.lib.Person.FEMALE)
+                                    self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
+                                    person.add_family_handle(family.get_handle())
+                                    added = True
+                                    break
+                        elif current_person.get_handle() == fam_wife_handle:
+                            # can we add person as husband?
+                            if fam_husband_handle == None:
+                                if person.get_gender() == gen.lib.Person.MALE:
+                                    # add the person
+                                    family.set_father_handle(person.get_handle())
+                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    person.add_family_handle(family.get_handle())
+                                    added = True
+                                    break
+                                elif person.get_gender() == gen.lib.Person.UNKNOWN:
+                                    family.set_father_handle(person.get_handle())
+                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    person.add_family_handle(family.get_handle())
+                                    person.set_gender(gen.lib.Person.MALE)
+                                    self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
+                                    added = True
+                                    break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    if person.get_gender() == gen.lib.Person.UNKNOWN:
+                        if current_person is None:
+                            ErrorDialog(_("Please set Active person."), 
+                                        _("Can't add new person as a spouse to no one."))
+                            return
+                        elif current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                            ErrorDialog(_("Please set gender on Active or new person."), 
+                                        _("Can't add new person as a spouse."))
+                            return
+                        elif current_person.get_gender() == gen.lib.Person.MALE:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(current_person.get_handle())
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.set_gender(gen.lib.Person.FEMALE)
+                            self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(person.get_handle())
+                            family.set_mother_handle(current_person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.set_gender(gen.lib.Person.MALE)
+                            self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                    elif person.get_gender() == gen.lib.Person.MALE:
+                        if current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(person.get_handle())
+                            family.set_mother_handle(current_person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            current_person.set_gender(gen.lib.Person.FEMALE)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                        elif current_person.get_gender() == gen.lib.Person.MALE:
+                            ErrorDialog(_("Same genders on Active and new person."), 
+                                        _("Can't add new person as a spouse."))
+                            return
+                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(person.get_handle())
+                            family.set_mother_handle(current_person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                    elif person.get_gender() == gen.lib.Person.FEMALE:
+                        if current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(current_person.get_handle())
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            current_person.set_gender(gen.lib.Person.MALE)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                        elif current_person.get_gender() == gen.lib.Person.MALE:
+                            family = gen.lib.Family()
+                            self.dbstate.db.add_family(family, self.trans)
+                            family.set_father_handle(current_person.get_handle())
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            current_person.add_family_handle(family.get_handle())
+                            self.dbstate.db.commit_family(family, self.trans)
+                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
+                            ErrorDialog(_("Same genders on Active and new person."), 
+                                        _("Can't add new person as a spouse."))
+                            return
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING and current_person is not None:
+                # "Add as a Sibling"
+                added = False
+                for family_handle in current_person.get_parent_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        childref = gen.lib.ChildRef()
+                        childref.set_reference_handle(person.get_handle())
+                        family.add_child_ref( childref)
+                        person.add_parent_family_handle(family.get_handle())
+                        added = True
+                        break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
                 else:
                     family = gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
                     childref = gen.lib.ChildRef()
                     childref.set_reference_handle(person.get_handle())
                     family.add_child_ref( childref)
+                    childref = gen.lib.ChildRef()
+                    childref.set_reference_handle(current_person.get_handle())
+                    family.add_child_ref( childref)
                     person.add_parent_family_handle(family.get_handle())
-                    current_person.add_family_handle(family.get_handle())
-                    if gen.lib.Person.FEMALE:
-                        family.set_mother_handle(current_person.get_handle())
-                    else:
-                        family.set_father_handle(current_person.get_handle())
+                    current_person.add_parent_family_handle(family.get_handle())
                     self.dbstate.db.commit_family(family, self.trans)
-        # Commit changes -------------------------------------------------
-        if current_person: # if related to current person
-            self.dbstate.db.commit_person(current_person, self.trans)
-        if person:
-            source_text = self.de_widgets["NPSource"].get_text().strip()
-            if source_text and self.de_widgets["Active person:Show sources"].get_active():
-                new, source = self.get_or_create_source(source_text)
-                self.add_source(person, source)
-        self.dbstate.db.transaction_commit(self.trans,
-                 (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_CHILD and current_person is not None:
+                # "Add as a Child"
+                added = False
+                family = None
+                for family_handle in current_person.get_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        childref = gen.lib.ChildRef()
+                        childref.set_reference_handle(person.get_handle())
+                        family.add_child_ref( childref)
+                        person.add_parent_family_handle(family.get_handle())
+                        added = True
+                        break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    if current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                        ErrorDialog(_("Please set gender on Active person."), 
+                                    _("Can't add new person as a child."))
+                        return
+                    else:
+                        family = gen.lib.Family()
+                        self.dbstate.db.add_family(family, self.trans)
+                        childref = gen.lib.ChildRef()
+                        childref.set_reference_handle(person.get_handle())
+                        family.add_child_ref( childref)
+                        person.add_parent_family_handle(family.get_handle())
+                        current_person.add_family_handle(family.get_handle())
+                        if gen.lib.Person.FEMALE:
+                            family.set_mother_handle(current_person.get_handle())
+                        else:
+                            family.set_father_handle(current_person.get_handle())
+                        self.dbstate.db.commit_family(family, self.trans)
+            # Commit changes -------------------------------------------------
+            if current_person: # if related to current person
+                self.dbstate.db.commit_person(current_person, self.trans)
+            if person:
+                source_text = self.de_widgets["NPSource"].get_text().strip()
+                if source_text and self.de_widgets["Active person:Show sources"].get_active():
+                    new, source = self.get_or_create_source(source_text)
+                    self.add_source(person, source)
 
     def copy_data_entry(self, obj):
         self.de_widgets["NPName"].set_text(self.de_widgets["APName"].get_text())
