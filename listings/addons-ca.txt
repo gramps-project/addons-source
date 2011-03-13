@@ -3,7 +3,7 @@
 {'d': 'Produeix un informe de repositoris en text', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.5', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produeix un informe de repositoris en text', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Informe de Repositoris', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
-{'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': "Gramplet d'Introducci\xc3\xb3 de Dades", 't': u'Gramplet', 'v': '1.0.8', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': "Gramplet d'Introducci\xc3\xb3 de Dades", 't': u'Gramplet', 'v': '1.0.9', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
@@ -33,7 +33,7 @@
 {'d': 'Creates data file for GoogleEarth and opens it', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.8', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.4.9', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.4.10', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.3.3', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Display all names of all people', 'g': '3.3', 'i': 'allnames', 'n': 'All Names of All People', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}
