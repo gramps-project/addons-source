@@ -2,7 +2,7 @@
 # DenominoViso - a plugin for GRAMPS, the GTK+/GNOME based genealogy program,
 #                that creates an Ancestor Chart Map.
 #
-# Copyright (C) 2007-2009 Michiel D. Nauta
+# Copyright (C) 2007-2011 Michiel D. Nauta
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +19,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# version 2.0
+# version 2.3
+# fixed bug-nr: 4681
 
 # The basic idea of this plugin is very simple: create an ancestry map in SVG
 # supply each rectangle with an event handler and the data of a person packed
@@ -124,7 +125,7 @@
 import os
 import shutil
 import re
-from urllib import quote,splittype
+from urllib import quote,splittype,pathname2url
 from xml.sax.saxutils import quoteattr
 from math import sin,cos,exp,sqrt,e,pi
 
@@ -143,7 +144,6 @@ import gtk
 #-------------------------------------------------------------------------
 import Sort
 from gen.plug.report import Report
-from gen.plug import CATEGORY_WEB
 from gui.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
@@ -152,15 +152,14 @@ from QuestionDialog import ErrorDialog, WarningDialog
 from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gen.display.name import displayer as _nd
-from DateHandler import _DateDisplay 
-_dd = _DateDisplay.DateDisplay()
+import DateHandler
 import AutoComp
 from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
-from Utils import confidence
+from Utils import confidence, media_path_full
 from gen.plug.menu import Option as PlugOption
 from gen.proxy import PrivateProxyDb
+from gen.utils import get_birth_or_fallback
 from TransUtils import get_addon_translator
-
 #-------------------------------------------------------------------------
 #
 # constants
@@ -364,7 +363,7 @@ class DenominoVisoReport(Report):
         try:
             f = open(self.target_path,'w')
         except IOError,msg:
-            ErrorDialog(_('Failure writing %s') % self.target_path,msg)
+            ErrorDialog(_('Failure writing %s: %s') % (self.target_path,str(msg)))
             return
         startup = {}
         startup[_cnsts.FAN] = ((0,-pi,pi), (0,0,2*pi), (0,pi/2,5*pi/2), \
@@ -679,7 +678,7 @@ class DenominoVisoReport(Report):
         """Return the numerical confidence level of the source of the
             birth-event or an empty string"""
         rv = ""
-        birth = ReportUtils.get_birth_or_fallback(self.database,person)
+        birth = get_birth_or_fallback(self.database,person)
         if birth:
             source_list = birth.get_source_references()
             if len(source_list) > 0:
@@ -990,7 +989,7 @@ function %(bd)s2html(person,containerDL) {
         # when the person is dead (e.g. death-spouse).
         rv = ""
         if not self.options['DNMall_events']:
-            event_ref_list = person.get_primary_event_ref_list()
+            event_ref_list = list(person.get_primary_event_ref_list())
         else:
             event_ref_list = person.get_event_ref_list()[0:]
         birth_str = death_str = ''
@@ -1029,7 +1028,7 @@ function %(bd)s2html(person,containerDL) {
                 # add self.search_subject?           
             if ('<' + _('date') + '>') in self.event_format:
                 if date:
-                    event_str += ",event_date:'" + self.escbacka(_dd.display(date))+"'"
+                    event_str += ",event_date:'" + self.escbacka(DateHandler.get_date(event))+"'"
                     if self.options['DNMinc_events']:
                         self.search_subjects['Event Date'] = 'event_date'
 
@@ -1357,14 +1356,13 @@ function %(bd)s2html(person,containerDL) {
             if self.options['DNMexl_private'] and address.get_privacy():
                 continue
             address_data = address.get_text_data_list()
-            address_data.insert(0,address.get_street())
             address_date = address.get_date_object()
             address_str = self.options['DNMaddress_separator'].join(\
                     filter(lambda(x): x!='',address_data))
             if not address_str: continue
             rv += "{"
             if address_date:
-                rv += "address_date:'" + self.escbacka(_dd.display(address_date)) + "',"
+                rv += "address_date:'" + self.escbacka(DateHandler.get_date(address)) + "',"
                 self.search_subjects['Address Date'] = 'address_date'
             rv += "address_str:'" + self.escbacka(address_str) + "'"
             self.search_subjects['Address'] = 'address_str'
@@ -1495,17 +1493,17 @@ function %(bd)s2html(person,containerDL) {
                     page = source_ref_list[i].get_page()
                     if page:
                         st += ",source_page:'" + self.escbacka(page) + "'"
-                if '<author>' in self.source_format:
+                if ('<' + _('author') + '>') in self.source_format:
                     author = source.get_author()
                     if author:
                         st += ",source_author:'" + self.escbacka(author) + "'"
                         self.search_subjects['Source Author'] = 'source_author'
-                if '<publication_info>' in self.source_format:
+                if ('<' + _('publication_info') + '>') in self.source_format:
                     pub_info = source.get_publication_info()
                     if pub_info:
                         st += ",source_pub_info:'" + self.escbacka(pub_info) + "'"
                         self.search_subjects['Source Publication Information'] = 'source_pub_info'
-                if '<abbreviation>' in self.source_format:
+                if ('<' + _('abbreviation') + '>') in self.source_format:
                     abbr = source.get_abbreviation()
                     if abbr:
                         st += ",source_abbr:'" + self.escbacka(abbr) + "'"
@@ -1668,8 +1666,8 @@ function %(bd)s2html(person,containerDL) {
     def marriage_event2parent_names(self,event_ref):
         """Return a tuple with the names of the husband and wife of a marriage
             event."""
-        father = None
-        mother = None
+        father = ''
+        mother = ''
         if event_ref.ref:
             for l in self.database.find_backlink_handles(event_ref.ref,['Family']):
                 family = self.database.get_family_from_handle(l[1])
@@ -1802,7 +1800,7 @@ function %(bd)s2html(person,containerDL) {
         mime_type = media_object.get_mime_type()
         if not mime_type.startswith("image/"):
             return rv
-        media_path = media_object.get_path()
+        media_path = media_path_full(self.database,media_object.get_path())
         if self.options['DNMexl_private'] and media_object.get_privacy():
             return rv
         if self.options['DNMimg_attr4inex'].strip() != '':
@@ -1893,8 +1891,11 @@ function %(bd)s2html(person,containerDL) {
         B = os.path.abspath(B)
         cp = os.path.split(os.path.commonprefix([A,B]))[0]
         if cp == '':
-            raise NameError('Unable to construct a relative path from ' + \
-                A + ' to ' + B)
+            #raise NameError('Unable to construct a relative path from ' + \
+            #    A + ' to ' + B)
+            # As Heinz indicates this can happen on M$ with driveletters, so
+            # return absolute path to B, hopefully that works.
+            return 'file:' + pathname2url(B)
         a = os.path.dirname(A)
         while a != cp:
             retval += "../"
@@ -2479,7 +2480,8 @@ function %(bd)s2html(person,containerDL) {
             <object data="%s" type="application/xhtml+xml" width="100%%" height="100%%">
             <!-- <object data="NavWebPage.html" type="text/html"> -->
             Your browser is incapable of representing this document. Get a good
-            browser, for example <a href="http://www.mozilla.com">Firefox</a> or
+            browser, for example <a href="http://www.mozilla.com">Firefox</a>,
+            <a href="http://www.google.com/chrome">Chrome</a> or
             <a href="http://www.opera.com">Opera</a>, they are for "free".
             <!-- </object> -->
             </object>
@@ -2490,7 +2492,7 @@ function %(bd)s2html(person,containerDL) {
         try:
             f = open(self.options['DNMfilename4old_browser'],'w')
         except IOError,msg:
-            ErrorDialog(_('Failure writing %s') % self.options['DNMfilename4old_browser'],msg)
+            ErrorDialog(_('Failure writing %s: %s') % (self.options['DNMfilename4old_browser'], str(msg)))
             return
         f.write(strng)
         f.close()
@@ -2525,6 +2527,16 @@ function %(bd)s2html(person,containerDL) {
 #-------------------------------------------------------------------------
 class DenominoVisoOptions(MenuReportOptions):
     def __init__(self, name, dbase):
+        from gen.plug import BasePluginManager
+        pmgr = BasePluginManager.get_instance()
+        pmgr.register_option(MyBooleanOption, MyGuiBooleanOption)
+        pmgr.register_option(IncAttributeOption, GuiIncAttributeOption)
+        pmgr.register_option(CopyImgOption, GuiCopyImgOption)
+        pmgr.register_option(ImageIncludeAttrOption, GuiImageIncludeAttrOption)
+        pmgr.register_option(HtmlWrapperOption, GuiHtmlWrapperOption)
+        pmgr.register_option(MouseHandlerOption, GuiMouseHandlerOption)
+        pmgr.register_option(LineStyleOption, GuiLineStyleOption)
+        pmgr.register_option(ConfidenceColorOption, GuiConfidenceColorOption)
         self.db = dbase
         MenuReportOptions.__init__(self, name, dbase)
 
@@ -2544,17 +2556,20 @@ class DenominoVisoOptions(MenuReportOptions):
         title.set_help(_("Any string you wish."))
         menu.add_option(category_name, "DNMtitle", title)
 
-        chart_mode = EnumeratedListOption("Display mode",_cnsts.ANCESTOR)
-        chart_mode.set_help(_("Either plot ancestor or descendants graph."))
+        self.__chart_mode = EnumeratedListOption("Display mode",_cnsts.ANCESTOR)
+        self.__chart_mode.set_help(_("Either plot ancestor or descendants graph."))
         for mode in _cnsts.chart_mode:
-            chart_mode.add_item(mode[0],mode[1])
-        menu.add_option(category_name, "DNMchart_mode", chart_mode)
+            self.__chart_mode.add_item(mode[0],mode[1])
+        menu.add_option(category_name, "DNMchart_mode", self.__chart_mode)
 
-        chart_type = EnumeratedListOption(_("Display type"),_cnsts.REGULAR)
-        chart_type.set_help(_("The type of graph to create."))
-        for type in _cnsts.chart_type:
-            chart_type.add_item(type[0],type[1])
-        menu.add_option(category_name, "DNMchart_type", chart_type)
+        self.__chart_type = EnumeratedListOption(_("Display type"),_cnsts.REGULAR)
+        self.__chart_type.set_help(_("The type of graph to create."))
+        if self.__chart_mode.get_value() == _cnsts.DESCENDANT:
+            self.__chart_type.set_items(_cnsts.chart_type[0:2])
+        else:
+            self.__chart_type.set_items(_cnsts.chart_type)
+        menu.add_option(category_name, "DNMchart_type", self.__chart_type)
+        self.__chart_mode.connect('value-changed', self.__chartmode_changed)
 
         time_dir = EnumeratedListOption(_("Direction of time"),_cnsts.RIGHT2LEFT)
         time_dir.set_help(_("Direction in which time increases."))
@@ -2591,8 +2606,8 @@ class DenominoVisoOptions(MenuReportOptions):
         menu.add_option(category_name, "DNMinc_events", inc_events)
 
         #inc_all_events = BooleanOption(_("Include All Events"), True)
-        #inc_all_events.set_help(_("Whether to include all events or only those where person is of role 'Primary'."))
-        inc_all_events = CliOption(True)
+        inc_all_events = PlugOption("Include All Event", True)
+        inc_all_events.set_help("Whether to include all events or only those where person is of role 'Primary'.")
         menu.add_option(category_name, "DNMall_events", inc_all_events)
 
         inc_childbirth = BooleanOption(_("Include birth children"), True)
@@ -2644,7 +2659,8 @@ class DenominoVisoOptions(MenuReportOptions):
         copy_img.set_help(_("Copy the images to a designated directory."))
         menu.add_option(category_name, "DNMcopy_img_m", copy_img)
 
-        seq_img_name = CliOption(0)
+        seq_img_name = PlugOption("Sequential image names", 0)
+        seq_img_name.set_help("Give images a new sequential number")
         menu.add_option(category_name, "DNMuse_sequential_photoname", seq_img_name)
 
         image_selection = ImageIncludeAttrOption(_("Images with Attribute"),"0, , ")
@@ -2681,19 +2697,19 @@ class DenominoVisoOptions(MenuReportOptions):
         menu.add_option(category_name, "DNMfemale_color", female_color)
 
         rect_width = NumberOption(_("Width of rectangle (hrd):"), 0.66, 0.1, 1.0, 0.01)
-        rect_width.set_help(_(""))
+        rect_width.set_help(_("The width of a person rectangle of the regular chart type expressed as fraction of the horizontal rectangle distance."))
         menu.add_option(category_name, "DNMrect_width", rect_width)
 
         rect_height = NumberOption(_("Height of rectangle (hrd):"), 0.16, 0.1, 20.0, 0.01)
-        rect_height.set_help(_(""))
+        rect_height.set_help(_("The height of a person rectangle of the regular chart type expressed as fraction of the horizontal rectangle distance."))
         menu.add_option(category_name, "DNMrect_height", rect_height)
 
         rect_ydist = NumberOption(_("Vertical distance of rectangles (hrd):"), 0.19, 0.1, 20.0, 0.01)
-        rect_ydist.set_help(_(""))
+        rect_ydist.set_help(_("The vertical distance of person rectangles of the regular chart type expressed as fraction of the horizontal rectangle distance."))
         menu.add_option(category_name, "DNMrect_ydist", rect_ydist)
 
         free_style = TextOption(_("Extra style settings:"),("span.witnesses" + " {font-size: smaller;}","span.bron {font-size: smaller;}"))
-        free_style.set_help(_(""))
+        free_style.set_help(_("Whatever css style settings are needed."))
         menu.add_option(category_name, "DNMfree_style", free_style)
 
         category_name = _("Advanced Options")
@@ -2733,8 +2749,20 @@ class DenominoVisoOptions(MenuReportOptions):
         source_format.set_help(_("List of strings with placeholders for sources. Known placeholders: <title>, <volume>, <author>, <publication_info> and <abbreviation>."))
         menu.add_option(category_name, "DNMsource_format", source_format)
 
-        address_sep = CliOption(', ')
+        address_sep = PlugOption("Address separator", ', ')
+        address_sep.set_help("The characters to use to separate the different fields of an address.")
         menu.add_option(category_name, "DNMaddress_separator", address_sep)
+
+    def __chartmode_changed(self):
+        """
+        Handle chart_mode change.
+        """
+        chart_mode = self.__chart_mode.get_value()
+        self.__chart_type.set_value(_cnsts.REGULAR)
+        if chart_mode == _cnsts.DESCENDANT:
+            self.__chart_type.set_items(_cnsts.chart_type[0:2])
+        else:
+            self.__chart_type.set_items(_cnsts.chart_type)
 
 #-------------------------------------------------------------------------
 # Own option
@@ -2749,8 +2777,7 @@ class MyGuiBooleanOption(gtk.CheckButton):
         gtk.CheckButton.__init__(self, "")
         self.set_active(self.__option.get_value())
         self.connect('toggled', self.__value_changed)
-        # FIXME:
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
         self.__option.connect('avail-changed', self.__update_avail)
         self.__update_avail()
 
@@ -2761,15 +2788,6 @@ class MyGuiBooleanOption(gtk.CheckButton):
         avail = self.__option.get_available()
         self.set_sensitive(avail)
 
-
-class CliOption(PlugOption):
-    """Option without a corresponding widget, only for cli"""
-    def __init__(self, value):
-        PlugOption.__init__(self, '', value)
-
-class GuiCliOption(gtk.HBox):
-    def __init__(self, option, dbstate, uistate, track):
-        pass
 
 class IncAttributeOption(PlugOption):
     """Option to ask for the inclusion of attributes."""
@@ -2798,8 +2816,7 @@ class GuiIncAttributeOption(gtk.HBox):
         self.pack_start(self.cb_w, False)
         self.pack_end(self.e_w, False)
         self.pack_end(self.l_w, False)
-        # FIXME
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
         attr_inc = self.cb_w.get_active()
@@ -2841,8 +2858,7 @@ class GuiCopyImgOption(gtk.HBox):
         self.pack_start(self.cb_w, False)
         self.pack_end(self.fe_w, False)
         self.pack_end(self.l_w, False)
-        # FIXME:
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
         copy_img = self.cb_w.get_active()
@@ -2926,14 +2942,13 @@ class GuiHtmlWrapperOption(gtk.HBox):
         self.l_w = gtk.Label(_("Name HTML-wrapper file"))
         self.l_w.set_sensitive(False)
         self.fe_w = FileEntry(html_file, _("Save HTML-wrapper file as ..."))
-        #self.fe_w.connect('changed', self.__value_changed)
+        self.fe_w.entry.connect('changed', self.__value_changed);
         self.fe_w.set_sensitive(False)
         self.cb_w.set_active(wrap_html == 'True')
         self.pack_start(self.cb_w, False)
         self.pack_start(self.l_w, False)
         self.pack_start(self.fe_w, False)
-        # FIXME:
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
         wrap_html = self.cb_w.get_active()
@@ -2959,8 +2974,7 @@ class GuiOptionalFileEntry(gtk.HBox):
         self.pack_start(self.cb_w, False)
         self.pack_start(self.l_w, False)
         self.pack_start(self.fe_w, False)
-        # FIXME
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
         on_off_state = self.cb_w.get_active()
@@ -3002,8 +3016,7 @@ class GuiMouseHandlerOption(gtk.HBox):
         self.pack_start(self.r2_w, False)
         self.r2_w.set_active(self.__option.get_value())
         self.r2_w.connect('toggled', self.__value_changed)
-        # FIXME:
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
         self.__option.set_value(int(self.r2_w.get_active()))
@@ -3028,9 +3041,9 @@ class GuiTableOption(gtk.ScrolledWindow):
     def create_lstore(self,list_of_lists):
         lstore_args = []
         for cell in list_of_lists[0]:
-            if type(cell) == type(u"unicode"):
+            if type(cell) == type("string"):
                 lstore_args.append(gobject.TYPE_STRING)
-            elif type(cell) == type("string"):
+            elif type(cell) == type(u"string"):
                 lstore_args.append(gobject.TYPE_STRING)
             elif type(cell) == type(1):
                 lstore_args.append(gobject.TYPE_UINT)
@@ -3055,10 +3068,10 @@ class GuiTableOption(gtk.ScrolledWindow):
         treeview.set_rules_hint(True)
         treeview.get_selection().set_mode(gtk.SELECTION_SINGLE)
         for i,v in enumerate(list_of_lists[0]):
-            if (type(v) == type("string") or 
-                type(v) == type(1) or 
-                type(v) == type(1L) or
-                type(v) == type(u"unicode")):
+            if (type(v) == type("string") or
+                type(v) == type(u"string") or
+                type(v) == type(1) or
+                type(v) == type(1L)):
                 renderer = gtk.CellRendererText()
                 if editable_column or editable_column == 0:
                     column = gtk.TreeViewColumn('',renderer, text=i, \
@@ -3175,8 +3188,7 @@ class GuiConfidenceColorOption(GuiTableOption):
         cellRenderer = column.get_cell_renderers()[0]
         cellRenderer.set_property('editable',True)
         cellRenderer.connect('edited', self.__value_changed, tv.get_model())
-        # FIXME:
-        #tooltip.set_tip(self, self.__option.get_help())
+        self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, cell, path_string, new_text, model):
         """ "['None', False, 10L, 10L]" """
@@ -3193,17 +3205,3 @@ class GuiConfidenceColorOption(GuiTableOption):
             # store numerical confidence instead of string
             new_val[-1][0] = ext_confidence.keys()[ext_confidence.values().index(row[0])]
         self.__option.set_value(new_val)
-
-from gen.plug import BasePluginManager
-
-pmgr = BasePluginManager.get_instance()
-
-pmgr.register_option(MyBooleanOption, MyGuiBooleanOption)
-pmgr.register_option(IncAttributeOption, GuiIncAttributeOption)
-pmgr.register_option(CopyImgOption, GuiCopyImgOption)
-pmgr.register_option(ImageIncludeAttrOption, GuiImageIncludeAttrOption)
-pmgr.register_option(HtmlWrapperOption, GuiHtmlWrapperOption)
-pmgr.register_option(MouseHandlerOption, GuiMouseHandlerOption)
-pmgr.register_option(LineStyleOption, GuiLineStyleOption)
-pmgr.register_option(ConfidenceColorOption, GuiConfidenceColorOption)
-pmgr.register_option(CliOption, GuiCliOption)
