@@ -145,9 +145,6 @@ def _split_values(text):
 # ------------------------------------------------------------------------
 class imageMetadataGramplet(Gramplet):
 
-#------------------------------------------------
-#     User interface
-#------------------------------------------------
     def init(self):
 
         self.exif_column_width = 15
@@ -161,7 +158,6 @@ class imageMetadataGramplet(Gramplet):
         self.orig_image   = False
         self.image_path   = False
         self.plugin_image = False
-        self.mime_type    = False
         self.LATitude     = None
         self.LONGitude    = None
 
@@ -173,7 +169,7 @@ class imageMetadataGramplet(Gramplet):
 
             # calendar date clickable entry
             ("Date",   "",                         None, True,
-            [("Select Date",    _("Select Date"),  "button", self.select_date)],
+            [("Select",         _("Select Date"),  "button", self.select_date)],
                                                                      True,  0, None),
 
             # Manual Date Entry, Example: 1826-Apr-12
@@ -182,7 +178,7 @@ class imageMetadataGramplet(Gramplet):
             # Manual Time entry, Example: 14:06:00
             ("NewTime",         _("Time"),         None, False,  [], True,  0, None),
 
-            ("GPSFormat",       "",                None, True,
+            ("GPSFormat",       _("Convert GPS"),    None, True,
             [("Decimal",        _("Decimal"),        "button", self.convert2decimal),
              ("DMS",            _("Deg. Min. Sec."), "button", self.convert2dms)], 
                                                                      False, 0, None),    
@@ -220,9 +216,14 @@ class imageMetadataGramplet(Gramplet):
         # Save and Abandon
         row = gtk.HBox()
         button = gtk.Button(_("Save"))
+        button.set_tooltip_text(_("Saves the information entered here to the image metadata.  "
+            "WARNING: Metadata values will be removed if you save blank data..."))
+
         button.connect("clicked", self.save_metadata)
         row.pack_start(button, True)
         button = gtk.Button(_("Abandon"))
+        button.set_tooltip_text(_("Clears the metadata from these fields."))
+
         button.connect("clicked", self.clear_metadata)
         row.pack_start(button, True)
         rows.pack_start(row, False)
@@ -370,6 +371,10 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
             " information for the image.  xample: (C) 2010 Smith and Wesson"))
 
+        # Select Data button
+        self.exif_widgets["Date:Select"].set_tooltip_text(_("Allows you to select a date from a "
+            "pop-up window calendar.  You will still need to enter the time..."))
+
         # Manual Date Entry 
         self.exif_widgets[ "NewDate"].set_tooltip_text(_("Manual Date Entry, \n"
             "Example: 1826-Apr-12 or 1826-April-12"))
@@ -378,13 +383,23 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["NewTime"].set_tooltip_text(_( "Manual Time entry, \n"
             "Example: 14:06:00"))
 
+        # Convert Decimal button
+        self.exif_widgets["GPSFormat:Decimal"].set_tooltip_text(_("Converts Degree, Minutes, Seconds "
+            "GPS Coordinates to a Decimal representation."))
+
+        # Degrees, Minutes, Seconds button
+        self.exif_widgets["GPSFormat:DMS"].set_tooltip_text(_("Converts Decimal "
+            "GPS Coordinates to a Degrees, Minutes, Seconds representation."))
+
         # Leaning Tower of Pisa, Pisa, Italy
         # GPS Latitude Coordinate
-        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS Latitude Coordinates for your image, \n"
+        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS Latitude Coordinates for "
+            "your image,\n"
             "Example: 43.722965, 43 43 22 N"))
 
         # GPS Longitude Coordinate
-        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS Longitude Coordinates for your image, \n"
+        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS Longitude Coordinates for "
+            "your image,\n"
             "Example: 10.396378, 10 23 46 E"))
 
         # Keywords
