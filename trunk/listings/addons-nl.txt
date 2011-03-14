@@ -3,7 +3,7 @@
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.1.5', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.", 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
-{'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingavegramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingavegramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
