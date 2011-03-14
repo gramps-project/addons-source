@@ -3,7 +3,7 @@
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.5', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
-{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}

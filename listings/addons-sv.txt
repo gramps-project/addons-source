@@ -3,7 +3,7 @@
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.1.5', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '0.0.4', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
-{'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.10', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.3', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}

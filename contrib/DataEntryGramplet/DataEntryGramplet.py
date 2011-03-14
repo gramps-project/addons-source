@@ -799,6 +799,7 @@ class DataEntryGramplet(Gramplet):
                 if source_text and self.de_widgets["Active person:Show sources"].get_active():
                     new, source = self.get_or_create_source(source_text)
                     self.add_source(person, source)
+                self.dbstate.db.commit_person(person, self.trans)
 
     def copy_data_entry(self, obj):
         self.de_widgets["NPName"].set_text(self.de_widgets["APName"].get_text())
