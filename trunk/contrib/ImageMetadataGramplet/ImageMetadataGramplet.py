@@ -468,6 +468,15 @@ class imageMetadataGramplet(Gramplet):
         reads the image metadata after the pyexiv2.Image has been created
         """
 
+        # read the image metadata
+        try:
+            self.plugin_image.read()
+        except IOError:
+            self._mark_dirty_image(self.plugin_image)
+            WarningDialog(_("The image is either missing or deleted, or is not a valid "
+                "plugin media type."))
+            return
+
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
         self.LATitude, self.LONGitude = "", ""
@@ -475,9 +484,6 @@ class imageMetadataGramplet(Gramplet):
         # image description
         self.exif_widgets["ActiveImage"].set_text(
             _html_escape(self.orig_image.get_description() ) )
-
-        # read the image metadata
-        self.plugin_image.read()
 
         # set up image metadata keys for use in this gramplet
         dataKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
@@ -588,20 +594,34 @@ class imageMetadataGramplet(Gramplet):
             _set_value(ImageDateTime, wdate, self.plugin_image)
 
         # if lat/ long is in decimal, convert to (degrees, minutes, seconds)
-        latitude =   self.exif_widgets["Latitude"].get_text()
+        latitude  =  self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
-        if ((latitude and latitude.count(".") == 1) and (longitude and longitude.count(".") == 1)):
-            self.convert2dms(self.plugin_image)
 
-        # convert (degrees, minutes, seconds) to Rational for saving
-        if (self.LATitude and self.LatitudeRef):
-            _set_value(ImageLatitude, coords_to_rational(self.LATitude), self.plugin_image)
-            _set_value(ImageLatitudeRef, self.LatitudeRef, self.plugin_image)
+        if (latitude and longitude):
 
-        # convert (degrees, minutes, seconds) to Rational for saving
-        if (self.LONGitude and self.LongitudeRef):
-            _set_value(ImageLongitude, coords_to_rational(self.LONGitude), self.plugin_image)
-            _set_value(ImageLongitudeRef, self.LongitudeRef, self.plugin_image)
+            # if "?" character exist, remove it?
+            if ("?" in latitude or "?" in longitude):
+                latitude = latitude.replace("?", "")
+                longitude = longitude.replace("?", "")
+
+            # if "," character exists, remove it?
+            if ("," in latitude or "," in longitude): 
+                latitude = latitude.replace(",", "")
+                longitude = longitude.replace(",", "") 
+
+            # if it is in decimal format, convert it to DMS?
+            if (latitude.count(".") == 1 and longitude.count(".") == 1):
+                self.convert2dms(self.plugin_image)
+
+            # convert (degrees, minutes, seconds) to Rational for saving
+            if (self.LATitude and self.LatitudeRef):
+                _set_value(ImageLatitude, coords_to_rational(self.LATitude), self.plugin_image)
+                _set_value(ImageLatitudeRef, self.LatitudeRef, self.plugin_image)
+
+            # convert (degrees, minutes, seconds) to Rational for saving
+            if (self.LONGitude and self.LongitudeRef):
+                _set_value(ImageLongitude, coords_to_rational(self.LONGitude), self.plugin_image)
+                _set_value(ImageLongitudeRef, self.LongitudeRef, self.plugin_image)
 
         # keywords data field
         keywords = [word for word in self.exif_widgets["Keywords"].get_text().split(",") if word]
@@ -780,23 +800,84 @@ class imageMetadataGramplet(Gramplet):
 # -------------------------------------------------------------------
 #          GPS Coordinates functions
 # -------------------------------------------------------------------
+    def convert2symbols(self, latitude, longitude):
+        """
+        converts a degrees, minutes, seconds representation of Latitude/ Longitude
+        without their symbols to having them...
+
+        @param: latitude -- Latitude GPS Coordinates
+        @param: longitude -- Longitude GPS Coordinates
+        """
+
+        # check to see if Latitude/ Longitude exits?
+        if (latitude and longitude):
+
+            if (latitude.count(".") == 1 and longitude.count(".") == 1):
+                self.convert2dms(self.plugin_image)
+
+                # get the converted Latitude/ Longitude
+                latitude  =  self.exif_widgets["Latitude"].get_text()
+                longitude = self.exif_widgets["Longitude"].get_text()
+
+            elif (latitude.count("°") == 0 and longitude.count("°") == 0):
+ 
+                # is there a direction element here?
+                if (latitude.count(" ") >= 2 and longitude.count(" ") >= 2):
+                    if (latitude.count("N") == 1 or latitude.count("S") == 1):
+
+                        latdeg, latmin, latsec, self.LatitudeRef = latitude.split(" ", 3)
+                    else:
+                        slf.LatitudeRef = "N"
+                        latdeg, latmin, latsec = latitude.split(" ", 2)
+                        if latdeg[0] == "-":
+                            latdeg = latdeg.replace("-", "")
+                            self.LatitudeRef = "S"
+
+                    # is there a direction element here?
+                    if (longitude.count("E") == 1 or longitude.count("W") == 1):
+
+                        longdeg, longmin, longsec, self.LongitudeRef = longitude.split(" ", 3)
+                    else:
+                        slf.LongitudeRef = "E"
+                        longdeg, longmin, longsec = longitude.split(" ", 2)
+                        if longdeg[0] == "-":
+                            longdeg = longdeg.replace("-", "")
+                            self.LongitudeRef = "W"
+
+                latitude  = """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, self.LatitudeRef)
+                longitude = """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, self.LongitudeRef)
+
+                self.LATitude  = "%s %s %s" % (latdeg, latmin, latsec, self.LatitudeRef)
+                self.LONGitude = "%s %s %s" % (longdeg, longmin, longsec, self.LongitudeRef)
+        return latitude, longitude
+
     def convert2decimal(self, obj):
         """
         will convert a decimal GPS Coordinates into decimal format
         """
 
-        # get lat/ long from the data fields
+        # get Latitude/ Longitude from this addon...
         latitude  =  self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
 
-        # if latitude and longitude exist and if they are in decimal format?
-        if (latitude and latitude.count(" ") >= 2) and (longitude and longitude.count(" ") >= 2):
+        # if latitude and longitude exist?
+        if (latitude and longitude):
 
-            # convert degrees, minutes, seconds to an eight (8) point decimal
-            latitude, longitude = conv_lat_lon( unicode(latitude), unicode(longitude), "D.D8")
+            # if Latitude/ Longitude are in DMS format?
+            if (latitude.count(" ") >= 2 and longitude.count(" ") >= 2): 
 
-            # display lat/ long in decimal format 
-            self.exif_widgets["Latitude"].set_text(  latitude)
+                # add DMS symbols if necessary?
+                # the conversion to decimal format, require the DMS symbols 
+                if (latitude.count("°") == 0 and longitude.count("°") == 0):
+                    self.convert2symbols(latitude, longitude)
+
+            # convert degrees, minutes, seconds w/ symbols to an 8 point decimal
+            latitude, longitude = conv_lat_lon( unicode(latitude),
+                                                unicode(longitude),
+                                                "D.D8" )
+
+            # display Latitude/ Longitude in decimal format 
+            self.exif_widgets["Latitude"].set_text(latitude)
             self.exif_widgets["Longitude"].set_text(longitude)
 
     def convert2dms(self, obj):
@@ -805,38 +886,43 @@ class imageMetadataGramplet(Gramplet):
         for display only
         """
 
-        # get Latitude/ Longitude from data fields
-        latitude =   self.exif_widgets["Latitude"].get_text()
+        # get latitude and longitude from this addon
+        latitude  =  self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
 
-        if (latitude and latitude.count(".") == 1) and (longitude and longitude.count(".") == 1):
+        # if Latitude/ Longitude exists?
+        if (latitude and longitude):
 
-            # convert latitude and longitude to a DMS with separator of ":"
-            latitude, longitude = conv_lat_lon(latitude, longitude, "DEG-:")
+            # if coordinates are in decimal format?
+            if (latitude.count(".") == 1 and longitude.count(".") == 1):
+
+                # convert latitude and longitude to a DMS with separator of ":"
+                latitude, longitude = conv_lat_lon(latitude, longitude, "DEG-:")
  
-            # remove negative symbol if there is one?
-            self.LatitudeRef = "N"
-            if latitude[0] == "-":
-                latitude = latitude.replace("-", "")
-                self.LatitudeRef = "S"
-            deg, min, sec = latitude.split(":", 2)
+                # remove negative symbol if there is one?
+                self.LatitudeRef = "N"
+                if latitude[0] == "-":
+                    latitude = latitude.replace("-", "")
+                    self.LatitudeRef = "S"
+                latdeg, latmin, latsec = latitude.split(":", 2)
 
-            self.exif_widgets["Latitude"].set_text(
-                """%s° %s′ %s″ %s""" % (deg, min, sec, self.LatitudeRef)
-            )
-            self.LATitude = "%s %s %s" % (deg, min, sec)
+               # remove negative symbol if there is one?
+                self.LongitudeRef = "E"
+                if longitude[0] == "-":
+                    longitude = longitude.replace("-", "")
+                    self.LongitudeRef = "W"
+                longdeg, longmin, longsec = longitude.split(":", 2)
 
-           # remove negative symbol if there is one?
-            self.LongitudeRef = "E"
-            if longitude[0] == "-":
-                longitude = longitude.replace("-", "")
-                self.LongitudeRef = "W"
-            deg, min, sec = longitude.split(":", 2)
+                # set Latitude for saving
+                self.LATitude = "%s %s %s" % (latdeg, latmin, latsec)
 
-            self.exif_widgets["Longitude"].set_text(
-                """%s° %s′ %s″ %s""" % (deg, min, sec, self.LongitudeRef)
-            )
-            self.LONGitude = "%s %s %s" % (deg, min, sec)
+                # set Longitude for saving
+                self.LONGitude = "%s %s %s" % (longdeg, longmin, longsec)
+
+                self.exif_widgets["Latitude"].set_text(
+                    """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, self.LatitudeRef) )
+                self.exif_widgets["Longitude"].set_text(
+                    """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, self.LongitudeRef) )
 
 def string_to_rational(coordinate):
     """
