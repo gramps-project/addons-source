@@ -33,7 +33,7 @@
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.8', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet om tekst te importeren', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Importgramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .', 'g': '3.3', 'i': 'TodoReport', 'n': "'Nog te doen'-verslag", 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.4.10', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.4.11', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.3.3', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'De namen van alle personen tonen', 'g': '3.3', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}

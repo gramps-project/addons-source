@@ -33,7 +33,7 @@
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.8', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet pour importer du texte', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
 {'d': "Produit une liste de toutes les notes avec un marqueur donn\xc3\xa9 ainsi que les enregistrements qui les r\xc3\xa9f\xc3\xa9rencent, l'individu, la famille, l'\xc3\xa9v\xc3\xa9nement, etc.", 'g': '3.3', 'i': 'TodoReport', 'n': 'Rapport \xc3\x80 Faire', 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet Image Metadata', 't': u'Gramplet', 'v': '1.4.10', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet Image Metadata', 't': u'Gramplet', 'v': '1.4.11', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': "Affiche le nombre de descendants de l'individu actif", 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Nombre de descendants', 't': u'Quickreport', 'v': '3.3.3', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Gramplet pour regrouper des articles', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Affiche tous les noms de tous les individus', 'g': '3.3', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}
