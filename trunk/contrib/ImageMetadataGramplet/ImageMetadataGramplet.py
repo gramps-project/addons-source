@@ -278,6 +278,9 @@ class imageMetadataGramplet(Gramplet):
             if not found:
                 self._mark_dirty_write(self.orig_image)
                 return
+        else:
+            # prevent non mime images from attempting to write to non MIME images...
+            self._mark_dirty_write(self.orig_image)
 
         # clear all data entry fields
         self.clear_metadata(self.orig_image)
