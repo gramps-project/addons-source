@@ -2,30 +2,32 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
+# Peter Landgren <peter.talken@telia.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:26+0100\n"
-"PO-Revision-Date: 2009-11-25 17:35+0100\n"
-"Last-Translator: \n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: 2011-03-16 09:24+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:191
 #: AttachSourceTool/AttachSourceTool.py:215
 msgid "Attach Source"
-msgstr ""
+msgstr "Koppla källa"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:219
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Kopplar en delad källa till flera objekt."
 
 #: AttachSourceTool/AttachSourceTool.py:67
 #: AttachSourceTool/AttachSourceTool.py:140
@@ -50,7 +52,7 @@ msgstr "Huvudpersonen för filtret"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Typ av källa"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
@@ -58,27 +60,27 @@ msgstr "Ny källa"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Befintlig källa"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Välj typ av källa att koppla"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Ny titel på källa"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "Källtext att koppla"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "Befintlig käll-ID"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "ID hos källa som skall kopplas"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 msgid "Results"
@@ -90,11 +92,11 @@ msgstr "Arbetar...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:173
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Kopplar källor...\"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources..."
-msgstr ""
+msgstr "Kopplar källor..."
 
 #: AttachSourceTool/AttachSourceTool.py:194
 msgid "Done!\n"
@@ -103,4 +105,5 @@ msgstr "Klart!\n"
 #: AttachSourceTool/AttachSourceTool.py:216
 msgid "Beta"
 msgstr "Beta"
+
 

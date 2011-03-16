@@ -2,13 +2,13 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Peter Landgren <peter.talken@telia.com>, 2010.
+# Peter Landgren <peter.talken@telia.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:30+0100\n"
-"PO-Revision-Date: 2010-01-31 15:55+0100\n"
+"PO-Revision-Date: 2011-03-16 10:17+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,6 @@ msgstr "Detta är en rå dumpning av pythonobjekt"
 
 #: ExportRaw/ExportRaw.gpr.py:10
 msgid "Raw options"
-msgstr "Val i rå"
+msgstr "Alternativ vid rå export"
 
 

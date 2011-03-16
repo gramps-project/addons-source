@@ -19,13 +19,13 @@
 # Bo Rosén <bo.rosen@home.se>, 2001.
 # Jens Arvidsson <jya@sverige.nu>, 2002-2005.
 # Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-30 12:34+0100\n"
-"PO-Revision-Date: 2010-11-07 22:18+0100\n"
+"PO-Revision-Date: 2011-03-16 09:25+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,9 +40,8 @@ msgid "Birthdays Gramplet"
 msgstr "Födelsedags-Gramplet"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
-#, fuzzy
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr "en Gramplet, som visar födelsedagar för de närmaste n följande dagarna"
+msgstr "en Gramplet, som visar födelsedagarna för levande personer"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:36
 msgid "No Family Tree loaded."
