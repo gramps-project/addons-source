@@ -2,26 +2,28 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
+# Peter Landgren <peter.talken@telia.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:34+0100\n"
-"PO-Revision-Date: 2009-11-25 19:21+0100\n"
-"Last-Translator: \n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: 2011-03-16 15:23+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:9
 msgid "Timeline"
-msgstr "Livslängdslinje"
+msgstr "Tidslinje"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
 msgid "Display a person's events on a timeline"
-msgstr ""
+msgstr "Visar händelser för en person på en tidslinje"
 
 #: TimelineQuickview/TimelineQuickview.py:41
 msgid "Parents"
@@ -29,50 +31,50 @@ msgstr "Föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:43
 msgid "Inlaw Parents"
-msgstr ""
+msgstr "Ingifta föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:46
 msgid "Grandparents"
-msgstr ""
+msgstr "Far/mor-föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Grandparents"
-msgstr ""
+msgstr "Ingifta far/mor-föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:51
 msgid "Great grandparents"
-msgstr ""
+msgstr "Far/mor-föräldrars föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Great grandparents"
-msgstr ""
+msgstr "Ingifta far/mor-föräldrars föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great, "
-msgstr ""
+msgstr " "
 
 #: TimelineQuickview/TimelineQuickview.py:56
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "great, "
-msgstr ""
+msgstr " "
 
 #: TimelineQuickview/TimelineQuickview.py:56
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "great grandparents"
-msgstr ""
+msgstr "far/mor-föräldrars föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great, "
-msgstr ""
+msgstr "Ingifta "
 
 #: TimelineQuickview/TimelineQuickview.py:88
 msgid "Partner's spouse"
-msgstr ""
+msgstr "Partners maka/make"
 
 #: TimelineQuickview/TimelineQuickview.py:138
 #, python-format
 msgid "Timeline for %s"
-msgstr ""
+msgstr "Tidslinje för %s"
 
 #: TimelineQuickview/TimelineQuickview.py:141
 msgid "Date"
@@ -92,13 +94,14 @@ msgstr "Plats"
 
 #: TimelineQuickview/TimelineQuickview.py:145
 msgid "People involved"
-msgstr ""
+msgstr "Inblandade personer"
 
 #: TimelineQuickview/TimelineQuickview.py:169
 msgid "Today"
-msgstr ""
+msgstr "Idag"
 
 #: TimelineQuickview/TimelineQuickview.py:175
 msgid "Unknown"
 msgstr "Okänd"
+
 
