@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:32+0100\n"
-"PO-Revision-Date: 2011-03-16 10:22+0100\n"
+"PO-Revision-Date: 2011-03-16 16:07+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
-msgstr "Grample för notis"
+msgstr "Gramplet för notis"
 
 #: NoteGramplet/NoteGramplet.gpr.py:9
 msgid "Note"
