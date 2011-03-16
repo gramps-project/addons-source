@@ -629,7 +629,7 @@ class imageMetadataGramplet(Gramplet):
                 self._set_value(ImageCopyright, copyright)
 
             # get date from data field for saving
-            wdate = _write_date( self.exif_widgets["NewDate"].get_text(),
+            wdate = self._write_date( self.exif_widgets["NewDate"].get_text(),
                                  self.exif_widgets["NewTime"].get_text() )
             if wdate is not False: 
                 self._set_value(ImageDateTime, wdate)
