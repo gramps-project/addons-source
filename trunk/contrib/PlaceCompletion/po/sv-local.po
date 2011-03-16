@@ -2,88 +2,91 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
+# Peter Landgren <peter.talken@telia.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:32+0100\n"
-"PO-Revision-Date: 2009-11-25 19:12+0100\n"
-"Last-Translator: \n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: 2011-03-16 14:53+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
 msgid "PlaceCompletion"
-msgstr ""
+msgstr "Platskomplettering"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
 msgstr ""
+"Lämnar en bläddringsbar lista på valda platser, med möjlighet att komplettera/avsöka/sätta attributfältet."
 
 #: PlaceCompletion/PlaceCompletion.py:86
 msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
-msgstr ""
+msgstr "Platskomplettering genom avsökning, filuppslagning och satsvis sättning av platsattribut"
 
 #: PlaceCompletion/PlaceCompletion.py:236
 #: PlaceCompletion/PlaceCompletion.py:275
 msgid "Error in PlaceCompletion.py"
-msgstr ""
+msgstr "Fel i PlaceCompletion.py"
 
 #: PlaceCompletion/PlaceCompletion.py:237
 msgid "Non existing group used in get"
-msgstr ""
+msgstr "Ej befintlig grupp använd i get"
 
 #: PlaceCompletion/PlaceCompletion.py:276
 msgid "Non existing group used in set"
-msgstr ""
+msgstr "Ej befintlig grupp använd i set"
 
 #: PlaceCompletion/PlaceCompletion.py:334
 msgid "Places tool"
-msgstr ""
+msgstr "Platsverktyg"
 
 #: PlaceCompletion/PlaceCompletion.py:426
 msgid "Non Valid Title Regex"
-msgstr ""
+msgstr "Ej giltig titel Regex"
 
 #: PlaceCompletion/PlaceCompletion.py:427
 msgid "Non valid regular expression given to match title. Quiting."
-msgstr ""
+msgstr "Icke giltigt reguljärt uttryck givet för att matcha titel. Avbryter."
 
 #: PlaceCompletion/PlaceCompletion.py:442
 msgid "Missing regex groups in match lat/lon"
-msgstr ""
+msgstr "Saknade regex grupper i matchning av lat/lon"
 
 #: PlaceCompletion/PlaceCompletion.py:443
 #, python-format
 msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
-msgstr ""
+msgstr "Regex grupper %(lat)s och %(lon)s måstr vara närvarande i lat/lon-matchning. Avslutar."
 
 #: PlaceCompletion/PlaceCompletion.py:453
 msgid "Non valid regex for match lat/lon"
-msgstr ""
+msgstr "Icke giltig regex för matchning av lat/lon"
 
 #: PlaceCompletion/PlaceCompletion.py:454
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr ""
+msgstr "Icke giltigt reguljärt uttryck givet för att hitta lat/lon. Avslutar."
 
 #: PlaceCompletion/PlaceCompletion.py:512
 msgid "Finding Places and appropriate changes"
-msgstr ""
+msgstr "Hitta platser och skäliga ändringar"
 
 #: PlaceCompletion/PlaceCompletion.py:514
 msgid "Filtering"
-msgstr ""
+msgstr "Filtrering"
 
 #: PlaceCompletion/PlaceCompletion.py:524
 msgid "Loading lat/lon file in Memory..."
-msgstr ""
+msgstr "Laddar lat/lon-fil till minnet..."
 
 #: PlaceCompletion/PlaceCompletion.py:529
 msgid "Examining places"
-msgstr ""
+msgstr "Undersöker platser"
 
 #: PlaceCompletion/PlaceCompletion.py:549
 #: PlaceCompletion/PlaceCompletion.py:1113
@@ -100,25 +103,25 @@ msgstr "Land"
 
 #: PlaceCompletion/PlaceCompletion.py:717
 msgid "Doing Place changes"
-msgstr ""
+msgstr "Genomför platsändringar"
 
 #: PlaceCompletion/PlaceCompletion.py:754
 #: PlaceCompletion/PlaceCompletion.py:764
 msgid "Change places"
-msgstr ""
+msgstr "Ändra platser"
 
 #: PlaceCompletion/PlaceCompletion.py:759
 msgid "No place record was modified."
-msgstr ""
+msgstr "Ingen platspost ändrades."
 
 #: PlaceCompletion/PlaceCompletion.py:761
 msgid "1 place record was modified."
-msgstr ""
+msgstr "1 platspost ändrades"
 
 #: PlaceCompletion/PlaceCompletion.py:763
 #, python-format
 msgid "%d place records were modified."
-msgstr ""
+msgstr "%d platsposter ändrades"
 
 #: PlaceCompletion/PlaceCompletion.py:836
 #: PlaceCompletion/PlaceCompletion.py:843
@@ -137,7 +140,7 @@ msgstr "Du har inte läsåtkomst till den valda filen."
 
 #: PlaceCompletion/PlaceCompletion.py:850
 msgid "The file you want to access is not a regular file."
-msgstr ""
+msgstr "Ded fil du vill ha tillgång till är ej en vanlig fil."
 
 #: PlaceCompletion/PlaceCompletion.py:856
 msgid "The file does not exist."
@@ -145,93 +148,93 @@ msgstr "Filen finns inte"
 
 #: PlaceCompletion/PlaceCompletion.py:875
 msgid "Problem reading file"
-msgstr ""
+msgstr "Problem vid filläsning"
 
 #: PlaceCompletion/PlaceCompletion.py:929
 msgid "lat"
-msgstr ""
+msgstr "lat"
 
 #: PlaceCompletion/PlaceCompletion.py:929
 msgid "lon"
-msgstr ""
+msgstr "lon"
 
 #: PlaceCompletion/PlaceCompletion.py:993
 #: PlaceCompletion/PlaceCompletion.py:1005
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
-msgstr ""
+msgstr "ogiltigt lat- eller lon-värde, %(lat)s, %(lon)s"
 
 #: PlaceCompletion/PlaceCompletion.py:1074
 msgid "No lat/lon conversion"
-msgstr ""
+msgstr "Ingen lat/lon-omvandling"
 
 #: PlaceCompletion/PlaceCompletion.py:1075
 msgid "All in degree notation"
-msgstr ""
+msgstr "Allt i gradnotation"
 
 #: PlaceCompletion/PlaceCompletion.py:1076
 msgid "All in decimal notation"
-msgstr ""
+msgstr "Allt i decimal notation"
 
 #: PlaceCompletion/PlaceCompletion.py:1077
 msgid "Correct -50° in 50°S"
-msgstr ""
+msgstr "Korrekt -50° i 50°S"
 
 #: PlaceCompletion/PlaceCompletion.py:1081
 msgid "No changes"
-msgstr ""
+msgstr "Inga ändringar"
 
 #: PlaceCompletion/PlaceCompletion.py:1082
 msgid "City[, State]"
-msgstr ""
+msgstr "Stad[, Stat]"
 
 #: PlaceCompletion/PlaceCompletion.py:1084
 msgid "TitleStart [, City] [, State]"
-msgstr ""
+msgstr "Starttitel [, Stad] [, Stat]"
 
 #: PlaceCompletion/PlaceCompletion.py:1107
 msgid "City [,|.] State"
-msgstr ""
+msgstr "Stad [,|.] Stat"
 
 #: PlaceCompletion/PlaceCompletion.py:1109
 msgid "City [,|.] Country"
-msgstr ""
+msgstr "Stad [,|.] Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1111
 msgid "City (Country)"
-msgstr ""
+msgstr "Stad (Land)"
 
 #: PlaceCompletion/PlaceCompletion.py:1117
 msgid "Don't search"
-msgstr ""
+msgstr "Sök ej"
 
 #: PlaceCompletion/PlaceCompletion.py:1120
 msgid "GeoNames country file, city search"
-msgstr ""
+msgstr "GeoNames-landfil, stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1125
 msgid "GeoNames country file, city localized variants search"
-msgstr ""
+msgstr "GeoNames landfil, stad lokaliserad-variantssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1136
 msgid "GeoNames country file, title begin, general search"
-msgstr ""
+msgstr "GeoNames landfil, titel början, allmän sökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1141
 msgid "GeoNames USA state file, city search"
-msgstr ""
+msgstr "GeoNames USA delstatsfil, stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1155
 msgid "GNS Geonet country file, city search"
-msgstr ""
+msgstr "GNS Geonet landfil, stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1164
 msgid "GNS Geonet country file, title begin, general search"
-msgstr ""
+msgstr "GNS Geonet landfil, titel början, allmän sökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1172
 msgid "Wikipedia CSV Dump"
-msgstr ""
+msgstr "Wikipedia CSV Dump"
 
 #: PlaceCompletion/PlaceCompletion.py:1260
 msgid "All Places"
@@ -239,37 +242,40 @@ msgstr "Alla platser"
 
 #: PlaceCompletion/PlaceCompletion.py:1263
 msgid "No Latitude/Longitude given"
-msgstr ""
+msgstr "Ingen latitud/longitud angiven"
 
 #: PlaceCompletion/placecompletion.glade.h:1
 msgid "<b>1. Look up latitude and longitude:</b>"
-msgstr ""
+msgstr "<b>1. Slå upp latitud och longitud:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:2
 msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
-msgstr ""
+msgstr "<b>2. Avsökning och omvandling av befintlig titel eller position:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:3
 msgid "<b>3. Set attributes of all selected places:</b>"
-msgstr ""
+msgstr "<b>3. Sätt attribut för alla valda platser:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:4
 msgid ""
 "<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
 msgstr ""
+"<i>Delete för att ta bort en rad, Dubbel-klicka på en rad för att redigera plats med ändringar pre-entered, \n"
+"Tryck Tab på a rad eller Google Maps-knappen för att se plats på en karta. Tryck Tillämpa för att göra alla "
+"ändringar automatiskt</i>"
 
 #: PlaceCompletion/placecompletion.glade.h:6
 msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
-msgstr ""
+msgstr "<span size=\"large\"><b>Val av de platser du vill komplettera:</b></span>"
 
 #: PlaceCompletion/placecompletion.glade.h:7
 msgid "Apply all suggested changes"
-msgstr ""
+msgstr "Tillämpa alla föreslagna ändringar"
 
 #: PlaceCompletion/placecompletion.glade.h:8
 msgid "C_enter latitude:"
-msgstr ""
+msgstr "C_entrum latitud:"
 
 #: PlaceCompletion/placecompletion.glade.h:9
 msgid "C_ity:"
@@ -277,11 +283,11 @@ msgstr "_Stad/Kommun:"
 
 #: PlaceCompletion/placecompletion.glade.h:10
 msgid "Center longitude:"
-msgstr ""
+msgstr "Centrum longitud:"
 
 #: PlaceCompletion/placecompletion.glade.h:11
 msgid "Change title into:"
-msgstr ""
+msgstr "Ändra titel till:"
 
 #: PlaceCompletion/placecompletion.glade.h:12
 msgid "City:"
@@ -289,7 +295,7 @@ msgstr "Stad/Kommun:"
 
 #: PlaceCompletion/placecompletion.glade.h:13
 msgid "Convert lat/lon as:"
-msgstr ""
+msgstr "Omvandla lat/lon som:"
 
 #: PlaceCompletion/placecompletion.glade.h:14
 msgid "Count_ry:"
@@ -317,23 +323,23 @@ msgstr " församling"
 
 #: PlaceCompletion/placecompletion.glade.h:20
 msgid "Parse as:"
-msgstr ""
+msgstr "Avsök som:"
 
 #: PlaceCompletion/placecompletion.glade.h:21
 msgid "Parse title:"
-msgstr ""
+msgstr "Avsökningstitel:"
 
 #: PlaceCompletion/placecompletion.glade.h:22
 msgid "Place _filter:"
-msgstr ""
+msgstr "Plata_filter:"
 
 #: PlaceCompletion/placecompletion.glade.h:23
 msgid "Places in a rectangle:"
-msgstr ""
+msgstr "Platser i en rektangel:"
 
 #: PlaceCompletion/placecompletion.glade.h:24
 msgid "Search in:"
-msgstr ""
+msgstr "Sök i:"
 
 #: PlaceCompletion/placecompletion.glade.h:25
 msgid "Select A File"
@@ -354,4 +360,5 @@ msgstr "Postnummer:"
 #: PlaceCompletion/placecompletion.glade.h:29
 msgid "_Google Maps"
 msgstr "_Google-kartor"
+
 

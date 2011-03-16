@@ -1,0 +1,90 @@
+# Swedish translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-16 13:15+0100\n"
+"PO-Revision-Date: 2011-03-16 13:27+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: PedigreeChart/PedigreeChart.gpr.py:24
+msgid "Pedigree Chart"
+msgstr "Antavla"
+
+#: PedigreeChart/PedigreeChart.gpr.py:25
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "En alternativ till den traditionella antavlan."
+
+#: PedigreeChart/PedigreeChart.py:378
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Person %s saknas i databasen"
+
+#: PedigreeChart/PedigreeChart.py:381 PedigreeChart/PedigreeChart.py:529
+msgid "Mother"
+msgstr "Mor"
+
+#: PedigreeChart/PedigreeChart.py:385
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "Antavla för %s"
+
+#: PedigreeChart/PedigreeChart.py:532
+msgid "Father"
+msgstr "Far"
+
+#: PedigreeChart/PedigreeChart.py:534
+#, python-format
+msgid "Page %d"
+msgstr "Sida %d"
+
+#: PedigreeChart/PedigreeChart.py:641
+msgid "Tree Options"
+msgstr "Trädalternativ"
+
+#: PedigreeChart/PedigreeChart.py:643
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: PedigreeChart/PedigreeChart.py:644
+msgid "The center person for the tree"
+msgstr "Trädets huvudperson"
+
+#: PedigreeChart/PedigreeChart.py:647
+msgid "Generations"
+msgstr "Generationer"
+
+#: PedigreeChart/PedigreeChart.py:648
+msgid "The number of generations to include in the tree"
+msgstr "Det antal generationer, som skall tas med i trädet."
+
+#: PedigreeChart/PedigreeChart.py:651
+msgid "Show Mother/Father captions"
+msgstr "Visa mor/far ledtext"
+
+#: PedigreeChart/PedigreeChart.py:652
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "Visa titel på mor eller far vid sidan om varje ättlings ruta."
+
+#: PedigreeChart/PedigreeChart.py:664
+msgid "The basic style used for the text display."
+msgstr "Grundmall för textvisning."
+
+#: PedigreeChart/PedigreeChart.py:673
+msgid "The basic style used for the title display."
+msgstr "Mall för titelvisning"
+
+#: PedigreeChart/PedigreeChart.py:682
+msgid "Style used for labels and captions"
+msgstr "Mall för etiketter och ledtexter"
+
