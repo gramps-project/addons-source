@@ -28,7 +28,8 @@ import os, sys
 from datetime import datetime, date
 import time
 from decimal import Decimal
-from fractions import Fraction
+
+import calendar
 
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
@@ -100,12 +101,11 @@ ImageDescription  = "Exif.Image.ImageDescription"
 # set up keys for Image IPTC keys
 IptcKeywords = "Iptc.Application2.Keywords"
 
-_DATAMAP = [ ImageArtist, ImageCopyright, ImageDateTime,
-             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
-             ImageDescription ]
+_DATAMAP = [ImageArtist, ImageCopyright, ImageDateTime,
+    ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
+    ImageDescription]
 
 _allmonths = list( [ _dd.short_months[i], _dd.long_months[i], i ] for i in range(1, 13) )
-
 
 def _return_month(month):
     """
@@ -713,6 +713,82 @@ class imageMetadataGramplet(Gramplet):
                 "You may not have write access or privileges for this image?"))
 
 #------------------------------------------------
+# Process Date/ Time fields for saving to image
+#------------------------------------------------
+    def _write_date(self, wdate, wtime):
+        """
+        process the date/ time for writing to image
+
+        @param: wdate -- date from the interface
+        @param: wtime -- time from the interface
+        """
+
+        # if date is in proper format: 1826-Apr-12 or 1826-April-12
+        if (wdate and wdate.count("-") == 2):
+            wyear, wmonth, wday = _split_values(wdate)
+        elif not wdate:
+            wyear, wmonth, wday = False, False, False   
+
+        # if time is in proper format: 14:06:00
+        if (wtime and wtime.count(":") == 2):
+            hour, minutes, seconds = _split_values(wtime)
+        elif not wtime:
+            hour, minutes, seconds = False, False, False
+
+        # if any value for date or time is False, then do not save date
+        bad_datetime = any(value == False for value in [wyear, wmonth, wday, hour, minutes, seconds] )
+        if not bad_datetime:
+
+            # convert each value for date/ time
+            wyear, wday = int(wyear), int(wday)
+            hour, minutes, seconds = int(hour), int(minutes), int(seconds)
+
+            # do some error trapping...
+            if wyear < 1826:  wyear = 1826
+            if wday == 0:  wday = 1
+            if hour >= 24: hour = 0
+            if minutes > 59:  minutes = 59
+            if seconds > 59:  seconds = 59
+
+            # convert month, and do error trapping
+            try:
+                wmonth = int(wmonth)
+            except ValueError:
+                wmonth = _return_month(wmonth)
+            if wmonth > 12:  wmonth = 12
+
+            # get the number of days in wyear of all months
+            numdays = [0] + [calendar.monthrange(year, month)[1] for year 
+                in [wyear] for month in range(1, 13) ]
+            if wday > numdays[wmonth]:
+                wday = numdays[wmonth]
+
+            # ExifImage Year must be greater than 1900
+            # if not, we save it as a string
+            if wyear < 1900:
+                wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
+                    wyear, _dd.long_months[wmonth], wday, hour, minutes, seconds)
+
+            # year -> or equal to 1900
+            else:
+
+                # check to make sure all values are valid for datetime?
+                # if not, date becomes False and will not be saved?  
+                try:
+                    wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
+                except ValueError:
+                        wdate = False
+        else:
+            wdate = False
+
+        if wdate is not False:
+            self.exif_widgets["NewDate"].set_text("%04s-%s-%02d" % (wyear, _dd.long_months[wmonth], wday))
+            self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (hour, minutes, seconds))
+
+        # return the modified date/ time
+        return wdate
+
+#------------------------------------------------
 #     Date/ Time functions
 #------------------------------------------------
     def process_date(self, tmpDate):
@@ -1039,69 +1115,3 @@ def rational_to_dms(coords, ValueType = False):
                 min = convert_value(min)
                 sec = convert_value(sec)
     return deg, min, sec
-
-#------------------------------------------------
-# Process Date/ Time fields for saving to image
-#------------------------------------------------
-def _write_date(wdate, wtime):
-    """
-    process the date/ time for writing to image
-
-    @param: wdate -- date from the interface
-    @param: wtime -- time from the interface
-    """
-
-    # if date is in proper format: 1826-Apr-12 or 1826-April-12
-    if (wdate and wdate.count("-") == 2):
-        year, month, day = _split_values(wdate)
-    elif not wdate:
-        year, month, day = False, False, False   
-
-    # if time is in proper format: 14:06:00
-    if (wtime and wtime.count(":") == 2):
-        hour, minutes, seconds = _split_values(wtime)
-    elif not wtime:
-        hour, minutes, seconds = False, False, False
-
-    # if any value for date or time is False, then do not save date
-    bad_datetime = any(value == False for value in [year, month, day, hour, minutes, seconds] )
-    if not bad_datetime:
-
-        # convert each value for date/ time
-        year, day = int(year), int(day)
-        hour, minutes, seconds = int(hour), int(minutes), int(seconds)
-
-        # do some error trapping...
-        if year < 1826:  year = 1826
-        if day == 0:  day = 1
-        if hour >= 24: hour = 0
-        if minutes > 59:  minutes = 59
-        if seconds > 59:  seconds = 59
-
-        # convert month, and do error trapping
-        try:
-            month = int(month)
-        except ValueError:
-            month = _return_month(month)
-        if month > 12:  month = 12
-
-        # ExifImage Year must be greater than 1900
-        # if not, we save it as a string
-        if year < 1900:
-            wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
-                    year, _dd.long_months[month], day, hour, minutes, seconds)
-
-        # year -> or equal to 1900
-        else:
-
-            # check to make sure all values are valid for datetime?
-            # if not, date becomes False and will not be saved?  
-            try:
-                wdate = datetime(year, month, day, hour, minutes, seconds)
-            except ValueError:
-                    wdate = False
-    else:
-        wdate = False
-
-    # return the modified date/ time
-    return wdate
