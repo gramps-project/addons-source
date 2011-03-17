@@ -31,19 +31,19 @@
 {'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.3', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.3', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.11', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Antavlealternativ', 'g': '3.3', 'i': 'PedigreeChart', 'n': 'Antavla', 't': u'Report', 'v': '1.0.5', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.8', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.3.3', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.3', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.10', 'z': 'GraphView.addon.tgz'}
 {'d': 'Visar h\xc3\xa4ndelser f\xc3\xb6r en person p\xc3\xa5 en tidslinje', 'g': '3.3', 'i': 'timelinequickview', 'n': 'Livsl\xc3\xa4ngdslinje', 't': u'Quickreport', 'v': '1.0.4', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.0', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.3.3', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.1.6', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '0.0.5', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.2.0', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '1.0.0', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Library for web site collections', 'g': '3.3', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person', 'g': '3.3', 'i': 'Descendant Count Quickview', 'n': '\xc3\x84ttlingsr\xc3\xa4knare', 't': u'Quickreport', 'v': '1.0.3', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.4', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.3', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.4', 'z': 'ClockGramplet.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.4.11', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.4.14', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.10', 'z': 'UKWebConnectPack.addon.tgz'}
