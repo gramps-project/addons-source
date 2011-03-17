@@ -38,6 +38,7 @@ _ = get_addon_translator().ugettext
 from const import GLADE_FILE
 from gui.widgets import StyledTextEditor
 from gen.lib import StyledText, Note
+from gen.db import DbTxn
 import Errors
 
 #------------------------------------------------------------------------
@@ -244,17 +245,14 @@ class NoteGramplet(Gramplet):
             person = self._dirty_person
             text = self.texteditor.get_text()
             self.note.set_styledtext(text)
-            trans = self.dbstate.db.transaction_begin()
-            if not self.note.get_handle():
-                self.note.set_type(_("Person Note"))
-                self.dbstate.db.add_note(self.note, trans)
-                person.add_note(self.note.get_handle())
-                self.dbstate.db.commit_person(person, trans)
-                msg = _("Add Note")
-            else:
-                if not self.note.get_gramps_id():
-                    self.note.set_gramps_id(self.dbstate.db.find_next_note_gramps_id())
-                self.dbstate.db.commit_note(self.note, trans)
-                msg = _("Edit Note")
-            self.dbstate.db.transaction_commit(trans, msg)
+            with DbTxn(_("Save Note"), self.dbstate.db) as trans:
+                if not self.note.get_handle():
+                    self.note.set_type(_("Person Note"))
+                    self.dbstate.db.add_note(self.note, trans)
+                    person.add_note(self.note.get_handle())
+                    self.dbstate.db.commit_person(person, trans)
+                else:
+                    if not self.note.get_gramps_id():
+                        self.note.set_gramps_id(self.dbstate.db.find_next_note_gramps_id())
+                    self.dbstate.db.commit_note(self.note, trans)
         self._dirty = False
