@@ -272,6 +272,12 @@ elif command == "build":
             system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                    files=files_str)
     else:
+        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+                length= len(po)
+                locale = po[length-11:length-9]
+                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                system('''msgfmt %(po)s '''
+                       '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
         files += glob.glob(r('''%(addon)s/*.py'''))
         files += glob.glob(r('''%(addon)s/*.glade'''))
         files += glob.glob(r('''%(addon)s/*.xml'''))
