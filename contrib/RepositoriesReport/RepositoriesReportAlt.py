@@ -104,7 +104,7 @@ class Translator:
             # fallback=True will cause the translator to use English if 
             # lang = "en" or if something goes wrong.
             self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR, 
-                                       lang, fallback = True)
+                                       [lang], fallback = True)
                         
     def gettext(self, message):
         """
