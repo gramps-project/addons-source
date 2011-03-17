@@ -79,7 +79,7 @@ class LastChangeReport(Report):
 
     def write_report(self):
         self.doc.start_paragraph("LCR-Title")
-        self.doc.write_text("Last Change Report")
+        self.doc.write_text(_("Last Change Report"))
         self.doc.end_paragraph()
 
         if 'People' in self.what_types:
