@@ -4,8 +4,8 @@
 {'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.3', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.4', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'F\xc3\xb6nster f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.6', 'z': 'LastChange.addon.tgz'}
-{'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.6', 'z': 'LastChange.addon.tgz'}
+{'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.7', 'z': 'LastChange.addon.tgz'}
+{'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.7', 'z': 'LastChange.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.9', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.4', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
