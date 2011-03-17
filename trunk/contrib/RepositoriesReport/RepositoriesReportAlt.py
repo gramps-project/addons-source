@@ -118,9 +118,9 @@ class Translator:
         
         """
         if self.__trans is None:
-            return unicode(gettext.gettext(__file__))
+            return unicode(gettext.gettext(message))
         else:
-            return self.__trans.ugettext(__file__)
+            return self.__trans.ugettext(message)
 
 class RepositoryReportAlt(Report):
     """
