@@ -289,7 +289,7 @@ class imageMetadataGramplet(Gramplet):
         self.plugin_image = ImageMetadata(self.image_path)
 
         # read the image metadata
-        self.read_metadata(self.orig_image)
+        self.read_metadata(self.plugin_image)
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0, source=None):
@@ -486,13 +486,13 @@ class imageMetadataGramplet(Gramplet):
                 KeyValue = ""
         return KeyValue
 
-    def read_metadata(self, obj):
+    def read_metadata(self, imgobj):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
 
         # reads the media metadata into this addon
-        self.plugin_image.read()
+        imgobj.read()
 
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
@@ -519,7 +519,7 @@ class imageMetadataGramplet(Gramplet):
             # media image DateTime
             elif KeyTag == ImageDateTime:
 
-                # date1 may come from the image metadata
+                # date1 comes from the image metadata
                 # date2 may come from the Gramps database 
                 date1 = self._get_value(KeyTag)
                 date2 = self.orig_image.get_date_object()
@@ -527,8 +527,6 @@ class imageMetadataGramplet(Gramplet):
                 use_date = date1 or date2
                 if use_date:
                     self.process_date(use_date)
-                else:
-                    self.process_date(None)
 
             # Latitude and Latitude Reference
             elif KeyTag == ImageLatitude:
@@ -552,12 +550,11 @@ class imageMetadataGramplet(Gramplet):
 
                         # Latitude Direction Reference
                         LatitudeRef = self._get_value(ImageLatitudeRef)
+                        # Longitude Direction Reference
+                        LongitudeRef = self._get_value(ImageLongitudeRef)
 
                         self.exif_widgets["Latitude"].set_text(
                             """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, LatitudeRef) )
-
-                        # Longitude Direction Reference
-                        LongitudeRef = self._get_value(ImageLongitudeRef)
 
                         self.exif_widgets["Longitude"].set_text(
                             """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
@@ -747,22 +744,27 @@ class imageMetadataGramplet(Gramplet):
             hour, minutes, seconds = int(hour), int(minutes), int(seconds)
 
             # do some error trapping...
-            if wyear < 1826:  wyear = 1826
-            if wday == 0:  wday = 1
-            if hour >= 24: hour = 0
-            if minutes > 59:  minutes = 59
-            if seconds > 59:  seconds = 59
+            if wday == 0:
+                wday = 1
+            if hour >= 24:
+                hour = 0
+            if minutes > 59:
+                minutes = 59
+            if seconds > 59:
+                seconds = 59
 
             # convert month, and do error trapping
             try:
                 wmonth = int(wmonth)
             except ValueError:
                 wmonth = _return_month(wmonth)
-            if wmonth > 12:  wmonth = 12
+            if wmonth > 12:
+                wmonth = 12
 
             # get the number of days in wyear of all months
             numdays = [0] + [calendar.monthrange(year, month)[1] for year 
                 in [wyear] for month in range(1, 13) ]
+
             if wday > numdays[wmonth]:
                 wday = numdays[wmonth]
 
@@ -774,19 +776,16 @@ class imageMetadataGramplet(Gramplet):
 
             # year -> or equal to 1900
             else:
+                wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
 
-                # check to make sure all values are valid for datetime?
-                # if not, date becomes False and will not be saved?  
-                try:
-                    wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
-                except ValueError:
-                        wdate = False
         else:
             wdate = False
 
         if wdate is not False:
-            self.exif_widgets["NewDate"].set_text("%04s-%s-%02d" % (wyear, _dd.long_months[wmonth], wday))
-            self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (hour, minutes, seconds))
+            self.exif_widgets["NewDate"].set_text("%04d-%s-%02d" % (
+                wyear, _dd.long_months[wmonth], wday) )
+            self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (
+                hour, minutes, seconds) )
 
         # return the modified date/ time
         return wdate
