@@ -40,6 +40,7 @@ from gen.display.name import displayer as name_displayer
 import DateHandler
 import Errors
 import gen.lib
+from gen.db import DbTxn
 
 #------------------------------------------------------------------------
 #
@@ -645,39 +646,38 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         Called when the user clicks the OK button.
         """
-        trans = self.db.transaction_begin()
-        if not self.event.get_handle():
-            self.db.add_event(self.event, trans)
+        with DbTxn(self.get_menu_title(), self.db) as trans:
+            if not self.event.get_handle():
+                self.db.add_event(self.event, trans)
 
-        # Update people on the census
-        all_people = []    
-        for order, row in enumerate(self.model):
-            all_people.append(row[0])
-            person = self.db.get_person_from_handle(row[0])
-            event_ref = self.get_census_event_ref(person)
-            if event_ref is None:
-                # Add new link to census
-                event_ref = gen.lib.EventRef()
-                event_ref.ref = self.event.get_handle()
-                event_ref.set_role(gen.lib.EventRoleType.PRIMARY)
-                person.add_event_ref(event_ref)
-            # Write attributes
-            attrs = event_ref.get_attribute_list()
-            self.set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
-            for offset, name in enumerate(self.columns[1:]):
-                self.set_attribute(event_ref, attrs, name, row[offset + 2])
-            self.db.commit_person(person, trans)
+            # Update people on the census
+            all_people = []    
+            for order, row in enumerate(self.model):
+                all_people.append(row[0])
+                person = self.db.get_person_from_handle(row[0])
+                event_ref = self.get_census_event_ref(person)
+                if event_ref is None:
+                    # Add new link to census
+                    event_ref = gen.lib.EventRef()
+                    event_ref.ref = self.event.get_handle()
+                    event_ref.set_role(gen.lib.EventRoleType.PRIMARY)
+                    person.add_event_ref(event_ref)
+                # Write attributes
+                attrs = event_ref.get_attribute_list()
+                self.set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
+                for offset, name in enumerate(self.columns[1:]):
+                    self.set_attribute(event_ref, attrs, name, row[offset + 2])
+                self.db.commit_person(person, trans)
 
-        # Remove links to people no longer on census
-        for handle in (set(self.initial_people) - set(all_people)):
-            person = self.db.get_person_from_handle(handle)
-            ref_list = [event_ref for event_ref in person.get_event_ref_list()
-                                if event_ref.ref != self.event.handle]
-            person.set_event_ref_list(ref_list)
-            self.db.commit_person(person, trans)
+            # Remove links to people no longer on census
+            for handle in (set(self.initial_people) - set(all_people)):
+                person = self.db.get_person_from_handle(handle)
+                ref_list = [event_ref for event_ref in person.get_event_ref_list()
+                                    if event_ref.ref != self.event.handle]
+                person.set_event_ref_list(ref_list)
+                self.db.commit_person(person, trans)
 
-        self.db.commit_event(self.event, trans)
-        self.db.transaction_commit(trans, self.get_menu_title())
+            self.db.commit_event(self.event, trans)
         self.close()
 
     def close(self, *args):
