@@ -1,0 +1,160 @@
+# Swedish translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-17 10:32+0100\n"
+"PO-Revision-Date: 2011-03-17 10:41+0100\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: LastChange/LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr "Gramplet med de senaste ändringarna"
+
+#: LastChange/LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr "Lista de tio personposterna, som har ändrats"
+
+#: LastChange/LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr "Senaste ändringar"
+
+#: LastChange/LastChange.gpr.py:39
+msgid "Last Change Report"
+msgstr "Rapport över senaste ändringar"
+
+#: LastChange/LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr "Rapport över de poster, som har ändrats senast"
+
+#: LastChange/LastChangeGramplet.py:49
+msgid "Double-click name for details"
+msgstr "Dubbelklicka på namn för detaljer"
+
+#: LastChange/LastChangeGramplet.py:50
+msgid "No Family Tree loaded."
+msgstr "Inget släktträd laddat."
+
+#: LastChange/LastChangeGramplet.py:54
+msgid "Processing..."
+msgstr "Bearbetar..."
+
+#: LastChange/LastChangeGramplet.py:66
+msgid "changed on"
+msgstr "ändrat det"
+
+#: LastChange/LastChangeReport.py:147
+msgid "People Changed"
+msgstr "Ändrade personer"
+
+#: LastChange/LastChangeReport.py:148 LastChange/LastChangeReport.py:163
+#: LastChange/LastChangeReport.py:194 LastChange/LastChangeReport.py:214
+#: LastChange/LastChangeReport.py:229
+msgid "ID"
+msgstr "ID"
+
+#: LastChange/LastChangeReport.py:148
+msgid "Person"
+msgstr "Person"
+
+#: LastChange/LastChangeReport.py:148 LastChange/LastChangeReport.py:163
+#: LastChange/LastChangeReport.py:194 LastChange/LastChangeReport.py:214
+#: LastChange/LastChangeReport.py:229
+msgid "Changed On"
+msgstr "Ändrat det"
+
+#: LastChange/LastChangeReport.py:162
+msgid "Families Changed"
+msgstr "Ändrade familjer"
+
+#: LastChange/LastChangeReport.py:163
+msgid "Family Surname"
+msgstr "Familjenamn"
+
+#: LastChange/LastChangeReport.py:180
+#, python-format
+msgid "%s and %s"
+msgstr "%s och %s"
+
+#: LastChange/LastChangeReport.py:193
+msgid "Events Changed"
+msgstr "Ändrade händelser"
+
+#: LastChange/LastChangeReport.py:194
+msgid "Event"
+msgstr "Händelse"
+
+#: LastChange/LastChangeReport.py:213
+msgid "Places Changed"
+msgstr "Ändrade platser"
+
+#: LastChange/LastChangeReport.py:214
+msgid "Place"
+msgstr "Plats"
+
+#: LastChange/LastChangeReport.py:228
+msgid "Media Changed"
+msgstr "Ändrade media"
+
+#: LastChange/LastChangeReport.py:229
+msgid "Path"
+msgstr "Sökväg"
+
+#: LastChange/LastChangeReport.py:249
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: LastChange/LastChangeReport.py:250
+msgid "Select From:"
+msgstr "Välj från:"
+
+#: LastChange/LastChangeReport.py:251
+msgid "People"
+msgstr "Personer"
+
+#: LastChange/LastChangeReport.py:252
+msgid "Families"
+msgstr "Familjer"
+
+#: LastChange/LastChangeReport.py:253
+msgid "Places"
+msgstr "Platser"
+
+#: LastChange/LastChangeReport.py:254
+msgid "Events"
+msgstr "Händelser"
+
+#: LastChange/LastChangeReport.py:255
+msgid "Media"
+msgstr "Media"
+
+#: LastChange/LastChangeReport.py:256
+msgid "Sources"
+msgstr "Källor"
+
+#: LastChange/LastChangeReport.py:272
+msgid "The style used for the title of the page."
+msgstr "Mall använd för sidans titel."
+
+#: LastChange/LastChangeReport.py:287
+msgid "The style used for the section headers."
+msgstr "Mall använd för styckerubriker."
+
+#: LastChange/LastChangeReport.py:297
+msgid "The style used for normal text"
+msgstr "Mall för normal text."
+
+#: LastChange/LastChangeReport.py:309
+msgid "The basic style used for table headings."
+msgstr "Mall använd för tabellhuvud."
+
