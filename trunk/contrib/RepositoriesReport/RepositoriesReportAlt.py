@@ -4,6 +4,8 @@
 # Copyright (C) 2006-2007  Alex Roitman
 # Copyright (C) 2008-2009  Gary Burton
 # Copyright (C) 2007-2011  Jerome Rapinat
+# Copyright (C) 2009  Brian G. Matherly
+# Copyright (C) 2010  Douglas S. Blank
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +33,7 @@ Display Sources related to repositories
 #-------------------------------------------------------------------------
 
 import os
+import gettext
 
 #-------------------------------------------------------------------------
 #
@@ -43,14 +46,16 @@ from gen.plug.menu import BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
 from gui.plug.report import MenuReportOptions
-from libtranslate import Translator, get_language_string
+from libtranslate import get_language_string
 import gen.proxy
-from TransUtils import get_addon_translator
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
-_ = get_addon_translator(__file__).ugettext
+LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
+LOCALEDOMAIN = 'addon'
+
+# see TransUtils.py
 
 def get_available_translations():
     """
@@ -61,8 +66,6 @@ def get_available_translations():
     
     """
     languages = ["en"]
-    
-    LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
     
     if LOCALEDIR is None:
         return languages
@@ -76,6 +79,48 @@ def get_available_translations():
     languages.sort()
 
     return languages
+    
+# see plugins/lib/libtranslate.py
+
+class Translator:
+    """
+    This class provides translated strings for the configured language.
+    """
+    
+    def __init__(self, lang="default"):
+        """
+        :param lang: The language to translate to. 
+            The language can be:
+               * The name of any installed .mo file
+               * "en" to use the message strings in the code
+               * "default" to use the default translation being used by gettext.
+        :type lang: string
+        :return: nothing
+        
+        """
+        if lang == "default":
+            self.__trans = None
+        else:
+            # fallback=True will cause the translator to use English if 
+            # lang = "en" or if something goes wrong.
+            self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR, 
+                                       get_available_translations(),
+                                       fallback = True)
+            
+    def gettext(self, message):
+        """
+        Return the unicode translated string.
+        
+        :param message: The message to be translated.
+        :type message: string
+        :returns: The translated message
+        :rtype: unicode
+        
+        """
+        if self.__trans is None:
+            return unicode(gettext.gettext(__file__))
+        else:
+            return self.__trans.ugettext(__file__)
 
 class RepositoryReportAlt(Report):
     """
@@ -109,16 +154,20 @@ class RepositoryReportAlt(Report):
         Report.__init__(self, database, options_class)
 
         menu = options_class.menu
-        self.inc_intern = menu.get_option_by_name('incintern').get_value()
-        self.inc_addres = menu.get_option_by_name('incaddres').get_value()
-        self.inc_author = menu.get_option_by_name('incauthor').get_value()
-        self.inc_abbrev = menu.get_option_by_name('incabbrev').get_value()
-        self.inc_public = menu.get_option_by_name('incpublic').get_value()
-        self.inc_datamp = menu.get_option_by_name('incdatamp').get_value()
-        self.inclu_note = menu.get_option_by_name('inclunote').get_value()
-        self.incl_media = menu.get_option_by_name('inclmedia').get_value()
-        self.inc_privat = menu.get_option_by_name('incprivat').get_value()
-        language = menu.get_option_by_name('trans').get_value()
+        get_option_by_name = menu.get_option_by_name
+        get_value = lambda name: get_option_by_name(name).get_value()
+        
+        self.inc_intern = get_value('incintern')
+        self.inc_addres = get_value('incaddres')
+        self.inc_author = get_value('incauthor')
+        self.inc_abbrev = get_value('incabbrev')
+        self.inc_public = get_value('incpublic')
+        self.inc_datamp = get_value('incdatamp')
+        self.inclu_note = get_value('inclunote')
+        self.incl_media = get_value('inclmedia')
+        self.inc_privat = get_value('incprivat')
+        
+        language = get_value('trans')
         translator = Translator(language)
         self._ = translator.gettext
 
@@ -356,9 +405,8 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
         addopt('incprivat', incprivat)
 
-        trans = EnumeratedListOption(_("Translation"), 
-                                      Translator.DEFAULT_TRANSLATION_STR)
-        trans.add_item(Translator.DEFAULT_TRANSLATION_STR, _("default"))
+        trans = EnumeratedListOption(_("Translation"), "default")
+        trans.add_item("default", _("Default"))
         for language in get_available_translations():
             trans.add_item(language, get_language_string(language))
         trans.set_help(_("The translation to be used for the report."))
