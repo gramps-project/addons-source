@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-17 10:32+0100\n"
+"POT-Creation-Date: 2011-03-17 11:07+0100\n"
 "PO-Revision-Date: 2011-03-17 10:41+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr "Lista de tio personposterna, som har ändrats"
 msgid "Latest Changes"
 msgstr "Senaste ändringar"
 
-#: LastChange/LastChange.gpr.py:39
+#: LastChange/LastChange.gpr.py:39 LastChange/LastChangeReport.py:82
 msgid "Last Change Report"
 msgstr "Rapport över senaste ändringar"
 
@@ -157,4 +157,3 @@ msgstr "Mall för normal text."
 #: LastChange/LastChangeReport.py:309
 msgid "The basic style used for table headings."
 msgstr "Mall använd för tabellhuvud."
-
