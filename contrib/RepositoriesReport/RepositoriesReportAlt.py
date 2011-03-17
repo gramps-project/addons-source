@@ -236,9 +236,12 @@ class RepositoryReportAlt(Report):
                 self.doc.start_paragraph('REPO-Section2')
 
                 #if self.inc_intern:
-                    #self.doc.write_text(_('Internet: %s') % internet)
+                    #self.doc.write_text(self._('Internet:'))
+                    #self.doc.write_text(internet)
                 if self.inc_addres:
-                    self.doc.write_text(self._('\nAddress: %s') % address)
+                    self.doc.write_text(self._('Address:'))
+                    self.doc.write_text(address)
+                    
                 self.doc.end_paragraph()
 
     def __write_referenced_sources(self, handle):
@@ -296,16 +299,26 @@ class RepositoryReportAlt(Report):
                     # if need, generates child section
 
                     if self.inc_author or self.inc_abbrev or self.inc_public or self.inc_datamp:
-                        self.doc.start_paragraph('REPO-Section2')
                         if self.inc_author:
-                            self.doc.write_text(self._('Author: %s') % author)
+                            self.doc.start_paragraph('REPO-Section2')
+                            self.doc.write_text(self._('Author:'))
+                            self.doc.write_text(author)
+                            self.doc.end_paragraph()
                         if self.inc_abbrev:
-                            self.doc.write_text(self._('\nAbbreviation: %s') % abbrev)
+                            self.doc.start_paragraph('REPO-Section2')
+                            self.doc.write_text(self._('Abbreviation:'))
+                            self.doc.write_text(abbrev)
+                            self.doc.end_paragraph()
                         if self.inc_public:
-                            self.doc.write_text(self._('\nPublication information: %s') % public)
+                            self.doc.start_paragraph('REPO-Section2')
+                            self.doc.write_text(self._('Publication information:'))
+                            self.doc.write_text(public)
+                            self.doc.end_paragraph()
                         if self.inc_datamp:
-                            self.doc.write_text(self._('\nData: %s') % data)
-                        self.doc.end_paragraph()
+                            self.doc.start_paragraph('REPO-Section2')
+                            self.doc.write_text(self._('Data:'))
+                            self.doc.write_text(data)
+                            self.doc.end_paragraph()
 
                     # display notes and allows markups
 
