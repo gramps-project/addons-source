@@ -26,22 +26,56 @@ Display Sources related to repositories
 
 #-------------------------------------------------------------------------
 #
+# python modules
+#
+#-------------------------------------------------------------------------
+
+import os
+
+#-------------------------------------------------------------------------
+#
 # gramps modules
 #
 #-------------------------------------------------------------------------
 
+import const
 from gen.plug.menu import BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
 from gui.plug.report import MenuReportOptions
 from libtranslate import Translator, get_language_string
 import gen.proxy
-from TransUtils import get_addon_translator, get_available_translations
+from TransUtils import get_addon_translator
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
 _ = get_addon_translator(__file__).ugettext
+
+def get_available_translations():
+    """
+    Get a list of available translations.
+
+    :returns: A list of translation languages.
+    :rtype: unicode[]
+    
+    """
+    languages = ["en"]
+    
+    LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
+    
+    if LOCALEDIR is None:
+        return languages
+
+    for langdir in os.listdir(LOCALEDIR):
+        mofilename = os.path.join( LOCALEDIR, langdir, 
+                                   "LC_MESSAGES", "addon.mo")
+        if os.path.exists(mofilename):
+            languages.append(langdir)
+
+    languages.sort()
+
+    return languages
 
 class RepositoryReportAlt(Report):
     """
