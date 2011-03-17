@@ -56,12 +56,8 @@ msgstr "Privatno"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:163
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
-msgstr ""
-"\n"
-"Adresa: %s"
+msgid "Address:"
+msgstr "Adresa:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:191
 #, python-format
@@ -70,35 +66,23 @@ msgstr "%s. Privatno"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:231
 #, python-format
-msgid "Author: %s"
-msgstr "Autor: %s"
+msgid "Author:"
+msgstr "Autor:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:233
 #, python-format
-msgid ""
-"\n"
-"Abbreviation: %s"
-msgstr ""
-"\n"
-"Skraćenica: %s"
+msgid "Abbreviation:"
+msgstr "Skraćenica:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:235
 #, python-format
-msgid ""
-"\n"
-"Publication information: %s"
-msgstr ""
-"\n"
-"Informacije o publikaciji: %s"
+msgid "Publication information:"
+msgstr "Informacije o publikaciji:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
-msgstr ""
-"\n"
-"Podaci: %s"
+msgid "Data:"
+msgstr "Podaci:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
 msgid "Include repository's urls"

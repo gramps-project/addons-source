@@ -58,12 +58,8 @@ msgstr "Privat"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:163
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
-msgstr ""
-"\n"
-"Adress: %s"
+msgid "Address:"
+msgstr "Adress:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:191
 #, python-format
@@ -72,35 +68,23 @@ msgstr "%s. Privat"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:231
 #, python-format
-msgid "Author: %s"
-msgstr "Författare: %s"
+msgid "Author:"
+msgstr "Författare:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:233
 #, python-format
-msgid ""
-"\n"
-"Abbreviation: %s"
-msgstr ""
-"\n"
-"Förkortning: %s"
+msgid "Abbreviation:"
+msgstr "Förkortning:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:235
 #, python-format
-msgid ""
-"\n"
-"Publication information: %s"
-msgstr ""
-"\n"
-"Publiceringsinformation: %s"
+msgid "Publication information:"
+msgstr "Publiceringsinformation:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
-msgstr ""
-"\n"
-"Data: %s"
+msgid "Data:"
+msgstr "Data:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
 msgid "Include repository's urls"

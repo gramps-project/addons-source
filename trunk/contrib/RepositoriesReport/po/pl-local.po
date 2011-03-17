@@ -56,12 +56,8 @@ msgstr "Poufny"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:163
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
-msgstr ""
-"\n"
-"Adres: %s"
+msgid "Address:"
+msgstr "Adres:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:191
 #, python-format
@@ -70,35 +66,23 @@ msgstr "%s. Poufny"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:231
 #, python-format
-msgid "Author: %s"
-msgstr "Autor: %s"
+msgid "Author:"
+msgstr "Autor:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:233
 #, python-format
-msgid ""
-"\n"
-"Abbreviation: %s"
-msgstr ""
-"\n"
-"Skrót: %s"
+msgid "Abbreviation:"
+msgstr "Skrót:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:235
 #, python-format
-msgid ""
-"\n"
-"Publication information: %s"
-msgstr ""
-"\n"
-"Informacje o publikacji: %s"
+msgid "Publication information:"
+msgstr "Informacje o publikacji:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
-msgstr ""
-"\n"
-"Data: %s"
+msgid "Data:"
+msgstr "Data:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
 msgid "Include repository's urls"
