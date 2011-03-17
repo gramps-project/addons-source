@@ -34,11 +34,13 @@ register(GRAMPLET,
          gramplet_title=_("Image Metadata"),
          detached_width = 510,
          detached_height = 250,
-         version = '1.4.13',
+         version = '1.4.14',
          gramps_target_version = '3.3.0',
          status=UNSTABLE,
          fname="ImageMetadataGramplet.py",
          help_url="Image Metadata Gramplet",
+        author_name = ['Rob G. Healey'],
+        author_email = ['robhealey1@gmail.com'],
          )
 
 
