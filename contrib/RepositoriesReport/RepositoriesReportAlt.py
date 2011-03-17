@@ -65,7 +65,7 @@ def get_available_translations():
     :rtype: unicode[]
     
     """
-    languages = ["en"]
+    languages = []
     
     if LOCALEDIR is None:
         return languages
@@ -87,7 +87,7 @@ class Translator:
     This class provides translated strings for the configured language.
     """
     
-    def __init__(self, lang="default"):
+    def __init__(self, lang="en"):
         """
         :param lang: The language to translate to. 
             The language can be:
@@ -98,15 +98,14 @@ class Translator:
         :return: nothing
         
         """
-        if lang == "default":
+        if lang == "en":
             self.__trans = None
         else:
             # fallback=True will cause the translator to use English if 
             # lang = "en" or if something goes wrong.
             self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR, 
-                                       get_available_translations(),
-                                       fallback = True)
-            
+                                       lang, fallback = True)
+                        
     def gettext(self, message):
         """
         Return the unicode translated string.
@@ -419,7 +418,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         addopt('incprivat', incprivat)
 
         trans = EnumeratedListOption(_("Translation"), "default")
-        trans.add_item("default", _("Default"))
+        trans.add_item("default", _("English"))
         for language in get_available_translations():
             trans.add_item(language, get_language_string(language))
         trans.set_help(_("The translation to be used for the report."))
