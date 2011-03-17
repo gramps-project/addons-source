@@ -88,44 +88,28 @@ msgstr "De gebruikte stijl voor iedere sectie."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:158
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
-msgstr ""
-"\n"
-"Adres: %s"
+msgid "Address:"
+msgstr "Adres:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:218
 #, python-format
-msgid "Author: %s"
-msgstr "Auteur: %s"
+msgid "Author:"
+msgstr "Auteur:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:220
 #, python-format
-msgid ""
-"\n"
-"Abbreviation: %s"
-msgstr ""
-"\n"
-"Afkorting: %s"
+msgid "Abbreviation:"
+msgstr "Afkorting:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:222
 #, python-format
-msgid ""
-"\n"
-"Publication information: %s"
-msgstr ""
-"\n"
-"Publicatie-informatie: %s"
+msgid "Publication information:"
+msgstr "Publicatie-informatie:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:224
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
-msgstr ""
-"\n"
-"Datum: %s"
+msgid "Data:"
+msgstr "Datum:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:287
 msgid "Include repository's urls"

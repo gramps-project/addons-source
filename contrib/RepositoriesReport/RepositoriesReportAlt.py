@@ -116,10 +116,10 @@ class Translator:
         :rtype: unicode
         
         """
-        if self.__trans is None:
-            return unicode(gettext.gettext(message))
+        if self.__trans:
+            return self.__trans.gettext(message)
         else:
-            return self.__trans.ugettext(message)
+            return unicode(gettext.gettext(message))
 
 class RepositoryReportAlt(Report):
     """

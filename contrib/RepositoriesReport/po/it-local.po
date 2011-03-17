@@ -56,40 +56,30 @@ msgstr "Privato"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:163
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
+msgid "Address:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:191
-#, fuzzy, python-format
 msgid "%s. Private"
-msgstr "Privato"
+msgstr "%s. Privato"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:231
-#, fuzzy, python-format
-msgid "Author: %s"
-msgstr "Autore"
+msgid "Author:"
+msgstr "Autore:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:233
 #, python-format
-msgid ""
-"\n"
-"Abbreviation: %s"
+msgid "Abbreviation:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:235
 #, python-format
-msgid ""
-"\n"
-"Publication information: %s"
+msgid "Publication information:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
+msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323

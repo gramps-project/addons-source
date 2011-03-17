@@ -55,9 +55,7 @@ msgstr "Privat"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:163
 #, python-format
-msgid ""
-"\n"
-"Address: %s"
+msgid "Address:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:191
@@ -67,28 +65,24 @@ msgstr "%s. Privat"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:231
 #, python-format
-msgid "Author: %s"
-msgstr "Autor: %s"
+msgid "Author:"
+msgstr "Autor:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:233
 #, python-format
 msgid ""
-"\n"
-"Abbreviation: %s"
+"Abbreviation:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:235
 #, python-format
 msgid ""
-"\n"
-"Publication information: %s"
+"Publication information:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
 #, python-format
-msgid ""
-"\n"
-"Data: %s"
+msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
