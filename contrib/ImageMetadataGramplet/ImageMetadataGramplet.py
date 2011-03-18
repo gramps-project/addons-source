@@ -710,7 +710,7 @@ class imageMetadataGramplet(Gramplet):
 #------------------------------------------------
 # Process Date/ Time fields for saving to image
 #------------------------------------------------
-    def _write_date(self, wdate, wtime):
+    def _write_date(self, wdate = False, wtime = False):
         """
         process the date/ time for writing to image
 
@@ -718,47 +718,57 @@ class imageMetadataGramplet(Gramplet):
         @param: wtime -- time from the interface
         """
 
+        # set to initial values, so if it is something wrong,
+        # so we can catch it...?
+        wyear, wmonth, wday = False, False, False
+        hour, minutes, seconds = False, False, False
+
         # if date is in proper format: 1826-Apr-12 or 1826-April-12
         if (wdate and wdate.count("-") == 2):
             wyear, wmonth, wday = _split_values(wdate)
-        elif not wdate:
-            wyear, wmonth, wday = False, False, False   
 
         # if time is in proper format: 14:06:00
         if (wtime and wtime.count(":") == 2):
             hour, minutes, seconds = _split_values(wtime)
-        elif not wtime:
-            hour, minutes, seconds = False, False, False
 
         # if any value for date or time is False, then do not save date
         bad_datetime = any(value == False for value in [wyear, wmonth, wday, hour, minutes, seconds] )
         if not bad_datetime:
 
             # convert each value for date/ time
-            wyear, wday = int(wyear), int(wday)
-            hour, minutes, seconds = int(hour), int(minutes), int(seconds)
-
-            # do some error trapping...
-            if wday == 0:
-                wday = 1
-            if hour >= 24:
-                hour = 0
-            if minutes > 59:
-                minutes = 59
-            if seconds > 59:
-                seconds = 59
-
-            # convert month, and do error trapping
             try:
-                wmonth = int(wmonth)
+                wyear, wday = int(wyear), int(wday)
             except ValueError:
-                wmonth = _return_month(wmonth)
-            if wmonth > 12:
-                wmonth = 12
+                pass
 
-            # get the number of days in wyear of all months
-            numdays = [0] + [calendar.monthrange(year, month)[1] for year 
-                in [wyear] for month in range(1, 13) ]
+            try:
+                hour, minutes, seconds = int(hour), int(minutes), int(seconds)
+            except ValueError:
+                pass
+
+            if wdate is not False:
+
+                # do some error trapping...
+                if wday == 0:
+                    wday = 1
+                if hour >= 24:
+                    hour = 0
+                if minutes > 59:
+                    minutes = 59
+                if seconds > 59:
+                    seconds = 59
+
+                # convert month, and do error trapping
+                try:
+                    wmonth = int(wmonth)
+                except ValueError:
+                    wmonth = _return_month(wmonth)
+                if wmonth > 12:
+                    wmonth = 12
+
+                # get the number of days in wyear of all months
+                numdays = [0] + [calendar.monthrange(year, month)[1] for year 
+                    in [wyear] for month in range(1, 13) ]
 
             if wday > numdays[wmonth]:
                 wday = numdays[wmonth]
@@ -773,14 +783,14 @@ class imageMetadataGramplet(Gramplet):
             else:
                 wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
 
-        else:
-            wdate = False
-
-        if wdate is not False:
             self.exif_widgets["NewDate"].set_text("%04d-%s-%02d" % (
                 wyear, _dd.long_months[wmonth], wday) )
             self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (
                 hour, minutes, seconds) )
+
+        else:
+
+            WarningDialog(_("There was a problem with either the date and/ or time."))
 
         # return the modified date/ time
         return wdate
