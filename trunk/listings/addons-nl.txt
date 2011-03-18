@@ -1,19 +1,19 @@
 {'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.4', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.3', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.1.6', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '0.0.5', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.2.2', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '1.0.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.", 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libaccess.addon.tgz'}
 {'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingavegramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.3', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.2', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.4', 'z': 'Census.addon.tgz'}
-{'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': "'Laatste-wijziging'-gramplet", 't': u'Gramplet', 'v': '0.0.5', 'z': 'LastChange.addon.tgz'}
-{'d': 'Verslag van de laatst gewijzigde gegevens', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'verslag laatste wijziging', 't': u'Report', 'v': '0.0.5', 'z': 'LastChange.addon.tgz'}
+{'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': "'Laatste-wijziging'-gramplet", 't': u'Gramplet', 'v': '0.0.7', 'z': 'LastChange.addon.tgz'}
+{'d': 'Verslag van de laatst gewijzigde gegevens', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'verslag laatste wijziging', 't': u'Report', 'v': '0.0.7', 'z': 'LastChange.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.2', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Alternatieve versie van de traditionele stamboomgrafiek', 'g': '3.3', 'i': 'PedigreeChart', 'n': 'Stamboomgrafiek', 't': u'Report', 'v': '1.0.5', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Het aantal afstammelingen voor elke persoon tonen.', 'g': '3.3', 'i': 'Descendant Count Quickview', 'n': 'Afstammelingen tellen', 't': u'Quickreport', 'v': '1.0.3', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet om personen en afstammelingentelling te tonene', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': 'Afstammelingentellingsgramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'DescendantCount.addon.tgz'}
-{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.5', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.8', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Familiestamboom', 't': u'Report', 'v': '3.3.3', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.', 'g': '3.3', 'i': 'PlaceCompletion', 'n': 'Locatie vervolledigen', 't': u'Tool', 'v': '0.0.4', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': "Bibliotheek voor 'webstek'-verzamelingen", 'g': '3.3', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.3', 'z': 'libwebconnect.addon.tgz'}
@@ -33,7 +33,7 @@
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.9', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet om tekst te importeren', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Importgramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .', 'g': '3.3', 'i': 'TodoReport', 'n': "'Nog te doen'-verslag", 't': u'Report', 'v': '1.2.2', 'z': 'ToDoReport.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.4.13', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.4.15', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.3.3', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'De namen van alle personen tonen', 'g': '3.3', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.2', 'z': 'AllNamesQuickview.addon.tgz'}
@@ -46,4 +46,4 @@
 {'d': "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ", 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.0', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.4', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.', 'g': '3.3', 'i': 'LinesOfDescendency', 'n': 'Afstammelingslijnen', 't': u'Report', 'v': '1.1.3', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Dynamische grafiek van de relaties', 'g': '3.3', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.10', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamische grafiek van de relaties', 'g': '3.3', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.15', 'z': 'GraphView.addon.tgz'}

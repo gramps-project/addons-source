@@ -48,8 +48,9 @@ _ = get_addon_translator().ugettext
 # import the pyexiv2 library classes for this addon
 _DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/"
 pyexiv2_required = True
-Min_VERSION = "pyexiv2-%d.%d.%d" % (0, 2, 2)
-PrefVersion = "pyexiv2-%d.%d.%d" % (0, 3, 0)
+Min_VERSION = (0, 1, 3)
+Min_VERSION_str = "pyexiv2-%d.%d.%d" % (0, 2, 2)
+PrefVersion_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
 
 try:
     import pyexiv2
@@ -60,7 +61,7 @@ except ImportError:
     raise Exception(_("The python binding library, pyexiv2, to exiv2 is not "
         "installed on this computer.\n It can be downloaded from here: %s\n\n"
         "You will need to download at least %s .  I recommend that you download "
-        "and install, %s .") % ( _DOWNLOAD_LINK, Min_VERSION, PrefVersion) )
+        "and install, %s .") % ( _DOWNLOAD_LINK, Min_VERSION_str, PrefVersion_str) )
                
 except AttributeError:
     pyexiv2_required = False
@@ -68,7 +69,7 @@ except AttributeError:
 if not pyexiv2_required:
     raise Exception(_("The minimum required version for pyexiv2 must be %s \n"
         "or greater.  You may download it from here: %s\n\n  I recommend getting, %s") % (
-         Min_VERSION, _DOWNLOAD_LINK, PrefVersion) )
+         Min_VERSION_str, _DOWNLOAD_LINK, PrefVersion_str) )
 
 # import the required classes for use in this gramplet
 from pyexiv2 import ExifTag, ImageMetadata, IptcTag, Rational
@@ -89,7 +90,7 @@ from PlaceUtils import conv_lat_lon
 _valid_types = ["jpeg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
 # set up Exif keys for Image.exif_keys
-ImageArtist        = "Exif.Image.Artist"
+ImageArtist       = "Exif.Image.Artist"
 ImageCopyright    = "Exif.Image.Copyright"
 ImageDateTime     = "Exif.Image.DateTime"
 ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
@@ -102,10 +103,10 @@ ImageDescription  = "Exif.Image.ImageDescription"
 IptcKeywords = "Iptc.Application2.Keywords"
 
 _DATAMAP = [ImageArtist, ImageCopyright, ImageDateTime,
-    ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
-    ImageDescription]
+            ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
+            ImageDescription]
 
-_allmonths = list( [ _dd.short_months[i], _dd.long_months[i], i ] for i in range(1, 13) )
+_allmonths = list( [_dd.short_months[i], _dd.long_months[i], i ] for i in range(1, 13) )
 
 def _return_month(month):
     """
@@ -164,11 +165,8 @@ class imageMetadataGramplet(Gramplet):
         rows = gtk.VBox()
         for items in [
 
-            # Active image's title/ description
-            ("ActiveImage",     _("Active Image"), None, True,  [],  False, 0, None),
-
-            # Artist field
-            ("Artist",          _("Artist"),       None, False, [],  True,  0, None),
+            # Author field
+            ("Author",          _("Artist/ Author"), None, False, [],  True,  0, None),
 
             # copyright field
             ("Copyright",       _("Copyright"),    None, False, [],  True,  0, None),
@@ -202,7 +200,7 @@ class imageMetadataGramplet(Gramplet):
             rows.pack_start(row, False)
 
         # separator before description textbox
-        rows.pack_start( gtk.HSeparator(), True )
+        rows.pack_start(gtk.HSeparator(), True)
 	
         # description textbox label
         label = gtk.Label()
@@ -253,7 +251,7 @@ class imageMetadataGramplet(Gramplet):
         self._clear_image(self.orig_image)
 
         # get media object from database
-        self.orig_image = self.dbstate.db.get_object_from_handle( self.active_media )
+        self.orig_image = self.dbstate.db.get_object_from_handle(self.active_media)
         if not self.orig_image:
             return
 
@@ -262,7 +260,7 @@ class imageMetadataGramplet(Gramplet):
         if not self.image_path:
             return
 
-        if not os.access( self.image_path, os.R_OK ):
+        if not os.access(self.image_path, os.R_OK):
             return
 
         if not os.access(self.image_path, os.W_OK):
@@ -281,6 +279,7 @@ class imageMetadataGramplet(Gramplet):
         else:
             # prevent non mime images from attempting to write to non MIME images...
             self._mark_dirty_write(self.orig_image)
+            return
 
         # clear all data entry fields
         self.clear_metadata(self.orig_image)
@@ -293,8 +292,8 @@ class imageMetadataGramplet(Gramplet):
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0, source=None):
-        import gtk
-        # Data Entry: Active Person
+
+        # Data Entry:
         row = gtk.HBox()
         label = gtk.Label()
         if readonly:
@@ -371,9 +370,9 @@ class imageMetadataGramplet(Gramplet):
         setup tooltips for each field
         """
 
-        # Artist
-        self.exif_widgets["Artist"].set_tooltip_text(_("Enter the name "
-            "of the person or company who took this image."))
+        # Author
+        self.exif_widgets["Author"].set_tooltip_text(_("Enter the Artist/ Author of this image.  "
+            "The person's name or the company who is responsible for the creation of this image."))
 
         # Copyright
         self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
@@ -438,9 +437,10 @@ class imageMetadataGramplet(Gramplet):
 
         # clear all data fields
         if cleartype == "All":
-            for key in ["ActiveImage", "Artist", "Copyright", "NewDate", "NewTime",
-                "Latitude", "Longitude", "Keywords", "Description" ]:
-                self.exif_widgets[key].set_text( "" )
+            for key in ["Author", "Copyright", "NewDate", "NewTime",
+                        "Latitude", "Longitude", "Keywords", "Description"]:
+
+                self.exif_widgets[key].set_text("")
 
         # clear only the date and time fields
         else:
@@ -452,10 +452,8 @@ class imageMetadataGramplet(Gramplet):
         gets the value from the Exif Key, and returns it...
 
         @param: KeyTag -- image metadata key
-        @param: image -- pyexiv2 ImageMetadata instance
         """
 
-        self.ValueType = False
         if "Exif" in KeyTag:
             try:
                 KeyValue = self.plugin_image[KeyTag].value
@@ -477,13 +475,14 @@ class imageMetadataGramplet(Gramplet):
                 KeyValue = self.plugin_image[KeyTag].values
 
             except KeyError:
-                KeyValue = "[not set]"
+                KeyValue = ""
 
             except ValueError:
                 KeyValue = ""
 
             except AttributeError:
                 KeyValue = ""
+
         return KeyValue
 
     def read_metadata(self, imgobj):
@@ -497,19 +496,15 @@ class imageMetadataGramplet(Gramplet):
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
 
-        # image description
-        self.exif_widgets["ActiveImage"].set_text(
-            _html_escape(self.orig_image.get_description() ) )
-
         # set up image metadata keys for use in this addon
         dataKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
 
         for KeyTag in dataKeyTags:
 
-            # Media image Artist
+            # Media image Author
             if KeyTag == ImageArtist:
                 self.artist = self._get_value(KeyTag)
-                self.exif_widgets["Artist"].set_text(self.artist)
+                self.exif_widgets["Author"].set_text(self.artist)
 
             # media image Copyright
             elif KeyTag == ImageCopyright:
@@ -618,8 +613,8 @@ class imageMetadataGramplet(Gramplet):
         # check write permissions for this image
         if not self._dirty_write:
 
-            # Artist data field
-            artist = self.exif_widgets["Artist"].get_text()
+            # Author data field
+            artist = self.exif_widgets["Author"].get_text()
             if (self.artist is not artist):
                 self._set_value(ImageArtist, artist)
 
