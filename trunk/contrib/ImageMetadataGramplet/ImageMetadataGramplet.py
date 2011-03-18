@@ -472,7 +472,7 @@ class imageMetadataGramplet(Gramplet):
         # Iptc KeyTag
         elif "Iptc" in KeyTag:
             try:
-                KeyValue = self.plugin_image[KeyTag].values
+                KeyValue = self.plugin_image[KeyTag].value
 
             except KeyError:
                 KeyValue = ""
