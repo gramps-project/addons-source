@@ -8,6 +8,6 @@ register(GRAMPLET,
         expand=True,
         gramplet = 'RelatedRelativesGramplet',
         gramplet_title=_("Related Relatives"),
-        version = '1.0.3',
+        version = '1.0.5',
         gramps_target_version="3.3",
         )
