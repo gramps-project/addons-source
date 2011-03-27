@@ -5,6 +5,7 @@
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.6', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Alternatieve versie van de traditionele stamboomgrafiek', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Stamboomgrafiek', 't': u'Report', 'v': '1.0.8', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i':'climerge', 'n': 'Command Line Merge', 't':u'Tool', 'v':'1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.5', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}

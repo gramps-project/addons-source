@@ -5,6 +5,7 @@
 {'d': 'Erzeugt einen graphischen Stammbaum.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.6', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Alternate version of the traditional pedigree chart.', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Pedigree Chart', 't': u'Report', 'v': '1.0.8', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i':'climerge', 'n': 'Command Line Merge', 't':u'Tool', 'v':'1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Erstellt Nachkommenlinien einer Person', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Nachkommen Linien', 't': u'Report', 'v': '0.1.5', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen der aktuellen Person an', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
