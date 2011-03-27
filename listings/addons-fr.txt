@@ -5,6 +5,7 @@
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.6', 'z': 'FamilyTree.addon.tgz'}
 {'d': "Version alternative de l'arbre graphique traditionnel.", 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Arbre graphique', 't': u'Report', 'v': '1.0.8', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i':'climerge', 'n': 'Command Line Merge', 't':u'Tool', 'v':'1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet pour regrouper des articles', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.10', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': "Produit les lignes de descendants de l'individu", 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Lignes des descendants', 't': u'Report', 'v': '0.1.5', 'z': 'DescendantsLines.addon.tgz'}
 {'d': "Affiche le nombre de descendants de l'individu actif", 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Nombre de descendants', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
