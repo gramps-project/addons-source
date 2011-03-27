@@ -26,7 +26,7 @@
 {'d': "Produit une liste de toutes les notes avec un marqueur donn\xc3\xa9 ainsi que les enregistrements qui les r\xc3\xa9f\xc3\xa9rencent, l'individu, la famille, l'\xc3\xa9v\xc3\xa9nement, etc.", 'g': '3.4', 'i': 'TodoReport', 'n': 'Rapport \xc3\x80 Faire', 't': u'Report', 'v': '1.2.5', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Biblioth\xc3\xa8que pour les collections de liens internet', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': "Ceci est une image brute d'objet python", 'g': '3.4', 'i': 'Raw Export', 'n': 'Export brut', 't': u'Exporter', 'v': '1.0.6', 'z': 'ExportRaw.addon.tgz'}
+{'d': "Ceci est une image brute d'objet python", 'g': '3.4', 'i': 'Raw Export', 'n': 'Export brut', 't': u'Exporter', 'v': '1.0.8', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Collection de sites internet pour les \xc3\x89tats-Unis (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'US Web Connect Pack', 'n': 'Ensemble de liens internet US', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': "Produit un r\xc3\xa9sum\xc3\xa9 familial montrant les informations compl\xc3\xa8tes sur l'individu, ses conjoints et enfants.", 'g': '3.4', 'i': 'FamilySheet', 'n': 'R\xc3\xa9sum\xc3\xa9 familial', 't': u'Report', 'v': '3.4.8', 'z': 'FamilySheet.addon.tgz'}
 {'d': 'Graphique dynamique des relations', 'g': '3.4', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.18', 'z': 'GraphView.addon.tgz'}
