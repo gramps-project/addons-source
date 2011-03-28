@@ -759,7 +759,7 @@ class MetadataSave(ManagedWindow.ManagedWindow):
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
         self.exif_widgets["NewDate"].set_text(
-            "%04d-%s-%02d" % (year, _dd.long_months[month], day) )
+            "%04d-%s-%02d" % (year, _dd.long_months[month + 1], day) )
 
         # close this window
         self.app.destroy()
