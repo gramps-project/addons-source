@@ -21,89 +21,146 @@
 
 # $Id$
 
-# *****************************************************************************
-# Python Modules
-# *****************************************************************************
-import os, sys
-from datetime import datetime, date
-import time, calendar
-from decimal import *
-getcontext().prec = 4
-
-# abilty to escape certain characters from html output...
-from xml.sax.saxutils import escape as _html_escape
-
-# pyexiv2 download page (C) Olivier Tilloy
-_DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/download.html"
-
-# make sure the pyexiv2 library is installed and at least a minimum version
-pyexiv2_req_install = True
-Min_VERSION = (0, 1, 3)
-Min_VERSION_str = "pyexiv2-%d.%d.%d" % Min_VERSION
-PrefVersion_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
-
-# to be able for people that have pyexiv2-0.1.3 to be able to use this addon also...
-LesserVersion = False
-
-try:
-    import pyexiv2
-    if pyexiv2.version_info < Min_VERSION:
-        pyexiv2_req_install = False
-
-except ImportError:
-    pyexiv2_req_install = False
-               
-except AttributeError:
-    LesserVersion = True
-
 #------------------------------------------------
 #   Internaturlization
 #------------------------------------------------
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 
-# -----------------------------------------------------------------------------
-# GRAMPS/ GTK modules
-# -----------------------------------------------------------------------------
+# ***********************************************
+# Python Modules
+# ***********************************************
+import os, sys
+from datetime import datetime, date
+import time, calendar
+from decimal import *
+
+from itertools import chain
+
+# abilty to escape certain characters from html output...
+from xml.sax.saxutils import escape as _html_escape
+
+#------------------------------------------------
+# GTK modules
+#------------------------------------------------
 import gtk
 
-# the python library, pyexiv2, is either not installed or does not meet 
-# minimum required version for this addon....
-if not pyexiv2_req_install:
-    raise Exception(_("The minimum required version for pyexiv2 must be %s \n"
-        "or greater.  Or you do not have the python library installed yet.  "
-        "You may download it from here: %s\n\n  I recommend getting, %s") % (
-         Min_VERSION_str, _DOWNLOAD_LINK, PrefVersion_str) )
+# -----------------------------------------------
+# GRAMPS modules
+# -----------------------------------------------
+from QuestionDialog import OkDialog, WarningDialog
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
-import GrampsDisplay
-
-from QuestionDialog import OkDialog, ErrorDialog
 
 import gen.lib
 import Utils
 from PlaceUtils import conv_lat_lon
 
+#################################################
+# pyexiv2 check for library...?
+#################################################
+# pyexiv2 download page (C) Olivier Tilloy
+_DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/download.html"
+
+# make sure the pyexiv2 library is installed and at least a minimum version
+software_version = False
+Min_VERSION = (0, 1, 3)
+Min_VERSION_str = "pyexiv2-%d.%d.%d" % Min_VERSION
+Pref_VERSION_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
+
+# for users of pyexiv2 prior to 0.2.0...
+LesserVersion = False
+try:
+    import pyexiv2
+    software_version = pyexiv2.version_info
+
+except ImportError, msg:
+    WarningDialog(_("You need to install, %s or greater, for this addon to work...\n"
+                    "I would recommend installing, %s, and it may be downloaded from here: \n%s") % (
+                        Min_VERSION_str, Pref_VERSION_str, _DOWNLOAD_LINK), str(msg))
+    raise Exception(_("Failed to load 'Image Metadata Gramplet/ Addon'..."))
+               
+# This only happens if the user has prior than pyexiv2-0.2.0 installed on their computer...
+# it requires the use of a few different things, which you will see when this variable is called...
+except AttributeError:
+    LesserVersion = True
+
+# the library is either not installed or does not meet 
+# minimum required version for this addon....
+if (software_version and (software_version < Min_VERSION)):
+    msg = _("The minimum required version for pyexiv2 must be %s \n"
+        "or greater.  Or you do not have the python library installed yet.  "
+        "You may download it from here: %s\n\n  I recommend getting, %s") % (
+         Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
+    raise Exception(msg)
+
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
-# available image types for exiv2
-_valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
+# set up Exif keys for key sections of:
+# Description, Origin, Image, Camera, and Advanced
+_DESCRIPTION = {
+    "Exif.Image.ImageDescription" : "ImageDescription",
+    "Exif.Image.XPSubject"        : "XPSubject",
+    "Exif.Image.Rating"           : "ImageRating",
+    "Exif.Image.XPKeywords"       : "XPKeywords",
+    "Exif.Image.XPComment"        : "XPComment"}
+_DESCRIPTION = dict( chain( _DESCRIPTION.iteritems(), ( ( val, key ) 
+        for key, val in _DESCRIPTION.iteritems() ) ) )
 
-# set up Exif keys for Image.exif_keys
-ImageArtist       = "Exif.Image.Artist"
-ImageCopyright    = "Exif.Image.Copyright"
-ImageDateTime     = "Exif.Image.DateTime"
-ImageDescription  = "Exif.Image.ImageDescription"
+_ORIGIN = {
+    "Exif.Image.Artist"            : "ImageArtist",
+    "Exif.Image.Copyright"         : "ImageCopyright",
+    "Exif.Photo.DateTimeOriginal"  : "DateTime",
+    "Exif.Image.Software"          : "Software" ,
+    "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
+    "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
+    "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
+    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude" }
+_ORIGIN = dict( chain( _ORIGIN.iteritems(), ( ( val, key )
+        for key, val in _ORIGIN.iteritems() ) ) )
 
-ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
-ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
-ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
-ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
+_IMAGE = {
+    "Exif.Photo.PixelXDimension"        : "Width",
+    "Exif.Photo.PixelYDimension"        : "Height",
+    "Exif.Image.XResolution"            : "HorizontalResolution",
+    "Exif.Image.YResolution"            : "VerticalResolution",
+    "Exif.Image.ResolutionUnit"         : "ResolutionUnit",
+    "Exif.Photo.ColorSpace"             : "ColourRepresentation",
+    "Exif.Photo.CompressedBitsPerPixel" : "CompressedBits"}
+_IMAGE = dict( chain( _IMAGE.iteritems(), ( ( val, key )
+        for key, val in _IMAGE.iteritems() ) ) )
+      
+_CAMERA = {
+    "Exif.Image.Make"                  : "CameraMaker",
+    "Exif.Image.Model"                 : "CameraModel",
+    "Exif.Photo.FNumber"               : "FStop",
+    "Exif.Photo.ExposureTime"          : "ExposureTime",
+    "Exif.Photo.ISOSpeedRatings"       : "SpeedRatings",
+    "Exif.Photo.ExposureBiasValue"     : "ExposureBias",
+    "Exif.Photo.FocalLength"           : "FocalLength",
+    "Exif.Photo.MaxAperatureValue"     : "AperatureValue",
+    "Exif.Photo.Flash" : "Flash",      : "Flash",
+    "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm" }
+_CAMERA = dict( chain( _CAMERA.iteritems(), ( ( val, key )
+        for key, val in _CAMERA.iteritems() ) ) )
 
-_DATAMAP = [ImageDescription, ImageDateTime, ImageArtist, ImageCopyright,
-            ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude]
+_ADVANCED = {
+    "Xmp.MicrosoftPhoto.LensManufacturer"   : "LensMaker",
+    "Xmp.MicrosoftPhoto.LensModel"          : "LensModel",
+    "Xmp.MicrosoftPhoto.FlashManufacturer"  : "FlashMaker",
+    "Xmp.MicrosoftPhoto.FlashModel"         : "FlashModel",
+    "Xmp.MicrosoftPhoto.CameraSerialNumber" : "CameraSerialNumber",
+    "Exif.Photo.Contrast"                   : "Contrast",
+    "Exif.Photo.LightSource"                : "LightSource",
+    "Exif.Photo.ExposureProgram"            : "ExposureProgram",
+    "Exif.Photo.Saturation"                 : "Saturation",
+    "Exif.Photo.Sharpness"                  : "Sharpness",
+    "Exif.Photo.WhiteBalance"               : "WhiteBalance",
+    "Exif.Image.ExifTag"                    : "ExifVersion" }
+_ADVANCED = dict( chain( _ADVANCED.iteritems(), ( ( val, key )
+        for key, val in _ADVANCED.iteritems() ) ) )
 
 _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
 
@@ -151,15 +208,13 @@ class imageMetadataGramplet(Gramplet):
 
     def init(self):
 
-        self.exif_column_width = 15
         self.exif_widgets = {}
-
-        # set all dirty variables to False to begin this addon...
-        self._dirty_image = False
-        self._dirty_write = False
 
         self.orig_image   = False
         self.plugin_image = False
+
+        # set all dirty variables to False to begin this addon...
+        self._clear_image(self.orig_image)
 
         root = self.__create_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -178,7 +233,8 @@ class imageMetadataGramplet(Gramplet):
 
         media_label = gtk.Label(_("Click a media object to begin..."))
         media_label.set_alignment(0.0, 0.5)
-        hbox.pack_start(media_label, expand=False)
+        self.exif_widgets["Media:Label"] = media_label
+        hbox.pack_start(self.exif_widgets["Media:Label"], expand=False)
 
         self.media_text = gtk.Label()
         self.media_text.set_alignment(0.0, 0.5)
@@ -200,19 +256,19 @@ class imageMetadataGramplet(Gramplet):
 
         # description metadata button in button box...
         description = gtk.Button(_("Description"))
-        description.connect("clicked", self.__image_metadata )
+        description.connect("clicked", self.__description_metadata)
         self.exif_widgets["Description"] = description
         button_box.add(self.exif_widgets["Description"] )
 
         # image metadata button in button box...
         origin = gtk.Button(_("Origin"))
-        origin.connect("clicked", self.__image_metadata )
+        origin.connect("clicked", self.__origin_metadata )
         self.exif_widgets["Origin"] = origin
         button_box.add(self.exif_widgets["Origin"] )
 
         # image metadata button in button box...
         image = gtk.Button(_("Image"))
-        image.connect("clicked", self.__image_metadata )
+        image.connect("clicked", self.__image_metadata)
         self.exif_widgets["Image"] = image
         button_box.add(self.exif_widgets["Image"] )
         vbox.pack_start(button_box, expand=False, fill=False)
@@ -222,7 +278,7 @@ class imageMetadataGramplet(Gramplet):
 
         # camera metadata button in button box...
         camera = gtk.Button(_("Camera"))
-        camera.connect("clicked", self.__photo_metadata)
+        camera.connect("clicked", self.__camera_metadata)
         self.exif_widgets["Camera"] = camera
         button_box.add(self.exif_widgets["Camera"])
 
@@ -250,17 +306,17 @@ class imageMetadataGramplet(Gramplet):
 
         # clear button in button box...
         clear = gtk.Button(stock=gtk.STOCK_CLEAR)
-        clear.connect("clicked", self.clear_metadata)
+        clear.connect("clicked", self.__clear_metadata)
         self.exif_widgets["Clear"] = clear
         button_box.add(self.exif_widgets["Clear"])
 
         vbox.pack_start(hbox, expand=False, padding=10)
         vbox.pack_start(view, padding=10)
         vbox.pack_end(button_box, expand=False, fill=False)
-        
+
         return vbox
 
-    def __create_column(self, text, value, min_width, fixed = True):
+    def __create_column(self, name, value, min_width, fixed = True):
         """
         will create the column for the column row...
 
@@ -271,7 +327,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(text, renderer, text = value)
+        column = gtk.TreeViewColumn(name, renderer, text = value)
 
         column.set_expand(fixed)
         column.set_alignment(0.5)
@@ -279,10 +335,16 @@ class imageMetadataGramplet(Gramplet):
 
         return column
 
+    def __description_metadata(self, obj):
+        pass
+
+    def __origin_metadata(self, obj):
+        pass
+
     def __image_metadata(self, obj):
         pass
 
-    def __photo_metadata(self, obj):
+    def __camera_metadata(self, obj):
         pass
 
     def __advanced_metadata(self, obj):
@@ -293,12 +355,6 @@ class imageMetadataGramplet(Gramplet):
         Called when the active person is changed.
         """
         self.update()
-
-    def help_clicked(self, obj):
-        """
-        Display the relevant portion of GRAMPS manual
-        """
-        GrampsDisplay.help(webpage = 'Image Metadata Gramplet-v0.2')
 
     def __save_metadata(self, widget, selection):
         """
@@ -320,9 +376,16 @@ class imageMetadataGramplet(Gramplet):
         if iter_:
             media = model.get_value(iter_, 0)
             try:
-                MetadataEditor(self.gui.dbstate, self.gui.uistate, [], media)
+                MetadataEditor(self.gui.dbstate, self.gui.uistate, [], media, self.exif_widgets)
             except Errors.WindowActiveError:
                 pass
+
+    def __clear_metadata(self, obj):
+        """
+        clears all data fields to nothing
+        """
+
+        self.model.clear()
 
     def main(self): # return false finishes
         """
@@ -334,46 +397,42 @@ class imageMetadataGramplet(Gramplet):
             return
 
         self.orig_image = self.dbstate.db.get_object_from_handle(active_media)
-        self.media_text.set_text("")
         if self.orig_image:
-            self.media_text.set_text( self.orig_image.get_description() )
+            self.exif_widgets["Media:Label"].set_text(self.orig_image.get_description() )
         else:
-            self.media_text.set_text(_('No active media...'))
+            self.media_text.set_text(_('No active media selected...'))
             return
 
         # clear all dirty flags against media
         self._clear_image(self.orig_image)
 
+        # get media full path
+        full_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
+
         # check media read priviledges?
-        if not os.access(self.orig_image.get_path(), os.R_OK):
+        if not os.access(full_path, os.R_OK):
             return
 
         # check media write priviledges?
-        if not os.access(self.orig_image.get_path(), os.W_OK):
+        if not os.access(full_path, os.W_OK):
             self._mark_dirty_write(self.orig_image)
 
         # get image mime type
         mime_type = self.orig_image.get_mime_type()
-        if mime_type and mime_type.startswith("image"):
-            _type, _imgtype = mime_type.split("/")
+        if mime_type:
+            if mime_type.startswith("image"):
+                self.model.clear()
 
-            # check to make sure imagetype is within valid image types? 
-            found = any(_imgtype == filetype for filetype in _valid_types)
-            if not found:
-                self._mark_dirty_write(self.orig_image)
-                return
+                # set up tooltips text
+                self.setup_tooltips(self.orig_image)
+
+                # read the image metadata and display it
+                self.display_exif_keys(full_path)
+
         else:
             # prevent non mime images from attempting to write to non MIME images...
             self._mark_dirty_write(self.orig_image)
             return
-
-        self.model.clear()
-
-        # read the image metadata and display it
-        self.display_exif_keys(self.orig_image)
-
-        # set up tooltips text
-        self.setup_tooltips(self.orig_image)
 
     def setup_tooltips(self, obj):
         """
@@ -402,39 +461,55 @@ class imageMetadataGramplet(Gramplet):
     def _mark_dirty_write(self, obj):
         self._dirty_write = True
 
-    def clear_metadata(self, obj):
-        """
-        clears all data fields to nothing
-        """
-
-        self.model.clear()
-
-    def display_exif_keys(self, media):
+    def display_exif_keys(self, mediapath):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
 
-        full_path = Utils.media_path_full(self.dbstate.db, media.get_path() )
+        # set up initial value
+        MediaDataTags = []
+
         if LesserVersion: # prior to pyexiv2-0.2.0
             try:
-                metadata = pyexiv2.Image(full_path)
-            except IOError:
+                self.plugin_image = pyexiv2.Image(mediapath)
+            except (IOError, OSError), msg:
+                WarningDialog(_("Please select a different image object..."), str(msg))
                 return
-            metadata.readMetadata()
-            for key in metadata.exifKeys():
-                label = metadata.tagDetails(key)[0]
-                human_value = metadata.interpretedExifValue(key)
-                self.model.add((label, human_value))
+
+            self.plugin_image.readMetadata()
+            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys() if keytag in _DESCRIPTION ]
 
         else: # pyexiv2-0.2.0 and above
-            metadata = pyexiv2.ImageMetadata(full_path)
             try:
-                metadata.read()
-            except IOError:
+                self.plugin_image = pyexiv2.ImageMetadata(mediapath)
+            except (IOError, OSError), msg:
+                WarningDialog(_("Please select a different image object..."), str(msg))
                 return
-            for key in metadata.exif_keys:
-                tag = metadata[key]
-                self.model.add((tag.label, tag.human_value))
+
+            self.plugin_image.read()
+            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys if keytag in _DESCRIPTION ]
+
+        # check to see if we got metadata from image?
+        while MediaDataTags:
+            keytag = MediaDataTags[0]
+            if keytag:
+
+                if LesserVersion:  # prior to pyexiv2-0.2.0
+
+                    label = self.plugin_image.tagDetails(keytag)[0]
+                    human_value = self.plugin_image.interpretedExifValue(keytag)
+
+                else:  # pyexiv2-0.2.0 and above
+
+                    tag = self.plugin_image[keytag]
+                    label = tag.label
+                    human_value = tag.human_value
+                self.model.add((label, human_value))
+
+                value = _DESCRIPTION.get(keytag, keytag)
+                self.exif_widgets[value].set_text(human_value)
+
+            MediaDataTags.remove(keytag)
 
     def post_init(self):
         self.connect_signal("Media", self.update)
@@ -444,26 +519,33 @@ class imageMetadataGramplet(Gramplet):
 #################################################
 import ManagedWindow
 from gui.widgets import MonitoredEntry
+import GrampsDisplay
 
 class MetadataEditor(ManagedWindow.ManagedWindow):
     """
     Media Metadata Editor.
     """
 
-    def __init__(self, dbstate, uistate, track, media):
+    def __init__(self, dbstate, uistate, track, media, widgets):
 
         self.dbstate = dbstate
         self.uistate = uistate
         self.track = track
         self.db = dbstate.db
-        
         self.media = media
+        self.exif_widgets = widgets
 
         ManagedWindow.ManagedWindow.__init__(self, uistate, track, media)
 
         self.widgets = {}
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title() )
+
+    def help_clicked(self, obj):
+        """
+        Display the relevant portion of GRAMPS manual
+        """
+        GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
 
     def get_menu_title(self):
         """
@@ -759,7 +841,7 @@ class MetadataSave(ManagedWindow.ManagedWindow):
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
         self.exif_widgets["NewDate"].set_text(
-            "%04d-%s-%02d" % (year, _dd.long_months[month + 1], day) )
+            "%04d-%s-%02d" % (year, _dd.long_months[month], day) )
 
         # close this window
         self.app.destroy()
