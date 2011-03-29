@@ -141,7 +141,7 @@ _CAMERA = {
     "Exif.Photo.ExposureBiasValue"     : "ExposureBias",
     "Exif.Photo.FocalLength"           : "FocalLength",
     "Exif.Photo.MaxAperatureValue"     : "AperatureValue",
-    "Exif.Photo.Flash" : "Flash",      : "Flash",
+    "Exif.Photo.Flash"                 : "Flash",
     "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm" }
 _CAMERA = dict( chain( _CAMERA.iteritems(), ( ( val, key )
         for key, val in _CAMERA.iteritems() ) ) )
