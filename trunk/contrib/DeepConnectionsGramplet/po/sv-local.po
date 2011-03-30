@@ -2,13 +2,13 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Peter Landgren <peter.talken@telia.com>, 2010.
+# Peter Landgren <peter.talken@telia.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:29+0100\n"
-"PO-Revision-Date: 2010-01-31 15:53+0100\n"
+"POT-Creation-Date: 2011-03-30 19:02+0200\n"
+"PO-Revision-Date: 2011-03-30 19:03+0200\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,85 +19,96 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "Fönster för långa släktskap"
+msgstr "Gramplet för långa släktskap"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet visande ett lång släktskap mellan aktiv och hem person"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
 msgstr "Långa släktskap"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:55
 msgid "Double-click name for details"
 msgstr "Dubbelklicka på namn för detaljer"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:56
 msgid "No Family Tree loaded."
 msgstr "Inget släktträd laddat."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
 msgid "Pause"
 msgstr "Paus"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:63
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Copy"
+msgstr "Kopiera"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
 msgid "child"
 msgstr "barn"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:94
 msgid "husband"
 msgstr "make"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
 msgid "wife"
 msgstr "maka"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "sibling"
+msgstr "syskon"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:110
 msgid "father"
 msgstr "far"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:113
 msgid "mother"
 msgstr "mor"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
 #, python-format
 msgid ""
 "\n"
-"   who is a %s of "
+"   %s of "
 msgstr ""
 "\n"
-"   som är en/ett %s till "
+"   %s till "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:168
 msgid "No Home Person set."
 msgstr "Hemperson är inte bestämd."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
 msgid "No Active Person set."
 msgstr "Ingen aktiv person angiven."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:175
 msgid "self"
 msgstr "själv"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
 msgid "Looking for relationship between\n"
 msgstr "Letar efter släktskap mellan\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (huvudperson) och\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "Aktiv person: <b>%s</b>\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -106,7 +117,7 @@ msgstr ""
 "Hittade släktskap #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -114,7 +125,7 @@ msgstr ""
 "Paus.\n"
 "Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #, python-format
 msgid ""
 "\n"
@@ -122,5 +133,4 @@ msgid ""
 msgstr ""
 "\n"
 "Sökning avslutad. %d släktskap hittade."
-
 
