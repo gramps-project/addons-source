@@ -52,6 +52,7 @@ from QuestionDialog import OkDialog, WarningDialog
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
+import GrampsDisplay
 
 import gen.lib
 import Utils
@@ -106,8 +107,8 @@ _DESCRIPTION = {
     "Exif.Image.Rating"           : "ImageRating",
     "Exif.Image.XPKeywords"       : "XPKeywords",
     "Exif.Image.XPComment"        : "XPComment"}
-_DESCRIPTION = dict( chain( _DESCRIPTION.iteritems(), ( ( val, key ) 
-        for key, val in _DESCRIPTION.iteritems() ) ) )
+_DESCRIPTION = dict(chain(_DESCRIPTION.iteritems(), ((val, key)
+        for key, val in _DESCRIPTION.iteritems() )))
 
 _ORIGIN = {
     "Exif.Image.Artist"            : "ImageArtist",
@@ -163,6 +164,12 @@ _ADVANCED = dict( chain( _ADVANCED.iteritems(), ( ( val, key )
         for key, val in _ADVANCED.iteritems() ) ) )
 
 _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
+
+def help_clicked(obj):
+    """
+    Display the relevant portion of GRAMPS manual
+    """
+    GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
 
 def _return_month(month):
     """
@@ -240,7 +247,7 @@ class imageMetadataGramplet(Gramplet):
         self.media_text.set_alignment(0.0, 0.5)
         hbox.pack_start(self.media_text, expand=True, fill=True)
 
-        self.model = gtk.ListStore(object, str, str, str)
+        self.model = gtk.ListStore(object, str, str)
         view = gtk.TreeView(self.model)
 
         # Key Tag Column
@@ -292,7 +299,11 @@ class imageMetadataGramplet(Gramplet):
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_START)
 
-        # save button in button box...
+        help = gtk.Button(stock=gtk.STOCK_HELP)
+        help.connect("clicked", help_clicked)
+        self.exif_widgets["Help"] = help
+        button_box.add(self.exif_widgets["Help"])
+
         save = gtk.Button(stock=gtk.STOCK_SAVE)
         save.connect("clicked", self.__save_metadata, view.get_selection() )
         self.exif_widgets["Save"] = save
@@ -336,19 +347,59 @@ class imageMetadataGramplet(Gramplet):
         return column
 
     def __description_metadata(self, obj):
-        pass
+        """
+        displays the description set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _DESCRIPTION section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _DESCRIPTION)
 
     def __origin_metadata(self, obj):
-        pass
+        """
+        displays the origin set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _ORIGIN section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _ORIGIN)
 
     def __image_metadata(self, obj):
-        pass
+        """
+        displays the image set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _IMAGE section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _IMAGE)
 
     def __camera_metadata(self, obj):
-        pass
+        """
+        displays the camera set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _CAMERA section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _CAMERA)
 
     def __advanced_metadata(self, obj):
-        pass
+        """
+        displays the advanced set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _ADVANCED section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _ADVANCED)
 
     def active_changed(self, handle):
         """
@@ -427,7 +478,7 @@ class imageMetadataGramplet(Gramplet):
                 self.setup_tooltips(self.orig_image)
 
                 # read the image metadata and display it
-                self.display_exif_keys(full_path)
+                self.displaqy_metadata_keytags(self.orig_image, _DESCRIPTION)
 
         else:
             # prevent non mime images from attempting to write to non MIME images...
@@ -461,13 +512,19 @@ class imageMetadataGramplet(Gramplet):
     def _mark_dirty_write(self, obj):
         self._dirty_write = True
 
-    def display_exif_keys(self, mediapath):
+    def displaqy_metadata_keytags(self, mediaobj, metadataTags):
         """
         reads the image metadata after the pyexiv2.Image has been created
+
+        @param: mediaobj -- the media object from the database...
+        @param: metadataTags -- a list of the exif keytags that we will be displayed...
         """
 
         # set up initial value
         MediaDataTags = []
+
+        # get the full path to the image object
+        mediapath = Utils.media_path_full(self.dbstate.db, mediaobj.get_path() )
 
         if LesserVersion: # prior to pyexiv2-0.2.0
             try:
@@ -475,9 +532,12 @@ class imageMetadataGramplet(Gramplet):
             except (IOError, OSError), msg:
                 WarningDialog(_("Please select a different image object..."), str(msg))
                 return
-
             self.plugin_image.readMetadata()
-            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys() if keytag in _DESCRIPTION ]
+
+            # get all keytags for this section of tags
+            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys() if keytag in metadataTags]
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmpKeys() if keytag in metadataTags] )
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptcKeys() if keytag in metadataTags] )
 
         else: # pyexiv2-0.2.0 and above
             try:
@@ -485,31 +545,33 @@ class imageMetadataGramplet(Gramplet):
             except (IOError, OSError), msg:
                 WarningDialog(_("Please select a different image object..."), str(msg))
                 return
-
             self.plugin_image.read()
-            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys if keytag in _DESCRIPTION ]
+
+            # get all keytags for this section of tags
+            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys if keytag in metadataTags]
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmp_keys if keytag in metadataTags] )
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptc_keys if keytag in metadataTags] )
 
         # check to see if we got metadata from image?
-        while MediaDataTags:
-            keytag = MediaDataTags[0]
-            if keytag:
+        if MediaDataTags:
+            for keytag in MediaDataTags:
+                if keytag:
 
-                if LesserVersion:  # prior to pyexiv2-0.2.0
+                    if LesserVersion:  # prior to pyexiv2-0.2.0
+                        label = self.plugin_image.tagDetails(keytag)[0]
+                        human_value = self.plugin_image.interpretedExifValue(keytag)
 
-                    label = self.plugin_image.tagDetails(keytag)[0]
-                    human_value = self.plugin_image.interpretedExifValue(keytag)
+                    else:  # pyexiv2-0.2.0 and above
+                        tag = self.plugin_image[keytag]
+                        label = tag.label
+                        human_value = tag.human_value
+                    self.model.append( (self.plugin_image, label, human_value) )
 
-                else:  # pyexiv2-0.2.0 and above
+                    value = metadataTags.get(keytag, keytag)
+#                    self.exif_widgets[value].set_text(human_value)
 
-                    tag = self.plugin_image[keytag]
-                    label = tag.label
-                    human_value = tag.human_value
-                self.model.add((label, human_value))
-
-                value = _DESCRIPTION.get(keytag, keytag)
-                self.exif_widgets[value].set_text(human_value)
-
-            MediaDataTags.remove(keytag)
+        else:
+            self.model.append( (self.plugin_image, _("No metadata tags were found..."), "") )
 
     def post_init(self):
         self.connect_signal("Media", self.update)
@@ -540,12 +602,6 @@ class MetadataEditor(ManagedWindow.ManagedWindow):
         self.widgets = {}
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title() )
-
-    def help_clicked(self, obj):
-        """
-        Display the relevant portion of GRAMPS manual
-        """
-        GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
 
     def get_menu_title(self):
         """
