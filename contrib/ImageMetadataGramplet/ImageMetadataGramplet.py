@@ -72,14 +72,13 @@ Pref_VERSION_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
 
 # for users of pyexiv2 prior to 0.2.0...
 LesserVersion = False
+
 try:
     import pyexiv2
     software_version = pyexiv2.version_info
 
 except ImportError, msg:
-    WarningDialog(_("You need to install, %s or greater, for this addon to work...\n"
-                    "I would recommend installing, %s, and it may be downloaded from here: \n%s") % (
-                        Min_VERSION_str, Pref_VERSION_str, _DOWNLOAD_LINK), str(msg))
+    WarningDialog( str(msg) )
     raise Exception(_("Failed to load 'Image Metadata Gramplet/ Addon'..."))
                
 # This only happens if the user has prior than pyexiv2-0.2.0 installed on their computer...
@@ -114,13 +113,9 @@ _ORIGIN = {
     "Exif.Image.Artist"            : "ImageArtist",
     "Exif.Image.Copyright"         : "ImageCopyright",
     "Exif.Photo.DateTimeOriginal"  : "DateTime",
-    "Exif.Image.Software"          : "Software" ,
-    "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
-    "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
-    "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
-    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude" }
-_ORIGIN = dict( chain( _ORIGIN.iteritems(), ( ( val, key )
-        for key, val in _ORIGIN.iteritems() ) ) )
+    "Exif.Image.Software"          : "Software"}
+_ORIGIN = dict( chain(_ORIGIN.iteritems(), ((val, key)
+        for key, val in _ORIGIN.iteritems() )))
 
 _IMAGE = {
     "Exif.Photo.PixelXDimension"        : "Width",
@@ -130,8 +125,8 @@ _IMAGE = {
     "Exif.Image.ResolutionUnit"         : "ResolutionUnit",
     "Exif.Photo.ColorSpace"             : "ColourRepresentation",
     "Exif.Photo.CompressedBitsPerPixel" : "CompressedBits"}
-_IMAGE = dict( chain( _IMAGE.iteritems(), ( ( val, key )
-        for key, val in _IMAGE.iteritems() ) ) )
+_IMAGE = dict( chain(_IMAGE.iteritems(), ((val, key)
+        for key, val in _IMAGE.iteritems() )))
       
 _CAMERA = {
     "Exif.Image.Make"                  : "CameraMaker",
@@ -143,9 +138,9 @@ _CAMERA = {
     "Exif.Photo.FocalLength"           : "FocalLength",
     "Exif.Photo.MaxAperatureValue"     : "AperatureValue",
     "Exif.Photo.Flash"                 : "Flash",
-    "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm" }
-_CAMERA = dict( chain( _CAMERA.iteritems(), ( ( val, key )
-        for key, val in _CAMERA.iteritems() ) ) )
+    "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm"}
+_CAMERA = dict( chain(_CAMERA.iteritems(), ((val, key)
+        for key, val in _CAMERA.iteritems() )))
 
 _ADVANCED = {
     "Xmp.MicrosoftPhoto.LensManufacturer"   : "LensMaker",
@@ -159,9 +154,17 @@ _ADVANCED = {
     "Exif.Photo.Saturation"                 : "Saturation",
     "Exif.Photo.Sharpness"                  : "Sharpness",
     "Exif.Photo.WhiteBalance"               : "WhiteBalance",
-    "Exif.Image.ExifTag"                    : "ExifVersion" }
-_ADVANCED = dict( chain( _ADVANCED.iteritems(), ( ( val, key )
-        for key, val in _ADVANCED.iteritems() ) ) )
+    "Exif.Image.ExifTag"                    : "ExifVersion"}
+_ADVANCED = dict( chain(_ADVANCED.iteritems(), ((val, key)
+        for key, val in _ADVANCED.iteritems() )))
+
+_GPS = {
+    "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
+    "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
+    "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
+    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude"}
+_gps = dict(chain(_gps.iteritems(), ((val, key)
+        for key, val in _gps.iteritems() )))
 
 _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
 
@@ -294,6 +297,12 @@ class imageMetadataGramplet(Gramplet):
         advanced.connect("clicked", self.__advanced_metadata)
         self.exif_widgets["Advanced"] = advanced
         button_box.add(self.exif_widgets["Advanced"])
+
+        # GPS metadata  button in button box...
+        GPS = gtk.Button(_("gps"))
+        gps.connect("clicked", self.__gps_metadata)
+        self.exif_widgets["GPS"] = gps
+        button_box.add(self.exif_widgets["GPS"])
         vbox.pack_start(button_box, expand=False, fill=False)
 
         button_box = gtk.HButtonBox()
@@ -400,6 +409,17 @@ class imageMetadataGramplet(Gramplet):
 
         # read the image metadata for the _ADVANCED section and displays it
         self.displaqy_metadata_keytags(self.orig_image, _ADVANCED)
+
+    def __gps_metadata(self, obj):
+        """
+        displays the gps set of tags...
+        """
+
+        # clears the display area
+        self.model.clear()
+
+        # read the image metadata for the _GPS section and displays it
+        self.displaqy_metadata_keytags(self.orig_image, _GPS)
 
     def active_changed(self, handle):
         """
