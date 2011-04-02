@@ -35,8 +35,6 @@ from datetime import datetime, date
 import time, calendar
 from decimal import *
 
-from itertools import chain
-
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
 
@@ -99,36 +97,30 @@ if (software_version and (software_version < Min_VERSION)):
 # Constants
 # -----------------------------------------------------------------------------
 # set up Exif keys for key sections of:
-# Description, Origin, Image, Camera, and Advanced
-_DESCRIPTION = {
+# Description, Origin, Image, Camera, Addvance, and GPS KeyTags
+_DESCRIPTION = dict( [v, k] for v, k in {
     "Exif.Image.ImageDescription" : "ImageDescription",
     "Exif.Image.XPSubject"        : "XPSubject",
     "Exif.Image.Rating"           : "ImageRating",
     "Exif.Image.XPKeywords"       : "XPKeywords",
-    "Exif.Image.XPComment"        : "XPComment"}
-_DESCRIPTION = dict(chain(_DESCRIPTION.iteritems(), ((val, key)
-        for key, val in _DESCRIPTION.iteritems() )))
+    "Exif.Image.XPComment"        : "XPComment"}.items() )
 
-_ORIGIN = {
+_ORIGIN = dict( [v, k] for v, k in {
     "Exif.Image.Artist"            : "ImageArtist",
     "Exif.Image.Copyright"         : "ImageCopyright",
     "Exif.Photo.DateTimeOriginal"  : "DateTime",
-    "Exif.Image.Software"          : "Software"}
-_ORIGIN = dict( chain(_ORIGIN.iteritems(), ((val, key)
-        for key, val in _ORIGIN.iteritems() )))
+    "Exif.Image.Software"          : "Software"}.items() )
 
-_IMAGE = {
+_IMAGE = dict( [v, k] for v, k in {
     "Exif.Photo.PixelXDimension"        : "Width",
     "Exif.Photo.PixelYDimension"        : "Height",
     "Exif.Image.XResolution"            : "HorizontalResolution",
     "Exif.Image.YResolution"            : "VerticalResolution",
     "Exif.Image.ResolutionUnit"         : "ResolutionUnit",
     "Exif.Photo.ColorSpace"             : "ColourRepresentation",
-    "Exif.Photo.CompressedBitsPerPixel" : "CompressedBits"}
-_IMAGE = dict( chain(_IMAGE.iteritems(), ((val, key)
-        for key, val in _IMAGE.iteritems() )))
+    "Exif.Photo.CompressedBitsPerPixel" : "CompressedBits"}.items() )
       
-_CAMERA = {
+_CAMERA = dict( [v, k] for v, k in {
     "Exif.Image.Make"                  : "CameraMaker",
     "Exif.Image.Model"                 : "CameraModel",
     "Exif.Photo.FNumber"               : "FStop",
@@ -138,11 +130,9 @@ _CAMERA = {
     "Exif.Photo.FocalLength"           : "FocalLength",
     "Exif.Photo.MaxAperatureValue"     : "AperatureValue",
     "Exif.Photo.Flash"                 : "Flash",
-    "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm"}
-_CAMERA = dict( chain(_CAMERA.iteritems(), ((val, key)
-        for key, val in _CAMERA.iteritems() )))
+    "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm"}.items() )
 
-_ADVANCED = {
+_CAMERA = dict( [v, k] for v, k in {
     "Xmp.MicrosoftPhoto.LensManufacturer"   : "LensMaker",
     "Xmp.MicrosoftPhoto.LensModel"          : "LensModel",
     "Xmp.MicrosoftPhoto.FlashManufacturer"  : "FlashMaker",
@@ -154,17 +144,13 @@ _ADVANCED = {
     "Exif.Photo.Saturation"                 : "Saturation",
     "Exif.Photo.Sharpness"                  : "Sharpness",
     "Exif.Photo.WhiteBalance"               : "WhiteBalance",
-    "Exif.Image.ExifTag"                    : "ExifVersion"}
-_ADVANCED = dict( chain(_ADVANCED.iteritems(), ((val, key)
-        for key, val in _ADVANCED.iteritems() )))
+    "Exif.Image.ExifTag"                    : "ExifVersion"}.items() )
 
-_GPS = {
+_GPS = dict( [v, k] for v, k in {
     "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
     "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
     "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
-    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude"}
-_gps = dict(chain(_gps.iteritems(), ((val, key)
-        for key, val in _gps.iteritems() )))
+    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude"}.items() )
 
 _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
 
@@ -265,44 +251,32 @@ class imageMetadataGramplet(Gramplet):
         button_box.set_layout(gtk.BUTTONBOX_START)
 
         # description metadata button in button box...
-        description = gtk.Button(_("Description"))
-        description.connect("clicked", self.__description_metadata)
-        self.exif_widgets["Description"] = description
-        button_box.add(self.exif_widgets["Description"] )
+        button_box.add( self.__create_button(
+            "Description", _("Description"), self.__description_metadata) )
+
+        # origin metadata button in button box...
+        button_box.add( self.__create_button(
+            "Origin", _("Origin"), self.__origin_metadata) )
 
         # image metadata button in button box...
-        origin = gtk.Button(_("Origin"))
-        origin.connect("clicked", self.__origin_metadata )
-        self.exif_widgets["Origin"] = origin
-        button_box.add(self.exif_widgets["Origin"] )
-
-        # image metadata button in button box...
-        image = gtk.Button(_("Image"))
-        image.connect("clicked", self.__image_metadata)
-        self.exif_widgets["Image"] = image
-        button_box.add(self.exif_widgets["Image"] )
+        button_box.add( self.__create_button(
+            "Image", _("Image"), self.__image_metadata) )
         vbox.pack_start(button_box, expand=False, fill=False)
 
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_START)
 
         # camera metadata button in button box...
-        camera = gtk.Button(_("Camera"))
-        camera.connect("clicked", self.__camera_metadata)
-        self.exif_widgets["Camera"] = camera
-        button_box.add(self.exif_widgets["Camera"])
+        button_box.add( self.__create_button(
+            "Camera", _("Camera"), self.__camera_metadata) )
 
         # advanced metadata  button in button box...
-        advanced = gtk.Button(_("Advanced"))
-        advanced.connect("clicked", self.__advanced_metadata)
-        self.exif_widgets["Advanced"] = advanced
-        button_box.add(self.exif_widgets["Advanced"])
+        button_box.add( self.__create_button(
+            "Advanced", _("Advanced"), self.__advanced_metadata) )
 
         # GPS metadata  button in button box...
-        GPS = gtk.Button(_("gps"))
-        gps.connect("clicked", self.__gps_metadata)
-        self.exif_widgets["GPS"] = gps
-        button_box.add(self.exif_widgets["GPS"])
+        button_box.add( self.__create_button(
+            "GPS", _("GPS"), self.__gps_metadata) )
         vbox.pack_start(button_box, expand=False, fill=False)
 
         button_box = gtk.HButtonBox()
@@ -354,6 +328,17 @@ class imageMetadataGramplet(Gramplet):
         column.set_sort_column_id(value)
 
         return column
+
+    def __create_button(self, pos, translated_text, callback):
+        """
+        Creates a button with either text or a stock icon from gtk
+        """
+
+        button = gtk.Button(translated_text)
+        button.connect("clicked", callback)
+        self.exif_widgets[pos] = button
+
+        return button
 
     def __description_metadata(self, obj):
         """
@@ -474,7 +459,7 @@ class imageMetadataGramplet(Gramplet):
             self.media_text.set_text(_('No active media selected...'))
             return
 
-        # clear all dirty flags against media
+        # clear all flags against media
         self._clear_image(self.orig_image)
 
         # get media full path
@@ -493,6 +478,9 @@ class imageMetadataGramplet(Gramplet):
         if mime_type:
             if mime_type.startswith("image"):
                 self.model.clear()
+
+                # mark button sensitivity for metadata sections
+                self.button_sensitivity(self.orig_image) 
 
                 # set up tooltips text
                 self.setup_tooltips(self.orig_image)
