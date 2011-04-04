@@ -34,6 +34,7 @@ import os, sys
 from datetime import datetime, date
 import time, calendar
 from decimal import *
+from fractions import Fraction
 
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
@@ -132,7 +133,7 @@ _CAMERA = dict( [v, k] for v, k in {
     "Exif.Photo.Flash"                 : "Flash",
     "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm"}.items() )
 
-_CAMERA = dict( [v, k] for v, k in {
+_ADVANCED = dict( [v, k] for v, k in {
     "Xmp.MicrosoftPhoto.LensManufacturer"   : "LensMaker",
     "Xmp.MicrosoftPhoto.LensModel"          : "LensModel",
     "Xmp.MicrosoftPhoto.FlashManufacturer"  : "FlashMaker",
@@ -147,6 +148,10 @@ _CAMERA = dict( [v, k] for v, k in {
     "Exif.Image.ExifTag"                    : "ExifVersion"}.items() )
 
 _GPS = dict( [v, k] for v, k in {
+    "Exif.GPSInfo.GPSAltitudeRef"  : "ImageAltitudeRef",
+    "Exif.GPSInfo.GPSAltitude"     : "ImageAltitude",
+    "Exif.GPSInfo.GPSTimeStamp"    : "GPSTimeStamp",
+    "Exif.GPSInfo.GPSSatellites"   : "GPSSatellites", 
     "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
     "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
     "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
@@ -345,66 +350,48 @@ class imageMetadataGramplet(Gramplet):
         displays the description set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _DESCRIPTION section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _DESCRIPTION)
+        self.display_metadata_KeyTags(self.orig_image, _DESCRIPTION)
 
     def __origin_metadata(self, obj):
         """
         displays the origin set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _ORIGIN section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _ORIGIN)
+        self.display_metadata_KeyTags(self.orig_image, _ORIGIN)
 
     def __image_metadata(self, obj):
         """
         displays the image set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _IMAGE section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _IMAGE)
+        self.display_metadata_KeyTags(self.orig_image, _IMAGE)
 
     def __camera_metadata(self, obj):
         """
         displays the camera set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _CAMERA section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _CAMERA)
+        self.display_metadata_KeyTags(self.orig_image, _CAMERA)
 
     def __advanced_metadata(self, obj):
         """
         displays the advanced set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _ADVANCED section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _ADVANCED)
+        self.display_metadata_KeyTags(self.orig_image, _ADVANCED)
 
     def __gps_metadata(self, obj):
         """
         displays the gps set of tags...
         """
 
-        # clears the display area
-        self.model.clear()
-
         # read the image metadata for the _GPS section and displays it
-        self.displaqy_metadata_keytags(self.orig_image, _GPS)
+        self.display_metadata_KeyTags(self.orig_image, _GPS)
 
     def active_changed(self, handle):
         """
@@ -479,19 +466,51 @@ class imageMetadataGramplet(Gramplet):
             if mime_type.startswith("image"):
                 self.model.clear()
 
-                # mark button sensitivity for metadata sections
-                self.button_sensitivity(self.orig_image) 
-
                 # set up tooltips text
                 self.setup_tooltips(self.orig_image)
 
                 # read the image metadata and display it
-                self.displaqy_metadata_keytags(self.orig_image, _DESCRIPTION)
+                self.display_metadata_KeyTags(self.orig_image, _DESCRIPTION)
 
         else:
             # prevent non mime images from attempting to write to non MIME images...
             self._mark_dirty_write(self.orig_image)
             return
+
+    def __button_sensitivity(self, obj):
+        """
+        will determine if a button should be available or not?
+        """
+
+        descriptiontags = [keytag for keytag in _DESCRIPTION.keys()
+                if self.__get_value(keytag) ]
+        if descriptiontags:
+            self.exif_widgets["Description"].set_sensitive(True)
+
+        origintags = [keytag for keytag in _ORIGIN.keys()
+                if self.__get_value(keytag) ]
+        if origintags:
+            self.exif_widgets["Origin"].set_sensitive(True)
+
+        imagetags = [keytag for keytag in _IMAGE.keys()
+                if self.__get_value(keytag) ]
+        if imagetags:
+            self.exif_widgets["Image"].set_sensitive(True)
+
+        cameratags = [keytag for keytag in _CAMERA.keys()
+                if self.__get_value(keytag) ]
+        if cameratags:
+            self.exif_widgets["Camera"].set_sensitive(True)
+
+        advancedtags = [keytag for keytag in _ADVANCED.keys()
+                if self.__get_value(keytag) ]
+        if advancedtags:
+            self.exif_widgets["Advanced"].set_sensitive(True)
+
+        gpstags = [keytag for keytag in _GPS.keys()
+                if self.__get_value(keytag) ]
+        if gpstags:
+            self.exif_widgets["GPS"].set_sensitive(True)
 
     def setup_tooltips(self, obj):
         """
@@ -514,13 +533,21 @@ class imageMetadataGramplet(Gramplet):
         self._dirty_image = False
         self._dirty_write = False
 
+        # set all section buttons to insensitive/ greyed out
+        for section in ["Description", "Origin", "Image", "Camera", "Advanced", "GPS"]:
+            self.exif_widgets[section].set_sensitive(False)
+
+        # set plugin buttons to insensitive/ greyed out
+        for section in ["Save", "Edit", "Clear"]:
+            self.exif_widgets[section].set_sensitive(False)
+
     def _mark_dirty_image(self, obj):
         self._dirty_image = True
 
     def _mark_dirty_write(self, obj):
         self._dirty_write = True
 
-    def displaqy_metadata_keytags(self, mediaobj, metadataTags):
+    def display_metadata_KeyTags(self, mediaobj, metadataTags):
         """
         reads the image metadata after the pyexiv2.Image has been created
 
@@ -537,53 +564,76 @@ class imageMetadataGramplet(Gramplet):
         if LesserVersion: # prior to pyexiv2-0.2.0
             try:
                 self.plugin_image = pyexiv2.Image(mediapath)
-            except (IOError, OSError), msg:
-                WarningDialog(_("Please select a different image object..."), str(msg))
+            except (IOError, OSError):
                 return
             self.plugin_image.readMetadata()
 
             # get all keytags for this section of tags
-            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys() if keytag in metadataTags]
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmpKeys() if keytag in metadataTags] )
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptcKeys() if keytag in metadataTags] )
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.exifKeys()
+                    if keytag in metadataTags] )
+
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmpKeys()
+                    if keytag in metadataTags] )
+
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptcKeys()
+                    if keytag in metadataTags] )
 
         else: # pyexiv2-0.2.0 and above
             try:
                 self.plugin_image = pyexiv2.ImageMetadata(mediapath)
-            except (IOError, OSError), msg:
-                WarningDialog(_("Please select a different image object..."), str(msg))
+            except (IOError, OSError):
                 return
             self.plugin_image.read()
 
             # get all keytags for this section of tags
-            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys if keytag in metadataTags]
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmp_keys if keytag in metadataTags] )
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptc_keys if keytag in metadataTags] )
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.exif_keys
+                    if keytag in metadataTags] )
+
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmp_keys
+                    if keytag in metadataTags] )
+
+            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptc_keys
+                    if keytag in metadataTags] )
+
+        # check to see if a section/ button should not be active?
+        self.button_sensitivity(self.plugin_image)
 
         # check to see if we got metadata from image?
-        if MediaDataTags:
-            for keytag in MediaDataTags:
-                if keytag:
+        for KeyTag in MediaDataTags:
 
-                    if LesserVersion:  # prior to pyexiv2-0.2.0
-                        label = self.plugin_image.tagDetails(keytag)[0]
-                        human_value = self.plugin_image.interpretedExifValue(keytag)
-
-                    else:  # pyexiv2-0.2.0 and above
-                        tag = self.plugin_image[keytag]
-                        label = tag.label
-                        human_value = tag.human_value
-                    self.model.append( (self.plugin_image, label, human_value) )
-
-                    value = metadataTags.get(keytag, keytag)
-#                    self.exif_widgets[value].set_text(human_value)
-
-        else:
-            self.model.append( (self.plugin_image, _("No metadata tags were found..."), "") )
+            tagValue = self.__get_value(KeyTag)
+            if tagValue: 
+                self.model.append( (self.plugin_image, KeyTag, tagValue) )
 
     def post_init(self):
         self.connect_signal("Media", self.update)
         
+def __convert_value(value):
+    """
+    will take a value from the coordinates and return its value
+    """
+
+    if (isinstance(value, Fraction) or isinstance(value, Rational) ):
+        return str( (Decimal(value.numerator) / Decimal(value.denominator)) )
+
+    return value
+
+def rational_to_dms(coords):
+    """
+    takes a rational set of coordinates and returns (degrees, minutes, seconds)
+    """
+
+    deg, min, sec = False, False, False
+    if len(coords) == 3:
+        deg, min, sec = coords[0], coords[1], coords[2]
+
+        deg = __convert_value(deg)
+        min = __convert_value(min)
+        sec = __convert_value(sec)
+
+        return [__convert_value(coordinate) for coordinate in [deg, min, sec] ]
+
+    return deg, min, sec
 #################################################
 #    Metadata Editor Class
 #################################################
@@ -1033,6 +1083,28 @@ class MetadataSave(ManagedWindow.ManagedWindow):
                 self.exif_widgets["Longitude"].set_text(
                     """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
 
+    def __get_value(KeyTag):
+        """
+        gets the value from the Exif Key, and returns it...
+
+        @param: KeyTag -- image metadata key
+        """
+
+        KeyValue = False
+
+        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
+        if LesserVersion:
+            KeyValue = self.plugin_image[KeyTag]
+
+        else:
+            try:
+                KeyValue = self.plugin_image[KeyTag].value
+
+            except (KeyError, ValueError, AttributeError):
+                pass
+
+        return KeyValue
+
 def string_to_rational(coordinate):
     """
     convert string to rational variable for GPS
@@ -1082,37 +1154,3 @@ def convert_value(value):
     """
 
     return str( ( Decimal(value.numerator) / Decimal(value.denominator) ) )
-
-def rational_to_dms(coords, ValueType = False):
-    """
-    takes a rational set of coordinates and returns (degrees, minutes, seconds)
-
-    @param: ValueType -- how did the coordinates come into this addon
-            0 = [Fraction(40, 1), Fraction(0, 1), Fraction(1079, 20)]
-            1 = '105/1 16/1 1396/100 
-    """
-
-    deg, min, sec = False, False, False
-    if ValueType is not False:
-
-        # coordinates look like: '38/1 38/1 318/100'  
-        if ValueType == 1:
-
-            deg, min, sec = coords.split(" ")
-            deg, rest = deg.split("/")
-            min, rest = min.split("/")
-            sec, rest = sec.split("/")
-
-            sec = str( ( Decimal(sec) / Decimal(rest) ) )
-
-        # coordinates look like:
-        #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
-        # or [Fraction(38, 1), Fraction(38, 1), Fraction(318, 100)]   
-        elif (ValueType == 0 and isinstance(coords, list) ):
-    
-            if len(coords) == 3:
-                deg, min, sec = coords[0], coords[1], coords[2]
-                deg = convert_value(deg)
-                min = convert_value(min)
-                sec = convert_value(sec)
-    return deg, min, sec
