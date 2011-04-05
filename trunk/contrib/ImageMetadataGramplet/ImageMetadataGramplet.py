@@ -33,11 +33,6 @@ _ = get_addon_translator().ugettext
 import os, sys
 from datetime import datetime, date
 import time, calendar
-from decimal import *
-from fractions import Fraction
-
-# abilty to escape certain characters from html output...
-from xml.sax.saxutils import escape as _html_escape
 
 #------------------------------------------------
 # GTK modules
@@ -51,15 +46,16 @@ from QuestionDialog import OkDialog, WarningDialog
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
-import GrampsDisplay
 
+import gen.mime
 import gen.lib
 import Utils
 from PlaceUtils import conv_lat_lon
 
-#################################################
-# pyexiv2 check for library...?
-#################################################
+#####################################################################
+#               pyexiv2 check for library...?
+#####################################################################
+
 # pyexiv2 download page (C) Olivier Tilloy
 _DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/download.html"
 
@@ -98,80 +94,142 @@ if (software_version and (software_version < Min_VERSION)):
 # Constants
 # -----------------------------------------------------------------------------
 # set up Exif keys for key sections of:
-# Description, Origin, Image, Camera, Addvance, and GPS KeyTags
+# Opening, Description, Origin, Image, Camera, Addvanced KeyTags
+_OPENING = dict( [v, k] for v, k in {
+    "Exif.Image.ImageDescription" : "ImageDescription",
+    "Exif.Image.Artist"  : "ImageArtist",
+    "Exif.Image.Copyright" : "ImageCopyright",
+    "Exif.Image.DateTime" : "ImageDateTime",
+    "Exif.GPSInfo.GPSAltitudeRef" : "ImageAltitudeRef",
+    "Exif.GPSInfo.GPSAltitude" : "ImageAltitude",
+    "Exif.GPSInfo.GPSTimeStamp" : "GPSTimeStamp",
+    "Exif.GPSInfo.GPSSatellites" : "GPSSatellites", 
+    "Exif.GPSInfo.GPSLatitudeRef" : "ImageLatitudeRef",
+    "Exif.GPSInfo.GPSLatitude" : "ImageLatitude",
+    "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
+    "Exif.GPSInfo.GPSLongitude" : "ImageLongitude"}.items() )
+
 _DESCRIPTION = dict( [v, k] for v, k in {
     "Exif.Image.ImageDescription" : "ImageDescription",
-    "Exif.Image.XPSubject"        : "XPSubject",
-    "Exif.Image.Rating"           : "ImageRating",
-    "Exif.Image.XPKeywords"       : "XPKeywords",
-    "Exif.Image.XPComment"        : "XPComment"}.items() )
+    "Exif.Image.XPSubject" : "XPSubject",
+    "Exif.Image.Rating" : "ImageRating",
+    "Exif.Image.XPKeywords" : "XPKeywords",
+    "Exif.Image.XPComment" : "XPComment"}.items() )
 
 _ORIGIN = dict( [v, k] for v, k in {
-    "Exif.Image.Artist"            : "ImageArtist",
-    "Exif.Image.Copyright"         : "ImageCopyright",
-    "Exif.Photo.DateTimeOriginal"  : "DateTime",
-    "Exif.Image.Software"          : "Software"}.items() )
+    "Exif.Image.Artist"  : "ImageArtist",
+    "Exif.Image.Copyright" : "ImageCopyright",
+    "Exif.Photo.DateTimeOriginal" : "ImageDateTime",
+    "Exif.Image.Software" : "Software"}.items() )
 
 _IMAGE = dict( [v, k] for v, k in {
-    "Exif.Photo.PixelXDimension"        : "Width",
-    "Exif.Photo.PixelYDimension"        : "Height",
-    "Exif.Image.XResolution"            : "HorizontalResolution",
-    "Exif.Image.YResolution"            : "VerticalResolution",
-    "Exif.Image.ResolutionUnit"         : "ResolutionUnit",
-    "Exif.Photo.ColorSpace"             : "ColourRepresentation",
+    "Exif.Photo.PixelXDimension" : "Width",
+    "Exif.Photo.PixelYDimension" : "Height",
+    "Exif.Image.XResolution" : "HorizontalResolution",
+    "Exif.Image.YResolution" : "VerticalResolution",
+    "Exif.Image.ResolutionUnit" : "ResolutionUnit",
+    "Exif.Photo.ColorSpace" : "ColourRepresentation",
     "Exif.Photo.CompressedBitsPerPixel" : "CompressedBits"}.items() )
       
 _CAMERA = dict( [v, k] for v, k in {
-    "Exif.Image.Make"                  : "CameraMaker",
-    "Exif.Image.Model"                 : "CameraModel",
-    "Exif.Photo.FNumber"               : "FStop",
-    "Exif.Photo.ExposureTime"          : "ExposureTime",
-    "Exif.Photo.ISOSpeedRatings"       : "SpeedRatings",
-    "Exif.Photo.ExposureBiasValue"     : "ExposureBias",
-    "Exif.Photo.FocalLength"           : "FocalLength",
-    "Exif.Photo.MaxAperatureValue"     : "AperatureValue",
-    "Exif.Photo.Flash"                 : "Flash",
+    "Exif.Image.Make"  : "CameraMaker",
+    "Exif.Image.Model" : "CameraModel",
+    "Exif.Photo.FNumber" : "FStop",
+    "Exif.Photo.ExposureTime" : "ExposureTime",
+    "Exif.Photo.ISOSpeedRatings" : "SpeedRatings",
+    "Exif.Photo.ExposureBiasValue" : "ExposureBias",
+    "Exif.Photo.FocalLength" : "FocalLength",
+    "Exif.Photo.MaxAperatureValue" : "AperatureValue",
+    "Exif.Photo.Flash" : "Flash",
     "Exif.Photo.FocalLengthIn35mmFilm" : "Focal35mmFilm"}.items() )
 
 _ADVANCED = dict( [v, k] for v, k in {
-    "Xmp.MicrosoftPhoto.LensManufacturer"   : "LensMaker",
-    "Xmp.MicrosoftPhoto.LensModel"          : "LensModel",
-    "Xmp.MicrosoftPhoto.FlashManufacturer"  : "FlashMaker",
-    "Xmp.MicrosoftPhoto.FlashModel"         : "FlashModel",
+    "Xmp.MicrosoftPhoto.LensManufacturer" : "LensMaker",
+    "Xmp.MicrosoftPhoto.LensModel" : "LensModel",
+    "Xmp.MicrosoftPhoto.FlashManufacturer" : "FlashMaker",
+    "Xmp.MicrosoftPhoto.FlashModel" : "FlashModel",
     "Xmp.MicrosoftPhoto.CameraSerialNumber" : "CameraSerialNumber",
-    "Exif.Photo.Contrast"                   : "Contrast",
-    "Exif.Photo.LightSource"                : "LightSource",
-    "Exif.Photo.ExposureProgram"            : "ExposureProgram",
-    "Exif.Photo.Saturation"                 : "Saturation",
-    "Exif.Photo.Sharpness"                  : "Sharpness",
-    "Exif.Photo.WhiteBalance"               : "WhiteBalance",
-    "Exif.Image.ExifTag"                    : "ExifVersion"}.items() )
+    "Exif.Photo.Contrast" : "Contrast",
+    "Exif.Photo.LightSource" : "LightSource",
+    "Exif.Photo.ExposureProgram" : "ExposureProgram",
+    "Exif.Photo.Saturation" : "Saturation",
+    "Exif.Photo.Sharpness" : "Sharpness",
+    "Exif.Photo.WhiteBalance" : "WhiteBalance",
+    "Exif.Image.ExifTag" : "ExifVersion"}.items() )
 
 _GPS = dict( [v, k] for v, k in {
-    "Exif.GPSInfo.GPSAltitudeRef"  : "ImageAltitudeRef",
-    "Exif.GPSInfo.GPSAltitude"     : "ImageAltitude",
-    "Exif.GPSInfo.GPSTimeStamp"    : "GPSTimeStamp",
-    "Exif.GPSInfo.GPSSatellites"   : "GPSSatellites", 
-    "Exif.GPSInfo.GPSLatitudeRef"  : "ImageLatitudeRef",
-    "Exif.GPSInfo.GPSLatitude"     : "ImageLatitude",
+    "Exif.GPSInfo.GPSAltitudeRef" : "ImageAltitudeRef",
+    "Exif.GPSInfo.GPSAltitude" : "ImageAltitude",
+    "Exif.GPSInfo.GPSTimeStamp" : "GPSTimeStamp",
+    "Exif.GPSInfo.GPSSatellites" : "GPSSatellites", 
+    "Exif.GPSInfo.GPSLatitudeRef" : "ImageLatitudeRef",
+    "Exif.GPSInfo.GPSLatitude" : "ImageLatitude",
     "Exif.GPSInfo.GPSLongitudeRef" : "ImageLongitudeRef",
-    "Exif.GPSInfo.GPSLongitude"    : "ImageLongitude"}.items() )
+    "Exif.GPSInfo.GPSLongitude" : "ImageLongitude"}.items() )
 
-_allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
-
-def help_clicked(obj):
+def _help_clicked():
     """
     Display the relevant portion of GRAMPS manual
     """
+    import GrampsDisplay
+
     GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
+
+def _set_value(pluginobject, KeyTag, KeyValue):
+    """
+    sets the value for the Exif keys
+
+    @param: pluginobject -- plugin media instance
+    @param: KeyTag   -- exif key
+    @param: KeyValue -- value to be saved
+    """
+
+    # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
+    if LesserVersion:
+        pluginobject[KeyTag] = KeyValue 
+    else:
+        # Exif KeyValue family?
+        if "Exif" in KeyTag:
+            try:
+                pluginobject[KeyTag].value = KeyValue
+
+            except KeyError:
+                pluginobject[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
+
+            except (ValueError, AttributeError):
+                pass
+
+        # Iptc KeyValue family?
+        elif "Iptc" in KeyTag:
+            try:
+                pluginobject[KeyTag].values = KeyValue
+
+            except KeyError:
+                pluginobject[KeyTag] = pyexiv2.IptcTag(KeyTag, KeyValue)
+
+            except (ValueError, AttributeError):
+                pass
+
+        # Xmp KeyValue family?
+        elif "Xmp" in KeyTag:
+            try:
+                pluginobject[KeyTag].values = KeyValue
+
+            except KeyError:
+                pluginobject[KeyTag] = pyexiv2.XmpTag(KeyTag, KeyValue)
+
+            except (ValueError, AttributeError):
+                pass
 
 def _return_month(month):
     """
     returns either an integer of the month number or the abbreviated month name
 
     @param: rmonth -- can be one of:
-        10, "10", or ("Oct" or "October")
+        10, "10", "Oct", "October"
     """
+
+    _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13) )
 
     for sm, lm, index in _allmonths:
         if isinstance(month, str):
@@ -213,44 +271,52 @@ class imageMetadataGramplet(Gramplet):
 
         self.orig_image   = False
         self.plugin_image = False
-
-        # set all dirty variables to False to begin this addon...
-        self._clear_image(self.orig_image)
+        self.__full_path  = False
 
         root = self.__create_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
 
+        # connect the database signals...
         self.dbstate.db.connect('media-update', self.update)
         self.dbstate.db.connect("media-rebuild", self.update)
+
+    def active_changed(self, handle):
+        """
+        Called when the active media is changed.
+        """
+        self.update()
 
     def __create_gui(self):
         """
         Create and display the GUI components of the gramplet.
         """
         vbox = gtk.VBox()
-        hbox = gtk.HBox(False)
 
-        media_label = gtk.Label(_("Click a media object to begin..."))
-        media_label.set_alignment(0.0, 0.5)
-        self.exif_widgets["Media:Label"] = media_label
-        hbox.pack_start(self.exif_widgets["Media:Label"], expand=False)
+        medialabel = gtk.HBox(False)
+        self.exif_widgets["Media:Label"] = gtk.Label(_("Click a media object to begin...") )
+        self.exif_widgets["Media:Label"].set_alignment(0.0, 0.5)
+        medialabel.pack_start(self.exif_widgets["Media:Label"], expand =False)
 
-        self.media_text = gtk.Label()
-        self.media_text.set_alignment(0.0, 0.5)
-        hbox.pack_start(self.media_text, expand=True, fill=True)
+        mimetype = gtk.HBox(False)
+        self.exif_widgets["Mime:Type"] = gtk.Label()
+        self.exif_widgets["Mime:Type"].set_alignment(0.0, 0.5)
+        mimetype.pack_start(self.exif_widgets["Mime:Type"], expand =False)
+
+        messagearea = gtk.HBox(False)
+        self.exif_widgets["Message:Area"] = gtk.Label()
+        self.exif_widgets["Message:Area"].set_alignment(0.0, 0.5)
+        messagearea.pack_start(self.exif_widgets["Message:Area"], expand =False)
 
         self.model = gtk.ListStore(object, str, str)
         view = gtk.TreeView(self.model)
 
-        # Key Tag Column
-        view.append_column(
-            self.__create_column( _("Key Tag"), 1, 40, True) )
+        # Key Column
+        view.append_column( self.__create_column(_("Key"), 1) )
 
-        # Key Value Column
-        view.append_column(
-            self.__create_column( _("Key Value"), 2, 60) )
+        # Value Column
+        view.append_column( self.__create_column(_("Value"), 2) )
 
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_START)
@@ -266,7 +332,7 @@ class imageMetadataGramplet(Gramplet):
         # image metadata button in button box...
         button_box.add( self.__create_button(
             "Image", _("Image"), self.__image_metadata) )
-        vbox.pack_start(button_box, expand=False, fill=False)
+        vbox.pack_start(button_box, expand =False, fill =False)
 
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_START)
@@ -279,68 +345,78 @@ class imageMetadataGramplet(Gramplet):
         button_box.add( self.__create_button(
             "Advanced", _("Advanced"), self.__advanced_metadata) )
 
-        # GPS metadata  button in button box...
+        # advanced metadata  button in button box...
         button_box.add( self.__create_button(
             "GPS", _("GPS"), self.__gps_metadata) )
-        vbox.pack_start(button_box, expand=False, fill=False)
+        vbox.pack_start(button_box, expand =False, fill =False)
 
         button_box = gtk.HButtonBox()
         button_box.set_layout(gtk.BUTTONBOX_START)
 
-        help = gtk.Button(stock=gtk.STOCK_HELP)
-        help.connect("clicked", help_clicked)
-        self.exif_widgets["Help"] = help
-        button_box.add(self.exif_widgets["Help"])
+        # Help button on plugin bar
+        button_box.add( self.__create_button(
+            "Help", False, _help_clicked, gtk.STOCK_HELP) )
 
+        # Save button on plugin bar
         save = gtk.Button(stock=gtk.STOCK_SAVE)
         save.connect("clicked", self.__save_metadata, view.get_selection() )
         self.exif_widgets["Save"] = save
-        button_box.add(self.exif_widgets["Save"])
+        button_box.add( self.exif_widgets["Save"] )
                 
-        # edit button in button box...
+        # Edit button on plugin bar
         edit = gtk.Button(stock=gtk.STOCK_EDIT)
         edit.connect("clicked", self.__edit_metadata, view.get_selection() )
         self.exif_widgets["Edit"] = edit
-        button_box.add(self.exif_widgets["Edit"])
+        button_box.add( self.exif_widgets["Edit"] )
 
-        # clear button in button box...
-        clear = gtk.Button(stock=gtk.STOCK_CLEAR)
-        clear.connect("clicked", self.__clear_metadata)
-        self.exif_widgets["Clear"] = clear
-        button_box.add(self.exif_widgets["Clear"])
+        # Clear Button on plugin bar
+        button_box.add( self.__create_button(
+            "Clear", False, self.__clear_metadata, gtk.STOCK_CLEAR) )
 
-        vbox.pack_start(hbox, expand=False, padding=10)
-        vbox.pack_start(view, padding=10)
-        vbox.pack_end(button_box, expand=False, fill=False)
+        vbox.pack_start(medialabel, expand =False, padding =10)
+        vbox.pack_start(mimetype, expand =False, padding =10)
+        vbox.pack_start(messagearea, expand =False, padding =10)
+        vbox.pack_start(view, padding =10)
+        vbox.pack_end(button_box, expand =False, fill =False)
 
         return vbox
 
-    def __create_column(self, name, value, min_width, fixed = True):
+    def __create_column(self, name, colnum, fixed =True):
         """
         will create the column for the column row...
-
-        @param: text -- Column Text
-        @param: value -- Column Number
-        @param: min_width -- minimun width of the column
-        @param: fixed -- is it allowed to expad?
         """
 
         renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(name, renderer, text = value)
+        column = gtk.TreeViewColumn(name, renderer, text =colnum)
 
-        column.set_expand(fixed)
-        column.set_alignment(0.5)
-        column.set_sort_column_id(value)
+        if fixed:
+            column.set_sizing(gtk.TREE_VIEW_COLUMN_FIXED)
+            column.set_expand(True)
+
+        else:
+            column.set_sizing(gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+            column.set_expand(False)
+
+        column.set_alignment(0.0)
+        column.set_sort_column_id(colnum)
 
         return column
 
-    def __create_button(self, pos, translated_text, callback):
+    def __create_button(self, pos, text, callback, icon =False):
         """
         Creates a button with either text or a stock icon from gtk
         """
 
-        button = gtk.Button(translated_text)
+        # is there a stock icon for this button?
+        if icon:
+            button = gtk.Button(stock=icon)
+
+        else:
+            button = gtk.Button(text)
+            button.set_sensitive(False)
+
         button.connect("clicked", callback)
+
         self.exif_widgets[pos] = button
 
         return button
@@ -351,7 +427,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # read the image metadata for the _DESCRIPTION section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _DESCRIPTION)
+        self.display_exif_tags(self.__full_path, _DESCRIPTION)
 
     def __origin_metadata(self, obj):
         """
@@ -359,7 +435,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # read the image metadata for the _ORIGIN section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _ORIGIN)
+        self.display_exif_tags(self.__full_path, _ORIGIN)
 
     def __image_metadata(self, obj):
         """
@@ -367,7 +443,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # read the image metadata for the _IMAGE section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _IMAGE)
+        self.display_exif_tags(self.__full_path, _IMAGE)
 
     def __camera_metadata(self, obj):
         """
@@ -375,7 +451,7 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # read the image metadata for the _CAMERA section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _CAMERA)
+        self.display_exif_tags(self.__full_path, _CAMERA)
 
     def __advanced_metadata(self, obj):
         """
@@ -383,21 +459,15 @@ class imageMetadataGramplet(Gramplet):
         """
 
         # read the image metadata for the _ADVANCED section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _ADVANCED)
+        self.display_exif_tags(self.__full_path, _ADVANCED)
 
     def __gps_metadata(self, obj):
         """
-        displays the gps set of tags...
+        displays the advanced set of tags...
         """
 
-        # read the image metadata for the _GPS section and displays it
-        self.display_metadata_KeyTags(self.orig_image, _GPS)
-
-    def active_changed(self, handle):
-        """
-        Called when the active person is changed.
-        """
-        self.update()
+        # read the image metadata for the _ADVANCED section and displays it
+        self.display_exif_tags(self.__full_path, _GPS)
 
     def __save_metadata(self, widget, selection):
         """
@@ -406,8 +476,10 @@ class imageMetadataGramplet(Gramplet):
         model, iter_ = selection.get_selected()
         if iter_ and not self._dirty_write:
             media = model.get_value(iter_, 0)
+
             try:
                 MetadataSave(self.gui.dbstate, self.gui.uistate, [], media)
+
             except Errors.WindowActiveError:
                 pass
 
@@ -418,8 +490,10 @@ class imageMetadataGramplet(Gramplet):
         model, iter_ = selection.get_selected()
         if iter_:
             media = model.get_value(iter_, 0)
+
             try:
                 MetadataEditor(self.gui.dbstate, self.gui.uistate, [], media, self.exif_widgets)
+
             except Errors.WindowActiveError:
                 pass
 
@@ -427,99 +501,181 @@ class imageMetadataGramplet(Gramplet):
         """
         clears all data fields to nothing
         """
-
         self.model.clear()
 
     def main(self): # return false finishes
         """
         get the active media, mime type, and reads the image metadata
         """
+        db = self.dbstate.db
 
-        active_media = self.get_active("Media")
-        if not active_media:
+        active_handle = self.get_active("Media")
+        if not active_handle:
             return
 
-        self.orig_image = self.dbstate.db.get_object_from_handle(active_media)
-        if self.orig_image:
-            self.exif_widgets["Media:Label"].set_text(self.orig_image.get_description() )
-        else:
-            self.media_text.set_text(_('No active media selected...'))
+        # clear Media:Label, Mime:Type, and Message:Area...
+        self.exif_widgets["Media:Label"].set_text("")
+        self.exif_widgets["Mime:Type"].set_text("")
+        self.exif_widgets["Message:Area"].set_text("")
+
+        self.orig_image = db.get_object_from_handle(active_handle)
+        if not self.orig_image:
+            self.exif_widgets["Message:Area"].set_text(_("No active media selected..."))
             return
 
-        # clear all flags against media
-        self._clear_image(self.orig_image)
+        # clear the display area
+        self.model.clear()
 
         # get media full path
-        full_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
+        self.__full_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
 
-        # check media read priviledges?
-        if not os.access(full_path, os.R_OK):
-            return
+        # check media read/ write priviledges...
+        self.__readable = os.access(self.__full_path, os.R_OK)
+        self.__writable = os.access(self.__full_path, os.W_OK)
+        permissions, filemsg = True, False
+        if (not self.__readable and not self.__writable):
+            permissions = False
+            filemsg = _("You do NOT have read/ write access to this media object.  "
+                "Please check your file permissions...")
 
-        # check media write priviledges?
-        if not os.access(full_path, os.W_OK):
-            self._mark_dirty_write(self.orig_image)
+        elif not self.__readable:
+            permissions = False
+            filemsg = _("You do NOT have read access to this media object.  "
+                "Please check your file permissions...")
 
-        # get image mime type
+        elif not self.__writable:
+            permissions = False
+            filemsg = _("You do NOT have write access to this media object.  "
+                "Please check your file permissions...")
+
+        # if there is a file priviledges/ permissions problem, display it...
+        if (not permissions and filemsg):
+            self.exif_widgets["Save"].set_sensitive(False)
+            self.exif_widgets["Edit"].set_sensitive(False)
+
+            self.exif_widgets["Message:Area"].set_text(filemsg)
+            if not self.__readable:
+                return
+
+        # display file description/ title...
+        self.exif_widgets["Media:Label"].set_text( self.orig_image.get_description() )
+
+        # get media mime type
         mime_type = self.orig_image.get_mime_type()
-        if mime_type:
-            if mime_type.startswith("image"):
-                self.model.clear()
+        self.__mtype = gen.mime.get_description(mime_type)
+        self.exif_widgets["Mime:Type"].set_text(self.__mtype)
+        if (mime_type and mime_type.startswith("image") ):
 
-                # set up tooltips text
-                self.setup_tooltips(self.orig_image)
+                # set up tooltips text for all buttons
+                self.__setup_tooltips(self.orig_image)
 
-                # read the image metadata and display it
-                self.display_metadata_KeyTags(self.orig_image, _DESCRIPTION)
+                # read the media metadata and display it
+                self.display_exif_tags(self.__full_path, _OPENING)
 
         else:
-            # prevent non mime images from attempting to write to non MIME images...
-            self._mark_dirty_write(self.orig_image)
+            self.__mtype = False
+            self.exif_widgets["Message:Area"].set_text(_("Please choose a different media object..."))
+
+        # disable save and edit buttons if errors or non mime_type media?
+        if (not permissions or not self.__mtype):
+            self.exif_widgets["Save"].set_sensitive(False)
+            self.exif_widgets["Edit"].set_sensitive(False)
+
             return
+
+    def __get_value(self, KeyTag):
+        """
+        gets the value from the Exif Key, and returns it...
+
+        @param: KeyTag -- image metadata key
+        """
+
+        KeyValue = ""
+
+        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
+        if LesserVersion:
+            KeyValue = self.plugin_image[KeyTag]
+
+        else:
+            try:
+                KeyValue = self.plugin_image[KeyTag].value
+
+            except (KeyError, ValueError, AttributeError):
+                pass
+
+        return KeyValue
 
     def __button_sensitivity(self, obj):
         """
         will determine if a button should be available or not?
+
+        if there are no key values for this section, disable/ grey out the button?
         """
 
-        descriptiontags = [keytag for keytag in _DESCRIPTION.keys()
-                if self.__get_value(keytag) ]
-        if descriptiontags:
+        # prevent non mime type media objects from seeing the buttons
+        if not self.__mtype:
+            return
+
+        # if there is no values in Description section?
+        if [keytag for keytag in _DESCRIPTION.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["Description"].set_sensitive(True)
 
-        origintags = [keytag for keytag in _ORIGIN.keys()
-                if self.__get_value(keytag) ]
-        if origintags:
+        # if there is no values in Origin section?
+        if [keytag for keytag in _ORIGIN.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["Origin"].set_sensitive(True)
 
-        imagetags = [keytag for keytag in _IMAGE.keys()
-                if self.__get_value(keytag) ]
-        if imagetags:
+        # if there is no values in Image section?
+        if [keytag for keytag in _IMAGE.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["Image"].set_sensitive(True)
 
-        cameratags = [keytag for keytag in _CAMERA.keys()
-                if self.__get_value(keytag) ]
-        if cameratags:
+        # if there is no values in Camera section?
+        if [keytag for keytag in _CAMERA.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["Camera"].set_sensitive(True)
 
-        advancedtags = [keytag for keytag in _ADVANCED.keys()
-                if self.__get_value(keytag) ]
-        if advancedtags:
+        # if there is no values in Advanced section?
+        if [keytag for keytag in _ADVANCED.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["Advanced"].set_sensitive(True)
 
-        gpstags = [keytag for keytag in _GPS.keys()
-                if self.__get_value(keytag) ]
-        if gpstags:
+        # if there is no values in GPS section?
+        if [keytag for keytag in _GPS.keys() if self.__get_value(keytag) ]:
             self.exif_widgets["GPS"].set_sensitive(True)
 
-    def setup_tooltips(self, obj):
+    def __setup_tooltips(self, obj):
         """
         setup tooltips for each field
         """
 
+        # sets tooltip text for the Description button
+        self.exif_widgets["Description"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the Description tags."))
+
+        # sets tooltip text for the Origin button
+        self.exif_widgets["Origin"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the Origin tags."))
+
+        # sets tooltip text for the Image button
+        self.exif_widgets["Image"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the Image tags."))
+
+        # sets tooltip text for the Camera button
+        self.exif_widgets["Camera"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the Camera tags."))
+
+        # sets tooltip text for the Advanced button
+        self.exif_widgets["Advanced"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the Advanced tags."))
+
+        # sets tooltip text for the GPS button
+        self.exif_widgets["GPS"].set_tooltip_text(_("Displays the key tag/ "
+            "value pairs for the GPS tags."))
+
+        # sets tooltip text for the Help button
+        self.exif_widgets["Help"].set_tooltip_text(_("Diplays the Wiki Help Page for "
+            "this Gramps addon/ gramplet."))
+
         # sets tooltip text for the Save button
         self.exif_widgets["Save"].set_tooltip_text(_("Saves the media "
-            "metadata to the image."))
+            "metadata for this media object."))
 
         # sets tooltip text for the Edit button
         self.exif_widgets["Edit"].set_tooltip_text(_("Edits the active "
@@ -529,91 +685,92 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["Clear"].set_tooltip_text(_("Clears all the image "
             "metadata key values."))
 
-    def _clear_image(self, obj):
-        self._dirty_image = False
-        self._dirty_write = False
-
-        # set all section buttons to insensitive/ greyed out
-        for section in ["Description", "Origin", "Image", "Camera", "Advanced", "GPS"]:
-            self.exif_widgets[section].set_sensitive(False)
-
-        # set plugin buttons to insensitive/ greyed out
-        for section in ["Save", "Edit", "Clear"]:
-            self.exif_widgets[section].set_sensitive(False)
-
-    def _mark_dirty_image(self, obj):
-        self._dirty_image = True
-
-    def _mark_dirty_write(self, obj):
-        self._dirty_write = True
-
-    def display_metadata_KeyTags(self, mediaobj, metadataTags):
+    def display_exif_tags(self, full_path, metadataTags):
         """
         reads the image metadata after the pyexiv2.Image has been created
 
-        @param: mediaobj -- the media object from the database...
+        @param: full_path -- complete path to media object on local computer
         @param: metadataTags -- a list of the exif keytags that we will be displayed...
         """
-
-        # set up initial value
         MediaDataTags = []
+        self.model.clear()
 
-        # get the full path to the image object
-        mediapath = Utils.media_path_full(self.dbstate.db, mediaobj.get_path() )
+        if LesserVersion:  # prior to pyexiv2-0.2.0
+            self.plugin_image = pyexiv2.Image(full_path)
 
-        if LesserVersion: # prior to pyexiv2-0.2.0
-            try:
-                self.plugin_image = pyexiv2.Image(mediapath)
-            except (IOError, OSError):
-                return
             self.plugin_image.readMetadata()
 
-            # get all keytags for this section of tags
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.exifKeys()
-                    if keytag in metadataTags] )
+            # get all keytags for this section of tags and if there is a value?
+            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys()
+                    if keytag in metadataTags ]
 
+            # get all keytags for this section of tags and if there is a value?
             MediaDataTags.append( [keytag for keytag in self.plugin_image.xmpKeys()
-                    if keytag in metadataTags] )
+                    if keytag in metadataTags ] )
 
+            # get all keytags for this section of tags and if there is a value?
             MediaDataTags.append( [keytag for keytag in self.plugin_image.iptcKeys()
-                    if keytag in metadataTags] )
+                    if keytag in metadataTags ] )
 
         else: # pyexiv2-0.2.0 and above
-            try:
-                self.plugin_image = pyexiv2.ImageMetadata(mediapath)
-            except (IOError, OSError):
-                return
+            self.plugin_image = pyexiv2.ImageMetadata(full_path)
+
             self.plugin_image.read()
 
-            # get all keytags for this section of tags
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.exif_keys
-                    if keytag in metadataTags] )
+            # get all keytags for this section of tags and if there is a value?
+            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys
+                    if keytag in metadataTags ]
 
+            # get all keytags for this section of tags and if there is a value?
             MediaDataTags.append( [keytag for keytag in self.plugin_image.xmp_keys
-                    if keytag in metadataTags] )
+                    if keytag in metadataTags ] )
 
+            # get all keytags for this section of tags and if there is a value?
             MediaDataTags.append( [keytag for keytag in self.plugin_image.iptc_keys
-                    if keytag in metadataTags] )
+                    if keytag in metadataTags ] )
 
-        # check to see if a section/ button should not be active?
-        self.button_sensitivity(self.plugin_image)
+        # check to see if a section/ button should be inactive/ greyed out for lack of data?
+        self.__button_sensitivity(self.plugin_image)
 
-        # check to see if we got metadata from image?
+        # check to see if we got metadata from media object?
         for KeyTag in MediaDataTags:
 
             tagValue = self.__get_value(KeyTag)
-            if tagValue: 
-                self.model.append( (self.plugin_image, KeyTag, tagValue) )
+            if tagValue:
+
+                if LesserVersion: # prior to pyexiv2-0.2.0
+                    label = self.plugin_image.tagDetails(KeyTag)[0]
+                    human_value = self.plugin_image.interpretedExifValue(KeyTag)
+
+                else:  # pyexiv2-0.2.0 and above
+                    tag = self.plugin_image[KeyTag]
+                    label = tag.label
+                    human_value = tag.human_value
+
+                # if keytag is Latitude/ Longitude, display deg, min, sec?
+                if KeyTag in ["Exif.GPSInfo.GPSLatitude", "Exif.GPSInfo.GPSLongitude"]:
+                    deg, min, sec = rational_to_dms(tagValue)
+                    tagValue = """%s° %s′ %s″""" % (deg, min, sec)
+
+                # if KeyTag is LatitudeRef/ LongitudeRef, display human value instead? 
+                if KeyTag in ["Exif.GPSInfo.GPSLatitudeRef", "Exif.GPSInfo.GPSLongitudeRef"]:
+                    tagValue = human_value
+            
+                # add tagValue to display...
+                self.model.append( (self.plugin_image, label, tagValue) )
 
     def post_init(self):
         self.connect_signal("Media", self.update)
-        
+
 def __convert_value(value):
     """
     will take a value from the coordinates and return its value
     """
+    from fractions import Fraction
+    from decimal import *
+    getcontext().prec = 5
 
-    if (isinstance(value, Fraction) or isinstance(value, Rational) ):
+    if (isinstance(value, Fraction) or isinstance(value, pyexiv2.Rational) ):
         return str( (Decimal(value.numerator) / Decimal(value.denominator)) )
 
     return value
@@ -627,13 +784,9 @@ def rational_to_dms(coords):
     if len(coords) == 3:
         deg, min, sec = coords[0], coords[1], coords[2]
 
-        deg = __convert_value(deg)
-        min = __convert_value(min)
-        sec = __convert_value(sec)
-
-        return [__convert_value(coordinate) for coordinate in [deg, min, sec] ]
-
+        return [ __convert_value(coordinate) for coordinate in [deg, min, sec] ]
     return deg, min, sec
+
 #################################################
 #    Metadata Editor Class
 #################################################
@@ -699,38 +852,6 @@ class MetadataSave(ManagedWindow.ManagedWindow):
         self.widgets = {}
         top = self.__create_gui()
         self.set_window(top, None, _("Metadata Save") )
-
-    def _set_value(self, KeyTag, KeyValue):
-        """
-        sets the value for the Exif keys
-
-        @param: KeyTag   -- exif key
-        @param: KeyValue -- value to be saved
-        """
-
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if not LesserVersion:
-
-            # Exif KeyValue family?
-            if "Exif" in KeyTag:
-                try:
-                    self.plugin_image[KeyTag].value = KeyValue
-                except KeyError:
-                    self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
-                except ValueError, AttributeError:
-                    pass
-
-            # Iptc KeyValue family?
-            else:
-                try:
-                    self.plugin_image[KeyTag].values = KeyValue
-                except KeyError:
-                    self.plugin_image[KeyTag] = pyexiv2.IptcTag(KeyTag, KeyValue)
-                except ValueError, AttributeError:
-                    pass
-
-        else:
-            self.plugin_image[KeyTag] = KeyValue 
 
 #------------------------------------------------
 #     Writes/ saves metadata to image
@@ -1083,28 +1204,6 @@ class MetadataSave(ManagedWindow.ManagedWindow):
                 self.exif_widgets["Longitude"].set_text(
                     """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
 
-    def __get_value(KeyTag):
-        """
-        gets the value from the Exif Key, and returns it...
-
-        @param: KeyTag -- image metadata key
-        """
-
-        KeyValue = False
-
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if LesserVersion:
-            KeyValue = self.plugin_image[KeyTag]
-
-        else:
-            try:
-                KeyValue = self.plugin_image[KeyTag].value
-
-            except (KeyError, ValueError, AttributeError):
-                pass
-
-        return KeyValue
-
 def string_to_rational(coordinate):
     """
     convert string to rational variable for GPS
@@ -1153,4 +1252,4 @@ def convert_value(value):
     will take a value from the coordinates and return its value
     """
 
-    return str( ( Decimal(value.numerator) / Decimal(value.denominator) ) )
+    return str( (Decimal(value.numerator) / Decimal(value.denominator)) )
