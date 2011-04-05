@@ -617,27 +617,27 @@ class imageMetadataGramplet(Gramplet):
             return
 
         # if there is no values in Description section?
-        if [keytag for keytag in _DESCRIPTION.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _DESCRIPTION.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["Description"].set_sensitive(True)
 
         # if there is no values in Origin section?
-        if [keytag for keytag in _ORIGIN.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _ORIGIN.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["Origin"].set_sensitive(True)
 
         # if there is no values in Image section?
-        if [keytag for keytag in _IMAGE.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _IMAGE.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["Image"].set_sensitive(True)
 
         # if there is no values in Camera section?
-        if [keytag for keytag in _CAMERA.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _CAMERA.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["Camera"].set_sensitive(True)
 
         # if there is no values in Advanced section?
-        if [keytag for keytag in _ADVANCED.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _ADVANCED.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["Advanced"].set_sensitive(True)
 
         # if there is no values in GPS section?
-        if [keytag for keytag in _GPS.keys() if self.__get_value(keytag) ]:
+        if [KeyTag for KeyTag in _GPS.keys() if self.__get_value(KeyTag) ]:
             self.exif_widgets["GPS"].set_sensitive(True)
 
     def __setup_tooltips(self, obj):
@@ -690,7 +690,7 @@ class imageMetadataGramplet(Gramplet):
         reads the image metadata after the pyexiv2.Image has been created
 
         @param: full_path -- complete path to media object on local computer
-        @param: metadataTags -- a list of the exif keytags that we will be displayed...
+        @param: metadataTags -- a list of the exif KeyTags that we will be displayed...
         """
         MediaDataTags = []
         self.model.clear()
@@ -700,34 +700,34 @@ class imageMetadataGramplet(Gramplet):
 
             self.plugin_image.readMetadata()
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags = [keytag for keytag in self.plugin_image.exifKeys()
-                    if keytag in metadataTags ]
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exifKeys()
+                    if KeyTag in metadataTags ]
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmpKeys()
-                    if keytag in metadataTags ] )
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmpKeys()
+                    if KeyTag in metadataTags ] )
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptcKeys()
-                    if keytag in metadataTags ] )
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptcKeys()
+                    if KeyTag in metadataTags ] )
 
         else: # pyexiv2-0.2.0 and above
             self.plugin_image = pyexiv2.ImageMetadata(full_path)
 
             self.plugin_image.read()
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags = [keytag for keytag in self.plugin_image.exif_keys
-                    if keytag in metadataTags ]
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exif_keys
+                    if KeyTag in metadataTags ]
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.xmp_keys
-                    if keytag in metadataTags ] )
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmp_keys
+                    if KeyTag in metadataTags ] )
 
-            # get all keytags for this section of tags and if there is a value?
-            MediaDataTags.append( [keytag for keytag in self.plugin_image.iptc_keys
-                    if keytag in metadataTags ] )
+            # get all KeyTags for this section of tags and if there is a value?
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptc_keys
+                    if KeyTag in metadataTags ] )
 
         # check to see if a section/ button should be inactive/ greyed out for lack of data?
         self.__button_sensitivity(self.plugin_image)
@@ -747,7 +747,7 @@ class imageMetadataGramplet(Gramplet):
                     label = tag.label
                     human_value = tag.human_value
 
-                # if keytag is Latitude/ Longitude, display deg, min, sec?
+                # if KeyTag is Latitude/ Longitude, display deg, min, sec?
                 if KeyTag in ["Exif.GPSInfo.GPSLatitude", "Exif.GPSInfo.GPSLongitude"]:
                     deg, min, sec = rational_to_dms(tagValue)
                     tagValue = """%s° %s′ %s″""" % (deg, min, sec)
@@ -758,6 +758,12 @@ class imageMetadataGramplet(Gramplet):
             
                 # add tagValue to display...
                 self.model.append( (self.plugin_image, label, tagValue) )
+
+                # get exif_widgets position from sections and attach tagValue...
+                if KeyTag in metadataTags:
+                    pos = metadataTags[KeyTag]
+                    self.exif_widgets[pos] = gtk.Entry()
+                    self.exif_widgets[pos].set_text(tagValue)
 
     def post_init(self):
         self.connect_signal("Media", self.update)
@@ -859,7 +865,7 @@ class MetadataSave(ManagedWindow.ManagedWindow):
     def save_metadata(self, obj):
         """
         gets the information from the plugin data fields
-        and sets the keytag = keyvalue image metadata
+        and sets the KeyTag = keyvalue image metadata
         """
 
         # check write permissions for this image
