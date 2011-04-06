@@ -747,23 +747,14 @@ class imageMetadataGramplet(Gramplet):
                     label = tag.label
                     human_value = tag.human_value
 
-                # if KeyTag is Latitude/ Longitude, display deg, min, sec?
-                if KeyTag in ["Exif.GPSInfo.GPSLatitude", "Exif.GPSInfo.GPSLongitude"]:
-                    deg, min, sec = rational_to_dms(tagValue)
-                    tagValue = """%s° %s′ %s″""" % (deg, min, sec)
-
-                # if KeyTag is LatitudeRef/ LongitudeRef, display human value instead? 
-                if KeyTag in ["Exif.GPSInfo.GPSLatitudeRef", "Exif.GPSInfo.GPSLongitudeRef"]:
-                    tagValue = human_value
-            
                 # add tagValue to display...
-                self.model.append( (self.plugin_image, label, tagValue) )
+                self.model.append( (self.plugin_image, label, human_value) )
 
                 # get exif_widgets position from sections and attach tagValue...
                 if KeyTag in metadataTags:
                     pos = metadataTags[KeyTag]
                     self.exif_widgets[pos] = gtk.Entry()
-                    self.exif_widgets[pos].set_text(tagValue)
+                    self.exif_widgets[pos].set_text(human_value)
 
     def post_init(self):
         self.connect_signal("Media", self.update)
