@@ -56,7 +56,7 @@ msgid "Todo Report"
 msgstr "'Nog te doen'-verslag"
 
 #: ToDoReport/TodoReport.gpr.py:25
-msgid "Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc."
+msgid "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
 msgstr "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
 
 #: ToDoReport/TodoReport.py:80

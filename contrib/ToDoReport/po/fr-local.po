@@ -19,8 +19,8 @@ msgid "Todo Report"
 msgstr "Rapport À Faire"
 
 #: ToDoReport/TodoReport.gpr.py:25
-msgid "Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc."
-msgstr "Produit une liste de toutes les notes avec un marqueur donné ainsi que les enregistrements qui les référencent, l'individu, la famille, l'événement, etc."
+msgid "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
+msgstr "Produit une liste de toutes les notes avec une étiquette donnée ainsi que les enregistrements qui les référencent, l'individu, la famille, l'événement, etc."
 
 #: ToDoReport/TodoReport.py:91
 #, python-format

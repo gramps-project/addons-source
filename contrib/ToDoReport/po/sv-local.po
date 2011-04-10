@@ -51,7 +51,7 @@ msgstr "Bokrapport"
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid ""
-"Produces a list of all the notes with a given marker along with the records "
+"Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
 
