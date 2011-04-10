@@ -22,7 +22,7 @@
 register(REPORT,
     id   = 'TodoReport',
     name = _('Todo Report'),
-    description = _("Produces a list of all the notes with a given marker along with the records that it references, the Person, Family, Event, etc."),
+    description = _("Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."),
     version = '1.2.5',
     gramps_target_version = '3.4',
     status = STABLE,
