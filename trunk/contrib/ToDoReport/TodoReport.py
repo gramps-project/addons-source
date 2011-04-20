@@ -37,7 +37,6 @@ from Filters import Rules
 from gui.plug.report import MenuReportOptions
 from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
-from gen.lib import MarkerType
 from gen.plug.menu import EnumeratedListOption, BooleanOption
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
@@ -405,6 +404,9 @@ class TodoReport(Report):
         self.doc.write_text(place.get_title())
         self.doc.end_paragraph()
         self.doc.end_cell()
+
+        self.doc.end_row()
+
     #
     # Sort Functions
     #
