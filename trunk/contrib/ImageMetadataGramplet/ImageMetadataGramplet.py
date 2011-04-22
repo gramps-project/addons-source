@@ -223,8 +223,6 @@ class BasePage(object):
 
     def init(self):
 
-        db = self.dbstate.db
-
         # set up Exif keys for Image.exif_keys
         self._DATAMAP = {
             "Exif.Image.ImageDescription"  : "Description",
@@ -340,7 +338,7 @@ class imageMetadataGramplet(BasePage, Gramplet):
 
         # Edit Exif metadata button
         cec_box.add( self.create_button(
-            "Edit", False, self.__edit_metadata(self.plugin_image), gtk.STOCK_EDIT, False) )
+            "Edit", False, self.__edit_metadata, gtk.STOCK_EDIT, False) )
 
         # Convert to Jpeg button...
         cec_box.add( self.create_button(
@@ -443,12 +441,12 @@ class imageMetadataGramplet(BasePage, Gramplet):
             self.exif_widgets["Message:Area"].set_text(_("Choose a different image..."))
             return
 
-    def __edit_metadata(self, imageobj):
+    def __edit_metadata(self, obj):
         """
         Gandles the Edit button...
         """
 
-        EditMetadata(self.gui.dbstate, self.gui.uistate, imageobj, self.MediaDataTags)
+        MetadataEditor(self.gui.dbstate, self.gui.uistate, self.plugin_image, self.MediaDataTags)
 
     def __save_dialog(self, obj):
         """
@@ -912,41 +910,6 @@ class imageMetadataGramplet(BasePage, Gramplet):
             if _JHEAD_FOUND:
                 reinit = subprocess.check_call( ["jhead", "-purejpg", self.image_path] )
 
-# -----------------------------------------------
-#              Date Calendar functions
-# -----------------------------------------------
-    def select_date(self, obj):
-        """
-        will allow you to choose a date from the calendar widget
-        """
- 
-        tip = _("Double click a day to return the date.")
-
-        self.app = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.app.tooltip = tip
-        self.app.set_title(_("Select Date"))
-        self.app.set_default_size(450, 200)
-        self.app.set_border_width(10)
-        self.exif_widgets["Calendar"] = gtk.Calendar()
-        self.exif_widgets["Calendar"].connect('day-selected-double-click', self.double_click)
-        self.app.add(self.exif_widgets["Calendar"])
-        self.exif_widgets["Calendar"].show()
-        self.app.show()
-
-    def double_click(self, obj):
-        """
-        receives double-clicked and returns the selected date
-        widget
-        """
-        now = time.localtime()
-
-        year, month, day = self.exif_widgets["Calendar"].get_date()
-        self.exif_widgets["DateTime"].set_text( "%04d-%s-%02d %02d:%02d:%02d" % (
-            year, _dd.long_months[month + 1], day, now[3], now[4], now[5]) )
-
-        # close this window
-        self.app.destroy()
-
 #------------------------------------------------
 #     Database functions
 #------------------------------------------------
@@ -1222,46 +1185,65 @@ _TOOLTIPS = {
     "Longitude"         : _("Enter the GPS Longitude Coordinates for your image,\n"
         "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6") }.items()
 
-class EditMetadata(BasePage):
+class MetadataEditor(BasePage):
 
-    def __init__(self, dbstate, uistate, media, MediaDataTags):
+    def __init__(self, dbstate, uistate, media, mediadatatags):    
         BasePage.init(self)
 
         self.dbstate = dbstate
         self.uistate = uistate
 
         self.plugin_image = media
-        self.MediaDataTags = MediaDataTags
-        print(media, MediaDataTags)
+        self.MediaDataTags = mediadatatags
 
         self.exif_widgets = {}
         _tip = _("This window will allow you to Edit and Save the Image Eif metadata...")
 
-        self.editwindow = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.editwindow.set_title(_("Edit Image Exif metadata"))
+        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.tooltip = _tip
+        self.window.set_title(_("Exif Metadata Editor"))
+        self.window.set_default_size(400, 350)
+        self.window.set_border_width(10)
+        self.window.connect("delete_event", self.delete_event)
 
-        self.editwindow.set_default_size(600, 640)
-        self.editwindow.set_border_width(20)
-
-        self.editwindow.set_tooltip = _tip
-        self.editwindow.connect("delete_event", self.delete_event)
-
-        table = gtk.Table(6, 8, False)
-        table.show()
+        table = self.__create_table(9, 6)
         self.exif_widgets["Table"] = table
-        self.editwindow.add(self.exif_widgets["Table"], False)
+        self.window.add(self.exif_widgets["Table"])
 
-        self.editwindow.show(_all)
+        self.exif_widgets["Table"].show()
+        self.window.show()
 
-        # This callback quits the program
-        def delete_event(self, widget, event, data=None):
-            gtk.main_quit()
-            return False
+    def delete_event(self):
+        """
+        Handles closing this window.
+        """
 
-    def __create_table_row(self, label, lt_attach, rt_attach, top_attach, bot_attach, homogeneous=False): 
-        pass
+        self.window.destroy()
 
-    def CopyTo(self, obj):
+    def __create_table(self, rows, cols, homogeneous =False):
+        """
+        Creates a table with xrows and ycolumns...
+        """
+
+        table = gtk.Table(rows, cols, homogeneous)
+        table.set_row_spacings(4)
+        table.set_col_spacings(4)
+
+        # Row 0
+        label = gtk.Label(_("Description"))
+        widget = gtk.EventBox()
+        table.attach(label, 0, 1, 0, 1, xoptions=SHRINK, yoptions=SHRINK)
+        table.attach(widget, 1, 6, 0, 1, xoptions=SHRINK, yoptions=SHRINK)
+
+        # Row 1
+        label = gtk.Label(_("Artist"))
+        widget = gtk.EventBox()
+        table.attach(label, 0, 1, 1, 2, xoptions=SHRINK, yoptions=SHRINK)
+        table.attach(widget, 1, 6, 1, 2, xoptions=SHRINK, yoptions=SHRINK)
+
+        return table
+
+    def CopyTo(self):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
