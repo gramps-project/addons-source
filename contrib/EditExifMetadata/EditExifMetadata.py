@@ -278,11 +278,10 @@ class BasePage(object):
 
 #********************************************************************
 #
-#                    image Metadata Gramplet class
+#                    Edit Exif Metadata class
 #
-#         This is the meat and potatoes for the Gramplet...
 #********************************************************************
-class imageMetadataGramplet(BasePage, Gramplet):
+class EditExifMetadata(BasePage, Gramplet):
 
     def init(self):
         BasePage.init(self)
