@@ -1206,10 +1206,9 @@ class MetadataEditor(BasePage):
         self.window.connect("delete_event", self.delete_event)
 
         table = self.__create_table(9, 6)
+        table.show()
         self.exif_widgets["Table"] = table
         self.window.add(self.exif_widgets["Table"])
-
-        self.exif_widgets["Table"].show()
         self.window.show()
 
     def delete_event(self):
@@ -1230,15 +1229,19 @@ class MetadataEditor(BasePage):
 
         # Row 0
         label = gtk.Label(_("Description"))
+        label.show()
         widget = gtk.EventBox()
-        table.attach(label, 0, 1, 0, 1, xoptions=SHRINK, yoptions=SHRINK)
-        table.attach(widget, 1, 6, 0, 1, xoptions=SHRINK, yoptions=SHRINK)
+        widget.show()
+        table.attach(label, 0, 1, 0, 1, xoptions =False|False, yoptions =False|False)
+        table.attach(widget, 1, 6, 0, 1, xoptions =False|False, yoptions =True|False)
 
         # Row 1
         label = gtk.Label(_("Artist"))
+        label.show()
         widget = gtk.EventBox()
-        table.attach(label, 0, 1, 1, 2, xoptions=SHRINK, yoptions=SHRINK)
-        table.attach(widget, 1, 6, 1, 2, xoptions=SHRINK, yoptions=SHRINK)
+        widget.show()
+        table.attach(label, 0, 1, 1, 2, xoptions =False|False, yoptions =False|False)
+        table.attach(widget, 1, 6, 1, 2, xoptions =False|False, yoptions =True|False)
 
         return table
 
