@@ -22,23 +22,23 @@
 # $Id$
 #
 #------------------------------------------------------------------------
-# Image Metadata Gramplet
+# Edit Exif Metadata Gramplet
 #------------------------------------------------------------------------
 register(GRAMPLET, 
-        id                    = "Image Metadata Gramplet", 
-        name                  = _("Image Metadata Gramplet"), 
+        id                    = "Edit Exif Metadata", 
+        name                  = _("Edit Image Exif Metadata"), 
         description           = _("Gramplet to view, edit, and save image Exif metadata."),
         height                = 550,
         expand                = False,
-        gramplet              = 'imageMetadataGramplet',
-        gramplet_title        = _("Image Metadata"),
+        gramplet              = 'EditExifMetadata',
+        gramplet_title        = _("Edit Exif Metadata"),
         detached_width        = 510,
         detached_height       = 550,
-        version = '2.0.1',
+        version = '2.0.2',
         gramps_target_version = '3.4',
         status                = UNSTABLE,
-        fname                 = "ImageMetadataGramplet.py",
-        help_url              = "Image Metadata Gramplet",
+        fname                 = "EditExifMetadata.py",
+        help_url              = "Edit Image Exif Metadata",
         authors               = ['Rob G. Healey'],
         authors_email         = ['robhealey1@gmail.com'],
         navtypes              = ["Media"],
