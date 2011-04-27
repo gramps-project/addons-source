@@ -46,6 +46,7 @@ log = logging.getLogger(".ImportSql")
 #
 #-------------------------------------------------------------------------
 import gen.lib
+from gen.db import DbTxn
 from QuestionDialog import ErrorDialog
 from Utils import create_id
 
@@ -68,6 +69,13 @@ def lookup(handle, event_ref_list):
                 return count
             count += 1
         return -1
+
+def make_tag_list(tags):
+    """
+    """
+    if tags:
+        return tags.split(",")
+    return []
 
 #-------------------------------------------------------------------------
 #
@@ -245,6 +253,10 @@ class SQLReader(object):
                                  handle)
         return [self.pack_media_ref(sql, result) for result in results]
 
+    def get_surname_list(self, sql, handle):
+        results = sql.query("""select * from surname where handle = ?;""", handle)
+        return [self.pack_surnames(sql, result) for result in results]
+
     def get_note_list(self, sql, from_type, from_handle):
         return self.get_links(sql, from_type, from_handle, "note")
 
@@ -294,6 +306,17 @@ class SQLReader(object):
         return (source_list, note_list, date, type, place,
                 famc, temple, status, private)
 
+    def pack_surnames(self, sql, data):
+        (handle, 
+         surname, 
+         prefix, 
+         primary_surname, 
+         origin_type0,
+         origin_type1,
+         connector) = data
+        return (surname, prefix, primary_surname, 
+                (origin_type0, origin_type1), connector)
+         
     def pack_media_ref(self, sql, data):
         (handle,
          ref,
@@ -364,8 +387,6 @@ class SQLReader(object):
          pubinfo,
          abbrev,
          change,
-         marker0,
-         marker1,
          private) = data
         note_list = self.get_note_list(sql, "source", handle)
         media_list = self.get_media_list(sql, "source", handle)
@@ -378,7 +399,7 @@ class SQLReader(object):
                 abbrev,
                 change, datamap,
                 reporef_list,
-                (marker0, marker1), private)
+                private)
 
     def get_location(self, sql, from_type, from_handle, with_parish):
         handle = self.get_link(sql, from_type, from_handle, "location")
@@ -413,30 +434,31 @@ class SQLReader(object):
         primary_name,
         private, 
         first_name, 
-        surname, 
         suffix, 
         title, 
         name_type0, 
         name_type1, 
-        prefix, 
-        patronymic, 
         group_as, 
         sort_as,
         display_as, 
-        call) = data
+        call,
+        nick,
+        famnick) = data
         # build up a GRAMPS object:
+        surname_list = self.get_surname_list(sql, handle)
         source_list = self.get_source_ref_list(sql, "name", handle)
         note_list = self.get_note_list(sql, "name", handle)
         date_handle = self.get_link(sql, "name", handle, "date")
         date = self.get_date(sql, date_handle)
         return (private, source_list, note_list, date,
-                first_name, surname, suffix, title,
-                (name_type0, name_type1), prefix, patronymic,
-                group_as, sort_as, display_as, call)
+                first_name, surname_list, suffix, title,
+                (name_type0, name_type1), 
+                group_as, sort_as, display_as, call, nick, famnick)
 
     def pack_location(self, sql, data, with_parish):
         (handle,
          street, 
+         locality,
          city, 
          county, 
          state, 
@@ -445,9 +467,9 @@ class SQLReader(object):
          phone,
          parish) = data
         if with_parish:
-            return ((street, city, county, state, country, postal, phone), parish)
+            return ((street, locality, city, county, state, country, postal, phone), parish)
         else:
-            return (street, city, county, state, country, postal, phone)
+            return (street, locality, city, county, state, country, postal, phone)
 
     def get_place_from_handle(self, sql, ref_handle):
         if ref_handle: 
@@ -534,296 +556,297 @@ class SQLReader(object):
                  sql.query("select count(*) from repository;")[0][0] + 
                  sql.query("select count(*) from place;")[0][0] + 
                  sql.query("select count(*) from media;")[0][0] + 
+                 sql.query("select count(*) from tag;")[0][0] + 
                  sql.query("select count(*) from source;")[0][0])
-        self.trans = self.db.transaction_begin("",batch=True)
-        self.db.disable_signals()
-        count = 0.0
-        self.t = time.time()
-        # ---------------------------------
-        # Process note
-        # ---------------------------------
-        notes = sql.query("""select * from note;""")
-        for note in notes:
-            (handle,
-             gid, 
-             text,
-             format,
-             note_type1, 
-             note_type2,
-             change,
-             marker0,
-             marker1,
-             private) = note
-            styled_text = [text, []]
-            # direct connection with note handle
-            markups = sql.query("""select * from markup where handle = ?""", handle)
-            for markup in markups:
-                (mhandle,
-                 markup0,
-                 markup1,
-                 value, 
-                 start_stop_list) = markup
-                ss_list = eval(start_stop_list)
-                styled_text[1] += [((markup0, markup1), value, ss_list)]
-            self.db.note_map[str(handle)] = (str(handle), gid, styled_text, 
-                                        format, (note_type1, note_type2), change, 
-                                        (marker0, marker1), private)
-            count += 1
-            self.callback(100 * count/total)
+        with DbTxn(_("CSV import"), self.db, batch=True) as self.trans:
+            self.db.disable_signals()
+            count = 0.0
+            self.t = time.time()
+            # ---------------------------------
+            # Process note
+            # ---------------------------------
+            notes = sql.query("""select * from note;""")
+            for note in notes:
+                (handle,
+                 gid, 
+                 text,
+                 format,
+                 note_type1, 
+                 note_type2,
+                 change,
+                 tags,
+                 private) = note
+                styled_text = [text, []]
+                # direct connection with note handle
+                markups = sql.query("""select * from markup where handle = ?""", handle)
+                for markup in markups:
+                    (mhandle,
+                     markup0,
+                     markup1,
+                     value, 
+                     start_stop_list) = markup
+                    ss_list = eval(start_stop_list)
+                    styled_text[1] += [((markup0, markup1), value, ss_list)]
+                self.db.note_map[str(handle)] = (str(handle), gid, styled_text, 
+                                            format, (note_type1, note_type2), change, 
+                                            make_tag_list(tags), private)
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process event
-        # ---------------------------------
-        events = sql.query("""select * from event;""")
-        for event in events:
-            (handle, 
-             gid,
-             the_type0,
-             the_type1,
-             description,
-             change,
-             marker0,
-             marker1,
-             private) = event
+            # ---------------------------------
+            # Process event
+            # ---------------------------------
+            events = sql.query("""select * from event;""")
+            for event in events:
+                (handle, 
+                 gid,
+                 the_type0,
+                 the_type1,
+                 description,
+                 change,
+                 private) = event
 
-            note_list = self.get_note_list(sql, "event", handle)
-            source_list = self.get_source_ref_list(sql, "event", handle)
-            media_list = self.get_media_list(sql, "event", handle)
-            attribute_list = self.get_attribute_list(sql, "event", handle)
+                note_list = self.get_note_list(sql, "event", handle)
+                source_list = self.get_source_ref_list(sql, "event", handle)
+                media_list = self.get_media_list(sql, "event", handle)
+                attribute_list = self.get_attribute_list(sql, "event", handle)
 
-            date_handle = self.get_link(sql, "event", handle, "date")
-            date = self.get_date(sql, date_handle)
+                date_handle = self.get_link(sql, "event", handle, "date")
+                date = self.get_date(sql, date_handle)
 
-            place_handle = self.get_link(sql, "event", handle, "place")
-            place = self.get_place_from_handle(sql, place_handle)
+                place_handle = self.get_link(sql, "event", handle, "place")
+                place = self.get_place_from_handle(sql, place_handle)
 
-            data = (str(handle), gid, (the_type0, the_type1), date, description, place, 
-                    source_list, note_list, media_list, attribute_list,
-                    change, (marker0, marker1), private)
+                data = (str(handle), gid, (the_type0, the_type1), date, description, place, 
+                        source_list, note_list, media_list, attribute_list,
+                        change, private)
 
-            self.db.event_map[str(handle)] = data
+                self.db.event_map[str(handle)] = data
 
-            count += 1
-            self.callback(100 * count/total)
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process person
-        # ---------------------------------
-        people = sql.query("""select * from person;""")
-        for person in people:
-            if person is None:
-                continue
-            (handle,        #  0
-             gid,          #  1
-             gender,             #  2
-             death_ref_handle,    #  5
-             birth_ref_handle,    #  6
-             change,             # 17
-             marker0,             # 18
-             marker1,             # 18
-             private,           # 19
-             ) = person
-            primary_name = self.get_names(sql, "person", handle, True) # one
-            alternate_names = self.get_names(sql, "person", handle, False) # list
-            event_ref_list = self.get_event_ref_list(sql, "person", handle)
-            family_list = self.get_family_list(sql, "person", handle)
-            parent_family_list = self.get_parent_family_list(sql, "person", handle)
-            media_list = self.get_media_list(sql, "person", handle)
-            address_list = self.get_address_list(sql, "person", handle, with_parish=False)
-            attribute_list = self.get_attribute_list(sql, "person", handle)
-            urls = self.get_url_list(sql, "person", handle)
-            lds_ord_list = self.get_lds_list(sql, "person", handle)
-            psource_list = self.get_source_ref_list(sql, "person", handle)
-            pnote_list = self.get_note_list(sql, "person", handle)
-            person_ref_list = self.get_person_ref_list(sql, "person", handle)
-            death_ref_index = lookup(death_ref_handle, event_ref_list)
-            birth_ref_index = lookup(birth_ref_handle, event_ref_list)
-            self.db.person_map[str(handle)] = (str(handle),        #  0
-                                               gid,          #  1
-                                               gender,             #  2
-                                               primary_name,       #  3
-                                               alternate_names,    #  4
-                                               death_ref_index,    #  5
-                                               birth_ref_index,    #  6
-                                               event_ref_list,     #  7
-                                               family_list,        #  8
-                                               parent_family_list, #  9
-                                               media_list,         # 10
-                                               address_list,       # 11
-                                               attribute_list,     # 12
-                                               urls,               # 13
-                                               lds_ord_list,       # 14
-                                               psource_list,       # 15
-                                               pnote_list,         # 16
-                                               change,             # 17
-                                               (marker0, marker1), # 18
-                                               private,            # 19
-                                               person_ref_list,    # 20
-                                               )
-            count += 1
-            self.callback(100 * count/total)
-        # ---------------------------------
-        # Process family
-        # ---------------------------------
-        families = sql.query("""select * from family;""")
-        for family in families:
-            (handle,
-             gid,
-             father_handle,
-             mother_handle,
-             the_type0,
-             the_type1,
-             change,
-             marker0,
-             marker1,
-             private) = family
+            # ---------------------------------
+            # Process person
+            # ---------------------------------
+            people = sql.query("""select * from person;""")
+            for person in people:
+                if person is None:
+                    continue
+                (handle,        #  0
+                 gid,          #  1
+                 gender,             #  2
+                 death_ref_handle,    #  5
+                 birth_ref_handle,    #  6
+                 change,             # 17
+                 tags,             # 18
+                 private,           # 19
+                 ) = person
+                primary_name = self.get_names(sql, "person", handle, True) # one
+                alternate_names = self.get_names(sql, "person", handle, False) # list
+                event_ref_list = self.get_event_ref_list(sql, "person", handle)
+                family_list = self.get_family_list(sql, "person", handle)
+                parent_family_list = self.get_parent_family_list(sql, "person", handle)
+                media_list = self.get_media_list(sql, "person", handle)
+                address_list = self.get_address_list(sql, "person", handle, with_parish=False)
+                attribute_list = self.get_attribute_list(sql, "person", handle)
+                urls = self.get_url_list(sql, "person", handle)
+                lds_ord_list = self.get_lds_list(sql, "person", handle)
+                psource_list = self.get_source_ref_list(sql, "person", handle)
+                pnote_list = self.get_note_list(sql, "person", handle)
+                person_ref_list = self.get_person_ref_list(sql, "person", handle)
+                death_ref_index = lookup(death_ref_handle, event_ref_list)
+                birth_ref_index = lookup(birth_ref_handle, event_ref_list)
+                self.db.person_map[str(handle)] = (str(handle),        #  0
+                                                   gid,          #  1
+                                                   gender,             #  2
+                                                   primary_name,       #  3
+                                                   alternate_names,    #  4
+                                                   death_ref_index,    #  5
+                                                   birth_ref_index,    #  6
+                                                   event_ref_list,     #  7
+                                                   family_list,        #  8
+                                                   parent_family_list, #  9
+                                                   media_list,         # 10
+                                                   address_list,       # 11
+                                                   attribute_list,     # 12
+                                                   urls,               # 13
+                                                   lds_ord_list,       # 14
+                                                   psource_list,       # 15
+                                                   pnote_list,         # 16
+                                                   change,             # 17
+                                                   make_tag_list(tags), # 18
+                                                   private,            # 19
+                                                   person_ref_list,    # 20
+                                                   )
+                count += 1
+                self.callback(100 * count/total)
+            # ---------------------------------
+            # Process family
+            # ---------------------------------
+            families = sql.query("""select * from family;""")
+            for family in families:
+                (handle,
+                 gid,
+                 father_handle,
+                 mother_handle,
+                 the_type0,
+                 the_type1,
+                 change,
+                 tags,
+                 private) = family
 
-            child_ref_list = self.get_child_ref_list(sql, "family", handle)
-            event_ref_list = self.get_event_ref_list(sql, "family", handle)
-            media_list = self.get_media_list(sql, "family", handle)
-            attribute_list = self.get_attribute_list(sql, "family", handle)
-            lds_seal_list = self.get_lds_list(sql, "family", handle)
-            source_list = self.get_source_ref_list(sql, "family", handle)
-            note_list = self.get_note_list(sql, "family", handle)
+                child_ref_list = self.get_child_ref_list(sql, "family", handle)
+                event_ref_list = self.get_event_ref_list(sql, "family", handle)
+                media_list = self.get_media_list(sql, "family", handle)
+                attribute_list = self.get_attribute_list(sql, "family", handle)
+                lds_seal_list = self.get_lds_list(sql, "family", handle)
+                source_list = self.get_source_ref_list(sql, "family", handle)
+                note_list = self.get_note_list(sql, "family", handle)
 
-            self.db.family_map[str(handle)] = (str(handle), gid, 
-                                               father_handle, mother_handle,
-                                               child_ref_list, (the_type0, the_type1), 
-                                               event_ref_list, media_list,
-                                               attribute_list, lds_seal_list, 
-                                               source_list, note_list,
-                                               change, (marker0, marker1), private)
+                self.db.family_map[str(handle)] = (str(handle), gid, 
+                                                   father_handle, mother_handle,
+                                                   child_ref_list, (the_type0, the_type1), 
+                                                   event_ref_list, media_list,
+                                                   attribute_list, lds_seal_list, 
+                                                   source_list, note_list,
+                                                   change, make_tag_list(tags), private)
 
-            count += 1
-            self.callback(100 * count/total)
-        # ---------------------------------
-        # Process repository
-        # ---------------------------------
-        repositories = sql.query("""select * from repository;""")
-        for repo in repositories:
-            (handle, 
-             gid, 
-             the_type0, 
-             the_type1, 
-             name, 
-             change, 
-             marker0, 
-             marker1, 
-             private) = repo
+                count += 1
+                self.callback(100 * count/total)
+            # ---------------------------------
+            # Process repository
+            # ---------------------------------
+            repositories = sql.query("""select * from repository;""")
+            for repo in repositories:
+                (handle, 
+                 gid, 
+                 the_type0, 
+                 the_type1, 
+                 name, 
+                 change, 
+                 private) = repo
 
-            note_list = self.get_note_list(sql, "repository", handle)
-            address_list = self.get_address_list(sql, "repository", handle, with_parish=False)
-            urls = self.get_url_list(sql, "repository", handle)
+                note_list = self.get_note_list(sql, "repository", handle)
+                address_list = self.get_address_list(sql, "repository", handle, with_parish=False)
+                urls = self.get_url_list(sql, "repository", handle)
 
-            self.db.repository_map[str(handle)] = (str(handle), gid, 
-                                                   (the_type0, the_type1),
-                                                   name, note_list,
-                                                   address_list, urls, change, 
-                                                   (marker0, marker1), private)
-            count += 1
-            self.callback(100 * count/total)
-        # ---------------------------------
-        # Process place
-        # ---------------------------------
-        places = sql.query("""select * from place;""")
-        for place in places:
-            count += 1
-            (handle, 
-             gid, 
-             title, 
-             main_loc,
-             long, 
-             lat, 
-             change, 
-             marker0, 
-             marker1, 
-             private) = place
+                self.db.repository_map[str(handle)] = (str(handle), gid, 
+                                                       (the_type0, the_type1),
+                                                       name, note_list,
+                                                       address_list, urls, change, 
+                                                       private)
+                count += 1
+                self.callback(100 * count/total)
+            # ---------------------------------
+            # Process place
+            # ---------------------------------
+            places = sql.query("""select * from place;""")
+            for place in places:
+                count += 1
+                (handle, 
+                 gid, 
+                 title, 
+                 main_loc,
+                 long, 
+                 lat, 
+                 change, 
+                 private) = place
 
-            # We could look this up by "place_main", but we have the handle:
-            main_loc = self.get_main_location(sql, handle, with_parish=True)
-            alt_location_list = self.get_location_list(sql, "place_alt", handle, 
-                                                       with_parish=True)
-            urls = self.get_url_list(sql, "place", handle)
-            media_list = self.get_media_list(sql, "place", handle)
-            source_list = self.get_source_ref_list(sql, "place", handle)
-            note_list = self.get_note_list(sql, "place", handle)
-            self.db.place_map[str(handle)] = (str(handle), gid, title, long, lat,
-                                              main_loc, alt_location_list,
-                                              urls,
-                                              media_list,
-                                              source_list,
-                                              note_list,
-                                              change, (marker0, marker1), 
-                                              private)
-            self.callback(100 * count/total)
-        # ---------------------------------
-        # Process source
-        # ---------------------------------
-        sources = sql.query("""select * from source;""")
-        for source in sources:
-            (handle, 
-             gid,
-             title,
-             author,
-             pubinfo,
-             abbrev,
-             change,
-             marker0,
-             marker1,
-             private) = source
-            note_list = self.get_note_list(sql, "source", handle)
-            media_list = self.get_media_list(sql, "source", handle)
-            datamap = self.get_datamap(sql, "source", handle)
-            reporef_list = self.get_repository_ref_list(sql, "source", handle)
+                # We could look this up by "place_main", but we have the handle:
+                main_loc = self.get_main_location(sql, handle, with_parish=True)
+                alt_location_list = self.get_location_list(sql, "place_alt", handle, 
+                                                           with_parish=True)
+                urls = self.get_url_list(sql, "place", handle)
+                media_list = self.get_media_list(sql, "place", handle)
+                source_list = self.get_source_ref_list(sql, "place", handle)
+                note_list = self.get_note_list(sql, "place", handle)
+                self.db.place_map[str(handle)] = (str(handle), gid, title, long, lat,
+                                                  main_loc, alt_location_list,
+                                                  urls,
+                                                  media_list,
+                                                  source_list,
+                                                  note_list,
+                                                  change, 
+                                                  private)
+                self.callback(100 * count/total)
+            # ---------------------------------
+            # Process source
+            # ---------------------------------
+            sources = sql.query("""select * from source;""")
+            for source in sources:
+                (handle, 
+                 gid,
+                 title,
+                 author,
+                 pubinfo,
+                 abbrev,
+                 change,
+                 private) = source
+                note_list = self.get_note_list(sql, "source", handle)
+                media_list = self.get_media_list(sql, "source", handle)
+                datamap = self.get_datamap(sql, "source", handle)
+                reporef_list = self.get_repository_ref_list(sql, "source", handle)
 
-            self.db.source_map[str(handle)] = (str(handle), gid, title,
-                                               author, pubinfo,
-                                               note_list,
-                                               media_list,
-                                               abbrev,
-                                               change, datamap,
-                                               reporef_list,
-                                               (marker0, marker1), private)
-            count += 1
-            self.callback(100 * count/total)
-        # ---------------------------------
-        # Process media
-        # ---------------------------------
-        media = sql.query("""select * from media;""")
-        for med in media:
-            (handle, 
-             gid,
-             path,
-             mime,
-             desc,
-             change,
-             marker0,
-             marker1,
-             private) = med
+                self.db.source_map[str(handle)] = (str(handle), gid, title,
+                                                   author, pubinfo,
+                                                   note_list,
+                                                   media_list,
+                                                   abbrev,
+                                                   change, datamap,
+                                                   reporef_list,
+                                                   private)
+                count += 1
+                self.callback(100 * count/total)
+            # ---------------------------------
+            # Process media
+            # ---------------------------------
+            media = sql.query("""select * from media;""")
+            for med in media:
+                (handle, 
+                 gid,
+                 path,
+                 mime,
+                 desc,
+                 change,
+                 tags,
+                 private) = med
 
-            attribute_list = self.get_attribute_list(sql, "media", handle)
-            source_list = self.get_source_ref_list(sql, "media", handle)
-            note_list = self.get_note_list(sql, "media", handle)
-            
-            date_handle = self.get_link(sql, "media", handle, "date")
-            date = self.get_date(sql, date_handle)
+                attribute_list = self.get_attribute_list(sql, "media", handle)
+                source_list = self.get_source_ref_list(sql, "media", handle)
+                note_list = self.get_note_list(sql, "media", handle)
 
-            self.db.media_map[str(handle)] = (str(handle), gid, path, mime, desc,
-                                              attribute_list,
-                                              source_list,
-                                              note_list,
-                                              change,
-                                              date,
-                                              (marker0, marker1),
-                                              private)
-            count += 1
-            self.callback(100 * count/total)
+                date_handle = self.get_link(sql, "media", handle, "date")
+                date = self.get_date(sql, date_handle)
+
+                self.db.media_map[str(handle)] = (str(handle), gid, path, mime, desc,
+                                                  attribute_list,
+                                                  source_list,
+                                                  note_list,
+                                                  change,
+                                                  date,
+                                                  make_tag_list(tags),
+                                                  private)
+            # ---------------------------------
+            # Process tag
+            # ---------------------------------
+            tags = sql.query("""select * from tag;""")
+            for tag in tags:
+                 (handle,
+                  name,
+                  color,
+                  priority,
+                  change) = tag
+                 self.db.tag_map[str(handle)] = (str(handle), 
+                                                 name,
+                                                 color,
+                                                 priority,
+                                                 change)
         return None
 
     def cleanup(self):
         self.t = time.time() - self.t
         msg = ngettext('Import Complete: %d second','Import Complete: %d seconds', self.t ) % self.t
-        self.db.transaction_commit(self.trans,_("SQL import"))
         self.db.enable_signals()
         self.db.request_rebuild()
         print msg
