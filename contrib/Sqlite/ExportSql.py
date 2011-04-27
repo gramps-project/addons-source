@@ -95,7 +95,7 @@ def makeDB(db):
     db.query("""drop table attribute;""")
     db.query("""drop table url;""")
     db.query("""drop table datamap;""")
-    db.query("""drop table tags;""")
+    db.query("""drop table tag;""")
 
     db.query("""CREATE TABLE note (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -191,7 +191,6 @@ def makeDB(db):
                  the_type1 TEXT, 
                  description TEXT, 
                  change INTEGER, 
-                 tags TEXT, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE source (
@@ -332,7 +331,7 @@ def makeDB(db):
                  value_field TXT);
                  """)
 
-    db.query("""CREATE TABLE tags (
+    db.query("""CREATE TABLE tag (
                  handle CHARACTER(25) PRIMARY KEY,
                  name TEXT,
                  color TEXT,
@@ -493,7 +492,7 @@ def export_note(db, data):
                   private) values (?, ?, ?, ?,
                                    ?, ?, ?, ?, ?);""", 
              handle, gid, text, format, note_type[0],
-             note_type[1], change, ", ".join(tags), private)
+             note_type[1], change, ",".join(tags), private)
     for markup in markup_list:
         markup_code, value, start_stop_list = markup
         export_markup(db, "note", handle, markup_code[0], markup_code[1], value, 
@@ -596,7 +595,7 @@ def export_person(db, person):
              lookup(death_ref_index, event_ref_list),
              lookup(birth_ref_index, event_ref_list),
              change, 
-             ", ".join(tags), 
+             ",".join(tags), 
              private)
     
     # Event Reference information
@@ -947,7 +946,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  tags, 
                  private) values (?,?,?,?,?,?,?,?,?);""",
                  handle, gid, father_handle, mother_handle,
-                 the_type[0], the_type[1], change, ", ".join(tags), 
+                 the_type[0], the_type[1], change, ",".join(tags), 
                  private)
 
         export_child_ref_list(db, "family", handle, "child_ref", child_ref_list)
@@ -1089,7 +1088,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             tags, 
             private) VALUES (?,?,?,?,?,?,?,?);""",
                  handle, gid, path, mime, desc, 
-                 change, ", ".join(tags), private)
+                 change, ",".join(tags), private)
         export_date(db, "media", handle, date)
         export_list(db, "media", handle, "note", note_list) 
         export_source_ref_list(db, "media", handle, source_list)
@@ -1105,7 +1104,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         if tag_object is None:
             continue
         (handle, name, color, priority, change) = tag_object.serialize()
-        db.query("""INSERT INTO tags (
+        db.query("""INSERT INTO tag (
             handle, 
             name,
             color,
