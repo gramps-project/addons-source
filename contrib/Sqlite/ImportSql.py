@@ -164,7 +164,7 @@ class SQLReader(object):
                  private) = row
                 source_list = self.get_source_ref_list(sql, "attribute", handle)
                 note_list = self.get_note_list(sql, "attribute", handle)
-                retval.append((private, source_list, note_list, 
+                retval.append((bool(private), source_list, note_list, 
                                (the_type0, the_type1), value))
         return retval
 
@@ -178,7 +178,7 @@ class SQLReader(object):
                 (handle, ref, frel0, frel1, mrel0, mrel1, private) = row
                 source_list = self.get_source_ref_list(sql, "child_ref", handle)
                 note_list = self.get_note_list(sql, "child_ref", handle) 
-                retval.append((private, source_list, note_list, ref, 
+                retval.append((bool(private), source_list, note_list, ref, 
                                (frel0, frel1), (mrel0, mrel1)))
         return retval
 
@@ -222,7 +222,7 @@ class SQLReader(object):
                  private) = row
                 source_list = self.get_source_ref_list(sql, "person_ref", handle)
                 note_list = self.get_note_list(sql, "person_ref", handle)
-                retval.append((private, 
+                retval.append((bool(private), 
                                source_list,
                                note_list,
                                handle,
@@ -295,7 +295,7 @@ class SQLReader(object):
         date = self.get_date(sql, date_handle)
         note_list = self.get_note_list(sql, "address", handle)
         location = self.get_location(sql, "address", handle, with_parish)
-        return (private, source_list, note_list, date, location)
+        return (bool(private), source_list, note_list, date, location)
 
     def pack_lds(self, sql, data):
         (handle, type, place, famc, temple, status, private) = data
@@ -304,7 +304,7 @@ class SQLReader(object):
         date_handle = self.get_link(sql, "lds", handle, "date")
         date = self.get_date(sql, date_handle)
         return (source_list, note_list, date, type, place,
-                famc, temple, status, private)
+                famc, temple, status, bool(private))
 
     def pack_surnames(self, sql, data):
         (handle, 
@@ -314,7 +314,7 @@ class SQLReader(object):
          origin_type0,
          origin_type1,
          connector) = data
-        return (surname, prefix, primary_surname, 
+        return (surname, prefix, bool(primary_surname), 
                 (origin_type0, origin_type1), connector)
          
     def pack_media_ref(self, sql, data):
@@ -332,7 +332,7 @@ class SQLReader(object):
             role = None
         else:
             role = (role0, role1, role2, role3)
-        return (private, source_list, note_list, attribute_list, ref, role)
+        return (bool(private), source_list, note_list, attribute_list, ref, role)
 
     def pack_repository_ref(self, sql, data):
         (handle, 
@@ -346,7 +346,7 @@ class SQLReader(object):
                 ref,
                 call_number, 
                 (source_media_type0, source_media_type1),
-                private)
+                bool(private))
 
     def pack_url(self, sql, data):
         (handle, 
@@ -355,7 +355,7 @@ class SQLReader(object):
          type0, 
          type1, 
          private) = data
-        return  (private, path, desc, (type0, type1))
+        return  (bool(private), path, desc, (type0, type1))
 
     def pack_event_ref(self, sql, data):
         (handle,
@@ -366,7 +366,7 @@ class SQLReader(object):
         note_list = self.get_note_list(sql, "event_ref", handle)
         attribute_list = self.get_attribute_list(sql, "event_ref", handle)
         role = (role0, role1)
-        return (private, note_list, attribute_list, ref, role)
+        return (bool(private), note_list, attribute_list, ref, role)
 
     def pack_source_ref(self, sql, data):
         (handle, 
@@ -377,7 +377,7 @@ class SQLReader(object):
         date_handle = self.get_link(sql, "source_ref", handle, "date")
         date = self.get_date(sql, date_handle)
         note_list = self.get_note_list(sql, "source_ref", handle)
-        return (date, private, note_list, confidence, ref, page)
+        return (date, bool(private), note_list, confidence, ref, page)
 
     def pack_source(self, sql, data):
         (handle, 
@@ -399,7 +399,7 @@ class SQLReader(object):
                 abbrev,
                 change, datamap,
                 reporef_list,
-                private)
+                bool(private))
 
     def get_location(self, sql, from_type, from_handle, with_parish):
         handle = self.get_link(sql, from_type, from_handle, "location")
@@ -450,7 +450,7 @@ class SQLReader(object):
         note_list = self.get_note_list(sql, "name", handle)
         date_handle = self.get_link(sql, "name", handle, "date")
         date = self.get_date(sql, date_handle)
-        return (private, source_list, note_list, date,
+        return (bool(private), source_list, note_list, date,
                 first_name, surname_list, suffix, title,
                 (name_type0, name_type1), 
                 group_as, sort_as, display_as, call, nick, famnick)
@@ -538,9 +538,9 @@ class SQLReader(object):
                  text, 
                  sortval, 
                  newyear) = rows[0]
-                dateval = day1, month1, year1, slash1, day2, month2, year2, slash2
-                if slash1 == day2 == month2 == year2 == slash2 == 0:
-                    dateval = day1, month1, year1, slash1
+                dateval = day1, month1, year1, bool(slash1), day2, month2, year2, bool(slash2)
+                if day2 == month2 == year2 == 0 and slash2 == False:
+                    dateval = day1, month1, year1, bool(slash1)
                 return (calendar, modifier, quality, dateval, text, sortval, newyear)
             elif len(rows) == 0:
                 return None
@@ -589,7 +589,7 @@ class SQLReader(object):
                     styled_text[1] += [((markup0, markup1), value, ss_list)]
                 self.db.note_map[str(handle)] = (str(handle), gid, styled_text, 
                                             format, (note_type1, note_type2), change, 
-                                            make_tag_list(tags), private)
+                                            make_tag_list(tags), bool(private))
                 count += 1
                 self.callback(100 * count/total)
 
@@ -619,7 +619,7 @@ class SQLReader(object):
 
                 data = (str(handle), gid, (the_type0, the_type1), date, description, place, 
                         source_list, note_list, media_list, attribute_list,
-                        change, private)
+                        change, bool(private))
 
                 self.db.event_map[str(handle)] = data
 
@@ -676,7 +676,7 @@ class SQLReader(object):
                                                    pnote_list,         # 16
                                                    change,             # 17
                                                    make_tag_list(tags), # 18
-                                                   private,            # 19
+                                                   bool(private),            # 19
                                                    person_ref_list,    # 20
                                                    )
                 count += 1
