@@ -95,6 +95,7 @@ def makeDB(db):
     db.query("""drop table attribute;""")
     db.query("""drop table url;""")
     db.query("""drop table datamap;""")
+    db.query("""drop table tags;""")
 
     db.query("""CREATE TABLE note (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -329,6 +330,14 @@ def makeDB(db):
                  handle CHARACTER(25) PRIMARY KEY,
                  key_field   TEXT, 
                  value_field TXT);
+                 """)
+
+    db.query("""CREATE TABLE tags (
+                 handle CHARACTER(25) PRIMARY KEY,
+                 name TEXT,
+                 color TEXT,
+                 priority INTEGER,
+                 change INTEGER);
                  """)
 
 class Database(object):
@@ -875,6 +884,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
              len(database.get_repository_handles()) +
              len(database.get_place_handles()) +
              len(database.get_media_object_handles()) +
+             len(database.get_tag_handles()) +
              len(database.get_source_handles()))
     count = 0.0
 
@@ -1084,6 +1094,24 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_list(db, "media", handle, "note", note_list) 
         export_source_ref_list(db, "media", handle, source_list)
         export_attribute_list(db, "media", handle, attribute_list)
+        count += 1
+        callback(100 * count/total)
+
+    # ---------------------------------
+    # Tags
+    # ---------------------------------
+    for tag_handle in database.iter_tag_handles():
+        tag_object = database.get_tag_from_handle(tag_handle)
+        if tag_object is None:
+            continue
+        (handle, name, color, priority, change) = tag_object.serialize()
+        db.query("""INSERT INTO tags (
+            handle, 
+            name,
+            color,
+            priority,
+            change) VALUES (?,?,?,?,?);""",
+                 handle, name, color, priority, change)
         count += 1
         callback(100 * count/total)
 
