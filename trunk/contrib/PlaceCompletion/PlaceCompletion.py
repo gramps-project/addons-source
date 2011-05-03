@@ -50,6 +50,7 @@ from gui.plug import PluginWindows
 import GrampsDisplay
 import ManagedWindow
 from gen.lib import Location
+from gen.db import DbTxn
 from Filters import GenericFilterFactory, Rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
@@ -725,51 +726,50 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         modified = 0
         save_place = False
 
-        self.trans = self.db.transaction_begin("",batch=True)
-        self.db.disable_signals()
-        progress = ProgressMeter(_('Doing Place changes'),'')
-        #we do not know how many places in the treeview, and counting would
-        # mean transversing the tree. Set the progress to the possible maximum
-        progress.set_pass('',self.db.get_number_of_places())
+        with DbTxn(_("Set Tag"), self.db, batch=True) as self.trans:
+            self.db.disable_signals()
+            progress = ProgressMeter(_('Doing Place changes'),'')
+            #we do not know how many places in the treeview, and counting would
+            # mean transversing the tree. Set the progress to the possible maximum
+            progress.set_pass('',self.db.get_number_of_places())
 
-        store = self.tree.get_model()
-        if store:
-            node  = store.get_iter_first()
-        else:
-            node = None
-        while node :
-            save_place = False
-            place_handle = store.get_value(node, 1)
-            place = self.db.get_place_from_handle(place_handle)
-            action = store.get_value(node,2)
-            if action :
+            store = self.tree.get_model()
+            if store:
+                node  = store.get_iter_first()
+            else:
+                node = None
+            while node :
+                save_place = False
+                place_handle = store.get_value(node, 1)
+                place = self.db.get_place_from_handle(place_handle)
+                action = store.get_value(node,2)
+                if action :
                     #action None means do nothing
                     if action[1] != None :
                         place = self.group_set(place, action[0], action[1] )
                         save_place = True
-            else :
-                #we are in a parent node, go over children nodes if present
-                index = 0
-                while store.iter_nth_child(node, index):
-                    nodechild = store.iter_nth_child(node, index)
-                    action = store.get_value(nodechild,2)
-                    if action :
-                        if action[1] != None :
-                            place = self.group_set(place, action[0], action[1] )
-                            save_place = True
-                    index += 1
+                else :
+                    #we are in a parent node, go over children nodes if present
+                    index = 0
+                    while store.iter_nth_child(node, index):
+                        nodechild = store.iter_nth_child(node, index)
+                        action = store.get_value(nodechild,2)
+                        if action :
+                            if action[1] != None :
+                                place = self.group_set(place, action[0], action[1] )
+                                save_place = True
+                        index += 1
             
-            if save_place:
-                modified += 1
-                self.db.commit_place(place,self.trans)
-                progress.step()
-            #go to next on same level
-            node = store.iter_next(node)
+                if save_place:
+                    modified += 1
+                    self.db.commit_place(place,self.trans)
+                    progress.step()
+                #go to next on same level
+                node = store.iter_next(node)
                 
-        progress.close()
-        self.db.transaction_commit(self.trans,_('Change places'))
-        self.db.enable_signals()
-        self.db.request_rebuild()
+            progress.close()
+            self.db.enable_signals()
+            self.db.request_rebuild()
         
         if modified == 0:
             msg = _("No place record was modified.")
