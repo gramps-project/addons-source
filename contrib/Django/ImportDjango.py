@@ -47,6 +47,7 @@ LOG = logging.getLogger(".ImportDjango")
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
+from gen.db import DbTxn
 import gen.lib
 from QuestionDialog import ErrorDialog
 from Utils import create_id
@@ -91,99 +92,97 @@ class DjangoReader(object):
                  self.dji.Place.count() +
                  self.dji.Media.count() +
                  self.dji.Source.count())
-        self.trans = self.db.transaction_begin("",batch=True)
-        self.db.disable_signals()
-        count = 0.0
-        self.t = time.time()
+        with DbTxn(_("Django import"), self.db, batch=True) as self.trans:
+            self.db.disable_signals()
+            count = 0.0
+            self.t = time.time()
 
-        # ---------------------------------
-        # Process note
-        # ---------------------------------
-        notes = self.dji.Note.all()
-        for note in notes:
-            data = self.dji.get_note(note)
-            self.db.note_map[str(note.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process note
+            # ---------------------------------
+            notes = self.dji.Note.all()
+            for note in notes:
+                data = self.dji.get_note(note)
+                self.db.note_map[str(note.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process event
-        # ---------------------------------
-        events = self.dji.Event.all()
-        for event in events:
-            data = self.dji.get_event(event)
-            self.db.event_map[str(event.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process event
+            # ---------------------------------
+            events = self.dji.Event.all()
+            for event in events:
+                data = self.dji.get_event(event)
+                self.db.event_map[str(event.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process person
-        # ---------------------------------
-        ## Do this after Events to get the birth/death data
-        people = self.dji.Person.all()
-        for person in people:
-            data = self.dji.get_person(person)
-            self.db.person_map[str(person.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process person
+            # ---------------------------------
+            ## Do this after Events to get the birth/death data
+            people = self.dji.Person.all()
+            for person in people:
+                data = self.dji.get_person(person)
+                self.db.person_map[str(person.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process family
-        # ---------------------------------
-        families = self.dji.Family.all()
-        for family in families:
-            data = self.dji.get_family(family)
-            self.db.family_map[str(family.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process family
+            # ---------------------------------
+            families = self.dji.Family.all()
+            for family in families:
+                data = self.dji.get_family(family)
+                self.db.family_map[str(family.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process repository
-        # ---------------------------------
-        repositories = self.dji.Repository.all()
-        for repo in repositories:
-            data = self.dji.get_repository(repo)
-            self.db.repository_map[str(repo.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process repository
+            # ---------------------------------
+            repositories = self.dji.Repository.all()
+            for repo in repositories:
+                data = self.dji.get_repository(repo)
+                self.db.repository_map[str(repo.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process place
-        # ---------------------------------
-        places = self.dji.Place.all()
-        for place in places:
-            data = self.dji.get_place(place)
-            self.db.place_map[str(place.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process place
+            # ---------------------------------
+            places = self.dji.Place.all()
+            for place in places:
+                data = self.dji.get_place(place)
+                self.db.place_map[str(place.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process source
-        # ---------------------------------
-        sources = self.dji.Source.all()
-        for source in sources:
-            data = self.dji.get_source(source)
-            self.db.source_map[str(source.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
+            # ---------------------------------
+            # Process source
+            # ---------------------------------
+            sources = self.dji.Source.all()
+            for source in sources:
+                data = self.dji.get_source(source)
+                self.db.source_map[str(source.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
-        # ---------------------------------
-        # Process media
-        # ---------------------------------
-        media = self.dji.Media.all()
-        for med in media:
-            data = self.dji.get_media(med)
-            self.db.media_map[str(med.handle)] = data
-            count += 1
-            self.callback(100 * count/total)
-
+            # ---------------------------------
+            # Process media
+            # ---------------------------------
+            media = self.dji.Media.all()
+            for med in media:
+                data = self.dji.get_media(med)
+                self.db.media_map[str(med.handle)] = data
+                count += 1
+                self.callback(100 * count/total)
 
         return None
 
     def cleanup(self):
         self.t = time.time() - self.t
         msg = ngettext('Import Complete: %d second','Import Complete: %d seconds', self.t ) % self.t
-        self.db.transaction_commit(self.trans, _("Django import"))
         self.db.enable_signals()
         self.db.request_rebuild()
         LOG.debug(msg)
