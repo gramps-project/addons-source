@@ -40,12 +40,15 @@ import math
 #
 #-------------------------------------------------------------------------
 import gtk
-
-try:
-    import cairo
-    cairo_available = True
-except:
+import constfunc
+if constfunc.is_quartz():
     cairo_available = False
+else:
+    try:
+        import cairo
+        cairo_available = True
+    except:
+        cairo_available = False
 
 #-------------------------------------------------------------------------
 #
