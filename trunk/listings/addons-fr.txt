@@ -45,6 +45,6 @@
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.1', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Gramplet pour d\xc3\xa9montrer les graphiques Cairo', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Gramplet Horloge', 't': u'Gramplet', 'v': '0.0.7', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.3', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
 {'d': "Affiche toutes les lignes de descendants d'un anc\xc3\xaatre donn\xc3\xa9 \xc3\xa0 un descendant choisi dans un format textuel.", 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lign\xc3\xa9es de descendants', 't': u'Report', 'v': '1.1.6', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.4', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
