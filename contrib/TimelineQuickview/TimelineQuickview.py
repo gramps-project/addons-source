@@ -71,12 +71,13 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
         handled[person.handle] = person
         relation = rel_calc.get_one_relationship(database, center_person, person).title()
         for event in get_events(person, sa, person == center_person):
-            if person.handle == center_person.handle:
-                event_list += [(event, person, event)]
-            elif relation == "":
-                return
-            else:
-                event_list += [(event, person, "%s, %s" % (relation, sa.event_type(event)))]
+            if event:
+                if person.handle == center_person.handle:
+                    event_list += [(event, person, event)]
+                elif relation == "":
+                    return
+                else:
+                    event_list += [(event, person, "%s, %s" % (relation, sa.event_type(event)))]
     # get all families that the person was a parent in:
     for family in sa.parent_in(person):
         if family.handle in handled:
@@ -111,8 +112,9 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
                 relation = rel_calc.get_one_relationship(database, center_person, child).title()
                 if relation != "": # otherwise, no official relationship
                     for event in get_events(child, sa):
-                        etype = sa.event_type(event)
-                        event_list += [(event, child, "%s, %s" % (relation, etype))]
+                        if event:
+                            etype = sa.event_type(event)
+                            event_list += [(event, child, "%s, %s" % (relation, etype))]
 
     # if not too far away, get details of families person was child in:
     if level < maxlevel:
@@ -137,8 +139,9 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
                     relation = rel_calc.get_one_relationship(database, center_person, child).title()
                     if relation != "": # otherwise, no official relationship
                         for event in get_events(child, sa):
-                            etype = sa.event_type(event)
-                            event_list += [(event, child, "%s, %s" % (relation, etype))]
+                            if event:
+                                etype = sa.event_type(event)
+                                event_list += [(event, child, "%s, %s" % (relation, etype))]
 
 def run(database, document, person):
     """
