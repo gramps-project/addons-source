@@ -1214,7 +1214,7 @@ class TimelinePedigreeView(NavigationView):
         """Change root person to default person for database."""
         defperson = self.dbstate.db.get_default_person()
         if defperson:
-            self.change_active(defperson)
+            self.change_active(defperson.handle)
 
     def edit_person_cb(self, obj, person_handle):
         """
