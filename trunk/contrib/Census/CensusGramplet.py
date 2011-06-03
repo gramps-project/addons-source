@@ -492,10 +492,11 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                     attrs = {}
                     order = 0
                     for attr in event_ref.get_attribute_list():
-                        if str(attr.get_type()) == ORDER_ATTR:
+                        attr_type = unicode(attr.get_type())
+                        if attr_type == ORDER_ATTR:
                             order = int(attr.get_value())
                         else:
-                            attrs[str(attr.get_type())] = attr.get_value()
+                            attrs[attr_type] = attr.get_value()
                     name = name_displayer.display(person)
                     person_list.append([order, handle, name, attrs])
 
