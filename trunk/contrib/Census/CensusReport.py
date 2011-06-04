@@ -248,10 +248,10 @@ def get_attributes(person, event_handle):
     for event_ref in person.get_event_ref_list():
         if event_ref.ref == event_handle:
             for attr in event_ref.get_attribute_list():
-                if str(attr.get_type()) == ORDER_ATTR:
+                if unicode(attr.get_type()) == ORDER_ATTR:
                     order = attr.get_value()
                 else:
-                    attrs[str(attr.get_type())] = attr.get_value()
+                    attrs[unicode(attr.get_type())] = attr.get_value()
 
     return (order, name_displayer.display_formal(person), attrs)
 
