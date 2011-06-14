@@ -131,11 +131,11 @@ class ExtendedSources(Gramplet):
             except Errors.WindowActiveError:
                 pass
 
-    def get_has_data(self, obj):
+    def get_has_data(self, person):
         """
         Return True if the gramplet has data, else return False.
         """
-        if obj is None: 
+        if person is None: 
             return False
         if self.check_sources(person):
             return True
