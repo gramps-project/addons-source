@@ -39,7 +39,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from ImportCsv import CSVParser
 from ImportVCard import VCardParser
-from ImportXml import GrampsParser, PERSON_RE, DbMixin
+from ImportXml import GrampsParser, PERSON_RE
 from QuestionDialog import ErrorDialog
 
 #------------------------------------------------------------------------
@@ -228,9 +228,6 @@ class ImportGramplet(Gramplet):
             parser = AtomicVCardParser(database)
             parser.parse(ifile)
         elif text.find("""<!DOCTYPE database PUBLIC "-//Gramps//""") > 0:
-            if DbMixin not in database.__class__.__bases__:
-                database.__class__.__bases__ = (DbMixin,) +  \
-                    database.__class__.__bases__
             ofile = StringIO.StringIO(text)
             person_count = 0
             line_count = 0
