@@ -236,8 +236,9 @@ class GraphWidget(object):
         h_offset = h_offset / self.canvas.get_scale()
 
         # Now try and centre the active person
-        self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
-                              parser.get_active_person_y())
+        if parser.active_person_item:
+            self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
+                                  parser.get_active_person_y())
 
     def clear(self):
         """
