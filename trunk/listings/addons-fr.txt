@@ -7,8 +7,7 @@
 {'d': 'Affiche tous les noms de tous les individus', 'g': '3.4', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': "Version alternative de l'arbre graphique traditionnel.", 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Arbre graphique', 't': u'Report', 'v': '1.0.8', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'D\xc3\xa9finir le marqueur avec une certaine valeur.', 'g': '3.4', 'i': 'SetMarker', 'n': 'D\xc3\xa9finir un marqueur', 't': u'Tool', 'v': '0.0.7', 'z': 'SetMarkerTool.addon.tgz'}
-{'d': 'Graphique dynamique des relations', 'g': '3.4', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.18', 'z': 'GraphView.addon.tgz'}
-{'d': 'Gramplet showing extended sources for a person', 'g': '3.4', 'i': 'Extended Sources Gramplet', 'n': 'Extended Sources Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedSources.addon.tgz'}
+{'d': 'Graphique dynamique des relations', 'g': '3.4', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.21', 'z': 'GraphView.addon.tgz'}
 {'d': "Ceci est une image brute d'objet python", 'g': '3.4', 'i': 'Raw Export', 'n': 'Export brut', 't': u'Exporter', 'v': '1.0.8', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
@@ -21,7 +20,7 @@
 {'d': "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xc3\xa9lectionn\xc3\xa9", 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Arbre au fil du temps', 't': u'Gramps View', 'v': '0.1.13', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Collection de sites internet pour le Royaume-uni (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'Ensemble de liens internet anglo-saxons', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.7', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.7', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Fournit une biblioth\xc3\xa8que pour un acc\xc3\xa8s g\xc3\xa9n\xc3\xa9rique \xc3\xa0 la base de donn\xc3\xa9es et gen.lib.', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'libaccess.addon.tgz'}
 {'d': 'Collection de sites internet pour les \xc3\x89tats-Unis (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'US Web Connect Pack', 'n': 'Ensemble de liens internet US', 't': u'Plugin lib', 'v': '1.0.16', 'z': 'USWebConnectPack.addon.tgz'}
