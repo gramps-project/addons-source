@@ -29,6 +29,8 @@
 {'d': 'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': '\xc3\x84ttlingsr\xc3\xa4knare', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.8', 'z': 'NoteGramplet.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a person', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv och hem person', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.4', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.8', 'z': 'Census.addon.tgz'}

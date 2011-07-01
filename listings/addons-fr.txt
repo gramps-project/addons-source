@@ -29,6 +29,8 @@
 {'d': 'Affiche le total des descendants pour chaque individu', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Calcul des descendants', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet pour afficher les individus et le nombre de leurs descendants', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet Calcul de descendants', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.8', 'z': 'NoteGramplet.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a person', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet affichant les relations \xc3\xa9troites entre la souche et les autres individus', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet Connexions approfondies', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
 {'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.4', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
