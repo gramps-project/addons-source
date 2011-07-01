@@ -29,6 +29,8 @@
 {'d': 'Het aantal afstammelingen voor elke persoon tonen.', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Afstammelingen tellen', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet om personen en afstammelingentelling te tonene', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Afstammelingentellingsgramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Opmerkingengramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'NoteGramplet.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a person', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': "'Verre relaties'-gramplet", 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.4', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.8', 'z': 'Census.addon.tgz'}

@@ -29,6 +29,8 @@
 {'d': 'Display descendant counts for each person.', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Descendant Count Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.8', 'z': 'NoteGramplet.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a person', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.1', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Deep Connections Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.4', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
