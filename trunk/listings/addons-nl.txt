@@ -1,4 +1,5 @@
 {'d': 'Interactieve Python-interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Pythongramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
+{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.1', 'z': 'MediaBrowser.addon.tgz'}
 {'d': "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat", 'g': '3.4', 'i': 'im_sqlite', 'n': "'Sqlite'-import", 't': u'Importer', 'v': '1.0.10', 'z': 'Sqlite.addon.tgz'}
 {'d': "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat", 'g': '3.4', 'i': 'ex_sqlite', 'n': "'Sqlite'-export", 't': u'Exporter', 'v': '1.0.9', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingavegramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
