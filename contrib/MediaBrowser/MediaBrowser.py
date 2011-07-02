@@ -139,10 +139,7 @@ class MediaBrowser(Gramplet):
         full_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         mime_type = media.get_mime_type()
         rectangle = media_ref.get_rectangle()
-        if mime_type and mime_type.startswith("image"):
-            self.photo.set_image(full_path, mime_type, rectangle)
-        else:
-            self.photo.set_image(None)
+        self.photo.set_image(full_path, mime_type, rectangle)
 
     def get_has_data(self, person):
         """
