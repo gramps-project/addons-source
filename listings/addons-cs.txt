@@ -3,7 +3,7 @@
 {'d': 'Gramplet for quick data entry', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Data Entry Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'libaccess.addon.tgz'}
-{'d': 'Gramplet for detecting and assigning faces', 'g': '3.4', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.1', 'z': 'FaceDetection.addon.tgz'}
+{'d': 'Gramplet for detecting and assigning faces', 'g': '3.4', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.2', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a person', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.2', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.5', 'z': 'SetAttributeTool.addon.tgz'}

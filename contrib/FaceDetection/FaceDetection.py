@@ -140,12 +140,12 @@ class FaceDetection(Gramplet):
                                      1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
                                      min_face_size)
         references = self.find_references()
-        faces = []
+        rects = []
         o_width, o_height = [float(t) for t in (self.cv_image.width, self.cv_image.height)]
         for ((x, y, width, height), neighbors) in faces:
             # percentages:
-            faces.append((x/o_width, y/o_height, width/o_width, height/o_height))
-        self.draw_rectangles(faces, references)
+            rects.append((x/o_width, y/o_height, width/o_width, height/o_height))
+        self.draw_rectangles(rects, references)
 
     def draw_rectangles(self, faces, references):
         # reset image:
@@ -158,15 +158,15 @@ class FaceDetection(Gramplet):
         t_width, t_height = [float(t) for t in self.photo.photo.size_request()]
         # percents:
         for (x, y, width, height) in references:
-            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+            self.draw_rectangle(cm, pixmap, t_width, t_height,
                                 x, y, width, height, "blue")
         for (x, y, width, height) in faces:
-            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+            self.draw_rectangle(cm, pixmap, t_width, t_height,
                                 x, y, width, height, "red")
         self.photo.photo.set_from_pixmap(pixmap, mask)
 
     def draw_rectangle(self, cm, pixmap, t_width, t_height, 
-                       x, y, width, color):
+                       x, y, width, height, color):
         cmcolor = cm.alloc_color("white")
         gc = pixmap.new_gc(foreground=cmcolor)
         pixmap.draw_rectangle(gc, False, # fill it?
