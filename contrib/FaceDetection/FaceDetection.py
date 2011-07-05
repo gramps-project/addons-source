@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-# $Id: MediaPreview.py 17399 2011-05-03 21:32:32Z nick-h $
+# $Id: $
 #
 
 from gen.plug import Gramplet
@@ -49,13 +49,20 @@ class FaceDetection(Gramplet):
         """
         Build the GUI interface.
         """
-        self.top = gtk.VBox()
+        self.top = gtk.HBox()
+        # first column:
+        vbox = gtk.VBox()
+        self.top.pack_start(vbox, fill=False, expand=False)
         self.photo = Photo()
-        self.top.pack_start(self.photo, fill=True, expand=False, padding=5)
-        button = gtk.Button(_("Detect Faces"))
-        button.connect('button-press-event', self.detect)
-        #self.photo.photo.connect("expose-event", self.expose)
-        self.top.pack_start(button, fill=True, expand=False)
+        vbox.pack_start(self.photo, fill=False, expand=False, padding=5)
+        self.detect_button = gtk.Button(_("Detect New Faces"))
+        self.detect_button.connect('button-press-event', self.detect)
+        vbox.pack_start(self.detect_button, fill=False, expand=False)
+        # second column
+        vbox = gtk.VBox()
+        vbox.pack_start(gtk.Label("Image:"), fill=False, expand=False)
+        self.top.pack_start(vbox, fill=False, expand=False)
+        # show and return:
         self.top.show_all()
         return self.top
 
@@ -74,9 +81,11 @@ class FaceDetection(Gramplet):
         media = self.dbstate.db.get_object_from_handle(active_handle)
         self.top.hide()
         if media:
+            self.detect_button.set_sensitive(True)
             self.load_image(media)
             self.set_has_data(True)
         else:
+            self.detect_button.set_sensitive(False)
             self.photo.set_image(None)
             self.set_has_data(False)
         self.top.show()
@@ -87,109 +96,88 @@ class FaceDetection(Gramplet):
         """
         self.full_path = Utils.media_path_full(self.dbstate.db,
                                                media.get_path())
-        mime_type = media.get_mime_type()
-        self.photo.set_image(self.full_path, mime_type)
+        self.mime_type = media.get_mime_type()
+        self.photo.set_image(self.full_path, self.mime_type)
+        # show where image parts are used by people:
+        rects = self.find_references()
+        self.draw_rectangles([], rects)
+
+    def find_references(self):
+        """
+        Find backref people
+        """
+        active_handle = self.get_active('Media')
+        rects = []
+        for (classname, handle) in \
+                self.dbstate.db.find_backlink_handles(active_handle):
+            if classname == "Person":
+                person = self.dbstate.db.get_person_from_handle(handle)
+                if person:
+                    media_list = person.get_media_list()
+                    for media_ref in media_list:
+                        # get the rect for this image:
+                        if media_ref.ref != active_handle: continue
+                        rect = media_ref.get_rectangle()
+                        if rect:
+                            x1, y1, x2, y2 = rect
+                            # make percentages
+                            rects.append((x1/100.0, y1/100.0, 
+                                          (x2 - x1)/100.0, (y2 - y1)/100.0))
+        return rects
 
     def detect(self, obj, event):
-        filename = self.full_path
-        if not filename:
-            return
         # First, reset image, in case of previous detections:
         active_handle = self.get_active('Media')
         media = self.dbstate.db.get_object_from_handle(active_handle)
         self.load_image(media)
         min_face_size = (50,50) # FIXME: get from setting
-        print "Loading..."
-        self.cv_image = cv.LoadImage(filename, cv.CV_LOAD_IMAGE_GRAYSCALE)
-        print "Equalizing..."
+        self.cv_image = cv.LoadImage(self.full_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
+        o_width, o_height = self.cv_image.width, self.cv_image.height
         cv.EqualizeHist(self.cv_image, self.cv_image)
         cascade = cv.Load(HAARCASCADE_PATH)
-        print "Detecting faces..."
-        faces = cv.HaarDetectObjects(self.cv_image, cascade, cv.CreateMemStorage(0),
-                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, min_face_size)
-        if faces:
-            rects = []
-            for ((x, y, width, height), neighbors) in faces:
-                print '   face detected:', (x, y), (x + width, y + height)
-                #self.draw_rectangle(x, y, width, height)
-                rects.append( (x, y, width, height) )
-            self.draw_rectangles(rects)
-        else:
-            print '   no face detected'
+        faces = cv.HaarDetectObjects(self.cv_image, cascade, 
+                                     cv.CreateMemStorage(0),
+                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
+                                     min_face_size)
+        references = self.find_references()
+        faces = []
+        o_width, o_height = [float(t) for t in (self.cv_image.width, self.cv_image.height)]
+        for ((x, y, width, height), neighbors) in faces:
+            # percentages:
+            faces.append((x/o_width, y/o_height, width/o_width, height/o_height))
+        self.draw_rectangles(faces, references)
 
-    def expose(self, area, event):
-        print "expose!"
-        gc = area.window.new_gc()
-        gdk_color = gc.get_colormap().alloc_color("Green")
-        gc.set_foreground(gdk_color)
-        area.window.draw_rectangle(gc, True, 0, 0, 80, 70)
-        return False
-
-    def draw_rectangles(self, rects):
+    def draw_rectangles(self, faces, references):
+        # reset image:
+        self.photo.set_image(self.full_path, self.mime_type)
+        # draw on it
         pixbuf = self.photo.photo.get_pixbuf()
         pixmap, mask = pixbuf.render_pixmap_and_mask()
         cm = pixmap.get_colormap()
-        red = cm.alloc_color("red")
-        gc = pixmap.new_gc(foreground=red)
         # the thumbnail's actual size:
-        t_width, t_height = self.photo.photo.size_request()
-        o_width, o_height = self.cv_image.width, self.cv_image.height
-        drawable = self.photo.photo.window # gdk.Window
-        cm = drawable.get_colormap()
-        gc = drawable.new_gc(foreground=cm.alloc_color('#ff0000',True,False))
-        x_ratio = float(t_width)/float(o_width)
-        y_ratio = float(t_height)/float(o_height)
-        for (x, y, width, height) in rects:
-            pixmap.draw_rectangle(gc, False, # fill?
-                                  int(x * x_ratio), 
-                                  int(y * y_ratio), 
-                                  int(width * x_ratio), 
-                                  int(height * y_ratio))
-            print '   rectangle:', int(x * x_ratio), int(y * y_ratio), int(width * x_ratio), int(height * y_ratio)
-        #pixmap.draw_line(gc, 0, 0, w, h)
+        t_width, t_height = [float(t) for t in self.photo.photo.size_request()]
+        # percents:
+        for (x, y, width, height) in references:
+            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+                                x, y, width, height, "blue")
+        for (x, y, width, height) in faces:
+            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+                                x, y, width, height, "red")
         self.photo.photo.set_from_pixmap(pixmap, mask)
-        #cv.Rectangle(cv_image, (x, y),
-        #             (x + width, y + height),
-        #             cv.CV_RGB(0, 0, 0), 3) # black, 3-pixel border
-        #cv.Rectangle(cv_image, (x + 1, y + 1),
-        #             (x + width + 1, y + height + 1),
-        #             cv.CV_RGB(255, 255, 255), 3) # white, 3-pixel border
-        
-    def scalepixbuf(self, i):
-        width = i.get_width()
-        height = i.get_height()
-        ratio = float(max(i.get_height(), i.get_width()))
-        scale = float(180.0)/ratio
-        x = int(scale*(i.get_width()))
-        y = int(scale*(i.get_height()))
-        i = i.scale_simple(x, y, gtk.gdk.INTERP_BILINEAR)
-        return i
 
-    def cv2image(self, cv_image):
-        return Image.fromstring("L", cv.GetSize(cv_image), cv_image.tostring())
-
-    def image2cv(self, pil_image):
-        cv_image = cv.CreateImageHeader(pil_image.size, cv.IPL_DEPTH_8U, 3)
-        cv.SetData(cv_image, pil_image.tostring())
-        return cv_image
-
-    def image2pixbuf(self, im):  
-        """
-        PIL image to Pixbuf.
-        """
-        file1 = StringIO.StringIO()  
-        im.save(file1, "ppm")  
-        contents = file1.getvalue()  
-        file1.close()  
-        loader = gtk.gdk.PixbufLoader("pnm")  
-        loader.write(contents, len(contents))  
-        pixbuf = loader.get_pixbuf()  
-        loader.close()  
-        return pixbuf  
-
-    def pixbuf2image(self, pb):
-        """
-        Pixbuf to PIL image.
-        """
-        width,height = pb.get_width(), pb.get_height()
-        return Image.fromstring("RGB", (width, height), pb.get_pixels())
+    def draw_rectangle(self, cm, pixmap, t_width, t_height, 
+                       x, y, width, color):
+        cmcolor = cm.alloc_color("white")
+        gc = pixmap.new_gc(foreground=cmcolor)
+        pixmap.draw_rectangle(gc, False, # fill it?
+                              int(x * t_width) + 1, 
+                              int(y * t_height) + 1, 
+                              int(width * t_width), 
+                              int(height * t_height))
+        cmcolor = cm.alloc_color(color)
+        gc = pixmap.new_gc(foreground=cmcolor)
+        pixmap.draw_rectangle(gc, False, # fill it?
+                              int(x * t_width), 
+                              int(y * t_height), 
+                              int(width * t_width), 
+                              int(height * t_height))
