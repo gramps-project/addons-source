@@ -840,7 +840,10 @@ class TimelinePedigreeView(NavigationView):
         # Add livespan to personbox
         if self.use_timeline and self.show_lifespan and BranchData[0] and not (Direction < 0 and genDepth == 0):
             lifespan = BranchData[5]
-            color = BranchData[1].bgcolor[:3] + (0.7,)
+            try:
+                color = BranchData[1].bgcolor[:3] + (0.7,)
+            except AttributeError:
+                color = (211/256.0, 215/256.0, 207/256.0)[:3] + (0.7)
             self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize[0], yBox, xBox + 5, yBox+pbwSize[1], color])   # +5 for overlapping with the box
         
         # Calculate position of connection point of this box
