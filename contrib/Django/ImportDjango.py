@@ -65,7 +65,10 @@ try:
 except:
     pass
 
-from web.libdjango import DjangoInterface
+try:
+    from web.libdjango import DjangoInterface
+except:
+    print "Error: cannot import Django 1.1"
 
 #-------------------------------------------------------------------------
 #
