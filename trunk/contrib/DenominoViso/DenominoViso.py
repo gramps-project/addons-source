@@ -126,7 +126,7 @@ import os
 import shutil
 import re
 from urllib import quote,splittype,pathname2url
-from xml.sax.saxutils import quoteattr
+from xml.sax.saxutils import escape, quoteattr
 from math import sin,cos,exp,sqrt,e,pi
 
 #-------------------------------------------------------------------------
@@ -808,48 +808,47 @@ class DenominoVisoReport(Report):
                     "','".join(map(self.escbacka,self.person_img_srcs)) + "']"
 
         person_txt = "activate(this," + person_txt + "})"
-        person_name = "setStatusbar('" + person_name + "')"
         person_txt = quoteattr(person_txt)
-        person_name = quoteattr(person_name)
+        person_name = escape(person_name)
         person_gender = ['female','male','unknown'][int(person.get_gender())]
 
         if self.options['DNMchart_type'] == _cnsts.FAN:
             path_str,child_att = self.fan_segment(nr_ret_attachment_points, \
                     *attachment_segment)
-            f.write("""<path d="%s" class="%s" %s/>\n""" % (path_str, \
-                    person_gender, self.mouse_event_handler(person_txt, \
-                    person_name)))
+            f.write("""<path d="%s" class="%s" %s><title>%s</title></path>\n""" % (path_str, \
+                    person_gender, self.mouse_event_handler(person_txt),  \
+                    person_name))
         elif self.options['DNMchart_type'] == _cnsts.GROWTHSPIRAL:
             path_str,child_att = self.growthspiral_segment(\
                     nr_ret_attachment_points,*attachment_segment)
-            f.write("""<path d="%s" class="%s" %s/>\n""" % (path_str, \
-                    person_gender, self.mouse_event_handler(person_txt, \
-                    person_name)))
+            f.write("""<path d="%s" class="%s" %s><title>%s</title></path>\n""" % (path_str, \
+                    person_gender, self.mouse_event_handler(person_txt), \
+                    person_name))
         elif self.options['DNMchart_type'] == _cnsts.MATREE:
             path_str,child_att = self.matree_segment(*attachment_segment)
-            f.write("""<%s class="%s" %s/>\n""" % (path_str, person_gender, \
-                    self.mouse_event_handler(person_txt, person_name)))
+            f.write("""<%s class="%s" %s><title>%s</title></rect>\n""" % (path_str, person_gender, \
+                    self.mouse_event_handler(person_txt), person_name))
         elif self.options['DNMchart_type'] == _cnsts.PYTREE:
             path_str,child_att = self.pytree_segment(*attachment_segment)
-            f.write("""<path d="%s" class="%s" %s/>\n""" % (path_str, \
-                    person_gender, self.mouse_event_handler(person_txt, \
-                    person_name)))
+            f.write("""<path d="%s" class="%s" %s><title>%s</title></path>\n""" % (path_str, \
+                    person_gender, self.mouse_event_handler(person_txt), \
+                    person_name))
         else:
             if self.options['DNMtime_dir'] < _cnsts.TOP2BOTTOM:
                 f.write("""<rect x="%.2f" y="%.2f" width="%.2f" height="%.2f"
-                        class="%s" %s/>\n""" % \
+                        class="%s" %s><title>%s</title></rect>\n""" % \
                     (self.generation2coord(generation)-self.rect_width/2.0, attachment_segment[0]-self.rect_height/2.0,\
                         self.rect_width, self.rect_height, person_gender, \
-                        self.mouse_event_handler(person_txt,person_name)))
+                        self.mouse_event_handler(person_txt), person_name))
             else:
                 f.write("""<rect x="%.2f" y="%.2f" width="%.2f" height="%.2f"
-                        class="%s" %s/>\n""" % \
-                    (attachment_segment[0]-self.rect_width/2.0,self.generation2coord(generation)-self.rect_height/2.0,self.rect_width, self.rect_height, person_gender, self.mouse_event_handler(person_txt,person_name)))
+                        class="%s" %s><title>%s</title></rect>\n""" % \
+                    (attachment_segment[0]-self.rect_width/2.0,self.generation2coord(generation)-self.rect_height/2.0,self.rect_width, self.rect_height, person_gender, self.mouse_event_handler(person_txt), person_name))
         return child_att
 
-    def mouse_event_handler(self,person_txt,person_name):
+    def mouse_event_handler(self,person_txt):
         if self.options['DNMclick_over'] == _cnsts.ONCLICK:
-            return "onclick=%s onmouseover=%s" % (person_txt,person_name)
+            return "onclick=%s" % person_txt
         else:
             return "onmouseover=%s" % person_txt
 
@@ -2084,19 +2083,19 @@ function %(bd)s2html(person,containerDL) {
         strng = """
         var infoWindow
         function activate(aRect,person) {
-            var class = ""
-            class = aRect.getAttribute('class');
-            if (! class || class.indexOf('activated') == -1) {
-                aRect.setAttribute('class',class + ' activated');
+            var class_ = ""
+            class_ = aRect.getAttribute('class');
+            if (! class_ || class_.indexOf('activated') == -1) {
+                aRect.setAttribute('class',class_ + ' activated');
             }
             var infoField = getInfoField(person);
             infoField.scrollTop = 0;
             addText(person,infoField);
             var rects = document.getElementsByTagName('%(shp)s');
             for (var i=0; i<rects.length; i++) {
-                class = rects[i].getAttribute('class');
-                if (/activated/.test(class) && rects[i] != aRect) {
-                    rects[i].setAttribute('class',class.replace(/activated/g,''));
+                class_ = rects[i].getAttribute('class');
+                if (/activated/.test(class_) && rects[i] != aRect) {
+                    rects[i].setAttribute('class',class_.replace(/activated/g,''));
                 }
             }
         }
@@ -2131,11 +2130,6 @@ function %(bd)s2html(person,containerDL) {
             notes2html(person,infoField);
             sources2html(person,infoField);
             img_sources2html(person,infoField);
-            setStatusbar(person.person_name)
-        }
-        function setStatusbar(str) {
-            // There is a configuration option in Firefox that can disable this.
-            window.defaultStatus=str;
         }
         function removeText(infoField) {
             //var infoField = document.getElementById('infoField');
@@ -2257,16 +2251,16 @@ function %(bd)s2html(person,containerDL) {
             var rects = document.getElementsByTagName('%(shp)s');
             RectangleLoop: for (var i=0; i<rects.length; i++) {
                 var found = false;
-                var class = "";
+                var class_ = "";
                 if (rects[i].hasAttribute('class')) {
-                    class = rects[i].getAttribute('class');
-                    found = (class.indexOf('searched') != -1);
+                    class_ = rects[i].getAttribute('class');
+                    found = (class_.indexOf('searched') != -1);
                 }
                 var personObj = rects[i].getAttribute('%(maction)s');
                 //var personObj = rects[i].getAttribute('onmouseover');
                 var startIndex = personObj.indexOf(subj);
                 if (startIndex == -1 && found) {
-                    rects[i].setAttribute('class',class.replace(/searched/g,''));
+                    rects[i].setAttribute('class',class_.replace(/searched/g,''));
                 }
                 while (startIndex != -1) {
                     startIndex += subj.length;
@@ -2278,7 +2272,7 @@ function %(bd)s2html(person,containerDL) {
                     if (strng == strng.toLowerCase()) { 
                         if (strng != "" && subjVal.toLowerCase().indexOf(strng) != -1) {
                             if (! found) {
-                                rects[i].setAttribute('class',class + " searched");
+                                rects[i].setAttribute('class',class_ + " searched");
                             }
                             eureka = true;
                             continue RectangleLoop;
@@ -2286,7 +2280,7 @@ function %(bd)s2html(person,containerDL) {
                     } else {
                         if (subjVal.indexOf(strng) != -1) {
                             if (! found) {
-                                rects[i].setAttribute('class',class + " searched");
+                                rects[i].setAttribute('class',class_ + " searched");
                             }
                             eureka = true;
                             continue RectangleLoop;
@@ -2295,7 +2289,7 @@ function %(bd)s2html(person,containerDL) {
                     startIndex = personObj.indexOf(subj,endIndex+1);
                 }
                 if (found) {
-                    rects[i].setAttribute('class',class.replace(/searched/g,''));
+                    rects[i].setAttribute('class',class_.replace(/searched/g,''));
                 }
             }
             return eureka;
