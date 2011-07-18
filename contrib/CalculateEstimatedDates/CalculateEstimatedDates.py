@@ -41,6 +41,7 @@ from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import BooleanOption, NumberOption, StringOption, \
                          FilterOption, PersonOption, EnumeratedListOption
 import gen.lib
+from gen.db import DbTxn
 import config
 from gen.display.name import displayer as name_displayer
 import Errors
@@ -244,67 +245,66 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         self.MAX_AGE_PROB_ALIVE = self.options.handler.options_dict['MAX_AGE_PROB_ALIVE']
         self.AVG_GENERATION_GAP = self.options.handler.options_dict['AVG_GENERATION_GAP']
         if remove_old:
-            self.trans = self.db.transaction_begin("",batch=True)
-            self.db.disable_signals()
-            self.results_write(_("Removing old estimations... "))
-            self.progress.set_pass((_("Removing '%s'...") % source_text), 
-                                   num_people)
-            for person_handle in people:
-                self.progress.step()
-                pupdate = 0
-                person = self.db.get_person_from_handle(person_handle)
-                birth_ref = person.get_birth_ref()
-                if birth_ref:
-                    birth = self.db.get_event_from_handle(birth_ref.ref)
-                    source_list = birth.get_source_references()
-                    for source_ref in source_list:
-                        #print "birth handle:", source_ref
-                        source = self.db.get_source_from_handle(source_ref.ref)
-                        if source:
-                            #print "birth source:", source, source.get_title()
-                            if source.get_title() == source_text:
-                                person.set_birth_ref(None)
-                                person.remove_handle_references('Event',[birth_ref.ref])
-                                # remove note
-                                note_list = birth.get_referenced_note_handles()
-                                birth.remove_handle_references('Note', 
-                                  [note_handle for (obj_type, note_handle) in note_list])
-                                for (obj_type, note_handle) in note_list:
-                                    self.db.remove_note(note_handle, self.trans)
-                                self.db.remove_event(birth_ref.ref, self.trans)
-                                self.db.commit_source(source, self.trans)
-                                pupdate = 1
-                                break
-                death_ref = person.get_death_ref()
-                if death_ref:
-                    death = self.db.get_event_from_handle(death_ref.ref)
-                    source_list = death.get_source_references()
-                    for source_ref in source_list:
-                        #print "death handle:", source_ref
-                        source = self.db.get_source_from_handle(source_ref.ref)
-                        if source:
-                            #print "death source:", source, source.get_title()
-                            if source.get_title() == source_text:
-                                person.set_death_ref(None)
-                                person.remove_handle_references('Event',[death_ref.ref])
-                                # remove note
-                                note_list = death.get_referenced_note_handles()
-                                birth.remove_handle_references('Note', 
-                                  [note_handle for (obj_type, note_handle) in note_list])
-                                for (obj_type, note_handle) in note_list:
-                                    self.db.remove_note(note_handle, self.trans)
-                                self.db.remove_event(death_ref.ref, self.trans)
-                                self.db.commit_source(source, self.trans)
-                                pupdate = 1
-                                break
-                if pupdate == 1:
-                    self.db.commit_person(person, self.trans)
-            if source:
-                self.db.remove_source(source.handle, self.trans)
-            self.results_write(_("done!\n"))
-            self.db.transaction_commit(self.trans, _("Removed date estimates"))
-            self.db.enable_signals()
-            self.db.request_rebuild()
+            with DbTxn("", self.db, batch=True) as self.trans:
+                self.db.disable_signals()
+                self.results_write(_("Removing old estimations... "))
+                self.progress.set_pass((_("Removing '%s'...") % source_text), 
+                                       num_people)
+                for person_handle in people:
+                    self.progress.step()
+                    pupdate = 0
+                    person = self.db.get_person_from_handle(person_handle)
+                    birth_ref = person.get_birth_ref()
+                    if birth_ref:
+                        birth = self.db.get_event_from_handle(birth_ref.ref)
+                        source_list = birth.get_source_references()
+                        for source_ref in source_list:
+                            #print "birth handle:", source_ref
+                            source = self.db.get_source_from_handle(source_ref.ref)
+                            if source:
+                                #print "birth source:", source, source.get_title()
+                                if source.get_title() == source_text:
+                                    person.set_birth_ref(None)
+                                    person.remove_handle_references('Event',[birth_ref.ref])
+                                    # remove note
+                                    note_list = birth.get_referenced_note_handles()
+                                    birth.remove_handle_references('Note', 
+                                      [note_handle for (obj_type, note_handle) in note_list])
+                                    for (obj_type, note_handle) in note_list:
+                                        self.db.remove_note(note_handle, self.trans)
+                                    self.db.remove_event(birth_ref.ref, self.trans)
+                                    self.db.commit_source(source, self.trans)
+                                    pupdate = 1
+                                    break
+                    death_ref = person.get_death_ref()
+                    if death_ref:
+                        death = self.db.get_event_from_handle(death_ref.ref)
+                        source_list = death.get_source_references()
+                        for source_ref in source_list:
+                            #print "death handle:", source_ref
+                            source = self.db.get_source_from_handle(source_ref.ref)
+                            if source:
+                                #print "death source:", source, source.get_title()
+                                if source.get_title() == source_text:
+                                    person.set_death_ref(None)
+                                    person.remove_handle_references('Event',[death_ref.ref])
+                                    # remove note
+                                    note_list = death.get_referenced_note_handles()
+                                    birth.remove_handle_references('Note', 
+                                      [note_handle for (obj_type, note_handle) in note_list])
+                                    for (obj_type, note_handle) in note_list:
+                                        self.db.remove_note(note_handle, self.trans)
+                                    self.db.remove_event(death_ref.ref, self.trans)
+                                    self.db.commit_source(source, self.trans)
+                                    pupdate = 1
+                                    break
+                    if pupdate == 1:
+                        self.db.commit_person(person, self.trans)
+                if source:
+                    self.db.remove_source(source.handle, self.trans)
+                self.results_write(_("done!\n"))
+                self.db.enable_signals()
+                self.db.request_rebuild()
         if add_birth or add_death:
             self.results_write(_("Selecting... \n\n"))
             self.progress.set_pass(_('Selecting...'), 
@@ -417,74 +417,73 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         # Do not add birth or death event if one exists, no matter what
         if self.table.treeview.get_model() is None:
             return
-        self.trans = self.db.transaction_begin("",batch=True)
-        self.pre_run()
-        source_text = self.options.handler.options_dict['source_text']
-        select_col = self.table.model_index_of_column[_("Select")]
-        source = self.get_or_create_source(source_text)
-        self.db.disable_signals()
-        self.results_write(_("Selecting... "))
-        self.progress.set_pass((_("Adding events '%s'...") % source_text), 
-                               len(self.table.treeview.get_model()))
-        count = 0
-        for row in self.table.treeview.get_model():
-            self.progress.step()
-            select = row[select_col] # live select value
-            if not select:
-                continue
-            pupdate = False
-            index = row[0] # order put in
-            row_data = self.table.get_raw_data(index)
-            person = row_data[1] # check, person, action, date1, date2
-            date1 = row_data[3] # date
-            date2 = row_data[4] # date
-            evidence = row_data[5] # evidence
-            other = row_data[6] # other person
-            add_birth_event, add_death_event = self.action[person.handle]
-            birth_ref = person.get_birth_ref()
-            death_ref = person.get_death_ref()
-            if not birth_ref and add_birth_event:
-                other_name = self.sdb.name(other)
-                if other_name:
-                    explanation = _("Added birth event based on %(evidence)s, from %(name)s") % {
-                        'evidence' : evidence, 'name' : other_name }
-                else:
-                    explanation = _("Added birth event based on %s") % evidence
-                modifier = self.get_modifier("birth")
-                birth = self.create_event(_("Estimated birth date"), 
-                                          gen.lib.EventType.BIRTH, 
-                                          date1, source, explanation, modifier)
-                event_ref = gen.lib.EventRef()
-                event_ref.set_reference_handle(birth.get_handle())
-                person.set_birth_ref(event_ref)
-                pupdate = True
-                count += 1
-            if not death_ref and add_death_event:
-                other_name = self.sdb.name(other)
-                if other_name:
-                    explanation = _("Added death event based on %(evidence)s, from %(person)s") % {
-                    'evidence' : evidence, 'person' : other_name }
-                else:
-                    explanation = _("Added death event based on %s") % evidence
-                modifier = self.get_modifier("death")
-                death = self.create_event(_("Estimated death date"), 
-                                          gen.lib.EventType.DEATH, 
-                                          date2, source, explanation, modifier)
-                event_ref = gen.lib.EventRef()
-                event_ref.set_reference_handle(death.get_handle())
-                person.set_death_ref(event_ref)
-                pupdate = True
-                count += 1
-            if pupdate:
-                self.db.commit_person(person, self.trans)
-        self.results_write(_(" Done! Committing..."))
-        self.results_write("\n")
-        self.db.transaction_commit(self.trans, _("Add date estimates"))
-        self.db.enable_signals()
-        self.db.request_rebuild()
-        self.results_write(_("Added %d events.") % count)
-        self.results_write("\n\n")
-        self.progress.close()
+        with DbTxn("", self.db, batch=True) as self.trans:
+            self.pre_run()
+            source_text = self.options.handler.options_dict['source_text']
+            select_col = self.table.model_index_of_column[_("Select")]
+            source = self.get_or_create_source(source_text)
+            self.db.disable_signals()
+            self.results_write(_("Selecting... "))
+            self.progress.set_pass((_("Adding events '%s'...") % source_text), 
+                                   len(self.table.treeview.get_model()))
+            count = 0
+            for row in self.table.treeview.get_model():
+                self.progress.step()
+                select = row[select_col] # live select value
+                if not select:
+                    continue
+                pupdate = False
+                index = row[0] # order put in
+                row_data = self.table.get_raw_data(index)
+                person = row_data[1] # check, person, action, date1, date2
+                date1 = row_data[3] # date
+                date2 = row_data[4] # date
+                evidence = row_data[5] # evidence
+                other = row_data[6] # other person
+                add_birth_event, add_death_event = self.action[person.handle]
+                birth_ref = person.get_birth_ref()
+                death_ref = person.get_death_ref()
+                if not birth_ref and add_birth_event:
+                    other_name = self.sdb.name(other)
+                    if other_name:
+                        explanation = _("Added birth event based on %(evidence)s, from %(name)s") % {
+                            'evidence' : evidence, 'name' : other_name }
+                    else:
+                        explanation = _("Added birth event based on %s") % evidence
+                    modifier = self.get_modifier("birth")
+                    birth = self.create_event(_("Estimated birth date"), 
+                                              gen.lib.EventType.BIRTH, 
+                                              date1, source, explanation, modifier)
+                    event_ref = gen.lib.EventRef()
+                    event_ref.set_reference_handle(birth.get_handle())
+                    person.set_birth_ref(event_ref)
+                    pupdate = True
+                    count += 1
+                if not death_ref and add_death_event:
+                    other_name = self.sdb.name(other)
+                    if other_name:
+                        explanation = _("Added death event based on %(evidence)s, from %(person)s") % {
+                        'evidence' : evidence, 'person' : other_name }
+                    else:
+                        explanation = _("Added death event based on %s") % evidence
+                    modifier = self.get_modifier("death")
+                    death = self.create_event(_("Estimated death date"), 
+                                              gen.lib.EventType.DEATH, 
+                                              date2, source, explanation, modifier)
+                    event_ref = gen.lib.EventRef()
+                    event_ref.set_reference_handle(death.get_handle())
+                    person.set_death_ref(event_ref)
+                    pupdate = True
+                    count += 1
+                if pupdate:
+                    self.db.commit_person(person, self.trans)
+            self.results_write(_(" Done! Committing..."))
+            self.results_write("\n")
+            self.db.enable_signals()
+            self.db.request_rebuild()
+            self.results_write(_("Added %d events.") % count)
+            self.results_write("\n\n")
+            self.progress.close()
 
     def get_modifier(self, event_type):
         setting = self.options.handler.options_dict['dates']
