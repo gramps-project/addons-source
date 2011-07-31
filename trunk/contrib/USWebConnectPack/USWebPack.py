@@ -42,6 +42,7 @@ WEBSITES = [
     ["Person", "Pow-mia", "US POW/MIA", "http://userdb.rootsweb.ancestry.com/pow_mia/cgi-bin/pow_mia.cgi?surname=%(surname)s&fname=%(given)s"],
     ["Person", "Disnorge", "DIS-Norge", "http://www.disnorge.no/gravminner/global1.php?ordalle=%(given)s+%(surname)s"], # Norway
     ["Person", "Mocavo", _("Mocavo"), '''http://www.mocavo.com/search?q="%(surname)s,+%(given)s"'''],
+    ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
