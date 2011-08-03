@@ -514,7 +514,7 @@ class TimelinePedigreeView(NavigationView):
         self.cman.register("interface.show-marriage", False)
         self.cman.register("interface.use-timeline", True)
         self.cman.register("interface.show-lifespan", True)
-        self.cman.register("interface.scroll-direction", 0)
+        self.cman.register("interface.scroll-direction", True)
         self.cman.register("interface.ancestor-size", 4)
         self.cman.register("interface.descendant-size", 3)
         
