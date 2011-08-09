@@ -90,6 +90,7 @@ class Attributes(Gramplet):
         for event_ref in obj.get_event_ref_list():
             event = self.dbstate.db.get_event_from_handle(event_ref.ref)
             event_date = event.get_date_object()
+            self.add_attributes(event, event_date)
             self.add_attributes(event_ref, event_date)
 
         self.set_has_data(self.model.count > 0)
