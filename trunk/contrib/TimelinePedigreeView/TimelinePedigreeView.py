@@ -797,9 +797,12 @@ class TimelinePedigreeView(NavigationView):
         self.Tree_MoveBranchBoxes(layout_widget, LstDescendants, ActivePersonX, D_Top, 1, 0)
         
         # Draw time line at top
+        # FIXME see bug #5148
+        # hardcoded gregorian calendar
+        # cal = config.get('preferences.calendar-format-report')
         if self.use_timeline and self.Tree_EstimateBirth( LstDescendants[0]):
             self.gtklayout_lines.append([10, 3*TimeLineHeight/4, RequiredWidth-10, 3*TimeLineHeight/4, 1])
-            Pos50 = ActivePersonX + ( self.Tree_EstimateBirth( LstDescendants[0] ).get_year() - 1950 ) * 11
+            Pos50 = ActivePersonX + ( self.Tree_EstimateBirth( LstDescendants[0] ).to_calendar("gregorian").get_year() - 1950 ) * 11
             Ticks = [ [1950, Pos50] ]
             for k in range(1,10):
                 Ticks.append( [1950 + k*50, Pos50 - k * 11 * 50] )          # 50 year - tick
@@ -862,7 +865,7 @@ class TimelinePedigreeView(NavigationView):
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
                     if mDate is not None:
-                        timespan = self.Tree_EstimateBirth(BranchData[0]).get_year() - mDate.get_year()
+                        timespan = self.Tree_EstimateBirth(BranchData[0]).to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
                         xvline = xBoxConnection - Direction * 11 * timespan
                     
         # Move all relatives in this branch
@@ -1034,7 +1037,7 @@ class TimelinePedigreeView(NavigationView):
         birthyear = None
         birthdate = self.Tree_EstimateBirth(person)
         if birthdate:
-            birthyear = birthdate.get_year()
+            birthyear = birthdate.to_calendar("gregorian").get_year()
             
         # Calculate lifespan
         lifespan = 0
@@ -1042,7 +1045,7 @@ class TimelinePedigreeView(NavigationView):
             death = get_death_or_fallback(self.dbstate.db, person)
             if death:
                 deathdate = death.get_date_object()
-                lifespan = deathdate.get_year() - birthdate.get_year()
+                lifespan = deathdate.to_calendar("gregorian").get_year() - birthdate.to_calendar("gregorian").get_year()
         
         negWidth = 11 * lifespan
         
