@@ -2550,7 +2550,7 @@ class DenominoVisoOptions(MenuReportOptions):
         title.set_help(_("Any string you wish."))
         menu.add_option(category_name, "DNMtitle", title)
 
-        self.__chart_mode = EnumeratedListOption("Display mode",_cnsts.ANCESTOR)
+        self.__chart_mode = EnumeratedListOption(_("Display mode"),_cnsts.ANCESTOR)
         self.__chart_mode.set_help(_("Either plot ancestor or descendants graph."))
         for mode in _cnsts.chart_mode:
             self.__chart_mode.add_item(mode[0],mode[1])
