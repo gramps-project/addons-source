@@ -40,6 +40,7 @@ from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
+from gen.db import DbTxn
 import Errors
 import gen.plug.report.utils as ReportUtils
 from gen.display.name import displayer as name_displayer
@@ -140,7 +141,6 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         # 0 - new, 1 - lookup
         if source_type == 0:
             source_text = self.options.handler.options_dict['source_text']
-            self.trans = self.db.transaction_begin("",batch=True)
             source = self.create_source(source_text)
         else:
             source_id = self.options.handler.options_dict['source_id']
@@ -148,43 +148,42 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             if source is None:
                 # FIXME: show an error message
                 return
-            self.trans = self.db.transaction_begin("",batch=True)
 
-        self.add_results_frame(_("Results"))
-        self.results_write(_("Processing...\n"))
-        self.db.disable_signals()
-
-        self.filter_option =  self.options.menu.get_option_by_name('filter')
-        self.filter = self.filter_option.get_filter() # the actual filter
-
-        # FIXME: use old style for gramps31 compatible
-        #    people = self.filter.apply(self.db,
-        #                               self.db.iter_person_handles())
-        people = self.filter.apply(self.db,
-                                   self.db.get_person_handles(sort_handles=False))
-
-        # FIXME: use old style for gramps31 compatible
-        # num_people = self.db.get_number_of_people()
-        num_people = len(people)
-        self.results_write(_("Attaching sources...\n"))
-        self.progress.set_pass(_('Attaching sources...'), 
-                               num_people)
-        count = 1
-        for person_handle in people:
-            self.progress.step()
-            person = self.db.get_person_from_handle(person_handle)
-            sref = gen.lib.SourceRef()
-            sref.set_reference_handle(source.get_handle())
-            person.add_source_reference(sref)
-            self.db.commit_person(person, self.trans)
-            self.results_write("  %d) " % count)
-            self.results_write_link(name_displayer.display(person),
-                                    person, person_handle)
-            self.results_write("\n")
-            count += 1
-
-        self.db.commit_source(source, self.trans)
-        self.db.transaction_commit(self.trans, _("Attach Source"))
+        with DbTxn(_("Attach Source"), self.db, batch=True) as self.trans:
+            self.add_results_frame(_("Results"))
+            self.results_write(_("Processing...\n"))
+            self.db.disable_signals()
+    
+            self.filter_option =  self.options.menu.get_option_by_name('filter')
+            self.filter = self.filter_option.get_filter() # the actual filter
+    
+            # FIXME: use old style for gramps31 compatible
+            #    people = self.filter.apply(self.db,
+            #                               self.db.iter_person_handles())
+            people = self.filter.apply(self.db,
+                                 self.db.get_person_handles(sort_handles=False))
+    
+            # FIXME: use old style for gramps31 compatible
+            # num_people = self.db.get_number_of_people()
+            num_people = len(people)
+            self.results_write(_("Attaching sources...\n"))
+            self.progress.set_pass(_('Attaching sources...'), 
+                                   num_people)
+            count = 1
+            for person_handle in people:
+                self.progress.step()
+                person = self.db.get_person_from_handle(person_handle)
+                sref = gen.lib.SourceRef()
+                sref.set_reference_handle(source.get_handle())
+                person.add_source_reference(sref)
+                self.db.commit_person(person, self.trans)
+                self.results_write("  %d) " % count)
+                self.results_write_link(name_displayer.display(person),
+                                        person, person_handle)
+                self.results_write("\n")
+                count += 1
+    
+            self.db.commit_source(source, self.trans)
         self.db.enable_signals()
         self.db.request_rebuild()
         self.results_write(_("Done!\n"))
