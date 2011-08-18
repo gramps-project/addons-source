@@ -141,7 +141,6 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         # 0 - new, 1 - lookup
         if source_type == 0:
             source_text = self.options.handler.options_dict['source_text']
-            source = self.create_source(source_text)
         else:
             source_id = self.options.handler.options_dict['source_id']
             source = self.db.get_source_from_gramps_id(source_id)
@@ -153,6 +152,8 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             self.add_results_frame(_("Results"))
             self.results_write(_("Processing...\n"))
             self.db.disable_signals()
+            if source_type == 0:
+                source = self.create_source(source_text)
     
             self.filter_option =  self.options.menu.get_option_by_name('filter')
             self.filter = self.filter_option.get_filter() # the actual filter
