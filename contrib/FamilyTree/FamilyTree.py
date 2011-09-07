@@ -943,7 +943,7 @@ class FamilyTree(gen.plug.report.Report):
 # FamilyTreeOptions
 #
 #------------------------------------------------------------------------
-class FamilyTreeOptions(gui.plug.report.MenuReportOptions):
+class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
 
     CALLNAME_DONTUSE = 0
     CALLNAME_REPLACE = 1
@@ -965,7 +965,7 @@ class FamilyTreeOptions(gui.plug.report.MenuReportOptions):
 
 
     def __init__(self, name, dbase):
-        gui.plug.report.MenuReportOptions.__init__(self, name, dbase)
+        gen.plug.report.MenuReportOptions.__init__(self, name, dbase)
 
 
     def add_menu_options(self, menu):
