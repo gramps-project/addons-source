@@ -508,7 +508,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         cif = unicode(self.options.handler.options_dict['cityfilter']).strip()
         paf = unicode(self.options.handler.options_dict['parishfilter']).strip()
         if (cof or stf or cuf or cif or paf):
-            rule = HasPlace(['','','',paf,'',cif,cuf,stf,cof])
+            # Name, Street, Locality, City, County, State, Country, ZIP/Postal Code, Church Parish
+            rule = HasPlace(['','','',cif,cuf,stf,cof,'',paf])
             generic_filter.add_rule(rule)  
         rclat = unicode(self.options.handler.options_dict['centerlat']).strip()
         rclon = unicode(self.options.handler.options_dict['centerlon']).strip()
