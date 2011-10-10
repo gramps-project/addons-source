@@ -1,0 +1,61 @@
+/*
+------------------------------------------------------------------------
+GRAMPS Cascading Style Sheet for lxml gramplet
+------------------------------------------------------------------------
+License
+------------------------------------------------------------------------
+Copyright 2008 Jason M. Simanek
+Copyright 2009 Stephane Charette
+Copyright 2008-2011 Rob G. Healey <robhealey1@gmail.com>
+Copyright 2011 Michiel D. Nauta
+
+This file is part of the GRAMPS program.
+
+GRAMPS is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, version 2 of the License.
+
+GRAMPS is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+GRAMPS. If not, see <http://www.gnu.org/licenses/>.
+------------------------------------------------------------------------
+
+General Text
+----------------------------------------------------------------------*/
+h1 {
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 1em;
+    }
+
+h2 {
+    font-weight: normal;
+    font-style: oblique;
+    margin-left: 2em;
+    }
+    
+/* Form
+-----------------------------------------------------------------*/
+    
+form {
+      text-align: left;
+      margin-left: 4em;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      background-color: #7D5925;
+      }
+      
+select {
+        margin-left: 4em;
+        }
+      
+/* Block
+-----------------------------------------------------------------*/
+
+div {
+     color: #afafaf;
+     padding: 0px 1.5em;
+     }
