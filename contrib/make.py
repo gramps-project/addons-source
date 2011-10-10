@@ -328,7 +328,11 @@ elif command == "listing":
                               "g": p["gramps_target_version"], 
                               "z": "%s.addon.tgz" % gpr.split("/",1)[0], 
                               }
-                    print(plugin, file=fp)
+                    if (("include_in_listing" in p and p["include_in_listing"]) or 
+                        ("include_in_listing" not in p)):
+                        print(plugin, file=fp)
+                    else:
+                        print("include_in_listing is False for '%s' in Language %s..." % (p["name"], lang))
         fp.close()
 else:
     raise AttributeError("unknown command")
