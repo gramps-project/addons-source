@@ -32,7 +32,7 @@ Display Sources related to repositories
 
 from gen.plug.report import Report
 from gen.plug.report import CATEGORY_TEXT
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 
 from TransUtils import get_addon_translator
