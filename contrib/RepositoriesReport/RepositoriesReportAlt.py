@@ -45,7 +45,7 @@ import const
 from gen.plug.menu import BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 from libtranslate import get_language_string
 from TransUtils import get_addon_translator
 import gen.proxy
