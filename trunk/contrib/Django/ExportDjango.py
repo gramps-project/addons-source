@@ -81,7 +81,7 @@ def export_all(database, filename, error_dialog,
              database.get_number_of_repositories() +
              database.get_number_of_places() +
              database.get_number_of_media_objects() +
-             database.get_number_of_sources()) * 2 # steps
+             database.get_number_of_sources()) * 2 # 2 steps
     count = 0.0
     dji = DjangoInterface()
     dji.clear_tables("primary", "secondary", "ref")
@@ -183,6 +183,8 @@ def export_all(database, filename, error_dialog,
                 dji.add_media_detail(data)
             count += 1
             callback(100 * count/total)
+
+    dji.rebuild_caches(callback)
 
     total_time = time.time() - start
     msg = ngettext('Export Complete: %d second','Export Complete: %d seconds', total_time ) % total_time

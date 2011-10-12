@@ -13,8 +13,8 @@
 {'d': 'Produces a graphical family tree.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.4.7', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
-{'d': 'Django is a web framework working on a configured database', 'g': '3.4', 'i': 'import_django', 'n': 'Uvoz Django', 't': u'Importer', 'v': '1.0.8', 'z': 'Django.addon.tgz'}
-{'d': 'Django is a web framework working on a configured database', 'g': '3.4', 'i': 'export_django', 'n': 'Django Izvoz', 't': u'Exporter', 'v': '1.0.8', 'z': 'Django.addon.tgz'}
+{'d': 'Django is a web framework working on a configured database', 'g': '3.4', 'i': 'import_django', 'n': 'Uvoz Django', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
+{'d': 'Django is a web framework working on a configured database', 'g': '3.4', 'i': 'export_django', 'n': 'Django Izvoz', 't': u'Exporter', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.6', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
