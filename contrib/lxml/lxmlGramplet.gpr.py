@@ -11,7 +11,7 @@ register(GRAMPLET,
          status = STABLE,
          version = '0.1.18',
          gramps_target_version = "3.4",
-         include_in_listing = False
+         include_in_listing = False,
          height = 65,
          gramplet = "lxmlGramplet",
          fname ="lxmlGramplet.py",
