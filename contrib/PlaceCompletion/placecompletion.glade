@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
@@ -7,19 +7,15 @@
     <property name="default_width">450</property>
     <property name="default_height">400</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">False</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkVBox" id="vbox1">
             <property name="visible">True</property>
-            <property name="orientation">vertical</property>
             <child>
               <object class="GtkVBox" id="checks-vbox">
                 <property name="visible">True</property>
-                <property name="orientation">vertical</property>
                 <property name="spacing">5</property>
                 <child>
                   <object class="GtkHBox" id="hbox9">
@@ -85,7 +81,7 @@
                       <object class="GtkEntry" id="cityfilter">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -99,7 +95,7 @@
                       <object class="GtkEntry" id="parishfilter">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -129,7 +125,7 @@
                       <object class="GtkEntry" id="countyfilter">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -167,7 +163,7 @@
                       <object class="GtkEntry" id="countryfilter">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -179,7 +175,7 @@
                       <object class="GtkEntry" id="statefilter">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -263,7 +259,7 @@
                       <object class="GtkEntry" id="rectlat">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                         <property name="width_chars">9</property>
                       </object>
                       <packing>
@@ -278,7 +274,7 @@
                       <object class="GtkEntry" id="rectlon">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                         <property name="width_chars">9</property>
                       </object>
                       <packing>
@@ -337,7 +333,7 @@
                       <object class="GtkEntry" id="rectwidth">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                         <property name="width_chars">6</property>
                       </object>
                       <packing>
@@ -352,7 +348,7 @@
                       <object class="GtkEntry" id="rectheight">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                         <property name="width_chars">6</property>
                       </object>
                       <packing>
@@ -672,7 +668,7 @@
                       <object class="GtkEntry" id="countryset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -684,7 +680,7 @@
                       <object class="GtkEntry" id="stateset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -696,7 +692,7 @@
                       <object class="GtkEntry" id="countyset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
@@ -708,7 +704,7 @@
                       <object class="GtkEntry" id="cityset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -722,7 +718,7 @@
                       <object class="GtkEntry" id="parishset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">3</property>
@@ -736,7 +732,7 @@
                       <object class="GtkEntry" id="zipset">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="invisible_char">●</property>
                       </object>
                       <packing>
                         <property name="left_attach">5</property>
