@@ -59,14 +59,14 @@ _ = translator.gettext
 ngettext = translator.ngettext
 
 from django.conf import settings
-import web.settings as default_settings
+import webapp.settings as default_settings
 try:
     settings.configure(default_settings)
 except RuntimeError:
     # already configured; ignore
     pass
 
-from web.libdjango import DjangoInterface
+from webapp.libdjango import DjangoInterface
 
 def export_all(database, filename, error_dialog, 
                option_box=None, callback=None):

@@ -13,8 +13,8 @@
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.7', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
-{'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'import_django', 'n': 'Import Django', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
-{'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'export_django', 'n': 'Export Django', 't': u'Exporter', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
+{'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'import_django', 'n': 'Import Django', 't': u'Importer', 'v': '1.0.10', 'z': 'Django.addon.tgz'}
+{'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'export_django', 'n': 'Export Django', 't': u'Exporter', 'v': '1.0.10', 'z': 'Django.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': "Affiche toutes les lignes de descendants d'un anc\xc3\xaatre donn\xc3\xa9 \xc3\xa0 un descendant choisi dans un format textuel.", 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lign\xc3\xa9es de descendants', 't': u'Report', 'v': '1.1.6', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.8', 'z': 'Census.addon.tgz'}
