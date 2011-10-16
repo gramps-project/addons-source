@@ -58,13 +58,13 @@ _ = translator.gettext
 ngettext = translator.ngettext
 
 from django.conf import settings
-import web.settings as default_settings
+import webapp.settings as default_settings
 try:
     settings.configure(default_settings)
 except:
     pass
 
-from web.libdjango import DjangoInterface
+from webapp.libdjango import DjangoInterface
 
 #-------------------------------------------------------------------------
 #
