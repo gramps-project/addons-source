@@ -276,9 +276,10 @@ class DenominoVisoReport(Report):
         # MouseHandlerOption
         # LineStyleOption
         # ConfidenceColorOption
-        (self.options['DNMold_browser_output'], self.options['DNMfilename4old_browser']) = \
-            self.options['DNMold_browser_output_m'].split(', ',1)
-        self.options['DNMold_browser_output'] = self.options['DNMold_browser_output'] == 'True'
+        # old_browser_output is deprecated because IE9 can display svg.
+        #(self.options['DNMold_browser_output'], self.options['DNMfilename4old_browser']) = \
+        #    self.options['DNMold_browser_output_m'].split(', ',1)
+        #self.options['DNMold_browser_output'] = self.options['DNMold_browser_output'] == 'True'
 	
         self.options['DNMdash_child_rel'] = list_of_strings2list_of_lists(\
                 self.options['DNMdash_child_rel'])
@@ -358,8 +359,9 @@ class DenominoVisoReport(Report):
         return rv
 
     def write_report(self):
-        if self.options['DNMold_browser_output']:
-            self.write_old_browser_output()
+        # old_browser_output is depricated because IE9 can display svg.
+        #if self.options['DNMold_browser_output']:
+        #    self.write_old_browser_output()
         try:
             f = open(self.target_path,'w')
         except IOError,msg:
@@ -2295,8 +2297,8 @@ function %(bd)s2html(person,containerDL) {
             return eureka;
         }
         function start_halo(evt) {
-            const ring_width_px = 3
-            const r_min_px = 10
+            var ring_width_px = 3
+            var r_min_px = 10
 		    if (evt.detail != 2) { return; }
             var persons = document.getElementsByTagName('%(shp)s')
             for (var i=0; i<persons.length; i++) {
@@ -2708,9 +2710,10 @@ class DenominoVisoOptions(MenuReportOptions):
 
         category_name = _("Advanced Options")
 
-        html_wrapper = HtmlWrapperOption(_("Old browser friendly output"),"False, ")
-        html_wrapper.set_help(_("Whether to create an ordinary html-file that includes the xhtml-file so that deprecated browsers can be presented with content they can swallow."))
-        menu.add_option(category_name, "DNMold_browser_output_m", html_wrapper)
+        # old_browser_output depricated because IE9 can display svg.
+        #html_wrapper = HtmlWrapperOption(_("Old browser friendly output"),"False, ")
+        #html_wrapper.set_help(_("Whether to create an ordinary html-file that includes the xhtml-file so that deprecated browsers can be presented with content they can swallow."))
+        #menu.add_option(category_name, "DNMold_browser_output_m", html_wrapper)
 
         mouse_handler = MouseHandlerOption(_("Mouse event handler"), \
             _cnsts.ONCLICK)
