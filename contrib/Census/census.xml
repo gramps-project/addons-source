@@ -1100,6 +1100,192 @@
             <size>15</size>
         </column>
     </census>
+    <census id='FR1911' title='1911 French Census' date='1911'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1921' title='1921 French Census' date='1921'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1926' title='1926 French Census' date='1926'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1931' title='1931 French Census' date='1931'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
+    <census id='FR1936' title='1936 French Census' date='1936'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Year of birth</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>20</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Address</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>8</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Comments</_attribute>
+            <size>15</size>
+        </column>
+    </census>
     <census id='FR' title='Custom French Census' date=''>
         <column>
             <_attribute>Name</_attribute>
