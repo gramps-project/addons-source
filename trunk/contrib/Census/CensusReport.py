@@ -28,14 +28,12 @@
 #------------------------------------------------------------------------
 import DateHandler
 from gen.display.name import displayer as name_displayer
-from Errors import ReportError
 from gen.lib import EventType
 from gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                              TableCellStyle, FONT_SANS_SERIF, INDEX_TYPE_TOC,
                              PARA_ALIGN_CENTER)
-from gen.plug.report import Report
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import Report, MenuReportOptions
 from Census import ORDER_ATTR
 from Census import (get_census_ids, get_census_id, get_census_columns,
                     get_report_columns, get_census_source_ref,
@@ -68,15 +66,15 @@ class CensusReport(Report):
     """
     Census Report class
     """
-    def __init__(self, database, options_class):
+    def __init__(self, database, options_class, user):
         """
         Create the Census report.
         
         The arguments are:
 
         database        - the GRAMPS database instance
-        person          - currently selected person
         options_class   - instance of the Options class for this report
+        user            - a gen.user.User() instance
 
         The following parameters are defined in the options class:
         
@@ -85,7 +83,7 @@ class CensusReport(Report):
 
         """
 
-        Report.__init__(self, database, options_class)
+        Report.__init__(self, database, options_class, user)
 
         menu = options_class.menu
         self.pgbrk = menu.get_option_by_name('pg_break').get_value()
@@ -95,7 +93,8 @@ class CensusReport(Report):
         pid = menu.get_option_by_name('pid').get_value()
         self.person = database.get_person_from_gramps_id(pid)
         if (self.person == None) :
-            raise ReportError(_("Person %s is not in the Database") % pid )
+            user.notify_error(_("Census Report"),
+                              _("Person %s is not in the Database") % pid)
 
         self.src_handle = menu.get_option_by_name('src_handle').get_value()
 

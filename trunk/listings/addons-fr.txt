@@ -9,7 +9,7 @@
 {'d': 'Affiche le total des descendants pour chaque individu', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Calcul des descendants', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet pour afficher les individus et le nombre de leurs descendants', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet Calcul de descendants', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet affichant les parent\xc3\xa9s dans une relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet Parent\xc3\xa9s', 't': u'Gramplet', 'v': '1.0.6', 'z': 'RelatedRelativesGramplet.addon.tgz'}
-{'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.3', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.1', 'z': 'DEWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.1', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Fournit une biblioth\xc3\xa8que pour un acc\xc3\xa8s g\xc3\xa9n\xc3\xa9rique \xc3\xa0 la base de donn\xc3\xa9es et gen.lib.', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'libaccess.addon.tgz'}
 {'d': 'Collection de sites internet pour le Royaume-uni (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'Ensemble de liens internet anglo-saxons', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'UKWebConnectPack.addon.tgz'}
@@ -28,8 +28,8 @@
 {'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'import_django', 'n': 'Import Django', 't': u'Importer', 'v': '1.0.10', 'z': 'Django.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.3', 'z': 'CliMerge.addon.tgz'}
 {'d': "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xc3\xa9lectionn\xc3\xa9", 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Arbre au fil du temps', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
-{'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.9', 'z': 'Census.addon.tgz'}
-{'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.4', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.9', 'z': 'Census.addon.tgz'}
+{'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.10', 'z': 'Census.addon.tgz'}
+{'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.4', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.10', 'z': 'Census.addon.tgz'}
 {'d': "Affiche toutes les lignes de descendants d'un anc\xc3\xaatre donn\xc3\xa9 \xc3\xa0 un descendant choisi dans un format textuel.", 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lign\xc3\xa9es de descendants', 't': u'Report', 'v': '1.1.6', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.8', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Biblioth\xc3\xa8que pour les collections de liens internet', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'libwebconnect.addon.tgz'}
