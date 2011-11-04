@@ -29,6 +29,7 @@ import codecs
 import sys
 import os
 import gtk
+#import subprocess
 
 #------------------------------------------------------------------------
 #
@@ -54,6 +55,7 @@ try:
     import gzip
     GZIP_OK = True
 except:
+    GZIP_OK = False
     ErrorDialog('Where is gzip?', _('"gzip" is missing'))
     
 #-------------------------------------------------------------------------
@@ -66,6 +68,7 @@ try:
     from lxml import etree
     LXML_OK = True
 except:
+    LXML_OK = False
     ErrorDialog('Missing python lxml', _('Please, try to install "python lxml" package.'))
     
 #-------------------------------------------------------------------------
@@ -169,50 +172,74 @@ class lxmlGramplet(Gramplet):
         Read the .gramps
         """
         
-        #if GZIP_OK:
-            #use_gzip = 1
-            #try:
-                #test = gzip.open(entry, "r")
-                #test.read(1)
-                #test.close()
-            #except IOError, msg:
-                #use_gzip = 0
-            #except ValueError, msg:
-                #use_gzip = 1
-        #else:
-            #use_gzip = 0
+        if GZIP_OK:
+            use_gzip = 1
+            try:
+                test = gzip.open(entry, "r")
+                test.read(1)
+                test.close()
+            except IOError, msg:
+                use_gzip = 0
+            except ValueError, msg:
+                use_gzip = 1
+        else:
+            use_gzip = 0
          
-        # lazy ... only compressed .gramps !
+        # lazy ...
         if os.name != 'posix':
             ErrorDialog('For posix only ...', _('Sorry, no support for your OS yet!'))
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
-        if LXML_OK and os.name == 'posix':
+        
+        if LXML_OK and use_gzip == 1:
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
-                sys.stdout.write(_('From:\n "%s"\n to:\n "%s".') % (entry, filename))
             except:
                 ErrorDialog('Is it a compressed .gramps ?', _('Cannot uncompress "%s"') % entry)
+                return
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
+        elif LXML_OK and use_gzip == 0:
+            try:
+                os.system('cp %s %s' % (entry, filename))
+            except:
+                ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
+                return
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
         else:
             return
         
         # DTD syntax
-           
-        self.check_valid(entry)
+               
+        try:
+            self.check_valid(filename)
+        except:
+            ErrorDialog('DTD validation (xmllint)', _('Cannot validate "%s" !') % entry)
                        
         # RNG validation
+        
+        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
+        
+        try:
+            os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
+        except:
+            print(_('xmllint: skip RelaxNG validation for "%s"') % entry)
                 
         try:
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
-            if self.RNGValidation(tree) == True:
-                self.ParseXML(tree, filename)
+            doctype = tree.docinfo.doctype
+            if self.RNGValidation(tree, rng) == True:
+                try:
+                    self.ParseXML(tree, filename)
+                except:
+                    ErrorDialog('RelaxNG validation', _('Cannot validate "%s" via RelaxNG schema') % filename)
+                    return
             else:
-                ErrorDialog('RelaxNG validation', _('Cannot validate "%s" via RelaxNG schema') % filename)
+                ErrorDialog('Parsing issue', _('Cannot parse content of "%s"') % entry)
                 return
         except:
-            ErrorDialog('Parsing issue', _('Cannot validate or parse "%s"') % filename)
+            ErrorDialog('File issue', _('Cannot parse "%s" via etree') % entry)
             return
             
         
@@ -244,6 +271,7 @@ class lxmlGramplet(Gramplet):
         msg = []
         #tags = []
         places = []
+        sources = []
         surnames = []
         for one in root.getchildren():
             #(tag, item) = one.tag, one.items()
@@ -259,6 +287,8 @@ class lxmlGramplet(Gramplet):
                     # with namespace ...
                     if three.tag == '{http://gramps-project.org/xml/1.4.0/}ptitle':
                         places.append(three.text)
+                    if three.tag == '{http://gramps-project.org/xml/1.4.0/}stitle':
+                        sources.append(three.text)
                         
                     # search last name
                     for four in three.getchildren():
@@ -281,8 +311,7 @@ class lxmlGramplet(Gramplet):
         
         log = msg[0]
         if not log:
-            ErrorDialog('Missing header', _('Not a valid .gramps or an\n' 
-                                    'uncompressed .gramps file.\n'
+            ErrorDialog('Missing header', _('Not a valid .gramps.\n'
                                     'Cannot run the gramplet...\n'
                                     'Please, try to use a .gramps\n'
                                     'generated by Gramps 3.3.x.'))
@@ -306,18 +335,24 @@ class lxmlGramplet(Gramplet):
         else:
             nb_notes = _('No note')
             
+        if count_elements(root, name = 'stitle') > 1.0:
+            nb_sources = count_elements(root, name = 'stitle') - float(1.0)
+        else:
+            nb_sources = _('No source')
+            
         # Some print statements !
         
         print(_('log'), log)
         print(_('Surnames'), nb_surnames)
         print(_('Place titles'), nb_ptitles)
         print(_('Note objects'), nb_notes)
+        print(_('Sources titles'), nb_sources)
                 
-        self.WriteXML(log, surnames, places)
-        self.WriteBackXML(filename, root, surnames, places)
+        self.WriteXML(log, surnames, places, sources)
+        self.WriteBackXML(filename, root, surnames, places, sources)
         
         
-    def check_valid(self, entry):
+    def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
         Code for 1.4.0 and later (previous versions 'surname' was 'last')
@@ -328,31 +363,29 @@ class lxmlGramplet(Gramplet):
         
         dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            os.system('xmllint --dtdvalid file://%s --noout %s' % (dtd, entry))
+            os.system('xmllint --dtdvalid file://%s --noout --dropdtd %s' % (dtd, filename))
         except:
             print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
     
     
-    def RNGValidation(self, tree):
+    def RNGValidation(self, tree, rng):
         """
         RNG Validation with ElementTree
         """    
         
         # validity check against scheme for file format
-        
-        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
-        
-        valid = etree.ElementTree(file=rng)
+                
+        valid = etree.ElementTree(file=rng)          
         schema = etree.RelaxNG(valid)
                 
         if schema.error_log.last_error:
             sys.stdout.write(schema.error_log)
-        
+                
         return(schema.validate(tree))
                 
                     
-    def WriteXML(self, log, surnames, places):
+    def WriteXML(self, log, surnames, places, sources):
         """
         Write the result of the query for distributed, shared protocols
         """
@@ -364,6 +397,7 @@ class lxmlGramplet(Gramplet):
         self.footer = _('Content generated by Gramps')
         self.surnames_title = _('Surnames')
         self.places_title = _('Places')
+        self.sources_title = _('List of sources')
         time = date.Today()
                 
         xml = etree.Element("query")
@@ -438,7 +472,15 @@ class lxmlGramplet(Gramplet):
         places.sort()
         for place in places:
             p1 = etree.SubElement(p, "place")
-            p1.text = unicode(place)     
+            p1.text = unicode(place)
+            
+        src = etree.SubElement(xml, "sources")
+        src.set("title", self.sources_title)    
+        
+        sources.sort()
+        for source in sources:
+            src1 = etree.SubElement(src, "source")
+            src1.text = unicode(source) 
         
         content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
         
@@ -466,7 +508,7 @@ class lxmlGramplet(Gramplet):
         self.post(html)
         
         
-    def WriteBackXML(self, filename, root, surnames, places):
+    def WriteBackXML(self, filename, root, surnames, places, sources):
         """
         Write the result of the query back into the XML file (Gramps scheme)
         """
@@ -487,6 +529,8 @@ class lxmlGramplet(Gramplet):
             name = etree.SubElement(person, "name")
             surname = etree.SubElement(name, "surname")
             surname.text = unicode(s)
+            
+        surnames = []
         
         ## places/placeobj/ptitle
         
@@ -495,6 +539,18 @@ class lxmlGramplet(Gramplet):
             place = etree.SubElement(pl, "placeobj")
             ptitle = etree.SubElement(place, "ptitle")
             ptitle.text = unicode(p)
+            
+        places = []
+            
+        ## sources/source/stitle
+        
+        src = etree.SubElement(root, "sources")
+        for s in sources:
+            source = etree.SubElement(src, "source")
+            stitle = etree.SubElement(source, "stitle")
+            stitle.text = unicode(s)
+            
+        sources = []
 
         # write and close the etree
         

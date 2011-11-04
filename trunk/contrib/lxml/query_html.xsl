@@ -108,6 +108,11 @@ GNU General Public License 2, or (at your option) any later version.
            </input>
            </div>
         </form>
+        <h2><xsl:value-of select="query/sources/@title"/><xsl:text> : </xsl:text></h2>
+           <xsl:for-each select="query/sources/source">
+              <p><xsl:number value="position()" format="1"/><xsl:text> : </xsl:text>
+              <xsl:value-of select="."/></p>
+           </xsl:for-each>
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
         <div align="right">(<i><xsl:value-of select="query/log/@date"/></i>)</div>
         <div align="left"><b><xsl:value-of select="query/@date"/></b></div>
