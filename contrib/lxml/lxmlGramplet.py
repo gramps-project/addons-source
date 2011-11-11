@@ -56,7 +56,7 @@ try:
     GZIP_OK = True
 except:
     GZIP_OK = False
-    ErrorDialog('Where is gzip?', _('"gzip" is missing'))
+    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
     
 #-------------------------------------------------------------------------
 #
@@ -69,7 +69,29 @@ try:
     LXML_OK = True
 except:
     LXML_OK = False
-    ErrorDialog('Missing python lxml', _('Please, try to install "python lxml" package.'))
+    ErrorDialog(_('Missing python lxml'), _('Please, try to install "python lxml" package.'))
+    
+#-------------------------------------------------------------------------
+#
+# Timestamp convertor
+#
+#-------------------------------------------------------------------------
+def epoch(t):
+        """
+        Try to convert timestamp
+        """
+        
+        try:
+            from datetime import datetime
+            from time import strftime
+        except:
+            return
+        
+        date = int(t)
+        conv = datetime.fromtimestamp(date)
+        fmt = conv.strftime('%d %B %Y')
+        
+        return(fmt)
     
 #-------------------------------------------------------------------------
 #
@@ -187,7 +209,7 @@ class lxmlGramplet(Gramplet):
          
         # lazy ...
         if os.name != 'posix':
-            ErrorDialog('For posix only ...', _('Sorry, no support for your OS yet!'))
+            ErrorDialog(_('For posix only ...'), _('Sorry, no support for your OS yet!'))
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
@@ -196,16 +218,16 @@ class lxmlGramplet(Gramplet):
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
-                ErrorDialog('Is it a compressed .gramps ?', _('Cannot uncompress "%s"') % entry)
+                ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
                 return
-            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s".\n') % (entry, filename))
         elif LXML_OK and use_gzip == 0:
             try:
                 os.system('cp %s %s' % (entry, filename))
             except:
                 ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
-            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s".\n') % (entry, filename))
         else:
             return
         
@@ -214,7 +236,7 @@ class lxmlGramplet(Gramplet):
         try:
             self.check_valid(filename)
         except:
-            ErrorDialog('DTD validation (xmllint)', _('Cannot validate "%s" !') % entry)
+            ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%s" !') % entry)
                        
         # RNG validation
         
@@ -233,13 +255,13 @@ class lxmlGramplet(Gramplet):
                 try:
                     self.ParseXML(tree, filename)
                 except:
-                    ErrorDialog('RelaxNG validation', _('Cannot validate "%s" via RelaxNG schema') % filename)
+                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%s"') % filename)
                     return
             else:
-                ErrorDialog('Parsing issue', _('Cannot parse content of "%s"') % entry)
+                ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%s" via RelaxNG schema') % entry)
                 return
         except:
-            ErrorDialog('File issue', _('Cannot parse "%s" via etree') % entry)
+            ErrorDialog(_('File issue'), _('Cannot parse "%s" via etree') % entry)
             return
             
         
@@ -273,6 +295,7 @@ class lxmlGramplet(Gramplet):
         places = []
         sources = []
         surnames = []
+        timestamp = []
         for one in root.getchildren():
             #(tag, item) = one.tag, one.items()
             #print(tag, item)
@@ -281,8 +304,11 @@ class lxmlGramplet(Gramplet):
                 #tags.append(two.tag)  
                 msg.append(two.items())
                 
-                # search ptitle
+                # search ptitle and time log
                 for three in two.getchildren():
+                    
+                    # timestamp
+                    timestamp.append(two.get('change'))
                     
                     # with namespace ...
                     if three.tag == '{http://gramps-project.org/xml/1.4.0/}ptitle':
@@ -311,7 +337,7 @@ class lxmlGramplet(Gramplet):
         
         log = msg[0]
         if not log:
-            ErrorDialog('Missing header', _('Not a valid .gramps.\n'
+            ErrorDialog(_('Missing header'), _('Not a valid .gramps.\n'
                                     'Cannot run the gramplet...\n'
                                     'Please, try to use a .gramps\n'
                                     'generated by Gramps 3.3.x.'))
@@ -340,15 +366,25 @@ class lxmlGramplet(Gramplet):
         else:
             nb_sources = _('No source')
             
+        # time logs
+        
+        timestamp.sort()
+        start = timestamp[0]
+        end = timestamp[-1]
+        timestamp = []
+        first = epoch(start)
+        last = epoch(end)
+            
         # Some print statements !
         
         print(_('log'), log)
+        print(_('From %s to %s') % (first, last))
         print(_('Surnames'), nb_surnames)
         print(_('Place titles'), nb_ptitles)
         print(_('Note objects'), nb_notes)
         print(_('Sources titles'), nb_sources)
                 
-        self.WriteXML(log, surnames, places, sources)
+        self.WriteXML(log, first, last, surnames, places, sources)
         self.WriteBackXML(filename, root, surnames, places, sources)
         
         
@@ -383,9 +419,9 @@ class lxmlGramplet(Gramplet):
             sys.stdout.write(schema.error_log)
                 
         return(schema.validate(tree))
-                
+        
                     
-    def WriteXML(self, log, surnames, places, sources):
+    def WriteXML(self, log, first, last, surnames, places, sources):
         """
         Write the result of the query for distributed, shared protocols
         """
@@ -405,6 +441,8 @@ class lxmlGramplet(Gramplet):
         xml.set("title", self.title)
         xml.set("footer", self.footer)
         xml.set("date", DateHandler.displayer.display(time))
+        xml.set("first", unicode(first))
+        xml.set("last", unicode(last))
 
         # only for info
         doc = etree.ElementTree(xml)
