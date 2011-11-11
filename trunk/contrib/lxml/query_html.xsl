@@ -115,6 +115,7 @@ GNU General Public License 2, or (at your option) any later version.
            </xsl:for-each>
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
         <div align="right">(<i><xsl:value-of select="query/log/@date"/></i>)</div>
+        <div align="right">(<i><xsl:value-of select="query/@first"/></i>-<i><xsl:value-of select="query/@last"/></i>)</div>
         <div align="left"><b><xsl:value-of select="query/@date"/></b></div>
         <div align="left"><b><xsl:value-of select="query/@lang"/></b></div>
     </body>
