@@ -1,7 +1,7 @@
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Nyhetsrubriker med Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.4', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.6', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet for importing text', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet for importing text', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Visa samtliga namn f\xc3\xb6r alla personer', 'g': '3.4', 'i': 'allnames', 'n': 'Samtliga namn f\xc3\xb6r alla personer', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Visar h\xc3\xa4ndelser f\xc3\xb6r en person p\xc3\xa5 en tidslinje', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Tidslinje', 't': u'Quickreport', 'v': '1.0.8', 'z': 'TimelineQuickview.addon.tgz'}

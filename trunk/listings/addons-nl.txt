@@ -1,7 +1,7 @@
 {'d': 'Gramplet toont het laatste Gramps-nieuws', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Belangrijkste nieuws-gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.4', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.6', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet om tekst te importeren', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Importgramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet om tekst te importeren', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Importgramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'De namen van alle personen tonen', 'g': '3.4', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Gebeurtenissen van een persoon worden op een tijdslijn getoond', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Tijdlijn', 't': u'Quickreport', 'v': '1.0.8', 'z': 'TimelineQuickview.addon.tgz'}

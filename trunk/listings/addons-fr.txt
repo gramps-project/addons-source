@@ -1,7 +1,7 @@
 {'d': 'Gramplet pour afficher les derni\xc3\xa8res nouvelles de Gramps', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Gramplet R\xc3\xa9sum\xc3\xa9', 't': u'Gramplet', 'v': '1.0.8', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.4', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'D\xc3\xa9finir une valeur \xc3\xa0 un attribut.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'D\xc3\xa9finir un attribut', 't': u'Tool', 'v': '0.0.6', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.7', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Affiche tous les noms de tous les individus', 'g': '3.4', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Collection de sites internet pour les fran\xc3\xa7ais (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'Ensemble de liens internet francophones', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': "Affiche les \xc3\xa9v\xc3\xa9nements d'une personne tout au long de sa vie", 'g': '3.4', 'i': 'timelinequickview', 'n': 'Graphique temporel', 't': u'Quickreport', 'v': '1.0.8', 'z': 'TimelineQuickview.addon.tgz'}

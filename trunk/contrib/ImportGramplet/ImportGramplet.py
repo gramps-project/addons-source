@@ -177,15 +177,17 @@ class ImportGramplet(Gramplet):
         scrolled_window = gtk.ScrolledWindow()
         scrolled_window.add(self.import_text)
         buttonbox = gtk.HButtonBox()
+        buttonbox.set_layout(gtk.BUTTONBOX_SPREAD)
         buttonbox.pack_start(clear_button, False)
         buttonbox.pack_start(import_button, False)
         vbox = gtk.VBox()
         vbox.pack_start(scrolled_window, True)
         vbox.pack_start(buttonbox, False)
         scrolled_window = self.gui.get_container_widget()
-        scrollview_container = scrolled_window.get_parent()
-        scrollview_container.remove(scrolled_window)
-        scrollview_container.add(vbox)
+        for widget in scrolled_window.get_children():
+            widget.destroy()
+        scrolled_window.add_with_viewport(vbox)
+        scrolled_window.get_children()[0].set_shadow_type(gtk.SHADOW_NONE)
         # bindings
         actiongroup = gtk.ActionGroup('GrampletImportActions')
         actiongroup.add_actions([
