@@ -45,6 +45,7 @@ import const
 import Utils
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
+from libhtml import Html
 
 #-------------------------------------------------------------------------
 #
@@ -111,6 +112,7 @@ class lxmlGramplet(Gramplet):
         """  
              
         # filename and selector
+        
         self.__base_path = const.USER_HOME
         self.__file_name = "test.gramps"
         self.entry = gtk.Entry()
@@ -122,9 +124,12 @@ class lxmlGramplet(Gramplet):
         self.button.connect('clicked', self.__select_file)
         
         # GUI setup:
+        
         vbox = gtk.VBox()
         hbox = gtk.HBox()
+        
         # button
+        
         button = gtk.Button(_("Run"))
         button.connect("clicked", self.run)
         hbox.pack_start(self.entry, True)
@@ -273,18 +278,22 @@ class lxmlGramplet(Gramplet):
         root = tree.getroot()
 
         # namespace issues and 'surname' only on 1.4.0!
+        
         namespace = root.nsmap
         surname_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.4.0/}surname')
         ptitle_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.4.0/}ptitle')
         
         # variable
+        
         expr = "//*[local-name() = $name]"
 
         # count function
         # float and seems to also count the parent tag: name[0] !
+        
         count_elements = etree.XPath("count(//*[local-name() = $name])")
         
         # textual children strings function
+        
         desc = etree.XPath('descendant-or-self::text()')
         
         # TODO: cleanup !
@@ -296,30 +305,46 @@ class lxmlGramplet(Gramplet):
         sources = []
         surnames = []
         timestamp = []
+        thumbs = []
         for one in root.getchildren():
+            
             #(tag, item) = one.tag, one.items()
             #print(tag, item)
             
             for two in one.getchildren():
+                
                 #tags.append(two.tag)  
+                
                 msg.append(two.items())
                 
+                if two.tag == '{http://gramps-project.org/xml/1.4.0/}mediapath':
+                    mediapath = two.text
+                else:
+                    mediapath = ''
+                
                 # search ptitle and time log
+                
                 for three in two.getchildren():
                     
                     # timestamp
+                    
                     timestamp.append(two.get('change'))
                     
-                    # with namespace ...
+                    # with namespace ...              
+                              
                     if three.tag == '{http://gramps-project.org/xml/1.4.0/}ptitle':
                         places.append(three.text)
                     if three.tag == '{http://gramps-project.org/xml/1.4.0/}stitle':
                         sources.append(three.text)
+                    if three.tag == '{http://gramps-project.org/xml/1.4.0/}file':
+                        thumbs.append(three.items())
                         
                     # search last name
+                    
                     for four in three.getchildren():
-                        
+                                               
                         # with namespace ...
+                        
                         if four.tag == '{http://gramps-project.org/xml/1.4.0/}surname':
                             surnames.append(four.text)
                             
@@ -385,6 +410,7 @@ class lxmlGramplet(Gramplet):
         print(_('Sources titles'), nb_sources)
                 
         self.WriteXML(log, first, last, surnames, places, sources)
+        self.PrintMedia(thumbs, mediapath)
         self.WriteBackXML(filename, root, surnames, places, sources)
         
         
@@ -445,6 +471,7 @@ class lxmlGramplet(Gramplet):
         xml.set("last", unicode(last))
 
         # only for info
+        
         doc = etree.ElementTree(xml)
         
         # custom countries list (re-use some Gramps translations ...) ;)
@@ -534,6 +561,7 @@ class lxmlGramplet(Gramplet):
         self.outfile.close()
                 
         # clear the etree
+        
         content.clear()
     
         # This is the end !
@@ -543,7 +571,103 @@ class lxmlGramplet(Gramplet):
         GrampsDisplay.url(html)
         print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
         
-        self.post(html)
+        #self.post(html)
+        
+        
+    def PrintMedia(self, thumbs, mediapath):
+        """
+        Print some media infos via HTML class (Gramps)
+        """
+
+        # Web page filename extensions
+        
+        _WEB_EXT = ['.html', '.htm', '.shtml', '.php', '.php3', '.cgi']
+        
+        # page title 
+        
+        title = _('Gallery')
+        
+        fname = os.path.join(const.USER_PLUGINS, 'lxml', _('Gallery.html'))
+        of = codecs.EncodedFile(open(fname, "w"), 'utf-8',
+                                    file_encoding=None, errors='strict')
+        
+        # htmlinstance = page
+        
+        page, head, body = Html.page(title, encoding='utf-8', lang='fr')
+        head = body = ""
+        
+        self.text = []
+        
+        self.XHTMLWriter(fname, page, head, body, of, thumbs, mediapath)
+    
+    
+    def __write_gallery(self, thumbs, mediapath):
+        """
+        This procedure writes out the media
+        """
+               
+        import ThumbNails
+        
+        # full clear line for proper styling
+        
+        fullclear = Html("div", class_ = "fullclear", inline = True)
+        
+        # ugly ...
+        
+        for i in range(len(thumbs)):
+            
+            # list of tuples [('',''),('','')]
+            
+            src = (list(thumbs[i])[0])[1]
+            mime = (list(thumbs[i])[1])[1]
+            description = (list(thumbs[i])[2])[1]
+            
+            # relative and absolute paths
+            
+            src = os.path.join(mediapath, src)
+            
+            if src.startswith("/"):
+                continue
+            else:
+                src = os.path.join(const.USER_HOME, src)
+            
+            # only images
+            
+            if mime.startswith("image"):
+                thumb = ThumbNails.get_thumbnail_path(str(src), mtype=None, rectangle=None)
+                self.text += Html('img', src=str(thumb), mtype=str(mime))
+                self.text += fullclear
+                self.text += Html('a', str(description), href=str(src), target='blank', title=str(mime))
+                self.text += fullclear
+        
+        return self.text
+    
+    
+    def close_file(self, of):
+        """ will close whatever filename is passed to it """
+        of.close()
+        
+    
+    def XHTMLWriter(self, fname, page, head, body, of, thumbs, mediapath):
+        """
+        Will format, write, and close the file
+
+        of -- open file that is being written to
+        htmlinstance -- web page created with libhtml
+            src/plugins/lib/libhtml.py
+        """
+        
+        self.__write_gallery(thumbs, mediapath)
+            
+        text = open(fname, 'w')
+        text.write(head)
+        for i in range(len(self.text)):
+            text.write(self.text[i] + '\n') # Html.write() ?
+        text.close()
+
+        # closes the file
+        
+        self.close_file(of)
         
         
     def WriteBackXML(self, filename, root, surnames, places, sources):
@@ -557,6 +681,7 @@ class lxmlGramplet(Gramplet):
         self.outfile = codecs.getwriter("utf8")(outfile)
         
         # clear the etree
+        
         root.clear()
                
         ## people/person/name/surname
@@ -596,9 +721,10 @@ class lxmlGramplet(Gramplet):
         self.outfile.close()
         
         # clear the etree
+        
         root.clear()
-        
-        
+
+
     def post(self, html):
         """
         Try to play with request ...
@@ -612,6 +738,7 @@ class lxmlGramplet(Gramplet):
         post = etree.HTML(data)
         
         # find text function
+        
         find_text = etree.XPath("//text()", smart_strings=False)
         
         print('#######################################################')
