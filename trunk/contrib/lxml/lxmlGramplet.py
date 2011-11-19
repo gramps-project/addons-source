@@ -88,9 +88,13 @@ def epoch(t):
         except:
             return
         
-        date = int(t)
-        conv = datetime.fromtimestamp(date)
-        fmt = conv.strftime('%d %B %Y')
+        if t == None:
+            print(_('Invalid timestamp'))
+            fmt = _('Unknown')
+        else:
+            date = int(t)
+            conv = datetime.fromtimestamp(date)
+            fmt = conv.strftime('%d %B %Y')
         
         return(fmt)
     
