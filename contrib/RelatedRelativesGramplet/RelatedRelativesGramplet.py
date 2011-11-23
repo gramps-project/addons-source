@@ -219,8 +219,11 @@ class RelatedRelativesGramplet(Gramplet):
                                         for x in range(1, len(rel_strings)):
                                             self.append_text("\n%s" %
                                                              rel_strings[x])
-                                            self.append_text(" & %s" %
-                                                             rel_strings1[x])
+                                            try:
+                                                self.append_text(" & %s" %
+                                                                 rel_strings1[x])
+                                            except:
+                                                continue
                                             # Print list of common ancestors for
                                             # the found relation.
                                             # Remove duplicate ancestors
