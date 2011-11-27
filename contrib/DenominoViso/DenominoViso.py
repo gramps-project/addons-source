@@ -363,34 +363,39 @@ class DenominoVisoReport(Report):
         #if self.options['DNMold_browser_output']:
         #    self.write_old_browser_output()
         try:
-            f = open(self.target_path,'w')
+            with open(self.target_path, 'w') as f:
+                startup = {}
+                startup[_cnsts.FAN] = ((0,-pi,pi), (0,0,2*pi), \
+                        (0,pi/2,5*pi/2), (0,-pi/2,3*pi/2))
+                startup[_cnsts.GROWTHSPIRAL] = ((10,50,-pi/2), (10,50,pi/2), \
+                        (10,50,pi), (10,50,0))
+                startup[_cnsts.MATREE] = ((0,-50,0,50), (0,50,0,-50), \
+                        (-50,0,50,0), (50,0,-50,0))
+                startup[_cnsts.PYTREE] = ((0,50,0,-50), (0,-50,0,50), \
+                        (50,0,-50,0), (-50,0,50,0))
+                self.start_page(f)
+                if self.start_person:
+                    start_handle = self.start_person.get_handle()
+                else:
+                    ErrorDialog(_('Failure writing %s: %s') % (self.target_path,
+                        _('No central person selected')))
+                    return
+                if self.options['DNMchart_type'] == _cnsts.REGULAR:
+                    if self.options['DNMchart_mode'] == _cnsts.DESCENDANT:
+                        self.walk_the_tree_depth_desc(f, start_handle, 0)
+                    else:
+                        self.walk_the_tree_depth_asc(f, start_handle, 0)
+                else:
+                    if self.options['DNMchart_mode'] == _cnsts.DESCENDANT:
+                        self.walk_the_tree_desc(f, start_handle, 0,\
+                                startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
+                    else:
+                        self.walk_the_tree_asc(f, start_handle, 0,\
+                                startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
+                self.end_page(f)
         except IOError,msg:
             ErrorDialog(_('Failure writing %s: %s') % (self.target_path,str(msg)))
             return
-        startup = {}
-        startup[_cnsts.FAN] = ((0,-pi,pi), (0,0,2*pi), (0,pi/2,5*pi/2), \
-                (0,-pi/2,3*pi/2))
-        startup[_cnsts.GROWTHSPIRAL] = ((10,50,-pi/2), (10,50,pi/2), \
-                (10,50,pi), (10,50,0))
-        startup[_cnsts.MATREE] = ((0,-50,0,50), (0,50,0,-50), (-50,0,50,0), \
-                (50,0,-50,0))
-        startup[_cnsts.PYTREE] = ((0,50,0,-50), (0,-50,0,50), (50,0,-50,0), \
-                (-50,0,50,0))
-        self.start_page(f)
-        if self.options['DNMchart_type'] == _cnsts.REGULAR:
-            if self.options['DNMchart_mode'] == _cnsts.DESCENDANT:
-                self.walk_the_tree_depth_desc(f,self.start_person.get_handle(),0)
-            else:
-                self.walk_the_tree_depth_asc(f,self.start_person.get_handle(),0)
-        else:
-            if self.options['DNMchart_mode'] == _cnsts.DESCENDANT:
-                self.walk_the_tree_desc(f,self.start_person.get_handle(),0,\
-                        startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
-            else:
-                self.walk_the_tree_asc(f,self.start_person.get_handle(),0,\
-                        startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
-        self.end_page(f)
-        f.close()
 
     # I need four tree-walking routines: for ascestor/descendant mode and for
     # depth-first or not. So they are all quite similar but not similar enough
