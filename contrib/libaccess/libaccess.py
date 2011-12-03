@@ -50,9 +50,13 @@ Additionals goals:
 
 """
 
+from gen.db import DbTxn
+
 import itertools
 
 database = None
+#batch = True
+batch = False
 
 def init(db):
     """
@@ -60,6 +64,11 @@ def init(db):
     """
     global database
     database = db
+    database.disable_signals()
+
+def update():
+    #database.enable_signals()
+    database.request_rebuild()
 
 def nth(g, n):
     """
@@ -125,6 +134,17 @@ class Object(object):
             return self.fields[attr](self)
         return NONE
 
+    def __setattr__(self, attr, value):
+        if attr == "instance":
+            object.__setattr__(self, "instance", value)
+        elif attr in self.setters:
+            if callable(self.setters[attr]):
+                self.setters[attr](self, value)
+            else:
+                raise Exception("setter needs to be a callable")
+        else:
+            raise Exception("no such settable attribute: '%s'" % attr)
+
     @classmethod
     def get(self, **kwargs):
         for attr in kwargs:
@@ -186,7 +206,17 @@ class Name(Object):
     fields = {
         "surname": lambda self: self.instance.get_surname(),
         "given": lambda self: self.instance.get_first_name(),
+        # "person": set in constructor
         }
+    setters = {
+        "given": lambda self, value: self.setit("given", value),
+        }
+
+    def setit(self, attr, value):
+        if attr == "given":
+            self.instance.set_first_name(value)
+        with DbTxn(_("libaccess edit name"), database, batch=batch) as trans:
+            database.commit_person(self.fields["person"], trans)
 
     def __repr__(self):
         return "%s, %s" % (self.surname, self.given)
@@ -206,6 +236,7 @@ class Person(Object):
         }
     fields = {
         "handle": lambda self: self.instance.handle,
+        "gramps_id": lambda self: self.instance.gramps_id,
         "gender": lambda self: ["female", "male", "unknown"][self.instance.get_gender()],
         "birth": lambda self: self.__get_birth_date(),
         "death": lambda self: self.__get_death_date(),
@@ -215,6 +246,19 @@ class Person(Object):
         "families": lambda self: ListOf(self, Family, [Family(database.get_family_from_handle(h)) for h in 
                                                        self.instance.get_family_handle_list()])
         }
+
+    setters = {
+        "handle": lambda self, value: self.setit("handle", value),
+        "gramps_id": lambda self: self.setit("gramps_id", value),
+        }
+
+    def setit(self, attr, value):
+        if attr == "handle":
+            self.instance.handle = value
+        elif attr == "gramps_id":
+            self.instance.gramps_id = value
+        with DbTxn(_("libaccess edit person"), database) as trans:
+            database.commit_person(self.instance, trans)
 
     def __get_primary_events(self):
         ref_list = self.instance.get_primary_event_ref_list()
