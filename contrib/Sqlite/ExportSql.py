@@ -78,6 +78,7 @@ def makeDB(db):
     db.query("""drop table repository_ref;""")
     db.query("""drop table date;""")
     db.query("""drop table place;""") 
+    db.query("""drop table citation;""") 
     db.query("""drop table source;""") 
     db.query("""drop table media;""")
     db.query("""drop table name;""")
@@ -85,7 +86,6 @@ def makeDB(db):
     db.query("""drop table link;""")
     db.query("""drop table markup;""")
     db.query("""drop table event_ref;""")
-    db.query("""drop table source_ref;""")
     db.query("""drop table child_ref;""")
     db.query("""drop table person_ref;""")
     db.query("""drop table lds;""")
@@ -193,6 +193,15 @@ def makeDB(db):
                  change INTEGER, 
                  private BOOLEAN);""")
 
+    db.query("""CREATE TABLE citation (
+                 handle CHARACTER(25) PRIMARY KEY,
+                 gid CHARACTER(25), 
+                 confidence INTEGER,
+                 page CHARACTER(25),
+                 source_handle CHARACTER(25),
+                 change INTEGER,
+                 private BOOLEAN);""")
+
     db.query("""CREATE TABLE source (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
@@ -257,13 +266,6 @@ def makeDB(db):
     db.query("""CREATE TABLE person_ref (
                  handle CHARACTER(25) PRIMARY KEY,
                  description TEXT,
-                 private BOOLEAN);""")
-
-    db.query("""CREATE TABLE source_ref (
-                 handle CHARACTER(25) PRIMARY KEY,
-                 ref CHARACTER(25), 
-                 confidence INTEGER,
-                 page CHARACTER(25),
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE child_ref (
@@ -403,7 +405,7 @@ def export_url_list(db, from_type, from_handle, urls):
 def export_person_ref_list(db, from_type, from_handle, person_ref_list):
     for person_ref in person_ref_list:
         (private, 
-         source_list,
+         citiaion_list,
          note_list,
          handle,
          desc) = person_ref
@@ -416,12 +418,12 @@ def export_person_ref_list(db, from_type, from_handle, person_ref_list):
                  private
                  )
         export_list(db, "person_ref", handle, "note", note_list)
-        export_source_ref_list(db, "person_ref", handle, source_list)
+        export_citation_list(db, "person_ref", handle, citation_list)
         # And finally, make a link from parent to new object
         export_link(db, from_type, from_handle, "person_ref", handle)
 
 def export_lds(db, from_type, from_handle, data):
-    (lsource_list, lnote_list, date, type, place,
+    (lcitation_list, lnote_list, date, type, place,
      famc, temple, status, private) = data
     lds_handle = create_id()
     db.query("""INSERT into lds (handle, type, place, famc, temple, status, private) 
@@ -430,33 +432,15 @@ def export_lds(db, from_type, from_handle, data):
     export_link(db, "lds", lds_handle, "place", place)
     export_list(db, "lds", lds_handle, "note", lnote_list)
     export_date(db, "lds", lds_handle, date)
-    export_source_ref_list(db, "lds", lds_handle, lsource_list)
+    export_citation_list(db, "lds", lds_handle, lcitation_list)
     # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "lds", lds_handle)
     
-def export_source_ref(db, from_type, from_handle, source):
-    (date, private, note_list, confidence, ref, page) = source
-    handle = create_id()
-    # handle is source_ref handle
-    # ref is source handle
-    db.query("""INSERT into source_ref (
-             handle, 
-             ref, 
-             confidence,
-             page,
-             private
-             ) VALUES (?,?,?,?,?);""",
-             handle, 
-             ref, 
-             confidence,
-             page,
-             private)
-    export_date(db, "source_ref", handle, date)
-    export_list(db, "source_ref", handle, "note", note_list) 
-    # And finally, make a link from parent to new object
-    export_link(db, from_type, from_handle, "source_ref", handle)
+def export_citation_ref(db, from_type, from_handle, citation_handle):
+    export_link(db, from_type, from_handle, "citation", citation_handle)
 
-def export_source(db, handle, gid, title, author, pubinfo, abbrev, change, private):
+def export_source(db, handle, gid, title, author, pubinfo, abbrev, change, 
+                  private):
     db.query("""INSERT into source (
              handle, 
              gid, 
@@ -514,7 +498,7 @@ def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value
 
 def export_event(db, data):
     (handle, gid, the_type, date, description, place_handle, 
-     source_list, note_list, media_list, attribute_list,
+     citation_list, note_list, media_list, attribute_list,
      change, private) = data
     db.query("""INSERT INTO event (
                  handle, 
@@ -536,7 +520,7 @@ def export_event(db, data):
     export_list(db, "event", handle, "note", note_list)
     export_attribute_list(db, "event", handle, attribute_list)
     export_media_ref_list(db, "event", handle, media_list)
-    export_source_ref_list(db, "event", handle, source_list)
+    export_citation_list(db, "event", handle, citation_list)
 
 def export_event_ref(db, from_type, from_handle, event_ref):
     (private, note_list, attribute_list, ref, role) = event_ref
@@ -573,7 +557,7 @@ def export_person(db, person):
      attribute_list,     # 12
      urls,               # 13
      lds_ord_list,       # 14
-     psource_list,       # 15
+     pcitation_list,       # 15
      pnote_list,         # 16
      change,             # 17
      tags,             # 18
@@ -608,7 +592,7 @@ def export_person(db, person):
     export_attribute_list(db, "person", handle, attribute_list)
     export_url_list(db, "person", handle, urls) 
     export_person_ref_list(db, "person", handle, person_ref_list)
-    export_source_ref_list(db, "person", handle, psource_list)
+    export_citation_list(db, "person", handle, pcitation_list)
     
     # -------------------------------------
     # Address
@@ -680,7 +664,7 @@ def export_surname(db, handle, surname_list):
 
 def export_name(db, from_type, from_handle, primary, data):
     if data:
-        (private, source_list, note_list, date,
+        (private, citation_list, note_list, date,
          first_name, surname_list, suffix, title,
          name_type, 
          group_as, sort_as, display_as, 
@@ -709,12 +693,12 @@ def export_name(db, from_type, from_handle, primary, data):
         export_surname(db, handle, surname_list)
         export_date(db, "name", handle, date) 
         export_list(db, "name", handle, "note", note_list)
-        export_source_ref_list(db, "name", handle, source_list)
+        export_citation_list(db, "name", handle, citation_list)
         # And finally, make a link from parent to new object
         export_link(db, from_type, from_handle, "name", handle)
 
 def export_attribute(db, from_type, from_handle, attribute):
-    (private, source_list, note_list, the_type, value) = attribute
+    (private, citation_list, note_list, the_type, value) = attribute
     handle = create_id()
     db.query("""INSERT INTO attribute (
                  handle,
@@ -723,21 +707,21 @@ def export_attribute(db, from_type, from_handle, attribute):
                  value, 
                  private) VALUES (?,?,?,?,?);""",
              handle, the_type[0], the_type[1], value, private)
-    export_source_ref_list(db, "attribute", handle, source_list)
+    export_citation_list(db, "attribute", handle, citation_list)
     export_list(db, "attribute", handle, "note", note_list)
     # finally, link the parent to the address
     export_link(db, from_type, from_handle, "attribute", handle)
 
-def export_source_ref_list(db, from_type, from_handle, source_list):
-    for source in source_list:
-        export_source_ref(db, from_type, from_handle, source)
+def export_citation_list(db, from_type, from_handle, citation_list):
+    for citation_handle in citation_list:
+        export_citation_ref(db, from_type, from_handle, citation_handle)
 
 def export_media_ref_list(db, from_type, from_handle, media_list):
     for media in media_list:
         export_media_ref(db, from_type, from_handle, media)
 
 def export_media_ref(db, from_type, from_handle, media):
-    (private, source_list, note_list, attribute_list, ref, role) = media
+    (private, citation_list, note_list, attribute_list, ref, role) = media
     # handle is the media_ref handle
     # ref is the media handle
     handle = create_id()
@@ -754,7 +738,7 @@ def export_media_ref(db, from_type, from_handle, media):
              handle, ref, role[0], role[1], role[2], role[3], private) 
     export_list(db, "media_ref", handle, "note", note_list)
     export_attribute_list(db, "media_ref", handle, attribute_list)
-    export_source_ref_list(db, "media_ref", handle, source_list)
+    export_citation_list(db, "media_ref", handle, citation_list)
     # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "media_ref", handle)
 
@@ -766,14 +750,14 @@ def export_child_ref_list(db, from_type, from_handle, to_type, ref_list):
     for child_ref in ref_list:
         # family -> child_ref
         # (False, [], [], u'b305e96e39652d8f08c', (1, u''), (1, u''))
-        (private, source_list, note_list, ref, frel, mrel) = child_ref
+        (private, citation_list, note_list, ref, frel, mrel) = child_ref
         handle = create_id()
         db.query("""INSERT INTO child_ref (handle, 
                      ref, frel0, frel1, mrel0, mrel1, private)
                         VALUES (?, ?, ?, ?, ?, ?, ?);""",
                  handle, ref, frel[0], frel[1], 
                  mrel[0], mrel[1], private)
-        export_source_ref_list(db, "child_ref", handle, source_list)
+        export_citation_list(db, "child_ref", handle, citation_list)
         export_list(db, "child_ref", handle, "note", note_list)
         # And finally, make a link from parent to new object
         export_link(db, from_type, from_handle, "child_ref", handle)
@@ -803,7 +787,7 @@ def export_datamap_dict(db, from_type, from_handle, datamap):
         export_link(db, from_type, from_handle, "datamap", handle)
 
 def export_address(db, from_type, from_handle, address):
-    (private, asource_list, anote_list, date, location) = address
+    (private, acitation_list, anote_list, date, location) = address
     addr_handle = create_id()
     db.query("""INSERT INTO address (
                 handle,
@@ -811,7 +795,7 @@ def export_address(db, from_type, from_handle, address):
     export_location(db, "address", addr_handle, location)
     export_date(db, "address", addr_handle, date)
     export_list(db, "address", addr_handle, "note", anote_list) 
-    export_source_ref_list(db, "address", addr_handle, asource_list)
+    export_citation_list(db, "address", addr_handle, acitation_list)
     # finally, link the parent to the address
     export_link(db, from_type, from_handle, "address", addr_handle)
 
@@ -884,6 +868,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
              len(database.get_place_handles()) +
              len(database.get_media_object_handles()) +
              len(database.get_tag_handles()) +
+             len(database.get_citation_handles()) +
              len(database.get_source_handles()))
     count = 0.0
 
@@ -932,7 +917,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         (handle, gid, father_handle, mother_handle,
          child_ref_list, the_type, event_ref_list, media_list,
-         attribute_list, lds_seal_list, source_list, note_list,
+         attribute_list, lds_seal_list, citation_list, note_list,
          change, tags, private) = family.serialize()
         # father_handle and/or mother_handle can be None
         db.query("""INSERT INTO family (
@@ -952,7 +937,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_child_ref_list(db, "family", handle, "child_ref", child_ref_list)
         export_list(db, "family", handle, "note", note_list)
         export_attribute_list(db, "family", handle, attribute_list)
-        export_source_ref_list(db, "family", handle, source_list)
+        export_citation_list(db, "family", handle, citation_list)
         export_media_ref_list(db, "family", handle, media_list)
 
         # Event Reference information
@@ -1009,7 +994,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          main_loc, alt_location_list,
          urls,
          media_list,
-         source_list,
+         citation_list,
          note_list,
          change, private) = place.serialize()
 
@@ -1026,7 +1011,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
 
         export_url_list(db, "place", handle, urls)
         export_media_ref_list(db, "place", handle, media_list)
-        export_source_ref_list(db, "place", handle, source_list)
+        export_citation_list(db, "place", handle, citation_list)
         export_list(db, "place", handle, "note", note_list) 
 
         # Main Location with parish:
@@ -1035,6 +1020,55 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         # But we need to link these:
         export_location_list(db, "place_alt", handle, alt_location_list)
 
+        count += 1
+        callback(100 * count/total)
+
+    # ---------------------------------
+    # Citation
+    # ---------------------------------
+    for citation_handle in database.iter_citation_handles():
+        citation = database.get_citation_from_handle(citation_handle)
+        if citation is None:
+            continue
+        #(handle, gid, title,
+        # author, pubinfo,
+        # note_list,
+        # media_list,
+        # abbrev,
+        # change, datamap,
+        # reporef_list,
+        # private) 
+        (handle,                           #  0
+         gid,                        #  1
+         date, #  2
+         page,                    #  3
+         confidence,                       #  4
+         source_handle,                    #  5
+         note_list,              #  6
+         media_list,             #  7
+         datamap,                          #  8
+         change,                           #  9
+         private) = citation.serialize()
+        db.query("""INSERT into citation (
+                 handle, 
+                 gid, 
+                 source_handle,
+                 confidence,
+                 page,
+                 change,
+                 private
+                 ) VALUES (?,?,?,?,?,?,?);""",
+                 handle, 
+                 gid,
+                 source_handle,
+                 confidence,
+                 page,
+                 change,
+                 private)
+        export_datamap_dict(db, "citation", handle, datamap)
+        export_date(db, "citation", handle, date)
+        export_list(db, "citation", handle, "note", note_list) 
+        export_list(db, "citation", handle, "media", media_list) 
         count += 1
         callback(100 * count/total)
 
@@ -1071,7 +1105,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         (handle, gid, path, mime, desc,
          attribute_list,
-         source_list,
+         citation_list,
          note_list,
          change,
          date,
@@ -1091,7 +1125,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  change, ",".join(tags), private)
         export_date(db, "media", handle, date)
         export_list(db, "media", handle, "note", note_list) 
-        export_source_ref_list(db, "media", handle, source_list)
+        export_citation_list(db, "media", handle, citation_list)
         export_attribute_list(db, "media", handle, attribute_list)
         count += 1
         callback(100 * count/total)
