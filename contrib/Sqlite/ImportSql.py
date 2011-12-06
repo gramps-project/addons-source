@@ -162,9 +162,9 @@ class SQLReader(object):
                  the_type1, 
                  value, 
                  private) = row
-                source_list = self.get_source_ref_list(sql, "attribute", handle)
+                citation_list = self.get_citation_list(sql, "attribute", handle)
                 note_list = self.get_note_list(sql, "attribute", handle)
-                retval.append((bool(private), source_list, note_list, 
+                retval.append((bool(private), citation_list, note_list, 
                                (the_type0, the_type1), value))
         return retval
 
@@ -176,9 +176,9 @@ class SQLReader(object):
                              handle)
             for row in rows:
                 (handle, ref, frel0, frel1, mrel0, mrel1, private) = row
-                source_list = self.get_source_ref_list(sql, "child_ref", handle)
+                citation_list = self.get_citation_list(sql, "child_ref", handle)
                 note_list = self.get_note_list(sql, "child_ref", handle) 
-                retval.append((bool(private), source_list, note_list, ref, 
+                retval.append((bool(private), citation_list, note_list, ref, 
                                (frel0, frel1), (mrel0, mrel1)))
         return retval
 
@@ -220,10 +220,10 @@ class SQLReader(object):
                 (handle,
                  description,
                  private) = row
-                source_list = self.get_source_ref_list(sql, "person_ref", handle)
+                citation_list = self.get_citation_list(sql, "person_ref", handle)
                 note_list = self.get_note_list(sql, "person_ref", handle)
                 retval.append((bool(private), 
-                               source_list,
+                               citation_list,
                                note_list,
                                handle,
                                description))
@@ -268,13 +268,14 @@ class SQLReader(object):
                                  handle)
         return [self.pack_repository_ref(sql, result) for result in results]
 
-    def get_source_ref_list(self, sql, from_type, from_handle):
-        handles = self.get_links(sql, from_type, from_handle, "source_ref")
-        results = []
-        for handle in handles:
-            results += sql.query("""select * from source_ref where handle = ?;""",
-                                 handle)
-        return [self.pack_source_ref(sql, result) for result in results]
+    def get_citation_list(self, sql, from_type, from_handle):
+        handles = self.get_links(sql, from_type, from_handle, "citation")
+        #results = []
+        #for handle in handles:
+        #    results += sql.query("""select * from source_ref where handle = ?;""",
+        #                         handle)
+        #return [self.pack_source_ref(sql, result) for result in results]
+        return handles
 
     def get_url_list(self, sql, from_type, from_handle):
         handles = self.get_links(sql, from_type, from_handle, "url")
@@ -290,20 +291,20 @@ class SQLReader(object):
 
     def pack_address(self, sql, data, with_parish):
         (handle, private) = data 
-        source_list = self.get_source_ref_list(sql, "address", handle)
+        citation_list = self.get_citation_list(sql, "address", handle)
         date_handle = self.get_link(sql, "address", handle, "date")
         date = self.get_date(sql, date_handle)
         note_list = self.get_note_list(sql, "address", handle)
         location = self.get_location(sql, "address", handle, with_parish)
-        return (bool(private), source_list, note_list, date, location)
+        return (bool(private), citation_list, note_list, date, location)
 
     def pack_lds(self, sql, data):
         (handle, type, place, famc, temple, status, private) = data
-        source_list = self.get_source_ref_list(sql, "lds", handle)
+        citation_list = self.get_citation_list(sql, "lds", handle)
         note_list = self.get_note_list(sql, "lds", handle)
         date_handle = self.get_link(sql, "lds", handle, "date")
         date = self.get_date(sql, date_handle)
-        return (source_list, note_list, date, type, place,
+        return (citation_list, note_list, date, type, place,
                 famc, temple, status, bool(private))
 
     def pack_surnames(self, sql, data):
@@ -325,14 +326,14 @@ class SQLReader(object):
          role2,
          role3,
          private) = data
-        source_list = self.get_source_ref_list(sql, "media_ref", handle)
+        citation_list = self.get_citation_list(sql, "media_ref", handle)
         note_list = self.get_note_list(sql, "media_ref", handle)
         attribute_list = self.get_attribute_list(sql, "media_ref", handle)
         if role0 == role1 == role2 == role3 == -1:
             role = None
         else:
             role = (role0, role1, role2, role3)
-        return (bool(private), source_list, note_list, attribute_list, ref, role)
+        return (bool(private), citation_list, note_list, attribute_list, ref, role)
 
     def pack_repository_ref(self, sql, data):
         (handle, 
@@ -368,7 +369,7 @@ class SQLReader(object):
         role = (role0, role1)
         return (bool(private), note_list, attribute_list, ref, role)
 
-    def pack_source_ref(self, sql, data):
+    def pack_citation(self, sql, data):
         (handle, 
          ref, 
          confidence,
@@ -446,11 +447,11 @@ class SQLReader(object):
         famnick) = data
         # build up a GRAMPS object:
         surname_list = self.get_surname_list(sql, handle)
-        source_list = self.get_source_ref_list(sql, "name", handle)
+        citation_list = self.get_citation_list(sql, "name", handle)
         note_list = self.get_note_list(sql, "name", handle)
         date_handle = self.get_link(sql, "name", handle, "date")
         date = self.get_date(sql, date_handle)
-        return (bool(private), source_list, note_list, date,
+        return (bool(private), citation_list, note_list, date,
                 first_name, surname_list, suffix, title,
                 (name_type0, name_type1), 
                 group_as, sort_as, display_as, call, nick, famnick)
@@ -607,7 +608,7 @@ class SQLReader(object):
                  private) = event
 
                 note_list = self.get_note_list(sql, "event", handle)
-                source_list = self.get_source_ref_list(sql, "event", handle)
+                citation_list = self.get_citation_list(sql, "event", handle)
                 media_list = self.get_media_list(sql, "event", handle)
                 attribute_list = self.get_attribute_list(sql, "event", handle)
 
@@ -618,7 +619,7 @@ class SQLReader(object):
                 place = self.get_place_from_handle(sql, place_handle)
 
                 data = (str(handle), gid, (the_type0, the_type1), date, description, place, 
-                        source_list, note_list, media_list, attribute_list,
+                        citation_list, note_list, media_list, attribute_list,
                         change, bool(private))
 
                 self.db.event_map[str(handle)] = data
@@ -652,7 +653,7 @@ class SQLReader(object):
                 attribute_list = self.get_attribute_list(sql, "person", handle)
                 urls = self.get_url_list(sql, "person", handle)
                 lds_ord_list = self.get_lds_list(sql, "person", handle)
-                psource_list = self.get_source_ref_list(sql, "person", handle)
+                pcitation_list = self.get_citation_list(sql, "person", handle)
                 pnote_list = self.get_note_list(sql, "person", handle)
                 person_ref_list = self.get_person_ref_list(sql, "person", handle)
                 death_ref_index = lookup(death_ref_handle, event_ref_list)
@@ -672,7 +673,7 @@ class SQLReader(object):
                                                    attribute_list,     # 12
                                                    urls,               # 13
                                                    lds_ord_list,       # 14
-                                                   psource_list,       # 15
+                                                   pcitation_list,       # 15
                                                    pnote_list,         # 16
                                                    change,             # 17
                                                    make_tag_list(tags), # 18
@@ -701,7 +702,7 @@ class SQLReader(object):
                 media_list = self.get_media_list(sql, "family", handle)
                 attribute_list = self.get_attribute_list(sql, "family", handle)
                 lds_seal_list = self.get_lds_list(sql, "family", handle)
-                source_list = self.get_source_ref_list(sql, "family", handle)
+                citation_list = self.get_citation_list(sql, "family", handle)
                 note_list = self.get_note_list(sql, "family", handle)
 
                 self.db.family_map[str(handle)] = (str(handle), gid, 
@@ -709,7 +710,7 @@ class SQLReader(object):
                                                    child_ref_list, (the_type0, the_type1), 
                                                    event_ref_list, media_list,
                                                    attribute_list, lds_seal_list, 
-                                                   source_list, note_list,
+                                                   citation_list, note_list,
                                                    change, make_tag_list(tags), private)
 
                 count += 1
@@ -759,13 +760,13 @@ class SQLReader(object):
                                                            with_parish=True)
                 urls = self.get_url_list(sql, "place", handle)
                 media_list = self.get_media_list(sql, "place", handle)
-                source_list = self.get_source_ref_list(sql, "place", handle)
+                citation_list = self.get_citation_list(sql, "place", handle)
                 note_list = self.get_note_list(sql, "place", handle)
                 self.db.place_map[str(handle)] = (str(handle), gid, title, long, lat,
                                                   main_loc, alt_location_list,
                                                   urls,
                                                   media_list,
-                                                  source_list,
+                                                  citation_list,
                                                   note_list,
                                                   change, 
                                                   private)
@@ -813,7 +814,7 @@ class SQLReader(object):
                  private) = med
 
                 attribute_list = self.get_attribute_list(sql, "media", handle)
-                source_list = self.get_source_ref_list(sql, "media", handle)
+                citation_list = self.get_citation_list(sql, "media", handle)
                 note_list = self.get_note_list(sql, "media", handle)
 
                 date_handle = self.get_link(sql, "media", handle, "date")
@@ -821,7 +822,7 @@ class SQLReader(object):
 
                 self.db.media_map[str(handle)] = (str(handle), gid, path, mime, desc,
                                                   attribute_list,
-                                                  source_list,
+                                                  citation_list,
                                                   note_list,
                                                   change,
                                                   date,
