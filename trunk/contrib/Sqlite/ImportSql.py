@@ -270,11 +270,6 @@ class SQLReader(object):
 
     def get_citation_list(self, sql, from_type, from_handle):
         handles = self.get_links(sql, from_type, from_handle, "citation")
-        #results = []
-        #for handle in handles:
-        #    results += sql.query("""select * from source_ref where handle = ?;""",
-        #                         handle)
-        #return [self.pack_source_ref(sql, result) for result in results]
         return handles
 
     def get_url_list(self, sql, from_type, from_handle):
@@ -375,9 +370,9 @@ class SQLReader(object):
          confidence,
          page,
          private) = data
-        date_handle = self.get_link(sql, "source_ref", handle, "date")
+        date_handle = self.get_link(sql, "citation", handle, "date")
         date = self.get_date(sql, date_handle)
-        note_list = self.get_note_list(sql, "source_ref", handle)
+        note_list = self.get_note_list(sql, "citation", handle)
         return (date, bool(private), note_list, confidence, ref, page)
 
     def pack_source(self, sql, data):
@@ -558,6 +553,7 @@ class SQLReader(object):
                  sql.query("select count(*) from place;")[0][0] + 
                  sql.query("select count(*) from media;")[0][0] + 
                  sql.query("select count(*) from tag;")[0][0] + 
+                 sql.query("select count(*) from citation;")[0][0] +
                  sql.query("select count(*) from source;")[0][0])
         with DbTxn(_("CSV import"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
@@ -771,6 +767,38 @@ class SQLReader(object):
                                                   change, 
                                                   private)
                 self.callback(100 * count/total)
+
+            # ---------------------------------
+            # Process citation
+            # ---------------------------------
+            citations = sql.query("""select * from citation;""")
+            for citation in citations:
+                (handle, 
+                 gid, 
+                 confidence,
+                 page,
+                 source_handle,
+                 change,
+                 private) = citation
+                date_handle = self.get_link(sql, "citation", handle, "date")
+                date = self.get_date(sql, date_handle)
+                note_list = self.get_note_list(sql, "citation", handle)
+                media_list = self.get_media_list(sql, "citation", handle)
+                datamap = self.get_datamap(sql, "citation", handle)
+                self.db.citation_map[str(handle)] = (str(handle), 
+                                                     gid, 
+                                                     date,
+                                                     page, 
+                                                     confidence,
+                                                     source_handle,
+                                                     note_list,
+                                                     media_list,
+                                                     datamap,
+                                                     change, 
+                                                     private)
+                count += 1
+                self.callback(100 * count/total)
+
             # ---------------------------------
             # Process source
             # ---------------------------------

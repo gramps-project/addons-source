@@ -3,8 +3,8 @@
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.6', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv och hem person', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.10', 'z': 'Sqlite.addon.tgz'}
-{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.9', 'z': 'Sqlite.addon.tgz'}
+{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.11', 'z': 'Sqlite.addon.tgz'}
+{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.10', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Skapar ett familjeark visande all information om en person och dennes partner och barn.', 'g': '3.4', 'i': 'FamilySheet', 'n': 'Familjeark', 't': u'Report', 'v': '3.4.8', 'z': 'FamilySheet.addon.tgz'}
 {'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.4', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.21', 'z': 'GraphView.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.1', 'z': 'ThumbnailGenerator.addon.tgz'}
