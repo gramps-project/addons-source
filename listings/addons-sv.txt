@@ -13,8 +13,8 @@
 {'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.4.7', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.5', 'z': 'Query.addon.tgz'}
-{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.10', 'z': 'Django.addon.tgz'}
-{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.10', 'z': 'Django.addon.tgz'}
+{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.11', 'z': 'Django.addon.tgz'}
+{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.11', 'z': 'Django.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.1', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.6', 'z': 'LinesOfDescendency.addon.tgz'}
