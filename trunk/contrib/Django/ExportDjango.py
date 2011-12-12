@@ -81,6 +81,7 @@ def export_all(database, filename, error_dialog,
              database.get_number_of_repositories() +
              database.get_number_of_places() +
              database.get_number_of_media_objects() +
+             database.get_number_of_citations() +
              database.get_number_of_sources()) * 2 # 2 steps
     count = 0.0
     dji = DjangoInterface()
@@ -121,6 +122,18 @@ def export_all(database, filename, error_dialog,
                 dji.add_family(data)
             elif step == 1:
                 dji.add_family_detail(data)
+            count += 1
+            callback(100 * count/total)
+
+        # ---------------------------------
+        # Citation
+        # ---------------------------------
+        for citation_handle in database.citation_map.keys():
+            data = database.citation_map[citation_handle]
+            if step == 0:
+                dji.add_citation(data)
+            elif step == 1:
+                dji.add_citation_detail(data)
             count += 1
             callback(100 * count/total)
 

@@ -90,6 +90,7 @@ class DjangoReader(object):
                  self.dji.Repository.count() +
                  self.dji.Place.count() +
                  self.dji.Media.count() +
+                 self.dji.Citation.count() +
                  self.dji.Source.count())
         #self.trans = self.db.transaction_begin("",batch=True)
         self.db.disable_signals()
@@ -154,6 +155,16 @@ class DjangoReader(object):
         for place in places:
             data = self.dji.get_place(place)
             self.db.place_map[str(place.handle)] = data
+            count += 1
+            self.callback(100 * count/total)
+
+        # ---------------------------------
+        # Process citation
+        # ---------------------------------
+        citations = self.dji.Citation.all()
+        for citation in citations:
+            data = self.dji.get_citation(citation)
+            self.db.citation_map[str(citation.handle)] = data
             count += 1
             self.callback(100 * count/total)
 
