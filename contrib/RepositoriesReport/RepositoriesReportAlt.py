@@ -128,14 +128,14 @@ class RepositoryReportAlt(Report):
     """
     Repository Report class
     """
-    def __init__(self, database, options_class):
+    def __init__(self, database, options, user):
         """
         Create the RepositoryReport object produces the Repositories report.
         
         The arguments are:
 
         database        - the GRAMPS database instance
-        options_class   - instance of the Options class for this report
+        options         - instance of the Options class for this report
 
         This report needs the following parameters (class variables)
         that come in the options class.
@@ -153,9 +153,9 @@ class RepositoryReportAlt(Report):
 
         """
 
-        Report.__init__(self, database, options_class)
+        Report.__init__(self, database, options, user)
 
-        menu = options_class.menu
+        menu = options.menu
         get_option_by_name = menu.get_option_by_name
         get_value = lambda name: get_option_by_name(name).get_value()
         
@@ -333,8 +333,8 @@ class RepositoryReportAlt(Report):
                             note_handle = note_handle[1] 
                             self.__write_referenced_notes(note_handle)
 
-                    if src.get_sourcref_child_list() and self.incl_media:
-                        medialist = src.get_sourcref_child_list()
+                    if src.get_citation_child_list() and self.incl_media:
+                        medialist = src.get_citation_child_list()
                         for media_handle in medialist:
                             photo = src.get_media_list()
                             self.__write_referenced_media(photo, media_handle)
@@ -354,11 +354,14 @@ class RepositoryReportAlt(Report):
         This procedure writes out each of the media related to the source.
         """
 
-        photo = photo[0]
+        for image in photo:
+            
+            # check if not multiple references (citations) ???
+            # TOFIX
+            
+            #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
-        #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
-
-        ReportUtils.insert_image(self.database, self.doc, photo)
+            ReportUtils.insert_image(self.database, self.doc, image, None)
 
 #------------------------------------------------------------------------
 #
