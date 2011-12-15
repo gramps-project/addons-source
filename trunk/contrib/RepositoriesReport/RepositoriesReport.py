@@ -46,14 +46,14 @@ class RepositoryReport(Report):
     """
     Repository Report class
     """
-    def __init__(self, database, options_class):
+    def __init__(self, database, options, user):
         """
         Create the RepositoryReport object produces the Repositories report.
         
         The arguments are:
 
         database        - the GRAMPS database instance
-        options_class   - instance of the Options class for this report
+        options         - instance of the Options class for this report
 
         This report needs the following parameters (class variables)
         that come in the options class.
@@ -62,7 +62,7 @@ class RepositoryReport(Report):
 
         """
 
-        Report.__init__(self, database, options_class)
+        Report.__init__(self, database, options, user)
 
     def write_report(self):
         """
