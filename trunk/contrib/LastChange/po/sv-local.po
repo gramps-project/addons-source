@@ -115,8 +115,8 @@ msgid "Report Options"
 msgstr "Rapportalternativ"
 
 #: LastChange/LastChangeReport.py:250
-msgid "Select From:"
-msgstr "Välj från:"
+msgid "Select From"
+msgstr "Välj från"
 
 #: LastChange/LastChangeReport.py:251
 msgid "People"
