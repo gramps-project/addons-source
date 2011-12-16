@@ -35,11 +35,12 @@ import time
 #
 #------------------------------------------------------------------------
 import DateHandler
+from Errors import ReportError
 from gen.plug import docgen
 from gen.plug.menu import BooleanListOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.lib import Date
@@ -49,13 +50,24 @@ _UNKNOWN_FAMILY = "*unknown*"
 class LastChangeReport(Report):
     """
     Generate a list of the last records to be changed in the current database.
+
+    The arguments are:
+    
+        database        - the GRAMPS database instance
+        options_class   - instance of the Options class for this report
+        user            - a gen.user.User() instance
+    
     """
 
-    def __init__(self, database, options_class):
-        Report.__init__(self, database, options_class)
+    def __init__(self, database, options_class, user):
+        Report.__init__(self, database, options_class, user)
         menu_option = options_class.menu.get_option_by_name('what_types')
         self.what_types = menu_option.get_selected()
         # TODO: handle an empty selection of what_types
+        if len(self.what_types) == 0:
+            raise ReportError(_('Last Change Report'),
+                              _('You must select at least one type of record.'))
+
 
     def _getTimestamp(self, person_handle):
         timestamp = self.database.person_map.get(str(person_handle))[17]
@@ -77,22 +89,28 @@ class LastChangeReport(Report):
         timestamp = self.database.get_object_from_handle(media_handle).change
         return timestamp
 
+    def _getSourceTimestamp(self, source_handle):
+        timestamp = self.database.get_source_from_handle(source_handle).change
+        return timestamp
+
     def write_report(self):
-        self.doc.start_paragraph("LCR-Title")
-        self.doc.write_text(_("Last Change Report"))
-        self.doc.end_paragraph()
+         self.doc.start_paragraph("LCR-Title")
+         self.doc.write_text(_("Last Change Report"))
+         self.doc.end_paragraph()
 
-        if 'People' in self.what_types:
-            self.write_person()
-        if 'Families' in self.what_types:
-            self.write_family()
-        if 'Events' in self.what_types:
-            self.write_event()
-        if 'Places' in self.what_types:
-            self.write_place()
-        if 'Media' in self.what_types:
-            self.write_media()
-
+         if _('People') in self.what_types:
+             self.write_person()
+         if _('Families') in self.what_types:
+             self.write_family()
+         if _('Events') in self.what_types:
+             self.write_event()
+         if _('Places') in self.what_types:
+             self.write_place()
+         if _('Media') in self.what_types:
+             self.write_media()
+         if _('Sources') in self.what_types:
+             self.write_sources()
+    
     def _table_begin(self, title, table_name):
             self.doc.start_paragraph('LCR-SecHeader')
             self.doc.write_text(title)
@@ -237,6 +255,22 @@ class LastChangeReport(Report):
                                     self._convert_date(media.change))
             self._table_end()
 
+    def write_sources(self):
+        handles = sorted(self.database.get_source_handles(), key=self._getSourceTimestamp)
+
+        if len(handles) > 0:
+            self._table_begin(_("Sources Changed"), "SourcesTable")
+            self._table_header(_('ID'), _('Title'), _('Changed On'))
+
+            for handle in reversed(handles[-10:]):
+                source_obj = self.database.get_source_from_handle(handle)
+                if source_obj is not None:
+                    self._table_row(source_obj.gramps_id,
+                                    source_obj.get_title(),
+                                    self._convert_date(source_obj.change))
+            self._table_end()
+            
+
 class LastChangeOptions(MenuReportOptions):
     def __init__(self, name, database):
         """Initialize the parent class"""
@@ -247,7 +281,7 @@ class LastChangeOptions(MenuReportOptions):
         Add options to the menu for this report.
         """
         category_name = _("Report Options")
-        what_types = BooleanListOption(_('Select From:'))
+        what_types = BooleanListOption(_('Select From'))
         what_types.add_button(_('People'), True)
         what_types.add_button(_('Families'), False)
         what_types.add_button(_('Places'), False)
