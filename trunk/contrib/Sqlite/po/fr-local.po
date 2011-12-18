@@ -1,41 +1,72 @@
-# French translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:31+0100\n"
-"PO-Revision-Date: 2009-11-23 20:58+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <traduc@traduc.org>\n"
+"POT-Creation-Date: 2011-12-17 18:25+0100\n"
+"PO-Revision-Date: 2011-12-17 19:27+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ImportSql/ImportSql.gpr.py:3
-msgid "SQLite Import"
-msgstr "Importation SQLite"
+#: Sqlite/ExportSql.py:1152
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Exportation terminée : %d seconde"
+msgstr[1] "Exportation terminée : %d secondes"
 
-#: ImportSql/ImportSql.gpr.py:4
-msgid "SQLite is a common local database format"
-msgstr "SQLite est un format courant de base de données locale"
-
-#: ImportSql/ImportSql.py:126
+#: Sqlite/ImportSql.py:135
 #, python-format
 msgid "%s could not be opened\n"
-msgstr "GRAMPS n'a pas pu ouvrir %s\n"
+msgstr "Gramps n'a pas pu ouvrir %s\n"
 
-#: ImportSql/ImportSql.py:824
+#: Sqlite/ImportSql.py:558
+msgid "CSV import"
+msgstr "Importation de CSV"
+
+# ngettext
+#: Sqlite/ImportSql.py:878
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "Importation terminée : %d seconde"
 msgstr[1] "Importation terminée : %d secondes"
 
-#: ImportSql/ImportSql.py:825
-msgid "SQL import"
-msgstr "Importation SQL"
+#: Sqlite/Sqlite.gpr.py:3
+msgid "SQLite Import"
+msgstr "Importation SQLite"
+
+#: Sqlite/Sqlite.gpr.py:4
+#: Sqlite/Sqlite.gpr.py:16
+msgid "SQLite is a common local database format"
+msgstr "SQLite est un format courant de base de données locale"
+
+#: Sqlite/Sqlite.gpr.py:15
+msgid "SQLite Export"
+msgstr "Exportation SQLite"
 

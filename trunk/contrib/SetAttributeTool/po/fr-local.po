@@ -1,24 +1,42 @@
-# French translations for gramps package.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 32\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-03 14:49+0100\n"
-"PO-Revision-Date: 2010-03-03 14:58+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <traduc@traduc.org>\n"
+"POT-Creation-Date: 2011-12-17 18:25+0100\n"
+"PO-Revision-Date: 2011-12-17 19:26+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:119
-#: SetAttributeTool/SetAttributeTool.py:179
-#: SetAttributeTool/SetAttributeTool.py:196
+#: SetAttributeTool/SetAttributeTool.py:118
+#: SetAttributeTool/SetAttributeTool.py:124
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Set Attribute"
 msgstr "Définir un attribut"
 
@@ -26,56 +44,56 @@ msgstr "Définir un attribut"
 msgid "Set an attribute to a given value."
 msgstr "Définir une valeur à un attribut."
 
-#: SetAttributeTool/SetAttributeTool.py:70
-#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:69
+#: SetAttributeTool/SetAttributeTool.py:121
 msgid "Options"
-msgstr ""
+msgstr "Options"
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Person Filter"
+msgstr "Filtre individu"
 
 #: SetAttributeTool/SetAttributeTool.py:72
-msgid "Person Filter"
-msgstr "Filtre de l'individu"
-
-#: SetAttributeTool/SetAttributeTool.py:73
 msgid "Select filter to restrict people"
-msgstr "Sélectionnez un filtre pour restreindre les individus"
+msgstr "Sélectionne un filtre pour restreindre les individus"
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "Filter Person"
+msgstr "Filtre sur l'individu"
 
 #: SetAttributeTool/SetAttributeTool.py:77
-msgid "Filter Person"
-msgstr "Filtre de l'individu"
-
-#: SetAttributeTool/SetAttributeTool.py:78
 msgid "The center person for the filter"
-msgstr "L'individu central pour le filtre"
+msgstr "L'individu central pour ce filtre"
 
-#: SetAttributeTool/SetAttributeTool.py:82
+#: SetAttributeTool/SetAttributeTool.py:81
 msgid "Attribute"
 msgstr "Attribut"
 
-#: SetAttributeTool/SetAttributeTool.py:83
+#: SetAttributeTool/SetAttributeTool.py:82
 msgid "Value"
 msgstr "Valeur"
 
-#: SetAttributeTool/SetAttributeTool.py:85
+#: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute type to add or edit"
 msgstr "Type d'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:86
+#: SetAttributeTool/SetAttributeTool.py:85
 msgid "Attribute value to add or edit"
 msgstr "Valeur de l'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:127
+#: SetAttributeTool/SetAttributeTool.py:125
 msgid "Results"
 msgstr "Résultats"
 
-#: SetAttributeTool/SetAttributeTool.py:128
+#: SetAttributeTool/SetAttributeTool.py:126
 msgid "Processing...\n"
-msgstr "Traitement...\n"
+msgstr "Traitement en cours...\n"
 
-#: SetAttributeTool/SetAttributeTool.py:143
+#: SetAttributeTool/SetAttributeTool.py:141
 msgid "Setting attributes..."
 msgstr "Définition des attributs..."
 
-#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.py:148
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -84,7 +102,7 @@ msgstr ""
 "Définition des attributs '%s' à '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:182
+#: SetAttributeTool/SetAttributeTool.py:179
 #, python-format
 msgid ""
 "\n"
@@ -93,15 +111,15 @@ msgstr ""
 "\n"
 "A défini %d attributs '%s' à '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:181
 msgid "Done!\n"
-msgstr "Fait !\n"
+msgstr "Terminé !\n"
+
+#: SetAttributeTool/SetAttributeTool.py:194
+msgid "Beta"
+msgstr "Bêta "
 
 #: SetAttributeTool/SetAttributeTool.py:197
-msgid "Beta"
-msgstr "Bêta"
-
-#: SetAttributeTool/SetAttributeTool.py:200
 msgid "Sets an attribute of a person to a given value."
 msgstr "Définit un attribut à une personne avec une valeur donnée."
 

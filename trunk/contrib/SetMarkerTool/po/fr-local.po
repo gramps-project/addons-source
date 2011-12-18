@@ -1,27 +1,42 @@
 # French translation for gramps
-# Copyright (C) 2001-2010 Free Software Foundation, Inc.
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
-# French translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 11:09+0100\n"
-"PO-Revision-Date: 2010-12-02 16:12+0100\n"
+"POT-Creation-Date: 2011-12-17 18:25+0100\n"
+"PO-Revision-Date: 2011-12-17 19:26+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team: French <traduc@traduc.org>\n"
-"Language: fr\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: SetMarkerTool/SetMarkerTool.gpr.py:25 SetMarkerTool/SetMarkerTool.py:113
-#: SetMarkerTool/SetMarkerTool.py:155 SetMarkerTool/SetMarkerTool.py:171
+#: SetMarkerTool/SetMarkerTool.gpr.py:25
+#: SetMarkerTool/SetMarkerTool.py:113
+#: SetMarkerTool/SetMarkerTool.py:155
+#: SetMarkerTool/SetMarkerTool.py:171
 msgid "Set Marker"
 msgstr "Définir un marqueur"
 
@@ -29,13 +44,14 @@ msgstr "Définir un marqueur"
 msgid "Set Marker to a given value."
 msgstr "Définir le marqueur avec une certaine valeur."
 
-#: SetMarkerTool/SetMarkerTool.py:68 SetMarkerTool/SetMarkerTool.py:116
+#: SetMarkerTool/SetMarkerTool.py:68
+#: SetMarkerTool/SetMarkerTool.py:116
 msgid "Options"
 msgstr "Options"
 
 #: SetMarkerTool/SetMarkerTool.py:70
 msgid "Person Filter"
-msgstr "Filtre sur la personne"
+msgstr "Filtre individu"
 
 #: SetMarkerTool/SetMarkerTool.py:71
 msgid "Select filter to restrict people"
@@ -94,8 +110,9 @@ msgstr "Terminé !\n"
 
 #: SetMarkerTool/SetMarkerTool.py:172
 msgid "Beta"
-msgstr "Bêta "
+msgstr "Beta"
 
 #: SetMarkerTool/SetMarkerTool.py:175
 msgid "Sets an marker of a person to a given value."
 msgstr "Définit un marqueur pour une personne avec une valeur donnée."
+

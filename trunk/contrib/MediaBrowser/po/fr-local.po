@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:21+0100\n"
-"PO-Revision-Date: 2011-12-17 19:16+0100\n"
+"POT-Creation-Date: 2011-12-17 18:23+0100\n"
+"PO-Revision-Date: 2011-12-17 19:22+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,7 +33,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: libwebconnect/libwebconnect.gpr.py:10
-msgid "Library for web site collections"
-msgstr "Bibliothèque pour les collections de liens internet"
+#: MediaBrowser/MediaBrowser.gpr.py:30
+msgid "Media Browser"
+msgstr "Navigateur Media"
+
+#: MediaBrowser/MediaBrowser.gpr.py:31
+msgid "Gramplet showing details of a person"
+msgstr "Gramplet affichant les détails de l'individu"
+
+#: MediaBrowser/MediaBrowser.gpr.py:38
+msgid "Browser"
+msgstr "Navigateur"
+
+#: MediaBrowser/MediaBrowser.py:49
+msgid "Object"
+msgstr "Objet"
 
