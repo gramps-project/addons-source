@@ -1,37 +1,55 @@
-# French translations for gramps package.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 32\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-03 10:38+0100\n"
-"PO-Revision-Date: 2010-02-03 10:44+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <traduc@traduc.org>\n"
+"POT-Creation-Date: 2011-12-17 18:19+0100\n"
+"PO-Revision-Date: 2011-12-17 19:10+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
 msgid "GoogleEarth"
-msgstr ""
+msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Créé un fichier de données pouvant être ouvert dans GoogleEarth"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:82
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
 msgid "No place description"
 msgstr "Aucune description du lieu"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:115
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:122
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth n'est pas installé !"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:116
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:123
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -40,30 +58,30 @@ msgstr ""
 "Création du fichier kmz/kml \"%s\"\n"
 "dans le répertoire de l'utilisateur \"%s\" ?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:139
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:147
 msgid "Yes"
 msgstr "Oui"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:120
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:140
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:148
 msgid "No"
 msgstr "Non"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:133
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Échec à l'écriture de %s"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:134
 msgid "Directory does not exist"
 msgstr "Le répertoire n'existe pas"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:135
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:143
 msgid "GoogleEarth file exists!"
 msgstr "Le fichier GoogleEarth existe !"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:136
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"

@@ -1,19 +1,37 @@
-# French translations for gramps package.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-15 14:13+0200\n"
-"PO-Revision-Date: 2010-08-15 16:01+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <traduc@traduc.org>\n"
+"POT-Creation-Date: 2011-12-17 18:19+0100\n"
+"PO-Revision-Date: 2011-12-17 19:09+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: FamilyTree/FamilyTree.gpr.py:3
 msgid "Family Tree"
@@ -107,7 +125,7 @@ msgstr "à %(place)s"
 #: FamilyTree/FamilyTree.py:897
 #, python-format
 msgid "(%(description)s)"
-msgstr ""
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:975
 msgid "Tree Options"
@@ -193,21 +211,25 @@ msgstr "Couleurs aléatoires ou du style arc-en-ciel."
 msgid "Content"
 msgstr "Contenu"
 
+# call name = prénom dans le context !
 #: FamilyTree/FamilyTree.py:1011
 msgid "Use call name"
-msgstr "Utiliser le nom usuel"
+msgstr "Utiliser le prénom usuel"
 
+# call name = prénom dans le context !
 #: FamilyTree/FamilyTree.py:1013
 msgid "Don't use call name"
-msgstr "Ne pas utiliser le nom usuel"
+msgstr "Ne pas utiliser le prénom usuel"
 
+# call name = prénom dans le context !
 #: FamilyTree/FamilyTree.py:1014
 msgid "Replace first name with call name"
-msgstr "Remplacer le prénom par le nom usuel"
+msgstr "Remplacer le prénom par le prénom usuel"
 
+# call name = prénom dans le context !
 #: FamilyTree/FamilyTree.py:1015
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Souligner ou ajouter le nom usuel dans le prénom"
+msgstr "Souligner ou ajouter le prénom usuel dans le prénom"
 
 #: FamilyTree/FamilyTree.py:1018
 msgid "Include Occupation"
@@ -255,7 +277,7 @@ msgstr "Rechercher l'inhumation ou crémation si le décès est absent"
 
 #: FamilyTree/FamilyTree.py:1048
 msgid "Print fields for missing information"
-msgstr "Champs d'impression pour l'information manquante"
+msgstr "Champs d'impression pour les informations manquantes"
 
 #: FamilyTree/FamilyTree.py:1049
 msgid "Whether to include fields for missing information."
@@ -271,15 +293,15 @@ msgstr "Options du texte"
 
 #: FamilyTree/FamilyTree.py:1057
 msgid "Title text"
-msgstr "Texte du titre"
+msgstr "Titre"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Footer text"
-msgstr "Texte du pied de page"
+msgstr "Pied de texte"
 
 #: FamilyTree/FamilyTree.py:1075
 msgid "The style used for the title."
-msgstr "Le style utilisé pour le titre."
+msgstr "Le style utilisé pour l'en-tête."
 
 #: FamilyTree/FamilyTree.py:1083
 msgid "The style used for names."

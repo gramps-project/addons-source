@@ -1,14 +1,31 @@
-# French translations for PACKAGE package.
-# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-14 18:09+0100\n"
-"PO-Revision-Date: 2011-02-14 18:12+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-17 18:24+0100\n"
+"PO-Revision-Date: 2011-12-17 19:25+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -44,15 +61,15 @@ msgstr "et"
 msgid "are partners and"
 msgstr "sont conjoints et"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:236
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:239
 msgid "Common ancestor"
 msgstr "Ascendant commun"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:247
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:250
 msgid "No relatives in a relation found"
 msgstr "Aucune parenté trouvée dans la relation"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:248
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:251
 msgid "END"
 msgstr "FIN"
 

@@ -1,13 +1,30 @@
-# French translations for PACKAGE package.
+# French translation for gramps
 # Copyright (C) 2001-2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-02 17:08+0100\n"
-"PO-Revision-Date: 2011-01-03 22:06+0100\n"
+"POT-Creation-Date: 2011-12-17 18:15+0100\n"
+"PO-Revision-Date: 2011-12-17 18:57+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,74 +50,75 @@ msgstr "Gramplet Recensement"
 msgid "Gramplet interface for census data"
 msgstr "Gramplet servant d'interface aux données de recensement"
 
-#: Census/CensusGramplet.py:79
+#: Census/CensusGramplet.py:81
 msgid "Census details for: "
 msgstr "Détails du recensement pour : "
 
-#: Census/CensusGramplet.py:90
-#: Census/CensusReport.py:296
+#: Census/CensusGramplet.py:92
+#: Census/CensusReport.py:295
 msgid "Source"
 msgstr "Source"
 
-#: Census/CensusGramplet.py:93
+#: Census/CensusGramplet.py:95
 #: Census/census.xml.h:454
 msgid "Date"
 msgstr "Date"
 
-#: Census/CensusGramplet.py:96
+#: Census/CensusGramplet.py:98
 #: Census/census.xml.h:736
 msgid "Place"
 msgstr "Lieu"
 
-#: Census/CensusGramplet.py:157
+#: Census/CensusGramplet.py:159
 msgid "No active person set."
 msgstr "Aucun individu actif défini."
 
-#: Census/CensusGramplet.py:262
+#: Census/CensusGramplet.py:264
 #, python-format
 msgid "Census: %s"
 msgstr "Recensement : %s"
 
-#: Census/CensusGramplet.py:264
+#: Census/CensusGramplet.py:266
 msgid "New Census"
 msgstr "Nouveau Recensement"
 
-#: Census/CensusGramplet.py:271
+#: Census/CensusGramplet.py:273
 msgid "Edit Census"
 msgstr "Éditer le recensement"
 
-#: Census/CensusGramplet.py:286
+#: Census/CensusGramplet.py:289
 msgid "Source:"
 msgstr "Source :"
 
-#: Census/CensusGramplet.py:308
-#: Census/CensusReport.py:162
+#: Census/CensusGramplet.py:311
+#: Census/CensusReport.py:161
 msgid "Date:"
 msgstr "Date :"
 
-#: Census/CensusGramplet.py:317
+#: Census/CensusGramplet.py:320
 msgid "Reference:"
 msgstr "Référence :"
 
-#: Census/CensusGramplet.py:325
+#: Census/CensusGramplet.py:328
 msgid "Place:"
 msgstr "Lieu :"
 
-#: Census/CensusGramplet.py:512
-#: Census/CensusGramplet.py:543
+#: Census/CensusGramplet.py:516
+#: Census/CensusGramplet.py:547
 msgid "Cannot add a person to this census."
 msgstr "Impossible d'ajouter un nouvel individu à ce recensement."
 
-#: Census/CensusGramplet.py:513
-#: Census/CensusGramplet.py:544
+#: Census/CensusGramplet.py:517
+#: Census/CensusGramplet.py:548
 msgid "First select a census from the drop-down list."
 msgstr "Sélectionnez d'abord un recensement de la liste déroulante"
 
-#: Census/CensusGramplet.py:559
+#: Census/CensusGramplet.py:563
 msgid "Select Person"
 msgstr "Sélectionner l'individu"
 
 #: Census/CensusReport.gpr.py:31
+#: Census/CensusReport.py:96
 msgid "Census Report"
 msgstr "Rapport de recensement"
 
@@ -108,86 +126,86 @@ msgstr "Rapport de recensement"
 msgid "Report of census events for a person."
 msgstr "Les événements recensement de l'individu."
 
-#: Census/CensusReport.py:98
+#: Census/CensusReport.py:97
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "L'individu %s n'est pas présent dans la base de données"
 
-#: Census/CensusReport.py:110
+#: Census/CensusReport.py:109
 #, python-format
 msgid "Census Report for %s"
 msgstr "Rapport de recensement pour %s"
 
-#: Census/CensusReport.py:165
+#: Census/CensusReport.py:164
 msgid "Source Reference:"
 msgstr "Référence de source :"
 
-#: Census/CensusReport.py:169
-#: Census/CensusReport.py:171
+#: Census/CensusReport.py:168
+#: Census/CensusReport.py:170
 msgid "Address:"
 msgstr "Adresse :"
 
-#: Census/CensusReport.py:277
+#: Census/CensusReport.py:276
 msgid "Report Options"
 msgstr "Options du rapport"
 
-#: Census/CensusReport.py:279
+#: Census/CensusReport.py:278
 msgid "Census Selection"
 msgstr "Sélection du recensement"
 
-#: Census/CensusReport.py:280
+#: Census/CensusReport.py:279
 msgid "By Person"
 msgstr "Par Individu"
 
-#: Census/CensusReport.py:281
+#: Census/CensusReport.py:280
 msgid "By Source"
 msgstr "Par Source"
 
-#: Census/CensusReport.py:282
+#: Census/CensusReport.py:281
 msgid "By Person and Source"
 msgstr "Par Individu et Source"
 
-#: Census/CensusReport.py:283
+#: Census/CensusReport.py:282
 msgid "All Census records"
 msgstr "Toutes les entrées du recensement"
 
-#: Census/CensusReport.py:284
+#: Census/CensusReport.py:283
 msgid "The type of report"
 msgstr "Le type de rapport"
 
-#: Census/CensusReport.py:287
+#: Census/CensusReport.py:286
 msgid "Person"
 msgstr "Individu"
 
-#: Census/CensusReport.py:288
+#: Census/CensusReport.py:287
 msgid "The selected person for the report."
 msgstr "L'individu sélectionnée pour ce rapport."
 
-#: Census/CensusReport.py:301
+#: Census/CensusReport.py:300
 msgid "Page break after each census."
 msgstr "Ajouter une ligne après chaque nom."
 
-#: Census/CensusReport.py:302
+#: Census/CensusReport.py:301
 msgid "Start a new page after each census."
 msgstr "Démarrer ou non une nouvelle page après chaque recensement."
 
-#: Census/CensusReport.py:320
+#: Census/CensusReport.py:319
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
-#: Census/CensusReport.py:333
+#: Census/CensusReport.py:332
 msgid "The style used for headings."
 msgstr "Le style utilisé pour les en-têtes."
 
-#: Census/CensusReport.py:343
+#: Census/CensusReport.py:342
 msgid "The style used for names."
 msgstr "Le style utilisé pour les noms."
 
-#: Census/CensusReport.py:353
+#: Census/CensusReport.py:352
 msgid "The style used for column headings."
 msgstr "Le style utilisé pour les en-têtes de colonne."
 
-#: Census/CensusReport.py:364
+#: Census/CensusReport.py:363
 msgid "The default text style."
 msgstr "Le texte le style par défaut."
 
@@ -666,7 +684,7 @@ msgstr "2. Famille"
 #: Census/census.xml.h:116
 #, fuzzy
 msgid "2. Family or household"
-msgstr "Ville ou arrondissement"
+msgstr "Couleur de la famille"
 
 #: Census/census.xml.h:117
 #, fuzzy
@@ -889,9 +907,8 @@ msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
 
 #: Census/census.xml.h:169
-#, fuzzy
 msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr "26. Personnes de plus de 20 ans, sachant lire et écrire: homme"
+msgstr "26. Personnes de plus de 20 ans, sachant lire et écrire : homme"
 
 #: Census/census.xml.h:170
 #, fuzzy
@@ -996,14 +1013,12 @@ msgid "29. Carrots - Bsh."
 msgstr "29. Sait lire"
 
 #: Census/census.xml.h:194
-#, fuzzy
 msgid "29. Deaths During the Year 1851: Female"
-msgstr "28. Décès durant l'année 1851: femme"
+msgstr "29. Décès durant l'année 1851 : femme"
 
 #: Census/census.xml.h:195
-#, fuzzy
 msgid "29. Deaths in 1860: Male"
-msgstr "27. Naissances en 1860: homme"
+msgstr "29. Décès en 1860 : homme"
 
 #: Census/census.xml.h:196
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
@@ -1072,9 +1087,8 @@ msgid "30. Can write"
 msgstr "30. Sait écrire"
 
 #: Census/census.xml.h:212
-#, fuzzy
 msgid "30. Deaths in 1860: Female"
-msgstr "28. Naissances en 1860: femme"
+msgstr "30. Décèss en 1860 : femme"
 
 #: Census/census.xml.h:213
 msgid "30. Insurance: Upon life"
@@ -1090,9 +1104,8 @@ msgid "30. Sunday School: Number of officers and teachers"
 msgstr ""
 
 #: Census/census.xml.h:216
-#, fuzzy
 msgid "31. Age and cause of death"
-msgstr "30. Âge et cause de décès"
+msgstr "31. Âge et cause de décès"
 
 #: Census/census.xml.h:217
 msgid "31. Beans Bush"
@@ -1208,9 +1221,8 @@ msgid "35. Houses: Vacant"
 msgstr "2. Maisons en construction"
 
 #: Census/census.xml.h:244
-#, fuzzy
 msgid "35. Tobacco Lbs."
-msgstr "51. Beurre - Lbs."
+msgstr "35. Tabac - Lbs."
 
 #: Census/census.xml.h:245
 msgid "36. Houses: Being built"
@@ -1235,7 +1247,6 @@ msgstr "51. Beurre - Lbs."
 
 # empty
 #: Census/census.xml.h:250
-#, fuzzy
 msgid "37."
 msgstr ""
 
@@ -1249,9 +1260,8 @@ msgid "37. Date when enumerated"
 msgstr "Utiliser le lieu en l'absence de date"
 
 #: Census/census.xml.h:253
-#, fuzzy
 msgid "37. Public Buildings"
-msgstr "Enregistrement public"
+msgstr "37. Bâtiments publics"
 
 # empty
 #: Census/census.xml.h:254
@@ -1269,7 +1279,6 @@ msgstr "Lieux dans un rectangle :"
 
 # empty
 #: Census/census.xml.h:257
-#, fuzzy
 msgid "39."
 msgstr ""
 
@@ -1620,7 +1629,7 @@ msgstr "9. Nombre de familles dans la maison ou institution"
 #: Census/census.xml.h:342
 #, fuzzy
 msgid "9. Post office address"
-msgstr "Adresse (%(date)s): %(location)s"
+msgstr "Pays de l'adresse"
 
 #: Census/census.xml.h:343
 #, fuzzy
@@ -1716,7 +1725,7 @@ msgstr "Âge"
 #: Census/census.xml.h:365
 #, fuzzy
 msgid "Age at first marriage"
-msgstr "6. Âge au prochain anniversaire"
+msgstr "Âge au mariage"
 
 #: Census/census.xml.h:366
 msgid "Ages"
@@ -1729,7 +1738,7 @@ msgstr "Étrangers"
 #: Census/census.xml.h:368
 #, fuzzy
 msgid "All other free persons"
-msgstr "individus libres"
+msgstr "Couleur des individus féminins:"
 
 #: Census/census.xml.h:369
 msgid "Arrived since"
@@ -1922,7 +1931,7 @@ msgstr "SaitLire"
 #: Census/census.xml.h:415
 #, fuzzy
 msgid "CantReadFemale"
-msgstr "Femme"
+msgstr "Féminin"
 
 #: Census/census.xml.h:416
 msgid "CantReadMale"
@@ -1998,7 +2007,6 @@ msgstr ""
 msgid "CloverBush"
 msgstr ""
 
-# trunk
 #: Census/census.xml.h:434
 msgid "Color"
 msgstr "Couleur"
@@ -2048,6 +2056,7 @@ msgstr "Commentaires"
 msgid "Communicants"
 msgstr "Commentaire"
 
+# Substantif (GNOME fr)
 #: Census/census.xml.h:446
 #, fuzzy
 msgid "Comprising"
@@ -2056,7 +2065,7 @@ msgstr "Comparaison d'événements"
 #: Census/census.xml.h:447
 #, fuzzy
 msgid "Concession"
-msgstr "Traitement..."
+msgstr "Traitement en cours..."
 
 #: Census/census.xml.h:448
 msgid "Condition"
@@ -2122,7 +2131,7 @@ msgstr ""
 #: Census/census.xml.h:463
 #, fuzzy
 msgid "DeafDumbFemale"
-msgstr "Femme"
+msgstr "Féminin"
 
 #: Census/census.xml.h:464
 msgid "DeafDumbMale"
@@ -2269,7 +2278,7 @@ msgstr "Famille"
 #: Census/census.xml.h:498
 #, fuzzy
 msgid "Family or household"
-msgstr "Ville ou arrondissement"
+msgstr "Couleur de la famille"
 
 #: Census/census.xml.h:499
 msgid "Farm or house"
@@ -2282,12 +2291,12 @@ msgstr "Ferme ?"
 #: Census/census.xml.h:501
 #, fuzzy
 msgid "Father of foreign birth"
-msgstr "Lieu de naissance du père"
+msgstr "Décès avant la naissance"
 
 #: Census/census.xml.h:502
 #, fuzzy
 msgid "Father's mother tongue"
-msgstr "%(father)s et %(mother)s"
+msgstr "Âge du mari / compagnon"
 
 #: Census/census.xml.h:503
 msgid "Fifth Census of Canada, 1911"
@@ -2808,7 +2817,7 @@ msgstr ""
 #: Census/census.xml.h:629
 #, fuzzy
 msgid "LunaticFemale"
-msgstr "Femme"
+msgstr "Féminin"
 
 #: Census/census.xml.h:630
 msgid "LunaticMale"
@@ -2960,8 +2969,9 @@ msgid "Municipal Ward"
 msgstr "Municipalité"
 
 #: Census/census.xml.h:666
+#, fuzzy
 msgid "Municipality"
-msgstr ""
+msgstr "Lieu-dit"
 
 #: Census/census.xml.h:667
 msgid "Name"
@@ -3000,7 +3010,7 @@ msgstr "Naturalisation"
 #: Census/census.xml.h:675
 #, fuzzy
 msgid "Naturalization papers taken out"
-msgstr "Naturalisation"
+msgstr "natu."
 
 #: Census/census.xml.h:676
 msgid "Naturalized"
@@ -3059,7 +3069,7 @@ msgstr ""
 #: Census/census.xml.h:689
 #, fuzzy
 msgid "NotMemberMale"
-msgstr "Homme"
+msgstr "Note Novembre"
 
 #: Census/census.xml.h:690
 #, fuzzy
@@ -3069,12 +3079,12 @@ msgstr "Employé"
 #: Census/census.xml.h:691
 #, fuzzy
 msgid "Number of children living"
-msgstr "Inclure la naissance des enfants"
+msgstr "Nombre d'enfants"
 
 #: Census/census.xml.h:692
 #, fuzzy
 msgid "Number of farm schedule"
-msgstr "Ferme ou maison"
+msgstr "Nombre de familles"
 
 #: Census/census.xml.h:693
 msgid "Number of months unemployed during the census year"
@@ -3104,7 +3114,6 @@ msgstr "Profession"
 msgid "OfTheSaid"
 msgstr ""
 
-# trunk
 #: Census/census.xml.h:700
 msgid "Origin"
 msgstr "Origine"
@@ -3175,9 +3184,8 @@ msgid "Parish"
 msgstr "Paroisse"
 
 #: Census/census.xml.h:717
-#, fuzzy
 msgid "Parish Ward"
-msgstr "Municipalité"
+msgstr "Paroisse"
 
 #: Census/census.xml.h:718
 msgid "Parish or Township"
@@ -3194,10 +3202,9 @@ msgstr "Arrondissement ou section"
 #: Census/census.xml.h:721
 #, fuzzy
 msgid "Parliamentary Burgh"
-msgstr "Arrondissement"
+msgstr "Source principale"
 
 #: Census/census.xml.h:722
-#, fuzzy
 msgid "Parliamentary Division"
 msgstr "Arrondissement"
 
@@ -3238,19 +3245,16 @@ msgid "Persons employed in Navigation of the ocean"
 msgstr "Personnes employés dans la navigation en mer"
 
 #: Census/census.xml.h:732
-#, fuzzy
 msgid "Persons engaged in Agriculture"
 msgstr "Personnes employés dans l'agriculture"
 
 #: Census/census.xml.h:733
-#, fuzzy
 msgid "Persons engaged in Commerce"
 msgstr "Personnes employés dans le commerce"
 
 #: Census/census.xml.h:734
-#, fuzzy
 msgid "Persons engaged in Manufactures"
-msgstr "Liste des individus dans la base de données:\n"
+msgstr ""
 
 #: Census/census.xml.h:735
 msgid "Pigs"
@@ -3450,7 +3454,7 @@ msgstr ""
 #: Census/census.xml.h:783
 #, fuzzy
 msgid "ScholarFemale"
-msgstr "femme"
+msgstr "Féminin"
 
 #: Census/census.xml.h:784
 msgid "ScholarMale"
@@ -3503,10 +3507,10 @@ msgstr "ProprePatron"
 msgid "Sex"
 msgstr "Sexe"
 
-# typo
 #: Census/census.xml.h:796
+#, fuzzy
 msgid "SexFemail"
-msgstr ""
+msgstr "Féminin"
 
 #: Census/census.xml.h:797
 msgid "SexFemale"
@@ -3776,7 +3780,7 @@ msgstr "Profession"
 #: Census/census.xml.h:862
 #, fuzzy
 msgid "WeeksOther"
-msgstr "SemainesAutre"
+msgstr "Autre"
 
 #: Census/census.xml.h:863
 msgid "What war"
@@ -3851,8 +3855,9 @@ msgid "Widows"
 msgstr "Veuves"
 
 #: Census/census.xml.h:881
+#, fuzzy
 msgid "WindowRooms"
-msgstr ""
+msgstr "Fenê_tres"
 
 #: Census/census.xml.h:882
 msgid "WoolLbs."
@@ -3867,8 +3872,9 @@ msgid "Working at Home"
 msgstr "Travaillant à la maison"
 
 #: Census/census.xml.h:885
+#, fuzzy
 msgid "WorshipPlaces"
-msgstr ""
+msgstr "GéoLieux"
 
 #: Census/census.xml.h:886
 msgid "Write"
@@ -3895,6 +3901,7 @@ msgid "Years of present marriage"
 msgstr "Années de mariage"
 
 #: Census/census.xml.h:892
+#, fuzzy
 msgid "of the said"
-msgstr ""
+msgstr "Astuce du jour"
 

@@ -1,14 +1,33 @@
 # French translation for gramps
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: addon\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:42+0100\n"
-"PO-Revision-Date: 2010-03-08 16:45+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-17 18:17+0100\n"
+"PO-Revision-Date: 2011-12-17 19:02+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +46,7 @@ msgstr "Django est un environnement internet fonctionnant avec une base de donn�
 msgid "Django options"
 msgstr "Options Django"
 
-#: Django/ExportDjango.py:187
+#: Django/ExportDjango.py:203
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
@@ -38,14 +57,14 @@ msgstr[1] "Exportation terminée : %d secondes"
 msgid "Django Import"
 msgstr "Import Django"
 
-#: Django/ImportDjango.py:185
+# ngettext
+#: Django/ImportDjango.py:195
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "Importation terminée : %d seconde"
 msgstr[1] "Importation terminée : %d secondes"
 
-#: Django/ImportDjango.py:186
-msgid "Django import"
-msgstr "Import Django"
+#~ msgid "Django import"
+#~ msgstr "Import Django"
 

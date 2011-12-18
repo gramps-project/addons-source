@@ -1,14 +1,33 @@
 # French translation for gramps
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: addon\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:59+0100\n"
-"PO-Revision-Date: 2010-03-07 18:14+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-17 18:21+0100\n"
+"PO-Revision-Date: 2011-12-17 19:16+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,3 +36,12 @@ msgstr ""
 #: libaccess/libaccess.gpr.py:32
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr "Fournit une bibliothèque pour un accès générique à la base de données et gen.lib."
+
+#: libaccess/libaccess.py:218
+msgid "libaccess edit name"
+msgstr "Édition du nom (libaccess)"
+
+#: libaccess/libaccess.py:260
+msgid "libaccess edit person"
+msgstr "Édition de l'individu (libaccess)"
+
