@@ -62,12 +62,20 @@ except:
 #-------------------------------------------------------------------------
 #
 # Try to detect the presence of lxml (only for using XPATH/XSLT)
-# else import elementtree.ElementTree as etree (default python)
+# 
+# elementtree.ElementTree from default python does not support XPATH/XSLT
 #
 #-------------------------------------------------------------------------
 try:
     from lxml import etree
     LXML_OK = True
+    # current code is working with:
+    # LXML_VERSION (2, 2, 6, 0))
+    # LIBXML_VERSION (2, 7, 7))
+    # LIBXSLT_VERSION (1, 1, 26))
+    LXML_VERSION = etree.LXML_VERSION
+    LIBXML_VERSION = etree.LIBXML_VERSION
+    LIBXSLT_VERSION = etree.LIBXSLT_VERSION
 except:
     LXML_OK = False
     ErrorDialog(_('Missing python lxml'), _('Please, try to install "python lxml" package.'))
@@ -136,6 +144,7 @@ class lxmlGramplet(Gramplet):
         
         button = gtk.Button(_("Run"))
         button.connect("clicked", self.run)
+        
         hbox.pack_start(self.entry, True)
         hbox.pack_end(self.button, False, False)
         vbox.pack_start(hbox, False)
@@ -222,55 +231,65 @@ class lxmlGramplet(Gramplet):
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
-        
+                
         if LXML_OK and use_gzip == 1:
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
                 ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
                 return
-            sys.stdout.write(_('From:\n "%s"\n to:\n "%s".\n') % (entry, filename))
+            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
         elif LXML_OK and use_gzip == 0:
             try:
                 os.system('cp %s %s' % (entry, filename))
             except:
                 ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
-            sys.stdout.write(_('From:\n "%s"\n to:\n "%s".\n') % (entry, filename))
+            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
         else:
             return
         
-        # DTD syntax
+        # DTD syntax via xmllint
                
         try:
             self.check_valid(filename)
         except:
-            ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%s" !') % entry)
+            ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%(file)s" !') % {'file': entry})
                        
-        # RNG validation
+        # RNG validation via xmllint
         
         rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
         
         try:
             os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
         except:
-            print(_('xmllint: skip RelaxNG validation for "%s"') % entry)
+            print(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
                 
         try:
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
+            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.4.0//EN" "http://gramps-project.org/xml/1.4.0/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
                 except:
-                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%s"') % filename)
+                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
                     return
-            else:
-                ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%s" via RelaxNG schema') % entry)
+            elif doctype != current:
+                ErrorDialog(_('Gramps version'), _('Wrong namespace'))
                 return
-        except:
-            ErrorDialog(_('File issue'), _('Cannot parse "%s" via etree') % entry)
+            else:
+                ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
+                return
+        except etree.XMLSyntaxError, e:
+            ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
+            log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
+            print('Error_log :', log)
+            debug = e.error_log.last_error
+            print('Domain :', debug.domain_name)
+            print('Type :', debug.type_name)
+            print('Filename :', debug.filename)
             return
             
         
@@ -406,16 +425,28 @@ class lxmlGramplet(Gramplet):
             
         # Some print statements !
         
+        print('### LIBS ###')
+        print('LXML_VERSION :', LXML_VERSION)
+        print('LIBXML_VERSION :', LIBXML_VERSION)
+        print('LIBXSLT_VERSION :', LIBXSLT_VERSION)
+        
+        print('### GRAMPS FILE ###')
         print(_('log'), log)
-        print(_('From %s to %s') % (first, last))
+        print(_('From %(first)s to %(last)s') % {'first': first, 'last': last})
         print(_('Surnames'), nb_surnames)
         print(_('Place titles'), nb_ptitles)
         print(_('Note objects'), nb_notes)
         print(_('Sources titles'), nb_sources)
-                
+        
+        print('### NEW FILES ###')
         self.WriteXML(log, first, last, surnames, places, sources)
+        
         self.PrintMedia(thumbs, mediapath)
+        images = os.path.join(const.USER_PLUGINS, 'lxml', _('Gallery.html'))
+        sys.stdout.write(_('2. Has generated a media index on "%(file)s".\n') % {'file': images})
+        
         self.WriteBackXML(filename, root, surnames, places, sources)
+        sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
         
         
     def check_valid(self, filename):
@@ -429,7 +460,7 @@ class lxmlGramplet(Gramplet):
         
         dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            os.system('xmllint --dtdvalid file://%s --noout --dropdtd %s' % (dtd, filename))
+            os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
         except:
             print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
@@ -444,9 +475,6 @@ class lxmlGramplet(Gramplet):
                 
         valid = etree.ElementTree(file=rng)          
         schema = etree.RelaxNG(valid)
-                
-        if schema.error_log.last_error:
-            sys.stdout.write(schema.error_log)
                 
         return(schema.validate(tree))
         
@@ -570,10 +598,9 @@ class lxmlGramplet(Gramplet):
     
         # This is the end !
         
-        sys.stdout.write(_('Generate:\n "%s".') % html)
-        print('\n#######################################################')
-        GrampsDisplay.url(html)
+        sys.stdout.write(_('1. Has generated "%s".\n') % html)
         print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
+        GrampsDisplay.url(html)
         
         #self.post(html)
         
@@ -596,8 +623,10 @@ class lxmlGramplet(Gramplet):
                                     file_encoding=None, errors='strict')
         
         # htmlinstance = page
+        # ignored by current code...
         
-        page, head, body = Html.page(title, encoding='utf-8', lang='fr')
+        lang = Utils.xml_lang()
+        page, head, body = Html.page(title, encoding='utf-8', lang=str(lang))
         head = body = ""
         
         self.text = []
