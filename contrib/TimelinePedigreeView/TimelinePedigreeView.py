@@ -864,8 +864,9 @@ class TimelinePedigreeView(NavigationView):
                 marriagedate = self.get_date_marriage(family)
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
-                    if mDate is not None:
-                        timespan = self.Tree_EstimateBirth(BranchData[0]).to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
+                    bDate = self.Tree_EstimateBirth(BranchData[0])
+                    if bDate is not None and mDate is not None:
+                        timespan = bDate.to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
                         xvline = xBoxConnection - Direction * 11 * timespan
                     
         # Move all relatives in this branch
