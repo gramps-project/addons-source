@@ -1,37 +1,40 @@
-# German translations for PACKAGE package.
-# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of de.po to Deutsch
+# German GRAMPS Translation
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-16 00:19+0100\n"
-"PO-Revision-Date: 2011-02-16 00:29+0100\n"
+"POT-Creation-Date: 2011-12-04 00:43+0100\n"
+"PO-Revision-Date: 2011-11-22 19:37+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
+#: BirthdaysGramplet//BirthdaysGramplet.gpr.py:4
+#: BirthdaysGramplet//BirthdaysGramplet.gpr.py:12
 msgid "Birthdays Gramplet"
 msgstr "Geburtstags Gramplet"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet//BirthdaysGramplet.gpr.py:5
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "ein Gramplet welches die Geburtstage von lebenden Personen zeigt"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:36
+#: BirthdaysGramplet//BirthdaysGramplet.py:36
 msgid "No Family Tree loaded."
 msgstr "Kein Stammbaum geladen."
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:49
+#: BirthdaysGramplet//BirthdaysGramplet.py:49
 msgid "Processing..."
-msgstr "Arbeite..."
-
+msgstr "Verarbeitung..."
