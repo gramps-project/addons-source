@@ -34,7 +34,7 @@ _ = get_addon_translator(__file__).ugettext
 
 WEBSITES = [
     ["Person", u"Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/genealogie/?action_type=search&lang=fr&search_nom=%(surname)s&search_prenom=%(given)s"],
-    ["Person", "Geneabank", _("Genealogical bank"), "http://searchgbk.geneanet.org/result.php3?name=%(surname)s&place=&start=&end=&source=gbk*"],
+    ["Person", "Geneabank", _("Genealogical bank"), "http://gbkcouples.geneabank.org/nom/?name=%(surname)s&place=&start=&end=&source=gbk*"],
     #["Person", u"Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
     ["Person", "Fichier Origine", _("OrigineFile (Quebec)"), "http://www.fichierorigine.com/recherche.php?nom=%(surname)s"],
     ["Person", "Geneanet", "Geneanet", u"http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
@@ -45,7 +45,7 @@ WEBSITES = [
     ["Person", "Gallica", "Gallica", '''http://gallica.bnf.fr/Search?ArianeWireIndex=index&p=1&lang=FR&q="%(surname)s,+%(given)s"'''],
     ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
     ["Person", "GeneaBook", "GeneaBook", "http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
-    ["Person", "Google Archives", _("Google Archives"), "http://news.google.fr/archivesearch?q=%(surname)s&btnGt=Afficher+la+chronologie"],
+    #["Person", "Google Archives", _("Google Archives"), "http://news.google.fr/archivesearch?q=%(surname)s&btnGt=Afficher+la+chronologie"],
     #["Person", "FR-Google", _("FR Google"), u'''http://www.google.fr/#hl=fr&q="%(surname)s,+%(given)s"'''],
     ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
     #["Place", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&place=%(city)s"],
