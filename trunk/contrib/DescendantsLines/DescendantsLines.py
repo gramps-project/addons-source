@@ -268,8 +268,6 @@ class DescendantsLinesReport(Report):
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
             
-            # only family where person is the child
-            
             for handle in person.get_family_handle_list():
                 fam = self.database.get_family_from_handle(handle)
                 if handle in fams:
