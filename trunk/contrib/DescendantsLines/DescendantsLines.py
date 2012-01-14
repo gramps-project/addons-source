@@ -270,7 +270,7 @@ class DescendantsLinesReport(Report):
             
             # only family where person is the child
             
-            for handle in person.get_parent_family_handle_list():
+            for handle in person.get_family_handle_list():
                 fam = self.database.get_family_from_handle(handle)
                 if handle in fams:
                     self.write_xml_family(fam)
