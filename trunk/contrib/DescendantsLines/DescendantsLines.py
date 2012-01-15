@@ -40,7 +40,8 @@ import os.path
 #-------------------------------------------------------------------------
 
 import DateHandler
-from gen.plug.menu import NumberOption, PersonOption, FilterOption, DestinationOption
+from gen.plug.menu import NumberOption, PersonOption, FilterOption, \
+                            DestinationOption, BooleanOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gen.plug.report import MenuReportOptions
@@ -73,6 +74,7 @@ SP_PAD = 10
 MIN_C_WIDTH = 40
 TEXT_PAD = 2
 TEXT_LINE_PAD = 2
+INC_PLACES = False
 
 ctx = None
 font_name = 'sans-serif'
@@ -156,6 +158,9 @@ class DescendantsLinesReport(Report):
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
 
         self.output_fn = self.options['output_fn']
+        self.inc_places = self.options['inc_places']
+        global INC_PLACES
+        INC_PLACES = self.inc_places
 
     def write_report(self):
         """
@@ -295,6 +300,11 @@ class DescendantsLinesReport(Report):
         event = find_event(self.database, event_ref.ref)
         etype = event.get_type().xml_str()
         date = event.get_date_object()
+        if self.inc_places:
+            placeh = event.get_place_handle()
+            place_title = None
+            if placeh:
+                place_title = self.database.get_place_from_handle(placeh).get_title()
         local_date = DateHandler.displayer.display(date)
         
         self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
@@ -304,6 +314,8 @@ class DescendantsLinesReport(Report):
             # DTD needs date object, use translated date for report 
             
             self.xml_file.write('<dateval val="%s"/>\n' % local_date)
+        if self.inc_places and place_title:
+            self.xml_file.write('<placetval val="%s"/>\n' % place_title)
         self.xml_file.write('</event>\n')
         
     def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
@@ -749,14 +761,36 @@ def load_gramps(fn, start):
         po = tpeople[p_id]
         etype = get_text(ev.getElementsByTagName('type'))
         dvs = ev.getElementsByTagName('dateval')
-        if len(dvs) == 0:
+        date = None
+        if len(dvs) > 0:
+            date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
+        else:
             print 'Undated event: ' + ev.getAttribute('handle')
+
+        if INC_PLACES:
+            ptv = ev.getElementsByTagName('placetval')
+            placet = None
+            if len(ptv) > 0:
+                placet = ev.getElementsByTagName('placetval')[0].getAttribute('val')
+            else:
+                print 'Unplacetd event: ' + ev.getAttribute('handle')
+
+            if len(dvs) == 0 and len(ptv) == 0:
+                continue
+
+        elif len(dvs) == 0:
             continue
-        date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
+
         if etype == 'Birth':
             po.birth = date
+            if INC_PLACES:
+                if placet:
+                    po.birth += ' - ' + placet
         elif etype == 'Death':
             po.death = date
+            if INC_PLACES:
+                if placet:
+                    po.death += ' - ' + placet
         else:
             print 'Unknown event type: ' + etype
 
@@ -897,6 +931,10 @@ class DescendantsLinesOptions(MenuReportOptions):
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
         output_fn.set_help(_("The destination file for the png-content."))
         menu.add_option(category_name, "output_fn", output_fn)
+
+        inc_places = BooleanOption(_('Include event places'), False)
+        inc_places.set_help(_('Whether to include event places in the output.'))
+        menu.add_option(category_name, 'inc_places', inc_places)
 
         category_name = _('Options S')
        
