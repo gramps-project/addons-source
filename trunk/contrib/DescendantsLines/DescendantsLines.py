@@ -29,6 +29,7 @@ import cairo
 import gtk
 import gzip
 import xml.dom.minidom
+import xml.sax.saxutils
 import getopt
 import sys
 import codecs
@@ -313,9 +314,11 @@ class DescendantsLinesReport(Report):
             
             # DTD needs date object, use translated date for report 
             
-            self.xml_file.write('<dateval val="%s"/>\n' % local_date)
+            self.xml_file.write('<dateval val=%s/>\n' % \
+                    xml.sax.saxutils.quoteattr(local_date))
         if self.inc_places and place_title:
-            self.xml_file.write('<placetval val="%s"/>\n' % place_title)
+            self.xml_file.write('<placetval val=%s/>\n' % \
+                    xml.sax.saxutils.quoteattr(place_title))
         self.xml_file.write('</event>\n')
         
     def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
