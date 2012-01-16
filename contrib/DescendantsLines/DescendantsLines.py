@@ -330,9 +330,11 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('<gender>%s</gender>\n' % gender)
         self.xml_file.write('<name>\n')
         if first:
-            self.xml_file.write('<first>%s</first>\n' % first)
+            self.xml_file.write('<first>%s</first>\n' % \
+                    xml.sax.saxutils.escape(first))
         if surname:
-            self.xml_file.write('<last>%s</last>\n' % surname)
+            self.xml_file.write('<last>%s</last>\n' % \
+                    xml.sax.saxutils.escape(surname))
         self.xml_file.write('</name>\n')
         for event_ref in event_list:
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
