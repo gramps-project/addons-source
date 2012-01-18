@@ -417,8 +417,7 @@ class DescendantsLinesReport(Report):
                         'date' : date,
                         'place' : place,
                         })
-            else:
-                return("%(event_abbrev)s %(date)s" % {
+            return("%(event_abbrev)s %(date)s" % {
                     'event_abbrev': event.type.get_abbreviation(),
                     'date' : date
                     })
