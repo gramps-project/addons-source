@@ -83,6 +83,8 @@ from gen.display.name import displayer as name_displayer
 from Filters import GenericFilterFactory, Rules
 import const
 import gen.lib
+from gen.utils import (get_birth_or_fallback, get_death_or_fallback,
+                       get_marriage_or_fallback, get_divorce_or_fallback)
 
 #-------------------------------------------------------------------------
 #
@@ -103,6 +105,7 @@ MIN_C_WIDTH = 40
 TEXT_PAD = 2
 TEXT_LINE_PAD = 2
 INC_PLACES = False
+INC_MARRIAGES = False
 
 ctx = None
 font_name = 'sans-serif'
@@ -187,8 +190,11 @@ class DescendantsLinesReport(Report):
 
         self.output_fn = self.options['output_fn']
         self.inc_places = self.options['inc_places']
+        self.inc_marriages = self.options['inc_marriages']
         global INC_PLACES
+        global INC_MARRIAGES
         INC_PLACES = self.inc_places
+        INC_MARRIAGES = self.inc_marriages
 
     def write_report(self):
         """
@@ -382,6 +388,10 @@ class DescendantsLinesReport(Report):
             self.xml_file.write('<father hlink="%s"/>\n' % fhandle)
         if mhandle:
             self.xml_file.write('<mother hlink="%s"/>\n' % mhandle)
+        if self.inc_marriages:
+            self.xml_file.write('<marriage_sval val=%s/>\n' % \
+                    xml.sax.saxutils.quoteattr(self.__date_place(
+                        get_marriage_or_fallback(self.database, fam))))
         for handle in children:
             child = self.database.get_person_from_handle(handle.ref)
             self.xml_file.write('<childref hlink="%s"/>\n' % child.handle)
@@ -393,6 +403,27 @@ class DescendantsLinesReport(Report):
         """
         self.xml_file.write('</database>\n')
         
+    # Method below from plugins/textreport/DescendReport.py
+    def __date_place(self,event):
+        if event:
+            date = DateHandler.get_date(event)
+            if self.inc_places:
+                place_handle = event.get_place_handle()
+                if place_handle:
+                    place = self.database.get_place_from_handle(
+                        place_handle).get_title()
+                    return("%(event_abbrev)s %(date)s - %(place)s" % {
+                        'event_abbrev': event.type.get_abbreviation(),
+                        'date' : date,
+                        'place' : place,
+                        })
+            else:
+                return("%(event_abbrev)s %(date)s" % {
+                    'event_abbrev': event.type.get_abbreviation(),
+                    'date' : date
+                    })
+        return ""
+
 def draw_text(text, x, y):
     (total_w, total_h) = size_text(text)
     for (size, color, line) in text:
@@ -721,6 +752,7 @@ def load_gramps(fn, start):
             self.last = None
             self.birth = None
             self.death = None
+            self.marriage_s = None
 
         def text(self, expected_last=None):
             first_size = 1.0
@@ -758,6 +790,9 @@ def load_gramps(fn, start):
                 s.append((life_size, life_col, _('b. ') + self.birth))
             if self.death is not None:
                 s.append((life_size, life_col, _('d. ') + self.death))
+
+            if self.marriage_s is not None:
+                s.append((life_size, life_col, '(' + self.marriage_s + ')'))
 
             return s
 
@@ -832,6 +867,7 @@ def load_gramps(fn, start):
         def __init__(self):
             self.a = None
             self.b = None
+            self.marriage_s = None
             self.children = []
 
         def spouse(self, s):
@@ -856,6 +892,12 @@ def load_gramps(fn, start):
         for p in f.getElementsByTagName('mother'):
             fo.b = handletoid[p.getAttribute('hlink')]
             parents.setdefault(fo.b, []).append(id)
+        if INC_MARRIAGES:
+            msv = f.getElementsByTagName('marriage_sval')
+            if len(msv) > 0:
+                fo.marriage_s = msv[0].getAttribute('val')
+            else:
+                print 'No marriage event information found: ' + f.getAttribute('handle')
         for p in f.getElementsByTagName('childref'):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
@@ -869,6 +911,7 @@ def load_gramps(fn, start):
                 last = po.last
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
+                    spo.marriage_s = fo.marriage_s
                     fm = Family(p, Person(spo.text()))
                     if spo.gender == 'M':
                         last = spo.last
@@ -967,6 +1010,10 @@ class DescendantsLinesOptions(MenuReportOptions):
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))
         menu.add_option(category_name, 'inc_places', inc_places)
+
+        inc_marriages = BooleanOption(_('Include marriage information'), False)
+        inc_marriages.set_help(_('Whether to include marriage information in the output.'))
+        menu.add_option(category_name, 'inc_marriages', inc_marriages)
 
         category_name = _('Options S')
        
