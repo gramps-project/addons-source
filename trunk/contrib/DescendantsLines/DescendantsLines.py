@@ -296,7 +296,7 @@ class DescendantsLinesReport(Report):
             first = name.get_first_name()
             surname = name.get_surname()
             event_list = person.get_event_ref_list()
-            self.write_xml_person(identifiant, child, gender, first, surname, event_list)
+            self.write_xml_person(person, identifiant, child, gender, first, surname, event_list)
         self.xml_file.write('</people>\n')
         
         self.xml_file.write('<families>\n')
@@ -354,7 +354,7 @@ class DescendantsLinesReport(Report):
                     xml.sax.saxutils.quoteattr(place_title))
         self.xml_file.write('</event>\n')
         
-    def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
+    def write_xml_person(self, person, identifiant, child, gender, first, surname, event_list):
         """
         Writes the person part of the xml file.
         """
@@ -369,6 +369,12 @@ class DescendantsLinesReport(Report):
             self.xml_file.write('<last>%s</last>\n' % \
                     xml.sax.saxutils.escape(surname))
         self.xml_file.write('</name>\n')
+        self.xml_file.write('<birth_sval val=%s/>\n' % \
+                xml.sax.saxutils.quoteattr(self.__date_place(
+                    get_birth_or_fallback(self.database, person))))
+        self.xml_file.write('<death_sval val=%s/>\n' % \
+                xml.sax.saxutils.quoteattr(self.__date_place(
+                    get_death_or_fallback(self.database, person))))
         for event_ref in event_list:
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
                     event = find_event(self.database, event_ref.ref)
@@ -751,6 +757,8 @@ def load_gramps(fn, start):
             self.last = None
             self.birth = None
             self.death = None
+            self.birth_s = None
+            self.death_s = None
             self.marriage_s = None
 
         def text(self, expected_last=None):
@@ -785,12 +793,13 @@ def load_gramps(fn, start):
                 s = [(first_size, col, self.first), (last_size,
                      last_col, last)]
 
-            if self.birth is not None:
-                s.append((life_size, life_col, _('b. ') + self.birth))
-            if self.death is not None:
-                s.append((life_size, life_col, _('d. ') + self.death))
+            if self.birth_s:
+                s.append((life_size, life_col, self.birth_s))
+            if self.death_s:
+                s.append((life_size, life_col, self.death_s))
 
             if self.marriage_s is not None:
+                # Spouse
                 s.append((life_size, life_col, '(' + self.marriage_s + ')'))
 
             return s
@@ -817,6 +826,16 @@ def load_gramps(fn, start):
             po.prefix = ls[0].getAttribute('prefix')
         for er in p.getElementsByTagName('eventref'):
             eventtoid[er.getAttribute('hlink')] = id
+        bsv = p.getElementsByTagName('birth_sval')
+        if len(bsv) > 0:
+            po.birth_s = bsv[0].getAttribute('val')
+        else:
+            print 'No birth event information found: ' + handle
+        dsv = p.getElementsByTagName('death_sval')
+        if len(dsv) > 0:
+            po.death_s = dsv[0].getAttribute('val')
+        else:
+            print 'No death event information found: ' + handle
         tpeople[id] = po
 
     events = x.getElementsByTagName('events')[0]
