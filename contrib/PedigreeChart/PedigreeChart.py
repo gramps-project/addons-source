@@ -65,7 +65,11 @@ except ImportError:
     # v3.3
     from gen.plug.report import Report
     from gen.plug.report.utils import pt2cm, cm2pt
-    from gui.plug.report import MenuReportOptions
+    try:
+        from gui.plug.report import MenuReportOptions # inside a "try:"
+    except ImportError:
+        # v3.4
+        from gen.plug.report import MenuReportOptions
 
 _LINKS_BEGIN = 8
 _PEOPLE_PER_PAGE = 15
