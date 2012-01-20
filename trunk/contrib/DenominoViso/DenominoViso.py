@@ -144,7 +144,7 @@ import gtk
 #-------------------------------------------------------------------------
 import Sort
 from gen.plug.report import Report
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
 import Errors

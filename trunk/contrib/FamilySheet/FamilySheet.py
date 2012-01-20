@@ -42,7 +42,7 @@ from gen.plug import docgen
 from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
 from gen.plug.report import Report
 from gen.plug.report import utils
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 import DateHandler
 import Relationship
 from TransUtils import get_addon_translator

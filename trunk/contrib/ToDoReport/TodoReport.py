@@ -34,7 +34,7 @@ from gen.plug import docgen
 import DateHandler
 from Filters import GenericFilterFactory
 from Filters import Rules
-from gui.plug.report import MenuReportOptions
+from gen.plug.report import MenuReportOptions
 from gen.plug.report import Report
 from Errors import ReportError
 import gen.plug.report.utils as ReportUtils
