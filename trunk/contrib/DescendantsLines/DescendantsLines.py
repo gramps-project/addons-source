@@ -106,6 +106,10 @@ TEXT_PAD = 2
 TEXT_LINE_PAD = 2
 INC_PLACES = False
 INC_MARRIAGES = False
+MAX_GENERATION = 0
+
+# Static variable for do_person()
+CUR_GENERATION = 0
 
 ctx = None
 font_name = 'sans-serif'
@@ -152,6 +156,7 @@ class DescendantsLinesReport(Report):
         MIN_C_WIDTH
         TEXT_PAD
         TEXT_LINE_PAD
+        max_gen - Maximum number of generations to include.
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
         """
@@ -191,10 +196,13 @@ class DescendantsLinesReport(Report):
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
 
         self.output_fn = self.options['output_fn']
+        self.max_gen = self.options['max_gen']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
+        global MAX_GENERATION
         global INC_PLACES
         global INC_MARRIAGES
+        MAX_GENERATION = self.max_gen
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
 
@@ -845,6 +853,8 @@ def load_gramps(fn, start):
         tfamilies[id] = fo
 
     def do_person(p_id, expected_last=None):
+        global CUR_GENERATION
+        CUR_GENERATION += 1
         po = tpeople[p_id]
         p = Person(po.text(expected_last))
         if p_id in parents:
@@ -860,9 +870,11 @@ def load_gramps(fn, start):
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
-                for cpid in fo.children:
-                    cpo = tpeople[cpid]
-                    fm.add_child(do_person(cpid, last))
+                if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
+                    for cpid in fo.children:
+                        cpo = tpeople[cpid]
+                        fm.add_child(do_person(cpid, last))
+        CUR_GENERATION -= 1
         return p
 
     return do_person(start)
@@ -948,6 +960,10 @@ class DescendantsLinesOptions(MenuReportOptions):
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
         output_fn.set_help(_("The destination file for the png-content."))
         menu.add_option(category_name, "output_fn", output_fn)
+
+        max_gen = NumberOption(_("Generations"), 10, 0, 25)
+        max_gen.set_help(_("The number of generations to include in the report"))
+        menu.add_option(category_name, "max_gen", max_gen)
 
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))
