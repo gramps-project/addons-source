@@ -275,14 +275,6 @@ class DescendantsLinesReport(Report):
         self.xml_file = codecs.getwriter("utf8")(xml_file)
         self.write_xml_head()
         
-#        self.xml_file.write('<events>\n')
-#        for child in ind_list:
-#            person = self.database.get_person_from_handle(child)
-#            for event_ref in person.get_event_ref_list():
-#                if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
-#                    self.write_xml_event(event_ref)
-#        self.xml_file.write('</events>\n')
-        
         self.xml_file.write('<people>\n')
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
@@ -329,34 +321,6 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('"http://gramps-project.org/xml/1.4.0/grampsxml.dtd">\n')
         self.xml_file.write('<database xmlns="http://gramps-project.org/xml/1.4.0/">\n')
 
-#    def write_xml_event(self, event_ref):
-#        """
-#        Writes the event part of the xml file.
-#        """
-#        
-#        event = find_event(self.database, event_ref.ref)
-#        etype = event.get_type().xml_str()
-#        date = event.get_date_object()
-#        if self.inc_places:
-#            placeh = event.get_place_handle()
-#            place_title = None
-#            if placeh:
-#                place_title = self.database.get_place_from_handle(placeh).get_title()
-#        local_date = DateHandler.displayer.display(date)
-#        
-#        self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
-#        self.xml_file.write('<type>%s</type>\n' % etype)
-#        if date:
-#            
-#            # DTD needs date object, use translated date for report 
-#            
-#            self.xml_file.write('<dateval val=%s/>\n' % \
-#                    xml.sax.saxutils.quoteattr(local_date))
-#        if self.inc_places and place_title:
-#            self.xml_file.write('<placetval val=%s/>\n' % \
-#                    xml.sax.saxutils.quoteattr(place_title))
-#        self.xml_file.write('</event>\n')
-        
     def write_xml_person(self, person, identifiant, child, gender, first, surname, event_list):
         """
         Writes the person part of the xml file.
@@ -758,8 +722,6 @@ def load_gramps(fn, start):
             self.first = None
             self.prefix = None
             self.last = None
-#            self.birth = None
-#            self.death = None
             self.birth_s = None
             self.death_s = None
             self.marriage_s = None
@@ -840,47 +802,6 @@ def load_gramps(fn, start):
         else:
             print 'No death event information found: ' + handle
         tpeople[id] = po
-
-#    events = x.getElementsByTagName('events')[0]
-#    for ev in events.getElementsByTagName('event'):
-#        p_id = eventtoid.get(ev.getAttribute('handle'))
-#        if p_id is None:
-#            continue
-#        po = tpeople[p_id]
-#        etype = get_text(ev.getElementsByTagName('type'))
-#        dvs = ev.getElementsByTagName('dateval')
-#        date = None
-#        if len(dvs) > 0:
-#            date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
-#        else:
-#            print 'Undated event: ' + ev.getAttribute('handle')
-#
-#        if INC_PLACES:
-#            ptv = ev.getElementsByTagName('placetval')
-#            placet = None
-#            if len(ptv) > 0:
-#                placet = ev.getElementsByTagName('placetval')[0].getAttribute('val')
-#            else:
-#                print 'Unplacetd event: ' + ev.getAttribute('handle')
-#
-#            if len(dvs) == 0 and len(ptv) == 0:
-#                continue
-#
-#        elif len(dvs) == 0:
-#            continue
-#
-#        if etype == 'Birth':
-#            po.birth = date
-#            if INC_PLACES:
-#                if placet:
-#                    po.birth += ' - ' + placet
-#        elif etype == 'Death':
-#            po.death = date
-#            if INC_PLACES:
-#                if placet:
-#                    po.death += ' - ' + placet
-#        else:
-#            print 'Unknown event type: ' + etype
 
 
     class InFamily:
