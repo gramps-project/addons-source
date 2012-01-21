@@ -216,16 +216,20 @@ class DescendantsLinesReport(Report):
         
         self.center_person = self.database.get_person_from_gramps_id(pid)
         
-        # Who is missing on filter ?
-        # Descendant Families of ID
-        #filter_class = GenericFilterFactory('Person')
-        #filter = filter_class()
-        #filter.add_rule(Rules.Person.IsDescendantFamilysOf([pid, 1]))
+        # Person.IsDescendantFamilyOf ID
+        # ("Matches people that are descendants or the spouse
+        #  of a descendant of a specified person")
+        # Matches all that is used currently, families are collected later
+        filter_class = GenericFilterFactory('Person')
+        filter = filter_class()
+        filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
+
         #filter.add_rule(Rules.Person.IsDescendantOf([pid, 1]))
         
         plist = self.database.get_person_handles()
         
-        #ind_list = filter.apply(self.database, plist)
+        ind_list = filter.apply(self.database, plist)
+
         #filter.add_rule(Rules.Person.IsSpouseOfFilterMatch(ind_list))
         #slist = filter.apply(self.database, ind_list)
         #filter.add_rule(Rules.Person.IsAncestorOf([pid, 0]))
@@ -234,7 +238,7 @@ class DescendantsLinesReport(Report):
         #blist = filter.apply(self.database, slist)
         #ind_list = ind_list + slist + alist + blist
         
-        ind_list = plist
+        #ind_list = plist
                 
         # Pass 1
         
