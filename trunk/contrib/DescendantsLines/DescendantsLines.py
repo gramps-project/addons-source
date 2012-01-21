@@ -1,7 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010 ats-familytree@offog.org
+# Copyright (C) 2010 Adam Sampson <ats-familytree@offog.org>
+# Copyright (C) 2010 Jerome Rapinat <romjerome@yahoo.fr>
+# Copyright (C) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
