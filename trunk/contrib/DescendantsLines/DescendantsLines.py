@@ -71,7 +71,7 @@ import os.path
 
 import DateHandler
 from gen.plug.menu import NumberOption, PersonOption, FilterOption, \
-                            DestinationOption, BooleanOption
+                        DestinationOption, BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gen.plug.report import MenuReportOptions
@@ -106,6 +106,8 @@ SP_PAD = 10
 MIN_C_WIDTH = 40
 TEXT_PAD = 2
 TEXT_LINE_PAD = 2
+OUTPUT_FMT = 'PNG'
+OUTPUT_FN = None
 INC_PLACES = False
 INC_MARRIAGES = False
 MAX_GENERATION = 0
@@ -158,6 +160,8 @@ class DescendantsLinesReport(Report):
         MIN_C_WIDTH
         TEXT_PAD
         TEXT_LINE_PAD
+        output_fmt - The output format
+        output_fn - The output filename
         max_gen - Maximum number of generations to include.
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
@@ -197,13 +201,18 @@ class DescendantsLinesReport(Report):
         TEXT_PAD = self.options["TEXT_PAD"]
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
 
+        self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
         self.max_gen = self.options['max_gen']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
+        global OUTPUT_FMT
+        global OUTPUT_FN
         global MAX_GENERATION
         global INC_PLACES
         global INC_MARRIAGES
+        OUTPUT_FMT = self.output_fmt
+        OUTPUT_FN = self.output_fn
         MAX_GENERATION = self.max_gen
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
@@ -912,12 +921,21 @@ class PNGWriter:
         h,
         ):
         self.fn = fn
-        self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, int(w
+        if OUTPUT_FMT == 'PNG':
+            self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, int(w
+                     + 1), int(h + 1))
+        elif OUTPUT_FMT == 'SVG':
+            self.surface = cairo.SVGSurface(OUTPUT_FN, int(w
                  + 1), int(h + 1))
         return self.surface
 
     def finish(self):
-        self.surface.write_to_png(self.fn)
+
+        if OUTPUT_FMT == 'PNG':
+            self.surface.write_to_png(self.fn)
+        elif OUTPUT_FMT == 'SVG':
+            self.surface.flush()
+            self.surface.finish()
 
 
 def draw_file(p, fn, writer):
@@ -961,6 +979,13 @@ class DescendantsLinesOptions(MenuReportOptions):
         pid = PersonOption(_('Center Person'))
         pid.set_help(_('The center person for the report'))
         menu.add_option(category_name, 'pid', pid)
+
+        output_fmt = EnumeratedListOption(_("Output format"), "PNG")
+        output_fmt.set_items([
+                ("PNG", _("PNG format")), 
+                ("SVG", _("SVG format"))])
+        output_fmt.set_help(_("The output format to be used"))
+        menu.add_option(category_name, "output_fmt", output_fmt)
 
         output_fn = DestinationOption(_("Destination"),
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
