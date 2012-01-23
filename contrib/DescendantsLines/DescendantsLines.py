@@ -993,7 +993,7 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         output_fn = DestinationOption(_("Destination"),
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
-        output_fn.set_help(_("The destination file for the png-content."))
+        output_fn.set_help(_("The destination file for the content."))
         menu.add_option(category_name, "output_fn", output_fn)
 
         max_gen = NumberOption(_("Generations"), 10, 0, 25)
