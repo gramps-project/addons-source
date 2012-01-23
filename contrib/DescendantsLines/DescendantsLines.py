@@ -927,6 +927,8 @@ class PNGWriter:
         elif OUTPUT_FMT == 'SVG':
             self.surface = cairo.SVGSurface(OUTPUT_FN, int(w
                  + 1), int(h + 1))
+        else:
+            raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
         return self.surface
 
     def finish(self):
@@ -936,6 +938,8 @@ class PNGWriter:
         elif OUTPUT_FMT == 'SVG':
             self.surface.flush()
             self.surface.finish()
+        else:
+            raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
 
 
 def draw_file(p, fn, writer):
