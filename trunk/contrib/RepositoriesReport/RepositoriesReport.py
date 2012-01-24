@@ -54,6 +54,7 @@ class RepositoryReport(Report):
 
         database        - the GRAMPS database instance
         options         - instance of the Options class for this report
+        user            - a gen.user.User() instance
 
         This report needs the following parameters (class variables)
         that come in the options class.

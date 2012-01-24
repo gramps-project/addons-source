@@ -357,18 +357,19 @@ class PersonBox:
 class PedigreeChart(Report):
     """Create an ancestor tree suitable for printing"""
 
-    def __init__(self, database, options_class):
+    def __init__(self, database, options, user):
         """
         Initialize the report class.
 
-        database - the grampsdb instance
-        options_class - all the options from the report dialog
+        database        - the GRAMPS database instance
+        options         - instance of the Options class for this report
+        user            - a gen.user.User() instance
 
         """
 
-        Report.__init__(self, database, options_class)
+        Report.__init__(self, database, options, user)
 
-        menu = options_class.menu
+        menu = options.menu
 
         # BUG: somehow when calculating if we've reached the max
         # generations limit the report is stopping at one generation
