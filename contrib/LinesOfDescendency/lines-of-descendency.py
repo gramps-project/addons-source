@@ -58,10 +58,10 @@ class LODOptions(MenuReportOptions):
         default_style.add_paragraph_style("LOD-Entry", para)
 
 class LinesOfDescendency(Report):
-    def __init__(self, database, options_class):
-        Report.__init__(self, database, options_class)
+    def __init__(self, database, options, user):
+        Report.__init__(self, database, options, user)
 
-        menu = options_class.menu
+        menu = options.menu
         pid  = menu.get_option_by_name('pid').get_value()
         self.descendent = database.get_person_from_gramps_id(pid)
         self.descendent_handle = self.descendent.get_handle()

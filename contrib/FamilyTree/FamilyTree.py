@@ -59,11 +59,11 @@ empty_marriage.set_type(EventType.MARRIAGE)
 #------------------------------------------------------------------------
 class FamilyTree(gen.plug.report.Report):
 
-    def __init__(self, database, options_class):
+    def __init__(self, database, options, user):
 
-        gen.plug.report.Report.__init__(self, database, options_class)
+        gen.plug.report.Report.__init__(self, database, options, user)
 
-        menu = options_class.menu
+        menu = options.menu
 
         family_id = menu.get_option_by_name('family_id').get_value()
         self.center_family = database.get_family_from_gramps_id(family_id)

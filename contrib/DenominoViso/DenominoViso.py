@@ -240,8 +240,8 @@ def list_of_strings2list_of_lists(data_obj):
         return rv
 
 class DenominoVisoReport(Report):
-    def __init__(self, database, options_class):
-        Report.__init__(self, database, options_class)
+    def __init__(self, database, options_class, user):
+        Report.__init__(self, database, options_class, user)
         self.options = {}
         menu = options_class.menu
         self.database = database

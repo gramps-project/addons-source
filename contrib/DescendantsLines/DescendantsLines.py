@@ -134,15 +134,15 @@ class DescendantsLinesReport(Report):
     """
     DescendantsLines Report class
     """
-    def __init__(self, database, options_class):
+    def __init__(self, database, options_class, user):
         """
         Create the object that produces the report.
         
         The arguments are:
 
         database        - the GRAMPS database instance
-        person          - currently selected person
         options_class   - instance of the Options class for this report
+        user            - a gen.user.User() instance
         
         This report needs the following parameters (class variables)
         that come in the options class.
@@ -167,7 +167,7 @@ class DescendantsLinesReport(Report):
         inc_marriages - Whether to include marriage information in the output.
         """
 
-        Report.__init__(self, database, options_class)
+        Report.__init__(self, database, options_class, user)
         self.options = {}
         menu = options_class.menu
         self.database = database

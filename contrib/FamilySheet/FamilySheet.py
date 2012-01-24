@@ -93,16 +93,17 @@ class FamilySheet(Report):
     Family Sheets of the children that had spouses.
     """
 
-    def __init__(self, database, options_class):
+    def __init__(self, database, options, user):
         """
         Initialize the report.
 
         @param database: the GRAMPS database instance
-        @param options_class: instance of the Options class for this report
+        @param options: instance of the Options class for this report
+        @param user: a gen.user.User() instance
         """
 
-        Report.__init__(self, database, options_class)
-        menu = options_class.menu
+        Report.__init__(self, database, options, user)
+        menu = options.menu
         self.person_id    = menu.get_option_by_name('pid').get_value()
         self.recurse      = menu.get_option_by_name('recurse').get_value()
         self.callname     = menu.get_option_by_name('callname').get_value()
