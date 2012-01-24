@@ -927,6 +927,12 @@ class PNGWriter:
         elif OUTPUT_FMT == 'SVG':
             self.surface = cairo.SVGSurface(OUTPUT_FN, int(w
                  + 1), int(h + 1))
+        elif OUTPUT_FMT == 'PDF':
+            self.surface = cairo.PDFSurface(OUTPUT_FN, int(w
+                 + 1), int(h + 1))
+        elif OUTPUT_FMT == 'PS':
+            self.surface = cairo.PSSurface(OUTPUT_FN, int(w
+                 + 1), int(h + 1))
         else:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
         return self.surface
@@ -935,7 +941,9 @@ class PNGWriter:
 
         if OUTPUT_FMT == 'PNG':
             self.surface.write_to_png(self.fn)
-        elif OUTPUT_FMT == 'SVG':
+        elif (OUTPUT_FMT == 'SVG') \
+             or (OUTPUT_FMT == 'PDF') \
+             or (OUTPUT_FMT == 'PS'):
             self.surface.flush()
             self.surface.finish()
         else:
@@ -986,8 +994,10 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         output_fmt = EnumeratedListOption(_("Output format"), "PNG")
         output_fmt.set_items([
-                ("PNG", _("PNG format")), 
-                ("SVG", _("SVG format"))])
+                ("PNG", _("PNG format")),
+                ("SVG", _("SVG format")),
+                ("PDF", _("PDF format")),
+                ("PS", _("PS format"))])
         output_fmt.set_help(_("The output format to be used"))
         menu.add_option(category_name, "output_fmt", output_fmt)
 
