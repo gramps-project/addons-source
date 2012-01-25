@@ -1054,6 +1054,25 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             valaction.append([('title'),new])
             #do the action in memory
             place = self.group_set(place, ('title'),new)
+        elif type == "T1CCSC" :
+            old = place.get_title()
+            valoud.append(old)
+            old = old.split(',')[0]
+            new = place.get_main_location().get_city()
+            if place.get_main_location().get_county() :
+                new += ', ' + place.get_main_location().get_county()
+            else:
+                new +=', '
+            if place.get_main_location().get_state() :
+                new += ', ' + place.get_main_location().get_state()
+            else:
+                new +=', '
+            if place.get_main_location().get_country() :
+                new += ', ' + place.get_main_location().get_country()
+            valnew.append(new)
+            valaction.append([('title'),new])
+            #do the action in memory
+            place = self.group_set(place, ('title'),new)
             
         return valoud, valnew, valaction, place
         
@@ -1099,6 +1118,8 @@ class _options:
         ("CS", "City[, State]", _("City[, State]")),
         ("T1CS", "TitleStart [, City] [, State]", 
                 _("TitleStart [, City] [, State]")),
+        ("T1CCSC", "TitleStart [, City] [, County] [, State] [, Country]", 
+                _("TitleStart [, City] [, County] [, State] [, Country]")),
     )
     
     # geonames : http://download.geonames.org/export/dump/
