@@ -1059,6 +1059,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             valoud.append(old)
             old = old.split(',')[0]
             new = place.get_main_location().get_city()
+            if old != new :
+                new = old + ', ' + new
             if place.get_main_location().get_county() :
                 new += ', ' + place.get_main_location().get_county()
             else:
