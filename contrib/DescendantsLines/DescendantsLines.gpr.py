@@ -1,7 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010 ats-familytree@offog.org
+# Copyright (C) 2010 Adam Sampson <ats-familytree@offog.org>
+# Copyright (C) 2010 Jerome Rapinat <romjerome@yahoo.fr>
+# Copyright (C) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,13 +23,16 @@ register(REPORT,
          id    = 'Descendants Lines',
          name  = _("Descendants Lines"),
          description =  _("Produces descendants lines of a person"),
-         version = '0.1.5',
+         version = '0.1.6',
          gramps_target_version = '3.4',
-         status = UNSTABLE,
+         status = STABLE,
          fname = 'DescendantsLines.py',
          category = CATEGORY_DRAW,
          reportclass = 'DescendantsLinesReport',
          optionclass = 'DescendantsLinesOptions',
          report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+         authors = ['Jerome Rapinat', 'lcc', 'Adam Sampson'],
+         authors_email = ['romjerome@yahoo.fr', 'lcc.mailaddress@gmail.com', \
+                 'ats-familytree@offog.org'],
          require_active = True
          )
