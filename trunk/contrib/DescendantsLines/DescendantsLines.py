@@ -109,6 +109,7 @@ TEXT_PAD = 2
 TEXT_LINE_PAD = 2
 OUTPUT_FMT = 'PNG'
 OUTPUT_FN = None
+USE_COLORS = False
 INC_PLACES = False
 INC_MARRIAGES = False
 MAX_GENERATION = 0
@@ -164,6 +165,7 @@ class DescendantsLinesReport(Report):
         output_fmt - The output format
         output_fn - The output filename
         max_gen - Maximum number of generations to include. (0 for unlimited)
+        use_colors - Whether to use colored names indicating person gender in the output.
         name_format - The name format
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
@@ -206,16 +208,19 @@ class DescendantsLinesReport(Report):
         self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
         self.max_gen = self.options['max_gen']
+        self.use_colors = self.options['use_colors']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
         global OUTPUT_FMT
         global OUTPUT_FN
         global MAX_GENERATION
+        global USE_COLORS
         global INC_PLACES
         global INC_MARRIAGES
         OUTPUT_FMT = self.output_fmt
         OUTPUT_FN = self.output_fn
         MAX_GENERATION = self.max_gen
+        USE_COLORS = self.use_colors
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
 
@@ -752,14 +757,15 @@ def load_gramps(fn, start):
             name_size = 1.0
             life_size = 0.90
 
-#            if self.gender == 'M':
-#                col = (0, 0, 0.5)
-#            elif self.gender == 'F':
-#                col = (0.5, 0, 0)
-#            else:
-#                col = (0, 0.5, 0)
-#            last_col = (0, 0, 0)
-            col = (0, 0, 0)
+            if USE_COLORS:
+                if self.gender == 'M':
+                    col = (0, 0, 0.5)
+                elif self.gender == 'F':
+                    col = (0.5, 0, 0)
+                else:
+                    col = (0, 0.5, 0)
+            else:
+                col = (0, 0, 0)
             life_col = (0.2, 0.2, 0.2)
 
 #            last = self.last
@@ -1017,6 +1023,10 @@ class DescendantsLinesOptions(MenuReportOptions):
             name_format.add_item(num, name)
         name_format.set_help(_("Select the format to display names"))
         menu.add_option(category_name, "name_format", name_format)
+
+        use_colors = BooleanOption(_('Use colors'), False)
+        use_colors.set_help(_('Whether to use colored names indicating person gender in the output.'))
+        menu.add_option(category_name, 'use_colors', use_colors)
 
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))
