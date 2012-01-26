@@ -63,6 +63,7 @@ import getopt
 import sys
 import codecs
 import os.path
+import copy
 #-------------------------------------------------------------------------
 #
 # gramps modules
@@ -163,6 +164,7 @@ class DescendantsLinesReport(Report):
         output_fmt - The output format
         output_fn - The output filename
         max_gen - Maximum number of generations to include. (0 for unlimited)
+        name_format - The name format
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
         """
@@ -216,6 +218,13 @@ class DescendantsLinesReport(Report):
         MAX_GENERATION = self.max_gen
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
+
+        # Copy the global NameDisplay so that we don't change application 
+        # defaults.
+        self._name_display = copy.deepcopy(name_displayer)
+        name_format = menu.get_option_by_name("name_format").get_value()
+        if name_format != 0:
+            self._name_display.set_default_format(name_format)
 
     def write_report(self):
         """
@@ -308,11 +317,8 @@ class DescendantsLinesReport(Report):
                 gender = 'F'
             else:
                 gender = 'U'
-            name = person.get_primary_name()
-            first = name.get_first_name()
-            surname = name.get_surname()
             event_list = person.get_event_ref_list()
-            self.write_xml_person(person, identifiant, child, gender, first, surname, event_list)
+            self.write_xml_person(person, identifiant, child, gender, event_list)
         self.xml_file.write('</people>\n')
         
         self.xml_file.write('<families>\n')
@@ -344,21 +350,16 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('"http://gramps-project.org/xml/1.4.0/grampsxml.dtd">\n')
         self.xml_file.write('<database xmlns="http://gramps-project.org/xml/1.4.0/">\n')
 
-    def write_xml_person(self, person, identifiant, child, gender, first, surname, event_list):
+    def write_xml_person(self, person, identifiant, child, gender, event_list):
         """
         Writes the person part of the xml file.
         """
                  
         self.xml_file.write('<person id="%s" handle="%s">\n' % (identifiant, child))
         self.xml_file.write('<gender>%s</gender>\n' % gender)
-        self.xml_file.write('<name>\n')
-        if first:
-            self.xml_file.write('<first>%s</first>\n' % \
-                    xml.sax.saxutils.escape(first))
-        if surname:
-            self.xml_file.write('<last>%s</last>\n' % \
-                    xml.sax.saxutils.escape(surname))
-        self.xml_file.write('</name>\n')
+        self.xml_file.write('<name>%s</name>\n' % \
+                xml.sax.saxutils.escape(
+                    self._name_display.display_formal(person)))
         self.xml_file.write('<birth_sval val=%s/>\n' % \
                 xml.sax.saxutils.quoteattr(self.__date_place(
                     get_birth_or_fallback(self.database, person))))
@@ -742,44 +743,47 @@ def load_gramps(fn, start):
 
         def __init__(self):
             self.gender = None
-            self.first = None
-            self.prefix = None
-            self.last = None
+            self.name = None
             self.birth_s = None
             self.death_s = None
             self.marriage_s = None
 
-        def text(self, expected_last=None):
-            first_size = 1.0
-            last_size = 0.95
+        def text(self):
+            name_size = 1.0
             life_size = 0.90
 
-            if self.gender == 'M':
-                col = (0, 0, 0.5)
-            elif self.gender == 'F':
-                col = (0.5, 0, 0)
-            else:
-                col = (0, 0.5, 0)
-            last_col = (0, 0, 0)
+#            if self.gender == 'M':
+#                col = (0, 0, 0.5)
+#            elif self.gender == 'F':
+#                col = (0.5, 0, 0)
+#            else:
+#                col = (0, 0.5, 0)
+#            last_col = (0, 0, 0)
+            col = (0, 0, 0)
             life_col = (0.2, 0.2, 0.2)
 
-            last = self.last
+#            last = self.last
 #            if last == expected_last:
 #                last = None
-            if last is not None:
-                if self.prefix is not None:
-                    last = self.prefix + ' ' + last
+#            if last is not None:
+#                if self.prefix is not None:
+#                    last = self.prefix + ' ' + last
 #                last = last.upper()
-            if self.first is None and last is None:
+#            if self.first is None and last is None:
+#                s = []
+#            elif self.first is None:
+#                s = [(first_size, col, '?'), (last_size, last_col,
+#                     last)]
+#            elif last is None:
+#                s = [(first_size, col, self.first)]
+#            else:
+#                s = [(first_size, col, self.first), (last_size,
+#                     last_col, last)]
+
+            if self.name is None:
                 s = []
-            elif self.first is None:
-                s = [(first_size, col, '?'), (last_size, last_col,
-                     last)]
-            elif last is None:
-                s = [(first_size, col, self.first)]
             else:
-                s = [(first_size, col, self.first), (last_size,
-                     last_col, last)]
+                s = [(name_size, col, self.name)]
 
             if self.birth_s:
                 s.append((life_size, life_col, self.birth_s))
@@ -794,7 +798,7 @@ def load_gramps(fn, start):
 
 
     Unknown = InPerson()
-    Unknown.first = _('Unknown')
+    Unknown.name = _('Unknown')
 
     handletoid = {}
     eventtoid = {}
@@ -804,14 +808,10 @@ def load_gramps(fn, start):
         id = p.getAttribute('id')
         handle = p.getAttribute('handle')
         handletoid[handle] = id
-        name = p.getElementsByTagName('name')[0]
+        name = get_text(p.getElementsByTagName('name'))
         po = InPerson()
         po.gender = get_text(p.getElementsByTagName('gender'))
-        po.first = get_text(name.getElementsByTagName('first'))
-        po.last = get_text(name.getElementsByTagName('last'))
-        ls = name.getElementsByTagName('last')
-        if ls != []:
-            po.prefix = ls[0].getAttribute('prefix')
+        po.name = name
         for er in p.getElementsByTagName('eventref'):
             eventtoid[er.getAttribute('hlink')] = id
         bsv = p.getElementsByTagName('birth_sval')
@@ -867,28 +867,25 @@ def load_gramps(fn, start):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
 
-    def do_person(p_id, expected_last=None):
+    def do_person(p_id):
         global CUR_GENERATION
         CUR_GENERATION += 1
         po = tpeople[p_id]
-        p = Person(po.text(expected_last))
+        p = Person(po.text())
         if p_id in parents:
             for fid in parents[p_id]:
                 fo = tfamilies[fid]
-                last = po.last
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
                     spo.marriage_s = fo.marriage_s
                     fm = Family(p, Person(spo.text()))
-                    if spo.gender == 'M':
-                        last = spo.last
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
                 if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
                     for cpid in fo.children:
                         cpo = tpeople[cpid]
-                        fm.add_child(do_person(cpid, last))
+                        fm.add_child(do_person(cpid))
         CUR_GENERATION -= 1
         return p
 
@@ -1010,6 +1007,16 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_gen.set_help(_("The number of generations to include in the report." \
                 " (0 for unlimited)"))
         menu.add_option(category_name, "max_gen", max_gen)
+
+        # We must figure out the value of the first option before we can
+        # create the EnumeratedListOption
+        fmt_list = name_displayer.get_name_format()
+        name_format = EnumeratedListOption(_("Name format"), 0)
+        name_format.add_item(0, _("Default"))
+        for num, name, fmt_str, act in fmt_list:
+            name_format.add_item(num, name)
+        name_format.set_help(_("Select the format to display names"))
+        menu.add_option(category_name, "name_format", name_format)
 
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))
