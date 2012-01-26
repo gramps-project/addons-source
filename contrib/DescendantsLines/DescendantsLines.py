@@ -162,7 +162,7 @@ class DescendantsLinesReport(Report):
         TEXT_LINE_PAD
         output_fmt - The output format
         output_fn - The output filename
-        max_gen - Maximum number of generations to include.
+        max_gen - Maximum number of generations to include. (0 for unlimited)
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
         """
@@ -1007,7 +1007,8 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, "output_fn", output_fn)
 
         max_gen = NumberOption(_("Generations"), 10, 0, 25)
-        max_gen.set_help(_("The number of generations to include in the report"))
+        max_gen.set_help(_("The number of generations to include in the report." \
+                " (0 for unlimited)"))
         menu.add_option(category_name, "max_gen", max_gen)
 
         inc_places = BooleanOption(_('Include event places'), False)
