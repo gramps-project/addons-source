@@ -113,9 +113,18 @@ USE_COLORS = False
 INC_PLACES = False
 INC_MARRIAGES = False
 MAX_GENERATION = 0
+TEXT_ALIGNMENT = 'center'
+  # 'center', 'left'
+STROKE_RECTANGLE = False
 
 # Static variable for do_person()
 CUR_GENERATION = 0
+
+# Padding for STROKE_RECTANGLE == True
+RECTANGLE_TEXT_PAD = 2
+
+BACKGROUND_COLOR = (1.0, 1.0, 1.0)
+FOREGROUND_COLOR = (1.0, 1.0, 1.0)
 
 ctx = None
 font_name = 'sans-serif'
@@ -169,6 +178,7 @@ class DescendantsLinesReport(Report):
         name_format - The name format
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
+        style - The predefined output style
         """
 
         Report.__init__(self, database, options_class, user)
@@ -230,6 +240,24 @@ class DescendantsLinesReport(Report):
         name_format = menu.get_option_by_name("name_format").get_value()
         if name_format != 0:
             self._name_display.set_default_format(name_format)
+
+        self.style = self.options['style']
+        global TEXT_ALIGNMENT
+        global STROKE_RECTANGLE
+        global BACKGROUND_COLOR
+        global FOREGROUND_COLOR
+        if self.style == 'Center-aligned text':
+            TEXT_ALIGNMENT = 'center'
+            STROKE_RECTANGLE = False
+            BACKGROUND_COLOR = (1.0, 1.0, 1.0)
+            FOREGROUND_COLOR = (1.0, 1.0, 1.0)
+        elif self.style == 'Left-aligned text':
+            TEXT_ALIGNMENT = 'left'
+            STROKE_RECTANGLE = True
+            BACKGROUND_COLOR = (1.0, 1.0, 1.0)
+            FOREGROUND_COLOR = (1.0, 1.0, 1.0)
+        else:
+            raise AttributeError("no such style: '%s'" % self.style)
 
     def write_report(self):
         """
@@ -439,8 +467,14 @@ def draw_text(text, x, y):
             _,
             _,
             ) = ctx.text_extents(line)
-        ctx.move_to(x - lx + TEXT_PAD + (total_w - width + lx) / 2, y
-                     + ascent + TEXT_PAD)
+        if TEXT_ALIGNMENT == 'center':
+            ctx.move_to(x - lx + TEXT_PAD + (total_w - width + lx) / 2, y
+                         + ascent + TEXT_PAD)
+        elif TEXT_ALIGNMENT == 'left':
+            ctx.move_to(x, y
+                         + ascent + TEXT_PAD)
+        else:
+            raise AttributeError("no such text alignment: '%s'" % TEXT_ALIGNMENT)
         ctx.set_source_rgb(*color)
         ctx.show_text(line)
         y += height + TEXT_LINE_PAD
@@ -525,7 +559,22 @@ class Person(Memorised):
                       self.get('h'))
         ctx.fill()
 
-        draw_text(self.text, self.get('tx'), self.get('y'))
+        if STROKE_RECTANGLE == True:
+            set_fg_style(ctx)
+            ctx.rectangle(self.get('tx'), self.get('y'),
+                    self.get('tw') + RECTANGLE_TEXT_PAD, self.get('th'))
+            ctx.fill_preserve()
+            set_line_style(ctx)
+            ctx.stroke()
+
+            draw_text(self.text,
+                    self.get('tx') + RECTANGLE_TEXT_PAD, self.get('y'))
+        else:
+            set_fg_style(ctx)
+            ctx.rectangle(self.get('tx'), self.get('y'),
+                    self.get('tw'), self.get('th'))
+            ctx.fill()
+            draw_text(self.text, self.get('tx'), self.get('y'))
 
         for f in self.families:
             f.draw()
@@ -630,7 +679,23 @@ class Family(Memorised):
         ctx.rel_line_to(0, -S_UP)
         ctx.stroke()
 
-        draw_text(self.spouse.text, self.get('spx'), self.get('spy'))
+        if STROKE_RECTANGLE == True:
+            set_fg_style(ctx)
+            ctx.rectangle(self.get('spx'), self.get('spy'),
+                    self.spouse.get('tw') + RECTANGLE_TEXT_PAD,
+                          self.spouse.get('th'))
+            ctx.fill_preserve()
+            set_line_style(ctx)
+            ctx.stroke()
+
+            draw_text(self.spouse.text,
+                    self.get('spx') + RECTANGLE_TEXT_PAD, self.get('spy'))
+        else:
+            set_fg_style(ctx)
+            ctx.rectangle(self.get('spx'), self.get('spy'),
+                    self.spouse.get('tw'), self.spouse.get('th'))
+            ctx.fill()
+            draw_text(self.spouse.text, self.get('spx'), self.get('spy'))
 
         if self.children != []:
             set_line_style(ctx)
@@ -899,7 +964,10 @@ def load_gramps(fn, start):
 
 
 def set_bg_style(ctx):
-    ctx.set_source_rgb(1.0, 1.0, 1.0)
+    ctx.set_source_rgb(*BACKGROUND_COLOR)
+
+def set_fg_style(ctx):
+    ctx.set_source_rgb(*FOREGROUND_COLOR)
 
 
 def set_line_style(ctx):
@@ -1003,6 +1071,13 @@ class DescendantsLinesOptions(MenuReportOptions):
                 ("PS", _("PS format"))])
         output_fmt.set_help(_("The output format to be used"))
         menu.add_option(category_name, "output_fmt", output_fmt)
+
+        style = EnumeratedListOption(_("Style"), "Center-aligned text")
+        style.set_items([
+                ("Center-aligned text", _("Center-aligned text")),
+                ("Left-aligned text", _("Left-aligned text"))])
+        style.set_help(_("The style to be used"))
+        menu.add_option(category_name, "style", style)
 
         output_fn = DestinationOption(_("Destination"),
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
