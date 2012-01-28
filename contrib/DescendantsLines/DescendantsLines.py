@@ -112,6 +112,7 @@ OUTPUT_FN = None
 USE_COLORS = False
 INC_PLACES = False
 INC_MARRIAGES = False
+INC_DNUM = False
 MAX_GENERATION = 0
 TEXT_ALIGNMENT = 'center'
   # 'center', 'left'
@@ -178,6 +179,7 @@ class DescendantsLinesReport(Report):
         name_format - The name format
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
+        inc_dnum - Whether to use d'Aboville descendant numbering system
         style - The predefined output style
         """
 
@@ -221,18 +223,21 @@ class DescendantsLinesReport(Report):
         self.use_colors = self.options['use_colors']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
+        self.inc_dnum = self.options['inc_dnum']
         global OUTPUT_FMT
         global OUTPUT_FN
         global MAX_GENERATION
         global USE_COLORS
         global INC_PLACES
         global INC_MARRIAGES
+        global INC_DNUM
         OUTPUT_FMT = self.output_fmt
         OUTPUT_FN = self.output_fn
         MAX_GENERATION = self.max_gen
         USE_COLORS = self.use_colors
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
+        INC_DNUM = self.inc_dnum
 
         # Copy the global NameDisplay so that we don't change application 
         # defaults.
@@ -817,7 +822,7 @@ def load_gramps(fn, start):
             self.birth_s = None
             self.death_s = None
 
-        def text(self, marriage_s=None):
+        def text(self, marriage_s=None, dnum=None):
             name_size = 1.0
             life_size = 0.90
 
@@ -850,7 +855,13 @@ def load_gramps(fn, start):
 #                s = [(first_size, col, self.first), (last_size,
 #                     last_col, last)]
 
-            if self.name is None:
+            if INC_DNUM and dnum is not None:
+                if self.name is None:
+                    s = [(name_size, col, dnum)]
+                else:
+                    s = [(name_size, col, dnum + ' ' + self.name)]
+
+            elif self.name is None:
                 s = []
             else:
                 s = [(name_size, col, self.name)]
@@ -937,28 +948,30 @@ def load_gramps(fn, start):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
 
-    def do_person(p_id):
+    def do_person(p_id, dnum="1."):
         global CUR_GENERATION
         CUR_GENERATION += 1
         po = tpeople[p_id]
-        p = Person(po.text())
+        p = Person(po.text(dnum=dnum))
         if p_id in parents:
+            cnum = 1
             for fid in parents[p_id]:
                 fo = tfamilies[fid]
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
-                    fm = Family(p, Person(spo.text(fo.marriage_s)))
+                    fm = Family(p, Person(spo.text(marriage_s=fo.marriage_s)))
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
                 if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
                     for cpid in fo.children:
                         cpo = tpeople[cpid]
-                        fm.add_child(do_person(cpid))
+                        fm.add_child(do_person(cpid, dnum + str(cnum) + "."))
+                        cnum += 1
         CUR_GENERATION -= 1
         return p
 
-    return do_person(start)
+    return do_person(start, "1.")
 
 
 def set_bg_style(ctx):
@@ -1108,6 +1121,10 @@ class DescendantsLinesOptions(MenuReportOptions):
         inc_marriages = BooleanOption(_('Include marriage information'), False)
         inc_marriages.set_help(_('Whether to include marriage information in the output.'))
         menu.add_option(category_name, 'inc_marriages', inc_marriages)
+
+        inc_dnum = BooleanOption(_("Use d'Aboville descendant numbering system"), False)
+        inc_dnum.set_help(_("Whether to use d'Aboville descendant numbering system in the output."))
+        menu.add_option(category_name, 'inc_dnum', inc_dnum)
 
         category_name = _('Options S')
        
