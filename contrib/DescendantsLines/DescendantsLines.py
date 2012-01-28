@@ -816,9 +816,8 @@ def load_gramps(fn, start):
             self.name = None
             self.birth_s = None
             self.death_s = None
-            self.marriage_s = None
 
-        def text(self):
+        def text(self, marriage_s=None):
             name_size = 1.0
             life_size = 0.90
 
@@ -861,9 +860,9 @@ def load_gramps(fn, start):
             if self.death_s:
                 s.append((life_size, life_col, self.death_s))
 
-            if self.marriage_s is not None:
+            if marriage_s is not None:
                 # Spouse
-                s.append((life_size, life_col, '(' + self.marriage_s + ')'))
+                s.append((life_size, life_col, '(' + marriage_s + ')'))
 
             return s
 
@@ -948,8 +947,7 @@ def load_gramps(fn, start):
                 fo = tfamilies[fid]
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
-                    spo.marriage_s = fo.marriage_s
-                    fm = Family(p, Person(spo.text()))
+                    fm = Family(p, Person(spo.text(fo.marriage_s)))
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
