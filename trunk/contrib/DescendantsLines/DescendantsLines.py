@@ -411,6 +411,9 @@ class DescendantsLinesReport(Report):
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
                     event = find_event(self.database, event_ref.ref)
                     self.xml_file.write('<eventref hlink="%s"/>\n' % event.handle)
+        for handle in person.get_family_handle_list():
+            fam = self.database.get_family_from_handle(handle)
+            self.xml_file.write('<famref famrefid="%s"/>\n' % fam.get_gramps_id())
         self.xml_file.write('</person>\n')
         
     def write_xml_family(self, fam):
@@ -885,6 +888,7 @@ def load_gramps(fn, start):
     handletoid = {}
     eventtoid = {}
     tpeople = {}
+    parents = {}
     people = x.getElementsByTagName('people')[0]
     for p in people.getElementsByTagName('person'):
         id = p.getAttribute('id')
@@ -907,6 +911,8 @@ def load_gramps(fn, start):
         else:
             print 'No death event information found: ' + handle
         tpeople[id] = po
+        for fr in p.getElementsByTagName('famref'):
+            parents.setdefault(id, []).append(fr.getAttribute('famrefid'))
 
 
     class InFamily:
@@ -924,7 +930,6 @@ def load_gramps(fn, start):
                 return self.a
 
 
-    parents = {}
     tfamilies = {}
     families = x.getElementsByTagName('families')[0]
     
@@ -935,10 +940,8 @@ def load_gramps(fn, start):
         fo = InFamily()
         for p in f.getElementsByTagName('father'):
             fo.a = handletoid[p.getAttribute('hlink')]
-            parents.setdefault(fo.a, []).append(id)
         for p in f.getElementsByTagName('mother'):
             fo.b = handletoid[p.getAttribute('hlink')]
-            parents.setdefault(fo.b, []).append(id)
         if INC_MARRIAGES:
             msv = f.getElementsByTagName('marriage_sval')
             if len(msv) > 0:
