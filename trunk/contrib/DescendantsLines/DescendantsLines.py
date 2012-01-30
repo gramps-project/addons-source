@@ -122,7 +122,7 @@ STROKE_RECTANGLE = False
 CUR_GENERATION = 0
 
 # Padding for STROKE_RECTANGLE == True
-RECTANGLE_TEXT_PAD = 2
+RECTANGLE_TEXT_PAD = 1
 
 BACKGROUND_COLOR = (1.0, 1.0, 1.0)
 FOREGROUND_COLOR = (1.0, 1.0, 1.0)
@@ -263,6 +263,9 @@ class DescendantsLinesReport(Report):
             FOREGROUND_COLOR = (1.0, 1.0, 1.0)
         else:
             raise AttributeError("no such style: '%s'" % self.style)
+
+        if STROKE_RECTANGLE:
+            TEXT_PAD += RECTANGLE_TEXT_PAD
 
     def write_report(self):
         """
@@ -476,7 +479,7 @@ def draw_text(text, x, y):
             ctx.move_to(x - lx + TEXT_PAD + (total_w - width + lx) / 2, y
                          + ascent + TEXT_PAD)
         elif TEXT_ALIGNMENT == 'left':
-            ctx.move_to(x, y
+            ctx.move_to(x - lx + TEXT_PAD, y
                          + ascent + TEXT_PAD)
         else:
             raise AttributeError("no such text alignment: '%s'" % TEXT_ALIGNMENT)
@@ -567,13 +570,13 @@ class Person(Memorised):
         if STROKE_RECTANGLE == True:
             set_fg_style(ctx)
             ctx.rectangle(self.get('tx'), self.get('y'),
-                    self.get('tw') + RECTANGLE_TEXT_PAD, self.get('th'))
+                    self.get('tw'), self.get('th'))
             ctx.fill_preserve()
             set_line_style(ctx)
             ctx.stroke()
 
             draw_text(self.text,
-                    self.get('tx') + RECTANGLE_TEXT_PAD, self.get('y'))
+                    self.get('tx'), self.get('y'))
         else:
             set_fg_style(ctx)
             ctx.rectangle(self.get('tx'), self.get('y'),
@@ -687,14 +690,12 @@ class Family(Memorised):
         if STROKE_RECTANGLE == True:
             set_fg_style(ctx)
             ctx.rectangle(self.get('spx'), self.get('spy'),
-                    self.spouse.get('tw') + RECTANGLE_TEXT_PAD,
-                          self.spouse.get('th'))
+                    self.spouse.get('tw'), self.spouse.get('th'))
             ctx.fill_preserve()
             set_line_style(ctx)
             ctx.stroke()
 
-            draw_text(self.spouse.text,
-                    self.get('spx') + RECTANGLE_TEXT_PAD, self.get('spy'))
+            draw_text(self.spouse.text, self.get('spx'), self.get('spy'))
         else:
             set_fg_style(ctx)
             ctx.rectangle(self.get('spx'), self.get('spy'),
