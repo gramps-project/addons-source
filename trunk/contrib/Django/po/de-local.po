@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-17 22:07+0100\n"
-"PO-Revision-Date: 2011-02-17 22:17+0100\n"
+"POT-Creation-Date: 2011-12-21 20:04+0100\n"
+"PO-Revision-Date: 2011-12-21 20:18+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -22,38 +22,35 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: Django/ExportDjango.gpr.py:25
+#: Django//ExportDjango.gpr.py:25
 msgid "Django Export"
 msgstr "Django Export"
 
-#: Django/ExportDjango.gpr.py:26 Django/ImportDjango.gpr.py:26
+#: Django//ExportDjango.gpr.py:26 Django//ImportDjango.gpr.py:26
 msgid "Django is a web framework working on a configured database"
 msgstr ""
-"Django ist ein Web-framework das mit einer konfigurierten Datenbank arbeitet"
+"Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank "
+"arbeitet"
 
-#: Django/ExportDjango.gpr.py:31
+#: Django//ExportDjango.gpr.py:31
 msgid "Django options"
 msgstr "Django Optionen"
 
-#: Django/ExportDjango.py:188
+#: Django//ExportDjango.py:188
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] "Exmport abgeschlossen: %d Sekunde"
-msgstr[1] "Exmport abgeschlossen: %d Sekunden"
+msgstr[0] "Export abgeschlossen: %d Sekunde"
+msgstr[1] "Export abgeschlossen: %d Sekunden"
 
-#: Django/ImportDjango.gpr.py:25
+#: Django//ImportDjango.gpr.py:25
 msgid "Django Import"
 msgstr "Django Import"
 
-#: Django/ImportDjango.py:185
+#: Django//ImportDjango.py:184
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "Import abgeschlossen: %d Sekunde"
 msgstr[1] "Import abgeschlossen: %d Sekunden"
-
-#: Django/ImportDjango.py:186
-msgid "Django import"
-msgstr "Django Import"
 

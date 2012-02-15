@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-21 20:21+0100\n"
-"PO-Revision-Date: 2011-12-21 20:27+0100\n"
+"POT-Creation-Date: 2011-12-20 21:26+0100\n"
+"PO-Revision-Date: 2011-12-20 21:38+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -22,15 +22,27 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ExportRaw//ExportRaw.gpr.py:3
-msgid "Raw Export"
-msgstr "Rohdaten Export"
+#: DEWebConnectPack//DEWebPack.gpr.py:10
+msgid "DE Web Connect Pack"
+msgstr "DE Web Connect Pack"
 
-#: ExportRaw//ExportRaw.gpr.py:4
-msgid "This is a raw python object dump"
-msgstr "Dies ist eine Rohdaten Pythonobjekt Ausgabe"
+#: DEWebConnectPack//DEWebPack.gpr.py:11
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr "Sammlung von Webseiten für DE (benötigt libwebconnect)"
 
-#: ExportRaw//ExportRaw.gpr.py:11
-msgid "Raw options"
-msgstr "Rohdaten Optionen"
+#: DEWebConnectPack//DEWebPack.py:33
+msgid "Bielefeld Academic Search"
+msgstr "Suchmaschine BASE (Bielefeld Academic Search Engine)"
+
+#: DEWebConnectPack//DEWebPack.py:35
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: DEWebConnectPack//DEWebPack.py:38
+msgid "Google Archives"
+msgstr "Google Archiv"
+
+#: DEWebConnectPack//DEWebPack.py:39
+msgid "DE Google"
+msgstr "DE Google"
 
