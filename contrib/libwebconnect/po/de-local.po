@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-22 20:09+0100\n"
-"PO-Revision-Date: 2011-12-22 20:11+0100\n"
+"POT-Creation-Date: 2011-12-24 16:02+0100\n"
+"PO-Revision-Date: 2011-12-24 16:05+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -22,23 +22,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:3
-msgid "Headline News Gramplet"
-msgstr "Schlagzeilen Gramplet"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
-msgid "Gramplet for showing latest the Gramps news"
-msgstr "Gramplet zum zeigen der neuesten Gramps Nachrichten"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:10
-msgid "Headline News"
-msgstr "Schlagzeilen"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:100
-msgid "Read Gramps headline news"
-msgstr "Lese Gramps Schlagzeilen"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:104
-msgid "No Family Tree loaded."
-msgstr "Kein Stammbaum geladen."
+#: libwebconnect//libwebconnect.gpr.py:10
+msgid "Library for web site collections"
+msgstr "Bibliothek für Webseitensammlungen"
 

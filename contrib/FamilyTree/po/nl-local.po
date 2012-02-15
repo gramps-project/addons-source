@@ -1,21 +1,55 @@
-# Dutch translations for gramps package.
-# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
-# erik <frederik.de.richter@telenet.be>, 2011.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 3.3.0\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 19:43+0100\n"
-"PO-Revision-Date: 2011-01-15 19:59+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: Dutch\n"
-"Language: nl\n"
+"POT-Creation-Date: 2011-04-13 15:04+0200\n"
+"PO-Revision-Date: 2011-04-13 15:09+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: FamilyTree/FamilyTree.gpr.py:3
 msgid "Family Tree"
@@ -28,7 +62,7 @@ msgstr "Grafische familiestamboom wordt aangemaakt."
 #: FamilyTree/FamilyTree.py:90
 #, python-format
 msgid "Family Tree for %s"
-msgstr "Familistamboom voor %s"
+msgstr "Familiestamboom voor %s"
 
 #: FamilyTree/FamilyTree.py:625
 #: FamilyTree/FamilyTree.py:630
@@ -113,7 +147,7 @@ msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:975
 msgid "Tree Options"
-msgstr "Boomopties"
+msgstr "Stamboomopties"
 
 #: FamilyTree/FamilyTree.py:977
 msgid "Center Family"
@@ -209,7 +243,7 @@ msgstr "Voornaam door roepnaam vervangen"
 
 #: FamilyTree/FamilyTree.py:1015
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Roepnaam in voornaam onderlijnen/roepnaam aan voornaam toevoegen"
+msgstr "Onderstreep roepnaam in de voornaam / voeg roepnaam aan voornaam toe"
 
 #: FamilyTree/FamilyTree.py:1018
 msgid "Include Occupation"
@@ -223,10 +257,11 @@ msgstr "Adres toevoegen"
 msgid "Print event data (dead person)"
 msgstr "Gebeurtenisgegevens overleden persoon) afdrukken"
 
+# niet/geen
 #: FamilyTree/FamilyTree.py:1026
 #: FamilyTree/FamilyTree.py:1034
 msgid "None"
-msgstr "Niets"
+msgstr "Geen"
 
 #: FamilyTree/FamilyTree.py:1027
 #: FamilyTree/FamilyTree.py:1035
@@ -257,11 +292,11 @@ msgstr "Op begrafenis of crematie terugvallen als overlijdensgebeurtenis ontbree
 
 #: FamilyTree/FamilyTree.py:1048
 msgid "Print fields for missing information"
-msgstr "Velden voor ontbrekende informatie afdrukken"
+msgstr "Druk velden af voor ontbrekende informatie"
 
 #: FamilyTree/FamilyTree.py:1049
 msgid "Whether to include fields for missing information."
-msgstr "Al of niet velden voor ontbrekende informatie toevoegen."
+msgstr "Al of niet velden voorzien voor ontbrekende informatie."
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "Include event description"
@@ -277,7 +312,7 @@ msgstr "Titeltekst"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Footer text"
-msgstr "Voetnoottekst"
+msgstr "Voetnoot"
 
 #: FamilyTree/FamilyTree.py:1075
 msgid "The style used for the title."

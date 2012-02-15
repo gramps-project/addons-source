@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 08:56+0100\n"
-"PO-Revision-Date: 2011-01-16 09:02+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:08+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,12 @@ msgid "Lines of Descendency"
 msgstr "Afstammelingslijnen"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:4
-msgid "Prints out all descendency lines from a given ancestor to a given descendent in text."
-msgstr "Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt."
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde "
+"afstammeling worden in tekst afgedrukt."
 
 # Mensen
 #: LinesOfDescendency/lines-of-descendency.py:21
@@ -101,4 +105,3 @@ msgstr "De persoon %s is niet te vinden in het gegevensbestand"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Afstammelingslijnen van %(ancestor)s naar %(descendent)s"
-
