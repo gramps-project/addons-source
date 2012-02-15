@@ -1,0 +1,69 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 33\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-08 21:44+0200\n"
+"PO-Revision-Date: 2011-05-08 21:49+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+msgid "Number of descendants"
+msgstr "Antal ättlingar"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+msgid "Shows the number of descendants of the current person"
+msgstr "Visar antal ättlingar till aktuell person"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:57
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Antal av %ss ättlingar"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:82
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Generation"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:83
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:106
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:110
+msgid "Total"
+msgstr "Totalt"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:84
+msgid "Seen"
+msgstr "Sedda"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:85
+msgid "Outlived"
+msgstr "Överlevda"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:86
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+msgid "Now alive"
+msgstr "Nu levande"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr ""
+"Sedda = antal ättlingar, vars födelse har inträffat under %s levnad"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:119
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Överlevda = antal ättlingar, vilka avlidit medan %s fortfarande levde"
+

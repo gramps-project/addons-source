@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 10:40+0100\n"
-"PO-Revision-Date: 2011-01-16 10:42+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:09+0200\n"
+"PO-Revision-Date: 2011-04-14 20:24+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: PythonGramplet/PythonGramplet.gpr.py:3
 msgid "Python Gramplet"
-msgstr "Pythongramplet"
+msgstr "Python-gramplet"
 
 #: PythonGramplet/PythonGramplet.gpr.py:4
 msgid "Interactive Python interpreter"

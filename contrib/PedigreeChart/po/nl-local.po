@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 10:33+0100\n"
+"POT-Creation-Date: 2011-04-14 20:08+0200\n"
 "PO-Revision-Date: 2011-01-16 10:37+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
@@ -51,75 +51,73 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:24
+#: PedigreeChart//PedigreeChart.gpr.py:24
 msgid "Pedigree Chart"
 msgstr "Stamboomgrafiek"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart//PedigreeChart.gpr.py:25
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Alternatieve versie van de traditionele stamboomgrafiek"
 
-#: PedigreeChart/PedigreeChart.py:378
+#: PedigreeChart//PedigreeChart.py:378
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "De persoon %s is niet te vinden in het gegevensbestand"
 
-#: PedigreeChart/PedigreeChart.py:381
-#: PedigreeChart/PedigreeChart.py:529
+#: PedigreeChart//PedigreeChart.py:381 PedigreeChart//PedigreeChart.py:529
 msgid "Mother"
 msgstr "Moeder"
 
-#: PedigreeChart/PedigreeChart.py:385
+#: PedigreeChart//PedigreeChart.py:385
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Stamboomgrafiek voor %s"
 
-#: PedigreeChart/PedigreeChart.py:532
+#: PedigreeChart//PedigreeChart.py:532
 msgid "Father"
 msgstr "Vader"
 
-#: PedigreeChart/PedigreeChart.py:534
+#: PedigreeChart//PedigreeChart.py:534
 #, python-format
 msgid "Page %d"
 msgstr "Pagina %d"
 
-#: PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart//PedigreeChart.py:641
 msgid "Tree Options"
 msgstr "Stamboomopties"
 
-#: PedigreeChart/PedigreeChart.py:643
+#: PedigreeChart//PedigreeChart.py:643
 msgid "Center Person"
 msgstr "Centraal persoon"
 
-#: PedigreeChart/PedigreeChart.py:644
+#: PedigreeChart//PedigreeChart.py:644
 msgid "The center person for the tree"
 msgstr "De centrale persoon voor de stamboom"
 
-#: PedigreeChart/PedigreeChart.py:647
+#: PedigreeChart//PedigreeChart.py:647
 msgid "Generations"
 msgstr "Generaties"
 
-#: PedigreeChart/PedigreeChart.py:648
+#: PedigreeChart//PedigreeChart.py:648
 msgid "The number of generations to include in the tree"
 msgstr "Het aantal generaties dat in de stamboom wordt voorzien"
 
-#: PedigreeChart/PedigreeChart.py:651
+#: PedigreeChart//PedigreeChart.py:651
 msgid "Show Mother/Father captions"
 msgstr "Moeder/vader opschrift tonen"
 
-#: PedigreeChart/PedigreeChart.py:652
+#: PedigreeChart//PedigreeChart.py:652
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "De titel van vader en moeder naast elke voorouderrechthoek tonen."
 
-#: PedigreeChart/PedigreeChart.py:664
+#: PedigreeChart//PedigreeChart.py:664
 msgid "The basic style used for the text display."
 msgstr "De gebruikte basisstijl voor de tekstweergave."
 
-#: PedigreeChart/PedigreeChart.py:673
+#: PedigreeChart//PedigreeChart.py:673
 msgid "The basic style used for the title display."
 msgstr "De gebruikte basisstijl voor de titelweergave."
 
-#: PedigreeChart/PedigreeChart.py:682
+#: PedigreeChart//PedigreeChart.py:682
 msgid "Style used for labels and captions"
 msgstr "De gebruikte stijl voor opschriften en etiketten."
-

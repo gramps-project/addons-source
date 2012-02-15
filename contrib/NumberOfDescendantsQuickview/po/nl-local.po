@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 10:26+0100\n"
-"PO-Revision-Date: 2011-01-16 10:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:08+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -92,10 +92,11 @@ msgstr "Nog in leven"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
+msgstr ""
+"Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:119
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
-
+msgstr ""
+"Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"

@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 09:04+0100\n"
-"PO-Revision-Date: 2011-01-16 09:05+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:08+0200\n"
+"PO-Revision-Date: 2011-04-14 20:20+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
-msgstr "Opmerkingengramplet"
+msgstr "Opmerkingen-gramplet"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Gramplet for editing active person's notes"
@@ -63,33 +63,31 @@ msgstr "Gramplet om de opmerkingen van de actieve persoon te bewerken"
 msgid "Note"
 msgstr "Opmerking"
 
-#: NoteGramplet/NoteGramplet.py:60
+#: NoteGramplet/NoteGramplet.py:61
 msgid "Active person"
 msgstr "Actieve persoon"
 
-#: NoteGramplet/NoteGramplet.py:84
+#: NoteGramplet/NoteGramplet.py:85
 msgid "Family"
 msgstr "Familie"
 
-#: NoteGramplet/NoteGramplet.py:106
+#: NoteGramplet/NoteGramplet.py:107
 msgid "Save"
 msgstr "Opslaan"
 
-#: NoteGramplet/NoteGramplet.py:109
+#: NoteGramplet/NoteGramplet.py:110
 msgid "Abandon"
 msgstr "Annuleren"
 
-#: NoteGramplet/NoteGramplet.py:168
-#: NoteGramplet/NoteGramplet.py:249
+#: NoteGramplet/NoteGramplet.py:169
+#: NoteGramplet/NoteGramplet.py:250
 msgid "Person Note"
 msgstr "Persoonsopmerking"
 
-#: NoteGramplet/NoteGramplet.py:253
-msgid "Add Note"
-msgstr "Opmerking toevoegen"
+#: NoteGramplet/NoteGramplet.py:248
+msgid "Save Note"
+msgstr "Opmerking opslaan"
 
-# Bronnen vermelden/citeren
-#: NoteGramplet/NoteGramplet.py:258
-msgid "Edit Note"
-msgstr "Opmerking bewerken"
+#~ msgid "Add Note"
+#~ msgstr "Opmerking toevoegen"
 
