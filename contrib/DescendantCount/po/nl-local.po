@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 15:56+0100\n"
-"PO-Revision-Date: 2011-01-15 15:58+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-10 08:51+0200\n"
+"PO-Revision-Date: 2011-04-10 09:00+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -62,11 +62,11 @@ msgstr "Het aantal afstammelingen voor elke persoon tonen."
 
 #: DescendantCount/DescendantCount.gpr.py:17
 msgid "Descendant Count Gramplet"
-msgstr "Afstammelingentellingsgramplet"
+msgstr "'Afstammelingen telling'-gramplet"
 
 #: DescendantCount/DescendantCount.gpr.py:18
 msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet om personen en afstammelingentelling te tonene"
+msgstr "Gramplet om personen en afstammelingentelling te tonen"
 
 #: DescendantCount/DescendantCount.py:78
 msgid "Descendent Count"
