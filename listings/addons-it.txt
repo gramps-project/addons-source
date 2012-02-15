@@ -7,7 +7,7 @@
 {'d': 'Display descendant counts for each person.', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Descendant Count Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.8', 'z': 'FRWebConnectPack.addon.tgz'}
-{'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.7', 'z': 'LinesOfDescendency.addon.tgz'}
+{'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.8', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': "Display a person's events on a timeline", 'g': '3.4', 'i': 'timelinequickview', 'n': 'Linea temporale', 't': u'Quickreport', 'v': '1.0.8', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libaccess.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.6', 'z': 'SetAttributeTool.addon.tgz'}
