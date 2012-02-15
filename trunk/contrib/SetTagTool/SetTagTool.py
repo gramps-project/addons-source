@@ -21,7 +21,7 @@
 
 # $Id: $
 
-"Set Marker Tool"
+"Set Tag Tool"
 
 #-------------------------------------------------
 #
@@ -40,6 +40,7 @@ from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
+from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 import Errors
 import gen.plug.report.utils as ReportUtils
@@ -56,8 +57,8 @@ except:
 # Tool Classes
 #
 #-------------------------------------------------
-class SetMarkerOptions(MenuToolOptions):
-    """ Set Marker options  """
+class SetTagOptions(MenuToolOptions):
+    """ Set Tag options  """
     def __init__(self, name, person_id=None, dbstate=None):
         self.__db = dbstate.get_database()
         MenuToolOptions.__init__(self, name, person_id, dbstate)
@@ -77,12 +78,12 @@ class SetMarkerOptions(MenuToolOptions):
         menu.add_option(category_name, "pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
         
-        marker_value = StringOption(_("Marker"), "")
+        tag_value = StringOption(_("Tag"), "")
 
-        marker_value.set_help(_("Marker value to add or edit"))
+        tag_value.set_help(_("Tag value to add or edit"))
 
-        menu.add_option(category_name, "marker_value", marker_value)
-        self.__marker_value = marker_value
+        menu.add_option(category_name, "tag_value", tag_value)
+        self.__tag_value = tag_value
 
         self.__update_filters()
 
@@ -108,71 +109,47 @@ class SetMarkerOptions(MenuToolOptions):
             # The rest don't
             self.__pid.set_available(False)
 
-class SetMarkerWindow(PluginWindows.ToolManagedWindowBatch):
+class SetTagWindow(PluginWindows.ToolManagedWindowBatch):
     def get_title(self):
-        return _("Set Marker")
+        return _("Set Tag")
 
     def initial_frame(self):
         return _("Options")
 
     def run(self):
-        self.trans = self.db.transaction_begin("",batch=True)
+        with DbTxn(_("Set Tag"), self.db, batch=True) as self.trans:
 
-        self.add_results_frame(_("Results"))
-        self.results_write(_("Processing...\n"))
-        self.db.disable_signals()
+            self.add_results_frame(_("Results"))
+            self.results_write(_("Processing...\n"))
+            self.db.disable_signals()
 
-        self.filter_option =  self.options.menu.get_option_by_name('filter')
-        self.filter = self.filter_option.get_filter() # the actual filter
+            self.filter_option =  self.options.menu.get_option_by_name('filter')
+            self.filter = self.filter_option.get_filter() # the actual filter
 
-        # FIXME: currently uses old style for gramps31 compatible
-        #    people = self.filter.apply(self.db,
-        #                               self.db.iter_person_handles())
-        people = self.filter.apply(self.db,
-                                   self.db.get_person_handles(sort_handles=False))
+            people = self.filter.apply(self.db,
+                                       self.db.get_person_handles(sort_handles=False))
 
-        # FIXME: currently uses old style for gramps31 compatible
-        # num_people = self.db.get_number_of_people()
-        num_people = len(people)
-        self.progress.set_pass(_('Setting markers...'), 
-                               num_people)
-        count = 0
-        marker_value = self.options.handler.options_dict['marker_value']
-        self.results_write(_("Setting markers to '%s'...\n\n" % marker_value))
-        marker = gen.lib.MarkerType(marker_value)
-        for person_handle in people:
-            count += 1
-            self.progress.step()
-            person = self.db.get_person_from_handle(person_handle)
-            if person and person.get_marker() != marker:
-                self.results_write("  %d) Changed" % count)
-                self.results_write_link(name_displayer.display(person),
-                                        person, person_handle)
-                self.results_write(" from '%s'\n" % person.get_marker())
-                person.set_marker(marker)
-                self.db.commit_person(person, self.trans)
+            num_people = len(people)
+            self.progress.set_pass(_('Setting tags...'), 
+                                   num_people)
+            count = 0
+            tag_value = self.options.handler.options_dict['tag_value']
+            self.results_write(_("Setting tags to '%s'...\n\n" % tag_value))
+            tag = self.db.get_tag_from_name(tag_value)
+            for person_handle in people:
                 count += 1
-        self.db.transaction_commit(self.trans, _("Set Marker"))
-        self.db.enable_signals()
-        self.db.request_rebuild()
-        self.results_write(_("\nSet %d markers to '%s'\n" % (count, marker_value)))
-        self.results_write(_("Done!\n"))
-
-try:
-    # Gramps 3.1 style:
-    from gen.plug import PluginManager
-    pmgr = PluginManager.get_instance()
-    pmgr.register_tool(
-        name = 'Set Marker Tool',
-        category = Tool.TOOL_DBPROC,
-        tool_class = SetMarkerWindow,
-        options_class = SetMarkerOptions,
-        modes = PluginManager.TOOL_MODE_GUI,
-        translated_name = _("Set Marker"),
-        status = _("Beta"),
-        author_name = "Douglas S. Blank",
-        author_email = "doug.blank@gmail.com",
-        description= _("Sets an marker of a person to a given value."),
-        )
-except:
-    pass
+                self.progress.step()
+                person = self.db.get_person_from_handle(person_handle)
+                if person and person.get_tag_list() != tag:
+                    self.results_write("  %d) Changed" % count)
+                    self.results_write_link(name_displayer.display(person),
+                                            person, person_handle)
+                    self.results_write(" from '%s'\n" % person.get_tag_list())
+                    #gen.lib.tag.set_name(tag_value)
+                    person.add_tag(tag)
+                    self.db.commit_person(person, self.trans)
+                    count += 1
+            self.db.enable_signals()
+            self.db.request_rebuild()
+            self.results_write(_("\nSet %d tags to '%s'\n" % (count, tag_value)))
+            self.results_write(_("Done!\n"))

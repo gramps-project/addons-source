@@ -21,18 +21,18 @@
 # $Id: $
 
 register(TOOL, 
-         id    = 'SetMarker',
-         name  = _("Set Marker"),
-         description =  _("Set Marker to a given value."),
-         version = '0.0.7',
+         id    = 'SetTag',
+         name  = _("Set Tag"),
+         description =  _("Set Tag to a given value."),
+         version = '0.1.0',
          gramps_target_version = '3.4',
          status = STABLE,
-         fname = 'SetMarkerTool.py',
+         fname = 'SetTagTool.py',
          authors = ["Douglas S. Blank"],
          authors_email = ["doug.blank@gmail.com"],
          category = TOOL_DBPROC,
-         toolclass = 'SetMarkerWindow',
-         optionclass = 'SetMarkerOptions',
+         toolclass = 'SetTagWindow',
+         optionclass = 'SetTagOptions',
          tool_modes = [TOOL_MODE_GUI],
          )
 
