@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-14 14:55+0100\n"
-"PO-Revision-Date: 2011-01-14 14:57+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-09 19:55+0200\n"
+"PO-Revision-Date: 2011-04-09 19:58+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr "Filter om aantal personen te beperken, selecteren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:81
 msgid "Filter Person"
-msgstr "Personen filteren"
+msgstr "Persoon filteren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:82
 msgid "The center person for the filter"
@@ -181,7 +181,7 @@ msgstr "Uitersten (voor en na)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Dates on events are either about or after/before"
-msgstr "Geburtenissendatums zijn ofwel ongeveer of voor/na"
+msgstr "Gebeurtenissendatums zijn ofwel ongeveer of voor/na"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:181
@@ -308,7 +308,7 @@ msgstr "'%s'verwijderen..."
 # niet/geen
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:304
 msgid "done!\n"
-msgstr "gedaan!\n"
+msgstr "ok!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:305
 msgid "Removed date estimates"
@@ -381,7 +381,7 @@ msgstr "Geschatte overlijdensdatum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 msgid " Done! Committing..."
-msgstr " OK! Opgeslagen..."
+msgstr " Ok! Opgeslagen..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:482
 msgid "Add date estimates"

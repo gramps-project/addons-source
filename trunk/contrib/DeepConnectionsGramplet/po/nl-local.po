@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 08:35+0100\n"
-"PO-Revision-Date: 2011-01-15 08:39+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-10 08:50+0200\n"
+"PO-Revision-Date: 2011-04-08 08:19+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,8 @@ msgstr "'Verre relaties'-gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont"
+msgstr ""
+"Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
@@ -65,7 +66,7 @@ msgstr "Verre relaties"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:55
 msgid "Double-click name for details"
-msgstr "Achternaam klikken voor meer gegevens"
+msgstr "Dubbelklikken op de achternaam voor meer gegevens"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:56
 msgid "No Family Tree loaded."
@@ -167,4 +168,3 @@ msgid ""
 msgstr ""
 "\n"
 "Het zoeken is gedaan. Er werden %d relaties gevonden."
-

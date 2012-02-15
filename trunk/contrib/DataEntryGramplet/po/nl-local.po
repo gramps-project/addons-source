@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 08:21+0100\n"
-"PO-Revision-Date: 2011-01-15 08:33+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-10 08:50+0200\n"
+"PO-Revision-Date: 2011-04-10 08:58+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr "Gegevensingavegramplet"
+msgstr "Gegevensingave-gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
@@ -61,122 +61,123 @@ msgstr "Gramplet om gegevens snel in te voeren"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
-msgstr "Gegevensingave"
+msgstr "Gegevensinvoer"
 
-#: DataEntryGramplet/DataEntryGramplet.py:57
+#: DataEntryGramplet/DataEntryGramplet.py:59
 msgid "Active person"
 msgstr "Actieve persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:61
 msgid "Family:"
 msgstr "Familie:"
 
-#: DataEntryGramplet/DataEntryGramplet.py:60
+#: DataEntryGramplet/DataEntryGramplet.py:62
 msgid "Sources?"
 msgstr "Bronnen?"
 
-#: DataEntryGramplet/DataEntryGramplet.py:62
-#: DataEntryGramplet/DataEntryGramplet.py:91
+#: DataEntryGramplet/DataEntryGramplet.py:64
+#: DataEntryGramplet/DataEntryGramplet.py:93
 msgid "Surname, Given"
 msgstr "Familienaam, voornaam"
 
-#: DataEntryGramplet/DataEntryGramplet.py:63
-#: DataEntryGramplet/DataEntryGramplet.py:92
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:94
 msgid "Gender"
 msgstr "Geslacht"
 
-#: DataEntryGramplet/DataEntryGramplet.py:63
-#: DataEntryGramplet/DataEntryGramplet.py:93
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 msgid "female"
 msgstr "vrouwelijk"
 
-#: DataEntryGramplet/DataEntryGramplet.py:63
-#: DataEntryGramplet/DataEntryGramplet.py:93
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 msgid "male"
 msgstr "mannelijk"
 
-#: DataEntryGramplet/DataEntryGramplet.py:63
-#: DataEntryGramplet/DataEntryGramplet.py:93
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 msgid "unknown"
 msgstr "onbekend"
 
-#: DataEntryGramplet/DataEntryGramplet.py:64
 #: DataEntryGramplet/DataEntryGramplet.py:66
-#: DataEntryGramplet/DataEntryGramplet.py:67
-#: DataEntryGramplet/DataEntryGramplet.py:93
-#: DataEntryGramplet/DataEntryGramplet.py:94
+#: DataEntryGramplet/DataEntryGramplet.py:68
+#: DataEntryGramplet/DataEntryGramplet.py:69
 #: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:96
+#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "Source"
 msgstr "Bron"
 
-#: DataEntryGramplet/DataEntryGramplet.py:66
-#: DataEntryGramplet/DataEntryGramplet.py:94
+#: DataEntryGramplet/DataEntryGramplet.py:68
+#: DataEntryGramplet/DataEntryGramplet.py:96
 msgid "Birth"
 msgstr "Geboorte"
 
 # Gebeurtenistype: overlijden/sterven/sterfgeval/doodgaan
-#: DataEntryGramplet/DataEntryGramplet.py:67
-#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "Death"
 msgstr "Overlijden"
 
-#: DataEntryGramplet/DataEntryGramplet.py:75
+#: DataEntryGramplet/DataEntryGramplet.py:77
 msgid "Save"
 msgstr "Opslaan"
 
-#: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:80
 msgid "Abandon"
 msgstr "Annuleren"
 
-#: DataEntryGramplet/DataEntryGramplet.py:83
+#: DataEntryGramplet/DataEntryGramplet.py:85
 msgid "New person"
 msgstr "Nieuwe persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:84
+#: DataEntryGramplet/DataEntryGramplet.py:86
 msgid "Add relation"
 msgstr "Relatie toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:85
+#: DataEntryGramplet/DataEntryGramplet.py:87
 msgid "No relation to active person"
 msgstr "Geen relatie met de actieve persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:86
+#: DataEntryGramplet/DataEntryGramplet.py:88
 msgid "Add as a Parent"
 msgstr "Als een ouder toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:87
+#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Add as a Spouse"
 msgstr "Als een echtgeno(o)t(e) toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:88
+#: DataEntryGramplet/DataEntryGramplet.py:90
 msgid "Add as a Sibling"
 msgstr "Als een broer/zus toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89
+#: DataEntryGramplet/DataEntryGramplet.py:91
 msgid "Add as a Child"
 msgstr "Als een kind toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:103
+#: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add"
 msgstr "Toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:106
+#: DataEntryGramplet/DataEntryGramplet.py:108
 msgid "Copy Active Data"
 msgstr "De actieve gegevens kopiëren"
 
 # zie ook uncleared.
 # is dit goed?
-#: DataEntryGramplet/DataEntryGramplet.py:109
+#: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "Clear"
 msgstr "Gewist"
 
-#: DataEntryGramplet/DataEntryGramplet.py:152
-#: DataEntryGramplet/DataEntryGramplet.py:166
-#: DataEntryGramplet/DataEntryGramplet.py:297
+#: DataEntryGramplet/DataEntryGramplet.py:154
+#: DataEntryGramplet/DataEntryGramplet.py:168
+#: DataEntryGramplet/DataEntryGramplet.py:299
 msgid "in"
 msgstr "in"
 
-#: DataEntryGramplet/DataEntryGramplet.py:460
+#: DataEntryGramplet/DataEntryGramplet.py:419
+#: DataEntryGramplet/DataEntryGramplet.py:526
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-gegevens bewerken: %s"
@@ -244,8 +245,6 @@ msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
 msgid "Please set gender on Active person."
 msgstr "Een geslacht voor de actieve persoon kiezen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:803
-#, python-format
-msgid "Gramplet Data Entry: %s"
-msgstr "Gramplet-gegevens invoer: %s"
+#~ msgid "Gramplet Data Entry: %s"
+#~ msgstr "Gramplet-gegevens invoer: %s"
 

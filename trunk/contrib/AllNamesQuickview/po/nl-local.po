@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 15:00+0100\n"
-"PO-Revision-Date: 2011-01-10 20:54+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-08 21:09+0200\n"
+"PO-Revision-Date: 2011-04-08 08:19+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:47
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
 msgid "All Names of All People"
 msgstr "Alle namen van alle personen"
 
@@ -59,19 +59,19 @@ msgstr "Alle namen van alle personen"
 msgid "Display all names of all people"
 msgstr "De namen van alle personen tonen"
 
-#: AllNamesQuickview/AllNames.py:50
+#: AllNamesQuickview/AllNames.py:49
 msgid "Name"
 msgstr "Naam"
 
-#: AllNamesQuickview/AllNames.py:50
+#: AllNamesQuickview/AllNames.py:49
 msgid "Primary Name"
 msgstr "Primaire naam"
 
-#: AllNamesQuickview/AllNames.py:50
+#: AllNamesQuickview/AllNames.py:49
 msgid "Name Type"
 msgstr "Naamtype"
 
-#: AllNamesQuickview/AllNames.py:67
+#: AllNamesQuickview/AllNames.py:66
 #, python-format
 msgid "Total names %d"
 msgstr "Totaal aantal namen %d"
