@@ -2,7 +2,7 @@
 # Lines of Descendency Report - a plugin for Gramps, the GTK+/GNOME based
 #                               genealogy program.
 #
-# Copyright (c) 2010, 2012 lcc <lcc.mailaddres@gmail.com>
+# Copyright (c) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
