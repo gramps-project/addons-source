@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 20:14+0100\n"
-"PO-Revision-Date: 2011-01-16 20:16+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:10+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -57,11 +57,15 @@ msgstr "Tijdslijnstamboom"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr "Afkomst"
+msgstr "Voorouders"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
-msgid "The view shows a timeline pedigree with ancestors and descendants of the selected person"
-msgstr "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon"
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de "
+"geselecteerde persoon"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:79
 msgid "short for born|b."
@@ -93,7 +97,7 @@ msgstr "Tijdslijnstamboom"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:673
 msgid "Person Filter Editor"
-msgstr "Personenfilter aanpassen"
+msgstr "Aanpassen personenfilter"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:951
 msgid "Relationship loop detected"
@@ -151,7 +155,7 @@ msgstr "Vooroudergeneraties"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1666
 #: TimelinePedigreeView/TimelinePedigreeView.py:1687
 msgid "People Menu"
-msgstr "Personenmenu"
+msgstr "Personen menu"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1717
 msgid "Spouses"
@@ -180,4 +184,3 @@ msgstr "Heeft Relatie"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1934
 msgid "Family Menu"
 msgstr "Familiemenu"
-
