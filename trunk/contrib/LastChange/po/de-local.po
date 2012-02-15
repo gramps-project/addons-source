@@ -1,0 +1,165 @@
+# translation of de.po to Deutsch
+# German GRAMPS Translation
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-22 21:08+0100\n"
+"PO-Revision-Date: 2011-12-24 15:42+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: LastChange//LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr "Letzte Änderung Gramplet"
+
+#: LastChange//LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr "Listet die letzten zehn geänderten Personendatensätze"
+
+#: LastChange//LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr "Letzte Änderungen"
+
+#: LastChange//LastChange.gpr.py:39 LastChange//LastChangeReport.py:82
+msgid "Last Change Report"
+msgstr "Letzte Änderungen Bericht"
+
+#: LastChange//LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr "Bericht der letzten Datensätze die geändert wurden"
+
+#: LastChange//LastChangeGramplet.py:49
+msgid "Double-click name for details"
+msgstr "Namen für Details doppelt-klicken"
+
+#: LastChange//LastChangeGramplet.py:50
+msgid "No Family Tree loaded."
+msgstr "Kein Stammbaum geladen."
+
+#: LastChange//LastChangeGramplet.py:54
+msgid "Processing..."
+msgstr "Verarbeitung..."
+
+#: LastChange//LastChangeGramplet.py:66
+msgid "changed on"
+msgstr "geändert am"
+
+#: LastChange//LastChangeReport.py:147
+msgid "People Changed"
+msgstr "Geänderte Personen"
+
+#: LastChange//LastChangeReport.py:148 LastChange//LastChangeReport.py:163
+#: LastChange//LastChangeReport.py:194 LastChange//LastChangeReport.py:214
+#: LastChange//LastChangeReport.py:229
+msgid "ID"
+msgstr "ID"
+
+#: LastChange//LastChangeReport.py:148
+msgid "Person"
+msgstr "Person"
+
+#: LastChange//LastChangeReport.py:148 LastChange//LastChangeReport.py:163
+#: LastChange//LastChangeReport.py:194 LastChange//LastChangeReport.py:214
+#: LastChange//LastChangeReport.py:229
+msgid "Changed On"
+msgstr "Geändert am"
+
+#: LastChange//LastChangeReport.py:162
+msgid "Families Changed"
+msgstr "Geänderte Familien"
+
+#: LastChange//LastChangeReport.py:163
+msgid "Family Surname"
+msgstr "Familie Nachname"
+
+#: LastChange//LastChangeReport.py:180
+#, python-format
+msgid "%s and %s"
+msgstr "%s und %s"
+
+#: LastChange//LastChangeReport.py:193
+msgid "Events Changed"
+msgstr "Geänderte Ereignisse"
+
+#: LastChange//LastChangeReport.py:194
+msgid "Event"
+msgstr "Ereignis"
+
+#: LastChange//LastChangeReport.py:213
+msgid "Places Changed"
+msgstr "Geänderte Orte"
+
+#: LastChange//LastChangeReport.py:214
+msgid "Place"
+msgstr "Ort"
+
+#: LastChange//LastChangeReport.py:228
+msgid "Media Changed"
+msgstr "Geänderte Medien"
+
+#: LastChange//LastChangeReport.py:229
+msgid "Path"
+msgstr "Pfad"
+
+#: LastChange//LastChangeReport.py:249
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: LastChange//LastChangeReport.py:250
+msgid "Select From:"
+msgstr "Wähle aus:"
+
+#: LastChange//LastChangeReport.py:251
+msgid "People"
+msgstr "Personen"
+
+#: LastChange//LastChangeReport.py:252
+msgid "Families"
+msgstr "Familien"
+
+#: LastChange//LastChangeReport.py:253
+msgid "Places"
+msgstr "Orte"
+
+#: LastChange//LastChangeReport.py:254
+msgid "Events"
+msgstr "Ereignisse"
+
+#: LastChange//LastChangeReport.py:255
+msgid "Media"
+msgstr "Medien"
+
+#: LastChange//LastChangeReport.py:256
+msgid "Sources"
+msgstr "Quellen"
+
+#: LastChange//LastChangeReport.py:272
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+#: LastChange//LastChangeReport.py:287
+msgid "The style used for the section headers."
+msgstr "Der Stil, der für die Abschnittsüberschriften verwendet wird."
+
+#: LastChange//LastChangeReport.py:297
+msgid "The style used for normal text"
+msgstr "Der Stil der für normalen Text verwendet wird"
+
+#: LastChange//LastChangeReport.py:309
+msgid "The basic style used for table headings."
+msgstr "Der Basisstil, der für Tabellenüberschriften verwendet wird."
+

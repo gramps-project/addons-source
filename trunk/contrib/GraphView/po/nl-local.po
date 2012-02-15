@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 20:13+0100\n"
-"PO-Revision-Date: 2011-01-15 20:14+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:08+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -51,16 +51,14 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: GraphView/graphview.gpr.py:3
-#: GraphView/graphview.py:90
+#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:90
 msgid "Graph View"
 msgstr "Grafiekscherm"
 
 #: GraphView/graphview.gpr.py:4
 msgid "Ancestry"
-msgstr "Afkomst"
+msgstr "Voorouders"
 
 #: GraphView/graphview.gpr.py:5
 msgid "Dynamic graph of relations"
 msgstr "Dynamische grafiek van de relaties"
-

@@ -1,32 +1,69 @@
-# Dutch translations for gramps package.
-# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
-# erik <frederik.de.richter@telenet.be>, 2011.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 3.3.0\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:16+0100\n"
-"PO-Revision-Date: 2011-01-15 16:26+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: Dutch\n"
-"Language: nl\n"
+"POT-Creation-Date: 2011-04-13 15:04+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: FamilySheet/FamilySheet.gpr.py:3
 msgid "Family Sheet"
 msgstr "Familiepagina"
 
 #: FamilySheet/FamilySheet.gpr.py:4
-msgid "Produces a family sheet showing full information about a person and his/her partners and children."
-msgstr "Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont."
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Een familiepagina die de volledige informatie over een persoon en zijn/haar "
+"partners en kinderen, toont."
 
-#: FamilySheet/FamilySheet.py:213
-#: FamilySheet/FamilySheet.py:256
+#: FamilySheet/FamilySheet.py:213 FamilySheet/FamilySheet.py:256
 #, python-format
 msgid "→ %s"
 msgstr "→ %s"
@@ -89,8 +126,7 @@ msgstr "op %(placeholder)s"
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "op %(placeholder)s (%(partial)s)"
 
-#: FamilySheet/FamilySheet.py:787
-#: FamilySheet/FamilySheet.py:789
+#: FamilySheet/FamilySheet.py:787 FamilySheet/FamilySheet.py:789
 #, python-format
 msgid "in %(place)s"
 msgstr "te %(place)s"
@@ -125,19 +161,19 @@ msgstr "Centrale persoon en al de afstammelingen"
 
 #: FamilySheet/FamilySheet.py:831
 msgid "Use call name"
-msgstr "Roepnaam gebruiken"
+msgstr "Gebruik roepnaam"
 
 #: FamilySheet/FamilySheet.py:833
 msgid "Don't use call name"
-msgstr "Roepnaam niet gebruiken"
+msgstr "Gebruik de roepnaam niet"
 
 #: FamilySheet/FamilySheet.py:834
 msgid "Replace first name with call name"
-msgstr "De voornaam door de roepnaam vervangen"
+msgstr "Vervang de voornaam door de roepnaam"
 
 #: FamilySheet/FamilySheet.py:835
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Roepnaam in de voornaam onderstrepe/roepnaam bij voornaam toevoegen"
+msgstr "Onderstreep roepnaam in de voornaam / voeg roepnaam aan voornaam toe"
 
 #: FamilySheet/FamilySheet.py:838
 msgid "Print placeholders for missing information"
@@ -145,11 +181,11 @@ msgstr "Plaats voor ontbrekende informatie afdrukken"
 
 #: FamilySheet/FamilySheet.py:841
 msgid "Include sources"
-msgstr "Bronnen toevoegen"
+msgstr "Bronnen bijvoegen"
 
 #: FamilySheet/FamilySheet.py:844
 msgid "Include notes"
-msgstr "Opmerkingen toevoegen"
+msgstr "Opmerkingen bijvoegen"
 
 #: FamilySheet/FamilySheet.py:858
 msgid "The basic style used for the text display"
@@ -170,4 +206,3 @@ msgstr "De stijl gebruikt voor nummers"
 #: FamilySheet/FamilySheet.py:897
 msgid "The style used for footnotes (notes and source references)"
 msgstr "De stijl gebruikt voor voetnoten (opmerkingen bronverwijzingen)"
-

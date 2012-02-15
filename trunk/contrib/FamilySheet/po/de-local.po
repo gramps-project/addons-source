@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-17 22:34+0100\n"
-"PO-Revision-Date: 2011-02-17 22:44+0100\n"
+"POT-Creation-Date: 2011-12-22 18:58+0100\n"
+"PO-Revision-Date: 2011-12-22 19:20+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -85,7 +85,7 @@ msgstr "im %(ym_date)s"
 #: FamilySheet/FamilySheet.py:738
 #, python-format
 msgid "in %(y_date)s"
-msgstr "im Jahre %(y_date)s"
+msgstr "in %(y_date)s"
 
 #: FamilySheet/FamilySheet.py:742
 #, python-format
@@ -136,15 +136,15 @@ msgstr "Verwende Rufname"
 
 #: FamilySheet/FamilySheet.py:833
 msgid "Don't use call name"
-msgstr "Rufnamen nicht verwenden"
+msgstr "Rufname nicht verwenden"
 
 #: FamilySheet/FamilySheet.py:834
 msgid "Replace first name with call name"
-msgstr "Vornamen durch Rufnamen ersetzen"
+msgstr "Vorname durch Rufname ersetzen"
 
 #: FamilySheet/FamilySheet.py:835
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zu Vornamen hinzufügen"
+msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
 
 #: FamilySheet/FamilySheet.py:838
 msgid "Print placeholders for missing information"
@@ -152,7 +152,7 @@ msgstr "Platzhalter für fehlende Informationen drucken"
 
 #: FamilySheet/FamilySheet.py:841
 msgid "Include sources"
-msgstr "Quellen aufnehmen"
+msgstr "Quellen einbeziehen"
 
 #: FamilySheet/FamilySheet.py:844
 msgid "Include notes"
@@ -160,11 +160,11 @@ msgstr "Notizen aufnehmen"
 
 #: FamilySheet/FamilySheet.py:858
 msgid "The basic style used for the text display"
-msgstr "Der grundlegende Stil, der für Text verwendet wird"
+msgstr "Der Grundstil, der für Text verwendet wird"
 
 #: FamilySheet/FamilySheet.py:868
 msgid "The style used for the page key on the top"
-msgstr ""
+msgstr "Der Stil, der für den Seitenschlüssel oben verwendet wird."
 
 #: FamilySheet/FamilySheet.py:877
 msgid "The style used for names"

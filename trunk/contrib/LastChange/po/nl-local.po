@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 20:39+0100\n"
-"PO-Revision-Date: 2011-01-15 20:46+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-13 19:56+0200\n"
+"PO-Revision-Date: 2011-04-13 20:05+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -64,8 +64,9 @@ msgid "Latest Changes"
 msgstr "Laatste wijzigingen"
 
 #: LastChange/LastChange.gpr.py:39
+#: LastChange/LastChangeReport.py:82
 msgid "Last Change Report"
-msgstr "verslag laatste wijziging"
+msgstr "Verslag laatste wijziging"
 
 #: LastChange/LastChange.gpr.py:40
 msgid "Report of the last records that have been changed"
@@ -73,7 +74,7 @@ msgstr "Verslag van de laatst gewijzigde gegevens"
 
 #: LastChange/LastChangeGramplet.py:49
 msgid "Double-click name for details"
-msgstr "Voor meer gegevens op achternaam klikken"
+msgstr "Voor verdere gegevens dubbelklikken op de achternaam"
 
 #: LastChange/LastChangeGramplet.py:50
 msgid "No Family Tree loaded."
@@ -155,8 +156,8 @@ msgid "Report Options"
 msgstr "Verslagopties"
 
 #: LastChange/LastChangeReport.py:250
-msgid "Select From"
-msgstr "Selecteren uit"
+msgid "Select From:"
+msgstr "Selecteren uit:"
 
 # Mensen
 #: LastChange/LastChangeReport.py:251
