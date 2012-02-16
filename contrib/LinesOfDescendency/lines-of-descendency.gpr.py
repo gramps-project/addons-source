@@ -2,6 +2,9 @@
 # Lines of Descendency Report - a plugin for Gramps, the GTK+/GNOME based
 #                               genealogy program.
 #
+# This program is released under the MIT License.
+# Cf. http://www.opensource.org/licenses/mit-license.php.
+#
 # Copyright (c) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,7 +30,7 @@ register(REPORT,
         name = _('Lines of Descendency Report'),
         description = _('Prints out all descendency lines '
             'from a given ancestor to a given descendent in text.'),
-        version = '1.1.9',
+        version = '1.1.10',
         gramps_target_version = '3.4',
         status = STABLE,
         fname = 'lines-of-descendency.py',
