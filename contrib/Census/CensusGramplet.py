@@ -173,9 +173,10 @@ class CensusGramplet(Gramplet):
                         else:
                             place_text = ''
                             
-                        source_ref = get_census_source_ref(db, event)
-                        if source_ref:
-                            source = db.get_source_from_handle(source_ref.ref)
+                        citation = get_census_citation(db, event)
+                        if citation:
+                            source_handle = citation.get_reference_handle()
+                            source = db.get_source_from_handle(source_handle)
                             source_text = source.get_title()
                             self.model.append((event,
                                               source_text,
@@ -206,7 +207,7 @@ from gui.editors import EditPerson
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Census import ORDER_ATTR
-from Census import (get_census_date, get_census_columns, get_census_source_ref,
+from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
 
@@ -224,10 +225,9 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.db = dbstate.db
         
         self.event = event
-        self.source_ref = get_census_source_ref(self.db, self.event)
-        if self.source_ref is None:
-            self.source_ref = gen.lib.SourceRef()
-            self.event.add_source_reference(self.source_ref)
+        self.citation = get_census_citation(self.db, self.event)
+        if self.citation is None:
+            self.citation = gen.lib.Citation()
 
         ManagedWindow.ManagedWindow.__init__(self, uistate, track, event)
 
@@ -244,8 +244,8 @@ class CensusEditor(ManagedWindow.ManagedWindow):
 
         self.ref_field = MonitoredEntry(
             self.widgets['ref_entry'], 
-            self.source_ref.set_page, 
-            self.source_ref.get_page, 
+            self.citation.set_page, 
+            self.citation.get_page, 
             self.db.readonly)
 
         self.initial_people = []
@@ -475,7 +475,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         census_combo = self.widgets['census_combo']
         for pos, row in enumerate(census_combo.get_model()):
-            if row[0] == self.source_ref.ref:
+            if row[0] == self.citation.get_reference_handle():
                 census_combo.set_active(pos)
                 
         date_text = self.widgets['date_text']
@@ -619,10 +619,10 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         date_text = self.widgets['date_text']
         date_text.set_text(DateHandler.displayer.display(census_date))
         self.event.set_date_object(census_date)
-        self.source_ref.set_date_object(census_date)
+        self.citation.set_date_object(census_date)
 
         # Set source
-        self.source_ref.ref = model[index][0]
+        self.citation.set_reference_handle(model[index][0])
 
         # Set new columns
         columns = get_census_columns(census_id)
@@ -677,6 +677,11 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                                     if event_ref.ref != self.event.handle]
                 person.set_event_ref_list(ref_list)
                 self.db.commit_person(person, trans)
+
+            citation_handle = self.citation.get_handle()
+            if not citation_handle:
+                citation_handle = self.db.add_citation(self.citation, trans)
+                self.event.add_citation(citation_handle)
 
             self.db.commit_event(self.event, trans)
         self.close()

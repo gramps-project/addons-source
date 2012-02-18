@@ -158,16 +158,18 @@ def get_census_id(source):
     """
     return source.get_data_map()[CENSUS_TAG]
             
-def get_census_source_ref(db, event):
+def get_census_citation(db, event):
     """
-    Return the source reference for this census event.  If there is more
+    Return the citation for this census event.  If there is more
     than one census source for this event then the first is returned.
     """
-    for source_ref in event.get_source_references():
-        source = db.get_source_from_handle(source_ref.ref)
+    for citation_handle in event.get_citation_list():
+        citation = db.get_citation_from_handle(citation_handle)
+        source_handle = citation.get_reference_handle()
+        source = db.get_source_from_handle(source_handle)
         try:
             census_id = get_census_id(source)
-            return source_ref
+            return citation
         except KeyError:
             pass
     return None
