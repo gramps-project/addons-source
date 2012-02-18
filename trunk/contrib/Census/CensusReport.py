@@ -36,7 +36,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
 from gen.plug.report import Report, MenuReportOptions
 from Census import ORDER_ATTR
 from Census import (get_census_ids, get_census_id, get_census_columns,
-                    get_report_columns, get_census_source_ref,
+                    get_report_columns, get_census_citation,
                     get_census_sources)
 
 #------------------------------------------------------------------------
@@ -126,16 +126,16 @@ class CensusReport(Report):
         """
         event = self.database.get_event_from_handle(handle)
         if event.get_type() == EventType.CENSUS:
-            source_ref = get_census_source_ref(self.database, event)
-            if source_ref: # We may have census events with untagged sources.
+            citation = get_census_citation(self.database, event)
+            if citation: # We may have census events with untagged sources.
                 if self.report_type in (TYPE_SOURCE, TYPE_BOTH):
-                    if source_ref.ref == self.src_handle:
-                        self.write_census(event, source_ref)
+                    if citation.get_reference_handle() == self.src_handle:
+                        self.write_census(event, citation)
                 else:
-                    if source_ref.ref:
-                        self.write_census(event, source_ref)
+                    if citation:
+                        self.write_census(event, citation)
 
-    def write_census(self, event, source_ref):
+    def write_census(self, event, citation):
         """
         Called for each census.
         """
@@ -146,7 +146,8 @@ class CensusReport(Report):
         # Date, Source, Place
         p_handle = event.get_place_handle()
         place = self.database.get_place_from_handle(p_handle)
-        source = self.database.get_source_from_handle(source_ref.ref)
+        src_handle = citation.get_reference_handle()
+        source = self.database.get_source_from_handle(src_handle)
         census_id = get_census_id(source)
         headings = [x[0] for x in get_report_columns(census_id)]
 
@@ -161,7 +162,7 @@ class CensusReport(Report):
         self.write_heading(_("Date:"), DateHandler.get_date(event))
         
         # Source Reference
-        self.write_heading(_("Source Reference:"), source_ref.get_page())
+        self.write_heading(_("Citation:"), citation.get_page())
 
         # Address
         if place:
