@@ -37,6 +37,7 @@ WEBSITES = [
     ["Person", "GeneaBook", "GeneaBook", "http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
     ["Person", "Google Archives", _("Google Archives"), "http://news.google.de/archivesearch?q=%(surname)s"],
     ["Person", "DE-Google", _("DE Google"), '''http://www.google.de/#hl=de&q="%(surname)s,+%(given)s"'''],
+    ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):

@@ -32,6 +32,7 @@ WEBSITES = [
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
     ["Person", "National Archives", _("National Archives"), "http://www.nationalarchives.gov.uk/documentsonline/search-results-summary.asp?searchType=powersearch&query=first_name%%3D%(surname)s|last_name%%3D%(given)s&catID=10,12,11,6,14,13,15,16,18,20,19,21,22,25,29,23,24,27,1,32,28,34,7,33,31,36,37,40,45,42,43,49,9,3,4,2,17,30,38,39,41,44,46,47,48&mediaArray=*&pageNumber=1&queryType=1"],
     ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
+    ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
