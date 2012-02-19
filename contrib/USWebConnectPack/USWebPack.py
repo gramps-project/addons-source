@@ -43,6 +43,7 @@ WEBSITES = [
     ["Person", "Disnorge", "DIS-Norge", "http://www.disnorge.no/gravminner/global1.php?ordalle=%(given)s+%(surname)s"], # Norway
     ["Person", "Mocavo", _("Mocavo"), '''http://www.mocavo.com/search?q="%(surname)s,+%(given)s"'''],
     ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
+    ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
