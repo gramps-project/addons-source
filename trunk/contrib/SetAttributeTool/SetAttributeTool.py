@@ -40,7 +40,7 @@ from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
-from gen.db. import DbTxn
+from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 import Errors
 import gen.plug.report.utils as ReportUtils
