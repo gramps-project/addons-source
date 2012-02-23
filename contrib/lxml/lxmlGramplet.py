@@ -129,6 +129,7 @@ class lxmlGramplet(Gramplet):
         self.__file_name = "test.gramps"
         self.entry = gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        
         self.button = gtk.Button()
         image = gtk.Image()
         image.set_from_stock(gtk.STOCK_OPEN, gtk.ICON_SIZE_BUTTON)
@@ -140,17 +141,35 @@ class lxmlGramplet(Gramplet):
         vbox = gtk.VBox()
         hbox = gtk.HBox()
         
+        # area
+        
+        self.import_text = gtk.TextView()
+        
+        self.import_text.set_wrap_mode(gtk.WRAP_WORD)
+        self.import_text.set_editable(False)
+        
+        self.text = gtk.TextBuffer()
+        self.text.set_text(_('No file loaded...'))
+        self.import_text.set_buffer(self.text)
+        
+        vbox.pack_start(self.import_text, True) # v1
+        
         # button
         
         button = gtk.Button(_("Run"))
         button.connect("clicked", self.run)
+        vbox.pack_start(button, False) # v2
+        
+        # build
         
         hbox.pack_start(self.entry, True)
         hbox.pack_end(self.button, False, False)
-        vbox.pack_start(hbox, False)
-        vbox.pack_start(button, False)
+        
+        vbox.pack_end(hbox, False) # v3
+        
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
+        
         vbox.show_all()
         
         
@@ -205,7 +224,7 @@ class lxmlGramplet(Gramplet):
         
         entry = self.entry.get_text()
         self.ReadXML(entry)
-        
+                                                       
         
     def ReadXML(self, entry):
         """
@@ -227,7 +246,8 @@ class lxmlGramplet(Gramplet):
          
         # lazy ...
         if os.name != 'posix':
-            ErrorDialog(_('For posix only ...'), _('Sorry, no support for your OS yet!'))
+            self.text.set_text(_('Sorry, no support for your OS yet!'))
+            self.import_text.set_buffer(self.text)
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
@@ -299,6 +319,11 @@ class lxmlGramplet(Gramplet):
         """
         
         root = tree.getroot()
+        
+        # GtkTextView
+                      
+        self.text.set_text(etree.tostring(root, pretty_print=True))
+        self.import_text.set_buffer(self.text)
 
         # namespace issues and 'surname' only on 1.4.0!
         
@@ -422,6 +447,11 @@ class lxmlGramplet(Gramplet):
         timestamp = []
         first = epoch(start)
         last = epoch(end)
+        
+        # GtkTextView
+        
+        self.text.set_text(_('File parsed..'))
+        self.import_text.set_buffer(self.text)
             
         # Some print statements !
         
@@ -429,7 +459,7 @@ class lxmlGramplet(Gramplet):
         print('LXML_VERSION :', LXML_VERSION)
         print('LIBXML_VERSION :', LIBXML_VERSION)
         print('LIBXSLT_VERSION :', LIBXSLT_VERSION)
-        
+                
         print('### GRAMPS FILE ###')
         print(_('log'), log)
         print(_('From %(first)s to %(last)s') % {'first': first, 'last': last})
@@ -448,7 +478,7 @@ class lxmlGramplet(Gramplet):
         self.WriteBackXML(filename, root, surnames, places, sources)
         sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
         
-        
+
     def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
@@ -707,7 +737,7 @@ class lxmlGramplet(Gramplet):
         """
         Write the result of the query back into the XML file (Gramps scheme)
         """
-               
+                      
         # Modify the XML copy of the .gramps
         
         outfile = open(filename, 'w')

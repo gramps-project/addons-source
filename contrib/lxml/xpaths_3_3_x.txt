@@ -8,6 +8,8 @@
 /database/header/researcher/resname/text()
 /database/header/researcher/resaddr
 /database/header/researcher/resaddr/text()
+/database/header/researcher/reslocality
+/database/header/researcher/reslocality/text()
 /database/header/researcher/rescity
 /database/header/researcher/rescity/text()
 /database/header/researcher/resstate
@@ -41,10 +43,8 @@
 /database/events/event[1]/@change
 /database/events/event[1]/@id
 /database/events/event[1]/@priv
-/database/events/event[1]/@marker
 /database/events/event[1]/type
 /database/events/event[1]/type/text()
-/database/events/event[1]
 /database/events/event[1]/daterange
 /database/events/event[1]/datespan
 /database/events/event[1]/dateval
@@ -76,7 +76,6 @@
 /database/events/event[1]/place/@hlink
 /database/events/event[1]/description
 /database/events/event[1]/description/text()
-/database/events/event[1]
 /database/events/event[1]/attribute[1]
 /database/events/event[1]/attribute[1]/@priv
 /database/events/event[1]/attribute[1]/@type
@@ -237,9 +236,7 @@
 /database/people/person[1]/@change
 /database/people/person[1]/@id
 /database/people/person[1]/@priv
-/database/people/person[1]/@marker
 /database/people/person[1]/gender
-/database/people/person[1]
 /database/people/person[1]/name[1]
 /database/people/person[1]/name[1]/@alt
 /database/people/person[1]/name[1]/@priv
@@ -256,7 +253,6 @@
 /database/people/person[1]/name[1]/familynick/text()
 /database/people/person[1]/name[1]/group
 /database/people/person[1]/name[1]/group/text()
-/database/people/person[1]/name[1]
 /database/people/person[1]/name[1]/surname[1]
 /database/people/person[1]/name[1]/surname[1]/surname
 /database/people/person[1]/name[1]/surname[1]/surname/text()
@@ -268,7 +264,6 @@
 /database/people/person[1]/name[1]/suffix/text()
 /database/people/person[1]/name[1]/title
 /database/people/person[1]/name[1]/title/text()
-/database/people/person[1]/name[1]
 /database/people/person[1]/name[1]/daterange
 /database/people/person[1]/name[1]/datespan
 /database/people/person[1]/name[1]/dateval
@@ -572,6 +567,8 @@
 /database/people/person[1]/address[1]/datestr/@val
 /database/people/person[1]/address[1]/street
 /database/people/person[1]/address[1]/street/text()
+/database/people/person[1]/address[1]/locality
+/database/people/person[1]/address[1]/locality/text()
 /database/people/person[1]/address[1]/city
 /database/people/person[1]/address[1]/city/text()
 /database/people/person[1]/address[1]/county
@@ -584,7 +581,6 @@
 /database/people/person[1]/address[1]/postal/text()
 /database/people/person[1]/address[1]/phone
 /database/people/person[1]/address[1]/phone/text()
-/database/people/person[1]/address[1]
 /database/people/person[1]/address[1]/noteref[1]
 /database/people/person[1]/address[1]/noteref[1]/@hlink
 /database/people/person[1]/address[1]/sourceref[1]
@@ -712,7 +708,6 @@
 /database/families/family[1]/@change
 /database/families/family[1]/@id
 /database/families/family[1]/@priv
-/database/families/family[1]/@marker
 /database/families/family[1]/rel
 /database/families/family[1]/rel/@type
 /database/families/family[1]/father
@@ -1042,7 +1037,6 @@
 /database/sources/source[1]/@change
 /database/sources/source[1]/@id
 /database/sources/source[1]/@priv
-/database/sources/source[1]/@marker
 /database/sources/source[1]/stitle
 /database/sources/source[1]/stitle/text()
 /database/sources/source[1]/sauthor
@@ -1051,7 +1045,6 @@
 /database/sources/source[1]/spubinfo/text()
 /database/sources/source[1]/sabbrev
 /database/sources/source[1]/sabbrev/text()
-/database/sources/source[1]
 /database/sources/source[1]/noteref[1]
 /database/sources/source[1]/noteref[1]/@hlink
 /database/sources/source[1]/objref[1]
@@ -1150,7 +1143,6 @@
 /database/places/placeobj[1]/@change
 /database/places/placeobj[1]/@id
 /database/places/placeobj[1]/@priv
-/database/places/placeobj[1]/@marker
 /database/places/placeobj[1]/ptitle
 /database/places/placeobj[1]/ptitle/text()
 /database/places/placeobj[1]/coord
@@ -1158,6 +1150,7 @@
 /database/places/placeobj[1]/coord/@lat
 /database/places/placeobj[1]/location[1]
 /database/places/placeobj[1]/location[1]/@street
+/database/places/placeobj[1]/location[1]/@locality
 /database/places/placeobj[1]/location[1]/@city
 /database/places/placeobj[1]/location[1]/@parish
 /database/places/placeobj[1]/location[1]/@county
@@ -1290,7 +1283,6 @@
 /database/objects/object[1]/@change
 /database/objects/object[1]/@id
 /database/objects/object[1]/@priv
-/database/objects/object[1]/@marker
 /database/objects/object[1]/file
 /database/objects/object[1]/file/@src
 /database/objects/object[1]/file/@mime
@@ -1364,7 +1356,6 @@
 /database/objects/object[1]/sourceref[1]/@conf
 /database/objects/object[1]/sourceref[1]/spage
 /database/objects/object[1]/sourceref[1]/spage/text()
-/database/objects/object[1]/sourceref[1]
 /database/objects/object[1]/sourceref[1]/noteref[1]
 /database/objects/object[1]/sourceref[1]/noteref[1]/@hlink
 /database/objects/object[1]/sourceref[1]/daterange
@@ -1398,12 +1389,10 @@
 /database/repositories/repository[1]/@change
 /database/repositories/repository[1]/@id
 /database/repositories/repository[1]/@priv
-/database/repositories/repository[1]/@marker
 /database/repositories/repository[1]/rname
 /database/repositories/repository[1]/rname/text()
 /database/repositories/repository[1]/type
 /database/repositories/repository[1]/type/text()
-/database/repositories/repository[1]
 /database/repositories/repository[1]/address[1]
 /database/repositories/repository[1]/address[1]/@priv
 /database/repositories/repository[1]/address[1]/daterange
@@ -1431,6 +1420,8 @@
 /database/repositories/repository[1]/address[1]/datestr/@val
 /database/repositories/repository[1]/address[1]/street
 /database/repositories/repository[1]/address[1]/street/text()
+/database/repositories/repository[1]/address[1]/locality
+/database/repositories/repository[1]/address[1]/locality/text()
 /database/repositories/repository[1]/address[1]/city
 /database/repositories/repository[1]/address[1]/city/text()
 /database/repositories/repository[1]/address[1]/county
@@ -1443,7 +1434,6 @@
 /database/repositories/repository[1]/address[1]/postal/text()
 /database/repositories/repository[1]/address[1]/phone
 /database/repositories/repository[1]/address[1]/phone/text()
-/database/repositories/repository[1]/address[1]
 /database/repositories/repository[1]/address[1]/noteref[1]
 /database/repositories/repository[1]/address[1]/noteref[1]/@hlink
 /database/repositories/repository[1]/address[1]/sourceref[1]
@@ -1491,12 +1481,10 @@
 /database/notes/note[1]/@change
 /database/notes/note[1]/@id
 /database/notes/note[1]/@priv
-/database/notes/note[1]/@marker
 /database/notes/note[1]/@format
 /database/notes/note[1]/@type
 /database/notes/note[1]/text
 /database/notes/note[1]/text/text()
-/database/notes/note[1]
 /database/notes/note[1]/style[1]
 /database/notes/note[1]/style[1]/@name
 /database/notes/note[1]/style[1]/@value
