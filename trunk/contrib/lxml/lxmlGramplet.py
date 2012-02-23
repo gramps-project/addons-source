@@ -246,8 +246,10 @@ class lxmlGramplet(Gramplet):
          
         # lazy ...
         if os.name != 'posix':
+            
+            # GtkTextView
+            
             self.text.set_text(_('Sorry, no support for your OS yet!'))
-            self.import_text.set_buffer(self.text)
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
@@ -320,10 +322,9 @@ class lxmlGramplet(Gramplet):
         
         root = tree.getroot()
         
-        # GtkTextView
+        # GtkTextView ; buffer limitation ...
                       
         self.text.set_text(etree.tostring(root, pretty_print=True))
-        self.import_text.set_buffer(self.text)
 
         # namespace issues and 'surname' only on 1.4.0!
         
@@ -407,7 +408,7 @@ class lxmlGramplet(Gramplet):
         #revision = msg
         
         #print(revision)
-        
+                
         log = msg[0]
         if not log:
             ErrorDialog(_('Missing header'), _('Not a valid .gramps.\n'
@@ -419,23 +420,23 @@ class lxmlGramplet(Gramplet):
         # dirty XML write method ...
         # need to create a fake entry !
         
-        if count_elements(root, name = 'surname') > 1.0:
-            nb_surnames = count_elements(root, name = 'surname') - float(1.0)
+        if int(count_elements(root, name = 'surname')) > 1:
+            nb_surnames = int(count_elements(root, name = 'surname'))
         else:
             nb_surnames = surnames = [_('No surname')]
             
-        if count_elements(root, name = 'ptitle') > 1.0:
-            nb_ptitles = count_elements(root, name = 'ptitle') - float(1.0)
+        if int(count_elements(root, name = 'ptitle')) > 1:
+            nb_ptitles = int(count_elements(root, name = 'ptitle'))
         else:
             nb_ptitles = places = [_('No place title')]
             
-        if count_elements(root, name = 'note') > 1.0:
-            nb_notes = count_elements(root, name = 'note') - float(1.0)
+        if int(count_elements(root, name = 'note')) > 1:
+            nb_notes = int(count_elements(root, name = 'note'))
         else:
             nb_notes = _('No note')
             
-        if count_elements(root, name = 'stitle') > 1.0:
-            nb_sources = count_elements(root, name = 'stitle') - float(1.0)
+        if int(count_elements(root, name = 'stitle')) > 1:
+            nb_sources = int(count_elements(root, name = 'stitle'))
         else:
             nb_sources = _('No source')
             
@@ -447,27 +448,27 @@ class lxmlGramplet(Gramplet):
         timestamp = []
         first = epoch(start)
         last = epoch(end)
+
+        header = _('File parsed with') + ' LXML' + str(LXML_VERSION) + '\n\n'
+        
+        [(k1, v1),(k2, v2)] = log
+        file_info = _('File was generated on ') + v1 + '\n\t' + _(' by Gramps ') + v2 + '\n\n'
+        
+        period = _('Period: ') +  first + ' => ' + last + '\n\n'
+        
+        su =  '\t' + str(nb_surnames) + '\t' + _(' surname(s)') + '\n'
+        p =  '\t' + str(nb_ptitles) + '\t' + _(' place(s)') + '\n'
+        n =  '\t' + str(nb_notes) + '\t' + _(' note(s)')  + '\n'
+        so =  '\t' + str(nb_sources) + '\t' + _(' source(s)') + '\n\n'
+        
+        counters = su + p + n + so
+        
+        libs = 'LIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
         
         # GtkTextView
         
-        self.text.set_text(_('File parsed..'))
-        self.import_text.set_buffer(self.text)
-            
-        # Some print statements !
-        
-        print('### LIBS ###')
-        print('LXML_VERSION :', LXML_VERSION)
-        print('LIBXML_VERSION :', LIBXML_VERSION)
-        print('LIBXSLT_VERSION :', LIBXSLT_VERSION)
+        self.text.set_text(header + file_info + period + counters + libs)
                 
-        print('### GRAMPS FILE ###')
-        print(_('log'), log)
-        print(_('From %(first)s to %(last)s') % {'first': first, 'last': last})
-        print(_('Surnames'), nb_surnames)
-        print(_('Place titles'), nb_ptitles)
-        print(_('Note objects'), nb_notes)
-        print(_('Sources titles'), nb_sources)
-        
         print('### NEW FILES ###')
         self.WriteXML(log, first, last, surnames, places, sources)
         
