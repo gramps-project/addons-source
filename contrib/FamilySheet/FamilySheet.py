@@ -149,8 +149,8 @@ class FamilySheet(Report):
         child_index = 0
 
         # Source references to print as footnotes.
-        self.__source_index = 0
-        self.__sources = []
+        self.__citation_index = 0
+        self.__citations = []
 
         # Notes to print as footnotes.
         self.__note_index = 0
@@ -425,16 +425,16 @@ class FamilySheet(Report):
             place = self.database.get_place_from_handle(event.get_place_handle())
             self.__write_sources(place)
             self.__write_notes(place)
+        self.__write_sources(event)
+        self.__write_notes(event)
+        if ref:
+            self.__write_notes(ref)
         for attr in event.get_attribute_list():
             self.doc.write_text(_("; %(type)s: %(value)s") % {
                 'type' : attr.get_type(),
                 'value': attr.get_value()})
             self.__write_sources(attr)
             self.__write_notes(attr)
-        self.__write_sources(event)
-        self.__write_notes(event)
-        if ref:
-            self.__write_notes(ref)
         self.doc.end_paragraph()
 
 
@@ -474,19 +474,14 @@ class FamilySheet(Report):
         if not self.incl_sources:
             return
 
-        for source_ref in obj.get_source_references():
-            # Source already in list with same page and same notes? If yes, use
-            # same number again.
-            for existing in self.__sources:
-                if existing.ref == source_ref.ref and \
-                        existing.get_page() == source_ref.get_page() and \
-                        existing.get_note_list() == source_ref.get_note_list():
-                    index = self.__sources.index(existing) + 1
-                    break
+        for citation_handle in obj.get_citation_list():
+            # Citation already in list? If yes, use same number again.
+            if citation_handle in self.__citations:
+                index = self.__citations.index(citation_handle) + 1
             else:
-                self.__sources.append(source_ref)
-                self.__source_index += 1
-                index = self.__source_index
+                self.__citations.append(citation_handle)
+                self.__citation_index += 1
+                index = self.__citation_index
             self.doc.start_superscript()
             self.doc.write_text(" [%s]" % index)
             self.doc.end_superscript()
@@ -520,15 +515,16 @@ class FamilySheet(Report):
         Print the collected sources.
         """
 
-        if self.__sources:
+        if self.__citations:
             self.doc.start_paragraph('FSR-Footnote')
             self.doc.write_text("\n")
             self.doc.write_text(_("Source references:"))
             self.doc.end_paragraph()
 
         index = 0
-        for source_ref in self.__sources:
-            source = self.database.get_source_from_handle(source_ref.ref)
+        for citation_handle in self.__citations:
+            citation = self.database.get_citation_from_handle(citation_handle)
+            source = self.database.get_source_from_handle(citation.get_reference_handle())
             index += 1
             self.doc.start_paragraph('FSR-Footnote')
             self.doc.write_text("[%s]: " % index)
@@ -539,9 +535,9 @@ class FamilySheet(Report):
                     self.doc.write_text(_("%s: ") % source.get_author())
                 self.doc.write_text(source.get_title())
             self.__write_notes(source)
-            if source_ref.get_page():
-                self.doc.write_text(_(", page %s") % source_ref.get_page())
-            self.__write_notes(source_ref)
+            if citation.get_page():
+                self.doc.write_text(_(", page %s") % citation.get_page())
+            self.__write_notes(citation)
             self.doc.end_paragraph()
 
 
