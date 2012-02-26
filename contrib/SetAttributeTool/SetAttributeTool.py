@@ -38,7 +38,7 @@ import time
 from gui.plug.tool import Tool
 from gui.plug import MenuToolOptions, PluginWindows
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
-    EnumeratedListOption
+    EnumeratedListOption, BooleanOption
 import gen.lib
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
@@ -88,6 +88,10 @@ class SetAttributeOptions(MenuToolOptions):
         menu.add_option(category_name, "attribute_value", attribute_value)
         self.__attribute_text = attribute_text
         self.__attribute_value = attribute_value
+        
+        remove = BooleanOption(_("Remove"), False)
+        remove.set_help(_("Remove attribute type and value set"))
+        menu.add_option(category_name, "remove", remove)
 
         self.__update_filters()
 
@@ -121,80 +125,112 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
         return _("Options")
 
     def run(self):
-        with DbTxn(_("Set Attribute"), self.db, batch=True) as self.trans:
-            self.add_results_frame(_("Results"))
-            self.results_write(_("Processing...\n"))
-            self.db.disable_signals()
+        self.remove = self.options.menu.get_option_by_name('remove').get_value()
+        if not self.remove:
+            with DbTxn(_("Set Attribute"), self.db, batch=True) as self.trans:
+                self.add_results_frame(_("Results"))
+                self.results_write(_("Processing...\n"))
+                self.db.disable_signals()
     
-            self.filter_option =  self.options.menu.get_option_by_name('filter')
-            self.filter = self.filter_option.get_filter() # the actual filter
+                self.filter_option =  self.options.menu.get_option_by_name('filter')
+                self.filter = self.filter_option.get_filter() # the actual filter
     
-            # FIXME: currently uses old style for gramps31 compatible
-            #    people = self.filter.apply(self.db,
-            #                               self.db.iter_person_handles())
-            people = self.filter.apply(self.db,
-                                 self.db.get_person_handles(sort_handles=False))
+                # FIXME: currently uses old style for gramps31 compatible
+                #    people = self.filter.apply(self.db,
+                #                               self.db.iter_person_handles())
+                people = self.filter.apply(self.db,
+                                     self.db.get_person_handles(sort_handles=False))
     
-            # FIXME: currently uses old style for gramps31 compatible
-            # num_people = self.db.get_number_of_people()
-            num_people = len(people)
-            self.progress.set_pass(_('Setting attributes...'), 
-                                   num_people)
-            count = 0
-            attribute_text = self.options.handler.options_dict['attribute_text'] 
-            attribute_value = self.options.handler.options_dict['attribute_value']
-            specified_type = gen.lib.AttributeType()
-            specified_type.set(attribute_text)
-            self.results_write(_("Setting '%s' attributes to '%s'...\n\n" % 
-                                 (attribute_text, attribute_value)))
-            for person_handle in people:
-                count += 1
-                self.progress.step()
-                person = self.db.get_person_from_handle(person_handle)
-                done = False
-                for attr in person.get_attribute_list():
-                    if attr.get_type() == specified_type:
-                        self.results_write("  %d) Changed" % count)
-                        self.results_write_link(name_displayer.display(person),
-                                                person, person_handle)
-                        self.results_write(" from '%s'\n" % attr.get_value())
+                # FIXME: currently uses old style for gramps31 compatible
+                # num_people = self.db.get_number_of_people()
+                num_people = len(people)
+                self.progress.set_pass(_('Setting attributes...'), 
+                                       num_people)
+                count = 0
+                attribute_text = self.options.handler.options_dict['attribute_text'] 
+                attribute_value = self.options.handler.options_dict['attribute_value']
+                specified_type = gen.lib.AttributeType()
+                specified_type.set(attribute_text)
+                self.results_write(_("Setting '%s' attributes to '%s'...\n\n" % 
+                                     (attribute_text, attribute_value)))
+                for person_handle in people:
+                    count += 1
+                    self.progress.step()
+                    person = self.db.get_person_from_handle(person_handle)
+                    done = False
+                    for attr in person.get_attribute_list():
+                        if attr.get_type() == specified_type:
+                            self.results_write("  %d) Changed" % count)
+                            self.results_write_link(name_displayer.display(person),
+                                                    person, person_handle)
+                            self.results_write(" from '%s'\n" % attr.get_value())
+                            attr.set_value(attribute_value)
+                            done = True
+                            break
+                    if not done:
+                        attr = gen.lib.Attribute()
+                        attr.set_type(specified_type)
                         attr.set_value(attribute_value)
-                        done = True
-                        break
-                if not done:
-                    attr = gen.lib.Attribute()
-                    attr.set_type(specified_type)
-                    attr.set_value(attribute_value)
-                    person.add_attribute(attr)
-                    # Update global attribute list:
-                    if attr.type.is_custom() and str(attr.type):
-                        self.db.individual_attributes.update([str(attr.type)])
-                    self.results_write("  %d) Added attribute to" % count)
-                    self.results_write_link(name_displayer.display(person),
-                                                person, person_handle)
-                    self.results_write("\n")
-                self.db.commit_person(person, self.trans)
-        self.db.enable_signals()
-        self.db.request_rebuild()
-        self.results_write(_("\nSet %d '%s' attributes to '%s'\n" % 
-                             (count, attribute_text, attribute_value)))
-        self.results_write(_("Done!\n"))
-
-try:
-    # Gramps 3.1 style:
-    from gen.plug import PluginManager
-    pmgr = PluginManager.get_instance()
-    pmgr.register_tool(
-        name = 'Set Atttribute Tool',
-        category = Tool.TOOL_DBPROC,
-        tool_class = SetAttributeWindow,
-        options_class = SetAttributeOptions,
-        modes = PluginManager.TOOL_MODE_GUI,
-        translated_name = _("Set Attribute"),
-        status = _("Beta"),
-        author_name = "Douglas S. Blank",
-        author_email = "doug.blank@gmail.com",
-        description= _("Sets an attribute of a person to a given value."),
-        )
-except:
-    pass
+                        person.add_attribute(attr)
+                        # Update global attribute list:
+                        if attr.type.is_custom() and str(attr.type):
+                            self.db.individual_attributes.update([str(attr.type)])
+                        self.results_write("  %d) Added attribute to" % count)
+                        self.results_write_link(name_displayer.display(person),
+                                                    person, person_handle)
+                        self.results_write("\n")
+                    self.db.commit_person(person, self.trans)
+            self.db.enable_signals()
+            self.db.request_rebuild()
+            self.results_write(_("\nSet %d '%s' attributes to '%s'\n" % 
+                                 (count, attribute_text, attribute_value)))
+            self.results_write(_("Done!\n"))
+        else:
+            with DbTxn(_("Remove Attribute"), self.db, batch=True) as self.trans:
+                self.add_results_frame(_("Results"))
+                self.results_write(_("Processing...\n"))
+                self.db.disable_signals()
+    
+                self.filter_option =  self.options.menu.get_option_by_name('filter')
+                self.filter = self.filter_option.get_filter() # the actual filter
+    
+                # FIXME: currently uses old style for gramps31 compatible
+                #    people = self.filter.apply(self.db,
+                #                               self.db.iter_person_handles())
+                people = self.filter.apply(self.db,
+                                     self.db.get_person_handles(sort_handles=False))
+    
+                # FIXME: currently uses old style for gramps31 compatible
+                # num_people = self.db.get_number_of_people()
+                num_people = len(people)
+                self.progress.set_pass(_('Removing attributes...'), 
+                                       num_people)
+                count = 0
+                attribute_text = self.options.handler.options_dict['attribute_text'] 
+                attribute_value = self.options.handler.options_dict['attribute_value']
+                specified_type = gen.lib.AttributeType()
+                specified_type.set(attribute_text)
+                for person_handle in people:
+                    count += 1
+                    self.progress.step()
+                    person = self.db.get_person_from_handle(person_handle)
+                    done = False
+                    for attr in person.get_attribute_list():
+                        if attr.get_type() == specified_type and \
+                            attr.get_value() == attribute_value:
+                            person.remove_attribute(attr)
+                            # Update global attribute list:
+                            self.db.individual_attributes.update([str(attr.type)])
+                            self.results_write("  %d) Changed" % count)
+                            self.results_write_link(name_displayer.display(person),
+                                                    person, person_handle)
+                            self.results_write(" from '%s'\n" % attr.get_value())
+                            done = True
+                            break
+                if done:
+                    self.results_write(_("\nRemoving %d '%s' attributes to '%s'\n" % 
+                                (count, attribute_text, attribute_value)))
+                    self.db.commit_person(person, self.trans)
+            self.db.enable_signals()
+            self.db.request_rebuild()
+            self.results_write(_("Done!\n"))
