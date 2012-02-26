@@ -374,7 +374,7 @@ class lxmlGramplet(Gramplet):
                 # search ptitle and time log
                 
                 for three in two.getchildren():
-                    
+                                        
                     # timestamp
                     
                     timestamp.append(two.get('change'))
@@ -457,7 +457,7 @@ class lxmlGramplet(Gramplet):
         period = _('Period: ') +  first + ' => ' + last + '\n\n'
         
         su =  '\t' + str(nb_surnames) + '\t' + _(' entries for surname(s); no frequency yet') + '\n'
-        p =  '\t' + str(nb_ptitles) + '\t' + _(' entries for place(s); no frequency yet') + '\n'
+        p =  '\t' + str(nb_ptitles) + '\t' + _(' entries for place(s)') + '\n'
         n =  '\t' + str(nb_notes) + '\t' + _(' note(s)')  + '\n'
         so =  '\t' + str(nb_sources) + '\t' + _(' source(s)') + '\n\n'
         

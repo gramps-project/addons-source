@@ -79,7 +79,8 @@ msgstr "Ist es eine gepackte .gramps?"
 msgid "Cannot uncompress \"%s\""
 msgstr "Kann \"%s\" nicht entpacken"
 
-#: lxml//lxmlGramplet.py:227 lxml//lxmlGramplet.py:234
+#: lxml//lxmlGramplet.py:227
+#: lxml//lxmlGramplet.py:234
 #, python-format
 msgid ""
 "From:\n"
@@ -127,7 +128,7 @@ msgstr "RelaxNG Prüfung"
 #: lxml//lxmlGramplet.py:265
 #, python-format
 msgid "Cannot validate \"%s\" via RelaxNG schema"
-msgstr "Kann \"%S\" nicht mit RelaxNG Schema prüfen"
+msgstr "Kann \"%s\" nicht mit RelaxNG Schema prüfen"
 
 #: lxml//lxmlGramplet.py:268
 msgid "File issue"
@@ -179,7 +180,8 @@ msgstr "aufzeichnen"
 msgid "From %s to %s"
 msgstr "Von %s nach %s"
 
-#: lxml//lxmlGramplet.py:386 lxml//lxmlGramplet.py:438
+#: lxml//lxmlGramplet.py:386
+#: lxml//lxmlGramplet.py:438
 msgid "Surnames"
 msgstr "Nachnamen"
 

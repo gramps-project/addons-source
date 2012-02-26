@@ -49,7 +49,7 @@ GNU General Public License 2, or (at your option) any later version.
         </div>
         </form>
         <h2><xsl:value-of select="query/places/@title"/><xsl:text> : </xsl:text>
-        <xsl:value-of select="$place-count"/></h2>
+        <xsl:value-of select="$place-count"/><xsl:text> (one empty place)</xsl:text></h2>
         <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
            <xsl:attribute name="xml:lang">
               <xsl:value-of select="query/@lang"/>
