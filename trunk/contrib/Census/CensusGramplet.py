@@ -682,6 +682,8 @@ class CensusEditor(ManagedWindow.ManagedWindow):
             if not citation_handle:
                 citation_handle = self.db.add_citation(self.citation, trans)
                 self.event.add_citation(citation_handle)
+            else:
+                self.db.commit_citation(self.citation, trans)
 
             self.db.commit_event(self.event, trans)
         self.close()
