@@ -63,7 +63,7 @@ class ListeEclairReport(Report):
         else:
             self.database = PrivateProxyDb(database)
 
-        #self.database = LivingProxyDb(database)
+        #self.database = LivingProxyDb(database, LivingProxyDb.MODE_EXCLUDE_ALL)
 
         filter_option = menu.get_option_by_name('filter')
         self.filter = filter_option.get_filter()
@@ -243,7 +243,7 @@ class ListeEclairOptions(MenuReportOptions):
 
         reporttype = EnumeratedListOption(_("Type de Liste"), "ListeType")
         reporttype.set_items([
-                ("ListeEclair",   _("Tyny Tafel")),
+                ("ListeEclair",   _("Tiny Tafel")),
                 ("cousingenweb",   _("cousingenweb"))])
         reporttype.set_help(_("Type de liste"))
         menu.add_option(category_name, "reporttype", reporttype)
