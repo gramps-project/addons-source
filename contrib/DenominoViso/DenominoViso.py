@@ -687,9 +687,10 @@ class DenominoVisoReport(Report):
         rv = ""
         birth = get_birth_or_fallback(self.database,person)
         if birth:
-            source_list = birth.get_source_references()
-            if len(source_list) > 0:
-                rv = source_list[0].get_confidence_level()
+            citations = birth.get_citation_list()
+            if citations:
+                citation = self.database.get_citation_from_handle(citations[0])
+                rv = citation.get_confidence_level()
         return rv
 
     def relationship_line(self,f,generation,y_person,y_relative,rel,birth_conf):
@@ -1482,8 +1483,9 @@ function %(bd)s2html(person,containerDL) {
         if len(self.person_srcs) > 0:
             source_handle_list.extend(self.person_srcs)
         if self.options['DNMinc_sources']:
-            source_ref_list = filter(self.privacy_filter,person.get_source_references())
-            source_handle_list.extend([i.get_reference_handle() for i in source_ref_list])
+            citations = filter(self.privacy_filter,
+                    [self.database.get_citation_from_handle(x) for x in person.get_citation_list()])
+            source_handle_list.extend([i.get_reference_handle() for i in citations])
         # Do not sort: the sources referenced in events are already ordered!
         if len(source_handle_list) > 0:
             for i,handle in enumerate(source_handle_list):
@@ -1496,7 +1498,7 @@ function %(bd)s2html(person,containerDL) {
                     st += ",source_title:'" + self.escbacka(title) + "'"
                     self.search_subjects['Source Title'] = 'source_title'
                 if '<volume>' in self.source_format and i >= len(self.person_srcs):
-                    page = source_ref_list[i].get_page()
+                    page = citations[i].get_page()
                     if page:
                         st += ",source_page:'" + self.escbacka(page) + "'"
                 if ('<' + _('author') + '>') in self.source_format:
@@ -1737,10 +1739,11 @@ function %(bd)s2html(person,containerDL) {
             event can be more general than just events: attributes/addresses."""
         rv = ''
         source_page = ''
-        source_refs = filter(self.privacy_filter,event.get_source_references())
-        if len(source_refs) > 0:
-            source_page = source_refs[0].get_page()
-            source_handle = source_refs[0].get_reference_handle()
+        citations = filter(self.privacy_filter,
+                [self.database.get_citation_from_handle(x) for x in event.get_citation_list()])
+        if len(citations) > 0:
+            source_page = citations[0].get_page()
+            source_handle = citations[0].get_reference_handle()
             if source_handle and not (self.options['DNMexl_private'] and \
                     self.database.get_source_from_handle(source_handle).get_privacy()):
                 if source_page:
@@ -1753,7 +1756,7 @@ function %(bd)s2html(person,containerDL) {
                 source_page += '[' + str(source_nr + 1) + ']'
             if source_page:
                 rv += "source_page:'" + self.escbacka(source_page) + "'"
-                conf_level = source_refs[0].get_confidence_level()
+                conf_level = citations[0].get_confidence_level()
                 if self.options['DNMconf_color'][conf_level][_cnsts.COLOR_COLUMN] \
                         != self.options['DNMconf_color'][-1][_cnsts.COLOR_COLUMN]:
                     rv += ",source_conf:'" + ext_confidence[conf_level].replace(' ','') + "'"
@@ -1840,10 +1843,11 @@ function %(bd)s2html(person,containerDL) {
                         source_idx = len(self.person_img_srcs)
                     return rv + ",img_ref:'" + str(source_idx) + "'}"
             if self.options['DNMinc_img_src_ref']:
-                media_source_list = media_object.get_source_references()
+                media_citation_list = media_object.get_citation_list()
                 source_refs = ""
-                for ref in media_source_list:
-                    handle = ref.get_reference_handle()
+                for citation_handle in media_citation_list:
+                    citation = self.database.get_citation_from_handle(citation_handle)
+                    handle = citation.get_reference_handle()
                     source = self.database.get_source_from_handle(handle)
                     # what happens where get_title is empty
                     try:
@@ -3067,6 +3071,7 @@ class GuiTableOption(gtk.ScrolledWindow):
 
     def create_treeview(self, lstore, list_of_lists, editable_column = None):
         treeview = gtk.TreeView(lstore)
+        treeview.set_size_request(-1, 70)
         treeview.set_rules_hint(True)
         treeview.get_selection().set_mode(gtk.SELECTION_SINGLE)
         for i,v in enumerate(list_of_lists[0]):
