@@ -26,7 +26,7 @@ register(EXPORT,
          description          = _('Django is a web framework working on a '
                                   'configured database'),
          version = '1.0.11',
-         gramps_target_version= '3.4',
+         gramps_target_version= '3.5',
          status               = STABLE,
          export_options_title = _('Django options'), 
          export_options       = 'NoFilenameOptions',

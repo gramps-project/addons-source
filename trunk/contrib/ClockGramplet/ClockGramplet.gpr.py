@@ -8,7 +8,7 @@ register(GRAMPLET,
          gramplet_title=_("Clock"),
          status=STABLE,
          version = '0.0.7',
-         gramps_target_version = "3.4",
+         gramps_target_version = "3.5",
          fname="ClockGramplet.py",
          help_url="Gramplets#GUI_Interface",
          )

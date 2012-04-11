@@ -11,7 +11,7 @@ register(GENERAL,
          description = _("Collection of Web sites for the UK (requires libwebconnect)"),
          status = STABLE,
          version = '1.0.14',
-         gramps_target_version = "3.4",
+         gramps_target_version = "3.5",
          fname="UKWebPack.py",
          load_on_reg = True,
          depends_on = ["libwebconnect"]

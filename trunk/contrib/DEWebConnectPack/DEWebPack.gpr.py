@@ -11,7 +11,7 @@ register(GENERAL,
          description = _("Collection of Web sites for the DE (requires libwebconnect)"),
          status = STABLE,
          version = '0.0.1',
-         gramps_target_version = "3.4",
+         gramps_target_version = "3.5",
          fname="DEWebPack.py",
          load_on_reg = True,
          depends_on = ["libwebconnect"]

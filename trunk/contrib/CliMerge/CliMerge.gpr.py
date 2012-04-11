@@ -16,5 +16,5 @@ register(TOOL,
     authors_email = ["m.d.nauta@hetnet.nl"],
     description  = "Merge primary objects via the command line.",
     version = '1.0.3',
-    gramps_target_version = '3.4',
+    gramps_target_version = '3.5',
 )

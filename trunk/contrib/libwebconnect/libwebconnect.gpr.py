@@ -10,7 +10,7 @@ register(GENERAL,
          description = _("Library for web site collections"),
          status = STABLE,
          version = '1.0.6',
-         gramps_target_version = "3.4",
+         gramps_target_version = "3.5",
          fname="libwebconnect.py",
          load_on_reg = True,
          )
