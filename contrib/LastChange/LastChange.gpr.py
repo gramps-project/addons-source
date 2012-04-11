@@ -30,7 +30,7 @@ register(GRAMPLET,
          authors_email=["jmodule@friant.org"],
          height=170,
          gramplet='LastChangeGramplet',
-         gramps_target_version="3.4",
+         gramps_target_version="3.5",
          gramplet_title=_("Latest Changes")
          )
 
@@ -41,7 +41,7 @@ register(REPORT,
          status=STABLE,
          version = '0.0.10',
          fname="LastChangeReport.py",
-         gramps_target_version="3.4",
+         gramps_target_version="3.5",
          authors=['Jakim Friant'],
          authors_email=["jmodule@friant.org"],
          category=CATEGORY_TEXT,
