@@ -2,7 +2,7 @@
 {'d': 'Dies ist eine Rohdaten Pythonobjekt Ausgabe', 'g': '3.5', 'i': 'Raw Export', 'n': 'Rohdaten Export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.5', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'DeepConnectionsGramplet.addon.tgz'}
+{'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'SQLite is a common local database format', 'g': '3.5', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.12', 'z': 'Sqlite.addon.tgz'}
 {'d': 'SQLite is a common local database format', 'g': '3.5', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.11', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Erstellt ein Familienblatt, das vollst\xc3\xa4ndige Informationen \xc3\xbcber eine Person und ihre Partner und Kinder enth\xc3\xa4lt.', 'g': '3.5', 'i': 'FamilySheet', 'n': 'Familienblatt', 't': u'Report', 'v': '3.4.10', 'z': 'FamilySheet.addon.tgz'}
