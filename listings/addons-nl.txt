@@ -2,7 +2,7 @@
 {'d': "Dit is een ruwe 'python object'-dump", 'g': '3.5', 'i': 'Raw Export', 'n': 'Ruwe export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.5', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': "'Verre relaties'-gramplet", 't': u'Gramplet', 'v': '1.0.10', 'z': 'DeepConnectionsGramplet.addon.tgz'}
+{'d': 'Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': "'Verre relaties'-gramplet", 't': u'Gramplet', 'v': '1.0.11', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat", 'g': '3.5', 'i': 'im_sqlite', 'n': "'Sqlite'-import", 't': u'Importer', 'v': '1.0.12', 'z': 'Sqlite.addon.tgz'}
 {'d': "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat", 'g': '3.5', 'i': 'ex_sqlite', 'n': "'Sqlite'-export", 't': u'Exporter', 'v': '1.0.11', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.', 'g': '3.5', 'i': 'FamilySheet', 'n': 'Familiepagina', 't': u'Report', 'v': '3.4.10', 'z': 'FamilySheet.addon.tgz'}

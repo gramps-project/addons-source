@@ -114,7 +114,7 @@ class DeepConnectionsGramplet(Gramplet):
 
         assoc_list = person.get_person_ref_list()
         for assoc in assoc_list:
-            relation = assoc.get_relation()
+            relation = _("%s (association)") % assoc.get_relation()
             assoc_handle = assoc.get_reference_handle()
             retval += [(assoc_handle, (path, (relation, person_handle)))]
 
