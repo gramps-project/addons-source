@@ -369,10 +369,11 @@ class DataEntryGramplet(Gramplet):
 
     def get_last_source_title(self, obj):
         if obj:
-            ref_list = obj.get_source_references()
-            if len(ref_list) > 0:
-                ref = ref_list[-1]
-                if ref:
+            citation_list = obj.get_citation_list()
+            if len(citation_list) > 0:
+                citation_handle = citation_list[-1]
+                citation = self.dbstate.db.get_citation_from_handle(citation_handle)
+                if citation:
                     source = self.dbstate.db.get_source_from_handle(ref.ref)
                     if source:
                         return source.get_title()
