@@ -635,11 +635,6 @@ class PedigreeChartOptions(MenuReportOptions):
     """
     Defines options and provides handling interface.
     """
-
-    def __init__(self, name, dbase):
-        """Initialize the basic report options"""
-        MenuReportOptions.__init__(self, name, dbase)
-
     def add_menu_options(self, menu):
         """Add the menu options to the report dialog"""
 
