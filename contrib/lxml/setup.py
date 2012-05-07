@@ -19,6 +19,7 @@ if sys.platform == 'win32':
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python.exe')
     
     # GNU tools
+    # see http://gnuwin32.sourceforge.net/packages.html
     
     sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe')
     mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe')
