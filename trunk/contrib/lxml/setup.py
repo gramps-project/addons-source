@@ -6,17 +6,38 @@ import sys
 from optparse import OptionParser, OptionGroup
 
 
-if sys.platform == 'win32':          
+if sys.platform == 'win32':    
+      
     # GetText Win 32 obtained from http://gnuwin32.sourceforge.net/packages/gettext.htm
     # ....\gettext\bin\msgmerge.exe needs to be on the path
+    
+    msginitCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msginit.exe')
+    msgmergeCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgmerge.exe')
     msgfmtCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgfmt.exe')
     xgettextCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'xgettext.exe')
+    
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python.exe')
+    
+    # GNU tools
+    
+    sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe')
+    mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe')
+    tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe')
+    
 elif sys.platform == 'linux2' or os.name == 'darwin':
+    
+    msginitCmd = 'msginit'
     msgmergeCmd = 'msgmerge'
     msgfmtCmd = 'msgfmt'
     xgettextCmd = 'xgettext'
+    
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python')
+    
+    sedCmd = 'sed'
+    mkdirCmd = 'mkdir'
+    tarCmd = 'tar'
+    
+GNU = [sedCmd, mkdirCmd, tarCmd]
     
     
 if "GRAMPSPATH" in os.environ:
@@ -34,6 +55,13 @@ def tests():
     We made tests (-t flag) by displaying versions of tools if properly
     installed. Cannot run all commands without 'gettext' and 'python'.
     """
+    
+    try:
+        print("\n====='msginit'=(create your translation)================\n")
+        os.system('''%(program)s -V''' % {'program': msginitCmd})
+    except:
+        print('Please, install %(program)s for creating your translation' % {'program': msginitCmd})
+        
     
     try:
         print("\n====='msgmerge'=(merge our translation)================\n")
@@ -58,8 +86,15 @@ def tests():
         os.system('''%(program)s -V''' % {'program': pythonCmd})
     except:
         print('Please, install python')
+     
+    for program in GNU:
+        try:
+            print("\n=================='%s'=============================\n" % program)
+            os.system('''%s --help''' % program)
+        except:
+            print('Please, install or set path for GNU tool: %s' % program)
         
-
+    
 def main():
     """
     The utility for handling lxml addon.
@@ -124,20 +159,162 @@ def main():
         
     if options.clean:
         clean()
+      
+        
+def versioning():
+    """
+    Update gpr.py version
+    """
+    
+    f = open('lxmlGramplet.gpr.py', "r")
+    lines = [file.strip() for file in f]
+    f.close() 
+    
+    upf = open('lxmlGramplet.gpr.py', "w")
+    
+    for line in lines:
+        if ((line.lstrip().startswith("version")) and 
+            ("=" in line)):
+            print("orig = %s" % line.rstrip())
+            
+            line, stuff = line.rsplit(",", 1)
+            line = line.rstrip()
+            pos = line.index("version")
+            
+            indent = line[0:pos]
+            var, gtv = line[pos:].split('=', 1)
+            lyst = version(gtv.strip()[1:-1])
+            lyst[2] += 1
+            
+            newv = ".".join(map(str, lyst))
+            newline = "%sversion = '%s'," % (indent, newv)
+            upf.write('%s\n' % newline)
+        else:
+            upf.write('%s\n' % line)
+    upf.close()
+        
+        
+def myint(s):
+    """
+    Protected version of int()
+    """
+    try:
+        v = int(s)
+    except:
+        v = s
+    return v
+        
+        
+def version(sversion):
+    """
+    Return the tuple version of a string version.
+    """
+    return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
+       
                 
 def init(args):
     """
-    Creates the initial empty AddonDirectory/po/x-local.po file
-    for the addon.
+    Creates the initial empty po/x-local.po file and generates the 
+    template.pot for the lxml addon.
     """    
-    pass
+    
+    if not args:
+        os.system('''%(mkdir)s -p "po"''' % {'mkdir': mkdirCmd}
+                 )
+        template()
+        
+    if not os.path.isfile('''po/template.pot'''):
+        template()
+
+    if len(args) > 0:
+        os.system('''%(mkdir)s -p "locale"''' % {'mkdir': mkdirCmd}
+                 )
+        for arg in args:
+            if os.path.isfile('''po/%s-local.po''' % arg):
+                print('''"po/%s-local.po" already exists!''' % arg)
+            else:
+                os.system('''%(msginit)s --locale=%(arg)s ''' 
+                          '''--input="po/template.pot" '''
+                          '''--output="po/%(arg)s-local.po"'''
+                          % {'msginit': msginitCmd, 'arg': arg} 
+                          )
+                print('''You can now edit "po/%s-local.po"''' % arg)
+
+
+def template():
+    """
+    Generates the template.pot for the lxml addon.
+    """
+    
+    os.system('''xgettext --language=Python --keyword=_ --keyword=N_'''
+              ''' --from-code=UTF-8 -o "po/template.pot" *.py''' 
+              % {'xgettext': xgettextCmd}
+             )
+    os.system('''%(sed)s -i 's/charset=CHARSET/charset=UTF-8/' '''
+              '''"po/template.pot"''' % {'sed': sedCmd}
+             )
+    
     
 def update(args):
     """
-    Updates AddonDirectory/po/x-local.po with the latest
-    translations.
+    Updates po/x-local.po with the latest translations.
     """ 
-    pass
+        
+    if not args:
+        os.system('''%(mkdir)s -p "po"''' % {'mkdir': mkdirCmd}
+                 )
+        template()
+
+    if len(args) > 0:
+        if not os.path.isfile('''po/template.pot'''):
+            template()
+            
+        os.system('''%(mkdir)s -p "locale"''' % {'mkdir': mkdirCmd}
+                 )
+                 
+        for arg in args:
+            if os.path.isfile('''po/%s-local.po''' % arg):
+                
+                # Retrieve updated data for locale
+                
+                os.system('''%(msginit)s --locale=%(arg)s ''' 
+                          '''--input="po/template.pot" '''
+                          '''--output="po/%(arg)s.po"'''
+                          % {'msginit': msginitCmd, 'arg': arg} 
+                          )
+            else:
+                init([arg])
+                        
+            memory(arg)
+            
+            
+    # TODO: merge back
+
+def memory(arg):
+    """
+    Translation memory for Gramps (own dictionary: msgid/msgstr)
+    """
+    
+    if not os.path.isfile('''po/%s.po''' % arg):
+        os.system('''%(msginit)s --locale=%(arg)s ''' 
+                  '''--input="po/template.pot" '''
+                  '''--output="po/%(arg)s.po"'''
+                  % {'msginit': msginitCmd, 'arg': arg} 
+                 )
+    
+    # Start with Gramps main PO file
+    # entries for others addons are missing
+    
+    locale_po_files = "%(GRAMPSPATH)s/po/%(arg)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'arg': arg}
+    
+    # Merge global dict with a temp file
+    
+    if os.path.isfile(locale_po_files):
+        print('Merge temp data: "po/%(arg)s.po with %(global)s"' % {'global': locale_po_files, 'arg': arg})
+        os.system('''%(msgmerge)s %(global)s po/%(arg)s.po -o po/%(arg)s.po'''
+                  % {'msgmerge': msgmergeCmd, 'global': locale_po_files, 'arg': arg} 
+                 )
+                 
     
 def compilation():
     """
@@ -150,14 +327,18 @@ def compilation():
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        os.system('%s po/%s.po -o %s' % (msgfmtCmd, f, mo))
+        os.system('%s po/%s.po -o %s' % (msgfmtCmd, f, mo)
+                 )
         print(directory, f[:-6])
+           
                
 def build():
     """
     Build ../../download/AddonDirectory.addon.tgz
     """
+        
     compilation()
+    versioning()
     
     files = []
     files += glob.glob('''lxmlGramplet.py''')
@@ -168,17 +349,19 @@ def build():
     files += glob.glob('''query_html.xsl''')
     files += glob.glob('''locale/*/LC_MESSAGES/*.mo''')
     files_str = " ".join(files)
-    os.system('''mkdir -p ../../download ''')
-    #increment_target(glob.glob('''lxml/*gpr.py'''))
-    os.system('''tar cfz "../../download/lxml2.addon.tgz" %s''' % files_str)
+    os.system('''%(mkdir)s -p ../../download ''' % {'mkdir': mkdirCmd}
+             )
+    os.system('''%(tar)s cfz "../../download/lxml.addon.tgz" %(files_list)s''' 
+              % {'tar': tarCmd, 'files_list': files_str}
+              )
     
-    pass
     
 def clean():
     """
     Remove created files
     """
     pass  
+     
      
 if __name__ == "__main__":
 	main()
