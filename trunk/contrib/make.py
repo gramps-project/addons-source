@@ -311,7 +311,7 @@ elif command == "listing":
     # next, create a file for all languages listing plugins
     for lang in languages:
         fp = open("../listings/addons-%s.txt" % lang, "w")
-        for addon in dirs:
+        for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
                 local_gettext = get_addon_translator(gpr,
                                        languages=[lang]).gettext
@@ -319,7 +319,7 @@ elif command == "listing":
                 execfile(gpr.encode(sys.getfilesystemencoding()),
                          make_environment(_=local_gettext),
                          {"register": register})
-                for p in plugins:
+                for p in sorted(plugins):
                     plugin = {"n": p["name"], 
                               "i": p["id"], 
                               "t": p["ptype"], 
