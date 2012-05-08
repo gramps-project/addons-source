@@ -14,6 +14,9 @@ if sys.platform == 'win32':
     msginitCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msginit.exe')
     msgmergeCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgmerge.exe')
     msgfmtCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgfmt.exe')
+    msgcatCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgcat.exe')
+    msggrepCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msggrep.exe')
+    msgattribCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgattrib.exe')
     xgettextCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'xgettext.exe')
     
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python.exe')
@@ -21,34 +24,30 @@ if sys.platform == 'win32':
     # GNU tools
     # see http://gnuwin32.sourceforge.net/packages.html
     
-    sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe')
-    mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe')
-    tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe')
+    sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe') # sed
+    mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe') # CoreUtils
+    rmCmd = os.path.join('C:', 'Program Files(x86)', 'rm.exe') # CoreUtils
+    tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe') # tar
     
 elif sys.platform == 'linux2' or os.name == 'darwin':
     
     msginitCmd = 'msginit'
     msgmergeCmd = 'msgmerge'
     msgfmtCmd = 'msgfmt'
+    msgcatCmd = 'msgcat'
+    msggrepCmd = 'msggrep'
+    msgattribCmd = 'msgattrib'
     xgettextCmd = 'xgettext'
     
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python')
     
     sedCmd = 'sed'
     mkdirCmd = 'mkdir'
+    rmCmd = 'rm'
     tarCmd = 'tar'
     
-GNU = [sedCmd, mkdirCmd, tarCmd]
+GNU = [sedCmd, mkdirCmd, rmCmd, tarCmd]
     
-    
-if "GRAMPSPATH" in os.environ:
-    GRAMPSPATH = os.environ["GRAMPSPATH"]
-else:
-    GRAMPSPATH = "../../../.."
-
-if not os.path.isdir(GRAMPSPATH + "/po"):
-    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
-
 
 def tests():
     """
@@ -65,17 +64,36 @@ def tests():
         
     
     try:
-        print("\n====='msgmerge'=(merge our translation)================\n")
+        print("\n====='msgmerge'=(merge your translation)================\n")
         os.system('''%(program)s -V''' % {'program': msgmergeCmd})
     except:
         print('Please, install %(program)s for updating your translation' % {'program': msgmergeCmd})
         
     try:
-        print("\n==='msgfmt'=(format our translation for installation)==\n")
+        print("\n==='msgfmt'=(format your translation for installation)==\n")
         os.system('''%(program)s -V''' % {'program': msgfmtCmd})
     except:
         print('Please, install %(program)s for checking your translation' % {'program': msgfmtCmd})
-            
+    
+    try:
+        print("\n==='msgcat'=(concat translations)======================\n")
+        os.system('''%(program)s -V''' % {'program': msgcatCmd})
+    except:
+        print('Please, install %(program)s for concating translations' % {'program': msgcatCmd})
+    
+    try:
+        print("\n===='msggrep'==(extract messages from catalog)=============\n")
+        os.system('''%(program)s -V''' % {'program': msggrepCmd})
+    except:
+        print('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
+        
+    
+    try:
+        print("\n===='msgattrib'==(list groups of messages)=============\n")
+        os.system('''%(program)s -V''' % {'program': msgattribCmd})
+    except:
+        print('Please, install %(program)s for listing groups of messages' % {'program': msgattribCmd})
+        
     try:
         print("\n===='xgettext' =(generate a new template)==============\n")
         os.system('''%(program)s -V''' % {'program': xgettextCmd})
@@ -247,10 +265,15 @@ def template():
     Generates the template.pot for the lxml addon.
     """
     
-    os.system('''xgettext --language=Python --keyword=_ --keyword=N_'''
+    os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
               ''' --from-code=UTF-8 -o "po/template.pot" *.py''' 
               % {'xgettext': xgettextCmd}
              )
+    os.system('''%(xgettext)s --add-comments -j -L Glade '''
+              '''--from-code=UTF-8 -o "po/template.pot" *.glade'''
+             % {'xgettext': xgettextCmd}
+             )
+                                      
     os.system('''%(sed)s -i 's/charset=CHARSET/charset=UTF-8/' '''
               '''"po/template.pot"''' % {'sed': sedCmd}
              )
@@ -261,60 +284,115 @@ def update(args):
     Updates po/x-local.po with the latest translations.
     """ 
         
+    template()    
+        
     if not args:
         os.system('''%(mkdir)s -p "po"''' % {'mkdir': mkdirCmd}
                  )
-        template()
 
     if len(args) > 0:
-        if not os.path.isfile('''po/template.pot'''):
-            template()
-            
         os.system('''%(mkdir)s -p "locale"''' % {'mkdir': mkdirCmd}
                  )
                  
         for arg in args:
             if os.path.isfile('''po/%s-local.po''' % arg):
                 
-                # Retrieve updated data for locale
+                # create a temp header file (time log)
                 
-                os.system('''%(msginit)s --locale=%(arg)s ''' 
-                          '''--input="po/template.pot" '''
-                          '''--output="po/%(arg)s.po"'''
-                          % {'msginit': msginitCmd, 'arg': arg} 
-                          )
+                temp(arg)
+                
             else:
+                
+                # create a locale-local.po file
+                
                 init([arg])
+                
+                # create a temp header file (time log)
+                
+                temp(arg)
+                
+            # merge data from previous translation to a temp one
+            
+            print('Create "po/%s.po" temp file:' % arg)
+    
+            os.system('''%(msgmerge)s po/%(arg)s-local.po po/%(arg)s.po'''
+                      ''' -o po/%(arg)s.po --no-location'''
+                      % {'msgmerge': msgmergeCmd, 'arg': arg} 
+                      )
                         
             memory(arg)
             
+            # like template (msgid) with last message strings (msgstr)
             
-    # TODO: merge back
-
+            print('Merge "po/%s.po" with "po/template.pot":' % arg)
+            
+            os.system('''%(msgmerge)s -U po/%(arg)s.po'''
+                      ''' po/template.pot'''
+                      % {'msgmerge': msgmergeCmd, 'arg': arg} 
+                      )
+                      
+            # only used messages and merge back
+            
+            os.system('''%(msgattrib)s --no-obsolete'''
+                      ''' po/%(arg)s.po -o po/%(arg)s-local.po'''
+                      % {'msgattrib': msgattribCmd, 'arg': arg} 
+                      )
+                      
+            print('''You can now edit "po/%s-local.po"''' % arg)
+                      
+            
+def temp(arg):
+    """
+    Generate a temp file for header (time log) and Translation Memory
+    """
+    
+    os.system('''%(msginit)s --locale=%(arg)s ''' 
+              '''--input="po/template.pot" '''
+              '''--output="po/%(arg)s.po"'''
+              % {'msginit': msginitCmd, 'arg': arg} 
+              )
+    
+            
 def memory(arg):
     """
     Translation memory for Gramps (own dictionary: msgid/msgstr)
     """
     
-    if not os.path.isfile('''po/%s.po''' % arg):
-        os.system('''%(msginit)s --locale=%(arg)s ''' 
-                  '''--input="po/template.pot" '''
-                  '''--output="po/%(arg)s.po"'''
-                  % {'msginit': msginitCmd, 'arg': arg} 
-                 )
+    if "GRAMPSPATH" in os.environ:
+        GRAMPSPATH = os.environ["GRAMPSPATH"]
+    else:
+        GRAMPSPATH = "../../../.."
+
+    if not os.path.isdir(GRAMPSPATH + "/po"):
+        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
+                               
+    # Get all of the addon strings out of the catalog
+        
+    os.system('''%(msggrep)s --location=../*'''
+              ''' po/template.pot --output-file=po/%(arg)s-temp.po'''
+              % {'msggrep': msggrepCmd, 'arg': arg} 
+              )
     
-    # Start with Gramps main PO file
-    # entries for others addons are missing
+    # start with Gramps main PO file
     
     locale_po_files = "%(GRAMPSPATH)s/po/%(arg)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'arg': arg}
     
-    # Merge global dict with a temp file
+    # concat global dict as temp file
     
     if os.path.isfile(locale_po_files):
-        print('Merge temp data: "po/%(arg)s.po with %(global)s"' % {'global': locale_po_files, 'arg': arg})
-        os.system('''%(msgmerge)s %(global)s po/%(arg)s.po -o po/%(arg)s.po'''
-                  % {'msgmerge': msgmergeCmd, 'global': locale_po_files, 'arg': arg} 
-                 )
+        print('Concat temp data: "po/%(arg)s.po" with "%(global)s"' % {'global': locale_po_files, 'arg': arg})
+            
+        os.system('''%(msgcat)s --use-first po/%(arg)s.po'''
+                  ''' %(global)s -o po/%(arg)s.po --no-location'''
+                  % {'msgcat': msgcatCmd, 'global': locale_po_files, 'arg': arg} 
+                  )
+    if os.path.isfile('po/%s-temp.po' % arg):
+        print('Concat temp data: "po/%(arg)s.po" with "po/%(arg)s-temp.po"' % {'arg': arg})
+                  
+        os.system('''%(msgcat)s --use-first po/%(arg)s.po'''
+                  ''' po/%(arg)s-temp.po -o po/%(arg)s.po --no-location'''
+                  % {'msgcat': msgcatCmd, 'arg': arg} 
+                  )
                  
     
 def compilation():
@@ -361,8 +439,17 @@ def clean():
     """
     Remove created files
     """
-    pass  
-     
+    
+    os.system('''%(rm)s -rf -v '''
+              '''*~ '''
+              '''po/*~ '''
+              '''po/template.pot '''
+              '''locale '''
+              '''*.pyc '''
+              '''*.pyo '''
+              % {'rm': rmCmd}
+              ) 
+    
      
 if __name__ == "__main__":
 	main()
