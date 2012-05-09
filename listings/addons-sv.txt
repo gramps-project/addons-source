@@ -4,7 +4,7 @@
 {'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.5', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.5', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.6', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet f\xc3\xb6r gruppering av poster', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Urklippsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}

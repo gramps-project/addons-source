@@ -171,7 +171,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         self.progress.set_pass(_('Building display'),len(self.name_list))
         for name, count in self.name_list:
             handle = self.model.append()
-            self.model.set_value(handle,0,True)
+            self.model.set_value(handle,0, False)
             self.model.set_value(handle,1, name)
             namecap = capitalize(name)
             self.model.set_value(handle,2, namecap)
