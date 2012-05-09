@@ -511,7 +511,7 @@ def compilation():
     
     for po in glob.glob(os.path.join('po', '*-local.po')):
         f = os.path.basename(po[:-3])
-        mo = os.path.join('locale', f[:-6], 'LC_MESSAGES/', 'gramps.mo')
+        mo = os.path.join('locale', f[:-6], 'LC_MESSAGES', 'gramps.mo')
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
             os.makedirs(directory)
