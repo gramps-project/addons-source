@@ -261,6 +261,8 @@ elif command == "build":
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
         # Build all:
         for addon in dirs:
+            if addon == 'lxml':
+                continue
             files = []
             files += glob.glob(r('''%(addon)s/*.py'''))
             files += glob.glob(r('''%(addon)s/*.glade'''))
