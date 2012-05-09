@@ -4,7 +4,7 @@
 {'d': 'Vypo\xc4\x8d\xc3\xadt\xc3\xa1 odhadovan\xc3\xbd datum narozen\xc3\xad a \xc3\xbamrt\xc3\xad.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Vypo\xc4\x8d\xc3\xadtat odhadovan\xc3\xbd datum', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.5', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.5', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Clock Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}

@@ -4,7 +4,7 @@
 # Copyright (C) 2000-2007  Donald N. Allingham
 # Copyright (C) 2008       Brian G. Matherly
 # Copyright (C) 2010       Jakim Friant
-# Copyright (C) 2011       Doug Blank <doug.blank@gmail.com>
+# Copyright (C) 2011-2012  Doug Blank <doug.blank@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -55,15 +55,23 @@ from glade import Glade
 #
 #-------------------------------------------------------------------------
 
-prefix_list = [
-    "de", "van", "von", "di", "le", "du", "dela", "della",
-    "des", "vande", "ten", "da", "af", "den", "das", "dello",
-    "del", "en", "ein", "el" "et", "les", "lo", "los", "un",
-    "um", "una", "uno",
-    ]
 
 WIKI_HELP_PAGE = '%s_-_Tools' % const.URL_MANUAL_PAGE
 WIKI_HELP_SEC = _('manual|Fix_Capitalization_of_Given_Names...')
+
+def capitalize(given):
+    """
+    Takes a given name and returns a proper-case version of it.
+    """
+    retval = ""
+    previous = None
+    for char in given:
+        if previous is None or not previous.isalpha():
+            retval += char.upper()
+        else:
+            retval += char.lower()
+        previous = char
+    return retval
 
 #-------------------------------------------------------------------------
 #
@@ -74,6 +82,8 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
 
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
         self.label = _('Capitalization changes')
+        self.dbstate = dbstate
+        self.uistate = uistate
         self.cb = callback
         
         ManagedWindow.ManagedWindow.__init__(self,uistate,[],self.__class__)
@@ -83,57 +93,16 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         if self.fail:
             return
 
-        given_name_list = self.get_given_name_list()
+        given_name_dict = self.get_given_name_dict()
 
         self.progress = ProgressMeter(_('Checking Given Names'),'')
         self.progress.set_pass(_('Searching given names'),
-                               len(given_name_list))
+                               len(given_name_dict.keys()))
         self.name_list = []
         
-        for name in given_name_list:
-            name.strip()            
-            namesplitSP= name.split()
-            lSP = len(namesplitSP)
-            namesplitHY= name.split('-')
-            lHY = len(namesplitHY)
-            if lSP == lHY == 1:
-                if name != name.capitalize():
-                    # Single surname without hyphen(s)
-                    self.name_list.append(name)
-            #if lSP == 1 and lHY > 1:
-                #print "LSP==1", name, name.capitalize()
-                #if name != name.capitalize():
-                    # Single surname with hyphen(s)
-                    #self.name_list.append(name)
-            if lSP>1 and lHY == 1:
-                # more than one string in surname but no hyphen
-                # check if first string is in prefix_list, if so test for cap in rest
-                s1 = 0
-                if namesplitSP[0].lower() in prefix_list:
-                    s1 = 1
-                for x in xrange(len(namesplitSP)-s1):
-                    # check if any subsurname is not cap
-                    notcap = False
-                    if namesplitSP[s1+x] != namesplitSP[s1+x].capitalize():
-                        notcap = True
-                        break
-                if notcap:
-                    # Multiple surnames possibly after prefix
-                    self.name_list.append(name)
-            if lHY > 1:
-                # more than one string in surname but hyphen(s) exists
-                # check if first string is in prefix_list, if so test for cap
-                if namesplitSP[0].lower() in prefix_list:
-                    namesplitHY[0] = namesplitHY[0].replace(namesplitSP[0],'').strip()
-                for x in xrange(len(namesplitHY)):
-                    # check if any subsurname is not cap
-                    notcap = False
-                    if namesplitHY[x] != namesplitHY[x].capitalize():
-                        notcap = True
-                        break
-                if notcap:
-                    # Multiple surnames possibly after frefix
-                    self.name_list.append(name)
+        for name in given_name_dict.keys():
+            if name != capitalize(name):
+                self.name_list.append((name, given_name_dict[name]))
                     
             if uistate:
                 self.progress.step()
@@ -147,42 +116,17 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
                      _("No capitalization changes were detected."),
                      parent=uistate.window)
 
-    def get_given_name_list(self):
+    def get_given_name_dict(self):
         givennames = {}
+        self.name_map = {}
         for person in self.db.iter_people():
             allnames = [person.get_primary_name()] + person.get_alternate_names()
             allnames = set(name.get_first_name().strip() for name in allnames)
             for givenname in allnames:
                 givennames[givenname] = givennames.get(givenname, 0) + 1
-        return givennames.keys()
-
-    def name_cap(self, name):
-        name.strip()            
-        namesplitSP = name.split()
-        lSP = len(namesplitSP)
-        lHY = len(name.split('-'))
-        namesep = ' '
-        if lHY > 1:
-            namesep = '-'
-            namesplitSP = name.replace(namesep,' ').split()
-            lSP= len(namesplitSP)
-        if lSP == lHY == 1:
-            #if name != name.capitalize():
-            # Single surname without space(s) or hyphen(s), normal case
-            return name.capitalize()
-        else: 
-            # more than one string in surname but no hyphen
-            # check if first string is in prefix_list, if so CAP the rest
-            # Names like (von) Kohl(-)Brandt 
-            result = ""
-            s1 = 0
-            if namesplitSP[0].lower() in prefix_list:
-                s1 = 1
-                result = namesplitSP[0].lower()+ ' '
-            for x in range(lSP-s1):
-                # CAP all subsurnames
-                result = result + namesplitSP[s1+x].capitalize() + namesep
-            return result[:-1]
+                self.name_map[givenname] = self.name_map.get(givenname, set([]))
+                self.name_map[givenname].add(person.handle)
+        return givennames
 
     def display(self):
 
@@ -192,14 +136,17 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
             "destroy_passed_object" : self.close,
             "on_ok_clicked" : self.on_ok_clicked,
             "on_help_clicked" : self.on_help_clicked,
+            "on_edit_clicked" : self.on_edit_clicked,
             "on_delete_event"   : self.close,
             })
         
         self.list = self.top.get_object("list")
         self.set_window(window,self.top.get_object('title'),self.label)
 
+        # selected, original name, changed, count
         self.model = gtk.ListStore(gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, 
-                                   gobject.TYPE_STRING)
+                                   gobject.TYPE_STRING, gobject.TYPE_INT)
+        self.handles = {}
 
         r = gtk.CellRendererToggle()
         r.connect('toggled',self.toggled)
@@ -214,16 +161,21 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
                                gtk.CellRendererText(),text=2)
         self.list.append_column(c)
 
+        c = gtk.TreeViewColumn(_('Affected Names'),
+                               gtk.CellRendererText(),text=3)
+        self.list.append_column(c)
+
         self.list.set_model(self.model)
 
         self.iter_list = []
         self.progress.set_pass(_('Building display'),len(self.name_list))
-        for name in self.name_list:
+        for name, count in self.name_list:
             handle = self.model.append()
             self.model.set_value(handle,0,True)
             self.model.set_value(handle,1, name)
-            namecap = self.name_cap(name)
+            namecap = capitalize(name)
             self.model.set_value(handle,2, namecap)
+            self.model.set_value(handle,3, count)
             self.iter_list.append(handle)
             self.progress.step()
         self.progress.close()
@@ -242,6 +194,19 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         """Display the relevant portion of GRAMPS manual"""
         GrampsDisplay.help(WIKI_HELP_PAGE , WIKI_HELP_SEC)
 
+    def on_edit_clicked(self, button):
+        """Edit the selected person"""
+        from gui.editors import EditPerson
+        selection = self.list.get_selection()
+        store, paths = selection.get_selected_rows()
+        tpath = paths[0] if len(paths) > 0 else None
+        node = store.get_iter(tpath) if tpath else None
+        if node:
+            name = store.get_value(node, 1) 
+            for handle in self.name_map[name]:
+                person = self.dbstate.db.get_person_from_handle(handle)
+                EditPerson(self.dbstate, self.uistate, [], person)
+
     def on_ok_clicked(self, obj):
         with DbTxn(_("Capitalization changes"), self.db, batch=True
                    ) as self.trans:
@@ -250,26 +215,19 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
                             for node in self.iter_list
                                 if self.model.get_value(node,0))
 
-            #with self.db.get_person_cursor(update=True, commit=True) as cursor:
-            #  for handle, data in cursor:
             for handle in self.db.get_person_handles(False):
                 person = self.db.get_person_from_handle(handle)
-                #person = Person(data)
                 change = False
                 for name in [person.get_primary_name()] + person.get_alternate_names():
                     if name.first_name in changelist:
                         change = True
-                        fname = self.name_cap(name.first_name)
+                        fname = capitalize(name.first_name)
                         name.set_first_name(fname)
                 if change:
-                    #cursor.update(handle, person.serialize())
                     self.db.commit_person(person, transaction=self.trans)
 
         self.db.enable_signals()
         self.db.request_rebuild()
-        # FIXME: this probably needs to be removed, and bookmarks
-        # should always be rebuilt on a commit_person via signals
-        # self.parent.bookmarks.redraw()
         self.close()
         self.cb()
         
