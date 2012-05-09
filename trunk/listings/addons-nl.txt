@@ -4,7 +4,7 @@
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.5', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.5', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.6', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen", 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Klokgramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
