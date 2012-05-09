@@ -2,11 +2,11 @@
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.10', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.5', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Vypo\xc4\x8d\xc3\xadta pribli\xc5\xben\xc3\xa9 d\xc3\xa1tumy narodenia a \xc3\xbamrtia.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Vypo\xc4\x8d\xc3\xadta\xc5\xa5 odhadovan\xc3\xa9 d\xc3\xa1tumy', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.5', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Gramplet for grouping items', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
+{'d': 'Gramplet for grouping items', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Gramplet Hodiny', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.5', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Z\xc3\xa1pis d\xc3\xa1t', 't': u'Gramplet', 'v': '1.0.15', 'z': 'DataEntryGramplet.addon.tgz'}

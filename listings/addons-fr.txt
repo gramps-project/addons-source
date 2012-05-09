@@ -2,11 +2,11 @@
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.5', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.10', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.5', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.5', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Gramplet pour regrouper des articles', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
+{'d': 'Gramplet pour regrouper des articles', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet pour d\xc3\xa9montrer les graphiques Cairo', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Gramplet Horloge', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': "Collection de sites internet pour l'Allemagne (n\xc3\xa9cessite libwebconnect)", 'g': '3.5', 'i': 'DE Web Connect Pack', 'n': 'Ensemble de liens internet allemands', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Gramplet pour une saisie rapide des donn\xc3\xa9es', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Formulaire', 't': u'Gramplet', 'v': '1.0.15', 'z': 'DataEntryGramplet.addon.tgz'}
