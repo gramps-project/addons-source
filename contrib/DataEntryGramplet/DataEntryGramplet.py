@@ -374,7 +374,7 @@ class DataEntryGramplet(Gramplet):
                 citation_handle = citation_list[-1]
                 citation = self.dbstate.db.get_citation_from_handle(citation_handle)
                 if citation:
-                    source = self.dbstate.db.get_source_from_handle(ref.ref)
+                    source = self.dbstate.db.get_source_from_handle(citation.ref)
                     if source:
                         return source.get_title()
         return ""
