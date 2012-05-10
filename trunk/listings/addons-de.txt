@@ -2,14 +2,14 @@
 {'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.10', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'ein Gramplet welches die Geburtstage von lebenden Personen zeigt', 'g': '3.5', 'i': 'Birthdays', 'n': 'Geburtstags Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.5', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'Census.addon.tgz'}
 {'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.7', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.4', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet zum demonstrieren der Cairo Grafik', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Uhren Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Sammlung von Webseiten f\xc3\xbcr DE (ben\xc3\xb6tigt libwebconnect)', 'g': '3.5', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
-{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.15', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xc3\xbcber Personen durch Mausereignisse sichtbar werden.', 'g': '3.5', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.7', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen f\xc3\xbcr jede Person.', 'g': '3.5', 'i': 'Descendant Count Quickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
@@ -18,21 +18,20 @@
 {'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.5', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.12', 'z': 'Django.addon.tgz'}
 {'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.5', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.12', 'z': 'Django.addon.tgz'}
 {'d': 'Dies ist eine Rohdaten Pythonobjekt Ausgabe', 'g': '3.5', 'i': 'Raw Export', 'n': 'Rohdaten Export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
-{'d': 'Gramplet visande en familjs attribut', 'g': '3.5', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ExtendedAttributes.addon.tgz'}
-{'d': 'Gramplet visande en persons attribut', 'g': '3.5', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a family', 'g': '3.5', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ExtendedAttributes.addon.tgz'}
+{'d': 'Gramplet showing the attributes of a person', 'g': '3.5', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.5', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.9', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Gramplet zur Erkennung und Zuordnung von Gesichtern', 'g': '3.5', 'i': 'Face Detection', 'n': 'Gesichtserkennung', 't': u'Gramplet', 'v': '1.0.3', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Erstellt ein Familienblatt, das vollst\xc3\xa4ndige Informationen \xc3\xbcber eine Person und ihre Partner und Kinder enth\xc3\xa4lt.', 'g': '3.5', 'i': 'FamilySheet', 'n': 'Familienblatt', 't': u'Report', 'v': '3.4.10', 'z': 'FamilySheet.addon.tgz'}
-{'d': 'Erzeugt einen grafischen Stammbaum.', 'g': '3.5', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
+{'d': 'Erzeugt einen grafischen Stammbaum.', 'g': '3.5', 'i': 'FamilyTree', 'n': 'Stammbaum', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Erstellt Datendatei f\xc3\xbcr GoogleEarth und \xc3\xb6ffnet sie', 'g': '3.5', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.13', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Dynamischer Beziehungengraph', 'g': '3.5', 'i': 'graphview', 'n': 'Graphenansicht', 't': u'Gramps View', 'v': '1.0.22', 'z': 'GraphView.addon.tgz'}
 {'d': 'Gramplet zum zeigen der neuesten Gramps Nachrichten', 'g': '3.5', 'i': 'Headline News Gramplet', 'n': 'Schlagzeilen Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.4.0', 'i': 'Image Metadata Gramplet', 'n': 'Bilder Metadaten Gramplet', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Gramplet zum Textimport', 'g': '3.5', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.5', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.5', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.5', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Gramplet visande detaljer f\xc3\xb6r en person', 'g': '3.5', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.3', 'z': 'MediaBrowser.addon.tgz'}
+{'d': 'Gramplet showing details of a person', 'g': '3.5', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.3', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Gramplet zum bearbeiten der Notizen der aktiven Person', 'g': '3.5', 'i': 'Note Gramplet', 'n': 'Notiz Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen der aktuellen Person an', 'g': '3.5', 'i': 'NumberOfDescendantsQuickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '3.4.7', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Alternative Version zur traditionellen Ahnentafelgrafik.', 'g': '3.5', 'i': 'PedigreeChart', 'n': 'Ahnentafelgrafik', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}
@@ -49,7 +48,7 @@
 {'d': 'SQLite is a common local database format', 'g': '3.5', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.11', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.5', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gew\xc3\xa4hlten Person', 'g': '3.5', 'i': 'TimelinePedigreeView', 'n': 'Zeitleistestammbaum', 't': u'Gramps View', 'v': '0.1.18', 'z': 'TimelinePedigreeView.addon.tgz'}
-{'d': "Display a person's events on a timeline", 'g': '3.5', 'i': 'timelinequickview', 'n': 'Livsl\xc3\xa4ngdslinje', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
+{'d': "Display a person's events on a timeline", 'g': '3.5', 'i': 'timelinequickview', 'n': 'Zeitleiste', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.5', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.8', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.5', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.5', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.17', 'z': 'USWebConnectPack.addon.tgz'}
