@@ -9,7 +9,7 @@
 {'d': 'Gramplet for grouping items', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Clock Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.5', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
-{'d': 'Gramplet for quick data entry', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Data Entry Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet for quick data entry', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Data Entry Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': 'Deep Connections Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.5', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.7', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Display descendant counts for each person.', 'g': '3.5', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}

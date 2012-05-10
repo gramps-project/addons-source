@@ -9,7 +9,7 @@
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet zum demonstrieren der Cairo Grafik', 'g': '3.5', 'i': 'Clock Gramplet', 'n': 'Uhren Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Sammlung von Webseiten f\xc3\xbcr DE (ben\xc3\xb6tigt libwebconnect)', 'g': '3.5', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
-{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.5', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.5', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xc3\xbcber Personen durch Mausereignisse sichtbar werden.', 'g': '3.5', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.7', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen f\xc3\xbcr jede Person.', 'g': '3.5', 'i': 'Descendant Count Quickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
