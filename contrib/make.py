@@ -262,7 +262,7 @@ elif command == "build":
         # Build all:
         for addon in dirs:
             if addon == 'lxml':
-                continue
+                system('''cd lxml; python setup.py --build''')
             files = []
             files += glob.glob(r('''%(addon)s/*.py'''))
             files += glob.glob(r('''%(addon)s/*.glade'''))

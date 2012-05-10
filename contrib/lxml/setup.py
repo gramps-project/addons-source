@@ -224,7 +224,7 @@ def versioning():
     for line in lines:
         if ((line.lstrip().startswith("version")) and 
             ("=" in line)):
-            print("orig = %s" % line.rstrip())
+            print("orig %s" % line.rstrip())
             
             line, stuff = line.rsplit(",", 1)
             line = line.rstrip()
@@ -237,6 +237,7 @@ def versioning():
             
             newv = ".".join(map(str, lyst))
             newline = "%sversion = '%s'," % (indent, newv)
+            print("new %s" % newline.rstrip())
             upf.write('%s\n' % newline)
         else:
             upf.write('%s\n' % line)
