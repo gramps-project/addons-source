@@ -412,7 +412,7 @@ def update(args):
             print('Merge "po/%(arg)s.po" with "po/%(arg)s-local.po":' % {'arg': arg})
     
             os.system('''%(msgmerge)s po/%(arg)s-local.po po/%(arg)s.po'''
-                      ''' -o po/%(arg)s.po --no-location'''
+                      ''' -o po/%(arg)s.po --no-location -v'''
                       % {'msgmerge': msgmergeCmd, 'arg': arg} 
                       )
                         
@@ -423,7 +423,7 @@ def update(args):
             print('Merge "po/%s.po" with "po/template.pot":' % arg)
             
             os.system('''%(msgmerge)s -U po/%(arg)s.po'''
-                      ''' po/template.pot'''
+                      ''' po/template.pot -v'''
                       % {'msgmerge': msgmergeCmd, 'arg': arg} 
                       )
                       
@@ -452,7 +452,7 @@ def temp(arg):
     
     os.system('''%(msginit)s --locale=%(arg)s ''' 
               '''--input="po/template.pot" '''
-              '''--output="po/%(arg)s.po"'''
+              '''--output="po/%(arg)s.po" --no-translator'''
               % {'msginit': msginitCmd, 'arg': arg} 
               )
     
