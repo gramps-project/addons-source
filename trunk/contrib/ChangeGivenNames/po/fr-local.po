@@ -1,0 +1,83 @@
+# French translations for gramps package.
+# Copyright (C) 2012 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-11 16:06+0200\n"
+"PO-Revision-Date: 2012-05-11 16:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ChangeGivenNames.gpr.py:36
+msgid "Fix Capitalization of Given Names"
+msgstr "Réparer la casse des prénoms"
+
+#: ChangeGivenNames.gpr.py:37
+msgid ""
+"Searches the entire database and attempts to fix capitalization of the given "
+"names."
+msgstr "Recherche dans toute la base de données et essaye de corriger la casse "
+"des prénoms."
+
+#: ChangeGivenNames.py:66
+msgid "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "Réparer la casse des prénoms"
+
+#: ChangeGivenNames.py:76 ChangeGivenNames.py:246
+msgid "Capitalization changes"
+msgstr "Changements de la casse"
+
+#: ChangeGivenNames.py:88
+msgid "Checking Given Names"
+msgstr "Vérification des prénoms"
+
+#: ChangeGivenNames.py:89
+msgid "Searching given names"
+msgstr "Recherche du prénom"
+
+#: ChangeGivenNames.py:146
+msgid "No modifications made"
+msgstr "Aucune modification réalisée"
+
+#: ChangeGivenNames.py:147
+msgid "No capitalization changes were detected."
+msgstr "Aucune modification de la casse n'a été détecté."
+
+#: ChangeGivenNames.py:206
+msgid "Select"
+msgstr "Sélectionner"
+
+#: ChangeGivenNames.py:209
+msgid "Original Name"
+msgstr "Nom d'origine"
+
+#: ChangeGivenNames.py:213
+msgid "Capitalization Change"
+msgstr "Changement de la casse"
+
+# Substantif (GNOME fr)
+#: ChangeGivenNames.py:220
+msgid "Building display"
+msgstr "Chargement en cours"
+
+#: changenames.glade:30
+msgid ""
+"Below is a list of the family names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"Voici une liste des noms de familles dont \n"
+"Gramps peut corriger l'utilisation des lettres capitales. \n"
+"Veuillez sélectionner les noms que vous désirez convertir. "
+
+#: changenames.glade:97
+msgid "_Accept changes and close"
+msgstr "_Accepter les modifications et fermer la fenêtre"
