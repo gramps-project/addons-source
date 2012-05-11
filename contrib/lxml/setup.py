@@ -5,6 +5,8 @@ import os
 import sys
 from optparse import OptionParser, OptionGroup
 
+ADDON = 'lxmlGramplet'
+
 ALL_LINGUAS=["bg",
              "ca",
              "cs",
@@ -45,6 +47,7 @@ if sys.platform == 'win32':
     msgfmtCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgfmt.exe')
     msgcatCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgcat.exe')
     msggrepCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msggrep.exe')
+    msgcmpCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgcmp.exe')
     msgattribCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgattrib.exe')
     xgettextCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'xgettext.exe')
     
@@ -65,6 +68,7 @@ elif sys.platform == 'linux2' or os.name == 'darwin':
     msgfmtCmd = 'msgfmt'
     msgcatCmd = 'msgcat'
     msggrepCmd = 'msggrep'
+    msgcmpCmd = 'msgcmp'
     msgattribCmd = 'msgattrib'
     xgettextCmd = 'xgettext'
     
@@ -86,19 +90,19 @@ def tests():
     """
     
     try:
-        print("\n====='msginit'=(create your translation)================\n")
+        print("\n====='msginit'=(create your translation)===============\n")
         os.system('''%(program)s -V''' % {'program': msginitCmd})
     except:
         raise ValueError('Please, install %(program)s for creating your translation' % {'program': msginitCmd})
     
     try:
-        print("\n====='msgmerge'=(merge your translation)================\n")
+        print("\n====='msgmerge'=(merge your translation)===============\n")
         os.system('''%(program)s -V''' % {'program': msgmergeCmd})
     except:
         raise ValueError('Please, install %(program)s for updating your translation' % {'program': msgmergeCmd})
         
     try:
-        print("\n==='msgfmt'=(format your translation for installation)==\n")
+        print("\n=='msgfmt'=(format your translation for installation)==\n")
         os.system('''%(program)s -V''' % {'program': msgfmtCmd})
     except:
         raise ValueError('Please, install %(program)s for checking your translation' % {'program': msgfmtCmd})
@@ -110,12 +114,17 @@ def tests():
         raise ValueError('Please, install %(program)s for concating translations' % {'program': msgcatCmd})
     
     try:
-        print("\n===='msggrep'==(extract messages from catalog)=============\n")
+        print("\n===='msggrep'==(extract messages from catalog)=========\n")
+        os.system('''%(program)s -V''' % {'program': msggrepCmd})
+    except:
+        raise ValueError('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
+
+    try:
+        print("\n===='msgcmp'==(compare two gettext file)===============\n")
         os.system('''%(program)s -V''' % {'program': msggrepCmd})
     except:
         raise ValueError('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
         
-    
     try:
         print("\n===='msgattrib'==(list groups of messages)=============\n")
         os.system('''%(program)s -V''' % {'program': msgattribCmd})
@@ -215,11 +224,11 @@ def versioning():
     Update gpr.py version
     """
     
-    f = open('lxmlGramplet.gpr.py', "r")
+    f = open('%s.gpr.py' % ADDON, "r")
     lines = [file.strip() for file in f]
     f.close() 
     
-    upf = open('lxmlGramplet.gpr.py', "w")
+    upf = open('%s.gpr.py' % ADDON, "w")
     
     for line in lines:
         if ((line.lstrip().startswith("version")) and 
@@ -268,17 +277,11 @@ def init(args):
     template.pot for the lxml addon.
     """    
     
-    if not args:
-        os.system('''%(mkdir)s -p "po"''' % {'mkdir': mkdirCmd}
-                 )
-        template()
-        
-    if not os.path.isfile('''po/template.pot'''):
-        template()
+    os.system('''%(mkdir)s -pv "po"''' % {'mkdir': mkdirCmd})
+    
+    template()
 
     if len(args) > 0:
-        os.system('''%(mkdir)s -p "locale"''' % {'mkdir': mkdirCmd}
-                 )
         for arg in args:
             if os.path.isfile('''po/%s-local.po''' % arg):
                 print('''"po/%s-local.po" already exists!''' % arg)
@@ -301,13 +304,13 @@ def template():
               % {'xgettext': xgettextCmd}
              )
              
-    if os.path.isfile('*.glade'):
+    if os.path.isfile('%s.glade' % ADDON):
         os.system('''%(xgettext)s --add-comments -j -L Glade '''
                   '''--from-code=UTF-8 -o "po/template.pot" *.glade'''
                   % {'xgettext': xgettextCmd}
                  )
     
-    if os.path.isfile('census.xml'):         
+    if os.path.isfile('%s.xml' % ADDON):         
         xml()
         os.system('''%(xgettext)s --keyword=N_ --add-comments -j'''
                   ''' --from-code=UTF-8 -o "po/template.pot" xml.h''' 
@@ -379,16 +382,11 @@ def update(args):
     Updates po/x-local.po with the latest translations.
     """ 
         
-    template()    
-        
-    if not args:
-        os.system('''%(mkdir)s -p "po"''' % {'mkdir': mkdirCmd}
-                 )
+    os.system('''%(mkdir)s -pv "po"''' % {'mkdir': mkdirCmd})
+    
+    template()
                  
-    if len(args) > 0:
-        os.system('''%(mkdir)s -p "locale"''' % {'mkdir': mkdirCmd}
-                 )
-                 
+    if len(args) > 0:                
         for arg in args:
                         
             if os.path.isfile('''po/%s-local.po''' % arg):
@@ -429,14 +427,14 @@ def update(args):
                       
             # only used messages (need) and merge back
             
-            print('Move content to po/%s-local.po.' % arg)
+            print('Move content to "po/%s-local.po".' % arg)
             
             os.system('''%(msgattrib)s --no-obsolete'''
                       ''' po/%(arg)s.po -o po/%(arg)s-local.po'''
                       % {'msgattrib': msgattribCmd, 'arg': arg} 
                       )
             
-            print('''Remove temp "po/%s.po".''' % arg)
+            # remove temp locale.po file
             
             os.system('''%(rm)s -rf -v po/%(arg)s.po'''
                       % {'rm': rmCmd, 'arg': arg}
@@ -490,6 +488,11 @@ def memory(arg):
                   ''' %(global)s -o po/%(arg)s.po --no-location'''
                   % {'msgcat': msgcatCmd, 'global': locale_po_files, 'arg': arg} 
                   )
+        os.system('''%(msgcmp)s -m --use-fuzzy --use-untranslated'''
+                  ''' po/%(arg)s.po %(global)s'''
+                  % {'msgcmp': msgcmpCmd, 'global': locale_po_files , 'arg': arg} 
+                  )
+                
     if os.path.isfile('po/%s-temp.po' % arg):
         print('Concat temp data: "po/%(arg)s.po" with "po/%(arg)s-temp.po".' % {'arg': arg})
                   
@@ -502,23 +505,24 @@ def memory(arg):
             
         os.system('''%(rm)s -rf -v po/%(arg)s-temp.po'''
                   % {'rm': rmCmd, 'arg': arg}
-                 ) 
-                 
+                 )
+                                  
     
 def compilation():
     """
     Compile translations
     """
     
+    os.system('''%(mkdir)s -pv "locale"''' % {'mkdir': mkdirCmd})
+    
     for po in glob.glob(os.path.join('po', '*-local.po')):
         f = os.path.basename(po[:-3])
-        mo = os.path.join('locale', f[:-6], 'LC_MESSAGES', 'gramps.mo')
+        mo = os.path.join('locale', f[:-6], 'LC_MESSAGES', 'addon.mo')
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
             os.makedirs(directory)
         os.system('%s po/%s.po -o %s' % (msgfmtCmd, f, mo)
                  )
-        print(directory, f[:-6])
            
                
 def build():
@@ -530,17 +534,17 @@ def build():
     versioning()
     
     files = []
-    files += glob.glob('''lxmlGramplet.py''')
-    files += glob.glob('''lxmlGramplet.gpr.py''')
+    files += glob.glob('''%s.py''' % ADDON)
+    files += glob.glob('''%s.gpr.py''' % ADDON)
     files += glob.glob('''grampsxml.dtd''')
     files += glob.glob('''grampsxml.rng''')
     files += glob.glob('''lxml.css''')
     files += glob.glob('''query_html.xsl''')
     files += glob.glob('''locale/*/LC_MESSAGES/*.mo''')
     files_str = " ".join(files)
-    os.system('''%(mkdir)s -p ../../download ''' % {'mkdir': mkdirCmd}
+    os.system('''%(mkdir)s -pv ../../download ''' % {'mkdir': mkdirCmd}
              )
-    os.system('''%(tar)s cfz "../../download/lxml.addon.tgz" %(files_list)s''' 
+    os.system('''%(tar)s cfzv "../../download/lxml.addon.tgz" %(files_list)s''' 
               % {'tar': tarCmd, 'files_list': files_str}
               )
     
@@ -550,7 +554,7 @@ def clean():
     Remove created files
     """
     
-    os.system('''%(rm)s -rf -v '''
+    os.system('''%(rm)s -rfv '''
               '''*~ '''
               '''po/*~ '''
               '''po/template.pot '''
