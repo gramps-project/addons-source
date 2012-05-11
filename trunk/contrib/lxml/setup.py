@@ -120,10 +120,10 @@ def tests():
         raise ValueError('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
 
     try:
-        print("\n===='msgcmp'==(compare two gettext file)===============\n")
-        os.system('''%(program)s -V''' % {'program': msggrepCmd})
+        print("\n===='msgcmp'==(compare two gettext files)===============\n")
+        os.system('''%(program)s -V''' % {'program': msgcmpCmd})
     except:
-        raise ValueError('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
+        raise ValueError('Please, install %(program)s for comparing gettext files' % {'program': msgcmpCmd})
         
     try:
         print("\n===='msgattrib'==(list groups of messages)=============\n")
