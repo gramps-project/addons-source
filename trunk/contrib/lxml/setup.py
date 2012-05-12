@@ -108,7 +108,7 @@ def tests():
         raise ValueError('Please, install %(program)s for checking your translation' % {'program': msgfmtCmd})
     
     try:
-        print("\n==='msgcat'=(concat translations)======================\n")
+        print("\n==='msgcat'=(concate translations)=====================\n")
         os.system('''%(program)s -V''' % {'program': msgcatCmd})
     except:
         raise ValueError('Please, install %(program)s for concating translations' % {'program': msgcatCmd})
@@ -541,11 +541,13 @@ def build():
     files += glob.glob('''lxml.css''')
     files += glob.glob('''query_html.xsl''')
     files += glob.glob('''locale/*/LC_MESSAGES/*.mo''')
+    files += glob.glob('''*.glade''')
+    files += glob.glob('''*.xml''')
     files_str = " ".join(files)
     os.system('''%(mkdir)s -pv ../../download ''' % {'mkdir': mkdirCmd}
              )
-    os.system('''%(tar)s cfzv "../../download/lxml.addon.tgz" %(files_list)s''' 
-              % {'tar': tarCmd, 'files_list': files_str}
+    os.system('''%(tar)s cfzv "../../download/%(addon)s.addon.tgz" %(files_list)s''' 
+              % {'tar': tarCmd, 'files_list': files_str, 'addon': ADDON}
               )
     
     
