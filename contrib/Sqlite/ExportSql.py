@@ -405,7 +405,7 @@ def export_url_list(db, from_type, from_handle, urls):
 def export_person_ref_list(db, from_type, from_handle, person_ref_list):
     for person_ref in person_ref_list:
         (private, 
-         citiaion_list,
+         citation_list,
          note_list,
          handle,
          desc) = person_ref
