@@ -50,7 +50,6 @@ from QuestionDialog import ErrorDialog
 
 
 NAMESPACE = '{http://gramps-project.org/xml/1.5.0/}'
-LAST = 5
 
     
 #-------------------------------------------------------------------------    
@@ -102,7 +101,9 @@ class etreeGramplet(Gramplet):
         Constructs the GUI, consisting of an entry, a text view and 
         a Run button.
         """  
-             
+        
+        self.last = 4
+                     
         # filename and selector
         
         self.__base_path = const.USER_HOME
@@ -196,6 +197,16 @@ class etreeGramplet(Gramplet):
     def post_init(self):
         self.disconnect("active-changed")
         
+        
+    def build_options(self):
+        from gen.plug.menu import NumberOption
+        self.add_option(NumberOption(_("Number of dates back"), 
+                                     self.last, 1, 5000))
+                                     
+                                     
+    def save_options(self):
+        self.last = int(self.get_option(_("Number of dates back")).get_value())
+
 
     def run(self, obj):
         """
@@ -280,6 +291,17 @@ class etreeGramplet(Gramplet):
         repositories = []
         notes = []
         
+        # Family Tree loaded
+        # see gen/plug/_gramplet.py and gen/bb/read.py
+        print('events', self.dbstate.db.get_number_of_events())
+        print('people', self.dbstate.db.get_number_of_people())
+        print('families', self.dbstate.db.get_number_of_families())
+        print('sources', self.dbstate.db.get_number_of_sources())
+        print('places', self.dbstate.db.get_number_of_places())
+        print('objects', self.dbstate.db.get_number_of_media_objects())
+        print('repositories', self.dbstate.db.get_number_of_repositories())
+        print('notes', self.dbstate.db.get_number_of_notes())
+        
         for one in root.getchildren():
             
             #primary objects (samples)
@@ -327,37 +349,40 @@ class etreeGramplet(Gramplet):
         timestamp.sort()
         
         last = []
-        for i in range(LAST):
+        for i in range(self.last):
             if i == 0:
                 start = epoch(i)
+                last.append(timestamp[-1])
             else:
                 last.append(timestamp[-i])
         
         root.clear()
         
-        time = _('Last %s editions since %s, were on :\n' % (int(LAST), start))
+        time = _('Last %s editions since %s, were at/on :\n' % (int(self.last), start))
         for i in last:
-            time +=  '%s\n' % epoch(i)       
+            time +=  '\t * %s\n' % epoch(i)       
         
         # GtkTextView
         
         total = _('\nNumber of records and relations : \t%s\n\n') % len(tags)
         
-        event = _('Number of  events : \t%s\n') % len(events)
-        person = _('Number of persons : \t%s\n') % len(people)
-        family = _('Number of families : \t%s\n') % len(families)
-        source = _('Number of sources : \t%s\n') % len(sources)
-        place = _('Number of places : \t%s\n') % len(places)
-        media_object = _('Number of media objects : \t%s\n') % len(objects)
-        repository = _('Number of repositories : \t%s\n') % len(repositories)
-        note = _('Number of notes : \t%s\n') % len(notes)
+        event = _('Number of  events : \t%s\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        person = _('Number of persons : \t%s\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        family = _('Number of families : \t%s\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \t%s\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+        place = _('Number of places : \t%s\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media_object = _('Number of media objects : \t%s\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
+        repository = _('Number of repositories : \t%s\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \t%s\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
         
         others = len(tags) - (len(events) + len(people) + len(families) + \
         len(sources) + len(places) + len(objects) + len(repositories) + len(notes))
         
         other = _('\nNumber of additional records and relations: \t%s\n') % others
         
+        nb  = _('* loaded Family Tree base\n')
+        
         preview = time + total + event + person + family + source + place + \
-        media_object + repository + note + other
+        media_object + repository + note + nb + other
            
         self.text.set_text(preview)
