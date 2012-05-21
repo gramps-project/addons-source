@@ -50,15 +50,41 @@ from QuestionDialog import ErrorDialog
 
 
 NAMESPACE = '{http://gramps-project.org/xml/1.5.0/}'
+LAST = 5
 
     
 #-------------------------------------------------------------------------    
 
-# name for getiterator / iter (ET 1.2 vs 1.3)
+# name for getiterator / iter (ElementTree 1.2 vs 1.3)
 
 if sys.version_info[1] != 6:
     raise ValueError('ITERATOR = iter(), not written for python 2.7 and greater!')
 
+#-------------------------------------------------------------------------
+#
+# Timestamp convertor
+#
+#-------------------------------------------------------------------------
+def epoch(t):
+        """
+        Try to convert timestamp
+        """
+        
+        try:
+            from datetime import datetime
+            from time import strftime
+        except:
+            return
+        
+        if t == None:
+            print(_('Invalid timestamp'))
+            fmt = _('Unknown')
+        else:
+            date = int(t)
+            conv = datetime.fromtimestamp(date)
+            fmt = conv.strftime('%d %B %Y')
+        
+        return(fmt)
 
 #-------------------------------------------------------------------------
 #
@@ -68,7 +94,7 @@ if sys.version_info[1] != 6:
 
 class etreeGramplet(Gramplet):
     """
-    Gramplet for testing etree and Gramps XML
+    Gramplet for testing etree (python 2.6) and Gramps XML parsing
     """
     
     def init(self):
@@ -211,15 +237,13 @@ class etreeGramplet(Gramplet):
                 ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
                 return
             sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
-        elif use_gzip == 0:
+        else:
             try:
                 os.system('cp %s %s' % (entry, filename))
             except:
                 ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
             sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
-        else:
-            return
           
         tree = ElementTree.parse(filename)
         self.ParseXML(tree, filename)
@@ -235,6 +259,10 @@ class etreeGramplet(Gramplet):
         # GtkTextView ; buffer limitation ...
                       
         #self.text.set_text(ElementTree.tostring(root))
+        
+        # timestamp
+        
+        timestamp = []
         
         # XML attributes
         
@@ -254,12 +282,20 @@ class etreeGramplet(Gramplet):
         
         for one in root.getchildren():
             
-            #primary objects
+            #primary objects (samples)
+            
+            # find() needs memory - /!\ large files
             if one.find(NAMESPACE + 'event'):
                 print('Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
+            # easier and faster match
+            if one.get('home'):
+                print(one.attrib)
+            
             # iter() for python 2.7 and greater versions
             for two in one.getiterator():
+                
+                timestamp.append(two.get('change'))
                 
                 (tag, item) = two.tag, two.items()
                 #print(tag)
@@ -283,16 +319,29 @@ class etreeGramplet(Gramplet):
                 if tag == NAMESPACE + 'note':
                     notes.append(two)
                                     
-        root.clear()
-
         # to see changes and match existing handles (Family Tree loaded)
         
         #for key in keys:
             #print(key)
-                        
+        
+        timestamp.sort()
+        
+        last = []
+        for i in range(LAST):
+            if i == 0:
+                start = epoch(i)
+            else:
+                last.append(timestamp[-i])
+        
+        root.clear()
+        
+        time = _('Last %s editions since %s, were on :\n' % (int(LAST), start))
+        for i in last:
+            time +=  '%s\n' % epoch(i)       
+        
         # GtkTextView
         
-        total = _('Number of records and relations : \t%s\n\n') % len(tags)
+        total = _('\nNumber of records and relations : \t%s\n\n') % len(tags)
         
         event = _('Number of  events : \t%s\n') % len(events)
         person = _('Number of persons : \t%s\n') % len(people)
@@ -308,7 +357,7 @@ class etreeGramplet(Gramplet):
         
         other = _('\nNumber of additional records and relations: \t%s\n') % others
         
-        preview = total + event + person + family + source + place + \
+        preview = time + total + event + person + family + source + place + \
         media_object + repository + note + other
            
         self.text.set_text(preview)
