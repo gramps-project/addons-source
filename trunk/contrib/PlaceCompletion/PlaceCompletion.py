@@ -3,6 +3,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C)2007-2009  B. Malengier
+# Copyright (C) 2012       Eric Doutreleau
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1075,6 +1076,32 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             valaction.append([('title'),new])
             #do the action in memory
             place = self.group_set(place, ('title'),new)
+        elif type == "T1CCCSC" :
+            old = place.get_title()
+            valoud.append(old)
+            old = old.split(',')[0]
+            old = old.split(' - ')[0]
+            new = place.get_main_location().get_city()
+            if old != new :
+		new = "[" + old + "] - " + new
+            if place.get_main_location().get_postal_code() :
+                new += ', ' + place.get_main_location().get_postal_code()
+            else:
+                new +=', '
+            if place.get_main_location().get_county() :
+                new += ', ' + place.get_main_location().get_county()
+            else:
+                new +=', '
+            if place.get_main_location().get_state() :
+                new += ', ' + place.get_main_location().get_state()
+            else:
+                new +=', '
+            if place.get_main_location().get_country() :
+                new += ', ' + place.get_main_location().get_country()
+            valnew.append(new)
+            valaction.append([('title'),new])
+            #do the action in memory
+            place = self.group_set(place, ('title'),new)
             
         return valoud, valnew, valaction, place
         
@@ -1122,6 +1149,8 @@ class _options:
                 _("TitleStart [, City] [, State]")),
         ("T1CCSC", "TitleStart [, City] [, County] [, State] [, Country]", 
                 _("TitleStart [, City] [, County] [, State] [, Country]")),
+        ("T1CCCSC", "TitleStart [, City] [, Zip] [, County] [, State] [, Country]", 
+                _("TitleStart [, City] [, Zip] [, County] [, State] [, Country]")),
     )
     
     # geonames : http://download.geonames.org/export/dump/
