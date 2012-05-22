@@ -240,6 +240,9 @@ class GraphWidget(object):
             self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
                                   parser.get_active_person_y())
 
+        # Update the status bar
+        self.view.change_page()
+
     def clear(self):
         """
         Clear the graph by creating a new root item
