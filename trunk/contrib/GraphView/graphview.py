@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -6,6 +7,7 @@
 #                          DotGenerator is based on the relationship graph
 #                          report.
 #                          Mouse panning is derived from the pedigree view
+# Copyright (C) 2012       Mathieu MD
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -85,11 +87,17 @@ class GraphView(NavigationView):
     View for pedigree tree.
     Displays the ancestors of a selected individual.
     """
+    #settings in the config file
+    CONFIGSETTINGS = (
+        ('interface.graphview-show-images', True),
+        )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate, 
                                       dbstate.db.get_bookmarks(), 
                                       Bookmarks.PersonBookmarks, nav_group)
+
+        self.show_images = self._config.get('interface.graphview-show-images')
 
         self.dbstate = dbstate
         self.graph_widget = None
@@ -169,6 +177,56 @@ class GraphView(NavigationView):
         else:
             self.dirty = True
 
+    def can_configure(self):
+        """
+        See :class:`~gui.views.pageview.PageView 
+        :return: bool
+        """
+        return True
+
+    def cb_update_show_images(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the images setting. 
+        """
+        if entry == 'True':
+            self.show_images = True
+        else:
+            self.show_images = False
+        self.graph_widget.populate(self.get_active())
+
+    def config_connect(self):
+        """
+        Overwriten from  :class:`~gui.views.pageview.PageView method
+        This method will be called after the ini file is initialized,
+        use it to monitor changes in the ini file
+        """
+        self._config.connect('interface.graphview-show-images',
+                          self.cb_update_show_images)
+
+    def _get_configure_page_funcs(self):
+        """
+        Return a list of functions that create gtk elements to use in the 
+        notebook pages of the Configure dialog
+        
+        :return: list of functions
+        """
+        return [self.config_panel]
+
+    def config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog
+        """
+        table = gtk.Table(7, 2)
+        table.set_border_width(12)
+        table.set_col_spacings(6)
+        table.set_row_spacings(6)
+
+        configdialog.add_checkbox(table, 
+                _('Show images'), 
+                0, 'interface.graphview-show-images')
+
+        return _('Layout'), table
+
 #-------------------------------------------------------------------------
 #
 # GraphWidget
@@ -215,7 +273,7 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz
         """
-        dot = DotGenerator(self.dbstate)
+        dot = DotGenerator(self.dbstate, self.view)
         self.active_person_handle = active_person
         dot.build_graph(active_person)
 
@@ -750,7 +808,7 @@ class GraphvizSvgParser(object):
 #------------------------------------------------------------------------
 class DotGenerator(object):
 
-    def __init__(self, dbstate):
+    def __init__(self, dbstate, view):
         """
         Creates graphing instructions in dot format which is fed to Graphviz
         so that it can layout the data in a graph and produce an SVG form
@@ -760,6 +818,9 @@ class DotGenerator(object):
         self.dbstate = dbstate
         self.database = dbstate.db
         self.dot = StringIO()
+
+        self.view = view
+        self.show_images = self.view._config.get('interface.graphview-show-images')
 
         self.colors = {
             'male_fill'      : '#b9cfe7',
@@ -1005,7 +1066,7 @@ class DotGenerator(object):
         "return person label string"
         # see if we have an image to use for this person
         image_path = None
-        if self.is_html_output:
+        if self.show_images and self.is_html_output:
             media_list = person.get_media_list()
             if len(media_list) > 0:
                 media_handle = media_list[0].get_reference_handle()
