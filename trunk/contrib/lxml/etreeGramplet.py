@@ -295,7 +295,10 @@ class etreeGramplet(Gramplet):
         
         # Family Tree loaded
         # see gen/plug/_gramplet.py and gen/bb/read.py
-        print('tags', self.dbstate.db.get_number_of_tags())
+        
+        if self.dbstate.db.db_is_open:
+            print('tags', self.dbstate.db.get_number_of_tags())
+            
         print('events', self.dbstate.db.get_number_of_events())
         print('people', self.dbstate.db.get_number_of_people())
         print('families', self.dbstate.db.get_number_of_families())
@@ -305,6 +308,29 @@ class etreeGramplet(Gramplet):
         print('objects', self.dbstate.db.get_number_of_media_objects())
         print('repositories', self.dbstate.db.get_number_of_repositories())
         print('notes', self.dbstate.db.get_number_of_notes())
+        
+        print('emap', self.dbstate.db.emap_index)
+        print('pmap', self.dbstate.db.pmap_index)
+        print('fmap', self.dbstate.db.fmap_index)
+        print('smap', self.dbstate.db.smap_index)
+        print('cmap', self.dbstate.db.cmap_index)
+        print('lmap', self.dbstate.db.lmap_index)
+        print('omap', self.dbstate.db.omap_index)
+        print('rmap', self.dbstate.db.rmap_index)
+        print('nmap', self.dbstate.db.nmap_index)
+        
+        print("Nb records('Tag):", self.dbstate.db.get_number_of_records("Tag"))
+        print("Nb records('Event):", self.dbstate.db.get_number_of_records("Event"))
+        print("Nb records('Person):", self.dbstate.db.get_number_of_records("Person"))
+        print("Nb records('Family):", self.dbstate.db.get_number_of_records("Family"))
+        print("Nb records('Source):", self.dbstate.db.get_number_of_records("Source"))
+        print("Nb records('Citation):", self.dbstate.db.get_number_of_records("Citation"))
+        print("Nb records('Place):", self.dbstate.db.get_number_of_records("Place"))
+        print("Nb records('Object):", self.dbstate.db.get_number_of_records("Object"))
+        print("Nb records('Repository):", self.dbstate.db.get_number_of_records("Repository"))
+        print("Nb records('Note):", self.dbstate.db.get_number_of_records("Note"))
+        
+        #print(self.dbstate.db.surname_list)
         
         for one in root.getchildren():
             
@@ -316,7 +342,9 @@ class etreeGramplet(Gramplet):
             
             # easier and faster match
             if one.get('home'):
-                print(one.attrib)
+                print('Home:', self.dbstate.db.get_from_name_and_handle("Person", "%(home)s" % one.attrib))
+                if self.dbstate.db.db_is_open:
+                    print('Has home handle? ', self.dbstate.db.has_person_handle("%(home)s" % one.attrib))
             
             # iter() for python 2.7 and greater versions
             for two in one.getiterator():
@@ -373,7 +401,7 @@ class etreeGramplet(Gramplet):
         # GtkTextView
          
         self.counters(time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes)
-        
+
     
     def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
         """
@@ -382,9 +410,13 @@ class etreeGramplet(Gramplet):
         
         total = _('\nNumber of records and relations : \t%s\n\n') % len(entries)
         
-        tag = _('Number of  tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+        if self.dbstate.db.db_is_open:
+            tag = _('Number of  tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+        else:
+            tag = _('No tag\n')
+            
         event = _('Number of  events : \t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
-        person = _('Number of persons : \t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        person = _('Number of persons : \t%s\t|\t(%s)* and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
         family = _('Number of families : \t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
         source = _('Number of sources : \t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
         citation = _('Number of citations : \t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
@@ -398,9 +430,10 @@ class etreeGramplet(Gramplet):
         
         other = _('\nNumber of additional records and relations: \t%s\n') % others
         
-        nb  = _('* loaded Family Tree base\n')
+        nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
         preview = time + total + tag + event + person + family + source + citation + \
         place + media_object + repository + note + nb + other
         
         self.text.set_text(preview)
+        
