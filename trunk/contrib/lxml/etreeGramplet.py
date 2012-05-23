@@ -281,6 +281,7 @@ class etreeGramplet(Gramplet):
         keys = []
         
         # counters
+        entries = []
         tags = []
         events = [] 
         people = []
@@ -294,6 +295,7 @@ class etreeGramplet(Gramplet):
         
         # Family Tree loaded
         # see gen/plug/_gramplet.py and gen/bb/read.py
+        print('tags', self.dbstate.db.get_number_of_tags())
         print('events', self.dbstate.db.get_number_of_events())
         print('people', self.dbstate.db.get_number_of_people())
         print('families', self.dbstate.db.get_number_of_families())
@@ -325,7 +327,9 @@ class etreeGramplet(Gramplet):
                 #print(tag)
                 #print(two.attrib)
                 keys.append((two, item))
-                tags.append(tag)
+                entries.append(tag)
+                if tag == NAMESPACE + 'tag':
+                    tags.append(two)
                 if tag == NAMESPACE + 'event':
                     events.append(two)
                 if tag == NAMESPACE + 'person':
@@ -364,30 +368,39 @@ class etreeGramplet(Gramplet):
         
         time = _('Last %s editions since %s, were at/on :\n' % (int(self.last), start))
         for i in last:
-            time +=  '\t * %s\n' % epoch(i)       
-        
+            time +=  '\t * %s\n' % epoch(i)
+         
         # GtkTextView
+         
+        self.counters(time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes)
         
-        total = _('\nNumber of records and relations : \t%s\n\n') % len(tags)
+    
+    def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
+        """
+        Set of counters for parsed Gramps XML and loaded family tree
+        """
         
-        event = _('Number of  events : \t%s\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
-        person = _('Number of persons : \t%s\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
-        family = _('Number of families : \t%s\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
-        source = _('Number of sources : \t%s\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
-        citation = _('Number of citations : \t%s\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
-        place = _('Number of places : \t%s\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
-        media_object = _('Number of media objects : \t%s\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
-        repository = _('Number of repositories : \t%s\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
-        note = _('Number of notes : \t%s\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+        total = _('\nNumber of records and relations : \t%s\n\n') % len(entries)
         
-        others = len(tags) - (len(events) + len(people) + len(families) + len(sources) + \
+        tag = _('Number of  tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+        event = _('Number of  events : \t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        person = _('Number of persons : \t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        family = _('Number of families : \t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+        citation = _('Number of citations : \t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        place = _('Number of places : \t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media_object = _('Number of media objects : \t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
+        repository = _('Number of repositories : \t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+        
+        others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
         len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
         
         other = _('\nNumber of additional records and relations: \t%s\n') % others
         
         nb  = _('* loaded Family Tree base\n')
         
-        preview = time + total + event + person + family + source + citation + \
+        preview = time + total + tag + event + person + family + source + citation + \
         place + media_object + repository + note + nb + other
-           
+        
         self.text.set_text(preview)
