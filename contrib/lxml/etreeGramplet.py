@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009        Brian G. Matherly
+# Copyright (C) 2009        Michiel D. Nauta
 # Copyright (C) 2010        Douglas S. Blank
 # Copyright (C) 2012        Jerome Rapinat
 #
@@ -338,7 +339,7 @@ class etreeGramplet(Gramplet):
             
             # find() needs memory - /!\ large files
             if one.find(NAMESPACE + 'event'):
-                print('Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
+                print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
             # easier and faster match
             if one.get('home'):
@@ -394,26 +395,54 @@ class etreeGramplet(Gramplet):
         
         root.clear()
         
-        time = _('Last %s editions since %s, were at/on :\n' % (int(self.last), start))
+        time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
         for i in last:
             time +=  '\t * %s\n' % epoch(i)
          
         # GtkTextView
          
         self.counters(time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes)
-
+        
+        if self.dbstate.db.db_is_open:
+            self.change()
+        
+    
+    def change(self):
+        """
+        obj.get_change_time()
+        """
+        
+        tperson = []
+        tevent = []
+        
+        for handle in self.dbstate.db.get_event_handles():
+            event = self.dbstate.db.get_event_from_handle(handle)
+            tevent.append(event.get_change_time())
+        
+        tperson.sort()
+        elast = epoch(tevent[-1])
+        print('DB: Last event edition:', elast)
+        
+        for handle in self.dbstate.db.get_person_handles(sort_handles=True):
+            person = self.dbstate.db.get_person_from_handle(handle)
+            tperson.append(person.get_change_time())
+        
+        tperson.sort()
+        plast = epoch(tperson[-1])
+        print('DB: Last person edition:', plast)
+                
     
     def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
         """
         Set of counters for parsed Gramps XML and loaded family tree
         """
         
-        total = _('\nNumber of records and relations : \t%s\n\n') % len(entries)
+        total = _('\nXML: Number of records and relations : \t%s\n\n') % len(entries)
         
         if self.dbstate.db.db_is_open:
-            tag = _('Number of  tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+            tag = _('Number of tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
         else:
-            tag = _('No tag\n')
+            tag = _('Number of tags : \t%s\n' % len(tags))
             
         event = _('Number of  events : \t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
         person = _('Number of persons : \t%s\t|\t(%s)* and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
@@ -428,7 +457,7 @@ class etreeGramplet(Gramplet):
         others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
         len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
         
-        other = _('\nNumber of additional records and relations: \t%s\n') % others
+        other = _('\nXML: Number of additional records and relations: \t%s\n') % others
         
         nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
