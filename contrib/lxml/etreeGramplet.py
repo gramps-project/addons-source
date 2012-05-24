@@ -369,7 +369,7 @@ class etreeGramplet(Gramplet):
                     sources.append(two)
                 if tag == NAMESPACE + 'citation':
                     citations.append(two)
-                if tag == NAMESPACE + 'place':
+                if tag == NAMESPACE + 'placeobj':
                     places.append(two)
                 if tag == NAMESPACE + 'object':
                     objects.append(two)
