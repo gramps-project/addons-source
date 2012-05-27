@@ -2,7 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010-2011  Gary Burton
+# Copyright (C) 2010-2012  Gary Burton
 #                          GraphvizSvgParser is based on the Gramps XML import
 #                          DotGenerator is based on the relationship graph
 #                          report.
@@ -90,6 +90,8 @@ class GraphView(NavigationView):
     #settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-highlight-home-person', True),
+        ('interface.graphview-home-person-color', '#bbe68a'),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -98,6 +100,10 @@ class GraphView(NavigationView):
                                       Bookmarks.PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
+        self.highlight_home_person = self._config.get(
+                                  'interface.graphview-highlight-home-person')
+        self.home_person_color = self._config.get(
+                                 'interface.graphview-home-person-color')
 
         self.dbstate = dbstate
         self.graph_widget = None
@@ -155,6 +161,17 @@ class GraphView(NavigationView):
         associated with the interface.
         """
         return '''<ui>
+          <menubar name="MenuBar">
+            <menu action="GoMenu">
+              <placeholder name="CommonGo">
+                <menuitem action="Back"/>
+                <menuitem action="Forward"/>
+                <separator/>
+                <menuitem action="HomePerson"/>
+                <separator/>
+              </placeholder>
+            </menu>
+          </menubar>
           <toolbar name="ToolBar">
             <placeholder name="CommonNavigation">
               <toolitem action="Back"/>
@@ -194,6 +211,24 @@ class GraphView(NavigationView):
             self.show_images = False
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_highlight_home_person(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the highlight home
+        person setting. 
+        """
+        if entry == 'True':
+            self.highlight_home_person = True
+        else:
+            self.highlight_home_person = False
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_home_person_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the home person color. 
+        """
+        self.home_person_color = entry
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -202,6 +237,10 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                           self.cb_update_show_images)
+        self._config.connect('interface.graphview-highlight-home-person',
+                          self.cb_update_highlight_home_person)
+        self._config.connect('interface.graphview-home-person-color',
+                          self.cb_update_home_person_color)
 
     def _get_configure_page_funcs(self):
         """
@@ -210,13 +249,14 @@ class GraphView(NavigationView):
         
         :return: list of functions
         """
-        return [self.config_panel]
+        return [self.layout_config_panel,
+                self.color_config_panel]
 
-    def config_panel(self, configdialog):
+    def layout_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = gtk.Table(7, 2)
+        table = gtk.Table(2, 2)
         table.set_border_width(12)
         table.set_col_spacings(6)
         table.set_row_spacings(6)
@@ -224,8 +264,26 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(table, 
                 _('Show images'), 
                 0, 'interface.graphview-show-images')
+        configdialog.add_checkbox(table, 
+                _('Highlight the home person'), 
+                1, 'interface.graphview-highlight-home-person')
 
         return _('Layout'), table
+
+    def color_config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog
+        """
+        table = gtk.Table(2, 2)
+        table.set_border_width(12)
+        table.set_col_spacings(6)
+        table.set_row_spacings(6)
+
+        configdialog.add_color(table, 
+                _('Home person color'), 
+                0, 'interface.graphview-home-person-color')
+
+        return _('Colors'), table
 
 #-------------------------------------------------------------------------
 #
@@ -281,7 +339,7 @@ class GraphWidget(object):
         dot_data = dot.get_dot()
         svg_data = Popen(['dot', '-Tsvg'], 
                     stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
-        parser = GraphvizSvgParser(self)
+        parser = GraphvizSvgParser(self, self.view)
         parser.parse(svg_data)
         window = self.canvas.get_parent()
 
@@ -443,13 +501,18 @@ class GraphvizSvgParser(object):
     Parses SVG produces by Graphviz and adds the elements to a goocanvas
     """
 
-    def __init__(self, widget):
+    def __init__(self, widget, view):
         """
         Initialise the GraphvizSvgParser class
         """
         self.func = None
         self.widget = widget
         self.canvas = widget.canvas
+        self.view = view
+        self.highlight_home_person = self.view._config.get(
+                                   'interface.graphview-highlight-home-person')
+        self.home_person_color = self.view._config.get(
+                                 'interface.graphview-home-person-color')
         self.tlist = []
         self.text_attrs = None
         self.func_list = [None]*50
@@ -583,6 +646,12 @@ class GraphvizSvgParser(object):
             line_width = 3  # Thick box
         else:
             line_width = 1  # Thin box
+
+        # Highlight the home person
+        if self.highlight_home_person:
+            home_person = self.widget.dbstate.db.get_default_person()
+            if self.handle == home_person.handle:
+                fill_color = self.home_person_color
 
         item = goocanvas.Polyline(parent = self.current_parent(),
                                   points = points,
