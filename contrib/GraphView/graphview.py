@@ -650,7 +650,7 @@ class GraphvizSvgParser(object):
         # Highlight the home person
         if self.highlight_home_person:
             home_person = self.widget.dbstate.db.get_default_person()
-            if self.handle == home_person.handle:
+            if home_person and self.handle == home_person.handle:
                 fill_color = self.home_person_color
 
         item = goocanvas.Polyline(parent = self.current_parent(),
