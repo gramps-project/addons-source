@@ -3,6 +3,7 @@
 # Copyright (C) 2009        Brian G. Matherly
 # Copyright (C) 2009        Michiel D. Nauta
 # Copyright (C) 2010        Douglas S. Blank
+# Copyright (C) 2010        Jakim Friant
 # Copyright (C) 2012        Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
@@ -47,6 +48,16 @@ import const
 import Utils
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
+
+#from Merge.mergeevent import MergeEventQuery
+#from Merge.mergeperson import MergePersonQuery
+#from Merge.mergefamily import MergeFamilyQuery
+#from Merge.mergesource import MergeSourceQuery
+#from Merge.mergecitation import MergeCitationQuery
+#from Merge.mergeplace import MergePlaceQuery
+#from Merge.mergemedia import MergeMediaQuery
+#from Merge.mergerepository import MergeRepoQuery
+#from Merge.mergenote import MergeNoteQuery
 
 
 
@@ -103,7 +114,7 @@ class etreeGramplet(Gramplet):
         a Run button.
         """  
         
-        self.last = 4
+        self.last = 5
                      
         # filename and selector
         
@@ -412,24 +423,31 @@ class etreeGramplet(Gramplet):
         obj.get_change_time()
         """
         
-        tperson = []
+        # event object
+        
         tevent = []
         
         for handle in self.dbstate.db.get_event_handles():
             event = self.dbstate.db.get_event_from_handle(handle)
             tevent.append(event.get_change_time())
         
-        tperson.sort()
+        tevent.sort()
         elast = epoch(tevent[-1])
-        print('DB: Last event edition:', elast)
+        print('DB: Last event object edition on/at:', elast)
         
-        for handle in self.dbstate.db.get_person_handles(sort_handles=True):
+        # person object
+        
+        handles = sorted(self.dbstate.db.get_person_handles(), key=self._getTimestamp)
+        
+        print('DB: Last 10 persons edited:')
+        for handle in reversed(handles[-10:]):
             person = self.dbstate.db.get_person_from_handle(handle)
-            tperson.append(person.get_change_time())
+            print(person.get_primary_name().get_name(), handle)
         
-        tperson.sort()
-        plast = epoch(tperson[-1])
-        print('DB: Last person edition:', plast)
+        
+    def _getTimestamp(self, person_handle):
+        timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
+        return timestamp
                 
     
     def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
