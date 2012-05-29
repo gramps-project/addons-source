@@ -1,118 +1,98 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
-#
-# Quelques variables pour la cohérence:
-#  ancestor : ascendant
-#  descendant : descendant
-#  person, individual, people : individu(s)
-#  remove (context) : enlever une référence ou supprimer de la base
-#  home : souche
-#  active person : individu actif
-#  media : media (pas de 's' ou accent) : un medium
-#  les médias : journaux, tv
-#  call name : prénom usuel
-#  unknown (context) : inconnu ou non-connu (individu)
-#
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
-# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
-# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:25+0100\n"
-"PO-Revision-Date: 2011-12-17 19:26+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2012-05-29 10:31+0200\n"
+"PO-Revision-Date: 2012-05-29 10:35+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.4\n"
 
-#: SetMarkerTool/SetMarkerTool.gpr.py:25
-#: SetMarkerTool/SetMarkerTool.py:113
-#: SetMarkerTool/SetMarkerTool.py:155
-#: SetMarkerTool/SetMarkerTool.py:171
-msgid "Set Marker"
-msgstr "Définir un marqueur"
+#: SetTagTool/SetTagTool.gpr.py:25
+#: SetTagTool/SetTagTool.py:114
+#: SetTagTool/SetTagTool.py:120
+msgid "Set Tag"
+msgstr "Assigner l'étiquette"
 
-#: SetMarkerTool/SetMarkerTool.gpr.py:26
-msgid "Set Marker to a given value."
-msgstr "Définir le marqueur avec une certaine valeur."
+#: SetTagTool/SetTagTool.gpr.py:26
+msgid "Set Tag to a given value."
+msgstr "Définir une valeur pour l'étiquette."
 
-#: SetMarkerTool/SetMarkerTool.py:68
-#: SetMarkerTool/SetMarkerTool.py:116
+#: SetTagTool/SetTagTool.py:69
+#: SetTagTool/SetTagTool.py:117
 msgid "Options"
 msgstr "Options"
 
-#: SetMarkerTool/SetMarkerTool.py:70
+#: SetTagTool/SetTagTool.py:71
 msgid "Person Filter"
 msgstr "Filtre individu"
 
-#: SetMarkerTool/SetMarkerTool.py:71
+#: SetTagTool/SetTagTool.py:72
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
-#: SetMarkerTool/SetMarkerTool.py:75
+#: SetTagTool/SetTagTool.py:76
 msgid "Filter Person"
 msgstr "Filtre sur l'individu"
 
-#: SetMarkerTool/SetMarkerTool.py:76
+#: SetTagTool/SetTagTool.py:77
 msgid "The center person for the filter"
 msgstr "L'individu central pour ce filtre"
 
-#: SetMarkerTool/SetMarkerTool.py:80
-msgid "Marker"
-msgstr "Marqueur"
+#: SetTagTool/SetTagTool.py:81
+msgid "Tag"
+msgstr "Étiquette"
 
-#: SetMarkerTool/SetMarkerTool.py:82
-msgid "Marker value to add or edit"
-msgstr "Valeur du marqueur à ajouter ou éditer"
+#: SetTagTool/SetTagTool.py:83
+msgid "Tag value to add or edit"
+msgstr "Valeur de l'étiquette à ajouter ou à éditer"
 
-#: SetMarkerTool/SetMarkerTool.py:121
+#: SetTagTool/SetTagTool.py:122
 msgid "Results"
 msgstr "Résultats"
 
-#: SetMarkerTool/SetMarkerTool.py:122
+#: SetTagTool/SetTagTool.py:123
 msgid "Processing...\n"
 msgstr "Traitement en cours...\n"
 
 # Substantif (GNOME fr)
-#: SetMarkerTool/SetMarkerTool.py:137
-msgid "Setting markers..."
-msgstr "Définition des marqueurs..."
+#: SetTagTool/SetTagTool.py:133
+msgid "Setting tags..."
+msgstr "Définition des étiquettes..."
 
-#: SetMarkerTool/SetMarkerTool.py:141
+#: SetTagTool/SetTagTool.py:137
 #, python-format
 msgid ""
-"Setting markers to '%s'...\n"
+"Setting tags to '%s'...\n"
 "\n"
 msgstr ""
-"Définition du marqueur '%s'...\n"
+"Définition des étiquettes '%s'...\n"
 "\n"
 
-#: SetMarkerTool/SetMarkerTool.py:158
+#: SetTagTool/SetTagTool.py:154
 #, python-format
 msgid ""
 "\n"
-"Set %d markers to '%s'\n"
+"Set %d tags to '%s'\n"
 msgstr ""
 "\n"
-"A défini %d marqueurs '%s'\n"
+"Ajout de %d étiquettes '%s'\n"
 
-#: SetMarkerTool/SetMarkerTool.py:159
+#: SetTagTool/SetTagTool.py:155
 msgid "Done!\n"
 msgstr "Terminé !\n"
 
-#: SetMarkerTool/SetMarkerTool.py:172
-msgid "Beta"
-msgstr "Beta"
-
-#: SetMarkerTool/SetMarkerTool.py:175
-msgid "Sets an marker of a person to a given value."
-msgstr "Définit un marqueur pour une personne avec une valeur donnée."
+#~ msgid "Set Marker"
+#~ msgstr "Définir un marqueur"
+#~ msgid "Marker"
+#~ msgstr "Marqueur"
+#~ msgid "Beta"
+#~ msgstr "Beta"
+#~ msgid "Sets an marker of a person to a given value."
+#~ msgstr "Définit un marqueur pour une personne avec une valeur donnée."
 
