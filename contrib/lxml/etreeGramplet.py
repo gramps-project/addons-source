@@ -212,12 +212,12 @@ class etreeGramplet(Gramplet):
         
     def build_options(self):
         from gen.plug.menu import NumberOption
-        self.add_option(NumberOption(_("Number of dates back"), 
+        self.add_option(NumberOption(_("Number of editions back"), 
                                      self.last, 1, 5000))
                                      
                                      
     def save_options(self):
-        self.last = int(self.get_option(_("Number of dates back")).get_value())
+        self.last = int(self.get_option(_("Number of editions back")).get_value())
 
 
     def run(self, obj):
@@ -305,7 +305,7 @@ class etreeGramplet(Gramplet):
         repositories = []
         notes = []
         
-        # Family Tree loaded
+        # DB: Family Tree loaded
         # see gen/plug/_gramplet.py and gen/bb/read.py
         
         if self.dbstate.db.db_is_open:
@@ -320,7 +320,7 @@ class etreeGramplet(Gramplet):
         print('objects', self.dbstate.db.get_number_of_media_objects())
         print('repositories', self.dbstate.db.get_number_of_repositories())
         print('notes', self.dbstate.db.get_number_of_notes())
-        
+                
         print('emap', self.dbstate.db.emap_index)
         print('pmap', self.dbstate.db.pmap_index)
         print('fmap', self.dbstate.db.fmap_index)
@@ -330,6 +330,15 @@ class etreeGramplet(Gramplet):
         print('omap', self.dbstate.db.omap_index)
         print('rmap', self.dbstate.db.rmap_index)
         print('nmap', self.dbstate.db.nmap_index)
+        
+        # nkeys and tables ???
+        # What does it mean?
+        # 3: Tag
+        # 4: Note
+        # 5: [Event, Place]
+        # 6: [Person, Family, Source, Object]
+        # 8: Citation
+        # 10: Repository
         
         print("Nb records('Tag):", self.dbstate.db.get_number_of_records("Tag"))
         print("Nb records('Event):", self.dbstate.db.get_number_of_records("Event"))
@@ -344,6 +353,8 @@ class etreeGramplet(Gramplet):
         
         #print(self.dbstate.db.surname_list)
         
+        # XML
+        
         for one in root.getchildren():
             
             #primary objects (samples)
@@ -352,7 +363,7 @@ class etreeGramplet(Gramplet):
             if one.find(NAMESPACE + 'event'):
                 print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
-            # easier and faster match
+            # easier and faster match (does not work! Why?)
             if one.get('home'):
                 print('Home:', self.dbstate.db.get_from_name_and_handle("Person", "%(home)s" % one.attrib))
                 if self.dbstate.db.db_is_open:
@@ -366,8 +377,12 @@ class etreeGramplet(Gramplet):
                 (tag, item) = two.tag, two.items()
                 #print(tag)
                 #print(two.attrib)
-                keys.append((two, item))
+                
                 entries.append(tag)
+                
+                # two for serialisation (complete data/sequence) and/or ElementTree
+                keys.append((two, item))
+                                
                 if tag == NAMESPACE + 'tag':
                     tags.append(two)
                 if tag == NAMESPACE + 'event':
@@ -388,11 +403,15 @@ class etreeGramplet(Gramplet):
                     repositories.append(two)
                 if tag == NAMESPACE + 'note':
                     notes.append(two)
+                    
+        root.clear()
                                     
         # to see changes and match existing handles (Family Tree loaded)
         
         #for key in keys:
             #print(key)
+            
+        # XML
         
         timestamp.sort()
         
@@ -403,9 +422,7 @@ class etreeGramplet(Gramplet):
                 last.append(timestamp[-1])
             else:
                 last.append(timestamp[-i])
-        
-        root.clear()
-        
+                
         time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
         for i in last:
             time +=  '\t * %s\n' % epoch(i)
@@ -414,13 +431,15 @@ class etreeGramplet(Gramplet):
          
         self.counters(time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes)
         
+        # DB
+        
         if self.dbstate.db.db_is_open:
             self.change()
         
     
     def change(self):
         """
-        obj.get_change_time()
+        obj.get_change_time(); Family Tree loaded
         """
         
         # event object
@@ -435,17 +454,17 @@ class etreeGramplet(Gramplet):
         elast = epoch(tevent[-1])
         print('DB: Last event object edition on/at:', elast)
         
-        # person object
+        # person object; alternate method via person_map, see LastChange addon
         
-        handles = sorted(self.dbstate.db.get_person_handles(), key=self._getTimestamp)
+        handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)
         
-        print('DB: Last 10 persons edited:')
-        for handle in reversed(handles[-10:]):
+        print('DB: Last %s persons edited:' % int(self.last))
+        for handle in reversed(handles[-self.last:]):
             person = self.dbstate.db.get_person_from_handle(handle)
             print(person.get_primary_name().get_name(), handle)
         
         
-    def _getTimestamp(self, person_handle):
+    def _getPersonTimestamp(self, person_handle):
         timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
         return timestamp
                 
