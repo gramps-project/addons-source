@@ -124,6 +124,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         self.latlonfind = self.glade.get_object("cmbe_latlon_find")
         self.cmbetitleregex = self.glade.get_object("cmbe_titleregex")
         self.titleconstruct = self.glade.get_object("titleconstruct")
+        self.titleconstruct_custom = self.glade.get_object("titleconstruct_custom")
         self.latlonconv = self.glade.get_object("latlonconv")
         self.countryset = self.glade.get_object("countryset")
         self.stateset = self.glade.get_object("stateset")
@@ -170,6 +171,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
                     self.options.handler.options_dict['titleregex'])
         self.fill_combobox(self.titleconstruct,_options.titleconstruct,
             self.options.handler.options_dict['titleconstruct'])
+        self.titleconstruct_custom.set_text(
+                        self.options.handler.options_dict['titleconstruct_custom'])
         self.fill_combobox(self.latlonconv,_options.latlonconv,
             self.options.handler.options_dict['latlonconv'])
         self.countryset.set_text(
@@ -406,6 +409,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             self.options.handler.options_dict['titleregex'] = titleregex
         self.options.handler.options_dict['titleconstruct'] = \
                 _options.titleconstruct[self.titleconstruct.get_active()][0]
+        self.options.handler.options_dict['titleconstruct_custom'] \
+                = unicode(self.titleconstruct_custom.get_text())
         self.options.handler.options_dict['latlonconv'] = \
                 _options.latlonconv[self.latlonconv.get_active()][0]
         
@@ -1026,18 +1031,74 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             valaction.append([('longitude'), None])
         return valoud, valnew, valaction, place
     
+    def construct_title_custom(self, place, title_format):
+        val = ['city',
+               'street',
+               'locality',
+               'parish',
+               'county',
+               'state',
+               'country',
+               'postal_code']
+        tf = title_format.lower()
+        empty_result = True
+        for v in val:
+            value = eval("place.get_main_location().get_"+v+"()")
+            if tf.count(v) > 0:
+                empty_result = False
+            tf = tf.replace(v, value)
+        if not empty_result:
+            return tf
+        return ''
+
     def construct_title(self, place) :
         valoud = []
         valnew = []
         valaction = []
         type = self.options.handler.options_dict['titleconstruct']
-        if type == "None" :
+        custom = self.options.handler.options_dict['titleconstruct_custom']
+        if custom != '' and self.construct_title_custom(place, custom):
+            valoud.append(place.get_title())
+            new = self.construct_title_custom(place, custom)
+            valnew.append(new)
+            valaction.append([('title'),new])
+            #do the action in memory
+            place = self.group_set(place, ('title'),new)
+        elif type == "None" :
             pass
         elif type == "CS" :
             valoud.append(place.get_title())
             new = place.get_main_location().get_city()
             if place.get_main_location().get_state() :
                 new += ', ' + place.get_main_location().get_state()
+            valnew.append(new)
+            valaction.append([('title'),new])
+            #do the action in memory
+            place = self.group_set(place, ('title'),new)
+        elif type == "CZC" :
+            # City,PostalCode,Country
+            valoud.append(place.get_title())
+            city    = place.get_main_location().get_city()
+            pcode   = place.get_main_location().get_postal_code()
+            country = place.get_main_location().get_country()
+            new = city + ',' + pcode + ',' + country
+            valnew.append(new)
+            valaction.append([('title'),new])
+            #do the action in memory
+            place = self.group_set(place, ('title'),new)
+        elif type == "CSLPZC" :
+            # City[(Street;Locality;Parish)],PostalCode,Country
+            valoud.append(place.get_title())
+            city     = place.get_main_location().get_city()
+            street   = place.get_main_location().get_street()
+            locality = place.get_main_location().get_locality()
+            parish   = place.get_main_location().get_parish()
+            pcode      = place.get_main_location().get_postal_code()
+            country  = place.get_main_location().get_country()
+            address  = ''
+            if street or locality or parish:
+                address = '(' + street + ';' + locality + ';' + parish + ')'
+            new = city + address + ',' + pcode + ',' + country
             valnew.append(new)
             valaction.append([('title'),new])
             #do the action in memory
@@ -1083,7 +1144,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
             old = old.split(' - ')[0]
             new = place.get_main_location().get_city()
             if old != new :
-		new = "[" + old + "] - " + new
+                new = "[" + old + "] - " + new
             if place.get_main_location().get_postal_code() :
                 new += ', ' + place.get_main_location().get_postal_code()
             else:
@@ -1145,6 +1206,10 @@ class _options:
     titleconstruct = (
         ("None", "No changes", _("No changes")),
         ("CS", "City[, State]", _("City[, State]")),
+        ("CZC", "City,PostalCode,Country",
+                _("City,PostalCode,Country")),
+        ("CSLPZC", "City[(Street;Locality;Parish)],PostalCode,Country",
+                _("City[(Street;Locality;Parish)],PostalCode,Country")),
         ("T1CS", "TitleStart [, City] [, State]", 
                 _("TitleStart [, City] [, State]")),
         ("T1CCSC", "TitleStart [, City] [, County] [, State] [, Country]", 
@@ -1354,8 +1419,8 @@ class PlaceCompletionOptions(Tool.ToolOptions):
             'latlonfind'   : '',
             'titleregex'   : '',
             'titleconstruct' : '',
+            'titleconstruct_custom' : '',
             'latlonconv'   : '',
-            'titleconstruct' : '',
             'countryset': '',
             'stateset'  : '',
             'countyset'  : '',
@@ -1394,6 +1459,8 @@ class PlaceCompletionOptions(Tool.ToolOptions):
                             "Regular expression"),
             'titleconstruct' : ("=str","How to construct the tite",
         [ "%s\t%s" % (item[0],item[1]) for item in _options.titleconstruct ]),
+            'titleconstruct_custom': ("=str","self defined format for titles",
+                            "string"),
             'latlonconv' : ("=str","How to convert lat and lon",
         [ "%s\t%s" % (item[0],item[1]) for item in _options.latlonconv ]),
             'countryset': ("=str","string with country of the places",
