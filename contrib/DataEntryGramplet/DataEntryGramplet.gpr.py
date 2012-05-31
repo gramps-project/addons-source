@@ -15,7 +15,7 @@ register(GRAMPLET,
          detached_height = 480,
          version = '1.0.17',
          gramps_target_version = '3.5',
-         status=STABLE,
+         status=UNSTABLE,
          fname="DataEntryGramplet.py",
          help_url="Data Entry Gramplet",
          )
