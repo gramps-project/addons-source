@@ -147,7 +147,7 @@ class MediaBrowser(Gramplet):
         """
         if person.get_event_ref_list():
             return True
-        if person.get_source_references():
+        if person.get_citation_list():
             return True
         if person.get_media_list():
             return True
