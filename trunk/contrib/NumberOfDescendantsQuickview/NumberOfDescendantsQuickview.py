@@ -37,7 +37,7 @@ Display the number of a person's descendants.
 #------------------------------------------------------------------------
 import gen.display.name
 import Relationship
-from Simple import SimpleDoc, SimpleTable
+from gen.simple import SimpleDoc, SimpleTable
 from TransUtils import get_addon_translator
 from Utils import probably_alive
 _ = get_addon_translator().ugettext
