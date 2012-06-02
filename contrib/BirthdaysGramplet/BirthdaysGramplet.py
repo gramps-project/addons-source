@@ -21,7 +21,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.display.name import displayer as name_displayer
 from gen.lib.date import Today, Date
-import DateHandler
+import gen.datehandler
 import time
 import datetime
 import posixpath
@@ -75,7 +75,7 @@ class BirthdaysGramplet(Gramplet):
 		self.clear_text()
 		for diff, age, date, person in result:
 			name = person.get_primary_name()
-			self.append_text("%s: " % DateHandler.displayer.display(date))
+			self.append_text("%s: " % gen.datehandler.displayer.display(date))
 			self.link(name_displayer.display_name(name), "Person", person.handle)
 			self.append_text(" (%s)\n" % age)
 		self.append_text("", scroll_to="begin")

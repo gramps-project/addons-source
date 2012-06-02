@@ -37,7 +37,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                             TableCellStyle, FONT_SANS_SERIF, FONT_SERIF, 
                             INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gen.proxy import PrivateProxyDb, LivingProxyDb
-import DateHandler
+import gen.datehandler
 import Sort
 from gen.display.name import displayer as _nd
 from gui.utils import ProgressMeter
@@ -227,7 +227,7 @@ class ListeEclairOptions(MenuReportOptions):
 
         # Reload filters to pick any new ones
         CustomFilters = None
-        from Filters import CustomFilters, GenericFilter
+        from gen.filters import CustomFilters, GenericFilter
 
         opt = FilterOption(_("Select using filter"), 0)
         opt.set_help(_("Select places using a filter"))

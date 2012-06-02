@@ -23,11 +23,12 @@
 Run a query on the tables
 """
 
-from Simple import SimpleAccess, SimpleDoc, SimpleTable
+from gen.simple import SimpleAccess, SimpleDoc
+from gui.plug.quick import QuickTable
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import Utils
-import DateHandler
+import gen.datehandler
 import gen.lib
 
 class DBI(object):
@@ -180,7 +181,7 @@ class DBI(object):
 
     def eval(self):
         self.sdb = SimpleAccess(self.database)
-        self.stab = SimpleTable(self.sdb)
+        self.stab = QuickTable(self.sdb)
         self.select = 0
         #self.progress = Utils.ProgressMeter(_('Processing Query'))
         self.process_table()

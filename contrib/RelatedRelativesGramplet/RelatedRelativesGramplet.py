@@ -36,7 +36,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 from Utils import media_path_full
 import Relationship
-import DateHandler
+import gen.datehandler
 import gen
 
 #------------------------------------------------------------------------

@@ -31,9 +31,9 @@
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
 from gen.plug import docgen
-import DateHandler
-from Filters import GenericFilterFactory
-from Filters import Rules
+import gen.datehandler
+from gen.filters import GenericFilterFactory
+from gen.filters import rules
 from gen.plug.report import MenuReportOptions
 from gen.plug.report import Report
 from Errors import ReportError
@@ -95,7 +95,7 @@ class TodoReport(Report):
         nlist = self.database.get_note_handles()
         FilterClass = GenericFilterFactory('Note')
         my_filter = FilterClass()
-        my_filter.add_rule(Rules.Note.HasTag([self.tag]))
+        my_filter.add_rule(rules.note.HasTag([self.tag]))
         note_list = my_filter.apply(self.database, nlist)
 
         if self.can_group:
@@ -269,7 +269,7 @@ class TodoReport(Report):
         birth_ref = person.get_birth_ref()
         if birth_ref:
             event = self.database.get_event_from_handle(birth_ref.ref)
-            self.doc.write_text("b. " + DateHandler.get_date( event ))
+            self.doc.write_text("b. " + gen.datehandler.get_date( event ))
         else:
             self.doc.write_text("b. " + "_" * 12)
         self.doc.end_paragraph()
@@ -280,7 +280,7 @@ class TodoReport(Report):
         death_ref = person.get_death_ref()
         if death_ref:
             event = self.database.get_event_from_handle(death_ref.ref)
-            self.doc.write_text("d. " + DateHandler.get_date( event ))
+            self.doc.write_text("d. " + gen.datehandler.get_date( event ))
         self.doc.end_paragraph()
         self.doc.end_cell()
 
@@ -329,7 +329,7 @@ class TodoReport(Report):
             # and are these the only important ones?
             #print repr(evt.get_type().string)
             if evt.get_type().string in ["Marriage", "Civil Union"]:
-                relationship_date = DateHandler.get_date(evt)
+                relationship_date = gen.datehandler.get_date(evt)
         rel_msg = _("%(relationship_type)s on %(relationship_date)s") % {'relationship_type': family.get_relationship(),
                                                                          'relationship_date': relationship_date}
 
@@ -357,7 +357,7 @@ class TodoReport(Report):
 
         self.doc.start_cell('TR-TableCell')
         self.doc.start_paragraph('TR-Normal')
-        date = DateHandler.get_date(event)
+        date = gen.datehandler.get_date(event)
         if date:
             self.doc.write_text(date)
         else:

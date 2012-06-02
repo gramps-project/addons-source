@@ -25,7 +25,7 @@ from QuickReports import run_quick_report_by_name
 from gen.plug import Gramplet
 from gen.ggettext import gettext as _
 import gen.lib
-import DateHandler
+import gen.datehandler
 import gtk
 from gui.editors import EditPerson, EditFamily, EditEventRef
 import Errors
@@ -65,7 +65,7 @@ class Attributes(Gramplet):
         """
         event_date = event_sort = handle = ''
         if date_object is not None:
-            event_date = DateHandler.displayer.display(date_object)
+            event_date = gen.datehandler.displayer.display(date_object)
             event_sort = '%012d' % date_object.get_sort_value()
 
         try:

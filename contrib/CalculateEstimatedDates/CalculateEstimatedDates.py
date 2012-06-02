@@ -46,11 +46,11 @@ import config
 from gen.display.name import displayer as name_displayer
 import Errors
 import gen.plug.report.utils as ReportUtils
-from docgen import TextBufDoc
-from Simple import make_basic_stylesheet, SimpleAccess, SimpleDoc, SimpleTable
+from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
+from gui.plug.quick import QuickTable, TextBufDoc
 from QuestionDialog import QuestionDialog
 from Utils import create_id, probably_alive_range
-import DateHandler
+import gen.datehandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
@@ -224,7 +224,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         document.open("", container=widget)
         self.sdb = SimpleAccess(self.db)
         sdoc = SimpleDoc(document)
-        stab = SimpleTable(self.sdb)
+        stab = QuickTable(self.sdb)
         self.table = stab
         stab.columns(_("Select"), _("Person"), _("Action"), 
                      _("Birth Date"), _("Death Date"), 
@@ -365,9 +365,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                              explain or "", 
                              other or "")
                     if add_birth_event:
-                        stab.set_cell_markup(3, row, "<b>%s</b>" % DateHandler.displayer.display(date1))
+                        stab.set_cell_markup(3, row, "<b>%s</b>" % gen.datehandler.displayer.display(date1))
                     if add_death_event:
-                        stab.set_cell_markup(4, row, "<b>%s</b>" % DateHandler.displayer.display(date2))
+                        stab.set_cell_markup(4, row, "<b>%s</b>" % gen.datehandler.displayer.display(date2))
                     self.action[person.handle] = (add_birth_event, add_death_event)
                     row += 1
             if row > 0:

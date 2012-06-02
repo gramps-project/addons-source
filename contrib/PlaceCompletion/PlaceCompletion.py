@@ -52,10 +52,10 @@ import GrampsDisplay
 import ManagedWindow
 from gen.lib import Location
 from gen.db import DbTxn
-from Filters import GenericFilterFactory, Rules
+from gen.filters import GenericFilterFactory, rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
-from Filters.Rules.Place import *
+from gen.filters.rules.place import *
 import Utils
 from QuestionDialog import OkDialog, WarningDialog
 import PlaceUtils
@@ -495,10 +495,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         filters = self.options.get_report_filters()
         #index 0 is all places
         if (self.options.handler.options_dict['filternumber'] == 0) :
-            generic_filter.add_rule(Rules.Place.AllPlaces([]))
+            generic_filter.add_rule(rules.place.AllPlaces([]))
         #index 1 is nolatlon
         elif (self.options.handler.options_dict['filternumber'] == 1):
-            generic_filter.add_rule(Rules.Place.HasNoLatOrLon([]))
+            generic_filter.add_rule(rules.place.HasNoLatOrLon([]))
         #other index are custom filters
         else :
             try:
@@ -1392,13 +1392,13 @@ class PlaceCompletionOptions(Tool.ToolOptions):
         """
         all = GenericPlaceFilter()
         all.set_name(_("All Places"))
-        all.add_rule(Rules.Place.AllPlaces([]))
+        all.add_rule(rules.place.AllPlaces([]))
         nolatlon = GenericPlaceFilter()
         nolatlon.set_name(_("No Latitude/Longitude given"))
-        nolatlon.add_rule(Rules.Place.HasNoLatOrLon([]))
+        nolatlon.add_rule(rules.place.HasNoLatOrLon([]))
 
         the_filters = [all,nolatlon]
-        from Filters import CustomFilters
+        from gen.filters import CustomFilters
         the_filters.extend(CustomFilters.get_filters('Place'))
         return the_filters
         
