@@ -25,10 +25,9 @@
 Display references for any object
 """
 
-from Simple import SimpleAccess, SimpleDoc, SimpleTable, by_date
+from gen.simple import SimpleAccess, SimpleDoc, SimpleTable, by_date
 from TransUtils import get_addon_translator
 from gen.lib.date import Today
-import DateHandler
 import Relationship
 from gen.utils.fallback import get_birth_or_fallback, get_death_or_fallback
 import gen.lib
