@@ -70,7 +70,7 @@ import copy
 #
 #-------------------------------------------------------------------------
 
-import DateHandler
+import gen.datehandler
 from gen.plug.menu import NumberOption, PersonOption, FilterOption, \
                         DestinationOption, BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
@@ -83,7 +83,8 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
 from gen.display.name import displayer as name_displayer
-from Filters import GenericFilterFactory, Rules
+from gen.filters import GenericFilterFactory
+from gen.filters.rules.person import IsDescendantFamilyOf
 import const
 import gen.lib
 from gen.utils import (get_birth_or_fallback, get_death_or_fallback,
@@ -283,9 +284,9 @@ class DescendantsLinesReport(Report):
         # Matches all that is used currently, families are collected later
         filter_class = GenericFilterFactory('Person')
         filter = filter_class()
-        filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
+        filter.add_rule(IsDescendantFamilyOf([pid, 1]))
 
-        #filter.add_rule(Rules.Person.IsDescendantOf([pid, 1]))
+        #filter.add_rule(IsDescendantOf([pid, 1]))
         
         plist = self.database.get_person_handles()
         
@@ -447,7 +448,7 @@ class DescendantsLinesReport(Report):
     # Method below from plugins/textreport/DescendReport.py, modified
     def __date_place(self,event):
         if event:
-            date = DateHandler.get_date(event)
+            date = gen.datehandler.get_date(event)
             if self.inc_places:
                 place_handle = event.get_place_handle()
                 if place_handle:
