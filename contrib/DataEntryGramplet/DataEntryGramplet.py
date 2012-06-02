@@ -27,7 +27,7 @@
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
 import gen.utils 
-import DateHandler
+import gen.datehandler
 import Errors
 import gen.lib
 from TransUtils import get_addon_translator
@@ -43,9 +43,13 @@ _ = get_addon_translator(__file__).ugettext
 class DataEntryGramplet(Gramplet):
     NO_REL     = 0
     AS_PARENT  = 1
-    AS_SPOUSE  = 2
-    AS_SIBLING = 3
-    AS_CHILD   = 4
+    AS_MOTHER  = 2
+    AS_FATHER  = 3
+    AS_SPOUSE  = 4
+    AS_WIFE    = 5
+    AS_HUSBAND = 6
+    AS_SIBLING = 7
+    AS_CHILD   = 8
     def init(self):
         self.de_column_width = 20
         self.de_source_width = 10
@@ -62,7 +66,7 @@ class DataEntryGramplet(Gramplet):
                         ("Show sources", _("Sources?"), "checkbox", self.toggle_sources)], 
                        False, 0, None), 
                       ("APName", _("Surname, Given"), None, False, [], True, 0, None),
-                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown")], 
+                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown"), _("other")], 
                        False, [], True, 2, (_("Source"), 
                                             "APSource")), 
                       ("APBirth", _("Birth"), None, False, [], True, 0, (_("Source"), "APBirthSource")), 
@@ -86,13 +90,17 @@ class DataEntryGramplet(Gramplet):
                       ("NPRelation", _("Add relation"), 
                        [_("No relation to active person"),
                         _("Add as a Parent"), 
+                        _("Add as a Mother"), 
+                        _("Add as a Father"), 
                         _("Add as a Spouse"), 
+                        _("Add as a Wife"), 
+                        _("Add as a Husband"), 
                         _("Add as a Sibling"), 
                         _("Add as a Child")],
                        False, 0, None),
                       ("NPName", _("Surname, Given"), None, False, 0, None),
                       ("NPGender", _("Gender"), 
-                       [_("female"), _("male"), _("unknown")], False, 2, (_("Source"), "NPSource")), 
+                       [_("female"), _("male"), _("unknown"), _("other")], False, 2, (_("Source"), "NPSource")), 
                       ("NPBirth", _("Birth"), None, False, 0, (_("Source"), "NPBirthSource")), 
                       ("NPDeath", _("Death"), None, False, 0, (_("Source"), "NPDeathSource"))
                      ]:
@@ -144,7 +152,7 @@ class DataEntryGramplet(Gramplet):
             birth = gen.utils.get_birth_or_fallback(self.dbstate.db, active_person)
             birth_text = ""
             if birth:
-                sdate = DateHandler.get_date(birth)
+                sdate = gen.datehandler.get_date(birth)
                 birth_text += sdate + " "
                 place_handle = birth.get_place_handle()
                 if place_handle:
@@ -158,7 +166,7 @@ class DataEntryGramplet(Gramplet):
             death = gen.utils.get_death_or_fallback(self.dbstate.db, active_person)
             death_text = ""
             if death:
-                sdate = DateHandler.get_date(death)
+                sdate = gen.datehandler.get_date(death)
                 death_text += sdate + " "
                 place_handle = death.get_place_handle()
                 if place_handle:
@@ -307,7 +315,7 @@ class DataEntryGramplet(Gramplet):
         date = date.strip()
         place = place.strip()
         if date != "":
-            date = DateHandler.parser.parse(date)
+            date = gen.datehandler.parser.parse(date)
         else:
             date = None
         if place != "":
@@ -503,6 +511,16 @@ class DataEntryGramplet(Gramplet):
             elif gender == gen.lib.Person.UNKNOWN: # unknown
                 ErrorDialog(_("Please set the new person's gender."), _("Can't add new person as a parent."))
                 return
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_MOTHER:
+            # "Add as a Mother"
+            if current_person == None:
+                ErrorDialog(_("Please set an active person."), _("Can't add new person as a mother."))
+                return
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_FATHER:
+            # "Add as a Father"
+            if current_person == None:
+                ErrorDialog(_("Please set an active person."), _("Can't add new person as a father."))
+                return
         elif self.de_widgets["NPRelation"].get_active() == self.AS_SPOUSE:
             # "Add as a Spouse"
             if current_person == None:
@@ -511,6 +529,16 @@ class DataEntryGramplet(Gramplet):
             elif (gender == gen.lib.Person.UNKNOWN and 
                   current_person.get_gender() == gen.lib.Person.UNKNOWN): # both genders unknown
                 ErrorDialog(_("Please set the new person's gender."), _("Can't add new person as a spouse."))
+                return
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_WIFE:
+            # "Add as a Wife"
+            if current_person == None:
+                ErrorDialog(_("Please set an active person."), _("Can't add new person as a wife."))
+                return
+        elif self.de_widgets["NPRelation"].get_active() == self.AS_HUSBAND:
+            # "Add as a Husband"
+            if current_person == None:
+                ErrorDialog(_("Please set an active person."), _("Can't add new person as a husband."))
                 return
         elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING:
             # "Add as a Sibling"
@@ -597,6 +625,68 @@ class DataEntryGramplet(Gramplet):
                         family.set_father_handle(person.get_handle())
                     elif person.get_gender() == gen.lib.Person.FEMALE:
                         family.set_mother_handle(person.get_handle())
+                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    # add curent_person as child
+                    childref = gen.lib.ChildRef()
+                    childref.set_reference_handle(current_person.get_handle())
+                    family.add_child_ref( childref)
+                    current_person.add_parent_family_handle(family.get_handle())
+                    # finalize
+                    person.add_family_handle(family.get_handle())
+                    self.dbstate.db.commit_family(family, self.trans)
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_MOTHER:
+                # "Add as a Mother"
+                # Go through current_person parent families
+                added = False
+                for family_handle in current_person.get_parent_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        fam_wife_handle = family.get_mother_handle()
+                        # can we add person as mother?
+                        if fam_wife_handle == None:
+                            # add the person
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    family = gen.lib.Family()
+                    self.dbstate.db.add_family(family, self.trans)
+                    family.set_mother_handle(person.get_handle())
+                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    # add curent_person as child
+                    childref = gen.lib.ChildRef()
+                    childref.set_reference_handle(current_person.get_handle())
+                    family.add_child_ref( childref)
+                    current_person.add_parent_family_handle(family.get_handle())
+                    # finalize
+                    person.add_family_handle(family.get_handle())
+                    self.dbstate.db.commit_family(family, self.trans)
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_FATHER:
+                # "Add as a Father"
+                # Go through current_person parent families
+                added = False
+                for family_handle in current_person.get_parent_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        fam_husband_handle = family.get_father_handle()
+                        # can we add person as father?
+                        if fam_husband_handle == None:
+                            # add the person
+                            family.set_father_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    family = gen.lib.Family()
+                    self.dbstate.db.add_family(family, self.trans)
+                    family.set_father_handle(person.get_handle())
                     family.set_relationship(gen.lib.FamilyRelType.MARRIED)
                     # add curent_person as child
                     childref = gen.lib.ChildRef()
@@ -733,6 +823,60 @@ class DataEntryGramplet(Gramplet):
                             ErrorDialog(_("Same genders on Active and new person."), 
                                         _("Can't add new person as a spouse."))
                             return
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_WIFE:
+                # "Add as a Wife"
+                added = False
+                family = None
+                for family_handle in current_person.get_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        fam_wife_handle = family.get_mother_handle()
+                        # can we add person as wife?
+                        if fam_wife_handle == None:
+                            # add the person
+                            family.set_mother_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    family = gen.lib.Family()
+                    self.dbstate.db.add_family(family, self.trans)
+                    family.set_mother_handle(person.get_handle())
+                    family.set_father_handle(current_person.get_handle())
+                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    person.add_family_handle(family.get_handle())
+                    current_person.add_family_handle(family.get_handle())
+                    self.dbstate.db.commit_family(family, self.trans)
+            elif self.de_widgets["NPRelation"].get_active() == self.AS_HUSBAND:
+                # "Add as a Husband"
+                added = False
+                family = None
+                for family_handle in current_person.get_family_handle_list():
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        fam_husband_handle = family.get_father_handle()
+                        # can we add person as husband?
+                        if fam_husband_handle == None:
+                            # add the person
+                            family.set_father_handle(person.get_handle())
+                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            person.add_family_handle(family.get_handle())
+                            added = True
+                            break
+                if added:
+                    self.dbstate.db.commit_family(family, self.trans)
+                else:
+                    family = gen.lib.Family()
+                    self.dbstate.db.add_family(family, self.trans)
+                    family.set_father_handle(person.get_handle())
+                    family.set_mother_handle(current_person.get_handle())
+                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    person.add_family_handle(family.get_handle())
+                    current_person.add_family_handle(family.get_handle())
+                    self.dbstate.db.commit_family(family, self.trans)
             elif self.de_widgets["NPRelation"].get_active() == self.AS_SIBLING and current_person is not None:
                 # "Add as a Sibling"
                 added = False
