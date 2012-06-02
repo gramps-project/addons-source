@@ -27,7 +27,8 @@ _ = get_addon_translator(__file__).ugettext
 
 WEBSITES = [
     ["Person", "Find-A-Grave", _("Find A Grave"), "http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth)s&GSbyrel=in&GSdy=%(death)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b"],
-    ["Person", "FamilySearch", _("FamilySearch.org"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
+    ["Person", "FamilySearch", _("FamilySearch.org"), 
+     "https://www.familysearch.org/search/records/index#count=20&query=%%2Bgivenname%%3A%(given)s~%%20%%2Bsurname%%3A%(surname)s~"],
     ["Person", "US-Google", _("US Google"), '''http://www.google.com/#hl=en&q="%(surname)s,+%(given)s"'''],
     ["Person", "GenCircles", "GenCircle", "http://www.gencircles.com/globaltree/gosearch?f=%(surname)s&l=%(given)s&by=%(birth)s&ba=0&bp=&fa=&dy=%(death)s&da=0&mo=&dp=&sp=&t=Marriage&oy=&oa=0&op=&g.x=6&g.y=12"],
     ["Person", "german-immigrants.com", _("German Immigrants"), "http://www.german-immigrants.com/tng/search.php?mylastname=%(surname)s&myfirstname=%(given)s&mybool=AND&offset=0&search=Search"],
@@ -35,7 +36,7 @@ WEBSITES = [
     ["Person", "SSDI-Rootsweb", "Social Security Death Index", "http://ssdi.rootsweb.ancestry.com/cgi-bin/newssdi?sn=%(surname)s&fn=%(given)s&nt=exact"], 
     ["Person", "CaliforniaDeathIndex", "California Death Index", "http://vitals.rootsweb.ancestry.com/ca/death/search.cgi?surname=%(surname)s&given=%(given)s"],
     ["Person", "SiteSearch", _("Free Rootsweb Site Search"), '''http://sitesearch.rootsweb.ancestry.com/cgi-bin/search?words="%(surname)s+%(given)s"'''], 
-    ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://newspapers.nla.gov.au/ndp/del/search?searchTerm=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&textSearchScope=full&fromdd=&frommm=&fromyyyy=&todd=&tomm=&toyyyy=&facet=category%3AFamily+Notices&facet=&sortBy="], # Australian
+    ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://newspapers.nla.gov.au/ndp/del/search?searchTerm=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&textSearchScope=full&fromdd=&frommm=&fromyyyy=&todd=&tomm=&toyyyy=&facet=category%%3AFamily+Notices&facet=&sortBy="], # Australian
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
     ["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"], # French
     ["Person", "Roglo", "Roglo", "http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN"],
