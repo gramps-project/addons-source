@@ -26,8 +26,8 @@
 from gen.plug import Gramplet
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
-from QuickReports import run_quick_report_by_name
-from Simple import SimpleAccess, SimpleDoc, SimpleTable
+from gui.plug.quick import QuickTable, run_quick_report_by_name
+from gen.simple import SimpleAccess, SimpleDoc
 
 cache = {}
 
@@ -73,7 +73,7 @@ def run(database, document, person):
     # setup the simple access functions
     sdb = SimpleAccess(database)
     sdoc = SimpleDoc(document)
-    stab = SimpleTable(sdb)
+    stab = QuickTable(sdb)
     # display the title
     sdoc.title(_("Descendent Count"))
     sdoc.paragraph("")

@@ -67,32 +67,32 @@ class CliMerge(tool.Tool):
 
 
         if obj_type == 'Person':
-            from Merge.mergeperson import MergePersonQuery
+            from gen.merge.mergeperson import MergePersonQuery
             query = MergePersonQuery(database, primary, secondary)
         elif obj_type == 'Family':
             # TODO make sure father_handle is in phoenix or titanic
             father_handle = self.options.handler.options_dict['father_h']
             mother_handle = self.options.handler.options_dict['mother_h']
-            from Merge.mergefamily import MergeFamilyQuery
+            from gen.merge.mergefamily import MergeFamilyQuery
             query = MergeFamilyQuery(database, primary, secondary,
                                      father_handle, mother_handle)
         elif obj_type == 'Event':
-            from Merge.mergeevent import MergeEventQuery
+            from gen.merge.mergeevent import MergeEventQuery
             query = MergeEventQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Place':
-            from Merge.mergeplace import MergePlaceQuery
+            from gen.merge.mergeplace import MergePlaceQuery
             query = MergePlaceQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Source':
-            from Merge.mergesource import MergeSourceQuery
+            from gen.merge.mergesource import MergeSourceQuery
             query = MergeSourceQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Repository':
-            from Merge.mergerepository import MergeRepoQuery
+            from gen.merge.mergerepository import MergeRepoQuery
             query = MergeRepoQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Media':
-            from Merge.mergemedia import MergeMediaQuery
+            from gen.merge.mergemedia import MergeMediaQuery
             query = MergeMediaQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Note':
-            from Merge.mergenote import MergeNoteQuery
+            from gen.merge.mergenote import MergeNoteQuery
             query = MergeNoteQuery(self.dbstate, primary, secondary)
         else:
             raise MergeError(("Merge for %s not implemented.") % \

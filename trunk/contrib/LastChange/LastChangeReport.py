@@ -34,7 +34,7 @@ import time
 # gramps modules
 #
 #------------------------------------------------------------------------
-import DateHandler
+import gen.datehandler
 from Errors import ReportError
 from gen.plug import docgen
 from gen.plug.menu import BooleanListOption
@@ -156,7 +156,7 @@ class LastChangeReport(Report):
         """Convert the change date to the preferred date format and return a string"""
         change_date = Date()
         change_date.set_yr_mon_day(*time.localtime(date_in)[0:3])
-        return DateHandler.displayer.display(change_date)
+        return gen.datehandler.displayer.display(change_date)
 
     def write_person(self):
         handles = sorted(self.database.get_person_handles(), key=self._getTimestamp)

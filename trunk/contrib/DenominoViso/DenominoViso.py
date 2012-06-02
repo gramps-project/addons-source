@@ -152,7 +152,7 @@ from QuestionDialog import ErrorDialog, WarningDialog
 from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gen.display.name import displayer as _nd
-import DateHandler
+import gen.datehandler
 import AutoComp
 from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
 from Utils import confidence, media_path_full
@@ -1035,7 +1035,7 @@ function %(bd)s2html(person,containerDL) {
                 # add self.search_subject?           
             if ('<' + _('date') + '>') in self.event_format:
                 if date:
-                    event_str += ",event_date:'" + self.escbacka(DateHandler.get_date(event))+"'"
+                    event_str += ",event_date:'" + self.escbacka(gen.datehandler.get_date(event))+"'"
                     if self.options['DNMinc_events']:
                         self.search_subjects['Event Date'] = 'event_date'
 
@@ -1369,7 +1369,7 @@ function %(bd)s2html(person,containerDL) {
             if not address_str: continue
             rv += "{"
             if address_date:
-                rv += "address_date:'" + self.escbacka(DateHandler.get_date(address)) + "',"
+                rv += "address_date:'" + self.escbacka(gen.datehandler.get_date(address)) + "',"
                 self.search_subjects['Address Date'] = 'address_date'
             rv += "address_str:'" + self.escbacka(address_str) + "'"
             self.search_subjects['Address'] = 'address_str'

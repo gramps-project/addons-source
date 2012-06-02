@@ -62,7 +62,6 @@ from Utils import (media_path_full, probably_alive, find_children,
                    find_parents, find_witnessed_people)
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from libformatting import FormattingHelper
-from gen.datehandler import _datehandler as DateHandler
 import ThumbNails
 import Errors
 from gui.editors import EditPerson, EditFamily

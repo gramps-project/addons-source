@@ -41,7 +41,6 @@ import gzip
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.lib import date
-import DateHandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
@@ -49,15 +48,15 @@ import Utils
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
 
-#from Merge.mergeevent import MergeEventQuery
-#from Merge.mergeperson import MergePersonQuery
-#from Merge.mergefamily import MergeFamilyQuery
-#from Merge.mergesource import MergeSourceQuery
-#from Merge.mergecitation import MergeCitationQuery
-#from Merge.mergeplace import MergePlaceQuery
-#from Merge.mergemedia import MergeMediaQuery
-#from Merge.mergerepository import MergeRepoQuery
-#from Merge.mergenote import MergeNoteQuery
+#from gen.merge.mergeevent import MergeEventQuery
+#from gen.merge.mergeperson import MergePersonQuery
+#from gen.merge.mergefamily import MergeFamilyQuery
+#from gen.merge.mergesource import MergeSourceQuery
+#from gen.merge.mergecitation import MergeCitationQuery
+#from gen.merge.mergeplace import MergePlaceQuery
+#from gen.merge.mergemedia import MergeMediaQuery
+#from gen.merge.mergerepository import MergeRepoQuery
+#from gen.merge.mergenote import MergeNoteQuery
 
 
 

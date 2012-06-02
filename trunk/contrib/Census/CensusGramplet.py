@@ -37,7 +37,7 @@ import gtk
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
-import DateHandler
+import gen.datehandler
 import Errors
 import gen.lib
 from gen.db import DbTxn
@@ -180,7 +180,7 @@ class CensusGramplet(Gramplet):
                             source_text = source.get_title()
                             self.model.append((event,
                                               source_text,
-                                              DateHandler.get_date(event),
+                                              gen.datehandler.get_date(event),
                                               place_text))
 
     def active_changed(self, handle):
@@ -258,7 +258,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         Get the menu title.
         """
         if self.event.get_handle():
-            date = DateHandler.get_date(self.event)
+            date = gen.datehandler.get_date(self.event)
             if not date:
                 date = 'unknown'
             dialog_title = _('Census: %s')  % date
@@ -479,7 +479,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                 census_combo.set_active(pos)
                 
         date_text = self.widgets['date_text']
-        date_text.set_text(DateHandler.get_date(event))
+        date_text.set_text(gen.datehandler.get_date(event))
 
         person_list = []
         for item in self.db.find_backlink_handles(event.get_handle(), 
@@ -617,7 +617,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         census_date = get_census_date(census_id)
 
         date_text = self.widgets['date_text']
-        date_text.set_text(DateHandler.displayer.display(census_date))
+        date_text.set_text(gen.datehandler.displayer.display(census_date))
         self.event.set_date_object(census_date)
         self.citation.set_date_object(census_date)
 

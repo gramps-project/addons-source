@@ -26,7 +26,8 @@
 Display all names of all people
 """
 
-from Simple import SimpleAccess, SimpleDoc, SimpleTable
+from gen.simple import SimpleAccess, SimpleDoc
+from gui.plug.quick import QuickTable
 from gen.display.name import displayer as nd
 
 from TransUtils import get_addon_translator
@@ -41,7 +42,7 @@ def run(database, document, *args, **kwargs):
     # setup the simple access functions
     sdb = SimpleAccess(database)
     sdoc = SimpleDoc(document)
-    stab = SimpleTable(sdb)
+    stab = QuickTable(sdb)
     # display the title
     sdoc.title(_("All Names of All People"))
     sdoc.paragraph("")

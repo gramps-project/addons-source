@@ -45,7 +45,7 @@ import time
 #
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
-import DateHandler
+import gen.datehandler
 from gen.lib import ChildRefType
 from gen.lib.date import Date
 from gen.plug import docgen
@@ -249,7 +249,7 @@ class PersonBox:
                 for e_type, handle in birth_ref.get_referenced_handles():
                     if e_type == 'Event':
                         birth_event = self.report.database.get_event_from_handle(handle)
-                        birth_date = DateHandler.get_date(birth_event)
+                        birth_date = gen.datehandler.get_date(birth_event)
             self.line += "\nb. " + str(birth_date)
 
             # we don't repeat this information for the mother
@@ -265,7 +265,7 @@ class PersonBox:
                         # and are these the only important ones?
                         #print repr(evt.get_type().string)
                         if evt.get_type().string in ["Marriage", "Civil Union"]:
-                            relationship_date = DateHandler.get_date(evt)
+                            relationship_date = gen.datehandler.get_date(evt)
                 self.line += "\nm. " + str(relationship_date)
 
             death_date = _PLACEHOLDER
@@ -274,7 +274,7 @@ class PersonBox:
                 for e_type, handle in death_ref.get_referenced_handles():
                     if e_type == 'Event':
                         death_event = self.report.database.get_event_from_handle(handle)
-                        death_date = DateHandler.get_date(death_event)
+                        death_date = gen.datehandler.get_date(death_event)
             self.line += "\nd. " + str(death_date)
 
         return self.line
@@ -396,8 +396,8 @@ class PedigreeChart(Report):
 #        self.footer = escape("%s: %s <%s>\n%s" % (_('Researcher'),
 #                             researcher.get_name(),
 #                             researcher.get_email(),
-#                             DateHandler.displayer.display(report_date)))
-        self.footer = DateHandler.displayer.display(report_date)
+#                             gen.datehandler.displayer.display(report_date)))
+        self.footer = gen.datehandler.displayer.display(report_date)
 
         self.map = {}
         self.page_number = PageCounter(1)

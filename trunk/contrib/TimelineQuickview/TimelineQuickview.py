@@ -25,7 +25,8 @@
 Display references for any object
 """
 
-from gen.simple import SimpleAccess, SimpleDoc, SimpleTable, by_date
+from gen.simple import SimpleAccess, SimpleDoc, by_date
+from gui.plug.quick import QuickTable
 from TransUtils import get_addon_translator
 from gen.lib.date import Today
 import Relationship
@@ -150,7 +151,7 @@ def run(database, document, person):
     sd = SimpleDoc(document)
     sd.title(_("Timeline for %s") % sa.name(person))
     sd.paragraph("")
-    stab = SimpleTable(sa)
+    stab = QuickTable(sa)
     stab.columns(_("Date"), 
                  _("Event"), 
                  _("Age"), 

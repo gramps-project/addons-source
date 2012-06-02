@@ -43,7 +43,7 @@ from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
 from gen.plug.report import Report
 from gen.plug.report import utils
 from gen.plug.report import MenuReportOptions
-import DateHandler
+import gen.datehandler
 import Relationship
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
@@ -371,7 +371,7 @@ class FamilySheet(Report):
 
             for addr in person.get_address_list():
                 location = utils.get_address_str(addr)
-                date = DateHandler.get_date(addr)
+                date = gen.datehandler.get_date(addr)
 
                 self.doc.start_paragraph('FSR-Normal')
                 if date:
@@ -723,7 +723,7 @@ def _Date_get_text(date, placeholder=False):
         placeholder if the date is missing or incomplete.
     """
 
-    text = DateHandler.displayer.display(date)
+    text = gen.datehandler.displayer.display(date)
 
     if date.get_modifier() == Date.MOD_NONE \
             and date.get_quality() == Date.QUAL_NONE:

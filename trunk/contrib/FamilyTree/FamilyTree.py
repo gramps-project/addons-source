@@ -35,7 +35,7 @@ import gen.plug.menu
 import gen.plug.report
 from gen.plug.report.utils import pt2cm
 import gui.plug.report
-import DateHandler
+import gen.datehandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 
@@ -851,7 +851,7 @@ class FamilyTree(gen.plug.report.Report):
             event_text = _("resident")
 
         date = event.get_date_object()
-        date_text = DateHandler.displayer.display(date)
+        date_text = gen.datehandler.displayer.display(date)
 
         if date.get_modifier() == Date.MOD_NONE and date.get_quality() == Date.QUAL_NONE:
             if date.get_day_valid():
@@ -910,7 +910,7 @@ class FamilyTree(gen.plug.report.Report):
             else:
                 return None
         else:
-            return DateHandler.displayer.display(date)
+            return gen.datehandler.displayer.display(date)
 
 
     # -------------------------------------------------------------------
