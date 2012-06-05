@@ -101,8 +101,9 @@ class MediaBrowser(Gramplet):
         """
         Add source nodes to the model.
         """
-        for source_ref in obj.get_citation_list():
-            handle = source_ref.ref
+        for citation_handle in obj.get_citation_list():
+            citation = self.dbstate.db.get_citation_from_handle(citation_handle)
+            handle = citation.get_reference_handle()
             name, src = navigation_label(self.dbstate.db, 'Source', handle)
             node = self.model.add([name], node=parent_node)
             self.add_media(src, node)
