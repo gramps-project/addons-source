@@ -204,7 +204,7 @@ from gui.managedwindow import ManagedWindow
 from gui.editors.objectentries import PlaceEntry
 from gui.widgets import MonitoredEntry
 from gui.editors import EditPerson
-import GrampsDisplay
+from gui.display import display_help
 from QuestionDialog import ErrorDialog
 from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_citation,
@@ -698,7 +698,7 @@ class CensusEditor(ManagedWindow):
         """
         Display the relevant portion of GRAMPS manual
         """
-        GrampsDisplay.help(webpage='Census_Addons')
+        display_help(webpage='Census_Addons')
 
     def get_attribute(self, attrs, name):
         """

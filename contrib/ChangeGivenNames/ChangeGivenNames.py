@@ -41,7 +41,7 @@ import gtk
 from gen.db import DbTxn
 import const
 from gui.utils import ProgressMeter
-import GrampsDisplay
+from gui.display import display_help
 from gui.managedwindow import ManagedWindow
 
 from QuestionDialog import OkDialog
@@ -192,7 +192,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
     def on_help_clicked(self, obj):
         """Display the relevant portion of GRAMPS manual"""
-        GrampsDisplay.help(WIKI_HELP_PAGE , WIKI_HELP_SEC)
+        display_help(WIKI_HELP_PAGE , WIKI_HELP_SEC)
 
     def on_edit_clicked(self, button):
         """Edit the selected person"""

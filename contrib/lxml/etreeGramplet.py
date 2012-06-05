@@ -45,7 +45,6 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
 import Utils
-import GrampsDisplay
 from QuestionDialog import ErrorDialog
 
 #from gen.merge.mergeevent import MergeEventQuery
