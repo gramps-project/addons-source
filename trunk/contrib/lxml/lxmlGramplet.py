@@ -43,7 +43,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
 import Utils
-import GrampsDisplay
+from gui.display import display_url
 from QuestionDialog import ErrorDialog
 from libhtml import Html
 
@@ -631,7 +631,7 @@ class lxmlGramplet(Gramplet):
         
         sys.stdout.write(_('1. Has generated "%s".\n') % html)
         print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
-        GrampsDisplay.url(html)
+        display_url(html)
         
         #self.post(html)
         

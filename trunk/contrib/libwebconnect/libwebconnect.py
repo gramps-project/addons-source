@@ -46,7 +46,6 @@ Read the following code from bottom to top.
 # Gramps modules
 #
 #---------------------------------------------------------------
-from GrampsDisplay import url
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from config import config as configman

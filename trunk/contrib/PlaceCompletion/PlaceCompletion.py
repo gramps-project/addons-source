@@ -48,7 +48,7 @@ from gen.mime import *
 from gui.glade import Glade
 from gui.plug import tool as Tool
 from gui.plug import PluginWindows
-import GrampsDisplay
+from gui.display import display_url
 from gui.managedwindow import ManagedWindow
 from gen.lib import Location
 from gen.db import DbTxn
@@ -353,8 +353,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
     
     def on_help_clicked(self,obj):
         """Display the relevant portion of GRAMPS manual"""
-        GrampsDisplay.url('http://www.gramps-project.org/wiki/index.php?title=Place_completion_tool')
-        #GrampsDisplay.help('tools-ae')
+        display_url('http://www.gramps-project.org/wiki/index.php?title=Place_completion_tool')
+        #display_help('tools-ae')
         
     def on_google_clicked(self,obj):
         self.google()
@@ -699,7 +699,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 
             
     def google(self):
-        import GrampsDisplay
+        from gui.display import display_url
         from PlaceUtils import conv_lat_lon
 
         store, node = self.tree.get_selection().get_selected()
@@ -725,7 +725,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 path = "http://maps.google.com/maps?q=%s,%s" % (city,country)
             else:
                 path = "http://maps.google.com/maps?q=%s" % '+'.join(descr.split())
-            GrampsDisplay.url(path)
+            display_url(path)
                 
     def on_apply_clicked(self,obj):
         '''execute all the actions in the treeview
