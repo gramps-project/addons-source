@@ -57,7 +57,7 @@ GenericPlaceFilter = GenericFilterFactory('Place')
 
 from gen.filters.rules.place import *
 import Utils
-from QuestionDialog import OkDialog, WarningDialog
+from gui.dialog import OkDialog, WarningDialog
 import PlaceUtils
 import Errors
 

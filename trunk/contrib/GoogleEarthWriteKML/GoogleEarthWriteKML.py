@@ -40,7 +40,7 @@ _ = get_addon_translator().gettext
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-from QuestionDialog import ErrorDialog, QuestionDialog2
+from gui.dialog import ErrorDialog, QuestionDialog2
 from libmapservice import MapService
 from gui.utils import open_file_with_default_application
 import Utils

@@ -48,7 +48,7 @@ LOG = logging.getLogger(".ImportDjango")
 #
 #-------------------------------------------------------------------------
 import gen.lib
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 from Utils import create_id
 import const
 

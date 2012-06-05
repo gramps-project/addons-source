@@ -40,7 +40,7 @@ _ = get_addon_translator(__file__).ugettext
 from ImportCsv import CSVParser
 from ImportVCard import VCardParser
 from ImportXml import GrampsParser, PERSON_RE
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 
 #------------------------------------------------------------------------
 #
