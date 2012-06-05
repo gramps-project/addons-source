@@ -205,7 +205,7 @@ from gui.editors.objectentries import PlaceEntry
 from gui.widgets import MonitoredEntry
 from gui.editors import EditPerson
 from gui.display import display_help
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)

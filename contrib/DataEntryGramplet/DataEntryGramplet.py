@@ -483,7 +483,7 @@ class DataEntryGramplet(Gramplet):
             obj.add_source_reference(sref)
 
     def add_data_entry(self, obj):
-        from QuestionDialog import ErrorDialog
+        from gui.dialog import ErrorDialog
         # First, get the data:
         if "," in self.de_widgets["NPName"].get_text():
             surname, firstname = self.de_widgets["NPName"].get_text().split(",", 1)

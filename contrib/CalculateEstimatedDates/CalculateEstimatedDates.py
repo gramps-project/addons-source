@@ -48,7 +48,7 @@ import Errors
 import gen.plug.report.utils as ReportUtils
 from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
 from gui.plug.quick import QuickTable, TextBufDoc
-from QuestionDialog import QuestionDialog
+from gui.dialog import QuestionDialog
 from Utils import create_id, probably_alive_range
 import gen.datehandler
 from TransUtils import get_addon_translator

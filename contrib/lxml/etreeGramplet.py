@@ -45,7 +45,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
 import Utils
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 
 #from gen.merge.mergeevent import MergeEventQuery
 #from gen.merge.mergeperson import MergePersonQuery

@@ -47,7 +47,7 @@ log = logging.getLogger(".ImportSql")
 #-------------------------------------------------------------------------
 import gen.lib
 from gen.db import DbTxn
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 from Utils import create_id
 
 #-------------------------------------------------------------------------

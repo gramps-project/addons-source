@@ -148,7 +148,7 @@ from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
 import Errors
-from QuestionDialog import ErrorDialog, WarningDialog
+from gui.dialog import ErrorDialog, WarningDialog
 from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gen.display.name import displayer as _nd

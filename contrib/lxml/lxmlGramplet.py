@@ -44,7 +44,7 @@ _ = get_addon_translator(__file__).ugettext
 import const
 import Utils
 from gui.display import display_url
-from QuestionDialog import ErrorDialog
+from gui.dialog import ErrorDialog
 from libhtml import Html
 
 #-------------------------------------------------------------------------
