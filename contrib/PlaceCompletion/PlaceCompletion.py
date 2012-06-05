@@ -45,7 +45,7 @@ import gtk
 #
 #------------------------------------------------------------------------
 from gen.mime import *
-from glade import Glade
+from gui.glade import Glade
 from gui.plug import tool as Tool
 from gui.plug import PluginWindows
 import GrampsDisplay
