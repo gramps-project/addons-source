@@ -49,7 +49,7 @@ from glade import Glade
 from gui.plug import tool as Tool
 from gui.plug import PluginWindows
 import GrampsDisplay
-import ManagedWindow
+from gui.managedwindow import ManagedWindow
 from gen.lib import Location
 from gen.db import DbTxn
 from gen.filters import GenericFilterFactory, rules
@@ -78,7 +78,7 @@ else:
 # 
 #
 #------------------------------------------------------------------------
-class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
+class PlaceCompletion(Tool.Tool, ManagedWindow):
 
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
 
@@ -89,7 +89,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         self.active_name = _("Place Completion by parsing, file lookup and"
                              " batch setting of place attributes")
 
-        ManagedWindow.ManagedWindow.__init__(self, uistate, [], self.__class__)
+        ManagedWindow.__init__(self, uistate, [], self.__class__)
         base = os.path.dirname(__file__)
         glade_file = base + os.sep + "placecompletion.glade"
 

@@ -200,7 +200,7 @@ class CensusGramplet(Gramplet):
 # Census Editor
 #
 #------------------------------------------------------------------------
-import ManagedWindow
+from gui.managedwindow import ManagedWindow
 from gui.editors.objectentries import PlaceEntry
 from gui.widgets import MonitoredEntry
 from gui.editors import EditPerson
@@ -211,7 +211,7 @@ from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
 
-class CensusEditor(ManagedWindow.ManagedWindow):
+class CensusEditor(ManagedWindow):
     """
     Census Editor.
     """
@@ -229,7 +229,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         if self.citation is None:
             self.citation = gen.lib.Citation()
 
-        ManagedWindow.ManagedWindow.__init__(self, uistate, track, event)
+        ManagedWindow.__init__(self, uistate, track, event)
 
         self.widgets = {}
         top = self.__create_gui()
@@ -692,7 +692,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         Close the editor window.
         """
-        ManagedWindow.ManagedWindow.close(self)
+        ManagedWindow.close(self)
 
     def help_clicked(self, obj):
         """
