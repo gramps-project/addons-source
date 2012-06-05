@@ -42,7 +42,7 @@ from gen.db import DbTxn
 import const
 from gui.utils import ProgressMeter
 import GrampsDisplay
-import ManagedWindow
+from gui.managedwindow import ManagedWindow
 
 from QuestionDialog import OkDialog
 from gui.plug import tool
@@ -78,7 +78,7 @@ def capitalize(given):
 # ChangeGivenNames
 #
 #-------------------------------------------------------------------------
-class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
+class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
         self.label = _('Capitalization changes')
@@ -86,7 +86,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         self.uistate = uistate
         self.cb = callback
         
-        ManagedWindow.ManagedWindow.__init__(self,uistate,[],self.__class__)
+        ManagedWindow.__init__(self,uistate,[],self.__class__)
         self.set_window(gtk.Window(),gtk.Label(),'')
 
         tool.BatchTool.__init__(self, dbstate, options_class, name)
