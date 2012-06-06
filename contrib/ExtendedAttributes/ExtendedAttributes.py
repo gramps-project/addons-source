@@ -20,8 +20,8 @@
 # $Id$
 #
 
-from ListModel import ListModel, NOSORT
-from QuickReports import run_quick_report_by_name
+from gui.listmodel import ListModel, NOSORT
+from gui.plug.quick import run_quick_report_by_name
 from gen.plug import Gramplet
 from gen.ggettext import gettext as _
 import gen.lib
