@@ -35,9 +35,9 @@ import cPickle as pickle
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.plug import Gramplet
-from DdTargets import DdTargets
-from ScratchPad import (MultiTreeView, ScratchPadListModel, 
-                        ScratchPadListView, ScratchText)
+from gui.ddtargets import DdTargets
+from gui.clipboard import (MultiTreeView, ClipboardListModel, 
+                           ClipboardListView, ClipText)
 import Errors
 
 #-------------------------------------------------------------------------
@@ -60,12 +60,12 @@ def unescape(data):
 
 #-------------------------------------------------------------------------
 #
-# ClipboardListView class
+# ClipboardListView2 class
 #
 #-------------------------------------------------------------------------
-class ClipboardListView(ScratchPadListView):
+class ClipboardListView2(ClipboardListView):
     """
-    Subclass ScratchPadListView to override refresh_objects.
+    Subclass ClipboardListView to override refresh_objects.
     """
     def refresh_objects(self, dummy=None):
         def update_rows(model, path, iter):
@@ -88,10 +88,10 @@ class ClipboardGramplet(Gramplet):
     A clipboard-like gramplet.
     """
     def init(self):
-        self.object_list = ClipboardListView(self.dbstate, 
+        self.object_list = ClipboardListView2(self.dbstate, 
                  MultiTreeView(self.dbstate, self.uistate, 
                  lambda: _("Clipboard Gramplet: %s") % self.gui.get_title()))
-        self.otree = ScratchPadListModel()
+        self.otree = ClipboardListModel()
         self.object_list.set_model(self.otree)
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(self.object_list._widget)
@@ -149,11 +149,11 @@ class ClipboardGramplet(Gramplet):
         if model:
             for o in model:
                 # [0]: obj_type
-                # [1]: ScratchPad object, [1]._obj: pickle.dumps(data)
+                # [1]: Clipboard object, [1]._obj: pickle.dumps(data)
                 # [2]: tooltip callback
                 # [5]: dbid
                 # [6]: dbname
-                if isinstance(o[1], ScratchText):
+                if isinstance(o[1], ClipText):
                     # type, timestamp, text, preview
                     data = pickle.dumps(("TEXT", o[1]._obj))
                 else:
