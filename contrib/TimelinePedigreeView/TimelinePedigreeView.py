@@ -68,7 +68,7 @@ from gui.editors import EditPerson, EditFamily
 from gui.ddtargets import DdTargets
 import cPickle as pickle
 from config import config
-import Bookmarks
+from gui.views.bookmarks import PersonBookmarks
 import const
 from gui.dialog import RunDatabaseRepair, ErrorDialog
 
@@ -487,7 +487,7 @@ class TimelinePedigreeView(NavigationView):
         NavigationView.__init__(self, _('Timeline pedigree'),
                                       pdata, dbstate, uistate, 
                                       dbstate.db.get_bookmarks(), 
-                                      Bookmarks.PersonBookmarks,
+                                      PersonBookmarks,
                                       nav_group)
 
         self.func_list = {

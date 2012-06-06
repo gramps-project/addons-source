@@ -48,7 +48,7 @@ from cStringIO import StringIO
 #-------------------------------------------------------------------------
 import gen.lib
 from gui.views.navigationview import NavigationView
-import Bookmarks
+from gui.views.bookmarks import PersonBookmarks
 from gen.display.name import displayer
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from gui.thumbnails import get_thumbnail_path
@@ -97,7 +97,7 @@ class GraphView(NavigationView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate, 
                                       dbstate.db.get_bookmarks(), 
-                                      Bookmarks.PersonBookmarks, nav_group)
+                                      PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
         self.highlight_home_person = self._config.get(
