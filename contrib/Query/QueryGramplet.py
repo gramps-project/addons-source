@@ -23,7 +23,7 @@
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from QuickReports import run_quick_report_by_name
+from gui.plug.quick import run_quick_report_by_name
 from PythonGramplet import PythonGramplet
 
 class QueryGramplet(PythonGramplet):
