@@ -28,7 +28,7 @@
 #-------------------------------------------------------------------------
 from gui.plug import tool
 from gui.utils import ProgressMeter
-import ThumbNails
+from gui.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
 import Utils
 
 #-------------------------------------------------------------------------
@@ -118,11 +118,9 @@ def generate_thumbnail(full_path, mime_type, rectangle=None):
     """
     Generate thumbnails for an image rectangle.
     """
-    ThumbNails.get_thumbnail_image(full_path, mime_type, rectangle,
-                                   ThumbNails.SIZE_NORMAL)
-    ThumbNails.get_thumbnail_image(full_path, mime_type, rectangle,
-                                   ThumbNails.SIZE_LARGE)
-            
+    get_thumbnail_image(full_path, mime_type, rectangle, SIZE_NORMAL)
+    get_thumbnail_image(full_path, mime_type, rectangle, SIZE_LARGE)
+
 #------------------------------------------------------------------------
 #
 # Thumbnail Generator Options

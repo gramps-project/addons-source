@@ -51,7 +51,7 @@ from gui.views.navigationview import NavigationView
 import Bookmarks
 from gen.display.name import displayer
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
-import ThumbNails
+from gui.thumbnails import get_thumbnail_path
 import Utils
 from gui.editors import EditPerson, EditFamily
 import Errors
@@ -1142,7 +1142,7 @@ class DotGenerator(object):
                 media = self.database.get_object_from_handle(media_handle)
                 media_mime_type = media.get_mime_type()
                 if media_mime_type[0:5] == "image":
-                    image_path = ThumbNails.get_thumbnail_path(
+                    image_path = get_thumbnail_path(
                                     Utils.media_path_full(self.database, 
                                                           media.get_path()),
                                         rectangle=media_list[0].get_rectangle())

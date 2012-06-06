@@ -670,7 +670,7 @@ class lxmlGramplet(Gramplet):
         This procedure writes out the media
         """
                
-        import ThumbNails
+        from gui.thumbnails import get_thumbnail_path
         
         # full clear line for proper styling
         
@@ -698,7 +698,7 @@ class lxmlGramplet(Gramplet):
             # only images
             
             if mime.startswith("image"):
-                thumb = ThumbNails.get_thumbnail_path(str(src), mtype=None, rectangle=None)
+                thumb = get_thumbnail_path(str(src), mtype=None, rectangle=None)
                 self.text += Html('img', src=str(thumb), mtype=str(mime))
                 self.text += fullclear
                 self.text += Html('a', str(description), href=str(src), target='blank', title=str(mime))
