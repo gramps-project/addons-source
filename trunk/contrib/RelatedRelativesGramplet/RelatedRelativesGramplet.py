@@ -35,7 +35,7 @@ from gen.plug import Gramplet
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 from Utils import media_path_full
-import Relationship
+from gen.relationship import get_relationship_calculator
 import gen.datehandler
 import gen
 
@@ -90,7 +90,7 @@ class RelatedRelativesGramplet(Gramplet):
         self.set_text(_("Relations of related people in your database:"))
         # Define basic variables
         database = self.dbstate.db
-        rel_calc = Relationship.get_relationship_calculator()
+        rel_calc = get_relationship_calculator()
         family_handle_list = [] # Will keep list of families with no ancestors
 
         # Find all base families with no ancestors in the database.

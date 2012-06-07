@@ -29,12 +29,12 @@ from gen.simple import SimpleAccess, SimpleDoc, by_date
 from gui.plug.quick import QuickTable
 from TransUtils import get_addon_translator
 from gen.lib.date import Today
-import Relationship
+from gen.relationship import get_relationship_calculator
 from gen.utils.fallback import get_birth_or_fallback, get_death_or_fallback
 import gen.lib
 
 _ = get_addon_translator(__file__).ugettext
-rel_calc = Relationship.get_relationship_calculator()
+rel_calc = get_relationship_calculator()
 
 def levelname(inlaw, level):
     if level == 1:

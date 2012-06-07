@@ -44,7 +44,7 @@ from gen.plug.report import Report
 from gen.plug.report import utils
 from gen.plug.report import MenuReportOptions
 import gen.datehandler
-import Relationship
+from gen.relationship import get_relationship_calculator
 from TransUtils import get_addon_translator
 _ = get_addon_translator().gettext
 
@@ -577,7 +577,7 @@ class FamilySheet(Report):
         mother of the central person gets the person key "6cb".
         """
 
-        relationship = Relationship.get_relationship_calculator()
+        relationship = get_relationship_calculator()
 
         default_person = self.database.get_default_person()
 
