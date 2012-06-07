@@ -36,7 +36,7 @@ Display the number of a person's descendants.
 #
 #------------------------------------------------------------------------
 import gen.display.name
-import Relationship
+from gen.relationship import get_relationship_calculator
 from gen.simple import SimpleDoc
 from gui.plug.quick import QuickTable
 from TransUtils import get_addon_translator
@@ -75,7 +75,7 @@ def run(database, document, person):
     while len(alive) < len(total):
         alive.append(0)
 
-    rel_calc = Relationship.get_relationship_calculator()
+    rel_calc = get_relationship_calculator()
 
     stab = QuickTable(document)
     if death_date:

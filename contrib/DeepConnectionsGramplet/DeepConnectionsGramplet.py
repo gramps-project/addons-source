@@ -33,7 +33,7 @@ import gtk
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from Relationship import get_relationship_calculator
+from gen.relationship import get_relationship_calculator
 from gen.lib import EventType, FamilyRelType
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
