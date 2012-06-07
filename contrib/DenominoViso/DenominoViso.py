@@ -147,7 +147,7 @@ from gen.plug.report import Report
 from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
-import Errors
+from gen.errors import DatabaseError
 from gui.dialog import ErrorDialog, WarningDialog
 from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
@@ -433,7 +433,7 @@ class DenominoVisoReport(Report):
             if len(relationList) > 0:
                 (mrel,frel) = relationList[0]
             else:
-                raise Errors.DatabaseError("Can't find person " + 
+                raise DatabaseError("Can't find person " + 
                     person.get_gramps_id()+" in family "+family.get_gramps_id())
             father_coord = self.walk_the_tree_depth_asc(f,family.get_father_handle(),\
                     generation+1)

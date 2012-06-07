@@ -59,7 +59,7 @@ from gen.filters.rules.place import *
 import Utils
 from gui.dialog import OkDialog, WarningDialog
 import PlaceUtils
-import Errors
+from gen.errors import WindowActiveError
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
@@ -671,7 +671,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 try :
                     EditPlace(self.dbstate, self.uistate, self.track, place,
                            self.this_callback)
-                except Errors.WindowActiveError :
+                except WindowActiveError :
                     pass
                         
         if event.type == gtk.gdk.KEY_PRESS and \

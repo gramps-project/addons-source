@@ -54,7 +54,7 @@ from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from gui.thumbnails import get_thumbnail_path
 import Utils
 from gui.editors import EditPerson, EditFamily
-import Errors
+from gen.errors import WindowActiveError
 
 try:
     import cairo
@@ -458,7 +458,7 @@ class GraphWidget(object):
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
             EditPerson(self.dbstate, self.uistate, [], person)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def edit_family(self, handle):
@@ -468,7 +468,7 @@ class GraphWidget(object):
         family = self.dbstate.db.get_family_from_handle(handle)
         try:
             EditFamily(self.dbstate, self.uistate, [], family)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def find_a_parent(self, handle):

@@ -25,7 +25,6 @@ from gen.plug import Gramplet
 from gui.widgets import Photo
 from gen.ggettext import gettext as _
 import Utils
-import Errors
 import gtk
 
 class MediaBrowser(Gramplet):

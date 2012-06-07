@@ -38,7 +38,7 @@ import gtk
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
 import gen.datehandler
-import Errors
+from gen.errors import WindowActiveError
 import gen.lib
 from gen.db import DbTxn
 
@@ -132,7 +132,7 @@ class CensusGramplet(Gramplet):
         event.set_type(gen.lib.EventType.CENSUS)
         try:
             CensusEditor(self.gui.dbstate, self.gui.uistate, [], event)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def __edit_census(self, widget, selection):
@@ -144,7 +144,7 @@ class CensusGramplet(Gramplet):
             event = model.get_value(iter_, 0)
             try:
                 CensusEditor(self.gui.dbstate, self.gui.uistate, [], event)
-            except Errors.WindowActiveError:
+            except WindowActiveError:
                 pass
 
     def main(self):

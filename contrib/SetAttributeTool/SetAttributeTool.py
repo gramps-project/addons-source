@@ -42,7 +42,6 @@ from gen.plug.menu import StringOption, FilterOption, PersonOption, \
 import gen.lib
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
-import Errors
 import gen.plug.report.utils as ReportUtils
 
 try:

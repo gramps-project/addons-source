@@ -63,7 +63,7 @@ from Utils import (media_path_full, probably_alive, find_children,
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from libformatting import FormattingHelper
 from gui.thumbnails import get_thumbnail_path
-import Errors
+from gen.errors import WindowActiveError
 from gui.editors import EditPerson, EditFamily
 from gui.ddtargets import DdTargets
 import cPickle as pickle
@@ -681,7 +681,7 @@ class TimelinePedigreeView(NavigationView):
         try:
             FilterEditor('Person', const.CUSTOM_FILTERS, 
                          self.dbstate, self.uistate)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             return
 
     def build_tree(self):
@@ -1231,7 +1231,7 @@ class TimelinePedigreeView(NavigationView):
         if person:
             try:
                 EditPerson(self.dbstate, self.uistate, [], person)
-            except Errors.WindowActiveError:
+            except WindowActiveError:
                 pass
             return True
         return False
@@ -1245,7 +1245,7 @@ class TimelinePedigreeView(NavigationView):
         if family:
             try:
                 EditFamily(self.dbstate, self.uistate, [], family)
-            except Errors.WindowActiveError:
+            except WindowActiveError:
                 pass
             return True
         return False
@@ -1261,7 +1261,7 @@ class TimelinePedigreeView(NavigationView):
             family.add_child_ref(childref)
         try:
             EditFamily(self.dbstate, self.uistate, [], family)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def copy_person_to_clipboard_cb(self, obj, person_handle):
@@ -1369,7 +1369,7 @@ class TimelinePedigreeView(NavigationView):
             if family:
                 try:
                     EditFamily(self.dbstate, self.uistate, [], family)
-                except Errors.WindowActiveError:
+                except WindowActiveError:
                     pass
 
         return True

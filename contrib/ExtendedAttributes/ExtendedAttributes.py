@@ -28,7 +28,7 @@ import gen.lib
 import gen.datehandler
 import gtk
 from gui.editors import EditPerson, EditFamily, EditEventRef
-import Errors
+from gen.errors import WindowActiveError
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 
@@ -172,7 +172,7 @@ class ExtendedPersonAttributes(Attributes):
                                  event,
                                  event_ref,
                                  self._object_edited)
-                except Errors.WindowActiveError:
+                except WindowActiveError:
                     pass
                 return
 
@@ -180,7 +180,7 @@ class ExtendedPersonAttributes(Attributes):
             if person:
                 try:
                     EditPerson(self.dbstate, self.uistate, [], person)
-                except Errors.WindowActiveError:
+                except WindowActiveError:
                     pass
     
     def main(self):
@@ -236,7 +236,7 @@ class ExtendedFamilyAttributes(Attributes):
                                  event,
                                  event_ref,
                                  self._object_edited)
-                except Errors.WindowActiveError:
+                except WindowActiveError:
                     pass
                 return
 
@@ -244,7 +244,7 @@ class ExtendedFamilyAttributes(Attributes):
             if family:
                 try:
                     EditFamily(self.dbstate, self.uistate, [], family)
-                except Errors.WindowActiveError:
+                except WindowActiveError:
                     pass
 
     def main(self):
