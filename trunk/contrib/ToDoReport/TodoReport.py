@@ -36,7 +36,7 @@ from gen.filters import GenericFilterFactory
 from gen.filters import rules
 from gen.plug.report import MenuReportOptions
 from gen.plug.report import Report
-from Errors import ReportError
+from gen.errors import ReportError
 import gen.plug.report.utils as ReportUtils
 from gen.plug.menu import EnumeratedListOption, BooleanOption
 from TransUtils import get_addon_translator

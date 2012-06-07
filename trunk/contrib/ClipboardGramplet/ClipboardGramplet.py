@@ -38,7 +38,6 @@ from gen.plug import Gramplet
 from gui.ddtargets import DdTargets
 from gui.clipboard import (MultiTreeView, ClipboardListModel, 
                            ClipboardListView, ClipText)
-import Errors
 
 #-------------------------------------------------------------------------
 #

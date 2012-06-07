@@ -28,7 +28,7 @@ from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
 import gen.utils 
 import gen.datehandler
-import Errors
+from gen.errors import WindowActiveError
 import gen.lib
 from TransUtils import get_addon_translator
 from gen.db import DbTxn
@@ -290,7 +290,7 @@ class DataEntryGramplet(Gramplet):
                        self.gui.uistate, [], 
                        self._dirty_person,
                        callback=self.edit_callback)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def edit_family(self, obj):
@@ -299,7 +299,7 @@ class DataEntryGramplet(Gramplet):
             EditFamily(self.gui.dbstate, 
                        self.gui.uistate, [], 
                        self._dirty_family)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
     
     def process_dateplace(self, text):

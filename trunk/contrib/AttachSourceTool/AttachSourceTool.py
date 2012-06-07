@@ -41,7 +41,6 @@ from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
 from gen.db import DbTxn
-import Errors
 import gen.plug.report.utils as ReportUtils
 from gen.display.name import displayer as name_displayer
 from TransUtils import get_addon_translator

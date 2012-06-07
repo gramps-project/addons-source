@@ -35,7 +35,7 @@ import time
 #
 #------------------------------------------------------------------------
 import gen.datehandler
-from Errors import ReportError
+from gen.errors import ReportError
 from gen.plug import docgen
 from gen.plug.menu import BooleanListOption
 from gen.plug.report import Report

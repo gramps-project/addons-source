@@ -44,7 +44,6 @@ import gen.lib
 from gen.db import DbTxn
 import config
 from gen.display.name import displayer as name_displayer
-import Errors
 import gen.plug.report.utils as ReportUtils
 from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
 from gui.plug.quick import QuickTable, TextBufDoc

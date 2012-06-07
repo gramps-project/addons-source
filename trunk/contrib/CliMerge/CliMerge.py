@@ -28,7 +28,7 @@
 #------------------------------------------------------------------------
 from gen.ggettext import sgettext as _
 import gen.lib
-from Errors import MergeError
+from gen.errors import MergeError
 from gui.plug import tool
 
 #------------------------------------------------------------------------

@@ -39,7 +39,7 @@ from const import GLADE_FILE
 from gui.widgets import StyledTextEditor
 from gen.lib import StyledText, Note
 from gen.db import DbTxn
-import Errors
+from gen.errors import WindowActiveError
 
 #------------------------------------------------------------------------
 #
@@ -228,7 +228,7 @@ class NoteGramplet(Gramplet):
                        self.gui.uistate, [], 
                        self._dirty_person,
                        callback=self.edit_callback)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     def edit_family(self, obj):
@@ -237,7 +237,7 @@ class NoteGramplet(Gramplet):
             EditFamily(self.gui.dbstate, 
                        self.gui.uistate, [], 
                        self._dirty_family)
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
     
     def save_data_edit(self, obj):
