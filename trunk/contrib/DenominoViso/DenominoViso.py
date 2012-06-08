@@ -153,7 +153,7 @@ from gui.plug.report._fileentry import FileEntry
 from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gen.display.name import displayer as _nd
 import gen.datehandler
-import AutoComp
+from gui.autocomp import fill_combo
 from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
 from Utils import confidence, media_path_full
 from gen.plug.menu import Option as PlugOption
@@ -2892,7 +2892,7 @@ class GuiImageIncludeAttrOption(gtk.HBox):
         self.cbe_w = gtk.ComboBoxEntry()
         image_attributes = dbstate.db.get_media_attribute_types()
         image_attributes.insert(0,' ')
-        AutoComp.fill_combo(self.cbe_w, image_attributes)
+        fill_combo(self.cbe_w, image_attributes)
         try:
             idx = image_attributes.index(attr)
             self.cbe_w.set_active(idx)
