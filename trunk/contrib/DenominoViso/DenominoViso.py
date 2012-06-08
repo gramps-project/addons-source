@@ -142,7 +142,7 @@ import gtk
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-import Sort
+from gen.sort import Sort
 from gen.plug.report import Report
 from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
@@ -345,7 +345,7 @@ class DenominoVisoReport(Report):
         self.person_img_srcs = []
         self.copied_imgs = {}
         self.search_subjects = {}
-        self.sort = Sort.Sort(self.database)
+        self.sort = Sort(self.database)
 
     def get_event_attribute_types(self):
         """There should be a function GrampsDb/_GrampsDbBase that does this!"""

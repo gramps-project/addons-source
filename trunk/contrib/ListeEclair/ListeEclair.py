@@ -38,7 +38,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                             INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gen.proxy import PrivateProxyDb, LivingProxyDb
 import gen.datehandler
-import Sort
+from gen.sort import Sort
 from gen.display.name import displayer as _nd
 from gui.utils import ProgressMeter
 from collections import defaultdict
@@ -67,7 +67,7 @@ class ListeEclairReport(Report):
 
         filter_option = menu.get_option_by_name('filter')
         self.filter = filter_option.get_filter()
-        self.sort = Sort.Sort(self.database)
+        self.sort = Sort(self.database)
 
         if self.filter.get_name() != '':
             # Use the selected filter to provide a list of place handles
