@@ -31,7 +31,6 @@ _ = get_addon_translator().ugettext
 ngettext = get_addon_translator().ngettext
 import sqlite3 as sqlite
 import time
-from ExportOptions import WriterOptionBox
 
 #------------------------------------------------------------------------
 #
@@ -46,7 +45,6 @@ log = logging.getLogger(".ExportSql")
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from ExportOptions import WriterOptionBox
 from Utils import create_id
 
 #-------------------------------------------------------------------------
