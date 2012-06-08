@@ -24,7 +24,7 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from ExportOptions import WriterOptionBox
+from gui.plug.export import WriterOptionBox
 from gen.plug.utils import OpenFileOrStdout
 
 def exportData(database, filename, 

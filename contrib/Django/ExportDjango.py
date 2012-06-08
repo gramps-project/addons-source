@@ -46,7 +46,7 @@ LOG = logging.getLogger(".ExportDjango")
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import ExportOptions
+from gui.plug.export import WriterOptionBox
 from Utils import create_id, probably_alive
 import const
 import gen.lib
@@ -204,6 +204,6 @@ def export_all(database, filename, error_dialog,
     LOG.debug(msg)
     return True
 
-class NoFilenameOptions(ExportOptions.WriterOptionBox):
+class NoFilenameOptions(WriterOptionBox):
     no_fileselect = True
 
