@@ -48,7 +48,7 @@ Read the following code from bottom to top.
 #---------------------------------------------------------------
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from config import config as configman
+from gen.config import config as configman
 
 #---------------------------------------------------------------
 #

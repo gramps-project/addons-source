@@ -42,7 +42,7 @@ from gen.plug.menu import BooleanOption, NumberOption, StringOption, \
                          FilterOption, PersonOption, EnumeratedListOption
 import gen.lib
 from gen.db import DbTxn
-import config
+from gen.config import config
 from gen.display.name import displayer as name_displayer
 import gen.plug.report.utils as ReportUtils
 from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc

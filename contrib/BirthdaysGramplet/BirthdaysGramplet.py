@@ -25,7 +25,7 @@ import gen.datehandler
 import time
 import datetime
 import posixpath
-import config
+from gen.config import config
 
 """
 This Gramplet displays the incoming birthdays.
