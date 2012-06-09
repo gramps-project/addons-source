@@ -58,8 +58,9 @@ else:
 import gen.lib
 from gui.views.navigationview import NavigationView
 from gen.display.name import displayer as name_displayer
-from Utils import (media_path_full, probably_alive, find_children, 
-                   find_parents, find_witnessed_people)
+from gen.utils.alive import probably_alive
+from Utils import (media_path_full, find_children, find_parents, 
+                   find_witnessed_people)
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from libformatting import FormattingHelper
 from gui.thumbnails import get_thumbnail_path
