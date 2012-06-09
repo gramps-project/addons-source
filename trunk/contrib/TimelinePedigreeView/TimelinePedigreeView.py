@@ -40,8 +40,8 @@ import math
 #
 #-------------------------------------------------------------------------
 import gtk
-import constfunc
-if constfunc.is_quartz():
+from gen.constfunc import is_quartz
+if is_quartz():
     cairo_available = False
 else:
     try:
