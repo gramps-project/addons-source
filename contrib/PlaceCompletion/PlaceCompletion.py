@@ -58,7 +58,7 @@ GenericPlaceFilter = GenericFilterFactory('Place')
 from gen.filters.rules.place import *
 import Utils
 from gui.dialog import OkDialog, WarningDialog
-import PlaceUtils
+from gen.utils import conv_lat_lon
 from gen.errors import WindowActiveError
 
 from TransUtils import get_addon_translator
@@ -700,7 +700,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             
     def google(self):
         from gui.display import display_url
-        from PlaceUtils import conv_lat_lon
 
         store, node = self.tree.get_selection().get_selected()
         if node:
@@ -999,12 +998,12 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if convtype == "-DGtDG" :
             latnew, lonnew = conv_min_deg(lat,lon, type)
         elif convtype == 'DGtDC' :
-            latnew, lonnew = PlaceUtils.conv_lat_lon(lat,lon, type)
+            latnew, lonnew = conv_lat_lon(lat,lon, type)
             #remove trailing zeros :
             if latnew : latnew = str(float(latnew))
             if lonnew : lonnew = str(float(lonnew))
         else :
-            latnew, lonnew = PlaceUtils.conv_lat_lon(lat,lon, type)
+            latnew, lonnew = conv_lat_lon(lat,lon, type)
 
         if latnew != None and latnew != lat :
             valoud.append(lat)
@@ -1317,7 +1316,7 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
         N/S/W/E nominator
     '''
     #see if it converts, if so, return original values, no minus present
-    lat, lon = PlaceUtils.conv_lat_lon(latorig,lonorig, text)
+    lat, lon = conv_lat_lon(latorig,lonorig, text)
     if lat and lon :
         return latorig, lonorig
     lat = latorig; lon = lonorig
@@ -1353,7 +1352,7 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
     if latnotdeg and lonnotdeg :
         return latorig, lonorig
     # see if in converts ok now
-    lattest, lontest = PlaceUtils.conv_lat_lon(lat,lon, text)
+    lattest, lontest = conv_lat_lon(lat,lon, text)
     if lattest and lontest :
         return lattest, lontest
     if lattest == None :
@@ -1363,7 +1362,7 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
     if lontest == None :
         if minuslon == False : 
             lon = lon + 'E'
-    lat, lon = PlaceUtils.conv_lat_lon(lat,lon, text)
+    lat, lon = conv_lat_lon(lat,lon, text)
     if lat and lon :
         return lat, lon
     # conversion failed, return original
