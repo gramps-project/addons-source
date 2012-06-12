@@ -47,7 +47,8 @@ LOG = logging.getLogger(".ExportDjango")
 #
 #------------------------------------------------------------------------
 from gui.plug.export import WriterOptionBox
-from Utils import create_id, probably_alive
+from Utils import create_id
+from gen.utils.alive import probably_alive
 import const
 import gen.lib
 
