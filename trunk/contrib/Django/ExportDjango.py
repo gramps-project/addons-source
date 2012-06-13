@@ -47,17 +47,22 @@ LOG = logging.getLogger(".ExportDjango")
 #
 #------------------------------------------------------------------------
 from gui.plug.export import WriterOptionBox
+from gui.dialog import ErrorDialog
 from Utils import create_id
+import gen.lib
 from gen.utils.alive import probably_alive
 import const
-import gen.lib
 
 from TransUtils import get_addon_translator
 translator = get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext
 
-from django.conf import settings
+try:
+    from django.conf import settings
+except:
+    ErrorDialog(_('django.conf could not be found'), 
+                _('Django Addons require Django 1.3 or greater'))
 import webapp.settings as default_settings
 try:
     settings.configure(default_settings)

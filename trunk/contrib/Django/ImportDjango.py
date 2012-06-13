@@ -57,12 +57,16 @@ translator = get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext
 
-from django.conf import settings
+try:
+    from django.conf import settings
+except:
+    ErrorDialog(_('django.conf could not be found'), 
+                _('Django Addons require Django 1.3 or greater'))
 import webapp.settings as default_settings
 try:
     settings.configure(default_settings)
-except:
-    pass
+except RuntimeError:
+    # already configured; ignore
 
 from webapp.libdjango import DjangoInterface
 
