@@ -1,0 +1,1184 @@
+<schema
+  xmlns='http://www.w3.org/2000/10/XMLSchema'
+  targetNamespace='http://www.w3.org/namespace/'
+  xmlns:t='http://www.w3.org/namespace/'>
+
+ <element name='database'>
+  <complexType>
+   <sequence>
+    <element ref='t:header'/>
+    <element ref='t:name-formats' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:tags' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:events' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:people' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:families' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:citations' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:sources' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:places' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:objects' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:repositories' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:notes' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:bookmarks' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:namemaps' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+   <attribute name='xmlns' type='string' use='fixed' value='http://gramps-project.org/xml/1.5.0/'/>
+  </complexType>
+ </element>
+
+ <element name='header'>
+  <complexType>
+   <sequence>
+    <element ref='t:created'/>
+    <element ref='t:researcher' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:mediapath' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='created'>
+  <complexType>
+   <attribute name='date' type='string' use='required'/>
+   <attribute name='version' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='researcher'>
+  <complexType>
+   <sequence>
+    <element ref='t:resname' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:resaddr' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:reslocality' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:rescity' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:resstate' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:rescountry' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:respostal' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:resphone' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:resemail' minOccurs='0' maxOccurs='1'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='resname'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='resaddr'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='reslocality'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='rescity'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='resstate'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='rescountry'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='respostal'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='resphone'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='resemail'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='mediapath'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='people'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:person'/>
+   </sequence>
+   <attribute name='default' type='string' use='optional'/>
+   <attribute name='home' type='IDREF' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='person'>
+  <complexType>
+   <sequence>
+    <element ref='t:gender'/>
+    <element ref='t:name' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:eventref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:lds_ord' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:address' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:url' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:childof' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:parentin' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:personref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:tagref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='gender'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='name'>
+  <complexType>
+   <sequence>
+    <element ref='t:first' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:call' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:surname' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:suffix' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:title' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:nick' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:familynick' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:group' minOccurs='0' maxOccurs='1'/>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='alt' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='optional'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='sort' type='string' use='optional'/>
+   <attribute name='display' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='first'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='call'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='suffix'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='title'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='nick'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='familynick'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='group'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='surname'>
+  <complexType mixed='true'>
+   <attribute name='prefix' type='string' use='optional'/>
+   <attribute name='prim' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='1'/>
+      <enumeration value='0'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='derivation' type='string' use='optional'/>
+   <attribute name='connector' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='childof'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='parentin'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='personref'>
+  <complexType>
+   <sequence>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='hlink' type='IDREF' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='rel' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='address'>
+  <complexType>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:street' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:locality' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:city' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:county' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:state' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:country' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:postal' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:phone' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='street'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='locality'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='city'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='county'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='state'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='country'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='postal'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='phone'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='families'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:family'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='family'>
+  <complexType>
+   <sequence>
+    <element ref='t:rel' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:father' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:mother' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:eventref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:lds_ord' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:childref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:tagref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='father'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='mother'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='childref'>
+  <complexType>
+   <sequence>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='hlink' type='IDREF' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='mrel' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='None'/>
+      <enumeration value='Birth'/>
+      <enumeration value='Adopted'/>
+      <enumeration value='Stepchild'/>
+      <enumeration value='Sponsored'/>
+      <enumeration value='Foster'/>
+      <enumeration value='Other'/>
+      <enumeration value='Unknown'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='frel' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='None'/>
+      <enumeration value='Birth'/>
+      <enumeration value='Adopted'/>
+      <enumeration value='Stepchild'/>
+      <enumeration value='Sponsored'/>
+      <enumeration value='Foster'/>
+      <enumeration value='Other'/>
+      <enumeration value='Unknown'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='type'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='rel'>
+  <complexType>
+   <attribute name='type' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='events'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:event'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='event'>
+  <complexType>
+   <sequence>
+    <element ref='t:type' minOccurs='0' maxOccurs='1'/>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:place' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:cause' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:description' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='sources'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:source'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='source'>
+  <complexType>
+   <sequence>
+    <element ref='t:stitle' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:sauthor' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:spubinfo' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:sabbrev' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:data_item' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:reporef' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='stitle'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='sauthor'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='spubinfo'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='sabbrev'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='places'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:placeobj'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='placeobj'>
+  <complexType>
+   <sequence>
+    <element ref='t:ptitle' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:coord' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:location' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:url' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='ptitle'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='coord'>
+  <complexType>
+   <attribute name='long' type='string' use='required'/>
+   <attribute name='lat' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='location'>
+  <complexType>
+   <attribute name='street' type='string' use='optional'/>
+   <attribute name='locality' type='string' use='optional'/>
+   <attribute name='city' type='string' use='optional'/>
+   <attribute name='parish' type='string' use='optional'/>
+   <attribute name='county' type='string' use='optional'/>
+   <attribute name='state' type='string' use='optional'/>
+   <attribute name='country' type='string' use='optional'/>
+   <attribute name='postal' type='string' use='optional'/>
+   <attribute name='phone' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='objects'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:object'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='object'>
+  <complexType>
+   <sequence>
+    <element ref='t:file'/>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:tagref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='file'>
+  <complexType>
+   <attribute name='src' type='string' use='required'/>
+   <attribute name='mime' type='string' use='required'/>
+   <attribute name='description' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='repositories'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:repository'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='repository'>
+  <complexType>
+   <sequence>
+    <element ref='t:rname'/>
+    <element ref='t:type'/>
+    <element ref='t:address' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:url' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='rname'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='notes'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:note'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='note'>
+  <complexType>
+   <sequence>
+    <element ref='t:text'/>
+    <element ref='t:style' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:tagref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+   <attribute name='format' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='text'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='style'>
+  <complexType>
+   <sequence>
+    <element ref='t:range' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='name' use='required'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='bold'/>
+      <enumeration value='italic'/>
+      <enumeration value='underline'/>
+      <enumeration value='fontface'/>
+      <enumeration value='fontsize'/>
+      <enumeration value='fontcolor'/>
+      <enumeration value='highlight'/>
+      <enumeration value='superscript'/>
+      <enumeration value='link'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='value' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='range'>
+  <complexType>
+   <attribute name='start' type='string' use='required'/>
+   <attribute name='end' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='tags'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:tag'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='tag'>
+  <complexType>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='name' type='string' use='required'/>
+   <attribute name='color' type='string' use='required'/>
+   <attribute name='priority' type='string' use='required'/>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='citations'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:citation'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='citation'>
+  <complexType>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:page' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:confidence' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:data_item' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:sourceref'/>
+   </sequence>
+   <attribute name='id' type='string' use='optional'/>
+   <attribute name='handle' type='ID' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='change' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='bookmarks'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:bookmark'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='bookmark'>
+  <complexType>
+   <attribute name='target' use='required'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='person'/>
+      <enumeration value='family'/>
+      <enumeration value='event'/>
+      <enumeration value='source'/>
+      <enumeration value='place'/>
+      <enumeration value='media'/>
+      <enumeration value='repository'/>
+      <enumeration value='note'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='namemaps'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:map'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='map'>
+  <complexType>
+   <attribute name='type' type='string' use='required'/>
+   <attribute name='key' type='string' use='required'/>
+   <attribute name='value' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='name-formats'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='t:format'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='format'>
+  <complexType>
+   <attribute name='number' type='string' use='required'/>
+   <attribute name='name' type='string' use='required'/>
+   <attribute name='fmt_str' type='string' use='required'/>
+   <attribute name='active' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='daterange'>
+  <complexType>
+   <attribute name='start' type='string' use='required'/>
+   <attribute name='stop' type='string' use='required'/>
+   <attribute name='quality' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='estimated'/>
+      <enumeration value='calculated'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='cformat' type='string' use='optional'/>
+   <attribute name='dualdated' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='newyear' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='datespan'>
+  <complexType>
+   <attribute name='start' type='string' use='required'/>
+   <attribute name='stop' type='string' use='required'/>
+   <attribute name='quality' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='estimated'/>
+      <enumeration value='calculated'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='cformat' type='string' use='optional'/>
+   <attribute name='dualdated' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='newyear' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='dateval'>
+  <complexType>
+   <attribute name='val' type='string' use='required'/>
+   <attribute name='type' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='before'/>
+      <enumeration value='after'/>
+      <enumeration value='about'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='quality' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='estimated'/>
+      <enumeration value='calculated'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='cformat' type='string' use='optional'/>
+   <attribute name='dualdated' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='newyear' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='datestr'>
+  <complexType>
+   <attribute name='val' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='citationref'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='sourceref'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='eventref'>
+  <complexType>
+   <sequence>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='hlink' type='IDREF' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='role' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='reporef'>
+  <complexType>
+   <sequence>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='hlink' type='IDREF' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='callno' type='string' use='optional'/>
+   <attribute name='medium' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='noteref'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='tagref'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='page'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='confidence'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='attribute'>
+  <complexType>
+   <sequence>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='required'/>
+   <attribute name='value' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='place'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='cause'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='description'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='url'>
+  <complexType>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='optional'/>
+   <attribute name='href' type='string' use='required'/>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='objref'>
+  <complexType>
+   <sequence>
+    <element ref='t:region' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='hlink' type='IDREF' use='required'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='region'>
+  <complexType>
+   <attribute name='corner1_x' type='string' use='required'/>
+   <attribute name='corner1_y' type='string' use='required'/>
+   <attribute name='corner2_x' type='string' use='required'/>
+   <attribute name='corner2_y' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='data_item'>
+  <complexType>
+   <attribute name='key' type='string' use='required'/>
+   <attribute name='value' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='lds_ord'>
+  <complexType>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='t:daterange'/>
+     <element ref='t:datespan'/>
+     <element ref='t:dateval'/>
+     <element ref='t:datestr'/>
+    </choice>
+    <element ref='t:temple' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:place' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:status' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:sealed_to' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='temple'>
+  <complexType>
+   <attribute name='val' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='status'>
+  <complexType>
+   <attribute name='val' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='sealed_to'>
+  <complexType>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+</schema>
