@@ -34,7 +34,7 @@ from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
-from Utils import media_path_full
+from gen.utils.file import media_path_full
 from gen.relationship import get_relationship_calculator
 import gen.datehandler
 import gen

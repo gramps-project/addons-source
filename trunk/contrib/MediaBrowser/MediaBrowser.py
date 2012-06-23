@@ -24,7 +24,7 @@ from Utils import navigation_label
 from gen.plug import Gramplet
 from gui.widgets import Photo
 from gen.ggettext import gettext as _
-import Utils
+from gen.utils.file import media_path_full
 import gtk
 
 class MediaBrowser(Gramplet):
@@ -114,7 +114,7 @@ class MediaBrowser(Gramplet):
         for media_ref in obj.get_media_list():
             handle = media_ref.ref
             name, media = navigation_label(self.dbstate.db, 'Media', handle)
-            full_path = Utils.media_path_full(self.dbstate.db, media.get_path())
+            full_path = media_path_full(self.dbstate.db, media.get_path())
             rect = media_ref.get_rectangle()
             self.model.add([name], info=media_ref, node=parent_node)
 
@@ -136,7 +136,7 @@ class MediaBrowser(Gramplet):
         Display an image from the given media reference.
         """
         media = self.dbstate.db.get_object_from_handle(media_ref.ref)
-        full_path = Utils.media_path_full(self.dbstate.db, media.get_path())
+        full_path = media_path_full(self.dbstate.db, media.get_path())
         mime_type = media.get_mime_type()
         rectangle = media_ref.get_rectangle()
         self.photo.set_image(full_path, mime_type, rectangle)

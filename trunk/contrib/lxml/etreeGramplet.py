@@ -44,7 +44,7 @@ from gen.lib import date
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
-import Utils
+from gen.utils.file import get_unicode_path_from_file_chooser
 from gui.dialog import ErrorDialog
 
 #from gen.merge.mergeevent import MergeEventQuery
@@ -184,7 +184,7 @@ class etreeGramplet(Gramplet):
         dialog.present()
         status = dialog.run()
         if status == gtk.RESPONSE_OK:
-            self.set_filename(Utils.get_unicode_path_from_file_chooser(dialog.get_filename()))
+            self.set_filename(get_unicode_path_from_file_chooser(dialog.get_filename()))
         dialog.destroy()
         
 

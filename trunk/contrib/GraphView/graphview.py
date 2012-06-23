@@ -52,7 +52,7 @@ from gui.views.bookmarks import PersonBookmarks
 from gen.display.name import displayer
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from gui.thumbnails import get_thumbnail_path
-import Utils
+from gen.utils.file import search_for, media_path_full, find_file
 from gui.editors import EditPerson, EditFamily
 from gen.errors import WindowActiveError
 
@@ -68,9 +68,9 @@ except ImportError:
                     "required for this view to work")
 
 if os.sys.platform == "win32":
-    _DOT_FOUND = Utils.search_for("dot.exe")
+    _DOT_FOUND = search_for("dot.exe")
 else:
-    _DOT_FOUND = Utils.search_for("dot")
+    _DOT_FOUND = search_for("dot")
 
 if not _DOT_FOUND:
     raise Exception("GraphViz (http://www.graphviz.org) is "
@@ -1143,12 +1143,12 @@ class DotGenerator(object):
                 media_mime_type = media.get_mime_type()
                 if media_mime_type[0:5] == "image":
                     image_path = get_thumbnail_path(
-                                    Utils.media_path_full(self.database, 
+                                    media_path_full(self.database, 
                                                           media.get_path()),
                                         rectangle=media_list[0].get_rectangle())
                     # test if thumbnail actually exists in thumbs
                     # (import of data means media files might not be present
-                    image_path = Utils.find_file(image_path)
+                    image_path = find_file(image_path)
 
         label = u""
         line_delimiter = '\\n'
