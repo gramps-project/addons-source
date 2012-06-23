@@ -30,7 +30,7 @@ import Image
 import ImageDraw
 import StringIO
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 path, filename = os.path.split(__file__)

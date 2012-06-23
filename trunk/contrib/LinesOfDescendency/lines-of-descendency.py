@@ -26,7 +26,7 @@
 # SOFTWARE.
 #
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 from gen.plug.docgen import FontStyle, ParagraphStyle, FONT_SANS_SERIF, \

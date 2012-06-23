@@ -39,7 +39,7 @@ import gtk
 from gen.plug import Gramplet
 from gen.lib import date
 import gen.datehandler
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
 import Utils

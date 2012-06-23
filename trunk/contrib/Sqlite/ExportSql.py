@@ -26,7 +26,7 @@
 # Standard Python Modules
 #
 #------------------------------------------------------------------------
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 ngettext = get_addon_translator().ngettext
 import sqlite3 as sqlite

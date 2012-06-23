@@ -44,7 +44,7 @@ from gui.utils import ProgressMeter
 from collections import defaultdict
 import logging
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 class ListeEclairReport(Report):

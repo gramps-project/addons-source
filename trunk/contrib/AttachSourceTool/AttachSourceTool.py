@@ -43,7 +43,7 @@ import gen.lib
 from gen.db import DbTxn
 import gen.plug.report.utils as ReportUtils
 from gen.display.name import displayer as name_displayer
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------

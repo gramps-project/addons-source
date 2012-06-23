@@ -24,7 +24,7 @@
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 from gui.plug.quick import QuickTable, run_quick_report_by_name
 from gen.simple import SimpleAccess, SimpleDoc

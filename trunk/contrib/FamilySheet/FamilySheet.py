@@ -45,7 +45,7 @@ from gen.plug.report import utils
 from gen.plug.report import MenuReportOptions
 import gen.datehandler
 from gen.relationship import get_relationship_calculator
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 #------------------------------------------------------------------------

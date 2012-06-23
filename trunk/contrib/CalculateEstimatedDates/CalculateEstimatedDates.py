@@ -50,7 +50,7 @@ from gui.plug.quick import QuickTable, TextBufDoc
 from gui.dialog import QuestionDialog
 from Utils import create_id, probably_alive_range
 import gen.datehandler
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------

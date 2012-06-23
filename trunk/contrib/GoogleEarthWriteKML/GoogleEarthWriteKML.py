@@ -32,7 +32,7 @@ GoogleEarth  kml or kmz file format.
 #-------------------------------------------------------------------------
 import os
 import codecs
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 #-------------------------------------------------------------------------

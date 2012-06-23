@@ -61,7 +61,7 @@ from gui.dialog import OkDialog, WarningDialog
 from gen.utils import conv_lat_lon
 from gen.errors import WindowActiveError
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
 if hasattr(Utils, "ProgressMeter"):
