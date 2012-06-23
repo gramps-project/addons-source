@@ -40,7 +40,7 @@ from gen.relationship import get_relationship_calculator
 from gen.simple import SimpleDoc
 from gui.plug.quick import QuickTable
 from gen.utils.trans import get_addon_translator
-from Utils import probably_alive
+from gen.utils.alive import probably_alive
 _ = get_addon_translator().ugettext
 
 #------------------------------------------------------------------------
