@@ -43,14 +43,14 @@ _ = get_addon_translator().gettext
 from gui.dialog import ErrorDialog, QuestionDialog2
 from libmapservice import MapService
 from gui.utils import open_file_with_default_application
-import Utils
+from gen.utils.file import search_for, get_unicode_path_from_env_var
 
 # Check i zip is installed
 _ZIP_OK = False
 FILE_PATH = "zip"
 NORM_PATH = os.path.normpath(FILE_PATH)
 if os.sys.platform == 'win32':
-    _ZIP_OK = Utils.search_for(FILE_PATH + ".exe")
+    _ZIP_OK = search_for(FILE_PATH + ".exe")
 else:
     SEARCH = os.environ['PATH'].split(':')
     for lpath in SEARCH:
@@ -64,12 +64,12 @@ if os.sys.platform == 'win32':
     FILE_PATH = '"%s\Google\Google Earth\googleearth.exe"'\
                   % (os.getenv('ProgramFiles'))
     NORM_PATH = os.path.normpath(FILE_PATH)
-    _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+    _GOOGLEEARTH_OK = search_for(NORM_PATH)
     if not _GOOGLEEARTH_OK:
         FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
                     % (os.getenv('ProgramFiles'))
         NORM_PATH = os.path.normpath(FILE_PATH)
-        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+        _GOOGLEEARTH_OK = search_for(NORM_PATH)
 
 else:
     FILE_PATH = "googleearth"
@@ -136,7 +136,7 @@ class GoogleEarthService(MapService):
 
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
-        home_dir = Utils.get_unicode_path_from_env_var(home_dir)
+        home_dir = get_unicode_path_from_env_var(home_dir)
         # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(

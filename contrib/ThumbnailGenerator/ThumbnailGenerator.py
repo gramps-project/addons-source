@@ -29,7 +29,7 @@
 from gui.plug import tool
 from gui.utils import ProgressMeter
 from gui.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
-import Utils
+from gen.utils.file import media_path_full
 
 #-------------------------------------------------------------------------
 #
@@ -48,7 +48,7 @@ class ThumbnailGenerator(tool.Tool):
         progress.set_pass(_('Generating media thumbnails'),
                                length)
         for media in dbstate.db.iter_media_objects():
-            full_path = Utils.media_path_full(dbstate.db, media.get_path())
+            full_path = media_path_full(dbstate.db, media.get_path())
             mime_type = media.get_mime_type()
             generate_thumbnail(full_path, mime_type)
             progress.step()
@@ -109,7 +109,7 @@ class ThumbnailGenerator(tool.Tool):
         for media_ref in obj.get_media_list():
             handle = media_ref.get_reference_handle()
             media = self.db.get_object_from_handle(handle)
-            full_path = Utils.media_path_full(self.db, media.get_path())
+            full_path = media_path_full(self.db, media.get_path())
             mime_type = media.get_mime_type()
             rectangle = media_ref.get_rectangle()
             generate_thumbnail(full_path, mime_type, rectangle)
