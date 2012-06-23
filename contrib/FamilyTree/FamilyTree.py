@@ -36,7 +36,7 @@ import gen.plug.report
 from gen.plug.report.utils import pt2cm
 import gui.plug.report
 import gen.datehandler
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 

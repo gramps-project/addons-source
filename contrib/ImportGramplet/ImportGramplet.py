@@ -35,7 +35,7 @@ from xml.parsers.expat import ParserCreate
 from gen.db import DbTxn
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from ImportCsv import CSVParser
 from ImportVCard import VCardParser

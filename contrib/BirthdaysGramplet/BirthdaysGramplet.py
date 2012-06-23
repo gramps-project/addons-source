@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 from gen.plug import Gramplet
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.display.name import displayer as name_displayer
 from gen.lib.date import Today, Date

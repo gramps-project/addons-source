@@ -52,7 +52,7 @@ from gui.dialog import ErrorDialog
 from Utils import create_id
 import const
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 translator = get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext

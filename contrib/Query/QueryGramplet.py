@@ -21,7 +21,7 @@
 
 # $Id$
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gui.plug.quick import run_quick_report_by_name
 from PythonGramplet import PythonGramplet

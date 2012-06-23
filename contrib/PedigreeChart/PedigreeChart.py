@@ -52,7 +52,7 @@ from gen.plug import docgen
 from gen.plug.docgen import fontscale
 from gen.plug.menu import BooleanOption, NumberOption, PersonOption
 #from gen.plug.menu import TextOption
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 try:
     # v3.2

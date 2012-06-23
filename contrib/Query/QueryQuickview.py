@@ -25,7 +25,7 @@ Run a query on the tables
 
 from gen.simple import SimpleAccess, SimpleDoc
 from gui.plug.quick import QuickTable
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import Utils
 import gen.datehandler

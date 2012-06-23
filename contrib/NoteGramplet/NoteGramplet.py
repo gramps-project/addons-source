@@ -33,7 +33,7 @@ import pango
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 from const import GLADE_FILE
 from gui.widgets import StyledTextEditor

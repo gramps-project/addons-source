@@ -47,7 +47,7 @@ from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
 from gen.plug.report import MenuReportOptions
 from libtranslate import get_language_string
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 import gen.proxy
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
@@ -58,7 +58,7 @@ _ = get_addon_translator().ugettext
 LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
 
-# see TransUtils.py
+# see gen/utils/trans.py
 
 def get_available_translations():
     """

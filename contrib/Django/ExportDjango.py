@@ -53,7 +53,7 @@ import gen.lib
 from gen.utils.alive import probably_alive
 import const
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 translator = get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext

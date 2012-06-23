@@ -30,7 +30,7 @@ import gen.utils
 import gen.datehandler
 from gen.errors import WindowActiveError
 import gen.lib
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 from gen.db import DbTxn
 
 _ = get_addon_translator(__file__).ugettext

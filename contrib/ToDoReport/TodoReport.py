@@ -39,7 +39,7 @@ from gen.plug.report import Report
 from gen.errors import ReportError
 import gen.plug.report.utils as ReportUtils
 from gen.plug.menu import EnumeratedListOption, BooleanOption
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 _REF_HANDLE_POS = 0

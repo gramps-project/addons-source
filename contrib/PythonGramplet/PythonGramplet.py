@@ -31,7 +31,7 @@ import sys
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 
 import gen

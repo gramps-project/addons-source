@@ -18,7 +18,7 @@ except ImportError:
 if gtk.pygtk_version < (2,3,93):
     raise Exception("PyGtk 2.3.93 or later required")
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 
 _ = get_addon_translator(__file__).ugettext
 TEXT = 'cairo'

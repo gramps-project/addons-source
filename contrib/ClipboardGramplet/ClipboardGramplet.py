@@ -32,7 +32,7 @@ import cPickle as pickle
 # Gramps modules
 #
 #-------------------------------------------------------------------------
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.plug import Gramplet
 from gui.ddtargets import DdTargets

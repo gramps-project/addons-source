@@ -35,7 +35,7 @@ from gen.plug.report import CATEGORY_TEXT
 from gen.plug.report import MenuReportOptions
 import gen.plug.report.utils as ReportUtils
 
-from TransUtils import get_addon_translator
+from gen.utils.trans import get_addon_translator
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)

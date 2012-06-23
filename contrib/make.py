@@ -292,7 +292,7 @@ elif command == "build":
                files=files_str)
 elif command == "listing":
     sys.path.append(os.path.join(GRAMPSPATH, "src"))
-    from TransUtils import get_addon_translator
+    from gen.utils.trans import get_addon_translator
     from gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):
         global plugins
