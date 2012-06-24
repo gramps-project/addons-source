@@ -25,7 +25,7 @@
 Extends GedcomWriter to include common non-compliant GEDCOM additions.
 """
 
-from ExportGedcom import GedcomWriter
+from exportgedcom import GedcomWriter
 from gui.plug.export import WriterOptionBox
 
 class GedcomWriterExtension(GedcomWriter):
