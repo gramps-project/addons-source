@@ -48,7 +48,7 @@ import gen.plug.report.utils as ReportUtils
 from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
 from gui.plug.quick import QuickTable, TextBufDoc
 from gui.dialog import QuestionDialog
-from Utils import create_id
+from gen.utils.id import create_id
 from gen.utils.alive import probably_alive_range
 import gen.datehandler
 from gen.utils.trans import get_addon_translator

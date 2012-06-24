@@ -49,7 +49,7 @@ LOG = logging.getLogger(".ImportDjango")
 #-------------------------------------------------------------------------
 import gen.lib
 from gui.dialog import ErrorDialog
-from Utils import create_id
+from gen.utils.id import create_id
 import const
 
 from gen.utils.trans import get_addon_translator
@@ -67,6 +67,7 @@ try:
     settings.configure(default_settings)
 except RuntimeError:
     # already configured; ignore
+    pass
 
 from webapp.libdjango import DjangoInterface
 
