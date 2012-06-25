@@ -27,7 +27,6 @@ from gen.simple import SimpleAccess, SimpleDoc
 from gui.plug.quick import QuickTable
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-import Utils
 import gen.datehandler
 import gen.lib
 
@@ -183,7 +182,6 @@ class DBI(object):
         self.sdb = SimpleAccess(self.database)
         self.stab = QuickTable(self.sdb)
         self.select = 0
-        #self.progress = Utils.ProgressMeter(_('Processing Query'))
         self.process_table()
         if self.select > 0:
             self.sdoc = SimpleDoc(self.document)

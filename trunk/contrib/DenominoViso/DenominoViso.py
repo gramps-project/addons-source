@@ -155,7 +155,7 @@ from gen.display.name import displayer as _nd
 import gen.datehandler
 from gui.autocomp import fill_combo
 from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
-from Utils import confidence
+from gen.utils.string import confidence
 from gen.utils.file import media_path_full
 from gen.plug.menu import Option as PlugOption
 from gen.proxy import PrivateProxyDb
