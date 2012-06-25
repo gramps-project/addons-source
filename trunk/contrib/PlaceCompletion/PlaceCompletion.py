@@ -58,7 +58,7 @@ GenericPlaceFilter = GenericFilterFactory('Place')
 from gen.filters.rules.place import *
 import Utils
 from gui.dialog import OkDialog, WarningDialog
-from gen.utils import conv_lat_lon
+from gen.utils.place import conv_lat_lon
 from gen.errors import WindowActiveError
 
 from gen.utils.trans import get_addon_translator

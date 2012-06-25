@@ -20,7 +20,7 @@
 #
 
 from gui.listmodel import ListModel, NOSORT
-from Utils import navigation_label
+from gen.utils.db import navigation_label
 from gen.plug import Gramplet
 from gui.widgets import Photo
 from gen.ggettext import gettext as _

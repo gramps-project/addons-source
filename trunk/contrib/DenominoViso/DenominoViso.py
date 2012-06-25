@@ -159,7 +159,7 @@ from Utils import confidence
 from gen.utils.file import media_path_full
 from gen.plug.menu import Option as PlugOption
 from gen.proxy import PrivateProxyDb
-from gen.utils import get_birth_or_fallback
+from gen.utils.db import get_birth_or_fallback
 from gen.utils.trans import get_addon_translator
 #-------------------------------------------------------------------------
 #
