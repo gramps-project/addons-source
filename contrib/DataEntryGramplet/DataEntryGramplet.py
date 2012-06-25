@@ -26,7 +26,7 @@
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
-import gen.utils 
+from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 import gen.datehandler
 from gen.errors import WindowActiveError
 import gen.lib
@@ -149,7 +149,7 @@ class DataEntryGramplet(Gramplet):
                    (name_obj.get_surname(), name_obj.get_first_name()))
             self.de_widgets["APGender"].set_active(active_person.get_gender()) # gender
             # Birth:
-            birth = gen.utils.get_birth_or_fallback(self.dbstate.db, active_person)
+            birth = get_birth_or_fallback(self.dbstate.db, active_person)
             birth_text = ""
             if birth:
                 sdate = gen.datehandler.get_date(birth)
@@ -163,7 +163,7 @@ class DataEntryGramplet(Gramplet):
 
             self.de_widgets["APBirth"].set_text(birth_text)
             # Death:
-            death = gen.utils.get_death_or_fallback(self.dbstate.db, active_person)
+            death = get_death_or_fallback(self.dbstate.db, active_person)
             death_text = ""
             if death:
                 sdate = gen.datehandler.get_date(death)

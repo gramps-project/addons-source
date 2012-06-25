@@ -50,7 +50,7 @@ import gen.lib
 from gui.views.navigationview import NavigationView
 from gui.views.bookmarks import PersonBookmarks
 from gen.display.name import displayer
-from gen.utils import get_birth_or_fallback, get_death_or_fallback
+from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gui.thumbnails import get_thumbnail_path
 from gen.utils.file import search_for, media_path_full, find_file
 from gui.editors import EditPerson, EditFamily

@@ -87,7 +87,7 @@ from gen.filters import GenericFilterFactory
 from gen.filters.rules.person import IsDescendantFamilyOf
 import const
 import gen.lib
-from gen.utils import (get_birth_or_fallback, get_death_or_fallback,
+from gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                        get_marriage_or_fallback, get_divorce_or_fallback)
 
 #-------------------------------------------------------------------------
