@@ -56,7 +56,6 @@ from gen.filters import GenericFilterFactory, rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
 from gen.filters.rules.place import *
-import Utils
 from gui.dialog import OkDialog, WarningDialog
 from gen.utils.place import conv_lat_lon
 from gen.errors import WindowActiveError
@@ -64,14 +63,11 @@ from gen.errors import WindowActiveError
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
-if hasattr(Utils, "ProgressMeter"):
-    ProgressMeter = Utils.ProgressMeter
+import gui.utils
+if hasattr(gui.utils, "ProgressMeter"):
+    ProgressMeter = gui.utils.ProgressMeter
 else:
-    import gui.utils
-    if hasattr(gui.utils, "ProgressMeter"):
-        ProgressMeter = gui.utils.ProgressMeter
-    else:
-        raise ImportError("can't find ProgressMeter")
+    raise ImportError("can't find ProgressMeter")
 
 #------------------------------------------------------------------------
 #
