@@ -59,9 +59,9 @@ import gen.lib
 from gui.views.navigationview import NavigationView
 from gen.display.name import displayer as name_displayer
 from gen.utils.alive import probably_alive
-from gen.utils.tree import find_children, find_parents, find_witnessed_people
 from gen.utils.file import media_path_full
-from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+from gen.utils.db import (get_birth_or_fallback, get_death_or_fallback, 
+                          find_children, find_parents, find_witnessed_people)
 from libformatting import FormattingHelper
 from gui.thumbnails import get_thumbnail_path
 from gen.errors import WindowActiveError
