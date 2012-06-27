@@ -41,7 +41,7 @@ from gen.lib import date
 import gen.datehandler
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-import const
+from gen.const import USER_HOME, USER_PLUGINS
 from gen.utils.file import get_unicode_path_from_file_chooser
 from gui.display import display_url
 from gui.dialog import ErrorDialog
@@ -125,7 +125,7 @@ class lxmlGramplet(Gramplet):
              
         # filename and selector
         
-        self.__base_path = const.USER_HOME
+        self.__base_path = USER_HOME
         self.__file_name = "test.gramps"
         self.entry = gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
@@ -252,7 +252,7 @@ class lxmlGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
         
-        filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
+        filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
                 
         if LXML_OK and use_gzip == 1:
             try:
@@ -280,7 +280,7 @@ class lxmlGramplet(Gramplet):
                        
         # RNG validation via xmllint
         
-        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
+        rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
         
         try:
             os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
@@ -473,7 +473,7 @@ class lxmlGramplet(Gramplet):
         self.WriteXML(log, first, last, surnames, places, sources)
         
         self.PrintMedia(thumbs, mediapath)
-        images = os.path.join(const.USER_PLUGINS, 'lxml', _('Gallery.html'))
+        images = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
         sys.stdout.write(_('2. Has generated a media index on "%(file)s".\n') % {'file': images})
         
         self.WriteBackXML(filename, root, surnames, places, sources)
@@ -489,7 +489,7 @@ class lxmlGramplet(Gramplet):
         # syntax check against DTD for file format
         # xmllint --loaddtd --dtdvalid --valid --shell --noout ...
         
-        dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
+        dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
             os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
         except:
@@ -614,10 +614,10 @@ class lxmlGramplet(Gramplet):
         
         # XSLT process
         
-        xslt_doc = etree.parse(os.path.join(const.USER_PLUGINS, 'lxml', 'query_html.xsl'))
+        xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'query_html.xsl'))
         transform = etree.XSLT(xslt_doc)
         outdoc = transform(content)
-        html = os.path.join(const.USER_PLUGINS, 'lxml', 'query.html')
+        html = os.path.join(USER_PLUGINS, 'lxml', 'query.html')
         outfile = open(html, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
         outdoc.write(self.outfile)
@@ -649,7 +649,7 @@ class lxmlGramplet(Gramplet):
         
         title = _('Gallery')
         
-        fname = os.path.join(const.USER_PLUGINS, 'lxml', _('Gallery.html'))
+        fname = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
         of = codecs.EncodedFile(open(fname, "w"), 'utf-8',
                                     file_encoding=None, errors='strict')
         
@@ -693,7 +693,7 @@ class lxmlGramplet(Gramplet):
             if src.startswith("/"):
                 continue
             else:
-                src = os.path.join(const.USER_HOME, src)
+                src = os.path.join(USER_HOME, src)
             
             # only images
             

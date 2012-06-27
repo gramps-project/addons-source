@@ -85,7 +85,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
 from gen.display.name import displayer as name_displayer
 from gen.filters import GenericFilterFactory
 from gen.filters.rules.person import IsDescendantFamilyOf
-import const
+from gen.const import USER_HOME, USER_PLUGINS
 import gen.lib
 from gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                        get_marriage_or_fallback, get_divorce_or_fallback)
@@ -328,7 +328,7 @@ class DescendantsLinesReport(Report):
             
         #PYTHONPATH
         
-        input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
+        input_fn = os.path.join(USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
         
         # Pass 2  
           
@@ -343,7 +343,7 @@ class DescendantsLinesReport(Report):
         (if that's what ind_list contains).
         """
         
-        filename = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
+        filename = os.path.join(USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
                   
         xml_file = open(filename, "w")
         self.xml_file = codecs.getwriter("utf8")(xml_file)
@@ -1096,7 +1096,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, "style", style)
 
         output_fn = DestinationOption(_("Destination"),
-            os.path.join(const.USER_HOME,"DescendantsLines.png"))
+            os.path.join(USER_HOME,"DescendantsLines.png"))
         output_fn.set_help(_("The destination file for the content."))
         menu.add_option(category_name, "output_fn", output_fn)
 

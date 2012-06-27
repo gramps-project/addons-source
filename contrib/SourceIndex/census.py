@@ -34,7 +34,7 @@ from xml.etree import ElementTree
 #
 #------------------------------------------------------------------------
 
-import const
+from gen.const import USER_PLUGINS
 from gui.glade import Glade
 from gui.managedwindow import ManagedWindow
 from gui.widgets import MonitoredEntry, MonitoredDate
@@ -90,7 +90,7 @@ class CensusIndex(tool.Tool, ManagedWindow):
         self.window.show()
         
         # tests
-        filename = os.path.join(const.USER_PLUGINS, 'SourceIndex', 'test_census.xml')
+        filename = os.path.join(USER_PLUGINS, 'SourceIndex', 'test_census.xml')
         self.write_xml(
             filename, 
             'C0001', 

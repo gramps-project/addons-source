@@ -39,7 +39,7 @@ import csv
 #
 #------------------------------------------------------------------------
 
-import const
+from gen.const import USER_PLUGINS
 from gui.glade import Glade
 from gui.managedwindow import GrampsWindowManager, ManagedWindow
 from gui.plug import tool
@@ -86,7 +86,7 @@ class Index(tool.Tool, ManagedWindow):
         ManagedWindow.__init__(self, uistate,[], self.__class__)
         
         #base = os.path.dirname(__file__)
-        glade_file = os.path.join(const.USER_PLUGINS, "SourceIndex", "index.glade")
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "index.glade")
 
         self.define_glade('edit_index', glade_file)
         self.set_window(self._gladeobj.toplevel, None, text=None, msg='Index')
@@ -273,7 +273,7 @@ class Index(tool.Tool, ManagedWindow):
         """
         
         files = f.endswith('.xml')
-        parent_path = os.path.join(const.USER_PLUGINS, 'SourceIndex')
+        parent_path = os.path.join(USER_PLUGINS, 'SourceIndex')
         
     
     def save_indexes(self):

@@ -70,7 +70,7 @@ from gui.ddtargets import DdTargets
 import cPickle as pickle
 from gen.config import config
 from gui.views.bookmarks import PersonBookmarks
-import const
+from gen.const import CUSTOM_FILTERS
 from gui.dialog import RunDatabaseRepair, ErrorDialog
 
 #-------------------------------------------------------------------------
@@ -680,7 +680,7 @@ class TimelinePedigreeView(NavigationView):
         from FilterEditor import FilterEditor
 
         try:
-            FilterEditor('Person', const.CUSTOM_FILTERS, 
+            FilterEditor('Person', CUSTOM_FILTERS, 
                          self.dbstate, self.uistate)
         except WindowActiveError:
             return

@@ -34,7 +34,7 @@ from xml.etree import ElementTree
 #
 #------------------------------------------------------------------------
 
-import const
+from gen.const import USER_PLUGINS
 from gui.glade import Glade
 from gui.managedwindow import ManagedWindow
 from gui.widgets import MonitoredEntry, MonitoredDate
@@ -140,7 +140,7 @@ class BirthIndex(tool.Tool, ManagedWindow):
         #self._setup_fields()
         
         # tests
-        path = os.path.join(const.USER_PLUGINS, 'SourceIndex')
+        path = os.path.join(USER_PLUGINS, 'SourceIndex')
         self.rinfo = 'Library of usercity'
         callnumber = 'BX42_xzertra58364' # inherited or seizure
         source_handle = '_123456789' # or call the source title

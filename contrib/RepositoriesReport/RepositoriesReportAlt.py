@@ -41,7 +41,7 @@ import gettext
 #
 #-------------------------------------------------------------------------
 
-import const
+from gen.const import USER_PLUGINS
 from gen.plug.menu import BooleanOption, EnumeratedListOption
 from gen.plug.report import Report
 import gen.plug.report.utils as ReportUtils
@@ -55,7 +55,7 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              
 _ = get_addon_translator().ugettext
 
-LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
+LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
 
 # see gen/utils/trans.py
