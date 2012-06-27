@@ -47,7 +47,7 @@ import re
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from const import URL_WIKISTRING
+from gen.const import URL_WIKISTRING
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 

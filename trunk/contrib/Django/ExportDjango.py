@@ -51,7 +51,6 @@ from gui.dialog import ErrorDialog
 from gen.utils.id import create_id
 import gen.lib
 from gen.utils.alive import probably_alive
-import const
 
 from gen.utils.trans import get_addon_translator
 translator = get_addon_translator(__file__)

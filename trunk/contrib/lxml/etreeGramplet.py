@@ -43,7 +43,7 @@ from gen.plug import Gramplet
 from gen.lib import date
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-import const
+from gen.const import USER_HOME, USER_PLUGINS
 from gen.utils.file import get_unicode_path_from_file_chooser
 from gui.dialog import ErrorDialog
 
@@ -116,7 +116,7 @@ class etreeGramplet(Gramplet):
                      
         # filename and selector
         
-        self.__base_path = const.USER_HOME
+        self.__base_path = USER_HOME
         self.__file_name = "test.gramps"
         self.entry = gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
@@ -249,7 +249,7 @@ class etreeGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
         
-        filename = os.path.join(const.USER_PLUGINS, 'lxml', 'etree.xml')
+        filename = os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')
                 
         if use_gzip == 1:
             try:
