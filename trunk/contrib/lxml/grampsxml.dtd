@@ -200,8 +200,8 @@ FAMILY
 <!ATTLIST childref
         hlink IDREF #REQUIRED
         priv  (0|1) #IMPLIED
-        mrel  (None|Birth|Adopted|Stepchild|Sponsored|Foster|Other|Unknown) #IMPLIED
-        frel  (None|Birth|Adopted|Stepchild|Sponsored|Foster|Other|Unknown) #IMPLIED
+        mrel  CDATA #IMPLIED
+        frel  CDATA #IMPLIED
 >
 
 <!ELEMENT type (#PCDATA)>

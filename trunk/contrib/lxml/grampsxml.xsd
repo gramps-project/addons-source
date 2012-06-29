@@ -414,34 +414,8 @@
      </restriction>
     </simpleType>
    </attribute>
-   <attribute name='mrel' use='optional'>
-    <simpleType>
-     <restriction base='string'>
-      <enumeration value='None'/>
-      <enumeration value='Birth'/>
-      <enumeration value='Adopted'/>
-      <enumeration value='Stepchild'/>
-      <enumeration value='Sponsored'/>
-      <enumeration value='Foster'/>
-      <enumeration value='Other'/>
-      <enumeration value='Unknown'/>
-     </restriction>
-    </simpleType>
-   </attribute>
-   <attribute name='frel' use='optional'>
-    <simpleType>
-     <restriction base='string'>
-      <enumeration value='None'/>
-      <enumeration value='Birth'/>
-      <enumeration value='Adopted'/>
-      <enumeration value='Stepchild'/>
-      <enumeration value='Sponsored'/>
-      <enumeration value='Foster'/>
-      <enumeration value='Other'/>
-      <enumeration value='Unknown'/>
-     </restriction>
-    </simpleType>
-   </attribute>
+   <attribute name='mrel' type='string' use='optional'/>
+   <attribute name='frel' type='string' use='optional'/>
   </complexType>
  </element>
 
