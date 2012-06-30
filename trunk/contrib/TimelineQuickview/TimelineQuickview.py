@@ -169,7 +169,7 @@ def run(database, document, person):
 
     for (event, obj, desc) in event_list:
         edate = sa.event_date_obj(event)
-        span_str, span_int = format_date(birth_date, edate)
+        span_str, span_int = format_date(birth_date, edate, obj == person)
         if desc == None:
             desc = event
         stab.row(edate,
@@ -179,17 +179,17 @@ def run(database, document, person):
                  obj)
         stab.row_sort_val(2, span_int)
     today = Today()
-    span_str, span_int = format_date(birth_date, today)
+    span_str, span_int = format_date(birth_date, today, False)
     stab.row(today, _("Today"), span_str, "", person)
     stab.row_sort_val(2, span_int)
     stab.write(sd)
     sd.paragraph("")
 
-def format_date(date_start, date_end):
+def format_date(date_start, date_end, as_age):
     date_str, date_sort = _("Unknown"), 0
     if date_start != None and date_end != None:
         diff_span = (date_end - date_start)
-        date_str = str(diff_span)
+        date_str = diff_span.get_repr(as_age)
         date_sort = int(diff_span)
     return (date_str, date_sort)
 
