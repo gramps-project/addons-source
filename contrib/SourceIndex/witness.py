@@ -74,46 +74,67 @@ class Witness(tool.Tool, ManagedWindow):
         return self.glade.get_widget(key)
 
     def _setup_fields(self):
+        '''
+        Gramps XML storage means ability to also import/manage alone records
+        /!\ some attributes are translated keys
+        see data_item keys and eventref types of attribute
+        '''
+        
+        #/database/people/person/name/surname/surname/text()
         self.wname   = MonitoredEntry(
             self.top.get_object("wname"),
-            self.obj.set_rinfo,
-            self.obj.get_rinfo,
+            self.obj.set_wname,
+            self.obj.get_wname,
             self.db.readonly)
         
+        #/database/people/person/name/first/text()
         self.wfname  = MonitoredEntry(
             self.top.get_object("wfname"),
-            self.obj.set_rdate,
-            self.obj.get_rdate,
+            self.obj.set_wfname,
+            self.obj.get_wfname,
             self.db.readonly)
         
+        #/database/people/person/eventref/attribute/@type
+        #/database/people/person/eventref/attribute/@value
         self.wage  = MonitoredEntry(
             self.top.get_object("wage"),
-            self.obj.set_rid,
-            self.obj.get_rid,
+            self.obj.set_wage,
+            self.obj.get_wage,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/place/@hlink
+        #/database/places/placeobj/ptitle/text()
         self.worig  = MonitoredEntry(
             self.top.get_object("worig"),
-            self.obj.set_ba,
-            self.obj.get_ba,
+            self.obj.set_worig,
+            self.obj.get_worig,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/description/text()
         self.woccu  = MonitoredEntry(
             self.top.get_object("woccu"),
-            self.obj.set_bid,
-            self.obj.get_bid,
+            self.obj.set_woccu,
+            self.obj.get_woccu,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val
+        #/database/events/event/description/text()
         self.wlive  = MonitoredEntry(
             self.top.get_object("wlive"),
-            self.obj.set_bref,
-            self.obj.get_bref,
+            self.obj.set_wlive,
+            self.obj.get_wlive,
             self.db.readonly)
         
+        #/database/people/person/personref/@hlink
+        #/database/people/person/@handle
+        #/database/people/person/personref/@rel
         self.wrelation  = MonitoredEntry(
             self.top.get_object("wrelation"),
-            self.obj.set_bvol,
-            self.obj.get_bvol,
+            self.obj.set_wrelation,
+            self.obj.get_wrelation,
             self.db.readonly)
         
 
