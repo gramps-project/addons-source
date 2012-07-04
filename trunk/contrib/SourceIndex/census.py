@@ -91,12 +91,13 @@ class CensusIndex(tool.Tool, ManagedWindow):
         
         # tests
         filename = os.path.join(USER_PLUGINS, 'SourceIndex', 'test_census.xml')
+        self.pname = self.pfname = 'éàèôÖàçèœ'
         self.write_xml(
             filename, 
             'C0001', 
-            '', 
-            'NOM', 
-            'PRÉNOM'
+            '',
+            self.pfname,
+            self.pname
             )
         self.parse_xml(filename)
                         
@@ -104,197 +105,132 @@ class CensusIndex(tool.Tool, ManagedWindow):
         return self.glade.get_widget(key)
 
     def _setup_fields(self):
+        '''
+        Gramps XML storage means ability to also import/manage alone records
+        /!\ some attributes are translated keys
+        see data_item keys and eventref types of attribute
+        '''
+        
+        #/database/repositories/repository/rname/text()
         self.rinfo   = MonitoredEntry(
             self.top.get_object("rinfo"),
             self.obj.set_rinfo,
             self.obj.get_rinfo,
             self.db.readonly)
         
+        # date of transcription/search
         self.rdate  = MonitoredEntry(
             self.top.get_object("rdate"),
             self.obj.set_rdate,
             self.obj.get_rdate,
             self.db.readonly)
         
+        #/database/repositories/repository/@handle
         self.rid  = MonitoredEntry(
             self.top.get_object("rid"),
             self.obj.set_rid,
             self.obj.get_rid,
             self.db.readonly)
         
+        #/database/sources/source/stitle/text()
         self.aname  = MonitoredEntry(
             self.top.get_object("aname"),
             self.obj.set_aname,
             self.obj.get_aname,
             self.db.readonly)
         
+        #/database/sources/source/@handle
         self.aid  = MonitoredEntry(
             self.top.get_object("aid"),
             self.obj.set_aid,
             self.obj.get_aid,
             self.db.readonly)
         
+        #/database/citations/citation/@handle
         self.aref  = MonitoredEntry(
             self.top.get_object("aref"),
             self.obj.set_aref,
             self.obj.get_aref,
             self.db.readonly)
         
+        #/database/citations/citation/page
+        # hardcoded /database/citations/citation/confidence
         self.avol  = MonitoredEntry(
             self.top.get_object("avol"),
             self.obj.set_avol,
             self.obj.get_avol,
             self.db.readonly)
         
+        #/database/people/person/gender
         self.gen  = MonitoredEntry(
             self.top.get_object("gen"),
             self.obj.set_gen,
             self.obj.get_gen,
             self.db.readonly)
-            
+        
+        #/database/people/person/name/surname/surname/text()
         self.pname  = MonitoredEntry(
             self.top.get_object("pname"),
             self.obj.set_pname,
             self.obj.get_pname,
             self.db.readonly)
-                
+
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val        
         self.pbdate  = MonitoredEntry(
             self.top.get_object("pbdate"),
             self.obj.set_pbdate,
             self.obj.get_pbdate,
             self.db.readonly)
+            
+        #/database/people/person/eventref/@hlink
+        #/database/places/placeobj/@handle        
+        self.pbplace  = MonitoredEntry(
+            self.top.get_object("pbplace"),
+            self.obj.set_pbplace,
+            self.obj.get_pbplace,
+            self.db.readonly)
         
+        #/database/people/person/name/first/text()
         self.pfname  = MonitoredEntry(
             self.top.get_object("pfname"),
             self.obj.set_pfname,
             self.obj.get_pfname,
             self.db.readonly)
-        
-        self.pdate  = MonitoredEntry(
-            self.top.get_object("pdate"),
-            self.obj.set_pdate,
-            self.obj.get_pdate,
-            self.db.readonly)
-        
+                
+        #/database/people/person/eventref/noteref/@hlink
+        #/database/notes/note/text/text()
         self.pnote  = MonitoredEntry(
             self.top.get_object("pnote"),
             self.obj.set_pnote,
             self.obj.get_pnote,
             self.db.readonly)
         
-        self.fname  = MonitoredEntry(
-            self.top.get_object("fname"),
-            self.obj.set_fname,
-            self.obj.get_fname,
-            self.db.readonly)
-        
-        self.ffname  = MonitoredEntry(
-            self.top.get_object("ffname"),
-            self.obj.set_ffname,
-            self.obj.get_ffname,
-            self.db.readonly)
-        
-        self.fage = MonitoredEntry(
-            self.top.get_object("fage"),
-            self.obj.set_fage,
-            self.obj.get_fage,
-            self.db.readonly)
-        
-        self.forig  = MonitoredEntry(
-            self.top.get_object("forig"),
-            self.obj.set_forig,
-            self.obj.get_forig,
-            self.db.readonly)
-        
-        self.foccu  = MonitoredEntry(
-            self.top.get_object("foccu"),
-            self.obj.set_foccu,
-            self.obj.get_foccu,
+        # Residence event
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/description/text()
+        self.address  = MonitoredEntry(
+            self.top.get_object("address"),
+            self.obj.set_address,
+            self.obj.get_address,
             self.db.readonly)
             
-        self.flive  = MonitoredEntry(
-            self.top.get_object("flive"),
-            self.obj.set_flive,
-            self.obj.get_flive,
-            self.db.readonly)
-        
-        self.mname  = MonitoredEntry(
-            self.top.get_object("mname"),
-            self.obj.set_mname,
-            self.obj.get_mname,
-            self.db.readonly)
-        
-        self.mfname  = MonitoredEntry(
-            self.top.get_object("mfname"),
-            self.obj.set_mfname,
-            self.obj.get_mfname,
-            self.db.readonly)
-        
-        self.mage  = MonitoredEntry(
-            self.top.get_object("mage"),
-            self.obj.set_mage,
-            self.obj.get_mage,
-            self.db.readonly)
-        
-        self.morigin  = MonitoredEntry(
-            self.top.get_object("morigin"),
-            self.obj.set_morigin,
-            self.obj.get_morigin,
-            self.db.readonly)
-        
-        self.moccu  = MonitoredEntry(
-            self.top.get_object("moccu"),
-            self.obj.set_moccu,
-            self.obj.get_moccu,
-            self.db.readonly)
-        
-        self.mlive  = MonitoredEntry(
-            self.top.get_object("mlive"),
-            self.obj.set_mlive,
-            self.obj.get_mlive,
-            self.db.readonly)
-        
-        self.msname  = MonitoredEntry(
-            self.top.get_object("msname"),
-            self.obj.set_msname,
-            self.obj.get_msname,
-            self.db.readonly)
-        
-        self.mdpdate  = MonitoredEntry(
-            self.top.get_object("mdpdate"),
-            self.obj.set_mdpdate,
-            self.obj.get_mdpdate,
-            self.db.readonly)
-        
-        self.mmdate  = MonitoredEntry(
-            self.top.get_object("mmdate"),
-            self.obj.set_mmdate,
-            self.obj.get_mmdate,
-            self.db.readonly)
-        
-        self.mdplace  = MonitoredEntry(
-            self.top.get_object("mdplace"),
-            self.obj.set_mdplace,
-            self.obj.get_mdplace,
-            self.db.readonly)
-        
-        self.mmplace  = MonitoredEntry(
-            self.top.get_object("mmplace"),
-            self.obj.set_mmplace,
-            self.obj.get_mmplace,
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/description/text()
+        self.occupation  = MonitoredEntry(
+            self.top.get_object("occupation"),
+            self.obj.set_occupation,
+            self.obj.get_occupation,
             self.db.readonly)
             
-        self.mnote  = MonitoredEntry(
-            self.top.get_object("mnote"),
-            self.obj.set_mnote,
-            self.obj.get_mnote,
+        #/database/people/person/eventref/attribute/@type
+        #/database/people/person/eventref/attribute/@value
+        self.age  = MonitoredEntry(
+            self.top.get_object("age"),
+            self.obj.set_age,
+            self.obj.get_age,
             self.db.readonly)
-            
-        self.pddate1  = MonitoredEntry(
-            self.top.get_object("pddate1"),
-            self.obj.set_pddate1,
-            self.obj.get_pddate1,
-            self.db.readonly)
+        
             
     # PyXMLFAQ -- Python XML Frequently Asked Questions
     # Author: 	Dave Kuhlman
@@ -325,7 +261,89 @@ class CensusIndex(tool.Tool, ManagedWindow):
         self.walk_tree(root, 0)
 
                 
-    def write_xml(self, filename, id , status, name, surname):
+    def write_xml(self, filename, id , status, first, surname):
+        """
+        Write the content of data filled into the form
+        (currently only a test; no levels)
+        """
+        
+        '''
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.0//EN"
+        "http://gramps-project.org/xml/1.5.0/grampsxml.dtd">
+        <database xmlns="http://gramps-project.org/xml/1.5.0/">
+        <header>
+          <created date="2012-07-04" version="3.5.0-0.SVNexported"/>
+          <researcher>
+          </researcher>
+        </header>
+        <events>
+          <event handle="_abaa318b6d61a120c1b" change="1341403790" id="E0000">
+            <type>Birth</type>
+            <dateval val="1845" type="about"/>
+            <place hlink="_abaa31688b11e7d1526"/>
+            <citationref hlink="_c3332ee70e06bd6867c"/>
+          </event>
+          <event handle="_abaa342890d322922f7" change="1341403823" id="E0001">
+            <type>Census</type>
+            <dateval val="1871-04-02"/>
+            <place hlink="_abaa340f64a3aa3010e"/>
+            <citationref hlink="_c3332ee70e06bd6867c"/>
+          </event>
+        </events>
+        <people>
+          <person handle="_abaa31d494e56aba1c1" change="1341403686" id="I0000">
+            <gender>M</gender>
+            <name type="Birth Name">
+              <first>Martin</first>
+              <surname>John</surname>
+            </name>
+            <eventref hlink="_abaa318b6d61a120c1b" role="Primary"/>
+            <eventref hlink="_abaa342890d322922f7" role="Primary">
+              <attribute priv="1" type="Rang" value="1"/>
+              <attribute type="Relation" value="Husband"/>
+              <attribute type="Statut familial" value="Head"/>
+              <attribute type="Age" value="25 years"/>
+              <attribute type="Profession" value="Worker"/>
+              <attribute type="Lieu de naissance" value="Wednesbury"/>
+            </eventref>
+          </person>
+        </people>
+        <citations>
+          <citation handle="_c3332ee70e06bd6867c" change="1341403810" id="C0001">
+            <dateval val="1871-04-02"/>
+            <page>17/27</page>
+            <confidence>2</confidence>
+            <sourceref hlink="_abaa371c73f5a827b6f"/>
+          </citation>
+        </citations>
+        <sources>
+          <source handle="_abaa371c73f5a827b6f" change="1341403810" id="S0000">
+            <stitle>Wednesbury Census between 1871 and 1881</stitle>
+            <sauthor>UK Governement</sauthor>
+            <spubinfo>www.ancestv.co.uk</spubinfo>
+            <data_item key="Recensement" value="UK1871"/>
+            <reporef hlink="_abaa3714e242ea05aee" callno="RG 11/2854" medium="Card"/>
+          </source>
+        </sources>
+        <places>
+          <placeobj handle="_abaa31688b11e7d1526" change="1179671725" id="P0000">
+            <ptitle>Wednesbury Staffordshire</ptitle>
+            <location city="Wednesbury" parish="Staffordshire" country="UK"/>
+          </placeobj>
+          <placeobj handle="_abaa340f64a3aa3010e" change="1179671913" id="P0001">
+            <ptitle>Wednesbury Staffordshire, Hope Terrace 17</ptitle>
+            <location street="Hope Terrace 17" city="Wednesbury" parish="Staffordshire" country="UK"/>
+          </placeobj>
+        </places>
+        <repositories>
+          <repository handle="_abaa3714e242ea05aee" change="1341402429" id="R0000">
+            <rname>Civil Parish Wednesbury</rname>
+            <type>Library</type>
+          </repository>
+        </repositories>
+      </database>
+      '''
 
         node = ElementTree.Element('census')
         node.set('id', id)
@@ -333,8 +351,12 @@ class CensusIndex(tool.Tool, ManagedWindow):
         node.set('uri', 'file://..')
         node1 = ElementTree.SubElement(node, 'status')
         node1.text = status
-        node1 = ElementTree.SubElement(node, 'name')
-        node1.text = name
+        
+        #/database/people/person/name/first/text()
+        node1 = ElementTree.SubElement(node, 'first')
+        node1.text = first
+        
+        #/database/people/person/name/surname/surname/text()
         node1 = ElementTree.SubElement(node, 'surname')
         node1.text = surname
         

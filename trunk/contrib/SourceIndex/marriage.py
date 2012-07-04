@@ -109,120 +109,177 @@ class MarriageIndex(tool.Tool, ManagedWindow):
         return self.glade.get_widget(key)
 
     def _setup_fields(self):
+        '''
+        Gramps XML storage means ability to also import/manage alone records
+        /!\ some attributes are translated keys
+        see data_item keys and eventref types of attribute
+        '''
+        
+        #/database/repositories/repository/rname/text()
         self.rinfo   = MonitoredEntry(
             self.top.get_object("rinfo"),
             self.obj.set_rinfo,
             self.obj.get_rinfo,
             self.db.readonly)
         
+        # date of transcription/search
         self.rdate  = MonitoredEntry(
             self.top.get_object("rdate"),
             self.obj.set_rdate,
             self.obj.get_rdate,
             self.db.readonly)
         
+        #/database/repositories/repository/@handle
         self.rid  = MonitoredEntry(
             self.top.get_object("rid"),
             self.obj.set_rid,
             self.obj.get_rid,
             self.db.readonly)
         
+        #/database/sources/source/stitle/text()
         self.aname  = MonitoredEntry(
             self.top.get_object("aname"),
             self.obj.set_aname,
             self.obj.get_aname,
             self.db.readonly)
         
+        #/database/sources/source/@handle
         self.aid  = MonitoredEntry(
             self.top.get_object("aid"),
             self.obj.set_aid,
             self.obj.get_aid,
             self.db.readonly)
         
+        #/database/citations/citation/@handle
         self.aref  = MonitoredEntry(
             self.top.get_object("aref"),
             self.obj.set_aref,
             self.obj.get_aref,
             self.db.readonly)
         
+        #/database/citations/citation/page
+        # hardcoded /database/citations/citation/confidence
         self.avol  = MonitoredEntry(
             self.top.get_object("avol"),
             self.obj.set_avol,
             self.obj.get_avol,
             self.db.readonly)
         
+        #/database/people/person/gender
         self.gen  = MonitoredEntry(
             self.top.get_object("gen"),
             self.obj.set_gen,
             self.obj.get_gen,
             self.db.readonly)
             
+        #/database/people/person/childof/@hlink
+        #/database/people/person/name/surname/surname/text()
         self.pname  = MonitoredEntry(
             self.top.get_object("pname"),
             self.obj.set_pname,
             self.obj.get_pname,
             self.db.readonly)
-                
-        self.pbdate  = MonitoredEntry(
-            self.top.get_object("pbdate"),
-            self.obj.set_pbdate,
-            self.obj.get_pbdate,
-            self.db.readonly)
-        
+            
+        #/database/people/person/name/first/text()
         self.pfname  = MonitoredEntry(
             self.top.get_object("pfname"),
             self.obj.set_pfname,
             self.obj.get_pfname,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val 
+        self.pbdate  = MonitoredEntry(
+            self.top.get_object("pbdate"),
+            self.obj.set_pbdate,
+            self.obj.get_pbdate,
+            self.db.readonly)
+            
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/place/@hlink
+        #/database/places/placeobj/ptitle/text()
+        self.pblace  = MonitoredEntry(
+            self.top.get_object("pblace"),
+            self.obj.set_pblace,
+            self.obj.get_pblace,
+            self.db.readonly)
+        
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val 
         self.pdate  = MonitoredEntry(
             self.top.get_object("pdate"),
             self.obj.set_pdate,
             self.obj.get_pdate,
             self.db.readonly)
+            
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/place/@hlink
+        #/database/places/placeobj/ptitle/text()
+        self.pplace  = MonitoredEntry(
+            self.top.get_object("pplace"),
+            self.obj.set_pplace,
+            self.obj.get_pplace,
+            self.db.readonly)
         
+        #/database/people/person/eventref/noteref/@hlink
+        #/database/notes/note/text/text()
         self.pnote  = MonitoredEntry(
             self.top.get_object("pnote"),
             self.obj.set_pnote,
             self.obj.get_pnote,
             self.db.readonly)
         
+        #/database/objects/object/file/@src
         self.fname  = MonitoredEntry(
             self.top.get_object("fname"),
             self.obj.set_fname,
             self.obj.get_fname,
             self.db.readonly)
         
+        #/database/people/person/parentin/@hlink
+        #/database/people/person/name/first/text()
         self.ffname  = MonitoredEntry(
             self.top.get_object("ffname"),
             self.obj.set_ffname,
             self.obj.get_ffname,
             self.db.readonly)
         
+        #/database/people/person/eventref/attribute/@type
+        #/database/people/person/eventref/attribute/@value
         self.fage = MonitoredEntry(
             self.top.get_object("fage"),
             self.obj.set_fage,
             self.obj.get_fage,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/place/@hlink
+        #/database/places/placeobj/ptitle/text()
         self.forig  = MonitoredEntry(
             self.top.get_object("forig"),
             self.obj.set_forig,
             self.obj.get_forig,
             self.db.readonly)
         
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/description/text()
         self.foccu  = MonitoredEntry(
             self.top.get_object("foccu"),
             self.obj.set_foccu,
             self.obj.get_foccu,
             self.db.readonly)
             
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val
+        #/database/events/event/description/text()
         self.flive  = MonitoredEntry(
             self.top.get_object("flive"),
             self.obj.set_flive,
             self.obj.get_flive,
             self.db.readonly)
         
+        #/database/people/person/parentin/@hlink
+        #/database/people/person/name/first/text()
         self.mname  = MonitoredEntry(
             self.top.get_object("mname"),
             self.obj.set_mname,
@@ -294,6 +351,32 @@ class MarriageIndex(tool.Tool, ManagedWindow):
             self.obj.set_mnote,
             self.obj.get_mnote,
             self.db.readonly)
+        
+        #/database/people/person/parentin/@hlink
+        #/database/families/family/mother
+        #/database/families/family/father
+        self.spname  = MonitoredEntry(
+            self.top.get_object("spname"),
+            self.obj.set_spname,
+            self.obj.get_spname,
+            self.db.readonly)
+        
+        #/database/families/family/eventref/@hlink
+        #/database/events/event/dateval/@val 
+        self.spmdate  = MonitoredEntry(
+            self.top.get_object("bannsdate"),
+            self.obj.set_spmdate,
+            self.obj.get_spmdate,
+            self.db.readonly)
+            
+        #/database/families/family/eventref/@hlink
+        #/database/events/event/place/@hlink
+        #/database/places/placeobj/ptitle/text()
+        self.spmplace  = MonitoredEntry(
+            self.top.get_object("bannsplace"),
+            self.obj.set_spmplace,
+            self.obj.get_spmplace,
+            self.db.readonly)
   
             
     # PyXMLFAQ -- Python XML Frequently Asked Questions
@@ -326,12 +409,32 @@ class MarriageIndex(tool.Tool, ManagedWindow):
 
                 
     def write_xml(self, filename, id , date):
+        """
+        Write the content of data filled into the form
+        (currently only a test; no levels)
+        """
+        
+        '''
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.0//EN"
+        "http://gramps-project.org/xml/1.5.0/grampsxml.dtd">
+        <database xmlns="http://gramps-project.org/xml/1.5.0/">
+        <header>
+          <created date="2012-07-04" version="3.5.0-0.SVNexported"/>
+          <researcher>
+          </researcher>
+        </header>
+        ...
+        '''
 
         node = ElementTree.Element('marriage')
         node.set('id', id)
         node.set('collection', filename)
         node.set('uri', 'file://..')
-        node1 = ElementTree.SubElement(node, 'date')
+        
+        #/database/people/person/eventref/@hlink
+        #/database/events/event/dateval/@val 
+        node1 = ElementTree.SubElement(node, 'dateval')
         node1.text = date
         
         outfile = open(filename, 'w')
