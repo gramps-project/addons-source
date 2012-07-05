@@ -37,7 +37,8 @@ from xml.etree import ElementTree
 from gen.const import USER_PLUGINS
 from gui.glade import Glade
 from gui.managedwindow import ManagedWindow
-from gui.widgets import MonitoredEntry, MonitoredDate
+from gui.widgets import MonitoredEntry, MonitoredDate, MonitoredText, MonitoredType
+from gui.editors.objectentries import ObjEntry, PlaceEntry, MediaEntry, NoteEntry
 from gui.plug import tool
 import gen.datehandler
 
@@ -134,11 +135,9 @@ class BirthIndex(tool.Tool, ManagedWindow):
         
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
-    
-        self.window.show()
         
-        #self._setup_fields()
-        
+        self.text = gtk.EntryBuffer('Gtk.Entry._get...', 5)
+               
         # tests
         path = os.path.join(USER_PLUGINS, 'SourceIndex')
         self.rinfo = 'Library of usercity'
@@ -158,6 +157,11 @@ class BirthIndex(tool.Tool, ManagedWindow):
             'DATE', 
             'PRÉNOM'
             )
+            
+        #self._setup_fields()
+        
+        self.window.show()
+            
         self.parse_xml(filename)
         
                         
@@ -169,282 +173,276 @@ class BirthIndex(tool.Tool, ManagedWindow):
         '''
         
         #/database/repositories/repository/rname/text()
-        self.rinfo   = MonitoredEntry(
+        self.rinfo   = MonitoredText(
             self.top.get_object("rinfo"),
-            self.obj.set_rinfo,
-            self.obj.get_rinfo,
-            self.db.readonly)
+            self.top.get_object("rinfo").set_text(self.rinfo),
+            self.top.get_object("rinfo").get_text,
+            True)
                     
         # date of transcription/search
-        self.rdate = MonitoredDate(
-            self.top.get_object("rdate"),
-            self.top.get_object("rdate_stat"), 
-            self.obj.get_date_object(),
-            self.uistate,
-            self.track,
-            self.db.readonly)
+        #self.rdate = MonitoredDate(
+            #self.top.get_object("rdate"),
+            #self.top.get_object("rdate_stat"), 
+            #self.top.get_object("rdate").get_date_object(),
+            #uistate,
+            #track,
+            #True)
         
         #/database/repositories/repository/@handle
         self.rid  = MonitoredEntry(
             self.top.get_object("rid"),
-            self.obj.set_rid,
-            self.obj.get_rid,
-            self.db.readonly)
+            self.top.get_object("rid").set_text,
+            self.top.get_object("rid").get_text,
+            True)
         
         #/database/sources/source/stitle/text()
-        self.aname  = MonitoredEntry(
+        self.aname  = MonitoredText(
             self.top.get_object("aname"),
-            self.obj.set_aname,
-            self.obj.get_aname,
-            self.db.readonly)
+            self.top.get_object("aname").set_text(self.aname),
+            self.top.get_object("aname").get_text,
+            True)
         
         #/database/sources/source/@handle
         self.aid  = MonitoredEntry(
             self.top.get_object("aid"),
-            self.obj.set_aid,
-            self.obj.get_aid,
-            self.db.readonly)
+            self.top.get_object("aid").set_text,
+            self.top.get_object("aid").get_text,
+            True)
         
         #/database/citations/citation/@handle
         self.aref  = MonitoredEntry(
             self.top.get_object("aref"),
-            self.obj.set_aref,
-            self.obj.get_aref,
-            self.db.readonly)
+            self.top.get_object("aref").set_text,
+            self.top.get_object("aref").get_text,
+            True)
         
         #/database/citations/citation/page
         # hardcoded /database/citations/citation/confidence
         self.avol  = MonitoredEntry(
             self.top.get_object("avol"),
-            self.obj.set_avol,
-            self.obj.get_avol,
-            self.db.readonly)
+            self.top.get_object("avol").set_text(self.avol),
+            self.top.get_object("avol").get_text,
+            True)
         
         #/database/people/person/gender
-        self.gen  = MonitoredEntry(
-            self.top.get_object("gen"),
-            self.obj.set_gen,
-            self.obj.get_gen,
-            self.db.readonly)
+        #self.gen  = MonitoredType(
+            #self.top.get_object("gen"),
+            #self.top.get_object("gen").set_text,
+            #self.top.get_object("gen").get_text,
+            #True)
             
         #/database/people/person/childof/@hlink
         #/database/people/person/name/surname/surname/text()
         self.pname  = MonitoredEntry(
             self.top.get_object("pname"),
-            self.obj.set_pname,
-            self.obj.get_pname,
-            self.db.readonly)
+            self.top.get_object("pname").set_text,
+            self.top.get_object("pname").get_text,
+            True)
         
         #/database/people/person/name/first/text()
-        self.pfname  = MonitoredEntry(
+        self.pfname  = MonitoredText(
             self.top.get_object("pfname"),
-            self.obj.set_pfname,
-            self.obj.get_pfname,
-            self.db.readonly)
+            self.top.get_object("pfname").set_text,
+            self.top.get_object("pfname").get_text,
+            True)
                     
         #/database/people/person/eventref/@hlink
         #/database/events/event/dateval/@val 
-        self.pdate = MonitoredDate(
-            self.top.get_object("pdate"),
-            self.top.get_object("pdate_stat"), 
-            self.obj.get_date_object(),
-            self.uistate,
-            self.track,
-            self.db.readonly)
+        #self.pdate = MonitoredDate(
+            #self.top.get_object("pdate"),
+            #self.top.get_object("pdate_stat"), 
+            #self.top.get_object("pdate").get_date_object(),
+            #uistate,
+            #track,
+            #True)
             
         #/database/people/person/eventref/@hlink
         #/database/events/event/place/@hlink
         #/database/places/placeobj/ptitle/text()
-        self.pplace  = MonitoredEntry(
-            self.top.get_object("pplace"),
-            self.obj.set_pplace,
-            self.obj.get_pplace,
-            self.db.readonly)
+        #self.pplace  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("pplace"),
+            #self.top.get_object("pplace").set_place_handle,
+            #self.top.get_object("pplace").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
         
         #/database/people/person/eventref/noteref/@hlink
         #/database/notes/note/text/text()
-        self.pnote  = MonitoredEntry(
-            self.top.get_object("pnote"),
-            self.obj.set_pnote,
-            self.obj.get_pnote,
-            self.db.readonly)
+        #self.pnote  = NoteEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("pnote"),
+            #self.top.get_object("pnote").set_note_handle,
+            #self.top.get_object("pnote").get_note_handle,
+            #self.top.get_object('add_del_note'),
+            #self.top.get_object('select_note'))
         
         #/database/objects/object/file/@src
-        self.fname  = MonitoredEntry(
-            self.top.get_object("fname"),
-            self.obj.set_fname,
-            self.obj.get_fname,
-            self.db.readonly)
+        #self.fname  = MediaEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("fname"),
+            #self.top.get_object("fname").set_media_path,
+            #self.top.get_object("fname").get_media_path,
+            #self.top.get_object('add_del_path'),
+            #self.top.get_object('select_path'))
         
         #/database/people/person/parentin/@hlink
         #/database/people/person/name/first/text()
-        self.ffname  = MonitoredEntry(
+        self.ffname  = MonitoredText(
             self.top.get_object("ffname"),
-            self.obj.set_ffname,
-            self.obj.get_ffname,
-            self.db.readonly)
+            self.top.get_object("ffname").set_text,
+            self.top.get_object("ffname").get_text,
+            True)
         
         #/database/people/person/eventref/attribute/@type
         #/database/people/person/eventref/attribute/@value
         self.fage = MonitoredEntry(
             self.top.get_object("fage"),
-            self.obj.set_fage,
-            self.obj.get_fage,
-            self.db.readonly)
+            self.top.get_object("fage").set_text,
+            self.top.get_object("fage").get_text,
+            True)
         
         #/database/people/person/eventref/@hlink
         #/database/events/event/place/@hlink
         #/database/places/placeobj/ptitle/text()
-        self.forig  = MonitoredEntry(
-            self.top.get_object("forig"),
-            self.obj.set_forig,
-            self.obj.get_forig,
-            self.db.readonly)
+        #self.forig  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("forig"),
+            #self.top.get_object("forig").set_place_handle,
+            #self.top.get_object("forig").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
         
         #/database/people/person/eventref/@hlink
         #/database/events/event/description/text()
         self.foccu  = MonitoredEntry(
             self.top.get_object("foccu"),
-            self.obj.set_foccu,
-            self.obj.get_foccu,
-            self.db.readonly)
+            self.top.get_object("foccu").set_text,
+            self.top.get_object("foccu").get_text,
+            True)
         
         #/database/people/person/eventref/@hlink
         #/database/events/event/dateval/@val
         #/database/events/event/description/text()
         self.flive  = MonitoredEntry(
-            self.glade.get_object("flive"),
-            self.obj.set_flive,
-            self.obj.get_flive,
-            self.db.readonly)
+            self.top.get_object("flive"),
+            self.top.get_object("flive").set_text,
+            self.top.get_object("flive").get_text,
+            True)
         
         #/database/people/person/parentin/@hlink
         #/database/people/person/name/first/text()
-        self.mname  = MonitoredEntry(
+        self.mname  = MonitoredText(
             self.top.get_object("mname"),
-            self.obj.set_mname,
-            self.obj.get_mname,
-            self.db.readonly)
+            self.top.get_object("mname").set_text,
+            self.top.get_object("mname").get_text,
+            True)
         
-        self.mfname  = MonitoredEntry(
+        self.mfname  = MonitoredText(
             self.top.get_object("mfname"),
-            self.obj.set_mfname,
-            self.obj.get_mfname,
-            self.db.readonly)
+            self.top.get_object("mfname").set_text,
+            self.top.get_object("mfname").get_text,
+            True)
         
-        self.mage  = MonitoredEntry(
+        self.mage  = MonitoredText(
             self.top.get_object("mage"),
-            self.obj.set_mage,
-            self.obj.get_mage,
-            self.db.readonly)
+            self.top.get_object("mage").set_text,
+            self.top.get_object("mage").get_text,
+            True)
         
-        self.morigin  = MonitoredEntry(
-            self.top.get_object("morigin"),
-            self.obj.set_morigin,
-            self.obj.get_morigin,
-            self.db.readonly)
+        #self.morigin  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("morigin"),
+            #self.top.get_object("morigin").set_place_handle,
+            #self.top.get_object("morigin").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
         
-        self.moccu  = MonitoredEntry(
+        self.moccu  = MonitoredText(
             self.top.get_object("moccu"),
-            self.obj.set_moccu,
-            self.obj.get_moccu,
-            self.db.readonly)
+            self.top.get_object("moccu").set_text,
+            self.top.get_object("moccu").get_text,
+            True)
         
         self.mlive  = MonitoredEntry(
-            self.glade.get_object("mlive"),
-            self.obj.set_mlive,
-            self.obj.get_mlive,
-            self.db.readonly)
+            self.top.get_object("mlive"),
+            self.top.get_object("mlive").set_text,
+            self.top.get_object("mlive").get_text,
+            True)
         
-        self.msname  = MonitoredEntry(
+        self.msname  = MonitoredText(
             self.top.get_object("msname"),
-            self.obj.set_msname,
-            self.obj.get_msname,
-            self.db.readonly)
-        
-        self.mdpdate  = MonitoredEntry(
-            self.top.get_object("mdpdate"),
-            self.obj.set_mdpdate,
-            self.obj.get_mdpdate,
-            self.db.readonly)
-            
-        self.mdpdate = MonitoredDate(
-            self.top.get_object("mdpdate"),
-            self.top.get_object("mdpdate_stat"), 
-            self.obj.get_date_object(),
-            self.uistate,
-            self.track,
-            self.db.readonly)
+            self.top.get_object("msname").set_text,
+            self.top.get_object("msname").get_text,
+            True)
                     
-        self.mmdate = MonitoredDate(
-            self.top.get_object("mmdate"),
-            self.top.get_object("mmdate_stat"), 
-            self.obj.get_date_object(),
-            self.uistate,
-            self.track,
-            self.db.readonly)
+        #self.mdpdate = MonitoredDate(
+            #self.top.get_object("mdpdate"),
+            #self.top.get_object("mdpdate_stat"), 
+            #self.top.get_object("mdpdate").get_date_object(),
+            #uistate,
+            #track,
+            #True)
+                    
+        #self.mmdate = MonitoredDate(
+            #self.top.get_object("mmdate"),
+            #self.top.get_object("mmdate_stat"), 
+            #self.top.get_object("mmdate").get_date_object(),
+            #uistate,
+            #track,
+            #True)
         
-        self.mdplace  = MonitoredEntry(
-            self.glade.get_object("mdplace"),
-            self.obj.set_mdplace,
-            self.obj.get_mdplace,
-            self.db.readonly)
+        #self.mdplace  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("mdplace"),
+            #self.top.get_object("mdplace").set_place_handle,
+            #self.top.get_object("mdplace").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
         
-        self.mmplace  = MonitoredEntry(
-            self.top.get_object("mmplace"),
-            self.obj.set_mmplace,
-            self.obj.get_mmplace,
-            self.db.readonly)
+        #self.mmplace  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("mmplace"),
+            #self.top.get_object("mmplace").set_place_handle,
+            #self.top.get_object("mmplace").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
             
-        self.mnote  = MonitoredEntry(
-            self.top.get_object("mnote"),
-            self.obj.set_mnote,
-            self.obj.get_mnote,
-            self.db.readonly)
-            
-        self.mdplace  = MonitoredEntry(
-            self.top.get_object("mdplace"),
-            self.obj.set_mdplace,
-            self.obj.get_mdplace,
-            self.db.readonly)
-        
-        self.mmplace  = MonitoredEntry(
-            self.top.get_object("mmplace"),
-            self.obj.set_mmplace,
-            self.obj.get_mmplace,
-            self.db.readonly)
-            
-        self.mnote  = MonitoredEntry(
-            self.top.get_object("mnote"),
-            self.obj.set_mnote,
-            self.obj.get_mnote,
-            self.db.readonly)
+        #self.mnote  = NoteEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("mnote"),
+            #self.top.get_object("mnote").set_note_handle,
+            #self.top.get_object("mnote").get_note_handle,
+            #self.top.get_object('add_del_note'),
+            #self.top.get_object('select_note'))
         
         #/database/people/person/parentin/@hlink
         #/database/families/family/mother
         #/database/families/family/father
-        self.spname  = MonitoredEntry(
-            self.top.get_object("spname"),
-            self.obj.set_spname,
-            self.obj.get_spname,
-            self.db.readonly)
+        #self.spname  = MonitoredText(
+            #self.top.get_object("spname"),
+            #self.top.get_object("spname").set_text,
+            #self.top.get_object("spname").get_text,
+            #True)
         
         #/database/families/family/eventref/@hlink
         #/database/events/event/dateval/@val 
-        self.spmdate  = MonitoredEntry(
-            self.top.get_object("spmdate"),
-            self.obj.set_spmdate,
-            self.obj.get_spmdate,
-            self.db.readonly)
+        #self.spmdate  = MonitoredEntry(
+            #self.top.get_object("spmdate"),
+            #self.top.get_object("spmdate").set_text,
+            #self.top.get_object("spmdate").get_text,
+            #True)
             
         #/database/families/family/eventref/@hlink
         #/database/events/event/place/@hlink
         #/database/places/placeobj/ptitle/text()
-        self.spmplace  = MonitoredEntry(
-            self.top.get_object("spmplace"),
-            self.obj.set_spmplace,
-            self.obj.get_spmplace,
-            self.db.readonly)
+        #self.spmplace  = PlaceEntry(
+            #dbstate, uistate, track,
+            #self.top.get_object("spmplace"),
+            #self.top.get_object("spmplace").set_place_handle,
+            #self.top.get_object("spmplace").get_place_handle,
+            #self.top.get_object('add_del_place'),
+            #self.top.get_object('select_place'))
             
             
     def call_witness(self, obj):
@@ -484,7 +482,7 @@ class BirthIndex(tool.Tool, ManagedWindow):
         self.walk_tree(root, 0)
 
                 
-    def write_xml(self, filename, id , date, first):
+    def write_xml(self, filename, id , date, given):
         """
         Write the content of data filled into the form
         (currently only a test; no levels)
@@ -508,14 +506,22 @@ class BirthIndex(tool.Tool, ManagedWindow):
         node.set('collection', filename)
         node.set('uri', 'file://..')
         
+        gramps = ElementTree.SubElement(node, 'database')
+        gramps.set('xmlns', 'http://gramps-project.org/xml/1.5.0/')
+        
         #/database/people/person/eventref/@hlink
-        #/database/events/event/dateval/@val 
-        node1 = ElementTree.SubElement(node, 'dateval')
-        node1.text = date
+        #/database/events/event/dateval/@val
+        events = ElementTree.SubElement(gramps, 'events')
+        event = ElementTree.SubElement(events, 'event')
+        dateval = ElementTree.SubElement(event, 'dateval')
+        dateval.set('val', date)
         
         #/database/people/person/name/first/text()
-        node1 = ElementTree.SubElement(node, 'first')
-        node1.text = first
+        people = ElementTree.SubElement(gramps, 'people')
+        person = ElementTree.SubElement(people, 'person')
+        name = ElementTree.SubElement(person, 'name')
+        first = ElementTree.SubElement(name, 'first')
+        first.text = given
         
         outfile = open(filename, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
