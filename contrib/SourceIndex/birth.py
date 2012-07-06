@@ -40,6 +40,7 @@ from gui.managedwindow import ManagedWindow
 from gui.widgets import MonitoredEntry, MonitoredDate, MonitoredText, MonitoredType
 from gui.editors.objectentries import ObjEntry, PlaceEntry, MediaEntry, NoteEntry
 from gui.plug import tool
+from gen.lib import date
 import gen.datehandler
 
 #------------------------------------------------------------------------
@@ -180,13 +181,13 @@ class BirthIndex(tool.Tool, ManagedWindow):
             True)
                     
         # date of transcription/search
-        #self.rdate = MonitoredDate(
-            #self.top.get_object("rdate"),
-            #self.top.get_object("rdate_stat"), 
+        self.rdate = MonitoredText(
+            self.top.get_object("rdate"),
+            self.top.get_object("rdate").set_text(str(date.Today())),
             #self.top.get_object("rdate").get_date_object(),
             #uistate,
             #track,
-            #True)
+            True)
         
         #/database/repositories/repository/@handle
         self.rid  = MonitoredEntry(
@@ -215,6 +216,15 @@ class BirthIndex(tool.Tool, ManagedWindow):
             self.top.get_object("aref").set_text,
             self.top.get_object("aref").get_text,
             True)
+            
+        #/database/citations/citation/dateval/@val
+        #self.adate = MonitoredDate(
+            #self.top.get_object("adate"),
+            #self.top.get_object("adate").set_text,
+            #self.top.get_object("adate").get_date_object(),
+            #uistate,
+            #track,
+            #True)
         
         #/database/citations/citation/page
         # hardcoded /database/citations/citation/confidence
