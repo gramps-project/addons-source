@@ -46,6 +46,7 @@ Read the following code from bottom to top.
 # Gramps modules
 #
 #---------------------------------------------------------------
+from gui.display import display_url
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 from gen.config import config as configman
@@ -135,7 +136,7 @@ class Search(object):
 
     def callback(self, widget):
         results = make_person_dict(self.dbstate, self.handle)
-        url(self.pattern % results, self.uistate)
+        display_url(self.pattern % results, self.uistate)
 
     def __call__(self, dbstate, uistate, nav_type, handle):
         self.dbstate = dbstate
