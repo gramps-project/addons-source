@@ -37,9 +37,9 @@ from gen.plug import Gramplet
 from gen.display.name import displayer as name_displayer
 from gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from ImportCsv import CSVParser
-from ImportVCard import VCardParser
-from ImportXml import GrampsParser, PERSON_RE
+from importcsv import CSVParser
+from importvcard import VCardParser
+from importxml import GrampsParser, PERSON_RE
 from gui.dialog import ErrorDialog
 
 #------------------------------------------------------------------------
