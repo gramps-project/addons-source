@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# $Id$
 """
 make.py for Gramps addons.
 
