@@ -25,7 +25,7 @@ register(IMPORT,
          name                 = _('Django Import'),
          description          = _('Django is a web framework working on a '
                                   'configured database'),
-         version = '1.0.13',
+         version = '1.0.14',
          gramps_target_version = '3.5',
          status               = STABLE,
          import_function      = 'import_data',
