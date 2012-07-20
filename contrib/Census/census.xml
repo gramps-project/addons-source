@@ -3036,7 +3036,192 @@
             <size>25</size>
         </column>
     </census>
-
+    <census id="US1940" title="1940 US Census" date="1940-04-01">
+        <column>
+            <_attribute>Home Owned/Rented</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Home value/monthly rental</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Farm?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relationship</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Color/Race</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Age at last Birthday</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Marital status</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Attended school/college since March 1, 1940</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Highest grade completed</_attribute>
+            <size>1</size>
+        </column>
+                <column>
+            <_attribute>Place of birth</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Citizenship if foreign born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>City (April 1, 1935)</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>County</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>State (Territory/Country)</_attribute>
+            <size>25</size>
+        </column>
+	<column>
+            <_attribute>On a Farm (Y/N)</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>At Work during week March 24-30</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>public Emergency Work?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Seeking work?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Have a Job?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>housework (H), school (S), unable to work (U) or other (Ot)</_attribute>
+            <size>2</size>
+        </column>
+        <column>
+            <_attribute># hours worked during week March 24-30, 1940</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Weeks unemployed up to March 30, 1940</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Industry</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Class of worker</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute># weeks worked in 1939</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Amount of money, wages, salary in 1939</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Income of more than $50 from other sources?</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Number of Farm Schedule</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Father birthplace</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Mother birthplace</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Language spoken in home</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Veteran?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>if child, veteran-father dead?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>War/Military Service</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Have Federal SSN?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Deductions made in 1939?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>If so, made from all, 1/2 or more, less from wages in 1939?</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Usual Occupation</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Usual Industry</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Usual Class of Work</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>If woman, married more than once?</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Age of first marriage</_attribute>
+            <size>1</size>
+        </column>
+        <column>
+            <_attribute>Number of children even born?</_attribute>
+            <size>4</size>
+        </column>
+    </census>
     <census id="CA1851EW-A"
         title="1851 Canada East and West Census: Personal Census"
         date="1/11/1851">
