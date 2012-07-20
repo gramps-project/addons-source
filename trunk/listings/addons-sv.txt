@@ -2,8 +2,8 @@
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.5', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.15', 'z': 'Census.addon.tgz'}
-{'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.5', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.15', 'z': 'Census.addon.tgz'}
+{'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.5', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen', 'g': '3.5', 'i': 'chgivenname', 'n': 'Ordna stavning av f\xc3\xb6rnamn', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet f\xc3\xb6r gruppering av poster', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Urklippsgramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -15,8 +15,8 @@
 {'d': 'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person', 'g': '3.5', 'i': 'Descendant Count Quickview', 'n': '\xc3\x84ttlingsr\xc3\xa4knare', 't': u'Quickreport', 'v': '1.0.8', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.5', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.5', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.10', 'z': 'DescendantsLines.addon.tgz'}
-{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.5', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
 {'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.5', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
+{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.5', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
 {'d': 'Detta \xc3\xa4r en r\xc3\xa5 dumpning av pythonobjekt', 'g': '3.5', 'i': 'Raw Export', 'n': 'R\xc3\xa5 export', 't': u'Exporter', 'v': '1.0.11', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a family', 'g': '3.5', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a person', 'g': '3.5', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}

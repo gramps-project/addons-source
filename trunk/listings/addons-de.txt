@@ -2,8 +2,8 @@
 {'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'ein Gramplet welches die Geburtstage von lebenden Personen zeigt', 'g': '3.5', 'i': 'Birthdays', 'n': 'Geburtstags Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.15', 'z': 'Census.addon.tgz'}
-{'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.5', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.15', 'z': 'Census.addon.tgz'}
+{'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.5', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -15,8 +15,8 @@
 {'d': 'Zeigt die Anzahl der Nachkommen f\xc3\xbcr jede Person.', 'g': '3.5', 'i': 'Descendant Count Quickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '1.0.8', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen', 'g': '3.5', 'i': 'Descendant Count Gramplet', 'n': 'Anzahl der Nachkommen Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Erstellt Nachkommenlinien einer Person', 'g': '3.5', 'i': 'Descendants Lines', 'n': 'Nachkommen Linien', 't': u'Report', 'v': '0.1.10', 'z': 'DescendantsLines.addon.tgz'}
-{'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.5', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
 {'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.5', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
+{'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.5', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Django.addon.tgz'}
 {'d': 'Dies ist eine Rohdaten Pythonobjekt Ausgabe', 'g': '3.5', 'i': 'Raw Export', 'n': 'Rohdaten Export', 't': u'Exporter', 'v': '1.0.11', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a family', 'g': '3.5', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Gramplet showing the attributes of a person', 'g': '3.5', 'i': 'Extended Person Attributes', 'n': 'Extended Person Attributes', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
