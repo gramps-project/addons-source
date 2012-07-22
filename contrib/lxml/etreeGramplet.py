@@ -64,10 +64,11 @@ NAMESPACE = '{http://gramps-project.org/xml/1.5.0/}'
     
 #-------------------------------------------------------------------------    
 
+# python 2.6 / 2.7 / 3.0
 # name for getiterator / iter (ElementTree 1.2 vs 1.3)
 
-if sys.version_info[1] != 6:
-    raise ValueError('ITERATOR = iter(), not written for python 2.7 and greater!')
+if sys.version_info[0] == 3:
+    raise ValueError('Not written for python 3.0 and greater!')
 
 #-------------------------------------------------------------------------
 #
@@ -352,12 +353,24 @@ class etreeGramplet(Gramplet):
         #print(self.dbstate.db.surname_list)
         
         # XML
-        
+                
         for one in root.getchildren():
+			
+            # getiterator() for python 2.6
+            ITERATION = one.getiterator()
             
-            #primary objects (samples)
+            # iter() for python 2.7 and greater versions
+            if sys.version_info[1] ==7:
+				ITERATION = one.iter()
+            
+            # Primary objects (samples)
             
             # find() needs memory - /!\ large files
+            
+            # FutureWarning: 
+            # The behavior of this method will change in future versions.  
+            # Use specific 'len(elem)' or 'elem is not None' test instead.
+            
             if one.find(NAMESPACE + 'event'):
                 print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
@@ -366,9 +379,8 @@ class etreeGramplet(Gramplet):
                 print('Home:', self.dbstate.db.get_from_name_and_handle("Person", "%(home)s" % one.attrib))
                 if self.dbstate.db.db_is_open:
                     print('Has home handle? ', self.dbstate.db.has_person_handle("%(home)s" % one.attrib))
-            
-            # iter() for python 2.7 and greater versions
-            for two in one.getiterator():
+                        				
+            for two in ITERATION:
                 
                 timestamp.append(two.get('change'))
                 
@@ -449,8 +461,12 @@ class etreeGramplet(Gramplet):
             tevent.append(event.get_change_time())
         
         tevent.sort()
-        elast = epoch(tevent[-1])
-        print('DB: Last event object edition on/at:', elast)
+        
+        try:
+            elast = epoch(tevent[-1])
+            print('DB: Last event object edition on/at:', elast)
+        except IndexError:
+	    pass
         
         # person object; alternate method via person_map, see LastChange addon
         
