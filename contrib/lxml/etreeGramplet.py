@@ -361,7 +361,7 @@ class etreeGramplet(Gramplet):
             
             # iter() for python 2.7 and greater versions
             if sys.version_info[1] ==7:
-				ITERATION = one.iter()
+                ITERATION = one.iter()
             
             # Primary objects (samples)
             
