@@ -290,7 +290,7 @@ class DescendantsLinesReport(Report):
         
         plist = self.database.get_person_handles()
         
-        ind_list = filter.apply(self.database, plist)
+        #ind_list = filter.apply(self.database, plist)
 
         #filter.add_rule(Rules.Person.IsSpouseOfFilterMatch(ind_list))
         #slist = filter.apply(self.database, ind_list)
@@ -300,7 +300,7 @@ class DescendantsLinesReport(Report):
         #blist = filter.apply(self.database, slist)
         #ind_list = ind_list + slist + alist + blist
         
-        #ind_list = plist
+        ind_list = plist
                 
         # Pass 1
         
