@@ -95,7 +95,8 @@ class DjangoReader(object):
                  self.dji.Place.count() +
                  self.dji.Media.count() +
                  self.dji.Citation.count() +
-                 self.dji.Source.count())
+                 self.dji.Source.count() +
+                 self.dji.Tag.count())
         #self.trans = self.db.transaction_begin("",batch=True)
         self.db.disable_signals()
         count = 0.0
@@ -189,6 +190,16 @@ class DjangoReader(object):
         for med in media:
             data = self.dji.get_media(med)
             self.db.media_map[str(med.handle)] = data
+            count += 1
+            self.callback(100 * count/total)
+
+        # ---------------------------------
+        # Process tag
+        # ---------------------------------
+        tags = self.dji.Tag.all()
+        for tag in tags:
+            data = self.dji.get_tag(tag)
+            self.db.tag_map[str(tag.handle)] = data
             count += 1
             self.callback(100 * count/total)
 

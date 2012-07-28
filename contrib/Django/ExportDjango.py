@@ -86,7 +86,8 @@ def export_all(database, filename, error_dialog,
              database.get_number_of_places() +
              database.get_number_of_media_objects() +
              database.get_number_of_citations() +
-             database.get_number_of_sources()) * 2 # 2 steps
+             database.get_number_of_sources() +
+             database.get_number_of_tags()) * 2 # 2 steps
     count = 0.0
     dji = DjangoInterface()
     dji.clear_tables("primary", "secondary", "ref")
@@ -202,7 +203,20 @@ def export_all(database, filename, error_dialog,
                 count += 1
                 callback(100 * count/total)
 
-        dji.rebuild_caches(callback)
+            # ---------------------------------
+            # Tags
+            # ---------------------------------
+            for tag_handle in database.tag_map.keys():
+                data = database.tag_map[tag_handle]
+                if step == 0:
+                    dji.add_tag(data)
+                elif step == 1:
+                    dji.add_tag_detail(data)
+                count += 1
+                callback(100 * count/total)
+
+        #dji.rebuild_caches(callback) # not needed anymore, caches get
+        # saved in the add_*_detail methods
 
     total_time = time.time() - start
     msg = ngettext('Export Complete: %d second','Export Complete: %d seconds', total_time ) % total_time
