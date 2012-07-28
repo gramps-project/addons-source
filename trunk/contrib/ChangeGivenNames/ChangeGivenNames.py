@@ -46,7 +46,8 @@ from gui.managedwindow import ManagedWindow
 
 from gui.dialog import OkDialog
 from gui.plug import tool
-from gen.ggettext import sgettext as _
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 from gui.glade import Glade
 
 #-------------------------------------------------------------------------
