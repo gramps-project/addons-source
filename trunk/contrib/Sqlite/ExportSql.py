@@ -344,6 +344,7 @@ class Database(object):
     The db connection.
     """
     def __init__(self, database):
+        self.batch = False
         self.database = database
         self.db = sqlite.connect(self.database)
         self.cursor = self.db.cursor()
@@ -362,7 +363,8 @@ class Database(object):
         else:
             try:
                 self.cursor.execute(q, args)
-                self.db.commit()
+                if not self.batch:
+                    self.db.commit()
             except:
                 print "ERROR: query :", q
                 print "ERROR: values:", args
@@ -873,6 +875,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     db = Database(filename)
     makeDB(db)
 
+    db.batch = True # don't commit till end
     # ---------------------------------
     # Notes
     # ---------------------------------
@@ -1145,6 +1148,9 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  handle, name, color, priority, change)
         count += 1
         callback(100 * count/total)
+
+    db.batch = False # turn off batch processing
+    db.db.commit() # commit all changes
 
     total_time = time.time() - start
     msg = ngettext('Export Complete: %d second','Export Complete: %d seconds', total_time ) % total_time
