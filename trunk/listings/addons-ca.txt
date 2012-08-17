@@ -2,8 +2,8 @@
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.5', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Calcula les dates estimades de naixement i defunci\xc3\xb3.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Calcular Dates Estimades', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Report of census events for a person.', 'g': '3.5', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Report of census events for a person.', 'g': '3.5', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -35,7 +35,7 @@
 {'d': "Gramplet for editing active person's notes", 'g': '3.5', 'i': 'Note Gramplet', 'n': 'Gramplet de Notes', 't': u'Gramplet', 'v': '1.0.10', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.5', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.4.8', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Alternate version of the traditional pedigree chart.', 'g': '3.5', 'i': 'PedigreeChart', 'n': 'Pedigree Chart', 't': u'Report', 'v': '1.0.11', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.13', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.5', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.8', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.5', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.5', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
