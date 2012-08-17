@@ -2,8 +2,8 @@
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.5', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.5', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.5', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.5', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Recherche dans toute la base de donn\xc3\xa9es et essaye de corriger la casse des pr\xc3\xa9noms.', 'g': '3.5', 'i': 'chgivenname', 'n': 'R\xc3\xa9parer la casse des pr\xc3\xa9noms', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Fusionne les objets principaux via la ligne de commande', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet pour regrouper des articles', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -35,7 +35,7 @@
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.5', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.10', 'z': 'NoteGramplet.addon.tgz'}
 {'d': "Affiche le nombre de descendants de l'individu actif", 'g': '3.5', 'i': 'NumberOfDescendantsQuickview', 'n': 'Nombre de descendants', 't': u'Quickreport', 'v': '3.4.8', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': "Version alternative de l'arbre graphique traditionnel.", 'g': '3.5', 'i': 'PedigreeChart', 'n': 'Arbre graphique', 't': u'Report', 'v': '1.0.11', 'z': 'PedigreeChart.addon.tgz'}
-{'d': "Fournit une liste consultable des lieux s\xc3\xa9lectionn\xc3\xa9s, avec la possibilit\xc3\xa9 de compl\xc3\xa9ter/analyser/d\xc3\xa9finir les champs de l'attribut", 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'Arrangement des lieux', 't': u'Tool', 'v': '0.0.13', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': "Fournit une liste consultable des lieux s\xc3\xa9lectionn\xc3\xa9s, avec la possibilit\xc3\xa9 de compl\xc3\xa9ter/analyser/d\xc3\xa9finir les champs de l'attribut", 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'Arrangement des lieux', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '3.5', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.8', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.5', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.5', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}

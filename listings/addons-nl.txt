@@ -2,8 +2,8 @@
 {'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.5', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.5', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.5', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -35,7 +35,7 @@
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.5', 'i': 'Note Gramplet', 'n': 'Opmerkingen-gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.5', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.4.8', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Alternatieve versie van de traditionele stamboomgrafiek', 'g': '3.5', 'i': 'PedigreeChart', 'n': 'Stamboomgrafiek', 't': u'Report', 'v': '1.0.11', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'Locatie vervolledigen', 't': u'Tool', 'v': '0.0.13', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': 'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'Locatie vervolledigen', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Interactieve Python-interpreter', 'g': '3.5', 'i': 'Python Gramplet', 'n': 'Python-gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'PythonGramplet.addon.tgz'}
 {'d': "Gramplet om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.5', 'i': 'Query Gramplet', 'n': 'Zoek-gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': "Snelscherm om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.5', 'i': 'Query Quickview', 'n': 'Snelscherm voor zoeken', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}

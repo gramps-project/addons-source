@@ -2,8 +2,8 @@
 {'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '3.5', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.11', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'ein Gramplet welches die Geburtstage von lebenden Personen zeigt', 'g': '3.5', 'i': 'Birthdays', 'n': 'Geburtstags Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.5', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.5', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.5', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.5', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.5', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.8', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.5', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.5', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'ClipboardGramplet.addon.tgz'}
@@ -35,7 +35,7 @@
 {'d': 'Gramplet zum bearbeiten der Notizen der aktiven Person', 'g': '3.5', 'i': 'Note Gramplet', 'n': 'Notiz Gramplet', 't': u'Gramplet', 'v': '1.0.10', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen der aktuellen Person an', 'g': '3.5', 'i': 'NumberOfDescendantsQuickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '3.4.8', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Alternative Version zur traditionellen Ahnentafelgrafik.', 'g': '3.5', 'i': 'PedigreeChart', 'n': 'Ahnentafelgrafik', 't': u'Report', 'v': '1.0.11', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'OrteVervollst\xc3\xa4ndigung', 't': u'Tool', 'v': '0.0.13', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.5', 'i': 'PlaceCompletion', 'n': 'OrteVervollst\xc3\xa4ndigung', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.5', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.5', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.5', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
