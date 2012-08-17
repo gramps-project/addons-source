@@ -452,7 +452,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             try:
                 #compile regex aware of locale and unicode
                 self.matchlatlon = re.compile(findregex,re.U|re.L|re.M)
-                latlongroup = [('lat'),('lon')] 
+                latlongroup = ['lat', 'lon'] 
                 for group in latlongroup :
                     if findregex.find(r'(?P<'+group+r'>') == -1 :
                         WarningDialog(_('Missing regex groups in match lat/lon'),
@@ -944,7 +944,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             pattern = re.sub(('PARISH'), loc.get_parish().strip(), pattern)
         print 'DEBUG info: pattern for search is ' , pattern
         regexll = re.compile(pattern,re.U|re.L|re.M)
-        latlongroup = [_('lat'),_('lon')] 
+        latlongroup = ['lat', 'lon'] 
         #find all occurences in the data file
         iterator = regexll.finditer(self.latlonfile_datastr)
         for result in iterator : 
