@@ -257,7 +257,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     birth_ref = person.get_birth_ref()
                     if birth_ref:
                         birth = self.db.get_event_from_handle(birth_ref.ref)
-                        source_list = birth.get_source_references()
+                        source_list = birth.get_citation_list()
                         for source_ref in source_list:
                             #print "birth handle:", source_ref
                             source = self.db.get_source_from_handle(source_ref.ref)
@@ -279,7 +279,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     death_ref = person.get_death_ref()
                     if death_ref:
                         death = self.db.get_event_from_handle(death_ref.ref)
-                        source_list = death.get_source_references()
+                        source_list = death.get_citation_list()
                         for source_ref in source_list:
                             #print "death handle:", source_ref
                             source = self.db.get_source_from_handle(source_ref.ref)
