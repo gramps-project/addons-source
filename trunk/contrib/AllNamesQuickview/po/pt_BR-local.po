@@ -1,0 +1,43 @@
+# Brazilian Portuguese translations for addons-gramps package.
+# Copyright (C) 2012 THE addons-gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the addons-gramps package.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-19 22:53-0300\n"
+"PO-Revision-Date: 2012-08-19 22:53-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:47
+msgid "All Names of All People"
+msgstr "Todos os nomes de todas as pessoas"
+
+#: AllNamesQuickview/AllNames.gpr.py:4
+msgid "Display all names of all people"
+msgstr "Exibe todos os nomes de todas as pessoas"
+
+#: AllNamesQuickview/AllNames.py:50
+msgid "Name"
+msgstr "Nome"
+
+#: AllNamesQuickview/AllNames.py:50
+msgid "Primary Name"
+msgstr "Nome principal"
+
+#: AllNamesQuickview/AllNames.py:50
+msgid "Name Type"
+msgstr "Tipo de nome"
+
+#: AllNamesQuickview/AllNames.py:67
+#, python-format
+msgid "Total names %d"
+msgstr "Total de nomes %d"

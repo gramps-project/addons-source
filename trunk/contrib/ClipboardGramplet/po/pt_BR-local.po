@@ -1,0 +1,35 @@
+# Brazilian Portuguese translations for addons-gramps package.
+# Copyright (C) 2012 THE addons-gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the addons-gramps package.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-19 23:49-0300\n"
+"PO-Revision-Date: 2012-08-19 23:49-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:9
+msgid "Clipboard Gramplet"
+msgstr "Gramplet de área de transferência"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
+msgid "Gramplet for grouping items"
+msgstr "Gramplet para agrupamento de itens"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
+msgid "Clipboard"
+msgstr "Área de transferência"
+
+#: ClipboardGramplet/ClipboardGramplet.py:92
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Gramplet de área de transferência: %s"
