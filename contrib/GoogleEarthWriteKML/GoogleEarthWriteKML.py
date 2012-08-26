@@ -65,11 +65,20 @@ if os.sys.platform == 'win32':
                   % (os.getenv('ProgramFiles'))
     NORM_PATH = os.path.normpath(FILE_PATH)
     _GOOGLEEARTH_OK = search_for(NORM_PATH)
+
     if not _GOOGLEEARTH_OK:
+        # For Win 7 with 32 Gramps
         FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
-                    % (os.getenv('ProgramFiles'))
+                    % (os.getenv('ProgramFiles)'))
         NORM_PATH = os.path.normpath(FILE_PATH)
-        _GOOGLEEARTH_OK = search_for(NORM_PATH)
+        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+
+    if not _GOOGLEEARTH_OK:
+        # For Win 7 with 64 Gramps, need to find path to 32 bits programs
+        FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+                    % (os.getenv('ProgramFiles(x86)'))
+        NORM_PATH = os.path.normpath(FILE_PATH)
+        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
 
 else:
     FILE_PATH = "googleearth"
