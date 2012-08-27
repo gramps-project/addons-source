@@ -1,179 +1,166 @@
 # Brazilian-Portuguese translation for Gramps.
 # Tradução português-brasileiro para o Gramps.
 # Copyright (C) 2002 Free Software Foundation, Inc.
+#
+#
 # Marcos Bedinelli <bedinelli@sourceforge.net>, 2002-2006.
 # Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007-2007.
 # lcc <lcc@6zap.com>, 2009-2009.
-#
-#
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS 3.1.2\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2009-05-03 21:39-0300\n"
-"Last-Translator: lcc <lcc@6zap.com>\n"
-"Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipsga.org.br>\n"
+"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"PO-Revision-Date: 2012-08-26 20:57-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
 msgid "Calculate Estimated Dates"
-msgstr ""
+msgstr "Calcular datas estimadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculates estimated dates for birth and death."
-msgstr ""
+msgstr "Calcula datas estimadas para nascimento e morte"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:188
 msgid "Options"
-msgstr "Opções de Texto"
+msgstr "Opções"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:77
 msgid "Filter"
 msgstr "Filtro"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:78
 msgid "Select filter to restrict people"
-msgstr "Seleciona _tipo de arquivo:"
+msgstr "Selecione o filtro para restringir as pessoas"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
 msgid "Filter Person"
-msgstr "Primeira Pessoa"
+msgstr "Pessoa do filtro"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "The center person for the filter"
-msgstr "O estilo usado para o rodapé."
+msgstr "Pessoa principal utilizada pelo filtro"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:89
 msgid "Source text"
-msgstr "Fonte de Referência"
+msgstr "Texto da fonte"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:90
 msgid "Calculated Date Estimates"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
-msgid "Source to remove and/or add"
-msgstr ""
+msgstr "Datas estimadas calculadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:91
-#, fuzzy
-msgid "Remove previously added events, notes, and source"
-msgstr "Gerencia livros criados anteriormente"
+msgid "Source to remove and/or add"
+msgstr "Fonte para remover e/ou adicionar"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
+msgid "Remove previously added events, notes, and source"
+msgstr "Remover eventos, notas e fonte previamente adicionados"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"Remove os eventos, notas e fonte calculados. Isto é realizado imediatamente "
+"após clicar em Executar"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 msgid "Birth"
 msgstr "Nascimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
-#, fuzzy
-msgid "Do not add birth events"
-msgstr "Nascimento de %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
-#, fuzzy
-msgid "Add birth events without dates"
-msgstr "_Estima as datas que faltam"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
-#, fuzzy
-msgid "Add birth events with dates"
-msgstr "_Estima as datas que faltam"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
-msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgid "Do not add birth events"
+msgstr "Não adicionar eventos de nascimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid "Add birth events without dates"
+msgstr "Adicionar eventos de nascimento sem datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:101
+msgid "Add birth events with dates"
+msgstr "Adicionar eventos de nascimento com datas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+msgid "Add a birth events with or without estimated dates"
+msgstr "Adiciona eventos de nascimento com ou sem datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Death"
 msgstr "Falecimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-#, fuzzy
-msgid "Do not add death events"
-msgstr "Falecimento de %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
-msgid "Add death events without dates"
-msgstr "_Estima as datas que faltam"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
-msgid "Add death events with dates"
-msgstr "_Estima as datas que faltam"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
-msgid "Add death events with or without estimated dates"
-msgstr ""
+msgid "Do not add death events"
+msgstr "Não adicionar eventos de falecimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-#, fuzzy
-msgid "Maximum age"
-msgstr "_Idade máxima"
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add death events without dates"
+msgstr "Adicionar eventos de falecimento sem datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:108
+msgid "Add death events with dates"
+msgstr "Adicionar eventos de falecimento com datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:109
+msgid "Add death events with or without estimated dates"
+msgstr "Adiciona eventos de falecimento com ou sem datas estimadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
-#, fuzzy
-msgid "Maximum age that one can live to"
-msgstr "Idade má_xima para um pai gerar um filho"
+msgid "Maximum age"
+msgstr "Idade máxima"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+msgid "Maximum age that one can live to"
+msgstr "Idade máxima que alguém pode viver"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
 msgid "Maximum sibling age difference"
 msgstr "Diferença máxima de idade entre irmãos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
-#, fuzzy
-msgid "Maximum age difference between siblings"
-msgstr "Grande diferença de idade entre filhos: família %s.\n"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+msgid "Maximum age difference between siblings"
+msgstr "Diferença máxima de idade entre irmãos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 msgid "Average years between generations"
 msgstr "Média de anos entre gerações"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
-#, fuzzy
-msgid "Average years between two generations"
-msgstr "Quebra de página entre gerações"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:128
-#, fuzzy
-msgid "Estimated Dates"
-msgstr "Estimado"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
-msgid "Approximate (about)"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
-msgid "Extremes (after and before)"
-msgstr ""
+msgid "Average years between two generations"
+msgstr "Média de anos entre duas gerações"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+msgid "Estimated Dates"
+msgstr "Datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:132
+msgid "Approximate (about)"
+msgstr "Aproximado (cerca de)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Extremes (after and before)"
+msgstr "Extremos (antes e depois de)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:134
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Datas em eventos são 'cerca de' ou 'antes/depois de'"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:165
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
 msgid "Help"
-msgstr "_Ajuda"
+msgstr "Ajuda"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:167
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -193,204 +180,199 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
-#, fuzzy
-msgid "Select All"
-msgstr "Selecionar um arquivo"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
-#, fuzzy
-msgid "Select None"
-msgstr "Selecionar Nota"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-#, fuzzy
-msgid "Toggle Selection"
-msgstr "Seleção de Ferramenta"
+"A ferramenta de cálculo de datas estimadas é usada para adicionar e remover "
+"eventos de nascimento e falecimento para as pessoas que não possuem essa "
+"informação.\n"
+"\n"
+"Como usar:\n"
+"1. Vá para a aba Opções\n"
+"2. Assinale a opção [ ] para remover as estimativas anteriores\n"
+"3. Selecione as opções para adicionar eventos com ou sem datas\n"
+"4. Clique em Executar\n"
+"5. Selecione as pessoas que terão eventos adicionados\n"
+"6. Clique no botão 'Adicionar os eventos selecionados' para criar\n"
+"\n"
+"Observações: Se você decidir tornar uma evento permanente, remova-o a partir "
+"da Fonte. Caso contrário, ele será removido na próxima vez que você remover "
+"estes eventos automaticamente.\n"
+"\n"
+"Você pode precisar executar a ferramenta várias (sem remoção de eventos "
+"anteriores) para adicionar todos os eventos possíveis."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
-#, fuzzy
+msgid "Select All"
+msgstr "Selecionar todos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:195
+msgid "Select None"
+msgstr "Sem seleção"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:196
+msgid "Toggle Selection"
+msgstr "Alternar seleção"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:197
 msgid "Add Selected Events"
-msgstr "Selecionar Evento"
+msgstr "Adicionar os eventos selecionados"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:203
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Remover Eventos, Notas e Fontes e selecionar os dados novamente"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:204
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Deseja realmente remover os eventos, notas e fontes anteriores e selecionar "
+"os dados novamente?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:205
 msgid "Remove and Run Select Again"
-msgstr "Remover a Pessoa Selecionada"
+msgstr "Remover e executar a seleção novamente"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid "Reselect Data"
-msgstr "Selecionar Pai"
+msgstr "Selecionar os dados novamente"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Are you sure you want to reselect data?"
-msgstr "Tem certeza que deseja limpar o histórico de desfazimentos?"
+msgstr "Tem certeza de que deseja selecionar os dados novamente?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:211
 msgid "Run Select Again"
-msgstr "Seleção de Relatório"
+msgstr "Executar a seleção novamente"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:220
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:388
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:402
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:407
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:412
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:423
 msgid "Select"
 msgstr "Selecionar"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 msgid "Person"
 msgstr "Pessoa"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 msgid "Action"
 msgstr "Ação"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:230
 msgid "Birth Date"
-msgstr "Data de Nascimento"
+msgstr "Data de nascimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:230
 msgid "Death Date"
-msgstr "Data de Falecimento"
+msgstr "Data de falecimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:231
 msgid "Evidence"
-msgstr "Residência"
+msgstr "Evidência"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:231
 msgid "Relative"
-msgstr "Relacionado"
+msgstr "Parente"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:232
 msgid "Processing...\n"
-msgstr "Imprimir..."
+msgstr "Processando...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:250
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Removendo as estimativas antigas... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:251
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "Removendo '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:305
 msgid "done!\n"
-msgstr "Nenhum(a)"
+msgstr "concluído!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
-#, fuzzy
-msgid "Removed date estimates"
-msgstr "Remover a fonte existente"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:309
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Seleciona..."
+msgstr ""
+"Selecionando... \n"
+"\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:310
 msgid "Selecting..."
-msgstr "Seleciona..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
-#, fuzzy
-msgid "Add birth and death events"
-msgstr "Adicionar um novo evento"
+msgstr "Selecionando..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:345
-#, fuzzy
-msgid "Add birth event"
-msgstr "Indivíduos sem data de nascimento"
+msgid "Add birth and death events"
+msgstr "Adicionar eventos de nascimento e falecimento"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
-#, fuzzy
+msgid "Add birth event"
+msgstr "Adicionar evento de nascimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:349
 msgid "Add death event"
-msgstr "Adicionar um novo evento"
+msgstr "Adicionar evento de falecimento"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:384
 msgid "No events to be added."
-msgstr "Nenhum registro de evento foi modificado."
+msgstr "Nenhum evento a ser adicionado."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:426
 msgid "Selecting... "
-msgstr "Seleciona..."
+msgstr "Selecionando... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#, fuzzy, python-format
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:427
+#, python-format
 msgid "Adding events '%s'..."
-msgstr "Adicionar Pais Existentes..."
+msgstr "Adicionando eventos '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:449
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
-#, fuzzy, python-format
-msgid "Added birth event based on %s"
-msgstr "Nascimento de %s"
+"Evento de nascimento adicionado com base em %(evidence)s, "
+"de %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:452
-#, fuzzy
-msgid "Estimated birth date"
-msgstr "_Estima as datas que faltam"
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Evento de nascimento adicionado com base em %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:454
+msgid "Estimated birth date"
+msgstr "Data de nascimento estimada"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
-#, fuzzy, python-format
-msgid "Added death event based on %s"
-msgstr "Falecimento de %s"
+"Evento de falecimento adicionado com base em %(evidence)s, "
+"de %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
-#, fuzzy
-msgid "Estimated death date"
-msgstr "_Estima as datas que faltam"
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Evento de falecimento adicionado com base em %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
-msgid " Done! Committing..."
-msgstr ""
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated death date"
+msgstr "Data de falecimento estimada"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-#, fuzzy
-msgid "Add date estimates"
-msgstr "Ele faleceu em %(death_date)s."
+msgid " Done! Committing..."
+msgstr " Concluído! Gravando..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:484
+#, python-format
 msgid "Added %d events."
-msgstr "Adicionar um novo evento"
+msgstr "Foram adicionados %d eventos."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
-#, fuzzy
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:512
 msgid "Estimated date"
-msgstr "Estimado"
+msgstr "Data estimada"
+
