@@ -1,0 +1,85 @@
+# Brazilian Portuguese translations for PACKAGE package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-01 21:27-0300\n"
+"PO-Revision-Date: 2012-09-01 21:34-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: Differences/differences.gpr.py:4
+msgid "Database Differences Report"
+msgstr "Relatório de diferenças do banco de dados"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Compara um banco de dados externo com o atual."
+
+#: Differences/differences.py:158
+msgid "Differences Report"
+msgstr "Relatório de diferenças"
+
+#: Differences/differences.py:159
+msgid "Looking for differences..."
+msgstr "Procurando diferenças..."
+
+#: Differences/differences.py:275
+msgid "Report Options"
+msgstr "Opções do relatório"
+
+#: Differences/differences.py:276
+msgid "Family Tree file"
+msgstr "Arquivo de árvore genealógica"
+
+#: Differences/differences.py:277
+msgid "Select a .gpkg or .gramps file"
+msgstr "Selecione um arquivo .gpkg ou .gramps"
+
+#: Differences/differences.py:280
+msgid "Show items that are different"
+msgstr "Mostrar os itens com diferenças"
+
+#: Differences/differences.py:281
+msgid "Include items that are different"
+msgstr "Incluir os itens com diferenças"
+
+#: Differences/differences.py:284
+msgid "Show deleted items"
+msgstr "Mostrar os itens excluídos"
+
+#: Differences/differences.py:285
+msgid "Include items not in file but in database"
+msgstr "Não incluir os itens no arquivo, mas apenas no banco de dados"
+
+#: Differences/differences.py:288
+msgid "Show added items"
+msgstr "Mostrar os itens adicionados"
+
+#: Differences/differences.py:289
+msgid "Include items in file but not in database"
+msgstr "Incluir os itens no arquivo, mas não no banco de dados"
+
+#: Differences/differences.py:292
+msgid "Comma-separated items to ignore"
+msgstr "Itens separados por vírgula a serem ignorados"
+
+#: Differences/differences.py:293
+msgid "Ignore these parts"
+msgstr "Ignorar estas partes"
+
+#: Differences/differences.py:338 Differences/differences.py:340
+#: Differences/differences.py:343 Differences/differences.py:346
+msgid "Text"
+msgstr "Texto"
+
