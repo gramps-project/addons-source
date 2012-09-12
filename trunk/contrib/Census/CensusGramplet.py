@@ -28,7 +28,8 @@ Census Gramplet.
 # GTK modules
 #
 #------------------------------------------------------------------------
-import gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
 
 #------------------------------------------------------------------------
 #
@@ -75,45 +76,45 @@ class CensusGramplet(Gramplet):
         """
         Create and display the GUI components of the gramplet.
         """
-        vbox = gtk.VBox()
-        hbox = gtk.HBox(False)
+        vbox = Gtk.VBox()
+        hbox = Gtk.HBox(False)
 
-        person_label = gtk.Label(_("Census details for: "))
+        person_label = Gtk.Label(_("Census details for: "))
         person_label.set_alignment(0.0, 0.5)
-        hbox.pack_start(person_label, expand=False)
+        hbox.pack_start(person_label, False, True, 0)
 
-        self.person_text = gtk.Label()
+        self.person_text = Gtk.Label()
         self.person_text.set_alignment(0.0, 0.5)
-        hbox.pack_start(self.person_text, expand=True, fill=True)
+        hbox.pack_start(self.person_text, True, True, 0)
 
-        self.model = gtk.ListStore(object, str, str, str)
-        view = gtk.TreeView(self.model)
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Source"), renderer, text=1)
+        self.model = Gtk.ListStore(object, str, str, str)
+        view = Gtk.TreeView(self.model)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Source"), renderer, text=1)
         view.append_column(column)
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Date"), renderer, text=2)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Date"), renderer, text=2)
         view.append_column(column)
-        renderer = gtk.CellRendererText()
-        column = gtk.TreeViewColumn(_("Place"), renderer, text=3)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Place"), renderer, text=3)
         view.append_column(column)
-        view.add_events(gtk.gdk.BUTTON_PRESS_MASK)
+        view.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
         view.connect("button_press_event", self.__list_clicked)
         
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_START)
+        button_box = Gtk.HButtonBox()
+        button_box.set_layout(Gtk.ButtonBoxStyle.START)
         
-        new = gtk.Button(stock=gtk.STOCK_NEW)
+        new = Gtk.Button(stock=Gtk.STOCK_NEW)
         new.connect("clicked", self.__new_census)
         button_box.add(new)
                 
-        edit = gtk.Button(stock=gtk.STOCK_EDIT)
+        edit = Gtk.Button(stock=Gtk.STOCK_EDIT)
         edit.connect("clicked", self.__edit_census, view.get_selection())
         button_box.add(edit)
       
-        vbox.pack_start(hbox, expand=False, padding=10)
-        vbox.pack_start(view, padding=10)
-        vbox.pack_end(button_box, expand=False, fill=True)
+        vbox.pack_start(hbox, False, True, 10)
+        vbox.pack_start(view, True, True, 10)
+        vbox.pack_end(button_box, False, True, 0)
         
         return vbox
 
@@ -121,7 +122,7 @@ class CensusGramplet(Gramplet):
         """
         Called when the user clicks on the list of censuses.
         """
-        if event.type == gtk.gdk._2BUTTON_PRESS:
+        if event.type == Gdk.EventType._2BUTTON_PRESS:
             self.__edit_census(view, view.get_selection())
 
     def __new_census(self, widget):
@@ -276,151 +277,153 @@ class CensusEditor(ManagedWindow):
         """
         Create and display the GUI components of the editor.
         """
-        root = gtk.Window(type=gtk.WINDOW_TOPLEVEL)
+        root = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
         root.set_default_size(600, 400)
         root.set_transient_for(self.uistate.window)
 
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
 
-        tab = gtk.Table(4, 4, False)
+        tab = Gtk.Table(4, 4, False)
         tab.set_row_spacings(10)
         tab.set_col_spacings(10)
 
-        census_label = gtk.Label(_("Source:"))
+        census_label = Gtk.Label(_("Source:"))
         census_label.set_alignment(0.0, 0.5)
-        tab.attach(census_label, 0, 1, 0, 1, xoptions=gtk.FILL, xpadding=10)
+        tab.attach(census_label, 0, 1, 0, 1, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
-        liststore = gtk.ListStore(str, str, str)
+        liststore = Gtk.ListStore(str, str, str)
         for row in get_census_sources(self.db):
             liststore.append(row)
 
-        census_combo = gtk.ComboBox(liststore)
-        cell = gtk.CellRendererText()
+        census_combo = Gtk.ComboBox()
+        census_combo.set_model(liststore)
+        cell = Gtk.CellRendererText()
         census_combo.pack_start(cell, True)
         census_combo.add_attribute(cell, 'text', 1)
-        #cell = gtk.CellRendererText()
+        #cell = Gtk.CellRendererText()
         #census_combo.pack_start(cell, True)
         #census_combo.add_attribute(cell, 'text', 2)
         census_combo.connect('changed', self.__census_changed)
         self.widgets['census_combo'] = census_combo
         
-        hbox = gtk.HBox()
-        hbox.pack_start(census_combo, expand=False)
+        hbox = Gtk.HBox()
+        hbox.pack_start(census_combo, False, True, 0)
         tab.attach(hbox, 1, 2, 0, 1)
 
-        date_label = gtk.Label(_("Date:"))
+        date_label = Gtk.Label(_("Date:"))
         date_label.set_alignment(0.0, 0.5)
-        tab.attach(date_label, 0, 1, 1, 2, xoptions=gtk.FILL, xpadding=10)
+        tab.attach(date_label, 0, 1, 1, 2, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
-        date_text = gtk.Label()
+        date_text = Gtk.Label()
         date_text.set_alignment(0.0, 0.5)
         tab.attach(date_text, 1, 2, 1, 2)
         self.widgets['date_text'] = date_text
         
-        ref_label = gtk.Label(_("Reference:"))
+        ref_label = Gtk.Label(_("Reference:"))
         ref_label.set_alignment(0.0, 0.5)
-        tab.attach(ref_label, 0, 1, 2, 3, xoptions=gtk.FILL, xpadding=10)
+        tab.attach(ref_label, 0, 1, 2, 3, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
-        ref_entry = gtk.Entry()
+        ref_entry = Gtk.Entry()
         tab.attach(ref_entry, 1, 2, 2, 3)
         self.widgets['ref_entry'] = ref_entry
 
-        place_label = gtk.Label(_("Place:"))
+        place_label = Gtk.Label(_("Place:"))
         place_label.set_alignment(0.0, 0.5)
-        tab.attach(place_label, 0, 1, 3, 4, xoptions=gtk.FILL, xpadding=10)
+        tab.attach(place_label, 0, 1, 3, 4, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
-        place_text = gtk.Label()
+        place_text = Gtk.Label()
         place_text.set_alignment(0.0, 0.5)
         tab.attach(place_text, 1, 2, 3, 4)
         self.widgets['place_text'] = place_text
 
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_INDEX, gtk.ICON_SIZE_BUTTON)
-        place_share = gtk.Button()
-        place_share.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_INDEX, Gtk.IconSize.BUTTON)
+        place_share = Gtk.Button()
+        place_share.set_relief(Gtk.ReliefStyle.NONE)
         place_share.add(image)
         tab.attach(place_share, 2, 3, 3, 4, xoptions=0)
         self.widgets['place_share'] = place_share
 
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_ADD, gtk.ICON_SIZE_BUTTON)
-        place_add = gtk.Button()
-        place_add.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_ADD, Gtk.IconSize.BUTTON)
+        place_add = Gtk.Button()
+        place_add.set_relief(Gtk.ReliefStyle.NONE)
         place_add.add(image)
         tab.attach(place_add, 3, 4, 3, 4, xoptions=0)
         self.widgets['place_add'] = place_add
  
-        hbox = gtk.HBox()
+        hbox = Gtk.HBox()
         
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_ADD, gtk.ICON_SIZE_BUTTON)
-        add_btn = gtk.Button()
-        add_btn.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_ADD, Gtk.IconSize.BUTTON)
+        add_btn = Gtk.Button()
+        add_btn.set_relief(Gtk.ReliefStyle.NONE)
         add_btn.add(image)
         add_btn.connect('clicked', self.__add_person)
-        hbox.pack_start(add_btn, expand=False, padding=3)
+        hbox.pack_start(add_btn, False, True, 3)
         
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_INDEX, gtk.ICON_SIZE_BUTTON)
-        share_btn = gtk.Button()
-        share_btn.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_INDEX, Gtk.IconSize.BUTTON)
+        share_btn = Gtk.Button()
+        share_btn.set_relief(Gtk.ReliefStyle.NONE)
         share_btn.add(image)
         share_btn.connect('clicked', self.__share_person)
-        hbox.pack_start(share_btn, expand=False, padding=3)
+        hbox.pack_start(share_btn, False, True, 3)
         
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_REMOVE, gtk.ICON_SIZE_BUTTON)
-        del_btn = gtk.Button()
-        del_btn.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.BUTTON)
+        del_btn = Gtk.Button()
+        del_btn.set_relief(Gtk.ReliefStyle.NONE)
         del_btn.add(image)
         del_btn.connect('clicked', self.__remove_person)
-        hbox.pack_start(del_btn, expand=False, padding=3)
+        hbox.pack_start(del_btn, False, True, 3)
 
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_GO_UP, gtk.ICON_SIZE_BUTTON)
-        up_btn = gtk.Button()
-        up_btn.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_GO_UP, Gtk.IconSize.BUTTON)
+        up_btn = Gtk.Button()
+        up_btn.set_relief(Gtk.ReliefStyle.NONE)
         up_btn.add(image)
         up_btn.connect('clicked', self.__move_person, 'up')
-        hbox.pack_start(up_btn, expand=False, padding=3)
+        hbox.pack_start(up_btn, False, True, 3)
 
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_GO_DOWN, gtk.ICON_SIZE_BUTTON)
-        down_btn = gtk.Button()
-        down_btn.set_relief(gtk.RELIEF_NONE)
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_GO_DOWN, Gtk.IconSize.BUTTON)
+        down_btn = Gtk.Button()
+        down_btn.set_relief(Gtk.ReliefStyle.NONE)
         down_btn.add(image)
         down_btn.connect('clicked', self.__move_person, 'down')
-        hbox.pack_start(down_btn, expand=False, padding=3)
+        hbox.pack_start(down_btn, False, True, 3)
 
-        self.view = gtk.TreeView()
+        self.view = Gtk.TreeView()
         self.selection = self.view.get_selection()
         
-        scrollwin = gtk.ScrolledWindow()
+        scrollwin = Gtk.ScrolledWindow()
         scrollwin.add_with_viewport(self.view)
-        scrollwin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC, 
+                             Gtk.PolicyType.AUTOMATIC)
 
         #self.__create_table([_('Name')])
 
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_END)
+        button_box = Gtk.HButtonBox()
+        button_box.set_layout(Gtk.ButtonBoxStyle.END)
         
-        help_btn = gtk.Button(stock=gtk.STOCK_HELP)
+        help_btn = Gtk.Button(stock=Gtk.STOCK_HELP)
         help_btn.connect('clicked', self.help_clicked)
         button_box.add(help_btn)
         button_box.set_child_secondary(help_btn, True)
 
-        cancel_btn = gtk.Button(stock=gtk.STOCK_CANCEL)
+        cancel_btn = Gtk.Button(stock=Gtk.STOCK_CANCEL)
         cancel_btn.connect('clicked', self.close)
         button_box.add(cancel_btn)
         
-        ok_btn = gtk.Button(stock=gtk.STOCK_OK)
+        ok_btn = Gtk.Button(stock=Gtk.STOCK_OK)
         ok_btn.connect('clicked', self.save)
         button_box.add(ok_btn)
       
-        vbox.pack_start(tab, expand=False, padding=10)
-        vbox.pack_start(hbox, expand=False)
-        vbox.pack_start(scrollwin)
-        vbox.pack_end(button_box, expand=False, fill=True, padding=10)
+        vbox.pack_start(tab, False, True, 10)
+        vbox.pack_start(hbox, False, True, 0)
+        vbox.pack_start(scrollwin, True, True, 0)
+        vbox.pack_end(button_box, False, True, 10)
         
         root.add(vbox)
         root.show_all()
@@ -429,7 +432,7 @@ class CensusEditor(ManagedWindow):
 
     def __create_table(self, columns):
         self.columns = list(columns)
-        self.model = gtk.ListStore(*[str] * (len(columns) + 1))
+        self.model = Gtk.ListStore(*[str] * (len(columns) + 1))
         self.view.set_model(self.model)
         self.view.set_headers_visible(True)
         self.view.set_has_tooltip(True)
@@ -439,19 +442,19 @@ class CensusEditor(ManagedWindow):
             self.view.remove_column(column)
 
         for index, name in enumerate(columns):
-            renderer = gtk.CellRendererText()
+            renderer = Gtk.CellRendererText()
             renderer.set_property('editable', True)
             renderer.connect('edited', self.__cell_edited,
                                             (self.model, index + 1))
-            column = gtk.TreeViewColumn(name, renderer, text=index + 1)
+            column = Gtk.TreeViewColumn(name, renderer, text=index + 1)
             self.view.append_column(column)
         self.view.connect("row-activated", self.__edit_person)
 
     def on_query_tooltip(self, widget, x, y, keyboard_tip, tooltip):
-        if not widget.get_tooltip_context(x, y, keyboard_tip):
+        on_item, x_pos, y_pos, model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
+        if not on_item:
             return False
         else:
-            model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
             bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
             result = widget.get_path_at_pos(bin_x, bin_y)
     
@@ -598,12 +601,15 @@ class CensusEditor(ManagedWindow):
         if iter_ is None:
             return
             
-        row = model.get_path(iter_)[0]
-        if direction == 'up' and row > 0:
-            model.move_before(iter_, model.get_iter((row - 1,)))
+        if direction == 'up':
+			prev = model.iter_previous(iter_)
+			if prev:
+				model.move_before(iter_, prev)
             
-        if direction == 'down' and row < len(model) - 1:
-            model.move_after(iter_, model.get_iter((row + 1,)))
+        if direction == 'down':
+			next = model.iter_next(iter_)
+			if next:
+				model.move_after(iter_, next)
 
     def __census_changed(self, combo):
         """
@@ -630,17 +636,18 @@ class CensusEditor(ManagedWindow):
         self.__create_table(columns)
         self.__get_longnames(columns, report_columns)
         
-    def __cell_edited(self, cell, path, new_text, data):
+    def __cell_edited(self, cell, row, new_text, data):
         """
         Called when a cell is edited in the list of people.
         """
         model, column = data
-        model[path][column] = new_text
+        model[row][column] = new_text
 
         next_column = self.view.get_column(column)
         if next_column:
             # Setting start_editing=True causes problems if Tab key ends entry
-            self.view.set_cursor_on_cell(path, next_column, start_editing=False)
+            path = Gtk.TreePath(row)
+            self.view.set_cursor_on_cell(path, next_column, None, False)
             #self.view.grab_focus()
         
     def save(self, button):
