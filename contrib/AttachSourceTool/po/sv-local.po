@@ -92,7 +92,7 @@ msgstr "Arbetar...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:173
 msgid "Attaching sources...\n"
-msgstr "Kopplar källor...\"
+msgstr "Kopplar källor...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources..."
