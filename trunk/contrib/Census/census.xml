@@ -3101,7 +3101,7 @@
             <_attribute>State (Territory/Country)</_attribute>
             <size>25</size>
         </column>
-	<column>
+	    <column>
             <_attribute>On a Farm (Y/N)</_attribute>
             <size>1</size>
         </column>
