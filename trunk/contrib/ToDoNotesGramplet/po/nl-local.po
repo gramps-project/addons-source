@@ -1,0 +1,46 @@
+# Dutch translations for gramps package.
+# Copyright (C) 2012 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-09 19:33+0200\n"
+"PO-Revision-Date: 2012-10-09 19:36+0200\n"
+"Last-Translator:\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ToDoNotesGramplet/todonotesgramplet.gpr.py:8
+msgid "TODO2"
+msgstr "Nog te doen 2"
+
+#: ToDoNotesGramplet/todonotesgramplet.gpr.py:9
+msgid "Gramplet for generic notes"
+msgstr ""
+
+#: ToDoNotesGramplet/todonotesgramplet.gpr.py:16
+msgid "TODO List"
+msgstr "Nog te doen"
+
+#: ToDoNotesGramplet/todonotesgramplet.py:59
+msgid "Edit a TODO Note."
+msgstr ""
+
+#: ToDoNotesGramplet/todonotesgramplet.py:72
+msgid "Edit"
+msgstr ""
+
+#: ToDoNotesGramplet/todonotesgramplet.py:100
+msgid "ToDo"
+msgstr "Nog te doen"
+
+#: ToDoNotesGramplet/todonotesgramplet.py:106
+#, python-format
+msgid "%(current)d of %(total)d"
+msgstr ""
