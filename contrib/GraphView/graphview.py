@@ -34,9 +34,9 @@
 import os
 import sys
 from xml.parsers.expat import ExpatError, ParserCreate
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
-import gtk
+from gi.repository import Gtk, Gdk, GdkPixbuf 
 import string
 from subprocess import Popen, PIPE
 from cStringIO import StringIO
@@ -46,15 +46,15 @@ from cStringIO import StringIO
 # Gramps Modules
 #
 #-------------------------------------------------------------------------
-import gen.lib
-from gui.views.navigationview import NavigationView
-from gui.views.bookmarks import PersonBookmarks
-from gen.display.name import displayer
-from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-from gui.thumbnails import get_thumbnail_path
-from gen.utils.file import search_for, media_path_full, find_file
-from gui.editors import EditPerson, EditFamily
-from gen.errors import WindowActiveError
+import gramps.gen.lib
+from gramps.gui.views.navigationview import NavigationView
+from gramps.gui.views.bookmarks import PersonBookmarks
+from gramps.gen.display.name import displayer
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+from gramps.gui.thumbnails import get_thumbnail_path
+from gramps.gen.utils.file import search_for, media_path_full, find_file
+from gramps.gui.editors import EditPerson, EditFamily
+from gramps.gen.errors import WindowActiveError
 
 try:
     import cairo
@@ -62,9 +62,9 @@ except ImportError:
     raise Exception("Cairo (http://www.cairographics.org) is required "
                     "for this view to work")
 try:
-    import goocanvas
+    from gi.repository import GooCanvas
 except ImportError:
-    raise Exception("pyGoocanvas (http://live.gnome.org/PyGoocanvas) is "
+    raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
                     "required for this view to work")
 
 if os.sys.platform == "win32":
@@ -256,7 +256,7 @@ class GraphView(NavigationView):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = gtk.Table(2, 2)
+        table = Gtk.Table(2, 2)
         table.set_border_width(12)
         table.set_col_spacings(6)
         table.set_row_spacings(6)
@@ -274,7 +274,7 @@ class GraphView(NavigationView):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = gtk.Table(2, 2)
+        table = Gtk.Table(2, 2)
         table.set_border_width(12)
         table.set_col_spacings(6)
         table.set_row_spacings(6)
@@ -304,25 +304,25 @@ class GraphWidget(object):
         self.uistate = uistate
         self.active_person_handle = None
 
-        scrolled_win = gtk.ScrolledWindow()
-        scrolled_win.set_shadow_type(gtk.SHADOW_IN)
+        scrolled_win = Gtk.ScrolledWindow()
+        scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
 
-        self.canvas = goocanvas.Canvas()
-        self.canvas.props.units = gtk.UNIT_POINTS
+        self.canvas = GooCanvas.Canvas()
+        self.canvas.props.units = Gtk.Unit.POINTS
         self.canvas.props.resolution_x = 72
         self.canvas.props.resolution_y = 72
 
         scrolled_win.add(self.canvas)
 
-        self.vbox = gtk.VBox(False, 4)
+        self.vbox = Gtk.VBox(False, 4)
         self.vbox.set_border_width (4)
-        hbox = gtk.HBox(False, 4)
+        hbox = Gtk.HBox(False, 4)
         self.vbox.pack_start(hbox, False, False, 0)
-        zoom_label = gtk.Label("Zoom:")
+        zoom_label = Gtk.Label(label="Zoom:")
         hbox.pack_start (zoom_label, False, False, 0)
 
-        adj = gtk.Adjustment (1.00, 0.05, 10.00, 0.05, 0.50, 0.50)
-        scale = gtk.HScale(adj)
+        adj = Gtk.Adjustment (1.00, 0.05, 10.00, 0.05, 0.50, 0.50)
+        scale = Gtk.HScale(adjustment=adj)
         adj.connect("value_changed", self.zoom_changed)
         hbox.pack_start(scale, True, True, 0)
         self.vbox.pack_start(scrolled_win, True, True, 0)
@@ -346,7 +346,7 @@ class GraphWidget(object):
         # The scroll_to method will try and put the active person in the top
         # left part of the screen. We want it in the middle, so make an offset
         # half the width of the scrolled window size.
-        h_offset = window.get_hadjustment().page_size / 2
+        h_offset = window.get_hadjustment().get_page_size() / 2
 
         # Apply the scaling factor so the offset is adjusted to the scale
         h_offset = h_offset / self.canvas.get_scale()
@@ -363,7 +363,7 @@ class GraphWidget(object):
         """
         Clear the graph by creating a new root item
         """
-        self.canvas.set_root_item(goocanvas.Group())
+        self.canvas.set_root_item(GooCanvas.CanvasGroup())
 
     def get_widget(self):
         """
@@ -376,9 +376,11 @@ class GraphWidget(object):
         Enter in scroll mode when mouse button pressed in background
         or call option menu.
         """
-        if event.button == 1 and event.type == gtk.gdk.BUTTON_PRESS \
+        button = event.get_button()[1]
+        if button == 1 and event.type == Gdk.EventType.BUTTON_PRESS \
             and item == self.canvas.get_root_item():
-            self.canvas.window.set_cursor(gtk.gdk.Cursor(gtk.gdk.FLEUR))
+            window = self.canvas.get_parent().get_window()
+            window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
             self._last_x = event.x_root
             self._last_y = event.y_root
             self._in_move = True
@@ -387,31 +389,33 @@ class GraphWidget(object):
 
     def button_release(self, item, target, event):
         """Exit from scroll mode when button release."""
-        if event.button == 1 and event.type == gtk.gdk.BUTTON_RELEASE:
+        button = event.get_button()[1]
+        if button == 1 and event.type == Gdk.EventType.BUTTON_RELEASE:
             self.motion_notify_event(item, target, event)
-            self.canvas.window.set_cursor(None)
+            self.canvas.get_parent().get_window().set_cursor(None)
             self._in_move = False
             return True
         return False
 
     def motion_notify_event(self, item, target, event):
         """Function for motion notify events for drag and scroll mode."""
-        if self._in_move and (event.type == gtk.gdk.MOTION_NOTIFY or \
-           event.type == gtk.gdk.BUTTON_RELEASE):
+        if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
+           event.type == Gdk.EventType.BUTTON_RELEASE):
             window = self.canvas.get_parent()
             hadjustment = window.get_hadjustment()
             vadjustment = window.get_vadjustment()
             self.update_scrollbar_positions(vadjustment,
-                vadjustment.value - (event.y_root - self._last_y))
+                vadjustment.get_value() - (event.y_root - self._last_y))
             self.update_scrollbar_positions(hadjustment,
-                hadjustment.value - (event.x_root - self._last_x))
+                hadjustment.get_value() - (event.x_root - self._last_x))
             return True
         return False
 
     def update_scrollbar_positions(self, adjustment, value):
         """Controle value then try setup in scrollbar."""
-        if value > (adjustment.upper - adjustment.page_size):
-            adjustment.set_value(adjustment.upper - adjustment.page_size)
+        if value > (adjustment.get_upper() - adjustment.get_page_size()):
+            adjustment.set_value(adjustment.get_upper() -
+                                 adjustment.get_page_size())
         else:
             adjustment.set_value(value)
         return True
@@ -420,18 +424,19 @@ class GraphWidget(object):
         """
         Zoom the canvas widget
         """
-        self.canvas.set_scale(adj.value)
+        self.canvas.set_scale(adj.get_value())
 
     def select_node(self, item, target, event):
         """
         Perform actions when a node is clicked.
         """
-        handle = item.get_data("handle")
-        node_class = item.get_data("class")
+        handle = item.title
+        node_class = item.description
+        button = event.get_button()[1]
 
-        if event.type != gtk.gdk.BUTTON_PRESS:
-            pass
-        if event.button == 1 and node_class == 'node': # Left mouse
+        if event.type != Gdk.EventType.BUTTON_PRESS:
+            return False
+        if button == 1 and node_class == 'node': # Left mouse
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
                 # the active person, if no parents then leave as the current
@@ -442,10 +447,10 @@ class GraphWidget(object):
 
             # Redraw the graph based on the selected person
             self.view.change_active(handle)
-        elif event.button == 3 and node_class == 'node': # Right mouse
+        elif button == 3 and node_class == 'node': # Right mouse
             if handle:
                 self.edit_person(handle)
-        elif event.button == 3 and node_class == 'familynode': # Right mouse
+        elif button == 3 and node_class == 'familynode': # Right mouse
             if handle:
                 self.edit_family(handle)
 
@@ -498,7 +503,7 @@ class GraphWidget(object):
 #-------------------------------------------------------------------------
 class GraphvizSvgParser(object):
     """
-    Parses SVG produces by Graphviz and adds the elements to a goocanvas
+    Parses SVG produces by Graphviz and adds the elements to a GooCanvasanvas
     """
 
     def __init__(self, widget, view):
@@ -528,9 +533,9 @@ class GraphvizSvgParser(object):
             "ellipse": (self.start_ellipse, self.stop_ellipse), 
             "title": (self.start_title, self.stop_title), 
         }
-        self.text_anchor_map = {"start" : gtk.ANCHOR_WEST,
-                                "middle" : gtk.ANCHOR_CENTER,
-                                "end" : gtk.ANCHOR_EAST,}
+        self.text_anchor_map = {"start" : GooCanvas.CanvasAnchorType.WEST,
+                                "middle" : GooCanvas.CanvasAnchorType.CENTER,
+                                "end" : GooCanvas.CanvasAnchorType.EAST,}
         # This list is used as a LIFO stack so that the SAX parser knows
         # which Goocanvas object to link the next object to.
         self.item_hier = [] 
@@ -564,9 +569,9 @@ class GraphvizSvgParser(object):
         """
         Parse <g> tags.
         """
-        item = goocanvas.Group(parent = self.current_parent())
-        item.set_data('class', attrs.get('class'))
-        self.item_hier.append(item)
+        #item = GooCanvas.CanvasGroup(parent = self.current_parent())
+        #item.description = attrs.get('class')
+        #self.item_hier.append(item)
         # The class attribute defines the group type. There should be one
         # graph type <g> tag which defines the transform for the whole graph.
         if attrs.get('class') == 'graph':
@@ -576,28 +581,31 @@ class GraphvizSvgParser(object):
             scale = transform_list[0].split()
             scale_x = float(scale[0].lstrip('scale('))
             scale_y = float(scale[1])
-            bounds = self.canvas.get_bounds()
-            c_transform = \
-                cairo.Matrix(scale_x, 0, 0, scale_y, bounds[1], bounds[3])
-            item.set_transform(c_transform)
+            item.set_simple_transform(self.bounds[1],
+                                      self.bounds[3],
+                                      scale_x,
+                                      0)
             item.connect("button-press-event", self.widget.button_press)
             item.connect("button-release-event", self.widget.button_release)
             item.connect("motion-notify-event", self.widget.motion_notify_event)
         else:
+            item = GooCanvas.CanvasGroup(parent = self.current_parent())
             item.connect("button-press-event", self.widget.select_node)
+        item.description = attrs.get('class')
+        self.item_hier.append(item)
 
     def stop_g(self, tag):
         """
         Parse </g> tags
         """
         item = self.item_hier.pop()
-        item.set_data('handle', self.handle)
+        item.title = self.handle
 
     def start_svg(self, attrs):
         """
         Parse <svg> tags.
         """
-        item = goocanvas.Group(parent = self.current_parent())
+        item = GooCanvas.CanvasGroup(parent = self.current_parent())
 
         view_box = attrs.get('viewBox').split()
         v_left = float(view_box[0])
@@ -605,6 +613,7 @@ class GraphvizSvgParser(object):
         v_right = float(view_box[2])
         v_bottom = float(view_box[3])
         self.canvas.set_bounds(v_left, v_top, v_right, v_bottom)
+        self.bounds = (v_left, v_top, v_right, v_bottom)
 
     def stop_svg(self, tag):
         """
@@ -631,7 +640,16 @@ class GraphvizSvgParser(object):
         Parse <polygon> tags. Polygons define the boxes around individuals on
         the graph.
         """
-        points = goocanvas.Points(self.parse_points(attrs.get('points')))
+        coord_string = attrs.get('points')
+        coord_count = 5
+        points = GooCanvas.CanvasPoints.new(coord_count)
+        n = 0
+        for i in coord_string.split():
+            coord = i.split(",")
+            coord_x = float(coord[0])
+            coord_y = float(coord[1])
+            points.set_point(n, coord_x, coord_y)
+            n += 1
         style = attrs.get('style')
 
         if style:
@@ -653,13 +671,14 @@ class GraphvizSvgParser(object):
             if home_person and home_person.handle == self.handle:
                 fill_color = self.home_person_color
 
-        item = goocanvas.Polyline(parent = self.current_parent(),
-                                  points = points,
-                                  close_path = True,
-                                  fill_color = fill_color,
-                                  line_width = line_width,
-                                  stroke_color = stroke_color)
+        item = GooCanvas.CanvasPolyline(parent = self.current_parent(),
+                                        points = points,
+                                        close_path = True,
+                                        fill_color = fill_color,
+                                        line_width = line_width,
+                                        stroke_color = stroke_color)
         self.item_hier.append(item)
+
 
     def stop_polygon(self, tag):
         """
@@ -685,15 +704,15 @@ class GraphvizSvgParser(object):
             stroke_color = attrs.get('stroke')
             fill_color = attrs.get('fill')
 
-        item = goocanvas.Ellipse(parent = self.current_parent(),
-                                 center_x = center_x,
-                                 center_y = center_y,
-                                 radius_x = radius_x,
-                                 radius_y = radius_y,
-                                 fill_color = fill_color,
-                                 stroke_color = stroke_color,
-                                 line_width = 1)
-        self.current_parent().set_data('class', 'familynode')
+        item = GooCanvas.CanvasEllipse(parent = self.current_parent(),
+                                       center_x = center_x,
+                                       center_y = center_y,
+                                       radius_x = radius_x,
+                                       radius_y = radius_y,
+                                       fill_color = fill_color,
+                                       stroke_color = stroke_color,
+                                       line_width = 1)
+        self.current_parent().description = 'familynode'
         self.item_hier.append(item)
 
     def stop_ellipse(self, tag):
@@ -723,16 +742,16 @@ class GraphvizSvgParser(object):
                 is_dashed = False
         
         if is_dashed:
-            item = goocanvas.Path(parent = self.current_parent(),
-                                  data = p_data,
-                                  stroke_color = stroke_color,
-                                  line_width = 1,
-                                  line_dash = goocanvas.LineDash([5.0, 5.0]))
+            item = GooCanvas.CanvasPath(parent = self.current_parent(),
+                                        data = p_data,
+                                        stroke_color = stroke_color,
+                                        line_width = 1,
+                                        line_dash = GooCanvas.CanvasLineDash([5.0, 5.0]))
         else:
-            item = goocanvas.Path(parent = self.current_parent(),
-                                  data = p_data,
-                                  stroke_color = stroke_color,
-                                  line_width = 1)
+            item = GooCanvas.CanvasPath(parent = self.current_parent(),
+                                        data = p_data,
+                                        stroke_color = stroke_color,
+                                        line_width = 1)
       
         self.item_hier.append(item)
 
@@ -769,13 +788,13 @@ class GraphvizSvgParser(object):
             font_size = self.text_attrs.get('font-size')
             text_font = font_family + " " + font_size
 
-        item = goocanvas.Text(parent = self.current_parent(),
-                              text = tag,
-                              x = pos_x,
-                              y = pos_y,
-                              anchor = self.text_anchor_map[anchor],
-                              use_markup = True,
-                              font = text_font)
+        item = GooCanvas.CanvasText(parent = self.current_parent(),
+                                    text = tag,
+                                    x = pos_x,
+                                    y = pos_y,
+                                    anchor = self.text_anchor_map[anchor],
+                                    use_markup = True,
+                                    font = text_font)
 
         # Retain the active person for other use elsewhere
         if self.handle == self.widget.active_person_handle:
@@ -789,13 +808,13 @@ class GraphvizSvgParser(object):
         pos_y = float(attrs.get('y'))
         width = int(attrs.get('width').encode('utf-8').rstrip(string.letters))
         height = int(attrs.get('height').encode('utf-8').rstrip(string.letters))
-        pixbuf = gtk.gdk.pixbuf_new_from_file(attrs.get('xlink:href'))
-        item = goocanvas.Image(parent = self.current_parent(),
-                               x = pos_x,
-                               y = pos_y,
-                               height = height,
-                               width = width,
-                               pixbuf = pixbuf)
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(attrs.get('xlink:href'))
+        item = GooCanvas.CanvasImage(parent = self.current_parent(),
+                                     x = pos_x,
+                                     y = pos_y,
+                                     height = height,
+                                     width = width,
+                                     pixbuf = pixbuf)
         self.item_hier.append(item)
 
     def stop_image(self, tag):
@@ -849,12 +868,6 @@ class GraphvizSvgParser(object):
         """
         style = style.rstrip(';')
         return dict([i.split(':') for i in style.split(';')])
-
-    def parse_points(self, points):
-        """
-        Parse points attributes
-        """
-        return [tuple(float(j) for j in i.split(",")) for i in points.split()]
 
     def get_active_person_x(self):
         """
@@ -1023,12 +1036,12 @@ class DotGenerator(object):
     def add_family_link(self, p_id, family, frel, mrel):
         "Links the child to a family"
         style = 'solid'
-        adopted = ((int(frel) != gen.lib.ChildRefType.BIRTH) or
-                   (int(mrel) != gen.lib.ChildRefType.BIRTH))
+        adopted = ((int(frel) != gramps.gen.lib.ChildRefType.BIRTH) or
+                   (int(mrel) != gramps.gen.lib.ChildRefType.BIRTH))
         # If birth relation to father is NONE, meaning there is no father and
         # if birth relation to mother is BIRTH then solid line
-        if ((int(frel) == gen.lib.ChildRefType.NONE) and
-           (int(mrel) == gen.lib.ChildRefType.BIRTH)):
+        if ((int(frel) == gramps.gen.lib.ChildRefType.NONE) and
+           (int(mrel) == gramps.gen.lib.ChildRefType.BIRTH)):
             adopted = False
         if adopted:
             style = 'dotted'
@@ -1038,7 +1051,7 @@ class DotGenerator(object):
     def add_parent_link(self, p_id, parent_handle, rel):
         "Links the child to a parent"
         style = 'solid'
-        if (int(rel) != gen.lib.ChildRefType.BIRTH):
+        if (int(rel) != gramps.gen.lib.ChildRefType.BIRTH):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle )
@@ -1075,9 +1088,9 @@ class DotGenerator(object):
         label = ""
         for event_ref in fam.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
-            if event.type == gen.lib.EventType.MARRIAGE and \
-            (event_ref.get_role() == gen.lib.EventRoleType.FAMILY or 
-            event_ref.get_role() == gen.lib.EventRoleType.PRIMARY ):
+            if event.type == gramps.gen.lib.EventType.MARRIAGE and \
+            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or 
+            event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY ):
                 label = self.get_event_string(event)
                 break
         color = ""
