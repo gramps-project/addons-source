@@ -79,6 +79,10 @@ elif sys.platform == 'linux2' or os.name == 'darwin':
     rmCmd = 'rm'
     tarCmd = 'tar'
     
+else:
+    print ("ERROR: unknown system, don't know msgmerge, ... commands")
+    sys.exit(0)
+    
 GNU = [sedCmd, mkdirCmd, rmCmd, tarCmd]
     
 
@@ -332,16 +336,7 @@ def xml():
     
     tree = ElementTree.parse('census.xml')
     root = tree.getroot()
-
-    python_v = sys.version_info
-    
-    #if python_v[1] != 6:    
-    
-    # python 2.7
-    # iter() is the new name for getiterator; 
-    # in ET 1.3, it is implemented as a generator method,
-    # but is otherwise identical
-        
+       
     '''
     <?xml version="1.0" encoding="UTF-8"?>
     <censuses>
@@ -369,7 +364,7 @@ def xml():
     
     catalog = open('xml.h', 'w')
     
-    for key in root.getiterator('_attribute'):
+    for key in root.iter('_attribute'):
         catalog.write('char *s = N_("%s");\n' % key.text)
         
     catalog.close()
