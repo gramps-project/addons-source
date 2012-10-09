@@ -103,14 +103,14 @@ class TODONotesGramplet(Gramplet):
         nlist = self.dbstate.db.get_note_handles()
         FilterClass = GenericFilterFactory('Note')
         filter = FilterClass()
-        filter.add_rule(rules.note.HasTag(["ToDo"]))
+        filter.add_rule(rules.note.HasTag([_("ToDo")]))
         notes_list = filter.apply(self.dbstate.db, nlist)
         if len(notes_list) == 0:
             self.create_note()
             return
         else:
-            self.page.set_text(_('%d of %d') % (self.current + 1,
-                                                len(notes_list)))
+            self.page.set_text(_('%(current)d of %(total)d') % {'current':self.current + 1,
+                                                'total':len(notes_list)})
             # more than 1 Note; enable navigation
             if len(notes_list) > 1 :
                 self.left.set_sensitive(True)
