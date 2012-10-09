@@ -2356,6 +2356,10 @@
             <size>1</size>
         </column>
         <column>
+            <_attribute>Mother of foreign birth</_attribute>
+            <size>1</size>
+         </column>
+         <column>
             <_attribute>Month, if born within the year</_attribute>
             <size>10</size>
         </column>
@@ -2820,7 +2824,7 @@
             <size>1</size>
         </column>
     </census>
-    <census id="US1920" title="1920 US Census" date="1920-01-05">
+    <census id="US1920" title="1920 US Census" date="1920-01-01">
         <column>
             <_attribute>Name</_attribute>
             <size>25</size>
