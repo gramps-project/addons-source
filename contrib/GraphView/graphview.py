@@ -306,6 +306,8 @@ class GraphWidget(object):
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
+        self.hadjustment = scrolled_win.get_hadjustment()
+        self.vadjustment = scrolled_win.get_vadjustment()
 
         self.canvas = GooCanvas.Canvas()
         self.canvas.props.units = Gtk.Unit.POINTS
@@ -346,7 +348,7 @@ class GraphWidget(object):
         # The scroll_to method will try and put the active person in the top
         # left part of the screen. We want it in the middle, so make an offset
         # half the width of the scrolled window size.
-        h_offset = window.get_hadjustment().get_page_size() / 2
+        h_offset = self.hadjustment.get_page_size() / 2
 
         # Apply the scaling factor so the offset is adjusted to the scale
         h_offset = h_offset / self.canvas.get_scale()
@@ -401,24 +403,13 @@ class GraphWidget(object):
         """Function for motion notify events for drag and scroll mode."""
         if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
            event.type == Gdk.EventType.BUTTON_RELEASE):
-            window = self.canvas.get_parent()
-            hadjustment = window.get_hadjustment()
-            vadjustment = window.get_vadjustment()
-            self.update_scrollbar_positions(vadjustment,
-                vadjustment.get_value() - (event.y_root - self._last_y))
-            self.update_scrollbar_positions(hadjustment,
-                hadjustment.get_value() - (event.x_root - self._last_x))
+            new_x = self.hadjustment.get_value() - (event.x_root - self._last_x)
+            self.hadjustment.set_value(new_x)
+
+            new_y = self.vadjustment.get_value() - (event.y_root - self._last_y)
+            self.vadjustment.set_value(new_y)
             return True
         return False
-
-    def update_scrollbar_positions(self, adjustment, value):
-        """Controle value then try setup in scrollbar."""
-        if value > (adjustment.get_upper() - adjustment.get_page_size()):
-            adjustment.set_value(adjustment.get_upper() -
-                                 adjustment.get_page_size())
-        else:
-            adjustment.set_value(value)
-        return True
 
     def zoom_changed(self, adj):
         """
