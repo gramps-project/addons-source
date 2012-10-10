@@ -520,8 +520,7 @@ class GraphvizSvgParser(object):
                                  'interface.graphview-home-person-color')
         self.tlist = []
         self.text_attrs = None
-        self.func_list = [None]*50
-        self.func_index = 0
+        self.func_list = []
         self.handle = None
         self.func_map = {
             "g": (self.start_g, self.stop_g), 
@@ -827,8 +826,7 @@ class GraphvizSvgParser(object):
         """
         Generic parsing function for opening tags.
         """
-        self.func_list[self.func_index] = (self.func, self.tlist)
-        self.func_index += 1
+        self.func_list.append((self.func, self.tlist))
         self.tlist = []
 
         try:
@@ -845,8 +843,7 @@ class GraphvizSvgParser(object):
         """
         if self.func:
             self.func(''.join(self.tlist))
-        self.func_index -= 1    
-        self.func, self.tlist = self.func_list[self.func_index]
+        self.func, self.tlist = self.func_list.pop()
         
     def characters(self, data):
         """
