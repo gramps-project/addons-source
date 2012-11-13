@@ -361,15 +361,15 @@ msgstr "Sélectionner un fichier"
 
 #: PlaceCompletion/placecompletion.glade.h:16
 msgid "Parse as:"
-msgstr "Parser comme :"
+msgstr "Analyser comme :"
 
 #: PlaceCompletion/placecompletion.glade.h:17
 msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
-msgstr "<b>2. Parsage et conversion d'un titre ou partie existant(e) :</b>"
+msgstr "<b>2. Analyse et conversion d'un titre ou partie existant(e) :</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:18
 msgid "Parse title:"
-msgstr "Parsage du titre :"
+msgstr "Analyse du titre :"
 
 #: PlaceCompletion/placecompletion.glade.h:19
 msgid "Change title into:"
