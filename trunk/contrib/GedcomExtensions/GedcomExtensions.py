@@ -25,15 +25,15 @@
 Extends GedcomWriter to include common non-compliant GEDCOM additions.
 """
 
-from exportgedcom import GedcomWriter
-from gui.plug.export import WriterOptionBox
+from gramps.plugins.export import exportgedcom
+from gramps.gui.plug.export import WriterOptionBox
 
-class GedcomWriterExtension(GedcomWriter):
+class GedcomWriterExtension(exportgedcom.GedcomWriter):
     """
     GedcomWriter Extensions.
     """
     def __int__(self, database, user, option_box=None):
-        super(GedcomWriterExtension, self).__init__(database, user, option_box)
+        super(exportgedcom.GedcomWriterExtension, self).__init__(database, user, option_box)
         if option_box:
             # Already parsed in GedcomWriter
             self.include_witnesses = self.option_box.include_witnesses
@@ -45,7 +45,7 @@ class GedcomWriterExtension(GedcomWriter):
         Write the witnesses associated with the family event. 
         based on http://www.geneanet.org/forum/index.php?topic=432352.0&lang=fr
         """
-        super(GedcomWriterExtension, self)._process_family_event(event, 
+        super(exportgedcom.GedcomWriterExtension, self)._process_family_event(event, 
                                                                  event_ref)
         if self.include_witnesses:
             for (objclass, handle) in self.dbase.find_backlink_handles(
