@@ -8,7 +8,7 @@ register(GRAMPLET,
 	fname="BirthdaysGramplet.py",
 	height = 200,
 	gramplet = 'BirthdaysGramplet',
-	gramps_target_version = "3.5",
+	gramps_target_version = "4.0",
 	gramplet_title = _("Birthdays Gramplet"),
 	help_url = "BirthdaysGramplet",
 	)
