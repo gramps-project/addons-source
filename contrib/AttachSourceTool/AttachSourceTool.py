@@ -35,15 +35,15 @@ import time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gui.plug.tool import Tool
-from gui.plug import MenuToolOptions, PluginWindows
-from gen.plug.menu import StringOption, FilterOption, PersonOption, \
+from gramps.gui.plug.tool import Tool
+from gramps.gui.plug import MenuToolOptions, PluginWindows
+from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
-import gen.lib
-from gen.db import DbTxn
-import gen.plug.report.utils as ReportUtils
-from gen.display.name import displayer as name_displayer
-from gen.utils.trans import get_addon_translator
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
+import gramps.gen.plug.report.utils as ReportUtils
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------

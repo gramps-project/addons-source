@@ -16,16 +16,16 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from gen.plug import Gramplet
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gen.display.name import displayer as name_displayer
-from gen.lib.date import Today, Date
-import gen.datehandler
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.lib.date import Today, Date
+import gramps.gen.datehandler
 import time
 import datetime
 import posixpath
-from gen.config import config
+from gramps.gen.config import config
 
 """
 This Gramplet displays the incoming birthdays.
@@ -75,7 +75,7 @@ class BirthdaysGramplet(Gramplet):
 		self.clear_text()
 		for diff, age, date, person in result:
 			name = person.get_primary_name()
-			self.append_text("%s: " % gen.datehandler.displayer.display(date))
+			self.append_text("%s: " % gramps.gen.datehandler.displayer.display(date))
 			self.link(name_displayer.display_name(name), "Person", person.handle)
 			self.append_text(" (%s)\n" % age)
 		self.append_text("", scroll_to="begin")
