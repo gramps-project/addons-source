@@ -26,14 +26,14 @@
 # Gramps modules
 #
 #------------------------------------------------------------------------
-import gen.datehandler
-from gen.display.name import displayer as name_displayer
-from gen.lib import EventType
-from gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
+import gramps.gen.datehandler
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.lib import EventType
+from gramps.gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                              TableCellStyle, FONT_SANS_SERIF, INDEX_TYPE_TOC,
                              PARA_ALIGN_CENTER)
-from gen.plug.report import Report, MenuReportOptions
+from gramps.gen.plug.report import Report, MenuReportOptions
 from Census import ORDER_ATTR
 from Census import (get_census_ids, get_census_id, get_census_columns,
                     get_report_columns, get_census_citation,
@@ -44,7 +44,7 @@ from Census import (get_census_ids, get_census_id, get_census_columns,
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------

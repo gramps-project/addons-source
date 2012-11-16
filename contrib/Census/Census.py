@@ -35,14 +35,14 @@ import xml.dom.minidom
 # Gramps imports
 #
 #---------------------------------------------------------------
-import gen.datehandler
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
