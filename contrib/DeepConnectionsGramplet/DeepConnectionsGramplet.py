@@ -26,18 +26,18 @@
 # Python modules
 #
 #------------------------------------------------------------------------
-import gtk
+from gi.repository import Gtk
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.relationship import get_relationship_calculator
-from gen.lib import EventType, FamilyRelType
-from gen.display.name import displayer as name_displayer
-from gen.plug import Gramplet
-from gen.utils.trans import get_addon_translator
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.lib import EventType, FamilyRelType
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 
 #------------------------------------------------------------------------
@@ -56,20 +56,20 @@ class DeepConnectionsGramplet(Gramplet):
         self.set_text(_("No Family Tree loaded."))
         self.set_use_markup(True)
         self.gui.get_container_widget().remove(self.gui.textview)
-        vbox = gtk.VBox()
-        hbox = gtk.HBox()
-        pause_button = gtk.Button(_("Pause"))
+        vbox = Gtk.VBox()
+        hbox = Gtk.HBox()
+        pause_button = Gtk.Button(_("Pause"))
         pause_button.connect("clicked", self.interrupt)
-        continue_button = gtk.Button(_("Continue"))
+        continue_button = Gtk.Button(_("Continue"))
         continue_button.connect("clicked", self.resume)
-        copy_button = gtk.Button(_("Copy"))
+        copy_button = Gtk.Button(_("Copy"))
         copy_button.connect("clicked", lambda widget: \
               self.gui.pane.pageview.copy_to_clipboard('Person', self.selected_handles))
-        hbox.pack_start(pause_button, True)
-        hbox.pack_start(copy_button, True)
-        hbox.pack_start(continue_button, True)
-        vbox.pack_start(self.gui.textview, True)
-        vbox.pack_start(hbox, False)
+        hbox.pack_start(pause_button, '', '', True)
+        hbox.pack_start(copy_button, '', '', True)
+        hbox.pack_start(continue_button, '', '', True)
+        vbox.pack_start(self.gui.textview, '', '', True)
+        vbox.pack_start(hbox, '', '', False)
         self.gui.get_container_widget().add_with_viewport(vbox)
         vbox.show_all()
 
