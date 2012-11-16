@@ -26,10 +26,9 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.ggettext import sgettext as _
-import gen.lib
-from gen.errors import MergeError
-from gui.plug import tool
+import gramps.gen.lib
+from gramps.gen.errors import MergeError
+from gramps.gui.plug import tool
 
 #------------------------------------------------------------------------
 #
@@ -67,32 +66,32 @@ class CliMerge(tool.Tool):
 
 
         if obj_type == 'Person':
-            from gen.merge.mergeperson import MergePersonQuery
+            from gramps.gen.merge.mergeperson import MergePersonQuery
             query = MergePersonQuery(database, primary, secondary)
         elif obj_type == 'Family':
             # TODO make sure father_handle is in phoenix or titanic
             father_handle = self.options.handler.options_dict['father_h']
             mother_handle = self.options.handler.options_dict['mother_h']
-            from gen.merge.mergefamily import MergeFamilyQuery
+            from gramps.gen.merge.mergefamily import MergeFamilyQuery
             query = MergeFamilyQuery(database, primary, secondary,
                                      father_handle, mother_handle)
         elif obj_type == 'Event':
-            from gen.merge.mergeevent import MergeEventQuery
+            from gramps.gen.merge.mergeevent import MergeEventQuery
             query = MergeEventQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Place':
-            from gen.merge.mergeplace import MergePlaceQuery
+            from gramps.gen.merge.mergeplace import MergePlaceQuery
             query = MergePlaceQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Source':
-            from gen.merge.mergesource import MergeSourceQuery
+            from gramps.gen.merge.mergesource import MergeSourceQuery
             query = MergeSourceQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Repository':
-            from gen.merge.mergerepository import MergeRepoQuery
+            from gramps.gen.merge.mergerepository import MergeRepoQuery
             query = MergeRepoQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Media':
-            from gen.merge.mergemedia import MergeMediaQuery
+            from gramps.gen.merge.mergemedia import MergeMediaQuery
             query = MergeMediaQuery(self.dbstate, primary, secondary)
         elif obj_type == 'Note':
-            from gen.merge.mergenote import MergeNoteQuery
+            from gramps.gen.merge.mergenote import MergeNoteQuery
             query = MergeNoteQuery(self.dbstate, primary, secondary)
         else:
             raise MergeError(("Merge for %s not implemented.") % \
