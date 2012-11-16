@@ -41,15 +41,15 @@ import gettext
 #
 #-------------------------------------------------------------------------
 
-from gen.const import USER_PLUGINS
-from gen.plug.menu import BooleanOption, EnumeratedListOption
-from gen.plug.report import Report
-import gen.plug.report.utils as ReportUtils
-from gen.plug.report import MenuReportOptions
-from libtranslate import get_language_string
-from gen.utils.trans import get_addon_translator
-import gen.proxy
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.const import USER_PLUGINS
+from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
+from gramps.gen.plug.report import Report
+import gramps.gen.plug.report.utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.plugins.lib.libtranslate import get_language_string
+from gramps.gen.utils.trans import get_addon_translator
+import gramps.gen.proxy
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
                              
@@ -71,6 +71,9 @@ def get_available_translations():
     languages = []
     
     if LOCALEDIR is None:
+        return languages
+        
+    if not os.path.exists(LOCALEDIR):
         return languages
 
     for langdir in os.listdir(LOCALEDIR):
@@ -184,7 +187,7 @@ class RepositoryReportAlt(Report):
         # identified as a major category if this is included in a Book report.
 
         if not self.inc_privat:
-            self.database = gen.proxy.PrivateProxyDb(self.database)
+            self.database = gramps.gen.proxy.PrivateProxyDb(self.database)
 
         title = self._('Repositories Report')
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
