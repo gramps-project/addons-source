@@ -30,25 +30,25 @@
 # gnome/gtk
 #
 #-------------------------------------------------------------------------
-import gobject
-import gtk
+from gi.repository import GObject
+from gi.repository import Gtk
 
 #-------------------------------------------------------------------------
 #
 # gramps modules
 #
 #-------------------------------------------------------------------------
-from gen.db import DbTxn
-from gen.const import URL_MANUAL_PAGE
-from gui.utils import ProgressMeter
-from gui.display import display_help
-from gui.managedwindow import ManagedWindow
+from gramps.gen.db import DbTxn
+from gramps.gen.const import URL_MANUAL_PAGE
+from gramps.gui.utils import ProgressMeter
+from gramps.gui.display import display_help
+from gramps.gui.managedwindow import ManagedWindow
 
-from gui.dialog import OkDialog
-from gui.plug import tool
-from TransUtils import get_addon_translator
+from gramps.gui.dialog import OkDialog
+from gramps.gui.plug import tool
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gui.glade import Glade
+from gramps.gui.glade import Glade
 
 #-------------------------------------------------------------------------
 #
@@ -88,7 +88,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         self.cb = callback
         
         ManagedWindow.__init__(self,uistate,[],self.__class__)
-        self.set_window(gtk.Window(),gtk.Label(),'')
+        self.set_window(Gtk.Window(),Gtk.Label(),'')
 
         tool.BatchTool.__init__(self, dbstate, options_class, name)
         if self.fail:
@@ -131,6 +131,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
     def display(self):
 
+        # TO_FIX: see bug #5732
         self.top = Glade("changenames.glade")
         window = self.top.toplevel
         self.top.connect_signals({
@@ -145,25 +146,25 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         self.set_window(window,self.top.get_object('title'),self.label)
 
         # selected, original name, changed, count
-        self.model = gtk.ListStore(gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, 
-                                   gobject.TYPE_STRING, gobject.TYPE_INT)
+        self.model = Gtk.ListStore(GObject.TYPE_BOOLEAN, GObject.TYPE_STRING, 
+                                   GObject.TYPE_STRING, GObject.TYPE_INT)
         self.handles = {}
 
-        r = gtk.CellRendererToggle()
+        r = Gtk.CellRendererToggle()
         r.connect('toggled',self.toggled)
-        c = gtk.TreeViewColumn(_('Select'),r,active=0)
+        c = Gtk.TreeViewColumn(_('Select'),r,active=0)
         self.list.append_column(c)
 
-        c = gtk.TreeViewColumn(_('Original Name'),
-                               gtk.CellRendererText(),text=1)
+        c = Gtk.TreeViewColumn(_('Original Name'),
+                               Gtk.CellRendererText(),text=1)
         self.list.append_column(c)
 
-        c = gtk.TreeViewColumn(_('Capitalization Change'),
-                               gtk.CellRendererText(),text=2)
+        c = Gtk.TreeViewColumn(_('Capitalization Change'),
+                               Gtk.CellRendererText(),text=2)
         self.list.append_column(c)
 
-        c = gtk.TreeViewColumn(_('Affected Names'),
-                               gtk.CellRendererText(),text=3)
+        c = Gtk.TreeViewColumn(_('Affected Names'),
+                               Gtk.CellRendererText(),text=3)
         self.list.append_column(c)
 
         self.list.set_model(self.model)
