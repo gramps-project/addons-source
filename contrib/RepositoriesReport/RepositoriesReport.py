@@ -30,13 +30,13 @@ Display Sources related to repositories
 #
 #-------------------------------------------------------------------------
 
-from gen.plug.report import Report
-from gen.plug.report import CATEGORY_TEXT
-from gen.plug.report import MenuReportOptions
-import gen.plug.report.utils as ReportUtils
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import CATEGORY_TEXT
+from gramps.gen.plug.report import MenuReportOptions
+import gramps.gen.plug.report.utils as ReportUtils
 
-from gen.utils.trans import get_addon_translator
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
