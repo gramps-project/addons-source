@@ -36,22 +36,22 @@ import time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gui.plug.tool import Tool
-from gui.plug import MenuToolOptions, PluginWindows
-from gen.plug.menu import BooleanOption, NumberOption, StringOption, \
+from gramps.gui.plug.tool import Tool
+from gramps.gui.plug import MenuToolOptions, PluginWindows
+from gramps.gen.plug.menu import BooleanOption, NumberOption, StringOption, \
                          FilterOption, PersonOption, EnumeratedListOption
-import gen.lib
-from gen.db import DbTxn
-from gen.config import config
-from gen.display.name import displayer as name_displayer
-import gen.plug.report.utils as ReportUtils
-from gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
-from gui.plug.quick import QuickTable, TextBufDoc
-from gui.dialog import QuestionDialog
-from gen.utils.id import create_id
-from gen.utils.alive import probably_alive_range
-import gen.datehandler
-from gen.utils.trans import get_addon_translator
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
+from gramps.gen.config import config
+from gramps.gen.display.name import displayer as name_displayer
+import gramps.gen.plug.report.utils as ReportUtils
+from gramps.gen.simple import make_basic_stylesheet, SimpleAccess, SimpleDoc
+from gramps.gui.plug.quick import QuickTable, TextBufDoc
+from gramps.gui.dialog import QuestionDialog
+from gramps.gen.utils.id import create_id
+from gramps.gen.utils.alive import probably_alive_range
+import gramps.gen.datehandler
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
@@ -214,7 +214,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
             if not self.reselect:
                 return
 
-        current_date = gen.lib.Date()
+        current_date = gramps.gen.lib.Date()
         current_date.set_yr_mon_day(*time.localtime(time.time())[0:3])
         self.action = {}
         widget = self.add_results_frame(_("Select"))
@@ -326,9 +326,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                             add_birth_event = True
                             date1.make_vague()
                         else:
-                            date1 = gen.lib.Date()
+                            date1 = gramps.gen.lib.Date()
                     else:
-                        date1 = gen.lib.Date()
+                        date1 = gramps.gen.lib.Date()
                     if death_ref:
                         ev = self.db.get_event_from_handle(death_ref.ref)
                         date2 = ev.get_date_object()
@@ -337,9 +337,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                             add_death_event = True
                             date2.make_vague()
                         else:
-                            date2 = gen.lib.Date()
+                            date2 = gramps.gen.lib.Date()
                     else:
-                        date2 = gen.lib.Date()
+                        date2 = gramps.gen.lib.Date()
                     # Describe
                     if add_birth_event and add_death_event: 
                         action = _("Add birth and death events")
@@ -352,9 +352,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     #stab.columns(_("Select"), _("Person"), _("Action"), 
                     # _("Birth Date"), _("Death Date"), _("Evidence"), _("Relative"))
                     if add_birth == 1 and not birth_ref: # no date
-                        date1 = gen.lib.Date()
+                        date1 = gramps.gen.lib.Date()
                     if add_death == 1 and not death_ref: # no date
-                        date2 = gen.lib.Date()
+                        date2 = gramps.gen.lib.Date()
                     if person == other:
                         other = None
                     stab.row("checkbox", 
@@ -452,9 +452,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                         explanation = _("Added birth event based on %s") % evidence
                     modifier = self.get_modifier("birth")
                     birth = self.create_event(_("Estimated birth date"), 
-                                              gen.lib.EventType.BIRTH, 
+                                              gramps.gen.lib.EventType.BIRTH, 
                                               date1, source, explanation, modifier)
-                    event_ref = gen.lib.EventRef()
+                    event_ref = gramps.gen.lib.EventRef()
                     event_ref.set_reference_handle(birth.get_handle())
                     person.set_birth_ref(event_ref)
                     pupdate = True
@@ -468,9 +468,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                         explanation = _("Added death event based on %s") % evidence
                     modifier = self.get_modifier("death")
                     death = self.create_event(_("Estimated death date"), 
-                                              gen.lib.EventType.DEATH, 
+                                              gramps.gen.lib.EventType.DEATH, 
                                               date2, source, explanation, modifier)
-                    event_ref = gen.lib.EventRef()
+                    event_ref = gramps.gen.lib.EventRef()
                     event_ref.set_reference_handle(death.get_handle())
                     person.set_death_ref(event_ref)
                     pupdate = True
@@ -489,14 +489,14 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         setting = self.options.handler.options_dict['dates']
         if event_type == "birth":
             if setting == 0:
-                return gen.lib.Date.MOD_ABOUT
+                return gramps.gen.lib.Date.MOD_ABOUT
             else:
-                return gen.lib.Date.MOD_AFTER
+                return gramps.gen.lib.Date.MOD_AFTER
         else:
             if setting == 0:
-                return gen.lib.Date.MOD_ABOUT
+                return gramps.gen.lib.Date.MOD_ABOUT
             else:
-                return gen.lib.Date.MOD_BEFORE
+                return gramps.gen.lib.Date.MOD_BEFORE
 
     def get_or_create_source(self, source_text):
         source_list = self.db.get_source_handles()
@@ -504,7 +504,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
             source = self.db.get_source_from_handle(source_handle)
             if source.get_title() == source_text:
                 return source
-        source = gen.lib.Source()
+        source = gramps.gen.lib.Source()
         source.set_title(source_text)
         self.db.add_source(source, self.trans)
         return source
@@ -512,24 +512,24 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
     def create_event(self, description=_("Estimated date"), 
                      type=None, date=None, source=None, 
                      note_text="", modifier=None):
-        event = gen.lib.Event()
+        event = gramps.gen.lib.Event()
         event.set_description(description)
-        note = gen.lib.Note()
+        note = gramps.gen.lib.Note()
         note.handle = create_id()
-        note.type.set(gen.lib.NoteType.EVENT)
+        note.type.set(gramps.gen.lib.NoteType.EVENT)
         note.set(note_text)
         self.db.add_note(note, self.trans)
         event.add_note(note.handle)
         if type:
-            event.set_type(gen.lib.EventType(type))
+            event.set_type(gramps.gen.lib.EventType(type))
         if date:
             if modifier:
                 date.set_modifier(modifier)
-            date.set_quality(gen.lib.Date.QUAL_ESTIMATED)
+            date.set_quality(gramps.gen.lib.Date.QUAL_ESTIMATED)
             date.set_yr_mon_day(date.get_year(), 0, 0)
             event.set_date_object(date)
         if source:
-            sref = gen.lib.SourceRef()
+            sref = gramps.gen.lib.SourceRef()
             sref.set_reference_handle(source.get_handle())
             event.add_source_reference(sref)
             self.db.commit_source(source, self.trans)
