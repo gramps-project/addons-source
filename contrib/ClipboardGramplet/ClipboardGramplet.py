@@ -32,11 +32,11 @@ import cPickle as pickle
 # Gramps modules
 #
 #-------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gen.plug import Gramplet
-from gui.ddtargets import DdTargets
-from gui.clipboard import (MultiTreeView, ClipboardListModel, 
+from gramps.gen.plug import Gramplet
+from gramps.gui.ddtargets import DdTargets
+from gramps.gui.clipboard import (MultiTreeView, ClipboardListModel, 
                            ClipboardListView, ClipText)
 
 #-------------------------------------------------------------------------
