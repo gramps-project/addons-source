@@ -36,19 +36,19 @@ from gi.repository import Gdk
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.display.name import displayer as name_displayer
-import gen.datehandler
-from gen.errors import WindowActiveError
-import gen.lib
-from gen.db import DbTxn
+from gramps.gen.plug import Gramplet
+from gramps.gen.display.name import displayer as name_displayer
+import gramps.gen.datehandler
+from gramps.gen.errors import WindowActiveError
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
@@ -129,8 +129,8 @@ class CensusGramplet(Gramplet):
         """
         Create a new census and invoke the editor.
         """
-        event = gen.lib.Event()
-        event.set_type(gen.lib.EventType.CENSUS)
+        event = gramps.gen.lib.Event()
+        event.set_type(gramps.gen.lib.EventType.CENSUS)
         try:
             CensusEditor(self.gui.dbstate, self.gui.uistate, [], event)
         except WindowActiveError:
@@ -165,7 +165,7 @@ class CensusGramplet(Gramplet):
             if event_ref:
                 event = db.get_event_from_handle(event_ref.ref)
                 if event:
-                    if event.get_type() == gen.lib.EventType.CENSUS:
+                    if event.get_type() == gramps.gen.lib.EventType.CENSUS:
 
                         p_handle = event.get_place_handle()
                         if p_handle:
@@ -201,16 +201,16 @@ class CensusGramplet(Gramplet):
 # Census Editor
 #
 #------------------------------------------------------------------------
-from gui.managedwindow import ManagedWindow
-from gui.editors.objectentries import PlaceEntry
-from gui.widgets import MonitoredEntry
-from gui.editors import EditPerson
-from gui.display import display_help
-from gui.dialog import ErrorDialog
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.editors.objectentries import PlaceEntry
+from gramps.gui.widgets import MonitoredEntry
+from gramps.gui.editors import EditPerson
+from gramps.gui.display import display_help
+from gramps.gui.dialog import ErrorDialog
 from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)
-from gui.selectors import SelectorFactory
+from gramps.gui.selectors import SelectorFactory
 
 class CensusEditor(ManagedWindow):
     """
@@ -228,7 +228,7 @@ class CensusEditor(ManagedWindow):
         self.event = event
         self.citation = get_census_citation(self.db, self.event)
         if self.citation is None:
-            self.citation = gen.lib.Citation()
+            self.citation = gramps.gen.lib.Citation()
 
         ManagedWindow.__init__(self, uistate, track, event)
 
@@ -520,7 +520,7 @@ class CensusEditor(ManagedWindow):
                         _('First select a census from the drop-down list.'))
             return
             
-        person = gen.lib.Person()
+        person = gramps.gen.lib.Person()
         EditPerson(self.dbstate, self.uistate, self.track, person,
                    self.__person_added)
 
@@ -666,9 +666,9 @@ class CensusEditor(ManagedWindow):
                 event_ref = self.get_census_event_ref(person)
                 if event_ref is None:
                     # Add new link to census
-                    event_ref = gen.lib.EventRef()
+                    event_ref = gramps.gen.lib.EventRef()
                     event_ref.ref = self.event.get_handle()
-                    event_ref.set_role(gen.lib.EventRoleType.PRIMARY)
+                    event_ref.set_role(gramps.gen.lib.EventRoleType.PRIMARY)
                     person.add_event_ref(event_ref)
                 # Write attributes
                 attrs = event_ref.get_attribute_list()
@@ -726,7 +726,7 @@ class CensusEditor(ManagedWindow):
         if attr is None:
             if value:
                 # Add
-                attr = gen.lib.Attribute()
+                attr = gramps.gen.lib.Attribute()
                 attr.set_type(name)
                 attr.set_value(value)
                 if name == ORDER_ATTR:
