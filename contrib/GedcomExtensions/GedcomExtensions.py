@@ -24,6 +24,12 @@
 """ 
 Extends GedcomWriter to include common non-compliant GEDCOM additions.
 """
+#------------------------------------------------------------------------
+#
+# GTK modules
+#
+#------------------------------------------------------------------------
+from gi.repository import Gtk
 
 from gramps.plugins.export import exportgedcom
 from gramps.gui.plug.export import WriterOptionBox
