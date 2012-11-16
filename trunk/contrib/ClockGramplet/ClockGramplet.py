@@ -1,24 +1,24 @@
 # Clock Example by Ralph Glass
 # http://ralph-glass.homepage.t-online.de/clock/readme.html
 
-import pygtk
-pygtk.require('2.0')
+#import pygtk
+#pygtk.require('2.0')
 
-import gobject
+from gi.repository import GObject
 import pango
-import gtk
 import math
 import time
-from gtk import gdk
+from gi.repository import Gtk
+from gi.repository import Gdk
 try:
     import cairo
 except ImportError:
     pass
 
-if gtk.pygtk_version < (2,3,93):
-    raise Exception("PyGtk 2.3.93 or later required")
+#if gtk.pygtk_version < (2,3,93):
+    #raise Exception("PyGtk 2.3.93 or later required")
 
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 
 _ = get_addon_translator(__file__).ugettext
 TEXT = 'cairo'
@@ -30,36 +30,36 @@ def progress_timeout(object):
         object.window.invalidate_rect((0,0,w,h),False)
     return True # keep ticking!
 
-class ClockWidget(gtk.Widget):
+class ClockWidget(Gtk.Widget):
     __gsignals__ = { 'realize': 'override',
                      'expose-event' : 'override',
                      'size-allocate': 'override',
                      'size-request': 'override',}
 
     def __init__(self):
-        gtk.Widget.__init__(self)
+        Gtk.Widget.__init__(self)
         self.draw_gc = None
         self.layout = self.create_pango_layout(TEXT)
         self.layout.set_font_description(pango.FontDescription("sans 8"))
-        self.timer = gobject.timeout_add (1000, progress_timeout, self)
+        self.timer = GObject.timeout_add (1000, progress_timeout, self)
                                            
     def do_realize(self):
-        self.set_flags(self.flags() | gtk.REALIZED)
-        self.window = gdk.Window(self.get_parent_window(),
+        self.set_flags(self.flags() | Gtk.REALIZED)
+        self.window = Gdk.Window(self.get_parent_window(),
                                  width=self.allocation.width,
                                  height=self.allocation.height,
-                                 window_type=gdk.WINDOW_CHILD,
-                                 wclass=gdk.INPUT_OUTPUT,
-                                 event_mask=self.get_events() | gdk.EXPOSURE_MASK)
+                                 window_type=Gdk.WINDOW_CHILD,
+                                 wclass=Gdk.INPUT_OUTPUT,
+                                 event_mask=self.get_events() | Gdk.EXPOSURE_MASK)
         if not hasattr(self.window, "cairo_create"):
-            self.draw_gc = gdk.GC(self.window,
+            self.draw_gc = Gdk.GC(self.window,
                                   line_width=5,
-                                  line_style=gdk.SOLID,
-                                  join_style=gdk.JOIN_ROUND)
+                                  line_style=Gdk.SOLID,
+                                  join_style=Gdk.JOIN_ROUND)
 
 	self.window.set_user_data(self)
         self.style.attach(self.window)
-        self.style.set_background(self.window, gtk.STATE_NORMAL)
+        self.style.set_background(self.window, Gtk.STATE_NORMAL)
         self.window.move_resize(*self.allocation)
 
     def do_size_request(self, requisition):
@@ -69,7 +69,7 @@ class ClockWidget(gtk.Widget):
 
     def do_size_allocate(self, allocation):
         self.allocation = allocation
-        if self.flags() & gtk.REALIZED:
+        if self.flags() & Gtk.REALIZED:
             self.window.move_resize(*allocation)
 
     def _expose_gdk(self, event):

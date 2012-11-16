@@ -24,14 +24,14 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.display.name import displayer as name_displayer
-from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-import gen.datehandler
-from gen.errors import WindowActiveError
-import gen.lib
-from gen.utils.trans import get_addon_translator
-from gen.db import DbTxn
+from gramps.gen.plug import Gramplet
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+import gramps.gen.datehandler
+from gramps.gen.errors import WindowActiveError
+import gramps.gen.lib
+from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.db import DbTxn
 
 _ = get_addon_translator(__file__).ugettext
 
@@ -54,8 +54,8 @@ class DataEntryGramplet(Gramplet):
         self.de_column_width = 20
         self.de_source_width = 10
         self.show_source = True
-        import gtk
-        rows = gtk.VBox()
+        from gi.repository import Gtk
+        rows = Gtk.VBox()
         self._dirty = False
         self._dirty_person = None
         self._dirty_family = None
@@ -77,11 +77,11 @@ class DataEntryGramplet(Gramplet):
             rows.pack_start(row, False)
 
         # Save and Abandon
-        row = gtk.HBox()
-        button = gtk.Button(_("Save"))
+        row = Gtk.HBox()
+        button = Gtk.Button(_("Save"))
         button.connect("clicked", self.save_data_edit)
         row.pack_start(button, True)
-        button = gtk.Button(_("Abandon"))
+        button = Gtk.Button(_("Abandon"))
         button.connect("clicked", self.abandon_data_edit)
         row.pack_start(button, True)
         rows.pack_start(row, False)
@@ -109,14 +109,14 @@ class DataEntryGramplet(Gramplet):
             rows.pack_start(row, False)
 
         # Save, Abandon, Clear
-        row = gtk.HBox()
-        button = gtk.Button(_("Add"))
+        row = Gtk.HBox()
+        button = Gtk.Button(_("Add"))
         button.connect("clicked", self.add_data_entry)
         row.pack_start(button, True)
-        button = gtk.Button(_("Copy Active Data"))
+        button = Gtk.Button(_("Copy Active Data"))
         button.connect("clicked", self.copy_data_entry)
         row.pack_start(button, True)
-        button = gtk.Button(_("Clear"))
+        button = Gtk.Button(_("Clear"))
         button.connect("clicked", self.clear_data_entry)
         row.pack_start(button, True)
         rows.pack_start(row, False)
@@ -199,76 +199,76 @@ class DataEntryGramplet(Gramplet):
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0, source=None):
-        import gtk
+        from gi.repository import Gtk
         # Data Entry: Active Person
-        row = gtk.HBox()
-        label = gtk.Label()
+        row = Gtk.HBox()
+        label = Gtk.Label()
         if readonly:
             label.set_text("<b>%s</b>" % text)
             label.set_width_chars(self.de_column_width)
             label.set_use_markup(True)
-            self.de_widgets[pos] = gtk.Label()
+            self.de_widgets[pos] = Gtk.Label()
             self.de_widgets[pos].set_alignment(0.0, 0.5)
             self.de_widgets[pos].set_use_markup(True)
             label.set_alignment(0.0, 0.5)
-            row.pack_start(label, False)
-            row.pack_start(self.de_widgets[pos], False)
+            row.pack_start(label, '','', False)
+            row.pack_start(self.de_widgets[pos], '', '', False)
         else:
             label.set_text("%s: " % text)
             label.set_width_chars(self.de_column_width)
             label.set_alignment(1.0, 0.5) 
             if choices == None:
-                self.de_widgets[pos] = gtk.Entry()
+                self.de_widgets[pos] = Gtk.Entry()
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
-                row.pack_start(label, False)
-                row.pack_start(self.de_widgets[pos], True)
+                row.pack_start(label, '', '', False)
+                row.pack_start(self.de_widgets[pos], '', '', True)
             else:
-                eventBox = gtk.EventBox()
-                self.de_widgets[pos] = gtk.combo_box_new_text()
+                eventBox = Gtk.EventBox()
+                self.de_widgets[pos] = Gtk.combo_box_new_text()
                 eventBox.add(self.de_widgets[pos])
                 for add_type in choices:
                     self.de_widgets[pos].append_text(add_type)
                 self.de_widgets[pos].set_active(default) 
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
-                row.pack_start(label, False)
-                row.pack_start(eventBox, True)
+                row.pack_start(label, '', '', False)
+                row.pack_start(eventBox, '', '', True)
             if source:
-                label = gtk.Label()
+                label = Gtk.Label()
                 label.set_text("%s: " % source[0])
                 label.set_width_chars(self.de_source_width)
                 label.set_alignment(1.0, 0.5) 
                 self.de_widgets[source[1] + ":Label"] = label
-                self.de_widgets[source[1]] = gtk.Entry()
+                self.de_widgets[source[1]] = Gtk.Entry()
                 if mark_dirty:
                     self.de_widgets[source[1]].connect("changed", self.mark_dirty)
-                row.pack_start(label, False)
-                row.pack_start(self.de_widgets[source[1]], True)
+                row.pack_start(label, '', '', False)
+                row.pack_start(self.de_widgets[source[1]], '', '', True)
                 if not self.show_source:
                     self.de_widgets[source[1]].hide()
         for name, text, cbtype, callback in callback_list:
             if cbtype == "button":
-                label = gtk.Label()
+                label = Gtk.Label()
                 label.set_text(text)
                 self.de_widgets[pos + ":" + name + ":Label"] = label
-                row.pack_start(label, False)
-                icon = gtk.STOCK_EDIT
-                size = gtk.ICON_SIZE_MENU
-                button = gtk.Button()
-                image = gtk.Image()
+                row.pack_start(label, '', '', False)
+                icon = Gtk.STOCK_EDIT
+                size = Gtk.ICON_SIZE_MENU
+                button = Gtk.Button()
+                image = Gtk.Image()
                 image.set_from_stock(icon, size)
                 button.add(image)
-                button.set_relief(gtk.RELIEF_NONE)
+                button.set_relief(Gtk.RELIEF_NONE)
                 button.connect("clicked", callback)
                 self.de_widgets[pos + ":" + name] = button
-                row.pack_start(button, False)
+                row.pack_start(button, '', '', False)
             elif cbtype == "checkbox":
-                button = gtk.CheckButton(text)
+                button = Gtk.CheckButton(text)
                 button.set_active(True)
                 button.connect("clicked", callback)
                 self.de_widgets[pos + ":" + name] = button
-                row.pack_start(button, False)
+                row.pack_start(button, '', '', False)
         row.show_all()
         return row
 
@@ -331,7 +331,7 @@ class DataEntryGramplet(Gramplet):
             place = self.dbstate.db.get_place_from_handle(place_handle)
             if place.get_title().strip() == place_name:
                 return (0, place) # (old, object)
-        place = gen.lib.Place()
+        place = gramps.gen.lib.Place()
         place.set_title(place_name)
         self.dbstate.db.add_place(place,self.trans)
         return (1, place) # (new, object)
@@ -354,9 +354,9 @@ class DataEntryGramplet(Gramplet):
                     self.dbstate.db.commit_event(event, self.trans)
                     return (0, event)
         # else create it:
-        event = gen.lib.Event()
+        event = gramps.gen.lib.Event()
         if type:
-            event.set_type(gen.lib.EventType(type))
+            event.set_type(gramps.gen.lib.EventType(type))
         if date:
             event.set_date_object(date)
         if place:
@@ -370,7 +370,7 @@ class DataEntryGramplet(Gramplet):
             source = self.dbstate.db.get_source_from_handle(source_handle)
             if source.get_title() == source_text:
                 return (0, source)
-        source = gen.lib.Source()
+        source = gramps.gen.lib.Source()
         source.set_title(source_text)
         self.dbstate.db.add_source(source, self.trans)
         return (1, source)
@@ -389,8 +389,8 @@ class DataEntryGramplet(Gramplet):
 
     def make_event(self, type, date, place):
         if date == place == None: return None
-        event = gen.lib.Event()
-        event.set_type(gen.lib.EventType(type))
+        event = gramps.gen.lib.Event()
+        event.set_type(gramps.gen.lib.EventType(type))
         if date:
             event.set_date_object(date)
         if place:
@@ -399,11 +399,11 @@ class DataEntryGramplet(Gramplet):
         return event
 
     def make_person(self, firstname, surname, gender):
-        person = gen.lib.Person()
-        name = gen.lib.Name()
-        name.set_type(gen.lib.NameType(gen.lib.NameType.BIRTH))
+        person = gramps.gen.lib.Person()
+        name = gramps.gen.lib.Name()
+        name.set_type(gramps.gen.lib.NameType(gramps.gen.lib.NameType.BIRTH))
         name.set_first_name(firstname)
-        surname_obj = gen.lib.Surname()
+        surname_obj = gramps.gen.lib.Surname()
         surname_obj.set_surname(surname)
         name.set_surname_list([surname_obj])
         name.set_primary_surname(0)
@@ -431,13 +431,13 @@ class DataEntryGramplet(Gramplet):
                 name.set_first_name(firstname)
                 person.set_gender(gender)
                 birthdate, birthplace = self.process_dateplace(self.de_widgets["APBirth"].get_text().strip())
-                new, birthevent = self.get_or_create_event(person, gen.lib.EventType.BIRTH, birthdate, birthplace)
+                new, birthevent = self.get_or_create_event(person, gramps.gen.lib.EventType.BIRTH, birthdate, birthplace)
                 # reference it, if need be:
                 birthref = person.get_birth_ref()
                 if birthevent:
                     if birthref is None:
                         # need new
-                        birthref = gen.lib.EventRef()
+                        birthref = gramps.gen.lib.EventRef()
                     birthref.set_reference_handle(birthevent.get_handle())
                     person.set_birth_ref(birthref)
                     # Only add if there is an event:
@@ -447,13 +447,13 @@ class DataEntryGramplet(Gramplet):
                         self.add_source(birthevent, source)
                         self.dbstate.db.commit_event(birthevent, self.trans)
                 deathdate, deathplace = self.process_dateplace(self.de_widgets["APDeath"].get_text().strip())
-                new, deathevent = self.get_or_create_event(person, gen.lib.EventType.DEATH, deathdate, deathplace)
+                new, deathevent = self.get_or_create_event(person, gramps.gen.lib.EventType.DEATH, deathdate, deathplace)
                 # reference it, if need be:
                 deathref = person.get_death_ref()
                 if deathevent:
                     if deathref is None:
                         # need new
-                        deathref = gen.lib.EventRef()
+                        deathref = gramps.gen.lib.EventRef()
                     deathref.set_reference_handle(deathevent.get_handle())
                     person.set_death_ref(deathref)
                     # Only add if there is an event:
@@ -478,7 +478,7 @@ class DataEntryGramplet(Gramplet):
                 found = 1
                 break
         if not found:
-            sref = gen.lib.SourceRef()
+            sref = gramps.gen.lib.SourceRef()
             sref.set_reference_handle(source.get_handle())
             obj.add_source_reference(sref)
 
@@ -508,7 +508,7 @@ class DataEntryGramplet(Gramplet):
             if current_person == None:
                 ErrorDialog(_("Please set an active person."), _("Can't add new person as a parent."))
                 return
-            elif gender == gen.lib.Person.UNKNOWN: # unknown
+            elif gender == gramps.gen.lib.Person.UNKNOWN: # unknown
                 ErrorDialog(_("Please set the new person's gender."), _("Can't add new person as a parent."))
                 return
         elif self.de_widgets["NPRelation"].get_active() == self.AS_MOTHER:
@@ -526,8 +526,8 @@ class DataEntryGramplet(Gramplet):
             if current_person == None:
                 ErrorDialog(_("Please set an active person."), _("Can't add new person as a spouse."))
                 return
-            elif (gender == gen.lib.Person.UNKNOWN and 
-                  current_person.get_gender() == gen.lib.Person.UNKNOWN): # both genders unknown
+            elif (gender == gramps.gen.lib.Person.UNKNOWN and 
+                  current_person.get_gender() == gramps.gen.lib.Person.UNKNOWN): # both genders unknown
                 ErrorDialog(_("Please set the new person's gender."), _("Can't add new person as a spouse."))
                 return
         elif self.de_widgets["NPRelation"].get_active() == self.AS_WIFE:
@@ -556,7 +556,7 @@ class DataEntryGramplet(Gramplet):
             # New person --------------------------------------------------
             # Add birth
             new_birth_date, new_birth_place = self.process_dateplace(self.de_widgets["NPBirth"].get_text().strip())
-            birth_event = self.make_event(gen.lib.EventType.BIRTH, new_birth_date, new_birth_place)
+            birth_event = self.make_event(gramps.gen.lib.EventType.BIRTH, new_birth_date, new_birth_place)
             if birth_event:
                 # Only add if there is an event:
                 source_text = self.de_widgets["NPBirthSource"].get_text().strip()
@@ -566,7 +566,7 @@ class DataEntryGramplet(Gramplet):
                     self.dbstate.db.commit_event(birth_event, self.trans)
             # Add death
             new_death_date, new_death_place = self.process_dateplace(self.de_widgets["NPDeath"].get_text())
-            death_event = self.make_event(gen.lib.EventType.DEATH, new_death_date, new_death_place)
+            death_event = self.make_event(gramps.gen.lib.EventType.DEATH, new_death_date, new_death_place)
             if death_event:
                 # Only add if there is an event:
                 source_text = self.de_widgets["NPDeathSource"].get_text().strip()
@@ -577,12 +577,12 @@ class DataEntryGramplet(Gramplet):
             # Now, create the person and events:
             # New birth for person:
             if birth_event:
-                birth_ref = gen.lib.EventRef()
+                birth_ref = gramps.gen.lib.EventRef()
                 birth_ref.set_reference_handle(birth_event.get_handle())
                 person.set_birth_ref(birth_ref)
             # New death for person:
             if death_event:
-                death_ref = gen.lib.EventRef()
+                death_ref = gramps.gen.lib.EventRef()
                 death_ref.set_reference_handle(death_event.get_handle())
                 person.set_death_ref(death_ref)
             # Need to add here to get a handle:
@@ -602,32 +602,32 @@ class DataEntryGramplet(Gramplet):
                         fam_husband_handle = family.get_father_handle()
                         fam_wife_handle = family.get_mother_handle()
                         # can we add person as wife?
-                        if fam_wife_handle == None and person.get_gender() == gen.lib.Person.FEMALE:
+                        if fam_wife_handle == None and person.get_gender() == gramps.gen.lib.Person.FEMALE:
                             # add the person
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
-                        elif fam_husband_handle == None and person.get_gender() == gen.lib.Person.MALE:
+                        elif fam_husband_handle == None and person.get_gender() == gramps.gen.lib.Person.MALE:
                             # add the person
                             family.set_father_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
-                    if person.get_gender() == gen.lib.Person.MALE:
+                    if person.get_gender() == gramps.gen.lib.Person.MALE:
                         family.set_father_handle(person.get_handle())
-                    elif person.get_gender() == gen.lib.Person.FEMALE:
+                    elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
                         family.set_mother_handle(person.get_handle())
-                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                     # add curent_person as child
-                    childref = gen.lib.ChildRef()
+                    childref = gramps.gen.lib.ChildRef()
                     childref.set_reference_handle(current_person.get_handle())
                     family.add_child_ref( childref)
                     current_person.add_parent_family_handle(family.get_handle())
@@ -646,19 +646,19 @@ class DataEntryGramplet(Gramplet):
                         if fam_wife_handle == None:
                             # add the person
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_mother_handle(person.get_handle())
-                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                     # add curent_person as child
-                    childref = gen.lib.ChildRef()
+                    childref = gramps.gen.lib.ChildRef()
                     childref.set_reference_handle(current_person.get_handle())
                     family.add_child_ref( childref)
                     current_person.add_parent_family_handle(family.get_handle())
@@ -677,19 +677,19 @@ class DataEntryGramplet(Gramplet):
                         if fam_husband_handle == None:
                             # add the person
                             family.set_father_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_father_handle(person.get_handle())
-                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                     # add curent_person as child
-                    childref = gen.lib.ChildRef()
+                    childref = gramps.gen.lib.ChildRef()
                     childref.set_reference_handle(current_person.get_handle())
                     family.add_child_ref( childref)
                     current_person.add_parent_family_handle(family.get_handle())
@@ -708,110 +708,110 @@ class DataEntryGramplet(Gramplet):
                         if current_person.get_handle() == fam_husband_handle:
                             # can we add person as wife?
                             if fam_wife_handle == None:
-                                if person.get_gender() == gen.lib.Person.FEMALE:
+                                if person.get_gender() == gramps.gen.lib.Person.FEMALE:
                                     # add the person
                                     family.set_mother_handle(person.get_handle())
-                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                                     person.add_family_handle(family.get_handle())
                                     added = True
                                     break
-                                elif person.get_gender() == gen.lib.Person.UNKNOWN:
+                                elif person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
                                     family.set_mother_handle(person.get_handle())
-                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                                    person.set_gender(gen.lib.Person.FEMALE)
-                                    self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
+                                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
+                                    person.set_gender(gramps.gen.lib.Person.FEMALE)
+                                    self.de_widgets["NPGender"].set_active(gramps.gen.lib.Person.FEMALE)
                                     person.add_family_handle(family.get_handle())
                                     added = True
                                     break
                         elif current_person.get_handle() == fam_wife_handle:
                             # can we add person as husband?
                             if fam_husband_handle == None:
-                                if person.get_gender() == gen.lib.Person.MALE:
+                                if person.get_gender() == gramps.gen.lib.Person.MALE:
                                     # add the person
                                     family.set_father_handle(person.get_handle())
-                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                                     person.add_family_handle(family.get_handle())
                                     added = True
                                     break
-                                elif person.get_gender() == gen.lib.Person.UNKNOWN:
+                                elif person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
                                     family.set_father_handle(person.get_handle())
-                                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                                     person.add_family_handle(family.get_handle())
-                                    person.set_gender(gen.lib.Person.MALE)
-                                    self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
+                                    person.set_gender(gramps.gen.lib.Person.MALE)
+                                    self.de_widgets["NPGender"].set_active(gramps.gen.lib.Person.MALE)
                                     added = True
                                     break
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    if person.get_gender() == gen.lib.Person.UNKNOWN:
+                    if person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
                         if current_person is None:
                             ErrorDialog(_("Please set Active person."), 
                                         _("Can't add new person as a spouse to no one."))
                             return
-                        elif current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                        elif current_person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
                             ErrorDialog(_("Please set gender on Active or new person."), 
                                         _("Can't add new person as a spouse."))
                             return
-                        elif current_person.get_gender() == gen.lib.Person.MALE:
-                            family = gen.lib.Family()
+                        elif current_person.get_gender() == gramps.gen.lib.Person.MALE:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(current_person.get_handle())
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                            person.set_gender(gen.lib.Person.FEMALE)
-                            self.de_widgets["NPGender"].set_active(gen.lib.Person.FEMALE)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
+                            person.set_gender(gramps.gen.lib.Person.FEMALE)
+                            self.de_widgets["NPGender"].set_active(gramps.gen.lib.Person.FEMALE)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
-                            family = gen.lib.Family()
+                        elif current_person.get_gender() == gramps.gen.lib.Person.FEMALE:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(person.get_handle())
                             family.set_mother_handle(current_person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                            person.set_gender(gen.lib.Person.MALE)
-                            self.de_widgets["NPGender"].set_active(gen.lib.Person.MALE)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
+                            person.set_gender(gramps.gen.lib.Person.MALE)
+                            self.de_widgets["NPGender"].set_active(gramps.gen.lib.Person.MALE)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                    elif person.get_gender() == gen.lib.Person.MALE:
-                        if current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                            family = gen.lib.Family()
+                    elif person.get_gender() == gramps.gen.lib.Person.MALE:
+                        if current_person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(person.get_handle())
                             family.set_mother_handle(current_person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
-                            current_person.set_gender(gen.lib.Person.FEMALE)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
+                            current_person.set_gender(gramps.gen.lib.Person.FEMALE)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                        elif current_person.get_gender() == gen.lib.Person.MALE:
+                        elif current_person.get_gender() == gramps.gen.lib.Person.MALE:
                             ErrorDialog(_("Same genders on Active and new person."), 
                                         _("Can't add new person as a spouse."))
                             return
-                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
-                            family = gen.lib.Family()
+                        elif current_person.get_gender() == gramps.gen.lib.Person.FEMALE:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(person.get_handle())
                             family.set_mother_handle(current_person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                    elif person.get_gender() == gen.lib.Person.FEMALE:
-                        if current_person.get_gender() == gen.lib.Person.UNKNOWN:
-                            family = gen.lib.Family()
+                    elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
+                        if current_person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(current_person.get_handle())
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             current_person.set_gender(gen.lib.Person.MALE)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                        elif current_person.get_gender() == gen.lib.Person.MALE:
-                            family = gen.lib.Family()
+                        elif current_person.get_gender() == gramps.gen.lib.Person.MALE:
+                            family = gramps.gen.lib.Family()
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(current_person.get_handle())
                             family.set_mother_handle(person.get_handle())
@@ -819,7 +819,7 @@ class DataEntryGramplet(Gramplet):
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
-                        elif current_person.get_gender() == gen.lib.Person.FEMALE:
+                        elif current_person.get_gender() == gramps.gen.lib.Person.FEMALE:
                             ErrorDialog(_("Same genders on Active and new person."), 
                                         _("Can't add new person as a spouse."))
                             return
@@ -842,7 +842,7 @@ class DataEntryGramplet(Gramplet):
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_mother_handle(person.get_handle())
                     family.set_father_handle(current_person.get_handle())
@@ -869,7 +869,7 @@ class DataEntryGramplet(Gramplet):
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_father_handle(person.get_handle())
                     family.set_mother_handle(current_person.get_handle())
@@ -883,7 +883,7 @@ class DataEntryGramplet(Gramplet):
                 for family_handle in current_person.get_parent_family_handle_list():
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
-                        childref = gen.lib.ChildRef()
+                        childref = gramps.gen.lib.ChildRef()
                         childref.set_reference_handle(person.get_handle())
                         family.add_child_ref( childref)
                         person.add_parent_family_handle(family.get_handle())
@@ -892,12 +892,12 @@ class DataEntryGramplet(Gramplet):
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    family = gen.lib.Family()
+                    family = gramps.gen.lib.Family()
                     self.dbstate.db.add_family(family, self.trans)
-                    childref = gen.lib.ChildRef()
+                    childref = gramps.gen.lib.ChildRef()
                     childref.set_reference_handle(person.get_handle())
                     family.add_child_ref( childref)
-                    childref = gen.lib.ChildRef()
+                    childref = gramps.gen.lib.ChildRef()
                     childref.set_reference_handle(current_person.get_handle())
                     family.add_child_ref( childref)
                     person.add_parent_family_handle(family.get_handle())
@@ -910,7 +910,7 @@ class DataEntryGramplet(Gramplet):
                 for family_handle in current_person.get_family_handle_list():
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
-                        childref = gen.lib.ChildRef()
+                        childref = gramps.gen.lib.ChildRef()
                         childref.set_reference_handle(person.get_handle())
                         family.add_child_ref( childref)
                         person.add_parent_family_handle(family.get_handle())
@@ -919,19 +919,19 @@ class DataEntryGramplet(Gramplet):
                 if added:
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
-                    if current_person.get_gender() == gen.lib.Person.UNKNOWN:
+                    if current_person.get_gender() == gramps.gen.lib.Person.UNKNOWN:
                         ErrorDialog(_("Please set gender on Active person."), 
                                     _("Can't add new person as a child."))
                         return
                     else:
-                        family = gen.lib.Family()
+                        family = gramps.gen.lib.Family()
                         self.dbstate.db.add_family(family, self.trans)
-                        childref = gen.lib.ChildRef()
+                        childref = gramps.gen.lib.ChildRef()
                         childref.set_reference_handle(person.get_handle())
                         family.add_child_ref( childref)
                         person.add_parent_family_handle(family.get_handle())
                         current_person.add_family_handle(family.get_handle())
-                        if gen.lib.Person.FEMALE:
+                        if gramps.gen.lib.Person.FEMALE:
                             family.set_mother_handle(current_person.get_handle())
                         else:
                             family.set_father_handle(current_person.get_handle())
