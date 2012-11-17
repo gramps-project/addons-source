@@ -211,8 +211,8 @@ class DataEntryGramplet(Gramplet):
             self.de_widgets[pos].set_alignment(0.0, 0.5)
             self.de_widgets[pos].set_use_markup(True)
             label.set_alignment(0.0, 0.5)
-            row.pack_start(label, '','', False)
-            row.pack_start(self.de_widgets[pos], '', '', False)
+            row.pack_start(label, False, False, 0)
+            row.pack_start(self.de_widgets[pos], False, False, 0)
         else:
             label.set_text("%s: " % text)
             label.set_width_chars(self.de_column_width)
@@ -221,8 +221,8 @@ class DataEntryGramplet(Gramplet):
                 self.de_widgets[pos] = Gtk.Entry()
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
-                row.pack_start(label, '', '', False)
-                row.pack_start(self.de_widgets[pos], '', '', True)
+                row.pack_start(label, False, False, 0)
+                row.pack_start(self.de_widgets[pos], True, True, 0)
             else:
                 eventBox = Gtk.EventBox()
                 self.de_widgets[pos] = Gtk.combo_box_new_text()
@@ -232,8 +232,8 @@ class DataEntryGramplet(Gramplet):
                 self.de_widgets[pos].set_active(default) 
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
-                row.pack_start(label, '', '', False)
-                row.pack_start(eventBox, '', '', True)
+                row.pack_start(label, False, False, 0)
+                row.pack_start(eventBox, True, True, 0)
             if source:
                 label = Gtk.Label()
                 label.set_text("%s: " % source[0])
@@ -243,8 +243,8 @@ class DataEntryGramplet(Gramplet):
                 self.de_widgets[source[1]] = Gtk.Entry()
                 if mark_dirty:
                     self.de_widgets[source[1]].connect("changed", self.mark_dirty)
-                row.pack_start(label, '', '', False)
-                row.pack_start(self.de_widgets[source[1]], '', '', True)
+                row.pack_start(label, False, False, 0)
+                row.pack_start(self.de_widgets[source[1]], True, True, 0)
                 if not self.show_source:
                     self.de_widgets[source[1]].hide()
         for name, text, cbtype, callback in callback_list:
@@ -252,7 +252,7 @@ class DataEntryGramplet(Gramplet):
                 label = Gtk.Label()
                 label.set_text(text)
                 self.de_widgets[pos + ":" + name + ":Label"] = label
-                row.pack_start(label, '', '', False)
+                row.pack_start(label, False, False, 0)
                 icon = Gtk.STOCK_EDIT
                 size = Gtk.ICON_SIZE_MENU
                 button = Gtk.Button()
@@ -262,13 +262,13 @@ class DataEntryGramplet(Gramplet):
                 button.set_relief(Gtk.RELIEF_NONE)
                 button.connect("clicked", callback)
                 self.de_widgets[pos + ":" + name] = button
-                row.pack_start(button, '', '', False)
+                row.pack_start(button, False, False, 0)
             elif cbtype == "checkbox":
                 button = Gtk.CheckButton(text)
                 button.set_active(True)
                 button.connect("clicked", callback)
                 self.de_widgets[pos + ":" + name] = button
-                row.pack_start(button, '', '', False)
+                row.pack_start(button, False, False, 0)
         row.show_all()
         return row
 
