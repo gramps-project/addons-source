@@ -134,33 +134,33 @@ from math import sin,cos,exp,sqrt,e,pi
 # gtk
 #
 #-------------------------------------------------------------------------
-import gobject
-import gtk
+from gi.repository import GObject
+from gi.repository import Gtk
 
 #-------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-from gen.sort import Sort
-from gen.plug.report import Report
-from gen.plug.report import MenuReportOptions
-import gen.plug.report.utils as ReportUtils
+from gramps.gen.sort import Sort
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import MenuReportOptions
+import gramps.gen.plug.report.utils as ReportUtils
 #from ReportBase._CommandLineReport import CommandLineReport
-from gen.errors import DatabaseError
-from gui.dialog import ErrorDialog, WarningDialog
-from gui.plug.report._fileentry import FileEntry
-from gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
-from gen.display.name import displayer as _nd
-import gen.datehandler
-from gui.autocomp import fill_combo
-from gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
-from gen.utils.string import confidence
-from gen.utils.file import media_path_full
-from gen.plug.menu import Option as PlugOption
-from gen.proxy import PrivateProxyDb
-from gen.utils.db import get_birth_or_fallback
-from gen.utils.trans import get_addon_translator
+from gramps.gen.errors import DatabaseError
+from gramps.gui.dialog import ErrorDialog, WarningDialog
+from gramps.gui.plug.report._fileentry import FileEntry
+from gramps.gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
+from gramps.gen.display.name import displayer as _nd
+import gramps.gen.datehandler
+from gramps.gui.autocomp import fill_combo
+from gramps.gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
+from gramps.gen.utils.string import confidence
+from gramps.gen.utils.file import media_path_full
+from gramps.gen.plug.menu import Option as PlugOption
+from gramps.gen.proxy import PrivateProxyDb
+from gramps.gen.utils.db import get_birth_or_fallback
+from gramps.gen.utils.trans import get_addon_translator
 #-------------------------------------------------------------------------
 #
 # constants
@@ -2533,7 +2533,7 @@ function %(bd)s2html(person,containerDL) {
 #-------------------------------------------------------------------------
 class DenominoVisoOptions(MenuReportOptions):
     def __init__(self, name, dbase):
-        from gen.plug import BasePluginManager
+        from gramps.gen.plug import BasePluginManager
         pmgr = BasePluginManager.get_instance()
         pmgr.register_option(MyBooleanOption, MyGuiBooleanOption)
         pmgr.register_option(IncAttributeOption, GuiIncAttributeOption)
@@ -2778,10 +2778,10 @@ class MyBooleanOption(PlugOption):
     def __init__(self, label, value):
         PlugOption.__init__(self, label, value)
 
-class MyGuiBooleanOption(gtk.CheckButton):
+class MyGuiBooleanOption(Gtk.CheckButton):
     def __init__(self, option, dbstate, uistate, track):
         self.__option = option
-        gtk.CheckButton.__init__(self, "")
+        Gtk.CheckButton.__init__(self, "")
         self.set_active(self.__option.get_value())
         self.connect('toggled', self.__value_changed)
         self.set_tooltip_text(self.__option.get_help())
@@ -2802,20 +2802,20 @@ class IncAttributeOption(PlugOption):
         """value: comma seperated string of attributes preceded by True/False"""
         PlugOption.__init__(self, label, value)
 
-class GuiIncAttributeOption(gtk.HBox):
+class GuiIncAttributeOption(Gtk.HBox):
     """Megawidget consisting of a checkbutton, label and entry box to
         ask if and which attributes should be included in the output"""
     def __init__(self, option, dbstate, uistate, track):
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
         (attr_inc, attr_list) = value_str.split(',',1)
         attr_list = attr_list.strip()
-        self.cb_w = gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton("")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = gtk.Label(_('restricted to:'))
+        self.l_w = Gtk.Label(_('restricted to:'))
         self.l_w.set_sensitive(False)
-        self.e_w = gtk.Entry()
+        self.e_w = Gtk.Entry()
         self.e_w.set_text(attr_list)
         self.e_w.connect('changed', self.__value_changed)
         self.e_w.set_sensitive(False)
@@ -2843,17 +2843,17 @@ class CopyImgOption(PlugOption):
 #        self.l_w.set_label(_("to directory:"))
 #        self.fe_w.title = _("Save images in ...")
 
-class GuiCopyImgOption(gtk.HBox):
+class GuiCopyImgOption(Gtk.HBox):
     """Megawidget consisting of a checkbutton, label and FileEntry widget to
         ask if images should be copied to a separate directory"""
     def __init__(self, option, dbstate, uistate, track):
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
         (copy_img, copy_dir) = value_str.split(', ',1)
-        self.cb_w = gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton("")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = gtk.Label(_('to directory:'))
+        self.l_w = Gtk.Label(_('to directory:'))
         self.l_w.set_sensitive(False)
         self.fe_w = FileEntry(copy_dir, _('Save images in ...'))
         self.fe_w.set_directory_entry(True)
@@ -2880,17 +2880,17 @@ class ImageIncludeAttrOption(PlugOption):
         """value: attribute name, attribute value, include/exclude"""
         PlugOption.__init__(self, label, value)
 
-class GuiImageIncludeAttrOption(gtk.HBox):
+class GuiImageIncludeAttrOption(Gtk.HBox):
     """Megawidget consisting of attribute selection, label, attribute value
         entry, label and include/exclude selection to ask which images with
         with which attributes should be included/excluded."""
     def __init__(self, option, dbstate, uistate, track):
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
         (incl, attr, attr_value) = value_str.split(', ',2)
         incl = int(incl)
-        self.cbe_w = gtk.ComboBoxEntry()
+        self.cbe_w = Gtk.ComboBoxEntry()
         image_attributes = dbstate.db.get_media_attribute_types()
         image_attributes.insert(0,' ')
         fill_combo(self.cbe_w, image_attributes)
@@ -2900,12 +2900,12 @@ class GuiImageIncludeAttrOption(gtk.HBox):
         except ValueError:
             pass
         self.cbe_w.connect('changed',self.__value_changed)
-        self.l1_w = gtk.Label(_("equal to"))
-        self.e_w = gtk.Entry()
+        self.l1_w = Gtk.Label(_("equal to"))
+        self.e_w = Gtk.Entry()
         self.e_w.set_text(attr_value)
         self.e_w.connect('changed',self.__value_changed)
-        self.l2_w = gtk.Label(_("should be"))
-        self.cb2_w = gtk.combo_box_new_text()
+        self.l2_w = Gtk.Label(_("should be"))
+        self.cb2_w = Gtk.combo_box_new_text()
         self.cb2_w.append_text('Included')
         self.cb2_w.append_text('Excluded')
         self.cb2_w.set_active(incl)
@@ -2937,16 +2937,16 @@ class HtmlWrapperOption(PlugOption):
 #        self.l_w.set_label(_("Name HTML-wrapper file"))
 #        self.fe_w.title = _("Save HTML-wrapper file as ...")
 
-class GuiHtmlWrapperOption(gtk.HBox):
+class GuiHtmlWrapperOption(Gtk.HBox):
     """Megawidget consisting of a checkbutton and file entry box"""
     def __init__(self, option, dbstate, uistate, track):
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
         (wrap_html, html_file) = value_str.split(', ',1)
-        self.cb_w = gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton("")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = gtk.Label(_("Name HTML-wrapper file"))
+        self.l_w = Gtk.Label(_("Name HTML-wrapper file"))
         self.l_w.set_sensitive(False)
         self.fe_w = FileEntry(html_file, _("Save HTML-wrapper file as ..."))
         self.fe_w.entry.connect('changed', self.__value_changed);
@@ -2964,15 +2964,15 @@ class GuiHtmlWrapperOption(gtk.HBox):
         self.__option.set_value(str(wrap_html) + ", " + unicode(self.fe_w.get_full_path(0)))
 
 # 
-class GuiOptionalFileEntry(gtk.HBox):
+class GuiOptionalFileEntry(Gtk.HBox):
     def __init__(self, option, dbstate, uistate, track):
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
         (on_off_state, filename) = value_str.split(',',1)
-        self.cb_w = gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton("")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = gtk.Label("")
+        self.l_w = Gtk.Label("")
         self.l_w.set_sensitive(False)
         self.fe_w = FileEntry(filename, _("Give a filename ..."))
         #self.fe_w.connect('changed', self.__value_changed)
@@ -3009,16 +3009,16 @@ class MouseHandlerOption(PlugOption):
         """value: """
         PlugOption.__init__(self, label, value)
 
-class GuiMouseHandlerOption(gtk.HBox):
+class GuiMouseHandlerOption(Gtk.HBox):
     """Megawidget consisting of two radio buttons to chose mouse behavior"""
     def __init__(self, option, dbstate, uistate, track):
         mousegroup = None
-        gtk.HBox.__init__(self)
+        Gtk.HBox.__init__(self)
         self.__option = option
-        self.r1_w = gtk.RadioButton(mousegroup, 'onclick')
+        self.r1_w = Gtk.RadioButton(mousegroup, 'onclick')
         if not mousegroup:
             mousegroup = self.r1_w
-        self.r2_w = gtk.RadioButton(mousegroup, 'onmouseover')
+        self.r2_w = Gtk.RadioButton(mousegroup, 'onmouseover')
         self.pack_start(self.r1_w, False)
         self.pack_start(self.r2_w, False)
         self.r2_w.set_active(self.__option.get_value())
@@ -3032,14 +3032,14 @@ class GuiMouseHandlerOption(gtk.HBox):
 # "Birth relationship linestyle:" 
 
 
-class GuiTableOption(gtk.ScrolledWindow):
+class GuiTableOption(Gtk.ScrolledWindow):
     # column_titles = [] ; Relation type, Use dashed linestyle, Dash length, Inter-dash length
     # signals = [] ; ,toggled, edited, edited
     def __init__(self, data, editable_column = None):
         """data should be a 2D list of lists"""
-        gtk.ScrolledWindow.__init__(self)
-        self.set_shadow_type(gtk.SHADOW_IN)
-        self.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        Gtk.ScrolledWindow.__init__(self)
+        self.set_shadow_type(Gtk.SHADOW_IN)
+        self.set_policy(Gtk.POLICY_AUTOMATIC, Gtk.POLICY_AUTOMATIC)
         lstore = self.create_lstore(data)
         self.tv_w = self.create_treeview(lstore, data, editable_column)
         # set column titles
@@ -3049,18 +3049,18 @@ class GuiTableOption(gtk.ScrolledWindow):
         lstore_args = []
         for cell in list_of_lists[0]:
             if type(cell) == type("string"):
-                lstore_args.append(gobject.TYPE_STRING)
+                lstore_args.append(GObject.TYPE_STRING)
             elif type(cell) == type(u"string"):
-                lstore_args.append(gobject.TYPE_STRING)
+                lstore_args.append(GObject.TYPE_STRING)
             elif type(cell) == type(1):
-                lstore_args.append(gobject.TYPE_UINT)
+                lstore_args.append(GObject.TYPE_UINT)
             elif type(cell) == type(1L):
-                lstore_args.append(gobject.TYPE_LONG)
+                lstore_args.append(GObject.TYPE_LONG)
             elif type(cell) == type(False):
-                lstore_args.append(gobject.TYPE_BOOLEAN)
+                lstore_args.append(GObject.TYPE_BOOLEAN)
             else:
                 raise TypeError("%s" % type(cell))
-        lstore = gtk.ListStore(*lstore_args)
+        lstore = Gtk.ListStore(*lstore_args)
         for row in list_of_lists:
             iter = lstore.append()
             index_values = []
@@ -3071,24 +3071,24 @@ class GuiTableOption(gtk.ScrolledWindow):
         return lstore
 
     def create_treeview(self, lstore, list_of_lists, editable_column = None):
-        treeview = gtk.TreeView(lstore)
+        treeview = Gtk.TreeView(lstore)
         treeview.set_size_request(-1, 70)
         treeview.set_rules_hint(True)
-        treeview.get_selection().set_mode(gtk.SELECTION_SINGLE)
+        treeview.get_selection().set_mode(Gtk.SELECTION_SINGLE)
         for i,v in enumerate(list_of_lists[0]):
             if (type(v) == type("string") or
                 type(v) == type(u"string") or
                 type(v) == type(1) or
                 type(v) == type(1L)):
-                renderer = gtk.CellRendererText()
+                renderer = Gtk.CellRendererText()
                 if editable_column or editable_column == 0:
-                    column = gtk.TreeViewColumn('',renderer, text=i, \
+                    column = Gtk.TreeViewColumn('',renderer, text=i, \
                             editable = editable_column)
                 else:
-                    column = gtk.TreeViewColumn('',renderer, text=i)
+                    column = Gtk.TreeViewColumn('',renderer, text=i)
             elif type(v) == type(False):
-                renderer = gtk.CellRendererToggle()
-                column = gtk.TreeViewColumn('',renderer, active=i)
+                renderer = Gtk.CellRendererToggle()
+                column = Gtk.TreeViewColumn('',renderer, active=i)
             else:
                 raise TypeError
             treeview.append_column(column)
