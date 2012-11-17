@@ -23,11 +23,11 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
-from gui.plug.quick import QuickTable, run_quick_report_by_name
-from gen.simple import SimpleAccess, SimpleDoc
+from gramps.gui.plug.quick import QuickTable, run_quick_report_by_name
+from gramps.gen.simple import SimpleAccess, SimpleDoc
 
 cache = {}
 
