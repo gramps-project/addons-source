@@ -28,7 +28,7 @@
 import codecs
 import sys
 import os
-import gtk
+from gi.repository import Gtk
 #import subprocess
 
 #------------------------------------------------------------------------
@@ -36,16 +36,16 @@ import gtk
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.lib import date
-import gen.datehandler
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.lib import date
+import gramps.gen.datehandler
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gen.const import USER_HOME, USER_PLUGINS
-from gen.utils.file import get_unicode_path_from_file_chooser
-from gui.display import display_url
-from gui.dialog import ErrorDialog
-from libhtml import Html, xml_lang
+from gramps.gen.const import USER_HOME, USER_PLUGINS
+from gramps.gen.utils.file import get_unicode_path_from_file_chooser
+from gramps.gui.display import display_url
+from gramps.gui.dialog import ErrorDialog
+from gramps.plugins.lib.libhtml import Html, xml_lang
 
 #-------------------------------------------------------------------------
 #
@@ -127,45 +127,45 @@ class lxmlGramplet(Gramplet):
         
         self.__base_path = USER_HOME
         self.__file_name = "test.gramps"
-        self.entry = gtk.Entry()
+        self.entry = Gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
         
-        self.button = gtk.Button()
-        image = gtk.Image()
-        image.set_from_stock(gtk.STOCK_OPEN, gtk.ICON_SIZE_BUTTON)
+        self.button = Gtk.Button()
+        image = Gtk.Image()
+        image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
         self.button.add(image)
         self.button.connect('clicked', self.__select_file)
         
         # GUI setup:
         
-        vbox = gtk.VBox()
-        hbox = gtk.HBox()
+        vbox = Gtk.VBox()
+        hbox = Gtk.HBox()
         
         # area
         
-        self.import_text = gtk.TextView()
+        self.import_text = Gtk.TextView()
         
-        self.import_text.set_wrap_mode(gtk.WRAP_WORD)
+        self.import_text.set_wrap_mode(Gtk.WrapMode.WORD)
         self.import_text.set_editable(False)
         
-        self.text = gtk.TextBuffer()
+        self.text = Gtk.TextBuffer()
         self.text.set_text(_('No file loaded...'))
         self.import_text.set_buffer(self.text)
         
-        vbox.pack_start(self.import_text, True) # v1
+        vbox.pack_start(self.import_text, True, True, 0) # v1
         
         # button
         
-        button = gtk.Button(_("Run"))
+        button = Gtk.Button(_("Run"))
         button.connect("clicked", self.run)
-        vbox.pack_start(button, False) # v2
+        vbox.pack_start(button, False, False, 0) # v2
         
         # build
         
-        hbox.pack_start(self.entry, True)
-        hbox.pack_end(self.button, False, False)
+        hbox.pack_start(self.entry, True, True, 0)
+        hbox.pack_end(self.button, False, False, 0)
         
-        vbox.pack_end(hbox, False) # v3
+        vbox.pack_end(hbox, False, False, 0) # v3
         
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
@@ -178,21 +178,21 @@ class lxmlGramplet(Gramplet):
         Call back function to handle the open button press
         """
         
-        my_action = gtk.FILE_CHOOSER_ACTION_SAVE
+        my_action = Gtk.FileChooserAction.SAVE
         
-        dialog = gtk.FileChooserDialog('lxml',
+        dialog = Gtk.FileChooserDialog('lxml',
                                        action=my_action,
-                                       buttons=(gtk.STOCK_CANCEL,
-                                                gtk.RESPONSE_CANCEL,
-                                                gtk.STOCK_OPEN,
-                                                gtk.RESPONSE_OK))
+                                       buttons=(Gtk.STOCK_CANCEL,
+                                                Gtk.ResponseType.CANCEL,
+                                                Gtk.STOCK_OPEN,
+                                                Gtk.ResponseType.OK))
 
         name = os.path.basename(self.entry.get_text())
         dialog.set_current_name(name)
         dialog.set_current_folder(self.__base_path)
         dialog.present()
         status = dialog.run()
-        if status == gtk.RESPONSE_OK:
+        if status == Gtk.ResponseType.OK:
             self.set_filename(get_unicode_path_from_file_chooser(dialog.get_filename()))
         dialog.destroy()
         
@@ -271,14 +271,14 @@ class lxmlGramplet(Gramplet):
         else:
             return
         
-        # DTD syntax via xmllint
+        # DTD syntax via xmllint (libxml2-utils)
                
         try:
             self.check_valid(filename)
         except:
             ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%(file)s" !') % {'file': entry})
                        
-        # RNG validation via xmllint
+        # RNG validation via xmllint (libxml2-utils)
         
         rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
         
@@ -355,12 +355,12 @@ class lxmlGramplet(Gramplet):
         surnames = []
         timestamp = []
         thumbs = []
-        for one in root.getchildren():
+        for one in root.iter():
             
             #(tag, item) = one.tag, one.items()
             #print(tag, item)
             
-            for two in one.getchildren():
+            for two in one.iter():
                 
                 #tags.append(two.tag)  
                 
@@ -373,7 +373,7 @@ class lxmlGramplet(Gramplet):
                 
                 # search ptitle and time log
                 
-                for three in two.getchildren():
+                for three in two.iter():
                                         
                     # timestamp
                     
@@ -390,7 +390,7 @@ class lxmlGramplet(Gramplet):
                         
                     # search last name
                     
-                    for four in three.getchildren():
+                    for four in three.iter():
                                                
                         # with namespace ...
                         
@@ -409,13 +409,13 @@ class lxmlGramplet(Gramplet):
         
         #print(revision)
                 
-        log = msg[0]
-        if not log:
-            ErrorDialog(_('Missing header'), _('Not a valid .gramps.\n'
-                                    'Cannot run the gramplet...\n'
-                                    'Please, try to use a .gramps\n'
-                                    'generated by Gramps 3.4.x.'))
-            return
+        #log = msg[0]
+        #if not log:
+            #ErrorDialog(_('Missing header'), _('Not a valid .gramps.\n'
+                                    #'Cannot run the gramplet...\n'
+                                    #'Please, try to use a .gramps\n'
+                                    #'generated by Gramps 4.x.'))
+            #return
         
         # dirty XML write method ...
         # need to create a fake entry !
