@@ -74,7 +74,7 @@ class DataEntryGramplet(Gramplet):
                      ]:
             pos, text, choices, readonly, callback, dirty, default, source = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default, source)
-            rows.pack_start(row, False)
+            rows.pack_start(row, False, False, 0)
 
         # Save and Abandon
         row = Gtk.HBox()
@@ -254,12 +254,12 @@ class DataEntryGramplet(Gramplet):
                 self.de_widgets[pos + ":" + name + ":Label"] = label
                 row.pack_start(label, False, False, 0)
                 icon = Gtk.STOCK_EDIT
-                size = Gtk.ICON_SIZE_MENU
+                size = Gtk.IconSize.MENU
                 button = Gtk.Button()
                 image = Gtk.Image()
                 image.set_from_stock(icon, size)
                 button.add(image)
-                button.set_relief(Gtk.RELIEF_NONE)
+                button.set_relief(Gtk.ReliefStyle.NONE)
                 button.connect("clicked", callback)
                 self.de_widgets[pos + ":" + name] = button
                 row.pack_start(button, False, False, 0)
