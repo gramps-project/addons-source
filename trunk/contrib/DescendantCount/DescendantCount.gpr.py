@@ -9,7 +9,7 @@ register(QUICKREPORT,
          authors=["Douglas S. Blank"],
          authors_email=["doug.blank@gmail.com"],
          version = '1.0.8',
-         gramps_target_version = "3.5",
+         gramps_target_version = "4.0",
          )
 
 register(GRAMPLET, 
@@ -25,6 +25,6 @@ register(GRAMPLET,
          detached_width = 600,
          detached_height = 400,
          version = '1.0.9',
-         gramps_target_version = "3.5",
+         gramps_target_version = "4.0",
          )
 
