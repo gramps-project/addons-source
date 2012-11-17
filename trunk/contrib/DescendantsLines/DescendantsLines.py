@@ -55,7 +55,7 @@ Print Descendants Lines (experimental migration, UNSTABLE)
 #
 #-------------------------------------------------------------------------
 import cairo
-import gtk
+from gi.repository import Gtk
 import gzip
 import xml.dom.minidom
 import xml.sax.saxutils
@@ -70,24 +70,24 @@ import copy
 #
 #-------------------------------------------------------------------------
 
-import gen.datehandler
-from gen.plug.menu import NumberOption, PersonOption, FilterOption, \
+import gramps.gen.datehandler
+from gramps.gen.plug.menu import NumberOption, PersonOption, FilterOption, \
                         DestinationOption, BooleanOption, EnumeratedListOption
-from gen.plug.report import Report
-from gen.plug.report import utils as ReportUtils
-from gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
 # libsubstkeyword
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
-from gen.display.name import displayer as name_displayer
-from gen.filters import GenericFilterFactory
-from gen.filters.rules.person import IsDescendantFamilyOf
-from gen.const import USER_HOME, USER_PLUGINS
-import gen.lib
-from gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.filters import GenericFilterFactory
+from gramps.gen.filters.rules.person import IsDescendantFamilyOf
+from gramps.gen.const import USER_HOME, USER_PLUGINS
+import gramps.gen.lib
+from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                        get_marriage_or_fallback, get_divorce_or_fallback)
 
 #-------------------------------------------------------------------------
@@ -353,9 +353,9 @@ class DescendantsLinesReport(Report):
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
             identifiant = person.get_gramps_id()
-            if person.get_gender() == gen.lib.Person.MALE:
+            if person.get_gender() == gramps.gen.lib.Person.MALE:
                 gender = 'M'
-            elif person.get_gender() == gen.lib.Person.FEMALE:
+            elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
                 gender = 'F'
             else:
                 gender = 'U'
@@ -409,7 +409,7 @@ class DescendantsLinesReport(Report):
                 xml.sax.saxutils.quoteattr(self.__date_place(
                     get_death_or_fallback(self.database, person))))
         for event_ref in event_list:
-                if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
+                if event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY:
                     event = find_event(self.database, event_ref.ref)
                     self.xml_file.write('<eventref hlink="%s"/>\n' % event.handle)
         for handle in person.get_family_handle_list():
@@ -448,7 +448,7 @@ class DescendantsLinesReport(Report):
     # Method below from plugins/textreport/DescendReport.py, modified
     def __date_place(self,event):
         if event:
-            date = gen.datehandler.get_date(event)
+            date = gramps.gen.datehandler.get_date(event)
             if self.inc_places:
                 place_handle = event.get_place_handle()
                 if place_handle:
