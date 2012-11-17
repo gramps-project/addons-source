@@ -32,19 +32,19 @@ import datetime, time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.ggettext import gettext as _
-from gen.ggettext import ngettext
-from gen.display.name import displayer as global_name_display
-from gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
+from gramps.gen.ggettext import gettext as _
+from gramps.gen.ggettext import ngettext
+from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
                              FONT_SERIF, PARA_ALIGN_RIGHT,
                              PARA_ALIGN_LEFT, PARA_ALIGN_CENTER,
                              TableStyle, TableCellStyle, FONT_SANS_SERIF)
-from gen.plug.menu import (BooleanOption, DestinationOption, StringOption)
-from gen.plug.report import Report
-from gen.plug.report import utils as ReportUtils
-from gen.plug.report import MenuReportOptions
-from gen.merge.diff import diff_dbs, import_as_dict
-from gen.simple import SimpleAccess
+from gramps.gen.plug.menu import (BooleanOption, DestinationOption, StringOption)
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.merge.diff import diff_dbs, import_as_dict
+from gramps.gen.simple import SimpleAccess
 
 #------------------------------------------------------------------------
 #
