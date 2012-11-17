@@ -292,7 +292,7 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(os.path.join(GRAMPSPATH, "src"))
+    sys.path.append(os.path.join(GRAMPSPATH, "gramps"))
     from gen.utils.trans import get_addon_translator
     from gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):

@@ -15,6 +15,6 @@ register(GRAMPLET,
          expand=True,
          gramplet = 'TODONotesGramplet',
          gramplet_title=_("TODO List"),
-         version="0.0.1",
+         version = '0.0.2',
          gramps_target_version="3.5",
          )
