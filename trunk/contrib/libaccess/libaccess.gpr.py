@@ -33,7 +33,7 @@ description =  _("Provides a library for generic access to "
                  "the database and gen.lib."),
 version = '1.0.9',
 gramps_target_version = '3.5',
-status = STABLE,
+status = UNSTABLE,
 fname = 'libaccess.py',
 authors = ["Doug Blank"],
 authors_email = ["doug.blank@gmail.com"],
