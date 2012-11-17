@@ -91,7 +91,7 @@ class GedcomWriterOptionBox(WriterOptionBox):
         # Set defaults:
         self.include_witnesses_check.set_active(1) 
         # Add to gui:
-        option_box.pack_start(self.include_witnesses_check, '', '', False)
+        option_box.pack_start(self.include_witnesses_check, False, False, 0)
         # Return option box:
         return option_box
 
