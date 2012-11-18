@@ -46,13 +46,13 @@ LOG = logging.getLogger(".ExportDjango")
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gui.plug.export import WriterOptionBox
-from gui.dialog import ErrorDialog
-from gen.utils.id import create_id
-import gen.lib
-from gen.utils.alive import probably_alive
+from gramps.gui.plug.export import WriterOptionBox
+from gramps.gui.dialog import ErrorDialog
+from gramps.gen.utils.id import create_id
+import gramps.gen.lib
+from gramps.gen.utils.alive import probably_alive
 
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 translator = get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext
@@ -62,14 +62,14 @@ try:
 except:
     ErrorDialog(_('django.conf could not be found'), 
                 _('Django Addons require Django 1.3 or greater'))
-import webapp.settings as default_settings
+import gramps.webapp.settings as default_settings
 try:
     settings.configure(default_settings)
 except RuntimeError:
     # already configured; ignore
     pass
 
-from webapp.libdjango import DjangoInterface
+from gramps.webapp.libdjango import DjangoInterface
 from django.db import transaction
 
 def export_all(database, filename, error_dialog, 
