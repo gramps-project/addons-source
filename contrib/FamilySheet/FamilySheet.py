@@ -35,17 +35,17 @@ import string
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer
-from gen.lib import Date, Event, EventType, FamilyRelType, Name
-from gen.lib import StyledText, StyledTextTag, StyledTextTagType
-from gen.plug import docgen
-from gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
-from gen.plug.report import Report
-from gen.plug.report import utils
-from gen.plug.report import MenuReportOptions
-import gen.datehandler
-from gen.relationship import get_relationship_calculator
-from gen.utils.trans import get_addon_translator
+from gramps.gen.display.name import displayer
+from gramps.gen.lib import Date, Event, EventType, FamilyRelType, Name
+from gramps.gen.lib import StyledText, StyledTextTag, StyledTextTagType
+from gramps.gen.plug import docgen
+from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption, PersonOption
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils
+from gramps.gen.plug.report import MenuReportOptions
+import gramps.gen.datehandler
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 #------------------------------------------------------------------------
@@ -99,7 +99,7 @@ class FamilySheet(Report):
 
         @param database: the GRAMPS database instance
         @param options: instance of the Options class for this report
-        @param user: a gen.user.User() instance
+        @param user: a gramps.gen.user.User() instance
         """
 
         Report.__init__(self, database, options, user)
@@ -371,7 +371,7 @@ class FamilySheet(Report):
 
             for addr in person.get_address_list():
                 location = utils.get_address_str(addr)
-                date = gen.datehandler.get_date(addr)
+                date = gramps.gen.datehandler.get_date(addr)
 
                 self.doc.start_paragraph('FSR-Normal')
                 if date:
@@ -655,7 +655,7 @@ class FamilySheet(Report):
 
 #------------------------------------------------------------------------
 #
-# Reusable functions (could be methods of gen.lib.*)
+# Reusable functions (could be methods of gramps.gen.lib.*)
 #
 #------------------------------------------------------------------------
 
@@ -723,7 +723,7 @@ def _Date_get_text(date, placeholder=False):
         placeholder if the date is missing or incomplete.
     """
 
-    text = gen.datehandler.displayer.display(date)
+    text = gramps.gen.datehandler.displayer.display(date)
 
     if date.get_modifier() == Date.MOD_NONE \
             and date.get_quality() == Date.QUAL_NONE:
