@@ -28,15 +28,15 @@
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import gen.display.name
-from gen.lib import Date, Event, EventType, FamilyRelType, Name
-import gen.plug.docgen
-import gen.plug.menu
-import gen.plug.report
-from gen.plug.report.utils import pt2cm
-import gui.plug.report
-import gen.datehandler
-from gen.utils.trans import get_addon_translator
+import gramps.gen.display.name
+from gramps.gen.lib import Date, Event, EventType, FamilyRelType, Name
+import gramps.gen.plug.docgen
+import gramps.gen.plug.menu
+import gramps.gen.plug.report
+from gramps.gen.plug.report.utils import pt2cm
+import gramps.gui.plug.report
+import gramps.gen.datehandler
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 
@@ -57,11 +57,11 @@ empty_marriage.set_type(EventType.MARRIAGE)
 # FamilyTree report
 #
 #------------------------------------------------------------------------
-class FamilyTree(gen.plug.report.Report):
+class FamilyTree(gramps.gen.plug.report.Report):
 
     def __init__(self, database, options, user):
 
-        gen.plug.report.Report.__init__(self, database, options, user)
+        gramps.gen.plug.report.Report.__init__(self, database, options, user)
 
         menu = options.menu
 
@@ -664,7 +664,7 @@ class FamilyTree(gen.plug.report.Report):
                             'call':  n.call,
                             'first': n.first_name}
 
-        return gen.display.name.displayer.display_name(n)
+        return gramps.gen.display.name.displayer.display_name(n)
 
 
     def __person_get_display_data(self, person):
@@ -851,7 +851,7 @@ class FamilyTree(gen.plug.report.Report):
             event_text = _("resident")
 
         date = event.get_date_object()
-        date_text = gen.datehandler.displayer.display(date)
+        date_text = gramps.gen.datehandler.displayer.display(date)
 
         if date.get_modifier() == Date.MOD_NONE and date.get_quality() == Date.QUAL_NONE:
             if date.get_day_valid():
@@ -910,7 +910,7 @@ class FamilyTree(gen.plug.report.Report):
             else:
                 return None
         else:
-            return gen.datehandler.displayer.display(date)
+            return gramps.gen.datehandler.displayer.display(date)
 
 
     # -------------------------------------------------------------------
@@ -943,7 +943,7 @@ class FamilyTree(gen.plug.report.Report):
 # FamilyTreeOptions
 #
 #------------------------------------------------------------------------
-class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
+class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
 
     CALLNAME_DONTUSE = 0
     CALLNAME_REPLACE = 1
@@ -965,7 +965,7 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
 
 
     def __init__(self, name, dbase):
-        gen.plug.report.MenuReportOptions.__init__(self, name, dbase)
+        gramps.gen.plug.report.MenuReportOptions.__init__(self, name, dbase)
 
 
     def add_menu_options(self, menu):
@@ -974,23 +974,23 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
         """
         category_name = _("Tree Options")
 
-        family_id = gen.plug.menu.FamilyOption(_("Center Family"))
+        family_id = gramps.gen.plug.menu.FamilyOption(_("Center Family"))
         family_id.set_help(_("The center family for the tree"))
         menu.add_option(category_name, "family_id", family_id)
 
-        max_ancestor_generations = gen.plug.menu.NumberOption(_("Ancestor Generations"), 5, 0, 50)
+        max_ancestor_generations = gramps.gen.plug.menu.NumberOption(_("Ancestor Generations"), 5, 0, 50)
         max_ancestor_generations.set_help(_("The number of ancestor generations to include in the tree"))
         menu.add_option(category_name, "max_ancestor_generations", max_ancestor_generations)
 
-        max_descendant_generations = gen.plug.menu.NumberOption(_("Descendant Generations"), 10, 0, 50)
+        max_descendant_generations = gramps.gen.plug.menu.NumberOption(_("Descendant Generations"), 10, 0, 50)
         max_descendant_generations.set_help(_("The number of descendant generations to include in the tree"))
         menu.add_option(category_name, "max_descendant_generations", max_descendant_generations)
 
-        fit_on_page = gen.plug.menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
+        fit_on_page = gramps.gen.plug.menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
         menu.add_option(category_name, 'fit_on_page', fit_on_page)
 
-        color = gen.plug.menu.EnumeratedListOption(_("Color"), self.COLOR_NONE)
+        color = gramps.gen.plug.menu.EnumeratedListOption(_("Color"), self.COLOR_NONE)
         color.set_items([
             (self.COLOR_NONE, _("No color")),
             (self.COLOR_GENERATION, _("Generations")),
@@ -1002,26 +1002,26 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
             (self.COLOR_FEMALE_LINE, _("Female line"))])
         menu.add_option(category_name, "color", color)
 
-        shuffle_colors = gen.plug.menu.BooleanOption(_("Shuffle colors"), False)
+        shuffle_colors = gramps.gen.plug.menu.BooleanOption(_("Shuffle colors"), False)
         shuffle_colors.set_help(_("Whether to shuffle colors or order them in rainbow fashion."))
         menu.add_option(category_name, "shuffle_colors", shuffle_colors)
 
         category_name = _("Content")
 
-        callname = gen.plug.menu.EnumeratedListOption(_("Use call name"), self.CALLNAME_DONTUSE)
+        callname = gramps.gen.plug.menu.EnumeratedListOption(_("Use call name"), self.CALLNAME_DONTUSE)
         callname.set_items([
             (self.CALLNAME_DONTUSE, _("Don't use call name")),
             (self.CALLNAME_REPLACE, _("Replace first name with call name")),
             (self.CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
         menu.add_option(category_name, "callname", callname)
 
-        include_occupation = gen.plug.menu.BooleanOption(_("Include Occupation"), True)
+        include_occupation = gramps.gen.plug.menu.BooleanOption(_("Include Occupation"), True)
         menu.add_option(category_name, 'include_occupation', include_occupation)
 
-        include_residence = gen.plug.menu.BooleanOption(_("Include Residence"), True)
+        include_residence = gramps.gen.plug.menu.BooleanOption(_("Include Residence"), True)
         menu.add_option(category_name, 'include_residence', include_residence)
 
-        eventstyle_dead = gen.plug.menu.EnumeratedListOption(_("Print event data (dead person)"), self.EVENTSTYLE_DATEPLACE)
+        eventstyle_dead = gramps.gen.plug.menu.EnumeratedListOption(_("Print event data (dead person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_dead.set_items([
             (self.EVENTSTYLE_NONE, _("None")),
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
@@ -1029,7 +1029,7 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
         menu.add_option(category_name, "eventstyle_dead", eventstyle_dead)
 
-        eventstyle_living = gen.plug.menu.EnumeratedListOption(_("Print event data (living person)"), self.EVENTSTYLE_DATEPLACE)
+        eventstyle_living = gramps.gen.plug.menu.EnumeratedListOption(_("Print event data (living person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_living.set_items([
             (self.EVENTSTYLE_NONE, _("None")),
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
@@ -1037,27 +1037,27 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
         menu.add_option(category_name, "eventstyle_living", eventstyle_living)
 
-        fallback_birth = gen.plug.menu.BooleanOption(_("Fall back to baptism if birth event missing"), True)
+        fallback_birth = gramps.gen.plug.menu.BooleanOption(_("Fall back to baptism if birth event missing"), True)
         menu.add_option(category_name, 'fallback_birth', fallback_birth)
 
-        fallback_death = gen.plug.menu.BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
+        fallback_death = gramps.gen.plug.menu.BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
         menu.add_option(category_name, 'fallback_death', fallback_death)
 
         # Fixme: the following 2 options should only be available if "Full date
         # and place" is selected above.
-        missinginfo = gen.plug.menu.BooleanOption(_("Print fields for missing information"), True)
+        missinginfo = gramps.gen.plug.menu.BooleanOption(_("Print fields for missing information"), True)
         missinginfo.set_help(_("Whether to include fields for missing information."))
         menu.add_option(category_name, "missinginfo", missinginfo)
 
-        include_event_description = gen.plug.menu.BooleanOption(_("Include event description"), True)
+        include_event_description = gramps.gen.plug.menu.BooleanOption(_("Include event description"), True)
         menu.add_option(category_name, 'include_event_description', include_event_description)
 
         category_name = _("Text Options")
 
-        title = gen.plug.menu.StringOption(_("Title text"), "")
+        title = gramps.gen.plug.menu.StringOption(_("Title text"), "")
         menu.add_option(category_name, "title", title)
 
-        footer = gen.plug.menu.StringOption(_("Footer text"), "")
+        footer = gramps.gen.plug.menu.StringOption(_("Footer text"), "")
         menu.add_option(category_name, "footer", footer)
 
 
@@ -1065,71 +1065,71 @@ class FamilyTreeOptions(gen.plug.report.MenuReportOptions):
         """Make the default output style for the Ancestor Tree."""
 
         ## Paragraph Styles:
-        f = gen.plug.docgen.FontStyle()
+        f = gramps.gen.plug.docgen.FontStyle()
         f.set_size(13)
-        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
-        p = gen.plug.docgen.ParagraphStyle()
+        f.set_type_face(gramps.gen.plug.docgen.FONT_SANS_SERIF)
+        p = gramps.gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
-        p.set_alignment(gen.plug.docgen.PARA_ALIGN_CENTER)
+        p.set_alignment(gramps.gen.plug.docgen.PARA_ALIGN_CENTER)
         p.set_bottom_margin(pt2cm(8))
         p.set_description(_("The style used for the title."))
         default_style.add_paragraph_style("FTR-Title", p)
 
-        f = gen.plug.docgen.FontStyle()
+        f = gramps.gen.plug.docgen.FontStyle()
         f.set_size(9)
-        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
-        p = gen.plug.docgen.ParagraphStyle()
+        f.set_type_face(gramps.gen.plug.docgen.FONT_SANS_SERIF)
+        p = gramps.gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
         p.set_description(_("The style used for names."))
         default_style.add_paragraph_style("FTR-Name", p)
 
-        f = gen.plug.docgen.FontStyle()
+        f = gramps.gen.plug.docgen.FontStyle()
         f.set_size(7)
-        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
-        p = gen.plug.docgen.ParagraphStyle()
+        f.set_type_face(gramps.gen.plug.docgen.FONT_SANS_SERIF)
+        p = gramps.gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
         p.set_description(_("The style used for data (birth, death, marriage, divorce)."))
         default_style.add_paragraph_style("FTR-Data", p)
 
-        f = gen.plug.docgen.FontStyle()
+        f = gramps.gen.plug.docgen.FontStyle()
         f.set_size(7)
-        f.set_type_face(gen.plug.docgen.FONT_SANS_SERIF)
-        p = gen.plug.docgen.ParagraphStyle()
+        f.set_type_face(gramps.gen.plug.docgen.FONT_SANS_SERIF)
+        p = gramps.gen.plug.docgen.ParagraphStyle()
         p.set_font(f)
-        p.set_alignment(gen.plug.docgen.PARA_ALIGN_CENTER)
+        p.set_alignment(gramps.gen.plug.docgen.PARA_ALIGN_CENTER)
         p.set_top_margin(pt2cm(8))
         p.set_description(_("The style used for the footer."))
         default_style.add_paragraph_style("FTR-Footer", p)
 
         ## Draw styles
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Title")
         g.set_color((0, 0, 0))
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-title", g)
 
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         g.set_shadow(1,0.15)
         g.set_fill_color((255,255,255))
         default_style.add_draw_style("FTR-box", g)
 
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Name")
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-name", g)
 
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Data")
         g.set_fill_color((255, 255, 255))
         g.set_line_width(0)             # Workaround for a bug in ODFDoc
         default_style.add_draw_style("FTR-data", g)
 
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         default_style.add_draw_style("FTR-line", g)
 
-        g = gen.plug.docgen.GraphicsStyle()
+        g = gramps.gen.plug.docgen.GraphicsStyle()
         g.set_paragraph_style("FTR-Footer")
         g.set_color((0, 0, 0))
         g.set_fill_color((255, 255, 255))
