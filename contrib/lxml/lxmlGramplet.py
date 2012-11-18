@@ -380,12 +380,12 @@ class lxmlGramplet(Gramplet):
                         timestamp.append(two.get('change'))
                     
                     # with namespace ...              
-                              
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}ptitle':
+                                   
+                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}ptitle' and three.text not in places:
                         places.append(three.text)
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}stitle':
+                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}stitle' and three.text not in sources:
                         sources.append(three.text)
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}file':
+                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}file' and three.text not in thumbs:
                         thumbs.append(three.items())
                         
                     # search last name
