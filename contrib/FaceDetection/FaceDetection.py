@@ -20,17 +20,17 @@
 # $Id: $
 #
 
-from gen.plug import Gramplet
-from gui.widgets import Photo
-from gen.utils.file import media_path_full
-import gtk
+from gramps.gen.plug import Gramplet
+from gramps.gui.widgets import Photo
+from gramps.gen.utils.file import media_path_full
+from gi.repository import Gtk
 import os
 import cv
 import Image
 import ImageDraw
 import StringIO
 
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 path, filename = os.path.split(__file__)
@@ -49,18 +49,18 @@ class FaceDetection(Gramplet):
         """
         Build the GUI interface.
         """
-        self.top = gtk.HBox()
+        self.top = Gtk.HBox()
         # first column:
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
         self.top.pack_start(vbox, fill=False, expand=False)
         self.photo = Photo()
         vbox.pack_start(self.photo, fill=False, expand=False, padding=5)
-        self.detect_button = gtk.Button(_("Detect New Faces"))
+        self.detect_button = Gtk.Button(_("Detect New Faces"))
         self.detect_button.connect('button-press-event', self.detect)
         vbox.pack_start(self.detect_button, fill=False, expand=False)
         # second column
-        vbox = gtk.VBox()
-        vbox.pack_start(gtk.Label("Image:"), fill=False, expand=False)
+        vbox = Gtk.VBox()
+        vbox.pack_start(Gtk.Label("Image:"), fill=False, expand=False)
         self.top.pack_start(vbox, fill=False, expand=False)
         # show and return:
         self.top.show_all()
