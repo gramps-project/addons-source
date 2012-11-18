@@ -46,10 +46,10 @@ Read the following code from bottom to top.
 # Gramps modules
 #
 #---------------------------------------------------------------
-from gui.display import display_url
-from gen.utils.trans import get_addon_translator
+from gramps.gui.display import display_url
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gen.config import config as configman
+from gramps.gen.config import config as configman
 
 #---------------------------------------------------------------
 #
