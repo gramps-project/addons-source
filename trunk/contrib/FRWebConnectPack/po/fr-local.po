@@ -39,7 +39,7 @@ msgstr "Ensemble de liens internet francophones"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr "Collection de sites internet pour les français (nécessite libwebconnect)"
+msgstr "Collection de sites internet pour les francophones (nécessite libwebconnect)"
 
 #: FRWebConnectPack/FRWebPack.py:36
 msgid "French cultural ministry"
