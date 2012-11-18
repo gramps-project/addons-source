@@ -20,17 +20,19 @@
 # $Id$
 #
 
-from gui.listmodel import ListModel, NOSORT
-from gui.plug.quick import run_quick_report_by_name
-from gen.plug import Gramplet
-from gen.ggettext import gettext as _
-import gen.lib
-import gen.datehandler
-import gtk
-from gui.editors import EditPerson, EditFamily, EditEventRef
-from gen.errors import WindowActiveError
-from gen.db import DbTxn
-from gen.display.name import displayer as name_displayer
+from gramps.gui.listmodel import ListModel, NOSORT
+from gramps.gui.plug.quick import run_quick_report_by_name
+from gramps.gen.plug import Gramplet
+import gramps.gen.lib
+import gramps.gen.datehandler
+from gi.repository import Gtk
+from gramps.gui.editors import EditPerson, EditFamily, EditEventRef
+from gramps.gen.errors import WindowActiveError
+from gramps.gen.db import DbTxn
+from gramps.gen.display.name import displayer as name_displayer
+
+from gramps.gen.utils.trans import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 class Attributes(Gramplet):
     """
@@ -49,7 +51,7 @@ class Attributes(Gramplet):
         tip = _('Double-click on a row to view a quick report showing '
                 'all people with the selected attribute.')
         self.set_tooltip(tip)
-        top = gtk.TreeView()
+        top = Gtk.TreeView()
         titles = [(_('Date'), 1, 100),
                   ('', 1, 100),
                   (_('Key'), 2, 100),
@@ -65,7 +67,7 @@ class Attributes(Gramplet):
         """
         event_date = event_sort = handle = ''
         if date_object is not None:
-            event_date = gen.datehandler.displayer.display(date_object)
+            event_date = gramps.gen.datehandler.displayer.display(date_object)
             event_sort = '%012d' % date_object.get_sort_value()
 
         try:
