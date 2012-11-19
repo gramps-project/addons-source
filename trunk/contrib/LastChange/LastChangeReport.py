@@ -34,16 +34,16 @@ import time
 # gramps modules
 #
 #------------------------------------------------------------------------
-import gen.datehandler
-from gen.errors import ReportError
-from gen.plug import docgen
-from gen.plug.menu import BooleanListOption
-from gen.plug.report import Report
-from gen.plug.report import utils as ReportUtils
-from gen.plug.report import MenuReportOptions
-from gen.utils.trans import get_addon_translator
+import gramps.gen.datehandler
+from gramps.gen.errors import ReportError
+from gramps.gen.plug import docgen
+from gramps.gen.plug.menu import BooleanListOption
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gen.lib import Date
+from gramps.gen.lib import Date
 
 _UNKNOWN_FAMILY = "*unknown*"
 
@@ -156,7 +156,7 @@ class LastChangeReport(Report):
         """Convert the change date to the preferred date format and return a string"""
         change_date = Date()
         change_date.set_yr_mon_day(*time.localtime(date_in)[0:3])
-        return gen.datehandler.displayer.display(change_date)
+        return gramps.gen.datehandler.displayer.display(change_date)
 
     def write_person(self):
         handles = sorted(self.database.get_person_handles(), key=self._getTimestamp)
