@@ -30,11 +30,11 @@ import sys
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
 
-import gen
+import gramps.gen
 
 #------------------------------------------------------------------------
 #
@@ -54,7 +54,7 @@ class PythonGramplet(Gramplet):
                     "db": self.gui.dbstate.db,
                     "gc": self.gc,
                     "self": self,
-                    "Date": gen.lib.Date,
+                    "Date": gramps.gen.lib.Date,
                     }
         # GUI setup:
         self.gui.textview.set_editable(True)
@@ -115,10 +115,11 @@ class PythonGramplet(Gramplet):
         return _retval
 
     def on_key_press(self, widget, event):
-        import gtk
-        if (event.keyval == gtk.keysyms.Home or
-            ((event.keyval == gtk.keysyms.a and 
-              event.get_state() & gtk.gdk.CONTROL_MASK))): 
+        from gi.repository import Gtk
+        from gi.repository import Gdk
+        if (event.keyval == Gtk.keysyms.Home or
+            ((event.keyval == Gtk.keysyms.a and 
+              event.get_state() & Gdk.CONTROL_MASK))): 
             buffer = widget.get_buffer()
             cursor_pos = buffer.get_property("cursor-position")
             iter = buffer.get_iter_at_offset(cursor_pos)
@@ -127,14 +128,14 @@ class PythonGramplet(Gramplet):
             start.forward_chars(2)
             buffer.place_cursor(start)
             return True
-        elif (event.keyval == gtk.keysyms.End or 
-              (event.keyval == gtk.keysyms.e and 
-               event.get_state() & gtk.gdk.CONTROL_MASK)): 
+        elif (event.keyval == Gtk.keysyms.End or 
+              (event.keyval == Gtk.keysyms.e and 
+               event.get_state() & Gdk.CONTROL_MASK)): 
             buffer = widget.get_buffer()
             end = buffer.get_end_iter()
             buffer.place_cursor(end)
             return True
-        elif event.keyval == gtk.keysyms.Return: 
+        elif event.keyval == Gtk.keysyms.Return: 
             echo = False
             buffer = widget.get_buffer()
             cursor_pos = buffer.get_property("cursor-position")

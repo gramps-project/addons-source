@@ -50,7 +50,7 @@ Additionals goals:
 
 """
 
-from gen.db import DbTxn
+from gramps.gen.db import DbTxn
 
 import itertools
 
