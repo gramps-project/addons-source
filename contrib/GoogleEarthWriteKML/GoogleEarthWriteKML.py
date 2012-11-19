@@ -32,7 +32,7 @@ GoogleEarth  kml or kmz file format.
 #-------------------------------------------------------------------------
 import os
 import codecs
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
 #-------------------------------------------------------------------------
@@ -40,10 +40,10 @@ _ = get_addon_translator().gettext
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-from gui.dialog import ErrorDialog, QuestionDialog2
-from libmapservice import MapService
-from gui.utils import open_file_with_default_application
-from gen.utils.file import search_for, get_unicode_path_from_env_var
+from gramps.gui.dialog import ErrorDialog, QuestionDialog2
+from gramps.plugins.lib.libmapservice import MapService
+from gramps.gui.utils import open_file_with_default_application
+from gramps.gen.utils.file import search_for, get_unicode_path_from_env_var
 
 # Check i zip is installed
 _ZIP_OK = False
