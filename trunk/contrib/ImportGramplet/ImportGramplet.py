@@ -32,15 +32,15 @@ from xml.parsers.expat import ParserCreate
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.db import DbTxn
-from gen.plug import Gramplet
-from gen.display.name import displayer as name_displayer
-from gen.utils.trans import get_addon_translator
+from gramps.gen.db import DbTxn
+from gramps.gen.plug import Gramplet
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from importcsv import CSVParser
-from importvcard import VCardParser
-from importxml import GrampsParser, PERSON_RE
-from gui.dialog import ErrorDialog
+from gramps.plugins.importer.importcsv import CSVParser
+from gramps.plugins.importer.importvcard import VCardParser
+from gramps.plugins.importer.importxml import GrampsParser, PERSON_RE
+from gramps.gui.dialog import ErrorDialog
 
 #------------------------------------------------------------------------
 #
@@ -163,38 +163,39 @@ class ImportGramplet(Gramplet):
         Constructs the GUI, consisting of a text area, and 
         an Import and Clear buttons.
         """
-        import gtk
+        from gi.repository import Gtk
         # GUI setup:
         self.set_tooltip(_("Enter text to import and then click\n"
                            "the Import button at bottom"))
         # create
-        self.import_text = gtk.TextView()
-        self.import_text.set_wrap_mode(gtk.WRAP_NONE)
+        self.import_text = Gtk.TextView()
+        self.import_text.set_wrap_mode(Gtk.WrapMode.NONE)
         self.import_text.set_editable(True)
-        import_button = gtk.Button()
-        clear_button = gtk.Button()
+        import_button = Gtk.Button()
+        clear_button = Gtk.Button()
         # layout
-        scrolled_window = gtk.ScrolledWindow()
+        scrolled_window = Gtk.ScrolledWindow()
         scrolled_window.add(self.import_text)
-        buttonbox = gtk.HButtonBox()
-        buttonbox.set_layout(gtk.BUTTONBOX_SPREAD)
-        buttonbox.pack_start(clear_button, False)
-        buttonbox.pack_start(import_button, False)
-        vbox = gtk.VBox()
-        vbox.pack_start(scrolled_window, True)
-        vbox.pack_start(buttonbox, False)
+        buttonbox = Gtk.HButtonBox()
+        buttonbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
+        buttonbox.pack_start(clear_button, False, False, 0)
+        buttonbox.pack_start(import_button, False, False, 0)
+        vbox = Gtk.VBox()
+        vbox.pack_start(scrolled_window, True, True, 0)
+        vbox.pack_start(buttonbox, False, False, 0)
         scrolled_window = self.gui.get_container_widget()
         for widget in scrolled_window.get_children():
             widget.destroy()
         scrolled_window.add_with_viewport(vbox)
-        scrolled_window.get_children()[0].set_shadow_type(gtk.SHADOW_NONE)
+        scrolled_window.get_children()[0].set_shadow_type(Gtk.ShadowType.NONE)
         # bindings
-        actiongroup = gtk.ActionGroup('GrampletImportActions')
+        actiongroup = Gtk.ActionGroup('GrampletImportActions')
         actiongroup.add_actions([
             ('import', None, _("_Import"), '<Alt>i', None, self.run),
-            ('clear', gtk.STOCK_CLEAR, None, None, None, self.clear)])
-        actiongroup.get_action('import').connect_proxy(import_button)
-        actiongroup.get_action('clear').connect_proxy(clear_button)
+            ('clear', Gtk.STOCK_CLEAR, None, None, None, self.clear)])
+        # TO_FIX: AttributeError: 'Action' object has no attribute 'connect_proxy'
+        #actiongroup.get_action('import').connect_proxy(import_button)
+        #actiongroup.get_action('clear').connect_proxy(clear_button)
         # show
         vbox.show_all()
 
