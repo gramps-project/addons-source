@@ -30,11 +30,11 @@ import time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.lib.date import Date
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.lib.date import Date
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-import gen.datehandler
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
@@ -63,7 +63,7 @@ class LastChangeGramplet(Gramplet):
             self.link(person.get_primary_name().get_name(), 'Person', handle)
             change_date = Date()
             change_date.set_yr_mon_day(*time.localtime(person.change)[0:3])
-            self.append_text(" (%s %s)" % (_('changed on'), gen.datehandler.displayer.display(change_date)))
+            self.append_text(" (%s %s)" % (_('changed on'), gramps.gen.datehandler.displayer.display(change_date)))
             self.append_text("\n")
             if (counter % _YIELD_INTERVAL):
                 yield True
