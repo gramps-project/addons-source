@@ -173,9 +173,9 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             for person_handle in people:
                 self.progress.step()
                 person = self.db.get_person_from_handle(person_handle)
-                sref = gen.lib.SourceRef()
+                sref = gramps.gen.lib.Citation()
                 sref.set_reference_handle(source.get_handle())
-                person.add_source_reference(sref)
+                person.add_citation(sref)
                 self.db.commit_person(person, self.trans)
                 self.results_write("  %d) " % count)
                 self.results_write_link(name_displayer.display(person),
@@ -189,7 +189,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         self.results_write(_("Done!\n"))
 
     def create_source(self, source_text):
-        source = gen.lib.Source()
+        source = gramps.gen.lib.Source()
         source.set_title(source_text)
         self.db.add_source(source, self.trans)
         return source

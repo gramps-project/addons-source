@@ -35,17 +35,17 @@ import time
 # GRAMPS modules
 #
 #-------------------------------------------------
-from gui.plug.tool import Tool
-from gui.plug import MenuToolOptions, PluginWindows
-from gen.plug.menu import StringOption, FilterOption, PersonOption, \
+from gramps.gui.plug.tool import Tool
+from gramps.gui.plug import MenuToolOptions, PluginWindows
+from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption, BooleanOption
-import gen.lib
-from gen.db import DbTxn
-from gen.display.name import displayer as name_displayer
-import gen.plug.report.utils as ReportUtils
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
+from gramps.gen.display.name import displayer as name_displayer
+import gramps.gen.plug.report.utils as ReportUtils
 
 try:
-    from gen.utils.trans import get_addon_translator
+    from gramps.gen.utils.trans import get_addon_translator
     _ = get_addon_translator(__file__).ugettext
 except:
     import gettext
@@ -148,7 +148,7 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                 count = 0
                 attribute_text = self.options.handler.options_dict['attribute_text'] 
                 attribute_value = self.options.handler.options_dict['attribute_value']
-                specified_type = gen.lib.AttributeType()
+                specified_type = gramps.gen.lib.AttributeType()
                 specified_type.set(attribute_text)
                 self.results_write(_("Setting '%s' attributes to '%s'...\n\n" % 
                                      (attribute_text, attribute_value)))
@@ -167,7 +167,7 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                             done = True
                             break
                     if not done:
-                        attr = gen.lib.Attribute()
+                        attr = gramps.gen.lib.Attribute()
                         attr.set_type(specified_type)
                         attr.set_value(attribute_value)
                         person.add_attribute(attr)
@@ -207,7 +207,7 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                 count = 0
                 attribute_text = self.options.handler.options_dict['attribute_text'] 
                 attribute_value = self.options.handler.options_dict['attribute_value']
-                specified_type = gen.lib.AttributeType()
+                specified_type = gramps.gen.lib.AttributeType()
                 specified_type.set(attribute_text)
                 for person_handle in people:
                     count += 1
