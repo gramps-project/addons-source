@@ -33,6 +33,7 @@ from gi.repository import Gtk
 
 from gramps.plugins.export import exportgedcom
 from gramps.gui.plug.export import WriterOptionBox
+from gramps.gen.errors import DatabaseError
 
 class GedcomWriterExtension(exportgedcom.GedcomWriter):
     """
