@@ -35,17 +35,17 @@ import time
 # GRAMPS modules
 #
 #-------------------------------------------------
-from gui.plug.tool import Tool
-from gui.plug import MenuToolOptions, PluginWindows
-from gen.plug.menu import StringOption, FilterOption, PersonOption, \
+from gramps.gui.plug.tool import Tool
+from gramps.gui.plug import MenuToolOptions, PluginWindows
+from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
-import gen.lib
-from gen.db import DbTxn
-from gen.display.name import displayer as name_displayer
-import gen.plug.report.utils as ReportUtils
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
+from gramps.gen.display.name import displayer as name_displayer
+import gramps.gen.plug.report.utils as ReportUtils
 
 try:
-    from gen.utils.trans import get_addon_translator
+    from gramps.gen.utils.trans import get_addon_translator
     _ = get_addon_translator(__file__).ugettext
 except:
     import gettext
@@ -144,7 +144,7 @@ class SetTagWindow(PluginWindows.ToolManagedWindowBatch):
                     self.results_write_link(name_displayer.display(person),
                                             person, person_handle)
                     self.results_write(" from '%s'\n" % person.get_tag_list())
-                    #gen.lib.tag.set_name(tag_value)
+                    #gramps.gen.lib.tag.set_name(tag_value)
                     person.add_tag(tag)
                     self.db.commit_person(person, self.trans)
                     count += 1
