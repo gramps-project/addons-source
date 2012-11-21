@@ -7,7 +7,7 @@ register(REPORT,
     id = 'denominoviso',
     name = _('DenominoViso'),
     category = CATEGORY_WEB,
-    status = UNSTABLE,
+    status = UNSTABLE, # not yet tested with python 3
     fname = 'DenominoViso.py',
     reportclass = 'DenominoVisoReport',
     optionclass = 'DenominoVisoOptions',

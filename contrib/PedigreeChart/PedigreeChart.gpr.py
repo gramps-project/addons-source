@@ -23,7 +23,7 @@ register(REPORT,
          id="PedigreeChart",
          name=_("Pedigree Chart"),
          description=_("Alternate version of the traditional pedigree chart."),
-         status = UNSTABLE,
+         status = UNSTABLE, # not yet tested with python 3
          version = '1.0.12',
          fname="PedigreeChart.py",
          gramps_target_version="4.0",

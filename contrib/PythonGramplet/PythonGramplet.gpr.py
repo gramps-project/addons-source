@@ -2,7 +2,7 @@ register(GRAMPLET,
          id="Python Gramplet", 
          name=_("Python Gramplet"), 
          description = _("Interactive Python interpreter"),
-         status = UNSTABLE,
+         status = UNSTABLE, # not yet tested with python 3
          fname="PythonGramplet.py",
          height=250,
          gramplet = 'PythonGramplet',

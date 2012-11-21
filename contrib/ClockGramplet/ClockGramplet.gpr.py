@@ -6,7 +6,7 @@ register(GRAMPLET,
          expand=False,
          gramplet = 'ClockGramplet',
          gramplet_title=_("Clock"),
-         status = UNSTABLE,
+         status = UNSTABLE, # not yet tested with python 3
          version = '0.0.10',
          gramps_target_version = "4.0",
          fname="ClockGramplet.py",

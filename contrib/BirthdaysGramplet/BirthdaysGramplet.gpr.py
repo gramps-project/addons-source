@@ -3,7 +3,7 @@ register(GRAMPLET,
 	id='Birthdays',
 	name=_("Birthdays Gramplet"),
 	description = _("a gramplet that displays the birthdays of the living people"),
-	status = STABLE,
+	status = STABLE, # not yet tested with python 3
 	version = '1.0.15',
 	fname="BirthdaysGramplet.py",
 	height = 200,

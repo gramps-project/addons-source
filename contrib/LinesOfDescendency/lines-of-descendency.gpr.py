@@ -32,7 +32,7 @@ register(REPORT,
             'from a given ancestor to a given descendent in text.'),
         version = '1.1.13',
         gramps_target_version = '4.0',
-        status = STABLE,
+        status = STABLE, # not yet tested with python 3
         fname = 'lines-of-descendency.py',
         authors = ['lcc'],
         authors_email = ['lcc.mailaddress@gmail.com'],

@@ -27,7 +27,7 @@ register(EXPORT,
                                   'configured database'),
          version = '1.0.15',
          gramps_target_version= '4.0',
-         status               = STABLE,
+         status               = STABLE, # not yet tested with python 3
          export_options_title = _('Django options'), 
          export_options       = 'NoFilenameOptions',
          export_function      = 'export_all',

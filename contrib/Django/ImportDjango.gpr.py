@@ -27,7 +27,7 @@ register(IMPORT,
                                   'configured database'),
          version = '1.0.15',
          gramps_target_version = '4.0',
-         status               = STABLE,
+         status               = STABLE, # not yet tested with python 3
          import_function      = 'import_data',
          extension            = "django",
          fname                = "ImportDjango.py",

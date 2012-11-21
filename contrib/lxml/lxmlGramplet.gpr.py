@@ -8,7 +8,7 @@ register(GRAMPLET,
 id="lxml Gramplet",
 name=_("lxml Gramplet"),
 description = _("Gramplet for testing lxml and XSLT"),
-status = STABLE,
+status = STABLE, # not yet tested with python 3
 version = '0.3.7',
 gramps_target_version = "4.0",
 include_in_listing = False,

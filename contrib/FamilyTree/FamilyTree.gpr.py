@@ -4,7 +4,7 @@ register(REPORT,
     description = _('Produces a graphical family tree.'),
     version = '3.4.11',
     gramps_target_version = '4.0',
-    status = STABLE,
+    status = STABLE, # not yet tested with python 3
     fname = 'FamilyTree.py',
     reportclass = 'FamilyTree',
     optionclass = 'FamilyTreeOptions',

@@ -5,7 +5,7 @@ register(VIEW,
          description =  _("Dynamic graph of relations"),
          version = '1.0.30',
          gramps_target_version = '4.0',
-         status = STABLE,
+         status = UNSTABLE, # not yet tested with python 3
          fname = 'graphview.py',
          authors = [u"Gary Burton"],
          authors_email = ["gary.burton@zen.co.uk"],

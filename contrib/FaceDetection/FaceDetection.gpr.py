@@ -4,7 +4,7 @@ register(GRAMPLET,
          description = _("Gramplet for detecting and assigning faces"),
          version = '1.0.5',
          gramps_target_version="4.0",
-         status = STABLE,
+         status = STABLE, # not yet tested with python 3
          fname="FaceDetection.py",
          height=200,
          gramplet = 'FaceDetection',
