@@ -23,7 +23,7 @@
 #------------------------------------------------------------------------
 
 import codecs
-import gtk
+from gi.repository import Gtk
 import sys
 import os
 from xml.etree import ElementTree
@@ -34,19 +34,19 @@ from xml.etree import ElementTree
 #
 #------------------------------------------------------------------------
 
-from gen.const import USER_PLUGINS
-from gui.glade import Glade
-from gui.managedwindow import ManagedWindow
-from gui.widgets import MonitoredEntry, MonitoredDate
-from gui.plug import tool
-import gen.datehandler
+from gramps.gen.const import USER_PLUGINS
+from gramps.gui.glade import Glade
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.widgets import MonitoredEntry, MonitoredDate
+from gramps.gui.plug import tool
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 # Handlers and signal class
@@ -54,11 +54,11 @@ _ = get_addon_translator(__file__).ugettext
 class GtkHandlers:
     def on_quit_clicked(event):
         print('quit')
-        gtk.main_quit()
+        Gtk.main_quit()
         
     def on_ok_clicked(event):
         print('save')
-        gtk.main_save()
+        Gtk.main_save()
         
     def on_witness_clicked(event):
         print(event)

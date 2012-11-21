@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-import gtk
+from gi.repository import Gtk
 import os
 
 #------------------------------------------------------------------------
@@ -24,18 +24,18 @@ import os
 #
 #------------------------------------------------------------------------
 
-from gui.glade import Glade
-from gui.managedwindow import ManagedWindow
-from gui.widgets import MonitoredEntry, MonitoredDate
-from gui.plug import tool
-import gen.datehandler
+from gramps.gui.glade import Glade
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.widgets import MonitoredEntry, MonitoredDate
+from gramps.gui.plug import tool
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 # Handlers and signal class
@@ -43,11 +43,11 @@ _ = get_addon_translator(__file__).ugettext
 class GtkHandlers:
     def on_quit_clicked(event):
         print('quit')
-        gtk.main_quit()
+        Gtk.main_quit()
         
     def on_ok_clicked(event):
         print('save')
-        gtk.main_save()
+        Gtk.main_save()
         
 
 class Witness(tool.Tool, ManagedWindow):
