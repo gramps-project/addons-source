@@ -23,12 +23,12 @@
 Run a query on the tables
 """
 
-from gen.simple import SimpleAccess, SimpleDoc
-from gui.plug.quick import QuickTable
-from gen.utils.trans import get_addon_translator
+from gramps.gen.simple import SimpleAccess, SimpleDoc
+from gramps.gui.plug.quick import QuickTable
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-import gen.datehandler
-import gen.lib
+import gramps.gen.datehandler
+import gramps.gen.lib
 
 class DBI(object):
     def __init__(self, database, document):
@@ -220,8 +220,8 @@ class DBI(object):
         An environment with which to eval rows.
         """
         retval= {
-            _("Date"): gen.lib.date.Date,
-            _("Today"): gen.lib.date.Today(),
+            _("Date"): gramps.gen.lib.date.Date,
+            _("Today"): gramps.gen.lib.date.Today(),
             }
         # Fixme: make these lazy, for delayed lookup
         #retval.update(self.data[self.table][1])
@@ -265,7 +265,7 @@ class DBI(object):
                     #self.database.active = person
                     #trans = self.database.transaction_begin()
                     #active_name = _("Delete Person (%s)") % self.sdb.name(person)
-                    #gen.utils.delete_person_from_database(self.database, person, trans)
+                    #gramps.gen.utils.delete_person_from_database(self.database, person, trans)
                     ## FIXME: delete familes, events, notes, resources, etc, if possible
                     #self.database.transaction_commit(trans, active_name)
                     pass
