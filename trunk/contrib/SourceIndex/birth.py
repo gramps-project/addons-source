@@ -23,7 +23,7 @@
 #------------------------------------------------------------------------
 
 import codecs
-import gtk
+from gi.repository import Gtk
 import sys
 import os
 from xml.etree import ElementTree
@@ -34,21 +34,21 @@ from xml.etree import ElementTree
 #
 #------------------------------------------------------------------------
 
-from gen.const import USER_PLUGINS
-from gui.glade import Glade
-from gui.managedwindow import ManagedWindow
-from gui.widgets import MonitoredEntry, MonitoredDate, MonitoredText, MonitoredType
-from gui.editors.objectentries import ObjEntry, PlaceEntry, MediaEntry, NoteEntry
-from gui.plug import tool
-from gen.lib import date
-import gen.datehandler
+from gramps.gen.const import USER_PLUGINS
+from gramps.gui.glade import Glade
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.widgets import MonitoredEntry, MonitoredDate, MonitoredText, MonitoredType
+from gramps.gui.editors.objectentries import ObjEntry, PlaceEntry, MediaEntry, NoteEntry
+from gramps.gui.plug import tool
+from gramps.gen.lib import date
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 # code cherrytree
@@ -60,7 +60,7 @@ class GladeWidgetsWrapper:
 
     def __init__(self, glade_file_path, gui_instance):
         try:
-            self.glade_widgets = gtk.Builder()
+            self.glade_widgets = Gtk.Builder()
             self.glade_widgets.set_translation_domain('gramps')
             self.glade_widgets.add_from_file(glade_file_path)
             self.glade_widgets.connect_signals(gui_instance)
@@ -85,11 +85,11 @@ class GtkHandlers:
     """
     def on_quit_clicked(widget, data=None):
         print('quit')
-        gtk.main_quit()
+        Gtk.main_quit()
         
     def on_ok_clicked(widget, data=None):
         print('save')
-        gtk.main_save()
+        Gtk.main_save()
         
     def on_witness_clicked( widget, data=None):
         print(event)
@@ -137,7 +137,7 @@ class BirthIndex(tool.Tool, ManagedWindow):
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
         
-        self.text = gtk.EntryBuffer('Gtk.Entry._get...', 5)
+        self.text = Gtk.EntryBuffer('Gtk.Entry._get...', 5)
                
         # tests
         path = os.path.join(USER_PLUGINS, 'SourceIndex')
