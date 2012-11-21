@@ -30,14 +30,13 @@ import posixpath
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer as name_displayer
-from gen.plug import Gramplet
-from gen.utils.trans import get_addon_translator
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
-from gen.utils.file import media_path_full
-from gen.relationship import get_relationship_calculator
-import gen.datehandler
-import gen
+from gramps.gen.utils.file import media_path_full
+from gramps.gen.relationship import get_relationship_calculator
+import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
 #
