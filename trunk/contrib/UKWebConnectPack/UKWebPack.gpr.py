@@ -9,7 +9,7 @@ register(GENERAL,
          id="UK Web Connect Pack",
          name=_("UK Web Connect Pack"),
          description = _("Collection of Web sites for the UK (requires libwebconnect)"),
-         status = STABLE,
+         status = STABLE, # not yet tested with python 3
          version = '1.0.18',
          gramps_target_version = "4.0",
          fname="UKWebPack.py",

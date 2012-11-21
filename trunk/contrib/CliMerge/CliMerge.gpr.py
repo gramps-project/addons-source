@@ -7,7 +7,7 @@ register(TOOL,
     id    = 'climerge',
     name  = "Command Line Merge",
     category = TOOL_UTILS,
-    status = STABLE,
+    status = STABLE, # not yet tested with python 3
     fname = 'CliMerge.py',
     toolclass = 'CliMerge',
     optionclass = 'CliMergeOptions',

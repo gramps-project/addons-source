@@ -32,7 +32,7 @@ register(REPORT,
          description =  _("Report of census events for a person."),
          version = '1.0.18',
          gramps_target_version = '4.0',
-         status = STABLE,
+         status = STABLE, # not yet tested with python 3
          fname = 'CensusReport.py',
          authors = ["Nick Hall"],
          authors_email = ["nick__hall@hotmail.com"],

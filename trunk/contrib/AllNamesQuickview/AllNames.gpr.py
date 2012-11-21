@@ -4,7 +4,7 @@ register(QUICKREPORT,
          description= _("Display all names of all people"),
          version = '1.0.8',
          gramps_target_version = '4.0',
-         status = STABLE,
+         status = STABLE, # not yet tested with python 3
          fname = 'AllNames.py',
          authors = ["Douglas Blank"],
          authors_email = ["dblank@cs.brynmawr.edu"],

@@ -8,7 +8,7 @@ register(GRAMPLET,
          name=_("TODO2"), 
          description = _("Gramplet for generic notes"),
          #data =[''],
-         status = STABLE,
+         status = STABLE, # not yet tested with python 3
          include_in_listing = False,
          fname="todonotesgramplet.py",
          height=300,

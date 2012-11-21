@@ -5,7 +5,7 @@ register(REPORT,
                     "about a person and his/her partners and children."),
     version = '3.4.14',
     gramps_target_version = '4.0',
-    status = STABLE,
+    status = STABLE, # not yet tested with python 3
     fname = 'FamilySheet.py',
     authors = ["Reinhard Mueller"],
     authors_email = ["reinhard.mueller@igal.at"],

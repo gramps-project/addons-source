@@ -26,7 +26,7 @@ register(TOOL,
          description =  _("Set an attribute to a given value."),
          version = '0.0.9',
          gramps_target_version = '4.0',
-         status = UNSTABLE,
+         status = UNSTABLE, # not yet tested with python 3
          fname = 'SetAttributeTool.py',
          authors = ["Douglas S. Blank"],
          authors_email = ["doug.blank@gmail.com"],
