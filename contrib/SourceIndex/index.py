@@ -27,7 +27,7 @@ Provide the dialog and the menu for handling indexes.
 #------------------------------------------------------------------------
 
 import codecs
-import gtk
+from gi.repository import Gtk
 import sys
 import os
 from xml.etree import ElementTree
@@ -39,17 +39,17 @@ import csv
 #
 #------------------------------------------------------------------------
 
-from gen.const import USER_PLUGINS
-from gui.glade import Glade
-from gui.managedwindow import GrampsWindowManager, ManagedWindow
-from gui.plug import tool
+from gramps.gen.const import USER_PLUGINS
+from gramps.gui.glade import Glade
+from gramps.gui.managedwindow import GrampsWindowManager, ManagedWindow
+from gramps.gui.plug import tool
 
 #------------------------------------------------------------------------
 #
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 # Handlers and signal class
@@ -60,11 +60,11 @@ class GladeHandlers():
     """
     
     def on_quit_clicked():
-        gtk.main_quit()
+        Gtk.main_quit()
     def on_search_clicked():
-        gtk.main_search()
+        Gtk.main_search()
     def on_remove_clicked():
-        gtk.main_remove()	
+        Gtk.main_remove()	
 
 #    def search(self,obj):
 #        if self.callback:
