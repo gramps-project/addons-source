@@ -44,32 +44,18 @@ import time
 # gramps modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer as name_displayer
-import gen.datehandler
-from gen.lib import ChildRefType
-from gen.lib.date import Date
-from gen.plug import docgen
-from gen.plug.docgen import fontscale
-from gen.plug.menu import BooleanOption, NumberOption, PersonOption
+from gramps.gen.display.name import displayer as name_displayer
+import gramps.gen.datehandler
+from gramps.gen.lib import ChildRefType
+from gramps.gen.lib.date import Date
+from gramps.gen.plug import docgen
+from gramps.gen.plug.report import Report, MenuReportOptions
+from gramps.gen.plug.docgen import fontscale
+from gramps.gen.plug.menu import BooleanOption, NumberOption, PersonOption
+from gramps.gen.plug.report.utils import pt2cm, cm2pt
 #from gen.plug.menu import TextOption
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-try:
-    # v3.2
-    from ReportBase import MenuReportOptions
-    from ReportBase import Report
-    from ReportBase import ReportUtils
-    pt2cm = ReportUtils.pt2cm
-    cm2pt = ReportUtils.cm2pt
-except ImportError:
-    # v3.3
-    from gen.plug.report import Report
-    from gen.plug.report.utils import pt2cm, cm2pt
-    try:
-        from gui.plug.report import MenuReportOptions # inside a "try:"
-    except ImportError:
-        # v3.4
-        from gen.plug.report import MenuReportOptions
 
 _LINKS_BEGIN = 8
 _PEOPLE_PER_PAGE = 15
@@ -249,7 +235,7 @@ class PersonBox:
                 for e_type, handle in birth_ref.get_referenced_handles():
                     if e_type == 'Event':
                         birth_event = self.report.database.get_event_from_handle(handle)
-                        birth_date = gen.datehandler.get_date(birth_event)
+                        birth_date = gramps.gen.datehandler.get_date(birth_event)
             self.line += "\nb. " + str(birth_date)
 
             # we don't repeat this information for the mother
@@ -265,7 +251,7 @@ class PersonBox:
                         # and are these the only important ones?
                         #print repr(evt.get_type().string)
                         if evt.get_type().string in ["Marriage", "Civil Union"]:
-                            relationship_date = gen.datehandler.get_date(evt)
+                            relationship_date = gramps.gen.datehandler.get_date(evt)
                 self.line += "\nm. " + str(relationship_date)
 
             death_date = _PLACEHOLDER
@@ -274,7 +260,7 @@ class PersonBox:
                 for e_type, handle in death_ref.get_referenced_handles():
                     if e_type == 'Event':
                         death_event = self.report.database.get_event_from_handle(handle)
-                        death_date = gen.datehandler.get_date(death_event)
+                        death_date = gramps.gen.datehandler.get_date(death_event)
             self.line += "\nd. " + str(death_date)
 
         return self.line
@@ -363,7 +349,7 @@ class PedigreeChart(Report):
 
         database        - the GRAMPS database instance
         options         - instance of the Options class for this report
-        user            - a gen.user.User() instance
+        user            - a gramps.gen.user.User() instance
 
         """
 
@@ -396,8 +382,8 @@ class PedigreeChart(Report):
 #        self.footer = escape("%s: %s <%s>\n%s" % (_('Researcher'),
 #                             researcher.get_name(),
 #                             researcher.get_email(),
-#                             gen.datehandler.displayer.display(report_date)))
-        self.footer = gen.datehandler.displayer.display(report_date)
+#                             gramps.gen.datehandler.displayer.display(report_date)))
+        self.footer = gramps.gen.datehandler.displayer.display(report_date)
 
         self.map = {}
         self.page_number = PageCounter(1)
