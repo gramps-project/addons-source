@@ -29,17 +29,17 @@
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer as name_displayer
-from gen.plug import docgen
-import gen.datehandler
-from gen.filters import GenericFilterFactory
-from gen.filters import rules
-from gen.plug.report import MenuReportOptions
-from gen.plug.report import Report
-from gen.errors import ReportError
-import gen.plug.report.utils as ReportUtils
-from gen.plug.menu import EnumeratedListOption, BooleanOption
-from gen.utils.trans import get_addon_translator
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.plug import docgen
+import gramps.gen.datehandler
+from gramps.gen.filters import GenericFilterFactory
+from gramps.gen.filters import rules
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import Report
+from gramps.gen.errors import ReportError
+import gramps.gen.plug.report.utils as ReportUtils
+from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 
 _REF_HANDLE_POS = 0
@@ -70,7 +70,7 @@ class TodoReport(Report):
 
         database        - the GRAMPS database instance
         options         - instance of the Options class for this report
-        user            - a gen.user.User() instance
+        user            - a gramps.gen.user.User() instance
 
         """
         Report.__init__(self, database, options, user)
@@ -269,7 +269,7 @@ class TodoReport(Report):
         birth_ref = person.get_birth_ref()
         if birth_ref:
             event = self.database.get_event_from_handle(birth_ref.ref)
-            self.doc.write_text("b. " + gen.datehandler.get_date( event ))
+            self.doc.write_text("b. " + gramps.gen.datehandler.get_date( event ))
         else:
             self.doc.write_text("b. " + "_" * 12)
         self.doc.end_paragraph()
@@ -280,7 +280,7 @@ class TodoReport(Report):
         death_ref = person.get_death_ref()
         if death_ref:
             event = self.database.get_event_from_handle(death_ref.ref)
-            self.doc.write_text("d. " + gen.datehandler.get_date( event ))
+            self.doc.write_text("d. " + gramps.gen.datehandler.get_date( event ))
         self.doc.end_paragraph()
         self.doc.end_cell()
 
@@ -329,7 +329,7 @@ class TodoReport(Report):
             # and are these the only important ones?
             #print repr(evt.get_type().string)
             if evt.get_type().string in ["Marriage", "Civil Union"]:
-                relationship_date = gen.datehandler.get_date(evt)
+                relationship_date = gramps.gen.datehandler.get_date(evt)
         rel_msg = _("%(relationship_type)s on %(relationship_date)s") % {'relationship_type': family.get_relationship(),
                                                                          'relationship_date': relationship_date}
 
@@ -357,7 +357,7 @@ class TodoReport(Report):
 
         self.doc.start_cell('TR-TableCell')
         self.doc.start_paragraph('TR-Normal')
-        date = gen.datehandler.get_date(event)
+        date = gramps.gen.datehandler.get_date(event)
         if date:
             self.doc.write_text(date)
         else:
