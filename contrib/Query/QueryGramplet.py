@@ -21,10 +21,14 @@
 
 # $Id$
 
-from gen.utils.trans import get_addon_translator
+#import os
+
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
-from gui.plug.quick import run_quick_report_by_name
-from PythonGramplet import PythonGramplet
+from gramps.gui.plug.quick import run_quick_report_by_name
+
+#from gramps.gen.const import USER_PLUGINS
+#import os.path.join(USER_PLUGINS, 'PythonGramplet', 'PythonGramplet')
 
 class QueryGramplet(PythonGramplet):
     def init(self):
