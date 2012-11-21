@@ -26,19 +26,19 @@
 # SOFTWARE.
 #
 
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 
-from gen.plug.docgen import FontStyle, ParagraphStyle, FONT_SANS_SERIF, \
+from gramps.gen.plug.docgen import FontStyle, ParagraphStyle, FONT_SANS_SERIF, \
         PARA_ALIGN_CENTER
-from gen.plug.menu import PersonOption
-from gen.lib import FamilyRelType
-from gen.display.name import displayer as _nd
+from gramps.gen.plug.menu import PersonOption
+from gramps.gen.lib import FamilyRelType
+from gramps.gen.display.name import displayer as _nd
 
-from gen.plug.report import Report
-from gen.plug.report import CATEGORY_TEXT
-from gen.plug.report import MenuReportOptions
-import gen.plug.report.utils as ReportUtils
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import CATEGORY_TEXT
+from gramps.gen.plug.report import MenuReportOptions
+import gramps.gen.plug.report.utils as ReportUtils
 
 
 class LODOptions(MenuReportOptions):
