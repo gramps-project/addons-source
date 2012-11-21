@@ -24,17 +24,18 @@
 #
 #------------------------------------------------------------------------
 
-import gtk
+from gi.repository import Gtk
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet        
-from gen.filters import GenericFilterFactory, rules
-from gui.widgets import SimpleButton
-from gen.ggettext import sgettext as _
+from gramps.gen.plug import Gramplet        
+from gramps.gen.filters import GenericFilterFactory, rules
+from gramps.gui.widgets import SimpleButton
+from gramps.gen.utils.trans import get_addon_translator
+_ = get_addon_translator(__file__).ugettext
 
 #------------------------------------------------------------------------
 #
@@ -48,48 +49,48 @@ class TODONotesGramplet(Gramplet):
         # default state
         self.current = 0
                
-        vbox = gtk.VBox()
-        hbox = gtk.HBox()
+        vbox = Gtk.VBox()
+        hbox = Gtk.HBox()
         
         # area
         
-        self.import_text = gtk.TextView()
+        self.import_text = Gtk.TextView()
         
-        self.import_text.set_wrap_mode(gtk.WRAP_WORD)
+        self.import_text.set_wrap_mode(Gtk.WrapMode.WORD)
         self.import_text.set_editable(False)
         
-        self.text = gtk.TextBuffer()
+        self.text = Gtk.TextBuffer()
         if self.gui.data:
             self.text.set_text(self.gui.data[0])
         else:
             self.text.set_text(_("Edit a TODO Note."))
         self.import_text.set_buffer(self.text)
         
-        vbox.pack_start(self.import_text, True)
+        vbox.pack_start(self.import_text, True, True, 0)
         
         # buttons
               
-        hbox = gtk.HBox()
+        hbox = Gtk.HBox()
         
-        self.left = SimpleButton(gtk.STOCK_GO_BACK, self.previous_button)
+        self.left = SimpleButton(Gtk.STOCK_GO_BACK, self.previous_button)
         self.left.set_sensitive(False)
-        hbox.pack_start(self.left, False, False)
+        hbox.pack_start(self.left, False, False, 0)
         
-        edit_button = gtk.Button(_(_("Edit")))
+        edit_button = Gtk.Button(_(_("Edit")))
         edit_button.connect("clicked", self.edit)
-        hbox.pack_start(edit_button, False, False)
+        hbox.pack_start(edit_button, False, False, 0)
         
-        self.right = SimpleButton(gtk.STOCK_GO_FORWARD, self.next_button)
+        self.right = SimpleButton(Gtk.STOCK_GO_FORWARD, self.next_button)
         self.right.set_sensitive(False)
-        hbox.pack_start(self.right, False, False)
+        hbox.pack_start(self.right, False, False, 0)
         
-        self.page = gtk.Label()
+        self.page = Gtk.Label()
         hbox.pack_end(self.page, False, False, 10)
         
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
         
-        vbox.pack_start(hbox, False, False)
+        vbox.pack_start(hbox, False, False, 0)
         
         vbox.show_all()
         
@@ -142,7 +143,7 @@ class TODONotesGramplet(Gramplet):
             self.text.set_text(self.note.get())
             
     def create_note(self):
-        from gen.lib import Note
+        from gramps.gen.lib import Note
         
         self.note = Note()
         #obj.set_tag(_("ToDo"))
@@ -155,7 +156,7 @@ class TODONotesGramplet(Gramplet):
         self.load(self.current -1)
         
     def edit(self, obj):
-        from gui.editors import EditNote
+        from gramps.gui.editors import EditNote
         try:
             EditNote(self.gui.dbstate, 
                        self.gui.uistate, [], 
