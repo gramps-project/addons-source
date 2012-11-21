@@ -35,12 +35,12 @@ Display the number of a person's descendants.
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import gen.display.name
-from gen.relationship import get_relationship_calculator
-from gen.simple import SimpleDoc
-from gui.plug.quick import QuickTable
-from gen.utils.trans import get_addon_translator
-from gen.utils.alive import probably_alive
+import gramps.gen.display.name
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.simple import SimpleDoc
+from gramps.gui.plug.quick import QuickTable
+from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.utils.alive import probably_alive
 _ = get_addon_translator().ugettext
 
 #------------------------------------------------------------------------
@@ -52,7 +52,7 @@ def run(database, document, person):
 
     sdoc = SimpleDoc(document)
 
-    name = gen.display.name.displayer.display(person)
+    name = gramps.gen.display.name.displayer.display(person)
     death_date = _get_date(database, person.get_death_ref())
 
     sdoc.title(_("Number of %s's descendants") % name)
