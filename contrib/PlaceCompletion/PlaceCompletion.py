@@ -34,38 +34,41 @@ import re
 
 #------------------------------------------------------------------------
 #
-# GTK/GNOME modules
+# GTK/GI modules
 #
 #------------------------------------------------------------------------
-import gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.mime import *
-from gui.glade import Glade
-from gui.plug import tool as Tool
-from gui.plug import PluginWindows
-from gui.display import display_url
-from gui.managedwindow import ManagedWindow
-from gen.lib import Location
-from gen.db import DbTxn
-from gen.filters import GenericFilterFactory, rules
+from gramps.gen.mime import *
+from gramps.gui.glade import Glade
+from gramps.gui.plug import tool as Tool
+from gramps.gui.plug import PluginWindows
+from gramps.gui.display import display_url
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gen.lib import Location
+from gramps.gen.db import DbTxn
+from gramps.gen.filters import GenericFilterFactory, rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
-from gen.filters.rules.place import *
-from gui.dialog import OkDialog, WarningDialog
-from gen.utils.place import conv_lat_lon
-from gen.errors import WindowActiveError
+from gramps.gen.filters.rules.place import *
+from gramps.gui.dialog import OkDialog, WarningDialog
+from gramps.gen.utils.place import conv_lat_lon
+from gramps.gen.errors import WindowActiveError
 
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
-import gui.utils
-if hasattr(gui.utils, "ProgressMeter"):
-    ProgressMeter = gui.utils.ProgressMeter
+import gramps.gen.constfunc
+
+import gramps.gui.utils
+if hasattr(gramps.gui.utils, "ProgressMeter"):
+    ProgressMeter = gramps.gui.utils.ProgressMeter
 else:
     raise ImportError("can't find ProgressMeter")
 
@@ -89,15 +92,30 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         base = os.path.dirname(__file__)
         glade_file = base + os.sep + "placecompletion.glade"
 
-        self.glade = Glade(glade_file)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+            
+            self.glade.add_from_file(glade_file)
+        else:
+            self.glade = Glade(glade_file)
 
         window = self.glade.get_object("top")
         
         self.tree = self.glade.get_object("tree1")
         self.tree.set_headers_visible(False)
-        renderer = gtk.CellRendererText()
+        renderer = Gtk.CellRendererText()
         #following does not work with foreground (KDE issue??), so set background
-        col = gtk.TreeViewColumn('',renderer,text=0,background=3)
+        col = Gtk.TreeViewColumn('',renderer,text=0,background=3)
         self.tree.append_column(col)
         
         self.tree.connect('event',self.button_press_event)
@@ -292,8 +310,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         return place
             
     def fill_combobox(self, cmb, namelistopt, default) :
-        store = gtk.ListStore(str)
-        cell = gtk.CellRendererText()
+        store = Gtk.ListStore(str)
+        cell = Gtk.CellRendererText()
         cmb.pack_start(cell,True)
         cmb.add_attribute(cell,'text',0)
         cmb.set_model(store)
@@ -305,8 +323,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             index = index + 1
             
     def fill_combobox_index(self, cmb, namelistind, defaultindex) :
-        store = gtk.ListStore(str)
-        cell = gtk.CellRendererText()
+        store = Gtk.ListStore(str)
+        cell = Gtk.CellRendererText()
         cmb.pack_start(cell,True)
         cmb.add_attribute(cell,'text',0)
         index = 0
@@ -321,7 +339,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             default is the key in the combobox, or a text with what should 
             be in the text field
         '''
-        store = gtk.ListStore(str,str)
+        store = Gtk.ListStore(str,str)
         index = 0
         indexactive = None
         for data in namelistopt:
@@ -333,7 +351,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         
         cmbe.set_model(store)
         cmbe.set_text_column(1)
-        #completion = gtk.EntryCompletion()
+        #completion = Gtk.EntryCompletion()
         #completion.set_model(store)
         #completion.set_minimum_key_length(1)
         #completion.set_text_column(0)
@@ -481,7 +499,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         
     def make_new_model(self):
         # model contains 4 colums: text to show, place handle, action, color
-        self.model = gtk.TreeStore(str, object, object, str)
+        self.model = Gtk.TreeStore(str, object, object, str)
         self.tree.set_model(self.model)
         self.populate_tree()
         self.tree.expand_all()
@@ -642,7 +660,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
     def button_press_event(self,obj,event):
         from gui.editors import EditPlace
 
-        if event.type == gtk.gdk._2BUTTON_PRESS and event.button == 1:
+        if event.type == Gdk._2BUTTON_PRESS and event.button == 1:
             store, node = self.tree.get_selection().get_selected()
             if node:
                 #only when non empty tree view you are here
@@ -670,8 +688,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 except WindowActiveError :
                     pass
                         
-        if event.type == gtk.gdk.KEY_PRESS and \
-                event.keyval == gtk.keysyms.Delete:
+        if event.type == Gdk.KEY_PRESS and \
+                event.keyval == Gtk.keysyms.Delete:
             selection = self.tree.get_selection()
             store, node = selection.get_selected()
             if node :
@@ -687,8 +705,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     if row >= 0:
                         selection.select_path((row,))
                         
-        if event.type == gtk.gdk.KEY_PRESS and \
-                event.keyval == gtk.keysyms.Tab:
+        if event.type == Gdk.KEY_PRESS and \
+                event.keyval == Gtk.keysyms.Tab:
             #call up google maps
             self.google()
             
@@ -1393,7 +1411,7 @@ class PlaceCompletionOptions(Tool.ToolOptions):
         nolatlon.add_rule(rules.place.HasNoLatOrLon([]))
 
         the_filters = [all,nolatlon]
-        from gen.filters import CustomFilters
+        from gramps.gen.filters import CustomFilters
         the_filters.extend(CustomFilters.get_filters('Place'))
         return the_filters
         
