@@ -23,7 +23,7 @@
 # Python modules
 #
 #------------------------------------------------------------------------
-import gtk
+from gi.repository import Gtk
 import pango
 
 #------------------------------------------------------------------------
@@ -31,15 +31,15 @@ import pango
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.display.name import displayer as name_displayer
-from gen.utils.trans import get_addon_translator
+from gramps.gen.plug import Gramplet
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().ugettext
-from gen.const import GLADE_FILE
-from gui.widgets import StyledTextEditor
-from gen.lib import StyledText, Note
-from gen.db import DbTxn
-from gen.errors import WindowActiveError
+from gramps.gen.const import GLADE_FILE
+from gramps.gui.widgets import StyledTextEditor
+from gramps.gen.lib import StyledText, Note
+from gramps.gen.db import DbTxn
+from gramps.gen.errors import WindowActiveError
 
 #------------------------------------------------------------------------
 #
@@ -51,63 +51,63 @@ class NoteGramplet(Gramplet):
     Gramplet that gives simplified interface to a Person's primary note.
     """
     def init(self):
-        rows = gtk.VBox()
+        rows = Gtk.VBox()
         self._dirty = False
         self._dirty_person = None
 
         # Active person: Name
-        row = gtk.HBox()
-        label = gtk.Label()
+        row = Gtk.HBox()
+        label = Gtk.Label()
         label.set_text("<b>%s</b>: " % _("Active person"))
         label.set_use_markup(True)
         label.set_alignment(0.0, 0.5)
-        row.pack_start(label, False)
+        row.pack_start(label, False, False, 0)
 
-        apw = gtk.Label()
+        apw = Gtk.Label()
         self.active_person_widget = apw
         apw.set_alignment(0.0, 0.5)
         apw.set_use_markup(True)
-        row.pack_start(apw, False)
+        row.pack_start(apw, False, False, 0)
 
         # Add edit for person and family
-        icon = gtk.STOCK_EDIT
-        size = gtk.ICON_SIZE_MENU
-        button = gtk.Button()
-        image = gtk.Image()
+        icon = Gtk.STOCK_EDIT
+        size = Gtk.IconSize.MENU
+        button = Gtk.Button()
+        image = Gtk.Image()
         image.set_from_stock(icon, size)
         button.add(image)
-        button.set_relief(gtk.RELIEF_NONE)
+        button.set_relief(Gtk.ReliefStyle.NONE)
         button.connect("clicked", self.edit_person)
         self.active_person_edit = button
-        row.pack_start(button, False)
+        row.pack_start(button, False, False, 0)
 
-        label = gtk.Label()
+        label = Gtk.Label()
         label.set_text(" %s: " % _("Family"))
         self.active_family_label = label
-        row.pack_start(label, False)
+        row.pack_start(label, False, False, 0)
 
-        button = gtk.Button()
-        image = gtk.Image()
+        button = Gtk.Button()
+        image = Gtk.Image()
         image.set_from_stock(icon, size)
         button.add(image)
-        button.set_relief(gtk.RELIEF_NONE)
+        button.set_relief(Gtk.ReliefStyle.NONE)
         button.connect("clicked", self.edit_family)
         self.active_family_edit = button
-        row.pack_start(button, False)
+        row.pack_start(button, False, False, 0)
 
-        rows.pack_start(row, False)
+        rows.pack_start(row, False, False, 0)
 
         row = self.build_interface()
         self.note_buffer = self.texteditor.textbuffer
         self.note_buffer.connect("changed", self.mark_dirty)
-        rows.pack_start(row, True)
+        rows.pack_start(row, True, True, 0)
 
         # Save and Abandon
-        row = gtk.HBox()
-        button = gtk.Button(_("Save"))
+        row = Gtk.HBox()
+        button = Gtk.Button(_("Save"))
         button.connect("clicked", self.save_data_edit)
         row.pack_start(button, True)
-        button = gtk.Button(_("Abandon"))
+        button = Gtk.Button(_("Abandon"))
         button.connect("clicked", self.abandon_data_edit)
         row.pack_start(button, True)
         rows.pack_start(row, False)
@@ -123,23 +123,23 @@ class NoteGramplet(Gramplet):
         """
         if active:
             # Set the text style to monospace
-            self.texteditor.set_wrap_mode(gtk.WRAP_NONE)
+            self.texteditor.set_wrap_mode(Gtk.WrapMode.NONE)
             self.texteditor.modify_font(pango.FontDescription("monospace"))
         else:
             # Set the text style to normal
-            self.texteditor.set_wrap_mode(gtk.WRAP_WORD)
+            self.texteditor.set_wrap_mode(Gtk.WrapMode.WORD)
             self.texteditor.modify_font(pango.FontDescription("normal"))
 
     def build_interface(self):
         """
         Based on src/Editors/_EditNote.py
         """
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
         self.texteditor = StyledTextEditor()
         # create a formatting toolbar
         vbox.pack_start(self.texteditor.get_toolbar(),
-                        expand=False, fill=False)
-        vbox.pack_start(self.texteditor, True)
+                        False, False, 0)
+        vbox.pack_start(self.texteditor, True, True, 0)
         self.flow_changed(False)
         return vbox
 

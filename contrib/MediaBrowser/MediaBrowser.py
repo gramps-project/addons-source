@@ -19,13 +19,14 @@
 # $Id$
 #
 
-from gui.listmodel import ListModel, NOSORT
-from gen.utils.db import navigation_label
-from gen.plug import Gramplet
-from gui.widgets import Photo
-from gen.ggettext import gettext as _
-from gen.utils.file import media_path_full
-import gtk
+from gramps.gui.listmodel import ListModel, NOSORT
+from gramps.gen.utils.db import navigation_label
+from gramps.gen.plug import Gramplet
+from gramps.gui.widgets import Photo
+from gen.utils.trans import get_addon_translator
+_ = get_addon_translator().ugettext
+from gramps.gen.utils.file import media_path_full
+from gi.repository import Gtk
 
 class MediaBrowser(Gramplet):
     """
@@ -41,10 +42,10 @@ class MediaBrowser(Gramplet):
         """
         Build the GUI interface.
         """
-        top = gtk.HBox()
+        top = Gtk.HBox()
         self.photo = Photo()
         self.photo.show()
-        view = gtk.TreeView()
+        view = Gtk.TreeView()
         titles = [(_('Object'), 1, 250)]
         self.model = ListModel(view, titles, list_mode="tree",
                                select_func=self.row_selected)
