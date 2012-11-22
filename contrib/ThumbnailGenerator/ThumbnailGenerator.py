@@ -26,10 +26,10 @@
 # Gramps modules
 #
 #-------------------------------------------------------------------------
-from gui.plug import tool
-from gui.utils import ProgressMeter
-from gui.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
-from gen.utils.file import media_path_full
+from gramps.gui.plug import tool
+from gramps.gui.utils import ProgressMeter
+from gramps.gui.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
+from gramps.gen.utils.file import media_path_full
 
 #-------------------------------------------------------------------------
 #
