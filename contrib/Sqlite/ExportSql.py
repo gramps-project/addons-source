@@ -26,9 +26,7 @@
 # Standard Python Modules
 #
 #------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
-ngettext = get_addon_translator().ngettext
+
 import sqlite3 as sqlite
 import time
 
@@ -45,7 +43,10 @@ log = logging.getLogger(".ExportSql")
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.utils.id import create_id
+from gramps.gen.utils.id import create_id
+from gramps.gen.utils.trans import get_addon_translator
+_ = get_addon_translator().ugettext
+ngettext = get_addon_translator().ngettext
 
 #-------------------------------------------------------------------------
 #
@@ -579,7 +580,7 @@ def export_person(db, person):
              lookup(death_ref_index, event_ref_list),
              lookup(birth_ref_index, event_ref_list),
              change, 
-             ",".join(tags), 
+             ",".join(tags), #TO_FIX: TypeError: sequence item 0: expected string, NoneType found
              private)
     
     # Event Reference information
@@ -853,7 +854,7 @@ def export_repository_ref_list(db, from_type, from_handle, reporef_list):
 def exportData(database, filename, err_dialog=None, option_box=None, 
                callback=None):
     if not callable(callback): 
-        callback = lambda (percent): None # dummy
+        callback = lambda percent: None # dummy
 
     if option_box:
         option_box.parse_options()

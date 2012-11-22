@@ -26,9 +26,6 @@
 # Standard Python Modules
 #
 #-------------------------------------------------------------------------
-from gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
-ngettext = get_addon_translator().ngettext
 import sqlite3 as sqlite
 import time
 
@@ -45,10 +42,13 @@ log = logging.getLogger(".ImportSql")
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-import gen.lib
-from gen.db import DbTxn
-from gui.dialog import ErrorDialog
-from gen.utils.id import create_id
+import gramps.gen.lib
+from gramps.gen.db import DbTxn
+from gramps.gui.dialog import ErrorDialog
+from gramps.gen.utils.id import create_id
+from gramps.gen.utils.trans import get_addon_translator
+_ = get_addon_translator().ugettext
+ngettext = get_addon_translator().ngettext
 
 #-------------------------------------------------------------------------
 #
@@ -121,7 +121,7 @@ class Database(object):
 class SQLReader(object):
     def __init__(self, db, filename, callback):
         if not callable(callback): 
-            callback = lambda (percent): None # dummy
+            callback = lambda percent: None # dummy
         self.db = db
         self.filename = filename
         self.callback = callback
@@ -418,7 +418,7 @@ class SQLReader(object):
             if len(result) == 1:
                 return result[0]
             elif len(result) == 0:
-                return gen.lib.Name().serialize()
+                return gramps.gen.lib.Name().serialize()
             else:
                 raise Exception("too many primary names")
         else:
@@ -491,7 +491,7 @@ class SQLReader(object):
                 print "ERROR: get_main_location('%s'), no such handle." % (ref_handle, )
             else:
                 print "ERROR: get_main_location('%s') should be unique; returned %d records." % (ref_handle, len(place_row))
-        return gen.lib.Location().serialize()
+        return gramps.gen.lib.Location().serialize()
 
     def get_link(self, sql, from_type, from_handle, to_link):
         """
