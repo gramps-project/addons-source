@@ -25,13 +25,13 @@
 Display references for any object
 """
 
-from gen.simple import SimpleAccess, SimpleDoc, by_date
-from gui.plug.quick import QuickTable
-from gen.utils.trans import get_addon_translator
-from gen.lib.date import Today
-from gen.relationship import get_relationship_calculator
-from gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-import gen.lib
+from gramps.gen.simple import SimpleAccess, SimpleDoc, by_date
+from gramps.gui.plug.quick import QuickTable
+from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.lib.date import Today
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+import gramps.gen.lib
 
 _ = get_addon_translator(__file__).ugettext
 rel_calc = get_relationship_calculator()
@@ -160,11 +160,12 @@ def run(database, document, person):
     stab.set_link_col(4)
 
     handled = {}
-    birth_ref = gen.lib.Person.get_birth_ref(person)
+    birth_ref = gramps.gen.lib.Person.get_birth_ref(person)
     birth_date = get_event_date_from_ref(database, birth_ref)
     event_list = []
 
     process(database, sa, event_list, handled, person, False, person)
+    # DeprecationWarning: the cmp argument is not supported in 3.x
     event_list.sort(lambda a,b: by_date(a[0], b[0]))
 
     for (event, obj, desc) in event_list:
