@@ -24,7 +24,7 @@ register(TOOL,
          id    = 'AttachSource',
          name  = _("Attach Source"),
          description =  _("Attaches a shared source to multiple objects."),
-         version = '0.0.13',
+         version = '0.0.14',
          gramps_target_version = '4.0',
          status = UNSTABLE, # tested with python 2to3
          fname = 'AttachSourceTool.py',
