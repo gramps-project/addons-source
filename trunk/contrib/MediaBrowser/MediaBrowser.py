@@ -24,7 +24,7 @@ from gramps.gen.utils.db import navigation_label
 from gramps.gen.plug import Gramplet
 from gramps.gui.widgets import Photo
 from gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
+_ = get_addon_translator().gettext
 from gramps.gen.utils.file import media_path_full
 from gi.repository import Gtk
 

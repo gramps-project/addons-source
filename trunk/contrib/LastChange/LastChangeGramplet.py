@@ -33,7 +33,7 @@ import time
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib.date import Date
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 import gramps.gen.datehandler
 
 #------------------------------------------------------------------------
