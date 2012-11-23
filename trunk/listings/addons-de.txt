@@ -4,7 +4,7 @@
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.11', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '4.0', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.19', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '4.0', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.19', 'z': 'Census.addon.tgz'}
-{'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '4.0', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.10', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '4.0', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.11', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '4.0', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.8', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '4.0', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.15', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet zum demonstrieren der Cairo Grafik', 'g': '4.0', 'i': 'Clock Gramplet', 'n': 'Uhren Gramplet', 't': u'Gramplet', 'v': '0.0.11', 'z': 'ClockGramplet.addon.tgz'}
