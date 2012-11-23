@@ -45,7 +45,7 @@ from Census import (get_census_ids, get_census_id, get_census_columns,
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

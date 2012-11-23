@@ -47,7 +47,7 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 from gramps.gui.glade import Glade
 
 import gramps.gen.constfunc

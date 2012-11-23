@@ -49,7 +49,7 @@ from gramps.gen.db import DbTxn
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

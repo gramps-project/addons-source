@@ -166,7 +166,7 @@ from gramps.gen.utils.trans import get_addon_translator
 # constants
 #
 #-------------------------------------------------------------------------
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 ext_confidence = confidence.copy()
 ext_confidence[len(confidence)] = _('No Source')
 
