@@ -1,5 +1,5 @@
 {'d': 'Zeigt alle Namen aller Personen', 'g': '4.0', 'i': 'allnames', 'n': 'Alle Namen aller Personen', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'ein Gramplet welches die Geburtstage von lebenden Personen zeigt', 'g': '4.0', 'i': 'Birthdays', 'n': 'Geburtstags Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '4.0', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}

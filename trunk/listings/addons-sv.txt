@@ -1,5 +1,5 @@
 {'d': 'Visa samtliga namn f\xc3\xb6r alla personer', 'g': '4.0', 'i': 'allnames', 'n': 'Samtliga namn f\xc3\xb6r alla personer', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Kopplar en delad k\xc3\xa4lla till flera objekt.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Koppla k\xc3\xa4lla', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Kopplar en delad k\xc3\xa4lla till flera objekt.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Koppla k\xc3\xa4lla', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '4.0', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '4.0', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}
