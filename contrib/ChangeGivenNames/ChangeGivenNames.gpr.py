@@ -38,7 +38,7 @@ description =  _("Searches the entire database and attempts to "
                     "fix capitalization of the given names."),
 version = '1.0.10',
 gramps_target_version = '4.0',
-status = STABLE, # not yet tested with python 3
+status = STABLE, # tested with python 2to3
 fname = 'ChangeGivenNames.py',
 authors = ["Donald N. Allingham", "Doug Blank"],
 authors_email = ["don@gramps-project.org", "doug.blank@gmail.com"],
