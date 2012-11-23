@@ -50,7 +50,7 @@ from gramps.gui.plug import tool
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 
 # Handlers and signal class
 

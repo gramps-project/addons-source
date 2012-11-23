@@ -46,7 +46,7 @@ import gramps.gen.plug.report.utils as ReportUtils
 
 try:
     from gramps.gen.utils.trans import get_addon_translator
-    _ = get_addon_translator(__file__).ugettext
+    _ = get_addon_translator(__file__).gettext
 except:
     import gettext
     _ = gettext.gettext

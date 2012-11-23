@@ -26,7 +26,7 @@ Run a query on the tables
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.gui.plug.quick import QuickTable
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 import gramps.gen.datehandler
 import gramps.gen.lib
 
