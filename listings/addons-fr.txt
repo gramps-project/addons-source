@@ -1,5 +1,5 @@
 {'d': 'Affiche tous les noms de tous les individus', 'g': '4.0', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '4.0', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '4.0', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}

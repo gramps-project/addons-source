@@ -1,5 +1,5 @@
 {'d': 'De namen van alle personen tonen', 'g': '4.0', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '4.0', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '4.0', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}

@@ -1,5 +1,5 @@
 {'d': 'Display all names of all people', 'g': '4.0', 'i': 'allnames', 'n': 'All Names of All People', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Attaches a shared source to multiple objects.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attaches a shared source to multiple objects.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '4.0', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Logaitje t\xc3\xab datave t\xc3\xab vlersuara p\xc3\xabr lindje dhe vdekje.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Logarit datat e vlersuara', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '4.0', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}

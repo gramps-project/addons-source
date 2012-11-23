@@ -180,6 +180,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
                 self.db.add_citation(citation, self.trans)
                 self.db.commit_citation(citation, self.trans)
                 person.add_citation(citation.get_handle())
+                self.db.commit_person(person, self.trans)
 
                 self.results_write("  %d) " % count)
                 self.results_write_link(name_displayer.display(person),

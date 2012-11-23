@@ -1,5 +1,5 @@
 {'d': 'Display all names of all people', 'g': '4.0', 'i': 'allnames', 'n': 'All Names of All People', 't': u'Quickreport', 'v': '1.0.10', 'z': 'AllNamesQuickview.addon.tgz'}
-{'d': 'Attaches a shared source to multiple objects.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attaches a shared source to multiple objects.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.16', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '4.0', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Calculates estimated dates for birth and death.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': '\xd0\xa0\xd0\xb0\xd1\x81\xd1\x87\xd1\x91\xd1\x82 \xd0\x9e\xd1\x86\xd0\xb5\xd0\xbd\xd0\xba\xd0\xb8 \xd0\x94\xd0\xb0\xd1\x82', 't': u'Tool', 'v': '0.90.12', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '4.0', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.20', 'z': 'Census.addon.tgz'}
