@@ -29,7 +29,7 @@ register(TOOL,
 id = 'thumbgen',
 name = _("Thumbnail Generator"),
 description = _("Generates thumbnails for media files"),
-version = '1.0.5',
+version = '1.0.6',
 gramps_target_version = '4.0',
 status = STABLE, # tested with python 2to3
 fname = 'ThumbnailGenerator.py',

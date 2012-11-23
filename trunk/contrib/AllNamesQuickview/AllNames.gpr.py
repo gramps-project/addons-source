@@ -2,7 +2,7 @@ register(QUICKREPORT,
          id    = 'allnames',
          name  = _("All Names of All People"),
          description= _("Display all names of all people"),
-         version = '1.0.9',
+         version = '1.0.10',
          gramps_target_version = '4.0',
          status = STABLE, # tested with python 2to3
          fname = 'AllNames.py',

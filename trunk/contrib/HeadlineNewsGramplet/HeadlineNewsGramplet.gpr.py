@@ -8,6 +8,6 @@ register(GRAMPLET,
          expand=True,
          gramplet = 'HeadlineNewsGramplet',
          gramplet_title=_("Headline News"),
-         version = '1.0.12',
+         version = '1.0.13',
          gramps_target_version="4.0",
          )
