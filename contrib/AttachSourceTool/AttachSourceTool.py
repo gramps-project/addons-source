@@ -136,6 +136,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         return _("Options")
 
     def run(self):
+        self.skeys = {}
         source_type = self.options.handler.options_dict['source_type'] 
         # 0 - new, 1 - lookup
         if source_type == 0:
@@ -173,24 +174,33 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             for person_handle in people:
                 self.progress.step()
                 person = self.db.get_person_from_handle(person_handle)
-                sref = gramps.gen.lib.Citation()
-                sref.set_reference_handle(source.get_handle())
-                person.add_citation(sref)
-                self.db.commit_person(person, self.trans)
+                
+                citation = gramps.gen.lib.Citation()
+                citation.set_reference_handle(source.get_handle())
+                self.db.add_citation(citation, self.trans)
+                self.db.commit_citation(citation, self.trans)
+                person.add_citation(citation.get_handle())
+
                 self.results_write("  %d) " % count)
                 self.results_write_link(name_displayer.display(person),
                                         person, person_handle)
                 self.results_write("\n")
                 count += 1
-    
-            self.db.commit_source(source, self.trans)
+
         self.db.enable_signals()
         self.db.request_rebuild()
         self.results_write(_("Done!\n"))
 
     def create_source(self, source_text):
-        source = gramps.gen.lib.Source()
-        source.set_title(source_text)
+        source = None
+        if source_text in self.skeys:
+            source = self.db.get_source_from_handle(self.skeys[source_text])
+        else:
+            source = gramps.gen.lib.Source()
+            source.set_title(source_text)
+            self.db.add_source(source,self.trans)
+            self.db.commit_source(source,self.trans)
+            self.skeys[source_text] = source.get_handle()
         self.db.add_source(source, self.trans)
         return source
 
