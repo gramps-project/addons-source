@@ -35,7 +35,7 @@ import os
 import sys
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
+_ = get_addon_translator().gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf 
 import string
 from subprocess import Popen, PIPE
