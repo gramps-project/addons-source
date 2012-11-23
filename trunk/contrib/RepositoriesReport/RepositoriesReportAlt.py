@@ -53,7 +53,7 @@ from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
                              
-_ = get_addon_translator().ugettext
+_ = get_addon_translator().gettext
 
 LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
@@ -125,7 +125,7 @@ class Translator:
         if self.__trans:
             return self.__trans.gettext(message)
         else:
-            return unicode(gettext.gettext(message))
+            return gettext.gettext(message)
 
 class RepositoryReportAlt(Report):
     """

@@ -25,7 +25,7 @@
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
+_ = get_addon_translator().gettext
 from gramps.gui.plug.quick import QuickTable, run_quick_report_by_name
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 
