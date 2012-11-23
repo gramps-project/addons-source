@@ -8,7 +8,7 @@ register(QUICKREPORT,
          id    = 'timelinequickview',
          name  = _("Timeline"),
          description= _("Display a person's events on a timeline"),
-         version = '1.0.12',
+         version = '1.0.13',
          gramps_target_version = '4.0',
          status = STABLE, # DeprecationWarning: the cmp argument is not supported in 3.x
          fname = 'TimelineQuickview.py',

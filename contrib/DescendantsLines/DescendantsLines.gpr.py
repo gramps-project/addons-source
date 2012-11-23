@@ -23,7 +23,7 @@ register(REPORT,
          id    = 'Descendants Lines',
          name  = _("Descendants Lines"),
          description =  _("Produces descendants lines of a person"),
-         version = '0.1.12',
+         version = '0.1.13',
          gramps_target_version = '4.0',
          status = STABLE, # not yet tested with python 3
          fname = 'DescendantsLines.py',

@@ -36,7 +36,7 @@ id    = 'chgivenname',
 name  = _("Fix Capitalization of Given Names"),
 description =  _("Searches the entire database and attempts to "
                     "fix capitalization of the given names."),
-version = '1.0.12',
+version = '1.0.13',
 gramps_target_version = '4.0',
 status = STABLE, # tested with python 2to3
 fname = 'ChangeGivenNames.py',
