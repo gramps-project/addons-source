@@ -55,7 +55,7 @@ from gramps.gen.plug.menu import BooleanOption, NumberOption, PersonOption
 from gramps.gen.plug.report.utils import pt2cm, cm2pt
 #from gen.plug.menu import TextOption
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).ugettext
+_ = get_addon_translator(__file__).gettext
 
 _LINKS_BEGIN = 8
 _PEOPLE_PER_PAGE = 15

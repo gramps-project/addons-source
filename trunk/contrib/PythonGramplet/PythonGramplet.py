@@ -32,7 +32,7 @@ import sys
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().ugettext
+_ = get_addon_translator().gettext
 
 import gramps.gen
 
