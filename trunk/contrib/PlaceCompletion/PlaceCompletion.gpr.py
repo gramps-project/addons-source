@@ -26,7 +26,7 @@ register(TOOL,
          description =  _("Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."),
          version = '0.0.16',
          gramps_target_version = '4.0',
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # tested with python 2to3
          fname = 'PlaceCompletion.py',
          authors = ["B. Malengier",
                     "Mathieu MD"],

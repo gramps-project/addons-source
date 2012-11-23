@@ -110,9 +110,20 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             self.glade = Glade(glade_file)
 
         window = self.glade.get_object("top")
-        
+            
         self.tree = self.glade.get_object("tree1")
         self.tree.set_headers_visible(False)
+            
+        self.glade.connect_signals({
+            "destroy_passed_object" : self.close,
+            "on_help_clicked"       : self.on_help_clicked,
+            "on_find_clicked"       : self.on_find_clicked,
+            "on_apply_clicked"      : self.on_apply_clicked,
+            "on_google_maps_clicked": self.on_google_clicked,
+            })
+                
+        self.set_window(window,None,self.active_name)
+            
         renderer = Gtk.CellRendererText()
         #following does not work with foreground (KDE issue??), so set background
         col = Gtk.TreeViewColumn('',renderer,text=0,background=3)
@@ -209,15 +220,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     ]
         self.regextitlegroups = [('street'), ('city'), ('parish'), 
                     ('county'), ('state'), ('country'), ('zip'), ('title')]
-
-        self.glade.connect_signals({
-            "destroy_passed_object" : self.close,
-            "on_help_clicked"       : self.on_help_clicked,
-            "on_find_clicked"       : self.on_find_clicked,
-            "on_apply_clicked"      : self.on_apply_clicked,
-            "on_google_maps_clicked": self.on_google_clicked,
-            })
-        self.set_window(window,None,self.active_name)
         
         #some extra init of needed datafields
         self.latlonfile_datastr = None
