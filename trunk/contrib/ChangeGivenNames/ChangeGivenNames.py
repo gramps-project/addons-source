@@ -148,7 +148,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
             self.glade.add_from_file(path)
             
             from gi.repository import GObject
-            GObject.GObject.__init__(path)
+            GObject.GObject.__init__(self.glade)
                         
             self.top = self.glade.get_object('changenames')
             
