@@ -602,14 +602,14 @@ class CensusEditor(ManagedWindow):
             return
             
         if direction == 'up':
-			prev = model.iter_previous(iter_)
-			if prev:
-				model.move_before(iter_, prev)
+            prev = model.iter_previous(iter_)
+            if prev:
+                model.move_before(iter_, prev)
             
         if direction == 'down':
-			next = model.iter_next(iter_)
-			if next:
-				model.move_after(iter_, next)
+            next = model.iter_next(iter_)
+            if next:
+                model.move_after(iter_, next)
 
     def __census_changed(self, combo):
         """
