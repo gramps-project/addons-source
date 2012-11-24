@@ -161,6 +161,7 @@ from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
 from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.constfunct import cuni
 #-------------------------------------------------------------------------
 #
 # constants
@@ -296,7 +297,7 @@ class DenominoVisoReport(Report):
                              '<' + _('description') + '>', \
                              '<' + _('witnesses') + '>', \
                              '<' + _('source') + '>'])
-        placeholders = map(lambda(x): x.strip('<>'),placeholders)
+        placeholders = map(lambda x: x.strip('<>'),placeholders)
         placeholders = set(placeholders)
         #roles = RelLib.EventRoleType().get_standard_names()
         roles = EventRoleType().get_standard_names()
@@ -1366,7 +1367,7 @@ function %(bd)s2html(person,containerDL) {
             address_data = address.get_text_data_list()
             address_date = address.get_date_object()
             address_str = self.options['DNMaddress_separator'].join(\
-                    filter(lambda(x): x!='',address_data))
+                    filter(lambda x: x!='',address_data))
             if not address_str: continue
             rv += "{"
             if address_date:
@@ -2871,7 +2872,7 @@ class GuiCopyImgOption(Gtk.HBox):
         copy_img = self.cb_w.get_active()
         self.l_w.set_sensitive(copy_img)
         self.fe_w.set_sensitive(copy_img)
-        self.__option.set_value(str(copy_img) + ", " + unicode(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(copy_img) + ", " + cuni(self.fe_w.get_full_path(0)))
 
 class ImageIncludeAttrOption(PlugOption):
     """Option allowing attributes on images to determine their inclusion in
@@ -2961,9 +2962,8 @@ class GuiHtmlWrapperOption(Gtk.HBox):
         wrap_html = self.cb_w.get_active()
         self.l_w.set_sensitive(wrap_html)
         self.fe_w.set_sensitive(wrap_html)
-        self.__option.set_value(str(wrap_html) + ", " + unicode(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(wrap_html) + ", " + cuni(self.fe_w.get_full_path(0)))
 
-# 
 class GuiOptionalFileEntry(Gtk.HBox):
     def __init__(self, option, dbstate, uistate, track):
         Gtk.HBox.__init__(self)
@@ -2987,7 +2987,7 @@ class GuiOptionalFileEntry(Gtk.HBox):
         on_off_state = self.cb_w.get_active()
         self.l_w.set_sensitive(on_off_state)
         self.fe_w.set_sensitive(on_off_state)
-        self.__option.set_value(str(on_off_state) + ", " + unicode(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(on_off_state) + ", " + cuni(self.fe_w.get_full_path(0)))
 
     def get_inner_label(self):
         return self.l_w.get_label()
