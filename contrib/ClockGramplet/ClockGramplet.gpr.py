@@ -6,7 +6,7 @@ register(GRAMPLET,
          expand=False,
          gramplet = 'ClockGramplet',
          gramplet_title=_("Clock"),
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # tested with python 2to3, TypeError: Error when calling the metaclass bases
          version = '0.0.12',
          gramps_target_version = "4.0",
          fname="ClockGramplet.py",
