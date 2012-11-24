@@ -39,13 +39,17 @@ from gi.repository import Gtk
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
 import gramps.gen.datehandler
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
 from gramps.gen.const import USER_HOME, USER_PLUGINS
 from gramps.gen.utils.file import get_unicode_path_from_file_chooser
 from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
+from gramps.gen.constfunc import cuni
+from gramps.gen.utils.trans import get_addon_translator
+if sys.version_info[0] < 3:
+    _ = get_addon_translator(__file__).ugettext
+else:
+    _ = get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #
@@ -530,8 +534,8 @@ class lxmlGramplet(Gramplet):
         xml.set("title", self.title)
         xml.set("footer", self.footer)
         xml.set("date", gramps.gen.datehandler.displayer.display(time))
-        xml.set("first", unicode(first))
-        xml.set("last", unicode(last))
+        xml.set("first", cuni(first))
+        xml.set("last", cuni(last))
 
         # only for info
         
@@ -574,7 +578,7 @@ class lxmlGramplet(Gramplet):
         c.set("country", self.country)
         for country in countries:
             c1 = etree.SubElement(c, "country")
-            c1.text = unicode(country)
+            c1.text = cuni(country)
         
         # data log
         
@@ -591,7 +595,7 @@ class lxmlGramplet(Gramplet):
         for surname in surnames:
             if surname not in cnt:
                 s1 = etree.SubElement(s, "surname")
-                s1.text = unicode(surname)
+                s1.text = cuni(surname)
                 cnt.append(surname)      
         
         p = etree.SubElement(xml, "places")
@@ -600,7 +604,7 @@ class lxmlGramplet(Gramplet):
         places.sort()
         for place in places:
             p1 = etree.SubElement(p, "place")
-            p1.text = unicode(place)
+            p1.text = cuni(place)
             
         src = etree.SubElement(xml, "sources")
         src.set("title", self.sources_title)    
@@ -608,7 +612,7 @@ class lxmlGramplet(Gramplet):
         sources.sort()
         for source in sources:
             src1 = etree.SubElement(src, "source")
-            src1.text = unicode(source) 
+            src1.text = cuni(source) 
         
         content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
         
@@ -755,7 +759,7 @@ class lxmlGramplet(Gramplet):
             person = etree.SubElement(people, "person")
             name = etree.SubElement(person, "name")
             surname = etree.SubElement(name, "surname")
-            surname.text = unicode(s)
+            surname.text = cuni(s)
             
         surnames = []
         
@@ -765,7 +769,7 @@ class lxmlGramplet(Gramplet):
         for p in places:
             place = etree.SubElement(pl, "placeobj")
             ptitle = etree.SubElement(place, "ptitle")
-            ptitle.text = unicode(p)
+            ptitle.text = cuni(p)
             
         places = []
             
@@ -775,7 +779,7 @@ class lxmlGramplet(Gramplet):
         for s in sources:
             source = etree.SubElement(src, "source")
             stitle = etree.SubElement(source, "stitle")
-            stitle.text = unicode(s)
+            stitle.text = cuni(s)
             
         sources = []
 
