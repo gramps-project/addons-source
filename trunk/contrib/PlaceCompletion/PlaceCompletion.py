@@ -64,7 +64,7 @@ from gramps.gen.errors import WindowActiveError
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
-import gramps.gen.constfunc
+from gramps.gen.constfunc import cuni, lin
 
 import gramps.gui.utils
 if hasattr(gramps.gui.utils, "ProgressMeter"):
@@ -92,7 +92,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         base = os.path.dirname(__file__)
         glade_file = base + os.sep + "placecompletion.glade"
 
-        if gramps.gen.constfunc.lin():
+        if lin:
             import locale
             locale.setlocale(locale.LC_ALL, '')
             # This is needed to make gtk.Builder work by specifying the
@@ -426,22 +426,22 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.options.handler.options_dict['titleconstruct'] = \
                 _options.titleconstruct[self.titleconstruct.get_active()][0]
         self.options.handler.options_dict['titleconstruct_custom'] \
-                = unicode(self.titleconstruct_custom.get_text())
+                = cuni(self.titleconstruct_custom.get_text())
         self.options.handler.options_dict['latlonconv'] = \
                 _options.latlonconv[self.latlonconv.get_active()][0]
         
         self.options.handler.options_dict['countryset'] \
-                = unicode(self.countryset.get_text())
+                = cuni(self.countryset.get_text())
         self.options.handler.options_dict['stateset'] \
-                = unicode(self.stateset.get_text())
+                = cuni(self.stateset.get_text())
         self.options.handler.options_dict['countyset'] \
-                = unicode(self.countyset.get_text())
+                = cuni(self.countyset.get_text())
         self.options.handler.options_dict['cityset'] \
-                = unicode(self.cityset.get_text())
+                = cuni(self.cityset.get_text())
         self.options.handler.options_dict['parishset'] \
-                = unicode(self.parishset.get_text())
+                = cuni(self.parishset.get_text())
         self.options.handler.options_dict['zipset'] \
-                = unicode(self.zipset.get_text())
+                = cuni(self.zipset.get_text())
                  
         # Save options
         self.options.handler.save_options()
@@ -524,19 +524,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             except IndexError :
                 pass
 
-        cof = unicode(self.options.handler.options_dict['countryfilter']).strip()
-        stf = unicode(self.options.handler.options_dict['statefilter']).strip()
-        cuf = unicode(self.options.handler.options_dict['countyfilter']).strip()
-        cif = unicode(self.options.handler.options_dict['cityfilter']).strip()
-        paf = unicode(self.options.handler.options_dict['parishfilter']).strip()
+        cof = cuni(self.options.handler.options_dict['countryfilter']).strip()
+        stf = cuni(self.options.handler.options_dict['statefilter']).strip()
+        cuf = cuni(self.options.handler.options_dict['countyfilter']).strip()
+        cif = cuni(self.options.handler.options_dict['cityfilter']).strip()
+        paf = cuni(self.options.handler.options_dict['parishfilter']).strip()
         if (cof or stf or cuf or cif or paf):
             # Name, Street, Locality, City, County, State, Country, ZIP/Postal Code, Church Parish
             rule = HasPlace(['','','',cif,cuf,stf,cof,'',paf])
             generic_filter.add_rule(rule)  
-        rclat = unicode(self.options.handler.options_dict['centerlat']).strip()
-        rclon = unicode(self.options.handler.options_dict['centerlon']).strip()
-        rwid = unicode(self.options.handler.options_dict['rectwidth']).strip()
-        rhei = unicode(self.options.handler.options_dict['rectheight']).strip()
+        rclat = cuni(self.options.handler.options_dict['centerlat']).strip()
+        rclon = cuni(self.options.handler.options_dict['centerlon']).strip()
+        rwid = cuni(self.options.handler.options_dict['rectwidth']).strip()
+        rhei = cuni(self.options.handler.options_dict['rectheight']).strip()
         if (rclat or rwid  or rclon or rhei):
             rule = InLatLonNeighborhood([rclat,rclon,rhei,rwid])
             generic_filter.add_rule(rule)
