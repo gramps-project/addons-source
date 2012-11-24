@@ -30,7 +30,7 @@ from gramps.gen.plug.utils import OpenFileOrStdout
 def exportData(database, filename, 
                error_dialog=None, option_box=None, callback=None):
     if not callable(callback): 
-        callback = lambda (percent): None # dummy
+        callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename) as fp:
 

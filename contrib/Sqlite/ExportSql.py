@@ -44,6 +44,7 @@ log = logging.getLogger(".ExportSql")
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
+from gramps.gen.constfunc import cuni
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 ngettext = get_addon_translator().ngettext
@@ -354,7 +355,7 @@ class Database(object):
         args = list(args)
         for i in range(len(args)):
             if isinstance(args[i], str):
-                args[i] = unicode(args[i])
+                args[i] = cuni(args[i])
         if q.strip().upper().startswith("DROP"):
             try:
                 self.cursor.execute(q, args)

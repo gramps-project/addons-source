@@ -42,6 +42,7 @@ import gramps.gen.datehandler
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.lib
 from gramps.gen.db import DbTxn
+from gramps.gen.constfunc import cuni
 
 #------------------------------------------------------------------------
 #
@@ -495,7 +496,7 @@ class CensusEditor(ManagedWindow):
                     attrs = {}
                     order = 0
                     for attr in event_ref.get_attribute_list():
-                        attr_type = unicode(attr.get_type())
+                        attr_type = cuni(attr.get_type())
                         if attr_type == ORDER_ATTR:
                             order = int(attr.get_value())
                         else:

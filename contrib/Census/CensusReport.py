@@ -38,6 +38,7 @@ from Census import ORDER_ATTR
 from Census import (get_census_ids, get_census_id, get_census_columns,
                     get_report_columns, get_census_citation,
                     get_census_sources)
+from gramps.gen.constfunc import cuni
 
 #------------------------------------------------------------------------
 #
@@ -248,10 +249,10 @@ def get_attributes(person, event_handle):
     for event_ref in person.get_event_ref_list():
         if event_ref.ref == event_handle:
             for attr in event_ref.get_attribute_list():
-                if unicode(attr.get_type()) == ORDER_ATTR:
+                if cuni(attr.get_type()) == ORDER_ATTR:
                     order = attr.get_value()
                 else:
-                    attrs[unicode(attr.get_type())] = attr.get_value()
+                    attrs[cuni(attr.get_type())] = attr.get_value()
 
     return (order, name_displayer.display_formal(person), attrs)
 
