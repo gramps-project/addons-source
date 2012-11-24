@@ -47,9 +47,9 @@ from gramps.plugins.lib.libhtml import Html, xml_lang
 from gramps.gen.constfunc import cuni
 from gramps.gen.utils.trans import get_addon_translator
 if sys.version_info[0] < 3:
-    _ = get_addon_translator(__file__).ugettext
+    _ = get_addon_translator(__file__).ugettext
 else:
-    _ = get_addon_translator(__file__).gettext
+    _ = get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #
