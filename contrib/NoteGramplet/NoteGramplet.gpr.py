@@ -2,7 +2,7 @@ register(GRAMPLET,
          id="Note Gramplet", 
          name=_("Note Gramplet"), 
          description = _("Gramplet for editing active person's notes"),
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, TypeError: Expected Pango.FontDescription
          fname="NoteGramplet.py",
          height=100,
          expand=True,
