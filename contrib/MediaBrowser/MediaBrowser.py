@@ -23,7 +23,7 @@ from gramps.gui.listmodel import ListModel, NOSORT
 from gramps.gen.utils.db import navigation_label
 from gramps.gen.plug import Gramplet
 from gramps.gui.widgets import Photo
-from gen.utils.trans import get_addon_translator
+from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
 from gramps.gen.utils.file import media_path_full
 from gi.repository import Gtk
@@ -49,8 +49,8 @@ class MediaBrowser(Gramplet):
         titles = [(_('Object'), 1, 250)]
         self.model = ListModel(view, titles, list_mode="tree",
                                select_func=self.row_selected)
-        top.pack_start(view, fill=True, expand=True)
-        top.pack_start(self.photo, fill=True, expand=False, padding=5)
+        top.pack_start(view, True, True, 0)
+        top.pack_start(self.photo, True, False, 5)
         top.show_all()
         return top
         
