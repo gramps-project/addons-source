@@ -20,6 +20,8 @@
 # $Id$
 #
 
+import sys
+
 from gramps.gui.listmodel import ListModel, NOSORT
 from gramps.gui.plug.quick import run_quick_report_by_name
 from gramps.gen.plug import Gramplet
@@ -32,7 +34,10 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+if sys.version_info[0] < 3:
+    _ = get_addon_translator(__file__).ugettext
+else:
+    _ = get_addon_translator(__file__).gettext
 
 class Attributes(Gramplet):
     """
