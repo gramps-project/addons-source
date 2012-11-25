@@ -4,7 +4,7 @@ register(IMPORT,
          description =  _('SQLite is a common local database format'),
          version = '1.0.16',
          gramps_target_version = "4.0",
-         status = STABLE, # tested with python 2to3, need to review unicode usage 
+         status = STABLE, # not yet tested with python 3, need to review unicode usage 
          fname = 'ImportSql.py',
          import_function = 'importData',
          extension = "sql"
@@ -16,7 +16,7 @@ register(EXPORT,
          description =  _('SQLite is a common local database format'),
          version = '1.0.15',
          gramps_target_version = "4.0",
-         status = STABLE, # tested with python 2to3
+         status = STABLE, # not yet tested with python 3
          fname = 'ExportSql.py',
          export_function = 'exportData',
          extension = "sql",

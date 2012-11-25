@@ -2,7 +2,7 @@ register(GRAMPLET,
          id="Deep Connections Gramplet", 
          name=_("Deep Connections Gramplet"),
          description = _("Gramplet showing a deep relationship between active and home people"),
-         status=STABLE, # tested with python 2to3, g_source_remove: assertion `tag > 0' failed
+         status=STABLE, # not yet tested with python 3, g_source_remove: assertion `tag > 0' failed
          fname="DeepConnectionsGramplet.py", 
          height=230,
          expand=True,
