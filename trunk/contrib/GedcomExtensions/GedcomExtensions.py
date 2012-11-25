@@ -60,7 +60,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
                 person = self.dbase.get_person_from_handle(handle)
                 for ref in person.get_event_ref_list():
                     if (ref.ref == event.handle and 
-                        int(ref.get_role()) == gen.lib.EventRoleType.WITNESS):
+                        int(ref.get_role()) == gramps.gen.lib.EventRoleType.WITNESS):
                         self._writeln(level, "ASSO", "@%s@" % person.get_gramps_id())
                         self._writeln(level+1, "TYPE", "INDI")
                         self._writeln(level+1, "RELA", "Witness")
