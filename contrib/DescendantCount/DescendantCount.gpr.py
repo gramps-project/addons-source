@@ -3,7 +3,7 @@ register(QUICKREPORT,
          name = _("Descendant Count"),
          category = CATEGORY_QR_MISC,
          runfunc = "run",
-         status = STABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, error on unicode row
          description= _("Display descendant counts for each person."),
          fname="DescendantCount.py",
          authors=["Douglas S. Blank"],
@@ -16,7 +16,7 @@ register(GRAMPLET,
          id="Descendant Count Gramplet", 
          name=_("Descendant Count Gramplet"), 
          description = _("Gramplet for showing people and descendant counts"),
-         status=STABLE, # not yet tested with python 3
+         status= UNSTABLE, # not yet tested with python 3, error on unicode row
          fname="DescendantCount.py",
          height=300,
          expand=True,
