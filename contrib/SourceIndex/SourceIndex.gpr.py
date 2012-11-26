@@ -40,7 +40,7 @@ register(TOOL,
          version = '0.0.10',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3, signals and toplevel
+         status = STABLE, # not yet tested with python 3,
          fname = 'marriage.py',
          category = TOOL_UTILS,
          toolclass = 'MarriageIndex',
