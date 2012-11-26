@@ -176,10 +176,10 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
                 person = self.db.get_person_from_handle(person_handle)
                 
                 citation = gramps.gen.lib.Citation()
-                citation.set_reference_handle(source.get_handle())
+                citation.set_reference_handle(source.handle)
                 self.db.add_citation(citation, self.trans)
                 self.db.commit_citation(citation, self.trans)
-                person.add_citation(citation.get_handle())
+                person.add_citation(citation.handle)
                 self.db.commit_person(person, self.trans)
 
                 self.results_write("  %d) " % count)
@@ -201,7 +201,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             source.set_title(source_text)
             self.db.add_source(source,self.trans)
             self.db.commit_source(source,self.trans)
-            self.skeys[source_text] = source.get_handle()
+            self.skeys[source_text] = source.handle
         self.db.add_source(source, self.trans)
         return source
 
