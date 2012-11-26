@@ -104,7 +104,6 @@ class MarriageIndex(tool.Tool, ManagedWindow):
             from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
                       
-            #AttributeError: Widget 'get_object' not found
             window = self.glade.get_object('edit_marriage')
             
             #self.glade.connect_signals({

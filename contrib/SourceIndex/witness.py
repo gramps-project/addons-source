@@ -81,8 +81,7 @@ class Witness(tool.Tool, ManagedWindow):
             from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
                       
-            #AttributeError: Widget 'get_object' not found
-            window = self.glade.get_object('edit_witness')
+            window = self.glade.get_object('witness_editor')
                             
             self.set_window(window, self.glade.get_object('title'), self.label)
             
