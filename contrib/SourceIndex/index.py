@@ -52,6 +52,8 @@ from gramps.gui.plug import tool
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
+import gramps.gen.constfunc
+
 # Handlers and signal class
 
 class GladeHandlers():
@@ -82,19 +84,48 @@ class Index(tool.Tool, ManagedWindow):
     """
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
         
-        tool.Tool.__init__(self, dbstate, options_class, name)
+        self.label = _('Sources Index')
+        self.base = os.path.dirname(__file__)
+        
         ManagedWindow.__init__(self, uistate,[], self.__class__)
+        self.set_window(Gtk.Window(),Gtk.Label(),'')
         
-        #base = os.path.dirname(__file__)
+        tool.Tool.__init__(self, dbstate, options_class, name)
+        
         glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "index.glade")
-
-        self.define_glade('edit_index', glade_file)
-        self.set_window(self._gladeobj.toplevel, None, text=None, msg='Index')
         
-        self.connect_button('add_b', self.birth_editor)
-        self.connect_button('add_m', self.marriage_editor)
-        self.connect_button('add_d', self.death_editor)
-        self.connect_button('add_c', self.census_editor)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                        
+            self.top = self.glade.get_object('edit_index')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(self.top, self.glade.get_object('title'), self.label)
+
+        else:
+            
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            self.define_glade('edit_index', glade_file)
+            self.set_window(self._gladeobj.toplevel, None, text=None, msg='Index')
+        
+            self.connect_button('add_b', self.birth_editor)
+            self.connect_button('add_m', self.marriage_editor)
+            self.connect_button('add_d', self.death_editor)
+            self.connect_button('add_c', self.census_editor)
                
         
         #self.window.connect('delete-event', GladeHandlers.on_quit_clicked)
@@ -108,18 +139,44 @@ class Index(tool.Tool, ManagedWindow):
         Experimental call of the birth editor (see rather 'birth.py')
         """
         
-        glade_file = "birth.glade"
-        top = Glade(glade_file)
-        b = top.toplevel
-        self.set_window(b, title=None, text=glade_file)
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "birth.glade")
         
-        self.wit_button = top.get_object('add_wit')
-        self.ok_button = top.get_object('ok')
-        self.quit_button = top.get_object('cancel')
-        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                        
+            b = self.glade.get_object('edit_birth')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(b, self.glade.get_object('title'), self.label)
         
-        self.ok_button.connect('clicked', self.close)
-        self.quit_button.connect('clicked', self.close)
+        else:
+            
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            top = Glade(glade_file)
+            b = top.toplevel
+            self.set_window(b, title=None, text=glade_file)
+        
+            self.wit_button = top.get_object('add_wit')
+            self.ok_button = top.get_object('ok')
+            self.quit_button = top.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
         
         #add_item()
         #close_item()
@@ -135,18 +192,44 @@ class Index(tool.Tool, ManagedWindow):
         Experimental call of the death editor (see rather 'death.py')
         """
         
-        glade_file = "death.glade"
-        top = Glade(glade_file)
-        d = top.toplevel
-        self.set_window(d, title=None, text=glade_file)
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "death.glade")
         
-        self.wit_button = top.get_object('add_wit')
-        self.ok_button = top.get_object('ok')
-        self.quit_button = top.get_object('cancel')
-        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                        
+            d = self.glade.get_object('edit_death')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(d, self.glade.get_object('title'), self.label)
+            
+        else:
+            
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            top = Glade(glade_file)
+            d = top.toplevel
+            self.set_window(d, title=None, text=glade_file)
         
-        self.ok_button.connect('clicked', self.close)
-        self.quit_button.connect('clicked', self.close)
+            self.wit_button = top.get_object('add_wit')
+            self.ok_button = top.get_object('ok')
+            self.quit_button = top.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
     
         d.hide()
         #d.show()
@@ -157,18 +240,44 @@ class Index(tool.Tool, ManagedWindow):
         Experimental call of the marriage editor (see rather 'marriage.py')
         """
         
-        glade_file = "marriage.glade"
-        top = Glade(glade_file)
-        m = top.toplevel
-        self.set_window(m, title=None, text=glade_file)
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "marriage.glade")
         
-        self.wit_button = top.get_object('add_wit')
-        self.ok_button = top.get_object('ok')
-        self.quit_button = top.get_object('cancel')
-        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                        
+            m = self.glade.get_object('edit_marriage')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(m, self.glade.get_object('title'), self.label)
+            
+        else:
         
-        self.ok_button.connect('clicked', self.close)
-        self.quit_button.connect('clicked', self.close)
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            top = Glade(glade_file)
+            m = top.toplevel
+            self.set_window(m, title=None, text=glade_file)
+        
+            self.wit_button = top.get_object('add_wit')
+            self.ok_button = top.get_object('ok')
+            self.quit_button = top.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
     
         m.hide()
         #m.show()
@@ -179,16 +288,42 @@ class Index(tool.Tool, ManagedWindow):
         Experimental call of the census editor (see rather 'census.py')
         """
         
-        glade_file = "census.glade"
-        top = Glade(glade_file)
-        c = top.toplevel
-        self.set_window(c, title=None, text=glade_file)
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "census.glade")
         
-        self.ok_button = top.get_object('ok')
-        self.quit_button = top.get_object('cancel')
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                        
+            c = self.glade.get_object('edit_census')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(c, self.glade.get_object('title'), self.label)
+            
+        else:
         
-        self.ok_button.connect('clicked', self.close)
-        self.quit_button.connect('clicked', self.close)
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            top = Glade(glade_file)
+            c = top.toplevel
+            self.set_window(c, title=None, text=glade_file)
+        
+            self.ok_button = top.get_object('ok')
+            self.quit_button = top.get_object('cancel')
+        
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
     
         c.hide()
         #c.show()

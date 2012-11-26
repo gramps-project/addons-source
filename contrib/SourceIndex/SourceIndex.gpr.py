@@ -25,7 +25,7 @@ register(TOOL,
          version = '0.0.12',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
          fname = 'birth.py',
          category = TOOL_UTILS,
          toolclass = 'BirthIndex',
@@ -40,7 +40,7 @@ register(TOOL,
          version = '0.0.10',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, signals and toplevel
          fname = 'marriage.py',
          category = TOOL_UTILS,
          toolclass = 'MarriageIndex',
@@ -55,7 +55,7 @@ register(TOOL,
          version = '0.0.10',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
          fname = 'death.py',
          category = TOOL_UTILS,
          toolclass = 'DeathIndex',
@@ -70,7 +70,7 @@ register(TOOL,
          version = '0.0.10',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
          fname = 'census.py',
          category = TOOL_UTILS,
          toolclass = 'CensusIndex',
@@ -85,7 +85,7 @@ register(TOOL,
          version = '0.0.10',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
          fname = 'witness.py',
          category = TOOL_UTILS,
          toolclass = 'Witness',
@@ -100,7 +100,7 @@ register(TOOL,
          version = '0.0.14',
          gramps_target_version = '4.0',
          include_in_listing = False,
-         status = STABLE, # not yet tested with python 3
+         status = STABLE, # not yet tested with python 3, see feature 5552
          fname = 'index.py',
          category = TOOL_UTILS,
          toolclass = 'Index',
