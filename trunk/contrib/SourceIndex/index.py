@@ -111,8 +111,15 @@ class Index(tool.Tool, ManagedWindow):
                         
             self.top = self.glade.get_object('edit_index')
             
-            #self.glade.connect_signals({
-                #})
+            self.birth_button = self.glade.get_object('add_b')
+            self.death_button = self.glade.get_object('add_d')
+            self.marriage_button = self.glade.get_object('add_m')
+            self.census_button = self.glade.get_object('add_c')
+            
+            self.birth_button.connect('clicked', self.birth_editor)
+            self.death_button.connect('clicked', self.death_editor)
+            self.marriage_button.connect('clicked', self.marriage_editor)
+            self.census_button.connect('clicked', self.census_editor)
                 
             self.set_window(self.top, self.glade.get_object('title'), self.label)
 
