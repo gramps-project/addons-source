@@ -660,7 +660,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         return sib_id, overwrite
     
     def button_press_event(self,obj,event):
-        from gui.editors import EditPlace
+        from gramps.gui.editors import EditPlace
 
         if event.type == Gdk._2BUTTON_PRESS and event.button == 1:
             store, node = self.tree.get_selection().get_selected()
@@ -715,7 +715,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 
             
     def google(self):
-        from gui.display import display_url
+        from gramps.gui.display import display_url
 
         store, node = self.tree.get_selection().get_selected()
         if node:
