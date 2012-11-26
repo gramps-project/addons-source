@@ -259,8 +259,12 @@ class Index(tool.Tool, ManagedWindow):
                         
             m = self.glade.get_object('edit_marriage')
             
-            #self.glade.connect_signals({
-                #})
+            #self.wit_button = self.glade.get_object('add_wit')
+            self.ok_button = self.glade.get_object('ok')
+            self.quit_button = self.glade.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
                 
             self.set_window(m, self.glade.get_object('title'), self.label)
             
@@ -271,7 +275,7 @@ class Index(tool.Tool, ManagedWindow):
             m = top.toplevel
             self.set_window(m, title=None, text=glade_file)
         
-            self.wit_button = top.get_object('add_wit')
+            #self.wit_button = top.get_object('add_wit')
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
             #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
@@ -279,8 +283,8 @@ class Index(tool.Tool, ManagedWindow):
             self.ok_button.connect('clicked', self.close)
             self.quit_button.connect('clicked', self.close)
     
-        m.hide()
-        #m.show()
+        #m.hide()
+        m.show()
         #m.connect("destroy", self.close)
     
     def census_editor(self, widget, data=None):

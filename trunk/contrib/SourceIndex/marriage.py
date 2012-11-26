@@ -112,6 +112,13 @@ class MarriageIndex(tool.Tool, ManagedWindow):
                 
             self.set_window(window, self.glade.get_object('title'), self.label)
             
+            #self.wit_button = self.glade.get_object('add_wit')
+            self.ok_button = self.glade.get_object('ok')
+            self.quit_button = self.glade.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
+            
         else:
             
             # Glade class from gui/glade.py and gui/managedwindow.py
@@ -119,13 +126,12 @@ class MarriageIndex(tool.Tool, ManagedWindow):
             window = self.top.toplevel
             self.set_window(window, None, glade_file)
         
-        #AttributeError: 'MarriageIndex' object has no attribute 'top'
-        #self.wit_button = self.top.get_object('add_wit')
-        #self.ok_button = self.top.get_object('ok')
-        #self.quit_button = self.top.get_object('cancel')
-        ##self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
-        #self.ok_button.connect('clicked', self.close)
-        #self.quit_button.connect('clicked', self.close)
+            #self.wit_button = self.top.get_object('add_wit')
+            self.ok_button = self.top.get_object('ok')
+            self.quit_button = self.top.get_object('cancel')
+            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+            self.ok_button.connect('clicked', self.close)
+            self.quit_button.connect('clicked', self.close)
         
         self.window.show()
         
