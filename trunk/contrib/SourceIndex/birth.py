@@ -51,6 +51,8 @@ import gramps.gen.datehandler
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
+import gramps.gen.constfunc
+
 # code cherrytree
 
 class GladeWidgetsWrapper:
@@ -116,18 +118,49 @@ def words_from_note(self):
 class BirthIndex(tool.Tool, ManagedWindow):
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
         
-        tool.Tool.__init__(self, dbstate, options_class, name)
-        ManagedWindow.__init__(self, uistate,[], self.__class__)
+        self.label = _('Sources Index')
+        self.base = os.path.dirname(__file__)
         
-        #base = os.path.dirname(__file__)
-        glade_file = "birth.glade"
+        ManagedWindow.__init__(self, uistate,[], self.__class__)
+        self.set_window(Gtk.Window(),Gtk.Label(),'')
+        
+        tool.Tool.__init__(self, dbstate, options_class, name)
+        
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "birth.glade")
+        
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+            
+            self.glade = GladeWidgetsWrapper(glade_file, self)
+            #self.glade.add_from_file(glade_file)
+            
+            #from gi.repository import GObject
+            #GObject.GObject.__init__(self.glade)
+                      
+            #AttributeError: Widget 'get_object' not found
+            window = self.glade.get_object('edit_birth')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(window, self.glade.get_object('title'), self.label)
+            
+        else:
 
-        #self.glade = Glade(glade_file)
-        self.glade = GladeWidgetsWrapper(glade_file, self)
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            self.glade = Glade(glade_file)
+            #self.glade = GladeWidgetsWrapper(glade_file, self)
        
-        self.top = Glade()
-        window = self.top.toplevel
-        self.set_window(window, None, glade_file)
+            self.top = Glade()
+            window = self.top.toplevel
+            self.set_window(window, None, glade_file)
         
         self.wit_button = self.top.get_object('add_wit')
         self.ok_button = self.top.get_object('ok')

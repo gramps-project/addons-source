@@ -24,6 +24,7 @@ import os
 #
 #------------------------------------------------------------------------
 
+from gramps.gen.const import USER_PLUGINS
 from gramps.gui.glade import Glade
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.widgets import MonitoredEntry, MonitoredDate
@@ -37,6 +38,8 @@ import gramps.gen.datehandler
 #------------------------------------------------------------------------
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
+
+import gramps.gen.constfunc
 
 # Handlers and signal class
 
@@ -53,15 +56,45 @@ class GtkHandlers:
 class Witness(tool.Tool, ManagedWindow):
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
         
-        tool.Tool.__init__(self, dbstate, options_class, name)
-        ManagedWindow.__init__(self, uistate,[], self.__class__)
+        self.label = _('Sources Index')
+        self.base = os.path.dirname(__file__)
         
-        #base = os.path.dirname(__file__)
-        glade_file = "witness.glade"
+        ManagedWindow.__init__(self, uistate,[], self.__class__)
+        self.set_window(Gtk.Window(),Gtk.Label(),'')
+        
+        tool.Tool.__init__(self, dbstate, options_class, name)
+        
+        glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "witness.glade")
 
-        self.top = Glade()
-        window = self.top.toplevel
-        self.set_window(window, None, glade_file)
+        if gramps.gen.constfunc.lin():
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", self.base + "/locale")
+            
+            self.glade = Gtk.Builder()
+            self.glade.set_translation_domain("addon")
+                        
+            self.glade.add_from_file(glade_file)
+            
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
+                      
+            #AttributeError: Widget 'get_object' not found
+            window = self.glade.get_object('edit_witness')
+            
+            #self.glade.connect_signals({
+                #})
+                
+            self.set_window(window, self.glade.get_object('title'), self.label)
+            
+        else:
+            
+            # Glade class from gui/glade.py and gui/managedwindow.py
+            self.top = Glade()
+            window = self.top.toplevel
+            self.set_window(window, None, glade_file)
         
         self.ok_button = self.top.get_object('ok')
         self.quit_button = self.top.get_object('cancel')
