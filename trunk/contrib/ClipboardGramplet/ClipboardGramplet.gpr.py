@@ -9,7 +9,7 @@ register(GRAMPLET,
          name=_("Clipboard Gramplet"), 
          description = _("Gramplet for grouping items"),
          status = STABLE, # not yet tested with python 3
-         version = '1.0.16',
+         version = '1.0.17',
          gramps_target_version = "4.0",
          height=200,
          gramplet = "ClipboardGramplet",

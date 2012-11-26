@@ -24,7 +24,7 @@ register(TOOL,
          id    = 'SetTag',
          name  = _("Set Tag"),
          description =  _("Set Tag to a given value."),
-         version = '0.1.7',
+         version = '0.1.8',
          gramps_target_version = '4.0',
          status = UNSTABLE, # not yet tested with python 3
          fname = 'SetTagTool.py',
