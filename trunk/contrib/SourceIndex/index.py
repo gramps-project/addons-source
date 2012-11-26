@@ -111,6 +111,8 @@ class Index(tool.Tool, ManagedWindow):
                         
             self.top = self.glade.get_object('edit_index')
             
+            self.set_window(self.top, self.glade.get_object('title'), self.label)
+            
             self.birth_button = self.glade.get_object('add_b')
             self.death_button = self.glade.get_object('add_d')
             self.marriage_button = self.glade.get_object('add_m')
@@ -120,8 +122,6 @@ class Index(tool.Tool, ManagedWindow):
             self.death_button.connect('clicked', self.death_editor)
             self.marriage_button.connect('clicked', self.marriage_editor)
             self.census_button.connect('clicked', self.census_editor)
-                
-            self.set_window(self.top, self.glade.get_object('title'), self.label)
 
         else:
             
@@ -239,8 +239,8 @@ class Index(tool.Tool, ManagedWindow):
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
     
-        d.hide()
-        #d.show()
+        #d.hide()
+        d.show()
         #d.connect("destroy", self.close)
     
     def marriage_editor(self, widget, data=None):
@@ -334,8 +334,8 @@ class Index(tool.Tool, ManagedWindow):
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
     
-        c.hide()
-        #c.show()
+        #c.hide()
+        c.show()
         #c.connect("destroy", self.close)
                 
 
