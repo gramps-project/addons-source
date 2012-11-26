@@ -133,7 +133,6 @@ class Index(tool.Tool, ManagedWindow):
             self.connect_button('add_m', self.marriage_editor)
             self.connect_button('add_d', self.death_editor)
             self.connect_button('add_c', self.census_editor)
-               
         
         #self.window.connect('delete-event', GladeHandlers.on_quit_clicked)
         
@@ -164,11 +163,12 @@ class Index(tool.Tool, ManagedWindow):
             GObject.GObject.__init__(self.glade)
                         
             b = self.glade.get_object('edit_birth')
-            
-            #self.glade.connect_signals({
-                #})
-                
+                            
             self.set_window(b, self.glade.get_object('title'), self.label)
+            
+            #self.wit_button = self.glade.get_object('add_wit')
+            self.ok_button = self.glade.get_object('ok')
+            self.quit_button = self.glade.get_object('cancel')
         
         else:
             
@@ -177,13 +177,13 @@ class Index(tool.Tool, ManagedWindow):
             b = top.toplevel
             self.set_window(b, title=None, text=glade_file)
         
-            self.wit_button = top.get_object('add_wit')
+            #self.wit_button = top.get_object('add_wit')
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
-            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
-        
-            self.ok_button.connect('clicked', self.close)
-            self.quit_button.connect('clicked', self.close)
+            
+        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        self.ok_button.connect('clicked', self.close)
+        self.quit_button.connect('clicked', self.close)
         
         #add_item()
         #close_item()
@@ -217,11 +217,12 @@ class Index(tool.Tool, ManagedWindow):
             GObject.GObject.__init__(self.glade)
                         
             d = self.glade.get_object('edit_death')
-            
-            #self.glade.connect_signals({
-                #})
-                
+                            
             self.set_window(d, self.glade.get_object('title'), self.label)
+            
+            #self.wit_button = self.glade.get_object('add_wit')
+            self.ok_button = self.glade.get_object('ok')
+            self.quit_button = self.glade.get_object('cancel')
             
         else:
             
@@ -230,13 +231,13 @@ class Index(tool.Tool, ManagedWindow):
             d = top.toplevel
             self.set_window(d, title=None, text=glade_file)
         
-            self.wit_button = top.get_object('add_wit')
+            #self.wit_button = top.get_object('add_wit')
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
-            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
-        
-            self.ok_button.connect('clicked', self.close)
-            self.quit_button.connect('clicked', self.close)
+            
+        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        self.ok_button.connect('clicked', self.close)
+        self.quit_button.connect('clicked', self.close)
     
         d.hide()
         #d.show()
@@ -265,15 +266,12 @@ class Index(tool.Tool, ManagedWindow):
             GObject.GObject.__init__(self.glade)
                         
             m = self.glade.get_object('edit_marriage')
+                            
+            self.set_window(m, self.glade.get_object('title'), self.label)
             
             #self.wit_button = self.glade.get_object('add_wit')
             self.ok_button = self.glade.get_object('ok')
             self.quit_button = self.glade.get_object('cancel')
-            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
-            self.ok_button.connect('clicked', self.close)
-            self.quit_button.connect('clicked', self.close)
-                
-            self.set_window(m, self.glade.get_object('title'), self.label)
             
         else:
         
@@ -282,13 +280,13 @@ class Index(tool.Tool, ManagedWindow):
             m = top.toplevel
             self.set_window(m, title=None, text=glade_file)
         
-            self.wit_button = top.get_object('add_wit')
+            #self.wit_button = top.get_object('add_wit')
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
-            #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
-        
-            self.ok_button.connect('clicked', self.close)
-            self.quit_button.connect('clicked', self.close)
+            
+        #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
+        self.ok_button.connect('clicked', self.close)
+        self.quit_button.connect('clicked', self.close)
     
         #m.hide()
         m.show()
@@ -317,11 +315,11 @@ class Index(tool.Tool, ManagedWindow):
             GObject.GObject.__init__(self.glade)
                         
             c = self.glade.get_object('edit_census')
-            
-            #self.glade.connect_signals({
-                #})
-                
+                            
             self.set_window(c, self.glade.get_object('title'), self.label)
+            
+            self.ok_button = self.glade.get_object('ok')
+            self.quit_button = self.glade.get_object('cancel')
             
         else:
         
@@ -333,8 +331,8 @@ class Index(tool.Tool, ManagedWindow):
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
         
-            self.ok_button.connect('clicked', self.close)
-            self.quit_button.connect('clicked', self.close)
+        self.ok_button.connect('clicked', self.close)
+        self.quit_button.connect('clicked', self.close)
     
         c.hide()
         #c.show()

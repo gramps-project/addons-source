@@ -138,13 +138,12 @@ class BirthIndex(tool.Tool, ManagedWindow):
             self.glade = Gtk.Builder()
             self.glade.set_translation_domain("addon")
             
-            self.glade = GladeWidgetsWrapper(glade_file, self)
-            #self.glade.add_from_file(glade_file)
+            #self.glade = GladeWidgetsWrapper(glade_file, self)
+            self.glade.add_from_file(glade_file)
             
-            #from gi.repository import GObject
-            #GObject.GObject.__init__(self.glade)
+            from gi.repository import GObject
+            GObject.GObject.__init__(self.glade)
                       
-            #AttributeError: Widget 'get_object' not found
             window = self.glade.get_object('edit_birth')
                 
             self.set_window(window, self.glade.get_object('title'), self.label)
@@ -171,7 +170,8 @@ class BirthIndex(tool.Tool, ManagedWindow):
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
         
-        self.text = Gtk.EntryBuffer('Gtk.Entry._get...', 5)
+        #GObject.__init__() takes exactly 0 arguments
+        #self.text = Gtk.EntryBuffer('Gtk.Entry._get...', 5)
                
         # tests
         path = os.path.join(USER_PLUGINS, 'SourceIndex')
