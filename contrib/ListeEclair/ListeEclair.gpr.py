@@ -2,7 +2,7 @@ register(REPORT,
 id    = 'ListeEclair',
 name  = _("Liste Eclair"),
 description =  _("Produit une liste eclair"),
-version = '1.0.5',
+version = '1.0.6',
 gramps_target_version = '4.0',
 include_in_listing = False,
 status = STABLE, # not yet tested with python 3
