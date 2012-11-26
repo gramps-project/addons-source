@@ -315,7 +315,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxEntry" id="pgender">
+              <object class="GtkComboBoxText" id="pgender">
                 <property name="visible">True</property>
               </object>
               <packing>

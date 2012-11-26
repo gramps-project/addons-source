@@ -274,7 +274,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxEntry" id="comboboxentry1">
+              <object class="GtkComboBoxText" id="comboboxtext1">
                 <property name="visible">True</property>
               </object>
               <packing>
