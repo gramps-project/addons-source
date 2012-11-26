@@ -432,7 +432,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkComboBoxEntry" id="cmbe_latlon_find">
+                      <object class="GtkComboBoxText" id="cmbe_latlon_find">
                         <property name="visible">True</property>
                       </object>
                       <packing>
@@ -532,7 +532,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkComboBoxEntry" id="cmbe_titleregex">
+                      <object class="GtkComboBoxText" id="cmbe_titleregex">
                         <property name="visible">True</property>
                       </object>
                       <packing>

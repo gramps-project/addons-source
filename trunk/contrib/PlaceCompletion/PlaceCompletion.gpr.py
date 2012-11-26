@@ -26,7 +26,7 @@ register(TOOL,
          description =  _("Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."),
          version = '0.0.17',
          gramps_target_version = '4.0',
-         status = UNSTABLE, # not yet tested with python 3, Invalid object type `GtkComboBoxEntry'
+         status = UNSTABLE, # not yet tested with python 3, `GtkComboBoxEntry' to 'GtkComboBoxText'
          fname = 'PlaceCompletion.py',
          authors = ["B. Malengier",
                     "Mathieu MD"],

@@ -190,7 +190,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxEntry" id="pgender">
+              <object class="GtkComboBoxText" id="pgender">
                 <property name="visible">True</property>
                 <property name="has_tooltip">True</property>
                 <property name="tooltip_text" translatable="yes">select the gender/sex</property>
