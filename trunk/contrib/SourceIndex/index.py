@@ -275,7 +275,7 @@ class Index(tool.Tool, ManagedWindow):
             m = top.toplevel
             self.set_window(m, title=None, text=glade_file)
         
-            #self.wit_button = top.get_object('add_wit')
+            self.wit_button = top.get_object('add_wit')
             self.ok_button = top.get_object('ok')
             self.quit_button = top.get_object('cancel')
             #self.wit_button.connect('clicked', GtkHandlers.on_witness_clicked)
