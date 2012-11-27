@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.16"/>
-  <!-- interface-naming-policy toplevel-contextual -->
+  <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkDialog" id="edit_index">
+    <property name="can_focus">False</property>
     <property name="has_focus">True</property>
     <property name="title" translatable="yes">index</property>
     <property name="resizable">False</property>
@@ -10,13 +10,29 @@
     <property name="default_height">500</property>
     <property name="icon_name">gramps</property>
     <property name="type_hint">normal</property>
-    <signal name="delete_event" handler="on_delete_event"/>
+    <signal name="delete-event" handler="on_delete_event" swapped="no"/>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="vbox">
+      <object class="GtkBox" id="vbox">
         <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="hbuttonbox1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">2</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
         <child>
           <object class="GtkTable" id="table">
             <property name="visible">True</property>
+            <property name="can_focus">False</property>
             <property name="border_width">12</property>
             <property name="n_rows">4</property>
             <property name="n_columns">6</property>
@@ -25,35 +41,45 @@
             <child>
               <object class="GtkMenuBar" id="menubar1">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkMenuItem" id="menuitem1">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">_File</property>
                     <property name="use_underline">True</property>
                     <child type="submenu">
                       <object class="GtkMenu" id="menuitem1_menu">
+                        <property name="can_focus">False</property>
                         <child>
                           <object class="GtkImageMenuItem" id="new">
                             <property name="label">gtk-new</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_new_activate"/>
+                            <signal name="activate" handler="on_new_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="open">
                             <property name="label">gtk-open</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_open_activate"/>
+                            <signal name="activate" handler="on_open_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="import_csv">
                             <property name="label" translatable="yes">Import CSV</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="image">image1</property>
                             <property name="use_stock">False</property>
                           </object>
@@ -61,38 +87,46 @@
                         <child>
                           <object class="GtkSeparatorMenuItem" id="separatormenuitem2">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="save">
                             <property name="label">gtk-save</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_save_activate"/>
+                            <signal name="activate" handler="on_save_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="save_under">
                             <property name="label">gtk-save-as</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_save_as_activate"/>
+                            <signal name="activate" handler="on_save_as_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkSeparatorMenuItem" id="separatormenuitem1">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="quit">
                             <property name="label">gtk-quit</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_quit_activate" object="gtk.main_quit()"/>
+                            <signal name="activate" handler="on_quit_activate" object="gtk.main_quit()" swapped="yes"/>
                           </object>
                         </child>
                       </object>
@@ -101,45 +135,56 @@
                 </child>
                 <child>
                   <object class="GtkMenuItem" id="menuitem2">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">_Edit</property>
                     <property name="use_underline">True</property>
                     <child type="submenu">
                       <object class="GtkMenu" id="menuitem2_menu">
+                        <property name="can_focus">False</property>
                         <child>
                           <object class="GtkImageMenuItem" id="cut">
                             <property name="label">gtk-cut</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_cut_activate"/>
+                            <signal name="activate" handler="on_cut_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="copy">
                             <property name="label">gtk-copy</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_copy_activate"/>
+                            <signal name="activate" handler="on_copy_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="paste">
                             <property name="label">gtk-paste</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_paste_activate"/>
+                            <signal name="activate" handler="on_paste_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="remove">
                             <property name="label">gtk-delete</property>
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
-                            <signal name="activate" handler="on_remove_activate"/>
+                            <signal name="activate" handler="on_remove_activate" swapped="no"/>
                           </object>
                         </child>
                       </object>
@@ -148,54 +193,67 @@
                 </child>
                 <child>
                   <object class="GtkMenuItem" id="menuitem3">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">_View</property>
                     <property name="use_underline">True</property>
                     <child type="submenu">
                       <object class="GtkMenu" id="menuitem3_menu">
+                        <property name="can_focus">False</property>
                         <child>
                           <object class="GtkMenuItem" id="all">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Display all</property>
                             <property name="label" translatable="yes">All</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_all_activate"/>
+                            <signal name="activate" handler="on_all_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkMenuItem" id="births">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Display only births</property>
                             <property name="label" translatable="yes">Births/Baptisms</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_birth_activate"/>
+                            <signal name="activate" handler="on_birth_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkMenuItem" id="marriages">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Display only marriages</property>
                             <property name="label" translatable="yes">Marriages/Families</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_marriage_activate"/>
+                            <signal name="activate" handler="on_marriage_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkMenuItem" id="deaths">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Display only deaths</property>
                             <property name="label" translatable="yes">Deaths/Burials</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_death_activate"/>
+                            <signal name="activate" handler="on_death_activate" swapped="no"/>
                           </object>
                         </child>
                         <child>
                           <object class="GtkMenuItem" id="censuses">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">Display only censuses</property>
                             <property name="label" translatable="yes">Censuses</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_census_activate"/>
+                            <signal name="activate" handler="on_census_activate" swapped="no"/>
                           </object>
                         </child>
                       </object>
@@ -204,18 +262,23 @@
                 </child>
                 <child>
                   <object class="GtkMenuItem" id="menuitem4">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="label" translatable="yes">_Help</property>
                     <property name="use_underline">True</property>
                     <child type="submenu">
                       <object class="GtkMenu" id="menuitem4_menu">
+                        <property name="can_focus">False</property>
                         <child>
                           <object class="GtkMenuItem" id="about">
+                            <property name="use_action_appearance">False</property>
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="tooltip_text" translatable="yes">About this utility.</property>
                             <property name="label" translatable="yes">About dialog</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_about_activate"/>
+                            <signal name="activate" handler="on_about_activate" swapped="no"/>
                           </object>
                         </child>
                       </object>
@@ -232,28 +295,37 @@
             <child>
               <object class="GtkToolbar" id="toolbar1">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="toolbar_style">both</property>
                 <child>
                   <object class="GtkToolItem" id="toolitem1">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="add_b">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">New birth or baptism</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment2">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox2">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image2">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-new</property>
                                   </object>
                                   <packing>
@@ -265,6 +337,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label273">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">add birth act</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -287,25 +360,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem2">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="add_m">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">New marriage</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment3">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox3">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image3">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-new</property>
                                   </object>
                                   <packing>
@@ -317,6 +398,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label274">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">add marriage act</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -339,25 +421,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem3">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="add_d">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">New death or burial</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment4">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox4">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image4">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-new</property>
                                   </object>
                                   <packing>
@@ -369,6 +459,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label275">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">add death act</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -391,25 +482,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem4">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="add_c">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">New census</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment5">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox5">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image5">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-new</property>
                                   </object>
                                   <packing>
@@ -421,6 +520,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label276">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">add census</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -443,25 +543,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem5">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="s_b">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Select a birth source</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment6">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox6">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image6">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-index</property>
                                   </object>
                                   <packing>
@@ -473,6 +581,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label277">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">birth</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -495,25 +604,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem6">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="s_m">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Select a marriage source</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment7">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox7">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image7">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-index</property>
                                   </object>
                                   <packing>
@@ -525,6 +642,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label278">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">marriage</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -547,25 +665,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem8">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="s_d">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Select a death source</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment8">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox8">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image8">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-index</property>
                                   </object>
                                   <packing>
@@ -577,6 +703,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label279">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">death</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -599,25 +726,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem7">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="s_c">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Select a census source</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment9">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox9">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image9">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-index</property>
                                   </object>
                                   <packing>
@@ -629,6 +764,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label280">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">census</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -651,25 +787,33 @@
                 </child>
                 <child>
                   <object class="GtkToolItem" id="toolitem9">
+                    <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="use_action_appearance">False</property>
                     <child>
                       <object class="GtkButton" id="s_r">
+                        <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="tooltip_text" translatable="yes">Select a repository storing a source</property>
+                        <property name="use_action_appearance">False</property>
                         <child>
                           <object class="GtkAlignment" id="alignment10">
                             <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <property name="xscale">0</property>
                             <property name="yscale">0</property>
                             <child>
                               <object class="GtkHBox" id="hbox10">
                                 <property name="visible">True</property>
+                                <property name="can_focus">False</property>
                                 <property name="spacing">2</property>
                                 <child>
                                   <object class="GtkImage" id="image10">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="stock">gtk-index</property>
                                   </object>
                                   <packing>
@@ -681,6 +825,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label281">
                                     <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">repositories</property>
                                     <property name="use_underline">True</property>
                                   </object>
@@ -723,6 +868,9 @@
                     <property name="can_focus">True</property>
                     <property name="tooltip_text" translatable="yes">Selected view</property>
                     <property name="border_width">1</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection" id="treeview-selection1"/>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -736,6 +884,7 @@
             <child>
               <object class="GtkLabel" id="label10">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">Records transcriptions ... births/deaths/marriages/censuses with common fields: id, repository, person name, birth date and place, parents.</property>
                 <property name="use_underline">True</property>
@@ -757,23 +906,12 @@
             <property name="position">1</property>
           </packing>
         </child>
-        <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="hbuttonbox1">
-            <property name="visible">True</property>
-            <property name="layout_style">end</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="padding">2</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
       </object>
     </child>
   </object>
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
+    <property name="can_focus">False</property>
     <property name="stock">gtk-revert-to-saved</property>
   </object>
 </interface>
