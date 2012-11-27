@@ -119,7 +119,7 @@ class PythonGramplet(Gramplet):
         from gi.repository import Gdk
         if (event.keyval == Gtk.keysyms.Home or
             ((event.keyval == Gtk.keysyms.a and 
-              event.get_state() & Gdk.CONTROL_MASK))): 
+              event.get_state() & Gdk.EventMask.CONTROL_MASK))): 
             buffer = widget.get_buffer()
             cursor_pos = buffer.get_property("cursor-position")
             iter = buffer.get_iter_at_offset(cursor_pos)
@@ -130,7 +130,7 @@ class PythonGramplet(Gramplet):
             return True
         elif (event.keyval == Gtk.keysyms.End or 
               (event.keyval == Gtk.keysyms.e and 
-               event.get_state() & Gdk.CONTROL_MASK)): 
+               event.get_state() & Gdk.EventMask.CONTROL_MASK)): 
             buffer = widget.get_buffer()
             end = buffer.get_end_iter()
             buffer.place_cursor(end)
