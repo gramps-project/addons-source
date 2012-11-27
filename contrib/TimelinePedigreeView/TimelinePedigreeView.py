@@ -134,7 +134,7 @@ class _PersonWidgetBase:
             self.connect("drag_data_get", self.drag_data_get)
             self.connect("drag_begin", self.drag_begin_cb)
             # Enable drag
-            self.drag_source_set(Gdk.EventMask.BUTTON1_MASK,
+            self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
                                 [DdTargets.PERSON_LINK.target()]+
                                 [t.target() for t in DdTargets._all_text_types],
                                 Gdk.ACTION_COPY)
