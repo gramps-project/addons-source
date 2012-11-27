@@ -601,7 +601,7 @@ class TimelinePedigreeView(NavigationView):
         self.scrolledwindow.add_events(Gdk.EventMask.SCROLL_MASK)
         self.scrolledwindow.connect("scroll-event", self.bg_scroll_event)
 
-        self.gtklayout = Gtk.Layout(None, None)
+        self.gtklayout = Gtk.Layout()
         # Required for drag-scroll events and popup menu
         self.gtklayout.add_events(Gdk.BUTTON_PRESS_MASK
                              | Gdk.BUTTON_RELEASE_MASK
