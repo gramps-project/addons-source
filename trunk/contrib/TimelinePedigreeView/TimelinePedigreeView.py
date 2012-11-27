@@ -1304,20 +1304,20 @@ class TimelinePedigreeView(NavigationView):
         Enter in scroll mode when mouse button pressed in background
         or call option menu.
         """
-        if event.button == 1 and event.type == Gdk.BUTTON_PRESS:
+        if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             widget.window.set_cursor(Gdk.Cursor(Gdk.FLEUR))
             self._last_x = event.x
             self._last_y = event.y
             self._in_move = True
             return True
-        elif event.button == 3 and event.type == Gdk.BUTTON_PRESS:
+        elif event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             self.on_show_option_menu_cb(widget, event)
             return True
         return False
 
     def bg_button_release_cb(self, widget, event):
         """Exit from scroll mode when button release."""
-        if event.button == 1 and event.type == Gdk.BUTTON_RELEASE:
+        if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
             self.bg_motion_notify_event_cb(widget, event)
             widget.window.set_cursor(None)
             self._in_move = False
@@ -1364,10 +1364,10 @@ class TimelinePedigreeView(NavigationView):
         or submenu for family for mouse right click.
         And setup plug for button press on person widget.
         """
-        if event.button == 3 and event.type == Gdk.BUTTON_PRESS:
+        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             # self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
             print "Menu request"
-        elif event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
+        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
             family = self.dbstate.db.get_family_from_handle(family_handle)
             if family:
                 try:
@@ -1383,9 +1383,9 @@ class TimelinePedigreeView(NavigationView):
         or submenu for person for mouse right click.
         And setup plug for button press on person widget.
         """
-        if event.button == 3 and event.type == Gdk.BUTTON_PRESS:
+        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
-        elif event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
+        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
             self.edit_person_cb(obj, person_handle)
         return True
 
@@ -1395,10 +1395,10 @@ class TimelinePedigreeView(NavigationView):
         on family line or call full submenu for mouse right click.
         And setup plug for button press on family line.
         """
-        if event.button == 3 and event.type == Gdk.BUTTON_PRESS:
+        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             self.build_relation_nav_menu_cb(obj, event, family_handle)
             return True
-        elif event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
+        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
             self.edit_family_cb(obj, family_handle)
             return True
         return True
@@ -1409,10 +1409,10 @@ class TimelinePedigreeView(NavigationView):
         Callback function for not full family for mouse left button double click
         on missing persons or call submenu for mouse right click.
         """
-        if event.button == 1 and event.type == Gdk._2BUTTON_PRESS:
+        if event.button == 1 and event.type == event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
             self.add_parents_cb(obj, person_handle, family_handle)
             return True
-        elif event.button == 3 and event.type == Gdk.BUTTON_PRESS:
+        elif event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
             self.build_missing_parent_nav_menu_cb(obj, event, person_handle,
                                                   family_handle)
             return True
