@@ -379,7 +379,7 @@ class GraphWidget(object):
         or call option menu.
         """
         button = event.get_button()[1]
-        if button == 1 and event.type == Gdk.EventType.BUTTON_PRESS \
+        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
             and item == self.canvas.get_root_item():
             window = self.canvas.get_parent().get_window()
             window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
@@ -392,7 +392,7 @@ class GraphWidget(object):
     def button_release(self, item, target, event):
         """Exit from scroll mode when button release."""
         button = event.get_button()[1]
-        if button == 1 and event.type == Gdk.EventType.BUTTON_RELEASE:
+        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
             self.motion_notify_event(item, target, event)
             self.canvas.get_parent().get_window().set_cursor(None)
             self._in_move = False
@@ -425,7 +425,7 @@ class GraphWidget(object):
         node_class = item.description
         button = event.get_button()[1]
 
-        if event.type != Gdk.EventType.BUTTON_PRESS:
+        if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
         if button == 1 and node_class == 'node': # Left mouse
             if handle == self.active_person_handle:
