@@ -662,7 +662,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
     def button_press_event(self,obj,event):
         from gramps.gui.editors import EditPlace
 
-        if event.type == Gdk._2BUTTON_PRESS and event.button == 1:
+        if event.type == getattr(Gdk.EventType, "2BUTTON_PRESS") and event.button == 1:
             store, node = self.tree.get_selection().get_selected()
             if node:
                 #only when non empty tree view you are here
@@ -690,7 +690,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 except WindowActiveError :
                     pass
                         
-        if event.type == Gdk.KEY_PRESS and \
+        if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
                 event.keyval == Gtk.keysyms.Delete:
             selection = self.tree.get_selection()
             store, node = selection.get_selected()
@@ -707,7 +707,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     if row >= 0:
                         selection.select_path((row,))
                         
-        if event.type == Gdk.KEY_PRESS and \
+        if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
                 event.keyval == Gtk.keysyms.Tab:
             #call up google maps
             self.google()
