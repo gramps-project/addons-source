@@ -49,11 +49,11 @@ from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator(__file__).gettext
 
 class ListeEclairReport(Report):
-    def __init__(self, database, options, user):
+    def __init__(self, database, options_class, user):
 
-        Report.__init__(self, database, options, user)
+        Report.__init__(self, database, options_class, user)
 
-        menu = options.menu
+        menu = options_class.menu
         places = menu.get_option_by_name('places').get_value()
         self.reporttype  = menu.get_option_by_name('reporttype').get_value()
         self.incpriv = menu.get_option_by_name('incpriv').get_value()
@@ -109,17 +109,18 @@ class ListeEclairReport(Report):
         place_nbr = 1
         self.doc.start_paragraph("Eclair-Report")
         self.progress.set_pass(_("Generating report"), len(self.place_handles))
-	self.result=[]
+        self.result=[]
         for handle in self.place_handles:
             city = self.__write_place(handle, place_nbr)
             self.__write_referenced_events(handle, city)
             place_nbr += 1
             # increment progress bar
             self.progress.step()
-	self.result.sort()
-	for msg in self.result:
+	    self.result.sort()
+	    for msg in self.result:
+            # AttributeError: 'GtkDocDocument' object has no attribute 'add_text
         	self.doc.write_text("%s\n" % msg)
-	self.doc.end_paragraph()
+	    self.doc.end_paragraph()
 
     def __write_place(self, handle, place_nbr):
         """
@@ -127,9 +128,13 @@ class ListeEclairReport(Report):
         """
         place = self.database.get_place_from_handle(handle)
         location = place.get_main_location()
-
+        
         city = location.get_city()
-	return city
+        
+        if city == '' and place.get_title():
+            city = place.get_title()
+            
+        return city
 
     def __write_referenced_events(self, handle , city):
         """
@@ -139,8 +144,8 @@ class ListeEclairReport(Report):
                          self.database.find_backlink_handles(handle)]
         #event_handles.sort(self.sort.by_date)
 
-	self.debut = defaultdict(lambda: defaultdict(dict))
-	self.fin = defaultdict(lambda: defaultdict(dict))
+        self.debut = defaultdict(lambda: defaultdict(dict))
+        self.fin = defaultdict(lambda: defaultdict(dict))
         for evt_handle in event_handles:
             event = self.database.get_event_from_handle(evt_handle)
             if event:
@@ -178,19 +183,19 @@ class ListeEclairReport(Report):
 			if self.fin[city][people] < year:
 				self.fin[city][people] = year
                 event_details = [year, people]
-	keylist = self.debut.keys()
-	keylist.sort()
-	for city in keylist:
-		for people in sorted(self.debut[city].keys()):
-			if self.reporttype == "ListeEclair":
-				if self.debut[city][people] == 0:
-					msg = city + ":" + people
-				else:
-					msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
-			else:
-				msg = people + ":" + city 
-			if msg:
-				self.result.append(str(msg))
+	    keylist = self.debut.keys()
+	    keylist.sort()
+	    for city in keylist:
+		    for people in sorted(self.debut[city].keys()):
+			    if self.reporttype == "ListeEclair":
+				    if self.debut[city][people] == 0:
+					    msg = city + ":" + people
+				    else:
+					    msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
+			    else:
+				    msg = people + ":" + city 
+			    if msg:
+				    self.result.append(str(msg))
 
 
     def __get_place_handles(self, places):
@@ -205,6 +210,7 @@ class ListeEclairReport(Report):
                 place_handles.append(place.get_handle())
 
         return place_handles
+        
     
 #------------------------------------------------------------------------
 #
