@@ -128,13 +128,13 @@ class _PersonWidgetBase:
         self.person = person
         self.force_mouse_over = False
         if self.person:
-            self.add_events(Gdk.BUTTON_PRESS_MASK)
-            self.add_events(Gdk.BUTTON_RELEASE_MASK)
+            self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
+            self.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
             self.connect("button-release-event", self.on_button_release_cb)
             self.connect("drag_data_get", self.drag_data_get)
             self.connect("drag_begin", self.drag_begin_cb)
             # Enable drag
-            self.drag_source_set(Gdk.BUTTON1_MASK,
+            self.drag_source_set(Gdk.EventMask.BUTTON1_MASK,
                                 [DdTargets.PERSON_LINK.target()]+
                                 [t.target() for t in DdTargets._all_text_types],
                                 Gdk.ACTION_COPY)
@@ -173,12 +173,12 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         Gtk.DrawingArea.__init__(self)
         _PersonWidgetBase.__init__(self, view, format_helper, person)
         # Required for popup menu
-        self.add_events(Gdk.BUTTON_PRESS_MASK)
-        self.add_events(Gdk.BUTTON_RELEASE_MASK)
+        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
+        self.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
         # Required for tooltip and mouse-over
-        self.add_events(Gdk.ENTER_NOTIFY_MASK)
+        self.add_events(Gdk.EventMask.ENTER_NOTIFY_MASK)
         # Required for tooltip and mouse-over
-        self.add_events(Gdk.LEAVE_NOTIFY_MASK)
+        self.add_events(Gdk.EventMask.LEAVE_NOTIFY_MASK)
         self.alive = alive
         self.maxlines = maxlines
         self.hightlight = False
@@ -347,12 +347,12 @@ class PersonBoxWidget(Gtk.DrawingArea, _PersonWidgetBase):
         Gtk.DrawingArea.__init__(self)
         _PersonWidgetBase.__init__(self, view, format_helper, person)
                         # Required for popup menu and other right mouse button click
-        self.add_events(Gdk.BUTTON_PRESS_MASK
-                        | Gdk.BUTTON_RELEASE_MASK
+        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK
+                        | Gdk.EventMask.BUTTON_RELEASE_MASK
                         # Required for tooltip and mouse-over
-                        | Gdk.ENTER_NOTIFY_MASK
+                        | Gdk.EventMask.ENTER_NOTIFY_MASK
                         # Required for tooltip and mouse-over
-                        | Gdk.LEAVE_NOTIFY_MASK)
+                        | Gdk.EventMask.LEAVE_NOTIFY_MASK)
         self.maxlines = maxlines
         self.alive = alive
         try:
@@ -603,9 +603,9 @@ class TimelinePedigreeView(NavigationView):
 
         self.gtklayout = Gtk.Layout()
         # Required for drag-scroll events and popup menu
-        self.gtklayout.add_events(Gdk.BUTTON_PRESS_MASK
-                             | Gdk.BUTTON_RELEASE_MASK
-                             | Gdk.BUTTON1_MOTION_MASK)
+        self.gtklayout.add_events(Gdk.EventMask.BUTTON_PRESS_MASK
+                             | Gdk.EventMask.BUTTON_RELEASE_MASK
+                             | Gdk.EventMask.BUTTON1_MOTION_MASK)
         
         self.gtklayout.connect("expose_event", self.gtklayout_expose)
         self.gtklayout.connect("button-press-event", self.bg_button_press_cb)
@@ -900,8 +900,8 @@ class TimelinePedigreeView(NavigationView):
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
             if family_handle:
-                label.add_events(Gdk.BUTTON_PRESS_MASK)
-                label.add_events(Gdk.BUTTON_RELEASE_MASK)
+                label.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
+                label.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
                 label.connect("button-press-event", self.family_button_press_cb, family_handle)
             
             layout_widget.put(label, xvline + 5, int(yBoxConnection-label.size_request()[1]/2))
