@@ -238,8 +238,8 @@ class PersonBox:
                         birth_date = gramps.gen.datehandler.get_date(birth_event)
             self.line += "\nb. " + str(birth_date)
 
-            # we don't repeat this information for the mother
             if not self.isMother():
+                # we don't repeat this information for the mother
                 relationship_date = _PLACEHOLDER
                 all_families = self.person.get_family_handle_list()
                 if len(all_families) > 0:
@@ -247,10 +247,9 @@ class PersonBox:
                     for evt_ref in family.get_event_ref_list():
                         evt_handle = evt_ref.get_reference_handle()
                         evt = self.report.database.get_event_from_handle(evt_handle)
-                        # FIXME: where are the event types defined in Gramps,
-                        # and are these the only important ones?
-                        #print repr(evt.get_type().string)
-                        if evt.get_type().string in ["Marriage", "Civil Union"]:
+                        # Check for a marriage event
+                        evt_t = evt.get_type()
+                        if evt_t.is_marriage() or evt_t.is_marriage_fallback():
                             relationship_date = gramps.gen.datehandler.get_date(evt)
                 self.line += "\nm. " + str(relationship_date)
 

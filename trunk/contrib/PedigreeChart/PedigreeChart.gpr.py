@@ -24,7 +24,7 @@ register(REPORT,
          name=_("Pedigree Chart"),
          description=_("Alternate version of the traditional pedigree chart."),
          status = STABLE, # not yet tested with python 3
-         version = '1.0.15',
+         version = '1.0.16',
          fname="PedigreeChart.py",
          gramps_target_version="4.0",
          authors=['Jakim Friant'],
