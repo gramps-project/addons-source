@@ -8,6 +8,7 @@ from argparse import ArgumentParser
 ADDON = 'lxmlGramplet'
 
 ALL_LINGUAS=["en", # translation template
+             "all", # all entries
              "bg",
              "ca",
              "cs",
