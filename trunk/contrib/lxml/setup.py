@@ -179,10 +179,10 @@ def main():
                                         "Everything around lxml package."
                                         )
                                            
-    translating.add_argument("-i", "--init", dest="init", default=False,
+    translating.add_argument("-i", dest="init", default=False,
               choices=ALL_LINGUAS,
 			  help="create the environment")
-    translating.add_argument("-u", "--update", dest="update", default=False,
+    translating.add_argument("-u", dest="update", default=False,
               choices=ALL_LINGUAS,
 			  help="update the translation")
               
@@ -202,6 +202,8 @@ def main():
         tests()
        
     if args.init:
+        if sys.argv[2:] == ['all']:
+            sys.argv[2:] = ALL_LINGUAS
         init(sys.argv[2:])
         
     if args.update:
