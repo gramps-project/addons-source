@@ -151,7 +151,6 @@ class DifferencesReport(Report):
         self.show_diff = mgobn('show_diff')
         self.show_deleted = mgobn('show_deleted')
         self.show_added = mgobn('show_added')
-        self.ignore = mgobn('ignore')
 
     def write_report(self):
         """ The short method that runs through each month and creates a page. """
@@ -191,10 +190,8 @@ class DifferencesReport(Report):
         self.doc.write_text("")
         self.doc.end_paragraph()
         self.database2 = import_as_dict(self.filename)
-        ignore_list = self.ignore.split(",")
         self.sa = [SimpleAccess(self.database), SimpleAccess(self.database2)]
         diffs, added, deleted = diff_dbs(self.database, self.database2)
-        #ignore_list)
         if self.show_diff:
             self.doc.start_paragraph('DIFF-Heading') 
             self.doc.write_text("Differences between Database and File")
@@ -288,10 +285,6 @@ class DifferencesOptions(MenuReportOptions):
         show_added = BooleanOption(_("Show added items"), True)
         show_added.set_help(_("Include items in file but not in database"))
         menu.add_option(category_name, "show_added", show_added)
-
-        ignore = StringOption(_("Comma-separated items to ignore"), "")
-        ignore.set_help(_("Ignore these parts"))
-        menu.add_option(category_name, "ignore", ignore)
 
     def make_my_style(self, default_style, name, description, 
                       size=9, font=FONT_SERIF, justified ="left", 
