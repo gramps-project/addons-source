@@ -116,11 +116,11 @@ class ListeEclairReport(Report):
             place_nbr += 1
             # increment progress bar
             self.progress.step()
-	    self.result.sort()
-	    for msg in self.result:
+        self.result.sort()
+        for msg in self.result:
             # AttributeError: 'GtkDocDocument' object has no attribute 'add_text
-        	self.doc.write_text("%s\n" % msg)
-	    self.doc.end_paragraph()
+            self.doc.write_text("%s\n" % msg)
+        self.doc.end_paragraph()
 
     def __write_place(self, handle, place_nbr):
         """
@@ -149,53 +149,54 @@ class ListeEclairReport(Report):
         for evt_handle in event_handles:
             event = self.database.get_event_from_handle(evt_handle)
             if event:
-		date = event.get_date_object()
-		if date:
-			year = int(date.get_year())
-		else:
-			next()
-                person_list = []
-                ref_handles = [x for x in
-                               self.database.find_backlink_handles(evt_handle)]
-                for (ref_type, ref_handle) in ref_handles:
-                    if ref_type == 'Person':
-                        person_list.append(ref_handle)
-                    else:
-                        family = self.database.get_family_from_handle(ref_handle)
-                        father = family.get_father_handle()
-                        if father:
-                            person_list.append(father)
-                        mother = family.get_mother_handle()
-                        if mother:
-                            person_list.append(mother)
+                date = event.get_date_object()
+            if date:
+                year = int(date.get_year())
+            else:
+                next()
+            person_list = []
+            ref_handles = [x for x in
+                            self.database.find_backlink_handles(evt_handle)]
+            for (ref_type, ref_handle) in ref_handles:
+                if ref_type == 'Person':
+                    person_list.append(ref_handle)
+                else:
+                    family = self.database.get_family_from_handle(ref_handle)
+                    father = family.get_father_handle()
+                    if father:
+                        person_list.append(father)
+                    mother = family.get_mother_handle()
+                    if mother:
+                        person_list.append(mother)
 
-                people = ""
-                person_list = list(set(person_list))
-                for p_handle in person_list:
-                    person = self.database.get_person_from_handle(p_handle)
-                    if person:
-                        people = person.get_primary_name().get_surname()
-			if not self.debut[city][people]:
-				self.debut[city][people] = year
-				self.fin[city][people] = year
-			if self.debut[city][people] > year:
-				self.debut[city][people] = year
-			if self.fin[city][people] < year:
-				self.fin[city][people] = year
+            people = ""
+            person_list = list(set(person_list))
+            for p_handle in person_list:
+                person = self.database.get_person_from_handle(p_handle)
+                if person:
+                    people = person.get_primary_name().get_surname()
+                    
+            if not self.debut[city][people]:
+                self.debut[city][people] = year
+                self.fin[city][people] = year
+            if self.debut[city][people] > year:
+                self.debut[city][people] = year
+            if self.fin[city][people] < year:
+                self.fin[city][people] = year
                 event_details = [year, people]
-	    keylist = self.debut.keys()
-	    keylist.sort()
-	    for city in keylist:
-		    for people in sorted(self.debut[city].keys()):
-			    if self.reporttype == "ListeEclair":
-				    if self.debut[city][people] == 0:
-					    msg = city + ":" + people
-				    else:
-					    msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
-			    else:
-				    msg = people + ":" + city 
-			    if msg:
-				    self.result.append(str(msg))
+        keylist = self.debut.keys()
+        keylist.sort()
+        for city in keylist:
+            for people in sorted(self.debut[city].keys()):
+                if self.reporttype == "ListeEclair":
+                    if self.debut[city][people] == 0:
+                        msg = city + ":" + people
+                    else:
+                        msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
+                else:
+                    msg = people + ":" + city 
+                if msg:
+                    self.result.append(str(msg))
 
 
     def __get_place_handles(self, places):
