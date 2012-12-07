@@ -148,7 +148,7 @@ class PythonGramplet(Gramplet):
                 line_len -= 1
                 echo = True
             end = buffer.get_iter_at_line_offset(line_cnt, line_len)
-            line = buffer.get_text(start, end)
+            line = buffer.get_text(start, end, True)
             self.append_text("\n")
             if line.startswith(self.prompt):
                 line = line[2:]
