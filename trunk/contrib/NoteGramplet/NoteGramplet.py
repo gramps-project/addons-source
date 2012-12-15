@@ -34,7 +34,7 @@ from gi.repository import Gtk
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
+_ = get_addon_translator().ugettext
 from gramps.gen.const import GLADE_FILE
 from gramps.gui.widgets import StyledTextEditor
 from gramps.gen.lib import StyledText, Note
@@ -106,11 +106,11 @@ class NoteGramplet(Gramplet):
         row = Gtk.HBox()
         button = Gtk.Button(_("Save"))
         button.connect("clicked", self.save_data_edit)
-        row.pack_start(button, True)
+        row.pack_start(button, True, True, 0)
         button = Gtk.Button(_("Abandon"))
         button.connect("clicked", self.abandon_data_edit)
-        row.pack_start(button, True)
-        rows.pack_start(row, False)
+        row.pack_start(button, True, True, 0)
+        rows.pack_start(row, False, False, 0)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
@@ -124,11 +124,11 @@ class NoteGramplet(Gramplet):
         if active:
             # Set the text style to monospace
             self.texteditor.set_wrap_mode(Gtk.WrapMode.NONE)
-            self.texteditor.modify_font(pango.FontDescription("monospace"))
+            self.texteditor.modify_font(Pango.FontDescription("monospace"))
         else:
             # Set the text style to normal
             self.texteditor.set_wrap_mode(Gtk.WrapMode.WORD)
-            self.texteditor.modify_font(pango.FontDescription("normal"))
+            self.texteditor.modify_font(Pango.FontDescription("normal"))
 
     def build_interface(self):
         """
@@ -222,7 +222,7 @@ class NoteGramplet(Gramplet):
         self.update()
 
     def edit_person(self, obj):
-        from gui.editors import EditPerson
+        from gramps.gui.editors import EditPerson
         try:
             EditPerson(self.gui.dbstate, 
                        self.gui.uistate, [], 
@@ -232,7 +232,7 @@ class NoteGramplet(Gramplet):
             pass
 
     def edit_family(self, obj):
-        from gui.editors import EditFamily
+        from gramps.gui.editors import EditFamily
         try:
             EditFamily(self.gui.dbstate, 
                        self.gui.uistate, [], 
