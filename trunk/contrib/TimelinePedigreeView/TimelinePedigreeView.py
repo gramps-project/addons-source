@@ -38,6 +38,7 @@ import cPickle as pickle
 # GTK/GI modules
 #
 #-------------------------------------------------------------------------
+from gi.repository import Pango
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gramps.gen.constfunc import is_quartz
