@@ -40,7 +40,7 @@ class ClockWidget(Gtk.Widget):
         Gtk.Widget.__init__(self)
         self.draw_gc = None
         self.layout = self.create_pango_layout(TEXT)
-        self.layout.set_font_description(pango.FontDescription("sans 8"))
+        self.layout.set_font_description(Pango.FontDescription("sans 8"))
         self.timer = GObject.timeout_add (1000, progress_timeout, self)
                                            
     def do_realize(self):
@@ -64,8 +64,8 @@ class ClockWidget(Gtk.Widget):
 
     def do_size_request(self, requisition):
 	width, height = self.layout.get_size()
-	requisition.width = (width // pango.SCALE + BORDER_WIDTH*4)* 1.45
-	requisition.height = (3 * height // pango.SCALE + BORDER_WIDTH*4) * 1.2
+	requisition.width = (width // Pango.SCALE + BORDER_WIDTH*4)* 1.45
+	requisition.height = (3 * height // Pango.SCALE + BORDER_WIDTH*4) * 1.2
 
     def do_size_allocate(self, allocation):
         self.allocation = allocation
