@@ -4,8 +4,8 @@
 #import pygtk
 #pygtk.require('2.0')
 
+from gi.repository import Pango
 from gi.repository import GObject
-import pango
 import math
 import time
 from gi.repository import Gtk

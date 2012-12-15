@@ -23,8 +23,8 @@
 # Python modules
 #
 #------------------------------------------------------------------------
+from gi.repository import Pango
 from gi.repository import Gtk
-import pango
 
 #------------------------------------------------------------------------
 #
