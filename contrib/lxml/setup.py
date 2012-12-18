@@ -550,6 +550,7 @@ def build():
     files += glob.glob('''%s.gpr.py''' % ADDON)
     files += glob.glob('''grampsxml.dtd''')
     files += glob.glob('''grampsxml.rng''')
+    files += glob.glob('''grampsxml.xsd''')
     files += glob.glob('''lxml.css''')
     files += glob.glob('''query_html.xsl''')
     files += glob.glob('''locale/*/LC_MESSAGES/*.mo''')

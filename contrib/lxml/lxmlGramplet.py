@@ -71,7 +71,7 @@ except:
 #
 #-------------------------------------------------------------------------
 try:
-    from lxml import etree
+    from lxml import etree, objectify
     LXML_OK = True
     # current code is working with:
     # LXML_VERSION (2, 3, 2)
@@ -275,8 +275,16 @@ class lxmlGramplet(Gramplet):
         else:
             return
         
+        # XSD structure via lxml
+        
+        xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
+        try:
+            self.xsd(xsd, filename)
+        except:
+            ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
+        
         # DTD syntax via xmllint (libxml2-utils)
-               
+        
         try:
             self.check_valid(filename)
         except:
@@ -330,7 +338,7 @@ class lxmlGramplet(Gramplet):
                       
         self.text.set_text(etree.tostring(root, pretty_print=True))
 
-        # namespace issues and 'surname' only on 1.4.0!
+        # namespace issues !
         
         namespace = root.nsmap
         surname_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.5.0/}surname')
@@ -484,10 +492,28 @@ class lxmlGramplet(Gramplet):
         sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
         
 
+    def xsd(self, xsd, filename):
+        """
+        Look at schema, validation, conform, structure, content, etc...
+        Code for 1.5.0 and +
+        """    
+        
+        # syntax check against XSD for file format
+        
+        schema = etree.XMLSchema(file=xsd)
+        
+        parser = objectify.makeparser(schema = schema)
+        
+        tree = etree.parse(filename)
+        root = tree.getroot()
+        
+        database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
+        print(_('Matches XSD schema.'))
+
     def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
-        Code for 1.4.0 and later (previous versions 'surname' was 'last')
+        Code for 1.5.0 and +
         """    
         
         # syntax check against DTD for file format
