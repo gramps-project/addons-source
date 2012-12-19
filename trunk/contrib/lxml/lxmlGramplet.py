@@ -509,6 +509,9 @@ class lxmlGramplet(Gramplet):
         
         database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
         print(_('Matches XSD schema.'))
+        
+        #dump = objectify.dump(database)
+        #print(dump)
 
     def check_valid(self, filename):
         """
