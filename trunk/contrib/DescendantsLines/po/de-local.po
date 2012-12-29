@@ -11,237 +11,259 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-04 14:26+0100\n"
-"PO-Revision-Date: 2012-02-05 02:17+0100\n"
-"Last-Translator: Mirko Leonhäuser <mirko@lonhaeuser.de>\n"
+"POT-Creation-Date: 2012-12-29 20:50+0100\n"
+"PO-Revision-Date: 2012-12-30 00:38+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: DescendantsLines//DescendantsLines.gpr.py:24
+#: DescendantsLines/DescendantsLines.gpr.py:24
 msgid "Descendants Lines"
 msgstr "Nachkommen Linien"
 
-#: DescendantsLines//DescendantsLines.gpr.py:25
+#: DescendantsLines/DescendantsLines.gpr.py:25
 msgid "Produces descendants lines of a person"
 msgstr "Erstellt Nachkommenlinien einer Person"
 
-#: DescendantsLines//DescendantsLines.py:866
+#: DescendantsLines/DescendantsLines.py:886
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: DescendantsLines//DescendantsLines.py:1053
+#: DescendantsLines/DescendantsLines.py:1075
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: DescendantsLines//DescendantsLines.py:1055
+#: DescendantsLines/DescendantsLines.py:1077
 msgid "Center Person"
 msgstr "Hauptperson"
 
-#: DescendantsLines//DescendantsLines.py:1056
+#: DescendantsLines/DescendantsLines.py:1078
 msgid "The center person for the report"
 msgstr "Die Hauptperson für den Bericht"
 
-#: DescendantsLines//DescendantsLines.py:1059
+#: DescendantsLines/DescendantsLines.py:1081
 msgid "Output format"
 msgstr "Ausgabeformat"
 
-#: DescendantsLines//DescendantsLines.py:1061
+#: DescendantsLines/DescendantsLines.py:1083
 msgid "PNG format"
 msgstr "PNG Format"
 
-#: DescendantsLines//DescendantsLines.py:1062
+#: DescendantsLines/DescendantsLines.py:1084
 msgid "SVG format"
 msgstr "SVG Format"
 
-#: DescendantsLines//DescendantsLines.py:1063
+#: DescendantsLines/DescendantsLines.py:1085
 msgid "PDF format"
 msgstr "PDF Format"
 
-#: DescendantsLines//DescendantsLines.py:1064
+#: DescendantsLines/DescendantsLines.py:1086
 msgid "PS format"
 msgstr "PS Format"
 
-#: DescendantsLines//DescendantsLines.py:1065
+#: DescendantsLines/DescendantsLines.py:1087
 msgid "The output format to be used"
 msgstr "Das Ausgabeformat das verwendet wird"
 
-#: DescendantsLines//DescendantsLines.py:1068
+#: DescendantsLines/DescendantsLines.py:1090
 msgid "Style"
 msgstr "Stil"
 
-#: DescendantsLines//DescendantsLines.py:1070
+#: DescendantsLines/DescendantsLines.py:1092
 msgid "Center-aligned text"
 msgstr "Zentrierter Text"
 
-#: DescendantsLines//DescendantsLines.py:1071
+#: DescendantsLines/DescendantsLines.py:1093
 msgid "Left-aligned text"
 msgstr "Linksbündiger Text"
 
-#: DescendantsLines//DescendantsLines.py:1072
+#: DescendantsLines/DescendantsLines.py:1094
 msgid "The style to be used"
 msgstr "Der Stil der verwendet wird"
 
-#: DescendantsLines//DescendantsLines.py:1075
+#: DescendantsLines/DescendantsLines.py:1097
 msgid "Destination"
 msgstr "Ziel"
 
-#: DescendantsLines//DescendantsLines.py:1077
+#: DescendantsLines/DescendantsLines.py:1099
 msgid "The destination file for the content."
 msgstr "Die Zieldatei für den Inhalt."
 
-#: DescendantsLines//DescendantsLines.py:1080
+#: DescendantsLines/DescendantsLines.py:1102
 msgid "Generations"
 msgstr "Generationen"
 
-#: DescendantsLines//DescendantsLines.py:1081
+#: DescendantsLines/DescendantsLines.py:1103
 msgid "The number of generations to include in the report. (0 for unlimited)"
 msgstr ""
 "Anzahl der Generationen die in den Bericht aufgenommen werden (0 für "
 "unbegrenzt)"
 
-#: DescendantsLines//DescendantsLines.py:1085
+#: DescendantsLines/DescendantsLines.py:1110
+msgid "Name format"
+msgstr "Namensformat"
+
+#: DescendantsLines/DescendantsLines.py:1111
+msgid "Default"
+msgstr "Vorgabe"
+
+#: DescendantsLines/DescendantsLines.py:1114
+msgid "Select the format to display names"
+msgstr "Format zum anzeigen von Namen wählen"
+
+#: DescendantsLines/DescendantsLines.py:1117
 msgid "Use colors"
 msgstr "Verwende Farben"
 
-#: DescendantsLines//DescendantsLines.py:1086
+#: DescendantsLines/DescendantsLines.py:1118
 msgid "Whether to use colored names indicating person gender in the output."
 msgstr ""
 "Ob Farbige Namen zur Anzeige des Geschlechts in der Ausgabe verwendet werden."
 
-#: DescendantsLines//DescendantsLines.py:1089
+#: DescendantsLines/DescendantsLines.py:1121
 msgid "Include event places"
 msgstr "Ereignisorte aufnehmen"
 
-#: DescendantsLines//DescendantsLines.py:1090
+#: DescendantsLines/DescendantsLines.py:1122
 msgid "Whether to include event places in the output."
-msgstr ""
+msgstr "Ob Ereignisorte in die Ausgabe aufgenommen werden."
 
-#: DescendantsLines//DescendantsLines.py:1093
+#: DescendantsLines/DescendantsLines.py:1125
 msgid "Include marriage information"
-msgstr ""
+msgstr "Hochzeitsinformationen aufnehmen"
 
-#: DescendantsLines//DescendantsLines.py:1094
+#: DescendantsLines/DescendantsLines.py:1126
 msgid "Whether to include marriage information in the output."
-msgstr ""
+msgstr "Ob Hochzeitsinformationen in die Ausgabe aufgenommen werden."
 
-#: DescendantsLines//DescendantsLines.py:1097
+#: DescendantsLines/DescendantsLines.py:1129
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Verwende d'Aboville Nachkommen Nummerierungssystem"
+
+#: DescendantsLines/DescendantsLines.py:1130
+msgid "Whether to use d'Aboville descendant numbering system in the output."
+msgstr ""
+"Ob das d'Aboville Nachkommen Nummerierungssystem in der Ausgabe verwendet "
+"wird."
+
+#: DescendantsLines/DescendantsLines.py:1133
 msgid "Options S"
-msgstr ""
+msgstr "Optionen P"
 
-#: DescendantsLines//DescendantsLines.py:1099
+#: DescendantsLines/DescendantsLines.py:1135
 msgid "S_DOWN"
-msgstr ""
+msgstr "P_RUNTER"
 
-#: DescendantsLines//DescendantsLines.py:1100
+#: DescendantsLines/DescendantsLines.py:1136
 msgid "The length of the vertical edge from descendant to spouse-bar."
-msgstr ""
+msgstr "Die Länge der vertikalen Kante vom Nachkommen zur Partner-Balken."
 
-#: DescendantsLines//DescendantsLines.py:1103
+#: DescendantsLines/DescendantsLines.py:1139
 msgid "S_UP"
-msgstr ""
+msgstr "P_AUF"
 
-#: DescendantsLines//DescendantsLines.py:1104
+#: DescendantsLines/DescendantsLines.py:1140
 msgid "The length of the vertical edge from spouse-bar to spouse."
-msgstr ""
+msgstr "Die Länge der vertikalen Kante vom Partner-Balken zum Partner."
 
-#: DescendantsLines//DescendantsLines.py:1107
+#: DescendantsLines/DescendantsLines.py:1143
 msgid "S_VPAD"
-msgstr ""
+msgstr "P_VFELD"
 
-#: DescendantsLines//DescendantsLines.py:1108
+#: DescendantsLines/DescendantsLines.py:1144
 msgid "The number of ??? vpad"
-msgstr ""
+msgstr "Die Anzahl von ??? VFeld"
 
-#: DescendantsLines//DescendantsLines.py:1111
+#: DescendantsLines/DescendantsLines.py:1147
 msgid "SP_PAD"
-msgstr ""
+msgstr "SP_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1112
-#: DescendantsLines//DescendantsLines.py:1118
-#: DescendantsLines//DescendantsLines.py:1122
-#: DescendantsLines//DescendantsLines.py:1128
-#: DescendantsLines//DescendantsLines.py:1138
+#: DescendantsLines/DescendantsLines.py:1148
+#: DescendantsLines/DescendantsLines.py:1154
+#: DescendantsLines/DescendantsLines.py:1158
+#: DescendantsLines/DescendantsLines.py:1164
+#: DescendantsLines/DescendantsLines.py:1174
 msgid "The number of ??? pad"
-msgstr ""
+msgstr "Die Anzahl der ??? Felder"
 
-#: DescendantsLines//DescendantsLines.py:1115
+#: DescendantsLines/DescendantsLines.py:1151
 msgid "Options F"
-msgstr ""
+msgstr "Optionen F"
 
-#: DescendantsLines//DescendantsLines.py:1117
+#: DescendantsLines/DescendantsLines.py:1153
 msgid "F_PAD"
-msgstr ""
+msgstr "F_Feld"
 
-#: DescendantsLines//DescendantsLines.py:1121
+#: DescendantsLines/DescendantsLines.py:1157
 msgid "FL_PAD"
-msgstr ""
+msgstr "FL_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1125
+#: DescendantsLines/DescendantsLines.py:1161
 msgid "Options O"
-msgstr ""
+msgstr "Optionen O"
 
-#: DescendantsLines//DescendantsLines.py:1127
+#: DescendantsLines/DescendantsLines.py:1163
 msgid "OL_PAD"
-msgstr ""
+msgstr "OL_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1131
+#: DescendantsLines/DescendantsLines.py:1167
 msgid "O_DOWN"
-msgstr ""
+msgstr "O_Runter"
 
-#: DescendantsLines//DescendantsLines.py:1132
+#: DescendantsLines/DescendantsLines.py:1168
 msgid "The length of the vertical edge from spouse-bar to child-bar."
-msgstr ""
+msgstr "Die Länge der vertikalen Kante vom Partner-Balken zum Kinder-Balken."
 
-#: DescendantsLines//DescendantsLines.py:1135
+#: DescendantsLines/DescendantsLines.py:1171
 msgid "Options C"
-msgstr ""
+msgstr "Optionen K"
 
-#: DescendantsLines//DescendantsLines.py:1137
+#: DescendantsLines/DescendantsLines.py:1173
 msgid "C_PAD"
-msgstr ""
+msgstr "K_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1141
+#: DescendantsLines/DescendantsLines.py:1177
 msgid "C_UP"
-msgstr ""
+msgstr "K_AUF"
 
-#: DescendantsLines//DescendantsLines.py:1142
+#: DescendantsLines/DescendantsLines.py:1178
 msgid "The length of the vertical edge from child to child-bar."
-msgstr ""
+msgstr "Die Länge der vertikalen Kante vom Kind zum Kinder-Balken."
 
-#: DescendantsLines//DescendantsLines.py:1145
+#: DescendantsLines/DescendantsLines.py:1181
 msgid "MIN_C_WIDTH"
-msgstr ""
+msgstr "MIN_K_BREITE"
 
-#: DescendantsLines//DescendantsLines.py:1146
+#: DescendantsLines/DescendantsLines.py:1182
 msgid "The number of ??? min width"
-msgstr ""
+msgstr "Die Anzahl der ??? min Breite"
 
-#: DescendantsLines//DescendantsLines.py:1149
+#: DescendantsLines/DescendantsLines.py:1185
 msgid "Options Text"
-msgstr "Optionstext"
+msgstr "Text Optionen"
 
-#: DescendantsLines//DescendantsLines.py:1151
+#: DescendantsLines/DescendantsLines.py:1187
 msgid "TEXT_PAD"
-msgstr ""
+msgstr "TEXT_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1152
+#: DescendantsLines/DescendantsLines.py:1188
 msgid "The number of text pad ???"
-msgstr ""
+msgstr "Die Anzahl der Textfelder ???"
 
-#: DescendantsLines//DescendantsLines.py:1155
+#: DescendantsLines/DescendantsLines.py:1191
 msgid "TEXT_LINE_PAD"
-msgstr ""
+msgstr "TEXT_ZEILEN_FELD"
 
-#: DescendantsLines//DescendantsLines.py:1156
+#: DescendantsLines/DescendantsLines.py:1192
 msgid "The number of text line pad ??? "
-msgstr ""
+msgstr "Die Nummer der Textzeilenfeld ???? "
 
-#: DescendantsLines//DescendantsLines.py:1170
+#: DescendantsLines/DescendantsLines.py:1206
 msgid "The style used for the name of person."
 msgstr "Der Stil der für den Namen einer Person verwendet wird."
 
