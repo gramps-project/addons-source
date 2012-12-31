@@ -1071,7 +1071,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_datamap_dict(db, "citation", handle, datamap)
         export_date(db, "citation", handle, date)
         export_list(db, "citation", handle, "note", note_list) 
-        export_list(db, "citation", handle, "media", media_list) 
+        export_media_ref_list(db, "citation", handle, "media", media_list) 
         count += 1
         callback(100 * count/total)
 
