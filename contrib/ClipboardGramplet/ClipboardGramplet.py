@@ -67,7 +67,7 @@ class ClipboardListView2(ClipboardListView):
     Subclass ClipboardListView to override refresh_objects.
     """
     def refresh_objects(self, dummy=None):
-        def update_rows(model, path, iter):
+        def update_rows(model, path, iter, user_data):
             """
             Update the rows of a model.
             """
@@ -75,7 +75,7 @@ class ClipboardListView2(ClipboardListView):
         # force refresh of each row:
         model = self._widget.get_model()
         if model:
-            model.foreach(update_rows)
+            model.foreach(update_rows, None)
 
 #-------------------------------------------------------------------------
 #
