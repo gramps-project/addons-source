@@ -10,7 +10,7 @@ register(GRAMPLET,
          description = _("Gramplet for importing text"),
          status = UNSTABLE, # not yet tested with python 3
          version = '1.0.14',
-         gramps_target_version = "4.0",
+         gramps_target_version = "4.1",
          height=200,
          gramplet = "ImportGramplet",
          fname="ImportGramplet.py",

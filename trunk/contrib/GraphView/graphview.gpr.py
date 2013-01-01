@@ -4,7 +4,7 @@ register(VIEW,
          category = ("Ancestry", _("Ancestry")),
          description =  _("Dynamic graph of relations"),
          version = '1.0.33',
-         gramps_target_version = '4.0',
+         gramps_target_version = '4.1',
          status = UNSTABLE, # not yet tested with python 3
          fname = 'graphview.py',
          authors = [u"Gary Burton"],

@@ -11,7 +11,7 @@ register(GRAMPLET,
          detached_width = 510,
          detached_height = 480,
          version = '1.0.16',
-         gramps_target_version = "4.0",
+         gramps_target_version = "4.1",
          )
 
 

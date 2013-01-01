@@ -11,7 +11,7 @@ register(GENERAL,
          description = _("Collection of Web sites for the FR (requires libwebconnect)"),
          status = STABLE, # not yet tested with python 3
          version = '1.0.14',
-         gramps_target_version = "4.0",
+         gramps_target_version = "4.1",
          fname="FRWebPack.py",
          load_on_reg = True,
          depends_on = ["libwebconnect"]
