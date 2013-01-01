@@ -19,5 +19,5 @@ register(REPORT,
                     'where details about individuals become visible '
                     'upon mouse-events.'),
     version = '2.3.12',
-    gramps_target_version = '4.0',
+    gramps_target_version = '4.1',
 )

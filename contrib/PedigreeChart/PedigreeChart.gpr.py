@@ -26,7 +26,7 @@ register(REPORT,
          status = STABLE, # not yet tested with python 3
          version = '1.0.16',
          fname="PedigreeChart.py",
-         gramps_target_version="4.0",
+         gramps_target_version="4.1",
          authors=['Jakim Friant'],
          authors_email=["jmodule@friant.org"],
          category=CATEGORY_DRAW,
