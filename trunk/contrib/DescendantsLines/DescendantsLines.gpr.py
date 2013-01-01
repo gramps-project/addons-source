@@ -23,7 +23,7 @@ register(REPORT,
          id    = 'Descendants Lines',
          name  = _("Descendants Lines"),
          description =  _("Produces descendants lines of a person"),
-         version = '0.1.14',
+         version = '0.1.15',
          gramps_target_version = '4.1',
          status = STABLE, # not yet tested with python 3, reduce() not supported in 3.x; use functools.reduce()
          fname = 'DescendantsLines.py',

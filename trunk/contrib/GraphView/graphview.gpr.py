@@ -3,7 +3,7 @@ register(VIEW,
          name  = _("Graph View"),
          category = ("Ancestry", _("Ancestry")),
          description =  _("Dynamic graph of relations"),
-         version = '1.0.33',
+         version = '1.0.34',
          gramps_target_version = '4.1',
          status = UNSTABLE, # not yet tested with python 3
          fname = 'graphview.py',

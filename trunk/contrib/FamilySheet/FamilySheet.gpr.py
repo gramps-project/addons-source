@@ -3,7 +3,7 @@ register(REPORT,
     name = _('Family Sheet'),
     description = _("Produces a family sheet showing full information "
                     "about a person and his/her partners and children."),
-    version = '3.4.17',
+    version = '3.4.18',
     gramps_target_version = '4.1',
     status = STABLE, # not yet tested with python 3
     fname = 'FamilySheet.py',
