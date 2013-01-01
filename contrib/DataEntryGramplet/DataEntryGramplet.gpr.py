@@ -13,7 +13,7 @@ register(GRAMPLET,
          gramplet_title=_("Data Entry"),
          detached_width = 510,
          detached_height = 480,
-         version = '1.0.22',
+         version = '1.0.23',
          gramps_target_version = '4.1',
          status=UNSTABLE, # not yet tested with python 3, gen.lib issues since 3.4.x, 'Gtk' object has no attribute 'combo_box_new_text'
          fname="DataEntryGramplet.py",
