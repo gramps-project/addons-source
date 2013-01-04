@@ -255,6 +255,11 @@ class lxmlGramplet(Gramplet):
             
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
+
+        # never get this before: a filename with '_' character fails
+        for c in entry:
+            if c == '_':
+                entry.replace('_', 'space')
         
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
                 
