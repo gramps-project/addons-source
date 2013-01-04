@@ -30,7 +30,7 @@ register(REPORT,
          category = CATEGORY_DRAW,
          reportclass = 'DescendantsLinesReport',
          optionclass = 'DescendantsLinesOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
          authors = ['Jerome Rapinat', 'lcc', 'Adam Sampson'],
          authors_email = ['romjerome@yahoo.fr', 'lcc.mailaddress@gmail.com', \
                  'ats-familytree@offog.org'],
