@@ -227,6 +227,10 @@ class lxmlGramplet(Gramplet):
         """
         
         entry = self.entry.get_text()
+        if ' ' in entry:
+            ErrorDialog(_('Space character'), _('Please fix space on "%s"') % entry)
+            return
+        
         self.ReadXML(entry)
                                                        
         
@@ -259,9 +263,6 @@ class lxmlGramplet(Gramplet):
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
                 
         if LXML_OK and use_gzip == 1:
-            if ' ' in entry:
-                ErrorDialog(_('Space character'), _('Please fix space on "%s"') % entry)
-                return
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
