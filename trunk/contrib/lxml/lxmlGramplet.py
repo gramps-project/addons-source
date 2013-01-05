@@ -256,11 +256,15 @@ class lxmlGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
 
-        # never get this before: a filename with '_' character fails
-        for c in entry:
-            if c == '_':
-                entry.replace('_', 'space')
+        # never get this before: 
+        # a filename with '_' character or space fails
         
+        # horrible workaround
+        if '_' in entry:
+            entry = entry.replace('_', '_')
+        #elif ' ' in entry:
+            #???
+
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
                 
         if LXML_OK and use_gzip == 1:
