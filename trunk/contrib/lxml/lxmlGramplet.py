@@ -256,18 +256,12 @@ class lxmlGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
 
-        # never get this before: 
-        # a filename with '_' character or space fails
-        
-        # horrible workaround
-        if '_' in entry:
-            entry = entry.replace('_', '_')
-        #elif ' ' in entry:
-            #???
-
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
                 
         if LXML_OK and use_gzip == 1:
+            if ' ' in entry:
+                ErrorDialog(_('Space character'), _('Please fix space on "%s"') % entry)
+                return
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
