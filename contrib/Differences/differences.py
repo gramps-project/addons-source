@@ -25,7 +25,9 @@
 #
 #------------------------------------------------------------------------
 import copy
-import datetime, time
+import datetime
+import time
+import re
 
 #------------------------------------------------------------------------
 #
@@ -45,91 +47,13 @@ from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.merge.diff import diff_dbs, import_as_dict
 from gramps.gen.simple import SimpleAccess
+from gramps.gen.lib.handle import Handle
 
 #------------------------------------------------------------------------
 #
 # Local Functions
 #
 #------------------------------------------------------------------------
-def start_list(doc, text, heading1, heading2):
-    doc.start_row()
-    doc.start_cell('DIFF-TableCell')
-    doc.start_paragraph('DIFF-TableHeading')
-    doc.write_text(text)
-    doc.end_paragraph()
-    doc.end_cell()
-    if heading1:
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-TableHeading')
-        doc.write_text(heading1)
-        doc.end_paragraph()
-        doc.end_cell()
-    if heading2:
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-TableHeading')
-        doc.write_text(heading2)
-        doc.end_paragraph()
-        doc.end_cell()
-    doc.end_row()
-
-def report_details(doc, path, diff1, diff2):
-    if path.endswith(".change"):
-        diff1 = todate(diff1)
-        diff2 = todate(diff2)
-    if diff1 == None:
-        diff1 = "" # FIXME: use default
-    else:
-        diff1 = str(diff1)
-    if diff2 == None:
-        diff2 = "" # FIXME: use default
-    else:
-        diff2 = str(diff2)
-    if diff1 == diff2:
-        return
-    doc.start_row()
-    doc.start_cell('DIFF-TableCell')
-    doc.start_paragraph('DIFF-TableHeading')
-    doc.write_text(path)
-    doc.end_paragraph()
-    doc.end_cell()
-    doc.start_cell('DIFF-TableCell')
-    doc.start_paragraph('DIFF-Text')
-    doc.write_text(diff1)
-    doc.end_paragraph()
-    doc.end_cell()
-    doc.start_cell('DIFF-TableCell')
-    doc.start_paragraph('DIFF-Text')
-    doc.write_text(diff2)
-    doc.end_paragraph()
-    doc.end_cell()
-    doc.end_row()
-
-def report_diff(path, struct1, struct2, doc):
-    """
-    Compare two struct objects and report differences.
-    """
-    if struct1 == struct2:
-        pass
-    elif (isinstance(struct1, (list, tuple)) or 
-          isinstance(struct2, (list, tuple))):
-        len1 = len(struct1) if isinstance(struct1, (list, tuple)) else 0
-        len2 = len(struct2) if isinstance(struct2, (list, tuple)) else 0
-        for pos in range(max(len1, len2)):
-            value1 = struct1[pos] if pos < len1 else None 
-            value2 = struct2[pos] if pos < len2 else None 
-            report_diff(path + ("[%d]" % pos), value1, value2, doc)
-    elif isinstance(struct1, dict) or isinstance(struct2, dict):
-        keys = struct1.keys() if isinstance(struct1, dict) else struct2.keys()
-        for key in keys:
-            value1 = struct1[key] if struct1 is not None else None
-            value2 = struct2[key] if struct2 is not None else None
-            if key == "dict": # a raw dict, not a struct
-                report_details(path, value1, value2, doc)
-            else:
-                report_diff(path + "." + key, value1, value2, doc)
-    else:
-        report_details(doc, path, struct1, struct2)
-
 def todate(t):
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
 
@@ -149,13 +73,11 @@ class DifferencesReport(Report):
         mgobn = lambda name:options.menu.get_option_by_name(name).get_value()
         self.filename = mgobn('filename')
         self.show_diff = mgobn('show_diff')
-        self.show_deleted = mgobn('show_deleted')
+        self.show_missing = mgobn('show_missing')
         self.show_added = mgobn('show_added')
 
     def write_report(self):
         """ The short method that runs through each month and creates a page. """
-        self._user.begin_progress(_('Differences Report'), 
-                                  _('Looking for differences...'), 100)
         self.doc.start_paragraph('DIFF-Title') 
         self.doc.write_text("Database Differences Report")
         self.doc.end_paragraph()
@@ -189,16 +111,19 @@ class DifferencesReport(Report):
         self.doc.start_paragraph('DIFF-Heading') 
         self.doc.write_text("")
         self.doc.end_paragraph()
-        self.database2 = import_as_dict(self.filename)
+        self.database2 = import_as_dict(self.filename, self._user)
         self.sa = [SimpleAccess(self.database), SimpleAccess(self.database2)]
-        diffs, added, deleted = diff_dbs(self.database, self.database2)
+        diffs, added, missing = diff_dbs(self.database, self.database2, self._user)
         if self.show_diff:
             self.doc.start_paragraph('DIFF-Heading') 
             self.doc.write_text("Differences between Database and File")
             self.doc.end_paragraph()
             last_object = None
             if diffs:
+                self._user.begin_progress(_('Family Tree Differences'), 
+                                          _('Processing...'), len(diffs))
                 for diff in diffs:
+                    self._user.step_progress()
                     obj_type, item1, item2 = diff
                     if last_object != item1:
                         if last_object != None:
@@ -209,33 +134,33 @@ class DifferencesReport(Report):
                         self.doc.start_table('DiffTable','DIFF-Table3')
                     last_object = item1
                     if hasattr(item1, "gramps_id"):
-                        start_list(self.doc, "%s: %s" % (obj_type, item1.gramps_id), 
-                                   "Database", "File")
+                        self.start_list(self.doc, "%s: %s" % (obj_type, item1.gramps_id), 
+                                        "Database", "File")
                     else:
-                        start_list(self.doc, "%s: %s" % (obj_type, item1.get_name()), 
-                                   "Database", "File")
-                    report_diff(obj_type, item1.to_struct(), item2.to_struct(), self.doc)
+                        self.start_list(self.doc, "%s: %s" % (obj_type, item1.get_name()), 
+                                        "Database", "File")
+                    self.report_diff(obj_type, item1.to_struct(), item2.to_struct(), self.doc)
                 self.doc.end_table()
             else:
                 self.doc.start_table('DiffTable','DIFF-Table3')
-                start_list(self.doc, "No differences", "", "") 
+                self.start_list(self.doc, "No differences", "", "") 
                 self.doc.end_table()
             self.doc.start_paragraph('DIFF-Heading') 
             self.doc.write_text("")
             self.doc.end_paragraph()
-        if self.show_deleted:
+        if self.show_missing:
             self.doc.start_paragraph('DIFF-Heading') 
-            self.doc.write_text("Deleted items in File")
+            self.doc.write_text("Missing items in File")
             self.doc.end_paragraph()
-            if deleted:
-                for pair in deleted:
+            if missing:
+                for pair in missing:
                     obj_type, item = pair
                     self.doc.start_paragraph('DIFF-Text') 
-                    self.doc.write_text("Deleted %s: %s" % (obj_type, self.sa[0].describe(item)))
+                    self.doc.write_text("Missing %s: %s" % (obj_type, self.sa[0].describe(item)))
                     self.doc.end_paragraph()
             else:
                 self.doc.start_paragraph('DIFF-Text') 
-                self.doc.write_text("Nothing deleted")
+                self.doc.write_text("Nothing missing")
                 self.doc.end_paragraph()
             self.doc.start_paragraph('DIFF-Heading') 
             self.doc.write_text("")
@@ -259,6 +184,105 @@ class DifferencesReport(Report):
             self.doc.end_paragraph()
         self._user.end_progress()
 
+    def start_list(self, doc, text, heading1, heading2):
+        doc.start_row()
+        doc.start_cell('DIFF-TableCell')
+        doc.start_paragraph('DIFF-TableHeading')
+        doc.write_text(text)
+        doc.end_paragraph()
+        doc.end_cell()
+        if heading1:
+            doc.start_cell('DIFF-TableCell')
+            doc.start_paragraph('DIFF-TableHeading')
+            doc.write_text(heading1)
+            doc.end_paragraph()
+            doc.end_cell()
+        if heading2:
+            doc.start_cell('DIFF-TableCell')
+            doc.start_paragraph('DIFF-TableHeading')
+            doc.write_text(heading2)
+            doc.end_paragraph()
+            doc.end_cell()
+        doc.end_row()
+
+    def format_struct_path(self, path):
+        retval = ""
+        parts = path.split(".")
+        for part in parts:
+            if retval:
+                retval += ", "
+            if "[" in part and "]" in part:
+                part, index = re.match("(.*)\[(\d*)\]", part).groups()
+                retval += "%s #%s" % (part.replace("_", " "), int(index) + 1)
+            else:
+                retval += part
+        return retval
+
+    def report_details(self, doc, path, diff1, diff2):
+        desc1 = str(diff1) if diff1 else ""
+        desc2 = str(diff2) if diff2 else ""
+        if path.endswith(".change"):
+            diff1 = todate(diff1)
+            diff2 = todate(diff2)
+            desc1 = diff1
+            desc2 = diff2
+        if (isinstance(diff1, Handle)):
+            desc1 = self.sa[0].describe(diff1.classname, "handle", diff1.handle) or ""
+            diff1 = diff1.handle
+        if (isinstance(diff2, Handle)):
+            desc2 = self.sa[1].describe(diff2.classname, "handle", diff2.handle) or ""
+            diff2 = diff2.handle
+        if diff1 == diff2:
+            return
+        doc.start_row()
+        doc.start_cell('DIFF-TableCell')
+        doc.start_paragraph('DIFF-TableHeading')
+        doc.write_text(self.format_struct_path(path))
+        doc.end_paragraph()
+        doc.end_cell()
+        doc.start_cell('DIFF-TableCell')
+        doc.start_paragraph('DIFF-Text')
+        doc.write_text(desc1)
+        doc.end_paragraph()
+        doc.end_cell()
+        doc.start_cell('DIFF-TableCell')
+        doc.start_paragraph('DIFF-Text')
+        doc.write_text(desc2)
+        doc.end_paragraph()
+        doc.end_cell()
+        doc.end_row()
+
+    def report_diff(self, path, struct1, struct2, doc):
+        """
+        Compare two struct objects and report differences.
+        """
+        if (isinstance(struct1, Handle) and
+            isinstance(struct2, Handle) and
+            struct1.classname == struct2.classname and
+            struct1.handle == struct2.handle):
+            return 
+        elif struct1 == struct2:
+            return
+        elif (isinstance(struct1, (list, tuple)) or 
+              isinstance(struct2, (list, tuple))):
+            len1 = len(struct1) if isinstance(struct1, (list, tuple)) else 0
+            len2 = len(struct2) if isinstance(struct2, (list, tuple)) else 0
+            for pos in range(max(len1, len2)):
+                value1 = struct1[pos] if pos < len1 else None 
+                value2 = struct2[pos] if pos < len2 else None 
+                self.report_diff(path + ("[%d]" % pos), value1, value2, doc)
+        elif isinstance(struct1, dict) or isinstance(struct2, dict):
+            keys = struct1.keys() if isinstance(struct1, dict) else struct2.keys()
+            for key in keys:
+                value1 = struct1[key] if struct1 is not None else None
+                value2 = struct2[key] if struct2 is not None else None
+                if key == "dict": # a raw dict, not a struct
+                    self.report_details(path, value1, value2, doc)
+                else:
+                    self.report_diff(path + "." + key, value1, value2, doc)
+        else:
+            self.report_details(doc, path, struct1, struct2)
+
 #------------------------------------------------------------------------
 #
 # DifferencesOptions
@@ -278,11 +302,11 @@ class DifferencesOptions(MenuReportOptions):
         show_diff.set_help(_("Include items that are different"))
         menu.add_option(category_name, "show_diff", show_diff)
 
-        show_deleted = BooleanOption(_("Show deleted items"), True)
-        show_deleted.set_help(_("Include items not in file but in database"))
-        menu.add_option(category_name, "show_deleted", show_deleted)
+        show_missing = BooleanOption(_("Show items missing from file"), True)
+        show_missing.set_help(_("Include items not in file but in database"))
+        menu.add_option(category_name, "show_missing", show_missing)
 
-        show_added = BooleanOption(_("Show added items"), True)
+        show_added = BooleanOption(_("Show items added in file"), True)
         show_added.set_help(_("Include items in file but not in database"))
         menu.add_option(category_name, "show_added", show_added)
 
