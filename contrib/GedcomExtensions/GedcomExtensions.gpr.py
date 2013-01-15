@@ -26,18 +26,19 @@
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id    = 'Export Gedcom Extensions'
-plg.name  = _("Export Gedcom Extensions (GED2)")
-plg.name_accell  = _("Gedcom Extensions (GED2)")
-plg.description =  _("Extensions to the common GEDCOM format.")
-plg.version = '1.0'
-plg.gramps_target_version = '4.1'
-plg.status = UNSTABLE # not yet tested with python 3, see bug 6092
-plg.fname = 'GedcomExtensions.py'
-plg.ptype = EXPORT
-plg.export_function = 'export_data'
-plg.export_options = 'GedcomWriterOptionBox'
-plg.export_options_title = _('Gedcom Extensions options')
-plg.extension = "ged2"
+register(
+    id    = 'Export GEDCOM Extensions',
+    name  = _("Export GEDCOM Extensions (GED2)"),
+    name_accell  = _("GEDCOM Extensions (GED2)"),
+    description =  _("Extensions to the common GEDCOM format."),
+    version = '1.0',
+    gramps_target_version = '4.1',
+    status = UNSTABLE, # not yet tested with python 3, see bug 6092
+    fname = 'GedcomExtensions.py',
+    ptype = EXPORT,
+    export_function = 'export_data',
+    export_options = 'GedcomWriterOptionBox',
+    export_options_title = _('Gedcom Extensions options'),
+    extension = "ged2",
+)
 

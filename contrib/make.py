@@ -60,7 +60,7 @@ def system(scmd, **kwargs):
     Replace and call system with scmd.
     """
     cmd = r(scmd, **kwargs)
-    print(cmd)
+    #print(cmd)
     os.system(cmd)
 
 def echo(scmd, **kwargs):
@@ -81,13 +81,12 @@ def r(scmd, **kwargs):
 
 def increment_target(filenames):
     for filename in filenames:
-        print(filename)
         fp = open(filename, "r")
         newfp = open("%s.new" % filename, "w")
         for line in fp:
             if ((line.lstrip().startswith("version")) and 
                 ("=" in line)):
-                print("orig = %s" % line.rstrip())
+                #print("orig = %s" % line.rstrip())
                 line, stuff = line.rsplit(",", 1)
                 line = line.rstrip()
                 pos = line.index("version")
@@ -292,9 +291,9 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(os.path.join(GRAMPSPATH, "gramps"))
-    from gen.utils.trans import get_addon_translator
-    from gen.plug import make_environment, PTYPE_STR
+    sys.path.append(GRAMPSPATH)
+    from gramps.gen.utils.trans import get_addon_translator
+    from gramps.gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
@@ -314,6 +313,7 @@ elif command == "listing":
             languages.add(locale[:-9])
     # next, create a file for all languages listing plugins
     for lang in languages:
+        print("Building listing for '%s'..." % lang)
         fp = open("../listings/addons-%s.txt" % lang, "w")
         for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
@@ -336,7 +336,7 @@ elif command == "listing":
                         ("include_in_listing" not in p)):
                         print(plugin, file=fp)
                     else:
-                        print("include_in_listing is False for '%s' in Language %s..." % (p["name"], lang))
+                        print("   ignoring '%s'" % (p["name"]))
         fp.close()
 else:
     raise AttributeError("unknown command")
