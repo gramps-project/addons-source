@@ -150,7 +150,7 @@ class DifferencesReport(Report):
             self.doc.end_paragraph()
         if self.show_missing:
             self.doc.start_paragraph('DIFF-Heading') 
-            self.doc.write_text("Missing items in File")
+            self.doc.write_text("Missing items in File that are added in Database")
             self.doc.end_paragraph()
             if missing:
                 for pair in missing:
@@ -167,7 +167,7 @@ class DifferencesReport(Report):
             self.doc.end_paragraph()
         if self.show_added:
             self.doc.start_paragraph('DIFF-Heading') 
-            self.doc.write_text("Added items in File")
+            self.doc.write_text("Added items in File that are missing in Database")
             self.doc.end_paragraph()
             if added:
                 for pair in added:

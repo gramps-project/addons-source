@@ -26,19 +26,18 @@
 #
 #------------------------------------------------------------------------
 
-register(
+register(EXPORT,
     id    = 'Export GEDCOM Extensions',
     name  = _("Export GEDCOM Extensions (GED2)"),
     name_accell  = _("GEDCOM Extensions (GED2)"),
     description =  _("Extensions to the common GEDCOM format."),
-    version = '1.0',
+    version = '1.0.1',
     gramps_target_version = '4.1',
-    status = UNSTABLE, # not yet tested with python 3, see bug 6092
+    status = STABLE, 
     fname = 'GedcomExtensions.py',
-    ptype = EXPORT,
     export_function = 'export_data',
     export_options = 'GedcomWriterOptionBox',
-    export_options_title = _('Gedcom Extensions options'),
+    export_options_title = _('GEDCOM Extensions options'),
     extension = "ged2",
 )
 
