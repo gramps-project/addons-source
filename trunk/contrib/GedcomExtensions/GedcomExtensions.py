@@ -39,7 +39,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
     """
     GedcomWriter Extensions.
     """
-    def __int__(self, database, user, option_box=None):
+    def __init__(self, database, user, option_box=None):
         super(GedcomWriterExtension, self).__init__(database, user, option_box)
         if option_box:
             # Already parsed in GedcomWriter
