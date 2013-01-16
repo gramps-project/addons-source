@@ -52,7 +52,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         Write the witnesses associated with the family event. 
         based on http://www.geneanet.org/forum/index.php?topic=432352.0&lang=fr
         """
-        super(exportgedcom.GedcomWriterExtension, self)._process_family_event(event, 
+        super(GedcomWriterExtension, self)._process_family_event(event, 
                                                                  event_ref)
         if self.include_witnesses:
             for (objclass, handle) in self.dbase.find_backlink_handles(

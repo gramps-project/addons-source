@@ -25,7 +25,7 @@
 {'d': 'Gramplet for detecting and assigning faces', 'g': '4.1', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.9', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.', 'g': '4.1', 'i': 'FamilySheet', 'n': 'Familiepagina', 't': u'Report', 'v': '3.4.18', 'z': 'FamilySheet.addon.tgz'}
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '4.1', 'i': 'FamilyTree', 'n': 'Familiestamboom', 't': u'Report', 'v': '3.4.15', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Extensions to the common GEDCOM format.', 'g': '4.1', 'i': 'Export GEDCOM Extensions', 'n': 'Export GEDCOM Extensions (GED2)', 't': u'Exporter', 'v': '1.0.1', 'z': 'GedcomExtensions.addon.tgz'}
+{'d': 'Extensions to the common GEDCOM format.', 'g': '4.1', 'i': 'Export GEDCOM Extensions', 'n': 'Export GEDCOM Extensions (GED2)', 't': u'Exporter', 'v': '1.0.2', 'z': 'GedcomExtensions.addon.tgz'}
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '4.1', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.21', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Dynamische grafiek van de relaties', 'g': '4.1', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.34', 'z': 'GraphView.addon.tgz'}
 {'d': 'Gramplet toont het laatste Gramps-nieuws', 'g': '4.1', 'i': 'Headline News Gramplet', 'n': "'Belangrijkste nieuws'-gramplet", 't': u'Gramplet', 'v': '1.0.15', 'z': 'HeadlineNewsGramplet.addon.tgz'}
