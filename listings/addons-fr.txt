@@ -25,7 +25,7 @@
 {'d': 'Gramplet pour d\xc3\xa9tecter et assigner des visages', 'g': '4.1', 'i': 'Face Detection', 'n': 'D\xc3\xa9tection de visage', 't': u'Gramplet', 'v': '1.0.9', 'z': 'FaceDetection.addon.tgz'}
 {'d': "Produit un r\xc3\xa9sum\xc3\xa9 familial montrant les informations compl\xc3\xa8tes sur l'individu, ses conjoints et enfants.", 'g': '4.1', 'i': 'FamilySheet', 'n': 'R\xc3\xa9sum\xc3\xa9 familial', 't': u'Report', 'v': '3.4.18', 'z': 'FamilySheet.addon.tgz'}
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '4.1', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.15', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Extensions to the common GEDCOM format.', 'g': '4.1', 'i': 'Export GEDCOM Extensions', 'n': 'Export GEDCOM Extensions (GED2)', 't': u'Exporter', 'v': '1.0.3', 'z': 'GedcomExtensions.addon.tgz'}
+{'d': 'Extensions to the common GEDCOM format.', 'g': '4.1', 'i': 'Export GEDCOM Extensions', 'n': 'Export GEDCOM Extensions (GED2)', 't': u'Exporter', 'v': '1.0.4', 'z': 'GedcomExtensions.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '4.1', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.21', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Graphique dynamique des relations', 'g': '4.1', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.34', 'z': 'GraphView.addon.tgz'}
 {'d': 'Gramplet pour afficher les derni\xc3\xa8res nouvelles de Gramps', 'g': '4.1', 'i': 'Headline News Gramplet', 'n': 'Gramplet R\xc3\xa9sum\xc3\xa9', 't': u'Gramplet', 'v': '1.0.15', 'z': 'HeadlineNewsGramplet.addon.tgz'}

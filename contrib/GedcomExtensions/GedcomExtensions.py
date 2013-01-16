@@ -43,7 +43,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         super(GedcomWriterExtension, self).__init__(database, user, option_box)
         if option_box:
             # Already parsed in GedcomWriter
-            self.include_witnesses = self.option_box.include_witnesses
+            self.include_witnesses = option_box.include_witnesses
         else:
             self.include_witnesses = 1
 
