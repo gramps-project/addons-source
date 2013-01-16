@@ -31,6 +31,7 @@ GoogleEarth  kml or kmz file format.
 #
 #-------------------------------------------------------------------------
 import os
+import sys
 import codecs
 from gramps.gen.utils.trans import get_addon_translator
 _ = get_addon_translator().gettext
@@ -161,7 +162,11 @@ class GoogleEarthService(MapService):
             elif os.path.exists(zip_filename):
                 os.remove(zip_filename)
 
-        kml_file = open(full_filename,"w")
+        if sys.version_info[0] < 3:
+            kml_file = open(full_filename,"w")
+        else:
+            kml_file = open(full_filename,"wb")
+
         self.kml_file = codecs.getwriter("utf8")(kml_file)
         self.write_kml_head()
         self.write_kml_point_data()
