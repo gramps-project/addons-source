@@ -41,8 +41,8 @@ import gzip
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gen.const import USER_HOME, USER_PLUGINS
 from gramps.gen.utils.file import get_unicode_path_from_file_chooser
 from gramps.gui.dialog import ErrorDialog

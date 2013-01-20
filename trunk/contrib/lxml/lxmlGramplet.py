@@ -45,11 +45,11 @@ from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
 from gramps.gen.constfunc import cuni
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 if sys.version_info[0] < 3:
-    _ = get_addon_translator(__file__).ugettext
+    _ = glocale.get_addon_translator(__file__).ugettext
 else:
-    _ = get_addon_translator(__file__).gettext
+    _ = glocale.get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #

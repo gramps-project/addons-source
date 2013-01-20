@@ -47,8 +47,8 @@ Read the following code from bottom to top.
 #
 #---------------------------------------------------------------
 from gramps.gui.display import display_url
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gen.config import config as configman
 
 #---------------------------------------------------------------

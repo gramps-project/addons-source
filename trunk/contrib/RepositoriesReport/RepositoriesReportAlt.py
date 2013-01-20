@@ -33,7 +33,6 @@ Display Sources related to repositories
 #-------------------------------------------------------------------------
 
 import os
-import gettext
 
 #-------------------------------------------------------------------------
 #
@@ -46,86 +45,15 @@ from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.plugins.lib.libtranslate import get_language_string
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.plugins.lib.libtranslate import get_language_string, Translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
                              
-_ = get_addon_translator().gettext
+_ = glocale.get_addon_translator(__file__).gettext
 
-LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
-LOCALEDOMAIN = 'addon'
-
-# see gen/utils/trans.py
-
-def get_available_translations():
-    """
-    Get a list of available translations.
-
-    :returns: A list of translation languages.
-    :rtype: unicode[]
-    
-    """
-    languages = []
-    
-    if LOCALEDIR is None:
-        return languages
-        
-    if not os.path.exists(LOCALEDIR):
-        return languages
-
-    for langdir in os.listdir(LOCALEDIR):
-        mofilename = os.path.join( LOCALEDIR, langdir, 
-                                   "LC_MESSAGES", "addon.mo")
-        if os.path.exists(mofilename):
-            languages.append(langdir)
-
-    languages.sort()
-
-    return languages
-    
-# see plugins/lib/libtranslate.py
-
-class Translator:
-    """
-    This class provides translated strings for the configured language.
-    """
-    
-    def __init__(self, lang="en"):
-        """
-        :param lang: The language to translate to. 
-            The language can be:
-               * The name of any installed .mo file
-               * "en" to use the message strings in the code
-               * "default" to use the default translation being used by gettext.
-        :type lang: string
-        :return: nothing
-        
-        """
-        if lang == "en":
-            self.__trans = None
-        else:
-            # fallback=True will cause the translator to use English if 
-            # lang = "en" or if something goes wrong.
-            self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR, 
-                                       [lang], fallback = True)
-                        
-    def gettext(self, message):
-        """
-        Return the unicode translated string.
-        
-        :param message: The message to be translated.
-        :type message: string
-        :returns: The translated message
-        :rtype: unicode
-        
-        """
-        if self.__trans:
-            return self.__trans.gettext(message)
-        else:
-            return gettext.gettext(message)
 
 class RepositoryReportAlt(Report):
     """
@@ -429,7 +357,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
 
         trans = EnumeratedListOption(_("Translation"), "default")
         trans.add_item("default", _("English"))
-        for language in get_available_translations():
+        for language in glocale.get_available_translations():
             trans.add_item(language, get_language_string(language))
         trans.set_help(_("The translation to be used for the report."))
         addopt("trans", trans)

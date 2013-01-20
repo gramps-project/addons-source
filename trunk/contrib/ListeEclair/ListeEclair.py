@@ -45,8 +45,8 @@ from gramps.gen.sort import Sort
 from gramps.gen.display.name import displayer as _nd
 from gramps.gui.utils import ProgressMeter
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 class ListeEclairReport(Report):
     def __init__(self, database, options_class, user):

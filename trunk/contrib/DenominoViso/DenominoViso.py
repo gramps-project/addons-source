@@ -160,14 +160,14 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.constfunct import cuni
 #-------------------------------------------------------------------------
 #
 # constants
 #
 #-------------------------------------------------------------------------
-_ = get_addon_translator(__file__).gettext
+_ = glocale.get_addon_translator(__file__).gettext
 ext_confidence = confidence.copy()
 ext_confidence[len(confidence)] = _('No Source')
 

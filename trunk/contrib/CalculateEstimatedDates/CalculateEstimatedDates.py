@@ -51,8 +51,8 @@ from gramps.gui.dialog import QuestionDialog
 from gramps.gen.utils.id import create_id
 from gramps.gen.utils.alive import probably_alive_range
 import gramps.gen.datehandler
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

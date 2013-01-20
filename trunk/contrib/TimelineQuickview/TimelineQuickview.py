@@ -27,13 +27,13 @@ Display references for any object
 
 from gramps.gen.simple import SimpleAccess, SimpleDoc, by_date
 from gramps.gui.plug.quick import QuickTable
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.lib.date import Today
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 import gramps.gen.lib
 
-_ = get_addon_translator(__file__).gettext
+_ = glocale.get_addon_translator(__file__).gettext
 rel_calc = get_relationship_calculator()
 
 def levelname(inlaw, level):

@@ -44,12 +44,8 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 import gramps.gen.plug.report.utils as ReportUtils
 
-try:
-    from gramps.gen.utils.trans import get_addon_translator
-    _ = get_addon_translator(__file__).gettext
-except:
-    import gettext
-    _ = gettext.gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #-------------------------------------------------
 #

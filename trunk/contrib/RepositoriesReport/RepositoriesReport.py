@@ -35,12 +35,12 @@ from gramps.gen.plug.report import CATEGORY_TEXT
 from gramps.gen.plug.report import MenuReportOptions
 import gramps.gen.plug.report.utils as ReportUtils
 
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
-_ = get_addon_translator(__file__).gettext
+_ = glocale.get_addon_translator(__file__).gettext
 
 class RepositoryReport(Report):
     """

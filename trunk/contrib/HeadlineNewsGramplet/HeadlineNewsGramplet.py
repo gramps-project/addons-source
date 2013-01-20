@@ -48,8 +48,8 @@ import re
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import URL_WIKISTRING
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

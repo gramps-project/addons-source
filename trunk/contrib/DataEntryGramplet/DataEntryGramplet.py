@@ -30,10 +30,10 @@ from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 import gramps.gen.datehandler
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.lib
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
 
-_ = get_addon_translator(__file__).gettext
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

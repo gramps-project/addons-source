@@ -26,8 +26,8 @@
 # SOFTWARE.
 #
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 from gramps.gen.plug.docgen import FontStyle, ParagraphStyle, FONT_SANS_SERIF, \
         PARA_ALIGN_CENTER

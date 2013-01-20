@@ -45,9 +45,9 @@ log = logging.getLogger(".ExportSql")
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
 from gramps.gen.constfunc import cuni
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
-ngettext = get_addon_translator().ngettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
+ngettext = glocale.get_addon_translator(__file__).ngettext
 
 #-------------------------------------------------------------------------
 #

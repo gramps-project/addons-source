@@ -61,8 +61,8 @@ from gramps.gui.dialog import OkDialog, WarningDialog
 from gramps.gen.utils.place import conv_lat_lon
 from gramps.gen.errors import WindowActiveError
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 from gramps.gen.constfunc import cuni, lin
 

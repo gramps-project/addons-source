@@ -41,8 +41,8 @@ from gramps.gen.plug.menu import BooleanListOption
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gen.lib import Date
 
 _UNKNOWN_FAMILY = "*unknown*"

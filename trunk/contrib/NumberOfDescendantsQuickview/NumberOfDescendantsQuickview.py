@@ -39,9 +39,9 @@ import gramps.gen.display.name
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.simple import SimpleDoc
 from gramps.gui.plug.quick import QuickTable
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.utils.alive import probably_alive
-_ = get_addon_translator().gettext
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #
