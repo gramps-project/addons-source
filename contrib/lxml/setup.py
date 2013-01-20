@@ -82,7 +82,7 @@ if sys.platform == 'win32':
     rmCmd = os.path.join('C:', 'Program Files(x86)', 'rm.exe') # CoreUtils
     tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe') # tar
     
-elif sys.platform == 'linux2' or os.name == 'darwin':
+elif sys.platform in ['linux2', 'darwin', 'cygwin']:
     
     msginitCmd = 'msginit'
     msgmergeCmd = 'msgmerge'
