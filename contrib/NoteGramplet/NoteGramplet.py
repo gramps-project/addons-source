@@ -33,8 +33,8 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gen.const import GLADE_FILE
 from gramps.gui.widgets import StyledTextEditor
 from gramps.gen.lib import StyledText, Note

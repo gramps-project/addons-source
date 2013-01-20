@@ -34,8 +34,8 @@ from gi.repository import Gtk
 from gramps.gen.plug import Gramplet        
 from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gui.widgets import SimpleButton
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

@@ -30,8 +30,8 @@ import Image
 import ImageDraw
 import StringIO
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')

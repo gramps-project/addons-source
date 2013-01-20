@@ -34,8 +34,9 @@ import re
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.ggettext import gettext as _
-from gramps.gen.ggettext import ngettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_translation().gettext
+ngettext = glocale.get_translation().ngettext
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
                              FONT_SERIF, PARA_ALIGN_RIGHT,

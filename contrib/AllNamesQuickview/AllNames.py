@@ -30,9 +30,9 @@ from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.gui.plug.quick import QuickTable
 from gramps.gen.display.name import displayer as nd
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
-ngettext = get_addon_translator().ngettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
+ngettext = glocale.get_addon_translator(__file__).ngettext
 
 def run(database, document, *args, **kwargs):
     """

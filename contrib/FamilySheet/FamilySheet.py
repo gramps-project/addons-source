@@ -45,8 +45,8 @@ from gramps.gen.plug.report import utils
 from gramps.gen.plug.report import MenuReportOptions
 import gramps.gen.datehandler
 from gramps.gen.relationship import get_relationship_calculator
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator().gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

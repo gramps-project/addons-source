@@ -292,7 +292,7 @@ elif command == "build":
                files=files_str)
 elif command == "listing":
     sys.path.append(GRAMPSPATH)
-    from gramps.gen.utils.trans import get_addon_translator
+    from gramps.gen.const import GRAMPS_LOCALE as glocale
     from gramps.gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):
         global plugins

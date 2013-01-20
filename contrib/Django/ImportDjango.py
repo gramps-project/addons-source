@@ -51,8 +51,8 @@ import gramps.gen.lib
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.id import create_id
 
-from gramps.gen.utils.trans import get_addon_translator
-translator = get_addon_translator(__file__)
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+translator = glocale.get_addon_translator(__file__)
 _ = translator.gettext
 ngettext = translator.ngettext
 

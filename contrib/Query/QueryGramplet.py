@@ -23,8 +23,8 @@
 
 #import os
 
-from gramps.gen.utils.trans import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gui.plug.quick import run_quick_report_by_name
 
 #from gramps.gen.const import USER_PLUGINS

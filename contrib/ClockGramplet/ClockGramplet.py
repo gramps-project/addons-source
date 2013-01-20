@@ -18,9 +18,9 @@ except ImportError:
 #if gtk.pygtk_version < (2,3,93):
     #raise Exception("PyGtk 2.3.93 or later required")
 
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 
-_ = get_addon_translator(__file__).gettext
+_ = glocale.get_addon_translator(__file__).gettext
 TEXT = 'cairo'
 BORDER_WIDTH = 10
 
