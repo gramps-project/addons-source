@@ -41,11 +41,12 @@ import os
 #-------------------------------------------------------------------------
 
 from gramps.gen.const import USER_PLUGINS
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.plugins.lib.libtranslate import get_language_string, Translator
+from gramps.plugins.lib.libtranslate import Translator
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
@@ -355,10 +356,12 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
         addopt('incprivat', incprivat)
 
-        trans = EnumeratedListOption(_("Translation"), "default")
-        trans.add_item("default", _("English"))
-        for language in glocale.get_available_translations():
-            trans.add_item(language, get_language_string(language))
+        trans = EnumeratedListOption(_("Translation"),
+                                      Translator.DEFAULT_TRANSLATION_STR)
+        trans.add_item(Translator.DEFAULT_TRANSLATION_STR, _("Default"))
+        languages = glocale.get_language_dict()
+        for language in sorted(languages):
+            trans.add_item(languages[language], language)
         trans.set_help(_("The translation to be used for the report."))
         addopt("trans", trans)
 
