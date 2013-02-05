@@ -153,8 +153,10 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="ypad">5</property>
-                        <property name="label" translatable="yes">&lt;span size="large"&gt;&lt;b&gt;Selection of the Places you want to complete:&lt;/b&gt;&lt;/span&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Selection of the Places you want to complete:</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -530,8 +532,10 @@
                       <object class="GtkLabel" id="label28">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;1. Look up latitude and longitude:&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">1. Look up latitude and longitude:</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -614,8 +618,10 @@
                       <object class="GtkLabel" id="label31">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;2. Parsing and Conversion of existing title or position:&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">2. Parsing and Conversion of existing title or position:</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -778,8 +784,10 @@ title format:</property>
                       <object class="GtkLabel" id="label35">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">&lt;b&gt;3. Set attributes of all selected places:&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">3. Set attributes of all selected places:</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1051,10 +1059,12 @@ title format:</property>
               <object class="GtkLabel" id="label1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;i&gt;Delete to delete a row, Double-click on the row to edit place with changes pre-entered, 
-Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically&lt;/i&gt;</property>
-                <property name="use_markup">True</property>
+                <property name="label" translatable="yes">Delete to delete a row, Double-click on the row to edit place with changes pre-entered, 
+Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</property>
                 <property name="justify">center</property>
+                <attributes>
+                  <attribute name="style" value="italic"/>
+                </attributes>
               </object>
               <packing>
                 <property name="expand">False</property>
