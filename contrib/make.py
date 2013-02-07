@@ -317,7 +317,7 @@ elif command == "listing":
         fp = open("../listings/addons-%s.txt" % lang, "w")
         for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
-                local_gettext = get_addon_translator(gpr,
+                local_gettext = glocale.get_addon_translator(gpr,
                                        languages=[lang]).gettext
                 plugins = []
                 execfile(gpr.encode(sys.getfilesystemencoding()),
