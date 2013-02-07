@@ -2,11 +2,11 @@
 # German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
+# Sebastian VÃ¶cking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian VÃ¶cking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko LeonhÃ¤user <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
@@ -49,7 +49,7 @@ msgstr "   Art: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:264
 msgid "   key: %s"
-msgstr "   Schlüssel: %s"
+msgstr "   SchlÃ¼ssel: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:276
 msgid "  %s"
@@ -73,18 +73,21 @@ msgstr "%s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:404
 msgid "Footer string for the page."
-msgstr "Fußzeile."
+msgstr "FuÃŸzeile."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:334
-msgid "Person", "ID",
+#, fuzzy
+msgid "Person"
 msgstr "Person"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:334
-msgid "ID",
+#, fuzzy
+msgid "ID"
 msgstr "ID"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:387
-msgid "Report Options")
+#, fuzzy
+msgid "Report Options"
 msgstr "Bericht Optionen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
@@ -93,11 +96,11 @@ msgstr "Rolle"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:412
 msgid "Select using a filter"
-msgstr "Wähle mit einem Filter"
+msgstr "WÃ¤hle mit einem Filter"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:411
 msgid "Select using filter"
-msgstr "Wähle mit einem Filter"
+msgstr "WÃ¤hle mit einem Filter"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:419
 msgid "Show persons"
@@ -120,47 +123,58 @@ msgid "and %s "
 msgstr "und %s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:401
-msgid 'Copyright %(year)d %(name)s'
-msgstr 'Copyright %(year)d %(name)s'
+#, fuzzy
+msgid "Copyright %(year)d %(name)s"
+msgstr "Copyright %(year)d %(name)s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:403
-msgid 'Footer'
-msgstr "Fußzeile"
+#, fuzzy
+msgid "Footer"
+msgstr "FuÃŸzeile"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:393
-msgid 'Subtitle', 'Subtitle of the Book'
+#, fuzzy
+msgid "Subtitle"
 msgstr "Untertitel"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:493
-msgid 'The style used for Source details.'
+#, fuzzy
+msgid "The style used for Source details."
 msgstr "Sitl der Quellendetails"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:505
-msgid 'The style used for a column title.'
-msgstr "Stil für Spaltenkopf"
+#, fuzzy
+msgid "The style used for a column title."
+msgstr "Stil fÃ¼r Spaltenkopf"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:481
-msgid 'The style used for citation title.'
-msgstr "Stil für den Fundstellentitel"
+#, fuzzy
+msgid "The style used for citation title."
+msgstr "Stil fÃ¼r den Fundstellentitel"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:521
-msgid 'The style used for each section.'
-msgstr "Stil für jeden Abschnitt"
+#, fuzzy
+msgid "The style used for each section."
+msgstr "Stil fÃ¼r jeden Abschnitt"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:552
-msgid 'The style used for event and person details.'
-msgstr "Stil für Ereignis- und Personendetails"
+#, fuzzy
+msgid "The style used for event and person details."
+msgstr "Stil fÃ¼r Ereignis- und Personendetails"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:466
-msgid 'The style used for source title.'
-msgstr "Stil für Quellentitel"
+#, fuzzy
+msgid "The style used for source title."
+msgstr "Stil fÃ¼r Quellentitel"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:451
-msgid 'The style used for the title of the report.'
-msgstr "Stil für den Berichtstitel"
+#, fuzzy
+msgid "The style used for the title of the report."
+msgstr "Stil fÃ¼r den Berichtstitel"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:389
-msgid 'book|Title', 'Title of the Book'
+#, fuzzy
+msgid "book|Title"
 msgstr "Buchtitel"
 
  #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:10
