@@ -312,6 +312,7 @@ elif command == "listing":
             locale_path, locale = po.rsplit("/", 1)
             languages.add(locale[:-9])
     # next, create a file for all languages listing plugins
+    from operator import itemgetter
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         fp = open("../listings/addons-%s.txt" % lang, "w")
@@ -320,10 +321,13 @@ elif command == "listing":
                 local_gettext = glocale.get_addon_translator(gpr,
                                        languages=[lang]).gettext
                 plugins = []
-                execfile(gpr.encode(sys.getfilesystemencoding()),
-                         make_environment(_=local_gettext),
+                with open(gpr.encode(sys.getfilesystemencoding())) as f:
+                    code = compile(f.read(),
+                                   gpr.encode(sys.getfilesystemencoding()),
+                                              'exec')
+                    exec(code, make_environment(_=local_gettext),
                          {"register": register})
-                for p in sorted(plugins):
+                for p in sorted(plugins, key=itemgetter('ptype')):
                     plugin = {"n": p["name"], 
                               "i": p["id"], 
                               "t": p["ptype"], 
