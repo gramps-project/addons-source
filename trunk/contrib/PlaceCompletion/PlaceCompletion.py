@@ -352,17 +352,17 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 index += 1
         
         cmbe.set_model(store)
-        cmbe.set_text_column(1)
+        cmbe.set_entry_text_column(1)
         #completion = Gtk.EntryCompletion()
         #completion.set_model(store)
         #completion.set_minimum_key_length(1)
         #completion.set_text_column(0)
-        #cmbe.child.set_completion(completion)
+        #cmbe.get_child().set_completion(completion)
         if indexactive != None :
             cmbe.set_active(indexactive)
         else :
             if default :
-                cmbe.child.set_text(default)
+                cmbe.get_child().set_text(default)
         
     def build_menu_names(self,obj):
         return (self.active_name,_("Places tool"))
@@ -398,7 +398,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.options.handler.options_dict['rectheight'] \
                 = self.rectheightfilter.get_text()
         activefind = self.latlonfind.get_active()
-        entryfind = self.latlonfind.child.get_text()
+        entryfind = self.latlonfind.get_child().get_text()
         findregex = None
         self.options.handler.options_dict['latlonfind'] = ''
         if activefind != -1 :
@@ -413,7 +413,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 self.latlonfile.get_filename()
                 
         activetitleregex = self.cmbetitleregex.get_active()
-        entrytitleregex = self.cmbetitleregex.child.get_text()
+        entrytitleregex = self.cmbetitleregex.get_child().get_text()
         titleregex = None
         self.options.handler.options_dict['titleregex'] = ''
         if activetitleregex != -1 :
@@ -596,7 +596,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             text += ')'
         self.model.set(id, 0, text)
         self.model.set(id, 1, place.get_handle())
-        self.model.set(id, 2, None)
+        self.model.set(id, 2, '')
         self.model.set(id, 3, self.colornormal)
         
     def set_child_model_text(self, id, place, action, olddata) :
