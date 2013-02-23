@@ -188,8 +188,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     self.options.handler.options_dict['latlonfind'])
         if self.options.handler.options_dict['latlonfile'] not in ['', 
                                                         None, 'None'] : 
-            print 'file', self.options.handler.options_dict['latlonfile'], \
-                    self.options.handler.options_dict['latlonfile'] == 'None'
+            #print 'file', self.options.handler.options_dict['latlonfile'], \
+                    #self.options.handler.options_dict['latlonfile'] == 'None'
             self.latlonfile.set_filename(
                 self.options.handler.options_dict['latlonfile'])
         self.fill_comboboxentry(self.cmbetitleregex, _options.titleregex,
@@ -223,6 +223,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         
         #some extra init of needed datafields
         self.latlonfile_datastr = None
+        self.county_lookup = {}
 
 #set translated labels
         labelids = ['label28', 'label29','label30', 'label31', 'label32', 'label33', 'label34', 'label35'
@@ -560,6 +561,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             # check if file is a text file is not possible, assume it is
             progress.set_pass(_('Loading lat/lon file in Memory...'),1)
             self.load_latlon_file(filename)
+            self.load_counties_file()
             progress.step()
             
         #do all the checks and fill up model
@@ -896,6 +898,20 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
 
         return False
         
+    def load_counties_file(self):
+        import codecs
+        filename = os.path.join(os.path.dirname(__file__), 'counties.txt')
+        county_file = codecs.open(filename, 'r', 'utf-8')
+        line = county_file.readline()
+        while line:
+            fields = line.replace('\n', '').split('\t')
+            if (not line.startswith('#')) and (len(fields) > 1):
+                county = fields[0]
+                codes = fields[1].split(',')
+                self.county_lookup[county] = codes
+            line = county_file.readline()
+        county_file.close()
+
     def load_latlon_file(self, filename):
         import codecs
         if self.latlonfile_datastr :
@@ -962,7 +978,12 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             if loc.get_parish().strip() == '' :
                 return valoud, valnew, valaction, place
             pattern = re.sub(('PARISH'), loc.get_parish().strip(), pattern)
-        print 'DEBUG info: pattern for search is ' , pattern
+        if re.search(('COUNTY'), pattern):
+            if loc.get_county().strip() not in self.county_lookup:
+                return valoud, valnew, valaction, place
+            codes = self.county_lookup[loc.get_county().strip()]
+            pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
+        #print 'DEBUG info: pattern for search is ' , pattern
         regexll = re.compile(pattern,re.U|re.L|re.M)
         latlongroup = ['lat', 'lon'] 
         #find all occurences in the data file
@@ -1246,6 +1267,7 @@ class _options:
     TITLEBEGIN_transl = ('TITLEBEGIN')
     STATE_transl = ('STATE')
     PARISH_transl = ('PARISH')
+    COUNTY_transl = ('COUNTY')
     latgr = r'(?P<'+'lat' +r'>'
     longr = r'(?P<'+'lon' +r'>'
     citygr = r'(?P<'+'city' +r'>'
@@ -1275,6 +1297,12 @@ class _options:
             , r'[\t,]'+CITY_transl+r'[,\t][^\t\d]*\t?' +latgr + \
                 r'[\d+-][^\t]*)\t' + \
                 longr + r'[\d+-][^\t]*)\tP'),
+        ("GeoNames_cc", "GeoNames country file, county/city search"
+            , _("GeoNames country file, county/city search")
+            , r'\t'+CITY_transl +r'\t[^\t]*\t[^\t]*\t' +latgr + \
+                r'[\d+-][^\t]*)\t' + longr + \
+                r'[\d+-][^\t]*)\tP\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t' + \
+                COUNTY_transl + r'\t'),
         #Parish search no use, no datain files
         #("GeoNames", "GeoNames country file, parish search"
         #    , _("GeoNames country file, parish search")
@@ -1301,22 +1329,28 @@ class _options:
         #        r'[\d+-][^\t]*)\t' + \
         #        longr + r'[\d+-][^\t]*)'),
         ("GeoNet_c", "GNS Geonet country file, city search", 
-                _("GNS Geonet country file, city search")
-                , 
-                r'\t'+latgr+r'[\d+-][^\t]*)\t'+longr+r'[\d+-][^\t]*)'\
+                _("GNS Geonet country file, city search"), 
+                r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\tP\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*' \
-                + r'\t'+CITY_transl+r'\t[^\t]*\t[^\t\n]+$'),
+                + r'\t'+CITY_transl+r'\t'),
+        ("GeoNet_cc", "GNS Geonet country file, county/city search", 
+                _("GNS Geonet country file, county/city search"), 
+                r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
+                + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\tP' \
+                + r'\t[^\t]*\t[^\t]*\t[^\t]*\t' + COUNTY_transl \
+                + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*' \
+                + r'\t[^\t]*\t[^\t]*\t[^\t]*\t' + CITY_transl + r'\t'),
         # Geonet fields and classes: http://de.wikipedia.org/wiki/Wikipedia:GEOnet_Names_Server
         ("GeoNet_tb", "GNS Geonet country file, title begin search", 
                 _("GNS Geonet country file, title begin, general search")
                 , 
-                r'\t'+latgr+r'[\d+-][^\t]*)\t'+longr+r'[\d+-][^\t]*)'\
+                r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[PLSTV]\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*' \
-                + r'\t'+TITLEBEGIN_transl+r'\t[^\t]*\t[^\t\n]+$'),
+                + r'\t'+TITLEBEGIN_transl+r'\t'),
         ("Wikipedia CSV Dump", "Wikipedia CSV Dump",
                 _("Wikipedia CSV Dump"),
                 r'^[^;]*;[^;]*;[^;]*;"' + TITLEBEGIN_transl +
