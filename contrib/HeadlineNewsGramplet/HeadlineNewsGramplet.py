@@ -95,7 +95,7 @@ class HeadlineNewsGramplet(Gramplet):
             ("Gramps Blog Posts",    "rss", "http://blog.gramps-project.org/?feed=rss", None),
             ("Gramps Wiki Changes",  "rss", "http://www.gramps-project.org/wiki/index.php?title=Special:RecentChanges&feed=rss", None),
             ("Gramps Bugtracker Issues", "rss", "http://www.gramps-project.org/bugs/issues_rss.php?key=ece7d21451d76337acf776c9a4384773", None),
-            ("Gramps SVN Commits",   "rss", "http://cia.vc/stats/project/Gramps/.rss", None),
+            ("Gramps SVN Commits",   "rss", "http://sourceforge.net/p/gramps/code/feed", None),
             ]
         self.set_tooltip(_("Read Gramps headline news"))
         self.update_interval = 3600 * 1000 # in miliseconds (1 hour)
