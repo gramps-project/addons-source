@@ -23,7 +23,7 @@ register(REPORT,
          id="PedigreeChart",
          name=_("Pedigree Chart"),
          description=_("Alternate version of the traditional pedigree chart."),
-         status = STABLE, # not yet tested with python 3
+         status = UNSTABLE, # ImportError: No module named 'numpy', 
          version = '1.0.18',
          fname="PedigreeChart.py",
          gramps_target_version="4.1",
