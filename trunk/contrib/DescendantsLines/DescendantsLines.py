@@ -905,12 +905,12 @@ def load_gramps(fn, start):
         if len(bsv) > 0:
             po.birth_s = bsv[0].getAttribute('val')
         else:
-            print 'No birth event information found: ' + handle
+            print 'No birth event information found: %s' % handle
         dsv = p.getElementsByTagName('death_sval')
         if len(dsv) > 0:
             po.death_s = dsv[0].getAttribute('val')
         else:
-            print 'No death event information found: ' + handle
+            print 'No death event information found: %s' % handle
         tpeople[id] = po
         for fr in p.getElementsByTagName('famref'):
             parents.setdefault(id, []).append(fr.getAttribute('famrefid'))
@@ -948,7 +948,7 @@ def load_gramps(fn, start):
             if len(msv) > 0:
                 fo.marriage_s = msv[0].getAttribute('val')
             else:
-                print 'No marriage event information found: ' + f.getAttribute('handle')
+                print 'No marriage event information found: %s' % f.getAttribute('handle')
         for p in f.getElementsByTagName('childref'):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
