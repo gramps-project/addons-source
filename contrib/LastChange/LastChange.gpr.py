@@ -23,7 +23,7 @@ register(GRAMPLET,
          id="LastChangeGramplet",
          name=_("Last Change Gramplet"),
          description=_("List the last ten person records that have been changed"),
-         status=STABLE, # not yet tested with python 3
+         status=UNSTABLE, # TypeError: Bytes or Integer object expected for key, str found
          version = '0.0.18',
          fname="LastChangeGramplet.py",
          authors=['Jakim Friant'],

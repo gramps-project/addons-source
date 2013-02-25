@@ -5,7 +5,7 @@ register(REPORT,
                     "about a person and his/her partners and children."),
     version = '3.4.19',
     gramps_target_version = '4.1',
-    status = STABLE, # not yet tested with python 3
+    status = UNSTABLE, # AttributeError: 'module' object has no attribute 'lowercase'
     fname = 'FamilySheet.py',
     authors = ["Reinhard Mueller"],
     authors_email = ["reinhard.mueller@igal.at"],
