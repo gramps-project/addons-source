@@ -57,6 +57,9 @@ ORDER_ATTR = _('Order')
 # The key of the data item in a source to define it as a census source.
 CENSUS_TAG = _('Census')
 
+# Files which may contain census definitions
+definition_files = ['census.xml', 'test.xml', 'custom.xml']
+
 #------------------------------------------------------------------------
 #
 # Census class
@@ -71,7 +74,12 @@ class Census():
         self.__headings = {}
         self.__columns = {}
 
-        census_file = os.path.join(os.path.dirname(__file__), 'census.xml')
+        for file_name in definition_files:
+            census_file = os.path.join(os.path.dirname(__file__), file_name)
+            if os.path.exists(census_file):
+                self.__load_definitions(census_file)
+
+    def __load_definitions(self, census_file):
         dom = xml.dom.minidom.parse(census_file)
         top = dom.getElementsByTagName('censuses')
 
