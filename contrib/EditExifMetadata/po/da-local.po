@@ -1,0 +1,406 @@
+# Danish translation for Gramps; Dansk oversættelse til GRAMPS
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
+# *** Vedr. ordstilling: ***
+# Ofte vil det lyde mere naturligt at ændre en ordstilling ved at
+# bytte om på hoved- og ledsætning, som f.eks.
+#   
+#   "Før reparationen udføres, forvis dig om at databasen virkelig
+#   "ikke længere kan åbnes"
+# til
+#   
+#   "forvis dig om at databasen virkelig ikke kan åbnes før du
+#   "udfører reparationen."
+#   
+# Jeg har dog i mange tilfælde valgt at bevare den oprindelige
+# ordstilling, da der ligger en opmærksomhedsskabende værdi i denne. Her
+# bliver man f.eks. som det første i sætningen gjort opmærksom på at man
+# IKKE skal udføre reparationen FØR .. -MBJ
+# *** Oversættelser af visse ord/vendinger: ***
+# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
+# home person: proband
+# ancestor: ane
+# given name: fornavn
+# preferences: indstillinger
+# link: forbindelse
+# family tree: slægtsbog (men se nedenfor)
+# First Communion: Førstekommunion
+# probate: skifte
+# record: optegnelse
+#
+# Anvendt af Lars Kr. Lundin:
+# citation: citering (fremfor f.eks. 'kildehenvisning')
+# database: database (fremfor det tidligere 'slægtsbog')
+# matches: matcher (fremfor det tidligere 'passer med')
+# locale: landestandard (i mangel af bedre)
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.4.3 (SVN 21236)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-25 15:21+0100\n"
+"PO-Revision-Date: 2013-01-29 20:29+0100\n"
+"Last-Translator: Lars Kristian Lundin <gramps@lklundin.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: http://jedmodes.sourceforge.net/mode/po_mode\n"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+msgid "Edit Image Exif Metadata"
+msgstr "Redigér billedets Exif-metadata"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr "Gramplet til at vise, redigere og gemme et billedes Exif-metadata"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+msgid "Edit Exif Metadata"
+msgstr "Redigér Exif-metadata"
+
+#: EditExifMetadata/editexifmetadata.py:148
+msgid "<-- Image Types -->"
+msgstr "<-- Billedtyper -->"
+
+#: EditExifMetadata/editexifmetadata.py:171
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"Advarsel:  Ændring af dette vil opdatere medieobjektets titelfelt i Gramps "
+"ikke Exiv2 metadata."
+
+#: EditExifMetadata/editexifmetadata.py:174
+#, fuzzy
+msgid "Provide a short description for this image."
+msgstr "Giv en kort beskrivelse af dette billede."
+
+#: EditExifMetadata/editexifmetadata.py:176
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Indtast kunstneren/ophavsmanden til dette billede. Personens navn "
+"ellerfirmaet som er ansvarlig for skabelsen af dette billede."
+
+#: EditExifMetadata/editexifmetadata.py:179
+msgid "Enter the copyright information for this image. \n"
+msgstr "Indtast oplysningerne om ophavsretten for dette billede. \n"
+
+#: EditExifMetadata/editexifmetadata.py:181
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"Det oprindelige dato/ tidspunkt hvor dette billede først blev taget.\n"
+"Eksempel 1830-01-1 09:30:59"
+
+#: EditExifMetadata/editexifmetadata.py:184
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"Dette er datoen/ tidspunktet hvor billedet sidst blev ændret.\n"
+"Eksempel: 2011-05-24 14:30:00"
+
+#: EditExifMetadata/editexifmetadata.py:187
+msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
+msgstr ""
+"Indtast GPS breddegradskoordinat for dette billede,\n"
+"Eksampel: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
+
+#: EditExifMetadata/editexifmetadata.py:190
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
+msgstr ""
+"Indtast GPS længdegradskoordinat for dette billede,\n"
+"Eksempel: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
+
+#: EditExifMetadata/editexifmetadata.py:193
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.Example: 200.558, -200.558"
+msgstr ""
+"Dette er målingen af højden over eller under havets niveau. Den måles i "
+"meter.Eksempel: 200.558, -200.558"
+
+#: EditExifMetadata/editexifmetadata.py:202
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+"Viser hjælpesiden til \"Redigér billedets Exif-metadata\" i din webbrowser."
+
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"Dette vil åbne et nyt vindue så du kan rette/ ændre dette billedes Exif "
+"metadata.\n"
+"  Du vil også kunne gemme de rettede metadata."
+
+#: EditExifMetadata/editexifmetadata.py:209
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr "Vil åbne et vindue med et miniature-billed-oversigtsområde"
+
+#: EditExifMetadata/editexifmetadata.py:211
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+"Vælg fra en rulle-menu billed-filtypen du vil konvertere dit non-Exiv2 "
+"kompatible medieobjekt til."
+
+#: EditExifMetadata/editexifmetadata.py:214
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+"Hvis dit billede ikke er af en type der kan have Exif metadata læst/ skrevet "
+"til/fra, skal det så konverteres til en type der kan?"
+
+#: EditExifMetadata/editexifmetadata.py:217
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+"ADVARSEL! Dette vil slette alle Exif-metadata fuldstændig fra dette billede! "
+"Er du sikker på at du vil gøre dette?"
+
+#: EditExifMetadata/editexifmetadata.py:315
+msgid "Thumbnail"
+msgstr "Miniature-billede"
+
+#: EditExifMetadata/editexifmetadata.py:397
+msgid "Select an image to begin..."
+msgstr "Vælg et billede for at begynde ..."
+
+#: EditExifMetadata/editexifmetadata.py:419
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"Billede kan IKKE læses,\n"
+"Vælg venligst et andet billede..."
+
+#: EditExifMetadata/editexifmetadata.py:435
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"Billedet er SKRIVEBESKYTTET,\n"
+"Du vil IKKE kunne gemme Exif-metadata ..."
+
+#: EditExifMetadata/editexifmetadata.py:447
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "Konverter venligst dette billede til en Exiv2-kompatibel billedtype..."
+
+#: EditExifMetadata/editexifmetadata.py:470
+#, fuzzy
+msgid "Image Size : %04(width)d x %04(height)d pixels"
+msgstr "Billedstørrelse : %04d x %04d pixler"
+
+#: EditExifMetadata/editexifmetadata.py:503
+msgid "Displaying Exif metadata..."
+msgstr "Viser Exif-metadata..."
+
+#: EditExifMetadata/editexifmetadata.py:670
+msgid "Click Close to close this Thumbnail View Area."
+msgstr "Tryk Luk for at lukke dette miniature-billed oversigtsområde."
+
+#: EditExifMetadata/editexifmetadata.py:674
+msgid "Thumbnail View Area"
+msgstr "Oversigtsområde til miniature-billeder"
+
+#: EditExifMetadata/editexifmetadata.py:753
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+"ADVARSEL: Du er ved at konvertere dette billede til et .jpeg-billede.  Er du "
+"sikker på at du vil gøre dette?"
+
+#: EditExifMetadata/editexifmetadata.py:755
+msgid "Convert and Delete"
+msgstr "Konvertér og slet"
+
+#: EditExifMetadata/editexifmetadata.py:755
+msgid "Convert"
+msgstr "Konvertér"
+
+#: EditExifMetadata/editexifmetadata.py:841
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+"Dit billede er blevet konverteret og den originale fil er blevet slettet, og "
+"den komplette sti er blevet opdateret!"
+
+#: EditExifMetadata/editexifmetadata.py:845
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+"Der er opstået en fejl, kontroller venligst dine start- og slut-stier..."
+
+#: EditExifMetadata/editexifmetadata.py:848
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+"Der skete en fejl ved sletningen af den originale fil. Du bliver nødt til at "
+"slette den selv!"
+
+#: EditExifMetadata/editexifmetadata.py:865
+msgid "There was an error in converting your image file."
+msgstr "Der opstod en fejl ved konvertering af din billed-fil."
+
+#: EditExifMetadata/editexifmetadata.py:876
+msgid "Media Path Update"
+msgstr "Opdatering af mediesti"
+
+#: EditExifMetadata/editexifmetadata.py:882
+msgid "There has been an error in updating the image file's path!"
+msgstr "Der opstod en fejl ved opdatering af billed-filens sti!"
+
+#: EditExifMetadata/editexifmetadata.py:916
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+"Tryk på Luk-knappen når du er færdig med at redigere dette billedes Exif "
+"metadata."
+
+#: EditExifMetadata/editexifmetadata.py:954
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "Gemmer en kopi af data-felterne i billedets Exif metadata."
+
+#: EditExifMetadata/editexifmetadata.py:957
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "Gen-vis data-felterne der blev renset fra Redigeringsområdet."
+
+#: EditExifMetadata/editexifmetadata.py:960
+msgid "This button will clear all of the data fields shown here."
+msgstr "Denne knap renser alle de her viste data-felter."
+
+#: EditExifMetadata/editexifmetadata.py:963
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"Lukker redigeringsvinduet.\n"
+"ADVARSEL: Dette vil ikke gemme nogen rettelser/ ændringer af dette billedes "
+"Exif metadata."
+
+#: EditExifMetadata/editexifmetadata.py:990
+msgid "Media Object Title"
+msgstr "Medieobjekttitel"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+msgid "media Title: "
+msgstr "medietitel: "
+
+#: EditExifMetadata/editexifmetadata.py:1014
+msgid "General Data"
+msgstr "Generelle Data"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+msgid "Description: "
+msgstr "Beskrivelse: "
+
+#: EditExifMetadata/editexifmetadata.py:1025
+msgid "Artist: "
+msgstr "Kunsnter: "
+
+#: EditExifMetadata/editexifmetadata.py:1026
+msgid "Copyright: "
+msgstr "Ophavsret: "
+
+#: EditExifMetadata/editexifmetadata.py:1039
+msgid "Date/ Time"
+msgstr "Dato/tid"
+
+#: EditExifMetadata/editexifmetadata.py:1053
+msgid "Original: "
+msgstr "Oprindelig: "
+
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Modified: "
+msgstr "Ændret: "
+
+#: EditExifMetadata/editexifmetadata.py:1071
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "Breddegrad/ Længdegrad/ Højde GPS koordinat"
+
+#: EditExifMetadata/editexifmetadata.py:1085
+msgid "Latitude :"
+msgstr "Breddegrad :"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+msgid "Longitude :"
+msgstr "Længdegrad :"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+msgid "Altitude :"
+msgstr "Højde :"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+msgid "Bad Date/Time"
+msgstr "Ugyldig Dato/Tid"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "Ugyldig breddegrad (syntaks: 18°9)"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "Ugyldig længdegrad (syntaks: 18°9)"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1159
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
+
+#: EditExifMetadata/editexifmetadata.py:1324
+msgid "Media Title Update"
+msgstr "Opdatering af Medietitel"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+msgid "Media Object Date Created"
+msgstr "Dato for medieobjekt dannet"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+msgid "Saving Exif metadata to this image..."
+msgstr "Gemmer Exif-metadata i billedet..."
+
+#: EditExifMetadata/editexifmetadata.py:1469
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "Alle Exif-metadata er blevet slettet fra dette billede ..."
+
+#: EditExifMetadata/editexifmetadata.py:1474
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "Der opstod en fejl ved sletning af Exif-metadata fra dette billede ..."
