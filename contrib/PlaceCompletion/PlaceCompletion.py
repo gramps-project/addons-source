@@ -94,7 +94,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
 
         if lin:
             import locale
-            locale.setlocale(locale.LC_ALL, '')
+            #locale.setlocale(locale.LC_ALL, '')
             # This is needed to make gtk.Builder work by specifying the
             # translations directory
             locale.bindtextdomain("addon", base + "/locale")
