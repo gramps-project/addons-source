@@ -1,0 +1,75 @@
+# Dutch translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+# erik_de_richter <frederik.de.richter@telenet.be>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 40_addons\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-29 14:38+0100\n"
+"PO-Revision-Date: 2013-01-29 14:38+0100\n"
+"Last-Translator: erik_de_richter <frederik.de.richter@telenet.be>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Differences/differences.gpr.py:4
+msgid "Database Differences Report"
+msgstr ""
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr ""
+
+#: Differences/differences.py:157
+msgid "Differences Report"
+msgstr ""
+
+#: Differences/differences.py:158
+msgid "Looking for differences..."
+msgstr ""
+
+#: Differences/differences.py:272
+msgid "Report Options"
+msgstr ""
+
+#: Differences/differences.py:273
+msgid "Family Tree file"
+msgstr ""
+
+#: Differences/differences.py:274
+msgid "Select a .gpkg or .gramps file"
+msgstr ""
+
+#: Differences/differences.py:277
+msgid "Show items that are different"
+msgstr ""
+
+#: Differences/differences.py:278
+msgid "Include items that are different"
+msgstr ""
+
+#: Differences/differences.py:281
+msgid "Show deleted items"
+msgstr ""
+
+#: Differences/differences.py:282
+msgid "Include items not in file but in database"
+msgstr ""
+
+#: Differences/differences.py:285
+msgid "Show added items"
+msgstr ""
+
+#: Differences/differences.py:286
+msgid "Include items in file but not in database"
+msgstr ""
+
+#: Differences/differences.py:331 Differences/differences.py:333
+#: Differences/differences.py:336 Differences/differences.py:339
+msgid "Text"
+msgstr ""
