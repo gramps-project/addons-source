@@ -293,7 +293,7 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(GRAMPSPATH)
+    sys.path.insert(0, GRAMPSPATH)
     from gramps.gen.const import GRAMPS_LOCALE as glocale
     from gramps.gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):
@@ -323,9 +323,9 @@ elif command == "listing":
                 local_gettext = glocale.get_addon_translator(gpr,
                                        languages=[lang]).gettext
                 plugins = []
-                with open(gpr.encode(sys.getfilesystemencoding())) as f:
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
                     code = compile(f.read(),
-                                   gpr.encode(sys.getfilesystemencoding()),
+                                   gpr.encode("utf-8", errors="backslashreplace"),
                                               'exec')
                     exec(code, make_environment(_=local_gettext),
                          {"register": register})
