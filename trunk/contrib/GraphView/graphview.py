@@ -95,8 +95,7 @@ class GraphView(NavigationView):
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate, 
-                                      dbstate.db.get_bookmarks(), 
+        NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
                                       PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
