@@ -1,0 +1,141 @@
+# French translation for gramps
+# Copyright (C) 2001-2013 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2012.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.4.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-06 23:42+0000\n"
+"PO-Revision-Date: 2013-03-07 10:14+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+#: MediaVerify/MediaVerify.py:125
+#: MediaVerify/MediaVerify.py:182
+#: MediaVerify/MediaVerify.py:260
+msgid "Media Verify"
+msgstr "Vérification des media"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Vérifier si l'objet medium est présent avec le bon chemin "
+
+#: MediaVerify/MediaVerify.py:69
+msgid "Media Verify Tool"
+msgstr "Outil de vérification des media"
+
+#: MediaVerify/MediaVerify.py:81
+msgid "Files"
+msgstr "Fichiers"
+
+#: MediaVerify/MediaVerify.py:92
+msgid "Close"
+msgstr "Fermer"
+
+#: MediaVerify/MediaVerify.py:93
+msgid "Close the Media Verify Tool"
+msgstr "Fermer l'outil de vérification des media"
+
+#: MediaVerify/MediaVerify.py:95
+msgid "Generate"
+msgstr "Générer"
+
+#: MediaVerify/MediaVerify.py:96
+msgid "Generate md5 hashes for media objects"
+msgstr "Génère des tables (hashes) md5 de nos fichiers media"
+
+#: MediaVerify/MediaVerify.py:98
+msgid "Verify"
+msgstr "Vérification"
+
+#: MediaVerify/MediaVerify.py:99
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr "Vérification des media et chemins manquants, dupliqués ainsi que fichiers supplémentaires rapportés"
+
+#: MediaVerify/MediaVerify.py:102
+msgid "Fix"
+msgstr "Corrigé"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Fix media paths of moved and renamed files"
+msgstr "Correction des chemin media pour les fichiers déplacés et renommés"
+
+#: MediaVerify/MediaVerify.py:117
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Vérifier les objets media Gramps en utilisant les tables (hashes) md5"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:128
+msgid "Generating media hashes"
+msgstr "Génération des hashes media"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:130
+msgid "Set media hashes"
+msgstr "Définition des hashes media"
+
+#: MediaVerify/MediaVerify.py:172
+msgid "Moved Files"
+msgstr "Fichiers déplacés"
+
+#: MediaVerify/MediaVerify.py:173
+msgid "Missing Files"
+msgstr "Fichiers manquants"
+
+#: MediaVerify/MediaVerify.py:174
+msgid "Duplicate Files"
+msgstr "Fichiers dupliqués"
+
+#: MediaVerify/MediaVerify.py:175
+msgid "Extra Files"
+msgstr "Fichiers supplémentaires"
+
+#: MediaVerify/MediaVerify.py:176
+msgid "No md5 Generated"
+msgstr "Pas de md5 généré"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:185
+msgid "Finding files"
+msgstr "Recherche de fichiers"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:205
+msgid "Checking paths"
+msgstr "Vérification des chemins"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:261
+msgid "Fixing file paths"
+msgstr "Correction des chemins de fichier"
+
+# Substantif (GNOME fr)
+#: MediaVerify/MediaVerify.py:263
+msgid "Fix media paths"
+msgstr "Correction des chemins media"
+
