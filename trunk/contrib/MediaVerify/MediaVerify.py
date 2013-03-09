@@ -27,6 +27,7 @@
 #
 #-------------------------------------------------------------------------
 import os
+import sys
 import hashlib
 
 #-------------------------------------------------------------------------
@@ -134,7 +135,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
                 full_path = media_path_full(self.db, media.get_path())
                 try:
-                    media_file = open(full_path, 'r')
+                    media_file = open(full_path, 'rb')
                 except IOError:
                     progress.step()
                     continue
@@ -188,11 +189,12 @@ class MediaVerify(tool.Tool, ManagedWindow):
         for root, dirs, files in os.walk(media_path):
             for file_name in files:
                 full_path = os.path.join(root, file_name)
-                media_file = open(full_path, 'r')
+                media_file = open(full_path, 'rb')
                 md5sum = hashlib.md5(media_file.read()).hexdigest()
                 media_file.close()
 
                 rel_path = relative_path(full_path, media_path)
+                rel_path = rel_path.decode(sys.getfilesystemencoding())
                 if md5sum in all_files:
                     all_files[md5sum].append(rel_path)
                 else:
