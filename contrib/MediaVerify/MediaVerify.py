@@ -28,6 +28,7 @@
 #-------------------------------------------------------------------------
 import os
 import sys
+import io
 import hashlib
 
 #-------------------------------------------------------------------------
@@ -123,11 +124,14 @@ class MediaVerify(tool.Tool, ManagedWindow):
         Generate md5 hashes for media files and attach them as attributes to
         media objects.
         """
+        self.model.clear()
+
         progress = ProgressMeter(_('Media Verify'), can_cancel=True)
 
         length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Generating media hashes'), length)
 
+        error_msgs = []
         with DbTxn(_("Set media hashes"), self.db, batch=True) as trans:
 
             for handle in self.db.get_media_object_handles():
@@ -135,12 +139,12 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
                 full_path = media_path_full(self.db, media.get_path())
                 try:
-                    media_file = open(full_path, 'rb')
-                except IOError:
+                    with io.open(full_path, 'rb') as media_file:
+                        md5sum = hashlib.md5(media_file.read()).hexdigest()
+                except IOError as msg:
+                    error_msgs.append('%s: %s' % (msg.strerror, full_path))
                     progress.step()
                     continue
-                md5sum = hashlib.md5(media_file.read()).hexdigest()
-                media_file.close()
 
                 for attr in media.get_attribute_list():
                     if str(attr.get_type()) == 'md5':
@@ -160,6 +164,14 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     break
 
         progress.close()
+
+        # Display errors
+        if len(error_msgs) > 0:
+            errors = self.model.append(None, (_('Errors'),))
+            for msg in error_msgs:
+                self.model.append(errors, (msg,))
+
+        self.view.expand_all()
 
     def verify_media(self, button):
         """
@@ -181,17 +193,24 @@ class MediaVerify(tool.Tool, ManagedWindow):
             return
 
         progress = ProgressMeter(_('Media Verify'), can_cancel=True)
-            
-        length = self.db.get_number_of_media_objects()
+
+        length = 0
+        for root, dirs, files in os.walk(media_path):
+            length += len(files)
         progress.set_pass(_('Finding files'), length)
 
+        error_msgs = []
         all_files = {}
         for root, dirs, files in os.walk(media_path):
             for file_name in files:
                 full_path = os.path.join(root, file_name)
-                media_file = open(full_path, 'rb')
-                md5sum = hashlib.md5(media_file.read()).hexdigest()
-                media_file.close()
+                try:
+                    with io.open(full_path, 'rb') as media_file:
+                        md5sum = hashlib.md5(media_file.read()).hexdigest()
+                except IOError as msg:
+                    error_msgs.append('%s: %s' % (msg.strerror, full_path))
+                    progress.step()
+                    continue
 
                 rel_path = relative_path(full_path, media_path)
                 rel_path = rel_path.decode(sys.getfilesystemencoding())
@@ -204,6 +223,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 if progress.get_cancelled():
                     break
 
+        length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Checking paths'), length)
 
         in_gramps = []
@@ -217,7 +237,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     in_gramps.append(md5sum)
                     break
 
-            # Fix the path if possible
+            # Moved files
             gramps_path = media.get_path()
             if md5sum in all_files:
                 file_path = all_files[md5sum]
@@ -253,6 +273,13 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 self.model.append(extra, (text,))
 
         progress.close()
+
+        # Display errors
+        if len(error_msgs) > 0:
+            errors = self.model.append(None, (_('Errors'),))
+            for msg in error_msgs:
+                self.model.append(errors, (msg,))
+
         self.view.expand_all()
 
     def fix_media(self, button):
