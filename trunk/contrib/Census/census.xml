@@ -3266,6 +3266,10 @@
     </census>
     <census id="US1940" title="1940 US Census" date="1940-04-01">
         <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
             <_attribute>Home Owned/Rented</_attribute>
             <size>10</size>
         </column>
@@ -3276,10 +3280,6 @@
         <column>
             <_attribute>Farm?</_attribute>
             <size>1</size>
-        </column>
-        <column>
-            <_attribute>Name</_attribute>
-            <size>25</size>
         </column>
         <column>
             <_attribute>Relationship</_attribute>
@@ -3294,11 +3294,11 @@
             <size>25</size>
         </column>
         <column>
-            <_attribute>Age at last Birthday</_attribute>
+            <_attribute>Age at Last Birthday</_attribute>
             <size>25</size>
         </column>
         <column>
-            <_attribute>Marital status</_attribute>
+            <_attribute>Marital Status</_attribute>
             <size>10</size>
         </column>
         <column>
@@ -3390,15 +3390,15 @@
             <size>4</size>
         </column>
         <column>
-            <_attribute>Father birthplace</_attribute>
+            <_attribute>Place of birth of father</_attribute>
             <size>25</size>
         </column>
         <column>
-            <_attribute>Mother birthplace</_attribute>
+            <_attribute>Place of birth of mother</_attribute>
             <size>25</size>
         </column>
         <column>
-            <_attribute>Language spoken in home</_attribute>
+            <_attribute>Mother tongue</_attribute>
             <size>25</size>
         </column>
         <column>
@@ -3406,7 +3406,7 @@
             <size>1</size>
         </column>
         <column>
-            <_attribute>if child, veteran-father dead?</_attribute>
+            <_attribute>If child, veteran-father dead?</_attribute>
             <size>1</size>
         </column>
         <column>
@@ -3442,11 +3442,11 @@
             <size>1</size>
         </column>
         <column>
-            <_attribute>Age of first marriage</_attribute>
+            <_attribute>Age at first marriage</_attribute>
             <size>1</size>
         </column>
         <column>
-            <_attribute>Number of children even born?</_attribute>
+            <_attribute>Number of children ever born</_attribute>
             <size>4</size>
         </column>
     </census>
