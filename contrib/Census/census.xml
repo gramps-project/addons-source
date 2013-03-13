@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <censuses>
-    <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
+    <census id='UK1841' title='1841 England and Wales Census' date='6 Jun 1841'>
         <heading>
             <_attribute>City or Borough</_attribute>
         </heading>
@@ -24,7 +24,7 @@
             <size>5</size>
         </column>
     </census>
-    <census id='UK1851' title='1851 UK Census' date='30 Mar 1851'>
+    <census id='UK1851' title='1851 England and Wales Census' date='30 Mar 1851'>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -69,7 +69,7 @@
             <size>10</size>
         </column>
     </census>
-    <census id='UK1861' title='1861 UK Census' date='7 Apr 1861'>
+    <census id='UK1861' title='1861 England and Wales Census' date='7 Apr 1861'>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -120,7 +120,7 @@
             <size>10</size>
         </column>
     </census>
-    <census id='UK1871' title='1871 UK Census' date='2 Apr 1871'>
+    <census id='UK1871' title='1871 England and Wales Census' date='2 Apr 1871'>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -174,7 +174,7 @@
             <size>10</size>
         </column>
     </census>
-    <census id='UK1881' title='1881 UK Census' date='3 Apr 1881'>
+    <census id='UK1881' title='1881 England and Wales Census' date='3 Apr 1881'>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -228,7 +228,7 @@
             <size>10</size>
         </column>
     </census>
-    <census id='UK1891' title='1891 UK Census' date='5 Apr 1891'>
+    <census id='UK1891' title='1891 England Census' date='5 Apr 1891'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -295,7 +295,7 @@
             <size>7</size>
         </column>
     </census>
-    <census id='UK1901' title='1901 UK Census' date='31 Mar 1901'>
+    <census id='UK1901' title='1901 England Census' date='31 Mar 1901'>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -356,42 +356,56 @@
             <size>7</size>
         </column>
     </census>
-    <census id='UK1911' title='1911 UK Census' date='2 Apr 1911'>
+    <census id='UK1911' title='1911 England Census' date='2 Apr 1911'>
         <column>
             <_attribute>Name</_attribute>
-            <size>25</size>
+            <size>20</size>
         </column>
         <column>
             <_attribute>Relation</_attribute>
-            <size>7</size>
-        </column>
-        <column>
-            <_attribute>Age</_attribute>
-            <size>5</size>
-        </column>
-        <column>
-            <_attribute>Condition</_attribute>
-            <size>7</size>
-        </column>
-        <column>
-            <_attribute>Years Married</_attribute>
             <size>6</size>
         </column>
         <column>
+            <_attribute>Age</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Years Married</_attribute>
+            <size>4</size>
+        </column>
+        <column>
             <_attribute>Children Total</_attribute>
-            <size>7</size>
+            <size>4</size>
         </column>
         <column>
             <_attribute>Children Living</_attribute>
-            <size>7</size>
+            <size>4</size>
         </column>
         <column>
             <_attribute>Children Died</_attribute>
-            <size>7</size>
+            <size>4</size>
         </column>
         <column>
             <_attribute>Occupation</_attribute>
-            <size>15</size>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Industry</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Work Type</_attribute>
+            <_longname>Employer, Worker or Own Account</_longname>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>At Home</_attribute>
+            <_longname>Working at Home</_longname>
+            <size>6</size>
         </column>
         <column>
             <_attribute>Where Born</_attribute>
@@ -399,7 +413,217 @@
         </column>
         <column>
             <_attribute>Nationality</_attribute>
-            <size>8</size>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>5</size>
+        </column>
+    </census>    <census id='CY1891' title='1891 Wales Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Employer</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Employed</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Neither</_attribute>
+            <_longname>Neither Employer nor Employed</_longname>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Language</_attribute>
+            <_longname>Language Spoken</_longname>
+            <size>6</size>
+        </column>
+    </census>
+    <census id='CY1901' title='1901 Wales Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Hamlet or Tything</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>25</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Work Type</_attribute>
+            <_longname>Employer, Worker or Own Account</_longname>
+            <size>12</size>
+        </column>
+        <column>
+            <_attribute>At Home</_attribute>
+            <_longname>Working at Home</_longname>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>6</size>
+        </column>
+        <column>
+            <_attribute>Language</_attribute>
+            <_longname>Language Spoken</_longname>
+            <size>6</size>
+        </column>
+    </census>
+    <census id='CY1911' title='1911 Wales Census' date='2 Apr 1911'>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>15</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Years Married</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Children Total</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Children Living</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Children Died</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Industry</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Work Type</_attribute>
+            <_longname>Employer, Worker or Own Account</_longname>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>At Home</_attribute>
+            <_longname>Working at Home</_longname>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Nationality</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <size>5</size>
+        </column>
+        <column>
+            <_attribute>Language</_attribute>
+            <_longname>Language Spoken</_longname>
+            <size>5</size>
         </column>
     </census>
     <census id='FR1790' title='1790 French Census' date='1790'>
