@@ -21,6 +21,8 @@
 
 """Tools/Utilities/Media Verify"""
 
+from __future__ import unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -37,6 +39,7 @@ import hashlib
 #
 #-------------------------------------------------------------------------
 from gi.repository import Gtk
+from gi.repository import Gdk
 
 #-------------------------------------------------------------------------
 #
@@ -45,10 +48,14 @@ from gi.repository import Gtk
 #-------------------------------------------------------------------------
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.utils import ProgressMeter
+from gramps.gui.utils import ProgressMeter, open_file_with_default_application
 from gramps.gen.db import DbTxn
 from gramps.gen.lib import Attribute, AttributeType
-from gramps.gen.utils.file import media_path_full, relative_path
+from gramps.gen.utils.file import (media_path_full, relative_path,
+                                   get_unicode_path_from_file_chooser)
+from gramps.gui.dialog import WarningDialog
+from gramps.gui.editors import EditMedia
+from gramps.gen.errors import WindowActiveError
 
 #------------------------------------------------------------------------
 #
@@ -71,24 +78,23 @@ class MediaVerify(tool.Tool, ManagedWindow):
         self.window_name = _('Media Verify Tool')
         ManagedWindow.__init__(self, uistate, [], self.__class__)
 
-        self.db = dbstate.db
+        self.dbstate = dbstate
         self.moved_files = []
+        self.titles = [_('Moved Files'), _('Missing Files'),  
+                       _('Duplicate Files'), _('Extra Files'), 
+                       _('No md5 Generated'), _('Errors')]
+        self.models = []
+        self.views = []
 
         window = Gtk.Window()
         vbox = Gtk.VBox()
-        scrolled_window = Gtk.ScrolledWindow()
-        scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, 
-                                   Gtk.PolicyType.AUTOMATIC)
-        self.view = Gtk.TreeView()
-        column = Gtk.TreeViewColumn(_('Files'))
-        self.view.append_column(column)
-        cell = Gtk.CellRendererText()
-        column.pack_start(cell, True)
-        column.add_attribute(cell, 'text', 0)
-        self.model = Gtk.TreeStore(str)
-        self.view.set_model(self.model)
-        scrolled_window.add(self.view)
-        vbox.pack_start(scrolled_window, True, True, 5)
+
+        self.notebook = Gtk.Notebook()
+        self.notebook.set_scrollable(True)
+        for title in self.titles:
+            self.create_tab(title)
+        vbox.pack_start(self.notebook, True, True, 5)
+
         bbox = Gtk.HButtonBox()
         vbox.pack_start(bbox, False, False, 5)
         close = Gtk.Button(_('Close'))
@@ -101,12 +107,16 @@ class MediaVerify(tool.Tool, ManagedWindow):
         verify.set_tooltip_text(_('Check media paths and report missing, '
                                   'duplicate and extra files'))
         verify.connect('clicked', self.verify_media)
+        export = Gtk.Button(_('Export'))
+        export.set_tooltip_text(_('Export the results to a text file'))
+        export.connect('clicked', self.export_results)
         fix = Gtk.Button(_('Fix'))
         fix.set_tooltip_text(_('Fix media paths of moved and renamed files'))
         fix.connect('clicked', self.fix_media)
         bbox.add(close)
         bbox.add(generate)
         bbox.add(verify)
+        bbox.add(export)
         bbox.add(fix)
         vbox.show_all()
 
@@ -115,23 +125,139 @@ class MediaVerify(tool.Tool, ManagedWindow):
         self.set_window(window, None, self.window_name)
         self.show()
 
+        self.show_tabs()
+
     def build_menu_names(self, obj):
         return (_('Verify Gramps media using md5 hashes'), 
                 self.window_name)
+
+    def create_tab(self, title):
+        """
+        Create a page in the notebook.
+        """
+        scrolled_window = Gtk.ScrolledWindow()
+        scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC,
+                                   Gtk.PolicyType.AUTOMATIC)
+        view = Gtk.TreeView()
+        column = Gtk.TreeViewColumn(_('Files'))
+        view.append_column(column)
+        cell = Gtk.CellRendererText()
+        column.pack_start(cell, True)
+        column.add_attribute(cell, 'text', 0)
+        column.set_sort_column_id(0)
+        column.set_sort_indicator(True)
+        model = Gtk.ListStore(str, str)
+        view.set_model(model)
+        page = self.notebook.get_n_pages()
+        view.connect('button-press-event', self.button_press, page)
+        scrolled_window.add(view)
+        self.models.append(model)
+        self.views.append(view)
+        label = Gtk.Label(title)
+        self.notebook.append_page(scrolled_window, label)
+
+    def button_press(self, view, event, page):
+        """
+        Called when a button is pressed on a treeview.
+        """
+        if event.type == Gdk.EventType._2BUTTON_PRESS and event.button == 1:
+            model, iter_ = view.get_selection().get_selected()
+            if iter_:
+                value = model.get_value(iter_, 1)
+                if page in (0, 1, 4):
+                    self.edit(value)
+                elif page in (2, 3):
+                    self.display(value)
+
+    def edit(self, handle):
+        """
+        Edit the media object with the given handle.
+        """
+        media = self.db.get_object_from_handle(handle)
+        try:
+            EditMedia(self.dbstate, self.uistate, [], media)
+        except WindowActiveError:
+            pass
+
+    def display(self, path):
+        """
+        Display the given file.
+        """
+        full_path = media_path_full(self.db, path)
+        open_file_with_default_application(full_path)
+
+    def export_results(self, button):
+        """
+        Export the results to a text file.
+        """
+        chooser = Gtk.FileChooserDialog(
+            _("Export results to a text file"), 
+            self.uistate.window, 
+            Gtk.FileChooserAction.SAVE, 
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, 
+             Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
+        chooser.set_do_overwrite_confirmation(True)
+
+        while True:
+            value = chooser.run()
+            filename = chooser.get_filename()
+            filename = get_unicode_path_from_file_chooser(filename)
+            if value == Gtk.ResponseType.OK:
+                if filename:
+                    chooser.destroy()
+                    break
+            else:
+                chooser.destroy()
+                return
+        try:
+            with io.open(filename, 'w') as report_file:
+                for title, model in zip(self.titles, self.models):
+                    self.export_page(report_file, title, model)
+        except IOError as err:
+            WarningDialog(self.window_name,
+                          _('Error when writing the report: %s') % err.strerror,
+                            self.window)
+
+    def export_page(self, report_file, title, model):
+        """
+        Export a page of the report to a text file.
+        """
+        if len(model) == 0:
+            return
+        report_file.write(title + '\n')
+        for row in model:
+            report_file.write('    %s\n' % row[0])
+
+    def show_tabs(self):
+        """
+        Show notebook tabs containing data.
+        """
+        for page, model in enumerate(self.models):
+            tab = self.notebook.get_nth_page(page)
+            if len(model) > 0:
+                tab.show()
+            else:
+                tab.hide()
+
+    def clear_models(self):
+        """
+        Clear the models.
+        """
+        for model in self.models:
+            model.clear()
 
     def generate_md5(self, button):
         """
         Generate md5 hashes for media files and attach them as attributes to
         media objects.
         """
-        self.model.clear()
+        self.clear_models()
 
-        progress = ProgressMeter(_('Media Verify'), can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True)
 
         length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Generating media hashes'), length)
 
-        error_msgs = []
         with DbTxn(_("Set media hashes"), self.db, batch=True) as trans:
 
             for handle in self.db.get_media_object_handles():
@@ -141,8 +267,9 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 try:
                     with io.open(full_path, 'rb') as media_file:
                         md5sum = hashlib.md5(media_file.read()).hexdigest()
-                except IOError as msg:
-                    error_msgs.append('%s: %s' % (msg.strerror, full_path))
+                except IOError as err:
+                    error_msg = '%s: %s' % (err.strerror, full_path)
+                    self.models[5].append((error_msg, None))
                     progress.step()
                     continue
 
@@ -164,14 +291,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     break
 
         progress.close()
-
-        # Display errors
-        if len(error_msgs) > 0:
-            errors = self.model.append(None, (_('Errors'),))
-            for msg in error_msgs:
-                self.model.append(errors, (msg,))
-
-        self.view.expand_all()
+        self.show_tabs()
 
     def verify_media(self, button):
         """
@@ -179,27 +299,24 @@ class MediaVerify(tool.Tool, ManagedWindow):
         directory.  List missing files, duplicate files, and files that do not
         yet have a media file in Gramps.
         """
-        self.model.clear()
+        self.clear_models()
         self.moved_files = []
-
-        moved = self.model.append(None, (_('Moved Files'),))
-        missing = self.model.append(None, (_('Missing Files'),))
-        duplicate = self.model.append(None, (_('Duplicate Files'),))
-        extra = self.model.append(None, (_('Extra Files'),))
-        nomd5 = self.model.append(None, (_('No md5 Generated'),))
 
         media_path = self.db.get_mediapath()
         if media_path is None:
+            WarningDialog(self.window_name,
+                          _('Media path not set.  You must set the "Base path '
+                            'for relative media paths" in the Preferences.'),
+                            self.window)
             return
 
-        progress = ProgressMeter(_('Media Verify'), can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True)
 
         length = 0
         for root, dirs, files in os.walk(media_path):
             length += len(files)
         progress.set_pass(_('Finding files'), length)
 
-        error_msgs = []
         all_files = {}
         for root, dirs, files in os.walk(media_path):
             for file_name in files:
@@ -207,8 +324,9 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 try:
                     with io.open(full_path, 'rb') as media_file:
                         md5sum = hashlib.md5(media_file.read()).hexdigest()
-                except IOError as msg:
-                    error_msgs.append('%s: %s' % (msg.strerror, full_path))
+                except IOError as err:
+                    error_msg = '%s: %s' % (err.strerror, full_path)
+                    self.models[5].append((error_msg, None))
                     progress.step()
                     continue
 
@@ -245,19 +363,19 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     if len(file_path) == 1:
                         self.moved_files.append((handle, file_path[0]))
                         text = '%s -> %s' % (gramps_path, file_path[0])
-                        self.model.append(moved, (text,))
+                        self.models[0].append((text, handle))
                     else:
                         gramps_name = os.path.basename(gramps_path)
                         for path in file_path:
                             if os.path.basename(path) == gramps_name:
                                 self.moved_files.append((handle, path))
                                 text = '%s -> %s' % (gramps_path, path)
-                                self.model.append(moved, (text,))
+                                self.models[0].append((text, handle))
             elif md5sum is None:
                 text = '[%s] %s' % (media.get_gramps_id(), gramps_path)
-                self.model.append(nomd5, (text,))
+                self.models[4].append((text, handle))
             else:
-                self.model.append(missing, (gramps_path,))
+                self.models[1].append((gramps_path, handle))
 
             progress.step()
             if progress.get_cancelled():
@@ -267,26 +385,19 @@ class MediaVerify(tool.Tool, ManagedWindow):
         for md5sum in all_files:
             if len(all_files[md5sum]) > 1:
                 text = ', '.join(all_files[md5sum])
-                self.model.append(duplicate, (text,))
+                self.models[2].append((text, all_files[md5sum][0]))
             if md5sum not in in_gramps:
                 text = ', '.join(all_files[md5sum])
-                self.model.append(extra, (text,))
+                self.models[3].append((text, all_files[md5sum][0]))
 
         progress.close()
-
-        # Display errors
-        if len(error_msgs) > 0:
-            errors = self.model.append(None, (_('Errors'),))
-            for msg in error_msgs:
-                self.model.append(errors, (msg,))
-
-        self.view.expand_all()
+        self.show_tabs()
 
     def fix_media(self, button):
         """
         Fix paths to moved media files.
         """
-        progress = ProgressMeter(_('Media Verify'), can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True)
         progress.set_pass(_('Fixing file paths'), len(self.moved_files))
 
         with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
