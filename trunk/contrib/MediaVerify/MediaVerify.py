@@ -412,6 +412,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     break
 
         progress.close()
+        self.models[0].clear()
+        self.show_tabs()
 
 #------------------------------------------------------------------------
 #
