@@ -164,7 +164,7 @@ def get_census_id(source):
     """
     Return the census id attach to the given source.
     """
-    return source.get_data_map()[CENSUS_TAG]
+    return source.get_data_map().get(CENSUS_TAG)
             
 def get_census_citation(db, event):
     """
@@ -175,11 +175,9 @@ def get_census_citation(db, event):
         citation = db.get_citation_from_handle(citation_handle)
         source_handle = citation.get_reference_handle()
         source = db.get_source_from_handle(source_handle)
-        try:
-            census_id = get_census_id(source)
+        census_id = get_census_id(source)
+        if census_id in get_census_ids():
             return citation
-        except KeyError:
-            pass
     return None
         
 def get_census_sources(db):
@@ -190,11 +188,7 @@ def get_census_sources(db):
     source_list = []
     for handle in db.get_source_handles():
         source = db.get_source_from_handle(handle)
-        try:
-            census_id = get_census_id(source)
-        except KeyError:
-            census_id = None
-
+        census_id = get_census_id(source)
         if census_id in get_census_ids():
             source_list.append([handle, source.get_title(), census_id])
             
