@@ -80,7 +80,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
         self.dbstate = dbstate
         self.moved_files = []
-        self.titles = [_('Moved Files'), _('Missing Files'),  
+        self.titles = [_('Moved/Renamed Files'), _('Missing Files'),  
                        _('Duplicate Files'), _('Extra Files'), 
                        _('No md5 Generated'), _('Errors')]
         self.models = []
