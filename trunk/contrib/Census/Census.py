@@ -191,5 +191,6 @@ def get_census_sources(db):
         census_id = get_census_id(source)
         if census_id in get_census_ids():
             source_list.append([handle, source.get_title(), census_id])
-            
-    return source_list
+
+    sorted_list = sorted(source_list, key=lambda s: s[1])
+    return sorted_list
