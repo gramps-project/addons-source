@@ -253,7 +253,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
         """
         self.clear_models()
 
-        progress = ProgressMeter(self.window_name, can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True,
+                                 parent=self.window)
 
         length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Generating media hashes'), length)
@@ -290,8 +291,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 if progress.get_cancelled():
                     break
 
-        progress.close()
         self.show_tabs()
+        progress.close()
 
     def verify_media(self, button):
         """
@@ -310,7 +311,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                             self.window)
             return
 
-        progress = ProgressMeter(self.window_name, can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True,
+                                 parent=self.window)
 
         length = 0
         for root, dirs, files in os.walk(media_path):
@@ -390,14 +392,15 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 text = ', '.join(all_files[md5sum])
                 self.models[3].append((text, all_files[md5sum][0]))
 
-        progress.close()
         self.show_tabs()
+        progress.close()
 
     def fix_media(self, button):
         """
         Fix paths to moved media files.
         """
-        progress = ProgressMeter(self.window_name, can_cancel=True)
+        progress = ProgressMeter(self.window_name, can_cancel=True,
+                                 parent=self.window)
         progress.set_pass(_('Fixing file paths'), len(self.moved_files))
 
         with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
@@ -411,9 +414,9 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 if progress.get_cancelled():
                     break
 
-        progress.close()
         self.models[0].clear()
         self.show_tabs()
+        progress.close()
 
 #------------------------------------------------------------------------
 #
