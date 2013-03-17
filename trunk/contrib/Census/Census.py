@@ -35,7 +35,7 @@ import xml.dom.minidom
 # Gramps imports
 #
 #---------------------------------------------------------------
-import gramps.gen.datehandler
+from gramps.gen.datehandler import parser
 
 #------------------------------------------------------------------------
 #
@@ -144,7 +144,7 @@ def get_census_date(census_id):
     """
     Return the date for a given census.
     """
-    return gen.datehandler.parser.parse(CENSUS.get_date(census_id))
+    return parser.parse(CENSUS.get_date(census_id))
         
 def get_census_columns(census_id):
     """
