@@ -228,6 +228,11 @@ class CensusEditor(ManagedWindow):
         self.track = track
         self.db = dbstate.db
         
+        self._config = config.register_manager('census')
+        self._config.register('interface.census-width', 600)
+        self._config.register('interface.census-height', 400)
+        self._config.init()
+
         self.event = event
         self.citation = get_census_citation(self.db, self.event)
         if self.citation is None:
@@ -239,6 +244,10 @@ class CensusEditor(ManagedWindow):
         self.model = None
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
+
+        width = self._config.get('interface.census-width')
+        height = self._config.get('interface.census-height')
+        self.window.resize(width, height)
 
         self.place_field = PlaceEntry(self.dbstate, self.uistate, self.track,
                                       self.widgets['place_text'],
@@ -282,7 +291,6 @@ class CensusEditor(ManagedWindow):
         Create and display the GUI components of the editor.
         """
         root = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
-        root.set_default_size(600, 400)
         root.set_transient_for(self.uistate.window)
 
         vbox = Gtk.VBox()
@@ -712,6 +720,10 @@ class CensusEditor(ManagedWindow):
         """
         Display the relevant portion of GRAMPS manual
         """
+        (width, height) = self.window.get_size()
+        self._config.set('interface.census-width', width)
+        self._config.set('interface.census-height', height)
+        self._config.save()
         display_help(webpage='Census_Addons')
 
     def get_attribute(self, attrs, name):
