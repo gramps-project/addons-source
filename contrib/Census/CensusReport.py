@@ -26,7 +26,7 @@
 # Gramps modules
 #
 #------------------------------------------------------------------------
-import gramps.gen.datehandler
+from gramps.gen.datehandler import get_date
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import EventType
 from gramps.gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
@@ -160,7 +160,7 @@ class CensusReport(Report):
         self.doc.start_table("centab", "CEN-HeadingTable")
 
         # Date
-        self.write_heading(_("Date:"), gen.datehandler.get_date(event))
+        self.write_heading(_("Date:"), get_date(event))
         
         # Source Reference
         self.write_heading(_("Citation:"), citation.get_page())
