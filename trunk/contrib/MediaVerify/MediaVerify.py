@@ -167,7 +167,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 if page in (0, 1, 4):
                     self.edit(value)
                 elif page in (2, 3):
-                    self.display(value)
+                    self.display(unicode(value))
 
     def edit(self, handle):
         """
