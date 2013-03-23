@@ -36,6 +36,7 @@ import xml.dom.minidom
 #
 #---------------------------------------------------------------
 from gramps.gen.datehandler import parser
+from gramps.gen.config import config
 
 #------------------------------------------------------------------------
 #
@@ -59,6 +60,16 @@ CENSUS_TAG = _('Census')
 
 # Files which may contain census definitions
 definition_files = ['census.xml', 'test.xml', 'custom.xml']
+
+#------------------------------------------------------------------------
+#
+# Configuration file
+#
+#------------------------------------------------------------------------
+CONFIG = config.register_manager('census')
+CONFIG.register('interface.census-width', 600)
+CONFIG.register('interface.census-height', 400)
+CONFIG.init()
 
 #------------------------------------------------------------------------
 #
@@ -151,6 +162,12 @@ def get_census_columns(census_id):
     Return a list of columns for a given census.
     """
     return [x[0] for x in CENSUS.get_columns(census_id)]
+    
+def get_census_headings(census_id):
+    """
+    Return a list of headings for a given census.
+    """
+    return CENSUS.get_headings(census_id)
     
 def get_report_columns(census_id):
     """
