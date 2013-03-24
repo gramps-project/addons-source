@@ -297,25 +297,25 @@
     </census>
     <census id='UK1901' title='1901 England Census' date='31 Mar 1901'>
         <heading>
-            <_attribute>Parish or Township</_attribute>
+            <_attribute>Civil Parish</_attribute>
         </heading>
         <heading>
-            <_attribute>City or Municipal Borough</_attribute>
+            <_attribute>Ecclesiastical Parish</_attribute>
         </heading>
         <heading>
-            <_attribute>Municipal Ward</_attribute>
+            <_attribute>County Borough, Municipal Borough, or Urban District</_attribute>
         </heading>
         <heading>
-            <_attribute>Parliamentary Borough</_attribute>
+            <_attribute>Ward of Municipal Borough or of Urban District</_attribute>
         </heading>
         <heading>
-            <_attribute>Town</_attribute>
+            <_attribute>Rural District</_attribute>
         </heading>
         <heading>
-            <_attribute>Hamlet or Tything</_attribute>
+            <_attribute>Parliamentary Borough or Division</_attribute>
         </heading>
         <heading>
-            <_attribute>Ecclesiastical District</_attribute>
+            <_attribute>Town or Village or Hamlet</_attribute>
         </heading>
         <column>
             <_attribute>Name</_attribute>
@@ -419,7 +419,8 @@
             <_attribute>Disability</_attribute>
             <size>5</size>
         </column>
-    </census>    <census id='CY1891' title='1891 Wales Census' date='5 Apr 1891'>
+    </census>    
+    <census id='CY1891' title='1891 Wales Census' date='5 Apr 1891'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -493,25 +494,25 @@
     </census>
     <census id='CY1901' title='1901 Wales Census' date='31 Mar 1901'>
         <heading>
-            <_attribute>Parish or Township</_attribute>
+            <_attribute>Civil Parish</_attribute>
         </heading>
         <heading>
-            <_attribute>City or Municipal Borough</_attribute>
+            <_attribute>Ecclesiastical Parish</_attribute>
         </heading>
         <heading>
-            <_attribute>Municipal Ward</_attribute>
+            <_attribute>County Borough, Municipal Borough, or Urban District</_attribute>
         </heading>
         <heading>
-            <_attribute>Parliamentary Borough</_attribute>
+            <_attribute>Ward of Municipal Borough or of Urban District</_attribute>
         </heading>
         <heading>
-            <_attribute>Town</_attribute>
+            <_attribute>Rural District</_attribute>
         </heading>
         <heading>
-            <_attribute>Hamlet or Tything</_attribute>
+            <_attribute>Parliamentary Borough or Division</_attribute>
         </heading>
         <heading>
-            <_attribute>Ecclesiastical District</_attribute>
+            <_attribute>Town or Village or Hamlet</_attribute>
         </heading>
         <column>
             <_attribute>Name</_attribute>
