@@ -48,9 +48,6 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
-if not os.path.isdir(GRAMPSPATH + "/po"):
-    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
-
 command = sys.argv[1]
 if len(sys.argv) >= 3:
     addon = sys.argv[2]
@@ -195,6 +192,8 @@ elif command == "update":
            '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
+    if not os.path.isdir(GRAMPSPATH + "/po"):
+        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py update'" % GRAMPSPATH)
     locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
     # Next, get all of the translations from other addons:
     for module in [name for name in os.listdir(".") if os.path.isdir(name)]:
@@ -293,10 +292,13 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.insert(0, GRAMPSPATH)
-    os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-    from gramps.gen.const import GRAMPS_LOCALE as glocale
-    from gramps.gen.plug import make_environment, PTYPE_STR
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment, PTYPE_STR
+    except ImportError:
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
