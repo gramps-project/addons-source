@@ -10,7 +10,7 @@ register(GENERAL,
          name=_("DE Web Connect Pack"),
          description = _("Collection of Web sites for the DE (requires libwebconnect)"),
          status = UNSTABLE, # unicode issue with python 3
-         version = '0.0.11',
+         version = '0.0.12',
          gramps_target_version = "4.1",
          fname="DEWebPack.py",
          load_on_reg = True,
