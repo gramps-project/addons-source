@@ -31,7 +31,7 @@ id    = 'libaccess',
 name  = "Generic DB Access lib",
 description =  _("Provides a library for generic access to "
                  "the database and gen.lib."),
-version = '1.0.16',
+version = '1.0.17',
 gramps_target_version = '4.1',
 status = STABLE, # not yet tested with python 3
 fname = 'libaccess.py',
