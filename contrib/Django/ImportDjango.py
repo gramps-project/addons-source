@@ -52,9 +52,12 @@ from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.id import create_id
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-translator = glocale.get_addon_translator(__file__)
-_ = translator.gettext
-ngettext = translator.ngettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+ngettext = _trans.ngettext
 
 try:
     from django.conf import settings

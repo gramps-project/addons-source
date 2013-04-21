@@ -31,8 +31,12 @@ from gramps.gui.plug.quick import QuickTable
 from gramps.gen.display.name import displayer as nd
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
-ngettext = glocale.get_addon_translator(__file__).ngettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+ngettext = _trans.ngettext
 
 def run(database, document, *args, **kwargs):
     """

@@ -53,9 +53,12 @@ import gramps.gen.lib
 from gramps.gen.utils.alive import probably_alive
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-translator = glocale.get_addon_translator(__file__)
-_ = translator.gettext
-ngettext = translator.ngettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+ngettext = _trans.ngettext
 
 try:
     from django.conf import settings

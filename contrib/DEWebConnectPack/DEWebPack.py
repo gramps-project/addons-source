@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -23,7 +23,11 @@
 
 from libwebconnect import *
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 # Format: [[nav_type, id, name, url_pattern], ...]
 

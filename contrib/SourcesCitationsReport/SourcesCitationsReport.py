@@ -80,7 +80,6 @@ next steps:
 #import posixpath
 import time
 from collections import defaultdict
-from gen.ggettext import gettext as _
 
 #------------------------------------------------------------------------
 #
@@ -100,10 +99,12 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                             INDEX_TYPE_TOC, INDEX_TYPE_ALP, PARA_ALIGN_CENTER)                    
                     
 from Utils import media_path_full
-import DateHandler
-
-from TransUtils import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #------------------------------------------------------------------------
 #

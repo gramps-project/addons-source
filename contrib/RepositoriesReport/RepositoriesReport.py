@@ -40,7 +40,11 @@ from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 class RepositoryReport(Report):
     """

@@ -3,7 +3,7 @@ register(REPORT,
     name = _('Family Sheet'),
     description = _("Produces a family sheet showing full information "
                     "about a person and his/her partners and children."),
-    version = '3.4.19',
+    version = '3.4.20',
     gramps_target_version = '4.1',
     status = UNSTABLE, # AttributeError: 'module' object has no attribute 'lowercase'
     fname = 'FamilySheet.py',

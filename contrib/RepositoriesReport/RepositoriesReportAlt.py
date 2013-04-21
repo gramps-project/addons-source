@@ -46,14 +46,18 @@ from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.plugins.lib.libtranslate import Translator
+from gramps.gen.plug.report import stdoptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
-                             
-_ = glocale.get_addon_translator(__file__).gettext
+from gramps.gen.utils.grampslocale import GrampsLocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class RepositoryReportAlt(Report):
@@ -103,8 +107,8 @@ class RepositoryReportAlt(Report):
         self.inc_privat = get_value('incprivat')
         
         language = get_value('trans')
-        translator = Translator(language)
-        self._ = translator.gettext
+        locale = GrampsLocale(lang=language)
+        self._ = locale.translation.gettext
 
     def write_report(self):
         """
@@ -356,14 +360,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
         addopt('incprivat', incprivat)
 
-        trans = EnumeratedListOption(_("Translation"),
-                                      Translator.DEFAULT_TRANSLATION_STR)
-        trans.add_item(Translator.DEFAULT_TRANSLATION_STR, _("Default"))
-        languages = glocale.get_language_dict()
-        for language in sorted(languages):
-            trans.add_item(languages[language], language)
-        trans.set_help(_("The translation to be used for the report."))
-        addopt("trans", trans)
+        stdoptions.add_localization_option(menu, category_name)
 
     def make_default_style(self, default_style):
         """

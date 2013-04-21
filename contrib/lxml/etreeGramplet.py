@@ -42,7 +42,11 @@ import gzip
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from gramps.gen.const import USER_HOME, USER_PLUGINS
 from gramps.gen.utils.file import get_unicode_path_from_file_chooser
 from gramps.gui.dialog import ErrorDialog
