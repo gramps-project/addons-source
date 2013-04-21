@@ -40,7 +40,11 @@ from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 _REF_HANDLE_POS = 0
 _NOTE_HANDLE_POS = 1

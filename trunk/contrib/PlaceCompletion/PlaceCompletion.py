@@ -62,7 +62,11 @@ from gramps.gen.utils.place import conv_lat_lon
 from gramps.gen.errors import WindowActiveError
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 from gramps.gen.constfunc import cuni, lin
 

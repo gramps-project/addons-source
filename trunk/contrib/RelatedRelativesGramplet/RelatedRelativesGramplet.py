@@ -33,7 +33,11 @@ import posixpath
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.relationship import get_relationship_calculator
 import gramps.gen.datehandler

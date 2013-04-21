@@ -49,7 +49,11 @@ import re
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import URL_WIKISTRING
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #------------------------------------------------------------------------
 #

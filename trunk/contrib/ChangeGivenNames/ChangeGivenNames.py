@@ -47,7 +47,11 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from gramps.gui.glade import Glade
 
 import gramps.gen.constfunc

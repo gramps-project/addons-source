@@ -37,7 +37,11 @@ from gramps.gen.plug.report.utils import pt2cm
 import gramps.gui.plug.report
 import gramps.gen.datehandler
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 #------------------------------------------------------------------------

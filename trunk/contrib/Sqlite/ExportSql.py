@@ -46,8 +46,12 @@ log = logging.getLogger(".ExportSql")
 from gramps.gen.utils.id import create_id
 from gramps.gen.constfunc import cuni
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
-ngettext = glocale.get_addon_translator(__file__).ngettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+ngettext = _trans.ngettext
 
 #-------------------------------------------------------------------------
 #

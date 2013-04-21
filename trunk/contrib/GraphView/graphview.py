@@ -35,7 +35,11 @@ import os
 import sys
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf 
 import string
 from subprocess import Popen, PIPE

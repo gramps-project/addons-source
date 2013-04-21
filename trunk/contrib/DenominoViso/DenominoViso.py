@@ -167,7 +167,11 @@ from gramps.gen.constfunct import cuni
 # constants
 #
 #-------------------------------------------------------------------------
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 ext_confidence = confidence.copy()
 ext_confidence[len(confidence)] = _('No Source')
 

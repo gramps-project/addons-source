@@ -33,7 +33,11 @@ from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 import gramps.gen.lib
 
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 rel_calc = get_relationship_calculator()
 
 def levelname(inlaw, level):
