@@ -2,7 +2,7 @@ register(GRAMPLET,
          id="Headline News Gramplet", 
          name=_("Headline News Gramplet"), 
          description = _("Gramplet for showing latest the Gramps news"),
-         status = STABLE, # not yet tested with python 3
+         status = UNSTABLE, # syntax with python 3; line 136 except Exception, e:
          fname="HeadlineNewsGramplet.py",
          height=300,
          expand=True,
