@@ -337,7 +337,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     continue
 
                 rel_path = relative_path(full_path, media_path)
-                rel_path = rel_path.decode(sys.getfilesystemencoding())
+                if sys.version_info[0] < 3:
+                    rel_path = rel_path.decode(sys.getfilesystemencoding())
                 if md5sum in all_files:
                     all_files[md5sum].append(rel_path)
                 else:
