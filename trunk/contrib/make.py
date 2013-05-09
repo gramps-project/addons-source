@@ -336,17 +336,18 @@ elif command == "listing":
                     exec(code, make_environment(_=local_gettext),
                          {"register": register})
                 for p in sorted(plugins, key=itemgetter('ptype')):
-                    plugin = {"n": p["name"], 
-                              "i": p["id"], 
-                              "t": p["ptype"], 
-                              "d": p["description"], 
-                              "v": p["version"], 
-                              "g": p["gramps_target_version"], 
-                              "z": "%s.addon.tgz" % gpr.split("/",1)[0], 
-                              }
                     if (("include_in_listing" in p and p["include_in_listing"]) or 
                         ("include_in_listing" not in p)):
-                        print(plugin, file=fp)
+                        dictstring = ('{"n": "'+ p["name"] + '",'+
+                              '"i": "' + p["id"] +  '",' +
+                              '"t": "' + p["ptype"]+  '",' +
+                              '"d": "' + p["description"]+  '",'+
+                              '"v": "' + p["version"]+  '",'+
+                              '"g": "' + p["gramps_target_version"]+  '",'+
+                              '"z": "' + "%s.addon.tgz" % gpr.split("/",1)[0] +  '"' +
+                              '}')
+                        fp.write(dictstring.encode('utf-8'))
+                        fp.write('\n')
                     else:
                         print("   ignoring '%s'" % (p["name"]))
         fp.close()
