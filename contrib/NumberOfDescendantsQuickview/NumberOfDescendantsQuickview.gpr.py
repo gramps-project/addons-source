@@ -4,7 +4,7 @@ register(QUICKREPORT,
          description= _("Shows the number of descendants of the current person"),
          version = '3.4.16',
          gramps_target_version = '4.1',
-         status = UNSTABLE, # not yet tested with python 3, error on unicode row
+         status = STABLE,
          fname = 'NumberOfDescendantsQuickview.py',
          authors = ["Reinhard Mueller"],
          authors_email = ["reinhard.mueller@igal.at"],
