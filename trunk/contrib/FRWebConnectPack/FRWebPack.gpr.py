@@ -9,7 +9,7 @@ register(GENERAL,
          id="FR Web Connect Pack",
          name=_("FR Web Connect Pack"),
          description = _("Collection of Web sites for the FR (requires libwebconnect)"),
-         status = UNSTABLE, # unicode issue with python 3
+         status = STABLE,
          version = '1.0.18',
          gramps_target_version = "4.1",
          fname="FRWebPack.py",

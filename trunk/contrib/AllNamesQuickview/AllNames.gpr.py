@@ -4,7 +4,7 @@ register(QUICKREPORT,
          description= _("Display all names of all people"),
          version = '1.0.15',
          gramps_target_version = '4.1',
-         status = UNSTABLE, # TypeError: unorderable types: Person() < Person()
+         status = STABLE,
          fname = 'AllNames.py',
          authors = ["Douglas Blank"],
          authors_email = ["dblank@cs.brynmawr.edu"],
