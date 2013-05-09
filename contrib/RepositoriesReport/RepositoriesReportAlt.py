@@ -33,6 +33,7 @@ Display Sources related to repositories
 #-------------------------------------------------------------------------
 
 import os
+import gettext
 
 #-------------------------------------------------------------------------
 #
@@ -41,7 +42,6 @@ import os
 #-------------------------------------------------------------------------
 
 from gramps.gen.const import USER_PLUGINS
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
@@ -52,12 +52,17 @@ import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
-from gramps.gen.utils.grampslocale import GrampsLocale
+                             
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
+LOCALEDOMAIN = 'addon'
+
+
 
 
 class RepositoryReportAlt(Report):
@@ -107,8 +112,7 @@ class RepositoryReportAlt(Report):
         self.inc_privat = get_value('incprivat')
         
         language = get_value('trans')
-        locale = GrampsLocale(lang=language)
-        self._ = locale.translation.gettext
+        locale = self.set_locale(language)
 
     def write_report(self):
         """

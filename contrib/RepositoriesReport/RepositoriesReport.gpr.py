@@ -26,7 +26,7 @@ register(REPORT,
          description =  _("Produces a textual repositories report"),
          version = '0.3.10',
          gramps_target_version = '4.1',
-         status = UNSTABLE, # get_language_string migration, not yet tested with python 3
+         status = STABLE, # not yet tested with python 3
          fname = 'RepositoriesReportAlt.py',
          authors = ["Jerome Rapinat"],
          authors_email = ["romjerome@yahoo.fr"],
