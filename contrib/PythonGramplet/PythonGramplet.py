@@ -48,7 +48,8 @@ import gramps.gen
 class PythonGramplet(Gramplet):
     def init(self):
         import gc
-        gc.set_debug(gc.DEBUG_UNCOLLECTABLE|gc.DEBUG_OBJECTS|gc.DEBUG_SAVEALL)
+        # gc.DEBUG_OBJECTS not present in python3
+        gc.set_debug(gc.DEBUG_UNCOLLECTABLE|gc.DEBUG_SAVEALL)
         self.prompt = ">"
         self.previous = ""
         self.set_tooltip(_("Enter Python expressions"))
@@ -99,7 +100,7 @@ class PythonGramplet(Gramplet):
             self.previous = ""
         except:
             try:
-                exec exp in self.env
+                exec(exp, self.env)
                 self.previous = ""
                 self.prompt = ">"
             except SyntaxError:
