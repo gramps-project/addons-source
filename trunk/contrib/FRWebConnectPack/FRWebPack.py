@@ -19,7 +19,9 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: $
+# $Id$
+
+from __future__ import unicode_literals
 
 from libwebconnect import *
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -37,14 +39,14 @@ _ = _trans.gettext
 # http://www.cybergenealogie.fr/cailgeo/us/screch.php
 
 WEBSITES = [
-    ["Person", u"Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/genealogie/?action_type=search&lang=fr&search_nom=%(surname)s&search_prenom=%(given)s"],
+    ["Person", "Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/genealogie/?action_type=search&lang=fr&search_nom=%(surname)s&search_prenom=%(given)s"],
     ["Person", "Geneabank", _("Genealogical bank"), "http://gbkcouples.geneabank.org/nom/?name=%(surname)s&place=&start=&end=&source=gbk*"],
-    #["Person", u"Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
+    #["Person", "Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
     ["Person", "Fichier Origine", _("OrigineFile (Quebec)"), "http://www.fichierorigine.com/recherche.php?nom=%(surname)s"],
-    ["Person", "Geneanet", "Geneanet", u"http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
+    ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
     ["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"],
     ["Person", "Roglo", "Roglo", "http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN"],
-    #["Person", "FamilySearch", _("FamilySearch.org"), u"https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
+    #["Person", "FamilySearch", _("FamilySearch.org"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
     ["Person", "CAILGEO", _("Cyber genealogy"), "http://www.cybergenealogie.fr/cailgeo/fr/cail01n.php?nomr=%(surname)s"],
     ["Person", "Gallica", "Gallica", '''http://gallica.bnf.fr/Search?ArianeWireIndex=index&p=1&lang=FR&q="%(surname)s,+%(given)s"'''],
     ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
@@ -54,7 +56,7 @@ WEBSITES = [
     ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
     ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
     #["Place", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&place=%(city)s"],
-    #["Place", u"Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=villages&d=villages&c=villages&f=results&p=&page=&lieu2=%(city)s"],
+    #["Place", "Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=villages&d=villages&c=villages&f=results&p=&page=&lieu2=%(city)s"],
     #["Place", "Fichier Origine", _("OrigineFile (Quebec)"), "http://www.fichierorigine.com/recherche.php?commune=%(city)s&pays=%(country)s"],
     #["Place", "Gallica", "Gallica", "http://gallica.bnf.fr/Search?ArianeWireIndex=index&p=1&lang=FR&q=%(city)s"],
     #["Place", "Archive.org", "Archive.org", "http://www.archive.org/search.php?query=%(city)s"],
