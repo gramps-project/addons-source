@@ -137,7 +137,7 @@ class HeadlineNewsGramplet(Gramplet):
             elif feed_type == "rss":
                 try:
                     xmldoc = minidom.parse(fp)
-                except Exception, e:
+                except Exception as e:
                     print "Headline News Gramplet Error: RSS parse failed on '%s': %s" % (feed_description, e)
                     continue
                 if fresh:
