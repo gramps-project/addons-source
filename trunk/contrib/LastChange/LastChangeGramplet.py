@@ -74,7 +74,7 @@ class LastChangeGramplet(Gramplet):
             counter += 1
 
     def _getTimestamp(self, person_handle):
-        timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
+        timestamp = self.dbstate.db.person_map.get(person_handle)[17]
         return timestamp
 
     def db_changed(self):
