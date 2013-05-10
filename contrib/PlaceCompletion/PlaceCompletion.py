@@ -925,10 +925,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         try :
             infile = codecs.open(filename, 'r',"utf-8")
             self.latlonfile_datastr = infile.read()
-        except UnicodeDecodeError, reason :
-            #mention problem, and try to continu:
-            print reason
-            msg = 'There was a problem reading the file: '+str(reason)+'\n' \
+        except UnicodeDecodeError as err:
+            #mention problem, and try to continue:
+            msg = 'There was a problem reading the file: ' + err.reason + '\n' \
                     +'A second attempt will be made, ignoring errors...'
             OkDialog(_('Problem reading file'),msg,self.window)
             infile = codecs.open(filename, 'r',"utf-8",errors='ignore')
@@ -1041,8 +1040,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif convtype == 'DGtDC' :
             latnew, lonnew = conv_lat_lon(lat,lon, type)
             #remove trailing zeros :
-            if latnew : latnew = str(float(latnew))
-            if lonnew : lonnew = str(float(lonnew))
+            if latnew : latnew = cuni(float(latnew))
+            if lonnew : lonnew = cuni(float(lonnew))
         else :
             latnew, lonnew = conv_lat_lon(lat,lon, type)
 
