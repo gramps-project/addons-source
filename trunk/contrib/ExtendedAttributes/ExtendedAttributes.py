@@ -34,10 +34,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-if sys.version_info[0] < 3:
-    _ = glocale.get_addon_translator(__file__).ugettext
-else:
-    try:
+try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
@@ -87,7 +84,7 @@ class Attributes(Gramplet):
         for attr in obj.get_attribute_list():
             self.model.add((event_date,
                             event_sort,
-                            attr.get_type(),
+                            str(attr.get_type()),
                             attr.get_value(),
                             handle
                             ))
