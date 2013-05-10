@@ -23,6 +23,9 @@
 
 """Reports/Graphical Reports/Family Tree"""
 
+from __future__ import unicode_literals
+import sys
+
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -394,7 +397,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
                     spouse_handle = father_handle
 
                 if len(family_handles) > 1:
-                    spouse_number = unichr(0x2160 + len(person_node['family_list'])) + ". "
+                    if sys.version_info[0] < 3:
+                        spouse_number = unichr(0x2160 + len(person_node['family_list'])) + ". "
+                    else:
+                        spouse_number = chr(0x2160 + len(person_node['family_list'])) + ". "
                 else:
                     spouse_number = ""
                 if spouse_handle is not None:
@@ -758,12 +764,12 @@ class FamilyTree(gramps.gen.plug.report.Report):
                 death_text = None
             if birth_text:
                 if death_text:
-                    result.append(u"%s - %s" % (birth_text, death_text))
+                    result.append("%s - %s" % (birth_text, death_text))
                 else:
-                    result.append(u"* %s" % birth_text)
+                    result.append("* %s" % birth_text)
             else:
                 if death_text:
-                    result.append(u"\u271D %s" % death_text)
+                    result.append("\u271D %s" % death_text)
 
         return result
 
@@ -825,12 +831,12 @@ class FamilyTree(gramps.gen.plug.report.Report):
                 divorce_text = None
             if marriage_text:
                 if divorce_text:
-                    return [u"\u26AD %s - %s" % (marriage_text, divorce_text)]
+                    return ["\u26AD %s - %s" % (marriage_text, divorce_text)]
                 else:
-                    return [u"\u26AD %s" % marriage_text]
+                    return ["\u26AD %s" % marriage_text]
             else:
                 if divorce_text:
-                    return [u"\u26AE %s" % divorce_text]
+                    return ["\u26AE %s" % divorce_text]
                 else:
                     return []
 
