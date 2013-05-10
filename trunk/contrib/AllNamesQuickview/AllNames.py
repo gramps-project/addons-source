@@ -32,11 +32,11 @@ from gramps.gen.display.name import displayer as nd
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
-    _trans = glocale.get_addon_translator(__file__)
+    trans = glocale.get_addon_translator(__file__)
 except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
-ngettext = _trans.ngettext
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
 
 def run(database, document, *args, **kwargs):
     """
@@ -63,9 +63,9 @@ def run(database, document, *args, **kwargs):
                    person, 
                    str(name.get_type())) for name in  
                   person.get_alternate_names()]
-    names.sort()
+
     matches = 0
-    for (name, person, name_type) in names:
+    for (name, person, name_type) in sorted(names, key=lambda x: x[0]):
         stab.row(name, person, name_type)
         matches += 1
     sdoc.paragraph(_("Total names %d") % matches)
