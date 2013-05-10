@@ -25,7 +25,7 @@
 Display references for any object
 """
 
-from gramps.gen.simple import SimpleAccess, SimpleDoc, by_date
+from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.gui.plug.quick import QuickTable
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.lib.date import Today
@@ -169,10 +169,8 @@ def run(database, document, person):
     event_list = []
 
     process(database, sa, event_list, handled, person, False, person)
-    # DeprecationWarning: the cmp argument is not supported in 3.x
-    event_list.sort(lambda a,b: by_date(a[0], b[0]))
 
-    for (event, obj, desc) in event_list:
+    for (event, obj, desc) in sorted(event_list, key=by_date):
         edate = sa.event_date_obj(event)
         span_str, span_int = format_date(birth_date, edate, obj == person)
         if desc == None:
@@ -208,4 +206,8 @@ def get_event_date_from_ref(database, ref):
                 date = event.get_date_object()
     return date
 
-
+def by_date(element):
+    """
+    Returns a sort key for an element in an event list.
+    """
+    return element[0].get_date_object().get_sort_value()
