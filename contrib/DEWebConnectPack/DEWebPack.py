@@ -19,7 +19,9 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: $
+# $Id$
+
+from __future__ import unicode_literals
 
 from libwebconnect import *
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -34,7 +36,7 @@ _ = _trans.gettext
 # http://gramps-project.org/wiki/index.php?title=Resources_and_related_sites#German_information_sites
 
 WEBSITES = [
-    ["Person", u"Bielefeld Academic Search", _("Bielefeld Academic Search"), "http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
+    ["Person", "Bielefeld Academic Search", _("Bielefeld Academic Search"), "http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
     ["Person", "FamilySearch", _("FamilySearch.org"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
     ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
