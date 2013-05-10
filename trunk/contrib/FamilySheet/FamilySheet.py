@@ -23,6 +23,8 @@
 
 """Reports/Text Reports/Family Sheet"""
 
+from __future__ import unicode_literals
+
 #------------------------------------------------------------------------
 #
 # Standard Python modules
@@ -215,7 +217,7 @@ class FamilySheet(Report):
             self.__dump_family(family, spouse)
             if refer_spouse:
                 self.doc.start_paragraph('FSR-Normal')
-                self.doc.write_text(_(u"\u2192 %s") % spouse_key)
+                self.doc.write_text(_("\u2192 %s") % spouse_key)
                 self.doc.end_paragraph()
             self.doc.end_cell()
 
@@ -231,7 +233,7 @@ class FamilySheet(Report):
             # Children
             for child_ref in family.get_child_ref_list():
                 child = self.database.get_person_from_handle(child_ref.ref)
-                child_letter = string.lowercase[child_index]
+                child_letter = string.ascii_lowercase[child_index]
 
                 self.doc.start_row()
 
@@ -258,7 +260,7 @@ class FamilySheet(Report):
                             self.__calc_person_key(child)
 
                     self.doc.start_paragraph('FSR-Normal')
-                    self.doc.write_text(_(u"\u2192 %s") % child_key)
+                    self.doc.write_text(_("\u2192 %s") % child_key)
                     self.doc.end_paragraph()
 
                     # We recursively print this child *only* if its
@@ -644,7 +646,7 @@ class FamilySheet(Report):
                 family = self.database.get_family_from_handle(family_handle)
                 for child_ref in family.get_child_ref_list():
                     if child_ref.ref == child.get_handle():
-                        childletter = string.lowercase[index]
+                        childletter = string.ascii_lowercase[index]
                         break
                     index += 1
                 else:
