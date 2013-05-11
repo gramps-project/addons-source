@@ -21,6 +21,13 @@
 
 #------------------------------------------------------------------------
 #
+# Python modules
+#
+#------------------------------------------------------------------------
+import sys
+
+#------------------------------------------------------------------------
+#
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
@@ -49,7 +56,7 @@ def exportData(database, filename,
         # ---------------------------------
         for note_handle in database.note_map.keys():
             note = database.note_map[note_handle]
-            print >> fp, "note:", note_handle, note
+            write_line(fp, "note:", note_handle, note)
             count += 1
             callback(100 * count/total)
 
@@ -58,7 +65,7 @@ def exportData(database, filename,
         # ---------------------------------
         for event_handle in database.event_map.keys():
             event = database.event_map[event_handle]
-            print >> fp, "event:", event_handle, event
+            write_line(fp, "event:", event_handle, event)
             count += 1
             callback(100 * count/total)
 
@@ -67,7 +74,7 @@ def exportData(database, filename,
         # ---------------------------------
         for person_handle in database.person_map.keys():
             person = database.person_map[person_handle]
-            print >> fp, "person:", person_handle, person
+            write_line(fp, "person:", person_handle, person)
             count += 1
             callback(100 * count/total)
 
@@ -76,7 +83,7 @@ def exportData(database, filename,
         # ---------------------------------
         for family_handle in database.family_map.keys():
             family = database.family_map[family_handle]
-            print >> fp, "family:", family_handle, family
+            write_line(fp, "family:", family_handle, family)
             count += 1
             callback(100 * count/total)
 
@@ -85,7 +92,7 @@ def exportData(database, filename,
         # ---------------------------------
         for repository_handle in database.repository_map.keys():
             repository = database.repository_map[repository_handle]
-            print >> fp, "repository:", repository_handle, repository
+            write_line(fp, "repository:", repository_handle, repository)
             count += 1
             callback(100 * count/total)
 
@@ -94,7 +101,7 @@ def exportData(database, filename,
         # ---------------------------------
         for place_handle in database.place_map.keys():
             place = database.place_map[place_handle]
-            print >> fp, "place:", place_handle, place
+            write_line(fp, "place:", place_handle, place)
             count += 1
             callback(100 * count/total)
 
@@ -103,7 +110,7 @@ def exportData(database, filename,
         # ---------------------------------
         for source_handle in database.source_map.keys():
             source = database.source_map[source_handle]
-            print >> fp, "source:", source_handle, source
+            write_line(fp, "source:", source_handle, source)
             count += 1
             callback(100 * count/total)
 
@@ -112,9 +119,16 @@ def exportData(database, filename,
         # ---------------------------------
         for media_handle in database.media_map.keys():
             media = database.media_map[media_handle]
-            print >> fp, "media:", media_handle, media
+            write_line(fp, "media:", media_handle, media)
             count += 1
             callback(100 * count/total)
 
     return True
 
+def write_line(fp, heading, handle, obj):
+    """
+    Write a single object to the file.
+    """
+    if sys.version_info[0] >= 3:
+        handle = handle.decode()
+    fp.write("%s %s %s\n" % (heading, handle, obj))
