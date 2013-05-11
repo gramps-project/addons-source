@@ -25,7 +25,7 @@ register(REPORT,
          description =  _("Produces descendants lines of a person"),
          version = '0.1.19',
          gramps_target_version = '4.1',
-         status = STABLE, # not yet tested with python 3, reduce() not supported in 3.x; use functools.reduce()
+         status = STABLE,
          fname = 'DescendantsLines.py',
          category = CATEGORY_DRAW,
          reportclass = 'DescendantsLinesReport',
