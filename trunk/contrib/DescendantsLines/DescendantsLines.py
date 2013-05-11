@@ -47,8 +47,11 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 """
-Print Descendants Lines (experimental migration, UNSTABLE)
+Print Descendants Lines
 """
+
+from __future__ import print_function, unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # python modules
@@ -61,7 +64,7 @@ import xml.dom.minidom
 import xml.sax.saxutils
 import getopt
 import sys
-import codecs
+import io
 import os.path
 import copy
 #-------------------------------------------------------------------------
@@ -349,8 +352,7 @@ class DescendantsLinesReport(Report):
         
         filename = os.path.join(USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
                   
-        xml_file = open(filename, "w")
-        self.xml_file = codecs.getwriter("utf8")(xml_file)
+        self.xml_file = io.open(filename, "w", encoding="utf8")
         self.write_xml_head()
         
         self.xml_file.write('<people>\n')
@@ -372,6 +374,8 @@ class DescendantsLinesReport(Report):
         # avoid duplicated families
         
         fams = self.database.get_family_handles()
+        if sys.version_info[0] >= 3:
+            fams = [handle.decode() for handle in fams]
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
             
@@ -383,7 +387,7 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('</families>\n')
         
         self.write_xml_end()
-        xml_file.close()
+        self.xml_file.close()
     
     def write_xml_head(self):
         """
@@ -401,6 +405,8 @@ class DescendantsLinesReport(Report):
         Writes the person part of the xml file.
         """
                  
+        if sys.version_info[0] >= 3:
+            child = child.decode()
         self.xml_file.write('<person id="%s" handle="%s">\n' % (identifiant, child))
         self.xml_file.write('<gender>%s</gender>\n' % gender)
         self.xml_file.write('<name>%s</name>\n' % \
@@ -617,8 +623,10 @@ class Person(Memorised):
         return size_text(self.text)[1]
 
     def glh(self):
-        return reduce(lambda a, b: a + b, [f.get('glh') for f in
-                      self.families], 0)
+        total = 0
+        for f in self.families:
+            total += f.get('glh')
+        return total
 
     def o(self):
         if self.prevsib is None:
@@ -627,10 +635,11 @@ class Person(Memorised):
             return self.prevsib.get('o') + self.prevsib.get('w') + C_PAD
 
     def ch(self):
-        ch = reduce(max, [f.get('ch') for f in self.families], 0)
-        if ch != 0:
-            ch += O_DOWN + C_UP
-        return ch
+        biggest = 0
+        for f in self.families:
+            if f.get('ch') > biggest:
+                biggest = f.get('ch')
+        return biggest + O_DOWN + C_UP if biggest else 0
 
     def w(self):
         w = self.get('go') + self.get('tw') / 2
@@ -798,18 +807,23 @@ class Family(Memorised):
                  + self.children[-1].get('w')
 
     def ch(self):
-        return reduce(max, [c.get('h') for c in self.children], 1)
+        biggest = 1
+        for c in self.children:
+            if c.get('h') > biggest:
+                biggest = c.get('h')
+        return biggest
 
     def oloc(self):
         if self.children == []:
             return 0
         else:
-            return reduce(lambda a, b: a + b, [c.get('o') + c.get('go')
-                          for c in self.children]) / len(self.children)
-
+            total = 0
+            for c in self.children:
+                total += c.get('o') + c.get('go')
+            return total / len(self.children)
 
 def load_gramps(fn, start):
-    f = open(fn, 'r')
+    f = io.open(fn, 'r')
     #f = gzip.open(fn, 'r')
     x = xml.dom.minidom.parse(f)
     f.close()
@@ -909,12 +923,12 @@ def load_gramps(fn, start):
         if len(bsv) > 0:
             po.birth_s = bsv[0].getAttribute('val')
         else:
-            print 'No birth event information found: %s' % handle
+            print('No birth event information found: %s' % handle)
         dsv = p.getElementsByTagName('death_sval')
         if len(dsv) > 0:
             po.death_s = dsv[0].getAttribute('val')
         else:
-            print 'No death event information found: %s' % handle
+            print('No death event information found: %s' % handle)
         tpeople[id] = po
         for fr in p.getElementsByTagName('famref'):
             parents.setdefault(id, []).append(fr.getAttribute('famrefid'))
@@ -952,7 +966,7 @@ def load_gramps(fn, start):
             if len(msv) > 0:
                 fo.marriage_s = msv[0].getAttribute('val')
             else:
-                print 'No marriage event information found: %s' % f.getAttribute('handle')
+                print('No marriage event information found: %s' % f.getAttribute('handle'))
         for p in f.getElementsByTagName('childref'):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
@@ -970,7 +984,7 @@ def load_gramps(fn, start):
                     spo = tpeople[fo.spouse(p_id)]
                     fm = Family(p, Person(spo.text(marriage_s=fo.marriage_s)))
                 else:
-                    print 'Unknown spouse:', p_id
+                    print('Unknown spouse:', p_id)
                     fm = Family(p, Person(Unknown.text()))
                 if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
                     for cpid in fo.children:
