@@ -18,13 +18,19 @@
 
 # $Id: $
 
+from __future__ import print_function
+
 #------------------------------------------------------------------------
 #
 # Python modules
 #
 #------------------------------------------------------------------------
 import time
-import StringIO
+import sys
+if sys.version_info[0] < 3:
+    from cStringIO import StringIO
+else:
+    from io import StringIO
 from xml.parsers.expat import ParserCreate
 
 #------------------------------------------------------------------------
@@ -197,9 +203,8 @@ class ImportGramplet(Gramplet):
         actiongroup.add_actions([
             ('import', None, _("_Import"), '<Alt>i', None, self.run),
             ('clear', Gtk.STOCK_CLEAR, None, None, None, self.clear)])
-        # TO_FIX: AttributeError: 'Action' object has no attribute 'connect_proxy'
-        #actiongroup.get_action('import').connect_proxy(import_button)
-        #actiongroup.get_action('clear').connect_proxy(clear_button)
+        import_button.set_related_action(actiongroup.get_action('import'))
+        clear_button.set_related_action(actiongroup.get_action('clear'))
         # show
         vbox.show_all()
 
@@ -216,15 +221,15 @@ class ImportGramplet(Gramplet):
         buffer = self.import_text.get_buffer()
         start = buffer.get_start_iter()
         end = buffer.get_end_iter()
-        text = buffer.get_text(start, end).strip()
+        text = buffer.get_text(start, end, True).strip()
         if not text:
             return
-        print text
+        print(text)
         self.uistate.set_busy_cursor(1)
         self.uistate.progress.show()
         self.uistate.push_message(self.dbstate, _("Importing Text..."))
         database = self.dbstate.db
-        ifile = StringIO.StringIO(text)
+        ifile = StringIO(text)
         if text.startswith(("Person,Surname,Given", "%s,%s,%s" %
                             (_("Person"), _("Surname"), _("Given")))):
             parser = AtomicCSVParser(database)
@@ -235,7 +240,7 @@ class ImportGramplet(Gramplet):
             parser = AtomicVCardParser(database)
             parser.parse(ifile)
         elif text.find("""<!DOCTYPE database PUBLIC "-//Gramps//""") > 0:
-            ofile = StringIO.StringIO(text)
+            ofile = StringIO(text)
             person_count = 0
             line_count = 0
             for line in ofile:
@@ -246,7 +251,7 @@ class ImportGramplet(Gramplet):
             parser = AtomicGrampsParser(database, None, change)
             try:
                 info = parser.parse(ifile, line_count, person_count)
-                print info.info_text()
+                print(info.info_text())
             except:
                 import traceback
                 traceback.print_exc()
