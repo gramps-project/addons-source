@@ -56,16 +56,16 @@ class FaceDetection(Gramplet):
         self.top = Gtk.HBox()
         # first column:
         vbox = Gtk.VBox()
-        self.top.pack_start(vbox, fill=False, expand=False)
+        self.top.pack_start(vbox, False, False, 0)
         self.photo = Photo()
-        vbox.pack_start(self.photo, fill=False, expand=False, padding=5)
+        vbox.pack_start(self.photo, False, False, 5)
         self.detect_button = Gtk.Button(_("Detect New Faces"))
         self.detect_button.connect('button-press-event', self.detect)
-        vbox.pack_start(self.detect_button, fill=False, expand=False)
+        vbox.pack_start(self.detect_button, False, False, 0)
         # second column
         vbox = Gtk.VBox()
-        vbox.pack_start(Gtk.Label("Image:"), fill=False, expand=False)
-        self.top.pack_start(vbox, fill=False, expand=False)
+        vbox.pack_start(Gtk.Label("Image:"), False, False, 0)
+        self.top.pack_start(vbox, False, False, 0)
         # show and return:
         self.top.show_all()
         return self.top
