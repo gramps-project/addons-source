@@ -7,7 +7,7 @@ register(VIEW,
          gramps_target_version = '4.1',
          status = UNSTABLE, # ImportError: No module named 'cStringIO'
          fname = 'graphview.py',
-         authors = [u"Gary Burton"],
+         authors = ["Gary Burton"],
          authors_email = ["gary.burton@zen.co.uk"],
          viewclass = 'GraphView',
   )
