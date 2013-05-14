@@ -146,7 +146,7 @@ class PageLinks:
 
     def getSource(self, p_handle):
         """Return a string with the page number for the given person handle."""
-        if self._index_by_handle.has_key(p_handle):
+        if p_handle in self._index_by_handle:
             source_text = str(self._index_by_handle[p_handle][0])
         else:
             source_text = ""
@@ -158,7 +158,7 @@ class PageLinks:
 
     def getLink(self, p_handle):
         """Return a string with the link page number if the page limit has not been reached"""
-        if self.gen_limit > _MIN_PERSON_LIMIT and self._index_by_handle.has_key(p_handle):
+        if self.gen_limit > _MIN_PERSON_LIMIT and p_handle in self._index_by_handle:
             link_text = str(self._index_by_handle[p_handle][1])
         else:
             link_text = ""
@@ -283,7 +283,7 @@ class PersonBox:
     def getPos(self):
         """Return precalculated coordinates that are determined by the person's index"""
         # person's index determines which box they occupy on the page
-        if self.report.coordinates.has_key(self.index):
+        if self.index in self.report.coordinates:
             coord = self.report.coordinates[self.index]
         return coord
 
@@ -463,7 +463,7 @@ class PedigreeChart(Report):
         source_page - the previous page where person_handle is listed
 
         """
-        current_page = self.page_number.next()
+        current_page = next(self.page_number)
         self.map = {}
         gen_limit = self.max_generations - (depth * _GENERATIONS_PER_PAGE)
         self._get_parents(person_handle, 1, gen_limit)
@@ -474,9 +474,9 @@ class PedigreeChart(Report):
         # we only want to print the page if it shows more than one person
         if gen_limit > _MIN_PERSON_LIMIT:
             for i in range(_LINKS_BEGIN, _PEOPLE_PER_PAGE + 1):
-                if self.map.has_key(i):
+                if i in self.map:
                     if self.map[i].familyContinues():
-                        page_links.add(self.map[i].person_handle, current_page, self.page_link_counter.next())
+                        page_links.add(self.map[i].person_handle, current_page, next(self.page_link_counter))
             # generate the page
             self.doc.start_page()
             self.doc.center_text('PC-title', self.title,
