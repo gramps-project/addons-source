@@ -21,6 +21,8 @@
 
 "Export to SQLite Database"
 
+from __future__ import print_function
+
 #------------------------------------------------------------------------
 #
 # Standard Python Modules
@@ -47,11 +49,11 @@ from gramps.gen.utils.id import create_id
 from gramps.gen.constfunc import cuni
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
-    _trans = glocale.get_addon_translator(__file__)
+    trans = glocale.get_addon_translator(__file__)
 except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
-ngettext = _trans.ngettext
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
 
 #-------------------------------------------------------------------------
 #
@@ -372,8 +374,8 @@ class Database(object):
                 if not self.batch:
                     self.db.commit()
             except:
-                print "ERROR: query :", q
-                print "ERROR: values:", args
+                print("ERROR: query :", q)
+                print("ERROR: values:", args)
                 raise
             return self.cursor.fetchall()
 
@@ -813,7 +815,7 @@ def export_location(db, from_type, from_handle, location):
     elif len(location) == 2:
         ((street, locality, city, county, state, country, postal, phone), parish) = location 
     else:
-        print "ERROR: what kind of location is this?", location
+        print("ERROR: what kind of location is this?", location)
         return
     handle = create_id()
     db.query("""INSERT INTO location (
@@ -1075,7 +1077,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_datamap_dict(db, "citation", handle, datamap)
         export_date(db, "citation", handle, date)
         export_list(db, "citation", handle, "note", note_list) 
-        export_media_ref_list(db, "citation", handle, "media", media_list) 
+        export_media_ref_list(db, "citation", handle, media_list) 
         count += 1
         callback(100 * count/total)
 
@@ -1160,7 +1162,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
 
     total_time = time.time() - start
     msg = ngettext('Export Complete: %d second','Export Complete: %d seconds', total_time ) % total_time
-    print msg
+    print(msg)
     return True
 
 # Future ideas
