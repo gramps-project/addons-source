@@ -34,6 +34,13 @@ from gi.repository import Gtk
 from gramps.plugins.export import exportgedcom
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.errors import DatabaseError
+from gramps.gen.lib import EventRoleType
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 class GedcomWriterExtension(exportgedcom.GedcomWriter):
     """
@@ -60,7 +67,8 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
                 person = self.dbase.get_person_from_handle(handle)
                 for ref in person.get_event_ref_list():
                     if (ref.ref == event.handle and 
-                        int(ref.get_role()) == gramps.gen.lib.EventRoleType.WITNESS):
+                        int(ref.get_role()) == EventRoleType.WITNESS):
+                        level = 1
                         self._writeln(level, "ASSO", "@%s@" % person.get_gramps_id())
                         self._writeln(level+1, "TYPE", "INDI")
                         self._writeln(level+1, "RELA", "Witness")
@@ -112,9 +120,9 @@ def export_data(database, filename, user, option_box=None):
     try:
         ged_write = GedcomWriterExtension(database, user, option_box)
         ret = ged_write.write_gedcom_file(filename)
-    except IOError, msg:
+    except IOError as msg:
         msg2 = _("Could not create %s") % filename
-        user.notify_error(msg2, str(msg))
-    except DatabaseError, msg:
-        user.notify_db_error(_("Export failed"), str(msg))
+        user.notify_error(msg2, msg)
+    except DatabaseError as msg:
+        user.notify_db_error(_("Export failed"), msg)
     return ret
