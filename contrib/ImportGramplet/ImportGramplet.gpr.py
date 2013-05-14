@@ -8,7 +8,7 @@ register(GRAMPLET,
          id="Import Gramplet", 
          name=_("Import Gramplet"), 
          description = _("Gramplet for importing text"),
-         status = UNSTABLE, # not yet tested with python 3
+         status = STABLE,
          version = '1.0.18',
          gramps_target_version = "4.1",
          height=200,
