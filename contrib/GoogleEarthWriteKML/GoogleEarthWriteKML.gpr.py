@@ -34,6 +34,6 @@ register(MAPSERVICE,
     fname = 'GoogleEarthWriteKML.py',
     description = _("Creates data file for GoogleEarth and opens it"),
     mapservice = 'GoogleEarthService',
-    authors=[u"Peter Landgren"],
+    authors=["Peter Landgren"],
     authors_email=["peter.talken@telia.com"],
     )
