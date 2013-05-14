@@ -26,6 +26,8 @@
 
 # $Id$
 
+from __future__ import unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -43,7 +45,10 @@ _ = _trans.gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf 
 import string
 from subprocess import Popen, PIPE
-from cStringIO import StringIO
+if sys.version_info[0] < 3:
+    from cStringIO import StringIO
+else:
+    from io import StringIO
 
 #-------------------------------------------------------------------------
 #
@@ -341,7 +346,7 @@ class GraphWidget(object):
         dot.build_graph(active_person)
 
         # Build the rest of the widget by parsing SVG data from Graphviz
-        dot_data = dot.get_dot()
+        dot_data = dot.get_dot().encode('utf8')
         svg_data = Popen(['dot', '-Tsvg'], 
                     stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
@@ -552,7 +557,7 @@ class GraphvizSvgParser(object):
         parser.CharacterDataHandler = self.characters
         parser.Parse(ifile)
 
-        for key in self.func_map.keys():
+        for key in list(self.func_map.keys()):
             del self.func_map[key]
         del self.func_map
         del self.func_list
@@ -799,8 +804,8 @@ class GraphvizSvgParser(object):
         """
         pos_x = float(attrs.get('x'))
         pos_y = float(attrs.get('y'))
-        width = int(attrs.get('width').encode('utf-8').rstrip(string.letters))
-        height = int(attrs.get('height').encode('utf-8').rstrip(string.letters))
+        width = int(attrs.get('width').rstrip(string.ascii_letters))
+        height = int(attrs.get('height').rstrip(string.ascii_letters))
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(attrs.get('xlink:href'))
         item = GooCanvas.CanvasImage(parent = self.current_parent(),
                                      x = pos_x,
@@ -1154,7 +1159,7 @@ class DotGenerator(object):
                     # (import of data means media files might not be present
                     image_path = find_file(image_path)
 
-        label = u""
+        label = ""
         line_delimiter = '\\n'
 
         # If we have an image, then start an HTML table; remember to close
@@ -1311,7 +1316,7 @@ class DotGenerator(object):
 
     def write(self, text):
         """ Write text to the dot file """
-        self.dot.write(text.encode('utf8', 'xmlcharrefreplace'))
+        self.dot.write(text)
 
     def get_dot(self):
         return self.dot.getvalue()
