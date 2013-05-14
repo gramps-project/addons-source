@@ -54,8 +54,8 @@ class Attributes(Gramplet):
         """
         Build the GUI interface.
         """
-        tip = _('Double-click on a row to view a quick report showing '
-                'all people with the selected attribute.')
+        tip = _('Double-click on a row to edit the object containing the '
+                'selected attribute.')
         self.set_tooltip(tip)
         top = Gtk.TreeView()
         titles = [(_('Date'), 1, 100),
