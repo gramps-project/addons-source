@@ -235,7 +235,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
     def on_edit_clicked(self, button):
         """Edit the selected person"""
-        from gui.editors import EditPerson
+        from gramps.gui.editors import EditPerson
         selection = self.list.get_selection()
         store, paths = selection.get_selected_rows()
         tpath = paths[0] if len(paths) > 0 else None
