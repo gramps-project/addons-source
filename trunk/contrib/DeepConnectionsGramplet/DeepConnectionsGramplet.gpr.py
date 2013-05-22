@@ -10,7 +10,7 @@ register(GRAMPLET,
          gramplet_title=_("Deep Connections"),
          detached_width = 510,
          detached_height = 480,
-         version = '1.0.20',
+         version = '1.0.21',
          gramps_target_version = "4.1",
          )
 
