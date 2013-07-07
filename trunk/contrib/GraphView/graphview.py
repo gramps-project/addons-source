@@ -740,11 +740,18 @@ class GraphvizSvgParser(object):
                 is_dashed = False
         
         if is_dashed:
+            # item = GooCanvas.CanvasPath(parent = self.current_parent(),
+            #                            data = p_data,
+            #                            stroke_color = stroke_color,
+            #                            line_width = 1,
+            #                            line_dash = GooCanvas.CanvasLineDash([5.0, 5.0]))
+            # http://www.gramps-project.org/bugs/view.php?id=6816
+            # Consider reverting back to dashed lines when CanvasLineDash()
+            # is working with introspection
             item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
-                                        stroke_color = stroke_color,
-                                        line_width = 1,
-                                        line_dash = GooCanvas.CanvasLineDash([5.0, 5.0]))
+                                        stroke_color = 'Red',
+                                        line_width = 1)
         else:
             item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
