@@ -542,6 +542,7 @@ class GraphvizSvgParser(object):
         # types. Will need to include any truetype fonts here.
         self.font_family_map = {"Times New Roman,serif"   : "Times",
                                 "Times Roman,serif"       : "Times",
+                                "Times-Roman"             : "Times",
                                 "Times,serif"             : "Times",
                                 "Arial"                   : "Helvetica"}
         self.active_person_item = None
