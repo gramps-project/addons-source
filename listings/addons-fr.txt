@@ -4,7 +4,7 @@
 {"n": "Calcul des dates estimées","i": "calculateestimateddates","t": "Tool","d": "Calcul des dates estimées pour les naissances et décès.","v": "0.90.18","g": "4.1","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Rapport de recensement","i": "census_report","t": "Report","d": "Les événements recensement de l'individu.","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
 {"n": "Gramplet Recensement","i": "Census Gramplet","t": "Gramplet","d": "Gramplet servant d'interface aux données de recensement","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
-{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.19","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.20","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Fusionne les objets principaux via la ligne de commande","v": "1.0.16","g": "4.1","z": "CliMerge.addon.tgz"}
 {"n": "Gramplet Presse-papiers","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet pour regrouper des articles","v": "1.0.22","g": "4.1","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Gramplet Horloge","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet pour démontrer les graphiques Cairo","v": "0.0.18","g": "4.1","z": "ClockGramplet.addon.tgz"}
@@ -16,16 +16,16 @@
 {"n": "Calcul des descendants","i": "Descendant Count Quickview","t": "Quickreport","d": "Affiche le total des descendants pour chaque individu","v": "1.0.17","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Lignes des descendants","i": "Descendants Lines","t": "Report","d": "Produit les lignes de descendants de l'individu","v": "0.1.20","g": "4.1","z": "DescendantsLines.addon.tgz"}
 {"n": "Rapport des différences dans la base de données","i": "database-differences-report","t": "Report","d": "Compare une base de données externe avec la base actuelle.","v": "1.0.4","g": "4.1","z": "Differences.addon.tgz"}
-{"n": "Export Django","i": "export_django","t": "Exporter","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
 {"n": "Import Django","i": "import_django","t": "Importer","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
-{"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.1","z": "EditExifMetadata.addon.tgz"}
+{"n": "Export Django","i": "export_django","t": "Exporter","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
+{"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.1","z": "EditExifMetadata.addon.tgz"}
 {"n": "Export brut","i": "Raw Export","t": "Exporter","d": "Ceci est une image brute d'objet python","v": "1.0.20","g": "4.1","z": "ExportRaw.addon.tgz"}
-{"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Attributs étendus de la famille","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Attributs étendus de la famille","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'une famille","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Ensemble de liens internet francophones","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour les francophones (nécessite libwebconnect)","v": "1.0.19","g": "4.1","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Détection de visage","i": "Face Detection","t": "Gramplet","d": "Gramplet pour détecter et assigner des visages","v": "1.0.13","g": "4.1","z": "FaceDetection.addon.tgz"}
 {"n": "Résumé familial","i": "FamilySheet","t": "Report","d": "Produit un résumé familial montrant les informations complètes sur l'individu, ses conjoints et enfants.","v": "3.4.22","g": "4.1","z": "FamilySheet.addon.tgz"}
-{"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Produit un arbre familial sous forme graphique.","v": "3.4.19","g": "4.1","z": "FamilyTree.addon.tgz"}
+{"n": "Arbre familial","i": "FamilyTree","t": "Report","d": "Produit un arbre familial sous forme graphique.","v": "3.4.19","g": "4.1","z": "FamilyTree.addon.tgz"}
 {"n": "Exportation des extensions Gedcom (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions du format courant Gedcom.","v": "1.0.8","g": "4.1","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Créé un fichier de données pouvant être ouvert dans GoogleEarth","v": "1.0.26","g": "4.1","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Vue Graphique","i": "graphview","t": "Gramps View","d": "Graphique dynamique des relations","v": "1.0.40","g": "4.1","z": "GraphView.addon.tgz"}
@@ -34,7 +34,7 @@
 {"n": "Gramplet Dernières modifications","i": "LastChangeGramplet","t": "Gramplet","d": "Liste les dix derniers individus modifiés","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Rapport Dernières modifications","i": "LastChangeReport","t": "Report","d": "Rapport pour les derniers enregistrements modifiés","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant choisi dans un format textuel.","v": "1.1.21","g": "4.1","z": "LinesOfDescendency.addon.tgz"}
-{"n": "Navigateur Media","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.15","g": "4.1","z": "MediaBrowser.addon.tgz"}
+{"n": "Navigateur Media","i": "MediaBrowser","t": "Gramplet","d": "Gramplet affichant les détails de l'individu","v": "1.0.15","g": "4.1","z": "MediaBrowser.addon.tgz"}
 {"n": "Vérification des media","i": "mediaverify","t": "Tool","d": "Vérifier si l'objet medium est présent avec le bon chemin ","v": "1.0.4","g": "4.1","z": "MediaVerify.addon.tgz"}
 {"n": "Gramplet Note","i": "Note Gramplet","t": "Gramplet","d": "Gramplet pour l'édition des notes de l'individu actif","v": "1.0.19","g": "4.1","z": "NoteGramplet.addon.tgz"}
 {"n": "Nombre de descendants","i": "NumberOfDescendantsQuickview","t": "Quickreport","d": "Affiche le nombre de descendants de l'individu actif","v": "3.4.17","g": "4.1","z": "NumberOfDescendantsQuickview.addon.tgz"}
@@ -52,7 +52,7 @@
 {"n": "Importation SQLite","i": "im_sqlite","t": "Importer","d": "SQLite est un format courant de base de données locale","v": "1.0.22","g": "4.1","z": "Sqlite.addon.tgz"}
 {"n": "Générateur de miniature","i": "thumbgen","t": "Tool","d": "Génère des miniatures de nos fichiers media","v": "1.0.12","g": "4.1","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Arbre au fil du temps","i": "TimelinePedigreeView","t": "Gramps View","d": "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu sélectionné","v": "0.1.30","g": "4.1","z": "TimelinePedigreeView.addon.tgz"}
-{"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Affiche les événements d'une personne tout au long de sa vie","v": "1.0.19","g": "4.1","z": "TimelineQuickview.addon.tgz"}
+{"n": "Graphique temporel","i": "timelinequickview","t": "Quickreport","d": "Affiche les événements d'une personne tout au long de sa vie","v": "1.0.19","g": "4.1","z": "TimelineQuickview.addon.tgz"}
 {"n": "Rapport À Faire","i": "TodoReport","t": "Report","d": "Produit une liste de toutes les notes avec une étiquette donnée ainsi que les enregistrements qui les référencent, l'individu, la famille, l'événement, etc.","v": "1.2.18","g": "4.1","z": "ToDoReport.addon.tgz"}
 {"n": "Ensemble de liens internet anglo-saxons","i": "UK Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)","v": "1.0.26","g": "4.1","z": "UKWebConnectPack.addon.tgz"}
 {"n": "Ensemble de liens internet US","i": "US Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour les États-Unis (nécessite libwebconnect)","v": "1.0.28","g": "4.1","z": "USWebConnectPack.addon.tgz"}

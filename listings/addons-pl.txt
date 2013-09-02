@@ -4,7 +4,7 @@
 {"n": "Obliczanie dat szacunkowych","i": "calculateestimateddates","t": "Tool","d": "Wylicza szacunkowe daty urodzenia i zgonu.","v": "0.90.18","g": "4.1","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Census Report","i": "census_report","t": "Report","d": "Report of census events for a person.","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
 {"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
-{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.19","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.20","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.16","g": "4.1","z": "CliMerge.addon.tgz"}
 {"n": "Clipboard Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet for grouping items","v": "1.0.22","g": "4.1","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Gramplet Zegara","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.18","g": "4.1","z": "ClockGramplet.addon.tgz"}
@@ -16,9 +16,9 @@
 {"n": "Descendant Count","i": "Descendant Count Quickview","t": "Quickreport","d": "Display descendant counts for each person.","v": "1.0.17","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.20","g": "4.1","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.1","z": "Differences.addon.tgz"}
-{"n": "Django Export","i": "export_django","t": "Exporter","d": "Django is a web framework working on a configured database","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
 {"n": "Django Import","i": "import_django","t": "Importer","d": "Django is a web framework working on a configured database","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
-{"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.1","z": "EditExifMetadata.addon.tgz"}
+{"n": "Django Export","i": "export_django","t": "Exporter","d": "Django is a web framework working on a configured database","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
+{"n": "Edytuj metadane Exif obrazu","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet do podglądu, edycji oraz zapisu metadanych Exif","v": "1.5.3","g": "4.1","z": "EditExifMetadata.addon.tgz"}
 {"n": "Raw Export","i": "Raw Export","t": "Exporter","d": "This is a raw python object dump","v": "1.0.20","g": "4.1","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
@@ -52,7 +52,7 @@
 {"n": "SQLite Import","i": "im_sqlite","t": "Importer","d": "SQLite is a common local database format","v": "1.0.22","g": "4.1","z": "Sqlite.addon.tgz"}
 {"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.12","g": "4.1","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Timeline Pedigree","i": "TimelinePedigreeView","t": "Gramps View","d": "The view shows a timeline pedigree with ancestors and descendants of the selected person","v": "0.1.30","g": "4.1","z": "TimelinePedigreeView.addon.tgz"}
-{"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Display a person's events on a timeline","v": "1.0.19","g": "4.1","z": "TimelineQuickview.addon.tgz"}
+{"n": "Oś czasu","i": "timelinequickview","t": "Quickreport","d": "Display a person's events on a timeline","v": "1.0.19","g": "4.1","z": "TimelineQuickview.addon.tgz"}
 {"n": "Todo Report","i": "TodoReport","t": "Report","d": "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.","v": "1.2.18","g": "4.1","z": "ToDoReport.addon.tgz"}
 {"n": "UK Web Connect Pack","i": "UK Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the UK (requires libwebconnect)","v": "1.0.26","g": "4.1","z": "UKWebConnectPack.addon.tgz"}
 {"n": "US Web Connect Pack","i": "US Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the US (requires libwebconnect)","v": "1.0.28","g": "4.1","z": "USWebConnectPack.addon.tgz"}
