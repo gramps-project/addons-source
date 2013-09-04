@@ -46,10 +46,7 @@ from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
 from gramps.gen.constfunc import cuni
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-if sys.version_info[0] < 3:
-    _ = glocale.get_addon_translator(__file__).ugettext
-else:
-    try:
+try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
@@ -232,7 +229,7 @@ class lxmlGramplet(Gramplet):
         
         entry = self.entry.get_text()
         if ' ' in entry:
-            ErrorDialog(_('Space character'), _('Please fix space on "%s"') % entry)
+            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
             return
         
         self.ReadXML(entry)
