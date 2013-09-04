@@ -229,6 +229,10 @@ class etreeGramplet(Gramplet):
         """
         
         entry = self.entry.get_text()
+        if ' ' in entry:
+            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
+            return
+        
         self.ReadXML(entry)
                                                        
         
@@ -495,19 +499,19 @@ class etreeGramplet(Gramplet):
         total = _('\nXML: Number of records and relations : \t%s\n\n') % len(entries)
         
         if self.dbstate.db.db_is_open:
-            tag = _('Number of tags : \t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+            tag = _('Number of tags : \t\t\t\t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
         else:
-            tag = _('Number of tags : \t%s\n' % len(tags))
+            tag = _('Number of tags : \t\t\t\t%s\n' % len(tags))
             
-        event = _('Number of  events : \t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
-        person = _('Number of persons : \t%s\t|\t(%s)* and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
-        family = _('Number of families : \t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
-        source = _('Number of sources : \t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
-        citation = _('Number of citations : \t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
-        place = _('Number of places : \t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
-        media_object = _('Number of media objects : \t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
-        repository = _('Number of repositories : \t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
-        note = _('Number of notes : \t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+        event = _('Number of  events : \t\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        person = _('Number of persons : \t\t\t\t%s\t|\t(%s)* and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+        family = _('Number of families : \t\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \t\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+        citation = _('Number of citations : \t\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        place = _('Number of places : \t\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media_object = _('Number of media objects : \t\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
+        repository = _('Number of repositories : \t\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \t\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
         
         others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
         len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
