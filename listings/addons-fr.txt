@@ -11,7 +11,7 @@
 {"n": "Ensemble de liens internet allemands","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour l'Allemagne (nécessite libwebconnect)","v": "0.0.13","g": "4.1","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Gramplet Formulaire","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet pour une saisie rapide des données","v": "1.0.27","g": "4.1","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Gramplet Connexions approfondies","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet affichant les relations étroites entre la souche et les autres individus","v": "1.0.21","g": "4.1","z": "DeepConnectionsGramplet.addon.tgz"}
-{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.","v": "2.3.17","g": "4.1","z": "DenominoViso.addon.tgz"}
+{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.","v": "2.3.18","g": "4.1","z": "DenominoViso.addon.tgz"}
 {"n": "Gramplet Calcul de descendants","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet pour afficher les individus et le nombre de leurs descendants","v": "1.0.18","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Calcul des descendants","i": "Descendant Count Quickview","t": "Quickreport","d": "Affiche le total des descendants pour chaque individu","v": "1.0.17","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Lignes des descendants","i": "Descendants Lines","t": "Report","d": "Produit les lignes de descendants de l'individu","v": "0.1.20","g": "4.1","z": "DescendantsLines.addon.tgz"}
@@ -34,6 +34,7 @@
 {"n": "Gramplet Dernières modifications","i": "LastChangeGramplet","t": "Gramplet","d": "Liste les dix derniers individus modifiés","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Rapport Dernières modifications","i": "LastChangeReport","t": "Report","d": "Rapport pour les derniers enregistrements modifiés","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant choisi dans un format textuel.","v": "1.1.21","g": "4.1","z": "LinesOfDescendency.addon.tgz"}
+{"n": "Liste Éclair","i": "ListeEclair","t": "Report","d": "Produit une liste éclair","v": "1.0.11","g": "4.1","z": "ListeEclair.addon.tgz"}
 {"n": "Navigateur Media","i": "MediaBrowser","t": "Gramplet","d": "Gramplet affichant les détails de l'individu","v": "1.0.15","g": "4.1","z": "MediaBrowser.addon.tgz"}
 {"n": "Vérification des media","i": "mediaverify","t": "Tool","d": "Vérifier si l'objet medium est présent avec le bon chemin ","v": "1.0.4","g": "4.1","z": "MediaVerify.addon.tgz"}
 {"n": "Gramplet Note","i": "Note Gramplet","t": "Gramplet","d": "Gramplet pour l'édition des notes de l'individu actif","v": "1.0.19","g": "4.1","z": "NoteGramplet.addon.tgz"}
