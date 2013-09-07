@@ -11,7 +11,7 @@
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.1","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Gramplet d'Introducció de Dades","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet for quick data entry","v": "1.0.27","g": "4.1","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Gramplet de Connexions Profundes","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet showing a deep relationship between active and home people","v": "1.0.21","g": "4.1","z": "DeepConnectionsGramplet.addon.tgz"}
-{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.","v": "2.3.17","g": "4.1","z": "DenominoViso.addon.tgz"}
+{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.","v": "2.3.18","g": "4.1","z": "DenominoViso.addon.tgz"}
 {"n": "Descendant Count Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet for showing people and descendant counts","v": "1.0.18","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Descendant Count","i": "Descendant Count Quickview","t": "Quickreport","d": "Display descendant counts for each person.","v": "1.0.17","g": "4.1","z": "DescendantCount.addon.tgz"}
 {"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.20","g": "4.1","z": "DescendantsLines.addon.tgz"}
@@ -34,6 +34,7 @@
 {"n": "Last Change Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "List the last ten person records that have been changed","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Last Change Report","i": "LastChangeReport","t": "Report","d": "Report of the last records that have been changed","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
 {"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Prints out all descendency lines from a given ancestor to a given descendent in text.","v": "1.1.21","g": "4.1","z": "LinesOfDescendency.addon.tgz"}
+{"n": "Liste Eclair","i": "ListeEclair","t": "Report","d": "Produit une liste eclair","v": "1.0.11","g": "4.1","z": "ListeEclair.addon.tgz"}
 {"n": "Media Browser","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.15","g": "4.1","z": "MediaBrowser.addon.tgz"}
 {"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.4","g": "4.1","z": "MediaVerify.addon.tgz"}
 {"n": "Gramplet de Notes","i": "Note Gramplet","t": "Gramplet","d": "Gramplet for editing active person's notes","v": "1.0.19","g": "4.1","z": "NoteGramplet.addon.tgz"}
