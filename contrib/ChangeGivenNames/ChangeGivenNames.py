@@ -87,7 +87,8 @@ def capitalize(given):
 #-------------------------------------------------------------------------
 class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
-    def __init__(self, dbstate, uistate, options_class, name, callback=None):
+    def __init__(self, dbstate, user, options_class, name, callback=None):
+        uistate = user.uistate
         self.label = _('Capitalization changes')
         self.dbstate = dbstate
         self.uistate = uistate
@@ -96,7 +97,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         ManagedWindow.__init__(self,uistate,[],self.__class__)
         self.set_window(Gtk.Window(),Gtk.Label(),'')
 
-        tool.BatchTool.__init__(self, dbstate, uistate, options_class, name)
+        tool.BatchTool.__init__(self, dbstate, user, options_class, name)
         if self.fail:
             return
 

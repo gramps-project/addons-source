@@ -76,7 +76,8 @@ class GtkHandlers:
         pass
 
 class CensusIndex(tool.Tool, ManagedWindow):
-    def __init__(self, dbstate, uistate, options_class, name, callback=None):
+    def __init__(self, dbstate, user, options_class, name, callback=None):
+        uistate = user.uistate
         
         self.label = _('Sources Index')
         self.base = os.path.dirname(__file__)
