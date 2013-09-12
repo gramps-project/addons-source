@@ -1,61 +1,61 @@
-{"n": "Alle namen van alle personen","i": "allnames","t": "Quickreport","d": "De namen van alle personen tonen","v": "1.0.16","g": "4.1","z": "AllNamesQuickview.addon.tgz"}
-{"n": "Bron toevoegen","i": "AttachSource","t": "Tool","d": "Een gedeelde bron aan verschillende objecten toevoegen.","v": "0.0.22","g": "4.1","z": "AttachSourceTool.addon.tgz"}
-{"n": "Verjaardagsgramplet","i": "Birthdays","t": "Gramplet","d": "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont","v": "1.0.23","g": "4.1","z": "BirthdaysGramplet.addon.tgz"}
-{"n": "Geschatte datums berekenen","i": "calculateestimateddates","t": "Tool","d": "Geschatte datums voor geboorte en overlijden berekenen.","v": "0.90.18","g": "4.1","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Volkstellingsverslag","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
-{"n": "Volkstelling-gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.26","g": "4.1","z": "Census.addon.tgz"}
-{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.20","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
-{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.16","g": "4.1","z": "CliMerge.addon.tgz"}
-{"n": "Klembordgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet om gegevens te groeperen","v": "1.0.22","g": "4.1","z": "ClipboardGramplet.addon.tgz"}
-{"n": "Klokgramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","v": "0.0.18","g": "4.1","z": "ClockGramplet.addon.tgz"}
-{"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.1","z": "DEWebConnectPack.addon.tgz"}
-{"n": "Gegevensingave-gramplet","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet om gegevens snel in te voeren","v": "1.0.27","g": "4.1","z": "DataEntryGramplet.addon.tgz"}
-{"n": "'Verre relaties'-gramplet","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont","v": "1.0.21","g": "4.1","z": "DeepConnectionsGramplet.addon.tgz"}
-{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","v": "2.3.18","g": "4.1","z": "DenominoViso.addon.tgz"}
-{"n": "'Afstammelingen telling'-gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet om personen en afstammelingentelling te tonen","v": "1.0.18","g": "4.1","z": "DescendantCount.addon.tgz"}
-{"n": "Afstammelingen tellen","i": "Descendant Count Quickview","t": "Quickreport","d": "Het aantal afstammelingen voor elke persoon tonen.","v": "1.0.17","g": "4.1","z": "DescendantCount.addon.tgz"}
-{"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.20","g": "4.1","z": "DescendantsLines.addon.tgz"}
-{"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.1","z": "Differences.addon.tgz"}
-{"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
-{"n": "Django-export","i": "export_django","t": "Exporter","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.23","g": "4.1","z": "Django.addon.tgz"}
-{"n": "Exif-metagegevens aanpassen","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan","v": "1.5.3","g": "4.1","z": "EditExifMetadata.addon.tgz"}
-{"n": "Ruwe export","i": "Raw Export","t": "Exporter","d": "Dit is een ruwe 'python object'-dump","v": "1.0.20","g": "4.1","z": "ExportRaw.addon.tgz"}
-{"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
-{"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.19","g": "4.1","z": "FRWebConnectPack.addon.tgz"}
-{"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.13","g": "4.1","z": "FaceDetection.addon.tgz"}
-{"n": "Familiepagina","i": "FamilySheet","t": "Report","d": "Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.","v": "3.4.22","g": "4.1","z": "FamilySheet.addon.tgz"}
-{"n": "Familiestamboom","i": "FamilyTree","t": "Report","d": "Grafische familiestamboom wordt aangemaakt.","v": "3.4.19","g": "4.1","z": "FamilyTree.addon.tgz"}
-{"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.1","z": "GedcomExtensions.addon.tgz"}
-{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.","v": "1.0.26","g": "4.1","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Grafiekscherm","i": "graphview","t": "Gramps View","d": "Dynamische grafiek van de relaties","v": "1.0.40","g": "4.1","z": "GraphView.addon.tgz"}
-{"n": "'Belangrijkste nieuws'-gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet toont het laatste Gramps-nieuws","v": "1.0.20","g": "4.1","z": "HeadlineNewsGramplet.addon.tgz"}
-{"n": "Import-gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet om tekst te importeren","v": "1.0.19","g": "4.1","z": "ImportGramplet.addon.tgz"}
-{"n": "'Laatste-wijziging'-gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "De tien laatst gewijzigde persoonsgegevens worden gelijst","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
-{"n": "Verslag laatste wijziging","i": "LastChangeReport","t": "Report","d": "Verslag van de laatst gewijzigde gegevens","v": "0.0.21","g": "4.1","z": "LastChange.addon.tgz"}
-{"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.","v": "1.1.21","g": "4.1","z": "LinesOfDescendency.addon.tgz"}
-{"n": "Liste Eclair","i": "ListeEclair","t": "Report","d": "Produit une liste eclair","v": "1.0.11","g": "4.1","z": "ListeEclair.addon.tgz"}
-{"n": "Media Browser","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.15","g": "4.1","z": "MediaBrowser.addon.tgz"}
-{"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.4","g": "4.1","z": "MediaVerify.addon.tgz"}
-{"n": "Opmerkingen-gramplet","i": "Note Gramplet","t": "Gramplet","d": "Gramplet om de opmerkingen van de actieve persoon te bewerken","v": "1.0.19","g": "4.1","z": "NoteGramplet.addon.tgz"}
-{"n": "Aantal afstammelingen","i": "NumberOfDescendantsQuickview","t": "Quickreport","d": "Aantal afstammelingen van de actieve persoon wordt getoond","v": "3.4.17","g": "4.1","z": "NumberOfDescendantsQuickview.addon.tgz"}
-{"n": "Participants","i": "Participants","t": "Gramplet","d": "Gramplet showing the participants in an event","v": "1.0.3","g": "4.1","z": "Participants.addon.tgz"}
-{"n": "Stamboomgrafiek","i": "PedigreeChart","t": "Report","d": "Alternatieve versie van de traditionele stamboomgrafiek","v": "1.0.21","g": "4.1","z": "PedigreeChart.addon.tgz"}
-{"n": "Locatie vervolledigen","i": "PlaceCompletion","t": "Tool","d": "Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.","v": "0.0.23","g": "4.1","z": "PlaceCompletion.addon.tgz"}
-{"n": "Python-gramplet","i": "Python Gramplet","t": "Gramplet","d": "Interactieve Python-interpreter","v": "1.0.17","g": "4.1","z": "PythonGramplet.addon.tgz"}
-{"n": "Zoek-gramplet","i": "Query Gramplet","t": "Gramplet","d": "Gramplet om 'sql'-achtige zoekopdrachten in te geven","v": "1.0.16","g": "4.1","z": "Query.addon.tgz"}
-{"n": "Snelscherm voor zoeken","i": "Query Quickview","t": "Quickreport","d": "Snelscherm om 'sql'-achtige zoekopdrachten in te geven","v": "1.0.16","g": "4.1","z": "Query.addon.tgz"}
-{"n": "Aanverwanten-gramplet","i": "Related Relatives Gramplet","t": "Gramplet","d": "Gramplet toont de verwanten in een relatie","v": "1.0.17","g": "4.1","z": "RelatedRelativesGramplet.addon.tgz"}
-{"n": "Opties voor het bibliotheekverslag","i": "Repositories Report Options","t": "Report","d": "Tekstverslag van de bibliotheken wordt opgemaakt","v": "0.3.11","g": "4.1","z": "RepositoriesReport.addon.tgz"}
-{"n": "Bibliothekenverslag","i": "Repositories Report","t": "Report","d": "Tekstverslag van de bibliotheken wordt opgemaakt","v": "1.1.11","g": "4.1","z": "RepositoriesReport.addon.tgz"}
-{"n": "Kenmerk vastleggen","i": "SetAttribute","t": "Tool","d": "Een kenmerk een bepaalde waarde toekennen.","v": "0.0.17","g": "4.1","z": "SetAttributeTool.addon.tgz"}
-{"n": "'Sqlite'-export","i": "ex_sqlite","t": "Exporter","d": "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.21","g": "4.1","z": "Sqlite.addon.tgz"}
-{"n": "'Sqlite'-import","i": "im_sqlite","t": "Importer","d": "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.22","g": "4.1","z": "Sqlite.addon.tgz"}
-{"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.12","g": "4.1","z": "ThumbnailGenerator.addon.tgz"}
-{"n": "Tijdslijnstamboom","i": "TimelinePedigreeView","t": "Gramps View","d": "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon","v": "0.1.30","g": "4.1","z": "TimelinePedigreeView.addon.tgz"}
-{"n": "Tijdlijn","i": "timelinequickview","t": "Quickreport","d": "Gebeurtenissen van een persoon worden op een tijdslijn getoond","v": "1.0.19","g": "4.1","z": "TimelineQuickview.addon.tgz"}
-{"n": "'Nog te doen'-verslag","i": "TodoReport","t": "Report","d": "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .","v": "1.2.18","g": "4.1","z": "ToDoReport.addon.tgz"}
-{"n": "V.K. Web Connect Pack","i": "UK Web Connect Pack","t": "Plugin lib","d": "Verzameling van websites voor 'VK' (libwebconnect is nodig)","v": "1.0.26","g": "4.1","z": "UKWebConnectPack.addon.tgz"}
-{"n": "V.S. Web Connect Pack","i": "US Web Connect Pack","t": "Plugin lib","d": "Verzameling van websites voor 'VS' (libwebconnect is nodig)","v": "1.0.28","g": "4.1","z": "USWebConnectPack.addon.tgz"}
-{"n": "Generic DB Access lib","i": "libaccess","t": "Plugin lib","d": "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.","v": "1.0.18","g": "4.1","z": "libaccess.addon.tgz"}
-{"n": "libwebconnect","i": "libwebconnect","t": "Plugin lib","d": "Bibliotheek voor 'webstek'-verzamelingen","v": "1.0.18","g": "4.1","z": "libwebconnect.addon.tgz"}
+{"n": "Alle namen van alle personen","i": "allnames","t": "Quickreport","d": "De namen van alle personen tonen","v": "1.0.17","g": "4.1","z": "AllNamesQuickview.addon.tgz"}
+{"n": "Bron toevoegen","i": "AttachSource","t": "Tool","d": "Een gedeelde bron aan verschillende objecten toevoegen.","v": "0.0.23","g": "4.1","z": "AttachSourceTool.addon.tgz"}
+{"n": "Verjaardagsgramplet","i": "Birthdays","t": "Gramplet","d": "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont","v": "1.0.24","g": "4.1","z": "BirthdaysGramplet.addon.tgz"}
+{"n": "Geschatte datums berekenen","i": "calculateestimateddates","t": "Tool","d": "Geschatte datums voor geboorte en overlijden berekenen.","v": "0.90.19","g": "4.1","z": "CalculateEstimatedDates.addon.tgz"}
+{"n": "Volkstellingsverslag","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.27","g": "4.1","z": "Census.addon.tgz"}
+{"n": "Volkstelling-gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.1","z": "Census.addon.tgz"}
+{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.21","g": "4.1","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.17","g": "4.1","z": "CliMerge.addon.tgz"}
+{"n": "Klembordgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet om gegevens te groeperen","v": "1.0.23","g": "4.1","z": "ClipboardGramplet.addon.tgz"}
+{"n": "Klokgramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","v": "0.0.19","g": "4.1","z": "ClockGramplet.addon.tgz"}
+{"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.14","g": "4.1","z": "DEWebConnectPack.addon.tgz"}
+{"n": "Gegevensingave-gramplet","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet om gegevens snel in te voeren","v": "1.0.28","g": "4.1","z": "DataEntryGramplet.addon.tgz"}
+{"n": "'Verre relaties'-gramplet","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont","v": "1.0.22","g": "4.1","z": "DeepConnectionsGramplet.addon.tgz"}
+{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","v": "2.3.19","g": "4.1","z": "DenominoViso.addon.tgz"}
+{"n": "'Afstammelingen telling'-gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet om personen en afstammelingentelling te tonen","v": "1.0.19","g": "4.1","z": "DescendantCount.addon.tgz"}
+{"n": "Afstammelingen tellen","i": "Descendant Count Quickview","t": "Quickreport","d": "Het aantal afstammelingen voor elke persoon tonen.","v": "1.0.18","g": "4.1","z": "DescendantCount.addon.tgz"}
+{"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.21","g": "4.1","z": "DescendantsLines.addon.tgz"}
+{"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.5","g": "4.1","z": "Differences.addon.tgz"}
+{"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.24","g": "4.1","z": "Django.addon.tgz"}
+{"n": "Django-export","i": "export_django","t": "Exporter","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.24","g": "4.1","z": "Django.addon.tgz"}
+{"n": "Exif-metagegevens aanpassen","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan","v": "1.5.4","g": "4.1","z": "EditExifMetadata.addon.tgz"}
+{"n": "Ruwe export","i": "Raw Export","t": "Exporter","d": "Dit is een ruwe 'python object'-dump","v": "1.0.21","g": "4.1","z": "ExportRaw.addon.tgz"}
+{"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.15","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.15","g": "4.1","z": "ExtendedAttributes.addon.tgz"}
+{"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.20","g": "4.1","z": "FRWebConnectPack.addon.tgz"}
+{"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.14","g": "4.1","z": "FaceDetection.addon.tgz"}
+{"n": "Familiepagina","i": "FamilySheet","t": "Report","d": "Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.","v": "3.4.23","g": "4.1","z": "FamilySheet.addon.tgz"}
+{"n": "Familiestamboom","i": "FamilyTree","t": "Report","d": "Grafische familiestamboom wordt aangemaakt.","v": "3.4.20","g": "4.1","z": "FamilyTree.addon.tgz"}
+{"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.9","g": "4.1","z": "GedcomExtensions.addon.tgz"}
+{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.","v": "1.0.27","g": "4.1","z": "GoogleEarthWriteKML.addon.tgz"}
+{"n": "Grafiekscherm","i": "graphview","t": "Gramps View","d": "Dynamische grafiek van de relaties","v": "1.0.41","g": "4.1","z": "GraphView.addon.tgz"}
+{"n": "'Belangrijkste nieuws'-gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet toont het laatste Gramps-nieuws","v": "1.0.21","g": "4.1","z": "HeadlineNewsGramplet.addon.tgz"}
+{"n": "Import-gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet om tekst te importeren","v": "1.0.20","g": "4.1","z": "ImportGramplet.addon.tgz"}
+{"n": "'Laatste-wijziging'-gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "De tien laatst gewijzigde persoonsgegevens worden gelijst","v": "0.0.22","g": "4.1","z": "LastChange.addon.tgz"}
+{"n": "Verslag laatste wijziging","i": "LastChangeReport","t": "Report","d": "Verslag van de laatst gewijzigde gegevens","v": "0.0.22","g": "4.1","z": "LastChange.addon.tgz"}
+{"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.","v": "1.1.22","g": "4.1","z": "LinesOfDescendency.addon.tgz"}
+{"n": "Liste Eclair","i": "ListeEclair","t": "Report","d": "Produit une liste eclair","v": "1.0.12","g": "4.1","z": "ListeEclair.addon.tgz"}
+{"n": "Media Browser","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.16","g": "4.1","z": "MediaBrowser.addon.tgz"}
+{"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.5","g": "4.1","z": "MediaVerify.addon.tgz"}
+{"n": "Opmerkingen-gramplet","i": "Note Gramplet","t": "Gramplet","d": "Gramplet om de opmerkingen van de actieve persoon te bewerken","v": "1.0.20","g": "4.1","z": "NoteGramplet.addon.tgz"}
+{"n": "Aantal afstammelingen","i": "NumberOfDescendantsQuickview","t": "Quickreport","d": "Aantal afstammelingen van de actieve persoon wordt getoond","v": "3.4.18","g": "4.1","z": "NumberOfDescendantsQuickview.addon.tgz"}
+{"n": "Participants","i": "Participants","t": "Gramplet","d": "Gramplet showing the participants in an event","v": "1.0.4","g": "4.1","z": "Participants.addon.tgz"}
+{"n": "Stamboomgrafiek","i": "PedigreeChart","t": "Report","d": "Alternatieve versie van de traditionele stamboomgrafiek","v": "1.0.22","g": "4.1","z": "PedigreeChart.addon.tgz"}
+{"n": "Locatie vervolledigen","i": "PlaceCompletion","t": "Tool","d": "Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.","v": "0.0.24","g": "4.1","z": "PlaceCompletion.addon.tgz"}
+{"n": "Python-gramplet","i": "Python Gramplet","t": "Gramplet","d": "Interactieve Python-interpreter","v": "1.0.18","g": "4.1","z": "PythonGramplet.addon.tgz"}
+{"n": "Zoek-gramplet","i": "Query Gramplet","t": "Gramplet","d": "Gramplet om 'sql'-achtige zoekopdrachten in te geven","v": "1.0.17","g": "4.1","z": "Query.addon.tgz"}
+{"n": "Snelscherm voor zoeken","i": "Query Quickview","t": "Quickreport","d": "Snelscherm om 'sql'-achtige zoekopdrachten in te geven","v": "1.0.17","g": "4.1","z": "Query.addon.tgz"}
+{"n": "Aanverwanten-gramplet","i": "Related Relatives Gramplet","t": "Gramplet","d": "Gramplet toont de verwanten in een relatie","v": "1.0.18","g": "4.1","z": "RelatedRelativesGramplet.addon.tgz"}
+{"n": "Opties voor het bibliotheekverslag","i": "Repositories Report Options","t": "Report","d": "Tekstverslag van de bibliotheken wordt opgemaakt","v": "0.3.12","g": "4.1","z": "RepositoriesReport.addon.tgz"}
+{"n": "Bibliothekenverslag","i": "Repositories Report","t": "Report","d": "Tekstverslag van de bibliotheken wordt opgemaakt","v": "1.1.12","g": "4.1","z": "RepositoriesReport.addon.tgz"}
+{"n": "Kenmerk vastleggen","i": "SetAttribute","t": "Tool","d": "Een kenmerk een bepaalde waarde toekennen.","v": "0.0.18","g": "4.1","z": "SetAttributeTool.addon.tgz"}
+{"n": "'Sqlite'-export","i": "ex_sqlite","t": "Exporter","d": "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.22","g": "4.1","z": "Sqlite.addon.tgz"}
+{"n": "'Sqlite'-import","i": "im_sqlite","t": "Importer","d": "'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.23","g": "4.1","z": "Sqlite.addon.tgz"}
+{"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.13","g": "4.1","z": "ThumbnailGenerator.addon.tgz"}
+{"n": "Tijdslijnstamboom","i": "TimelinePedigreeView","t": "Gramps View","d": "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon","v": "0.1.31","g": "4.1","z": "TimelinePedigreeView.addon.tgz"}
+{"n": "Tijdlijn","i": "timelinequickview","t": "Quickreport","d": "Gebeurtenissen van een persoon worden op een tijdslijn getoond","v": "1.0.20","g": "4.1","z": "TimelineQuickview.addon.tgz"}
+{"n": "'Nog te doen'-verslag","i": "TodoReport","t": "Report","d": "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .","v": "1.2.19","g": "4.1","z": "ToDoReport.addon.tgz"}
+{"n": "V.K. Web Connect Pack","i": "UK Web Connect Pack","t": "Plugin lib","d": "Verzameling van websites voor 'VK' (libwebconnect is nodig)","v": "1.0.27","g": "4.1","z": "UKWebConnectPack.addon.tgz"}
+{"n": "V.S. Web Connect Pack","i": "US Web Connect Pack","t": "Plugin lib","d": "Verzameling van websites voor 'VS' (libwebconnect is nodig)","v": "1.0.29","g": "4.1","z": "USWebConnectPack.addon.tgz"}
+{"n": "Generic DB Access lib","i": "libaccess","t": "Plugin lib","d": "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.","v": "1.0.19","g": "4.1","z": "libaccess.addon.tgz"}
+{"n": "libwebconnect","i": "libwebconnect","t": "Plugin lib","d": "Bibliotheek voor 'webstek'-verzamelingen","v": "1.0.19","g": "4.1","z": "libwebconnect.addon.tgz"}
