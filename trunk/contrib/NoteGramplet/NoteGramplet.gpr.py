@@ -10,6 +10,6 @@ register(GRAMPLET,
          gramplet_title=_("Note"),
          detached_width = 500,
          detached_height = 400,
-         version = '1.0.19',
+         version = '1.0.20',
          gramps_target_version="4.1",
          )

@@ -4,7 +4,7 @@ register(GRAMPLET,
 	name=_("Birthdays Gramplet"),
 	description = _("a gramplet that displays the birthdays of the living people"),
 	status = STABLE, # not yet tested with python 3
-	version = '1.0.23',
+	version = '1.0.24',
 	fname="BirthdaysGramplet.py",
 	height = 200,
 	gramplet = 'BirthdaysGramplet',

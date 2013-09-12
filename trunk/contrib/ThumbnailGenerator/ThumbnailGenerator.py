@@ -44,7 +44,8 @@ _ = _trans.gettext
 #
 #-------------------------------------------------------------------------
 class ThumbnailGenerator(tool.Tool):
-    def __init__(self, dbstate, uistate, options_class, name, callback=None):
+    def __init__(self, dbstate, user, options_class, name, callback=None):
+        uistate = user.uistate
 
         tool.Tool.__init__(self, dbstate, options_class, name)
 
