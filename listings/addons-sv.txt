@@ -25,7 +25,7 @@
 {"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.20","g": "4.1","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.14","g": "4.1","z": "FaceDetection.addon.tgz"}
 {"n": "Familjeark","i": "FamilySheet","t": "Report","d": "Skapar ett familjeark visande all information om en person och dennes partner och barn.","v": "3.4.23","g": "4.1","z": "FamilySheet.addon.tgz"}
-{"n": "Släktträd","i": "FamilyTree","t": "Report","d": "Skapar ett grafiskt släktträd.","v": "3.4.20","g": "4.1","z": "FamilyTree.addon.tgz"}
+{"n": "Släktträd","i": "FamilyTree","t": "Report","d": "Skapar ett grafiskt släktträd.","v": "3.4.21","g": "4.1","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.9","g": "4.1","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Skapar datafil för GoogleEarth och öppnar den","v": "1.0.27","g": "4.1","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Diagramvy","i": "graphview","t": "Gramps View","d": "Levande släktskapsdiagram","v": "1.0.41","g": "4.1","z": "GraphView.addon.tgz"}

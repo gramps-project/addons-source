@@ -87,6 +87,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         self.eventstyle_living = menu.get_option_by_name('eventstyle_living').get_value()
         self.fallback_birth = menu.get_option_by_name('fallback_birth').get_value()
         self.fallback_death = menu.get_option_by_name('fallback_death').get_value()
+        self.protect_private = menu.get_option_by_name('protect_private').get_value()
         self.missinginfo = menu.get_option_by_name('missinginfo').get_value()
         self.include_event_description = menu.get_option_by_name('include_event_description').get_value()
         self.title = menu.get_option_by_name('title').get_value()
@@ -127,7 +128,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         self.ancestor_max_color = 0
         self.descendant_max_color = 0
 
+        self.descendants_tree = None
         self.ancestors_tree = self.__build_ancestors_tree(self.center_family.get_handle(), 0, 0, 0, 0)
+        if self.ancestors_tree is None:
+            return
         (self.descendants_tree, descendants_space) = self.__build_descendants_tree(self.center_family.get_child_ref_list(), 0, 0, 0)
 
         needed_width = self.xoffset + (self.ancestor_generations + self.descendant_generations) * (self.box_width + 2 * self.box_gap) - 2 * self.box_gap + self.shadow
@@ -176,13 +180,16 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         self.__print_ancestors_tree(self.ancestors_tree, 0)
 
-        anchor = self.yoffset_a + self.ancestors_tree['top'] + self.ancestors_tree['height'] / 2
-        self.__print_descendants_tree(self.descendants_tree, anchor, 1)
+        if self.ancestors_tree:
+            anchor = self.yoffset_a + self.ancestors_tree['top'] + self.ancestors_tree['height'] / 2
 
-        self.doc.center_text('FTR-footer',
-                self.footer,
-                self.doc.get_usable_width() / 2,
-                self.doc.get_usable_height() - self.ybottom * self.scale)
+        if self.descendants_tree:
+            self.__print_descendants_tree(self.descendants_tree, anchor, 1)
+
+            self.doc.center_text('FTR-footer',
+                                 self.footer,
+                                 self.doc.get_usable_width() / 2,
+                                 self.doc.get_usable_height() - self.ybottom * self.scale)
 
         self.doc.end_page()
 
@@ -207,13 +214,13 @@ class FamilyTree(gramps.gen.plug.report.Report):
         family_node = {}
 
         family = self.database.get_family_from_handle(family_handle)
-        if family.private:
+        if family.private and self.protect_private:
             return None
 
         father_handle = family.get_father_handle()
         if father_handle:
             father = self.database.get_person_from_handle(father_handle)
-            if father.private:
+            if father.private and self.protect_private:
                 father = None
         else:
             father = None
@@ -229,7 +236,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         mother_handle = family.get_mother_handle()
         if mother_handle:
             mother = self.database.get_person_from_handle(mother_handle)
-            if mother.private:
+            if mother.private and self.protect_private:
                 mother = None
         else:
             mother = None
@@ -266,10 +273,13 @@ class FamilyTree(gramps.gen.plug.report.Report):
             # Create father's box.
             father_node = self.__build_ancestors_tree(father_family, generation + 1, father_color, father_top, father_center)
         if father_node:
-            if mother_family and not self.database.get_family_from_handle(mother_family).private:
-                # This box has father and mother: move it down so its center is
-                # just at the end of the father's ancestors space.
-                family_node['top'] = max(family_node['top'], top + father_node['space'] + self.box_gap / 2 - family_node['height'] / 2)
+            if mother_family:
+                if self.database.get_family_from_handle(mother_family).private and self.protect_private:
+                    pass
+                else:
+                    # This box has father and mother: move it down so its center is
+                    # just at the end of the father's ancestors space.
+                    family_node['top'] = max(family_node['top'], top + father_node['space'] + self.box_gap / 2 - family_node['height'] / 2)
             else:
                 # This box has only father: move it down to the center of the
                 # father's parents.
@@ -331,7 +341,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         node_list = []
         space = 0
         for person_ref in person_ref_list:
-            if person_ref.private:
+            if person_ref.private and self.protect_private:
                 continue
 
             # This is a dictionary containing all interesting data for a box
@@ -352,7 +362,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
             person_node = {}
 
             person = self.database.get_person_from_handle(person_ref.ref)
-            if person.private:
+            if person.private and self.protect_private:
                 continue
 
             person_node['text'] = [('FTR-name', self.__person_get_display_name(person))] + [('FTR-data', p) for p in self.__person_get_display_data(person)]
@@ -372,7 +382,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
             for family_handle in family_handles:
 
                 family = self.database.get_family_from_handle(family_handle)
-                if family.private:
+                if family.private and self.protect_private:
                     continue
 
                 # This is a dictionary containing all interesting data for a
@@ -448,6 +458,8 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
     def __print_ancestors_tree(self, family_node, generation):
 
+        if family_node is None:
+            return
         self.__draw_box(family_node['text'], family_node['color'], self.ancestor_max_color + 1, generation, self.yoffset_a + family_node['top'], family_node['height'])
 
         for parent_node in [family_node['father_node'], family_node['mother_node']]:
@@ -646,7 +658,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
     def __person_get_display_name(self, person):
 
-        if person.get_primary_name().private:
+        if person.get_primary_name().private and self.protect_private:
             return _("Anonymous")
 
         # Make a copy of the name object so we don't mess around with the real
@@ -688,10 +700,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         cremation = None
 
         for event_ref in person.get_event_ref_list():
-            if event_ref.private:
+            if event_ref.private and self.protect_private:
                 continue
             event = self.database.get_event_from_handle(event_ref.ref)
-            if event.private:
+            if event.private and self.protect_private:
                 continue
             if event.get_type() == EventType.OCCUPATION:
                 occupations.append(event.description)
@@ -711,7 +723,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         death_ref = person.get_death_ref()
 
         if birth_ref:
-            if birth_ref.private:
+            if birth_ref.private and self.protect_private:
                 birth = None
             else:
                 birth = self.database.get_event_from_handle(birth_ref.ref)
@@ -719,14 +731,14 @@ class FamilyTree(gramps.gen.plug.report.Report):
             birth = empty_birth
         else:
             birth = None
-        if birth and birth.private:
+        if birth and birth.private and self.protect_private:
             birth = None
 
-        if death_ref and not death_ref.private:
+        if death_ref and not death_ref.private and self.protect_private:
             death = self.database.get_event_from_handle(death_ref.ref)
         else:
             death = None
-        if death and death.private:
+        if death and death.private and self.protect_private:
             death = None
         if death:
             eventstyle = self.eventstyle_dead
@@ -781,10 +793,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         residences = []
 
         for event_ref in family.get_event_ref_list():
-            if event_ref.private:
+            if event_ref.private and self.protect_private:
                 continue
             event = self.database.get_event_from_handle(event_ref.ref)
-            if event.private:
+            if event.private and self.protect_private:
                 continue
             if event.get_type() == EventType.MARRIAGE:
                 marriage = event
@@ -883,7 +895,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         place_handle = event.get_place_handle()
         if place_handle:
             place = self.database.get_place_from_handle(place_handle)
-            if place.private:
+            if place.private and self.protect_private:
                 place_text = ""
             else:
                 place_text = place.get_title()
@@ -1052,6 +1064,9 @@ class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
 
         fallback_death = gramps.gen.plug.menu.BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
         menu.add_option(category_name, 'fallback_death', fallback_death)
+
+        protect_private = gramps.gen.plug.menu.BooleanOption(_("Protect private items"), True)
+        menu.add_option(category_name, 'protect_private', protect_private)
 
         # Fixme: the following 2 options should only be available if "Full date
         # and place" is selected above.
