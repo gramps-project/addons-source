@@ -25,7 +25,7 @@
 {"n": "Ensemble de liens internet francophones","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour les francophones (nécessite libwebconnect)","v": "1.0.20","g": "4.1","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Détection de visage","i": "Face Detection","t": "Gramplet","d": "Gramplet pour détecter et assigner des visages","v": "1.0.14","g": "4.1","z": "FaceDetection.addon.tgz"}
 {"n": "Résumé familial","i": "FamilySheet","t": "Report","d": "Produit un résumé familial montrant les informations complètes sur l'individu, ses conjoints et enfants.","v": "3.4.23","g": "4.1","z": "FamilySheet.addon.tgz"}
-{"n": "Arbre familial","i": "FamilyTree","t": "Report","d": "Produit un arbre familial sous forme graphique.","v": "3.4.20","g": "4.1","z": "FamilyTree.addon.tgz"}
+{"n": "Arbre familial","i": "FamilyTree","t": "Report","d": "Produit un arbre familial sous forme graphique.","v": "3.4.21","g": "4.1","z": "FamilyTree.addon.tgz"}
 {"n": "Exportation des extensions Gedcom (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions du format courant Gedcom.","v": "1.0.9","g": "4.1","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Créé un fichier de données pouvant être ouvert dans GoogleEarth","v": "1.0.27","g": "4.1","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Vue Graphique","i": "graphview","t": "Gramps View","d": "Graphique dynamique des relations","v": "1.0.41","g": "4.1","z": "GraphView.addon.tgz"}
