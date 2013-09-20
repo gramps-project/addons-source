@@ -1,3898 +1,4117 @@
+# German translation for Gramps
+# $Id: de.po 22997 2013-09-01 13:19:31Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-04 00:48+0100\n"
-"PO-Revision-Date: 2011-12-31 13:03+0100\n"
+"POT-Creation-Date: 2013-09-20 23:13+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: Census//Census.py:55
+#: Census/Census.py:61
 msgid "Order"
 msgstr "Reihenfolge"
 
-#: Census//Census.py:58
+#: Census/Census.py:64 Census/CensusGramplet.gpr.py:42
 msgid "Census"
 msgstr "Volkszählung"
 
-#: Census//CensusGramplet.gpr.py:31 Census//CensusGramplet.gpr.py:42
+#: Census/CensusGramplet.gpr.py:31
 msgid "Census Gramplet"
 msgstr "Zensus Gramplet"
 
-#: Census//CensusGramplet.gpr.py:32
+#: Census/CensusGramplet.gpr.py:32
 msgid "Gramplet interface for census data"
 msgstr "Gramplet Schnittstelle für Zensusdaten"
 
-#: Census//CensusGramplet.py:81
-msgid "Census details for: "
-msgstr "Zensusdetails für."
-
-#: Census//CensusGramplet.py:92 Census//CensusReport.py:296
+#: Census/CensusGramplet.py:114 Census/CensusReport.py:301
 msgid "Source"
 msgstr "Quelle"
 
-#: Census//CensusGramplet.py:95 Census//census.xml.h:454
+#: Census/CensusGramplet.py:117 Census/census.xml.h:596
 msgid "Date"
 msgstr "Datum"
 
-#: Census//CensusGramplet.py:98 Census//census.xml.h:736
+#: Census/CensusGramplet.py:120 Census/census.xml.h:711
 msgid "Place"
 msgstr "Ort"
 
-#: Census//CensusGramplet.py:159
-msgid "No active person set."
-msgstr "Keine aktive Person gesetzt."
-
-#: Census//CensusGramplet.py:264
+#: Census/CensusGramplet.py:296
 #, python-format
 msgid "Census: %s"
 msgstr "Volkszählung: %s"
 
-#: Census//CensusGramplet.py:266
+#: Census/CensusGramplet.py:298
 msgid "New Census"
 msgstr "Neue Volkszählung"
 
-#: Census//CensusGramplet.py:273
+#: Census/CensusGramplet.py:305
 msgid "Edit Census"
 msgstr "Volkszählung bearbeiten"
 
-#: Census//CensusGramplet.py:289
+#: Census/CensusGramplet.py:320
 msgid "Source:"
 msgstr "Quelle:"
 
-#: Census//CensusGramplet.py:311 Census//CensusReport.py:162
+#: Census/CensusGramplet.py:346 Census/CensusReport.py:167
 msgid "Date:"
 msgstr "Datum:"
 
-#: Census//CensusGramplet.py:320
+#: Census/CensusGramplet.py:355
 msgid "Reference:"
 msgstr "Referenz:"
 
-#: Census//CensusGramplet.py:328
+#: Census/CensusGramplet.py:363
 msgid "Place:"
 msgstr "Ort:"
 
-#: Census//CensusGramplet.py:516 Census//CensusGramplet.py:547
+#: Census/CensusGramplet.py:480 Census/CensusGramplet.py:613
+#, fuzzy
+msgid "Census Editor"
+msgstr "Adresseditor"
+
+#: Census/CensusGramplet.py:481
+#, fuzzy
+msgid ""
+"Cannot save this census.  First select a census from the drop-down list."
+msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
+
+#: Census/CensusGramplet.py:530
+msgid "Details"
+msgstr "Details"
+
+#: Census/CensusGramplet.py:614
+#, fuzzy
+msgid ""
+"Cannot add a person to this census.  First select a census from the drop-"
+"down list."
+msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
+
+#: Census/CensusGramplet.py:646
 msgid "Cannot add a person to this census."
 msgstr "Kann keine Person zu diesem Zensus hinzufügen."
 
-#: Census//CensusGramplet.py:517 Census//CensusGramplet.py:548
+#: Census/CensusGramplet.py:647
 msgid "First select a census from the drop-down list."
 msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
 
-#: Census//CensusGramplet.py:563
+#: Census/CensusGramplet.py:662
 msgid "Select Person"
 msgstr "Person wählen"
 
-#: Census//CensusReport.gpr.py:31
+#: Census/CensusGramplet.py:677 Census/CensusGramplet.py:679
+#: Census/CensusGramplet.py:799 Census/CensusGramplet.py:828
+#: Census/census.xml.h:3
+msgid "Name"
+msgstr "Name"
+
+#: Census/CensusGramplet.py:863
+#, fuzzy
+msgid "Headings"
+msgstr "Schlagzeilen"
+
+#: Census/CensusGramplet.py:882
+msgid "Key"
+msgstr "Schlüssel"
+
+#: Census/CensusGramplet.py:888
+msgid "Value"
+msgstr "Wert"
+
+#: Census/CensusReport.gpr.py:31 Census/CensusReport.py:101
 msgid "Census Report"
 msgstr "Zensusbericht"
 
-#: Census//CensusReport.gpr.py:32
+#: Census/CensusReport.gpr.py:32
 msgid "Report of census events for a person."
 msgstr "Bericht der Zensusereignise für eine Person."
 
-#: Census//CensusReport.py:98
+#: Census/CensusReport.py:102
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "Person %s ist nicht in der Datenbank"
 
-#: Census//CensusReport.py:110
+#: Census/CensusReport.py:114
 #, python-format
 msgid "Census Report for %s"
 msgstr "Volkszählungsbericht für %s"
 
-#: Census//CensusReport.py:165
-msgid "Source Reference:"
-msgstr "Quellenreferenz:"
+#: Census/CensusReport.py:170
+#, fuzzy
+msgid "Citation:"
+msgstr "Fundstelle"
 
-#: Census//CensusReport.py:169 Census//CensusReport.py:171
+#: Census/CensusReport.py:174 Census/CensusReport.py:176
 msgid "Address:"
 msgstr "Adresse:"
 
-#: Census//CensusReport.py:277
+#: Census/CensusReport.py:282
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: Census//CensusReport.py:279
+#: Census/CensusReport.py:284
 msgid "Census Selection"
 msgstr "Zensusauswahl"
 
-#: Census//CensusReport.py:280
+#: Census/CensusReport.py:285
 msgid "By Person"
 msgstr "Über Person"
 
-#: Census//CensusReport.py:281
+#: Census/CensusReport.py:286
 msgid "By Source"
 msgstr "Über Quelle"
 
-#: Census//CensusReport.py:282
+#: Census/CensusReport.py:287
 msgid "By Person and Source"
 msgstr "Über Person und Quelle"
 
-#: Census//CensusReport.py:283
+#: Census/CensusReport.py:288
 msgid "All Census records"
 msgstr "Alle Volkszählungsdatensätze"
 
-#: Census//CensusReport.py:284
+#: Census/CensusReport.py:289
 msgid "The type of report"
 msgstr "Die Art des Bericht"
 
-#: Census//CensusReport.py:287
+#: Census/CensusReport.py:292
 msgid "Person"
 msgstr "Person"
 
-#: Census//CensusReport.py:288
+#: Census/CensusReport.py:293
 msgid "The selected person for the report."
 msgstr "Die ausgewählte Person für den Bericht"
 
-#: Census//CensusReport.py:301
+#: Census/CensusReport.py:306
 msgid "Page break after each census."
 msgstr "Seitenumbruch nach jeder Volkszählung."
 
-#: Census//CensusReport.py:302
+#: Census/CensusReport.py:307
 msgid "Start a new page after each census."
 msgstr "Eine neue Seite nach jeder Volkszählung beginnen."
 
-#: Census//CensusReport.py:320
+#: Census/CensusReport.py:325
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: Census//CensusReport.py:333
+#: Census/CensusReport.py:338
 msgid "The style used for headings."
 msgstr "Der Stil für Überschriften."
 
-#: Census//CensusReport.py:343
+#: Census/CensusReport.py:348
 msgid "The style used for names."
 msgstr "Stil für Namen"
 
-#: Census//CensusReport.py:353
+#: Census/CensusReport.py:358
 msgid "The style used for column headings."
 msgstr "Der Stil für Spaltenüberschriften."
 
-#: Census//CensusReport.py:364
+#: Census/CensusReport.py:369
 msgid "The default text style."
 msgstr "Der Standardtextstil"
 
-#: Census//census.xml.h:1
-msgid "1. Dwelling House"
-msgstr "1. Wohnhaus"
-
-#: Census//census.xml.h:2
-msgid "1. Dwelling house"
-msgstr "1. Wohnhaus"
-
-#: Census//census.xml.h:3
-msgid "1. House"
-msgstr "1. Haus"
-
-#: Census//census.xml.h:4
-msgid "1. Name of Occupier"
-msgstr "1. Name des Besitzers"
-
-#: Census//census.xml.h:5
-msgid "1. Names of Inmates"
-msgstr "1. Namen der Insassen"
-
-#: Census//census.xml.h:6
-msgid "1. No. of family in order of visitation"
-msgstr "1. Nr. der Familie in der Reihenfolge der Besuche"
-
-#: Census//census.xml.h:7
-msgid "1. Vessels"
-msgstr ""
-
-#: Census//census.xml.h:8
-msgid "1. Vessels and Shanties"
-msgstr ""
-
-#: Census//census.xml.h:9
-msgid "10. Age at last birthday"
-msgstr "10. Alter am letzten Geburtstag"
-
-#: Census//census.xml.h:10
-msgid "10. Born within last twelve months"
-msgstr "10. Innerhalb der letzten zwölf Monaten geboren"
-
-#: Census//census.xml.h:11
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Farbige Person - Negroes"
-
-#: Census//census.xml.h:12
-#, fuzzy
-msgid "10. Location: Section"
-msgstr "Ortseditor"
-
-#: Census//census.xml.h:13
-msgid "10. Married or Single"
-msgstr "10. Verheiratet oder Single"
-
-#: Census//census.xml.h:14
-msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
-
-#: Census//census.xml.h:15
-msgid "10. Racial or tribal origin"
-msgstr "10. Herkunfts Rasse oder Stamm"
-
-#: Census//census.xml.h:16
-msgid "10. Relationship to Head of Family"
-msgstr "10. Beziehung zum Kopf des Hauses"
-
-#: Census//census.xml.h:17
-msgid "10. Sex"
-msgstr "10. Geschlecht"
-
-#: Census//census.xml.h:18
-msgid "10. Wheat: Acres"
-msgstr "10. Weizen: Morgen"
-
-#: Census//census.xml.h:19
-msgid "11 . Country or place of birth"
-msgstr "11. Land oder Ort der Geburt"
-
-#: Census//census.xml.h:20
-msgid "11. Country or Province of Birth"
-msgstr "11. Land oder Provinz der Geburt"
-
-#: Census//census.xml.h:21
-msgid "11. Country or place of birth"
-msgstr "11. Land oder Ort der Geburt"
-
-#: Census//census.xml.h:22
-msgid "11. Indians, if any"
-msgstr "11. Indianer, gegebenenfalls"
-
-#: Census//census.xml.h:23
-msgid "11. Location: Township"
-msgstr ""
-
-#: Census//census.xml.h:24
-msgid "11. Number of inmates in institution"
-msgstr "11. Anzahl der Insassen in der Einrichtung"
-
-#: Census//census.xml.h:25
-msgid "11. Religion"
-msgstr "11. Religion"
-
-#: Census//census.xml.h:26
-msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
-
-#: Census//census.xml.h:27
-msgid "11. Wheat: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:28
-msgid "11. Widowers"
-msgstr "11. Witwer"
-
-#: Census//census.xml.h:29
-msgid "12. Age at last birthday"
-msgstr "12. Alter am letzten Geburtstag"
-
-#: Census//census.xml.h:30
-msgid "12. Barley: Acres"
-msgstr "12. Gerste: Morgen"
-
-#: Census//census.xml.h:31
-msgid "12. FrenchCanadian"
-msgstr "12. Frankokanadier(in)"
-
-#: Census//census.xml.h:32
-#, fuzzy
-msgid "12. Location: Range"
-msgstr "Ort:"
-
-#: Census//census.xml.h:33
-msgid "12. Months at school in 1910"
-msgstr "12. Monate in der Schule in 1910"
-
-#: Census//census.xml.h:34
-msgid "12. Real Estate Owned: Grand total of acres"
-msgstr ""
-
-#: Census//census.xml.h:35
-msgid "12. Religion"
-msgstr "12. Religion"
-
-#: Census//census.xml.h:36
-msgid "12. Residents: Members, Male"
-msgstr "12. Bewohner: Angehörigen, Männlich"
-
-#: Census//census.xml.h:37
-msgid "12. Widows"
-msgstr "12. Witwen"
-
-#: Census//census.xml.h:38
-msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
-
-#: Census//census.xml.h:39
-msgid "13. Barley: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:40
-msgid "13. Birth Place of Father"
-msgstr "13. Geburtsort des Vaters"
-
-#: Census//census.xml.h:41
-msgid "13. Can Read"
-msgstr "13. Kann lesen"
-
-#: Census//census.xml.h:42
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Farbige Personen, Mulatten oder Indianer"
-
-#: Census//census.xml.h:43
-msgid "13. Country or place of birth"
-msgstr "13. Land oder Ort der Geburt"
-
-#: Census//census.xml.h:44
-msgid "13. Location: Meridian"
-msgstr ""
-
-#: Census//census.xml.h:45
-msgid "13. Origin"
-msgstr "13. Herkunft"
-
-#: Census//census.xml.h:46
-msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr ""
-
-#: Census//census.xml.h:47
-msgid "13. Residents: Members, Female"
-msgstr "13. Bewohner: Angehörigen, Weiblich"
-
-#: Census//census.xml.h:48
-msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Jahr der Einbürgerung, wenn vorher Ausländer"
-
-#: Census//census.xml.h:49
-msgid "14. Birth Place of Mother"
-msgstr "14. Geburtsort der Mutter"
-
-#: Census//census.xml.h:50
-msgid "14. Can Write"
-msgstr "14. Kann schreiben"
-
-#: Census//census.xml.h:51
-msgid "14. Livestock: Horses, all ages"
-msgstr "14. Nutztiere: Pferde, allen Alters"
-
-#: Census//census.xml.h:52
-msgid "14. Members: Male"
-msgstr "14. Angehörige: Männlich"
-
-#: Census//census.xml.h:53
-msgid "14. Profession, Occupation or Trade"
-msgstr ""
-
-#: Census//census.xml.h:54
-msgid "14. Racial or tribal origin"
-msgstr "14. Herkunfts Rasse oder Stamm"
-
-#: Census//census.xml.h:55
-msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr ""
-
-#: Census//census.xml.h:56
-msgid "14. Religion"
-msgstr "14. Religion"
-
-#: Census//census.xml.h:57
-msgid "14. Residents: Not Members: Male"
-msgstr "14. Bewohner: Keine Angehörigen: Männlich"
-
-#: Census//census.xml.h:58
-msgid "14. Rye: Acres"
-msgstr "14- Roggen: Morgen"
-
-#: Census//census.xml.h:59
-msgid "15. Language commonly spoken"
-msgstr "15. Gewöhnlich gesprochene Sprache"
-
-#: Census//census.xml.h:60
-msgid "15. Livestock: Milch cows"
-msgstr "15. Nutztiere: Milchkühe"
-
-#: Census//census.xml.h:61
-msgid "15. Married or Widowed"
-msgstr "15. Verheiratet oder verwitwet"
-
-#: Census//census.xml.h:62
-msgid "15. Members: Female"
-msgstr "15. Angehörige: Weiblich"
-
-#: Census//census.xml.h:63
-msgid "15. Nationality"
-msgstr "15. Nationalität"
-
-#: Census//census.xml.h:64
-msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr ""
-
-#: Census//census.xml.h:65
-msgid "15. Religion"
-msgstr "15. Religion"
-
-#: Census//census.xml.h:66
-msgid "15. Residents: Not Members: Female"
-msgstr "15. Bewohner: Keine Angehörigen: Weiblich"
-
-#: Census//census.xml.h:67
-msgid "15. Rye: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:68
-msgid "15. Year of immigration to Canada"
-msgstr "15. Jahr der Einwanderung nach Kanada"
-
-#: Census//census.xml.h:69
-msgid "16. Chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:70
-msgid "16. Going to school"
-msgstr "16. Geht zur Schule"
-
-#: Census//census.xml.h:71
-msgid ""
-"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
-"lunatic"
-msgstr ""
-
-#: Census//census.xml.h:72
-msgid "16. Married within last twelve months"
-msgstr ""
-
-#: Census//census.xml.h:73
-msgid "16. Members Absent: Male"
-msgstr "16. Angehörige abwesend: Männlich"
-
-#: Census//census.xml.h:74
-msgid "16. Not Members: Male"
-msgstr "16. Nicht Angehörige: Männlich"
-
-#: Census//census.xml.h:75
-msgid "16. Other horned or meat cattle, all ages"
-msgstr ""
-
-#: Census//census.xml.h:76
-msgid "16. Peas: Acres"
-msgstr "16. Erbsen: Morgen"
-
-#: Census//census.xml.h:77
-msgid "16. Profession, Occupation or Trade"
-msgstr ""
-
-#: Census//census.xml.h:78
-msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr ""
-
-#: Census//census.xml.h:79
-msgid "16. Religion"
-msgstr "16. Religion"
-
-#: Census//census.xml.h:80
-msgid "16. Year of naturalization"
-msgstr "16. Jahr der Einbürgerung"
-
-#: Census//census.xml.h:81
-msgid "17. Deaf and Dumb"
-msgstr ""
-
-#: Census//census.xml.h:82
-msgid "17. Employers"
-msgstr "17. Arbeitgeber"
-
-#: Census//census.xml.h:83
-msgid "17. Going to school"
-msgstr "17. Geht zur Schule"
-
-#: Census//census.xml.h:84
-msgid "17. Members Absent: Female"
-msgstr "17. Angehörige abwesend: Weiblich"
-
-#: Census//census.xml.h:85
-msgid "17. Nationality"
-msgstr "17. Nationalität"
-
-#: Census//census.xml.h:86
-msgid "17. Not Members: Female"
-msgstr "17. Keine Angehörigen: Weiblich"
-
-#: Census//census.xml.h:87
-msgid "17. Peas: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:88
-msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr ""
-
-#: Census//census.xml.h:89
-msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr ""
-
-#: Census//census.xml.h:90
-msgid "17. Sheep and lambs, all ages"
-msgstr "17. Schafe und Lämmer, allen Alters"
-
-#: Census//census.xml.h:91
-msgid "18. Blind"
-msgstr "18. Blind"
-
-#: Census//census.xml.h:92
-msgid "18. Deaf and Dumb: Male"
-msgstr ""
-
-#: Census//census.xml.h:93
-msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr ""
-
-#: Census//census.xml.h:94
-msgid "18. Hogs and pigs, all ages"
-msgstr "18. Ferkel und Schweine, allen Alters"
-
-#: Census//census.xml.h:95
-msgid "18. Living on own means"
-msgstr ""
-
-#: Census//census.xml.h:96
-msgid "18. Members Absent: Male"
-msgstr ""
-
-#: Census//census.xml.h:97
-msgid "18. Oats: Acres"
-msgstr ""
-
-#: Census//census.xml.h:98
-msgid "18. Over 20 unable to read"
-msgstr ""
-
-#: Census//census.xml.h:99
-msgid "18. Race or tribal origin"
-msgstr ""
-
-#: Census//census.xml.h:100
-msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr ""
-
-#: Census//census.xml.h:101
-msgid "18. Wage Earner"
-msgstr ""
-
-#: Census//census.xml.h:102
-msgid "19. Can speak English"
-msgstr ""
-
-#: Census//census.xml.h:103
-msgid "19. Deaf and Dumb: Female"
-msgstr ""
-
-#: Census//census.xml.h:104
-msgid "19. Employer"
-msgstr ""
-
-#: Census//census.xml.h:105
-msgid "19. Members Absent: Female"
-msgstr ""
-
-#: Census//census.xml.h:106
-msgid "19. Oats: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:107
-msgid "19. Over 20 unable to write"
-msgstr ""
-
-#: Census//census.xml.h:108
-msgid "19. Real Estate Leased: Grand total of acres"
-msgstr ""
-
-#: Census//census.xml.h:109
-msgid "19. Unemployed during week preceding Census"
-msgstr ""
-
-#: Census//census.xml.h:110
-msgid "19/ Unsound mind"
-msgstr ""
-
-#: Census//census.xml.h:111
-msgid "1: Nominal Return of the Living"
-msgstr ""
-
-#: Census//census.xml.h:112
-msgid "1: Population and Livestock"
-msgstr ""
-
-#: Census//census.xml.h:113
-msgid "1: Population by name, personal description, etc."
-msgstr ""
-
-#: Census//census.xml.h:114
-msgid "2. Concession or Range"
-msgstr ""
-
-#: Census//census.xml.h:115
-#, fuzzy
-msgid "2. Family"
-msgstr "Familie"
-
-#: Census//census.xml.h:116
-#, fuzzy
-msgid "2. Family or household"
-msgstr "Familienfarben"
-
-#: Census//census.xml.h:117
-msgid "2. Family, Household or Institution"
-msgstr ""
-
-#: Census//census.xml.h:118
-msgid "2. Houses in construction"
-msgstr ""
-
-#: Census//census.xml.h:119
-#, fuzzy
-msgid "2. Name of each person in the family"
-msgstr "Entferne Person als Elter in dieser Familie"
-
-#: Census//census.xml.h:120
-msgid "2. Page from Schedule 1"
-msgstr ""
-
-#: Census//census.xml.h:121
-msgid "2. Profession, Trade or Occupation"
-msgstr ""
-
-#: Census//census.xml.h:122
-msgid "2. Profession, trade or occupation"
-msgstr ""
-
-#: Census//census.xml.h:123
-msgid "2. Shanties"
-msgstr ""
-
-#: Census//census.xml.h:124
-msgid "20. B.Wheat: Acres"
-msgstr ""
-
-#: Census//census.xml.h:125
-msgid "20. Blind: Male"
-msgstr ""
-
-#: Census//census.xml.h:126
-msgid "20. Can speak French"
-msgstr ""
-
-#: Census//census.xml.h:127
-msgid "20. Date of Operations and Remarks"
-msgstr ""
-
-#: Census//census.xml.h:128
-msgid "20. Deaf and Dumb"
-msgstr ""
-
-#: Census//census.xml.h:129
-msgid "20. Employee"
-msgstr ""
-
-#: Census//census.xml.h:130
-msgid "20. Employer to state average number of hands employed during year"
-msgstr ""
-
-#: Census//census.xml.h:131
-msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr ""
-
-#: Census//census.xml.h:132
-msgid "21. B.Wheat: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:133
-msgid "21. Blind"
-msgstr ""
-
-#: Census//census.xml.h:134
-msgid "21. Blind: Female"
-msgstr ""
-
-#: Census//census.xml.h:135
-#, fuzzy
-msgid "21. Instruction: Read"
-msgstr "Einleitungsnotiz"
-
-#: Census//census.xml.h:136
-msgid "21. Other language spoken as mother tongue"
-msgstr ""
-
-#: Census//census.xml.h:137
-msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr ""
-
-#: Census//census.xml.h:138
-msgid "21. Working on own account"
-msgstr ""
-
-#: Census//census.xml.h:139
-msgid "22. Can Read"
-msgstr ""
-
-#: Census//census.xml.h:140
-msgid "22. Corn: Acres"
-msgstr ""
-
-#: Census//census.xml.h:141
-#, fuzzy
-msgid "22. Instruction: Write"
-msgstr "Einleitungsnotiz"
-
-#: Census//census.xml.h:142
-msgid "22. Lunatics or Idiots"
-msgstr ""
-
-#: Census//census.xml.h:143
-msgid "22. Lunatics: Male"
-msgstr ""
-
-#: Census//census.xml.h:144
-msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr ""
-
-#: Census//census.xml.h:145
-msgid "22. State where person employed"
-msgstr ""
-
-#: Census//census.xml.h:146
-msgid "22. Unsound mind"
-msgstr ""
-
-#: Census//census.xml.h:147
-msgid "22. Working at trade in factory or in home"
-msgstr ""
-
-#: Census//census.xml.h:148
-msgid "23. Attending School within the year: Male"
-msgstr ""
-
-#: Census//census.xml.h:149
-msgid "23. Can Write"
-msgstr ""
-
-#: Census//census.xml.h:150
-msgid "23. Corn: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:151
-msgid "23. Date of Operations and Remarks"
-msgstr ""
-
-#: Census//census.xml.h:152
-msgid "23. Deaf and Dumb"
-msgstr ""
-
-#: Census//census.xml.h:153
-msgid "23. Lunatics: Female"
-msgstr ""
-
-#: Census//census.xml.h:154
-msgid "23. Months employed at trade in factory"
-msgstr ""
-
-#: Census//census.xml.h:155
-msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr ""
-
-#: Census//census.xml.h:156
-msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:157
-msgid "24. Attending School within the year: Female"
-msgstr ""
-
-#: Census//census.xml.h:158
-msgid "24. Attending School: Male"
-msgstr ""
-
-#: Census//census.xml.h:159
-msgid "24. Blind"
-msgstr ""
-
-#: Census//census.xml.h:160
-msgid "24. Chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:161
-msgid "24. Months employed at trade in home"
-msgstr ""
-
-#: Census//census.xml.h:162
-msgid "24. Potatoes: Acres"
-msgstr ""
-
-#: Census//census.xml.h:163
-msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr ""
-
-#: Census//census.xml.h:164
-msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:165
-msgid "25. Attending School: Female"
-msgstr ""
-
-#: Census//census.xml.h:166
-msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr ""
-
-#: Census//census.xml.h:167
-msgid "25. Hours of working time per week at chief occupation"
-msgstr ""
-
-#: Census//census.xml.h:168
-msgid "25. Months employed in other occupation than trace in factory or home"
-msgstr ""
-
-#: Census//census.xml.h:169
-msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr ""
-
-#: Census//census.xml.h:170
-msgid "25. Potatoes: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:171
-msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr ""
-
-#: Census//census.xml.h:172
-msgid "25. Unsound mind"
-msgstr ""
-
-#: Census//census.xml.h:173
-msgid "26. Births During the Year 1851: Male"
-msgstr ""
-
-#: Census//census.xml.h:174
-msgid "26. Church or place of worship: Religious denomination"
-msgstr ""
-
-#: Census//census.xml.h:175
-msgid "26. Earnings from occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:176
-msgid "26. Hours of working time per week at other occupation, if any"
-msgstr ""
-
-#: Census//census.xml.h:177
-msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr ""
-
-#: Census//census.xml.h:178
-msgid "26. State where person is employed"
-msgstr ""
-
-#: Census//census.xml.h:179
-msgid "26. Turnips: Acres"
-msgstr ""
-
-#: Census//census.xml.h:180
-msgid "27. Births During the Year 1851: Female"
-msgstr ""
-
-#: Census//census.xml.h:181
-msgid "27. Births in 1860: Male"
-msgstr ""
-
-#: Census//census.xml.h:182
-msgid "27. Church or place of worship: Number of communicants"
-msgstr ""
-
-#: Census//census.xml.h:183
-msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr ""
-
-#: Census//census.xml.h:184
-msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:185
-msgid "27. Turnips: Produce Bsh."
-msgstr ""
-
-#: Census//census.xml.h:186
-msgid "28. Births in 1860: Female"
-msgstr ""
-
-#: Census//census.xml.h:187
-msgid "28. Church or place of worship: Seating capacity"
-msgstr ""
-
-#: Census//census.xml.h:188
-msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr ""
-
-#: Census//census.xml.h:189
-msgid "28. Deaths During the Year 1851: Male"
-msgstr ""
-
-#: Census//census.xml.h:190
-msgid "28. Months at school in 1910"
-msgstr ""
-
-#: Census//census.xml.h:191
-msgid "28. Total earnings in 1910 from other than chief occupation or trade"
-msgstr ""
-
-#: Census//census.xml.h:192
-msgid "29. Can read"
-msgstr ""
-
-#: Census//census.xml.h:193
-msgid "29. Carrots - Bsh."
-msgstr ""
-
-#: Census//census.xml.h:194
-msgid "29. Deaths During the Year 1851: Female"
-msgstr ""
-
-#: Census//census.xml.h:195
-msgid "29. Deaths in 1860: Male"
-msgstr ""
-
-#: Census//census.xml.h:196
-msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr ""
-
-#: Census//census.xml.h:197
-msgid "29. Sunday School: Religious Denomination"
-msgstr ""
-
-#: Census//census.xml.h:198
-msgid "2: Buildings and Lands, Churches and Schools"
-msgstr ""
-
-#: Census//census.xml.h:199
-msgid "3. Dwelling houses in construction"
-msgstr ""
-
-#: Census//census.xml.h:200
-msgid "3. Houses in construction"
-msgstr ""
-
-#: Census//census.xml.h:201
-msgid "3. Houses unoccupied"
-msgstr ""
-
-#: Census//census.xml.h:202
-msgid "3. Line from Schedule 1"
-msgstr ""
-
-#: Census//census.xml.h:203
-msgid "3. Lot or part of Lot"
-msgstr ""
-
-#: Census//census.xml.h:204
-#, fuzzy
-msgid "3. Name"
-msgstr "Name"
-
-#: Census//census.xml.h:205
-msgid "3. Name of each person in family"
-msgstr ""
-
-#: Census//census.xml.h:206
-msgid "3. Name of each person in family, household or institution"
-msgstr ""
-
-#: Census//census.xml.h:207
-#, fuzzy
-msgid "3. Place of Birth"
-msgstr "Ortsliste"
-
-#: Census//census.xml.h:208
-msgid "3. Place of Habitation"
-msgstr ""
-
-#: Census//census.xml.h:209
-#, fuzzy
-msgid "3.Relation to head of family"
-msgstr "Entferne Vater aus der Familie"
-
-#: Census//census.xml.h:210
-#, fuzzy
-msgid "30. Age and Cause of Deaths"
-msgstr "Todesursache"
-
-#: Census//census.xml.h:211
-msgid "30. Can write"
-msgstr ""
-
-#: Census//census.xml.h:212
-msgid "30. Deaths in 1860: Female"
-msgstr ""
-
-#: Census//census.xml.h:213
-msgid "30. Insurance: Upon life"
-msgstr ""
-
-#: Census//census.xml.h:214
-msgid "30. Mangle Wurtzel"
-msgstr ""
-
-#: Census//census.xml.h:215
-msgid "30. Sunday School: Number of officers and teachers"
-msgstr ""
-
-#: Census//census.xml.h:216
-msgid "31. Age and cause of death"
-msgstr ""
-
-#: Census//census.xml.h:217
-msgid "31. Beans Bush"
-msgstr ""
-
-#: Census//census.xml.h:218
-msgid "31. Can speak English"
-msgstr ""
-
-#: Census//census.xml.h:219
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-
-#: Census//census.xml.h:220
-msgid "31. Insurance: Against accident or illness"
-msgstr ""
-
-#: Census//census.xml.h:221
-msgid "31. Sunday School: Number of Scholars"
-msgstr ""
-
-#: Census//census.xml.h:222
-msgid "32. Can speak French"
-msgstr ""
-
-#: Census//census.xml.h:223
-msgid "32. Hops Lbs."
-msgstr ""
-
-#: Census//census.xml.h:224
-msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr ""
-
-#: Census//census.xml.h:225
-msgid "32. Houses: No. of Stories"
-msgstr ""
-
-#: Census//census.xml.h:226
-msgid "32. Insurance: Cost of insurance in census year"
-msgstr ""
-
-#: Census//census.xml.h:227
-msgid "32. School: Number of rooms"
-msgstr ""
-
-#: Census//census.xml.h:228
-msgid "33. Hay, Bundles or Tons"
-msgstr ""
-
-#: Census//census.xml.h:229
-msgid "33. Houses: No. of Stories"
-msgstr ""
-
-#: Census//census.xml.h:230
-msgid "33. Months at school in 1910"
-msgstr ""
-
-#: Census//census.xml.h:231
-msgid "33. Mother tongue (If spoken)"
-msgstr ""
-
-#: Census//census.xml.h:232
-msgid "33. No. of Families Occupying"
-msgstr ""
-
-#: Census//census.xml.h:233
-#, fuzzy
-msgid "33. School: Number of teachers"
-msgstr "Anzahl der Instanzen:"
-
-#: Census//census.xml.h:234
-msgid "34. Can Read"
-msgstr ""
-
-#: Census//census.xml.h:235
-msgid "34. Flax or Hemp, Lbs."
-msgstr ""
-
-#: Census//census.xml.h:236
-msgid "34. Houses: No. of families living in the house"
-msgstr ""
-
-#: Census//census.xml.h:237
-msgid "34. Houses: Vacant"
-msgstr ""
-
-#: Census//census.xml.h:238
-msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr ""
-
-#: Census//census.xml.h:239
-msgid "34. School: Number of Scholars"
-msgstr ""
-
-#: Census//census.xml.h:240
-msgid "35. Can Write"
-msgstr ""
-
-#: Census//census.xml.h:241
-msgid "35. Date of visit"
-msgstr ""
-
-#: Census//census.xml.h:242
-msgid "35. Houses: Building"
-msgstr ""
-
-#: Census//census.xml.h:243
-msgid "35. Houses: Vacant"
-msgstr ""
-
-#: Census//census.xml.h:244
-msgid "35. Tobacco Lbs."
-msgstr ""
-
-#: Census//census.xml.h:245
-msgid "36. Houses: Being built"
-msgstr ""
-
-#: Census//census.xml.h:246
-msgid "36. Language commonly spoken"
-msgstr ""
-
-#: Census//census.xml.h:247
-msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr ""
-
-#: Census//census.xml.h:248
-msgid "36. The reason, if not enumerated on first visit"
-msgstr ""
-
-#: Census//census.xml.h:249
-msgid "36. Wool Lbs."
-msgstr ""
-
-#: Census//census.xml.h:250
-msgid "37."
-msgstr ""
-
-#: Census//census.xml.h:251
-msgid ""
-"37. Cost of education in 1910 for persons over 16 years of age at College, "
-"Convent or University"
-msgstr ""
-
-#: Census//census.xml.h:252
-msgid "37. Date when enumerated"
-msgstr ""
-
-#: Census//census.xml.h:253
-msgid "37. Public Buildings"
-msgstr ""
-
-#: Census//census.xml.h:254
-msgid "38."
-msgstr ""
-
-#: Census//census.xml.h:255
-msgid "38. Blind"
-msgstr ""
-
-#: Census//census.xml.h:256
-msgid "38. Places of Worship"
-msgstr ""
-
-#: Census//census.xml.h:257
-msgid "39."
-msgstr ""
-
-#: Census//census.xml.h:258
-msgid "39. Deaf and dumb"
-msgstr ""
-
-#: Census//census.xml.h:259
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
-msgstr ""
-
-#: Census//census.xml.h:260
-msgid "4. Dwelling houses unoccupied"
-msgstr ""
-
-#: Census//census.xml.h:261
-msgid "4. Houses inhabited"
-msgstr ""
-
-#: Census//census.xml.h:262
-msgid "4. Houses unoccupied"
-msgstr ""
-
-#: Census//census.xml.h:263
-msgid "4. Houses: In construction"
-msgstr ""
-
-#: Census//census.xml.h:264
-msgid "4. Married during the year"
-msgstr ""
-
-#: Census//census.xml.h:265
-#, fuzzy
-msgid "4. Military Service"
-msgstr "Militärdienst"
-
-#: Census//census.xml.h:266
-msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr ""
-
-#: Census//census.xml.h:267
-msgid "4. Place of habitation"
-msgstr ""
-
-#: Census//census.xml.h:268
-#, fuzzy
-msgid "4. Religion"
-msgstr "Religion"
-
-#: Census//census.xml.h:269
-msgid "4. Sex"
-msgstr ""
-
-#: Census//census.xml.h:270
-msgid "40. Crazy or lunatic"
-msgstr ""
-
-#: Census//census.xml.h:271
-msgid "40. Maple Sugar Lbs."
-msgstr ""
-
-#: Census//census.xml.h:272
-msgid "40. Number of Persons Usually Employed Therein"
-msgstr ""
-
-#: Census//census.xml.h:273
-msgid "41. Cider Galls."
-msgstr ""
-
-#: Census//census.xml.h:274
-msgid "41. General Remarks of the Enumerator"
-msgstr ""
-
-#: Census//census.xml.h:275
-msgid "41. Idiotic or silly"
-msgstr ""
-
-#: Census//census.xml.h:276
-msgid "42. Fulled Cloth Yards"
-msgstr ""
-
-#: Census//census.xml.h:277
-msgid "43. Linnen - Yds."
-msgstr ""
-
-#: Census//census.xml.h:278
-msgid "44. Flannel - Yds."
-msgstr ""
-
-#: Census//census.xml.h:279
-msgid "45. Bulls, Oxen or Steers"
-msgstr ""
-
-#: Census//census.xml.h:280
-msgid "46. Milch Cows"
-msgstr ""
-
-#: Census//census.xml.h:281
-msgid "47. Calves or Heifers"
-msgstr ""
-
-#: Census//census.xml.h:282
-msgid "48. Horses of all ages"
-msgstr ""
-
-#: Census//census.xml.h:283
-msgid "49. Sheep"
-msgstr ""
-
-#: Census//census.xml.h:284
-#, fuzzy
-msgid "5. Colour"
-msgstr "Farbe"
-
-#: Census//census.xml.h:285
-msgid "5. Dwelling houses inhabited"
-msgstr ""
-
-#: Census//census.xml.h:286
-#, fuzzy
-msgid "5. Families"
-msgstr "Familien"
-
-#: Census//census.xml.h:287
-msgid "5. Houses inhabited"
-msgstr ""
-
-#: Census//census.xml.h:288
-msgid "5. Houses: Vacant"
-msgstr ""
-
-#: Census//census.xml.h:289
-msgid "5. Married, single, widowed or divorced"
-msgstr ""
-
-#: Census//census.xml.h:290
-msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr ""
-
-#: Census//census.xml.h:291
-msgid "5. Place of Habitation: Township"
-msgstr ""
-
-#: Census//census.xml.h:292
-msgid "5. Relation to head of family"
-msgstr ""
-
-#: Census//census.xml.h:293
-#, fuzzy
-msgid "5. Religion"
-msgstr "Religion"
-
-#: Census//census.xml.h:294
-msgid "5. Residence if Outside of Limits"
-msgstr ""
-
-#: Census//census.xml.h:295
-msgid "5. Sex"
-msgstr ""
-
-#: Census//census.xml.h:296
-msgid "50. Pigs"
-msgstr ""
-
-#: Census//census.xml.h:297
-msgid "51. Butter - Lbs."
-msgstr ""
-
-#: Census//census.xml.h:298
-msgid "52. Cheese - Lbs."
-msgstr ""
-
-#: Census//census.xml.h:299
-msgid "53. Beef - Barrels or Cwts."
-msgstr ""
-
-#: Census//census.xml.h:300
-msgid "54. Pork - Barrels or Cwts."
-msgstr ""
-
-#: Census//census.xml.h:301
-msgid "55. Quantity of Fish Cured"
-msgstr ""
-
-#: Census//census.xml.h:302
-#, fuzzy
-msgid "56. Remarks"
-msgstr "Bemerkungen"
-
-#: Census//census.xml.h:303
-msgid "6 April 1891"
-msgstr ""
-
-#: Census//census.xml.h:304
-msgid "6. Age"
-msgstr ""
-
-#: Census//census.xml.h:305
-msgid "6. Age at Next Birthday"
-msgstr ""
-
-#: Census//census.xml.h:306
-#, fuzzy
-msgid "6. Families"
-msgstr "Familien"
-
-#: Census//census.xml.h:307
-msgid "6. Houses: Inhabited"
-msgstr ""
-
-#: Census//census.xml.h:308
-#, fuzzy
-msgid "6. Names"
-msgstr "_Namen"
-
-#: Census//census.xml.h:309
-msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr ""
-
-#: Census//census.xml.h:310
-msgid "6. Place of Habitation: Range"
-msgstr ""
-
-#: Census//census.xml.h:311
-msgid "6. Relation to head of family"
-msgstr ""
-
-#: Census//census.xml.h:312
-msgid "6. Residence, if out of limits"
-msgstr ""
-
-#: Census//census.xml.h:313
-msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr ""
-
-#: Census//census.xml.h:314
-#, fuzzy
-msgid "6.Families"
-msgstr "Familien"
-
-#: Census//census.xml.h:315
-msgid "7. Age next Birthday"
-msgstr ""
-
-#: Census//census.xml.h:316
-msgid "7. Country or place of birth"
-msgstr ""
-
-#: Census//census.xml.h:317
-msgid "7. Institution: Special or legal name"
-msgstr ""
-
-#: Census//census.xml.h:318
-msgid "7. Month of birth"
-msgstr ""
-
-#: Census//census.xml.h:319
-#, fuzzy
-msgid "7. Names"
-msgstr "_Namen"
-
-#: Census//census.xml.h:320
-msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr ""
-
-#: Census//census.xml.h:321
-msgid "7. Place of Habitation: Meridian"
-msgstr ""
-
-#: Census//census.xml.h:322
-msgid "7. Sex"
-msgstr ""
-
-#: Census//census.xml.h:323
-msgid "7. Sex: Male"
-msgstr ""
-
-#: Census//census.xml.h:324
-msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr ""
-
-#: Census//census.xml.h:325
-msgid "8. Age"
-msgstr ""
-
-#: Census//census.xml.h:326
-#, fuzzy
-msgid "8. Age at last birthday"
-msgstr "Maximales Alter des Vaters bei der Geburt"
-
-#: Census//census.xml.h:327
-msgid "8. Institution: Number of buildings"
-msgstr ""
-
-#: Census//census.xml.h:328
-msgid "8. Month and Date of Birth"
-msgstr ""
-
-#: Census//census.xml.h:329
-msgid "8. Month of birth"
-msgstr ""
-
-#: Census//census.xml.h:330
-#, fuzzy
-msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "Anzahl der Vorfahren von %s"
-
-#: Census//census.xml.h:331
-msgid "8. Place of Habitation: Municipality"
-msgstr ""
-
-#: Census//census.xml.h:332
-msgid "8. Sex"
-msgstr ""
-
-#: Census//census.xml.h:333
-#, fuzzy
-msgid "8. Sex: Female"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:334
-msgid "8. Sex: Male"
-msgstr ""
-
-#: Census//census.xml.h:335
-msgid "8. Year of immigration to Canada"
-msgstr ""
-
-#: Census//census.xml.h:336
-msgid "9. Age"
-msgstr ""
-
-#: Census//census.xml.h:337
-msgid "9. Country or place of birth"
-msgstr ""
-
-#: Census//census.xml.h:338
-#, fuzzy
-msgid "9. Married or Single"
-msgstr "Häufig verheiratet"
-
-#: Census//census.xml.h:339
-msgid "9. Married or Widowed"
-msgstr ""
-
-#: Census//census.xml.h:340
-msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr ""
-
-#: Census//census.xml.h:341
-msgid "9. Number of families in house or institution"
-msgstr ""
-
-#: Census//census.xml.h:342
-#, fuzzy
-msgid "9. Post office address"
-msgstr "Land für die Adresse"
-
-#: Census//census.xml.h:343
-#, fuzzy
-msgid "9. Relationship to head of family or household"
-msgstr "Verwandtschaftsverhältnis zur Hauptperson"
-
-#: Census//census.xml.h:344
-#, fuzzy
-msgid "9. Sex:Female"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:345
-msgid "9. Year of birth"
-msgstr ""
-
-#: Census//census.xml.h:346
-#, fuzzy
-msgid "A1: Population"
-msgstr "Veröffentlichung"
-
-#: Census//census.xml.h:347
-#, fuzzy
-msgid "A: Personal Census"
-msgstr "Persönliche Ereignisse"
-
-#: Census//census.xml.h:348
-msgid "Able to read"
-msgstr ""
-
-#: Census//census.xml.h:349
-#, fuzzy
-msgid "Able to read and write"
-msgstr "Fortsetzen und überschreiben"
-
-#: Census//census.xml.h:350
-msgid "Able to speak English"
-msgstr ""
-
-#: Census//census.xml.h:351
-msgid "Able to speak English; if not, language spoken"
-msgstr ""
-
-#: Census//census.xml.h:352
-msgid "Able to speak English; if not, the language spoken"
-msgstr ""
-
-#: Census//census.xml.h:353
-#, fuzzy
-msgid "Able to write"
-msgstr "Links nachg Rechts"
-
-#: Census//census.xml.h:354
-msgid "AbsentMembersFemale"
-msgstr ""
-
-#: Census//census.xml.h:355
-msgid "AbsentMembersMale"
-msgstr ""
-
-#: Census//census.xml.h:356
-msgid "Academies and Grammar Schools"
-msgstr ""
-
-#: Census//census.xml.h:357
-msgid "AcresCrops"
-msgstr ""
-
-#: Census//census.xml.h:358
-#, fuzzy
-msgid "AcresCultivation"
-msgstr "Ziel"
-
-#: Census//census.xml.h:359
-msgid "AcresGardens"
-msgstr ""
-
-#: Census//census.xml.h:360
-msgid "AcresHeld"
-msgstr ""
-
-#: Census//census.xml.h:361
-msgid "AcresPasture"
-msgstr ""
-
-#: Census//census.xml.h:362
-msgid "AcresWood"
-msgstr ""
-
-#: Census//census.xml.h:363
-msgid "Address"
-msgstr "Adresse"
-
-#: Census//census.xml.h:364
-msgid "Age"
-msgstr "Alter"
-
-#: Census//census.xml.h:365
-#, fuzzy
-msgid "Age at first marriage"
-msgstr "Alter bei Hochzeit"
-
-#: Census//census.xml.h:366
-msgid "Ages"
-msgstr ""
-
-#: Census//census.xml.h:367
-msgid "Aliens"
-msgstr ""
-
-#: Census//census.xml.h:368
-#, fuzzy
-msgid "All other free persons"
-msgstr "Farbe weiblicher Personen:"
-
-#: Census//census.xml.h:369
-msgid "Arrived since"
-msgstr ""
-
-#: Census//census.xml.h:370
-#, fuzzy
-msgid "At Home"
-msgstr "Anfang"
-
-#: Census//census.xml.h:371
-msgid "Attended school"
-msgstr ""
-
-#: Census//census.xml.h:372
-msgid "Attended school since Sept. 1, 1909"
-msgstr ""
-
-#: Census//census.xml.h:373
-msgid "Attended school since Sept. 1, 1919"
-msgstr ""
-
-#: Census//census.xml.h:374
-msgid "Attended school since Sept. 1, 1929"
-msgstr ""
-
-#: Census//census.xml.h:375
-msgid "Attended school within the census year"
-msgstr ""
-
-#: Census//census.xml.h:376
-msgid "Attended school within the year"
-msgstr ""
-
-#: Census//census.xml.h:377
-msgid "B: Agricultural Census"
-msgstr ""
-
-#: Census//census.xml.h:378
-msgid "BWheatAcres"
-msgstr ""
-
-#: Census//census.xml.h:379
-msgid "BWheatBush"
-msgstr ""
-
-#: Census//census.xml.h:380
-msgid "BarleyAcres"
-msgstr ""
-
-#: Census//census.xml.h:381
-msgid "BarleyBsh"
-msgstr ""
-
-#: Census//census.xml.h:382
-msgid "BeansBush"
-msgstr ""
-
-#: Census//census.xml.h:383
-msgid "Beef"
-msgstr ""
-
-#: Census//census.xml.h:384
-msgid "Birth1851Female"
-msgstr ""
-
-#: Census//census.xml.h:385
-#, fuzzy
-msgid "Birth1851Male"
-msgstr "Geburtsname"
-
-#: Census//census.xml.h:386
-msgid "Birth1860Female"
-msgstr ""
-
-#: Census//census.xml.h:387
-#, fuzzy
-msgid "Birth1860Male"
-msgstr "Geburtsname"
-
-#: Census//census.xml.h:388
-#, fuzzy
-msgid "Birth1871"
-msgstr "Geburt"
-
-#: Census//census.xml.h:389
-#, fuzzy
-msgid "Birth1881"
-msgstr "Geburt"
-
-#: Census//census.xml.h:390
-#, fuzzy
-msgid "BirthMonth"
-msgstr "Geburtsmonat"
-
-#: Census//census.xml.h:391
-#, fuzzy
-msgid "BirthPlace"
-msgstr "Geburtsort"
-
-#: Census//census.xml.h:392
-#, fuzzy
-msgid "BirthPlaceFather"
-msgstr "Geburtsort"
-
-#: Census//census.xml.h:393
-#, fuzzy
-msgid "BirthPlaceMother"
-msgstr "Geburtsort"
-
-#: Census//census.xml.h:394
-#, fuzzy
-msgid "BirthYear"
-msgstr "Geburtsjahr"
-
-#: Census//census.xml.h:395
-msgid "Blind"
-msgstr ""
-
-#: Census//census.xml.h:396
-msgid "Blind, or Deaf and Dumb"
-msgstr ""
-
-#: Census//census.xml.h:397
-#, fuzzy
-msgid "BlindFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:398
-#, fuzzy
-msgid "BlindMale"
-msgstr "Männlich"
-
-#: Census//census.xml.h:399
-#, fuzzy
-msgid "Born in County"
-msgstr "Kreis"
-
-#: Census//census.xml.h:400
-#, fuzzy
-msgid "Buildings"
-msgstr "Erstelle Ansicht"
-
-#: Census//census.xml.h:401
-msgid "BuisnessInfo"
-msgstr ""
-
-#: Census//census.xml.h:402
-msgid "Bulls"
-msgstr ""
-
-#: Census//census.xml.h:403
-msgid "Burgh Ward"
-msgstr ""
-
-#: Census//census.xml.h:404
-msgid "ButterLbs"
-msgstr ""
-
-#: Census//census.xml.h:405
-msgid "Calves"
-msgstr ""
-
-#: Census//census.xml.h:406
-msgid "Can read"
-msgstr ""
-
-#: Census//census.xml.h:407
-#, fuzzy
-msgid "Can read and write"
-msgstr "Fortsetzen und überschreiben"
-
-#: Census//census.xml.h:408
-msgid "Can speak English"
-msgstr ""
-
-#: Census//census.xml.h:409
-msgid "Can write"
-msgstr ""
-
-#: Census//census.xml.h:410
-#, fuzzy
-msgid "CanRead"
-msgstr "Bereit"
-
-#: Census//census.xml.h:411
-msgid "CanWrite"
-msgstr ""
-
-#: Census//census.xml.h:412
-#, fuzzy
-msgid "Cannot read"
-msgstr "Kann Reiter nicht entfernen"
-
-#: Census//census.xml.h:413
-#, fuzzy
-msgid "Cannot write"
-msgstr "Kann Datei nicht erstellen"
-
-#: Census//census.xml.h:414
-#, fuzzy
-msgid "CantRead"
-msgstr "Bereit"
-
-#: Census//census.xml.h:415
-#, fuzzy
-msgid "CantReadFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:416
-msgid "CantReadMale"
-msgstr ""
-
-#: Census//census.xml.h:417
-msgid "CantWrite"
-msgstr ""
-
-#: Census//census.xml.h:418
-msgid "CarrotsBush"
-msgstr ""
-
-#: Census//census.xml.h:419
-msgid "CheeseLbs"
-msgstr ""
-
-#: Census//census.xml.h:420
-msgid "Children"
-msgstr "Kinder"
-
-#: Census//census.xml.h:421
-#, fuzzy
-msgid "Children Died"
-msgstr "Kinder"
-
-#: Census//census.xml.h:422
-#, fuzzy
-msgid "Children Living"
-msgstr "Kinder fehlen"
-
-#: Census//census.xml.h:423
-#, fuzzy
-msgid "Children Total"
-msgstr "Kinder"
-
-#: Census//census.xml.h:424
-msgid "CiderGalls"
-msgstr ""
-
-#: Census//census.xml.h:425
+#: Census/census.xml.h:1
 msgid "City or Borough"
 msgstr ""
 
-#: Census//census.xml.h:426
-msgid "City or Municipal Borough"
+#: Census/census.xml.h:2
+msgid "Parish or Township"
 msgstr ""
 
-#: Census//census.xml.h:427
-msgid "City, town, village, township or parish"
+#: Census/census.xml.h:4
+msgid "Age"
+msgstr "Alter"
+
+#: Census/census.xml.h:5
+msgid "Occupation"
+msgstr "Beruf"
+
+#: Census/census.xml.h:6
+msgid "Where Born"
 msgstr ""
 
-#: Census//census.xml.h:428
-#, fuzzy
-msgid "Civil Parish"
-msgstr "Gemeinde"
-
-#: Census//census.xml.h:429
-msgid "Civil Parish or Township"
+#: Census/census.xml.h:7
+msgid "Ecclesiastical District"
 msgstr ""
 
-#: Census//census.xml.h:430
-msgid "Civil War veteran"
+#: Census/census.xml.h:8
+msgid "Town"
 msgstr ""
 
-#: Census//census.xml.h:431
-msgid "Class of worker"
-msgstr ""
+#: Census/census.xml.h:9
+msgid "Village"
+msgstr "Dorf"
 
-#: Census//census.xml.h:432
-msgid "ClothYards"
-msgstr ""
+#: Census/census.xml.h:10
+msgid "Relation"
+msgstr "Beziehung"
 
-#: Census//census.xml.h:433
-msgid "CloverBush"
-msgstr ""
-
-#: Census//census.xml.h:434
-msgid "Color"
-msgstr "Farbe"
-
-#: Census//census.xml.h:435
-#, fuzzy
-msgid "Colored persons blind"
-msgstr "Farbig umrandet"
-
-#: Census//census.xml.h:436
-msgid "Colored persons deaf/dumb"
-msgstr ""
-
-#: Census//census.xml.h:437
-msgid "Colored persons insane and idiots at private charge"
-msgstr ""
-
-#: Census//census.xml.h:438
-msgid "Colored persons insane and idiots at public charge"
-msgstr ""
-
-#: Census//census.xml.h:439
-msgid "Colour"
-msgstr "Farbe"
-
-#: Census//census.xml.h:440
-#, fuzzy
-msgid "Coloured"
-msgstr "Farbe"
-
-#: Census//census.xml.h:441
-#, fuzzy
-msgid "Column37"
-msgstr "Spalten"
-
-#: Census//census.xml.h:442
-#, fuzzy
-msgid "Column38"
-msgstr "Spalten"
-
-#: Census//census.xml.h:443
-#, fuzzy
-msgid "Column39"
-msgstr "Spalten"
-
-#: Census//census.xml.h:444
-#, fuzzy
-msgid "Comments"
-msgstr "Kommentar"
-
-#: Census//census.xml.h:445
-#, fuzzy
-msgid "Communicants"
-msgstr "Kommentar"
-
-#: Census//census.xml.h:446
-#, fuzzy
-msgid "Comprising"
-msgstr "Ereignisse vergleichen"
-
-#: Census//census.xml.h:447
-#, fuzzy
-msgid "Concession"
-msgstr "Verarbeitung..."
-
-#: Census//census.xml.h:448
+#: Census/census.xml.h:11
 #, fuzzy
 msgid "Condition"
 msgstr "Konfirmation/Firmung"
 
-#: Census//census.xml.h:449
-#, fuzzy
-msgid "Condition as to Marriage"
-msgstr "Längste beendete Ehe"
-
-#: Census//census.xml.h:450
-msgid "CornAcres"
-msgstr ""
-
-#: Census//census.xml.h:451
-msgid "CornBush"
-msgstr ""
-
-#: Census//census.xml.h:452
-msgid "County"
-msgstr "Kreis"
-
-#: Census//census.xml.h:453
-msgid "Cows"
-msgstr ""
-
-#: Census//census.xml.h:455
-msgid "Date When Filled"
-msgstr ""
-
-#: Census//census.xml.h:456
-#, fuzzy
-msgid "Date of birth"
-msgstr "Vor der Geburt verstorben"
-
-#: Census//census.xml.h:457
-#, fuzzy
-msgid "DateEnum"
-msgstr "Datum"
-
-#: Census//census.xml.h:458
-#, fuzzy
-msgid "DateVisit"
-msgstr "Daten"
-
-#: Census//census.xml.h:459
-msgid "Deaf and dumb"
-msgstr ""
-
-#: Census//census.xml.h:460
-msgid "Deaf, dumb, blind, insane or idiotic"
-msgstr ""
-
-#: Census//census.xml.h:461
-msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
-msgstr ""
-
-#: Census//census.xml.h:462
-msgid "DeafDumb"
-msgstr ""
-
-#: Census//census.xml.h:463
-#, fuzzy
-msgid "DeafDumbFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:464
-msgid "DeafDumbMale"
-msgstr ""
-
-#: Census//census.xml.h:465
-msgid "Death1851Female"
-msgstr ""
-
-#: Census//census.xml.h:466
-#, fuzzy
-msgid "Death1851Male"
-msgstr "Sterbedatum"
-
-#: Census//census.xml.h:467
-msgid "Death1860Female"
-msgstr ""
-
-#: Census//census.xml.h:468
-#, fuzzy
-msgid "Death1860Male"
-msgstr "Sterbedatum"
-
-#: Census//census.xml.h:469
-#, fuzzy
-msgid "DeathAgeCause"
-msgstr "Todesursache"
-
-#: Census//census.xml.h:470
-#, fuzzy
-msgid "Denomination"
-msgstr "Ziel"
-
-#: Census//census.xml.h:471
+#: Census/census.xml.h:12
 msgid "Disability"
 msgstr ""
 
-#: Census//census.xml.h:472
-#, fuzzy
-msgid "Disabled"
-msgstr "Instabil"
-
-#: Census//census.xml.h:473
-msgid "District"
-msgstr ""
-
-#: Census//census.xml.h:474
-#, fuzzy
-msgid "District No."
-msgstr "Begrenzt auf:"
-
-#: Census//census.xml.h:475
-msgid "Dwelling house"
-msgstr ""
-
-#: Census//census.xml.h:476
-#, fuzzy
-msgid "EarningsOccupation"
-msgstr "Beruf"
-
-#: Census//census.xml.h:477
-#, fuzzy
-msgid "EarningsOther"
-msgstr "Warnungen"
-
-#: Census//census.xml.h:478
-msgid "Ecclesiastical District"
-msgstr ""
-
-#: Census//census.xml.h:479
-msgid "Ecclesiastical Parish"
-msgstr ""
-
-#: Census//census.xml.h:480
-msgid "Ecclesiastical Parish or District"
-msgstr ""
-
-#: Census//census.xml.h:481
-msgid "Employed"
-msgstr ""
-
-#: Census//census.xml.h:482
-msgid "Employee"
-msgstr ""
-
-#: Census//census.xml.h:483
-msgid "Employees"
-msgstr ""
-
-#: Census//census.xml.h:484
-msgid "Employer"
-msgstr ""
-
-#: Census//census.xml.h:485
-msgid "Employer, Worker or Own Account"
-msgstr ""
-
-#: Census//census.xml.h:486
-msgid "Employer, Worker or on Own Account"
-msgstr ""
-
-#: Census//census.xml.h:487
-msgid "Employer, employee or working on own account"
-msgstr ""
-
-#: Census//census.xml.h:488
-msgid "Employer, worker or working on own account"
-msgstr ""
-
-#: Census//census.xml.h:489
-#, fuzzy
-msgid "Employment"
-msgstr "Begabung"
-
-#: Census//census.xml.h:490
-#, fuzzy
-msgid "EmploymentPlace"
-msgstr "Ereignisort"
-
-#: Census//census.xml.h:491
-msgid "EnumDistrict"
-msgstr ""
-
-#: Census//census.xml.h:492
-msgid "Enumeration District"
-msgstr ""
-
-#: Census//census.xml.h:493
-msgid "Enumeration District No."
-msgstr ""
-
-#: Census//census.xml.h:494
-msgid "Enumeration District Number"
-msgstr ""
-
-#: Census//census.xml.h:495
-#, fuzzy
-msgid "Enumerator"
-msgstr "Generation"
-
-#: Census//census.xml.h:496
-msgid "Families"
-msgstr "Familien"
-
-#: Census//census.xml.h:497
-msgid "Family"
-msgstr "Familie"
-
-#: Census//census.xml.h:498
-#, fuzzy
-msgid "Family or household"
-msgstr "Familienfarben"
-
-#: Census//census.xml.h:499
-msgid "Farm or house"
-msgstr ""
-
-#: Census//census.xml.h:500
-msgid "Farm?"
-msgstr ""
-
-#: Census//census.xml.h:501
-#, fuzzy
-msgid "Father of foreign birth"
-msgstr "Vor der Geburt verstorben"
-
-#: Census//census.xml.h:502
-#, fuzzy
-msgid "Father's mother tongue"
-msgstr "Alter des Vaters"
-
-#: Census//census.xml.h:503
-msgid "Fifth Census of Canada, 1911"
-msgstr ""
-
-#: Census//census.xml.h:504
-msgid "Fifth Census of Canada, 1911, Unorganized Regions"
-msgstr ""
-
-#: Census//census.xml.h:505
-msgid "Fish"
-msgstr ""
-
-#: Census//census.xml.h:506
-msgid "FlannelYds"
-msgstr ""
-
-#: Census//census.xml.h:507
-msgid "FlaxLbs"
-msgstr ""
-
-#: Census//census.xml.h:508
-msgid "Foreigner, Born England or Ireland"
-msgstr ""
-
-#: Census//census.xml.h:509
-msgid "Foreigners not naturalized"
-msgstr ""
-
-#: Census//census.xml.h:510
-msgid "Fourth Census of Canada, 1911"
-msgstr ""
-
-#: Census//census.xml.h:511
-msgid "Free colored females 10-23"
-msgstr ""
-
-#: Census//census.xml.h:512
-msgid "Free colored females 100 and over"
-msgstr ""
-
-#: Census//census.xml.h:513
-msgid "Free colored females 14-25"
-msgstr ""
-
-#: Census//census.xml.h:514
-msgid "Free colored females 24-35"
-msgstr ""
-
-#: Census//census.xml.h:515
-msgid "Free colored females 26-44"
-msgstr ""
-
-#: Census//census.xml.h:516
-msgid "Free colored females 36-54"
-msgstr ""
-
-#: Census//census.xml.h:517
-msgid "Free colored females 45 and over"
-msgstr ""
-
-#: Census//census.xml.h:518
-msgid "Free colored females 55-99"
-msgstr ""
-
-#: Census//census.xml.h:519
-msgid "Free colored females under 10"
-msgstr ""
-
-#: Census//census.xml.h:520
-msgid "Free colored females under 14"
-msgstr ""
-
-#: Census//census.xml.h:521
-msgid "Free colored males 10-23"
-msgstr ""
-
-#: Census//census.xml.h:522
-msgid "Free colored males 100 and over"
-msgstr ""
-
-#: Census//census.xml.h:523
-msgid "Free colored males 14-25"
-msgstr ""
-
-#: Census//census.xml.h:524
-msgid "Free colored males 24-35"
-msgstr ""
-
-#: Census//census.xml.h:525
-msgid "Free colored males 26-44"
-msgstr ""
-
-#: Census//census.xml.h:526
-msgid "Free colored males 36-54"
-msgstr ""
-
-#: Census//census.xml.h:527
-msgid "Free colored males 45 and over"
-msgstr ""
-
-#: Census//census.xml.h:528
-msgid "Free colored males 55-99"
-msgstr ""
-
-#: Census//census.xml.h:529
-msgid "Free colored males under 10"
-msgstr ""
-
-#: Census//census.xml.h:530
-msgid "Free colored males under 14"
-msgstr ""
-
-#: Census//census.xml.h:531
-msgid "Free white females"
-msgstr ""
-
-#: Census//census.xml.h:532
-msgid "Free white females 10-14"
-msgstr ""
-
-#: Census//census.xml.h:533
-msgid "Free white females 10-15"
-msgstr ""
-
-#: Census//census.xml.h:534
-msgid "Free white females 100 and over"
-msgstr ""
-
-#: Census//census.xml.h:535
-msgid "Free white females 15-20"
-msgstr ""
-
-#: Census//census.xml.h:536
-msgid "Free white females 16-25"
-msgstr ""
-
-#: Census//census.xml.h:537
-msgid "Free white females 20-29"
-msgstr ""
-
-#: Census//census.xml.h:538
-msgid "Free white females 26-44"
-msgstr ""
-
-#: Census//census.xml.h:539
-msgid "Free white females 30-39"
-msgstr ""
-
-#: Census//census.xml.h:540
-msgid "Free white females 40-49"
-msgstr ""
-
-#: Census//census.xml.h:541
-msgid "Free white females 45 and over"
-msgstr ""
-
-#: Census//census.xml.h:542
-msgid "Free white females 5-9"
-msgstr ""
-
-#: Census//census.xml.h:543
-msgid "Free white females 50-59"
-msgstr ""
-
-#: Census//census.xml.h:544
-msgid "Free white females 60-69"
-msgstr ""
-
-#: Census//census.xml.h:545
-msgid "Free white females 70-79"
-msgstr ""
-
-#: Census//census.xml.h:546
-msgid "Free white females 80-89"
-msgstr ""
-
-#: Census//census.xml.h:547
-msgid "Free white females 90-99"
-msgstr ""
-
-#: Census//census.xml.h:548
-msgid "Free white females under 10"
-msgstr ""
-
-#: Census//census.xml.h:549
-msgid "Free white females under 5"
-msgstr ""
-
-#: Census//census.xml.h:550
-msgid "Free white males 10-14"
-msgstr ""
-
-#: Census//census.xml.h:551
-msgid "Free white males 10-15"
-msgstr ""
-
-#: Census//census.xml.h:552
-msgid "Free white males 100 and over"
-msgstr ""
-
-#: Census//census.xml.h:553
-msgid "Free white males 15-20"
-msgstr ""
-
-#: Census//census.xml.h:554
-msgid "Free white males 16 &amp; up"
-msgstr ""
-
-#: Census//census.xml.h:555
-msgid "Free white males 16-18"
-msgstr ""
-
-#: Census//census.xml.h:556
-msgid "Free white males 16-25"
-msgstr ""
-
-#: Census//census.xml.h:557
-msgid "Free white males 20-29"
-msgstr ""
-
-#: Census//census.xml.h:558
-msgid "Free white males 26-44"
-msgstr ""
-
-#: Census//census.xml.h:559
-msgid "Free white males 30-39"
+#: Census/census.xml.h:13
+msgid "City or Municipal Borough"
 msgstr ""
 
-#: Census//census.xml.h:560
-msgid "Free white males 40-49"
+#: Census/census.xml.h:14
+msgid "Municipal Ward"
 msgstr ""
 
-#: Census//census.xml.h:561
-msgid "Free white males 45 and over"
+#: Census/census.xml.h:15
+msgid "Parliamentary Borough"
 msgstr ""
-
-#: Census//census.xml.h:562
-msgid "Free white males 5-9"
-msgstr ""
-
-#: Census//census.xml.h:563
-msgid "Free white males 50-59"
-msgstr ""
-
-#: Census//census.xml.h:564
-msgid "Free white males 60-69"
-msgstr ""
-
-#: Census//census.xml.h:565
-msgid "Free white males 70-79"
-msgstr ""
-
-#: Census//census.xml.h:566
-msgid "Free white males 80-89"
-msgstr ""
-
-#: Census//census.xml.h:567
-msgid "Free white males 90-99"
-msgstr ""
-
-#: Census//census.xml.h:568
-msgid "Free white males under 10"
-msgstr ""
-
-#: Census//census.xml.h:569
-msgid "Free white males under 16"
-msgstr ""
-
-#: Census//census.xml.h:570
-msgid "Free white males under 5"
-msgstr ""
-
-#: Census//census.xml.h:571
-msgid "French"
-msgstr "Französisch"
-
-#: Census//census.xml.h:572
-msgid "GROS Data"
-msgstr ""
-
-#: Census//census.xml.h:573
-msgid "Gaellic or G. &amp; E."
-msgstr ""
-
-#: Census//census.xml.h:574
-msgid "Gender"
-msgstr "Geschlecht"
 
-#: Census//census.xml.h:575
+#: Census/census.xml.h:16
 msgid "Hamlet or Tything"
 msgstr ""
 
-#: Census//census.xml.h:576
-msgid "HayQty"
+#: Census/census.xml.h:17
+msgid "Civil Parish or Township"
 msgstr ""
 
-#: Census//census.xml.h:577
+#: Census/census.xml.h:18
+msgid "Village or Hamlet"
+msgstr "Dorf oder Weiler"
+
+#: Census/census.xml.h:19
+msgid "Local Board or Improvement Commissioners District"
+msgstr ""
+
+#: Census/census.xml.h:20
+msgid "Town, Village or Hamlet"
+msgstr ""
+
+#: Census/census.xml.h:21
+msgid "Urban Sanitary District"
+msgstr ""
+
+#: Census/census.xml.h:22
+msgid "Rural Sanitary District"
+msgstr ""
+
+#: Census/census.xml.h:23
+msgid "Ecclesiastical Parish or District"
+msgstr ""
+
+#: Census/census.xml.h:24
 #, fuzzy
-msgid "Home owned or rented"
-msgstr "Hauptperson nicht gesetzt."
+msgid "Civil Parish"
+msgstr "Gemeinde"
 
-#: Census//census.xml.h:578
-msgid "HopsLbs"
+#: Census/census.xml.h:25
+msgid "Municipal Borough"
 msgstr ""
 
-#: Census//census.xml.h:579
-msgid "Horses"
+#: Census/census.xml.h:26
+msgid "Parliamentary Borough or Division"
 msgstr ""
 
-#: Census//census.xml.h:580
+#: Census/census.xml.h:27
+msgid "Employer"
+msgstr ""
+
+#: Census/census.xml.h:28
+msgid "Employed"
+msgstr ""
+
+#: Census/census.xml.h:29
 #, fuzzy
-msgid "HoursOccupation"
-msgstr "Beruf"
+msgid "Neither"
+msgstr "Name Vater"
 
-#: Census//census.xml.h:581
+#: Census/census.xml.h:30
+msgid "Neither Employer nor Employed"
+msgstr ""
+
+#: Census/census.xml.h:31
+msgid "Ecclesiastical Parish"
+msgstr ""
+
+#: Census/census.xml.h:32
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr ""
+
+#: Census/census.xml.h:33
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr ""
+
+#: Census/census.xml.h:34
 #, fuzzy
-msgid "HoursOther"
-msgstr "Andere"
+msgid "Rural District"
+msgstr "Teilzeichenfolge:"
 
-#: Census//census.xml.h:582
+#: Census/census.xml.h:35
 #, fuzzy
-msgid "House"
-msgstr "Ehepartner"
+msgid "Town or Village or Hamlet"
+msgstr "Dorf oder Weiler"
 
-#: Census//census.xml.h:583
-msgid "House Inhabited"
+#: Census/census.xml.h:36
+msgid "Work Type"
+msgstr "Art der Arbeit"
+
+#: Census/census.xml.h:37
+msgid "Employer, Worker or Own Account"
 msgstr ""
 
-#: Census//census.xml.h:584
-msgid "House Schedule No"
-msgstr ""
-
-#: Census//census.xml.h:585
-msgid "House U or B"
-msgstr ""
-
-#: Census//census.xml.h:586
-msgid "HouseBeingBuilt"
-msgstr ""
-
-#: Census//census.xml.h:587
-msgid "Houses"
-msgstr "Häuser"
-
-#: Census//census.xml.h:588
-msgid "HousesBeingBuilt"
-msgstr ""
-
-#: Census//census.xml.h:589
-msgid "HousesBuilding"
-msgstr ""
-
-#: Census//census.xml.h:590
-msgid "HousesConst"
-msgstr ""
-
-#: Census//census.xml.h:591
+#: Census/census.xml.h:38
 #, fuzzy
-msgid "HousesFamilies"
-msgstr "Familien"
+msgid "At Home"
+msgstr "Anfang"
 
-#: Census//census.xml.h:592
-msgid "HousesInhabited"
-msgstr ""
+#: Census/census.xml.h:39
+msgid "Working at Home"
+msgstr "Arbeitet Zuhause"
 
-#: Census//census.xml.h:593
+#: Census/census.xml.h:40
+msgid "Years Married"
+msgstr "Jahre Verheiratet"
+
+#: Census/census.xml.h:41
 #, fuzzy
-msgid "HousesStories"
-msgstr "Aufbewahrungsorte"
+msgid "Children Total"
+msgstr "Kinder"
 
-#: Census//census.xml.h:594
-msgid "HousesVacant"
-msgstr ""
-
-#: Census//census.xml.h:595
-msgid "Idiotic"
-msgstr ""
-
-#: Census//census.xml.h:596
-msgid "If owned, free or mortgaged"
-msgstr ""
-
-#: Census//census.xml.h:597
-msgid "Illiterate and over 20"
-msgstr ""
-
-#: Census//census.xml.h:598
+#: Census/census.xml.h:42
 #, fuzzy
-msgid "Illness on day of enumeration"
-msgstr "Zweite Generation"
+msgid "Children Living"
+msgstr "Kinder fehlen"
 
-#: Census//census.xml.h:599
-msgid "Immigration"
-msgstr "Einwanderung"
-
-#: Census//census.xml.h:600
+#: Census/census.xml.h:43
 #, fuzzy
-msgid "Indians"
-msgstr "Personen"
+msgid "Children Died"
+msgstr "Kinder"
 
-#: Census//census.xml.h:601
+#: Census/census.xml.h:44
 #, fuzzy
 msgid "Industry"
 msgstr "Vorfahren"
 
-#: Census//census.xml.h:602
-#, fuzzy
-msgid "Infirmities"
-msgstr "Konfirmation/Firmung"
+#: Census/census.xml.h:45
+msgid "Nationality"
+msgstr "Nationalität"
 
-#: Census//census.xml.h:603
-#, fuzzy
-msgid "Inmates"
-msgstr "Animieren"
-
-#: Census//census.xml.h:604
-msgid "Insane"
-msgstr ""
-
-#: Census//census.xml.h:605
-#, fuzzy
-msgid "Institution"
-msgstr "Einleitung"
-
-#: Census//census.xml.h:606
-msgid "InsuranceAccident"
-msgstr ""
-
-#: Census//census.xml.h:607
-msgid "InsuranceCost"
-msgstr ""
-
-#: Census//census.xml.h:608
-msgid "InsuranceLife"
-msgstr ""
-
-#: Census//census.xml.h:609
-msgid "Island"
-msgstr "Insel"
-
-#: Census//census.xml.h:610
+#: Census/census.xml.h:46
 msgid "Language"
 msgstr "Sprache"
 
-#: Census//census.xml.h:611
-msgid "Language before coming to US"
+#: Census/census.xml.h:47
+#, fuzzy
+msgid "Language Spoken"
+msgstr "Sprache"
+
+#: Census/census.xml.h:48
+#, fuzzy
+msgid "Date of birth"
+msgstr "Vor der Geburt verstorben"
+
+#: Census/census.xml.h:49
+msgid "Status"
+msgstr "Status"
+
+#: Census/census.xml.h:50
+#, fuzzy
+msgid "Comments"
+msgstr "Kommentar"
+
+#: Census/census.xml.h:51
+#, fuzzy
+msgid "Can read and write"
+msgstr "Fortsetzen und überschreiben"
+
+#: Census/census.xml.h:52
+msgid "Gender"
+msgstr "Geschlecht"
+
+#: Census/census.xml.h:53
+msgid "Military"
+msgstr "Militär"
+
+#: Census/census.xml.h:54
+msgid "Year of birth"
+msgstr "Geburtsjahr"
+
+#: Census/census.xml.h:55
+msgid "Address"
+msgstr "Adresse"
+
+#: Census/census.xml.h:56
+msgid "Taxes"
 msgstr ""
 
-#: Census//census.xml.h:612
+#: Census/census.xml.h:57
+#, fuzzy
+msgid "Type of roof"
+msgstr "Diagrammart"
+
+#: Census/census.xml.h:58
+msgid "Religion"
+msgstr "Religion"
+
+#: Census/census.xml.h:59
+msgid "Arrived since"
+msgstr ""
+
+#: Census/census.xml.h:60
+msgid "Free white males 16 &amp; up"
+msgstr ""
+
+#: Census/census.xml.h:61
+msgid "Free white males under 16"
+msgstr ""
+
+#: Census/census.xml.h:62
+msgid "Free white females"
+msgstr ""
+
+#: Census/census.xml.h:63
+#, fuzzy
+msgid "All other free persons"
+msgstr "Wähle die Referenzperson"
+
+#: Census/census.xml.h:64
+msgid "Slaves"
+msgstr "Sklaven"
+
+#: Census/census.xml.h:65
+msgid "Free white males under 10"
+msgstr ""
+
+#: Census/census.xml.h:66
+msgid "Free white males 10-15"
+msgstr ""
+
+#: Census/census.xml.h:67
+msgid "Free white males 16-25"
+msgstr ""
+
+#: Census/census.xml.h:68
+msgid "Free white males 26-44"
+msgstr ""
+
+#: Census/census.xml.h:69
+msgid "Free white males 45 and over"
+msgstr ""
+
+#: Census/census.xml.h:70
+msgid "Free white females under 10"
+msgstr ""
+
+#: Census/census.xml.h:71
+msgid "Free white females 10-15"
+msgstr ""
+
+#: Census/census.xml.h:72
+msgid "Free white females 16-25"
+msgstr ""
+
+#: Census/census.xml.h:73
+msgid "Free white females 26-44"
+msgstr ""
+
+#: Census/census.xml.h:74
+msgid "Free white females 45 and over"
+msgstr ""
+
+#: Census/census.xml.h:75
+msgid "Free white males 16-18"
+msgstr ""
+
+#: Census/census.xml.h:76
+msgid "Foreigners not naturalized"
+msgstr ""
+
+#: Census/census.xml.h:77
+msgid "Persons engaged in Agriculture"
+msgstr ""
+
+#: Census/census.xml.h:78
+msgid "Persons engaged in Commerce"
+msgstr ""
+
+#: Census/census.xml.h:79
+msgid "Persons engaged in Manufactures"
+msgstr ""
+
+#: Census/census.xml.h:80
+msgid "Slave males under 14"
+msgstr "Sklaven Männer unter 14"
+
+#: Census/census.xml.h:81
+msgid "Slave males 14-25"
+msgstr "Sklaven Männer 14-25"
+
+#: Census/census.xml.h:82
+msgid "Slave males 26-44"
+msgstr "Sklaven Männer 26-44"
+
+#: Census/census.xml.h:83
+msgid "Slave males 45 and over"
+msgstr "Sklaven Männer 45 und älter"
+
+#: Census/census.xml.h:84
+msgid "Slave females under 14"
+msgstr "Sklaven Frauen unter 14"
+
+#: Census/census.xml.h:85
+msgid "Slave females 14-25"
+msgstr "Sklaven Frauen 14-25"
+
+#: Census/census.xml.h:86
+msgid "Slave females 26-44"
+msgstr "Sklaven Frauen 26-44"
+
+#: Census/census.xml.h:87
+msgid "Slave females 45 and over"
+msgstr "Sklaven Frauen 45 und älter"
+
+#: Census/census.xml.h:88
+msgid "Free colored males under 14"
+msgstr ""
+
+#: Census/census.xml.h:89
+msgid "Free colored males 14-25"
+msgstr ""
+
+#: Census/census.xml.h:90
+msgid "Free colored males 26-44"
+msgstr ""
+
+#: Census/census.xml.h:91
+msgid "Free colored males 45 and over"
+msgstr ""
+
+#: Census/census.xml.h:92
+msgid "Free colored females under 14"
+msgstr ""
+
+#: Census/census.xml.h:93
+msgid "Free colored females 14-25"
+msgstr ""
+
+#: Census/census.xml.h:94
+msgid "Free colored females 26-44"
+msgstr ""
+
+#: Census/census.xml.h:95
+msgid "Free colored females 45 and over"
+msgstr ""
+
+#: Census/census.xml.h:96
+msgid "Free white males under 5"
+msgstr ""
+
+#: Census/census.xml.h:97
+msgid "Free white males 5-9"
+msgstr ""
+
+#: Census/census.xml.h:98
+msgid "Free white males 10-14"
+msgstr ""
+
+#: Census/census.xml.h:99
+msgid "Free white males 15-20"
+msgstr ""
+
+#: Census/census.xml.h:100
+msgid "Free white males 20-29"
+msgstr ""
+
+#: Census/census.xml.h:101
+msgid "Free white males 30-39"
+msgstr ""
+
+#: Census/census.xml.h:102
+msgid "Free white males 40-49"
+msgstr ""
+
+#: Census/census.xml.h:103
+msgid "Free white males 50-59"
+msgstr ""
+
+#: Census/census.xml.h:104
+msgid "Free white males 60-69"
+msgstr ""
+
+#: Census/census.xml.h:105
+msgid "Free white males 70-79"
+msgstr ""
+
+#: Census/census.xml.h:106
+msgid "Free white males 80-89"
+msgstr ""
+
+#: Census/census.xml.h:107
+msgid "Free white males 90-99"
+msgstr ""
+
+#: Census/census.xml.h:108
+msgid "Free white males 100 and over"
+msgstr ""
+
+#: Census/census.xml.h:109
+msgid "Free white females under 5"
+msgstr ""
+
+#: Census/census.xml.h:110
+msgid "Free white females 5-9"
+msgstr ""
+
+#: Census/census.xml.h:111
+msgid "Free white females 10-14"
+msgstr ""
+
+#: Census/census.xml.h:112
+msgid "Free white females 15-20"
+msgstr ""
+
+#: Census/census.xml.h:113
+msgid "Free white females 20-29"
+msgstr ""
+
+#: Census/census.xml.h:114
+msgid "Free white females 30-39"
+msgstr ""
+
+#: Census/census.xml.h:115
+msgid "Free white females 40-49"
+msgstr ""
+
+#: Census/census.xml.h:116
+msgid "Free white females 50-59"
+msgstr ""
+
+#: Census/census.xml.h:117
+msgid "Free white females 60-69"
+msgstr ""
+
+#: Census/census.xml.h:118
+msgid "Free white females 70-79"
+msgstr ""
+
+#: Census/census.xml.h:119
+msgid "Free white females 80-89"
+msgstr ""
+
+#: Census/census.xml.h:120
+msgid "Free white females 90-99"
+msgstr ""
+
+#: Census/census.xml.h:121
+msgid "Free white females 100 and over"
+msgstr ""
+
+#: Census/census.xml.h:122
+msgid "Slave males under 10"
+msgstr "Sklaven Männer unter 10"
+
+#: Census/census.xml.h:123
+msgid "Slave males 10-23"
+msgstr "Sklave Männer 10-23"
+
+#: Census/census.xml.h:124
+msgid "Slave males 24-35"
+msgstr "Sklaven Männer 24-35"
+
+#: Census/census.xml.h:125
+msgid "Slave males 36-54"
+msgstr "Sklaven Männer 36-54"
+
+#: Census/census.xml.h:126
+msgid "Slave males 55-99"
+msgstr "Sklaven Männer 55-99"
+
+#: Census/census.xml.h:127
+msgid "Slave males 100 and over"
+msgstr "Sklaven männlich 100 und älter"
+
+#: Census/census.xml.h:128
+msgid "Slave females under 10"
+msgstr "Sklaven Frauen unter 10"
+
+#: Census/census.xml.h:129
+msgid "Slave females 10-23"
+msgstr "Sklaven Frauen 10-23"
+
+#: Census/census.xml.h:130
+msgid "Slave females 24-35"
+msgstr "Sklaven Frauen 24-35"
+
+#: Census/census.xml.h:131
+msgid "Slave females 36-54"
+msgstr "Sklaven Frauen 36-54"
+
+#: Census/census.xml.h:132
+msgid "Slave females 55-99"
+msgstr "Sklaven Frauen 55-99"
+
+#: Census/census.xml.h:133
+msgid "Slave females 100 and over"
+msgstr "Sklaven Frauen 100 und älter"
+
+#: Census/census.xml.h:134
+msgid "Free colored males under 10"
+msgstr ""
+
+#: Census/census.xml.h:135
+msgid "Free colored males 10-23"
+msgstr ""
+
+#: Census/census.xml.h:136
+msgid "Free colored males 24-35"
+msgstr ""
+
+#: Census/census.xml.h:137
+msgid "Free colored males 36-54"
+msgstr ""
+
+#: Census/census.xml.h:138
+msgid "Free colored males 55-99"
+msgstr ""
+
+#: Census/census.xml.h:139
+msgid "Free colored males 100 and over"
+msgstr ""
+
+#: Census/census.xml.h:140
+msgid "Free colored females under 10"
+msgstr ""
+
+#: Census/census.xml.h:141
+msgid "Free colored females 10-23"
+msgstr ""
+
+#: Census/census.xml.h:142
+msgid "Free colored females 24-35"
+msgstr ""
+
+#: Census/census.xml.h:143
+msgid "Free colored females 36-54"
+msgstr ""
+
+#: Census/census.xml.h:144
+msgid "Free colored females 55-99"
+msgstr ""
+
+#: Census/census.xml.h:145
+msgid "Free colored females 100 and over"
+msgstr ""
+
+#: Census/census.xml.h:146
+msgid "Total"
+msgstr "Gesamt"
+
+#: Census/census.xml.h:147
+msgid "White persons deaf/dumb under 14"
+msgstr ""
+
+#: Census/census.xml.h:148
+msgid "White persons deaf/dumb 14-24"
+msgstr ""
+
+#: Census/census.xml.h:149
+msgid "White persons deaf/dumb 25 and over"
+msgstr ""
+
+#: Census/census.xml.h:150
+msgid "White persons blind"
+msgstr "Weiße Person blind"
+
+#: Census/census.xml.h:151
+msgid "Aliens"
+msgstr ""
+
+#: Census/census.xml.h:152
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr ""
+
+#: Census/census.xml.h:153
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr ""
+
+#: Census/census.xml.h:154
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr ""
+
+#: Census/census.xml.h:155
+msgid "Slaves and colored persons blind"
+msgstr ""
+
+#: Census/census.xml.h:156
+msgid "Persons employed in Mining"
+msgstr "Personen beschäftigt im Bergbau"
+
+#: Census/census.xml.h:157
+msgid "Persons employed in Agriculture"
+msgstr "Personen beschäftigt in der Landwirtschaft"
+
+#: Census/census.xml.h:158
+msgid "Persons employed in Commerce"
+msgstr ""
+
+#: Census/census.xml.h:159
+msgid "Persons employed in Manufacture and trade"
+msgstr ""
+
+#: Census/census.xml.h:160
+msgid "Persons employed in Navigation of the ocean"
+msgstr ""
+
+#: Census/census.xml.h:161
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr ""
+
+#: Census/census.xml.h:162
 msgid "Learned professional engineers"
 msgstr ""
 
-#: Census//census.xml.h:613
-msgid "LeasedAcres"
+#: Census/census.xml.h:163
+msgid "Names of pensioners for Revolutionary or military services"
 msgstr ""
 
-#: Census//census.xml.h:614
-msgid "LeasedBarns"
+#: Census/census.xml.h:164
+msgid "Ages"
 msgstr ""
 
-#: Census//census.xml.h:615
-msgid "LeasedFactories"
+#: Census/census.xml.h:165
+msgid "White persons insane and idiots at public charge"
 msgstr ""
 
-#: Census//census.xml.h:616
-msgid "LeasedHouses"
+#: Census/census.xml.h:166
+msgid "White persons insane and idiots at private charge"
 msgstr ""
 
-#: Census//census.xml.h:617
-msgid "LeasedLots"
+#: Census/census.xml.h:167
+msgid "Colored persons deaf/dumb"
 msgstr ""
 
-#: Census//census.xml.h:618
-msgid "LeasedSilos"
-msgstr "GepachteteSpeicher"
-
-#: Census//census.xml.h:619
+#: Census/census.xml.h:168
 #, fuzzy
-msgid "LeasedStores"
+msgid "Colored persons blind"
+msgstr "Farbig umrandet"
+
+#: Census/census.xml.h:169
+msgid "Colored persons insane and idiots at private charge"
 msgstr ""
 
-#: Census//census.xml.h:620
+#: Census/census.xml.h:170
+msgid "Colored persons insane and idiots at public charge"
+msgstr ""
+
+#: Census/census.xml.h:171
+msgid "Universities or college"
+msgstr ""
+
+#: Census/census.xml.h:172
 #, fuzzy
-msgid "Line"
-msgstr "Linienart"
+msgid "Number of students"
+msgstr "Anzahl der Familiennamen"
 
-#: Census//census.xml.h:621
-msgid "Line number for unemployed"
+#: Census/census.xml.h:173
+msgid "Academies and Grammar Schools"
 msgstr ""
 
-#: Census//census.xml.h:622
-msgid "Line on Schedule 2"
+#: Census/census.xml.h:174
+msgid "No. of scholars"
 msgstr ""
 
-#: Census//census.xml.h:623
+#: Census/census.xml.h:175
+msgid "Primary and Common Schools"
+msgstr ""
+
+#: Census/census.xml.h:176
+msgid "No. of scholars at public charge"
+msgstr ""
+
+#: Census/census.xml.h:177
+msgid "White persons illiterate over 20"
+msgstr ""
+
+#: Census/census.xml.h:178
+msgid "Sex"
+msgstr "Geschlecht"
+
+#: Census/census.xml.h:179
+msgid "Color"
+msgstr "Farbe"
+
+#: Census/census.xml.h:180
+msgid "Value of real estate"
+msgstr ""
+
+#: Census/census.xml.h:181
+msgid "Place of birth"
+msgstr "Geburtsort"
+
+#: Census/census.xml.h:182
 #, fuzzy
-msgid "LineRef"
-msgstr "Linienart"
+msgid "Married within the year"
+msgstr "Familien mit der <Markierung>"
 
-#: Census//census.xml.h:624
-msgid "LinnenYards"
+#: Census/census.xml.h:183
+msgid "Attended school within the year"
 msgstr ""
 
-#: Census//census.xml.h:625
-msgid "Local Board or Improvement Commissioners District"
+#: Census/census.xml.h:184
+msgid "Illiterate and over 20"
 msgstr ""
 
-#: Census//census.xml.h:626
-msgid "Locality"
-msgstr "Lokalität"
+#: Census/census.xml.h:185
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr ""
 
-#: Census//census.xml.h:627
+#: Census/census.xml.h:186
+msgid "Remarks"
+msgstr "Bemerkungen"
+
+#: Census/census.xml.h:187
 #, fuzzy
-msgid "Lot"
-msgstr "Niedrig"
+msgid "Value of personal estate"
+msgstr "Eine persönliche Notiz aufnehmen"
 
-#: Census//census.xml.h:628
-msgid "Lunatic"
-msgstr "Geisteskranke"
+#: Census/census.xml.h:188
+#, fuzzy
+msgid "Father of foreign birth"
+msgstr "Vor der Geburt verstorben"
 
-#: Census//census.xml.h:629
-msgid "LunaticFemale"
-msgstr "GeisteskrankeWeiblich"
+#: Census/census.xml.h:189
+#, fuzzy
+msgid "Mother of foreign birth"
+msgstr "Vor der Geburt verstorben"
 
-#: Census//census.xml.h:630
-msgid "LunaticMale"
-msgstr "GeisteskrankeMännlich"
-
-#: Census//census.xml.h:631
-msgid "Maimed, crippled, bedridden, or otherwise disabled"
+#: Census/census.xml.h:190
+msgid "Month, if born within the year"
 msgstr ""
 
-#: Census//census.xml.h:632
+#: Census/census.xml.h:191
+msgid "Month, if married within the year"
+msgstr ""
+
+#: Census/census.xml.h:192
+#, fuzzy
+msgid "Cannot read"
+msgstr "Kann Reiter nicht entfernen"
+
+#: Census/census.xml.h:193
+#, fuzzy
+msgid "Cannot write"
+msgstr "Kann Datei nicht erstellen"
+
+#: Census/census.xml.h:194
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr ""
+
+#: Census/census.xml.h:195
 msgid "Male citizen 21 and over"
 msgstr "Männliche Staatsbürger 21 und älter"
 
-#: Census//census.xml.h:633
+#: Census/census.xml.h:196
 msgid ""
 "Male citizen 21 and over where right to vote is denied on grounds other than "
 "rebellion or other crime"
 msgstr ""
 
-#: Census//census.xml.h:634
-msgid "MangleWurtzel"
-msgstr ""
-
-#: Census//census.xml.h:635
-msgid "MapleSugarLbs"
-msgstr "Ahornzucker Pfund"
-
-#: Census//census.xml.h:636
-#, fuzzy
-msgid "Maried1871"
-msgstr "Verheiratet"
-
-#: Census//census.xml.h:637
-#, fuzzy
-msgid "Marital condition"
-msgstr "Endgültige Bestätigung"
-
-#: Census//census.xml.h:638
-#, fuzzy
-msgid "MaritalStatus"
-msgstr "Status"
-
-#: Census//census.xml.h:639
-msgid "Married"
-msgstr "Verheiratet"
-
-#: Census//census.xml.h:640
-msgid "Married during the census year"
-msgstr "Im Censusjahr geheiratet"
-
-#: Census//census.xml.h:641
-#, fuzzy
-msgid "Married within the year"
-msgstr "Familien mit der <Markierung>"
-
-#: Census//census.xml.h:642
-#, fuzzy
-msgid "Married1851"
-msgstr "Verheiratet"
-
-#: Census//census.xml.h:643
-msgid "MemberAbsentFemale"
-msgstr ""
-
-#: Census//census.xml.h:644
-msgid "MemberAbsentMale"
-msgstr ""
-
-#: Census//census.xml.h:645
-#, fuzzy
-msgid "MemberFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:646
-msgid "MemberMale"
-msgstr ""
-
-#: Census//census.xml.h:647
-msgid "Meridian"
-msgstr "Meridian"
-
-#: Census//census.xml.h:648
-msgid "Milch Cows"
-msgstr "Milchkühe"
-
-#: Census//census.xml.h:649
-msgid "Military"
-msgstr "Militär"
-
-#: Census//census.xml.h:650
-msgid "MilitaryService"
-msgstr "Militärdienst"
-
-#: Census//census.xml.h:651
-msgid "Month of birth"
-msgstr "Geburtsmonat"
-
-#: Census//census.xml.h:652
+#: Census/census.xml.h:197
 msgid "Month, if born within the census year"
 msgstr ""
 
-#: Census//census.xml.h:653
-msgid "Month, if born within the year"
-msgstr ""
+#: Census/census.xml.h:198
+msgid "Relationship to head"
+msgstr "Beziehung zum Kopf"
 
-#: Census//census.xml.h:654
-msgid "Month, if married within the year"
-msgstr ""
+#: Census/census.xml.h:199
+msgid "Single"
+msgstr "Ledig"
 
-#: Census//census.xml.h:655
-msgid "Months not employed"
-msgstr "Monate arbeitslos"
+#: Census/census.xml.h:200
+msgid "Married"
+msgstr "Verheiratet"
 
-#: Census//census.xml.h:656
-msgid "MonthsFactory"
-msgstr ""
+#: Census/census.xml.h:201
+msgid "Widowed, divorced"
+msgstr "Verwitwet, geschieden"
 
-#: Census//census.xml.h:657
+#: Census/census.xml.h:202
+msgid "Married during the census year"
+msgstr "Im Censusjahr geheiratet"
+
+#: Census/census.xml.h:203
+msgid "Number of months unemployed during the census year"
+msgstr "Monate arbeitslos während des Censusjahr"
+
+#: Census/census.xml.h:204
 #, fuzzy
-msgid "MonthsHome"
-msgstr "_Monat"
+msgid "Illness on day of enumeration"
+msgstr "Zweite Generation"
 
-#: Census//census.xml.h:658
-#, fuzzy
-msgid "MonthsOther"
-msgstr "Mutter"
+#: Census/census.xml.h:205
+msgid "Blind"
+msgstr ""
 
-#: Census//census.xml.h:659
-msgid "Mother of how many children"
-msgstr "Mutter wie vieler Kinder"
+#: Census/census.xml.h:206
+msgid "Deaf and dumb"
+msgstr ""
 
-#: Census//census.xml.h:660
+#: Census/census.xml.h:207
+msgid "Idiotic"
+msgstr ""
+
+#: Census/census.xml.h:208
+msgid "Insane"
+msgstr ""
+
+#: Census/census.xml.h:209
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr ""
+
+#: Census/census.xml.h:210
+msgid "Attended school within the census year"
+msgstr ""
+
+#: Census/census.xml.h:211
+msgid "Place of birth of father"
+msgstr "Geburtsort des Vater"
+
+#: Census/census.xml.h:212
+msgid "Place of birth of mother"
+msgstr "Geburtsort der Mutter"
+
+#: Census/census.xml.h:213
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr ""
+
+#: Census/census.xml.h:214
+msgid "Single, married, widowed or divorced"
+msgstr "Ledig, verheiratet, verwitwet oder geschieden"
+
+#: Census/census.xml.h:215
 msgid "Mother of how many children and number of children living"
 msgstr "Mutter wie vieler Kinder und Anzahl der lebenden Kinder"
 
-#: Census//census.xml.h:661
-msgid "Mother tongue"
-msgstr "Muttersprache"
+#: Census/census.xml.h:216
+msgid "Number of years in US"
+msgstr "Anzahl von Jahren in US"
 
-#: Census//census.xml.h:662
-msgid "Mother's mother tongue"
-msgstr "Muttersprache der Mutter"
+#: Census/census.xml.h:217
+msgid "Naturalized"
+msgstr "Eingebürgert"
 
-#: Census//census.xml.h:663
-msgid "Municipal Borough"
-msgstr ""
-
-#: Census//census.xml.h:664
-msgid "Municipal Burgh"
-msgstr ""
-
-#: Census//census.xml.h:665
-msgid "Municipal Ward"
-msgstr ""
-
-#: Census//census.xml.h:666
-msgid "Municipality"
-msgstr "Gemeinde"
-
-#: Census//census.xml.h:667
-msgid "Name"
-msgstr "Name"
-
-#: Census//census.xml.h:668
-msgid "Name from Schedule 1"
-msgstr ""
-
-#: Census//census.xml.h:669
-msgid "Name of Locality, Post or other description"
-msgstr ""
-
-#: Census//census.xml.h:670
-msgid "Name of each person in family"
-msgstr "Name jeder Person in der Familie"
-
-#: Census//census.xml.h:671
-msgid "Name or Territory or Province"
-msgstr ""
-
-#: Census//census.xml.h:672
-msgid "Names of pensioners for Revolutionary or military services"
-msgstr ""
-
-#: Census//census.xml.h:673
-msgid "Nationality"
-msgstr "Nationalität"
-
-#: Census//census.xml.h:674
-msgid "Naturalization"
-msgstr "Einbürgerung"
-
-#: Census//census.xml.h:675
+#: Census/census.xml.h:218
 #, fuzzy
 msgid "Naturalization papers taken out"
 msgstr "Einbg."
 
-#: Census//census.xml.h:676
-msgid "Naturalized"
-msgstr "Eingebürgert"
+#: Census/census.xml.h:219
+msgid "Able to read"
+msgstr ""
 
-#: Census//census.xml.h:677
-msgid "Naturalized or alien"
-msgstr "Eingebürgert oder Ausländer"
-
-#: Census//census.xml.h:678
+#: Census/census.xml.h:220
 #, fuzzy
-msgid "Nature of industry"
-msgstr "Personenzahl"
+msgid "Able to write"
+msgstr "Links nachg Rechts"
 
-#: Census//census.xml.h:679
-#, fuzzy
-msgid "Neither"
-msgstr "Name Vater"
-
-#: Census//census.xml.h:680
-msgid "Neither Employer nor Employed"
+#: Census/census.xml.h:221
+msgid "Able to speak English; if not, the language spoken"
 msgstr ""
 
-#: Census//census.xml.h:681
-msgid "No. Of Schedule"
-msgstr ""
-
-#: Census//census.xml.h:682
-msgid "No. of Children from 5 to 13 attending School"
-msgstr "Anzahl der Kinder zwischen 5 und 13 die die Schule besuchen"
-
-#: Census//census.xml.h:683
-msgid "No. of Rooms with one or more Windows"
-msgstr "Anzahl der Räume mit einem oder mehr Fenster"
-
-#: Census//census.xml.h:684
-msgid "No. of scholars"
-msgstr ""
-
-#: Census//census.xml.h:685
-msgid "No. of scholars at public charge"
-msgstr ""
-
-#: Census//census.xml.h:686
-msgid "NonMembersFemale"
-msgstr ""
-
-#: Census//census.xml.h:687
-msgid "NonMembersMale"
-msgstr ""
-
-#: Census//census.xml.h:688
-msgid "NotMemberFemale"
-msgstr ""
-
-#: Census//census.xml.h:689
-#, fuzzy
-msgid "NotMemberMale"
-msgstr "Novembernotiz"
-
-#: Census//census.xml.h:690
-msgid "NumEmployees"
-msgstr ""
-
-#: Census//census.xml.h:691
-msgid "Number of children living"
-msgstr "Anzahl lebender Kinder"
-
-#: Census//census.xml.h:692
-#, fuzzy
-msgid "Number of farm schedule"
-msgstr "Familienanzahl"
-
-#: Census//census.xml.h:693
-msgid "Number of months unemployed during the census year"
-msgstr "Monate arbeitslos während des Censusjahr"
-
-#: Census//census.xml.h:694
-#, fuzzy
-msgid "Number of students"
-msgstr "Anzahl der Familiennamen"
-
-#: Census//census.xml.h:695
-msgid "Number of years in US"
-msgstr "Anzahl von Jahren in US"
-
-#: Census//census.xml.h:696
-msgid "OatsAcres"
-msgstr "HaferMorgen"
-
-#: Census//census.xml.h:697
-msgid "OatsBush"
-msgstr ""
-
-#: Census//census.xml.h:698
-msgid "Occupation"
-msgstr "Beruf"
-
-#: Census//census.xml.h:699
-msgid "OfTheSaid"
-msgstr ""
-
-#: Census//census.xml.h:700
-msgid "Origin"
-msgstr "Ursprung"
-
-#: Census//census.xml.h:701
-msgid "Other"
-msgstr "Andere"
-
-#: Census//census.xml.h:702
-msgid "OtherEmployment"
-msgstr ""
-
-#: Census//census.xml.h:703
-msgid "OtherLanguage"
-msgstr "AndereSprache"
-
-#: Census//census.xml.h:704
-msgid "Out of work"
-msgstr "Arbeitslos"
-
-#: Census//census.xml.h:705
-msgid "OwnMeans"
-msgstr ""
-
-#: Census//census.xml.h:706
-msgid "Owned free or mortgaged"
-msgstr ""
-
-#: Census//census.xml.h:707
-msgid "OwnedAcres"
-msgstr ""
-
-#: Census//census.xml.h:708
-msgid "OwnedBars"
-msgstr ""
-
-#: Census//census.xml.h:709
-msgid "OwnedFactories"
-msgstr ""
-
-#: Census//census.xml.h:710
-msgid "OwnedHouses"
-msgstr ""
-
-#: Census//census.xml.h:711
-msgid "OwnedLots"
-msgstr ""
-
-#: Census//census.xml.h:712
-msgid "OwnedSilos"
-msgstr ""
-
-#: Census//census.xml.h:713
-msgid "OwnedStores"
-msgstr ""
-
-#: Census//census.xml.h:714
-msgid "Page"
-msgstr "Seite"
-
-#: Census//census.xml.h:715
-#, fuzzy
-msgid "PageRef"
-msgstr "Seite"
-
-#: Census//census.xml.h:716
-msgid "Parish"
-msgstr "Gemeinde"
-
-#: Census//census.xml.h:717
-#, fuzzy
-msgid "Parish Ward"
-msgstr "Gemeinde"
-
-#: Census//census.xml.h:718
-msgid "Parish or Township"
-msgstr ""
-
-#: Census//census.xml.h:719
-msgid "Parliamentary Borough"
-msgstr ""
-
-#: Census//census.xml.h:720
-msgid "Parliamentary Borough or Division"
-msgstr ""
-
-#: Census//census.xml.h:721
-#, fuzzy
-msgid "Parliamentary Burgh"
-msgstr "Hauptquelle"
-
-#: Census//census.xml.h:722
-msgid "Parliamentary Division"
-msgstr "Paramilitärische Einheit"
-
-#: Census//census.xml.h:723
-msgid "PeasAcres"
-msgstr "ErbsenMorgen"
-
-#: Census//census.xml.h:724
-msgid "PeasBush"
-msgstr ""
-
-#: Census//census.xml.h:725
-#, fuzzy
-msgid "Personal Census"
-msgstr "Persönliche Ereignisse"
-
-#: Census//census.xml.h:726
-msgid "Persons employed in Agriculture"
-msgstr "Personen beschäftigt in der Landwirtschaft"
-
-#: Census//census.xml.h:727
-msgid "Persons employed in Commerce"
-msgstr ""
-
-#: Census//census.xml.h:728
-msgid "Persons employed in Manufacture and trade"
-msgstr ""
-
-#: Census//census.xml.h:729
-msgid "Persons employed in Mining"
-msgstr "Personen beschäftigt im Bergbau"
-
-#: Census//census.xml.h:730
-msgid "Persons employed in Navigation of canals, lakes, rivers"
-msgstr ""
-
-#: Census//census.xml.h:731
-msgid "Persons employed in Navigation of the ocean"
-msgstr ""
-
-#: Census//census.xml.h:732
-msgid "Persons engaged in Agriculture"
-msgstr ""
-
-#: Census//census.xml.h:733
-msgid "Persons engaged in Commerce"
-msgstr ""
-
-#: Census//census.xml.h:734
-msgid "Persons engaged in Manufactures"
-msgstr ""
-
-#: Census//census.xml.h:735
-msgid "Pigs"
-msgstr "Schweine"
-
-#: Census//census.xml.h:737
-msgid "Place of birth"
-msgstr "Geburtsort"
-
-#: Census//census.xml.h:738
-msgid "Place of birth of father"
-msgstr "Geburtsort des Vater"
-
-#: Census//census.xml.h:739
-msgid "Place of birth of mother"
-msgstr "Geburtsort der Mutter"
-
-#: Census//census.xml.h:740
-msgid "Police Burgh"
-msgstr ""
-
-#: Census//census.xml.h:741
-msgid "PollSub"
-msgstr ""
-
-#: Census//census.xml.h:742
-msgid "Polling Subdivision No."
-msgstr ""
-
-#: Census//census.xml.h:743
-msgid "Population by Name, Personal Description, Etc."
-msgstr ""
-
-#: Census//census.xml.h:744
-msgid "Pork"
-msgstr "Schwein"
-
-#: Census//census.xml.h:745
-msgid "PostOffice"
-msgstr "Postamt"
-
-#: Census//census.xml.h:746
-msgid "PotatoesAcres"
-msgstr "KartoffelnMorgen"
-
-#: Census//census.xml.h:747
-msgid "PotatoesBush"
-msgstr ""
-
-#: Census//census.xml.h:748
-msgid "Primary and Common Schools"
-msgstr ""
-
-#: Census//census.xml.h:749
-msgid "Prisoner, convict, homeless child or pauper"
-msgstr ""
-
-#: Census//census.xml.h:750
-#, fuzzy
-msgid "Profession or Occupation"
-msgstr "Fortschritt Informationen"
-
-#: Census//census.xml.h:751
-msgid "Province"
-msgstr "Provinz"
-
-#: Census//census.xml.h:752
-msgid "PublicBuildings"
-msgstr "ÖffentlicheGebäude"
-
-#: Census//census.xml.h:753
-msgid "Quoad Sacra Parish"
-msgstr ""
-
-#: Census//census.xml.h:754
-msgid "Race"
-msgstr "Rasse"
-
-#: Census//census.xml.h:755
-msgid "Radio set"
-msgstr "Rundfunkempfänger"
-
-#: Census//census.xml.h:756
-msgid "Range"
-msgstr "Zeitraum"
-
-#: Census//census.xml.h:757
-msgid "Rank, Profession, or Occupation"
-msgstr ""
-
-#: Census//census.xml.h:758
-msgid "Read"
-msgstr "Lesen"
-
-#: Census//census.xml.h:759
-msgid "Reason"
-msgstr ""
-
-#: Census//census.xml.h:760
-msgid "Relation"
-msgstr "Beziehung"
-
-#: Census//census.xml.h:761
-msgid "Relation to Head"
-msgstr "Beziehung zum Kopf"
-
-#: Census//census.xml.h:762
-msgid "Relation to Head of Family"
-msgstr "Beziehung zum Kopf der Familie"
-
-#: Census//census.xml.h:763
-msgid "Relation to head"
-msgstr "Beziehung zum Kopf"
-
-#: Census//census.xml.h:764
-msgid "Relationship to head"
-msgstr "Beziehung zum Kopf"
-
-#: Census//census.xml.h:765
-msgid "Religion"
-msgstr "Religion"
-
-#: Census//census.xml.h:766
-msgid "Remarks"
-msgstr "Bemerkungen"
-
-#: Census//census.xml.h:767
-msgid "Residence"
-msgstr "Wohnort"
-
-#: Census//census.xml.h:768
-msgid "ResidentsFemale"
-msgstr "BewohnerWeiblich"
-
-#: Census//census.xml.h:769
-msgid "ResidentsMale"
-msgstr "BewohnerMännlich"
-
-#: Census//census.xml.h:770
-msgid "Road, Street, etc, and No. or Name of House"
-msgstr ""
-
-#: Census//census.xml.h:771
-msgid "Rooms"
-msgstr "Räume"
-
-#: Census//census.xml.h:772
-msgid "Royal Burgh"
-msgstr ""
-
-#: Census//census.xml.h:773
-msgid "Rural Sanitary District"
-msgstr ""
-
-#: Census//census.xml.h:774
-msgid "RyeAcres"
-msgstr "RoggenMorgen"
-
-#: Census//census.xml.h:775
-msgid "RyeBsh"
-msgstr ""
-
-#: Census//census.xml.h:776
-msgid "S. District No."
-msgstr ""
-
-#: Census//census.xml.h:777
-msgid "S.District No."
-msgstr ""
-
-#: Census//census.xml.h:778
-#, fuzzy
-msgid "SSDenomination"
-msgstr "Ziel"
-
-#: Census//census.xml.h:779
-msgid "SSScholars"
-msgstr ""
-
-#: Census//census.xml.h:780
-#, fuzzy
-msgid "SSTeachers"
-msgstr "Informationen zum Forscher"
-
-#: Census//census.xml.h:781
-msgid "Schedule"
-msgstr ""
-
-#: Census//census.xml.h:782
-msgid "Scholar"
-msgstr ""
-
-#: Census//census.xml.h:783
-#, fuzzy
-msgid "ScholarFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:784
-msgid "ScholarMale"
-msgstr ""
-
-#: Census//census.xml.h:785
-msgid "School Board District"
-msgstr ""
-
-#: Census//census.xml.h:786
-msgid "School board District"
-msgstr ""
-
-#: Census//census.xml.h:787
-msgid "SchoolCost"
-msgstr ""
-
-#: Census//census.xml.h:788
-msgid "SchoolMonths"
-msgstr ""
-
-#: Census//census.xml.h:789
-msgid "SchoolRooms"
-msgstr "Schulräume"
-
-#: Census//census.xml.h:790
-msgid "SchoolStudents"
-msgstr ""
-
-#: Census//census.xml.h:791
-msgid "SchoolTeachers"
-msgstr "Schullehrer"
-
-#: Census//census.xml.h:792
-msgid "Seating"
-msgstr "Bestuhlung"
-
-#: Census//census.xml.h:793
-#, fuzzy
-msgid "Section"
-msgstr "Abschnitte"
-
-#: Census//census.xml.h:794
-msgid "SelfEmployed"
-msgstr ""
-
-#: Census//census.xml.h:795
-msgid "Sex"
-msgstr "Geschlecht"
-
-#: Census//census.xml.h:796
-msgid "SexFemail"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:797
-msgid "SexFemale"
-msgstr "Weiblich"
-
-#: Census//census.xml.h:798
-msgid "SexMale"
-msgstr "Männlich"
-
-#: Census//census.xml.h:799
-msgid "Shanties"
-msgstr "Baracken"
-
-#: Census//census.xml.h:800
-msgid "Sheep"
-msgstr "Schafe"
-
-#: Census//census.xml.h:801
-msgid "Shops"
-msgstr ""
-
-#: Census//census.xml.h:802
-msgid "Single"
-msgstr "Ledig"
-
-#: Census//census.xml.h:803
-msgid "Single, married, widowed or divorced"
-msgstr "Ledig, verheiratet, verwitwet oder geschieden"
-
-#: Census//census.xml.h:804
-msgid "Slave females 10-23"
-msgstr "Sklaven Frauen 10-23"
-
-#: Census//census.xml.h:805
-msgid "Slave females 100 and over"
-msgstr "Sklaven Frauen 100 und älter"
-
-#: Census//census.xml.h:806
-msgid "Slave females 14-25"
-msgstr "Sklaven Frauen 14-25"
-
-#: Census//census.xml.h:807
-msgid "Slave females 24-35"
-msgstr "Sklaven Frauen 24-35"
-
-#: Census//census.xml.h:808
-msgid "Slave females 26-44"
-msgstr "Sklaven Frauen 26-44"
-
-#: Census//census.xml.h:809
-msgid "Slave females 36-54"
-msgstr "Sklaven Frauen 36-54"
-
-#: Census//census.xml.h:810
-msgid "Slave females 45 and over"
-msgstr "Sklaven Frauen 45 und älter"
-
-#: Census//census.xml.h:811
-msgid "Slave females 55-99"
-msgstr "Sklaven Frauen 55-99"
-
-#: Census//census.xml.h:812
-msgid "Slave females under 10"
-msgstr "Sklaven Frauen unter 10"
-
-#: Census//census.xml.h:813
-msgid "Slave females under 14"
-msgstr "Sklaven Frauen unter 14"
-
-#: Census//census.xml.h:814
-msgid "Slave males 10-23"
-msgstr "Sklave Männer 10-23"
-
-#: Census//census.xml.h:815
-msgid "Slave males 100 and over"
-msgstr "Sklaven männlich 100 und älter"
-
-#: Census//census.xml.h:816
-msgid "Slave males 14-25"
-msgstr "Sklaven Männer 14-25"
-
-#: Census//census.xml.h:817
-msgid "Slave males 24-35"
-msgstr "Sklaven Männer 24-35"
-
-#: Census//census.xml.h:818
-msgid "Slave males 26-44"
-msgstr "Sklaven Männer 26-44"
-
-#: Census//census.xml.h:819
-msgid "Slave males 36-54"
-msgstr "Sklaven Männer 36-54"
-
-#: Census//census.xml.h:820
-msgid "Slave males 45 and over"
-msgstr "Sklaven Männer 45 und älter"
-
-#: Census//census.xml.h:821
-msgid "Slave males 55-99"
-msgstr "Sklaven Männer 55-99"
-
-#: Census//census.xml.h:822
-msgid "Slave males under 10"
-msgstr "Sklaven Männer unter 10"
-
-#: Census//census.xml.h:823
-msgid "Slave males under 14"
-msgstr "Sklaven Männer unter 14"
-
-#: Census//census.xml.h:824
-msgid "Slaves"
-msgstr "Sklaven"
-
-#: Census//census.xml.h:825
-msgid "Slaves and colored persons blind"
-msgstr ""
-
-#: Census//census.xml.h:826
-msgid "Slaves and colored persons deaf/dumb 14-24"
-msgstr ""
-
-#: Census//census.xml.h:827
-msgid "Slaves and colored persons deaf/dumb 25 and over"
-msgstr ""
-
-#: Census//census.xml.h:828
-msgid "Slaves and colored persons deaf/dumb under 14"
-msgstr ""
-
-#: Census//census.xml.h:829
-msgid "SpeakEnglish"
-msgstr "SprichtEnglisch"
-
-#: Census//census.xml.h:830
-msgid "SpeakFrench"
-msgstr "SprichtFranzösisch"
-
-#: Census//census.xml.h:831
-msgid "Status"
-msgstr "Status"
-
-#: Census//census.xml.h:832
-#, fuzzy
-msgid "Sub District"
-msgstr "Teilzeichenfolge:"
-
-#: Census//census.xml.h:833
-msgid "Sub District No."
-msgstr ""
-
-#: Census//census.xml.h:834
-#, fuzzy
-msgid "SubDistrict"
-msgstr "Teilzeichenfolge:"
-
-#: Census//census.xml.h:835
-#, fuzzy
-msgid "SubTitle"
-msgstr "Untertitel"
-
-#: Census//census.xml.h:836
+#: Census/census.xml.h:222
 msgid "Suffering from disease"
 msgstr ""
 
-#: Census//census.xml.h:837
-msgid "Supplemental schedule and page"
-msgstr ""
-
-#: Census//census.xml.h:838
-msgid "Taxes"
-msgstr ""
-
-#: Census//census.xml.h:839
-msgid "TobaccoLbs"
-msgstr ""
-
-#: Census//census.xml.h:840
-msgid "Total"
-msgstr "Gesamt"
-
-#: Census//census.xml.h:841
-msgid "Town"
-msgstr ""
-
-#: Census//census.xml.h:842
-msgid "Town or Village"
-msgstr ""
-
-#: Census//census.xml.h:843
-msgid "Town, Village or Hamlet"
-msgstr ""
-
-#: Census//census.xml.h:844
-#, fuzzy
-msgid "Township"
-msgstr "Beziehung"
-
-#: Census//census.xml.h:845
-msgid "TurnipsAcres"
-msgstr ""
-
-#: Census//census.xml.h:846
-msgid "TurnipsBush"
-msgstr ""
-
-#: Census//census.xml.h:847
-#, fuzzy
-msgid "Type of roof"
-msgstr "Diagrammart"
-
-#: Census//census.xml.h:848
-msgid "Unemployed"
-msgstr "Arbeitslos"
-
-#: Census//census.xml.h:849
-msgid "Universities or college"
-msgstr ""
-
-#: Census//census.xml.h:850
-msgid "Urban Sanitary District"
-msgstr ""
-
-#: Census//census.xml.h:851
-msgid "Value of home or monthly rental"
-msgstr ""
-
-#: Census//census.xml.h:852
-#, fuzzy
-msgid "Value of personal estate"
-msgstr "Eine persönliche Notiz aufnehmen"
-
-#: Census//census.xml.h:853
-msgid "Value of real estate"
-msgstr ""
-
-#: Census//census.xml.h:854
-#, fuzzy
-msgid "Vessels"
-msgstr "Adressen"
-
-#: Census//census.xml.h:855
-msgid "Veteran"
-msgstr "Veteran"
-
-#: Census//census.xml.h:856
-msgid "Veteran of Civil War or widow of a veteran"
-msgstr ""
-
-#: Census//census.xml.h:857
-msgid "Village"
-msgstr "Dorf"
-
-#: Census//census.xml.h:858
-msgid "Village or Hamlet"
-msgstr "Dorf oder Weiler"
-
-#: Census//census.xml.h:859
-msgid "Wages"
-msgstr "Lohn"
-
-#: Census//census.xml.h:860
-msgid "Weeks out of work in 1909"
-msgstr "Wochen arbeitslos in 1909"
-
-#: Census//census.xml.h:861
-#, fuzzy
-msgid "WeeksOccupation"
-msgstr "Beruf"
-
-#: Census//census.xml.h:862
-#, fuzzy
-msgid "WeeksOther"
-msgstr "Andere"
-
-#: Census//census.xml.h:863
-msgid "What war"
-msgstr ""
-
-#: Census//census.xml.h:864
-msgid "WheatAcres"
-msgstr "WeizenMorgen"
-
-#: Census//census.xml.h:865
-msgid "WheatBsh"
-msgstr ""
-
-#: Census//census.xml.h:866
-msgid "Where Born"
-msgstr ""
-
-#: Census//census.xml.h:867
-msgid "WhereEmployed"
-msgstr ""
-
-#: Census//census.xml.h:868
-msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
-msgstr ""
-
-#: Census//census.xml.h:869
-msgid "Whether Blind, or Deaf and Dumb"
-msgstr ""
-
-#: Census//census.xml.h:870
+#: Census/census.xml.h:223
 msgid "Whether defective and name of defect"
 msgstr ""
 
-#: Census//census.xml.h:871
-msgid "White persons blind"
-msgstr "Weiße Person blind"
-
-#: Census//census.xml.h:872
-msgid "White persons deaf/dumb 14-24"
+#: Census/census.xml.h:224
+msgid "Prisoner, convict, homeless child or pauper"
 msgstr ""
 
-#: Census//census.xml.h:873
-msgid "White persons deaf/dumb 25 and over"
+#: Census/census.xml.h:225
+msgid "Supplemental schedule and page"
 msgstr ""
 
-#: Census//census.xml.h:874
-msgid "White persons deaf/dumb under 14"
-msgstr ""
+#: Census/census.xml.h:226
+msgid "Relation to head"
+msgstr "Beziehung zum Kopf"
 
-#: Census//census.xml.h:875
-msgid "White persons illiterate over 20"
-msgstr ""
+#: Census/census.xml.h:227
+msgid "Month of birth"
+msgstr "Geburtsmonat"
 
-#: Census//census.xml.h:876
-msgid "White persons insane and idiots at private charge"
-msgstr ""
-
-#: Census//census.xml.h:877
-msgid "White persons insane and idiots at public charge"
-msgstr ""
-
-#: Census//census.xml.h:878
-msgid "Widowed, divorced"
-msgstr "Verwitwet, geschieden"
-
-#: Census//census.xml.h:879
-msgid "Widowers"
-msgstr "Witwer"
-
-#: Census//census.xml.h:880
-msgid "Widows"
-msgstr "Witwen"
-
-#: Census//census.xml.h:881
-msgid "WindowRooms"
-msgstr "Räume mit Fenstern"
-
-#: Census//census.xml.h:882
-msgid "WoolLbs."
-msgstr "WollePfund"
-
-#: Census//census.xml.h:883
-msgid "Work Type"
-msgstr "Art der Arbeit"
-
-#: Census//census.xml.h:884
-msgid "Working at Home"
-msgstr "Arbeitet Zuhause"
-
-#: Census//census.xml.h:885
-msgid "WorshipPlaces"
-msgstr "KultOrte"
-
-#: Census//census.xml.h:886
-msgid "Write"
-msgstr "Schreiben"
-
-#: Census//census.xml.h:887
-msgid "Year of birth"
-msgstr "Geburtsjahr"
-
-#: Census//census.xml.h:888
-msgid "Year of immigration"
-msgstr "Jahr der Einwanderung"
-
-#: Census//census.xml.h:889
-msgid "Year of naturalization"
-msgstr "Jahr der Einbürgerung"
-
-#: Census//census.xml.h:890
-msgid "Years Married"
-msgstr "Jahre Verheiratet"
-
-#: Census//census.xml.h:891
+#: Census/census.xml.h:228
 #, fuzzy
 msgid "Years of present marriage"
 msgstr "Längste beendete Ehe"
 
-#: Census//census.xml.h:892
+#: Census/census.xml.h:229
+msgid "Mother of how many children"
+msgstr "Mutter wie vieler Kinder"
+
+#: Census/census.xml.h:230
+msgid "Number of children living"
+msgstr "Anzahl lebender Kinder"
+
+#: Census/census.xml.h:231
+msgid "Year of immigration"
+msgstr "Jahr der Einwanderung"
+
+#: Census/census.xml.h:232
+msgid "Naturalization"
+msgstr "Einbürgerung"
+
+#: Census/census.xml.h:233
+msgid "Months not employed"
+msgstr "Monate arbeitslos"
+
+#: Census/census.xml.h:234
+msgid "Attended school"
+msgstr ""
+
+#: Census/census.xml.h:235
+msgid "Can read"
+msgstr ""
+
+#: Census/census.xml.h:236
+msgid "Can write"
+msgstr ""
+
+#: Census/census.xml.h:237
+msgid "Can speak English"
+msgstr ""
+
+#: Census/census.xml.h:238
+#, fuzzy
+msgid "Home owned or rented"
+msgstr "Hauptperson nicht gesetzt."
+
+#: Census/census.xml.h:239
+msgid "Owned free or mortgaged"
+msgstr ""
+
+#: Census/census.xml.h:240
+msgid "Farm or house"
+msgstr ""
+
+#: Census/census.xml.h:241
+#, fuzzy
+msgid "Number of farm schedule"
+msgstr "Familienanzahl"
+
+#: Census/census.xml.h:242
+msgid "Naturalized or alien"
+msgstr "Eingebürgert oder Ausländer"
+
+#: Census/census.xml.h:243
+msgid "Able to speak English; if not, language spoken"
+msgstr ""
+
+#: Census/census.xml.h:244
+#, fuzzy
+msgid "Nature of industry"
+msgstr "Personenzahl"
+
+#: Census/census.xml.h:245
+msgid "Employer, employee or working on own account"
+msgstr ""
+
+#: Census/census.xml.h:246
+msgid "Out of work"
+msgstr "Arbeitslos"
+
+#: Census/census.xml.h:247
+msgid "Weeks out of work in 1909"
+msgstr "Wochen arbeitslos in 1909"
+
+#: Census/census.xml.h:248
+msgid "Attended school since Sept. 1, 1909"
+msgstr ""
+
+#: Census/census.xml.h:249
+msgid "Civil War veteran"
+msgstr ""
+
+#: Census/census.xml.h:250
+msgid "If owned, free or mortgaged"
+msgstr ""
+
+#: Census/census.xml.h:251
+msgid "Year of naturalization"
+msgstr "Jahr der Einbürgerung"
+
+#: Census/census.xml.h:252
+msgid "Attended school since Sept. 1, 1919"
+msgstr ""
+
+#: Census/census.xml.h:253
+msgid "Mother tongue"
+msgstr "Muttersprache"
+
+#: Census/census.xml.h:254
+#, fuzzy
+msgid "Father's mother tongue"
+msgstr "Alter des Vaters"
+
+#: Census/census.xml.h:255
+msgid "Mother's mother tongue"
+msgstr "Muttersprache der Mutter"
+
+#: Census/census.xml.h:256
+msgid "Able to speak English"
+msgstr ""
+
+#: Census/census.xml.h:257
+msgid "Employer, worker or working on own account"
+msgstr ""
+
+#: Census/census.xml.h:258
+msgid "Value of home or monthly rental"
+msgstr ""
+
+#: Census/census.xml.h:259
+msgid "Radio set"
+msgstr "Rundfunkempfänger"
+
+#: Census/census.xml.h:260
+msgid "Farm?"
+msgstr ""
+
+#: Census/census.xml.h:261
+#, fuzzy
+msgid "Marital condition"
+msgstr "Endgültige Bestätigung"
+
+#: Census/census.xml.h:262
+#, fuzzy
+msgid "Age at first marriage"
+msgstr "Alter bei Hochzeit"
+
+#: Census/census.xml.h:263
+msgid "Attended school since Sept. 1, 1929"
+msgstr ""
+
+#: Census/census.xml.h:264
+#, fuzzy
+msgid "Able to read and write"
+msgstr "Fortsetzen und überschreiben"
+
+#: Census/census.xml.h:265
+msgid "Language before coming to US"
+msgstr ""
+
+#: Census/census.xml.h:266
+msgid "Class of worker"
+msgstr ""
+
+#: Census/census.xml.h:267
+msgid "Line number for unemployed"
+msgstr ""
+
+#: Census/census.xml.h:268
+msgid "Veteran"
+msgstr "Veteran"
+
+#: Census/census.xml.h:269
+msgid "What war"
+msgstr ""
+
+#: Census/census.xml.h:270
+#, fuzzy
+msgid "Home Owned/Rented"
+msgstr "Hauptperson nicht gesetzt."
+
+#: Census/census.xml.h:271
+msgid "Home value/monthly rental"
+msgstr ""
+
+#: Census/census.xml.h:272
+msgid "Relationship"
+msgstr "Beziehung"
+
+#: Census/census.xml.h:273
+#, fuzzy
+msgid "Color/Race"
+msgstr "Farbe"
+
+#: Census/census.xml.h:274
+#, fuzzy
+msgid "Age at Last Birthday"
+msgstr "Alter beim Tod"
+
+#: Census/census.xml.h:275
+#, fuzzy
+msgid "Marital Status"
+msgstr "Status"
+
+#: Census/census.xml.h:276
+msgid "Attended school/college since March 1, 1940"
+msgstr ""
+
+#: Census/census.xml.h:277
+msgid "Highest grade completed"
+msgstr ""
+
+#: Census/census.xml.h:278
+#, fuzzy
+msgid "Citizenship if foreign born"
+msgstr "Vor der Geburt verstorben"
+
+#: Census/census.xml.h:279
+msgid "City (April 1, 1935)"
+msgstr ""
+
+#: Census/census.xml.h:280
+msgid "County"
+msgstr "Kreis"
+
+#: Census/census.xml.h:281
+#, fuzzy
+msgid "State (Territory/Country)"
+msgstr "Bundesland/Kreis"
+
+#: Census/census.xml.h:282
+msgid "On a Farm (Y/N)"
+msgstr ""
+
+#: Census/census.xml.h:283
+msgid "At Work during week March 24-30"
+msgstr ""
+
+#: Census/census.xml.h:284
+msgid "public Emergency Work?"
+msgstr ""
+
+#: Census/census.xml.h:285
+msgid "Seeking work?"
+msgstr ""
+
+#: Census/census.xml.h:286
+msgid "Have a Job?"
+msgstr ""
+
+#: Census/census.xml.h:287
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr ""
+
+#: Census/census.xml.h:288
+msgid "# hours worked during week March 24-30, 1940"
+msgstr ""
+
+#: Census/census.xml.h:289
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr ""
+
+#: Census/census.xml.h:290
+#, fuzzy
+msgid "# weeks worked in 1939"
+msgstr "Wochen arbeitslos in 1909"
+
+#: Census/census.xml.h:291
+msgid "Amount of money, wages, salary in 1939"
+msgstr ""
+
+#: Census/census.xml.h:292
+msgid "Income of more than $50 from other sources?"
+msgstr ""
+
+#: Census/census.xml.h:293
+#, fuzzy
+msgid "Number of Farm Schedule"
+msgstr "Kinderzahl"
+
+#: Census/census.xml.h:294
+#, fuzzy
+msgid "Veteran?"
+msgstr "Veteran"
+
+#: Census/census.xml.h:295
+msgid "If child, veteran-father dead?"
+msgstr ""
+
+#: Census/census.xml.h:296
+#, fuzzy
+msgid "War/Military Service"
+msgstr "Militärdienst"
+
+#: Census/census.xml.h:297
+msgid "Have Federal SSN?"
+msgstr ""
+
+#: Census/census.xml.h:298
+msgid "Deductions made in 1939?"
+msgstr ""
+
+#: Census/census.xml.h:299
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr ""
+
+#: Census/census.xml.h:300
+#, fuzzy
+msgid "Usual Occupation"
+msgstr "Beruf"
+
+#: Census/census.xml.h:301
+#, fuzzy
+msgid "Usual Industry"
+msgstr "Vorfahren"
+
+#: Census/census.xml.h:302
+msgid "Usual Class of Work"
+msgstr ""
+
+#: Census/census.xml.h:303
+msgid "If woman, married more than once?"
+msgstr ""
+
+#: Census/census.xml.h:304
+#, fuzzy
+msgid "Number of children ever born"
+msgstr "Kinderzahl"
+
+#: Census/census.xml.h:305
+msgid "Schedule"
+msgstr ""
+
+#: Census/census.xml.h:306
+#, fuzzy
+msgid "A: Personal Census"
+msgstr "Persönliche Ereignisse"
+
+#: Census/census.xml.h:307
+msgid "EnumDistrict"
+msgstr ""
+
+#: Census/census.xml.h:308
+msgid "Enumeration District No."
+msgstr ""
+
+#: Census/census.xml.h:309
+#, fuzzy
+msgid "Township"
+msgstr "Beziehung"
+
+#: Census/census.xml.h:310
+#, fuzzy
+msgid "Comprising"
+msgstr "Ereignisse vergleichen"
+
+#: Census/census.xml.h:311
+msgid "OfTheSaid"
+msgstr ""
+
+#: Census/census.xml.h:312
 msgid "of the said"
 msgstr "besagte"
 
+#: Census/census.xml.h:313
+#, fuzzy
+msgid "Enumerator"
+msgstr "Generation"
 
+#: Census/census.xml.h:314
+#, fuzzy
+msgid "Line"
+msgstr "Linienart"
+
+#: Census/census.xml.h:315
+msgid "1. Names of Inmates"
+msgstr "1. Namen der Insassen"
+
+#: Census/census.xml.h:316
+msgid "2. Profession, Trade or Occupation"
+msgstr ""
+
+#: Census/census.xml.h:317
+#, fuzzy
+msgid "BirthPlace"
+msgstr "Geburtsort"
+
+#: Census/census.xml.h:318
+#, fuzzy
+msgid "3. Place of Birth"
+msgstr "Ortsliste"
+
+#: Census/census.xml.h:319
+#, fuzzy
+msgid "4. Religion"
+msgstr "Religion"
+
+#: Census/census.xml.h:320
+msgid "Residence"
+msgstr "Wohnort"
+
+#: Census/census.xml.h:321
+msgid "5. Residence if Outside of Limits"
+msgstr ""
+
+#: Census/census.xml.h:322
+msgid "6. Age at Next Birthday"
+msgstr ""
+
+#: Census/census.xml.h:323
+msgid "SexMale"
+msgstr "Männlich"
+
+#: Census/census.xml.h:324
+msgid "7. Sex: Male"
+msgstr ""
+
+#: Census/census.xml.h:325
+msgid "SexFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:326
+#, fuzzy
+msgid "8. Sex: Female"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:327
+#, fuzzy
+msgid "MaritalStatus"
+msgstr "Status"
+
+#: Census/census.xml.h:328
+#, fuzzy
+msgid "9. Married or Single"
+msgstr "Häufig verheiratet"
+
+#: Census/census.xml.h:329
+#, fuzzy
+msgid "Coloured"
+msgstr "Farbe"
+
+#: Census/census.xml.h:330
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Farbige Person - Negroes"
+
+#: Census/census.xml.h:331
+#, fuzzy
+msgid "Indians"
+msgstr "Indien"
+
+#: Census/census.xml.h:332
+msgid "11. Indians, if any"
+msgstr "11. Indianer, gegebenenfalls"
+
+#: Census/census.xml.h:333
+msgid "ResidentsMale"
+msgstr "BewohnerMännlich"
+
+#: Census/census.xml.h:334
+msgid "12. Residents: Members, Male"
+msgstr "12. Bewohner: Angehörigen, Männlich"
+
+#: Census/census.xml.h:335
+msgid "ResidentsFemale"
+msgstr "BewohnerWeiblich"
+
+#: Census/census.xml.h:336
+msgid "13. Residents: Members, Female"
+msgstr "13. Bewohner: Angehörigen, Weiblich"
+
+#: Census/census.xml.h:337
+msgid "NonMembersMale"
+msgstr ""
+
+#: Census/census.xml.h:338
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Bewohner: Keine Angehörigen: Männlich"
+
+#: Census/census.xml.h:339
+msgid "NonMembersFemale"
+msgstr ""
+
+#: Census/census.xml.h:340
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Bewohner: Keine Angehörigen: Weiblich"
+
+#: Census/census.xml.h:341
+msgid "AbsentMembersMale"
+msgstr ""
+
+#: Census/census.xml.h:342
+msgid "16. Members Absent: Male"
+msgstr "16. Angehörige abwesend: Männlich"
+
+#: Census/census.xml.h:343
+msgid "AbsentMembersFemale"
+msgstr ""
+
+#: Census/census.xml.h:344
+msgid "17. Members Absent: Female"
+msgstr "17. Angehörige abwesend: Weiblich"
+
+#: Census/census.xml.h:345
+msgid "DeafDumbMale"
+msgstr ""
+
+#: Census/census.xml.h:346
+msgid "18. Deaf and Dumb: Male"
+msgstr ""
+
+#: Census/census.xml.h:347
+#, fuzzy
+msgid "DeafDumbFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:348
+msgid "19. Deaf and Dumb: Female"
+msgstr ""
+
+#: Census/census.xml.h:349
+#, fuzzy
+msgid "BlindMale"
+msgstr "Männlich"
+
+#: Census/census.xml.h:350
+msgid "20. Blind: Male"
+msgstr ""
+
+#: Census/census.xml.h:351
+#, fuzzy
+msgid "BlindFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:352
+msgid "21. Blind: Female"
+msgstr ""
+
+#: Census/census.xml.h:353
+msgid "LunaticMale"
+msgstr "GeisteskrankeMännlich"
+
+#: Census/census.xml.h:354
+msgid "22. Lunatics: Male"
+msgstr ""
+
+#: Census/census.xml.h:355
+msgid "LunaticFemale"
+msgstr "GeisteskrankeWeiblich"
+
+#: Census/census.xml.h:356
+msgid "23. Lunatics: Female"
+msgstr ""
+
+#: Census/census.xml.h:357
+msgid "ScholarMale"
+msgstr ""
+
+#: Census/census.xml.h:358
+msgid "24. Attending School: Male"
+msgstr ""
+
+#: Census/census.xml.h:359
+#, fuzzy
+msgid "ScholarFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:360
+msgid "25. Attending School: Female"
+msgstr ""
+
+#: Census/census.xml.h:361
+#, fuzzy
+msgid "Birth1851Male"
+msgstr "Geburtsname"
+
+#: Census/census.xml.h:362
+msgid "26. Births During the Year 1851: Male"
+msgstr ""
+
+#: Census/census.xml.h:363
+msgid "Birth1851Female"
+msgstr ""
+
+#: Census/census.xml.h:364
+msgid "27. Births During the Year 1851: Female"
+msgstr ""
+
+#: Census/census.xml.h:365
+#, fuzzy
+msgid "Death1851Male"
+msgstr "Sterbedatum"
+
+#: Census/census.xml.h:366
+msgid "28. Deaths During the Year 1851: Male"
+msgstr ""
+
+#: Census/census.xml.h:367
+msgid "Death1851Female"
+msgstr ""
+
+#: Census/census.xml.h:368
+msgid "29. Deaths During the Year 1851: Female"
+msgstr ""
+
+#: Census/census.xml.h:369
+#, fuzzy
+msgid "DeathAgeCause"
+msgstr "Todesursache"
+
+#: Census/census.xml.h:370
+#, fuzzy
+msgid "30. Age and Cause of Deaths"
+msgstr "Todesursache"
+
+#: Census/census.xml.h:371
+msgid "Houses"
+msgstr "Häuser"
+
+#: Census/census.xml.h:372
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+
+#: Census/census.xml.h:373
+#, fuzzy
+msgid "HousesStories"
+msgstr "Aufbewahrungsorte"
+
+#: Census/census.xml.h:374
+msgid "32. Houses: No. of Stories"
+msgstr ""
+
+#: Census/census.xml.h:375
+#, fuzzy
+msgid "HousesFamilies"
+msgstr "Familien"
+
+#: Census/census.xml.h:376
+msgid "33. No. of Families Occupying"
+msgstr ""
+
+#: Census/census.xml.h:377
+msgid "HousesVacant"
+msgstr ""
+
+#: Census/census.xml.h:378
+msgid "34. Houses: Vacant"
+msgstr ""
+
+#: Census/census.xml.h:379
+msgid "HousesBuilding"
+msgstr ""
+
+#: Census/census.xml.h:380
+msgid "35. Houses: Building"
+msgstr ""
+
+#: Census/census.xml.h:381
+msgid "Shops"
+msgstr ""
+
+#: Census/census.xml.h:382
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr ""
+
+#: Census/census.xml.h:383
+msgid "PublicBuildings"
+msgstr "ÖffentlicheGebäude"
+
+#: Census/census.xml.h:384
+msgid "37. Public Buildings"
+msgstr ""
+
+#: Census/census.xml.h:385
+msgid "WorshipPlaces"
+msgstr "KultOrte"
+
+#: Census/census.xml.h:386
+msgid "38. Places of Worship"
+msgstr ""
+
+#: Census/census.xml.h:387
+msgid "BuisnessInfo"
+msgstr ""
+
+#: Census/census.xml.h:388
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+
+#: Census/census.xml.h:389
+msgid "NumEmployees"
+msgstr ""
+
+#: Census/census.xml.h:390
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr ""
+
+#: Census/census.xml.h:391
+msgid "41. General Remarks of the Enumerator"
+msgstr ""
+
+#: Census/census.xml.h:392
+msgid "B: Agricultural Census"
+msgstr ""
+
+#: Census/census.xml.h:393
+msgid "1. Name of Occupier"
+msgstr "1. Name des Besitzers"
+
+#: Census/census.xml.h:394
+#, fuzzy
+msgid "Concession"
+msgstr "Verarbeitung..."
+
+#: Census/census.xml.h:395
+msgid "2. Concession or Range"
+msgstr ""
+
+#: Census/census.xml.h:396
+#, fuzzy
+msgid "Lot"
+msgstr "Niedrig"
+
+#: Census/census.xml.h:397
+msgid "3. Lot or part of Lot"
+msgstr ""
+
+#: Census/census.xml.h:398
+msgid "AcresHeld"
+msgstr ""
+
+#: Census/census.xml.h:399
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr ""
+
+#: Census/census.xml.h:400
+#, fuzzy
+msgid "AcresCultivation"
+msgstr "Ziel"
+
+#: Census/census.xml.h:401
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr ""
+
+#: Census/census.xml.h:402
+msgid "AcresCrops"
+msgstr ""
+
+#: Census/census.xml.h:403
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr ""
+
+#: Census/census.xml.h:404
+msgid "AcresPasture"
+msgstr ""
+
+#: Census/census.xml.h:405
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr ""
+
+#: Census/census.xml.h:406
+msgid "AcresGardens"
+msgstr ""
+
+#: Census/census.xml.h:407
+#, fuzzy
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "Anzahl der Vorfahren von %s"
+
+#: Census/census.xml.h:408
+msgid "AcresWood"
+msgstr ""
+
+#: Census/census.xml.h:409
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr ""
+
+#: Census/census.xml.h:410
+msgid "WheatAcres"
+msgstr "WeizenMorgen"
+
+#: Census/census.xml.h:411
+msgid "10. Wheat: Acres"
+msgstr "10. Weizen: Morgen"
+
+#: Census/census.xml.h:412
+msgid "WheatBsh"
+msgstr ""
+
+#: Census/census.xml.h:413
+msgid "11. Wheat: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:414
+msgid "BarleyAcres"
+msgstr ""
+
+#: Census/census.xml.h:415
+msgid "12. Barley: Acres"
+msgstr "12. Gerste: Morgen"
+
+#: Census/census.xml.h:416
+msgid "BarleyBsh"
+msgstr ""
+
+#: Census/census.xml.h:417
+msgid "13. Barley: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:418
+msgid "RyeAcres"
+msgstr "RoggenMorgen"
+
+#: Census/census.xml.h:419
+msgid "14. Rye: Acres"
+msgstr "14- Roggen: Morgen"
+
+#: Census/census.xml.h:420
+msgid "RyeBsh"
+msgstr ""
+
+#: Census/census.xml.h:421
+msgid "15. Rye: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:422
+msgid "PeasAcres"
+msgstr "ErbsenMorgen"
+
+#: Census/census.xml.h:423
+msgid "16. Peas: Acres"
+msgstr "16. Erbsen: Morgen"
+
+#: Census/census.xml.h:424
+msgid "PeasBush"
+msgstr ""
+
+#: Census/census.xml.h:425
+msgid "17. Peas: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:426
+msgid "OatsAcres"
+msgstr "HaferMorgen"
+
+#: Census/census.xml.h:427
+msgid "18. Oats: Acres"
+msgstr ""
+
+#: Census/census.xml.h:428
+msgid "OatsBush"
+msgstr ""
+
+#: Census/census.xml.h:429
+msgid "19. Oats: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:430
+msgid "BWheatAcres"
+msgstr ""
+
+#: Census/census.xml.h:431
+msgid "20. B.Wheat: Acres"
+msgstr ""
+
+#: Census/census.xml.h:432
+msgid "BWheatBush"
+msgstr ""
+
+#: Census/census.xml.h:433
+msgid "21. B.Wheat: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:434
+msgid "CornAcres"
+msgstr ""
+
+#: Census/census.xml.h:435
+msgid "22. Corn: Acres"
+msgstr ""
+
+#: Census/census.xml.h:436
+msgid "CornBush"
+msgstr ""
+
+#: Census/census.xml.h:437
+msgid "23. Corn: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:438
+msgid "PotatoesAcres"
+msgstr "KartoffelnMorgen"
+
+#: Census/census.xml.h:439
+msgid "24. Potatoes: Acres"
+msgstr ""
+
+#: Census/census.xml.h:440
+msgid "PotatoesBush"
+msgstr ""
+
+#: Census/census.xml.h:441
+msgid "25. Potatoes: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:442
+msgid "TurnipsAcres"
+msgstr ""
+
+#: Census/census.xml.h:443
+msgid "26. Turnips: Acres"
+msgstr ""
+
+#: Census/census.xml.h:444
+msgid "TurnipsBush"
+msgstr ""
+
+#: Census/census.xml.h:445
+msgid "27. Turnips: Produce Bsh."
+msgstr ""
+
+#: Census/census.xml.h:446
+msgid "CloverBush"
+msgstr ""
+
+#: Census/census.xml.h:447
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr ""
+
+#: Census/census.xml.h:448
+msgid "CarrotsBush"
+msgstr ""
+
+#: Census/census.xml.h:449
+msgid "29. Carrots - Bsh."
+msgstr ""
+
+#: Census/census.xml.h:450
+msgid "MangleWurtzel"
+msgstr ""
+
+#: Census/census.xml.h:451
+msgid "30. Mangle Wurtzel"
+msgstr ""
+
+#: Census/census.xml.h:452
+msgid "BeansBush"
+msgstr ""
+
+#: Census/census.xml.h:453
+msgid "31. Beans Bush"
+msgstr ""
+
+#: Census/census.xml.h:454
+msgid "HopsLbs"
+msgstr ""
+
+#: Census/census.xml.h:455
+msgid "32. Hops Lbs."
+msgstr ""
+
+#: Census/census.xml.h:456
+msgid "HayQty"
+msgstr ""
+
+#: Census/census.xml.h:457
+msgid "33. Hay, Bundles or Tons"
+msgstr ""
+
+#: Census/census.xml.h:458
+msgid "FlaxLbs"
+msgstr ""
+
+#: Census/census.xml.h:459
+msgid "34. Flax or Hemp, Lbs."
+msgstr ""
+
+#: Census/census.xml.h:460
+msgid "TobaccoLbs"
+msgstr ""
+
+#: Census/census.xml.h:461
+msgid "35. Tobacco Lbs."
+msgstr ""
+
+#: Census/census.xml.h:462
+msgid "WoolLbs."
+msgstr "WollePfund"
+
+#: Census/census.xml.h:463
+msgid "36. Wool Lbs."
+msgstr ""
+
+#: Census/census.xml.h:464
+#, fuzzy
+msgid "Column37"
+msgstr "Spalten"
+
+#: Census/census.xml.h:465
+msgid "37."
+msgstr ""
+
+#: Census/census.xml.h:466
+#, fuzzy
+msgid "Column38"
+msgstr "Spalten"
+
+#: Census/census.xml.h:467
+msgid "38."
+msgstr ""
+
+#: Census/census.xml.h:468
+#, fuzzy
+msgid "Column39"
+msgstr "Spalten"
+
+#: Census/census.xml.h:469
+msgid "39."
+msgstr ""
+
+#: Census/census.xml.h:470
+msgid "MapleSugarLbs"
+msgstr "Ahornzucker Pfund"
+
+#: Census/census.xml.h:471
+msgid "40. Maple Sugar Lbs."
+msgstr ""
+
+#: Census/census.xml.h:472
+msgid "CiderGalls"
+msgstr ""
+
+#: Census/census.xml.h:473
+msgid "41. Cider Galls."
+msgstr ""
+
+#: Census/census.xml.h:474
+msgid "ClothYards"
+msgstr ""
+
+#: Census/census.xml.h:475
+msgid "42. Fulled Cloth Yards"
+msgstr ""
+
+#: Census/census.xml.h:476
+msgid "LinnenYards"
+msgstr ""
+
+#: Census/census.xml.h:477
+msgid "43. Linnen - Yds."
+msgstr ""
+
+#: Census/census.xml.h:478
+msgid "FlannelYds"
+msgstr ""
+
+#: Census/census.xml.h:479
+msgid "44. Flannel - Yds."
+msgstr ""
+
+#: Census/census.xml.h:480
+msgid "Bulls"
+msgstr ""
+
+#: Census/census.xml.h:481
+msgid "45. Bulls, Oxen or Steers"
+msgstr ""
+
+#: Census/census.xml.h:482
+msgid "Milch Cows"
+msgstr "Milchkühe"
+
+#: Census/census.xml.h:483
+msgid "46. Milch Cows"
+msgstr ""
+
+#: Census/census.xml.h:484
+msgid "Calves"
+msgstr ""
+
+#: Census/census.xml.h:485
+msgid "47. Calves or Heifers"
+msgstr ""
+
+#: Census/census.xml.h:486
+msgid "Horses"
+msgstr ""
+
+#: Census/census.xml.h:487
+msgid "48. Horses of all ages"
+msgstr ""
+
+#: Census/census.xml.h:488
+msgid "Sheep"
+msgstr "Schafe"
+
+#: Census/census.xml.h:489
+msgid "49. Sheep"
+msgstr ""
+
+#: Census/census.xml.h:490
+msgid "Pigs"
+msgstr "Schweine"
+
+#: Census/census.xml.h:491
+msgid "50. Pigs"
+msgstr ""
+
+#: Census/census.xml.h:492
+msgid "ButterLbs"
+msgstr ""
+
+#: Census/census.xml.h:493
+msgid "51. Butter - Lbs."
+msgstr ""
+
+#: Census/census.xml.h:494
+msgid "CheeseLbs"
+msgstr ""
+
+#: Census/census.xml.h:495
+msgid "52. Cheese - Lbs."
+msgstr ""
+
+#: Census/census.xml.h:496
+msgid "Beef"
+msgstr ""
+
+#: Census/census.xml.h:497
+msgid "53. Beef - Barrels or Cwts."
+msgstr ""
+
+#: Census/census.xml.h:498
+msgid "Pork"
+msgstr "Schwein"
+
+#: Census/census.xml.h:499
+msgid "54. Pork - Barrels or Cwts."
+msgstr ""
+
+#: Census/census.xml.h:500
+msgid "Fish"
+msgstr ""
+
+#: Census/census.xml.h:501
+msgid "55. Quantity of Fish Cured"
+msgstr ""
+
+#: Census/census.xml.h:502
+#, fuzzy
+msgid "56. Remarks"
+msgstr "Bemerkungen"
+
+#: Census/census.xml.h:503
+#, fuzzy
+msgid "Personal Census"
+msgstr "Persönliche Ereignisse"
+
+#: Census/census.xml.h:504
+msgid "Enumeration District Number"
+msgstr ""
+
+#: Census/census.xml.h:505
+msgid "Page"
+msgstr "Seite"
+
+#: Census/census.xml.h:506
+msgid "2. Profession, trade or occupation"
+msgstr ""
+
+#: Census/census.xml.h:507
+#, fuzzy
+msgid "Married1851"
+msgstr "Verheiratet"
+
+#: Census/census.xml.h:508
+msgid "4. Married during the year"
+msgstr ""
+
+#: Census/census.xml.h:509
+#, fuzzy
+msgid "5. Religion"
+msgstr "Religion"
+
+#: Census/census.xml.h:510
+msgid "6. Residence, if out of limits"
+msgstr ""
+
+#: Census/census.xml.h:511
+msgid "7. Age next Birthday"
+msgstr ""
+
+#: Census/census.xml.h:512
+msgid "8. Sex: Male"
+msgstr ""
+
+#: Census/census.xml.h:513
+msgid "SexFemail"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:514
+#, fuzzy
+msgid "9. Sex:Female"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:515
+msgid "10. Married or Single"
+msgstr "10. Verheiratet oder Single"
+
+#: Census/census.xml.h:516
+msgid "Widowers"
+msgstr "Witwer"
+
+#: Census/census.xml.h:517
+msgid "11. Widowers"
+msgstr "11. Witwer"
+
+#: Census/census.xml.h:518
+msgid "Widows"
+msgstr "Witwen"
+
+#: Census/census.xml.h:519
+msgid "12. Widows"
+msgstr "12. Witwen"
+
+#: Census/census.xml.h:520
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Farbige Personen, Mulatten oder Indianer"
+
+#: Census/census.xml.h:521
+msgid "MemberMale"
+msgstr ""
+
+#: Census/census.xml.h:522
+msgid "14. Members: Male"
+msgstr "14. Angehörige: Männlich"
+
+#: Census/census.xml.h:523
+#, fuzzy
+msgid "MemberFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:524
+msgid "15. Members: Female"
+msgstr "15. Angehörige: Weiblich"
+
+#: Census/census.xml.h:525
+#, fuzzy
+msgid "NotMemberMale"
+msgstr "Novembernotiz"
+
+#: Census/census.xml.h:526
+msgid "16. Not Members: Male"
+msgstr "16. Nicht Angehörige: Männlich"
+
+#: Census/census.xml.h:527
+msgid "NotMemberFemale"
+msgstr ""
+
+#: Census/census.xml.h:528
+msgid "17. Not Members: Female"
+msgstr "17. Keine Angehörigen: Weiblich"
+
+#: Census/census.xml.h:529
+msgid "MemberAbsentMale"
+msgstr ""
+
+#: Census/census.xml.h:530
+msgid "18. Members Absent: Male"
+msgstr ""
+
+#: Census/census.xml.h:531
+msgid "MemberAbsentFemale"
+msgstr ""
+
+#: Census/census.xml.h:532
+msgid "19. Members Absent: Female"
+msgstr ""
+
+#: Census/census.xml.h:533
+msgid "DeafDumb"
+msgstr ""
+
+#: Census/census.xml.h:534
+msgid "20. Deaf and Dumb"
+msgstr ""
+
+#: Census/census.xml.h:535
+msgid "21. Blind"
+msgstr ""
+
+#: Census/census.xml.h:536
+msgid "Lunatic"
+msgstr "Geisteskranke"
+
+#: Census/census.xml.h:537
+msgid "22. Lunatics or Idiots"
+msgstr ""
+
+#: Census/census.xml.h:538
+msgid "23. Attending School within the year: Male"
+msgstr ""
+
+#: Census/census.xml.h:539
+msgid "24. Attending School within the year: Female"
+msgstr ""
+
+#: Census/census.xml.h:540
+msgid "CantReadMale"
+msgstr ""
+
+#: Census/census.xml.h:541
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr ""
+
+#: Census/census.xml.h:542
+#, fuzzy
+msgid "CantReadFemale"
+msgstr "Weiblich"
+
+#: Census/census.xml.h:543
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr ""
+
+#: Census/census.xml.h:544
+#, fuzzy
+msgid "Birth1860Male"
+msgstr "Geburtsname"
+
+#: Census/census.xml.h:545
+msgid "27. Births in 1860: Male"
+msgstr ""
+
+#: Census/census.xml.h:546
+msgid "Birth1860Female"
+msgstr ""
+
+#: Census/census.xml.h:547
+msgid "28. Births in 1860: Female"
+msgstr ""
+
+#: Census/census.xml.h:548
+#, fuzzy
+msgid "Death1860Male"
+msgstr "Sterbedatum"
+
+#: Census/census.xml.h:549
+msgid "29. Deaths in 1860: Male"
+msgstr ""
+
+#: Census/census.xml.h:550
+msgid "Death1860Female"
+msgstr ""
+
+#: Census/census.xml.h:551
+msgid "30. Deaths in 1860: Female"
+msgstr ""
+
+#: Census/census.xml.h:552
+msgid "31. Age and cause of death"
+msgstr ""
+
+#: Census/census.xml.h:553
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr ""
+
+#: Census/census.xml.h:554
+msgid "33. Houses: No. of Stories"
+msgstr ""
+
+#: Census/census.xml.h:555
+msgid "34. Houses: No. of families living in the house"
+msgstr ""
+
+#: Census/census.xml.h:556
+msgid "35. Houses: Vacant"
+msgstr ""
+
+#: Census/census.xml.h:557
+msgid "HouseBeingBuilt"
+msgstr ""
+
+#: Census/census.xml.h:558
+msgid "36. Houses: Being built"
+msgstr ""
+
+#: Census/census.xml.h:559
+msgid "1: Nominal Return of the Living"
+msgstr ""
+
+#: Census/census.xml.h:560
+msgid "Province"
+msgstr "Provinz"
+
+#: Census/census.xml.h:561
+msgid "District"
+msgstr ""
+
+#: Census/census.xml.h:562
+#, fuzzy
+msgid "District No."
+msgstr "Begrenzt auf:"
+
+#: Census/census.xml.h:563
+#, fuzzy
+msgid "SubDistrict"
+msgstr "Teilzeichenfolge:"
+
+#: Census/census.xml.h:564
+#, fuzzy
+msgid "Sub District"
+msgstr "Teilzeichenfolge:"
+
+#: Census/census.xml.h:565
+#, fuzzy
+msgid "Vessels"
+msgstr "Zeugen"
+
+#: Census/census.xml.h:566
+msgid "1. Vessels"
+msgstr ""
+
+#: Census/census.xml.h:567
+msgid "Shanties"
+msgstr "Baracken"
+
+#: Census/census.xml.h:568
+msgid "2. Shanties"
+msgstr ""
+
+#: Census/census.xml.h:569
+msgid "HousesBeingBuilt"
+msgstr ""
+
+#: Census/census.xml.h:570
+msgid "3. Dwelling houses in construction"
+msgstr ""
+
+#: Census/census.xml.h:571
+msgid "4. Dwelling houses unoccupied"
+msgstr ""
+
+#: Census/census.xml.h:572
+msgid "HousesInhabited"
+msgstr ""
+
+#: Census/census.xml.h:573
+msgid "5. Dwelling houses inhabited"
+msgstr ""
+
+#: Census/census.xml.h:574
+msgid "Families"
+msgstr "Familien"
+
+#: Census/census.xml.h:575
+#, fuzzy
+msgid "6.Families"
+msgstr "Familien"
+
+#: Census/census.xml.h:576
+#, fuzzy
+msgid "7. Names"
+msgstr "Namen"
+
+#: Census/census.xml.h:577
+msgid "8. Sex"
+msgstr ""
+
+#: Census/census.xml.h:578
+msgid "9. Age"
+msgstr ""
+
+#: Census/census.xml.h:579
+#, fuzzy
+msgid "Birth1871"
+msgstr "Geburt"
+
+#: Census/census.xml.h:580
+msgid "10. Born within last twelve months"
+msgstr "10. Innerhalb der letzten zwölf Monaten geboren"
+
+#: Census/census.xml.h:581
+msgid "11. Country or Province of Birth"
+msgstr "11. Land oder Provinz der Geburt"
+
+#: Census/census.xml.h:582
+msgid "12. Religion"
+msgstr "12. Religion"
+
+#: Census/census.xml.h:583
+msgid "Origin"
+msgstr "Ursprung"
+
+#: Census/census.xml.h:584
+msgid "13. Origin"
+msgstr "13. Herkunft"
+
+#: Census/census.xml.h:585
+msgid "14. Profession, Occupation or Trade"
+msgstr ""
+
+#: Census/census.xml.h:586
+msgid "15. Married or Widowed"
+msgstr "15. Verheiratet oder verwitwet"
+
+#: Census/census.xml.h:587
+#, fuzzy
+msgid "Maried1871"
+msgstr "Verheiratet"
+
+#: Census/census.xml.h:588
+msgid "16. Married within last twelve months"
+msgstr ""
+
+#: Census/census.xml.h:589
+msgid "Scholar"
+msgstr ""
+
+#: Census/census.xml.h:590
+msgid "17. Going to school"
+msgstr "17. Geht zur Schule"
+
+#: Census/census.xml.h:591
+#, fuzzy
+msgid "CantRead"
+msgstr "Bereit"
+
+#: Census/census.xml.h:592
+msgid "18. Over 20 unable to read"
+msgstr ""
+
+#: Census/census.xml.h:593
+msgid "CantWrite"
+msgstr ""
+
+#: Census/census.xml.h:594
+msgid "19. Over 20 unable to write"
+msgstr ""
+
+#: Census/census.xml.h:595
+msgid "22. Unsound mind"
+msgstr ""
+
+#: Census/census.xml.h:597
+msgid "23. Date of Operations and Remarks"
+msgstr ""
+
+#: Census/census.xml.h:598
+msgid "3. Houses in construction"
+msgstr ""
+
+#: Census/census.xml.h:599
+msgid "4. Houses unoccupied"
+msgstr ""
+
+#: Census/census.xml.h:600
+msgid "5. Houses inhabited"
+msgstr ""
+
+#: Census/census.xml.h:601
+#, fuzzy
+msgid "6. Families"
+msgstr "Familien"
+
+#: Census/census.xml.h:602
+#, fuzzy
+msgid "Birth1881"
+msgstr "Geburt"
+
+#: Census/census.xml.h:603
+msgid "16. Going to school"
+msgstr "16. Geht zur Schule"
+
+#: Census/census.xml.h:604
+msgid "17. Deaf and Dumb"
+msgstr ""
+
+#: Census/census.xml.h:605
+msgid "18. Blind"
+msgstr "18. Blind"
+
+#: Census/census.xml.h:606
+msgid "19/ Unsound mind"
+msgstr ""
+
+#: Census/census.xml.h:607
+msgid "20. Date of Operations and Remarks"
+msgstr ""
+
+#: Census/census.xml.h:608
+msgid "6 April 1891"
+msgstr ""
+
+#: Census/census.xml.h:609
+msgid "1. Vessels and Shanties"
+msgstr ""
+
+#: Census/census.xml.h:610
+msgid "2. Houses in construction"
+msgstr ""
+
+#: Census/census.xml.h:611
+msgid "3. Houses unoccupied"
+msgstr ""
+
+#: Census/census.xml.h:612
+msgid "4. Houses inhabited"
+msgstr ""
+
+#: Census/census.xml.h:613
+#, fuzzy
+msgid "5. Families"
+msgstr "Familien"
+
+#: Census/census.xml.h:614
+#, fuzzy
+msgid "6. Names"
+msgstr "Namen"
+
+#: Census/census.xml.h:615
+msgid "7. Sex"
+msgstr ""
+
+#: Census/census.xml.h:616
+msgid "8. Age"
+msgstr ""
+
+#: Census/census.xml.h:617
+#, fuzzy
+msgid "9. Married or Widowed"
+msgstr "Fehlerfenster"
+
+#: Census/census.xml.h:618
+msgid "10. Relationship to Head of Family"
+msgstr "10. Beziehung zum Kopf des Hauses"
+
+#: Census/census.xml.h:619
+msgid "French"
+msgstr "Französisch"
+
+#: Census/census.xml.h:620
+msgid "12. FrenchCanadian"
+msgstr "12. Frankokanadier(in)"
+
+#: Census/census.xml.h:621
+#, fuzzy
+msgid "BirthPlaceFather"
+msgstr "Geburtsort"
+
+#: Census/census.xml.h:622
+msgid "13. Birth Place of Father"
+msgstr "13. Geburtsort des Vaters"
+
+#: Census/census.xml.h:623
+#, fuzzy
+msgid "BirthPlaceMother"
+msgstr "Geburtsort"
+
+#: Census/census.xml.h:624
+msgid "14. Birth Place of Mother"
+msgstr "14. Geburtsort der Mutter"
+
+#: Census/census.xml.h:625
+msgid "15. Religion"
+msgstr "15. Religion"
+
+#: Census/census.xml.h:626
+msgid "16. Profession, Occupation or Trade"
+msgstr ""
+
+#: Census/census.xml.h:627
+msgid "17. Employers"
+msgstr "17. Arbeitgeber"
+
+#: Census/census.xml.h:628
+msgid "Employee"
+msgstr ""
+
+#: Census/census.xml.h:629
+msgid "18. Wage Earner"
+msgstr ""
+
+#: Census/census.xml.h:630
+msgid "Unemployed"
+msgstr "Arbeitslos"
+
+#: Census/census.xml.h:631
+msgid "19. Unemployed during week preceding Census"
+msgstr ""
+
+#: Census/census.xml.h:632
+msgid "Employees"
+msgstr ""
+
+#: Census/census.xml.h:633
+msgid "20. Employer to state average number of hands employed during year"
+msgstr ""
+
+#: Census/census.xml.h:634
+#, fuzzy
+msgid "CanRead"
+msgstr "Bereit"
+
+#: Census/census.xml.h:635
+#, fuzzy
+msgid "21. Instruction: Read"
+msgstr "Einleitungsnotiz"
+
+#: Census/census.xml.h:636
+msgid "CanWrite"
+msgstr ""
+
+#: Census/census.xml.h:637
+#, fuzzy
+msgid "22. Instruction: Write"
+msgstr "Einleitungsnotiz"
+
+#: Census/census.xml.h:638
+msgid "23. Deaf and Dumb"
+msgstr ""
+
+#: Census/census.xml.h:639
+msgid "24. Blind"
+msgstr ""
+
+#: Census/census.xml.h:640
+msgid "25. Unsound mind"
+msgstr ""
+
+#: Census/census.xml.h:641
+#, fuzzy
+msgid "SubTitle"
+msgstr "Untertitel"
+
+#: Census/census.xml.h:642
+msgid "Fourth Census of Canada, 1911"
+msgstr ""
+
+#: Census/census.xml.h:643
+msgid "1: Population by name, personal description, etc."
+msgstr ""
+
+#: Census/census.xml.h:644
+msgid "S. District No."
+msgstr ""
+
+#: Census/census.xml.h:645
+msgid "PollSub"
+msgstr ""
+
+#: Census/census.xml.h:646
+msgid "Polling Subdivision No."
+msgstr ""
+
+#: Census/census.xml.h:647
+msgid "Locality"
+msgstr "Lokalität"
+
+#: Census/census.xml.h:648
+msgid "City, town, village, township or parish"
+msgstr ""
+
+#: Census/census.xml.h:649
+#, fuzzy
+msgid "House"
+msgstr "Partner(in)"
+
+#: Census/census.xml.h:650
+msgid "1. Dwelling house"
+msgstr "1. Wohnhaus"
+
+#: Census/census.xml.h:651
+msgid "Family"
+msgstr "Familie"
+
+#: Census/census.xml.h:652
+#, fuzzy
+msgid "2. Family or household"
+msgstr "Familienfarben"
+
+#: Census/census.xml.h:653
+msgid "3. Name of each person in family"
+msgstr ""
+
+#: Census/census.xml.h:654
+msgid "4. Sex"
+msgstr ""
+
+#: Census/census.xml.h:655
+msgid "Colour"
+msgstr "Farbe"
+
+#: Census/census.xml.h:656
+#, fuzzy
+msgid "5. Colour"
+msgstr "Farbe"
+
+#: Census/census.xml.h:657
+msgid "6. Relation to head of family"
+msgstr ""
+
+#: Census/census.xml.h:658
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr ""
+
+#: Census/census.xml.h:659
+#, fuzzy
+msgid "BirthMonth"
+msgstr "Geburtsmonat"
+
+#: Census/census.xml.h:660
+msgid "8. Month and Date of Birth"
+msgstr ""
+
+#: Census/census.xml.h:661
+#, fuzzy
+msgid "BirthYear"
+msgstr "Geburtsjahr"
+
+#: Census/census.xml.h:662
+#, fuzzy
+msgid "9. Year of birth"
+msgstr "Jahr des Berichts"
+
+#: Census/census.xml.h:663
+msgid "10. Age at last birthday"
+msgstr "10. Alter am letzten Geburtstag"
+
+#: Census/census.xml.h:664
+msgid "11. Country or place of birth"
+msgstr "11. Land oder Ort der Geburt"
+
+#: Census/census.xml.h:665
+msgid "Immigration"
+msgstr "Einwanderung"
+
+#: Census/census.xml.h:666
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
+
+#: Census/census.xml.h:667
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Jahr der Einbürgerung, wenn vorher Ausländer"
+
+#: Census/census.xml.h:668
+msgid "Race"
+msgstr "Rasse"
+
+#: Census/census.xml.h:669
+msgid "14. Racial or tribal origin"
+msgstr "14. Herkunfts Rasse oder Stamm"
+
+#: Census/census.xml.h:670
+msgid "15. Nationality"
+msgstr "15. Nationalität"
+
+#: Census/census.xml.h:671
+msgid "16. Religion"
+msgstr "16. Religion"
+
+#: Census/census.xml.h:672
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr ""
+
+#: Census/census.xml.h:673
+msgid "OwnMeans"
+msgstr ""
+
+#: Census/census.xml.h:674
+msgid "18. Living on own means"
+msgstr ""
+
+#: Census/census.xml.h:675
+msgid "19. Employer"
+msgstr ""
+
+#: Census/census.xml.h:676
+msgid "20. Employee"
+msgstr ""
+
+#: Census/census.xml.h:677
+msgid "SelfEmployed"
+msgstr ""
+
+#: Census/census.xml.h:678
+msgid "21. Working on own account"
+msgstr ""
+
+#: Census/census.xml.h:679
+msgid "WhereEmployed"
+msgstr ""
+
+#: Census/census.xml.h:680
+msgid "22. Working at trade in factory or in home"
+msgstr ""
+
+#: Census/census.xml.h:681
+msgid "MonthsFactory"
+msgstr ""
+
+#: Census/census.xml.h:682
+msgid "23. Months employed at trade in factory"
+msgstr ""
+
+#: Census/census.xml.h:683
+#, fuzzy
+msgid "MonthsHome"
+msgstr "_Monat"
+
+#: Census/census.xml.h:684
+msgid "24. Months employed at trade in home"
+msgstr ""
+
+#: Census/census.xml.h:685
+#, fuzzy
+msgid "MonthsOther"
+msgstr "Mutter"
+
+#: Census/census.xml.h:686
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr ""
+
+#: Census/census.xml.h:687
+#, fuzzy
+msgid "EarningsOccupation"
+msgstr "Beruf"
+
+#: Census/census.xml.h:688
+msgid "26. Earnings from occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:689
+#, fuzzy
+msgid "EarningsOther"
+msgstr "Warnungen"
+
+#: Census/census.xml.h:690
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr ""
+
+#: Census/census.xml.h:691
+msgid "SchoolMonths"
+msgstr ""
+
+#: Census/census.xml.h:692
+msgid "28. Months at school in 1910"
+msgstr ""
+
+#: Census/census.xml.h:693
+msgid "Read"
+msgstr "Lesen"
+
+#: Census/census.xml.h:694
+msgid "29. Can read"
+msgstr ""
+
+#: Census/census.xml.h:695
+msgid "Write"
+msgstr "Schreiben"
+
+#: Census/census.xml.h:696
+msgid "30. Can write"
+msgstr ""
+
+#: Census/census.xml.h:697
+msgid "SpeakEnglish"
+msgstr "SprichtEnglisch"
+
+#: Census/census.xml.h:698
+msgid "31. Can speak English"
+msgstr ""
+
+#: Census/census.xml.h:699
+msgid "SpeakFrench"
+msgstr "SprichtFranzösisch"
+
+#: Census/census.xml.h:700
+msgid "32. Can speak French"
+msgstr ""
+
+#: Census/census.xml.h:701
+msgid "33. Mother tongue (If spoken)"
+msgstr ""
+
+#: Census/census.xml.h:702
+#, fuzzy
+msgid "Infirmities"
+msgstr "Konfirmation/Firmung"
+
+#: Census/census.xml.h:703
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr ""
+
+#: Census/census.xml.h:704
+msgid "2: Buildings and Lands, Churches and Schools"
+msgstr ""
+
+#: Census/census.xml.h:705
+msgid "Name from Schedule 1"
+msgstr ""
+
+#: Census/census.xml.h:706
+msgid "Line on Schedule 2"
+msgstr ""
+
+#: Census/census.xml.h:707
+#, fuzzy
+msgid "PageRef"
+msgstr "Seite"
+
+#: Census/census.xml.h:708
+msgid "2. Page from Schedule 1"
+msgstr ""
+
+#: Census/census.xml.h:709
+#, fuzzy
+msgid "LineRef"
+msgstr "Linienart"
+
+#: Census/census.xml.h:710
+msgid "3. Line from Schedule 1"
+msgstr ""
+
+#: Census/census.xml.h:712
+#, fuzzy
+msgid "3. Place of Habitation"
+msgstr "Ortsfundstelle"
+
+#: Census/census.xml.h:713
+msgid "HousesConst"
+msgstr ""
+
+#: Census/census.xml.h:714
+msgid "4. Houses: In construction"
+msgstr ""
+
+#: Census/census.xml.h:715
+msgid "5. Houses: Vacant"
+msgstr ""
+
+#: Census/census.xml.h:716
+msgid "6. Houses: Inhabited"
+msgstr ""
+
+#: Census/census.xml.h:717
+#, fuzzy
+msgid "Institution"
+msgstr "Einleitung"
+
+#: Census/census.xml.h:718
+msgid "7. Institution: Special or legal name"
+msgstr ""
+
+#: Census/census.xml.h:719
+#, fuzzy
+msgid "Buildings"
+msgstr "Erstelle Ansicht"
+
+#: Census/census.xml.h:720
+msgid "8. Institution: Number of buildings"
+msgstr ""
+
+#: Census/census.xml.h:721
+msgid "9. Number of families in house or institution"
+msgstr ""
+
+#: Census/census.xml.h:722
+msgid "Rooms"
+msgstr "Räume"
+
+#: Census/census.xml.h:723
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
+
+#: Census/census.xml.h:724
+#, fuzzy
+msgid "Inmates"
+msgstr "Animieren"
+
+#: Census/census.xml.h:725
+msgid "11. Number of inmates in institution"
+msgstr "11. Anzahl der Insassen in der Einrichtung"
+
+#: Census/census.xml.h:726
+msgid "OwnedAcres"
+msgstr ""
+
+#: Census/census.xml.h:727
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr ""
+
+#: Census/census.xml.h:728
+msgid "OwnedLots"
+msgstr ""
+
+#: Census/census.xml.h:729
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr ""
+
+#: Census/census.xml.h:730
+msgid "OwnedHouses"
+msgstr ""
+
+#: Census/census.xml.h:731
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr ""
+
+#: Census/census.xml.h:732
+msgid "OwnedStores"
+msgstr ""
+
+#: Census/census.xml.h:733
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr ""
+
+#: Census/census.xml.h:734
+msgid "OwnedBars"
+msgstr ""
+
+#: Census/census.xml.h:735
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr ""
+
+#: Census/census.xml.h:736
+msgid "OwnedSilos"
+msgstr ""
+
+#: Census/census.xml.h:737
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr ""
+
+#: Census/census.xml.h:738
+msgid "OwnedFactories"
+msgstr ""
+
+#: Census/census.xml.h:739
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr ""
+
+#: Census/census.xml.h:740
+msgid "LeasedAcres"
+msgstr ""
+
+#: Census/census.xml.h:741
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr ""
+
+#: Census/census.xml.h:742
+msgid "LeasedLots"
+msgstr ""
+
+#: Census/census.xml.h:743
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr ""
+
+#: Census/census.xml.h:744
+msgid "LeasedHouses"
+msgstr ""
+
+#: Census/census.xml.h:745
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr ""
+
+#: Census/census.xml.h:746
+msgid "LeasedStores"
+msgstr ""
+
+#: Census/census.xml.h:747
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr ""
+
+#: Census/census.xml.h:748
+msgid "LeasedBarns"
+msgstr ""
+
+#: Census/census.xml.h:749
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr ""
+
+#: Census/census.xml.h:750
+msgid "LeasedSilos"
+msgstr "GepachteteSpeicher"
+
+#: Census/census.xml.h:751
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr ""
+
+#: Census/census.xml.h:752
+msgid "LeasedFactories"
+msgstr ""
+
+#: Census/census.xml.h:753
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr ""
+
+#: Census/census.xml.h:754
+#, fuzzy
+msgid "Denomination"
+msgstr "Ziel"
+
+#: Census/census.xml.h:755
+msgid "26. Church or place of worship: Religious denomination"
+msgstr ""
+
+#: Census/census.xml.h:756
+#, fuzzy
+msgid "Communicants"
+msgstr "Kommentar"
+
+#: Census/census.xml.h:757
+msgid "27. Church or place of worship: Number of communicants"
+msgstr ""
+
+#: Census/census.xml.h:758
+msgid "Seating"
+msgstr "Bestuhlung"
+
+#: Census/census.xml.h:759
+msgid "28. Church or place of worship: Seating capacity"
+msgstr ""
+
+#: Census/census.xml.h:760
+#, fuzzy
+msgid "SSDenomination"
+msgstr "Ziel"
+
+#: Census/census.xml.h:761
+msgid "29. Sunday School: Religious Denomination"
+msgstr ""
+
+#: Census/census.xml.h:762
+#, fuzzy
+msgid "SSTeachers"
+msgstr "Informationen zum Forscher"
+
+#: Census/census.xml.h:763
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr ""
+
+#: Census/census.xml.h:764
+msgid "SSScholars"
+msgstr ""
+
+#: Census/census.xml.h:765
+msgid "31. Sunday School: Number of Scholars"
+msgstr ""
+
+#: Census/census.xml.h:766
+msgid "SchoolRooms"
+msgstr "Schulräume"
+
+#: Census/census.xml.h:767
+msgid "32. School: Number of rooms"
+msgstr ""
+
+#: Census/census.xml.h:768
+msgid "SchoolTeachers"
+msgstr "Schullehrer"
+
+#: Census/census.xml.h:769
+#, fuzzy
+msgid "33. School: Number of teachers"
+msgstr "Anzahl der Instanzen:"
+
+#: Census/census.xml.h:770
+msgid "SchoolStudents"
+msgstr ""
+
+#: Census/census.xml.h:771
+msgid "34. School: Number of Scholars"
+msgstr ""
+
+#: Census/census.xml.h:772
+#, fuzzy
+msgid "DateVisit"
+msgstr "Daten"
+
+#: Census/census.xml.h:773
+msgid "35. Date of visit"
+msgstr ""
+
+#: Census/census.xml.h:774
+msgid "Reason"
+msgstr ""
+
+#: Census/census.xml.h:775
+msgid "36. The reason, if not enumerated on first visit"
+msgstr ""
+
+#: Census/census.xml.h:776
+#, fuzzy
+msgid "DateEnum"
+msgstr "Datum"
+
+#: Census/census.xml.h:777
+msgid "37. Date when enumerated"
+msgstr ""
+
+#: Census/census.xml.h:778
+msgid "1: Population and Livestock"
+msgstr ""
+
+#: Census/census.xml.h:779
+msgid "Date When Filled"
+msgstr ""
+
+#: Census/census.xml.h:780
+msgid "1. No. of family in order of visitation"
+msgstr "1. Nr. der Familie in der Reihenfolge der Besuche"
+
+#: Census/census.xml.h:781
+#, fuzzy
+msgid "2. Name of each person in the family"
+msgstr "Entferne Person als Elter in dieser Familie"
+
+#: Census/census.xml.h:782
+#, fuzzy
+msgid "3.Relation to head of family"
+msgstr "Entferne Vater aus der Familie"
+
+#: Census/census.xml.h:783
+msgid "5. Married, single, widowed or divorced"
+msgstr ""
+
+#: Census/census.xml.h:784
+msgid "6. Age"
+msgstr ""
+
+#: Census/census.xml.h:785
+msgid "7. Country or place of birth"
+msgstr ""
+
+#: Census/census.xml.h:786
+msgid "8. Year of immigration to Canada"
+msgstr ""
+
+#: Census/census.xml.h:787
+msgid "PostOffice"
+msgstr "Postamt"
+
+#: Census/census.xml.h:788
+#, fuzzy
+msgid "9. Post office address"
+msgstr "Land für die Adresse"
+
+#: Census/census.xml.h:789
+#, fuzzy
+msgid "Section"
+msgstr "Abschnitte"
+
+#: Census/census.xml.h:790
+#, fuzzy
+msgid "10. Location: Section"
+msgstr "Ortseditor"
+
+#: Census/census.xml.h:791
+msgid "11. Location: Township"
+msgstr ""
+
+#: Census/census.xml.h:792
+msgid "Range"
+msgstr "Zeitraum"
+
+#: Census/census.xml.h:793
+#, fuzzy
+msgid "12. Location: Range"
+msgstr "Ort:"
+
+#: Census/census.xml.h:794
+msgid "Meridian"
+msgstr "Meridian"
+
+#: Census/census.xml.h:795
+msgid "13. Location: Meridian"
+msgstr ""
+
+#: Census/census.xml.h:796
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. Nutztiere: Pferde, allen Alters"
+
+#: Census/census.xml.h:797
+msgid "Cows"
+msgstr ""
+
+#: Census/census.xml.h:798
+msgid "15. Livestock: Milch cows"
+msgstr "15. Nutztiere: Milchkühe"
+
+#: Census/census.xml.h:799
+msgid "Other"
+msgstr "Andere"
+
+#: Census/census.xml.h:800
+msgid "16. Other horned or meat cattle, all ages"
+msgstr ""
+
+#: Census/census.xml.h:801
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. Schafe und Lämmer, allen Alters"
+
+#: Census/census.xml.h:802
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. Ferkel und Schweine, allen Alters"
+
+#: Census/census.xml.h:803
+msgid "Fifth Census of Canada, 1911"
+msgstr ""
+
+#: Census/census.xml.h:804
+msgid "Sub District No."
+msgstr ""
+
+#: Census/census.xml.h:805
+#, fuzzy
+msgid "4. Place of habitation"
+msgstr "Ortsfundstelle"
+
+#: Census/census.xml.h:806
+msgid "5. Sex"
+msgstr ""
+
+#: Census/census.xml.h:807
+msgid "8. Month of birth"
+msgstr ""
+
+#: Census/census.xml.h:808
+msgid "11 . Country or place of birth"
+msgstr "11. Land oder Ort der Geburt"
+
+#: Census/census.xml.h:809
+msgid "16. Chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:810
+msgid "OtherEmployment"
+msgstr ""
+
+#: Census/census.xml.h:811
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr ""
+
+#: Census/census.xml.h:812
+msgid "22. State where person employed"
+msgstr ""
+
+#: Census/census.xml.h:813
+#, fuzzy
+msgid "WeeksOccupation"
+msgstr "Beruf"
+
+#: Census/census.xml.h:814
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:815
+#, fuzzy
+msgid "WeeksOther"
+msgstr "Andere"
+
+#: Census/census.xml.h:816
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:817
+#, fuzzy
+msgid "HoursOccupation"
+msgstr "Beruf"
+
+#: Census/census.xml.h:818
+msgid "25. Hours of working time per week at chief occupation"
+msgstr ""
+
+#: Census/census.xml.h:819
+#, fuzzy
+msgid "HoursOther"
+msgstr "Andere"
+
+#: Census/census.xml.h:820
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr ""
+
+#: Census/census.xml.h:821
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:822
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:823
+msgid "Wages"
+msgstr "Lohn"
+
+#: Census/census.xml.h:824
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr ""
+
+#: Census/census.xml.h:825
+msgid "InsuranceLife"
+msgstr ""
+
+#: Census/census.xml.h:826
+msgid "30. Insurance: Upon life"
+msgstr ""
+
+#: Census/census.xml.h:827
+msgid "InsuranceAccident"
+msgstr ""
+
+#: Census/census.xml.h:828
+msgid "31. Insurance: Against accident or illness"
+msgstr ""
+
+#: Census/census.xml.h:829
+msgid "InsuranceCost"
+msgstr ""
+
+#: Census/census.xml.h:830
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr ""
+
+#: Census/census.xml.h:831
+msgid "33. Months at school in 1910"
+msgstr ""
+
+#: Census/census.xml.h:832
+msgid "34. Can Read"
+msgstr ""
+
+#: Census/census.xml.h:833
+msgid "35. Can Write"
+msgstr ""
+
+#: Census/census.xml.h:834
+msgid "36. Language commonly spoken"
+msgstr ""
+
+#: Census/census.xml.h:835
+msgid "SchoolCost"
+msgstr ""
+
+#: Census/census.xml.h:836
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+
+#: Census/census.xml.h:837
+msgid "38. Blind"
+msgstr ""
+
+#: Census/census.xml.h:838
+msgid "39. Deaf and dumb"
+msgstr ""
+
+#: Census/census.xml.h:839
+msgid "40. Crazy or lunatic"
+msgstr ""
+
+#: Census/census.xml.h:840
+msgid "41. Idiotic or silly"
+msgstr ""
+
+#: Census/census.xml.h:841
+msgid "Fifth Census of Canada, 1911, Unorganized Regions"
+msgstr ""
+
+#: Census/census.xml.h:842
+#, fuzzy
+msgid "A1: Population"
+msgstr "Veröffentlichung"
+
+#: Census/census.xml.h:843
+msgid "Name or Territory or Province"
+msgstr ""
+
+#: Census/census.xml.h:844
+msgid "Name of Locality, Post or other description"
+msgstr ""
+
+#: Census/census.xml.h:845
+msgid "1. House"
+msgstr "1. Haus"
+
+#: Census/census.xml.h:846
+msgid "Dwelling house"
+msgstr ""
+
+#: Census/census.xml.h:847
+#, fuzzy
+msgid "2. Family"
+msgstr "Familie"
+
+#: Census/census.xml.h:848
+#, fuzzy
+msgid "Family or household"
+msgstr "Familie von %s"
+
+#: Census/census.xml.h:849
+#, fuzzy
+msgid "3. Name"
+msgstr "Name"
+
+#: Census/census.xml.h:850
+msgid "Name of each person in family"
+msgstr "Name jeder Person in der Familie"
+
+#: Census/census.xml.h:851
+msgid "5. Relation to head of family"
+msgstr ""
+
+#: Census/census.xml.h:852
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr ""
+
+#: Census/census.xml.h:853
+msgid "7. Month of birth"
+msgstr ""
+
+#: Census/census.xml.h:854
+#, fuzzy
+msgid "8. Age at last birthday"
+msgstr "Maximales Alter des Vaters bei der Geburt"
+
+#: Census/census.xml.h:855
+msgid "9. Country or place of birth"
+msgstr ""
+
+#: Census/census.xml.h:856
+msgid "10. Racial or tribal origin"
+msgstr "10. Herkunfts Rasse oder Stamm"
+
+#: Census/census.xml.h:857
+msgid "11. Religion"
+msgstr "11. Religion"
+
+#: Census/census.xml.h:858
+msgid "12. Months at school in 1910"
+msgstr "12. Monate in der Schule in 1910"
+
+#: Census/census.xml.h:859
+msgid "13. Can Read"
+msgstr "13. Kann lesen"
+
+#: Census/census.xml.h:860
+msgid "14. Can Write"
+msgstr "14. Kann schreiben"
+
+#: Census/census.xml.h:861
+msgid "15. Language commonly spoken"
+msgstr "15. Gewöhnlich gesprochene Sprache"
+
+#: Census/census.xml.h:862
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+
+#: Census/census.xml.h:863
+msgid "Population by Name, Personal Description, Etc."
+msgstr ""
+
+#: Census/census.xml.h:864
+msgid "S.District No."
+msgstr ""
+
+#: Census/census.xml.h:865
+msgid "1. Dwelling House"
+msgstr "1. Wohnhaus"
+
+#: Census/census.xml.h:866
+msgid "2. Family, Household or Institution"
+msgstr ""
+
+#: Census/census.xml.h:867
+msgid "3. Name of each person in family, household or institution"
+msgstr ""
+
+#: Census/census.xml.h:868
+msgid "MilitaryService"
+msgstr "Militärdienst"
+
+#: Census/census.xml.h:869
+#, fuzzy
+msgid "4. Military Service"
+msgstr "Militärdienst"
+
+#: Census/census.xml.h:870
+msgid "5. Place of Habitation: Township"
+msgstr ""
+
+#: Census/census.xml.h:871
+msgid "6. Place of Habitation: Range"
+msgstr ""
+
+#: Census/census.xml.h:872
+msgid "7. Place of Habitation: Meridian"
+msgstr ""
+
+#: Census/census.xml.h:873
+msgid "Municipality"
+msgstr "Gemeinde"
+
+#: Census/census.xml.h:874
+msgid "8. Place of Habitation: Municipality"
+msgstr ""
+
+#: Census/census.xml.h:875
+#, fuzzy
+msgid "9. Relationship to head of family or household"
+msgstr "Verwandtschaftsverhältnis zur Hauptperson"
+
+#: Census/census.xml.h:876
+msgid "10. Sex"
+msgstr "10. Geschlecht"
+
+#: Census/census.xml.h:877
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
+
+#: Census/census.xml.h:878
+msgid "12. Age at last birthday"
+msgstr "12. Alter am letzten Geburtstag"
+
+#: Census/census.xml.h:879
+msgid "13. Country or place of birth"
+msgstr "13. Land oder Ort der Geburt"
+
+#: Census/census.xml.h:880
+msgid "14. Religion"
+msgstr "14. Religion"
+
+#: Census/census.xml.h:881
+msgid "15. Year of immigration to Canada"
+msgstr "15. Jahr der Einwanderung nach Kanada"
+
+#: Census/census.xml.h:882
+msgid "16. Year of naturalization"
+msgstr "16. Jahr der Einbürgerung"
+
+#: Census/census.xml.h:883
+msgid "17. Nationality"
+msgstr "17. Nationalität"
+
+#: Census/census.xml.h:884
+msgid "18. Race or tribal origin"
+msgstr ""
+
+#: Census/census.xml.h:885
+msgid "19. Can speak English"
+msgstr ""
+
+#: Census/census.xml.h:886
+msgid "20. Can speak French"
+msgstr ""
+
+#: Census/census.xml.h:887
+msgid "OtherLanguage"
+msgstr "AndereSprache"
+
+#: Census/census.xml.h:888
+msgid "21. Other language spoken as mother tongue"
+msgstr ""
+
+#: Census/census.xml.h:889
+msgid "22. Can Read"
+msgstr ""
+
+#: Census/census.xml.h:890
+msgid "23. Can Write"
+msgstr ""
+
+#: Census/census.xml.h:891
+msgid "24. Chief occupation or trade"
+msgstr ""
+
+#: Census/census.xml.h:892
+#, fuzzy
+msgid "Employment"
+msgstr "Begabung"
+
+#: Census/census.xml.h:893
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr ""
+
+#: Census/census.xml.h:894
+#, fuzzy
+msgid "EmploymentPlace"
+msgstr "Ereignisort"
+
+#: Census/census.xml.h:895
+msgid "26. State where person is employed"
+msgstr ""
+
+#: Census/census.xml.h:896
+msgid "Parish"
+msgstr "Gemeinde"
+
+#: Census/census.xml.h:897
+msgid "GROS Data"
+msgstr ""
+
+#: Census/census.xml.h:898
+#, fuzzy
+msgid "Born in County"
+msgstr "Kreis"
+
+#: Census/census.xml.h:899
+msgid "Foreigner, Born England or Ireland"
+msgstr ""
+
+#: Census/census.xml.h:900
+msgid "Quoad Sacra Parish"
+msgstr ""
+
+#: Census/census.xml.h:901
+#, fuzzy
+msgid "Parliamentary Burgh"
+msgstr "Hauptquelle"
+
+#: Census/census.xml.h:902
+msgid "Royal Burgh"
+msgstr ""
+
+#: Census/census.xml.h:903
+msgid "Town or Village"
+msgstr ""
+
+#: Census/census.xml.h:904
+msgid "House Schedule No"
+msgstr ""
+
+#: Census/census.xml.h:905
+msgid "Relation to Head"
+msgstr "Beziehung zum Kopf"
+
+#: Census/census.xml.h:906
+msgid "Blind, or Deaf and Dumb"
+msgstr ""
+
+#: Census/census.xml.h:907
+msgid "Enumeration District"
+msgstr ""
+
+#: Census/census.xml.h:908
+msgid "No. Of Schedule"
+msgstr ""
+
+#: Census/census.xml.h:909
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr ""
+
+#: Census/census.xml.h:910
+msgid "House Inhabited"
+msgstr ""
+
+#: Census/census.xml.h:911
+msgid "House U or B"
+msgstr ""
+
+#: Census/census.xml.h:912
+msgid "Relation to Head of Family"
+msgstr "Beziehung zum Kopf der Familie"
+
+#: Census/census.xml.h:913
+msgid "Rank, Profession, or Occupation"
+msgstr ""
+
+#: Census/census.xml.h:914
+#, fuzzy
+msgid "Disabled"
+msgstr "Instabil"
+
+#: Census/census.xml.h:915
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr ""
+
+#: Census/census.xml.h:916
+msgid "Children"
+msgstr "Kinder"
+
+#: Census/census.xml.h:917
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "Anzahl der Kinder zwischen 5 und 13 die die Schule besuchen"
+
+#: Census/census.xml.h:918
+msgid "WindowRooms"
+msgstr "Räume mit Fenstern"
+
+#: Census/census.xml.h:919
+msgid "No. of Rooms with one or more Windows"
+msgstr "Anzahl der Räume mit einem oder mehr Fenster"
+
+#: Census/census.xml.h:920
+msgid "Police Burgh"
+msgstr ""
+
+#: Census/census.xml.h:921
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr ""
+
+#: Census/census.xml.h:922
+msgid "School Board District"
+msgstr ""
+
+#: Census/census.xml.h:923
+msgid "School board District"
+msgstr ""
+
+#: Census/census.xml.h:924
+msgid "Parliamentary Division"
+msgstr "Paramilitärische Einheit"
+
+#: Census/census.xml.h:925
+msgid "Municipal Burgh"
+msgstr ""
+
+#: Census/census.xml.h:926
+msgid "Burgh Ward"
+msgstr ""
+
+#: Census/census.xml.h:927
+msgid "Island"
+msgstr "Insel"
+
+#: Census/census.xml.h:928
+msgid "Gaellic or G. &amp; E."
+msgstr ""
+
+#: Census/census.xml.h:929
+#, fuzzy
+msgid "Parish Ward"
+msgstr "Gemeinde"
+
+#: Census/census.xml.h:930
+#, fuzzy
+msgid "Condition as to Marriage"
+msgstr "Längste beendete Ehe"
+
+#: Census/census.xml.h:931
+#, fuzzy
+msgid "Profession or Occupation"
+msgstr "Fortschritt Informationen"
+
+#: Census/census.xml.h:932
+msgid "Employer, Worker or on Own Account"
+msgstr ""
+
+#~ msgid "Census details for: "
+#~ msgstr "Zensusdetails für."
+
+#~ msgid "No active person set."
+#~ msgstr "Keine aktive Person gesetzt."
+
+#~ msgid "Source Reference:"
+#~ msgstr "Quellenreferenz:"
