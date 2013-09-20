@@ -1,18 +1,20 @@
+# German translation for Gramps
+# $Id: de.po 22997 2013-09-01 13:19:31Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-29 20:21+0100\n"
-"PO-Revision-Date: 2012-12-29 20:24+0100\n"
+"POT-Creation-Date: 2013-09-20 23:17+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -38,44 +40,44 @@ msgstr ""
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Großschreibung_von_Vornamen_korrigieren"
 
-#: ChangeGivenNames/ChangeGivenNames.py:91
-#: ChangeGivenNames/ChangeGivenNames.py:218
+#: ChangeGivenNames/ChangeGivenNames.py:92
+#: ChangeGivenNames/ChangeGivenNames.py:251
 msgid "Capitalization changes"
 msgstr "Änderungen der Großschreibung"
 
-#: ChangeGivenNames/ChangeGivenNames.py:105
+#: ChangeGivenNames/ChangeGivenNames.py:106
 msgid "Checking Given Names"
 msgstr "Überprüfe Vornamen"
 
-#: ChangeGivenNames/ChangeGivenNames.py:106
+#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Suche Vornamen"
 
-#: ChangeGivenNames/ChangeGivenNames.py:122
+#: ChangeGivenNames/ChangeGivenNames.py:123
 msgid "No modifications made"
 msgstr "Keine Veränderungen gemacht"
 
-#: ChangeGivenNames/ChangeGivenNames.py:123
+#: ChangeGivenNames/ChangeGivenNames.py:124
 msgid "No capitalization changes were detected."
 msgstr "Es wurden keine Änderungen der Großschreibung entdeckt."
 
-#: ChangeGivenNames/ChangeGivenNames.py:160
+#: ChangeGivenNames/ChangeGivenNames.py:193
 msgid "Select"
 msgstr "Auswählen"
 
-#: ChangeGivenNames/ChangeGivenNames.py:163
+#: ChangeGivenNames/ChangeGivenNames.py:196
 msgid "Original Name"
 msgstr "Ursprünglicher Name"
 
-#: ChangeGivenNames/ChangeGivenNames.py:167
+#: ChangeGivenNames/ChangeGivenNames.py:200
 msgid "Capitalization Change"
 msgstr "Änderungen der Großschreibung"
 
-#: ChangeGivenNames/ChangeGivenNames.py:171
+#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Betroffene Namen"
 
-#: ChangeGivenNames/ChangeGivenNames.py:178
+#: ChangeGivenNames/ChangeGivenNames.py:211
 msgid "Building display"
 msgstr "Anzeige wird erstellt"
 
@@ -96,4 +98,3 @@ msgstr "Auswahl bearbeiten"
 #: ChangeGivenNames/changenames.glade.h:5
 msgid "_Accept changes and close"
 msgstr "Änderungen _akzeptieren und schließen"
-
