@@ -1,106 +1,108 @@
+# German translation for Gramps
+# $Id: de.po 22997 2013-09-01 13:19:31Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-04 00:42+0100\n"
-"PO-Revision-Date: 2011-11-22 19:37+0100\n"
+"POT-Creation-Date: 2013-09-20 23:06+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: AttachSourceTool//AttachSourceTool.gpr.py:25
-#: AttachSourceTool//AttachSourceTool.py:134
-#: AttachSourceTool//AttachSourceTool.py:151
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
 msgstr "Quelle hinzufügen"
 
-#: AttachSourceTool//AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attaches a shared source to multiple objects."
 msgstr "Fügt verteilte Quellen mehreren Objekten hinzu."
 
-#: AttachSourceTool//AttachSourceTool.py:64
-#: AttachSourceTool//AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
 msgid "Options"
 msgstr "Optionen"
 
-#: AttachSourceTool//AttachSourceTool.py:66
+#: AttachSourceTool/AttachSourceTool.py:69
 msgid "Person Filter"
 msgstr "Personenfilter"
 
-#: AttachSourceTool//AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Filter zum eingrenzen der Personen wählen"
 
-#: AttachSourceTool//AttachSourceTool.py:71
+#: AttachSourceTool/AttachSourceTool.py:74
 msgid "Filter Person"
 msgstr "Filter Person"
 
-#: AttachSourceTool//AttachSourceTool.py:72
+#: AttachSourceTool/AttachSourceTool.py:75
 msgid "The center person for the filter"
 msgstr "Die Hauptperson für den Filter"
 
-#: AttachSourceTool//AttachSourceTool.py:78
+#: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Quellenart"
 
-#: AttachSourceTool//AttachSourceTool.py:79
+#: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Neue Quelle"
 
-#: AttachSourceTool//AttachSourceTool.py:80
+#: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Vorhandene Quelle"
 
-#: AttachSourceTool//AttachSourceTool.py:81
+#: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
 msgstr "Art der anzuhängenden Quelle wählen"
 
-#: AttachSourceTool//AttachSourceTool.py:86
+#: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Neuer Quellentitel"
 
-#: AttachSourceTool//AttachSourceTool.py:87
+#: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
 msgstr "Text der anzuhängenden Quelle"
 
-#: AttachSourceTool//AttachSourceTool.py:91
+#: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
 msgstr "Vorhandene Quellen ID"
 
-#: AttachSourceTool//AttachSourceTool.py:92
+#: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID der anzuhängenden Quelle"
 
-#: AttachSourceTool//AttachSourceTool.py:152
+#: AttachSourceTool/AttachSourceTool.py:156
 msgid "Results"
 msgstr "Ergebnisse"
 
-#: AttachSourceTool//AttachSourceTool.py:153
+#: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Verarbeitung...\n"
 
-#: AttachSourceTool//AttachSourceTool.py:170
+#: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "Quellen anfügen...\n"
 
-#: AttachSourceTool//AttachSourceTool.py:171
+#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Quellen anfügen..."
 
-#: AttachSourceTool//AttachSourceTool.py:190
+#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Fertig!\n"
