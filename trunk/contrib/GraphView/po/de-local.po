@@ -1,18 +1,20 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-30 14:29+0100\n"
-"PO-Revision-Date: 2012-12-30 14:34+0100\n"
+"POT-Creation-Date: 2013-09-22 00:48+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -22,51 +24,49 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:100
+#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:107
 msgid "Graph View"
 msgstr "Graphenansicht"
 
 #: GraphView/graphview.gpr.py:4
-msgid "Ancestry"
-msgstr "Vorfahren"
+msgid "Charts"
+msgstr "Schaubilder"
 
 #: GraphView/graphview.gpr.py:5
 msgid "Dynamic graph of relations"
 msgstr "Dynamischer Beziehungengraph"
 
-#: GraphView/graphview.py:294
+#: GraphView/graphview.py:273
 msgid "Show images"
 msgstr "Bilder anzeigen"
 
-#: GraphView/graphview.py:297
-msgid "Show full dates"
-msgstr "Volles Datum anzeigen"
-
-#: GraphView/graphview.py:300
-msgid "Show places"
-msgstr "Orte zeigen"
-
-#: GraphView/graphview.py:303
+#: GraphView/graphview.py:276
 msgid "Highlight the home person"
 msgstr "Hauptperson hervorheben"
 
-#: GraphView/graphview.py:306
+#: GraphView/graphview.py:279
 msgid "Layout"
 msgstr "Layout"
 
-#: GraphView/graphview.py:318
+#: GraphView/graphview.py:291
 msgid "Home person color"
 msgstr "Farbe der Hauptperson"
 
-#: GraphView/graphview.py:321
+#: GraphView/graphview.py:294
 msgid "Colors"
 msgstr "Farben"
 
-#: GraphView/graphview.py:1236
-msgid "b."
-msgstr "* "
+#~ msgid "Ancestry"
+#~ msgstr "Vorfahren"
 
-#: GraphView/graphview.py:1242
-msgid "d."
-msgstr "† "
+#~ msgid "Show full dates"
+#~ msgstr "Volles Datum anzeigen"
 
+#~ msgid "Show places"
+#~ msgstr "Orte zeigen"
+
+#~ msgid "b."
+#~ msgstr "* "
+
+#~ msgid "d."
+#~ msgstr "† "
