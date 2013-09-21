@@ -1,48 +1,53 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-20 21:26+0100\n"
-"PO-Revision-Date: 2011-12-20 21:38+0100\n"
+"POT-Creation-Date: 2013-09-21 14:49+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: DEWebConnectPack//DEWebPack.gpr.py:10
+#: DEWebConnectPack/DEWebPack.gpr.py:10
 msgid "DE Web Connect Pack"
 msgstr "DE Web Connect Pack"
 
-#: DEWebConnectPack//DEWebPack.gpr.py:11
+#: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Sammlung von Webseiten für DE (benötigt libwebconnect)"
 
-#: DEWebConnectPack//DEWebPack.py:33
+#: DEWebConnectPack/DEWebPack.py:39
 msgid "Bielefeld Academic Search"
 msgstr "Suchmaschine BASE (Bielefeld Academic Search Engine)"
 
-#: DEWebConnectPack//DEWebPack.py:35
+#: DEWebConnectPack/DEWebPack.py:41
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: DEWebConnectPack//DEWebPack.py:38
+#: DEWebConnectPack/DEWebPack.py:44
 msgid "Google Archives"
 msgstr "Google Archiv"
 
-#: DEWebConnectPack//DEWebPack.py:39
+#: DEWebConnectPack/DEWebPack.py:45
 msgid "DE Google"
 msgstr "DE Google"
 
+#: DEWebConnectPack/DEWebPack.py:46
+msgid "Open Library"
+msgstr "Die freie Bibliothek"
