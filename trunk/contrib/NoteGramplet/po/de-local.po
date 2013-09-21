@@ -1,60 +1,61 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 12:17+0100\n"
-"PO-Revision-Date: 2011-12-30 12:20+0100\n"
+"POT-Creation-Date: 2013-09-22 01:21+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: NoteGramplet//NoteGramplet.gpr.py:3
+#: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
 msgstr "Notiz Gramplet"
 
-#: NoteGramplet//NoteGramplet.gpr.py:4
+#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Gramplet for editing active person's notes"
 msgstr "Gramplet zum bearbeiten der Notizen der aktiven Person"
 
-#: NoteGramplet//NoteGramplet.gpr.py:10
+#: NoteGramplet/NoteGramplet.gpr.py:10
 msgid "Note"
 msgstr "Notiz"
 
-#: NoteGramplet//NoteGramplet.py:61
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktive Person"
 
-#: NoteGramplet//NoteGramplet.py:85
+#: NoteGramplet/NoteGramplet.py:89
 msgid "Family"
 msgstr "Familie"
 
-#: NoteGramplet//NoteGramplet.py:107
+#: NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Speichern"
 
-#: NoteGramplet//NoteGramplet.py:110
+#: NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Abbrechen"
 
-#: NoteGramplet//NoteGramplet.py:169 NoteGramplet//NoteGramplet.py:250
+#: NoteGramplet/NoteGramplet.py:173 NoteGramplet/NoteGramplet.py:254
 msgid "Person Note"
 msgstr "Person Notiz"
 
-#: NoteGramplet//NoteGramplet.py:248
+#: NoteGramplet/NoteGramplet.py:252
 msgid "Save Note"
 msgstr "Notiz speichern"
-
