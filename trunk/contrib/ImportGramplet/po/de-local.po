@@ -1,52 +1,58 @@
-# German translations for gramps package.
-# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 33\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-22 20:13+0100\n"
-"PO-Revision-Date: 2011-12-22 21:07+0100\n"
+"POT-Creation-Date: 2013-09-22 00:55+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ImportGramplet//ImportGramplet.gpr.py:9
+#: ImportGramplet/ImportGramplet.gpr.py:9
 msgid "Import Gramplet"
 msgstr "Import Gramplet"
 
-#: ImportGramplet//ImportGramplet.gpr.py:10
+#: ImportGramplet/ImportGramplet.gpr.py:10
 msgid "Gramplet for importing text"
 msgstr "Gramplet zum Textimport"
 
-#: ImportGramplet//ImportGramplet.gpr.py:17
+#: ImportGramplet/ImportGramplet.gpr.py:17
 msgid "Import"
-msgstr "Import"
+msgstr "Importieren"
 
-#: ImportGramplet//ImportGramplet.py:65
+#: ImportGramplet/ImportGramplet.py:75
 msgid "CSV import"
 msgstr "CSV Import"
 
-#: ImportGramplet//ImportGramplet.py:88
+#: ImportGramplet/ImportGramplet.py:98
 msgid "VCard import"
 msgstr "VCard Import"
 
-#: ImportGramplet//ImportGramplet.py:110
+#: ImportGramplet/ImportGramplet.py:120
 msgid "Gramps XML import"
-msgstr "Gramps XML Import"
+msgstr "Gramps-XML importieren"
 
-#: ImportGramplet//ImportGramplet.py:137
+#: ImportGramplet/ImportGramplet.py:147
 msgid "Could not change media path"
 msgstr "Konnte Medienpfad nicht ändern"
 
-#: ImportGramplet//ImportGramplet.py:138
+#: ImportGramplet/ImportGramplet.py:148
 #, python-format
 msgid ""
 "The opened file has media path %s, which conflicts with the media path of "
@@ -55,11 +61,11 @@ msgid ""
 "Preferences."
 msgstr ""
 "Die geöffnete Datei hat den Medienpfad %s welcher mit dem Medienpfad des "
-"geöffneten Stammbaum kollidiert. Der Medienpfad des Stammbaum wurde behalten. "
-"Kopiere die Dateien in das richtige Verzeichnis oder ändere den Medienpfad in "
-"den Präferenzen."
+"geöffneten Stammbaum kollidiert. Der Medienpfad des Stammbaum wurde "
+"behalten. Kopiere die Dateien in das richtige Verzeichnis oder ändere den "
+"Medienpfad in den Präferenzen."
 
-#: ImportGramplet//ImportGramplet.py:168
+#: ImportGramplet/ImportGramplet.py:178
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
@@ -67,35 +73,34 @@ msgstr ""
 "Zu importierenden Text eingeben und dann\n"
 "unten auf die Importschaltfläche klicken"
 
-#: ImportGramplet//ImportGramplet.py:194
+#: ImportGramplet/ImportGramplet.py:204
 msgid "_Import"
 msgstr "_Import"
 
-#: ImportGramplet//ImportGramplet.py:210
+#: ImportGramplet/ImportGramplet.py:220
 msgid "Import done"
 msgstr "Import abgeschlossen"
 
-#: ImportGramplet//ImportGramplet.py:220
+#: ImportGramplet/ImportGramplet.py:230
 msgid "Importing Text..."
 msgstr "Importiere Text..."
 
-#: ImportGramplet//ImportGramplet.py:224
+#: ImportGramplet/ImportGramplet.py:234
 msgid "Person"
 msgstr "Person"
 
-#: ImportGramplet//ImportGramplet.py:224
+#: ImportGramplet/ImportGramplet.py:234
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Familienname"
 
-#: ImportGramplet//ImportGramplet.py:224
+#: ImportGramplet/ImportGramplet.py:234
 msgid "Given"
 msgstr "Vorname"
 
-#: ImportGramplet//ImportGramplet.py:249
+#: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Kann Importart nicht bestimmen"
 
-#: ImportGramplet//ImportGramplet.py:250
+#: ImportGramplet/ImportGramplet.py:260
 msgid "Import failed"
 msgstr "Import fehlgeschlagen"
-
