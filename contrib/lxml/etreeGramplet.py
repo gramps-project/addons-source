@@ -382,12 +382,13 @@ class etreeGramplet(Gramplet):
             if one.find(NAMESPACE + 'event'):
                 print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
-            # easier and faster match (does not work! Why?)
+            # easier and faster match (do not forget upercase on handle into .gramps...)
             if one.get('home'):
-                print('Home:', self.dbstate.db.get_from_name_and_handle("Person", "%(home)s" % one.attrib))
                 if self.dbstate.db.db_is_open:
-                    print('Has home handle? ', self.dbstate.db.has_person_handle("%(home)s" % one.attrib))
-                        				
+                    if self.dbstate.db.has_person_handle("%s" % one.attrib.get('home')[1:]):
+                        person = self.dbstate.db.get_person_from_handle(one.attrib.get('home')[1:])
+                        print('Home:', person.get_primary_name().get_name())
+                		
             for two in ITERATION:
                 
                 timestamp.append(two.get('change'))
