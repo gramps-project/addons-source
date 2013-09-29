@@ -1,71 +1,73 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-30 12:22+0100\n"
-"PO-Revision-Date: 2011-12-19 19:04+0100\n"
+"POT-Creation-Date: 2013-09-29 16:53+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.gpr.py:3
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
 msgid "Number of descendants"
 msgstr "Anzahl der Nachkommen"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.gpr.py:4
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Shows the number of descendants of the current person"
 msgstr "Zeigt die Anzahl der Nachkommen der aktuellen Person an"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:57
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Anzahl der Nachkommen von %s"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:82
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:89
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Generation"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:83
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:90
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:106
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:110
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:88
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:95
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:111
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:115
 msgid "Total"
 msgstr "Gesamt"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:84
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
 msgstr "Erlebt"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:85
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Überlebt"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:86
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:91
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Jetzt lebend"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:117
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Erlebt = Anzahl der Nachkommen, deren Geburt %s erlebt hat"
 
-#: NumberOfDescendantsQuickview//NumberOfDescendantsQuickview.py:119
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
