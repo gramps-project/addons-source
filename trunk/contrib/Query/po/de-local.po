@@ -1,0 +1,62 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-29 17:14+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: Query/Query.gpr.py:9
+msgid "Query Gramplet"
+msgstr "Abfrage Gramplet"
+
+#: Query/Query.gpr.py:10
+msgid "Gramplet for running SQL-like queries"
+msgstr "Gramplet zum Ausführen SQL-ähnlicher Abfragen"
+
+#: Query/Query.gpr.py:17
+msgid "Query"
+msgstr "Abfrage"
+
+#: Query/Query.gpr.py:29
+msgid "Query Quickview"
+msgstr "Abfrage Schnellansicht"
+
+#: Query/Query.gpr.py:30
+msgid "Quick view for SQL-like running queries"
+msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
+
+#: Query/QueryGramplet.py:40
+msgid "Enter SQL query"
+msgstr "SQL Abfrage eingeben"
+
+#: Query/QueryQuickview.py:197
+#, python-format
+msgid "[%d rows processed]"
+msgstr "[%d Zeilen verarbeitet]"
+
+#: Query/QueryQuickview.py:227
+msgid "Date"
+msgstr "Datum"
+
+#: Query/QueryQuickview.py:228
+msgid "Today"
+msgstr "Heute"
