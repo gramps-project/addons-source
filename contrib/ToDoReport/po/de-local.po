@@ -1,103 +1,117 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-21 14:43+0100\n"
-"PO-Revision-Date: 2010-03-17 19:39+0100\n"
+"POT-Creation-Date: 2013-09-30 23:21+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: Deutsch <de@li.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ToDoReport/TodoReport.gpr.py:24
-#, fuzzy
 msgid "Todo Report"
-msgstr "Buchbericht"
+msgstr "Zu erledigen Bericht"
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
+"Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen "
+"mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, "
+"usw."
 
-#: ToDoReport/TodoReport.py:91
-#, fuzzy, python-format
-msgid "Report on Notes Marked %s"
-msgstr "Der Bericht konnte nicht erzeugt werden %s"
+#: ToDoReport/TodoReport.py:84
+msgid "ToDo Report"
+msgstr "Zu erledigen Bericht"
 
-#: ToDoReport/TodoReport.py:192
+#: ToDoReport/TodoReport.py:85
+msgid "You must first create a tag before running this report."
+msgstr ""
+"Du musst erst einen Markierung erstellen bevor du diesen Bericht erstellen "
+"kannst."
+
+#: ToDoReport/TodoReport.py:93
+#, python-format
+msgid "Report on Notes Tagged %s"
+msgstr "Bericht von Notizen markiert %s"
+
+#: ToDoReport/TodoReport.py:204
 msgid "Id"
 msgstr "ID"
 
-#: ToDoReport/TodoReport.py:198
+#: ToDoReport/TodoReport.py:210
 msgid "Text"
 msgstr "Text"
 
-#: ToDoReport/TodoReport.py:324
-#, fuzzy, python-format
+#: ToDoReport/TodoReport.py:337
+#, python-format
 msgid "%(relationship_type)s on %(relationship_date)s"
-msgstr " (%(birth_date)s - %(death_date)s)"
+msgstr "%(relationship_type)s am %(relationship_date)s"
 
-#: ToDoReport/TodoReport.py:355
-#, fuzzy
+#: ToDoReport/TodoReport.py:368
 msgid "date: "
-msgstr "Datum"
+msgstr "Datum: "
 
-#: ToDoReport/TodoReport.py:366
-#, fuzzy
+#: ToDoReport/TodoReport.py:379
 msgid "place: "
-msgstr "Ort"
+msgstr "Ort: "
 
-#: ToDoReport/TodoReport.py:469
+#: ToDoReport/TodoReport.py:485
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: ToDoReport/TodoReport.py:471
-msgid "Marker"
-msgstr "Marker"
+#: ToDoReport/TodoReport.py:493 ToDoReport/TodoReport.py:497
+msgid "Tag"
+msgstr "Markierung"
 
-#: ToDoReport/TodoReport.py:482
-#, fuzzy
-msgid "The marker type to use for the report"
-msgstr "Der Marker für den Bericht"
-
-#: ToDoReport/TodoReport.py:485
-#, fuzzy
-msgid "Group by reference type"
-msgstr "Quellen-Referenz Notiz"
-
-#: ToDoReport/TodoReport.py:486
-msgid "Group notes by Family, Person, Place, etc."
-msgstr ""
+#: ToDoReport/TodoReport.py:500
+msgid "The tag to use for the report"
+msgstr "Die Markierung zur Verwendung für den Bericht"
 
 #: ToDoReport/TodoReport.py:503
+msgid "Group by reference type"
+msgstr "Gruppiere nach Referenzart"
+
+#: ToDoReport/TodoReport.py:504
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Gruppiere Notizen nach Familie, Person, Ort, usw."
+
+#: ToDoReport/TodoReport.py:521
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: ToDoReport/TodoReport.py:513
+#: ToDoReport/TodoReport.py:531
 msgid "The style used for the section headers."
-msgstr "Der Stil, der für die Abschnittüberschriften verwendet wird."
+msgstr "Der Stil, der für die Abschnittsüberschriften verwendet wird."
 
-#: ToDoReport/TodoReport.py:523
+#: ToDoReport/TodoReport.py:541
 msgid "The basic style used for the text display."
 msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
 
-#: ToDoReport/TodoReport.py:534
+#: ToDoReport/TodoReport.py:552
 msgid "The basic style used for table headings."
 msgstr "Der Basisstil, der für Tabellenüberschriften verwendet wird."
 
-#: ToDoReport/TodoReport.py:541
+#: ToDoReport/TodoReport.py:559
 msgid "The basic style used for the note display."
 msgstr "Der Basisstil, der für die Notizenanzeige verwendet wird."
+
+#~ msgid "Marker"
+#~ msgstr "Marker"
