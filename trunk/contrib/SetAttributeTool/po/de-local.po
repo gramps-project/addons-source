@@ -1,0 +1,134 @@
+# German translation for Gramps
+# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-30 23:12+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:121
+#: SetAttributeTool/SetAttributeTool.py:129
+msgid "Set Attribute"
+msgstr "Attribut setzen"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Setzt ein Attribut auf einen gegebenen Wert."
+
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:124
+msgid "Options"
+msgstr "Optionen"
+
+#: SetAttributeTool/SetAttributeTool.py:70
+msgid "Person Filter"
+msgstr "Personenfilter"
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Filter zum eingrenzen der Personen wählen"
+
+#: SetAttributeTool/SetAttributeTool.py:75
+msgid "Filter Person"
+msgstr "Filter Person"
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "The center person for the filter"
+msgstr "Die Hauptperson für den Filter"
+
+#: SetAttributeTool/SetAttributeTool.py:80
+msgid "Attribute"
+msgstr "Attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:81
+msgid "Value"
+msgstr "Wert"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr "Attributart zum Hinzufügen oder Bearbeiten"
+
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr "Attributwert zum Hinzufügen oder Bearbeiten"
+
+#: SetAttributeTool/SetAttributeTool.py:91
+msgid "Remove"
+msgstr "Entfernen"
+
+#: SetAttributeTool/SetAttributeTool.py:92
+msgid "Remove attribute type and value set"
+msgstr "Attributart und Wertepaar entfernen"
+
+#: SetAttributeTool/SetAttributeTool.py:130
+#: SetAttributeTool/SetAttributeTool.py:189
+msgid "Results"
+msgstr "Ergebnisse"
+
+#: SetAttributeTool/SetAttributeTool.py:131
+#: SetAttributeTool/SetAttributeTool.py:190
+msgid "Processing...\n"
+msgstr "Verarbeitung...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:146
+msgid "Setting attributes..."
+msgstr "Setze Attribute..."
+
+#: SetAttributeTool/SetAttributeTool.py:153
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Setze '%s' Attribute auf '%s'...\n"
+"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:184
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Setze %d '%s' Attribute auf '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:186
+#: SetAttributeTool/SetAttributeTool.py:235
+msgid "Done!\n"
+msgstr "Fertig!\n"
+
+#: SetAttributeTool/SetAttributeTool.py:188
+msgid "Remove Attribute"
+msgstr "Attribut entfernen"
+
+#: SetAttributeTool/SetAttributeTool.py:205
+msgid "Removing attributes..."
+msgstr "Entferne Attribute..."
+
+#: SetAttributeTool/SetAttributeTool.py:230
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Entferne %d '%s' Attribute bis  '%s'\n"
