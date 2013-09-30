@@ -1,25 +1,27 @@
+# German translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# translation of de.po to
-# German GRAMPS Translation
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-03 20:11-0500\n"
-"PO-Revision-Date: 2009-09-27 12:50+0200\n"
+"POT-Creation-Date: 2013-09-30 23:19+0200\n"
+"PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: Deutsch <de@li.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:9
@@ -27,93 +29,84 @@ msgid "Timeline"
 msgstr "Zeitleiste"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
-#, fuzzy
 msgid "Display a person's events on a timeline"
-msgstr "Zeigt Ereignisse einer Person; persönliche und Familäre."
+msgstr "Zeigt Ereignisse einer Person auf einer Zeitleiste"
 
-#: TimelineQuickview/TimelineQuickview.py:42
+#: TimelineQuickview/TimelineQuickview.py:46
 msgid "Parents"
 msgstr "Eltern"
 
-#: TimelineQuickview/TimelineQuickview.py:44
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
-msgstr "Eltern"
+msgstr "Schwiegereltern"
 
-#: TimelineQuickview/TimelineQuickview.py:47
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
-msgstr "Gramplets"
+msgstr "Großeltern"
 
-#: TimelineQuickview/TimelineQuickview.py:49
+#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
-msgstr ""
+msgstr "Schwiegergroßeltern"
 
-#: TimelineQuickview/TimelineQuickview.py:52
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
-msgstr "Eltern neu ordnen"
+msgstr "Urgroßeltern"
 
-#: TimelineQuickview/TimelineQuickview.py:54
+#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
-msgstr ""
+msgstr "Schwiegerurgroßeltern"
 
-#: TimelineQuickview/TimelineQuickview.py:57
+#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
-msgstr ""
+msgstr "Ur,"
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
-msgstr "größer als"
+msgstr "Ur,"
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
-msgstr "Eltern neu ordnen"
+msgstr "Urgroßeltern"
 
-#: TimelineQuickview/TimelineQuickview.py:59
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
-msgstr ""
+msgstr "SchwiegerUr,"
 
-#: TimelineQuickview/TimelineQuickview.py:89
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
-msgstr "Familienname des Vaters"
+msgstr "Partner(in) de(r/s) Partner(in)"
 
-#: TimelineQuickview/TimelineQuickview.py:139
-#, fuzzy, python-format
+#: TimelineQuickview/TimelineQuickview.py:156
+#, python-format
 msgid "Timeline for %s"
-msgstr "Zeitleistengraph für %s"
+msgstr "Zeitleiste für %s"
 
-#: TimelineQuickview/TimelineQuickview.py:142
+#: TimelineQuickview/TimelineQuickview.py:159
 msgid "Date"
 msgstr "Datum"
 
-#: TimelineQuickview/TimelineQuickview.py:143
+#: TimelineQuickview/TimelineQuickview.py:160
 msgid "Event"
 msgstr "Ereignis"
 
-#: TimelineQuickview/TimelineQuickview.py:144
+#: TimelineQuickview/TimelineQuickview.py:161
 msgid "Age"
 msgstr "Alter"
 
-#: TimelineQuickview/TimelineQuickview.py:145
+#: TimelineQuickview/TimelineQuickview.py:162
 msgid "Place"
 msgstr "Ort"
 
-#: TimelineQuickview/TimelineQuickview.py:146
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
-msgstr "Personenmenü"
+msgstr "Beteiligte Personen"
 
-#: TimelineQuickview/TimelineQuickview.py:170
-#, fuzzy
+#: TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
-msgstr "Gesamt"
+msgstr "Heute"
 
-#: TimelineQuickview/TimelineQuickview.py:176
+#: TimelineQuickview/TimelineQuickview.py:192
 msgid "Unknown"
 msgstr "Unbekannt"
