@@ -627,6 +627,172 @@
             <size>5</size>
         </column>
     </census>
+    <census id='IE1901' title='1901 Census of Ireland' date='31 March 1901'>
+        <heading>
+            <_attribute>County</_attribute>
+        </heading>
+        <heading>
+            <_attribute>District Electoral Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Townland</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. on Form B</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>18</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Religion</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Education</_attribute>
+            <_longname>"Read and Write", "Read" or "Cannot Read"</_longname>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Sex</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Irish Language</_attribute>
+            <_longname>"Irish" or "Irish &amp; English", in other cases no entry should be made</_longname>
+            <size>10</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <_longname>"Deaf and Dumb", "Dumb only", "Blind", "Imbecile or Idiot", or "Lunatic"</_longname>
+            <size>10</size>
+        </column>
+    </census>
+    <census id='IE1911' title='1911 Census of Ireland' date='2 April 1911'>
+        <heading>
+            <_attribute>County</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Poor Law Union</_attribute>
+        </heading>
+        <heading>
+            <_attribute>District Electoral Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Barony</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Townland</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town or Village</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Head of Family</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. on Form B</_attribute>
+        </heading>
+        <column>
+            <_attribute>Name</_attribute>
+            <size>16</size>
+        </column>
+        <column>
+            <_attribute>Relation</_attribute>
+            <_longname>Relation to Head of Family</_longname>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Religion</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Education</_attribute>
+            <_longname>"Read and Write", "Read" or "Cannot Read"</_longname>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Age</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Occupation</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Condition</_attribute>
+            <size>7</size>
+        </column>
+        <column>
+            <_attribute>Years Married</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Total Children</_attribute>
+            <_longname>Children born alive to present Marriage</_longname>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Children Living</_attribute>
+            <size>4</size>
+        </column>
+        <column>
+            <_attribute>Where Born</_attribute>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Irish Language</_attribute>
+            <_longname>"Irish" or "Irish &amp; English", in other cases no entry should be made</_longname>
+            <size>9</size>
+        </column>
+        <column>
+            <_attribute>Disability</_attribute>
+            <_longname>"Deaf and Dumb", "Dumb only", "Blind", "Imbecile or Idiot", or "Lunatic"</_longname>
+            <size>9</size>
+        </column>
+    </census>
     <census id='FR1790' title='1790 French Census' date='1790'>
         <column>
             <_attribute>Name</_attribute>
