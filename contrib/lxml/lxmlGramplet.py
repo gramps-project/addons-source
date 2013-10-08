@@ -28,6 +28,7 @@
 import codecs
 import sys
 import os
+from shutil import copy
 from gi.repository import Gtk
 #import subprocess
 
@@ -109,7 +110,10 @@ def epoch(t):
             conv = datetime.fromtimestamp(date)
             fmt = conv.strftime('%d %B %Y')
         
-        return(fmt)
+        if os.name == 'nt':
+            return(fmt).decode('mbcs').encode("utf-8")
+        else:
+            return(fmt)
     
 #-------------------------------------------------------------------------
 #
@@ -254,7 +258,7 @@ class lxmlGramplet(Gramplet):
             use_gzip = 0
          
         # lazy ...
-        if os.name != 'posix':
+        if os.name != 'posix' and os.name != 'nt':
             
             # GtkTextView
             
@@ -272,7 +276,7 @@ class lxmlGramplet(Gramplet):
             sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
         elif LXML_OK and use_gzip == 0:
             try:
-                os.system('cp %s %s' % (entry, filename))
+                copy(entry, filename)
             except:
                 ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
@@ -300,7 +304,10 @@ class lxmlGramplet(Gramplet):
         rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
         
         try:
-            os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
+            if os.name == 'nt':
+                os.system('xmllint --relaxng %s --noout %s' % (rng, filename))
+            else:
+                os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
         except:
             print(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
                 
@@ -529,7 +536,10 @@ class lxmlGramplet(Gramplet):
         
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
+            if os.name == 'nt':
+                os.system('xmllint --dtdvalid %(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
+            else:
+                os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
         except:
             print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
