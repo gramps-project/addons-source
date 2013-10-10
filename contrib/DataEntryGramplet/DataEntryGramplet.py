@@ -429,7 +429,10 @@ class DataEntryGramplet(Gramplet):
                 surname, firstname = self.de_widgets["APName"].get_text(), ""
             surname = surname.strip()
             firstname = firstname.strip()
-            name = person.get_primary_name()
+            if person:
+                name = person.get_primary_name()
+            else:
+                return
             # Now, edit it:
             with DbTxn(_("Gramplet Data Edit: %s") %  name_displayer.display(person), self.dbstate.db) as self.trans:
                 surname_obj = name.get_primary_surname()
