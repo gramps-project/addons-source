@@ -90,6 +90,7 @@ class RepositoryReportAlt(Report):
         incdatamp    - Whether to include data keys and values of source.
         inclunote    - Whether to include notes of source or repository.
         inclmedia    - Whether to include media of source.
+        inclcitat    - Whether to include citations of source.
         incprivat    - Whether to include private records.
         trans        - Select translation
 
@@ -111,6 +112,7 @@ class RepositoryReportAlt(Report):
         self.inc_datamp = get_value('incdatamp')
         self.inclu_note = get_value('inclunote')
         self.incl_media = get_value('inclmedia')
+        self.incl_citat = get_value('inclcitat')
         self.inc_privat = get_value('incprivat')
         
         language = get_value('trans')
@@ -281,6 +283,10 @@ class RepositoryReportAlt(Report):
                         for media_handle in medialist:
                             photo = src.get_media_list()
                             self.__write_referenced_media(photo, media_handle)
+                            
+            for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
+                if self.incl_citat:
+                    self.__write_referenced_citations(citationref)
 
     def __write_referenced_notes(self, note_handle):
         """
@@ -305,6 +311,38 @@ class RepositoryReportAlt(Report):
             #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
             ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+
+    def __write_referenced_citations(self, handle):
+		"""
+		This procedure writes out citation data related to the source.
+		"""
+		
+		self.doc.start_paragraph('REPO-Section')
+		self.doc.write_text(self._('Citations'))
+		self.doc.end_paragraph()
+		
+		citation = self.database.get_citation_from_handle(handle)
+			
+		date = citation.serialize()[2]
+		
+		if date:
+			self.doc.start_paragraph('REPO-Section2')
+			self.doc.write_text(self._('Date:'))
+			self.doc.write_text(date[4])
+			self.doc.end_paragraph()
+		
+		page = citation.get_page()
+		quay = citation.get_confidence_level()
+				
+		self.doc.start_paragraph('REPO-Section2')
+		self.doc.write_text(self._('Page:'))
+		self.doc.write_text(page)
+		self.doc.end_paragraph()
+		
+		self.doc.start_paragraph('REPO-Section2')
+		self.doc.write_text(self._('Confidence level:'))
+		self.doc.write_text(str(quay))
+		self.doc.end_paragraph()
 
 #------------------------------------------------------------------------
 #
@@ -361,6 +399,10 @@ class RepositoryOptionsAlt(MenuReportOptions):
         inclmedia = BooleanOption(_('Include media'), False)
         inclmedia.set_help(_('Whether to include media on sources.'))
         addopt('inclmedia', inclmedia)
+        
+        inclcitat = BooleanOption(_('Include citations'), False)
+        inclcitat.set_help(_('Whether to include citations on sources.'))
+        addopt('inclcitat', inclcitat)
 
         incprivat = BooleanOption(_('Include private records'), False)
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
