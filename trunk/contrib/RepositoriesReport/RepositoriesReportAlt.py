@@ -96,6 +96,8 @@ class RepositoryReportAlt(Report):
         """
 
         Report.__init__(self, database, options, user)
+        
+        self.user = user
 
         menu = options.menu
         get_option_by_name = menu.get_option_by_name
@@ -302,7 +304,7 @@ class RepositoryReportAlt(Report):
             
             #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
-            ReportUtils.insert_image(self.database, self.doc, image, None)
+            ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
 
 #------------------------------------------------------------------------
 #
