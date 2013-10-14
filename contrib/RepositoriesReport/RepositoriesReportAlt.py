@@ -229,19 +229,23 @@ class RepositoryReportAlt(Report):
 
                     # keys and values into a dict {}
 
-                    keyval = src.get_data_map()
+                    try:
+                        keyval = src.get_data_map()
 
-                    # list of tuples [('',''),('','')]
+                        # list of tuples [('',''),('','')]
 
-                    listup = list(keyval.items())
+                        listup = list(keyval.items())
 
-                    # format strings
+                        # format strings
 
-                    dictio = ['%s=%s' % (k, v) for k, v in listup]
+                        dictio = ['%s=%s' % (k, v) for k, v in listup]
 
-                    # one string and '; ' as separator
+                        # one string and '; ' as separator
 
-                    data = '; '.join(dictio)
+                        data = '; '.join(dictio)
+                        
+                    except:
+                        data = ''
 
                     # if need, generates child section
 
