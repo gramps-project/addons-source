@@ -305,7 +305,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         hpaned.pack2(scrolled_window2, resize=False, shrink=False)
 
-        self.top.pack_start(hpaned, True, False, 5)
+        self.top.pack_start(hpaned, True, True, 5)
 
         self.enable_buttons()
 
