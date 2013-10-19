@@ -6,7 +6,7 @@
 {"t":'Gramplet',"i":'Census Gramplet',"n":u'Census Gramplet',"v":'1.0.27',"g":'4.1',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Urklippsgramplet',"v":'1.0.23',"g":'4.1',"d":u'Gramplet f\xf6r gruppering av poster',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Klock-Gramplet',"v":'0.0.19',"g":'4.1',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet f\xf6r datainmatning',"v":'1.0.28',"g":'4.1',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet f\xf6r datainmatning',"v":'1.0.29',"g":'4.1',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":u'Gramplet f\xf6r l\xe5nga sl\xe4ktskap',"v":'1.0.22',"g":'4.1',"d":u'Gramplet visande ett l\xe5ng sl\xe4ktskap mellan aktiv och hem person',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Descendant Count Gramplet',"n":u'Gramplet f\xf6r r\xe4kning av \xe4ttlingar',"v":'1.0.19',"g":'4.1',"d":u'Gramplet for showing people and descendant counts',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":u'Redigera bilds Exif-metadata',"v":'1.5.4',"g":'4.1',"d":u'Gramplet f\xf6r att se, redigera och spara bilds Exif-metadata',"z":'EditExifMetadata.addon.tgz'}

@@ -6,7 +6,7 @@
 {"t":'Gramplet',"i":'Census Gramplet',"n":u'Volkstelling-gramplet',"v":'1.0.27',"g":'4.1',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Klembordgramplet',"v":'1.0.23',"g":'4.1',"d":u'Gramplet om gegevens te groeperen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Klokgramplet',"v":'0.0.19',"g":'4.1',"d":u"Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","z":'ClockGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gegevensingave-gramplet',"v":'1.0.28',"g":'4.1',"d":u'Gramplet om gegevens snel in te voeren',"z":'DataEntryGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gegevensingave-gramplet',"v":'1.0.29',"g":'4.1',"d":u'Gramplet om gegevens snel in te voeren',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":u"'Verre relaties'-gramplet","v":'1.0.22',"g":'4.1',"d":u'Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Descendant Count Gramplet',"n":u"'Afstammelingen telling'-gramplet","v":'1.0.19',"g":'4.1',"d":u'Gramplet om personen en afstammelingentelling te tonen',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":u'Exif-metagegevens aanpassen',"v":'1.5.4',"g":'4.1',"d":u'Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan',"z":'EditExifMetadata.addon.tgz'}

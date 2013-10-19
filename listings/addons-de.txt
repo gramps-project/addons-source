@@ -6,7 +6,7 @@
 {"t":'Gramplet',"i":'Census Gramplet',"n":u'Zensus Gramplet',"v":'1.0.27',"g":'4.1',"d":u'Gramplet Schnittstelle f\xfcr Zensusdaten',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Zwischenablage Gramplet',"v":'1.0.23',"g":'4.1',"d":u'Gramplet zum gruppieren von Elementen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Uhren Gramplet',"v":'0.0.19',"g":'4.1',"d":u'Gramplet zum demonstrieren der Cairo Grafik',"z":'ClockGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Dateneingabe Gramplet',"v":'1.0.28',"g":'4.1',"d":u'Gramplet zur schnellen Dateneingabe',"z":'DataEntryGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Dateneingabe Gramplet',"v":'1.0.29',"g":'4.1',"d":u'Gramplet zur schnellen Dateneingabe',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":u'Tief gehende Beziehungen Gramplet',"v":'1.0.22',"g":'4.1',"d":u'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Descendant Count Gramplet',"n":u'Anzahl der Nachkommen Gramplet',"v":'1.0.19',"g":'4.1',"d":u'Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":u'Bild Exif Metadaten bearbeiten',"v":'1.5.4',"g":'4.1',"d":u'Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten',"z":'EditExifMetadata.addon.tgz'}

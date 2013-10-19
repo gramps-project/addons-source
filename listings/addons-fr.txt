@@ -6,7 +6,7 @@
 {"t":'Gramplet',"i":'Census Gramplet',"n":u'Gramplet Recensement',"v":'1.0.27',"g":'4.1',"d":u"Gramplet servant d'interface aux donn\xe9es de recensement","z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Gramplet Presse-papiers',"v":'1.0.23',"g":'4.1',"d":u'Gramplet pour regrouper des articles',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Gramplet Horloge',"v":'0.0.19',"g":'4.1',"d":u'Gramplet pour d\xe9montrer les graphiques Cairo',"z":'ClockGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet Formulaire',"v":'1.0.28',"g":'4.1',"d":u'Gramplet pour une saisie rapide des donn\xe9es',"z":'DataEntryGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet Formulaire',"v":'1.0.29',"g":'4.1',"d":u'Gramplet pour une saisie rapide des donn\xe9es',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":u'Gramplet Connexions approfondies',"v":'1.0.22',"g":'4.1',"d":u'Gramplet affichant les relations \xe9troites entre la souche et les autres individus',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Descendant Count Gramplet',"n":u'Gramplet Calcul de descendants',"v":'1.0.19',"g":'4.1',"d":u'Gramplet pour afficher les individus et le nombre de leurs descendants',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":u"\xc9diter les m\xe9tadonn\xe9es Exif de l'image","v":'1.5.4',"g":'4.1',"d":u"Gramplet pour voir, \xe9diter, et enregistrer les m\xe9tadonn\xe9es Exif de l'image","z":'EditExifMetadata.addon.tgz'}
