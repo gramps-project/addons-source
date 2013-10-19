@@ -34,6 +34,7 @@ from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place,
                             Name, NameType, Surname)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
+import gramps.gen.lib
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -822,7 +823,7 @@ class DataEntryGramplet(Gramplet):
                             family.set_father_handle(current_person.get_handle())
                             family.set_mother_handle(person.get_handle())
                             family.set_relationship(FamilyRelType.MARRIED)
-                            current_person.set_gender(gen.lib.Person.MALE)
+                            current_person.set_gender(gramps.gen.lib.Person.MALE)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
@@ -831,7 +832,7 @@ class DataEntryGramplet(Gramplet):
                             self.dbstate.db.add_family(family, self.trans)
                             family.set_father_handle(current_person.get_handle())
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
@@ -851,7 +852,7 @@ class DataEntryGramplet(Gramplet):
                         if fam_wife_handle == None:
                             # add the person
                             family.set_mother_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
@@ -862,7 +863,7 @@ class DataEntryGramplet(Gramplet):
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_mother_handle(person.get_handle())
                     family.set_father_handle(current_person.get_handle())
-                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                     person.add_family_handle(family.get_handle())
                     current_person.add_family_handle(family.get_handle())
                     self.dbstate.db.commit_family(family, self.trans)
@@ -878,7 +879,7 @@ class DataEntryGramplet(Gramplet):
                         if fam_husband_handle == None:
                             # add the person
                             family.set_father_handle(person.get_handle())
-                            family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                            family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                             person.add_family_handle(family.get_handle())
                             added = True
                             break
@@ -889,7 +890,7 @@ class DataEntryGramplet(Gramplet):
                     self.dbstate.db.add_family(family, self.trans)
                     family.set_father_handle(person.get_handle())
                     family.set_mother_handle(current_person.get_handle())
-                    family.set_relationship(gen.lib.FamilyRelType.MARRIED)
+                    family.set_relationship(gramps.gen.lib.FamilyRelType.MARRIED)
                     person.add_family_handle(family.get_handle())
                     current_person.add_family_handle(family.get_handle())
                     self.dbstate.db.commit_family(family, self.trans)

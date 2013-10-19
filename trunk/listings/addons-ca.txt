@@ -6,7 +6,7 @@
 {"t":'Gramplet',"i":'Census Gramplet',"n":u'Census Gramplet',"v":'1.0.27',"g":'4.1',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":'Clipboard Gramplet',"v":'1.0.23',"g":'4.1',"d":'Gramplet for grouping items',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Gramplet de Rellotge',"v":'0.0.19',"g":'4.1',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u"Gramplet d'Introducci\xf3 de Dades","v":'1.0.28',"g":'4.1',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Data Entry Gramplet',"n":u"Gramplet d'Introducci\xf3 de Dades","v":'1.0.29',"g":'4.1',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":u'Gramplet de Connexions Profundes',"v":'1.0.22',"g":'4.1',"d":u'Gramplet showing a deep relationship between active and home people',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Descendant Count Gramplet',"n":'Descendant Count Gramplet',"v":'1.0.19',"g":'4.1',"d":'Gramplet for showing people and descendant counts',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":u"Edici\xf3 de Metadades d'Imatge Exif","v":'1.5.4',"g":'4.1',"d":u"Gramplet per veure, editar i desar metadades Exif d'imatge","z":'EditExifMetadata.addon.tgz'}
