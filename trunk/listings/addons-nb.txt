@@ -49,7 +49,7 @@
 {"t":'Report',"i":'Repositories Report',"n":u'Oppbevaringsstedsrapport',"v":'1.1.12',"g":'4.1',"d":u'Lager en tekstbasert rapport over oppbevaringssteder',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.19',"g":'4.1',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.27',"g":'4.1',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
-{"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.5',"g":'4.1',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
+{"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.6',"g":'4.1',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Attach Source',"v":'0.0.23',"g":'4.1',"d":u'Attaches a shared source to multiple objects.',"z":'AttachSourceTool.addon.tgz'}
 {"t":'Tool',"i":'PlaceCompletion',"n":u'PlaceCompletion',"v":'0.0.24',"g":'4.1',"d":u'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.',"z":'PlaceCompletion.addon.tgz'}

@@ -49,7 +49,7 @@
 {"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.12',"g":'4.1',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u"'Nog te doen'-verslag","v":'1.2.19',"g":'4.1',"d":u'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Volkstellingsverslag',"v":'1.0.27',"g":'4.1',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
-{"t":'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.5',"g":'4.1',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
+{"t":'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.6',"g":'4.1',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u"Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Bron toevoegen',"v":'0.0.23',"g":'4.1',"d":u'Een gedeelde bron aan verschillende objecten toevoegen.',"z":'AttachSourceTool.addon.tgz'}
 {"t":'Tool',"i":'PlaceCompletion',"n":u'Locatie vervolledigen',"v":'0.0.24',"g":'4.1',"d":u'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.',"z":'PlaceCompletion.addon.tgz'}

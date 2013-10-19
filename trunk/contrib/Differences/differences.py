@@ -220,18 +220,24 @@ class DifferencesReport(Report):
         return retval
 
     def report_details(self, doc, path, diff1, diff2):
-        desc1 = str(diff1) if diff1 else ""
-        desc2 = str(diff2) if diff2 else ""
+        if isinstance(diff1, bool):
+            desc1 = repr(diff1)
+        else:
+            desc1 = str(diff1) if diff1 else ""
+        if isinstance(diff2, bool):
+            desc1 = repr(diff2)
+        else:
+            desc2 = str(diff2) if diff2 else ""
         if path.endswith(".change"):
             diff1 = todate(diff1)
             diff2 = todate(diff2)
             desc1 = diff1
             desc2 = diff2
         if (isinstance(diff1, Handle)):
-            desc1 = self.sa[0].describe(diff1.classname, "handle", diff1.handle) or ""
+            desc1 = self.sa[0].describe(diff1, diff1.classname, diff1.handle)
             diff1 = diff1.handle
         if (isinstance(diff2, Handle)):
-            desc2 = self.sa[1].describe(diff2.classname, "handle", diff2.handle) or ""
+            desc2 = self.sa[1].describe(diff2, diff2.classname, diff2.handle)
             diff2 = diff2.handle
         if diff1 == diff2:
             return

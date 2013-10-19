@@ -49,7 +49,7 @@
 {"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.12',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Zu erledigen Bericht',"v":'1.2.19',"g":'4.1',"d":u'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datens\xe4tzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Zensusbericht',"v":'1.0.27',"g":'4.1',"d":u'Bericht der Zensusereignise f\xfcr eine Person.',"z":'Census.addon.tgz'}
-{"t":'Report',"i":'database-differences-report',"n":u'Datenbankunterschiede Bericht',"v":'1.0.5',"g":'4.1',"d":u'Vergleicht eine externe Datenbank mit der aktuell ge\xf6ffneten.',"z":'Differences.addon.tgz'}
+{"t":'Report',"i":'database-differences-report',"n":u'Datenbankunterschiede Bericht',"v":'1.0.6',"g":'4.1',"d":u'Vergleicht eine externe Datenbank mit der aktuell ge\xf6ffneten.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xfcber Personen durch Mausereignisse sichtbar werden.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Quelle hinzuf\xfcgen',"v":'0.0.23',"g":'4.1',"d":u'F\xfcgt verteilte Quellen mehreren Objekten hinzu.',"z":'AttachSourceTool.addon.tgz'}
 {"t":'Tool',"i":'PlaceCompletion',"n":u'OrteVervollst\xe4ndigung',"v":'0.0.24',"g":'4.1',"d":u'Liefert eine durchsuchbare Liste ausgew\xe4hlter Orte mit der M\xf6glichkeit die Attributefelder zu vervollst\xe4ndigen/Syntaxanalyse/setzen.',"z":'PlaceCompletion.addon.tgz'}
