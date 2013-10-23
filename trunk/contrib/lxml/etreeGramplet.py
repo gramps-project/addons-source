@@ -64,7 +64,7 @@ from gramps.gui.dialog import ErrorDialog
 
 
 
-NAMESPACE = '{http://gramps-project.org/xml/1.5.0/}'
+NAMESPACE = '{http://gramps-project.org/xml/1.5.1/}'
 
     
 #-------------------------------------------------------------------------    
