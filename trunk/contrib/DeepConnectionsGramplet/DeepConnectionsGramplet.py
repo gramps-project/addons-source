@@ -77,6 +77,23 @@ class DeepConnectionsGramplet(Gramplet):
         self.gui.get_container_widget().add_with_viewport(vbox)
         vbox.show_all()
 
+    def get_links_from_notes(self, obj, path, relation, person_handle):
+        """
+        Get anyone mentioned in any note attached to this object.
+        """
+        retval = []
+        note_list = obj.get_note_list()
+        for note_handle in note_list: 
+            note = self.dbstate.db.get_note_from_handle(note_handle)
+            if note:
+                links = note.get_links()
+                for link in links:
+                    if link[0] == "gramps" and link[1] == "Person":
+                        relation = _("mentioned in note")
+                        if link[2] == "handle":
+                            retval += [(link[3], (path, (relation, person_handle)))]
+        return retval
+
     def get_relatives(self, person_handle, path):
         """
         Gets all of the relations of person_handle.
@@ -98,6 +115,7 @@ class DeepConnectionsGramplet(Gramplet):
                     retval += [(husband, (path, (_("husband"), person_handle)))]
                 if wife and wife != person_handle:
                     retval += [(wife, (path, (_("wife"), person_handle)))]
+                retval += self.get_links_from_notes(family, path, _("Note on Family"), person_handle)
 
         parent_family_list = person.get_parent_family_handle_list()
         for family_handle in parent_family_list:
@@ -115,13 +133,14 @@ class DeepConnectionsGramplet(Gramplet):
                 if wife and wife != person_handle:
                     retval += [(wife, 
                                 (path, (_("mother"), person_handle, husband)))]
-
+                retval += self.get_links_from_notes(family, path, _("Note on Parent Family"), person_handle)
         assoc_list = person.get_person_ref_list()
         for assoc in assoc_list:
             relation = _("%s (association)") % assoc.get_relation()
             assoc_handle = assoc.get_reference_handle()
             retval += [(assoc_handle, (path, (relation, person_handle)))]
 
+        retval += self.get_links_from_notes(person, path, _("Note on Person"), person_handle)
         return retval
 
     def active_changed(self, handle):
