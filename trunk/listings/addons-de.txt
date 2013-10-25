@@ -19,6 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Medienbrowser',"v":'1.0.16',"g":'4.1',"d":u'Gramplet zeigt Details einer Person',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Notiz Gramplet',"v":'1.0.20',"g":'4.1',"d":u'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":u'Beteiligte',"v":'1.0.4',"g":'4.1',"d":u'Gramplet zeigt die Beteiligten eines Ereignis',"z":'Participants.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":u'Foto markieren',"v":'1.0.4',"g":'4.1',"d":u'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python Gramplet',"v":'1.0.18',"g":'4.1',"d":u'Interaktiver Pythoninterpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":u'Abfrage Gramplet',"v":'1.0.17',"g":'4.1',"d":u'Gramplet zum Ausf\xfchren SQL-\xe4hnlicher Abfragen',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Verbundene Verwandte Gramplet',"v":'1.0.18',"g":'4.1',"d":u'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
