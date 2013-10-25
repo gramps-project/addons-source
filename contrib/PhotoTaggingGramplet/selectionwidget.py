@@ -157,8 +157,7 @@ class SelectionWidget(Gtk.ScrolledWindow):
     def build_gui(self):
         self.image = Gtk.Image()
         self.image.set_has_tooltip(True)
-        # FIXME
-        #self.image.connect_after("expose-event", self.expose_handler)
+        self.image.connect_after("draw", self.expose_handler)
         self.image.connect("query-tooltip", self.show_tooltip)
 
         self.event_box = Gtk.EventBox()
@@ -341,7 +340,7 @@ class SelectionWidget(Gtk.ScrolledWindow):
         offset_x -= 1
         offset_y -= 1
 
-        cr = self.image.window.cairo_create()
+        cr = self.image.get_window().cairo_create()
 
         if self.selection:
             x1, y1, x2, y2 = self.rect_image_to_screen(self.selection)
@@ -504,6 +503,7 @@ class SelectionWidget(Gtk.ScrolledWindow):
             self.refresh()
             if self.current is not None:
                 self.emit("region-selected")
+                # FIXME: event is an EventButton; should be a GdkEvent
                 self.emit("right-button-clicked", event)
             else:
                 self.emit("selection-cleared")
@@ -536,6 +536,7 @@ class SelectionWidget(Gtk.ScrolledWindow):
                         region = Region(*self.selection)
                         self.regions.append(region)
                         self.current = region
+                        # FIXME: event is an EventButton; should be a GdkEvent
                         self.emit("region-created", event)
                     else:
                         # nothing selected, just a click
@@ -573,17 +574,17 @@ class SelectionWidget(Gtk.ScrolledWindow):
                 if self.grabber is not None:
                     self.grabber_to_draw = self.grabber
                     self.grabber_position = grabber_position(rect)
-                    self.event_box.window.set_cursor(CURSORS[self.grabber])
+                    self.event_box.get_window().set_cursor(CURSORS[self.grabber])
                 else:
                     self.grabber_to_draw = None
                     self.grabber_position = None
-                    self.event_box.window.set_cursor(None)
+                    self.event_box.get_window().set_cursor(None)
             else:
                 # nothing is active
                 self.grabber = None
                 self.grabber_to_draw = None
                 self.grabber_position = None
-                self.event_box.window.set_cursor(None)
+                self.event_box.get_window().set_cursor(None)
         self.image.queue_draw()
 
     def motion_scroll_event(self, widget, event):
