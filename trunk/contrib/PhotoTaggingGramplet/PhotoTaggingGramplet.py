@@ -56,6 +56,7 @@ from gramps.gui.selectors import SelectorFactory
 from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
                                   EnumeratedListOption, FilterOption, PersonOption)
 from gramps.gui.plug import PluginWindows
+from gramps.gui.widgets import SelectionWidget, Region
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -65,18 +66,10 @@ except ValueError:
 
 #-------------------------------------------------------------------------
 #
-# selection widget module
-#
-#-------------------------------------------------------------------------
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-import selectionwidget
-from selectionwidget import Region
-
-#-------------------------------------------------------------------------
-#
 # face detection module
 #
 #-------------------------------------------------------------------------
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 import facedetection
 
 #-------------------------------------------------------------------------
@@ -260,7 +253,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
-        self.selection_widget = selectionwidget.SelectionWidget()
+        self.selection_widget = SelectionWidget()
         self.selection_widget.set_size_request(200, -1)
         self.selection_widget.connect("region-modified", self.region_modified)
         self.selection_widget.connect("region-created", self.region_created)
