@@ -121,7 +121,7 @@ def epoch(t):
 #
 #-------------------------------------------------------------------------
 
-NAMESPACE = '{http://gramps-project.org/xml/1.5.1/}'
+NAMESPACE = '{http://gramps-project.org/xml/1.6.0/}'
 
 class lxmlGramplet(Gramplet):
     """
@@ -317,7 +317,7 @@ class lxmlGramplet(Gramplet):
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
-            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.1//EN" "http://gramps-project.org/xml/1.5.1/grampsxml.dtd">'
+            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.6.0//EN" "http://gramps-project.org/xml/1.6.0/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
