@@ -550,16 +550,16 @@ class PhotoTaggingGramplet(Gramplet):
         self.refresh_list()
         self.refresh_selection()
 
-    def region_created(self, sender, event):
+    def region_created(self, sender):
         self.enable_buttons()
         self.refresh_list()
         self.refresh_selection()
-        self.context_menu.popup(None, None, None, event.button, event.time, None)
+        self.context_menu.popup(None, None, None, None, 0, 0)
         self.prepare_context_menu()
         self.context_menu.show_all()
 
-    def right_button_clicked(self, sender, event):
-        self.context_menu.popup(None, None, None, event.button, event.time, None)
+    def right_button_clicked(self, sender):
+        self.context_menu.popup(None, None, None, None, 0, 0)
         self.prepare_context_menu()
         self.context_menu.show_all()
 

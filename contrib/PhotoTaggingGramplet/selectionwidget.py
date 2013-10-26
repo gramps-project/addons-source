@@ -43,18 +43,15 @@ from gi.repository import GObject
 #
 #-------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as name_displayer
-#from gramps.gen.const import GRAMPS_LOCALE as glocale
-#try:
-#    _ = glocale.get_addon_translator(__file__)
-#except ValueError:
-#    _ = glocale.translation
-_ = lambda s: s
+
 #-------------------------------------------------------------------------
 #
 # grabbers constants and routines
 #
 #-------------------------------------------------------------------------
-from grabbers import *
+from grabbers import (grabber_generators, can_grab, grabber_position,
+                      switch_grabber, CURSORS, GRABBER_INSIDE, INSIDE,
+                      INNER_GRABBERS, OUTER_GRABBERS, MOTION_FUNCTIONS)
 
 #-------------------------------------------------------------------------
 #
@@ -68,10 +65,7 @@ MIN_ZOOM = 0.05
 MAX_SIZE = 2000
 MIN_SIZE = 50
 SHADING_OPACITY = 0.7
-RADIUS = 5
 MIN_SELECTION_SIZE = 10
-
-THUMBNAIL_IMAGE_SIZE = (50, 50)
 
 def scale_to_fit(orig_x, orig_y, target_x, target_y):
     orig_aspect = orig_x / orig_y
@@ -125,7 +119,8 @@ class Region(object):
         return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
     def contains_rect(self, other):
-        return self.contains(other.x1, other.y1) and self.contains(other.x2, other.y2)
+        return (self.contains(other.x1, other.y1) and
+                self.contains(other.x2, other.y2))
 
     def area(self):
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
@@ -137,7 +132,19 @@ class Region(object):
 
 class SelectionWidget(Gtk.ScrolledWindow):
 
+    __gsignals__ = {
+        "region-modified": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "region-created": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "region-selected": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "selection-cleared": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "right-button-clicked": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "zoomed-in": (GObject.SIGNAL_RUN_FIRST, None, ()),
+        "zoomed-out": (GObject.SIGNAL_RUN_FIRST, None, ())
+    }
+
     def __init__(self):
+        self.multiple_selection = True
+
         self.loaded = False
         self.start_point_screen = None
         self.selection = None
@@ -150,7 +157,7 @@ class SelectionWidget(Gtk.ScrolledWindow):
         self.scaled_pixbuf = None
         self.scale = 1.0
 
-        GObject.GObject.__init__(self)
+        Gtk.ScrolledWindow.__init__(self)
         self.add(self.build_gui())
         self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
 
@@ -161,10 +168,14 @@ class SelectionWidget(Gtk.ScrolledWindow):
         self.image.connect("query-tooltip", self.show_tooltip)
 
         self.event_box = Gtk.EventBox()
-        self.event_box.connect('button-press-event', self.button_press_event)
-        self.event_box.connect('button-release-event', self.button_release_event)
-        self.event_box.connect('motion-notify-event', self.motion_notify_event)
-        self.event_box.connect('scroll-event', self.motion_scroll_event)
+        self.event_box.connect('button-press-event',
+          self.button_press_event)
+        self.event_box.connect('button-release-event',
+          self.button_release_event)
+        self.event_box.connect('motion-notify-event',
+          self.motion_notify_event)
+        self.event_box.connect('scroll-event',
+          self.motion_scroll_event)
         self.event_box.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
         self.event_box.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
         self.event_box.add_events(Gdk.EventMask.POINTER_MOTION_MASK)
@@ -178,6 +189,18 @@ class SelectionWidget(Gtk.ScrolledWindow):
     # ======================================================
     # field accessors
     # ======================================================
+
+    def get_multiple_selection(self):
+        """
+        Return whether multiple selection is enabled.
+        """
+        return self.multiple_selection
+
+    def set_multiple_selection(self, enable):
+        """
+        Enables or disables multiple selection.
+        """
+        self.multiple_selection = enable
 
     def set_regions(self, regions):
         self.regions = regions
@@ -204,11 +227,14 @@ class SelectionWidget(Gtk.ScrolledWindow):
 
         try:
             self.pixbuf = GdkPixbuf.Pixbuf.new_from_file(image_path)
-            self.original_image_size = (self.pixbuf.get_width(), self.pixbuf.get_height())
+            self.original_image_size = (self.pixbuf.get_width(),
+                                        self.pixbuf.get_height())
 
             viewport_size = self.viewport.get_allocation()
-            self.scale = scale_to_fit(self.pixbuf.get_width(), self.pixbuf.get_height(), 
-                                  viewport_size.width, viewport_size.height)
+            self.scale = scale_to_fit(self.pixbuf.get_width(),
+                                      self.pixbuf.get_height(),
+                                      viewport_size.width,
+                                      viewport_size.height)
             self.rescale()
             self.loaded = True
         except (GObject.GError, OSError):
@@ -360,7 +386,8 @@ class SelectionWidget(Gtk.ScrolledWindow):
                 x1, y1, x2, y2 = self.rect_image_to_screen(region.coords())
                 self.draw_region_frame(cr, x1, y1, x2, y2)
 
-    def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, offset_x, offset_y):
+    def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, 
+                                 offset_x, offset_y):
         cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
         cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
         cr.rectangle(offset_x, y1, x1 - offset_x, y2 - y1)
@@ -409,8 +436,8 @@ class SelectionWidget(Gtk.ScrolledWindow):
         self.scaled_size = (int(self.original_image_size[0] * self.scale), 
                             int(self.original_image_size[1] * self.scale))
         self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0],
-                                                     self.scaled_size[1],
-                                                     GdkPixbuf.InterpType.BILINEAR)
+                                                self.scaled_size[1],
+                                                GdkPixbuf.InterpType.BILINEAR)
         self.image.set_from_pixbuf(self.scaled_image)
         self.image.set_size_request(*self.scaled_size)
         self.event_box.set_size_request(*self.scaled_size)
@@ -473,10 +500,9 @@ class SelectionWidget(Gtk.ScrolledWindow):
         h = region.y2 - region.y1
         if w >= 1 and h >= 1:
             subpixbuf = self.pixbuf.new_subpixbuf(region.x1, region.y1, w, h)
-            if subpixbuf:
-                size = resize_keep_aspect(w, h, *thumbnail_size)
-                return subpixbuf.scale_simple(size[0], size[1], 
-                                              GdkPixbuf.InterpType.BILINEAR)
+            size = resize_keep_aspect(w, h, *thumbnail_size)
+            return subpixbuf.scale_simple(size[0], size[1], 
+                                          GdkPixbuf.InterpType.BILINEAR)
         else:
             return None
 
@@ -498,13 +524,13 @@ class SelectionWidget(Gtk.ScrolledWindow):
             # select a region, if clicked inside one
             click_point = self.screen_to_image((event.x, event.y))
             self.current = self.find_region(*click_point)
-            self.selection = self.current.coords() if self.current is not None else None
+            self.selection = \
+              self.current.coords() if self.current is not None else None
             self.start_point_screen = None
             self.refresh()
             if self.current is not None:
                 self.emit("region-selected")
-                # FIXME: event is an EventButton; should be a GdkEvent
-                self.emit("right-button-clicked", event)
+                self.emit("right-button-clicked")
             else:
                 self.emit("selection-cleared")
         return True # don't propagate the event further
@@ -530,19 +556,22 @@ class SelectionWidget(Gtk.ScrolledWindow):
                         self.emit("region-modified")
                 else:
                     # nothing is currently selected
-                    if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
-                        abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE):
+                    if (self.minimum_region(self.start_point_screen,
+                                            (event.x, event.y)) and
+                        self.can_select()):
                         # region selection
                         region = Region(*self.selection)
                         self.regions.append(region)
                         self.current = region
-                        # FIXME: event is an EventButton; should be a GdkEvent
-                        self.emit("region-created", event)
+                        self.emit("region-created")
                     else:
                         # nothing selected, just a click
-                        click_point = self.screen_to_image(self.start_point_screen)
+                        click_point = \
+                          self.screen_to_image(self.start_point_screen)
                         self.current = self.find_region(*click_point)
-                        self.selection = self.current.coords() if self.current is not None else None
+                        self.selection = \
+                          self.current.coords() if self.current is not None \
+                                                else None
                         self.emit("region-selected")
 
                 self.start_point_screen = None
@@ -554,13 +583,13 @@ class SelectionWidget(Gtk.ScrolledWindow):
         end_point_orig = self.screen_to_image((event.x, event.y))
         end_point = self.truncate_to_image_size(end_point_orig)
         if self.start_point_screen:
-            # selection (mouse button pressed)
+            # selection or dragging (mouse button pressed)
             if self.grabber is not None and self.grabber != INSIDE:
                 # dragging the grabber
                 dx, dy = (event.x - self.start_point_screen[0], 
                           event.y - self.start_point_screen[1])
                 self.grabber_to_draw = self.modify_selection(dx, dy)
-            else:
+            elif self.can_select():
                 # making new selection
                 start_point = self.screen_to_truncated(self.start_point_screen)
                 self.selection = order_coordinates(start_point, end_point)
@@ -599,6 +628,13 @@ class SelectionWidget(Gtk.ScrolledWindow):
     # helpers for mouse event handlers
     # ======================================================
 
+    def minimum_region(self, point1, point2):
+        return (abs(point1[0] - point2[0]) >= MIN_SELECTION_SIZE and
+                abs(point1[1] - point2[1]) >= MIN_SELECTION_SIZE)
+
+    def can_select(self):
+        return self.multiple_selection or len(self.regions) < 1
+
     def modify_selection(self, dx, dy):
         x1, y1, x2, y2 = self.rect_image_to_screen(self.current.coords())
         x1, y1, x2, y2 = MOTION_FUNCTIONS[self.grabber](x1, y1, x2, y2, dx, dy)
@@ -623,19 +659,3 @@ class SelectionWidget(Gtk.ScrolledWindow):
             return True
         else:
             return False
-
-GObject.type_register(SelectionWidget)
-GObject.signal_new("region-modified", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, ())
-GObject.signal_new("region-created", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, (Gdk.Event,))
-GObject.signal_new("region-selected", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, ())
-GObject.signal_new("selection-cleared", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, ())
-GObject.signal_new("right-button-clicked", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, (Gdk.Event,))
-GObject.signal_new("zoomed-in", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, ())
-GObject.signal_new("zoomed-out", SelectionWidget, GObject.SignalFlags.RUN_FIRST,
-                   None, ())
