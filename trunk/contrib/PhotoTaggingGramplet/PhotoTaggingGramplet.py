@@ -43,7 +43,6 @@ from gi.repository import GObject
 # gramps modules
 #
 #-------------------------------------------------------------------------
-#from gramps.gen import const
 from gramps.gen.utils.file import media_path_full
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.errors import WindowActiveError
@@ -57,26 +56,28 @@ from gramps.gui.selectors import SelectorFactory
 from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
                                   EnumeratedListOption, FilterOption, PersonOption)
 from gramps.gui.plug import PluginWindows
-#from gramps.gen.const import GRAMPS_LOCALE as glocale
-#try:
-#    _ = glocale.get_addon_translator(__file__)
-#except ValueError:
-#    _ = glocale.translation
-_ = lambda s: s
+
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _ = glocale.get_addon_translator(__file__).gettext
+except ValueError:
+    _ = glocale.translation.gettext
+
 #-------------------------------------------------------------------------
 #
 # selection widget module
 #
 #-------------------------------------------------------------------------
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from selectionwidget import Region, SelectionWidget
+import selectionwidget
+from selectionwidget import Region
 
 #-------------------------------------------------------------------------
 #
 # face detection module
 #
 #-------------------------------------------------------------------------
-from facedetection import (computer_vision_available, detect_faces)
+import facedetection
 
 #-------------------------------------------------------------------------
 #
@@ -250,7 +251,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_in.set_tooltip_text(_("Zoom In"))
         self.button_zoom_out.set_tooltip_text(_("Zoom Out"))
 
-        if computer_vision_available:
+        if facedetection.computer_vision_available:
             self.button_detect.set_tooltip_text(_("Detect faces"))
         else:
             self.button_detect.set_tooltip_text(_("Detect faces (cv module required)"))
@@ -259,7 +260,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
-        self.selection_widget = SelectionWidget()
+        self.selection_widget = selectionwidget.SelectionWidget()
         self.selection_widget.set_size_request(200, -1)
         self.selection_widget.connect("region-modified", self.region_modified)
         self.selection_widget.connect("region-created", self.region_created)
@@ -500,7 +501,7 @@ class PhotoTaggingGramplet(Gramplet):
           self.selection_widget.can_zoom_out())
         self.button_detect.set_sensitive(
           self.selection_widget.is_image_loaded() and
-          computer_vision_available)
+          facedetection.computer_vision_available)
 
     # ======================================================
     # managing context menu buttons
@@ -622,7 +623,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.uistate.push_message(self.dbstate, _("Detecting faces..."))
         media = self.get_current_object()
         image_path = media_path_full(self.dbstate.db, media.get_path())
-        faces = detect_faces(image_path, MIN_FACE_SIZE)
+        faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
         for ((x, y, width, height), neighbors) in faces:
             region = Region(x - DETECTED_REGION_PADDING,
                             y - DETECTED_REGION_PADDING,
@@ -637,7 +638,7 @@ class PhotoTaggingGramplet(Gramplet):
         try:
             SettingsDialog(self.gui.dbstate, self.gui.uistate, 
                            _("Settings"), PhotoTaggingOptions())
-        except WindowActiveError:
+        except Errors.WindowActiveError:
             pass
 
     # ======================================================
