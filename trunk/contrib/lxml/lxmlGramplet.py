@@ -728,7 +728,7 @@ class lxmlGramplet(Gramplet):
         
         # ugly ...
         
-        for i in range(len(thumbs)):
+        for i in enumerate(thumbs):
             
             # list of tuples [('',''),('','')]
             
@@ -775,7 +775,7 @@ class lxmlGramplet(Gramplet):
             
         text = open(fname, 'w')
         text.write(head)
-        for i in range(len(self.text)):
+        for i in enumerate(self.text):
             text.write(self.text[i] + '\n') # Html.write() ?
         text.close()
 
