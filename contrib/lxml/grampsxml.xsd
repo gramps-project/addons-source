@@ -562,6 +562,7 @@
   <complexType>
    <attribute name='src' type='string' use='required'/>
    <attribute name='mime' type='string' use='required'/>
+   <attribute name='checksum' type='string' use='required'/>
    <attribute name='description' type='string' use='required'/>
   </complexType>
  </element>
