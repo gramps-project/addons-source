@@ -32,6 +32,8 @@ from shutil import copy
 from gi.repository import Gtk
 #import subprocess
 
+import logging
+
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -52,6 +54,8 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+LOG = logging.getLogger("lxml")
 
 #-------------------------------------------------------------------------
 #
@@ -103,7 +107,7 @@ def epoch(t):
             return
         
         if t == None:
-            print(_('Invalid timestamp'))
+            LOG.warning(_('Invalid timestamp'))
             fmt = _('Unknown')
         else:
             date = int(t)
@@ -288,11 +292,11 @@ class lxmlGramplet(Gramplet):
         
         # XSD structure via lxml
         
-        xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
-        try:
-            self.xsd(xsd, filename)
-        except:
-            ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
+        #xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
+        #try:
+            #self.xsd(xsd, filename)
+        #except:
+            #ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
         
         # DTD syntax via xmllint (libxml2-utils)
         
@@ -300,7 +304,8 @@ class lxmlGramplet(Gramplet):
             self.check_valid(filename)
         except:
             ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-                       
+            LOG.debug(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
+                    
         # RNG validation via xmllint (libxml2-utils)
         
         rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
@@ -311,7 +316,7 @@ class lxmlGramplet(Gramplet):
             else:
                 os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
         except:
-            print(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
+            LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
                 
         try:
             #tree = etree.ElementTree(file=filename)
@@ -333,11 +338,11 @@ class lxmlGramplet(Gramplet):
         except etree.XMLSyntaxError, e:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
             log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
-            print('Error_log :', log)
+            LOG.debug(log)
             debug = e.error_log.last_error
-            print('Domain :', debug.domain_name)
-            print('Type :', debug.type_name)
-            print('Filename :', debug.filename)
+            LOG.debug(debug.domain_name)
+            LOG.debug(debug.type_name)
+            LOG.debug(debug.filename)
             return
             
         
@@ -345,16 +350,18 @@ class lxmlGramplet(Gramplet):
         """
         Parse the validated .gramps
         """
-        
         root = tree.getroot()
         
         # GtkTextView ; buffer limitation ...
                       
-        self.text.set_text(etree.tostring(root, pretty_print=True))
+        self.text.set_text(_('Parsing file...'))
+        
+        #LOG.info(etree.tostring(root, pretty_print=True))
 
         # namespace issues !
         
         namespace = root.nsmap
+
         surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
         ptitle_tag = etree.SubElement(root, NAMESPACE + 'ptitle')
         
@@ -381,6 +388,9 @@ class lxmlGramplet(Gramplet):
         surnames = []
         timestamp = []
         thumbs = []
+        
+        LOG.info('start iteration')
+        
         for one in root.iter():
             
             #(tag, item) = one.tag, one.items()
@@ -388,8 +398,8 @@ class lxmlGramplet(Gramplet):
             
             for two in one.iter():
                 
-                #tags.append(two.tag)  
-                
+                #tags.append(two.tag)
+                                
                 msg.append(two.items())
                 
                 if two.tag == NAMESPACE + 'mediapath':
@@ -400,11 +410,11 @@ class lxmlGramplet(Gramplet):
                 # search ptitle and time log
                 
                 for three in two.iter():
-                                        
+                                                            
                     # timestamp
                     if two.get('change'):
                         timestamp.append(two.get('change'))
-                    
+                        
                     # with namespace ...              
                                    
                     if three.tag == NAMESPACE + 'ptitle' and three.text not in places:
@@ -417,15 +427,15 @@ class lxmlGramplet(Gramplet):
                     # search last name
                     
                     for four in three.iter():
-                                               
+                        
                         # with namespace ...
                         
                         if four.tag == NAMESPACE + 'surname':
                             surnames.append(four.text)
+        
+        LOG.info('end of loops')
                             
                     
-        #print(etree.tostring(root, pretty_print=True))
-
         # All tags
         #print(tags)
         
@@ -441,6 +451,7 @@ class lxmlGramplet(Gramplet):
                                     'Cannot run the gramplet...\n'
                                     'Please, try to use a .gramps\n'
                                     'generated by Gramps 4.x.'))
+            LOG.debug('header missing')
             return
         
         # dirty XML write method ...
@@ -449,22 +460,22 @@ class lxmlGramplet(Gramplet):
         if int(count_elements(root, name = 'surname')) > 1:
             nb_surnames = int(count_elements(root, name = 'surname'))
         else:
-            nb_surnames = surnames = [_('No surname')]
+            nb_surnames = surnames = [_('0')]
             
         if int(count_elements(root, name = 'ptitle')) > 1:
             nb_ptitles = int(count_elements(root, name = 'ptitle'))
         else:
-            nb_ptitles = places = [_('No place title')]
+            nb_ptitles = places = [_('0')]
             
         if int(count_elements(root, name = 'note')) > 1:
             nb_notes = int(count_elements(root, name = 'note'))
         else:
-            nb_notes = _('No note')
+            nb_notes = _('0')
             
         if int(count_elements(root, name = 'stitle')) > 1:
             nb_sources = int(count_elements(root, name = 'stitle'))
         else:
-            nb_sources = _('No source')
+            nb_sources = _('0')
             
         # time logs
         
@@ -495,7 +506,9 @@ class lxmlGramplet(Gramplet):
         
         self.text.set_text(header + file_info + period + counters + libs)
                 
-        print('### NEW FILES ###')
+        LOG.info('### NEW FILES ###')
+        LOG.info('content parsed and copied')
+        
         self.WriteXML(log, first, last, surnames, places, sources)
         
         self.PrintMedia(thumbs, mediapath)
@@ -522,7 +535,7 @@ class lxmlGramplet(Gramplet):
         root = tree.getroot()
         
         database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
-        print(_('Matches XSD schema.'))
+        LOG.info(_('Matches XSD schema.'))
         
         #dump = objectify.dump(database)
         #print(dump)
@@ -543,8 +556,7 @@ class lxmlGramplet(Gramplet):
             else:
                 os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
         except:
-            print(_('xmllint: skip DTD validation'))
-            print('\n###################################################')
+            LOG.info(_('xmllint: skip DTD validation'))
     
     
     def RNGValidation(self, tree, rng):
@@ -680,7 +692,7 @@ class lxmlGramplet(Gramplet):
         # This is the end !
         
         sys.stdout.write(_('1. Has generated "%s".\n') % html)
-        print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
+        LOG.info(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
         display_url(html)
         
         #self.post(html)
@@ -690,6 +702,8 @@ class lxmlGramplet(Gramplet):
         """
         Print some media infos via HTML class (Gramps)
         """
+        
+        LOG.info('Looking at media...')
 
         # Web page filename extensions
         
@@ -702,6 +716,8 @@ class lxmlGramplet(Gramplet):
         fname = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
         of = codecs.EncodedFile(open(fname, "w"), 'utf-8',
                                     file_encoding=None, errors='strict')
+                                    
+        LOG.info('Empty "Gallery.hml" file created')
         
         # htmlinstance = page
         # ignored by current code...
@@ -714,11 +730,14 @@ class lxmlGramplet(Gramplet):
         
         self.XHTMLWriter(fname, page, head, body, of, thumbs, mediapath)
     
+        LOG.info('End (Media)')
     
     def __write_gallery(self, thumbs, mediapath):
         """
         This procedure writes out the media
         """
+        
+        LOG.info('Looking at gallery')
                
         from gramps.gui.thumbnails import get_thumbnail_path
         
@@ -728,27 +747,37 @@ class lxmlGramplet(Gramplet):
         
         # ugly ...
         
-        for i in enumerate(thumbs):
+        LOG.info('Start to enumerate for gallery')
+        #LOG.debug(thumbs)
+        
+        for i in range(len(thumbs)):
             
             # list of tuples [('',''),('','')]
             
             src = (list(thumbs[i])[0])[1]
+            #LOG.debug(src)
             mime = (list(thumbs[i])[1])[1]
-            description = (list(thumbs[i])[2])[1]
+            #LOG.debug(mime)
+            checksum = (list(thumbs[i])[2])[1]
+            #LOG.debug(checksum)
+            description = (list(thumbs[i])[3])[1]
+            #LOG.debug(description)
             
             # relative and absolute paths
             
             src = os.path.join(mediapath, src)
             
-            if src.startswith("/"):
-                continue
-            else:
+            # windows OS ???
+            if not src.startswith("/"):
                 src = os.path.join(USER_HOME, src)
-            
+                
+            #LOG.debug(src)
+                        
             # only images
             
             if mime.startswith("image"):
                 thumb = get_thumbnail_path(str(src), mtype=None, rectangle=None)
+                #LOG.debug(thumb)
                 self.text += Html('img', src=str(thumb), mtype=str(mime))
                 self.text += fullclear
                 self.text += Html('a', str(description), href=str(src), target='blank', title=str(mime))
@@ -772,16 +801,21 @@ class lxmlGramplet(Gramplet):
         """
         
         self.__write_gallery(thumbs, mediapath)
+        
+        #LOG.debug(self.text)
             
         text = open(fname, 'w')
         text.write(head)
-        for i in enumerate(self.text):
+        for i in range(len(self.text)):
+            #LOG.debug(self.text[i])
             text.write(self.text[i] + '\n') # Html.write() ?
         text.close()
 
         # closes the file
         
         self.close_file(of)
+        
+        LOG.info('Gallery generated')
         
         
     def WriteBackXML(self, filename, root, surnames, places, sources):
@@ -855,8 +889,6 @@ class lxmlGramplet(Gramplet):
         
         find_text = etree.XPath("//text()", smart_strings=False)
         
-        print('#######################################################')
-        print(_('HTML page content:'))
-        print(find_text(post))
+        LOG.info(find_text(post))
         
         post.clear()
