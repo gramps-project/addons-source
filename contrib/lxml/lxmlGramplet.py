@@ -305,7 +305,7 @@ class lxmlGramplet(Gramplet):
             self.check_valid(filename)
         except:
             ErrorDialog(_('DTD validation (xmllint)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-            LOG.debug(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
+            LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
                     
         # RNG validation via xmllint (libxml2-utils)
         
