@@ -21,19 +21,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-# $Id$
+# $Id: grampsxml.dtd 23035 2013-09-04 20:46:30Z vassilii $
 -->
 
 <!--
-    This is the Document Type Definition file for v1.5.1
+    This is the Document Type Definition file for v1.6.0
     of the GRAMPS XML genealogy data format.
     Please use the following formal public identifier to identify it:
 
-    "-//GRAMPS//DTD GRAMPS XML V1.5.1//EN"
+    "-//GRAMPS//DTD GRAMPS XML V1.6.0//EN"
 
     For example:
-        <!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML V1.5.1//EN"
-                "http://gramps-project.org/xml/1.5.1/grampsxml.dtd"
+        <!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML V1.6.0//EN"
+                "http://gramps-project.org/xml/1.6.0/grampsxml.dtd"
                 [...]>
 -->
 
@@ -62,7 +62,7 @@ DATABASE
 <!ELEMENT database (header, name-formats?, tags?, events?, people?, families?,
                     citations?, sources?, places?, objects?, repositories?,
                     notes?, bookmarks?, namemaps?)>
-<!ATTLIST database xmlns CDATA #FIXED "http://gramps-project.org/xml/1.5.1/">
+<!ATTLIST database xmlns CDATA #FIXED "http://gramps-project.org/xml/1.6.0/">
 
 
 <!--    ************************************************************
@@ -215,7 +215,8 @@ EVENT
 <!ELEMENT events (event)*>
 
 <!ELEMENT event (type?, (daterange|datespan|dateval|datestr)?, place?, cause?,
-                 description?, attribute*, noteref*, citationref*, objref*)>
+                 description?, attribute*, noteref*, citationref*, objref*,
+                 tagref*)>
 <!ATTLIST event 
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
@@ -229,7 +230,7 @@ SOURCES
 
 <!ELEMENT sources (source)*>
 <!ELEMENT source (stitle?, sauthor?, spubinfo?, sabbrev?,
-                  noteref*, objref*, data_item*, reporef*)>
+                  noteref*, objref*, srcattribute*, reporef*, tagref*)>
 <!ATTLIST source
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
@@ -248,7 +249,7 @@ PLACES
 <!ELEMENT places (placeobj)*>
 
 <!ELEMENT placeobj (ptitle?, coord?, location*, objref*, url*, noteref*,
-                    citationref*)>
+                    citationref*, tagref*)>
 <!ATTLIST placeobj
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
@@ -296,6 +297,7 @@ OBJECTS
 <!ATTLIST file
         src         CDATA #REQUIRED
         mime        CDATA #REQUIRED
+        checksum    CDATA #IMPLIED
         description CDATA #REQUIRED
 >
 
@@ -305,7 +307,7 @@ REPOSITORIES
 
 <!ELEMENT repositories (repository)*>
 
-<!ELEMENT repository (rname, type, address*, url*, noteref*)>
+<!ELEMENT repository (rname, type, address*, url*, noteref*, tagref*)>
 <!ATTLIST repository
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
@@ -368,7 +370,7 @@ CITATIONS
 <!ELEMENT citations (citation)*>
 
 <!ELEMENT citation ((daterange|datespan|dateval|datestr)?, page?, confidence,
-                    noteref*, objref*, data_item*, sourceref)>
+                    noteref*, objref*, srcattribute*, sourceref, tagref*)>
 <!ATTLIST citation
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
@@ -488,6 +490,13 @@ SHARED ELEMENTS
 
 <!ELEMENT attribute (citationref*, noteref*)>
 <!ATTLIST attribute
+        priv    (0|1)   #IMPLIED
+        type    CDATA   #REQUIRED
+        value   CDATA   #REQUIRED
+>
+
+<!ELEMENT srcattribute EMPTY>
+<!ATTLIST srcattribute
         priv    (0|1)   #IMPLIED
         type    CDATA   #REQUIRED
         value   CDATA   #REQUIRED

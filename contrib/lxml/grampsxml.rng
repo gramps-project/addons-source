@@ -22,7 +22,7 @@
 
 # Written by Alex Roitman
 
-# $Id$
+# $Id: grampsxml.rng 23356 2013-10-20 16:54:48Z vassilii $
 -->
 
 <!--
@@ -32,7 +32,7 @@
 
 <grammar
   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"  
-  ns="http://gramps-project.org/xml/1.5.1/"
+  ns="http://gramps-project.org/xml/1.6.0/"
   xmlns="http://relaxng.org/ns/structure/1.0">
 
   <start><element name="database">
@@ -160,6 +160,9 @@
         <value>0</value>
         <value>1</value>
     </choice></attribute></optional>
+    <zeroOrMore><element name="tagref">
+        <ref name="tagref-content"/>
+    </element></zeroOrMore>
   </define>
 
   <define name="person-content">
@@ -204,9 +207,6 @@
     </element></zeroOrMore>
     <zeroOrMore><element name="citationref">
         <ref name="citationref-content"/>
-    </element></zeroOrMore>
-    <zeroOrMore><element name="tagref">
-        <ref name="tagref-content"/>
     </element></zeroOrMore>
   </define>
 
@@ -375,9 +375,6 @@
     <zeroOrMore><element name="citationref">
         <ref name="citationref-content"/>
     </element></zeroOrMore>
-    <zeroOrMore><element name="tagref">
-        <ref name="tagref-content"/>
-    </element></zeroOrMore>
   </define>
 
   <define name="event-content">
@@ -413,9 +410,8 @@
     <zeroOrMore><element name="objref">
         <ref name="objref-content"/>
     </element></zeroOrMore>
-    <zeroOrMore><element name="data_item">
-        <attribute name="key"><text/></attribute>
-        <attribute name="value"><text/></attribute>
+    <zeroOrMore><element name="srcattribute">
+        <ref name="srcattribute-content"/>
     </element></zeroOrMore>
     <element name="sourceref">
         <ref name="sourceref-content"/>
@@ -434,9 +430,8 @@
     <zeroOrMore><element name="objref">
         <ref name="objref-content"/>
     </element></zeroOrMore>
-    <zeroOrMore><element name="data_item">
-        <attribute name="key"><text/></attribute>
-        <attribute name="value"><text/></attribute>
+    <zeroOrMore><element name="srcattribute">
+        <ref name="srcattribute-content"/>
     </element></zeroOrMore>
     <zeroOrMore><element name="reporef">
         <ref name="reporef-content"/>
@@ -480,6 +475,7 @@
     <element name="file">
         <attribute name="src"><text/></attribute>
         <attribute name="mime"><text/></attribute>
+        <attribute name="checksum"><text/></attribute>
         <attribute name="description"><text/></attribute>
     </element>
     <zeroOrMore><element name="attribute">
@@ -491,9 +487,6 @@
     <optional><ref name="date-content"/></optional>
     <zeroOrMore><element name="citationref">
         <ref name="citationref-content"/>
-    </element></zeroOrMore>
-    <zeroOrMore><element name="tagref">
-        <ref name="tagref-content"/>
     </element></zeroOrMore>
   </define>
 
@@ -553,9 +546,6 @@
     </choice></attribute></optional>
     <attribute name="type"><text/></attribute>
     <ref name="styledtext"/>
-    <zeroOrMore><element name="tagref">
-        <ref name="tagref-content"/>
-    </element></zeroOrMore>
   </define>
 
   <define name="styledtext">
@@ -651,6 +641,14 @@
     <zeroOrMore><element name="noteref">
         <ref name="noteref-content"/>
     </element></zeroOrMore>
+  </define>
+  
+  <define name="srcattribute-content">
+    <optional><attribute name="priv">
+        <ref name="priv-content"/>
+    </attribute></optional>
+    <attribute name="type"><text/></attribute>
+    <attribute name="value"><text/></attribute>
   </define>
 
   <define name="url-content">
