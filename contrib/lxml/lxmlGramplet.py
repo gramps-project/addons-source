@@ -745,23 +745,21 @@ class lxmlGramplet(Gramplet):
         # full clear line for proper styling
         
         fullclear = Html("div", class_ = "fullclear", inline = True)
-        
-        # ugly ...
-        
+                
         LOG.info('Start to enumerate for gallery')
         #LOG.debug(thumbs)
         
-        for i in range(len(thumbs)):
+        for i, thumb in enumerate(thumbs):
             
             # list of tuples [('',''),('','')]
             
-            src = (list(thumbs[i])[0])[1]
+            src = (list(thumb)[0])[1]
             #LOG.debug(src)
-            mime = (list(thumbs[i])[1])[1]
+            mime = (list(thumb)[1])[1]
             #LOG.debug(mime)
-            checksum = (list(thumbs[i])[2])[1]
+            checksum = (list(thumb)[2])[1]
             #LOG.debug(checksum)
-            description = (list(thumbs[i])[3])[1]
+            description = (list(thumb)[3])[1]
             #LOG.debug(description)
             
             # relative and absolute paths
@@ -807,9 +805,9 @@ class lxmlGramplet(Gramplet):
             
         text = open(fname, 'w')
         text.write(head)
-        for i in range(len(self.text)):
-            #LOG.debug(self.text[i])
-            text.write(self.text[i] + '\n') # Html.write() ?
+        for i, txt in enumerate(self.text):
+            #LOG.debug(txt)
+            text.write(txt + '\n') # Html.write() ?
         text.close()
 
         # closes the file
