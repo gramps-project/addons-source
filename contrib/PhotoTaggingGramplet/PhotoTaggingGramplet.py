@@ -28,6 +28,7 @@
 from __future__ import division
 import sys
 import os
+import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -35,6 +36,7 @@ import os
 #
 #-------------------------------------------------------------------------
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GdkPixbuf
 from gi.repository import GObject
 
@@ -57,6 +59,7 @@ from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption,
                                   EnumeratedListOption, FilterOption, PersonOption)
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
+from gramps.gui.ddtargets import DdTargets
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -178,7 +181,6 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
 #-------------------------------------------------------------------------
 
 class PhotoTaggingGramplet(Gramplet):
-
     def init(self):
         self.regions = []
 
@@ -292,6 +294,19 @@ class PhotoTaggingGramplet(Gramplet):
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
 
+        # Drag and Drop
+        self.treeview.drag_dest_set(Gtk.DestDefaults.MOTION |
+                                    Gtk.DestDefaults.DROP,
+                                    [],
+                                    Gdk.DragAction.COPY)
+        tglist = Gtk.TargetList.new([])
+        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        self.treeview.drag_dest_set_target_list(tglist)
+        self.treeview.connect('drag_data_received', self.drag_data_received)
+        # End Drag and Drop
+        
         scrolled_window2 = Gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
         scrolled_window2.set_size_request(400, -1)
@@ -304,6 +319,24 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
 
         return self.top
+
+    def drag_data_received(self, widget, context, x, y, sel_data, info, time):
+        """
+        Receive a dropped person onto the treeview.
+        """
+        if sel_data and sel_data.get_data():
+            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if person:
+                model = self.treeview.get_model()
+                drop_info = self.treeview.get_dest_row_at_pos(x, y)
+                if drop_info:
+                    path, position = drop_info
+                    self.treeview.set_cursor(path)
+                    self.set_current_person(person)
+                    self.selection_widget.clear_selection()
+                    self.refresh()
+                    self.enable_buttons()
 
     def build_context_menu(self):
         self.context_menu = Gtk.Menu()
