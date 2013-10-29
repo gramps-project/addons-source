@@ -780,8 +780,9 @@ class PhotoTaggingGramplet(Gramplet):
             self.treestore.append(None, (i, thumbnail, name))
 
     def refresh_selection(self):
-        if self.selection_widget.get_current():
+        current = self.selection_widget.get_current()
+        if current and current in self.regions:
             self.treeview.get_selection().select_path(
-              (self.regions.index(self.selection_widget.get_current()),))
+                (self.regions.index(current),))
         else:
             self.treeview.get_selection().unselect_all()
