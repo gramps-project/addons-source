@@ -43,6 +43,10 @@ import glob
 import sys
 import os
 
+# Force LANG to be English:
+# http://www.gramps-project.org/bugs/view.php?id=7136
+os.environ["LANG"] = "en.UTF-8"
+
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
