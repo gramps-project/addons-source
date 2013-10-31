@@ -300,9 +300,14 @@ class PhotoTaggingGramplet(Gramplet):
                                     [],
                                     Gdk.DragAction.COPY)
         tglist = Gtk.TargetList.new([])
+        # Can drop a PERSON here:
         tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
                    DdTargets.PERSON_LINK.target_flags,
                    DdTargets.PERSON_LINK.app_id)
+        # Can drop a LIST of HANDLES here:
+        tglist.add(DdTargets.HANDLE_LIST.atom_drag_type, 
+                   DdTargets.HANDLE_LIST.target_flags,
+                   DdTargets.HANDLE_LIST.app_id)
         self.treeview.drag_dest_set_target_list(tglist)
         self.treeview.connect('drag_data_received', self.drag_data_received)
         # End Drag and Drop
@@ -324,19 +329,43 @@ class PhotoTaggingGramplet(Gramplet):
         """
         Receive a dropped person onto the treeview.
         """
-        if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
-            person = self.dbstate.db.get_person_from_handle(handle)
-            if person:
-                model = self.treeview.get_model()
-                drop_info = self.treeview.get_dest_row_at_pos(x, y)
-                if drop_info:
-                    path, position = drop_info
-                    self.treeview.set_cursor(path)
-                    self.set_current_person(person)
-                    self.selection_widget.clear_selection()
-                    self.refresh()
-                    self.enable_buttons()
+        if sel_data:
+            pickled_data =  sel_data.get_data()
+            if not pickled_data:
+                return
+            data = pickle.loads(pickled_data)
+            # Perhaps allow multiple person drops
+            # Sometimes, more than one person could be in a selected area
+            people = []
+            if sel_data.get_data_type() == DdTargets.HANDLE_LIST.atom_drag_type:
+                if data[0][0] == "Person":
+                    handle = data[0][1]
+                    people.append(self.dbstate.db.get_person_from_handle(handle))
+                elif data[0][0] == "Event":
+                    # get first, primary person of event:
+                    event_handle = data[0][1]
+                    event = self.dbstate.db.get_event_from_handle(event_handle)
+                    for obj_class, handle in event.get_referenced_handles():
+                        if obj_class == "Person":
+                            people.append(self.dbstate.db.get_person_from_handle(handle))
+                            break
+            elif sel_data.get_data_type() == DdTargets.PERSON_LINK.atom_drag_type:
+                (drag_type, idval, handle, val) = data
+                people.append(self.dbstate.db.get_person_from_handle(handle))
+            else:
+                # can't handle this kind of drop
+                return
+            for person in people:
+                if person:
+                    model = self.treeview.get_model()
+                    drop_info = self.treeview.get_dest_row_at_pos(x, y)
+                    if drop_info:
+                        path, position = drop_info
+                        self.treeview.set_cursor(path)
+                        self.set_current_person(person)
+                        self.selection_widget.clear_selection()
+                        self.refresh()
+                        self.enable_buttons()
 
     def build_context_menu(self):
         self.context_menu = Gtk.Menu()
@@ -765,7 +794,10 @@ class PhotoTaggingGramplet(Gramplet):
             for path in pathlist:
                 tree_iter = model.get_iter(path)
                 i = model.get_value(tree_iter, 0)
-                return self.regions[i - 1]   
+                try:
+                    return self.regions[i - 1]   
+                except:
+                    return None
         return None
 
     # ======================================================
