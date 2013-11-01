@@ -43,10 +43,6 @@ import glob
 import sys
 import os
 
-# Force LANG to be English:
-# http://www.gramps-project.org/bugs/view.php?id=7136
-os.environ["LANG"] = "en.UTF-8"
-
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
@@ -307,6 +303,9 @@ elif command == "listing":
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
         plugins.append(kwargs)
+    # Force LANG to be English:
+    # http://www.gramps-project.org/bugs/view.php?id=7136
+    os.environ["LANG"] = "en.UTF-8"
     # first, get a list of all of the possible languages
     dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
     languages = set(['en'])
