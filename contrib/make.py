@@ -303,9 +303,6 @@ elif command == "listing":
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
         plugins.append(kwargs)
-    # Force LANG to be English:
-    # http://www.gramps-project.org/bugs/view.php?id=7136
-    os.environ["LANG"] = "en.UTF-8"
     # first, get a list of all of the possible languages
     dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
     languages = set(['en'])
@@ -325,11 +322,9 @@ elif command == "listing":
         listings = []
         for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
-                try:
-                    local_gettext = glocale.get_addon_translator(gpr,
-                                                      languages=[lang]).gettext
-                except ValueError:
-                    local_gettext = glocale.translation.gettext
+                # Make fallback language English (rather than current LANG)
+                local_gettext = glocale.get_addon_translator(
+                    gpr, languages=[lang, "en.UTF-8"]).gettext
                 plugins = []
                 with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
                     code = compile(f.read(),
