@@ -29,6 +29,9 @@ from __future__ import division
 import sys
 import os
 import pickle
+import logging
+
+LOG = logging.getLogger(".PhotoTaggingGramplet")
 
 #-------------------------------------------------------------------------
 #
@@ -337,35 +340,51 @@ class PhotoTaggingGramplet(Gramplet):
             # Perhaps allow multiple person drops
             # Sometimes, more than one person could be in a selected area
             people = []
+            # Just get the first one for now:, if a list:
             if sel_data.get_data_type() == DdTargets.HANDLE_LIST.atom_drag_type:
                 if data[0][0] == "Person":
                     handle = data[0][1]
-                    people.append(self.dbstate.db.get_person_from_handle(handle))
+                    person = self.dbstate.db.get_person_from_handle(handle)
+                    if person:
+                        people.append(person)
                 elif data[0][0] == "Event":
                     # get first, primary person of event:
                     event_handle = data[0][1]
                     event = self.dbstate.db.get_event_from_handle(event_handle)
                     for obj_class, handle in event.get_referenced_handles():
                         if obj_class == "Person":
-                            people.append(self.dbstate.db.get_person_from_handle(handle))
-                            break
+                            person = self.dbstate.db.get_person_from_handle(handle)
+                            if person:
+                                people.append(person)
+                                break
             elif sel_data.get_data_type() == DdTargets.PERSON_LINK.atom_drag_type:
                 (drag_type, idval, handle, val) = data
-                people.append(self.dbstate.db.get_person_from_handle(handle))
-            else:
-                # can't handle this kind of drop
-                return
-            for person in people:
+                person = self.dbstate.db.get_person_from_handle(handle)
                 if person:
-                    model = self.treeview.get_model()
-                    drop_info = self.treeview.get_dest_row_at_pos(x, y)
-                    if drop_info:
-                        path, position = drop_info
-                        self.treeview.set_cursor(path)
-                        self.set_current_person(person)
-                        self.selection_widget.clear_selection()
-                        self.refresh()
-                        self.enable_buttons()
+                    people.append(person)
+            else: # other formats work like this:
+                handle = None
+                try:
+                    (drag_type, idval, handle, val) = data
+                except:
+                    pass
+                if handle:
+                    person = self.dbstate.db.get_person_from_handle(handle)
+                    if person:
+                        people.append(person)
+                else:
+                    LOG.warn("Can't handle this type of of drop: '%s'" % sel_data.get_data_type())
+                    return
+            for person in people:
+                model = self.treeview.get_model()
+                drop_info = self.treeview.get_dest_row_at_pos(x, y)
+                if drop_info:
+                    path, position = drop_info
+                    self.treeview.set_cursor(path)
+                    self.set_current_person(person)
+                    self.selection_widget.clear_selection()
+                    self.refresh()
+                    self.enable_buttons()
 
     def build_context_menu(self):
         self.context_menu = Gtk.Menu()
