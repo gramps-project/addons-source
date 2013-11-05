@@ -268,6 +268,29 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection_widget.connect("zoomed-in", self.zoomed)
         self.selection_widget.connect("zoomed-out", self.zoomed)
 
+
+        # Can drop a PERSON here:
+        tglist = Gtk.TargetList.new([])
+        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        # Can drop a LIST of HANDLES here:
+        tglist.add(DdTargets.HANDLE_LIST.atom_drag_type, 
+                   DdTargets.HANDLE_LIST.target_flags,
+                   DdTargets.HANDLE_LIST.app_id)
+
+        # Drag and Drop for selection widget:
+        self.selection_widget.event_box.drag_dest_set(
+            Gtk.DestDefaults.MOTION |
+            Gtk.DestDefaults.DROP,
+            [],
+            Gdk.DragAction.COPY)
+        self.selection_widget.event_box.drag_dest_set_target_list(tglist)
+        self.selection_widget.event_box.connect(
+            'drag_data_received',
+            lambda *args: self.drag_data_received(*args, on_image=True))
+        # End Drag and Drop for selection widget
+
         hpaned.pack1(self.selection_widget, resize=True, shrink=False)
 
         self.treestore = Gtk.TreeStore(int, GdkPixbuf.Pixbuf, str)
@@ -297,23 +320,16 @@ class PhotoTaggingGramplet(Gramplet):
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
 
-        # Drag and Drop
-        self.treeview.drag_dest_set(Gtk.DestDefaults.MOTION |
-                                    Gtk.DestDefaults.DROP,
-                                    [],
-                                    Gdk.DragAction.COPY)
-        tglist = Gtk.TargetList.new([])
-        # Can drop a PERSON here:
-        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                   DdTargets.PERSON_LINK.target_flags,
-                   DdTargets.PERSON_LINK.app_id)
-        # Can drop a LIST of HANDLES here:
-        tglist.add(DdTargets.HANDLE_LIST.atom_drag_type, 
-                   DdTargets.HANDLE_LIST.target_flags,
-                   DdTargets.HANDLE_LIST.app_id)
+        # Drag and Drop for tree view:
+        self.treeview.drag_dest_set(
+            Gtk.DestDefaults.MOTION |
+            Gtk.DestDefaults.DROP,
+            [],
+            Gdk.DragAction.COPY)
         self.treeview.drag_dest_set_target_list(tglist)
-        self.treeview.connect('drag_data_received', self.drag_data_received)
-        # End Drag and Drop
+        self.treeview.connect('drag_data_received', 
+                              self.drag_data_received)
+        # End Drag and Drop for tree_view
         
         scrolled_window2 = Gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
@@ -328,7 +344,8 @@ class PhotoTaggingGramplet(Gramplet):
 
         return self.top
 
-    def drag_data_received(self, widget, context, x, y, sel_data, info, time):
+    def drag_data_received(self, widget, context, x, y, 
+                           sel_data, info, time, on_image=None):
         """
         Receive a dropped person onto the treeview.
         """
@@ -376,15 +393,23 @@ class PhotoTaggingGramplet(Gramplet):
                     LOG.warn("Can't handle this type of of drop: '%s'" % sel_data.get_data_type())
                     return
             for person in people:
-                model = self.treeview.get_model()
-                drop_info = self.treeview.get_dest_row_at_pos(x, y)
-                if drop_info:
-                    path, position = drop_info
-                    self.treeview.set_cursor(path)
-                    self.set_current_person(person)
-                    self.selection_widget.clear_selection()
-                    self.refresh()
-                    self.enable_buttons()
+                if on_image: # drop on image
+                    region = self.selection_widget.find_region(x, y)
+                    current = self.selection_widget.get_current()
+                    if region and (current is None or current == region):
+                        self.ask_and_set_person(region, person)
+                        self.selection_widget.clear_selection()
+                        self.refresh()
+                        self.enable_buttons()
+                else: # drop on list
+                    drop_info = self.treeview.get_dest_row_at_pos(x, y)
+                    if drop_info:
+                        #path, position = drop_info
+                        #self.treeview.set_cursor(path)
+                        self.set_current_person(person)
+                        self.selection_widget.clear_selection()
+                        self.refresh()
+                        self.enable_buttons()
 
     def build_context_menu(self):
         self.context_menu = Gtk.Menu()
@@ -540,8 +565,9 @@ class PhotoTaggingGramplet(Gramplet):
         """
         Removes the reference to the media object from the person.
         """
-        person.get_media_list().remove(mediaref)
-        self.commit_person(person)
+        if mediaref in person.get_media_list():
+            person.get_media_list().remove(mediaref)
+            self.commit_person(person)
 
     def commit_person(self, person):
         """
@@ -735,7 +761,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
 
     def set_current_person(self, person):
-        if self.selection_widget.get_current() and person:
+        self.ask_and_set_person(self.selection_widget.get_current(), person)
+
+    def ask_and_set_person(self, region, person):
+        if region and person:
             other_references = self.regions_referencing_person(person)
             ref_count = len(other_references)
             if ref_count > 0:
@@ -759,7 +788,7 @@ class PhotoTaggingGramplet(Gramplet):
                     dialog.destroy()
                     if response == Gtk.ResponseType.YES:
                         self.delete_regions(other_references)
-            self.set_person(self.selection_widget.get_current(), person)
+            self.set_person(region, person)
 
     def set_person(self, region, person):
         rect = self.check_and_translate_to_proportional(
