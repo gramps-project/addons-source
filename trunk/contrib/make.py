@@ -332,7 +332,7 @@ elif command == "listing":
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         listings = []
-        for addon in sorted(dirs):
+        for addon in dirs:
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
                 # Make fallback language English (rather than current LANG)
                 local_gettext = glocale.get_addon_translator(
