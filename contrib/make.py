@@ -32,13 +32,16 @@ Examples:
       Compiles AddonDirectory/po/*-local.po and puts the resulting
       .mo file in AddonDirectory/locale/*/LC_MESSAGES/addon.mo
 
+   python make.py listing AddonDirectory
+   python make.py listing all
+
    python make.py dist-clean
    python make.py dist-clean AddonDirectory
    python make.py clean
    python make.py clean AddonDirectory
-   python make.py listing
 """
 from __future__ import print_function
+import shutil
 import glob
 import sys
 import os
@@ -304,8 +307,11 @@ elif command == "listing":
         kwargs["ptype"] = PTYPE_STR[ptype]
         plugins.append(kwargs)
     # first, get a list of all of the possible languages
-    dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
-    languages = set(['en'])
+    if addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+    else:
+        dirs = [addon]
+    # Make the locale for for any local languages for Addon:
     for addon in dirs:
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             length= len(po)
@@ -314,9 +320,15 @@ elif command == "listing":
             system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+    # Get all languages from all addons:
+    languages = set(['en'])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
             locale_path, locale = po.rsplit("/", 1)
             languages.add(locale[:-9])
-    # next, create a file for all languages listing plugins
+    # next, create/edit a file for all languages listing plugins
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         listings = []
@@ -347,9 +359,26 @@ elif command == "listing":
                         listings.append(plugin)
                     else:
                         print("   ignoring '%s'" % (p["name"]))
-        fp = open("../listings/addons-%s.txt" % lang, "w")
-        for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
-        fp.close()
+        # Write out new listing:
+        if addon == "all":
+            # Replace it!
+            fp = open("../listings/addons-%s.txt" % lang, "w")
+            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
+            fp.close()
+        else:
+            # just update the lines from these addons:
+            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+                fp_in = open("../listings/addons-%s.txt" % lang, "r")
+                fp_out = open("../listings/addons-%s.new" % lang, "w")
+                for line in fp_in:
+                    if addon + ".addon.tgz" in line:
+                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                    else:
+                        print(line, end="", file=fp_out)
+                fp_in.close()
+                fp_out.close()
+                shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
+                    
 else:
     raise AttributeError("unknown command")
