@@ -368,13 +368,19 @@ elif command == "listing":
             fp.close()
         else:
             # just update the lines from these addons:
+            added = False
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 fp_in = open("../listings/addons-%s.txt" % lang, "r")
                 fp_out = open("../listings/addons-%s.new" % lang, "w")
                 for line in fp_in:
+                    dictionary = eval(line)
                     if addon + ".addon.tgz" in line:
                         print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                        added = True
                     else:
+                        if plugin["t"] > dictionary["t"] and not added:
+                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                            added = True
                         print(line, end="", file=fp_out)
                 fp_in.close()
                 fp_out.close()
