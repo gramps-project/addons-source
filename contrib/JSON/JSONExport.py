@@ -34,7 +34,7 @@ from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
 from gramps.gen.lib import (Note, Person, Event, Family, 
                             Repository, Place, MediaObject, 
-                            Source, Tag)
+                            Source, Tag, Citation)
 
 def exportData(database, filename, 
                error_dialog=None, option_box=None, callback=None):
@@ -50,6 +50,7 @@ def exportData(database, filename,
                  len(database.repository_map) +
                  len(database.place_map) +
                  len(database.media_map) +
+                 len(database.citation_map) +
                  len(database.source_map) +
                  len(database.tag_map))
         count = 0.0
@@ -114,6 +115,15 @@ def exportData(database, filename,
         for handle in database.source_map.keys():
             serial = database.source_map[handle]
             write_line(fp, Source.create(serial))
+            count += 1
+            callback(100 * count/total)
+
+        # ---------------------------------
+        # Citation
+        # ---------------------------------
+        for handle in database.citation_map.keys():
+            serial = database.citation_map[handle]
+            write_line(fp, Citation.create(serial))
             count += 1
             callback(100 * count/total)
 
