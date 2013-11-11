@@ -48,7 +48,6 @@ from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.merge.diff import diff_dbs, import_as_dict
 from gramps.gen.simple import SimpleAccess
-from gramps.gen.lib.handle import Handle
 
 #------------------------------------------------------------------------
 #
@@ -233,12 +232,6 @@ class DifferencesReport(Report):
             diff2 = todate(diff2)
             desc1 = diff1
             desc2 = diff2
-        if (isinstance(diff1, Handle)):
-            desc1 = self.sa[0].describe(diff1, diff1.classname, diff1.handle)
-            diff1 = diff1.handle
-        if (isinstance(diff2, Handle)):
-            desc2 = self.sa[1].describe(diff2, diff2.classname, diff2.handle)
-            diff2 = diff2.handle
         if diff1 == diff2:
             return
         doc.start_row()
@@ -263,12 +256,7 @@ class DifferencesReport(Report):
         """
         Compare two struct objects and report differences.
         """
-        if (isinstance(struct1, Handle) and
-            isinstance(struct2, Handle) and
-            struct1.classname == struct2.classname and
-            struct1.handle == struct2.handle):
-            return 
-        elif struct1 == struct2:
+        if struct1 == struct2:
             return
         elif (isinstance(struct1, (list, tuple)) or 
               isinstance(struct2, (list, tuple))):
