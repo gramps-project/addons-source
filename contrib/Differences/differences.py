@@ -224,7 +224,7 @@ class DifferencesReport(Report):
         else:
             desc1 = str(diff1) if diff1 else ""
         if isinstance(diff2, bool):
-            desc1 = repr(diff2)
+            desc2 = repr(diff2)
         else:
             desc2 = str(diff2) if diff2 else ""
         if path.endswith(".change"):
