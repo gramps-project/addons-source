@@ -19,7 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Navigateur Media',"v":'1.0.16',"g":'4.1',"d":u"Gramplet affichant les d\xe9tails de l'individu","z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Gramplet Note',"v":'1.0.20',"g":'4.1',"d":u"Gramplet pour l'\xe9dition des notes de l'individu actif","z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.4',"g":'4.1',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
-{"t":'Gramplet',"i":'Photo Tagging',"n":u'Cartographie photographique',"v":'1.0.4',"g":'4.1',"d":u'Gramplet pour d\xe9finir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":u'Cartographie photographique',"v":'1.0.5',"g":'4.1',"d":u'Gramplet pour d\xe9finir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet Python',"v":'1.0.18',"g":'4.1',"d":u'Un interpr\xe9teur python interactif',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":u'Gramplet Requ\xeate',"v":'1.0.17',"g":'4.1',"d":u'Gramplet pour des requ\xeates SQL-like',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Gramplet Parent\xe9s',"v":'1.0.18',"g":'4.1',"d":u'Gramplet affichant les parent\xe9s dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
