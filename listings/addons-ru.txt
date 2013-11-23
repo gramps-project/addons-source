@@ -19,7 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":'Media Browser',"v":'1.0.16',"g":'4.1',"d":'Gramplet showing details of a person',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":'Note Gramplet',"v":'1.0.20',"g":'4.1',"d":"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.4',"g":'4.1',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
-{"t":'Gramplet',"i":'Photo Tagging',"n":u'\u0420\u0430\u0437\u043c\u0435\u0442\u043a\u0430 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439',"v":'1.0.4',"g":'4.1',"d":u'\u0413\u0440\u0430\u043c\u043f\u043b\u0435\u0442 \u0434\u043b\u044f \u0440\u0430\u0437\u043c\u0435\u0442\u043a\u0438 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":u'\u0420\u0430\u0437\u043c\u0435\u0442\u043a\u0430 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439',"v":'1.0.5',"g":'4.1',"d":u'\u0413\u0440\u0430\u043c\u043f\u043b\u0435\u0442 \u0434\u043b\u044f \u0440\u0430\u0437\u043c\u0435\u0442\u043a\u0438 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.18',"g":'4.1',"d":'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.17',"g":'4.1',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
