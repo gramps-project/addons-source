@@ -51,6 +51,12 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
+if (("LANG" not in os.environ) or 
+    (not os.environ["LANG"].startswith("en"))):
+    raise ValueError("LANG should explicitly be english; Use 'LANG=en_US.UTF-8 python make.py...' or similar")
+else:
+    print("make.py: LANG is %s... good!" % os.environ["LANG"])
+
 command = sys.argv[1]
 if len(sys.argv) >= 3:
     addon = sys.argv[2]
