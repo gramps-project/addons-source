@@ -23,6 +23,8 @@
 Run a query on the tables
 """
 
+from __future__ import print_function
+
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.gui.plug.quick import QuickTable
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -33,30 +35,40 @@ except ValueError:
 _ = _trans.gettext
 import gramps.gen.datehandler
 import gramps.gen.lib
+from gramps.gen.merge.diff import Struct
+
+def groupings(string):
+    groups = []
+    current_type = None
+    for c in string:
+        if (not c.isdigit()) and current_type == "alpha":
+            groups[-1].append(c)
+        elif c.isdigit() and current_type == "numeric":
+            groups[-1].append(c)
+        else:
+            if c.isdigit():
+                current_type = "numeric"
+            else:
+                current_type = "alpha"
+            groups.append([c])
+    retval = []
+    for group in groups:
+        if group[0].isdigit():
+            retval.append("".join(group).zfill(10))
+        else:
+            retval.append("".join(group).zfill(5))
+    return (retval)
+
 
 class DBI(object):
     def __init__(self, database, document):
         self.database = database
         self.document = document
 
-        self.data = {
-            "people": 
-            ("person", {"given_name": "person.get_primary_name().get_first_name()",
-                        "surname": "person.get_primary_name().get_surname()",
-                        "suffix": "person.get_primary_name().get_suffix()",
-                        "title": "person.get_primary_name().get_title()",
-                        "birth_date": "self.sdb.birth_date_obj(person)",
-                        "death_date": "self.sdb.death_date_obj(person)",
-                        "gender": "self.sdb.gender(person)",
-                        "birth_place": "self.sdb.birth_place(person)",
-                        "death_place": "self.sdb.death_place(person)",
-                        "change": "person.get_change_display()",
-                        "marker": "person.marker.string",
-                        }),
-            "families": ("family", {}),
-            "sources": ("source", {}),
-            "events": ("event", {}),
-            }
+        self.data = {}
+        for name in self.database.get_table_names():
+            d = self.database._tables[name]["class_func"]().to_struct()
+            self.data[name.lower()] = d.keys()
 
     def parse(self, query):
         # select col1, col2 from table where exp;
@@ -103,9 +115,23 @@ class DBI(object):
                 if c in [' ', '\n', '\t']: # ending white space
                     self.command = data.lower()
                     data = ''
-                    state = "AFTER-COMMAND"
+                    if self.command == "delete":
+                        state = "GET_SET"
+                        substate = ""
+                    else:
+                        state = "AFTER-COMMAND"
                 else:
                     data += c
+            elif state == "GET_SET":
+                if c in [' ', '\n', '\t']: # pre white space
+                    pass
+                else:
+                    substate += c.upper()
+                    if substate == "SET":
+                        state = "GET_SET_PAIRS"
+                        substate = ""
+            elif "GET_SET_PAIRS":
+                pass
             elif state == "AFTER-COMMAND":
                 if c in [' ', '\n', '\t']: # pre white space
                     pass
@@ -144,7 +170,7 @@ class DBI(object):
             elif state == "GET-TABLE":
                 if c in [' ', '\n', '\t', ';']: # end white space or colon
                     self.table = data.lower()
-                    self.name = self.data[self.table][0]
+                    self.name = data.lower()
                     data = ''
                     state = "PRE-GET-WHERE"
                 else:
@@ -197,27 +223,25 @@ class DBI(object):
         return _("[%d rows processed]") % self.select
 
     def get_columns(self, table):
-        retval = self.data[table][1].keys()
-        retval.sort()
-        return [self.name] + retval
+        retval = self.data[table]
+        return retval # [self.name] + retval
 
     def process_table(self):
         for col_name in self.columns[:]: # copy
             if col_name == "*":
                 self.columns.remove('*')
                 self.columns.extend( self.get_columns(self.table))
-        self.stab.columns(*map(lambda s: s.replace("_", " ").title(),
-                               self.columns))
-        if self.table == "people":
+        self.stab.columns(*self.columns)
+        if self.table == "person":
             self.do_query(self.sdb.all_people())
-        elif self.table == "families":
+        elif self.table == "family":
             self.do_query(self.sdb.all_families())
-        elif self.table == "events":
+        elif self.table == "event":
             self.do_query(self.sdb.all_events())
-        elif self.table == "sources":
+        elif self.table == "source":
             self.do_query(self.sdb.all_sources())
         else:
-            raise AttributeError, ("no such table: '%s'" % self.table)
+            raise AttributeError("no such table: '%s'" % self.table)
 
     def make_env(self, **kwargs):
         """
@@ -226,50 +250,55 @@ class DBI(object):
         retval= {
             _("Date"): gramps.gen.lib.date.Date,
             _("Today"): gramps.gen.lib.date.Today(),
+            "groupings": groupings,
             }
-        # Fixme: make these lazy, for delayed lookup
-        #retval.update(self.data[self.table][1])
         retval.update(kwargs) 
         return retval
 
     def do_query(self, items):
-        count = 0
         for item in items:
-            count += 1
             row = []
-            sorts = []
-            env = self.make_env(col=row)
-            env[self.name] = item
+            row_env = []
+            sorts = [] # [[0, "groupings(gramps_id)"]]
+            # col[0] in where will return first column of selection:
+            env = self.make_env(col=row_env) 
+            struct = item.to_struct()
+            s = Struct(struct, self.database)
             for col in self.columns:
-                col_name = col
-                if col in self.data[self.table][1]:
-                    col = self.data[self.table][1][col]
-                if col == "":
-                    continue
-                else:
-                    try:
-                        env[col_name] = eval(col, env)
-                    except:
-                        env[col_name] = "" 
-                row.append(env[col_name])
+                value = s[col] # col is path
+                row.append(str(value))
+                # for where eval:
+                # get top-level name:
+                col_top = col.split(".")[0]
+                # set in environment:
+                env[col_top] = getattr(s, col_top)
+                # allow col[#] reference:
+                row_env.append(s[col])
+            # Should we include this row?
             if self.where:
                 try:
                     result = eval(self.where, env)
                 except:
+                    print("Error in where clause:", self.where)
                     result = False
             else:
                 result = True
+            # If result, then append the row
             if result:
                 self.select += 1
                 if self.command == "select":
-                    self.stab.row(*row)
-                    for (col, value) in sorts:
-                        self.stab.row_sort_val(col, value)
+                    if self.select < 50:
+                        self.stab.row(*row)
+                        #for (col, value) in sorts:
+                        #    self.stab.row_sort_val(col, eval(value, env))
+                elif self.command == "update":
+                    # update table set col=val, col=val where expr;
+                    pass
                 elif self.command == "delete":
                     #self.database.active = person
                     #trans = self.database.transaction_begin()
                     #active_name = _("Delete Person (%s)") % self.sdb.name(person)
-                    #gramps.gen.utils.delete_person_from_database(self.database, person, trans)
+                    #db.delete_person_from_database(self.database, person, trans)
                     ## FIXME: delete familes, events, notes, resources, etc, if possible
                     #self.database.transaction_commit(trans, active_name)
                     pass
@@ -285,11 +314,11 @@ def run(database, document, query):
     dbi = DBI(database, document)
     try:
         q = dbi.parse(query)
-    except AttributeError, msg:
+    except AttributeError as msg:
         return msg
     try:
         retval = dbi.eval()
-    except AttributeError, msg:
+    except AttributeError as msg:
         # dialog?
         retval = msg
     dbi.close()
