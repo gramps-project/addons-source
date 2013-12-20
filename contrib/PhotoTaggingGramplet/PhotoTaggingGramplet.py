@@ -25,7 +25,7 @@
 # Standard python modules
 #
 #-------------------------------------------------------------------------
-from __future__ import division
+from __future__ import division, unicode_literals
 import sys
 import os
 import pickle
