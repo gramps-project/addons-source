@@ -87,7 +87,7 @@ class DBI(object):
         self.name = None
         while i < len(query):
             c = query[i]
-            #print "STATE:", state, c, substate
+            #print(state, substate, c)
             if substate:
                 if substate == "IN-EXP":
                     data += c
@@ -116,22 +116,37 @@ class DBI(object):
                     self.command = data.lower()
                     data = ''
                     if self.command == "delete":
-                        state = "GET_SET"
-                        substate = ""
+                        state = "PRE-GET-UPDATE-TABLE"
                     else:
                         state = "AFTER-COMMAND"
                 else:
                     data += c
-            elif state == "GET_SET":
+            elif state == "PRE-GET-UPDATE-TABLE":
+                if c in [' ', '\n', '\t']: # pre white space
+                    pass
+                else:
+                    state = "GET-UPDATE-TABLE"
+                    substate = ""
+                    i -= 1
+            elif state == "GET-UPDATE-TABLE":
+                if c in [' ', '\n', '\t']: # pre white space
+                    state = "GET-SET"
+                    self.table = substate
+                else:
+                    substate += c
+            elif state == "GET-SET":
                 if c in [' ', '\n', '\t']: # pre white space
                     pass
                 else:
                     substate += c.upper()
                     if substate == "SET":
-                        state = "GET_SET_PAIRS"
+                        state = "GET-SET-PAIRS"
                         substate = ""
-            elif "GET_SET_PAIRS":
-                pass
+            elif state == "GET-SET-PAIRS":
+                if c in [' ', '\n', '\t']: # pre white space
+                    pass
+                else:
+                    substate += c
             elif state == "AFTER-COMMAND":
                 if c in [' ', '\n', '\t']: # pre white space
                     pass
