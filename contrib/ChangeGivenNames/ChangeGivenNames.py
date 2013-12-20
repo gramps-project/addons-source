@@ -46,6 +46,7 @@ from gramps.gui.managedwindow import ManagedWindow
 
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
+from gramps.gen.constfunc import cuni, lin
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -53,8 +54,6 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gui.glade import Glade
-
-import gramps.gen.constfunc
 
 #-------------------------------------------------------------------------
 #
@@ -138,7 +137,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
     def display(self):
 
-        if gramps.gen.constfunc.lin():
+        if lin():
             import locale, os
             locale.setlocale(locale.LC_ALL, '')
             # This is needed to make gtk.Builder work by specifying the
@@ -243,7 +242,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         node = store.get_iter(tpath) if tpath else None
         if node:
             name = store.get_value(node, 1) 
-            for handle in self.name_map[name]:
+            for handle in self.name_map[cuni(name)]:
                 person = self.dbstate.db.get_person_from_handle(handle)
                 EditPerson(self.dbstate, self.uistate, [], person)
 
@@ -251,8 +250,8 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         with DbTxn(_("Capitalization changes"), self.db, batch=True
                    ) as self.trans:
             self.db.disable_signals()
-            changelist = set(self.model.get_value(node,1)
-                            for node in self.iter_list
+            changelist = set(cuni(self.model.get_value(node,1))
+                             for node in self.iter_list
                                 if self.model.get_value(node,0))
 
             for handle in self.db.get_person_handles(False):
