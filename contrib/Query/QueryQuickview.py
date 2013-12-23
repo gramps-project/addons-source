@@ -64,158 +64,143 @@ class DBI(object):
     def __init__(self, database, document):
         self.database = database
         self.document = document
-
         self.data = {}
-        for name in self.database.get_table_names():
-            d = self.database._tables[name]["class_func"]().to_struct()
-            self.data[name.lower()] = d.keys()
+        if self.database:
+            for name in self.database.get_table_names():
+                d = self.database._tables[name]["class_func"]().to_struct()
+                self.data[name.lower()] = d.keys()
 
     def parse(self, query):
-        # select col1, col2 from table where exp;
-        # select * from table where exp;
-        # delete from table where exp;
-        self.query = query
-        state = "START"
-        substate = None
-        subdepth = {"(": 0, "[": 0}
-        data = None
+        self.query = query.strip()
+        self.parser(self.lexer(self.query))
+
+    def lexer(self, string):
+        """
+        Given a string, break into a list of Lexical Symbols
+        """
+        retval = []
+        state = None
+        current = ""
+        stack = []
         i = 0
-        self.columns = []
-        self.command = None
-        self.where = None
-        self.table = None
-        self.name = None
-        while i < len(query):
-            c = query[i]
-            #print(state, substate, c)
-            if substate:
-                if substate == "IN-EXP":
-                    data += c
-                    if c in ['(']:
-                        subdepth["("] += 1
-                    elif c in ['[']:
-                        subdepth["["] += 1
-                    elif c in [']']:
-                        subdepth["["] -= 1
-                    elif c in [')']:
-                        subdepth["("] -= 1
-                    if not any(subdepth.values()):
-                        substate = None
-                elif substate == "IN-QUOTE":
-                    if c in ['"']:
-                        substate = None
-                    data += c
-            elif state == "START":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass # skip it
+        while i < len(string):
+            ch = string[i]
+            #print("lex:", i, ch)
+            if state == "in-double-quote":
+                if ch == '"':
+                    state = stack.pop()
+                    retval.append(current)
+                    current = ""
                 else:
-                    state = "COMMAND"
-                    data = c
-            elif state == "COMMAND":
-                if c in [' ', '\n', '\t']: # ending white space
-                    self.command = data.lower()
-                    data = ''
-                    if self.command == "delete":
-                        state = "PRE-GET-UPDATE-TABLE"
-                    else:
-                        state = "AFTER-COMMAND"
+                    current += ch
+            elif ch == '"':
+                stack.append(state)
+                state = "in-double-quote"
+                current = ""
+            elif ch == ",":
+                if current:
+                    retval.append(current)
+                    current = ""
                 else:
-                    data += c
-            elif state == "PRE-GET-UPDATE-TABLE":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
+                    raise ValueError("invalid comma in expression at position %d" % i)
+                retval.append(",")
+            elif ch == "=":
+                if current:
+                    retval.append(current)
+                    current = ""
                 else:
-                    state = "GET-UPDATE-TABLE"
-                    substate = ""
-                    i -= 1
-            elif state == "GET-UPDATE-TABLE":
-                if c in [' ', '\n', '\t']: # pre white space
-                    state = "GET-SET"
-                    self.table = substate
+                    raise ValueError("invalid equal-sign in expression at position %d" % i)
+                retval.append("=")
+            elif ch in [' ', '\t', '\n', ";"]: # break
+                if current:
+                    retval.append(current)
+                    if current.upper() == "WHERE":
+                        # HACK: get rest of string:
+                        if string[-1] == ";":
+                            retval.append(string[i + 1:-1])
+                            i = len(string) - 2
+                        else:
+                            retval.append(string[i + 1:])
+                            i = len(string) - 1
+                    current = ""
                 else:
-                    substate += c
-            elif state == "GET-SET":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
-                else:
-                    substate += c.upper()
-                    if substate == "SET":
-                        state = "GET-SET-PAIRS"
-                        substate = ""
-            elif state == "GET-SET-PAIRS":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
-                else:
-                    substate += c
-            elif state == "AFTER-COMMAND":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
-                else:
-                    state = "COL_OR_FROM"
-                    i -= 1
-            elif state == "COL_OR_FROM":
-                if c in ['"']:
-                    substate = "IN-QUOTE"
-                    data += c
-                elif c in ['(']:
-                    substate = "IN-EXP"
-                    data += c
-                    subdepth["("] += 1
-                elif c in ['[']:
-                    substate = "IN-EXP"
-                    data += c
-                    subdepth["["] += 1
-                elif c in [' ', '\n', '\t',  ',']: # end white space or comma
-                    if data.upper() == "FROM":
-                        data = ''
-                        state = "PRE-GET-TABLE"
-                    else:
-                        if data:
-                            self.columns.append(data)
-                        data = ''
-                        state = "AFTER-COMMAND"
-                else:
-                    data += c
-            elif state == "PRE-GET-TABLE":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
-                else:
-                    state = "GET-TABLE"
-                    i -= 1
-            elif state == "GET-TABLE":
-                if c in [' ', '\n', '\t', ';']: # end white space or colon
-                    self.table = data.lower()
-                    self.name = data.lower()
-                    data = ''
-                    state = "PRE-GET-WHERE"
-                else:
-                    data += c
-            elif state == "PRE-GET-WHERE":
-                if c in [' ', '\n', '\t']: # pre white space
-                    pass
-                else:
-                    state = "GET-WHERE"
-                    i -= 1
-            elif state == "GET-WHERE":
-                if c in [' ', '\n', '\t']: # end white space
-                    if data.upper() != "WHERE":
-                        raise AttributeError("expecting WHERE got '%s'" % data)
-                    else:
-                        data = ''
-                        state = "GET-EXP"
-                else:
-                    data += c
-            elif state == "GET-EXP":
-                self.where = query[i:]
-                self.where = self.where.strip()
-                if self.where.endswith(";"):
-                    self.where = self.where[:-1]
-                i = len(query)
+                    pass # ignore whitespace
             else:
-                raise AttributeError("unknown state: '%s'" % state)
+                current += ch
             i += 1
-        if self.table is None:
-            raise AttributeError("malformed query: no table in '%s'\n" % self.query)
+        #print("lexed:", retval)
+        return retval
+
+    def parser(self, lex):
+        self.action = None
+        self.table = None
+        self.columns = []
+        self.setcolumns = []
+        self.values = []
+        self.aliases = {}
+        self.where = None
+        self.index = 0
+        while self.index in range(len(lex)):
+            symbol = lex[self.index]
+            if symbol.upper() == "FROM":
+                # from table select *;
+                if self.index < len(lex):
+                    self.index += 1
+                    self.table = lex[self.index]
+            elif symbol.upper() == "SELECT":
+                # select a, b from table;
+                self.action = "SELECT"
+                self.index += 1
+                self.columns.append(lex[self.index])
+                self.index += 1
+                while self.index < len(lex) and lex[self.index] in [",", "as"]:
+                    sep = lex[self.index]
+                    if sep == ",":
+                        self.index += 1
+                        self.columns.append(lex[self.index])
+                        self.index += 1
+                    elif sep == "as":
+                        self.index += 1 # alias
+                        self.aliases[self.columns[-1]] = lex[self.index]
+                        self.index += 1
+                self.index -= 1
+            elif symbol.upper() == "DELETE":
+                # delete from table where item == 1;
+                self.action = "DELETE"
+                self.columns = ["*"] # for where clause
+            elif symbol.upper() == "SET":
+                # SET x=1, y=2
+                self.index += 1
+                self.setcolumns.append(lex[self.index]) # first column
+                self.index += 1 # equal sign
+                # =
+                self.index += 1 # value
+                self.values.append(lex[self.index])
+                self.index += 1 # comma
+                while self.index < len(lex) and lex[self.index] == ",":
+                    self.index += 1 # next column
+                    self.setcolumns.append(lex[self.index])
+                    self.index += 1 # equal
+                    # =
+                    self.index += 1 # value
+                    self.values.append(lex[self.index])
+                    self.index += 1 # comma?
+                self.index -= 1
+            elif symbol.upper() == "LIMIT":
+                pass # FIXME
+            elif symbol.upper() == "WHERE":
+                # how can we get all of Python expressions?
+                # this assumes all by ;
+                self.index += 1
+                self.where = lex[self.index]
+            elif symbol.upper() == "UPDATE":
+                self.columns = ["*"] # for where clause
+                # update table set x=1, y=2 where condition;
+                self.action = "UPDATE"
+                if self.index < len(lex):
+                    self.index += 1
+                    self.table = lex[self.index]
+            self.index += 1
 
     def close(self):
         #try:
@@ -246,7 +231,7 @@ class DBI(object):
             if col_name == "*":
                 self.columns.remove('*')
                 self.columns.extend( self.get_columns(self.table))
-        self.stab.columns(*self.columns)
+        self.stab.columns(*[column.replace("_", "__") for column in self.columns])
         if self.table == "person":
             self.do_query(self.sdb.all_people())
         elif self.table == "family":
@@ -271,55 +256,53 @@ class DBI(object):
         return retval
 
     def do_query(self, items):
-        for item in items:
-            row = []
-            row_env = []
-            sorts = [] # [[0, "groupings(gramps_id)"]]
-            # col[0] in where will return first column of selection:
-            env = self.make_env(col=row_env) 
-            struct = item.to_struct()
-            s = Struct(struct, self.database)
-            for col in self.columns:
-                value = s[col] # col is path
-                row.append(str(value))
-                # for where eval:
-                # get top-level name:
-                col_top = col.split(".")[0]
-                # set in environment:
-                env[col_top] = getattr(s, col_top)
-                # allow col[#] reference:
-                row_env.append(s[col])
-            # Should we include this row?
-            if self.where:
-                try:
-                    result = eval(self.where, env)
-                except:
-                    print("Error in where clause:", self.where)
-                    result = False
-            else:
-                result = True
-            # If result, then append the row
-            if result:
-                self.select += 1
-                if self.command == "select":
-                    if self.select < 50:
-                        self.stab.row(*row)
-                        #for (col, value) in sorts:
-                        #    self.stab.row_sort_val(col, eval(value, env))
-                elif self.command == "update":
-                    # update table set col=val, col=val where expr;
-                    pass
-                elif self.command == "delete":
-                    #self.database.active = person
-                    #trans = self.database.transaction_begin()
-                    #active_name = _("Delete Person (%s)") % self.sdb.name(person)
-                    #db.delete_person_from_database(self.database, person, trans)
-                    ## FIXME: delete familes, events, notes, resources, etc, if possible
-                    #self.database.transaction_commit(trans, active_name)
-                    pass
+        with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
+            for item in items:
+                row = []
+                row_env = []
+                sorts = [] # [[0, "groupings(gramps_id)"]]
+                # col[0] in where will return first column of selection:
+                env = self.make_env(col=row_env) 
+                struct = item.to_struct()
+                s = Struct(struct, self.database)
+                for col in self.columns:
+                    value = s[col] # col is path
+                    row.append(str(value))
+                    # for where eval:
+                    # get top-level name:
+                    col_top = col.split(".")[0]
+                    # set in environment:
+                    env[col_top] = getattr(s, col_top)
+                    # allow col[#] reference:
+                    row_env.append(s[col])
+                # Should we include this row?
+                if self.where:
+                    try:
+                        result = eval(self.where, env)
+                    except:
+                        print("Error in where clause:", self.where)
+                        result = False
                 else:
-                    raise AttributeError("unknown command: '%s'", self.command)
-
+                    if self.action in ["DELETE", "UPDATE"]:
+                        result = True
+                    else:
+                        result = any([col != "None" for col in row]) # are they all None?
+                # If result, then append the row
+                if result:
+                    self.select += 1
+                    if self.action == "SELECT":
+                        if self.select < 50: # FIXME: use LIMIT
+                            self.stab.row(*row)
+                    elif self.action == "UPDATE":
+                        # update table set col=val, col=val where expr;
+                        self.stab.row(*row)
+                        for i in range(len(self.setcolumns)):
+                            s.setitem(self.setcolumns[i], self.values[i], trans=trans)
+                    elif self.action == "DELETE":
+                        self.stab.row(*row)
+                        self.database.remove_from_database(item, trans)
+                    else:
+                        raise AttributeError("unknown command: '%s'", self.action)
 
 def run(database, document, query):
     """
