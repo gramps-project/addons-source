@@ -65,6 +65,7 @@ class DBI(object):
         self.database = database
         self.document = document
         self.data = {}
+        self.select = 0
         if self.database:
             for name in self.database.get_table_names():
                 d = self.database._tables[name]["class_func"]().to_struct()
@@ -73,6 +74,10 @@ class DBI(object):
     def parse(self, query):
         self.query = query.strip()
         self.parser(self.lexer(self.query))
+        for col_name in self.columns[:]: # copy
+            if col_name == "*":
+                self.columns.remove('*')
+                self.columns.extend(self.get_columns(self.table))
 
     def lexer(self, string):
         """
@@ -212,8 +217,9 @@ class DBI(object):
         self.sdb = SimpleAccess(self.database)
         self.stab = QuickTable(self.sdb)
         self.select = 0
-        self.process_table()
+        self.process_table(self.stab) # a class that has .row(1, 2, 3, ...)
         if self.select > 0:
+            self.stab.columns(*[column.replace("_", "__") for column in self.columns])
             self.sdoc = SimpleDoc(self.document)
             self.sdoc.title(self.query)
             self.sdoc.paragraph("\n")
@@ -223,23 +229,22 @@ class DBI(object):
         return _("[%d rows processed]") % self.select
 
     def get_columns(self, table):
-        retval = self.data[table]
-        return retval # [self.name] + retval
+        if self.database:
+            retval = self.data[table.lower()]
+            return retval # [self.name] + retval
+        else:
+            return ["*"]
 
-    def process_table(self):
-        for col_name in self.columns[:]: # copy
-            if col_name == "*":
-                self.columns.remove('*')
-                self.columns.extend( self.get_columns(self.table))
-        self.stab.columns(*[column.replace("_", "__") for column in self.columns])
+    def process_table(self, table):
+        # table: a class that has .row(1, 2, 3, ...)
         if self.table == "person":
-            self.do_query(self.sdb.all_people())
+            self.do_query(self.sdb.all_people(), table)
         elif self.table == "family":
-            self.do_query(self.sdb.all_families())
+            self.do_query(self.sdb.all_families(), table)
         elif self.table == "event":
-            self.do_query(self.sdb.all_events())
+            self.do_query(self.sdb.all_events(), table)
         elif self.table == "source":
-            self.do_query(self.sdb.all_sources())
+            self.do_query(self.sdb.all_sources(), table)
         else:
             raise AttributeError("no such table: '%s'" % self.table)
 
@@ -255,7 +260,8 @@ class DBI(object):
         retval.update(kwargs) 
         return retval
 
-    def do_query(self, items):
+    def do_query(self, items, table):
+        # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
             for item in items:
                 row = []
@@ -291,15 +297,15 @@ class DBI(object):
                 if result:
                     self.select += 1
                     if self.action == "SELECT":
-                        if self.select < 50: # FIXME: use LIMIT
-                            self.stab.row(*row)
+                        #if self.select < 50: # FIXME: use LIMIT
+                        table.row(*row)
                     elif self.action == "UPDATE":
                         # update table set col=val, col=val where expr;
-                        self.stab.row(*row)
+                        table.row(*row)
                         for i in range(len(self.setcolumns)):
                             s.setitem(self.setcolumns[i], self.values[i], trans=trans)
                     elif self.action == "DELETE":
-                        self.stab.row(*row)
+                        table.row(*row)
                         self.database.remove_from_database(item, trans)
                     else:
                         raise AttributeError("unknown command: '%s'", self.action)
