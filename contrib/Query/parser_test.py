@@ -187,6 +187,22 @@ class ParseTest(unittest.TestCase):
             values=["False or True"],
         )
 
+        self.do_test(
+            "SELECT * from person LIMIT 5",
+            table="person",
+            limit=(1,5),
+            where=None,
+            columns=["*"],
+        )
+
+        self.do_test(
+            "SELECT * from person LIMIT 10, 20",
+            table="person",
+            limit=(10,20),
+            where=None,
+            columns=["*"],
+        )
+
 class Table:
     def __init__(self):
         self.data = []
@@ -266,6 +282,14 @@ class SelectTest(unittest.TestCase):
                      "from person "
                      "where primary_name.first_name == 'XXX' and not private;", 
                      0)
+
+        self.do_test(
+            "SELECT * from person LIMIT 10, 20",
+            10)
+
+        self.do_test(
+            "SELECT * from person LIMIT 5",
+            5)
         
 if __name__ == "__main__":
     unittest.main()
