@@ -257,6 +257,8 @@ class DBI(object):
             return ["*"]
 
     def process_table(self, table):
+        # 'Person', 'Family', 'Source', 'Citation', 'Event', 'Media',
+        # 'Place', 'Repository', 'Note', 'Tag'
         # table: a class that has .row(1, 2, 3, ...)
         if self.table == "person":
             self.do_query(self.sdb.all_people(), table)
@@ -266,6 +268,18 @@ class DBI(object):
             self.do_query(self.sdb.all_events(), table)
         elif self.table == "source":
             self.do_query(self.sdb.all_sources(), table)
+        elif self.table == "tag":
+            self.do_query(self.sdb.all_tags(), table)
+        elif self.table == "citation":
+            self.do_query(self.sdb.all_citations(), table)
+        elif self.table == "media":
+            self.do_query(self.sdb.all_media(), table)
+        elif self.table == "place":
+            self.do_query(self.sdb.all_places(), table)
+        elif self.table == "repository":
+            self.do_query(self.sdb.all_repositories(), table)
+        elif self.table == "note":
+            self.do_query(self.sdb.all_notes(), table)
         else:
             raise AttributeError("no such table: '%s'" % self.table)
 
@@ -285,6 +299,8 @@ class DBI(object):
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
             for item in items:
+                if item is None:
+                    continue
                 row = []
                 row_env = []
                 sorts = [] # [[0, "groupings(gramps_id)"]]
