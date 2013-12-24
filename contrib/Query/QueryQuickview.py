@@ -59,7 +59,6 @@ def groupings(string):
             retval.append("".join(group).zfill(5))
     return (retval)
 
-
 class DBI(object):
     def __init__(self, database, document):
         self.database = database
@@ -73,7 +72,9 @@ class DBI(object):
 
     def parse(self, query):
         self.query = query.strip()
-        self.parser(self.lexer(self.query))
+        lexed = self.lexer(self.query)
+        #print(lexed)
+        self.parser(lexed)
         for col_name in self.columns[:]: # copy
             if col_name == "*":
                 self.columns.remove('*')
@@ -90,11 +91,11 @@ class DBI(object):
         i = 0
         while i < len(string):
             ch = string[i]
-            #print("lex:", i, ch)
+            #print("lex:", i, ch, state, retval, current)
             if state == "in-double-quote":
                 if ch == '"':
                     state = stack.pop()
-                    retval.append(current)
+                    retval.append(repr(current))
                     current = ""
                 else:
                     current += ch
@@ -102,20 +103,38 @@ class DBI(object):
                 stack.append(state)
                 state = "in-double-quote"
                 current = ""
+            elif state == "in-single-quote":
+                if ch == "'":
+                    state = stack.pop()
+                    retval.append(repr(current))
+                    current = ""
+                else:
+                    current += ch
+            elif ch == "'":
+                stack.append(state)
+                state = "in-single-quote"
+                current = ""
+            elif state == "in-expr":
+                if ch == ")":
+                    state = stack.pop()
+                    retval.append(current)
+                    current = ""
+                else:
+                    current += ch
+            elif ch == "(":
+                stack.append(state)
+                state = "in-expr"
+                current = ""
             elif ch == ",":
                 if current:
                     retval.append(current)
-                    current = ""
-                else:
-                    raise ValueError("invalid comma in expression at position %d" % i)
                 retval.append(",")
+                current = ""
             elif ch == "=":
                 if current:
                     retval.append(current)
-                    current = ""
-                else:
-                    raise ValueError("invalid equal-sign in expression at position %d" % i)
                 retval.append("=")
+                current = ""
             elif ch in [' ', '\t', '\n', ";"]: # break
                 if current:
                     retval.append(current)
@@ -133,6 +152,8 @@ class DBI(object):
             else:
                 current += ch
             i += 1
+        if current:
+            retval.append(current)
         #print("lexed:", retval)
         return retval
 
@@ -145,12 +166,12 @@ class DBI(object):
         self.aliases = {}
         self.where = None
         self.index = 0
-        while self.index in range(len(lex)):
+        while self.index < len(lex):
             symbol = lex[self.index]
             if symbol.upper() == "FROM":
                 # from table select *;
+                self.index += 1
                 if self.index < len(lex):
-                    self.index += 1
                     self.table = lex[self.index]
             elif symbol.upper() == "SELECT":
                 # select a, b from table;
@@ -286,7 +307,7 @@ class DBI(object):
                     try:
                         result = eval(self.where, env)
                     except:
-                        print("Error in where clause:", self.where)
+                        raise AttributeError("Error in where clause: '%s'" % self.where)
                         result = False
                 else:
                     if self.action in ["DELETE", "UPDATE"]:
@@ -303,7 +324,7 @@ class DBI(object):
                         # update table set col=val, col=val where expr;
                         table.row(*row)
                         for i in range(len(self.setcolumns)):
-                            s.setitem(self.setcolumns[i], self.values[i], trans=trans)
+                            s.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
                     elif self.action == "DELETE":
                         table.row(*row)
                         self.database.remove_from_database(item, trans)
