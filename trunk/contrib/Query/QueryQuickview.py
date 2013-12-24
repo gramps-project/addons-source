@@ -37,6 +37,8 @@ import gramps.gen.datehandler
 import gramps.gen.lib
 from gramps.gen.merge.diff import Struct
 
+import random
+
 def groupings(string):
     groups = []
     current_type = None
@@ -164,6 +166,7 @@ class DBI(object):
         self.setcolumns = []
         self.values = []
         self.aliases = {}
+        self.limit = None
         self.where = None
         self.index = 0
         while self.index < len(lex):
@@ -213,7 +216,16 @@ class DBI(object):
                     self.index += 1 # comma?
                 self.index -= 1
             elif symbol.upper() == "LIMIT":
-                pass # FIXME
+                self.index += 1 # after LIMIT
+                number = lex[self.index]
+                self.index += 1 # maybe a comma
+                if self.index < len(lex) and lex[self.index] == ",":
+                    self.index += 1 # after ","
+                    stop = lex[self.index]
+                    self.limit = (int(number), int(stop))
+                else:
+                    self.limit = (0, int(number))
+                    self.index -= 1
             elif symbol.upper() == "WHERE":
                 # how can we get all of Python expressions?
                 # this assumes all by ;
@@ -291,6 +303,7 @@ class DBI(object):
             _("Date"): gramps.gen.lib.date.Date,
             _("Today"): gramps.gen.lib.date.Today(),
             "groupings": groupings,
+            "random": random,
             }
         retval.update(kwargs) 
         return retval
@@ -298,6 +311,7 @@ class DBI(object):
     def do_query(self, items, table):
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
+            ROWNUM = 0
             for item in items:
                 if item is None:
                     continue
@@ -316,6 +330,7 @@ class DBI(object):
                     col_top = col.split(".")[0]
                     # set in environment:
                     env[col_top] = getattr(s, col_top)
+                    env["ROWNUM"] = ROWNUM
                     # allow col[#] reference:
                     row_env.append(s[col])
                 # Should we include this row?
@@ -332,20 +347,21 @@ class DBI(object):
                         result = any([col != "None" for col in row]) # are they all None?
                 # If result, then append the row
                 if result:
-                    self.select += 1
-                    if self.action == "SELECT":
-                        #if self.select < 50: # FIXME: use LIMIT
-                        table.row(*row)
-                    elif self.action == "UPDATE":
-                        # update table set col=val, col=val where expr;
-                        table.row(*row)
-                        for i in range(len(self.setcolumns)):
-                            s.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
-                    elif self.action == "DELETE":
-                        table.row(*row)
-                        self.database.remove_from_database(item, trans)
-                    else:
-                        raise AttributeError("unknown command: '%s'", self.action)
+                    if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
+                        if self.action == "SELECT":
+                            table.row(*row)
+                        elif self.action == "UPDATE":
+                            # update table set col=val, col=val where expr;
+                            table.row(*row)
+                            for i in range(len(self.setcolumns)):
+                                s.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
+                        elif self.action == "DELETE":
+                            table.row(*row)
+                            self.database.remove_from_database(item, trans)
+                        else:
+                            raise AttributeError("unknown command: '%s'", self.action)
+                        self.select += 1
+                    ROWNUM += 1
 
 def run(database, document, query):
     """
