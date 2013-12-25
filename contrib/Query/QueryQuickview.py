@@ -358,7 +358,7 @@ class DBI(object):
                     try:
                         result = eval(self.where, env)
                     except:
-                        raise AttributeError("Error in where clause: '%s'" % self.where)
+                        #raise AttributeError("Error in where clause: '%s'" % self.where)
                         result = False
                 else:
                     if self.action in ["DELETE", "UPDATE"]:

@@ -21,7 +21,7 @@
 ## PYTHONPATH=/PATHTO/gramps/master GRAMPS_RESOURCES=/PATHTO/gramps/master/ python parser_test.py
 
 from QueryQuickview import DBI
-from gramps.gen.merge.diff import import_as_dict
+from gramps.gen.merge.diff import import_as_dict, Struct
 from gramps.cli.user import User
 from gramps.gen.simple import SimpleAccess
 
@@ -39,7 +39,7 @@ class ParseTest(unittest.TestCase):
                                 kw, 
                                 getattr(p, kw), 
                                 kwargs[kw]))
-    def test_parser(self):
+    def test_parser1(self):
         self.do_test(
             "select * from person;",
             table="person",
@@ -49,6 +49,7 @@ class ParseTest(unittest.TestCase):
             where=None,
         )
 
+    def test_parser2(self):
         self.do_test(
             "\n\tselect\t*\tfrom\ttable\n;",
             table="table",
@@ -58,6 +59,7 @@ class ParseTest(unittest.TestCase):
             where=None,
         )
 
+    def test_parser3(self):
         self.do_test(
             "from person select *;",
             table="person",
@@ -67,6 +69,7 @@ class ParseTest(unittest.TestCase):
             where=None,
         )
         
+    def test_parser4(self):
         self.do_test(
             "select * from family where x == 1;",
             table="family",
@@ -75,6 +78,7 @@ class ParseTest(unittest.TestCase):
             action="SELECT",
         )
         
+    def test_parser5(self):
         self.do_test(
             "select a, b, c from table;",
             table="table",
@@ -82,6 +86,7 @@ class ParseTest(unittest.TestCase):
             action="SELECT",
         )
         
+    def test_parser6(self):
         self.do_test(
             "from table select a, b, c;",
             table="table",
@@ -89,29 +94,33 @@ class ParseTest(unittest.TestCase):
             action="SELECT",
         )
         
+    def test_parser7(self):
         self.do_test(
-            "select a.x.y.0, b.f.5, c.0 from table;",
+            "select a.x.y[0], b.f[5], c[0] from table;",
             table="table",
-            columns=["a.x.y.0", "b.f.5", "c.0"],
+            columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
         
+    def test_parser8(self):
         self.do_test(
-            "select a.x.y.0 as X, b.f.5 as apple, c.0 from table;",
+            "select a.x.y[0] as X, b.f[5] as apple, c[0] from table;",
             table="table",
-            aliases={"a.x.y.0":"X", "b.f.5": "apple"},
-            columns=["a.x.y.0", "b.f.5", "c.0"],
+            aliases={"a.x.y[0]":"X", "b.f[5]": "apple"},
+            columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
         
+    def test_parser9(self):
         self.do_test(
-            "from table select a.x.y.0 as X, b.f.5 as apple, c.0;",
+            "from table select a.x.y[0] as X, b.f[5] as apple, c[0];",
             table="table",
-            aliases={"a.x.y.0":"X", "b.f.5": "apple"},
-            columns=["a.x.y.0", "b.f.5", "c.0"],
+            aliases={"a.x.y[0]":"X", "b.f[5]": "apple"},
+            columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
         
+    def test_parser10(self):
         self.do_test(
             "delete from table where test in col[0];",
             table="table",
@@ -119,6 +128,7 @@ class ParseTest(unittest.TestCase):
             action ="DELETE",
         )
         
+    def test_parser11(self):
         self.do_test(
             "delete from table where ',' in a.b.c;",
             table="table",
@@ -126,6 +136,7 @@ class ParseTest(unittest.TestCase):
             action ="DELETE",
         )
         
+    def test_parser12(self):
         self.do_test(
             "update table set a=1, b=2 where test is in col[0];",
             table="table",
@@ -135,22 +146,25 @@ class ParseTest(unittest.TestCase):
             action="UPDATE",
         )
         
+    def test_parser13(self):
         self.do_test(
-            "select gramps_id, primary_name.first_name, primary_name.surname_list.0.surname from person;",
+            "select gramps_id, primary_name.first_name, primary_name.surname_list[0].surname from person;",
             table="person",
             where=None,
-            columns=["gramps_id", "primary_name.first_name", "primary_name.surname_list.0.surname"],
+            columns=["gramps_id", "primary_name.first_name", "primary_name.surname_list[0].surname"],
             action="SELECT",
         )
         
+    def test_parser14(self):
         self.do_test(
-            "from person select gramps_id, primary_name.first_name, primary_name.surname_list.0.surname;",
+            "from person select gramps_id, primary_name.first_name, primary_name.surname_list[0].surname;",
             table="person",
             where=None,
-            columns=["gramps_id", "primary_name.first_name", "primary_name.surname_list.0.surname"],
+            columns=["gramps_id", "primary_name.first_name", "primary_name.surname_list[0].surname"],
             action="SELECT",
         )
 
+    def test_parser15(self):
         self.do_test(
             "select primary_name.first_name from person",
             table="person",
@@ -159,6 +173,7 @@ class ParseTest(unittest.TestCase):
             action="SELECT",
         )
 
+    def test_parser16(self):
         self.do_test(
             'update person SET primary_name.first_name = "12" where primary_name.first_name == "Emma";',
             table="person",
@@ -168,6 +183,7 @@ class ParseTest(unittest.TestCase):
             action="UPDATE",
             )
 
+    def test_parser17(self):
         self.do_test(
             'update person SET primary_name.first_name=12 where primary_name.first_name == "Emma";',
             table="person",
@@ -177,6 +193,7 @@ class ParseTest(unittest.TestCase):
             action="UPDATE",
         )
         
+    def test_parser18(self):
         self.do_test(
             "UPDATE person SET private = (False or True) "
             "from person "
@@ -187,6 +204,7 @@ class ParseTest(unittest.TestCase):
             values=["(False or True)"],
         )
 
+    def test_parser19(self):
         self.do_test(
             "SELECT * from person LIMIT 5",
             table="person",
@@ -195,6 +213,7 @@ class ParseTest(unittest.TestCase):
             columns=["*"],
         )
 
+    def test_parser20(self):
         self.do_test(
             "SELECT * from person LIMIT 10, 20",
             table="person",
@@ -203,6 +222,7 @@ class ParseTest(unittest.TestCase):
             columns=["*"],
         )
 
+    def test_parser21(self):
         self.do_test(
             "UPDATE person SET private = (False or False) "
             "from person "
@@ -220,90 +240,148 @@ class Table:
     def row(self, *items):
         self.data.append(items)
 
-class SelectTest(unittest.TestCase):
-    DB = import_as_dict(os.environ["GRAMPS_RESOURCES"] + "/example/gramps/example.gramps", User())
-    
-    def runTest(self):
+class StructTest(unittest.TestCase):
+    DB = import_as_dict(os.environ["GRAMPS_RESOURCES"] + "/example/gramps/data.gramps", User())
+
+    def __init__(self, *args, **kwargs):
+        self.dbi = DBI(StructTest.DB, None) # no document here
+        self.dbi.sdb = SimpleAccess(StructTest.DB)
+        self.pcount = len(StructTest.DB._tables["Person"]["handles_func"]())
+        unittest.TestCase.__init__(self, *args, **kwargs)
+
+    def runTest(self): # for python -i
         pass
 
-    def do_test(self, test, string, count=None):
-        dbi = DBI(SelectTest.DB, None) # no document here
-        dbi.sdb = SimpleAccess(SelectTest.DB)
-        dbi.parse(string)
-        table = Table()
-        dbi.process_table(table)
-        if count is not None:
-            self.assertTrue(len(table.data) == count,
-                            "Test #%d, Selected %d records from example.gramps; should have been %d: '%s'" % (
-                                test, len(table.data), count, string))
-        return dbi
+    def test_struct1(self):
+        with StructTest.DB._tables["Person"]["cursor_func"]() as cursor:
+            for handle, person in cursor:
+                p = StructTest.DB._tables["Person"]["class_func"](person)
+                if p and len(p.parent_family_list) > 0:
+                    person_with_parents = p
+                    break
+        to_struct = person_with_parents.to_struct()
+        struct = Struct(to_struct, StructTest.DB)
+        self.assertTrue(len(struct.parent_family_list) > 0,
+                        "Size not correct: %s is not > than %s" % (len(struct.parent_family_list), 
+                                                                   0))
 
-    def test_select(self):
-        count = len(SelectTest.DB._tables["Person"]["handles_func"]())
-        self.do_test(1, "select * from person;", count)
+        self.assertTrue(struct.parent_family_list[0].private == False,
+                        "Inproper value of private: %s != %s" % (struct.parent_family_list[0].private,
+                                                                 False))
 
-        count = 0
+        struct.setitem("parent_family_list[0].private", True)
+
+        self.assertTrue(struct.parent_family_list[0].private == True,
+                        "Inproper value of private: %s != %s" % (struct.parent_family_list[0].private,
+                                                                 True))
+
+class SelectTest(unittest.TestCase):
+    DB = import_as_dict(os.environ["GRAMPS_RESOURCES"] + "/example/gramps/data.gramps", User())
+
+    def __init__(self, *args, **kwargs):
+        self.dbi = DBI(SelectTest.DB, None) # no document here
+        self.dbi.sdb = SimpleAccess(SelectTest.DB)
+        self.pcount = len(SelectTest.DB._tables["Person"]["handles_func"]())
+        self.john_count = 0
         with SelectTest.DB._tables["Person"]["cursor_func"]() as cursor:
             for handle, person in cursor:
                 name = SelectTest.DB._tables["Person"]["class_func"](person).get_primary_name()
                 if name and "John" in name.first_name:
-                    count += 1
+                    self.john_count += 1
+        unittest.TestCase.__init__(self, *args, **kwargs)
+    
+    def runTest(self): # for python -i
+        pass
 
+    def do_test(self, test, string, count):
+        self.dbi.parse(string)
+        table = Table()
+        self.dbi.process_table(table)
+        self.assertTrue(len(table.data) == count,
+                        "Test #%d, Selected %d records from example.gramps; should have been %d: '%s'" % (
+                            test, len(table.data), count, string))
+
+    def test_select1(self):
+        self.do_test(1, "select * from person;", self.pcount)
+
+    def test_select2(self):
         self.do_test(2, "select primary_name.first_name "
                      "from person "
                      "where 'John' in primary_name.first_name;", 
-                     count)
+                     self.john_count)
 
+    def test_select3(self):
         self.do_test(3, "update person SET primary_name.first_name='XXX' "
                      "where 'John' in primary_name.first_name;", 
-                     count)
+                     self.john_count)
 
+    def test_select4(self):
         self.do_test(4, "select primary_name.first_name "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
-                     count)
+                     self.john_count)
 
+    def test_select5(self):
         self.do_test(5, "UPDATE person SET private = (False or False) "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
-                     count)
+                     self.john_count)
 
+    def test_select6(self):
         self.do_test(6, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and private;", 
                      0)
 
+    def test_select7(self):
         self.do_test(7, "SELECT private, primary_name "
                      "FROM person "
                      "where primary_name.first_name == 'XXX' and not private;", 
-                     count)
+                     self.john_count)
 
+    def test_select8(self):
         self.do_test(8, "UPDATE person SET private = (False or True) "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
-                     count)
+                     self.john_count)
 
+    def test_select9(self):
         self.do_test(9, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and private;", 
-                     count)
+                     self.john_count)
 
+    def test_select10(self):
         self.do_test(10, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and not private;", 
                      0)
 
+    def test_select11(self):
         self.do_test(11,
             "SELECT * from person LIMIT 10, 20",
             10)
 
+    def test_select12(self):
         self.do_test(12,
             "SELECT * from person LIMIT 5",
             5)
         
+    def test_select13(self):
         self.do_test(13,
             "SELECT ROWNUM, random.random() from person LIMIT 5",
             5)
-        
+
+    def test_select14(self):
+        self.do_test(14, "select * from person where not parent_family_list[0].private;", 38)
+
+    def test_select15(self):
+        self.do_test(15.1, "UPDATE person SET private=True WHERE not parent_family_list[0].private;", 38)
+        self.do_test(15.2, "SELECT * from person WHERE private;", 38)
+        self.do_test(15.3, "UPDATE person SET private=False;", 60)
+        self.do_test(15.4, "UPDATE person SET private=False WHERE private;", 0)
+        self.do_test(15.5, "UPDATE person SET private=True;", 60)
+        self.do_test(15.6, "UPDATE person SET private=True where not private;", 0)
+
 if __name__ == "__main__":
     unittest.main()
