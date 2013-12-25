@@ -184,13 +184,13 @@ class ParseTest(unittest.TestCase):
             table="person",
             where="primary_name.first_name == 'XXX'", 
             setcolumns=["private"],
-            values=["False or True"],
+            values=["(False or True)"],
         )
 
         self.do_test(
             "SELECT * from person LIMIT 5",
             table="person",
-            limit=(1,5),
+            limit=(0,5),
             where=None,
             columns=["*"],
         )
@@ -201,6 +201,16 @@ class ParseTest(unittest.TestCase):
             limit=(10,20),
             where=None,
             columns=["*"],
+        )
+
+        self.do_test(
+            "UPDATE person SET private = (False or False) "
+            "from person "
+            "where primary_name.first_name == 'XXX';", 
+            table="person",
+            where="primary_name.first_name == 'XXX'", 
+            setcolumns=["private"],
+            values=["(False or False)"],
         )
 
 class Table:
@@ -216,7 +226,7 @@ class SelectTest(unittest.TestCase):
     def runTest(self):
         pass
 
-    def do_test(self, string, count=None):
+    def do_test(self, test, string, count=None):
         dbi = DBI(SelectTest.DB, None) # no document here
         dbi.sdb = SimpleAccess(SelectTest.DB)
         dbi.parse(string)
@@ -224,13 +234,13 @@ class SelectTest(unittest.TestCase):
         dbi.process_table(table)
         if count is not None:
             self.assertTrue(len(table.data) == count,
-                            "Selected %d records from example.gramps; should have been %d: '%s'" % (
-                                len(table.data), count, string))
+                            "Test #%d, Selected %d records from example.gramps; should have been %d: '%s'" % (
+                                test, len(table.data), count, string))
         return dbi
 
     def test_select(self):
         count = len(SelectTest.DB._tables["Person"]["handles_func"]())
-        self.do_test("select * from person;", count)
+        self.do_test(1, "select * from person;", count)
 
         count = 0
         with SelectTest.DB._tables["Person"]["cursor_func"]() as cursor:
@@ -239,56 +249,60 @@ class SelectTest(unittest.TestCase):
                 if name and "John" in name.first_name:
                     count += 1
 
-        self.do_test("select primary_name.first_name "
+        self.do_test(2, "select primary_name.first_name "
                      "from person "
                      "where 'John' in primary_name.first_name;", 
                      count)
 
-        self.do_test("update person SET primary_name.first_name='XXX' "
+        self.do_test(3, "update person SET primary_name.first_name='XXX' "
                      "where 'John' in primary_name.first_name;", 
                      count)
 
-        self.do_test("select primary_name.first_name "
+        self.do_test(4, "select primary_name.first_name "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
                      count)
 
-        self.do_test("UPDATE person SET private = (False or False) "
+        self.do_test(5, "UPDATE person SET private = (False or False) "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
                      count)
 
-        self.do_test("select private, primary_name "
+        self.do_test(6, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and private;", 
                      0)
 
-        self.do_test("select private, primary_name "
-                     "from person "
+        self.do_test(7, "SELECT private, primary_name "
+                     "FROM person "
                      "where primary_name.first_name == 'XXX' and not private;", 
                      count)
 
-        self.do_test("UPDATE person SET private = (False or True) "
+        self.do_test(8, "UPDATE person SET private = (False or True) "
                      "from person "
                      "where primary_name.first_name == 'XXX';", 
                      count)
 
-        self.do_test("select private, primary_name "
+        self.do_test(9, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and private;", 
                      count)
 
-        self.do_test("select private, primary_name "
+        self.do_test(10, "select private, primary_name "
                      "from person "
                      "where primary_name.first_name == 'XXX' and not private;", 
                      0)
 
-        self.do_test(
+        self.do_test(11,
             "SELECT * from person LIMIT 10, 20",
             10)
 
-        self.do_test(
+        self.do_test(12,
             "SELECT * from person LIMIT 5",
+            5)
+        
+        self.do_test(13,
+            "SELECT ROWNUM, random.random() from person LIMIT 5",
             5)
         
 if __name__ == "__main__":
