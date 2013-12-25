@@ -39,6 +39,16 @@ from gramps.gen.merge.diff import Struct
 
 import random
 
+class Environment(dict):
+    def __getitem__(self, key):
+        if key in self:
+            return dict.__getitem__(self, key)
+        else:
+            return self.struct[key]
+
+    def set_struct(self, struct):
+        self.struct = struct
+
 def groupings(string):
     groups = []
     current_type = None
@@ -101,10 +111,6 @@ class DBI(object):
                     current = ""
                 else:
                     current += ch
-            elif ch == '"':
-                stack.append(state)
-                state = "in-double-quote"
-                current = ""
             elif state == "in-single-quote":
                 if ch == "'":
                     state = stack.pop()
@@ -112,21 +118,25 @@ class DBI(object):
                     current = ""
                 else:
                     current += ch
+            elif state == "in-expr":
+                if ch == ")":
+                    state = stack.pop()
+                    retval.append(current + ")")
+                    current = ""
+                else:
+                    current += ch
+            elif ch == '"':
+                stack.append(state)
+                state = "in-double-quote"
+                current = ""
             elif ch == "'":
                 stack.append(state)
                 state = "in-single-quote"
                 current = ""
-            elif state == "in-expr":
-                if ch == ")":
-                    state = stack.pop()
-                    retval.append(current)
-                    current = ""
-                else:
-                    current += ch
             elif ch == "(":
                 stack.append(state)
                 state = "in-expr"
-                current = ""
+                current = "("
             elif ch == ",":
                 if current:
                     retval.append(current)
@@ -299,12 +309,13 @@ class DBI(object):
         """
         An environment with which to eval rows.
         """
-        retval= {
+        retval= Environment({
             _("Date"): gramps.gen.lib.date.Date,
             _("Today"): gramps.gen.lib.date.Today(),
             "groupings": groupings,
             "random": random,
-            }
+            })
+        retval.update(__builtins__) 
         retval.update(kwargs) 
         return retval
 
@@ -319,20 +330,29 @@ class DBI(object):
                 row_env = []
                 sorts = [] # [[0, "groupings(gramps_id)"]]
                 # col[0] in where will return first column of selection:
-                env = self.make_env(col=row_env) 
-                struct = item.to_struct()
-                s = Struct(struct, self.database)
+                env = self.make_env(col=row_env, ROWNUM=ROWNUM) 
+                struct = Struct(item.to_struct(), self.database)
+                env.set_struct(struct)
                 for col in self.columns:
-                    value = s[col] # col is path
-                    row.append(str(value))
                     # for where eval:
                     # get top-level name:
                     col_top = col.split(".")[0]
                     # set in environment:
-                    env[col_top] = getattr(s, col_top)
-                    env["ROWNUM"] = ROWNUM
+                    try:
+                        env[col_top] = getattr(struct, col_top)
+                    except:
+                        pass # could be a general expression
+                    # now, eval the column expression:
+                    # Method one uses getattr:
+                    # value = struct[col] # col is path
+                    # Method two uses eval:
+                    try:
+                        value = eval(col, env) 
+                    except:
+                        value = None
+                    row.append(str(value))
                     # allow col[#] reference:
-                    row_env.append(s[col])
+                    row_env.append(value)
                 # Should we include this row?
                 if self.where:
                     try:
@@ -354,7 +374,7 @@ class DBI(object):
                             # update table set col=val, col=val where expr;
                             table.row(*row)
                             for i in range(len(self.setcolumns)):
-                                s.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
+                                struct.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
                         elif self.action == "DELETE":
                             table.row(*row)
                             self.database.remove_from_database(item, trans)
