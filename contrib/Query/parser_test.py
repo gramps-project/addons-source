@@ -274,6 +274,31 @@ class StructTest(unittest.TestCase):
         self.assertTrue(struct.parent_family_list[0].private == True,
                         "Inproper value of private: %s != %s" % (struct.parent_family_list[0].private,
                                                                  True))
+        self.assertTrue(struct.event_ref_list[0].ref is not None,
+                        "Inproper ref: %s is not %s" % (struct.event_ref_list[0].ref,
+                                                        None))
+
+    def test_struct2(self):
+        with StructTest.DB._tables["Person"]["cursor_func"]() as cursor:
+            for handle, person in cursor:
+                p = StructTest.DB._tables["Person"]["class_func"](person)
+                if p and len(p.event_ref_list) > 0:
+                    person_with_events = p
+                    break
+        to_struct = person_with_events.to_struct()
+        struct = Struct(to_struct, StructTest.DB)
+        self.assertTrue(len(struct.event_ref_list) > 0,
+                        "Size not correct: %s is not > than %s" % (len(struct.event_ref_list), 
+                                                                   0))
+
+        self.assertTrue(struct.event_ref_list[0] is not None,
+                        "not None: %s is not %s" % (struct.event_ref_list[0],
+                                                    None))
+
+        self.assertTrue(struct.event_ref_list[0].ref.description == "Birth of Janis Elaine Green",
+                        ".ref.description: %s != %s" % (struct.event_ref_list[0].ref.description,
+                                                        "Birth of Janis Elaine Green"))
+
 
 class SelectTest(unittest.TestCase):
     DB = import_as_dict(os.environ["GRAMPS_RESOURCES"] + "/example/gramps/data.gramps", User())
