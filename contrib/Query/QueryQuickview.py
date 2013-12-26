@@ -185,7 +185,6 @@ class DBI(object):
             elif symbol.upper() == "DELETE":
                 # delete from table where item == 1;
                 self.action = "DELETE"
-                self.columns = ["*"] # for where clause
             elif symbol.upper() == "SET":
                 # SET x=1, y=2
                 self.index += 1
@@ -221,7 +220,6 @@ class DBI(object):
                 self.index += 1
                 self.where = lex[self.index]
             elif symbol.upper() == "UPDATE":
-                self.columns = ["*"] # for where clause
                 # update table set x=1, y=2 where condition;
                 self.action = "UPDATE"
                 if self.index < len(lex):
@@ -328,8 +326,7 @@ class DBI(object):
                     try:
                         result = eval(self.where, env)
                     except:
-                        #raise AttributeError("Error in where clause: '%s'" % self.where)
-                        result = False
+                        continue
                 else:
                     if self.action in ["DELETE", "UPDATE"]:
                         result = True

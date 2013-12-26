@@ -269,15 +269,6 @@ class StructTest(unittest.TestCase):
                         "Inproper value of private: %s != %s" % (struct.parent_family_list[0].private,
                                                                  False))
 
-        struct.setitem("parent_family_list[0].private", True)
-
-        self.assertTrue(struct.parent_family_list[0].private == True,
-                        "Inproper value of private: %s != %s" % (struct.parent_family_list[0].private,
-                                                                 True))
-        self.assertTrue(struct.event_ref_list[0].ref is not None,
-                        "Inproper ref: %s is not %s" % (struct.event_ref_list[0].ref,
-                                                        None))
-
     def test_struct2(self):
         with StructTest.DB._tables["Person"]["cursor_func"]() as cursor:
             for handle, person in cursor:
