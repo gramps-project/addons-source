@@ -185,6 +185,7 @@ class DBI(object):
             elif symbol.upper() == "DELETE":
                 # delete from table where item == 1;
                 self.action = "DELETE"
+                self.columns = ["gramps_id"]
             elif symbol.upper() == "SET":
                 # SET x=1, y=2
                 self.index += 1
@@ -221,6 +222,7 @@ class DBI(object):
                 self.where = lex[self.index]
             elif symbol.upper() == "UPDATE":
                 # update table set x=1, y=2 where condition;
+                self.columns = ["gramps_id"]
                 self.action = "UPDATE"
                 if self.index < len(lex):
                     self.index += 1
@@ -297,7 +299,7 @@ class DBI(object):
 
     def do_query(self, items, table):
         # table: a class that has .row(1, 2, 3, ...)
-        with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
+        with self.database.get_transaction_class()("QueryQuickview", self.database, batch=True) as trans:
             ROWNUM = 0
             env = self.make_env() 
             for item in items:
