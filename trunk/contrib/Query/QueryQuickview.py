@@ -38,6 +38,7 @@ import gramps.gen.lib
 from gramps.gen.merge.diff import Struct
 
 import random
+import traceback
 
 class Environment(dict):
     def __getitem__(self, key):
@@ -48,28 +49,6 @@ class Environment(dict):
 
     def set_struct(self, struct):
         self.struct = struct
-
-def groupings(string):
-    groups = []
-    current_type = None
-    for c in string:
-        if (not c.isdigit()) and current_type == "alpha":
-            groups[-1].append(c)
-        elif c.isdigit() and current_type == "numeric":
-            groups[-1].append(c)
-        else:
-            if c.isdigit():
-                current_type = "numeric"
-            else:
-                current_type = "alpha"
-            groups.append([c])
-    retval = []
-    for group in groups:
-        if group[0].isdigit():
-            retval.append("".join(group).zfill(10))
-        else:
-            retval.append("".join(group).zfill(5))
-    return (retval)
 
 class DBI(object):
     def __init__(self, database, document):
@@ -312,7 +291,6 @@ class DBI(object):
         retval= Environment({
             _("Date"): gramps.gen.lib.date.Date,
             _("Today"): gramps.gen.lib.date.Today(),
-            "groupings": groupings,
             "random": random,
             })
         retval.update(__builtins__) 
@@ -323,29 +301,18 @@ class DBI(object):
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database) as trans:
             ROWNUM = 0
+            env = self.make_env() 
             for item in items:
                 if item is None:
                     continue
                 row = []
                 row_env = []
-                sorts = [] # [[0, "groupings(gramps_id)"]]
-                # col[0] in where will return first column of selection:
-                env = self.make_env(col=row_env, ROWNUM=ROWNUM) 
+                # "col[0]" in WHERE clause will return first column of selection:
+                env["col"] = row_env
+                env["ROWNUM"] = ROWNUM
                 struct = Struct(item.to_struct(), self.database)
                 env.set_struct(struct)
                 for col in self.columns:
-                    # for where eval:
-                    # get top-level name:
-                    col_top = col.split(".")[0]
-                    # set in environment:
-                    try:
-                        env[col_top] = getattr(struct, col_top)
-                    except:
-                        pass # could be a general expression
-                    # now, eval the column expression:
-                    # Method one uses getattr:
-                    # value = struct[col] # col is path
-                    # Method two uses eval:
                     try:
                         value = eval(col, env) 
                     except:
@@ -353,6 +320,9 @@ class DBI(object):
                     row.append(str(value))
                     # allow col[#] reference:
                     row_env.append(value)
+                    # an alias?
+                    if col in self.aliases:
+                        env[self.aliases[col]] = value
                 # Should we include this row?
                 if self.where:
                     try:
