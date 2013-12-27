@@ -45,10 +45,13 @@ class Environment(dict):
         dict.__init__(*args, **kwargs)
 
     def __getitem__(self, key):
-        if key in self:
-            return dict.__getitem__(self, key)
-        else:
+        try:
             return self.struct[key]
+        except:
+            if key in self:
+                return dict.__getitem__(self, key)
+            else:
+                raise NameError("name '%s' is not defined" % key)
 
     def set_struct(self, struct):
         self.struct = struct
