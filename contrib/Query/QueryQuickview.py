@@ -59,6 +59,12 @@ class Environment(dict):
     def set_shortcuts(self, shortcuts):
         self.shortcuts.update(shortcuts)
 
+    def get_shortcut(self, field):
+        if field in self.shortcuts.keys():
+            return self.shortcuts[field]
+        else:
+            return field
+
 class DBI(object):
     def __init__(self, database, document):
         self.database = database
@@ -356,7 +362,7 @@ class DBI(object):
                             # update table set col=val, col=val where expr;
                             table.row(*row)
                             for i in range(len(self.setcolumns)):
-                                struct.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
+                                struct.setitem(env.get_shortcut(self.setcolumns[i]), eval(self.values[i], env), trans=trans)
                         elif self.action == "DELETE":
                             table.row(*row)
                             self.database.remove_from_database(item, trans)
