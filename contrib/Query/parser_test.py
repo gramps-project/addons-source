@@ -316,6 +316,7 @@ class SelectTest(unittest.TestCase):
         self.assertTrue(len(table.data) == count,
                         "Test #%d, Selected %d records from example.gramps; should have been %d: '%s'" % (
                             test, len(table.data), count, string))
+        return table
 
     def test_select1(self):
         self.do_test(1, "select * from person;", self.pcount)
@@ -398,6 +399,14 @@ class SelectTest(unittest.TestCase):
         self.do_test(15.4, "UPDATE person SET private=False WHERE private;", 0)
         self.do_test(15.5, "UPDATE person SET private=True;", 60)
         self.do_test(15.6, "UPDATE person SET private=True where not private;", 0)
+
+    def test_select16(self):
+        table = self.do_test(16.1, "SELECT gramps_id as id from person;", self.pcount)
+        self.assertTrue(table.data[0][0] == "I0004", "First row, first col is %s, should be %s" % (table.data[0][0], "I0004"))
+
+    def test_select17(self):
+        table = self.do_test(17.1, "SELECT gramps_id as id from person where id == 'I0004';", 1)
+        self.assertTrue(table.data[0][0] == "I0004", "First row, first col is %s, should be %s" % (table.data[0][0], "I0004"))
 
 if __name__ == "__main__":
     unittest.main()

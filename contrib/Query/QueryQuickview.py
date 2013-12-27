@@ -41,7 +41,13 @@ import random
 import traceback
 
 class Environment(dict):
+    def __init__(self, *args, **kwargs):
+        dict.__init__(*args, **kwargs)
+        self.shortcuts = {}
+
     def __getitem__(self, key):
+        if key in self.shortcuts.keys():
+            return eval(self.shortcuts[key], self)
         if key in self:
             return dict.__getitem__(self, key)
         else:
@@ -49,6 +55,9 @@ class Environment(dict):
 
     def set_struct(self, struct):
         self.struct = struct
+
+    def set_shortcuts(self, shortcuts):
+        self.shortcuts.update(shortcuts)
 
 class DBI(object):
     def __init__(self, database, document):
@@ -295,6 +304,10 @@ class DBI(object):
             })
         retval.update(__builtins__) 
         retval.update(kwargs) 
+        retval.set_shortcuts({
+            "surname": "primary_name.surname_list[0].surname",
+            "given": "primary_name.first_name",
+        })
         return retval
 
     def do_query(self, items, table):
