@@ -236,9 +236,11 @@ class ParseTest(unittest.TestCase):
 class Table:
     def __init__(self):
         self.data = []
+        self.links = []
 
-    def row(self, *items):
+    def row(self, *items, **kwargs):
         self.data.append(items)
+        self.links.append(kwargs.get("link", None))
 
 class StructTest(unittest.TestCase):
     DB = import_as_dict(os.environ["GRAMPS_RESOURCES"] + "/example/gramps/data.gramps", User())
@@ -408,24 +410,27 @@ class SelectTest(unittest.TestCase):
         table = self.do_test(17.1, "SELECT gramps_id as id from person where id == 'I0004';", 1)
         self.assertTrue(table.data[0][0] == "I0004", "First row, first col is %s, should be %s" % (table.data[0][0], "I0004"))
 
-    def test_select18(self):
-        table = self.do_test(18.1, "SELECT gramps_id, father_handle.primary_name.first_name "
+        table = self.do_test(17.2, "SELECT gramps_id, father_handle.primary_name.first_name "
                                    "FROM family WHERE father_handle.primary_name.first_name;", 23) 
         self.assertTrue(table.data[0][0] == "F0005", "First row, first col is %s, should be %s" % (table.data[0][0], "F0005"))
         self.assertTrue(table.data[0][1] == "Herman Julius", "First row, second col is %s, should be %s" % (table.data[0][1], "Herman Julius"))
 
-        table = self.do_test(18.2, "UPDATE family SET father_handle.primary_name.first_name='Father' WHERE gramps_id == 'F0005';", 1)
+        table = self.do_test(17.3, "UPDATE family SET father_handle.primary_name.first_name='Father' WHERE gramps_id == 'F0005';", 1)
         self.assertTrue(table.data[0][0] == "F0005", "First row, first col is %s, should be %s" % (table.data[0][0], "F0005"))
 
-        table = self.do_test(18.3, "SELECT gramps_id, father_handle.primary_name.first_name, father_handle.gramps_id "
+        table = self.do_test(17.4, "SELECT gramps_id, father_handle.primary_name.first_name, father_handle.gramps_id "
                                    "FROM family WHERE gramps_id == 'F0005';", 1) 
         self.assertTrue(table.data[0][0] == "F0005", "1 First row, first col is %s, should be %s" % (table.data[0][0], "F0005"))
         self.assertTrue(table.data[0][1] == "Father", "1 First row, second col is %s, should be %s" % (table.data[0][1], "Father"))
         self.assertTrue(table.data[0][2] == "I0012", "1 First row, third col is %s, should be %s" % (table.data[0][2], "I0012"))
 
-        table = self.do_test(18.4, "SELECT gramps_id, primary_name.first_name "
+        table = self.do_test(17.5, "SELECT gramps_id, primary_name.first_name "
                                    "FROM person WHERE gramps_id == 'I0012';", 1) 
         self.assertTrue(table.data[0][0] == "I0012", "First row, first col is %s, should be %s" % (table.data[0][0], "I0012"))
+        self.assertTrue(table.data[0][1] == "Father", "First row, second col is %s, should be %s" % (table.data[0][1], "Father"))
+
+    def test_select18(self):
+        table = self.do_test(18.1, "SELECT gramps_id, father_handle.GIVEN from family where gramps_id == 'F0005';", 1)
         self.assertTrue(table.data[0][1] == "Father", "First row, second col is %s, should be %s" % (table.data[0][1], "Father"))
 
 if __name__ == "__main__":

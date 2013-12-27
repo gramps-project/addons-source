@@ -43,11 +43,8 @@ import traceback
 class Environment(dict):
     def __init__(self, *args, **kwargs):
         dict.__init__(*args, **kwargs)
-        self.shortcuts = {}
 
     def __getitem__(self, key):
-        if key in self.shortcuts.keys():
-            return eval(self.shortcuts[key], self)
         if key in self:
             return dict.__getitem__(self, key)
         else:
@@ -55,15 +52,6 @@ class Environment(dict):
 
     def set_struct(self, struct):
         self.struct = struct
-
-    def set_shortcuts(self, shortcuts):
-        self.shortcuts.update(shortcuts)
-
-    def get_shortcut(self, field):
-        if field in self.shortcuts.keys():
-            return self.shortcuts[field]
-        else:
-            return field
 
 class DBI(object):
     def __init__(self, database, document):
@@ -75,6 +63,10 @@ class DBI(object):
             for name in self.database.get_table_names():
                 d = self.database._tables[name]["class_func"]().to_struct()
                 self.data[name.lower()] = d.keys()
+        self.shortcuts = {
+            "SURNAME": "primary_name.surname_list[0].surname",
+            "GIVEN": "primary_name.first_name",
+        }
 
     def parse(self, query):
         self.query = query.strip()
@@ -95,6 +87,8 @@ class DBI(object):
         current = ""
         stack = []
         i = 0
+        for key in self.shortcuts.keys():
+            string = string.replace(key, self.shortcuts[key])
         while i < len(string):
             ch = string[i]
             #print("lex:", i, ch, state, retval, current)
@@ -310,10 +304,6 @@ class DBI(object):
             })
         retval.update(__builtins__) 
         retval.update(kwargs) 
-        retval.set_shortcuts({
-            "surname": "primary_name.surname_list[0].surname",
-            "given": "primary_name.first_name",
-        })
         return retval
 
     def do_query(self, items, table):
@@ -357,12 +347,12 @@ class DBI(object):
                 if result:
                     if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
                         if self.action == "SELECT":
-                            table.row(*row)
+                            table.row(*row, link=(item.__class__.__name__, item.handle))
                         elif self.action == "UPDATE":
                             # update table set col=val, col=val where expr;
-                            table.row(*row)
+                            table.row(*row, link=(item.__class__.__name__, item.handle))
                             for i in range(len(self.setcolumns)):
-                                struct.setitem(env.get_shortcut(self.setcolumns[i]), eval(self.values[i], env), trans=trans)
+                                struct.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
                         elif self.action == "DELETE":
                             table.row(*row)
                             self.database.remove_from_database(item, trans)
