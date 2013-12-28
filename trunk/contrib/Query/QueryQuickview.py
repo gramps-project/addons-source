@@ -39,6 +39,7 @@ from gramps.gen.merge.diff import Struct
 
 import random
 import traceback
+import itertools
 
 class Environment(dict):
     def __init__(self, *args, **kwargs):
@@ -119,8 +120,7 @@ class DBI(object):
             elif state == "in-square-bracket":
                 if ch == "]":
                     state = stack.pop()
-                    retval.append(current + "]")
-                    current = ""
+                    current += "]"
                 else:
                     current += ch
             elif ch == '"':
@@ -138,7 +138,7 @@ class DBI(object):
             elif ch == "[":
                 stack.append(state)
                 state = "in-square-bracket"
-                current = "["
+                current += "["
             elif ch == ",":
                 if current:
                     retval.append(current)
@@ -340,7 +340,7 @@ class DBI(object):
                         value = eval(col, env) 
                     except:
                         value = None
-                    row.append(str(value))
+                    row.append(value)
                     # allow col[#] reference:
                     row_env.append(value)
                     # an alias?
@@ -361,18 +361,37 @@ class DBI(object):
                 if result:
                     if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
                         if self.action == "SELECT":
-                            table.row(*row, link=(item.__class__.__name__, item.handle))
+                            # Join by rows:
+                            # products = []
+                            # columns = []
+                            # count = 0
+                            # for col in row:
+                            #     if isinstance(col, Struct) and isinstance(col.struct, list) and len(col.struct) > 0:
+                            #         products.append(map(str, col))
+                            #         columns.append(count)
+                            #     count += 1
+                            # if len(products) > 1:
+                            #     for items in itertools.product(*products):
+                            #         current = [str(col) for col in row]
+                            #         for i in range(len(items)):
+                            #             current[columns[i]] = items[i]
+                            #         table.row(*current, link=(item.__class__.__name__, item.handle))
+                            #         self.select += 1
+                            # else:
+                            table.row(*[str(col) for col in row], link=(item.__class__.__name__, item.handle))
+                            self.select += 1
                         elif self.action == "UPDATE":
                             # update table set col=val, col=val where expr;
-                            table.row(*row, link=(item.__class__.__name__, item.handle))
+                            table.row(*[str(col) for col in row], link=(item.__class__.__name__, item.handle))
+                            self.select += 1
                             for i in range(len(self.setcolumns)):
                                 struct.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
                         elif self.action == "DELETE":
-                            table.row(*row)
+                            table.row(*[str(col) for col in row])
+                            self.select += 1
                             self.database.remove_from_database(item, trans)
                         else:
                             raise AttributeError("unknown command: '%s'", self.action)
-                        self.select += 1
                     ROWNUM += 1
 
 def run(database, document, query):
