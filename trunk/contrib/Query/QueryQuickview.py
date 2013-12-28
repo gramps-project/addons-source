@@ -116,6 +116,13 @@ class DBI(object):
                     current = ""
                 else:
                     current += ch
+            elif state == "in-square-bracket":
+                if ch == "]":
+                    state = stack.pop()
+                    retval.append(current + "]")
+                    current = ""
+                else:
+                    current += ch
             elif ch == '"':
                 stack.append(state)
                 state = "in-double-quote"
@@ -128,6 +135,10 @@ class DBI(object):
                 stack.append(state)
                 state = "in-expr"
                 current = "("
+            elif ch == "[":
+                stack.append(state)
+                state = "in-square-bracket"
+                current = "["
             elif ch == ",":
                 if current:
                     retval.append(current)
