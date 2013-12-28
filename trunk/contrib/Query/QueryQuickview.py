@@ -320,7 +320,7 @@ class DBI(object):
     def clean(self, values, names):
         retval = []
         for i in range(len(values)):
-            if names[i] == "handle":
+            if names[i].endswith("handle"):
                 retval.append(str(values[i].struct["handle"]))
             elif isinstance(values[i], (list, tuple)):
                 if len(values[i]) == 0:
