@@ -81,6 +81,8 @@ class DBI(object):
             if col_name == "*":
                 self.columns.remove('*')
                 self.columns.extend(self.get_columns(self.table))
+                # this is useful to see what it is:
+                #self.columns.extend([col for col in self.get_columns(self.table) if not col.startswith("_"))
 
     def lexer(self, string):
         """
@@ -320,6 +322,22 @@ class DBI(object):
         retval.update(kwargs) 
         return retval
 
+    def clean(self, values, names):
+        retval = []
+        for i in range(len(values)):
+            if names[i] == "handle":
+                retval.append(str(values[i].struct["handle"]))
+            elif isinstance(values[i], (list, tuple)):
+                if len(values[i]) == 0:
+                    retval.append("")
+                elif len(values[i]) == 1:
+                    retval.append(str(values[i][0]))
+                else:
+                    retval.append(str(values[i]))
+            else:
+                retval.append(str(values[i]))
+        return retval
+
     def do_query(self, items, table):
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database, batch=True) as trans:
@@ -362,32 +380,33 @@ class DBI(object):
                     if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
                         if self.action == "SELECT":
                             # Join by rows:
-                            # products = []
-                            # columns = []
-                            # count = 0
-                            # for col in row:
-                            #     if isinstance(col, Struct) and isinstance(col.struct, list) and len(col.struct) > 0:
-                            #         products.append(map(str, col))
-                            #         columns.append(count)
-                            #     count += 1
-                            # if len(products) > 1:
-                            #     for items in itertools.product(*products):
-                            #         current = [str(col) for col in row]
-                            #         for i in range(len(items)):
-                            #             current[columns[i]] = items[i]
-                            #         table.row(*current, link=(item.__class__.__name__, item.handle))
-                            #         self.select += 1
-                            # else:
-                            table.row(*[str(col) for col in row], link=(item.__class__.__name__, item.handle))
-                            self.select += 1
+                            products = []
+                            columns = []
+                            count = 0
+                            for col in row:
+                                if ((isinstance(col, Struct) and isinstance(col.struct, (list, tuple)) and len(col.struct) > 0) or
+                                    (isinstance(col, (list, tuple)) and len(col) > 0)):
+                                    products.append(map(str, col))
+                                    columns.append(count)
+                                count += 1
+                            if len(products) > 0:
+                                for items in itertools.product(*products):
+                                    current = self.clean(row, self.columns)
+                                    for i in range(len(items)):
+                                        current[columns[i]] = items[i]
+                                    table.row(*current, link=(item.__class__.__name__, item.handle))
+                                    self.select += 1
+                            else:
+                                table.row(*self.clean(row, self.columns), link=(item.__class__.__name__, item.handle))
+                                self.select += 1
                         elif self.action == "UPDATE":
                             # update table set col=val, col=val where expr;
-                            table.row(*[str(col) for col in row], link=(item.__class__.__name__, item.handle))
+                            table.row(*self.clean(row, self.columns), link=(item.__class__.__name__, item.handle))
                             self.select += 1
                             for i in range(len(self.setcolumns)):
                                 struct.setitem(self.setcolumns[i], eval(self.values[i], env), trans=trans)
                         elif self.action == "DELETE":
-                            table.row(*[str(col) for col in row])
+                            table.row(*self.clean(row, self.columns))
                             self.select += 1
                             self.database.remove_from_database(item, trans)
                         else:
