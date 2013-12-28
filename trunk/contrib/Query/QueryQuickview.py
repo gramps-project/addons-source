@@ -80,8 +80,9 @@ class DBI(object):
         for col_name in self.columns[:]: # copy
             if col_name == "*":
                 self.columns.remove('*')
+                # this is useful to see what _class it is:
                 self.columns.extend(self.get_columns(self.table))
-                # this is useful to see what it is:
+                # otherwise remove metadata:
                 #self.columns.extend([col for col in self.get_columns(self.table) if not col.startswith("_"))
 
     def lexer(self, string):
@@ -93,50 +94,44 @@ class DBI(object):
         current = ""
         stack = []
         i = 0
+        # Handle macros:
         for key in self.shortcuts.keys():
             string = string.replace(key, self.shortcuts[key])
+        # (some "expression" in ok)
+        # func(some "expression" in (ok))
+        # list[1][0]
+        # [x for x in list]
         while i < len(string):
             ch = string[i]
             #print("lex:", i, ch, state, retval, current)
             if state == "in-double-quote":
                 if ch == '"':
                     state = stack.pop()
-                    retval.append(repr(current))
-                    current = ""
-                else:
-                    current += ch
+                current += ch
             elif state == "in-single-quote":
                 if ch == "'":
                     state = stack.pop()
-                    retval.append(repr(current))
-                    current = ""
-                else:
-                    current += ch
+                current += ch
             elif state == "in-expr":
                 if ch == ")":
                     state = stack.pop()
-                    retval.append(current + ")")
-                    current = ""
-                else:
-                    current += ch
+                current += ch
             elif state == "in-square-bracket":
                 if ch == "]":
                     state = stack.pop()
-                    current += "]"
-                else:
-                    current += ch
+                current += ch
             elif ch == '"':
                 stack.append(state)
                 state = "in-double-quote"
-                current = ""
+                current += ch
             elif ch == "'":
                 stack.append(state)
                 state = "in-single-quote"
-                current = ""
+                current += ch
             elif ch == "(":
                 stack.append(state)
                 state = "in-expr"
-                current = "("
+                current += "("
             elif ch == "[":
                 stack.append(state)
                 state = "in-square-bracket"
