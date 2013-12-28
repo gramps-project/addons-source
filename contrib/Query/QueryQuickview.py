@@ -369,7 +369,7 @@ class DBI(object):
                     if self.action in ["DELETE", "UPDATE"]:
                         result = True
                     else:
-                        result = any([col != "None" for col in row]) # are they all None?
+                        result = any([col != None for col in row]) # are they all None?
                 # If result, then append the row
                 if result:
                     if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
