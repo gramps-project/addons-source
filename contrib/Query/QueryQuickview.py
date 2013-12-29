@@ -255,13 +255,21 @@ class DBI(object):
         #except:
         pass
 
+    def clean_titles(self, columns):
+        retval = []
+        for column in columns:
+            if column in self.aliases:
+                column = self.aliases[column]
+            retval.append(column.replace("_", "__"))
+        return retval
+
     def eval(self):
         self.sdb = SimpleAccess(self.database)
         self.stab = QuickTable(self.sdb)
         self.select = 0
         self.process_table(self.stab) # a class that has .row(1, 2, 3, ...)
         if self.select > 0:
-            self.stab.columns(*[column.replace("_", "__") for column in self.columns])
+            self.stab.columns(*self.clean_titles(self.columns))
             self.sdoc = SimpleDoc(self.document)
             self.sdoc.title(self.query)
             self.sdoc.paragraph("\n")
@@ -379,8 +387,8 @@ class DBI(object):
                             columns = []
                             count = 0
                             for col in row:
-                                if ((isinstance(col, Struct) and isinstance(col.struct, (list, tuple)) and len(col.struct) > 0) or
-                                    (isinstance(col, (list, tuple)) and len(col) > 0)):
+                                if ((isinstance(col, Struct) and isinstance(col.struct, list) and len(col.struct) > 0) or
+                                    (isinstance(col, list) and len(col) > 0)):
                                     products.append(map(str, col))
                                     columns.append(count)
                                 count += 1
