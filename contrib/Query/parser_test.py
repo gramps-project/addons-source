@@ -31,6 +31,7 @@ import os
 class ParseTest(unittest.TestCase):
     def do_test(self, string, **kwargs):
         p = DBI(None, None)
+        p.flat = True
         p.parse(string)
         for kw in kwargs:
             self.assertTrue(getattr(p, kw) == kwargs[kw],
@@ -179,7 +180,7 @@ class ParseTest(unittest.TestCase):
             table="person",
             where='primary_name.first_name == "Emma"',
             setcolumns=["primary_name.first_name"],
-            values=[repr("12")],
+            values=['"12"'],
             action="UPDATE",
             )
 
@@ -247,6 +248,7 @@ class StructTest(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         self.dbi = DBI(StructTest.DB, None) # no document here
+        self.dbi.flat = True
         self.dbi.sdb = SimpleAccess(StructTest.DB)
         self.pcount = len(StructTest.DB._tables["Person"]["handles_func"]())
         unittest.TestCase.__init__(self, *args, **kwargs)
@@ -298,6 +300,7 @@ class SelectTest(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         self.dbi = DBI(SelectTest.DB, None) # no document here
+        self.dbi.flat = True
         self.dbi.sdb = SimpleAccess(SelectTest.DB)
         self.pcount = len(SelectTest.DB._tables["Person"]["handles_func"]())
         self.john_count = 0

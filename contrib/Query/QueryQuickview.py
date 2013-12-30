@@ -35,11 +35,13 @@ except ValueError:
 _ = _trans.gettext
 import gramps.gen.datehandler
 import gramps.gen.lib
+from gramps.gen.lib.primaryobj import PrimaryObject
 from gramps.gen.merge.diff import Struct
 
 import random
 import traceback
 import itertools
+import time
 
 class Environment(dict):
     def __init__(self, *args, **kwargs):
@@ -63,6 +65,8 @@ class DBI(object):
         self.document = document
         self.data = {}
         self.select = 0
+        self.flat = False
+        self.raw = False
         if self.database:
             for name in self.database.get_table_names():
                 d = self.database._tables[name]["class_func"]().to_struct()
@@ -115,10 +119,14 @@ class DBI(object):
             elif state == "in-expr":
                 if ch == ")":
                     state = stack.pop()
+                elif ch == "(":
+                    stack.append("in-expr")
                 current += ch
             elif state == "in-square-bracket":
                 if ch == "]":
                     state = stack.pop()
+                elif ch == "[":
+                    stack.append("in-square-bracket")
                 current += ch
             elif ch == '"':
                 stack.append(state)
@@ -247,6 +255,16 @@ class DBI(object):
                 if self.index < len(lex):
                     self.index += 1
                     self.table = lex[self.index]
+            elif symbol.upper() == "FLAT":
+                self.flat = True
+            elif symbol.upper() == "EXPAND":
+                self.flat = False
+            elif symbol.upper() == "RAW":
+                self.raw = True
+            elif symbol.upper() == "NORAW":
+                self.flat = False
+            else:
+                raise AttributeError("invalid SQL expression: '... %s ...'" % symbol)
             self.index += 1
 
     def close(self):
@@ -267,16 +285,17 @@ class DBI(object):
         self.sdb = SimpleAccess(self.database)
         self.stab = QuickTable(self.sdb)
         self.select = 0
+        start_time = time.time()
         self.process_table(self.stab) # a class that has .row(1, 2, 3, ...)
         if self.select > 0:
             self.stab.columns(*self.clean_titles(self.columns))
             self.sdoc = SimpleDoc(self.document)
             self.sdoc.title(self.query)
             self.sdoc.paragraph("\n")
-            self.sdoc.paragraph("%d rows processed.\n" % self.select)
+            self.sdoc.paragraph("%d rows processed in %s seconds.\n" % (self.select, time.time() - start_time))
             self.stab.write(self.sdoc)
             self.sdoc.paragraph("")
-        return _("[%d rows processed]") % self.select
+        return _("%d rows processed in %s seconds.\n") % (self.select, time.time() - start_time)
 
     def get_columns(self, table):
         if self.database:
@@ -325,20 +344,32 @@ class DBI(object):
         retval.update(kwargs) 
         return retval
 
+    def stringify(self, value):
+        if self.raw:
+            return value
+        if isinstance(value, Struct):
+            return self.stringify(value.struct)
+        elif isinstance(value, (list, tuple)):
+            if len(value) == 0 and not self.flat:
+                return ""
+            elif len(value) == 1 and not self.flat:
+                return self.stringify(value[0])
+            else:
+                return "[%s]" % (", ".join(map(self.stringify, value)))
+        elif isinstance(value, PrimaryObject):
+            return value
+        else:
+            return str(value)
+
     def clean(self, values, names):
+        if self.raw:
+            return values
         retval = []
         for i in range(len(values)):
             if names[i].endswith("handle"):
-                retval.append(str(values[i].struct["handle"]))
-            elif isinstance(values[i], (list, tuple)):
-                if len(values[i]) == 0:
-                    retval.append("")
-                elif len(values[i]) == 1:
-                    retval.append(str(values[i][0]))
-                else:
-                    retval.append(str(values[i]))
+                retval.append(repr(values[i].struct["handle"]))
             else:
-                retval.append(str(values[i]))
+                retval.append(self.stringify(values[i]))
         return retval
 
     def do_query(self, items, table):
@@ -354,6 +385,7 @@ class DBI(object):
                 # "col[0]" in WHERE clause will return first column of selection:
                 env["col"] = row_env
                 env["ROWNUM"] = ROWNUM
+                env["object"] = item
                 struct = Struct(item.to_struct(), self.database)
                 env.set_struct(struct)
                 for col in self.columns:
@@ -382,22 +414,26 @@ class DBI(object):
                 if result:
                     if (self.limit is None) or (self.limit[0] <= ROWNUM < self.limit[1]):
                         if self.action == "SELECT":
-                            # Join by rows:
-                            products = []
-                            columns = []
-                            count = 0
-                            for col in row:
-                                if ((isinstance(col, Struct) and isinstance(col.struct, list) and len(col.struct) > 0) or
-                                    (isinstance(col, list) and len(col) > 0)):
-                                    products.append(map(str, col))
-                                    columns.append(count)
-                                count += 1
-                            if len(products) > 0:
-                                for items in itertools.product(*products):
+                            if not self.flat:
+                                # Join by rows:
+                                products = []
+                                columns = []
+                                count = 0
+                                for col in row:
+                                    if ((isinstance(col, Struct) and isinstance(col.struct, list) and len(col.struct) > 0) or
+                                        (isinstance(col, list) and len(col) > 0)):
+                                        products.append(col)
+                                        columns.append(count)
+                                    count += 1
+                                if len(products) > 0:
                                     current = self.clean(row, self.columns)
-                                    for i in range(len(items)):
-                                        current[columns[i]] = items[i]
-                                    table.row(*current, link=(item.__class__.__name__, item.handle))
+                                    for items in itertools.product(*products):
+                                        for i in range(len(items)):
+                                            current[columns[i]] = self.stringify(items[i])
+                                        table.row(*current, link=(item.__class__.__name__, item.handle))
+                                        self.select += 1
+                                else:
+                                    table.row(*self.clean(row, self.columns), link=(item.__class__.__name__, item.handle))
                                     self.select += 1
                             else:
                                 table.row(*self.clean(row, self.columns), link=(item.__class__.__name__, item.handle))
@@ -415,7 +451,9 @@ class DBI(object):
                         else:
                             raise AttributeError("unknown command: '%s'", self.action)
                     ROWNUM += 1
-
+                    if (self.limit is not None) and (ROWNUM >= self.limit[1]):
+                        break
+                
 def run(database, document, query):
     """
     Run the query
