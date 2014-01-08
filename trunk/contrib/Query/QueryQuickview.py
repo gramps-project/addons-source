@@ -199,13 +199,13 @@ class DBI(object):
                 self.index += 1
                 self.columns.append(lex[self.index])
                 self.index += 1
-                while self.index < len(lex) and lex[self.index] in [",", "as"]:
+                while self.index < len(lex) and lex[self.index].upper() in [",", "AS"]:
                     sep = lex[self.index]
                     if sep == ",":
                         self.index += 1
                         self.columns.append(lex[self.index])
                         self.index += 1
-                    elif sep == "as":
+                    elif sep.upper() == "AS":
                         self.index += 1 # alias
                         self.aliases[self.columns[-1]] = lex[self.index]
                         self.index += 1
