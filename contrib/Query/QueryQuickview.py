@@ -35,19 +35,31 @@ except ValueError:
 _ = _trans.gettext
 import gramps.gen.datehandler
 import gramps.gen.lib
+from gramps.gen.lib.handle import Handle
 from gramps.gen.lib.primaryobj import PrimaryObject
 from gramps.gen.merge.diff import Struct
 
 import random
+import re
 import traceback
 import itertools
 import time
 
 class Environment(dict):
+    """
+    Environment class for providing a specialized env
+    so that eval(expr, env) will be able to find items
+    in the struct.
+    """
     def __init__(self, *args, **kwargs):
-        dict.__init__(*args, **kwargs)
+        """ Initialize environment as a regular dict """
+        dict.__init__(self, *args, **kwargs)
 
     def __getitem__(self, key):
+        """
+        Try looking up the item in struct first, and if failing
+        look in self (a dict).
+        """
         try:
             return self.struct[key]
         except:
@@ -57,9 +69,15 @@ class Environment(dict):
                 raise NameError("name '%s' is not defined" % key)
 
     def set_struct(self, struct):
+        """
+        Set the struct of the Environment.
+        """
         self.struct = struct
 
 class DBI(object):
+    """
+    The SQL-like interface to the database and document instances.
+    """
     def __init__(self, database, document):
         self.database = database
         self.document = document
@@ -71,12 +89,16 @@ class DBI(object):
             for name in self.database.get_table_names():
                 d = self.database._tables[name]["class_func"]().to_struct()
                 self.data[name.lower()] = d.keys()
+        # The macros:
         self.shortcuts = {
             "SURNAME": "primary_name.surname_list[0].surname",
             "GIVEN": "primary_name.first_name",
         }
 
     def parse(self, query):
+        """
+        Parse the query.
+        """
         self.query = query.strip()
         lexed = self.lexer(self.query)
         #print(lexed)
@@ -91,7 +113,7 @@ class DBI(object):
 
     def lexer(self, string):
         """
-        Given a string, break into a list of Lexical Symbols
+        Given a string, break into a list of chunks.
         """
         retval = []
         state = None
@@ -177,6 +199,10 @@ class DBI(object):
         return retval
 
     def parser(self, lex):
+        """
+        Takes output of lexer, and sets the values.
+        After parser, the DBI will be ready to process query.
+        """
         self.action = None
         self.table = None
         self.columns = []
@@ -268,12 +294,18 @@ class DBI(object):
             self.index += 1
 
     def close(self):
+        """
+        Close up any progress widgets or dialogs.
+        """
         #try:
         #    self.progress.close()
         #except:
         pass
 
     def clean_titles(self, columns):
+        """
+        Take the columns and turn them into strings for the table.
+        """
         retval = []
         for column in columns:
             if column in self.aliases:
@@ -282,6 +314,9 @@ class DBI(object):
         return retval
 
     def eval(self):
+        """
+        Execute the query.
+        """
         self.sdb = SimpleAccess(self.database)
         self.stab = QuickTable(self.sdb)
         self.select = 0
@@ -298,6 +333,9 @@ class DBI(object):
         return _("%d rows processed in %s seconds.\n") % (self.select, time.time() - start_time)
 
     def get_columns(self, table):
+        """
+        Get the columns for the given table.
+        """
         if self.database:
             retval = self.data[table.lower()]
             return retval # [self.name] + retval
@@ -305,6 +343,10 @@ class DBI(object):
             return ["*"]
 
     def process_table(self, table):
+        """
+        Given a table name, process the query on the elements of the
+        table.
+        """
         # 'Person', 'Family', 'Source', 'Citation', 'Event', 'Media',
         # 'Place', 'Repository', 'Note', 'Tag'
         # table: a class that has .row(1, 2, 3, ...)
@@ -331,20 +373,39 @@ class DBI(object):
         else:
             raise AttributeError("no such table: '%s'" % self.table)
 
+    def get_tag(self, name):
+        tag = self.database.get_tag_from_name(name)
+        if tag is None:
+            tag = gramps.gen.lib.Tag()
+            tag.set_name(name)
+            trans_class = self.database.get_transaction_class()
+            with trans_class("QueryQuickview new Tag", self.database, batch=True) as trans:
+                self.database.add_tag(tag, trans)
+        return Handle("Tag", tag.handle)
+
     def make_env(self, **kwargs):
         """
-        An environment with which to eval rows.
+        An environment with which to eval elements.
         """
         retval= Environment({
             _("Date"): gramps.gen.lib.date.Date,
             _("Today"): gramps.gen.lib.date.Today(),
             "random": random,
+            "re": re,
+            "db": self.database,
+            "sdb": self.sdb,
+            "lib": gramps.gen.lib,
+            "_": _,
+            "Tag": self.get_tag,
             })
-        retval.update(__builtins__) 
+        retval.update(__builtins__)
         retval.update(kwargs) 
         return retval
 
     def stringify(self, value):
+        """
+        Turn the value into an appropriate string representation.
+        """
         if self.raw:
             return value
         if isinstance(value, Struct):
@@ -362,6 +423,10 @@ class DBI(object):
             return str(value)
 
     def clean(self, values, names):
+        """
+        Given the values and names of columns, change the values
+        into string versions for the display table.
+        """
         if self.raw:
             return values
         retval = []
@@ -373,6 +438,9 @@ class DBI(object):
         return retval
 
     def do_query(self, items, table):
+        """
+        Perform the query on the items in the named table.
+        """
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database, batch=True) as trans:
             ROWNUM = 0
