@@ -21,7 +21,7 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.4',"g":'4.1',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.5',"g":'4.1',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python-gramplet',"v":'1.0.18',"g":'4.1',"d":u'Interactieve Python-interpreter',"z":'PythonGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Query Gramplet',"n":u'Zoek-gramplet',"v":'1.0.17',"g":'4.1',"d":u"Gramplet om 'sql'-achtige zoekopdrachten in te geven","z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":u'Snelscherm voor zoeken',"v":'1.0.18',"g":'4.1',"d":u"Snelscherm om 'sql'-achtige zoekopdrachten in te geven","z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Aanverwanten-gramplet',"v":'1.0.18',"g":'4.1',"d":u'Gramplet toont de verwanten in een relatie',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":u'Tijdslijnstamboom',"v":'0.1.31',"g":'4.1',"d":u'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":u'Grafiekscherm',"v":'1.0.41',"g":'4.1',"d":u'Dynamische grafiek van de relaties',"z":'GraphView.addon.tgz'}
@@ -36,7 +36,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":u"Bibliotheek voor 'webstek'-verzamelingen","z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'Afstammelingen tellen',"v":'1.0.18',"g":'4.1',"d":u'Het aantal afstammelingen voor elke persoon tonen.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Aantal afstammelingen',"v":'3.4.18',"g":'4.1',"d":u'Aantal afstammelingen van de actieve persoon wordt getoond',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":u'Snelscherm voor zoeken',"v":'1.0.17',"g":'4.1',"d":u"Snelscherm om 'sql'-achtige zoekopdrachten in te geven","z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":u'Snelscherm voor zoeken',"v":'1.0.18',"g":'4.1',"d":u"Snelscherm om 'sql'-achtige zoekopdrachten in te geven","z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":u'Alle namen van alle personen',"v":'1.0.17',"g":'4.1',"d":u'De namen van alle personen tonen',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tijdlijn',"v":'1.0.20',"g":'4.1',"d":u'Gebeurtenissen van een persoon worden op een tijdslijn getoond',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
