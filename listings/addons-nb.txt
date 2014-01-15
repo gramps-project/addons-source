@@ -21,7 +21,7 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.4',"g":'4.1',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.5',"g":'4.1',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python sm\xe5gramps',"v":'1.0.18',"g":'4.1',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.17',"g":'4.1',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Timeline Pedigree',"v":'0.1.31',"g":'4.1',"d":'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.41',"g":'4.1',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
@@ -36,7 +36,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":'Library for web site collections',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Descendant Count',"v":'1.0.18',"g":'4.1',"d":'Display descendant counts for each person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Number of descendants',"v":'3.4.18',"g":'4.1',"d":'Shows the number of descendants of the current person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.17',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":u'Alle navn p\xe5 alle personer',"v":'1.0.17',"g":'4.1',"d":u'Display all names of all people',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tidslinje',"v":'1.0.20',"g":'4.1',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}

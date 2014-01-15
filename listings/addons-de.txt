@@ -21,7 +21,7 @@
 {"t":'Gramplet',"i":'Participants',"n":u'Beteiligte',"v":'1.0.4',"g":'4.1',"d":u'Gramplet zeigt die Beteiligten eines Ereignis',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":u'Foto markieren',"v":'1.0.5',"g":'4.1',"d":u'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python Gramplet',"v":'1.0.18',"g":'4.1',"d":u'Interaktiver Pythoninterpreter',"z":'PythonGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Query Gramplet',"n":u'Abfrage Gramplet',"v":'1.0.17',"g":'4.1',"d":u'Gramplet zum Ausf\xfchren SQL-\xe4hnlicher Abfragen',"z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":u'Abfrage Schnellansicht',"v":'1.0.18',"g":'4.1',"d":u'Schnellansicht f\xfcr SQL-\xe4hnlich laufende Abfragen',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Verbundene Verwandte Gramplet',"v":'1.0.18',"g":'4.1',"d":u'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":u'Zeitleistestammbaum',"v":'0.1.31',"g":'4.1',"d":u'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gew\xe4hlten Person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":u'Graphenansicht',"v":'1.0.41',"g":'4.1',"d":u'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
@@ -36,7 +36,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":u'Bibliothek f\xfcr Webseitensammlungen',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'Anzahl der Nachkommen',"v":'1.0.18',"g":'4.1',"d":u'Zeigt die Anzahl der Nachkommen f\xfcr jede Person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Anzahl der Nachkommen',"v":'3.4.18',"g":'4.1',"d":u'Zeigt die Anzahl der Nachkommen der aktuellen Person an',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":u'Abfrage Schnellansicht',"v":'1.0.17',"g":'4.1',"d":u'Schnellansicht f\xfcr SQL-\xe4hnlich laufende Abfragen',"z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":u'Abfrage Schnellansicht',"v":'1.0.18',"g":'4.1',"d":u'Schnellansicht f\xfcr SQL-\xe4hnlich laufende Abfragen',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":u'Alle Namen aller Personen',"v":'1.0.17',"g":'4.1',"d":u'Zeigt alle Namen aller Personen',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Zeitleiste',"v":'1.0.20',"g":'4.1',"d":u'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Nachkommen Linien',"v":'0.1.21',"g":'4.1',"d":u'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
