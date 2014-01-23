@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #
-# Generated Fri Jun 22 13:30:40 2012 by generateDS.py version 2.7b.
+# Generated Thu Jan 23 19:46:23 2014 by generateDS.py version 2.12a.
 #
 
 import sys
@@ -10,9 +10,10 @@ import ??? as supermod
 
 etree_ = None
 Verbose_import_ = False
-(   XMLParser_import_none, XMLParser_import_lxml,
+(
+    XMLParser_import_none, XMLParser_import_lxml,
     XMLParser_import_elementtree
-    ) = range(3)
+) = range(3)
 XMLParser_import_library = None
 try:
     # lxml
@@ -49,11 +50,13 @@ except ImportError:
                     if Verbose_import_:
                         print("running with ElementTree")
                 except ImportError:
-                    raise ImportError("Failed to import ElementTree from any known place")
+                    raise ImportError(
+                        "Failed to import ElementTree from any known place")
+
 
 def parsexml_(*args, **kwargs):
     if (XMLParser_import_library == XMLParser_import_lxml and
-        'parser' not in kwargs):
+            'parser' not in kwargs):
         # Use the lxml ElementTree compatible parser so that, e.g.,
         #   we ignore comments.
         kwargs['parser'] = etree_.ETCompatXMLParser()
@@ -64,15 +67,16 @@ def parsexml_(*args, **kwargs):
 # Globals
 #
 
-ExternalEncoding = 'utf-8'
+ExternalEncoding = 'ascii'
 
 #
 # Data representation classes
 #
 
+
 class databaseSub(supermod.database):
-    def __init__(self, xmlns=None, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
-        super(databaseSub, self).__init__(xmlns, header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
+    def __init__(self, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
+        super(databaseSub, self).__init__(header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
 supermod.database.subclass = databaseSub
 # end class databaseSub
 
@@ -491,8 +495,8 @@ supermod.object.subclass = objectSub
 
 
 class fileSub(supermod.file):
-    def __init__(self, src=None, mime=None, description=None):
-        super(fileSub, self).__init__(src, mime, description, )
+    def __init__(self, src=None, mime=None, description=None, checksum=None):
+        super(fileSub, self).__init__(src, mime, description, checksum, )
 supermod.file.subclass = fileSub
 # end class fileSub
 
@@ -791,16 +795,16 @@ supermod.sealed_to.subclass = sealed_toSub
 # end class sealed_toSub
 
 
-
 def get_root_tag(node):
     tag = supermod.Tag_pattern_.match(node.tag).groups()[-1]
     rootClass = None
-    if hasattr(supermod, tag):
+    rootClass = supermod.GDSClassesMapping.get(tag)
+    if rootClass is None and hasattr(supermod, tag):
         rootClass = getattr(supermod, tag)
     return tag, rootClass
 
 
-def parse(inFilename):
+def parse(inFilename, silence=False):
     doc = parsexml_(inFilename)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
@@ -811,14 +815,39 @@ def parse(inFilename):
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('<?xml version="1.0" ?>\n')
-    rootObj.export(sys.stdout, 0, name_=rootTag,
-        namespacedef_='')
-    doc = None
+    if not silence:
+        sys.stdout.write('<?xml version="1.0" ?>\n')
+        rootObj.export(
+            sys.stdout, 0, name_=rootTag,
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"',
+            pretty_print=True)
     return rootObj
 
 
-def parseString(inString):
+def parseEtree(inFilename, silence=False):
+    doc = parsexml_(inFilename)
+    rootNode = doc.getroot()
+    rootTag, rootClass = get_root_tag(rootNode)
+    if rootClass is None:
+        rootTag = 'database'
+        rootClass = supermod.database
+    rootObj = rootClass.factory()
+    rootObj.build(rootNode)
+    # Enable Python to collect the space used by the DOM.
+    doc = None
+    mapping = {}
+    rootElement = rootObj.to_etree(None, name_=rootTag, mapping_=mapping)
+    reverse_mapping = rootObj.gds_reverse_node_mapping(mapping)
+    if not silence:
+        content = etree_.tostring(
+            rootElement, pretty_print=True,
+            xml_declaration=True, encoding="utf-8")
+        sys.stdout.write(content)
+        sys.stdout.write('\n')
+    return rootObj, rootElement, mapping, reverse_mapping
+
+
+def parseString(inString, silence=False):
     from StringIO import StringIO
     doc = parsexml_(StringIO(inString))
     rootNode = doc.getroot()
@@ -830,34 +859,38 @@ def parseString(inString):
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('<?xml version="1.0" ?>\n')
-    rootObj.export(sys.stdout, 0, name_=rootTag,
-        namespacedef_='')
+    if not silence:
+        sys.stdout.write('<?xml version="1.0" ?>\n')
+        rootObj.export(
+            sys.stdout, 0, name_=rootTag,
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"')
     return rootObj
 
 
-def parseLiteral(inFilename):
+def parseLiteral(inFilename, silence=False):
     doc = parsexml_(inFilename)
     rootNode = doc.getroot()
-    rootTag, rootClass = get_root_tag(rootNode)
+    roots = get_root_tag(rootNode)
+    rootClass = roots[1]
     if rootClass is None:
-        rootTag = 'database'
         rootClass = supermod.database
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('#from ??? import *\n\n')
-    sys.stdout.write('import ??? as model_\n\n')
-    sys.stdout.write('rootObj = model_.database(\n')
-    rootObj.exportLiteral(sys.stdout, 0, name_="database")
-    sys.stdout.write(')\n')
+    if not silence:
+        sys.stdout.write('#from ??? import *\n\n')
+        sys.stdout.write('import ??? as model_\n\n')
+        sys.stdout.write('rootObj = model_.database(\n')
+        rootObj.exportLiteral(sys.stdout, 0, name_="database")
+        sys.stdout.write(')\n')
     return rootObj
 
 
 USAGE_TEXT = """
 Usage: python ???.py <infilename>
 """
+
 
 def usage():
     print USAGE_TEXT
@@ -869,11 +902,9 @@ def main():
     if len(args) != 1:
         usage()
     infilename = args[0]
-    root = parse(infilename)
+    parse(infilename)
 
 
 if __name__ == '__main__':
     #import pdb; pdb.set_trace()
     main()
-
-

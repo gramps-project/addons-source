@@ -1,19 +1,22 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 #
-# Generated Fri Jun 22 13:30:02 2012 by generateDS.py version 2.7b.
+# Generated Thu Jan 23 19:52:39 2014 by generateDS.py version 2.12a.
 #
 
 import sys
 import getopt
 import re as re_
+import base64
+import datetime as datetime_
 
 etree_ = None
 Verbose_import_ = False
-(   XMLParser_import_none, XMLParser_import_lxml,
+(
+    XMLParser_import_none, XMLParser_import_lxml,
     XMLParser_import_elementtree
-    ) = range(3)
+) = range(3)
 XMLParser_import_library = None
 try:
     # lxml
@@ -50,11 +53,13 @@ except ImportError:
                     if Verbose_import_:
                         print("running with ElementTree")
                 except ImportError:
-                    raise ImportError("Failed to import ElementTree from any known place")
+                    raise ImportError(
+                        "Failed to import ElementTree from any known place")
+
 
 def parsexml_(*args, **kwargs):
     if (XMLParser_import_library == XMLParser_import_lxml and
-        'parser' not in kwargs):
+            'parser' not in kwargs):
         # Use the lxml ElementTree compatible parser so that, e.g.,
         #   we ignore comments.
         kwargs['parser'] = etree_.ETCompatXMLParser()
@@ -73,9 +78,27 @@ try:
 except ImportError, exp:
 
     class GeneratedsSuper(object):
+        tzoff_pattern = re_.compile(r'(\+|-)((0\d|1[0-3]):[0-5]\d|14:00)$')
+        class _FixedOffsetTZ(datetime_.tzinfo):
+            def __init__(self, offset, name):
+                self.__offset = datetime_.timedelta(minutes=offset)
+                self.__name = name
+            def utcoffset(self, dt):
+                return self.__offset
+            def tzname(self, dt):
+                return self.__name
+            def dst(self, dt):
+                return None
         def gds_format_string(self, input_data, input_name=''):
             return input_data
         def gds_validate_string(self, input_data, node, input_name=''):
+            if not input_data:
+                return ''
+            else:
+                return input_data
+        def gds_format_base64(self, input_data, input_name=''):
+            return base64.b64encode(input_data)
+        def gds_validate_base64(self, input_data, node, input_name=''):
             return input_data
         def gds_format_integer(self, input_data, input_name=''):
             return '%d' % input_data
@@ -87,12 +110,12 @@ except ImportError, exp:
             values = input_data.split()
             for value in values:
                 try:
-                    fvalue = float(value)
-                except (TypeError, ValueError), exp:
+                    float(value)
+                except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of integers')
             return input_data
         def gds_format_float(self, input_data, input_name=''):
-            return '%f' % input_data
+            return ('%.15f' % input_data).rstrip('0')
         def gds_validate_float(self, input_data, node, input_name=''):
             return input_data
         def gds_format_float_list(self, input_data, input_name=''):
@@ -101,8 +124,8 @@ except ImportError, exp:
             values = input_data.split()
             for value in values:
                 try:
-                    fvalue = float(value)
-                except (TypeError, ValueError), exp:
+                    float(value)
+                except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of floats')
             return input_data
         def gds_format_double(self, input_data, input_name=''):
@@ -115,12 +138,12 @@ except ImportError, exp:
             values = input_data.split()
             for value in values:
                 try:
-                    fvalue = float(value)
-                except (TypeError, ValueError), exp:
+                    float(value)
+                except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of doubles')
             return input_data
         def gds_format_boolean(self, input_data, input_name=''):
-            return '%s' % input_data
+            return ('%s' % input_data).lower()
         def gds_validate_boolean(self, input_data, node, input_name=''):
             return input_data
         def gds_format_boolean_list(self, input_data, input_name=''):
@@ -129,8 +152,173 @@ except ImportError, exp:
             values = input_data.split()
             for value in values:
                 if value not in ('true', '1', 'false', '0', ):
-                    raise_parse_error(node, 'Requires sequence of booleans ("true", "1", "false", "0")')
+                    raise_parse_error(
+                        node,
+                        'Requires sequence of booleans '
+                        '("true", "1", "false", "0")')
             return input_data
+        def gds_validate_datetime(self, input_data, node, input_name=''):
+            return input_data
+        def gds_format_datetime(self, input_data, input_name=''):
+            if input_data.microsecond == 0:
+                _svalue = '%04d-%02d-%02dT%02d:%02d:%02d' % (
+                    input_data.year,
+                    input_data.month,
+                    input_data.day,
+                    input_data.hour,
+                    input_data.minute,
+                    input_data.second,
+                )
+            else:
+                _svalue = '%04d-%02d-%02dT%02d:%02d:%02d.%s' % (
+                    input_data.year,
+                    input_data.month,
+                    input_data.day,
+                    input_data.hour,
+                    input_data.minute,
+                    input_data.second,
+                    ('%f' % (float(input_data.microsecond) / 1000000))[2:],
+                )
+            if input_data.tzinfo is not None:
+                tzoff = input_data.tzinfo.utcoffset(input_data)
+                if tzoff is not None:
+                    total_seconds = tzoff.seconds + (86400 * tzoff.days)
+                    if total_seconds == 0:
+                        _svalue += 'Z'
+                    else:
+                        if total_seconds < 0:
+                            _svalue += '-'
+                            total_seconds *= -1
+                        else:
+                            _svalue += '+'
+                        hours = total_seconds // 3600
+                        minutes = (total_seconds - (hours * 3600)) // 60
+                        _svalue += '{0:02d}:{1:02d}'.format(hours, minutes)
+            return _svalue
+        @classmethod
+        def gds_parse_datetime(cls, input_data):
+            tz = None
+            if input_data[-1] == 'Z':
+                tz = GeneratedsSuper._FixedOffsetTZ(0, 'UTC')
+                input_data = input_data[:-1]
+            else:
+                results = GeneratedsSuper.tzoff_pattern.search(input_data)
+                if results is not None:
+                    tzoff_parts = results.group(2).split(':')
+                    tzoff = int(tzoff_parts[0]) * 60 + int(tzoff_parts[1])
+                    if results.group(1) == '-':
+                        tzoff *= -1
+                    tz = GeneratedsSuper._FixedOffsetTZ(
+                        tzoff, results.group(0))
+                    input_data = input_data[:-6]
+            if len(input_data.split('.')) > 1:
+                dt = datetime_.datetime.strptime(
+                    input_data, '%Y-%m-%dT%H:%M:%S.%f')
+            else:
+                dt = datetime_.datetime.strptime(
+                    input_data, '%Y-%m-%dT%H:%M:%S')
+            dt = dt.replace(tzinfo=tz)
+            return dt
+        def gds_validate_date(self, input_data, node, input_name=''):
+            return input_data
+        def gds_format_date(self, input_data, input_name=''):
+            _svalue = '%04d-%02d-%02d' % (
+                input_data.year,
+                input_data.month,
+                input_data.day,
+            )
+            try:
+                if input_data.tzinfo is not None:
+                    tzoff = input_data.tzinfo.utcoffset(input_data)
+                    if tzoff is not None:
+                        total_seconds = tzoff.seconds + (86400 * tzoff.days)
+                        if total_seconds == 0:
+                            _svalue += 'Z'
+                        else:
+                            if total_seconds < 0:
+                                _svalue += '-'
+                                total_seconds *= -1
+                            else:
+                                _svalue += '+'
+                            hours = total_seconds // 3600
+                            minutes = (total_seconds - (hours * 3600)) // 60
+                            _svalue += '{0:02d}:{1:02d}'.format(hours, minutes)
+            except AttributeError:
+                pass
+            return _svalue
+        @classmethod
+        def gds_parse_date(cls, input_data):
+            tz = None
+            if input_data[-1] == 'Z':
+                tz = GeneratedsSuper._FixedOffsetTZ(0, 'UTC')
+                input_data = input_data[:-1]
+            else:
+                results = GeneratedsSuper.tzoff_pattern.search(input_data)
+                if results is not None:
+                    tzoff_parts = results.group(2).split(':')
+                    tzoff = int(tzoff_parts[0]) * 60 + int(tzoff_parts[1])
+                    if results.group(1) == '-':
+                        tzoff *= -1
+                    tz = GeneratedsSuper._FixedOffsetTZ(
+                        tzoff, results.group(0))
+                    input_data = input_data[:-6]
+            dt = datetime_.datetime.strptime(input_data, '%Y-%m-%d')
+            dt = dt.replace(tzinfo=tz)
+            return dt.date()
+        def gds_validate_time(self, input_data, node, input_name=''):
+            return input_data
+        def gds_format_time(self, input_data, input_name=''):
+            if input_data.microsecond == 0:
+                _svalue = '%02d:%02d:%02d' % (
+                    input_data.hour,
+                    input_data.minute,
+                    input_data.second,
+                )
+            else:
+                _svalue = '%02d:%02d:%02d.%s' % (
+                    input_data.hour,
+                    input_data.minute,
+                    input_data.second,
+                    ('%f' % (float(input_data.microsecond) / 1000000))[2:],
+                )
+            if input_data.tzinfo is not None:
+                tzoff = input_data.tzinfo.utcoffset(input_data)
+                if tzoff is not None:
+                    total_seconds = tzoff.seconds + (86400 * tzoff.days)
+                    if total_seconds == 0:
+                        _svalue += 'Z'
+                    else:
+                        if total_seconds < 0:
+                            _svalue += '-'
+                            total_seconds *= -1
+                        else:
+                            _svalue += '+'
+                        hours = total_seconds // 3600
+                        minutes = (total_seconds - (hours * 3600)) // 60
+                        _svalue += '{0:02d}:{1:02d}'.format(hours, minutes)
+            return _svalue
+        @classmethod
+        def gds_parse_time(cls, input_data):
+            tz = None
+            if input_data[-1] == 'Z':
+                tz = GeneratedsSuper._FixedOffsetTZ(0, 'UTC')
+                input_data = input_data[:-1]
+            else:
+                results = GeneratedsSuper.tzoff_pattern.search(input_data)
+                if results is not None:
+                    tzoff_parts = results.group(2).split(':')
+                    tzoff = int(tzoff_parts[0]) * 60 + int(tzoff_parts[1])
+                    if results.group(1) == '-':
+                        tzoff *= -1
+                    tz = GeneratedsSuper._FixedOffsetTZ(
+                        tzoff, results.group(0))
+                    input_data = input_data[:-6]
+            if len(input_data.split('.')) > 1:
+                dt = datetime_.datetime.strptime(input_data, '%H:%M:%S.%f')
+            else:
+                dt = datetime_.datetime.strptime(input_data, '%H:%M:%S')
+            dt = dt.replace(tzinfo=tz)
+            return dt.time()
         def gds_str_lower(self, instring):
             return instring.lower()
         def get_path_(self, node):
@@ -161,6 +349,9 @@ except ImportError, exp:
             return class_obj1
         def gds_build_any(self, node, type_name=None):
             return None
+        @classmethod
+        def gds_reverse_node_mapping(cls, mapping):
+            return dict(((v, k) for k, v in mapping.iteritems()))
 
 
 #
@@ -182,7 +373,7 @@ except ImportError, exp:
 # Globals
 #
 
-ExternalEncoding = 'utf-8'
+ExternalEncoding = 'ascii'
 Tag_pattern_ = re_.compile(r'({.*})?(.*)')
 String_cleanup_pat_ = re_.compile(r"[\n\r\s]+")
 Namespace_extract_pat_ = re_.compile(r'{(.*)}(.*)')
@@ -191,9 +382,12 @@ Namespace_extract_pat_ = re_.compile(r'{(.*)}(.*)')
 # Support/utility functions.
 #
 
-def showIndent(outfile, level):
-    for idx in range(level):
-        outfile.write('    ')
+
+def showIndent(outfile, level, pretty_print=True):
+    if pretty_print:
+        for idx in range(level):
+            outfile.write('    ')
+
 
 def quote_xml(inStr):
     if not inStr:
@@ -204,6 +398,7 @@ def quote_xml(inStr):
     s1 = s1.replace('<', '&lt;')
     s1 = s1.replace('>', '&gt;')
     return s1
+
 
 def quote_attrib(inStr):
     s1 = (isinstance(inStr, basestring) and inStr or
@@ -220,6 +415,7 @@ def quote_attrib(inStr):
         s1 = '"%s"' % s1
     return s1
 
+
 def quote_python(inStr):
     s1 = inStr
     if s1.find("'") == -1:
@@ -235,6 +431,7 @@ def quote_python(inStr):
         else:
             return '"""%s"""' % s1
 
+
 def get_all_text_(node):
     if node.text is not None:
         text = node.text
@@ -244,6 +441,7 @@ def get_all_text_(node):
         if child.tail is not None:
             text += child.tail
     return text
+
 
 def find_attr_value_(attr_name, node):
     attrs = node.attrib
@@ -262,9 +460,11 @@ def find_attr_value_(attr_name, node):
 class GDSParseError(Exception):
     pass
 
+
 def raise_parse_error(node, msg):
     if XMLParser_import_library == XMLParser_import_lxml:
-        msg = '%s (element %s/line %d)' % (msg, node.tag, node.sourceline, )
+        msg = '%s (element %s/line %d)' % (
+            msg, node.tag, node.sourceline, )
     else:
         msg = '%s (element %s)' % (msg, node.tag, )
     raise GDSParseError(msg)
@@ -285,6 +485,7 @@ class MixedContainer:
     TypeDecimal = 5
     TypeDouble = 6
     TypeBoolean = 7
+    TypeBase64 = 8
     def __init__(self, category, content_type, name, value):
         self.category = category
         self.content_type = content_type
@@ -298,39 +499,82 @@ class MixedContainer:
         return self.value
     def getName(self):
         return self.name
-    def export(self, outfile, level, name, namespace):
+    def export(self, outfile, level, name, namespace, pretty_print=True):
         if self.category == MixedContainer.CategoryText:
             # Prevent exporting empty content as empty lines.
-            if self.value.strip(): 
+            if self.value.strip():
                 outfile.write(self.value)
         elif self.category == MixedContainer.CategorySimple:
             self.exportSimple(outfile, level, name)
         else:    # category == MixedContainer.CategoryComplex
-            self.value.export(outfile, level, namespace,name)
+            self.value.export(outfile, level, namespace, name, pretty_print)
     def exportSimple(self, outfile, level, name):
         if self.content_type == MixedContainer.TypeString:
-            outfile.write('<%s>%s</%s>' % (self.name, self.value, self.name))
+            outfile.write('<%s>%s</%s>' % (
+                self.name, self.value, self.name))
         elif self.content_type == MixedContainer.TypeInteger or \
                 self.content_type == MixedContainer.TypeBoolean:
-            outfile.write('<%s>%d</%s>' % (self.name, self.value, self.name))
+            outfile.write('<%s>%d</%s>' % (
+                self.name, self.value, self.name))
         elif self.content_type == MixedContainer.TypeFloat or \
                 self.content_type == MixedContainer.TypeDecimal:
-            outfile.write('<%s>%f</%s>' % (self.name, self.value, self.name))
+            outfile.write('<%s>%f</%s>' % (
+                self.name, self.value, self.name))
         elif self.content_type == MixedContainer.TypeDouble:
-            outfile.write('<%s>%g</%s>' % (self.name, self.value, self.name))
+            outfile.write('<%s>%g</%s>' % (
+                self.name, self.value, self.name))
+        elif self.content_type == MixedContainer.TypeBase64:
+            outfile.write('<%s>%s</%s>' % (
+                self.name, base64.b64encode(self.value), self.name))
+    def to_etree(self, element):
+        if self.category == MixedContainer.CategoryText:
+            # Prevent exporting empty content as empty lines.
+            if self.value.strip():
+                if len(element) > 0:
+                    if element[-1].tail is None:
+                        element[-1].tail = self.value
+                    else:
+                        element[-1].tail += self.value
+                else:
+                    if element.text is None:
+                        element.text = self.value
+                    else:
+                        element.text += self.value
+        elif self.category == MixedContainer.CategorySimple:
+            subelement = etree_.SubElement(element, '%s' % self.name)
+            subelement.text = self.to_etree_simple()
+        else:    # category == MixedContainer.CategoryComplex
+            self.value.to_etree(element)
+    def to_etree_simple(self):
+        if self.content_type == MixedContainer.TypeString:
+            text = self.value
+        elif (self.content_type == MixedContainer.TypeInteger or
+                self.content_type == MixedContainer.TypeBoolean):
+            text = '%d' % self.value
+        elif (self.content_type == MixedContainer.TypeFloat or
+                self.content_type == MixedContainer.TypeDecimal):
+            text = '%f' % self.value
+        elif self.content_type == MixedContainer.TypeDouble:
+            text = '%g' % self.value
+        elif self.content_type == MixedContainer.TypeBase64:
+            text = '%s' % base64.b64encode(self.value)
+        return text
     def exportLiteral(self, outfile, level, name):
         if self.category == MixedContainer.CategoryText:
             showIndent(outfile, level)
-            outfile.write('model_.MixedContainer(%d, %d, "%s", "%s"),\n' % \
-                (self.category, self.content_type, self.name, self.value))
+            outfile.write(
+                'model_.MixedContainer(%d, %d, "%s", "%s"),\n' % (
+                    self.category, self.content_type, self.name, self.value))
         elif self.category == MixedContainer.CategorySimple:
             showIndent(outfile, level)
-            outfile.write('model_.MixedContainer(%d, %d, "%s", "%s"),\n' % \
-                (self.category, self.content_type, self.name, self.value))
+            outfile.write(
+                'model_.MixedContainer(%d, %d, "%s", "%s"),\n' % (
+                    self.category, self.content_type, self.name, self.value))
         else:    # category == MixedContainer.CategoryComplex
             showIndent(outfile, level)
-            outfile.write('model_.MixedContainer(%d, %d, "%s",\n' % \
-                (self.category, self.content_type, self.name,))
+            outfile.write(
+                'model_.MixedContainer(%d, %d, "%s",\n' % (
+                    self.category, self.content_type, self.name,))
             self.value.exportLiteral(outfile, level + 1)
             showIndent(outfile, level)
             outfile.write(')\n')
@@ -356,6 +600,7 @@ class MemberSpec_(object):
     def set_container(self, container): self.container = container
     def get_container(self): return self.container
 
+
 def _cast(typ, value):
     if typ is None or value is None:
         return value
@@ -365,9 +610,9 @@ def _cast(typ, value):
 # Data representation classes.
 #
 
+
 class database(GeneratedsSuper):
     member_data_items_ = [
-        MemberSpec_('xmlns', 'string', 0),
         MemberSpec_('header', 'header', 0),
         MemberSpec_('name_formats', 'name-formats', 0),
         MemberSpec_('tags', 'tags', 0),
@@ -382,11 +627,10 @@ class database(GeneratedsSuper):
         MemberSpec_('notes', 'notes', 0),
         MemberSpec_('bookmarks', 'bookmarks', 0),
         MemberSpec_('namemaps', 'namemaps', 0),
-        ]
+    ]
     subclass = None
     superclass = None
-    def __init__(self, xmlns=None, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
-        self.xmlns = _cast(None, xmlns)
+    def __init__(self, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
         self.header = header
         self.name_formats = name_formats
         self.tags = tags
@@ -409,94 +653,32 @@ class database(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_header(self): return self.header
     def set_header(self, header): self.header = header
-    headerProp = property(get_header, set_header)
     def get_name_formats(self): return self.name_formats
     def set_name_formats(self, name_formats): self.name_formats = name_formats
-    name_formatsProp = property(get_name_formats, set_name_formats)
     def get_tags(self): return self.tags
     def set_tags(self, tags): self.tags = tags
-    tagsProp = property(get_tags, set_tags)
     def get_events(self): return self.events
     def set_events(self, events): self.events = events
-    eventsProp = property(get_events, set_events)
     def get_people(self): return self.people
     def set_people(self, people): self.people = people
-    peopleProp = property(get_people, set_people)
     def get_families(self): return self.families
     def set_families(self, families): self.families = families
-    familiesProp = property(get_families, set_families)
     def get_citations(self): return self.citations
     def set_citations(self, citations): self.citations = citations
-    citationsProp = property(get_citations, set_citations)
     def get_sources(self): return self.sources
     def set_sources(self, sources): self.sources = sources
-    sourcesProp = property(get_sources, set_sources)
     def get_places(self): return self.places
     def set_places(self, places): self.places = places
-    placesProp = property(get_places, set_places)
     def get_objects(self): return self.objects
     def set_objects(self, objects): self.objects = objects
-    objectsProp = property(get_objects, set_objects)
     def get_repositories(self): return self.repositories
     def set_repositories(self, repositories): self.repositories = repositories
-    repositoriesProp = property(get_repositories, set_repositories)
     def get_notes(self): return self.notes
     def set_notes(self, notes): self.notes = notes
-    notesProp = property(get_notes, set_notes)
     def get_bookmarks(self): return self.bookmarks
     def set_bookmarks(self, bookmarks): self.bookmarks = bookmarks
-    bookmarksProp = property(get_bookmarks, set_bookmarks)
     def get_namemaps(self): return self.namemaps
     def set_namemaps(self, namemaps): self.namemaps = namemaps
-    namemapsProp = property(get_namemaps, set_namemaps)
-    def get_xmlns(self): return self.xmlns
-    def set_xmlns(self, xmlns): self.xmlns = xmlns
-    xmlnsProp = property(get_xmlns, set_xmlns)
-    def export(self, outfile, level, namespace_='t:', name_='database', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='database')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='database'):
-        if self.xmlns is not None and 'xmlns' not in already_processed:
-            already_processed.append('xmlns')
-            outfile.write(' xmlns=%s' % (self.gds_format_string(quote_attrib(self.xmlns).encode(ExternalEncoding), input_name='xmlns'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='database', fromsubclass_=False):
-        if self.header is not None:
-            self.header.export(outfile, level, namespace_, name_='header', )
-        if self.name_formats is not None:
-            self.name_formats.export(outfile, level, namespace_, name_='name-formats')
-        if self.tags is not None:
-            self.tags.export(outfile, level, namespace_, name_='tags')
-        if self.events is not None:
-            self.events.export(outfile, level, namespace_, name_='events')
-        if self.people is not None:
-            self.people.export(outfile, level, namespace_, name_='people')
-        if self.families is not None:
-            self.families.export(outfile, level, namespace_, name_='families')
-        if self.citations is not None:
-            self.citations.export(outfile, level, namespace_, name_='citations')
-        if self.sources is not None:
-            self.sources.export(outfile, level, namespace_, name_='sources')
-        if self.places is not None:
-            self.places.export(outfile, level, namespace_, name_='places')
-        if self.objects is not None:
-            self.objects.export(outfile, level, namespace_, name_='objects')
-        if self.repositories is not None:
-            self.repositories.export(outfile, level, namespace_, name_='repositories')
-        if self.notes is not None:
-            self.notes.export(outfile, level, namespace_, name_='notes')
-        if self.bookmarks is not None:
-            self.bookmarks.export(outfile, level, namespace_, name_='bookmarks')
-        if self.namemaps is not None:
-            self.namemaps.export(outfile, level, namespace_, name_='namemaps')
     def hasContent_(self):
         if (
             self.header is not None or
@@ -513,20 +695,69 @@ class database(GeneratedsSuper):
             self.notes is not None or
             self.bookmarks is not None or
             self.namemaps is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='database', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='database')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='database'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='database', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.header is not None:
+            self.header.export(outfile, level, namespace_='gramps:', name_='header', pretty_print=pretty_print)
+        if self.name_formats is not None:
+            self.name_formats.export(outfile, level, namespace_='gramps:', name_='name-formats', pretty_print=pretty_print)
+        if self.tags is not None:
+            self.tags.export(outfile, level, namespace_='gramps:', name_='tags', pretty_print=pretty_print)
+        if self.events is not None:
+            self.events.export(outfile, level, namespace_='gramps:', name_='events', pretty_print=pretty_print)
+        if self.people is not None:
+            self.people.export(outfile, level, namespace_='gramps:', name_='people', pretty_print=pretty_print)
+        if self.families is not None:
+            self.families.export(outfile, level, namespace_='gramps:', name_='families', pretty_print=pretty_print)
+        if self.citations is not None:
+            self.citations.export(outfile, level, namespace_='gramps:', name_='citations', pretty_print=pretty_print)
+        if self.sources is not None:
+            self.sources.export(outfile, level, namespace_='gramps:', name_='sources', pretty_print=pretty_print)
+        if self.places is not None:
+            self.places.export(outfile, level, namespace_='gramps:', name_='places', pretty_print=pretty_print)
+        if self.objects is not None:
+            self.objects.export(outfile, level, namespace_='gramps:', name_='objects', pretty_print=pretty_print)
+        if self.repositories is not None:
+            self.repositories.export(outfile, level, namespace_='gramps:', name_='repositories', pretty_print=pretty_print)
+        if self.notes is not None:
+            self.notes.export(outfile, level, namespace_='gramps:', name_='notes', pretty_print=pretty_print)
+        if self.bookmarks is not None:
+            self.bookmarks.export(outfile, level, namespace_='gramps:', name_='bookmarks', pretty_print=pretty_print)
+        if self.namemaps is not None:
+            self.namemaps.export(outfile, level, namespace_='gramps:', name_='namemaps', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='database'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.xmlns is not None and 'xmlns' not in already_processed:
-            already_processed.append('xmlns')
-            showIndent(outfile, level)
-            outfile.write('xmlns = "%s",\n' % (self.xmlns,))
+        pass
     def exportLiteralChildren(self, outfile, level, name_):
         if self.header is not None:
             showIndent(outfile, level)
@@ -613,72 +844,71 @@ class database(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('xmlns', node)
-        if value is not None and 'xmlns' not in already_processed:
-            already_processed.append('xmlns')
-            self.xmlns = value
+        pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'header':
             obj_ = header.factory()
             obj_.build(child_)
-            self.set_header(obj_)
+            self.header = obj_
         elif nodeName_ == 'name-formats':
             obj_ = name_formats.factory()
             obj_.build(child_)
-            self.set_name_formats(obj_)
+            self.name_formats = obj_
         elif nodeName_ == 'tags':
             obj_ = tags.factory()
             obj_.build(child_)
-            self.set_tags(obj_)
+            self.tags = obj_
         elif nodeName_ == 'events':
             obj_ = events.factory()
             obj_.build(child_)
-            self.set_events(obj_)
+            self.events = obj_
         elif nodeName_ == 'people':
             obj_ = people.factory()
             obj_.build(child_)
-            self.set_people(obj_)
+            self.people = obj_
         elif nodeName_ == 'families':
             obj_ = families.factory()
             obj_.build(child_)
-            self.set_families(obj_)
+            self.families = obj_
         elif nodeName_ == 'citations':
             obj_ = citations.factory()
             obj_.build(child_)
-            self.set_citations(obj_)
+            self.citations = obj_
         elif nodeName_ == 'sources':
             obj_ = sources.factory()
             obj_.build(child_)
-            self.set_sources(obj_)
+            self.sources = obj_
         elif nodeName_ == 'places':
             obj_ = places.factory()
             obj_.build(child_)
-            self.set_places(obj_)
+            self.places = obj_
         elif nodeName_ == 'objects':
             obj_ = objects.factory()
             obj_.build(child_)
-            self.set_objects(obj_)
+            self.objects = obj_
         elif nodeName_ == 'repositories':
             obj_ = repositories.factory()
             obj_.build(child_)
-            self.set_repositories(obj_)
+            self.repositories = obj_
         elif nodeName_ == 'notes':
             obj_ = notes.factory()
             obj_.build(child_)
-            self.set_notes(obj_)
+            self.notes = obj_
         elif nodeName_ == 'bookmarks':
             obj_ = bookmarks.factory()
             obj_.build(child_)
-            self.set_bookmarks(obj_)
+            self.bookmarks = obj_
         elif nodeName_ == 'namemaps':
             obj_ = namemaps.factory()
             obj_.build(child_)
-            self.set_namemaps(obj_)
+            self.namemaps = obj_
 # end class database
 
 
@@ -687,7 +917,7 @@ class header(GeneratedsSuper):
         MemberSpec_('created', 'created', 0),
         MemberSpec_('researcher', 'researcher', 0),
         MemberSpec_('mediapath', 'mediapath', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, created=None, researcher=None, mediapath=None):
@@ -702,46 +932,52 @@ class header(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_created(self): return self.created
     def set_created(self, created): self.created = created
-    createdProp = property(get_created, set_created)
     def get_researcher(self): return self.researcher
     def set_researcher(self, researcher): self.researcher = researcher
-    researcherProp = property(get_researcher, set_researcher)
     def get_mediapath(self): return self.mediapath
     def set_mediapath(self, mediapath): self.mediapath = mediapath
-    mediapathProp = property(get_mediapath, set_mediapath)
-    def export(self, outfile, level, namespace_='t:', name_='header', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='header')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='header'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='header', fromsubclass_=False):
-        if self.created is not None:
-            self.created.export(outfile, level, namespace_, name_='created', )
-        if self.researcher is not None:
-            self.researcher.export(outfile, level, namespace_, name_='researcher')
-        if self.mediapath is not None:
-            self.mediapath.export(outfile, level, namespace_, name_='mediapath')
     def hasContent_(self):
         if (
             self.created is not None or
             self.researcher is not None or
             self.mediapath is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='header', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='header')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='header'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='header', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.created is not None:
+            self.created.export(outfile, level, namespace_='gramps:', name_='created', pretty_print=pretty_print)
+        if self.researcher is not None:
+            self.researcher.export(outfile, level, namespace_='gramps:', name_='researcher', pretty_print=pretty_print)
+        if self.mediapath is not None:
+            self.mediapath.export(outfile, level, namespace_='gramps:', name_='mediapath', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='header'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -766,25 +1002,27 @@ class header(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'created':
             obj_ = created.factory()
             obj_.build(child_)
-            self.set_created(obj_)
+            self.created = obj_
         elif nodeName_ == 'researcher':
             obj_ = researcher.factory()
             obj_.build(child_)
-            self.set_researcher(obj_)
+            self.researcher = obj_
         elif nodeName_ == 'mediapath':
             obj_ = mediapath.factory()
             obj_.build(child_)
-            self.set_mediapath(obj_)
+            self.mediapath = obj_
 # end class header
 
 
@@ -792,7 +1030,7 @@ class created(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('date', 'string', 0),
         MemberSpec_('version', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, date=None, version=None):
@@ -807,66 +1045,71 @@ class created(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_date(self): return self.date
     def set_date(self, date): self.date = date
-    dateProp = property(get_date, set_date)
     def get_version(self): return self.version
     def set_version(self, version): self.version = version
-    versionProp = property(get_version, set_version)
-    def export(self, outfile, level, namespace_='t:', name_='created', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='created')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='created'):
-        if self.date is not None and 'date' not in already_processed:
-            already_processed.append('date')
-            outfile.write(' date=%s' % (self.gds_format_string(quote_attrib(self.date).encode(ExternalEncoding), input_name='date'), ))
-        if self.version is not None and 'version' not in already_processed:
-            already_processed.append('version')
-            outfile.write(' version=%s' % (self.gds_format_string(quote_attrib(self.version).encode(ExternalEncoding), input_name='version'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='created', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='created', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='created')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='created'):
+        if self.date is not None and 'date' not in already_processed:
+            already_processed.add('date')
+            outfile.write(' date=%s' % (self.gds_format_string(quote_attrib(self.date).encode(ExternalEncoding), input_name='date'), ))
+        if self.version is not None and 'version' not in already_processed:
+            already_processed.add('version')
+            outfile.write(' version=%s' % (self.gds_format_string(quote_attrib(self.version).encode(ExternalEncoding), input_name='version'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='created', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='created'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.date is not None and 'date' not in already_processed:
-            already_processed.append('date')
+            already_processed.add('date')
             showIndent(outfile, level)
-            outfile.write('date = "%s",\n' % (self.date,))
+            outfile.write('date="%s",\n' % (self.date,))
         if self.version is not None and 'version' not in already_processed:
-            already_processed.append('version')
+            already_processed.add('version')
             showIndent(outfile, level)
-            outfile.write('version = "%s",\n' % (self.version,))
+            outfile.write('version="%s",\n' % (self.version,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('date', node)
         if value is not None and 'date' not in already_processed:
-            already_processed.append('date')
+            already_processed.add('date')
             self.date = value
         value = find_attr_value_('version', node)
         if value is not None and 'version' not in already_processed:
-            already_processed.append('version')
+            already_processed.add('version')
             self.version = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -884,7 +1127,7 @@ class researcher(GeneratedsSuper):
         MemberSpec_('respostal', 'respostal', 0),
         MemberSpec_('resphone', 'resphone', 0),
         MemberSpec_('resemail', 'resemail', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, resname=None, resaddr=None, reslocality=None, rescity=None, resstate=None, rescountry=None, respostal=None, resphone=None, resemail=None):
@@ -905,64 +1148,22 @@ class researcher(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_resname(self): return self.resname
     def set_resname(self, resname): self.resname = resname
-    resnameProp = property(get_resname, set_resname)
     def get_resaddr(self): return self.resaddr
     def set_resaddr(self, resaddr): self.resaddr = resaddr
-    resaddrProp = property(get_resaddr, set_resaddr)
     def get_reslocality(self): return self.reslocality
     def set_reslocality(self, reslocality): self.reslocality = reslocality
-    reslocalityProp = property(get_reslocality, set_reslocality)
     def get_rescity(self): return self.rescity
     def set_rescity(self, rescity): self.rescity = rescity
-    rescityProp = property(get_rescity, set_rescity)
     def get_resstate(self): return self.resstate
     def set_resstate(self, resstate): self.resstate = resstate
-    resstateProp = property(get_resstate, set_resstate)
     def get_rescountry(self): return self.rescountry
     def set_rescountry(self, rescountry): self.rescountry = rescountry
-    rescountryProp = property(get_rescountry, set_rescountry)
     def get_respostal(self): return self.respostal
     def set_respostal(self, respostal): self.respostal = respostal
-    respostalProp = property(get_respostal, set_respostal)
     def get_resphone(self): return self.resphone
     def set_resphone(self, resphone): self.resphone = resphone
-    resphoneProp = property(get_resphone, set_resphone)
     def get_resemail(self): return self.resemail
     def set_resemail(self, resemail): self.resemail = resemail
-    resemailProp = property(get_resemail, set_resemail)
-    def export(self, outfile, level, namespace_='t:', name_='researcher', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='researcher')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='researcher'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='researcher', fromsubclass_=False):
-        if self.resname is not None:
-            self.resname.export(outfile, level, namespace_, name_='resname')
-        if self.resaddr is not None:
-            self.resaddr.export(outfile, level, namespace_, name_='resaddr')
-        if self.reslocality is not None:
-            self.reslocality.export(outfile, level, namespace_, name_='reslocality')
-        if self.rescity is not None:
-            self.rescity.export(outfile, level, namespace_, name_='rescity')
-        if self.resstate is not None:
-            self.resstate.export(outfile, level, namespace_, name_='resstate')
-        if self.rescountry is not None:
-            self.rescountry.export(outfile, level, namespace_, name_='rescountry')
-        if self.respostal is not None:
-            self.respostal.export(outfile, level, namespace_, name_='respostal')
-        if self.resphone is not None:
-            self.resphone.export(outfile, level, namespace_, name_='resphone')
-        if self.resemail is not None:
-            self.resemail.export(outfile, level, namespace_, name_='resemail')
     def hasContent_(self):
         if (
             self.resname is not None or
@@ -974,13 +1175,55 @@ class researcher(GeneratedsSuper):
             self.respostal is not None or
             self.resphone is not None or
             self.resemail is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='researcher', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='researcher')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='researcher'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='researcher', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.resname is not None:
+            self.resname.export(outfile, level, namespace_='gramps:', name_='resname', pretty_print=pretty_print)
+        if self.resaddr is not None:
+            self.resaddr.export(outfile, level, namespace_='gramps:', name_='resaddr', pretty_print=pretty_print)
+        if self.reslocality is not None:
+            self.reslocality.export(outfile, level, namespace_='gramps:', name_='reslocality', pretty_print=pretty_print)
+        if self.rescity is not None:
+            self.rescity.export(outfile, level, namespace_='gramps:', name_='rescity', pretty_print=pretty_print)
+        if self.resstate is not None:
+            self.resstate.export(outfile, level, namespace_='gramps:', name_='resstate', pretty_print=pretty_print)
+        if self.rescountry is not None:
+            self.rescountry.export(outfile, level, namespace_='gramps:', name_='rescountry', pretty_print=pretty_print)
+        if self.respostal is not None:
+            self.respostal.export(outfile, level, namespace_='gramps:', name_='respostal', pretty_print=pretty_print)
+        if self.resphone is not None:
+            self.resphone.export(outfile, level, namespace_='gramps:', name_='resphone', pretty_print=pretty_print)
+        if self.resemail is not None:
+            self.resemail.export(outfile, level, namespace_='gramps:', name_='resemail', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='researcher'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -1041,56 +1284,58 @@ class researcher(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'resname':
             obj_ = resname.factory()
             obj_.build(child_)
-            self.set_resname(obj_)
+            self.resname = obj_
         elif nodeName_ == 'resaddr':
             obj_ = resaddr.factory()
             obj_.build(child_)
-            self.set_resaddr(obj_)
+            self.resaddr = obj_
         elif nodeName_ == 'reslocality':
             obj_ = reslocality.factory()
             obj_.build(child_)
-            self.set_reslocality(obj_)
+            self.reslocality = obj_
         elif nodeName_ == 'rescity':
             obj_ = rescity.factory()
             obj_.build(child_)
-            self.set_rescity(obj_)
+            self.rescity = obj_
         elif nodeName_ == 'resstate':
             obj_ = resstate.factory()
             obj_.build(child_)
-            self.set_resstate(obj_)
+            self.resstate = obj_
         elif nodeName_ == 'rescountry':
             obj_ = rescountry.factory()
             obj_.build(child_)
-            self.set_rescountry(obj_)
+            self.rescountry = obj_
         elif nodeName_ == 'respostal':
             obj_ = respostal.factory()
             obj_.build(child_)
-            self.set_respostal(obj_)
+            self.respostal = obj_
         elif nodeName_ == 'resphone':
             obj_ = resphone.factory()
             obj_.build(child_)
-            self.set_resphone(obj_)
+            self.resphone = obj_
         elif nodeName_ == 'resemail':
             obj_ = resemail.factory()
             obj_.build(child_)
-            self.set_resemail(obj_)
+            self.resemail = obj_
 # end class researcher
 
 
 class resname(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1112,28 +1357,33 @@ class resname(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='resname', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resname')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='resname'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='resname', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='resname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resname')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='resname'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='resname', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='resname'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1143,7 +1393,8 @@ class resname(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1152,6 +1403,7 @@ class resname(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1166,7 +1418,7 @@ class resname(GeneratedsSuper):
 class resaddr(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1188,28 +1440,33 @@ class resaddr(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='resaddr', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resaddr')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='resaddr'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='resaddr', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='resaddr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resaddr')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='resaddr'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='resaddr', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='resaddr'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1219,7 +1476,8 @@ class resaddr(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1228,6 +1486,7 @@ class resaddr(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1242,7 +1501,7 @@ class resaddr(GeneratedsSuper):
 class reslocality(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1264,28 +1523,33 @@ class reslocality(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='reslocality', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='reslocality')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='reslocality'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='reslocality', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='reslocality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='reslocality')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='reslocality'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='reslocality', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='reslocality'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1295,7 +1559,8 @@ class reslocality(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1304,6 +1569,7 @@ class reslocality(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1318,7 +1584,7 @@ class reslocality(GeneratedsSuper):
 class rescity(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1340,28 +1606,33 @@ class rescity(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='rescity', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rescity')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='rescity'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='rescity', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='rescity', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rescity')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='rescity'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='rescity', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='rescity'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1371,7 +1642,8 @@ class rescity(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1380,6 +1652,7 @@ class rescity(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1394,7 +1667,7 @@ class rescity(GeneratedsSuper):
 class resstate(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1416,28 +1689,33 @@ class resstate(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='resstate', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resstate')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='resstate'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='resstate', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='resstate', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resstate')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='resstate'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='resstate', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='resstate'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1447,7 +1725,8 @@ class resstate(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1456,6 +1735,7 @@ class resstate(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1470,7 +1750,7 @@ class resstate(GeneratedsSuper):
 class rescountry(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1492,28 +1772,33 @@ class rescountry(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='rescountry', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rescountry')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='rescountry'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='rescountry', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='rescountry', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rescountry')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='rescountry'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='rescountry', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='rescountry'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1523,7 +1808,8 @@ class rescountry(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1532,6 +1818,7 @@ class rescountry(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1546,7 +1833,7 @@ class rescountry(GeneratedsSuper):
 class respostal(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1568,28 +1855,33 @@ class respostal(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='respostal', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='respostal')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='respostal'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='respostal', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='respostal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='respostal')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='respostal'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='respostal', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='respostal'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1599,7 +1891,8 @@ class respostal(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1608,6 +1901,7 @@ class respostal(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1622,7 +1916,7 @@ class respostal(GeneratedsSuper):
 class resphone(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1644,28 +1938,33 @@ class resphone(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='resphone', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resphone')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='resphone'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='resphone', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='resphone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resphone')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='resphone'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='resphone', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='resphone'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1675,7 +1974,8 @@ class resphone(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1684,6 +1984,7 @@ class resphone(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1698,7 +1999,7 @@ class resphone(GeneratedsSuper):
 class resemail(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1720,28 +2021,33 @@ class resemail(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='resemail', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resemail')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='resemail'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='resemail', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='resemail', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='resemail')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='resemail'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='resemail', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='resemail'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1751,7 +2057,8 @@ class resemail(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1760,6 +2067,7 @@ class resemail(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1774,7 +2082,7 @@ class resemail(GeneratedsSuper):
 class mediapath(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -1796,28 +2104,33 @@ class mediapath(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='mediapath', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mediapath')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='mediapath'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='mediapath', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='mediapath', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mediapath')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='mediapath'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='mediapath', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='mediapath'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -1827,7 +2140,8 @@ class mediapath(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -1836,6 +2150,7 @@ class mediapath(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -1852,7 +2167,7 @@ class people(GeneratedsSuper):
         MemberSpec_('default', 'string', 0),
         MemberSpec_('home', 'string', 0),
         MemberSpec_('person', 'person', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, default=None, home=None, person=None):
@@ -1867,56 +2182,62 @@ class people(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_person(self): return self.person
     def set_person(self, person): self.person = person
-    personProp = property(get_person, set_person)
     def get_default(self): return self.default
     def set_default(self, default): self.default = default
-    defaultProp = property(get_default, set_default)
     def get_home(self): return self.home
     def set_home(self, home): self.home = home
-    homeProp = property(get_home, set_home)
-    def export(self, outfile, level, namespace_='t:', name_='people', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='people')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='people'):
-        if self.default is not None and 'default' not in already_processed:
-            already_processed.append('default')
-            outfile.write(' default=%s' % (self.gds_format_string(quote_attrib(self.default).encode(ExternalEncoding), input_name='default'), ))
-        if self.home is not None and 'home' not in already_processed:
-            already_processed.append('home')
-            outfile.write(' home=%s' % (self.gds_format_string(quote_attrib(self.home).encode(ExternalEncoding), input_name='home'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='people', fromsubclass_=False):
-        if self.person is not None:
-            self.person.export(outfile, level, namespace_, name_='person', )
     def hasContent_(self):
         if (
             self.person is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='people', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='people')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='people'):
+        if self.default is not None and 'default' not in already_processed:
+            already_processed.add('default')
+            outfile.write(' default=%s' % (self.gds_format_string(quote_attrib(self.default).encode(ExternalEncoding), input_name='default'), ))
+        if self.home is not None and 'home' not in already_processed:
+            already_processed.add('home')
+            outfile.write(' home=%s' % (self.gds_format_string(quote_attrib(self.home).encode(ExternalEncoding), input_name='home'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='people', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.person is not None:
+            self.person.export(outfile, level, namespace_='gramps:', name_='person', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='people'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.default is not None and 'default' not in already_processed:
-            already_processed.append('default')
+            already_processed.add('default')
             showIndent(outfile, level)
-            outfile.write('default = "%s",\n' % (self.default,))
+            outfile.write('default="%s",\n' % (self.default,))
         if self.home is not None and 'home' not in already_processed:
-            already_processed.append('home')
+            already_processed.add('home')
             showIndent(outfile, level)
-            outfile.write('home = "%s",\n' % (self.home,))
+            outfile.write('home="%s",\n' % (self.home,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.person is not None:
             showIndent(outfile, level)
@@ -1925,24 +2246,26 @@ class people(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('default', node)
         if value is not None and 'default' not in already_processed:
-            already_processed.append('default')
+            already_processed.add('default')
             self.default = value
         value = find_attr_value_('home', node)
         if value is not None and 'home' not in already_processed:
-            already_processed.append('home')
+            already_processed.add('home')
             self.home = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'person':
             obj_ = person.factory()
             obj_.build(child_)
-            self.set_person(obj_)
+            self.person = obj_
 # end class people
 
 
@@ -1966,7 +2289,7 @@ class person(GeneratedsSuper):
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('tagref', 'tagref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, gender=None, name=None, eventref=None, lds_ord=None, objref=None, address=None, attribute=None, url=None, childof=None, parentin=None, personref=None, noteref=None, citationref=None, tagref=None):
@@ -2035,138 +2358,66 @@ class person(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_gender(self): return self.gender
     def set_gender(self, gender): self.gender = gender
-    genderProp = property(get_gender, set_gender)
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
     def add_name(self, value): self.name.append(value)
     def insert_name(self, index, value): self.name[index] = value
-    nameProp = property(get_name, set_name)
     def get_eventref(self): return self.eventref
     def set_eventref(self, eventref): self.eventref = eventref
     def add_eventref(self, value): self.eventref.append(value)
     def insert_eventref(self, index, value): self.eventref[index] = value
-    eventrefProp = property(get_eventref, set_eventref)
     def get_lds_ord(self): return self.lds_ord
     def set_lds_ord(self, lds_ord): self.lds_ord = lds_ord
     def add_lds_ord(self, value): self.lds_ord.append(value)
     def insert_lds_ord(self, index, value): self.lds_ord[index] = value
-    lds_ordProp = property(get_lds_ord, set_lds_ord)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_address(self): return self.address
     def set_address(self, address): self.address = address
     def add_address(self, value): self.address.append(value)
     def insert_address(self, index, value): self.address[index] = value
-    addressProp = property(get_address, set_address)
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
     def insert_url(self, index, value): self.url[index] = value
-    urlProp = property(get_url, set_url)
     def get_childof(self): return self.childof
     def set_childof(self, childof): self.childof = childof
     def add_childof(self, value): self.childof.append(value)
     def insert_childof(self, index, value): self.childof[index] = value
-    childofProp = property(get_childof, set_childof)
     def get_parentin(self): return self.parentin
     def set_parentin(self, parentin): self.parentin = parentin
     def add_parentin(self, value): self.parentin.append(value)
     def insert_parentin(self, index, value): self.parentin[index] = value
-    parentinProp = property(get_parentin, set_parentin)
     def get_personref(self): return self.personref
     def set_personref(self, personref): self.personref = personref
     def add_personref(self, value): self.personref.append(value)
     def insert_personref(self, index, value): self.personref[index] = value
-    personrefProp = property(get_personref, set_personref)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
     def insert_tagref(self, index, value): self.tagref[index] = value
-    tagrefProp = property(get_tagref, set_tagref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='person', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='person')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='person'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='person', fromsubclass_=False):
-        if self.gender is not None:
-            self.gender.export(outfile, level, namespace_, name_='gender', )
-        for name_ in self.name:
-            name_.export(outfile, level, namespace_, name_='name')
-        for eventref_ in self.eventref:
-            eventref_.export(outfile, level, namespace_, name_='eventref')
-        for lds_ord_ in self.lds_ord:
-            lds_ord_.export(outfile, level, namespace_, name_='lds_ord')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
-        for address_ in self.address:
-            address_.export(outfile, level, namespace_, name_='address')
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for url_ in self.url:
-            url_.export(outfile, level, namespace_, name_='url')
-        for childof_ in self.childof:
-            childof_.export(outfile, level, namespace_, name_='childof')
-        for parentin_ in self.parentin:
-            parentin_.export(outfile, level, namespace_, name_='parentin')
-        for personref_ in self.personref:
-            personref_.export(outfile, level, namespace_, name_='personref')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for tagref_ in self.tagref:
-            tagref_.export(outfile, level, namespace_, name_='tagref')
     def hasContent_(self):
         if (
             self.gender is not None or
@@ -2183,32 +2434,95 @@ class person(GeneratedsSuper):
             self.noteref or
             self.citationref or
             self.tagref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='person', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='person')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='person'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='person', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.gender is not None:
+            self.gender.export(outfile, level, namespace_='gramps:', name_='gender', pretty_print=pretty_print)
+        for name_ in self.name:
+            name_.export(outfile, level, namespace_='gramps:', name_='name', pretty_print=pretty_print)
+        for eventref_ in self.eventref:
+            eventref_.export(outfile, level, namespace_='gramps:', name_='eventref', pretty_print=pretty_print)
+        for lds_ord_ in self.lds_ord:
+            lds_ord_.export(outfile, level, namespace_='gramps:', name_='lds_ord', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
+        for address_ in self.address:
+            address_.export(outfile, level, namespace_='gramps:', name_='address', pretty_print=pretty_print)
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for url_ in self.url:
+            url_.export(outfile, level, namespace_='gramps:', name_='url', pretty_print=pretty_print)
+        for childof_ in self.childof:
+            childof_.export(outfile, level, namespace_='gramps:', name_='childof', pretty_print=pretty_print)
+        for parentin_ in self.parentin:
+            parentin_.export(outfile, level, namespace_='gramps:', name_='parentin', pretty_print=pretty_print)
+        for personref_ in self.personref:
+            personref_.export(outfile, level, namespace_='gramps:', name_='personref', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for tagref_ in self.tagref:
+            tagref_.export(outfile, level, namespace_='gramps:', name_='tagref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='person'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.gender is not None:
             showIndent(outfile, level)
@@ -2373,32 +2687,34 @@ class person(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'gender':
             obj_ = gender.factory()
             obj_.build(child_)
-            self.set_gender(obj_)
+            self.gender = obj_
         elif nodeName_ == 'name':
             obj_ = name.factory()
             obj_.build(child_)
@@ -2457,7 +2773,7 @@ class person(GeneratedsSuper):
 class gender(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -2479,28 +2795,33 @@ class gender(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='gender', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='gender')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='gender'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='gender', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='gender', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='gender')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='gender'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='gender', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='gender'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -2510,7 +2831,8 @@ class gender(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -2519,6 +2841,7 @@ class gender(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -2551,7 +2874,7 @@ class name(GeneratedsSuper):
         MemberSpec_('datestr', 'datestr', 0),
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, sort=None, alt=None, type_=None, display=None, priv=None, first=None, call=None, surname=None, suffix=None, title=None, nick=None, familynick=None, group=None, daterange=None, datespan=None, dateval=None, datestr=None, noteref=None, citationref=None):
@@ -2591,124 +2914,48 @@ class name(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_first(self): return self.first
     def set_first(self, first): self.first = first
-    firstProp = property(get_first, set_first)
     def get_call(self): return self.call
     def set_call(self, call): self.call = call
-    callProp = property(get_call, set_call)
     def get_surname(self): return self.surname
     def set_surname(self, surname): self.surname = surname
     def add_surname(self, value): self.surname.append(value)
     def insert_surname(self, index, value): self.surname[index] = value
-    surnameProp = property(get_surname, set_surname)
     def get_suffix(self): return self.suffix
     def set_suffix(self, suffix): self.suffix = suffix
-    suffixProp = property(get_suffix, set_suffix)
     def get_title(self): return self.title
     def set_title(self, title): self.title = title
-    titleProp = property(get_title, set_title)
     def get_nick(self): return self.nick
     def set_nick(self, nick): self.nick = nick
-    nickProp = property(get_nick, set_nick)
     def get_familynick(self): return self.familynick
     def set_familynick(self, familynick): self.familynick = familynick
-    familynickProp = property(get_familynick, set_familynick)
     def get_group(self): return self.group
     def set_group(self, group): self.group = group
-    groupProp = property(get_group, set_group)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_sort(self): return self.sort
     def set_sort(self, sort): self.sort = sort
-    sortProp = property(get_sort, set_sort)
     def get_alt(self): return self.alt
     def set_alt(self, alt): self.alt = alt
-    altProp = property(get_alt, set_alt)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_display(self): return self.display
     def set_display(self, display): self.display = display
-    displayProp = property(get_display, set_display)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='name', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='name')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='name'):
-        if self.sort is not None and 'sort' not in already_processed:
-            already_processed.append('sort')
-            outfile.write(' sort=%s' % (self.gds_format_string(quote_attrib(self.sort).encode(ExternalEncoding), input_name='sort'), ))
-        if self.alt is not None and 'alt' not in already_processed:
-            already_processed.append('alt')
-            outfile.write(' alt=%s' % (self.gds_format_string(quote_attrib(self.alt).encode(ExternalEncoding), input_name='alt'), ))
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.display is not None and 'display' not in already_processed:
-            already_processed.append('display')
-            outfile.write(' display=%s' % (self.gds_format_string(quote_attrib(self.display).encode(ExternalEncoding), input_name='display'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='name', fromsubclass_=False):
-        if self.first is not None:
-            self.first.export(outfile, level, namespace_, name_='first')
-        if self.call is not None:
-            self.call.export(outfile, level, namespace_, name_='call')
-        for surname_ in self.surname:
-            surname_.export(outfile, level, namespace_, name_='surname')
-        if self.suffix is not None:
-            self.suffix.export(outfile, level, namespace_, name_='suffix')
-        if self.title is not None:
-            self.title.export(outfile, level, namespace_, name_='title')
-        if self.nick is not None:
-            self.nick.export(outfile, level, namespace_, name_='nick')
-        if self.familynick is not None:
-            self.familynick.export(outfile, level, namespace_, name_='familynick')
-        if self.group is not None:
-            self.group.export(outfile, level, namespace_, name_='group')
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
     def hasContent_(self):
         if (
             self.first is not None or
@@ -2725,36 +2972,102 @@ class name(GeneratedsSuper):
             self.datestr is not None or
             self.noteref or
             self.citationref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='name')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='name'):
+        if self.sort is not None and 'sort' not in already_processed:
+            already_processed.add('sort')
+            outfile.write(' sort=%s' % (self.gds_format_string(quote_attrib(self.sort).encode(ExternalEncoding), input_name='sort'), ))
+        if self.alt is not None and 'alt' not in already_processed:
+            already_processed.add('alt')
+            outfile.write(' alt=%s' % (self.gds_format_string(quote_attrib(self.alt).encode(ExternalEncoding), input_name='alt'), ))
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.display is not None and 'display' not in already_processed:
+            already_processed.add('display')
+            outfile.write(' display=%s' % (self.gds_format_string(quote_attrib(self.display).encode(ExternalEncoding), input_name='display'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='name', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.first is not None:
+            self.first.export(outfile, level, namespace_='gramps:', name_='first', pretty_print=pretty_print)
+        if self.call is not None:
+            self.call.export(outfile, level, namespace_='gramps:', name_='call', pretty_print=pretty_print)
+        for surname_ in self.surname:
+            surname_.export(outfile, level, namespace_='gramps:', name_='surname', pretty_print=pretty_print)
+        if self.suffix is not None:
+            self.suffix.export(outfile, level, namespace_='gramps:', name_='suffix', pretty_print=pretty_print)
+        if self.title is not None:
+            self.title.export(outfile, level, namespace_='gramps:', name_='title', pretty_print=pretty_print)
+        if self.nick is not None:
+            self.nick.export(outfile, level, namespace_='gramps:', name_='nick', pretty_print=pretty_print)
+        if self.familynick is not None:
+            self.familynick.export(outfile, level, namespace_='gramps:', name_='familynick', pretty_print=pretty_print)
+        if self.group is not None:
+            self.group.export(outfile, level, namespace_='gramps:', name_='group', pretty_print=pretty_print)
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='name'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.sort is not None and 'sort' not in already_processed:
-            already_processed.append('sort')
+            already_processed.add('sort')
             showIndent(outfile, level)
-            outfile.write('sort = "%s",\n' % (self.sort,))
+            outfile.write('sort="%s",\n' % (self.sort,))
         if self.alt is not None and 'alt' not in already_processed:
-            already_processed.append('alt')
+            already_processed.add('alt')
             showIndent(outfile, level)
-            outfile.write('alt = "%s",\n' % (self.alt,))
+            outfile.write('alt="%s",\n' % (self.alt,))
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.display is not None and 'display' not in already_processed:
-            already_processed.append('display')
+            already_processed.add('display')
             showIndent(outfile, level)
-            outfile.write('display = "%s",\n' % (self.display,))
+            outfile.write('display="%s",\n' % (self.display,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.first is not None:
             showIndent(outfile, level)
@@ -2859,40 +3172,42 @@ class name(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('sort', node)
         if value is not None and 'sort' not in already_processed:
-            already_processed.append('sort')
+            already_processed.add('sort')
             self.sort = value
         value = find_attr_value_('alt', node)
         if value is not None and 'alt' not in already_processed:
-            already_processed.append('alt')
+            already_processed.add('alt')
             self.alt = value
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('display', node)
         if value is not None and 'display' not in already_processed:
-            already_processed.append('display')
+            already_processed.add('display')
             self.display = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'first':
             obj_ = first.factory()
             obj_.build(child_)
-            self.set_first(obj_)
+            self.first = obj_
         elif nodeName_ == 'call':
             obj_ = call.factory()
             obj_.build(child_)
-            self.set_call(obj_)
+            self.call = obj_
         elif nodeName_ == 'surname':
             obj_ = surname.factory()
             obj_.build(child_)
@@ -2900,39 +3215,39 @@ class name(GeneratedsSuper):
         elif nodeName_ == 'suffix':
             obj_ = suffix.factory()
             obj_.build(child_)
-            self.set_suffix(obj_)
+            self.suffix = obj_
         elif nodeName_ == 'title':
             obj_ = title.factory()
             obj_.build(child_)
-            self.set_title(obj_)
+            self.title = obj_
         elif nodeName_ == 'nick':
             obj_ = nick.factory()
             obj_.build(child_)
-            self.set_nick(obj_)
+            self.nick = obj_
         elif nodeName_ == 'familynick':
             obj_ = familynick.factory()
             obj_.build(child_)
-            self.set_familynick(obj_)
+            self.familynick = obj_
         elif nodeName_ == 'group':
             obj_ = group.factory()
             obj_.build(child_)
-            self.set_group(obj_)
+            self.group = obj_
         elif nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'noteref':
             obj_ = noteref.factory()
             obj_.build(child_)
@@ -2947,7 +3262,7 @@ class name(GeneratedsSuper):
 class first(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -2969,28 +3284,33 @@ class first(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='first', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='first')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='first'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='first', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='first', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='first')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='first'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='first', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='first'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3000,7 +3320,8 @@ class first(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3009,6 +3330,7 @@ class first(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3023,7 +3345,7 @@ class first(GeneratedsSuper):
 class call(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3045,28 +3367,33 @@ class call(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='call', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='call')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='call'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='call', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='call', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='call')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='call'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='call', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='call'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3076,7 +3403,8 @@ class call(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3085,6 +3413,7 @@ class call(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3099,7 +3428,7 @@ class call(GeneratedsSuper):
 class suffix(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3121,28 +3450,33 @@ class suffix(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='suffix', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='suffix')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='suffix'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='suffix', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='suffix', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='suffix')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='suffix'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='suffix', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='suffix'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3152,7 +3486,8 @@ class suffix(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3161,6 +3496,7 @@ class suffix(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3175,7 +3511,7 @@ class suffix(GeneratedsSuper):
 class title(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3197,28 +3533,33 @@ class title(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='title', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='title')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='title'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='title', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='title', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='title')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='title'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='title', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='title'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3228,7 +3569,8 @@ class title(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3237,6 +3579,7 @@ class title(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3251,7 +3594,7 @@ class title(GeneratedsSuper):
 class nick(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3273,28 +3616,33 @@ class nick(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='nick', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='nick')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='nick'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='nick', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='nick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='nick')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='nick'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='nick', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='nick'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3304,7 +3652,8 @@ class nick(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3313,6 +3662,7 @@ class nick(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3327,7 +3677,7 @@ class nick(GeneratedsSuper):
 class familynick(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3349,28 +3699,33 @@ class familynick(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='familynick', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='familynick')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='familynick'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='familynick', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='familynick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='familynick')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='familynick'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='familynick', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='familynick'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3380,7 +3735,8 @@ class familynick(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3389,6 +3745,7 @@ class familynick(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3403,7 +3760,7 @@ class familynick(GeneratedsSuper):
 class group(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -3425,28 +3782,33 @@ class group(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='group', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='group')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='group'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='group', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='group', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='group')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='group'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='group', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='group'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -3456,7 +3818,8 @@ class group(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3465,6 +3828,7 @@ class group(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -3483,7 +3847,7 @@ class surname(GeneratedsSuper):
         MemberSpec_('prim', 'string', 0),
         MemberSpec_('derivation', 'string', 0),
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, connector=None, prefix=None, prim=None, derivation=None, valueOf_=None, mixedclass_=None, content_=None):
@@ -3509,76 +3873,78 @@ class surname(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_connector(self): return self.connector
     def set_connector(self, connector): self.connector = connector
-    connectorProp = property(get_connector, set_connector)
     def get_prefix(self): return self.prefix
     def set_prefix(self, prefix): self.prefix = prefix
-    prefixProp = property(get_prefix, set_prefix)
     def get_prim(self): return self.prim
     def set_prim(self, prim): self.prim = prim
-    primProp = property(get_prim, set_prim)
     def get_derivation(self): return self.derivation
     def set_derivation(self, derivation): self.derivation = derivation
-    derivationProp = property(get_derivation, set_derivation)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='surname', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='surname')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='surname'):
-        if self.connector is not None and 'connector' not in already_processed:
-            already_processed.append('connector')
-            outfile.write(' connector=%s' % (self.gds_format_string(quote_attrib(self.connector).encode(ExternalEncoding), input_name='connector'), ))
-        if self.prefix is not None and 'prefix' not in already_processed:
-            already_processed.append('prefix')
-            outfile.write(' prefix=%s' % (self.gds_format_string(quote_attrib(self.prefix).encode(ExternalEncoding), input_name='prefix'), ))
-        if self.prim is not None and 'prim' not in already_processed:
-            already_processed.append('prim')
-            outfile.write(' prim=%s' % (self.gds_format_string(quote_attrib(self.prim).encode(ExternalEncoding), input_name='prim'), ))
-        if self.derivation is not None and 'derivation' not in already_processed:
-            already_processed.append('derivation')
-            outfile.write(' derivation=%s' % (self.gds_format_string(quote_attrib(self.derivation).encode(ExternalEncoding), input_name='derivation'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='surname', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='surname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='surname')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='surname'):
+        if self.connector is not None and 'connector' not in already_processed:
+            already_processed.add('connector')
+            outfile.write(' connector=%s' % (self.gds_format_string(quote_attrib(self.connector).encode(ExternalEncoding), input_name='connector'), ))
+        if self.prefix is not None and 'prefix' not in already_processed:
+            already_processed.add('prefix')
+            outfile.write(' prefix=%s' % (self.gds_format_string(quote_attrib(self.prefix).encode(ExternalEncoding), input_name='prefix'), ))
+        if self.prim is not None and 'prim' not in already_processed:
+            already_processed.add('prim')
+            outfile.write(' prim=%s' % (self.gds_format_string(quote_attrib(self.prim).encode(ExternalEncoding), input_name='prim'), ))
+        if self.derivation is not None and 'derivation' not in already_processed:
+            already_processed.add('derivation')
+            outfile.write(' derivation=%s' % (self.gds_format_string(quote_attrib(self.derivation).encode(ExternalEncoding), input_name='derivation'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='surname', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='surname'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
         outfile.write('valueOf_ = """%s""",\n' % (self.valueOf_,))
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.connector is not None and 'connector' not in already_processed:
-            already_processed.append('connector')
+            already_processed.add('connector')
             showIndent(outfile, level)
-            outfile.write('connector = "%s",\n' % (self.connector,))
+            outfile.write('connector="%s",\n' % (self.connector,))
         if self.prefix is not None and 'prefix' not in already_processed:
-            already_processed.append('prefix')
+            already_processed.add('prefix')
             showIndent(outfile, level)
-            outfile.write('prefix = "%s",\n' % (self.prefix,))
+            outfile.write('prefix="%s",\n' % (self.prefix,))
         if self.prim is not None and 'prim' not in already_processed:
-            already_processed.append('prim')
+            already_processed.add('prim')
             showIndent(outfile, level)
-            outfile.write('prim = "%s",\n' % (self.prim,))
+            outfile.write('prim="%s",\n' % (self.prim,))
         if self.derivation is not None and 'derivation' not in already_processed:
-            already_processed.append('derivation')
+            already_processed.add('derivation')
             showIndent(outfile, level)
-            outfile.write('derivation = "%s",\n' % (self.derivation,))
+            outfile.write('derivation="%s",\n' % (self.derivation,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -3587,22 +3953,23 @@ class surname(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('connector', node)
         if value is not None and 'connector' not in already_processed:
-            already_processed.append('connector')
+            already_processed.add('connector')
             self.connector = value
         value = find_attr_value_('prefix', node)
         if value is not None and 'prefix' not in already_processed:
-            already_processed.append('prefix')
+            already_processed.add('prefix')
             self.prefix = value
         value = find_attr_value_('prim', node)
         if value is not None and 'prim' not in already_processed:
-            already_processed.append('prim')
+            already_processed.add('prim')
             self.prim = value
         value = find_attr_value_('derivation', node)
         if value is not None and 'derivation' not in already_processed:
-            already_processed.append('derivation')
+            already_processed.add('derivation')
             self.derivation = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if not fromsubclass_ and child_.tail is not None:
@@ -3616,7 +3983,7 @@ class surname(GeneratedsSuper):
 class childof(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -3630,52 +3997,58 @@ class childof(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='childof', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='childof')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='childof'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='childof', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='childof', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='childof')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='childof'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='childof', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='childof'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -3685,7 +4058,7 @@ class childof(GeneratedsSuper):
 class parentin(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -3699,52 +4072,58 @@ class parentin(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='parentin', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='parentin')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='parentin'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='parentin', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='parentin', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='parentin')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='parentin'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='parentin', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='parentin'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -3758,7 +4137,7 @@ class personref(GeneratedsSuper):
         MemberSpec_('priv', 'string', 0),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None, rel=None, priv=None, citationref=None, noteref=None):
@@ -3783,74 +4162,78 @@ class personref(GeneratedsSuper):
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
     def get_rel(self): return self.rel
     def set_rel(self, rel): self.rel = rel
-    relProp = property(get_rel, set_rel)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='personref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='personref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='personref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-        if self.rel is not None and 'rel' not in already_processed:
-            already_processed.append('rel')
-            outfile.write(' rel=%s' % (self.gds_format_string(quote_attrib(self.rel).encode(ExternalEncoding), input_name='rel'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='personref', fromsubclass_=False):
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.citationref or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='personref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='personref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='personref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+        if self.rel is not None and 'rel' not in already_processed:
+            already_processed.add('rel')
+            outfile.write(' rel=%s' % (self.gds_format_string(quote_attrib(self.rel).encode(ExternalEncoding), input_name='rel'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='personref', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='personref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
         if self.rel is not None and 'rel' not in already_processed:
-            already_processed.append('rel')
+            already_processed.add('rel')
             showIndent(outfile, level)
-            outfile.write('rel = "%s",\n' % (self.rel,))
+            outfile.write('rel="%s",\n' % (self.rel,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('citationref=[\n')
@@ -3877,22 +4260,24 @@ class personref(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
         value = find_attr_value_('rel', node)
         if value is not None and 'rel' not in already_processed:
-            already_processed.append('rel')
+            already_processed.add('rel')
             self.rel = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'citationref':
@@ -3923,7 +4308,7 @@ class address(GeneratedsSuper):
         MemberSpec_('phone', 'phone', 0),
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, priv=None, daterange=None, datespan=None, dateval=None, datestr=None, street=None, locality=None, city=None, county=None, state=None, country=None, postal=None, phone=None, noteref=None, citationref=None):
@@ -3956,98 +4341,38 @@ class address(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_street(self): return self.street
     def set_street(self, street): self.street = street
-    streetProp = property(get_street, set_street)
     def get_locality(self): return self.locality
     def set_locality(self, locality): self.locality = locality
-    localityProp = property(get_locality, set_locality)
     def get_city(self): return self.city
     def set_city(self, city): self.city = city
-    cityProp = property(get_city, set_city)
     def get_county(self): return self.county
     def set_county(self, county): self.county = county
-    countyProp = property(get_county, set_county)
     def get_state(self): return self.state
     def set_state(self, state): self.state = state
-    stateProp = property(get_state, set_state)
     def get_country(self): return self.country
     def set_country(self, country): self.country = country
-    countryProp = property(get_country, set_country)
     def get_postal(self): return self.postal
     def set_postal(self, postal): self.postal = postal
-    postalProp = property(get_postal, set_postal)
     def get_phone(self): return self.phone
     def set_phone(self, phone): self.phone = phone
-    phoneProp = property(get_phone, set_phone)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='address', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='address')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='address'):
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='address', fromsubclass_=False):
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        if self.street is not None:
-            self.street.export(outfile, level, namespace_, name_='street')
-        if self.locality is not None:
-            self.locality.export(outfile, level, namespace_, name_='locality')
-        if self.city is not None:
-            self.city.export(outfile, level, namespace_, name_='city')
-        if self.county is not None:
-            self.county.export(outfile, level, namespace_, name_='county')
-        if self.state is not None:
-            self.state.export(outfile, level, namespace_, name_='state')
-        if self.country is not None:
-            self.country.export(outfile, level, namespace_, name_='country')
-        if self.postal is not None:
-            self.postal.export(outfile, level, namespace_, name_='postal')
-        if self.phone is not None:
-            self.phone.export(outfile, level, namespace_, name_='phone')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
     def hasContent_(self):
         if (
             self.daterange is not None or
@@ -4064,20 +4389,74 @@ class address(GeneratedsSuper):
             self.phone is not None or
             self.noteref or
             self.citationref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='address', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='address')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='address'):
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='address', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        if self.street is not None:
+            self.street.export(outfile, level, namespace_='gramps:', name_='street', pretty_print=pretty_print)
+        if self.locality is not None:
+            self.locality.export(outfile, level, namespace_='gramps:', name_='locality', pretty_print=pretty_print)
+        if self.city is not None:
+            self.city.export(outfile, level, namespace_='gramps:', name_='city', pretty_print=pretty_print)
+        if self.county is not None:
+            self.county.export(outfile, level, namespace_='gramps:', name_='county', pretty_print=pretty_print)
+        if self.state is not None:
+            self.state.export(outfile, level, namespace_='gramps:', name_='state', pretty_print=pretty_print)
+        if self.country is not None:
+            self.country.export(outfile, level, namespace_='gramps:', name_='country', pretty_print=pretty_print)
+        if self.postal is not None:
+            self.postal.export(outfile, level, namespace_='gramps:', name_='postal', pretty_print=pretty_print)
+        if self.phone is not None:
+            self.phone.export(outfile, level, namespace_='gramps:', name_='phone', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='address'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.daterange is not None:
             showIndent(outfile, level)
@@ -4176,64 +4555,66 @@ class address(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'street':
             obj_ = street.factory()
             obj_.build(child_)
-            self.set_street(obj_)
+            self.street = obj_
         elif nodeName_ == 'locality':
             obj_ = locality.factory()
             obj_.build(child_)
-            self.set_locality(obj_)
+            self.locality = obj_
         elif nodeName_ == 'city':
             obj_ = city.factory()
             obj_.build(child_)
-            self.set_city(obj_)
+            self.city = obj_
         elif nodeName_ == 'county':
             obj_ = county.factory()
             obj_.build(child_)
-            self.set_county(obj_)
+            self.county = obj_
         elif nodeName_ == 'state':
             obj_ = state.factory()
             obj_.build(child_)
-            self.set_state(obj_)
+            self.state = obj_
         elif nodeName_ == 'country':
             obj_ = country.factory()
             obj_.build(child_)
-            self.set_country(obj_)
+            self.country = obj_
         elif nodeName_ == 'postal':
             obj_ = postal.factory()
             obj_.build(child_)
-            self.set_postal(obj_)
+            self.postal = obj_
         elif nodeName_ == 'phone':
             obj_ = phone.factory()
             obj_.build(child_)
-            self.set_phone(obj_)
+            self.phone = obj_
         elif nodeName_ == 'noteref':
             obj_ = noteref.factory()
             obj_.build(child_)
@@ -4248,7 +4629,7 @@ class address(GeneratedsSuper):
 class street(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4270,28 +4651,33 @@ class street(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='street', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='street')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='street'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='street', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='street', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='street')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='street'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='street', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='street'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4301,7 +4687,8 @@ class street(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4310,6 +4697,7 @@ class street(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4324,7 +4712,7 @@ class street(GeneratedsSuper):
 class locality(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4346,28 +4734,33 @@ class locality(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='locality', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='locality')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='locality'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='locality', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='locality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='locality')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='locality'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='locality', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='locality'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4377,7 +4770,8 @@ class locality(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4386,6 +4780,7 @@ class locality(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4400,7 +4795,7 @@ class locality(GeneratedsSuper):
 class city(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4422,28 +4817,33 @@ class city(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='city', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='city')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='city'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='city', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='city', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='city')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='city'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='city', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='city'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4453,7 +4853,8 @@ class city(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4462,6 +4863,7 @@ class city(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4476,7 +4878,7 @@ class city(GeneratedsSuper):
 class county(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4498,28 +4900,33 @@ class county(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='county', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='county')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='county'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='county', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='county', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='county')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='county'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='county', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='county'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4529,7 +4936,8 @@ class county(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4538,6 +4946,7 @@ class county(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4552,7 +4961,7 @@ class county(GeneratedsSuper):
 class state(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4574,28 +4983,33 @@ class state(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='state', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='state')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='state'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='state', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='state', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='state')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='state'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='state', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='state'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4605,7 +5019,8 @@ class state(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4614,6 +5029,7 @@ class state(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4628,7 +5044,7 @@ class state(GeneratedsSuper):
 class country(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4650,28 +5066,33 @@ class country(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='country', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='country')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='country'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='country', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='country', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='country')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='country'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='country', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='country'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4681,7 +5102,8 @@ class country(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4690,6 +5112,7 @@ class country(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4704,7 +5127,7 @@ class country(GeneratedsSuper):
 class postal(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4726,28 +5149,33 @@ class postal(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='postal', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='postal')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='postal'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='postal', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='postal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='postal')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='postal'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='postal', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='postal'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4757,7 +5185,8 @@ class postal(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4766,6 +5195,7 @@ class postal(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4780,7 +5210,7 @@ class postal(GeneratedsSuper):
 class phone(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -4802,28 +5232,33 @@ class phone(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='phone', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='phone')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='phone'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='phone', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='phone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='phone')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='phone'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='phone', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='phone'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -4833,7 +5268,8 @@ class phone(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -4842,6 +5278,7 @@ class phone(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -4856,7 +5293,7 @@ class phone(GeneratedsSuper):
 class families(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('family', 'family', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, family=None):
@@ -4869,34 +5306,42 @@ class families(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_family(self): return self.family
     def set_family(self, family): self.family = family
-    familyProp = property(get_family, set_family)
-    def export(self, outfile, level, namespace_='t:', name_='families', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='families')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='families'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='families', fromsubclass_=False):
-        if self.family is not None:
-            self.family.export(outfile, level, namespace_, name_='family', )
     def hasContent_(self):
         if (
             self.family is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='families', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='families')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='families'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='families', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.family is not None:
+            self.family.export(outfile, level, namespace_='gramps:', name_='family', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='families'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -4909,17 +5354,19 @@ class families(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'family':
             obj_ = family.factory()
             obj_.build(child_)
-            self.set_family(obj_)
+            self.family = obj_
 # end class families
 
 
@@ -4940,7 +5387,7 @@ class family(GeneratedsSuper):
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('tagref', 'tagref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, rel=None, father=None, mother=None, eventref=None, lds_ord=None, objref=None, childref=None, attribute=None, noteref=None, citationref=None, tagref=None):
@@ -4991,113 +5438,50 @@ class family(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_rel(self): return self.rel
     def set_rel(self, rel): self.rel = rel
-    relProp = property(get_rel, set_rel)
     def get_father(self): return self.father
     def set_father(self, father): self.father = father
-    fatherProp = property(get_father, set_father)
     def get_mother(self): return self.mother
     def set_mother(self, mother): self.mother = mother
-    motherProp = property(get_mother, set_mother)
     def get_eventref(self): return self.eventref
     def set_eventref(self, eventref): self.eventref = eventref
     def add_eventref(self, value): self.eventref.append(value)
     def insert_eventref(self, index, value): self.eventref[index] = value
-    eventrefProp = property(get_eventref, set_eventref)
     def get_lds_ord(self): return self.lds_ord
     def set_lds_ord(self, lds_ord): self.lds_ord = lds_ord
     def add_lds_ord(self, value): self.lds_ord.append(value)
     def insert_lds_ord(self, index, value): self.lds_ord[index] = value
-    lds_ordProp = property(get_lds_ord, set_lds_ord)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_childref(self): return self.childref
     def set_childref(self, childref): self.childref = childref
     def add_childref(self, value): self.childref.append(value)
     def insert_childref(self, index, value): self.childref[index] = value
-    childrefProp = property(get_childref, set_childref)
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
     def insert_tagref(self, index, value): self.tagref[index] = value
-    tagrefProp = property(get_tagref, set_tagref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='family', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='family')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='family'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='family', fromsubclass_=False):
-        if self.rel is not None:
-            self.rel.export(outfile, level, namespace_, name_='rel')
-        if self.father is not None:
-            self.father.export(outfile, level, namespace_, name_='father')
-        if self.mother is not None:
-            self.mother.export(outfile, level, namespace_, name_='mother')
-        for eventref_ in self.eventref:
-            eventref_.export(outfile, level, namespace_, name_='eventref')
-        for lds_ord_ in self.lds_ord:
-            lds_ord_.export(outfile, level, namespace_, name_='lds_ord')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
-        for childref_ in self.childref:
-            childref_.export(outfile, level, namespace_, name_='childref')
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for tagref_ in self.tagref:
-            tagref_.export(outfile, level, namespace_, name_='tagref')
     def hasContent_(self):
         if (
             self.rel is not None or
@@ -5111,32 +5495,89 @@ class family(GeneratedsSuper):
             self.noteref or
             self.citationref or
             self.tagref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='family', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='family')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='family'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='family', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.rel is not None:
+            self.rel.export(outfile, level, namespace_='gramps:', name_='rel', pretty_print=pretty_print)
+        if self.father is not None:
+            self.father.export(outfile, level, namespace_='gramps:', name_='father', pretty_print=pretty_print)
+        if self.mother is not None:
+            self.mother.export(outfile, level, namespace_='gramps:', name_='mother', pretty_print=pretty_print)
+        for eventref_ in self.eventref:
+            eventref_.export(outfile, level, namespace_='gramps:', name_='eventref', pretty_print=pretty_print)
+        for lds_ord_ in self.lds_ord:
+            lds_ord_.export(outfile, level, namespace_='gramps:', name_='lds_ord', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
+        for childref_ in self.childref:
+            childref_.export(outfile, level, namespace_='gramps:', name_='childref', pretty_print=pretty_print)
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for tagref_ in self.tagref:
+            tagref_.export(outfile, level, namespace_='gramps:', name_='tagref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='family'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.rel is not None:
             showIndent(outfile, level)
@@ -5253,40 +5694,42 @@ class family(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'rel':
             obj_ = rel.factory()
             obj_.build(child_)
-            self.set_rel(obj_)
+            self.rel = obj_
         elif nodeName_ == 'father':
             obj_ = father.factory()
             obj_.build(child_)
-            self.set_father(obj_)
+            self.father = obj_
         elif nodeName_ == 'mother':
             obj_ = mother.factory()
             obj_.build(child_)
-            self.set_mother(obj_)
+            self.mother = obj_
         elif nodeName_ == 'eventref':
             obj_ = eventref.factory()
             obj_.build(child_)
@@ -5325,7 +5768,7 @@ class family(GeneratedsSuper):
 class father(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -5339,52 +5782,58 @@ class father(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='father', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='father')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='father'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='father', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='father', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='father')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='father'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='father', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='father'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -5394,7 +5843,7 @@ class father(GeneratedsSuper):
 class mother(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -5408,52 +5857,58 @@ class mother(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='mother', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mother')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='mother'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='mother', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='mother', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='mother')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='mother'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='mother', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='mother'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -5468,7 +5923,7 @@ class childref(GeneratedsSuper):
         MemberSpec_('priv', 'string', 0),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, frel=None, hlink=None, mrel=None, priv=None, citationref=None, noteref=None):
@@ -5494,84 +5949,87 @@ class childref(GeneratedsSuper):
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_frel(self): return self.frel
     def set_frel(self, frel): self.frel = frel
-    frelProp = property(get_frel, set_frel)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
     def get_mrel(self): return self.mrel
     def set_mrel(self, mrel): self.mrel = mrel
-    mrelProp = property(get_mrel, set_mrel)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='childref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='childref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='childref'):
-        if self.frel is not None and 'frel' not in already_processed:
-            already_processed.append('frel')
-            outfile.write(' frel=%s' % (self.gds_format_string(quote_attrib(self.frel).encode(ExternalEncoding), input_name='frel'), ))
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-        if self.mrel is not None and 'mrel' not in already_processed:
-            already_processed.append('mrel')
-            outfile.write(' mrel=%s' % (self.gds_format_string(quote_attrib(self.mrel).encode(ExternalEncoding), input_name='mrel'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='childref', fromsubclass_=False):
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.citationref or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='childref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='childref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='childref'):
+        if self.frel is not None and 'frel' not in already_processed:
+            already_processed.add('frel')
+            outfile.write(' frel=%s' % (self.gds_format_string(quote_attrib(self.frel).encode(ExternalEncoding), input_name='frel'), ))
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+        if self.mrel is not None and 'mrel' not in already_processed:
+            already_processed.add('mrel')
+            outfile.write(' mrel=%s' % (self.gds_format_string(quote_attrib(self.mrel).encode(ExternalEncoding), input_name='mrel'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='childref', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='childref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.frel is not None and 'frel' not in already_processed:
-            already_processed.append('frel')
+            already_processed.add('frel')
             showIndent(outfile, level)
-            outfile.write('frel = "%s",\n' % (self.frel,))
+            outfile.write('frel="%s",\n' % (self.frel,))
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
         if self.mrel is not None and 'mrel' not in already_processed:
-            already_processed.append('mrel')
+            already_processed.add('mrel')
             showIndent(outfile, level)
-            outfile.write('mrel = "%s",\n' % (self.mrel,))
+            outfile.write('mrel="%s",\n' % (self.mrel,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('citationref=[\n')
@@ -5598,26 +6056,28 @@ class childref(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('frel', node)
         if value is not None and 'frel' not in already_processed:
-            already_processed.append('frel')
+            already_processed.add('frel')
             self.frel = value
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
         value = find_attr_value_('mrel', node)
         if value is not None and 'mrel' not in already_processed:
-            already_processed.append('mrel')
+            already_processed.add('mrel')
             self.mrel = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'citationref':
@@ -5634,7 +6094,7 @@ class childref(GeneratedsSuper):
 class type_(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -5656,28 +6116,33 @@ class type_(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='type', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='type')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='type'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='type', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='type', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='type')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='type'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='type', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='type'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -5687,7 +6152,8 @@ class type_(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -5696,6 +6162,7 @@ class type_(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -5710,7 +6177,7 @@ class type_(GeneratedsSuper):
 class rel(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('type', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, type_=None):
@@ -5724,52 +6191,58 @@ class rel(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
-    def export(self, outfile, level, namespace_='t:', name_='rel', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rel')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='rel'):
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='rel', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='rel', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rel')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='rel'):
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='rel', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='rel'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -5779,7 +6252,7 @@ class rel(GeneratedsSuper):
 class events(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('event', 'event', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, event=None):
@@ -5792,34 +6265,42 @@ class events(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_event(self): return self.event
     def set_event(self, event): self.event = event
-    eventProp = property(get_event, set_event)
-    def export(self, outfile, level, namespace_='t:', name_='events', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='events')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='events'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='events', fromsubclass_=False):
-        if self.event is not None:
-            self.event.export(outfile, level, namespace_, name_='event', )
     def hasContent_(self):
         if (
             self.event is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='events', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='events')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='events'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='events', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.event is not None:
+            self.event.export(outfile, level, namespace_='gramps:', name_='event', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='events'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -5832,17 +6313,19 @@ class events(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'event':
             obj_ = event.factory()
             obj_.build(child_)
-            self.set_event(obj_)
+            self.event = obj_
 # end class events
 
 
@@ -5864,7 +6347,7 @@ class event(GeneratedsSuper):
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('objref', 'objref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, type_=None, daterange=None, datespan=None, dateval=None, datestr=None, place=None, cause=None, description=None, attribute=None, noteref=None, citationref=None, objref=None):
@@ -5904,110 +6387,44 @@ class event(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_place(self): return self.place
     def set_place(self, place): self.place = place
-    placeProp = property(get_place, set_place)
     def get_cause(self): return self.cause
     def set_cause(self, cause): self.cause = cause
-    causeProp = property(get_cause, set_cause)
     def get_description(self): return self.description
     def set_description(self, description): self.description = description
-    descriptionProp = property(get_description, set_description)
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='event', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='event')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='event'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='event', fromsubclass_=False):
-        if self.type_ is not None:
-            self.type_.export(outfile, level, namespace_, name_='type')
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        if self.place is not None:
-            self.place.export(outfile, level, namespace_, name_='place')
-        if self.cause is not None:
-            self.cause.export(outfile, level, namespace_, name_='cause')
-        if self.description is not None:
-            self.description.export(outfile, level, namespace_, name_='description')
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
     def hasContent_(self):
         if (
             self.type_ is not None or
@@ -6022,32 +6439,91 @@ class event(GeneratedsSuper):
             self.noteref or
             self.citationref or
             self.objref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='event', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='event')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='event'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='event', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.type_ is not None:
+            self.type_.export(outfile, level, namespace_='gramps:', name_='type', pretty_print=pretty_print)
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        if self.place is not None:
+            self.place.export(outfile, level, namespace_='gramps:', name_='place', pretty_print=pretty_print)
+        if self.cause is not None:
+            self.cause.export(outfile, level, namespace_='gramps:', name_='cause', pretty_print=pretty_print)
+        if self.description is not None:
+            self.description.export(outfile, level, namespace_='gramps:', name_='description', pretty_print=pretty_print)
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='event'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.type_ is not None:
             showIndent(outfile, level)
@@ -6146,60 +6622,62 @@ class event(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'type':
             obj_ = type_.factory()
             obj_.build(child_)
-            self.set_type(obj_)
+            self.type_ = obj_
         elif nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'place':
             obj_ = place.factory()
             obj_.build(child_)
-            self.set_place(obj_)
+            self.place = obj_
         elif nodeName_ == 'cause':
             obj_ = cause.factory()
             obj_.build(child_)
-            self.set_cause(obj_)
+            self.cause = obj_
         elif nodeName_ == 'description':
             obj_ = description.factory()
             obj_.build(child_)
-            self.set_description(obj_)
+            self.description = obj_
         elif nodeName_ == 'attribute':
             obj_ = attribute.factory()
             obj_.build(child_)
@@ -6222,7 +6700,7 @@ class event(GeneratedsSuper):
 class sources(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('source', 'source', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, source=None):
@@ -6235,34 +6713,42 @@ class sources(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_source(self): return self.source
     def set_source(self, source): self.source = source
-    sourceProp = property(get_source, set_source)
-    def export(self, outfile, level, namespace_='t:', name_='sources', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sources')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='sources'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='sources', fromsubclass_=False):
-        if self.source is not None:
-            self.source.export(outfile, level, namespace_, name_='source', )
     def hasContent_(self):
         if (
             self.source is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='sources', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sources')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='sources'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='sources', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.source is not None:
+            self.source.export(outfile, level, namespace_='gramps:', name_='source', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='sources'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -6275,17 +6761,19 @@ class sources(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'source':
             obj_ = source.factory()
             obj_.build(child_)
-            self.set_source(obj_)
+            self.source = obj_
 # end class sources
 
 
@@ -6303,7 +6791,7 @@ class source(GeneratedsSuper):
         MemberSpec_('objref', 'objref', 1),
         MemberSpec_('data_item', 'data_item', 1),
         MemberSpec_('reporef', 'reporef', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, stitle=None, sauthor=None, spubinfo=None, sabbrev=None, noteref=None, objref=None, data_item=None, reporef=None):
@@ -6339,90 +6827,36 @@ class source(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_stitle(self): return self.stitle
     def set_stitle(self, stitle): self.stitle = stitle
-    stitleProp = property(get_stitle, set_stitle)
     def get_sauthor(self): return self.sauthor
     def set_sauthor(self, sauthor): self.sauthor = sauthor
-    sauthorProp = property(get_sauthor, set_sauthor)
     def get_spubinfo(self): return self.spubinfo
     def set_spubinfo(self, spubinfo): self.spubinfo = spubinfo
-    spubinfoProp = property(get_spubinfo, set_spubinfo)
     def get_sabbrev(self): return self.sabbrev
     def set_sabbrev(self, sabbrev): self.sabbrev = sabbrev
-    sabbrevProp = property(get_sabbrev, set_sabbrev)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_data_item(self): return self.data_item
     def set_data_item(self, data_item): self.data_item = data_item
     def add_data_item(self, value): self.data_item.append(value)
     def insert_data_item(self, index, value): self.data_item[index] = value
-    data_itemProp = property(get_data_item, set_data_item)
     def get_reporef(self): return self.reporef
     def set_reporef(self, reporef): self.reporef = reporef
     def add_reporef(self, value): self.reporef.append(value)
     def insert_reporef(self, index, value): self.reporef[index] = value
-    reporefProp = property(get_reporef, set_reporef)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='source', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='source')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='source'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='source', fromsubclass_=False):
-        if self.stitle is not None:
-            self.stitle.export(outfile, level, namespace_, name_='stitle')
-        if self.sauthor is not None:
-            self.sauthor.export(outfile, level, namespace_, name_='sauthor')
-        if self.spubinfo is not None:
-            self.spubinfo.export(outfile, level, namespace_, name_='spubinfo')
-        if self.sabbrev is not None:
-            self.sabbrev.export(outfile, level, namespace_, name_='sabbrev')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
-        for data_item_ in self.data_item:
-            data_item_.export(outfile, level, namespace_, name_='data_item')
-        for reporef_ in self.reporef:
-            reporef_.export(outfile, level, namespace_, name_='reporef')
     def hasContent_(self):
         if (
             self.stitle is not None or
@@ -6433,32 +6867,83 @@ class source(GeneratedsSuper):
             self.objref or
             self.data_item or
             self.reporef
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='source', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='source')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='source'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='source', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.stitle is not None:
+            self.stitle.export(outfile, level, namespace_='gramps:', name_='stitle', pretty_print=pretty_print)
+        if self.sauthor is not None:
+            self.sauthor.export(outfile, level, namespace_='gramps:', name_='sauthor', pretty_print=pretty_print)
+        if self.spubinfo is not None:
+            self.spubinfo.export(outfile, level, namespace_='gramps:', name_='spubinfo', pretty_print=pretty_print)
+        if self.sabbrev is not None:
+            self.sabbrev.export(outfile, level, namespace_='gramps:', name_='sabbrev', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
+        for data_item_ in self.data_item:
+            data_item_.export(outfile, level, namespace_='gramps:', name_='data_item', pretty_print=pretty_print)
+        for reporef_ in self.reporef:
+            reporef_.export(outfile, level, namespace_='gramps:', name_='reporef', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='source'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.stitle is not None:
             showIndent(outfile, level)
@@ -6533,44 +7018,46 @@ class source(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'stitle':
             obj_ = stitle.factory()
             obj_.build(child_)
-            self.set_stitle(obj_)
+            self.stitle = obj_
         elif nodeName_ == 'sauthor':
             obj_ = sauthor.factory()
             obj_.build(child_)
-            self.set_sauthor(obj_)
+            self.sauthor = obj_
         elif nodeName_ == 'spubinfo':
             obj_ = spubinfo.factory()
             obj_.build(child_)
-            self.set_spubinfo(obj_)
+            self.spubinfo = obj_
         elif nodeName_ == 'sabbrev':
             obj_ = sabbrev.factory()
             obj_.build(child_)
-            self.set_sabbrev(obj_)
+            self.sabbrev = obj_
         elif nodeName_ == 'noteref':
             obj_ = noteref.factory()
             obj_.build(child_)
@@ -6593,7 +7080,7 @@ class source(GeneratedsSuper):
 class stitle(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -6615,28 +7102,33 @@ class stitle(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='stitle', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='stitle')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='stitle'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='stitle', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='stitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='stitle')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='stitle'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='stitle', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='stitle'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -6646,7 +7138,8 @@ class stitle(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -6655,6 +7148,7 @@ class stitle(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -6669,7 +7163,7 @@ class stitle(GeneratedsSuper):
 class sauthor(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -6691,28 +7185,33 @@ class sauthor(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='sauthor', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sauthor')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='sauthor'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='sauthor', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='sauthor', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sauthor')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='sauthor'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='sauthor', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='sauthor'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -6722,7 +7221,8 @@ class sauthor(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -6731,6 +7231,7 @@ class sauthor(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -6745,7 +7246,7 @@ class sauthor(GeneratedsSuper):
 class spubinfo(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -6767,28 +7268,33 @@ class spubinfo(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='spubinfo', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='spubinfo')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='spubinfo'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='spubinfo', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='spubinfo', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='spubinfo')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='spubinfo'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='spubinfo', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='spubinfo'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -6798,7 +7304,8 @@ class spubinfo(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -6807,6 +7314,7 @@ class spubinfo(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -6821,7 +7329,7 @@ class spubinfo(GeneratedsSuper):
 class sabbrev(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -6843,28 +7351,33 @@ class sabbrev(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='sabbrev', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sabbrev')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='sabbrev'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='sabbrev', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='sabbrev', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sabbrev')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='sabbrev'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='sabbrev', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='sabbrev'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -6874,7 +7387,8 @@ class sabbrev(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -6883,6 +7397,7 @@ class sabbrev(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -6897,7 +7412,7 @@ class sabbrev(GeneratedsSuper):
 class places(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('placeobj', 'placeobj', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, placeobj=None):
@@ -6910,34 +7425,42 @@ class places(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_placeobj(self): return self.placeobj
     def set_placeobj(self, placeobj): self.placeobj = placeobj
-    placeobjProp = property(get_placeobj, set_placeobj)
-    def export(self, outfile, level, namespace_='t:', name_='places', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='places')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='places'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='places', fromsubclass_=False):
-        if self.placeobj is not None:
-            self.placeobj.export(outfile, level, namespace_, name_='placeobj', )
     def hasContent_(self):
         if (
             self.placeobj is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='places', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='places')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='places'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='places', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.placeobj is not None:
+            self.placeobj.export(outfile, level, namespace_='gramps:', name_='placeobj', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='places'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -6950,17 +7473,19 @@ class places(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'placeobj':
             obj_ = placeobj.factory()
             obj_.build(child_)
-            self.set_placeobj(obj_)
+            self.placeobj = obj_
 # end class places
 
 
@@ -6977,7 +7502,7 @@ class placeobj(GeneratedsSuper):
         MemberSpec_('url', 'url', 1),
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, ptitle=None, coord=None, location=None, objref=None, url=None, noteref=None, citationref=None):
@@ -7015,87 +7540,36 @@ class placeobj(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_ptitle(self): return self.ptitle
     def set_ptitle(self, ptitle): self.ptitle = ptitle
-    ptitleProp = property(get_ptitle, set_ptitle)
     def get_coord(self): return self.coord
     def set_coord(self, coord): self.coord = coord
-    coordProp = property(get_coord, set_coord)
     def get_location(self): return self.location
     def set_location(self, location): self.location = location
     def add_location(self, value): self.location.append(value)
     def insert_location(self, index, value): self.location[index] = value
-    locationProp = property(get_location, set_location)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
     def insert_url(self, index, value): self.url[index] = value
-    urlProp = property(get_url, set_url)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='placeobj', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='placeobj')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='placeobj'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='placeobj', fromsubclass_=False):
-        if self.ptitle is not None:
-            self.ptitle.export(outfile, level, namespace_, name_='ptitle')
-        if self.coord is not None:
-            self.coord.export(outfile, level, namespace_, name_='coord')
-        for location_ in self.location:
-            location_.export(outfile, level, namespace_, name_='location')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
-        for url_ in self.url:
-            url_.export(outfile, level, namespace_, name_='url')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
     def hasContent_(self):
         if (
             self.ptitle is not None or
@@ -7105,32 +7579,81 @@ class placeobj(GeneratedsSuper):
             self.url or
             self.noteref or
             self.citationref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='placeobj', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='placeobj')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='placeobj'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='placeobj', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.ptitle is not None:
+            self.ptitle.export(outfile, level, namespace_='gramps:', name_='ptitle', pretty_print=pretty_print)
+        if self.coord is not None:
+            self.coord.export(outfile, level, namespace_='gramps:', name_='coord', pretty_print=pretty_print)
+        for location_ in self.location:
+            location_.export(outfile, level, namespace_='gramps:', name_='location', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
+        for url_ in self.url:
+            url_.export(outfile, level, namespace_='gramps:', name_='url', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='placeobj'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.ptitle is not None:
             showIndent(outfile, level)
@@ -7205,36 +7728,38 @@ class placeobj(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'ptitle':
             obj_ = ptitle.factory()
             obj_.build(child_)
-            self.set_ptitle(obj_)
+            self.ptitle = obj_
         elif nodeName_ == 'coord':
             obj_ = coord.factory()
             obj_.build(child_)
-            self.set_coord(obj_)
+            self.coord = obj_
         elif nodeName_ == 'location':
             obj_ = location.factory()
             obj_.build(child_)
@@ -7261,7 +7786,7 @@ class placeobj(GeneratedsSuper):
 class ptitle(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -7283,28 +7808,33 @@ class ptitle(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='ptitle', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='ptitle')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='ptitle'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='ptitle', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='ptitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='ptitle')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='ptitle'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='ptitle', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='ptitle'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -7314,7 +7844,8 @@ class ptitle(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -7323,6 +7854,7 @@ class ptitle(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -7338,7 +7870,7 @@ class coord(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('lat', 'string', 0),
         MemberSpec_('long', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, lat=None, long=None):
@@ -7353,66 +7885,71 @@ class coord(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_lat(self): return self.lat
     def set_lat(self, lat): self.lat = lat
-    latProp = property(get_lat, set_lat)
     def get_long(self): return self.long
     def set_long(self, long): self.long = long
-    longProp = property(get_long, set_long)
-    def export(self, outfile, level, namespace_='t:', name_='coord', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='coord')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='coord'):
-        if self.lat is not None and 'lat' not in already_processed:
-            already_processed.append('lat')
-            outfile.write(' lat=%s' % (self.gds_format_string(quote_attrib(self.lat).encode(ExternalEncoding), input_name='lat'), ))
-        if self.long is not None and 'long' not in already_processed:
-            already_processed.append('long')
-            outfile.write(' long=%s' % (self.gds_format_string(quote_attrib(self.long).encode(ExternalEncoding), input_name='long'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='coord', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='coord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='coord')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='coord'):
+        if self.lat is not None and 'lat' not in already_processed:
+            already_processed.add('lat')
+            outfile.write(' lat=%s' % (self.gds_format_string(quote_attrib(self.lat).encode(ExternalEncoding), input_name='lat'), ))
+        if self.long is not None and 'long' not in already_processed:
+            already_processed.add('long')
+            outfile.write(' long=%s' % (self.gds_format_string(quote_attrib(self.long).encode(ExternalEncoding), input_name='long'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='coord', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='coord'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.lat is not None and 'lat' not in already_processed:
-            already_processed.append('lat')
+            already_processed.add('lat')
             showIndent(outfile, level)
-            outfile.write('lat = "%s",\n' % (self.lat,))
+            outfile.write('lat="%s",\n' % (self.lat,))
         if self.long is not None and 'long' not in already_processed:
-            already_processed.append('long')
+            already_processed.add('long')
             showIndent(outfile, level)
-            outfile.write('long = "%s",\n' % (self.long,))
+            outfile.write('long="%s",\n' % (self.long,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('lat', node)
         if value is not None and 'lat' not in already_processed:
-            already_processed.append('lat')
+            already_processed.add('lat')
             self.lat = value
         value = find_attr_value_('long', node)
         if value is not None and 'long' not in already_processed:
-            already_processed.append('long')
+            already_processed.add('long')
             self.long = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -7430,7 +7967,7 @@ class location(GeneratedsSuper):
         MemberSpec_('street', 'string', 0),
         MemberSpec_('country', 'string', 0),
         MemberSpec_('postal', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, city=None, locality=None, parish=None, county=None, phone=None, state=None, street=None, country=None, postal=None):
@@ -7452,164 +7989,162 @@ class location(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_city(self): return self.city
     def set_city(self, city): self.city = city
-    cityProp = property(get_city, set_city)
     def get_locality(self): return self.locality
     def set_locality(self, locality): self.locality = locality
-    localityProp = property(get_locality, set_locality)
     def get_parish(self): return self.parish
     def set_parish(self, parish): self.parish = parish
-    parishProp = property(get_parish, set_parish)
     def get_county(self): return self.county
     def set_county(self, county): self.county = county
-    countyProp = property(get_county, set_county)
     def get_phone(self): return self.phone
     def set_phone(self, phone): self.phone = phone
-    phoneProp = property(get_phone, set_phone)
     def get_state(self): return self.state
     def set_state(self, state): self.state = state
-    stateProp = property(get_state, set_state)
     def get_street(self): return self.street
     def set_street(self, street): self.street = street
-    streetProp = property(get_street, set_street)
     def get_country(self): return self.country
     def set_country(self, country): self.country = country
-    countryProp = property(get_country, set_country)
     def get_postal(self): return self.postal
     def set_postal(self, postal): self.postal = postal
-    postalProp = property(get_postal, set_postal)
-    def export(self, outfile, level, namespace_='t:', name_='location', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='location')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='location'):
-        if self.city is not None and 'city' not in already_processed:
-            already_processed.append('city')
-            outfile.write(' city=%s' % (self.gds_format_string(quote_attrib(self.city).encode(ExternalEncoding), input_name='city'), ))
-        if self.locality is not None and 'locality' not in already_processed:
-            already_processed.append('locality')
-            outfile.write(' locality=%s' % (self.gds_format_string(quote_attrib(self.locality).encode(ExternalEncoding), input_name='locality'), ))
-        if self.parish is not None and 'parish' not in already_processed:
-            already_processed.append('parish')
-            outfile.write(' parish=%s' % (self.gds_format_string(quote_attrib(self.parish).encode(ExternalEncoding), input_name='parish'), ))
-        if self.county is not None and 'county' not in already_processed:
-            already_processed.append('county')
-            outfile.write(' county=%s' % (self.gds_format_string(quote_attrib(self.county).encode(ExternalEncoding), input_name='county'), ))
-        if self.phone is not None and 'phone' not in already_processed:
-            already_processed.append('phone')
-            outfile.write(' phone=%s' % (self.gds_format_string(quote_attrib(self.phone).encode(ExternalEncoding), input_name='phone'), ))
-        if self.state is not None and 'state' not in already_processed:
-            already_processed.append('state')
-            outfile.write(' state=%s' % (self.gds_format_string(quote_attrib(self.state).encode(ExternalEncoding), input_name='state'), ))
-        if self.street is not None and 'street' not in already_processed:
-            already_processed.append('street')
-            outfile.write(' street=%s' % (self.gds_format_string(quote_attrib(self.street).encode(ExternalEncoding), input_name='street'), ))
-        if self.country is not None and 'country' not in already_processed:
-            already_processed.append('country')
-            outfile.write(' country=%s' % (self.gds_format_string(quote_attrib(self.country).encode(ExternalEncoding), input_name='country'), ))
-        if self.postal is not None and 'postal' not in already_processed:
-            already_processed.append('postal')
-            outfile.write(' postal=%s' % (self.gds_format_string(quote_attrib(self.postal).encode(ExternalEncoding), input_name='postal'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='location', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='location', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='location')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='location'):
+        if self.city is not None and 'city' not in already_processed:
+            already_processed.add('city')
+            outfile.write(' city=%s' % (self.gds_format_string(quote_attrib(self.city).encode(ExternalEncoding), input_name='city'), ))
+        if self.locality is not None and 'locality' not in already_processed:
+            already_processed.add('locality')
+            outfile.write(' locality=%s' % (self.gds_format_string(quote_attrib(self.locality).encode(ExternalEncoding), input_name='locality'), ))
+        if self.parish is not None and 'parish' not in already_processed:
+            already_processed.add('parish')
+            outfile.write(' parish=%s' % (self.gds_format_string(quote_attrib(self.parish).encode(ExternalEncoding), input_name='parish'), ))
+        if self.county is not None and 'county' not in already_processed:
+            already_processed.add('county')
+            outfile.write(' county=%s' % (self.gds_format_string(quote_attrib(self.county).encode(ExternalEncoding), input_name='county'), ))
+        if self.phone is not None and 'phone' not in already_processed:
+            already_processed.add('phone')
+            outfile.write(' phone=%s' % (self.gds_format_string(quote_attrib(self.phone).encode(ExternalEncoding), input_name='phone'), ))
+        if self.state is not None and 'state' not in already_processed:
+            already_processed.add('state')
+            outfile.write(' state=%s' % (self.gds_format_string(quote_attrib(self.state).encode(ExternalEncoding), input_name='state'), ))
+        if self.street is not None and 'street' not in already_processed:
+            already_processed.add('street')
+            outfile.write(' street=%s' % (self.gds_format_string(quote_attrib(self.street).encode(ExternalEncoding), input_name='street'), ))
+        if self.country is not None and 'country' not in already_processed:
+            already_processed.add('country')
+            outfile.write(' country=%s' % (self.gds_format_string(quote_attrib(self.country).encode(ExternalEncoding), input_name='country'), ))
+        if self.postal is not None and 'postal' not in already_processed:
+            already_processed.add('postal')
+            outfile.write(' postal=%s' % (self.gds_format_string(quote_attrib(self.postal).encode(ExternalEncoding), input_name='postal'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='location', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='location'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.city is not None and 'city' not in already_processed:
-            already_processed.append('city')
+            already_processed.add('city')
             showIndent(outfile, level)
-            outfile.write('city = "%s",\n' % (self.city,))
+            outfile.write('city="%s",\n' % (self.city,))
         if self.locality is not None and 'locality' not in already_processed:
-            already_processed.append('locality')
+            already_processed.add('locality')
             showIndent(outfile, level)
-            outfile.write('locality = "%s",\n' % (self.locality,))
+            outfile.write('locality="%s",\n' % (self.locality,))
         if self.parish is not None and 'parish' not in already_processed:
-            already_processed.append('parish')
+            already_processed.add('parish')
             showIndent(outfile, level)
-            outfile.write('parish = "%s",\n' % (self.parish,))
+            outfile.write('parish="%s",\n' % (self.parish,))
         if self.county is not None and 'county' not in already_processed:
-            already_processed.append('county')
+            already_processed.add('county')
             showIndent(outfile, level)
-            outfile.write('county = "%s",\n' % (self.county,))
+            outfile.write('county="%s",\n' % (self.county,))
         if self.phone is not None and 'phone' not in already_processed:
-            already_processed.append('phone')
+            already_processed.add('phone')
             showIndent(outfile, level)
-            outfile.write('phone = "%s",\n' % (self.phone,))
+            outfile.write('phone="%s",\n' % (self.phone,))
         if self.state is not None and 'state' not in already_processed:
-            already_processed.append('state')
+            already_processed.add('state')
             showIndent(outfile, level)
-            outfile.write('state = "%s",\n' % (self.state,))
+            outfile.write('state="%s",\n' % (self.state,))
         if self.street is not None and 'street' not in already_processed:
-            already_processed.append('street')
+            already_processed.add('street')
             showIndent(outfile, level)
-            outfile.write('street = "%s",\n' % (self.street,))
+            outfile.write('street="%s",\n' % (self.street,))
         if self.country is not None and 'country' not in already_processed:
-            already_processed.append('country')
+            already_processed.add('country')
             showIndent(outfile, level)
-            outfile.write('country = "%s",\n' % (self.country,))
+            outfile.write('country="%s",\n' % (self.country,))
         if self.postal is not None and 'postal' not in already_processed:
-            already_processed.append('postal')
+            already_processed.add('postal')
             showIndent(outfile, level)
-            outfile.write('postal = "%s",\n' % (self.postal,))
+            outfile.write('postal="%s",\n' % (self.postal,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('city', node)
         if value is not None and 'city' not in already_processed:
-            already_processed.append('city')
+            already_processed.add('city')
             self.city = value
         value = find_attr_value_('locality', node)
         if value is not None and 'locality' not in already_processed:
-            already_processed.append('locality')
+            already_processed.add('locality')
             self.locality = value
         value = find_attr_value_('parish', node)
         if value is not None and 'parish' not in already_processed:
-            already_processed.append('parish')
+            already_processed.add('parish')
             self.parish = value
         value = find_attr_value_('county', node)
         if value is not None and 'county' not in already_processed:
-            already_processed.append('county')
+            already_processed.add('county')
             self.county = value
         value = find_attr_value_('phone', node)
         if value is not None and 'phone' not in already_processed:
-            already_processed.append('phone')
+            already_processed.add('phone')
             self.phone = value
         value = find_attr_value_('state', node)
         if value is not None and 'state' not in already_processed:
-            already_processed.append('state')
+            already_processed.add('state')
             self.state = value
         value = find_attr_value_('street', node)
         if value is not None and 'street' not in already_processed:
-            already_processed.append('street')
+            already_processed.add('street')
             self.street = value
         value = find_attr_value_('country', node)
         if value is not None and 'country' not in already_processed:
-            already_processed.append('country')
+            already_processed.add('country')
             self.country = value
         value = find_attr_value_('postal', node)
         if value is not None and 'postal' not in already_processed:
-            already_processed.append('postal')
+            already_processed.add('postal')
             self.postal = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -7619,7 +8154,7 @@ class location(GeneratedsSuper):
 class objects(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('object', 'object', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, object=None):
@@ -7632,34 +8167,42 @@ class objects(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_object(self): return self.object
     def set_object(self, object): self.object = object
-    objectProp = property(get_object, set_object)
-    def export(self, outfile, level, namespace_='t:', name_='objects', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='objects')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='objects'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='objects', fromsubclass_=False):
-        if self.object is not None:
-            self.object.export(outfile, level, namespace_, name_='object', )
     def hasContent_(self):
         if (
             self.object is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='objects', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='objects')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='objects'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='objects', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.object is not None:
+            self.object.export(outfile, level, namespace_='gramps:', name_='object', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='objects'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -7672,17 +8215,19 @@ class objects(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'object':
             obj_ = object.factory()
             obj_.build(child_)
-            self.set_object(obj_)
+            self.object = obj_
 # end class objects
 
 
@@ -7701,7 +8246,7 @@ class object(GeneratedsSuper):
         MemberSpec_('datestr', 'datestr', 0),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('tagref', 'tagref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, file=None, attribute=None, noteref=None, daterange=None, datespan=None, dateval=None, datestr=None, citationref=None, tagref=None):
@@ -7738,95 +8283,38 @@ class object(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_file(self): return self.file
     def set_file(self, file): self.file = file
-    fileProp = property(get_file, set_file)
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
     def insert_tagref(self, index, value): self.tagref[index] = value
-    tagrefProp = property(get_tagref, set_tagref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='object', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='object')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='object'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='object', fromsubclass_=False):
-        if self.file is not None:
-            self.file.export(outfile, level, namespace_, name_='file', )
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for tagref_ in self.tagref:
-            tagref_.export(outfile, level, namespace_, name_='tagref')
     def hasContent_(self):
         if (
             self.file is not None or
@@ -7838,32 +8326,85 @@ class object(GeneratedsSuper):
             self.datestr is not None or
             self.citationref or
             self.tagref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='object', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='object')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='object'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='object', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.file is not None:
+            self.file.export(outfile, level, namespace_='gramps:', name_='file', pretty_print=pretty_print)
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for tagref_ in self.tagref:
+            tagref_.export(outfile, level, namespace_='gramps:', name_='tagref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='object'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.file is not None:
             showIndent(outfile, level)
@@ -7944,32 +8485,34 @@ class object(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'file':
             obj_ = file.factory()
             obj_.build(child_)
-            self.set_file(obj_)
+            self.file = obj_
         elif nodeName_ == 'attribute':
             obj_ = attribute.factory()
             obj_.build(child_)
@@ -7981,19 +8524,19 @@ class object(GeneratedsSuper):
         elif nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'citationref':
             obj_ = citationref.factory()
             obj_.build(child_)
@@ -8010,13 +8553,15 @@ class file(GeneratedsSuper):
         MemberSpec_('src', 'string', 0),
         MemberSpec_('mime', 'string', 0),
         MemberSpec_('description', 'string', 0),
-        ]
+        MemberSpec_('checksum', 'string', 0),
+    ]
     subclass = None
     superclass = None
-    def __init__(self, src=None, mime=None, description=None):
+    def __init__(self, src=None, mime=None, description=None, checksum=None):
         self.src = _cast(None, src)
         self.mime = _cast(None, mime)
         self.description = _cast(None, description)
+        self.checksum = _cast(None, checksum)
         pass
     def factory(*args_, **kwargs_):
         if file.subclass:
@@ -8026,81 +8571,98 @@ class file(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_src(self): return self.src
     def set_src(self, src): self.src = src
-    srcProp = property(get_src, set_src)
     def get_mime(self): return self.mime
     def set_mime(self, mime): self.mime = mime
-    mimeProp = property(get_mime, set_mime)
     def get_description(self): return self.description
     def set_description(self, description): self.description = description
-    descriptionProp = property(get_description, set_description)
-    def export(self, outfile, level, namespace_='t:', name_='file', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='file')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='file'):
-        if self.src is not None and 'src' not in already_processed:
-            already_processed.append('src')
-            outfile.write(' src=%s' % (self.gds_format_string(quote_attrib(self.src).encode(ExternalEncoding), input_name='src'), ))
-        if self.mime is not None and 'mime' not in already_processed:
-            already_processed.append('mime')
-            outfile.write(' mime=%s' % (self.gds_format_string(quote_attrib(self.mime).encode(ExternalEncoding), input_name='mime'), ))
-        if self.description is not None and 'description' not in already_processed:
-            already_processed.append('description')
-            outfile.write(' description=%s' % (self.gds_format_string(quote_attrib(self.description).encode(ExternalEncoding), input_name='description'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='file', fromsubclass_=False):
-        pass
+    def get_checksum(self): return self.checksum
+    def set_checksum(self, checksum): self.checksum = checksum
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='file', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='file')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='file'):
+        if self.src is not None and 'src' not in already_processed:
+            already_processed.add('src')
+            outfile.write(' src=%s' % (self.gds_format_string(quote_attrib(self.src).encode(ExternalEncoding), input_name='src'), ))
+        if self.mime is not None and 'mime' not in already_processed:
+            already_processed.add('mime')
+            outfile.write(' mime=%s' % (self.gds_format_string(quote_attrib(self.mime).encode(ExternalEncoding), input_name='mime'), ))
+        if self.description is not None and 'description' not in already_processed:
+            already_processed.add('description')
+            outfile.write(' description=%s' % (self.gds_format_string(quote_attrib(self.description).encode(ExternalEncoding), input_name='description'), ))
+        if self.checksum is not None and 'checksum' not in already_processed:
+            already_processed.add('checksum')
+            outfile.write(' checksum=%s' % (self.gds_format_string(quote_attrib(self.checksum).encode(ExternalEncoding), input_name='checksum'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='file', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='file'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.src is not None and 'src' not in already_processed:
-            already_processed.append('src')
+            already_processed.add('src')
             showIndent(outfile, level)
-            outfile.write('src = "%s",\n' % (self.src,))
+            outfile.write('src="%s",\n' % (self.src,))
         if self.mime is not None and 'mime' not in already_processed:
-            already_processed.append('mime')
+            already_processed.add('mime')
             showIndent(outfile, level)
-            outfile.write('mime = "%s",\n' % (self.mime,))
+            outfile.write('mime="%s",\n' % (self.mime,))
         if self.description is not None and 'description' not in already_processed:
-            already_processed.append('description')
+            already_processed.add('description')
             showIndent(outfile, level)
-            outfile.write('description = "%s",\n' % (self.description,))
+            outfile.write('description="%s",\n' % (self.description,))
+        if self.checksum is not None and 'checksum' not in already_processed:
+            already_processed.add('checksum')
+            showIndent(outfile, level)
+            outfile.write('checksum="%s",\n' % (self.checksum,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('src', node)
         if value is not None and 'src' not in already_processed:
-            already_processed.append('src')
+            already_processed.add('src')
             self.src = value
         value = find_attr_value_('mime', node)
         if value is not None and 'mime' not in already_processed:
-            already_processed.append('mime')
+            already_processed.add('mime')
             self.mime = value
         value = find_attr_value_('description', node)
         if value is not None and 'description' not in already_processed:
-            already_processed.append('description')
+            already_processed.add('description')
             self.description = value
+        value = find_attr_value_('checksum', node)
+        if value is not None and 'checksum' not in already_processed:
+            already_processed.add('checksum')
+            self.checksum = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
 # end class file
@@ -8109,7 +8671,7 @@ class file(GeneratedsSuper):
 class repositories(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('repository', 'repository', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, repository=None):
@@ -8122,34 +8684,42 @@ class repositories(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_repository(self): return self.repository
     def set_repository(self, repository): self.repository = repository
-    repositoryProp = property(get_repository, set_repository)
-    def export(self, outfile, level, namespace_='t:', name_='repositories', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='repositories')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='repositories'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='repositories', fromsubclass_=False):
-        if self.repository is not None:
-            self.repository.export(outfile, level, namespace_, name_='repository', )
     def hasContent_(self):
         if (
             self.repository is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='repositories', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='repositories')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='repositories'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='repositories', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.repository is not None:
+            self.repository.export(outfile, level, namespace_='gramps:', name_='repository', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='repositories'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -8162,17 +8732,19 @@ class repositories(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'repository':
             obj_ = repository.factory()
             obj_.build(child_)
-            self.set_repository(obj_)
+            self.repository = obj_
 # end class repositories
 
 
@@ -8187,7 +8759,7 @@ class repository(GeneratedsSuper):
         MemberSpec_('address', 'address', 1),
         MemberSpec_('url', 'url', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, rname=None, type_=None, address=None, url=None, noteref=None):
@@ -8217,73 +8789,28 @@ class repository(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_rname(self): return self.rname
     def set_rname(self, rname): self.rname = rname
-    rnameProp = property(get_rname, set_rname)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_address(self): return self.address
     def set_address(self, address): self.address = address
     def add_address(self, value): self.address.append(value)
     def insert_address(self, index, value): self.address[index] = value
-    addressProp = property(get_address, set_address)
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
     def insert_url(self, index, value): self.url[index] = value
-    urlProp = property(get_url, set_url)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='repository', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='repository')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='repository'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='repository', fromsubclass_=False):
-        if self.rname is not None:
-            self.rname.export(outfile, level, namespace_, name_='rname', )
-        if self.type_ is not None:
-            self.type_.export(outfile, level, namespace_, name_='type', )
-        for address_ in self.address:
-            address_.export(outfile, level, namespace_, name_='address')
-        for url_ in self.url:
-            url_.export(outfile, level, namespace_, name_='url')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.rname is not None or
@@ -8291,32 +8818,77 @@ class repository(GeneratedsSuper):
             self.address or
             self.url or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='repository', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='repository')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='repository'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='repository', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.rname is not None:
+            self.rname.export(outfile, level, namespace_='gramps:', name_='rname', pretty_print=pretty_print)
+        if self.type_ is not None:
+            self.type_.export(outfile, level, namespace_='gramps:', name_='type', pretty_print=pretty_print)
+        for address_ in self.address:
+            address_.export(outfile, level, namespace_='gramps:', name_='address', pretty_print=pretty_print)
+        for url_ in self.url:
+            url_.export(outfile, level, namespace_='gramps:', name_='url', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='repository'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.rname is not None:
             showIndent(outfile, level)
@@ -8367,36 +8939,38 @@ class repository(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'rname':
             obj_ = rname.factory()
             obj_.build(child_)
-            self.set_rname(obj_)
+            self.rname = obj_
         elif nodeName_ == 'type':
             obj_ = type_.factory()
             obj_.build(child_)
-            self.set_type(obj_)
+            self.type_ = obj_
         elif nodeName_ == 'address':
             obj_ = address.factory()
             obj_.build(child_)
@@ -8415,7 +8989,7 @@ class repository(GeneratedsSuper):
 class rname(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -8437,28 +9011,33 @@ class rname(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='rname', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rname')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='rname'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='rname', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='rname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='rname')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='rname'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='rname', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='rname'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -8468,7 +9047,8 @@ class rname(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -8477,6 +9057,7 @@ class rname(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -8491,7 +9072,7 @@ class rname(GeneratedsSuper):
 class notes(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('note', 'note', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, note=None):
@@ -8504,34 +9085,42 @@ class notes(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_note(self): return self.note
     def set_note(self, note): self.note = note
-    noteProp = property(get_note, set_note)
-    def export(self, outfile, level, namespace_='t:', name_='notes', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='notes')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='notes'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='notes', fromsubclass_=False):
-        if self.note is not None:
-            self.note.export(outfile, level, namespace_, name_='note', )
     def hasContent_(self):
         if (
             self.note is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='notes', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='notes')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='notes'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='notes', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.note is not None:
+            self.note.export(outfile, level, namespace_='gramps:', name_='note', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='notes'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -8544,17 +9133,19 @@ class notes(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'note':
             obj_ = note.factory()
             obj_.build(child_)
-            self.set_note(obj_)
+            self.note = obj_
 # end class notes
 
 
@@ -8569,7 +9160,7 @@ class note(GeneratedsSuper):
         MemberSpec_('text', 'text', 0),
         MemberSpec_('style', 'style', 1),
         MemberSpec_('tagref', 'tagref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, format=None, type_=None, id=None, change=None, priv=None, text=None, style=None, tagref=None):
@@ -8596,112 +9187,112 @@ class note(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_text(self): return self.text
     def set_text(self, text): self.text = text
-    textProp = property(get_text, set_text)
     def get_style(self): return self.style
     def set_style(self, style): self.style = style
     def add_style(self, value): self.style.append(value)
     def insert_style(self, index, value): self.style[index] = value
-    styleProp = property(get_style, set_style)
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
     def insert_tagref(self, index, value): self.tagref[index] = value
-    tagrefProp = property(get_tagref, set_tagref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_format(self): return self.format
     def set_format(self, format): self.format = format
-    formatProp = property(get_format, set_format)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='note', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='note')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='note'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.format is not None and 'format' not in already_processed:
-            already_processed.append('format')
-            outfile.write(' format=%s' % (self.gds_format_string(quote_attrib(self.format).encode(ExternalEncoding), input_name='format'), ))
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='note', fromsubclass_=False):
-        if self.text is not None:
-            self.text.export(outfile, level, namespace_, name_='text', )
-        for style_ in self.style:
-            style_.export(outfile, level, namespace_, name_='style')
-        for tagref_ in self.tagref:
-            tagref_.export(outfile, level, namespace_, name_='tagref')
     def hasContent_(self):
         if (
             self.text is not None or
             self.style or
             self.tagref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='note', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='note')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='note'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.format is not None and 'format' not in already_processed:
+            already_processed.add('format')
+            outfile.write(' format=%s' % (self.gds_format_string(quote_attrib(self.format).encode(ExternalEncoding), input_name='format'), ))
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='note', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.text is not None:
+            self.text.export(outfile, level, namespace_='gramps:', name_='text', pretty_print=pretty_print)
+        for style_ in self.style:
+            style_.export(outfile, level, namespace_='gramps:', name_='style', pretty_print=pretty_print)
+        for tagref_ in self.tagref:
+            tagref_.export(outfile, level, namespace_='gramps:', name_='tagref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='note'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.format is not None and 'format' not in already_processed:
-            already_processed.append('format')
+            already_processed.add('format')
             showIndent(outfile, level)
-            outfile.write('format = "%s",\n' % (self.format,))
+            outfile.write('format="%s",\n' % (self.format,))
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.text is not None:
             showIndent(outfile, level)
@@ -8734,40 +9325,42 @@ class note(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('format', node)
         if value is not None and 'format' not in already_processed:
-            already_processed.append('format')
+            already_processed.add('format')
             self.format = value
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'text':
             obj_ = text.factory()
             obj_.build(child_)
-            self.set_text(obj_)
+            self.text = obj_
         elif nodeName_ == 'style':
             obj_ = style.factory()
             obj_.build(child_)
@@ -8782,7 +9375,7 @@ class note(GeneratedsSuper):
 class text(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -8804,28 +9397,33 @@ class text(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='text', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='text')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='text'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='text', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='text', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='text')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='text'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='text', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='text'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -8835,7 +9433,8 @@ class text(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -8844,6 +9443,7 @@ class text(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -8860,7 +9460,7 @@ class style(GeneratedsSuper):
         MemberSpec_('name', 'string', 0),
         MemberSpec_('value', 'string', 0),
         MemberSpec_('range', 'range', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, name=None, value=None, range=None):
@@ -8880,56 +9480,62 @@ class style(GeneratedsSuper):
     def set_range(self, range): self.range = range
     def add_range(self, value): self.range.append(value)
     def insert_range(self, index, value): self.range[index] = value
-    rangeProp = property(get_range, set_range)
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
-    nameProp = property(get_name, set_name)
     def get_value(self): return self.value
     def set_value(self, value): self.value = value
-    valueProp = property(get_value, set_value)
-    def export(self, outfile, level, namespace_='t:', name_='style', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='style')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='style'):
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
-            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
-        if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
-            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='style', fromsubclass_=False):
-        for range_ in self.range:
-            range_.export(outfile, level, namespace_, name_='range')
     def hasContent_(self):
         if (
             self.range
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='style', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='style')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='style'):
+        if self.name is not None and 'name' not in already_processed:
+            already_processed.add('name')
+            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='style', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for range_ in self.range:
+            range_.export(outfile, level, namespace_='gramps:', name_='range', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='style'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             showIndent(outfile, level)
-            outfile.write('name = "%s",\n' % (self.name,))
+            outfile.write('name="%s",\n' % (self.name,))
         if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             showIndent(outfile, level)
-            outfile.write('value = "%s",\n' % (self.value,))
+            outfile.write('value="%s",\n' % (self.value,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('range=[\n')
@@ -8944,18 +9550,20 @@ class style(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('name', node)
         if value is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             self.name = value
         value = find_attr_value_('value', node)
         if value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             self.value = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'range':
@@ -8969,7 +9577,7 @@ class range(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('start', 'string', 0),
         MemberSpec_('end', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, start=None, end=None):
@@ -8984,66 +9592,71 @@ class range(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_start(self): return self.start
     def set_start(self, start): self.start = start
-    startProp = property(get_start, set_start)
     def get_end(self): return self.end
     def set_end(self, end): self.end = end
-    endProp = property(get_end, set_end)
-    def export(self, outfile, level, namespace_='t:', name_='range', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='range')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='range'):
-        if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
-            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
-        if self.end is not None and 'end' not in already_processed:
-            already_processed.append('end')
-            outfile.write(' end=%s' % (self.gds_format_string(quote_attrib(self.end).encode(ExternalEncoding), input_name='end'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='range', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='range', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='range')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='range'):
+        if self.start is not None and 'start' not in already_processed:
+            already_processed.add('start')
+            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
+        if self.end is not None and 'end' not in already_processed:
+            already_processed.add('end')
+            outfile.write(' end=%s' % (self.gds_format_string(quote_attrib(self.end).encode(ExternalEncoding), input_name='end'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='range', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='range'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             showIndent(outfile, level)
-            outfile.write('start = "%s",\n' % (self.start,))
+            outfile.write('start="%s",\n' % (self.start,))
         if self.end is not None and 'end' not in already_processed:
-            already_processed.append('end')
+            already_processed.add('end')
             showIndent(outfile, level)
-            outfile.write('end = "%s",\n' % (self.end,))
+            outfile.write('end="%s",\n' % (self.end,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('start', node)
         if value is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             self.start = value
         value = find_attr_value_('end', node)
         if value is not None and 'end' not in already_processed:
-            already_processed.append('end')
+            already_processed.add('end')
             self.end = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -9053,7 +9666,7 @@ class range(GeneratedsSuper):
 class tags(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('tag', 'tag', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, tag=None):
@@ -9066,34 +9679,42 @@ class tags(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_tag(self): return self.tag
     def set_tag(self, tag): self.tag = tag
-    tagProp = property(get_tag, set_tag)
-    def export(self, outfile, level, namespace_='t:', name_='tags', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tags')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='tags'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='tags', fromsubclass_=False):
-        if self.tag is not None:
-            self.tag.export(outfile, level, namespace_, name_='tag', )
     def hasContent_(self):
         if (
             self.tag is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='tags', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tags')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='tags'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='tags', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.tag is not None:
+            self.tag.export(outfile, level, namespace_='gramps:', name_='tag', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='tags'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -9106,17 +9727,19 @@ class tags(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'tag':
             obj_ = tag.factory()
             obj_.build(child_)
-            self.set_tag(obj_)
+            self.tag = obj_
 # end class tags
 
 
@@ -9127,7 +9750,7 @@ class tag(GeneratedsSuper):
         MemberSpec_('handle', 'string', 0),
         MemberSpec_('name', 'string', 0),
         MemberSpec_('change', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, color=None, priority=None, handle=None, name=None, change=None):
@@ -9145,108 +9768,110 @@ class tag(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_color(self): return self.color
     def set_color(self, color): self.color = color
-    colorProp = property(get_color, set_color)
     def get_priority(self): return self.priority
     def set_priority(self, priority): self.priority = priority
-    priorityProp = property(get_priority, set_priority)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
-    nameProp = property(get_name, set_name)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
-    def export(self, outfile, level, namespace_='t:', name_='tag', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tag')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='tag'):
-        if self.color is not None and 'color' not in already_processed:
-            already_processed.append('color')
-            outfile.write(' color=%s' % (self.gds_format_string(quote_attrib(self.color).encode(ExternalEncoding), input_name='color'), ))
-        if self.priority is not None and 'priority' not in already_processed:
-            already_processed.append('priority')
-            outfile.write(' priority=%s' % (self.gds_format_string(quote_attrib(self.priority).encode(ExternalEncoding), input_name='priority'), ))
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
-            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='tag', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='tag', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tag')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='tag'):
+        if self.color is not None and 'color' not in already_processed:
+            already_processed.add('color')
+            outfile.write(' color=%s' % (self.gds_format_string(quote_attrib(self.color).encode(ExternalEncoding), input_name='color'), ))
+        if self.priority is not None and 'priority' not in already_processed:
+            already_processed.add('priority')
+            outfile.write(' priority=%s' % (self.gds_format_string(quote_attrib(self.priority).encode(ExternalEncoding), input_name='priority'), ))
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.name is not None and 'name' not in already_processed:
+            already_processed.add('name')
+            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='tag', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='tag'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.color is not None and 'color' not in already_processed:
-            already_processed.append('color')
+            already_processed.add('color')
             showIndent(outfile, level)
-            outfile.write('color = "%s",\n' % (self.color,))
+            outfile.write('color="%s",\n' % (self.color,))
         if self.priority is not None and 'priority' not in already_processed:
-            already_processed.append('priority')
+            already_processed.add('priority')
             showIndent(outfile, level)
-            outfile.write('priority = "%s",\n' % (self.priority,))
+            outfile.write('priority="%s",\n' % (self.priority,))
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             showIndent(outfile, level)
-            outfile.write('name = "%s",\n' % (self.name,))
+            outfile.write('name="%s",\n' % (self.name,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('color', node)
         if value is not None and 'color' not in already_processed:
-            already_processed.append('color')
+            already_processed.add('color')
             self.color = value
         value = find_attr_value_('priority', node)
         if value is not None and 'priority' not in already_processed:
-            already_processed.append('priority')
+            already_processed.add('priority')
             self.priority = value
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('name', node)
         if value is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             self.name = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -9256,7 +9881,7 @@ class tag(GeneratedsSuper):
 class citations(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('citation', 'citation', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, citation=None):
@@ -9269,34 +9894,42 @@ class citations(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_citation(self): return self.citation
     def set_citation(self, citation): self.citation = citation
-    citationProp = property(get_citation, set_citation)
-    def export(self, outfile, level, namespace_='t:', name_='citations', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citations')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='citations'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='citations', fromsubclass_=False):
-        if self.citation is not None:
-            self.citation.export(outfile, level, namespace_, name_='citation', )
     def hasContent_(self):
         if (
             self.citation is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='citations', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citations')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='citations'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='citations', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.citation is not None:
+            self.citation.export(outfile, level, namespace_='gramps:', name_='citation', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='citations'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -9309,17 +9942,19 @@ class citations(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'citation':
             obj_ = citation.factory()
             obj_.build(child_)
-            self.set_citation(obj_)
+            self.citation = obj_
 # end class citations
 
 
@@ -9339,7 +9974,7 @@ class citation(GeneratedsSuper):
         MemberSpec_('objref', 'objref', 1),
         MemberSpec_('data_item', 'data_item', 1),
         MemberSpec_('sourceref', 'sourceref', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, handle=None, id=None, change=None, priv=None, daterange=None, datespan=None, dateval=None, datestr=None, page=None, confidence=None, noteref=None, objref=None, data_item=None, sourceref=None):
@@ -9374,98 +10009,38 @@ class citation(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_page(self): return self.page
     def set_page(self, page): self.page = page
-    pageProp = property(get_page, set_page)
     def get_confidence(self): return self.confidence
     def set_confidence(self, confidence): self.confidence = confidence
-    confidenceProp = property(get_confidence, set_confidence)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
     def insert_objref(self, index, value): self.objref[index] = value
-    objrefProp = property(get_objref, set_objref)
     def get_data_item(self): return self.data_item
     def set_data_item(self, data_item): self.data_item = data_item
     def add_data_item(self, value): self.data_item.append(value)
     def insert_data_item(self, index, value): self.data_item[index] = value
-    data_itemProp = property(get_data_item, set_data_item)
     def get_sourceref(self): return self.sourceref
     def set_sourceref(self, sourceref): self.sourceref = sourceref
-    sourcerefProp = property(get_sourceref, set_sourceref)
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
-    handleProp = property(get_handle, set_handle)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
-    idProp = property(get_id, set_id)
     def get_change(self): return self.change
     def set_change(self, change): self.change = change
-    changeProp = property(get_change, set_change)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='citation', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citation')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='citation'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
-            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
-        if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
-            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='citation', fromsubclass_=False):
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        if self.page is not None:
-            self.page.export(outfile, level, namespace_, name_='page')
-        if self.confidence is not None:
-            self.confidence.export(outfile, level, namespace_, name_='confidence')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for objref_ in self.objref:
-            objref_.export(outfile, level, namespace_, name_='objref')
-        for data_item_ in self.data_item:
-            data_item_.export(outfile, level, namespace_, name_='data_item')
-        if self.sourceref is not None:
-            self.sourceref.export(outfile, level, namespace_, name_='sourceref', )
     def hasContent_(self):
         if (
             self.daterange is not None or
@@ -9478,32 +10053,87 @@ class citation(GeneratedsSuper):
             self.objref or
             self.data_item or
             self.sourceref is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='citation', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citation')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='citation'):
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
+        if self.id is not None and 'id' not in already_processed:
+            already_processed.add('id')
+            outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
+        if self.change is not None and 'change' not in already_processed:
+            already_processed.add('change')
+            outfile.write(' change=%s' % (self.gds_format_string(quote_attrib(self.change).encode(ExternalEncoding), input_name='change'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='citation', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        if self.page is not None:
+            self.page.export(outfile, level, namespace_='gramps:', name_='page', pretty_print=pretty_print)
+        if self.confidence is not None:
+            self.confidence.export(outfile, level, namespace_='gramps:', name_='confidence', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for objref_ in self.objref:
+            objref_.export(outfile, level, namespace_='gramps:', name_='objref', pretty_print=pretty_print)
+        for data_item_ in self.data_item:
+            data_item_.export(outfile, level, namespace_='gramps:', name_='data_item', pretty_print=pretty_print)
+        if self.sourceref is not None:
+            self.sourceref.export(outfile, level, namespace_='gramps:', name_='sourceref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='citation'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.handle is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             showIndent(outfile, level)
-            outfile.write('handle = "%s",\n' % (self.handle,))
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             showIndent(outfile, level)
-            outfile.write('id = "%s",\n' % (self.id,))
+            outfile.write('id="%s",\n' % (self.id,))
         if self.change is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             showIndent(outfile, level)
-            outfile.write('change = "%s",\n' % (self.change,))
+            outfile.write('change="%s",\n' % (self.change,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.daterange is not None:
             showIndent(outfile, level)
@@ -9584,52 +10214,54 @@ class citation(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('handle', node)
         if value is not None and 'handle' not in already_processed:
-            already_processed.append('handle')
+            already_processed.add('handle')
             self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
-            already_processed.append('id')
+            already_processed.add('id')
             self.id = value
         value = find_attr_value_('change', node)
         if value is not None and 'change' not in already_processed:
-            already_processed.append('change')
+            already_processed.add('change')
             self.change = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'page':
             obj_ = page.factory()
             obj_.build(child_)
-            self.set_page(obj_)
+            self.page = obj_
         elif nodeName_ == 'confidence':
             obj_ = confidence.factory()
             obj_.build(child_)
-            self.set_confidence(obj_)
+            self.confidence = obj_
         elif nodeName_ == 'noteref':
             obj_ = noteref.factory()
             obj_.build(child_)
@@ -9645,14 +10277,14 @@ class citation(GeneratedsSuper):
         elif nodeName_ == 'sourceref':
             obj_ = sourceref.factory()
             obj_.build(child_)
-            self.set_sourceref(obj_)
+            self.sourceref = obj_
 # end class citation
 
 
 class bookmarks(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('bookmark', 'bookmark', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, bookmark=None):
@@ -9665,34 +10297,42 @@ class bookmarks(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_bookmark(self): return self.bookmark
     def set_bookmark(self, bookmark): self.bookmark = bookmark
-    bookmarkProp = property(get_bookmark, set_bookmark)
-    def export(self, outfile, level, namespace_='t:', name_='bookmarks', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookmarks')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='bookmarks'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='bookmarks', fromsubclass_=False):
-        if self.bookmark is not None:
-            self.bookmark.export(outfile, level, namespace_, name_='bookmark', )
     def hasContent_(self):
         if (
             self.bookmark is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmarks', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookmarks')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='bookmarks'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='bookmarks', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.bookmark is not None:
+            self.bookmark.export(outfile, level, namespace_='gramps:', name_='bookmark', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='bookmarks'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -9705,17 +10345,19 @@ class bookmarks(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'bookmark':
             obj_ = bookmark.factory()
             obj_.build(child_)
-            self.set_bookmark(obj_)
+            self.bookmark = obj_
 # end class bookmarks
 
 
@@ -9723,7 +10365,7 @@ class bookmark(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('target', 'string', 0),
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, target=None, hlink=None):
@@ -9738,66 +10380,71 @@ class bookmark(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_target(self): return self.target
     def set_target(self, target): self.target = target
-    targetProp = property(get_target, set_target)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='bookmark', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookmark')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='bookmark'):
-        if self.target is not None and 'target' not in already_processed:
-            already_processed.append('target')
-            outfile.write(' target=%s' % (self.gds_format_string(quote_attrib(self.target).encode(ExternalEncoding), input_name='target'), ))
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='bookmark', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmark', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='bookmark')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='bookmark'):
+        if self.target is not None and 'target' not in already_processed:
+            already_processed.add('target')
+            outfile.write(' target=%s' % (self.gds_format_string(quote_attrib(self.target).encode(ExternalEncoding), input_name='target'), ))
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='bookmark', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='bookmark'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.target is not None and 'target' not in already_processed:
-            already_processed.append('target')
+            already_processed.add('target')
             showIndent(outfile, level)
-            outfile.write('target = "%s",\n' % (self.target,))
+            outfile.write('target="%s",\n' % (self.target,))
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('target', node)
         if value is not None and 'target' not in already_processed:
-            already_processed.append('target')
+            already_processed.add('target')
             self.target = value
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -9807,7 +10454,7 @@ class bookmark(GeneratedsSuper):
 class namemaps(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('map', 'map', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, map=None):
@@ -9820,34 +10467,42 @@ class namemaps(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_map(self): return self.map
     def set_map(self, map): self.map = map
-    mapProp = property(get_map, set_map)
-    def export(self, outfile, level, namespace_='t:', name_='namemaps', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='namemaps')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='namemaps'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='namemaps', fromsubclass_=False):
-        if self.map is not None:
-            self.map.export(outfile, level, namespace_, name_='map', )
     def hasContent_(self):
         if (
             self.map is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='namemaps', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='namemaps')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='namemaps'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='namemaps', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.map is not None:
+            self.map.export(outfile, level, namespace_='gramps:', name_='map', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='namemaps'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -9860,17 +10515,19 @@ class namemaps(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'map':
             obj_ = map.factory()
             obj_.build(child_)
-            self.set_map(obj_)
+            self.map = obj_
 # end class namemaps
 
 
@@ -9879,7 +10536,7 @@ class map(GeneratedsSuper):
         MemberSpec_('type', 'string', 0),
         MemberSpec_('value', 'string', 0),
         MemberSpec_('key', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, type_=None, value=None, key=None):
@@ -9895,80 +10552,84 @@ class map(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_value(self): return self.value
     def set_value(self, value): self.value = value
-    valueProp = property(get_value, set_value)
     def get_key(self): return self.key
     def set_key(self, key): self.key = key
-    keyProp = property(get_key, set_key)
-    def export(self, outfile, level, namespace_='t:', name_='map', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='map')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='map'):
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
-            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
-        if self.key is not None and 'key' not in already_processed:
-            already_processed.append('key')
-            outfile.write(' key=%s' % (self.gds_format_string(quote_attrib(self.key).encode(ExternalEncoding), input_name='key'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='map', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='map', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='map')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='map'):
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
+        if self.key is not None and 'key' not in already_processed:
+            already_processed.add('key')
+            outfile.write(' key=%s' % (self.gds_format_string(quote_attrib(self.key).encode(ExternalEncoding), input_name='key'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='map', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='map'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             showIndent(outfile, level)
-            outfile.write('value = "%s",\n' % (self.value,))
+            outfile.write('value="%s",\n' % (self.value,))
         if self.key is not None and 'key' not in already_processed:
-            already_processed.append('key')
+            already_processed.add('key')
             showIndent(outfile, level)
-            outfile.write('key = "%s",\n' % (self.key,))
+            outfile.write('key="%s",\n' % (self.key,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('value', node)
         if value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             self.value = value
         value = find_attr_value_('key', node)
         if value is not None and 'key' not in already_processed:
-            already_processed.append('key')
+            already_processed.add('key')
             self.key = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -9978,7 +10639,7 @@ class map(GeneratedsSuper):
 class name_formats(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('format', 'format', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, format=None):
@@ -9991,34 +10652,42 @@ class name_formats(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_format(self): return self.format
     def set_format(self, format): self.format = format
-    formatProp = property(get_format, set_format)
-    def export(self, outfile, level, namespace_='t:', name_='name-formats', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='name-formats')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='name-formats'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='name-formats', fromsubclass_=False):
-        if self.format is not None:
-            self.format.export(outfile, level, namespace_, name_='format', )
     def hasContent_(self):
         if (
             self.format is not None
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='name-formats', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='name-formats')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='name-formats'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='name-formats', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.format is not None:
+            self.format.export(outfile, level, namespace_='gramps:', name_='format', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='name-formats'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
@@ -10031,17 +10700,19 @@ class name_formats(GeneratedsSuper):
             showIndent(outfile, level)
             outfile.write('),\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'format':
             obj_ = format.factory()
             obj_.build(child_)
-            self.set_format(obj_)
+            self.format = obj_
 # end class name_formats
 
 
@@ -10051,7 +10722,7 @@ class format(GeneratedsSuper):
         MemberSpec_('number', 'string', 0),
         MemberSpec_('fmt_str', 'string', 0),
         MemberSpec_('name', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, active=None, number=None, fmt_str=None, name=None):
@@ -10068,94 +10739,97 @@ class format(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_active(self): return self.active
     def set_active(self, active): self.active = active
-    activeProp = property(get_active, set_active)
     def get_number(self): return self.number
     def set_number(self, number): self.number = number
-    numberProp = property(get_number, set_number)
     def get_fmt_str(self): return self.fmt_str
     def set_fmt_str(self, fmt_str): self.fmt_str = fmt_str
-    fmt_strProp = property(get_fmt_str, set_fmt_str)
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
-    nameProp = property(get_name, set_name)
-    def export(self, outfile, level, namespace_='t:', name_='format', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='format')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='format'):
-        if self.active is not None and 'active' not in already_processed:
-            already_processed.append('active')
-            outfile.write(' active=%s' % (self.gds_format_string(quote_attrib(self.active).encode(ExternalEncoding), input_name='active'), ))
-        if self.number is not None and 'number' not in already_processed:
-            already_processed.append('number')
-            outfile.write(' number=%s' % (self.gds_format_string(quote_attrib(self.number).encode(ExternalEncoding), input_name='number'), ))
-        if self.fmt_str is not None and 'fmt_str' not in already_processed:
-            already_processed.append('fmt_str')
-            outfile.write(' fmt_str=%s' % (self.gds_format_string(quote_attrib(self.fmt_str).encode(ExternalEncoding), input_name='fmt_str'), ))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
-            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='format', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='format', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='format')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='format'):
+        if self.active is not None and 'active' not in already_processed:
+            already_processed.add('active')
+            outfile.write(' active=%s' % (self.gds_format_string(quote_attrib(self.active).encode(ExternalEncoding), input_name='active'), ))
+        if self.number is not None and 'number' not in already_processed:
+            already_processed.add('number')
+            outfile.write(' number=%s' % (self.gds_format_string(quote_attrib(self.number).encode(ExternalEncoding), input_name='number'), ))
+        if self.fmt_str is not None and 'fmt_str' not in already_processed:
+            already_processed.add('fmt_str')
+            outfile.write(' fmt_str=%s' % (self.gds_format_string(quote_attrib(self.fmt_str).encode(ExternalEncoding), input_name='fmt_str'), ))
+        if self.name is not None and 'name' not in already_processed:
+            already_processed.add('name')
+            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='format', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='format'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.active is not None and 'active' not in already_processed:
-            already_processed.append('active')
+            already_processed.add('active')
             showIndent(outfile, level)
-            outfile.write('active = "%s",\n' % (self.active,))
+            outfile.write('active="%s",\n' % (self.active,))
         if self.number is not None and 'number' not in already_processed:
-            already_processed.append('number')
+            already_processed.add('number')
             showIndent(outfile, level)
-            outfile.write('number = "%s",\n' % (self.number,))
+            outfile.write('number="%s",\n' % (self.number,))
         if self.fmt_str is not None and 'fmt_str' not in already_processed:
-            already_processed.append('fmt_str')
+            already_processed.add('fmt_str')
             showIndent(outfile, level)
-            outfile.write('fmt_str = "%s",\n' % (self.fmt_str,))
+            outfile.write('fmt_str="%s",\n' % (self.fmt_str,))
         if self.name is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             showIndent(outfile, level)
-            outfile.write('name = "%s",\n' % (self.name,))
+            outfile.write('name="%s",\n' % (self.name,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('active', node)
         if value is not None and 'active' not in already_processed:
-            already_processed.append('active')
+            already_processed.add('active')
             self.active = value
         value = find_attr_value_('number', node)
         if value is not None and 'number' not in already_processed:
-            already_processed.append('number')
+            already_processed.add('number')
             self.number = value
         value = find_attr_value_('fmt_str', node)
         if value is not None and 'fmt_str' not in already_processed:
-            already_processed.append('fmt_str')
+            already_processed.add('fmt_str')
             self.fmt_str = value
         value = find_attr_value_('name', node)
         if value is not None and 'name' not in already_processed:
-            already_processed.append('name')
+            already_processed.add('name')
             self.name = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10170,7 +10844,7 @@ class daterange(GeneratedsSuper):
         MemberSpec_('start', 'string', 0),
         MemberSpec_('newyear', 'string', 0),
         MemberSpec_('quality', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, cformat=None, stop=None, dualdated=None, start=None, newyear=None, quality=None):
@@ -10189,122 +10863,123 @@ class daterange(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_cformat(self): return self.cformat
     def set_cformat(self, cformat): self.cformat = cformat
-    cformatProp = property(get_cformat, set_cformat)
     def get_stop(self): return self.stop
     def set_stop(self, stop): self.stop = stop
-    stopProp = property(get_stop, set_stop)
     def get_dualdated(self): return self.dualdated
     def set_dualdated(self, dualdated): self.dualdated = dualdated
-    dualdatedProp = property(get_dualdated, set_dualdated)
     def get_start(self): return self.start
     def set_start(self, start): self.start = start
-    startProp = property(get_start, set_start)
     def get_newyear(self): return self.newyear
     def set_newyear(self, newyear): self.newyear = newyear
-    newyearProp = property(get_newyear, set_newyear)
     def get_quality(self): return self.quality
     def set_quality(self, quality): self.quality = quality
-    qualityProp = property(get_quality, set_quality)
-    def export(self, outfile, level, namespace_='t:', name_='daterange', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='daterange')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='daterange'):
-        if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
-            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
-        if self.stop is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
-            outfile.write(' stop=%s' % (self.gds_format_string(quote_attrib(self.stop).encode(ExternalEncoding), input_name='stop'), ))
-        if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
-            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
-        if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
-            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
-        if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
-            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
-        if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
-            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='daterange', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='daterange', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='daterange')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='daterange'):
+        if self.cformat is not None and 'cformat' not in already_processed:
+            already_processed.add('cformat')
+            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
+        if self.stop is not None and 'stop' not in already_processed:
+            already_processed.add('stop')
+            outfile.write(' stop=%s' % (self.gds_format_string(quote_attrib(self.stop).encode(ExternalEncoding), input_name='stop'), ))
+        if self.dualdated is not None and 'dualdated' not in already_processed:
+            already_processed.add('dualdated')
+            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
+        if self.start is not None and 'start' not in already_processed:
+            already_processed.add('start')
+            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
+        if self.newyear is not None and 'newyear' not in already_processed:
+            already_processed.add('newyear')
+            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
+        if self.quality is not None and 'quality' not in already_processed:
+            already_processed.add('quality')
+            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='daterange', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='daterange'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             showIndent(outfile, level)
-            outfile.write('cformat = "%s",\n' % (self.cformat,))
+            outfile.write('cformat="%s",\n' % (self.cformat,))
         if self.stop is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
+            already_processed.add('stop')
             showIndent(outfile, level)
-            outfile.write('stop = "%s",\n' % (self.stop,))
+            outfile.write('stop="%s",\n' % (self.stop,))
         if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             showIndent(outfile, level)
-            outfile.write('dualdated = "%s",\n' % (self.dualdated,))
+            outfile.write('dualdated="%s",\n' % (self.dualdated,))
         if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             showIndent(outfile, level)
-            outfile.write('start = "%s",\n' % (self.start,))
+            outfile.write('start="%s",\n' % (self.start,))
         if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             showIndent(outfile, level)
-            outfile.write('newyear = "%s",\n' % (self.newyear,))
+            outfile.write('newyear="%s",\n' % (self.newyear,))
         if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             showIndent(outfile, level)
-            outfile.write('quality = "%s",\n' % (self.quality,))
+            outfile.write('quality="%s",\n' % (self.quality,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('cformat', node)
         if value is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             self.cformat = value
         value = find_attr_value_('stop', node)
         if value is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
+            already_processed.add('stop')
             self.stop = value
         value = find_attr_value_('dualdated', node)
         if value is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             self.dualdated = value
         value = find_attr_value_('start', node)
         if value is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             self.start = value
         value = find_attr_value_('newyear', node)
         if value is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             self.newyear = value
         value = find_attr_value_('quality', node)
         if value is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             self.quality = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10319,7 +10994,7 @@ class datespan(GeneratedsSuper):
         MemberSpec_('start', 'string', 0),
         MemberSpec_('newyear', 'string', 0),
         MemberSpec_('quality', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, cformat=None, stop=None, dualdated=None, start=None, newyear=None, quality=None):
@@ -10338,122 +11013,123 @@ class datespan(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_cformat(self): return self.cformat
     def set_cformat(self, cformat): self.cformat = cformat
-    cformatProp = property(get_cformat, set_cformat)
     def get_stop(self): return self.stop
     def set_stop(self, stop): self.stop = stop
-    stopProp = property(get_stop, set_stop)
     def get_dualdated(self): return self.dualdated
     def set_dualdated(self, dualdated): self.dualdated = dualdated
-    dualdatedProp = property(get_dualdated, set_dualdated)
     def get_start(self): return self.start
     def set_start(self, start): self.start = start
-    startProp = property(get_start, set_start)
     def get_newyear(self): return self.newyear
     def set_newyear(self, newyear): self.newyear = newyear
-    newyearProp = property(get_newyear, set_newyear)
     def get_quality(self): return self.quality
     def set_quality(self, quality): self.quality = quality
-    qualityProp = property(get_quality, set_quality)
-    def export(self, outfile, level, namespace_='t:', name_='datespan', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='datespan')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='datespan'):
-        if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
-            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
-        if self.stop is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
-            outfile.write(' stop=%s' % (self.gds_format_string(quote_attrib(self.stop).encode(ExternalEncoding), input_name='stop'), ))
-        if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
-            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
-        if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
-            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
-        if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
-            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
-        if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
-            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='datespan', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='datespan', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='datespan')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='datespan'):
+        if self.cformat is not None and 'cformat' not in already_processed:
+            already_processed.add('cformat')
+            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
+        if self.stop is not None and 'stop' not in already_processed:
+            already_processed.add('stop')
+            outfile.write(' stop=%s' % (self.gds_format_string(quote_attrib(self.stop).encode(ExternalEncoding), input_name='stop'), ))
+        if self.dualdated is not None and 'dualdated' not in already_processed:
+            already_processed.add('dualdated')
+            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
+        if self.start is not None and 'start' not in already_processed:
+            already_processed.add('start')
+            outfile.write(' start=%s' % (self.gds_format_string(quote_attrib(self.start).encode(ExternalEncoding), input_name='start'), ))
+        if self.newyear is not None and 'newyear' not in already_processed:
+            already_processed.add('newyear')
+            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
+        if self.quality is not None and 'quality' not in already_processed:
+            already_processed.add('quality')
+            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='datespan', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='datespan'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             showIndent(outfile, level)
-            outfile.write('cformat = "%s",\n' % (self.cformat,))
+            outfile.write('cformat="%s",\n' % (self.cformat,))
         if self.stop is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
+            already_processed.add('stop')
             showIndent(outfile, level)
-            outfile.write('stop = "%s",\n' % (self.stop,))
+            outfile.write('stop="%s",\n' % (self.stop,))
         if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             showIndent(outfile, level)
-            outfile.write('dualdated = "%s",\n' % (self.dualdated,))
+            outfile.write('dualdated="%s",\n' % (self.dualdated,))
         if self.start is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             showIndent(outfile, level)
-            outfile.write('start = "%s",\n' % (self.start,))
+            outfile.write('start="%s",\n' % (self.start,))
         if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             showIndent(outfile, level)
-            outfile.write('newyear = "%s",\n' % (self.newyear,))
+            outfile.write('newyear="%s",\n' % (self.newyear,))
         if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             showIndent(outfile, level)
-            outfile.write('quality = "%s",\n' % (self.quality,))
+            outfile.write('quality="%s",\n' % (self.quality,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('cformat', node)
         if value is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             self.cformat = value
         value = find_attr_value_('stop', node)
         if value is not None and 'stop' not in already_processed:
-            already_processed.append('stop')
+            already_processed.add('stop')
             self.stop = value
         value = find_attr_value_('dualdated', node)
         if value is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             self.dualdated = value
         value = find_attr_value_('start', node)
         if value is not None and 'start' not in already_processed:
-            already_processed.append('start')
+            already_processed.add('start')
             self.start = value
         value = find_attr_value_('newyear', node)
         if value is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             self.newyear = value
         value = find_attr_value_('quality', node)
         if value is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             self.quality = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10468,7 +11144,7 @@ class dateval(GeneratedsSuper):
         MemberSpec_('dualdated', 'string', 0),
         MemberSpec_('newyear', 'string', 0),
         MemberSpec_('quality', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, cformat=None, val=None, type_=None, dualdated=None, newyear=None, quality=None):
@@ -10487,122 +11163,123 @@ class dateval(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_cformat(self): return self.cformat
     def set_cformat(self, cformat): self.cformat = cformat
-    cformatProp = property(get_cformat, set_cformat)
     def get_val(self): return self.val
     def set_val(self, val): self.val = val
-    valProp = property(get_val, set_val)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_dualdated(self): return self.dualdated
     def set_dualdated(self, dualdated): self.dualdated = dualdated
-    dualdatedProp = property(get_dualdated, set_dualdated)
     def get_newyear(self): return self.newyear
     def set_newyear(self, newyear): self.newyear = newyear
-    newyearProp = property(get_newyear, set_newyear)
     def get_quality(self): return self.quality
     def set_quality(self, quality): self.quality = quality
-    qualityProp = property(get_quality, set_quality)
-    def export(self, outfile, level, namespace_='t:', name_='dateval', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='dateval')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='dateval'):
-        if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
-            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
-        if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
-            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
-            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
-        if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
-            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
-        if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
-            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='dateval', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='dateval', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='dateval')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='dateval'):
+        if self.cformat is not None and 'cformat' not in already_processed:
+            already_processed.add('cformat')
+            outfile.write(' cformat=%s' % (self.gds_format_string(quote_attrib(self.cformat).encode(ExternalEncoding), input_name='cformat'), ))
+        if self.val is not None and 'val' not in already_processed:
+            already_processed.add('val')
+            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.dualdated is not None and 'dualdated' not in already_processed:
+            already_processed.add('dualdated')
+            outfile.write(' dualdated=%s' % (self.gds_format_string(quote_attrib(self.dualdated).encode(ExternalEncoding), input_name='dualdated'), ))
+        if self.newyear is not None and 'newyear' not in already_processed:
+            already_processed.add('newyear')
+            outfile.write(' newyear=%s' % (self.gds_format_string(quote_attrib(self.newyear).encode(ExternalEncoding), input_name='newyear'), ))
+        if self.quality is not None and 'quality' not in already_processed:
+            already_processed.add('quality')
+            outfile.write(' quality=%s' % (self.gds_format_string(quote_attrib(self.quality).encode(ExternalEncoding), input_name='quality'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='dateval', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='dateval'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.cformat is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             showIndent(outfile, level)
-            outfile.write('cformat = "%s",\n' % (self.cformat,))
+            outfile.write('cformat="%s",\n' % (self.cformat,))
         if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             showIndent(outfile, level)
-            outfile.write('val = "%s",\n' % (self.val,))
+            outfile.write('val="%s",\n' % (self.val,))
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.dualdated is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             showIndent(outfile, level)
-            outfile.write('dualdated = "%s",\n' % (self.dualdated,))
+            outfile.write('dualdated="%s",\n' % (self.dualdated,))
         if self.newyear is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             showIndent(outfile, level)
-            outfile.write('newyear = "%s",\n' % (self.newyear,))
+            outfile.write('newyear="%s",\n' % (self.newyear,))
         if self.quality is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             showIndent(outfile, level)
-            outfile.write('quality = "%s",\n' % (self.quality,))
+            outfile.write('quality="%s",\n' % (self.quality,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('cformat', node)
         if value is not None and 'cformat' not in already_processed:
-            already_processed.append('cformat')
+            already_processed.add('cformat')
             self.cformat = value
         value = find_attr_value_('val', node)
         if value is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             self.val = value
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('dualdated', node)
         if value is not None and 'dualdated' not in already_processed:
-            already_processed.append('dualdated')
+            already_processed.add('dualdated')
             self.dualdated = value
         value = find_attr_value_('newyear', node)
         if value is not None and 'newyear' not in already_processed:
-            already_processed.append('newyear')
+            already_processed.add('newyear')
             self.newyear = value
         value = find_attr_value_('quality', node)
         if value is not None and 'quality' not in already_processed:
-            already_processed.append('quality')
+            already_processed.add('quality')
             self.quality = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10612,7 +11289,7 @@ class dateval(GeneratedsSuper):
 class datestr(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('val', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, val=None):
@@ -10626,52 +11303,58 @@ class datestr(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_val(self): return self.val
     def set_val(self, val): self.val = val
-    valProp = property(get_val, set_val)
-    def export(self, outfile, level, namespace_='t:', name_='datestr', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='datestr')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='datestr'):
-        if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
-            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='datestr', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='datestr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='datestr')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='datestr'):
+        if self.val is not None and 'val' not in already_processed:
+            already_processed.add('val')
+            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='datestr', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='datestr'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             showIndent(outfile, level)
-            outfile.write('val = "%s",\n' % (self.val,))
+            outfile.write('val="%s",\n' % (self.val,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('val', node)
         if value is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             self.val = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10681,7 +11364,7 @@ class datestr(GeneratedsSuper):
 class citationref(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -10695,52 +11378,58 @@ class citationref(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='citationref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citationref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='citationref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='citationref', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='citationref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='citationref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='citationref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='citationref', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='citationref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10750,7 +11439,7 @@ class citationref(GeneratedsSuper):
 class sourceref(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -10764,52 +11453,58 @@ class sourceref(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='sourceref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sourceref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='sourceref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='sourceref', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='sourceref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sourceref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='sourceref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='sourceref', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='sourceref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -10823,7 +11518,7 @@ class eventref(GeneratedsSuper):
         MemberSpec_('priv', 'string', 0),
         MemberSpec_('attribute', 'attribute', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, role=None, hlink=None, priv=None, attribute=None, noteref=None):
@@ -10848,74 +11543,78 @@ class eventref(GeneratedsSuper):
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_role(self): return self.role
     def set_role(self, role): self.role = role
-    roleProp = property(get_role, set_role)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='eventref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='eventref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='eventref'):
-        if self.role is not None and 'role' not in already_processed:
-            already_processed.append('role')
-            outfile.write(' role=%s' % (self.gds_format_string(quote_attrib(self.role).encode(ExternalEncoding), input_name='role'), ))
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='eventref', fromsubclass_=False):
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.attribute or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='eventref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='eventref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='eventref'):
+        if self.role is not None and 'role' not in already_processed:
+            already_processed.add('role')
+            outfile.write(' role=%s' % (self.gds_format_string(quote_attrib(self.role).encode(ExternalEncoding), input_name='role'), ))
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='eventref', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='eventref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.role is not None and 'role' not in already_processed:
-            already_processed.append('role')
+            already_processed.add('role')
             showIndent(outfile, level)
-            outfile.write('role = "%s",\n' % (self.role,))
+            outfile.write('role="%s",\n' % (self.role,))
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('attribute=[\n')
@@ -10942,22 +11641,24 @@ class eventref(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('role', node)
         if value is not None and 'role' not in already_processed:
-            already_processed.append('role')
+            already_processed.add('role')
             self.role = value
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'attribute':
@@ -10978,7 +11679,7 @@ class reporef(GeneratedsSuper):
         MemberSpec_('hlink', 'string', 0),
         MemberSpec_('priv', 'string', 0),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, medium=None, callno=None, hlink=None, priv=None, noteref=None):
@@ -11000,76 +11701,80 @@ class reporef(GeneratedsSuper):
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_medium(self): return self.medium
     def set_medium(self, medium): self.medium = medium
-    mediumProp = property(get_medium, set_medium)
     def get_callno(self): return self.callno
     def set_callno(self, callno): self.callno = callno
-    callnoProp = property(get_callno, set_callno)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='reporef', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='reporef')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='reporef'):
-        if self.medium is not None and 'medium' not in already_processed:
-            already_processed.append('medium')
-            outfile.write(' medium=%s' % (self.gds_format_string(quote_attrib(self.medium).encode(ExternalEncoding), input_name='medium'), ))
-        if self.callno is not None and 'callno' not in already_processed:
-            already_processed.append('callno')
-            outfile.write(' callno=%s' % (self.gds_format_string(quote_attrib(self.callno).encode(ExternalEncoding), input_name='callno'), ))
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='reporef', fromsubclass_=False):
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='reporef', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='reporef')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='reporef'):
+        if self.medium is not None and 'medium' not in already_processed:
+            already_processed.add('medium')
+            outfile.write(' medium=%s' % (self.gds_format_string(quote_attrib(self.medium).encode(ExternalEncoding), input_name='medium'), ))
+        if self.callno is not None and 'callno' not in already_processed:
+            already_processed.add('callno')
+            outfile.write(' callno=%s' % (self.gds_format_string(quote_attrib(self.callno).encode(ExternalEncoding), input_name='callno'), ))
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='reporef', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='reporef'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.medium is not None and 'medium' not in already_processed:
-            already_processed.append('medium')
+            already_processed.add('medium')
             showIndent(outfile, level)
-            outfile.write('medium = "%s",\n' % (self.medium,))
+            outfile.write('medium="%s",\n' % (self.medium,))
         if self.callno is not None and 'callno' not in already_processed:
-            already_processed.append('callno')
+            already_processed.add('callno')
             showIndent(outfile, level)
-            outfile.write('callno = "%s",\n' % (self.callno,))
+            outfile.write('callno="%s",\n' % (self.callno,))
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('noteref=[\n')
@@ -11084,26 +11789,28 @@ class reporef(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('medium', node)
         if value is not None and 'medium' not in already_processed:
-            already_processed.append('medium')
+            already_processed.add('medium')
             self.medium = value
         value = find_attr_value_('callno', node)
         if value is not None and 'callno' not in already_processed:
-            already_processed.append('callno')
+            already_processed.add('callno')
             self.callno = value
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'noteref':
@@ -11116,7 +11823,7 @@ class reporef(GeneratedsSuper):
 class noteref(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -11130,52 +11837,58 @@ class noteref(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='noteref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='noteref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='noteref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='noteref', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='noteref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='noteref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='noteref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='noteref', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='noteref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -11185,7 +11898,7 @@ class noteref(GeneratedsSuper):
 class tagref(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -11199,52 +11912,58 @@ class tagref(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='tagref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tagref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='tagref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='tagref', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='tagref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='tagref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='tagref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='tagref', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='tagref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -11254,7 +11973,7 @@ class tagref(GeneratedsSuper):
 class page(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -11276,28 +11995,33 @@ class page(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='page', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='page')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='page'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='page', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='page', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='page')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='page'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='page', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='page'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -11307,7 +12031,8 @@ class page(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -11316,6 +12041,7 @@ class page(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -11330,7 +12056,7 @@ class page(GeneratedsSuper):
 class confidence(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -11352,28 +12078,33 @@ class confidence(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='confidence', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='confidence')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='confidence'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='confidence', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='confidence', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='confidence')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='confidence'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='confidence', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='confidence'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -11383,7 +12114,8 @@ class confidence(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -11392,6 +12124,7 @@ class confidence(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -11410,7 +12143,7 @@ class attribute(GeneratedsSuper):
         MemberSpec_('priv', 'string', 0),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, type_=None, value=None, priv=None, citationref=None, noteref=None):
@@ -11435,74 +12168,78 @@ class attribute(GeneratedsSuper):
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_value(self): return self.value
     def set_value(self, value): self.value = value
-    valueProp = property(get_value, set_value)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='attribute', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='attribute')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='attribute'):
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
-            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='attribute', fromsubclass_=False):
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.citationref or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='attribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='attribute')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='attribute'):
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='attribute', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='attribute'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             showIndent(outfile, level)
-            outfile.write('value = "%s",\n' % (self.value,))
+            outfile.write('value="%s",\n' % (self.value,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         showIndent(outfile, level)
         outfile.write('citationref=[\n')
@@ -11529,22 +12266,24 @@ class attribute(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('value', node)
         if value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             self.value = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'citationref':
@@ -11561,7 +12300,7 @@ class attribute(GeneratedsSuper):
 class place(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -11575,52 +12314,58 @@ class place(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='place', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='place')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='place'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='place', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='place', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='place')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='place'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='place', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='place'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -11630,7 +12375,7 @@ class place(GeneratedsSuper):
 class cause(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -11652,28 +12397,33 @@ class cause(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='cause', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cause')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='cause'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='cause', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='cause', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cause')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='cause'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='cause', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='cause'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -11683,7 +12433,8 @@ class cause(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -11692,6 +12443,7 @@ class cause(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -11706,7 +12458,7 @@ class cause(GeneratedsSuper):
 class description(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('valueOf_', [], 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
@@ -11728,28 +12480,33 @@ class description(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_valueOf_(self): return self.valueOf_
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def export(self, outfile, level, namespace_='t:', name_='description', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='description')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_)
-        outfile.write('</%s%s>\n' % (namespace_, name_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='description'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='t:', name_='description', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
             self.valueOf_
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='description', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='description')
+        outfile.write('>')
+        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='description'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='description', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='description'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
         showIndent(outfile, level)
@@ -11759,7 +12516,8 @@ class description(GeneratedsSuper):
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         self.valueOf_ = get_all_text_(node)
         if node.text is not None:
             obj_ = self.mixedclass_(MixedContainer.CategoryText,
@@ -11768,6 +12526,7 @@ class description(GeneratedsSuper):
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
@@ -11785,7 +12544,7 @@ class url(GeneratedsSuper):
         MemberSpec_('type', 'string', 0),
         MemberSpec_('description', 'string', 0),
         MemberSpec_('priv', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, href=None, type_=None, description=None, priv=None):
@@ -11802,94 +12561,97 @@ class url(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_href(self): return self.href
     def set_href(self, href): self.href = href
-    hrefProp = property(get_href, set_href)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_description(self): return self.description
     def set_description(self, description): self.description = description
-    descriptionProp = property(get_description, set_description)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='url', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='url')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='url'):
-        if self.href is not None and 'href' not in already_processed:
-            already_processed.append('href')
-            outfile.write(' href=%s' % (self.gds_format_string(quote_attrib(self.href).encode(ExternalEncoding), input_name='href'), ))
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.description is not None and 'description' not in already_processed:
-            already_processed.append('description')
-            outfile.write(' description=%s' % (self.gds_format_string(quote_attrib(self.description).encode(ExternalEncoding), input_name='description'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='url', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='url', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='url')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='url'):
+        if self.href is not None and 'href' not in already_processed:
+            already_processed.add('href')
+            outfile.write(' href=%s' % (self.gds_format_string(quote_attrib(self.href).encode(ExternalEncoding), input_name='href'), ))
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.description is not None and 'description' not in already_processed:
+            already_processed.add('description')
+            outfile.write(' description=%s' % (self.gds_format_string(quote_attrib(self.description).encode(ExternalEncoding), input_name='description'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='url', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='url'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.href is not None and 'href' not in already_processed:
-            already_processed.append('href')
+            already_processed.add('href')
             showIndent(outfile, level)
-            outfile.write('href = "%s",\n' % (self.href,))
+            outfile.write('href="%s",\n' % (self.href,))
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.description is not None and 'description' not in already_processed:
-            already_processed.append('description')
+            already_processed.add('description')
             showIndent(outfile, level)
-            outfile.write('description = "%s",\n' % (self.description,))
+            outfile.write('description="%s",\n' % (self.description,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('href', node)
         if value is not None and 'href' not in already_processed:
-            already_processed.append('href')
+            already_processed.add('href')
             self.href = value
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('description', node)
         if value is not None and 'description' not in already_processed:
-            already_processed.append('description')
+            already_processed.add('description')
             self.description = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -11904,7 +12666,7 @@ class objref(GeneratedsSuper):
         MemberSpec_('attribute', 'attribute', 1),
         MemberSpec_('citationref', 'citationref', 1),
         MemberSpec_('noteref', 'noteref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None, priv=None, region=None, attribute=None, citationref=None, noteref=None):
@@ -11931,80 +12693,83 @@ class objref(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_region(self): return self.region
     def set_region(self, region): self.region = region
-    regionProp = property(get_region, set_region)
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
     def insert_attribute(self, index, value): self.attribute[index] = value
-    attributeProp = property(get_attribute, set_attribute)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='objref', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='objref')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='objref'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='objref', fromsubclass_=False):
-        if self.region is not None:
-            self.region.export(outfile, level, namespace_, name_='region')
-        for attribute_ in self.attribute:
-            attribute_.export(outfile, level, namespace_, name_='attribute')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
     def hasContent_(self):
         if (
             self.region is not None or
             self.attribute or
             self.citationref or
             self.noteref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='objref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='objref')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='objref'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='objref', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.region is not None:
+            self.region.export(outfile, level, namespace_='gramps:', name_='region', pretty_print=pretty_print)
+        for attribute_ in self.attribute:
+            attribute_.export(outfile, level, namespace_='gramps:', name_='attribute', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='objref'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.region is not None:
             showIndent(outfile, level)
@@ -12049,24 +12814,26 @@ class objref(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'region':
             obj_ = region.factory()
             obj_.build(child_)
-            self.set_region(obj_)
+            self.region = obj_
         elif nodeName_ == 'attribute':
             obj_ = attribute.factory()
             obj_.build(child_)
@@ -12088,7 +12855,7 @@ class region(GeneratedsSuper):
         MemberSpec_('corner1_y', 'string', 0),
         MemberSpec_('corner2_y', 'string', 0),
         MemberSpec_('corner2_x', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, corner1_x=None, corner1_y=None, corner2_y=None, corner2_x=None):
@@ -12105,94 +12872,97 @@ class region(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_corner1_x(self): return self.corner1_x
     def set_corner1_x(self, corner1_x): self.corner1_x = corner1_x
-    corner1_xProp = property(get_corner1_x, set_corner1_x)
     def get_corner1_y(self): return self.corner1_y
     def set_corner1_y(self, corner1_y): self.corner1_y = corner1_y
-    corner1_yProp = property(get_corner1_y, set_corner1_y)
     def get_corner2_y(self): return self.corner2_y
     def set_corner2_y(self, corner2_y): self.corner2_y = corner2_y
-    corner2_yProp = property(get_corner2_y, set_corner2_y)
     def get_corner2_x(self): return self.corner2_x
     def set_corner2_x(self, corner2_x): self.corner2_x = corner2_x
-    corner2_xProp = property(get_corner2_x, set_corner2_x)
-    def export(self, outfile, level, namespace_='t:', name_='region', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='region')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='region'):
-        if self.corner1_x is not None and 'corner1_x' not in already_processed:
-            already_processed.append('corner1_x')
-            outfile.write(' corner1_x=%s' % (self.gds_format_string(quote_attrib(self.corner1_x).encode(ExternalEncoding), input_name='corner1_x'), ))
-        if self.corner1_y is not None and 'corner1_y' not in already_processed:
-            already_processed.append('corner1_y')
-            outfile.write(' corner1_y=%s' % (self.gds_format_string(quote_attrib(self.corner1_y).encode(ExternalEncoding), input_name='corner1_y'), ))
-        if self.corner2_y is not None and 'corner2_y' not in already_processed:
-            already_processed.append('corner2_y')
-            outfile.write(' corner2_y=%s' % (self.gds_format_string(quote_attrib(self.corner2_y).encode(ExternalEncoding), input_name='corner2_y'), ))
-        if self.corner2_x is not None and 'corner2_x' not in already_processed:
-            already_processed.append('corner2_x')
-            outfile.write(' corner2_x=%s' % (self.gds_format_string(quote_attrib(self.corner2_x).encode(ExternalEncoding), input_name='corner2_x'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='region', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='region', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='region')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='region'):
+        if self.corner1_x is not None and 'corner1_x' not in already_processed:
+            already_processed.add('corner1_x')
+            outfile.write(' corner1_x=%s' % (self.gds_format_string(quote_attrib(self.corner1_x).encode(ExternalEncoding), input_name='corner1_x'), ))
+        if self.corner1_y is not None and 'corner1_y' not in already_processed:
+            already_processed.add('corner1_y')
+            outfile.write(' corner1_y=%s' % (self.gds_format_string(quote_attrib(self.corner1_y).encode(ExternalEncoding), input_name='corner1_y'), ))
+        if self.corner2_y is not None and 'corner2_y' not in already_processed:
+            already_processed.add('corner2_y')
+            outfile.write(' corner2_y=%s' % (self.gds_format_string(quote_attrib(self.corner2_y).encode(ExternalEncoding), input_name='corner2_y'), ))
+        if self.corner2_x is not None and 'corner2_x' not in already_processed:
+            already_processed.add('corner2_x')
+            outfile.write(' corner2_x=%s' % (self.gds_format_string(quote_attrib(self.corner2_x).encode(ExternalEncoding), input_name='corner2_x'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='region', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='region'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.corner1_x is not None and 'corner1_x' not in already_processed:
-            already_processed.append('corner1_x')
+            already_processed.add('corner1_x')
             showIndent(outfile, level)
-            outfile.write('corner1_x = "%s",\n' % (self.corner1_x,))
+            outfile.write('corner1_x="%s",\n' % (self.corner1_x,))
         if self.corner1_y is not None and 'corner1_y' not in already_processed:
-            already_processed.append('corner1_y')
+            already_processed.add('corner1_y')
             showIndent(outfile, level)
-            outfile.write('corner1_y = "%s",\n' % (self.corner1_y,))
+            outfile.write('corner1_y="%s",\n' % (self.corner1_y,))
         if self.corner2_y is not None and 'corner2_y' not in already_processed:
-            already_processed.append('corner2_y')
+            already_processed.add('corner2_y')
             showIndent(outfile, level)
-            outfile.write('corner2_y = "%s",\n' % (self.corner2_y,))
+            outfile.write('corner2_y="%s",\n' % (self.corner2_y,))
         if self.corner2_x is not None and 'corner2_x' not in already_processed:
-            already_processed.append('corner2_x')
+            already_processed.add('corner2_x')
             showIndent(outfile, level)
-            outfile.write('corner2_x = "%s",\n' % (self.corner2_x,))
+            outfile.write('corner2_x="%s",\n' % (self.corner2_x,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('corner1_x', node)
         if value is not None and 'corner1_x' not in already_processed:
-            already_processed.append('corner1_x')
+            already_processed.add('corner1_x')
             self.corner1_x = value
         value = find_attr_value_('corner1_y', node)
         if value is not None and 'corner1_y' not in already_processed:
-            already_processed.append('corner1_y')
+            already_processed.add('corner1_y')
             self.corner1_y = value
         value = find_attr_value_('corner2_y', node)
         if value is not None and 'corner2_y' not in already_processed:
-            already_processed.append('corner2_y')
+            already_processed.add('corner2_y')
             self.corner2_y = value
         value = find_attr_value_('corner2_x', node)
         if value is not None and 'corner2_x' not in already_processed:
-            already_processed.append('corner2_x')
+            already_processed.add('corner2_x')
             self.corner2_x = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -12203,7 +12973,7 @@ class data_item(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('value', 'string', 0),
         MemberSpec_('key', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, value=None, key=None):
@@ -12218,66 +12988,71 @@ class data_item(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_value(self): return self.value
     def set_value(self, value): self.value = value
-    valueProp = property(get_value, set_value)
     def get_key(self): return self.key
     def set_key(self, key): self.key = key
-    keyProp = property(get_key, set_key)
-    def export(self, outfile, level, namespace_='t:', name_='data_item', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='data_item')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='data_item'):
-        if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
-            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
-        if self.key is not None and 'key' not in already_processed:
-            already_processed.append('key')
-            outfile.write(' key=%s' % (self.gds_format_string(quote_attrib(self.key).encode(ExternalEncoding), input_name='key'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='data_item', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='data_item', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='data_item')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='data_item'):
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
+        if self.key is not None and 'key' not in already_processed:
+            already_processed.add('key')
+            outfile.write(' key=%s' % (self.gds_format_string(quote_attrib(self.key).encode(ExternalEncoding), input_name='key'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='data_item', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='data_item'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             showIndent(outfile, level)
-            outfile.write('value = "%s",\n' % (self.value,))
+            outfile.write('value="%s",\n' % (self.value,))
         if self.key is not None and 'key' not in already_processed:
-            already_processed.append('key')
+            already_processed.add('key')
             showIndent(outfile, level)
-            outfile.write('key = "%s",\n' % (self.key,))
+            outfile.write('key="%s",\n' % (self.key,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('value', node)
         if value is not None and 'value' not in already_processed:
-            already_processed.append('value')
+            already_processed.add('value')
             self.value = value
         value = find_attr_value_('key', node)
         if value is not None and 'key' not in already_processed:
-            already_processed.append('key')
+            already_processed.add('key')
             self.key = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -12298,7 +13073,7 @@ class lds_ord(GeneratedsSuper):
         MemberSpec_('sealed_to', 'sealed_to', 0),
         MemberSpec_('noteref', 'noteref', 1),
         MemberSpec_('citationref', 'citationref', 1),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, type_=None, priv=None, daterange=None, datespan=None, dateval=None, datestr=None, temple=None, place=None, status=None, sealed_to=None, noteref=None, citationref=None):
@@ -12328,84 +13103,32 @@ class lds_ord(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
-    daterangeProp = property(get_daterange, set_daterange)
     def get_datespan(self): return self.datespan
     def set_datespan(self, datespan): self.datespan = datespan
-    datespanProp = property(get_datespan, set_datespan)
     def get_dateval(self): return self.dateval
     def set_dateval(self, dateval): self.dateval = dateval
-    datevalProp = property(get_dateval, set_dateval)
     def get_datestr(self): return self.datestr
     def set_datestr(self, datestr): self.datestr = datestr
-    datestrProp = property(get_datestr, set_datestr)
     def get_temple(self): return self.temple
     def set_temple(self, temple): self.temple = temple
-    templeProp = property(get_temple, set_temple)
     def get_place(self): return self.place
     def set_place(self, place): self.place = place
-    placeProp = property(get_place, set_place)
     def get_status(self): return self.status
     def set_status(self, status): self.status = status
-    statusProp = property(get_status, set_status)
     def get_sealed_to(self): return self.sealed_to
     def set_sealed_to(self, sealed_to): self.sealed_to = sealed_to
-    sealed_toProp = property(get_sealed_to, set_sealed_to)
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
     def insert_noteref(self, index, value): self.noteref[index] = value
-    noterefProp = property(get_noteref, set_noteref)
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
     def insert_citationref(self, index, value): self.citationref[index] = value
-    citationrefProp = property(get_citationref, set_citationref)
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
-    typeProp = property(get_type, set_type)
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
-    privProp = property(get_priv, set_priv)
-    def export(self, outfile, level, namespace_='t:', name_='lds_ord', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='lds_ord')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            showIndent(outfile, level)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='lds_ord'):
-        if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
-            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
-        if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
-            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='lds_ord', fromsubclass_=False):
-        if self.daterange is not None:
-            self.daterange.export(outfile, level, namespace_, name_='daterange')
-        if self.datespan is not None:
-            self.datespan.export(outfile, level, namespace_, name_='datespan')
-        if self.dateval is not None:
-            self.dateval.export(outfile, level, namespace_, name_='dateval')
-        if self.datestr is not None:
-            self.datestr.export(outfile, level, namespace_, name_='datestr')
-        if self.temple is not None:
-            self.temple.export(outfile, level, namespace_, name_='temple')
-        if self.place is not None:
-            self.place.export(outfile, level, namespace_, name_='place')
-        if self.status is not None:
-            self.status.export(outfile, level, namespace_, name_='status')
-        if self.sealed_to is not None:
-            self.sealed_to.export(outfile, level, namespace_, name_='sealed_to')
-        for noteref_ in self.noteref:
-            noteref_.export(outfile, level, namespace_, name_='noteref')
-        for citationref_ in self.citationref:
-            citationref_.export(outfile, level, namespace_, name_='citationref')
     def hasContent_(self):
         if (
             self.daterange is not None or
@@ -12418,24 +13141,73 @@ class lds_ord(GeneratedsSuper):
             self.sealed_to is not None or
             self.noteref or
             self.citationref
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='lds_ord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='lds_ord')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='lds_ord'):
+        if self.type_ is not None and 'type_' not in already_processed:
+            already_processed.add('type_')
+            outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.priv is not None and 'priv' not in already_processed:
+            already_processed.add('priv')
+            outfile.write(' priv=%s' % (self.gds_format_string(quote_attrib(self.priv).encode(ExternalEncoding), input_name='priv'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='lds_ord', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+        if self.temple is not None:
+            self.temple.export(outfile, level, namespace_='gramps:', name_='temple', pretty_print=pretty_print)
+        if self.place is not None:
+            self.place.export(outfile, level, namespace_='gramps:', name_='place', pretty_print=pretty_print)
+        if self.status is not None:
+            self.status.export(outfile, level, namespace_='gramps:', name_='status', pretty_print=pretty_print)
+        if self.sealed_to is not None:
+            self.sealed_to.export(outfile, level, namespace_='gramps:', name_='sealed_to', pretty_print=pretty_print)
+        for noteref_ in self.noteref:
+            noteref_.export(outfile, level, namespace_='gramps:', name_='noteref', pretty_print=pretty_print)
+        for citationref_ in self.citationref:
+            citationref_.export(outfile, level, namespace_='gramps:', name_='citationref', pretty_print=pretty_print)
     def exportLiteral(self, outfile, level, name_='lds_ord'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.type_ is not None and 'type_' not in already_processed:
-            already_processed.append('type_')
+            already_processed.add('type_')
             showIndent(outfile, level)
-            outfile.write('type_ = "%s",\n' % (self.type_,))
+            outfile.write('type_="%s",\n' % (self.type_,))
         if self.priv is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             showIndent(outfile, level)
-            outfile.write('priv = "%s",\n' % (self.priv,))
+            outfile.write('priv="%s",\n' % (self.priv,))
     def exportLiteralChildren(self, outfile, level, name_):
         if self.daterange is not None:
             showIndent(outfile, level)
@@ -12510,52 +13282,54 @@ class lds_ord(GeneratedsSuper):
         showIndent(outfile, level)
         outfile.write('],\n')
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
-            already_processed.append('type')
+            already_processed.add('type')
             self.type_ = value
         value = find_attr_value_('priv', node)
         if value is not None and 'priv' not in already_processed:
-            already_processed.append('priv')
+            already_processed.add('priv')
             self.priv = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'daterange':
             obj_ = daterange.factory()
             obj_.build(child_)
-            self.set_daterange(obj_)
+            self.daterange = obj_
         elif nodeName_ == 'datespan':
             obj_ = datespan.factory()
             obj_.build(child_)
-            self.set_datespan(obj_)
+            self.datespan = obj_
         elif nodeName_ == 'dateval':
             obj_ = dateval.factory()
             obj_.build(child_)
-            self.set_dateval(obj_)
+            self.dateval = obj_
         elif nodeName_ == 'datestr':
             obj_ = datestr.factory()
             obj_.build(child_)
-            self.set_datestr(obj_)
+            self.datestr = obj_
         elif nodeName_ == 'temple':
             obj_ = temple.factory()
             obj_.build(child_)
-            self.set_temple(obj_)
+            self.temple = obj_
         elif nodeName_ == 'place':
             obj_ = place.factory()
             obj_.build(child_)
-            self.set_place(obj_)
+            self.place = obj_
         elif nodeName_ == 'status':
             obj_ = status.factory()
             obj_.build(child_)
-            self.set_status(obj_)
+            self.status = obj_
         elif nodeName_ == 'sealed_to':
             obj_ = sealed_to.factory()
             obj_.build(child_)
-            self.set_sealed_to(obj_)
+            self.sealed_to = obj_
         elif nodeName_ == 'noteref':
             obj_ = noteref.factory()
             obj_.build(child_)
@@ -12570,7 +13344,7 @@ class lds_ord(GeneratedsSuper):
 class temple(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('val', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, val=None):
@@ -12584,52 +13358,58 @@ class temple(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_val(self): return self.val
     def set_val(self, val): self.val = val
-    valProp = property(get_val, set_val)
-    def export(self, outfile, level, namespace_='t:', name_='temple', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='temple')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='temple'):
-        if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
-            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='temple', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='temple', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='temple')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='temple'):
+        if self.val is not None and 'val' not in already_processed:
+            already_processed.add('val')
+            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='temple', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='temple'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             showIndent(outfile, level)
-            outfile.write('val = "%s",\n' % (self.val,))
+            outfile.write('val="%s",\n' % (self.val,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('val', node)
         if value is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             self.val = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -12639,7 +13419,7 @@ class temple(GeneratedsSuper):
 class status(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('val', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, val=None):
@@ -12653,52 +13433,58 @@ class status(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_val(self): return self.val
     def set_val(self, val): self.val = val
-    valProp = property(get_val, set_val)
-    def export(self, outfile, level, namespace_='t:', name_='status', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='status')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='status'):
-        if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
-            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='status', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='status', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='status')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='status'):
+        if self.val is not None and 'val' not in already_processed:
+            already_processed.add('val')
+            outfile.write(' val=%s' % (self.gds_format_string(quote_attrib(self.val).encode(ExternalEncoding), input_name='val'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='status', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='status'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.val is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             showIndent(outfile, level)
-            outfile.write('val = "%s",\n' % (self.val,))
+            outfile.write('val="%s",\n' % (self.val,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('val', node)
         if value is not None and 'val' not in already_processed:
-            already_processed.append('val')
+            already_processed.add('val')
             self.val = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
@@ -12708,7 +13494,7 @@ class status(GeneratedsSuper):
 class sealed_to(GeneratedsSuper):
     member_data_items_ = [
         MemberSpec_('hlink', 'string', 0),
-        ]
+    ]
     subclass = None
     superclass = None
     def __init__(self, hlink=None):
@@ -12722,61 +13508,72 @@ class sealed_to(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
-    hlinkProp = property(get_hlink, set_hlink)
-    def export(self, outfile, level, namespace_='t:', name_='sealed_to', namespacedef_=''):
-        showIndent(outfile, level)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = []
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sealed_to')
-        if self.hasContent_():
-            outfile.write('>\n')
-            self.exportChildren(outfile, level + 1, namespace_, name_)
-            outfile.write('</%s%s>\n' % (namespace_, name_))
-        else:
-            outfile.write('/>\n')
-    def exportAttributes(self, outfile, level, already_processed, namespace_='t:', name_='sealed_to'):
-        if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
-            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
-    def exportChildren(self, outfile, level, namespace_='t:', name_='sealed_to', fromsubclass_=False):
-        pass
     def hasContent_(self):
         if (
 
-            ):
+        ):
             return True
         else:
             return False
+    def export(self, outfile, level, namespace_='gramps:', name_='sealed_to', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sealed_to')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='sealed_to'):
+        if self.hlink is not None and 'hlink' not in already_processed:
+            already_processed.add('hlink')
+            outfile.write(' hlink=%s' % (self.gds_format_string(quote_attrib(self.hlink).encode(ExternalEncoding), input_name='hlink'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='sealed_to', fromsubclass_=False, pretty_print=True):
+        pass
     def exportLiteral(self, outfile, level, name_='sealed_to'):
         level += 1
-        self.exportLiteralAttributes(outfile, level, [], name_)
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
         if self.hlink is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             showIndent(outfile, level)
-            outfile.write('hlink = "%s",\n' % (self.hlink,))
+            outfile.write('hlink="%s",\n' % (self.hlink,))
     def exportLiteralChildren(self, outfile, level, name_):
         pass
     def build(self, node):
-        self.buildAttributes(node, node.attrib, [])
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
+        return self
     def buildAttributes(self, node, attrs, already_processed):
         value = find_attr_value_('hlink', node)
         if value is not None and 'hlink' not in already_processed:
-            already_processed.append('hlink')
+            already_processed.add('hlink')
             self.hlink = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
 # end class sealed_to
 
 
+GDSClassesMapping = {
+}
+
+
 USAGE_TEXT = """
 Usage: python <Parser>.py [ -s ] <in_xml_file>
 """
+
 
 def usage():
     print USAGE_TEXT
@@ -12785,11 +13582,13 @@ def usage():
 
 def get_root_tag(node):
     tag = Tag_pattern_.match(node.tag).groups()[-1]
-    rootClass = globals().get(tag)
+    rootClass = GDSClassesMapping.get(tag)
+    if rootClass is None:
+        rootClass = globals().get(tag)
     return tag, rootClass
 
 
-def parse(inFileName):
+def parse(inFileName, silence=False):
     doc = parsexml_(inFileName)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
@@ -12800,31 +13599,59 @@ def parse(inFileName):
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('<?xml version="1.0" ?>\n')
-    rootObj.export(sys.stdout, 0, name_=rootTag, 
-        namespacedef_='')
+    if not silence:
+        sys.stdout.write('<?xml version="1.0" ?>\n')
+        rootObj.export(
+            sys.stdout, 0, name_=rootTag,
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"',
+            pretty_print=True)
     return rootObj
 
 
-def parseString(inString):
+def parseEtree(inFileName, silence=False):
+    doc = parsexml_(inFileName)
+    rootNode = doc.getroot()
+    rootTag, rootClass = get_root_tag(rootNode)
+    if rootClass is None:
+        rootTag = 'database'
+        rootClass = database
+    rootObj = rootClass.factory()
+    rootObj.build(rootNode)
+    # Enable Python to collect the space used by the DOM.
+    doc = None
+    mapping = {}
+    rootElement = rootObj.to_etree(None, name_=rootTag, mapping_=mapping)
+    reverse_mapping = rootObj.gds_reverse_node_mapping(mapping)
+    if not silence:
+        content = etree_.tostring(
+            rootElement, pretty_print=True,
+            xml_declaration=True, encoding="utf-8")
+        sys.stdout.write(content)
+        sys.stdout.write('\n')
+    return rootObj, rootElement, mapping, reverse_mapping
+
+
+def parseString(inString, silence=False):
     from StringIO import StringIO
     doc = parsexml_(StringIO(inString))
     rootNode = doc.getroot()
-    rootTag, rootClass = get_root_tag(rootNode)
+    roots = get_root_tag(rootNode)
+    rootClass = roots[1]
     if rootClass is None:
-        rootTag = 'database'
         rootClass = database
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('<?xml version="1.0" ?>\n')
-    rootObj.export(sys.stdout, 0, name_="database",
-        namespacedef_='')
+    if not silence:
+        sys.stdout.write('<?xml version="1.0" ?>\n')
+        rootObj.export(
+            sys.stdout, 0, name_="database",
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"')
     return rootObj
 
 
-def parseLiteral(inFileName):
+def parseLiteral(inFileName, silence=False):
     doc = parsexml_(inFileName)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
@@ -12835,11 +13662,12 @@ def parseLiteral(inFileName):
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
-    sys.stdout.write('#from superclasses_list import *\n\n')
-    sys.stdout.write('import superclasses_list as model_\n\n')
-    sys.stdout.write('rootObj = model_.rootTag(\n')
-    rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
-    sys.stdout.write(')\n')
+    if not silence:
+        sys.stdout.write('#from superclasses_list import *\n\n')
+        sys.stdout.write('import superclasses_list as model_\n\n')
+        sys.stdout.write('rootObj = model_.rootTag(\n')
+        rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
+        sys.stdout.write(')\n')
     return rootObj
 
 
@@ -12960,4 +13788,4 @@ __all__ = [
     "title",
     "type_",
     "url"
-    ]
+]
