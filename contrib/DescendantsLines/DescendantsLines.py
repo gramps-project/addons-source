@@ -823,7 +823,7 @@ class Family(Memorised):
             return total / len(self.children)
 
 def load_gramps(fn, start):
-    f = io.open(fn, 'r')
+    f = io.open(fn, 'r', encoding='utf8')
     #f = gzip.open(fn, 'r')
     x = xml.dom.minidom.parse(f)
     f.close()
