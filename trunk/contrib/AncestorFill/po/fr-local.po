@@ -1,0 +1,165 @@
+# French translation for gramps
+# Copyright (C) 2001-2013 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2012.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.4.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-20 20:44+0100\n"
+"PO-Revision-Date: 2013-03-18 18:11+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr "Remplissage de l'arbre"
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "Rapport sur le remplissage de l'arbre."
+
+#: AncestorFill/AncestorFill.py:172
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "L'individu %s n'est pas présent dans la base de données"
+
+#: AncestorFill/AncestorFill.py:263
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Rapport de remplissage de l'arbre d'ascendance pour %s"
+
+#: AncestorFill/AncestorFill.py:275
+msgid "Generation "
+msgstr "Génération "
+
+#: AncestorFill/AncestorFill.py:276
+msgid " Number of Ancestors found "
+msgstr "Nombre d'ancêtre trouvé "
+
+#: AncestorFill/AncestorFill.py:277
+msgid " percent of Ancestors found "
+msgstr " Pourcentage d'ancêtres trouvés "
+
+#: AncestorFill/AncestorFill.py:278
+msgid " Number of single Ancestors found "
+msgstr "Nombre d'ancêtres trouvés unique "
+
+#: AncestorFill/AncestorFill.py:279
+msgid " Number of theorical Ancestors "
+msgstr " Nombre théorique d'ancêtres "
+
+#: AncestorFill/AncestorFill.py:280
+msgid " Pedigree Collapse "
+msgstr " Implexe "
+
+#: AncestorFill/AncestorFill.py:324
+msgid " Total Number of Ancestors found "
+msgstr " Nombre total d'ancêtres trouvés "
+
+#: AncestorFill/AncestorFill.py:326
+msgid " Total Number of single Ancestors found "
+msgstr " Nombre total d'ancêtres uniques trouvés "
+
+#: AncestorFill/AncestorFill.py:354
+msgid "Report Options"
+msgstr "Options du rapport"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes
+#: AncestorFill/AncestorFill.py:356
+msgid "Center Person"
+msgstr "Centrer sur l'individu "
+
+#: AncestorFill/AncestorFill.py:357
+msgid "The center person for the report"
+msgstr "L'individu central pour ce rapport"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes
+#: AncestorFill/AncestorFill.py:359
+msgid "Generations"
+msgstr "Générations "
+
+#: AncestorFill/AncestorFill.py:360
+msgid "The number of generations to include in the report"
+msgstr "Le nombre de générations à inclure dans le rapport"
+
+#: AncestorFill/AncestorFill.py:362
+msgid "Filleddigit"
+msgstr "DécimalesAncêtre"
+
+#: AncestorFill/AncestorFill.py:363
+msgid ""
+"The number of digit after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Nombre de décimales après la virgule pour le pourcentage d'ancêtre trouvé "
+"pour une génération donnée"
+
+#: AncestorFill/AncestorFill.py:365
+msgid "Collapsedigit"
+msgstr "DécimalesImplexe"
+
+#: AncestorFill/AncestorFill.py:366
+msgid ""
+"The number of digit after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "Nombre de décimales après la virgule pour l'implexe"
+
+#: AncestorFill/AncestorFill.py:368
+msgid "Display theorical"
+msgstr "Affichage théorique"
+
+#: AncestorFill/AncestorFill.py:369
+msgid "Display the theorical number of ancestor by generation"
+msgstr "Affiche le nombre théorique d'ancêtres par génération"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes
+#: AncestorFill/AncestorFill.py:371
+msgid "Translation"
+msgstr "Traduction "
+
+#: AncestorFill/AncestorFill.py:372
+msgid "English"
+msgstr "Anglais"
+
+#: AncestorFill/AncestorFill.py:375
+msgid "The translation to be used for the report."
+msgstr "La traduction à utiliser pour le rapport."
+
+#: AncestorFill/AncestorFill.py:419
+msgid "The style used for the title of the page."
+msgstr "Le style utilisé pour les titres de page."
+
+#: AncestorFill/AncestorFill.py:432
+msgid "The style used for the generation header."
+msgstr "Le style utilisé pour les en-têtes des générations."
+
+#: AncestorFill/AncestorFill.py:442
+msgid "The basic style used for the text display."
+msgstr "Le style de base pour afficher du texte."
+
+#~ msgid "Default"
+#~ msgstr "par défaut"

@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-06 19:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:10
+msgid "Surname Mapping"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+msgid "Gramplet for editing the grouping of surnames"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:67
+msgid "Add Mapping"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:68
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:158
+msgid "Edit Mapping"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:69
+msgid "Remove Mapping"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:77
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:108
+msgid "Surname"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:78
+msgid "Group Name"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:112
+msgid "Group"
+msgstr ""
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:140
+msgid "Create Mapping"
+msgstr ""
