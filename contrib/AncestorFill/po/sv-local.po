@@ -1,0 +1,146 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-25 07:47+0200\n"
+"PO-Revision-Date: 2013-06-25 08:04+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr "Anors fyllnadsgrad"
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "Rapport över ifyllnad av släktträd"
+
+#: AncestorFill/AncestorFill.py:172
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Personen %s finns ej i databasen"
+
+#: AncestorFill/AncestorFill.py:263
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "AncestorFill för %s"
+
+#: AncestorFill/AncestorFill.py:275
+msgid "Generation "
+msgstr "Generation "
+
+#: AncestorFill/AncestorFill.py:276
+msgid " Number of Ancestors found "
+msgstr "Antal anor funna "
+
+#: AncestorFill/AncestorFill.py:277
+msgid " percent of Ancestors found "
+msgstr " procent af anor funna "
+
+#: AncestorFill/AncestorFill.py:278
+msgid " Number of single Ancestors found "
+msgstr " Antal ensamstående anor funna "
+
+#: AncestorFill/AncestorFill.py:279
+msgid " Number of theorical Ancestors "
+msgstr " Antal teoretiska anor "
+
+#: AncestorFill/AncestorFill.py:280
+msgid " Pedigree Collapse "
+msgstr "Minskning av antavla"
+
+#: AncestorFill/AncestorFill.py:324
+msgid " Total Number of Ancestors found "
+msgstr " Totalt antal anor funna "
+
+#: AncestorFill/AncestorFill.py:326
+msgid " Total Number of single Ancestors found "
+msgstr " Totalt antal ensamstående anor funna "
+
+#: AncestorFill/AncestorFill.py:354
+msgid "Report Options"
+msgstr "Rapportval"
+
+#: AncestorFill/AncestorFill.py:356
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: AncestorFill/AncestorFill.py:357
+msgid "The center person for the report"
+msgstr "Rapportens huvudperson"
+
+#: AncestorFill/AncestorFill.py:359
+msgid "Generations"
+msgstr "Generationer"
+
+#: AncestorFill/AncestorFill.py:360
+msgid "The number of generations to include in the report"
+msgstr "Antal generationer, som skall ingå i rapporten"
+
+#: AncestorFill/AncestorFill.py:362
+msgid "Filleddigit"
+msgstr "Fyllnadssiffror"
+
+#: AncestorFill/AncestorFill.py:363
+msgid ""
+"The number of digit after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Antal siffror efter komma i rapporten för procent av funna anor för en given "
+"generation"
+
+#: AncestorFill/AncestorFill.py:365
+msgid "Collapsedigit"
+msgstr "Antavelminskning"
+
+#: AncestorFill/AncestorFill.py:366
+msgid ""
+"The number of digit after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Antal siffror efter komma i rapporten för procent av funna anor för "
+"antavelminskning"
+
+#: AncestorFill/AncestorFill.py:368
+msgid "Display theorical"
+msgstr "Visa teoretiskt"
+
+#: AncestorFill/AncestorFill.py:369
+msgid "Display the theorical number of ancestor by generation"
+msgstr "Visa teoretisk antal anor för varje generation"
+
+#: AncestorFill/AncestorFill.py:371
+msgid "Translation"
+msgstr "Översättning"
+
+#: AncestorFill/AncestorFill.py:372
+msgid "English"
+msgstr "Engelska"
+
+#: AncestorFill/AncestorFill.py:375
+msgid "The translation to be used for the report."
+msgstr "Rapportens språk"
+
+#: AncestorFill/AncestorFill.py:419
+msgid "The style used for the title of the page."
+msgstr "Mall för rapporttitel"
+
+#: AncestorFill/AncestorFill.py:432
+msgid "The style used for the generation header."
+msgstr "Mall för generationshuvud"
+
+#: AncestorFill/AncestorFill.py:442
+msgid "The basic style used for the text display."
+msgstr "Grundläggande mall för textvisning"
+
