@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #
-# Generated Thu Jan 23 19:46:23 2014 by generateDS.py version 2.12a.
+# Generated Thu May 15 16:07:59 2014 by generateDS.py version 2.12d.
 #
 
 import sys
@@ -75,8 +75,8 @@ ExternalEncoding = 'ascii'
 
 
 class databaseSub(supermod.database):
-    def __init__(self, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
-        super(databaseSub, self).__init__(header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
+    def __init__(self, xmlns=None, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
+        super(databaseSub, self).__init__(xmlns, header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
 supermod.database.subclass = databaseSub
 # end class databaseSub
 
@@ -397,8 +397,8 @@ supermod.events.subclass = eventsSub
 
 
 class eventSub(supermod.event):
-    def __init__(self, handle=None, id=None, change=None, priv=None, type_=None, daterange=None, datespan=None, dateval=None, datestr=None, place=None, cause=None, description=None, attribute=None, noteref=None, citationref=None, objref=None):
-        super(eventSub, self).__init__(handle, id, change, priv, type_, daterange, datespan, dateval, datestr, place, cause, description, attribute, noteref, citationref, objref, )
+    def __init__(self, handle=None, id=None, change=None, priv=None, type_=None, daterange=None, datespan=None, dateval=None, datestr=None, place=None, cause=None, description=None, attribute=None, noteref=None, citationref=None, objref=None, tagref=None):
+        super(eventSub, self).__init__(handle, id, change, priv, type_, daterange, datespan, dateval, datestr, place, cause, description, attribute, noteref, citationref, objref, tagref, )
 supermod.event.subclass = eventSub
 # end class eventSub
 
@@ -411,8 +411,8 @@ supermod.sources.subclass = sourcesSub
 
 
 class sourceSub(supermod.source):
-    def __init__(self, handle=None, id=None, change=None, priv=None, stitle=None, sauthor=None, spubinfo=None, sabbrev=None, noteref=None, objref=None, data_item=None, reporef=None):
-        super(sourceSub, self).__init__(handle, id, change, priv, stitle, sauthor, spubinfo, sabbrev, noteref, objref, data_item, reporef, )
+    def __init__(self, handle=None, id=None, change=None, priv=None, stitle=None, sauthor=None, spubinfo=None, sabbrev=None, noteref=None, objref=None, srcattribute=None, reporef=None, tagref=None):
+        super(sourceSub, self).__init__(handle, id, change, priv, stitle, sauthor, spubinfo, sabbrev, noteref, objref, srcattribute, reporef, tagref, )
 supermod.source.subclass = sourceSub
 # end class sourceSub
 
@@ -453,8 +453,8 @@ supermod.places.subclass = placesSub
 
 
 class placeobjSub(supermod.placeobj):
-    def __init__(self, handle=None, id=None, change=None, priv=None, ptitle=None, coord=None, location=None, objref=None, url=None, noteref=None, citationref=None):
-        super(placeobjSub, self).__init__(handle, id, change, priv, ptitle, coord, location, objref, url, noteref, citationref, )
+    def __init__(self, handle=None, name=None, type_=None, id=None, change=None, priv=None, ptitle=None, code=None, alt_name=None, coord=None, placeref=None, location=None, objref=None, url=None, noteref=None, citationref=None, tagref=None):
+        super(placeobjSub, self).__init__(handle, name, type_, id, change, priv, ptitle, code, alt_name, coord, placeref, location, objref, url, noteref, citationref, tagref, )
 supermod.placeobj.subclass = placeobjSub
 # end class placeobjSub
 
@@ -464,6 +464,20 @@ class ptitleSub(supermod.ptitle):
         super(ptitleSub, self).__init__(valueOf_, mixedclass_, content_, )
 supermod.ptitle.subclass = ptitleSub
 # end class ptitleSub
+
+
+class codeSub(supermod.code):
+    def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
+        super(codeSub, self).__init__(valueOf_, mixedclass_, content_, )
+supermod.code.subclass = codeSub
+# end class codeSub
+
+
+class alt_nameSub(supermod.alt_name):
+    def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
+        super(alt_nameSub, self).__init__(valueOf_, mixedclass_, content_, )
+supermod.alt_name.subclass = alt_nameSub
+# end class alt_nameSub
 
 
 class coordSub(supermod.coord):
@@ -509,8 +523,8 @@ supermod.repositories.subclass = repositoriesSub
 
 
 class repositorySub(supermod.repository):
-    def __init__(self, handle=None, id=None, change=None, priv=None, rname=None, type_=None, address=None, url=None, noteref=None):
-        super(repositorySub, self).__init__(handle, id, change, priv, rname, type_, address, url, noteref, )
+    def __init__(self, handle=None, id=None, change=None, priv=None, rname=None, type_=None, address=None, url=None, noteref=None, tagref=None):
+        super(repositorySub, self).__init__(handle, id, change, priv, rname, type_, address, url, noteref, tagref, )
 supermod.repository.subclass = repositorySub
 # end class repositorySub
 
@@ -544,17 +558,17 @@ supermod.text.subclass = textSub
 
 
 class styleSub(supermod.style):
-    def __init__(self, name=None, value=None, range=None):
-        super(styleSub, self).__init__(name, value, range, )
+    def __init__(self, name=None, value=None, range_=None):
+        super(styleSub, self).__init__(name, value, range_, )
 supermod.style.subclass = styleSub
 # end class styleSub
 
 
-class rangeSub(supermod.range):
+class range_Sub(supermod.range_):
     def __init__(self, start=None, end=None):
-        super(rangeSub, self).__init__(start, end, )
-supermod.range.subclass = rangeSub
-# end class rangeSub
+        super(range_Sub, self).__init__(start, end, )
+supermod.range_.subclass = range_Sub
+# end class range_Sub
 
 
 class tagsSub(supermod.tags):
@@ -579,8 +593,8 @@ supermod.citations.subclass = citationsSub
 
 
 class citationSub(supermod.citation):
-    def __init__(self, handle=None, id=None, change=None, priv=None, daterange=None, datespan=None, dateval=None, datestr=None, page=None, confidence=None, noteref=None, objref=None, data_item=None, sourceref=None):
-        super(citationSub, self).__init__(handle, id, change, priv, daterange, datespan, dateval, datestr, page, confidence, noteref, objref, data_item, sourceref, )
+    def __init__(self, handle=None, id=None, change=None, priv=None, daterange=None, datespan=None, dateval=None, datestr=None, page=None, confidence=None, noteref=None, objref=None, srcattribute=None, sourceref=None, tagref=None):
+        super(citationSub, self).__init__(handle, id, change, priv, daterange, datespan, dateval, datestr, page, confidence, noteref, objref, srcattribute, sourceref, tagref, )
 supermod.citation.subclass = citationSub
 # end class citationSub
 
@@ -718,6 +732,13 @@ supermod.attribute.subclass = attributeSub
 # end class attributeSub
 
 
+class srcattributeSub(supermod.srcattribute):
+    def __init__(self, type_=None, value=None, priv=None):
+        super(srcattributeSub, self).__init__(type_, value, priv, )
+supermod.srcattribute.subclass = srcattributeSub
+# end class srcattributeSub
+
+
 class placeSub(supermod.place):
     def __init__(self, hlink=None):
         super(placeSub, self).__init__(hlink, )
@@ -751,6 +772,13 @@ class objrefSub(supermod.objref):
         super(objrefSub, self).__init__(hlink, priv, region, attribute, citationref, noteref, )
 supermod.objref.subclass = objrefSub
 # end class objrefSub
+
+
+class placerefSub(supermod.placeref):
+    def __init__(self, hlink=None, daterange=None, datespan=None, dateval=None, datestr=None):
+        super(placerefSub, self).__init__(hlink, daterange, datespan, dateval, datestr, )
+supermod.placeref.subclass = placerefSub
+# end class placerefSub
 
 
 class regionSub(supermod.region):
@@ -870,9 +898,9 @@ def parseString(inString, silence=False):
 def parseLiteral(inFilename, silence=False):
     doc = parsexml_(inFilename)
     rootNode = doc.getroot()
-    roots = get_root_tag(rootNode)
-    rootClass = roots[1]
+    rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
+        rootTag = 'database'
         rootClass = supermod.database
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
@@ -881,8 +909,8 @@ def parseLiteral(inFilename, silence=False):
     if not silence:
         sys.stdout.write('#from ??? import *\n\n')
         sys.stdout.write('import ??? as model_\n\n')
-        sys.stdout.write('rootObj = model_.database(\n')
-        rootObj.exportLiteral(sys.stdout, 0, name_="database")
+        sys.stdout.write('rootObj = model_.rootClass(\n')
+        rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
     return rootObj
 
