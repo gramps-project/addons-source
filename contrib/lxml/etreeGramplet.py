@@ -49,7 +49,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gen.const import USER_HOME, USER_PLUGINS
-from gramps.gen.utils.file import get_unicode_path_from_file_chooser
+from gramps.gen.constfunc import cuni
 from gramps.gui.dialog import ErrorDialog
 
 #from gen.merge.mergeevent import MergeEventQuery
@@ -193,7 +193,7 @@ class etreeGramplet(Gramplet):
         dialog.present()
         status = dialog.run()
         if status == Gtk.ResponseType.OK:
-            self.set_filename(get_unicode_path_from_file_chooser(dialog.get_filename()))
+            self.set_filename(cuni(dialog.get_filename()))
         dialog.destroy()
         
 
