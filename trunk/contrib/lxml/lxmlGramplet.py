@@ -299,12 +299,12 @@ class lxmlGramplet(Gramplet):
         
         # XSD structure via lxml
         
-        xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
-        try:
-            self.xsd(xsd, filename)
-        except:
-            ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-            LOG.debug(self.xsd(xsd, filename))
+        #xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
+        #try:
+            #self.xsd(xsd, filename)
+        #except:
+            #ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
+            #LOG.debug(self.xsd(xsd, filename))
             
         # DTD syntax via xmllint (libxml2-utils)
         

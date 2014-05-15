@@ -20,9 +20,11 @@
     <element ref='gramps:bookmarks' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:namemaps' minOccurs='0' maxOccurs='1'/>
    </sequence>
+   <attribute name='xmlns' type='string' use='fixed' value='http://gramps-project.org/xml/1.6.0/'/>
   </complexType>
  </element>
-<element name='header'>
+
+ <element name='header'>
   <complexType>
    <sequence>
     <element ref='gramps:created'/>
@@ -31,13 +33,15 @@
    </sequence>
   </complexType>
  </element>
-<element name='created'>
+
+ <element name='created'>
   <complexType>
    <attribute name='date' type='string' use='required'/>
    <attribute name='version' type='string' use='required'/>
   </complexType>
  </element>
-<element name='researcher'>
+
+ <element name='researcher'>
   <complexType>
    <sequence>
     <element ref='gramps:resname' minOccurs='0' maxOccurs='1'/>
@@ -52,47 +56,58 @@
    </sequence>
   </complexType>
  </element>
-<element name='resname'>
+
+ <element name='resname'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='resaddr'>
+
+ <element name='resaddr'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='reslocality'>
+
+ <element name='reslocality'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='rescity'>
+
+ <element name='rescity'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='resstate'>
+
+ <element name='resstate'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='rescountry'>
+
+ <element name='rescountry'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='respostal'>
+
+ <element name='respostal'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='resphone'>
+
+ <element name='resphone'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='resemail'>
+
+ <element name='resemail'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='mediapath'>
+
+ <element name='mediapath'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='people'>
+
+ <element name='people'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:person'/>
@@ -101,7 +116,8 @@
    <attribute name='home' type='IDREF' use='optional'/>
   </complexType>
  </element>
-<element name='person'>
+
+ <element name='person'>
   <complexType>
    <sequence>
     <element ref='gramps:gender'/>
@@ -132,11 +148,13 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='gender'>
+
+ <element name='gender'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='name'>
+
+ <element name='name'>
   <complexType>
    <sequence>
     <element ref='gramps:first' minOccurs='0' maxOccurs='1'/>
@@ -177,35 +195,43 @@
    <attribute name='display' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='first'>
+
+ <element name='first'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='call'>
+
+ <element name='call'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='suffix'>
+
+ <element name='suffix'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='title'>
+
+ <element name='title'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='nick'>
+
+ <element name='nick'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='familynick'>
+
+ <element name='familynick'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='group'>
+
+ <element name='group'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='surname'>
+
+ <element name='surname'>
   <complexType mixed='true'>
    <attribute name='prefix' type='string' use='optional'/>
    <attribute name='prim' use='optional'>
@@ -220,17 +246,20 @@
    <attribute name='connector' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='childof'>
+
+ <element name='childof'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='parentin'>
+
+ <element name='parentin'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='personref'>
+
+ <element name='personref'>
   <complexType>
    <sequence>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
@@ -248,7 +277,8 @@
    <attribute name='rel' type='string' use='required'/>
   </complexType>
  </element>
-<element name='address'>
+
+ <element name='address'>
   <complexType>
    <sequence>
     <choice minOccurs='0' maxOccurs='1'>
@@ -278,46 +308,56 @@
    </attribute>
   </complexType>
  </element>
-<element name='street'>
+
+ <element name='street'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='locality'>
+
+ <element name='locality'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='city'>
+
+ <element name='city'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='county'>
+
+ <element name='county'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='state'>
+
+ <element name='state'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='country'>
+
+ <element name='country'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='postal'>
+
+ <element name='postal'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='phone'>
+
+ <element name='phone'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='families'>
+
+ <element name='families'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:family'/>
    </sequence>
   </complexType>
  </element>
-<element name='family'>
+
+ <element name='family'>
   <complexType>
    <sequence>
     <element ref='gramps:rel' minOccurs='0' maxOccurs='1'/>
@@ -345,17 +385,20 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='father'>
+
+ <element name='father'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='mother'>
+
+ <element name='mother'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='childref'>
+
+ <element name='childref'>
   <complexType>
    <sequence>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
@@ -374,23 +417,27 @@
    <attribute name='frel' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='type'>
+
+ <element name='type'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='rel'>
+
+ <element name='rel'>
   <complexType>
    <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
-<element name='events'>
+
+ <element name='events'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:event'/>
    </sequence>
   </complexType>
  </element>
-<element name='event'>
+
+ <element name='event'>
   <complexType>
    <sequence>
     <element ref='gramps:type' minOccurs='0' maxOccurs='1'/>
@@ -407,6 +454,7 @@
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:objref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -421,14 +469,16 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='sources'>
+
+ <element name='sources'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:source'/>
    </sequence>
   </complexType>
  </element>
-<element name='source'>
+
+ <element name='source'>
   <complexType>
    <sequence>
     <element ref='gramps:stitle' minOccurs='0' maxOccurs='1'/>
@@ -437,8 +487,9 @@
     <element ref='gramps:sabbrev' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:objref' minOccurs='0' maxOccurs='unbounded'/>
-    <element ref='gramps:data_item' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:srcattribute' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:reporef' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -453,39 +504,49 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='stitle'>
+
+ <element name='stitle'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='sauthor'>
+
+ <element name='sauthor'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='spubinfo'>
+
+ <element name='spubinfo'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='sabbrev'>
+
+ <element name='sabbrev'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='places'>
+
+ <element name='places'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:placeobj'/>
    </sequence>
   </complexType>
  </element>
-<element name='placeobj'>
+
+ <element name='placeobj'>
   <complexType>
    <sequence>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:alt_name' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:location' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:objref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:url' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -498,19 +559,34 @@
     </simpleType>
    </attribute>
    <attribute name='change' type='string' use='required'/>
+   <attribute name='name' type='string' use='required'/>
+   <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
-<element name='ptitle'>
+
+ <element name='ptitle'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='coord'>
+
+ <element name='code'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='alt_name'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='coord'>
   <complexType>
    <attribute name='long' type='string' use='required'/>
    <attribute name='lat' type='string' use='required'/>
   </complexType>
  </element>
-<element name='location'>
+
+ <element name='location'>
   <complexType>
    <attribute name='street' type='string' use='optional'/>
    <attribute name='locality' type='string' use='optional'/>
@@ -523,14 +599,16 @@
    <attribute name='phone' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='objects'>
+
+ <element name='objects'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:object'/>
    </sequence>
   </complexType>
  </element>
-<element name='object'>
+
+ <element name='object'>
   <complexType>
    <sequence>
     <element ref='gramps:file'/>
@@ -558,22 +636,25 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='file'>
+
+ <element name='file'>
   <complexType>
    <attribute name='src' type='string' use='required'/>
    <attribute name='mime' type='string' use='required'/>
-   <attribute name='checksum' type='string' use='required'/>
+   <attribute name='checksum' type='string' use='optional'/>
    <attribute name='description' type='string' use='required'/>
   </complexType>
  </element>
-<element name='repositories'>
+
+ <element name='repositories'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:repository'/>
    </sequence>
   </complexType>
  </element>
-<element name='repository'>
+
+ <element name='repository'>
   <complexType>
    <sequence>
     <element ref='gramps:rname'/>
@@ -581,6 +662,7 @@
     <element ref='gramps:address' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:url' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -595,18 +677,21 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='rname'>
+
+ <element name='rname'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='notes'>
+
+ <element name='notes'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:note'/>
    </sequence>
   </complexType>
  </element>
-<element name='note'>
+
+ <element name='note'>
   <complexType>
    <sequence>
     <element ref='gramps:text'/>
@@ -635,11 +720,13 @@
    <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
-<element name='text'>
+
+ <element name='text'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='style'>
+
+ <element name='style'>
   <complexType>
    <sequence>
     <element ref='gramps:range' maxOccurs='unbounded'/>
@@ -662,20 +749,23 @@
    <attribute name='value' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='range'>
+
+ <element name='range'>
   <complexType>
    <attribute name='start' type='string' use='required'/>
    <attribute name='end' type='string' use='required'/>
   </complexType>
  </element>
-<element name='tags'>
+
+ <element name='tags'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:tag'/>
    </sequence>
   </complexType>
  </element>
-<element name='tag'>
+
+ <element name='tag'>
   <complexType>
    <attribute name='handle' type='ID' use='required'/>
    <attribute name='name' type='string' use='required'/>
@@ -684,14 +774,16 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='citations'>
+
+ <element name='citations'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:citation'/>
    </sequence>
   </complexType>
  </element>
-<element name='citation'>
+
+ <element name='citation'>
   <complexType>
    <sequence>
     <choice minOccurs='0' maxOccurs='1'>
@@ -701,11 +793,12 @@
      <element ref='gramps:datestr'/>
     </choice>
     <element ref='gramps:page' minOccurs='0' maxOccurs='1'/>
-    <element ref='gramps:confidence' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:confidence'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:objref' minOccurs='0' maxOccurs='unbounded'/>
-    <element ref='gramps:data_item' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:srcattribute' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:sourceref'/>
+    <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -720,14 +813,16 @@
    <attribute name='change' type='string' use='required'/>
   </complexType>
  </element>
-<element name='bookmarks'>
+
+ <element name='bookmarks'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:bookmark'/>
    </sequence>
   </complexType>
  </element>
-<element name='bookmark'>
+
+ <element name='bookmark'>
   <complexType>
    <attribute name='target' use='required'>
     <simpleType>
@@ -747,28 +842,32 @@
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='namemaps'>
+
+ <element name='namemaps'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:map'/>
    </sequence>
   </complexType>
  </element>
-<element name='map'>
+
+ <element name='map'>
   <complexType>
    <attribute name='type' type='string' use='required'/>
    <attribute name='key' type='string' use='required'/>
    <attribute name='value' type='string' use='required'/>
   </complexType>
  </element>
-<element name='name-formats'>
+
+ <element name='name-formats'>
   <complexType>
    <sequence minOccurs='0' maxOccurs='unbounded'>
     <element ref='gramps:format'/>
    </sequence>
   </complexType>
  </element>
-<element name='format'>
+
+ <element name='format'>
   <complexType>
    <attribute name='number' type='string' use='required'/>
    <attribute name='name' type='string' use='required'/>
@@ -783,7 +882,8 @@
    </attribute>
   </complexType>
  </element>
-<element name='daterange'>
+
+ <element name='daterange'>
   <complexType>
    <attribute name='start' type='string' use='required'/>
    <attribute name='stop' type='string' use='required'/>
@@ -807,7 +907,8 @@
    <attribute name='newyear' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='datespan'>
+
+ <element name='datespan'>
   <complexType>
    <attribute name='start' type='string' use='required'/>
    <attribute name='stop' type='string' use='required'/>
@@ -831,7 +932,8 @@
    <attribute name='newyear' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='dateval'>
+
+ <element name='dateval'>
   <complexType>
    <attribute name='val' type='string' use='required'/>
    <attribute name='type' use='optional'>
@@ -863,22 +965,26 @@
    <attribute name='newyear' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='datestr'>
+
+ <element name='datestr'>
   <complexType>
    <attribute name='val' type='string' use='required'/>
   </complexType>
  </element>
-<element name='citationref'>
+
+ <element name='citationref'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='sourceref'>
+
+ <element name='sourceref'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='eventref'>
+
+ <element name='eventref'>
   <complexType>
    <sequence>
     <element ref='gramps:attribute' minOccurs='0' maxOccurs='unbounded'/>
@@ -896,7 +1002,8 @@
    <attribute name='role' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='reporef'>
+
+ <element name='reporef'>
   <complexType>
    <sequence>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
@@ -914,25 +1021,30 @@
    <attribute name='medium' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='noteref'>
+
+ <element name='noteref'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='tagref'>
+
+ <element name='tagref'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='page'>
+
+ <element name='page'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='confidence'>
+
+ <element name='confidence'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='attribute'>
+
+ <element name='attribute'>
   <complexType>
    <sequence>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
@@ -950,20 +1062,39 @@
    <attribute name='value' type='string' use='required'/>
   </complexType>
  </element>
-<element name='place'>
+
+ <element name='srcattribute'>
+  <complexType>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='required'/>
+   <attribute name='value' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='place'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
-<element name='cause'>
+
+ <element name='cause'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='description'>
+
+ <element name='description'>
   <complexType mixed='true'>
   </complexType>
  </element>
-<element name='url'>
+
+ <element name='url'>
   <complexType>
    <attribute name='priv' use='optional'>
     <simpleType>
@@ -978,7 +1109,8 @@
    <attribute name='description' type='string' use='optional'/>
   </complexType>
  </element>
-<element name='objref'>
+
+ <element name='objref'>
   <complexType>
    <sequence>
     <element ref='gramps:region' minOccurs='0' maxOccurs='1'/>
@@ -997,7 +1129,20 @@
    </attribute>
   </complexType>
  </element>
-<element name='region'>
+
+ <element name='placeref'>
+  <complexType>
+   <choice minOccurs='0' maxOccurs='1'>
+    <element ref='gramps:daterange'/>
+    <element ref='gramps:datespan'/>
+    <element ref='gramps:dateval'/>
+    <element ref='gramps:datestr'/>
+   </choice>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='region'>
   <complexType>
    <attribute name='corner1_x' type='string' use='required'/>
    <attribute name='corner1_y' type='string' use='required'/>
@@ -1005,13 +1150,15 @@
    <attribute name='corner2_y' type='string' use='required'/>
   </complexType>
  </element>
-<element name='data_item'>
+
+ <element name='data_item'>
   <complexType>
    <attribute name='key' type='string' use='required'/>
    <attribute name='value' type='string' use='required'/>
   </complexType>
  </element>
-<element name='lds_ord'>
+
+ <element name='lds_ord'>
   <complexType>
    <sequence>
     <choice minOccurs='0' maxOccurs='1'>
@@ -1038,17 +1185,20 @@
    <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
-<element name='temple'>
+
+ <element name='temple'>
   <complexType>
    <attribute name='val' type='string' use='required'/>
   </complexType>
  </element>
-<element name='status'>
+
+ <element name='status'>
   <complexType>
    <attribute name='val' type='string' use='required'/>
   </complexType>
  </element>
-<element name='sealed_to'>
+
+ <element name='sealed_to'>
   <complexType>
    <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
