@@ -43,7 +43,6 @@ from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
 import gramps.gen.datehandler
 from gramps.gen.const import USER_HOME, USER_PLUGINS
-from gramps.gen.utils.file import get_unicode_path_from_file_chooser
 from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
@@ -211,7 +210,7 @@ class lxmlGramplet(Gramplet):
         dialog.present()
         status = dialog.run()
         if status == Gtk.ResponseType.OK:
-            self.set_filename(get_unicode_path_from_file_chooser(dialog.get_filename()))
+            self.set_filename(cuni(dialog.get_filename()))
         dialog.destroy()
         
 
