@@ -441,10 +441,12 @@ class etreeGramplet(Gramplet):
         last = []
         for i in range(self.last):
             if i == 0:
-                start = epoch(i)
                 last.append(timestamp[-1])
             else:
                 last.append(timestamp[-i])
+                
+        last.sort()
+        start = epoch(last[1])
                 
         time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
         for i in last:
