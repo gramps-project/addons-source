@@ -20,7 +20,6 @@
     <element ref='gramps:bookmarks' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:namemaps' minOccurs='0' maxOccurs='1'/>
    </sequence>
-   <attribute name='xmlns' type='string' use='fixed' value='http://gramps-project.org/xml/1.6.0/'/>
   </complexType>
  </element>
 

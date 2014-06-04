@@ -548,6 +548,8 @@ def build():
     files = []
     files += glob.glob('''%s.py''' % ADDON)
     files += glob.glob('''%s.gpr.py''' % ADDON)
+    files += glob.glob('''etreeGramplet.py''')
+    files += glob.glob('''etreeGramplet.gpr.py''')
     files += glob.glob('''grampsxml.dtd''')
     files += glob.glob('''grampsxml.rng''')
     files += glob.glob('''grampsxml.xsd''')
