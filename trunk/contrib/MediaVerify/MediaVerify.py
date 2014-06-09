@@ -51,11 +51,11 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter, open_file_with_default_application
 from gramps.gen.db import DbTxn
 from gramps.gen.lib import Attribute, AttributeType
-from gramps.gen.utils.file import (media_path_full, relative_path,
-                                   get_unicode_path_from_file_chooser)
+from gramps.gen.utils.file import media_path_full, relative_path
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditMedia
 from gramps.gen.errors import WindowActiveError
+from gramps.gen.constfunc import conv_to_unicode
 
 #------------------------------------------------------------------------
 #
@@ -206,7 +206,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         while True:
             value = chooser.run()
             filename = chooser.get_filename()
-            filename = get_unicode_path_from_file_chooser(filename)
+            filename = conv_to_unicode(filename)
             if value == Gtk.ResponseType.OK:
                 if filename:
                     chooser.destroy()
