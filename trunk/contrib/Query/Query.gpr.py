@@ -10,7 +10,7 @@ register(GRAMPLET,
          description = _("Gramplet for running SQL-like queries"),
          status = UNSTABLE, # not yet tested with python 3
          version = '1.0.18',
-         gramps_target_version = "4.1",
+         gramps_target_version = "4.2",
          height=200,
          gramplet = "QueryGramplet",
          fname="QueryGramplet.py",
