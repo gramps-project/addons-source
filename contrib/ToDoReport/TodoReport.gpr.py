@@ -24,7 +24,7 @@ register(REPORT,
     name = _('Todo Report'),
     description = _("Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."),
     version = '1.2.19',
-    gramps_target_version = '4.1',
+    gramps_target_version = '4.2',
     status = STABLE, # not yet tested with python 3
     fname = 'TodoReport.py',
     authors = ["Jakim Friant"],
