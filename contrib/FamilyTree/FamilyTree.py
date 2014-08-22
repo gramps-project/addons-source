@@ -1,8 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program - Family Tree plugin
 #
-# Copyright (C) 2008,2009,2010 Reinhard Mueller
+# Copyright (C) 2008,2009,2010,2014 Reinhard Mueller
 # Copyright (C) 2010 lcc <lcc.mailaddress@gmail.com>
+# Copyright (C) 2014 Gerald Kunzmann
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,6 +34,7 @@ import sys
 #------------------------------------------------------------------------
 import gramps.gen.display.name
 from gramps.gen.lib import Date, Event, EventType, FamilyRelType, Name
+from gramps.gen.lib import StyledText, StyledTextTag, StyledTextTagType
 import gramps.gen.plug.docgen
 import gramps.gen.plug.menu
 import gramps.gen.plug.report
@@ -58,7 +60,6 @@ empty_birth.set_type(EventType.BIRTH)
 empty_marriage = Event()
 empty_marriage.set_type(EventType.MARRIAGE)
 
-
 #------------------------------------------------------------------------
 #
 # FamilyTree report
@@ -80,8 +81,13 @@ class FamilyTree(gramps.gen.plug.report.Report):
         self.fit_on_page = menu.get_option_by_name('fit_on_page').get_value()
         self.color = menu.get_option_by_name('color').get_value()
         self.shuffle_colors = menu.get_option_by_name('shuffle_colors').get_value()
-        self.callname = menu.get_option_by_name('callname').get_value()
+        self.kekule_start_number = menu.get_option_by_name('kekule_start_number').get_value()
+        try:
+            self.callname = menu.get_option_by_name('callname').get_value()
+        except:
+            self.callname = FamilyTreeOptions.CALLNAME_DONTUSE
         self.include_occupation = menu.get_option_by_name('include_occupation').get_value()
+        self.include_notes = menu.get_option_by_name('include_notes').get_value()
         self.include_residence = menu.get_option_by_name('include_residence').get_value()
         self.eventstyle_dead = menu.get_option_by_name('eventstyle_dead').get_value()
         self.eventstyle_living = menu.get_option_by_name('eventstyle_living').get_value()
@@ -95,7 +101,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         if not self.title:
             name = self.__family_get_display_name(self.center_family)
-            self.title = _("Family Tree for %s") % name
+            self.title = StyledText(unicode(_("Family Tree for %s"))) % name
 
         style_sheet = self.doc.get_style_sheet()
         self.line_width = pt2cm(style_sheet.get_draw_style("FTR-box").get_line_width())
@@ -129,7 +135,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         self.descendant_max_color = 0
 
         self.descendants_tree = None
-        self.ancestors_tree = self.__build_ancestors_tree(self.center_family.get_handle(), 0, 0, 0, 0)
+        self.ancestors_tree = self.__build_ancestors_tree(self.center_family.get_handle(), 0, 0, 0, 0, self.kekule_start_number)
         if self.ancestors_tree is None:
             return
         (self.descendants_tree, descendants_space) = self.__build_descendants_tree(self.center_family.get_child_ref_list(), 0, 0, 0)
@@ -194,7 +200,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         self.doc.end_page()
 
 
-    def __build_ancestors_tree(self, family_handle, generation, color, top, center):
+    def __build_ancestors_tree(self, family_handle, generation, color, top, center, kekule):
         """Build an in-memory data structure containing all ancestors"""
 
         self.ancestor_generations = max(self.ancestor_generations, generation + 1)
@@ -225,7 +231,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             father = None
         if father:
-            father_text = [('FTR-name', self.__person_get_display_name(father))] + [('FTR-data', p) for p in self.__person_get_display_data(father)]
+            if kekule: 
+                father_text = [('FTR-name', StyledText(str(kekule) + " ") + self.__person_get_display_name(father))] + [('FTR-data', p) for p in self.__person_get_display_data(father)]
+            else:
+                father_text = [('FTR-name', self.__person_get_display_name(father))] + [('FTR-data', p) for p in self.__person_get_display_data(father)]
             father_height = self.__make_space(father_text)
             father_family = father.get_main_parents_family_handle()
         else:
@@ -241,7 +250,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             mother = None
         if mother:
-            mother_text = [('FTR-name', self.__person_get_display_name(mother))] + [('FTR-data', p) for p in self.__person_get_display_data(mother)]
+            if kekule > 1: 
+                mother_text = [('FTR-name', StyledText(str(kekule+1) + " ") + self.__person_get_display_name(mother))] + [('FTR-data', p) for p in self.__person_get_display_data(mother)]
+            else:
+                mother_text = [('FTR-name', self.__person_get_display_name(mother))] + [('FTR-data', p) for p in self.__person_get_display_data(mother)]
             mother_height = self.__make_space(mother_text)
             mother_family = mother.get_main_parents_family_handle()
         else:
@@ -271,7 +283,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
             father_top = top
             father_center = family_node['top'] + father_height / 2
             # Create father's box.
-            father_node = self.__build_ancestors_tree(father_family, generation + 1, father_color, father_top, father_center)
+            if kekule:
+                father_node = self.__build_ancestors_tree(father_family, generation + 1, father_color, father_top, father_center, kekule * 2)
+            else:
+                father_node = self.__build_ancestors_tree(father_family, generation + 1, father_color, father_top, father_center, 0)
         if father_node:
             if mother_family:
                 if self.database.get_family_from_handle(mother_family).private and self.protect_private:
@@ -307,7 +322,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
                 mother_top = top
             mother_center = family_node['top'] + family_node['height'] - mother_height / 2
             # Create mother's box.
-            mother_node = self.__build_ancestors_tree(mother_family, generation + 1, mother_color, mother_top, mother_center)
+            if kekule > 1:
+                mother_node = self.__build_ancestors_tree(mother_family, generation + 1, mother_color, mother_top, mother_center, (kekule+1)*2 )
+            else:
+                mother_node = self.__build_ancestors_tree(mother_family, generation + 1, mother_color, mother_top, mother_center, 0 )
         if mother_node:
             # If this family is only a mother, move her down to the center of
             # her parents box.
@@ -408,11 +426,11 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
                 if len(family_handles) > 1:
                     if sys.version_info[0] < 3:
-                        spouse_number = unichr(0x2160 + len(person_node['family_list'])) + ". "
+                        spouse_number = StyledText(unichr(0x2160 + len(person_node['family_list'])) + ". ")
                     else:
-                        spouse_number = chr(0x2160 + len(person_node['family_list'])) + ". "
+                        spouse_number = StyledText(chr(0x2160 + len(person_node['family_list'])) + ". ")
                 else:
-                    spouse_number = ""
+                    spouse_number = StyledText("")
                 if spouse_handle is not None:
                     spouse = self.database.get_person_from_handle(spouse_handle)
                     
@@ -580,7 +598,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         h = 0
         for (style_name, line) in text:
-            w = pt2cm(self.doc.string_width(self.__get_font(style_name), line.replace("<u>", "").replace("</u>", "")))
+            w = pt2cm(self.doc.string_width(self.__get_font(style_name), str(line)))
             self.box_width = max(self.box_width, w)
             h += self.__get_font_height(style_name) * 1.2
         return h + 2 * self.box_pad
@@ -651,7 +669,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             mother_name = _("Unknown")
 
-        return _("%(father)s and %(mother)s") % {
+        return StyledText(unicode(_("%(father)s and %(mother)s"))) % {
                 'father': father_name,
                 'mother': mother_name}
 
@@ -665,6 +683,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         # data.
         n = Name(source=person.get_primary_name())
 
+        # Insert placeholders.
         if self.missinginfo:
             if not n.first_name:
                 n.first_name = "____________"
@@ -673,27 +692,34 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         if n.call:
             if self.callname == FamilyTreeOptions.CALLNAME_REPLACE:
+                # Replace first name with call name.
                 n.first_name = n.call
             elif self.callname == FamilyTreeOptions.CALLNAME_UNDERLINE_ADD:
-                if n.call in n.first_name:
-                    (before, after) = n.first_name.split(n.call)
-                    n.first_name = "%(before)s<u>%(call)s</u>%(after)s" % {
-                            'before': before,
-                            'call': n.call,
-                            'after': after}
-                else:
+                if n.call not in n.first_name:
+                    # Add call name to first name.
                     n.first_name = "\"%(call)s\" (%(first)s)" % {
                             'call':  n.call,
                             'first': n.first_name}
 
-        return gramps.gen.display.name.displayer.display_name(n)
+        text = gramps.gen.display.name.displayer.display_name(n)
+        tags = []
+
+        if n.call:
+            if self.callname == FamilyTreeOptions.CALLNAME_UNDERLINE_ADD:
+                if n.call in person.get_primary_name().first_name:
+                    # Underline call name
+                    callpos = text.find(n.call)
+                    tags = [StyledTextTag(StyledTextTagType.UNDERLINE, True,
+                                [(callpos, callpos + len(n.call))])]
+
+        return StyledText(text, tags)
 
 
     def __person_get_display_data(self, person):
 
         result = []
-
         occupations = []
+        notes = []
         baptism = None
         residences = []
         burial = None
@@ -734,7 +760,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         if birth and birth.private and self.protect_private:
             birth = None
 
-        if death_ref and not death_ref.private and self.protect_private:
+        if death_ref and not (death_ref.private and self.protect_private):
             death = self.database.get_event_from_handle(death_ref.ref)
         else:
             death = None
@@ -782,6 +808,24 @@ class FamilyTree(gramps.gen.plug.report.Report):
             else:
                 if death_text:
                     result.append("\u271D %s" % death_text)
+
+        notelist = person.get_note_list()
+        note = ""
+        for notehandle in notelist:
+            noteobj = self.database.get_note_from_handle(notehandle)
+            note += noteobj.get()
+            note += ", "
+        # cut "," from end of the string and limit length of note to 50 characters
+        note_len = len(note)
+        if note_len > 50:
+            note = note[:48] 
+            note += "..."
+        else:
+            note_len -= 2
+            note = note[:note_len]
+
+        if self.include_notes and note and note != "":
+            result.append(note)
 
         return result
 
@@ -1008,6 +1052,10 @@ class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
         max_descendant_generations.set_help(_("The number of descendant generations to include in the tree"))
         menu.add_option(category_name, "max_descendant_generations", max_descendant_generations)
 
+        kekule_start_number = gramps.gen.plug.menu.NumberOption(_("Kekule number of husband"), 0, 0, 16384)
+        kekule_start_number.set_help(_("The Kekule number of the husband (central family). Set 0 to not show Kekule numbers"))
+        menu.add_option(category_name, "kekule_start_number", kekule_start_number)
+        
         fit_on_page = gramps.gen.plug.menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
         menu.add_option(category_name, 'fit_on_page', fit_on_page)
@@ -1035,10 +1083,16 @@ class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
             (self.CALLNAME_DONTUSE, _("Don't use call name")),
             (self.CALLNAME_REPLACE, _("Replace first name with call name")),
             (self.CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
-        menu.add_option(category_name, "callname", callname)
+        # Uncomment the line below to activate callname handling, but you need
+        # to apply the patch in https://gramps-project.org/bugs/view.php?id=8003
+        # to make it work!
+        # menu.add_option(category_name, "callname", callname)
 
         include_occupation = gramps.gen.plug.menu.BooleanOption(_("Include Occupation"), True)
         menu.add_option(category_name, 'include_occupation', include_occupation)
+
+        include_notes = gramps.gen.plug.menu.BooleanOption(_("Include Notes"), True)
+        menu.add_option(category_name, 'include_notes', include_notes)
 
         include_residence = gramps.gen.plug.menu.BooleanOption(_("Include Residence"), True)
         menu.add_option(category_name, 'include_residence', include_residence)
