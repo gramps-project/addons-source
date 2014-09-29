@@ -179,6 +179,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         self.doc.start_page()
 
+        # Workaround for center_text not accepting StyledText
+        if isinstance(self.title, StyledText):
+            if not self.title.get_tags():
+                self.title = str(self.title)
         self.doc.center_text('FTR-title',
                 self.title,
                 self.doc.get_usable_width() / 2,
@@ -629,6 +633,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
         x = self.scale * (box_x + self.box_pad)
         y = self.scale * (box_y + self.box_pad)
         for (style_name, line) in text:
+            # Workaround for draw_text not accepting StyledText
+            if isinstance(line, StyledText):
+                if not line.get_tags():
+                    line = str(line)
             self.doc.draw_text(style_name, line, x, y)
             y += self.__get_font_height(style_name) * 1.2
 
