@@ -34,6 +34,6 @@ register(QUICKREPORT,
          authors="Douglas Blank",
          authors_email="dblank@cs.brynmawr.edu",
          version = '1.0.19',
-         gramps_target_version = "4.1",
+         gramps_target_version = "4.2",
          )
 

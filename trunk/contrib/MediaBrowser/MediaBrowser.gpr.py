@@ -30,7 +30,7 @@ register(GRAMPLET,
          name=_("Media Browser"), 
          description = _("Gramplet showing details of a person"),
          version = '1.0.17',
-         gramps_target_version="4.1",
+         gramps_target_version="4.2",
          status = STABLE, # not yet tested with python 3
          fname="MediaBrowser.py",
          height=200,
