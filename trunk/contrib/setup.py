@@ -709,8 +709,6 @@ def build(addon):
     files = []
     files += glob.glob('''%s/*.py''' % addon)
     files += glob.glob('''%s/*.gpr.py''' % addon)
-    files += glob.glob('''%s/*.py''' % addon)
-    files += glob.glob('''%s/*.gpr.py''' % addon)
     files += glob.glob('''%s/locale/*/LC_MESSAGES/*.mo''' % addon)
     files += glob.glob('''%s/*.glade''' % addon)
     files += glob.glob('''%s/*.xml''' % addon)
@@ -977,6 +975,9 @@ def listing(LANG):
                     if UNITYPE(name) == local_gettext(cuni(name)):
                         print(addon, name, local_gettext(name))
                     name = repr(local_gettext(name))
+                    # ugly workaround for name_accell (Export GEDCOM Extensions)
+                    name = name.replace('_accell   ', '')
+                    name = name.replace('(GED2', '(GED2)')
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
