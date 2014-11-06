@@ -894,8 +894,11 @@ def listing(LANG):
 
         tgz_file = '%s.addon.tgz' % addon
         tgz_exists = os.path.isfile('../download/' + tgz_file)
-        gpr_file = '%s/%s.gpr.py' % (addon, addon)
-        gpr_exists = os.path.isfile(gpr_file)
+        gprs = glob.glob('%(addon)s/*gpr.py' % {'addon': addon})
+        for gpr in gprs:
+            gpr_file = gpr
+            print(gpr_file, gprs)
+            gpr_exists = os.path.isfile(gpr_file)
 
         mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, LANG)
         mo_exists = os.path.isfile(mo_file)
@@ -972,9 +975,12 @@ def listing(LANG):
                     name = name.replace(')', '')
                     name = name.replace('"', '')
                     name = glocale._get_translation().ugettext(name)
-                    if UNITYPE(name) == local_gettext(cuni(name)):
-                        print(addon, name, local_gettext(name))
-                    name = repr(local_gettext(name))
+                    try:
+                        if UNITYPE(name) == local_gettext(cuni(name)):
+                            print(addon, name, local_gettext(name))
+                        name = repr(local_gettext(name))
+                    except:
+                        print('Cannot use local_gettext on', repr(p))
                     # ugly workaround for name_accell (Export GEDCOM Extensions)
                     name = name.replace('_accell   ', '')
                     name = name.replace('(GED2', '(GED2)')
@@ -988,9 +994,12 @@ def listing(LANG):
                     description = description.replace(')', '')
                     description = description.replace('"', '')
                     description = glocale._get_translation().ugettext(description)
-                    if UNITYPE(description) == local_gettext(cuni(description)):
-                        print(addon, description, local_gettext(description))
-                    description = repr(local_gettext(description))
+                    try:
+                        if UNITYPE(description) == local_gettext(cuni(description)):
+                            print(addon, description, local_gettext(description))
+                        description = repr(local_gettext(description))
+                    except:
+                        print('Cannot use local_gettext on', repr(p))
 
                 if repr(p).startswith('"version'):
                     version = p.replace('version', '')
