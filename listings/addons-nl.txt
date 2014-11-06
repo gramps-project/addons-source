@@ -1,23 +1,32 @@
+{"t":u'Snelverslag',"i":'allnames',"n":All Names of All People,"v":'1.0.18',"g":'4.2',"d":Display all names of all people,"z":'AllNamesQuickview.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'AttachSource',"n":u'Bron toevoegen',"v":'0.0.24',"g":'4.2',"d":u'Een gedeelde bron aan verschillende objecten toevoegen.',"z":'AttachSourceTool.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":u'Verjaardagsgramplet',"v":'1.0.25',"g":'4.2',"d":u'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'calculateestimateddates',"n":u'Calculate Estimated Dates',"v":'0.90.20',"g":'4.2',"d":u'Calculates estimated dates for birth and death.',"z":'CalculateEstimatedDates.addon.tgz'}
+{"t":u'Gramplet',"i":"Census Gramplet","n":u'Census Gramplet',"v":'1.0.28',"g":'4.2',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'chgivenname',"n":u'Fix Capitalization of Given Names',"v":'1.0.22',"g":'4.2',"d":u'Searches the entire database and attempts to ',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'climerge',"n":u'Command Line Merge',"v":'1.0.18',"g":'4.2',"d":u'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":u'Gramplet',"i":"Clipboard Gramplet","n":u'Klembordgramplet',"v":'1.0.24',"g":'4.2',"d":u'Gramplet om gegevens te groeperen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"Clock Gramplet","n":u'Klokgramplet',"v":'0.0.20',"g":'4.2',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
+{"t":u'Uitbreidingsbibliotheek',"i":"DE Web Connect Pack","n":u'DE Web Connect Pack',"v":'0.0.15',"g":'4.2',"d":u'Collection of Web sites for the DE (requires libwebconnect',"z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Gramplet',"i":"Data Entry Gramplet","n":u'Data Entry Gramplet',"v":'1.0.30',"g":'4.2',"d":u'Gramplet om gegevens snel in te voeren',"z":'DataEntryGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"Deep Connections Gramplet","n":u"'Verre relaties'-gramplet","v":'1.0.23',"g":'4.2',"d":u'Gramplet showing a deep relationship between active and home people',"z":'DeepConnectionsGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"Descendant Count Gramplet","n":u'Afstammelingen tellen',"v":'1.0.20',"g":'4.2',"d":u'Het aantal afstammelingen voor elke persoon tonen.',"z":'DescendantCount.addon.tgz'}
 {"t":u'Verslag',"i":'Descendants Lines',"n":u'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":u'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
+{"t":u'Verslag',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.7',"g":'4.2',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
+{"t":u'Exporteerder',"i":"export_django","n":u"'Django Export'","v":'1.0.25',"g":'4.2',"d":'',"z":'Django.addon.tgz'}
+{"t":u'Gramplet',"i":"Edit Image Exif Metadata","n":u'Edit Image Exif Metadata',"v":'1.5.5',"g":'4.2',"d":u'Gramplet to view edit and save image Exif metadata',"z":'EditExifMetadata.addon.tgz'}
 {"t":u'Exporteerder',"i":'Raw Export',"n":u"'Raw Export'","v":'1.0.22',"g":'4.2',"d":'',"z":'ExportRaw.addon.tgz'}
 {"t":u'Gramplet',"i":"Extended Family Attributes","n":u'Extended Person Attributes',"v":'1.0.16',"g":'4.2',"d":u'Gramplet die de kenmerken van een persoon toont',"z":'ExtendedAttributes.addon.tgz'}
+{"t":u'Uitbreidingsbibliotheek',"i":"FR Web Connect Pack","n":u'FR Web Connect Pack',"v":'1.0.21',"g":'4.2',"d":u'Collection of Web sites for the FR (requires libwebconnect',"z":'FRWebConnectPack.addon.tgz'}
 {"t":u'Verslag',"i":'FamilySheet',"n":u"'Family Sheet'","v":'3.4.24',"g":'4.2',"d":u'Produces a family sheet showing full information ',"z":'FamilySheet.addon.tgz'}
 {"t":u'Verslag',"i":'FamilyTree',"n":u"'Family Tree'","v":'4.2.3',"g":'4.2',"d":'',"z":'FamilyTree.addon.tgz'}
-{"t":u'Exporteerder',"i":'Export GEDCOM Extensions',"n":u'_accell   GEDCOM Extensions (GED2',"v":'1.0.10',"g":'4.2',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
+{"t":u'Exporteerder',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Extensions (GED2)',"v":'1.0.10',"g":'4.2',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":u'Kaartendienst',"i":'GoogleEarth',"n":u"'GoogleEarth'","v":'1.0.28',"g":'4.2',"d":u'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
+{"t":u'Gramps-scherm',"i":'graphview',"n":u'Grafiekscherm',"v":'1.0.42',"g":'4.2',"d":u'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":u'Gramplet',"i":"Headline News Gramplet","n":u'Headline News Gramplet',"v":'1.0.22',"g":'4.2',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"Import Gramplet","n":u'Import-gramplet',"v":'1.0.21',"g":'4.2',"d":u'Gramplet om tekst te importeren',"z":'ImportGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"LastChangeGramplet","n":u'Last Change Report',"v":'0.0.23',"g":'4.2',"d":u'De tien laatst gewijzigde persoonsgegevens worden gelijst',"z":'LastChange.addon.tgz'}
+{"t":u'Verslag',"i":'LinesOfDescendency',"n":u"'Lines of Descendency Report'","v":'1.1.23',"g":'4.2',"d":'',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Verslag',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
 {"t":u'Gramplet',"i":"MediaBrowser","n":u'Media Browser',"v":'1.0.17',"g":'4.2',"d":u'Gramplet toont details van een persoon',"z":'MediaBrowser.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'mediaverify',"n":u'Media Verify',"v":'1.0.6',"g":'4.2',"d":u'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
@@ -33,5 +42,8 @@
 {"t":u'Exporteerder',"i":'im_sqlite',"n":u"'SQLite Import'","v":'1.0.23',"g":'4.2',"d":'',"z":'Sqlite.addon.tgz'}
 {"t":u'Hulpmiddel',"i":'thumbgen',"n":u'Thumbnail Generator',"v":'1.0.14',"g":'4.2',"d":u'Generates thumbnails for media files',"z":'ThumbnailGenerator.addon.tgz'}
 {"t":u'Snelverslag',"i":'timelinequickview',"n":u'Tijdlijn',"v":'1.0.21',"g":'4.2',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
+{"t":u'Verslag',"i":'TodoReport',"n":u"'Todo Report'","v":'1.2.20',"g":'4.2',"d":u'Produces a list of all the notes with a given tag along with the records that it references the Person Family Event etc.',"z":'ToDoReport.addon.tgz'}
+{"t":u'Uitbreidingsbibliotheek',"i":"UK Web Connect Pack","n":u'V.K. Web Connect Pack',"v":'1.0.28',"g":'4.2',"d":u'Collection of Web sites for the UK (requires libwebconnect',"z":'UKWebConnectPack.addon.tgz'}
+{"t":u'Uitbreidingsbibliotheek',"i":"US Web Connect Pack","n":u'V.S. Web Connect Pack',"v":'1.0.30',"g":'4.2',"d":u'Collection of Web sites for the US (requires libwebconnect',"z":'USWebConnectPack.addon.tgz'}
 {"t":u'Uitbreidingsbibliotheek',"i":'libaccess',"n":u'Generic DB Access lib',"v":'1.0.20',"g":'4.2',"d":u'Provides a library for generic access to ',"z":'libaccess.addon.tgz'}
 {"t":u'Uitbreidingsbibliotheek',"i":"libwebconnect","n":u'libwebconnect',"v":'1.0.20',"g":'4.2',"d":u"Bibliotheek voor 'webstek'-verzamelingen","z":'libwebconnect.addon.tgz'}
