@@ -51,14 +51,15 @@ from gramps.gui.plug import tool as Tool
 from gramps.gui.plug import PluginWindows
 from gramps.gui.display import display_url
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gen.lib import Location
+from gramps.gen.lib import PlaceType, Location
 from gramps.gen.db import DbTxn
 from gramps.gen.filters import GenericFilterFactory, rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
 from gramps.gen.filters.rules.place import *
-from gramps.gui.dialog import OkDialog, WarningDialog
+from gramps.gui.dialog import OkDialog, WarningDialog, ErrorDialog
 from gramps.gen.utils.place import conv_lat_lon
+from gramps.gen.utils.location import get_main_location
 from gramps.gen.errors import WindowActiveError
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -152,16 +153,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.rectheightfilter= self.glade.get_object("rectheight")
         self.latlonfile = self.glade.get_object("filecmb")
         self.latlonfind = self.glade.get_object("cmbe_latlon_find")
-        self.cmbetitleregex = self.glade.get_object("cmbe_titleregex")
         self.titleconstruct = self.glade.get_object("titleconstruct")
         self.titleconstruct_custom = self.glade.get_object("titleconstruct_custom")
         self.latlonconv = self.glade.get_object("latlonconv")
-        self.countryset = self.glade.get_object("countryset")
-        self.stateset = self.glade.get_object("stateset")
-        self.countyset = self.glade.get_object("countyset")
-        self.cityset = self.glade.get_object("cityset")
-        self.parishset = self.glade.get_object("parishset")
-        self.zipset = self.glade.get_object("zipset")
         
         #load options from previous call and set up combo boxes
         filter_num = max(0,self.options.handler.options_dict['filternumber'])
@@ -197,31 +191,17 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     #self.options.handler.options_dict['latlonfile'] == 'None'
             self.latlonfile.set_filename(
                 self.options.handler.options_dict['latlonfile'])
-        self.fill_comboboxentry(self.cmbetitleregex, _options.titleregex,
-                    self.options.handler.options_dict['titleregex'])
         self.fill_combobox(self.titleconstruct,_options.titleconstruct,
             self.options.handler.options_dict['titleconstruct'])
         self.titleconstruct_custom.set_text(
                         self.options.handler.options_dict['titleconstruct_custom'])
         self.fill_combobox(self.latlonconv,_options.latlonconv,
             self.options.handler.options_dict['latlonconv'])
-        self.countryset.set_text(
-                        self.options.handler.options_dict['countryset'])
-        self.stateset.set_text(
-                        self.options.handler.options_dict['stateset'])
-        self.countyset.set_text(
-                        self.options.handler.options_dict['countyset'])
-        self.cityset.set_text(
-                        self.options.handler.options_dict['cityset'])
-        self.parishset.set_text(
-                        self.options.handler.options_dict['parishset'])
-        self.zipset.set_text(
-                        self.options.handler.options_dict['zipset'])
                 
         #set up the possible checks, a check contains:
         #   check[0] the method to call on place, returns text, oldval, newval
-        self.placechecklist = [self.find_latlon, self.match_regex_title,
-                    self.construct_title, self.convert_latlon, self.set_data
+        self.placechecklist = [self.find_latlon,
+                    self.construct_title, self.convert_latlon,
                     ]
         self.regextitlegroups = [('street'), ('city'), ('parish'), 
                     ('county'), ('state'), ('country'), ('zip'), ('title')]
@@ -231,90 +211,75 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.county_lookup = {}
 
 #set translated labels
-        labelids = ['label28', 'label29','label30', 'label31', 'label32', 'label33', 'label34', 'label35'
-                          , 'label36', 'label37', 'label38', 'label39', 'label40', 'label41'
+        labelids = ['label28', 'label29','label30', 'label31', 'label33', 'label34'
                           , 'label42', 'label43', 'label16', 'label20', 'label19', 'label45'
                           , 'label18', 'label22', 'label23', 'label24', 'label25',  'label1', 'label44'  ]
         for labelid in labelids:
-             try:
-                 label = self.glade.get_object(labelid)
-             except:
-                 continue
-             label.set_text(_(label.get_text()))
+            try:
+                label = self.glade.get_object(labelid)
+            except:
+                continue
+            label.set_text(_(label.get_text()))
        
         self.show()
         
     def group_get(self, place, group):
-        ''' Get the value corresponding to a group
-            The special groupname #latlon is allowed, returning lat/lon
         '''
-        if group == ('title') :
+        Get the value corresponding to a group
+        The special groupname #latlon is allowed, returning lat/lon
+        '''
+        if group == ('title'):
             return place.get_title()
-        elif group == ('latitude') :
+        elif group == ('latitude'):
             return place.get_latitude()
-        elif group == ('longitude') :
+        elif group == ('longitude'):
             return place.get_longitude()
-        elif group == '#latlon' :
-            return (place.get_latitude() , place.get_longitude())
-        else :
-            loc = place.get_main_location()
-            if group == ('city') :
-                return loc.get_city()
-            elif group == ('country') :
-                return loc.get_country()
-            elif group == ('county') :
-                return loc.get_county()
-            elif group == ('state') :
-                return loc.get_state()
-            elif group == ('street') :
-                return loc.get_street()
-            elif group == ('parish') :
-                return loc.get_parish()
-            elif group == ('zip') :
-                return loc.get_postal_code()
-            else :
+        elif group == '#latlon':
+            return (place.get_latitude(), place.get_longitude())
+        elif group == ('zip'):
+            return place.get_code()
+        else:
+            print (group)
+            loc = get_main_location(self.db, place)
+            if group == ('city'):
+                return loc.get(PlaceType.CITY, '')
+            elif group == ('country'):
+                return loc.get(PlaceType.COUNTRY, '')
+            elif group == ('county'):
+                return loc.get(PlaceType.COUNTY, '')
+            elif group == ('state'):
+                return loc.get(PlaceType.STATE, '')
+            elif group == ('street'):
+                return loc.get(PlaceType.STREET, '')
+            elif group == ('parish'):
+                return loc.get(PlaceType.PARISH, '')
+            else:
                 ErrorDialog(_("Error in PlaceCompletion.py"),
-                        _("Non existing group used in get"))
+                            _("Non existing group used in get"))
                 return '';
             
     def group_set(self, place, group, val):
-        ''' Sets the group in place with value val
-            returns place
-            Allow special group #latlon, for which val[0] is lat, val[1] is lon 
         '''
-        if not group :
+        Sets the group in place with value val
+        returns place
+        Allow special group #latlon, for which val[0] is lat, val[1] is lon 
+        '''
+        if not group:
             return place
-        if group == ('title') :
+        if group == ('title'):
             place.set_title(val)
-        elif group == ('latitude') :
+        elif group == ('latitude'):
             place.set_latitude(val)
-        elif group == ('longitude') :
+        elif group == ('longitude'):
             place.set_longitude(val)
-        elif group == '#latlon' :
+        elif group == '#latlon':
             place.set_latitude(val[0])
             place.set_longitude(val[1])
-        else :
-            loc = place.get_main_location()
-            if loc == None :
-                loc = Location()
-            if group == ('city') :
-                loc.set_city(val)
-            elif group == ('country') :
-                loc.set_country(val)
-            elif group == ('county') :
-                loc.set_county(val)
-            elif group == ('state') :
-                loc.set_state(val)
-            elif group == ('street') :
-                loc.set_street(val)
-            elif group == ('parish') :
-                loc.set_parish(val)
-            elif group == ('zip') :
-                loc.set_postal_code(val)
-            else :
-                ErrorDialog(_("Error in PlaceCompletion.py"),
+        elif group == ('zip'):
+            place.set_code(val)
+        else:
+            ErrorDialog(_("Error in PlaceCompletion.py"),
                         _("Non existing group used in set"))
-            place.set_main_location(loc)
         return place
             
     def fill_combobox(self, cmb, namelistopt, default) :
@@ -418,17 +383,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.options.handler.options_dict['latlonfile'] = \
                 self.latlonfile.get_filename()
                 
-        activetitleregex = self.cmbetitleregex.get_active()
-        entrytitleregex = self.cmbetitleregex.get_child().get_text()
-        titleregex = None
-        self.options.handler.options_dict['titleregex'] = ''
-        if activetitleregex != -1 :
-            titleregex = _options.titleregex[activetitleregex][3]
-            self.options.handler.options_dict['titleregex'] = \
-                _options.titleregex[activetitleregex][0]
-        elif entrytitleregex :
-            titleregex = entrytitleregex
-            self.options.handler.options_dict['titleregex'] = titleregex
         self.options.handler.options_dict['titleconstruct'] = \
                 _options.titleconstruct[self.titleconstruct.get_active()][0]
         self.options.handler.options_dict['titleconstruct_custom'] \
@@ -436,39 +390,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.options.handler.options_dict['latlonconv'] = \
                 _options.latlonconv[self.latlonconv.get_active()][0]
         
-        self.options.handler.options_dict['countryset'] \
-                = cuni(self.countryset.get_text())
-        self.options.handler.options_dict['stateset'] \
-                = cuni(self.stateset.get_text())
-        self.options.handler.options_dict['countyset'] \
-                = cuni(self.countyset.get_text())
-        self.options.handler.options_dict['cityset'] \
-                = cuni(self.cityset.get_text())
-        self.options.handler.options_dict['parishset'] \
-                = cuni(self.parishset.get_text())
-        self.options.handler.options_dict['zipset'] \
-                = cuni(self.zipset.get_text())
-                 
         # Save options
         self.options.handler.save_options()
-        
-        # Compile title regex
-        self.matchtitle = None
-        if titleregex :
-            try:
-                #compile regex aware of locale and unicode
-                self.matchtitle = re.compile(titleregex,re.U|re.L)
-                #set groups mentioned in the regex
-                self.matchtitlegroups =[]
-                for group in self.regextitlegroups :
-                    if titleregex.find(r'(?P<'+group+r'>') != -1 :
-                        self.matchtitlegroups.append(group)
-            except:
-                self.matchtitle = None
-                WarningDialog(_('Non Valid Title Regex'),
-                    _('Non valid regular expression given to match title. Quiting.'),
-                    self.window)
-                return
         
         # Compile Regex file search partially
         self.matchlatlon = None
@@ -584,21 +507,21 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         text = ''
         if place.get_title() :
             text += place.get_title()
-        if place.get_main_location().get_city().strip() or \
-                place.get_main_location().get_state().strip() or \
-                place.get_main_location().get_country().strip() :
+        loc = get_main_location(self.db, place)
+        city = loc.get(PlaceType.CITY, '')
+        state = loc.get(PlaceType.STATE, '')
+        country = loc.get(PlaceType.COUNTRY, '')
+        if city.strip() or state.strip() or country.strip():
             text += ' ('
             div = ''
-            if place.get_main_location().get_city().strip() :
-                text += _('City')+': '+place.get_main_location().get_city()
+            if city.strip():
+                text += _('City')+': '+city
                 div = ', '
-            if place.get_main_location().get_state().strip() :
-                text += div + _('State')+': '+ \
-                            place.get_main_location().get_state()
+            if state.strip():
+                text += div + _('State')+': '+state
                 div = ', '
-            if place.get_main_location().get_country().strip() :
-                text += div + _('Country')+': '+ \
-                        place.get_main_location().get_country()
+            if country.strip():
+                text += div + _('Country')+': '+country
                 div = ', '
             text += ')'
         self.model.set(id, 0, text)
@@ -738,8 +661,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             longitude = place.get_longitude()
             latitude = place.get_latitude()
             latitude,longitude = conv_lat_lon(latitude,longitude,"D.D8")
-            city = place.get_main_location().get_city()
-            country = place.get_main_location().get_country()
+            loc = get_main_location(self.db, place)
+            city = loc.get(PlaceType.CITY, '')
+            country = loc.get(PlaceType.COUNTRY, '')
 
             if longitude and latitude:
                 path = "http://maps.google.com/?sll=%s,%s&z=15" % (latitude,longitude)
@@ -877,26 +801,24 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if len(filename) == 0:
             return True
         elif os.path.isdir(filename):
-            QuestionDialog.ErrorDialog(
+            ErrorDialog(
                 _('Cannot open file'), 
-                _('The selected file is a directory, not '
-                  'a file.'))
+                _('The selected file is a directory, not a file.'))
             return True
         elif os.path.exists(filename):
             if not os.access(filename, os.R_OK):
-                QuestionDialog.ErrorDialog(
+                ErrorDialog(
                     _('Cannot open file'), 
-                    _('You do not have read access to the selected '
-                      'file.'))
+                    _('You do not have read access to the selected file.'))
                 return True
             elif not stat.S_ISREG(os.stat(filename)[stat.ST_MODE]):
-                QuestionDialog.ErrorDialog(
+                ErrorDialog(
                     _('Cannot open file'), 
                     _('The file you want to access is not a regular file.'))
                 return True
         else :
             # file does not exist
-            QuestionDialog.ErrorDialog(
+            ErrorDialog(
                     _('Cannot open file'), 
                     _('The file does not exist.'))
             return True
@@ -935,22 +857,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             self.latlonfile_datastr = infile.read()
         infile.close()
     
-    def match_regex_title(self,place) :
-        valoud = []
-        valnew = []
-        valaction = []
-        if self.matchtitle :
-            vals = self.matchtitle.match(place.get_title())
-            if vals :
-                for groupname in self.matchtitlegroups :
-                    valoud.append(self.group_get(place, groupname))
-                    valnew.append(vals.group(groupname))
-                    valaction.append([groupname, vals.group(groupname)])
-                    #do the action on the place in memory:
-                    place = self.group_set(place, groupname, 
-                                    vals.group(groupname))
-        return valoud, valnew, valaction, place
-    
     def find_latlon(self, place) :
         valoud = []
         valnew = []
@@ -959,33 +865,37 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             return valoud, valnew, valaction, place
         # we need to lookup the latitude and longitude, construct regex:
         pattern = self.matchlatlon.pattern
-        loc = place.get_main_location()
-        if re.search(('CITY'),pattern) :
-            if loc.get_city().strip() == '' :
+        loc = get_main_location(self.db, place)
+        city = loc.get(PlaceType.CITY, '').strip()
+        state = loc.get(PlaceType.STATE, '').strip()
+        parish = loc.get(PlaceType.PARISH, '').strip()
+        county = loc.get(PlaceType.COUNTY, '').strip()
+        if re.search(('CITY'), pattern) :
+            if city == '' :
                 return valoud, valnew, valaction, place
-            pattern = re.sub(('CITY'), loc.get_city().strip(), pattern)
-        if re.search(('TITLEBEGIN'),pattern) :
+            pattern = re.sub(('CITY'), city, pattern)
+        if re.search(('TITLEBEGIN'), pattern) :
             tit = place.get_title().strip()
             titb= tit.split(',')[0].strip()
             if titb == '' :
                 return valoud, valnew, valaction, place
             pattern = re.sub(('TITLEBEGIN'), titb, pattern)
-        if re.search(('TITLE'),pattern) :
-            if place.get_title().strip() == '' :
+        if re.search(('TITLE'), pattern) :
+            if place.get_title().strip() == '':
                 return valoud, valnew, valaction, place
             pattern = re.sub(('TITLE'), loc.get_title().strip(), pattern)
-        if re.search(('STATE'),pattern) :
-            if place.get_state().strip() == '' :
+        if re.search(('STATE'), pattern):
+            if state == '' :
                 return valoud, valnew, valaction, place
-            pattern = re.sub(('STATE'), loc.get_state().strip(), pattern)
-        if re.search(('PARISH'),pattern) :
-            if loc.get_parish().strip() == '' :
+            pattern = re.sub(('STATE'), state, pattern)
+        if re.search(('PARISH'), pattern):
+            if parish == '' :
                 return valoud, valnew, valaction, place
-            pattern = re.sub(('PARISH'), loc.get_parish().strip(), pattern)
+            pattern = re.sub(('PARISH'), parish, pattern)
         if re.search(('COUNTY'), pattern):
-            if loc.get_county().strip() not in self.county_lookup:
+            if county not in self.county_lookup:
                 return valoud, valnew, valaction, place
-            codes = self.county_lookup[loc.get_county().strip()]
+            codes = self.county_lookup[county]
             pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
         #print 'DEBUG info: pattern for search is ' , pattern
         regexll = re.compile(pattern,re.U|re.L|re.M)
@@ -1072,18 +982,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         return valoud, valnew, valaction, place
     
     def construct_title_custom(self, place, title_format):
-        val = ['city',
-               'street',
-               'locality',
-               'parish',
-               'county',
-               'state',
-               'country',
-               'postal_code']
+        loc = get_main_location(self.db, place)
+        val = [('city', loc.get(PlaceType.CITY, '')),
+               ('street', loc.get(PlaceType.STREET, '')),
+               ('locality', loc.get(PlaceType.LOCALITY, '')),
+               ('parish', loc.get(PlaceType.PARISH, '')),
+               ('county', loc.get(PlaceType.COUNTY, '')),
+               ('state', loc.get(PlaceType.STATE, '')),
+               ('country', loc.get(PlaceType.COUNTRY, '')),
+               ('postal_code', place.get_code()),
+               ]
         tf = title_format.lower()
         empty_result = True
-        for v in val:
-            value = eval("place.get_main_location().get_"+v+"()")
+        for v, value in val:
             if tf.count(v) > 0:
                 empty_result = False
             tf = tf.replace(v, value)
@@ -1097,6 +1008,15 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         valaction = []
         type = self.options.handler.options_dict['titleconstruct']
         custom = self.options.handler.options_dict['titleconstruct_custom']
+        loc = get_main_location(self.db, place)
+        street = loc.get(PlaceType.STREET, '')
+        locality = loc.get(PlaceType.LOCALITY, '')
+        parish = loc.get(PlaceType.PARISH, '')
+        city = loc.get(PlaceType.CITY, '')
+        county = loc.get(PlaceType.COUNTY, '')
+        state = loc.get(PlaceType.STATE, '')
+        country = loc.get(PlaceType.COUNTRY, '')
+        pcode = place.get_code()
         if custom != '' and self.construct_title_custom(place, custom):
             valoud.append(place.get_title())
             new = self.construct_title_custom(place, custom)
@@ -1108,9 +1028,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             pass
         elif type == "CS" :
             valoud.append(place.get_title())
-            new = place.get_main_location().get_city()
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
+            new = city
+            if state:
+                new += ', ' + state
             valnew.append(new)
             valaction.append([('title'),new])
             #do the action in memory
@@ -1118,9 +1038,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif type == "CZC" :
             # City,PostalCode,Country
             valoud.append(place.get_title())
-            city    = place.get_main_location().get_city()
-            pcode   = place.get_main_location().get_postal_code()
-            country = place.get_main_location().get_country()
             new = city + ',' + pcode + ',' + country
             valnew.append(new)
             valaction.append([('title'),new])
@@ -1129,12 +1046,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif type == "CSLPZC" :
             # City[(Street;Locality;Parish)],PostalCode,Country
             valoud.append(place.get_title())
-            city     = place.get_main_location().get_city()
-            street   = place.get_main_location().get_street()
-            locality = place.get_main_location().get_locality()
-            parish   = place.get_main_location().get_parish()
-            pcode      = place.get_main_location().get_postal_code()
-            country  = place.get_main_location().get_country()
             address  = ''
             if street or locality or parish:
                 address = '(' + street + ';' + locality + ';' + parish + ')'
@@ -1147,11 +1058,11 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             old = place.get_title()
             valoud.append(old)
             old = old.split(',')[0]
-            new = place.get_main_location().get_city()
+            new = city
             if old != new :
                 new = old + ', ' + new
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
+            if state:
+                new += ', ' + state
             valnew.append(new)
             valaction.append([('title'),new])
             #do the action in memory
@@ -1160,19 +1071,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             old = place.get_title()
             valoud.append(old)
             old = old.split(',')[0]
-            new = place.get_main_location().get_city()
+            new = city
             if old != new :
                 new = old + ', ' + new
-            if place.get_main_location().get_county() :
-                new += ', ' + place.get_main_location().get_county()
+            if county:
+                new += ', ' + county
             else:
                 new +=', '
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
+            if state:
+                new += ', ' + state
             else:
                 new +=', '
-            if place.get_main_location().get_country() :
-                new += ', ' + place.get_main_location().get_country()
+            if country:
+                new += ', ' + country
             valnew.append(new)
             valaction.append([('title'),new])
             #do the action in memory
@@ -1182,23 +1093,23 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             valoud.append(old)
             old = old.split(',')[0]
             old = old.split(' - ')[0]
-            new = place.get_main_location().get_city()
+            new = city
             if old != new :
                 new = "[" + old + "] - " + new
-            if place.get_main_location().get_postal_code() :
-                new += ', ' + place.get_main_location().get_postal_code()
+            if pcode:
+                new += ', ' + pcode
             else:
                 new +=', '
-            if place.get_main_location().get_county() :
-                new += ', ' + place.get_main_location().get_county()
+            if county:
+                new += ', ' + county
             else:
                 new +=', '
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
+            if state:
+                new += ', ' + state
             else:
                 new +=', '
-            if place.get_main_location().get_country() :
-                new += ', ' + place.get_main_location().get_country()
+            if country:
+                new += ', ' + country
             valnew.append(new)
             valaction.append([('title'),new])
             #do the action in memory
@@ -1206,28 +1117,6 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             
         return valoud, valnew, valaction, place
         
-    def set_data(self, place) :
-        valoud = []
-        valnew = []
-        valaction = []
-        
-        for newval in [(self.options.handler.options_dict['countryset'],('country')),
-                (self.options.handler.options_dict['stateset'],('state')),
-                (self.options.handler.options_dict['countyset'],('county')),
-                (self.options.handler.options_dict['cityset'],('city')),
-                (self.options.handler.options_dict['parishset'],('parish')),
-                (self.options.handler.options_dict['zipset'],('zip'))] :
-            #we allow ' ' to mean store '':
-            if newval[0] : 
-                nv = newval[0].strip()
-                valoud.append(self.group_get(place,newval[1]))
-                valnew.append(nv)
-                valaction.append([newval[1],nv])
-                #do the action in memory
-                place = self.group_set(place, newval[1], nv)
-                
-        return valoud, valnew, valaction, place
-
 #------------------------------------------------------------------------
 #
 # Constant options items
@@ -1278,16 +1167,6 @@ class _options:
     countygr = r'(?P<'+'county' +r'>'
     countrygr = r'(?P<'+'country' +r'>'
     stategr = r'(?P<'+'state' +r'>'
-    titleregex = (
-        ("citystate", "City [,|.] State", _("City [,|.] State")
-            , r'\s*'+citygr +r'.+?)\s*[.,]\s*'+stategr+r'.+?)\s*$'),
-        ("citycountry", "City [,|.] Country", _("City [,|.] Country")
-            , r'\s*'+citygr +r'.+?)\s*[.,]\s*'+countrygr+r'.+?)\s*$'),
-        ("city(country)", "City (Country)", _("City (Country)")
-            , r'\s*'+citygr+r'.*?)\s*\(\s*'+countrygr+r'[^\)]+)\s*\)\s*$'),
-        ("city", "City", _("City")
-            , r'\s*'+citygr+r'.*?)\s*$'),
-    )
     latlonfind = (
         ("None", "Don't search", _("Don't search"), ''),
         # for feature classes (P,H, ...) see http://www.geonames.org/export/codes.html
@@ -1470,16 +1349,9 @@ class PlaceCompletionOptions(Tool.ToolOptions):
             'rectheight'  : '',
             'latlonfile'   : '',
             'latlonfind'   : '',
-            'titleregex'   : '',
             'titleconstruct' : '',
             'titleconstruct_custom' : '',
             'latlonconv'   : '',
-            'countryset': '',
-            'stateset'  : '',
-            'countyset'  : '',
-            'cityset'  : '',
-            'parishset'  : '',
-            'zipset'  : '',
         }
         self.options_help = {
             'filternumber' : ("=int", "integer indicating which place filter to"
@@ -1508,24 +1380,10 @@ class PlaceCompletionOptions(Tool.ToolOptions):
             'latlonfind' : ("=str",
         "Regular expression of how look up latitude/longitude",
                         "Regular expression"),
-            'titleregex' : ("=str","Regular expresson with which to match title",
-                            "Regular expression"),
             'titleconstruct' : ("=str","How to construct the tite",
         [ "%s\t%s" % (item[0],item[1]) for item in _options.titleconstruct ]),
             'titleconstruct_custom': ("=str","self defined format for titles",
                             "string"),
             'latlonconv' : ("=str","How to convert lat and lon",
         [ "%s\t%s" % (item[0],item[1]) for item in _options.latlonconv ]),
-            'countryset': ("=str","string with country of the places",
-                            "string"),
-            'stateset': ("=str","string with state of the places",
-                            "string"),
-            'countyset': ("=str","string with county of the places",
-                            "string"),
-            'cityset': ("=str","string with wich city of the places",
-                            "string"),
-            'parishset': ("=str","string with parish of the places",
-                            "string"),
-            'zipset': ("=str","string with ZIP/postalcode of the places",
-                            "string"),
         }
