@@ -731,7 +731,7 @@ def build_all(ADDON):
         build(addon)
         
 
-def was_listing():
+def is_listing():
     """
     Listing files ../listing/{lang}.fr
     """
@@ -750,9 +750,11 @@ def was_listing():
         kwargs['ptype'] = PTYPE_STR[ptype]
         plugins.append(kwargs)
 
+    cmd_arg = addon
+
     # first, get a list of all of the possible languages
 
-    if addon == 'all':
+    if cmd_arg == 'all':
         dirs = [file for file in glob.glob('*') if os.path.isdir(file)]
     else:
         dirs = [addon]
@@ -822,7 +824,7 @@ def was_listing():
 
         # Write out new listing:
 
-        if addon == 'all':
+        if cmd_arg == 'all':
 
             # Replace it!
 
@@ -843,7 +845,7 @@ def was_listing():
                 fp_out = open('../listings/addons-%s.new' % lang, 'w')
                 for line in fp_in:
                     dictionary = eval(line)
-                    if addon + '.addon.tgz' in line:
+                    if cmd_arg + '.addon.tgz' in line:
                         print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
                                % plugin, file=fp_out)
                         added = True
