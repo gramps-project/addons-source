@@ -1,49 +1,55 @@
-{"t":u'Quickreport',"i":'allnames',"n":All Names of All People,"v":'1.0.18',"g":'4.2',"d":Display all names of all people,"z":'AllNamesQuickview.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'AttachSource',"n":u'Attach Source',"v":'0.0.24',"g":'4.2',"d":u'Attaches a shared source to multiple objects.',"z":'AttachSourceTool.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.15',"g":'4.2',"d":u'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'FR Web Connect Pack',"n":u'FR Web Connect Pack',"v":'1.0.21',"g":'4.2',"d":u'Collection of Web sites for the FR (requires libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'UK Web Connect Pack',"n":u'UK Web Connect Pack',"v":'1.0.28',"g":'4.2',"d":u'Collection of Web sites for the UK (requires libwebconnect)',"z":'UKWebConnectPack.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'US Web Connect Pack',"n":u'US Web Connect Pack',"v":'1.0.30',"g":'4.2',"d":u'Collection of Web sites for the US (requires libwebconnect)',"z":'USWebConnectPack.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'libaccess',"n":'Generic DB Access lib',"v":'1.0.20',"g":'4.2',"d":u'Provides a library for generic access to the database and gen.lib.',"z":'libaccess.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.20',"g":'4.2',"d":u'Library for web site collections',"z":'libwebconnect.addon.tgz'}
+{"t":u'Export',"i":'Export GEDCOM Extensions',"n":u'Export GEDCOM Extensions (GED2)',"v":'1.0.10',"g":'4.2',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
+{"t":u'Export',"i":'Raw Export',"n":u'Raw Export',"v":'1.0.22',"g":'4.2',"d":u'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
+{"t":u'Export',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.23',"g":'4.2',"d":u'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
+{"t":u'Export',"i":'export_django',"n":u'Django Export',"v":'1.0.25',"g":'4.2',"d":u'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":u'Birthdays Gramplet',"v":'1.0.25',"g":'4.2',"d":u'a gramplet that displays the birthdays of the living people',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'calculateestimateddates',"n":u'Calculate Estimated Dates',"v":'0.90.20',"g":'4.2',"d":u'Calculates estimated dates for birth and death.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":u'Gramplet',"i":"Census Gramplet","n":u'Census Gramplet',"v":'1.0.28',"g":'4.2',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'chgivenname',"n":u'Fix Capitalization of Given Names',"v":'1.0.22',"g":'4.2',"d":u'Searches the entire database and attempts to ',"z":'ChangeGivenNames.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'climerge',"n":u'Command Line Merge',"v":'1.0.18',"g":'4.2',"d":u'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
-{"t":u'Gramplet',"i":"Clipboard Gramplet","n":u'Clipboard Gramplet',"v":'1.0.24',"g":'4.2',"d":u'Gramplet for grouping items',"z":'ClipboardGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"Clock Gramplet","n":u'Clock Gramplet',"v":'0.0.20',"g":'4.2',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":"DE Web Connect Pack","n":u'DE Web Connect Pack',"v":'0.0.15',"g":'4.2',"d":u'Collection of Web sites for the DE (requires libwebconnect',"z":'DEWebConnectPack.addon.tgz'}
-{"t":u'Gramplet',"i":"Data Entry Gramplet","n":u'Data Entry Gramplet',"v":'1.0.30',"g":'4.2',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"Deep Connections Gramplet","n":u'Deep Connections Gramplet',"v":'1.0.23',"g":'4.2',"d":u'Gramplet showing a deep relationship between active and home people',"z":'DeepConnectionsGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"Descendant Count Gramplet","n":u'Descendant Count',"v":'1.0.20',"g":'4.2',"d":u'Display descendant counts for each person.',"z":'DescendantCount.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'Descendants Lines',"n":u'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":u'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.7',"g":'4.2',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
-{"t":u'\u05de\u05d9\u05d9\u05e6\u05d0',"i":"export_django","n":u"'Django Export'","v":'1.0.25',"g":'4.2',"d":'',"z":'Django.addon.tgz'}
-{"t":u'Gramplet',"i":"Edit Image Exif Metadata","n":u'Edit Image Exif Metadata',"v":'1.5.5',"g":'4.2',"d":u'Gramplet to view edit and save image Exif metadata',"z":'EditExifMetadata.addon.tgz'}
-{"t":u'\u05de\u05d9\u05d9\u05e6\u05d0',"i":'Raw Export',"n":u"'Raw Export'","v":'1.0.22',"g":'4.2',"d":'',"z":'ExportRaw.addon.tgz'}
-{"t":u'Gramplet',"i":"Extended Family Attributes","n":u'Extended Person Attributes',"v":'1.0.16',"g":'4.2',"d":u'Gramplet showing the attributes of a person',"z":'ExtendedAttributes.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":"FR Web Connect Pack","n":u'FR Web Connect Pack',"v":'1.0.21',"g":'4.2',"d":u'Collection of Web sites for the FR (requires libwebconnect',"z":'FRWebConnectPack.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'FamilySheet',"n":u"'Family Sheet'","v":'3.4.24',"g":'4.2',"d":u'Produces a family sheet showing full information ',"z":'FamilySheet.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'FamilyTree',"n":u"'Family Tree'","v":'4.2.3',"g":'4.2',"d":'',"z":'FamilyTree.addon.tgz'}
-{"t":u'\u05de\u05d9\u05d9\u05e6\u05d0',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Extensions (GED2)',"v":'1.0.10',"g":'4.2',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
-{"t":u'\u05e9\u05d9\u05e8\u05d5\u05ea \u05de\u05d9\u05e4\u05d5\u05d9',"i":'GoogleEarth',"n":u"'GoogleEarth'","v":'1.0.28',"g":'4.2',"d":u'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
-{"t":u'Gramps View',"i":'graphview',"n":u'Graph View',"v":'1.0.42',"g":'4.2',"d":u'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
-{"t":u'Gramplet',"i":"Headline News Gramplet","n":u'Headline News Gramplet',"v":'1.0.22',"g":'4.2',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"Import Gramplet","n":u'Import Gramplet',"v":'1.0.21',"g":'4.2',"d":u'Gramplet for importing text',"z":'ImportGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"LastChangeGramplet","n":u'Last Change Report',"v":'0.0.23',"g":'4.2',"d":u'List the last ten person records that have been changed',"z":'LastChange.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'LinesOfDescendency',"n":u"'Lines of Descendency Report'","v":'1.1.23',"g":'4.2',"d":'',"z":'LinesOfDescendency.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
-{"t":u'Gramplet',"i":"MediaBrowser","n":u'Media Browser',"v":'1.0.17',"g":'4.2',"d":u'Gramplet showing details of a person',"z":'MediaBrowser.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'mediaverify',"n":u'Media Verify',"v":'1.0.6',"g":'4.2',"d":u'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
-{"t":u'Gramplet',"i":"Note Gramplet","n":u'Note Gramplet',"v":'1.0.21',"g":'4.2',"d":u"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
-{"t":u'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Number of descendants',"v":'3.4.19',"g":'4.2',"d":u'Shows the number of descendants of the current person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":u'Gramplet',"i":"Participants","n":u'Participants',"v":'1.0.5',"g":'4.2',"d":u'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":"PedigreeChart","n":u'Pedigree Chart',"v":'1.0.23',"g":'4.2',"d":u'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
-{"t":u'Gramplet',"i":"Python Gramplet","n":u'Python Gramplet',"v":'1.0.19',"g":'4.2',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":"Related Relatives Gramplet","n":u'Related Relatives Gramplet',"v":'1.0.19',"g":'4.2',"d":u'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'Repositories Report Options',"n":u'Repositories Report Options',"v":'0.3.13',"g":'4.2',"d":u'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'SetAttribute',"n":u'Set Attribute',"v":'0.0.19',"g":'4.2',"d":u'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
-{"t":'',"i":,"n":,"v":,"g":'4.2',"d":'',"z":'SourcesCitationsReport.addon.tgz'}
-{"t":u'\u05de\u05d9\u05d9\u05e6\u05d0',"i":'im_sqlite',"n":u"'SQLite Import'","v":'1.0.23',"g":'4.2',"d":'',"z":'Sqlite.addon.tgz'}
-{"t":u'\u05db\u05dc\u05d9',"i":'thumbgen',"n":u'Thumbnail Generator',"v":'1.0.14',"g":'4.2',"d":u'Generates thumbnails for media files',"z":'ThumbnailGenerator.addon.tgz'}
-{"t":u'Quickreport',"i":'timelinequickview',"n":u'\u05e7\u05d5 \u05d6\u05de\u05df',"v":'1.0.21',"g":'4.2',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
-{"t":u'\u05d3\u05d5\u05d7',"i":'TodoReport',"n":u"'Todo Report'","v":'1.2.20',"g":'4.2',"d":u'Produces a list of all the notes with a given tag along with the records that it references the Person Family Event etc.',"z":'ToDoReport.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":"UK Web Connect Pack","n":u'UK Web Connect Pack',"v":'1.0.28',"g":'4.2',"d":u'Collection of Web sites for the UK (requires libwebconnect',"z":'UKWebConnectPack.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":"US Web Connect Pack","n":u'US Web Connect Pack',"v":'1.0.30',"g":'4.2',"d":u'Collection of Web sites for the US (requires libwebconnect',"z":'USWebConnectPack.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":'libaccess',"n":u'Generic DB Access lib',"v":'1.0.20',"g":'4.2',"d":u'Provides a library for generic access to ',"z":'libaccess.addon.tgz'}
-{"t":u'\u05e1\u05e4\u05e8\u05d9\u05ea \u05e4\u05dc\u05d0\u05d2-\u05d0\u05d9\u05df',"i":"libwebconnect","n":u'libwebconnect',"v":'1.0.20',"g":'4.2',"d":u'Library for web site collections',"z":'libwebconnect.addon.tgz'}
+{"t":u'Gramplet',"i":'Census Gramplet',"n":u'Census Gramplet',"v":'1.0.28',"g":'4.2',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Gramplet',"i":'Clipboard Gramplet',"n":u'Clipboard Gramplet',"v":'1.0.24',"g":'4.2',"d":u'Gramplet for grouping items',"z":'ClipboardGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Clock Gramplet',"n":u'Clock Gramplet',"v":'0.0.20',"g":'4.2',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Data Entry Gramplet',"n":u'Data Entry Gramplet',"v":'1.0.30',"g":'4.2',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Deep Connections Gramplet',"n":u'Deep Connections Gramplet',"v":'1.0.23',"g":'4.2',"d":u'Gramplet showing a deep relationship between active and home people',"z":'DeepConnectionsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Descendant Count Gramplet',"n":u'Descendant Count Gramplet',"v":'1.0.20',"g":'4.2',"d":u'Gramplet for showing people and descendant counts',"z":'DescendantCount.addon.tgz'}
+{"t":u'Gramplet',"i":'Edit Image Exif Metadata',"n":u'Edit Image Exif Metadata',"v":'1.5.5',"g":'4.2',"d":u'Gramplet to view, edit, and save image Exif metadata',"z":'EditExifMetadata.addon.tgz'}
+{"t":u'Gramplet',"i":'Extended Family Attributes',"n":u'Extended Family Attributes',"v":'1.0.16',"g":'4.2',"d":u"Gramplet affichant les attributs d'une famille","z":'ExtendedAttributes.addon.tgz'}
+{"t":u'Gramplet',"i":'Extended Person Attributes',"n":u'Extended Person Attributes',"v":'1.0.16',"g":'4.2',"d":u"Gramplet affichant les attributs d'un individu","z":'ExtendedAttributes.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Headline News Gramplet',"v":'1.0.22',"g":'4.2',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Import Gramplet',"n":u'Import Gramplet',"v":'1.0.21',"g":'4.2',"d":u'Gramplet for importing text',"z":'ImportGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'LastChangeGramplet',"n":u'Last Change Gramplet',"v":'0.0.23',"g":'4.2',"d":u'List the last ten person records that have been changed',"z":'LastChange.addon.tgz'}
+{"t":u'Gramplet',"i":'MediaBrowser',"n":u'Media Browser',"v":'1.0.17',"g":'4.2',"d":u"Gramplet affichant les d\xe9tails de l'individu","z":'MediaBrowser.addon.tgz'}
+{"t":u'Gramplet',"i":'Note Gramplet',"n":u'Note Gramplet',"v":'1.0.21',"g":'4.2',"d":u"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Participants',"n":u'Acteurs principaux',"v":'1.0.5',"g":'4.2',"d":u'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
+{"t":u'Gramplet',"i":'Python Gramplet',"n":u'Python Gramplet',"v":'1.0.19',"g":'4.2',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Related Relatives Gramplet',"n":u'Related Relatives Gramplet',"v":'1.0.19',"g":'4.2',"d":u'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":u'Import',"i":'im_sqlite',"n":u'SQLite Import',"v":'1.0.24',"g":'4.2',"d":u'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
+{"t":u'Import',"i":'import_django',"n":u'Django Import',"v":'1.0.25',"g":'4.2',"d":u'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
+{"t":u'Outil',"i":'AttachSource',"n":u'Attach Source',"v":'0.0.24',"g":'4.2',"d":u'Attaches a shared source to multiple objects.',"z":'AttachSourceTool.addon.tgz'}
+{"t":u'Outil',"i":'SetAttribute',"n":u'Set Attribute',"v":'0.0.19',"g":'4.2',"d":u'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
+{"t":u'Outil',"i":'calculateestimateddates',"n":u'Calculate Estimated Dates',"v":'0.90.20',"g":'4.2',"d":u'Calculates estimated dates for birth and death.',"z":'CalculateEstimatedDates.addon.tgz'}
+{"t":u'Outil',"i":'chgivenname',"n":u'Fix Capitalization of Given Names',"v":'1.0.22',"g":'4.2',"d":u'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
+{"t":u'Outil',"i":'climerge',"n":'Command Line Merge',"v":'1.0.18',"g":'4.2',"d":u'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
+{"t":u'Outil',"i":'mediaverify',"n":u'Media Verify',"v":'1.0.6',"g":'4.2',"d":u'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
+{"t":u'Outil',"i":'thumbgen',"n":u'Thumbnail Generator',"v":'1.0.14',"g":'4.2',"d":u'Generates thumbnails for media files',"z":'ThumbnailGenerator.addon.tgz'}
+{"t":u'Rapport express',"i":'Descendant Count Quickview',"n":u'Descendant Count',"v":'1.0.19',"g":'4.2',"d":u'Display descendant counts for each person.',"z":'DescendantCount.addon.tgz'}
+{"t":u'Rapport express',"i":'NumberOfDescendantsQuickview',"n":u'Number of descendants',"v":'3.4.19',"g":'4.2',"d":u'Shows the number of descendants of the current person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
+{"t":u'Rapport express',"i":'allnames',"n":u'All Names of All People',"v":'1.0.18',"g":'4.2',"d":u'Display all names of all people',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Rapport express',"i":'timelinequickview',"n":u'Graphique temporel',"v":'1.0.21',"g":'4.2',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
+{"t":u'Rapport',"i":'Descendants Lines',"n":u'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":u'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
+{"t":u'Rapport',"i":'FamilySheet',"n":u'Family Sheet',"v":'3.4.24',"g":'4.2',"d":u'Produces a family sheet showing full information about a person and his/her partners and children.',"z":'FamilySheet.addon.tgz'}
+{"t":u'Rapport',"i":'FamilyTree',"n":u'Arbre familial',"v":'4.2.3',"g":'4.2',"d":u'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
+{"t":u'Rapport',"i":'LastChangeReport',"n":u'Last Change Report',"v":'0.0.23',"g":'4.2',"d":u'Report of the last records that have been changed',"z":'LastChange.addon.tgz'}
+{"t":u'Rapport',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":u'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
+{"t":u'Rapport',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
+{"t":u'Rapport',"i":'PedigreeChart',"n":u'Pedigree Chart',"v":'1.0.23',"g":'4.2',"d":u'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
+{"t":u'Rapport',"i":'Repositories Report Options',"n":u'Repositories Report Options',"v":'0.3.13',"g":'4.2',"d":u'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
+{"t":u'Rapport',"i":'Repositories Report',"n":u'Repositories Report',"v":'1.1.13',"g":'4.2',"d":u'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
+{"t":u'Rapport',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.20',"g":'4.2',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
+{"t":u'Rapport',"i":'census_report',"n":u'Census Report',"v":'1.0.28',"g":'4.2',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
+{"t":u'Rapport',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.7',"g":'4.2',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
+{"t":u'Service cartographique',"i":'GoogleEarth',"n":u'GoogleEarth',"v":'1.0.28',"g":'4.2',"d":u'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
+{"t":u'Vue Gramps',"i":'graphview',"n":u'Graph View',"v":'1.0.42',"g":'4.2',"d":u'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
