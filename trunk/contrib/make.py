@@ -306,7 +306,7 @@ elif command == "listing":
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = PTYPE_STR[ptype] # need to build gramps translations
         plugins.append(kwargs)
     cmd_arg = addon
     # first, get a list of all of the possible languages

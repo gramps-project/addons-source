@@ -751,7 +751,7 @@ def is_listing(LANG):
 
     def register(ptype, **kwargs):
         global plugins
-        kwargs['ptype'] = PTYPE_STR[ptype]
+        kwargs['ptype'] = PTYPE_STR[ptype] # need to build gramps translations
         plugins.append(kwargs)
 
     cmd_arg = LANG
