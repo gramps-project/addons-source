@@ -788,6 +788,8 @@ def is_listing(LANG):
         for addon in sorted(ADDONS):
             for gpr in glob.glob('%(addon)s/*.gpr.py' % {'addon': addon}):
 
+                print(gpr)
+
                 # Make fallback language English (rather than current LANG)
 
                 local_gettext = glocale.get_addon_translator(gpr,
