@@ -41,12 +41,13 @@
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":u'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":u'Stamboomgrafiek',"v":'1.0.23',"g":'4.2',"d":u'Alternatieve versie van de traditionele stamboomgrafiek',"z":'PedigreeChart.addon.tgz'}
-{"t":'Report',"i":'Repositories Report Options',"n":u'Opties voor het bibliotheekverslag',"v":'0.3.13',"g":'4.2',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.13',"g":'4.2',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report Options',"n":u'Opties voor het bibliotheekverslag',"v":'0.3.15',"g":'4.2',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.15',"g":'4.2',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u"'Nog te doen'-verslag","v":'1.2.20',"g":'4.2',"d":u'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Volkstellingsverslag',"v":'1.0.28',"g":'4.2',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.7',"g":'4.2',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Bron toevoegen',"v":'0.0.24',"g":'4.2',"d":u'Een gedeelde bron aan verschillende objecten toevoegen.',"z":'AttachSourceTool.addon.tgz'}
+{"t":'Tool',"i":'PlaceCompletion',"n":u'Locatie vervolledigen',"v":'0.0.26',"g":'4.2',"d":u'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'Kenmerk vastleggen',"v":'0.0.19',"g":'4.2',"d":u'Een kenmerk een bepaalde waarde toekennen.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Geschatte datums berekenen',"v":'0.90.20',"g":'4.2',"d":u'Geschatte datums voor geboorte en overlijden berekenen.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.22',"g":'4.2',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
