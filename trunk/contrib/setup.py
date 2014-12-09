@@ -819,45 +819,6 @@ def is_listing(LANG):
                     else:
                         print("   ignoring '%s'" % p['name'])
 
-        # Write out new listing:
-
-        if cmd_arg == 'all':
-
-            # Replace it!
-
-            fp = open('../listings/addons-%s.txt' % lang, 'w')
-            for plugin in sorted(listings, key=lambda p: (p['t'], p['i'
-                                 ])):
-                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
-                       % plugin, file=fp)
-            fp.close()
-        else:
-
-            # just update the lines from these addons:
-
-            added = False
-            for plugin in sorted(listings, key=lambda p: (p['t'], p['i'
-                                 ])):
-                fp_in = open('../listings/addons-%s.txt' % lang, 'r')
-                fp_out = open('../listings/addons-%s.new' % lang, 'w')
-                for line in fp_in:
-                    dictionary = eval(line)
-                    if cmd_arg + '.addon.tgz' in line:
-                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
-                               % plugin, file=fp_out)
-                        added = True
-                    else:
-                        if plugin['t'] > dictionary['t'] and not added:
-                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
-                                   % plugin, file=fp_out)
-                            added = True
-                        print(line, end='', file=fp_out)
-                fp_in.close()
-                fp_out.close()
-                shutil.move('../listings/addons-%s.new' % lang,
-                            '../listings/addons-%s.txt' % lang)
-
-
 def listing(LANG):
     """
     Listing files ../listing/{lang}.fr
