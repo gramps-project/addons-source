@@ -307,14 +307,7 @@ class RepositoryReportAlt(Report):
             # check if not multiple references (citations) ???
             # TOFIX
 
-            object_handle = image.get_reference_handle()
-            media_object = self.database.get_object_from_handle(object_handle)
-            filename = media_object.get_path()
-
-            self.doc.add_media_object(filename, 'center', 4, 4)
-            
-            # bug 8072 ...
-            #ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+            ReportUtils.insert_image(self.database, self.doc, image, self.user)
 
     def __write_referenced_citations(self, handle):
 		"""
