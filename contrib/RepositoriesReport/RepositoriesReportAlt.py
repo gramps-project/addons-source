@@ -227,25 +227,20 @@ class RepositoryReportAlt(Report):
                     abbrev = src.get_abbreviation()
                     public = src.get_publication_info()
 
-                    # keys and values into a dict {}
+                    # keys and values into a list []
 
-                    try:
-                        keyval = src.get_data_map()
-
-                        # list of tuples [('',''),('','')]
-
-                        listup = list(keyval.items())
-
-                        # format strings
-
-                        dictio = ['%s=%s' % (k, v) for k, v in listup]
-
-                        # one string and '; ' as separator
-
-                        data = '; '.join(dictio)
-                        
-                    except:
-                        data = ''
+                    data = ' '
+                    
+                    if len(src.serialize()[9]) > 1:
+                        for i in range(len(src.serialize()[9])):
+                            key = str(src.serialize()[9][i][1][1])
+                            value = str(src.serialize()[9][i][2])
+                            data += " " + key + " = " + value + ", "
+                    
+                    if len(src.serialize()[9]) == 1:
+                        key = str(src.serialize()[9][0][1][1])
+                        value = str(src.serialize()[9][0][2])
+                        data = key + " = " + value + ", "
 
                     # if need, generates child section
 
@@ -286,7 +281,8 @@ class RepositoryReportAlt(Report):
                         medialist = src.get_citation_child_list()
                         for media_handle in medialist:
                             photo = src.get_media_list()
-                            self.__write_referenced_media(photo, media_handle)
+                            # bug 8072
+                            #self.__write_referenced_media(photo, media_handle)
                             
             for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
                 if self.incl_citat:
@@ -314,7 +310,10 @@ class RepositoryReportAlt(Report):
             
             #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
-            ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+            try:
+                ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+            except:
+                pass
 
     def __write_referenced_citations(self, handle):
 		"""
