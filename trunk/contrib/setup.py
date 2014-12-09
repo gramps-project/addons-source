@@ -751,7 +751,7 @@ def is_listing(LANG):
 
     def register(ptype, **kwargs):
         global plugins
-        kwargs['ptype'] = PTYPE_STR[ptype] # need to build gramps translations
+        kwargs['ptype'] = PTYPE_STR[ptype] # related to gramps translations
         plugins.append(kwargs)
 
     cmd_arg = LANG
@@ -783,7 +783,7 @@ def is_listing(LANG):
     # next, create/edit a file for all languages listing plugins
 
     for lang in languages:
-        print("Building listing for '%s'..." % lang)
+        print("----Building listing for '%s'..." % lang)
         listings = []
         for addon in sorted(ADDONS):
             for gpr in glob.glob('%(addon)s/*.gpr.py' % {'addon': addon}):
