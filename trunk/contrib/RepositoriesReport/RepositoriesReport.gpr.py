@@ -20,36 +20,36 @@
 
 # $Id$
 
-register(REPORT, 
-         id    = 'Repositories Report Options',
-         name  = _("Repositories Report Options"),
-         description =  _("Produces a textual repositories report"),
-         version = '0.3.13',
-         gramps_target_version = '4.2',
-         status = STABLE, # not yet tested with python 3
-         fname = 'RepositoriesReportAlt.py',
-         authors = ["Jerome Rapinat"],
-         authors_email = ["romjerome@yahoo.fr"],
-         category = CATEGORY_TEXT,
-         reportclass = 'RepositoryReportAlt',
-         optionclass = 'RepositoryOptionsAlt',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-         require_active = False
-         )
+register(REPORT,
+id    = 'Repositories Report Options',
+name  = _("Repositories Report Options"),
+description =  _("Produces a textual repositories report"),
+version = '0.3.14',
+gramps_target_version = '4.2',
+status = STABLE, # not yet tested with python 3
+fname = 'RepositoriesReportAlt.py',
+authors = ["Jerome Rapinat"],
+authors_email = ["romjerome@yahoo.fr"],
+category = CATEGORY_TEXT,
+reportclass = 'RepositoryReportAlt',
+optionclass = 'RepositoryOptionsAlt',
+report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+require_active = False
+)
 
-register(REPORT, 
-         id    = 'Repositories Report',
-         name  = _("Repositories Report"),
-         description =  _("Produces a textual repositories report"),
-         version = '1.1.13',
-         gramps_target_version = '4.2',
-         status = STABLE, # not yet tested with python 3
-         fname = 'RepositoriesReport.py',
-         authors = ["Jerome Rapinat"],
-         authors_email = ["romjerome@yahoo.fr"],
-         category = CATEGORY_TEXT,
-         reportclass = 'RepositoryReport',
-         optionclass = 'RepositoryOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-         require_active = False
-         )
+register(REPORT,
+id    = 'Repositories Report',
+name  = _("Repositories Report"),
+description =  _("Produces a textual repositories report"),
+version = '1.1.14',
+gramps_target_version = '4.2',
+status = STABLE, # not yet tested with python 3
+fname = 'RepositoriesReport.py',
+authors = ["Jerome Rapinat"],
+authors_email = ["romjerome@yahoo.fr"],
+category = CATEGORY_TEXT,
+reportclass = 'RepositoryReport',
+optionclass = 'RepositoryOptions',
+report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+require_active = False
+)
