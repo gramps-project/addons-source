@@ -756,25 +756,18 @@ def is_listing(LANG):
 
     cmd_arg = LANG
 
-    # first, get a list of all of the possible languages
-
-    if cmd_arg == 'all':
-        dirs = [file for file in glob.glob('*') if os.path.isdir(file)]
-    else:
-        dirs = [LANG]
-
     # Make the locale for for any local languages for Addon:
 
-    for addon in dirs:
+    for addon in sorted(ADDONS):
         for po in glob.glob('%(addon)s/po/*-local.po' % {'addon': addon}):
 
             # Compile
 
             locale = os.path.basename(po[:-9])
-            system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"'
-                    )
-            system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-                    )
+            os.system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"' 
+                          % {'addon': addon, 'locale': locale})
+            os.system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"' 
+                          % {'po': po, 'addon': addon, 'locale': locale})
 
     # Get all languages from all addons:
 
@@ -792,7 +785,7 @@ def is_listing(LANG):
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         listings = []
-        for addon in dirs:
+        for addon in sorted(ADDONS):
             for gpr in glob.glob('%(addon)s/*.gpr.py' % {'addon': addon}):
 
                 # Make fallback language English (rather than current LANG)
@@ -805,8 +798,8 @@ def is_listing(LANG):
                     code = compile(f.read(), gpr.encode('utf-8',
                                    errors='backslashreplace'), 'exec')
 
-                    # exec(code, make_environment(_=local_gettext),
-                         # {"register": register})
+                    #exec(code, make_environment(_=local_gettext),
+                         #{"register": register})
 
                 for p in plugins:
                     tgz_file = '%s.addon.tgz' % gpr.split('/', 1)[0]
@@ -882,8 +875,7 @@ def listing(LANG):
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py --listing'"
-                          % GRAMPSPATH)
+        raise ValueError("Where is 'GRAMPSPATH' or 'GRAMPS_RESOURCES'?")
 
     LOCALE = glocale.get_language_list()
 
