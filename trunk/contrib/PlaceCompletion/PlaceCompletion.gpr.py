@@ -20,20 +20,20 @@
 
 # $Id$
 
-register(TOOL, 
-         id    = 'PlaceCompletion',
-         name  = _("PlaceCompletion"),
-         description =  _("Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."),
-         version = '0.0.25',
-         gramps_target_version = '4.2',
-         status = UNSTABLE, # not yet tested with python 3,
-         fname = 'PlaceCompletion.py',
-         authors = ["B. Malengier",
-                    "Mathieu MD"],
-         authors_email = ["bm@cage.ugent.be",
-                          "mathieu.md@gmail.com"],
-         category = TOOL_UTILS,
-         toolclass = 'PlaceCompletion',
-         optionclass = 'PlaceCompletionOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(TOOL,
+id    = 'PlaceCompletion',
+name  = _("PlaceCompletion"),
+description =  _("Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."),
+version = '0.0.26',
+gramps_target_version = '4.2',
+status = STABLE, # not yet tested with python 3,
+fname = 'PlaceCompletion.py',
+authors = ["B. Malengier",
+"Mathieu MD"],
+authors_email = ["bm@cage.ugent.be",
+"mathieu.md@gmail.com"],
+category = TOOL_UTILS,
+toolclass = 'PlaceCompletion',
+optionclass = 'PlaceCompletionOptions',
+tool_modes = [TOOL_MODE_GUI]
+)
