@@ -758,7 +758,7 @@ def is_listing(LANG):
 
     # Make the locale for for any local languages for Addon:
 
-    for addon in sorted(ADDONS):
+    for addon in ADDONS:
         for po in glob.glob('%(addon)s/po/*-local.po' % {'addon': addon}):
 
             # Compile
@@ -785,7 +785,7 @@ def is_listing(LANG):
     for lang in languages:
         print("----Building listing for '%s'..." % lang)
         listings = []
-        for addon in sorted(ADDONS):
+        for addon in ADDONS:
             for gpr in glob.glob('%(addon)s/*.gpr.py' % {'addon': addon}):
 
                 print(gpr)
