@@ -269,7 +269,7 @@ def main():
 
     parser = \
         ArgumentParser(description='This specific script build addon',
-                       add_help=False, version='0.1.2')
+                       add_help=False, version='0.1.3')
 
     parser.add_argument('lang', nargs='?', const=LINGUAS,
                         default='en')
