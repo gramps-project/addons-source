@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-# $Id$
 """
 make.py for Gramps addons.
 
@@ -51,11 +50,11 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
-if (("LANG" not in os.environ) or 
-    (not os.environ["LANG"].startswith("en"))):
-    raise ValueError("LANG should explicitly be english; Use 'LANG=en_US.UTF-8 python make.py...' or similar")
+if (("LANGUAGE" not in os.environ) or 
+    (not os.environ["LANGUAGE"].startswith("en"))):
+    raise ValueError("LANGUAGE should explicitly be english; Use 'LANGUAGE=en_US.UTF-8 python make.py...' or similar")
 else:
-    print("make.py: LANG is %s... good!" % os.environ["LANG"])
+    print("make.py: LANGUAGE is %s... good!" % os.environ["LANGUAGE"])
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
@@ -306,7 +305,7 @@ elif command == "listing":
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype] # need to build gramps translations
+        kwargs["ptype"] = PTYPE_STR[ptype] # need to take care of translated types
         plugins.append(kwargs)
     cmd_arg = addon
     # first, get a list of all of the possible languages
