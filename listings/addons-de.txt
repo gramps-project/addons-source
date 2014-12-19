@@ -36,7 +36,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Zeitleiste',"v":'1.0.21',"g":'4.2',"d":u'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Nachkommen Linien',"v":'0.1.22',"g":'4.2',"d":u'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familienblatt',"v":'3.4.24',"g":'4.2',"d":u'Erstellt ein Familienblatt, das vollst\xe4ndige Informationen \xfcber eine Person und ihre Partner und Kinder enth\xe4lt.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":u'Stammbaum',"v":'4.2.3',"g":'4.2',"d":u'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":u'Stammbaum',"v":'4.2.4',"g":'4.2',"d":u'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Letzte \xc4nderungen Bericht',"v":'0.0.23',"g":'4.2',"d":u'Bericht der letzten Datens\xe4tze die ge\xe4ndert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Nachkommen Linien Bericht',"v":'1.1.23',"g":'4.2',"d":u'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Blitz Liste',"v":'1.0.13',"g":'4.2',"d":u'Erstellt eine Blitz Liste',"z":'ListeEclair.addon.tgz'}

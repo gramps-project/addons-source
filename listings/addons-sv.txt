@@ -36,7 +36,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tidslinje',"v":'1.0.21',"g":'4.2',"d":u'Visar h\xe4ndelser f\xf6r en person p\xe5 en tidslinje',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familjeark',"v":'3.4.24',"g":'4.2',"d":u'Skapar ett familjeark visande all information om en person och dennes partner och barn.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":u'Sl\xe4kttr\xe4d',"v":'4.2.3',"g":'4.2',"d":u'Skapar ett grafiskt sl\xe4kttr\xe4d.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":u'Sl\xe4kttr\xe4d',"v":'4.2.4',"g":'4.2',"d":u'Skapar ett grafiskt sl\xe4kttr\xe4d.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Rapport \xf6ver senaste \xe4ndringar',"v":'0.0.23',"g":'4.2',"d":u'Rapport \xf6ver de poster, som har \xe4ndrats senast',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
