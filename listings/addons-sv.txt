@@ -40,7 +40,7 @@
 {"t":'Report',"i":'LastChangeReport',"n":u'Rapport \xf6ver senaste \xe4ndringar',"v":'0.0.23',"g":'4.2',"d":u'Rapport \xf6ver de poster, som har \xe4ndrats senast',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
-{"t":'Report',"i":'PedigreeChart',"n":u'Antavla',"v":'1.0.23',"g":'4.2',"d":u'Antavlealternativ',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":u'Antavla',"v":'1.0.24',"g":'4.2',"d":u'Antavlealternativ',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":u'Arkivplatsrapportalternativ',"v":'0.3.15',"g":'4.2',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Arkivplatsrapport',"v":'1.1.15',"g":'4.2',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.20',"g":'4.2',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}

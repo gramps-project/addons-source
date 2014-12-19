@@ -40,7 +40,7 @@
 {"t":'Report',"i":'LastChangeReport',"n":'Last Change Report',"v":'0.0.23',"g":'4.2',"d":'Report of the last records that have been changed',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
-{"t":'Report',"i":'PedigreeChart',"n":'Pedigree Chart',"v":'1.0.23',"g":'4.2',"d":'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":'Pedigree Chart',"v":'1.0.24',"g":'4.2',"d":'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":'Repositories Report Options',"v":'0.3.15',"g":'4.2',"d":'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":'Repositories Report',"v":'1.1.15',"g":'4.2',"d":'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.20',"g":'4.2',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}

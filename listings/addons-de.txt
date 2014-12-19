@@ -40,7 +40,7 @@
 {"t":'Report',"i":'LastChangeReport',"n":u'Letzte \xc4nderungen Bericht',"v":'0.0.23',"g":'4.2',"d":u'Bericht der letzten Datens\xe4tze die ge\xe4ndert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Nachkommen Linien Bericht',"v":'1.1.23',"g":'4.2',"d":u'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Blitz Liste',"v":'1.0.13',"g":'4.2',"d":u'Erstellt eine Blitz Liste',"z":'ListeEclair.addon.tgz'}
-{"t":'Report',"i":'PedigreeChart',"n":u'Ahnentafelgrafik',"v":'1.0.23',"g":'4.2',"d":u'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":u'Ahnentafelgrafik',"v":'1.0.24',"g":'4.2',"d":u'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":u'Aufbewahrungsorte Berichtsoptionen',"v":'0.3.15',"g":'4.2',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.15',"g":'4.2',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Zu erledigen Bericht',"v":'1.2.20',"g":'4.2',"d":u'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datens\xe4tzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
