@@ -36,7 +36,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tijdlijn',"v":'1.0.21',"g":'4.2',"d":u'Gebeurtenissen van een persoon worden op een tijdslijn getoond',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familiepagina',"v":'3.4.24',"g":'4.2',"d":u'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":u'Familiestamboom',"v":'4.2.3',"g":'4.2',"d":u'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":u'Familiestamboom',"v":'4.2.4',"g":'4.2',"d":u'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Verslag laatste wijziging',"v":'0.0.23',"g":'4.2',"d":u'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":u'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}

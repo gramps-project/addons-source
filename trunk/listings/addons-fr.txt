@@ -36,7 +36,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Graphique temporel',"v":'1.0.21',"g":'4.2',"d":u"Affiche les \xe9v\xe9nements d'une personne tout au long de sa vie","z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Lignes des descendants',"v":'0.1.22',"g":'4.2',"d":u"Produit les lignes de descendants de l'individu","z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'R\xe9sum\xe9 familial',"v":'3.4.24',"g":'4.2',"d":u"Produit un r\xe9sum\xe9 familial montrant les informations compl\xe8tes sur l'individu, ses conjoints et enfants.","z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":u'Arbre familial',"v":'4.2.3',"g":'4.2',"d":u'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":u'Arbre familial',"v":'4.2.4',"g":'4.2',"d":u'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Rapport Derni\xe8res modifications',"v":'0.0.23',"g":'4.2',"d":u'Rapport pour les derniers enregistrements modifi\xe9s',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":u"Affiche toutes les lignes de descendants d'un anc\xeatre donn\xe9 \xe0 un descendant choisi dans un format textuel.","z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Liste \xc9clair',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste \xe9clair',"z":'ListeEclair.addon.tgz'}

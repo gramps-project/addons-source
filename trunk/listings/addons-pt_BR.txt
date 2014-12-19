@@ -36,7 +36,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":'Timeline',"v":'1.0.21',"g":'4.2',"d":"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.22',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Family Sheet',"v":'3.4.24',"g":'4.2',"d":'Produces a family sheet showing full information about a person and his/her partners and children.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":u'\xc1rvore geneal\xf3gica',"v":'4.2.3',"g":'4.2',"d":u'Gera uma \xe1rvore geneal\xf3gica gr\xe1fica',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":u'\xc1rvore geneal\xf3gica',"v":'4.2.4',"g":'4.2',"d":u'Gera uma \xe1rvore geneal\xf3gica gr\xe1fica',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Last Change Report',"v":'0.0.23',"g":'4.2',"d":'Report of the last records that have been changed',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.2',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
