@@ -40,7 +40,7 @@
 {"t":'Report',"i":'LastChangeReport',"n":u'Rapport Derni\xe8res modifications',"v":'0.0.23',"g":'4.2',"d":u'Rapport pour les derniers enregistrements modifi\xe9s',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.23',"g":'4.2',"d":u"Affiche toutes les lignes de descendants d'un anc\xeatre donn\xe9 \xe0 un descendant choisi dans un format textuel.","z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Liste \xc9clair',"v":'1.0.13',"g":'4.2',"d":u'Produit une liste \xe9clair',"z":'ListeEclair.addon.tgz'}
-{"t":'Report',"i":'PedigreeChart',"n":u'Arbre graphique',"v":'1.0.23',"g":'4.2',"d":u"Version alternative de l'arbre graphique traditionnel.","z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":u'Arbre graphique',"v":'1.0.24',"g":'4.2',"d":u"Version alternative de l'arbre graphique traditionnel.","z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":u'Rapport des d\xe9p\xf4ts avec options',"v":'0.3.15',"g":'4.2',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.15',"g":'4.2',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Rapport \xc0 Faire',"v":'1.2.20',"g":'4.2',"d":u"Produit une liste de toutes les notes avec une \xe9tiquette donn\xe9e ainsi que les enregistrements qui les r\xe9f\xe9rencent, l'individu, la famille, l'\xe9v\xe9nement, etc.","z":'ToDoReport.addon.tgz'}

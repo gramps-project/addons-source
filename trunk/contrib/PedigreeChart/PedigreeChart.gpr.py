@@ -24,7 +24,7 @@ register(REPORT,
          name=_("Pedigree Chart"),
          description=_("Alternate version of the traditional pedigree chart."),
          status = STABLE,
-         version = '1.0.23',
+         version = '1.0.24',
          fname="PedigreeChart.py",
          gramps_target_version="4.2",
          authors=['Jakim Friant'],
@@ -32,7 +32,7 @@ register(REPORT,
          category=CATEGORY_DRAW,
          reportclass='PedigreeChart',
          optionclass='PedigreeChartOptions',
-         report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+         report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
          require_active=False
          )
 
