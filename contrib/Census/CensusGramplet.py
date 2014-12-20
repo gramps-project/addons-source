@@ -191,7 +191,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
                         p_handle = event.get_place_handle()
                         if p_handle:
                             place = db.get_place_from_handle(p_handle)
-                            place_text = place.get_display_info()[0]
+                            place_text = place.get_title()
                         else:
                             place_text = ''
                             
@@ -319,7 +319,8 @@ class CensusEditor(ManagedWindow):
 
         census_label = Gtk.Label(_("Source:"))
         census_label.set_alignment(0.0, 0.5)
-        tab.attach(census_label, 0, 1, 0, 1, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
+        tab.attach(census_label, 0, 1, 0, 1,
+                   xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
         liststore = Gtk.ListStore(str, str, str)
         for row in get_census_sources(self.db):
@@ -345,7 +346,8 @@ class CensusEditor(ManagedWindow):
 
         date_label = Gtk.Label(_("Date:"))
         date_label.set_alignment(0.0, 0.5)
-        tab.attach(date_label, 0, 1, 1, 2, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
+        tab.attach(date_label, 0, 1, 1, 2,
+                   xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
         date_text = Gtk.Label()
         date_text.set_alignment(0.0, 0.5)
@@ -354,7 +356,8 @@ class CensusEditor(ManagedWindow):
         
         ref_label = Gtk.Label(_("Reference:"))
         ref_label.set_alignment(0.0, 0.5)
-        tab.attach(ref_label, 0, 1, 2, 3, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
+        tab.attach(ref_label, 0, 1, 2, 3,
+                   xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
         ref_entry = Gtk.Entry()
         tab.attach(ref_entry, 1, 2, 2, 3)
@@ -362,7 +365,8 @@ class CensusEditor(ManagedWindow):
 
         place_label = Gtk.Label(_("Place:"))
         place_label.set_alignment(0.0, 0.5)
-        tab.attach(place_label, 0, 1, 3, 4, xoptions=Gtk.AttachOptions.FILL, xpadding=10)
+        tab.attach(place_label, 0, 1, 3, 4,
+                   xoptions=Gtk.AttachOptions.FILL, xpadding=10)
         
         place_text = Gtk.Label()
         place_text.set_alignment(0.0, 0.5)
@@ -507,6 +511,9 @@ class CensusEditor(ManagedWindow):
         self._config.set('interface.census-width', width)
         self._config.set('interface.census-height', height)
         self._config.save()
+        self.details.entry_grid.clean_up()
+        self.details.clean_up()
+        self.gallery_list.clean_up()
         ManagedWindow.close(self)
 
     def help_clicked(self, obj):
@@ -585,11 +592,11 @@ class DetailsTab(GrampsTab):
         down_btn.connect('clicked', self.__move_person, 'down')
         hbox.pack_start(down_btn, expand=False, fill=True, padding=3)
 
-        self.view = Gtk.TreeView()
-        self.selection = self.view.get_selection()
+        self.entry_grid = EntryGrid(callback=self.change_person)
+        self.track_ref_for_deletion("entry_grid")
         
         scrollwin = Gtk.ScrolledWindow()
-        scrollwin.add_with_viewport(self.view)
+        scrollwin.add_with_viewport(self.entry_grid)
         scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC, 
                              Gtk.PolicyType.AUTOMATIC)
 
@@ -650,9 +657,9 @@ class DetailsTab(GrampsTab):
         skip_list = []
         handle = None
         if len(self.model) > 0:
-            model, iter_ = self.selection.get_selected()
+            iter_ = self.entry_grid.get_selected()
             if iter_: # get from selection:
-                handle = model.get_value(iter_, 0)
+                handle = self.model.get_value(iter_, 0)
             else: # get from first row
                 handle = self.model[0][0]
         else: # no rows, let's try to get active person:
@@ -665,6 +672,20 @@ class DetailsTab(GrampsTab):
             self.model.append(self.__new_person_row(person))
             self.source_combo.set_sensitive(False)
             self._set_label()
+
+    def change_person(self, iter_):
+        """
+        Change an existing person in the census.
+        """                
+        skip_list = []        
+        handle = self.model.get_value(iter_, 0)
+
+        sel = self.SelectPerson(self.dbstate, self.uistate, self.track,
+                   _("Select Person"), skip=skip_list, default=handle)
+        person = sel.run()
+
+        if person:
+            self.model.set_value(iter_, 0, person.get_handle())
 
     def __new_person_row(self, person):
         """
@@ -684,9 +705,9 @@ class DetailsTab(GrampsTab):
         """
         Remove a person from the census.
         """
-        model, iter_ = self.selection.get_selected()
+        iter_ = self.entry_grid.get_selected()
         if iter_:
-            model.remove(iter_)
+            self.model.remove(iter_)
             if len(self.model) == 0:
                 self._set_label()
 
@@ -694,54 +715,16 @@ class DetailsTab(GrampsTab):
         """
         Change the position of a person in the list.
         """
-        model, iter_ = self.selection.get_selected()
+        iter_ = self.entry_grid.get_selected()
         if iter_ is None:
             return
             
-        row = model.get_path(iter_)[0]
+        row = self.model.get_path(iter_)[0]
         if direction == 'up' and row > 0:
-            model.move_before(iter_, model.get_iter((row - 1,)))
+            self.model.move_before(iter_, self.model.get_iter((row - 1,)))
             
-        if direction == 'down' and row < len(model) - 1:
-            model.move_after(iter_, model.get_iter((row + 1,)))
-
-    def __cell_edited(self, cell, path, new_text, data):
-        """
-        Called when a cell is edited in the list of people.
-        """
-        model, column = data
-        model[path][column] = new_text
-
-        next_column = self.view.get_column(column)
-        if next_column:
-            # Setting start_editing=True causes problems if Tab key ends entry
-            self.view.set_cursor_on_cell(Gtk.TreePath(path), next_column, None, False)
-            #self.view.grab_focus()
-        
-    def __get_longnames(self, columns, report_columns):
-        self.longnames = dict(
-            [c, r[0]] for c, r in zip(columns, report_columns)
-            )
-
-    def on_query_tooltip(self, widget, x, y, keyboard_tip, tooltip):
-        """
-        Display the longname as a tooltip. 
-        """
-        on_item, x_pos, y_pos, model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
-        if not on_item:
-            return False
-        else:
-            bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
-            result = widget.get_path_at_pos(bin_x, bin_y)
-    
-            if result is not None:
-                path, column, cell_x, cell_y = result
-
-                if column is not None:
-                    longname = self.longnames.get(column.get_title(),'')
-                    tooltip.set_markup('<b>%s</b>' % longname)
-                    widget.set_tooltip_cell(tooltip, path, None, None)
-                return True
+        if direction == 'down' and row < len(self.model) - 1:
+            self.model.move_after(iter_, self.model.get_iter((row + 1,)))
 
     def create_table(self, columns, report_columns):
         """
@@ -749,24 +732,10 @@ class DetailsTab(GrampsTab):
         """
         self.columns = list(columns)
         self.model = Gtk.ListStore(*[str] * (len(columns) + 1))
-        self.view.set_model(self.model)
-        self.view.set_headers_visible(True)
-        self.view.set_has_tooltip(True)
-        self.view.connect('query-tooltip', self.on_query_tooltip)
-
-        for column in self.view.get_columns():
-            self.view.remove_column(column)
-
-        for index, name in enumerate(columns):
-            renderer = Gtk.CellRendererText()
-            renderer.set_property('editable', True)
-            renderer.connect('edited', self.__cell_edited,
-                                            (self.model, index + 1))
-            column = Gtk.TreeViewColumn(name, renderer, text=index + 1)
-            self.view.append_column(column)
-        self.view.connect("row-activated", self.__edit_person)
-
-        self.__get_longnames(columns, report_columns)
+        self.entry_grid.set_model(self.model)
+        tooltips = [column[0] for column in report_columns]
+        self.entry_grid.set_columns(self.columns, tooltips)
+        self.entry_grid.build()
 
     def populate_gui(self, event):
         """
@@ -984,3 +953,171 @@ def set_attribute(event_ref, attrs, name, value):
         elif attr.get_value() != value:
             # Update
             attr.set_value(value)
+
+#------------------------------------------------------------------------
+#
+# Data entry widgets
+#
+#------------------------------------------------------------------------
+class Indicator(Gtk.DrawingArea):
+
+    def __init__(self):
+        Gtk.DrawingArea.__init__(self)
+        self.connect('draw', self._draw)
+        self.active = False
+        self.set_size_request(5, -1)
+
+    def set_active(self, value):
+        self.active = value
+        self.queue_draw()
+
+    def _draw(self, widget, cr):
+
+        # clip area to avoid extra work
+        #cr.rectangle(event.area.x, event.area.y, 
+                     #event.area.width, event.area.height)
+        #cr.clip()
+
+        alloc = self.get_allocation()
+        if self.active:
+            cr.set_source_rgba(1, 0, 0, 1)
+        else:
+            cr.set_source_rgba(1, 0, 0, 0)
+        cr.rectangle(0, 3, alloc.width, alloc.height-6)
+        cr.fill()
+        
+
+class EntryGrid(Gtk.Table):
+
+    def __init__(self, headings=None, tooltips=None, model=None, callback=None):
+        Gtk.Table.__init__(self)
+
+        self.headings = headings
+        self.tooltips = tooltips
+        self.model = model
+        self.widgets = []
+        self.indicators = []
+        self.selected = None
+        self.callback = callback
+
+    def set_model(self, model):
+        self.model = model
+
+        model.connect('row-inserted', self.row_inserted)
+        model.connect('row-deleted', self.row_deleted)
+        model.connect('rows-reordered', self.rows_reordered)
+        self.sig_id = model.connect('row-changed', self.row_changed)
+
+        if len(self.model) > 0:
+            self.selected = model.get_iter((0,))
+    
+    def set_columns(self, columns, tooltips):
+        self.headings = columns
+        self.tooltips = tooltips
+
+    def build(self):
+
+        for child in self.get_children():
+            self.remove(child)
+            child.destroy()
+        
+        self.resize(len(self.model) + 1, len(self.headings) + 2)
+        
+        self.indicators = []
+        self.widgets = []
+
+        for column, heading in enumerate(self.headings):
+            label = Gtk.Label(heading)
+            label.set_alignment(0, 0.5)
+            label.show()
+            self.attach(label, column + 2, column + 3, 0, 1,
+                        xpadding=5, yoptions=0, ypadding=5)
+
+        for row in range(len(self.model)):
+            image = Gtk.Image()
+            image.set_from_stock(Gtk.STOCK_INDEX, Gtk.IconSize.BUTTON)
+            button = Gtk.Button()
+            button.set_relief(Gtk.ReliefStyle.NONE)
+            button.add(image)
+            button.connect('clicked', self.clicked, row)
+            button.set_can_focus(False)
+            button.show_all()
+            self.attach(button, 0, 1, row + 1, row + 2, xoptions=0, yoptions=0)
+            box = Indicator()
+            box.show()
+            if self.model.get_path(self.selected)[0] == row:
+                box.set_active(True)
+            self.attach(box, 1, 2, row + 1, row + 2,
+                        xoptions=Gtk.AttachOptions.FILL,
+                        yoptions=Gtk.AttachOptions.FILL)
+            self.indicators.append(box)
+            entry_row = []
+            for column, value in enumerate(self.model[row]):
+                if column == 0:
+                    continue
+                entry = Gtk.Entry()
+                entry.set_width_chars(5)
+                if value is not None:
+                    entry.set_text(value)
+                    set_size(entry)
+                entry.set_tooltip_text(self.tooltips[column - 1])
+                entry.connect('changed', self.changed, row, column)
+                entry.connect('focus-in-event', self.got_focus, row)
+                entry.show()
+                self.attach(entry, column + 1, column + 2, row + 1, row + 2, 
+                            yoptions=0)
+                entry_row.append(entry)
+            self.widgets.append(entry_row)
+
+    def get_selected(self):
+        return self.selected
+
+    def clicked(self, button, row):
+        iter_ = self.model.get_iter((row,))
+        self.callback(iter_)
+
+    def got_focus(self, entry, event, row):
+        for indicator in self.indicators:
+            indicator.set_active(False)
+        self.selected = self.model.get_iter((row,))
+        self.indicators[row].set_active(True)
+
+    def changed(self, entry, row, column):
+        set_size(entry)
+        self.model.handler_block(self.sig_id)
+        self.model[row][column] = entry.get_text()
+        self.model.handler_unblock(self.sig_id)
+
+    def row_inserted(self, model, path, iter_):
+        self.selected = model.get_iter((len(model) - 1,))
+        self.build()
+
+    def row_changed(self, model, path, iter_):
+        for column in range(1, len(self.headings) + 1):
+            value = model.get_value(iter_, column)
+            if value is not None:
+                self.widgets[path[0]][column - 1].set_text(value)
+
+    def row_deleted(self, model, path):
+        if len(model) > 0:
+            self.selected = model.get_iter((0,))
+        else:
+            self.selected = None
+        self.build()
+
+    def rows_reordered(self, model, path, iter_, new_order):
+        self.build()
+
+    def clean_up(self):
+        self.headings = None
+        self.tooltips = None
+        self.model = None
+        self.widgets = None
+        self.indicators = None
+        self.selected = None
+        self.callback = None
+
+def set_size(entry):
+    layout = entry.get_layout()
+    width, height = layout.get_pixel_size()
+    entry.set_size_request(width + 10, -1)
