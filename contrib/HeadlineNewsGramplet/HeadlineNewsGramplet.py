@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 import re
-import gobject
+from gi.repository import GObject as gobject
 import urllib2
 from xml.dom import minidom, Node
 # FIXME For Python 3:
