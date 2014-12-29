@@ -10,4 +10,5 @@ register(GRAMPLET,
          gramplet_title=_("Headline News"),
          version = '1.0.23',
          gramps_target_version="4.2",
+         help_url="HeadlineNewsGramplet"
          )
