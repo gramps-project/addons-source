@@ -20,6 +20,7 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.5',"g":'4.2',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet Python',"v":'1.0.19',"g":'4.2',"d":u'Un interpr\xe9teur python interactif',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Gramplet Parent\xe9s',"v":'1.0.19',"g":'4.2',"d":u'Gramplet affichant les parent\xe9s dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.4',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":u'Vue Graphique',"v":'1.0.42',"g":'4.2',"d":u'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'Importation SQLite',"v":'1.0.24',"g":'4.2',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Import Django',"v":'1.0.25',"g":'4.2',"d":u'Django est un environnement internet fonctionnant avec une base de donn\xe9es configur\xe9e',"z":'Django.addon.tgz'}
