@@ -9,7 +9,7 @@ register(
     gramplet = 'WordleGramplet',
     gramplet_title=_("Wordle"),
     gramps_target_version = '4.2',
-    version = '1.0.8',
+    version = '1.0.9',
     description = "Gramplet used to make word clouds with wordle.net",
     authors = ["Douglas Blank"],
     authors_email = ["doug.blank@gmail.com"],
