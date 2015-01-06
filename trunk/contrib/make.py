@@ -350,12 +350,12 @@ elif command == "listing":
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": (p["name"]),
-                                  "i": (p["id"]),
-                                  "t": (p["ptype"]),
-                                  "d": (p["description"]),
-                                  "v": (p["version"]),
-                                  "g": (p["gramps_target_version"]),
+                        plugin = {"n": p["name"].replace("'", "\\'"),
+                                  "i": p["id"].replace("'", "\\'"),
+                                  "t": p["ptype"].replace("'", "\\'"),
+                                  "d": p["description"].replace("'", "\\'"),
+                                  "v": p["version"].replace("'", "\\'"),
+                                  "g": p["gramps_target_version"].replace("'", "\\'"),
                                   "z": (tgz_file),
                                   }
                         listings.append(plugin)
