@@ -20,6 +20,7 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.5',"g":'4.2',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.19',"g":'4.2',"d":'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.19',"g":'4.2',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.4',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.42',"g":'4.2',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.24',"g":'4.2',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Django \u012ek\u0117limas',"v":'1.0.25',"g":'4.2',"d":u'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}

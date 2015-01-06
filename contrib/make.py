@@ -349,13 +349,13 @@ elif command == "listing":
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": repr(p["name"]),
-                                  "i": repr(p["id"]),
-                                  "t": repr(p["ptype"]),
-                                  "d": repr(p["description"]),
-                                  "v": repr(p["version"]),
-                                  "g": repr(p["gramps_target_version"]),
-                                  "z": repr(tgz_file),
+                        plugin = {"n": (p["name"]),
+                                  "i": (p["id"]),
+                                  "t": (p["ptype"]),
+                                  "d": (p["description"]),
+                                  "v": (p["version"]),
+                                  "g": (p["gramps_target_version"]),
+                                  "z": (tgz_file),
                                   }
                         listings.append(plugin)
                     else:
@@ -369,20 +369,26 @@ elif command == "listing":
             fp.close()
         else:
             # just update the lines from these addons:
-            added = False
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 fp_in = open("../listings/addons-%s.txt" % lang, "r")
                 fp_out = open("../listings/addons-%s.new" % lang, "w")
+                added = False
                 for line in fp_in:
                     dictionary = eval(line)
                     if cmd_arg + ".addon.tgz" in line:
-                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                        #print("UPDATED")
+                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
-                    else:
-                        if plugin["t"] > dictionary["t"] and not added:
-                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
-                            added = True
+                    elif ((plugin["t"], plugin["i"]) < (dictionary["t"], dictionary["i"])) and not added:
+                        #print("ADDED in middle")
+                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
+                        added = True
                         print(line, end="", file=fp_out)
+                    else:
+                        print(line, end="", file=fp_out)
+                if not added:
+                    #print("ADDED at end")
+                    print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                 fp_in.close()
                 fp_out.close()
                 shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)

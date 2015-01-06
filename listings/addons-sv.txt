@@ -20,6 +20,7 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.5',"g":'4.2',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet med Python',"v":'1.0.19',"g":'4.2',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.19',"g":'4.2',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.4',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":u'Diagramvy',"v":'1.0.42',"g":'4.2',"d":u'Levande sl\xe4ktskapsdiagram',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'SQLite Import',"v":'1.0.24',"g":'4.2',"d":u'SQLite \xe4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Django-import',"v":'1.0.25',"g":'4.2',"d":u'Django \xe4r ett n\xe4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
