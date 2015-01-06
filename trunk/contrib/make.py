@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 make.py for Gramps addons.
 
@@ -365,7 +366,7 @@ elif command == "listing":
             # Replace it!
             fp = open("../listings/addons-%s.txt" % lang, "w")
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
+                print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
         else:
             # just update the lines from these addons:
