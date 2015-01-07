@@ -10,5 +10,5 @@ register(GRAMPLET,
          gramplet = 'SurnameMappingGramplet',
          gramplet_title=_("Surname Mapping"),
          version="1.0.0",
-         gramps_target_version="4.1",
+         gramps_target_version="4.2",
          )
