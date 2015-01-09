@@ -19,10 +19,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
-# $Id$
 
 #-------------------------------------------------------------------------
 #
@@ -31,8 +29,6 @@
 #-------------------------------------------------------------------------
 from __future__ import unicode_literals, division
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 from cgi import escape
 import math
 import sys
@@ -77,7 +73,9 @@ from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gen.constfunc import is_quartz, win
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import color_graph_box, hex_to_rgb_float, is_right_click
-from gramps.gen.constfunc import STRTYPE
+from gramps.gen.constfunc import STRTYPE, lin
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.sgettext
 
 #-------------------------------------------------------------------------
 #
@@ -208,10 +206,9 @@ class PersonBoxWidgetCairo(_PersonWidgetBase):
         self.img_surf = None    
         if image:
             image_path = self.get_image(dbstate, person)
-            if sys.version_info[0] < 3 and isinstance(image_path, STRTYPE):
-                pass#image_path = image_path.encode(glocale.getfilesystemencoding())
             if image_path and os.path.exists(image_path):
-                self.img_surf = cairo.ImageSurface.create_from_png(image_path)
+                with open(image_path, 'rb') as image:
+                    self.img_surf = cairo.ImageSurface.create_from_png(image)
 
         # enable mouse-over
         self.connect("enter-notify-event", self.cb_on_enter)
@@ -587,7 +584,8 @@ class HtreePedigreeView(NavigationView):
         contains the interface. This containter will be inserted into
         a Gtk.ScrolledWindow page.
         """
-        self.scrolledwindow = Gtk.ScrolledWindow(None, None)
+        self.scrolledwindow = Gtk.ScrolledWindow(hadjustment=None, 
+                                                    vadjustment=None)  
         self.scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC,
                                        Gtk.PolicyType.AUTOMATIC)
         self.scrolledwindow.add_events(Gdk.EventMask.SCROLL_MASK)
@@ -606,6 +604,11 @@ class HtreePedigreeView(NavigationView):
         self.scrolledwindow.add_with_viewport(event_box)
 
         self.table = Gtk.Grid()
+        # force LTR layout of the tree, even though the text might be RTL!
+        # this way the horizontal scroll preferences will be correct always
+        if self.table.get_direction() == Gtk.TextDirection.RTL:
+            self.table.set_direction(Gtk.TextDirection.LTR)
+            self.table.set_halign(Gtk.Align.END)
         event_box.add(self.table)
         event_box.get_parent().set_shadow_type(Gtk.ShadowType.NONE)
         self.table.set_row_spacing(1)
@@ -1166,6 +1169,10 @@ class HtreePedigreeView(NavigationView):
             elif self.tree_direction == 3:
                 child_arrow = Gtk.ArrowType.RIGHT
                 parent_arrow = Gtk.ArrowType.LEFT
+            # GTK will reverse the icons for RTL locales, but we force LTR layout of the table,
+            # so reverse the arrows back...
+            if self.tree_direction in [2,3] and self.scrolledwindow.get_direction() == Gtk.TextDirection.RTL:
+                child_arrow, parent_arrow = parent_arrow, child_arrow
 
             button = Gtk.Button()
             button.add(Gtk.Arrow.new(child_arrow, Gtk.ShadowType.IN))
@@ -1251,7 +1258,8 @@ class HtreePedigreeView(NavigationView):
                     except KeyError:
                         # fill unused cells
                         label = Gtk.Label(label="%d,%d"%(x_pos, y_pos))
-                        frame = Gtk.ScrolledWindow(None, None)
+                        frame = Gtk.ScrolledWindow(hadjustment=None, 
+                                                vadjustment=None)
                         frame.set_shadow_type(Gtk.ShadowType.NONE)
                         frame.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
                         frame.add_with_viewport(label)
@@ -1358,7 +1366,7 @@ class HtreePedigreeView(NavigationView):
         if person:
             clipboard = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(), 
                         Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_person(person, 11))
+            clipboard.set_text(self.format_helper.format_person(person, 11), -1)
             return True
         return False
 
@@ -1371,7 +1379,7 @@ class HtreePedigreeView(NavigationView):
         if family:
             clipboard = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(), 
                         Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_relation(family, 11))
+            clipboard.set_text(self.format_helper.format_relation(family, 11), -1)
             return True
         return False
 
@@ -1389,7 +1397,7 @@ class HtreePedigreeView(NavigationView):
         or call option menu.
         """
         if event.button == 1 and event.type == Gdk.EventType.BUTTON_PRESS:
-            widget.get_root_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
+            widget.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
             self._last_x = event.x
             self._last_y = event.y
             self._in_move = True
@@ -1403,7 +1411,7 @@ class HtreePedigreeView(NavigationView):
         """Exit from scroll mode when button release."""
         if event.button == 1 and event.type == Gdk.EventType.BUTTON_RELEASE:
             self.cb_bg_motion_notify_event(widget, event)
-            widget.get_root_window().set_cursor(None)
+            widget.get_window().set_cursor(None)
             self._in_move = False
             return True
         return False
@@ -2051,7 +2059,7 @@ class HtreePedigreeView(NavigationView):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = Gtk.Table(7, 2)
+        table = Gtk.Table(n_rows=7, n_columns=2)
         table.set_border_width(12)
         table.set_col_spacings(6)
         table.set_row_spacings(6)
