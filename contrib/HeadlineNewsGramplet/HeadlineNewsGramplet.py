@@ -24,22 +24,20 @@
 # Python modules
 #
 #------------------------------------------------------------------------
+from __future__ import print_function
+from __future__ import unicode_literals
 import re
 from gi.repository import GObject as gobject
-import urllib2
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
 from xml.dom import minidom, Node
-# FIXME For Python 3:
-# Change:
-# import urllib
-# To:
-# import urllib.request
-# Change:
-# url_info = urllib.urlopen(URL)
-# To:
-# url_info = urllib.request.urlopen(URL)
 import sys
-from htmlentitydefs import name2codepoint as n2cp
-import re
+try:
+    from html.entities import name2codepoint as n2cp
+except ImportError:
+    from htmlentitydefs import name2codepoint as n2cp
 
 #------------------------------------------------------------------------
 #
@@ -63,11 +61,17 @@ _ = _trans.gettext
 def substitute(match):
     ent = match.group(2)
     if match.group(1) == "#":
-        return unichr(int(ent))
+        try:
+            return unichr(int(ent))
+        except:
+            return chr(int(ent))
     else:
         cp = n2cp.get(ent)
         if cp:
-            return unichr(cp)
+            try:
+                return unichr(cp)
+            except:
+                return chr(cp)
         else:
             return match.group()
 
@@ -126,7 +130,7 @@ class HeadlineNewsGramplet(Gramplet):
             except:
                 continue
             if feed_type == "wiki":
-                text = fp.read()
+                text = str(fp.read())
                 if fresh:
                     self.clear_text()
                     fresh = False
@@ -138,7 +142,7 @@ class HeadlineNewsGramplet(Gramplet):
                 try:
                     xmldoc = minidom.parse(fp)
                 except Exception as e:
-                    print "Headline News Gramplet Error: RSS parse failed on '%s': %s" % (feed_description, e)
+                    print("Headline News Gramplet Error: RSS parse failed on '%s': %s" % (feed_description, e))
                     continue
                 if fresh:
                     self.clear_text()
@@ -147,7 +151,7 @@ class HeadlineNewsGramplet(Gramplet):
                 yield True
                 rootNode = xmldoc.documentElement
                 for node in rootNode.childNodes:
-                    #print "> ", node.nodeName
+                    #print("> ", node.nodeName)
                     if (node.nodeName == "channel"):
                         count = 1
                         for node2 in node.childNodes:
@@ -158,7 +162,7 @@ class HeadlineNewsGramplet(Gramplet):
                                 desc = u""
                                 # Gather up the data:
                                 for item_node in node2.childNodes:
-                                    #print "---> ", item_node.nodeName
+                                    #print("---> ", item_node.nodeName)
                                     if (item_node.nodeName == "title"):
                                         for text_node in item_node.childNodes:
                                             if (text_node.nodeType == node.TEXT_NODE):
