@@ -88,7 +88,7 @@ class WordleGramplet(Gramplet):
         surnames = {}
         iter_people = self.dbstate.db.iter_person_handles()
         self.filter = self.filter_list.get_filter()
-	people = self.filter.apply(self.dbstate.db, iter_people)
+    people = self.filter.apply(self.dbstate.db, iter_people)
         cnt = 0
         for person in imap(self.dbstate.db.get_person_from_handle, people):
             allnames = [person.get_primary_name()] + person.get_alternate_names()

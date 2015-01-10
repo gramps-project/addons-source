@@ -198,7 +198,7 @@ class AncestorFillReport(Report):
 
         person = self.database.get_person_from_handle(person_handle)
         grampsid = person.get_gramps_id()
-	
+    
         if self.trouve.has_key(grampsid):
             return
         
@@ -282,7 +282,7 @@ class AncestorFillReport(Report):
         strtheoanc = _(" Number of theorical Ancestors ")
         strimplex = _(" Pedigree Collapse ")
         if self.displayth:
-	        form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
         else:
             form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
             text = _( 
@@ -315,9 +315,9 @@ class AncestorFillReport(Report):
             else:
                 self.doc.start_paragraph("AHN-Generation")
                 if self.displayth:
-		    form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
                 else:
-		    form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
                 text = _( 
                        form % ( nextgen , longueur , percent , nbhand , implexe ))
                 self.doc.write_text(text)
@@ -325,7 +325,7 @@ class AncestorFillReport(Report):
         totalnbanc = len(self.trouve)
         timplexe= ( total - totalnbanc) * 100.0 / total
         strtotalanc = _(" Total Number of Ancestors found ")
-	form = strtotalanc + "%d; "
+    form = strtotalanc + "%d; "
         totaluniqfoundanc = _(" Total Number of single Ancestors found ")
         form2 = totaluniqfoundanc + "%d; "
         form3 = strimplex + "%3." + str(self.Collapsedigit) + "f%%"

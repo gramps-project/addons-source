@@ -310,36 +310,36 @@ class RepositoryReportAlt(Report):
             ReportUtils.insert_image(self.database, self.doc, image, self.user)
 
     def __write_referenced_citations(self, handle):
-		"""
-		This procedure writes out citation data related to the source.
-		"""
-		
-		self.doc.start_paragraph('REPO-Section')
-		self.doc.write_text(self._('Citations'))
-		self.doc.end_paragraph()
-		
-		citation = self.database.get_citation_from_handle(handle)
-			
-		date = citation.serialize()[2]
-		
-		if date:
-			self.doc.start_paragraph('REPO-Section2')
-			self.doc.write_text(self._('Date:'))
-			self.doc.write_text(date[4])
-			self.doc.end_paragraph()
-		
-		page = citation.get_page()
-		quay = citation.get_confidence_level()
-				
-		self.doc.start_paragraph('REPO-Section2')
-		self.doc.write_text(self._('Page:'))
-		self.doc.write_text(page)
-		self.doc.end_paragraph()
-		
-		self.doc.start_paragraph('REPO-Section2')
-		self.doc.write_text(self._('Confidence level:'))
-		self.doc.write_text(str(quay))
-		self.doc.end_paragraph()
+        """
+        This procedure writes out citation data related to the source.
+        """
+        
+        self.doc.start_paragraph('REPO-Section')
+        self.doc.write_text(self._('Citations'))
+        self.doc.end_paragraph()
+        
+        citation = self.database.get_citation_from_handle(handle)
+            
+        date = citation.serialize()[2]
+        
+        if date:
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Date:'))
+            self.doc.write_text(date[4])
+            self.doc.end_paragraph()
+        
+        page = citation.get_page()
+        quay = citation.get_confidence_level()
+                
+        self.doc.start_paragraph('REPO-Section2')
+        self.doc.write_text(self._('Page:'))
+        self.doc.write_text(page)
+        self.doc.end_paragraph()
+        
+        self.doc.start_paragraph('REPO-Section2')
+        self.doc.write_text(self._('Confidence level:'))
+        self.doc.write_text(str(quay))
+        self.doc.end_paragraph()
 
 #------------------------------------------------------------------------
 #
