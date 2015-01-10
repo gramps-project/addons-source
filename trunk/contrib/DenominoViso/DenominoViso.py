@@ -155,13 +155,13 @@ from gramps.gen.display.name import displayer as _nd
 import gramps.gen.datehandler
 from gramps.gui.autocomp import fill_combo
 from gramps.gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
-from gramps.gen.utils.string import confidence
+from gramps.gen.utils.string import conf_strings as confidence
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.constfunct import cuni
+from gramps.gen.constfunc import cuni
 #-------------------------------------------------------------------------
 #
 # constants
