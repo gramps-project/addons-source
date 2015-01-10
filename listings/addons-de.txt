@@ -30,7 +30,7 @@
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.25',"g":'4.2',"d":'SQLite ist ein gebräuchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.26',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
-{"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.29',"g":'4.2',"d":'Erstellt Datendatei für GoogleEarth und öffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
+{"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.30',"g":'4.2',"d":'Erstellt Datendatei für GoogleEarth und öffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":'DE Web Connect Pack',"v":'0.0.16',"g":'4.2',"d":'Sammlung von Webseiten für DE (benötigt libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":'FR Web Verknüpfungspaket',"v":'1.0.22',"g":'4.2',"d":'Sammlung von Webseiten für FR (benötigt libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'UK Web Connect Pack',"n":'UK Web Verknüpfungspaket',"v":'1.0.29',"g":'4.2',"d":'Sammlung von Webseiten für UK (benötigt libwebconnect)',"z":'UKWebConnectPack.addon.tgz'}
