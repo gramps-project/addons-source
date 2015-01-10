@@ -37,50 +37,50 @@ This Gramplet displays the incoming birthdays.
 """
 
 class BirthdaysGramplet(Gramplet):
-	def init(self):
-		self.set_text(_("No Family Tree loaded."))
-		self.max_age = config.get('behavior.max-age-prob-alive')
+    def init(self):
+        self.set_text(_("No Family Tree loaded."))
+        self.max_age = config.get('behavior.max-age-prob-alive')
 
-	def post_init(self):
-		self.disconnect("active-changed")
+    def post_init(self):
+        self.disconnect("active-changed")
 
-	def db_changed(self):
-		self.dbstate.db.connect('person-add', self.update)
-		self.dbstate.db.connect('person-delete', self.update)
-		self.dbstate.db.connect('person-update', self.update)
-		self.update
+    def db_changed(self):
+        self.dbstate.db.connect('person-add', self.update)
+        self.dbstate.db.connect('person-delete', self.update)
+        self.dbstate.db.connect('person-update', self.update)
+        self.update
 
-	def main(self):
-		self.set_text(_("Processing..."))
-		database = self.dbstate.db
-		personList = database.iter_people()
-		result = []
-		text = ''
-		today = Today()
-		for cnt, person in enumerate(personList):
-			birth_ref = person.get_birth_ref()
-			death_ref = person.get_death_ref()
-			if (birth_ref and not death_ref):
-				birth = database.get_event_from_handle(birth_ref.ref)
-				birth_date = birth.get_date_object()
-				if birth_date.is_regular():
-					birthday_this_year = Date(today.get_year(), birth_date.get_month(), birth_date.get_day())
-					next_age = birthday_this_year - birth_date
-					# (0 year, months, days) between now and birthday of this year (positive if passed):
-					diff = today - birthday_this_year
-					# about number of days the diff is:
-					diff_days = diff[1] * 30 + diff[2]
-					if next_age[0] < self.max_age:
-						if diff_days <= 0: #not yet passed
-							result.append((diff_days, next_age, birth_date, person))
-						else: #passed; add it for next year's birthday
-							result.append((diff_days - 365, next_age[0] + 1, birth_date, person))
-		# Reverse sort on number of days from now:
-		result.sort(key=lambda item: -item[0])
-		self.clear_text()
-		for diff, age, date, person in result:
-			name = person.get_primary_name()
-			self.append_text("%s: " % gramps.gen.datehandler.displayer.display(date))
-			self.link(name_displayer.display_name(name), "Person", person.handle)
-			self.append_text(" (%s)\n" % age)
-		self.append_text("", scroll_to="begin")
+    def main(self):
+        self.set_text(_("Processing..."))
+        database = self.dbstate.db
+        personList = database.iter_people()
+        result = []
+        text = ''
+        today = Today()
+        for cnt, person in enumerate(personList):
+            birth_ref = person.get_birth_ref()
+            death_ref = person.get_death_ref()
+            if (birth_ref and not death_ref):
+                birth = database.get_event_from_handle(birth_ref.ref)
+                birth_date = birth.get_date_object()
+                if birth_date.is_regular():
+                    birthday_this_year = Date(today.get_year(), birth_date.get_month(), birth_date.get_day())
+                    next_age = birthday_this_year - birth_date
+                    # (0 year, months, days) between now and birthday of this year (positive if passed):
+                    diff = today - birthday_this_year
+                    # about number of days the diff is:
+                    diff_days = diff[1] * 30 + diff[2]
+                    if next_age[0] < self.max_age:
+                        if diff_days <= 0: #not yet passed
+                            result.append((diff_days, next_age, birth_date, person))
+                        else: #passed; add it for next year's birthday
+                            result.append((diff_days - 365, next_age[0] + 1, birth_date, person))
+        # Reverse sort on number of days from now:
+        result.sort(key=lambda item: -item[0])
+        self.clear_text()
+        for diff, age, date, person in result:
+            name = person.get_primary_name()
+            self.append_text("%s: " % gramps.gen.datehandler.displayer.display(date))
+            self.link(name_displayer.display_name(name), "Person", person.handle)
+            self.append_text(" (%s)\n" % age)
+        self.append_text("", scroll_to="begin")

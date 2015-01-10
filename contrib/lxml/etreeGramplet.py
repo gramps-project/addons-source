@@ -367,7 +367,7 @@ class etreeGramplet(Gramplet):
         # XML
                 
         for one in root.getchildren():
-			
+            
             # getiterator() for python 2.6
             ITERATION = one.getiterator()
             
@@ -392,7 +392,7 @@ class etreeGramplet(Gramplet):
                     if self.dbstate.db.has_person_handle("%s" % one.attrib.get('home')[1:]):
                         person = self.dbstate.db.get_person_from_handle(one.attrib.get('home')[1:])
                         print('Home:', person.get_primary_name().get_name())
-                			
+                            
             for two in ITERATION:
                 
                 timestamp.append(two.get('change'))
@@ -481,7 +481,7 @@ class etreeGramplet(Gramplet):
             elast = epoch(tevent[-1])
             print('DB: Last event object edition on/at:', elast)
         except IndexError:
-	    pass
+        pass
         
         # person object; alternate method via person_map, see LastChange addon
         
