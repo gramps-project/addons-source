@@ -31,7 +31,8 @@ register(GRAMPLET,
          height=170,
          gramplet='LastChangeGramplet',
          gramps_target_version="4.2",
-         gramplet_title=_("Latest Changes")
+         gramplet_title=_("Latest Changes"),
+         help_url = "LastChange",
          )
 
 register(REPORT,
