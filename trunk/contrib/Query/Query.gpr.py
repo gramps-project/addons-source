@@ -15,6 +15,7 @@ register(GRAMPLET,
          gramplet = "QueryGramplet",
          fname="QueryGramplet.py",
          gramplet_title=_("Query"),
+         help_url = "QueryGramplet",
          )
 
 #------------------------------------------------------------------------
