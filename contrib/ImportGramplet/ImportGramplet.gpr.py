@@ -15,4 +15,5 @@ register(GRAMPLET,
          gramplet = "ImportGramplet",
          fname="ImportGramplet.py",
          gramplet_title=_("Import"),
+         help_url = "ImportGramplet",
          )
