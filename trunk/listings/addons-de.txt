@@ -9,21 +9,27 @@
 {"t":'Gramplet',"i":'Clock Gramplet',"n":'Uhren Gramplet',"v":'0.0.21',"g":'4.2',"d":'Gramplet zum demonstrieren der Cairo Grafik',"z":'ClockGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Data Entry Gramplet',"n":'Dateneingabe Gramplet',"v":'1.0.31',"g":'4.2',"d":'Gramplet zur schnellen Dateneingabe',"z":'DataEntryGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Deep Connections Gramplet',"n":'Tief gehende Beziehungen Gramplet',"v":'1.0.24',"g":'4.2',"d":'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson',"z":'DeepConnectionsGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Descendant Count Gramplet',"n":'Anzahl der Nachkommen Gramplet',"v":'1.0.22',"g":'4.2',"d":'Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen',"z":'DescendantCount.addon.tgz'}
+{"t":'Gramplet',"i":'Import Gramplet',"n":'Import Gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet zum Textimport',"z":'ImportGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Note Gramplet',"n":'Notiz Gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Verbundene Verwandte Gramplet',"v":'1.0.21',"g":'4.2',"d":'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Abfrage Schnellansicht',"v":'1.0.21',"g":'4.2',"d":'Schnellansicht für SQL-ähnlich laufende Abfragen',"z":'Query.addon.tgz'}
+{"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
+{"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Anzahl der Nachkommen',"v":'1.0.22',"g":'4.2',"d":'Zeigt die Anzahl der Nachkommen für jede Person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":'Bild Exif Metadaten bearbeiten',"v":'1.5.6',"g":'4.2',"d":'Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten',"z":'EditExifMetadata.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Family Attributes',"n":'Erweiterte Familienattribute',"v":'1.0.17',"g":'4.2',"d":'Gramplet zeigt die Attribute einer Familie',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Person Attributes',"n":'Erweiterte Person Attribute',"v":'1.0.17',"g":'4.2',"d":'Gramplet zeigt die Attribute einer Person',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Face Detection',"n":'Gesichtserkennung',"v":'1.0.16',"g":'4.2',"d":'Gramplet zur Erkennung und Zuordnung von Gesichtern',"z":'FaceDetection.addon.tgz'}
 {"t":'Gramplet',"i":'Headline News Gramplet',"n":'Schlagzeilen Gramplet',"v":'1.0.25',"g":'4.2',"d":'Gramplet that shows the latest Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Import Gramplet',"n":'Import Gramplet',"v":'1.0.22',"g":'4.2',"d":'Gramplet zum Textimport',"z":'ImportGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'LastChangeGramplet',"n":'Letzte Änderung Gramplet',"v":'0.0.24',"g":'4.2',"d":'Listet die letzten zehn geänderten Personendatensätze',"z":'LastChange.addon.tgz'}
+{"t":'Gramplet',"i":'Import Gramplet',"n":'Import Gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet zum Textimport',"z":'ImportGramplet.addon.tgz'}
+{"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Gramplet',"i":'MediaBrowser',"n":'Medienbrowser',"v":'1.0.18',"g":'4.2',"d":'Gramplet zeigt Details einer Person',"z":'MediaBrowser.addon.tgz'}
-{"t":'Gramplet',"i":'Note Gramplet',"n":'Notiz Gramplet',"v":'1.0.22',"g":'4.2',"d":'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Note Gramplet',"n":'Notiz Gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Beteiligte',"v":'1.0.6',"g":'4.2',"d":'Gramplet zeigt die Beteiligten eines Ereignis',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Foto markieren',"v":'1.0.7',"g":'4.2',"d":'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.20',"g":'4.2',"d":'Interaktiver Pythoninterpreter',"z":'PythonGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Query Gramplet',"n":'Abfrage Gramplet',"v":'1.0.20',"g":'4.2',"d":'Gramplet zum Ausführen SQL-ähnlicher Abfragen',"z":'Query.addon.tgz'}
-{"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Verbundene Verwandte Gramplet',"v":'1.0.20',"g":'4.2',"d":'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Abfrage Schnellansicht',"v":'1.0.21',"g":'4.2',"d":'Schnellansicht für SQL-ähnlich laufende Abfragen',"z":'Query.addon.tgz'}
+{"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Verbundene Verwandte Gramplet',"v":'1.0.21',"g":'4.2',"d":'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.5',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Zeitleistestammbaum',"v":'0.1.33',"g":'4.2',"d":'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gewählten Person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graphenansicht',"v":'1.0.43',"g":'4.2',"d":'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
@@ -37,15 +43,15 @@
 {"t":'Plugin lib',"i":'US Web Connect Pack',"n":'US Web Verknüpfungspaket',"v":'1.0.31',"g":'4.2',"d":'Sammlung von Webseiten für US (benötigt libwebconnect)',"z":'USWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'libaccess',"n":'Generic DB Access lib',"v":'1.0.21',"g":'4.2',"d":'Liefert eine Bibliothek zum generischen Zugriff auf die Datenbank und gen.lib',"z":'libaccess.addon.tgz'}
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.21',"g":'4.2',"d":'Bibliothek für Webseitensammlungen',"z":'libwebconnect.addon.tgz'}
-{"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Anzahl der Nachkommen',"v":'1.0.21',"g":'4.2',"d":'Zeigt die Anzahl der Nachkommen für jede Person.',"z":'DescendantCount.addon.tgz'}
+{"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Anzahl der Nachkommen',"v":'1.0.22',"g":'4.2',"d":'Zeigt die Anzahl der Nachkommen für jede Person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Anzahl der Nachkommen',"v":'3.4.20',"g":'4.2',"d":'Zeigt die Anzahl der Nachkommen der aktuellen Person an',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":'Abfrage Schnellansicht',"v":'1.0.20',"g":'4.2',"d":'Schnellansicht für SQL-ähnlich laufende Abfragen',"z":'Query.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Abfrage Schnellansicht',"v":'1.0.21',"g":'4.2',"d":'Schnellansicht für SQL-ähnlich laufende Abfragen',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":'Alle Namen aller Personen',"v":'1.0.19',"g":'4.2',"d":'Zeigt alle Namen aller Personen',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":'Zeitleiste',"v":'1.0.22',"g":'4.2',"d":'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Nachkommen Linien',"v":'0.1.23',"g":'4.2',"d":'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familienblatt',"v":'3.4.25',"g":'4.2',"d":'Erstellt ein Familienblatt, das vollständige Informationen über eine Person und ihre Partner und Kinder enthält.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Stammbaum',"v":'4.2.5',"g":'4.2',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
-{"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.24',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
+{"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Nachkommen Linien Bericht',"v":'1.1.24',"g":'4.2',"d":'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Blitz Liste',"v":'1.0.14',"g":'4.2',"d":'Erstellt eine Blitz Liste',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":'Ahnentafelgrafik',"v":'1.0.25',"g":'4.2',"d":'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
@@ -53,6 +59,7 @@
 {"t":'Report',"i":'Repositories Report Options',"n":'Aufbewahrungsorte Berichtsoptionen',"v":'0.3.16',"g":'4.2',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Zu erledigen Bericht',"v":'1.2.21',"g":'4.2',"d":'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.29',"g":'4.2',"d":'Bericht der Zensusereignise für eine Person.',"z":'Census.addon.tgz'}
+{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.1',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Datenbankunterschiede Bericht',"v":'1.0.8',"g":'4.2',"d":'Vergleicht eine externe Datenbank mit der aktuell geöffneten.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.21',"g":'4.2',"d":'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details über Personen durch Mausereignisse sichtbar werden.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":'Quelle hinzufügen',"v":'0.0.25',"g":'4.2',"d":'Fügt verteilte Quellen mehreren Objekten hinzu.',"z":'AttachSourceTool.addon.tgz'}
