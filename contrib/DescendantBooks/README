@@ -1,0 +1,68 @@
+
+Introduction
+============
+the "Descendant Books" plugin consists of two book type plugins. Descendant Book
+and Detailed Descendant Book. Both reports are based directly of Descendant
+Report and Detailed Descendant Report, the main difference being instead of just
+producung a report based of the Center Person, it allows for the use of a built
+in Query or Custom query. This idea is to produce as many descendant reports as
+is required to satisfy inclusion of all individuals within the given query.
+
+If for instance "Entire Database" is chosen as the query to use. Then the entire
+database is traversed and a unique list of ancestors is determined and then a
+descendant report for each of these ancestors is produced.
+
+As there is a potential to produce more than one report the best place to
+include these reports is under Books. If more than one report is produced a
+table of contents is generated to show how reports there are.
+
+To date my most common uses are :
+ - Entire Database
+   I find that running of either report using the Entire database is really
+   useful for highlighting potential people in my database that I've not linked
+   up, dangling tree elements etc.
+
+ - Ancestors of <Person>
+   Again really useful to get a complete accurate picture of the entire family
+   tree of an individual, pretty much includes all cousins of this person. Up
+   to now to print this you would first have to determine all the possible
+   ancestors of this person, and then manually generate a descendant report
+   for each of these ancesotrs. By running this report we get all these reports
+   generated in one go and a table of contents to boot !!
+
+Descendant Report Differences:
+==============================
+Most of these specific differences I would hope end up in Trunk/Core as such
+there are bug/feature requets logged for each one.  If the bugs are marked
+resolved then they've been integrated and you can ignore the refernece here. or
+Just ping me to remove the reference. Other changes like the suppression of
+duplicates really only apply when there are more than one report being printed
+as such are unique to these plugins.
+
+- Descendant Report:
+  If a family is encounted in one report that has already been printed in a
+  previous report then only a reference is printed for this family of the
+  location in the previous report where this resides. This saves on showing the
+  exact same list of descendants more than once (saves paper as well)
+
+- Detailed Descendant Report:
+  - Similar to Descendant report, the supression of printing of duplicate
+    people is achieved here as well except for each person encounted a
+    reference back to the original is shown kind of similar to the existing
+    functionality around printing "Same as person..."
+
+  - A new section is also shown for each person, showing a reference to each
+    report this person appears in.
+
+TODO
+====
+- Addition of a title page.
+- Somehow being able to print page numbers in the table of contents.
+  If this was possible then possible including page numbers in report 
+  references as well. Only really useful when generating a PDF of ODF format
+  report.
+- Always open to suggestions on how to improve this report and of course bugs
+  that people find as well. 
+
+
+
