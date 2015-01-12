@@ -1,0 +1,34 @@
+body {
+    background: url(../images/texture-noise.png);
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica;
+}
+
+.node rect {
+    cursor: pointer;
+    fill: #fff;
+    fill-opacity: .5;
+    stroke: #3182bd;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+path.link {
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1.5px;
+}
+
+#testString {
+    position: absolute;
+    visibility: hidden;
+    height: auto;
+    width: auto;
+}
