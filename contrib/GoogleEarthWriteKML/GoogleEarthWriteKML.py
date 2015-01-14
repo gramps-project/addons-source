@@ -48,7 +48,10 @@ _ = _trans.gettext
 from gramps.gui.dialog import ErrorDialog, QuestionDialog2
 from gramps.plugins.lib.libmapservice import MapService
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gen.utils.file import search_for, get_unicode_path_from_env_var
+from gramps.gen.utils.file import search_for, conv_to_unicode
+from gramps.gen.utils.location import get_main_location
+from gramps.gen.lib import PlaceType
+
 
 # Check i zip is installed
 _ZIP_OK = False
@@ -76,14 +79,14 @@ if os.sys.platform == 'win32':
         FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
                     % (os.getenv('ProgramFiles'))
         NORM_PATH = os.path.normpath(FILE_PATH)
-        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+        _GOOGLEEARTH_OK = search_for(NORM_PATH)
 
     if not _GOOGLEEARTH_OK:
         # For Win 7 with 64 Gramps, need to find path to 32 bits programs
         FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
                     % (os.getenv('ProgramFiles(x86)'))
         NORM_PATH = os.path.normpath(FILE_PATH)
-        _GOOGLEEARTH_OK = Utils.search_for(NORM_PATH)
+        _GOOGLEEARTH_OK = search_for(NORM_PATH)
 
 else:
     FILE_PATH = "googleearth"
@@ -106,6 +109,10 @@ def _combine(str1, str2):
     If they are equal return one
     If one empty return the other
     """
+    if str1 == None:
+        str1 = ""
+    if str2 == None:
+        str2 = ""
     if str1 == str2 == None:
         return _("No place description")
     if str1 == str2:
@@ -157,7 +164,7 @@ class GoogleEarthService(MapService):
 
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
-        home_dir = get_unicode_path_from_env_var(home_dir)
+        home_dir = conv_to_unicode(home_dir) #get_unicode_path_from_env_var(home_dir)
         # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(
@@ -223,15 +230,17 @@ class GoogleEarthService(MapService):
                 continue
             if not descr:
                 descr = place.get_title()
+            location = get_main_location(self.database, place)
+            parish_descr = location.get(PlaceType.PARISH)
+            if parish_descr == None:
+                parish_descr = ""
+            city = location.get(PlaceType.CITY)
+            county = location.get(PlaceType.COUNTY)
+            city_county_descr = _combine(city, county)
 
-            parish_descr = place.get_main_location().get_parish().strip()
-            city = place.get_main_location().get_city()
-            county = place.get_main_location().get_county()
-            city_county_descr = _combine(city.strip(), county.strip())
-
-            state = place.get_main_location().get_state()
-            country = place.get_main_location().get_country()
-            state_country_descr = _combine(state.strip(), country.strip())
+            state = location.get(PlaceType.STATE)
+            country = location.get(PlaceType.COUNTRY)
+            state_country_descr = _combine(state, country)
             id = place.get_gramps_id()
 
             self.kml_file.write('    <Placemark id="%s">\n' % id)
