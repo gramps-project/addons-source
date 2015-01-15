@@ -17,7 +17,7 @@
 #
 register(REPORT,
     id   = 'DescendantBook',
-    name = _('Descendand Book'),
+    name = _('Descendant Book'),
     description = _("Produces one or more descendant reports based on a supplied query."),
     version = '1.0.2',
     gramps_target_version = '4.2',
@@ -34,8 +34,8 @@ register(REPORT,
 
 register(REPORT,
     id   = 'DetDescendantBook',
-    name = _('Detailed Descendand Book'),
-    description = _("Produces one or more detaied descendant reports based on a supplied query."),
+    name = _('Detailed Descendant Book'),
+    description = _("Produces one or more detailed descendant reports based on a supplied query."),
     version = '1.0.2',
     gramps_target_version = '4.2',
     status = UNSTABLE, # Most of testing/development is against 3.4. This has not been tested at all against trunk (3.5+), as I do not have a gtk3 system that I can test/develop on.
