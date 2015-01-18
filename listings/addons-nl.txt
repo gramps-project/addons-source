@@ -15,6 +15,7 @@
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Gegevensbestand voor \'GoogleEarth\' aanmaken en openen.',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Snelscherm voor zoeken',"v":'1.0.21',"g":'4.2',"d":'Snelscherm om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.6',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Verslag laatste wijziging',"v":'0.0.25',"g":'4.2',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Afstammelingen tellen',"v":'1.0.22',"g":'4.2',"d":'Het aantal afstammelingen voor elke persoon tonen.',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":'Exif-metagegevens aanpassen',"v":'1.5.6',"g":'4.2',"d":'Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan',"z":'EditExifMetadata.addon.tgz'}
@@ -51,7 +52,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":'Tijdlijn',"v":'1.0.22',"g":'4.2',"d":'Gebeurtenissen van een persoon worden op een tijdslijn getoond',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.23',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familiepagina',"v":'3.4.25',"g":'4.2',"d":'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.5',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.6',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Verslag laatste wijziging',"v":'0.0.25',"g":'4.2',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.24',"g":'4.2',"d":'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Liste Eclair',"v":'1.0.14',"g":'4.2',"d":'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}

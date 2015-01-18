@@ -15,6 +15,7 @@
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Créé un fichier de données pouvant être ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Rapport express Requête',"v":'1.0.21',"g":'4.2',"d":'Rapport express pour du SQL-like fonctionnant avec requêtes',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'4.2.6',"g":'4.2',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Rapport Dernières modifications',"v":'0.0.25',"g":'4.2',"d":'Rapport pour les derniers enregistrements modifiés',"z":'LastChange.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Calcul des descendants',"v":'1.0.22',"g":'4.2',"d":'Affiche le total des descendants pour chaque individu',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":'Éditer les métadonnées Exif de l\'image',"v":'1.5.6',"g":'4.2',"d":'Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l\'image',"z":'EditExifMetadata.addon.tgz'}
@@ -51,7 +52,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":'Graphique temporel',"v":'1.0.22',"g":'4.2',"d":'Affiche les événements d\'une personne tout au long de sa vie',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Lignes des descendants',"v":'0.1.23',"g":'4.2',"d":'Produit les lignes de descendants de l\'individu',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Résumé familial',"v":'3.4.25',"g":'4.2',"d":'Produit un résumé familial montrant les informations complètes sur l\'individu, ses conjoints et enfants.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'4.2.5',"g":'4.2',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'4.2.6',"g":'4.2',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Rapport Dernières modifications',"v":'0.0.25',"g":'4.2',"d":'Rapport pour les derniers enregistrements modifiés',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.24',"g":'4.2',"d":'Affiche toutes les lignes de descendants d\'un ancêtre donné à un descendant choisi dans un format textuel.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Liste Éclair',"v":'1.0.14',"g":'4.2',"d":'Produit une liste éclair',"z":'ListeEclair.addon.tgz'}
