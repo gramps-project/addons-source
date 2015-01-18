@@ -15,6 +15,7 @@
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Erstellt Datendatei für GoogleEarth und öffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Abfrage Schnellansicht',"v":'1.0.21',"g":'4.2',"d":'Schnellansicht für SQL-ähnlich laufende Abfragen',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Stammbaum',"v":'4.2.6',"g":'4.2',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Anzahl der Nachkommen',"v":'1.0.22',"g":'4.2',"d":'Zeigt die Anzahl der Nachkommen für jede Person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Gramplet',"i":'Edit Image Exif Metadata',"n":'Bild Exif Metadaten bearbeiten',"v":'1.5.6',"g":'4.2',"d":'Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten',"z":'EditExifMetadata.addon.tgz'}
@@ -51,7 +52,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":'Zeitleiste',"v":'1.0.22',"g":'4.2',"d":'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Nachkommen Linien',"v":'0.1.23',"g":'4.2',"d":'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familienblatt',"v":'3.4.25',"g":'4.2',"d":'Erstellt ein Familienblatt, das vollständige Informationen über eine Person und ihre Partner und Kinder enthält.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":'Stammbaum',"v":'4.2.5',"g":'4.2',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Stammbaum',"v":'4.2.6',"g":'4.2',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Nachkommen Linien Bericht',"v":'1.1.24',"g":'4.2',"d":'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Blitz Liste',"v":'1.0.14',"g":'4.2',"d":'Erstellt eine Blitz Liste',"z":'ListeEclair.addon.tgz'}
