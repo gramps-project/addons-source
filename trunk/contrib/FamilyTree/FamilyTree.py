@@ -1064,7 +1064,7 @@ class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
         kekule_start_number.set_help(_("The Kekule number of the husband (central family). Set 0 to not show Kekule numbers"))
         menu.add_option(category_name, "kekule_start_number", kekule_start_number)
         
-        fit_on_page = gramps.gen.plug.menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
+        fit_on_page = gramps.gen.plug.menu.BooleanOption(_("Scale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
         menu.add_option(category_name, 'fit_on_page', fit_on_page)
 
