@@ -12,6 +12,7 @@
 {"t":'Gramplet',"i":'Import Gramplet',"n":'Gramplet Importation',"v":'1.0.23',"g":'4.2',"d":'Gramplet pour importer du texte',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":'Gramplet Note',"v":'1.0.23',"g":'4.2',"d":'Gramplet pour l\'édition des notes de l\'individu actif',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Gramplet Parentés',"v":'1.0.21',"g":'4.2',"d":'Gramplet affichant les parentés dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Arbre au fil du temps',"v":'0.1.35',"g":'4.2',"d":'Cette vue affiche une ligne temporelle dans l\'arbre avec ascendants et descendants de l\'individu sélectionné',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Créé un fichier de données pouvant être ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Rapport express Requête',"v":'1.0.21',"g":'4.2',"d":'Rapport express pour du SQL-like fonctionnant avec requêtes',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
@@ -33,7 +34,7 @@
 {"t":'Quickreport',"i":'Query Quickview',"n":'Rapport express Requête',"v":'1.0.21',"g":'4.2',"d":'Rapport express pour du SQL-like fonctionnant avec requêtes',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Gramplet Parentés',"v":'1.0.21',"g":'4.2',"d":'Gramplet affichant les parentés dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.5',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
-{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Arbre au fil du temps',"v":'0.1.33',"g":'4.2',"d":'Cette vue affiche une ligne temporelle dans l\'arbre avec ascendants et descendants de l\'individu sélectionné',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Arbre au fil du temps',"v":'0.1.35',"g":'4.2',"d":'Cette vue affiche une ligne temporelle dans l\'arbre avec ascendants et descendants de l\'individu sélectionné',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.43',"g":'4.2',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'Importation SQLite',"v":'1.0.25',"g":'4.2',"d":'SQLite est un format courant de base de données locale',"z":'Sqlite.addon.tgz'}

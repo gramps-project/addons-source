@@ -12,6 +12,7 @@
 {"t":'Gramplet',"i":'Import Gramplet',"n":'Import-gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet om tekst te importeren',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":'Opmerkingen-gramplet',"v":'1.0.23',"g":'4.2',"d":'Gramplet om de opmerkingen van de actieve persoon te bewerken',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Aanverwanten-gramplet',"v":'1.0.21',"g":'4.2',"d":'Gramplet toont de verwanten in een relatie',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Tijdslijnstamboom',"v":'0.1.35',"g":'4.2',"d":'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Gegevensbestand voor \'GoogleEarth\' aanmaken en openen.',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Snelscherm voor zoeken',"v":'1.0.21',"g":'4.2',"d":'Snelscherm om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
@@ -33,7 +34,7 @@
 {"t":'Quickreport',"i":'Query Quickview',"n":'Snelscherm voor zoeken',"v":'1.0.21',"g":'4.2',"d":'Snelscherm om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Aanverwanten-gramplet',"v":'1.0.21',"g":'4.2',"d":'Gramplet toont de verwanten in een relatie',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramps View',"i":'HtreePedigreeView',"n":'H-Tree Pedigree',"v":'0.0.5',"g":'4.2',"d":'The view shows a space-efficient pedigree with ancestors of the selected person',"z":'HtreePedigreeView.addon.tgz'}
-{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Tijdslijnstamboom',"v":'0.1.33',"g":'4.2',"d":'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Tijdslijnstamboom',"v":'0.1.35',"g":'4.2',"d":'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Grafiekscherm',"v":'1.0.43',"g":'4.2',"d":'Dynamische grafiek van de relaties',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'\'Sqlite\'-import',"v":'1.0.25',"g":'4.2',"d":'\'Sqlite\' is een veel gebruikt lokaal gegevensbestandsformaat',"z":'Sqlite.addon.tgz'}

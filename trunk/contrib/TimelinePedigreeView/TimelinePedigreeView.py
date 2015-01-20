@@ -23,6 +23,8 @@
 
 # $Id: TimelinePedigreeView.py 13881 2009-12-21 13:43:50Z flix007 $
 
+from __future__ import print_function, unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -30,26 +32,20 @@
 #-------------------------------------------------------------------------
 
 from cgi import escape
-import math
-import cPickle as pickle
+import sys
+if sys.version_info[0] < 3:
+    import cPickle as pickle
+else:
+    import pickle
 
 #-------------------------------------------------------------------------
 #
 # GTK/GI modules
 #
 #-------------------------------------------------------------------------
-from gi.repository import Pango
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gramps.gen.constfunc import is_quartz
-if is_quartz():
-    cairo_available = False
-else:
-    try:
-        import cairo
-        cairo_available = True
-    except:
-        cairo_available = False
+from gi.repository import Gtk, Gdk
+from gi.repository import PangoCairo
+import cairo
 
 #-------------------------------------------------------------------------
 #
@@ -74,11 +70,11 @@ from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
-    _trans = glocale.get_addon_translator(__file__)
+    trans = glocale.get_addon_translator(__file__)
 except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
-ngettext = _trans.ngettext
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
 
 #-------------------------------------------------------------------------
 #
@@ -94,35 +90,7 @@ _BURI = _('short for buried|bur.')
 _CREM = _('short for cremated|crem.')
 
 
-class _PersonBoxWidgetOld(Gtk.Button):
-    """Old widget used before revision #5646"""
-    def __init__(self, format_helper, person, maxlines, image=None):
-        if person:
-            Gtk.Button.__init__(self,
-                                format_helper.format_person(person, maxlines))
-            gender = person.get_gender()
-            if gender == gramps.gen.lib.Person.MALE:
-                self.modify_bg(Gtk.STATE_NORMAL,
-                               self.get_colormap().alloc_color("#F5FFFF"))
-            elif gender == gramps.gen.lib.Person.FEMALE:
-                self.modify_bg(Gtk.STATE_NORMAL,
-                               self.get_colormap().alloc_color("#FFF5FF"))
-            else:
-                self.modify_bg(Gtk.STATE_NORMAL,
-                               self.get_colormap().alloc_color("#FFFFF5"))
-        else:
-            Gtk.Button.__init__(self, "               ")
-            #self.set_sensitive(False)
-        self.format_helper = format_helper
-        self.image = image
-        self.set_alignment(0.0, 0.0)
-        white = self.get_colormap().alloc_color("white")
-        self.modify_bg(Gtk.STATE_ACTIVE, white)
-        self.modify_bg(Gtk.STATE_PRELIGHT, white)
-        self.modify_bg(Gtk.STATE_SELECTED, white)
-
-
-class _PersonWidgetBase:
+class _PersonWidgetBase(object):
     """
     Default set up for person widgets.
     Set up drag options and button release events.
@@ -142,7 +110,7 @@ class _PersonWidgetBase:
             self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
                                 [DdTargets.PERSON_LINK.target()]+
                                 [t.target() for t in DdTargets._all_text_types],
-                                Gdk.ACTION_COPY)
+                                Gdk.DragAction.COPY)
 
     def drag_begin_cb(self, widget, data):
         """Set up some inital conditions for drag. Set up icon."""
@@ -166,7 +134,7 @@ class _PersonWidgetBase:
         Default action for release event from mouse.
         Change active person to current.
         """
-        if event.button == 1 and event.type == Gdk.BUTTON_RELEASE:
+        if event.button == 1 and event.type == Gdk.EventType.BUTTON_RELEASE:
             self.view.on_childmenu_changed(None, self.person.get_handle())
             return True
         return False
@@ -187,8 +155,7 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         self.alive = alive
         self.maxlines = maxlines
         self.hightlight = False
-        self.connect("expose_event", self.expose)
-        self.connect("realize", self.realize)
+        self.connect("draw", self.on_draw)
         self.text = ""
         if self.person:
             self.text = self.format_helper.format_person(self.person, self.maxlines, True)
@@ -215,17 +182,14 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
             self.bordercolor = (0, 0, 0)
         self.image = image
         try:
-            self.img_surf = cairo.ImageSurface.create_from_png(image)
+            with open(image, 'rb') as fh: # this is to avoid bug with cairo 1.8.8
+                self.img_surf = cairo.ImageSurface.create_from_png(fh)
         except:
             self.image = False
         # enable mouse-over
         self.connect("enter-notify-event", self.on_enter_cb)
         # enable mouse-out
         self.connect("leave-notify-event", self.on_leave_cb)
-        self.set_size_request(120, 25)
-        # GTK object use in realize and expose methods
-        self.context = None
-        self.textlayout = None
 
     def on_enter_cb(self, widget, event):
         """On mouse-over highlight border"""
@@ -238,247 +202,128 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         self.hightlight = False
         self.queue_draw()
 
-    def realize(self, widget):
+    def do_size_request(self, requisition):
         """
-        Necessary actions when the widget is instantiated on a particular
-        display. Print text and resize element.
+        Overridden method to handle size request events.
         """
-        self.context = self.window.cairo_create()
-        self.textlayout = self.context.create_layout()
-        self.textlayout.set_font_description(self.get_style().font_desc)
-        self.textlayout.set_markup(self.text)
-        size = self.textlayout.get_pixel_size()
+        textlayout = self.create_pango_layout(self.text)
+        textlayout.set_font_description(self.get_style().font_desc)
+        textlayout.set_markup(self.text)
+        size = textlayout.get_pixel_size()
         xmin = size[0] + 12
         ymin = size[1] + 11
         if self.image:
             xmin += self.img_surf.get_width()
             ymin = max(ymin, self.img_surf.get_height()+4)
-        self.set_size_request(max(xmin, 120), max(ymin, 25))
 
-    def expose(self, widget, event):
+        requisition.width = max(xmin, 120)
+        requisition.height =  max(ymin, 25)
+
+    def do_get_preferred_width(self):
+        """ GTK3 uses width for height sizing model. This method will 
+            override the virtual method
+        """
+        req = Gtk.Requisition()
+        self.do_size_request(req)
+        return req.width, req.width
+
+    def do_get_preferred_height(self):
+        """ GTK3 uses width for height sizing model. This method will 
+            override the virtual method
+        """
+        req = Gtk.Requisition()
+        self.do_size_request(req)
+        return req.height, req.height
+
+    def on_draw(self, widget, context):
         """
         Redrawing the contents of the widget.
         Creat new cairo object and draw in it all (borders, background and etc.)
         witout text.
         """
         alloc = self.get_allocation()
-        self.context = self.window.cairo_create()
 
         # widget area for debugging
-        #self.context.rectangle(0, 0, alloc.width, alloc.height)
-        #self.context.set_source_rgb(1, 0, 1)
-        #self.context.fill_preserve()
-        #self.context.stroke()
+        #context.rectangle(0, 0, alloc.width, alloc.height)
+        #context.set_source_rgb(1, 0, 1)
+        #context.fill_preserve()
+        #context.stroke()
 
         # Create box shape and store path
-        self.context.move_to(0, 5)
-        self.context.curve_to(0, 2, 2, 0, 5, 0)
-        self.context.line_to(alloc.width-8, 0)
-        self.context.curve_to(alloc.width-5, 0,
+        context.move_to(0, 5)
+        context.curve_to(0, 2, 2, 0, 5, 0)
+        context.line_to(alloc.width-8, 0)
+        context.curve_to(alloc.width-5, 0,
                               alloc.width-3, 2,
                               alloc.width-3, 5)
-        self.context.line_to(alloc.width-3, alloc.height-8)
-        self.context.curve_to(alloc.width-3, alloc.height-5,
+        context.line_to(alloc.width-3, alloc.height-8)
+        context.curve_to(alloc.width-3, alloc.height-5,
                               alloc.width-5, alloc.height-3,
                               alloc.width-8, alloc.height-3)
-        self.context.line_to(5, alloc.height-3)
-        self.context.curve_to(2, alloc.height-3,
+        context.line_to(5, alloc.height-3)
+        context.curve_to(2, alloc.height-3,
                               0, alloc.height-5,
                               0, alloc.height-8)
-        self.context.close_path()
-        path = self.context.copy_path()
+        context.close_path()
+        path = context.copy_path()
 
         # shadow
-        self.context.save()
-        self.context.translate(3, 3)
-        self.context.new_path()
-        self.context.append_path(path)
-        self.context.set_source_rgba(*(self.bordercolor[:3] + (0.4,)))
-        self.context.fill_preserve()
-        self.context.set_line_width(0)
-        self.context.stroke()
-        self.context.restore()
+        context.save()
+        context.translate(3, 3)
+        context.new_path()
+        context.append_path(path)
+        context.set_source_rgba(*(self.bordercolor[:3] + (0.4,)))
+        context.fill_preserve()
+        context.set_line_width(0)
+        context.stroke()
+        context.restore()
 
         # box shape used for clipping
-        self.context.append_path(path)
-        self.context.clip()
+        context.append_path(path)
+        context.clip()
 
         # background
-        self.context.append_path(path)
-        self.context.set_source_rgb(*self.bgcolor[:3])
-        self.context.fill_preserve()
-        self.context.stroke()
+        context.append_path(path)
+        context.set_source_rgb(*self.bgcolor[:3])
+        context.fill_preserve()
+        context.stroke()
 
         # image
         if self.image:
-            self.context.set_source_surface(self.img_surf,
+            context.set_source_surface(self.img_surf,
                 alloc.width-4-self.img_surf.get_width(), 1)
-            self.context.paint()
+            context.paint()
 
         # text
-        self.context.move_to(5, 4)
-        self.context.set_source_rgb(0, 0, 0)
-        self.context.show_layout(self.textlayout)
+        context.move_to(5, 4)
+        context.set_source_rgb(0, 0, 0)
+        textlayout = self.create_pango_layout(self.text)
+        textlayout.set_font_description(self.get_style().font_desc)
+        textlayout.set_markup(self.text)
+        PangoCairo.show_layout(context, textlayout)
 
         # text extents
-        #self.context.set_source_rgba(1, 0, 0, 0.5)
+        #context.set_source_rgba(1, 0, 0, 0.5)
         #s = self.textlayout.get_pixel_size()
-        #self.context.set_line_width(1)
-        #self.context.rectangle(5.5, 4.5, s[0]-1, s[1]-1)
-        #self.context.stroke()
+        #context.set_line_width(1)
+        #context.rectangle(5.5, 4.5, s[0]-1, s[1]-1)
+        #context.stroke()
 
         # Mark deceased
         if self.person and not self.alive:
-            self.context.set_line_width(2)
-            self.context.move_to(0, 10)
-            self.context.line_to(10, 0)
-            self.context.stroke()
+            context.set_line_width(2)
+            context.move_to(0, 10)
+            context.line_to(10, 0)
+            context.stroke()
 
         #border
         if self.hightlight:
-            self.context.set_line_width(5)
+            context.set_line_width(5)
         else:
-            self.context.set_line_width(2)
-        self.context.append_path(path)
-        self.context.set_source_rgb(*self.bordercolor[:3])
-        self.context.stroke()
-
-class PersonBoxWidget(Gtk.DrawingArea, _PersonWidgetBase):
-    """
-    Draw person box using GC library.
-    For version PyGTK < 2.8
-    """
-    def __init__(self, view, format_helper, person, alive, maxlines, image=None):
-        Gtk.DrawingArea.__init__(self)
-        _PersonWidgetBase.__init__(self, view, format_helper, person)
-                        # Required for popup menu and other right mouse button click
-        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK
-                        | Gdk.EventMask.BUTTON_RELEASE_MASK
-                        # Required for tooltip and mouse-over
-                        | Gdk.EventMask.ENTER_NOTIFY_MASK
-                        # Required for tooltip and mouse-over
-                        | Gdk.EventMask.LEAVE_NOTIFY_MASK)
-        self.maxlines = maxlines
-        self.alive = alive
-        try:
-            self.image = Gdk.pixbuf_new_from_file(image)
-        except:
-            self.image = None
-        self.connect("expose_event", self.expose)
-        self.connect("realize", self.realize)
-        text = ""
-        if self.person:
-            text = self.format_helper.format_person(self.person, self.maxlines)
-            # enable mouse-over
-            self.connect("enter-notify-event", self.on_enter_cb)
-            self.connect("leave-notify-event", self.on_leave_cb)
-        self.textlayout = self.create_pango_layout(text)
-        size = self.textlayout.get_pixel_size()
-        xmin = size[0] + 12
-        ymin = size[1] + 11
-        if self.image:
-            xmin += self.image.get_width()
-            ymin = max(ymin, self.image.get_height()+4)
-        self.set_size_request(max(xmin, 120), max(ymin, 25))
-        # GTK object use in realize and expose methods
-        self.bg_gc = None
-        self.text_gc = None
-        self.border_gc = None
-        self.shadow_gc = None
-
-    def on_enter_cb(self, widget, event):
-        """On mouse-over highlight border"""
-        self.border_gc.line_width = 3
-        self.queue_draw()
-
-    def on_leave_cb(self, widget, event):
-        """On mouse-out normal border"""
-        self.border_gc.line_width = 1
-        self.queue_draw()
-
-    def realize(self, widget):
-        """
-        Necessary actions when the widget is instantiated on a particular
-        display. Creat all elements for person box(bg_gc, text_gc, border_gc,
-        shadow_gc), and setup they style.
-        """
-        self.bg_gc = self.window.new_gc()
-        self.text_gc = self.window.new_gc()
-        self.border_gc = self.window.new_gc()
-        self.border_gc.line_style = Gdk.LINE_SOLID
-        self.border_gc.line_width = 1
-        self.shadow_gc = self.window.new_gc()
-        self.shadow_gc.line_style = Gdk.LINE_SOLID
-        self.shadow_gc.line_width = 4
-        if self.person:
-            if self.alive and self.person.get_gender() == gramps.gen.lib.Person.MALE:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#b9cfe7"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#204a87"))
-            elif self.person.get_gender() == gramps.gen.lib.Person.MALE:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#b9cfe7"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#000000"))
-            elif self.alive and \
-                self.person.get_gender() == gramps.gen.lib.Person.FEMALE:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#ffcdf1"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#87206a"))
-            elif self.person.get_gender() == gramps.gen.lib.Person.FEMALE:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#ffcdf1"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#000000"))
-            elif self.alive:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#f4dcb7"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#8f5902"))
-            else:
-                self.bg_gc.set_foreground(
-                    self.get_colormap().alloc_color("#f4dcb7"))
-                self.border_gc.set_foreground(
-                    self.get_colormap().alloc_color("#000000"))
-        else:
-            self.bg_gc.set_foreground(
-                self.get_colormap().alloc_color("#eeeeee"))
-            self.border_gc.set_foreground(
-                self.get_colormap().alloc_color("#777777"))
-        self.shadow_gc.set_foreground(
-            self.get_colormap().alloc_color("#999999"))
-
-
-    def expose(self, widget, event):
-        """
-        Redrawing the contents of the widget.
-        Drawing borders and person info on exist elements.
-        """
-        alloc = self.get_allocation()
-        # shadow
-        self.window.draw_line(self.shadow_gc, 3, alloc.height-1,
-                              alloc.width, alloc.height-1)
-        self.window.draw_line(self.shadow_gc, alloc.width-1, 3,
-                              alloc.width-1, alloc.height)
-        # box background
-        self.window.draw_rectangle(self.bg_gc, True, 1, 1,
-                                   alloc.width-5, alloc.height-5)
-        # text
-        if self.person:
-            self.window.draw_layout(self.text_gc, 5, 4, self.textlayout)
-        # image
-        if self.image:
-            self.window.draw_pixbuf(self.text_gc, self.image, 0, 0,
-                                    alloc.width-4-self.image.get_width(), 1)
-        # border
-        if self.border_gc.line_width > 1:
-            self.window.draw_rectangle(self.border_gc, False, 1, 1,
-                                       alloc.width-6, alloc.height-6)
-        else:
-            self.window.draw_rectangle(self.border_gc, False, 0, 0,
-                                       alloc.width-4, alloc.height-4)
+            context.set_line_width(2)
+        context.append_path(path)
+        context.set_source_rgb(*self.bordercolor[:3])
+        context.stroke()
 
 #-------------------------------------------------------------------------
 #
@@ -494,7 +339,6 @@ class TimelinePedigreeView(NavigationView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Timeline pedigree'),
                                       pdata, dbstate, uistate, 
-                                      dbstate.db.get_bookmarks(), 
                                       PersonBookmarks,
                                       nav_group)
 
@@ -567,7 +411,6 @@ class TimelinePedigreeView(NavigationView):
         self.key_active_changed = None
         # GTK objects
         self.scrolledwindow = None
-        self.table = None
         self.gtklayout = None
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
@@ -612,20 +455,11 @@ class TimelinePedigreeView(NavigationView):
                              | Gdk.EventMask.BUTTON_RELEASE_MASK
                              | Gdk.EventMask.BUTTON1_MOTION_MASK)
         
-        self.gtklayout.connect("expose_event", self.gtklayout_expose)
+        self.gtklayout.connect("draw", self.gtklayout_draw)
         self.gtklayout.connect("button-press-event", self.bg_button_press_cb)
         self.gtklayout.connect("button-release-event", self.bg_button_release_cb)
         self.gtklayout.connect("motion-notify-event", self.bg_motion_notify_event_cb)
 
-        #self.table = Gtk.Table(1, 1, False)
-        #self.table.set_row_spacings(0)
-        #self.table.set_col_spacings(0)
-
-        #event_box.add(self.table)
-        #event_box.add(self.gtklayout)        
-        #event_box.get_parent().set_shadow_type(Gtk.SHADOW_NONE)
-        #self.scrolledwindow.add_with_viewport(event_box)
-        
         self.scrolledwindow.add(self.gtklayout)
 
         return self.scrolledwindow
@@ -700,7 +534,7 @@ class TimelinePedigreeView(NavigationView):
         """
         try:
             self.Tree_Rebuild()
-        except AttributeError, msg:
+        except AttributeError(msg):
             RunDatabaseRepair(str(msg))
 
     def change_db(self, db):
@@ -776,7 +610,7 @@ class TimelinePedigreeView(NavigationView):
         # Create PersonBoxes, do calculations later needed for positioning
         LstDescendants = self.Tree_Find_Relatives(layout_widget, person, 0, generations[0], 1)
         LstAncestors   = self.Tree_Find_Relatives(layout_widget, person, 0, generations[1], -1, LstDescendants[1])
-        # print "LstDescendants[0] is " + name_displayer.display(LstDescendants[0])
+        # print ("LstDescendants[0] is " + name_displayer.display(LstDescendants[0]))
         
         TimeLineHeight = 0
         if self.use_timeline:
@@ -823,8 +657,9 @@ class TimelinePedigreeView(NavigationView):
                     self.gtklayout_lines.append([Tick[1], int(5*TimeLineHeight/8), Tick[1], int(7*TimeLineHeight/8), 1])
                     if Tick[0]:
                         label = Gtk.Label(Tick[0])
-                        label.set_justify(Gtk.JUSTIFY_CENTER)
-                        layout_widget.put(label, int(Tick[1]-label.size_request()[0]/2), 1*TimeLineHeight/4)
+                        label.set_justify(Gtk.Justification.CENTER)
+                        label.show()
+                        layout_widget.put(label, int(Tick[1]-label.get_preferred_size()[0].width/2), 1*TimeLineHeight/4)
             
         
         layout_widget.show_all()
@@ -842,8 +677,9 @@ class TimelinePedigreeView(NavigationView):
             self.gtklayout_lines.append([BoxRight, BranchTop+BranchData[2][1]-1, BoxRight-Direction*BranchData[2][0], BranchTop+BranchData[2][1]-1])
 
         # Move personbox to its required position
-        pbwSize = BranchData[1].size_request()
-        xBox = BoxRight - pbwSize[0]
+        pbwSize = BranchData[1].get_preferred_size()[0]
+        
+        xBox = BoxRight - pbwSize.width
         yBox = BranchTop + BranchData[2][4]
         layout_widget.move(BranchData[1], int(xBox), int(yBox))
 
@@ -854,13 +690,13 @@ class TimelinePedigreeView(NavigationView):
                 color = BranchData[1].bgcolor[:3] + (0.7,)
             except AttributeError:
                 color = (211/256.0, 215/256.0, 207/256.0)[:3] + (0.7,)
-            self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize[0], yBox, xBox + 5, yBox+pbwSize[1], color])   # +5 for overlapping with the box
+            self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize.width, yBox, xBox + 5, yBox+pbwSize.height, color])   # +5 for overlapping with the box
         
         # Calculate position of connection point of this box
-        yBoxConnection = yBox + BranchData[1].size_request()[1]/2
+        yBoxConnection = yBox + BranchData[1].get_preferred_size()[0].height/2
         xBoxConnection = BoxRight
         if Direction > 0:
-            xBoxConnection -= pbwSize[0]
+            xBoxConnection -= pbwSize.width
         
         # calculate x-position of vertical line
         xvline = xBoxConnection - Direction * DistX/2           # default for descendants and if date of marriage not known
@@ -901,15 +737,16 @@ class TimelinePedigreeView(NavigationView):
                 if family:
                     text = self.format_helper.format_relation( family, BoxSizes[4])
             label = Gtk.Label(text)
-            label.set_justify(Gtk.JUSTIFY_LEFT)
+            label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
             if family_handle:
                 label.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
                 label.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
                 label.connect("button-press-event", self.family_button_press_cb, family_handle)
+            label.show()
             
-            layout_widget.put(label, xvline + 5, int(yBoxConnection-label.size_request()[1]/2))
+            layout_widget.put(label, xvline + 5, int(yBoxConnection-label.get_preferred_size()[0].height/2))
         
         return [xBoxConnection, yBoxConnection]
         
@@ -971,10 +808,7 @@ class TimelinePedigreeView(NavigationView):
         else:
             alive = True
 
-        if cairo_available:
-            pbw = PersonBoxWidgetCairo( self, self.format_helper, person, alive, maxlines, image);
-        else:
-            pbw = PersonBoxWidget( self, self.format_helper, person, alive, maxlines, image);
+        pbw = PersonBoxWidgetCairo( self, self.format_helper, person, alive, maxlines, image);
         if maxlines < 7:
             pbw.set_tooltip_text(self.format_helper.format_person(person, 11))
 
@@ -988,8 +822,8 @@ class TimelinePedigreeView(NavigationView):
                             Relative.get_handle(), family_handle)
                 pbw.force_mouse_over = True
         layout_widget.put(pbw, x, y)
-        #table_widget.attach(pbw,x,x+w,y,y+h,Gtk.FILL,Gtk.FILL,0,0)
-        
+        pbw.show()
+
         return pbw
     
     def Tree_Find_Relatives(self, layout_widget, person, genDepth, genMax, Direction, Widget = None, CalledFromPerson = None):
@@ -1040,7 +874,7 @@ class TimelinePedigreeView(NavigationView):
         else:
             pbw = self.Tree_Create_PersonBox( layout_widget, person, 100, 100, BoxMaxLines, CalledFromPerson)
         
-        pbwSize = pbw.size_request()
+        pbwSize = pbw.get_preferred_size()[0]
         
         birthyear = None
         birthdate = self.Tree_EstimateBirth(person)
@@ -1059,7 +893,7 @@ class TimelinePedigreeView(NavigationView):
         
         Branch_Width = 0
         if Direction > 0:
-            Branch_Width = pbwSize[0]
+            Branch_Width = pbwSize.width
                
         Child_Branch_Height = 0
         RelLst = []
@@ -1078,27 +912,27 @@ class TimelinePedigreeView(NavigationView):
             Ret[4] = DeltaX
             RelLst.append(Ret);
             
-            MaxRelWidth = max(MaxRelWidth, Ret[1].size_request()[0])
+            MaxRelWidth = max(MaxRelWidth, Ret[1].get_preferred_size()[0].width)
             
-            yRelConnect.append( yRelBranchTop + Ret[2][4] + Ret[1].size_request()[1]/2 )
+            yRelConnect.append( yRelBranchTop + Ret[2][4] + Ret[1].get_preferred_size()[0].height/2 )
             yRelBranchTop = yRelBranchTop + Ret[2][1]
-        
+
         yPersonBoxTop = DistY / 2       # y-Position of PersonBox relative to BranchTop
         if len( yRelConnect ) > 0:
-            yPersonBoxTop = (max(yRelConnect) + min(yRelConnect)) / 2 - pbwSize[1]/2
+            yPersonBoxTop = (max(yRelConnect) + min(yRelConnect)) / 2 - pbwSize.height/2
 
         if self.use_timeline and Direction > 0:
             Branch_Width = max(Branch_Width, lifespan * 11)
         elif not self.use_timeline:
             negWidth = 0
             if Direction > 0:
-                DeltaX = DistX + pbwSize[0]
+                DeltaX = DistX + pbwSize.width
             else:
                 DeltaX = DistX + MaxRelWidth
             
             Branch_Width = 0
             if Direction > 0:
-                Branch_Width = pbwSize[0]
+                Branch_Width = pbwSize.width
             
             for Ret in RelLst:
                 Branch_Width = max(Branch_Width, Ret[2][0] + DeltaX)
@@ -1112,13 +946,13 @@ class TimelinePedigreeView(NavigationView):
             yChildBranchTop = DeltaY
             Branch_Height += DeltaY
         
-        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize[1] + DistY/2)
+        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize.height + DistY/2) 
         
         return [ person, pbw, (Branch_Width, Branch_Height, negWidth, Child_Branch_Height, yPersonBoxTop, yChildBranchTop), RelLst, birthyear, lifespan ]
     
     def Tree_EstimateBirth(self, person, callerHandles = []):
         if not person:
-            # print "Estimate Birth called with no person"
+            # print ("Estimate Birth called with no person")
             return None
         
         if person.handle in self._birth_cache:
@@ -1133,8 +967,8 @@ class TimelinePedigreeView(NavigationView):
             birthdate = birth.get_date_object()
         else:
             #if len(callerHandleList) == 1:
-            #    print "==== Birth estimate requested for " + name_displayer.display(person)
-            #print "Estimate birthdate by looking at children of " + name_displayer.display(person)
+            #    print ("==== Birth estimate requested for " + name_displayer.display(person))
+            #print ("Estimate birthdate by looking at children of " + name_displayer.display(person))
             ChildBirthDates = []        # Estimate birth by looking at children
             family_handles = person.get_family_handle_list()
             for family_handle in family_handles:
@@ -1150,7 +984,7 @@ class TimelinePedigreeView(NavigationView):
             if len(ChildBirthDates) > 0:
                 birthdate = min( ChildBirthDates ) - 25
             else:                   # Estimate by looking at parents if there was no success
-                #print "Estimate birthdate by looking at parents of " + name_displayer.display(person)
+                #print ("Estimate birthdate by looking at parents of " + name_displayer.display(person))
                 ParentDates = []
                 family_handle = person.get_main_parents_family_handle()
                 family = self.dbstate.db.get_family_from_handle(family_handle)
@@ -1170,60 +1004,36 @@ class TimelinePedigreeView(NavigationView):
                     birthdate = min( ParentDates ) + 25
         
         if len(callerHandleList) == 1 and birthdate is None:
-            print "Cannot estimate birth of " + name_displayer.display(person)
+            print ("Cannot estimate birth of " + name_displayer.display(person))
         
         if len(callerHandleList) == 1:
             self._birth_cache[person.handle] = birthdate
                 
         #elif callerHandle == 0:
-        #    print "Estimate for " + name_displayer.display(person) + " is", birthdate
+        #    print ("Estimate for " + name_displayer.display(person) + " is", birthdate)
         
         return birthdate
                     
-    def gtklayout_expose_old(self, area, event):
-        window = self.gtklayout.get_bin_window()
-        size =  self.gtklayout.get_size()
-        if window:
-            gc = window.new_gc()
-            gc.line_style = Gdk.LINE_SOLID
-            gc.line_width = 3
-            
-            for box in self.gtklayout_boxes:
-                window.draw_rectangle(gc, False, int(box[0]), int(box[1]), int(box[2]-box[0]), int(box[3]-box[1]))
-            for line in self.gtklayout_lines:
-                if len(line) == 4:
-                    gc.line_width = 3
-                else:
-                    gc.line_width = line[4]
-                window.draw_line(gc, int(line[0]), int(line[1]), int(line[2]), int(line[3]))
-   
-    def gtklayout_expose(self, area, event):
-        #window = self.gtklayout.get_bin_window()
-        window = self.gtklayout.bin_window
-        if window:   
-            # Create the cairo context
-            cr = window.cairo_create()
+    def gtklayout_draw(self, layout, cr):
+        cr.save()
 
-            # Restrict Cairo to the exposed area; avoid extra work
-            cr.rectangle(event.area.x, event.area.y, event.area.width, event.area.height)
-            cr.clip()
-            
-            for box in self.gtklayout_boxes:
-                cr.set_source_rgba(box[4][0], box[4][1], box[4][2], box[4][3])
-                cr.rectangle(int(box[0]), int(box[1]), int(box[2]-box[0]), int(box[3]-box[1]))
-                cr.fill()
+        x = self.scrolledwindow.get_hadjustment().get_value()
+        y = self.scrolledwindow.get_vadjustment().get_value()
+        cr.translate(-x, -y)
 
-            cr.set_source_rgb(0.0, 0.0, 0.0)
-            for line in self.gtklayout_lines:
-                #if len(line) == 4:
-                #    gc.line_width = 3
-                #else:
-                #    gc.line_width = line[4]
-                cr.move_to(int(line[0]), int(line[1]))
-                cr.line_to(int(line[2]), int(line[3]))
-                cr.stroke()
-   
-   
+        for box in self.gtklayout_boxes:
+            cr.set_source_rgba(box[4][0], box[4][1], box[4][2], box[4][3])
+            cr.rectangle(int(box[0]), int(box[1]), int(box[2]-box[0]), int(box[3]-box[1]))
+            cr.fill()
+
+        cr.set_source_rgb(0.0, 0.0, 0.0)
+        for line in self.gtklayout_lines:
+            cr.move_to(int(line[0]), int(line[1]))
+            cr.line_to(int(line[2]), int(line[3]))
+            cr.stroke()
+      
+        cr.restore()
+
     def home(self, menuitem):
         """Change root person to default person for database."""
         defperson = self.dbstate.db.get_default_person()
@@ -1298,10 +1108,10 @@ class TimelinePedigreeView(NavigationView):
 
     def on_show_option_menu_cb(self, obj, event, data=None):
         """Right click option menu."""
-        menu = Gtk.Menu()
-        self.add_nav_portion_to_menu(menu)
-        self.add_settings_to_menu(menu)
-        menu.popup(None, None, None, 0, event.time)
+        self.menu = Gtk.Menu()
+        self.add_nav_portion_to_menu(self.menu)
+        self.add_settings_to_menu(self.menu)
+        self.menu.popup(None, None, None, None, 0, event.time)
         return True
 
     def bg_button_press_cb(self, widget, event):
@@ -1309,44 +1119,44 @@ class TimelinePedigreeView(NavigationView):
         Enter in scroll mode when mouse button pressed in background
         or call option menu.
         """
-        if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
-            widget.window.set_cursor(Gdk.Cursor(Gdk.FLEUR))
+        if event.button == 1 and event.type == Gdk.EventType.BUTTON_PRESS:
+            widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.FLEUR))
             self._last_x = event.x
             self._last_y = event.y
             self._in_move = True
             return True
-        elif event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
+        elif event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             self.on_show_option_menu_cb(widget, event)
             return True
         return False
 
     def bg_button_release_cb(self, widget, event):
         """Exit from scroll mode when button release."""
-        if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
+        if event.button == 1 and event.type == Gdk.EventType.BUTTON_RELEASE:
             self.bg_motion_notify_event_cb(widget, event)
-            widget.window.set_cursor(None)
+            widget.get_window().set_cursor(None)
             self._in_move = False
             return True
         return False
 
     def bg_motion_notify_event_cb(self, widget, event):
         """Function for motion notify events for drag and scroll mode."""
-        if self._in_move and (event.type == Gdk.MOTION_NOTIFY or \
-           event.type == Gdk.BUTTON_RELEASE):
+        if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
+           event.type == Gdk.EventType.BUTTON_RELEASE):
             window = widget.get_parent()
             hadjustment = window.get_hadjustment()
             vadjustment = window.get_vadjustment()
             self.update_scrollbar_positions(vadjustment,
-                vadjustment.value - (event.y - self._last_y))
+                vadjustment.get_value() - (event.y - self._last_y))
             self.update_scrollbar_positions(hadjustment,
-                hadjustment.value - (event.x - self._last_x))
+                hadjustment.get_value() - (event.x - self._last_x))
             return True
         return False
 
     def update_scrollbar_positions(self, adjustment, value):
         """Controle value then try setup in scrollbar."""
-        if value > (adjustment.upper - adjustment.page_size):
-            adjustment.set_value(adjustment.upper - adjustment.page_size)
+        if value > (adjustment.get_upper() - adjustment.get_page_size()):
+            adjustment.set_value(adjustment.get_upper() - adjustment.get_page_size())
         else:
             adjustment.set_value(value)
         return True
@@ -1356,11 +1166,12 @@ class TimelinePedigreeView(NavigationView):
         Function change scroll direction to horizontally
         if variable self.scroll_direction setup.
         """
-        if self.scroll_direction and event.type == Gdk.SCROLL:
-            if event.direction == Gdk.SCROLL_UP:
-                event.direction = Gdk.SCROLL_LEFT
-            elif event.direction == Gdk.SCROLL_DOWN:
-                event.direction = Gdk.SCROLL_RIGHT
+        if self.scroll_direction and event.type == Gdk.EventType.SCROLL:
+            delta = event.get_scroll_deltas()[2]
+            if event.direction == Gdk.ScrollDirection.UP or delta < 0:
+                event.direction = Gdk.ScrollDirection.LEFT
+            elif event.direction == Gdk.ScrollDirection.DOWN or delta > 0:
+                event.direction = Gdk.ScrollDirection.RIGHT
         return False
         
     def family_button_press_cb(self, obj, event, family_handle):
@@ -1369,10 +1180,10 @@ class TimelinePedigreeView(NavigationView):
         or submenu for family for mouse right click.
         And setup plug for button press on person widget.
         """
-        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
+        if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             # self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
-            print "Menu request"
-        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
+            print ("Menu request")
+        elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             family = self.dbstate.db.get_family_from_handle(family_handle)
             if family:
                 try:
@@ -1388,9 +1199,9 @@ class TimelinePedigreeView(NavigationView):
         or submenu for person for mouse right click.
         And setup plug for button press on person widget.
         """
-        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
+        if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
-        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
+        elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             self.edit_person_cb(obj, person_handle)
         return True
 
@@ -1400,10 +1211,10 @@ class TimelinePedigreeView(NavigationView):
         on family line or call full submenu for mouse right click.
         And setup plug for button press on family line.
         """
-        if event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
+        if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             self.build_relation_nav_menu_cb(obj, event, family_handle)
             return True
-        elif event.button == 1 and event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
+        elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             self.edit_family_cb(obj, family_handle)
             return True
         return True
@@ -1414,10 +1225,10 @@ class TimelinePedigreeView(NavigationView):
         Callback function for not full family for mouse left button double click
         on missing persons or call submenu for mouse right click.
         """
-        if event.button == 1 and event.type == event.type == getattr(Gdk.EventType, "2BUTTON_PRESS"):
+        if event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             self.add_parents_cb(obj, person_handle, family_handle)
             return True
-        elif event.button == 3 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
+        elif event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             self.build_missing_parent_nav_menu_cb(obj, event, person_handle,
                                                   family_handle)
             return True
@@ -1436,7 +1247,7 @@ class TimelinePedigreeView(NavigationView):
                 if child:
                     self.change_active(child)
             elif len(childlist) > 1:
-                myMenu = Gtk.Menu()
+                self.myMenu = Gtk.Menu()
                 for child_handle in childlist:
                     child = self.dbstate.db.get_person_from_handle(child_handle)
                     cname = escape(name_displayer.display(child))
@@ -1448,16 +1259,16 @@ class TimelinePedigreeView(NavigationView):
                     label.show()
                     label.set_alignment(0, 0)
                     menuitem = Gtk.ImageMenuItem(None)
-                    go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                        Gtk.ICON_SIZE_MENU)
+                    go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                        Gtk.IconSize.MENU)
                     go_image.show()
                     menuitem.set_image(go_image)
                     menuitem.add(label)
-                    myMenu.append(menuitem)
+                    self.myMenu.append(menuitem)
                     menuitem.connect("activate", self.on_childmenu_changed,
                                      child_handle)
                     menuitem.show()
-                myMenu.popup(None, None, None, 0, 0)
+                self.myMenu.popup(None, None, None, 0, 0)
             return 1
         return 0
 
@@ -1573,11 +1384,11 @@ class TimelinePedigreeView(NavigationView):
         #    (Gtk.STOCK_GO_BACK, self.back_clicked, not hobj.at_front()),
         #    (Gtk.STOCK_GO_FORWARD, self.fwd_clicked, not hobj.at_end()),
             (Gtk.STOCK_HOME, self.home, 1),
-            (None, None, 0)
+            #(None, None, 0)
         ]
 
         for stock_id, callback, sensitivity in entries:
-            item = Gtk.ImageMenuItem(stock_id)
+            item = Gtk.ImageMenuItem.new_from_stock(stock_id, None)
             item.set_sensitive(sensitivity)
             if callback:
                 item.connect("activate", callback)
@@ -1604,8 +1415,8 @@ class TimelinePedigreeView(NavigationView):
         item.set_submenu(Gtk.Menu())
         scroll_direction_menu = item.get_submenu()
 
-        scroll_direction_image = Gtk.image_new_from_stock(Gtk.STOCK_APPLY,
-                                                       Gtk.ICON_SIZE_MENU)
+        scroll_direction_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
+                                                          Gtk.IconSize.MENU)
         scroll_direction_image.show()
 
         entry = Gtk.ImageMenuItem(_("Top <-> Bottom"))
@@ -1631,8 +1442,8 @@ class TimelinePedigreeView(NavigationView):
         item.set_submenu(Gtk.Menu())
         DescendantSize_menu = item.get_submenu()
 
-        current_size_image = Gtk.image_new_from_stock(Gtk.STOCK_APPLY,
-                                                      Gtk.ICON_SIZE_MENU)
+        current_size_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
+                                                      Gtk.IconSize.MENU)
         current_size_image.show()
 
         for num in range(0, 10):
@@ -1650,8 +1461,8 @@ class TimelinePedigreeView(NavigationView):
         item.set_submenu(Gtk.Menu())
         AncestorSize_menu = item.get_submenu()
 
-        current_size_image = Gtk.image_new_from_stock(Gtk.STOCK_APPLY,
-                                                      Gtk.ICON_SIZE_MENU)
+        current_size_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
+                                                      Gtk.IconSize.MENU)
         current_size_image.show()
 
         for num in range(0, 10):
@@ -1669,7 +1480,8 @@ class TimelinePedigreeView(NavigationView):
     def create_menu_item(self, text, currValue, callback):
         entry = Gtk.ImageMenuItem(text)
         if currValue:
-            current_image = Gtk.image_new_from_stock(Gtk.STOCK_APPLY, Gtk.ICON_SIZE_MENU)
+            current_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
+                                                     Gtk.IconSize.MENU)
             current_image.show()
             entry.set_image(current_image)
         entry.connect("activate", callback)
@@ -1682,7 +1494,7 @@ class TimelinePedigreeView(NavigationView):
         menu = Gtk.Menu()
         menu.set_title(_('People Menu'))
 
-        add_item = Gtk.ImageMenuItem(Gtk.STOCK_ADD)
+        add_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_ADD, None)
         add_item.connect("activate", self.add_parents_cb, person_handle,
                          family_handle)
         add_item.show()
@@ -1691,7 +1503,7 @@ class TimelinePedigreeView(NavigationView):
         # Add history-based navigation
         self.add_nav_portion_to_menu(menu)
         self.add_settings_to_menu(menu)
-        menu.popup(None, None, None, 0, event.time)
+        menu.popup(None, None, None, None, 0, event.time)
         return 1
 
     def build_full_nav_menu_cb(self, obj, event, person_handle, family_handle):
@@ -1700,32 +1512,32 @@ class TimelinePedigreeView(NavigationView):
         and Parents) with navigation.
         """
 
-        menu = Gtk.Menu()
-        menu.set_title(_('People Menu'))
+        self.menu = Gtk.Menu()
+        self.menu.set_title(_('People Menu'))
 
         person = self.dbstate.db.get_person_from_handle(person_handle)
         if not person:
             return 0
 
-        go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                            Gtk.ICON_SIZE_MENU)
+        go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                            Gtk.IconSize.MENU)
         go_image.show()
         go_item = Gtk.ImageMenuItem(name_displayer.display(person))
         go_item.set_image(go_image)
         go_item.connect("activate", self.on_childmenu_changed, person_handle)
         go_item.show()
-        menu.append(go_item)
+        self.menu.append(go_item)
 
-        edit_item = Gtk.ImageMenuItem(Gtk.STOCK_EDIT)
+        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
         edit_item.connect("activate", self.edit_person_cb, person_handle)
         edit_item.show()
-        menu.append(edit_item)
+        self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem(Gtk.STOCK_COPY)
+        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
         clipboard_item.connect("activate", self.copy_person_to_clipboard_cb,
                                person_handle)
         clipboard_item.show()
-        menu.append(clipboard_item)
+        self.menu.append(clipboard_item)
 
         # collect all spouses, parents and children
         linked_persons = []
@@ -1749,8 +1561,8 @@ class TimelinePedigreeView(NavigationView):
                 item.set_submenu(Gtk.Menu())
                 sp_menu = item.get_submenu()
 
-            go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.ICON_SIZE_MENU)
+            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                Gtk.IconSize.MENU)
             go_image.show()
             sp_item = Gtk.ImageMenuItem(name_displayer.display(spouse))
             sp_item.set_image(go_image)
@@ -1763,7 +1575,7 @@ class TimelinePedigreeView(NavigationView):
             item.set_sensitive(0)
 
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Go over siblings and build their menu
         item = Gtk.MenuItem(_("Siblings"))
@@ -1791,8 +1603,8 @@ class TimelinePedigreeView(NavigationView):
                 else:
                     label = Gtk.Label(escape(name_displayer.display(sib)))
 
-                go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                    Gtk.ICON_SIZE_MENU)
+                go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                    Gtk.IconSize.MENU)
                 go_image.show()
                 sib_item = Gtk.ImageMenuItem(None)
                 sib_item.set_image(go_image)
@@ -1808,7 +1620,7 @@ class TimelinePedigreeView(NavigationView):
         if no_siblings:
             item.set_sensitive(0)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Go over children and build their menu
         item = Gtk.MenuItem(_("Children"))
@@ -1830,8 +1642,8 @@ class TimelinePedigreeView(NavigationView):
             else:
                 label = Gtk.Label(escape(name_displayer.display(child)))
 
-            go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.ICON_SIZE_MENU)
+            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                Gtk.IconSize.MENU)
             go_image.show()
             child_item = Gtk.ImageMenuItem(None)
             child_item.set_image(go_image)
@@ -1848,7 +1660,7 @@ class TimelinePedigreeView(NavigationView):
         if no_children:
             item.set_sensitive(0)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Go over parents and build their menu
         item = Gtk.MenuItem(_("Parents"))
@@ -1870,8 +1682,8 @@ class TimelinePedigreeView(NavigationView):
             else:
                 label = Gtk.Label(escape(name_displayer.display(par)))
 
-            go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.ICON_SIZE_MENU)
+            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                Gtk.IconSize.MENU)
             go_image.show()
             par_item = Gtk.ImageMenuItem(None)
             par_item.set_image(go_image)
@@ -1896,7 +1708,7 @@ class TimelinePedigreeView(NavigationView):
             else:
                 item.set_sensitive(0)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Go over parents and build their menu
         item = Gtk.MenuItem(_("Related"))
@@ -1916,8 +1728,8 @@ class TimelinePedigreeView(NavigationView):
 
             label = Gtk.Label(escape(name_displayer.display(per)))
 
-            go_image = Gtk.image_new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.ICON_SIZE_MENU)
+            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
+                                                Gtk.IconSize.MENU)
             go_image.show()
             per_item = Gtk.ImageMenuItem(None)
             per_item.set_image(go_image)
@@ -1932,46 +1744,46 @@ class TimelinePedigreeView(NavigationView):
         if no_related:
             item.set_sensitive(0)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Add separator
         item = Gtk.MenuItem(None)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Add history-based navigation
-        self.add_nav_portion_to_menu(menu)
-        self.add_settings_to_menu(menu)
-        menu.popup(None, None, None, 0, event.time)
+        self.add_nav_portion_to_menu(self.menu)
+        self.add_settings_to_menu(self.menu)
+        self.menu.popup(None, None, None, None, 0, event.time)
         return 1
 
     def build_relation_nav_menu_cb(self, obj, event, family_handle):
         """Builds the menu for a parents-child relation line."""
-        menu = Gtk.Menu()
-        menu.set_title(_('Family Menu'))
+        self.menu = Gtk.Menu()
+        self.menu.set_title(_('Family Menu'))
 
         family = self.dbstate.db.get_family_from_handle(family_handle)
         if not family:
             return 0
 
-        edit_item = Gtk.ImageMenuItem(Gtk.STOCK_EDIT)
+        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
         edit_item.connect("activate", self.edit_family_cb, family_handle)
         edit_item.show()
-        menu.append(edit_item)
+        self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem(Gtk.STOCK_COPY)
+        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
         clipboard_item.connect("activate", self.copy_family_to_clipboard_cb,
                                family_handle)
         clipboard_item.show()
-        menu.append(clipboard_item)
+        self.menu.append(clipboard_item)
 
         # Add separator
         item = Gtk.MenuItem(None)
         item.show()
-        menu.append(item)
+        self.menu.append(item)
 
         # Add history-based navigation
-        self.add_nav_portion_to_menu(menu)
-        self.add_settings_to_menu(menu)
-        menu.popup(None, None, None, 0, event.time)
+        self.add_nav_portion_to_menu(self.menu)
+        self.add_settings_to_menu(self.menu)
+        self.menu.popup(None, None, None, None, 0, event.time)
         return 1
