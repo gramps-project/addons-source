@@ -102,11 +102,15 @@ class EventFormat2(GenericFormat):
         def format_date():
             """ start formatting a date in this event """
             date_format = DateFormat(self.string_in, self._locale)
+            try:
+                date_format.parse_format(date_format.get_date(event))
+            except AttributeError:
+                return ''
             return date_format.parse_format(date_format.get_date(event))
 
         def format_place():
             """ start formatting a place in this event """
-            place_format = PlaceFormat(self.string_in)
+            place_format = PlaceFormat(self, self.string_in)
             place = place_format.get_place(self.database, event)
             return place_format.parse_format(self.database, place)
 
