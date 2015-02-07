@@ -15,6 +15,7 @@
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Tijdslijnstamboom',"v":'0.1.35',"g":'4.2',"d":'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Gegevensbestand voor \'GoogleEarth\' aanmaken en openen.',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Snelscherm voor zoeken',"v":'1.0.21',"g":'4.2',"d":'Snelscherm om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
+{"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'1.0.2',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'4.2',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.6',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Verslag laatste wijziging',"v":'0.0.25',"g":'4.2',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
@@ -51,7 +52,7 @@
 {"t":'Quickreport',"i":'Query Quickview',"n":'Snelscherm voor zoeken',"v":'1.0.21',"g":'4.2',"d":'Snelscherm om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":'Alle namen van alle personen',"v":'1.0.19',"g":'4.2',"d":'De namen van alle personen tonen',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":'Tijdlijn',"v":'1.0.22',"g":'4.2',"d":'Gebeurtenissen van een persoon worden op een tijdslijn getoond',"z":'TimelineQuickview.addon.tgz'}
-{"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.23',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
+{"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'1.0.2',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familiepagina',"v":'3.4.25',"g":'4.2',"d":'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.6',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Verslag laatste wijziging',"v":'0.0.25',"g":'4.2',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
