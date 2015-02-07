@@ -58,6 +58,7 @@
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.24',"g":'4.2',"d":'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Liste Eclair',"v":'1.0.14',"g":'4.2',"d":'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":'Stamboomgrafiek',"v":'1.0.25',"g":'4.2',"d":'Alternatieve versie van de traditionele stamboomgrafiek',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.2',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":'Bibliothekenverslag',"v":'1.1.16',"g":'4.2',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":'Opties voor het bibliotheekverslag',"v":'0.3.16',"g":'4.2',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'\'Nog te doen\'-verslag',"v":'1.2.21',"g":'4.2',"d":'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .',"z":'ToDoReport.addon.tgz'}

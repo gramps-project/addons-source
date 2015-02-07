@@ -58,6 +58,7 @@
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.24',"g":'4.2',"d":'Affiche toutes les lignes de descendants d\'un ancêtre donné à un descendant choisi dans un format textuel.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Liste Éclair',"v":'1.0.14',"g":'4.2',"d":'Produit une liste éclair',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":'Arbre graphique',"v":'1.0.25',"g":'4.2',"d":'Version alternative de l\'arbre graphique traditionnel.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PersonEverythingReport',"n":'Rapport Tout sur la personne',"v":'1.0.1',"g":'4.2',"d":'Produit un rapport contenant tout sur la personne active',"z":'PersonEverything.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":'Rapport des dépôts',"v":'1.1.16',"g":'4.2',"d":'Produit un rapport textuel des dépôts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":'Rapport des dépôts avec options',"v":'0.3.16',"g":'4.2',"d":'Produit un rapport textuel des dépôts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Rapport À Faire',"v":'1.2.21',"g":'4.2',"d":'Produit une liste de toutes les notes avec une étiquette donnée ainsi que les enregistrements qui les référencent, l\'individu, la famille, l\'événement, etc.',"z":'ToDoReport.addon.tgz'}

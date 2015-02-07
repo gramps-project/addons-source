@@ -1,0 +1,365 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-10 18:01+0100\n"
+"PO-Revision-Date: 2014-12-10 18:09+0100\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: PersonEverything/PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr "Rapport Tout sur la personne"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr "Produit un rapport contenant tout sur la personne active"
+
+#: PersonEverything/PersonEverything.py:109
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "L'individu %s n'est pas présent dans la base de données"
+
+#: PersonEverything/PersonEverything.py:131
+#, python-format
+msgid "All information about %s"
+msgstr "Toutes les informations sur %s"
+
+#: PersonEverything/PersonEverything.py:140
+msgid "Person Events"
+msgstr "Événements de l'individu"
+
+#: PersonEverything/PersonEverything.py:146
+msgid "Families"
+msgstr "Familles"
+
+#: PersonEverything/PersonEverything.py:152
+msgid "Endnotes"
+msgstr "Références bibliographiques"
+
+#: PersonEverything/PersonEverything.py:168
+msgid "Gender"
+msgstr "Genre"
+
+#: PersonEverything/PersonEverything.py:171
+msgid "Primary name"
+msgstr "Nom principal"
+
+#: PersonEverything/PersonEverything.py:172
+#: PersonEverything/PersonEverything.py:179
+#: PersonEverything/PersonEverything.py:299
+#: PersonEverything/PersonEverything.py:591
+#: PersonEverything/PersonEverything.py:716
+msgid "Type"
+msgstr "Type"
+
+#: PersonEverything/PersonEverything.py:178
+msgid "Alternate name"
+msgstr "Non alternatif"
+
+#: PersonEverything/PersonEverything.py:198
+msgid "Event reference"
+msgstr "Référence de l'événement"
+
+#: PersonEverything/PersonEverything.py:199
+msgid "Role"
+msgstr "Rôle"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:206
+msgid "Family"
+msgstr "Famille "
+
+#: PersonEverything/PersonEverything.py:212
+msgid "Child"
+msgstr "Enfant"
+
+#: PersonEverything/PersonEverything.py:218
+msgid "Relationship to Father"
+msgstr "Relation au père"
+
+#: PersonEverything/PersonEverything.py:223
+msgid "Relationship to Mother"
+msgstr "Relation à la mère"
+
+#: PersonEverything/PersonEverything.py:236
+msgid "Parent Family"
+msgstr "Parents"
+
+#: PersonEverything/PersonEverything.py:247
+msgid "Relationship"
+msgstr "Relation "
+
+#: PersonEverything/PersonEverything.py:257
+msgid "Father"
+msgstr "Père "
+
+#: PersonEverything/PersonEverything.py:268
+msgid "Mother"
+msgstr "Mère "
+
+#: PersonEverything/PersonEverything.py:290
+#: PersonEverything/PersonEverything.py:960
+#: PersonEverything/PersonEverything.py:976
+msgid "Private"
+msgstr "Privé"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+#: PersonEverything/PersonEverything.py:314
+msgid "Address"
+msgstr "Adresse "
+
+#: PersonEverything/PersonEverything.py:324
+msgid "Attribute"
+msgstr "Attribut"
+
+#: PersonEverything/PersonEverything.py:352
+msgid "Confidence"
+msgstr "Niveau de confiance"
+
+#: PersonEverything/PersonEverything.py:355
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: PersonEverything/PersonEverything.py:367
+msgid "Date"
+msgstr "Date "
+
+#: PersonEverything/PersonEverything.py:376
+msgid "Description"
+msgstr "Description"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:385
+msgid "Event"
+msgstr "Événement "
+
+#: PersonEverything/PersonEverything.py:386
+msgid "Event type"
+msgstr "Type d'événement"
+
+#: PersonEverything/PersonEverything.py:401
+msgid "Temple and status"
+msgstr "Mormons et statuts"
+
+#: PersonEverything/PersonEverything.py:412
+msgid "LDS Ordinance family"
+msgstr "Événements familiaux mormons"
+
+#: PersonEverything/PersonEverything.py:416
+msgid "LDS "
+msgstr "Mormons"
+
+#: PersonEverything/PersonEverything.py:417
+msgid "Ordinance"
+msgstr "Ordinance"
+
+#: PersonEverything/PersonEverything.py:432
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "rue, ville, département, région, code lieu, pays, numéro de téléphone"
+
+#: PersonEverything/PersonEverything.py:446
+msgid "Media Reference"
+msgstr "Référence de l'objet"
+
+#: PersonEverything/PersonEverything.py:453
+#: PersonEverything/PersonEverything.py:724
+msgid "Description and Path"
+msgstr "Description et chemin"
+
+#: PersonEverything/PersonEverything.py:472
+msgid "Could not add photo to page"
+msgstr "Impossible d'ajouter une photo à cette page"
+
+#: PersonEverything/PersonEverything.py:473
+msgid "File does not exist"
+msgstr "Fichier inexistant"
+
+#: PersonEverything/PersonEverything.py:482
+msgid "Referenced Region"
+msgstr "Région de l'image"
+
+#: PersonEverything/PersonEverything.py:500
+msgid "unknown"
+msgstr "inconnu"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:501
+msgid "Media Object"
+msgstr "Objet medium "
+
+#: PersonEverything/PersonEverything.py:503
+msgid "Mime type"
+msgstr "Type mime"
+
+#: PersonEverything/PersonEverything.py:514
+msgid "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr "Prénom(s) : titre, prénom, sufixe, prénom donné, surnom, nom-dit"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+#: PersonEverything/PersonEverything.py:539
+msgid "Note"
+msgstr "Note "
+
+#: PersonEverything/PersonEverything.py:540
+msgid "Note type"
+msgstr "Type de note"
+
+#: PersonEverything/PersonEverything.py:551
+msgid "Parent Place"
+msgstr "Lieu parent"
+
+#: PersonEverything/PersonEverything.py:566
+#: PersonEverything/PersonEverything.py:570
+msgid "Alternate Location"
+msgstr "Emplacement alternatif"
+
+#: PersonEverything/PersonEverything.py:567
+msgid "Parish"
+msgstr "Paroisse"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:581
+msgid "Place"
+msgstr "Lieu "
+
+#: PersonEverything/PersonEverything.py:582
+msgid "Place Title"
+msgstr "Titre du lieu"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+#: PersonEverything/PersonEverything.py:587
+msgid "Name"
+msgstr "Nom "
+
+# trunk
+#: PersonEverything/PersonEverything.py:595
+msgid "Code"
+msgstr "Code"
+
+#: PersonEverything/PersonEverything.py:603
+msgid "Alternative Name"
+msgstr "Nom alternatif"
+
+#: PersonEverything/PersonEverything.py:611
+msgid "Latitude, Longitude"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:632
+msgid "Call number"
+msgstr "Numéro d'identifiant"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:639
+msgid "Repository"
+msgstr "Dépôt "
+
+#: PersonEverything/PersonEverything.py:640
+msgid "Repository type"
+msgstr "Type de dépôt"
+
+#: PersonEverything/PersonEverything.py:662
+msgid "Repository reference"
+msgstr "Référence du dépôt"
+
+#: PersonEverything/PersonEverything.py:663
+msgid "Media type"
+msgstr "Type d'objet"
+
+#: PersonEverything/PersonEverything.py:670
+#: PersonEverything/PersonEverything.py:674
+msgid "Surname"
+msgstr "Nom"
+
+#: PersonEverything/PersonEverything.py:671
+msgid "Origin type"
+msgstr "Type d'origine"
+
+#: PersonEverything/PersonEverything.py:678
+msgid "Prefix, surname, connector"
+msgstr "Préfixe, nom de famille, connecteur"
+
+#: PersonEverything/PersonEverything.py:683
+msgid "{This is the primary surname}"
+msgstr "{Ceci est le nom principal}"
+
+#: PersonEverything/PersonEverything.py:696
+msgid "Tag name"
+msgstr "Étiquette"
+
+#: PersonEverything/PersonEverything.py:707
+msgid "Tag colour and priority"
+msgstr "Couleur de l'étiquette et priorité"
+
+#: PersonEverything/PersonEverything.py:715
+msgid "URL"
+msgstr "URL"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:900
+msgid "Source"
+msgstr "Source "
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PersonEverything/PersonEverything.py:906
+msgid "Citation"
+msgstr "Citation "
+
+#: PersonEverything/PersonEverything.py:954
+msgid "No source information found"
+msgstr "Pas d'information de la source trouvée"
+
+#: PersonEverything/PersonEverything.py:995
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: PersonEverything/PersonEverything.py:997
+msgid "Center Person"
+msgstr "Centrer sur l'individu "
+
+#: PersonEverything/PersonEverything.py:998
+msgid "The center person for the report"
+msgstr "L'individu central pour ce rapport"
+
+# L'espace finale est pour précéder le « : » codé en dur.
+#: PersonEverything/PersonEverything.py:1004
+msgid "Name format"
+msgstr "Format des noms "
+
+#: PersonEverything/PersonEverything.py:1005
+msgid "Default"
+msgstr "Défaut"
+
+#: PersonEverything/PersonEverything.py:1008
+msgid "Select the format to display names"
+msgstr "Sélection du format d'affichage pour le nom"
+
+#: PersonEverything/PersonEverything.py:1022
+msgid "The style used for the title of the page."
+msgstr "Le style utilisé pour les titres de page."
+
+#: PersonEverything/PersonEverything.py:1033
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "Le style utilisé pour l'affichage du niveau %d."
+
+#: PersonEverything/PersonEverything.py:1054
+msgid "The basic style used for the endnotes source display."
+msgstr "Le style utilisé pour les sources en fin d'ouvrage."
+
