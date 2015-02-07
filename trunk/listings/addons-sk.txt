@@ -58,6 +58,7 @@
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.24',"g":'4.2',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Tiny Tafel',"v":'1.0.14',"g":'4.2',"d":'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":'Pedigree Chart',"v":'1.0.25',"g":'4.2',"d":'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.2',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":'Správa o archívoch',"v":'1.1.16',"g":'4.2',"d":'Poskytuje textovú správu o archívoch',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report Options',"n":'Repositories Report Options',"v":'0.3.16',"g":'4.2',"d":'Poskytuje textovú správu o archívoch',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.21',"g":'4.2',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
