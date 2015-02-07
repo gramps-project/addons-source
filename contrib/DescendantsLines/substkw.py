@@ -1,0 +1,901 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2000-2007  Donald N. Allingham
+# Copyright (C) 2010       Peter G. Landgren
+# Copyright (C) 2010       Craig J. Anderson
+# Copyright (C) 2014       Paul Franklin
+# Copyright (C) 2015       Don Piercy
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
+"""
+Provide the SubstKeywords2 class that will replace keywords in a passed
+string with information about the person/marriage/spouse. 
+The modifications to the SubstKeywords class in SubstKeywords.py are:
+The event is passed in instead of finding the first one for the person/family
+   this allows reporting all occurrences of an event, instead of just the first one
+   also this allows sorting by date
+Added a new event formating operator "t" = abbreviation of the Event's Type (localized)
+	this allows correct type labeling where "OrSimilar" or "fallbacks" are used. $e(t)
+Added an optional Maximum Note Length, to limit the length when using $e(n) variable
+	note that "..." will be added to any truncated note (an Event's Description field)
+	
+For example:
+
+foo = SubstKeywords(database, person_handle)
+print foo.replace_and_clean(['$e(t d< @ >D'], event, max_note_len=0)
+
+Will return a value such as:
+
+.b 1/12/1913 @ hospital, nowhere, earth
+"""
+
+from __future__ import print_function
+
+#------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#------------------------------------------------------------------------
+from gramps.gen.display.name import NameDisplay
+from gramps.gen.lib import EventType, PlaceType, Location
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+from gramps.gen.constfunc import STRTYPE, cuni
+from gramps.gen.utils.location import get_main_location
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.plugins.lib.libsubstkeyword import *
+
+import logging
+log = logging.getLogger("DescendantsLines")
+
+#------------------------------------------------------------------------
+# Event Format strings
+#------------------------------------------------------------------------
+class EventFormat2(GenericFormat):
+    """ The event format class.
+    If no format string, the event description is displayed
+    otherwise, parse through the format string and put in the parts
+        dates and places can have their own format strings
+    """
+	
+    def __init__(self, database, _in, locale):
+        self.database = database
+        GenericFormat.__init__(self, _in, locale)
+
+    def _default_format(self, event):
+        if event is None:
+            return
+        else:
+            return event.get_description()
+
+    def __empty_format(self):
+        """ clear out a sub format string """
+        self.string_in.remove_start_end("(", ")")
+        return
+
+    def __empty_attrib(self):
+        """ clear out an attribute name """
+        self.string_in.remove_start_end("[", "]")
+        return
+
+    def parse_format(self, event):
+        """ Parse the event format string.
+        let the date or place classes handle any sub-format strings """
+
+        if self.is_blank(event):
+            return
+
+        def format_date():
+            """ start formatting a date in this event """
+            date_format = DateFormat(self.string_in, self._locale)
+            return date_format.parse_format(date_format.get_date(event))
+
+        def format_place():
+            """ start formatting a place in this event """
+            place_format = PlaceFormat(self.string_in)
+            place = place_format.get_place(self.database, event)
+            return place_format.parse_format(self.database, place)
+
+        def format_attrib():
+            """ Get the name and then get the attributes value """
+            #Event's Atribute
+            attrib_parse = AttributeParse(self.string_in)
+            #self.string_in.step()
+            name = attrib_parse.get_name()
+            if name:
+                return attrib_parse.get_attribute(event.get_attribute_list(),
+                                                  name)
+            else:
+                return
+
+        def format_note():
+            """ Truncate note if necessary """
+            n = event.get_description()
+            if ((MAX_NOTE_LEN <> 0) and (len(n) > MAX_NOTE_LEN)):
+            	n = n[0:MAX_NOTE_LEN] + '...'
+            return n
+
+        code = "ndDiat"
+        upper = ""
+        function = [format_note,
+                    format_date,
+                    format_place,
+                    event.get_gramps_id,
+                    format_attrib,
+                    event.type.get_abbreviation
+                    ]
+
+        return self.generic_format(event, code, upper, function)
+
+    def parse_empty(self):
+        """ remove the format string """
+
+        code = "dDa"
+        function = [self.__empty_format, self.__empty_format,
+                    self.__empty_attrib]
+
+        return self.generic_format(None, code, "", function)
+
+
+#------------------------------------------------------------------------
+# VariableParse
+#------------------------------------------------------------------------
+class VariableParse2(object):
+    """ Parse the individual variables """
+
+    def __init__(self, friend, database, consumer_in, locale, name_displayer, event=None):
+        self.friend = friend
+        self.database = database
+        self._in = consumer_in
+        self._locale = locale
+        self._nd = name_displayer
+        self.event = event
+
+    def is_a(self):
+        """ check """
+        return self._in.this == "$" and self._in.next is not None and \
+                              "nsijbBdDmMvVauetTpPG".find(self._in.next) != -1
+
+    def get_event_by_type(self, marriage, e_type):
+        """ get an event from a type """
+        if marriage is None:
+            return None
+        for e_ref in marriage.get_event_ref_list():
+            if not e_ref:
+                continue
+            event = self.friend.database.get_event_from_handle(e_ref.ref)
+            if event.get_type() == e_type:
+                return event
+        return None
+
+    def get_event_by_name(self, person, event_name):
+        """ get an event from a name. """
+        if not person:
+            return None
+        for e_ref in person.get_event_ref_list():
+            if not e_ref:
+                continue
+            event = self.friend.database.get_event_from_handle(e_ref.ref)
+            if event.get_type().is_type(event_name):
+                return event
+        return None
+
+    def get_events_by_name(self, person, event_name):
+        """ get all matching events from a name. """
+        if not person:
+            return None
+        el= []
+        for e_ref in person.get_event_ref_list():
+            event = self.friend.database.get_event_from_handle(e_ref.ref)
+            if event.get_type().is_type(event_name):
+                el.append(event)
+        return el
+
+    def empty_item(self, item):
+        """ return false if there is a valid item(date or place).
+        Otherwise
+            add a TXT.remove marker in the output string
+            remove any format strings from the input string
+        """
+        if item is not None:
+            return False
+
+        self._in.remove_start_end("(", ")")
+        return True
+
+    def empty_attribute(self, person):
+        """ return false if there is a valid person.
+        Otherwise
+            add a TXT.remove marker in the output string
+            remove any attribute name from the input string
+        """
+        if person:
+            return False
+
+        self._in.remove_start_end("[", "]")
+        return True
+
+    def __parse_date(self, event):
+        """ sub to process a date
+        Given an event, get the date object, process the format,
+        return the result """
+        date_f = DateFormat(self._in, self._locale)
+        date = date_f.get_date(event)
+        if self.empty_item(date):
+            return
+        return date_f.parse_format(date)
+
+    def __parse_place(self, event):
+        """ sub to process a date
+        Given an event, get the place object, process the format,
+        return the result """
+        place_f = PlaceFormat(self._in)
+        place = place_f.get_place(self.database, event)
+        if self.empty_item(place):
+            return
+        return place_f.parse_format(self.database, place)
+
+    def __parse_name(self, person):
+        name_format = NameFormat(self._in, self._locale, self._nd)
+        name = name_format.get_name(person)
+        return name_format.parse_format(name)
+
+    def __parse_id(self, first_class_object):
+        if first_class_object is not None:
+            return first_class_object.get_gramps_id()
+        else:
+            return
+
+    def __parse_event(self, person, attrib_parse):
+        event = self.get_event_by_name(person, attrib_parse.get_name())
+        event_f = EventFormat(self.database, self._in, self._locale)
+        if event:
+            return event_f.parse_format(event)
+        else:
+            event_f.parse_empty()
+            return
+            
+    def __parse_an_event(self, person, attrib_parse):
+    	if not self.event:	# this makes it backwards compatible with __parse_event
+        	event = self.get_event_by_name(person, attrib_parse.get_name())
+        event_f = EventFormat2(self.database, self._in, self._locale)
+        if self.event:
+            return event_f.parse_format(self.event)
+        else:
+            event_f.parse_empty()
+            return
+
+    def __get_photo(self, person_or_marriage):
+        """ returns the first photo in the media list or None """
+        media_list = person_or_marriage.get_media_list()
+        for media_ref in media_list:
+            media_handle = media_ref.get_reference_handle()
+            media = self.database.get_object_from_handle(media_handle)
+            mime_type = media.get_mime_type()
+            if mime_type and mime_type.startswith("image"):
+                return media
+        return None
+
+    def __parse_photo(self, person_or_marriage):
+        photo_f = GalleryFormat(self.database, self._in, self._locale)
+        if person_or_marriage is None:
+            return photo_f.parse_empty()
+        photo = self.__get_photo(person_or_marriage)
+        if photo:
+            return photo_f.parse_format(photo)
+        else:
+            return photo_f.parse_empty()
+
+    def parse_format(self):
+        """Parse the $ variables. """
+        if not self.is_a():
+            return
+
+        attrib_parse = AttributeParse(self._in)
+        next_char = self._in.next
+        self._in.step2()
+
+        if PRIVACY:		# only parse Events as the other standard parsers do NOT check privacy
+			if next_char == "e":
+				#person event
+				return self.__parse_an_event(self.friend.person, attrib_parse)
+			elif next_char == "t":
+				#family event
+				return self.__parse_an_event(self.friend.family, attrib_parse)
+
+        else:
+			if next_char == "n":
+				#Person's name
+				return self.__parse_name(self.friend.person)
+			elif next_char == "s":
+				#Souses name
+				return self.__parse_name(self.friend.spouse)
+
+			elif next_char == "i":
+				#Person's Id
+				return self.__parse_id(self.friend.person)
+			elif next_char == "j":
+				#Marriage Id
+				return self.__parse_id(self.friend.family)
+
+			elif next_char == "b":
+				#Person's Birth date
+				if self.empty_item(self.friend.person):
+					return
+				return self.__parse_date(
+					get_birth_or_fallback(self.friend.database, self.friend.person))
+			elif next_char == "d":
+				#Person's Death date
+				if self.empty_item(self.friend.person):
+					return
+				return self.__parse_date(
+					get_death_or_fallback(self.friend.database, self.friend.person))
+			elif next_char == "m":
+				#Marriage date
+				if self.empty_item(self.friend.family):
+					return
+				return self.__parse_date(
+					self.get_event_by_type(self.friend.family,
+										   EventType.MARRIAGE))
+			elif next_char == "v":
+				#Divorce date
+				if self.empty_item(self.friend.family):
+					return
+				return self.__parse_date(
+					self.get_event_by_type(self.friend.family,
+										   EventType.DIVORCE))
+			elif next_char == "T":
+				#Todays date
+				date_f = DateFormat(self._in)
+				from gramps.gen.lib.date import Today
+				date = Today()
+				if self.empty_item(date):
+					return
+				return date_f.parse_format(date)
+
+			elif next_char == "B":
+				#Person's birth place
+				if self.empty_item(self.friend.person):
+					return
+				return self.__parse_place(
+					get_birth_or_fallback(self.friend.database, self.friend.person))
+			elif next_char == "D":
+				#Person's death place
+				if self.empty_item(self.friend.person):
+					return
+				return self.__parse_place(
+					get_death_or_fallback(self.friend.database, self.friend.person))
+			elif next_char == "M":
+				#Marriage place
+				if self.empty_item(self.friend.family):
+					return
+				return self.__parse_place(
+					self.get_event_by_type(self.friend.family,
+										   EventType.MARRIAGE))
+			elif next_char == "V":
+				#Divorce place
+				if self.empty_item(self.friend.family):
+					return
+				return self.__parse_place(
+					self.get_event_by_type(self.friend.family,
+										   EventType.DIVORCE))
+
+			elif next_char == "a":
+				#Person's Atribute
+				if self.empty_attribute(self.friend.person):
+					return
+				return attrib_parse.parse_format(
+										  self.friend.person.get_attribute_list())
+			elif next_char == "u":
+				#Marriage Atribute
+				if self.empty_attribute(self.friend.family):
+					return
+				return attrib_parse.parse_format(
+										  self.friend.family.get_attribute_list())
+
+			elif next_char == "e":
+				#person event
+				return self.__parse_an_event(self.friend.person, attrib_parse)
+			elif next_char == "t":
+				#family event
+				return self.__parse_an_event(self.friend.family, attrib_parse)
+
+			elif next_char == 'p':
+				#photo for the person
+				return self.__parse_photo(self.friend.person)
+			elif next_char == 'P':
+				#photo for the marriage
+				return self.__parse_photo(self.friend.family)
+
+			elif next_char == "G":
+				gramps_format = GrampsFormat(self._in, self.database)
+				return gramps_format.parse_format()
+
+
+#------------------------------------------------------------------------
+#
+# SubstKeywords
+#
+#------------------------------------------------------------------------
+class SubstKeywords2(object):
+    """Accepts a person/family with format lines and returns a new set of lines
+    using variable substitution to make it.
+
+    The individual variables are defined with the classes that look for them.
+
+    Needed:
+        Database object
+        person_handle
+            This will be the center person for the display
+        family_handle
+            this will specify the specific family/spouse to work with.
+            If none given, then the first/preferred family/spouse is used
+    """
+    def __init__(self, database, locale, name_displayer, person_handle, family_handle=None, max_note_len=0, privacy=None):
+        """get the person and find the family/spouse to use for this display"""
+
+        self.database = database
+        self.person = database.get_person_from_handle(person_handle)
+        self.family = None
+        self.spouse = None
+        self.line = None   # Consumable_string - set below
+        self._locale = locale
+        self._nd = name_displayer
+        self.event = None
+        global MAX_NOTE_LEN
+        MAX_NOTE_LEN = max_note_len
+        global PRIVACY
+        PRIVACY = privacy
+	
+        if self.person is None:
+            return
+
+        fam_hand_list = self.person.get_family_handle_list()
+        if fam_hand_list:
+            if family_handle in fam_hand_list:
+                self.family = database.get_family_from_handle(family_handle)
+            else:
+                #Error.  fam_hand_list[0] below may give wrong marriage info.
+                #only here because of OLD specifications.  Specs read:
+                # * $S/%S
+                #   Displays the name of the person's preferred ...
+                # 'preferred' means FIRST.
+                #The first might not be the correct marriage to display.
+                #else: clause SHOULD be removed.
+                self.family = database.get_family_from_handle(fam_hand_list[0])
+
+            father_handle = self.family.get_father_handle()
+            mother_handle = self.family.get_mother_handle()
+            self.spouse = None
+            if father_handle == person_handle:
+                if mother_handle:
+                    self.spouse = database.get_person_from_handle(mother_handle)
+            else:
+                if father_handle:
+                    self.spouse = database.get_person_from_handle(father_handle)
+
+    def __parse_line(self):
+        """parse each line of text and return the new displayable line
+
+        There are four things we can find here
+            A {} group which will make/end as needed.
+            A <> separator
+            A $  variable - Handled separately
+            or text
+        """
+        stack_var = []
+        curr_var = VarString(TXT.text)
+
+        #First we are going take care of all variables/groups
+        #break down all {} (groups) and $ (vars) into either
+        #(TXT.text, resulting_string) or (TXT.remove, '')
+        variable = VariableParse2(self, self.database, self.line, self._locale, self._nd, event=self.event)  # $
+
+        while self.line.this:
+            if self.line.this == "{":
+                #Start of a group
+                #push what we have onto the stack
+                stack_var.append(curr_var)
+                #Setup
+                curr_var = VarString()
+                #step
+                self.line.step()
+
+            elif self.line.this == "}" and len(stack_var) > 0: #End of a group
+                #add curr to what is on the (top) stack and pop into current
+                #or pop the stack into current and add TXT.remove
+                direction = curr_var.state
+                if direction == TXT.display:
+                    #add curr onto the top slot of the stack
+                    stack_var[-1].extend(curr_var)
+
+                #pop what we have on the stack
+                curr_var = stack_var.pop()
+
+                if direction == TXT.remove:
+                    #add remove que
+                    curr_var.add_remove()
+                #step
+                self.line.step()
+
+            elif variable.is_a():  # $  (variables)
+                rtrn = variable.parse_format()
+                if rtrn is None:
+                    curr_var.add_remove()
+                elif isinstance(rtrn, VarString):
+                    curr_var.extend(rtrn)
+                else:
+                    curr_var.add_variable(rtrn)
+
+            elif self.line.this == "<":  # separator
+                self.line.step()
+                curr_var.add_separator(self.line.text_to_next(">"))
+
+            else:  #regular text
+                curr_var.add_text(self.line.parse_format())
+
+        #the stack is for groups/subgroup and may contain items
+        #if the user does not close his/her {}
+        #squash down the stack
+        while stack_var:
+            direction = curr_var.state
+            if direction == TXT.display:
+                #add curr onto the top slot of the stack
+                stack_var[-1].extend(curr_var)
+
+            #pop what we have on the stack
+            curr_var = stack_var.pop()
+
+            if direction == TXT.remove:
+                #add remove que
+                curr_var.add_remove()
+            #step
+            self.line.step()
+
+        #return what we have
+        return curr_var.get_final()
+
+    def __main_level(self):
+        #Check only if the user wants to not display the line if TXT.remove
+        remove_line_tag = False
+        if self.line.this == "-":
+            remove_line_tag = True
+            self.line.step()
+
+        state, line = self.__parse_line()
+
+        if state is TXT.remove and remove_line_tag:
+            return None
+        return line
+
+    def replace_and_clean(self, lines, event):
+        """
+        return a new array of lines with all of the substitutions done
+        """
+        self.event = event
+        new = []
+        for this_line in lines:
+            if this_line == "":
+                new.append(this_line)
+                continue
+            #print "- ", this_line
+            self.line = ConsumableString(this_line)
+            new_line = self.__main_level()
+            #print "+ ", new_line
+            if new_line is not None:
+                new.append(new_line)
+
+        if new == []:
+            new = [""]
+        return new
+
+
+# 
+# if __name__ == '__main__':
+#-------------------------------------------------------------------------
+#
+# For Testing everything except VariableParse, SubstKeywords and EventFormat
+# apply it as a script:
+#
+#     ==> in command line do "PYTHONPATH=??? python libsubstkeyword.py"
+#
+# You will need to put in your own path to the src directory
+#
+#-------------------------------------------------------------------------
+# pylint: disable-msg=C0103
+# 
+#     def combinations(c, r):
+#         # combinations('ABCD', 2) --> AB AC AD BC BD CD
+#         # combinations(range(4), 3) --> 012 013 023 123
+#         pool = tuple(range(c))
+#         n = len(pool)
+#         if r > n:
+#             return
+#         indices = list(range(r))
+#         yield tuple(pool[i] for i in indices)
+#         while True:
+#             for i in reversed(list(range(r))):
+#                 if indices[i] != i + n - r:
+#                     break
+#             else:
+#                 return
+#             indices[i] += 1
+#             for j in range(i+1, r):
+#                 indices[j] = indices[j-1] + 1
+#             yield tuple(pool[i] for i in indices)
+# 
+#     def main_level_test(_in, testing_class, testing_what):
+#         """This is a mini def __main_level(self):
+#         """
+#         main = LevelParse(_in)
+#         sepa = SeparatorParse(_in)
+#         test = testing_class(_in)
+# 
+#         while _in.this:
+#             if main.is_a():
+#                 main.parse_format(_in)
+#             elif sepa.is_a():
+#                 sepa.parse_format(main)
+#             elif _in.this == "$":
+#                 _in.step()
+#                 main.add_variable(
+#                     test.parse_format(testing_what))
+#             else:
+#                 _in.parse_format(main)
+# 
+#         main.combine_all()
+# 
+#         state, line = main.get_string()
+#         if state is TXT.remove:
+#             return None
+#         else:
+#             return line
+# 
+# 
+#     from gramps.gen.lib.date import Date
+#     y_or_n = ()
+#     date_to_test = Date()
+# 
+#     def date_set():
+#         date_to_test.set_yr_mon_day(
+#             1970 if 0 in y_or_n else 0,
+#             9 if 1 in y_or_n else 0,
+#             3 if 2 in y_or_n else 0
+#             )
+#         #print date_to_test
+# 
+#     line_in = "<Z>$(yyy) <a>$(<Z>Mm)<b>$(mm){<c>$(d)}{<d>$(yyyy)<e>}<f>$(yy)"
+#     consume_str = ConsumableString(line_in)
+# 
+#     print(line_in)
+#     print("#None are known")
+#     tmp = main_level_test(consume_str, DateFormat, date_to_test)
+#     print(tmp)
+#     print("Good" if tmp == " " else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#One is known")
+#     answer = []
+#     for y_or_n in combinations(3, 1):
+#         date_set()
+#         consume_str = ConsumableString(line_in)
+#         tmp = main_level_test(consume_str, DateFormat, date_to_test)
+#         print(tmp)
+#         answer.append(tmp)
+#     print("Good" if answer == [
+#         "1970 d1970f70",
+#         " a99b09",
+#         " c3"
+#         ] else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#Two are known")
+#     answer = []
+#     for y_or_n in combinations(3, 2):
+#         date_set()
+#         consume_str = ConsumableString(line_in)
+#         tmp = main_level_test(consume_str, DateFormat, date_to_test)
+#         print(tmp)
+#         answer.append(tmp)
+#     print("Good" if answer == [
+#         "1970 a99b09d1970f70",
+#         "1970 c3d1970f70",
+#         " a99b09c3"
+#         ] else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#All are known")
+#     answer = []
+#     y_or_n = (0, 1, 2)
+#     date_set()
+#     consume_str = ConsumableString(line_in)
+#     tmp = main_level_test(consume_str, DateFormat, date_to_test)
+#     print(tmp)
+#     answer.append(tmp)
+#     print("Good" if answer == ["1970 a99b09c3d1970f70"
+#         ] else "!! bad !!")
+# 
+#     import sys
+#     sys.exit()
+#     print()
+#     print()
+#     print("=============")
+#     print("=============")
+# 
+#     from gramps.gen.lib.name import Name
+#     y_or_n = ()
+#     name_to_test = Name()
+# 
+#     def name_set():
+#         #code  = "tfcnxslg"
+#         name_to_test.set_call_name("Bob" if 0 in y_or_n else "")
+#         name_to_test.set_title("Dr." if 1 in y_or_n else "")
+#         name_to_test.set_first_name("Billy" if 2 in y_or_n else "")
+#         name_to_test.set_nick_name("Buck" if 3 in y_or_n else "")
+#         name_to_test.set_suffix("IV" if 4 in y_or_n else "")
+#         #now can we put something in for the last name?
+#         name_to_test.set_family_nick_name("The Clubs" if 5 in y_or_n else "")
+# 
+#     line_in = "{$(c)$(t)<1>{<2>$(f)}{<3>$(n){<0> <0>}<4>$(x)}$(s)<5>$(l)<6>$(g)<0>"
+#     consume_str = ConsumableString(line_in)
+# 
+#     print()
+#     print()
+#     print(line_in)
+#     print("#None are known")
+#     tmp = main_level_test(consume_str, NameFormat, name_to_test)
+#     print(tmp)
+#     print("Good" if tmp == None else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#Two are known")
+#     answer = []
+#     for y_or_n in combinations(6, 2):
+#         name_set()
+#         consume_str = ConsumableString(line_in)
+#         tmp = main_level_test(consume_str, NameFormat, name_to_test)
+#         print(tmp)
+#         answer.append(tmp)
+#     print("Good" if answer == [
+#         "BobDr.4Bob",
+#         "Bob2Billy4Bob",
+#         "Bob3Buck4Bob",
+#         "Bob4BobIV",
+#         "Bob4BobThe Clubs",
+#         "Dr.2Billy4Billy",
+#         "Dr.3Buck",
+#         "Dr.1IV",
+#         "Dr.6The Clubs",
+#         "Billy3Buck4Billy",
+#         "Billy4BillyIV",
+#         "Billy4BillyThe Clubs",
+#         "BuckIV",
+#         "BuckThe Clubs",
+#         "IV6The Clubs"
+#         ] else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#All are known")
+#     y_or_n = (0, 1, 2, 3, 4, 5)
+#     name_set()
+#     consume_str = ConsumableString(line_in)
+#     answer = main_level_test(consume_str, NameFormat, name_to_test)
+#     print(answer)
+#     print("Good" if answer == "BobDr.2Billy3Buck4BobIV6The Clubs"
+#                  else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("=============")
+#     print("=============")
+# 
+#     from gramps.gen.lib.place import Place
+#     y_or_n = ()
+#     place_to_test = Place()
+# 
+#     def place_set():
+#         #code = "elcuspnitxy"
+#         main_loc = place_to_test.get_main_location()
+#         main_loc.set_street(
+#             "Lost River Ave." if 0 in y_or_n else ""
+#         )
+#         main_loc.set_locality(
+#             "Second district" if 1 in y_or_n else ""
+#         )
+#         main_loc.set_city(
+#             "Arco" if 2 in y_or_n else ""
+#         )
+#         main_loc.set_county(
+#             "Butte" if 3 in y_or_n else ""
+#         )
+#         main_loc.set_state(
+#             "Idaho" if 4 in y_or_n else ""
+#         )
+#         main_loc.set_postal_code(
+#             "83213" if 5 in y_or_n else ""
+#         )
+#         main_loc.set_country(
+#             "USA" if 6 in y_or_n else ""
+#         )
+#         main_loc.set_parish(
+#             "St Anns" if 7 in y_or_n else ""
+#         )
+#         place_to_test.set_title(
+#             "Atomic City" if 8 in y_or_n else ""
+#         )
+#         place_to_test.set_longitude(
+#             "N43H38'5\"N" if 9 in y_or_n else ""
+#         )
+#         place_to_test.set_latitude(
+#             "W113H18'5\"W" if 10 in y_or_n else ""
+#         )
+# 
+#     #code = "txy"
+#     line_in = "$(e)<1>{<2>$(l) <3> $(c)<4><0><5>{$(s)<6>$(p)<7>" + \
+#               "{<1>$(n)<2>}<3>$(i<0>)<4>}<5>$(t)<6>$(x)<7>}<8>$(y)"
+#     consume_str = ConsumableString(line_in)
+# 
+#     print()
+#     print()
+#     print(line_in)
+#     print("#None are known")
+#     tmp = main_level_test(consume_str, PlaceFormat, place_to_test)
+#     print(tmp)
+#     print("Good" if tmp == "" else "!! bad !!")
+# 
+# 
+#     print()
+#     print()
+#     print("#Three are known (string lengths only)")
+#     answer = []
+#     for y_or_n in combinations(11, 4):
+#         place_set()
+#         consume_str = ConsumableString(line_in)
+#         tmp = main_level_test(consume_str, PlaceFormat, place_to_test)
+#         #print tmp
+#         answer.append(len(tmp))
+#     print(answer)
+#     print("Good" if answer == [38, 44, 44, 42, 46, 50, 49, 50, 40, 40, 38, 42,
+#         46, 45, 46, 46, 44, 48, 52, 51, 52, 44, 48, 52, 51, 52, 46, 50, 49, 50,
+#         54, 53, 54, 57, 58, 57, 28, 28, 26, 30, 34, 33, 34, 34, 32, 36, 40, 39,
+#         40, 32, 36, 40, 39, 40, 34, 38, 37, 38, 42, 41, 42, 45, 46, 45, 30, 28,
+#         32, 36, 35, 36, 28, 32, 36, 35, 36, 30, 34, 33, 34, 38, 37, 38, 41, 42,
+#         41, 34, 38, 42, 41, 42, 36, 40, 39, 40, 44, 43, 44, 47, 48, 47, 36, 40,
+#         39, 40, 44, 43, 44, 47, 48, 47, 42, 41, 42, 45, 46, 45, 49, 50, 49, 53,
+#         28, 28, 26, 30, 34, 33, 34, 34, 32, 36, 40, 39, 40, 32, 36, 40, 39, 40,
+#         34, 38, 37, 38, 42, 41, 42, 45, 46, 45, 30, 28, 32, 36, 35, 36, 28, 32,
+#         36, 35, 36, 30, 34, 33, 34, 38, 37, 38, 41, 42, 41, 34, 38, 42, 41, 42,
+#         36, 40, 39, 40, 44, 43, 44, 47, 48, 47, 36, 40, 39, 40, 44, 43, 44, 47,
+#         48, 47, 42, 41, 42, 45, 46, 45, 49, 50, 49, 53, 19, 17, 21, 25, 24, 25,
+#         17, 21, 25, 24, 25, 19, 23, 22, 23, 27, 26, 27, 30, 31, 30, 23, 27, 31,
+#         30, 31, 25, 29, 28, 29, 33, 32, 33, 36, 37, 36, 25, 29, 28, 29, 33, 32,
+#         33, 36, 37, 36, 31, 30, 31, 34, 35, 34, 38, 39, 38, 42, 19, 23, 27, 26,
+#         27, 21, 25, 24, 25, 29, 28, 29, 32, 33, 32, 21, 25, 24, 25, 29, 28, 29,
+#         32, 33, 32, 27, 26, 27, 30, 31, 30, 34, 35, 34, 38, 27, 31, 30, 31, 35,
+#         34, 35, 38, 39, 38, 33, 32, 33, 36, 37, 36, 40, 41, 40, 44, 33, 32, 33,
+#         36, 37, 36, 40, 41, 40, 44, 38, 39, 38, 42, 46] else "!! bad !!")
