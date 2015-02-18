@@ -78,7 +78,7 @@ class DBI(object):
     """
     The SQL-like interface to the database and document instances.
     """
-    def __init__(self, database, document):
+    def __init__(self, database, document=None):
         self.database = database
         self.document = document
         self.data = {}
@@ -99,8 +99,8 @@ class DBI(object):
         """
         Parse the query.
         """
-        self.query = query.strip()
-        lexed = self.lexer(self.query)
+        self.query_text = query.replace("\n", " ").strip()
+        lexed = self.lexer(self.query_text)
         #print(lexed)
         self.parser(lexed)
         for col_name in self.columns[:]: # copy
@@ -313,6 +313,22 @@ class DBI(object):
             retval.append(column.replace("_", "__"))
         return retval
 
+    def query(self, query):
+        self.parse(query)
+        self.select = 0
+        start_time = time.time()
+        class Table():
+            results = []
+            def row(self, *args, **kwargs):
+                self.results.append([args, kwargs])
+            def get_rows(self):
+                return [list(item[0]) for item in self.results]
+        table = Table()
+        self.sdb = SimpleAccess(self.database)
+        self.process_table(table) # a class that has .row(1, 2, 3, ...)
+        print(_("%d rows processed in %s seconds.\n") % (self.select, time.time() - start_time))
+        return table
+
     def eval(self):
         """
         Execute the query.
@@ -325,7 +341,7 @@ class DBI(object):
         if self.select > 0:
             self.stab.columns(*self.clean_titles(self.columns))
             self.sdoc = SimpleDoc(self.document)
-            self.sdoc.title(self.query)
+            self.sdoc.title(self.query_text)
             self.sdoc.paragraph("\n")
             self.sdoc.paragraph("%d rows processed in %s seconds.\n" % (self.select, time.time() - start_time))
             self.stab.write(self.sdoc)
