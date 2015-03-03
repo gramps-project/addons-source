@@ -19,7 +19,7 @@ register(REPORT,
     id   = 'DescendantBook',
     name = _('Descendant Book'),
     description = _("Produces one or more descendant reports based on a supplied query."),
-    version = '1.0.2',
+    version = '1.1.1',
     gramps_target_version = '4.2',
     status = UNSTABLE, # Most of testing/development is against 3.4. This has not been tested at all against trunk (3.5+), as I do not have a gtk3 system that I can test/develop on.
     fname = 'DescendantBookReport.py',
@@ -27,16 +27,16 @@ register(REPORT,
     authors_email = ["matt.keenan@gmail.com"],
     category = CATEGORY_BOOK,
     reportclass = 'DescendantBook',
-    optionclass = 'DescendantBookOptions',
+    optionclass = 'cl_report',
     report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
     require_active = True
     )
 
 register(REPORT,
-    id   = 'DetDescendantBook',
+    id   = 'DetailedDescendantBook',
     name = _('Detailed Descendant Book'),
     description = _("Produces one or more detailed descendant reports based on a supplied query."),
-    version = '1.0.2',
+    version = '1.1.1',
     gramps_target_version = '4.2',
     status = UNSTABLE, # Most of testing/development is against 3.4. This has not been tested at all against trunk (3.5+), as I do not have a gtk3 system that I can test/develop on.
     fname = 'DetailedDescendantBookReport.py',
@@ -44,7 +44,9 @@ register(REPORT,
     authors_email = ["matt.keenan@gmail.com"],
     category = CATEGORY_BOOK,
     reportclass = 'DetailedDescendantBook',
-    optionclass = 'DetailedDescendantBookOptions',
+    optionclass = 'cl_report',
     report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
     require_active = True
     )
+
+__author__ = "mattman"
