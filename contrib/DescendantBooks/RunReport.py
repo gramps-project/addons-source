@@ -32,6 +32,9 @@ import Errors
 import logging
 LOG = logging.getLogger(".")
 
+from cli.plug import cl_report as real_cl_report
+from gen.plug import BasePluginManager
+from gen.plug.report import CATEGORY_TEXT
 from gui.utils import open_file_with_default_application
 from gui.user import User
 from gui.plug.report._textreportdialog import TextReportDialog
@@ -104,3 +107,30 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
         delattr(dialog, 'notebook')
     del dialog
 
+
+def custom_cl_report(database, name, category, options_str_dict):
+    """Custom Command Line Report"""
+    report_class, options_class = GetReportClasses(name)
+    real_cl_report(database, name, CATEGORY_TEXT, report_class,
+              options_class, options_str_dict)
+
+def GetReportClasses(name):
+    """Get Report and Options class for this module"""
+    report_class = None
+    options_class = None
+
+    pmgr = BasePluginManager.get_instance()
+    _cl_list = pmgr.get_reg_reports(gui=False)
+    for pdata in _cl_list:
+        if name == pdata.id:
+            mod = pmgr.load_plugin(pdata)
+            if not mod:
+                return report_class, options_class
+            report_class_str = pdata.reportclass + "Report"
+            report_class = eval('mod.' + report_class_str)
+            options_class_str = name + "Options"
+            options_class = eval('mod.' + options_class_str)
+
+            return report_class, options_class
+
+    return report_class, options_class

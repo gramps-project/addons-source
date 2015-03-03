@@ -49,7 +49,7 @@ from gen.utils import (get_birth_or_fallback, get_death_or_fallback,
                        get_marriage_or_fallback, get_divorce_or_fallback)
 
 from CollectAscendants import CollectAscendants
-from RunReport import RunReport
+from RunReport import RunReport, custom_cl_report
 
 report_person_ref = dict()
 report_titles = dict()
@@ -484,8 +484,11 @@ class DescendantBookReport(Report):
 # Descendant Book Options
 #
 #------------------------------------------------------------------------
+def cl_report(database, name, category, options_str_dict):
+    """Run report from command line"""
+    custom_cl_report(database, name, category, options_str_dict)
+ 
 class DescendantBookOptions(MenuReportOptions):
-
     """
     Defines options and provides handling interface.
     """

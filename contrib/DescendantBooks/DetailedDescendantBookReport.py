@@ -38,7 +38,6 @@ from functools import partial
 from gen.display.name import displayer as global_name_display
 from Errors import ReportError
 from gen.lib import FamilyRelType, Person, NoteType
-from cli.plug import cl_report
 from gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
                            EnumeratedListOption, FilterOption)
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
@@ -51,7 +50,7 @@ from gen.plug.report import MenuReportOptions
 
 import DateHandler
 from CollectAscendants import CollectAscendants
-from RunReport import RunReport
+from RunReport import RunReport, custom_cl_report
 
 from libnarrate import Narrator
 import TransUtils
@@ -1122,8 +1121,11 @@ class DetailedDescendantBookReport(Report):
 # DetailedDescendantBookOptions
 #
 #------------------------------------------------------------------------
-class DetailedDescendantBookOptions(MenuReportOptions):
+def cl_report(database, name, category, options_str_dict):
+    """Run report from command line"""
+    custom_cl_report(database, name, category, options_str_dict)
 
+class DetailedDescendantBookOptions(MenuReportOptions):
     """
     Defines options and provides handling interface.
     """
