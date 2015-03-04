@@ -21,7 +21,7 @@ register(REPORT,
     id = 'd3-descendantindentedtree',
     name = _('Descendant Indented Tree'),
     category = CATEGORY_WEB,
-    status = UNSTABLE,
+    status = STABLE,
     fname = 'DescendantIndentedTree.py',
     reportclass = 'DescendantIndentedTreeReport',
     optionclass = 'DescendantIndentedTreeOptions',
@@ -32,6 +32,6 @@ register(REPORT,
                     'representation of descendants (SVG) represented'
                     'as a Collapsible Indented Tree Layout from the D3.js '
                     'JavaScript library.'),
-    version = '1.0.1',
+    version = '1.0.2',
     gramps_target_version = '4.2',
 )

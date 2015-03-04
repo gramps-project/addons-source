@@ -249,7 +249,7 @@ class Printinfo():
         self.json_fp.write('%s"display_num": "%s",\n' %
             (self.pad_str(gen_pad+1), str(display_num)))
         self.json_fp.write('%s"name": "%s",\n' %
-            (self.pad_str(gen_pad+1), name))
+            (self.pad_str(gen_pad+1), name.replace('"', "'")))
         self.json_fp.write('%s"spouse": "%s",\n' %
             (self.pad_str(gen_pad+1), "false"))
         self.dump_string(person, level)
@@ -266,7 +266,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s",\n' %
                 (self.pad_str(gen_pad+1), "true"))
             self.dump_string(spouse, level, family_handle)
@@ -276,7 +276,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s"\n' %
                 (self.pad_str(gen_pad+1), "true"))
 
@@ -292,7 +292,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s"\n' %
                 (self.pad_str(gen_pad+1), "true"))
 
@@ -344,23 +344,32 @@ class RecurseDown():
         if person_handle not in self.person_printed:
             self.person_printed[person_handle] = ref_str
 
+        if len(person.get_family_handle_list()) > 0:
+            self.objPrint.json_fp.write(',\n%s"children": [\n' %
+                (self.pad_str(gen_pad)))
+
+        family_num = 0
         for family_handle in person.get_family_handle_list():
             family = self.database.get_family_from_handle(family_handle)
+            family_num += 1
 
             spouse_handle = ReportUtils.find_spouse(person, family)
 
             if not self.dups and spouse_handle in self.person_printed:
                 # Just print a reference
                 spouse = self.database.get_person_from_handle(spouse_handle)
-                self.objPrint.json_fp.write(',\n%s"children": [\n%s{\n' %
-                    (self.pad_str(gen_pad), (self.pad_str(gen_pad))))
+                if family_num > 1:
+                    self.objPrint.json_fp.write(',%s{\n' % (self.pad_str(gen_pad)))
+                else:
+                    self.objPrint.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
                 self.objPrint.print_reference(level, spouse,
                     self.person_printed[spouse_handle])
-                self.objPrint.json_fp.write('%s}\n%s]\n' %
-                    (self.pad_str(gen_pad), (self.pad_str(gen_pad))))
+                self.objPrint.json_fp.write('%s}\n' % (self.pad_str(gen_pad)))
             else:
-                self.objPrint.json_fp.write(',\n%s"children": [\n%s{\n' %
-                    (self.pad_str(gen_pad+1), (self.pad_str(gen_pad+1))))
+                if family_num > 1:
+                    self.objPrint.json_fp.write(',%s{\n' % (self.pad_str(gen_pad)))
+                else:
+                    self.objPrint.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
                 self.objPrint.print_spouse(level, spouse_handle, family)
 
                 if spouse_handle:
@@ -388,10 +397,13 @@ class RecurseDown():
                     self.objPrint.json_fp.write('\n%s]\n' %
                         (self.pad_str(gen_pad+1)))
 
-                self.objPrint.json_fp.write('%s}\n%s]\n' %
-                    (self.pad_str(gen_pad), (self.pad_str(gen_pad))))
+                self.objPrint.json_fp.write('%s}\n' % (self.pad_str(gen_pad)))
 
-        self.objPrint.json_fp.write('\n%s}\n' % (self.pad_str(gen_pad)))
+        if len(person.get_family_handle_list()) > 0:
+            self.objPrint.json_fp.write('%s]\n%s}\n' %
+                (self.pad_str(gen_pad), self.pad_str(gen_pad)))
+        else:
+            self.objPrint.json_fp.write('\n%s}\n' % (self.pad_str(gen_pad)))
 
 #------------------------------------------------------------------------
 #
@@ -515,7 +527,7 @@ class DescendantIndentedTreeReport(Report):
                     '</html>\n'
                 fp.write(outstr)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
             return
 
@@ -732,7 +744,7 @@ class DescendantIndentedTreeReport(Report):
                     'd.children ? "#c6dbef" : "#fd8d3c";\n')
                 fp.write('}\n')
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
             return
 
@@ -747,7 +759,7 @@ class DescendantIndentedTreeReport(Report):
                                       self.divs)
                 recurse.recurse(generation, self.center_person, None)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
             return
 
