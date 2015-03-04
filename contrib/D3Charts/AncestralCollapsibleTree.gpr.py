@@ -21,7 +21,7 @@ register(REPORT,
     id = 'd3-ancestralcollapsibletree',
     name = _('Ancestral Collapsible Tree'),
     category = CATEGORY_WEB,
-    status = UNSTABLE,
+    status = STABLE,
     fname = 'AncestralCollapsibleTree.py',
     reportclass = 'AncestralCollapsibleTreeReport',
     optionclass = 'AncestralCollapsibleTreeOptions',
@@ -32,6 +32,6 @@ register(REPORT,
                     'representation of ancestors (SVG) '
                     'represented as a Collapsible Tree Layout from the D3.js '
                     'JavaScript library.'),
-    version = '1.0.1',
+    version = '1.0.2',
     gramps_target_version = '4.2',
 )

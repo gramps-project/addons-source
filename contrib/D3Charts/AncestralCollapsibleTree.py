@@ -165,7 +165,7 @@ class AncestralCollapsibleTreeReport(Report):
         name = self._name_display.display(person)
         self.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         self.json_fp.write('%s"name": "%s",\n' %
-            (self.pad_str(gen_pad+1), name))
+            (self.pad_str(gen_pad+1), name.replace('"', "'")))
         self.json_fp.write('%s"gender": "%s",\n' %
             (self.pad_str(gen_pad+1), self.get_gender_str(person)))
 
@@ -285,7 +285,7 @@ class AncestralCollapsibleTreeReport(Report):
                     '</html>\n'
                 fp.write(outstr)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
             return
 
@@ -728,7 +728,7 @@ class AncestralCollapsibleTreeReport(Report):
                 fp.write(' }\n')
                 fp.write('}\n')
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
             return
 
@@ -742,7 +742,7 @@ class AncestralCollapsibleTreeReport(Report):
                 # database that match the ancestry.
                 self.json_filter(self.center_person.get_handle(), 1)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
             return
 
