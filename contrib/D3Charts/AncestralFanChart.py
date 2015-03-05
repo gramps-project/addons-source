@@ -107,6 +107,12 @@ class AncestralFanChartReport(Report):
         self.destfile = conv_to_unicode(
             menu.get_option_by_name('destfile').get_value(), 'utf8')
         self.destpath = os.path.dirname(self.destfile)
+        self.destprefix, self.destext = \
+            os.path.splitext(os.path.basename(self.destfile))
+        self.destjson = os.path.join(self.destpath, "json",
+                                     "%s.json" % (self.destprefix))
+        self.destjs = os.path.join(self.destpath, "js",
+                                  "%s.js" % (self.destprefix))
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
@@ -384,7 +390,7 @@ class AncestralFanChartReport(Report):
                     '    <div id="testString">\n' + \
                     '    </div>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/fanchart.js"></script>\n' + \
+                    'src="js/%s.js"></script>\n' % (self.destprefix) + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
@@ -433,11 +439,10 @@ class AncestralFanChartReport(Report):
             ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
 
-        # Generate fanchart.js based on colors and initial generations to
+        # Generate <dest>.js based on colors and initial generations to
         # display
         try:
-            dest_js = os.path.join(self.destpath, "js", "fanchart.js")
-            with io.open(dest_js, 'w', encoding='utf8') as fp:
+            with io.open(self.destjs, 'w', encoding='utf8') as fp:
                 fp.write('var width = 1024;\n\n')
                 fp.write('if (width > $(window).width()-25) {\n')
                 fp.write(' width = $(window).width()-25;\n')
@@ -475,8 +480,8 @@ class AncestralFanChartReport(Report):
                     'return Math.max(0, d.y ? y(d.y) : d.y); })\n')
                 fp.write(' .outerRadius(function(d) { ' +
                     'return Math.max(0, y(d.y + d.dy)); });\n\n')
-                fp.write('d3.json("json/fanchart.json", ' +
-                    'function(error, json) {\n')
+                out_str = 'd3.json("json/%s.json", ' % (self.destprefix)
+                fp.write(out_str + 'function(error, json) {\n')
                 fp.write(' var nodes = partition.nodes({children: ' +
                     'json});\n')
                 fp.write(' var path = vis.selectAll("path").' +
@@ -635,7 +640,7 @@ class AncestralFanChartReport(Report):
                     'replace(location);\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
             return
 
         if self.get_gender_str(self.center_person) == "male":
@@ -645,8 +650,7 @@ class AncestralFanChartReport(Report):
 
         # Genearte json data file to be used
         try:
-            dest_json = os.path.join(self.destpath, "json", "fanchart.json")
-            with io.open(dest_json, 'w', encoding='utf8') as self.json_fp:
+            with io.open(self.destjson, 'w', encoding='utf8') as self.json_fp:
                 generation = 0
 
                 # Calculate the maximum ancestor level, as all ancestor
@@ -661,7 +665,7 @@ class AncestralFanChartReport(Report):
 
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
             return
 
 #------------------------------------------------------------------------
