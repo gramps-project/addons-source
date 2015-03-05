@@ -27,7 +27,8 @@ Merged with Trunk Rev r18388
 #
 #------------------------------------------------------------------------
 import copy
-from gen.ggettext import gettext as _
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.gettext
 from functools import partial
 
 #------------------------------------------------------------------------
@@ -35,26 +36,25 @@ from functools import partial
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.display.name import displayer as global_name_display
-from Errors import ReportError
-from gen.lib import FamilyRelType, Person, NoteType
-from gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
+from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.errors import ReportError
+from gramps.gen.lib import FamilyRelType, Person, NoteType
+from gramps.gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
                            EnumeratedListOption, FilterOption)
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
-from gen.plug.report import (Report, Bibliography)
-from gen.plug.report import endnotes
-from gen.plug.report import utils as ReportUtils
-from gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import stdoptions
+from gramps.gen.plug.report import (Report, Bibliography)
+from gramps.gen.plug.report import endnotes
+from gramps.gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
 
-import DateHandler
+import gramps.gen.datehandler
 from CollectAscendants import CollectAscendants
-from RunReport import RunReport, custom_cl_report
+from RunReport import RunReport
 
-from libnarrate import Narrator
-import TransUtils
-from libtranslate import Translator, get_language_string
+from gramps.plugins.lib.libnarrate import Narrator
 
 #------------------------------------------------------------------------
 #
@@ -170,8 +170,8 @@ class DetailedDescendantBookReport(Report):
             empty_place = ""
 
         language = get_value('trans')
-        translator = Translator(language)
-        self._ = translator.gettext
+        locale = self.set_locale(language)
+        self._locale = self.set_locale(language)
 
         # Copy the global NameDisplay so that we don't change application 
         # defaults.
@@ -183,12 +183,11 @@ class DetailedDescendantBookReport(Report):
         self.__narrator = Narrator(self.database, self.verbose,
                                    use_call, use_fulldate, 
                                    empty_date, empty_place,
-                                   translator=translator,
+                                   nlocale=self._locale,
                                    get_endnote_numbers=self.endnotes)
 
-        self.__get_date = translator.get_date
-
-        self.__get_type = translator.get_type
+        #self.__get_date = translator.get_date
+        #self.__get_type = translator.get_type
 
         self.bibli = Bibliography(Bibliography.MODE_DATE|Bibliography.MODE_PAGE)
 
@@ -267,7 +266,7 @@ class DetailedDescendantBookReport(Report):
     def apply_mod_reg_filter(self, person_handle):
         self.apply_mod_reg_filter_aux(person_handle, 1, 1)
         mod_reg_number = 1
-        for generation in xrange(len(self.gen_keys)):
+        for generation in range(len(self.gen_keys)):
             for key in self.gen_keys[generation]:
                 person_handle = self.map[key]
                 if person_handle not in self.dnumber:
@@ -339,7 +338,7 @@ class DetailedDescendantBookReport(Report):
                                         self.numbering)
 
                 self.generation = 0
-                for self.generation in xrange(len(self.gen_keys)):
+                for self.generation in range(len(self.gen_keys)):
 
                     if self.childref:
                         self.prev_gen_handles = self.gen_handles.copy()
@@ -415,7 +414,7 @@ class DetailedDescendantBookReport(Report):
             self.generation = 0
 
             self.numbers_printed = list()
-            for self.generation in xrange(len(self.gen_keys)):
+            for self.generation in range(len(self.gen_keys)):
                 if self.pgbrk and self.generation > 0:
                     self.doc.page_break()
                 self.doc.start_paragraph("DDR-Generation")
@@ -646,7 +645,7 @@ class DetailedDescendantBookReport(Report):
         event = self.database.get_event_from_handle(event_ref.ref)
 
         if self.fulldate:
-            date = self.__get_date(event.get_date_object())
+            date = self._get_date(event.get_date_object())
         else:
             date = event.get_date_object().get_year()
 
@@ -657,7 +656,7 @@ class DetailedDescendantBookReport(Report):
             place = u''
 
         self.doc.start_paragraph('DDR-EventHeader')    #BOOK
-        event_name = self.__get_type(event.get_type())
+        event_name = self._get_type(event.get_type())
 
 #BOOK start
         self.doc.start_bold()
@@ -697,7 +696,7 @@ class DetailedDescendantBookReport(Report):
             for attr in attr_list:
                 if text:
                     text += "; "
-                attrName = self.__get_type(attr.get_type())
+                attrName = self._get_type(attr.get_type())
                 text += self._("%(type)s: %(value)s%(endnotes)s") % {
                     'type'     : self._(attrName),
                     'value'    : attr.get_value(),
@@ -944,7 +943,7 @@ class DetailedDescendantBookReport(Report):
 
         for attr in attrs:
             self.doc.start_paragraph('DDR-MoreDetails')
-            attrName = self.__get_type(attr.get_type())
+            attrName = self._get_type(attr.get_type())
             text = self._("%(type)s: %(value)s%(endnotes)s") % {
                 'type'     : self._(attrName),
                 'value'    : attr.get_value(),
@@ -1037,7 +1036,7 @@ class DetailedDescendantBookReport(Report):
                     self.doc.end_paragraph()
                     first = False
                 self.doc.start_paragraph('DDR-MoreDetails')
-                atype = self.__get_type(alt_name.get_type())
+                atype = self._get_type(alt_name.get_type())
                 aname = alt_name.get_regular_name()
                 self.doc.write_text_citation(self._('%(name_kind)s: %(name)s%(endnotes)s') % {
                     'name_kind' : self._(atype),
@@ -1070,7 +1069,7 @@ class DetailedDescendantBookReport(Report):
                 text = ReportUtils.get_address_str(addr)
 
                 if self.fulldate:
-                    date = self.__get_date(addr.get_date_object())
+                    date = self._get_date(addr.get_date_object())
                 else:
                     date = addr.get_date_object().get_year()
 
@@ -1092,7 +1091,7 @@ class DetailedDescendantBookReport(Report):
 
             for attr in attrs:
                 self.doc.start_paragraph('DDR-EventHeader')  #BOOK
-                attrName = self.__get_type(attr.get_type())
+                attrName = self._get_type(attr.get_type())
 
 #BOOK start
                 self.doc.start_bold()
@@ -1121,10 +1120,6 @@ class DetailedDescendantBookReport(Report):
 # DetailedDescendantBookOptions
 #
 #------------------------------------------------------------------------
-def cl_report(database, name, category, options_str_dict):
-    """Run report from command line"""
-    custom_cl_report(database, name, category, options_str_dict)
-
 class DetailedDescendantBookOptions(MenuReportOptions):
     """
     Defines options and provides handling interface.
@@ -1192,13 +1187,7 @@ class DetailedDescendantBookOptions(MenuReportOptions):
                      _("Whether to start a new page before the end notes."))
         add_option("pageben", pageben)
 
-        trans = EnumeratedListOption(_("Translation"),
-                                      Translator.DEFAULT_TRANSLATION_STR)
-        trans.add_item(Translator.DEFAULT_TRANSLATION_STR, _("Default"))
-        for language in TransUtils.get_available_translations():
-            trans.add_item(language, get_language_string(language))
-        trans.set_help(_("The translation to be used for the report."))
-        add_option("trans", trans)
+        stdoptions.add_localization_option(menu, "Report Options")
 
         # Content
         

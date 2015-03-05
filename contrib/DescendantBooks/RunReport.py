@@ -21,23 +21,24 @@
 # GTK+ modules
 #
 #-------------------------------------------------------------------------
-import gtk
+from gi.repository import Gtk
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import Errors
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.gettext
+import gramps.gen.errors as Errors
 import logging
 LOG = logging.getLogger(".")
 
-from cli.plug import cl_report as real_cl_report
-from gen.plug import BasePluginManager
-from gen.plug.report import CATEGORY_TEXT
-from gui.utils import open_file_with_default_application
-from gui.user import User
-from gui.plug.report._textreportdialog import TextReportDialog
+from gramps.gen.plug import BasePluginManager
+from gramps.gen.plug.report import CATEGORY_TEXT
+from gramps.gui.utils import open_file_with_default_application
+from gramps.gui.user import User
+from gramps.gui.plug.report._textreportdialog import TextReportDialog
 
 
 #------------------------------------------------------------------------
@@ -58,7 +59,7 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
 
     while True:
         response = dialog.window.run()
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             dialog.close()
             try:
                 user = User()
@@ -76,24 +77,24 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
                     out_file = dialog.options.get_output()
                     open_file_with_default_application(out_file)
             
-            except Errors.FilterError, msg:
+            except Errors.FilterError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
-            except IOError, msg:
+            except IOError as msg:
                 ErrorDialog(_("Report could not be created"), str(msg))
-            except Errors.ReportError, msg:
+            except Errors.ReportError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
-            except Errors.DatabaseError,msg:                
+            except Errors.DatabaseError as msg:                
                 ErrorDialog(_("Report could not be created"), str(msg))
                 raise
             except:
                 LOG.error("Failed to run report.", exc_info=True)
             break
-        elif response == gtk.RESPONSE_CANCEL:
+        elif response == Gtk.ResponstType.CANCEL:
             dialog.close()
             break
-        elif response == gtk.RESPONSE_DELETE_EVENT:
+        elif response == Gtk.ResponseType.DELETE_EVENT:
             #just stop, in ManagedWindow, delete-event is already coupled to
             #correct action.
             break
@@ -107,12 +108,6 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
         delattr(dialog, 'notebook')
     del dialog
 
-
-def custom_cl_report(database, name, category, options_str_dict):
-    """Custom Command Line Report"""
-    report_class, options_class = GetReportClasses(name)
-    real_cl_report(database, name, CATEGORY_TEXT, report_class,
-              options_class, options_str_dict)
 
 def GetReportClasses(name):
     """Get Report and Options class for this module"""

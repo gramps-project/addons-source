@@ -21,6 +21,7 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
+from __future__ import print_function
 import copy
 
 #------------------------------------------------------------------------
@@ -28,8 +29,11 @@ import copy
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import Relationship
-from gen.lib import Person
+from gramps.gen.lib import Person
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.gettext
+
 
 #------------------------------------------------------------------------
 #
@@ -54,7 +58,7 @@ class CollectAscendants():
         """
         for person_handle in handles:
             person = self.database.get_person_from_handle(person_handle)
-            print person.gramps_id, person.get_primary_name().get_name()
+            print(person.gramps_id, person.get_primary_name().get_name())
 
     def __get_mate_handles(self, person):
         """
@@ -310,7 +314,7 @@ class CollectAscendants():
 
         entire_database = False
 
-        self.rel_calc = Relationship.get_relationship_calculator()
+        self.rel_calc = get_relationship_calculator()
 
         if len(people_handles) == self.database.get_number_of_people():
             entire_database = True

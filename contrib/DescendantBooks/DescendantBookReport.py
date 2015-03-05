@@ -27,29 +27,30 @@ Merged with Trunk Rev r18378
 #
 #------------------------------------------------------------------------
 import copy
-from gen.ggettext import gettext as _
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.gettext
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                             FONT_SANS_SERIF, INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
-from gen.plug.menu import (NumberOption, PersonOption, BooleanOption,
+from gramps.gen.plug.menu import (NumberOption, PersonOption, BooleanOption,
                            EnumeratedListOption, FilterOption)
-from gen.display.name import displayer as global_name_display
-from Errors import ReportError
-from gen.plug.report import Report
-from gen.plug.report import utils as ReportUtils
-from gen.plug.report import MenuReportOptions
-import DateHandler
-import Sort
-from gen.utils import (get_birth_or_fallback, get_death_or_fallback,
+from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.errors import ReportError
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import MenuReportOptions
+import gramps.gen.datehandler
+from gramps.gen.sort import Sort
+from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                        get_marriage_or_fallback, get_divorce_or_fallback)
 
 from CollectAscendants import CollectAscendants
-from RunReport import RunReport, custom_cl_report
+from RunReport import RunReport
 
 report_person_ref = dict()
 report_titles = dict()
@@ -154,7 +155,7 @@ class Printinfo():
 
     def __date_place(self,event):
         if event:
-            date = DateHandler.get_date(event)
+            date = gramps.gen.datehandler.get_date(event)
             place_handle = event.get_place_handle()
             if place_handle:
                 place = self.database.get_place_from_handle(
@@ -372,8 +373,8 @@ class DescendantBookReport(Report):
         if (self.center_person == None) :
             raise ReportError(_("Person %s is not in the Database") % pid )
         
-        sort = Sort.Sort(self.database)
-        self.by_birthdate = sort.by_birthdate
+        sort = Sort(self.database)
+        self.by_birthdate_key = sort.by_birthdate_key
     
         #Initialize the Printinfo class    
         self._showdups = menu.get_option_by_name('dups').get_value()
@@ -484,10 +485,6 @@ class DescendantBookReport(Report):
 # Descendant Book Options
 #
 #------------------------------------------------------------------------
-def cl_report(database, name, category, options_str_dict):
-    """Run report from command line"""
-    custom_cl_report(database, name, category, options_str_dict)
- 
 class DescendantBookOptions(MenuReportOptions):
     """
     Defines options and provides handling interface.
