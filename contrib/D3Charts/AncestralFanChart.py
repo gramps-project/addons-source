@@ -201,7 +201,7 @@ class AncestralFanChartReport(Report):
         """
         
         gen_pad = (generation-1) * 2
-        self.jjsson_fp.write('%s{\n' % (self.pad_str(gen_pad)))
+        self.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         self.json_fp.write('%s"name": "",\n' %
             (self.pad_str(gen_pad+1)))
         self.json_fp.write('%s"gender": "%s",\n' %
