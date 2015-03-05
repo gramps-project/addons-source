@@ -111,6 +111,12 @@ class AncestralCollapsibleTreeReport(Report):
         self.destfile = conv_to_unicode(
             menu.get_option_by_name('destfile').get_value(), 'utf8')
         self.destpath = os.path.dirname(self.destfile)
+        self.destprefix, self.destext = \
+            os.path.splitext(os.path.basename(self.destfile))
+        self.destjson = os.path.join(self.destpath, "json",
+                                     "%s.json" % (self.destprefix))
+        self.destjs = os.path.join(self.destpath, "js",
+                                  "%s.js" % (self.destprefix))
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
@@ -280,7 +286,7 @@ class AncestralCollapsibleTreeReport(Report):
                     '    <div id="testString">\n' + \
                     '    </div>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/collapsibletree.js"></script>\n' + \
+                    'src="js/%s.js"></script>\n' % (self.destprefix) + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
@@ -329,11 +335,10 @@ class AncestralCollapsibleTreeReport(Report):
             ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
 
-        # Generate collapsibletree.js based on colors and initial
+        # Generate <dest>.js based on colors and initial
         # generations to display
         try:
-            dest_js = os.path.join(self.destpath, "js", "collapsibletree.js")
-            with io.open(dest_js, 'w', encoding='utf8') as fp:
+            with io.open(self.destjs, 'w', encoding='utf8') as fp:
                 fp.write('var m = [20, 50, 20, 100],\n')
                 fp.write(' w = 4000 - m[1] - m[3],\n')
                 fp.write(' h = 4000 - m[0] - m[2],\n')
@@ -355,8 +360,8 @@ class AncestralCollapsibleTreeReport(Report):
                 fp.write(' .append("svg:g")\n')
                 fp.write(' .attr("transform", "translate(" + m[3] +' +
                     ' "," + m[0] + ")");\n\n')
-                fp.write('d3.json("json/collapsibletree.json", ' +
-                    'function(json) {\n')
+                out_str = 'd3.json("json/%s.json", ' % (self.destprefix)
+                fp.write(out_str + 'function(json) {\n')
                 fp.write(' var testString = ' +
                     'document.getElementById("testString");\n\n')
                 fp.write(' root = json;\n')
@@ -729,13 +734,12 @@ class AncestralCollapsibleTreeReport(Report):
                 fp.write('}\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
             return
 
         # Genearte json data file to be used
         try:
-            dest_json = os.path.join(self.destpath, "json", "collapsibletree.json")
-            with io.open(dest_json, 'w', encoding='utf8') as self.json_fp:
+            with io.open(self.destjson, 'w', encoding='utf8') as self.json_fp:
                 generation = 0
 
                 # Call json_folter to build the json file of people in the
@@ -743,7 +747,7 @@ class AncestralCollapsibleTreeReport(Report):
                 self.json_filter(self.center_person.get_handle(), 1)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
             return
 
 #------------------------------------------------------------------------
