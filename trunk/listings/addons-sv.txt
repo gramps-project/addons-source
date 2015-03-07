@@ -67,7 +67,7 @@
 {"t":'Report',"i":'census_report',"n":'Folkräkningsrapport',"v":'1.0.29',"g":'4.2',"d":'Rapport över folkräkningshändelser för en person',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.4',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.8',"g":'4.2',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
-{"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.21',"g":'4.2',"d":'Skapar en hemsida (XHTML) med grafisk representation av förfäder/ättlingar (SVG) där detaljer om individier blir synliga via mushändelser.',"z":'DenominoViso.addon.tgz'}
+{"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.22',"g":'4.2',"d":'Skapar en hemsida (XHTML) med grafisk representation av förfäder/ättlingar (SVG) där detaljer om individier blir synliga via mushändelser.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":'Koppla källa',"v":'0.0.25',"g":'4.2',"d":'Kopplar en delad källa till flera objekt.',"z":'AttachSourceTool.addon.tgz'}
 {"t":'Tool',"i":'PlaceCompletion',"n":'Platskomplettering',"v":'0.0.27',"g":'4.2',"d":'Lämnar en bläddringsbar lista på valda platser, med möjlighet att komplettera/avsöka/sätta attributfältet.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":'Sätt attribut',"v":'0.0.20',"g":'4.2',"d":'Sätt ett attribut till ett givet värde.',"z":'SetAttributeTool.addon.tgz'}
