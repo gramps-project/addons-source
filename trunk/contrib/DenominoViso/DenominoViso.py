@@ -125,9 +125,15 @@
 import os
 import shutil
 import re
-from urllib import quote,splittype,pathname2url
+import sys
+if sys.version_info[0] < 3:
+    from urllib import quote, splittype, pathname2url
+else:
+    from urllib.parse import quote, splittype
+    from urllib.request import pathname2url
 from xml.sax.saxutils import escape, quoteattr
 from math import sin,cos,exp,sqrt,e,pi
+import codecs
 
 #-------------------------------------------------------------------------
 #
@@ -152,9 +158,9 @@ from gramps.gui.dialog import ErrorDialog, WarningDialog
 from gramps.gui.plug.report._fileentry import FileEntry
 from gramps.gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gramps.gen.display.name import displayer as _nd
-import gramps.gen.datehandler
+import gramps.gen.datehandler as datehandler
 from gramps.gui.autocomp import fill_combo
-from gramps.gen.lib import EventType, EventRoleType, ChildRefType, AttributeType
+from gramps.gen.lib import EventType, EventRoleType, ChildRefType, AttributeType, Date
 from gramps.gen.utils.string import conf_strings as confidence
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.menu import Option as PlugOption
@@ -286,7 +292,7 @@ class DenominoVisoReport(Report):
         #(self.options['DNMold_browser_output'], self.options['DNMfilename4old_browser']) = \
         #    self.options['DNMold_browser_output_m'].split(', ',1)
         #self.options['DNMold_browser_output'] = self.options['DNMold_browser_output'] == 'True'
-	
+    
         self.options['DNMdash_child_rel'] = list_of_strings2list_of_lists(\
                 self.options['DNMdash_child_rel'])
         self.options['DNMconf_color'] = list_of_strings2list_of_lists(\
@@ -369,7 +375,7 @@ class DenominoVisoReport(Report):
         #if self.options['DNMold_browser_output']:
         #    self.write_old_browser_output()
         try:
-            with open(self.target_path, 'w') as f:
+            with codecs.open(self.target_path, 'w', encoding='UTF-8') as f:
                 startup = {}
                 startup[_cnsts.FAN] = ((0,-pi,pi), (0,0,2*pi), \
                         (0,pi/2,5*pi/2), (0,-pi/2,3*pi/2))
@@ -399,7 +405,7 @@ class DenominoVisoReport(Report):
                         self.walk_the_tree_asc(f, start_handle, 0,\
                                 startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
                 self.end_page(f)
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_('Failure writing %s: %s') % (self.target_path,str(msg)))
             return
 
@@ -474,14 +480,14 @@ class DenominoVisoReport(Report):
         prel = []
         person = self.database.get_person_from_handle(person_handle)
         family_handle_list = person.get_family_handle_list()
-        family_handle_list.sort(self.sort_family_list)
+        family_handle_list.sort(key=self.sort_family_list)
         for family_handle in family_handle_list:
             if family_handle and generation > (-self.options['DNMmax_generations'] + 1):
                 family = self.database.get_family_from_handle(family_handle)
                 person_is_mother = family.get_mother_handle() == person_handle
                 child_ref_list = family.get_child_ref_list()
                 if len(child_ref_list) > 0:
-                    child_ref_list.sort(self.sort_child_list)
+                    child_ref_list.sort(key=self.sort_child_list)
                     for child_ref in child_ref_list:
                         if child_ref:
                             if person_is_mother:
@@ -530,13 +536,13 @@ class DenominoVisoReport(Report):
         child_refs = []
         person = self.database.get_person_from_handle(person_handle)
         family_handles = person.get_family_handle_list()
-        family_handles.sort(self.sort_family_list)
+        family_handles.sort(key=self.sort_family_list)
         for family_handle in family_handles:
             if family_handle and generation > (-self.options['DNMmax_generations']+1):
                 family = self.database.get_family_from_handle(family_handle)
                 child_ref_list = family.get_child_ref_list()
                 nr_attachees += len(child_ref_list)
-                child_ref_list.sort(self.sort_child_list)
+                child_ref_list.sort(key=self.sort_child_list)
                 child_refs.extend(child_ref_list)
         if nr_attachees == 0:
             self.add_personal_data(f,person,generation,attachment_segment)
@@ -547,51 +553,40 @@ class DenominoVisoReport(Report):
             self.walk_the_tree_desc(f,ref.ref,generation-1,attach_points[i])
         return
 
-    def sort_family_list(self,a_id,b_id):
+    def sort_family_list(self, family_id):
         """Function called by a sort to order the families according to
             marriage date."""
-        if not (a_id and b_id):
-            return 0
-        a = self.database.get_family_from_handle(a_id)
-        b = self.database.get_family_from_handle(b_id)
-        if not (a and b):
-            return 0
-        a_event_ref_list = a.get_event_ref_list()
-        b_event_ref_list = b.get_event_ref_list()
-        a_marriage = None
-        b_marriage = None
-        for ref in a_event_ref_list:
+        if not family_id:
+            return Date()
+        family = self.database.get_family_from_handle(family_id)
+        if not family:
+            return Date()
+        event_ref_list = family.get_event_ref_list()
+        marriage = None
+        for ref in event_ref_list:
             event = self.database.get_event_from_handle(ref.ref)
             if event.get_type() == EventType.MARRIAGE:
-                a_marriage = event
+                marriage = event
                 break
-        for ref in b_event_ref_list:
-            event = self.database.get_event_from_handle(ref.ref)
-            if event.get_type() == EventType.MARRIAGE:
-                b_marriage = event
-                break
-        if not (a_marriage and b_marriage):
-            return 0
-        return cmp(a_marriage.get_date_object(),b_marriage.get_date_object())
+        if not marriage:
+            return Date()
+        return marriage.get_date_object()
 
-    def sort_child_list(self,a_id,b_id):
+    def sort_child_list(self, child_id):
         """Function called by a sort to order the children according to birth
             date."""
-        if not (a_id.ref and b_id.ref):
-            return 0
-        a = self.database.get_person_from_handle(a_id.ref)
-        b = self.database.get_person_from_handle(b_id.ref)
-        if not (a and b):
-            return 0
-        a_birth_ref = a.get_birth_ref()
-        b_birth_ref = b.get_birth_ref()
-        if not (a_birth_ref and  b_birth_ref):
-            return 0
-        a_birth = self.database.get_event_from_handle(a_birth_ref.ref)
-        b_birth = self.database.get_event_from_handle(b_birth_ref.ref)
-        if not (a_birth and b_birth):
-            return 0
-        return cmp(a_birth.get_date_object(),b_birth.get_date_object())
+        if not child_id:
+            return Date()
+        child = self.database.get_person_from_handle(child_id.ref)
+        if not child:
+            return Date()
+        birth_ref = child.get_birth_ref()
+        if not birth_ref:
+            return Date()
+        birth = self.database.get_event_from_handle(birth_ref.ref)
+        if not birth:
+            return Date()
+        return birth.get_date_object()
     
     def fan_segment(self,nr_ret_attach_points,att_rad,att_phi1,att_phi2):
         """Return the svg-pathstring to draw a fan-segment which is to be
@@ -872,7 +867,7 @@ class DenominoVisoReport(Report):
             person_img:{img_path:'...'}"""
         rv = ""
         if self.options['DNMinc_img']:
-            plist = filter(self.privacy_filter,person.get_media_list())
+            plist = [x for x in person.get_media_list() if self.privacy_filter(x)]
             if (len(plist) > 0):
                 media_object = self.database.get_object_from_handle(\
                         plist[0].get_reference_handle())
@@ -888,7 +883,7 @@ class DenominoVisoReport(Report):
         # Is there any need to support more than 1 uri?
         rv = ""
         if self.options['DNMinc_url']:
-            ulist = filter(self.privacy_filter,person.get_url_list())
+            ulist = [x for x in person.get_url_list() if self.privacy_filter]
             if len(ulist) > 0:
                 (type,path) = splittype(ulist[0].get_path())
                 if not path: return rv
@@ -904,8 +899,8 @@ class DenominoVisoReport(Report):
             rv += "}"
         return rv
 
-	# pack_birth_death_data was moved into pack_event_data, this is just a
-	# modification of what pack_event_data returns.
+    # pack_birth_death_data was moved into pack_event_data, this is just a
+    # modification of what pack_event_data returns.
     def pack_birth_death_data(self,type,event_str):
         """Return a string that will be part of the JavaScript object
             describing a birth or death event, e.g.:
@@ -1010,7 +1005,7 @@ function %(bd)s2html(person,containerDL) {
         death_ref = person.get_death_ref()
         family_event_refs = self.get_family_event_refs(person)
         event_ref_list.extend(family_event_refs.keys())
-        event_ref_list.sort(self.sort_event_ref_list)
+        event_ref_list.sort(key=self.sort_event_ref_list)
         try:
             death_estimate = self.database.get_event_from_handle(death_ref.ref).get_date_object()
         except:
@@ -1041,7 +1036,7 @@ function %(bd)s2html(person,containerDL) {
                 # add self.search_subject?           
             if ('<' + _('date') + '>') in self.event_format:
                 if date:
-                    event_str += ",event_date:'" + self.escbacka(gen.datehandler.get_date(event))+"'"
+                    event_str += ",event_date:'" + self.escbacka(datehandler.get_date(event))+"'"
                     if self.options['DNMinc_events']:
                         self.search_subjects['Event Date'] = 'event_date'
 
@@ -1121,14 +1116,13 @@ function %(bd)s2html(person,containerDL) {
         rv = rv.rstrip(',')
         return rv
 
-    def sort_event_ref_list(self,a_id,b_id):
-        if not (a_id and b_id):
+    def sort_event_ref_list(self, event_id):
+        if not event_id:
             return 0
-        a = self.database.get_event_from_handle(a_id.ref)
-        b = self.database.get_event_from_handle(b_id.ref)
-        if not (a and b):
+        event = self.database.get_event_from_handle(event_id.ref)
+        if not event:
             return 0
-        return cmp(a.get_date_object(),b.get_date_object())
+        return event.get_date_object()
 
     def get_event_description(self,type,role,relative,event_ref,event,family_event_refs,person):
         desc = ''
@@ -1292,7 +1286,7 @@ function %(bd)s2html(person,containerDL) {
         if self.options['DNMinc_att_list'] != '':
             inc_atts = [i.strip() for i in self.options['DNMinc_att_list'].split(',')]
         attributes = person.get_attribute_list()
-        attributes.sort(lambda a,b: cmp(a.get_type(),b.get_type()))
+        attributes.sort(key=lambda a: a.get_type().value)
         for attribute in attributes:
             if self.options['DNMexl_private'] and attribute.get_privacy():
                 continue
@@ -1364,18 +1358,17 @@ function %(bd)s2html(person,containerDL) {
         rv = ""
         if not self.options['DNMinc_addresses']: return rv
         addresses = person.get_address_list()
-        addresses.sort(lambda a,b: cmp(a.get_date_object(),b.get_date_object()))
+        addresses.sort(key=lambda a: a.get_date_object())
         for address in addresses:
             if self.options['DNMexl_private'] and address.get_privacy():
                 continue
             address_data = address.get_text_data_list()
             address_date = address.get_date_object()
-            address_str = self.options['DNMaddress_separator'].join(\
-                    filter(lambda x: x!='',address_data))
+            address_str = self.options['DNMaddress_separator'].join([x for x in address_data if x!=''])
             if not address_str: continue
             rv += "{"
             if address_date:
-                rv += "address_date:'" + self.escbacka(gen.datehandler.get_date(address)) + "',"
+                rv += "address_date:'" + self.escbacka(datehandler.get_date(address)) + "',"
                 self.search_subjects['Address Date'] = 'address_date'
             rv += "address_str:'" + self.escbacka(address_str) + "'"
             self.search_subjects['Address'] = 'address_str'
@@ -1489,8 +1482,8 @@ function %(bd)s2html(person,containerDL) {
         if len(self.person_srcs) > 0:
             source_handle_list.extend(self.person_srcs)
         if self.options['DNMinc_sources']:
-            citations = filter(self.privacy_filter,
-                    [self.database.get_citation_from_handle(x) for x in person.get_citation_list()])
+            citations = [self.database.get_citation_from_handle(x) for x in person.get_citation_list()]
+            citations = [x for x in citations if self.privacy_filter(x)]
             source_handle_list.extend([i.get_reference_handle() for i in citations])
         # Do not sort: the sources referenced in events are already ordered!
         if len(source_handle_list) > 0:
@@ -1745,8 +1738,8 @@ function %(bd)s2html(person,containerDL) {
             event can be more general than just events: attributes/addresses."""
         rv = ''
         source_page = ''
-        citations = filter(self.privacy_filter,
-                [self.database.get_citation_from_handle(x) for x in event.get_citation_list()])
+        citations = [self.database.get_citation_from_handle(x) for x in event.get_citation_list()]
+        citations = [x for x in citations if self.privacy_filter(x)]
         if len(citations) > 0:
             source_page = citations[0].get_page()
             source_handle = citations[0].get_reference_handle()
@@ -1819,14 +1812,14 @@ function %(bd)s2html(person,containerDL) {
         if self.options['DNMexl_private'] and media_object.get_privacy():
             return rv
         if self.options['DNMimg_attr4inex'].strip() != '':
-            attr_list = filter(self.img_attr_check,media_object.get_attribute_list())
+            attr_list = [x for x in media_object.get_attribute_list() if self.img_attr_check(x)]
             if (self.options['DNMinexclude_img'] and len(attr_list) > 0) or \
                 (not self.options['DNMinexclude_img'] and len(attr_list) <=0): \
                 return rv
         if self.options['DNMcopy_img']:
             if not os.path.isdir(self.options['DNMcopy_dir']):
                 os.makedirs(self.options['DNMcopy_dir'])
-            if self.copied_imgs.has_key(media_path):
+            if media_path in self.copied_imgs:
                 media_path = self.copied_imgs[media_path]
             else:
                 dest = self.get_copied_photo_name(media_object,media_path)
@@ -1879,7 +1872,7 @@ function %(bd)s2html(person,containerDL) {
             rel_path = self.relpathA2B(self.target_path,dest)
             already = self.copied_imgs.values()
             if rel_path in already:
-                same_ids = filter(lambda x: x.startswith(rel_path[0:-len(ext)]), already)
+                same_ids = [x for x in already if x.startswith(rel_path[0:-len(ext)])]
                 id += '_%d' % len(same_ids)
                 dest = os.path.join(self.options['DNMcopy_dir'],id + ext)
         return dest
@@ -2314,7 +2307,7 @@ function %(bd)s2html(person,containerDL) {
         function start_halo(evt) {
             var ring_width_px = 3
             var r_min_px = 10
-		    if (evt.detail != 2) { return; }
+            if (evt.detail != 2) { return; }
             var persons = document.getElementsByTagName('%(shp)s')
             for (var i=0; i<persons.length; i++) {
                 if (persons[i].hasAttribute('class') && persons[i].getAttribute('class').indexOf('activated') != -1) {
@@ -2326,7 +2319,7 @@ function %(bd)s2html(person,containerDL) {
                         var x = RegExp.$1
                         var y = RegExp.$2
                     }
-				    var halo = document.getElementById('halo')
+                    var halo = document.getElementById('halo')
                     halo.setAttribute('fill','none')
                     halo.setAttribute('cx',x);
                     halo.setAttribute('cy',y);
@@ -2340,7 +2333,7 @@ function %(bd)s2html(person,containerDL) {
                     halo.setAttribute('stroke-width',ring_width_px/ctm.a)
                     var r_min = r_min_px/ctm.a
                     window.setTimeout(self.halo,100,x,y,radius,r_min);
-				    break;
+                    break;
                 }
             } 
         }
@@ -2457,9 +2450,9 @@ function %(bd)s2html(person,containerDL) {
         Since the available options are only known after the svg was created,
         JS must be used to fill the select-element."""
         options = ''
-        if len(filter(lambda x: x[-4:]=='Date',self.search_subjects.keys())) > 1:
+        if len([x for x in self.search_subjects.keys() if x[-4:]=='Date']) > 1:
             self.search_subjects['Date'] = '_date'
-        if len(filter(lambda x: x[-5:]=='Place',self.search_subjects.keys())) > 1:
+        if len([x for x in self.search_subjects.keys() if x[-5:]=='Place']) > 1:
             self.search_subjects['Place'] = '_place'
         options = """<html:script>
             var search_subject_sel = document.getElementById('searchSubject');
@@ -2501,8 +2494,8 @@ function %(bd)s2html(person,containerDL) {
         """ % (self.options['DNMtitle'],self.relpathA2B(\
                 self.options['DNMfilename4old_browser'], self.target_path))
         try:
-            f = open(self.options['DNMfilename4old_browser'],'w')
-        except IOError,msg:
+            f = codecs.open(self.options['DNMfilename4old_browser'], 'w', encoding='UTF-8') 
+        except IOError as msg:
             ErrorDialog(_('Failure writing %s: %s') % (self.options['DNMfilename4old_browser'], str(msg)))
             return
         f.write(strng)
@@ -2737,12 +2730,12 @@ class DenominoVisoOptions(MenuReportOptions):
 
         child_ref_types = ChildRefType().get_standard_xml() #nakijken
         line_style = LineStyleOption(_("Birth relationship linestyle"), \
-            [str([i, False, 10L, 10L]) for i in child_ref_types])
+            [str([i, False, 10, 10]) for i in child_ref_types])
         line_style.set_help(_("List of lists where each sublist is a list with information about the dash pattern of lines connecting children to parents."))
         #menu.add_option(category_name, "DNMline_style", line_style)
         menu.add_option(category_name, "DNMdash_child_rel", line_style)
 
-        ext_confidence_keys = ext_confidence.keys()
+        ext_confidence_keys = list(ext_confidence.keys())
         ext_confidence_keys.sort()
         confidence_color = ConfidenceColorOption(_("Source confidence color"),\
             [str([i, '#000000']) for i in ext_confidence_keys])
@@ -2825,9 +2818,9 @@ class GuiIncAttributeOption(Gtk.HBox):
         self.e_w.connect('changed', self.__value_changed)
         self.e_w.set_sensitive(False)
         self.cb_w.set_active(attr_inc == 'True')
-        self.pack_start(self.cb_w, False)
-        self.pack_end(self.e_w, False)
-        self.pack_end(self.l_w, False)
+        self.pack_start(self.cb_w, False, True, 0)
+        self.pack_end(self.e_w, False, True, 0)
+        self.pack_end(self.l_w, False, True, 0)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -2867,9 +2860,9 @@ class GuiCopyImgOption(Gtk.HBox):
         # Update ReportBase/_FileEntry.py so that signal changed is OK
         self.fe_w.set_sensitive(False)
         self.cb_w.set_active(copy_img == 'True')
-        self.pack_start(self.cb_w, False)
-        self.pack_end(self.fe_w, False)
-        self.pack_end(self.l_w, False)
+        self.pack_start(self.cb_w, False, True, 0)
+        self.pack_end(self.fe_w, False, True, 0)
+        self.pack_end(self.l_w, False, True, 0)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -2895,7 +2888,7 @@ class GuiImageIncludeAttrOption(Gtk.HBox):
         value_str = self.__option.get_value()
         (incl, attr, attr_value) = value_str.split(', ',2)
         incl = int(incl)
-        self.cbe_w = Gtk.ComboBoxEntry()
+        self.cbe_w = Gtk.ComboBox.new_with_entry()
         image_attributes = dbstate.db.get_media_attribute_types()
         image_attributes.insert(0,' ')
         fill_combo(self.cbe_w, image_attributes)
@@ -2910,16 +2903,16 @@ class GuiImageIncludeAttrOption(Gtk.HBox):
         self.e_w.set_text(attr_value)
         self.e_w.connect('changed',self.__value_changed)
         self.l2_w = Gtk.Label(_("should be"))
-        self.cb2_w = Gtk.combo_box_new_text()
+        self.cb2_w = Gtk.ComboBoxText()
         self.cb2_w.append_text('Included')
         self.cb2_w.append_text('Excluded')
         self.cb2_w.set_active(incl)
         self.cb2_w.connect('changed',self.__value_changed)
-        self.pack_start(self.cbe_w, False)
-        self.pack_start(self.l1_w, False)
-        self.pack_start(self.e_w, False)
-        self.pack_start(self.l2_w, False)
-        self.pack_start(self.cb2_w, False)
+        self.pack_start(self.cbe_w, False, True, 0)
+        self.pack_start(self.l1_w, False, True, 0)
+        self.pack_start(self.e_w, False, True, 0)
+        self.pack_start(self.l2_w, False, True, 0)
+        self.pack_start(self.cb2_w, False, True, 0)
 
     def __value_changed(self, obj):
         new_val = str(int(self.cb2_w.get_active())) + ", " + self.cbe_w.get_active_text() + ", " + str(self.e_w.get_text())
@@ -2957,9 +2950,9 @@ class GuiHtmlWrapperOption(Gtk.HBox):
         self.fe_w.entry.connect('changed', self.__value_changed);
         self.fe_w.set_sensitive(False)
         self.cb_w.set_active(wrap_html == 'True')
-        self.pack_start(self.cb_w, False)
-        self.pack_start(self.l_w, False)
-        self.pack_start(self.fe_w, False)
+        self.pack_start(self.cb_w, False, True, 0)
+        self.pack_start(self.l_w, False, True, 0)
+        self.pack_start(self.fe_w, False, True, 0)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -2982,9 +2975,9 @@ class GuiOptionalFileEntry(Gtk.HBox):
         #self.fe_w.connect('changed', self.__value_changed)
         self.fe_w.set_sensitive(False)
         self.cb_w.set_active(on_off_state == 'True')
-        self.pack_start(self.cb_w, False)
-        self.pack_start(self.l_w, False)
-        self.pack_start(self.fe_w, False)
+        self.pack_start(self.cb_w, False, True, 0)
+        self.pack_start(self.l_w, False, True, 0)
+        self.pack_start(self.fe_w, False, True, 0)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -3023,8 +3016,8 @@ class GuiMouseHandlerOption(Gtk.HBox):
         if not mousegroup:
             mousegroup = self.r1_w
         self.r2_w = Gtk.RadioButton(mousegroup, 'onmouseover')
-        self.pack_start(self.r1_w, False)
-        self.pack_start(self.r2_w, False)
+        self.pack_start(self.r1_w, False, True, 0)
+        self.pack_start(self.r2_w, False, True, 0)
         self.r2_w.set_active(self.__option.get_value())
         self.r2_w.connect('toggled', self.__value_changed)
         self.set_tooltip_text(self.__option.get_help())
@@ -3042,10 +3035,10 @@ class GuiTableOption(Gtk.ScrolledWindow):
     def __init__(self, data, editable_column = None):
         """data should be a 2D list of lists"""
         Gtk.ScrolledWindow.__init__(self)
-        self.set_shadow_type(Gtk.SHADOW_IN)
-        self.set_policy(Gtk.POLICY_AUTOMATIC, Gtk.POLICY_AUTOMATIC)
+        self.set_shadow_type(Gtk.ShadowType.IN)
+        self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         lstore = self.create_lstore(data)
-        self.tv_w = self.create_treeview(lstore, data, editable_column)
+        self.create_treeview(lstore, data, editable_column)
         # set column titles
         self.add(self.tv_w)
 
@@ -3058,8 +3051,6 @@ class GuiTableOption(Gtk.ScrolledWindow):
                 lstore_args.append(GObject.TYPE_STRING)
             elif type(cell) == type(1):
                 lstore_args.append(GObject.TYPE_UINT)
-            elif type(cell) == type(1L):
-                lstore_args.append(GObject.TYPE_LONG)
             elif type(cell) == type(False):
                 lstore_args.append(GObject.TYPE_BOOLEAN)
             else:
@@ -3075,15 +3066,15 @@ class GuiTableOption(Gtk.ScrolledWindow):
         return lstore
 
     def create_treeview(self, lstore, list_of_lists, editable_column = None):
-        treeview = Gtk.TreeView(lstore)
-        treeview.set_size_request(-1, 70)
-        treeview.set_rules_hint(True)
-        treeview.get_selection().set_mode(Gtk.SELECTION_SINGLE)
+        self.tv_w = Gtk.TreeView(lstore)
+        self.tv_w.set_size_request(-1, 70)
+        self.tv_w.set_rules_hint(True)
+        self.tv_w.get_selection().set_mode(Gtk.SelectionMode.SINGLE)
+        self.tv_w_renderers = []
         for i,v in enumerate(list_of_lists[0]):
             if (type(v) == type("string") or
                 type(v) == type(u"string") or
-                type(v) == type(1) or
-                type(v) == type(1L)):
+                type(v) == type(1)):
                 renderer = Gtk.CellRendererText()
                 if editable_column or editable_column == 0:
                     column = Gtk.TreeViewColumn('',renderer, text=i, \
@@ -3095,14 +3086,17 @@ class GuiTableOption(Gtk.ScrolledWindow):
                 column = Gtk.TreeViewColumn('',renderer, active=i)
             else:
                 raise TypeError
-            treeview.append_column(column)
-        return treeview
+            self.tv_w.append_column(column)
+            self.tv_w_renderers.append(renderer)
 
     def get_column(self, i):
         return self.tv_w.get_column(i)
 
     def get_treeview(self):
         return self.tv_w
+
+    def get_renderer(self, col):
+        return self.tv_w_renderers[col]
 
     def list_of_strings2list_of_lists(self, data):
         if type(data[0]) == type([]):
@@ -3129,21 +3123,21 @@ class GuiLineStyleOption(GuiTableOption):
         GuiTableOption.__init__(self, data, _cnsts.USE_DASH_COLUMN)
         column = self.get_column(_cnsts.BIRTH_REL_COLUMN)
         column.set_title(_('Relation type'))
-        cellRenderer = column.get_cell_renderers()[0]
+        cellRenderer = self.get_renderer(_cnsts.BIRTH_REL_COLUMN)
         # editable attribute is not wanted on this column.
         column.set_attributes(cellRenderer,text=0)
         column = self.get_column(_cnsts.USE_DASH_COLUMN)
         column.set_title(_('Use dashed linestyle'))
         tv = self.get_treeview()
-        cellRenderer = column.get_cell_renderers()[0]
+        cellRenderer = self.get_renderer(_cnsts.USE_DASH_COLUMN)
         cellRenderer.connect('toggled', self.dash_toggled, tv.get_model())
         column = self.get_column(_cnsts.DASH_LENGTH_COLUMN)
         column.set_title(_('Dash length'))
-        cellRenderer = column.get_cell_renderers()[0]
+        cellRenderer = self.get_renderer(_cnsts.DASH_LENGTH_COLUMN)
         cellRenderer.connect('edited',self.on_dash_length_edited,tv.get_model())
         column = self.get_column(_cnsts.INTER_DASH_LENGTH_COLUMN)
         column.set_title(_('Inter-dash length'))
-        cellRenderer = column.get_cell_renderers()[0]
+        cellRenderer = self.get_renderer(_cnsts.INTER_DASH_LENGTH_COLUMN)
         cellRenderer.connect('edited', self.on_inter_dash_length_edited, \
                 tv.get_model())
 
@@ -3197,13 +3191,13 @@ class GuiConfidenceColorOption(GuiTableOption):
         column = self.get_column(_cnsts.COLOR_COLUMN)
         column.set_title(_('Color'))
         tv = self.get_treeview()
-        cellRenderer = column.get_cell_renderers()[0]
+        cellRenderer = self.get_renderer(_cnsts.COLOR_COLUMN)
         cellRenderer.set_property('editable',True)
         cellRenderer.connect('edited', self.__value_changed, tv.get_model())
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, cell, path_string, new_text, model):
-        """ "['None', False, 10L, 10L]" """
+        """ "['None', False, 10, 10]" """
         """ "[0, '#000000']" """
         if len(new_text) != 7 or new_text[0] != '#' or \
                 re.search('[^0-9a-fA-F]',new_text[1:]):
