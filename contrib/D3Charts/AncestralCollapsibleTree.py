@@ -280,7 +280,36 @@ class AncestralCollapsibleTreeReport(Report):
                     '      <div id="chart">\n' + \
                     '      </div>\n' + \
                     '      <div id="end">\n' + \
-                    '       <h3>Click people to expand/collapse</h3>\n' + \
+                    '       <h3>Click people to expand/collapse : \n' + \
+                    '        <svg width="80" height="20">\n' + \
+                    '         <g>\n' + \
+                    '          <rect x="0" y="0" width="80" height="20" style="fill:%s;stroke-width:1;stroke:#BBBBBB" />\n' % (self.exp_male_bg) + \
+                    '          <image x="2" y="4" xlink:href="images/male.png" height="12" width="12"></image>\n' + \
+                    '          <text x="15" y="15" font-vamily="Verdana" font-size="10" fill="black">Has Children</text>\n' + \
+                    '         </g>\n' + \
+                    '        </svg> \n' + \
+                    '        <svg width="80" height="20">\n' + \
+                    '         <g>\n' + \
+                    '           <rect x="0" y="0" width="80" height="20" style="fill:%s;stroke-width:1;stroke:#BBBBBB" />\n' % (self.male_bg) + \
+                    '          <image x="2" y="4" xlink:href="images/male.png" height="12" width="12"></image>\n' + \
+                    '          <text x="15" y="15" font-vamily="Verdana" font-size="10" fill="black">No Children</text>\n' + \
+                    '         </g>\n' + \
+                    '        </svg> \n' + \
+                    '        <svg width="80" height="20">\n' + \
+                    '         <g>\n' + \
+                    '           <rect x="0" y="0" width="80" height="20" style="fill:%s;stroke-width:1;stroke:#BBBBBB" />\n' % (self.exp_female_bg) + \
+                    '          <image x="2" y="4" xlink:href="images/female.png" height="12" width="12"></image>\n' + \
+                    '          <text x="15" y="15" font-vamily="Verdana" font-size="10" fill="black">Has Children</text>\n' + \
+                    '         </g>\n' + \
+                    '        </svg> \n' + \
+                    '        <svg width="80" height="20">\n' + \
+                    '         <g>\n' + \
+                    '           <rect x="0" y="0" width="80" height="20" style="fill:%s;stroke-width:1;stroke:#BBBBBB" />\n' % (self.female_bg) + \
+                    '          <image x="2" y="4" xlink:href="images/female.png" height="12" width="12"></image>\n' + \
+                    '          <text x="15" y="15" font-vamily="Verdana" font-size="10" fill="black">No Children</text>\n' + \
+                    '         </g>\n' + \
+                    '        </svg>\n' + \
+                    '       </h3>\n' + \
                     '      </div>\n' + \
                     '    </div>\n' + \
                     '    <div id="testString">\n' + \
