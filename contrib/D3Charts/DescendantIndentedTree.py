@@ -68,6 +68,7 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  get_marriage_or_fallback,
                                  get_divorce_or_fallback)
+from gramps.gen.config import config
 from gramps.gen.datehandler import get_date
 from gramps.gen.sort import Sort
 
@@ -434,7 +435,8 @@ class DescendantIndentedTreeReport(Report):
         dups          - Whether to include duplicate descendant trees
         marrs         - Whether to include Marriage Info
         divs          - Whether to include Divorce Info
-        destfile      - Destination HTML filename
+        dest_path     - Destination Path
+        dest_file     - Destination HTML filename
         parent_bg     - Background color for expanded rows
         more_bg       - Background color expandable rows
         no_more_bg    - Background color non-expandable rows
@@ -448,15 +450,18 @@ class DescendantIndentedTreeReport(Report):
         self.parent_bg = menu.get_option_by_name('parent_bg').get_value()
         self.more_bg = menu.get_option_by_name('more_bg').get_value()
         self.no_more_bg = menu.get_option_by_name('no_more_bg').get_value()
-        self.destfile = conv_to_unicode(
-            menu.get_option_by_name('destfile').get_value(), 'utf8')
-        self.destpath = os.path.dirname(self.destfile)
+        self.dest_path = conv_to_unicode(
+            menu.get_option_by_name('dest_path').get_value(), 'utf8')
+        self.dest_file = conv_to_unicode(
+            menu.get_option_by_name('dest_file').get_value(), 'utf8')
         self.destprefix, self.destext = \
-            os.path.splitext(os.path.basename(self.destfile))
-        self.destjson = os.path.join(self.destpath, "json",
-                                     "%s.json" % (self.destprefix))
-        self.destjs = os.path.join(self.destpath, "js",
-                                  "%s.js" % (self.destprefix))
+            os.path.splitext(os.path.basename(self.dest_file))
+        self.destjson = conv_to_unicode(
+            os.path.join(self.dest_path, "json", "%s.json" % (self.destprefix)))
+        self.destjs = conv_to_unicode(
+            os.path.join(self.dest_path, "js", "%s.js" % (self.destprefix)))
+        self.desthtml = conv_to_unicode(
+            os.path.join(self.dest_path, os.path.basename(self.dest_file)))
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
@@ -499,7 +504,7 @@ class DescendantIndentedTreeReport(Report):
         name = self._name_display.display(self.center_person)
         title = "Descendant Indented Tree for " + name
         try:
-            with io.open(self.destfile, 'w', encoding='utf8') as fp:
+            with io.open(self.desthtml, 'w', encoding='utf8') as fp:
                 # Generate HTML File
                 outstr = '<!DOCTYPE html>\n' + \
                     '<html>\n' + \
@@ -534,23 +539,23 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
             return
 
         # Create required directory structure
         try:
-            if not os.path.exists(os.path.join(self.destpath, "css")):
-                os.mkdir(os.path.join(self.destpath, "css"))
-            if not os.path.exists(os.path.join(self.destpath, "images")):
-                os.mkdir(os.path.join(self.destpath, "images"))
-            if not os.path.exists(os.path.join(self.destpath, "js")):
-                os.mkdir(os.path.join(self.destpath, "js"))
-            if not os.path.exists(os.path.join(self.destpath, "js", "d3")):
-                os.mkdir(os.path.join(self.destpath, "js", "d3"))
-            if not os.path.exists(os.path.join(self.destpath, "js", "jquery")):
-                os.mkdir(os.path.join(self.destpath, "js", "jquery"))
-            if not os.path.exists(os.path.join(self.destpath, "json")):
-                os.mkdir(os.path.join(self.destpath, "json"))
+            if not os.path.exists(os.path.join(self.dest_path, "css")):
+                os.mkdir(os.path.join(self.dest_path, "css"))
+            if not os.path.exists(os.path.join(self.dest_path, "images")):
+                os.mkdir(os.path.join(self.dest_path, "images"))
+            if not os.path.exists(os.path.join(self.dest_path, "js")):
+                os.mkdir(os.path.join(self.dest_path, "js"))
+            if not os.path.exists(os.path.join(self.dest_path, "js", "d3")):
+                os.mkdir(os.path.join(self.dest_path, "js", "d3"))
+            if not os.path.exists(os.path.join(self.dest_path, "js", "jquery")):
+                os.mkdir(os.path.join(self.dest_path, "js", "jquery"))
+            if not os.path.exists(os.path.join(self.dest_path, "json")):
+                os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
             ErrorDialog(_("Failed to create directory structure : %s") % (why))
             return
@@ -559,20 +564,20 @@ class DescendantIndentedTreeReport(Report):
             # Copy/overwrite css/images/js files
             plugin_dir = os.path.dirname(__file__)
             shutil.copy(os.path.join(plugin_dir, "css", "indentedtree.css"),
-                os.path.join(self.destpath, "css"))
+                os.path.join(self.dest_path, "css"))
             shutil.copy(os.path.join(plugin_dir, "images", "male.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(os.path.join(plugin_dir, "images", "female.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(
                 os.path.join(plugin_dir, "images", "texture-noise.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.min.js"),
-                os.path.join(self.destpath, "js", "d3"))
+                os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
                 os.path.join(
                     plugin_dir, "js", "jquery", "jquery-2.0.3.min.js"),
-                os.path.join(self.destpath, "js", "jquery"))
+                os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
             ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
@@ -860,7 +865,12 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             "background."))
         menu.add_option(category_name, "no_more_bg", no_more_bg)
 
-        destfile = DestinationOption(_("Destination"),
-            os.path.join(os.getcwd(), "DescendantIndentedTree.html"))
-        destfile.set_help(_("The destination file for html content."))
-        menu.add_option(category_name, "destfile", destfile)
+        dest_path = DestinationOption(_("Destination"),
+            config.get('paths.website-directory'))
+        dest_path.set_help(_("The destination path for generated files."))
+        dest_path.set_directory_entry(True)
+        menu.add_option(category_name, "dest_path", dest_path)
+
+        dest_file = StringOption(_("Filename"), "DescendantIndentedTree.html")
+        dest_file.set_help(_("The destination file name for html content."))
+        menu.add_option(category_name, "dest_file", dest_file)
