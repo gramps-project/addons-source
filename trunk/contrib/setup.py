@@ -716,7 +716,6 @@ def build(addon):
     versioning(addon)
     files = []
     files += glob.glob('''%s/*.py''' % addon)
-    files += glob.glob('''%s/*.gpr.py''' % addon)
     files += glob.glob('''%s/locale/*/LC_MESSAGES/*.mo''' % addon)
     files += glob.glob('''%s/*.glade''' % addon)
     files += glob.glob('''%s/*.xml''' % addon)
@@ -726,6 +725,8 @@ def build(addon):
     os.system('%(tar)s cfzv "../download/%(addon)s.addon.tgz" %(files_list)s'
                 % {'tar': tarCmd, 'files_list': files_str,
                 'addon': addon})
+    os.system('rmdir ../download/%(addon)s '
+                % {'addon': addon})
 
 
 def build_all(ADDON):
