@@ -360,7 +360,10 @@ def main():
             m1 = 'Wrong argument: %s \nTry "setup.py -i {addon_name} {lang}"!\n' % sys.argv
             parser.exit(message = m1)
         else:
-            init(args.init, args.lang)
+            if args.lang == 'en':
+                pass
+            else:
+                init(args.init, args.lang)
 
     if args.update:
         print(parser.parse_args())
