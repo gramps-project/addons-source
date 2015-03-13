@@ -271,10 +271,10 @@ def main():
         ArgumentParser(description='This specific script build addon',
                        add_help=True, version='0.1.4')
 
+    #parser.add_argument('addon', choices=ADDONS)
+
     parser.add_argument('lang', nargs='?', const=LINGUAS,
                         default='en')
-
-    parser.add_argument('addon', choices=ADDONS)
 
     # parser.add_argument("-t", "--test",
     # action="store_true", dest="test", default=True,
