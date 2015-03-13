@@ -32,8 +32,8 @@ GRAMPS registration file
 
 register(TOOL, 
 id    = 'downloadmedia',
-name  = "Download media files from the internet",
-description =  ("This tool downloads media files form the internet"),
+name  = _("Download media files from the internet"),
+description =  _("This tool downloads media files form the internet"),
 version = '1.0.0',
 gramps_target_version = '4.2',
 status = STABLE,
