@@ -52,8 +52,8 @@ Examples:
       Compiles AddonDirectory/po/*-local.po and puts the resulting
       .mo file in AddonDirectory/locale/*/LC_MESSAGES/addon.mo
 
-   python setup.py -l or --listing AddonDirectory
-   python setup.py -l or --listing all
+   python3 setup.py -l or --listing AddonDirectory
+   python3 setup.py -l or --listing all
 
    python setup.py -c or --clean AddonDirectory
    python setup.py -c or --clean ALL
@@ -802,7 +802,7 @@ def is_listing(LANG):
                 # Make fallback language English (rather than current LANG)
 
                 local_gettext = glocale.get_addon_translator(gpr,
-                        languages=[lang, 'en.UTF-8']).ugettext
+                        languages=[lang, 'en.UTF-8']).gettext
                 plugins = []
                 with open(gpr.encode('utf-8', errors='backslashreplace'
                           )) as f:
