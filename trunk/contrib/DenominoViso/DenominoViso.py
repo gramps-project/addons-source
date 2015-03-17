@@ -167,7 +167,6 @@ from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.constfunc import cuni
 #-------------------------------------------------------------------------
 #
 # constants
@@ -2869,7 +2868,7 @@ class GuiCopyImgOption(Gtk.HBox):
         copy_img = self.cb_w.get_active()
         self.l_w.set_sensitive(copy_img)
         self.fe_w.set_sensitive(copy_img)
-        self.__option.set_value(str(copy_img) + ", " + cuni(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(copy_img) + ", " + str(self.fe_w.get_full_path(0)))
 
 class ImageIncludeAttrOption(PlugOption):
     """Option allowing attributes on images to determine their inclusion in
@@ -2959,7 +2958,7 @@ class GuiHtmlWrapperOption(Gtk.HBox):
         wrap_html = self.cb_w.get_active()
         self.l_w.set_sensitive(wrap_html)
         self.fe_w.set_sensitive(wrap_html)
-        self.__option.set_value(str(wrap_html) + ", " + cuni(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(wrap_html) + ", " + str(self.fe_w.get_full_path(0)))
 
 class GuiOptionalFileEntry(Gtk.HBox):
     def __init__(self, option, dbstate, uistate, track, override=False):
@@ -2984,7 +2983,7 @@ class GuiOptionalFileEntry(Gtk.HBox):
         on_off_state = self.cb_w.get_active()
         self.l_w.set_sensitive(on_off_state)
         self.fe_w.set_sensitive(on_off_state)
-        self.__option.set_value(str(on_off_state) + ", " + cuni(self.fe_w.get_full_path(0)))
+        self.__option.set_value(str(on_off_state) + ", " + str(self.fe_w.get_full_path(0)))
 
     def get_inner_label(self):
         return self.l_w.get_label()
