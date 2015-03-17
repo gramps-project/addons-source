@@ -25,13 +25,6 @@ Census Gramplet.
 """
 #------------------------------------------------------------------------
 #
-# Python modules
-#
-#------------------------------------------------------------------------
-import sys
-
-#------------------------------------------------------------------------
-#
 # GTK modules
 #
 #------------------------------------------------------------------------
@@ -51,7 +44,6 @@ from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
                             Citation, Person, Attribute)
 from gramps.gen.db import DbTxn
-from gramps.gen.constfunc import cuni
 
 #------------------------------------------------------------------------
 #
@@ -324,10 +316,7 @@ class CensusEditor(ManagedWindow):
         
         liststore = Gtk.ListStore(str, str, str)
         for row in get_census_sources(self.db):
-            if sys.version_info[0] < 3:
-                liststore.append(row)
-            else:
-                liststore.append([row[0].decode(), row[1], row[2]])
+            liststore.append([row[0].decode(), row[1], row[2]])
 
         census_combo = Gtk.ComboBox()
         census_combo.set_model(liststore)
@@ -752,7 +741,7 @@ class DetailsTab(GrampsTab):
                     attrs = {}
                     order = 0
                     for attr in event_ref.get_attribute_list():
-                        attr_type = cuni(attr.get_type())
+                        attr_type = str(attr.get_type())
                         if attr_type == ORDER_ATTR:
                             order = int(attr.get_value())
                         else:

@@ -24,9 +24,6 @@
 
 """Reports/Graphical Reports/Family Tree"""
 
-from __future__ import unicode_literals
-import sys
-
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -429,10 +426,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
                     spouse_handle = father_handle
 
                 if len(family_handles) > 1:
-                    if sys.version_info[0] < 3:
-                        spouse_number = StyledText(unichr(0x2160 + len(person_node['family_list'])) + ". ")
-                    else:
-                        spouse_number = StyledText(chr(0x2160 + len(person_node['family_list'])) + ". ")
+                    spouse_number = StyledText(chr(0x2160 + len(person_node['family_list'])) + ". ")
                 else:
                     spouse_number = StyledText("")
                 if spouse_handle is not None:

@@ -67,7 +67,6 @@ from gramps.gen.lib import Date
 from gramps.gen.mime import get_description
 from gramps.gen.utils.file import search_for, media_path_full
 from gramps.gen.utils.place import conv_lat_lon
-from gramps.gen.constfunc import cuni
 
 from gramps.gen.db import DbTxn
 
@@ -1123,7 +1122,7 @@ class EditExifMetadata(Gramplet):
         """
         Parse date and time from text entry
         """
-        value = _parse_datetime(cuni(widget.get_text()))
+        value = _parse_datetime(widget.get_text())
         if value is not None:
             self.dates[field] = "%04d:%02d:%02d %02d:%02d:%02d" % (
                                     value.year, value.month, value.day,
@@ -1262,9 +1261,7 @@ class EditExifMetadata(Gramplet):
         if (not latitude and not longitude):
             return [False]*2
 
-        latitude, longitude = conv_lat_lon( cuni(latitude),
-                                            cuni(longitude),
-                                            format)
+        latitude, longitude = conv_lat_lon(latitude, longitude, format)
         return latitude, longitude
 
     def convert2dms(self, latitude =None, longitude =None):

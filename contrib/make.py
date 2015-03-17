@@ -40,7 +40,6 @@ Examples:
    python make.py clean
    python make.py clean AddonDirectory
 """
-from __future__ import print_function
 import shutil
 import glob
 import sys

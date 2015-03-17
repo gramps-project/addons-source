@@ -59,7 +59,6 @@ Examples:
    python setup.py -c or --clean ALL
 """
 
-from __future__ import print_function
 import shutil
 import glob
 import os
@@ -843,7 +842,6 @@ def listing(LANG):
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-        from gramps.gen.constfunc import UNITYPE, cuni
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
@@ -946,7 +944,7 @@ def listing(LANG):
                     name = name.replace('"', '')
                     name = glocale._get_translation().ugettext(name)
                     try:
-                        if UNITYPE(name) == local_gettext(cuni(name)):
+                        if name == local_gettext(name):
                             print(addon, name, local_gettext(name))
                         name = repr(local_gettext(name))
                     except:
@@ -965,7 +963,7 @@ def listing(LANG):
                     description = description.replace('"', '')
                     description = glocale._get_translation().ugettext(description)
                     try:
-                        if UNITYPE(description) == local_gettext(cuni(description)):
+                        if description == local_gettext(description):
                             print(addon, description, local_gettext(description))
                         description = repr(local_gettext(description))
                     except:

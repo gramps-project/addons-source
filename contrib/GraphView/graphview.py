@@ -26,15 +26,12 @@
 
 # $Id$
 
-from __future__ import unicode_literals
-
 #-------------------------------------------------------------------------
 #
 # Python modules
 #
 #-------------------------------------------------------------------------
 import os
-import sys
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -45,10 +42,7 @@ _ = _trans.gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf 
 import string
 from subprocess import Popen, PIPE
-if sys.version_info[0] < 3:
-    from cStringIO import StringIO
-else:
-    from io import StringIO
+from io import StringIO
 
 #-------------------------------------------------------------------------
 #

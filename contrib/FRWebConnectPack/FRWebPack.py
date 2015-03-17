@@ -21,8 +21,6 @@
 
 # $Id$
 
-from __future__ import unicode_literals
-
 from libwebconnect import *
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:

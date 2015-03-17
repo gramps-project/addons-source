@@ -44,8 +44,6 @@ Will return a value such as:
 .b 1/12/1913 @ hospital, nowhere, earth
 """
 
-from __future__ import print_function
-
 #------------------------------------------------------------------------
 #
 # Gramps modules
@@ -54,7 +52,6 @@ from __future__ import print_function
 from gramps.gen.display.name import NameDisplay
 from gramps.gen.lib import EventType, PlaceType, Location
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-from gramps.gen.constfunc import STRTYPE, cuni
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.plugins.lib.libsubstkeyword import *

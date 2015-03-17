@@ -23,20 +23,13 @@
 
 # $Id: TimelinePedigreeView.py 13881 2009-12-21 13:43:50Z flix007 $
 
-from __future__ import print_function, unicode_literals
-
 #-------------------------------------------------------------------------
 #
 # Python modules
 #
 #-------------------------------------------------------------------------
-
 from cgi import escape
-import sys
-if sys.version_info[0] < 3:
-    import cPickle as pickle
-else:
-    import pickle
+import pickle
 
 #-------------------------------------------------------------------------
 #

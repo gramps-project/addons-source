@@ -20,7 +20,6 @@
 
 "Import from JSON data"
 
-from __future__ import unicode_literals
 #-------------------------------------------------------------------------
 #
 # Standard Python Modules
@@ -44,7 +43,6 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 from gramps.gen.db import DbTxn
 from gramps.gen.plug.utils import OpenFileOrStdin
-from gramps.gen.constfunc import cuni, conv_to_unicode, STRTYPE
 from gramps.gen.config import config
 from gramps.gen.merge.diff import from_struct
 

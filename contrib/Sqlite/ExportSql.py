@@ -21,8 +21,6 @@
 
 "Export to SQLite Database"
 
-from __future__ import print_function
-
 #------------------------------------------------------------------------
 #
 # Standard Python Modules
@@ -46,7 +44,6 @@ log = logging.getLogger(".ExportSql")
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
-from gramps.gen.constfunc import cuni
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -359,9 +356,6 @@ class Database(object):
 
     def query(self, q, *args):
         args = list(args)
-        for i in range(len(args)):
-            if isinstance(args[i], str):
-                args[i] = cuni(args[i])
         if q.strip().upper().startswith("DROP"):
             try:
                 self.cursor.execute(q, args)

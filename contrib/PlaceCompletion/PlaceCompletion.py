@@ -69,7 +69,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-from gramps.gen.constfunc import cuni, lin
+from gramps.gen.constfunc import lin
 
 import gramps.gui.utils
 if hasattr(gramps.gui.utils, "ProgressMeter"):
@@ -386,7 +386,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.options.handler.options_dict['titleconstruct'] = \
                 _options.titleconstruct[self.titleconstruct.get_active()][0]
         self.options.handler.options_dict['titleconstruct_custom'] \
-                = cuni(self.titleconstruct_custom.get_text())
+                = self.titleconstruct_custom.get_text()
         self.options.handler.options_dict['latlonconv'] = \
                 _options.latlonconv[self.latlonconv.get_active()][0]
         
@@ -453,19 +453,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             except IndexError :
                 pass
 
-        cof = cuni(self.options.handler.options_dict['countryfilter']).strip()
-        stf = cuni(self.options.handler.options_dict['statefilter']).strip()
-        cuf = cuni(self.options.handler.options_dict['countyfilter']).strip()
-        cif = cuni(self.options.handler.options_dict['cityfilter']).strip()
-        paf = cuni(self.options.handler.options_dict['parishfilter']).strip()
+        cof = str(self.options.handler.options_dict['countryfilter']).strip()
+        stf = str(self.options.handler.options_dict['statefilter']).strip()
+        cuf = str(self.options.handler.options_dict['countyfilter']).strip()
+        cif = str(self.options.handler.options_dict['cityfilter']).strip()
+        paf = str(self.options.handler.options_dict['parishfilter']).strip()
         if (cof or stf or cuf or cif or paf):
             # Name, Street, Locality, City, County, State, Country, ZIP/Postal Code, Church Parish
             rule = HasPlace(['','','',cif,cuf,stf,cof,'',paf])
             generic_filter.add_rule(rule)  
-        rclat = cuni(self.options.handler.options_dict['centerlat']).strip()
-        rclon = cuni(self.options.handler.options_dict['centerlon']).strip()
-        rwid = cuni(self.options.handler.options_dict['rectwidth']).strip()
-        rhei = cuni(self.options.handler.options_dict['rectheight']).strip()
+        rclat = str(self.options.handler.options_dict['centerlat']).strip()
+        rclon = str(self.options.handler.options_dict['centerlon']).strip()
+        rwid = str(self.options.handler.options_dict['rectwidth']).strip()
+        rhei = str(self.options.handler.options_dict['rectheight']).strip()
         if (rclat or rwid  or rclon or rhei):
             rule = InLatLonNeighborhood([rclat,rclon,rhei,rwid])
             generic_filter.add_rule(rule)
@@ -951,8 +951,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif convtype == 'DGtDC' :
             latnew, lonnew = conv_lat_lon(lat,lon, type)
             #remove trailing zeros :
-            if latnew : latnew = cuni(float(latnew))
-            if lonnew : lonnew = cuni(float(lonnew))
+            if latnew : latnew = str(float(latnew))
+            if lonnew : lonnew = str(float(lonnew))
         else :
             latnew, lonnew = conv_lat_lon(lat,lon, type)
 

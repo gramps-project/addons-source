@@ -18,19 +18,13 @@
 
 # $Id: $
 
-from __future__ import print_function
-
 #------------------------------------------------------------------------
 #
 # Python modules
 #
 #------------------------------------------------------------------------
 import time
-import sys
-if sys.version_info[0] < 3:
-    from cStringIO import StringIO
-else:
-    from io import StringIO
+from io import StringIO
 from xml.parsers.expat import ParserCreate
 
 #------------------------------------------------------------------------

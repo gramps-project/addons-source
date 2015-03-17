@@ -21,13 +21,6 @@
 
 #------------------------------------------------------------------------
 #
-# Python modules
-#
-#------------------------------------------------------------------------
-import sys
-
-#------------------------------------------------------------------------
-#
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
@@ -129,6 +122,4 @@ def write_line(fp, heading, handle, obj):
     """
     Write a single object to the file.
     """
-    if sys.version_info[0] >= 3:
-        handle = handle.decode()
-    fp.write("%s %s %s\n" % (heading, handle, obj))
+    fp.write("%s %s %s\n" % (heading, handle.decode(), obj))
