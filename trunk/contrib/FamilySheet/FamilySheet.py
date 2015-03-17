@@ -23,8 +23,6 @@
 
 """Reports/Text Reports/Family Sheet"""
 
-from __future__ import unicode_literals
-
 #------------------------------------------------------------------------
 #
 # Standard Python modules

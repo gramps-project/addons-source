@@ -21,8 +21,6 @@
 
 "Import from SQLite Database"
 
-from __future__ import print_function
-
 #-------------------------------------------------------------------------
 #
 # Standard Python Modules
@@ -30,7 +28,6 @@ from __future__ import print_function
 #-------------------------------------------------------------------------
 import sqlite3 as sqlite
 import time
-import sys
 
 #------------------------------------------------------------------------
 #
@@ -49,7 +46,6 @@ import gramps.gen.lib
 from gramps.gen.db import DbTxn
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.id import create_id
-from gramps.gen.constfunc import cuni, STRTYPE, UNITYPE
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -506,7 +502,7 @@ class SQLReader(object):
         Return a link, and return handle.
         """
         if from_handle is None: return
-        assert type(from_handle) in [STRTYPE, UNITYPE], "from_handle is wrong type: %s is %s" % (from_handle, type(from_handle))
+        assert type(from_handle) == str, "from_handle is wrong type: %s is %s" % (from_handle, type(from_handle))
         rows = self.get_links(sql, from_type, from_handle, to_link)
         if len(rows) == 1:
             return rows[0]
@@ -523,7 +519,7 @@ class SQLReader(object):
         return [result[0] for result in results]
 
     def get_date(self, sql, handle):
-        assert type(handle) in [STRTYPE, UNITYPE, type(None)], "handle is wrong type: %s" % handle
+        assert type(handle) in [str, type(None)], "handle is wrong type: %s" % handle
         if handle: 
             rows = sql.query("select * from date where handle = ?;", handle)
             if len(rows) == 1:
@@ -592,10 +588,8 @@ class SQLReader(object):
                      start_stop_list) = markup
                     ss_list = eval(start_stop_list)
                     styled_text[1] += [((markup0, markup1), value, ss_list)]
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+
+                handle = handle.encode()
                 self.db.note_map[handle] = (handle, gid, styled_text, 
                                             format, (note_type1, note_type2), change, 
                                             make_tag_list(tags), bool(private))
@@ -626,10 +620,7 @@ class SQLReader(object):
                 place_handle = self.get_link(sql, "event", handle, "place")
                 place = self.get_place_from_handle(sql, place_handle)
 
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+                handle = handle.encode()
                 data = (handle, gid, (the_type0, the_type1), date, description, place, 
                         citation_list, note_list, media_list, attribute_list,
                         change, bool(private))
@@ -670,10 +661,8 @@ class SQLReader(object):
                 person_ref_list = self.get_person_ref_list(sql, "person", handle)
                 death_ref_index = lookup(death_ref_handle, event_ref_list)
                 birth_ref_index = lookup(birth_ref_handle, event_ref_list)
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+
+                handle = handle.encode()
                 self.db.person_map[handle] = (handle,             #  0
                                               gid,                #  1
                                               gender,             #  2
@@ -721,10 +710,7 @@ class SQLReader(object):
                 citation_list = self.get_citation_list(sql, "family", handle)
                 note_list = self.get_note_list(sql, "family", handle)
 
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+                handle = handle.encode()
                 self.db.family_map[handle] = (handle, gid, 
                                               father_handle, mother_handle,
                                               child_ref_list, (the_type0, the_type1), 
@@ -752,10 +738,7 @@ class SQLReader(object):
                 address_list = self.get_address_list(sql, "repository", handle, with_parish=False)
                 urls = self.get_url_list(sql, "repository", handle)
 
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+                handle = handle.encode()
                 self.db.repository_map[handle] = (handle, gid, 
                                                   (the_type0, the_type1),
                                                   name, note_list,
@@ -786,10 +769,8 @@ class SQLReader(object):
                 media_list = self.get_media_list(sql, "place", handle)
                 citation_list = self.get_citation_list(sql, "place", handle)
                 note_list = self.get_note_list(sql, "place", handle)
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+
+                handle = handle.encode()
                 self.db.place_map[handle] = (handle, gid, title, long, lat,
                                              main_loc, alt_location_list,
                                              urls,
@@ -817,10 +798,8 @@ class SQLReader(object):
                 note_list = self.get_note_list(sql, "citation", handle)
                 media_list = self.get_media_list(sql, "citation", handle)
                 datamap = self.get_datamap(sql, "citation", handle)
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+
+                handle = handle.encode()
                 self.db.citation_map[handle] = (handle, 
                                                 gid, 
                                                 date,
@@ -853,10 +832,7 @@ class SQLReader(object):
                 datamap = self.get_datamap(sql, "source", handle)
                 reporef_list = self.get_repository_ref_list(sql, "source", handle)
 
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+                handle = handle.encode()
                 self.db.source_map[handle] = (handle, gid, title,
                                               author, pubinfo,
                                               note_list,
@@ -888,10 +864,7 @@ class SQLReader(object):
                 date_handle = self.get_link(sql, "media", handle, "date")
                 date = self.get_date(sql, date_handle)
 
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+                handle = handle.encode()
                 self.db.media_map[handle] = (handle, gid, path, mime, desc,
                                              attribute_list,
                                              citation_list,
@@ -910,10 +883,8 @@ class SQLReader(object):
                 color,
                 priority,
                 change) = tag
-                if sys.version_info[0] < 3:
-                    handle = str(handle)
-                else:
-                    handle = handle.encode()
+
+                handle = handle.encode()
                 self.db.tag_map[handle] = (handle, 
                                         name,
                                         color,

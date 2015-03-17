@@ -55,8 +55,6 @@ Events may include, type, date, place & description, formatted as per the option
 Each person is linked by connection lines showing families (Spouse(s) & any children)
 """
 
-from __future__ import print_function, unicode_literals
-
 #-------------------------------------------------------------------------
 #
 # python modules

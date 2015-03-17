@@ -24,8 +24,6 @@
 # Python modules
 #
 #------------------------------------------------------------------------
-from __future__ import print_function
-from __future__ import unicode_literals
 import re
 from gi.repository import GObject as gobject
 try:

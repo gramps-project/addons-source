@@ -125,12 +125,8 @@
 import os
 import shutil
 import re
-import sys
-if sys.version_info[0] < 3:
-    from urllib import quote, splittype, pathname2url
-else:
-    from urllib.parse import quote, splittype
-    from urllib.request import pathname2url
+from urllib.parse import quote, splittype
+from urllib.request import pathname2url
 from xml.sax.saxutils import escape, quoteattr
 from math import sin,cos,exp,sqrt,e,pi
 import codecs

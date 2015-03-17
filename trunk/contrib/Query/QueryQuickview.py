@@ -23,8 +23,6 @@
 Run a query on the tables
 """
 
-from __future__ import print_function
-
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.gui.plug.quick import QuickTable
 from gramps.gen.const import GRAMPS_LOCALE as glocale

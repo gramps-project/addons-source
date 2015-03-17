@@ -46,7 +46,7 @@ from gramps.gui.managedwindow import ManagedWindow
 
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
-from gramps.gen.constfunc import cuni, lin
+from gramps.gen.constfunc import lin
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -242,7 +242,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         node = store.get_iter(tpath) if tpath else None
         if node:
             name = store.get_value(node, 1) 
-            for handle in self.name_map[cuni(name)]:
+            for handle in self.name_map[name]:
                 person = self.dbstate.db.get_person_from_handle(handle)
                 EditPerson(self.dbstate, self.uistate, [], person)
 
@@ -250,7 +250,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         with DbTxn(_("Capitalization changes"), self.db, batch=True
                    ) as self.trans:
             self.db.disable_signals()
-            changelist = set(cuni(self.model.get_value(node,1))
+            changelist = set(self.model.get_value(node,1)
                              for node in self.iter_list
                                 if self.model.get_value(node,0))
 

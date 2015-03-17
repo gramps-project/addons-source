@@ -27,16 +27,10 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-from __future__ import unicode_literals, division
-
 from cgi import escape
 import math
-import sys
 import os
-if sys.version_info[0] < 3:
-    import cPickle as pickle
-else:
-    import pickle
+import pickle
 
 #-------------------------------------------------------------------------
 #

@@ -35,7 +35,6 @@ Reports/Text Reports/Person Everything Report.
 # standard python modules
 #
 #------------------------------------------------------------------------
-from __future__ import print_function
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import copy
 import string
