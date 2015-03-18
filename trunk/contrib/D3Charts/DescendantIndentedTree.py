@@ -70,6 +70,7 @@ from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
 from gramps.gen.config import config
 from gramps.gen.datehandler import get_date
 from gramps.gen.sort import Sort
+from gramps.gui.dialog import ErrorDialog
 
 #------------------------------------------------------------------------
 #

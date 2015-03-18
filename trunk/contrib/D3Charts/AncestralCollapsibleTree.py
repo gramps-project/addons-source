@@ -65,6 +65,7 @@ from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
 from gramps.gen.config import config
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gui.dialog import ErrorDialog
 
 #------------------------------------------------------------------------
 #
