@@ -32,6 +32,7 @@
 # python modules
 #
 #------------------------------------------------------------------------
+from __future__ import unicode_literals
 import copy
 import io
 import os
@@ -378,8 +379,7 @@ class RecurseDown():
                     self.person_printed[spouse_handle] = spouse_num
 
                 if level >= self.max_generations:
-                    self.objPrint.json_fp.write('%s}\n%s]\n' %
-                        (self.pad_str(gen_pad), (self.pad_str(gen_pad))))
+                    self.objPrint.json_fp.write('%s}\n' % (self.pad_str(gen_pad)))
                     continue
 
                 childlist = family.get_child_ref_list()[:]

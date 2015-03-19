@@ -32,6 +32,6 @@ register(REPORT,
                     'representation of descendants (SVG) represented'
                     'as a Collapsible Indented Tree Layout from the D3.js '
                     'JavaScript library.'),
-    version = '1.0.7',
+    version = '1.0.8',
     gramps_target_version = '4.2',
 )
