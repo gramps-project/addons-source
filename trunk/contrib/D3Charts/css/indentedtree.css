@@ -7,7 +7,6 @@ body {
 }
 
 .node rect {
-    cursor: pointer;
     fill: #fff;
     fill-opacity: .5;
     stroke: #3182bd;
@@ -31,4 +30,28 @@ path.link {
     visibility: hidden;
     height: auto;
     width: auto;
+}
+
+.bio_box {
+  max-width: 400px;
+}
+
+.bio_header {
+  font: 12px sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 0.25cm; margin-left: 0.25cm;
+  margin-top: 0.25cm; margin-bottom: 0.25cm;
+  border-top:none; border-bottom:none;
+  border-left:none; border-right:none;
+}
+
+.bio_text {
+  font: 10px sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 0.25cm; margin-left: 0.25cm;
+  margin-top: 0.25cm; margin-bottom: 0.25cm;
+  border-top:none; border-bottom:none;
+  border-left:none; border-right:none;
 }

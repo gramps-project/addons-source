@@ -32,6 +32,6 @@ register(REPORT,
                     'representation of ancestors (SVG) '
                     'represented as a Collapsible Tree Layout from the D3.js '
                     'JavaScript library.'),
-    version = '1.0.8',
+    version = '1.0.9',
     gramps_target_version = '4.2',
 )
