@@ -460,8 +460,11 @@ class Printinfo():
                 str(self.href_dict[name_out])
             self.href_dict[name_out] = 1
 
-        href = "%s/%s" % \
-            (self.href_prefix.rstrip("/"), str(name_out))
+        if len(self.href_prefix.strip()):
+            href = "%s/%s" % \
+                (self.href_prefix.rstrip("/"), str(name_out))
+        else:
+            href = str(name_out)
 
         if self.href_ext != "None":
             href = "%s.%s" % (re.sub(self.href_ext+"$", "", href),
