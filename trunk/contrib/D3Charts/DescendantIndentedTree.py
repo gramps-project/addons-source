@@ -34,6 +34,7 @@
 #------------------------------------------------------------------------
 from __future__ import unicode_literals
 from functools import partial
+from gi.repository.Gtk import ResponseType
 import copy
 import io
 import os
@@ -69,6 +70,7 @@ from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.proxy import LivingProxyDb, PrivateProxyDb
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  get_marriage_or_fallback,
                                  get_divorce_or_fallback)
@@ -78,7 +80,7 @@ from gramps.gen.config import config
 from gramps.gen.datehandler import get_date
 from gramps.gen.plug.report import stdoptions
 from gramps.gen.sort import Sort
-from gramps.gui.dialog import ErrorDialog
+from gramps.gui.dialog import ErrorDialog, QuestionDialog2
 from gramps.plugins.lib.libnarrate import Narrator
 
 #------------------------------------------------------------------------
@@ -86,7 +88,16 @@ from gramps.plugins.lib.libnarrate import Narrator
 # Constants
 #
 #------------------------------------------------------------------------
+_INCLUDE_LIVING_VALUE = 99
 EMPTY_ENTRY = "_____________"
+MIN_GEN = 0
+MAX_GEN = 100
+MIN_AGE = -1
+MAX_AGE = 100
+MIN_FONT = 6
+MAX_FONT = 29
+MIN_BIO_FONT = 6
+MAX_BIO_FONT = 50
 
 #------------------------------------------------------------------------
 #
@@ -177,7 +188,8 @@ class Printinfo():
     def __init__(self, database, numbering, showmarriage, showdivorce,\
                  name_display, showbio, dest_path, use_call, use_fulldate,
                  compute_age, verbose, inc_photo, rep_place, rep_date, locale,
-                 hrefs, href_prefix, href_ext, href_delim, href_gen):
+                 hrefs, href_prefix, href_ext, href_delim, href_gen,
+                 href_age, href_excl_spouse, href_excl_center, center_person):
         #classes
         self._name_display = name_display
         self.database = database
@@ -199,6 +211,10 @@ class Printinfo():
         self.href_ext = href_ext
         self.href_delim = href_delim
         self.href_gen = href_gen
+        self.href_age = href_age
+        self.href_excl_spouse = href_excl_spouse
+        self.href_excl_center = href_excl_center
+        self.center_person = center_person
  
         # List of unique HREF's
         self.href_dict = {}
@@ -425,7 +441,72 @@ class Printinfo():
         else:
             return "unknown"
 
-    def generate_href(self, name):
+    def generate_href(self, person, level, spouse=False):
+        """
+        Wheter or not to generate a href link for this person
+        """
+        generate = False
+
+        # General option to generate hrefs
+        if self.hrefs:
+            generate = True
+
+            # Generation is less than/equal to specified generations
+            if level > self.href_gen:
+                generate = False
+
+            # Exclude center person
+            if self.href_excl_center and self.center_person == person:
+                generate = False
+
+            # Exclude spouses
+            if spouse and self.href_excl_spouse:
+                generate = False
+
+            # Exclude people dying before specified age, Age < 0, don't exclude
+            if self.href_age > 0:
+                death_age = self.get_age_at_death(person)
+                if death_age != -1 and death_age < self.href_age:
+                    generate = False
+
+        return generate
+
+    def get_age_at_death(self, person):
+        """
+        Get estimated age at death, return -1 if alive or not determinable
+        """
+        if person is not None:
+            birth_event = get_birth_or_fallback(self.database, person)
+
+            if birth_event:
+                birth = birth_event.get_date_object()
+                birth_year_valid = birth.get_year_valid()
+            else:
+                birth_year_valid = False
+
+            death_event = get_death_or_fallback(self.database, person)
+            if death_event:
+                death = death_event.get_date_object()
+                death_year_valid = death.get_year_valid()
+            else:
+                death_year_valid = False
+        else:
+            birth_year_valid = False
+            death_year_valid = False
+
+        death_age = -1
+        if birth_year_valid and death_year_valid:
+            span = death - birth
+            if span and span.is_valid():
+                if span:
+                    death_age = span.tuple()[0]
+                else:
+                    death_age = -1
+            else:
+                death_age = -1
+        return death_age
+
+    def generate_href_link(self, name):
         """
         Generate HREF link for person
         <a href='http://href_prefix/name/href_ext'>name</a>
@@ -460,11 +541,8 @@ class Printinfo():
                 str(self.href_dict[name_out])
             self.href_dict[name_out] = 1
 
-        if len(self.href_prefix.strip()):
-            href = "%s/%s" % \
-                (self.href_prefix.rstrip("/"), str(name_out))
-        else:
-            href = str(name_out)
+        href = "%s/%s" % \
+            (self.href_prefix.rstrip("/"), str(name_out))
 
         if self.href_ext != "None":
             href = "%s.%s" % (re.sub(self.href_ext+"$", "", href),
@@ -480,10 +558,10 @@ class Printinfo():
             (self.pad_str(gen_pad+1), str(display_num)))
         self.json_fp.write('%s"name": "%s",\n' %
             (self.pad_str(gen_pad+1), name.replace('"', "'")))
-        if self.hrefs and level <= self.href_gen:
+        if self.generate_href(person, level):
             self.json_fp.write('%s"href": "%s",\n' %
                 (self.pad_str(gen_pad+1),
-                 self.generate_href(name.replace('"', "'"))))
+                 self.generate_href_link(name.replace('"', "'"))))
         self.json_fp.write('%s"spouse": "%s",\n' %
             (self.pad_str(gen_pad+1), "false"))
         self.dump_string(person, level)
@@ -501,10 +579,10 @@ class Printinfo():
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
                 (self.pad_str(gen_pad+1), name.replace('"', "'")))
-            if self.hrefs and level <= self.href_gen:
+            if self.generate_href(spouse, level, spouse=True):
                 self.json_fp.write('%s"href": "%s",\n' %
                     (self.pad_str(gen_pad+1),
-                    self.generate_href(name.replace('"', "'"))))
+                    self.generate_href_link(name.replace('"', "'"))))
             self.json_fp.write('%s"spouse": "%s",\n' %
                 (self.pad_str(gen_pad+1), "true"))
             self.dump_string(spouse, level, family_handle)
@@ -514,10 +592,10 @@ class Printinfo():
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
                 (self.pad_str(gen_pad+1), name.replace('"', "'")))
-            if self.hrefs and level <= self.href_gen:
+            if self.generate_href(None, level, spouse=True):
                 self.json_fp.write('%s"href": "%s",\n' %
                     (self.pad_str(gen_pad+1),
-                    self.generate_href(name.replace('"', "'"))))
+                    self.generate_href_link(name.replace('"', "'"))))
             self.json_fp.write('%s"spouse": "%s"\n' %
                 (self.pad_str(gen_pad+1), "true"))
 
@@ -553,14 +631,20 @@ class RecurseDown():
     objPrint:  A Printinfo derived class that prints person
                information on the report
     """
-    def __init__(self, max_generations, database, objPrint, dups, marrs, divs):
+    def __init__(self, max_generations, database, objPrint, dups, marrs, divs,
+                 user, title, numbering):
         self.max_generations = max_generations
         self.database = database
         self.objPrint = objPrint
         self.dups = dups
         self.marrs = marrs
         self.divs = divs
+        self.user = user
+        self.title = title
+        self.numbering = numbering
         self.person_printed = {}
+        self.person_counted = {}
+        self.person_count = 0
 
     def pad_str(self, num_spaces):
         """
@@ -570,12 +654,52 @@ class RecurseDown():
         for i in range(0, num_spaces):
             pad_str = pad_str + " "
         return pad_str
+
+    def recurse_count(self, level, person, curdepth):
+        self.person_count = self.person_count + 1
+        display_num = self.numbering.number(level)
+        if curdepth is None:
+            ref_str = display_num
+        else:
+            ref_str = curdepth + " " + display_num
     
+        family_num = 0
+        for family_handle in person.get_family_handle_list():
+            family = self.database.get_family_from_handle(family_handle)
+            family_num += 1
+
+            spouse_handle = ReportUtils.find_spouse(person, family)
+
+            if not self.dups and spouse_handle in self.person_counted:
+                # Just print a reference
+                continue
+            else:
+                self.person_count = self.person_count + 1
+                if spouse_handle:
+                    spouse_num = _("%s sp." % (ref_str))
+                    self.person_counted[spouse_handle] = spouse_num
+
+                if level >= self.max_generations:
+                    continue
+
+                childlist = family.get_child_ref_list()[:]
+                first_child = True
+                for child_ref in childlist:
+                    child = self.database.get_person_from_handle(child_ref.ref)
+                    self.recurse_count(level+1, child, ref_str)
+
     def recurse(self, level, person, curdepth):
         gen_pad = (level-1) * 2
         person_handle = person.get_handle()
         self.objPrint.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         display_num = self.objPrint.print_person(level, person)
+        if level == 1:
+            if self.person_count == 0:
+                self.person_count = 100
+            self.user.begin_progress(self.title, _("Generating report..."),
+                                     self.person_count)
+        else:
+            self.user.step_progress()
 
         if curdepth is None:
             ref_str = display_num
@@ -600,25 +724,31 @@ class RecurseDown():
                 # Just print a reference
                 spouse = self.database.get_person_from_handle(spouse_handle)
                 if family_num > 1:
-                    self.objPrint.json_fp.write(',%s{\n' % (self.pad_str(gen_pad)))
+                    self.objPrint.json_fp.write(',%s{\n' %
+                        (self.pad_str(gen_pad)))
                 else:
-                    self.objPrint.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
+                    self.objPrint.json_fp.write('%s{\n' %
+                        (self.pad_str(gen_pad)))
                 self.objPrint.print_reference(level, spouse,
                     self.person_printed[spouse_handle])
                 self.objPrint.json_fp.write('%s}\n' % (self.pad_str(gen_pad)))
             else:
                 if family_num > 1:
-                    self.objPrint.json_fp.write(',%s{\n' % (self.pad_str(gen_pad)))
+                    self.objPrint.json_fp.write(',%s{\n' %
+                        (self.pad_str(gen_pad)))
                 else:
-                    self.objPrint.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
+                    self.objPrint.json_fp.write('%s{\n' %
+                        (self.pad_str(gen_pad)))
                 self.objPrint.print_spouse(level, spouse_handle, family)
+                self.user.step_progress()
 
                 if spouse_handle:
                     spouse_num = _("%s sp." % (ref_str))
                     self.person_printed[spouse_handle] = spouse_num
 
                 if level >= self.max_generations:
-                    self.objPrint.json_fp.write('%s}\n' % (self.pad_str(gen_pad)))
+                    self.objPrint.json_fp.write('%s}\n' %
+                        (self.pad_str(gen_pad)))
                     continue
 
                 childlist = family.get_child_ref_list()[:]
@@ -645,6 +775,9 @@ class RecurseDown():
         else:
             self.objPrint.json_fp.write('\n%s}\n' % (self.pad_str(gen_pad)))
 
+        if level == 1:
+            self.user.end_progress()
+
 #------------------------------------------------------------------------
 #
 # DescendantIndentedTreeReport
@@ -670,6 +803,7 @@ class DescendantIndentedTreeReport(Report):
 
         max_gen       - Maximum number of generations to include.
         contraction   - Initial contraction level
+        font_size     - Font size in pixels for nodes
         name_format   - Preferred format to display names
         numbering     - numbering system to use
         dups          - Whether to include duplicate descendant trees
@@ -694,14 +828,39 @@ class DescendantIndentedTreeReport(Report):
         href_ext      - URL file extension for auto-generated HREF links
         href_delim    - Delimeter to use when replacing white space
         href_gen      - Generations to generate HREF links
+        href_age      - Exclude HREFs for people who died before age
+        href_excl_spouse - Exclude HREFs generation for spouses
+        href_excl_center - Exclude HREFs generation for center person
+        inc_living    - How to deal with living people
+        dead_years    - Years to determine if recently passed or not
         """
         Report.__init__(self, database, options, user)
 
         self.map = {}
 
         menu = options.menu
+        self.database = database
+        self.user = user
+        self.title = _('Descendant Indented Tree')
+
+        pid = menu.get_option_by_name('pid').get_value()
+        self.center_person = self.database.get_person_from_gramps_id(pid)
+        if (self.center_person == None) :
+            raise ReportError(_("Person %s is not in the Database") % pid )
+
+        self.inc_private = menu.get_option_by_name('inc_private').get_value()
+        self.inc_living = menu.get_option_by_name('inc_living').get_value()
+        self.dead_years = menu.get_option_by_name('dead_years').get_value()
+
+        if not self.inc_private:
+            self.database = PrivateProxyDb(database)
+
+        if self.inc_living != _INCLUDE_LIVING_VALUE:
+            self.database = LivingProxyDb(self.database, self.inc_living,
+                                          None, self.dead_years)
         self.max_gen = menu.get_option_by_name('max_gen').get_value()
         self.contraction = menu.get_option_by_name('contraction').get_value()
+        self.font_size = menu.get_option_by_name('font_size').get_value()
         self.parent_bg = menu.get_option_by_name('parent_bg').get_value()
         self.more_bg = menu.get_option_by_name('more_bg').get_value()
         self.no_more_bg = menu.get_option_by_name('no_more_bg').get_value()
@@ -711,19 +870,18 @@ class DescendantIndentedTreeReport(Report):
             menu.get_option_by_name('dest_file').get_value(), 'utf8')
         self.destprefix, self.destext = \
             os.path.splitext(os.path.basename(self.dest_file))
-        self.destjson = conv_to_unicode(
-            os.path.join(self.dest_path, "json", "%s.json" % (self.destprefix)))
-        self.destjs = conv_to_unicode(
-            os.path.join(self.dest_path, "js", "%s.js" % (self.destprefix)))
+        self.destcss = conv_to_unicode(os.path.join(
+            self.dest_path, "css", "indentedtree-%s.css" % (self.destprefix)))
+        self.destjson = conv_to_unicode(os.path.join(
+            self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix)))
+        self.destjs = conv_to_unicode(os.path.join(
+            self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix)))
         self.desthtml = conv_to_unicode(
             os.path.join(self.dest_path, os.path.basename(self.dest_file)))
         self.arrows = menu.get_option_by_name('arrows').get_value()
         self.showbio = menu.get_option_by_name('showbio').get_value()
-
-        pid = menu.get_option_by_name('pid').get_value()
-        self.center_person = database.get_person_from_gramps_id(pid)
-        if (self.center_person == None) :
-            raise ReportError(_("Person %s is not in the Database") % pid )
+        self.barheight = int(self.font_size) * 2
+        self.dy = round((self.barheight * 0.175), 1)
 
         sort = Sort(self.database)
         self.by_birthdate = sort.by_birthdate_key
@@ -732,11 +890,11 @@ class DescendantIndentedTreeReport(Report):
         self.dups = menu.get_option_by_name('dups').get_value()
         numbering = menu.get_option_by_name('numbering').get_value()
         if numbering == "Simple":
-            obj = PrintSimple(self.dups)
+            self.num_obj = PrintSimple(self.dups)
         elif numbering == "de Villiers/Pama":
-            obj = PrintVilliers()
+            self.num_obj = PrintVilliers()
         elif numbering == "Meurgey de Tupigny":
-            obj = PrintMeurgey()
+            self.num_obj = PrintMeurgey()
         else:
             raise AttributeError("no such numbering: '%s'" % self.numbering)
 
@@ -747,13 +905,19 @@ class DescendantIndentedTreeReport(Report):
         self.href_ext = menu.get_option_by_name('href_ext').get_value()
         self.href_delim = menu.get_option_by_name('href_delim').get_value()
         self.href_gen = menu.get_option_by_name('href_gen').get_value()
+        self.href_age = menu.get_option_by_name('href_age').get_value()
+        self.href_excl_spouse = \
+            menu.get_option_by_name('href_excl_spouse').get_value()
+        self.href_excl_center = \
+            menu.get_option_by_name('href_excl_center').get_value()
 
         if self.arrows == "None":
             self.hrefs = False
 
         # Biography contents options
         self.use_call = menu.get_option_by_name('use_call').get_value()
-        self.use_fulldates = menu.get_option_by_name('use_fulldates').get_value()
+        self.use_fulldates = \
+            menu.get_option_by_name('use_fulldates').get_value()
         self.compute_age = menu.get_option_by_name('compute_age').get_value()
         self.inc_photo = menu.get_option_by_name('inc_photo').get_value()
         self.verbose = menu.get_option_by_name('verbose').get_value()
@@ -761,6 +925,10 @@ class DescendantIndentedTreeReport(Report):
         self.rep_date = menu.get_option_by_name('rep_date').get_value()
         self.bio_bg = menu.get_option_by_name('bio_bg').get_value()
         self.bio_text = menu.get_option_by_name('bio_text').get_value()
+        self.bio_header_font_size = \
+            menu.get_option_by_name('bio_header_font_size').get_value()
+        self.bio_body_font_size = \
+            menu.get_option_by_name('bio_body_font_size').get_value()
 
         # Copy the global NameDisplay so that we don't change application
         # defaults.
@@ -771,14 +939,16 @@ class DescendantIndentedTreeReport(Report):
 
         self.trans = menu.get_option_by_name('trans').get_value()
         self._locale = self.set_locale(self.trans)
-        self.objPrint = Printinfo(database, obj, self.marrs, self.divs,
-                                  self._name_display, self.showbio,
+        self.objPrint = Printinfo(self.database, self.num_obj, self.marrs,
+                                  self.divs, self._name_display, self.showbio,
                                   self.dest_path, self.use_call,
                                   self.use_fulldates, self.compute_age,
                                   self.verbose, self.inc_photo,
                                   self.rep_place, self.rep_date, self._locale,
                                   self.hrefs, self.href_prefix, self.href_ext,
-                                  self.href_delim, self.href_gen)
+                                  self.href_delim, self.href_gen,
+                                  self.href_age, self.href_excl_spouse,
+                                  self.href_excl_center, self.center_person)
 
     def write_report(self):
         """
@@ -787,6 +957,41 @@ class DescendantIndentedTreeReport(Report):
         """
         name = self._name_display.display(self.center_person)
         title = "Descendant Indented Tree for " + name
+
+        if not os.path.isdir(self.dest_path):
+            prompt = QuestionDialog2(_('Invalid Destination Directory'),
+                                     _('Destinaton diretory %s does not '
+                                       'exist\nDo you want to attempt to '
+                                       'create it.') % self.dest_path,
+                                     _('_Yes'),
+                                     _('_No'))
+            if prompt.run():
+                try:
+                    os.mkdir(self.dest_path)
+                except Exception as err:
+                    ErrorDialog(_("Failed to create %s: %s") %
+                                (self.dest_path, str(err)))
+                    return
+            else:
+                return
+
+        elif not os.access(self.dest_path, os.R_OK|os.W_OK|os.X_OK):
+            ErrorDialog(_('Permission problem'),
+                        _('You do not have permission to write under the '
+                          'directory %s\n\nPlease select another directory '
+                          'or correct the permissions.') % self.dest_path)
+            return
+
+        if os.path.isfile(self.desthtml):
+            prompt = QuestionDialog2(_('File already exists'),
+                                     _('Destination file %s already exists.\n'
+                                       'Do you want to overwrite.') %
+                                     (self.desthtml),
+                                     _('_Yes'),
+                                     _('_No'))
+            if not prompt.run():
+                return
+
         try:
             with io.open(self.desthtml, 'w', encoding='utf8') as fp:
                 # Generate HTML File
@@ -805,7 +1010,7 @@ class DescendantIndentedTreeReport(Report):
                     '    <link type="text/css" rel="stylesheet" ' + \
                     'href="css/d3.tip.css"/>\n' + \
                     '    <link type="text/css" rel="stylesheet" ' + \
-                    'href="css/indentedtree.css"/>\n' + \
+                    'href="css/indentedtree-%s.css"/>\n' % (self.destprefix) + \
                     '  </head>\n' + \
                     '  <body>\n' + \
                     '    <div id="body">\n' + \
@@ -814,14 +1019,29 @@ class DescendantIndentedTreeReport(Report):
                     '      </div>\n' + \
                     '      <div id="chart">\n' + \
                     '      </div>\n' + \
-                    '      <div id="end">\n' + \
-                    '       <h3>Click people to expand/collapse</h3>\n' + \
+                    '      <div id="end">\n'
+                if self.arrows == "None":
+                    outstr = outstr +  \
+                        '       <h3>Click people to expand/collapse</h3>\n'
+                elif self.arrows == "Arrows":
+                    outstr = outstr +  \
+                        '       <h3>Click arrow images to expand/collapse</h3>\n'
+                else:
+                    outstr = outstr +  \
+                        '       <h3>Click plus/minus images to ' + \
+                        'expand/collapse</h3>\n'
+                if self.showbio:
+                    outstr = outstr +  \
+                        '       <h3>Hover over person to see biography ' + \
+                        'information.\n' + \
+                        '       On touch-screen devices tap on person</h3>\n'
+                outstr = outstr +  \
                     '      </div>\n' + \
                     '    </div>\n' + \
                     '    <div id="testString">\n' + \
                     '    </div>\n' + \
-                    '    <script type="text/javascript" ' + \
-                    'src="js/%s.js"></script>\n' % (self.destprefix) + \
+                    '    <script type="text/javascript" src="js/' + \
+                    'indentedtree-%s.js"></script>\n' % (self.destprefix) + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
@@ -851,8 +1071,6 @@ class DescendantIndentedTreeReport(Report):
         try:
             # Copy/overwrite css/images/js files
             plugin_dir = os.path.dirname(__file__)
-            shutil.copy(os.path.join(plugin_dir, "css", "indentedtree.css"),
-                os.path.join(self.dest_path, "css"))
             shutil.copy(os.path.join(plugin_dir, "css", "d3.tip.css"),
                 os.path.join(self.dest_path, "css"))
             shutil.copy(os.path.join(plugin_dir, "images", "male.png"),
@@ -874,7 +1092,8 @@ class DescendantIndentedTreeReport(Report):
                 os.path.join(self.dest_path, "images"))
             shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.min.js"),
                 os.path.join(self.dest_path, "js", "d3"))
-            shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.tip.v0.6.3.js"),
+            shutil.copy(
+                os.path.join(plugin_dir, "js", "d3", "d3.tip.v0.6.3.js"),
                 os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
                 os.path.join(
@@ -884,35 +1103,71 @@ class DescendantIndentedTreeReport(Report):
             ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
 
-        # Generate <dest>.js based on colors and initial
-        # generations to display
+        # Generate <dest>.js customizing based on options selected
         try:
             with io.open(self.destjs, 'w', encoding='utf8') as fp:
-                fp.write('var margin = {top: 30, right: 20, bottom: ' +
-                    '30, left: 20},\n')
-                fp.write(' width = 1024 - margin.left - ' +
-                    'margin.right,\n')
+                fp.write('var margin = {top: 30, right: 20, bottom: '
+                         '30, left: 20},\n')
+                fp.write(' width = 1024 - margin.left - '
+                         'margin.right,\n')
                 if self.arrows != "None":
                     fp.write(' textMargin = 20,\n')
                 else:
                     fp.write(' textMargin = 5.5,\n')
-                fp.write(' barHeight = 20,\n')
+                fp.write(' barHeight = %s,\n' % (str(self.barheight)))
                 fp.write(' i = 0,\n')
                 fp.write(' duration = 400,\n')
                 fp.write(' contraction = %s,\n' % (self.contraction))
                 fp.write(' root;\n\n')
-                fp.write('var tree = d3.layout.tree().' +
-                    'nodeSize([0, 20]);\n\n')
-                fp.write('var diagonal = d3.svg.diagonal().' +
-                    'projection(function(d) {\n')
+                fp.write('var tree = d3.layout.tree().'
+                         'nodeSize([0, 20]);\n\n')
+                fp.write('var diagonal = d3.svg.diagonal().'
+                         'projection(function(d) {\n')
                 fp.write(' return [d.y, d.x];\n')
                 fp.write('});\n\n')
-                fp.write('var svg = d3.select("body").' +
-                    'append("svg")\n')
+                fp.write('var maxWidth = width;\n\n')
+                fp.write('var svg = d3.select("body").'
+                         'append("svg")\n')
                 fp.write(' .attr("width", width + margin.left + ' +
-                    'margin.right).append("g")\n')
+                         'margin.right).append("g")\n')
                 fp.write(' .attr("transform", "translate(" + ' +
-                    'margin.left + "," + margin.top + ")");\n\n')
+                         'margin.left + "," + margin.top + ")");\n\n')
+
+                fp.write('var svg1 = d3.select("body").append("svg")\n')
+                fp.write(' .attr("width", width + margin.left + '
+                         'margin.right)\n')
+                fp.write(' .append("g").attr("class", "node_test");\n\n')
+
+                fp.write('d3.json("json/delaney.json", '
+                         'function(error, descendant) {\n')
+                fp.write(' descendant.x0 = 0;\n')
+                fp.write(' descendant.y0 = 0; \n')
+                fp.write(' calc_max_width(root = descendant);\n')
+                fp.write(' if (width < maxWidth) {\n')
+                fp.write('  width = maxWidth;\n')
+                fp.write('  d3.select("svg").attr("width", '
+                         'width + margin.left + margin.right);\n')
+                fp.write(' }\n')
+                fp.write(' console.log(width);\n')
+                fp.write('});\n\n')
+
+                fp.write('function calc_max_width(source) {\n')
+                fp.write(' var nodes = tree.nodes(root);\n')
+                fp.write(' var node = svg1.selectAll("g.node_test")\n')
+                fp.write('  .data(nodes)\n')
+                fp.write('  .enter()\n')
+                fp.write('  .append("text")\n')
+                fp.write('  .text(set_text)\n')
+                fp.write('  .each(function(d) {\n')
+                fp.write('    wid = this.getBBox().width;\n')
+                fp.write('    newmax = (wid + d.y + margin.right + '
+                         'margin.left);\n')
+                fp.write('    if (maxWidth < newmax) {\n')
+                fp.write('     maxWidth = newmax;\n')
+                fp.write('    }\n')
+                fp.write('  });\n')
+                fp.write(' svg1.remove();\n')
+                fp.write('}\n\n')
 
                 if self.showbio:
                     fp.write('var tip = d3.tip()\n')
@@ -925,7 +1180,7 @@ class DescendantIndentedTreeReport(Report):
                     fp.write(' });\n\n')
                     fp.write('svg.call(tip);\n\n')
 
-                out_str='d3.json("json/%s.json", ' % (self.destprefix)
+                out_str='d3.json("json/indentedtree-%s.json", ' % (self.destprefix)
                 fp.write(out_str + 'function(error, descendant) {\n')
                 fp.write(' descendant.x0 = 0;\n')
                 fp.write(' descendant.y0 = 0;\n')
@@ -942,17 +1197,17 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(' });\n')
                 fp.write('}\n\n')
                 fp.write('function update(source) {\n')
-                fp.write(' // Compute the flattened node list. ' +
-                    'TODO use d3.layout.hierarchy.\n')
+                fp.write(' // Compute the flattened node list. '
+                         'TODO use d3.layout.hierarchy.\n')
                 fp.write(' var strWidth = 0;\n')
                 fp.write(' var nodes = tree.nodes(root);\n')
-                fp.write(' var height = Math.max(500, nodes.length *' +
-                    ' barHeight +\n')
+                fp.write(' var height = Math.max(500, nodes.length *'
+                         ' barHeight +\n')
                 fp.write('  margin.top + margin.bottom);\n\n')
-                fp.write(' d3.select("svg").transition().' +
-                    'duration(duration).attr("height", height);\n\n')
-                fp.write(' d3.select(self.frameElement).' +
-                    'transition().duration(duration)\n')
+                fp.write(' d3.select("svg").transition().'
+                         'duration(duration).attr("height", height);\n\n')
+                fp.write(' d3.select(self.frameElement).'
+                         'transition().duration(duration)\n')
                 fp.write('  .style("height", height + "px");\n\n')
                 fp.write(' // Compute the "layout".\n')
                 fp.write(' nodes.forEach(function(n, i) {\n')
@@ -961,23 +1216,23 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(' });\n\n')
                 fp.write(' // Update the nodes\n')
                 fp.write(' var node = svg.selectAll("g.node")\n')
-                fp.write('  .data(nodes, function(d) { return ' +
-                    'd.id || (d.id = ++i); });\n\n')
-                fp.write(' var nodeEnter = node.enter().' +
-                    'append("g")\n')
+                fp.write('  .data(nodes, function(d) { return '
+                         'd.id || (d.id = ++i); });\n\n')
+                fp.write(' var nodeEnter = node.enter().'
+                         'append("g")\n')
                 fp.write('  .attr("class", "node")\n')
                 fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + source.y0 + ' +
-                    '"," + source.x0 + ")";\n')
+                fp.write('    return "translate(" + source.y0 + '
+                         '"," + source.x0 + ")";\n')
                 fp.write('   })\n')
                 fp.write('  .style("opacity", 1e-6);\n\n')
-                fp.write(' // Enter any new nodes at the parents ' +
-                    'previous position.\n')
+                fp.write(' // Enter any new nodes at the parents '
+                         'previous position.\n')
                 fp.write(' nodeEnter.append("rect")\n')
                 fp.write('  .attr("y", -barHeight / 2)\n')
                 fp.write('  .attr("height", barHeight)\n')
-                fp.write('  .attr("width", function(n) { return ' +
-                    'width - n.y;})\n')
+                fp.write('  .attr("width", function(n) { return '
+                         'width - n.y;})\n')
 
                 if self.showbio:
                     if not self.arrows != "None":
@@ -987,27 +1242,28 @@ class DescendantIndentedTreeReport(Report):
                         fp.write('  .attr("cursor", "default")\n')
                     fp.write('  .on("mouseover", tip.show)\n')
                     fp.write('  .on("mousemove", function(d) {\n')
-                    fp.write('    tip.style("top", (d3.event.pageY-10)+"px")\n')
-                    fp.write('    tip.style("left", (d3.event.pageX+10)+"px");})\n')
-                    fp.write('  .on("mouseout", tip.hide)\n\n')
+                    fp.write('   tip.style("top", (d3.event.pageY-10)+"px")\n')
+                    fp.write('   tip.style("left", '
+                             '(d3.event.pageX+10)+"px");})\n')
+                    fp.write('  .on("mouseout", tip.hide)\n')
                 else:
                     if not self.arrows != "None":
                         fp.write('  .attr("cursor", "pointer")\n')
-                        fp.write('  .on("click", click)\n\n')
+                        fp.write('  .on("click", click)\n')
                     else:
                         fp.write('  .attr("cursor", "default")\n')
 
-                fp.write('  .style("fill", color);\n')
+                fp.write('  .style("fill", color);\n\n')
 
                 if self.arrows != "None":
-                    fp.write('nodeEnter.append("image")\n')
+                    fp.write(' nodeEnter.append("image")\n')
                     fp.write('  .on("click", click)\n')
                     fp.write('  .attr("cursor", "pointer")\n')
                     fp.write('  .attr("xlink:href", set_arrow)\n')
                     fp.write('  .attr("height", 22)\n')
                     fp.write('  .attr("width", 20)\n')
                     fp.write('  .attr("y", -11)\n')
-                    fp.write('  .attr("x", 0);\n')
+                    fp.write('  .attr("x", 0);\n\n')
 
                 if self.hrefs:
                     fp.write(' nodeEnter.append("a")\n')
@@ -1019,7 +1275,7 @@ class DescendantIndentedTreeReport(Report):
                     fp.write('   }\n')
                     fp.write('  })\n')
                     fp.write('  .append("text")\n')
-                    fp.write('  .attr("dy", 3.5)\n')
+                    fp.write('  .attr("dy", %s)\n' % (str(self.dy)))
                     fp.write('  .attr("dx", textMargin)\n')
                     fp.write('  .style("pointer-events", function(d) {\n')
                     fp.write('   if (d.href) {\n')
@@ -1035,15 +1291,15 @@ class DescendantIndentedTreeReport(Report):
                     fp.write('    return "none";\n')
                     fp.write('   } \n')
                     fp.write('  })\n')
-                    fp.write('  .text(set_text);\n')
+                    fp.write('  .text(set_text);\n\n')
                 else:
                     fp.write(' nodeEnter.append("text")\n')
                     fp.write('  .attr("dy", 3.5)\n')
                     fp.write('  .attr("dx", textMargin)\n')
                     fp.write('  .text(set_text);\n\n')
 
-                fp.write(' // Transition nodes to their new ' +
-                    'position.\n')
+                fp.write(' // Transition nodes to their new '
+                         'position.\n')
                 if self.arrows != "None":
                     fp.write(' node.transition()\n')
                     fp.write('  .select("image")\n')
@@ -1054,63 +1310,56 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(' nodeEnter.transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + d.y + "," + ' +
-                    'd.x + ")";\n')
+                fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
                 fp.write('   })\n')
                 fp.write('  .style("opacity", 1);\n\n')
                 fp.write(' node.transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + d.y + "," + ' +
-                    'd.x + ")";\n')
+                fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
                 fp.write('   })\n')
                 fp.write('  .style("opacity", 1)\n')
                 fp.write('  .select("rect")\n')
                 fp.write('  .style("fill", color);\n\n')
-                fp.write(' // Transition exiting nodes to the ' +
-                    'parents new position.\n')
+                fp.write(' // Transition exiting nodes to the '
+                         'parents new position.\n')
                 fp.write(' node.exit().transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + source.y + "," ' +
-                    '+ source.x + ")";\n')
+                fp.write('    return "translate(" + source.y + "," '
+                         '+ source.x + ")";\n')
                 fp.write('   })\n')
                 fp.write('  .style("opacity", 1e-6)\n')
                 fp.write('  .remove();\n\n')
                 fp.write(' // Update the links\n')
                 fp.write(' var link = svg.selectAll("path.link")\n')
-                fp.write('  .data(tree.links(nodes), function(d) { ' +
-                    'return d.target.id; });\n\n')
-                fp.write(' // Enter any new links at the parents ' +
-                    'previous position.\n')
+                fp.write('  .data(tree.links(nodes), function(d) { '
+                         'return d.target.id; });\n\n')
+                fp.write(' // Enter any new links at the parents '
+                         'previous position.\n')
                 fp.write(' link.enter().insert("path", "g")\n')
                 fp.write('  .attr("class", "link")\n')
                 fp.write('  .attr("d", function(d) {\n')
-                fp.write('    var o = {x: source.x0, y: ' +
-                    'source.y0};\n')
-                fp.write('    return diagonal({source: o, target: ' +
-                    'o});\n')
+                fp.write('    var o = {x: source.x0, y: source.y0};\n')
+                fp.write('    return diagonal({source: o, target: o});\n')
                 fp.write('   })\n')
                 fp.write('  .transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("d", diagonal);\n\n')
-                fp.write(' // Transition links to their new ' +
-                    'position.\n')
+                fp.write(' // Transition links to their new position.\n')
                 fp.write(' link.transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("d", diagonal);\n\n')
-                fp.write(' // Transition exiting nodes to the ' +
-                    'parents new position.\n')
+                fp.write(' // Transition exiting nodes to the '
+                         'parents new position.\n')
                 fp.write(' link.exit().transition()\n')
                 fp.write('  .duration(duration)\n')
                 fp.write('  .attr("d", function(d) {\n')
                 fp.write('    var o = {x: source.x, y: source.y};\n')
-                fp.write('    return diagonal({source: o, target: ' +
-                    'o});\n')
+                fp.write('    return diagonal({source: o, target: o});\n')
                 fp.write('   })\n')
                 fp.write('  .remove();\n\n')
-                fp.write(' // Stash the old positions for ' +
-                    'transition.\n')
+                fp.write(' // Stash the old positions for transition.\n')
                 fp.write(' nodes.forEach(function(d) {\n')
                 fp.write('  d.x0 = d.x;\n')
                 fp.write('  d.y0 = d.y;\n')
@@ -1153,11 +1402,14 @@ class DescendantIndentedTreeReport(Report):
                     fp.write('function set_biography_text(d) {\n')
                     fp.write(' var ret_str = "<div class=\'bio_box\'>";\n')
                     fp.write(' if (d.image_ref !== undefined) {\n')
-                    fp.write('    ret_str = ret_str + "<img align=\'right\' alt=\'\' border=0 src=\'";\n')
+                    fp.write('    ret_str = ret_str + "<img align=\'right\' '
+                             'alt=\'\' border=0 src=\'";\n')
                     fp.write('    ret_str = ret_str + d.image_ref + "\'/>";\n')
                     fp.write(' }\n')
-                    fp.write(' ret_str = ret_str + "<p class=\'bio_header\'><strong>" + d.name + "</strong></p>";\n')
-                    fp.write(' ret_str = ret_str + "<div class=\'bio_text\'>" + d.biography + "</div>";\n')
+                    fp.write(' ret_str = ret_str + "<p class=\'bio_header\'>'
+                             '<strong>" + d.name + "</strong></p>";\n')
+                    fp.write(' ret_str = ret_str + "<div class=\''
+                             'bio_text\'>" + d.biography + "</div>";\n')
                     fp.write(' ret_str = ret_str + "</div>";\n')
                     fp.write('\n')
                     fp.write(' return ret_str;\n')
@@ -1184,6 +1436,81 @@ class DescendantIndentedTreeReport(Report):
             ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
             return
 
+        # Generate <dest>.css options selected such as font-size
+        try:
+            with io.open(self.destcss, 'w', encoding='utf8') as fp:
+                fp.write('body {\n')
+                fp.write('    background: url(../images/texture-noise.png);\n')
+                fp.write('    margin: 0;\n')
+                fp.write('    font-size: 11px;\n')
+                fp.write('    font-weight: bold;\n')
+                fp.write('    font-family: "Helvetica Neue", Helvetica;\n')
+                fp.write('}\n\n')
+
+                fp.write('.node rect {\n')
+                fp.write('    fill: #fff;\n')
+                fp.write('    fill-opacity: .5;\n')
+                fp.write('    stroke: #3182bd;\n')
+                fp.write('    stroke-width: 1.5px;\n')
+                fp.write('}\n\n')
+
+                fp.write('.node text {\n')
+                fp.write('    font: %spx sans-serif;\n' % (self.font_size))
+                fp.write('    font-weight: bold;\n')
+                fp.write('    pointer-events: none;\n')
+                fp.write('}\n\n')
+
+                fp.write('.node_test text {\n')
+                fp.write('    font: %spx sans-serif;\n' % (self.font_size))
+                fp.write('    font-weight: bold;\n')
+                fp.write('    pointer-events: none;\n')
+                fp.write('}\n\n')
+
+                fp.write('path.link {\n')
+                fp.write('    fill: none;\n')
+                fp.write('    stroke: #9ecae1;\n')
+                fp.write('    stroke-width: 1.5px;\n')
+                fp.write('}\n\n')
+
+                fp.write('#testString {\n')
+                fp.write('    font: %spx sans-serif;\n' % (self.font_size))
+                fp.write('    font-weight: bold;\n')
+                fp.write('    position: absolute;\n')
+                fp.write('    visibility: hidden;\n')
+                fp.write('    height: auto;\n')
+                fp.write('    width: auto;\n')
+                fp.write('}\n\n')
+
+                fp.write('.bio_box {\n')
+                fp.write('    max-width: 400px;\n')
+                fp.write('}\n\n')
+
+                fp.write('.bio_header {\n')
+                fp.write('    font: %spx sans-serif;\n' %
+                         (self.bio_header_font_size))
+                fp.write('    font-weight: bold;\n')
+                fp.write('    text-align: left;\n')
+                fp.write('    margin-right: 0.25cm; margin-left: 0.25cm;\n')
+                fp.write('    margin-top: 0.25cm; margin-bottom: 0.25cm;\n')
+                fp.write('    border-top:none; border-bottom:none;\n')
+                fp.write('    border-left:none; border-right:none;\n')
+                fp.write('}\n\n')
+
+                fp.write('.bio_text {\n')
+                fp.write('    font: %spx sans-serif;\n' %
+                         (self.bio_body_font_size))
+                fp.write('    font-weight: bold;\n')
+                fp.write('    text-align: left;\n')
+                fp.write('    margin-right: 0.25cm; margin-left: 0.25cm;\n')
+                fp.write('    margin-top: 0.25cm; margin-bottom: 0.25cm;\n')
+                fp.write('    border-top:none; border-bottom:none;\n')
+                fp.write('    border-left:none; border-right:none;\n')
+                fp.write('}\n\n')
+
+        except IOError as msg:
+            ErrorDialog(_("Failed writing %s: %s") % (self.destcss, str(msg)))
+            return
+
         # Genearte json data file to be used
         try:
             with io.open(self.destjson, 'w', encoding='utf8') as self.json_fp:
@@ -1192,7 +1519,9 @@ class DescendantIndentedTreeReport(Report):
                 self.objPrint.set_dest_prefix(self.destprefix)
                 recurse = RecurseDown(self.max_gen, self.database,
                                       self.objPrint, self.dups, self.marrs,
-                                      self.divs)
+                                      self.divs, self.user, self.title,
+                                      self.num_obj)
+                recurse.recurse_count(generation, self.center_person, None)
                 recurse.recurse(generation, self.center_person, None)
 
         except IOError as msg:
@@ -1216,11 +1545,67 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
 
     def validate_gen(self):
         """
-        Validate Max generation > 0
+        Validate generations within range MIN_GEN and MAX_GEN
         """
         max_gen = self.max_gen.get_value()
-        if max_gen < 1:
-            self.max_gen.set_value(1)
+        if max_gen < MIN_GEN:
+            self.max_gen.set_value(MIN_GEN)
+        if max_gen > MAX_GEN:
+            self.max_gen.set_value(MAX_GEN)
+
+        contraction = self.contraction.get_value()
+        if contraction < MIN_GEN:
+            self.contraction.set_value(MIN_GEN)
+        if contraction > MAX_GEN:
+            self.contraction.set_value(MAX_GEN)
+
+        href_gen = self.href_gen.get_value()
+        if href_gen < MIN_GEN:
+            self.href_gen.set_value(MIN_GEN)
+        if href_gen > MAX_GEN:
+            self.href_gen.set_value(MAX_GEN)
+
+        dead_years = self.dead_years.get_value()
+        if dead_years < MIN_GEN:
+            self.dead_years.set_value(MIN_GEN)
+        if dead_years > MAX_GEN:
+            self.dead_years.set_value(MAX_GEN)
+
+    def validate_age(self):
+        """
+        Validate age within range MIN_AGE and MAX_AGE
+        """
+        href_age = self.href_age.get_value()
+        if href_age < MIN_AGE:
+            self.href_age.set_value(MIN_AGE)
+        if href_age > MAX_AGE:
+            self.href_age.set_value(MAX_AGE)
+
+    def validate_font_size(self):
+        """
+        Validate font with range MIN_FONT and MAX_FONT
+        """
+        font_size = self.font_size.get_value()
+        if font_size < MIN_FONT:
+            self.font_size.set_value(MIN_FONT)
+        if font_size > MAX_FONT:
+            self.font_size.set_value(MAX_FONT)
+
+    def validate_bio_font_size(self):
+        """
+        Validate font with range MIN_BIO_FONT and MAX_BIO_FONT
+        """
+        font_size = self.bio_header_font_size.get_value()
+        if font_size < MIN_BIO_FONT:
+            self.bio_header_font_size.set_value(MIN_BIO_FONT)
+        if font_size > MAX_BIO_FONT:
+            self.bio_header_font_size.set_value(MAX_BIO_FONT)
+
+        font_size = self.bio_body_font_size.get_value()
+        if font_size < MIN_BIO_FONT:
+            self.bio_body_font_size.set_value(MIN_BIO_FONT)
+        if font_size > MAX_BIO_FONT:
+            self.bio_body_font_size.set_value(MAX_BIO_FONT)
 
     def add_menu_options(self, menu):
         """
@@ -1243,18 +1628,25 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         numbering.set_help(_("The numbering system to be used"))
         add_option("numbering", numbering)
 
-        self.max_gen = NumberOption(_("Include Generations"), 10, 1, 100)
+        self.max_gen = NumberOption(_("Include Generations"),
+                                    10, MIN_GEN, MAX_GEN)
         self.max_gen.set_help(_("The number of generations to include in the "
                                 "report"))
         add_option("max_gen", self.max_gen)
         self.max_gen.connect('value-changed', self.validate_gen)
 
         self.contraction = NumberOption(_("Include contraction level"),
-                                        3, 1, 100)
+                                        3, MIN_GEN, MAX_GEN)
         self.contraction.set_help(_("The number of descendant levels to "
                                     "contract on initial display."))
         add_option("contraction", self.contraction)
         self.contraction.connect('value-changed', self.validate_gen)
+
+        self.font_size = NumberOption(_("Font size"),
+                                        10, MIN_FONT, MAX_FONT)
+        self.font_size.set_help(_("The font size in pixels for each node."))
+        add_option("font_size", self.font_size)
+        self.font_size.connect('value-changed', self.validate_font_size)
 
         dest_path = DestinationOption(_("Destination"),
             config.get('paths.website-directory'))
@@ -1298,6 +1690,34 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         no_more_bg.set_help(_("RGB-color for non-expandable row "
                               "background."))
         add_option("no_more_bg", no_more_bg)
+
+        self.inc_private = BooleanOption(_('Include records marked private'),
+                                         False)
+        self.inc_private.set_help(_("Whether to include private objects."))
+        add_option("inc_private", self.inc_private)
+
+        self.inc_living = EnumeratedListOption(_("Living People"),
+                                               LivingProxyDb.MODE_EXCLUDE_ALL)
+        self.inc_living.set_items([
+                (LivingProxyDb.MODE_EXCLUDE_ALL, _("Exclude")),
+                (LivingProxyDb.MODE_INCLUDE_LAST_NAME_ONLY,
+                 _("Include Last Name Only")),
+                (LivingProxyDb.MODE_INCLUDE_FULL_NAME_ONLY,
+                 _("Include Full Name Only")),
+                (_INCLUDE_LIVING_VALUE, _("Include"))])
+        self.inc_living.set_help(_("How to handle living people."))
+        add_option("inc_living", self.inc_living)
+        self.inc_living.connect('value-changed', self.inc_living_changed)
+        
+        # Years from death to consider living
+        self.dead_years = NumberOption(_("Years from death to consider living"),
+                                       30, MIN_GEN, MAX_GEN)
+        self.dead_years.set_help(_("Whether or not to include people who "
+                                 "may have recently died."))
+        add_option("dead_years", self.dead_years)
+        self.dead_years.connect('value-changed', self.validate_gen)
+
+        self.inc_living_changed()
 
         # Navigation
         add_option = partial(menu.add_option, _("Navigation"))
@@ -1353,11 +1773,32 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
 
         # URL Generations
         self.href_gen = NumberOption(_("Generations to generate HREF links"),
-                                        10, 1, 100)
+                                     10, MIN_GEN, MAX_GEN)
         self.href_gen.set_help(_("The number of generations to generate "
-                                    "HREF links."))
+                                 "HREF links."))
         add_option("href_gen", self.href_gen)
         self.href_gen.connect('value-changed', self.validate_gen)
+
+        # Exclude persons not reaching age
+        self.href_age = NumberOption(_("Exclude persons who died before "
+                                       "(years)"),
+                                     -1, -1, 100)
+        self.href_age.set_help(_("Whether to generate links for people who "
+                                 "died in infancy, -1 excludes nobody."))
+        add_option("href_age", self.href_age)
+        self.href_age.connect('value-changed', self.validate_age)
+
+        # Exclude top person
+        self.href_excl_center = BooleanOption(_('Exclude center person'), False)
+        self.href_excl_center.set_help(_("Whether or not to generate links "
+                                         "for center person."))
+        add_option("href_excl_center", self.href_excl_center)
+
+        # Exclude spouses
+        self.href_excl_spouse = BooleanOption(_('Exclude Spouses'), False)
+        self.href_excl_spouse.set_help(_("Whether or not to generate links "
+                                         "for spouses."))
+        add_option("href_excl_spouse", self.href_excl_spouse)
 
         self.arrows_changed()
 
@@ -1365,25 +1806,30 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         add_option = partial(menu.add_option, _("Biography Content"))
 
         self.showbio = BooleanOption(_('Show biography tooltips'), True)
-        self.showbio.set_help(_("Whether to show biography tooltips when hovering "
-                        "over a node."))
+        self.showbio.set_help(_("Whether to show biography tooltips when "
+                                "hovering over a node."))
         add_option("showbio", self.showbio)
         self.showbio.connect('value-changed', self.showbio_changed)
 
         self.use_call = BooleanOption(_("Use callname for common name"), True)
-        self.use_call.set_help(_("Whether to use the call name as the first name."))
+        self.use_call.set_help(_("Whether to use the call name as the first "
+                                 "name."))
         add_option("use_call", self.use_call)
         
-        self.use_fulldates = BooleanOption(_("Use full dates instead of only the year"),
-                                  True)
-        self.use_fulldates.set_help(_("Whether to use full dates instead of just year."))
+        self.use_fulldates = BooleanOption(_("Use full dates instead of only "
+                                             "the year"),
+                                           True)
+        self.use_fulldates.set_help(_("Whether to use full dates instead of "
+                                      "just year."))
         add_option("use_fulldates", self.use_fulldates)
 
         self.compute_age = BooleanOption(_("Compute death age"),True)
-        self.compute_age.set_help(_("Whether to compute a person's age at death."))
+        self.compute_age.set_help(_("Whether to compute a person's age at "
+                                    "death."))
         add_option("compute_age", self.compute_age)
 
-        self.inc_photo = BooleanOption(_("Include Photo/Images from Gallery"), True)
+        self.inc_photo = BooleanOption(_("Include Photo/Images from Gallery"),
+                                       True)
         self.inc_photo.set_help(_("Whether to include images."))
         add_option("inc_photo", self.inc_photo)
 
@@ -1392,12 +1838,16 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
                  _("Whether to use complete sentences or succinct language."))
         add_option("verbose", self.verbose)
 
-        self.rep_place = BooleanOption(_("Replace missing places with ______"), False)
-        self.rep_place.set_help(_("Whether to replace missing Places with blanks."))
+        self.rep_place = BooleanOption(_("Replace missing places with ______"),
+                                       False)
+        self.rep_place.set_help(_("Whether to replace missing Places with "
+                                  "blanks."))
         add_option("rep_place", self.rep_place)
 
-        self.rep_date = BooleanOption(_("Replace missing dates with ______"), False)
-        self.rep_date.set_help(_("Whether to replace missing Dates with blanks."))
+        self.rep_date = BooleanOption(_("Replace missing dates with ______"),
+                                      False)
+        self.rep_date.set_help(_("Whether to replace missing Dates with "
+                                 "blanks."))
         add_option("rep_date", self.rep_date)
 
         self.bio_text = ColorOption(_("Text Color"),
@@ -1409,6 +1859,22 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             "#000000")
         self.bio_bg.set_help(_("RGB-color for biography tooltip."))
         add_option("bio_bg", self.bio_bg)
+
+        self.bio_header_font_size = NumberOption(_("Header Font size"),
+                                                 12, MIN_FONT, MAX_FONT)
+        self.bio_header_font_size.set_help(_("The font size in pixels for "
+                                             "biography header text."))
+        add_option("bio_header_font_size", self.bio_header_font_size)
+        self.bio_header_font_size.connect('value-changed',
+                                          self.validate_bio_font_size)
+
+        self.bio_body_font_size = NumberOption(_("Body Font size"),
+                                                10, MIN_FONT, MAX_FONT)
+        self.bio_body_font_size.set_help(_("The font size in pixels for "
+                                           "biography body text."))
+        add_option("bio_body_font_size", self.bio_body_font_size)
+        self.bio_body_font_size.connect('value-changed',
+                                        self.validate_bio_font_size)
 
         self.showbio_changed()
 
@@ -1426,6 +1892,8 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             self.rep_date.set_available(True)
             self.bio_bg.set_available(True)
             self.bio_text.set_available(True)
+            self.bio_header_font_size.set_available(True)
+            self.bio_body_font_size.set_available(True)
         else:
             self.use_call.set_available(False)
             self.use_fulldates.set_available(False)
@@ -1436,6 +1904,17 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             self.rep_date.set_available(False)
             self.bio_bg.set_available(False)
             self.bio_text.set_available(False)
+            self.bio_header_font_size.set_available(False)
+            self.bio_body_font_size.set_available(False)
+
+    def inc_living_changed(self):
+        """
+        Handles the changing nature of living inclusion
+        """
+        if self.inc_living.get_value() == _INCLUDE_LIVING_VALUE:
+            self.dead_years.set_available(False)
+        else:
+            self.dead_years.set_available(True)
 
     def arrows_changed(self):
         """
@@ -1449,6 +1928,9 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             self.href_ext.set_available(False)
             self.href_delim.set_available(False)
             self.href_gen.set_available(False)
+            self.href_age.set_available(False)
+            self.href_excl_spouse.set_available(False)
+            self.href_excl_center.set_available(False)
         else:
             self.hrefs.set_available(True)
             self.hrefs_changed()
@@ -1462,8 +1944,14 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
             self.href_ext.set_available(True)
             self.href_delim.set_available(True)
             self.href_gen.set_available(True)
+            self.href_age.set_available(True)
+            self.href_excl_spouse.set_available(True)
+            self.href_excl_center.set_available(True)
         else:
             self.href_prefix.set_available(False)
             self.href_ext.set_available(False)
             self.href_delim.set_available(False)
             self.href_gen.set_available(False)
+            self.href_age.set_available(False)
+            self.href_excl_spouse.set_available(False)
+            self.href_excl_center.set_available(False)
