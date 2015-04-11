@@ -523,7 +523,7 @@ class Printinfo():
         else:
             delim = "_"
 
-        name_str = name.replace(" ", delim)
+        name_str = name.replace(" ", delim).lower()
         name_out = unicodedata.normalize('NFKD',
             conv_to_unicode(name_str)).encode('ascii', 'ignore')
         name_out = ''.join(c for c in conv_to_unicode(name_out) \
@@ -1138,8 +1138,9 @@ class DescendantIndentedTreeReport(Report):
                          'margin.right)\n')
                 fp.write(' .append("g").attr("class", "node_test");\n\n')
 
-                fp.write('d3.json("json/delaney.json", '
-                         'function(error, descendant) {\n')
+                fp.write('d3.json("json/indentedtree-%s.json", ' %
+                         (self.destprefix))
+                fp.write('function(error, descendant) {\n')
                 fp.write(' descendant.x0 = 0;\n')
                 fp.write(' descendant.y0 = 0; \n')
                 fp.write(' calc_max_width(root = descendant);\n')
@@ -1148,7 +1149,6 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('  d3.select("svg").attr("width", '
                          'width + margin.left + margin.right);\n')
                 fp.write(' }\n')
-                fp.write(' console.log(width);\n')
                 fp.write('});\n\n')
 
                 fp.write('function calc_max_width(source) {\n')
