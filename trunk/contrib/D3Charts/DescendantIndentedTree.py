@@ -1069,7 +1069,7 @@ class DescendantIndentedTreeReport(Report):
             fp.write(' calc_max_width(root = descendant);\n')
             fp.write(' if (width < maxWidth) {\n')
             fp.write('  width = maxWidth;\n')
-            fp.write('  d3.select("div.calc_svg").select("svg").attr("width", '
+            fp.write('  d3.select("div.div_svg").select("svg").attr("width", '
                      'width + margin.left + margin.right);\n')
             fp.write(' }\n')
             fp.write('});\n\n')
@@ -1154,7 +1154,7 @@ class DescendantIndentedTreeReport(Report):
             fp.write('  .attr("y", -barHeight / 2)\n')
             fp.write('  .attr("height", barHeight)\n')
             fp.write('  .attr("width", function(n) { return '
-                     'width - n.y;})\n')
+                     'maxWidth - n.y;})\n')
 
             if self.showbio:
                 if not self.arrows != "None":
