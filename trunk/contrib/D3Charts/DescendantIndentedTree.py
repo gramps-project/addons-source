@@ -151,6 +151,70 @@ class PrintVilliers():
 
 #------------------------------------------------------------------------
 #
+# PrintdAboville
+#   d'Aboville numbering system
+#
+#------------------------------------------------------------------------
+class PrintdAboville():
+    def __init__(self):
+        self.num = {0:1}
+    
+    def number(self, level):
+        to_return = "1"
+        if level > 1:
+            i = 1
+            while level > (i+1):
+                to_return += "." + str(self.num[i]-1)
+                i += 1
+            to_return += "." + str(self.num[i])
+        self.num[level] = 1
+        self.num[level-1] = self.num[level-1] + 1
+
+        return to_return
+    
+
+#------------------------------------------------------------------------
+#
+# PrintHenry
+#   Henry numbering system
+#
+#------------------------------------------------------------------------
+class PrintHenry():
+    def __init__(self):
+        self.num = {0:1}
+    
+    def number(self, level):
+        to_return = "1"
+        if level > 1:
+            i = 1
+            while level > (i+1):
+                to_return += str(self.num[i]-1)
+                i += 1
+            to_return += str(self.num[i])
+        self.num[level] = 1
+        self.num[level-1] = self.num[level-1] + 1
+
+        return to_return
+    
+#------------------------------------------------------------------------
+#
+# PrintRecord
+#   Record-style (Modified Register) numbering system
+#
+#------------------------------------------------------------------------
+class PrintRecord():
+    def __init__(self):
+        self.num = 0
+
+    def reset(self):
+        self.num = 0
+    
+    def number(self, level):
+        self.num += 1
+        return str(self.num)
+    
+#------------------------------------------------------------------------
+#
 # PrintMeurgey
 #   Meurgey_de_Tupigny numbering system
 #
@@ -250,20 +314,17 @@ class Printinfo():
 
     def get_date_place(self,event):
         if event:
-            year = event.get_date_object().get_year()
             date = get_date(event)
             place_handle = event.get_place_handle()
             if place_handle:
-                places = self.database.get_place_from_handle(
-                    place_handle).get_title().split(',')
+                place = self.database.get_place_from_handle(
+                    place_handle).get_title()
                 
-                if places:
-                    place = places[0]
-                    return("%(event_abbrev)s %(date)s %(place)s" % {
-                        'event_abbrev': event.type.get_abbreviation(),
-                        'date' : date,
-                        'place' : place,
-                        })
+                return("%(event_abbrev)s %(date)s %(place)s" % {
+                    'event_abbrev': event.type.get_abbreviation(),
+                    'date' : date,
+                    'place' : place,
+                    })
             else:
                 return("%(event_abbrev)s %(date)s" % {
                     'event_abbrev': event.type.get_abbreviation(),
@@ -541,8 +602,11 @@ class Printinfo():
                 str(self.href_dict[name_out])
             self.href_dict[name_out] = 1
 
-        href = "%s/%s" % \
-            (self.href_prefix.rstrip("/"), str(name_out))
+        if self.href_prefix:
+            href = "%s/%s" % \
+                (self.href_prefix.rstrip("/"), str(name_out))
+        else:
+            href = "%s" % (str(name_out))
 
         if self.href_ext != "None":
             href = "%s.%s" % (re.sub(self.href_ext+"$", "", href),
@@ -888,13 +952,19 @@ class DescendantIndentedTreeReport(Report):
     
         #Initialize the Printinfo class    
         self.dups = menu.get_option_by_name('dups').get_value()
-        numbering = menu.get_option_by_name('numbering').get_value()
-        if numbering == "Simple":
+        self.numbering = menu.get_option_by_name('numbering').get_value()
+        if self.numbering == "Simple":
             self.num_obj = PrintSimple(self.dups)
-        elif numbering == "de Villiers/Pama":
+        elif self.numbering == "d'Aboville":
+            self.num_obj = PrintdAboville()
+        elif self.numbering == "de Villiers/Pama":
             self.num_obj = PrintVilliers()
-        elif numbering == "Meurgey de Tupigny":
+        elif self.numbering == "Henry":
+            self.num_obj = PrintHenry()
+        elif self.numbering == "Meurgey de Tupigny":
             self.num_obj = PrintMeurgey()
+        elif self.numbering == "Record":
+            self.num_obj = PrintRecord()
         else:
             raise AttributeError("no such numbering: '%s'" % self.numbering)
 
@@ -1522,6 +1592,8 @@ class DescendantIndentedTreeReport(Report):
                                       self.divs, self.user, self.title,
                                       self.num_obj)
                 recurse.recurse_count(generation, self.center_person, None)
+                if self.numbering == "Record":
+                    self.num_obj.reset()
                 recurse.recurse(generation, self.center_person, None)
 
         except IOError as msg:
@@ -1623,8 +1695,11 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         numbering = EnumeratedListOption(_("Numbering system"), "Simple")
         numbering.set_items([
                 ("Simple",      _("Simple numbering")),
+                ("d'Aboville", _("d'Aboville numbering")),
+                ("Henry", _("Henry numbering")),
                 ("de Villiers/Pama", _("de Villiers/Pama numbering")),
-                ("Meurgey de Tupigny", _("Meurgey de Tupigny numbering"))])
+                ("Meurgey de Tupigny", _("Meurgey de Tupigny numbering")),
+                ("Record", _("Record (Modified Register) numbering"))])
         numbering.set_help(_("The numbering system to be used"))
         add_option("numbering", numbering)
 
