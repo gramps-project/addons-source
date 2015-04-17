@@ -940,6 +940,9 @@ class DescendantIndentedTreeReport(Report):
             self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix)))
         self.destjs = conv_to_unicode(os.path.join(
             self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix)))
+        self.destexpandedjs = conv_to_unicode(os.path.join(
+            self.dest_path, "js", "indentedtree-%s-expanded.js" %
+            (self.destprefix)))
         self.desthtml = conv_to_unicode(
             os.path.join(self.dest_path, os.path.basename(self.dest_file)))
         self.arrows = menu.get_option_by_name('arrows').get_value()
@@ -1020,6 +1023,337 @@ class DescendantIndentedTreeReport(Report):
                                   self.href_age, self.href_excl_spouse,
                                   self.href_excl_center, self.center_person)
 
+    def write_js(self, filename, contraction):
+        """
+        Convenience method to write js file with different contraction levels
+        """
+        with io.open(filename, 'w', encoding='utf8') as fp:
+            fp.write('var margin = {top: 30, right: 20, bottom: '
+                     '30, left: 20},\n')
+            fp.write(' width = 1024 - margin.left - '
+                     'margin.right,\n')
+            if self.arrows != "None":
+                fp.write(' textMargin = 20,\n')
+            else:
+                fp.write(' textMargin = 5.5,\n')
+            fp.write(' barHeight = %s,\n' % (str(self.barheight)))
+            fp.write(' i = 0,\n')
+            fp.write(' duration = 400,\n')
+            fp.write(' contraction = %s,\n' % (contraction))
+            fp.write(' root;\n\n')
+            fp.write('var tree = d3.layout.tree().'
+                     'nodeSize([0, 20]);\n\n')
+            fp.write('var diagonal = d3.svg.diagonal().'
+                     'projection(function(d) {\n')
+            fp.write(' return [d.y, d.x];\n')
+            fp.write('});\n\n')
+            fp.write('var maxWidth = width;\n\n')
+            fp.write('var svg = d3.select("div.div_svg").'
+                     'append("svg")\n')
+            fp.write(' .attr("width", width + margin.left + '
+                     'margin.right).append("g")\n')
+            fp.write(' .attr("transform", "translate(" + '
+                     'margin.left + "," + margin.top + ")");\n\n')
+
+            fp.write('var calc_div = d3.select("div.calc_svg");\n')
+            fp.write('var svg1 = d3.select("div.calc_svg").append("svg")\n')
+            fp.write(' .attr("width", width + margin.left + '
+                     'margin.right)\n')
+            fp.write(' .append("g").attr("class", "node_test");\n\n')
+
+            fp.write('d3.json("json/indentedtree-%s.json", ' %
+                     (self.destprefix))
+            fp.write('function(error, descendant) {\n')
+            fp.write(' descendant.x0 = 0;\n')
+            fp.write(' descendant.y0 = 0; \n')
+            fp.write(' calc_max_width(root = descendant);\n')
+            fp.write(' if (width < maxWidth) {\n')
+            fp.write('  width = maxWidth;\n')
+            fp.write('  d3.select("div.calc_svg").select("svg").attr("width", '
+                     'width + margin.left + margin.right);\n')
+            fp.write(' }\n')
+            fp.write('});\n\n')
+
+            fp.write('function calc_max_width(source) {\n')
+            fp.write(' var nodes = tree.nodes(root);\n')
+            fp.write(' var node = svg1.selectAll("g.node_test")\n')
+            fp.write('  .data(nodes)\n')
+            fp.write('  .enter()\n')
+            fp.write('  .append("text")\n')
+            fp.write('  .text(set_text)\n')
+            fp.write('  .each(function(d) {\n')
+            fp.write('    wid = this.getBBox().width;\n')
+            fp.write('    newmax = (wid + d.y + margin.right + '
+                     'margin.left);\n')
+            fp.write('    if (maxWidth < newmax) {\n')
+            fp.write('     maxWidth = newmax;\n')
+            fp.write('    }\n')
+            fp.write('  });\n')
+            fp.write(' calc_div.select("svg").remove();\n')
+            fp.write('}\n\n')
+
+            if self.showbio:
+                fp.write('var tip = d3.tip()\n')
+                fp.write(' .attr("class", "d3-tip")\n')
+                fp.write(' .style("background", "%s")\n' % (self.bio_bg))
+                fp.write(' .style("color", "%s")\n' % (self.bio_text))
+                fp.write(' .offset([-10, 0])\n')
+                fp.write(' .html(function(d) {\n')
+                fp.write('  return set_biography_text(d);\n')
+                fp.write(' });\n\n')
+                fp.write('svg.call(tip);\n\n')
+
+            out_str='d3.json("json/indentedtree-%s.json", ' % (self.destprefix)
+            fp.write(out_str + 'function(error, descendant) {\n')
+            fp.write(' descendant.x0 = 0;\n')
+            fp.write(' descendant.y0 = 0;\n')
+            fp.write(' set_initial_contraction(root = descendant);\n')
+            fp.write(' update(root = descendant);\n')
+            fp.write('});\n\n')
+            fp.write('function set_initial_contraction(source) {\n')
+            fp.write(' var nodes = tree.nodes(root);\n')
+            fp.write(' nodes.forEach(function(n, i) {\n')
+            fp.write('  if (n.depth >= (contraction-1) && n.children) {\n')
+            fp.write('   n._children = n.children;\n')
+            fp.write('   n.children = null;\n')
+            fp.write('  }\n')
+            fp.write(' });\n')
+            fp.write('}\n\n')
+            fp.write('function update(source) {\n')
+            fp.write(' // Compute the flattened node list. '
+                     'TODO use d3.layout.hierarchy.\n')
+            fp.write(' var nodes = tree.nodes(root);\n')
+            fp.write(' var height = Math.max(500, nodes.length *'
+                     ' barHeight +\n')
+            fp.write('  margin.top + margin.bottom);\n\n')
+            fp.write(' d3.select("svg").transition().'
+                     'duration(duration).attr("height", height);\n\n')
+            fp.write(' d3.select(self.frameElement).'
+                     'transition().duration(duration)\n')
+            fp.write('  .style("height", height + "px");\n\n')
+            fp.write(' // Compute the "layout".\n')
+            fp.write(' nodes.forEach(function(n, i) {\n')
+            fp.write('  // Set X Co-ordinate for each node\n')
+            fp.write('  n.x = i * barHeight;\n')
+            fp.write(' });\n\n')
+            fp.write(' // Update the nodes\n')
+            fp.write(' var node = svg.selectAll("g.node")\n')
+            fp.write('  .data(nodes, function(d) { return '
+                     'd.id || (d.id = ++i); });\n\n')
+            fp.write(' var nodeEnter = node.enter().'
+                     'append("g")\n')
+            fp.write('  .attr("class", "node")\n')
+            fp.write('  .attr("transform", function(d) {\n')
+            fp.write('    return "translate(" + source.y0 + '
+                     '"," + source.x0 + ")";\n')
+            fp.write('   })\n')
+            fp.write('  .style("opacity", 1e-6);\n\n')
+            fp.write(' // Enter any new nodes at the parents '
+                     'previous position.\n')
+            fp.write(' nodeEnter.append("rect")\n')
+            fp.write('  .attr("y", -barHeight / 2)\n')
+            fp.write('  .attr("height", barHeight)\n')
+            fp.write('  .attr("width", function(n) { return '
+                     'width - n.y;})\n')
+
+            if self.showbio:
+                if not self.arrows != "None":
+                    fp.write('  .attr("cursor", "pointer")\n')
+                    fp.write('  .on("click", click)\n')
+                else:
+                    fp.write('  .attr("cursor", "default")\n')
+                fp.write('  .on("mouseover", tip.show)\n')
+                fp.write('  .on("mousemove", function(d) {\n')
+                fp.write('   tip.style("top", (d3.event.pageY-10)+"px")\n')
+                fp.write('   tip.style("left", '
+                         '(d3.event.pageX+10)+"px");})\n')
+                fp.write('  .on("mouseout", tip.hide)\n')
+            else:
+                if not self.arrows != "None":
+                    fp.write('  .attr("cursor", "pointer")\n')
+                    fp.write('  .on("click", click)\n')
+                else:
+                    fp.write('  .attr("cursor", "default")\n')
+
+            fp.write('  .style("fill", color);\n\n')
+
+            if self.arrows != "None":
+                fp.write(' nodeEnter.append("image")\n')
+                fp.write('  .on("click", click)\n')
+                fp.write('  .attr("cursor", "pointer")\n')
+                fp.write('  .attr("xlink:href", set_arrow)\n')
+                fp.write('  .attr("height", 22)\n')
+                fp.write('  .attr("width", 20)\n')
+                fp.write('  .attr("y", -11)\n')
+                fp.write('  .attr("x", 0);\n\n')
+
+            if self.hrefs:
+                fp.write(' nodeEnter.append("a")\n')
+                fp.write('  .attr({"xlink:href": "#"})\n')
+                fp.write('  .on("mouseover", function(d) {\n')
+                fp.write('   if (d.href) {\n')
+                fp.write('    d3.select(this)\n')
+                fp.write('     .attr({"xlink:href": d.href});\n')
+                fp.write('   }\n')
+                fp.write('  })\n')
+                fp.write('  .append("text")\n')
+                fp.write('  .attr("dy", %s)\n' % (str(self.dy)))
+                fp.write('  .attr("dx", textMargin)\n')
+                fp.write('  .style("pointer-events", function(d) {\n')
+                fp.write('   if (d.href) {\n')
+                fp.write('    return "auto";\n')
+                fp.write('   } else {\n')
+                fp.write('    return "none";\n')
+                fp.write('   } \n')
+                fp.write('  })\n')
+                fp.write('  .style("text-decoration", function(d) {\n')
+                fp.write('   if (d.href) {\n')
+                fp.write('    return "underline";\n')
+                fp.write('   } else {\n')
+                fp.write('    return "none";\n')
+                fp.write('   } \n')
+                fp.write('  })\n')
+                fp.write('  .text(set_text);\n\n')
+            else:
+                fp.write(' nodeEnter.append("text")\n')
+                fp.write('  .attr("dy", 3.5)\n')
+                fp.write('  .attr("dx", textMargin)\n')
+                fp.write('  .text(set_text);\n\n')
+
+            fp.write(' // Transition nodes to their new '
+                     'position.\n')
+            if self.arrows != "None":
+                fp.write(' node.transition()\n')
+                fp.write('  .select("image")\n')
+                fp.write('  .attr("xlink:href", set_arrow);\n\n')
+            fp.write(' node.transition()\n')
+            fp.write('  .select("text")\n')
+            fp.write('  .text(set_text);\n\n')
+            fp.write(' nodeEnter.transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("transform", function(d) {\n')
+            fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
+            fp.write('   })\n')
+            fp.write('  .style("opacity", 1);\n\n')
+            fp.write(' node.transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("transform", function(d) {\n')
+            fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
+            fp.write('   })\n')
+            fp.write('  .style("opacity", 1)\n')
+            fp.write('  .select("rect")\n')
+            fp.write('  .style("fill", color);\n\n')
+            fp.write(' // Transition exiting nodes to the '
+                     'parents new position.\n')
+            fp.write(' node.exit().transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("transform", function(d) {\n')
+            fp.write('    return "translate(" + source.y + "," '
+                     '+ source.x + ")";\n')
+            fp.write('   })\n')
+            fp.write('  .style("opacity", 1e-6)\n')
+            fp.write('  .remove();\n\n')
+            fp.write(' // Update the links\n')
+            fp.write(' var link = svg.selectAll("path.link")\n')
+            fp.write('  .data(tree.links(nodes), function(d) { '
+                     'return d.target.id; });\n\n')
+            fp.write(' // Enter any new links at the parents '
+                     'previous position.\n')
+            fp.write(' link.enter().insert("path", "g")\n')
+            fp.write('  .attr("class", "link")\n')
+            fp.write('  .attr("d", function(d) {\n')
+            fp.write('    var o = {x: source.x0, y: source.y0};\n')
+            fp.write('    return diagonal({source: o, target: o});\n')
+            fp.write('   })\n')
+            fp.write('  .transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("d", diagonal);\n\n')
+            fp.write(' // Transition links to their new position.\n')
+            fp.write(' link.transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("d", diagonal);\n\n')
+            fp.write(' // Transition exiting nodes to the '
+                     'parents new position.\n')
+            fp.write(' link.exit().transition()\n')
+            fp.write('  .duration(duration)\n')
+            fp.write('  .attr("d", function(d) {\n')
+            fp.write('    var o = {x: source.x, y: source.y};\n')
+            fp.write('    return diagonal({source: o, target: o});\n')
+            fp.write('   })\n')
+            fp.write('  .remove();\n\n')
+            fp.write(' // Stash the old positions for transition.\n')
+            fp.write(' nodes.forEach(function(d) {\n')
+            fp.write('  d.x0 = d.x;\n')
+            fp.write('  d.y0 = d.y;\n')
+            fp.write(' });\n')
+            fp.write('}\n\n')
+            fp.write('// Toggle children on click.\n')
+            fp.write('function click(d) {\n')
+            fp.write(' if (d.children) {\n')
+            fp.write('  d._children = d.children;\n')
+            fp.write('  d.children = null;\n')
+            fp.write(' } else {\n')
+            fp.write('  d.children = d._children;\n')
+            fp.write('  d._children = null;\n')
+            fp.write(' }\n')
+            fp.write(' update(d);\n')
+            fp.write('}\n\n')
+            fp.write('function color(d) {\n')
+            fp.write(' return d._children ? "' + self.more_bg +
+                '" : d.children ? "' + self.parent_bg + '" : "' +
+                self.no_more_bg + '";\n')
+            fp.write('}\n\n')
+            fp.write('function set_text(d) {\n')
+            fp.write(' var ret_str = d.display_num')
+            fp.write(' + " " + d.name + " (" + d.born')
+            fp.write(' + " - " + d.died + ")";\n')
+            fp.write(' if (d.display_num == "sp.") {\n')
+            fp.write('  if (d.marriage !== undefined &&')
+            fp.write(' d.marriage.length > 0) {\n')
+            fp.write('   ret_str = ret_str + ", " + d.marriage;\n')
+            fp.write('  }\n')
+            fp.write('  if (d.divorve !== undefined &&')
+            fp.write(' d.divorce.length > 0) {\n')
+            fp.write('   ret_str = ret_str + ", " + d.divorce;\n')
+            fp.write('  }\n')
+            fp.write(' }\n')
+            fp.write(' return ret_str;\n')
+            fp.write('}\n\n')
+
+            if self.showbio:
+                fp.write('function set_biography_text(d) {\n')
+                fp.write(' var ret_str = "<div class=\'bio_box\'>";\n')
+                fp.write(' if (d.image_ref !== undefined) {\n')
+                fp.write('    ret_str = ret_str + "<img align=\'right\' '
+                         'alt=\'\' border=0 src=\'";\n')
+                fp.write('    ret_str = ret_str + d.image_ref + "\'/>";\n')
+                fp.write(' }\n')
+                fp.write(' ret_str = ret_str + "<p class=\'bio_header\'>'
+                         '<strong>" + d.name + "</strong></p>";\n')
+                fp.write(' ret_str = ret_str + "<div class=\''
+                         'bio_text\'>" + d.biography + "</div>";\n')
+                fp.write(' ret_str = ret_str + "</div>";\n')
+                fp.write('\n')
+                fp.write(' return ret_str;\n')
+                fp.write('}\n\n')
+
+            if self.arrows != "None":
+                fp.write('function set_arrow(d) {\n')
+                fp.write(' if (d.children) {\n')
+                if self.arrows == "Arrows":
+                    fp.write('  return "images/less.png";\n')
+                else:
+                    fp.write('  return "images/minus.png";\n')
+                fp.write(' } else if (d._children) {\n')
+                if self.arrows == "Arrows":
+                    fp.write('  return "images/more.png";\n')
+                else:
+                    fp.write('  return "images/plus.png";\n')
+                fp.write(' } else {\n')
+                fp.write('  return "images/none.png";\n')
+                fp.write(' }\n')
+                fp.write('}\n\n')
+
     def write_report(self):
         """
         The routine the actually creates the report. At this point, the document
@@ -1091,27 +1425,71 @@ class DescendantIndentedTreeReport(Report):
                     '      </div>\n' + \
                     '      <div id="end">\n'
                 if self.arrows == "None":
-                    outstr = outstr +  \
-                        '       <h3>Click people to expand/collapse</h3>\n'
+                    outstr = outstr + \
+                        '        <h3>Click people to expand/collapse</h3>\n'
                 elif self.arrows == "Arrows":
-                    outstr = outstr +  \
-                        '       <h3>Click arrow images to expand/collapse</h3>\n'
+                    outstr = outstr + \
+                        '        <h3>Click arrow images to expand/collapse</h3>\n'
                 else:
-                    outstr = outstr +  \
-                        '       <h3>Click plus/minus images to ' + \
+                    outstr = outstr + \
+                        '        <h3>Click plus/minus images to ' + \
                         'expand/collapse</h3>\n'
                 if self.showbio:
-                    outstr = outstr +  \
-                        '       <h3>Hover over person to see biography ' + \
+                    outstr = outstr + \
+                        '        <h3>Hover over person to see biography ' + \
                         'information.\n' + \
-                        '       On touch-screen devices tap on person</h3>\n'
-                outstr = outstr +  \
+                        '        On touch-screen devices tap on person</h3>\n'
+                outstr = outstr + \
+                    '        <button class="button" id="default-button" ' + \
+                    'type="button">%s</button>\n' % (_("Default View"))
+                outstr = outstr + \
+                    '        <button class="button" id="expand-button" ' + \
+                    'type="button">%s</button>\n' % (_("Expand All"))
+                outstr = outstr + \
                     '      </div>\n' + \
                     '    </div>\n' + \
-                    '    <div id="testString">\n' + \
+                    '    <div class="div_svg">\n' + \
                     '    </div>\n' + \
-                    '    <script type="text/javascript" src="js/' + \
-                    'indentedtree-%s.js"></script>\n' % (self.destprefix) + \
+                    '    <div class="calc_svg">\n' + \
+                    '    </div>\n'
+                outstr = outstr + \
+                    '    <script type="text/javascript">\n' + \
+                    '      var cur_view = "DEFAULT";\n' + \
+                    '      window.onload = function() {\n' + \
+                    '        $.getScript("js/indentedtree-' + \
+                    '%s.js",' % (self.destprefix) + \
+                    ' function( data, textStatus, jqxhr ) {\n' + \
+                    '          // do some stuff after script is loaded\n' + \
+                    '        });\n' + \
+                    '        this.cur_view = "DEFAULT";\n' + \
+                    '      };\n' + \
+                    '      $("#default-button").on("click", function() {\n' + \
+                    '        if (cur_view !== "DEFAULT") {\n' + \
+                    '          d3.select("div.div_svg").select("svg").' + \
+                    'remove();\n' + \
+                    '          d3.select("div.d3-tip").remove();\n' + \
+                    '          $.getScript("js/indentedtree-' + \
+                    '%s.js",' % (self.destprefix) + \
+                    ' function( data, textStatus, jqxhr ) {\n' + \
+                    '            // do some stuff after script is loaded\n' + \
+                    '          });\n' + \
+                    '          cur_view = "DEFAULT";\n' + \
+                    '        }\n' + \
+                    '      });\n' + \
+                    '      $("#expand-button").on("click", function() {\n' + \
+                    '        if (cur_view == "DEFAULT") {\n' + \
+                    '          d3.select("div.div_svg").select("svg").' + \
+                    'remove();\n' + \
+                    '          d3.select("div.d3-tip").remove();\n' + \
+                    '          $.getScript("js/indentedtree-' + \
+                    '%s-expanded.js",' % (self.destprefix) + \
+                    ' function( data, textStatus, jqxhr ) {\n' + \
+                    '            // do some stuff after script is loaded\n' + \
+                    '          });\n' + \
+                    '          cur_view = "EXPANDED";\n' + \
+                    '        }\n' + \
+                    '      });\n' + \
+                    '    </script>\n' + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
@@ -1175,335 +1553,16 @@ class DescendantIndentedTreeReport(Report):
 
         # Generate <dest>.js customizing based on options selected
         try:
-            with io.open(self.destjs, 'w', encoding='utf8') as fp:
-                fp.write('var margin = {top: 30, right: 20, bottom: '
-                         '30, left: 20},\n')
-                fp.write(' width = 1024 - margin.left - '
-                         'margin.right,\n')
-                if self.arrows != "None":
-                    fp.write(' textMargin = 20,\n')
-                else:
-                    fp.write(' textMargin = 5.5,\n')
-                fp.write(' barHeight = %s,\n' % (str(self.barheight)))
-                fp.write(' i = 0,\n')
-                fp.write(' duration = 400,\n')
-                fp.write(' contraction = %s,\n' % (self.contraction))
-                fp.write(' root;\n\n')
-                fp.write('var tree = d3.layout.tree().'
-                         'nodeSize([0, 20]);\n\n')
-                fp.write('var diagonal = d3.svg.diagonal().'
-                         'projection(function(d) {\n')
-                fp.write(' return [d.y, d.x];\n')
-                fp.write('});\n\n')
-                fp.write('var maxWidth = width;\n\n')
-                fp.write('var svg = d3.select("body").'
-                         'append("svg")\n')
-                fp.write(' .attr("width", width + margin.left + ' +
-                         'margin.right).append("g")\n')
-                fp.write(' .attr("transform", "translate(" + ' +
-                         'margin.left + "," + margin.top + ")");\n\n')
-
-                fp.write('var svg1 = d3.select("body").append("svg")\n')
-                fp.write(' .attr("width", width + margin.left + '
-                         'margin.right)\n')
-                fp.write(' .append("g").attr("class", "node_test");\n\n')
-
-                fp.write('d3.json("json/indentedtree-%s.json", ' %
-                         (self.destprefix))
-                fp.write('function(error, descendant) {\n')
-                fp.write(' descendant.x0 = 0;\n')
-                fp.write(' descendant.y0 = 0; \n')
-                fp.write(' calc_max_width(root = descendant);\n')
-                fp.write(' if (width < maxWidth) {\n')
-                fp.write('  width = maxWidth;\n')
-                fp.write('  d3.select("svg").attr("width", '
-                         'width + margin.left + margin.right);\n')
-                fp.write(' }\n')
-                fp.write('});\n\n')
-
-                fp.write('function calc_max_width(source) {\n')
-                fp.write(' var nodes = tree.nodes(root);\n')
-                fp.write(' var node = svg1.selectAll("g.node_test")\n')
-                fp.write('  .data(nodes)\n')
-                fp.write('  .enter()\n')
-                fp.write('  .append("text")\n')
-                fp.write('  .text(set_text)\n')
-                fp.write('  .each(function(d) {\n')
-                fp.write('    wid = this.getBBox().width;\n')
-                fp.write('    newmax = (wid + d.y + margin.right + '
-                         'margin.left);\n')
-                fp.write('    if (maxWidth < newmax) {\n')
-                fp.write('     maxWidth = newmax;\n')
-                fp.write('    }\n')
-                fp.write('  });\n')
-                fp.write(' svg1.remove();\n')
-                fp.write('}\n\n')
-
-                if self.showbio:
-                    fp.write('var tip = d3.tip()\n')
-                    fp.write(' .attr("class", "d3-tip")\n')
-                    fp.write(' .style("background", "%s")\n' % (self.bio_bg))
-                    fp.write(' .style("color", "%s")\n' % (self.bio_text))
-                    fp.write(' .offset([-10, 0])\n')
-                    fp.write(' .html(function(d) {\n')
-                    fp.write('  return set_biography_text(d);\n')
-                    fp.write(' });\n\n')
-                    fp.write('svg.call(tip);\n\n')
-
-                out_str='d3.json("json/indentedtree-%s.json", ' % (self.destprefix)
-                fp.write(out_str + 'function(error, descendant) {\n')
-                fp.write(' descendant.x0 = 0;\n')
-                fp.write(' descendant.y0 = 0;\n')
-                fp.write(' set_initial_contraction(root = descendant);\n')
-                fp.write(' update(root = descendant);\n')
-                fp.write('});\n\n')
-                fp.write('function set_initial_contraction(source) {\n')
-                fp.write(' var nodes = tree.nodes(root);\n')
-                fp.write(' nodes.forEach(function(n, i) {\n')
-                fp.write('  if (n.depth >= (contraction-1) && n.children) {\n')
-                fp.write('   n._children = n.children;\n')
-                fp.write('   n.children = null;\n')
-                fp.write('  }\n')
-                fp.write(' });\n')
-                fp.write('}\n\n')
-                fp.write('function update(source) {\n')
-                fp.write(' // Compute the flattened node list. '
-                         'TODO use d3.layout.hierarchy.\n')
-                fp.write(' var strWidth = 0;\n')
-                fp.write(' var nodes = tree.nodes(root);\n')
-                fp.write(' var height = Math.max(500, nodes.length *'
-                         ' barHeight +\n')
-                fp.write('  margin.top + margin.bottom);\n\n')
-                fp.write(' d3.select("svg").transition().'
-                         'duration(duration).attr("height", height);\n\n')
-                fp.write(' d3.select(self.frameElement).'
-                         'transition().duration(duration)\n')
-                fp.write('  .style("height", height + "px");\n\n')
-                fp.write(' // Compute the "layout".\n')
-                fp.write(' nodes.forEach(function(n, i) {\n')
-                fp.write('  // Set X Co-ordinate for each node\n')
-                fp.write('  n.x = i * barHeight;\n')
-                fp.write(' });\n\n')
-                fp.write(' // Update the nodes\n')
-                fp.write(' var node = svg.selectAll("g.node")\n')
-                fp.write('  .data(nodes, function(d) { return '
-                         'd.id || (d.id = ++i); });\n\n')
-                fp.write(' var nodeEnter = node.enter().'
-                         'append("g")\n')
-                fp.write('  .attr("class", "node")\n')
-                fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + source.y0 + '
-                         '"," + source.x0 + ")";\n')
-                fp.write('   })\n')
-                fp.write('  .style("opacity", 1e-6);\n\n')
-                fp.write(' // Enter any new nodes at the parents '
-                         'previous position.\n')
-                fp.write(' nodeEnter.append("rect")\n')
-                fp.write('  .attr("y", -barHeight / 2)\n')
-                fp.write('  .attr("height", barHeight)\n')
-                fp.write('  .attr("width", function(n) { return '
-                         'width - n.y;})\n')
-
-                if self.showbio:
-                    if not self.arrows != "None":
-                        fp.write('  .attr("cursor", "pointer")\n')
-                        fp.write('  .on("click", click)\n')
-                    else:
-                        fp.write('  .attr("cursor", "default")\n')
-                    fp.write('  .on("mouseover", tip.show)\n')
-                    fp.write('  .on("mousemove", function(d) {\n')
-                    fp.write('   tip.style("top", (d3.event.pageY-10)+"px")\n')
-                    fp.write('   tip.style("left", '
-                             '(d3.event.pageX+10)+"px");})\n')
-                    fp.write('  .on("mouseout", tip.hide)\n')
-                else:
-                    if not self.arrows != "None":
-                        fp.write('  .attr("cursor", "pointer")\n')
-                        fp.write('  .on("click", click)\n')
-                    else:
-                        fp.write('  .attr("cursor", "default")\n')
-
-                fp.write('  .style("fill", color);\n\n')
-
-                if self.arrows != "None":
-                    fp.write(' nodeEnter.append("image")\n')
-                    fp.write('  .on("click", click)\n')
-                    fp.write('  .attr("cursor", "pointer")\n')
-                    fp.write('  .attr("xlink:href", set_arrow)\n')
-                    fp.write('  .attr("height", 22)\n')
-                    fp.write('  .attr("width", 20)\n')
-                    fp.write('  .attr("y", -11)\n')
-                    fp.write('  .attr("x", 0);\n\n')
-
-                if self.hrefs:
-                    fp.write(' nodeEnter.append("a")\n')
-                    fp.write('  .attr({"xlink:href": "#"})\n')
-                    fp.write('  .on("mouseover", function(d) {\n')
-                    fp.write('   if (d.href) {\n')
-                    fp.write('    d3.select(this)\n')
-                    fp.write('     .attr({"xlink:href": d.href});\n')
-                    fp.write('   }\n')
-                    fp.write('  })\n')
-                    fp.write('  .append("text")\n')
-                    fp.write('  .attr("dy", %s)\n' % (str(self.dy)))
-                    fp.write('  .attr("dx", textMargin)\n')
-                    fp.write('  .style("pointer-events", function(d) {\n')
-                    fp.write('   if (d.href) {\n')
-                    fp.write('    return "auto";\n')
-                    fp.write('   } else {\n')
-                    fp.write('    return "none";\n')
-                    fp.write('   } \n')
-                    fp.write('  })\n')
-                    fp.write('  .style("text-decoration", function(d) {\n')
-                    fp.write('   if (d.href) {\n')
-                    fp.write('    return "underline";\n')
-                    fp.write('   } else {\n')
-                    fp.write('    return "none";\n')
-                    fp.write('   } \n')
-                    fp.write('  })\n')
-                    fp.write('  .text(set_text);\n\n')
-                else:
-                    fp.write(' nodeEnter.append("text")\n')
-                    fp.write('  .attr("dy", 3.5)\n')
-                    fp.write('  .attr("dx", textMargin)\n')
-                    fp.write('  .text(set_text);\n\n')
-
-                fp.write(' // Transition nodes to their new '
-                         'position.\n')
-                if self.arrows != "None":
-                    fp.write(' node.transition()\n')
-                    fp.write('  .select("image")\n')
-                    fp.write('  .attr("xlink:href", set_arrow);\n\n')
-                fp.write(' node.transition()\n')
-                fp.write('  .select("text")\n')
-                fp.write('  .text(set_text);\n\n')
-                fp.write(' nodeEnter.transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
-                fp.write('   })\n')
-                fp.write('  .style("opacity", 1);\n\n')
-                fp.write(' node.transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + d.y + "," + d.x + ")";\n')
-                fp.write('   })\n')
-                fp.write('  .style("opacity", 1)\n')
-                fp.write('  .select("rect")\n')
-                fp.write('  .style("fill", color);\n\n')
-                fp.write(' // Transition exiting nodes to the '
-                         'parents new position.\n')
-                fp.write(' node.exit().transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("transform", function(d) {\n')
-                fp.write('    return "translate(" + source.y + "," '
-                         '+ source.x + ")";\n')
-                fp.write('   })\n')
-                fp.write('  .style("opacity", 1e-6)\n')
-                fp.write('  .remove();\n\n')
-                fp.write(' // Update the links\n')
-                fp.write(' var link = svg.selectAll("path.link")\n')
-                fp.write('  .data(tree.links(nodes), function(d) { '
-                         'return d.target.id; });\n\n')
-                fp.write(' // Enter any new links at the parents '
-                         'previous position.\n')
-                fp.write(' link.enter().insert("path", "g")\n')
-                fp.write('  .attr("class", "link")\n')
-                fp.write('  .attr("d", function(d) {\n')
-                fp.write('    var o = {x: source.x0, y: source.y0};\n')
-                fp.write('    return diagonal({source: o, target: o});\n')
-                fp.write('   })\n')
-                fp.write('  .transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("d", diagonal);\n\n')
-                fp.write(' // Transition links to their new position.\n')
-                fp.write(' link.transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("d", diagonal);\n\n')
-                fp.write(' // Transition exiting nodes to the '
-                         'parents new position.\n')
-                fp.write(' link.exit().transition()\n')
-                fp.write('  .duration(duration)\n')
-                fp.write('  .attr("d", function(d) {\n')
-                fp.write('    var o = {x: source.x, y: source.y};\n')
-                fp.write('    return diagonal({source: o, target: o});\n')
-                fp.write('   })\n')
-                fp.write('  .remove();\n\n')
-                fp.write(' // Stash the old positions for transition.\n')
-                fp.write(' nodes.forEach(function(d) {\n')
-                fp.write('  d.x0 = d.x;\n')
-                fp.write('  d.y0 = d.y;\n')
-                fp.write(' });\n')
-                fp.write('}\n\n')
-                fp.write('// Toggle children on click.\n')
-                fp.write('function click(d) {\n')
-                fp.write(' if (d.children) {\n')
-                fp.write('  d._children = d.children;\n')
-                fp.write('  d.children = null;\n')
-                fp.write(' } else {\n')
-                fp.write('  d.children = d._children;\n')
-                fp.write('  d._children = null;\n')
-                fp.write(' }\n')
-                fp.write(' update(d);\n')
-                fp.write('}\n\n')
-                fp.write('function color(d) {\n')
-                fp.write(' return d._children ? "' + self.more_bg +
-                    '" : d.children ? "' + self.parent_bg + '" : "' +
-                    self.no_more_bg + '";\n')
-                fp.write('}\n\n')
-                fp.write('function set_text(d) {\n')
-                fp.write(' var ret_str = d.display_num')
-                fp.write(' + " " + d.name + " (" + d.born')
-                fp.write(' + " - " + d.died + ")";\n')
-                fp.write(' if (d.display_num == "sp.") {\n')
-                fp.write('  if (d.marriage !== undefined &&')
-                fp.write(' d.marriage.length > 0) {\n')
-                fp.write('   ret_str = ret_str + ", " + d.marriage;\n')
-                fp.write('  }\n')
-                fp.write('  if (d.divorve !== undefined &&')
-                fp.write(' d.divorce.length > 0) {\n')
-                fp.write('   ret_str = ret_str + ", " + d.divorce;\n')
-                fp.write('  }\n')
-                fp.write(' }\n')
-                fp.write(' return ret_str;\n')
-                fp.write('}\n\n')
-
-                if self.showbio:
-                    fp.write('function set_biography_text(d) {\n')
-                    fp.write(' var ret_str = "<div class=\'bio_box\'>";\n')
-                    fp.write(' if (d.image_ref !== undefined) {\n')
-                    fp.write('    ret_str = ret_str + "<img align=\'right\' '
-                             'alt=\'\' border=0 src=\'";\n')
-                    fp.write('    ret_str = ret_str + d.image_ref + "\'/>";\n')
-                    fp.write(' }\n')
-                    fp.write(' ret_str = ret_str + "<p class=\'bio_header\'>'
-                             '<strong>" + d.name + "</strong></p>";\n')
-                    fp.write(' ret_str = ret_str + "<div class=\''
-                             'bio_text\'>" + d.biography + "</div>";\n')
-                    fp.write(' ret_str = ret_str + "</div>";\n')
-                    fp.write('\n')
-                    fp.write(' return ret_str;\n')
-                    fp.write('}\n\n')
-
-                if self.arrows != "None":
-                    fp.write('function set_arrow(d) {\n')
-                    fp.write(' if (d.children) {\n')
-                    if self.arrows == "Arrows":
-                        fp.write('  return "images/less.png";\n')
-                    else:
-                        fp.write('  return "images/minus.png";\n')
-                    fp.write(' } else if (d._children) {\n')
-                    if self.arrows == "Arrows":
-                        fp.write('  return "images/more.png";\n')
-                    else:
-                        fp.write('  return "images/plus.png";\n')
-                    fp.write(' } else {\n')
-                    fp.write('  return "images/none.png";\n')
-                    fp.write(' }\n')
-                    fp.write('}\n\n')
-
+            self.write_js(self.destjs, self.contraction)
         except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
+
+        # Generate <destexpanded>.js customizing based on options selected
+        try:
+            self.write_js(self.destexpandedjs, 99)
+        except IOError as msg:
+            ErrorDialog(_("Failed writing %s: %s") % (self.destexpandedjs,
+                        str(msg)))
             return
 
         # Generate <dest>.css options selected such as font-size
@@ -1542,15 +1601,6 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('    stroke-width: 1.5px;\n')
                 fp.write('}\n\n')
 
-                fp.write('#testString {\n')
-                fp.write('    font: %spx sans-serif;\n' % (self.font_size))
-                fp.write('    font-weight: bold;\n')
-                fp.write('    position: absolute;\n')
-                fp.write('    visibility: hidden;\n')
-                fp.write('    height: auto;\n')
-                fp.write('    width: auto;\n')
-                fp.write('}\n\n')
-
                 fp.write('.bio_box {\n')
                 fp.write('    max-width: 400px;\n')
                 fp.write('}\n\n')
@@ -1575,6 +1625,38 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('    margin-top: 0.25cm; margin-bottom: 0.25cm;\n')
                 fp.write('    border-top:none; border-bottom:none;\n')
                 fp.write('    border-left:none; border-right:none;\n')
+                fp.write('}\n\n')
+
+                fp.write('.button{\n')
+                fp.write('    background: #ECECEC;\n')
+                fp.write('    border-radius: 10px;\n')
+                fp.write('    padding: 5px 10px;\n')
+                fp.write('    font-family: arial;\n')
+                fp.write('    font-weight: bold;\n')
+                fp.write('    text-decoration: none;\n')
+                fp.write('    text-shadow:0px 1px 0px #fff;\n')
+                fp.write('    border:2px solid #3182bd;\n')
+                fp.write('    width: 145px;\n')
+                fp.write('    margin:0px auto;\n')
+                fp.write('    box-shadow: 0px 2px 1px white inset, 0px -2px ')
+                fp.write('8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px ')
+                fp.write('10px rgba(0, 0, 0, 0.1);\n')
+                fp.write('    -webkit-transition:box-shadow 0.5s;\n')
+                fp.write('}\n\n')
+
+                fp.write('.button:hover{\n')
+                fp.write('    box-shadow: 0px 2px 1px white inset, 0px -2px ')
+                fp.write('20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px ')
+
+                fp.write('10px rgba(0, 0, 0, 0.1);\n')
+                fp.write('}\n\n')
+
+                fp.write('.button:active{\n')
+                fp.write('    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) ')
+                fp.write('inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, ')
+                fp.write('0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1);\n')
+                fp.write('    background:-webkit-linear-gradient(top, ')
+                fp.write('#d1d1d1 0%,#ECECEC 100%);\n')
                 fp.write('}\n\n')
 
         except IOError as msg:
