@@ -39,7 +39,7 @@ log = logging.getLogger(".ImportSql")
 
 #-------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #-------------------------------------------------------------------------
 import gramps.gen.lib
@@ -904,3 +904,4 @@ def importData(db, filename, callback=None):
     g = SQLReader(db, filename, callback)
     g.process()
     g.cleanup()
+

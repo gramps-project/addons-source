@@ -21,6 +21,13 @@
 
 "Export to SQLite Database"
 
+# Future ideas
+# Also include meta:
+#   Bookmarks
+#   Header - researcher info
+#   Name formats
+#   Namemaps?
+#   GRAMPS Version #, date, exporter
 #------------------------------------------------------------------------
 #
 # Standard Python Modules
@@ -40,7 +47,7 @@ log = logging.getLogger(".ExportSql")
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
@@ -1159,10 +1166,3 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     print(msg)
     return True
 
-# Future ideas
-# Also include meta:
-#   Bookmarks
-#   Header - researcher info
-#   Name formats
-#   Namemaps?
-#   GRAMPS Version #, date, exporter
