@@ -1,8 +1,9 @@
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Exportation des extensions Gedcom (GED2)',"v":'1.0.11',"g":'4.2',"d":'Extensions du format courant Gedcom.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'JSON Export',"n":'JSON Export',"v":'1.0.2',"g":'4.2',"d":'This is a JSON export',"z":'JSON.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Export brut',"v":'1.0.23',"g":'4.2',"d":'Ceci est une image brute d\'objet python',"z":'ExportRaw.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.27',"g":'4.2',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'Importation SQLite',"v":'1.0.27',"g":'4.2',"d":'SQLite est un format courant de base de données locale',"z":'Sqlite.addon.tgz'}
-{"t":'Exporter',"i":'export_django',"n":'Export Django',"v":'1.0.26',"g":'4.2',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.27',"g":'4.2',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Gramplet Anniversaires',"v":'1.0.26',"g":'4.2',"d":'Ce Gramplet affiche les anniversaires des personnes en vie',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Gramplet Recensement',"v":'1.0.29',"g":'4.2',"d":'Gramplet servant d\'interface aux données de recensement',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":'Gramplet Presse-papiers',"v":'1.0.25',"g":'4.2',"d":'Gramplet pour regrouper des articles',"z":'ClipboardGramplet.addon.tgz'}
@@ -29,7 +30,7 @@
 {"t":'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.44',"g":'4.2',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'Importation SQLite',"v":'1.0.27',"g":'4.2',"d":'SQLite est un format courant de base de données locale',"z":'Sqlite.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.26',"g":'4.2',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.27',"g":'4.2',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Créé un fichier de données pouvant être ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":'Ensemble de liens internet allemands',"v":'0.0.16',"g":'4.2',"d":'Collection de sites internet pour l\'Allemagne (nécessite libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":'Ensemble de liens internet francophones',"v":'1.0.22',"g":'4.2',"d":'Collection de sites internet pour les francophones (nécessite libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
