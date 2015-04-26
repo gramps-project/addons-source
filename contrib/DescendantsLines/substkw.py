@@ -30,10 +30,10 @@ The event is passed in instead of finding the first one for the person/family
    this allows reporting all occurrences of an event, instead of just the first one
    also this allows sorting by date
 Added a new event formating operator "t" = abbreviation of the Event's Type (localized)
-	this allows correct type labeling where "OrSimilar" or "fallbacks" are used. $e(t)
+    this allows correct type labeling where "OrSimilar" or "fallbacks" are used. $e(t)
 Added an optional Maximum Note Length, to limit the length when using $e(n) variable
-	note that "..." will be added to any truncated note (an Event's Description field)
-	
+    note that "..." will be added to any truncated note (an Event's Description field)
+    
 For example:
 
 foo = SubstKeywords(database, person_handle)
@@ -68,7 +68,7 @@ class EventFormat2(GenericFormat):
     otherwise, parse through the format string and put in the parts
         dates and places can have their own format strings
     """
-	
+    
     def __init__(self, database, _in, locale):
         self.database = database
         GenericFormat.__init__(self, _in, locale)
@@ -126,8 +126,8 @@ class EventFormat2(GenericFormat):
         def format_note():
             """ Truncate note if necessary """
             n = event.get_description()
-            if ((MAX_NOTE_LEN <> 0) and (len(n) > MAX_NOTE_LEN)):
-            	n = n[0:MAX_NOTE_LEN] + '...'
+            if ((MAX_NOTE_LEN != 0) and (len(n) > MAX_NOTE_LEN)):
+                n = n[0:MAX_NOTE_LEN] + '...'
             return n
 
         code = "ndDiat"
@@ -271,8 +271,8 @@ class VariableParse2(object):
             return
             
     def __parse_an_event(self, person, attrib_parse):
-    	if not self.event:	# this makes it backwards compatible with __parse_event
-        	event = self.get_event_by_name(person, attrib_parse.get_name())
+        if not self.event:    # this makes it backwards compatible with __parse_event
+            event = self.get_event_by_name(person, attrib_parse.get_name())
         event_f = EventFormat2(self.database, self._in, self._locale)
         if self.event:
             return event_f.parse_format(self.event)
@@ -310,121 +310,121 @@ class VariableParse2(object):
         next_char = self._in.next
         self._in.step2()
 
-        if PRIVACY:		# only parse Events as the other standard parsers do NOT check privacy
-			if next_char == "e":
-				#person event
-				return self.__parse_an_event(self.friend.person, attrib_parse)
-			elif next_char == "t":
-				#family event
-				return self.__parse_an_event(self.friend.family, attrib_parse)
+        if PRIVACY:        # only parse Events as the other standard parsers do NOT check privacy
+            if next_char == "e":
+                #person event
+                return self.__parse_an_event(self.friend.person, attrib_parse)
+            elif next_char == "t":
+                #family event
+                return self.__parse_an_event(self.friend.family, attrib_parse)
 
         else:
-			if next_char == "n":
-				#Person's name
-				return self.__parse_name(self.friend.person)
-			elif next_char == "s":
-				#Souses name
-				return self.__parse_name(self.friend.spouse)
+            if next_char == "n":
+                #Person's name
+                return self.__parse_name(self.friend.person)
+            elif next_char == "s":
+                #Souses name
+                return self.__parse_name(self.friend.spouse)
 
-			elif next_char == "i":
-				#Person's Id
-				return self.__parse_id(self.friend.person)
-			elif next_char == "j":
-				#Marriage Id
-				return self.__parse_id(self.friend.family)
+            elif next_char == "i":
+                #Person's Id
+                return self.__parse_id(self.friend.person)
+            elif next_char == "j":
+                #Marriage Id
+                return self.__parse_id(self.friend.family)
 
-			elif next_char == "b":
-				#Person's Birth date
-				if self.empty_item(self.friend.person):
-					return
-				return self.__parse_date(
-					get_birth_or_fallback(self.friend.database, self.friend.person))
-			elif next_char == "d":
-				#Person's Death date
-				if self.empty_item(self.friend.person):
-					return
-				return self.__parse_date(
-					get_death_or_fallback(self.friend.database, self.friend.person))
-			elif next_char == "m":
-				#Marriage date
-				if self.empty_item(self.friend.family):
-					return
-				return self.__parse_date(
-					self.get_event_by_type(self.friend.family,
-										   EventType.MARRIAGE))
-			elif next_char == "v":
-				#Divorce date
-				if self.empty_item(self.friend.family):
-					return
-				return self.__parse_date(
-					self.get_event_by_type(self.friend.family,
-										   EventType.DIVORCE))
-			elif next_char == "T":
-				#Todays date
-				date_f = DateFormat(self._in)
-				from gramps.gen.lib.date import Today
-				date = Today()
-				if self.empty_item(date):
-					return
-				return date_f.parse_format(date)
+            elif next_char == "b":
+                #Person's Birth date
+                if self.empty_item(self.friend.person):
+                    return
+                return self.__parse_date(
+                    get_birth_or_fallback(self.friend.database, self.friend.person))
+            elif next_char == "d":
+                #Person's Death date
+                if self.empty_item(self.friend.person):
+                    return
+                return self.__parse_date(
+                    get_death_or_fallback(self.friend.database, self.friend.person))
+            elif next_char == "m":
+                #Marriage date
+                if self.empty_item(self.friend.family):
+                    return
+                return self.__parse_date(
+                    self.get_event_by_type(self.friend.family,
+                                           EventType.MARRIAGE))
+            elif next_char == "v":
+                #Divorce date
+                if self.empty_item(self.friend.family):
+                    return
+                return self.__parse_date(
+                    self.get_event_by_type(self.friend.family,
+                                           EventType.DIVORCE))
+            elif next_char == "T":
+                #Todays date
+                date_f = DateFormat(self._in)
+                from gramps.gen.lib.date import Today
+                date = Today()
+                if self.empty_item(date):
+                    return
+                return date_f.parse_format(date)
 
-			elif next_char == "B":
-				#Person's birth place
-				if self.empty_item(self.friend.person):
-					return
-				return self.__parse_place(
-					get_birth_or_fallback(self.friend.database, self.friend.person))
-			elif next_char == "D":
-				#Person's death place
-				if self.empty_item(self.friend.person):
-					return
-				return self.__parse_place(
-					get_death_or_fallback(self.friend.database, self.friend.person))
-			elif next_char == "M":
-				#Marriage place
-				if self.empty_item(self.friend.family):
-					return
-				return self.__parse_place(
-					self.get_event_by_type(self.friend.family,
-										   EventType.MARRIAGE))
-			elif next_char == "V":
-				#Divorce place
-				if self.empty_item(self.friend.family):
-					return
-				return self.__parse_place(
-					self.get_event_by_type(self.friend.family,
-										   EventType.DIVORCE))
+            elif next_char == "B":
+                #Person's birth place
+                if self.empty_item(self.friend.person):
+                    return
+                return self.__parse_place(
+                    get_birth_or_fallback(self.friend.database, self.friend.person))
+            elif next_char == "D":
+                #Person's death place
+                if self.empty_item(self.friend.person):
+                    return
+                return self.__parse_place(
+                    get_death_or_fallback(self.friend.database, self.friend.person))
+            elif next_char == "M":
+                #Marriage place
+                if self.empty_item(self.friend.family):
+                    return
+                return self.__parse_place(
+                    self.get_event_by_type(self.friend.family,
+                                           EventType.MARRIAGE))
+            elif next_char == "V":
+                #Divorce place
+                if self.empty_item(self.friend.family):
+                    return
+                return self.__parse_place(
+                    self.get_event_by_type(self.friend.family,
+                                           EventType.DIVORCE))
 
-			elif next_char == "a":
-				#Person's Atribute
-				if self.empty_attribute(self.friend.person):
-					return
-				return attrib_parse.parse_format(
-										  self.friend.person.get_attribute_list())
-			elif next_char == "u":
-				#Marriage Atribute
-				if self.empty_attribute(self.friend.family):
-					return
-				return attrib_parse.parse_format(
-										  self.friend.family.get_attribute_list())
+            elif next_char == "a":
+                #Person's Atribute
+                if self.empty_attribute(self.friend.person):
+                    return
+                return attrib_parse.parse_format(
+                                          self.friend.person.get_attribute_list())
+            elif next_char == "u":
+                #Marriage Atribute
+                if self.empty_attribute(self.friend.family):
+                    return
+                return attrib_parse.parse_format(
+                                          self.friend.family.get_attribute_list())
 
-			elif next_char == "e":
-				#person event
-				return self.__parse_an_event(self.friend.person, attrib_parse)
-			elif next_char == "t":
-				#family event
-				return self.__parse_an_event(self.friend.family, attrib_parse)
+            elif next_char == "e":
+                #person event
+                return self.__parse_an_event(self.friend.person, attrib_parse)
+            elif next_char == "t":
+                #family event
+                return self.__parse_an_event(self.friend.family, attrib_parse)
 
-			elif next_char == 'p':
-				#photo for the person
-				return self.__parse_photo(self.friend.person)
-			elif next_char == 'P':
-				#photo for the marriage
-				return self.__parse_photo(self.friend.family)
+            elif next_char == 'p':
+                #photo for the person
+                return self.__parse_photo(self.friend.person)
+            elif next_char == 'P':
+                #photo for the marriage
+                return self.__parse_photo(self.friend.family)
 
-			elif next_char == "G":
-				gramps_format = GrampsFormat(self._in, self.database)
-				return gramps_format.parse_format()
+            elif next_char == "G":
+                gramps_format = GrampsFormat(self._in, self.database)
+                return gramps_format.parse_format()
 
 
 #------------------------------------------------------------------------
@@ -461,7 +461,7 @@ class SubstKeywords2(object):
         MAX_NOTE_LEN = max_note_len
         global PRIVACY
         PRIVACY = privacy
-	
+    
         if self.person is None:
             return
 

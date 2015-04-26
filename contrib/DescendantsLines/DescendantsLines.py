@@ -48,11 +48,13 @@
 #  DEALINGS IN THE SOFTWARE.
 #
 """
-Descendants Lines - Generate a Descendant's Tree Chart - Graphic plugin for GRAMPS
+Descendants Lines - Generate a Descendant's Tree Chart - Graphic plugin for
+GRAMPS
 
-Can display the Name, Image and selected Events for the head person and all descendants
-Events may include, type, date, place & description, formatted as per the options menu.
-Each person is linked by connection lines showing families (Spouse(s) & any children)
+Can display the Name, Image and selected Events for the head person and all
+descendants Events may include, type, date, place & description, formatted as
+per the options menu. Each person is linked by connection lines showing families
+(Spouse(s) & any children)
 """
 
 #-------------------------------------------------------------------------
@@ -209,7 +211,8 @@ def parse_event_disp(line):
 
 class DescendantsLinesReport(Report):
     """
-    DescendantsLines Report class - Initialized and write_report are called by GRAMPS's report plugin feature
+    DescendantsLines Report class - Initialized and write_report are called by
+    GRAMPS's report plugin feature
     """
     def __init__(self, database, options_class, user):
         """
@@ -392,9 +395,9 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
     
-    Total width defines the block's width to allow centering.
-    Top_centered_lines overrides the Text alignment set in options menu for the
-    specified # of lines. This allows centering of the first line containing the user's name
+    Total width defines the block's width to allow centering. Top_centered_lines
+    overrides the Text alignment set in options menu for the specified # of
+    lines. This allows centering of the first line containing the user's name
     """
     #(total_w, total_h) = size_text(text, ctx)
     n = 1
@@ -437,7 +440,8 @@ def size_text(text, cntx):
 
 def calc_image_scale(iw, ih):
 	"""
-	Calculate the scaling factor for the image to fit the Max size set in the Options
+	Calculate the scaling factor for the image to fit the Max size set in the
+	Options
 	
 	The Max height & width from the Options are MAX_IMAGE_H & MAX_IMAGE_W
 	a value of 0 means there is no limit in that direction.
@@ -476,7 +480,7 @@ def draw_image(image_path, ix, iy, iw, ih, scale_factor):
 #     log.debug('Draw Image at x=%d y=%d, w=%d, h=%d, to be scaled by %d', ix, iy, iw, ih, scale_factor)
     ctx.save()
     image = cairo.ImageSurface.create_from_png(image_path)
-    if scale_factor <> 1.0:
+    if scale_factor != 1.0:
         log.debug('Draw Image: scale factor=%f; result: H=%f, W=%f', scale_factor, ih, iw)
         ctx.scale(scale_factor, scale_factor)
     ctx.set_source_surface(image, (ix+IMAGE_PAD)/scale_factor, (iy+IMAGE_PAD)/scale_factor)
@@ -526,8 +530,8 @@ def get_image(phandle):
         
 class Person_Block:
     """
-    This class holds information to be displayed about a person (text, image location)
-    and how to display it (widths & heights, image scaling)
+    This class holds information to be displayed about a person (text, image
+    location) and how to display it (widths & heights, image scaling)
     """
     def __init__(self, phandle, text):
         self.text = text        #array of tuples containing text.
@@ -542,7 +546,7 @@ class Person_Block:
         self.iscale = 1.0    #Scaling factor to use on thumbnail image
         
         (self.tw, self.th) = size_text(self.text, dctx)
-        if (INC_IMAGE and (phandle <> None)):
+        if (INC_IMAGE and (phandle != None)):
             self.ipath = get_image(self.phandle)
             if self.ipath:
                 (self.iw, self.ih) = size_image(self.ipath)
@@ -667,7 +671,7 @@ class Person(Memorised):
 
         draw_text(self.text, self.get('tx')+ txo, self.get('y')+ tyo, self.tw, top_centered_lines=1)
         
-        if self.ipath <> None:
+        if self.ipath != None:
 #           log.debug('PD: imagePath: %s', self.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
             draw_image(self.ipath, self.get('tx')+ ixo, self.get('y')+ iyo, self.iw, self.ih, self.iscale)
                 
@@ -819,7 +823,7 @@ class Family(Memorised):
 
         draw_text(self.spouse.text, self.get('spx')+ txo, self.get('spy')+ tyo, self.spouse.tw, top_centered_lines=1)
         
-        if self.spouse.ipath <> None:
+        if self.spouse.ipath != None:
 #           log.debug('FD: imagePath: %s', self.spouse.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
             draw_image(self.spouse.ipath, self.get('spx')+ ixo, self.get('spy')+ iyo, self.spouse.iw, self.spouse.ih, self.spouse.iscale)
     
@@ -979,21 +983,21 @@ def load_gramps(start):
         et = []
         ev = []
         if event_ref_list:
-			for desired_event in event_type_list:
-				for event_ref in event_ref_list:
-					if ((event_ref.get_role() == EventRoleType.PRIMARY) or (event_ref.get_role() == EventRoleType.FAMILY)):
-						event = find_event(GRAMPS_DB, event_ref.ref)
-						if (event.type == desired_event) and not (PROTECT_PRIVATE and event.private):
-							log.debug('Format EorS: type=%s, and sortdate=%s', event.type, event.get_date_object().sortval)
-							et = format_event_txt(event, event_format, p_hdl)
-							if event.get_date_object().sortval == 0: # no date = 0
-								if event.type in OR_SIMILAR_EVENTS[EventType.BIRTH]:
-									ev.append([et, event.get_date_object().sortval]) # all birth events go to top of list
-								else:
-									ev.append([et, FUTUREDATE.sortval],) # all non-birth events go to end
-							else:
-								ev.append([et, event.get_date_object().sortval],)
-							return ev
+            for desired_event in event_type_list:
+                for event_ref in event_ref_list:
+                    if ((event_ref.get_role() == EventRoleType.PRIMARY) or (event_ref.get_role() == EventRoleType.FAMILY)):
+                        event = find_event(GRAMPS_DB, event_ref.ref)
+                        if (event.type == desired_event) and not (PROTECT_PRIVATE and event.private):
+                            log.debug('Format EorS: type=%s, and sortdate=%s', event.type, event.get_date_object().sortval)
+                            et = format_event_txt(event, event_format, p_hdl)
+                            if event.get_date_object().sortval == 0: # no date = 0
+                                if event.type in OR_SIMILAR_EVENTS[EventType.BIRTH]:
+                                    ev.append([et, event.get_date_object().sortval]) # all birth events go to top of list
+                                else:
+                                    ev.append([et, FUTUREDATE.sortval],) # all non-birth events go to end
+                            else:
+                                ev.append([et, event.get_date_object().sortval],)
+                            return ev
         return ev
 
     def format_person_events(person, family, event_disp_list):
@@ -1008,19 +1012,19 @@ def load_gramps(start):
         estrings = []
         for (event_type_list, event_format) in event_disp_list:
             for etype in event_type_list:
-            	#log.debug('FPE: ETYPE=%s Fmt=%s', etype, event_format)
+                #log.debug('FPE: ETYPE=%s Fmt=%s', etype, event_format)
                 ev = None
                 if etype in FAMILY_EVENTS:
-                	if family:
-						if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
-							ev=(format_event_or_similar(family.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
-						else:
-							ev=(format_event(family.get_event_ref_list(), etype, event_format, person.handle))
+                    if family:
+                        if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
+                            ev=(format_event_or_similar(family.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
+                        else:
+                            ev=(format_event(family.get_event_ref_list(), etype, event_format, person.handle))
                 else:
-                	if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
-                		ev=(format_event_or_similar(person.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
-                	else:
-                		ev=(format_event(person.get_event_ref_list(), etype, event_format, person.handle))        
+                    if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
+                        ev=(format_event_or_similar(person.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
+                    else:
+                        ev=(format_event(person.get_event_ref_list(), etype, event_format, person.handle))        
                 if ev:
                     elist.extend(ev)
                     #log.debug('Add Event=%s', ev)
@@ -1045,54 +1049,54 @@ def load_gramps(start):
         event_colour = (0, 0, 0) # Black - for all event lines
 
         if PROTECT_PRIVATE and person.private:
-        	s2 = [(name_size, event_colour, PRIVATE_TEXT)]
+            s2 = [(name_size, event_colour, PRIVATE_TEXT)]
         else:
-			name = None
-			nskw = SubstKeywords(GRAMPS_DB, glocale, name_displayer, person.handle)
-			name = nskw.replace_and_clean([NAME_FORMAT])[0]
-			#log.debug('GPT: Name SubKW: %s', name)
-		
-			events = None
-			events = format_person_events(person, f, display_format)
-			log.debug('GetPersonTxt, All Events: %s', events)
-		
-			name_size = 1.0 # font size modifier
-			event_size = 0.90
-			event_colour = (0, 0, 0) # Black - for all event lines
-		
-			if GENDER_COLORS:      # Only for name line
-				if person.get_gender() == gramps.gen.lib.Person.MALE:
-					n_col = (0, 0, 1) # Blue
-				elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
-					n_col = (1, 0, 0) # Red
-				else:
-					n_col = (0, 0.5, 0) # Green             
-			else:
-				n_col = (0, 0, 0) # Black
-			
-			if INC_DNUM and dnum is not None:   # Prepend DNUM to name text str
-				if name is None:
-					s = [(name_size, n_col, dnum)]
-				else:
-					s = [(name_size, n_col, dnum + ' ' + name)]
-			elif name is None:
-				s = []
-			else:
-				s = [(name_size, n_col, name)]
+            name = None
+            nskw = SubstKeywords(GRAMPS_DB, glocale, name_displayer, person.handle)
+            name = nskw.replace_and_clean([NAME_FORMAT])[0]
+            #log.debug('GPT: Name SubKW: %s', name)
 
-			if events:
-				for ev in events:
-					s.append((event_size, event_colour, ev))
+            events = None
+            events = format_person_events(person, f, display_format)
+            log.debug('GetPersonTxt, All Events: %s', events)
 
-			# Apply the replacement list to all the text strings
-			#    borrowed from calc_lines in libtreebase.py
-			s2=[]
-			for (size, color, line) in s:
-				for pair in REPLACEMENT_LIST:
-					if pair.count("/") == 1:
-						repl = pair.split("/", 1)
-						line = line.replace(repl[0], repl[1])
-				s2.append((size, color, line))
+            name_size = 1.0 # font size modifier
+            event_size = 0.90
+            event_colour = (0, 0, 0) # Black - for all event lines
+
+            if GENDER_COLORS:      # Only for name line
+                if person.get_gender() == gramps.gen.lib.Person.MALE:
+                    n_col = (0, 0, 1) # Blue
+                elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
+                    n_col = (1, 0, 0) # Red
+                else:
+                    n_col = (0, 0.5, 0) # Green             
+            else:
+                n_col = (0, 0, 0) # Black
+
+            if INC_DNUM and dnum is not None:   # Prepend DNUM to name text str
+                if name is None:
+                    s = [(name_size, n_col, dnum)]
+                else:
+                    s = [(name_size, n_col, dnum + ' ' + name)]
+            elif name is None:
+                s = []
+            else:
+                s = [(name_size, n_col, name)]
+
+            if events:
+                for ev in events:
+                    s.append((event_size, event_colour, ev))
+
+            # Apply the replacement list to all the text strings
+            #    borrowed from calc_lines in libtreebase.py
+            s2=[]
+            for (size, color, line) in s:
+                for pair in REPLACEMENT_LIST:
+                    if pair.count("/") == 1:
+                        repl = pair.split("/", 1)
+                        line = line.replace(repl[0], repl[1])
+                s2.append((size, color, line))
         return s2
         
     def do_person(p_id, dnum="1."):
@@ -1108,7 +1112,7 @@ def load_gramps(start):
         UNKNOWN_PERSON_TXT = [(1.0, (0,0,0), 'Unknown'),]
         
         descendant = GRAMPS_DB.get_person_from_gramps_id(p_id)
-#       log.debug('Do_Person: Descendant %s, DB ID:%s', descendant.primary_name.get_regular_name(), p_id)
+        log.debug('Do_Person: Descendant %s, DB ID:%s', descendant.primary_name.get_regular_name(), p_id)
         blk_txt = get_person_text(descendant, DESCEND_DISP, None, dnum)  # assembles array of text tuples(size, colour, txt-str)
         p = Person(Person_Block(descendant.handle, blk_txt), CUR_GENERATION)
         for fhandle in descendant.get_family_handle_list():
@@ -1135,7 +1139,7 @@ def load_gramps(start):
                                     else:
                                         log.warning('Do_Person: Failed to get child from handle: %s', chandle)
                     else:
-                        log.warning('Do_Person: Failed to get spouse from handle: %s', dbsph)
+                        log.warning('Do_Person: Failed to get spouse from handle: %s', sph)
                 else:
                     log.info('Do_Person: Unknown spouse of %s', descendant.primary_name.get_regular_name())
                     fm = Family(p, Person(Person_Block(None, UNKNOWN_PERSON_TXT), CUR_GENERATION))
