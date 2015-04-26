@@ -43,7 +43,7 @@ LOG = logging.getLogger(".ExportDjango")
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gramps.gui.plug.export import WriterOptionBox
@@ -78,7 +78,7 @@ from django.db import transaction
 def export_all(database, filename, error_dialog, 
                option_box=None, callback=None):
     if not callable(callback): 
-        callback = lambda (percent): None # dummy
+        callback = lambda percent: None # dummy
 
     start = time.time()
     total = (database.get_number_of_notes() + 

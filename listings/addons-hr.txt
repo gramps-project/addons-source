@@ -1,8 +1,9 @@
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.11',"g":'4.2',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'JSON Export',"n":'JSON Export',"v":'1.0.2',"g":'4.2',"d":'This is a JSON export',"z":'JSON.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Raw Export',"v":'1.0.23',"g":'4.2',"d":'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Uvoz Django',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'Uvoz SQLite',"v":'1.0.27',"g":'4.2',"d":'SQLite je česti format lokalne baze podataka',"z":'Sqlite.addon.tgz'}
-{"t":'Exporter',"i":'export_django',"n":'Django Izvoz',"v":'1.0.26',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Uvoz Django',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Birthdays Gramplet',"v":'1.0.26',"g":'4.2',"d":'a gramplet that displays the birthdays of the living people',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Census Gramplet',"v":'1.0.29',"g":'4.2',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":'Clipboard Gramplet',"v":'1.0.25',"g":'4.2',"d":'Gramplet for grouping items',"z":'ClipboardGramplet.addon.tgz'}
@@ -29,7 +30,7 @@
 {"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.44',"g":'4.2',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'Uvoz SQLite',"v":'1.0.27',"g":'4.2',"d":'SQLite je česti format lokalne baze podataka',"z":'Sqlite.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Uvoz Django',"v":'1.0.26',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Uvoz Django',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":'DE Web Connect Pack',"v":'0.0.16',"g":'4.2',"d":'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":'FR Web Connect Pack',"v":'1.0.22',"g":'4.2',"d":'Collection of Web sites for the FR (requires libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
