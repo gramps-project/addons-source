@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <!-- see http://www.html5rocks.com/en/mobile/touch.html
+    prevents native zooming -->
+  <meta name="viewport" content="width=device-width user-scalable=no
+  initial-scale=1.0,maximum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- ie9+ rendering support for latest standards -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Unified event plugin tests</title>
+<style>
+
+  /** The body settings minimize Mac OSX / iOS
+   *  elastic scrolling (grumble, grumble).
+   *  See http://www.smilingsouls.net/Blog/20110804114957.html.
+   *  More accommodations have been made for iOS in the JavaScript.
+  */
+  body {
+    position         : absolute;
+    top              : 0;
+    left             : 0;
+    right            : 0;
+    bottom           : 0;
+    background-color : #888;
+    color            : #fff;
+    overflow-x       : hidden;
+    overflow-y       : hidden;
+    overflow         : hidden;
+  }
+
+  /** BEGIN block text selects except inside inputs and paragraphs
+    See http://stackoverflow.com/questions/826782/\
+      css-rule-to-disable-text-selection-highlighting
+    Notice IE as needs onselectstart = function(){ return false; }
+  */
+
+  input, textarea, .sl-x-user-select {
+    -webkit-user-select: text;
+    -khtml-user-select : text;
+    -moz-user-select   : text;
+    -o-user-select     : text;
+    user-select        : text;
+  }
+
+  * {
+    -webkit-user-select : none;
+    -khtml-user-select  : none;
+    -moz-user-select    : -moz-none;
+    -o-user-select      : none;
+    user-select         : none;
+  }
+  /** END block text selects */
+
+  /** BEGIN block dragging */
+  * {
+    -webkit-user-drag : none;
+    -moz-user-drag    : none;
+    user-drag         : none;
+    /** turn off tap highlights on iOS */
+    -webkit-tap-highlight-color : transparent;
+    -webkit-touch-callout : none;
+  }
+  /** END block dragging */
+
+  /* BEGIN divs for Unified Events Binding tests:
+       utap      uheld
+       uzoomstart uzoommove uzoomend
+       udragstart udragmove udragend
+       uheldstart uheldmove uheldend
+  */
+
+  .btn {
+    position      : absolute;
+    border-width  : 3px;
+    border-style  : solid;
+    border-color  : #cc8 #880 #880 #cc8;
+    border-radius : 5px;
+    padding       : 5px;
+    width         : 70px;
+    height        : 70px;
+    font          : bold 14px Arial, Helvetica, sans-serif;
+    line-height   : 14px;
+    cursor        : pointer;
+    z-index       : 0;
+    background    : -webkit-linear-gradient(
+      top,
+      rgba(30,87,153,0) 0%,
+      rgba(203,209,214,0.5) 50%,
+      rgba(114,124,96,0.5) 51%,
+      rgba(90,160,53,0.8) 100%
+    );
+    background     : -moz-linear-gradient(
+      top,
+      rgba(30,87,153,0) 0%,
+      rgba(203,209,214,0.5) 50%,
+      rgba(114,124,96,0.5) 51%,
+      rgba(90,160,53,0.8) 100%
+    );
+    background     : -ms-linear-gradient(
+      top,
+      rgba(30,87,153,0) 0%,
+      rgba(203,209,214,0.49) 50%,
+      rgba(114,124,96,0.5) 51%,
+      rgba(90,160,53,0.8) 100%
+    );
+    filter         : progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#001e5799',
+      endColorstr='#cc5aa035',
+      GradientType=0
+    );
+    background-color : #884;
+  }
+  .btn:nth-child(even) {
+    background-color : #a44;
+  }
+  .btn:hover {
+    border-color  : #eea #aa0 #aa0 #eea;
+  }
+
+  #uzoom {
+    position         : absolute;
+    top              : 12px;
+    left             : 12px;
+    right            : 12px;
+    bottom           : 12px;
+    padding          : 10px;
+    background-color : #aaa;
+    font             : bold 24px Arial, Helvetica, sans-serif;
+    border           : 3px solid #fff;
+    border-radius    : 12px;
+  }
+
+  #uzoom-report {
+    position      : absolute;
+    bottom        : 16px;
+    right         : 16px;
+    padding       : 8px;
+    font          : bold 24px Arial, Helvetica, sans-serif;
+    border        : 2px solid #fff;
+    min-width     : 150px;
+    text-align    : right;
+    border-radius : 5px;
+    box-shadow    : 0px 0px 4px 4px #888;
+  }
+
+  /* tap-only test */
+  #utap {
+    top              : 50px;
+    left             : 50px;
+  }
+
+  /* long press-only test */
+  #uheld {
+    top              : 50px;
+    left             : 150px;
+  }
+
+  /* drag start+move+end -only test */
+  #udrag {
+    top              : 50px;
+    left             : 250px;
+  }
+
+  /* long press start+move+end -only test */
+  #uhelddrag {
+    top              : 50px;
+    left             : 350px;
+  }
+
+  /* utap + uheld */
+  #combo1 {
+    top              : 150px;
+    left             : 50px;
+  }
+
+  /* utap + uheld + udrag */
+  #combo2 {
+    top              : 150px;
+    left             : 150px;
+  }
+
+  /* utap + uheld + uhelddrag all */
+  #combo3 {
+    top              : 150px;
+    left             : 250px;
+  }
+
+  /* utap + uheld + udrag + uhelddrag all */
+  #combo4 {
+    top              : 150px;
+    left             : 350px;
+  }
+
+  /* utap + uheld + udragstart (only) */
+  #combo5 {
+    top              : 250px;
+    left             : 50px;
+  }
+
+  /* utap + uheld + udragmove (only)
+    no drag event should ever fire
+  */
+  #combo6 {
+    top              : 250px;
+    left             : 150px;
+  }
+
+  /* utap + uheld + dragend (only)
+    no drag event should ever fire
+  */
+  #combo7 {
+    top              : 250px;
+    left             : 250px;
+  }
+
+  /* utap + uheld + uheldstart (only)
+  */
+  #combo8 {
+    top              : 250px;
+    left             : 350px;
+  }
+
+  /* utap + uheld + uheldmove (only)
+    no uhelddrag events should ever fire
+  */
+  #combo9 {
+    top              : 350px;
+    left             : 50px;
+  }
+
+  /* utap + uheld + uheldend (only)
+    no uhelddrag events should ever fire
+  */
+  #combo10 {
+    top              : 350px;
+    left             : 150px;
+  }
+
+  /* uheld + uhelddrag all */
+  #combo11 {
+    top              : 350px;
+    left             : 250px;
+  }
+
+  /* uheld + uheldstart only
+    no uhelddrag events should ever fire
+  */
+  #combo12 {
+    top              : 350px;
+    left             : 350px;
+  }
+
+  /* uheld + uheldmove only)
+    no uhelddrag events should ever fire
+  */
+  #combo13 {
+    top              : 450px;
+    left             : 50px;
+  }
+
+  /* uheld + uheldend (only)
+    no uhelddrag events should ever fire
+  */
+  #combo14 {
+    top              : 450px;
+    left             : 150px;
+  }
+
+  /* udrag + uzoom  */
+  #combo15 {
+    top              : 450px;
+    left             : 250px;
+  }
+
+  /* uheld + uzoom  */
+  #combo16 {
+    top              : 450px;
+    left             : 350px;
+  }
+</style>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="jquery.event.ue.js"></script>
+
+  <script>
+
+$(document).ready( function() {
+
+  var
+    stateMap = {
+      max_z_index  : 1,
+      zoom_num     : 1000,
+      px_drag_top  : undefined,
+      px_drag_left : undefined
+    },
+    onTap,      onHeld,
+    onZoomstart, onZoommove, onZoomend,
+    onDragstart, onDragmove, onDragend
+    ;
+
+  onZoomstart = function ( event ){
+    // console.warn( 'uzoomstart', event );
+    $('#uzoom-report-val').text(String(stateMap.zoom_num));
+  };
+
+  onZoommove = function ( event ){
+    // console.warn( 'uzoommove', event );
+    stateMap.zoom_num += event.px_delta_zoom || 0;
+    $('#uzoom-report-val').text(String(stateMap.zoom_num));
+  };
+
+  onZoomend = function ( event ){
+    // console.warn( 'uzoomend', event );
+    $('#uzoom-report-val').text(String(stateMap.zoom_num));
+  };
+
+  onTap = function ( event ){
+    var $this = $(this);
+    $this.css('background-color', '#cc0');
+    setTimeout(function(){
+      $this.css('background-color','');
+    },200);
+    // console.log('tap', event);
+    return false;
+  };
+
+  onHeld = function ( event ){
+    var $this = $(this);
+    $this.css('background-color', '#0cc');
+    setTimeout(function(){
+      $this.css('background-color','');
+    },200);
+    // console.log('held',event);
+    return false;
+  };
+
+  onDragstart = function ( event ){
+    var
+      $this   = $(this),
+      color_code = event.type === 'uheldstart'
+        ? '#0ff' : '#ff0'
+      ;
+
+    // console.log('dragstart', event);
+
+    if ( parseInt($this.css('z-index')) < stateMap.max_z_index ){
+      stateMap.max_z_index++;
+    }
+
+    $this.css({
+      'border-color' : color_code,
+      'cursor'       : 'move',
+      'z-index'      : stateMap.max_z_index
+    });
+  };
+
+  onDragmove = function ( event ){
+    // console.log('dragmove', event);
+    var
+      $this = $(this), offset_map
+      ;
+
+    if ( stateMap.px_drag_top === undefined ){
+      offset_map = $this.offset();
+      stateMap.px_drag_top  = offset_map.top  - 23;
+      stateMap.px_drag_left = offset_map.left - 23;
+    }
+    stateMap.px_drag_top  += event.px_delta_y;
+    stateMap.px_drag_left += event.px_delta_x;
+
+    $this.css({ top : stateMap.px_drag_top, left : stateMap.px_drag_left });
+  };
+
+  onDragend = function ( event ){
+    // console.log('dragend', event);
+    $(this).css({'border-color' : '', cursor : '' });
+    stateMap.px_drag_top = stateMap.px_drag_left = undefined;
+  };
+
+  $('#utap') .bind('utap.utap',   onTap   );
+  $('#uheld').bind('uheld.uheld', onHeld  );
+
+  $('#uzoom')
+     .bind('uzoomstart', onZoomstart )
+     .bind('uzoommove',  onZoommove  )
+     .bind('uzoomend',   onZoomend   )
+
+  $('#udrag')
+    .bind('udragstart.udrag', onDragstart )
+    .bind('udragmove.udrag',  onDragmove  )
+    .bind('udragend.udrag',   onDragend   )
+    ;
+
+  $('#uhelddrag')
+    .bind('uheldstart.uheldd', onDragstart )
+    .bind('uheldmove.uheldd',  onDragmove  )
+    .bind('uheldend.uheldd',   onDragend   )
+    ;
+
+  $('#combo1')
+    .bind('utap.combo1',       onTap       )
+    .bind('uheld.combo1',      onHeld      )
+    ;
+
+  $('#combo2')
+    .bind('utap.combo2',       onTap       )
+    .bind('uheld.combo2',      onHeld      )
+    .bind('udragstart.combo2', onDragstart )
+    .bind('udragmove.combo2',  onDragmove  )
+    .bind('udragend.combo2',   onDragend   )
+    ;
+
+  $('#combo3')
+    .bind('utap.combo3',       onTap       )
+    .bind('uheld.combo3',      onHeld      )
+    .bind('uheldstart.combo3', onDragstart )
+    .bind('uheldmove.combo3',  onDragmove  )
+    .bind('uheldend.combo3',   onDragend   )
+    ;
+
+  $('#combo4')
+    .bind('utap.combo4',       onTap       )
+    .bind('uheld.combo4',      onHeld      )
+    .bind('uheldstart.combo4', onDragstart )
+    .bind('uheldmove.combo4',  onDragmove  )
+    .bind('uheldend.combo4',   onDragend   )
+    .bind('udragstart.combo4', onDragstart )
+    .bind('udragmove.combo4',  onDragmove  )
+    .bind('udragend.combo4',   onDragend   )
+    ;
+
+  $('#combo5')
+    .bind('utap.combo5',       onTap       )
+    .bind('uheld.combo5',      onHeld      )
+    .bind('udragstart.combo5', null          )
+    ;
+
+  $('#combo6')
+    .bind('utap.combo6',       onTap       )
+    .bind('uheld.combo6',      onHeld      )
+    .bind('udragmove.combo6',  onDragmove  )
+    ;
+
+  $('#combo7')
+    .bind('utap.combo7',       onTap       )
+    .bind('uheld.combo7',      onHeld      )
+    .bind('udragend.combo7',   onDragend   )
+    ;
+
+  $('#combo8')
+    .bind('utap.combo8',       onTap       )
+    .bind('uheld.combo8',      onHeld      )
+    .bind('uheldstart.combo8', null          )
+    ;
+
+  $('#combo9')
+    .bind('utap.combo9',       onTap       )
+    .bind('uheld.combo9',      onHeld      )
+    .bind('uheldmove.combo9',  onDragmove  )
+    ;
+
+  $('#combo10')
+    .bind('utap.combo10',      onTap       )
+    .bind('uheld.combo10',     onHeld      )
+    .bind('uheldend.combo10',  onDragend   )
+  ;
+  $('#combo11')
+    .bind('uheld.combo11',      onHeld      )
+    .bind('uheldstart.combo11', onDragstart )
+    .bind('uheldmove.combo11',  onDragmove  )
+    .bind('uheldend.combo11',   onDragend   )
+    ;
+
+  $('#combo12')
+    .bind('uheld.combo12',      onHeld      )
+    .bind('uheldstart.combo12', null          )
+    ;
+
+  $('#combo13')
+    .bind('uheld.combo13',      onHeld      )
+    .bind('uheldmove.combo13' , onDragmove  )
+    ;
+
+  $('#combo14')
+    .bind('uheld.combo14',      onHeld      )
+    .bind('uheldend.combo14',   onDragend   )
+    ;
+
+  $('#uzoom-report-val').text(String(stateMap.zoom_num));
+});
+  </script>
+</head>
+<body>
+  <div id="uzoom">zoom area
+    <div id="uzoom-report">Zoom:
+      <span id="uzoom-report-val"></span>
+    </div>
+    <div id="utap"      class="btn">tap</div>
+    <div id="uheld"     class="btn">held</div>
+    <div id="udrag"     class="btn">drag</div>
+    <div id="uhelddrag" class="btn">helddrag</div>
+    <div id="combo1"    class="btn">tap<br/>+held</div>
+    <div id="combo2"    class="btn">tap<br/>+held<br/>+drag</div>
+    <div id="combo3"    class="btn">tap<br/>+held<br/>+helddrag</div>
+    <div id="combo4"    class="btn">tap<br/>+held<br/>+drag<br/>
+      +helddrag
+    </div>
+    <div id="combo5"    class="btn">tap<br/>+held<br/>+dragstart</div>
+    <div id="combo6"    class="btn">tap<br/>+held<br/>+dragmove</div>
+    <div id="combo7"    class="btn">tap<br/>+held<br/>+dragend</div>
+    <div id="combo8"    class="btn">tap<br/>+held<br/>+heldstart</div>
+    <div id="combo9"    class="btn">tap<br/>+held<br/>+heldmove</div>
+    <div id="combo10"   class="btn">tap<br/>+held<br/>+heldend</div>
+    <div id="combo11"   class="btn">held<br/>+helddrag</div>
+    <div id="combo12"   class="btn">held<br/>+heldstart</div>
+    <div id="combo13"   class="btn">held<br/>+heldmove</div>
+    <div id="combo14"   class="btn">held<br/>+heldend</div>
+  </div>
+</body>
+</html>
+
