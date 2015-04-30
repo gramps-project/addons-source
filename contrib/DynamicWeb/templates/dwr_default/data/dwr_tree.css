@@ -1,0 +1,30 @@
+/*===================================================== Simple tree */
+.in0
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.in1
+{
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.simpletree_link, .simpletree_link:visited, .simpletree_link:hover 
+{
+	color: #000000;
+	text-decoration: none;
+	background-color: inherit;
+	display: block;
+}
+.simpletree_link:hover 
+{
+	background-color: #FFA500;
+}
+.simpletree_details 
+{
+	font-weight: normal;
+	font-style: italic;
+	vertical-align: super;
+	font-size: smaller;
+}

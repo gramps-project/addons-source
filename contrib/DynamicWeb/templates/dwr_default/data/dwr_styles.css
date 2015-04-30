@@ -1,0 +1,397 @@
+/* Gramps - a GTK+/GNOME based genealogy program
+
+Copyright (C) 2014 Pierre Bélissent
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+
+/*===================================================== Body */
+
+.dwr-fullscreen {
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+.dwr-centered {
+	text-align: center;
+}
+.dwr-nowrap {
+	white-space: nowrap;
+}
+
+li p
+{
+	margin: 0px;
+}
+
+.label {
+	font-size: medium;
+	font-weight: bold;
+}
+.panel-title>.label {
+	color: #FFF;
+}
+
+
+/*===================================================== Main divs */
+
+@media (max-width:767px) {
+	#body-page {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.container {
+		min-width: 450px;
+	}
+	.dwr-panel-table {
+		overflow-x: auto;
+	}
+}
+#dwr-header, #dwr-footer {
+    display: none;
+}
+@media screen and (min-width:768px) {
+	#dwr-header, #dwr-footer {
+		display: inherit;
+		padding: 0px 10px;
+		overflow-y: hidden;
+	}
+	#dwr-footer {
+		font-size: small;
+	}
+	#dwr-footer p {
+		margin: 0px;
+	}
+}
+
+
+/*===================================================== Menu */
+
+.navbar .navbar-form {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+@media(max-width:767px) {
+    .navbar .navbar-form {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+
+
+/*===================================================== Pannels */
+
+.dwr-collapsible {
+	cursor: pointer;
+}
+.dwr-collapsible h1:after,
+.dwr-collapsible h2:after,
+.dwr-collapsible h3:after,
+.dwr-collapsible h4:after,
+.dwr-collapsible h5:after,
+.dwr-collapsible h6:after  {
+	font-family: 'Glyphicons Halflings';
+	content: "\e114"; /* glyphicon-chevron-down */
+	float: right;
+}
+.dwr-collapsible.collapsed h1:after,
+.dwr-collapsible.collapsed h2:after,
+.dwr-collapsible.collapsed h3:after,
+.dwr-collapsible.collapsed h4:after,
+.dwr-collapsible.collapsed h5:after,
+.dwr-collapsible.collapsed h6:after  {
+	content: "\e113";  /* glyphicon-chevron-up */
+}
+
+.dwr-panel-media .panel-body {
+}
+.dwr-panel-map .panel-body {
+	padding: 0px;
+}
+.dwr-panel-tree .panel-body {
+	padding: 0px;
+}
+.dwr-panel-tree {
+	overflow: hidden;
+}
+
+
+/*===================================================== Media */
+
+#dwr-image {
+	/*margin: 10px;*/
+	max-width: 740px;
+}
+@media (min-width:768px) {
+	#dwr-image {
+		max-width: 720px;
+	}
+}
+@media (min-width:992px) {
+	#dwr-image {
+		max-width: 940px;
+	}
+}
+@media (min-width: 1200px) {
+	#dwr-image {
+		max-width: 1140px;
+	}
+}
+
+#dwr-img-btns {
+	margin: 10px;
+	text-align: center;
+}
+
+#dwr-img-btns .btn-group {
+	float: initial;
+}
+
+
+/*===================================================== Page contents */
+
+.dwr-attr-title {
+	font-weight: bold;
+	font-style: normal;
+	margin: 0px;
+}
+.dwr-attr-value {
+	font-weight: normal;
+	font-style: normal;
+	margin: 0px;
+}
+.dwr-attr-header {
+	font-weight: normal;
+	font-style: italic;
+	font-size: small;
+	margin: 0px;
+}
+.dwr-ref .dwr-ref-detailed {
+	font-weight: bold;
+}
+.dwr-citation, .dwr-citation:visited
+{
+	vertical-align: super;
+	font-style: italic;
+}
+
+.panel-collapse>.table-bordered {
+	border: none;
+}
+.dwr-table-flat {
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+}
+.dwr-table-panel {
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+}
+.dwr-index-title {
+}
+.dwr-index {
+	vertical-align: middle;
+}
+
+.dwr-citations .dwr-backrefs
+{
+	list-style-type: none;
+}
+
+.thumbnail {
+	margin: 0px;
+	display: inline-block !important;
+}
+.thumbnail>img {
+	max-width: initial;
+}
+
+
+/*===================================================== Map */
+#gmap_canvas
+{
+	height: 330px;
+}
+@media (min-width: 992px) {
+	#gmap_canvas {
+	height: 446px;
+	}
+}
+@media (min-width: 1200px) {
+	#gmap_canvas {
+	height: 600px;
+	}
+}
+#gmap_canvas img {
+	max-width:none !important;
+	background:none !important;
+}
+.dwr-map-expanded
+{
+	overflow: hidden;
+}
+.dwr-mapinfo
+{
+	font-size: small;
+	margin: 0px;
+	white-space: nowrap;
+}
+#gmap_canvas .popover-content
+{/*
+    max-width: none;
+	min-width: 300px;*/
+	overflow-x: auto;
+}
+
+
+/*===================================================== Tree page */
+
+.svg-drawing
+{
+	background: #FFFFFF;
+	position: relative;
+	overflow: hidden;
+}
+.svg-drawing-expand
+{
+	background: #FFFFFF;
+	position: relative;
+	overflow: hidden;
+	margin: 0px;
+	width: auto;
+}
+.svg-drawing svg
+{
+	display: block;
+}
+.svg-drawing-type
+{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	opacity: 0.9;
+	font-size: small;
+}
+#svg-buttons {
+	position: absolute;
+	float: right;
+	top: 5px;
+	right: 5px;
+	opacity: 0.9;
+	font-size: small;
+}
+#svg-type {
+	max-width: 200px;
+}
+#svg-type, #svg-asc, #svg-dsc {
+	width: auto;
+	display: inline-block;
+}
+#svg-help-popover {
+	position: absolute;
+	float: right;
+	top: 5px;
+	right: 5px;
+	width: 90%;
+	display: block;
+	max-width: initial;
+	left: initial;
+}
+.svg-popup
+{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	opacity: 0.9;
+	background: #FFFFFF;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: #000000;
+	border-style: solid;
+	padding: 5px;
+}
+.svg-popup p
+{
+	margin: 0px;
+	text-align: center;
+}
+
+
+/*===================================================== SVG graph */
+
+.svg-gen-0 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-gen-1 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
+.svg-gen-2 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
+.svg-gen-3 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
+.svg-gen-4 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
+.svg-gen-5 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
+.svg-gen-6 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-gen-7 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
+.svg-gen-8 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
+.svg-gen-9 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
+.svg-gen-10 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
+.svg-gen-11 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
+.svg-gen-12 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-gen-13 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
+.svg-gen-14 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
+.svg-gen-15 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
+.svg-gen-16 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
+.svg-gen-17 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
+.svg-gen-18 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-gen-19 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
+.svg-gen-20 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
+.svg-gen-21 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
+.svg-gen-22 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
+.svg-gen-23 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
+.svg-gen-24 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-gen-25 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
+.svg-gen-26 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
+.svg-gen-27 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
+.svg-gen-28 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
+.svg-gen-29 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
+.svg-gen-30 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+
+.svg-tree
+{
+	stroke: #000000;
+	stroke-width: 3px;
+	border-radius: 4px;
+	/*fill: none;*/
+	/*fill: #FFFFFF;*/
+}
+.svg-center {fill: #D0D0D0;}
+.svg-implex {fill: #FF0000;}
+.svg-male {}
+.svg-female {}
+.svg-unknown {}
+.svg-tree:hover {
+	fill: #FFA500;
+}
+
+.svg-text
+{
+	stroke: none;
+	fill: #000000;
+	pointer-events: none;
+}
+.svg-text-center {font-weight: bold;}
+.svg-text-implex {}
+.svg-text-male {}
+.svg-text-female {font-style: italic;}
+.svg-text-unknown {}
+.svg-text:hover, svg a {
+	text-decoration: none !important;
+}
+
+.svg-line
+{
+	stroke: #000000;
+	stroke-width: 3px;
+}
