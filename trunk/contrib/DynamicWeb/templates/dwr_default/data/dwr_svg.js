@@ -66,12 +66,13 @@ var iTxt = '';
 var svgParents, svgChildren, svgElts;
 SVGELT_IDX = 0;
 SVGELT_FDX = 1;
-SVGELT_LEV = 2;
-SVGELT_NEXT = 3;
-SVGELT_NEXT_SPOU = 4;
-SVGELT_NB = 5;
-SVGELT_CMD = 6;
-SVGELT_P = 7;
+SVGELT_FDX_CHILD = 2;
+SVGELT_LEV = 3;
+SVGELT_NEXT = 4;
+SVGELT_NEXT_SPOU = 5;
+SVGELT_NB = 6;
+SVGELT_CMD = 7;
+SVGELT_P = 8;
 
 SVGIDX_SEPARATOR = -99; // Arbitrary number, used as person index (SVGELT_IDX) for separators
 SVG_SEPARATOR_SIZE = 0.3 // Separator size compared to person box size
@@ -161,7 +162,7 @@ function SvgCreate(expand)
 		html += '<option value="' + i + '"' + ((search.SvgType == i) ? ' selected' : '') + '>' + SVG_TREE_TYPES_NAMES[i] + '</option>';
 	}
 	html += '</select> 	';
-	// html += '<label for="svg-asc">' + _('Ancestry') + ':</label> ';
+	// html += '<label for="svg-asc">' + _('Ancestors') + ':</label> ';
 	html += '<select id="svg-asc" class="form-control svg-gens" size="1" title="' + _('Select the number of ascending generations') + '">';
 	for (i = 0; i < NB_GENERATIONS_MAX; i++)
 	{
@@ -273,6 +274,21 @@ function SvgInit()
 	// Build the graph
 	graphsBuild[search.SvgType]();
 	SvgCreateElts(0);
+	// Context menu
+	context.init({
+		fadeSpeed: 100,
+		before: SvgContextBefore,
+		compress: true
+	});
+	svgContextMenuItems = [
+		{
+			text: (($('.svg-drawing-expand').length == 0) ? _('Expand') : _('Restore')),
+			href: svgHref(search.Idx, ($('.svg-drawing-expand').length == 0))
+		},
+		{text: _('Zoom in'), href: 'javascript:SvgZoomIn();'},
+		{text: _('Zoom out'), href: 'javascript:SvgZoomOut();'}
+	];
+	context.attach('#svg-drawing', svgContextMenuItems);
 }
 
 
@@ -339,11 +355,6 @@ function SvgSetStyle(p, text, x_elt, lev)
 	// Get the class of the person box and text
 	var cl = 'svg-tree';
 	var clt = 'svg-text';
-	if (elt[SVGELT_IDX] == search.Idx)
-	{
-		cl += ' svg-center';
-		clt += ' svg-text-center';
-	}
 	if (isImplex(elt[SVGELT_IDX]))
 	{
 		cl += ' svg-implex';
@@ -466,7 +477,7 @@ function SvgMouseMoveHover(event)
 			SvgMouseEventExit();
 			SvgMouseEventEnter(elt);
 		}
-		SvgPopupShow(svgElts[elt][SVGELT_IDX], event);
+		SvgPopupShow(elt, event);
 	}
 	else if (hoverBox >= 0)
 	{
@@ -655,13 +666,27 @@ function SvgPopupHide()
 	$('#svg-popup').hide();
 }
 
-function SvgPopupShow(idx, event)
+function SvgPopupShow(elt, event)
 {
+	var idx = svgElts[elt][SVGELT_IDX];
+	var fdx = (typeof(svgElts[elt][SVGELT_FDX]) == 'undefined') ? -1 : svgElts[elt][SVGELT_FDX];
 	$('#svg-popup').show();
 	if (idx != svgPopupIdx)
 	{
 		var html = '<p>' + I[idx][I_NAME];
-		html += '<br>' + I[idx][I_BIRTH_YEAR] + '-' + I[idx][I_DEATH_YEAR] + '</p>';
+		html += '<br>* ' + I[idx][I_BIRTH_YEAR];
+		if (I[idx][I_BIRTH_PLACE] != "") html += ' (' + I[idx][I_BIRTH_PLACE] + ')';
+		if (fdx >= 0)
+		{
+			html += '<br>x ' + F[fdx][F_MARR_YEAR];
+			if (F[fdx][F_MARR_PLACE] != "") html += ' (' + F[fdx][F_MARR_PLACE] + ')';
+		}
+		if (I[idx][I_DEATH_YEAR] != "")
+		{
+			html += '<br>+ ' + I[idx][I_DEATH_YEAR];
+			if (I[idx][I_DEATH_PLACE] != "") html += ' (' + I[idx][I_DEATH_PLACE] + ')';
+		}
+		html += '</p>';
 		$('#svg-popup').html(html);
 		svgPopupIdx = idx;
 	}
@@ -679,6 +704,101 @@ function SvgPopupMove(event)
 	$('#svg-popup').css('left', p.x);
 	$('#svg-popup').css('top', p.y);
 	return(true);
+}
+
+
+//=========================================== Context menu
+
+function SvgContextBefore($menu, event)
+{
+	var data = [];
+	var elt = SvgGetElt(event.target);
+	if (elt >= 0)
+	{
+		var idx = svgElts[elt][SVGELT_IDX];
+		if (idx >= 0)
+		{
+			// Person menu items
+			data = data.concat([
+				{text: I[idx][I_NAME], href: svgHref(idx)},
+				{text: _('Person page'), href: indiHref(idx)}
+			]);
+			var j, k, subm;
+			// Spouses menu items
+			subm = [];
+			for (j = 0; j < I[idx][I_FAMS].length; j++)
+			{
+				var fdx = I[idx][I_FAMS][j];
+				for (k = 0; k < F[fdx][F_SPOU].length; k++)
+				{
+					if (F[fdx][F_SPOU][k] == idx) continue;
+					subm.push({
+						text: I[F[fdx][F_SPOU][k]][I_NAME],
+						href: svgHref(F[fdx][F_SPOU][k])
+					});
+				}
+			}
+			if (subm.length > 0) data.push({
+				text: _('Spouses'),
+				subMenu: subm
+			});
+			// Siblings menu items
+			subm = [];
+			for (j = 0; j < I[idx][I_FAMC].length; j++)
+			{
+				var fdx = I[idx][I_FAMC][j][FC_INDEX];
+				for (k = 0; k < F[fdx][F_CHIL].length; k++)
+				{
+					if (F[fdx][F_CHIL][k][FC_INDEX] == idx) continue;
+					subm.push({
+						text: I[F[fdx][F_CHIL][k][FC_INDEX]][I_NAME],
+						href: svgHref(F[fdx][F_CHIL][k][FC_INDEX])
+					});
+				}
+			}
+			if (subm.length > 0) data.push({
+				text: _('Siblings'),
+				subMenu: subm
+			});
+			// Children menu items
+			subm = [];
+			for (j = 0; j < I[idx][I_FAMS].length; j++)
+			{
+				var fdx = I[idx][I_FAMS][j];
+				for (k = 0; k < F[fdx][F_CHIL].length; k++)
+				{
+					subm.push({
+						text: I[F[fdx][F_CHIL][k][FC_INDEX]][I_NAME],
+						href: svgHref(F[fdx][F_CHIL][k][FC_INDEX])
+					});
+				}
+			}
+			if (subm.length > 0) data.push({
+				text: _('Children'),
+				subMenu: subm
+			});
+			// Parents menu items
+			subm = [];
+			for (j = 0; j < I[idx][I_FAMC].length; j++)
+			{
+				var fdx = I[idx][I_FAMC][j][FC_INDEX];
+				for (k = 0; k < F[fdx][F_SPOU].length; k++)
+				{
+					subm.push({
+						text: I[F[fdx][F_SPOU][k]][I_NAME],
+						href: svgHref(F[fdx][F_SPOU][k])
+					});
+				}
+			}
+			if (subm.length > 0) data.push({
+				text: _('Parents'),
+				subMenu: subm
+			});
+		}
+	}
+	if (data.length > 0) data = data.concat([{divider: true}]);
+	data = data.concat(svgContextMenuItems);
+	context.rebuild('#svg-drawing', data);
 }
 
 
@@ -848,15 +968,23 @@ function calcDscSub(idx, lev, print_spouses)
 					if (idx != getSpou(fdx)[i])
 					{
 						next_spou.push(svgChildren.length);
-						var elt_next = calcDscSubSpou(getSpou(fdx)[i], fdx, lev, print_spouses);
+						calcDscSubSpou(getSpou(fdx)[i], fdx, lev, print_spouses);
 						nb_spou += 1;
 					}
+				}
+				if (nb_spou == 0)
+				{
+					// No spouse, create a fictive spouse to reserve space
+					next_spou.push(svgChildren.length);
+					calcDscSubSpou(-1, fdx, lev, print_spouses);
+					nb_spou = 1;
 				}
 			}
 			for (var i = 0; i < getChil(fdx).length; i++)
 			{
 				next.push(svgChildren.length);
 				var elt_next = calcDscSub(getChil(fdx)[i], lev + 1, print_spouses);
+				elt_next[SVGELT_FDX_CHILD] = fdx;
 				nb_chil += elt_next[SVGELT_NB];
 			}
 			var nbmax = Math.max(nb_spou, nb_chil);
@@ -1435,25 +1563,55 @@ function buildDscTreeHSpouSub(x_elt, a, b, nb_gens, offsetx, print_center, paren
 		// Draw links
 		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x + box_width, y].join(',') + ');');
 	}
-	var spou_offset = (svgElts[x_elt][SVGELT_NEXT_SPOU].length > 0) ? -box_width : 0;
-	var c = a;
-	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
+	// var spou_offset = (svgElts[x_elt][SVGELT_NEXT_SPOU].length > 0) ? -box_width : 0;
+	// var c = a;
+	// for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
+	// {
+		// var x_next = svgElts[x_elt][SVGELT_NEXT][i];
+		// var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+		// buildDscTreeHSpouSub(x_next, c, c + da, nb_gens, offsetx, print_center, x + spou_offset, y);
+		// c += da;
+	// }
+	// c = a;
+	// for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i++)
+	// {
+		// var x_next = svgElts[x_elt][SVGELT_NEXT_SPOU][i];
+		// var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+		// if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
+		// {
+			// svgElts[x_next][SVGELT_CMD].push('rectangle(' + [x - box_width, y - box_height / 2.0, box_width, box_height, x_next, lev].join(',') + ');');
+		// }
+		// c += da;
+	// }
+	var c_spou = a;
+	var i_chil = 0;
+	var x_spou = x - box_width * (1.0 + linkRatio);
+	var box_height_spou = Math.min(box_width / txtRatioMin, minSizeDsc[lev + 1] * box_width / txtRatioMax);
+	for (var i_spou = 0; i_spou < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i_spou++)
 	{
-		var x_next = svgElts[x_elt][SVGELT_NEXT][i];
-		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		buildDscTreeHSpouSub(x_next, c, c + da, nb_gens, offsetx, print_center, x + spou_offset, y);
-		c += da;
-	}
-	c = a;
-	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i++)
-	{
-		var x_next = svgElts[x_elt][SVGELT_NEXT_SPOU][i];
-		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
+		var x_next_spou = svgElts[x_elt][SVGELT_NEXT_SPOU][i_spou];
+		var da_spou = 1.0 * (b - a) * svgElts[x_next_spou][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+		var y_spou = (c_spou + da_spou / 2.0) * box_width / txtRatioMax;
+		var p_x = x - box_width;
+		var p_y = y;
+		if (svgElts[x_next_spou][SVGELT_IDX] >= 0)
 		{
-			svgElts[x_next][SVGELT_CMD].push('rectangle(' + [x - box_width, y - box_height / 2.0, box_width, box_height, x_next, lev].join(',') + ');');
+			p_x = x_spou;
+			p_y = y_spou;
+			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + [x_spou, y_spou - box_height_spou / 2.0, box_width, box_height_spou, x_next_spou, lev].join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('line(' + [x, y, x_spou + box_width, y_spou].join(',') + ');');
 		}
-		c += da;
+		var c_chil = c_spou;
+		while (i_chil < svgElts[x_elt][SVGELT_NEXT].length)
+		{
+			var x_next_chil = svgElts[x_elt][SVGELT_NEXT][i_chil];
+			if (svgElts[x_next_chil][SVGELT_FDX_CHILD] != svgElts[x_next_spou][SVGELT_FDX] && svgElts[x_next_chil][SVGELT_IDX] != SVGIDX_SEPARATOR) break;
+			var da = 1.0 * (b - a) * svgElts[x_next_chil][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+			buildDscTreeHSpouSub(x_next_chil, c_chil, c_chil + da, nb_gens, offsetx, print_center, p_x, p_y);
+			c_chil += da;
+			i_chil += 1;
+		}
+		c_spou += da_spou;
 	}
 }
 
@@ -1663,25 +1821,35 @@ function buildDscTreeVSpouSub(x_elt, a, b, nb_gens, offsety, print_center, paren
 		// Draw links
 		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x, y].join(',') + ');');
 	}
-	var spou_offset = (svgElts[x_elt][SVGELT_NEXT_SPOU].length > 0) ? box_height : 0;
-	var c = a;
-	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
+	var c_spou = a;
+	var i_chil = 0;
+	var y_spou = y + box_height * (1.0 + linkRatio) + box_height;
+	var box_width_spou = Math.min(box_height * txtRatioMax, minSizeDsc[lev + 1] * box_height * txtRatioMin);
+	for (var i_spou = 0; i_spou < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i_spou++)
 	{
-		var x_next = svgElts[x_elt][SVGELT_NEXT][i];
-		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		buildDscTreeVSpouSub(x_next, c, c + da, nb_gens, offsety, print_center, x, y + box_height + spou_offset);
-		c += da;
-	}
-	c = a;
-	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i++)
-	{
-		var x_next = svgElts[x_elt][SVGELT_NEXT_SPOU][i];
-		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
+		var x_next_spou = svgElts[x_elt][SVGELT_NEXT_SPOU][i_spou];
+		var da_spou = 1.0 * (b - a) * svgElts[x_next_spou][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+		var x_spou = (c_spou + da_spou / 2.0) * coordX / svgElts[0][SVGELT_NB];
+		var p_x = x;
+		var p_y = y + box_height;
+		if (svgElts[x_next_spou][SVGELT_IDX] >= 0)
 		{
-			svgElts[x_next][SVGELT_CMD].push('rectangle(' + [x - box_width / 2.0, y + box_height, box_width, box_height, x_next, lev].join(',') + ');');
+			p_x = x_spou;
+			p_y = y_spou;
+			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + [x_spou - box_width_spou / 2.0, y_spou - box_height, box_width_spou, box_height, x_next_spou, lev].join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('line(' + [x, y + box_height, x_spou, y_spou - box_height].join(',') + ');');
 		}
-		c += da;
+		var c_chil = c_spou;
+		while (i_chil < svgElts[x_elt][SVGELT_NEXT].length)
+		{
+			var x_next_chil = svgElts[x_elt][SVGELT_NEXT][i_chil];
+			if (svgElts[x_next_chil][SVGELT_FDX_CHILD] != svgElts[x_next_spou][SVGELT_FDX] && svgElts[x_next_chil][SVGELT_IDX] != SVGIDX_SEPARATOR) break;
+			var da = 1.0 * (b - a) * svgElts[x_next_chil][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
+			buildDscTreeVSpouSub(x_next_chil, c_chil, c_chil + da, nb_gens, offsety, print_center, p_x, p_y);
+			c_chil += da;
+			i_chil += 1;
+		}
+		c_spou += da_spou;
 	}
 }
 

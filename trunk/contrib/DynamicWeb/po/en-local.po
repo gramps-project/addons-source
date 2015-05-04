@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 41\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-17 09:55+0100\n"
-"PO-Revision-Date: 2015-02-17 09:55+0100\n"
+"POT-Creation-Date: 2015-05-04 20:53+0200\n"
+"PO-Revision-Date: 2015-05-04 21:00+0100\n"
 "Last-Translator: U-SDS\\F551960 <pierre.belissent@gmail.com>\n"
 "Language-Team: English <en@translate.freefriends.org>\n"
 "Language: en\n"
@@ -16,290 +16,286 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
 
-#: dynamicweb/dynamicweb.gpr.py:15
+#: DynamicWeb/dynamicweb.gpr.py:15
 msgid "Dynamic Web Report"
 msgstr "Dynamic Web Report"
 
-#: dynamicweb/dynamicweb.gpr.py:16
+#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Produces dynamic web pages for the database"
 msgstr "Produces dynamic web pages for the database"
 
-#: dynamicweb/dynamicweb.py:195
+#: DynamicWeb/dynamicweb.py:228 DynamicWeb/dynamicweb.py:2105
 msgid "Person page"
 msgstr "Person page"
 
-#: dynamicweb/dynamicweb.py:195 dynamicweb/dynamicweb.py:2019
+#: DynamicWeb/dynamicweb.py:228 DynamicWeb/dynamicweb.py:2107
 msgid "Person"
 msgstr "Person"
 
-#: dynamicweb/dynamicweb.py:196
+#: DynamicWeb/dynamicweb.py:229
 msgid "Surnames index page"
 msgstr "Surnames index page"
 
-#: dynamicweb/dynamicweb.py:196
+#: DynamicWeb/dynamicweb.py:229
 msgid "Surnames"
 msgstr "Surnames"
 
-#: dynamicweb/dynamicweb.py:197
+#: DynamicWeb/dynamicweb.py:230
 msgid "Individuals index page"
 msgstr "Individuals index page"
 
-#: dynamicweb/dynamicweb.py:197
+#: DynamicWeb/dynamicweb.py:230
 msgid "Individuals"
 msgstr "Individuals"
 
-#: dynamicweb/dynamicweb.py:198
+#: DynamicWeb/dynamicweb.py:231
 msgid "Families index page"
 msgstr "Families index page"
 
-#: dynamicweb/dynamicweb.py:198
+#: DynamicWeb/dynamicweb.py:231
 msgid "Families"
 msgstr "Families"
 
-#: dynamicweb/dynamicweb.py:199
+#: DynamicWeb/dynamicweb.py:232
 msgid "Sources index page"
 msgstr "Sources index page"
 
-#: dynamicweb/dynamicweb.py:199 dynamicweb/dynamicweb.py:2045
+#: DynamicWeb/dynamicweb.py:232 DynamicWeb/dynamicweb.py:2135
 msgid "Sources"
 msgstr "Sources"
 
-#: dynamicweb/dynamicweb.py:200
+#: DynamicWeb/dynamicweb.py:233
 msgid "Media index page"
 msgstr "Media index page"
 
-#: dynamicweb/dynamicweb.py:200 dynamicweb/dynamicweb.py:2007
+#: DynamicWeb/dynamicweb.py:233 DynamicWeb/dynamicweb.py:2094
 msgid "Media"
 msgstr "Media"
 
-#: dynamicweb/dynamicweb.py:201
+#: DynamicWeb/dynamicweb.py:234
 msgid "Places index page"
 msgstr "Places index page"
 
-#: dynamicweb/dynamicweb.py:201
+#: DynamicWeb/dynamicweb.py:234
 msgid "Places"
 msgstr "Places"
 
-#: dynamicweb/dynamicweb.py:202
+#: DynamicWeb/dynamicweb.py:235
 msgid "Addresses page"
 msgstr "Addresses page"
 
-#: dynamicweb/dynamicweb.py:202 dynamicweb/dynamicweb.py:1963
+#: DynamicWeb/dynamicweb.py:235 DynamicWeb/dynamicweb.py:2050
 msgid "Addresses"
 msgstr "Addresses"
 
-#: dynamicweb/dynamicweb.py:203
+#: DynamicWeb/dynamicweb.py:236
 msgid "Repositories index page"
 msgstr "Repositories index page"
 
-#: dynamicweb/dynamicweb.py:203 dynamicweb/dynamicweb.py:2032
+#: DynamicWeb/dynamicweb.py:236 DynamicWeb/dynamicweb.py:2120
 msgid "Repositories"
 msgstr "Repositories"
 
-#: dynamicweb/dynamicweb.py:204
+#: DynamicWeb/dynamicweb.py:237
 msgid "SVG graphical tree"
 msgstr "SVG graphical tree"
 
-#: dynamicweb/dynamicweb.py:204
+#: DynamicWeb/dynamicweb.py:237
 msgid "Tree"
 msgstr "Tree"
 
-#: dynamicweb/dynamicweb.py:206 dynamicweb/dynamicweb.py:3311
+#: DynamicWeb/dynamicweb.py:239 DynamicWeb/dynamicweb.py:3476
 #, python-format
 msgid "Custom page %(index)i"
 msgstr "Custom page %(index)i"
 
-#: dynamicweb/dynamicweb.py:206
+#: DynamicWeb/dynamicweb.py:239
 msgid "Custom"
 msgstr "Custom"
 
-#: dynamicweb/dynamicweb.py:225
+#: DynamicWeb/dynamicweb.py:258
 msgid "Ascending tree (horizontal)"
 msgstr "Ascending tree (horizontal)"
 
-#: dynamicweb/dynamicweb.py:226
+#: DynamicWeb/dynamicweb.py:259
 msgid "Ascending tree (vertical)"
 msgstr "Ascending tree (vertical)"
 
-#: dynamicweb/dynamicweb.py:227
+#: DynamicWeb/dynamicweb.py:260
 msgid "Ascending tree (circle)"
 msgstr "Ascending tree (circle)"
 
-#: dynamicweb/dynamicweb.py:228
+#: DynamicWeb/dynamicweb.py:261
 msgid "Ascending tree (circle, proportional size)"
 msgstr "Ascending tree (circle, proportional size)"
 
-#: dynamicweb/dynamicweb.py:229
+#: DynamicWeb/dynamicweb.py:262
 msgid "Ascending tree (half-circle, fixed size)"
 msgstr "Ascending tree (half-circle, fixed size)"
 
-#: dynamicweb/dynamicweb.py:230
+#: DynamicWeb/dynamicweb.py:263
 msgid "Ascending tree (half-circle, proportional size)"
 msgstr "Ascending tree (half-circle, proportional size)"
 
-#: dynamicweb/dynamicweb.py:231
+#: DynamicWeb/dynamicweb.py:264
 msgid "Descending tree (horizontal)"
 msgstr "Descending tree (horizontal)"
 
-#: dynamicweb/dynamicweb.py:232
+#: DynamicWeb/dynamicweb.py:265
 msgid "Descending tree (horizontal, with spouses)"
 msgstr "Descending tree (horizontal, with spouses)"
 
-#: dynamicweb/dynamicweb.py:233
+#: DynamicWeb/dynamicweb.py:266
 msgid "Descending tree (vertical)"
 msgstr "Descending tree (vertical)"
 
-#: dynamicweb/dynamicweb.py:234
+#: DynamicWeb/dynamicweb.py:267
 msgid "Descending tree (vertical, with spouses)"
 msgstr "Descending tree (vertical, with spouses)"
 
-#: dynamicweb/dynamicweb.py:235
+#: DynamicWeb/dynamicweb.py:268
 msgid "Descending tree (circle)"
 msgstr "Descending tree (circle)"
 
-#: dynamicweb/dynamicweb.py:236
+#: DynamicWeb/dynamicweb.py:269
 msgid "Descending tree (circle, with spouses)"
 msgstr "Descending tree (circle, with spouses)"
 
-#: dynamicweb/dynamicweb.py:237
+#: DynamicWeb/dynamicweb.py:270
 msgid "Descending tree (half-circle)"
 msgstr "Descending tree (half-circle)"
 
-#: dynamicweb/dynamicweb.py:238
+#: DynamicWeb/dynamicweb.py:271
 msgid "Descending tree (half-circle, with spouses)"
 msgstr "Descending tree (half-circle, with spouses)"
 
-#: dynamicweb/dynamicweb.py:239
+#: DynamicWeb/dynamicweb.py:272
 msgid "Ascending and descending tree (horizontal)"
 msgstr "Ascending and descending tree (horizontal)"
 
-#: dynamicweb/dynamicweb.py:240
+#: DynamicWeb/dynamicweb.py:273
 msgid "Ascending and descending tree (horizontal, with spouses)"
 msgstr "Ascending and descending tree (horizontal, with spouses)"
 
-#: dynamicweb/dynamicweb.py:241
+#: DynamicWeb/dynamicweb.py:274
 msgid "Ascending and descending tree (vertical)"
 msgstr "Ascending and descending tree (vertical)"
 
-#: dynamicweb/dynamicweb.py:242
+#: DynamicWeb/dynamicweb.py:275
 msgid "Ascending and descending tree (vertical, with spouses)"
 msgstr "Ascending and descending tree (vertical, with spouses)"
 
-#: dynamicweb/dynamicweb.py:243
+#: DynamicWeb/dynamicweb.py:276
 msgid "Ascending and descending tree (circle)"
 msgstr "Ascending and descending tree (circle)"
 
-#: dynamicweb/dynamicweb.py:244
+#: DynamicWeb/dynamicweb.py:277
 msgid "Ascending and descending tree (circle, with spouses)"
 msgstr "Ascending and descending tree (circle, with spouses)"
 
-#: dynamicweb/dynamicweb.py:245
+#: DynamicWeb/dynamicweb.py:278
 msgid "Ascending and descending tree (circle, proportional size)"
 msgstr "Ascending and descending tree (circle, proportional size)"
 
-#: dynamicweb/dynamicweb.py:246
+#: DynamicWeb/dynamicweb.py:279
 msgid "Ascending and descending tree (circle, proportional size, with spouses)"
 msgstr ""
 "Ascending and descending tree (circle, proportional size, with spouses)"
 
-#: dynamicweb/dynamicweb.py:255
-msgid "Default template"
-msgstr "Default template"
+#: DynamicWeb/dynamicweb.py:288
+msgid "Default"
+msgstr "Default"
 
-#: dynamicweb/dynamicweb.py:256
-msgid "Mayence"
-msgstr "Mayence"
+#: DynamicWeb/dynamicweb.py:289
+msgid "Mainz"
+msgstr "Mainz"
 
-#: dynamicweb/dynamicweb.py:481
+#: DynamicWeb/dynamicweb.py:514
 #, python-format
 msgid "Neither %(current)s nor %(parent)s are directories"
 msgstr "Neither %(current)s nor %(parent)s are directories"
 
-#: dynamicweb/dynamicweb.py:489 dynamicweb/dynamicweb.py:494
+#: DynamicWeb/dynamicweb.py:522 DynamicWeb/dynamicweb.py:527
 #, python-format
 msgid "Could not create the directory: %(path)s"
 msgstr "Could not create the directory: %(path)s"
 
-#: dynamicweb/dynamicweb.py:515 dynamicweb/dynamicweb.py:2609
-#: dynamicweb/dynamicweb.py:2615
+#: DynamicWeb/dynamicweb.py:551 DynamicWeb/dynamicweb.py:2772
+#: DynamicWeb/dynamicweb.py:2778
 msgid "Dynamic Web Site Report"
 msgstr "Dynamic Web Site Report"
 
-#: dynamicweb/dynamicweb.py:515
+#: DynamicWeb/dynamicweb.py:551
 msgid "Exporting family tree data ..."
 msgstr "Exporting family tree data ..."
 
-#: dynamicweb/dynamicweb.py:972
+#: DynamicWeb/dynamicweb.py:1017
 msgid "Author"
 msgstr "Author"
 
-#: dynamicweb/dynamicweb.py:973
+#: DynamicWeb/dynamicweb.py:1018
 msgid "Abbreviation"
 msgstr "Abbreviation"
 
-#: dynamicweb/dynamicweb.py:974
+#: DynamicWeb/dynamicweb.py:1019
 msgid "Publication information"
 msgstr "Publication information"
 
-#: dynamicweb/dynamicweb.py:1037 dynamicweb/dynamicweb.py:1982
+#: DynamicWeb/dynamicweb.py:1088 DynamicWeb/dynamicweb.py:2068
 msgid "Date"
 msgstr "Date"
 
-#: dynamicweb/dynamicweb.py:1038
+#: DynamicWeb/dynamicweb.py:1089
 msgid "Page"
 msgstr "Page"
 
-#: dynamicweb/dynamicweb.py:1039
+#: DynamicWeb/dynamicweb.py:1090
 msgid "Confidence"
 msgstr "Confidence"
 
-#: dynamicweb/dynamicweb.py:1310
+#: DynamicWeb/dynamicweb.py:1374
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: dynamicweb/dynamicweb.py:1551
-#, python-format
-msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-msgstr "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-
-#: dynamicweb/dynamicweb.py:1560
+#: DynamicWeb/dynamicweb.py:1611
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "Impossible to convert \"%(path)s\" to a relative path."
 
-#: dynamicweb/dynamicweb.py:1817
+#: DynamicWeb/dynamicweb.py:1904
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
 "The pages configuration is not valid: several pages have the same content"
 
-#: dynamicweb/dynamicweb.py:1873
+#: DynamicWeb/dynamicweb.py:1960
 msgid "Search results"
 msgstr "Search results"
 
-#: dynamicweb/dynamicweb.py:1956
+#: DynamicWeb/dynamicweb.py:2043
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtered from _MAX_ total entries)"
 
-#: dynamicweb/dynamicweb.py:1957
+#: DynamicWeb/dynamicweb.py:2044
 msgid "(sort by name)"
 msgstr "(sort by name)"
 
-#: dynamicweb/dynamicweb.py:1958
+#: DynamicWeb/dynamicweb.py:2045
 msgid "(sort by quantity)"
 msgstr "(sort by quantity)"
 
-#: dynamicweb/dynamicweb.py:1959
+#: DynamicWeb/dynamicweb.py:2046
 msgid ": activate to sort column ascending"
 msgstr ": activate to sort column ascending"
 
-#: dynamicweb/dynamicweb.py:1960
+#: DynamicWeb/dynamicweb.py:2047
 msgid ": activate to sort column descending"
 msgstr ": activate to sort column descending"
 
-#: dynamicweb/dynamicweb.py:1961
+#: DynamicWeb/dynamicweb.py:2048
 msgid ""
 "<p>Click on a person to center the graph on this person.<br>When clicking on "
 "the center person, the person page is shown.<p>The type of graph could be "
@@ -315,351 +311,359 @@ msgstr ""
 "wheel or the buttons to zoom in and out.<p>The graph could also be shown "
 "fullscreen."
 
-#: dynamicweb/dynamicweb.py:1962
+#: DynamicWeb/dynamicweb.py:2049
 msgid "Address"
 msgstr "Address"
 
-#: dynamicweb/dynamicweb.py:1964
+#: DynamicWeb/dynamicweb.py:2051
 msgid "Age at Death"
 msgstr "Age at Death"
 
-#: dynamicweb/dynamicweb.py:1965
+#: DynamicWeb/dynamicweb.py:2052
 msgid "Alternate Name"
 msgstr "Alternate Name"
 
-#: dynamicweb/dynamicweb.py:1966
-msgid "Ancestry"
-msgstr "Ancestry"
+#: DynamicWeb/dynamicweb.py:2053
+msgid "Ancestors"
+msgstr "Ancestors"
 
-#: dynamicweb/dynamicweb.py:1967
+#: DynamicWeb/dynamicweb.py:2054
 msgid "Associations"
 msgstr "Associations"
 
-#: dynamicweb/dynamicweb.py:1968
+#: DynamicWeb/dynamicweb.py:2055
 msgid "Attribute"
 msgstr "Attribute"
 
-#: dynamicweb/dynamicweb.py:1969
+#: DynamicWeb/dynamicweb.py:2056
 msgid "Attributes"
 msgstr "Attributes"
 
-#: dynamicweb/dynamicweb.py:1970
+#: DynamicWeb/dynamicweb.py:2057
 msgid "Birth"
 msgstr "Birth"
 
-#: dynamicweb/dynamicweb.py:1971
-msgid "Brothers and Sisters"
-msgstr "Brothers and Sisters"
-
-#: dynamicweb/dynamicweb.py:1972
+#: DynamicWeb/dynamicweb.py:2058
 msgid "Call Name"
 msgstr "Call Name"
 
-#: dynamicweb/dynamicweb.py:1973
+#: DynamicWeb/dynamicweb.py:2059
 msgid "Call Number"
 msgstr "Call Number"
 
-#: dynamicweb/dynamicweb.py:1974
+#: DynamicWeb/dynamicweb.py:2060
 msgid "Children"
 msgstr "Children"
 
-#: dynamicweb/dynamicweb.py:1975
+#: DynamicWeb/dynamicweb.py:2061
 msgid "Church Parish"
 msgstr "Church Parish"
 
-#: dynamicweb/dynamicweb.py:1976
+#: DynamicWeb/dynamicweb.py:2062
 msgid "Citation"
 msgstr "Citation"
 
-#: dynamicweb/dynamicweb.py:1977
+#: DynamicWeb/dynamicweb.py:2063
 msgid "Citations"
 msgstr "Citations"
 
-#: dynamicweb/dynamicweb.py:1978
+#: DynamicWeb/dynamicweb.py:2064
 msgid "City"
 msgstr "City"
 
-#: dynamicweb/dynamicweb.py:1979
+#: DynamicWeb/dynamicweb.py:2065
 msgid "Click on the map to show it fullscreen"
 msgstr "Click on the map to show it fullscreen"
 
-#: dynamicweb/dynamicweb.py:1980
+#: DynamicWeb/dynamicweb.py:2066
 msgid "Country"
 msgstr "Country"
 
-#: dynamicweb/dynamicweb.py:1981
+#: DynamicWeb/dynamicweb.py:2067
 msgid "County"
 msgstr "County"
 
-#: dynamicweb/dynamicweb.py:1983
+#: DynamicWeb/dynamicweb.py:2069
 msgid "Death"
 msgstr "Death"
 
-#: dynamicweb/dynamicweb.py:1984
+#: DynamicWeb/dynamicweb.py:2070
 msgid "Descendants"
 msgstr "Descendants"
 
-#: dynamicweb/dynamicweb.py:1985
+#: DynamicWeb/dynamicweb.py:2071
 msgid "Description"
 msgstr "Description"
 
-#: dynamicweb/dynamicweb.py:1986
+#: DynamicWeb/dynamicweb.py:2072
 msgid "Event"
 msgstr "Event"
 
-#: dynamicweb/dynamicweb.py:1987
+#: DynamicWeb/dynamicweb.py:2073
 msgid "Events"
 msgstr "Events"
 
-#: dynamicweb/dynamicweb.py:1988
+#: DynamicWeb/dynamicweb.py:2074
+msgid "Expand"
+msgstr "Expand"
+
+#: DynamicWeb/dynamicweb.py:2075
 msgid "Families Index"
 msgstr "Families Index"
 
-#: dynamicweb/dynamicweb.py:1989
+#: DynamicWeb/dynamicweb.py:2076
 msgid "Family Nick Name"
 msgstr "Family Nick Name"
 
-#: dynamicweb/dynamicweb.py:1990
+#: DynamicWeb/dynamicweb.py:2077
 msgid "Father"
 msgstr "Father"
 
-#: dynamicweb/dynamicweb.py:1991
+#: DynamicWeb/dynamicweb.py:2078
 msgid "Female"
 msgstr "Female"
 
-#: dynamicweb/dynamicweb.py:1992
+#: DynamicWeb/dynamicweb.py:2079
 msgid "Gender"
 msgstr "Gender"
 
-#: dynamicweb/dynamicweb.py:1993
+#: DynamicWeb/dynamicweb.py:2080
 msgid "Graph help"
 msgstr "Graph help"
 
-#: dynamicweb/dynamicweb.py:1994
+#: DynamicWeb/dynamicweb.py:2081
 msgid "Latitude"
 msgstr "Latitude"
 
-#: dynamicweb/dynamicweb.py:1995
+#: DynamicWeb/dynamicweb.py:2082
 msgid "Link"
 msgstr "Link"
 
-#: dynamicweb/dynamicweb.py:1996
+#: DynamicWeb/dynamicweb.py:2083
 msgid "Loading..."
 msgstr "Loading..."
 
-#: dynamicweb/dynamicweb.py:1997
+#: DynamicWeb/dynamicweb.py:2084
 msgid "Locality"
 msgstr "Locality"
 
-#: dynamicweb/dynamicweb.py:1998
+#: DynamicWeb/dynamicweb.py:2085
 msgid "Location"
 msgstr "Location"
 
-#: dynamicweb/dynamicweb.py:1999
+#: DynamicWeb/dynamicweb.py:2086
 msgid "Longitude"
 msgstr "Longitude"
 
-#: dynamicweb/dynamicweb.py:2000
+#: DynamicWeb/dynamicweb.py:2087
 msgid "Male"
 msgstr "Male"
 
-#: dynamicweb/dynamicweb.py:2001
+#: DynamicWeb/dynamicweb.py:2088
 msgid "Map"
 msgstr "Map"
 
-#: dynamicweb/dynamicweb.py:2002
+#: DynamicWeb/dynamicweb.py:2089
 msgid "Marriage"
 msgstr "Marriage"
 
-#: dynamicweb/dynamicweb.py:2003
+#: DynamicWeb/dynamicweb.py:2090
 msgid "Maximize"
 msgstr "Maximize"
 
-#: dynamicweb/dynamicweb.py:2004
+#: DynamicWeb/dynamicweb.py:2091
 msgid "Media found:"
 msgstr "Media found:"
 
-#: dynamicweb/dynamicweb.py:2005
+#: DynamicWeb/dynamicweb.py:2092
 msgid "Media Index"
 msgstr "Media Index"
 
-#: dynamicweb/dynamicweb.py:2006
+#: DynamicWeb/dynamicweb.py:2093
 msgid "Media Type"
 msgstr "Media Type"
 
-#: dynamicweb/dynamicweb.py:2008
+#: DynamicWeb/dynamicweb.py:2095
 msgid "Mother"
 msgstr "Mother"
 
-#: dynamicweb/dynamicweb.py:2009
+#: DynamicWeb/dynamicweb.py:2096
 msgid "Name"
 msgstr "Name"
 
-#: dynamicweb/dynamicweb.py:2010
+#: DynamicWeb/dynamicweb.py:2097
 msgid "Nick Name"
 msgstr "Nick Name"
 
-#: dynamicweb/dynamicweb.py:2011
+#: DynamicWeb/dynamicweb.py:2098
 msgid "No data available in table"
 msgstr "No data available in table"
 
-#: dynamicweb/dynamicweb.py:2012
+#: DynamicWeb/dynamicweb.py:2099
 msgid "No matching records found"
 msgstr "No matching records found"
 
-#: dynamicweb/dynamicweb.py:2013
+#: DynamicWeb/dynamicweb.py:2100
 msgid "No matching surname."
 msgstr "No matching surname."
 
-#: dynamicweb/dynamicweb.py:2014
+#: DynamicWeb/dynamicweb.py:2101
 msgid "None."
 msgstr "None."
 
-#: dynamicweb/dynamicweb.py:2015
+#: DynamicWeb/dynamicweb.py:2102
 msgid "Notes"
 msgstr "Notes"
 
-#: dynamicweb/dynamicweb.py:2016
+#: DynamicWeb/dynamicweb.py:2103
 msgid "Parents"
 msgstr "Parents"
 
-#: dynamicweb/dynamicweb.py:2017
+#: DynamicWeb/dynamicweb.py:2104
 msgid "Path"
 msgstr "Path"
 
-#: dynamicweb/dynamicweb.py:2018
+#: DynamicWeb/dynamicweb.py:2106
 msgid "Person to search for"
 msgstr "Person to search for"
 
-#: dynamicweb/dynamicweb.py:2020
+#: DynamicWeb/dynamicweb.py:2108
 msgid "Persons found:"
 msgstr "Persons found:"
 
-#: dynamicweb/dynamicweb.py:2021
+#: DynamicWeb/dynamicweb.py:2109
 msgid "Persons Index"
 msgstr "Persons Index"
 
-#: dynamicweb/dynamicweb.py:2022
+#: DynamicWeb/dynamicweb.py:2110
 msgid "Phone"
 msgstr "Phone"
 
-#: dynamicweb/dynamicweb.py:2023
+#: DynamicWeb/dynamicweb.py:2111
 msgid "Place"
 msgstr "Place"
 
-#: dynamicweb/dynamicweb.py:2024
+#: DynamicWeb/dynamicweb.py:2112
 msgid "Places found:"
 msgstr "Places found:"
 
-#: dynamicweb/dynamicweb.py:2025
+#: DynamicWeb/dynamicweb.py:2113
 msgid "Places Index"
 msgstr "Places Index"
 
-#: dynamicweb/dynamicweb.py:2026
+#: DynamicWeb/dynamicweb.py:2114
 msgid "Postal Code"
 msgstr "Postal Code"
 
-#: dynamicweb/dynamicweb.py:2027
+#: DynamicWeb/dynamicweb.py:2115
 msgid "Processing..."
 msgstr "Processing..."
 
-#: dynamicweb/dynamicweb.py:2028
+#: DynamicWeb/dynamicweb.py:2116
 msgid "References"
 msgstr "References"
 
-#: dynamicweb/dynamicweb.py:2029
+#: DynamicWeb/dynamicweb.py:2117
 msgid "Relationship to Father"
 msgstr "Relationship to Father"
 
-#: dynamicweb/dynamicweb.py:2030
+#: DynamicWeb/dynamicweb.py:2118
 msgid "Relationship to Mother"
 msgstr "Relationship to Mother"
 
-#: dynamicweb/dynamicweb.py:2031
+#: DynamicWeb/dynamicweb.py:2119
 msgid "Relationship"
 msgstr "Relationship"
 
-#: dynamicweb/dynamicweb.py:2033
+#: DynamicWeb/dynamicweb.py:2121
 msgid "Repository"
 msgstr "Repository"
 
-#: dynamicweb/dynamicweb.py:2034
+#: DynamicWeb/dynamicweb.py:2122
+msgid "Restore"
+msgstr "Restore"
+
+#: DynamicWeb/dynamicweb.py:2123
 msgid "Search:"
 msgstr "Search:"
 
-#: dynamicweb/dynamicweb.py:2035
+#: DynamicWeb/dynamicweb.py:2124
 msgid "Select the number of ascending generations"
 msgstr "Select the number of ascending generations"
 
-#: dynamicweb/dynamicweb.py:2036
+#: DynamicWeb/dynamicweb.py:2125
 msgid "Select the number of descending generations"
 msgstr "Select the number of descending generations"
 
-#: dynamicweb/dynamicweb.py:2037
+#: DynamicWeb/dynamicweb.py:2126
 msgid "Select the type of graph"
 msgstr "Select the type of graph"
 
-#: dynamicweb/dynamicweb.py:2038
+#: DynamicWeb/dynamicweb.py:2127
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr "Several matches.<br>Precise your search or choose in the lists below."
 
-#: dynamicweb/dynamicweb.py:2039
+#: DynamicWeb/dynamicweb.py:2128
 msgid "Show _MENU_ entries"
 msgstr "Show _MENU_ entries"
 
-#: dynamicweb/dynamicweb.py:2040
+#: DynamicWeb/dynamicweb.py:2129
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Showing 0 to 0 of 0 entries"
 
-#: dynamicweb/dynamicweb.py:2041
+#: DynamicWeb/dynamicweb.py:2130
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Showing _START_ to _END_ of _TOTAL_ entries"
 
-#: dynamicweb/dynamicweb.py:2042
+#: DynamicWeb/dynamicweb.py:2131
+msgid "Siblings"
+msgstr "Siblings"
+
+#: DynamicWeb/dynamicweb.py:2132
 msgid "Source"
 msgstr "Source"
 
-#: dynamicweb/dynamicweb.py:2043
+#: DynamicWeb/dynamicweb.py:2133
 msgid "Sources found:"
 msgstr "Sources found:"
 
-#: dynamicweb/dynamicweb.py:2044
+#: DynamicWeb/dynamicweb.py:2134
 msgid "Sources Index"
 msgstr "Sources Index"
 
-#: dynamicweb/dynamicweb.py:2046
+#: DynamicWeb/dynamicweb.py:2136
 msgid "Spouses"
 msgstr "Spouses"
 
-#: dynamicweb/dynamicweb.py:2047
+#: DynamicWeb/dynamicweb.py:2137
 msgid "State/ Province"
 msgstr "State/ Province"
 
-#: dynamicweb/dynamicweb.py:2048
+#: DynamicWeb/dynamicweb.py:2138
 msgid "Street"
 msgstr "Street"
 
-#: dynamicweb/dynamicweb.py:2049
+#: DynamicWeb/dynamicweb.py:2139
 msgid "Surnames Index"
 msgstr "Surnames Index"
 
-#: dynamicweb/dynamicweb.py:2050
+#: DynamicWeb/dynamicweb.py:2140
 msgid "There is no matching name."
 msgstr "There is no matching name."
 
-#: dynamicweb/dynamicweb.py:2051
+#: DynamicWeb/dynamicweb.py:2141
 msgid "Title"
 msgstr "Title"
 
-#: dynamicweb/dynamicweb.py:2052
+#: DynamicWeb/dynamicweb.py:2142
 msgid "Type"
 msgstr "Type"
 
-#: dynamicweb/dynamicweb.py:2053
+#: DynamicWeb/dynamicweb.py:2143
 msgid "Unknown"
 msgstr "Unknown"
 
-#: dynamicweb/dynamicweb.py:2054
+#: DynamicWeb/dynamicweb.py:2144
 msgid ""
 "Use the search box above in order to find a person.<br>Women are listed with "
 "their maiden name."
@@ -667,52 +671,65 @@ msgstr ""
 "Use the search box above in order to find a person.<br>Women are listed with "
 "their maiden name."
 
-#: dynamicweb/dynamicweb.py:2055
+#: DynamicWeb/dynamicweb.py:2145
 msgid "Used for family"
 msgstr "Used for family"
 
-#: dynamicweb/dynamicweb.py:2056
+#: DynamicWeb/dynamicweb.py:2146
 msgid "Used for media"
 msgstr "Used for media"
 
-#: dynamicweb/dynamicweb.py:2057
+#: DynamicWeb/dynamicweb.py:2147
 msgid "Used for person"
 msgstr "Used for person"
 
-#: dynamicweb/dynamicweb.py:2058
+#: DynamicWeb/dynamicweb.py:2148
 msgid "Used for place"
 msgstr "Used for place"
 
-#: dynamicweb/dynamicweb.py:2059
+#: DynamicWeb/dynamicweb.py:2149
 msgid "Used for source"
 msgstr "Used for source"
 
-#: dynamicweb/dynamicweb.py:2060
+#: DynamicWeb/dynamicweb.py:2150
 msgid "Value"
 msgstr "Value"
 
-#: dynamicweb/dynamicweb.py:2061
+#: DynamicWeb/dynamicweb.py:2151
 msgid "Web Link"
 msgstr "Web Link"
 
-#: dynamicweb/dynamicweb.py:2062
+#: DynamicWeb/dynamicweb.py:2152
 msgid "Web Links"
 msgstr "Web Links"
 
-#: dynamicweb/dynamicweb.py:2063
+#: DynamicWeb/dynamicweb.py:2153
 msgid "Without surname"
 msgstr "Without surname"
 
-#: dynamicweb/dynamicweb.py:2306
+#: DynamicWeb/dynamicweb.py:2154
+msgid "Zoom in"
+msgstr "Zoom in"
+
+#: DynamicWeb/dynamicweb.py:2155
+msgid "Zoom out"
+msgstr "Zoom out"
+
+#: DynamicWeb/dynamicweb.py:2395
 #, python-format
 msgid "Copying error: %(error)s"
 msgstr "Copying error: %(error)s"
 
-#: dynamicweb/dynamicweb.py:2309
+#: DynamicWeb/dynamicweb.py:2396
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+
+#: DynamicWeb/dynamicweb.py:2399
 msgid "Possible destination error"
 msgstr "Possible destination error"
 
-#: dynamicweb/dynamicweb.py:2310
+#: DynamicWeb/dynamicweb.py:2400
 msgid ""
 "You appear to have set your target directory to a directory used for data "
 "storage. This could create problems with file management. It is recommended "
@@ -724,60 +741,68 @@ msgstr ""
 "that you consider using a different directory to store your generated web "
 "pages."
 
-#: dynamicweb/dynamicweb.py:2337
+#: DynamicWeb/dynamicweb.py:2427
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
 msgstr "Unable to copy web site template files from \"%(path)s\""
 
-#: dynamicweb/dynamicweb.py:2372
+#: DynamicWeb/dynamicweb.py:2462
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 msgstr "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 
-#: dynamicweb/dynamicweb.py:2375
+#: DynamicWeb/dynamicweb.py:2465
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
 msgstr "Copying \"%(src)s\" to \"%(dst)s\""
 
-#: dynamicweb/dynamicweb.py:2399
+#: DynamicWeb/dynamicweb.py:2483
+msgid "Invalid file name"
+msgstr "Invalid file name"
+
+#: DynamicWeb/dynamicweb.py:2484
+msgid "The archive file must be a file, not a directory"
+msgstr "The archive file must be a file, not a directory"
+
+#: DynamicWeb/dynamicweb.py:2494 DynamicWeb/dynamicweb.py:2512
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
 msgstr "Unable to overwrite archive file \"%(path)s\""
 
-#: dynamicweb/dynamicweb.py:2408
+#: DynamicWeb/dynamicweb.py:2504 DynamicWeb/dynamicweb.py:2519
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 msgstr "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 
-#: dynamicweb/dynamicweb.py:2463
+#: DynamicWeb/dynamicweb.py:2571
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport ignoring link type '%(class)s'"
 
-#: dynamicweb/dynamicweb.py:2610
+#: DynamicWeb/dynamicweb.py:2773
 msgid "Applying Person Filter..."
 msgstr "Applying Person Filter..."
 
-#: dynamicweb/dynamicweb.py:2616
+#: DynamicWeb/dynamicweb.py:2779
 msgid "Constructing list of other objects..."
 msgstr "Constructing list of other objects..."
 
-#: dynamicweb/dynamicweb.py:2750
+#: DynamicWeb/dynamicweb.py:2913
 #, python-format
-msgid "Family of %(father)s and %(mother)s"
-msgstr "Family of %(father)s and %(mother)s"
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Family of %(husband)s and %(spouse)s"
 
-#: dynamicweb/dynamicweb.py:2756
+#: DynamicWeb/dynamicweb.py:2919
 #, python-format
 msgid "Family of %(father)s"
 msgstr "Family of %(father)s"
 
-#: dynamicweb/dynamicweb.py:2760
+#: DynamicWeb/dynamicweb.py:2923
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Family of %(mother)s"
 
-#: dynamicweb/dynamicweb.py:2975
+#: DynamicWeb/dynamicweb.py:3141
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -813,23 +838,23 @@ msgstr ""
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 
-#: dynamicweb/dynamicweb.py:3013
+#: DynamicWeb/dynamicweb.py:3179
 msgid "Report"
 msgstr "Report"
 
-#: dynamicweb/dynamicweb.py:3018
+#: DynamicWeb/dynamicweb.py:3184
 msgid "Destination"
 msgstr "Destination"
 
-#: dynamicweb/dynamicweb.py:3020
+#: DynamicWeb/dynamicweb.py:3186
 msgid "The destination directory for the web files"
 msgstr "The destination directory for the web files"
 
-#: dynamicweb/dynamicweb.py:3024
+#: DynamicWeb/dynamicweb.py:3190
 msgid "Store web pages in archive"
 msgstr "Store web pages in archive"
 
-#: dynamicweb/dynamicweb.py:3025
+#: DynamicWeb/dynamicweb.py:3191
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
@@ -837,139 +862,139 @@ msgstr ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 
-#: dynamicweb/dynamicweb.py:3029
+#: DynamicWeb/dynamicweb.py:3195
 msgid "Archive file"
 msgstr "Archive file"
 
-#: dynamicweb/dynamicweb.py:3031
+#: DynamicWeb/dynamicweb.py:3197
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "The archive file name (with \".zip\" or \".tgz\" extension)"
 
-#: dynamicweb/dynamicweb.py:3037
+#: DynamicWeb/dynamicweb.py:3203
 msgid "Web site title"
 msgstr "Web site title"
 
-#: dynamicweb/dynamicweb.py:3037
+#: DynamicWeb/dynamicweb.py:3203
 msgid "My Family Tree"
 msgstr "My Family Tree"
 
-#: dynamicweb/dynamicweb.py:3038
+#: DynamicWeb/dynamicweb.py:3204
 msgid "The title of the web site"
 msgstr "The title of the web site"
 
-#: dynamicweb/dynamicweb.py:3041
+#: DynamicWeb/dynamicweb.py:3207
 msgid "Filter"
 msgstr "Filter"
 
-#: dynamicweb/dynamicweb.py:3043
+#: DynamicWeb/dynamicweb.py:3209
 msgid "Select filter to restrict people that appear on web site"
 msgstr "Select filter to restrict people that appear on web site"
 
-#: dynamicweb/dynamicweb.py:3047
+#: DynamicWeb/dynamicweb.py:3213
 msgid "Filter Person"
 msgstr "Filter Person"
 
-#: dynamicweb/dynamicweb.py:3048
+#: DynamicWeb/dynamicweb.py:3214
 msgid "The center person for the filter"
 msgstr "The center person for the filter"
 
-#: dynamicweb/dynamicweb.py:3062
+#: DynamicWeb/dynamicweb.py:3228
 msgid "Name format"
 msgstr "Name format"
 
-#: dynamicweb/dynamicweb.py:3065
+#: DynamicWeb/dynamicweb.py:3231
 msgid "Select the format to display the complete names"
 msgstr "Select the format to display the complete names"
 
-#: dynamicweb/dynamicweb.py:3067
+#: DynamicWeb/dynamicweb.py:3233
 msgid "Name format (short)"
 msgstr "Name format (short)"
 
-#: dynamicweb/dynamicweb.py:3070
+#: DynamicWeb/dynamicweb.py:3236
 msgid "Select the format to display a shorter version of the names"
 msgstr "Select the format to display a shorter version of the names"
 
-#: dynamicweb/dynamicweb.py:3073
+#: DynamicWeb/dynamicweb.py:3239
 msgid "Web site template"
 msgstr "Web site template"
 
-#: dynamicweb/dynamicweb.py:3076
+#: DynamicWeb/dynamicweb.py:3242
 msgid "Select the template of the web site"
 msgstr "Select the template of the web site"
 
-#: dynamicweb/dynamicweb.py:3079
+#: DynamicWeb/dynamicweb.py:3245
 msgid "Copyright"
 msgstr "Copyright"
 
-#: dynamicweb/dynamicweb.py:3082
+#: DynamicWeb/dynamicweb.py:3248
 msgid "The copyright to be used for the web files"
 msgstr "The copyright to be used for the web files"
 
-#: dynamicweb/dynamicweb.py:3090
+#: DynamicWeb/dynamicweb.py:3256
 msgid "Privacy"
 msgstr "Privacy"
 
-#: dynamicweb/dynamicweb.py:3093
+#: DynamicWeb/dynamicweb.py:3259
 msgid "Include records marked private"
 msgstr "Include records marked private"
 
-#: dynamicweb/dynamicweb.py:3094
+#: DynamicWeb/dynamicweb.py:3260
 msgid "Whether to include private objects"
 msgstr "Whether to include private objects"
 
-#: dynamicweb/dynamicweb.py:3097
+#: DynamicWeb/dynamicweb.py:3263
 msgid "Export notes"
 msgstr "Export notes"
 
-#: dynamicweb/dynamicweb.py:3098
+#: DynamicWeb/dynamicweb.py:3264
 msgid "Whether to export notes in the web pages"
 msgstr "Whether to export notes in the web pages"
 
-#: dynamicweb/dynamicweb.py:3101
+#: DynamicWeb/dynamicweb.py:3267
 msgid "Export sources"
 msgstr "Export sources"
 
-#: dynamicweb/dynamicweb.py:3102
+#: DynamicWeb/dynamicweb.py:3268
 msgid "Whether to export sources and citations in the web pages"
 msgstr "Whether to export sources and citations in the web pages"
 
-#: dynamicweb/dynamicweb.py:3105
+#: DynamicWeb/dynamicweb.py:3271
 msgid "Export addresses"
 msgstr "Export addresses"
 
-#: dynamicweb/dynamicweb.py:3106
+#: DynamicWeb/dynamicweb.py:3272
 msgid "Whether to export addresses in the web pages"
 msgstr "Whether to export addresses in the web pages"
 
-#: dynamicweb/dynamicweb.py:3109
+#: DynamicWeb/dynamicweb.py:3275
 msgid "Living People"
 msgstr "Living People"
 
-#: dynamicweb/dynamicweb.py:3112
+#: DynamicWeb/dynamicweb.py:3278
 msgid "Exclude"
 msgstr "Exclude"
 
-#: dynamicweb/dynamicweb.py:3114
+#: DynamicWeb/dynamicweb.py:3280
 msgid "Include Last Name Only"
 msgstr "Include Last Name Only"
 
-#: dynamicweb/dynamicweb.py:3116
+#: DynamicWeb/dynamicweb.py:3282
 msgid "Include Full Name Only"
 msgstr "Include Full Name Only"
 
-#: dynamicweb/dynamicweb.py:3118
+#: DynamicWeb/dynamicweb.py:3284
 msgid "Include"
 msgstr "Include"
 
-#: dynamicweb/dynamicweb.py:3119
+#: DynamicWeb/dynamicweb.py:3285
 msgid "How to handle living people"
 msgstr "How to handle living people"
 
-#: dynamicweb/dynamicweb.py:3123
+#: DynamicWeb/dynamicweb.py:3289
 msgid "Years from death to consider living"
 msgstr "Years from death to consider living"
 
-#: dynamicweb/dynamicweb.py:3125
+#: DynamicWeb/dynamicweb.py:3291
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
@@ -977,31 +1002,31 @@ msgstr ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 
-#: dynamicweb/dynamicweb.py:3135
+#: DynamicWeb/dynamicweb.py:3301
 msgid "Options"
 msgstr "Options"
 
-#: dynamicweb/dynamicweb.py:3138
+#: DynamicWeb/dynamicweb.py:3304
 msgid "Include repository pages"
 msgstr "Include repository pages"
 
-#: dynamicweb/dynamicweb.py:3139
+#: DynamicWeb/dynamicweb.py:3305
 msgid "Whether or not to include the Repository Pages."
 msgstr "Whether or not to include the Repository Pages."
 
-#: dynamicweb/dynamicweb.py:3142
+#: DynamicWeb/dynamicweb.py:3308
 msgid "Include images and media objects"
 msgstr "Include images and media objects"
 
-#: dynamicweb/dynamicweb.py:3143
+#: DynamicWeb/dynamicweb.py:3309
 msgid "Whether to include a media objects in the web pages"
 msgstr "Whether to include a media objects in the web pages"
 
-#: dynamicweb/dynamicweb.py:3146
+#: DynamicWeb/dynamicweb.py:3312
 msgid "Copy images and media objects"
 msgstr "Copy images and media objects"
 
-#: dynamicweb/dynamicweb.py:3147
+#: DynamicWeb/dynamicweb.py:3313
 msgid ""
 "Whether to make a copy of the media objects. When the objects are not "
 "copied, they are referenced by their relative path name"
@@ -1009,27 +1034,27 @@ msgstr ""
 "Whether to make a copy of the media objects. When the objects are not "
 "copied, they are referenced by their relative path name"
 
-#: dynamicweb/dynamicweb.py:3151
+#: DynamicWeb/dynamicweb.py:3317
 msgid "Print the notes type"
 msgstr "Print the notes type"
 
-#: dynamicweb/dynamicweb.py:3152
+#: DynamicWeb/dynamicweb.py:3318
 msgid "Whether to print the notes type in the notes text"
 msgstr "Whether to print the notes type in the notes text"
 
-#: dynamicweb/dynamicweb.py:3155
+#: DynamicWeb/dynamicweb.py:3321
 msgid "Print place pages"
 msgstr "Print place pages"
 
-#: dynamicweb/dynamicweb.py:3156
+#: DynamicWeb/dynamicweb.py:3322
 msgid "Whether to show pages for the places"
 msgstr "Whether to show pages for the places"
 
-#: dynamicweb/dynamicweb.py:3160
+#: DynamicWeb/dynamicweb.py:3326
 msgid "Include Place map on Place Pages"
 msgstr "Include Place map on Place Pages"
 
-#: dynamicweb/dynamicweb.py:3162
+#: DynamicWeb/dynamicweb.py:3328
 msgid ""
 "Whether to include a place map on the Place Pages, where Latitude/ Longitude "
 "are available."
@@ -1037,11 +1062,11 @@ msgstr ""
 "Whether to include a place map on the Place Pages, where Latitude/ Longitude "
 "are available."
 
-#: dynamicweb/dynamicweb.py:3168
+#: DynamicWeb/dynamicweb.py:3334
 msgid "Include Family Map Pages with all places shown on the map"
 msgstr "Include Family Map Pages with all places shown on the map"
 
-#: dynamicweb/dynamicweb.py:3171
+#: DynamicWeb/dynamicweb.py:3337
 msgid ""
 "Whether or not to add an individual page map showing all the places on this "
 "page. This will allow you to see how your family traveled around the country."
@@ -1049,113 +1074,113 @@ msgstr ""
 "Whether or not to add an individual page map showing all the places on this "
 "page. This will allow you to see how your family traveled around the country."
 
-#: dynamicweb/dynamicweb.py:3179
+#: DynamicWeb/dynamicweb.py:3345
 msgid "Google"
 msgstr "Google"
 
-#: dynamicweb/dynamicweb.py:3180
+#: DynamicWeb/dynamicweb.py:3346
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: dynamicweb/dynamicweb.py:3182
+#: DynamicWeb/dynamicweb.py:3348
 msgid "Map Service"
 msgstr "Map Service"
 
-#: dynamicweb/dynamicweb.py:3185
+#: DynamicWeb/dynamicweb.py:3351
 msgid "Choose your choice of map service for creating the Place Map Pages."
 msgstr "Choose your choice of map service for creating the Place Map Pages."
 
-#: dynamicweb/dynamicweb.py:3193
+#: DynamicWeb/dynamicweb.py:3359
 msgid "Advanced"
 msgstr "Advanced"
 
-#: dynamicweb/dynamicweb.py:3196
+#: DynamicWeb/dynamicweb.py:3362
 msgid "Character set encoding"
 msgstr "Character set encoding"
 
-#: dynamicweb/dynamicweb.py:3199
+#: DynamicWeb/dynamicweb.py:3365
 msgid "The encoding to be used for the web files"
 msgstr "The encoding to be used for the web files"
 
-#: dynamicweb/dynamicweb.py:3202
+#: DynamicWeb/dynamicweb.py:3368
 msgid "Include family pages"
 msgstr "Include family pages"
 
-#: dynamicweb/dynamicweb.py:3203
+#: DynamicWeb/dynamicweb.py:3369
 msgid "Whether or not to include family pages."
 msgstr "Whether or not to include family pages."
 
-#: dynamicweb/dynamicweb.py:3206
+#: DynamicWeb/dynamicweb.py:3372
 msgid "Include event pages"
 msgstr "Include event pages"
 
-#: dynamicweb/dynamicweb.py:3207
+#: DynamicWeb/dynamicweb.py:3373
 msgid "Add a complete events list and relevant pages or not"
 msgstr "Add a complete events list and relevant pages or not"
 
-#: dynamicweb/dynamicweb.py:3211
+#: DynamicWeb/dynamicweb.py:3377
 msgid "Include a column for birth dates on the index pages"
 msgstr "Include a column for birth dates on the index pages"
 
-#: dynamicweb/dynamicweb.py:3212
+#: DynamicWeb/dynamicweb.py:3378
 msgid "Whether to include a birth column"
 msgstr "Whether to include a birth column"
 
-#: dynamicweb/dynamicweb.py:3215
+#: DynamicWeb/dynamicweb.py:3381
 msgid "Include a column for death dates on the index pages"
 msgstr "Include a column for death dates on the index pages"
 
-#: dynamicweb/dynamicweb.py:3216
+#: DynamicWeb/dynamicweb.py:3382
 msgid "Whether to include a death column"
 msgstr "Whether to include a death column"
 
-#: dynamicweb/dynamicweb.py:3219
+#: DynamicWeb/dynamicweb.py:3385
 msgid "Include a column for marriage dates on the index pages"
 msgstr "Include a column for marriage dates on the index pages"
 
-#: dynamicweb/dynamicweb.py:3220
+#: DynamicWeb/dynamicweb.py:3386
 msgid "Whether to include a marriage column"
 msgstr "Whether to include a marriage column"
 
-#: dynamicweb/dynamicweb.py:3223
+#: DynamicWeb/dynamicweb.py:3389
 msgid "Include a column for partners on the index pages"
 msgstr "Include a column for partners on the index pages"
 
-#: dynamicweb/dynamicweb.py:3224
+#: DynamicWeb/dynamicweb.py:3390
 msgid "Whether to include a partners column"
 msgstr "Whether to include a partners column"
 
-#: dynamicweb/dynamicweb.py:3227
+#: DynamicWeb/dynamicweb.py:3393
 msgid "Include a column for parents on the index pages"
 msgstr "Include a column for parents on the index pages"
 
-#: dynamicweb/dynamicweb.py:3228
+#: DynamicWeb/dynamicweb.py:3394
 msgid "Whether to include a parents column"
 msgstr "Whether to include a parents column"
 
-#: dynamicweb/dynamicweb.py:3231
+#: DynamicWeb/dynamicweb.py:3397
 msgid "Include half and/ or step-siblings on the individual pages"
 msgstr "Include half and/ or step-siblings on the individual pages"
 
-#: dynamicweb/dynamicweb.py:3232
+#: DynamicWeb/dynamicweb.py:3398
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 
-#: dynamicweb/dynamicweb.py:3235
+#: DynamicWeb/dynamicweb.py:3401
 msgid "Sort all children in birth order"
 msgstr "Sort all children in birth order"
 
-#: dynamicweb/dynamicweb.py:3236
+#: DynamicWeb/dynamicweb.py:3402
 msgid "Whether to display children in birth order or in entry order?"
 msgstr "Whether to display children in birth order or in entry order?"
 
-#: dynamicweb/dynamicweb.py:3239
+#: DynamicWeb/dynamicweb.py:3405
 msgid "Include references in indexes"
 msgstr "Include references in indexes"
 
-#: dynamicweb/dynamicweb.py:3240
+#: DynamicWeb/dynamicweb.py:3406
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
@@ -1165,23 +1190,23 @@ msgstr ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 
-#: dynamicweb/dynamicweb.py:3243
+#: DynamicWeb/dynamicweb.py:3409
 msgid "Include GENDEX file (/gendex.txt)"
 msgstr "Include GENDEX file (/gendex.txt)"
 
-#: dynamicweb/dynamicweb.py:3244
+#: DynamicWeb/dynamicweb.py:3410
 msgid "Whether to include a GENDEX file or not"
 msgstr "Whether to include a GENDEX file or not"
 
-#: dynamicweb/dynamicweb.py:3250
+#: DynamicWeb/dynamicweb.py:3415
 msgid "Trees"
 msgstr "Trees"
 
-#: dynamicweb/dynamicweb.py:3253
+#: DynamicWeb/dynamicweb.py:3418
 msgid "Maximum number of  generations"
 msgstr "Maximum number of  generations"
 
-#: dynamicweb/dynamicweb.py:3254
+#: DynamicWeb/dynamicweb.py:3419
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
@@ -1189,103 +1214,118 @@ msgstr ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 
-#: dynamicweb/dynamicweb.py:3263
+#: DynamicWeb/dynamicweb.py:3428
 #, python-format
 msgid "Title for the tree \"%(name)s\""
 msgstr "Title for the tree \"%(name)s\""
 
-#: dynamicweb/dynamicweb.py:3264
+#: DynamicWeb/dynamicweb.py:3429
 #, python-format
 msgid "Name for the page that shows the tree \"%(name)s\""
 msgstr "Name for the page that shows the tree \"%(name)s\""
 
-#: dynamicweb/dynamicweb.py:3267
+#: DynamicWeb/dynamicweb.py:3432
 msgid "SVG tree graph type"
 msgstr "SVG tree graph type"
 
-#: dynamicweb/dynamicweb.py:3270
+#: DynamicWeb/dynamicweb.py:3435
 msgid "Choose the default SVG tree graph type."
 msgstr "Choose the default SVG tree graph type."
 
-#: dynamicweb/dynamicweb.py:3275
+#: DynamicWeb/dynamicweb.py:3440
 msgid "Pages"
 msgstr "Pages"
 
-#: dynamicweb/dynamicweb.py:3278
+#: DynamicWeb/dynamicweb.py:3443
 msgid "HTML user header"
 msgstr "HTML user header"
 
-#: dynamicweb/dynamicweb.py:3279
+#: DynamicWeb/dynamicweb.py:3444
 msgid "A note to be used as the page header"
 msgstr "A note to be used as the page header"
 
-#: dynamicweb/dynamicweb.py:3282
+#: DynamicWeb/dynamicweb.py:3447
 msgid "HTML user footer"
 msgstr "HTML user footer"
 
-#: dynamicweb/dynamicweb.py:3283
+#: DynamicWeb/dynamicweb.py:3448
 msgid "A note to be used as the page footer"
 msgstr "A note to be used as the page footer"
 
-#: dynamicweb/dynamicweb.py:3300
+#: DynamicWeb/dynamicweb.py:3465
 #, python-format
 msgid "Title for the page \"%(name)s\""
 msgstr "Title for the page \"%(name)s\""
 
-#: dynamicweb/dynamicweb.py:3301
+#: DynamicWeb/dynamicweb.py:3466
 #, python-format
 msgid "Name for the page \"%(name)s\""
 msgstr "Name for the page \"%(name)s\""
 
-#: dynamicweb/dynamicweb.py:3306
+#: DynamicWeb/dynamicweb.py:3471
 msgid "Custom pages"
 msgstr "Custom pages"
 
-#: dynamicweb/dynamicweb.py:3311
+#: DynamicWeb/dynamicweb.py:3476
 #, python-format
 msgid "Title for the custom page %(index)i"
 msgstr "Title for the custom page %(index)i"
 
-#: dynamicweb/dynamicweb.py:3312
+#: DynamicWeb/dynamicweb.py:3477
 #, python-format
 msgid "Name for the custom page %(index)i"
 msgstr "Name for the custom page %(index)i"
 
-#: dynamicweb/dynamicweb.py:3315
+#: DynamicWeb/dynamicweb.py:3480
 #, python-format
 msgid "Note for custom page %(index)i"
 msgstr "Note for custom page %(index)i"
 
-#: dynamicweb/dynamicweb.py:3316
+#: DynamicWeb/dynamicweb.py:3481
 msgid "A note to be used for the custom page content.\n"
 msgstr "A note to be used for the custom page content.\n"
 
-#: dynamicweb/dynamicweb.py:3319
+#: DynamicWeb/dynamicweb.py:3484
 #, python-format
 msgid "Menu for the custom page %(index)i"
 msgstr "Menu for the custom page %(index)i"
 
-#: dynamicweb/dynamicweb.py:3320
+#: DynamicWeb/dynamicweb.py:3485
 msgid "Whether to print a menu for the custom page"
 msgstr "Whether to print a menu for the custom page"
 
-#: dynamicweb/dynamicweb.py:3325
+#: DynamicWeb/dynamicweb.py:3490
 msgid "Pages selection"
 msgstr "Pages selection"
 
-#: dynamicweb/dynamicweb.py:3328
+#: DynamicWeb/dynamicweb.py:3493
 msgid "Number of pages"
 msgstr "Number of pages"
 
-#: dynamicweb/dynamicweb.py:3329
+#: DynamicWeb/dynamicweb.py:3494
 msgid "Number pages in the web site."
 msgstr "Number pages in the web site."
 
-#: dynamicweb/dynamicweb.py:3351
+#: DynamicWeb/dynamicweb.py:3516
 #, python-format
 msgid "Contents of page %(index)i"
 msgstr "Contents of page %(index)i"
 
-#: dynamicweb/dynamicweb.py:3354
+#: DynamicWeb/dynamicweb.py:3519
 msgid "Contents of the page"
 msgstr "Contents of the page"
+
+#~ msgid "Default template"
+#~ msgstr "Default template"
+
+#~ msgid "Mayence"
+#~ msgstr "Mayence"
+
+#~ msgid "Ancestry"
+#~ msgstr "Ancestry"
+
+#~ msgid "Brothers and Sisters"
+#~ msgstr "Brothers and Sisters"
+
+#~ msgid "Family of %(father)s and %(mother)s"
+#~ msgstr "Family of %(father)s and %(mother)s"

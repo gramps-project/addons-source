@@ -36,6 +36,10 @@ loadjsfile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
 loadjsfile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.js');
 loadjsfile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
 
+// Load context menu lugin
+loadcssfile(scriptFolder + 'context/context.bootstrap.css');
+loadjsfile(scriptFolder + 'context/context.js');
+
 // Load styles
 loadcssfile(scriptFolder + 'dwr_styles.css');
 loadcssfile(scriptFolder + 'dwr_template.css');
