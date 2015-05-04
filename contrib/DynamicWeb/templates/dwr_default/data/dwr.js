@@ -8,10 +8,10 @@
 
 
 //=================================================================
-//====== Indexes of the fields in the database exported from GRAMPS
+//====== Indexes of the fields in the database exported from Gramps
 //=================================================================
 
-// The GRAMPS database is exported as Javascript Arrays
+// The Gramps database is exported as Javascript Arrays
 // The following indexes are indexes in these Arrays
 // If you wonder why JSON is not used instead, the answer is: because. Good question nevertheless.
 
@@ -21,18 +21,20 @@ I_SHORT_NAME = 1;
 I_NAMES = 2;
 I_GENDER = 3;
 I_BIRTH_YEAR = 4;
-I_DEATH_YEAR = 5;
-I_DEATH_AGE = 6;
-I_EVENTS = 7;
-I_ADDRS = 8;
-I_NOTE = 9;
-I_MEDIA = 10;
-I_CITA = 11;
-I_ATTR = 12;
-I_URLS = 13;
-I_FAMS = 14;
-I_FAMC = 15;
-I_ASSOC = 16;
+I_BIRTH_PLACE = 5;
+I_DEATH_YEAR = 6;
+I_DEATH_PLACE = 7;
+I_DEATH_AGE = 8;
+I_EVENTS = 9;
+I_ADDRS = 10;
+I_NOTE = 11;
+I_MEDIA = 12;
+I_CITA = 13;
+I_ATTR = 14;
+I_URLS = 15;
+I_FAMS = 16;
+I_FAMC = 17;
+I_ASSOC = 18;
 
 // N: Name
 N_FULL = 0;
@@ -58,13 +60,14 @@ A_CITA = 3;
 F_NAME = 0;
 F_TYPE = 1;
 F_MARR_YEAR = 2;
-F_EVENTS = 3;
-F_NOTE = 4;
-F_MEDIA = 5;
-F_CITA = 6;
-F_ATTR = 7;
-F_SPOU = 8;
-F_CHIL = 9;
+F_MARR_PLACE = 3;
+F_EVENTS = 4;
+F_NOTE = 5;
+F_MEDIA = 6;
+F_CITA = 7;
+F_ATTR = 8;
+F_SPOU = 9;
+F_CHIL = 10;
 
 // FC: Child relationship
 FC_INDEX = 0;
@@ -1017,7 +1020,7 @@ function printIndi(idx)
 		if (F[fdx][F_SPOU].length == 0) html += ('<p class="dwr-ref">' + _('None.'));
 		html += printTitleEnd();
 
-		html += printTitle(5, _('Brothers and Sisters') + ':');
+		html += printTitle(5, _('Siblings') + ':');
 		if (F[fdx][F_CHIL].length > 0)
 		{
 			html += '<ol class="dwr-ref">';

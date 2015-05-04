@@ -320,7 +320,7 @@ li p
 .svg-popup p
 {
 	margin: 0px;
-	text-align: center;
+	/* text-align: center; */
 }
 
 
@@ -366,7 +366,6 @@ li p
 	/*fill: none;*/
 	/*fill: #FFFFFF;*/
 }
-.svg-center {fill: #D0D0D0;}
 .svg-implex {fill: #FF0000;}
 .svg-male {}
 .svg-female {}
@@ -381,7 +380,6 @@ li p
 	fill: #000000;
 	pointer-events: none;
 }
-.svg-text-center {font-weight: bold;}
 .svg-text-implex {}
 .svg-text-male {}
 .svg-text-female {font-style: italic;}

@@ -6,20 +6,20 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-// This script is part of the GRAMPS dynamic web report
+// This script is part of the Gramps dynamic web report
 // See "dynamicweb.py"
 //
 // This script performs the following treatments:
 //
 //  - Build the document body structure:
 //    The body contains the following sections (div):!
-//       header: the header note given as parameter in GRAMPS
+//       header: the header note given as parameter in Gramps
 //       menu: The page menu
 //          This menu contains a form for: search input, number of generations inputs
 //          This menu is optional (depends on the body class 'menuless')
 //       body-page: The contents of the page
 //          the body-page could contain a search form
-//       footer: the footer note given as parameter in GRAMPS
+//       footer: the footer note given as parameter in Gramps
 //
 //  - Manage the search string:
 //    The URL search string is used to pass parameters to the page
@@ -52,7 +52,7 @@ function tdIshort(idx, lev, tree, style)
 	{
 		cl = "in1";
 		fz = 16;
-		txt += " <span class='simpletree_details'>(" + _("details") + ")</span>";
+		txt += " <span class='simpletree_details'>(" + _('details') + ")</span>";
 	}
 	txt += "</a>";
 	var td =
@@ -177,7 +177,7 @@ function treeBuild(idx)
 	{
 		html += (
 			"<td><table border='0' cellspacing='0' cellpadding='0'>" +
-			"<tr><td><p class='in0'>" + _("Brothers and Sisters") + ":</td></tr>\n");
+			"<tr><td><p class='in0'>" + _('Siblings') + ":</td></tr>\n");
 		for (j = 0; j < fr.length; j++)
 		{
 			html += ("<tr>" + tdIshort(fr[j], levMax) + "</tr>\n");
