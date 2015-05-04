@@ -84,6 +84,15 @@ def r(scmd, **kwargs):
     cmd = scmd % keywords
     return cmd
 
+def mkdir(dirname):
+    """
+    Create a directory, if doesn't already exists.
+    Note: os.system("mkdir ...") cannot be used on Windows (mkdir mismatches with integrated cmd.exe command)
+    """
+    dirname = r(dirname)
+    if (os.path.isdir(dirname)): return
+    os.makedirs(dirname)
+
 def increment_target(filenames):
     for filename in filenames:
         fp = open(filename, "r")
@@ -153,8 +162,8 @@ elif command == "init":
     # # Get all of the strings from the addon and create template.po:
     # #intltool-extract --type=gettext/glade *.glade
     if len(sys.argv) == 3:
-        system('''mkdir -p "%(addon)s/po"''')
-        system('''mkdir -p "%(addon)s/locale"''')
+        mkdir(r("%(addon)s/po"))
+        mkdir("%(addon)s/locale")
         system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
         system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
         system('''xgettext --language=Python --keyword=_ --keyword=N_'''
@@ -243,13 +252,13 @@ elif command in ["compile"]:
         for addon in dirs:
             for po in glob.glob(r('''%(addon)s/po/*.po''')):
                 locale = os.path.basename(po[:-9])
-                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
     else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
             locale = os.path.basename(po[:-9])
-            system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
 elif command == "build":
@@ -260,7 +269,7 @@ elif command == "build":
         for addon in dirs:
             for po in glob.glob(r('''%(addon)s/po/*.po''')):
                 locale = os.path.basename(po[:-9])
-                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
         # Build all:
@@ -275,14 +284,15 @@ elif command == "build":
             files += glob.glob(r('''%(addon)s/*.txt'''))
             files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
             files_str = " ".join(files)
-            system('''mkdir -p ../download ''')
+            files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
+            mkdir("../download")
             increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
             system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                    files=files_str)
     else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
                 locale = os.path.basename(po[:-9])
-                system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+                mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
         files += glob.glob(r('''%(addon)s/*.py'''))
@@ -291,7 +301,8 @@ elif command == "build":
         files += glob.glob(r('''%(addon)s/*.txt'''))
         files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
         files_str = " ".join(files)
-        system('''mkdir -p ../download ''')
+        files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
+        mkdir("../download")
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
@@ -318,7 +329,7 @@ elif command == "listing":
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             # Compile
             locale = os.path.basename(po[:-9])
-            system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
+            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
     # Get all languages from all addons:
