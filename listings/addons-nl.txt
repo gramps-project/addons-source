@@ -46,7 +46,7 @@
 {"t":'Report',"i":'DescendantBook',"n":'Descendant Book',"v":'1.1.2',"g":'4.2',"d":'Produces one or more descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'1.0.2',"g":'4.2',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.1.2',"g":'4.2',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
-{"t":'Report',"i":'DynamicWeb',"n":'Dynamic Web Report',"v":'0.0.17',"g":'4.2',"d":'Produces dynamic web pages for the database',"z":'DynamicWeb.addon.tgz'}
+{"t":'Report',"i":'DynamicWeb',"n":'Dynamic Web Report',"v":'0.0.23',"g":'4.2',"d":'Produces dynamic web pages for the database',"z":'DynamicWeb.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familiepagina',"v":'3.4.25',"g":'4.2',"d":'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Familiestamboom',"v":'4.2.6',"g":'4.2',"d":'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Verslag laatste wijziging',"v":'0.0.25',"g":'4.2',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}

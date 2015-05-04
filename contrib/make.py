@@ -95,8 +95,8 @@ def mkdir(dirname):
 
 def increment_target(filenames):
     for filename in filenames:
-        fp = open(filename, "r")
-        newfp = open("%s.new" % filename, "w")
+        fp = open(filename, "r", encoding="utf-8")
+        newfp = open("%s.new" % filename, "w", encoding="utf-8")
         for line in fp:
             if ((line.lstrip().startswith("version")) and 
                 ("=" in line)):
@@ -338,7 +338,7 @@ elif command == "listing":
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             length= len(po)
             locale = po[length-11:length-9]
-            locale_path, locale = po.rsplit("/", 1)
+            locale_path, locale = po.rsplit(os.sep, 1)
             languages.add(locale[:-9])
     # next, create/edit a file for all languages listing plugins
     for lang in languages:
@@ -357,7 +357,7 @@ elif command == "listing":
                     exec(code, make_environment(_=local_gettext),
                          {"register": register})
                 for p in plugins:
-                    tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
+                    tgz_file = "%s.addon.tgz" % gpr.split(os.sep, 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
                         plugin = {"n": p["name"].replace("'", "\\'"),
@@ -374,15 +374,15 @@ elif command == "listing":
         # Write out new listing:
         if cmd_arg == "all":
             # Replace it!
-            fp = open("../listings/addons-%s.txt" % lang, "w")
+            fp = open("../listings/addons-%s.txt" % lang, "w", encoding="utf-8")
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
         else:
             # just update the lines from these addons:
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                fp_in = open("../listings/addons-%s.txt" % lang, "r")
-                fp_out = open("../listings/addons-%s.new" % lang, "w")
+                fp_in = open("../listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+                fp_out = open("../listings/addons-%s.new" % lang, "w", encoding="utf-8")
                 added = False
                 for line in fp_in:
                     dictionary = eval(line)
