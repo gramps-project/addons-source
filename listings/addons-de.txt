@@ -46,7 +46,7 @@
 {"t":'Report',"i":'DescendantBook',"n":'Descendant Book',"v":'1.1.2',"g":'4.2',"d":'Produces one or more descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Nachkommen Linien',"v":'1.0.2',"g":'4.2',"d":'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.1.2',"g":'4.2',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
-{"t":'Report',"i":'DynamicWeb',"n":'Dynamic Web Report',"v":'0.0.23',"g":'4.2',"d":'Produces dynamic web pages for the database',"z":'DynamicWeb.addon.tgz'}
+{"t":'Report',"i":'DynamicWeb',"n":'Dynamic Web Report',"v":'0.0.26',"g":'4.2',"d":'Produces dynamic web pages for the database',"z":'DynamicWeb.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familienblatt',"v":'3.4.25',"g":'4.2',"d":'Erstellt ein Familienblatt, das vollständige Informationen über eine Person und ihre Partner und Kinder enthält.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Stammbaum',"v":'4.2.6',"g":'4.2',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Letzte Änderungen Bericht',"v":'0.0.25',"g":'4.2',"d":'Bericht der letzten Datensätze die geändert wurden',"z":'LastChange.addon.tgz'}
