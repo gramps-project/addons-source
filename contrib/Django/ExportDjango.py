@@ -43,7 +43,7 @@ LOG = logging.getLogger(".ExportDjango")
 
 #------------------------------------------------------------------------
 #
-# Gramps modules
+# GRAMPS modules
 #
 #------------------------------------------------------------------------
 from gramps.gui.plug.export import WriterOptionBox

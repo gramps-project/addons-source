@@ -1,7 +1,8 @@
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'GEDCOM Export Erweiterungen (GED2)',"v":'1.0.14',"g":'4.2',"d":'Erweiterungen für das bekannte GEDCOM Format',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'JSON Export',"n":'JSON Export',"v":'1.0.2',"g":'4.2',"d":'This is a JSON export',"z":'JSON.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Rohdaten Export',"v":'1.0.23',"g":'4.2',"d":'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
+{"t":'Exporter',"i":'export_django',"n":'Django Export',"v":'1.0.26',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.26',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.27',"g":'4.2',"d":'SQLite ist ein gebräuchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Geburtstags Gramplet',"v":'1.0.26',"g":'4.2',"d":'ein Gramplet welches die Geburtstage von lebenden Personen zeigt',"z":'BirthdaysGramplet.addon.tgz'}
@@ -29,8 +30,6 @@
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Zeitleistestammbaum',"v":'0.1.35',"g":'4.2',"d":'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gewählten Person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graphenansicht',"v":'1.0.44',"g":'4.2',"d":'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
-{"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.27',"g":'4.2',"d":'SQLite ist ein gebräuchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Erstellt Datendatei für GoogleEarth und öffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":'DE Web Connect Pack',"v":'0.0.16',"g":'4.2',"d":'Sammlung von Webseiten für DE (benötigt libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":'FR Web Verknüpfungspaket',"v":'1.0.22',"g":'4.2',"d":'Sammlung von Webseiten für FR (benötigt libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
@@ -58,8 +57,6 @@
 {"t":'Report',"i":'Repositories Report Options',"n":'Aufbewahrungsorte Berichtsoptionen',"v":'0.3.16',"g":'4.2',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Zu erledigen Bericht',"v":'1.2.21',"g":'4.2',"d":'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.29',"g":'4.2',"d":'Bericht der Zensusereignise für eine Person.',"z":'Census.addon.tgz'}
-{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
-{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Datenbankunterschiede Bericht',"v":'1.0.8',"g":'4.2',"d":'Vergleicht eine externe Datenbank mit der aktuell geöffneten.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.23',"g":'4.2',"d":'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details über Personen durch Mausereignisse sichtbar werden.',"z":'DenominoViso.addon.tgz'}
