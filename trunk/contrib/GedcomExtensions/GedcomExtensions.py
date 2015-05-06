@@ -51,8 +51,18 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         if option_box:
             # Already parsed in GedcomWriter
             self.include_witnesses = option_box.include_witnesses
+            self.include_media = option_box.include_witnesses
         else:
             self.include_witnesses = 1
+            self.include_media = 1
+
+    def _photo(self, photo, level):
+        """
+        Overloaded media-handling method to skip over media
+        if not included.
+        """
+        if self.include_media:
+            super(GedcomWriterExtension, self)._photo(photo, level)
 
     def _process_family_event(self, event, event_ref):
         """
@@ -92,15 +102,20 @@ class GedcomWriterOptionBox(WriterOptionBox):
         super(GedcomWriterOptionBox, self).__init__(person, dbstate, uistate)
         self.include_witnesses = 1
         self.include_witnesses_check = None
+        self.include_media = 1
+        self.include_media_check = None
 
     def get_option_box(self):
         option_box = super(GedcomWriterOptionBox, self).get_option_box()
         # Make options:
         self.include_witnesses_check = Gtk.CheckButton(_("Include witnesses"))
+        self.include_media_check = Gtk.CheckButton(_("Include media"))
         # Set defaults:
         self.include_witnesses_check.set_active(1) 
+        self.include_media_check.set_active(1) 
         # Add to gui:
         option_box.pack_start(self.include_witnesses_check, False, False, 0)
+        option_box.pack(self.include_media_check, False, False, 0)
         # Return option box:
         return option_box
 
@@ -111,6 +126,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
         super(GedcomWriterOptionBox, self).parse_options()
         if self.include_witnesses_check:
             self.include_witnesses = self.include_witnesses_check.get_active()
+        if self.include_media_check:
+            self.include_media = self.include_media_check.get_active()
 
 def export_data(database, filename, user, option_box=None):
     """
