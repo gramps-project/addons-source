@@ -51,7 +51,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         if option_box:
             # Already parsed in GedcomWriter
             self.include_witnesses = option_box.include_witnesses
-            self.include_media = option_box.include_witnesses
+            self.include_media = option_box.include_media
         else:
             self.include_witnesses = 1
             self.include_media = 1
