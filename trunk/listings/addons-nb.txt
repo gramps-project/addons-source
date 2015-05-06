@@ -1,7 +1,8 @@
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.14',"g":'4.2',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'JSON Export',"n":'JSON Export',"v":'1.0.2',"g":'4.2',"d":'This is a JSON export',"z":'JSON.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Raw Export',"v":'1.0.23',"g":'4.2',"d":'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
+{"t":'Exporter',"i":'export_django',"n":'Django Export',"v":'1.0.26',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
+{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.26',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.27',"g":'4.2',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Birthdays Gramplet',"v":'1.0.26',"g":'4.2',"d":'a gramplet that displays the birthdays of the living people',"z":'BirthdaysGramplet.addon.tgz'}
@@ -29,8 +30,6 @@
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Timeline Pedigree',"v":'0.1.35',"g":'4.2',"d":'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.44',"g":'4.2',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'JSON Import',"n":'JSON Import',"v":'1.0.2',"g":'4.2',"d":'This is a JSON import',"z":'JSON.addon.tgz'}
-{"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.27',"g":'4.2',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
-{"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.27',"g":'4.2',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.31',"g":'4.2',"d":'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":'DE Web Connect Pack',"v":'0.0.16',"g":'4.2',"d":'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":'FR Web Connect Pack',"v":'1.0.22',"g":'4.2',"d":'Collection of Web sites for the FR (requires libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
@@ -58,8 +57,6 @@
 {"t":'Report',"i":'Repositories Report Options',"n":'Repositories Report Options',"v":'0.3.16',"g":'4.2',"d":'Lager en tekstbasert rapport over oppbevaringssteder',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.21',"g":'4.2',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":'Census Report',"v":'1.0.29',"g":'4.2',"d":'Report of census events for a person.',"z":'Census.addon.tgz'}
-{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
-{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.16',"g":'4.2',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.8',"g":'4.2',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.23',"g":'4.2',"d":'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.',"z":'DenominoViso.addon.tgz'}
