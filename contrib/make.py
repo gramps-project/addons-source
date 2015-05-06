@@ -381,25 +381,32 @@ elif command == "listing":
         else:
             # just update the lines from these addons:
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+                already_added = []
                 fp_in = open("../listings/addons-%s.txt" % lang, "r", encoding="utf-8")
                 fp_out = open("../listings/addons-%s.new" % lang, "w", encoding="utf-8")
                 added = False
                 for line in fp_in:
+                    if line in already_added:
+                        continue
                     dictionary = eval(line)
-                    if cmd_arg + ".addon.tgz" in line:
+                    if cmd_arg + ".addon.tgz" in line and plugin["t"] == dictionary["t"] and not added:
                         #print("UPDATED")
                         print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
+                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin)
                     elif ((plugin["t"], plugin["i"]) < (dictionary["t"], dictionary["i"])) and not added:
                         #print("ADDED in middle")
                         print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
                         print(line, end="", file=fp_out)
+                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin)
                     else:
                         print(line, end="", file=fp_out)
+                        already_added.append(line)
                 if not added:
-                    #print("ADDED at end")
-                    print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
+                    if ("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin) not in already_added:
+                        #print("ADDED at end")
+                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                 fp_in.close()
                 fp_out.close()
                 shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
