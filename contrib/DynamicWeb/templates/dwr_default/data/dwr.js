@@ -1959,7 +1959,7 @@ function htmlSourcesIndex(data)
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_MEDIA) columns.push({
 		title: _('Used for media'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKM, S, S_TITLE));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKM, M, M_TITLE));}
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
 		title: _('Used for place'),
