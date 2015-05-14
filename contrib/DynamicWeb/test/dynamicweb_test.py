@@ -21,7 +21,7 @@ The script is to be launched from its directory
 
 Arguments = [-i] [test numbers]
 
-Examples:
+Usage examples:
 - Import example database
 	python dynamicweb_test.py -i
 - Run tests 0 and 2
@@ -86,10 +86,14 @@ default_options = {
 	'bkref_type': True,
 	'inc_gendex': True,
 	'graphgens': 10,
-	'svg_tree_type': DEFAULT_SVG_TREE,
-	'headernote': "_header",
-	'footernote': "_footer",
-	'custom_note_0': "_test",
+	'svg_tree_type': DEFAULT_SVG_TREE_TYPE,
+	'svg_tree_shape': DEFAULT_SVG_TREE_SHAPE,
+	'svg_tree_color1': "#EF2929",
+	'svg_tree_color2': "#3D37E9",
+	'svg_tree_color_dup': "#888A85",
+	'headernote': "_header1",
+	'footernote': "_footer1",
+	'custom_note_0': "_custom1",
 	'custom_menu_0': False,
 	'pages_number': len(PAGES_NAMES) - NB_CUSTOM_PAGES + 1,
 }
@@ -123,6 +127,10 @@ test_list = [
 		{
 			'what': "Links, images, and search input in custom page",
 			'path': "custom_1.html",
+		},
+		{
+			'what': "All possible citations are referenced",
+			'path': "source.html?sdx=1",
 		},
 		{
 			'what': "GENDEX file",
@@ -259,7 +267,7 @@ test_list = [
 
 
 def import_data():
-	path = os.path.join(plugin_path, "test", "dynamicweb_example.gramps")
+	path = os.path.join(gramps_path, "example", "gramps", "example.gramps")
 	path = os.path.abspath(path)
 	print("=" * 80)
 	print("Importing data \"%s\" in database \"dynamicweb_example\"" % path)
@@ -333,12 +341,9 @@ def main(test_nums):
 		
 		# Call GRAMPS CLI
 		if (sys.version_info[0] < 3):
-			# Windows cmd.exe:
-			# param = param.encode("cp850")
-			# param = param.encode(locale.getpreferredencoding())
-			# Cygwin:
 			param = param.encode("UTF-8")
 		os.chdir(gramps_path)
+		# subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-d", ".DynamicWeb", "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
 		subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
 		
 		# Update index pages
@@ -429,11 +434,6 @@ if __name__ == '__main__':
 		# Launch tests
 		print("Performing tests: %s" % str(test_nums))
 		main(test_nums)
-	except WindowsError as ex:
-		sys.stderr.write(ex.args[1].decode(locale.getdefaultlocale()[1]).encode("ascii", "replace"))
-		sys.stderr.write("\n")
-		traceback.print_exc()
-		sys.exit(1)
 	except Exception as ex:
 		sys.stderr.write(str(ex))
 		sys.stderr.write("\n")

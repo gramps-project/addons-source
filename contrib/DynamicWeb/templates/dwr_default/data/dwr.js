@@ -187,7 +187,8 @@ LOC_PHONE = 8;
 
 // SN: Surname
 SN_SURNAME = 0;
-SN_PERSONS = 1;
+SN_LETTER = 1;
+SN_PERSONS = 2;
 
 // Initialize empty arrays by default
 // Depending on generation options, not all the lists are generated
@@ -214,7 +215,9 @@ PAGE_PLACE = 5;
 PAGE_REPO = 6;
 PAGE_SEARCH = 7;
 PAGE_SVG_TREE = 10;
-PAGE_SVG_TREE_FULL = 11
+PAGE_SVG_TREE_FULL = 11;
+PAGE_SVG_TREE_CONF = 12;
+PAGE_SVG_TREE_SAVE = 13;
 
 
 //=================================================================
@@ -239,7 +242,7 @@ function indiHref(idx)
 	idx = (typeof(idx) !== 'undefined') ? idx : search.Idx;
 	return('person.html?' + BuildSearchString({
 		Idx: idx,
-		mapExpanded: false // Reset map
+		MapExpanded: false // Reset map
 	}));
 }
 
@@ -258,7 +261,7 @@ function famHref(fdx)
 	fdx = (typeof(fdx) !== 'undefined') ? fdx : search.Fdx;
 	return('family.html?' + BuildSearchString({
 		Fdx: fdx,
-		mapExpanded: false // Reset map
+		MapExpanded: false // Reset map
 	}));
 }
 
@@ -325,22 +328,12 @@ function searchHref()
 
 function svgHref(idx, expand)
 {
-	// Go to the SVG tree page
+	// Get the SVG tree page
 
 	if (typeof(idx) == 'undefined') idx = search.Idx;
+	if (typeof(expand) == 'undefined') expand = search.SvgExpanded;
 	var page;
-	if (typeof(expand) == 'undefined')
-	{
-		// Get the current page
-		var url = window.location.href;
-		// this removes the anchor at the end, if there is one
-		url = url.substring(0, (url.indexOf('#') == -1) ? url.length : url.indexOf('#'));
-		// this removes the query after the file name, if there is one
-		url = url.substring(0, (url.indexOf('?') == -1) ? url.length : url.indexOf('?'));
-		// The file name is everything before the last slash in the path
-		page = url.substring(url.lastIndexOf('/') + 1, url.length);
-	}
-	else if (expand)
+	if (expand)
 	{
 		page = 'tree_svg_full.html';
 	}
@@ -350,14 +343,28 @@ function svgHref(idx, expand)
 	}
 	return(page + '?' + BuildSearchString({
 		Idx: idx,
+		SvgExpanded: expand,
 	}));
 }
 
 function svgRef(idx, expand)
 {
 	// Go to the SVG tree page
-
 	window.location.href = svgHref(idx, expand);
+	return(false);
+}
+
+function svgConfRef()
+{
+	// Go to the SVG tree configuration page
+	window.location.href = 'tree_svg_conf.html?' + BuildSearchString();
+	return(false);
+}
+
+function svgSaveRef()
+{
+	// Go to the SVG tree save-as page
+	window.location.href = 'tree_svg_save.html?' + BuildSearchString();
 	return(false);
 }
 
@@ -368,7 +375,7 @@ function placeHref(pdx)
 	pdx = (typeof(pdx) !== 'undefined') ? pdx : search.Pdx;
 	return('place.html?' + BuildSearchString({
 		Pdx: pdx,
-		mapExpanded: false // Reset map
+		MapExpanded: false // Reset map
 	}));
 }
 
@@ -387,7 +394,7 @@ function repoHref(rdx)
 	rdx = (typeof(rdx) !== 'undefined') ? rdx : search.Rdx;
 	return('repository.html?' + BuildSearchString({
 		Rdx: rdx,
-		mapExpanded: false // Reset map
+		MapExpanded: false // Reset map
 	}));
 }
 
@@ -401,33 +408,33 @@ function repoRef(rdx)
 
 
 //=================================================================
-//======================================================= Implexes
+//====================================================== Duplicates
 //=================================================================
 
 // List of the persons index 'idx' of table 'I', that appear several times in the ancestors or descendants of the center person
-var implexes = [];
+var duplicates = [];
 
 
-function searchImplex(idx)
+function searchDuplicate(idx)
 {
-	// Recursively search for implexes in ancestors and descendants of person 'idx'
+	// Recursively search for duplicates in ancestors and descendants of person 'idx'
 	// The search is limited to search.Asc ascending generations and search.Dsc descending generations
 	
-	implexes = [];
-	searchImplexAsc(idx, search.Asc, []);
-	searchImplexDsc(idx, search.Dsc, []);
+	duplicates = [];
+	searchDuplicateAsc(idx, search.Asc, []);
+	searchDuplicateDsc(idx, search.Dsc, []);
 }
 
 
-function searchImplexAsc(idx, lev, found)
+function searchDuplicateAsc(idx, lev, found)
 {
-	// Recursively search for implexes in ancestors of person 'idx',
+	// Recursively search for duplicates in ancestors of person 'idx',
 	// limited to "lev" generations.
 	// "found" contains all the persons found in the tree traversal
 	
-	if (($.inArray(idx, found) >= 0) && ($.inArray(idx, implexes) < 0))
+	if (($.inArray(idx, found) >= 0) && ($.inArray(idx, duplicates) < 0))
 	{
-		implexes.push(idx);
+		duplicates.push(idx);
 		return;
 	}
 	found.push(idx);
@@ -436,39 +443,39 @@ function searchImplexAsc(idx, lev, found)
 	{
 		var fam = F[I[idx][I_FAMC][x_fam][FC_INDEX]];
 		for (var x_spou = 0; x_spou < fam[F_SPOU].length; x_spou++)
-			searchImplexAsc(fam[F_SPOU][x_spou], lev - 1, found);
+			searchDuplicateAsc(fam[F_SPOU][x_spou], lev - 1, found);
 	}
 }
 
 
-function searchImplexDsc(idx, lev, found)
+function searchDuplicateDsc(idx, lev, found)
 {
-	// Recursively search for implexes in descendants of person 'idx',
+	// Recursively search for duplicates in descendants of person 'idx',
 	// limited to "lev" generations.
 	// "found" contains all the persons found in the tree traversal
 	
-	if (($.inArray(idx, found) >= 0) && ($.inArray(idx, implexes) < 0))
+	if (($.inArray(idx, found) >= 0) && ($.inArray(idx, duplicates) < 0))
 	{
-		implexes.push(idx);
+		duplicates.push(idx);
 	}
 	found.push(idx);
 	if (lev <= 0) return;
 	for (var x_fam = 0; x_fam < I[idx][I_FAMS].length; x_fam++)
 	{
 		var fam = F[I[idx][I_FAMS][x_fam]];
-		if (!isImplex(idx))
+		if (!isDuplicate(idx))
 			for (var x_chil = 0; x_chil < fam[F_CHIL].length; x_chil++)
-				searchImplexDsc(fam[F_CHIL][x_chil][FC_INDEX], lev - 1, found);
+				searchDuplicateDsc(fam[F_CHIL][x_chil][FC_INDEX], lev - 1, found);
 		for (var x_spou = 0; x_spou < fam[F_CHIL].length; x_spou++)
 			if (idx != fam[F_SPOU][x_spou])
-				searchImplexDsc(fam[F_SPOU][x_spou], -1, found);
+				searchDuplicateDsc(fam[F_SPOU][x_spou], -1, found);
 	}
 }
 
 
-function isImplex(idx)
+function isDuplicate(idx)
 {
-	return($.inArray(idx, implexes) >= 0);
+	return($.inArray(idx, duplicates) >= 0);
 }
 
 
@@ -1584,7 +1591,8 @@ function printIndex(data, defaultsort, columns)
 			var text = columns[k].ftext(j, k);
 			if (typeof(text) == 'undefined') text = '';
 			text = text.toString();
-			var text_sort = text;
+			var text_sort = text.replace(/<[^>]*>/g, '');
+			var text_filt = text_sort + " " + unorm.nfkc(text_sort);
 			if (text != '')
 			{
 				col_empty[k] = false;
@@ -1598,13 +1606,18 @@ function printIndex(data, defaultsort, columns)
 			{
 				text_sort = columns[k].fsort(j, k);
 				if (typeof(text_sort) == 'undefined') text_sort = '';
+				if (typeof(text_sort) == 'number')
+				{
+					text_sort = '000000' + text_sort;
+					text_sort = text_sort.substr(text_sort.length - 7);
+				}
 				text_sort = text_sort.toString();
 			}
-			text_sort = text_sort.replace(/<[^>]*>/g, '');
 			if (text_sort != '' && isNaN(parseInt(text_sort))) col_num[k] = false;
 			line.push({
 				'text': text,
-				'sort': text_sort
+				'sort': text_sort,
+				'filter': text_filt
 			});
 		}
 		data_copy[j] = line;
@@ -1639,11 +1652,12 @@ function printIndex(data, defaultsort, columns)
 			'data': {
 				'_': k + '.text',
 				'display': k + '.text',
-				'filter': k + '.sort',
+				'filter': k + '.filter',
 				'sort': k + '.sort',
 			},
 			// 'width': '200px',
-			'type': (col_num[k] ? 'num' : 'string')
+			'type': (col_num[k] ? 'num' : 'string'),
+			'orderable': (columns[k].fsort !== false)
 		});
 	}
 	
@@ -1672,7 +1686,6 @@ function printIndex(data, defaultsort, columns)
 	(function(){ // This is used to create instances of local variables
 		var id = '#dwr-index-' + indexCounter;
 		$(document).ready(function() {
-		// $("#example").DataTable();
 			$(id).DataTable({
 				'order': defaultsort,
 				'info': false,
@@ -1734,7 +1747,8 @@ function htmlPersonsIndex(data)
 	var columns = [{
 		title: _('Name'),
 		ftext: function(x, col) {return(I[data[x]][I_NAME]);},
-		fhref: function(x) {return(indiHref(data[x]));}
+		fhref: function(x) {return(indiHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Gender'),
 		ftext: function(x, col) {return(I[data[x]][I_GENDER]);}
@@ -1766,7 +1780,8 @@ function htmlPersonsIndex(data)
 				}
 			}
 			return(txt);
-		}
+		},
+		fsort: false
 	});
 	if (INDEX_SHOW_PARENTS) columns.push({
 		title: _('Parents'),
@@ -1787,7 +1802,8 @@ function htmlPersonsIndex(data)
 				}
 			}
 			return(txt);
-		}
+		},
+		fsort: false
 	});
 	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
@@ -1802,6 +1818,14 @@ function printIndexSpouseText(fdx, col)
 			return(I[F[fdx][F_SPOU][j]][I_NAME]);
 	return('');
 }
+function printIndexSpouseIdx(fdx, col)
+{
+	var gender = (col == 0)? 'M' : 'F';
+	for (var j = 0; j < F[fdx][F_SPOU].length; j++)
+		if (I[F[fdx][F_SPOU][j]][I_GENDER] == gender)
+			return(F[fdx][F_SPOU][j]);
+	return(-1);
+}
 
 function printFamiliesIndex()
 {
@@ -1814,11 +1838,13 @@ function htmlFamiliesIndex()
 	var columns = [{
 		title: _('Father'),
 		ftext: printIndexSpouseText,
-		fhref: famHref
+		fhref: famHref,
+		fsort: printIndexSpouseIdx
 	}, {
 		title: _('Mother'),
 		ftext: printIndexSpouseText,
-		fhref: famHref
+		fhref: famHref,
+		fsort: printIndexSpouseIdx
 	}];
 	if (INDEX_SHOW_MARRIAGE) columns.push({
 		title: _('Marriage'),
@@ -1897,10 +1923,12 @@ function htmlMediaIndex(data)
 			'<a class="thumbnail" href="' + mediaHref(data[x], []) + '">' +
 			'<img src="' + M[data[x]][M_THUMB] + '"></a>'
 		);},
+		fsort: false
 	}, {
 		title: _('Title'),
 		ftext: function(x, col) {return(M[data[x]][M_TITLE]);},
-		fhref: function(x) {return(mediaHref(data[x]));}
+		fhref: function(x) {return(mediaHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Path'),
 		ftext: function(x, col) {return(M[data[x]][M_GRAMPS_PATH]);},
@@ -1912,21 +1940,25 @@ function htmlMediaIndex(data)
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKI, I, I_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKI, I, I_NAME));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKF, F, F_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKF, F, F_NAME));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKS, S, S_TITLE));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKS, S, S_TITLE));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKP, P, P_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKP, P, P_NAME));},
+		fsort: false
 	});
-	html += printIndex(data, [0, 'asc'], columns);
+	html += printIndex(data, [1, 'asc'], columns);
 	return(html);
 }
 
@@ -1947,23 +1979,28 @@ function htmlSourcesIndex(data)
 	var columns = [{
 		title: _('Title'),
 		ftext: function(x, col) {return(sourName(data[x]));},
-		fhref: function(x) {return(sourceHref(data[x]));}
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKI, I, I_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKI, I, I_NAME));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKF, F, F_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKF, F, F_NAME));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_MEDIA) columns.push({
 		title: _('Used for media'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKM, M, M_TITLE));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKM, M, M_TITLE));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKP, P, P_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKP, P, P_NAME));},
+		fsort: false
 	});
 	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
@@ -2003,7 +2040,8 @@ function htmlPlacesIndex(data)
 	var columns = [{
 		title: _('Name'),
 		ftext: function(x, col) {return(P[data[x]][P_NAME]);},
-		fhref: function(x) {return(placeHref(data[x]));}
+		fhref: function(x) {return(placeHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Country'),
 		ftext: printPlacesIndexColText
@@ -2043,11 +2081,13 @@ function htmlPlacesIndex(data)
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKI, I, I_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKI, I, I_NAME));},
+		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKF, F, F_NAME));}
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKF, F, F_NAME));},
+		fsort: false
 	});
 	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
@@ -2079,7 +2119,8 @@ function htmlAddressesIndex()
 	var columns = [{
 		title: _('Person'),
 		ftext: function(x_ad, col) {return(I[adtable[x_ad][0]][I_NAME]);},
-		fhref: function(x_ad) {return(indiHref(adtable[x_ad][0]));}
+		fhref: function(x_ad) {return(indiHref(adtable[x_ad][0]));},
+		fsort: function(x, col) {return(adtable[x_ad][0]);}
 	}, {
 		title: _('Address'),
 		ftext: function(x_ad, col) {return(locationString(adtable[x_ad][1]));},
@@ -2105,7 +2146,8 @@ function htmlReposIndex()
 	var columns = [{
 		title: _('Repository'),
 		ftext: function(rdx, col) {return(R[rdx][R_NAME]);},
-		fhref: repoHref
+		fhref: repoHref,
+		fsort: function(rdx, col) {return(rdx);}
 	}, {
 		title: _('Type'),
 		ftext: function(rdx, col) {return(R[rdx][R_TYPE]);},
@@ -2124,7 +2166,8 @@ function htmlReposIndex()
 	}];
 	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(rdx, col) {return(indexBkrefName(BKREF_TYPE_REPO, R[rdx], R_BKS, S, S_TITLE));}
+		ftext: function(rdx, col) {return(indexBkrefName(BKREF_TYPE_REPO, R[rdx], R_BKS, S, S_TITLE));},
+		fsort: false
 	});
 	html += printIndex(R, [0, 'asc'], columns);
 	return(html);
@@ -2140,17 +2183,22 @@ function printSurnameIndex()
 	ParseSearchString();
 	if (search.SNdx >= 0)
 	{
-		if (SN[search.SNdx][1].length == 0)
+		if (SN[search.SNdx][SN_PERSONS].length == 0)
 		{
 			document.write('<p>' + _('No matching surname.') + '</p>');
 		}
 		else if (SN[search.SNdx][1].length == 1)
 		{
-			indiRef(SN[search.SNdx][1][0]);
+			window.location.replace(indiHref(SN[search.SNdx][SN_PERSONS][0]));
 		}
 		else
 		{
-			document.write('<h2 class="page-header">', ((SN[search.SNdx][SN_SURNAME].length > 0) ? SN[search.SNdx][SN_SURNAME] : '<i>' + _('Without surname') + '</i>'), '</h2>');
+			document.write(
+				'<h2 class="page-header">',
+				(SN[search.SNdx][SN_SURNAME].length > 0) ?
+					SN[search.SNdx][SN_SURNAME] :
+					'<i>' + _('Without surname') + '</i>',
+				'</h2>');
 			document.write(htmlPersonsIndex(SN[search.SNdx][SN_PERSONS]));
 		}
 	}
@@ -2186,7 +2234,7 @@ function printSurnamesIndex()
 	{
 		if (SN[i][SN_SURNAME].length > 0)
 		{
-			var letter = SN[i][SN_SURNAME].latinize().substring(0, 1).toUpperCase();
+			var letter = SN[i][SN_LETTER];
 			if ($.inArray(letter, titles) == -1)
 			{
 				// New initial for the surname
@@ -2360,13 +2408,13 @@ function printMap()
 	// Build HTML
 	html += printTitle(5, _('Map') +
 		' <a tabindex="0" data-toggle="popover" data-placement="bottom" title="" data-trigger="focus" data-content="' +
-		_('Click on the map to show it fullscreen') +
+		_('Click on the map to show it full-screen') +
 		'"><span class="glyphicon glyphicon-question-sign"></span></a>',
 		'dwr-panel-map');
 	html += '<div id="gmap_canvas">';
 	html += '</div>';
 	html += printTitleEnd();
-	if (search.mapExpanded)
+	if (search.MapExpanded)
 	{
 		$('body').toggleClass('dwr-fullscreen');
 		$('body > div').css('display', 'none');
@@ -2381,7 +2429,7 @@ function mapUpdate()
 	if (MAP_SERVICE == 'Google' && typeof(google) == 'undefined') return;
 	if (MAP_SERVICE == 'OpenStreetMap' && typeof(ol) == 'undefined') return;
 	// Expand map if required
-	if (search.mapExpanded)
+	if (search.MapExpanded)
 	{
 		$('body').prepend($('#gmap_canvas'));
 		$('#gmap_canvas').addClass('dwr-map-expanded');
@@ -2606,7 +2654,7 @@ function mapUpdate()
 
 function mapExpand()
 {
-	search.mapExpanded = !search.mapExpanded;
+	search.MapExpanded = !search.MapExpanded;
 	Redirect();
 	return(false);
 }
@@ -2623,7 +2671,7 @@ function mapResizeDivs()
 
 function mapResize()
 {
-	if (!search.mapExpanded) return(true);
+	if (!search.MapExpanded) return(true);
 	mapResizeDivs();
 	mapObject.checkResize();
 	return(true);
@@ -2695,9 +2743,7 @@ function OsmMove(event)
 
 function SearchFromString(ss, data, fextract)
 {
-	ss = ss.latinize();
-	ss = ss.replace(/[^a-zA-Z0-9]+/g, ' ');
-	ss = ss.toLowerCase();
+	ss = unorm.nfkc(ss).toLowerCase();
 	var terms = ss.match(/[^\s]+/ig);
 	var results = [];
 	if (terms == null) return(results);
@@ -2705,9 +2751,7 @@ function SearchFromString(ss, data, fextract)
 	{
 		var found = true;
 		var s = fextract(x);
-		s = s.latinize();
-		s = s.replace(/[^a-zA-Z0-9]+/g, ' ');
-		s = s.toLowerCase();
+		s = unorm.nfkc(s).toLowerCase();
 		for (var j = 0; j < terms.length; j++)
 		{
 			if (s.match(terms[j]) == null) found = false;
@@ -2729,28 +2773,28 @@ function SearchObjects()
 			},
 			text: _('Persons found:'),
 			findex: htmlPersonsIndex,
-			fref: indiRef
+			fref: indiHref
 		},
 		{
 			data: M,
 			fextract: function(mdx) {return(M[mdx][M_TITLE] + ' ' + M[mdx][M_PATH]);},
 			text: _('Media found:'),
 			findex: htmlMediaIndex,
-			fref: mediaRef
+			fref: mediaHref
 		},
 		{
 			data: S,
 			fextract: function(sdx) {return(S[sdx][S_TITLE]);},
 			text: _('Sources found:'),
 			findex: htmlSourcesIndex,
-			fref: sourceRef
+			fref: sourceHref
 		},
 		{
 			data: P,
 			fextract: function(pdx) {return(P[pdx][P_NAME]);},
 			text: _('Places found:'),
 			findex: htmlPlacesIndex,
-			fref: placeRef
+			fref: placeHref
 		}
 	];
 	var x;
@@ -2781,7 +2825,7 @@ function SearchObjects()
 	}
 	if (nb_found == 1)
 	{
-		fref(index);
+		window.location.replace(fref(index));
 		html = '';
 	}
 	else if (nb_found == 0)
@@ -2823,17 +2867,28 @@ function arbreMainSub()
 {
 	var html = '';
 
+	if ($.inArray(ArbreType, [PAGE_SVG_TREE_FULL, PAGE_SVG_TREE_SAVE, PAGE_SVG_TREE_CONF]) < 0) search.SvgExpanded = false;
 	if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE)
 	{
-		searchImplex(search.Idx);
-		// SVG tree
+		searchDuplicate(search.Idx);
 		html += SvgCreate();
 	}
 	else if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE_FULL)
 	{
-		searchImplex(search.Idx);
-		html = SvgCreate(true);
+		search.SvgExpanded = true;
+		searchDuplicate(search.Idx);
+		html += SvgCreate();
 		$('body').html(html).toggleClass('dwr-fullscreen');
+	}
+	else if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE_SAVE)
+	{
+		searchDuplicate(search.Idx);
+		html += SvgSavePage();
+		if (search.SvgExpanded) $('body').html(html);
+	}
+	else if (ArbreType == PAGE_SVG_TREE_CONF)
+	{
+		html += SvgConfPage();
 	}
 	else if (search.Sdx >= 0 && ArbreType == PAGE_SOURCE)
 	{
@@ -2873,7 +2928,7 @@ function arbreMainSub()
 	else
 	{
 		// Page without index specified. Redirect to the search page
-		window.location.href = searchHref();
+		window.location.replace(searchHref());
 	}
 
 	$('#body-page').html(html);

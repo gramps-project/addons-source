@@ -1,6 +1,6 @@
 // Gramps - a GTK+/GNOME based genealogy program
 //
-// Copyright (C) 2014 Pierre Bélissent
+// Copyright (C) 2014 Pierre Bï¿½lissent
 // See also https://github.com/andrewseddon/raphael-zpd/blob/master/raphael-zpd.js for parts of code from Raphael-ZPD
 //
 // This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -30,11 +30,11 @@ var linkRatio = 0.2; // Ratio between space reserved for the links  and the box 
 var fontFactorX = 1.8, fontFactorY = 1.0;
 var coordX = 10000.0, coordY = 10000.0;
 var margeX = 200.0, margeY = 200.0;
-var svgStroke; // Width of the box strokes
+var svgStroke = 10; // Width of the box strokes
 var svgDivMinHeight = 200; // Minimal graph height
 
 
-var hemiA = 0; // Math.PI/12;
+var hemiA = 0; // Overflow angle for half-circle and quadrant graphs
 
 var tpid = 0;
 var curNumStr;
@@ -49,7 +49,7 @@ var viewScale; // Scale factor between SVG coordinates and screen coordinates
 var iTxt = '';
 
 // Each person is printed with a text SVG element, over a box (path).
-// The same person could appear several times in the graph (implexes)
+// The same person could appear several times in the graph (duplicates)
 // The elements ID used to print a person are in the form:
 //    - SVGTREE_P_<number> : box for the person (it is an SVG path)
 //    - SVGTREE_T_<number> : text for the person (it is an SVG text)
@@ -77,137 +77,169 @@ SVGELT_P = 8;
 SVGIDX_SEPARATOR = -99; // Arbitrary number, used as person index (SVGELT_IDX) for separators
 SVG_SEPARATOR_SIZE = 0.3 // Separator size compared to person box size
 
-//=========================================== Patrons
+//==============================================================================
+//==============================================================================
+// Pointers to all graph types and shapes
+//==============================================================================
+//==============================================================================
 
 var CoordRatio;
 var CoordXr;
 var CoordYr;
 
+SVG_SHAPE_VERTICAL_TB = 0;
+SVG_SHAPE_VERTICAL_BT = 1;
+SVG_SHAPE_HORIZONTAL_LR = 2;
+SVG_SHAPE_HORIZONTAL_RL = 3;
+SVG_SHAPE_FULL_CIRCLE = 4;
+SVG_SHAPE_HALF_CIRCLE = 5;
+SVG_SHAPE_QUADRANT = 6;
+
 var graphsBuild =
 [
-	buildAscTreeH,
-	buildAscTreeV,
-	buildAsc,
-	buildAscProp,
-	buildAscHemi,
-	buildAscHemiProp,
-	buildDscTreeH,
-	buildDscTreeHSpou,
-	buildDscTreeV,
-	buildDscTreeVSpou,
-	buildDsc,
-	buildDscSpou,
-	buildDscHemi,
-	buildDscHemiSpou,
-	buildBothTreeHProp,
-	buildBothTreeHPropSpou,
-	buildBothTreeVProp,
-	buildBothTreeVPropSpou,
-	buildBoth,
-	buildBothSpou,
-	buildBothProp,
-	buildBothPropSpou
+	[
+		buildAscTreeV,
+		buildAscTreeV,
+		buildAscTreeH,
+		buildAscTreeH,
+		buildAsc,
+		buildAscHemi,
+		buildAscQadr
+	],
+	[
+		buildDscTreeV,
+		buildDscTreeV,
+		buildDscTreeH,
+		buildDscTreeH,
+		buildDsc,
+		buildDscHemi,
+		buildDscQadr
+	],
+	[
+		buildDscTreeVSpou,
+		buildDscTreeVSpou,
+		buildDscTreeHSpou,
+		buildDscTreeHSpou,
+		buildDscSpou,
+		buildDscHemiSpou,
+		buildDscQadrSpou
+	],
+	[
+		buildBothTreeV,
+		buildBothTreeV,
+		buildBothTreeH,
+		buildBothTreeH,
+		buildBoth,
+		buildBoth,
+		buildBoth
+	],
+	[
+		buildBothTreeVSpou,
+		buildBothTreeVSpou,
+		buildBothTreeHSpou,
+		buildBothTreeHSpou,
+		buildBothSpou,
+		buildBothSpou,
+		buildBothSpou
+	]
 ];
 
 var graphsInitialize =
 [
-	initAscTreeH,
-	initAscTreeV,
-	initAsc,
-	initAscProp,
-	initAscHemi,
-	initAscHemiProp,
-	initDscTreeH,
-	initDscTreeHSpou,
-	initDscTreeV,
-	initDscTreeVSpou,
-	initDsc,
-	initDscSpou,
-	initDscHemi,
-	initDscHemiSpou,
-	initBothTreeHProp,
-	initBothTreeHPropSpou,
-	initBothTreeVProp,
-	initBothTreeVPropSpou,
-	initBoth,
-	initBothSpou,
-	initBothProp,
-	initBothPropSpou
+	[
+		initAscTreeV,
+		initAscTreeV,
+		initAscTreeH,
+		initAscTreeH,
+		initAsc,
+		initAscHemi,
+		initAscQadr
+	],
+	[
+		initDscTreeV,
+		initDscTreeV,
+		initDscTreeH,
+		initDscTreeH,
+		initDsc,
+		initDscHemi,
+		initDscQadr
+	],
+	[
+		initDscTreeVSpou,
+		initDscTreeVSpou,
+		initDscTreeHSpou,
+		initDscTreeHSpou,
+		initDscSpou,
+		initDscHemiSpou,
+		initDscQadrSpou
+	],
+	[
+		initBothTreeV,
+		initBothTreeV,
+		initBothTreeH,
+		initBothTreeH,
+		initBoth,
+		initBoth,
+		initBoth
+	],
+	[
+		initBothTreeVSpou,
+		initBothTreeVSpou,
+		initBothTreeHSpou,
+		initBothTreeHSpou,
+		initBothSpou,
+		initBothSpou,
+		initBothSpou
+	]
 ];
 
 
-//=========================================== Document
+//==============================================================================
+//==============================================================================
+// Document creation
+//==============================================================================
+//==============================================================================
 
 var svgPaper, svgRoot;
 
 
-function SvgCreate(expand)
+function SvgCreate()
 {
-	if (typeof(expand) == 'undefined') expand = false;
 	nbGenAsc = search.Asc + 1;
 	nbGenDsc = search.Dsc + 1;
 	nbGenAscFound = 0;
 	nbGenDscFound = 0;
 	$(window).load(SvgInit);
 	var html = '';
-	// Graph type selector floating div
-	if (!expand)
+	if (!search.SvgExpanded)
 		html += '<div class="panel panel-default dwr-panel-tree"><div class="panel-body">';
-	html += '<div id="svg-drawing" class="' + (expand ? 'svg-drawing-expand' : 'svg-drawing') + '">';
-	html += '<div id="svg-drawing-type" class="svg-drawing-type">';
-	html += '<form class="form-inline">';
-	html += '<select name="svg-type" id="svg-type" class="form-control" size="1" title="' + _('Select the type of graph') + '">';
-	for (i = 0; i < graphsBuild.length; i++)
-	{
-		html += '<option value="' + i + '"' + ((search.SvgType == i) ? ' selected' : '') + '>' + SVG_TREE_TYPES_NAMES[i] + '</option>';
-	}
-	html += '</select> 	';
-	// html += '<label for="svg-asc">' + _('Ancestors') + ':</label> ';
-	html += '<select id="svg-asc" class="form-control svg-gens" size="1" title="' + _('Select the number of ascending generations') + '">';
-	for (i = 0; i < NB_GENERATIONS_MAX; i++)
-	{
-		html += '<option value="' + i + '"' + ((search.Asc == i) ? ' selected' : '') + '>' + i + '</option>';
-	}
-	html += '</select> ';
-	// html += '<label for="svg-dsc">' + _('Descendants') + ':</label> ';
-	html += '<select id="svg-dsc" class="form-control svg-gens" size="1" title="' + _('Select the number of descending generations') + '">';
-	for (i = 0; i < NB_GENERATIONS_MAX; i++)
-	{
-		html += '<option value="' + i + '"' + ((search.Dsc == i) ? ' selected' : '') + '>' + i + '</option>';
-	}
-	html += '</select> ';
-	html += '</form>';
-	html += '</div>';
+	html += '<div id="svg-drawing" class="' + (search.SvgExpanded ? 'svg-drawing-expand' : 'svg-drawing') + '">';
 	// Buttons div
 	html += '<div id="svg-buttons">';
 	html += '<div class="btn-group-vertical" role="group">';
-	html += '<button id="SvgExpand" type="button" class="btn btn-default">';
-	html += '<span class="glyphicon ' + (expand ? 'glyphicon-resize-small' : 'glyphicon-resize-full') + '"></span>';
+	html += '<button id="svg-expand" type="button" class="btn btn-default" title="' + (search.SvgExpanded ? _('Restore') : _('Expand')) + '">';
+	html += '<span class="glyphicon ' + (search.SvgExpanded ? 'glyphicon-resize-small' : 'glyphicon-resize-full') + '"></span>';
 	html += '</button>';
-	html += '<button id="SvgZoomIn" type="button" class="btn btn-default">';
+	html += '<button id="svg-zoom-in" type="button" class="btn btn-default" title="' + _('Zoom in') + '">';
 	html += '<span class="glyphicon glyphicon-zoom-in"></span>';
 	html += '</button>';
-	html += '<button id="SvgZoomOut" type="button" class="btn btn-default">';
+	html += '<button id="svg-zoom-out" type="button" class="btn btn-default" title="' + _('Zoom out') + '">';
 	html += '<span class="glyphicon glyphicon-zoom-out"></span>';
 	html += '</button>';
-	html += '<button id="SvgHelp" type="button" class="btn btn-default">';
-	html += '<span class="glyphicon glyphicon-question-sign"></span>';
+	html += '<button id="svg-config" type="button" class="btn btn-default" title="' + _('Configuration') + '">';
+	html += '<span class="glyphicon glyphicon-cog"></span>';
+	html += '</button>';
+	html += '<button id="svg-saveas" type="button" class="btn btn-default" title="' + _('Save tree as file') + '">';
+	html += '<span class="glyphicon glyphicon-save"></span>';
 	html += '</button>';
 	html += '</span>';
-	html += '</div>';
-	html += '</div>';
-	// Help div
-	html += '<div id="svg-help-popover" class="popover fade in hide" role="tooltip">';
-	html += '<h3 class="popover-title">' + _('Graph help') + '</h3>';
-	html += '<div class="popover-content">';
-	html += _('<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown fullscreen.');
 	html += '</div>';
 	html += '</div>';
 	// Floating popup div
 	html += '<div id="svg-popup" class="svg-popup">';
 	html += '</div>';
 	html += '</div>'; // svg-drawing
-	if (!expand)
+	if (!search.SvgExpanded)
 		html += '</div></div>'; // panel
 	return(html);
 }
@@ -217,23 +249,14 @@ function SvgInit()
 {
 	// Initialize graph dimensions
 	CalcBoundingBox();
-	graphsInitialize[search.SvgType]();
+	graphsInitialize[search.SvgType][search.SvgShape]();
 	CalcViewBox();
 	svgPaper = new Raphael('svg-drawing', DimX, DimY);
 	$(svgPaper.canvas).attr('xmlns:xlink', "http://www.w3.org/1999/xlink");
 	svgPaper.setViewBox(0, 0, viewBoxW, viewBoxH, true);
 	svgRoot = svgPaper.canvas;
-	// Graph type selector event
-	$('#svg-type').change(function() {
-		search.SvgType = $('#svg-type').val();
-		return(svgRef());
-	});
-	// Events for update of number of generations
-	$('.svg-gens').change(function() {
-		search.Asc = $('#svg-asc').val();
-		search.Dsc = $('#svg-dsc').val();
-		return(svgRef());
-	});
+	// Compute the stroke-width depending on graph size
+	svgStroke = 0.5 / viewScale;
 	// Floating popup
 	SvgPopupHide();
 	$('#svg-popup').mousemove(SvgPopupMove);
@@ -245,24 +268,13 @@ function SvgInit()
 	var s = 'matrix(' + viewScale + ',0,0,' + viewScale + ',' + (-viewBoxX) + ',' + (-viewBoxY) + ')';
 	g.setAttribute('transform', s);
 	// Manage buttons
-	$('#SvgZoomIn').click(SvgZoomIn);
-	$('#SvgZoomOut').click(SvgZoomOut);
-	if ($('.svg-drawing-expand').length == 0)
-	{
-		$('#SvgExpand').click(SvgExpand);
-	}
-	else
-	{
-		$('#SvgExpand').click(SvgMinimize);
-	}
+	$('#svg-zoom-in').click(SvgZoomIn);
+	$('#svg-zoom-out').click(SvgZoomOut);
+	$('#svg-expand').click(SvgToggleExpand);
 	svgPaper.canvas = g;
-	// Help button
-	$('#SvgHelp').click(function (e) {
-		$('#svg-help-popover').toggleClass('hide');
-	});
-	$('#svg-help-popover').click(function (e) {
-		$('#svg-help-popover').addClass('hide');
-	});
+	// Config button
+	$('#svg-config').click(SvgConfig);
+	$('#svg-saveas').click(SvgSaveAs);
 	// Setup event handlers
 	svgRoot.onmousedown = SvgMouseDown;
 	$(window).mouseup(SvgMouseUpWindow);
@@ -272,7 +284,7 @@ function SvgInit()
 	$(svgRoot).mousewheel(SvgMouseWheel);
 	$(window).resize(SvgResize);
 	// Build the graph
-	graphsBuild[search.SvgType]();
+	graphsBuild[search.SvgType][search.SvgShape]();
 	SvgCreateElts(0);
 	// Context menu
 	context.init({
@@ -281,16 +293,315 @@ function SvgInit()
 		compress: true
 	});
 	svgContextMenuItems = [
-		{
-			text: (($('.svg-drawing-expand').length == 0) ? _('Expand') : _('Restore')),
-			href: svgHref(search.Idx, ($('.svg-drawing-expand').length == 0))
-		},
-		{text: _('Zoom in'), href: 'javascript:SvgZoomIn();'},
-		{text: _('Zoom out'), href: 'javascript:SvgZoomOut();'}
+		// {
+			// text: (search.SvgExpanded) ? _('Restore') : _('Expand'),
+			// href: svgHref(search.Idx, !search.SvgExpanded)
+		// },
+		// {text: _('Zoom in'), href: 'javascript:SvgZoomIn();'},
+		// {text: _('Zoom out'), href: 'javascript:SvgZoomOut();'}
 	];
 	context.attach('#svg-drawing', svgContextMenuItems);
 }
 
+
+//==============================================================================
+//==============================================================================
+// Configuration page
+//==============================================================================
+//==============================================================================
+
+function SvgConfPage()
+{
+	var html = '';
+	// Graph type selector floating div
+	html += '<div id="svg-drawing-type" class="panel panel-default svg-drawing-type">';
+	html += '<div class="panel-body">';
+	html += '<form role="form">';
+	html += '<div class="row">';
+	html += '<div class="col-xs-12 col-sm-6">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-type">' + _('SVG tree graph type') + '</label>';
+	html += '<select name="svg-type" id="svg-type" class="form-control" size="1" title="' + _('Select the type of graph') + '">';
+	for (i = 0; i < SVG_TREE_TYPES_NAMES.length; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.SvgType == i) ? ' selected' : '') + '>' + SVG_TREE_TYPES_NAMES[i] + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '<div class="col-xs-12 col-sm-6">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-shape">' + _('SVG tree graph shape') + '</label>';
+	html += '<select name="svg-shape" id="svg-shape" class="form-control" size="1" title="' + _('Select the shape of graph') + '">';
+	for (i = 0; i < SVG_TREE_SHAPES_NAMES.length; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.SvgShape == i) ? ' selected' : '') + '>' + SVG_TREE_SHAPES_NAMES[i] + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '</div>'; // row
+	html += '<div class="row">';
+	html += '<div class="col-xs-12 col-sm-6">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-distrib-asc">' + _('SVG tree parents distribution') + '</label>';
+	html += '<select name="svg-distrib-asc" id="svg-distrib-asc" class="form-control" size="1" title="' + _('Select the parents distribution (fan charts only)') + '">';
+	for (i = 0; i < SVG_TREE_DISTRIB_ASC_NAMES.length; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.SvgDistribAsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_ASC_NAMES[i] + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '<div class="col-xs-12 col-sm-6">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-distrib-dsc">' + _('SVG tree children distribution') + '</label>';
+	html += '<select name="svg-distrib-dsc" id="svg-distrib-dsc" class="form-control" size="1" title="' + _('Select the children distribution (fan charts only)') + '">';
+	for (i = 0; i < SVG_TREE_DISTRIB_DSC_NAMES.length; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.SvgDistribDsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_DSC_NAMES[i] + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '</div>'; // row
+	html += '<div class="row">';
+	html += '<div class="col-xs-12 col-sm-4">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-background">' + _('Background') + '</label>';
+	html += '<select name="svg-background" id="svg-background" class="form-control" size="1" title="' + _('Select the background color scheme') + '">';
+	for (i = 0; i < SVG_TREE_BACKGROUND_NAMES.length; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.SvgBackground == i) ? ' selected' : '') + '>' + SVG_TREE_BACKGROUND_NAMES[i] + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '<div class="col-xs-6 col-sm-4">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-asc">' + _('Ancestors') + '</label>';
+	html += '<select id="svg-asc" class="form-control svg-gens" size="1" title="' + _('Select the number of ascending generations') + '">';
+	for (i = 0; i < NB_GENERATIONS_MAX; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.Asc == i) ? ' selected' : '') + '>' + i + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '<div class="col-xs-6 col-sm-4">';
+	html += '<div class="form-group">';
+	html += '<label for="svg-dsc">' + _('Descendants') + '</label>';
+	html += '<select id="svg-dsc" class="form-control svg-gens" size="1" title="' + _('Select the number of descending generations') + '">';
+	for (i = 0; i < NB_GENERATIONS_MAX; i++)
+	{
+		html += '<option value="' + i + '"' + ((search.Dsc == i) ? ' selected' : '') + '>' + i + '</option>';
+	}
+	html += '</select>';
+	html += '</div>'; // form-group
+	html += '</div>'; // col-xs-*
+	html += '</div>'; // row
+	html += '<div class="text-center">';
+	html += '<button id="svg-config-ok" type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-ok"></span> ' + _('OK') + ' </button>';
+	html += '</div>';
+	html += '</form>';
+	html += '</div>'; // panel-body
+	html += '</div>'; // svg-drawing-type
+	
+	// Help panel
+	html += '<div class="panel panel-default">';
+	html += '<div class="panel-heading">';
+	html += '<span class="glyphicon glyphicon-question-sign"></span> ' + _('Graph help');
+	html += '</div>'; // panel-heading
+	html += '<div class="panel-body">';
+	html += _('<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.');
+	html += '</div>'; // panel-body
+	html += '</div>'; // panel
+	
+	// Events
+	$(window).load(function() {
+		$('#svg-config-ok').click(SvgConfSubmit);
+	});
+	
+	return(html);
+}
+
+function SvgConfSubmit()
+{
+	search.SvgType = $('#svg-type').val();
+	search.SvgShape = $('#svg-shape').val();
+	search.SvgDistribAsc = $('#svg-distrib-asc').val();
+	search.SvgDistribDsc = $('#svg-distrib-dsc').val();
+	search.SvgBackground = $('#svg-background').val();
+	search.Asc = $('#svg-asc').val();
+	search.Dsc = $('#svg-dsc').val();
+	return(svgRef());
+}
+
+
+//==============================================================================
+//==============================================================================
+// Save page
+//==============================================================================
+//==============================================================================
+
+function SvgSavePage()
+{
+	var html = '';
+	html +=
+		'<div id="svg-loader" class="text-center">' +
+		'<h1>' + _('Preparing file ...') + '</h1>' +
+		'</div>';
+	html += SvgCreate();
+	
+	$(window).load(function() {
+		$('body').css('overflow', 'hidden');
+	});
+
+	return(html);
+}
+
+function SvgSaveText()
+{
+	$('#svg-loader').html(
+		'<h1>' + _('File ready') + '</h1>' +
+		_('<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>') +
+		'<p class="text-centered"><button id="svg-save-ok" type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-ok"></span> ' + _('OK') + ' </button></p>'
+		);
+	$('#svg-save-ok').click(SvgSaveOk)
+}
+
+function SvgSaveOk()
+{
+	if ($('#svg-loader').length == 0) return;
+	var xml = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>';
+	xml += '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"\n';
+	xml += 'style=\'' + CssDefaultProperties() + '\'\n';
+	xml += ' width="' + $('svg').attr('width') + '"';
+	xml += ' height="' + $('svg').attr('height') + '"';
+	xml += ' viewBox="' + $('svg')[0].getAttribute('viewBox') + '"';
+	xml += ' version="' + $('svg').attr('version') + '"';
+	xml += ' preserveAspectRatio="' + $('svg')[0].getAttribute('preserveAspectRatio') + '"';
+	xml += '>';
+	xml += '<style type="text/css">\n';
+	xml += '<![CDATA[\n';
+	xml += CssProperties('.svg-tree');
+	xml += CssProperties('.svg-text');
+	xml += CssProperties('.svg-line');
+	xml += ']]>\n';
+	xml += '</style>\n';
+	xml += removeLinks($('svg').html());
+	xml += '</svg>';
+	$('body').addClass('svg-save-text');
+	$('body').text(formatXml(xml));
+	$('body').css('overflow', 'auto');
+	return(false);
+}
+
+function removeLinks(xml)
+{
+	xml = xml.replace(/(?:<a [^>]*>|<a>|<\/a [^>]*>|<\/a>)/g, '');
+	return xml;
+}
+
+function CssProperties(selectorText)
+{
+	var css_text = selectorText + ' {\n';
+	for (var s = 0 ; s < document.styleSheets.length; s++)
+	{
+		var cssRules = document.styleSheets[s].cssRules ||
+			document.styleSheets[s].rules || []; // IE support
+		for (var c = 0; c < cssRules.length; c++)
+		{
+			if (cssRules[c].selectorText === selectorText)
+			{
+				css_text += cssRules[c].style.cssText;
+			}
+		}
+	}
+	css_text += '}\n';
+	return(css_text);
+}
+
+function CssDefaultProperties()
+{
+	var css_text = '';
+	var style = $('svg')[0].style;
+	for (var propertyName in style)
+	{
+		if (propertyName != propertyName.toLowerCase()) continue;
+		if (propertyName.indexOf("webkit") != -1) continue;
+		if (typeof(propertyName) == 'string' && isNaN(parseInt(propertyName)))
+		{
+			val = style[propertyName];
+			if (typeof(val) == 'string')
+			{
+				val = '' + $('svg').css(propertyName);
+				if (val != '' && val.indexOf("'") == -1)
+					css_text += ' ' + propertyName + ':' + val + ';';
+			}
+		}
+	}
+	return(css_text);
+}
+
+function formatXml(xml)
+{
+	var reg = /(>)\s*(<)(\/*)/g;
+	var wsexp = / *(.*) +\n/g;
+	var contexp = /(<.+>)(.+\n)/g;
+	xml = xml.replace(reg, '$1\n$2$3').replace(wsexp, '$1\n').replace(contexp, '$1\n$2');
+	var pad = 0;
+	var formatted = '';
+	var lines = xml.split('\n');
+	var indent = 0;
+	var lastType = 'other';
+	// 4 types of tags - single, closing, opening, other (text, doctype, comment) - 4*4 = 16 transitions 
+	var transitions = {
+		'single->single'    : 0,
+		'single->closing'   : -1,
+		'single->opening'   : 0,
+		'single->other'     : 0,
+		'closing->single'   : 0,
+		'closing->closing'  : -1,
+		'closing->opening'  : 0,
+		'closing->other'    : 0,
+		'opening->single'   : 1,
+		'opening->closing'  : 0, 
+		'opening->opening'  : 1,
+		'opening->other'    : 1,
+		'other->single'     : 0,
+		'other->closing'    : -1,
+		'other->opening'    : 0,
+		'other->other'      : 0
+	};
+
+	for (var i=0; i < lines.length; i++) {
+		var ln = lines[i];
+		var single = Boolean(ln.match(/<.+\/>/)); // is this line a single tag? ex. <br />
+		var closing = Boolean(ln.match(/<\/.+>/)); // is this a closing tag? ex. </a>
+		var opening = Boolean(ln.match(/<[^!].*>/)); // is this even a tag (that's not <!something>)
+		var type = single ? 'single' : closing ? 'closing' : opening ? 'opening' : 'other';
+		var fromTo = lastType + '->' + type;
+		lastType = type;
+		var padding = '';
+
+		indent += transitions[fromTo];
+		for (var j = 0; j < indent; j++) {
+			padding += '    ';
+		}
+
+		formatted += padding + ln + '\n';
+	}
+
+	return formatted;
+};
+
+
+//==============================================================================
+//==============================================================================
+// Tree size and styles
+//==============================================================================
+//==============================================================================
 
 function CalcBoundingBox()
 {
@@ -346,6 +657,10 @@ function SvgCreateElts(n)
 			SvgCreateElts(n + incr);
 		}, 200);
 	}
+	else
+	{
+		SvgSaveText();
+	}
 }
 
 
@@ -353,41 +668,90 @@ function SvgSetStyle(p, text, x_elt, lev)
 {
 	var elt = svgElts[x_elt];
 	// Get the class of the person box and text
-	var cl = 'svg-tree';
-	var clt = 'svg-text';
-	if (isImplex(elt[SVGELT_IDX]))
+	var fill = "#FFFFFF";
+	var stroke = "#000000";
+	var dark = 1.0;
+	if (search.SvgBackground == 0) // BACKGROUND_GENDER
 	{
-		cl += ' svg-implex';
-		clt += ' svg-text-implex';
+		var g = 'unknown';
+		if (I[elt[SVGELT_IDX]][I_GENDER] == 'M') g = 'male';
+		if (I[elt[SVGELT_IDX]][I_GENDER] == 'F') g = 'female';
+		var d = 'alive';
+		if (I[elt[SVGELT_IDX]][I_DEATH_YEAR] != "") d = 'death';
+		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
 	}
-	if (I[elt[SVGELT_IDX]][I_GENDER] == 'M')
+	if (typeof(lev) != 'undefined' && search.SvgBackground == 1) // BACKGROUND_GRAD_GEN
 	{
-		cl += ' svg-male';
-		clt += ' svg-text-male';
+		fill = SVG_BACKGROUND_GEN_COLORS[lev];
+		dark = SVG_GENDER_K;
 	}
-	else if (I[elt[SVGELT_IDX]][I_GENDER] == 'F')
+	if ( // BACKGROUND_GRAD_AGE, BACKGROUND_GRAD_PERIOD
+		($.inArray(search.SvgBackground, [2, 4]) >= 0) &&
+		(I[elt[SVGELT_IDX]][I_BIRTH_YEAR] != "?") &&
+		(I[elt[SVGELT_IDX]][I_DEATH_YEAR] != "") &&
+		(I[elt[SVGELT_IDX]][I_DEATH_YEAR] != "?"))
 	{
-		cl += ' svg-female';
-		clt += ' svg-text-female';
+		var b = parseInt(I[elt[SVGELT_IDX]][I_BIRTH_YEAR]);
+		var d = parseInt(I[elt[SVGELT_IDX]][I_DEATH_YEAR]);
+		var x;
+		var m; 
+		if (search.SvgBackground == 2)
+		{
+			x = d - b;
+			m = MAX_AGE;
+		}
+		if (search.SvgBackground == 4)
+		{
+			x = (d + b) / 2.0 - MIN_PERIOD;
+			m = MAX_PERIOD - MIN_PERIOD;
+		}
+		if (x < 0) x = 0;
+		if (x >= m) x = SVG_BACKGROUND_GRAD_COLORS.length - 1;
+		else x = Math.floor(1.0 * SVG_BACKGROUND_GRAD_COLORS.length * x / m);
+		fill = SVG_BACKGROUND_GRAD_COLORS[x];
+		dark = SVG_GENDER_K;
 	}
-	else
+	if (search.SvgBackground == 3) // BACKGROUND_SINGLE_COLOR
 	{
-		cl += ' svg-unknown';
-		clt += ' svg-text-unknown';
+		fill = SVG_TREE_COLOR1;
 	}
-	if (typeof(lev) != 'undefined') cl += ' svg-gen-' + (lev + 1);
+	if (search.SvgBackground == 5) // BACKGROUND_WHITE
+	{
+		fill = SVG_TREE_COLOR_SCHEME0[lev % SVG_TREE_COLOR_SCHEME0.length];
+		dark = SVG_GENDER_K;
+	}
+	if (search.SvgBackground == 6) // BACKGROUND_SCHEME1
+	{
+		fill = SVG_TREE_COLOR_SCHEME1[lev % SVG_TREE_COLOR_SCHEME1.length];
+		dark = SVG_GENDER_K;
+	}
+	if (search.SvgBackground == 7) // BACKGROUND_SCHEME2
+	{
+		fill = SVG_TREE_COLOR_SCHEME2[lev % SVG_TREE_COLOR_SCHEME2.length];
+		dark = SVG_GENDER_K;
+	}
+	if (SVG_TREE_SHOW_DUP && isDuplicate(elt[SVGELT_IDX]))
+	{
+		fill = SVG_TREE_COLOR_DUP;
+	}
+	if (I[elt[SVGELT_IDX]][I_GENDER] != 'M') dark = 1.0;
+	fill = "#" +
+		("00" + Math.round(parseInt(fill.substr(1, 2), 16) * dark).toString(16)).substr(-2) +
+		("00" + Math.round(parseInt(fill.substr(3, 2), 16) * dark).toString(16)).substr(-2) +
+		("00" + Math.round(parseInt(fill.substr(5, 2), 16) * dark).toString(16)).substr(-2);
 	// Get hyperlink address
 	var href = svgHref(svgElts[x_elt][SVGELT_IDX]);
-	if (x_elt == 0) href = indiHref();
 	// Set box attributes
-	p.node.setAttribute('class', cl);
+	p.node.setAttribute('class', 'svg-tree');
+	p.node.setAttribute('fill', fill);
+	p.node.setAttribute('stroke-width', svgStroke);
 	p.node.id = 'SVGTREE_P_' + x_elt;
 	p.attr("href", href);
 	elt[SVGELT_P] = p;
 	if (text)
 	{
 		// Set box text attributes
-		text.node.setAttribute('class', clt);
+		text.node.setAttribute('class', 'svg-text');
 		text.attr({
 			'font': '',
 			'href': href
@@ -397,7 +761,11 @@ function SvgSetStyle(p, text, x_elt, lev)
 }
 
 
+//==============================================================================
+//==============================================================================
 //=========================================== Mouse events
+//==============================================================================
+//==============================================================================
 
 var clickOrigin = null; // Click position when moving / zooming
 var tfMoveZoom = null; // move/zoom transform matrix
@@ -438,14 +806,20 @@ function SvgMouseUpWindow(event)
 	return(true);
 }
 
-function SvgExpand(elt)
+function SvgToggleExpand(elt)
 {
-	svgRef(search.Idx, true);
+	search.SvgExpanded = !search.SvgExpanded;
+	svgRef();
 }
 
-function SvgMinimize(elt)
+function SvgConfig(elt)
 {
-	svgRef(search.Idx, false);
+	svgConfRef();
+}
+
+function SvgSaveAs(elt)
+{
+	svgSaveRef();
 }
 
 function SvgMouseMoveWindow(event)
@@ -502,6 +876,14 @@ function SvgMouseOut(event)
 
 function SvgMouseEventExit()
 {
+	if (hoverBox >= 0)
+	{
+		var p = svgElts[hoverBox][SVGELT_P];
+		if (p)
+		{
+			p.node.setAttribute('stroke-width', svgStroke);
+		}
+	}
 	hoverBox = -1;
 }
 
@@ -514,6 +896,7 @@ function SvgMouseEventEnter(elt)
 		if (p)
 		{
 			hoverBox = elt;
+			p.node.setAttribute('stroke-width', svgStroke * 2.0);
 		}
 	}
 }
@@ -656,7 +1039,11 @@ function SvgSetGraphCtm(matrix)
 }
 
 
-//=========================================== Popup
+//==============================================================================
+//==============================================================================
+// Popup for each person
+//==============================================================================
+//==============================================================================
 
 
 svgPopupIdx = -1;
@@ -707,7 +1094,11 @@ function SvgPopupMove(event)
 }
 
 
-//=========================================== Context menu
+//==============================================================================
+//==============================================================================
+// Context menu
+//==============================================================================
+//==============================================================================
 
 function SvgContextBefore($menu, event)
 {
@@ -796,13 +1187,18 @@ function SvgContextBefore($menu, event)
 			});
 		}
 	}
-	if (data.length > 0) data = data.concat([{divider: true}]);
-	data = data.concat(svgContextMenuItems);
+	// if (data.length > 0) data = data.concat([{divider: true}]);
+	// data = data.concat(svgContextMenuItems);
+	if (data.length == 0) return(true);
 	context.rebuild('#svg-drawing', data);
 }
 
 
-//=========================================== Acces DB
+//==============================================================================
+//==============================================================================
+// Access to data
+//==============================================================================
+//==============================================================================
 
 function getFams(idx)
 {
@@ -828,7 +1224,11 @@ function getChil(idx)
 }
 
 
+//==============================================================================
+//==============================================================================
 //=========================================== Calcul du nombre d'ascendants
+//==============================================================================
+//==============================================================================
 
 function calcAsc(idx, lev)
 {
@@ -885,7 +1285,7 @@ function svgAddSeparatorAsc(root)
 function svgAddSeparator(elts, nbTable, root)
 {
 	// Check the type of the tree (circles don't have separators)
-	if ($.inArray(search.SvgType, [2, 3, 4, 5, 10, 11, 12, 13, 18, 19, 20, 21]) >= 0) return;
+	if ($.inArray(search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) >= 0) return;
 	// Check if 'root' has at least 2 generations below it
 	var needSep = false;
 	for (var i = 0; i < root[SVGELT_NEXT].length; i++)
@@ -923,7 +1323,11 @@ function svgAddSeparator(elts, nbTable, root)
 }
 
 
+//==============================================================================
+//==============================================================================
 //=========================================== Calcul des descendants
+//==============================================================================
+//==============================================================================
 
 
 function calcDsc(idx, lev, print_spouses)
@@ -938,10 +1342,13 @@ function calcDsc(idx, lev, print_spouses)
 	}
 	svgChildren = [];
 	// nbFams = [];
-	return calcDscSub(idx, lev, print_spouses);
+	if (search.SvgDistribDsc == 0 || $.inArray(search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) < 0)
+		return calcDscPropSub(idx, lev, print_spouses);
+	else
+		return calcDscSub(idx, lev, 1.0, print_spouses);
 }
 
-function calcDscSub(idx, lev, print_spouses)
+function calcDscPropSub(idx, lev, print_spouses)
 {
 	var elt = [];
 	elt[SVGELT_IDX] = idx;
@@ -983,7 +1390,7 @@ function calcDscSub(idx, lev, print_spouses)
 			for (var i = 0; i < getChil(fdx).length; i++)
 			{
 				next.push(svgChildren.length);
-				var elt_next = calcDscSub(getChil(fdx)[i], lev + 1, print_spouses);
+				var elt_next = calcDscPropSub(getChil(fdx)[i], lev + 1, print_spouses);
 				elt_next[SVGELT_FDX_CHILD] = fdx;
 				nb_chil += elt_next[SVGELT_NB];
 			}
@@ -1000,6 +1407,70 @@ function calcDscSub(idx, lev, print_spouses)
 	svgAddSeparatorDsc(elt);
 	elt[SVGELT_NB] = Math.max(elt[SVGELT_NB], 1);
 	nbPeopleDsc[lev] += elt[SVGELT_NB];
+	minSizeDsc[lev] = Math.min(minSizeDsc[lev], elt[SVGELT_NB]);
+	return(elt);
+}
+
+function calcDscSub(idx, lev, nb, print_spouses)
+{
+	var elt = [];
+	elt[SVGELT_IDX] = idx;
+	elt[SVGELT_LEV] = lev;
+	elt[SVGELT_NEXT] = [];
+	elt[SVGELT_NEXT_SPOU] = [];
+	elt[SVGELT_CMD] = [];
+	elt[SVGELT_NB] = nb;
+	svgChildren.push(elt);
+	nbGenDscFound = Math.max(nbGenDscFound, lev + 1);
+	var nb_chil = 0;
+	for (var f = 0; f < getFams(idx).length; f++)
+	{
+		var fdx = getFams(idx)[f];
+		nb_chil += getChil(fdx).length;
+	}
+	if (lev < nbGenDsc - 1)
+	{
+		for (var f = 0; f < getFams(idx).length; f++)
+		{
+			var nb_spou = 0;
+			var next = [];
+			var next_spou = [];
+			var fdx = getFams(idx)[f];
+			if (print_spouses)
+			{
+				for (var i = 0; i < getSpou(fdx).length; i++)
+				{
+					if (idx != getSpou(fdx)[i])
+					{
+						next_spou.push(svgChildren.length);
+						calcDscSubSpou(getSpou(fdx)[i], fdx, lev, print_spouses);
+						nb_spou += 1;
+					}
+				}
+				if (nb_spou == 0)
+				{
+					// No spouse, create a fictive spouse to reserve space
+					next_spou.push(svgChildren.length);
+					calcDscSubSpou(-1, fdx, lev, print_spouses);
+					nb_spou = 1;
+				}
+			}
+			for (var i = 0; i < getChil(fdx).length; i++)
+			{
+				next.push(svgChildren.length);
+				var nbc = nb / nb_chil;
+				if (print_spouses) nbc = nb / getFams(idx).length / getChil(fdx).length;
+				var elt_next = calcDscSub(getChil(fdx)[i], lev + 1, nbc, print_spouses);
+				elt_next[SVGELT_FDX_CHILD] = fdx;
+			}
+			for (var i = 0; i < next_spou.length; i++)
+				svgChildren[next_spou[i]][SVGELT_NB] = nb / getFams(idx).length / nb_spou;
+			$.merge(elt[SVGELT_NEXT], next);
+			$.merge(elt[SVGELT_NEXT_SPOU], next_spou);
+		}
+	}
+	svgAddSeparatorDsc(elt);
+	nbPeopleDsc[lev] = 1.0;
 	minSizeDsc[lev] = Math.min(minSizeDsc[lev], elt[SVGELT_NB]);
 	return(elt);
 }
@@ -1026,7 +1497,11 @@ function svgAddSeparatorDsc(root)
 }
 
 
+//==============================================================================
+//==============================================================================
 //=========================================== Calcul des rayons
+//==============================================================================
+//==============================================================================
 
 // These functions compute the width of the circles for each generation
 
@@ -1049,12 +1524,12 @@ function calcRayons(nb_gen)
 }
 
 
-function calcRayonsPropAsc(idx)
+function calcRayonsPropAsc()
 {
 	calcRayonsPropSub(svgParents[0], nbPeopleAsc, nbGenAscFound, null);
 }
 
-function calcRayonsPropDsc(idx, print_spouses)
+function calcRayonsDsc(idx, print_spouses)
 {
 	calcRayonsPropSub(svgChildren[0], nbPeopleDsc, nbGenDscFound, print_spouses);
 }
@@ -1095,22 +1570,35 @@ function calcRayonsPropBoth(idx, print_spouses)
 
 function calcRayonsPropSub(center_elt, nb_people, nb_gen, print_spouses)
 {
+	var ofst = 0;
+	if (search.SvgShape == SVG_SHAPE_QUADRANT)
+	{
+		nb_gen += 1;
+		nb_people[-1] = 1;
+		ofst = -1;
+	}
 	var i;
 	rayons = [];
-	rayons[0] = 0.5;
-	for (i = 1; i <= nb_gen; i++)
+	rayons[0 + ofst] = 0.5;
+	for (i = 1 + ofst; i <= nb_gen + ofst; i++)
 	{
 		rayons[i] = 2.0 * Math.PI * rayons[i-1] * txtRatioMax * nb_people[i] / center_elt[SVGELT_NB];
 		if (rayons[i] > 1) rayons[i] = 1.0;
-		if (print_spouses && i == nb_gen) rayons[i] /= 2.0;
+		if (print_spouses && i == nb_gen + ofst) rayons[i] /= 2.0;
 		rayons[i] += rayons[i-1];
 	}
-	for (i = 0; i <= nb_gen; i++)
+	for (i = 0 + ofst; i <= nb_gen + ofst; i++)
 	{
-		rayons[i] /= rayons[nb_gen];
+		rayons[i] /= rayons[nb_gen + ofst];
 	}
 }
 
+
+//==============================================================================
+//==============================================================================
+// ASCENDING CIRCLES
+//==============================================================================
+//==============================================================================
 
 //=========================================== Roue ascendante
 
@@ -1124,6 +1612,7 @@ function initAsc()
 
 function buildAsc()
 {
+	if (search.SvgDistribAsc ==0) return buildAscProp();
 	calcAsc(search.Idx, 0);
 	calcRayons(nbGenAscFound);
 	svgElts = svgParents;
@@ -1159,11 +1648,12 @@ function initAscHemi()
 	x0 = -(coordX + margeX);
 	y0 = -(coordY + margeY);
 	w0 = 2 * (coordX + margeX);
-	h0 = 2 * (coordY * (1+Math.sin(hemiA))/2 + margeY);
+	h0 = coordY * (1 + Math.sin(hemiA)) + 2 * margeY;
 }
 
 function buildAscHemi()
 {
+	if (search.SvgDistribAsc ==0) return buildAscHemiProp();
 	calcAsc(search.Idx, 0);
 	calcRayons(nbGenAscFound);
 	svgElts = svgParents;
@@ -1173,16 +1663,39 @@ function buildAscHemi()
 }
 
 
-//=========================================== Roue ascendante proportionnelle
-function initAscProp()
+//=========================================== Quadrant ascendant
+function initAscQadr()
 {
-	initAsc();
+	var over =  Math.sin(hemiA);
+	x0 = -(coordX * over + margeX);
+	y0 = -(coordY + margeY);
+	w0 = coordX * (1 + over) + 2 * margeX;
+	h0 = coordY * (1 + over) + 2 * margeY;
 }
 
+function buildAscQadr()
+{
+	if (search.SvgDistribAsc ==0) return buildAscQadrProp();
+	calcAsc(search.Idx, 0);
+	calcRayons(nbGenAscFound + 1);
+	svgElts = svgParents;
+	maxTextWidth = coordX * rayons[0] * 2;
+	for (var i = 0; i < rayons.length; i++) rayons[i - 1] = rayons[i];
+	buildAscSub(0, 0, -hemiA, Math.PI/2 + hemiA, depNum);
+}
+
+
+//==============================================================================
+//==============================================================================
+// ASCENDING CIRCLES - PROPORTIONAL
+//==============================================================================
+//==============================================================================
+
+//=========================================== Roue ascendante proportionnelle
 function buildAscProp()
 {
 	calcAsc(search.Idx, 0);
-	calcRayonsPropAsc(search.Idx);
+	calcRayonsPropAsc();
 	svgElts = svgParents;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgElts[0][SVGELT_CMD].push('cCircle(' + [rayons[0], 0].join(', ') + ');');
@@ -1209,20 +1722,31 @@ function buildAscPropSub(x_elt, lev, a, b, num)
 }
 
 //=========================================== Hemisphere ascendant proportionnel
-function initAscHemiProp()
-{
-	initAscHemi();
-}
-
 function buildAscHemiProp()
 {
 	calcAsc(search.Idx, 0);
-	calcRayonsPropAsc(search.Idx);
+	calcRayonsPropAsc();
 	svgElts = svgParents;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgParents[0][SVGELT_CMD].push('cCircleHemi(' + [rayons[0], -Math.PI/2 - hemiA, Math.PI/2 + hemiA, 0].join(', ') + ');');
 	buildAscPropSub0(0, 0, -Math.PI/2 - hemiA, Math.PI/2 + hemiA, depNum);
 }
+
+//=========================================== Quadrant ascendant proportionnel
+function buildAscQadrProp()
+{
+	calcAsc(search.Idx, 0);
+	calcRayonsPropAsc();
+	svgElts = svgParents;
+	maxTextWidth = coordX * rayons[0] * 2;
+	buildAscPropSub(0, 0, -hemiA, Math.PI/2 + hemiA, depNum);
+}
+
+//==============================================================================
+//==============================================================================
+// DESCENDING CIRCLES
+//==============================================================================
+//==============================================================================
 
 //=========================================== Roue descendante
 function initDsc()
@@ -1233,7 +1757,7 @@ function initDsc()
 function buildDsc()
 {
 	calcDsc(search.Idx, 0, false);
-	calcRayonsPropDsc(search.Idx, false);
+	calcRayonsDsc(search.Idx, false);
 	svgElts = svgChildren;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgElts[0][SVGELT_CMD].push('cCircle(' + [rayons[0], 0].join(', ') + ');');
@@ -1252,19 +1776,6 @@ function buildDscSub0(x_elt, lev, a, b)
 	}
 }
 
-// function buildDscSub1(x_elt, lev, a, b)
-// {
-	// var i;
-	// if (lev >= nbGenDsc) return;
-	// var c = a;
-	// for (i = 0; i < getChil(fdx).length; i++)
-	// {
-		// var da = nbChildren[getChil(fdx)[i]] / nbFams[fdx] * (b - a);
-		// buildDscSub2(getChil(fdx)[i], lev, c, c+da);
-		// c += da;
-	// }
-// }
-
 function buildDscSub(x_elt, lev, a, b)
 {
 	svgElts[x_elt][SVGELT_CMD].push('secteur(' + [a, b, rayons[lev-1], rayons[lev], x_elt, lev].join(',') + ');');
@@ -1280,13 +1791,34 @@ function initDscHemi()
 function buildDscHemi()
 {
 	calcDsc(search.Idx, 0, false);
-	calcRayonsPropDsc(search.Idx, false);
+	calcRayonsDsc(search.Idx, false);
 	svgElts = svgChildren;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgElts[0][SVGELT_CMD].push('cCircleHemi(' + [rayons[0], -Math.PI/2 - hemiA, Math.PI/2 + hemiA, 0].join(', ') + ');');
 	buildDscSub0(0, 0, -Math.PI/2 - hemiA, Math.PI/2 + hemiA);
 }
 
+//=========================================== Quadrant descendant
+function initDscQadr()
+{
+	initAscQadr();
+}
+
+function buildDscQadr()
+{
+	calcDsc(search.Idx, 0, false);
+	calcRayonsDsc(search.Idx, false);
+	svgElts = svgChildren;
+	maxTextWidth = coordX * rayons[0] * 2;
+	buildDscSub(0, 0, -hemiA, Math.PI/2 + hemiA);
+}
+
+
+//==============================================================================
+//==============================================================================
+// DESCENDING CIRCLES - WITH SPOUSES
+//==============================================================================
+//==============================================================================
 
 //=========================================== Roue descendante avec epoux
 function initDscSpou()
@@ -1297,7 +1829,7 @@ function initDscSpou()
 function buildDscSpou()
 {
 	calcDsc(search.Idx, 0, true);
-	calcRayonsPropDsc(search.Idx, true);
+	calcRayonsDsc(search.Idx, true);
 	svgElts = svgChildren;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgElts[0][SVGELT_CMD].push('cCircle(' + [rayons[0], 0].join(', ') + ');');
@@ -1347,7 +1879,7 @@ function initDscHemiSpou()
 function buildDscHemiSpou()
 {
 	calcDsc(search.Idx, 0, true);
-	calcRayonsPropDsc(search.Idx, true);
+	calcRayonsDsc(search.Idx, true);
 	svgElts = svgChildren;
 	maxTextWidth = coordX * rayons[0] * 2;
 	svgElts[0][SVGELT_CMD].push('cCircleHemi(' + [rayons[0], -Math.PI/2 - hemiA, Math.PI/2 + hemiA, 0].join(', ') + ');');
@@ -1355,9 +1887,31 @@ function buildDscHemiSpou()
 }
 
 
+//=========================================== Quadrant descendant avec epoux
+function initDscQadrSpou()
+{
+	initAscQadr();
+}
+
+function buildDscQadrSpou()
+{
+	calcDsc(search.Idx, 0, true);
+	calcRayonsDsc(search.Idx, true);
+	svgElts = svgChildren;
+	maxTextWidth = coordX * rayons[0] * 2;
+	buildDscSpouSub2(0, 0, -hemiA, Math.PI/2 + hemiA);
+}
+
+
+//==============================================================================
+//==============================================================================
+// ASCENDING AND DESCENDING CIRCLES
+//==============================================================================
+//==============================================================================
+
 //=========================================== Roue ascendante+descendante
 
-function buildBothSub(prop, print_spouses)
+function buildBothSub(print_spouses)
 {
 	calcAsc(search.Idx, 0);
 	calcDsc(search.Idx, 0, print_spouses);
@@ -1369,7 +1923,7 @@ function buildBothSub(prop, print_spouses)
 	svgElts[0] = center1;
 	maxTextWidth = coordX * rayonsAsc[0] * 2;
 	rayons = rayonsAsc;
-	if (prop) buildAscPropSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
+	if (search.SvgDistribAsc == 0) buildAscPropSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
 	else buildAscSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
 	// Descendants
 	svgElts[0] = center2;
@@ -1405,16 +1959,7 @@ function initBoth()
 }
 function buildBoth()
 {
-	buildBothSub(false, false);
-}
-
-function initBothProp()
-{
-	initAsc();
-}
-function buildBothProp()
-{
-	buildBothSub(true, false);
+	buildBothSub(false);
 }
 
 function initBothSpou()
@@ -1423,18 +1968,15 @@ function initBothSpou()
 }
 function buildBothSpou()
 {
-	buildBothSub(false, true);
+	buildBothSub(true);
 }
 
-function initBothPropSpou()
-{
-	initAsc();
-}
-function buildBothPropSpou()
-{
-	buildBothSub(true, true);
-}
 
+//==============================================================================
+//==============================================================================
+// TREE - HORIZONTAL
+//==============================================================================
+//==============================================================================
 
 //=========================================== Arbre ascendant
 function initAscTreeH()
@@ -1463,11 +2005,11 @@ function buildAscTreeHSub(x_elt, a, b, num, nb_gens, offsetx, child_x, child_y)
 	var box_height = Math.min(box_width / txtRatioMin, minSizeAsc[lev] * box_width / txtRatioMax);
 	var x = box_width * (1.0 + linkRatio) * (lev + offsetx);
 	var y = (a + b) / 2.0 * box_width / txtRatioMax;
-	svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x, y - box_height / 2.0, box_width, box_height, x_elt, lev].join(',') + ');');
+	svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeHRect(x, y - box_height / 2.0, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(child_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [child_x, child_y, x, y].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeHLine(child_x, child_y, x, y).join(',') + ');');
 	}
 	var c = a;
 	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
@@ -1482,6 +2024,26 @@ function buildAscTreeHSub(x_elt, a, b, num, nb_gens, offsetx, child_x, child_y)
 		c += da;
 	}
 }
+
+function buildTreeHRect(x, y, w, h, x_elt, lev)
+{
+	if (search.SvgShape != 3)
+	{
+		x = w0 - 2.0 * margeX - x - w;
+	}
+	return([x, y, w, h, x_elt, lev]);
+}
+
+function buildTreeHLine(x1, y1, x2, y2)
+{
+	if (search.SvgShape != 3)
+	{
+		x1 = w0 - 2.0 * margeX - x1;
+		x2 = w0 - 2.0 * margeX - x2;
+	}
+	return([x1, y1, x2, y2]);
+}
+
 
 //=========================================== Arbre descendant
 function initDscTreeH()
@@ -1511,11 +2073,11 @@ function buildDscTreeHSub(x_elt, a, b, nb_gens, offsetx, print_center, parent_x,
 	var x = box_width * (1.0 + linkRatio) * (offsetx - lev);
 	var y = (a + b) / 2.0 * box_width / txtRatioMax;
 	if (print_center || lev > 0)
-		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x, y - box_height / 2.0, box_width, box_height, x_elt, lev].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeHRect(x, y - box_height / 2.0, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(parent_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x + box_width, y].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeHLine(parent_x, parent_y, x + box_width, y).join(',') + ');');
 	}
 	var c = a;
 	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
@@ -1557,32 +2119,12 @@ function buildDscTreeHSpouSub(x_elt, a, b, nb_gens, offsetx, print_center, paren
 	var x = box_width * (1.0 + linkRatio) * (offsetx - lev * 2);
 	var y = (a + b) / 2.0 * box_width / txtRatioMax;
 	if (print_center || lev > 0)
-		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x, y - box_height / 2.0, box_width, box_height, x_elt, lev].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeHRect(x, y - box_height / 2.0, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(parent_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x + box_width, y].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeHLine(parent_x, parent_y, x + box_width, y).join(',') + ');');
 	}
-	// var spou_offset = (svgElts[x_elt][SVGELT_NEXT_SPOU].length > 0) ? -box_width : 0;
-	// var c = a;
-	// for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
-	// {
-		// var x_next = svgElts[x_elt][SVGELT_NEXT][i];
-		// var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		// buildDscTreeHSpouSub(x_next, c, c + da, nb_gens, offsetx, print_center, x + spou_offset, y);
-		// c += da;
-	// }
-	// c = a;
-	// for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i++)
-	// {
-		// var x_next = svgElts[x_elt][SVGELT_NEXT_SPOU][i];
-		// var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
-		// if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
-		// {
-			// svgElts[x_next][SVGELT_CMD].push('rectangle(' + [x - box_width, y - box_height / 2.0, box_width, box_height, x_next, lev].join(',') + ');');
-		// }
-		// c += da;
-	// }
 	var c_spou = a;
 	var i_chil = 0;
 	var x_spou = x - box_width * (1.0 + linkRatio);
@@ -1598,8 +2140,8 @@ function buildDscTreeHSpouSub(x_elt, a, b, nb_gens, offsetx, print_center, paren
 		{
 			p_x = x_spou;
 			p_y = y_spou;
-			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + [x_spou, y_spou - box_height_spou / 2.0, box_width, box_height_spou, x_next_spou, lev].join(',') + ');');
-			svgElts[x_next_spou][SVGELT_CMD].push('line(' + [x, y, x_spou + box_width, y_spou].join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + buildTreeHRect(x_spou, y_spou - box_height_spou / 2.0, box_width, box_height_spou, x_next_spou, lev).join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('line(' + buildTreeHLine(x, y, x_spou + box_width, y_spou).join(',') + ');');
 		}
 		var c_chil = c_spou;
 		while (i_chil < svgElts[x_elt][SVGELT_NEXT].length)
@@ -1618,7 +2160,7 @@ function buildDscTreeHSpouSub(x_elt, a, b, nb_gens, offsetx, print_center, paren
 
 //=========================================== Arbre ascendant+descendant
 
-function initBothTreeHSub(prop, print_spouses)
+function initBothTreeHSub(print_spouses)
 {
 	calcAsc(search.Idx, 0);
 	calcDsc(search.Idx, 0, print_spouses);
@@ -1640,15 +2182,14 @@ function initBothTreeHSub(prop, print_spouses)
 	h0 = box_height * svgElts[0][SVGELT_NB] + 2.0 * margeY;
 }
 
-function buildBothTreeHSub(prop, print_spouses)
+function buildBothTreeHSub(print_spouses)
 {
 	var center1 = svgParents[0];
 	var center2 = svgChildren[0];
 	var nb_gens = nbGenAscFound + (print_spouses ? (nbGenDscFound * 2 - 1) : nbGenDscFound) - 1;
 	// Ascendants
 	svgElts[0] = center1;
-	if (prop) buildAscTreeHSub(0, 0, svgElts[0][SVGELT_NB], depNum, nb_gens, nb_gens - nbGenAscFound);
-	else ;
+	buildAscTreeHSub(0, 0, svgElts[0][SVGELT_NB], depNum, nb_gens, nb_gens - nbGenAscFound);
 	// Descendants
 	svgElts[0] = center2;
 	if (print_spouses) buildDscTreeHSpouSub(0, 0, svgElts[0][SVGELT_NB], nb_gens, nb_gens - nbGenAscFound, false);
@@ -1657,24 +2198,30 @@ function buildBothTreeHSub(prop, print_spouses)
 	svgElts[0] = center1;
 }
 
-function initBothTreeHProp()
+function initBothTreeH()
 {
-	initBothTreeHSub(true, false);
+	initBothTreeHSub(false);
 }
-function buildBothTreeHProp()
+function buildBothTreeH()
 {
-	buildBothTreeHSub(true, false);
-}
-
-function initBothTreeHPropSpou()
-{
-	initBothTreeHSub(true, true);
-}
-function buildBothTreeHPropSpou()
-{
-	buildBothTreeHSub(true, true);
+	buildBothTreeHSub(false);
 }
 
+function initBothTreeHSpou()
+{
+	initBothTreeHSub(true);
+}
+function buildBothTreeHSpou()
+{
+	buildBothTreeHSub(true);
+}
+
+
+//==============================================================================
+//==============================================================================
+// TREE - VERTICAL
+//==============================================================================
+//==============================================================================
 
 //=========================================== Arbre vertical ascendant
 function initAscTreeV()
@@ -1709,11 +2256,11 @@ function buildAscTreeVSub(x_elt, a, b, num, nb_gens, offsety, child_x, child_y)
 	var box_width = Math.min(box_height * txtRatioMax, minSizeAsc[lev] * box_height * txtRatioMin);
 	var y = box_height * (1.0 + linkRatio) * (offsety - lev);
 	var x = (a + b) / 2.0 * coordX / svgElts[0][SVGELT_NB];
-	svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x - box_width / 2.0, y, box_width, box_height, x_elt, lev].join(',') + ');');
+	svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeVRect(x - box_width / 2.0, y, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(child_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [child_x, child_y, x, y + box_height].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeVLine(child_x, child_y, x, y + box_height).join(',') + ');');
 	}
 	var c = a;
 	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
@@ -1727,6 +2274,25 @@ function buildAscTreeVSub(x_elt, a, b, num, nb_gens, offsety, child_x, child_y)
 		}
 		c += da;
 	}
+}
+
+function buildTreeVRect(x, y, w, h, x_elt, lev)
+{
+	if (search.SvgShape == 1)
+	{
+		y = h0 - 2.0 * margeY - y - h;
+	}
+	return([x, y, w, h, x_elt, lev]);
+}
+
+function buildTreeVLine(x1, y1, x2, y2)
+{
+	if (search.SvgShape == 1)
+	{
+		y1 = h0 - 2.0 * margeY - y1;
+		y2 = h0 - 2.0 * margeY - y2;
+	}
+	return([x1, y1, x2, y2]);
 }
 
 //=========================================== Arbre vertical descendant
@@ -1763,11 +2329,11 @@ function buildDscTreeVSub(x_elt, a, b, nb_gens, offsety, print_center, parent_x,
 	var y = box_height * (1.0 + linkRatio) * (lev + offsety);
 	var x = (a + b) / 2.0 * coordX / svgElts[0][SVGELT_NB];
 	if (print_center || lev > 0)
-		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x - box_width / 2.0, y, box_width, box_height, x_elt, lev].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeVRect(x - box_width / 2.0, y, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(parent_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x, y].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeVLine(parent_x, parent_y, x, y).join(',') + ');');
 	}
 	var c = a;
 	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
@@ -1815,11 +2381,11 @@ function buildDscTreeVSpouSub(x_elt, a, b, nb_gens, offsety, print_center, paren
 	var y = box_height * (1.0 + linkRatio) * (lev * 2 + offsety);
 	var x = (a + b) / 2.0 * coordX / svgElts[0][SVGELT_NB];
 	if (print_center || lev > 0)
-		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + [x - box_width / 2.0, y, box_width, box_height, x_elt, lev].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('rectangle(' + buildTreeVRect(x - box_width / 2.0, y, box_width, box_height, x_elt, lev).join(',') + ');');
 	if (typeof(parent_x) == 'number')
 	{
 		// Draw links
-		svgElts[x_elt][SVGELT_CMD].push('line(' + [parent_x, parent_y, x, y].join(',') + ');');
+		svgElts[x_elt][SVGELT_CMD].push('line(' + buildTreeVLine(parent_x, parent_y, x, y).join(',') + ');');
 	}
 	var c_spou = a;
 	var i_chil = 0;
@@ -1836,8 +2402,8 @@ function buildDscTreeVSpouSub(x_elt, a, b, nb_gens, offsety, print_center, paren
 		{
 			p_x = x_spou;
 			p_y = y_spou;
-			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + [x_spou - box_width_spou / 2.0, y_spou - box_height, box_width_spou, box_height, x_next_spou, lev].join(',') + ');');
-			svgElts[x_next_spou][SVGELT_CMD].push('line(' + [x, y + box_height, x_spou, y_spou - box_height].join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('rectangle(' + buildTreeVRect(x_spou - box_width_spou / 2.0, y_spou - box_height, box_width_spou, box_height, x_next_spou, lev).join(',') + ');');
+			svgElts[x_next_spou][SVGELT_CMD].push('line(' + buildTreeVLine(x, y + box_height, x_spou, y_spou - box_height).join(',') + ');');
 		}
 		var c_chil = c_spou;
 		while (i_chil < svgElts[x_elt][SVGELT_NEXT].length)
@@ -1856,7 +2422,7 @@ function buildDscTreeVSpouSub(x_elt, a, b, nb_gens, offsety, print_center, paren
 
 //=========================================== Arbre vertical ascendant+descendant
 
-function initBothTreeVSub(prop, print_spouses)
+function initBothTreeVSub(print_spouses)
 {
 	calcAsc(search.Idx, 0);
 	calcDsc(search.Idx, 0, print_spouses);
@@ -1884,7 +2450,7 @@ function initBothTreeVSub(prop, print_spouses)
 	y0 = -margeY;
 }
 
-function buildBothTreeVSub(prop, print_spouses)
+function buildBothTreeVSub(print_spouses)
 {
 	var center1 = svgParents[0];
 	var center2 = svgChildren[0];
@@ -1892,8 +2458,7 @@ function buildBothTreeVSub(prop, print_spouses)
 	var offsety = nb_gens - (print_spouses ? (nbGenDscFound * 2 - 1) : nbGenDscFound);
 	// Ascendants
 	svgElts[0] = center1;
-	if (prop) buildAscTreeVSub(0, 0, svgElts[0][SVGELT_NB], depNum, nb_gens, offsety);
-	else ;
+	buildAscTreeVSub(0, 0, svgElts[0][SVGELT_NB], depNum, nb_gens, offsety);
 	// Descendants
 	svgElts[0] = center2;
 	if (print_spouses) buildDscTreeVSpouSub(0, 0, svgElts[0][SVGELT_NB], nb_gens, offsety, false);
@@ -1902,24 +2467,30 @@ function buildBothTreeVSub(prop, print_spouses)
 	svgElts[0] = center1;
 }
 
-function initBothTreeVProp()
+function initBothTreeV()
 {
-	initBothTreeVSub(true, false);
+	initBothTreeVSub(false);
 }
-function buildBothTreeVProp()
+function buildBothTreeV()
 {
-	buildBothTreeVSub(true, false);
-}
-
-function initBothTreeVPropSpou()
-{
-	initBothTreeVSub(true, true);
-}
-function buildBothTreeVPropSpou()
-{
-	buildBothTreeVSub(true, true);
+	buildBothTreeVSub(false);
 }
 
+function initBothTreeVSpou()
+{
+	initBothTreeVSub(true);
+}
+function buildBothTreeVSpou()
+{
+	buildBothTreeVSub(true);
+}
+
+
+//==============================================================================
+//==============================================================================
+// Basic drawing
+//==============================================================================
+//==============================================================================
 
 //=========================================== Shapes
 function cCircle(r, x_elt)
@@ -1933,6 +2504,7 @@ function cCircle(r, x_elt)
 	var text = textRect(-x, -y, x, y, x_elt);
 	// Build the SVG elements style
 	SvgSetStyle(p, text, x_elt, 0);
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, r * coordX / 20.0));
 }
 
 function cCircleHemi(r, a1, a2, x_elt)
@@ -1950,6 +2522,7 @@ function cCircleHemi(r, a1, a2, x_elt)
 	var text = textRect(-x, -y, x, Math.min(y, y2), x_elt);
 	// Build the SVG elements style
 	SvgSetStyle(p, text, x_elt, 0);
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, r * coordX / 20.0));
 }
 
 function cCircleBoth(r1, r2, x_elt)
@@ -1968,12 +2541,16 @@ function cCircleBoth(r1, r2, x_elt)
 	var text = textRect(-x, -y, x, y, x_elt);
 	// Build the SVG elements style
 	SvgSetStyle(p, text, x_elt, 0);
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, r1 * coordX / 20.0, r2 * coordX / 20.0));
 }
 
 function line(x1, y1, x2, y2)
 {
 	var p = svgPaper.path(['M', x1, y1, 'L', x2, y2]);
 	p.node.setAttribute('class', 'svg-line');
+	p.node.setAttribute('stroke-width', svgStroke);
+	// var d = Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1));
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, d / 20.0, d / 20.0));
 }
 
 function calcTextTab(tab, n)
@@ -2158,6 +2735,7 @@ function secteur(a1, a2, r1, r2, x_elt, lev)
 	var text = textLine(coordX * r * sin(a), -coordY * r * cos(a), ta, txt, w, h, x_elt);
 	// Build the SVG elements style
 	SvgSetStyle(p, text, x_elt, lev);
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, coordX * r1 * sin(a1) / 20.0));
 	} // with(Math)
 }
 
@@ -2182,6 +2760,7 @@ function rectangle(x, y, w, h, x_elt, lev)
 	var text = textLine(x + w / 2.0, y + h / 2.0, ta, txt, tw, th, x_elt);
 	// Build the SVG elements style
 	SvgSetStyle(p, text, x_elt, lev);
+	// p.node.setAttribute('stroke-width', Math.min(svgStroke, w / 20.0, h / 20.0));
 	} // with(Math)
 }
 
