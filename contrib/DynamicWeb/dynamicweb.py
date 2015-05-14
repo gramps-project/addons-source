@@ -699,6 +699,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'I' is sorted by person name\n"
 			"// 'I' gives for individual:\n"
+			"//   - Gramps ID\n"
 			"//   - The complete name\n"
 			"//   - The short name\n"
 			"//   - The names as a list of:\n"
@@ -755,9 +756,10 @@ class DynamicWebReport(Report):
 		for person_handle in person_list:
 			person = self.database.get_person_from_handle(person_handle)
 			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Person][person_handle][OBJDICT_GID] + "\",")
 			# Names
 			name = self.get_name(person) or ""
-			sw.write("[\"" + script_escape(name) + "\",")
+			sw.write("\"" + script_escape(name) + "\",")
 			name = self.get_short_name(person) or ""
 			sw.write("\"" + script_escape(name) + "\",\n")
 			sw.write(self.get_name_data(person) + ",\n")
@@ -907,6 +909,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'F' is sorted by family full name\n"
 			"// 'F' gives for each family:\n"
+			"//   - Gramps ID\n"
 			"//   - The family full name\n"
 			"//   - The family union type\n"
 			"//   - The marriage year in the form '1700', '?' (unknown), or '' (not married)\n"
@@ -945,9 +948,10 @@ class DynamicWebReport(Report):
 		for family_handle in family_list:
 			family = self.database.get_family_from_handle(family_handle)
 			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Family][family_handle][OBJDICT_GID] + "\",")
 			# Names
 			name = self.get_family_name(family) or ""
-			sw.write("[\"" + script_escape(name) + "\",\n")
+			sw.write("\"" + script_escape(name) + "\",\n")
 			sw.write("\"" + script_escape(str(family.get_relationship())) + "\",\n")
 			# Years
 			sw.write("\"" + self.get_marriage_year(family) + "\",\n")
@@ -984,6 +988,7 @@ class DynamicWebReport(Report):
 		@return: events as a string representing a Javascript Array
 		"""
 		# Builds an event list that gives for each event:
+		#  - Gramps ID\n"
 		#  - The event name
 		#  - The event date
 		#  - The event date in ISO format (sortable)
@@ -1001,6 +1006,7 @@ class DynamicWebReport(Report):
 		if not event_ref_list: return("")
 		rows = []
 		for event_ref in event_ref_list:
+			if (event_ref.ref not in self.obj_dict[Event]): continue
 			event = self.database.get_event_from_handle(event_ref.ref)
 			if (not event): continue
 			trow = "\t["
@@ -1013,6 +1019,7 @@ class DynamicWebReport(Report):
 			if (place_handle and (place_handle in self.obj_dict[Place])):
 				place_index = self.obj_dict[Place][place_handle][OBJDICT_INDEX]
 			evt_desc = event.get_description()
+			trow += "\"" + self.obj_dict[Event][event_ref.ref][OBJDICT_GID] + "\","
 			trow += "\"" + script_escape(html_escape(evt_type)) + "\","
 			evt_date = format_date(event.get_date_object())
 			trow += "\"" + script_escape(html_escape(evt_date)) + "\","
@@ -1094,6 +1101,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'S' is sorted by source title\n"
 			"// 'S' gives for each source:\n"
+			"//   - Gramps ID\n"
 			"//   - The source title\n"
 			"//   - The source text (author, etc.)\n"
 			"//   - The source notes\n"
@@ -1119,8 +1127,9 @@ class DynamicWebReport(Report):
 		for source_handle in source_list:
 			source = self.database.get_source_from_handle(source_handle)
 			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Source][source_handle][OBJDICT_GID] + "\",")
 			title = source.get_title() or ""
-			sw.write("[\"" + script_escape(html_escape(title)) + "\",\n")
+			sw.write("\"" + script_escape(html_escape(title)) + "\",\n")
 			sw.write("\"")
 			for (label, value) in [
 				(_("Author"), source.get_author()),
@@ -1161,6 +1170,7 @@ class DynamicWebReport(Report):
 		sw.write(
 			"// This file is generated\n\n"
 			"// 'C' gives for each source citation:\n"
+			"//   - Gramps ID\n"
 			"//   - The source index (in table 'S')\n"
 			"//   - The citation text (page, etc.)\n"
 			"//   - The citation notes\n"
@@ -1185,7 +1195,8 @@ class DynamicWebReport(Report):
 		for citation_handle in citation_list:
 			citation = self.database.get_citation_from_handle(citation_handle)
 			source_handle = citation.get_reference_handle()
-			sw.write(sep + "[")
+			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Citation][citation_handle][OBJDICT_GID] + "\",")
 			sw.write(str(self.obj_dict[Source][source_handle][OBJDICT_INDEX])+ ",\n")
 			sw.write("\"")
 			confidence = citation.get_confidence_level()
@@ -1233,6 +1244,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'R' is sorted by repository name\n"
 			"// 'R' gives for each repository:\n"
+			"//   - Gramps ID\n"
 			"//   - The repository name\n"
 			"//   - The repository type\n"
 			"//   - A list of addresses, with for each address:\n"
@@ -1257,7 +1269,8 @@ class DynamicWebReport(Report):
 		repo_list.sort(key = lambda x: self.obj_dict[Repository][x][OBJDICT_INDEX])
 		for repo_handle in repo_list:
 			repo = self.database.get_repository_from_handle(repo_handle)
-			sw.write(sep + "[")
+			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Repository][repo_handle][OBJDICT_GID] + "\",")
 			name = repo.get_name() or ""
 			sw.write("\"" + script_escape(name) + "\",\n")
 			type = repo.get_type() or ""
@@ -1287,6 +1300,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'M' is sorted by media title\n"
 			"// 'M' gives for each media object:\n"
+			"//   - Gramps ID\n"
 			"//   - The media title\n"
 			"//   - The media path in Gramps\n"
 			"//   - The media path were the media is really located\n"
@@ -1330,8 +1344,9 @@ class DynamicWebReport(Report):
 		for media_handle in media_list:
 			media = self.database.get_object_from_handle(media_handle)
 			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[MediaObject][media_handle][OBJDICT_GID] + "\",")
 			title = media.get_description() or ""
-			sw.write("[\"" + script_escape(html_escape(title)) + "\",\n")
+			sw.write("\"" + script_escape(html_escape(title)) + "\",\n")
 			sw.write("\"" + script_escape(media.get_path()) + "\",\n")
 			path = self.get_media_web_path(media)
 			sw.write("\"" + script_escape(path) + "\",\n")
@@ -1376,6 +1391,7 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'P' is sorted by place name\n"
 			"// 'P' gives for each media object:\n"
+			"//   - Gramps ID\n"
 			"//   - The place name\n"
 			"//   - The place locations parts for the main and alternate names, in the form:\n"
 			"//       (index 0 is main name, others are for alternate names)\n"
@@ -1395,8 +1411,9 @@ class DynamicWebReport(Report):
 		for place_handle in place_list:
 			place = self.database.get_place_from_handle(place_handle)
 			sw.write(sep)
+			sw.write("[\"" + self.obj_dict[Place][place_handle][OBJDICT_GID] + "\",")
 			place_name = report_utils.place_name(self.database, place_handle)
-			sw.write("[\"" + script_escape(place_name) + "\"")
+			sw.write("\"" + script_escape(place_name) + "\"")
 			if (not self.inc_places):
 				sw.write("]")
 				sep = ",\n"
@@ -2047,7 +2064,7 @@ class DynamicWebReport(Report):
 				
 		#: List of page to generate: index in L{PAGES_NAMES}, Javascript code for generating the page
 		parts = {
-			PAGE_PERSON: (dbscripts, "arbreMain(PAGE_INDI);"),
+			PAGE_PERSON: (dbscripts, "DwrMain(PAGE_INDI);"),
 			PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();"),
 			PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();"),
 			PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();"),
@@ -2056,7 +2073,7 @@ class DynamicWebReport(Report):
 			PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();"),
 			PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();"),
 			PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();"),
-			PAGE_SVG_TREE: (dbscripts, "arbreMain(PAGE_SVG_TREE);"),
+			PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);"),
 		}
 		
 		# Export the HTML pages listed in L{PAGES_NAMES}
@@ -2075,14 +2092,14 @@ class DynamicWebReport(Report):
 
 		# The person page is required
 		if (PAGE_PERSON not in self.page_content):
-			self._export_html_page("person.html", self.page_name[PAGE_PERSON], "arbreMain(PAGE_INDI);", True, dbscripts)
+			self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts)
 
 		# The search results page is required
-		self._export_html_page("search.html", _("Search results"), "arbreMain(PAGE_SEARCH);", True, dbscripts)
+		self._export_html_page("search.html", _("Search results"), "DwrMain(PAGE_SEARCH);", True, dbscripts)
 
 		# Page for printing a family (if needed)
 		if (self.inc_families):
-			self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "arbreMain(PAGE_FAM);", True, dbscripts + mapscripts , mapstyles)
+			self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts , mapstyles)
 		
 		# Generate page surnames pages (if surnames page is used)
 		if (PAGE_SURNAMES in self.page_content):
@@ -2093,25 +2110,25 @@ class DynamicWebReport(Report):
 
 		# Page for a single family (if needed)
 		if (self.inc_sources):
-			self._export_html_page("source.html", self.page_name[PAGE_SOURCE_INDEX], "arbreMain(PAGE_SOURCE);", True, dbscripts)
+			self._export_html_page("source.html", self.page_name[PAGE_SOURCE_INDEX], "DwrMain(PAGE_SOURCE);", True, dbscripts)
 
 		# Page for a single media (if needed)
 		if (self.inc_gallery):
-			self._export_html_page("media.html", self.page_name[PAGE_MEDIA_INDEX], "arbreMain(PAGE_MEDIA);", True, dbscripts)
+			self._export_html_page("media.html", self.page_name[PAGE_MEDIA_INDEX], "DwrMain(PAGE_MEDIA);", True, dbscripts)
 
 		# Page for a single place (if needed)
 		if (self.inc_places):
-			self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "arbreMain(PAGE_PLACE);", True, dbscripts + mapscripts , mapstyles)
+			self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts , mapstyles)
 
 		# Page for a single repository (if needed)
 		if (self.inc_repositories):
-			self._export_html_page("repository.html", self.page_name[PAGE_REPOSITORY_INDEX], "arbreMain(PAGE_REPO);", True, dbscripts)
+			self._export_html_page("repository.html", self.page_name[PAGE_REPOSITORY_INDEX], "DwrMain(PAGE_REPO);", True, dbscripts)
 
 		# Page for full-screen SVG graph (if SVG graph is used)
 		if (PAGE_SVG_TREE in self.page_content):
-			self._export_html_page("tree_svg_full.html", self.page_name[PAGE_SVG_TREE], "arbreMain(PAGE_SVG_TREE_FULL);", False, dbscripts)
-			self._export_html_page("tree_svg_conf.html", self.page_name[PAGE_SVG_TREE], "arbreMain(PAGE_SVG_TREE_CONF);", True, dbscripts)
-			self._export_html_page("tree_svg_save.html", self.page_name[PAGE_SVG_TREE], "arbreMain(PAGE_SVG_TREE_SAVE);", True, dbscripts)
+			self._export_html_page("tree_svg_full.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_FULL);", False, dbscripts)
+			self._export_html_page("tree_svg_conf.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_CONF);", True, dbscripts)
+			self._export_html_page("tree_svg_save.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_SAVE);", True, dbscripts)
 
 
 	def _export_script_configuration(self):
@@ -3001,7 +3018,7 @@ class DynamicWebReport(Report):
 
 
 		# initialise the dictionary to empty in case no objects of any
-		# particular class are incuded in the web report
+		# particular class are included in the web report
 		for obj_class in _obj_class_list:
 			self.obj_dict[obj_class] = defaultdict(set)
 

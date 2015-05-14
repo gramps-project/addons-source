@@ -111,7 +111,7 @@ test_list = [
 {
 	'title': "Example using template '%s'" % WEB_TEMPLATE_LIST[0][1],
 	'level': 0,
-	'link': "person.html?stxt=Garner%20von",
+	'link': "person.html?igid=I0044",
 	'environ': {
 		'LANGUAGE': "en_US",
 		'LANG': "en_US.UTF-8",
@@ -122,7 +122,7 @@ test_list = [
 	'procedures': [
 		{
 			'what': "General test",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 		{
 			'what': "Links, images, and search input in custom page",
@@ -130,7 +130,7 @@ test_list = [
 		},
 		{
 			'what': "All possible citations are referenced",
-			'path': "source.html?sdx=1",
+			'path': "source.html?sgid=S0002",
 		},
 		{
 			'what': "GENDEX file",
@@ -145,7 +145,7 @@ test_list = [
 {
 	'title':  "Example using template '%s'" % WEB_TEMPLATE_LIST[1][1],
 	'level': 1,
-	'link': "person.html?stxt=Garner%20von",
+	'link': "person.html?igid=I0044",
 	'environ': {
 		'LANGUAGE': "en_US",
 		'LANG': "en_US.UTF-8",
@@ -157,7 +157,7 @@ test_list = [
 	'procedures': [
 		{
 			'what': "General test (Mainz template)",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 		{
 			'what': "Contents of TGZ archive",
@@ -168,7 +168,7 @@ test_list = [
 {
 	'title':  "Example using template '%s', french translation and OpenStreetMap" % WEB_TEMPLATE_LIST[0][1],
 	'level': 1,
-	'link': "person.html?stxt=Garner%20von",
+	'link': "person.html?igid=I0044",
 	'environ': {
 		'LANGUAGE': "fr_FR",
 		'LANG': "fr_FR.UTF-8",
@@ -180,22 +180,22 @@ test_list = [
 	'procedures': [
 		{
 			'what': "French translation test",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 		{
 			'what': "OpenStreetMap test",
-			'path': "places.html",
+			'path': "place.html?pgid=P1678",
 		},
 		{
 			'what': "OpenStreetMap test in families",
-			'path': "families.html",
+			'path': "family.html?fgid=F0017",
 		},
 	]
 },
 {
 	'title': "Example using template '%s', without media copy, without note types" % WEB_TEMPLATE_LIST[0][1],
 	'level': 2,
-	'link': "person.html?stxt=Garner%20von",
+	'link': "person.html?igid=I0044",
 	'environ': {
 		'LANGUAGE': "en_US",
 		'LANG': "en_US.UTF-8",
@@ -208,12 +208,12 @@ test_list = [
 	},
 	'procedures': [
 		{
-			'what': "Media copy",
-			'path': "medias.html",
+			'what': "No media copy",
+			'path': "media.html?mgid=O0010",
 		},
 		{
 			'what': "Notes type are not printed",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 		{
 			'what': "Search works both in menu and in page",
@@ -224,7 +224,7 @@ test_list = [
 {
 	'title':  "Example with minimal features (without private data, notes, sources, addresses, gallery, places, families, events)",
 	'level': 1,
-	'link': "person.html?stxt=Garner%20von",
+	'link': "person.html?igid=I0044",
 	'environ': {
 		'LANGUAGE': "en_US",
 		'LANG': "en_US.UTF-8",
@@ -255,11 +255,11 @@ test_list = [
 	'procedures': [
 		{
 			'what': "Test with minimal features (without private data, notes, sources, repositories, addresses, gallery, places, families, events)",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 		{
 			'what': "Test that addresses are not printed",
-			'path': "person.html?stxt=Garner%20von",
+			'path': "person.html?igid=I0044",
 		},
 	]
 },

@@ -124,8 +124,6 @@ function innerDivNetSize(size, div)
 
 var search = {
 	//Txt; // Test of the search input form (in the navbar or embedded in the page)
-	//Asc; // Number of ascending generations
-	//Dsc; // Number of descending generations
 	//Idx; // Index of the current person (in table "I")
 	//Fdx; // Index of the current family (in table "F")
 	//Mdx; // Index of the current media object (in table "M")
@@ -133,8 +131,16 @@ var search = {
 	//Pdx; // Index of the current place (in table "P")
 	//Rdx; // Index of the current repository (in table "R")
 	//SNdx; // Index of the current surname (in table "SN")
+	//Igid; // Gramps ID of the current person
+	//Fgid; // Gramps ID of the current family
+	//Mgid; // Gramps ID of the current media object
+	//Sgid; // Gramps ID of the current source
+	//Pgid; // Gramps ID of the current place
+	//Rgid; // Gramps ID of the current repository
 	//SvgType; // Type of SVG graph used
 	//SvgShape; // The SVG graph shape
+	//Asc; // Number of ascending generations
+	//Dsc; // Number of descending generations
 	//SvgDistribAsc; // The SVG graph parents distribution
 	//SvgDistribDsc; // The SVG graph children distribution
 	//SvgBackground; // The SVG graph color scheme
@@ -164,6 +170,12 @@ function ParseSearchString()
 	search.Pdx = GetURLParameter('pdx', -1);
 	search.Rdx = GetURLParameter('rdx', -1);
 	search.SNdx = GetURLParameter('sndx', -1);
+	search.Igid = GetURLParameter('igid', '');
+	search.Fgid = GetURLParameter('fgid', '');
+	search.Mgid = GetURLParameter('mgid', '');
+	search.Sgid = GetURLParameter('sgid', '');
+	search.Pgid = GetURLParameter('pgid', '');
+	search.Rgid = GetURLParameter('rgid', '');
 	search.Asc = GetURLParameter('sasc', 4);
 	search.Dsc = GetURLParameter('sdsc', 4);
 	search.SvgType = GetURLParameter('svgtype', SVG_TREE_TYPE);
@@ -221,6 +233,12 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'pdx', params.Pdx, search.Pdx, -1);
 	s = SetURLParameter(s, 'rdx', params.Rdx, search.Rdx, -1);
 	s = SetURLParameter(s, 'sndx', params.SNdx, search.SNdx, -1);
+	s = SetURLParameter(s, 'igid', params.Igid, search.Igid, '');
+	s = SetURLParameter(s, 'fgid', params.Fgid, search.Fgid, '');
+	s = SetURLParameter(s, 'mgid', params.Mgid, search.Mgid, '');
+	s = SetURLParameter(s, 'sgid', params.Sgid, search.Sgid, '');
+	s = SetURLParameter(s, 'pgid', params.Pgid, search.Pgid, '');
+	s = SetURLParameter(s, 'rgid', params.Rgid, search.Rgid, '');
 	s = SetURLParameter(s, 'sasc', params.Asc, search.Asc, 4);
 	s = SetURLParameter(s, 'sdsc', params.Dsc, search.Dsc, 4);
 	s = SetURLParameter(s, 'svgtype', params.SvgType, search.SvgType, SVG_TREE_TYPE);
