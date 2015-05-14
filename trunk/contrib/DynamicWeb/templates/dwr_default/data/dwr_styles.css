@@ -271,14 +271,6 @@ li p
 {
 	display: block;
 }
-.svg-drawing-type
-{
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	opacity: 0.9;
-	font-size: small;
-}
 #svg-buttons {
 	position: absolute;
 	float: right;
@@ -286,13 +278,6 @@ li p
 	right: 5px;
 	opacity: 0.9;
 	font-size: small;
-}
-#svg-type {
-	max-width: 200px;
-}
-#svg-type, #svg-asc, #svg-dsc {
-	width: auto;
-	display: inline-block;
 }
 #svg-help-popover {
 	position: absolute;
@@ -324,54 +309,57 @@ li p
 }
 
 
-/*===================================================== SVG graph */
+/*===================================================== Tree configuration page */
 
-.svg-gen-0 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
-.svg-gen-1 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
-.svg-gen-2 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
-.svg-gen-3 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
-.svg-gen-4 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
-.svg-gen-5 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
-.svg-gen-6 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
-.svg-gen-7 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
-.svg-gen-8 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
-.svg-gen-9 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
-.svg-gen-10 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
-.svg-gen-11 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
-.svg-gen-12 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
-.svg-gen-13 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
-.svg-gen-14 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
-.svg-gen-15 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
-.svg-gen-16 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
-.svg-gen-17 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
-.svg-gen-18 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
-.svg-gen-19 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
-.svg-gen-20 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
-.svg-gen-21 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
-.svg-gen-22 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
-.svg-gen-23 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
-.svg-gen-24 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
-.svg-gen-25 {color: #000000; background-color: #C0FFC0; fill: #C0FFC0;}
-.svg-gen-26 {color: #000000; background-color: #C0C0FF; fill: #C0C0FF;}
-.svg-gen-27 {color: #000000; background-color: #FFC0FF; fill: #FFC0FF;}
-.svg-gen-28 {color: #000000; background-color: #FFFFC0; fill: #FFFFC0;}
-.svg-gen-29 {color: #000000; background-color: #C0FFFF; fill: #C0FFFF;}
-.svg-gen-30 {color: #000000; background-color: #FFC0C0; fill: #FFC0C0;}
+.svg-drawing-type
+{
+	font-size: small;
+}
+
+#svg-type {
+	/*max-width: 200px;*/
+}
+
+#svg-type, #svg-asc, #svg-dsc {
+	/*width: auto;
+	display: inline-block;*/
+}
+
+
+/*===================================================== Tree save-as page */
+
+#svg-loader {
+	z-index: 999;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+	background-color: #FFFFFF;
+	opacity: 0.9;
+}
+
+body.svg-save-text {
+	white-space: pre;
+	font-size: small;
+	font-family: courier;
+}
+
+
+/*===================================================== SVG graph */
 
 .svg-tree
 {
 	stroke: #000000;
-	stroke-width: 3px;
-	border-radius: 4px;
-	/*fill: none;*/
-	/*fill: #FFFFFF;*/
+	/* border-radius: 40px; */
+	/* stroke-width is computed */
 }
-.svg-implex {fill: #FF0000;}
-.svg-male {}
-.svg-female {}
-.svg-unknown {}
+
 .svg-tree:hover {
-	fill: #FFA500;
+	opacity: 0.7;
+	/* stroke-width is computed */
 }
 
 .svg-text
@@ -380,10 +368,6 @@ li p
 	fill: #000000;
 	pointer-events: none;
 }
-.svg-text-implex {}
-.svg-text-male {}
-.svg-text-female {font-style: italic;}
-.svg-text-unknown {}
 .svg-text:hover, svg a {
 	text-decoration: none !important;
 }
@@ -391,5 +375,6 @@ li p
 .svg-line
 {
 	stroke: #000000;
-	stroke-width: 3px;
+	stroke-linecap: round;
+	/* stroke-width is computed */
 }

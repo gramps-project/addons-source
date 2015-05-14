@@ -46,11 +46,13 @@ function BodyDecorate()
 	// Check if the current page needs a menu
 	var menuless = false;
 	if ($('.dwr-menuless').length > 0) menuless = true;
+	if (search.SvgExpanded) menuless = true;
+	if (search.MapExpanded) menuless = true;
 	
 	// Build the div for the body content
 	$('body').wrapInner('<div id="body-page" class="container"></div>');
 	
-	// Buid menu if any
+	// Build menu if any
 	if (!menuless)
 	{
 		BuildMenu();
@@ -131,9 +133,14 @@ var search = {
 	//Pdx; // Index of the current place (in table "P")
 	//Rdx; // Index of the current repository (in table "R")
 	//SNdx; // Index of the current surname (in table "SN")
-	//SvgType; // Type of SVG graph used (the number is the index in graphsInitialize)
+	//SvgType; // Type of SVG graph used
+	//SvgShape; // The SVG graph shape
+	//SvgDistribAsc; // The SVG graph parents distribution
+	//SvgDistribDsc; // The SVG graph children distribution
+	//SvgBackground; // The SVG graph color scheme
+	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
 	//ImgList; // List of media index (in table "M") for the slideshow
-	//mapExpanded; // Whether the map should be expanded to full screen
+	//MapExpanded; // Whether the map should be expanded to full screen
 };
 
 
@@ -160,9 +167,14 @@ function ParseSearchString()
 	search.Asc = GetURLParameter('sasc', 4);
 	search.Dsc = GetURLParameter('sdsc', 4);
 	search.SvgType = GetURLParameter('svgtype', SVG_TREE_TYPE);
+	search.SvgShape = GetURLParameter('svgshape', SVG_TREE_SHAPE);
+	search.SvgDistribAsc = GetURLParameter('svgdasc', SVG_TREE_DISTRIB_ASC);
+	search.SvgDistribDsc = GetURLParameter('svgddsc', SVG_TREE_DISTRIB_DSC);
+	search.SvgBackground = GetURLParameter('svgbk', SVG_TREE_BACKGROUND);
+	search.SvgExpanded = GetURLParameter('svgx', false);
 	search.ImgList = GetURLParameter('simg', []);
 	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
-	search.mapExpanded = GetURLParameter('mexp', false);
+	search.MapExpanded = GetURLParameter('mexp', false);
 }
 
 function GetURLParameter(sParam, def)
@@ -212,16 +224,13 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'sasc', params.Asc, search.Asc, 4);
 	s = SetURLParameter(s, 'sdsc', params.Dsc, search.Dsc, 4);
 	s = SetURLParameter(s, 'svgtype', params.SvgType, search.SvgType, SVG_TREE_TYPE);
+	s = SetURLParameter(s, 'svgshape', params.SvgShape, search.SvgShape, SVG_TREE_SHAPE);
+	s = SetURLParameter(s, 'svgdasc', params.SvgDistribAsc, search.SvgDistribAsc, SVG_TREE_DISTRIB_ASC);
+	s = SetURLParameter(s, 'svgddsc', params.SvgDistribDsc, search.SvgDistribDsc, SVG_TREE_DISTRIB_DSC);
+	s = SetURLParameter(s, 'svgbk', params.SvgBackground, search.SvgBackground, SVG_TREE_BACKGROUND);
+	s = SetURLParameter(s, 'svgx', params.SvgExpanded, search.SvgExpanded, false);
 	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
-	s = SetURLParameter(s, 'mexp', params.mapExpanded, search.mapExpanded, false);
-	
-// test for search string compression: result is not satisfactory
-// toto = $.base64.encode(RawDeflate.deflate(unescape(encodeURIComponent(s))));
-// titi = decodeURIComponent(escape(RawDeflate.inflate($.base64.decode(toto))));
-// console.log(s);
-// console.log(toto);
-// console.log(titi);
-// console.log(titi == s);
+	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
 	return(s);
 }
 
