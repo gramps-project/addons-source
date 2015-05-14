@@ -16,25 +16,26 @@
 // If you wonder why JSON is not used instead, the answer is: because. Good question nevertheless.
 
 // I: Individual
-I_NAME = 0;
-I_SHORT_NAME = 1;
-I_NAMES = 2;
-I_GENDER = 3;
-I_BIRTH_YEAR = 4;
-I_BIRTH_PLACE = 5;
-I_DEATH_YEAR = 6;
-I_DEATH_PLACE = 7;
-I_DEATH_AGE = 8;
-I_EVENTS = 9;
-I_ADDRS = 10;
-I_NOTE = 11;
-I_MEDIA = 12;
-I_CITA = 13;
-I_ATTR = 14;
-I_URLS = 15;
-I_FAMS = 16;
-I_FAMC = 17;
-I_ASSOC = 18;
+I_GID = 0;
+I_NAME = 1;
+I_SHORT_NAME = 2;
+I_NAMES = 3;
+I_GENDER = 4;
+I_BIRTH_YEAR = 5;
+I_BIRTH_PLACE = 6;
+I_DEATH_YEAR = 7;
+I_DEATH_PLACE = 8;
+I_DEATH_AGE = 9;
+I_EVENTS = 10;
+I_ADDRS = 11;
+I_NOTE = 12;
+I_MEDIA = 13;
+I_CITA = 14;
+I_ATTR = 15;
+I_URLS = 16;
+I_FAMS = 17;
+I_FAMC = 18;
+I_ASSOC = 19;
 
 // N: Name
 N_FULL = 0;
@@ -57,17 +58,18 @@ A_NOTE = 2;
 A_CITA = 3;
 
 // F: Family
-F_NAME = 0;
-F_TYPE = 1;
-F_MARR_YEAR = 2;
-F_MARR_PLACE = 3;
-F_EVENTS = 4;
-F_NOTE = 5;
-F_MEDIA = 6;
-F_CITA = 7;
-F_ATTR = 8;
-F_SPOU = 9;
-F_CHIL = 10;
+F_GID = 0;
+F_NAME = 1;
+F_TYPE = 2;
+F_MARR_YEAR = 3;
+F_MARR_PLACE = 4;
+F_EVENTS = 5;
+F_NOTE = 6;
+F_MEDIA = 7;
+F_CITA = 8;
+F_ATTR = 9;
+F_SPOU = 10;
+F_CHIL = 11;
 
 // FC: Child relationship
 FC_INDEX = 0;
@@ -77,69 +79,75 @@ FC_NOTE = 3;
 FC_CITA = 4;
 
 // E: Event
-E_TYPE = 0;
-E_DATE = 1;
-E_DATE_ISO = 2;
-E_PLACE = 3;
-E_DESCR = 4;
-E_TEXT = 5;
-E_MEDIA = 6;
-E_CITA = 7;
+E_GID = 0;
+E_TYPE = 1;
+E_DATE = 2;
+E_DATE_ISO = 3;
+E_PLACE = 4;
+E_DESCR = 5;
+E_TEXT = 6;
+E_MEDIA = 7;
+E_CITA = 8;
 
 // S: Source
-S_TITLE = 0;
-S_TEXT = 1;
-S_NOTE = 2;
-S_MEDIA = 3;
-S_BKC = 4;
-S_REPO = 5;
-S_ATTR = 6;
+S_GID = 0;
+S_TITLE = 1;
+S_TEXT = 2;
+S_NOTE = 3;
+S_MEDIA = 4;
+S_BKC = 5;
+S_REPO = 6;
+S_ATTR = 7;
 
 // C: Citation
-C_SOURCE = 0;
-C_TEXT = 1;
-C_NOTE = 2;
-C_MEDIA = 3;
-C_BKI = 4;
-C_BKF = 5;
-C_BKM = 6;
-C_BKP = 7;
-C_BKR = 8;
+C_GID = 0;
+C_SOURCE = 1;
+C_TEXT = 2;
+C_NOTE = 3;
+C_MEDIA = 4;
+C_BKI = 5;
+C_BKF = 6;
+C_BKM = 7;
+C_BKP = 8;
+C_BKR = 9;
 
 // R: Repository
-R_NAME = 0;
-R_TYPE = 1;
-R_ADDRS = 2;
-R_NOTE = 3;
-R_URLS = 4;
-R_BKS = 5;
+R_GID = 0;
+R_NAME = 1;
+R_TYPE = 2;
+R_ADDRS = 3;
+R_NOTE = 4;
+R_URLS = 5;
+R_BKS = 6;
 
 // M: Media
-M_TITLE = 0;
-M_GRAMPS_PATH = 1;
-M_PATH = 2;
-M_MIME = 3;
-M_DATE = 4;
-M_DATE_ISO = 5;
-M_NOTE = 6;
-M_CITA = 7;
-M_ATTR = 8;
-M_THUMB = 9;
-M_BKI = 10;
-M_BKF = 11;
-M_BKS = 12;
-M_BKP = 13;
+M_GID = 0;
+M_TITLE = 1;
+M_GRAMPS_PATH = 2;
+M_PATH = 3;
+M_MIME = 4;
+M_DATE = 5;
+M_DATE_ISO = 6;
+M_NOTE = 7;
+M_CITA = 8;
+M_ATTR = 9;
+M_THUMB = 10;
+M_BKI = 11;
+M_BKF = 12;
+M_BKS = 13;
+M_BKP = 14;
 
 // P: Place
-P_NAME = 0;
-P_LOCATIONS = 1;
-P_COORDS = 2;
-P_NOTE = 3;
-P_MEDIA = 4;
-P_CITA = 5;
-P_URLS = 6;
-P_BKI = 7;
-P_BKF = 8;
+P_GID = 0;
+P_NAME = 1;
+P_LOCATIONS = 2;
+P_COORDS = 3;
+P_NOTE = 4;
+P_MEDIA = 5;
+P_CITA = 6;
+P_URLS = 7;
+P_BKI = 8;
+P_BKF = 9;
 
 // MR: Media reference
 MR_M_IDX = 0;
@@ -272,7 +280,7 @@ function mediaHref(mdx, m_list)
 	mdx = (typeof(mdx) !== 'undefined') ? mdx : search.Mdx;
 	m_list = (typeof(m_list) !== 'undefined') ? m_list : [];
 	var lt = '';
-	if (search.Mdx >= 0 && ArbreType == PAGE_MEDIA)
+	if (search.Mdx >= 0 && PageContents == PAGE_MEDIA)
 	{
 		m_list = search.ImgList;
 	}
@@ -494,7 +502,7 @@ function indiLinked(idx, citations)
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
 	var txt = I[idx][I_NAME] + ' (' + I[idx][I_BIRTH_YEAR] + '-' + I[idx][I_DEATH_YEAR] + ')';
 	if (citations) txt += ' ' + citaLinks(I[idx][I_CITA]);
-	if (idx != search.Idx || ArbreType != PAGE_INDI)
+	if (idx != search.Idx || PageContents != PAGE_INDI)
 		txt = '<a href="' + indiHref(idx) + '">' + txt + '</a>';
 	return(txt);
 }
@@ -535,7 +543,7 @@ function famLinked(fdx, citations)
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
 	var txt =F[fdx][F_NAME];
 	if (citations) txt += ' ' + citaLinks(F[fdx][F_CITA]);
-	if (INC_FAMILIES && (fdx != search.Fdx || ArbreType != PAGE_FAM))
+	if (INC_FAMILIES && (fdx != search.Fdx || PageContents != PAGE_FAM))
 		txt = '<a href="' + famHref(fdx) + '">' + txt + '</a>';
 	return(txt);
 }
@@ -896,7 +904,7 @@ function placeLink(pdx, idx, fdx, event)
 	if (pdx == -1) return('');
 	pagePlaces.push([pdx, idx, fdx, event]);
 	if (!INC_PLACES) return(P[pdx][P_NAME]);
-	if (ArbreType == PAGE_PLACE && pdx == search.Pdx) return(P[pdx][P_NAME]);
+	if (PageContents == PAGE_PLACE && pdx == search.Pdx) return(P[pdx][P_NAME]);
 	return('<a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a>');
 }
 
@@ -904,7 +912,7 @@ function placeLink(pdx, idx, fdx, event)
 function repoLink(rdx)
 {
 	if (rdx == -1) return('');
-	if (ArbreType == PAGE_REPO && rdx == search.Rdx) return(R[rdx][R_NAME]);
+	if (PageContents == PAGE_REPO && rdx == search.Rdx) return(R[rdx][R_NAME]);
 	return('<a href="' + repoHref(rdx) + '">' + R[rdx][R_NAME] + '</a>');
 }
 
@@ -1570,6 +1578,7 @@ function printIndex(data, defaultsort, columns)
 	// var time = Date.now();
 	var j, k;
 	ParseSearchString();
+	ManageSearchStringGids();
 	
 	// Compute data
 	// (optimization: copy data in another array in order to call functions ftext, fsort, fhref only once)
@@ -2181,6 +2190,8 @@ function htmlReposIndex()
 function printSurnameIndex()
 {
 	ParseSearchString();
+	ManageSearchStringGids();
+	
 	if (search.SNdx >= 0)
 	{
 		if (SN[search.SNdx][SN_PERSONS].length == 0)
@@ -2219,6 +2230,8 @@ function surnameString(sndx, surname, number)
 function printSurnamesIndex()
 {
 	ParseSearchString();
+	ManageSearchStringGids();
+	
 	document.write(
 		'<h2 class="page-header">' +
 		_('Surnames Index') +
@@ -2283,6 +2296,8 @@ function printSurnamesIndex()
 function printSurnamesIndex2()
 {
 	ParseSearchString();
+	ManageSearchStringGids();
+	
 	document.write(
 		'<h2 class="page-header">' +
 		_('Surnames Index') +
@@ -2847,80 +2862,116 @@ function SearchObjects()
 
 
 //=================================================================
-//======================================================= Affichage
+//======================================================= Gramps ID
 //=================================================================
 
-var ArbreType;
-
-function arbreMain(arbreType)
+function ManageSearchStringGids()
 {
-	ArbreType = arbreType;
+	// Select between index in table or GID (mutually exclusive)
+	if (search.Idx < 0) search.Idx = GitToIndex(search.Igid, I, I_GID);
+	if (search.Fdx < 0) search.Fdx = GitToIndex(search.Fgid, F, F_GID);
+	if (search.Mdx < 0) search.Mdx = GitToIndex(search.Mgid, M, M_GID);
+	if (search.Sdx < 0) search.Sdx = GitToIndex(search.Sgid, S, S_GID);
+	if (search.Pdx < 0) search.Pdx = GitToIndex(search.Pgid, P, P_GID);
+	if (search.Rdx < 0) search.Rdx = GitToIndex(search.Rgid, R, R_GID);
+	
+	search.Igid = '';
+	search.Fgid = '';
+	search.Mgid = '';
+	search.Sgid = '';
+	search.Pgid = '';
+	search.Rgid = '';
+}
+
+function GitToIndex(gid, table, field)
+{
+	// Change GID into index in table
+	if (gid == '') return(-1);
+	for(var i = 0; i < table.length; i++)
+	{
+		if (table[i][field] == gid) return(i);
+	}
+	return(-1);
+}
+
+
+
+//=================================================================
+//============================================================ Main
+//=================================================================
+
+var PageContents;
+
+function DwrMain(page)
+{
+	PageContents = page;
 
 	ParseSearchString();
+	ManageSearchStringGids();
 
 	$(document).ready(function(){
-		arbreMainSub();
+		DwrMainRdy();
 	});
 }
 
-function arbreMainSub()
+function DwrMainRdy()
 {
 	var html = '';
 
-	if ($.inArray(ArbreType, [PAGE_SVG_TREE_FULL, PAGE_SVG_TREE_SAVE, PAGE_SVG_TREE_CONF]) < 0) search.SvgExpanded = false;
-	if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE)
+	if ($.inArray(PageContents, [PAGE_SVG_TREE_FULL, PAGE_SVG_TREE_SAVE, PAGE_SVG_TREE_CONF]) < 0) search.SvgExpanded = false;
+	if (search.Idx >= 0 && PageContents == PAGE_SVG_TREE)
 	{
 		searchDuplicate(search.Idx);
 		html += SvgCreate();
 	}
-	else if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE_FULL)
+	else if (search.Idx >= 0 && PageContents == PAGE_SVG_TREE_FULL)
 	{
 		search.SvgExpanded = true;
 		searchDuplicate(search.Idx);
 		html += SvgCreate();
 		$('body').html(html).toggleClass('dwr-fullscreen');
 	}
-	else if (search.Idx >= 0 && ArbreType == PAGE_SVG_TREE_SAVE)
+	else if (search.Idx >= 0 && PageContents == PAGE_SVG_TREE_SAVE)
 	{
 		searchDuplicate(search.Idx);
 		html += SvgSavePage();
 		if (search.SvgExpanded) $('body').html(html);
 	}
-	else if (ArbreType == PAGE_SVG_TREE_CONF)
+	else if (PageContents == PAGE_SVG_TREE_CONF)
 	{
 		html += SvgConfPage();
 	}
-	else if (search.Sdx >= 0 && ArbreType == PAGE_SOURCE)
+	else if (search.Sdx >= 0 && PageContents == PAGE_SOURCE)
 	{
 		// Print 1 source
 		html += printSource(search.Sdx);
 	}
-	else if (search.Mdx >= 0 && ArbreType == PAGE_MEDIA)
+	else if (search.Mdx >= 0 && PageContents == PAGE_MEDIA)
 	{
 		// Print 1 media
 		html += printMedia(search.Mdx);
 	}
-	else if (search.Idx >= 0 && ArbreType == PAGE_INDI)
+	else if (search.Idx >= 0 && PageContents == PAGE_INDI)
 	{
 		// Print individual
 		html += printIndi(search.Idx);
 	}
-	else if (search.Fdx >= 0 && ArbreType == PAGE_FAM)
+	else if (search.Fdx >= 0 && PageContents == PAGE_FAM)
 	{
 		// Print individual
 		html += printFam(search.Fdx);
 	}
-	else if (search.Pdx >= 0 && ArbreType == PAGE_PLACE && INC_PLACES)
+	else if (search.Pdx >= 0 && PageContents == PAGE_PLACE && INC_PLACES)
 	{
 		// Print place
 		html += printPlace(search.Pdx);
 	}
-	else if (search.Rdx >= 0 && ArbreType == PAGE_REPO)
+	else if (search.Rdx >= 0 && PageContents == PAGE_REPO)
 	{
 		// Print repository
 		html += printRepo(search.Rdx);
 	}
-	else if (ArbreType == PAGE_SEARCH)
+	else if (PageContents == PAGE_SEARCH)
 	{		
 		// Print search by name results
 		html = SearchObjects();
