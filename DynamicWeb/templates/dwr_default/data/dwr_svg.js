@@ -808,7 +808,7 @@ function SvgMouseUpWindow(event)
 
 function SvgToggleExpand(elt)
 {
-	search.SvgExpanded = !search.SvgExpanded;
+	search.SvgExpanded = !($('#svg-drawing').hasClass('svg-drawing-expand'));
 	svgRef();
 }
 
