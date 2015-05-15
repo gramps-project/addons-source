@@ -79,16 +79,12 @@ Classes:
  """
 
 #TODO: User documentation (wiki?)
-#TODO: In the map use different colors for different events types.
 #TODO: Other bootstrap templates, use LESS for css generation
 #TODO: Sorting items (children, pages in citations, events, etc.)
-#TODO: years in gregorian calendar (get_***_year)
+#TODO: years in gregorian calendar (get_***_year) ?
 #TODO: LDS stuff
 #TODO: Show siblings
 #TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
-#TODO: Index pages overflow the size of the page body. The "DataTables" responsive plugin has a bug. solution to be found.
-#TODO: localize surnames first letter extraction (see first_letter in narrativeweb) maybe there is a Javascript library for that
-#TODO: filter in datatables could be insensitive to accents
 #TODO: export ISO dates
 #TODO: approximative search
 
@@ -96,14 +92,12 @@ Classes:
 #TODO: Statistic charts, + database summary
 
 # For the SVG graph:
+#TODO: Refactor: the scaling should be performed by SVG transform
+#TODO: very small texts not printed properly
 #TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
 #TODO: if possible, add a feature to expand/minimize branches of the graphs.
-#TODO: Thumbnails and dates in graphs
-#TODO: Add new graph styles, in order to have same renderings as:
-#             Fan charts
-#             Family lines, Hourglass, Relationship graphs
-#             Ancestor, Descendant trees
-#             Descendant lines
+#TODO: Thumbnails in graphs
+
 
 #------------------------------------------------
 # python modules
@@ -2253,7 +2247,6 @@ class DynamicWebReport(Report):
 			("Attribute", _("Attribute")),
 			("Attributes", _("Attributes")),
 			("Background", _("Background")),
-			("Birth", _("Birth")),
 			("Call Name", _("Call Name")),
 			("Call Number", _("Call Number")),
 			("Children", _("Children")),
@@ -2266,7 +2259,6 @@ class DynamicWebReport(Report):
 			("Country", _("Country")),
 			("County", _("County")),
 			("Date", _("Date")),
-			("Death", _("Death")),
 			("Descendants", _("Descendants")),
 			("Description", _("Description")),
 			("Event", _("Event")),
@@ -2287,7 +2279,6 @@ class DynamicWebReport(Report):
 			("Longitude", _("Longitude")),
 			("Male", _("Male")),
 			("Map", _("Map")),
-			("Marriage", _("Marriage")),
 			("Maximize", _("Maximize")),
 			("Media found:", _("Media found:")),
 			("Media Index", _("Media Index")),
@@ -2366,6 +2357,9 @@ class DynamicWebReport(Report):
 			("Zoom in", _("Zoom in")),
 			("Zoom out", _("Zoom out")),
 			):
+			sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
+			sep = ",\n"
+		for (code, translated, s) in EventType._DATAMAP:
 			sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
 			sep = ",\n"
 		sw.write("\n};\n")
