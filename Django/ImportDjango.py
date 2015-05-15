@@ -81,7 +81,7 @@ from gramps.webapp.libdjango import DjangoInterface
 class DjangoReader(object):
     def __init__(self, db, filename, callback):
         if not callable(callback): 
-            callback = lambda (percent): None # dummy
+            callback = lambda percent: None # dummy
         self.db = db
         self.dji = DjangoInterface()
         self.filename = filename
