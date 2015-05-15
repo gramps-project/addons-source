@@ -210,6 +210,13 @@ if (typeof(P) == 'undefined') P = []
 if (typeof(SN) == 'undefined') SN = []
 
 
+// Events fallbacks
+
+EVENTS_BIRTH = [_('Birth'), _('Baptism'), _('Christening')];
+EVENTS_MARR = [_('Marriage'), _('Engagement'), _('Alternate Marriage')];
+EVENTS_DEATH = [_('Death'), _('Burial'), _('Cremation'), _('Cause Of Death')];
+
+
 //=================================================================
 //======================================================= Constants
 //=================================================================
@@ -2560,8 +2567,31 @@ function mapUpdate()
 		// osmMarkers = new ol.Layer.Markers('Markers');
 		// Expand event
 		mapObject.on('singleclick', mapExpand);
-	}
+	};
 	// Place markers
+	var points = [];
+	var nb_max = 0;
+	GetIconProps = function(x_marker)
+	{
+		var point = points[x_marker];
+		var nb = point.nb_birth + point.nb_marr + point.nb_death + point.nb_other;
+		var src = '';
+		if (point.nb_birth == nb)
+			src = 'data/gramps-geo-birth.png';
+		else if (point.nb_marr == nb)
+			src = 'data/gramps-geo-marriage.png';
+		else if (point.nb_death == nb)
+			src = 'data/gramps-geo-death.png';
+		else
+			src = 'data/gramps-geo-mainmap.png';
+		var scale = 0.5 + 1.0 * nb / Math.max(nb_max, 5);
+		return({
+			src: src,
+			scale: scale,
+			size: {w: Math.round(48 * scale), h: Math.round(48 * scale)},
+			anchor: {x: Math.round(0.1 * 48 * scale), y: Math.round(0.9 * 48 * scale)}
+		});
+	}
 	for (var x_marker = 0; x_marker < mapCoords.length; x_marker++)
 	{
 		// Sort markerPaces by name
@@ -2569,8 +2599,14 @@ function mapUpdate()
 			return(P[pagePlaces[a][PP_PDX]][P_NAME].localeCompare(P[pagePlaces[b][PP_PDX]][P_NAME]));
 		});
 		// Build markers data
-		var mapName = '';
-		var mapInfo = '';
+		var point = {
+			mapName: '',
+			mapInfo: '',
+			nb_other: 0,
+			nb_birth: 0,
+			nb_marr: 0,
+			nb_death: 0
+		};
 		var previous_pdx = -1;
 		var previous_ul = false;
 		for (var x_place = 0; x_place < markerPaces[x_marker].length; x_place++)
@@ -2579,37 +2615,59 @@ function mapUpdate()
 			var pdx = pp[PP_PDX];
 			if (pdx != previous_pdx)
 			{
-				if (mapName) mapName += '\n';
-				mapName += P[pdx][P_NAME];
-				if (previous_ul) mapInfo += '</ul>';
-				mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a></p>';
+				if (point.mapName) point.mapName += '\n';
+				point.mapName += P[pdx][P_NAME];
+				if (previous_ul) point.mapInfo += '</ul>';
+				point.mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a></p>';
 				previous_pdx = pdx;
 				previous_ul = false;
 			}
 			var txt = '';
-			if (pp[PP_IDX] >= 0) txt += indiLinked(pp[PP_IDX], false);
-			if (pp[PP_FDX] >= 0) txt += famLinked(pp[PP_FDX], false);
+			if (pp[PP_IDX] >= 0)
+			{
+				txt += indiLinked(pp[PP_IDX], false);
+			}
+			if (pp[PP_FDX] >= 0)
+			{
+				txt += famLinked(pp[PP_FDX], false);
+			}
 			if (pp[PP_EVENT]) txt += ' (' + (pp[PP_EVENT][E_TYPE] || pp[PP_EVENT][E_DESCR]) + ')';
 			if (txt)
 			{
-				if (!previous_ul) mapInfo += '<ul class="dwr-mapinfo">';
+				if (!previous_ul) point.mapInfo += '<ul class="dwr-mapinfo">';
 				previous_ul = true;
-				mapInfo += '<li class="dwr-mapinfo">' + txt + '</li>';
+				point.mapInfo += '<li class="dwr-mapinfo">' + txt + '</li>';
+				if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_BIRTH) >= 0)
+					point.nb_birth += 1;
+				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_MARR) >= 0)
+					point.nb_marr += 1;
+				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_DEATH) >= 0)
+					point.nb_death += 1;
+				else
+					point.nb_other += 1;
 			}
 		}
-		if (previous_ul) mapInfo += '</ul>';
+		if (previous_ul) point.mapInfo += '</ul>';
+		nb_max = Math.max(nb_max, point.nb_birth + point.nb_marr + point.nb_death + point.nb_other);
+		points[x_marker] = point;
 		// Print marker
 		if (MAP_SERVICE == 'Google')
 		{
 			(function(){ // This is used to create instances of local variables
+				var ip = GetIconProps(x_marker);
 				var marker = new google.maps.Marker({
 					position:  mapCoords[x_marker],
-					draggable: true,
-					title:     mapName,
-					map:       mapObject
+					// draggable: true,
+					title:     point.mapName,
+					map:       mapObject,
+					icon: {
+						anchor: new google.maps.Point(ip.anchor.x, ip.anchor.y),
+						scaledSize: new google.maps.Size(ip.size.w, ip.size.h),
+						url: ip.src
+					}
 				});
 				var infowindow = new google.maps.InfoWindow({
-					content: mapInfo
+					content: point.mapInfo
 				});
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.open(mapObject, marker);
@@ -2639,26 +2697,44 @@ function mapUpdate()
 				popupdiv.popover({
 					'placement': 'top',
 					'html': true,
-					'title': mapName,
-					'content': mapInfo
+					'title': point.mapName,
+					'content': point.mapInfo
 				});
 				popupdiv.popover('hide');
+				
+				popupdiv.on('show.bs.popover', function () {
+					// alert("show " + this.id);
+					inhibitMapExpand = true;
+				})
+				popupdiv.on('hide.bs.popover', function () {
+					// alert("hide " + this.id);
+					inhibitMapExpand = true;
+				})
 			})();
 		}
 	}
 	if (MAP_SERVICE == 'OpenStreetMap')
 	{
-		var iconStyle = new ol.style.Style({
-			image: new ol.style.Icon(({
-				anchor: [0.0, 1.0],
-				anchorXUnits: 'fraction',
-				anchorYUnits: 'fraction',
-				src: 'data/gramps-geo-altmap.png'
-			}))
-		});
+		OsmPointStyle = function(feature, resolution)
+		{
+			var x_marker = parseInt(feature.p.name.replace('OsmPopup', ''));
+			var ip = GetIconProps(x_marker);
+			var iconStyle = new ol.style.Style({
+				image: new ol.style.Icon(({
+					anchor: [ip.anchor.x, ip.anchor.y],
+					anchorXUnits: 'pixels',
+					anchorYUnits: 'pixels',
+					scale: ip.scale,
+					src: ip.src
+				}))
+			});
+			return([iconStyle]);
+		};
+
 		var vectorLayer = new ol.layer.Vector({
 			source: osmVectorSource,
-			style: iconStyle
+			style: OsmPointStyle
+			// style: iconStyle
 		});
 		mapObject.addLayer(vectorLayer);
 		mapObject.on('click', OsmClick);
@@ -2667,9 +2743,12 @@ function mapUpdate()
 }
 
 
+var inhibitMapExpand = false;
+
 function mapExpand()
 {
-	search.MapExpanded = !search.MapExpanded;
+	if (inhibitMapExpand) return(false);
+	search.MapExpanded = !($('body').hasClass('dwr-fullscreen'));
 	Redirect();
 	return(false);
 }
@@ -2721,17 +2800,21 @@ function OsmClick(event)
 	{
 		if (overlays.item(i).getElement().id == popupname) overlay = overlays.item(i);
 	}
+
+	inhibitMapExpand = false;
 	popupdivs.each(function() {
 		if (this.id == popupname)
 		{
 			overlay.setPosition(coord);
 			$(this).popover('show');
 		}
-		else
+		else if ($(this).next('div.popover:visible').length)
 		{
 			$(this).popover('hide');
 		}
 	});
+	
+	return(false);
 }
 
 function OsmMove(event)
