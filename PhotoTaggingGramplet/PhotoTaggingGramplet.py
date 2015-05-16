@@ -529,10 +529,10 @@ class PhotoTaggingGramplet(Gramplet):
         return result
 
     def all_referenced_persons(self):
-        result = set()
+        result = []
         for r in self.regions:
             if r.person is not None:
-                result.add(r.person)
+                result.append(r.person)
         return result
 
     # ======================================================
