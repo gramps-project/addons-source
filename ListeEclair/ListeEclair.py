@@ -37,7 +37,7 @@ from gramps.gen.plug.menu import FilterOption, PlaceListOption, EnumeratedListOp
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
-                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF, 
+                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF,
                             INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
 import gramps.gen.datehandler
@@ -46,7 +46,6 @@ from gramps.gen.utils.location import get_main_location
 from gramps.gen.lib import PlaceType
 from gramps.gen.display.name import displayer as _nd
 from gramps.gen.display.place import displayer as _pd
-from gramps.gui.utils import ProgressMeter
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -61,6 +60,7 @@ class ListeEclairReport(Report):
         Report.__init__(self, database, options_class, user)
 
         menu = options_class.menu
+        self.user = user
         places = menu.get_option_by_name('places').get_value()
         self.reporttype  = menu.get_option_by_name('reporttype').get_value()
         self.incpriv = menu.get_option_by_name('incpriv').get_value()
@@ -89,25 +89,24 @@ class ListeEclairReport(Report):
 
     def write_report(self):
         """
-        The routine the actually creates the report. At this point, the document
-        is opened and ready for writing.
+        The routine the actually creates the report. At this point, the
+        document is opened and ready for writing.
         """
 
         # Create progress meter bar
-        self.progress = ProgressMeter(_("Liste Eclair"), '')
+        with self.user.progress(_("Liste Eclair"), _("Generating report"),
+                                len(self.place_handles)) as self.step:
 
-        # Write the title line. Set in INDEX marker so that this section will be
-        # identified as a major category if this is included in a Book report.
+            # Write the title line. Set in INDEX marker so that this section
+            # will be identified as a major category if this is included in a
+            # Book report.
 
-        title = _("Liste Eclair")
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)        
-        self.doc.start_paragraph("Eclair-ReportTitle")
-        self.doc.write_text(title, mark)
-        self.doc.end_paragraph()
-        self.__write_all_places()
-
-        # Close the progress meter
-        self.progress.close()
+            title = _("Liste Eclair")
+            mark = IndexMark(title, INDEX_TYPE_TOC, 1)
+            self.doc.start_paragraph("Eclair-ReportTitle")
+            self.doc.write_text(title, mark)
+            self.doc.end_paragraph()
+            self.__write_all_places()
 
     def __write_all_places(self):
         """
@@ -115,14 +114,13 @@ class ListeEclairReport(Report):
         """
         place_nbr = 1
         self.doc.start_paragraph("Eclair-Report")
-        self.progress.set_pass(_("Generating report"), len(self.place_handles))
         self.result=[]
         for handle in self.place_handles:
             city = self.__write_place(handle, place_nbr)
             self.__write_referenced_events(handle, city)
             place_nbr += 1
             # increment progress bar
-            self.progress.step()
+            self.step()
         self.result.sort()
         for msg in self.result:
             # AttributeError: 'GtkDocDocument' object has no attribute 'add_text
@@ -135,13 +133,17 @@ class ListeEclairReport(Report):
         """
         place = self.database.get_place_from_handle(handle)
         location = get_main_location(self.database, place)
-        
-        city = location.get(PlaceType.CITY)
-        
+        city = ''
+        for pl_type in [PlaceType.HAMLET, PlaceType.VILLAGE,
+                            PlaceType.TOWN, PlaceType.CITY]:
+            if location.get(pl_type):
+                city = location.get(pl_type)
+                break
+
         place_title = _pd.display(self.database, place)
         if city == '' and place_title:
-            city = place_title
-            
+            return place_title
+
         return city
 
     def __write_referenced_events(self, handle , city):
@@ -158,10 +160,12 @@ class ListeEclairReport(Report):
             event = self.database.get_event_from_handle(evt_handle)
             if event:
                 date = event.get_date_object()
-            if date:
-                year = int(date.get_year())
+                if date.is_valid():
+                    year = int(date.get_year())
+                else:
+                    continue
             else:
-                next()
+                continue
             person_list = []
             ref_handles = [x for x in
                             self.database.find_backlink_handles(evt_handle)]
@@ -184,8 +188,9 @@ class ListeEclairReport(Report):
             for p_handle in person_list:
                 person = self.database.get_person_from_handle(p_handle)
                 if person:
-                    people = person.get_primary_name().get_surname()
-                    
+                    surname = person.get_primary_name().get_surname()
+                    if surname:
+                        people = surname
             if not self.debut[city][people]:
                 self.debut[city][people] = year
                 self.fin[city][people] = year
@@ -203,9 +208,11 @@ class ListeEclairReport(Report):
                     if self.debut[city][people] == 0:
                         msg = city + ":" + people
                     else:
-                        msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
+                        msg = (city + ":" + people + ":" +
+                               str(self.debut[city][people]) + ":" +
+                               str(self.fin[city][people]))
                 else:
-                    msg = people + ":" + city 
+                    msg = people + ":" + city
                 if msg:
                     self.result.append(str(msg))
 
@@ -214,7 +221,7 @@ class ListeEclairReport(Report):
         """
         This procedure converts a string of place GIDs to a list of handles
         """
-        place_handles = [] 
+        place_handles = []
         for place_gid in places.split():
             place = self.database.get_place_from_gramps_id(place_gid)
             if place is not None:
@@ -222,8 +229,8 @@ class ListeEclairReport(Report):
                 place_handles.append(place.get_handle())
 
         return place_handles
-        
-    
+
+
 #------------------------------------------------------------------------
 #
 # ListeEclairOptions
@@ -237,7 +244,7 @@ class ListeEclairOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the place report.
@@ -246,12 +253,16 @@ class ListeEclairOptions(MenuReportOptions):
 
         # Reload filters to pick any new ones
         CustomFilters = None
-        from gramps.gen.filters import CustomFilters, GenericFilter
+        from gramps.gen.filters import (CustomFilters, GenericFilter,
+                                        rules, DeferredFilter)
 
         opt = FilterOption(_("Select using filter"), 0)
         opt.set_help(_("Select places using a filter"))
         filter_list = []
         filter_list.append(GenericFilter())
+        all = DeferredFilter(_("Entire Database"), None)
+        all.add_rule(rules.place.AllPlaces([]))
+        filter_list.append(all)
         filter_list.extend(CustomFilters.get_filters('Place'))
         opt.set_filters(filter_list)
         menu.add_option(category_name, "filter", opt)
@@ -296,6 +307,6 @@ class ListeEclairOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.75)
-        para.set_bottom_margin(0.25)        
+        para.set_bottom_margin(0.25)
         para.set_description(_('The style used for place title.'))
         default_style.add_paragraph_style("Eclair-ReportTitle", para)
