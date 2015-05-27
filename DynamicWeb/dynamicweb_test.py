@@ -278,8 +278,10 @@ def import_data():
 	os.chdir(gramps_path)
 	subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-y", "-C", "dynamicweb_example", "-i", path])
 
-
-def main(test_nums):
+def main(test_nums=None):
+	if test_nums is None:
+		import_data()
+		test_nums = range(len(test_list))
 	# Create results directory
 	results_path = os.path.join(plugin_path, "test_results")
 	results_path = os.path.abspath(results_path)
