@@ -166,12 +166,14 @@ class ListeEclairReport(Report):
                     person_list.append(ref_handle)
                 else:
                     family = self.database.get_family_from_handle(ref_handle)
-                    father = family.get_father_handle()
-                    if father:
-                        person_list.append(father)
-                    mother = family.get_mother_handle()
-                    if mother:
-                        person_list.append(mother)
+                    # bug 8584
+                    if family:
+                        father = family.get_father_handle()
+                        if father:
+                            person_list.append(father)
+                        mother = family.get_mother_handle()
+                        if mother:
+                            person_list.append(mother)
 
             people = ""
             person_list = list(set(person_list))
@@ -189,7 +191,8 @@ class ListeEclairReport(Report):
                 self.fin[city][people] = year
                 event_details = [year, people]
         keylist = self.debut.keys()
-        keylist.sort()
+        #keylist.sort()
+        sorted(list(keylist)) # bug 8437
         for city in keylist:
             for people in sorted(self.debut[city].keys()):
                 if self.reporttype == "ListeEclair":
