@@ -87,6 +87,7 @@ Classes:
 #TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
 #TODO: export ISO dates
 #TODO: approximative search
+#TODO: export *.gramps file or *.pkgfile
 
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: Statistic charts, + database summary
@@ -113,7 +114,6 @@ import shutil
 import codecs
 import tarfile
 import tempfile
-import colorsys
 if sys.version_info[0] < 3:
 	from cStringIO import StringIO
 	string_types = basestring
@@ -583,12 +583,6 @@ class DynamicWebReport(Report):
 
 		self._backend = HtmlBackend()
 		self._backend.build_link = self.build_link
-		
-		# Data needed to compute colors gradients
-		self.min_age = 0
-		self.max_age = 0
-		self.min_period = 1e10
-		self.max_period = -1e10
 
 
 	def write_report(self):
@@ -1983,8 +1977,6 @@ class DynamicWebReport(Report):
 			start = date.get_start_date()
 			if (mod == Date.MOD_NONE and start != Date.EMPTY):
 				y = str(start[2])
-				self.min_period = min(self.min_period, start[2])
-				self.max_period = max(self.max_period, start[2])
 		return(y)
 
 	def get_birth_place(self, person):
@@ -2016,11 +2008,6 @@ class DynamicWebReport(Report):
 			if (not alive and death_date):
 				nyears = death_date - birth_date
 				nyears.format(precision = 3)
-				age = int(nyears)
-				if (age):
-					age = round(abs(age) / 365.25)
-					self.min_age = min(self.min_age, age)
-					self.max_age = max(self.max_age, age)
 				return(str(nyears))
 		return("");
 
@@ -2185,17 +2172,6 @@ class DynamicWebReport(Report):
 			'color-gender-unknown-death',
 			]:
 			sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, config.get('preferences.%s' % pref)))
-		self.compute_background_colors();
-		sw.write("SVG_BACKGROUND_GEN_COLORS = [" + ", ".join(
-			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in self.background_gen_colors])
-			+ "];\n")
-		sw.write("SVG_BACKGROUND_GRAD_COLORS = [" + ", ".join(
-			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in self.background_grad_colors])
-			+ "];\n")
-		sw.write("MIN_AGE = %i;\n" % self.min_age)
-		sw.write("MAX_AGE = %i;\n" % self.max_age)
-		sw.write("MIN_PERIOD = %i;\n" % self.min_period)
-		sw.write("MAX_PERIOD = %i;\n" % self.max_period)
 		sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
 			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
 			+ "];\n")
@@ -2205,7 +2181,6 @@ class DynamicWebReport(Report):
 		sw.write("SVG_TREE_COLOR_SCHEME2 = [" + ", ".join(
 			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME2]])
 			+ "];\n")
-		sw.write("SVG_GENDER_K = 0.9;\n")
 		sw.write("FOOTER=\"" + script_escape(self.get_header_footer_notes("footernote")) + "\";\n")
 		sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
 		sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
@@ -2373,40 +2348,6 @@ class DynamicWebReport(Report):
 		self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
 
-	def compute_background_colors(self):
-		"""
-		Method that is called to precomputed values needed for the background of the boxes
-		"""
-		maxgen = int(self.options["graphgens"])
-		cstart = hex_to_rgb(self.options['svg_tree_color1'])
-		cend = hex_to_rgb(self.options['svg_tree_color2'])
-		self.cstart_hsv = colorsys.rgb_to_hsv(cstart[0]/255, cstart[1]/255, cstart[2]/255)
-		self.cend_hsv = colorsys.rgb_to_hsv(cend[0]/255, cend[1]/255, cend[2]/255)
-		# BACKGROUND_GRAD_GEN
-		divs = [x / (maxgen-1) for x in range(maxgen)] if (maxgen > 1) else [0]
-		rgb_colors = [colorsys.hsv_to_rgb(
-			(1-x) * self.cstart_hsv[0] + x * self.cend_hsv[0], 
-			(1-x) * self.cstart_hsv[1] + x * self.cend_hsv[1],
-			(1-x) * self.cstart_hsv[2] + x * self.cend_hsv[2],
-			) for x in divs]
-		self.background_gen_colors = [(255*r, 255*g, 255*b) for r, g, b in rgb_colors]
-		# BACKGROUND_GRAD_PERIOD, BACKGROUND_GRAD_AGE
-		if (self.max_age <= self.min_age):
-			self.min_age = 0
-			self.max_age = config.get('behavior.max-age-prob-alive')
-		self.max_age = min(self.max_age, config.get('behavior.max-age-prob-alive'))
-		if (self.max_period < self.min_period):
-			self.max_period = self.min_period = Today().get_year()
-		steps = 2 * GRADIENTSCALE - 1
-		divs = [x/(steps-1) for x in range(steps)]
-		rgb_colors = [colorsys.hsv_to_rgb(
-			(1-x) * self.cstart_hsv[0] + x * self.cend_hsv[0], 
-			(1-x) * self.cstart_hsv[1] + x * self.cend_hsv[1],
-			(1-x) * self.cstart_hsv[2] + x * self.cend_hsv[2],
-			) for x in divs]
-		self.background_grad_colors = [(255*r, 255*g, 255*b) for r, g, b in rgb_colors]
-			
-			
 	def _export_html_page(self, filename, title, cmd, menu, scripts = [], styles = []):
 		"""
 		Generate an HTML page

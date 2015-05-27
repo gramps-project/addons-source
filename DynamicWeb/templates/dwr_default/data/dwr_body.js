@@ -144,6 +144,7 @@ var search = {
 	//SvgDistribAsc; // The SVG graph parents distribution
 	//SvgDistribDsc; // The SVG graph children distribution
 	//SvgBackground; // The SVG graph color scheme
+	//SvgDup; // Show duplicates in SVG graph
 	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
 	//ImgList; // List of media index (in table "M") for the slideshow
 	//MapExpanded; // Whether the map should be expanded to full screen
@@ -183,6 +184,7 @@ function ParseSearchString()
 	search.SvgDistribAsc = GetURLParameter('svgdasc', SVG_TREE_DISTRIB_ASC);
 	search.SvgDistribDsc = GetURLParameter('svgddsc', SVG_TREE_DISTRIB_DSC);
 	search.SvgBackground = GetURLParameter('svgbk', SVG_TREE_BACKGROUND);
+	search.SvgDup = GetURLParameter('svgdup', SVG_TREE_SHOW_DUP);
 	search.SvgExpanded = GetURLParameter('svgx', false);
 	search.ImgList = GetURLParameter('simg', []);
 	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
@@ -201,16 +203,20 @@ function GetURLParameter(sParam, def)
 		var sParameterName = sURLVariables[i].split('=');
 		if (sParameterName[0] == sParam)
 		{
-			s = decodeURIComponent(sParameterName[1]);
-			if ($.inArray(s, ['true', 'on']) >= 0) s = true;
-			if ($.inArray(s, ['false', 'off']) >= 0) s = false;
+			var s = decodeURIComponent(sParameterName[1]);
 			if (typeof(def) == 'number')
 			{
 				s = parseInt(s);
 				if (isNaN(s)) s = def;
 			}
 			if (def instanceof Array) s = $.parseJSON(s);
-			if (typeof(def) == 'boolean') s = s ? true : false;
+			if (typeof(def) == 'boolean')
+			{
+				if ($.inArray(s, ['true', 'on']) >= 0) s = true;
+				if ($.inArray(s, ['false', 'off']) >= 0) s = false;
+				if (!isNaN(parseInt(s))) s = parseInt(s);
+				s = s ? true : false;
+			}
 			return(s);
 		}
 	}
@@ -246,6 +252,7 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'svgdasc', params.SvgDistribAsc, search.SvgDistribAsc, SVG_TREE_DISTRIB_ASC);
 	s = SetURLParameter(s, 'svgddsc', params.SvgDistribDsc, search.SvgDistribDsc, SVG_TREE_DISTRIB_DSC);
 	s = SetURLParameter(s, 'svgbk', params.SvgBackground, search.SvgBackground, SVG_TREE_BACKGROUND);
+	s = SetURLParameter(s, 'svgdup', params.SvgDup, search.SvgDup, SVG_TREE_SHOW_DUP);
 	s = SetURLParameter(s, 'svgx', params.SvgExpanded, search.SvgExpanded, false);
 	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
 	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
