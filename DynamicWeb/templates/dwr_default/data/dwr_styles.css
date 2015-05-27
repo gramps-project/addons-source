@@ -355,9 +355,11 @@ body.svg-save-text {
 	stroke: #000000;
 	/* border-radius: 40px; */
 	/* stroke-width is computed */
+	overflow: hidden;
 }
 
-.svg-tree:hover {
+.svg-tree-hover {
+	cursor: pointer;
 	opacity: 0.7;
 	/* stroke-width is computed */
 }
@@ -368,8 +370,8 @@ body.svg-save-text {
 	fill: #000000;
 	pointer-events: none;
 }
-.svg-text:hover, svg a {
-	text-decoration: none !important;
+.svg-text-hover {
+	cursor: pointer;
 }
 
 .svg-line
