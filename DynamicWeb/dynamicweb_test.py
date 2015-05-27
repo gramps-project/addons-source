@@ -130,7 +130,7 @@ test_list = [
 		},
 		{
 			'what': "All possible citations are referenced",
-			'path': "source.html?sgid=S0002",
+			'path': "source.html?sgid=S0001",
 		},
 		{
 			'what': "GENDEX file",
