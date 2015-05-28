@@ -115,7 +115,6 @@ def makeDB(db):
                   note_type1   INTEGER,
                   note_type2   TEXT,
                   change INTEGER,
-                  tags TEXT,
                   private BOOLEAN);""")
 
     db.query("""CREATE TABLE name (
@@ -170,7 +169,6 @@ def makeDB(db):
                   death_ref_handle TEXT, 
                   birth_ref_handle TEXT, 
                   change INTEGER, 
-                  tags TEXT, 
                   private BOOLEAN);""")
 
     db.query("""CREATE TABLE family (
@@ -181,16 +179,19 @@ def makeDB(db):
                  the_type0 INTEGER, 
                  the_type1 TEXT, 
                  change INTEGER, 
-                 tags TEXT, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE place (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  title TEXT, 
-                 main_location CHARACTER(25),
+                 value TEXT, 
+                 the_type0 INTEGER,
+                 the_type1 TEXT,
+                 code TEXT,
                  long TEXT, 
                  lat TEXT, 
+                 lang TEXT, 
                  change INTEGER, 
                  private BOOLEAN);""")
 
@@ -228,8 +229,8 @@ def makeDB(db):
                  path TEXT, 
                  mime TEXT, 
                  desc TEXT,
+                 checksum INTEGER,
                  change INTEGER, 
-                 tags TEXT, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE repository_ref (
@@ -339,8 +340,11 @@ def makeDB(db):
 
     db.query("""CREATE TABLE datamap (
                  handle CHARACTER(25) PRIMARY KEY,
+                 the_type0 INTEGER,
+                 the_type1 TEXT,
                  key_field   TEXT, 
-                 value_field TXT);
+                 value_field TXT,
+                 private BOOLEAN);
                  """)
 
     db.query("""CREATE TABLE tag (
@@ -471,7 +475,7 @@ def export_source(db, handle, gid, title, author, pubinfo, abbrev, change,
 
 def export_note(db, data):
     (handle, gid, styled_text, format, note_type,
-     change, tags, private) = data
+     change, tag_list, private) = data
     text, markup_list = styled_text
     db.query("""INSERT into note (
                   handle,
@@ -481,15 +485,15 @@ def export_note(db, data):
                   note_type1,
                   note_type2,
                   change,
-                  tags,
                   private) values (?, ?, ?, ?,
-                                   ?, ?, ?, ?, ?);""", 
+                                   ?, ?, ?, ?);""", 
              handle, gid, text, format, note_type[0],
-             note_type[1], change, ",".join(tags), private)
+             note_type[1], change, private)
     for markup in markup_list:
         markup_code, value, start_stop_list = markup
         export_markup(db, "note", handle, markup_code[0], markup_code[1], value, 
                       str(start_stop_list)) # Not normal form; use eval
+    export_list(db, "note", handle, "tag", tag_list)
 
 def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value, 
                   start_stop_list):
@@ -508,7 +512,7 @@ def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value
 def export_event(db, data):
     (handle, gid, the_type, date, description, place_handle, 
      citation_list, note_list, media_list, attribute_list,
-     change, private) = data
+     change, tag_list, private) = data
     db.query("""INSERT INTO event (
                  handle, 
                  gid, 
@@ -527,6 +531,7 @@ def export_event(db, data):
     export_date(db, "event", handle, date)
     export_link(db, "event", handle, "place", place_handle)
     export_list(db, "event", handle, "note", note_list)
+    export_list(db, "event", handle, "tag", tag_list)
     export_attribute_list(db, "event", handle, attribute_list)
     export_media_ref_list(db, "event", handle, media_list)
     export_citation_list(db, "event", handle, citation_list)
@@ -569,7 +574,7 @@ def export_person(db, person):
      pcitation_list,       # 15
      pnote_list,         # 16
      change,             # 17
-     tags,             # 18
+     tag_list,             # 18
      private,           # 19
      person_ref_list,    # 20
      ) = person
@@ -580,15 +585,13 @@ def export_person(db, person):
                   death_ref_handle, 
                   birth_ref_handle, 
                   change, 
-                  tags, 
-                  private) values (?, ?, ?, ?, ?, ?, ?, ?);""",
+                  private) values (?, ?, ?, ?, ?, ?, ?);""",
              handle, 
              gid, 
              gender, 
              lookup(death_ref_index, event_ref_list),
              lookup(birth_ref_index, event_ref_list),
              change, 
-             ",".join(tags), #TO_FIX: TypeError: sequence item 0: expected string, NoneType found
              private)
     
     # Event Reference information
@@ -602,6 +605,7 @@ def export_person(db, person):
     export_url_list(db, "person", handle, urls) 
     export_person_ref_list(db, "person", handle, person_ref_list)
     export_citation_list(db, "person", handle, pcitation_list)
+    export_list(db, "person", handle, "tag", tag_list)
     
     # -------------------------------------
     # Address
@@ -784,15 +788,17 @@ def export_link(db, from_type, from_handle, to_type, to_handle):
                    to_handle) values (?, ?, ?, ?)""",
                  from_type, from_handle, to_type, to_handle)
 
-def export_datamap_dict(db, from_type, from_handle, datamap):
-    for key_field in datamap:
+def export_datamap_list(db, from_type, from_handle, datamap):
+    for private, data_type, data in datamap: 
         handle = create_id()
-        value_field = datamap[key_field]
         db.query("""INSERT INTO datamap (
                       handle,
+                      the_type0,
+                      the_type1,
                       key_field, 
-                      value_field) values (?, ?, ?)""",
-                 handle, key_field, value_field)
+                      value_field,
+                      private) values (?, ?, ?, ?, ?, ?)""",
+                 handle, data_type[0], data_type[1], data[0], data[1], private)
         export_link(db, from_type, from_handle, "datamap", handle)
 
 def export_address(db, from_type, from_handle, address):
@@ -928,7 +934,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         (handle, gid, father_handle, mother_handle,
          child_ref_list, the_type, event_ref_list, media_list,
          attribute_list, lds_seal_list, citation_list, note_list,
-         change, tags, private) = family.serialize()
+         change, tag_list, private) = family.serialize()
         # father_handle and/or mother_handle can be None
         db.query("""INSERT INTO family (
                  handle, 
@@ -938,10 +944,9 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  the_type0, 
                  the_type1, 
                  change, 
-                 tags, 
-                 private) values (?,?,?,?,?,?,?,?,?);""",
+                 private) values (?,?,?,?,?,?,?,?);""",
                  handle, gid, father_handle, mother_handle,
-                 the_type[0], the_type[1], change, ",".join(tags), 
+                 the_type[0], the_type[1], change, 
                  private)
 
         export_child_ref_list(db, "family", handle, "child_ref", child_ref_list)
@@ -949,6 +954,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_attribute_list(db, "family", handle, attribute_list)
         export_citation_list(db, "family", handle, citation_list)
         export_media_ref_list(db, "family", handle, media_list)
+        export_list(db, "family", handle, "tag", tag_list)
 
         # Event Reference information
         for event_ref in event_ref_list:
@@ -971,7 +977,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         if repository is None:
             continue
         (handle, gid, the_type, name, note_list,
-         address_list, urls, change, private) = repository.serialize()
+         address_list, urls, change, tag_list, private) = repository.serialize()
 
         db.query("""INSERT INTO repository (
                  handle, 
@@ -986,6 +992,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         
         export_list(db, "repository", handle, "note", note_list)
         export_url_list(db, "repository", handle, urls)
+        export_list(db, "repository", handle, "tag", tag_list)
 
         for address in address_list:
             export_address(db, "repository", handle, address)
@@ -1001,32 +1008,52 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         if place is None:
             continue
         (handle, gid, title, long, lat,
-         main_loc, alt_location_list,
+         place_ref_list,
+         place_name,
+         alt_place_name_list,
+         place_type,
+         code,
+         alt_location_list,
          urls,
          media_list,
          citation_list,
          note_list,
-         change, private) = place.serialize()
+         change, tag_list, private) = place.serialize()
+
+        value, date, lang = place_name
 
         db.query("""INSERT INTO place (
                  handle, 
                  gid, 
                  title, 
+                 value,
+                 lang,
+                 the_type0,
+                 the_type1,
+                 code,
                  long, 
                  lat, 
                  change, 
-                 private) values (?,?,?,?,?,?,?);""",
-                 handle, gid, title, long, lat,
+                 private) values (?,?,?,?,?,?,?,?,?,?,?,?);""",
+                 handle, gid, title, value, lang, 
+                 place_type[0], place_type[1],
+                 code,
+                 long, lat,
                  change, private)
 
+        export_date(db, "place", handle, date)
         export_url_list(db, "place", handle, urls)
         export_media_ref_list(db, "place", handle, media_list)
         export_citation_list(db, "place", handle, citation_list)
         export_list(db, "place", handle, "note", note_list) 
+        export_list(db, "place", handle, "tag", tag_list)
 
         # Main Location with parish:
         # No need; we have the handle, but ok:
-        export_location(db, "place_main", handle, main_loc)
+        # FIXME: 
+        #1. alt_place_name_list
+        #2. export_location(db, "place_main", handle, main_loc)
+        #3. place_ref_list
         # But we need to link these:
         export_location_list(db, "place_alt", handle, alt_location_list)
 
@@ -1058,6 +1085,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          media_list,             #  7
          datamap,                          #  8
          change,                           #  9
+         tag_list,
          private) = citation.serialize()
         db.query("""INSERT into citation (
                  handle, 
@@ -1075,10 +1103,11 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  page,
                  change,
                  private)
-        export_datamap_dict(db, "citation", handle, datamap)
+        export_datamap_list(db, "citation", handle, datamap)
         export_date(db, "citation", handle, date)
         export_list(db, "citation", handle, "note", note_list) 
         export_media_ref_list(db, "citation", handle, media_list) 
+        export_list(db, "citation", handle, "tag", tag_list)
         count += 1
         callback(100 * count/total)
 
@@ -1096,12 +1125,14 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          abbrev,
          change, datamap,
          reporef_list,
+         tag_list,
          private) = source.serialize()
 
         export_source(db, handle, gid, title, author, pubinfo, abbrev, change, private)
         export_list(db, "source", handle, "note", note_list) 
+        export_list(db, "source", handle, "tag", tag_list)
         export_media_ref_list(db, "source", handle, media_list)
-        export_datamap_dict(db, "source", handle, datamap)
+        export_datamap_list(db, "source", handle, datamap)
         export_repository_ref_list(db, "source", handle, reporef_list)
         count += 1
         callback(100 * count/total)
@@ -1114,12 +1145,13 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         if media is None:
             continue
         (handle, gid, path, mime, desc,
+         checksum,
          attribute_list,
          citation_list,
          note_list,
          change,
          date,
-         tags,
+         tag_list,
          private) = media.serialize()
 
         db.query("""INSERT INTO media (
@@ -1128,15 +1160,16 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             path, 
             mime, 
             desc,
+            checksum,
             change, 
-            tags, 
             private) VALUES (?,?,?,?,?,?,?,?);""",
-                 handle, gid, path, mime, desc, 
-                 change, ",".join(tags), private)
+                 handle, gid, path, mime, desc, checksum,
+                 change, private)
         export_date(db, "media", handle, date)
         export_list(db, "media", handle, "note", note_list) 
         export_citation_list(db, "media", handle, citation_list)
         export_attribute_list(db, "media", handle, attribute_list)
+        export_list(db, "media", handle, "tag", tag_list)
         count += 1
         callback(100 * count/total)
 
