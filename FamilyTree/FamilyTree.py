@@ -98,7 +98,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         if not self.title:
             name = self.__family_get_display_name(self.center_family)
-            self.title = StyledText(unicode(_("Family Tree for %s"))) % name
+            self.title = StyledText(_("Family Tree for %s")) % name
 
         style_sheet = self.doc.get_style_sheet()
         self.line_width = pt2cm(style_sheet.get_draw_style("FTR-box").get_line_width())
@@ -671,7 +671,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             mother_name = _("Unknown")
 
-        return StyledText(unicode(_("%(father)s and %(mother)s"))) % {
+        return StyledText(_("%(father)s and %(mother)s")) % {
                 'father': father_name,
                 'mother': mother_name}
 
