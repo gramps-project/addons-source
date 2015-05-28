@@ -45,6 +45,9 @@ gramps_path = os.environ["GRAMPS_RESOURCES"]
 if (not os.path.exists(gramps_path)): raise Exception("Gramps path GRAMPS_RESOURCES not found")
 sys.path.append(gramps_path)
 
+if sys.version_info[0] < 3:
+    reload(sys)
+    sys.setdefaultencoding('utf8')
 from dynamicweb import *
 from dynamicweb import _
 
