@@ -25,7 +25,7 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-import cPickle as pickle
+import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -52,14 +52,21 @@ def escape(data):
     """
     Remove newlines from text.
     """
-    data = data.replace(chr(10), "\\n")
+    try:
+        data = data.replace(chr(10), "\\n")
+    except:
+        pass
     return data
 
 def unescape(data):
     """
     Replace newlines with \n text.
     """
-    return data.replace("\\n", chr(10))
+    try:
+        data = data.replace("\\n", chr(10))
+    except:
+        pass
+    return data
 
 #-------------------------------------------------------------------------
 #
@@ -97,12 +104,12 @@ class ClipboardGramplet(Gramplet):
         self.otree = ClipboardListModel()
         self.object_list.set_model(self.otree)
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(self.object_list._widget)
+        self.gui.get_container_widget().add(self.object_list._widget)
         self.object_list._widget.show()
 
     def on_load(self):
         if len(self.gui.data) % 5 != 0:
-            print "Invalid Clipboard Gramplet data on load; skipping..."
+            print("Invalid Clipboard Gramplet data on load; skipping...")
             return
         i = 0
         while i < len(self.gui.data):
@@ -117,7 +124,9 @@ class ClipboardGramplet(Gramplet):
             dbname = unescape(self.gui.data[i])
             i += 1
             try:
-                tuple_data = pickle.loads(data)
+                # pickled bytes?
+                tuple_data = pickle.loads(eval(data))
+                data = eval(data)
             except:
                 tuple_data = ("TEXT", data)
             drag_type = tuple_data[0]
