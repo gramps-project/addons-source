@@ -112,6 +112,8 @@ class DifferencesReport(Report):
         self.doc.write_text("")
         self.doc.end_paragraph()
         self.database2 = import_as_dict(self.filename, self._user)
+        if self.database2 is None:
+            return
         self.sa = [SimpleAccess(self.database), SimpleAccess(self.database2)]
         diffs, added, missing = diff_dbs(self.database, self.database2, self._user)
         if self.show_diff:
