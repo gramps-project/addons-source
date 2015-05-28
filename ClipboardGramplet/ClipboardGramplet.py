@@ -138,11 +138,15 @@ class ClipboardGramplet(Gramplet):
                 targets = [drag_type]
                 action = 1
             if drag_type == "TEXT":
+                text = tuple_data[1]
+                # it could be bytes
+                if isinstance(text, bytes):
+                    text = str(text, "utf-8")
                 o_list = self.object_list.object_drag_data_received(
                     self.object_list._widget, # widget
                     Context(),       # drag type and action
                     0, 0,            # x, y
-                    Selection(tuple_data[1]), # text
+                    Selection(text), # text
                     None,            # info (not used)
                     -1)              # time
             else:
@@ -167,7 +171,7 @@ class ClipboardGramplet(Gramplet):
                 # [6]: dbname
                 if isinstance(o[1], ClipText):
                     # type, timestamp, text, preview
-                    data = pickle.dumps(("TEXT", o[1]._obj))
+                    data = pickle.dumps(("TEXT", escape(o[1]._obj)))
                 else:
                     # pickled: type, timestamp, handle, value
                     data = o[1]._pickle
