@@ -752,12 +752,12 @@ class SQLReader(object):
                  gid, 
                  title, 
                  value,
-                 lang,
                  the_type0,
                  the_type1,
                  code,
                  long, 
                  lat, 
+                 lang,
                  change, 
                  private) = place
 

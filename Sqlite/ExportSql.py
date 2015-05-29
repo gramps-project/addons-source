@@ -623,8 +623,8 @@ def export_person(db, person):
     # Names
     # -------------------------------------
     export_name(db, "person", handle, True, primary_name)
-    map(lambda name: export_name(db, "person", handle, False, name), 
-        alternate_names)
+    for name in alternate_names:
+        export_name(db, "person", handle, False, name)
 
 def export_date(db, from_type, from_handle, data):
     if data is None: return
@@ -1026,18 +1026,19 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  gid, 
                  title, 
                  value,
-                 lang,
                  the_type0,
                  the_type1,
                  code,
                  long, 
                  lat, 
+                 lang,
                  change, 
                  private) values (?,?,?,?,?,?,?,?,?,?,?,?);""",
-                 handle, gid, title, value, lang, 
+                 handle, gid, title, value, 
                  place_type[0], place_type[1],
                  code,
                  long, lat,
+                 lang, 
                  change, private)
 
         export_date(db, "place", handle, date)
