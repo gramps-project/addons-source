@@ -74,13 +74,6 @@ def lookup(handle, event_ref_list):
             count += 1
         return -1
 
-def make_tag_list(tags):
-    """
-    """
-    if tags:
-        return tags.split(",")
-    return []
-
 #-------------------------------------------------------------------------
 #
 # SQLite DB Class
@@ -186,17 +179,18 @@ class SQLReader(object):
                                (frel0, frel1), (mrel0, mrel1)))
         return retval
 
-    def get_datamap(self, sql, from_type, from_handle):
-        handles = self.get_links(sql, from_type, from_handle, "datamap")
-        datamap = {}
-        for handle in handles:
-            row = sql.query("select * from datamap where handle = ?;",
-                            handle)
-            if len(row) == 1:
-                (handle, key_field, value_field) = row[0]
-                datamap[key_field] = value_field
-            else:
-                print("ERROR: invalid datamap item '%s'" % handle)
+    def get_datamap_list(self, sql, from_type, from_handle):
+        datamap = []
+        rows = sql.query("select * from datamap where from_handle = ?;",
+                         from_handle)
+        for row in rows:
+            (from_handle, 
+             the_type0,
+             the_type1,
+             key_field, 
+             value_field,
+             private) = row
+            datamap.append((private, (the_type0, the_type1), (key_field, value_field)))
         return datamap
 
     def get_event_ref_list(self, sql, from_type, from_handle):
@@ -332,7 +326,8 @@ class SQLReader(object):
             role = None
         else:
             role = (role0, role1, role2, role3)
-        return (bool(private), citation_list, note_list, attribute_list, ref, role)
+        return (bool(private), citation_list, note_list, attribute_list, 
+                ref, role)
 
     def pack_repository_ref(self, sql, data):
         (handle, 
@@ -391,7 +386,7 @@ class SQLReader(object):
         note_list = self.get_note_list(sql, "source", handle)
         media_list = self.get_media_list(sql, "source", handle)
         reporef_list = self.get_repository_ref_list(sql, "source", handle)
-        datamap = {}
+        datamap = self.get_datamap_list(sql, "source", handle)
         return (handle, gid, title,
                 author, pubinfo,
                 note_list,
@@ -575,7 +570,6 @@ class SQLReader(object):
                  note_type1, 
                  note_type2,
                  change,
-                 tags,
                  private) = note
                 styled_text = [text, []]
                 # direct connection with note handle
@@ -589,10 +583,11 @@ class SQLReader(object):
                     ss_list = eval(start_stop_list)
                     styled_text[1] += [((markup0, markup1), value, ss_list)]
 
-                handle = handle.encode()
-                self.db.note_map[handle] = (handle, gid, styled_text, 
+                tags = self.get_links(sql, "note", handle, "tag")
+
+                self.db.note_map[bytes(handle, "utf-8")] = (handle, gid, styled_text, 
                                             format, (note_type1, note_type2), change, 
-                                            make_tag_list(tags), bool(private))
+                                            tags, bool(private))
                 count += 1
                 self.callback(100 * count/total)
 
@@ -620,12 +615,12 @@ class SQLReader(object):
                 place_handle = self.get_link(sql, "event", handle, "place")
                 place = self.get_place_from_handle(sql, place_handle)
 
-                handle = handle.encode()
+                tags = self.get_links(sql, "event", handle, "tag")
                 data = (handle, gid, (the_type0, the_type1), date, description, place, 
                         citation_list, note_list, media_list, attribute_list,
-                        change, bool(private))
+                        change, tags, bool(private))
 
-                self.db.event_map[handle] = data
+                self.db.event_map[bytes(handle, "utf-8")] = data
 
                 count += 1
                 self.callback(100 * count/total)
@@ -643,7 +638,6 @@ class SQLReader(object):
                  death_ref_handle,    #  5
                  birth_ref_handle,    #  6
                  change,             # 17
-                 tags,             # 18
                  private,           # 19
                  ) = person
                 primary_name = self.get_names(sql, "person", handle, True) # one
@@ -661,9 +655,10 @@ class SQLReader(object):
                 person_ref_list = self.get_person_ref_list(sql, "person", handle)
                 death_ref_index = lookup(death_ref_handle, event_ref_list)
                 birth_ref_index = lookup(birth_ref_handle, event_ref_list)
+                tags = self.get_links(sql, "person", handle, "tag")
 
-                handle = handle.encode()
-                self.db.person_map[handle] = (handle,             #  0
+                self.db.person_map[bytes(handle, "utf-8")] = (
+                                              handle,             #  0
                                               gid,                #  1
                                               gender,             #  2
                                               primary_name,       #  3
@@ -681,7 +676,7 @@ class SQLReader(object):
                                               pcitation_list,     # 15
                                               pnote_list,         # 16
                                               change,             # 17
-                                              make_tag_list(tags), # 18
+                                              tags,
                                               bool(private),      # 19
                                               person_ref_list,    # 20
                                                    )
@@ -699,7 +694,6 @@ class SQLReader(object):
                  the_type0,
                  the_type1,
                  change,
-                 tags,
                  private) = family
 
                 child_ref_list = self.get_child_ref_list(sql, "family", handle)
@@ -709,15 +703,18 @@ class SQLReader(object):
                 lds_seal_list = self.get_lds_list(sql, "family", handle)
                 citation_list = self.get_citation_list(sql, "family", handle)
                 note_list = self.get_note_list(sql, "family", handle)
+                tags = self.get_links(sql, "family", handle, "tag")
 
-                handle = handle.encode()
-                self.db.family_map[handle] = (handle, gid, 
-                                              father_handle, mother_handle,
-                                              child_ref_list, (the_type0, the_type1), 
-                                              event_ref_list, media_list,
-                                              attribute_list, lds_seal_list, 
-                                              citation_list, note_list,
-                                              change, make_tag_list(tags), private)
+                self.db.family_map[bytes(handle, "utf-8")] = (
+                    handle, 
+                    gid, 
+                    father_handle, 
+                    mother_handle,
+                    child_ref_list, (the_type0, the_type1), 
+                    event_ref_list, media_list,
+                    attribute_list, lds_seal_list, 
+                    citation_list, note_list,
+                    change, tags, private)
 
                 count += 1
                 self.callback(100 * count/total)
@@ -737,13 +734,12 @@ class SQLReader(object):
                 note_list = self.get_note_list(sql, "repository", handle)
                 address_list = self.get_address_list(sql, "repository", handle, with_parish=False)
                 urls = self.get_url_list(sql, "repository", handle)
-
-                handle = handle.encode()
-                self.db.repository_map[handle] = (handle, gid, 
+                tags = self.get_links(sql, "repository", handle, "tag")
+                self.db.repository_map[bytes(handle, "utf-8")] = (handle, gid, 
                                                   (the_type0, the_type1),
                                                   name, note_list,
                                                   address_list, urls, change, 
-                                                  private)
+                                                  tags, private)
                 count += 1
                 self.callback(100 * count/total)
             # ---------------------------------
@@ -755,29 +751,47 @@ class SQLReader(object):
                 (handle, 
                  gid, 
                  title, 
-                 main_loc,
+                 value,
+                 lang,
+                 the_type0,
+                 the_type1,
+                 code,
                  long, 
                  lat, 
                  change, 
                  private) = place
 
                 # We could look this up by "place_main", but we have the handle:
-                main_loc = self.get_main_location(sql, handle, with_parish=True)
+                #main_loc = self.get_main_location(sql, handle, with_parish=True)
                 alt_location_list = self.get_location_list(sql, "place_alt", handle, 
                                                            with_parish=True)
                 urls = self.get_url_list(sql, "place", handle)
                 media_list = self.get_media_list(sql, "place", handle)
                 citation_list = self.get_citation_list(sql, "place", handle)
                 note_list = self.get_note_list(sql, "place", handle)
-
-                handle = handle.encode()
-                self.db.place_map[handle] = (handle, gid, title, long, lat,
-                                             main_loc, alt_location_list,
+                tags = self.get_links(sql, "place", handle, "tag")
+                place_type = (the_type0, the_type1)
+                # FIXME: 
+                alt_place_name_list = []
+                place_ref_list = []
+                ### 
+                self.db.place_map[bytes(handle, "utf-8")] = (handle, 
+                                             gid, 
+                                             title, 
+                                             long, 
+                                             lat,
+                                             place_ref_list,
+                                             gramps.gen.lib.PlaceName(value=value, lang=lang).serialize(),
+                                             alt_place_name_list,
+                                             place_type,
+                                             code,
+                                             alt_location_list,
                                              urls,
                                              media_list,
                                              citation_list,
                                              note_list,
                                              change, 
+                                             tags,
                                              private)
                 self.callback(100 * count/total)
 
@@ -797,10 +811,9 @@ class SQLReader(object):
                 date = self.get_date(sql, date_handle)
                 note_list = self.get_note_list(sql, "citation", handle)
                 media_list = self.get_media_list(sql, "citation", handle)
-                datamap = self.get_datamap(sql, "citation", handle)
-
-                handle = handle.encode()
-                self.db.citation_map[handle] = (handle, 
+                datamap = self.get_datamap_list(sql, "citation", handle)
+                tags = self.get_links(sql, "citation", handle, "tag")
+                self.db.citation_map[bytes(handle, "utf-8")] = (handle, 
                                                 gid, 
                                                 date,
                                                 page, 
@@ -809,7 +822,8 @@ class SQLReader(object):
                                                 note_list,
                                                 media_list,
                                                 datamap,
-                                                change, 
+                                                change,
+                                                tags,
                                                 private)
                 count += 1
                 self.callback(100 * count/total)
@@ -829,17 +843,18 @@ class SQLReader(object):
                  private) = source
                 note_list = self.get_note_list(sql, "source", handle)
                 media_list = self.get_media_list(sql, "source", handle)
-                datamap = self.get_datamap(sql, "source", handle)
+                datamap = self.get_datamap_list(sql, "source", handle)
                 reporef_list = self.get_repository_ref_list(sql, "source", handle)
+                tags = self.get_links(sql, "source", handle, "tag")
 
-                handle = handle.encode()
-                self.db.source_map[handle] = (handle, gid, title,
+                self.db.source_map[bytes(handle, "utf-8")] = (handle, gid, title,
                                               author, pubinfo,
                                               note_list,
                                               media_list,
                                               abbrev,
                                               change, datamap,
                                               reporef_list,
+                                              tags,
                                               private)
                 count += 1
                 self.callback(100 * count/total)
@@ -853,8 +868,8 @@ class SQLReader(object):
                  path,
                  mime,
                  desc,
+                 checksum,
                  change,
-                 tags,
                  private) = med
 
                 attribute_list = self.get_attribute_list(sql, "media", handle)
@@ -863,15 +878,20 @@ class SQLReader(object):
 
                 date_handle = self.get_link(sql, "media", handle, "date")
                 date = self.get_date(sql, date_handle)
+                tags = self.get_links(sql, "media", handle, "tag")
 
-                handle = handle.encode()
-                self.db.media_map[handle] = (handle, gid, path, mime, desc,
+                self.db.media_map[bytes(handle, "utf-8")] = (handle, 
+                                             gid, 
+                                             path, 
+                                             mime, 
+                                             desc,
+                                             checksum,
                                              attribute_list,
                                              citation_list,
                                              note_list,
                                              change,
                                              date,
-                                             make_tag_list(tags),
+                                             tags,
                                              private)
             # ---------------------------------
             # Process tag
@@ -884,12 +904,13 @@ class SQLReader(object):
                 priority,
                 change) = tag
 
-                handle = handle.encode()
-                self.db.tag_map[handle] = (handle, 
+                self.db.tag_map[bytes(handle, "utf-8")] = (handle, 
                                         name,
                                         color,
                                         priority,
                                         change)
+        sql.db.commit()
+        sql.db.close()
         return None
 
     def cleanup(self):
