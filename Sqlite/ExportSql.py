@@ -342,7 +342,6 @@ def makeDB(db):
                  from_handle BLOB,
                  the_type0 INTEGER,
                  the_type1 TEXT,
-                 key_field   TEXT, 
                  value_field TXT,
                  private BOOLEAN);
                  """)
@@ -794,11 +793,10 @@ def export_datamap_list(db, from_type, from_handle, datamap):
                       from_handle,
                       the_type0,
                       the_type1,
-                      key_field, 
                       value_field,
-                      private) values (?, ?, ?, ?, ?, ?)""",
+                      private) values (?, ?, ?, ?, ?)""",
                  from_handle, data_type[0], data_type[1], 
-                 data[0], data[1], private)
+                 data, private)
 
 def export_address(db, from_type, from_handle, address):
     (private, acitation_list, anote_list, date, location) = address

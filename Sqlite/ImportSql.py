@@ -187,10 +187,9 @@ class SQLReader(object):
             (from_handle, 
              the_type0,
              the_type1,
-             key_field, 
              value_field,
              private) = row
-            datamap.append((private, (the_type0, the_type1), (key_field, value_field)))
+            datamap.append((private, (the_type0, the_type1), value_field))
         return datamap
 
     def get_event_ref_list(self, sql, from_type, from_handle):
@@ -572,16 +571,19 @@ class SQLReader(object):
                  change,
                  private) = note
                 styled_text = [text, []]
-                # direct connection with note handle
-                markups = sql.query("""select * from markup where handle = ?""", handle)
-                for markup in markups:
-                    (mhandle,
-                     markup0,
-                     markup1,
-                     value, 
-                     start_stop_list) = markup
-                    ss_list = eval(start_stop_list)
-                    styled_text[1] += [((markup0, markup1), value, ss_list)]
+                markups = sql.query("""select * from link where from_handle = ? and to_type = 'markup';""", 
+                                    handle)
+                for markup_link in markups:
+                    from_type, from_handle, to_type, to_handle = markup_link
+                    markup_detail = sql.query("""select * from markup where handle = ?;""", to_handle)
+                    for markup in markup_detail:
+                        (mhandle,
+                         markup0,
+                         markup1,
+                         value, 
+                         start_stop_list) = markup
+                        ss_list = eval(start_stop_list)
+                        styled_text[1] += [((markup0, markup1), value, ss_list)]
 
                 tags = self.get_links(sql, "note", handle, "tag")
 
