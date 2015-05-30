@@ -108,7 +108,7 @@ def makeDB(db):
     db.query("""drop table tag;""")
 
     db.query("""CREATE TABLE note (
-                  handle BLOB PRIMARY KEY,
+                  handle CHARACTER(25) PRIMARY KEY,
                   gid    CHARACTER(25),
                   text   TEXT,
                   format INTEGER,
@@ -118,7 +118,7 @@ def makeDB(db):
                   private BOOLEAN);""")
 
     db.query("""CREATE TABLE name (
-                  handle BLOB PRIMARY KEY,
+                  handle CHARACTER(25) PRIMARY KEY,
                   primary_name BOOLEAN,
                   private BOOLEAN, 
                   first_name TEXT, 
@@ -134,7 +134,7 @@ def makeDB(db):
                   famnick TEXT);""")
 
     db.query("""CREATE TABLE surname (
-                  handle BLOB,
+                  handle CHARACTER(25),
                   surname TEXT, 
                   prefix TEXT, 
                   primary_surname BOOLEAN, 
@@ -146,7 +146,7 @@ def makeDB(db):
                   surname(handle);""")
 
     db.query("""CREATE TABLE date (
-                  handle BLOB PRIMARY KEY,
+                  handle CHARACTER(25) PRIMARY KEY,
                   calendar INTEGER, 
                   modifier INTEGER, 
                   quality INTEGER,
@@ -163,7 +163,7 @@ def makeDB(db):
                   newyear INTEGER);""")
 
     db.query("""CREATE TABLE person (
-                  handle BLOB PRIMARY KEY,
+                  handle CHARACTER(25) PRIMARY KEY,
                   gid CHARACTER(25), 
                   gender INTEGER, 
                   death_ref_handle TEXT, 
@@ -172,17 +172,17 @@ def makeDB(db):
                   private BOOLEAN);""")
 
     db.query("""CREATE TABLE family (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
-                 father_handle BLOB, 
-                 mother_handle BLOB, 
+                 father_handle CHARACTER(25), 
+                 mother_handle CHARACTER(25), 
                  the_type0 INTEGER, 
                  the_type1 TEXT, 
                  change INTEGER, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE place (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  title TEXT, 
                  value TEXT, 
@@ -195,8 +195,19 @@ def makeDB(db):
                  change INTEGER, 
                  private BOOLEAN);""")
 
+    db.query("""CREATE TABLE place_ref (
+                   handle             CHARACTER(25) PRIMARY KEY,
+                   from_place_handle  CHARACTER(25),
+                   to_place_handle    CHARACTER(25));""")
+
+    db.query("""CREATE TABLE place_name (
+                  handle        CHARACTER(25) PRIMARY KEY,
+                  from_handle   CHARACTER(25),
+                  value         CHARACTER(25),
+                  lang          CHARACTER(25));""") 
+
     db.query("""CREATE TABLE event (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  the_type0 INTEGER, 
                  the_type1 TEXT, 
@@ -205,16 +216,16 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE citation (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  confidence INTEGER,
                  page CHARACTER(25),
-                 source_handle BLOB,
+                 source_handle CHARACTER(25),
                  change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE source (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  title TEXT, 
                  author TEXT, 
@@ -224,7 +235,7 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE media (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  path TEXT, 
                  mime TEXT, 
@@ -234,15 +245,15 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE repository_ref (
-                 handle BLOB PRIMARY KEY,
-                 ref BLOB, 
+                 handle CHARACTER(25) PRIMARY KEY,
+                 ref CHARACTER(25), 
                  call_number TEXT, 
                  source_media_type0 INTEGER,
                  source_media_type1 TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE repository (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25), 
                  the_type0 INTEGER, 
                  the_type1 TEXT,
@@ -253,35 +264,35 @@ def makeDB(db):
     # One link to link them all
     db.query("""CREATE TABLE link (
                  from_type CHARACTER(25), 
-                 from_handle BLOB, 
+                 from_handle CHARACTER(25), 
                  to_type CHARACTER(25), 
-                 to_handle BLOB);""")
+                 to_handle CHARACTER(25));""")
 
     db.query("""CREATE INDEX idx_link_to ON 
                   link(from_type, from_handle, to_type);""")
 
     db.query("""CREATE TABLE markup (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  markup0 INTEGER, 
                  markup1 TEXT, 
-                 value TEXT, 
+                 value INTEGER, 
                  start_stop_list TEXT);""")
 
     db.query("""CREATE TABLE event_ref (
-                 handle BLOB PRIMARY KEY,
-                 ref BLOB, 
+                 handle CHARACTER(25) PRIMARY KEY,
+                 ref CHARACTER(25), 
                  role0 INTEGER, 
                  role1 TEXT, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE person_ref (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  description TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE child_ref (
-                 handle BLOB PRIMARY KEY,
-                 ref BLOB, 
+                 handle CHARACTER(25) PRIMARY KEY,
+                 ref CHARACTER(25), 
                  frel0 INTEGER,
                  frel1 CHARACTER(25),
                  mrel0 INTEGER,
@@ -289,7 +300,7 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE lds (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  type INTEGER, 
                  place CHARACTER(25), 
                  famc CHARACTER(25), 
@@ -298,8 +309,8 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE media_ref (
-                 handle BLOB PRIMARY KEY,
-                 ref BLOB,
+                 handle CHARACTER(25) PRIMARY KEY,
+                 ref CHARACTER(25),
                  role0 INTEGER,
                  role1 INTEGER,
                  role2 INTEGER,
@@ -307,11 +318,11 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE address (
-                handle BLOB PRIMARY KEY,
+                handle CHARACTER(25) PRIMARY KEY,
                 private BOOLEAN);""")
 
     db.query("""CREATE TABLE location (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  street TEXT, 
                  locality TEXT,
                  city TEXT, 
@@ -323,14 +334,14 @@ def makeDB(db):
                  parish TEXT);""")
 
     db.query("""CREATE TABLE attribute (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  the_type0 INTEGER, 
                  the_type1 TEXT, 
                  value TEXT, 
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE url (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  path TEXT, 
                  desc TXT, 
                  type0 INTEGER,
@@ -339,7 +350,7 @@ def makeDB(db):
                  """)
 
     db.query("""CREATE TABLE datamap (
-                 from_handle BLOB,
+                 from_handle CHARACTER(25),
                  the_type0 INTEGER,
                  the_type1 TEXT,
                  value_field TXT,
@@ -347,7 +358,7 @@ def makeDB(db):
                  """)
 
     db.query("""CREATE TABLE tag (
-                 handle BLOB PRIMARY KEY,
+                 handle CHARACTER(25) PRIMARY KEY,
                  name TEXT,
                  color TEXT,
                  priority INTEGER,
@@ -387,6 +398,33 @@ class Database(object):
         """ Closes and writes out tables """
         self.cursor.close()
         self.db.close()
+
+
+def export_alt_place_name_list(db, handle, alt_place_name_list):
+    for place_name in alt_place_name_list:
+        export_place_name(db, handle, place_name)
+
+def export_place_name(db, handle, place_name):
+    # alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
+    (value, date, lang) = place_name
+    ref_handle = create_id()
+    db.query("""insert into place_name (handle, from_handle, value, lang) 
+                   VALUES (?, ?, ?, ?)
+    ;""", ref_handle, handle, value, lang)
+    export_date(db, "place_name", ref_handle, date)
+
+def export_place_ref_list(db, handle, place_ref_list):
+    # place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)] [(handle, date)...]
+    for place_ref in place_ref_list:
+        export_place_ref(db, handle, place_ref)
+
+def export_place_ref(db, handle, place_ref):
+    (to_place_handle, date) = place_ref
+    ref_handle = create_id()
+    db.query("""insert into place_ref (handle, from_place_handle, to_place_handle) 
+                   VALUES (?, ?, ?)
+    ;""", ref_handle, handle, to_place_handle)
+    export_date(db, "place_ref", ref_handle, date)
 
 def export_location_list(db, from_type, from_handle, locations):
     for location in locations:
@@ -657,7 +695,6 @@ def export_date(db, from_type, from_handle, data):
              day1, month1, year1, slash1, 
              day2, month2, year2, slash2,
              text, sortval, newyear)
-    # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "date", date_handle)
 
 def export_surname(db, handle, surname_list):
@@ -1046,12 +1083,12 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_list(db, "place", handle, "note", note_list) 
         export_list(db, "place", handle, "tag", tag_list)
 
-        # Main Location with parish:
-        # No need; we have the handle, but ok:
-        # FIXME: 
-        #1. alt_place_name_list
-        #2. export_location(db, "place_main", handle, main_loc)
-        #3. place_ref_list
+        #1. alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
+        #2. place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)] [(handle, date)...]
+
+        export_alt_place_name_list(db, handle, alt_place_name_list)
+        export_place_ref_list(db, handle, place_ref_list)
+
         # But we need to link these:
         export_location_list(db, "place_alt", handle, alt_location_list)
 

@@ -478,6 +478,27 @@ class SQLReader(object):
                 print("ERROR: get_place_from_handle('%s') should be unique; returned %d records." % (ref_handle, len(place_row)))
         return ''
 
+    def get_alt_place_name_list(self, sql, handle):
+        place_name_list = sql.query("""select * from place_name where from_handle = ?;""", handle)
+        retval = []
+        for place_name_data in place_name_list:
+            ref_handle, handle, value, lang = place_name_data
+            date_handle = self.get_link(sql, "place_name", ref_handle, "date")
+            date = self.get_date(sql, date_handle)
+            retval.append((value, date, lang))
+        return retval 
+
+    def get_place_ref_list(self, sql, handle):
+        # place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)] [(handle, date)...]
+        place_ref_list = sql.query("""select * from place_ref where from_place_handle = ?;""", handle)
+        retval = []
+        for place_ref_data in place_ref_list:
+            ref_handle, handle, to_place_handle = place_ref_data
+            date_handle = self.get_link(sql, "place_ref", ref_handle, "date")
+            date = self.get_date(sql, date_handle)
+            retval.append((to_place_handle, date))
+        return retval
+
     def get_main_location(self, sql, from_handle, with_parish):
         ref_handle = self.get_link(sql, "place_main", from_handle, "location")
         if ref_handle: 
@@ -773,10 +794,8 @@ class SQLReader(object):
                 note_list = self.get_note_list(sql, "place", handle)
                 tags = self.get_links(sql, "place", handle, "tag")
                 place_type = (the_type0, the_type1)
-                # FIXME: 
-                alt_place_name_list = []
-                place_ref_list = []
-                ### 
+                alt_place_name_list = self.get_alt_place_name_list(sql, handle)
+                place_ref_list = self.get_place_ref_list(sql, handle)
                 self.db.place_map[bytes(handle, "utf-8")] = (handle, 
                                              gid, 
                                              title, 
