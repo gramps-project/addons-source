@@ -88,6 +88,8 @@ def makeDB(db):
     db.query("""drop table repository_ref;""")
     db.query("""drop table date;""")
     db.query("""drop table place;""") 
+    db.query("""drop table place_ref;""") 
+    db.query("""drop table place_name;""") 
     db.query("""drop table citation;""") 
     db.query("""drop table source;""") 
     db.query("""drop table media;""")
