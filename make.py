@@ -306,6 +306,37 @@ elif command == "build":
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../addons/gramps42/download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
+elif command == "fix":
+    # Get all languages from all addons:
+    languages = set(['en'])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
+            locale_path, locale = po.rsplit(os.sep, 1)
+            languages.add(locale[:-9])
+    for lang in languages:
+        addons = {}
+        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+        for line in fp:
+            dictionary = eval(line)
+            if dictionary["i"] in addons:
+                print("Repeated addon ID:", dictionary["i"])
+            else:
+                addons[dictionary["i"]] = dictionary
+        fp.close()
+        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+        for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
+            plugin = {"n": p["n"].replace("'", "\\'"),
+                      "i": p["i"].replace("'", "\\'"),
+                      "t": p["t"].replace("'", "\\'"),
+                      "d": p["d"].replace("'", "\\'"),
+                      "v": p["v"].replace("'", "\\'"),
+                      "g": p["g"].replace("'", "\\'"),
+                      "z": p["z"].replace("'", "\\'"),
+            }
+            print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
+        fp.close()
 elif command == "check":
     from gramps.gen.plug import make_environment, PTYPE_STR
     from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -318,7 +349,10 @@ elif command == "check":
     addons = {}
     for line in fp_in:
         dictionary = eval(line)
-        addons[dictionary["i"]] = dictionary
+        if dictionary["i"] in addons:
+            print("Repeated addon ID:", dictionary["i"])
+        else:
+            addons[dictionary["i"]] = dictionary
     # go through all gpr's, check their build versions
     for gpr in glob.glob(r('''*/*.gpr.py''')):
         local_gettext = glocale.get_addon_translator(
