@@ -306,6 +306,40 @@ elif command == "build":
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../addons/gramps42/download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
+elif command == "check":
+    from gramps.gen.plug import make_environment, PTYPE_STR
+    from gramps.gen.const import GRAMPS_LOCALE as glocale
+    def register(ptype, **kwargs):
+        global plugins
+        kwargs["ptype"] = PTYPE_STR[ptype] # need to take care of translated types
+        plugins.append(kwargs)
+    # get current build numbers from English listing
+    fp_in = open("../addons/gramps42/listings/addons-en.txt", "r", encoding="utf-8")
+    addons = {}
+    for line in fp_in:
+        dictionary = eval(line)
+        addons[dictionary["i"]] = dictionary
+    # go through all gpr's, check their build versions
+    for gpr in glob.glob(r('''*/*.gpr.py''')):
+        local_gettext = glocale.get_addon_translator(
+            gpr, languages=["en", "en.UTF-8"]).gettext
+        plugins = []
+        with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+            code = compile(f.read(),
+                           gpr.encode("utf-8", errors="backslashreplace"),
+                           'exec')
+            exec(code, make_environment(_=local_gettext),
+                 {"register": register})
+        for p in plugins:
+            gpr_version = p.get("version", None)
+            id = p.get("id", None)
+            if id not in addons:
+                print("Missing in listing:", id)
+            else:
+                add_version = addons[id]["v"]
+                if gpr_version != add_version:
+                    print("Different versions:", id, gpr_version, add_version)
+                    # if number diff from gpr, report it
 elif command == "listing":
     try:
         sys.path.insert(0, GRAMPSPATH)
