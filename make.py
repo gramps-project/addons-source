@@ -285,9 +285,9 @@ elif command == "build":
             files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
             files_str = " ".join(files)
             files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
-            mkdir("../addons/gramps42/download")
+            mkdir("../addons/gramps50/download")
             increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-            system('''tar cfz "../addons/gramps42/download/%(addon)s.addon.tgz" %(files)s''',
+            system('''tar cfz "../addons/gramps50/download/%(addon)s.addon.tgz" %(files)s''',
                    files=files_str)
     else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
@@ -302,9 +302,9 @@ elif command == "build":
         files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
         files_str = " ".join(files)
         files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
-        mkdir("../addons/gramps42/download")
+        mkdir("../addons/gramps50/download")
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-        system('''tar cfz "../addons/gramps42/download/%(addon)s.addon.tgz" %(files)s''',
+        system('''tar cfz "../addons/gramps50/download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "fix":
     # Get all languages from all addons:
@@ -317,7 +317,7 @@ elif command == "fix":
             languages.add(locale[:-9])
     for lang in languages:
         addons = {}
-        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+        fp = open("../addons/gramps50/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
         for line in fp:
             dictionary = eval(line)
             if dictionary["i"] in addons:
@@ -325,7 +325,7 @@ elif command == "fix":
             else:
                 addons[dictionary["i"]] = dictionary
         fp.close()
-        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+        fp = open("../addons/gramps50/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
         for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
             plugin = {"n": p["n"].replace("'", "\\'"),
                       "i": p["i"].replace("'", "\\'"),
@@ -345,7 +345,7 @@ elif command == "check":
         kwargs["ptype"] = PTYPE_STR[ptype] # need to take care of translated types
         plugins.append(kwargs)
     # get current build numbers from English listing
-    fp_in = open("../addons/gramps42/listings/addons-en.txt", "r", encoding="utf-8")
+    fp_in = open("../addons/gramps50/listings/addons-en.txt", "r", encoding="utf-8")
     addons = {}
     for line in fp_in:
         dictionary = eval(line)
@@ -426,7 +426,7 @@ elif command == "listing":
                          {"register": register})
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split(os.sep, 1)[0]
-                    tgz_exists = os.path.isfile("../addons/gramps42/download/" + tgz_file)
+                    tgz_exists = os.path.isfile("../addons/gramps50/download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
                         plugin = {"n": p["name"].replace("'", "\\'"),
                                   "i": p["id"].replace("'", "\\'"),
@@ -442,7 +442,7 @@ elif command == "listing":
         # Write out new listing:
         if cmd_arg == "all":
             # Replace it!
-            fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+            fp = open("../addons/gramps50/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
@@ -450,8 +450,8 @@ elif command == "listing":
             # just update the lines from these addons:
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 already_added = []
-                fp_in = open("../addons/gramps42/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
-                fp_out = open("../addons/gramps42/listings/addons-%s.new" % lang, "w", encoding="utf-8")
+                fp_in = open("../addons/gramps50/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+                fp_out = open("../addons/gramps50/listings/addons-%s.new" % lang, "w", encoding="utf-8")
                 added = False
                 for line in fp_in:
                     if line in already_added:
@@ -477,7 +477,7 @@ elif command == "listing":
                         print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                 fp_in.close()
                 fp_out.close()
-                shutil.move("../addons/gramps42/listings/addons-%s.new" % lang, "../addons/gramps42/listings/addons-%s.txt" % lang)
+                shutil.move("../addons/gramps50/listings/addons-%s.new" % lang, "../addons/gramps50/listings/addons-%s.txt" % lang)
                     
 else:
     raise AttributeError("unknown command")
