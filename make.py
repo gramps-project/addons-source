@@ -446,6 +446,11 @@ elif command == "listing":
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
+        elif not os.path.isfile("../addons/gramps50/listings/addons-%s.txt" % lang):
+            fp_out = open("../addons/gramps50/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+                print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
+            fp_out.close()
         else:
             # just update the lines from these addons:
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):

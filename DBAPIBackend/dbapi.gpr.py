@@ -18,14 +18,14 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-plg = newplugin()
-plg.id    = 'dbapi'
-plg.name  = _("DB-API 2.0")
-plg.name_accell  = _("DB-_API 2.0")
-plg.description =  _("DB-API 2.0 Database Backend")
-plg.version = '1.0'
-plg.gramps_target_version = "5.0"
-plg.status = STABLE
-plg.fname = 'dbapi.py'
-plg.ptype = DATABASE
-plg.databaseclass = 'DBAPI'
+register(DATABASE, 
+         id    = 'dbapi',
+         name  = _("DB-API 2.0"),
+         name_accell  = _("DB-_API 2.0"),
+         description =  _("DB-API 2.0 Database Backend"),
+         version = '1.0',
+         gramps_target_version = "5.0",
+         status = STABLE,
+         fname = 'dbapi.py',
+         databaseclass = 'DBAPI',
+     )
