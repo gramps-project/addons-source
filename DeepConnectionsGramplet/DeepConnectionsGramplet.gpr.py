@@ -11,7 +11,7 @@ register(GRAMPLET,
          detached_width = 510,
          detached_height = 480,
          version = '1.0.24',
-         gramps_target_version = "4.2",
+         gramps_target_version = "5.0",
          help_url="Deep_Connections_Gramplet",
          )
 

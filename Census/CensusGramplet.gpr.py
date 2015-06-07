@@ -32,7 +32,7 @@ register(GRAMPLET,
          description = _("Gramplet interface for census data"),
          status = STABLE, # not yet tested with python 3
          version = '1.0.29',
-         gramps_target_version = '4.2',
+         gramps_target_version = "5.0",
          fname = "CensusGramplet.py",
          gramplet = 'CensusGramplet',
          height = 375,

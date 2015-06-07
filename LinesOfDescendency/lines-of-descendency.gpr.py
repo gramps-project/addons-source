@@ -31,7 +31,7 @@ register(REPORT,
         description = _('Prints out all descendency lines '
             'from a given ancestor to a given descendent in text.'),
         version = '1.1.24',
-        gramps_target_version = '4.2',
+        gramps_target_version = "5.0",
         status = STABLE, # not yet tested with python 3
         fname = 'lines-of-descendency.py',
         authors = ['lcc'],
