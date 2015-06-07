@@ -157,11 +157,13 @@ class Map(object):
     def __init__(self, table, 
                  keys_func="handles_func", 
                  contains_func="has_handle_func",
+                 raw_func="raw_func",
                  *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.table = table
         self.keys_func = keys_func
         self.contains_func = contains_func
+        self.raw_func = raw_func
         self.txn = DBAPITxn("Dummy transaction", db=self.table.db, batch=True)
 
     def keys(self):
@@ -175,7 +177,7 @@ class Map(object):
 
     def __getitem__(self, key):
         if self.table.funcs[self.contains_func](key):
-            return self.table.funcs["raw_func"](key)
+            return self.table.funcs[self.raw_func](key)
 
     def __setitem__(self, key, value):
         """
@@ -341,6 +343,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_person,
                 "count": self.get_number_of_people,
                 "raw_func": self._get_raw_person_data,
+                "raw_id_func": self._get_raw_person_from_id_data,
             })
         self._tables['Family'].update(
             {
@@ -357,6 +360,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_family,
                 "count": self.get_number_of_families,
                 "raw_func": self._get_raw_family_data,
+                "raw_id_func": self._get_raw_family_from_id_data,
             })
         self._tables['Source'].update(
             {
@@ -373,6 +377,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_source,
                 "count": self.get_number_of_sources,
                 "raw_func": self._get_raw_source_data,
+                "raw_id_func": self._get_raw_source_from_id_data,
                 })
         self._tables['Citation'].update(
             {
@@ -389,6 +394,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_citation,
                 "count": self.get_number_of_citations,
                 "raw_func": self._get_raw_citation_data,
+                "raw_id_func": self._get_raw_citation_from_id_data,
             })
         self._tables['Event'].update(
             {
@@ -405,6 +411,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_event,
                 "count": self.get_number_of_events,
                 "raw_func": self._get_raw_event_data,
+                "raw_id_func": self._get_raw_event_from_id_data,
             })
         self._tables['Media'].update(
             {
@@ -421,6 +428,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_media,
                 "count": self.get_number_of_media_objects,
                 "raw_func": self._get_raw_media_data,
+                "raw_id_func": self._get_raw_media_from_id_data,
             })
         self._tables['Place'].update(
             {
@@ -437,6 +445,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_place,
                 "count": self.get_number_of_places,
                 "raw_func": self._get_raw_place_data,
+                "raw_id_func": self._get_raw_place_from_id_data,
             })
         self._tables['Repository'].update(
             {
@@ -453,6 +462,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_repository,
                 "count": self.get_number_of_repositories,
                 "raw_func": self._get_raw_repository_data,
+                "raw_id_func": self._get_raw_repository_from_id_data,
             })
         self._tables['Note'].update(
             {
@@ -469,6 +479,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "has_gramps_id_func": self.has_gramps_id_for_note,
                 "count": self.get_number_of_notes,
                 "raw_func": self._get_raw_note_data,
+                "raw_id_func": self._get_raw_note_from_id_data,
             })
         self._tables['Tag'].update(
             {
@@ -534,39 +545,48 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.person_map = Map(Table(self, "Person"))
         self.person_id_map = Map(Table(self, "Person"),
                                  keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                 contains_func="has_gramps_id_func",
+                                 raw_func="raw_id_func")
         self.family_map = Map(Table(self, "Family"))
         self.family_id_map = Map(Table(self, "Family"),
                                  keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                 contains_func="has_gramps_id_func",
+                                 raw_func="raw_id_func")
         self.place_map  = Map(Table(self, "Place"))
         self.place_id_map = Map(Table(self, "Place"),
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                keys_func="ids_func",
+                                contains_func="has_gramps_id_func",
+                                raw_func="raw_id_func")
         self.citation_map = Map(Table(self, "Citation"))
         self.citation_id_map = Map(Table(self, "Citation"),
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                   keys_func="ids_func",
+                                   contains_func="has_gramps_id_func",
+                                   raw_func="raw_id_func")
         self.source_map = Map(Table(self, "Source"))
         self.source_id_map = Map(Table(self, "Source"),
                                  keys_func="ids_func",
-                                contains_func="has_gramps_id_func")
+                                 contains_func="has_gramps_id_func",
+                                 raw_func="raw_id_func")
         self.repository_map  = Map(Table(self, "Repository"))
         self.repository_id_map = Map(Table(self, "Repository"),
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                     keys_func="ids_func",
+                                     contains_func="has_gramps_id_func",
+                                     raw_func="raw_id_func")
         self.note_map = Map(Table(self, "Note"))
         self.note_id_map = Map(Table(self, "Note"),
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                               keys_func="ids_func",
+                               contains_func="has_gramps_id_func",
+                               raw_func="raw_id_func")
         self.media_map  = Map(Table(self, "Media"))
         self.media_id_map = Map(Table(self, "Media"),
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                keys_func="ids_func",
+                                contains_func="has_gramps_id_func",
+                                raw_func="raw_id_func")
         self.event_map  = Map(Table(self, "Event"))
         self.event_id_map = Map(Table(self, "Event"), 
-                                 keys_func="ids_func",
-                                 contains_func="has_gramps_id_func")
+                                keys_func="ids_func",
+                                contains_func="has_gramps_id_func",
+                                raw_func="raw_id_func")
         self.tag_map  = Map(Table(self, "Tag"))
         self.metadata   = Map(Table(self, "Metadata", funcs={"cursor_func": lambda: MetaCursor()}))
         self.undo_callback = None
@@ -2739,8 +2759,20 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if row:
             return pickle.loads(row[0])
 
+    def _get_raw_person_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM person WHERE gramps_id = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
     def _get_raw_family_data(self, key):
         cur = self.dbapi.execute("SELECT blob FROM family WHERE handle = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
+    def _get_raw_family_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM family WHERE gramps_id = ?", [key])
         row = cur.fetchone()
         if row:
             return pickle.loads(row[0])
@@ -2751,8 +2783,20 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if row:
             return pickle.loads(row[0])
 
+    def _get_raw_source_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM source WHERE gramps_id = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
     def _get_raw_citation_data(self, key):
         cur = self.dbapi.execute("SELECT blob FROM citation WHERE handle = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
+    def _get_raw_citation_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM citation WHERE gramps_id = ?", [key])
         row = cur.fetchone()
         if row:
             return pickle.loads(row[0])
@@ -2763,8 +2807,20 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if row:
             return pickle.loads(row[0])
 
+    def _get_raw_event_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM event WHERE gramps_id = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
     def _get_raw_media_data(self, key):
         cur = self.dbapi.execute("SELECT blob FROM media WHERE handle = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
+    def _get_raw_media_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM media WHERE gramps_id = ?", [key])
         row = cur.fetchone()
         if row:
             return pickle.loads(row[0])
@@ -2775,7 +2831,19 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if row:
             return pickle.loads(row[0])
 
+    def _get_raw_place_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM place WHERE gramps_id = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
     def _get_raw_repository_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
+    def _get_raw_repository_from_id_data(self, key):
         cur = self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
         row = cur.fetchone()
         if row:
@@ -2783,6 +2851,12 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def _get_raw_note_data(self, key):
         cur = self.dbapi.execute("SELECT blob FROM note WHERE handle = ?", [key])
+        row = cur.fetchone()
+        if row:
+            return pickle.loads(row[0])
+
+    def _get_raw_note_from_id_data(self, key):
+        cur = self.dbapi.execute("SELECT blob FROM note WHERE gramps_id = ?", [key])
         row = cur.fetchone()
         if row:
             return pickle.loads(row[0])
