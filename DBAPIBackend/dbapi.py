@@ -598,6 +598,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.abort_possible = False
         self._bm_changes = 0
         self.has_changed = False
+        self.surname_list = []
         self.genderStats = GenderStats() # can pass in loaded stats as dict
         self.owner = Researcher()
         if directory:
@@ -1423,34 +1424,36 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 self._order_by_person_key(old_person)):
                 self.remove_from_surname_list(old_person)
                 self.add_to_surname_list(person, trans.batch)
-            given_name, gender_type = self.get_gender_data(person)
+            given_name, surname, gender_type = self.get_person_data(person)
             # update the person:
             self.dbapi.execute("""UPDATE person SET gramps_id = ?, 
                                                     order_by = ?,
                                                     blob = ?,
                                                     given_name = ?,
+                                                    surname = ?,
                                                     gender_type = ?
                                                 WHERE handle = ?;""",
                                [person.gramps_id, 
                                 self._order_by_person_key(person),
                                 pickle.dumps(person.serialize()),
                                 given_name,
+                                surname,
                                 gender_type,
                                 person.handle])
         else:
             emit = "person-add"
             self.genderStats.count_person(person)
             self.add_to_surname_list(person, trans.batch)
-            given_name, gender_type = self.get_gender_data(person)
+            given_name, surname, gender_type = self.get_person_data(person)
             # Insert the person:
             self.dbapi.execute("""INSERT INTO person (handle, order_by, gramps_id, blob,
-                                                      given_name, gender_type)
-                            VALUES(?, ?, ?, ?, ?, ?);""", 
+                                                      given_name, surname, gender_type)
+                            VALUES(?, ?, ?, ?, ?, ?, ?);""", 
                                [person.handle, 
                                 self._order_by_person_key(person),
                                 person.gramps_id, 
                                 pickle.dumps(person.serialize()),
-                                given_name, gender_type])
+                                given_name, surname, gender_type])
         if not trans.batch:
             self.update_backlinks(person)
             self.dbapi.commit()
@@ -2096,8 +2099,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.set_metadata('eattr_names', self.event_attributes)
             self.set_metadata('place_types', self.place_types)
             
-            # surname list
-            self.set_metadata('surname_list', self.surname_list)
+            # Save misc items:
+            self.save_surname_list()
             self.save_gender_stats(self.genderStats)
             
             self.dbapi.close()
@@ -2367,6 +2370,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.dbapi.execute("""CREATE TABLE IF NOT EXISTS person (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     given_name     TEXT        ,
+                                    surname        TEXT        ,
                                     gender_type    INTEGER     ,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
@@ -2495,7 +2499,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.place_types = self.get_metadata('place_types', set())
         
         # surname list
-        self.surname_list = self.get_metadata('surname_list')
+        self.surname_list = self.get_surname_list()
 
         self.set_save_path(directory)
         self.undolog = os.path.join(self._directory, DBUNDOFN)
@@ -2963,15 +2967,35 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             gstats[row["given_name"]] = [row["female"], row["male"], row["unknown"]]
         return gstats
         
-    def get_gender_data(self, person):
+    def get_person_data(self, person):
         """
-        Given a Person, return primary_name.first_name and gender.
+        Given a Person, return primary_name.first_name, surname and gender.
         """
         given_name = ""
+        surname = ""
         gender_type = Person.UNKNOWN
         if person:
             primary_name = person.get_primary_name()
             if primary_name:
                 given_name = primary_name.get_first_name()
+                surname_list = primary_name.get_surname_list()
+                if len(surname_list) > 0:
+                    surname_obj = surname_list[0]
+                    if surname_obj:
+                        surname = surname_obj.surname
             gender_type = person.gender
-        return (given_name, gender_type)
+        return (given_name, surname, gender_type)
+
+    def get_surname_list(self):
+        cur = self.dbapi.execute("""SELECT DISTINCT surname FROM person ORDER BY surname;""")
+        surname_list = []
+        for row in cur.fetchall():
+            surname_list.append(row["surname"])
+        return surname_list
+
+    def save_surname_list(self):
+        """
+        Save the surname_list into persistant storage.
+        """
+        # Nothing for DB-API to do; saves in person table
+        pass
