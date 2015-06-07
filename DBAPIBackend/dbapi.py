@@ -2448,25 +2448,49 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         );""") 
         ## Indices:
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON person (order_by);
+                                  person_order_by ON person (order_by);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON source (order_by);
+                                  person_gramps_id ON person (gramps_id);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON citation (order_by);
+                                  person_surname ON person (surname);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON media (order_by);
+                                  person_given_name ON person (given_name);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON place (order_by);
+                                  source_order_by ON source (order_by);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  order_by ON tag (order_by);
+                                  source_gramps_id ON source (gramps_id);
         """)
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
-                                  ref_handle ON reference (ref_handle);
+                                  citation_order_by ON citation (order_by);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  citation_gramps_id ON citation (gramps_id);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  media_order_by ON media (order_by);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  media_gramps_id ON media (gramps_id);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  place_order_by ON place (order_by);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  place_gramps_id ON place (gramps_id);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  tag_order_by ON tag (order_by);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  reference_ref_handle ON reference (ref_handle);
+        """)
+        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+                                  name_group_name ON name_group (name); 
         """)
         # Load metadata
         self.bookmarks.set(self.get_metadata('bookmarks'))
@@ -2623,8 +2647,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         callback(5)
 
     def rebuild_secondary(self, update):
-        self.genderStats = self.rebuild_gender_stats()
-        # FIXME: surname_list ?
+        gstats = self.rebuild_gender_stats()
+        self.genderStats = GenderStats(gstats) 
 
     def prepare_import(self):
         """
