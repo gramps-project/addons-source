@@ -1423,26 +1423,34 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 self._order_by_person_key(old_person)):
                 self.remove_from_surname_list(old_person)
                 self.add_to_surname_list(person, trans.batch)
+            given_name, gender_type = self.get_gender_data(person)
             # update the person:
             self.dbapi.execute("""UPDATE person SET gramps_id = ?, 
                                                     order_by = ?,
-                                                    blob = ? 
+                                                    blob = ?,
+                                                    given_name = ?,
+                                                    gender_type = ?
                                                 WHERE handle = ?;""",
                                [person.gramps_id, 
                                 self._order_by_person_key(person),
                                 pickle.dumps(person.serialize()),
+                                given_name,
+                                gender_type,
                                 person.handle])
         else:
             emit = "person-add"
             self.genderStats.count_person(person)
             self.add_to_surname_list(person, trans.batch)
+            given_name, gender_type = self.get_gender_data(person)
             # Insert the person:
-            self.dbapi.execute("""INSERT INTO person (handle, order_by, gramps_id, blob)
-                            VALUES(?, ?, ?, ?);""", 
+            self.dbapi.execute("""INSERT INTO person (handle, order_by, gramps_id, blob,
+                                                      given_name, gender_type)
+                            VALUES(?, ?, ?, ?, ?, ?);""", 
                                [person.handle, 
                                 self._order_by_person_key(person),
                                 person.gramps_id, 
-                                pickle.dumps(person.serialize())])
+                                pickle.dumps(person.serialize()),
+                                given_name, gender_type])
         if not trans.batch:
             self.update_backlinks(person)
             self.dbapi.commit()
@@ -2090,6 +2098,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             
             # surname list
             self.set_metadata('surname_list', self.surname_list)
+            self.save_gender_stats(self.genderStats)
             
             self.dbapi.close()
 
@@ -2357,6 +2366,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         # make sure schema is up to date:
         self.dbapi.execute("""CREATE TABLE IF NOT EXISTS person (
                                     handle    TEXT PRIMARY KEY NOT NULL,
+                                    given_name     TEXT        ,
+                                    gender_type    INTEGER     ,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
                                     blob      TEXT
@@ -2425,6 +2436,12 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                                     setting  TEXT PRIMARY KEY NOT NULL,
                                     value    TEXT
         );""")
+        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS gender_stats (
+                                    given_name TEXT, 
+                                    female     INTEGER, 
+                                    male       INTEGER, 
+                                    unknown    INTEGER
+        );""") 
         ## Indices:
         self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
                                   order_by ON person (order_by);
@@ -2484,7 +2501,11 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.undolog = os.path.join(self._directory, DBUNDOFN)
         self.undodb = DBAPIUndo(self, self.undolog)
         self.undodb.open()
-        
+
+        # Other items to load
+        gstats = self.get_gender_stats()
+        self.genderStats = GenderStats(gstats) 
+
     def set_prefixes(self, person, media, family, source, citation, 
                      place, event, repository, note):
         self.set_person_id_prefix(person)
@@ -2598,27 +2619,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         callback(5)
 
     def rebuild_secondary(self, update):
-        pass
-        # FIXME: rebuild the secondary databases/maps:
-        ## gender stats
-        ## event_names
-        ## fattr_names
-        ## pattr_names
-        ## sattr_names
-        ## marker_names
-        ## child_refs
-        ## family_rels
-        ## event_roles
-        ## name_types
-        ## origin_types
-        ## repo_types
-        ## note_types
-        ## sm_types
-        ## url_types
-        ## mattr_names
-        ## eattr_names
-        ## place_types
-        # surname list
+        self.genderStats = self.rebuild_gender_stats()
+        # FIXME: surname_list ?
 
     def prepare_import(self):
         """
@@ -2927,3 +2929,49 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         this database on this computer.
         """
         return self.brief_name
+
+    def rebuild_gender_stats(self):
+        """
+        Returns a dictionary of 
+        {given_name: (male_count, female_count, unknown_count)} 
+        """
+        cur = self.dbapi.execute("""SELECT given_name, gender_type FROM person;""")
+        gstats = {}
+        for row in cur.fetchall():
+            if row["given_name"] not in gstats:
+                gstats[row["given_name"]] = [0, 0, 0]
+            gstats[row["given_name"]][row["gender_type"]] += 1
+        return gstats
+
+    def save_gender_stats(self, gstats):
+        self.dbapi.execute("""DELETE FROM gender_stats;""")
+        for key in gstats.stats:
+            female, male, unknown = gstats.stats[key]
+            self.dbapi.execute("""INSERT INTO gender_stats(given_name, female, male, unknown) 
+                                              VALUES(?, ?, ?, ?);""",
+                               [key, female, male, unknown]);
+        self.dbapi.commit()
+
+    def get_gender_stats(self):
+        """
+        Returns a dictionary of 
+        {given_name: (male_count, female_count, unknown_count)} 
+        """
+        cur = self.dbapi.execute("""SELECT given_name, female, male, unknown FROM gender_stats;""")
+        gstats = {}
+        for row in cur.fetchall():
+            gstats[row["given_name"]] = [row["female"], row["male"], row["unknown"]]
+        return gstats
+        
+    def get_gender_data(self, person):
+        """
+        Given a Person, return primary_name.first_name and gender.
+        """
+        given_name = ""
+        gender_type = Person.UNKNOWN
+        if person:
+            primary_name = person.get_primary_name()
+            if primary_name:
+                given_name = primary_name.get_first_name()
+            gender_type = person.gender
+        return (given_name, gender_type)
