@@ -1,3 +1,23 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2015 Douglas S. Blank <doug.blank@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
 #------------------------------------------------------------------------
 #
 # Python Modules
@@ -63,7 +83,7 @@ class DBAPIUndo(DbUndo):
         Open the backing storage.  Needs to be overridden in the derived
         class.
         """
-        pass
+        print("Undo.open", value)
         # FIXME
 
     def close(self):
@@ -71,7 +91,7 @@ class DBAPIUndo(DbUndo):
         Close the backing storage.  Needs to be overridden in the derived
         class.
         """        
-        pass
+        print("Undo.close")
         # FIXME
 
     def append(self, value):
@@ -79,7 +99,7 @@ class DBAPIUndo(DbUndo):
         Add a new entry on the end.  Needs to be overridden in the derived
         class.
         """        
-        pass
+        print("Undo.append", value)
         # FIXME
 
     def __getitem__(self, index):
@@ -87,6 +107,7 @@ class DBAPIUndo(DbUndo):
         Returns an entry by index number.  Needs to be overridden in the
         derived class.
         """        
+        print("Undo.__getitem__", index)
         return None
         # FIXME
 
@@ -94,7 +115,7 @@ class DBAPIUndo(DbUndo):
         """
         Set an entry to a value.  Needs to be overridden in the derived class.
         """           
-        pass
+        print("Undo.__setitem__", index, value)
         # FIXME
 
     def __len__(self):
@@ -102,19 +123,26 @@ class DBAPIUndo(DbUndo):
         Returns the number of entries.  Needs to be overridden in the derived
         class.
         """         
+        print("Undo.__len__")
         return 0
         # FIXME
 
     def __redo(self, update_history):
         """
         """
-        pass
+        print("Undo.__redo", update_history)
         # FIXME
 
     def __undo(self, update_history):
         """
         """
-        pass
+        print("Undo.__undo", update_history)
+        # FIXME
+
+    def commit(self, transaction, msg):
+        """
+        """
+        print("Undo.commit", transaction, msg)
         # FIXME
 
 class Environment(object):
@@ -248,6 +276,21 @@ class Cursor(object):
             return
     def close(self):
         pass
+
+class TreeCursor(Cursor):
+
+    def __init__(self, map):
+        """
+        """
+        Cursor.__init__(self, map)
+
+    def __iter__(self):
+        """
+        Iterator
+        """
+        ## FIXME: not sure what this should do:
+        for item in self.map.keys():
+            yield (bytes(item, "utf-8"), self.map[item])
 
 class Bookmarks(object):
     def __init__(self, default=[]):
@@ -618,10 +661,25 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             return self._tables[table_name]
         return None
 
+    def transaction_begin(self, transaction):
+        """
+        Transactions are handled automatically by the db layer.
+        """
+        self.transaction = transaction
+        return transaction
+
     def transaction_commit(self, txn):
+        """
+        Executed after a batch operation.
+        """
+        msg = txn.get_description()
+        self.undodb.commit(txn, msg)
         self.dbapi.commit()
 
     def transaction_abort(self, txn):
+        """
+        Executed after a batch operation abort.
+        """
         self.dbapi.rollback()
 
     @staticmethod
@@ -1184,6 +1242,9 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
     def get_place_cursor(self):
         return Cursor(self.place_map)
 
+    def get_place_tree_cursor(self, *args, **kwargs):
+        return TreeCursor(self.place_map)
+
     def get_person_cursor(self):
         return Cursor(self.person_map)
 
@@ -1495,7 +1556,6 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         """
         if batch_transaction:
             return
-        # TODO: check to see if this is correct
         name = None
         primary_name = person.get_primary_name()
         if primary_name:
@@ -1874,12 +1934,6 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             NOTE_KEY:       self.note_id_map, 
             }
         return list(key2table[obj_key].keys())
-
-    def transaction_begin(self, transaction):
-        """
-        Transactions are handled automatically by the db layer.
-        """
-        return 
 
     def set_researcher(self, owner):
         self.owner.set_from(owner)
