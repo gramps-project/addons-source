@@ -279,18 +279,20 @@ class Cursor(object):
 
 class TreeCursor(Cursor):
 
-    def __init__(self, map):
+    def __init__(self, db, map):
         """
         """
+        self.db = db
         Cursor.__init__(self, map)
 
     def __iter__(self):
         """
         Iterator
         """
-        ## FIXME: not sure what this should do:
-        for item in self.map.keys():
-            yield (bytes(item, "utf-8"), self.map[item])
+        ## FIXME: get in correct order ????
+        handles = self.db.get_place_handles(sort_handles=True)
+        for handle in handles:
+            yield (bytes(handle, "utf-8"), self.db._get_raw_place_data(handle))
 
 class Bookmarks(object):
     def __init__(self, default=[]):
@@ -968,6 +970,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         row = cur.fetchone()
         if row:
             return row[0]
+        else:
+            return key
 
     def get_person_handles(self, sort_handles=False):
         if sort_handles:
@@ -1243,7 +1247,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return Cursor(self.place_map)
 
     def get_place_tree_cursor(self, *args, **kwargs):
-        return TreeCursor(self.place_map)
+        return TreeCursor(self, self.place_map)
 
     def get_person_cursor(self):
         return Cursor(self.person_map)
