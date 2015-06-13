@@ -289,7 +289,6 @@ class TreeCursor(Cursor):
         """
         Iterator
         """
-        ## FIXME: get in correct order ????
         handles = self.db.get_place_handles(sort_handles=True)
         for handle in handles:
             yield (bytes(handle, "utf-8"), self.db._get_raw_place_data(handle))
@@ -2707,6 +2706,15 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
     def rebuild_secondary(self, update):
         gstats = self.rebuild_gender_stats()
         self.genderStats = GenderStats(gstats) 
+        cur = self.dbapi.execute("""select blob from place;""")
+        row = cur.fetchone()
+        while row:
+            place = Place.create(pickle.loads(row[0]))
+            order_by = self._order_by_place_key(place)
+            cur2 = self.dbapi.execute("""UPDATE place SET order_by = ? WHERE handle = ?;""",
+                                      [order_by, place.handle])
+            row = cur.fetchone()
+        self.dbapi.commit()
 
     def prepare_import(self):
         """
@@ -2970,7 +2978,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return glocale.sort_key(order_by)
 
     def _order_by_place_key(self, place):
-        return glocale.sort_key(place.title)
+        return glocale.sort_key(str(int(place.place_type)) + ", " + place.name.value)
 
     def _order_by_source_key(self, source):
         return glocale.sort_key(source.title)
