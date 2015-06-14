@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 make.py for Gramps addons.
@@ -262,7 +262,10 @@ elif command in ["compile"]:
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
 elif command == "build":
-    files = sys.argv[3:]
+    if os.path.isfile(r('''%(addon)s/MANIFEST''')):
+        files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
+    else:
+        files = []
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         # Compile all:
