@@ -312,6 +312,21 @@ elif command == "build":
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../addons/gramps50/download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
+elif command == "manifest-check":
+    import tarfile
+    import re
+    for tgz in glob.glob("../addons/gramps42/download/*.tgz"):
+        files = tarfile.open(tgz).getnames()
+        for file in files:
+            if not any([
+                    re.match(".*\.py$", file),
+                    re.match(".*\.txt$", file),
+                    re.match(".*\.glade$", file),
+                    re.match(".*\.xml$", file),
+                    re.match(".*locale/.*/LC_MESSAGES/.*.mo", file),
+            ]
+            ):
+                print("Need to add", file, "in", tgz)
 elif command == "fix":
     # Get all languages from all addons:
     languages = set(['en'])

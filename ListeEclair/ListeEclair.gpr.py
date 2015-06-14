@@ -2,7 +2,7 @@ register(REPORT,
 id    = 'ListeEclair',
 name  = _("Liste Eclair"),
 description =  _("Produit une liste eclair"),
-version = '1.0.14',
+version = '1.0.15',
 gramps_target_version = "5.0",
 status = STABLE, # not yet tested with python 3, strange indentation, bug with pdf file format
 fname = 'ListeEclair.py',
