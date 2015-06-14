@@ -262,10 +262,6 @@ elif command in ["compile"]:
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
 elif command == "build":
-    if os.path.isfile(r('''%(addon)s/MANIFEST''')):
-        files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
-    else:
-        files = []
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         # Compile all:
@@ -280,7 +276,10 @@ elif command == "build":
             if os.path.isfile(r('''%(addon)s/setup.py''')):
                 system('''cd %s; python setup.py --build''' % r('''%(addon)s'''))
                 continue
-            files = []
+            if os.path.isfile(r('''%(addon)s/MANIFEST''')):
+                files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
+            else:
+                files = []
             files += glob.glob(r('''%(addon)s/*.py'''))
             files += glob.glob(r('''%(addon)s/*.glade'''))
             files += glob.glob(r('''%(addon)s/*.xml'''))
@@ -293,6 +292,10 @@ elif command == "build":
             system('''tar cfz "../addons/gramps50/download/%(addon)s.addon.tgz" %(files)s''',
                    files=files_str)
     else:
+        if os.path.isfile(r('''%(addon)s/MANIFEST''')):
+            files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
+        else:
+            files = []
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
                 locale = os.path.basename(po[:-9])
                 mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
