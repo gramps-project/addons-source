@@ -42,7 +42,7 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 from gramps.gen.db import (DbReadBase, DbWriteBase, DbTxn, DbUndo,
                            KEY_TO_NAME_MAP, KEY_TO_CLASS_MAP, 
-                           CLASS_TO_KEY_MAP)
+                           CLASS_TO_KEY_MAP, TXNADD, TXNUPD, TXNDEL)
 from gramps.gen.utils.callback import Callback
 from gramps.gen.updatecallback import UpdateCallback
 from gramps.gen.db.dbconst import *
@@ -65,6 +65,9 @@ from gramps.gen.lib.genderstats import GenderStats
 
 _LOG = logging.getLogger(DBLOGNAME)
 
+_SIGBASE = ('person', 'family', 'source', 'event', 'media',
+            'place', 'repository', 'reference', 'note', 'tag', 'citation')
+
 def touch(fname, mode=0o666, dir_fd=None, **kwargs):
     ## After http://stackoverflow.com/questions/1158076/implement-touch-using-python
     flags = os.O_CREAT | os.O_APPEND
@@ -75,75 +78,123 @@ def touch(fname, mode=0o666, dir_fd=None, **kwargs):
 class DBAPIUndo(DbUndo):
     def __init__(self, grampsdb, path):
         super(DBAPIUndo, self).__init__(grampsdb)
-        self.undodb = grampsdb
-        self.path = path
+        self.undodb = []
 
     def open(self, value=None):
         """
         Open the backing storage.  Needs to be overridden in the derived
         class.
         """
-        print("Undo.open", value)
-        # FIXME
+        pass
 
     def close(self):
         """
         Close the backing storage.  Needs to be overridden in the derived
         class.
         """        
-        print("Undo.close")
-        # FIXME
+        pass
 
     def append(self, value):
         """
         Add a new entry on the end.  Needs to be overridden in the derived
         class.
         """        
-        print("Undo.append", value)
-        # FIXME
+        self.undodb.append(value)
 
     def __getitem__(self, index):
         """
         Returns an entry by index number.  Needs to be overridden in the
         derived class.
         """        
-        print("Undo.__getitem__", index)
-        return None
-        # FIXME
+        return self.undodb[index]
 
     def __setitem__(self, index, value):
         """
         Set an entry to a value.  Needs to be overridden in the derived class.
         """           
-        print("Undo.__setitem__", index, value)
-        # FIXME
+        self.undodb[index] = value
 
     def __len__(self):
         """
         Returns the number of entries.  Needs to be overridden in the derived
         class.
         """         
-        print("Undo.__len__")
-        return 0
-        # FIXME
+        return len(self.undodb)
 
-    def __redo(self, update_history):
+    def _redo(self, update_history):
         """
+        Access the last undone transaction, and revert the data to the state 
+        before the transaction was undone.
         """
-        print("Undo.__redo", update_history)
-        # FIXME
+        txn = self.redoq.pop()
+        self.undoq.append(txn)
+        transaction = txn
+        db = self.db
+        subitems = transaction.get_recnos()
 
-    def __undo(self, update_history):
-        """
-        """
-        print("Undo.__undo", update_history)
-        # FIXME
+        # Process all records in the transaction
+        for record_id in subitems:
+            (key, trans_type, handle, old_data, new_data) = \
+                pickle.loads(self.undodb[record_id])
 
-    def commit(self, transaction, msg):
+            if key == REFERENCE_KEY:
+                self.undo_reference(new_data, handle, self.mapbase[key])
+            else:
+                self.undo_data(new_data, handle, self.mapbase[key],
+                                    db.emit, _SIGBASE[key])
+        # Notify listeners
+        if db.undo_callback:
+            db.undo_callback(_("_Undo %s")
+                                   % transaction.get_description())
+
+        if db.redo_callback:
+            if self.redo_count > 1:
+                new_transaction = self.redoq[-2]
+                db.redo_callback(_("_Redo %s")
+                                   % new_transaction.get_description())
+            else:
+                db.redo_callback(None)       
+
+        if update_history and db.undo_history_callback:
+            db.undo_history_callback()
+        return True        
+
+    def _undo(self, update_history):
         """
+        Access the last committed transaction, and revert the data to the 
+        state before the transaction was committed.
         """
-        print("Undo.commit", transaction, msg)
-        # FIXME
+        txn = self.undoq.pop()
+        self.redoq.append(txn)
+        transaction = txn
+        db = self.db
+        subitems = transaction.get_recnos(reverse=True)
+
+        # Process all records in the transaction
+        for record_id in subitems:
+            (key, trans_type, handle, old_data, new_data) = \
+                    pickle.loads(self.undodb[record_id])
+
+            if key == REFERENCE_KEY:
+                self.undo_reference(old_data, handle, self.mapbase[key])
+            else:
+                self.undo_data(old_data, handle, self.mapbase[key],
+                                db.emit, _SIGBASE[key])
+        # Notify listeners
+        if db.undo_callback:
+            if self.undo_count > 0:
+                db.undo_callback(_("_Undo %s")
+                                   % self.undoq[-1].get_description())
+            else:
+                db.undo_callback(None)    
+
+        if db.redo_callback:
+            db.redo_callback(_("_Redo %s")
+                                   % transaction.get_description())
+
+        if update_history and db.undo_history_callback:
+            db.undo_history_callback()
+        return True
 
 class Environment(object):
     """
@@ -154,6 +205,9 @@ class Environment(object):
 
     def txn_begin(self):
         return DBAPITxn("DBAPIDb Transaction", self.db)
+
+    def txn_checkpoint(self):
+        pass
 
 class Table(object):
     """
@@ -219,6 +273,9 @@ class Map(object):
 
     def __len__(self):
         return self.table.funcs["count_func"]()
+
+    def delete(self, key):
+        self.table.funcs["del_func"](key, self.txn)
 
 class MetaCursor(object):
     def __init__(self):
@@ -388,6 +445,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_people,
                 "raw_func": self._get_raw_person_data,
                 "raw_id_func": self._get_raw_person_from_id_data,
+                "del_func": self.remove_person,
             })
         self._tables['Family'].update(
             {
@@ -405,6 +463,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_families,
                 "raw_func": self._get_raw_family_data,
                 "raw_id_func": self._get_raw_family_from_id_data,
+                "del_func": self.remove_family,
             })
         self._tables['Source'].update(
             {
@@ -422,6 +481,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_sources,
                 "raw_func": self._get_raw_source_data,
                 "raw_id_func": self._get_raw_source_from_id_data,
+                "del_func": self.remove_source,
                 })
         self._tables['Citation'].update(
             {
@@ -439,6 +499,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_citations,
                 "raw_func": self._get_raw_citation_data,
                 "raw_id_func": self._get_raw_citation_from_id_data,
+                "del_func": self.remove_citation,
             })
         self._tables['Event'].update(
             {
@@ -456,6 +517,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_events,
                 "raw_func": self._get_raw_event_data,
                 "raw_id_func": self._get_raw_event_from_id_data,
+                "del_func": self.remove_event,
             })
         self._tables['Media'].update(
             {
@@ -473,6 +535,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_media_objects,
                 "raw_func": self._get_raw_media_data,
                 "raw_id_func": self._get_raw_media_from_id_data,
+                "del_func": self.remove_object,
             })
         self._tables['Place'].update(
             {
@@ -490,6 +553,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_places,
                 "raw_func": self._get_raw_place_data,
                 "raw_id_func": self._get_raw_place_from_id_data,
+                "del_func": self.remove_place,
             })
         self._tables['Repository'].update(
             {
@@ -507,6 +571,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_repositories,
                 "raw_func": self._get_raw_repository_data,
                 "raw_id_func": self._get_raw_repository_from_id_data,
+                "del_func": self.remove_repository,
             })
         self._tables['Note'].update(
             {
@@ -524,6 +589,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "count": self.get_number_of_notes,
                 "raw_func": self._get_raw_note_data,
                 "raw_id_func": self._get_raw_note_from_id_data,
+                "del_func": self.remove_note,
             })
         self._tables['Tag'].update(
             {
@@ -538,6 +604,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                 "iter_func": self.iter_tags,
                 "count": self.get_number_of_tags,
                 "raw_func": self._get_raw_tag_data,
+                "del_func": self.remove_tag,
             })
         self.set_save_path(directory)
         # skip GEDCOM cross-ref check for now:
@@ -673,15 +740,43 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         """
         Executed after a batch operation.
         """
+        self.dbapi.commit()
+        self.transaction = None
         msg = txn.get_description()
         self.undodb.commit(txn, msg)
-        self.dbapi.commit()
+        self.__after_commit(txn)
+        txn.clear()
+        self.has_changed = True
+
+    def __after_commit(self, transaction):
+        """
+        Post-transaction commit processing
+        """
+        if transaction.batch:
+            self.env.txn_checkpoint()
+            # Only build surname list after surname index is surely back
+            self.build_surname_list()
+
+        # Reset callbacks if necessary
+        if transaction.batch or not len(transaction):
+            return
+        if self.undo_callback:
+            self.undo_callback(_("_Undo %s") % transaction.get_description())
+        if self.redo_callback:
+            self.redo_callback(None)
+        if self.undo_history_callback:
+            self.undo_history_callback()            
 
     def transaction_abort(self, txn):
         """
         Executed after a batch operation abort.
         """
         self.dbapi.rollback()
+        self.transaction = None
+        txn.clear()
+        txn.first = None
+        txn.last = None
+        self.__after_commit(txn)
 
     @staticmethod
     def _validated_id_prefix(val, default):
@@ -1131,13 +1226,21 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (Person.create(data[1]) for data in self.get_person_cursor())
 
     def iter_person_handles(self):
-        return (data[0] for data in self.get_person_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM person;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_families(self):
         return (Family.create(data[1]) for data in self.get_family_cursor())
 
     def iter_family_handles(self):
-        return (handle for handle in self.family_map.keys())
+        cur = self.dbapi.execute("SELECT handle FROM family;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def get_tag_from_name(self, name):
         cur = self.dbapi.execute("""select handle from tag where order_by = ?;""",
@@ -1473,6 +1576,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_person(self, person, trans, change_time=None):
         emit = None
+        old_person = None
         if person.handle in self.person_map:
             emit = "person-update"
             old_person = self.get_person_from_handle(person.handle)
@@ -1521,6 +1625,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(person)
             self.dbapi.commit()
+            op = TXNUPD if old_person else TXNADD
+            trans.add(PERSON_KEY, op, person.handle, 
+                      old_person.serialize(), 
+                      person.serialize())
         # Other misc update tasks:
         self.individual_attributes.update(
             [str(attr.type) for attr in person.attribute_list
@@ -1595,8 +1703,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_family(self, family, trans, change_time=None):
         emit = None
+        old_family = None
         if family.handle in self.family_map:
             emit = "family-update"
+            old_family = self.get_family_from_handle(family.handle)
             self.dbapi.execute("""UPDATE family SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1612,6 +1722,11 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(family)
             self.dbapi.commit()
+            op = TXNUPD if old_family else TXNADD
+            trans.add(FAMILY_KEY, op, family.handle, 
+                      old_family.serialize(), 
+                      family.serialize())
+
         # Misc updates:
         self.family_attributes.update(
             [str(attr.type) for attr in family.attribute_list
@@ -1644,8 +1759,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_citation(self, citation, trans, change_time=None):
         emit = None
+        old_citation = None
         if citation.handle in self.citation_map:
             emit = "citation-update"
+            old_citation = self.get_citation_from_handle(citation.handle)
             self.dbapi.execute("""UPDATE citation SET gramps_id = ?, 
                                                       order_by = ?,
                                                       blob = ? 
@@ -1665,6 +1782,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(citation)
             self.dbapi.commit()
+            op = TXNUPD if old_citation else TXNADD
+            trans.add(CITATION_KEY, op, citation.handle, 
+                      old_citation.serialize(), 
+                      citation.serialize())
         # Misc updates:
         attr_list = []
         for mref in citation.media_list:
@@ -1683,8 +1804,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_source(self, source, trans, change_time=None):
         emit = None
+        old_source = None
         if source.handle in self.source_map:
             emit = "source-update"
+            old_source = self.get_source_from_handle(source.handle)
             self.dbapi.execute("""UPDATE source SET gramps_id = ?, 
                                                     order_by = ?,
                                                     blob = ? 
@@ -1704,6 +1827,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(source)
             self.dbapi.commit()
+            op = TXNUPD if old_source else TXNADD
+            trans.add(SOURCE_KEY, op, source.handle, 
+                      old_source.serialize(), 
+                      source.serialize())
         # Misc updates:
         self.source_media_types.update(
             [str(ref.media_type) for ref in source.reporef_list
@@ -1724,8 +1851,11 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_repository(self, repository, trans, change_time=None):
         emit = None
+        old_repository = None
         if repository.handle in self.repository_map:
             emit = "repository-update"
+            old_repository = self.get_repository_from_handle(repository.handle)
+
             self.dbapi.execute("""UPDATE repository SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1740,6 +1870,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(repository)
             self.dbapi.commit()
+            op = TXNUPD if old_repository else TXNADD
+            trans.add(REPOSITORY_KEY, op, repository.handle, 
+                      old_repository.serialize(), 
+                      repository.serialize())
         # Misc updates:
         if repository.type.is_custom():
             self.repository_types.add(str(repository.type))
@@ -1753,8 +1887,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_note(self, note, trans, change_time=None):
         emit = None
+        old_note = None
         if note.handle in self.note_map:
             emit = "note-update"
+            old_note = self.get_note_from_handle(note.handle)
             self.dbapi.execute("""UPDATE note SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1769,6 +1905,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(note)
             self.dbapi.commit()
+            op = TXNUPD if old_note else TXNADD
+            trans.add(NOTE_KEY, op, note.handle, 
+                      old_note.serialize(), 
+                      note.serialize())
         # Misc updates:
         if note.type.is_custom():
             self.note_types.add(str(note.type))        
@@ -1779,8 +1919,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_place(self, place, trans, change_time=None):
         emit = None
+        old_place = None
         if place.handle in self.place_map:
             emit = "place-update"
+            old_place = self.get_place_from_handle(place.handle)
             self.dbapi.execute("""UPDATE place SET gramps_id = ?, 
                                                    order_by = ?,
                                                    blob = ? 
@@ -1800,6 +1942,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(place)
             self.dbapi.commit()
+            op = TXNUPD if old_place else TXNADD
+            trans.add(PLACE_KEY, op, place.handle, 
+                      old_place.serialize(), 
+                      place.serialize())
         # Misc updates:
         if place.get_type().is_custom():
             self.place_types.add(str(place.get_type()))
@@ -1819,8 +1965,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_event(self, event, trans, change_time=None):
         emit = None
+        old_event = None
         if event.handle in self.event_map:
             emit = "event-update"
+            old_event = self.get_event_from_handle(event.handle)
             self.dbapi.execute("""UPDATE event SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1837,6 +1985,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(event)
             self.dbapi.commit()
+            op = TXNUPD if old_event else TXNADD
+            trans.add(EVENT_KEY, op, event.handle, 
+                      old_event.serialize(), 
+                      event.serialize())
         # Misc updates:
         self.event_attributes.update(
             [str(attr.type) for attr in event.attribute_list
@@ -1895,8 +2047,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def commit_media_object(self, media, trans, change_time=None):
         emit = None
+        old_media = None
         if media.handle in self.media_map:
             emit = "media-update"
+            old_media = self.get_object_from_handle(media.handle)
             self.dbapi.execute("""UPDATE media SET gramps_id = ?, 
                                                    order_by = ?,
                                                    blob = ? 
@@ -1916,6 +2070,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(media)
             self.dbapi.commit()
+            op = TXNUPD if old_media else TXNADD
+            trans.add(MEDIA_KEY, op, media.handle, 
+                      old_media.serialize(), 
+                      media.serialize())
         # Misc updates:
         self.media_attributes.update(
             [str(attr.type) for attr in media.attribute_list
@@ -2013,12 +2171,12 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             return
         if handle in self.person_map:
             person = Person.create(self.person_map[handle])
-            #del self.person_map[handle]
-            #del self.person_id_map[person.gramps_id]
             self.dbapi.execute("DELETE FROM person WHERE handle = ?;", [handle])
             self.emit("person-delete", ([handle],))
             if not transaction.batch:
                 self.dbapi.commit()
+                transaction.add(PERSON_KEY, TXNDEL, person.handle, 
+                                person.serialize(), None)
 
     def remove_source(self, handle, transaction):
         """
@@ -2121,6 +2279,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.emit(KEY_TO_NAME_MAP[key] + "-delete", ([handle],))
             if not transaction.batch:
                 self.dbapi.commit()
+                data = data_map[handle]
+                transaction.add(key, TXNDEL, handle, transaction, data, None)
 
     def close(self):
         if self._directory:
@@ -2364,13 +2524,21 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return self._directory is not None
 
     def iter_citation_handles(self):
-        return (data[0] for data in self.get_citation_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM citation;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_citations(self):
         return (Citation.create(data[1]) for data in self.get_citation_cursor())
 
     def iter_event_handles(self):
-        return (data[0] for data in self.get_event_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM event;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_events(self):
         return (Event.create(data[1]) for data in self.get_event_cursor())
@@ -2378,14 +2546,29 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
     def iter_media_objects(self):
         return (MediaObject.create(data[1]) for data in self.get_media_cursor())
 
+    def iter_media_object_handles(self):
+        cur = self.dbapi.execute("SELECT handle FROM media;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
+
     def iter_note_handles(self):
-        return (data[0] for data in self.get_note_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM note;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_notes(self):
         return (Note.create(data[1]) for data in self.get_note_cursor())
 
     def iter_place_handles(self):
-        return (data[0] for data in self.get_place_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM place;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_places(self):
         return (Place.create(data[1]) for data in self.get_place_cursor())
@@ -2394,16 +2577,28 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (Repository.create(data[1]) for data in self.get_repository_cursor())
 
     def iter_repository_handles(self):
-        return (data[0] for data in self.get_repository_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM repository;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_source_handles(self):
-        return (data[0] for data in self.get_source_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM source;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_sources(self):
         return (Source.create(data[1]) for data in self.get_source_cursor())
 
     def iter_tag_handles(self):
-        return (data[0] for data in self.get_tag_cursor())
+        cur = self.dbapi.execute("SELECT handle FROM tag;")
+        row = cur.fetchone()
+        while row:
+            yield row[0]
+            row = cur.fetchone()
 
     def iter_tags(self):
         return (Tag.create(data[1]) for data in self.get_tag_cursor())
@@ -3086,6 +3281,13 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
     def save_surname_list(self):
         """
         Save the surname_list into persistant storage.
+        """
+        # Nothing for DB-API to do; saves in person table
+        pass
+
+    def build_surname_list(self):
+        """
+        Rebuild the surname_list.
         """
         # Nothing for DB-API to do; saves in person table
         pass
