@@ -31,6 +31,7 @@ import os
 import logging
 import shutil
 import bisect
+import sys
 
 #------------------------------------------------------------------------
 #
@@ -1025,10 +1026,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         """
         Get an item from the database.
         """
-        cur = self.dbapi.execute("SELECT * FROM metadata WHERE setting = ?;", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT value FROM metadata WHERE setting = ?;", [key])
+        row = self.dbapi.fetchone()
         if row:
-            return pickle.loads(row["value"])
+            return pickle.loads(row[0])
         elif default == []:
             return []
         else:
@@ -1039,14 +1040,14 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         key: string
         value: item, will be serialized here
         """
-        cur = self.dbapi.execute("SELECT * FROM metadata WHERE setting = ?;", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT * FROM metadata WHERE setting = ?;", [key])
+        row = self.dbapi.fetchone()
         if row:
-            cur = self.dbapi.execute("UPDATE metadata SET value = ? WHERE setting = ?;", 
-                                     [pickle.dumps(value), key])
+            self.dbapi.execute("UPDATE metadata SET value = ? WHERE setting = ?;", 
+                               [pickle.dumps(value), key])
         else:
-            cur = self.dbapi.execute("INSERT INTO metadata (setting, value) VALUES (?, ?);", 
-                                     [key, pickle.dumps(value)])
+            self.dbapi.execute("INSERT INTO metadata (setting, value) VALUES (?, ?);", 
+                               [key, pickle.dumps(value)])
         self.dbapi.commit()
 
     def set_default_person_handle(self, handle):
@@ -1054,14 +1055,14 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.emit('home-person-changed')
 
     def get_name_group_keys(self):
-        cur = self.dbapi.execute("SELECT name FROM name_group ORDER BY name;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT name FROM name_group ORDER BY name;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_name_group_mapping(self, key):
-        cur = self.dbapi.execute("SELECT grouping FROM name_group WHERE name = ?;", 
+        self.dbapi.execute("SELECT grouping FROM name_group WHERE name = ?;", 
                                  [key])
-        row = cur.fetchone()
+        row = self.dbapi.fetchone()
         if row:
             return row[0]
         else:
@@ -1069,70 +1070,70 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def get_person_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM person ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM person ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle FROM person;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle FROM person;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_family_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM family;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT handle FROM family;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_event_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM event;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT handle FROM event;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_citation_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM citation ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM citation ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle FROM citation;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle FROM citation;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_source_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM source ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM source ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle from source;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle from source;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_place_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM place ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM place ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle FROM place;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle FROM place;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_repository_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM repository;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT handle FROM repository;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_media_object_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM media ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM media ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle FROM media;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle FROM media;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_note_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM note;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT handle FROM note;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_tag_handles(self, sort_handles=False):
         if sort_handles:
-            cur = self.dbapi.execute("SELECT handle FROM tag ORDER BY order_by;")
+            self.dbapi.execute("SELECT handle FROM tag ORDER BY order_by;")
         else:
-            cur = self.dbapi.execute("SELECT handle FROM tag;")
-        rows = cur.fetchall()
+            self.dbapi.execute("SELECT handle FROM tag;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_event_from_handle(self, handle):
@@ -1226,26 +1227,26 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (Person.create(data[1]) for data in self.get_person_cursor())
 
     def iter_person_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM person;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM person;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_families(self):
         return (Family.create(data[1]) for data in self.get_family_cursor())
 
     def iter_family_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM family;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM family;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def get_tag_from_name(self, name):
-        cur = self.dbapi.execute("""select handle from tag where order_by = ?;""",
+        self.dbapi.execute("""select handle from tag where order_by = ?;""",
                                  [self._order_by_tag_key(name)])
-        row = cur.fetchone()
+        row = self.dbapi.fetchone()
         if row:
             self.get_tag_from_handle(row[0])
         return None
@@ -1296,53 +1297,53 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return None
 
     def get_number_of_people(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM person;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM person;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_events(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM event;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM event;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_places(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM place;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM place;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_tags(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM tag;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM tag;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_families(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM family;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM family;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_notes(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM note;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM note;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_citations(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM citation;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM citation;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_sources(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM source;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM source;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_media_objects(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM media;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM media;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_number_of_repositories(self):
-        cur = self.dbapi.execute("SELECT count(handle) FROM repository;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT count(handle) FROM repository;")
+        row = self.dbapi.fetchone()
         return row[0]
 
     def get_place_cursor(self):
@@ -1423,20 +1424,20 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return handle in self.media_map
 
     def has_name_group_key(self, key):
-        cur = self.dbapi.execute("SELECT grouping FROM name_group WHERE name = ?;", 
+        self.dbapi.execute("SELECT grouping FROM name_group WHERE name = ?;", 
                                  [key])
-        row = cur.fetchone()
+        row = self.dbapi.fetchone()
         return True if row else False
 
     def set_name_group_mapping(self, name, grouping):
         sname = name.encode("utf-8")
-        cur = self.dbapi.execute("SELECT * FROM name_group WHERE name = ?;", 
+        self.dbapi.execute("SELECT * FROM name_group WHERE name = ?;", 
                                  [sname])
-        row = cur.fetchone()
+        row = self.dbapi.fetchone()
         if row:
-            cur = self.dbapi.execute("DELETE FROM name_group WHERE name = ?;", 
+            self.dbapi.execute("DELETE FROM name_group WHERE name = ?;", 
                                      [sname])
-        cur = self.dbapi.execute("INSERT INTO name_group (name, grouping) VALUES(?, ?);",
+        self.dbapi.execute("INSERT INTO name_group (name, grouping) VALUES(?, ?);",
                                  [sname, grouping])
         self.dbapi.commit()
 
@@ -2339,12 +2340,12 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
             result_list = list(find_backlink_handles(handle))
         """
-        cur = self.dbapi.execute("SELECT * FROM reference WHERE ref_handle = ?;",
+        self.dbapi.execute("SELECT obj_class, obj_handle FROM reference WHERE ref_handle = ?;",
                                  [handle])
-        rows = cur.fetchall()
+        rows = self.dbapi.fetchall()
         for row in rows:
-            if (include_classes is None) or (row["obj_class"] in include_classes):
-                yield (row["obj_class"], row["obj_handle"])
+            if (include_classes is None) or (row[0] in include_classes):
+                yield (row[0], row[1])
 
     def find_initial_person(self):
         handle = self.get_default_handle()
@@ -2353,8 +2354,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             person = self.get_person_from_handle(handle)
             if person:
                 return person
-        cur = self.dbapi.execute("SELECT handle FROM person;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM person;")
+        row = self.dbapi.fetchone()
         if row:
             return self.get_person_from_handle(row[0])
 
@@ -2524,21 +2525,21 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return self._directory is not None
 
     def iter_citation_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM citation;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM citation;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_citations(self):
         return (Citation.create(data[1]) for data in self.get_citation_cursor())
 
     def iter_event_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM event;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM event;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_events(self):
         return (Event.create(data[1]) for data in self.get_event_cursor())
@@ -2547,28 +2548,28 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (MediaObject.create(data[1]) for data in self.get_media_cursor())
 
     def iter_media_object_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM media;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM media;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_note_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM note;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM note;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_notes(self):
         return (Note.create(data[1]) for data in self.get_note_cursor())
 
     def iter_place_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM place;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM place;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_places(self):
         return (Place.create(data[1]) for data in self.get_place_cursor())
@@ -2577,28 +2578,28 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (Repository.create(data[1]) for data in self.get_repository_cursor())
 
     def iter_repository_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM repository;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM repository;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_source_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM source;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM source;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_sources(self):
         return (Source.create(data[1]) for data in self.get_source_cursor())
 
     def iter_tag_handles(self):
-        cur = self.dbapi.execute("SELECT handle FROM tag;")
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT handle FROM tag;")
+        row = self.dbapi.fetchone()
         while row:
             yield row[0]
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
 
     def iter_tags(self):
         return (Tag.create(data[1]) for data in self.get_tag_cursor())
@@ -2612,6 +2613,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         default_settings = {"__file__": 
                             os.path.join(directory, "default_settings.py")}
         settings_file = os.path.join(directory, "default_settings.py")
+        sys.path.append(directory)
         with open(settings_file) as f:
             code = compile(f.read(), settings_file, 'exec')
             exec(code, globals(), default_settings)
@@ -2619,7 +2621,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.dbapi = default_settings["dbapi"]
             
         # make sure schema is up to date:
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS person (
+        self.dbapi.create("""CREATE TABLE  person (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     given_name     TEXT        ,
                                     surname        TEXT        ,
@@ -2628,120 +2630,120 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS family (
+        self.dbapi.create("""CREATE TABLE  family (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS source (
-                                    handle    TEXT PRIMARY KEY NOT NULL,
-                                    order_by  TEXT             ,
-                                    gramps_id TEXT             ,
-                                    blob      TEXT
-        );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS citation (
+        self.dbapi.create("""CREATE TABLE  source (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS event (
-                                    handle    TEXT PRIMARY KEY NOT NULL,
-                                    gramps_id TEXT             ,
-                                    blob      TEXT
-        );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS media (
+        self.dbapi.create("""CREATE TABLE  citation (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS place (
+        self.dbapi.create("""CREATE TABLE  event (
+                                    handle    TEXT PRIMARY KEY NOT NULL,
+                                    gramps_id TEXT             ,
+                                    blob      TEXT
+        );""")
+        self.dbapi.create("""CREATE TABLE  media (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS repository (
+        self.dbapi.create("""CREATE TABLE  place (
+                                    handle    TEXT PRIMARY KEY NOT NULL,
+                                    order_by  TEXT             ,
+                                    gramps_id TEXT             ,
+                                    blob      TEXT
+        );""")
+        self.dbapi.create("""CREATE TABLE  repository (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS note (
+        self.dbapi.create("""CREATE TABLE  note (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
                                     blob      TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS tag (
+        self.dbapi.create("""CREATE TABLE  tag (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     blob      TEXT
         );""")
         # Secondary:
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS reference (
+        self.dbapi.create("""CREATE TABLE  reference (
                                     obj_handle    TEXT,
                                     obj_class     TEXT,
                                     ref_handle    TEXT,
                                     ref_class     TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS name_group (
+        self.dbapi.create("""CREATE TABLE  name_group (
                                     name     TEXT PRIMARY KEY NOT NULL,
                                     grouping TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS metadata (
+        self.dbapi.create("""CREATE TABLE  metadata (
                                     setting  TEXT PRIMARY KEY NOT NULL,
                                     value    TEXT
         );""")
-        self.dbapi.execute("""CREATE TABLE IF NOT EXISTS gender_stats (
+        self.dbapi.create("""CREATE TABLE  gender_stats (
                                     given_name TEXT, 
                                     female     INTEGER, 
                                     male       INTEGER, 
                                     unknown    INTEGER
         );""") 
         ## Indices:
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   person_order_by ON person (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   person_gramps_id ON person (gramps_id);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   person_surname ON person (surname);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   person_given_name ON person (given_name);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   source_order_by ON source (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   source_gramps_id ON source (gramps_id);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   citation_order_by ON citation (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   citation_gramps_id ON citation (gramps_id);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   media_order_by ON media (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   media_gramps_id ON media (gramps_id);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   place_order_by ON place (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   place_gramps_id ON place (gramps_id);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   tag_order_by ON tag (order_by);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   reference_ref_handle ON reference (ref_handle);
         """)
-        self.dbapi.execute("""CREATE INDEX IF NOT EXISTS 
+        self.dbapi.create("""CREATE INDEX  
                                   name_group_name ON name_group (name); 
         """)
         # Load metadata
@@ -2901,14 +2903,14 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
     def rebuild_secondary(self, update):
         gstats = self.rebuild_gender_stats()
         self.genderStats = GenderStats(gstats) 
-        cur = self.dbapi.execute("""select blob from place;""")
-        row = cur.fetchone()
+        self.dbapi.execute("""select blob from place;""")
+        row = self.dbapi.fetchone()
         while row:
             place = Place.create(pickle.loads(row[0]))
             order_by = self._order_by_place_key(place)
             cur2 = self.dbapi.execute("""UPDATE place SET order_by = ? WHERE handle = ?;""",
                                       [order_by, place.handle])
-            row = cur.fetchone()
+            row = self.dbapi.fetchone()
         self.dbapi.commit()
 
     def prepare_import(self):
@@ -2924,237 +2926,237 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.reindex_reference_map(lambda n: n)
 
     def has_handle_for_person(self, key):
-        cur = self.dbapi.execute("SELECT * FROM person WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM person WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_family(self, key):
-        cur = self.dbapi.execute("SELECT * FROM family WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM family WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_source(self, key):
-        cur = self.dbapi.execute("SELECT * FROM source WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM source WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_citation(self, key):
-        cur = self.dbapi.execute("SELECT * FROM citation WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM citation WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_event(self, key):
-        cur = self.dbapi.execute("SELECT * FROM event WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM event WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_media(self, key):
-        cur = self.dbapi.execute("SELECT * FROM media WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM media WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_place(self, key):
-        cur = self.dbapi.execute("SELECT * FROM place WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM place WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_repository(self, key):
-        cur = self.dbapi.execute("SELECT * FROM repository WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM repository WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_note(self, key):
-        cur = self.dbapi.execute("SELECT * FROM note WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM note WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_handle_for_tag(self, key):
-        cur = self.dbapi.execute("SELECT * FROM tag WHERE handle = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM tag WHERE handle = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_person(self, key):
-        cur = self.dbapi.execute("SELECT * FROM person WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM person WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_family(self, key):
-        cur = self.dbapi.execute("SELECT * FROM family WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM family WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_source(self, key):
-        cur = self.dbapi.execute("SELECT * FROM source WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM source WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_citation(self, key):
-        cur = self.dbapi.execute("SELECT * FROM citation WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM citation WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_event(self, key):
-        cur = self.dbapi.execute("SELECT * FROM event WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM event WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_media(self, key):
-        cur = self.dbapi.execute("SELECT * FROM media WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM media WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_place(self, key):
-        cur = self.dbapi.execute("SELECT * FROM place WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM place WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_repository(self, key):
-        cur = self.dbapi.execute("SELECT * FROM repository WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM repository WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def has_gramps_id_for_note(self, key):
-        cur = self.dbapi.execute("SELECT * FROM note WHERE gramps_id = ?", [key])
-        return cur.fetchone() != None
+        self.dbapi.execute("SELECT * FROM note WHERE gramps_id = ?", [key])
+        return self.dbapi.fetchone() != None
 
     def get_person_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM person;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM person;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_family_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM family;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM family;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_source_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM source;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM source;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_citation_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM citation;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM citation;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_event_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM event;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM event;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_media_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM media;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM media;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_place_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps FROM place;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps FROM place;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_repository_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM repository;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM repository;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def get_note_gramps_ids(self):
-        cur = self.dbapi.execute("SELECT gramps_id FROM note;")
-        rows = cur.fetchall()
+        self.dbapi.execute("SELECT gramps_id FROM note;")
+        rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
     def _get_raw_person_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM person WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM person WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_person_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM person WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM person WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_family_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM family WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM family WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_family_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM family WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM family WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_source_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM source WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM source WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_source_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM source WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM source WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_citation_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM citation WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM citation WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_citation_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM citation WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM citation WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_event_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM event WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM event WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_event_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM event WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM event WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_media_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM media WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM media WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_media_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM media WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM media WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_place_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM place WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM place WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_place_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM place WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM place WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_repository_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_repository_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM repository WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_note_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM note WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM note WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_note_from_id_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM note WHERE gramps_id = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM note WHERE gramps_id = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
     def _get_raw_tag_data(self, key):
-        cur = self.dbapi.execute("SELECT blob FROM tag WHERE handle = ?", [key])
-        row = cur.fetchone()
+        self.dbapi.execute("SELECT blob FROM tag WHERE handle = ?", [key])
+        row = self.dbapi.fetchone()
         if row:
             return pickle.loads(row[0])
 
@@ -3224,12 +3226,12 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         Returns a dictionary of 
         {given_name: (male_count, female_count, unknown_count)} 
         """
-        cur = self.dbapi.execute("""SELECT given_name, gender_type FROM person;""")
+        self.dbapi.execute("""SELECT given_name, gender_type FROM person;""")
         gstats = {}
-        for row in cur.fetchall():
-            if row["given_name"] not in gstats:
-                gstats[row["given_name"]] = [0, 0, 0]
-            gstats[row["given_name"]][row["gender_type"]] += 1
+        for row in self.dbapi.fetchall():
+            if row[0] not in gstats:
+                gstats[row[0]] = [0, 0, 0]
+            gstats[row[0]][row[1]] += 1
         return gstats
 
     def save_gender_stats(self, gstats):
@@ -3246,10 +3248,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         Returns a dictionary of 
         {given_name: (male_count, female_count, unknown_count)} 
         """
-        cur = self.dbapi.execute("""SELECT given_name, female, male, unknown FROM gender_stats;""")
+        self.dbapi.execute("""SELECT given_name, female, male, unknown FROM gender_stats;""")
         gstats = {}
-        for row in cur.fetchall():
-            gstats[row["given_name"]] = [row["female"], row["male"], row["unknown"]]
+        for row in self.dbapi.fetchall():
+            gstats[row[0]] = [row[1], row[2], row[3]]
         return gstats
         
     def get_person_data(self, person):
@@ -3272,10 +3274,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return (given_name, surname, gender_type)
 
     def get_surname_list(self):
-        cur = self.dbapi.execute("""SELECT DISTINCT surname FROM person ORDER BY surname;""")
+        self.dbapi.execute("""SELECT DISTINCT surname FROM person ORDER BY surname;""")
         surname_list = []
-        for row in cur.fetchall():
-            surname_list.append(row["surname"])
+        for row in self.dbapi.fetchall():
+            surname_list.append(row[0])
         return surname_list
 
     def save_surname_list(self):
