@@ -2623,7 +2623,6 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
         self.dbapi = default_settings["dbapi"]
             
-        self.drop_tables()
         # make sure schema is up to date:
         self.dbapi.try_execute("""CREATE TABLE person (
                                     handle    VARCHAR(50) PRIMARY KEY NOT NULL,
