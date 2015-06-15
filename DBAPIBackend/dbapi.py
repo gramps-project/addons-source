@@ -1432,15 +1432,14 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         return True if row else False
 
     def set_name_group_mapping(self, name, grouping):
-        sname = name.encode("utf-8")
         self.dbapi.execute("SELECT * FROM name_group WHERE name = ?;", 
-                                 [sname])
+                                 [name])
         row = self.dbapi.fetchone()
         if row:
             self.dbapi.execute("DELETE FROM name_group WHERE name = ?;", 
-                                     [sname])
+                                     [name])
         self.dbapi.execute("INSERT INTO name_group (name, grouping) VALUES(?, ?);",
-                                 [sname, grouping])
+                                 [name, grouping])
         self.dbapi.commit()
 
     def get_raw_person_data(self, handle):
@@ -2286,7 +2285,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             if not transaction.batch:
                 self.dbapi.commit()
                 data = data_map[handle]
-                transaction.add(key, TXNDEL, handle, transaction, data, None)
+                transaction.add(key, TXNDEL, handle, data, None)
 
     def close(self):
         if self._directory:
