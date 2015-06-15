@@ -24,8 +24,9 @@ class Sqlite(object):
 
     def try_execute(self, sql):
         try:
-            self.connect.execute(sql)
-        except:
+            self.connection.execute(sql)
+        except Exception as exc:
+            #print(str(exc))
             pass
 
     def close(self):

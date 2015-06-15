@@ -64,6 +64,8 @@ from gramps.gen.lib import (Tag, MediaObject, Person, Family, Source, Citation, 
                             Place, Repository, Note, NameOriginType)
 from gramps.gen.lib.genderstats import GenderStats
 
+import dbapi_support
+
 _LOG = logging.getLogger(DBLOGNAME)
 
 _SIGBASE = ('person', 'family', 'source', 'event', 'media',
@@ -2614,7 +2616,8 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
              force_python_upgrade=False):
         # Run code from directory
         default_settings = {"__file__": 
-                            os.path.join(directory, "default_settings.py")}
+                            os.path.join(directory, "default_settings.py"),
+                            "dbapi_support": dbapi_support}
         settings_file = os.path.join(directory, "default_settings.py")
         sys.path.append(directory)
         with open(settings_file) as f:
@@ -2828,16 +2831,6 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             fullpath = os.path.abspath(os.path.join(defaults, filename))
             if os.path.isfile(fullpath):
                 shutil.copy2(fullpath, directory)
-        support = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                               "dbapi_support")
-        _LOG.debug("Copy support from: " + support)
-        support_directory = os.path.join(directory, "dbapi_support")
-        if not os.path.exists(support_directory):
-            os.makedirs(support_directory)
-        for filename in os.listdir(support):
-            fullpath = os.path.abspath(os.path.join(support, filename))
-            if os.path.isfile(fullpath):
-                shutil.copy2(fullpath, support_directory)
 
     def report_bm_change(self):
         """
