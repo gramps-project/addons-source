@@ -1626,10 +1626,14 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         if not trans.batch:
             self.update_backlinks(person)
             self.dbapi.commit()
-            op = TXNUPD if old_person else TXNADD
-            trans.add(PERSON_KEY, op, person.handle, 
-                      old_person.serialize(), 
-                      person.serialize())
+            if old_person:
+                trans.add(PERSON_KEY, TXNUPD, person.handle, 
+                          old_person.serialize(), 
+                          person.serialize())
+            else:
+                trans.add(PERSON_KEY, TXNADD, person.handle, 
+                          None, 
+                          person.serialize())
         # Other misc update tasks:
         self.individual_attributes.update(
             [str(attr.type) for attr in person.attribute_list
@@ -1707,7 +1711,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_family = None
         if family.handle in self.family_map:
             emit = "family-update"
-            old_family = self.get_family_from_handle(family.handle)
+            old_family = self.get_family_from_handle(family.handle).serialize()
             self.dbapi.execute("""UPDATE family SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1725,7 +1729,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_family else TXNADD
             trans.add(FAMILY_KEY, op, family.handle, 
-                      old_family.serialize(), 
+                      old_family, 
                       family.serialize())
 
         # Misc updates:
@@ -1763,7 +1767,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_citation = None
         if citation.handle in self.citation_map:
             emit = "citation-update"
-            old_citation = self.get_citation_from_handle(citation.handle)
+            old_citation = self.get_citation_from_handle(citation.handle).serialize()
             self.dbapi.execute("""UPDATE citation SET gramps_id = ?, 
                                                       order_by = ?,
                                                       blob = ? 
@@ -1785,7 +1789,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_citation else TXNADD
             trans.add(CITATION_KEY, op, citation.handle, 
-                      old_citation.serialize(), 
+                      old_citation, 
                       citation.serialize())
         # Misc updates:
         attr_list = []
@@ -1808,7 +1812,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_source = None
         if source.handle in self.source_map:
             emit = "source-update"
-            old_source = self.get_source_from_handle(source.handle)
+            old_source = self.get_source_from_handle(source.handle).serialize()
             self.dbapi.execute("""UPDATE source SET gramps_id = ?, 
                                                     order_by = ?,
                                                     blob = ? 
@@ -1830,7 +1834,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_source else TXNADD
             trans.add(SOURCE_KEY, op, source.handle, 
-                      old_source.serialize(), 
+                      old_source, 
                       source.serialize())
         # Misc updates:
         self.source_media_types.update(
@@ -1855,8 +1859,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_repository = None
         if repository.handle in self.repository_map:
             emit = "repository-update"
-            old_repository = self.get_repository_from_handle(repository.handle)
-
+            old_repository = self.get_repository_from_handle(repository.handle).serialize()
             self.dbapi.execute("""UPDATE repository SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1873,7 +1876,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_repository else TXNADD
             trans.add(REPOSITORY_KEY, op, repository.handle, 
-                      old_repository.serialize(), 
+                      old_repository, 
                       repository.serialize())
         # Misc updates:
         if repository.type.is_custom():
@@ -1891,7 +1894,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_note = None
         if note.handle in self.note_map:
             emit = "note-update"
-            old_note = self.get_note_from_handle(note.handle)
+            old_note = self.get_note_from_handle(note.handle).serialize()
             self.dbapi.execute("""UPDATE note SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1908,7 +1911,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_note else TXNADD
             trans.add(NOTE_KEY, op, note.handle, 
-                      old_note.serialize(), 
+                      old_note, 
                       note.serialize())
         # Misc updates:
         if note.type.is_custom():
@@ -1923,7 +1926,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_place = None
         if place.handle in self.place_map:
             emit = "place-update"
-            old_place = self.get_place_from_handle(place.handle)
+            old_place = self.get_place_from_handle(place.handle).serialize()
             self.dbapi.execute("""UPDATE place SET gramps_id = ?, 
                                                    order_by = ?,
                                                    blob = ? 
@@ -1945,7 +1948,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_place else TXNADD
             trans.add(PLACE_KEY, op, place.handle, 
-                      old_place.serialize(), 
+                      old_place, 
                       place.serialize())
         # Misc updates:
         if place.get_type().is_custom():
@@ -1969,7 +1972,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_event = None
         if event.handle in self.event_map:
             emit = "event-update"
-            old_event = self.get_event_from_handle(event.handle)
+            old_event = self.get_event_from_handle(event.handle).serialize()
             self.dbapi.execute("""UPDATE event SET gramps_id = ?, 
                                                     blob = ? 
                                                 WHERE handle = ?;""",
@@ -1988,7 +1991,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_event else TXNADD
             trans.add(EVENT_KEY, op, event.handle, 
-                      old_event.serialize(), 
+                      old_event, 
                       event.serialize())
         # Misc updates:
         self.event_attributes.update(
@@ -2051,7 +2054,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         old_media = None
         if media.handle in self.media_map:
             emit = "media-update"
-            old_media = self.get_object_from_handle(media.handle)
+            old_media = self.get_object_from_handle(media.handle).serialize()
             self.dbapi.execute("""UPDATE media SET gramps_id = ?, 
                                                    order_by = ?,
                                                    blob = ? 
@@ -2073,7 +2076,7 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             self.dbapi.commit()
             op = TXNUPD if old_media else TXNADD
             trans.add(MEDIA_KEY, op, media.handle, 
-                      old_media.serialize(), 
+                      old_media, 
                       media.serialize())
         # Misc updates:
         self.media_attributes.update(
@@ -2621,129 +2624,129 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         self.dbapi = default_settings["dbapi"]
             
         # make sure schema is up to date:
-        self.dbapi.create("""CREATE TABLE  person (
+        self.dbapi.try_execute("""CREATE TABLE person (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     given_name     TEXT        ,
                                     surname        TEXT        ,
                                     gender_type    INTEGER     ,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  family (
+        self.dbapi.try_execute("""CREATE TABLE family (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  source (
+        self.dbapi.try_execute("""CREATE TABLE source (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  citation (
+        self.dbapi.try_execute("""CREATE TABLE citation (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  event (
+        self.dbapi.try_execute("""CREATE TABLE event (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  media (
+        self.dbapi.try_execute("""CREATE TABLE media (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  place (
+        self.dbapi.try_execute("""CREATE TABLE place (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  repository (
+        self.dbapi.try_execute("""CREATE TABLE repository (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  note (
+        self.dbapi.try_execute("""CREATE TABLE note (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     gramps_id TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  tag (
+        self.dbapi.try_execute("""CREATE TABLE tag (
                                     handle    TEXT PRIMARY KEY NOT NULL,
                                     order_by  TEXT             ,
-                                    blob      TEXT
+                                    blob      BLOB
         );""")
         # Secondary:
-        self.dbapi.create("""CREATE TABLE  reference (
+        self.dbapi.try_execute("""CREATE TABLE reference (
                                     obj_handle    TEXT,
                                     obj_class     TEXT,
                                     ref_handle    TEXT,
                                     ref_class     TEXT
         );""")
-        self.dbapi.create("""CREATE TABLE  name_group (
+        self.dbapi.try_execute("""CREATE TABLE name_group (
                                     name     TEXT PRIMARY KEY NOT NULL,
                                     grouping TEXT
         );""")
-        self.dbapi.create("""CREATE TABLE  metadata (
+        self.dbapi.try_execute("""CREATE TABLE metadata (
                                     setting  TEXT PRIMARY KEY NOT NULL,
-                                    value    TEXT
+                                    value    BLOB
         );""")
-        self.dbapi.create("""CREATE TABLE  gender_stats (
+        self.dbapi.try_execute("""CREATE TABLE gender_stats (
                                     given_name TEXT, 
                                     female     INTEGER, 
                                     male       INTEGER, 
                                     unknown    INTEGER
         );""") 
         ## Indices:
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   person_order_by ON person (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   person_gramps_id ON person (gramps_id);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   person_surname ON person (surname);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   person_given_name ON person (given_name);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   source_order_by ON source (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   source_gramps_id ON source (gramps_id);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   citation_order_by ON citation (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   citation_gramps_id ON citation (gramps_id);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   media_order_by ON media (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   media_gramps_id ON media (gramps_id);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   place_order_by ON place (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   place_gramps_id ON place (gramps_id);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   tag_order_by ON tag (order_by);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   reference_ref_handle ON reference (ref_handle);
         """)
-        self.dbapi.create("""CREATE INDEX  
+        self.dbapi.try_execute("""CREATE INDEX  
                                   name_group_name ON name_group (name); 
         """)
         # Load metadata
@@ -2823,7 +2826,18 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         _LOG.debug("Copy defaults from: " + defaults)
         for filename in os.listdir(defaults):
             fullpath = os.path.abspath(os.path.join(defaults, filename))
-            shutil.copy2(fullpath, directory)
+            if os.path.isfile(fullpath):
+                shutil.copy2(fullpath, directory)
+        support = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                               "dbapi_support")
+        _LOG.debug("Copy support from: " + support)
+        support_directory = os.path.join(directory, "dbapi_support")
+        if not os.path.exists(support_directory):
+            os.makedirs(support_directory)
+        for filename in os.listdir(support):
+            fullpath = os.path.abspath(os.path.join(support, filename))
+            if os.path.isfile(fullpath):
+                shutil.copy2(fullpath, support_directory)
 
     def report_bm_change(self):
         """
@@ -3293,3 +3307,20 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
         """
         # Nothing for DB-API to do; saves in person table
         pass
+
+    def drop_tables(self):
+        self.dbapi.try_execute("""DROP TABLE  person;""")
+        self.dbapi.try_execute("""DROP TABLE  family;""")
+        self.dbapi.try_execute("""DROP TABLE  source;""")
+        self.dbapi.try_execute("""DROP TABLE  citation""")
+        self.dbapi.try_execute("""DROP TABLE  event;""")
+        self.dbapi.try_execute("""DROP TABLE  media;""")
+        self.dbapi.try_execute("""DROP TABLE  place;""")
+        self.dbapi.try_execute("""DROP TABLE  repository;""")
+        self.dbapi.try_execute("""DROP TABLE  note;""")
+        self.dbapi.try_execute("""DROP TABLE  tag;""")
+        # Secondary:
+        self.dbapi.try_execute("""DROP TABLE  reference;""")
+        self.dbapi.try_execute("""DROP TABLE  name_group;""")
+        self.dbapi.try_execute("""DROP TABLE  metadata;""")
+        self.dbapi.try_execute("""DROP TABLE  gender_stats;""") 

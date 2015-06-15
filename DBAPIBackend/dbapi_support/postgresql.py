@@ -22,14 +22,15 @@ class Postgresql(object):
     def rollback(self):
         self.connection.rollback()
 
-    def create(self, sql):
+    def try_execute(self, sql):
+        sql = sql.replace("BLOB", "bytea")
         try:
             cursor = self.connection.cursor()
             cursor.execute(sql)
             self.connection.commit()
         except Exception as exc:
             self.connection.rollback()
-            print(str(exc))
+            #print(str(exc))
 
     def close(self):
         self.connection.close()

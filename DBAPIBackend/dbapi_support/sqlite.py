@@ -22,7 +22,7 @@ class Sqlite(object):
     def rollback(self):
         self.connection.rollback()
 
-    def create(self, sql):
+    def try_execute(self, sql):
         try:
             self.connect.execute(sql)
         except:
