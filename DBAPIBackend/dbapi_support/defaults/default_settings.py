@@ -12,7 +12,8 @@
 ## ----------------------------------------------
 
 #from dbapi_support.mysql import MySQL
-#dbapi = MySQL("localhost", "root", "PASSWORD", "mysqldb")
+#dbapi = MySQL("localhost", "root", "PASSWORD", "mysqldb", 
+#              charset='utf8', use_unicode=True)
 
 ## ----------------------------------------------
 ## Sqlite
