@@ -19,21 +19,21 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-# $Id: grampsxml.dtd 23035 2013-09-04 20:46:30Z vassilii $
+# $Id$
 -->
 
 <!--
-    This is the Document Type Definition file for v1.6.0
+    This is the Document Type Definition file for v1.7.0
     of the GRAMPS XML genealogy data format.
     Please use the following formal public identifier to identify it:
 
-    "-//GRAMPS//DTD GRAMPS XML V1.6.0//EN"
+    "-//GRAMPS//DTD GRAMPS XML V1.7.0//EN"
 
     For example:
-        <!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML V1.6.0//EN"
-                "http://gramps-project.org/xml/1.6.0/grampsxml.dtd"
+        <!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML V1.7.0//EN"
+                "http://gramps-project.org/xml/1.7.0/grampsxml.dtd"
                 [...]>
 -->
 
@@ -62,7 +62,7 @@ DATABASE
 <!ELEMENT database (header, name-formats?, tags?, events?, people?, families?,
                     citations?, sources?, places?, objects?, repositories?,
                     notes?, bookmarks?, namemaps?)>
-<!ATTLIST database xmlns CDATA #FIXED "http://gramps-project.org/xml/1.6.0/">
+<!ATTLIST database xmlns CDATA #FIXED "http://gramps-project.org/xml/1.7.0/">
 
 
 <!--    ************************************************************
@@ -248,20 +248,26 @@ PLACES
 
 <!ELEMENT places (placeobj)*>
 
-<!ELEMENT placeobj (ptitle?, code?, alt_name*, coord?, placeref*, location*,
+<!ELEMENT placeobj (name+, ptitle?, code?, coord?, placeref*, location*,
                     objref*, url*, noteref*, citationref*, tagref*)>
 <!ATTLIST placeobj
         id        CDATA #IMPLIED
         handle    ID    #REQUIRED
         priv      (0|1) #IMPLIED
         change    CDATA #REQUIRED
-        name      CDATA #REQUIRED
         type      CDATA #REQUIRED
+>
+
+<!--
+<!ELEMENT name (daterange|datespan|dateval|datestr)?>
+-->
+<!ATTLIST name
+        lang CDATA #IMPLIED
+        value CDATA #REQUIRED
 >
 
 <!ELEMENT ptitle (#PCDATA)>
 <!ELEMENT code (#PCDATA)>
-<!ELEMENT alt_name (#PCDATA)>
 
 <!ELEMENT coord EMPTY>
 <!ATTLIST coord

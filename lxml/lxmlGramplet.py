@@ -79,15 +79,15 @@ try:
     from lxml import etree, objectify
     LXML_OK = True
     # current code is working with:
-    # LXML_VERSION (2, 3, 2)
-    # LIBXML_VERSION (2, 7, 8))
-    # LIBXSLT_VERSION (1, 1, 26))
+    # LXML_VERSION (3, 3, 3)
+    # LIBXML_VERSION (2, 9, 1))
+    # LIBXSLT_VERSION (1, 1, 28))
     LXML_VERSION = etree.LXML_VERSION
     LIBXML_VERSION = etree.LIBXML_VERSION
     LIBXSLT_VERSION = etree.LIBXSLT_VERSION
 except:
     LXML_OK = False
-    ErrorDialog(_('Missing python lxml'), _('Please, try to install "python lxml" package.'))
+    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'))
     LOG.error('No lxml')
     
 #-------------------------------------------------------------------------
@@ -126,7 +126,7 @@ def epoch(t):
 #
 #-------------------------------------------------------------------------
 
-NAMESPACE = '{http://gramps-project.org/xml/1.6.0/}'
+NAMESPACE = '{http://gramps-project.org/xml/1.7.0/}'
 
 class lxmlGramplet(Gramplet):
     """
@@ -258,9 +258,9 @@ class lxmlGramplet(Gramplet):
                 test = gzip.open(entry, "r")
                 test.read(1)
                 test.close()
-            except IOError, msg:
+            except IOError:
                 use_gzip = 0
-            except ValueError, msg:
+            except ValueError:
                 use_gzip = 1
         else:
             use_gzip = 0
@@ -300,7 +300,8 @@ class lxmlGramplet(Gramplet):
         
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
-            self.xsd(xsd, filename)
+            #self.xsd(xsd, filename)
+            pass
         except:
             ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
             LOG.debug(self.xsd(xsd, filename))
@@ -328,7 +329,7 @@ class lxmlGramplet(Gramplet):
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
-            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.6.0//EN" "http://gramps-project.org/xml/1.6.0/grampsxml.dtd">'
+            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.0//EN" "http://gramps-project.org/xml/1.7.0/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
@@ -344,14 +345,14 @@ class lxmlGramplet(Gramplet):
                 ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
                 LOG.error('RelaxNG validation failed')
                 return
-        except etree.XMLSyntaxError, e:
+        except etree.XMLSyntaxError:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
-            log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
-            LOG.debug(log)
-            debug = e.error_log.last_error
-            LOG.debug(debug.domain_name)
-            LOG.debug(debug.type_name)
-            LOG.debug(debug.filename)
+            #log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
+            #LOG.debug(log)
+            #debug = e.error_log.last_error
+            #LOG.debug(debug.domain_name)
+            #LOG.debug(debug.type_name)
+            #LOG.debug(debug.filename)
             return
             
         
@@ -657,7 +658,7 @@ class lxmlGramplet(Gramplet):
         s = etree.SubElement(xml, "surnames")
         s.set("title", self.surnames_title)
         
-        surnames.sort()
+        #surnames.sort()
         cnt = []
         for surname in surnames:
             if surname not in cnt:
@@ -668,7 +669,7 @@ class lxmlGramplet(Gramplet):
         p = etree.SubElement(xml, "places")
         p.set("title", self.places_title)
         
-        places.sort()
+        #places.sort()
         for place in places:
             p1 = etree.SubElement(p, "place")
             p1.text = place
@@ -676,7 +677,7 @@ class lxmlGramplet(Gramplet):
         src = etree.SubElement(xml, "sources")
         src.set("title", self.sources_title)    
         
-        sources.sort()
+        #sources.sort()
         for source in sources:
             src1 = etree.SubElement(src, "source")
             src1.text = source
@@ -688,10 +689,11 @@ class lxmlGramplet(Gramplet):
         xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'query_html.xsl'))
         transform = etree.XSLT(xslt_doc)
         outdoc = transform(content)
+        #print(type(outdoc))
         html = os.path.join(USER_PLUGINS, 'lxml', 'query.html')
         outfile = open(html, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
-        outdoc.write(self.outfile)
+        outdoc.write(str(self.outfile))
         self.outfile.close()
                 
         # clear the etree
@@ -760,14 +762,31 @@ class lxmlGramplet(Gramplet):
         for i, thumb in enumerate(thumbs):
             
             # list of tuples [('',''),('','')]
-            
-            src = (list(thumb)[0])[1]
+
+            if (list(thumb)[0])[0] == 'src':
+                src = (list(thumb)[0])[1]
+            else:
+                src = 'No src'
             #LOG.debug(src)
-            mime = (list(thumb)[1])[1]
+
+            if (list(thumb)[1])[0] == 'mime':
+                mime = (list(thumb)[1])[1]
+            else:
+                mime = 'No mime'
             #LOG.debug(mime)
-            checksum = (list(thumb)[2])[1]
+
+            if (list(thumb)[2])[0] == 'checksum':
+                checksum = (list(thumb)[2])[1]
+            else:
+                checksum = 'No checksum'
             #LOG.debug(checksum)
-            description = (list(thumb)[3])[1]
+
+            if (list(thumb)[2])[0] == 'description':
+                description = (list(thumb)[2])[1]
+            elif len(thumb) == 4:
+                description = (list(thumb)[3])[1]
+            else:
+                description = 'No description'
             #LOG.debug(description)
             
             # relative and absolute paths
@@ -833,7 +852,6 @@ class lxmlGramplet(Gramplet):
         # Modify the XML copy of the .gramps
         
         outfile = open(filename, 'w')
-        self.outfile = codecs.getwriter("utf8")(outfile)
         
         # clear the etree
         
@@ -872,8 +890,10 @@ class lxmlGramplet(Gramplet):
 
         # write and close the etree
         
-        self.outfile.write(etree.tostring(root, encoding="UTF-8"))
-        self.outfile.close()
+        out = etree.tostring(root, method='xml', pretty_print=True)
+
+        outfile.write(str(out))
+        outfile.close()
         
         # clear the etree
         
