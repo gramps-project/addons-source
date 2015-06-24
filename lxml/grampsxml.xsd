@@ -1,7 +1,7 @@
 <schema
  xmlns='http://www.w3.org/2001/XMLSchema'
- targetNamespace='http://gramps-project.org/xml/1.6.0/'
- xmlns:gramps='http://gramps-project.org/xml/1.6.0/'>
+ targetNamespace='http://gramps-project.org/xml/1.7.0/'
+ xmlns:gramps='http://gramps-project.org/xml/1.7.0/'>
 <element name='database'>
   <complexType>
    <sequence>
@@ -173,25 +173,8 @@
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
-   <attribute name='alt' use='optional'>
-    <simpleType>
-     <restriction base='string'>
-      <enumeration value='0'/>
-      <enumeration value='1'/>
-     </restriction>
-    </simpleType>
-   </attribute>
-   <attribute name='type' type='string' use='optional'/>
-   <attribute name='priv' use='optional'>
-    <simpleType>
-     <restriction base='string'>
-      <enumeration value='0'/>
-      <enumeration value='1'/>
-     </restriction>
-    </simpleType>
-   </attribute>
-   <attribute name='sort' type='string' use='optional'/>
-   <attribute name='display' type='string' use='optional'/>
+   <attribute name='lang' type='string' use='optional'/>
+   <attribute name='value' type='string' use='required'/>
   </complexType>
  </element>
 
@@ -535,9 +518,9 @@
  <element name='placeobj'>
   <complexType>
    <sequence>
+    <element ref='gramps:name' maxOccurs='unbounded'/>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
-    <element ref='gramps:alt_name' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:location' minOccurs='0' maxOccurs='unbounded'/>
@@ -558,7 +541,6 @@
     </simpleType>
    </attribute>
    <attribute name='change' type='string' use='required'/>
-   <attribute name='name' type='string' use='required'/>
    <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
@@ -569,11 +551,6 @@
  </element>
 
  <element name='code'>
-  <complexType mixed='true'>
-  </complexType>
- </element>
-
- <element name='alt_name'>
   <complexType mixed='true'>
   </complexType>
  </element>
