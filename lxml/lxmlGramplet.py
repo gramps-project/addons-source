@@ -637,7 +637,7 @@ class lxmlGramplet(Gramplet):
         self.county = _('County')
         self.state = _('State')
         self.country = _('Country')
-        c.set("name", self.name)
+        c.set("pname", self.name)
         c.set("city", self.city)
         c.set("county", self.county)
         c.set("state", self.state)
