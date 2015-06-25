@@ -48,16 +48,16 @@ GNU General Public License 2, or (at your option) any later version.
         </input>
         </div>
         </form>
-        <h2><xsl:value-of select="query/places/@title"/><xsl:text> : </xsl:text>
+        <h2><xsl:value-of select="query/places/@name"/><xsl:text> : </xsl:text>
         <xsl:value-of select="$place-count"/><xsl:text> (one empty place)</xsl:text></h2>
         <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
            <xsl:attribute name="xml:lang">
               <xsl:value-of select="query/@lang"/>
            </xsl:attribute>
            <div>
-              <label for="/database/places/placeobj[1]/ptitle" class="element">
-              <xsl:value-of select="query/clist/@ptitle"/></label><xsl:text> : </xsl:text>
-              <select name="plist">
+              <label for="/database/places/placeobj[1]/name" class="element">
+              <xsl:value-of select="query/clist/@pname"/></label><xsl:text> : </xsl:text>
+              <select name="pname">
                  <option>
                     <xsl:attribute name="value">
                           <xsl:value-of select="None"/>
