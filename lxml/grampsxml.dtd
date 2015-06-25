@@ -258,9 +258,9 @@ PLACES
         type      CDATA #REQUIRED
 >
 
-<!--
+
 <!ELEMENT name (daterange|datespan|dateval|datestr)?>
--->
+
 <!ATTLIST name
         lang CDATA #IMPLIED
         value CDATA #REQUIRED
