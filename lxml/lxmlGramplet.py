@@ -424,9 +424,13 @@ class lxmlGramplet(Gramplet):
                         timestamp.append(two.get('change'))
                         
                     # with namespace ...              
-                    print(three.tag)               
-                    if three.tag == NAMESPACE + 'name' and three.text not in places:
-                        places.append(three.text)
+                    #print(desc(three))
+                    (tag, items) = three.tag, three.items()
+
+                    if three.tag == NAMESPACE + 'name':
+                        text = str(items)
+                        if text not in places:
+                            places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
                         sources.append(three.text)
                     if three.tag == NAMESPACE + 'file' and three.items() not in thumbs:
@@ -530,7 +534,7 @@ class lxmlGramplet(Gramplet):
     def xsd(self, xsd, filename):
         """
         Look at schema, validation, conform, structure, content, etc...
-        Code for 1.5.0 and +
+        Code for 1.7.0 and +
         """    
         
         # syntax check against XSD for file format
@@ -551,7 +555,7 @@ class lxmlGramplet(Gramplet):
     def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
-        Code for 1.5.0 and +
+        Code for 1.7.0 and +
         """    
         
         # syntax check against DTD for file format
