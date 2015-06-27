@@ -487,7 +487,7 @@ class etreeGramplet(Gramplet):
         
         
     def _getPersonTimestamp(self, person_handle):
-        timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
+        timestamp = self.dbstate.db.person_map.get(person_handle)[17]
         return timestamp
                 
     

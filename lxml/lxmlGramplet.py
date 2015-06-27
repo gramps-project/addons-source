@@ -299,7 +299,8 @@ class lxmlGramplet(Gramplet):
         
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
-            self.xsd(xsd, filename)
+            #self.xsd(xsd, filename)
+            pass
         except:
             ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
             LOG.debug(self.xsd(xsd, filename))
@@ -874,8 +875,8 @@ class lxmlGramplet(Gramplet):
         pl = etree.SubElement(root, "places")
         for p in places:
             place = etree.SubElement(pl, "placeobj")
-            pname = etree.SubElement(place, "name")
-            pname.text = p
+            name = etree.SubElement(place, "name")
+            pname = name.set('value', p)
             
         places = []
             
