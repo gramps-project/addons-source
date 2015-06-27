@@ -248,7 +248,7 @@ PLACES
 
 <!ELEMENT places (placeobj)*>
 
-<!ELEMENT placeobj (name+, ptitle?, code?, coord?, placeref*, location*,
+<!ELEMENT placeobj (ptitle?, name+, code?, coord?, placeref*, location*,
                     objref*, url*, noteref*, citationref*, tagref*)>
 <!ATTLIST placeobj
         id        CDATA #IMPLIED
