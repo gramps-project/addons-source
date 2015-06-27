@@ -210,7 +210,7 @@ class etreeGramplet(Gramplet):
     def build_options(self):
         from gramps.gen.plug.menu import NumberOption
         self.add_option(NumberOption(_("Number of editions back"), 
-                                     self.last, 1, 5000))
+                                     self.last, 2, 5000))
                                      
                                      
     def save_options(self):
