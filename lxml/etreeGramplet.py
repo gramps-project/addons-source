@@ -63,16 +63,7 @@ from gramps.gui.dialog import ErrorDialog
 
 
 
-NAMESPACE = '{http://gramps-project.org/xml/1.6.0/}'
-
-    
-#-------------------------------------------------------------------------    
-
-# python 2.6 / 2.7 / 3.0
-# name for getiterator / iter (ElementTree 1.2 vs 1.3)
-
-if sys.version_info[0] == 3:
-    raise ValueError('Not written for python 3.0 and greater!')
+NAMESPACE = '{http://gramps-project.org/xml/1.7.0/}'
 
 #-------------------------------------------------------------------------
 #
@@ -250,7 +241,7 @@ class etreeGramplet(Gramplet):
             test = gzip.open(entry, "r")
             test.read(1)
             test.close()
-        except IOError, msg:
+        except IOError:
             use_gzip = 0
          
         # lazy ...
@@ -367,12 +358,8 @@ class etreeGramplet(Gramplet):
                 
         for one in root.getchildren():
             
-            # getiterator() for python 2.6
-            ITERATION = one.getiterator()
-            
             # iter() for python 2.7 and greater versions
-            if sys.version_info[1] ==7:
-                ITERATION = one.iter()
+            ITERATION = one.iter()
             
             # Primary objects (samples)
             
@@ -394,7 +381,8 @@ class etreeGramplet(Gramplet):
                             
             for two in ITERATION:
                 
-                timestamp.append(two.get('change'))
+                if two.get('change') != None:
+                    timestamp.append(two.get('change'))
                 
                 (tag, item) = two.tag, two.items()
                 #print(tag)
@@ -426,6 +414,9 @@ class etreeGramplet(Gramplet):
                 if tag == NAMESPACE + 'note':
                     notes.append(two)
                     
+                if tag == NAMESPACE + 'name':
+                    print('NAME', two, item)
+
         root.clear()
                                     
         # to see changes and match existing handles (Family Tree loaded)
@@ -437,6 +428,9 @@ class etreeGramplet(Gramplet):
         
         timestamp.sort()
         
+        if len(timestamp) < self.last:
+            self.last = len(timestamp)
+
         last = []
         for i in range(self.last):
             if i == 0:
