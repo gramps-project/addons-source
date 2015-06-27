@@ -210,7 +210,7 @@ class etreeGramplet(Gramplet):
     def build_options(self):
         from gramps.gen.plug.menu import NumberOption
         self.add_option(NumberOption(_("Number of editions back"), 
-                                     self.last, 1, 5000))
+                                     self.last, 2, 5000))
                                      
                                      
     def save_options(self):
@@ -307,7 +307,7 @@ class etreeGramplet(Gramplet):
         notes = []
         
         # DB: Family Tree loaded
-        # see gen/plug/_gramplet.py and gen/bb/read.py
+        # see gen/plug/_gramplet.py and gen/db/read.py
         
         if self.dbstate.db.db_is_open:
             print('tags', self.dbstate.db.get_number_of_tags())
