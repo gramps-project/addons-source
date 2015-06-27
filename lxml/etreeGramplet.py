@@ -307,7 +307,7 @@ class etreeGramplet(Gramplet):
         notes = []
         
         # DB: Family Tree loaded
-        # see gen/plug/_gramplet.py and gen/bb/read.py
+        # see gen/plug/_gramplet.py and gen/db/read.py
         
         if self.dbstate.db.db_is_open:
             print('tags', self.dbstate.db.get_number_of_tags())
@@ -487,7 +487,7 @@ class etreeGramplet(Gramplet):
         
         
     def _getPersonTimestamp(self, person_handle):
-        timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
+        timestamp = self.dbstate.db.person_map.get(person_handle)[17]
         return timestamp
                 
     
