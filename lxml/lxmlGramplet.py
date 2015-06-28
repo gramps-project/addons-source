@@ -360,15 +360,15 @@ class lxmlGramplet(Gramplet):
         Parse the validated .gramps
         """
         root = tree.getroot()
-        
+
         # GtkTextView ; buffer limitation ...
-                      
+
         self.text.set_text(_('Parsing file...'))
-        
+
         #LOG.info(etree.tostring(root, pretty_print=True))
 
         # namespace issues !
-        
+
         namespace = root.nsmap
 
         surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
@@ -443,7 +443,7 @@ class lxmlGramplet(Gramplet):
                         
                         # with namespace ...
                         
-                        if four.tag == NAMESPACE + 'surname':
+                        if four.tag == NAMESPACE + 'surname' and four.text != None:
                             surnames.append(four.text)
         
         LOG.info('end of loops')
@@ -638,14 +638,8 @@ class lxmlGramplet(Gramplet):
                                         
         c = etree.SubElement(xml, "clist")
         self.name = _('Name')
-        self.city = _('City')
-        self.county = _('County')
-        self.state = _('State')
         self.country = _('Country')
         c.set("pname", self.name)
-        c.set("city", self.city)
-        c.set("county", self.county)
-        c.set("state", self.state)
         c.set("country", self.country)
         for country in countries:
             c1 = etree.SubElement(c, "country")
@@ -661,7 +655,7 @@ class lxmlGramplet(Gramplet):
         s = etree.SubElement(xml, "surnames")
         s.set("title", self.surnames_title)
         
-        #surnames.sort()
+        surnames.sort()
         cnt = []
         for surname in surnames:
             if surname not in cnt:
@@ -672,7 +666,7 @@ class lxmlGramplet(Gramplet):
         p = etree.SubElement(xml, "places")
         p.set("name", self.places_name)
         
-        #places.sort()
+        places.sort()
         for place in places:
             p1 = etree.SubElement(p, "place")
             p1.text = place
@@ -680,7 +674,7 @@ class lxmlGramplet(Gramplet):
         src = etree.SubElement(xml, "sources")
         src.set("title", self.sources_title)    
         
-        #sources.sort()
+        sources.sort()
         for source in sources:
             src1 = etree.SubElement(src, "source")
             src1.text = source

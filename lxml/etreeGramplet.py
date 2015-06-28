@@ -89,10 +89,7 @@ def epoch(t):
             conv = datetime.fromtimestamp(date)
             fmt = conv.strftime('%d %B %Y')
         
-        if os.name == 'nt':
-            return(fmt).decode('mbcs').encode("utf-8")
-        else:
-            return(fmt)
+        return(fmt)
 
 #-------------------------------------------------------------------------
 #
