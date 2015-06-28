@@ -315,7 +315,7 @@ elif command == "build":
 elif command == "manifest-check":
     import tarfile
     import re
-    for tgz in glob.glob("../addons/gramps42/download/*.tgz"):
+    for tgz in glob.glob("../addons/gramps50/download/*.tgz"):
         files = tarfile.open(tgz).getnames()
         for file in files:
             if not any([
@@ -327,6 +327,29 @@ elif command == "manifest-check":
             ]
             ):
                 print("Need to add", file, "in", tgz)
+elif command == "unlist":
+    # Get all languages from all addons:
+    cmd_arg = addon
+    languages = set(['en'])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
+            locale_path, locale = po.rsplit(os.sep, 1)
+            languages.add(locale[:-9])
+    for lang in languages:
+        lines = []
+        fp = open("../addons/gramps50/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+        for line in fp:
+            if cmd_arg + ".addon.tgz" not in line:
+                lines.append(line)
+            else:
+                print("unlisting", line)
+        fp.close()
+        fp = open("../addons/gramps50/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+        for line in lines:
+            fp.write(line)
+        fp.close()
 elif command == "fix":
     # Get all languages from all addons:
     languages = set(['en'])
