@@ -306,6 +306,44 @@ elif command == "build":
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
         system('''tar cfz "../addons/gramps42/download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
+elif command == "manifest-check":
+    import tarfile
+    import re
+    for tgz in glob.glob("../addons/gramps42/download/*.tgz"):
+        files = tarfile.open(tgz).getnames()
+        for file in files:
+            if not any([
+                    re.match(".*\.py$", file),
+                    re.match(".*\.txt$", file),
+                    re.match(".*\.glade$", file),
+                    re.match(".*\.xml$", file),
+                    re.match(".*locale/.*/LC_MESSAGES/.*.mo", file),
+            ]
+            ):
+                print("Need to add", file, "in", tgz)
+elif command == "unlist":
+    # Get all languages from all addons:
+    cmd_arg = addon
+    languages = set(['en'])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+            length= len(po)
+            locale = po[length-11:length-9]
+            locale_path, locale = po.rsplit(os.sep, 1)
+            languages.add(locale[:-9])
+    for lang in languages:
+        lines = []
+        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "r", encoding="utf-8")
+        for line in fp:
+            if cmd_arg + ".addon.tgz" not in line:
+                lines.append(line)
+            else:
+                print("unlisting", line)
+        fp.close()
+        fp = open("../addons/gramps42/listings/addons-%s.txt" % lang, "w", encoding="utf-8")
+        for line in lines:
+            fp.write(line)
+        fp.close()
 elif command == "fix":
     # Get all languages from all addons:
     languages = set(['en'])
