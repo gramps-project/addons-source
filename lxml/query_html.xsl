@@ -75,18 +75,6 @@ GNU General Public License 2, or (at your option) any later version.
               </select>
            </div>
            <div>
-              <label for="/database/places/placeobj[1]/location[1]/@city" class="attribute">
-              <xsl:value-of select="query/clist/@city"/></label><xsl:text> : </xsl:text>
-           </div>
-           <div>
-              <label for="/database/places/placeobj[1]/location[1]/@county" class="attribute">
-              <xsl:value-of select="query/clist/@county"/></label><xsl:text> : </xsl:text>
-           </div>
-           <div>
-              <label for="/database/places/placeobj[1]/location[1]/@state" class="attribute">
-              <xsl:value-of select="query/clist/@state"/></label><xsl:text> : </xsl:text>
-           </div>
-           <div>
               <label for="/database/places/placeobj[1]/location[1]/@country" class="attribute">
               <xsl:value-of select="query/clist/@country"/></label><xsl:text> : </xsl:text>
               <select name="clist">
