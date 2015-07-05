@@ -1,66 +1,20 @@
 #!/usr/bin/env python
 
 #
-# Generated Thu May 15 16:07:59 2014 by generateDS.py version 2.12d.
+# Generated Sun Jul  5 15:10:07 2015 by generateDS.py version 2.16a.
 #
 
 import sys
+from lxml import etree as etree_
 
 import ??? as supermod
 
-etree_ = None
-Verbose_import_ = False
-(
-    XMLParser_import_none, XMLParser_import_lxml,
-    XMLParser_import_elementtree
-) = range(3)
-XMLParser_import_library = None
-try:
-    # lxml
-    from lxml import etree as etree_
-    XMLParser_import_library = XMLParser_import_lxml
-    if Verbose_import_:
-        print("running with lxml.etree")
-except ImportError:
-    try:
-        # cElementTree from Python 2.5+
-        import xml.etree.cElementTree as etree_
-        XMLParser_import_library = XMLParser_import_elementtree
-        if Verbose_import_:
-            print("running with cElementTree on Python 2.5+")
-    except ImportError:
-        try:
-            # ElementTree from Python 2.5+
-            import xml.etree.ElementTree as etree_
-            XMLParser_import_library = XMLParser_import_elementtree
-            if Verbose_import_:
-                print("running with ElementTree on Python 2.5+")
-        except ImportError:
-            try:
-                # normal cElementTree install
-                import cElementTree as etree_
-                XMLParser_import_library = XMLParser_import_elementtree
-                if Verbose_import_:
-                    print("running with cElementTree")
-            except ImportError:
-                try:
-                    # normal ElementTree install
-                    import elementtree.ElementTree as etree_
-                    XMLParser_import_library = XMLParser_import_elementtree
-                    if Verbose_import_:
-                        print("running with ElementTree")
-                except ImportError:
-                    raise ImportError(
-                        "Failed to import ElementTree from any known place")
-
-
-def parsexml_(*args, **kwargs):
-    if (XMLParser_import_library == XMLParser_import_lxml and
-            'parser' not in kwargs):
+def parsexml_(infile, parser=None, **kwargs):
+    if parser is None:
         # Use the lxml ElementTree compatible parser so that, e.g.,
         #   we ignore comments.
-        kwargs['parser'] = etree_.ETCompatXMLParser()
-    doc = etree_.parse(*args, **kwargs)
+        parser = etree_.ETCompatXMLParser()
+    doc = etree_.parse(infile, parser=parser, **kwargs)
     return doc
 
 #
@@ -75,8 +29,8 @@ ExternalEncoding = 'ascii'
 
 
 class databaseSub(supermod.database):
-    def __init__(self, xmlns=None, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
-        super(databaseSub, self).__init__(xmlns, header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
+    def __init__(self, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
+        super(databaseSub, self).__init__(header, name_formats, tags, events, people, families, citations, sources, places, objects, repositories, notes, bookmarks, namemaps, )
 supermod.database.subclass = databaseSub
 # end class databaseSub
 
@@ -453,10 +407,17 @@ supermod.places.subclass = placesSub
 
 
 class placeobjSub(supermod.placeobj):
-    def __init__(self, handle=None, name=None, type_=None, id=None, change=None, priv=None, ptitle=None, code=None, alt_name=None, coord=None, placeref=None, location=None, objref=None, url=None, noteref=None, citationref=None, tagref=None):
-        super(placeobjSub, self).__init__(handle, name, type_, id, change, priv, ptitle, code, alt_name, coord, placeref, location, objref, url, noteref, citationref, tagref, )
+    def __init__(self, type_=None, handle=None, id=None, change=None, priv=None, ptitle=None, pname=None, code=None, coord=None, placeref=None, location=None, objref=None, url=None, noteref=None, citationref=None, tagref=None):
+        super(placeobjSub, self).__init__(type_, handle, id, change, priv, ptitle, pname, code, coord, placeref, location, objref, url, noteref, citationref, tagref, )
 supermod.placeobj.subclass = placeobjSub
 # end class placeobjSub
+
+
+class pnameSub(supermod.pname):
+    def __init__(self, lang=None, value=None, daterange=None, datespan=None, dateval=None, datestr=None):
+        super(pnameSub, self).__init__(lang, value, daterange, datespan, dateval, datestr, )
+supermod.pname.subclass = pnameSub
+# end class pnameSub
 
 
 class ptitleSub(supermod.ptitle):
@@ -471,13 +432,6 @@ class codeSub(supermod.code):
         super(codeSub, self).__init__(valueOf_, mixedclass_, content_, )
 supermod.code.subclass = codeSub
 # end class codeSub
-
-
-class alt_nameSub(supermod.alt_name):
-    def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
-        super(alt_nameSub, self).__init__(valueOf_, mixedclass_, content_, )
-supermod.alt_name.subclass = alt_nameSub
-# end class alt_nameSub
 
 
 class coordSub(supermod.coord):
@@ -833,7 +787,8 @@ def get_root_tag(node):
 
 
 def parse(inFilename, silence=False):
-    doc = parsexml_(inFilename)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFilename, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -847,13 +802,14 @@ def parse(inFilename, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"',
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"',
             pretty_print=True)
     return rootObj
 
 
 def parseEtree(inFilename, silence=False):
-    doc = parsexml_(inFilename)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFilename, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -877,7 +833,8 @@ def parseEtree(inFilename, silence=False):
 
 def parseString(inString, silence=False):
     from StringIO import StringIO
-    doc = parsexml_(StringIO(inString))
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(StringIO(inString), parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -891,12 +848,13 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"')
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"')
     return rootObj
 
 
 def parseLiteral(inFilename, silence=False):
-    doc = parsexml_(inFilename)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFilename, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -921,7 +879,7 @@ Usage: python ???.py <infilename>
 
 
 def usage():
-    print USAGE_TEXT
+    print(USAGE_TEXT)
     sys.exit(1)
 
 
