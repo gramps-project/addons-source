@@ -341,14 +341,14 @@ class lxmlGramplet(Gramplet):
                 ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
                 LOG.error('RelaxNG validation failed')
                 return
-        except etree.XMLSyntaxError:
+        except etree.XMLSyntaxError as e:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
-            #log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
-            #LOG.debug(log)
-            #debug = e.error_log.last_error
-            #LOG.debug(debug.domain_name)
-            #LOG.debug(debug.type_name)
-            #LOG.debug(debug.filename)
+            log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
+            LOG.debug(log)
+            debug = e.error_log.last_error
+            LOG.debug(debug.domain_name)
+            LOG.debug(debug.type_name)
+            LOG.debug(debug.filename)
             return
             
         
