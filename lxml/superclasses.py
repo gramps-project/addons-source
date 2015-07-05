@@ -2,68 +2,26 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Thu May 15 16:01:02 2014 by generateDS.py version 2.12d.
+# Generated Sun Jul  5 15:10:21 2015 by generateDS.py version 2.16a.
 #
 
 import sys
-import getopt
 import re as re_
 import base64
 import datetime as datetime_
-
-etree_ = None
-Verbose_import_ = False
-(
-    XMLParser_import_none, XMLParser_import_lxml,
-    XMLParser_import_elementtree
-) = range(3)
-XMLParser_import_library = None
-try:
-    # lxml
-    from lxml import etree as etree_
-    XMLParser_import_library = XMLParser_import_lxml
-    if Verbose_import_:
-        print("running with lxml.etree")
-except ImportError:
-    try:
-        # cElementTree from Python 2.5+
-        import xml.etree.cElementTree as etree_
-        XMLParser_import_library = XMLParser_import_elementtree
-        if Verbose_import_:
-            print("running with cElementTree on Python 2.5+")
-    except ImportError:
-        try:
-            # ElementTree from Python 2.5+
-            import xml.etree.ElementTree as etree_
-            XMLParser_import_library = XMLParser_import_elementtree
-            if Verbose_import_:
-                print("running with ElementTree on Python 2.5+")
-        except ImportError:
-            try:
-                # normal cElementTree install
-                import cElementTree as etree_
-                XMLParser_import_library = XMLParser_import_elementtree
-                if Verbose_import_:
-                    print("running with cElementTree")
-            except ImportError:
-                try:
-                    # normal ElementTree install
-                    import elementtree.ElementTree as etree_
-                    XMLParser_import_library = XMLParser_import_elementtree
-                    if Verbose_import_:
-                        print("running with ElementTree")
-                except ImportError:
-                    raise ImportError(
-                        "Failed to import ElementTree from any known place")
+import warnings as warnings_
+from lxml import etree as etree_
 
 
-def parsexml_(*args, **kwargs):
-    if (XMLParser_import_library == XMLParser_import_lxml and
-            'parser' not in kwargs):
+Validate_simpletypes_ = True
+
+
+def parsexml_(infile, parser=None, **kwargs):
+    if parser is None:
         # Use the lxml ElementTree compatible parser so that, e.g.,
         #   we ignore comments.
-        kwargs['parser'] = etree_.ETCompatXMLParser()
-    doc = etree_.parse(*args, **kwargs)
+        parser = etree_.ETCompatXMLParser()
+    doc = etree_.parse(infile, parser=parser, **kwargs)
     return doc
 
 #
@@ -75,7 +33,7 @@ def parsexml_(*args, **kwargs):
 
 try:
     from generatedssuper import GeneratedsSuper
-except ImportError, exp:
+except ImportError as exp:
 
     class GeneratedsSuper(object):
         tzoff_pattern = re_.compile(r'(\+|-)((0\d|1[0-3]):[0-5]\d|14:00)$')
@@ -91,64 +49,68 @@ except ImportError, exp:
                 return None
         def gds_format_string(self, input_data, input_name=''):
             return input_data
-        def gds_validate_string(self, input_data, node, input_name=''):
+        def gds_validate_string(self, input_data, node=None, input_name=''):
             if not input_data:
                 return ''
             else:
                 return input_data
         def gds_format_base64(self, input_data, input_name=''):
             return base64.b64encode(input_data)
-        def gds_validate_base64(self, input_data, node, input_name=''):
+        def gds_validate_base64(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_integer(self, input_data, input_name=''):
             return '%d' % input_data
-        def gds_validate_integer(self, input_data, node, input_name=''):
+        def gds_validate_integer(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_integer_list(self, input_data, input_name=''):
-            return '%s' % input_data
-        def gds_validate_integer_list(self, input_data, node, input_name=''):
+            return '%s' % ' '.join(input_data)
+        def gds_validate_integer_list(
+                self, input_data, node=None, input_name=''):
             values = input_data.split()
             for value in values:
                 try:
-                    float(value)
+                    int(value)
                 except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of integers')
-            return input_data
+            return values
         def gds_format_float(self, input_data, input_name=''):
             return ('%.15f' % input_data).rstrip('0')
-        def gds_validate_float(self, input_data, node, input_name=''):
+        def gds_validate_float(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_float_list(self, input_data, input_name=''):
-            return '%s' % input_data
-        def gds_validate_float_list(self, input_data, node, input_name=''):
+            return '%s' % ' '.join(input_data)
+        def gds_validate_float_list(
+                self, input_data, node=None, input_name=''):
             values = input_data.split()
             for value in values:
                 try:
                     float(value)
                 except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of floats')
-            return input_data
+            return values
         def gds_format_double(self, input_data, input_name=''):
             return '%e' % input_data
-        def gds_validate_double(self, input_data, node, input_name=''):
+        def gds_validate_double(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_double_list(self, input_data, input_name=''):
-            return '%s' % input_data
-        def gds_validate_double_list(self, input_data, node, input_name=''):
+            return '%s' % ' '.join(input_data)
+        def gds_validate_double_list(
+                self, input_data, node=None, input_name=''):
             values = input_data.split()
             for value in values:
                 try:
                     float(value)
                 except (TypeError, ValueError):
                     raise_parse_error(node, 'Requires sequence of doubles')
-            return input_data
+            return values
         def gds_format_boolean(self, input_data, input_name=''):
             return ('%s' % input_data).lower()
-        def gds_validate_boolean(self, input_data, node, input_name=''):
+        def gds_validate_boolean(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_boolean_list(self, input_data, input_name=''):
-            return '%s' % input_data
-        def gds_validate_boolean_list(self, input_data, node, input_name=''):
+            return '%s' % ' '.join(input_data)
+        def gds_validate_boolean_list(
+                self, input_data, node=None, input_name=''):
             values = input_data.split()
             for value in values:
                 if value not in ('true', '1', 'false', '0', ):
@@ -156,8 +118,8 @@ except ImportError, exp:
                         node,
                         'Requires sequence of booleans '
                         '("true", "1", "false", "0")')
-            return input_data
-        def gds_validate_datetime(self, input_data, node, input_name=''):
+            return values
+        def gds_validate_datetime(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_datetime(self, input_data, input_name=''):
             if input_data.microsecond == 0:
@@ -211,7 +173,10 @@ except ImportError, exp:
                     tz = GeneratedsSuper._FixedOffsetTZ(
                         tzoff, results.group(0))
                     input_data = input_data[:-6]
-            if len(input_data.split('.')) > 1:
+            time_parts = input_data.split('.')
+            if len(time_parts) > 1:
+                micro_seconds = int(float('0.' + time_parts[1]) * 1000000)
+                input_data = '%s.%s' % (time_parts[0], micro_seconds, )
                 dt = datetime_.datetime.strptime(
                     input_data, '%Y-%m-%dT%H:%M:%S.%f')
             else:
@@ -219,7 +184,7 @@ except ImportError, exp:
                     input_data, '%Y-%m-%dT%H:%M:%S')
             dt = dt.replace(tzinfo=tz)
             return dt
-        def gds_validate_date(self, input_data, node, input_name=''):
+        def gds_validate_date(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_date(self, input_data, input_name=''):
             _svalue = '%04d-%02d-%02d' % (
@@ -265,7 +230,7 @@ except ImportError, exp:
             dt = datetime_.datetime.strptime(input_data, '%Y-%m-%d')
             dt = dt.replace(tzinfo=tz)
             return dt.date()
-        def gds_validate_time(self, input_data, node, input_name=''):
+        def gds_validate_time(self, input_data, node=None, input_name=''):
             return input_data
         def gds_format_time(self, input_data, input_name=''):
             if input_data.microsecond == 0:
@@ -297,6 +262,21 @@ except ImportError, exp:
                         minutes = (total_seconds - (hours * 3600)) // 60
                         _svalue += '{0:02d}:{1:02d}'.format(hours, minutes)
             return _svalue
+        def gds_validate_simple_patterns(self, patterns, target):
+            # pat is a list of lists of strings/patterns.  We should:
+            # - AND the outer elements
+            # - OR the inner elements
+            found1 = True
+            for patterns1 in patterns:
+                found2 = False
+                for patterns2 in patterns1:
+                    if re_.search(patterns2, target) is not None:
+                        found2 = True
+                        break
+                if not found2:
+                    found1 = False
+                    break
+            return found1
         @classmethod
         def gds_parse_time(cls, input_data):
             tz = None
@@ -377,6 +357,9 @@ ExternalEncoding = 'ascii'
 Tag_pattern_ = re_.compile(r'({.*})?(.*)')
 String_cleanup_pat_ = re_.compile(r"[\n\r\s]+")
 Namespace_extract_pat_ = re_.compile(r'{(.*)}(.*)')
+CDATA_pattern_ = re_.compile(r"<!\[CDATA\[.*?\]\]>", re_.DOTALL)
+PRESERVE_CDATA_TAGS_PAT = re_.compile(r'^<.+?>(.*)<.+>$')
+
 
 #
 # Support/utility functions.
@@ -390,11 +373,26 @@ def showIndent(outfile, level, pretty_print=True):
 
 
 def quote_xml(inStr):
+    "Escape markup chars, but do not modify CDATA sections."
     if not inStr:
         return ''
     s1 = (isinstance(inStr, basestring) and inStr or
           '%s' % inStr)
-    s1 = s1.replace('&', '&amp;')
+    s2 = ''
+    pos = 0
+    matchobjects = CDATA_pattern_.finditer(s1)
+    for mo in matchobjects:
+        s3 = s1[pos:mo.start()]
+        s2 += quote_xml_aux(s3)
+        s2 += s1[mo.start():mo.end()]
+        pos = mo.end()
+    s3 = s1[pos:]
+    s2 += quote_xml_aux(s3)
+    return s2
+
+
+def quote_xml_aux(inStr):
+    s1 = inStr.replace('&', '&amp;')
     s1 = s1.replace('<', '&lt;')
     s1 = s1.replace('>', '&gt;')
     return s1
@@ -432,14 +430,23 @@ def quote_python(inStr):
             return '"""%s"""' % s1
 
 
+PRESERVE_CDATA_TAGS_PAT1 = re_.compile(r'^<.+?>(.*?)</?[a-zA-Z0-9\-]+>.*$')
+PRESERVE_CDATA_TAGS_PAT2 = re_.compile(r'^<.+?>.*?</.+?>(.*)$')
+
+
 def get_all_text_(node):
     if node.text is not None:
-        text = node.text
+        mo_ = PRESERVE_CDATA_TAGS_PAT1.search(etree_.tostring(node).strip())
+        if mo_ is not None:
+            text = mo_.group(1)
     else:
         text = ''
     for child in node:
         if child.tail is not None:
-            text += child.tail
+            mo_ = PRESERVE_CDATA_TAGS_PAT2.search(
+                etree_.tostring(child).strip())
+            if mo_ is not None:
+                text += mo_.group(1)
     return text
 
 
@@ -462,11 +469,7 @@ class GDSParseError(Exception):
 
 
 def raise_parse_error(node, msg):
-    if XMLParser_import_library == XMLParser_import_lxml:
-        msg = '%s (element %s/line %d)' % (
-            msg, node.tag, node.sourceline, )
-    else:
-        msg = '%s (element %s)' % (msg, node.tag, )
+    msg = '%s (element %s/line %d)' % (msg, node.tag, node.sourceline, )
     raise GDSParseError(msg)
 
 
@@ -614,9 +617,8 @@ def _cast(typ, value):
 class database(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, xmlns=None, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
+    def __init__(self, header=None, name_formats=None, tags=None, events=None, people=None, families=None, citations=None, sources=None, places=None, objects=None, repositories=None, notes=None, bookmarks=None, namemaps=None):
         self.original_tagname_ = None
-        self.xmlns = _cast(None, xmlns)
         self.header = header
         self.name_formats = name_formats
         self.tags = tags
@@ -665,8 +667,6 @@ class database(GeneratedsSuper):
     def set_bookmarks(self, bookmarks): self.bookmarks = bookmarks
     def get_namemaps(self): return self.namemaps
     def set_namemaps(self, namemaps): self.namemaps = namemaps
-    def get_xmlns(self): return self.xmlns
-    def set_xmlns(self, xmlns): self.xmlns = xmlns
     def hasContent_(self):
         if (
             self.header is not None or
@@ -687,7 +687,7 @@ class database(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='database', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='database', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -706,9 +706,7 @@ class database(GeneratedsSuper):
         else:
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='database'):
-        if self.xmlns is not None and 'xmlns' not in already_processed:
-            already_processed.add('xmlns')
-            outfile.write(' xmlns=%s' % (self.gds_format_string(quote_attrib(self.xmlns).encode(ExternalEncoding), input_name='xmlns'), ))
+        pass
     def exportChildren(self, outfile, level, namespace_='gramps:', name_='database', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
@@ -749,10 +747,7 @@ class database(GeneratedsSuper):
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.xmlns is not None and 'xmlns' not in already_processed:
-            already_processed.add('xmlns')
-            showIndent(outfile, level)
-            outfile.write('xmlns="%s",\n' % (self.xmlns,))
+        pass
     def exportLiteralChildren(self, outfile, level, name_):
         if self.header is not None:
             showIndent(outfile, level)
@@ -846,10 +841,7 @@ class database(GeneratedsSuper):
             self.buildChildren(child, node, nodeName_)
         return self
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('xmlns', node)
-        if value is not None and 'xmlns' not in already_processed:
-            already_processed.add('xmlns')
-            self.xmlns = value
+        pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'header':
             obj_ = header.factory()
@@ -953,7 +945,7 @@ class header(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='header', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='header', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1063,7 +1055,7 @@ class created(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='created', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='created', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1180,7 +1172,7 @@ class researcher(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='researcher', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='researcher', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1374,7 +1366,7 @@ class resname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1457,7 +1449,7 @@ class resaddr(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resaddr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resaddr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1540,7 +1532,7 @@ class reslocality(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='reslocality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='reslocality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1623,7 +1615,7 @@ class rescity(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rescity', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rescity', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1706,7 +1698,7 @@ class resstate(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resstate', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resstate', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1789,7 +1781,7 @@ class rescountry(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rescountry', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rescountry', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1872,7 +1864,7 @@ class respostal(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='respostal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='respostal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1955,7 +1947,7 @@ class resphone(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resphone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resphone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2038,7 +2030,7 @@ class resemail(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resemail', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resemail', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2121,7 +2113,7 @@ class mediapath(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='mediapath', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='mediapath', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2194,7 +2186,8 @@ class people(GeneratedsSuper):
     def get_person(self): return self.person
     def set_person(self, person): self.person = person
     def add_person(self, value): self.person.append(value)
-    def insert_person(self, index, value): self.person[index] = value
+    def insert_person_at(self, index, value): self.person.insert(index, value)
+    def replace_person_at(self, index, value): self.person[index] = value
     def get_default(self): return self.default
     def set_default(self, default): self.default = default
     def get_home(self): return self.home
@@ -2206,7 +2199,7 @@ class people(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='people', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='people', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2364,55 +2357,68 @@ class person(GeneratedsSuper):
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
     def add_name(self, value): self.name.append(value)
-    def insert_name(self, index, value): self.name[index] = value
+    def insert_name_at(self, index, value): self.name.insert(index, value)
+    def replace_name_at(self, index, value): self.name[index] = value
     def get_eventref(self): return self.eventref
     def set_eventref(self, eventref): self.eventref = eventref
     def add_eventref(self, value): self.eventref.append(value)
-    def insert_eventref(self, index, value): self.eventref[index] = value
+    def insert_eventref_at(self, index, value): self.eventref.insert(index, value)
+    def replace_eventref_at(self, index, value): self.eventref[index] = value
     def get_lds_ord(self): return self.lds_ord
     def set_lds_ord(self, lds_ord): self.lds_ord = lds_ord
     def add_lds_ord(self, value): self.lds_ord.append(value)
-    def insert_lds_ord(self, index, value): self.lds_ord[index] = value
+    def insert_lds_ord_at(self, index, value): self.lds_ord.insert(index, value)
+    def replace_lds_ord_at(self, index, value): self.lds_ord[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_address(self): return self.address
     def set_address(self, address): self.address = address
     def add_address(self, value): self.address.append(value)
-    def insert_address(self, index, value): self.address[index] = value
+    def insert_address_at(self, index, value): self.address.insert(index, value)
+    def replace_address_at(self, index, value): self.address[index] = value
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
-    def insert_url(self, index, value): self.url[index] = value
+    def insert_url_at(self, index, value): self.url.insert(index, value)
+    def replace_url_at(self, index, value): self.url[index] = value
     def get_childof(self): return self.childof
     def set_childof(self, childof): self.childof = childof
     def add_childof(self, value): self.childof.append(value)
-    def insert_childof(self, index, value): self.childof[index] = value
+    def insert_childof_at(self, index, value): self.childof.insert(index, value)
+    def replace_childof_at(self, index, value): self.childof[index] = value
     def get_parentin(self): return self.parentin
     def set_parentin(self, parentin): self.parentin = parentin
     def add_parentin(self, value): self.parentin.append(value)
-    def insert_parentin(self, index, value): self.parentin[index] = value
+    def insert_parentin_at(self, index, value): self.parentin.insert(index, value)
+    def replace_parentin_at(self, index, value): self.parentin[index] = value
     def get_personref(self): return self.personref
     def set_personref(self, personref): self.personref = personref
     def add_personref(self, value): self.personref.append(value)
-    def insert_personref(self, index, value): self.personref[index] = value
+    def insert_personref_at(self, index, value): self.personref.insert(index, value)
+    def replace_personref_at(self, index, value): self.personref[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -2441,7 +2447,7 @@ class person(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='person', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='person', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2819,7 +2825,7 @@ class gender(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='gender', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='gender', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2918,7 +2924,8 @@ class name(GeneratedsSuper):
     def get_surname(self): return self.surname
     def set_surname(self, surname): self.surname = surname
     def add_surname(self, value): self.surname.append(value)
-    def insert_surname(self, index, value): self.surname[index] = value
+    def insert_surname_at(self, index, value): self.surname.insert(index, value)
+    def replace_surname_at(self, index, value): self.surname[index] = value
     def get_suffix(self): return self.suffix
     def set_suffix(self, suffix): self.suffix = suffix
     def get_title(self): return self.title
@@ -2940,11 +2947,13 @@ class name(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_sort(self): return self.sort
     def set_sort(self, sort): self.sort = sort
     def get_alt(self): return self.alt
@@ -2975,7 +2984,7 @@ class name(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3304,7 +3313,7 @@ class first(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='first', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='first', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3387,7 +3396,7 @@ class call(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='call', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='call', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3470,7 +3479,7 @@ class suffix(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='suffix', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='suffix', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3553,7 +3562,7 @@ class title(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='title', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='title', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3636,7 +3645,7 @@ class nick(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='nick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='nick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3719,7 +3728,7 @@ class familynick(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='familynick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='familynick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3802,7 +3811,7 @@ class group(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='group', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='group', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3897,7 +3906,7 @@ class surname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='surname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='surname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4012,7 +4021,7 @@ class childof(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='childof', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='childof', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4086,7 +4095,7 @@ class parentin(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='parentin', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='parentin', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4164,11 +4173,13 @@ class personref(GeneratedsSuper):
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
     def get_rel(self): return self.rel
@@ -4183,7 +4194,7 @@ class personref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='personref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='personref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4357,11 +4368,13 @@ class address(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_priv(self): return self.priv
     def set_priv(self, priv): self.priv = priv
     def hasContent_(self):
@@ -4384,7 +4397,7 @@ class address(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='address', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='address', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4663,7 +4676,7 @@ class street(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='street', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='street', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4746,7 +4759,7 @@ class locality(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='locality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='locality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4829,7 +4842,7 @@ class city(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='city', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='city', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4912,7 +4925,7 @@ class county(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='county', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='county', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4995,7 +5008,7 @@ class state(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='state', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='state', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5078,7 +5091,7 @@ class country(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='country', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='country', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5161,7 +5174,7 @@ class postal(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='postal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='postal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5244,7 +5257,7 @@ class phone(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='phone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='phone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5315,7 +5328,8 @@ class families(GeneratedsSuper):
     def get_family(self): return self.family
     def set_family(self, family): self.family = family
     def add_family(self, value): self.family.append(value)
-    def insert_family(self, index, value): self.family[index] = value
+    def insert_family_at(self, index, value): self.family.insert(index, value)
+    def replace_family_at(self, index, value): self.family[index] = value
     def hasContent_(self):
         if (
             self.family
@@ -5323,7 +5337,7 @@ class families(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='families', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='families', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5448,35 +5462,43 @@ class family(GeneratedsSuper):
     def get_eventref(self): return self.eventref
     def set_eventref(self, eventref): self.eventref = eventref
     def add_eventref(self, value): self.eventref.append(value)
-    def insert_eventref(self, index, value): self.eventref[index] = value
+    def insert_eventref_at(self, index, value): self.eventref.insert(index, value)
+    def replace_eventref_at(self, index, value): self.eventref[index] = value
     def get_lds_ord(self): return self.lds_ord
     def set_lds_ord(self, lds_ord): self.lds_ord = lds_ord
     def add_lds_ord(self, value): self.lds_ord.append(value)
-    def insert_lds_ord(self, index, value): self.lds_ord[index] = value
+    def insert_lds_ord_at(self, index, value): self.lds_ord.insert(index, value)
+    def replace_lds_ord_at(self, index, value): self.lds_ord[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_childref(self): return self.childref
     def set_childref(self, childref): self.childref = childref
     def add_childref(self, value): self.childref.append(value)
-    def insert_childref(self, index, value): self.childref[index] = value
+    def insert_childref_at(self, index, value): self.childref.insert(index, value)
+    def replace_childref_at(self, index, value): self.childref[index] = value
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -5502,7 +5524,7 @@ class family(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='family', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='family', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5802,7 +5824,7 @@ class father(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='father', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='father', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5876,7 +5898,7 @@ class mother(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='mother', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='mother', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5955,11 +5977,13 @@ class childref(GeneratedsSuper):
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_frel(self): return self.frel
     def set_frel(self, frel): self.frel = frel
     def get_hlink(self): return self.hlink
@@ -5976,7 +6000,7 @@ class childref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='childref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='childref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6132,7 +6156,7 @@ class type_(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='type', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='type', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6206,7 +6230,7 @@ class rel(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rel', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rel', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6277,7 +6301,8 @@ class events(GeneratedsSuper):
     def get_event(self): return self.event
     def set_event(self, event): self.event = event
     def add_event(self, value): self.event.append(value)
-    def insert_event(self, index, value): self.event[index] = value
+    def insert_event_at(self, index, value): self.event.insert(index, value)
+    def replace_event_at(self, index, value): self.event[index] = value
     def hasContent_(self):
         if (
             self.event
@@ -6285,7 +6310,7 @@ class events(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='events', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='events', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6413,23 +6438,28 @@ class event(GeneratedsSuper):
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -6457,7 +6487,7 @@ class event(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='event', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='event', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6762,7 +6792,8 @@ class sources(GeneratedsSuper):
     def get_source(self): return self.source
     def set_source(self, source): self.source = source
     def add_source(self, value): self.source.append(value)
-    def insert_source(self, index, value): self.source[index] = value
+    def insert_source_at(self, index, value): self.source.insert(index, value)
+    def replace_source_at(self, index, value): self.source[index] = value
     def hasContent_(self):
         if (
             self.source
@@ -6770,7 +6801,7 @@ class sources(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sources', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sources', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6886,23 +6917,28 @@ class source(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_srcattribute(self): return self.srcattribute
     def set_srcattribute(self, srcattribute): self.srcattribute = srcattribute
     def add_srcattribute(self, value): self.srcattribute.append(value)
-    def insert_srcattribute(self, index, value): self.srcattribute[index] = value
+    def insert_srcattribute_at(self, index, value): self.srcattribute.insert(index, value)
+    def replace_srcattribute_at(self, index, value): self.srcattribute[index] = value
     def get_reporef(self): return self.reporef
     def set_reporef(self, reporef): self.reporef = reporef
     def add_reporef(self, value): self.reporef.append(value)
-    def insert_reporef(self, index, value): self.reporef[index] = value
+    def insert_reporef_at(self, index, value): self.reporef.insert(index, value)
+    def replace_reporef_at(self, index, value): self.reporef[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -6926,7 +6962,7 @@ class source(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='source', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='source', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7191,7 +7227,7 @@ class stitle(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='stitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='stitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7274,7 +7310,7 @@ class sauthor(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sauthor', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sauthor', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7357,7 +7393,7 @@ class spubinfo(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='spubinfo', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='spubinfo', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7440,7 +7476,7 @@ class sabbrev(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sabbrev', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sabbrev', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7511,7 +7547,8 @@ class places(GeneratedsSuper):
     def get_placeobj(self): return self.placeobj
     def set_placeobj(self, placeobj): self.placeobj = placeobj
     def add_placeobj(self, value): self.placeobj.append(value)
-    def insert_placeobj(self, index, value): self.placeobj[index] = value
+    def insert_placeobj_at(self, index, value): self.placeobj.insert(index, value)
+    def replace_placeobj_at(self, index, value): self.placeobj[index] = value
     def hasContent_(self):
         if (
             self.placeobj
@@ -7519,7 +7556,7 @@ class places(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='places', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='places', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7588,20 +7625,19 @@ class places(GeneratedsSuper):
 class placeobj(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, handle=None, name=None, type_=None, id=None, change=None, priv=None, ptitle=None, code=None, alt_name=None, coord=None, placeref=None, location=None, objref=None, url=None, noteref=None, citationref=None, tagref=None):
+    def __init__(self, type_=None, handle=None, id=None, change=None, priv=None, ptitle=None, pname=None, code=None, coord=None, placeref=None, location=None, objref=None, url=None, noteref=None, citationref=None, tagref=None):
         self.original_tagname_ = None
-        self.handle = _cast(None, handle)
-        self.name = _cast(None, name)
         self.type_ = _cast(None, type_)
+        self.handle = _cast(None, handle)
         self.id = _cast(None, id)
         self.change = _cast(None, change)
         self.priv = _cast(None, priv)
         self.ptitle = ptitle
-        self.code = code
-        if alt_name is None:
-            self.alt_name = []
+        if pname is None:
+            self.pname = []
         else:
-            self.alt_name = alt_name
+            self.pname = pname
+        self.code = code
         self.coord = coord
         if placeref is None:
             self.placeref = []
@@ -7639,48 +7675,54 @@ class placeobj(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_ptitle(self): return self.ptitle
     def set_ptitle(self, ptitle): self.ptitle = ptitle
+    def get_pname(self): return self.pname
+    def set_pname(self, pname): self.pname = pname
+    def add_pname(self, value): self.pname.append(value)
+    def insert_pname_at(self, index, value): self.pname.insert(index, value)
+    def replace_pname_at(self, index, value): self.pname[index] = value
     def get_code(self): return self.code
     def set_code(self, code): self.code = code
-    def get_alt_name(self): return self.alt_name
-    def set_alt_name(self, alt_name): self.alt_name = alt_name
-    def add_alt_name(self, value): self.alt_name.append(value)
-    def insert_alt_name(self, index, value): self.alt_name[index] = value
     def get_coord(self): return self.coord
     def set_coord(self, coord): self.coord = coord
     def get_placeref(self): return self.placeref
     def set_placeref(self, placeref): self.placeref = placeref
     def add_placeref(self, value): self.placeref.append(value)
-    def insert_placeref(self, index, value): self.placeref[index] = value
+    def insert_placeref_at(self, index, value): self.placeref.insert(index, value)
+    def replace_placeref_at(self, index, value): self.placeref[index] = value
     def get_location(self): return self.location
     def set_location(self, location): self.location = location
     def add_location(self, value): self.location.append(value)
-    def insert_location(self, index, value): self.location[index] = value
+    def insert_location_at(self, index, value): self.location.insert(index, value)
+    def replace_location_at(self, index, value): self.location[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
-    def insert_url(self, index, value): self.url[index] = value
+    def insert_url_at(self, index, value): self.url.insert(index, value)
+    def replace_url_at(self, index, value): self.url[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
-    def get_handle(self): return self.handle
-    def set_handle(self, handle): self.handle = handle
-    def get_name(self): return self.name
-    def set_name(self, name): self.name = name
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
+    def get_handle(self): return self.handle
+    def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
     def get_change(self): return self.change
@@ -7690,8 +7732,8 @@ class placeobj(GeneratedsSuper):
     def hasContent_(self):
         if (
             self.ptitle is not None or
+            self.pname or
             self.code is not None or
-            self.alt_name or
             self.coord is not None or
             self.placeref or
             self.location or
@@ -7704,7 +7746,7 @@ class placeobj(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='placeobj', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='placeobj', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7723,15 +7765,12 @@ class placeobj(GeneratedsSuper):
         else:
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='placeobj'):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.add('handle')
-            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            outfile.write(' name=%s' % (self.gds_format_string(quote_attrib(self.name).encode(ExternalEncoding), input_name='name'), ))
         if self.type_ is not None and 'type_' not in already_processed:
             already_processed.add('type_')
             outfile.write(' type=%s' % (self.gds_format_string(quote_attrib(self.type_).encode(ExternalEncoding), input_name='type'), ))
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            outfile.write(' handle=%s' % (self.gds_format_string(quote_attrib(self.handle).encode(ExternalEncoding), input_name='handle'), ))
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_format_string(quote_attrib(self.id).encode(ExternalEncoding), input_name='id'), ))
@@ -7748,10 +7787,10 @@ class placeobj(GeneratedsSuper):
             eol_ = ''
         if self.ptitle is not None:
             self.ptitle.export(outfile, level, namespace_='gramps:', name_='ptitle', pretty_print=pretty_print)
+        for pname_ in self.pname:
+            pname_.export(outfile, level, namespace_='gramps:', name_='pname', pretty_print=pretty_print)
         if self.code is not None:
             self.code.export(outfile, level, namespace_='gramps:', name_='code', pretty_print=pretty_print)
-        for alt_name_ in self.alt_name:
-            alt_name_.export(outfile, level, namespace_='gramps:', name_='alt_name', pretty_print=pretty_print)
         if self.coord is not None:
             self.coord.export(outfile, level, namespace_='gramps:', name_='coord', pretty_print=pretty_print)
         for placeref_ in self.placeref:
@@ -7775,18 +7814,14 @@ class placeobj(GeneratedsSuper):
         if self.hasContent_():
             self.exportLiteralChildren(outfile, level, name_)
     def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        if self.handle is not None and 'handle' not in already_processed:
-            already_processed.add('handle')
-            showIndent(outfile, level)
-            outfile.write('handle="%s",\n' % (self.handle,))
-        if self.name is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            showIndent(outfile, level)
-            outfile.write('name="%s",\n' % (self.name,))
         if self.type_ is not None and 'type_' not in already_processed:
             already_processed.add('type_')
             showIndent(outfile, level)
             outfile.write('type_="%s",\n' % (self.type_,))
+        if self.handle is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            showIndent(outfile, level)
+            outfile.write('handle="%s",\n' % (self.handle,))
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             showIndent(outfile, level)
@@ -7806,24 +7841,24 @@ class placeobj(GeneratedsSuper):
             self.ptitle.exportLiteral(outfile, level)
             showIndent(outfile, level)
             outfile.write('),\n')
+        showIndent(outfile, level)
+        outfile.write('pname=[\n')
+        level += 1
+        for pname_ in self.pname:
+            showIndent(outfile, level)
+            outfile.write('model_.pname(\n')
+            pname_.exportLiteral(outfile, level)
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        level -= 1
+        showIndent(outfile, level)
+        outfile.write('],\n')
         if self.code is not None:
             showIndent(outfile, level)
             outfile.write('code=model_.code(\n')
             self.code.exportLiteral(outfile, level)
             showIndent(outfile, level)
             outfile.write('),\n')
-        showIndent(outfile, level)
-        outfile.write('alt_name=[\n')
-        level += 1
-        for alt_name_ in self.alt_name:
-            showIndent(outfile, level)
-            outfile.write('model_.alt_name(\n')
-            alt_name_.exportLiteral(outfile, level)
-            showIndent(outfile, level)
-            outfile.write('),\n')
-        level -= 1
-        showIndent(outfile, level)
-        outfile.write('],\n')
         if self.coord is not None:
             showIndent(outfile, level)
             outfile.write('coord=model_.coord(\n')
@@ -7922,18 +7957,14 @@ class placeobj(GeneratedsSuper):
             self.buildChildren(child, node, nodeName_)
         return self
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('handle', node)
-        if value is not None and 'handle' not in already_processed:
-            already_processed.add('handle')
-            self.handle = value
-        value = find_attr_value_('name', node)
-        if value is not None and 'name' not in already_processed:
-            already_processed.add('name')
-            self.name = value
         value = find_attr_value_('type', node)
         if value is not None and 'type' not in already_processed:
             already_processed.add('type')
             self.type_ = value
+        value = find_attr_value_('handle', node)
+        if value is not None and 'handle' not in already_processed:
+            already_processed.add('handle')
+            self.handle = value
         value = find_attr_value_('id', node)
         if value is not None and 'id' not in already_processed:
             already_processed.add('id')
@@ -7952,16 +7983,16 @@ class placeobj(GeneratedsSuper):
             obj_.build(child_)
             self.ptitle = obj_
             obj_.original_tagname_ = 'ptitle'
+        elif nodeName_ == 'pname':
+            obj_ = pname.factory()
+            obj_.build(child_)
+            self.pname.append(obj_)
+            obj_.original_tagname_ = 'pname'
         elif nodeName_ == 'code':
             obj_ = code.factory()
             obj_.build(child_)
             self.code = obj_
             obj_.original_tagname_ = 'code'
-        elif nodeName_ == 'alt_name':
-            obj_ = alt_name.factory()
-            obj_.build(child_)
-            self.alt_name.append(obj_)
-            obj_.original_tagname_ = 'alt_name'
         elif nodeName_ == 'coord':
             obj_ = coord.factory()
             obj_.build(child_)
@@ -8005,6 +8036,163 @@ class placeobj(GeneratedsSuper):
 # end class placeobj
 
 
+class pname(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, lang=None, value=None, daterange=None, datespan=None, dateval=None, datestr=None):
+        self.original_tagname_ = None
+        self.lang = _cast(None, lang)
+        self.value = _cast(None, value)
+        self.daterange = daterange
+        self.datespan = datespan
+        self.dateval = dateval
+        self.datestr = datestr
+    def factory(*args_, **kwargs_):
+        if pname.subclass:
+            return pname.subclass(*args_, **kwargs_)
+        else:
+            return pname(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_daterange(self): return self.daterange
+    def set_daterange(self, daterange): self.daterange = daterange
+    def get_datespan(self): return self.datespan
+    def set_datespan(self, datespan): self.datespan = datespan
+    def get_dateval(self): return self.dateval
+    def set_dateval(self, dateval): self.dateval = dateval
+    def get_datestr(self): return self.datestr
+    def set_datestr(self, datestr): self.datestr = datestr
+    def get_lang(self): return self.lang
+    def set_lang(self, lang): self.lang = lang
+    def get_value(self): return self.value
+    def set_value(self, value): self.value = value
+    def hasContent_(self):
+        if (
+            self.daterange is not None or
+            self.datespan is not None or
+            self.dateval is not None or
+            self.datestr is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='gramps:', name_='pname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='pname')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='gramps:', name_='pname', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='pname'):
+        if self.lang is not None and 'lang' not in already_processed:
+            already_processed.add('lang')
+            outfile.write(' lang=%s' % (self.gds_format_string(quote_attrib(self.lang).encode(ExternalEncoding), input_name='lang'), ))
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            outfile.write(' value=%s' % (self.gds_format_string(quote_attrib(self.value).encode(ExternalEncoding), input_name='value'), ))
+    def exportChildren(self, outfile, level, namespace_='gramps:', name_='pname', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.daterange is not None:
+            self.daterange.export(outfile, level, namespace_='gramps:', name_='daterange', pretty_print=pretty_print)
+        if self.datespan is not None:
+            self.datespan.export(outfile, level, namespace_='gramps:', name_='datespan', pretty_print=pretty_print)
+        if self.dateval is not None:
+            self.dateval.export(outfile, level, namespace_='gramps:', name_='dateval', pretty_print=pretty_print)
+        if self.datestr is not None:
+            self.datestr.export(outfile, level, namespace_='gramps:', name_='datestr', pretty_print=pretty_print)
+    def exportLiteral(self, outfile, level, name_='pname'):
+        level += 1
+        already_processed = set()
+        self.exportLiteralAttributes(outfile, level, already_processed, name_)
+        if self.hasContent_():
+            self.exportLiteralChildren(outfile, level, name_)
+    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
+        if self.lang is not None and 'lang' not in already_processed:
+            already_processed.add('lang')
+            showIndent(outfile, level)
+            outfile.write('lang="%s",\n' % (self.lang,))
+        if self.value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            showIndent(outfile, level)
+            outfile.write('value="%s",\n' % (self.value,))
+    def exportLiteralChildren(self, outfile, level, name_):
+        if self.daterange is not None:
+            showIndent(outfile, level)
+            outfile.write('daterange=model_.daterange(\n')
+            self.daterange.exportLiteral(outfile, level)
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.datespan is not None:
+            showIndent(outfile, level)
+            outfile.write('datespan=model_.datespan(\n')
+            self.datespan.exportLiteral(outfile, level)
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.dateval is not None:
+            showIndent(outfile, level)
+            outfile.write('dateval=model_.dateval(\n')
+            self.dateval.exportLiteral(outfile, level)
+            showIndent(outfile, level)
+            outfile.write('),\n')
+        if self.datestr is not None:
+            showIndent(outfile, level)
+            outfile.write('datestr=model_.datestr(\n')
+            self.datestr.exportLiteral(outfile, level)
+            showIndent(outfile, level)
+            outfile.write('),\n')
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        value = find_attr_value_('lang', node)
+        if value is not None and 'lang' not in already_processed:
+            already_processed.add('lang')
+            self.lang = value
+        value = find_attr_value_('value', node)
+        if value is not None and 'value' not in already_processed:
+            already_processed.add('value')
+            self.value = value
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'daterange':
+            obj_ = daterange.factory()
+            obj_.build(child_)
+            self.daterange = obj_
+            obj_.original_tagname_ = 'daterange'
+        elif nodeName_ == 'datespan':
+            obj_ = datespan.factory()
+            obj_.build(child_)
+            self.datespan = obj_
+            obj_.original_tagname_ = 'datespan'
+        elif nodeName_ == 'dateval':
+            obj_ = dateval.factory()
+            obj_.build(child_)
+            self.dateval = obj_
+            obj_.original_tagname_ = 'dateval'
+        elif nodeName_ == 'datestr':
+            obj_ = datestr.factory()
+            obj_.build(child_)
+            self.datestr = obj_
+            obj_.original_tagname_ = 'datestr'
+# end class pname
+
+
 class ptitle(GeneratedsSuper):
     subclass = None
     superclass = None
@@ -8035,7 +8223,7 @@ class ptitle(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='ptitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='ptitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8118,7 +8306,7 @@ class code(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='code', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='code', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8171,89 +8359,6 @@ class code(GeneratedsSuper):
 # end class code
 
 
-class alt_name(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, valueOf_=None, mixedclass_=None, content_=None):
-        self.original_tagname_ = None
-        self.valueOf_ = valueOf_
-        if mixedclass_ is None:
-            self.mixedclass_ = MixedContainer
-        else:
-            self.mixedclass_ = mixedclass_
-        if content_ is None:
-            self.content_ = []
-        else:
-            self.content_ = content_
-        self.valueOf_ = valueOf_
-    def factory(*args_, **kwargs_):
-        if alt_name.subclass:
-            return alt_name.subclass(*args_, **kwargs_)
-        else:
-            return alt_name(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_valueOf_(self): return self.valueOf_
-    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
-    def hasContent_(self):
-        if (
-            self.valueOf_
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='gramps:', name_='alt_name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='alt_name')
-        outfile.write('>')
-        self.exportChildren(outfile, level + 1, namespace_, name_, pretty_print=pretty_print)
-        outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='gramps:', name_='alt_name'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='gramps:', name_='alt_name', fromsubclass_=False, pretty_print=True):
-        pass
-    def exportLiteral(self, outfile, level, name_='alt_name'):
-        level += 1
-        already_processed = set()
-        self.exportLiteralAttributes(outfile, level, already_processed, name_)
-        if self.hasContent_():
-            self.exportLiteralChildren(outfile, level, name_)
-        showIndent(outfile, level)
-        outfile.write('valueOf_ = """%s""",\n' % (self.valueOf_,))
-    def exportLiteralAttributes(self, outfile, level, already_processed, name_):
-        pass
-    def exportLiteralChildren(self, outfile, level, name_):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        self.valueOf_ = get_all_text_(node)
-        if node.text is not None:
-            obj_ = self.mixedclass_(MixedContainer.CategoryText,
-                MixedContainer.TypeNone, '', node.text)
-            self.content_.append(obj_)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if not fromsubclass_ and child_.tail is not None:
-            obj_ = self.mixedclass_(MixedContainer.CategoryText,
-                MixedContainer.TypeNone, '', child_.tail)
-            self.content_.append(obj_)
-        pass
-# end class alt_name
-
-
 class coord(GeneratedsSuper):
     subclass = None
     superclass = None
@@ -8278,7 +8383,7 @@ class coord(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='coord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='coord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8387,7 +8492,7 @@ class location(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='location', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='location', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8546,7 +8651,8 @@ class objects(GeneratedsSuper):
     def get_object(self): return self.object
     def set_object(self, object): self.object = object
     def add_object(self, value): self.object.append(value)
-    def insert_object(self, index, value): self.object[index] = value
+    def insert_object_at(self, index, value): self.object.insert(index, value)
+    def replace_object_at(self, index, value): self.object[index] = value
     def hasContent_(self):
         if (
             self.object
@@ -8554,7 +8660,7 @@ class objects(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='objects', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='objects', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8661,11 +8767,13 @@ class object(GeneratedsSuper):
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_daterange(self): return self.daterange
     def set_daterange(self, daterange): self.daterange = daterange
     def get_datespan(self): return self.datespan
@@ -8677,11 +8785,13 @@ class object(GeneratedsSuper):
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -8705,7 +8815,7 @@ class object(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='object', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='object', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8964,7 +9074,7 @@ class file(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='file', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='file', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9068,7 +9178,8 @@ class repositories(GeneratedsSuper):
     def get_repository(self): return self.repository
     def set_repository(self, repository): self.repository = repository
     def add_repository(self, value): self.repository.append(value)
-    def insert_repository(self, index, value): self.repository[index] = value
+    def insert_repository_at(self, index, value): self.repository.insert(index, value)
+    def replace_repository_at(self, index, value): self.repository[index] = value
     def hasContent_(self):
         if (
             self.repository
@@ -9076,7 +9187,7 @@ class repositories(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='repositories', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='repositories', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9182,19 +9293,23 @@ class repository(GeneratedsSuper):
     def get_address(self): return self.address
     def set_address(self, address): self.address = address
     def add_address(self, value): self.address.append(value)
-    def insert_address(self, index, value): self.address[index] = value
+    def insert_address_at(self, index, value): self.address.insert(index, value)
+    def replace_address_at(self, index, value): self.address[index] = value
     def get_url(self): return self.url
     def set_url(self, url): self.url = url
     def add_url(self, value): self.url.append(value)
-    def insert_url(self, index, value): self.url[index] = value
+    def insert_url_at(self, index, value): self.url.insert(index, value)
+    def replace_url_at(self, index, value): self.url[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -9215,7 +9330,7 @@ class repository(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='repository', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='repository', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9435,7 +9550,7 @@ class rname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9506,7 +9621,8 @@ class notes(GeneratedsSuper):
     def get_note(self): return self.note
     def set_note(self, note): self.note = note
     def add_note(self, value): self.note.append(value)
-    def insert_note(self, index, value): self.note[index] = value
+    def insert_note_at(self, index, value): self.note.insert(index, value)
+    def replace_note_at(self, index, value): self.note[index] = value
     def hasContent_(self):
         if (
             self.note
@@ -9514,7 +9630,7 @@ class notes(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='notes', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='notes', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9611,11 +9727,13 @@ class note(GeneratedsSuper):
     def get_style(self): return self.style
     def set_style(self, style): self.style = style
     def add_style(self, value): self.style.append(value)
-    def insert_style(self, index, value): self.style[index] = value
+    def insert_style_at(self, index, value): self.style.insert(index, value)
+    def replace_style_at(self, index, value): self.style[index] = value
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_format(self): return self.format
@@ -9637,7 +9755,7 @@ class note(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='note', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='note', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9828,7 +9946,7 @@ class text(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='text', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='text', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9901,7 +10019,8 @@ class style(GeneratedsSuper):
     def get_range(self): return self.range_
     def set_range(self, range_): self.range_ = range_
     def add_range(self, value): self.range_.append(value)
-    def insert_range(self, index, value): self.range_[index] = value
+    def insert_range_at(self, index, value): self.range_.insert(index, value)
+    def replace_range_at(self, index, value): self.range_[index] = value
     def get_name(self): return self.name
     def set_name(self, name): self.name = name
     def get_value(self): return self.value
@@ -9913,7 +10032,7 @@ class style(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='style', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='style', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10022,7 +10141,7 @@ class range_(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='range', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='range', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10104,7 +10223,8 @@ class tags(GeneratedsSuper):
     def get_tag(self): return self.tag
     def set_tag(self, tag): self.tag = tag
     def add_tag(self, value): self.tag.append(value)
-    def insert_tag(self, index, value): self.tag[index] = value
+    def insert_tag_at(self, index, value): self.tag.insert(index, value)
+    def replace_tag_at(self, index, value): self.tag[index] = value
     def hasContent_(self):
         if (
             self.tag
@@ -10112,7 +10232,7 @@ class tags(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tags', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tags', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10211,7 +10331,7 @@ class tag(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tag', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tag', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10326,7 +10446,8 @@ class citations(GeneratedsSuper):
     def get_citation(self): return self.citation
     def set_citation(self, citation): self.citation = citation
     def add_citation(self, value): self.citation.append(value)
-    def insert_citation(self, index, value): self.citation[index] = value
+    def insert_citation_at(self, index, value): self.citation.insert(index, value)
+    def replace_citation_at(self, index, value): self.citation[index] = value
     def hasContent_(self):
         if (
             self.citation
@@ -10334,7 +10455,7 @@ class citations(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citations', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citations', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10453,21 +10574,25 @@ class citation(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_objref(self): return self.objref
     def set_objref(self, objref): self.objref = objref
     def add_objref(self, value): self.objref.append(value)
-    def insert_objref(self, index, value): self.objref[index] = value
+    def insert_objref_at(self, index, value): self.objref.insert(index, value)
+    def replace_objref_at(self, index, value): self.objref[index] = value
     def get_srcattribute(self): return self.srcattribute
     def set_srcattribute(self, srcattribute): self.srcattribute = srcattribute
     def add_srcattribute(self, value): self.srcattribute.append(value)
-    def insert_srcattribute(self, index, value): self.srcattribute[index] = value
+    def insert_srcattribute_at(self, index, value): self.srcattribute.insert(index, value)
+    def replace_srcattribute_at(self, index, value): self.srcattribute[index] = value
     def get_sourceref(self): return self.sourceref
     def set_sourceref(self, sourceref): self.sourceref = sourceref
     def get_tagref(self): return self.tagref
     def set_tagref(self, tagref): self.tagref = tagref
     def add_tagref(self, value): self.tagref.append(value)
-    def insert_tagref(self, index, value): self.tagref[index] = value
+    def insert_tagref_at(self, index, value): self.tagref.insert(index, value)
+    def replace_tagref_at(self, index, value): self.tagref[index] = value
     def get_handle(self): return self.handle
     def set_handle(self, handle): self.handle = handle
     def get_id(self): return self.id
@@ -10493,7 +10618,7 @@ class citation(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citation', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citation', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10766,7 +10891,8 @@ class bookmarks(GeneratedsSuper):
     def get_bookmark(self): return self.bookmark
     def set_bookmark(self, bookmark): self.bookmark = bookmark
     def add_bookmark(self, value): self.bookmark.append(value)
-    def insert_bookmark(self, index, value): self.bookmark[index] = value
+    def insert_bookmark_at(self, index, value): self.bookmark.insert(index, value)
+    def replace_bookmark_at(self, index, value): self.bookmark[index] = value
     def hasContent_(self):
         if (
             self.bookmark
@@ -10774,7 +10900,7 @@ class bookmarks(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='bookmarks', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmarks', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10864,7 +10990,7 @@ class bookmark(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='bookmark', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmark', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10946,7 +11072,8 @@ class namemaps(GeneratedsSuper):
     def get_map(self): return self.map
     def set_map(self, map): self.map = map
     def add_map(self, value): self.map.append(value)
-    def insert_map(self, index, value): self.map[index] = value
+    def insert_map_at(self, index, value): self.map.insert(index, value)
+    def replace_map_at(self, index, value): self.map[index] = value
     def hasContent_(self):
         if (
             self.map
@@ -10954,7 +11081,7 @@ class namemaps(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='namemaps', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='namemaps', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11047,7 +11174,7 @@ class map(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='map', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='map', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11140,7 +11267,8 @@ class name_formats(GeneratedsSuper):
     def get_format(self): return self.format
     def set_format(self, format): self.format = format
     def add_format(self, value): self.format.append(value)
-    def insert_format(self, index, value): self.format[index] = value
+    def insert_format_at(self, index, value): self.format.insert(index, value)
+    def replace_format_at(self, index, value): self.format[index] = value
     def hasContent_(self):
         if (
             self.format
@@ -11148,7 +11276,7 @@ class name_formats(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='name-formats', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='name-formats', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11244,7 +11372,7 @@ class format(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='format', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='format', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11366,7 +11494,7 @@ class daterange(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='daterange', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='daterange', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11510,7 +11638,7 @@ class datespan(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='datespan', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='datespan', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11654,7 +11782,7 @@ class dateval(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='dateval', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='dateval', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11783,7 +11911,7 @@ class datestr(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='datestr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='datestr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11857,7 +11985,7 @@ class citationref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citationref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citationref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11931,7 +12059,7 @@ class sourceref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sourceref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sourceref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12009,11 +12137,13 @@ class eventref(GeneratedsSuper):
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_role(self): return self.role
     def set_role(self, role): self.role = role
     def get_hlink(self): return self.hlink
@@ -12028,7 +12158,7 @@ class eventref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='eventref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='eventref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12165,7 +12295,8 @@ class reporef(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_medium(self): return self.medium
     def set_medium(self, medium): self.medium = medium
     def get_callno(self): return self.callno
@@ -12181,7 +12312,7 @@ class reporef(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='reporef', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='reporef', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12309,7 +12440,7 @@ class noteref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='noteref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='noteref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12383,7 +12514,7 @@ class tagref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tagref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tagref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12466,7 +12597,7 @@ class page(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='page', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='page', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12549,7 +12680,7 @@ class confidence(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='confidence', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='confidence', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12627,11 +12758,13 @@ class attribute(GeneratedsSuper):
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
     def get_value(self): return self.value
@@ -12646,7 +12779,7 @@ class attribute(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='attribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='attribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12788,7 +12921,7 @@ class srcattribute(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='srcattribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='srcattribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12884,7 +13017,7 @@ class place(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='place', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='place', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12967,7 +13100,7 @@ class cause(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='cause', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='cause', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13050,7 +13183,7 @@ class description(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='description', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='description', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13133,7 +13266,7 @@ class url(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='url', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='url', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13250,15 +13383,18 @@ class objref(GeneratedsSuper):
     def get_attribute(self): return self.attribute
     def set_attribute(self, attribute): self.attribute = attribute
     def add_attribute(self, value): self.attribute.append(value)
-    def insert_attribute(self, index, value): self.attribute[index] = value
+    def insert_attribute_at(self, index, value): self.attribute.insert(index, value)
+    def replace_attribute_at(self, index, value): self.attribute[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_hlink(self): return self.hlink
     def set_hlink(self, hlink): self.hlink = hlink
     def get_priv(self): return self.priv
@@ -13273,7 +13409,7 @@ class objref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='objref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='objref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13445,7 +13581,7 @@ class placeref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='placeref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='placeref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13582,7 +13718,7 @@ class region(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='region', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='region', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13692,7 +13828,7 @@ class data_item(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='data_item', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='data_item', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13804,11 +13940,13 @@ class lds_ord(GeneratedsSuper):
     def get_noteref(self): return self.noteref
     def set_noteref(self, noteref): self.noteref = noteref
     def add_noteref(self, value): self.noteref.append(value)
-    def insert_noteref(self, index, value): self.noteref[index] = value
+    def insert_noteref_at(self, index, value): self.noteref.insert(index, value)
+    def replace_noteref_at(self, index, value): self.noteref[index] = value
     def get_citationref(self): return self.citationref
     def set_citationref(self, citationref): self.citationref = citationref
     def add_citationref(self, value): self.citationref.append(value)
-    def insert_citationref(self, index, value): self.citationref[index] = value
+    def insert_citationref_at(self, index, value): self.citationref.insert(index, value)
+    def replace_citationref_at(self, index, value): self.citationref[index] = value
     def get_type(self): return self.type_
     def set_type(self, type_): self.type_ = type_
     def get_priv(self): return self.priv
@@ -13829,7 +13967,7 @@ class lds_ord(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='lds_ord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='lds_ord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14058,7 +14196,7 @@ class temple(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='temple', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='temple', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14132,7 +14270,7 @@ class status(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='status', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='status', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14206,7 +14344,7 @@ class sealed_to(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sealed_to', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sealed_to', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14269,7 +14407,7 @@ Usage: python <Parser>.py [ -s ] <in_xml_file>
 
 
 def usage():
-    print USAGE_TEXT
+    print(USAGE_TEXT)
     sys.exit(1)
 
 
@@ -14282,7 +14420,8 @@ def get_root_tag(node):
 
 
 def parse(inFileName, silence=False):
-    doc = parsexml_(inFileName)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFileName, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -14296,13 +14435,14 @@ def parse(inFileName, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"',
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"',
             pretty_print=True)
     return rootObj
 
 
 def parseEtree(inFileName, silence=False):
-    doc = parsexml_(inFileName)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFileName, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -14326,7 +14466,8 @@ def parseEtree(inFileName, silence=False):
 
 def parseString(inString, silence=False):
     from StringIO import StringIO
-    doc = parsexml_(StringIO(inString))
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(StringIO(inString), parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -14340,12 +14481,13 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.6.0/"')
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"')
     return rootObj
 
 
 def parseLiteral(inFileName, silence=False):
-    doc = parsexml_(inFileName)
+    parser = etree_.ETCompatXMLParser(strip_cdata=False)
+    doc = parsexml_(inFileName, parser)
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
@@ -14356,8 +14498,8 @@ def parseLiteral(inFileName, silence=False):
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from superclasses_dict import *\n\n')
-        sys.stdout.write('import superclasses_dict as model_\n\n')
+        sys.stdout.write('#from sample_lib import *\n\n')
+        sys.stdout.write('import sample_lib as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
@@ -14379,7 +14521,6 @@ if __name__ == '__main__':
 
 __all__ = [
     "address",
-    "alt_name",
     "attribute",
     "bookmark",
     "bookmarks",
@@ -14443,6 +14584,7 @@ __all__ = [
     "placeobj",
     "placeref",
     "places",
+    "pname",
     "postal",
     "ptitle",
     "range_",

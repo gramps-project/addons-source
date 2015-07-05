@@ -122,6 +122,7 @@ GENDER has values of M, F, or U.
 
 <!ELEMENT name    (first?, call?, surname*, suffix?, title?, nick?, familynick?, group?,
                   (daterange|datespan|dateval|datestr)?, noteref*, citationref*)>
+<!-- (Unknown|Also Know As|Birth Name|Married Name|Other Name) -->
 <!ATTLIST name    
         alt       (0|1) #IMPLIED
         type      CDATA #IMPLIED
@@ -138,6 +139,8 @@ GENDER has values of M, F, or U.
 <!ELEMENT familynick (#PCDATA)>
 <!ELEMENT group      (#PCDATA)>
 <!ELEMENT surname    (#PCDATA)>
+<!-- (Unknown|Inherited|Given|Taken|Patronymic|Matronymic|Feudal|
+Pseudonym|Patrilineal|Matrilineal|Occupation|Location) -->
 <!ATTLIST surname
         prefix      CDATA #IMPLIED
         prim        (1|0) #IMPLIED
@@ -196,6 +199,7 @@ FAMILY
 <!ELEMENT mother EMPTY>
 <!ATTLIST mother hlink IDREF #REQUIRED>
 
+<!-- (None|Birth|Adopted|Stepchild|Sponsored|Foster|Other|Unknown) -->
 <!ELEMENT childref (citationref*,noteref*)>
 <!ATTLIST childref
         hlink IDREF #REQUIRED
@@ -248,7 +252,7 @@ PLACES
 
 <!ELEMENT places (placeobj)*>
 
-<!ELEMENT placeobj (ptitle?, name+, code?, coord?, placeref*, location*,
+<!ELEMENT placeobj (ptitle?, pname+, code?, coord?, placeref*, location*,
                     objref*, url*, noteref*, citationref*, tagref*)>
 <!ATTLIST placeobj
         id        CDATA #IMPLIED
@@ -258,10 +262,9 @@ PLACES
         type      CDATA #REQUIRED
 >
 
+<!ELEMENT pname (daterange|datespan|dateval|datestr)?>
 
-<!ELEMENT name (daterange|datespan|dateval|datestr)?>
-
-<!ATTLIST name
+<!ATTLIST pname
         lang CDATA #IMPLIED
         value CDATA #REQUIRED
 >
