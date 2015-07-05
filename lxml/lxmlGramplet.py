@@ -114,10 +114,7 @@ def epoch(t):
             conv = datetime.fromtimestamp(date)
             fmt = conv.strftime('%d %B %Y')
         
-        if os.name == 'nt':
-            return(fmt).decode('mbcs').encode("utf-8")
-        else:
-            return(fmt)
+        return(fmt)
     
 #-------------------------------------------------------------------------
 #
@@ -299,8 +296,8 @@ class lxmlGramplet(Gramplet):
         
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
-            #self.xsd(xsd, filename)
-            pass
+            self.xsd(xsd, filename)
+            #pass
         except:
             ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
             LOG.debug(self.xsd(xsd, filename))
@@ -428,7 +425,7 @@ class lxmlGramplet(Gramplet):
                     #print(desc(three))
                     (tag, items) = three.tag, three.items()
 
-                    if three.tag == NAMESPACE + 'name':
+                    if three.tag == NAMESPACE + 'pname':
                         text = str(items)
                         if text not in places:
                             places.append(text) # temp display
@@ -475,8 +472,8 @@ class lxmlGramplet(Gramplet):
         else:
             nb_surnames = surnames = [_('0')]
             
-        if int(count_elements(root, name = 'name')) > 1:
-            nb_pnames = int(count_elements(root, name = 'name'))
+        if int(count_elements(root, name = 'pname')) > 1:
+            nb_pnames = int(count_elements(root, name = 'pname'))
         else:
             nb_pnames = places = [_('0')]
             
@@ -664,7 +661,7 @@ class lxmlGramplet(Gramplet):
                 cnt.append(surname)      
         
         p = etree.SubElement(xml, "places")
-        p.set("name", self.places_name)
+        p.set("pname", self.places_name)
         
         places.sort()
         for place in places:
@@ -864,12 +861,12 @@ class lxmlGramplet(Gramplet):
             
         surnames = []
         
-        ## places/placeobj/name
+        ## places/placeobj/pname
         
         pl = etree.SubElement(root, "places")
         for p in places:
             place = etree.SubElement(pl, "placeobj")
-            name = etree.SubElement(place, "name")
+            name = etree.SubElement(place, "pname")
             pname = name.set('value', p)
             
         places = []

@@ -2,7 +2,7 @@
  xmlns='http://www.w3.org/2001/XMLSchema'
  targetNamespace='http://gramps-project.org/xml/1.7.0/'
  xmlns:gramps='http://gramps-project.org/xml/1.7.0/'>
-<element name='database'>
+ <element name='database'>
   <complexType>
    <sequence>
     <element ref='gramps:header'/>
@@ -155,14 +155,43 @@
 
  <element name='name'>
   <complexType>
-   <choice minOccurs='0' maxOccurs='1'>
-    <element ref='gramps:daterange'/>
-    <element ref='gramps:datespan'/>
-    <element ref='gramps:dateval'/>
-    <element ref='gramps:datestr'/>
-   </choice>
-   <attribute name='lang' type='string' use='optional'/>
-   <attribute name='value' type='string' use='required'/>
+   <sequence>
+    <element ref='gramps:first' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:call' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:surname' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:suffix' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:title' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:nick' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:familynick' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:group' minOccurs='0' maxOccurs='1'/>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='gramps:daterange'/>
+     <element ref='gramps:datespan'/>
+     <element ref='gramps:dateval'/>
+     <element ref='gramps:datestr'/>
+    </choice>
+    <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='alt' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='string' use='optional'/>
+   <attribute name='priv' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='0'/>
+      <enumeration value='1'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='sort' type='string' use='optional'/>
+   <attribute name='display' type='string' use='optional'/>
   </complexType>
  </element>
 
@@ -507,7 +536,7 @@
   <complexType>
    <sequence>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
-    <element ref='gramps:name' maxOccurs='unbounded'/>
+    <element ref='gramps:pname' maxOccurs='unbounded'/>
     <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
@@ -533,7 +562,7 @@
   </complexType>
  </element>
 
- <element name='name'>
+ <element name='pname'>
   <complexType>
    <choice minOccurs='0' maxOccurs='1'>
     <element ref='gramps:daterange'/>
