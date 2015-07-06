@@ -802,7 +802,7 @@ def parse(inFilename, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"',
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"',
             pretty_print=True)
     return rootObj
 
@@ -848,7 +848,7 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"')
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"')
     return rootObj
 
 

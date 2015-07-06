@@ -703,7 +703,7 @@ class database(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='database', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='database', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -966,7 +966,7 @@ class header(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='header', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='header', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1080,7 +1080,7 @@ class created(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='created', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='created', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1208,7 +1208,7 @@ class researcher(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='researcher', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='researcher', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1405,7 +1405,7 @@ class resname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1491,7 +1491,7 @@ class resaddr(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resaddr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resaddr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1577,7 +1577,7 @@ class reslocality(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='reslocality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='reslocality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1663,7 +1663,7 @@ class rescity(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rescity', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rescity', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1749,7 +1749,7 @@ class resstate(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resstate', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resstate', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1835,7 +1835,7 @@ class rescountry(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rescountry', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rescountry', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1921,7 +1921,7 @@ class respostal(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='respostal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='respostal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2007,7 +2007,7 @@ class resphone(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resphone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resphone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2093,7 +2093,7 @@ class resemail(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='resemail', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='resemail', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2179,7 +2179,7 @@ class mediapath(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='mediapath', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='mediapath', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2270,7 +2270,7 @@ class people(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='people', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='people', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2538,7 +2538,7 @@ class person(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='person', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='person', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -2919,7 +2919,7 @@ class gender(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='gender', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='gender', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3099,7 +3099,7 @@ class name(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='name', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3431,7 +3431,7 @@ class first(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='first', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='first', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3517,7 +3517,7 @@ class call(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='call', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='call', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3603,7 +3603,7 @@ class suffix(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='suffix', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='suffix', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3689,7 +3689,7 @@ class title(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='title', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='title', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3775,7 +3775,7 @@ class nick(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='nick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='nick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3861,7 +3861,7 @@ class familynick(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='familynick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='familynick', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3947,7 +3947,7 @@ class group(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='group', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='group', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4049,7 +4049,7 @@ class surname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='surname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='surname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4167,7 +4167,7 @@ class childof(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='childof', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='childof', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4244,7 +4244,7 @@ class parentin(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='parentin', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='parentin', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4350,7 +4350,7 @@ class personref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='personref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='personref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4570,7 +4570,7 @@ class address(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='address', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='address', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4852,7 +4852,7 @@ class street(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='street', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='street', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -4938,7 +4938,7 @@ class locality(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='locality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='locality', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5024,7 +5024,7 @@ class city(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='city', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='city', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5110,7 +5110,7 @@ class county(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='county', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='county', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5196,7 +5196,7 @@ class state(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='state', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='state', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5282,7 +5282,7 @@ class country(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='country', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='country', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5368,7 +5368,7 @@ class postal(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='postal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='postal', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5454,7 +5454,7 @@ class phone(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='phone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='phone', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5537,7 +5537,7 @@ class families(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='families', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='families', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -5741,7 +5741,7 @@ class family(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='family', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='family', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6044,7 +6044,7 @@ class father(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='father', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='father', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6121,7 +6121,7 @@ class mother(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='mother', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='mother', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6231,7 +6231,7 @@ class childref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='childref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='childref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6390,7 +6390,7 @@ class type_(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='type', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='type', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6467,7 +6467,7 @@ class rel(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rel', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rel', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6550,7 +6550,7 @@ class events(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='events', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='events', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -6746,7 +6746,7 @@ class event(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='event', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='event', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7063,7 +7063,7 @@ class sources(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sources', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sources', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7239,7 +7239,7 @@ class source(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='source', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='source', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7507,7 +7507,7 @@ class stitle(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='stitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='stitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7593,7 +7593,7 @@ class sauthor(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sauthor', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sauthor', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7679,7 +7679,7 @@ class spubinfo(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='spubinfo', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='spubinfo', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7765,7 +7765,7 @@ class sabbrev(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sabbrev', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sabbrev', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -7848,7 +7848,7 @@ class places(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='places', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='places', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8056,7 +8056,7 @@ class placeobj(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='placeobj', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='placeobj', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8393,7 +8393,7 @@ class pname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='pname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='pname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8544,7 +8544,7 @@ class ptitle(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='ptitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='ptitle', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8630,7 +8630,7 @@ class code(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='code', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='code', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8711,7 +8711,7 @@ class coord(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='coord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='coord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -8831,7 +8831,7 @@ class location(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='location', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='location', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9002,7 +9002,7 @@ class objects(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='objects', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='objects', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9172,7 +9172,7 @@ class object(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='object', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='object', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9437,7 +9437,7 @@ class file(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='file', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='file', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9553,7 +9553,7 @@ class repositories(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='repositories', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='repositories', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9708,7 +9708,7 @@ class repository(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='repository', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='repository', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -9931,7 +9931,7 @@ class rname(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='rname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='rname', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10014,7 +10014,7 @@ class notes(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='notes', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='notes', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10150,7 +10150,7 @@ class note(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='note', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='note', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10344,7 +10344,7 @@ class text(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='text', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='text', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10435,7 +10435,7 @@ class style(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='style', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='style', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10548,7 +10548,7 @@ class range_(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='range', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='range', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10642,7 +10642,7 @@ class tags(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tags', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tags', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10748,7 +10748,7 @@ class tag(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tag', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tag', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -10875,7 +10875,7 @@ class citations(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citations', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citations', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11055,7 +11055,7 @@ class citation(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citation', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citation', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11340,7 +11340,7 @@ class bookmarks(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='bookmarks', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmarks', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11434,7 +11434,7 @@ class bookmark(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='bookmark', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='bookmark', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11528,7 +11528,7 @@ class namemaps(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='namemaps', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='namemaps', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11626,7 +11626,7 @@ class map(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='map', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='map', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11731,7 +11731,7 @@ class name_formats(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='name-formats', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='name-formats', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11833,7 +11833,7 @@ class format(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='format', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='format', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -11963,7 +11963,7 @@ class daterange(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='daterange', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='daterange', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12115,7 +12115,7 @@ class datespan(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='datespan', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='datespan', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12267,7 +12267,7 @@ class dateval(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='dateval', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='dateval', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12399,7 +12399,7 @@ class datestr(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='datestr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='datestr', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12476,7 +12476,7 @@ class citationref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='citationref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='citationref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12553,7 +12553,7 @@ class sourceref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sourceref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sourceref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12659,7 +12659,7 @@ class eventref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='eventref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='eventref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12820,7 +12820,7 @@ class reporef(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='reporef', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='reporef', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -12951,7 +12951,7 @@ class noteref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='noteref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='noteref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13028,7 +13028,7 @@ class tagref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='tagref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='tagref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13114,7 +13114,7 @@ class page(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='page', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='page', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13200,7 +13200,7 @@ class confidence(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='confidence', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='confidence', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13306,7 +13306,7 @@ class attribute(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='attribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='attribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13453,7 +13453,7 @@ class srcattribute(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='srcattribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='srcattribute', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13552,7 +13552,7 @@ class place(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='place', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='place', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13638,7 +13638,7 @@ class cause(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='cause', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='cause', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13724,7 +13724,7 @@ class description(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='description', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='description', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13813,7 +13813,7 @@ class url(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='url', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='url', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -13964,7 +13964,7 @@ class objref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='objref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='objref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14143,7 +14143,7 @@ class placeref(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='placeref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='placeref', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14286,7 +14286,7 @@ class region(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='region', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='region', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14400,7 +14400,7 @@ class data_item(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='data_item', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='data_item', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14553,7 +14553,7 @@ class lds_ord(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='lds_ord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='lds_ord', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14785,7 +14785,7 @@ class temple(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='temple', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='temple', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14862,7 +14862,7 @@ class status(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='status', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='status', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -14939,7 +14939,7 @@ class sealed_to(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='gramps:', name_='sealed_to', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"', pretty_print=True):
+    def export(self, outfile, level, namespace_='gramps:', name_='sealed_to', namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -15030,7 +15030,7 @@ def parse(inFileName, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"',
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"',
             pretty_print=True)
     return rootObj
 
@@ -15076,7 +15076,7 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.0/"')
+            namespacedef_='xmlns:gramps="http://gramps-project.org/xml/1.7.1/"')
     return rootObj
 
 
