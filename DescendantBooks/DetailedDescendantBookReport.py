@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2011 Matt Keenan <matt.keenan@gmail.com>
+# Copyright (C) 2015 Giansalvo Gusinu <pioggia3@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -113,6 +114,9 @@ class DetailedDescendantBookReport(Report):
         incmates      - Whether to include information about spouses
         incattrs      - Whether to include attributes
         incpaths      - Whether to include the path of descendancy from the start-person to each descendant.
+        incindexnames - Whether to include the index of names at the end of the report.
+        incindexplaces- Whether to include the index of places at the end of the report.
+        incindexdates - Whether to include the index of dates at the end of the report.
         incssign      - Whether to include a sign ('+') before the descendant number in the child-list to indicate a child has succession.
         pid           - The Gramps ID of the center person for the report.
         name_format   - Preferred format to display names
@@ -150,6 +154,9 @@ class DetailedDescendantBookReport(Report):
         self.inc_mates     = get_value('incmates')
         self.inc_attrs     = get_value('incattrs')
         self.inc_paths     = get_value('incpaths')
+        self.inc_index_names = get_value('incindexnames')
+        self.inc_index_of_dates =get_value('incindexdates')
+        self.inc_index_of_places =get_value('incindexplaces')
         self.inc_ssign     = get_value('incssign')
         self.inc_materef   = get_value('incmateref')
         self.filter_option =  menu.get_option_by_name('filter')
@@ -199,7 +206,6 @@ class DetailedDescendantBookReport(Report):
         self.dmates = {}
         self.gen_handles = {}
         self.prev_gen_handles = {}
-
 
     def apply_henry_filter(self,person_handle, index, pid, cur_gen=1):
         if (not person_handle) or (cur_gen > self.max_generations):
@@ -273,6 +279,34 @@ class DetailedDescendantBookReport(Report):
                     self.dnumber[person_handle] = mod_reg_number
                     mod_reg_number += 1
 
+    def __update_index_of_dates(self, date_object, event):
+        """
+        Update index_of_dates
+        """
+        if not event:
+            return
+
+        year = date_object.get_year()
+
+        if year not in self.index_of_dates:
+            self.index_of_dates[year] = {}
+
+        date = "%s" % (date_object) # WARNING : using internal representation of date object, SHOULD USE accessor function
+        self.index_of_dates[year][date] = event
+
+    def __update_index_of_places(self, place, date_object, event):
+        """
+        Update index_of_places
+        """
+        if not event:
+            return
+
+        if place not in self.index_of_places:
+            self.index_of_places[place] = {}
+
+        date = "%s" % (date_object) # WARNING : using internal representation of date object, SHOULD USE accessor function
+        self.index_of_places[place][date] = event
+
     def __update_report_app_ref(self, person_handle, main_handle=None):
         """
         Check main report reference index, add this person to the index
@@ -286,13 +320,13 @@ class DetailedDescendantBookReport(Report):
         if person_handle in self.dnumber:
             # Main descendant in this report
             ref_tup = (self.report_count, self.generation+1, \
-                       self.dnumber[person_handle], False)
+                       self.dnumber[person_handle], False, name)
         elif main_handle is not None:
             if main_handle in self.dnumber:
                 main_person = self.database.get_person_from_handle(main_handle)
                 main_name = main_person.get_primary_name().get_name()
                 ref_tup = (self.report_count, self.generation+1, \
-                           self.dnumber[main_handle], True)
+                           self.dnumber[main_handle], True, name)
 
         if person_handle not in self.report_app_ref:
             self.report_app_ref[person_handle] = []
@@ -318,6 +352,9 @@ class DetailedDescendantBookReport(Report):
             # 2nd run actually generates the report and includes the references
             self.report_app_ref = {}
             self.report_count = 0
+            self.index_of_dates = {}
+            self.index_of_places = {}
+            self.phandle = 0 # person handle used by append_event to retrieve name and references to the current person
             for asc_handle in self.ascendants:
                 if len(self.ascendants) > 1:
                     self.user.step_progress()
@@ -434,6 +471,22 @@ class DetailedDescendantBookReport(Report):
             # Put a page break between reports
             self.doc.page_break()
 
+      
+#TODO add user interface information
+
+        if self.inc_index_names:
+            self.write_index_of_names()
+            self.doc.page_break()
+
+        if self.inc_index_of_dates:
+            self.write_index_of_dates()
+            self.doc.page_break()
+
+        if self.inc_index_of_places:
+            self.write_index_of_places()
+            self.doc.page_break()
+
+
         # Write endnotes at end of all reports
         if self.inc_sources:
             if self.pgbrkenotes:
@@ -444,6 +497,84 @@ class DetailedDescendantBookReport(Report):
 
         if len(self.ascendants) > 1:
             self.user.end_progress()
+
+
+    def write_index_of_places(self):
+        """
+        This function prints the index of places.
+        """
+        self.doc.start_paragraph("DDR-Title")
+        self.doc.write_text_citation("Index of Places")
+        self.doc.end_paragraph()
+
+        sorted_places = sorted(self.index_of_places.keys())
+        for place in sorted_places:            
+            self.doc.start_paragraph("DDR-IndexPlacesPlace")
+            ref_str = "%s" % (place)
+            self.doc.write_text_citation(ref_str)
+            self.doc.end_paragraph()
+        
+            sorted_dates = sorted(self.index_of_places[place].keys())
+            for date in sorted_dates:
+                self.doc.start_paragraph("DDR-IndexPlacesEntry")
+                ref_str = "%s" % (self.index_of_places[place][date])
+                self.doc.write_text_citation(ref_str)
+                self.doc.end_paragraph()
+
+
+    def write_index_of_dates(self):
+        """
+        This function prints the index of dates.
+        """
+        self.doc.start_paragraph("DDR-Title")
+        self.doc.write_text_citation("Index of Dates")
+        self.doc.end_paragraph()
+
+        sorted_year = sorted(self.index_of_dates.keys())
+        for year in sorted_year:            
+            self.doc.start_paragraph("DDR-IndexDatesYear")
+            ref_str = "%s" % (year)
+            self.doc.write_text_citation(ref_str)
+            self.doc.end_paragraph()
+
+            sorted_dates = sorted(self.index_of_dates[year].keys())
+            for date in sorted_dates:
+                self.doc.start_paragraph("DDR-IndexPlacesEntry")
+                ref_str = "%s" % (self.index_of_dates[year][date])
+                self.doc.write_text_citation(ref_str)
+                self.doc.end_paragraph()
+
+    def write_index_of_names(self):
+        """
+        This funciont writes the names in alfabetical order and give reference
+        where the person appears in the reports.
+        """
+        self.doc.start_paragraph("DDR-Title")
+        self.doc.write_text_citation("Index of Names")
+        self.doc.end_paragraph()
+
+        self.doc.start_paragraph("DDR-IndexNamesHeader")
+        ref_str = "Report    Generat. Person    Name"
+        self.doc.write_text_citation(ref_str)
+        self.doc.end_paragraph()
+
+        sorted_phandles = sorted(self.report_app_ref.keys(), key=lambda k: self.report_app_ref[k][0][4])
+        for person_handle in sorted_phandles:
+            
+            first_line_done = False
+            for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
+                if not first_line_done:
+                    self.doc.start_paragraph("DDR-IndexNamesEntry")
+                    ref_str = "%13s %13s %15s    \t%s" \
+                              % (repno, gen, per, name)
+                    self.doc.write_text_citation(ref_str)
+                    self.doc.end_paragraph()
+                if first_line_done:
+                    self.doc.start_paragraph("DDR-IndexNamesEntry")
+                    ref_str = "%13s %13s %15s                 \"  " % (repno, gen, per)
+                    self.doc.write_text_citation(ref_str)
+                    self.doc.end_paragraph()
+                first_line_done = True
 
 #BOOK start
     def write_toc(self):
@@ -517,6 +648,7 @@ class DetailedDescendantBookReport(Report):
 
         person_handle = self.map[key]
         person = self.database.get_person_from_handle(person_handle)
+        self.phandle = person_handle #used by append_event
 
         val = self.dnumber[person_handle]
 
@@ -590,7 +722,6 @@ class DetailedDescendantBookReport(Report):
                 if self.inc_attrs:
                     self.__write_family_attrs(family, first)
 
-
 #BOOK start
     def write_report_ref(self, person, main_person):
         name = self._name_display.display_formal(person)
@@ -608,7 +739,7 @@ class DetailedDescendantBookReport(Report):
         else:
             dnum = "0"
 
-        for repno, gen, per, mate in self.report_app_ref[person_handle]:
+        for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
             if (repno != self.report_count or gen != self.generation+1) or \
                 (repno == self.report_count and gen == self.generation+1 \
                 and per != dnum):
@@ -639,6 +770,49 @@ class DetailedDescendantBookReport(Report):
                     self.doc.write_text_citation(ref_str)
                     self.doc.end_paragraph()
 #BOOK end
+
+    def append_event(self, event_ref, family = False):        
+
+        (repno, gen, per, mate, name) = self.report_app_ref[self.phandle][0] # get first reference to the person
+
+        text = ""
+        event = self.database.get_event_from_handle(event_ref.ref)
+
+        date = self._get_date(event.get_date_object())
+
+        ph = event.get_place_handle()
+        if ph:
+            place = self.database.get_place_from_handle(ph).get_title()
+        else:
+            place = u''
+
+        event_name = self._get_type(event.get_type())
+
+        # add mate's name in case of family events
+        if family == False:
+            text = self._('%(event_name)s of %(name)s ') % {
+                            'event_name' : self._(event_name), 'name' : name }
+        else:
+            mother_name, father_name = self.__get_mate_names(family)
+            text = self._('%(event_name)s of %(name)s and %(mate)s ') % {
+                            'event_name' : self._(event_name), 'name' : father_name, 'mate' : mother_name }
+
+        if date and place:
+            text +=  self._('%(date)s, %(place)s') % { 
+                       'date' : date, 'place' : place }
+        elif date:
+            text += self._('%(date)s') % {'date' : date}
+        elif place:
+            text += self._('%(place)s') % { 'place' : place }
+
+        text += self._('. Ref: %(repno)s %(gen)s %(per)s ') % {
+                        'repno' : repno, 'gen' : gen, 'per' : per }
+
+        if (event.get_date_object().get_year() and self.inc_index_of_dates):
+            self.__update_index_of_dates(event.get_date_object(), text)
+        if (place and self.inc_index_of_places):
+            self.__update_index_of_places(place, event.get_date_object(), text)
+            
 
     def write_event(self, event_ref):
         text = ""
@@ -795,6 +969,7 @@ class DetailedDescendantBookReport(Report):
 
             if not self.inc_materef:
                 # Don't want to just print reference
+                self.phandle = mate_handle
                 self.write_person_info(mate, None)  #BOOK
             else:
                 # Check to see if we've married a cousin
@@ -923,7 +1098,11 @@ class DetailedDescendantBookReport(Report):
                 self.doc.end_paragraph()
                 first = 0
             self.write_event(event_ref)
-            return first
+
+            if (self.inc_index_of_dates or self.inc_index_of_places):
+                self.append_event(event_ref, family)
+
+        return first
 
     def __write_family_attrs(self, family, first):
         """ 
@@ -1045,16 +1224,20 @@ class DetailedDescendantBookReport(Report):
                     })
                 self.doc.end_paragraph()
 
-        if self.inc_events:
+        if (self.inc_events or self.inc_index_of_dates or self.inc_index_of_places):
             for event_ref in person.get_primary_event_ref_list():
-                if first:
-                    self.doc.start_paragraph('DDR-MoreHeader')
-                    self.doc.write_text(self._('More about %(person_name)s:') % { 
-                        'person_name' : self._name_display.display(person) })
-                    self.doc.end_paragraph()
-                    first = 0
-
-                self.write_event(event_ref)
+                if self.inc_events:
+                    if first:
+                        self.doc.start_paragraph('DDR-MoreHeader')
+                        self.doc.write_text(self._('More about %(person_name)s:') % { 
+                            'person_name' : self._name_display.display(person) })
+                        self.doc.end_paragraph()
+                        first = 0
+    
+                    self.write_event(event_ref)
+                    
+                if (self.inc_index_of_dates or self.inc_index_of_places):
+                    self.append_event(event_ref)
                 
         if self.inc_addr:
             for addr in person.get_address_list():
@@ -1281,6 +1464,22 @@ class DetailedDescendantBookOptions(MenuReportOptions):
                             "from the start-person to each descendant."))
         add_option("incpaths", incpaths)
 
+        incindexnames = BooleanOption(_("Include Index of Names"), False)
+        incindexnames.set_help(_("Whether to include the index of Names "
+                            "at the end of the report."))
+        add_option("incindexnames", incindexnames)
+
+        incindexdates = BooleanOption(_("Include index of Dates"), False)
+        incindexdates.set_help(_("Whether to include the index of Dates "
+                            "at the end of the report."))
+        add_option("incindexdates", incindexdates)
+
+        incindexplaces = BooleanOption(_("Include index of Places"), False)
+        incindexnames.set_help(_("Whether to include the index of Places "
+                            "at the end of the report."))
+        add_option("incindexplaces", incindexplaces)
+
+
         # Missing information
         
         add_option = partial(menu.add_option, _("Missing information"))      
@@ -1413,5 +1612,67 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for note detail data.'))
         default_style.add_paragraph_style("DDR-EventDetails", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=12, italic=0, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set_description(_('The style used for the date in the Index of Dates.'))
+        default_style.add_paragraph_style("DDR-IndexDatesYear", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=10, italic=0)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set(lmargin=1.00)
+        para.set_description(_('The style used for the events in the Index of Dates.'))
+        default_style.add_paragraph_style("DDR-IndexDatesEntry", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=12, italic=0, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set_description(_('The style used for the header in the Index of Names.'))
+        default_style.add_paragraph_style("DDR-IndexNamesHeader", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=10)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set_description(_('The style used for the references in the Index of Names.'))
+        default_style.add_paragraph_style("DDR-IndexNamesEntry", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=12, italic=0, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set_description(_('The style used for the header in the Index of Places.'))
+        default_style.add_paragraph_style("DDR-IndexPlacesPlace", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=10)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set(lmargin=1.00)
+        para.set_description(_('The style used for the references in the Index of Places.'))
+        default_style.add_paragraph_style("DDR-IndexPlacesEntry", para)
+
 
         endnotes.add_endnote_styles(default_style)
