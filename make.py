@@ -48,7 +48,7 @@ import os
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
-    GRAMPSPATH = "../../.."
+    GRAMPSPATH = "../master"
 
 if (("LANGUAGE" not in os.environ) or 
     (not os.environ["LANGUAGE"].startswith("en"))):
