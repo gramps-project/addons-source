@@ -24,7 +24,25 @@ Run a query on the tables
 """
 
 from gramps.gen.simple import SimpleAccess, SimpleDoc
-from gramps.gui.plug.quick import QuickTable
+try:
+    quack
+    from gramps.gui.plug.quick import QuickTable
+except:
+    # For testing framework
+    class QuickTable(object):
+        def __init__(self, database):
+            self.db = database
+            self.data = []
+            self.column_labels = []
+            self.links = []
+        def rows(self, *cols, **kwargs):
+            self.data.append(cols)
+            self.links.append(kwargs.get("link", None))
+        def columns(self, *cols):
+            self.column_labels = cols[:]
+        def write(self, document):
+            pass
+
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
