@@ -10,6 +10,7 @@ import unittest
 import os
 
 dbstate = DbState()
+gramps_path = os.environ["GRAMPS_RESOURCES"]
 
 class ExportSQLTestCase (unittest.TestCase):
 
@@ -22,7 +23,7 @@ class ExportSQLTestCase (unittest.TestCase):
         self.database1.write_version("/tmp/bsddb_exportsql_1")
         self.database1.load("/tmp/bsddb_exportsql_1")
 
-        importXML(self.database1, "../master/example/gramps/example.gramps", User())
+        importXML(self.database1, gramps_path + "/example/gramps/example.gramps", User())
         exportSQL(self.database1, "/tmp/exported1.sql")
 
         self.database2 = dbstate.make_database("bsddb")
