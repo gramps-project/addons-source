@@ -30,4 +30,4 @@ install:
 
 script:
     -  mkdir -p /home/travis/.gramps/grampsdb/
-    -  PYTHONPATH=../gramps nosetests3 
+    -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 
