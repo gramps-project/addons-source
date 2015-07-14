@@ -1229,20 +1229,18 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def iter_person_handles(self):
         self.dbapi.execute("SELECT handle FROM person;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_families(self):
         return (Family.create(data[1]) for data in self.get_family_cursor())
 
     def iter_family_handles(self):
         self.dbapi.execute("SELECT handle FROM family;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def get_tag_from_name(self, name):
         self.dbapi.execute("""select handle from tag where order_by = ?;""",
@@ -2529,20 +2527,18 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def iter_citation_handles(self):
         self.dbapi.execute("SELECT handle FROM citation;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_citations(self):
         return (Citation.create(data[1]) for data in self.get_citation_cursor())
 
     def iter_event_handles(self):
         self.dbapi.execute("SELECT handle FROM event;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_events(self):
         return (Event.create(data[1]) for data in self.get_event_cursor())
@@ -2552,27 +2548,24 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def iter_media_object_handles(self):
         self.dbapi.execute("SELECT handle FROM media;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_note_handles(self):
         self.dbapi.execute("SELECT handle FROM note;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_notes(self):
         return (Note.create(data[1]) for data in self.get_note_cursor())
 
     def iter_place_handles(self):
         self.dbapi.execute("SELECT handle FROM place;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_places(self):
         return (Place.create(data[1]) for data in self.get_place_cursor())
@@ -2582,27 +2575,24 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def iter_repository_handles(self):
         self.dbapi.execute("SELECT handle FROM repository;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_source_handles(self):
         self.dbapi.execute("SELECT handle FROM source;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_sources(self):
         return (Source.create(data[1]) for data in self.get_source_cursor())
 
     def iter_tag_handles(self):
         self.dbapi.execute("SELECT handle FROM tag;")
-        row = self.dbapi.fetchone()
-        while row:
+        rows = self.dbapi.fetchall()
+        for row in rows:
             yield row[0]
-            row = self.dbapi.fetchone()
 
     def iter_tags(self):
         return (Tag.create(data[1]) for data in self.get_tag_cursor())
