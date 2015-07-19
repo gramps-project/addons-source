@@ -293,9 +293,9 @@ class RepositoryReportAlt(Report):
         """
 
         note = self.database.get_note_from_handle(note_handle)
-
-        self.doc.write_styled_note(note.get_styledtext(),
-                                           note.get_format(), 'REPO-Note')
+        if note:
+            self.doc.write_styled_note(note.get_styledtext(),
+                                       note.get_format(), 'REPO-Note')
 
     def __write_referenced_media(self, photo, media_handle):
         """
