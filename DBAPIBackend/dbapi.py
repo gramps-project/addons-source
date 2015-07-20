@@ -1209,6 +1209,11 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
             media = MediaObject.create(self._get_raw_media_data(handle))
         return media
 
+    def get_object_from_gramps_id(self, gramps_id):
+        if gramps_id in self.media_id_map:
+            return MediaObject.create(self.media_id_map[gramps_id])
+        return None
+
     def get_tag_from_handle(self, handle):
         if isinstance(handle, bytes):
             handle = str(handle, "utf-8")
