@@ -111,12 +111,14 @@ class Participants(Gramplet, DbGUIElement):
         role = self.get_role(family, event_handle)
 
         mother_handle = family.get_mother_handle()
-        mother = self.dbstate.db.get_person_from_handle(mother_handle)
-        self.add_person(mother, role)
+        if mother_handle:
+            mother = self.dbstate.db.get_person_from_handle(mother_handle)
+            self.add_person(mother, role)
 
         father_handle = family.get_father_handle()
-        father = self.dbstate.db.get_person_from_handle(father_handle)
-        self.add_person(father, role)
+        if father_handle:
+            father = self.dbstate.db.get_person_from_handle(father_handle)
+            self.add_person(father, role)
 
     def add_person(self, person, role):
         """
