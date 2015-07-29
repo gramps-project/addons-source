@@ -128,7 +128,8 @@ class Participants(Gramplet, DbGUIElement):
         name = displayer.display(person)
         spouses = self.get_spouses(person)
         birth = get_birth_or_fallback(self.dbstate.db, person)
-        self.callman.register_handles({'event': [birth.get_handle()]})
+        if birth:
+            self.callman.register_handles({'event': [birth.get_handle()]})
         birth_date, birth_sort, birth_place = self.get_date_place(birth)
         self.model.add((person.get_handle(),
                         name,
