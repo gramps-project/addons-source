@@ -186,7 +186,10 @@ def get_census_id(source):
     """
     Return the census id attach to the given source.
     """
-    return source.get_data_map().get(CENSUS_TAG)
+    for attr in source.get_attribute_list():
+        if str(attr.get_type()) == CENSUS_TAG:
+            return attr.get_value()
+    return None
             
 def get_census_citation(db, event):
     """
