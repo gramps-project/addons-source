@@ -21,12 +21,15 @@
 
 """Tools/Utilities/Media Verify"""
 
+from __future__ import unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # Python modules
 #
 #-------------------------------------------------------------------------
 import os
+import sys
 import io
 import hashlib
 
@@ -47,7 +50,6 @@ from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter, open_file_with_default_application
 from gramps.gen.db import DbTxn
-from gramps.gen.lib import Attribute, AttributeType
 from gramps.gen.utils.file import media_path_full, relative_path
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditMedia
@@ -250,8 +252,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
     def generate_md5(self, button):
         """
-        Generate md5 hashes for media files and attach them as attributes to
-        media objects.
+        Generate md5 hashes for media files.
         """
         self.clear_models()
 
@@ -276,17 +277,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     progress.step()
                     continue
 
-                for attr in media.get_attribute_list():
-                    if str(attr.get_type()) == 'md5':
-                        media.remove_attribute(attr)
-                        break
-
-                attr = Attribute()
-                attr.set_type(AttributeType('md5'))
-                attr.set_value(md5sum)
-
-                media.add_attribute(attr)
-                
+                media.set_checksum(md5sum)
                 self.db.commit_media_object(media, trans)
 
                 progress.step()
@@ -335,6 +326,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     continue
 
                 rel_path = relative_path(full_path, media_path)
+                if sys.version_info[0] < 3:
+                    rel_path = rel_path.decode(sys.getfilesystemencoding())
                 if md5sum in all_files:
                     all_files[md5sum].append(rel_path)
                 else:
@@ -351,12 +344,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
         for handle in self.db.get_media_object_handles():
             media = self.db.get_object_from_handle(handle)
 
-            md5sum = None
-            for attr in media.get_attribute_list():
-                if str(attr.get_type()) == 'md5':
-                    md5sum = attr.get_value()
-                    in_gramps.append(md5sum)
-                    break
+            md5sum = media.get_checksum()
+            in_gramps.append(md5sum)
 
             # Moved files
             gramps_path = media.get_path()
