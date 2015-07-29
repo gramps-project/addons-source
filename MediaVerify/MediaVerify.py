@@ -21,15 +21,12 @@
 
 """Tools/Utilities/Media Verify"""
 
-from __future__ import unicode_literals
-
 #-------------------------------------------------------------------------
 #
 # Python modules
 #
 #-------------------------------------------------------------------------
 import os
-import sys
 import io
 import hashlib
 
@@ -326,8 +323,6 @@ class MediaVerify(tool.Tool, ManagedWindow):
                     continue
 
                 rel_path = relative_path(full_path, media_path)
-                if sys.version_info[0] < 3:
-                    rel_path = rel_path.decode(sys.getfilesystemencoding())
                 if md5sum in all_files:
                     all_files[md5sum].append(rel_path)
                 else:
@@ -342,6 +337,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
         in_gramps = []
         for handle in self.db.get_media_object_handles():
+            handle = handle.decode('utf-8')
             media = self.db.get_object_from_handle(handle)
 
             md5sum = media.get_checksum()
