@@ -28,6 +28,7 @@
 #------------------------------------------------------------------------
 from gramps.gen.datehandler import get_date
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import EventType
 from gramps.gen.plug.menu import BooleanOption, PersonOption, EnumeratedListOption
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
@@ -169,10 +170,8 @@ class CensusReport(Report):
         self.write_heading(_("Citation:"), citation.get_page())
 
         # Address
-        if place:
-            self.write_heading(_("Address:"), place.get_display_info()[0])
-        else:
-            self.write_heading(_("Address:"), "")
+        place_title = place_displayer.display(self.database, place)
+        self.write_heading(_("Address:"), place_title)
 
         # Blank line
         self.write_heading("", "")

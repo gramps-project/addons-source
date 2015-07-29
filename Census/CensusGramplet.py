@@ -39,6 +39,7 @@ from gi.repository import Gdk
 from gramps.gen.plug import Gramplet
 from gramps.gui.dbguielement import DbGUIElement
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import get_date, displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
@@ -179,14 +180,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
                 event = db.get_event_from_handle(event_ref.ref)
                 if event:
                     if event.get_type() == EventType.CENSUS:
-
-                        p_handle = event.get_place_handle()
-                        if p_handle:
-                            place = db.get_place_from_handle(p_handle)
-                            place_text = place.get_title()
-                        else:
-                            place_text = ''
-                            
+                        place_text = place_displayer.display_event(db, event)
                         citation = get_census_citation(db, event)
                         if citation:
                             source_handle = citation.get_reference_handle()
@@ -256,6 +250,7 @@ class CensusEditor(ManagedWindow):
 
         self.place_field = PlaceEntry(self.dbstate, self.uistate, self.track,
                                       self.widgets['place_text'],
+                                      self.widgets['place_event_box'],
                                       self.event.set_place_handle,
                                       self.event.get_place_handle,
                                       self.widgets['place_add'],
@@ -359,8 +354,12 @@ class CensusEditor(ManagedWindow):
         
         place_text = Gtk.Label()
         place_text.set_alignment(0.0, 0.5)
-        tab.attach(place_text, 1, 2, 3, 4)
         self.widgets['place_text'] = place_text
+
+        place_event_box = Gtk.EventBox()
+        place_event_box.add(place_text)
+        tab.attach(place_event_box, 1, 2, 3, 4)
+        self.widgets['place_event_box'] = place_event_box
 
         image = Gtk.Image()
         image.set_from_stock(Gtk.STOCK_INDEX, Gtk.IconSize.BUTTON)
