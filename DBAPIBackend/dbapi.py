@@ -253,6 +253,9 @@ class Map(object):
     def keys(self):
         return self.table.funcs[self.keys_func]()
 
+    def get(self, key):
+        return self[key]
+
     def values(self):
         return self.table.funcs["cursor_func"]()
 
