@@ -30,6 +30,7 @@
 #
 #------------------------------------------------------------------------
 import gramps.gen.display.name
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import Date, Event, EventType, FamilyRelType, Name
 from gramps.gen.lib import StyledText, StyledTextTag, StyledTextTagType
 import gramps.gen.plug.docgen
@@ -944,7 +945,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
             if place.private and self.protect_private:
                 place_text = ""
             else:
-                place_text = place.get_title()
+                place_text = place_displayer.display(self.database, place)
         elif self.missinginfo:
             place_text = "____________"
         else:

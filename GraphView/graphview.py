@@ -61,6 +61,7 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gui.editors import EditPerson, EditFamily
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
+from gramps.gen.display.place import displayer as place_displayer
 
 try:
     import cairo
@@ -1338,6 +1339,7 @@ class DotGenerator(object):
             empty string
         """
         if event:
+            place_title = place_displayer.display_event(self.database, event)
             if event.get_date_object().get_year_valid():
                 if self.show_full_dates:
                     rtrn = '%s' % gramps.gen.datehandler.get_date(event)
@@ -1345,16 +1347,12 @@ class DotGenerator(object):
                     rtrn = '%i' % event.get_date_object().get_year()
                 # Shall we add the place?
                 if self.show_places:
-                    place_handle = event.get_place_handle()
-                    place = self.database.get_place_from_handle(place_handle)
-                    if place and place.get_title():
-                        rtrn += ' - %s' % place.get_title()
+                    if place_title:
+                        rtrn += ' - %s' % place_title
                 return rtrn
             else:
-                place_handle = event.get_place_handle()
-                place = self.database.get_place_from_handle(place_handle)
-                if place and place.get_title():
-                    return place.get_title()
+                if place_title:
+                    return place_title
         return ''
 
     def add_link(self, id1, id2, style="", head="", tail="", comment=""):

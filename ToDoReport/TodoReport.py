@@ -30,6 +30,7 @@
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.plug import docgen
 import gramps.gen.datehandler
 from gramps.gen.filters import GenericFilterFactory
@@ -406,7 +407,7 @@ class TodoReport(Report):
 
         self.doc.start_cell('TR-TableCell', 3)
         self.doc.start_paragraph('TR-Normal')
-        self.doc.write_text(place.get_title())
+        self.doc.write_text(place_displayer.display(self.database, place))
         self.doc.end_paragraph()
         self.doc.end_cell()
 
@@ -462,7 +463,7 @@ class TodoReport(Report):
         """
         p_handle = group_entry[_REF_HANDLE_POS]
         place = self.database.get_place_from_handle(p_handle)
-        title = place.get_title()
+        title = place_displayer.display(self.database, place)
         return title.upper()
 
 #------------------------------------------------------------------------

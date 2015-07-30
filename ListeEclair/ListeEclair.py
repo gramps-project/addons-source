@@ -43,6 +43,7 @@ from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
 import gramps.gen.datehandler
 from gramps.gen.sort import Sort
 from gramps.gen.display.name import displayer as _nd
+from gramps.gen.display.place import displayer as _pd
 from gramps.gui.utils import ProgressMeter
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -131,12 +132,13 @@ class ListeEclairReport(Report):
         This procedure writes out the details of a single place
         """
         place = self.database.get_place_from_handle(handle)
-        location = place.get_main_location()
+        location = get_main_location(self.database, place)
 
-        city = location.get_city()
+        city = location.get(PlaceType.CITY)
 
-        if city == '' and place.get_title():
-            city = place.get_title()
+        place_title = _pd.display(self.database, place)
+        if city == '' and place_title:
+            city = place_title
 
         return city
 

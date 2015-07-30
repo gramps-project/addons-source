@@ -36,6 +36,7 @@ import string
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import Date, Event, EventType, FamilyRelType, Name
 from gramps.gen.lib import StyledText, StyledTextTag, StyledTextTagType
 from gramps.gen.plug import docgen
@@ -784,8 +785,8 @@ def _Event_get_place_text(event, database, placeholder=False):
     place_handle = event.get_place_handle()
 
     if place_handle:
-        place = database.get_place_from_handle(place_handle)
-        text = _("in %(place)s") % {'place': place.get_title()}
+        place_title = place_displayer.display_event(database, event)
+        text = _("in %(place)s") % {'place': place_title}
     elif placeholder and event.get_type() in _Event_needs_date_place:
         text = _("in %(place)s") % {'place': "__________"}
     else:
