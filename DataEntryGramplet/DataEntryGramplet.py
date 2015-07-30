@@ -26,6 +26,7 @@
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.datehandler import get_date, parser
 from gramps.gen.errors import WindowActiveError
@@ -161,12 +162,9 @@ class DataEntryGramplet(Gramplet):
             if birth:
                 sdate = get_date(birth)
                 birth_text += sdate + " "
-                place_handle = birth.get_place_handle()
-                if place_handle:
-                    place = self.dbstate.db.get_place_from_handle(place_handle)
-                    place_text = place.get_title()
-                    if place_text:
-                        birth_text += _("in") + " " + place_text
+                place_text = place_displayer.display_event(self.dbstate.db, birth)
+                if place_text:
+                    birth_text += _("in") + " " + place_text
 
             self.de_widgets["APBirth"].set_text(birth_text)
             # Death:
@@ -175,12 +173,9 @@ class DataEntryGramplet(Gramplet):
             if death:
                 sdate = get_date(death)
                 death_text += sdate + " "
-                place_handle = death.get_place_handle()
-                if place_handle:
-                    place = self.dbstate.db.get_place_from_handle(place_handle)
-                    place_text = place.get_title()
-                    if place_text:
-                        death_text += _("in") + " " + place_text
+                place_text = place_displayer.display_event(self.dbstate.db, death)
+                if place_text:
+                    death_text += _("in") + " " + place_text
             self.de_widgets["APDeath"].set_text(death_text)
             family_list = active_person.get_family_handle_list()
             if len(family_list) > 0:
@@ -342,7 +337,8 @@ class DataEntryGramplet(Gramplet):
         place_list = self.dbstate.db.get_place_handles()
         for place_handle in place_list:
             place = self.dbstate.db.get_place_from_handle(place_handle)
-            if place.get_title().strip() == place_name:
+            place_title = place_displayer.display(self.dbstate.db, place)
+            if place_title.strip() == place_name:
                 return (0, place) # (old, object)
         place = Place()
         place.set_title(place_name)

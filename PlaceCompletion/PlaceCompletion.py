@@ -60,6 +60,7 @@ from gramps.gen.filters.rules.place import *
 from gramps.gui.dialog import OkDialog, WarningDialog, ErrorDialog
 from gramps.gen.utils.place import conv_lat_lon
 from gramps.gen.utils.location import get_main_location
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import WindowActiveError
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -229,7 +230,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         The special groupname #latlon is allowed, returning lat/lon
         '''
         if group == ('title'):
-            return place.get_title()
+            return place_displayer.display(self.db, place)
         elif group == ('latitude'):
             return place.get_latitude()
         elif group == ('longitude'):
@@ -505,8 +506,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
     
     def set_parent_model_text(self, id, place) :
         text = ''
-        if place.get_title() :
-            text += place.get_title()
+        place_title = place_displayer.display(self.db, place)
+        if place_title:
+            text += place_title
         loc = get_main_location(self.db, place)
         city = loc.get(PlaceType.CITY, '')
         state = loc.get(PlaceType.STATE, '')
@@ -657,7 +659,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 #do the action on the place, this will set the new lat/lon
                 if action[1] != None :
                     place = self.group_set(place, action[0], action[1] )
-            descr = place.get_title()
+            descr = place_displayer.display(self.db, place)
             longitude = place.get_longitude()
             latitude = place.get_latitude()
             latitude,longitude = conv_lat_lon(latitude,longitude,"D.D8")
@@ -870,18 +872,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         state = loc.get(PlaceType.STATE, '').strip()
         parish = loc.get(PlaceType.PARISH, '').strip()
         county = loc.get(PlaceType.COUNTY, '').strip()
+        place_title = place_displayer.display(self.db, place)
         if re.search(('CITY'), pattern) :
             if city == '' :
                 return valoud, valnew, valaction, place
             pattern = re.sub(('CITY'), city, pattern)
         if re.search(('TITLEBEGIN'), pattern) :
-            tit = place.get_title().strip()
+            tit = place_title.strip()
             titb= tit.split(',')[0].strip()
             if titb == '' :
                 return valoud, valnew, valaction, place
             pattern = re.sub(('TITLEBEGIN'), titb, pattern)
         if re.search(('TITLE'), pattern) :
-            if place.get_title().strip() == '':
+            if place_title.strip() == '':
                 return valoud, valnew, valaction, place
             pattern = re.sub(('TITLE'), loc.get_title().strip(), pattern)
         if re.search(('STATE'), pattern):
@@ -1017,8 +1020,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         state = loc.get(PlaceType.STATE, '')
         country = loc.get(PlaceType.COUNTRY, '')
         pcode = place.get_code()
+        place_title = place_displayer.display(self.db, place)
+
         if custom != '' and self.construct_title_custom(place, custom):
-            valoud.append(place.get_title())
+            valoud.append(place_title)
             new = self.construct_title_custom(place, custom)
             valnew.append(new)
             valaction.append([('title'),new])
@@ -1027,7 +1032,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif type == "None" :
             pass
         elif type == "CS" :
-            valoud.append(place.get_title())
+            valoud.append(place_title)
             new = city
             if state:
                 new += ', ' + state
@@ -1037,7 +1042,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             place = self.group_set(place, ('title'),new)
         elif type == "CZC" :
             # City,PostalCode,Country
-            valoud.append(place.get_title())
+            valoud.append(place_title)
             new = city + ',' + pcode + ',' + country
             valnew.append(new)
             valaction.append([('title'),new])
@@ -1045,7 +1050,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             place = self.group_set(place, ('title'),new)
         elif type == "CSLPZC" :
             # City[(Street;Locality;Parish)],PostalCode,Country
-            valoud.append(place.get_title())
+            valoud.append(place_title)
             address  = ''
             if street or locality or parish:
                 address = '(' + street + ';' + locality + ';' + parish + ')'
@@ -1055,7 +1060,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             #do the action in memory
             place = self.group_set(place, ('title'),new)
         elif type == "T1CS" :
-            old = place.get_title()
+            old = place_title
             valoud.append(old)
             old = old.split(',')[0]
             new = city
@@ -1068,7 +1073,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             #do the action in memory
             place = self.group_set(place, ('title'),new)
         elif type == "T1CCSC" :
-            old = place.get_title()
+            old = place_title
             valoud.append(old)
             old = old.split(',')[0]
             new = city
@@ -1089,7 +1094,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             #do the action in memory
             place = self.group_set(place, ('title'),new)
         elif type == "T1CCCSC" :
-            old = place.get_title()
+            old = place_title
             valoud.append(old)
             old = old.split(',')[0]
             old = old.split(' - ')[0]

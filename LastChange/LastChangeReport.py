@@ -35,6 +35,7 @@ import time
 #
 #------------------------------------------------------------------------
 import gramps.gen.datehandler
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import ReportError
 from gramps.gen.plug import docgen
 from gramps.gen.plug.menu import BooleanListOption
@@ -239,7 +240,7 @@ class LastChangeReport(Report):
                 place = self.database.get_place_from_handle(handle)
                 if place is not None:
                     self._table_row(place.gramps_id,
-                                    place.get_title(),
+                                    place_displayer.display(self.database, place),
                                     self._convert_date(place.change))
             self._table_end()
 

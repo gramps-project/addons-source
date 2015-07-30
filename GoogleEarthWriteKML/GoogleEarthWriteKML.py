@@ -50,6 +50,7 @@ from gramps.gui.utils import open_file_with_default_application
 from gramps.gen.utils.file import search_for, conv_to_unicode
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.lib import PlaceType
+from gramps.gen.display.place import displayer as place_displayer
 
 
 # Check i zip is installed
@@ -225,7 +226,7 @@ class GoogleEarthService(MapService):
             if latitude == None or longitude == None:
                 continue
             if not descr:
-                descr = place.get_title()
+                descr = place_displayer.display(self.database, place)
             location = get_main_location(self.database, place)
             parish_descr = location.get(PlaceType.PARISH)
             if parish_descr == None:

@@ -65,6 +65,7 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.mime import get_description
 from gramps.gen.datehandler import get_date, displayer
 from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.sort import Sort
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
 from gramps.gen.utils.lds import TEMPLES
@@ -577,8 +578,9 @@ class PersonEverythingReport(Report):
                 place_handle = o.get_reference_handle()
             place = self.database.get_place_from_handle(place_handle)
             if place:
+                place_title = place_displayer.display(self.database, place)
                 self.print_header(level, _("Place"), place.get_gramps_id(),
-                                  _("Place Title"), place.get_title(),
+                                  _("Place Title"), place_title,
                                   privacy=place.get_privacy(),
                                   ref=place)
                 self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
@@ -734,14 +736,12 @@ class PersonEverythingReport(Report):
     def __date_place(self, event):
         if event:
             date = get_date(event)
-            place_handle = event.get_place_handle()
-            if place_handle:
-                place = self.database.get_place_from_handle(
-                    place_handle).get_title()
+            place_title = place_displayer.display_event(self.database, event)
+            if place_title:
                 return("%(event_abbrev)s %(date)s - %(place)s" % {
                     'event_abbrev': event.type.get_abbreviation(),
                     'date' : date,
-                    'place' : place,
+                    'place' : place_title,
                     })
             else:
                 return("%(event_abbrev)s %(date)s" % {

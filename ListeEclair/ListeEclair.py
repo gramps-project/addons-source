@@ -45,6 +45,7 @@ from gramps.gen.sort import Sort
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.lib import PlaceType
 from gramps.gen.display.name import displayer as _nd
+from gramps.gen.display.place import displayer as _pd
 from gramps.gui.utils import ProgressMeter
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -137,8 +138,9 @@ class ListeEclairReport(Report):
         
         city = location.get(PlaceType.CITY)
         
-        if city == '' and place.get_title():
-            city = place.get_title()
+        place_title = _pd.display(self.database, place)
+        if city == '' and place_title:
+            city = place_title
             
         return city
 
