@@ -19,7 +19,7 @@
 register(GRAMPLET,
          id="DateCalculator",
          name=_("Date Calculator"),
-         description=_(""),
+         description=_("Useful for date math calculations"),
          status=STABLE,
          version = '0.0.2',
          fname="DateCalculator.py",
