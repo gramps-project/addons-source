@@ -31,6 +31,7 @@ import os
 import logging
 import shutil
 import bisect
+import ast
 
 #------------------------------------------------------------------------
 #
@@ -2294,9 +2295,15 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
 
     def close(self):
         if self._directory:
+            # This is just a dummy file to indicate last modified time of the
+            # database for gramps.cli.clidbman:
             filename = os.path.join(self._directory, "meta_data.db")
             touch(filename)
             # Save metadata
+            self.set_metadata('name_formats', self.name_formats)
+            self.set_metadata('researcher', self.owner)
+
+            # Bookmarks
             self.set_metadata('bookmarks', self.bookmarks.get())
             self.set_metadata('family_bookmarks', self.family_bookmarks.get())
             self.set_metadata('event_bookmarks', self.event_bookmarks.get())
@@ -2748,6 +2755,10 @@ class DBAPI(DbWriteBase, DbReadBase, UpdateCallback, Callback):
                                   name_group_name ON name_group (name(50)); 
         """)
         # Load metadata
+        self.name_formats = self.get_metadata('name_formats')
+        self.owner = self.get_metadata('researcher', default=Researcher())
+
+        # Load bookmarks
         self.bookmarks.set(self.get_metadata('bookmarks'))
         self.family_bookmarks.set(self.get_metadata('family_bookmarks'))
         self.event_bookmarks.set(self.get_metadata('event_bookmarks'))

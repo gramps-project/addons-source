@@ -20,12 +20,15 @@
 
 register(DATABASE, 
          id    = 'dbapi',
-         name  = _("DB-API 2.0"),
-         name_accell  = _("DB-_API 2.0"),
+         name  = _("DB-API 2.0 Database Backend"),
+         name_accell  = _("DB-_API 2.0 Database Backend"),
          description =  _("DB-API 2.0 Database Backend"),
-         version = '1.0.17',
+         version = '1.0.18',
          gramps_target_version = "5.0",
          status = STABLE,
          fname = 'dbapi.py',
          databaseclass = 'DBAPI',
-     )
+         authors=['Doug Blank'],
+         authors_email=["doug.blank@gmail.com"],
+         help_url = "DB-API_2.0_Database_Backend",
+)
