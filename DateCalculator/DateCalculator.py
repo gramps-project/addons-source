@@ -167,9 +167,11 @@ class DateCalculator(Gramplet):
     def clear_clicked(self, obj):
         self.entry1.set_text("")
         self.entry2.set_text("")
-        self.result.set_text(_("Enter an expression in the entries above and click Calculate."
-                               " An expression can be:\n\n"
-                               "1. a valid gramps date\n"
-                               "2. a positive or negative number (represents years)\n"
-                               "3. a positive or negative tuple (years, months, days)\n"
-                           ))
+        self.result.set_text(
+            _("Enter an expression in the entries above and click Calculate.\n\n"
+              "An expression can be:\n\n"
+              "1. a valid Gramps date\n"
+              "2. a positive or negative number, representing years\n"
+              "3. a positive or negative tuple, representing (years, months, days)\n\n"
+              "Note that at least one expression must be a date."
+          ))
