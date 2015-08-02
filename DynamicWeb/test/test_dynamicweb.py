@@ -36,9 +36,9 @@ import copy, re, os, os.path, subprocess, sys, traceback, locale, shutil, time, 
 # os.environ["LANGUAGE"] = "en_US"
 # os.environ["LANG"] = "en_US.UTF-8"
 
-user_path = os.environ["GRAMPSHOME"]
-if (not os.path.exists(user_path)): raise Exception("User path GRAMPSHOME not found")
-plugin_path = "."
+user_path = os.environ["GRAMPS_RESOURCES"]
+if (not os.path.exists(user_path)): raise Exception("User path GRAMPS_RESOURCES not found")
+plugin_path = ".."
 sys.path.append(plugin_path)
 
 gramps_path = os.environ["GRAMPS_RESOURCES"]
@@ -48,8 +48,8 @@ sys.path.append(gramps_path)
 if sys.version_info[0] < 3:
     reload(sys)
     sys.setdefaultencoding('utf8')
-from dynamicweb import *
-from dynamicweb import _
+from ..dynamicweb import *
+from ..dynamicweb import _
 
 
 default_options = {
