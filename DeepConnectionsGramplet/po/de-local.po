@@ -114,7 +114,7 @@ msgstr "Suche nach Beziehung zwischen\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:184
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Hauptpperson) und\n"
+msgstr "  <b>%s</b> (Hauptperson) und\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-format
