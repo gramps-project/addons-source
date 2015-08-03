@@ -224,11 +224,7 @@ class ImportGramplet(Gramplet):
         self.uistate.push_message(self.dbstate, _("Importing Text..."))
         database = self.dbstate.db
         ifile = StringIO(text)
-        if text.startswith(("Person,Surname,Given", "%s,%s,%s" %
-                            (_("Person"), _("Surname"), _("Given")))):
-            parser = AtomicCSVParser(database)
-            parser.parse(ifile)
-        elif text.startswith("0 HEAD"):
+        if text.startswith("0 HEAD"):
             raise NotImplementedError
         elif text.startswith("BEGIN:VCARD"):
             parser = AtomicVCardParser(database)
@@ -250,8 +246,12 @@ class ImportGramplet(Gramplet):
                 import traceback
                 traceback.print_exc()
         else:
-            ErrorDialog(_("Can't determine type of import"))
-            message = _("Import failed")
+            try:
+                parser = AtomicCSVParser(database)
+                parser.parse(ifile)
+            except:
+                ErrorDialog(_("Can't determine type of import"))
+                message = _("Import failed")
         # FIXME: allow file:/// imports as well
         self.uistate.set_busy_cursor(0)
         self.uistate.progress.hide()
