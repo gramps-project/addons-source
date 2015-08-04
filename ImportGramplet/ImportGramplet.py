@@ -56,8 +56,8 @@ class AtomicCSVParser(CSVParser):
     Class that imports CSV files with an ordinary transaction so that the
     import is atomic and can be undone.
     """
-    def __init__(self, database, callback=None):
-        CSVParser.__init__(self, database, callback)
+    def __init__(self, database, user=None):
+        CSVParser.__init__(self, database, user)
 
     def parse(self, filehandle):
         """
@@ -67,7 +67,7 @@ class AtomicCSVParser(CSVParser):
         """
         data = self.read_csv(filehandle)
         with DbTxn(_("CSV import"), self.db, batch=False) as self.trans:
-            self._parse_csv_data(data)
+            self._parse_csv_data(data, step=lambda: None)
 
 #------------------------------------------------------------------------
 #
