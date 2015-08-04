@@ -585,7 +585,7 @@ class PersonEverythingReport(Report):
                 self.doc.start_bold()
                 self.doc.write_text(_("Name") + " : ")
                 self.doc.end_bold()
-                self.doc.write_text(place.get_name())
+                self.doc.write_text(place.get_name().get_value())
                 self.doc.start_bold()
                 self.doc.write_text(" " + _("Type") + " : ")
                 self.doc.end_bold()
@@ -601,7 +601,7 @@ class PersonEverythingReport(Report):
                     self.doc.start_bold()
                     self.doc.write_text(_("Alternative Name") + " : ")
                     self.doc.end_bold()
-                    self.doc.write_text(name)
+                    self.doc.write_text(name.get_value())
                     self.doc.end_paragraph()
 
                 if place.get_longitude() or place.get_latitude():
