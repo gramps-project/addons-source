@@ -27,7 +27,7 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-from cgi import escape
+from html import escape
 import math
 import os
 import pickle
@@ -120,7 +120,7 @@ class _PersonWidgetBase(Gtk.DrawingArea):
     def cb_drag_begin(self, widget, data):
         """Set up some inital conditions for drag. Set up icon."""
         self.in_drag = True
-        self.drag_source_set_icon_stock('gramps-person')
+        self.drag_source_set_icon_name('gramps-person')
 
     def cb_drag_end(self, widget, data):
         """Set up some inital conditions for drag. Set up icon."""
@@ -595,7 +595,7 @@ class HtreePedigreeView(NavigationView):
         event_box.connect("button-release-event", self.cb_bg_button_release)
         #Signal for controll motion-notify when left mouse button pressed
         event_box.connect("motion-notify-event", self.cb_bg_motion_notify_event)
-        self.scrolledwindow.add_with_viewport(event_box)
+        self.scrolledwindow.add(event_box)
 
         self.table = Gtk.Grid()
         # force LTR layout of the tree, even though the text might be RTL!
@@ -1046,7 +1046,7 @@ class HtreePedigreeView(NavigationView):
                     rela = lst[2*i+1][1]
                 line = LineWidget2(1, rela, self.tree_direction)
 
-                if lst[i] and lst[i][2]:
+                if lst[((i+1) // 2) - 1] and lst[((i+1) // 2) - 1][2]:
                     # Required for popup menu
                     line.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
                     line.connect("button-press-event",
@@ -1128,7 +1128,7 @@ class HtreePedigreeView(NavigationView):
                 label.set_justify(Gtk.Justification.LEFT)
                 label.set_use_markup(True)
                 label.set_line_wrap(True)
-                label.set_alignment(0.1, 0.5)
+                label.set_halign(Gtk.Align.START)
                 if self.tree_style in [0, 2]:
                     x_pos = (1 + _width) * (level + 1) + 1
                     y_pos = _delta // 2 + offset * _delta -1 + _height // 2
@@ -1256,7 +1256,7 @@ class HtreePedigreeView(NavigationView):
                                                 vadjustment=None)
                         frame.set_shadow_type(Gtk.ShadowType.NONE)
                         frame.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
-                        frame.add_with_viewport(label)
+                        frame.add(label)
                         table_widget.attach(frame, x_pos, y_pos, 1, 1)
         table_widget.show_all()
 
@@ -1512,10 +1512,10 @@ class HtreePedigreeView(NavigationView):
                         label = Gtk.Label(label=cname)
                     label.set_use_markup(True)
                     label.show()
-                    label.set_alignment(0, 0)
-                    menuitem = Gtk.ImageMenuItem(None)
-                    go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                        Gtk.IconSize.MENU)
+                    label.set_halign(Gtk.Align.START)
+                    menuitem = Gtk.ImageMenuItem()
+                    go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                            Gtk.IconSize.MENU)
                     go_image.show()
                     menuitem.set_image(go_image)
                     menuitem.add(label)
@@ -1602,16 +1602,16 @@ class HtreePedigreeView(NavigationView):
             home_sensitivity = False
             # bug 4884: need to translate the home label
         entries = [
-            (Gtk.STOCK_GO_BACK, self.back_clicked, not hobj.at_front()),
-            (Gtk.STOCK_GO_FORWARD, self.fwd_clicked, not hobj.at_end()),
-            (_("Home"), self.cb_home, home_sensitivity),
+            (_("Pre_vious"), 'go-previous', self.back_clicked, not hobj.at_front()),
+            (_("_Next"), 'go-next', self.fwd_clicked, not hobj.at_end()),
+            (_("_Home"), 'go-home', self.cb_home, home_sensitivity),
         ]
 
-        for stock_id, callback, sensitivity in entries:
-            item = Gtk.ImageMenuItem.new_from_stock(stock_id=stock_id, accel_group=None)
+        for label, icon_name, callback, sensitivity in entries:
+            item = Gtk.ImageMenuItem.new_with_mnemonic(label)
             item.set_sensitive(sensitivity)
-            if stock_id == _("Home"):
-                im = Gtk.Image.new_from_stock(Gtk.STOCK_HOME, Gtk.IconSize.MENU)
+            if icon_name:
+                im = Gtk.Image.new_from_icon_name(icon_name, Gtk.IconSize.MENU)
                 im.show()
                 item.set_image(im)
             if callback:
@@ -1634,21 +1634,19 @@ class HtreePedigreeView(NavigationView):
         item.set_submenu(Gtk.Menu())
         scroll_direction_menu = item.get_submenu()
 
-        scroll_direction_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
-                                                       Gtk.IconSize.MENU)
-        scroll_direction_image.show()
-
-        entry = Gtk.ImageMenuItem(label=_("Top <-> Bottom"))
+        entry = Gtk.CheckMenuItem(label=_("Top <-> Bottom"))
+        entry.set_draw_as_radio(True)
         entry.connect("activate", self.cb_change_scroll_direction, False)
         if self.scroll_direction == False:
-            entry.set_image(scroll_direction_image)
+            entry.set_active(True)
         entry.show()
         scroll_direction_menu.append(entry)
 
-        entry = Gtk.ImageMenuItem(_("Left <-> Right"))
+        entry = Gtk.CheckMenuItem(_("Left <-> Right"))
+        entry.set_draw_as_radio(True)
         entry.connect("activate", self.cb_change_scroll_direction, True)
         if self.scroll_direction == True:
-            entry.set_image(scroll_direction_image)
+            entry.set_active(True)
         entry.show()
         scroll_direction_menu.append(entry)
 
@@ -1662,7 +1660,10 @@ class HtreePedigreeView(NavigationView):
         self.menu = Gtk.Menu()
         self.menu.set_title(_('People Menu'))
 
-        add_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_ADD, None)
+        add_item = Gtk.ImageMenuItem.new_with_mnemonic(_('_Add'))
+        img = Gtk.Image.new_from_icon_name('list-add', Gtk.IconSize.MENU)
+        img.show()
+        add_item.set_image(img)
         add_item.connect("activate", self.cb_add_parents, person_handle,
                          family_handle)
         add_item.show()
@@ -1692,8 +1693,7 @@ class HtreePedigreeView(NavigationView):
         if not person:
             return 0
 
-        go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                            Gtk.IconSize.MENU)
+        go_image = Gtk.Image.new_from_icon_name('go-jump', Gtk.IconSize.MENU)
         go_image.show()
         go_item = Gtk.ImageMenuItem(label=name_displayer.display(person))
         go_item.set_image(go_image)
@@ -1701,12 +1701,18 @@ class HtreePedigreeView(NavigationView):
         go_item.show()
         self.menu.append(go_item)
 
-        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
+        edit_item = Gtk.ImageMenuItem.new_with_mnemonic(_('_Edit'))
+        img = Gtk.Image.new_from_icon_name('gtk-edit', Gtk.IconSize.MENU)
+        img.show()
+        edit_item.set_image(img)
         edit_item.connect("activate", self.cb_edit_person, person_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
+        clipboard_item = Gtk.ImageMenuItem.new_with_mnemonic(_('_Copy'))
+        img = Gtk.Image.new_from_icon_name('edit-copy', Gtk.IconSize.MENU)
+        img.show()
+        clipboard_item.set_image(img)
         clipboard_item.connect("activate", self.cb_copy_person_to_clipboard,
                                person_handle)
         clipboard_item.show()
@@ -1734,8 +1740,8 @@ class HtreePedigreeView(NavigationView):
                 item.set_submenu(Gtk.Menu())
                 sp_menu = item.get_submenu()
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
+            go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                    Gtk.IconSize.MENU)
             go_image.show()
             sp_item = Gtk.ImageMenuItem(label=name_displayer.display(spouse))
             sp_item.set_image(go_image)
@@ -1776,14 +1782,14 @@ class HtreePedigreeView(NavigationView):
                 else:
                     label = Gtk.Label(label=escape(name_displayer.display(sib)))
 
-                go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                    Gtk.IconSize.MENU)
+                go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                        Gtk.IconSize.MENU)
                 go_image.show()
                 sib_item = Gtk.ImageMenuItem()
                 sib_item.set_image(go_image)
                 label.set_use_markup(True)
                 label.show()
-                label.set_alignment(0, 0)
+                label.set_halign(Gtk.Align.START)
                 sib_item.add(label)
                 linked_persons.append(sib_id)
                 sib_item.connect("activate", self.cb_childmenu_changed, sib_id)
@@ -1815,14 +1821,14 @@ class HtreePedigreeView(NavigationView):
             else:
                 label = Gtk.Label(label=escape(name_displayer.display(child)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
+            go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                    Gtk.IconSize.MENU)
             go_image.show()
-            child_item = Gtk.ImageMenuItem(None)
+            child_item = Gtk.ImageMenuItem()
             child_item.set_image(go_image)
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             child_item.add(label)
             linked_persons.append(child_handle)
             child_item.connect("activate", self.cb_childmenu_changed,
@@ -1855,14 +1861,14 @@ class HtreePedigreeView(NavigationView):
             else:
                 label = Gtk.Label(label=escape(name_displayer.display(par)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
+            go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                    Gtk.IconSize.MENU)
             go_image.show()
             par_item = Gtk.ImageMenuItem()
             par_item.set_image(go_image)
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             par_item.add(label)
             linked_persons.append(par_id)
             par_item.connect("activate", self.cb_childmenu_changed, par_id)
@@ -1901,14 +1907,14 @@ class HtreePedigreeView(NavigationView):
 
             label = Gtk.Label(label=escape(name_displayer.display(per)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
+            go_image = Gtk.Image.new_from_icon_name('go-jump',
+                                                    Gtk.IconSize.MENU)
             go_image.show()
             per_item = Gtk.ImageMenuItem()
             per_item.set_image(go_image)
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             per_item.add(label)
             per_item.connect("activate", self.cb_childmenu_changed, p_id)
             per_item.show()
@@ -1939,12 +1945,18 @@ class HtreePedigreeView(NavigationView):
         if not family:
             return 0
 
-        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
+        edit_item = Gtk.ImageMenuItem.new_with_mnemonic(_('_Edit'))
+        img = Gtk.Image.new_from_icon_name('gtk-edit', Gtk.IconSize.MENU)
+        img.show()
+        edit_item.set_image(img)
         edit_item.connect("activate", self.cb_edit_family, family_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
+        clipboard_item = Gtk.ImageMenuItem.new_with_mnemonic(_('_Copy'))
+        img = Gtk.Image.new_from_icon_name('edit-copy', Gtk.IconSize.MENU)
+        img.show()
+        clipboard_item.set_image(img)
         clipboard_item.connect("activate", self.cb_copy_family_to_clipboard,
                                family_handle)
         clipboard_item.show()
@@ -2053,37 +2065,37 @@ class HtreePedigreeView(NavigationView):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = Gtk.Table(n_rows=7, n_columns=2)
-        table.set_border_width(12)
-        table.set_col_spacings(6)
-        table.set_row_spacings(6)
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
 
-        configdialog.add_checkbox(table, 
+        configdialog.add_checkbox(grid, 
                 _('Show images'), 
                 0, 'interface.pedview-show-images')
-        configdialog.add_checkbox(table, 
+        configdialog.add_checkbox(grid, 
                 _('Show marriage data'), 
                 1, 'interface.pedview-show-marriage')
-        configdialog.add_checkbox(table, 
+        configdialog.add_checkbox(grid, 
                 _('Show unknown people'), 
                 2, 'interface.pedview-show-unknown-people')
-        configdialog.add_combo(table, 
+        configdialog.add_combo(grid, 
                 _('Tree style'), 
                 4, 'interface.pedview-layout',
                 ((0, _('Standard')),
                 (1, _('Compact')),
                 (2, _('Expanded'))),
                 callback=self.cb_update_layout)
-        configdialog.add_combo(table, 
+        configdialog.add_combo(grid, 
                 _('Tree direction'), 
                 5, 'interface.pedview-tree-direction',
                 ((0, _('Vertical (↓)')),
                 (1, _('Vertical (↑)')),
                 (2, _('Horizontal (→)')),
                 (3, _('Horizontal (←)'))))
-        self.config_size_slider = configdialog.add_slider(table, 
+        self.config_size_slider = configdialog.add_slider(grid, 
                 _('Tree size'), 
                 6, 'interface.pedview-tree-size',
                 (2, 9))
 
-        return _('Layout'), table
+        return _('Layout'), grid
