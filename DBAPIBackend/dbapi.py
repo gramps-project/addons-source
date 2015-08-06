@@ -342,18 +342,6 @@ class DBAPI(DbGeneric):
         rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
-    def iter_person_handles(self):
-        self.dbapi.execute("SELECT handle FROM person;")
-        rows = self.dbapi.fetchall()
-        for row in rows:
-            yield row[0]
-
-    def iter_family_handles(self):
-        self.dbapi.execute("SELECT handle FROM family;")
-        rows = self.dbapi.fetchall()
-        for row in rows:
-            yield row[0]
-
     def get_tag_from_name(self, name):
         self.dbapi.execute("""select handle from tag where order_by = ?;""",
                                  [self._order_by_tag_key(name)])
@@ -975,6 +963,18 @@ class DBAPI(DbGeneric):
         row = self.dbapi.fetchone()
         if row:
             return self.get_person_from_handle(row[0])
+
+    def iter_person_handles(self):
+        self.dbapi.execute("SELECT handle FROM person;")
+        rows = self.dbapi.fetchall()
+        for row in rows:
+            yield row[0]
+
+    def iter_family_handles(self):
+        self.dbapi.execute("SELECT handle FROM family;")
+        rows = self.dbapi.fetchall()
+        for row in rows:
+            yield row[0]
 
     def iter_citation_handles(self):
         self.dbapi.execute("SELECT handle FROM citation;")
