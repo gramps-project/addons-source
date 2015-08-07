@@ -905,7 +905,7 @@ class DBAPI(DbGeneric):
                 transaction.add(PERSON_KEY, TXNDEL, person.handle, 
                                 person.serialize(), None)
 
-    def __do_remove(self, handle, transaction, data_map, data_id_map, key):
+    def _do_remove(self, handle, transaction, data_map, data_id_map, key):
         key2table = {
             PERSON_KEY:     "person", 
             FAMILY_KEY:     "family", 
