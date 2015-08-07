@@ -18,15 +18,18 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-plg = newplugin()
-plg.id    = 'djangodb'
-plg.name  = _("Django Database Backend")
-plg.name_accell  = _("_Django Database Backend")
-plg.description =  _("Django Object Relational Model Database Backend")
-plg.version = '1.0.1'
-plg.gramps_target_version = "5.0"
-plg.status = STABLE
-plg.fname = 'djangodb.py'
-plg.ptype = DATABASE
-plg.databaseclass = 'DbDjango'
-plg.reset_system = True
+register(
+    DATABASE,
+    id    = 'djangodb',
+    name  = _("Django Database Backend"),
+    name_accell  = _("_Django Database Backend"),
+    description =  _("Django Object Relational Model Database Backend"),
+    version = '1.0.2',
+    gramps_target_version = "5.0",
+    status = STABLE,
+    fname = 'djangodb.py',
+    databaseclass = 'DbDjango',
+    reset_system = True,
+    authors=['Doug Blank'],
+    authors_email=["doug.blank@gmail.com"],
+)
