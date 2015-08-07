@@ -1061,7 +1061,7 @@ class DBAPI(DbGeneric):
         callback(5)
 
     def rebuild_secondary(self, update):
-        gstats = self.rebuild_gender_stats()
+        gstats = self.get_gender_stats()
         self.genderStats = GenderStats(gstats) 
         self.dbapi.execute("""select blob_data from place;""")
         row = self.dbapi.fetchone()
@@ -1321,15 +1321,6 @@ class DBAPI(DbGeneric):
             gstats[row[0]][row[1]] += 1
         return gstats
 
-    def save_gender_stats(self, gstats):
-        self.dbapi.execute("""DELETE FROM gender_stats;""")
-        for key in gstats.stats:
-            female, male, unknown = gstats.stats[key]
-            self.dbapi.execute("""INSERT INTO gender_stats(given_name, female, male, unknown) 
-                                              VALUES(?, ?, ?, ?);""",
-                               [key, female, male, unknown]);
-        self.dbapi.commit()
-
     def get_gender_stats(self):
         """
         Returns a dictionary of 
@@ -1340,6 +1331,15 @@ class DBAPI(DbGeneric):
         for row in self.dbapi.fetchall():
             gstats[row[0]] = [row[1], row[2], row[3]]
         return gstats
+
+    def save_gender_stats(self, gstats):
+        self.dbapi.execute("""DELETE FROM gender_stats;""")
+        for key in gstats.stats:
+            female, male, unknown = gstats.stats[key]
+            self.dbapi.execute("""INSERT INTO gender_stats(given_name, female, male, unknown) 
+                                              VALUES(?, ?, ?, ?);""",
+                               [key, female, male, unknown]);
+        self.dbapi.commit()
         
     def get_surname_list(self):
         self.dbapi.execute("""SELECT DISTINCT surname FROM person ORDER BY surname;""")
