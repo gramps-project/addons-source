@@ -25,6 +25,7 @@
 # Standard Python Modules
 #
 #-------------------------------------------------------------------------
+import ast
 
 #------------------------------------------------------------------------
 #
@@ -51,10 +52,10 @@ def importData(dbase, filename, user):
     dbase.disable_signals()
     try:
         with DbTxn(_("JSON import"), dbase, batch=True) as trans:
-            with OpenFileOrStdin(filename, 'b') as fp:
+            with OpenFileOrStdin(filename) as fp:
                 line = fp.readline()
                 while line:
-                    json = eval(line)
+                    json = ast.literal_eval(line)
                     obj = from_struct(json)
                     if json["_class"] == "Person":
                         dbase.add_person(obj, trans)
