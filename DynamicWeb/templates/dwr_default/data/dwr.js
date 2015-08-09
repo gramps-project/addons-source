@@ -13,7 +13,6 @@
 
 // The Gramps database is exported as Javascript Arrays
 // The following indexes are indexes in these Arrays
-// If you wonder why JSON is not used instead, the answer is: because. Good question nevertheless.
 
 // I: Individual
 I_GID = 0;
@@ -1210,7 +1209,14 @@ function mediaLinks(media)
 	return(txt);
 }
 
-
+function mediaPaginationButtonHtml(id, class_, text)
+{
+	var html = '<li id="' + id + '"';
+	if (class_ != '') html += ' class="' + class_ + '"';
+	html += '><a href="#">' + text + '</a></li>';
+	return(html);
+}
+			
 function printMedia(mdx)
 {
 	var html = '';
@@ -1223,92 +1229,83 @@ function printMedia(mdx)
 	if (search.ImgList.length > 1)
 	{
 		var imgI = search.ImgList.indexOf(mdx);
-		// html += '<div id="dwr-img-btns" class="btn-toolbar" role="toolbar">';
-		// html += '<div class="btn-group" role="group">';
 		html += '<ul id="dwr-img-btns" class="pagination">';
-		// html += '<button id="media_button_prev" type="button" class="btn btn-default' + ((imgI == 0) ? ' disabled' : '') + '">';
-		// html += '<a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>';
-		// html += '</button>';
-		html += '<li id="media_button_prev"' + ((imgI == 0) ? ' class="disabled"' : '') + '>';
-		html += '<a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>';
-		// html += '<button id="media_button_0" type="button" class="btn btn-default' + ((imgI == 0) ? ' active' : '') + '">';
-		// html += '<a href="#">1</a>';
-		// html += '</button>';
-		html += '<li id="media_button_0"' + ((imgI == 0) ? ' class="active"' : '') + '>';
-		html += '<a href="#">1</a></li>';
+		// 'Previous' button
+		html += mediaPaginationButtonHtml('media_button_prev', (imgI == 0) ? 'disabled' : '',
+			'<span class="glyphicon glyphicon-chevron-left"></span>');
+		// First item button
+		html += mediaPaginationButtonHtml('media_button_0', (imgI == 0) ? 'active' : '', '1');
 		var first_but = Math.min(imgI - 1, search.ImgList.length - 4);
 		first_but = Math.max(1, first_but);
 		var last_but = Math.min(first_but + 2, search.ImgList.length - 2);
 		if (first_but > 1)
 		{
-			// html += '<button type="button" class="btn btn-default disabled">';
-			// html += '<a href="#">&hellip;</a>';
-			// html += '</button>';
-			html += '<li id="media_button_0" class="disabled">';
-			html += '<a href="#">&hellip;</a></li>';
+			// Separator between first item and current item buttons
+			html += mediaPaginationButtonHtml('media_button_hellip', 'disabled', '&hellip;');
 		}
+		// Current item buttons
 		for (var i = first_but; i <= last_but; i++)
 		{
-			// html += '<button id="media_button_' + i + '" type="button" class="btn btn-default' + ((imgI == i) ? ' active' : '') + '">';
-			// html += '<a href="#">' + (i + 1) + '</a>';
-			// html += '</button>';
-			html += '<li id="media_button_' + i + '"' + ((imgI == i) ? ' class="active"' : '') + '>';
-			html += '<a href="#">' + (i + 1) + '</a></li>';
+			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
 		if (last_but < search.ImgList.length - 2)
 		{
-			// html += '<button type="button" class="btn btn-default disabled">';
-			// html += '<a href="#">&hellip;</a>';
-			// html += '</button>';
-			html += '<li id="media_button_0" class="disabled">';
-			html += '<a href="#">&hellip;</a></li>';
+			// Separator between current item buttons and last item
+			html += mediaPaginationButtonHtml('media_button_hellip', 'disabled', '&hellip;');
 		}
 		if (search.ImgList.length > 1)
 		{
-			// html += '<button id="media_button_' + (search.ImgList.length - 1) + '" type="button" class="btn btn-default' + ((imgI == search.ImgList.length - 1) ? ' active' : '') + '">';
-			// html += '<a href="#">' + search.ImgList.length + '</a>';
-			// html += '</button>';
-			html += '<li id="media_button_' + (search.ImgList.length - 1) + '"' + ((imgI == search.ImgList.length - 1) ? ' class="active"' : '') + '>';
-			html += '<a href="#">' + search.ImgList.length + '</a></li>';
+			// Last item button
+			var i = search.ImgList.length - 1;
+			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
-		// html += '<button id="media_button_next" type="button" class="btn btn-default' + ((imgI == search.ImgList.length - 1) ? ' disabled' : '') + '">';
-		// html += '<a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-		// html += '</button>';
-		html += '<li id="media_button_next"' + ((imgI == search.ImgList.length - 1) ? ' class="disabled"' : '') + '>';
-		html += '<a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>';
-		// html += '</div>';
+		// 'Next' button
+		html += mediaPaginationButtonHtml('media_button_next', (imgI == search.ImgList.length - 1) ? 'disabled' : '',
+			'<span class="glyphicon glyphicon-chevron-right"></span>');
 		html += '</ul>';
-		// Expand button
-		// html += '<div class="btn-group" role="group">';
-		// html += '<button id="media_button_max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
-		// html += '<a href="#"><span class="glyphicon glyphicon-fullscreen"></span></a>';
-		// html += '</button>';
-		// html += '</div>';
-		// html += '</div>';
 		// Pagination events
 		$(window).load(function()
 		{
-			$('#media_button_prev').click(function() {return mediaButtonPageClick(-1);});
-			$('#media_button_next').click(function() {return mediaButtonPageClick(1);});
-			$('#media_button_max').click(function() {return mediaButtonMaxClick();});
-			$('#media_button_0').click(function() {return mediaButtonPageClick(0, 0);});
-			$('#media_button_' + (search.ImgList.length - 1)).click(function() {return mediaButtonPageClick(0, search.ImgList.length - 1);});
+			// Disable <a> anchors for disabled buttons
+			$('.pagination .disabled a, .pagination .active a').on('click', function(e) {e.preventDefault();});
+			// Connect click events
+			$('#media_button_prev:not(.disabled)').click(function() {return mediaButtonPageClick(-1);});
+			$('#media_button_next:not(.disabled)').click(function() {return mediaButtonPageClick(1);});
+			$('#media_button_0:not(.active)').click(function() {return mediaButtonPageClick(0, 0);});
+			$('#media_button_' + (search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, search.ImgList.length - 1);});
 			for (var i = first_but; i <= last_but; i++)
 			{
 				(function(){ // This is used to create instances of local variables
 					var icopy = i;
-					$('#media_button_' + i).click(function() {return mediaButtonPageClick(0, icopy);});
+					$('#media_button_' + i + ':not(.active)').click(function() {return mediaButtonPageClick(0, icopy);});
 				})();
 			}
 		});
 	}
 
 	// Image or link (if media is not an image)
-	// html += '<div id="img_div">';
 	if (m[M_MIME].indexOf('image') == 0)
 	{
-		html += '<p class="dwr-centered"><img id="dwr-image" src="' + m[M_PATH] + '" usemap="#imgmap"></p>';
+		html += '<div class="dwr-centered"><div id="img-div">';
+		html += '<img id="dwr-image" src="' + m[M_PATH] + '" usemap="#imgmap">';
 		html += printMediaMap(mdx);
+		
+		// Expand button
+		html += '<div id="media-buttons">';
+		html += '<div class="btn-group-vertical" role="group">';
+		html += '<button id="media-button-max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
+		html += '<span class="glyphicon glyphicon-fullscreen"></span>';
+		html += '</button>';
+		html += '</div>';
+		html += '</div>';
+
+		html += '</div></div>';
+		
+		// Expand button events
+		$(window).load(function()
+		{
+			$('#media-button-max').click(function() {return mediaButtonMaxClick();});
+		});
 	}
 	else
 	{
@@ -1316,7 +1313,6 @@ function printMedia(mdx)
 		name = name.replace(/.*[\\\/]/, '');
 		html += '<p class="dwr-centered"><a href="' + m[M_PATH] + '">' + name + '</a></p>';
 	}
-	// html += '</div>';
 	
 	// Media description
 	if (m[M_DATE] != '') html += '<p><b>' + _('Date') + ': </b>' + m[M_DATE] + '</p>';
@@ -2023,8 +2019,9 @@ function htmlSourcesIndex(data)
 }
 
 
-function printPlacesIndexColText(pdx, col)
+function printPlacesIndexColText(data, x, col)
 {
+	var pdx = data[x];
 	if (P[pdx][P_LOCATIONS].length == 0) return('');
 	return(P[pdx][P_LOCATIONS][0][8 - col]);
 }
@@ -2060,28 +2057,28 @@ function htmlPlacesIndex(data)
 		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Country'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('Postal Code'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('State/ Province'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('County'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Church Parish'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('City'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Locality'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Street'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
@@ -2575,6 +2572,7 @@ function mapUpdate()
 	{
 		var point = points[x_marker];
 		var nb = point.nb_birth + point.nb_marr + point.nb_death + point.nb_other;
+		nb = Math.max(nb, 1);
 		var src = '';
 		if (point.nb_birth == nb)
 			src = 'data/gramps-geo-birth.png';
@@ -2917,8 +2915,9 @@ function SearchObjects()
 		{
 			fref = type.fref;
 			index = results[0];
-			html += '<h4>' + type.text + '</h4>';
+			html += printTitle(4, type.text + ' ' + results.length, '', true);
 			html += type.findex(results);
+			html += printTitleEnd();
 		}
 	}
 	if (nb_found == 1)

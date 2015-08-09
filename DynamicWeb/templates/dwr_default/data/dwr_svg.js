@@ -242,7 +242,6 @@ function SvgCreate()
 	html += '<button id="svg-saveas" type="button" class="btn btn-default" title="' + _('Save tree as file') + '">';
 	html += '<span class="glyphicon glyphicon-save"></span>';
 	html += '</button>';
-	html += '</span>';
 	html += '</div>';
 	html += '</div>';
 	// Floating popup div
@@ -418,8 +417,8 @@ function SvgConfPage()
 	html += '<div class="col-xs-6 col-sm-4">';
 	html += '<div class="checkbox">';
 	html += '<label>';
-	html += '<input type="checkbox" name="svg-dup" id="svg-dup" ' + (search.SvgDup ? 'checked' : '') + ' title="' + _("Whether to use a special color for the persons that appear several times in the SVG tree") + '"/>';
-	html += _("Show duplicates") + '</label>';
+	html += '<input type="checkbox" name="svg-dup" id="svg-dup" ' + (search.SvgDup ? 'checked' : '') + ' title="' + _('Whether to use a special color for the persons that appear several times in the SVG tree') + '"/>';
+	html += _('Show duplicates') + '</label>';
 	html += '</div>'; // checkbox
 	html += '</div>'; // col-xs-*
 	html += '</div>'; // row

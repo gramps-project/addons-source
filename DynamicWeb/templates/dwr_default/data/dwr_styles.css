@@ -155,6 +155,27 @@ li p
 	float: initial;
 }
 
+#img-div {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 20px;
+}
+#media-buttons {
+	margin: 5px;
+	opacity: 0.5;
+	font-size: small;
+	position: absolute;
+	float: right;
+	top: 0;
+	left: 0;
+}
+#img-div:hover  #media-buttons {
+	display: block;
+}
+#img-div  #media-buttons {
+	display: none;
+}
+
 
 /*===================================================== Page contents */
 

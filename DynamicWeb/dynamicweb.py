@@ -82,6 +82,8 @@ Classes:
 #TODO: Other bootstrap templates, use LESS for css generation
 #TODO: Sorting items (children, pages in citations, events, etc.)
 #TODO: years in gregorian calendar (get_***_year) ?
+#TODO: Export places hierarchy
+#TODO: Export all the database when the filter=0, not only records linked to people
 #TODO: LDS stuff
 #TODO: Show siblings
 #TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
@@ -89,6 +91,7 @@ Classes:
 #TODO: approximative search
 #TODO: export *.gramps file or *.pkgfile
 
+#TODO: Use JSON instead of indexes in Javascript Arrays I, F, U, etc.
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: Statistic charts, + database summary
 
@@ -526,6 +529,7 @@ class DynamicWebReport(Report):
 
 		filters_option = menu.get_option_by_name('filter')
 		self.filter = filters_option.get_filter()
+		self.filter_index = filters_option.get_value()
 
 		self.target_path = self.options['target'] #: Destination directory
 		self.ext = ".html" #: HTML fiules extension
@@ -2300,6 +2304,7 @@ class DynamicWebReport(Report):
 			("Select the type of graph", _("Select the type of graph")),
 			("Several matches.<br>Precise your search or choose in the lists below.", _("Several matches.<br>Precise your search or choose in the lists below.")),
 			("Show _MENU_ entries", _("Show _MENU_ entries")),
+			("Show duplicates", _("Show duplicates")),
 			("Showing 0 to 0 of 0 entries", _("Showing 0 to 0 of 0 entries")),
 			("Showing _START_ to _END_ of _TOTAL_ entries", _("Showing _START_ to _END_ of _TOTAL_ entries")),
 			("Siblings", _("Siblings")),
@@ -2328,6 +2333,7 @@ class DynamicWebReport(Report):
 			("Value", _("Value")),
 			("Web Link", _("Web Link")),
 			("Web Links", _("Web Links")),
+			("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
 			("Without surname", _("Without surname")),
 			("Zoom in", _("Zoom in")),
 			("Zoom out", _("Zoom out")),
@@ -2973,8 +2979,26 @@ class DynamicWebReport(Report):
 				if (not isinstance(handle, UNITYPE)):
 					handle = handle.decode("UTF-8")
 				step()
-				self._add_person(handle, "", "")
+				self._add_person(handle)
 
+		# When all database is exported:
+		# Add all media_objects, places, sources, citations
+		# even when not connected to any person
+		if (self.filter_index == 0):
+			for (handles_func, add_func) in (
+				(self.database.get_person_handles, self._add_person),
+				(self.database.get_family_handles, self._add_family),
+				(self.database.get_event_handles, self._add_event),
+				(self.database.get_place_handles, self._add_place),
+				(self.database.get_source_handles, self._add_source),
+				(self.database.get_citation_handles, self._add_citation),
+				(self.database.get_media_object_handles, self._add_media),
+				(self.database.get_repository_handles, self._add_repository),
+			):
+				for handle in handles_func():
+					add_func(handle)
+		
+		# Debug output
 		log.debug("final object dictionary \n" +
 				  "".join(("%s: %s\n" % item) for item in self.obj_dict.items()))
 
@@ -2982,12 +3006,13 @@ class DynamicWebReport(Report):
 				  "".join(("%s: %s\n" % item) for item in self.bkref_dict.items()))
 
 
-	def _add_person(self, person_handle, bkref_class, bkref_handle):
+	def _add_person(self, person_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add person_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Person][person_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Person][person_handle].add((bkref_class, bkref_handle, None))
 		# Check if the person is already added
 		if (person_handle in self.obj_dict[Person]): return
 		# Add person in the dictionaries of objects
@@ -3047,12 +3072,13 @@ class DynamicWebReport(Report):
 		return _nd.display_name(name)
 
 
-	def _add_family(self, family_handle, bkref_class, bkref_handle):
+	def _add_family(self, family_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add family_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Family][family_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Family][family_handle].add((bkref_class, bkref_handle, None))
 		# Check if the family is already added
 		if (family_handle in self.obj_dict[Family]): return
 		# Add family in the dictionaries of objects
@@ -3116,7 +3142,7 @@ class DynamicWebReport(Report):
 		return title_str
 
 
-	def _add_event(self, event_handle, bkref_class, bkref_handle, event_ref):
+	def _add_event(self, event_handle, bkref_class = None, bkref_handle = None, event_ref = None):
 		"""
 		Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3127,11 +3153,12 @@ class DynamicWebReport(Report):
 			# The event reference is already recorded
 			if (event_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Event][event_handle].add((bkref_class, bkref_handle, event_ref))
-		# Event reference attributes citations
-		for attr in event_ref.get_attribute_list():
-			for citation_handle in attr.get_citation_list():
-				self._add_citation(citation_handle, bkref_class, bkref_handle)
+		if (bkref_class is not None):
+			self.bkref_dict[Event][event_handle].add((bkref_class, bkref_handle, event_ref))
+			# Event reference attributes citations
+			for attr in event_ref.get_attribute_list():
+				for citation_handle in attr.get_citation_list():
+					self._add_citation(citation_handle, bkref_class, bkref_handle)
 		# Check if the event is already added
 		if (event_handle in self.obj_dict[Event]): return
 		# Add event in the dictionaries of objects
@@ -3165,18 +3192,20 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
 
-	def _add_place(self, place_handle, bkref_class, bkref_handle):
+	def _add_place(self, place_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
 		# Check if the place is already added
 		if (place_handle in self.obj_dict[Place]): return
 		# Add place in the dictionaries of objects
 		place = self.database.get_place_from_handle(place_handle)
 		if (DWR_VERSION_412):
 			place_name = _pd.display(self.database, place)
+			
 		else:
 			place_name = place.get_title()
 		self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
@@ -3191,13 +3220,14 @@ class DynamicWebReport(Report):
 				self._add_media(media_handle, Place, place_handle, media_ref)
 
 
-	def _add_source(self, source_handle, bkref_class, bkref_handle):
+	def _add_source(self, source_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add source_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		if (not self.inc_sources): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Source][source_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Source][source_handle].add((bkref_class, bkref_handle, None))
 		# Check if the source is already added
 		if (source_handle in self.obj_dict[Source]): return
 		# Add source in the dictionaries of objects
@@ -3215,13 +3245,14 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, Source, source_handle, media_ref)
 
 
-	def _add_citation(self, citation_handle, bkref_class, bkref_handle):
+	def _add_citation(self, citation_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add citation_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		if (not self.inc_sources): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Citation][citation_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Citation][citation_handle].add((bkref_class, bkref_handle, None))
 		# Check if the citation is already added
 		if (citation_handle in self.obj_dict[Citation]): return
 		# Add citation in the dictionaries of objects
@@ -3237,7 +3268,7 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, Source, source_handle, media_ref)
 
 
-	def _add_media(self, media_handle, bkref_class, bkref_handle, media_ref):
+	def _add_media(self, media_handle, bkref_class = None, bkref_handle = None, media_ref = None):
 		"""
 		Add media_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3249,13 +3280,14 @@ class DynamicWebReport(Report):
 			# The media reference is already recorded
 			if (media_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
-		# Citations for media reference, media reference attributes
-		citation_list = media_ref.get_citation_list()
-		for attr in media_ref.get_attribute_list():
-			citation_list.extend(attr.get_citation_list())
-		for citation_handle in citation_list:
-			self._add_citation(citation_handle, MediaObject, media_handle)
+		if (bkref_class is not None):
+			self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
+			# Citations for media reference, media reference attributes
+			citation_list = media_ref.get_citation_list()
+			for attr in media_ref.get_attribute_list():
+				citation_list.extend(attr.get_citation_list())
+			for citation_handle in citation_list:
+				self._add_citation(citation_handle, MediaObject, media_handle)
 		# Check if the media is already added
 		if (media_handle in self.obj_dict[MediaObject]): return
 		# Add media in the dictionaries of objects
@@ -3270,7 +3302,7 @@ class DynamicWebReport(Report):
 			self._add_citation(citation_handle, MediaObject, media_handle)
 
 
-	def _add_repository(self, repo_handle, bkref_class, bkref_handle, repo_ref):
+	def _add_repository(self, repo_handle, bkref_class = None, bkref_handle = None, repo_ref = None):
 		"""
 		Add repo_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3282,7 +3314,8 @@ class DynamicWebReport(Report):
 			# The repository reference is already recorded
 			if (repo_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Repository][repo_handle].add((bkref_class, bkref_handle, repo_ref))
+		if (bkref_class is not None):
+			self.bkref_dict[Repository][repo_handle].add((bkref_class, bkref_handle, repo_ref))
 		# Check if the repository is already added
 		if (repo_handle in self.obj_dict[Repository]): return
 		# Add repository in the dictionaries of objects
