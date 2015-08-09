@@ -47,8 +47,8 @@ sys.path.append(gramps_path)
 if sys.version_info[0] < 3:
     reload(sys)
     sys.setdefaultencoding('utf8')
-from ..dynamicweb import *
-from ..dynamicweb import _
+from dynamicweb import *
+from dynamicweb import _
 
 
 default_options = {
