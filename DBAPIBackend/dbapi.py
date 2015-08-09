@@ -347,7 +347,7 @@ class DBAPI(DbGeneric):
                                  [self._order_by_tag_key(name)])
         row = self.dbapi.fetchone()
         if row:
-            self.get_tag_from_handle(row[0])
+            return self.get_tag_from_handle(row[0])
         return None
 
     def get_number_of_people(self):
@@ -819,14 +819,14 @@ class DBAPI(DbGeneric):
                                                  order_by = ?
                                          WHERE handle = ?;""",
                                [pickle.dumps(tag.serialize()),
-                                self._order_by_tag_key(tag),
+                                self._order_by_tag_key(tag.name),
                                 tag.handle])
         else:
             emit = "tag-add"
             self.dbapi.execute("""INSERT INTO tag (handle, order_by, blob_data)
                   VALUES(?, ?, ?);""", 
                        [tag.handle, 
-                        self._order_by_tag_key(tag),
+                        self._order_by_tag_key(tag.name),
                         pickle.dumps(tag.serialize())])
         if not trans.batch:
             self.update_backlinks(tag)
