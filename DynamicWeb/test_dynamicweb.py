@@ -36,10 +36,9 @@ import copy, re, os, os.path, subprocess, sys, traceback, locale, shutil, time, 
 # os.environ["LANGUAGE"] = "en_US"
 # os.environ["LANG"] = "en_US.UTF-8"
 
-user_path = os.environ["GRAMPS_RESOURCES"]
-if (not os.path.exists(user_path)): raise Exception("User path GRAMPS_RESOURCES not found")
-plugin_path = ".."
-sys.path.append(plugin_path)
+# user_path = os.environ["GRAMPSHOME"]
+# if (not os.path.exists(user_path)): raise Exception("User path GRAMPSHOME not found")
+plugin_path = "."
 
 gramps_path = os.environ["GRAMPS_RESOURCES"]
 if (not os.path.exists(gramps_path)): raise Exception("Gramps path GRAMPS_RESOURCES not found")
