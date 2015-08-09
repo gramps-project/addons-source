@@ -8,6 +8,7 @@
 #                          report.
 #                          Mouse panning is derived from the pedigree view
 # Copyright (C) 2012       Mathieu MD
+# Copyright (C) 2015       Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -32,6 +33,7 @@
 #
 #-------------------------------------------------------------------------
 import os
+from math import log
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -131,6 +133,7 @@ class GraphView(NavigationView):
         Set up callback for changes to the database
         """
         self._change_db(db)
+        self.graph_view.change_max_zoom()
         if self.active:
             self.graph_widget.clear()
             if self.get_active() != "":
@@ -354,18 +357,17 @@ class GraphWidget(object):
 
         scrolled_win.add(self.canvas)
 
-        self.vbox = Gtk.VBox(False, 4)
+        self.vbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width (4)
-        hbox = Gtk.HBox(False, 4)
+        hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
         zoom_label = Gtk.Label(label="Zoom:")
         hbox.pack_start (zoom_label, False, False, 0)
 
-        adj = Gtk.Adjustment (1.00, 0.05, 10.00, 0.05, 0.50, 0.50)
-        scale = Gtk.HScale(adjustment=adj)
-        adj.connect("value_changed", self.zoom_changed)
-        hbox.pack_start(scale, True, True, 0)
+        self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
+        hbox.pack_start(self.scale, True, True, 0)
         self.vbox.pack_start(scrolled_win, True, True, 0)
+        self.change_max_zoom()
 
     def populate(self, active_person):
         """
@@ -398,6 +400,24 @@ class GraphWidget(object):
 
         # Update the status bar
         self.view.change_page()
+
+    def change_max_zoom(self):
+        """
+        Change the maximum value of the zoom.
+        """
+        try:
+            self.scale1.destroy() # destroy the Scale if it exists.
+        except:                   # we can't change the max value
+            pass                  # then recreate a new scale
+        nb_persons = int(self.dbstate.db.get_number_of_people()+5)
+        zoom = log(nb_persons,10)*log(nb_persons,5)
+        max_zoom = 5.0 if zoom < 5.0 else zoom
+        adj = Gtk.Adjustment (1.00, 0.05, float(max_zoom), 0.05, 0.50, 0.50)
+        adj.set_value(1.0)
+        self.scale1 = Gtk.Scale(adjustment=adj, orientation=Gtk.Orientation.HORIZONTAL)
+        self.scale1.show()
+        adj.connect("value_changed", self.zoom_changed)
+        self.scale.pack_start(self.scale1, True, True, 0)
 
     def clear(self):
         """
