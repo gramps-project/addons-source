@@ -288,40 +288,40 @@ class GraphView(NavigationView):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = Gtk.Table(2, 2)
-        table.set_border_width(12)
-        table.set_col_spacings(6)
-        table.set_row_spacings(6)
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
 
-        configdialog.add_checkbox(table,
+        configdialog.add_checkbox(grid,
                 _('Show images'),
                 0, 'interface.graphview-show-images')
-        configdialog.add_checkbox(table,
+        configdialog.add_checkbox(grid,
                 _('Highlight the home person'),
                 1, 'interface.graphview-highlight-home-person')
-        configdialog.add_checkbox(table,
+        configdialog.add_checkbox(grid,
                 _('Show full dates'),
                 2, 'interface.graphview-show-full-dates')
-        configdialog.add_checkbox(table,
+        configdialog.add_checkbox(grid,
                 _('Show places'),
                 3, 'interface.graphview-show-places')
 
-        return _('Layout'), table
+        return _('Layout'), grid
 
     def color_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog
         """
-        table = Gtk.Table(2, 2)
-        table.set_border_width(12)
-        table.set_col_spacings(6)
-        table.set_row_spacings(6)
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
 
-        configdialog.add_color(table, 
-                _('Home person color'), 
+        configdialog.add_color(grid,
+                _('Home person color'),
                 0, 'interface.graphview-home-person-color')
 
-        return _('Colors'), table
+        return _('Colors'), grid
 
 #-------------------------------------------------------------------------
 #
