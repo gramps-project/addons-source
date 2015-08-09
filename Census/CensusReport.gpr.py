@@ -30,7 +30,7 @@ register(REPORT,
          id = 'census_report',
          name = _("Census Report"),
          description =  _("Report of census events for a person."),
-         version = '1.0.30',
+         version = '1.0.31',
          gramps_target_version = "5.0",
          status = STABLE, # not yet tested with python 3
          fname = 'CensusReport.py',
