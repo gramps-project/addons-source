@@ -1316,9 +1316,21 @@ class DBAPI(DbGeneric):
         self.dbapi.execute("""SELECT given_name, gender_type FROM person;""")
         gstats = {}
         for row in self.dbapi.fetchall():
-            if row[0] not in gstats:
-                gstats[row[0]] = [0, 0, 0]
-            gstats[row[0]][row[1]] += 1
+            first_name = row[0]
+            if first_name not in gstats:
+                gstats[first_name] = (0, 0, 0)
+            if gender_type == Person.MALE:
+                gstats[first_name] = (gstats[first_name][0] + 1, 
+                                      gstats[first_name][1],
+                                      gstats[first_name][2])
+            elif gender_type == Person.FEMALE:
+                gstats[first_name] = (gstats[first_name][0], 
+                                      gstats[first_name][1] + 1,
+                                      gstats[first_name][2])
+            else:
+                gstats[first_name] = (gstats[first_name][0], 
+                                      gstats[first_name][1],
+                                      gstats[first_name][2] + 1)
         return gstats
 
     def get_gender_stats(self):
@@ -1329,7 +1341,7 @@ class DBAPI(DbGeneric):
         self.dbapi.execute("""SELECT given_name, female, male, unknown FROM gender_stats;""")
         gstats = {}
         for row in self.dbapi.fetchall():
-            gstats[row[0]] = [row[1], row[2], row[3]]
+            gstats[row[0]] = (row[1], row[2], row[3])
         return gstats
 
     def save_gender_stats(self, gstats):
