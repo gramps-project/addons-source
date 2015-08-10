@@ -158,9 +158,10 @@ except ValueError:
 _ = _trans.sgettext
 
 from gramps.version import VERSION, VERSION_TUPLE
-DWR_VERSION_410 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1)
-DWR_VERSION_412 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2)
-DWR_VERSION_420 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2)
+DWR_VERSION_410 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1))
+DWR_VERSION_412 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2))
+DWR_VERSION_420 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2))
+DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
 							NameType, Person, UrlType, NoteType,
 							EventRoleType, Family, Event, Place, Source,
@@ -2984,19 +2985,19 @@ class DynamicWebReport(Report):
 		# When all database is exported:
 		# Add all media_objects, places, sources, citations
 		# even when not connected to any person
-		if (self.filter_index == 0):
-			for (handles_func, add_func) in (
-				(self.database.get_person_handles, self._add_person),
-				(self.database.get_family_handles, self._add_family),
-				(self.database.get_event_handles, self._add_event),
-				(self.database.get_place_handles, self._add_place),
-				(self.database.get_source_handles, self._add_source),
-				(self.database.get_citation_handles, self._add_citation),
-				(self.database.get_media_object_handles, self._add_media),
-				(self.database.get_repository_handles, self._add_repository),
-			):
-				for handle in handles_func():
-					add_func(handle)
+		# if (self.filter_index == 0):
+			# for (handles_func, add_func) in (
+				# (self.database.get_person_handles, self._add_person),
+				# (self.database.get_family_handles, self._add_family),
+				# (self.database.get_event_handles, self._add_event),
+				# (self.database.get_place_handles, self._add_place),
+				# (self.database.get_source_handles, self._add_source),
+				# (self.database.get_citation_handles, self._add_citation),
+				# (self.database.get_media_object_handles, self._add_media),
+				# (self.database.get_repository_handles, self._add_repository),
+			# ):
+				# for handle in handles_func():
+					# add_func(handle)
 		
 		# Debug output
 		log.debug("final object dictionary \n" +
