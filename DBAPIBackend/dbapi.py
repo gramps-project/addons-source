@@ -161,49 +161,49 @@ class DBAPI(DbGeneric):
         );""") 
         ## Indices:
         self.dbapi.try_execute("""CREATE INDEX  
-                                  person_order_by ON person (order_by(50));
+                                  person_order_by ON person(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  person_gramps_id ON person (gramps_id(50));
+                                  person_gramps_id ON person(gramps_id);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  person_surname ON person (surname(50));
+                                  person_surname ON person(surname);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  person_given_name ON person (given_name(50));
+                                  person_given_name ON person(given_name);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  source_order_by ON source (order_by(50));
+                                  source_order_by ON source(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  source_gramps_id ON source (gramps_id(50));
+                                  source_gramps_id ON source(gramps_id);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  citation_order_by ON citation (order_by(50));
+                                  citation_order_by ON citation(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  citation_gramps_id ON citation (gramps_id(50));
+                                  citation_gramps_id ON citation(gramps_id);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  media_order_by ON media (order_by(50));
+                                  media_order_by ON media(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  media_gramps_id ON media (gramps_id(50));
+                                  media_gramps_id ON media(gramps_id);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  place_order_by ON place (order_by(50));
+                                  place_order_by ON place(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  place_gramps_id ON place (gramps_id(50));
+                                  place_gramps_id ON place(gramps_id);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  tag_order_by ON tag (order_by(50));
+                                  tag_order_by ON tag(order_by);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  reference_ref_handle ON reference (ref_handle);
+                                  reference_ref_handle ON reference(ref_handle);
         """)
         self.dbapi.try_execute("""CREATE INDEX  
-                                  name_group_name ON name_group (name(50)); 
+                                  name_group_name ON name_group(name); 
         """)
 
     def close_backend(self):
