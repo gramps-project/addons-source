@@ -1,0 +1,13 @@
+DynamicWeb/templates/dwr_default/data/bootstrap/css/*
+DynamicWeb/templates/dwr_default/data/bootstrap/fonts/*
+DynamicWeb/templates/dwr_default/data/bootstrap/js/*
+DynamicWeb/templates/dwr_default/data/*
+DynamicWeb/templates/dwr_default/data/datatables/media/css/*
+DynamicWeb/templates/dwr_default/data/datatables/media/images/*
+DynamicWeb/templates/dwr_default/data/datatables/media/js/*
+DynamicWeb/templates/dwr_default/data/unorm/unorm.js
+DynamicWeb/templates/dwr_default/data/context/*
+DynamicWeb/templates/dwr_default/data/jquery/*
+DynamicWeb/templates/dwr_default/data/raphael/*
+DynamicWeb/templates/dwr_mainz/data/bootstrap/css/bootstrap.min.css
+DynamicWeb/templates/dwr_mainz/data/*
