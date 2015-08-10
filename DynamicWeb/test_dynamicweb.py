@@ -36,15 +36,17 @@ import copy, re, os, os.path, subprocess, sys, traceback, locale, shutil, time, 
 # os.environ["LANGUAGE"] = "en_US"
 # os.environ["LANG"] = "en_US.UTF-8"
 
-user_path = os.environ["GRAMPSHOME"]
-if (not os.path.exists(user_path)): raise Exception("User path GRAMPSHOME not found")
-plugin_path = ".."
-sys.path.append(plugin_path)
+# user_path = os.environ["GRAMPSHOME"]
+# if (not os.path.exists(user_path)): raise Exception("User path GRAMPSHOME not found")
+plugin_path = "."
 
 gramps_path = os.environ["GRAMPS_RESOURCES"]
 if (not os.path.exists(gramps_path)): raise Exception("Gramps path GRAMPS_RESOURCES not found")
 sys.path.append(gramps_path)
 
+if sys.version_info[0] < 3:
+    reload(sys)
+    sys.setdefaultencoding('utf8')
 from dynamicweb import *
 from dynamicweb import _
 
@@ -130,7 +132,7 @@ test_list = [
 		},
 		{
 			'what': "All possible citations are referenced",
-			'path': "source.html?sgid=S0002",
+			'path': "source.html?sgid=S0001",
 		},
 		{
 			'what': "GENDEX file",
@@ -275,8 +277,10 @@ def import_data():
 	os.chdir(gramps_path)
 	subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-y", "-C", "dynamicweb_example", "-i", path])
 
-
-def main(test_nums):
+def main(test_nums=None):
+	if test_nums is None:
+		import_data()
+		test_nums = range(len(test_list))
 	# Create results directory
 	results_path = os.path.join(plugin_path, "test_results")
 	results_path = os.path.abspath(results_path)
