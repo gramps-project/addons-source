@@ -13,7 +13,6 @@
 
 // The Gramps database is exported as Javascript Arrays
 // The following indexes are indexes in these Arrays
-// If you wonder why JSON is not used instead, the answer is: because. Good question nevertheless.
 
 // I: Individual
 I_GID = 0;
@@ -208,6 +207,13 @@ if (typeof(R) == 'undefined') R = []
 if (typeof(M) == 'undefined') M = []
 if (typeof(P) == 'undefined') P = []
 if (typeof(SN) == 'undefined') SN = []
+
+
+// Events fallbacks
+
+EVENTS_BIRTH = [_('Birth'), _('Baptism'), _('Christening')];
+EVENTS_MARR = [_('Marriage'), _('Engagement'), _('Alternate Marriage')];
+EVENTS_DEATH = [_('Death'), _('Burial'), _('Cremation'), _('Cause Of Death')];
 
 
 //=================================================================
@@ -1203,7 +1209,14 @@ function mediaLinks(media)
 	return(txt);
 }
 
-
+function mediaPaginationButtonHtml(id, class_, text)
+{
+	var html = '<li id="' + id + '"';
+	if (class_ != '') html += ' class="' + class_ + '"';
+	html += '><a href="#">' + text + '</a></li>';
+	return(html);
+}
+			
 function printMedia(mdx)
 {
 	var html = '';
@@ -1216,92 +1229,83 @@ function printMedia(mdx)
 	if (search.ImgList.length > 1)
 	{
 		var imgI = search.ImgList.indexOf(mdx);
-		// html += '<div id="dwr-img-btns" class="btn-toolbar" role="toolbar">';
-		// html += '<div class="btn-group" role="group">';
 		html += '<ul id="dwr-img-btns" class="pagination">';
-		// html += '<button id="media_button_prev" type="button" class="btn btn-default' + ((imgI == 0) ? ' disabled' : '') + '">';
-		// html += '<a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>';
-		// html += '</button>';
-		html += '<li id="media_button_prev"' + ((imgI == 0) ? ' class="disabled"' : '') + '>';
-		html += '<a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>';
-		// html += '<button id="media_button_0" type="button" class="btn btn-default' + ((imgI == 0) ? ' active' : '') + '">';
-		// html += '<a href="#">1</a>';
-		// html += '</button>';
-		html += '<li id="media_button_0"' + ((imgI == 0) ? ' class="active"' : '') + '>';
-		html += '<a href="#">1</a></li>';
+		// 'Previous' button
+		html += mediaPaginationButtonHtml('media_button_prev', (imgI == 0) ? 'disabled' : '',
+			'<span class="glyphicon glyphicon-chevron-left"></span>');
+		// First item button
+		html += mediaPaginationButtonHtml('media_button_0', (imgI == 0) ? 'active' : '', '1');
 		var first_but = Math.min(imgI - 1, search.ImgList.length - 4);
 		first_but = Math.max(1, first_but);
 		var last_but = Math.min(first_but + 2, search.ImgList.length - 2);
 		if (first_but > 1)
 		{
-			// html += '<button type="button" class="btn btn-default disabled">';
-			// html += '<a href="#">&hellip;</a>';
-			// html += '</button>';
-			html += '<li id="media_button_0" class="disabled">';
-			html += '<a href="#">&hellip;</a></li>';
+			// Separator between first item and current item buttons
+			html += mediaPaginationButtonHtml('media_button_hellip', 'disabled', '&hellip;');
 		}
+		// Current item buttons
 		for (var i = first_but; i <= last_but; i++)
 		{
-			// html += '<button id="media_button_' + i + '" type="button" class="btn btn-default' + ((imgI == i) ? ' active' : '') + '">';
-			// html += '<a href="#">' + (i + 1) + '</a>';
-			// html += '</button>';
-			html += '<li id="media_button_' + i + '"' + ((imgI == i) ? ' class="active"' : '') + '>';
-			html += '<a href="#">' + (i + 1) + '</a></li>';
+			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
 		if (last_but < search.ImgList.length - 2)
 		{
-			// html += '<button type="button" class="btn btn-default disabled">';
-			// html += '<a href="#">&hellip;</a>';
-			// html += '</button>';
-			html += '<li id="media_button_0" class="disabled">';
-			html += '<a href="#">&hellip;</a></li>';
+			// Separator between current item buttons and last item
+			html += mediaPaginationButtonHtml('media_button_hellip', 'disabled', '&hellip;');
 		}
 		if (search.ImgList.length > 1)
 		{
-			// html += '<button id="media_button_' + (search.ImgList.length - 1) + '" type="button" class="btn btn-default' + ((imgI == search.ImgList.length - 1) ? ' active' : '') + '">';
-			// html += '<a href="#">' + search.ImgList.length + '</a>';
-			// html += '</button>';
-			html += '<li id="media_button_' + (search.ImgList.length - 1) + '"' + ((imgI == search.ImgList.length - 1) ? ' class="active"' : '') + '>';
-			html += '<a href="#">' + search.ImgList.length + '</a></li>';
+			// Last item button
+			var i = search.ImgList.length - 1;
+			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
-		// html += '<button id="media_button_next" type="button" class="btn btn-default' + ((imgI == search.ImgList.length - 1) ? ' disabled' : '') + '">';
-		// html += '<a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>';
-		// html += '</button>';
-		html += '<li id="media_button_next"' + ((imgI == search.ImgList.length - 1) ? ' class="disabled"' : '') + '>';
-		html += '<a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>';
-		// html += '</div>';
+		// 'Next' button
+		html += mediaPaginationButtonHtml('media_button_next', (imgI == search.ImgList.length - 1) ? 'disabled' : '',
+			'<span class="glyphicon glyphicon-chevron-right"></span>');
 		html += '</ul>';
-		// Expand button
-		// html += '<div class="btn-group" role="group">';
-		// html += '<button id="media_button_max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
-		// html += '<a href="#"><span class="glyphicon glyphicon-fullscreen"></span></a>';
-		// html += '</button>';
-		// html += '</div>';
-		// html += '</div>';
 		// Pagination events
 		$(window).load(function()
 		{
-			$('#media_button_prev').click(function() {return mediaButtonPageClick(-1);});
-			$('#media_button_next').click(function() {return mediaButtonPageClick(1);});
-			$('#media_button_max').click(function() {return mediaButtonMaxClick();});
-			$('#media_button_0').click(function() {return mediaButtonPageClick(0, 0);});
-			$('#media_button_' + (search.ImgList.length - 1)).click(function() {return mediaButtonPageClick(0, search.ImgList.length - 1);});
+			// Disable <a> anchors for disabled buttons
+			$('.pagination .disabled a, .pagination .active a').on('click', function(e) {e.preventDefault();});
+			// Connect click events
+			$('#media_button_prev:not(.disabled)').click(function() {return mediaButtonPageClick(-1);});
+			$('#media_button_next:not(.disabled)').click(function() {return mediaButtonPageClick(1);});
+			$('#media_button_0:not(.active)').click(function() {return mediaButtonPageClick(0, 0);});
+			$('#media_button_' + (search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, search.ImgList.length - 1);});
 			for (var i = first_but; i <= last_but; i++)
 			{
 				(function(){ // This is used to create instances of local variables
 					var icopy = i;
-					$('#media_button_' + i).click(function() {return mediaButtonPageClick(0, icopy);});
+					$('#media_button_' + i + ':not(.active)').click(function() {return mediaButtonPageClick(0, icopy);});
 				})();
 			}
 		});
 	}
 
 	// Image or link (if media is not an image)
-	// html += '<div id="img_div">';
 	if (m[M_MIME].indexOf('image') == 0)
 	{
-		html += '<p class="dwr-centered"><img id="dwr-image" src="' + m[M_PATH] + '" usemap="#imgmap"></p>';
+		html += '<div class="dwr-centered"><div id="img-div">';
+		html += '<img id="dwr-image" src="' + m[M_PATH] + '" usemap="#imgmap">';
 		html += printMediaMap(mdx);
+		
+		// Expand button
+		html += '<div id="media-buttons">';
+		html += '<div class="btn-group-vertical" role="group">';
+		html += '<button id="media-button-max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
+		html += '<span class="glyphicon glyphicon-fullscreen"></span>';
+		html += '</button>';
+		html += '</div>';
+		html += '</div>';
+
+		html += '</div></div>';
+		
+		// Expand button events
+		$(window).load(function()
+		{
+			$('#media-button-max').click(function() {return mediaButtonMaxClick();});
+		});
 	}
 	else
 	{
@@ -1309,7 +1313,6 @@ function printMedia(mdx)
 		name = name.replace(/.*[\\\/]/, '');
 		html += '<p class="dwr-centered"><a href="' + m[M_PATH] + '">' + name + '</a></p>';
 	}
-	// html += '</div>';
 	
 	// Media description
 	if (m[M_DATE] != '') html += '<p><b>' + _('Date') + ': </b>' + m[M_DATE] + '</p>';
@@ -2016,8 +2019,9 @@ function htmlSourcesIndex(data)
 }
 
 
-function printPlacesIndexColText(pdx, col)
+function printPlacesIndexColText(data, x, col)
 {
+	var pdx = data[x];
 	if (P[pdx][P_LOCATIONS].length == 0) return('');
 	return(P[pdx][P_LOCATIONS][0][8 - col]);
 }
@@ -2053,28 +2057,28 @@ function htmlPlacesIndex(data)
 		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Country'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('Postal Code'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('State/ Province'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('County'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Church Parish'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('City'),
-		ftext: printPlacesIndexColText
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Locality'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	// }, {
 		// title: _('Street'),
-		// ftext: printPlacesIndexColText
+		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
 	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
@@ -2560,8 +2564,32 @@ function mapUpdate()
 		// osmMarkers = new ol.Layer.Markers('Markers');
 		// Expand event
 		mapObject.on('singleclick', mapExpand);
-	}
+	};
 	// Place markers
+	var points = [];
+	var nb_max = 0;
+	GetIconProps = function(x_marker)
+	{
+		var point = points[x_marker];
+		var nb = point.nb_birth + point.nb_marr + point.nb_death + point.nb_other;
+		nb = Math.max(nb, 1);
+		var src = '';
+		if (point.nb_birth == nb)
+			src = 'data/gramps-geo-birth.png';
+		else if (point.nb_marr == nb)
+			src = 'data/gramps-geo-marriage.png';
+		else if (point.nb_death == nb)
+			src = 'data/gramps-geo-death.png';
+		else
+			src = 'data/gramps-geo-mainmap.png';
+		var scale = 0.5 + 1.0 * nb / Math.max(nb_max, 5);
+		return({
+			src: src,
+			scale: scale,
+			size: {w: Math.round(48 * scale), h: Math.round(48 * scale)},
+			anchor: {x: Math.round(0.1 * 48 * scale), y: Math.round(0.9 * 48 * scale)}
+		});
+	}
 	for (var x_marker = 0; x_marker < mapCoords.length; x_marker++)
 	{
 		// Sort markerPaces by name
@@ -2569,8 +2597,14 @@ function mapUpdate()
 			return(P[pagePlaces[a][PP_PDX]][P_NAME].localeCompare(P[pagePlaces[b][PP_PDX]][P_NAME]));
 		});
 		// Build markers data
-		var mapName = '';
-		var mapInfo = '';
+		var point = {
+			mapName: '',
+			mapInfo: '',
+			nb_other: 0,
+			nb_birth: 0,
+			nb_marr: 0,
+			nb_death: 0
+		};
 		var previous_pdx = -1;
 		var previous_ul = false;
 		for (var x_place = 0; x_place < markerPaces[x_marker].length; x_place++)
@@ -2579,37 +2613,59 @@ function mapUpdate()
 			var pdx = pp[PP_PDX];
 			if (pdx != previous_pdx)
 			{
-				if (mapName) mapName += '\n';
-				mapName += P[pdx][P_NAME];
-				if (previous_ul) mapInfo += '</ul>';
-				mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a></p>';
+				if (point.mapName) point.mapName += '\n';
+				point.mapName += P[pdx][P_NAME];
+				if (previous_ul) point.mapInfo += '</ul>';
+				point.mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a></p>';
 				previous_pdx = pdx;
 				previous_ul = false;
 			}
 			var txt = '';
-			if (pp[PP_IDX] >= 0) txt += indiLinked(pp[PP_IDX], false);
-			if (pp[PP_FDX] >= 0) txt += famLinked(pp[PP_FDX], false);
+			if (pp[PP_IDX] >= 0)
+			{
+				txt += indiLinked(pp[PP_IDX], false);
+			}
+			if (pp[PP_FDX] >= 0)
+			{
+				txt += famLinked(pp[PP_FDX], false);
+			}
 			if (pp[PP_EVENT]) txt += ' (' + (pp[PP_EVENT][E_TYPE] || pp[PP_EVENT][E_DESCR]) + ')';
 			if (txt)
 			{
-				if (!previous_ul) mapInfo += '<ul class="dwr-mapinfo">';
+				if (!previous_ul) point.mapInfo += '<ul class="dwr-mapinfo">';
 				previous_ul = true;
-				mapInfo += '<li class="dwr-mapinfo">' + txt + '</li>';
+				point.mapInfo += '<li class="dwr-mapinfo">' + txt + '</li>';
+				if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_BIRTH) >= 0)
+					point.nb_birth += 1;
+				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_MARR) >= 0)
+					point.nb_marr += 1;
+				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_DEATH) >= 0)
+					point.nb_death += 1;
+				else
+					point.nb_other += 1;
 			}
 		}
-		if (previous_ul) mapInfo += '</ul>';
+		if (previous_ul) point.mapInfo += '</ul>';
+		nb_max = Math.max(nb_max, point.nb_birth + point.nb_marr + point.nb_death + point.nb_other);
+		points[x_marker] = point;
 		// Print marker
 		if (MAP_SERVICE == 'Google')
 		{
 			(function(){ // This is used to create instances of local variables
+				var ip = GetIconProps(x_marker);
 				var marker = new google.maps.Marker({
 					position:  mapCoords[x_marker],
-					draggable: true,
-					title:     mapName,
-					map:       mapObject
+					// draggable: true,
+					title:     point.mapName,
+					map:       mapObject,
+					icon: {
+						anchor: new google.maps.Point(ip.anchor.x, ip.anchor.y),
+						scaledSize: new google.maps.Size(ip.size.w, ip.size.h),
+						url: ip.src
+					}
 				});
 				var infowindow = new google.maps.InfoWindow({
-					content: mapInfo
+					content: point.mapInfo
 				});
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.open(mapObject, marker);
@@ -2639,26 +2695,44 @@ function mapUpdate()
 				popupdiv.popover({
 					'placement': 'top',
 					'html': true,
-					'title': mapName,
-					'content': mapInfo
+					'title': point.mapName,
+					'content': point.mapInfo
 				});
 				popupdiv.popover('hide');
+				
+				popupdiv.on('show.bs.popover', function () {
+					// alert("show " + this.id);
+					inhibitMapExpand = true;
+				})
+				popupdiv.on('hide.bs.popover', function () {
+					// alert("hide " + this.id);
+					inhibitMapExpand = true;
+				})
 			})();
 		}
 	}
 	if (MAP_SERVICE == 'OpenStreetMap')
 	{
-		var iconStyle = new ol.style.Style({
-			image: new ol.style.Icon(({
-				anchor: [0.0, 1.0],
-				anchorXUnits: 'fraction',
-				anchorYUnits: 'fraction',
-				src: 'data/gramps-geo-altmap.png'
-			}))
-		});
+		OsmPointStyle = function(feature, resolution)
+		{
+			var x_marker = parseInt(feature.p.name.replace('OsmPopup', ''));
+			var ip = GetIconProps(x_marker);
+			var iconStyle = new ol.style.Style({
+				image: new ol.style.Icon(({
+					anchor: [ip.anchor.x, ip.anchor.y],
+					anchorXUnits: 'pixels',
+					anchorYUnits: 'pixels',
+					scale: ip.scale,
+					src: ip.src
+				}))
+			});
+			return([iconStyle]);
+		};
+
 		var vectorLayer = new ol.layer.Vector({
 			source: osmVectorSource,
-			style: iconStyle
+			style: OsmPointStyle
+			// style: iconStyle
 		});
 		mapObject.addLayer(vectorLayer);
 		mapObject.on('click', OsmClick);
@@ -2667,9 +2741,12 @@ function mapUpdate()
 }
 
 
+var inhibitMapExpand = false;
+
 function mapExpand()
 {
-	search.MapExpanded = !search.MapExpanded;
+	if (inhibitMapExpand) return(false);
+	search.MapExpanded = !($('body').hasClass('dwr-fullscreen'));
 	Redirect();
 	return(false);
 }
@@ -2721,17 +2798,21 @@ function OsmClick(event)
 	{
 		if (overlays.item(i).getElement().id == popupname) overlay = overlays.item(i);
 	}
+
+	inhibitMapExpand = false;
 	popupdivs.each(function() {
 		if (this.id == popupname)
 		{
 			overlay.setPosition(coord);
 			$(this).popover('show');
 		}
-		else
+		else if ($(this).next('div.popover:visible').length)
 		{
 			$(this).popover('hide');
 		}
 	});
+	
+	return(false);
 }
 
 function OsmMove(event)
@@ -2834,8 +2915,9 @@ function SearchObjects()
 		{
 			fref = type.fref;
 			index = results[0];
-			html += '<h4>' + type.text + '</h4>';
+			html += printTitle(4, type.text + ' ' + results.length, '', true);
 			html += type.findex(results);
+			html += printTitleEnd();
 		}
 	}
 	if (nb_found == 1)

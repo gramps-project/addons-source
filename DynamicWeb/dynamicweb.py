@@ -79,31 +79,29 @@ Classes:
  """
 
 #TODO: User documentation (wiki?)
-#TODO: In the map use different colors for different events types.
 #TODO: Other bootstrap templates, use LESS for css generation
 #TODO: Sorting items (children, pages in citations, events, etc.)
-#TODO: years in gregorian calendar (get_***_year)
+#TODO: years in gregorian calendar (get_***_year) ?
+#TODO: Export places hierarchy
+#TODO: Export all the database when the filter=0, not only records linked to people
 #TODO: LDS stuff
 #TODO: Show siblings
 #TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
-#TODO: Index pages overflow the size of the page body. The "DataTables" responsive plugin has a bug. solution to be found.
-#TODO: localize surnames first letter extraction (see first_letter in narrativeweb) maybe there is a Javascript library for that
-#TODO: filter in datatables could be insensitive to accents
 #TODO: export ISO dates
 #TODO: approximative search
+#TODO: export *.gramps file or *.pkgfile
 
+#TODO: Use JSON instead of indexes in Javascript Arrays I, F, U, etc.
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: Statistic charts, + database summary
 
 # For the SVG graph:
+#TODO: Refactor: the scaling should be performed by SVG transform
+#TODO: very small texts not printed properly
 #TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
 #TODO: if possible, add a feature to expand/minimize branches of the graphs.
-#TODO: Thumbnails and dates in graphs
-#TODO: Add new graph styles, in order to have same renderings as:
-#             Fan charts
-#             Family lines, Hourglass, Relationship graphs
-#             Ancestor, Descendant trees
-#             Descendant lines
+#TODO: Thumbnails in graphs
+
 
 #------------------------------------------------
 # python modules
@@ -119,7 +117,6 @@ import shutil
 import codecs
 import tarfile
 import tempfile
-import colorsys
 if sys.version_info[0] < 3:
 	from cStringIO import StringIO
 	string_types = basestring
@@ -161,9 +158,10 @@ except ValueError:
 _ = _trans.sgettext
 
 from gramps.version import VERSION, VERSION_TUPLE
-DWR_VERSION_410 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1)
-DWR_VERSION_412 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2)
-DWR_VERSION_420 = (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2)
+DWR_VERSION_410 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1))
+DWR_VERSION_412 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2))
+DWR_VERSION_420 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2))
+DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
 							NameType, Person, UrlType, NoteType,
 							EventRoleType, Family, Event, Place, Source,
@@ -532,6 +530,7 @@ class DynamicWebReport(Report):
 
 		filters_option = menu.get_option_by_name('filter')
 		self.filter = filters_option.get_filter()
+		self.filter_index = filters_option.get_value()
 
 		self.target_path = self.options['target'] #: Destination directory
 		self.ext = ".html" #: HTML fiules extension
@@ -589,12 +588,6 @@ class DynamicWebReport(Report):
 
 		self._backend = HtmlBackend()
 		self._backend.build_link = self.build_link
-		
-		# Data needed to compute colors gradients
-		self.min_age = 0
-		self.max_age = 0
-		self.min_period = 1e10
-		self.max_period = -1e10
 
 
 	def write_report(self):
@@ -1989,8 +1982,6 @@ class DynamicWebReport(Report):
 			start = date.get_start_date()
 			if (mod == Date.MOD_NONE and start != Date.EMPTY):
 				y = str(start[2])
-				self.min_period = min(self.min_period, start[2])
-				self.max_period = max(self.max_period, start[2])
 		return(y)
 
 	def get_birth_place(self, person):
@@ -2022,11 +2013,6 @@ class DynamicWebReport(Report):
 			if (not alive and death_date):
 				nyears = death_date - birth_date
 				nyears.format(precision = 3)
-				age = int(nyears)
-				if (age):
-					age = round(abs(age) / 365.25)
-					self.min_age = min(self.min_age, age)
-					self.max_age = max(self.max_age, age)
 				return(str(nyears))
 		return("");
 
@@ -2191,17 +2177,6 @@ class DynamicWebReport(Report):
 			'color-gender-unknown-death',
 			]:
 			sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, config.get('preferences.%s' % pref)))
-		self.compute_background_colors();
-		sw.write("SVG_BACKGROUND_GEN_COLORS = [" + ", ".join(
-			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in self.background_gen_colors])
-			+ "];\n")
-		sw.write("SVG_BACKGROUND_GRAD_COLORS = [" + ", ".join(
-			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in self.background_grad_colors])
-			+ "];\n")
-		sw.write("MIN_AGE = %i;\n" % self.min_age)
-		sw.write("MAX_AGE = %i;\n" % self.max_age)
-		sw.write("MIN_PERIOD = %i;\n" % self.min_period)
-		sw.write("MAX_PERIOD = %i;\n" % self.max_period)
 		sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
 			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
 			+ "];\n")
@@ -2211,7 +2186,6 @@ class DynamicWebReport(Report):
 		sw.write("SVG_TREE_COLOR_SCHEME2 = [" + ", ".join(
 			[("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME2]])
 			+ "];\n")
-		sw.write("SVG_GENDER_K = 0.9;\n")
 		sw.write("FOOTER=\"" + script_escape(self.get_header_footer_notes("footernote")) + "\";\n")
 		sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
 		sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
@@ -2253,7 +2227,6 @@ class DynamicWebReport(Report):
 			("Attribute", _("Attribute")),
 			("Attributes", _("Attributes")),
 			("Background", _("Background")),
-			("Birth", _("Birth")),
 			("Call Name", _("Call Name")),
 			("Call Number", _("Call Number")),
 			("Children", _("Children")),
@@ -2266,7 +2239,6 @@ class DynamicWebReport(Report):
 			("Country", _("Country")),
 			("County", _("County")),
 			("Date", _("Date")),
-			("Death", _("Death")),
 			("Descendants", _("Descendants")),
 			("Description", _("Description")),
 			("Event", _("Event")),
@@ -2287,7 +2259,6 @@ class DynamicWebReport(Report):
 			("Longitude", _("Longitude")),
 			("Male", _("Male")),
 			("Map", _("Map")),
-			("Marriage", _("Marriage")),
 			("Maximize", _("Maximize")),
 			("Media found:", _("Media found:")),
 			("Media Index", _("Media Index")),
@@ -2334,6 +2305,7 @@ class DynamicWebReport(Report):
 			("Select the type of graph", _("Select the type of graph")),
 			("Several matches.<br>Precise your search or choose in the lists below.", _("Several matches.<br>Precise your search or choose in the lists below.")),
 			("Show _MENU_ entries", _("Show _MENU_ entries")),
+			("Show duplicates", _("Show duplicates")),
 			("Showing 0 to 0 of 0 entries", _("Showing 0 to 0 of 0 entries")),
 			("Showing _START_ to _END_ of _TOTAL_ entries", _("Showing _START_ to _END_ of _TOTAL_ entries")),
 			("Siblings", _("Siblings")),
@@ -2362,10 +2334,14 @@ class DynamicWebReport(Report):
 			("Value", _("Value")),
 			("Web Link", _("Web Link")),
 			("Web Links", _("Web Links")),
+			("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
 			("Without surname", _("Without surname")),
 			("Zoom in", _("Zoom in")),
 			("Zoom out", _("Zoom out")),
 			):
+			sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
+			sep = ",\n"
+		for (code, translated, s) in EventType._DATAMAP:
 			sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
 			sep = ",\n"
 		sw.write("\n};\n")
@@ -2379,40 +2355,6 @@ class DynamicWebReport(Report):
 		self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
 
-	def compute_background_colors(self):
-		"""
-		Method that is called to precomputed values needed for the background of the boxes
-		"""
-		maxgen = int(self.options["graphgens"])
-		cstart = hex_to_rgb(self.options['svg_tree_color1'])
-		cend = hex_to_rgb(self.options['svg_tree_color2'])
-		self.cstart_hsv = colorsys.rgb_to_hsv(cstart[0]/255, cstart[1]/255, cstart[2]/255)
-		self.cend_hsv = colorsys.rgb_to_hsv(cend[0]/255, cend[1]/255, cend[2]/255)
-		# BACKGROUND_GRAD_GEN
-		divs = [x / (maxgen-1) for x in range(maxgen)] if (maxgen > 1) else [0]
-		rgb_colors = [colorsys.hsv_to_rgb(
-			(1-x) * self.cstart_hsv[0] + x * self.cend_hsv[0], 
-			(1-x) * self.cstart_hsv[1] + x * self.cend_hsv[1],
-			(1-x) * self.cstart_hsv[2] + x * self.cend_hsv[2],
-			) for x in divs]
-		self.background_gen_colors = [(255*r, 255*g, 255*b) for r, g, b in rgb_colors]
-		# BACKGROUND_GRAD_PERIOD, BACKGROUND_GRAD_AGE
-		if (self.max_age <= self.min_age):
-			self.min_age = 0
-			self.max_age = config.get('behavior.max-age-prob-alive')
-		self.max_age = min(self.max_age, config.get('behavior.max-age-prob-alive'))
-		if (self.max_period < self.min_period):
-			self.max_period = self.min_period = Today().get_year()
-		steps = 2 * GRADIENTSCALE - 1
-		divs = [x/(steps-1) for x in range(steps)]
-		rgb_colors = [colorsys.hsv_to_rgb(
-			(1-x) * self.cstart_hsv[0] + x * self.cend_hsv[0], 
-			(1-x) * self.cstart_hsv[1] + x * self.cend_hsv[1],
-			(1-x) * self.cstart_hsv[2] + x * self.cend_hsv[2],
-			) for x in divs]
-		self.background_grad_colors = [(255*r, 255*g, 255*b) for r, g, b in rgb_colors]
-			
-			
 	def _export_html_page(self, filename, title, cmd, menu, scripts = [], styles = []):
 		"""
 		Generate an HTML page
@@ -3038,8 +2980,26 @@ class DynamicWebReport(Report):
 				if (not isinstance(handle, UNITYPE)):
 					handle = handle.decode("UTF-8")
 				step()
-				self._add_person(handle, "", "")
+				self._add_person(handle)
 
+		# When all database is exported:
+		# Add all media_objects, places, sources, citations
+		# even when not connected to any person
+		# if (self.filter_index == 0):
+			# for (handles_func, add_func) in (
+				# (self.database.get_person_handles, self._add_person),
+				# (self.database.get_family_handles, self._add_family),
+				# (self.database.get_event_handles, self._add_event),
+				# (self.database.get_place_handles, self._add_place),
+				# (self.database.get_source_handles, self._add_source),
+				# (self.database.get_citation_handles, self._add_citation),
+				# (self.database.get_media_object_handles, self._add_media),
+				# (self.database.get_repository_handles, self._add_repository),
+			# ):
+				# for handle in handles_func():
+					# add_func(handle)
+		
+		# Debug output
 		log.debug("final object dictionary \n" +
 				  "".join(("%s: %s\n" % item) for item in self.obj_dict.items()))
 
@@ -3047,12 +3007,13 @@ class DynamicWebReport(Report):
 				  "".join(("%s: %s\n" % item) for item in self.bkref_dict.items()))
 
 
-	def _add_person(self, person_handle, bkref_class, bkref_handle):
+	def _add_person(self, person_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add person_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Person][person_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Person][person_handle].add((bkref_class, bkref_handle, None))
 		# Check if the person is already added
 		if (person_handle in self.obj_dict[Person]): return
 		# Add person in the dictionaries of objects
@@ -3112,12 +3073,13 @@ class DynamicWebReport(Report):
 		return _nd.display_name(name)
 
 
-	def _add_family(self, family_handle, bkref_class, bkref_handle):
+	def _add_family(self, family_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add family_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Family][family_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Family][family_handle].add((bkref_class, bkref_handle, None))
 		# Check if the family is already added
 		if (family_handle in self.obj_dict[Family]): return
 		# Add family in the dictionaries of objects
@@ -3181,7 +3143,7 @@ class DynamicWebReport(Report):
 		return title_str
 
 
-	def _add_event(self, event_handle, bkref_class, bkref_handle, event_ref):
+	def _add_event(self, event_handle, bkref_class = None, bkref_handle = None, event_ref = None):
 		"""
 		Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3192,11 +3154,12 @@ class DynamicWebReport(Report):
 			# The event reference is already recorded
 			if (event_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Event][event_handle].add((bkref_class, bkref_handle, event_ref))
-		# Event reference attributes citations
-		for attr in event_ref.get_attribute_list():
-			for citation_handle in attr.get_citation_list():
-				self._add_citation(citation_handle, bkref_class, bkref_handle)
+		if (bkref_class is not None):
+			self.bkref_dict[Event][event_handle].add((bkref_class, bkref_handle, event_ref))
+			# Event reference attributes citations
+			for attr in event_ref.get_attribute_list():
+				for citation_handle in attr.get_citation_list():
+					self._add_citation(citation_handle, bkref_class, bkref_handle)
 		# Check if the event is already added
 		if (event_handle in self.obj_dict[Event]): return
 		# Add event in the dictionaries of objects
@@ -3230,18 +3193,20 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
 
-	def _add_place(self, place_handle, bkref_class, bkref_handle):
+	def _add_place(self, place_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
 		# Check if the place is already added
 		if (place_handle in self.obj_dict[Place]): return
 		# Add place in the dictionaries of objects
 		place = self.database.get_place_from_handle(place_handle)
 		if (DWR_VERSION_412):
 			place_name = _pd.display(self.database, place)
+			
 		else:
 			place_name = place.get_title()
 		self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
@@ -3256,13 +3221,14 @@ class DynamicWebReport(Report):
 				self._add_media(media_handle, Place, place_handle, media_ref)
 
 
-	def _add_source(self, source_handle, bkref_class, bkref_handle):
+	def _add_source(self, source_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add source_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		if (not self.inc_sources): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Source][source_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Source][source_handle].add((bkref_class, bkref_handle, None))
 		# Check if the source is already added
 		if (source_handle in self.obj_dict[Source]): return
 		# Add source in the dictionaries of objects
@@ -3280,13 +3246,14 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, Source, source_handle, media_ref)
 
 
-	def _add_citation(self, citation_handle, bkref_class, bkref_handle):
+	def _add_citation(self, citation_handle, bkref_class = None, bkref_handle = None):
 		"""
 		Add citation_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
 		if (not self.inc_sources): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Citation][citation_handle].add((bkref_class, bkref_handle, None))
+		if (bkref_class is not None):
+			self.bkref_dict[Citation][citation_handle].add((bkref_class, bkref_handle, None))
 		# Check if the citation is already added
 		if (citation_handle in self.obj_dict[Citation]): return
 		# Add citation in the dictionaries of objects
@@ -3302,7 +3269,7 @@ class DynamicWebReport(Report):
 			self._add_media(media_handle, Source, source_handle, media_ref)
 
 
-	def _add_media(self, media_handle, bkref_class, bkref_handle, media_ref):
+	def _add_media(self, media_handle, bkref_class = None, bkref_handle = None, media_ref = None):
 		"""
 		Add media_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3314,13 +3281,14 @@ class DynamicWebReport(Report):
 			# The media reference is already recorded
 			if (media_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
-		# Citations for media reference, media reference attributes
-		citation_list = media_ref.get_citation_list()
-		for attr in media_ref.get_attribute_list():
-			citation_list.extend(attr.get_citation_list())
-		for citation_handle in citation_list:
-			self._add_citation(citation_handle, MediaObject, media_handle)
+		if (bkref_class is not None):
+			self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
+			# Citations for media reference, media reference attributes
+			citation_list = media_ref.get_citation_list()
+			for attr in media_ref.get_attribute_list():
+				citation_list.extend(attr.get_citation_list())
+			for citation_handle in citation_list:
+				self._add_citation(citation_handle, MediaObject, media_handle)
 		# Check if the media is already added
 		if (media_handle in self.obj_dict[MediaObject]): return
 		# Add media in the dictionaries of objects
@@ -3335,7 +3303,7 @@ class DynamicWebReport(Report):
 			self._add_citation(citation_handle, MediaObject, media_handle)
 
 
-	def _add_repository(self, repo_handle, bkref_class, bkref_handle, repo_ref):
+	def _add_repository(self, repo_handle, bkref_class = None, bkref_handle = None, repo_ref = None):
 		"""
 		Add repo_handle to the L{self.obj_dict}, and recursively all referenced objects
 		"""
@@ -3347,7 +3315,8 @@ class DynamicWebReport(Report):
 			# The repository reference is already recorded
 			if (repo_ref in refs): return
 		# Update the dictionaries of objects back references
-		self.bkref_dict[Repository][repo_handle].add((bkref_class, bkref_handle, repo_ref))
+		if (bkref_class is not None):
+			self.bkref_dict[Repository][repo_handle].add((bkref_class, bkref_handle, repo_ref))
 		# Check if the repository is already added
 		if (repo_handle in self.obj_dict[Repository]): return
 		# Add repository in the dictionaries of objects
