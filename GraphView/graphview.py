@@ -843,12 +843,12 @@ class GraphvizSvgParser(object):
         """
         pos_x = float(attrs.get('x'))
         pos_y = float(attrs.get('y'))
-        width = int(float(attrs.get('width').rstrip(string.ascii_letters)))
-        height = int(attrs.get('height').rstrip(string.ascii_letters))
+        width = float(attrs.get('width').rstrip(string.ascii_letters))*1.6
+        height = float(attrs.get('height').rstrip(string.ascii_letters))*1.6
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(attrs.get('xlink:href'))
         item = GooCanvas.CanvasImage(parent = self.current_parent(),
-                                     x = pos_x,
-                                     y = pos_y,
+                                     x = pos_x - 0.1 * width,
+                                     y = pos_y - 0.1 * height,
                                      height = height,
                                      width = width,
                                      pixbuf = pixbuf)
@@ -1136,6 +1136,7 @@ class DotGenerator(object):
         color = ""
         fill = self.colors['family_fill']
         style = "filled"
+        label=label.center(int(len(label)*2))
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
 
         # If subgraphs are used then we add both spouses here and Graphviz
@@ -1219,9 +1220,9 @@ class DotGenerator(object):
         #
         if self.is_html_output and image_path:
             line_delimiter = '<BR/>'
-            label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD></TD><TD><IMG SRC="%s"/></TD><TD></TD>'  % image_path
+            label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD><IMG SRC="%s"/></TD>'  % image_path
             #trick it into not stretching the image
-            label += '</TR><TR><TD COLSPAN="3">'
+            label += '</TR><TR><TD>'
         else :
             #no need for html label with this person
             self.is_html_output = False
@@ -1232,10 +1233,11 @@ class DotGenerator(object):
         # Need to pad the label because of a bug in the SVG output of Graphviz
         # which causes the width of the text to exceed the bounding box.
         if self.is_html_output :
+            name = name.ljust(int(len(name)*1.6))
             # avoid < and > in the name, as this is html text
             label += name.replace('<', '&#60;').replace('>', '&#62;')
         else :
-            name = name.center(len(name) + 10)
+            name = name.center(int(len(name)*2))
             label += name
 
         label += line_delimiter
@@ -1248,18 +1250,32 @@ class DotGenerator(object):
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
             if birth:
-                label += _('b. %s') % birth # Short for "born" (could be "*")
+                txt= _('b. %s') % birth # Short for "born" (could be "*")
             # Line separator required only if we have both birth and death
+                if self.is_html_output :
+                    txt = txt.ljust(int(len(txt)*1.6))
+                else :
+                    txt = txt.center(int(len(txt)*2))
+                label += txt
             if birth and death:
                 label += line_delimiter
 
             if death:
-                label += _('d. %s') % death # Short for "died" (could be "+")
+                txt= _('d. %s') % death # Short for "died" (could be "+")
         # 2) simple and on one line:
         #       (1890 - 1960)
+                if self.is_html_output :
+                    txt = txt.ljust(int(len(txt)*1.6))
+                else :
+                    txt = txt.center(int(len(txt)*2))
+                label += txt
         else:
-            label = label + '(%s - %s)' % (birth, death)
-
+            txt= '(%s - %s)' % (birth, death)
+            if self.is_html_output :
+                txt = txt.ljust(int(len(txt)*1.6))
+            else :
+                txt = txt.center(int(len(txt)*2))
+            label += txt
 
         # see if we have a table that needs to be terminated
         if self.is_html_output:
