@@ -41,7 +41,7 @@ def exportData(database, filename,
     if not callable(callback): 
         callback = lambda percent: None # dummy
 
-    with OpenFileOrStdout(filename) as fp:
+    with OpenFileOrStdout(filename, encoding="utf-8") as fp:
 
         total = (len(database.note_map) + 
                  len(database.person_map) +

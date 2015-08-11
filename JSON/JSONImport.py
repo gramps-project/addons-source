@@ -52,7 +52,7 @@ def importData(dbase, filename, user):
     dbase.disable_signals()
     try:
         with DbTxn(_("JSON import"), dbase, batch=True) as trans:
-            with OpenFileOrStdin(filename) as fp:
+            with OpenFileOrStdin(filename, encoding="utf-8") as fp:
                 line = fp.readline()
                 while line:
                     json = ast.literal_eval(line)
