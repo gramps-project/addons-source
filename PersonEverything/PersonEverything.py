@@ -585,7 +585,7 @@ class PersonEverythingReport(Report):
                 self.doc.start_bold()
                 self.doc.write_text(_("Name") + " : ")
                 self.doc.end_bold()
-                self.doc.write_text(place.get_name())
+                self.doc.write_text(place.get_name().value)
                 self.doc.start_bold()
                 self.doc.write_text(" " + _("Type") + " : ")
                 self.doc.end_bold()
