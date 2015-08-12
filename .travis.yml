@@ -30,4 +30,4 @@ install:
 
 script:
     -  mkdir -p /home/travis/.gramps/grampsdb/
-    -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 -vv --exclude=DynamicWeb
+    -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 -vv
