@@ -904,6 +904,7 @@ class DBAPI(DbGeneric):
             PLACE_KEY:      "place", 
             REPOSITORY_KEY: "repository", 
             NOTE_KEY:       "note", 
+            TAG_KEY:        "tag",
             }
         if self.readonly or not handle:
             return
