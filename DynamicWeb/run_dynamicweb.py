@@ -23,11 +23,11 @@ Arguments = [-i] [test numbers]
 
 Usage examples:
 - Import example database
-	python dynamicweb_test.py -i
+	python run_dynamicweb.py -i
 - Run tests 0 and 2
-	python dynamicweb_test.py 0 2
+	python run_dynamicweb.py 0 2
 - Run all tests
-	python dynamicweb_test.py
+	python run_dynamicweb.py
 """
 
 from __future__ import print_function
@@ -282,7 +282,7 @@ def main(test_nums=None):
 		import_data()
 		test_nums = range(len(test_list))
 	# Create results directory
-	results_path = os.path.join(plugin_path, "test_results")
+	results_path = os.path.join(plugin_path, "reports")
 	results_path = os.path.abspath(results_path)
 	if (not os.path.isdir(results_path)): os.mkdir(results_path)
 	plugvers = plugin_version()
@@ -435,8 +435,8 @@ if __name__ == '__main__':
 				int(sys.argv[i])
 				for i in range(1, len(sys.argv))
 			]
-		# Launch tests
-		print("Performing tests: %s" % str(test_nums))
+		# Launch reports generation
+		print("Exporting reports: %s" % str(test_nums))
 		main(test_nums)
 	except Exception as ex:
 		sys.stderr.write(str(ex))
