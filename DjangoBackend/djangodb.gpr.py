@@ -24,7 +24,7 @@ register(
     name  = _("Django Database Backend"),
     name_accell  = _("_Django Database Backend"),
     description =  _("Django Object Relational Model Database Backend"),
-    version = '1.0.5',
+    version = '1.0.7',
     gramps_target_version = "5.0",
     status = STABLE,
     fname = 'djangodb.py',
