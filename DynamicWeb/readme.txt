@@ -8,20 +8,20 @@ It exports the database as web pages.
 See http://belissent.github.io/GrampsDynamicWebReport/ for more information and reports examples.
 
 
-Gramps branches master, 4.0 and 4.1 are supported, previous branches are not supported.
+Gramps branches 4.0, 4.1, 4.2, 5.0 (master) are supported, previous branches are not supported.
 
 
 
-Testing instructions:
+Instructions for generating report examples:
 
 - Import example database:
-  In the directory DynamicWeb/test
-  python dynamicweb_test.py -i
+  In the directory DynamicWeb
+  python run_dynamicweb.py -i
 
 - Run Gramps and set the base directory for media relative paths to %GRAMPS_RESOURCES%/examples/gramps
 
-- Run tests:
-  In the directory DynamicWeb/test
-  python dynamicweb_test.py
+- Generate the example reports:
+  In the directory DynamicWeb
+  python run_dynamicweb.py
 
-- Results are in the directory DynamicWeb/test_results
+- Results are in the directory DynamicWeb/reports
