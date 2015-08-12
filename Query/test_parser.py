@@ -407,7 +407,7 @@ class SelectTest(unittest.TestCase):
 
     def test_select16(self):
         table = self.do_query(16.1, "SELECT gramps_id as id from person;", self.pcount)
-        self.assertTrue(table.data[0][0] == "I0030", "First row, first col is %s, should be %s" % (table.data[0][0], "I0030"))
+        self.assertTrue(len(table.data) == 60, "Table should have selected 60 items")
 
     def test_select17(self):
         table = self.do_query(17.1, "SELECT gramps_id as id from person where id == 'I0004';", 1)
