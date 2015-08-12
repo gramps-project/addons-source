@@ -54,7 +54,7 @@ class DbDjango(DbGeneric):
         self.load(directory)
 
     def initialize_backend(self, directory):
-        pass
+        self._metadata = {}
 
     def close_backend(self):
         pass
