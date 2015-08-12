@@ -150,10 +150,12 @@ class MediaBrowser(Gramplet):
         """
         Return True if the gramplet has data, else return False.
         """
-        if person.get_event_ref_list():
+        if person is None:
+            return False
+        elif person.get_event_ref_list():
             return True
-        if person.get_citation_list():
+        elif person.get_citation_list():
             return True
-        if person.get_media_list():
+        elif person.get_media_list():
             return True
         return False
