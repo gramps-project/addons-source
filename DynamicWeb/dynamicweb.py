@@ -188,7 +188,7 @@ if (sys.version_info[0] < 3):
 else:
 	UNITYPE = str
 from gramps.gen.config import config
-from gramps.gui.thumbnails import get_thumbnail_path, run_thumbnailer
+from gramps.gui.thumbnails import get_thumbnail_path
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
