@@ -351,11 +351,11 @@ class Index(tool.Tool, ManagedWindow):
            
     def walk_tree(self, node, level):
         fill = self.show_level(level)
-        print '%sElement name: %s' % (fill, node.tag, )
+        print('%sElement name: %s' % (fill, node.tag, ))
         for (name, value) in node.attrib.items():
-            print '%s    Attr -- Name: %s  Value: %s' % (fill, name, value,)
+            print('%s    Attr -- Name: %s  Value: %s' % (fill, name, value,))
         if node.attrib.get('ID') is not None:
-            print '%s    ID: %s' % (fill, node.attrib.get('ID').value, )
+            print('%s    ID: %s' % (fill, node.attrib.get('ID').value, ))
         children = node.getchildren()
         for child in children:
             self.walk_tree(child, level + 1)
@@ -399,14 +399,14 @@ class Index(tool.Tool, ManagedWindow):
         
         try:
             from lxml import etree as ElementTree
-        except ImportError, e:
+        except ImportError as e:
             try:
                 from xml.etree import ElementTree
-            except ImportError, e:
-                print '***'
-                print _('*** Error: Must install either ElementTree or lxml.')
-                print '***'
-                raise ImportError, _('must install either ElementTree or lxml')
+            except ImportError as e:
+                print('***')
+                print(_('*** Error: Must install either ElementTree or lxml.'))
+                print('***')
+                raise ImportError(_('must install either ElementTree or lxml'))
 
         self.indexes()
         

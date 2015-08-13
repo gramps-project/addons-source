@@ -452,7 +452,7 @@ def load_gramps(fn, start):
         etype = get_text(ev.getElementsByTagName('type'))
         dvs = ev.getElementsByTagName('dateval')
         if len(dvs) == 0:
-            print 'Undated event: ' + ev.getAttribute('handle')
+            print('Undated event: ' + ev.getAttribute('handle'))
             continue
         date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
         if etype == 'Birth':
@@ -460,7 +460,7 @@ def load_gramps(fn, start):
         elif etype == 'Death':
             po.death = date
         else:
-            print 'Unknown event type: ' + etype
+            print('Unknown event type: ' + etype)
 
 
     class InFamily:
@@ -609,7 +609,7 @@ def draw_file(p, fn, writer):
 
 
 def usage():
-    print """Usage: familytree [OPTION]...
+    print("""Usage: familytree [OPTION]...
 Generate graphical family trees from GRAMPS databases.
 
 -i INPUT                     Use INPUT as input "data.gramps" file
@@ -622,7 +622,7 @@ Generate graphical family trees from GRAMPS databases.
 -s SIZE                      Select base font size to use
 --help                       Display this help and exit
 
-Report bugs to <ats-familytree@offog.org>."""
+Report bugs to <ats-familytree@offog.org>.""")
 
 
 def main(args):
@@ -634,8 +634,8 @@ def main(args):
 
     try:
         (opts, args) = getopt.getopt(args, 'i:o:h:f:s:', ['help'])
-    except getopt.GetoptError, s:
-        print s
+    except getopt.GetoptError as s:
+        print(s)
         usage()
         sys.exit(1)
 
@@ -662,7 +662,7 @@ def main(args):
     elif output_fn.lower().endswith('.ps'):
         draw_file(p, output_fn, PSWriter())
     else:
-        print 'Unknown output format'
+        print('Unknown output format')
         sys.exit(1)
 
 

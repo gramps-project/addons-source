@@ -120,7 +120,7 @@ def _combine(str1, str2):
         return str2
     if str2 == "":
         return str1
-    return str1 + u', ' + str2
+    return str1 + ', ' + str2
 
 #-------------------------------------------------------------------------
 #

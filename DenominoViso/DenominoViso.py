@@ -3042,8 +3042,6 @@ class GuiTableOption(Gtk.ScrolledWindow):
         for cell in list_of_lists[0]:
             if type(cell) == type("string"):
                 lstore_args.append(GObject.TYPE_STRING)
-            elif type(cell) == type(u"string"):
-                lstore_args.append(GObject.TYPE_STRING)
             elif type(cell) == type(1):
                 lstore_args.append(GObject.TYPE_UINT)
             elif type(cell) == type(False):
@@ -3068,7 +3066,6 @@ class GuiTableOption(Gtk.ScrolledWindow):
         self.tv_w_renderers = []
         for i,v in enumerate(list_of_lists[0]):
             if (type(v) == type("string") or
-                type(v) == type(u"string") or
                 type(v) == type(1)):
                 renderer = Gtk.CellRendererText()
                 if editable_column or editable_column == 0:

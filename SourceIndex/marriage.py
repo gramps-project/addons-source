@@ -427,11 +427,11 @@ class MarriageIndex(tool.Tool, ManagedWindow):
            
     def walk_tree(self, node, level):
         fill = self.show_level(level)
-        print '%sElement name: %s' % (fill, node.tag, )
+        print('%sElement name: %s' % (fill, node.tag, ))
         for (name, value) in node.attrib.items():
-            print '%s    Attr -- Name: %s  Value: %s' % (fill, name, value,)
+            print('%s    Attr -- Name: %s  Value: %s' % (fill, name, value,))
         if node.attrib.get('ID') is not None:
-            print '%s    ID: %s' % (fill, node.attrib.get('ID').value, )
+            print('%s    ID: %s' % (fill, node.attrib.get('ID').value, ))
         children = node.getchildren()
         for child in children:
             self.walk_tree(child, level + 1)

@@ -157,7 +157,7 @@ class HeadlineNewsGramplet(Gramplet):
                             if (node2.nodeName == "item"):
                                 title = ""
                                 link = ""
-                                desc = u""
+                                desc = ""
                                 # Gather up the data:
                                 for item_node in node2.childNodes:
                                     #print("---> ", item_node.nodeName)
@@ -199,7 +199,7 @@ class HeadlineNewsGramplet(Gramplet):
 
     def strip_html(self, text):
         text = text.replace("nbsp;", " ")
-        retval = u""
+        retval = ""
         last_c = None
         state = "plain"
         for c in text:

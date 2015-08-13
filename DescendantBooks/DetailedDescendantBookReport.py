@@ -784,7 +784,7 @@ class DetailedDescendantBookReport(Report):
         if ph:
             place = self.database.get_place_from_handle(ph).get_title()
         else:
-            place = u''
+            place = ''
 
         event_name = self._get_type(event.get_type())
 
@@ -827,7 +827,7 @@ class DetailedDescendantBookReport(Report):
         if ph:
             place = self.database.get_place_from_handle(ph).get_title()
         else:
-            place = u''
+            place = ''
 
         self.doc.start_paragraph('DDR-EventHeader')    #BOOK
         event_name = self._get_type(event.get_type())
