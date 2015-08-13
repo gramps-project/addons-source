@@ -31,5 +31,6 @@ install:
 
 script:
     -  mkdir -p /home/travis/.gramps/grampsdb/
+    -  mkdir -p /home/travis/.gramps/gramps50/
     -  ln -s /home/travis/gramps-project/addons-source /home/travis/.gramps/gramps50/plugins
     -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 -vv
