@@ -8,11 +8,19 @@ It exports the database as web pages.
 See http://belissent.github.io/GrampsDynamicWebReport/ for more information and reports examples.
 
 
-Gramps branches 4.0, 4.1, 4.2, 5.0 (master) are supported, previous branches are not supported.
+GRAMPS branches 4.0, 4.1, 4.2, 5.0 (master) are supported, previous branches are not supported.
 
 
 
-Instructions for generating report examples:
+Instructions for generating report examples (GRAMPS version 5.0 only):
+
+- See .travis.yml in the addons-source repository, which lists the installations to be performed first.
+- Run nosetests -vv -a 'slow'
+- Results are in the directory DynamicWeb/reports
+
+
+
+Instructions for generating report examples (GRAMPS versions 4.0, 4.1, 4.2):
 
 - Import example database:
   In the directory DynamicWeb
@@ -25,3 +33,4 @@ Instructions for generating report examples:
   python run_dynamicweb.py
 
 - Results are in the directory DynamicWeb/reports
+
