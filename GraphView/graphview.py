@@ -56,7 +56,7 @@ from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-from gramps.gui.thumbnails import get_thumbnail_path
+from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gui.editors import EditPerson, EditFamily
 from gramps.gen.errors import WindowActiveError

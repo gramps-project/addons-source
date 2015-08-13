@@ -82,7 +82,7 @@ from gramps.gen.plug.menu import (TextOption, NumberOption, PersonOption, Filter
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gui.thumbnails import get_thumbnail_path    #for images
+from gramps.gen.utils.thumbnails import get_thumbnail_path    #for images
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:

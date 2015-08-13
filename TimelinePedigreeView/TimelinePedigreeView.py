@@ -53,7 +53,7 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback, 
                           find_children, find_parents, find_witnessed_people)
 from gramps.gen.utils.libformatting import FormattingHelper
-from gramps.gui.thumbnails import get_thumbnail_path
+from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.errors import WindowActiveError
 from gramps.gui.editors import EditPerson, EditFamily
 from gramps.gui.ddtargets import DdTargets

@@ -28,7 +28,7 @@
 #-------------------------------------------------------------------------
 from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
-from gramps.gui.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
+from gramps.gen.utils.thumbnails import get_thumbnail_image, SIZE_NORMAL, SIZE_LARGE
 from gramps.gen.utils.file import media_path_full
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale

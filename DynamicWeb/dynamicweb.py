@@ -188,7 +188,6 @@ if (sys.version_info[0] < 3):
 else:
 	UNITYPE = str
 from gramps.gen.config import config
-from gramps.gui.thumbnails import get_thumbnail_path, run_thumbnailer
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
@@ -209,7 +208,6 @@ from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 from gramps.plugins.webreport.narrativeweb import first_letter
 
 from gramps.gen.utils.place import conv_lat_lon
-from gramps.gui.pluginmanager import GuiPluginManager
 
 from gramps.gen.relationship import get_relationship_calculator
 if (DWR_VERSION_410):
@@ -1698,6 +1696,7 @@ class DynamicWebReport(Report):
 		to copy the cached thumbnail to the website.
 		Return the new path to the image.
 		"""
+                from gramps.gen.utils.thumbnails import get_thumbnail_path
 		if (region and region[0] == 0 and region[1] == 0 and region[2] == 100 and region[3] == 100):
 			region = None
 		handle = media.get_handle()
