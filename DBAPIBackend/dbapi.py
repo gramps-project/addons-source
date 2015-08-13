@@ -822,6 +822,7 @@ class DBAPI(DbGeneric):
         # Emit after added:
         if emit:
             self.emit(emit, ([tag.handle],))
+        self.has_changed = True
 
     def commit_media_object(self, media, trans, change_time=None):
         emit = None
@@ -859,6 +860,7 @@ class DBAPI(DbGeneric):
         # Emit after added:
         if emit:
             self.emit(emit, ([media.handle],))
+        self.has_changed = True
 
     def update_backlinks(self, obj):
         # First, delete the current references:
@@ -1301,6 +1303,7 @@ class DBAPI(DbGeneric):
         """
         Returns a dictionary of 
         {given_name: (male_count, female_count, unknown_count)} 
+        Not called: this is a database-efficient version
         """
         self.dbapi.execute("""SELECT given_name, gender_type FROM person;""")
         gstats = {}
