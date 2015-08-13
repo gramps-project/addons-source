@@ -80,10 +80,9 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates, use LESS for css generation
-#TODO: Sorting items (children, pages in citations, events, etc.)
 #TODO: years in gregorian calendar (get_***_year) ?
-#TODO: Export places hierarchy
 #TODO: Export all the database when the filter=0, not only records linked to people
+#TODO: Export places hierarchy
 #TODO: LDS stuff
 #TODO: Show siblings
 #TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
@@ -91,7 +90,6 @@ Classes:
 #TODO: approximative search
 #TODO: export *.gramps file or *.pkgfile
 
-#TODO: Use JSON instead of indexes in Javascript Arrays I, F, U, etc.
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: Statistic charts, + database summary
 
@@ -132,6 +130,7 @@ if (sys.version_info[0] < 3):
 else:
 	import urllib, urllib.parse as urlparse
 import zipfile
+import json
 
 from operator import itemgetter
 from decimal import Decimal, getcontext
@@ -533,7 +532,6 @@ class DynamicWebReport(Report):
 		self.filter_index = filters_option.get_value()
 
 		self.target_path = self.options['target'] #: Destination directory
-		self.ext = ".html" #: HTML fiules extension
 		self.title = self.options['title'] #: Web site title. Web pages title are in the form "title of the page - title of the site"
 
 		self.author = get_researcher().get_name() #: Database author name. Used in copyright text.
@@ -675,7 +673,7 @@ class DynamicWebReport(Report):
 			self._export_pages()
 			step()
 			# Create GENDEX file
-			self.build_gendex(self.obj_dict[Person])
+			self.build_gendex()
 			step()
 			# Create an archive file of the web site
 			self.create_archive()
@@ -692,113 +690,107 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'I' is sorted by person name\n"
 			"// 'I' gives for individual:\n"
-			"//   - Gramps ID\n"
-			"//   - The complete name\n"
-			"//   - The short name\n"
-			"//   - The names as a list of:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - name: The complete name\n"
+			"//   - short_name: The short name\n"
+			"//   - names: The names as a list of:\n"
 			"//       [full name, type, title, nick, call, given, suffix, list of surnames, family nickname,\n"
 			"//        notes, list of the name source citations index (in table 'C')]\n"
-			"//   - The gender\n"
-			"//   - The birth year in the form '1700', '?' (date unknown)\n"
-			"//   - The birth place\n"
-			"//   - The death year in the form '1700', '?' (date unknown), '' (not dead)\n"
-			"//   - The death place\n"
-			"//   - The death age\n"
-			"//   - A list of events, with for each event:\n"
-			"//       - The event name\n"
-			"//       - The event date\n"
-			"//       - The event date in ISO format (sortable)\n"
-			"//       - The event place index (in table 'P'), -1 if none\n"
-			"//       - The event description\n"
-			"//       - The event text and notes (including event reference notes)\n"
-			"//       - A list of the event media index, in the form:\n"
-			"//           - media index (in table 'M')\n"
-			"//           - media thumbnail path\n"
-			"//           - [x1, y1, x2, y2] of the media reference\n"
-			"//           - notes of the media reference\n"
-			"//           - list of the media reference source citations index (in table 'C')\n"
-			"//       - A list of the event source citations index (in table 'C')\n"
-			"//   - A list of addresses, with for each address:\n"
-			"//       - The address date\n"
-			"//       - The address date in ISO format (sortable)\n"
-			"//       - The address place in the form:\n"
+			"//   - gender: The gender\n"
+			"//   - birth_year: The birth year in the form '1700', '?' (date unknown)\n"
+			"//   - birth_place: The birth place\n"
+			"//   - death_year: The death year in the form '1700', '?' (date unknown), '' (not dead)\n"
+			"//   - death_place: The death place\n"
+			"//   - death_age: The death age\n"
+			"//   - events: A list of events, with for each event:\n"
+			"//       - gid: The event GID\n"
+			"//       - type: The event name\n"
+			"//       - date: The event date\n"
+			"//       - date_iso: The event date in ISO format (sortable)\n"
+			"//       - place: The event place index (in table 'P'), -1 if none\n"
+			"//       - descr: The event description\n"
+			"//       - text: The event text and notes (including event reference notes)\n"
+			"//       - media: A list of the event media index, in the form:\n"
+			"//           - m_idx: media index (in table 'M')\n"
+			"//           - thumb: media thumbnail path\n"
+			"//           - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//           - note: notes of the media reference\n"
+			"//           - cita: list of the media reference source citations index (in table 'C')\n"
+			"//       - cita: A list of the event source citations index (in table 'C')\n"
+			"//   - addrs: A list of addresses, with for each address:\n"
+			"//       - date: The address date\n"
+			"//       - date_iso: The address date in ISO format (sortable)\n"
+			"//       - location: The address place in the form:\n"
 			"//           [street, locality, parish, city, state, county, zip, country]\n"
-			"//       - The address notes\n"
-			"//       - A list of the address source citations index (in table 'C')\n"
-			"//   - The person notes\n"
-			"//   - A list of the person media references, in the form:\n"
-			"//       - media index (in table 'M')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the person source citations index (in table 'C')\n"
-			"//   - The list of the person attributes in the form:\n"
+			"//       - note: The address notes\n"
+			"//       - cita: A list of the address source citations index (in table 'C')\n"
+			"//   - note: The person notes\n"
+			"//   - media: A list of the person media references, in the form:\n"
+			"//       - m_idx: media index (in table 'M')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - note: A list of the person source citations index (in table 'C')\n"
+			"//   - media: The list of the person attributes in the form:\n"
 			"//       [attribute, value, note, list of citations]\n"
-			"//   - The list of the person URL in the form:\n"
+			"//   - urls: The list of the person URL in the form:\n"
 			"//       [type, url, description]\n"
-			"//   - A list of partners families index (in table 'F')\n"
-			"//   - A list of parents families in the form:\n"
+			"//   - fams: A list of partners families index (in table 'F')\n"
+			"//   - famc: A list of parents families in the form:\n"
 			"//       [index (in table 'F'), relation to father, relation to mother, notes, list of citations]\n"
-			"//   - A list of associations in the form:\n"
+			"//   - assoc: A list of associations in the form:\n"
 			"//       [person index (in table 'I'), relationship, notes, list of citations (in table 'C')]\n"
-			"I = [")
-		sep = "\n"
+			"I = ")
+		jdatas = []
 		person_list = list(self.obj_dict[Person].keys())
 		person_list.sort(key = lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
 		for person_handle in person_list:
+			jdata = {}
 			person = self.database.get_person_from_handle(person_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Person][person_handle][OBJDICT_GID] + "\",")
+			jdata['gid'] = self.obj_dict[Person][person_handle][OBJDICT_GID]
 			# Names
 			name = self.get_name(person) or ""
-			sw.write("\"" + script_escape(name) + "\",")
+			jdata['name'] = name
 			name = self.get_short_name(person) or ""
-			sw.write("\"" + script_escape(name) + "\",\n")
-			sw.write(self.get_name_data(person) + ",\n")
+			jdata['short_name'] = name
+			jdata['names'] = self.get_name_data(person)
 			# Gender
 			gender = ""
 			if (person.get_gender() == Person.MALE): gender = "M"
 			if (person.get_gender() == Person.FEMALE): gender = "F"
 			if (person.get_gender() == Person.UNKNOWN): gender = "U"
-			sw.write("\"" + gender + "\",")
+			jdata['gender'] = gender
 			# Years
-			sw.write("\"" + self.get_birth_year(person) + "\",\n")
-			sw.write("\"" + self.get_birth_place(person) + "\",\n")
-			sw.write("\"" + self.get_death_year(person) + "\",\n")
-			sw.write("\"" + self.get_death_place(person) + "\",\n")
+			jdata['birth_year'] = self.get_birth_year(person)
+			jdata['birth_place'] = self.get_birth_place(person)
+			jdata['death_year'] = self.get_death_year(person)
+			jdata['death_place'] = self.get_death_place(person)
 			# Age at death
-			sw.write("\"" + script_escape(self.get_death_age(person)) + "\",\n")
+			jdata['death_age'] = self.get_death_age(person)
 			# Events
-			sw.write("[\n" + self._data_events(person) + "\n],\n")
+			jdata['events'] = self._data_events(person)
 			# Addresses
-			sw.write("[\n" + self._data_addresses(person) + "\n],\n")
+			jdata['addrs'] = self._data_addresses(person)
 			# Get individual notes
-			sw.write("\"" + script_escape(self.get_notes_text(person)) + "\",\n")
+			jdata['note'] = self.get_notes_text(person)
 			# Get individual media
-			sw.write(self._data_media_reference_index(person))
-			sw.write(",\n")
+			jdata['media'] = self._data_media_reference_index(person)
 			# Get individual sources
-			sw.write(self._data_source_citation_index(person))
-			sw.write(",\n")
+			jdata['cita'] = self._data_source_citation_index(person)
 			# Get individual attributes
-			sw.write(self._data_attributes(person))
-			sw.write(",\n")
+			jdata['attr'] = self._data_attributes(person)
 			# Get individual URL
-			sw.write(self._data_url_list(person))
-			sw.write(",\n")
+			jdata['urls'] = self._data_url_list(person)
 			# Families (partners)
-			sw.write(self._data_families_index(person))
-			sw.write(",\n")
+			jdata['fams'] = self._data_families_index(person)
 			# Families (parents)
-			sw.write(self._data_parents_families_index(person))
-			sw.write(",\n")
+			jdata['famc'] = self._data_parents_families_index(person)
 			# Associations
-			sw.write(self._data_associations(person))
-			sw.write("\n]")
+			jdata['assoc'] = self._data_associations(person)
 			#
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_indi.js", sw.getvalue())
 
 
@@ -806,50 +798,48 @@ class DynamicWebReport(Report):
 		primary_name = person.get_primary_name()
 		all_names = [primary_name] + person.get_alternate_names()
 		first_name = primary_name.get_first_name()
-		text = "["
+		jdatas = []
 		sep = ""
 		for name in all_names:
-			text += sep + "["
+			jdata = {}
 			name.set_display_as(self.name_format)
 			pname = _nd.display_name(name)
-			text += "\"" + script_escape(pname) + "\","
+			jdata['full'] = pname
 			# Type
-			text += "\"" + script_escape(str(name.get_type())) + "\","
+			jdata['type'] = str(name.get_type())
 			# Title
 			title = name.get_title() or ""
-			text += "\"" + script_escape(str(title)) + "\","
+			jdata['title'] = str(title)
 			# Nickname
 			nick_name = name.get_nick_name()
 			if (nick_name == first_name or not nick_name): nick_name = ""
-			text += "\"" + script_escape(str(nick_name)) + "\","
+			jdata['nick'] = str(nick_name)
 			# Callname
 			call_name = name.get_call_name()
 			if (call_name == first_name or not call_name): call_name = ""
-			text += "\"" + script_escape(str(call_name)) + "\","
+			jdata['call'] = str(call_name)
 			# Given
 			given = name.get_first_name() or ""
-			text += "\"" + script_escape(str(given)) + "\","
+			jdata['given'] = str(given)
 			# Suffix
 			suffix = name.get_suffix() or ""
-			text += "\"" + script_escape(str(suffix)) + "\","
+			jdata['suffix'] = str(suffix)
 			# Surnames
 			surnames = name.get_surname_list()
-			text += "[" + ",".join([
-				"\"" + script_escape(str(surname.get_surname() or "")) + "\""
-				for surname in surnames]) + "],"
+			jdata['surnames'] = [str(surname.get_surname() or "") for surname in surnames]
 			# Family nickname
 			fnick = name.get_family_nick_name() or ""
-			text += "\"" + script_escape(str(fnick)) + "\","
+			jdata['fam_nick'] = str(fnick)
 			# Get name date
 			datetext = format_date(name.date) or ""
-			text += "\"" + script_escape(datetext) + "\","
+			jdata['date'] = datetext
 			# Get name notes
-			text += "\"" + script_escape(self.get_notes_text(name)) + "\","
+			jdata['note'] = self.get_notes_text(name)
 			# Get name sources
-			text += self._data_source_citation_index(name) + "]"
-			sep = ","
-		text += "]"
-		return(text)
+			jdata['cita'] = self._data_source_citation_index(name)
+			#
+			jdatas.append(jdata)
+		return(jdatas)
 
 
 	def get_name_object(self, person, maiden_name = None):
@@ -902,75 +892,71 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'F' is sorted by family full name\n"
 			"// 'F' gives for each family:\n"
-			"//   - Gramps ID\n"
-			"//   - The family full name\n"
-			"//   - The family union type\n"
-			"//   - The marriage year in the form '1700', '?' (unknown), or '' (not married)\n"
-			"//   - The marriage place"
-			"//   - A list of events, with for each event:\n"
-			"//       - The event name\n"
-			"//       - The event date\n"
-			"//       - The event date in ISO format (sortable)\n"
-			"//       - The event place index (in table 'P'), -1 if none\n"
-			"//       - The event description\n"
-			"//       - The event text and notes (including event reference notes)\n"
-			"//       - A list of the event media references, in the form:\n"
-			"//           - media index (in table 'M')\n"
-			"//           - media thumbnail path\n"
-			"//           - [x1, y1, x2, y2] of the media reference\n"
-			"//           - notes of the media reference\n"
-			"//           - list of the media reference source citations index (in table 'C')\n"
-			"//       - A list of the event source citations index (in table 'C')\n"
-			"//   - The family notes\n"
-			"//   - A list of the family media references, in the form:\n"
-			"//       - media index (in table 'M')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the family source citations index (in table 'C')\n"
-			"//   - The list of the family attributes in the form:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - name: The family full name\n"
+			"//   - type: The family union type\n"
+			"//   - marr_year: The marriage year in the form '1700', '?' (unknown), or '' (not married)\n"
+			"//   - marr_place: The marriage place"
+			"//   - events: A list of events, with for each event:\n"
+			"//       - gid: The event GID\n"
+			"//       - type: The event name\n"
+			"//       - date: The event date\n"
+			"//       - date_iso: The event date in ISO format (sortable)\n"
+			"//       - place: The event place index (in table 'P'), -1 if none\n"
+			"//       - descr: The event description\n"
+			"//       - text: The event text and notes (including event reference notes)\n"
+			"//       - media: A list of the event media index, in the form:\n"
+			"//           - m_idx: media index (in table 'M')\n"
+			"//           - thumb: media thumbnail path\n"
+			"//           - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//           - note: notes of the media reference\n"
+			"//           - cita: list of the media reference source citations index (in table 'C')\n"
+			"//       - cita: A list of the event source citations index (in table 'C')\n"
+			"//   - note: The family notes\n"
+			"//   - media: A list of the family media references, in the form:\n"
+			"//       - m_idx: media index (in table 'M')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - cita: A list of the family source citations index (in table 'C')\n"
+			"//   - attr: The list of the family attributes in the form:\n"
 			"//       [attribute, value, note, list of citations]\n"
-			"//   - A list of spouses index (in table 'I')\n"
-			"//   - A list of child in the form:\n"
+			"//   - spou: A list of spouses index (in table 'I')\n"
+			"//   - chil: A list of child in the form:\n"
 			"//       [index (in table 'I'), relation to father, relation to mother, notes, list of citations]\n"
-			"F = [")
-		sep = "\n"
+			"F = ")
+		jdatas = []
 		family_list = list(self.obj_dict[Family].keys())
 		family_list.sort(key = lambda x: self.obj_dict[Family][x][OBJDICT_INDEX])
 		for family_handle in family_list:
 			family = self.database.get_family_from_handle(family_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Family][family_handle][OBJDICT_GID] + "\",")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[Family][family_handle][OBJDICT_GID]
 			# Names
 			name = self.get_family_name(family) or ""
-			sw.write("\"" + script_escape(name) + "\",\n")
-			sw.write("\"" + script_escape(str(family.get_relationship())) + "\",\n")
+			jdata['name'] = name
+			jdata['type'] = str(family.get_relationship())
 			# Years
-			sw.write("\"" + self.get_marriage_year(family) + "\",\n")
-			sw.write("\"" + self.get_marriage_place(family) + "\",\n")
+			jdata['marr_year'] = self.get_marriage_year(family)
+			jdata['marr_place'] = self.get_marriage_place(family)
 			# Events
-			sw.write("[\n" + self._data_events(family) + "\n],\n")
+			jdata['events'] = self._data_events(family)
 			# Get family notes
-			sw.write("\"" + script_escape(self.get_notes_text(family)) + "\",\n")
+			jdata['note'] = self.get_notes_text(family)
 			# Get family media
-			sw.write(self._data_media_reference_index(family))
-			sw.write(",\n")
+			jdata['media'] = self._data_media_reference_index(family)
 			# Get family sources
-			sw.write(self._data_source_citation_index(family))
-			sw.write(",\n")
+			jdata['cita'] = self._data_source_citation_index(family)
 			# Get family attributes
-			sw.write(self._data_attributes(family))
-			sw.write(",\n")
+			jdata['attr'] = self._data_attributes(family)
 			# Partners
-			sw.write(self._data_partners_index(family))
-			sw.write(",\n")
+			jdata['spou'] = self._data_partners_index(family)
 			# Children
-			sw.write(self._data_children_index(family))
-			sw.write("\n]")
+			jdata['chil'] = self._data_children_index(family)
 			#
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_fam.js", sw.getvalue())
 
 
@@ -981,28 +967,28 @@ class DynamicWebReport(Report):
 		@return: events as a string representing a Javascript Array
 		"""
 		# Builds an event list that gives for each event:
-		#  - Gramps ID\n"
-		#  - The event name
-		#  - The event date
-		#  - The event date in ISO format (sortable)
-		#  - The event place index (in table 'P'), -1 if none
-		#  - The event description
-		#  - The event text and notes (including event reference notes)
-		#  - A list of the event media index, in the form:
-		#      - media index (in table 'M')
-		#      - media thumbnail path
-		#      - [x1, y1, x2, y2] of the media reference
-		#      - notes of the media reference
-		#      - list of the media reference source citations index (in table 'C')\n"
-		#  - A list of the event source citations index (in table 'C')
+		#  - gid: Gramps ID\n"
+		#  - type: The event name
+		#  - date: The event date
+		#  - date_iso: The event date in ISO format (sortable)
+		#  - place: The event place index (in table 'P'), -1 if none
+		#  - descr: The event description
+		#  - text: The event text and notes (including event reference notes)
+		#  - media: A list of the event media index, in the form:
+		#      - m_idx: media index (in table 'M')
+		#      - thumb: media thumbnail path
+		#      - rect: [x1, y1, x2, y2] of the media reference
+		#      - note: notes of the media reference
+		#      - cita: list of the media reference source citations index (in table 'C')\n"
+		#  - cita: A list of the event source citations index (in table 'C')
 		event_ref_list = object.get_event_ref_list()
-		if not event_ref_list: return("")
-		rows = []
+		if not event_ref_list: return([])
+		jdatas = []
 		for event_ref in event_ref_list:
 			if (event_ref.ref not in self.obj_dict[Event]): continue
 			event = self.database.get_event_from_handle(event_ref.ref)
 			if (not event): continue
-			trow = "\t["
+			jdata = {}
 			evt_type = str(event.get_type())
 			event_role = event_ref.get_role()
 			if (event_role != EventRoleType.PRIMARY and event_role != EventRoleType.FAMILY):
@@ -1012,33 +998,31 @@ class DynamicWebReport(Report):
 			if (place_handle and (place_handle in self.obj_dict[Place])):
 				place_index = self.obj_dict[Place][place_handle][OBJDICT_INDEX]
 			evt_desc = event.get_description()
-			trow += "\"" + self.obj_dict[Event][event_ref.ref][OBJDICT_GID] + "\","
-			trow += "\"" + script_escape(html_escape(evt_type)) + "\","
+			jdata['gid'] = self.obj_dict[Event][event_ref.ref][OBJDICT_GID]
+			jdata['type'] = html_escape(evt_type)
 			evt_date = format_date(event.get_date_object())
-			trow += "\"" + script_escape(html_escape(evt_date)) + "\","
+			jdata['date'] = html_escape(evt_date)
 			evt_date = format_date(event.get_date_object(), True)
-			trow += "\"" + script_escape(html_escape(evt_date)) + "\","
-			trow += str(place_index) + ","
+			jdata['date_iso'] = html_escape(evt_date)
+			jdata['place'] = place_index
 			if (evt_desc is None): evt_desc = ""
-			trow += "\"" + script_escape(html_escape(evt_desc)) + "\","
+			jdata['descr'] = html_escape(evt_desc)
 			# Get event notes
 			notelist = event.get_note_list()
 			notelist.extend(event_ref.get_note_list())
 			attrlist = event.get_attribute_list()
 			attrlist.extend(event_ref.get_attribute_list())
-			trow += "\"" + script_escape(self.get_notes_attributes_text(notelist, attrlist)) + "\","
+			jdata['text'] = self.get_notes_attributes_text(notelist, attrlist)
 			# Get event media
-			trow += self._data_media_reference_index(event)
-			trow += ","
+			jdata['media'] = self._data_media_reference_index(event)
 			# Get event sources
 			citationlist = event.get_citation_list()
 			citationlist.extend(event_ref.get_citation_list())
 			for attr in attrlist: citationlist.extend(attr.get_citation_list())
-			trow += self._data_source_citation_index_from_list(citationlist)
+			jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
 			#
-			trow += "]"
-			rows.append(trow)
-		return(",\n".join(rows))
+			jdatas.append(jdata)
+		return(jdatas)
 
 
 	def _data_addresses(self, object):
@@ -1048,22 +1032,22 @@ class DynamicWebReport(Report):
 		@return: events as a string representing a Javascript Array
 		"""
 		# Builds an address list that gives for each address:
-		#  - The address date\n"
-		#  - The address date in ISO format (sortable)\n"
-		#  - The address place in the form:\n"
+		#  - date: The address date\n"
+		#  - date_iso: The address date in ISO format (sortable)\n"
+		#  - location: The address place in the form:\n"
 		#      [street, locality, parish, city, state, county, zip, country]\n"\n"
-		#  - The address notes\n"
-		#  - A list of the address source citations index (in table 'C')\n"
-		if (not self.inc_addresses): return("")
+		#  - note: The address notes\n"
+		#  - cita: A list of the address source citations index (in table 'C')\n"
+		if (not self.inc_addresses): return([])
 		addrlist = object.get_address_list()
-		if not addrlist: return("")
-		rows = []
+		if not addrlist: return([])
+		jdatas = []
 		for addr in addrlist:
-			text = "\t["
+			jdata = {}
 			addr_date = format_date(addr.get_date_object())
-			text += "\"" + script_escape(html_escape(addr_date)) + "\","
+			jdata['date'] = html_escape(addr_date)
 			addr_date = format_date(addr.get_date_object(), True)
-			text += "\"" + script_escape(html_escape(addr_date)) + "\","
+			jdata['date_iso'] = html_escape(addr_date)
 			addr_data = [
 				addr.get_street(),
 				addr.get_locality(),
@@ -1075,13 +1059,14 @@ class DynamicWebReport(Report):
 				addr.get_country(),
 				addr.get_phone(),
 			]
-			text += "[\"" + "\",\"".join([script_escape(data) for data in addr_data]) + "\"],"
+			jdata['location'] = addr_data
 			# Get address notes
-			text += "\"" + script_escape(self.get_notes_text(addr)) + "\","
+			jdata['note'] = self.get_notes_text(addr)
 			# Get address sources
-			text += self._data_source_citation_index(addr) + "]"
-			rows.append(text)
-		return(",\n".join(rows))
+			jdata['cita'] = self._data_source_citation_index(addr)
+			#
+			jdatas.append(jdata)
+		return(jdatas)
 
 
 	def _export_sources(self):
@@ -1094,63 +1079,59 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'S' is sorted by source title\n"
 			"// 'S' gives for each source:\n"
-			"//   - Gramps ID\n"
-			"//   - The source title\n"
-			"//   - The source text (author, etc.)\n"
-			"//   - The source notes\n"
-			"//   - A list of the source media references, in the form:\n"
-			"//       - media index (in table 'M')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the citations index (in table 'C') referencing this source\n"
-			"//   - A list of the repositories for this source, in the form:\n"
-			"//       - repository index (in table 'R')\n"
-			"//       - media type\n"
-			"//       - call number\n"
-			"//       - notes of the repository reference\n"
-			"//   - The list of the sources attributes in the form:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - title: The source title\n"
+			"//   - text: The source text (author, etc.)\n"
+			"//   - note: The source notes\n"
+			"//   - media: A list of the source media references, in the form:\n"
+			"//       - m_idx: media index (in table 'M')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - bkc: A list of the citations index (in table 'C') referencing this source\n"
+			"//   - repo: A list of the repositories for this source, in the form:\n"
+			"//       - r_idx: repository index (in table 'R')\n"
+			"//       - media_type: media type\n"
+			"//       - call_number: call number\n"
+			"//       - note: notes of the repository reference\n"
+			"//   - attr: The list of the sources attributes in the form:\n"
 			"//       [attribute, value, note, list of citations]\n"
-			"S = [")
-		sep = "\n"
+			"S = ")
+		jdatas = []
 		source_list = list(self.obj_dict[Source])
 		if (not self.inc_sources): source_list = []
 		source_list.sort(key = lambda x: self.obj_dict[Source][x][OBJDICT_INDEX])
 		for source_handle in source_list:
 			source = self.database.get_source_from_handle(source_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Source][source_handle][OBJDICT_GID] + "\",")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[Source][source_handle][OBJDICT_GID]
 			title = source.get_title() or ""
-			sw.write("\"" + script_escape(html_escape(title)) + "\",\n")
-			sw.write("\"")
+			jdata['title'] = html_escape(title)
+			jdata['text'] = ""
 			for (label, value) in [
 				(_("Author"), source.get_author()),
 				(_("Abbreviation"), source.get_abbreviation()),
 				(_("Publication information"), source.get_publication_info())]:
 				if value:
 					html = Html("p") + Html("b", label + ": ") + value
-					sw.write(script_escape(html_text(html)))
-			sw.write("\",\n")
+					jdata['text'] += script_escape(html_text(html))
 			# Get source notes
-			sw.write("\"" + script_escape(self.get_notes_text(source)) + "\",\n")
+			jdata['note'] = self.get_notes_text(source)
 			# Get source media
-			sw.write(self._data_media_reference_index(source))
-			sw.write(",\n")
+			jdata['media'] = self._data_media_reference_index(source)
 			# Get source citations
-			sw.write(self._data_bkref_index(Source, source_handle, Citation))
-			sw.write(",\n")
+			jdata['bkc'] = self._data_bkref_index(Source, source_handle, Citation)
 			# Get repositories references
-			sw.write(self._data_repo_reference_index(source))
-			sw.write(",\n")
+			jdata['repo'] = self._data_repo_reference_index(source)
 			# Get source attributes
 			if (DWR_VERSION_410):
-				sw.write(self._data_attributes_src(source))
+				jdata['attr'] = self._data_attributes_src(source)
 			else:
-				sw.write("[]")
-			sw.write("\n]")
-			sep = ",\n"
-		sw.write("\n];\n")
+				jdata['attr'] = []
+			#
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_sour.js", sw.getvalue())
 
 
@@ -1163,40 +1144,42 @@ class DynamicWebReport(Report):
 		sw.write(
 			"// This file is generated\n\n"
 			"// 'C' gives for each source citation:\n"
-			"//   - Gramps ID\n"
-			"//   - The source index (in table 'S')\n"
-			"//   - The citation text (page, etc.)\n"
-			"//   - The citation notes\n"
-			"//   - A list of the citation media references, in the form:\n"
-			"//       - media index (in table 'M')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//   - A list of the person index (in table 'I') referencing this citation\n"
+			"//   - gid: Gramps ID\n"
+			"//   - source: The source index (in table 'S')\n"
+			"//   - text: The citation text (page, etc.)\n"
+			"//   - note: The citation notes\n"
+			"//   - media: A list of the citation media references, in the form:\n"
+			"//       - m_idx: media index (in table 'M')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - bki: A list of the person index (in table 'I') referencing this citation\n"
 			"//     (including the person events referencing this citation)\n"
-			"//   - A list of the family index (in table 'F') referencing this citation\n"
+			"//   - bkf: A list of the family index (in table 'F') referencing this citation\n"
 			"//     (including the family events referencing this citation)\n"
-			"//   - A list of the media index (in table 'M') referencing this citation\n"
+			"//   - bkm: A list of the media index (in table 'M') referencing this citation\n"
 			"//     (including the media references referencing this citation)\n"
-			"//   - A list of the place index (in table 'P') referencing this citation\n"
+			"//   - bkp: A list of the place index (in table 'P') referencing this citation\n"
 			"//     (including the media references referencing this citation)\n"
-			"//   - A list of the repository index (in table 'R') referencing this citation\n"
-			"C = [")
-		sep = "\n"
+			"//   - bkr: A list of the repository index (in table 'R') referencing this citation\n"
+			"C = ")
+		jdatas = []
 		citation_list = list(self.obj_dict[Citation])
 		if (not self.inc_sources): citation_list = []
 		citation_list.sort(key = lambda x: self.obj_dict[Citation][x][OBJDICT_INDEX])
 		for citation_handle in citation_list:
 			citation = self.database.get_citation_from_handle(citation_handle)
 			source_handle = citation.get_reference_handle()
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Citation][citation_handle][OBJDICT_GID] + "\",")
-			sw.write(str(self.obj_dict[Source][source_handle][OBJDICT_INDEX])+ ",\n")
-			sw.write("\"")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[Citation][citation_handle][OBJDICT_GID]
+			jdata['source'] = str(self.obj_dict[Source][source_handle][OBJDICT_INDEX])
 			confidence = citation.get_confidence_level()
 			if ((confidence in conf_strings) and confidence != Citation.CONF_NORMAL):
 				confidence = _(conf_strings[confidence])
 			else:
 				confidence = None
+			jdata['text'] = ""
 			for (label, value) in [
 				(_("Date"), format_date(citation.get_date_object())),
 				(_("Page"), citation.get_page()),
@@ -1204,26 +1187,20 @@ class DynamicWebReport(Report):
 			]:
 				if value:
 					html = Html("p") + Html("b", label + ": ") + value
-					sw.write(script_escape(html_text(html)))
-			sw.write("\",\n")
+					jdata['text'] += html_text(html)
 			# Get citation notes
-			sw.write("\"" + script_escape(self.get_notes_text(citation)) + "\",\n")
+			jdata['note'] = self.get_notes_text(citation)
 			# Get citation media
-			sw.write(self._data_media_reference_index(citation))
-			sw.write(",\n")
+			jdata['media'] = self._data_media_reference_index(citation)
 			# Get references
-			sw.write(self._data_bkref_index(Citation, citation_handle, Person))
-			sw.write(",\n")
-			sw.write(self._data_bkref_index(Citation, citation_handle, Family))
-			sw.write(",\n")
-			sw.write(self._data_bkref_index(Citation, citation_handle, MediaObject))
-			sw.write(",\n")
-			sw.write(self._data_bkref_index(Citation, citation_handle, Place))
-			sw.write(",\n")
-			sw.write(self._data_bkref_index(Citation, citation_handle, Repository))
-			sw.write("\n]")
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdata['bki'] = self._data_bkref_index(Citation, citation_handle, Person)
+			jdata['bkf'] = self._data_bkref_index(Citation, citation_handle, Family)
+			jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, MediaObject)
+			jdata['bkp'] = self._data_bkref_index(Citation, citation_handle, Place)
+			jdata['bkr'] = self._data_bkref_index(Citation, citation_handle, Repository)
+			#
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_cita.js", sw.getvalue())
 
 
@@ -1237,49 +1214,48 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'R' is sorted by repository name\n"
 			"// 'R' gives for each repository:\n"
-			"//   - Gramps ID\n"
-			"//   - The repository name\n"
-			"//   - The repository type\n"
-			"//   - A list of addresses, with for each address:\n"
-			"//       - The address date\n"
-			"//       - The address date in ISO format (sortable)\n"
-			"//       - The address place in the form:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - name: The repository name\n"
+			"//   - type: The repository type\n"
+			"//   - addrs: A list of addresses, with for each address:\n"
+			"//       - date: The address date\n"
+			"//       - date_iso: The address date in ISO format (sortable)\n"
+			"//       - location: The address place in the form:\n"
 			"//           [street, locality, parish, city, state, county, zip, country]\n"
-			"//       - The address notes\n"
-			"//       - A list of the address source citations index (in table 'C')\n"
-			"//   - The repository notes\n"
-			"//   - The list of the repository URL in the form:\n"
+			"//       - note: The address notes\n"
+			"//       - cita: A list of the address source citations index (in table 'C')\n"
+			"//   - note: The repository notes\n"
+			"//   - urls: The list of the repository URL in the form:\n"
 			"//       [type, url, description]\n"
-			"//   - A list of the sources referencing this repository, in the form:\n"
-			"//       - source index (in table 'S')\n"
-			"//       - media type\n"
-			"//       - call number\n"
-			"//       - notes of the repository reference\n"
-			"R = [")
-		sep = "\n"
+			"//   - bks: A list of the sources referencing this repository, in the form:\n"
+			"//       - s_idx: source index (in table 'S')\n"
+			"//       - media_type: media type\n"
+			"//       - call_number: call number\n"
+			"//       - note: notes of the repository reference\n"
+			"R = ")
+		jdatas = []
 		repo_list = list(self.obj_dict[Repository])
 		if (not self.inc_repositories): repo_list = []
 		repo_list.sort(key = lambda x: self.obj_dict[Repository][x][OBJDICT_INDEX])
 		for repo_handle in repo_list:
 			repo = self.database.get_repository_from_handle(repo_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Repository][repo_handle][OBJDICT_GID] + "\",")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[Repository][repo_handle][OBJDICT_GID]
 			name = repo.get_name() or ""
-			sw.write("\"" + script_escape(name) + "\",\n")
+			jdata['name'] = name
 			type = repo.get_type() or ""
-			sw.write("\"" + script_escape(str(type)) + "\",\n")
+			jdata['type'] = str(type)
 			# Addresses
-			sw.write("[\n" + self._data_addresses(repo) + "\n],\n")
+			jdata['addrs'] = self._data_addresses(repo)
 			# Get repository notes
-			sw.write("\"" + script_escape(self.get_notes_text(repo)) + "\",\n")
+			jdata['note'] = self.get_notes_text(repo)
 			# Get repository URL
-			sw.write(self._data_url_list(repo))
-			sw.write(",\n")
+			jdata['urls'] = self._data_url_list(repo)
 			# Get source references
-			sw.write(self._data_repo_backref_index(repo, Source))
-			sw.write("\n]")
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdata['bks'] = self._data_repo_backref_index(repo, Source)
+			#
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_repo.js", sw.getvalue())
 
 
@@ -1293,84 +1269,78 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'M' is sorted by media title\n"
 			"// 'M' gives for each media object:\n"
-			"//   - Gramps ID\n"
-			"//   - The media title\n"
-			"//   - The media path in Gramps\n"
-			"//   - The media path were the media is really located\n"
-			"//   - The media MIME type\n"
-			"//   - The media date\n"
-			"//   - The media date in ISO format (sortable)\n"
-			"//   - The media notes\n"
-			"//   - A list of the media source citations index (in table 'C')\n"
-			"//   - The list of the media attributes in the form:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - title: The media title\n"
+			"//   - gramps_path: The media path in Gramps\n"
+			"//   - path: The media path were the media is really located\n"
+			"//   - mime: The media MIME type\n"
+			"//   - date: The media date\n"
+			"//   - date_iso: The media date in ISO format (sortable)\n"
+			"//   - note: The media notes\n"
+			"//   - cita: A list of the media source citations index (in table 'C')\n"
+			"//   - attr: The list of the media attributes in the form:\n"
 			"//       [attribute, value, note, list of citations]\n"
-			"//   - Media thumbnail path\n"
-			"//   - A list of the person referencing this media (including the person events referencing this media), in the form:\n"
-			"//       - person index (in table 'I')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the family referencing this media (including the family events referencing this media), in the form:\n"
-			"//       - family index (in table 'F')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the source referencing this media (including the source citations referencing this media), in the form:\n"
-			"//       - source index (in table 'S')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"//   - A list of the places referencing this media, in the form:\n"
-			"//       - place index (in table 'P')\n"
-			"//       - media thumbnail path\n"
-			"//       - [x1, y1, x2, y2] of the media reference\n"
-			"//       - notes of the media reference\n"
-			"//       - list of the media reference source citations index (in table 'C')\n"
-			"M = [")
-		sep = "\n"
+			"//   - thumb: Media thumbnail path\n"
+			"//   - bki: A list of the person referencing this media (including the person events referencing this media), in the form:\n"
+			"//       - bk_idx: person index (in table 'I')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - bkf: A list of the family referencing this media (including the family events referencing this media), in the form:\n"
+			"//       - bk_idx: family index (in table 'F')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - bks: A list of the source referencing this media (including the source citations referencing this media), in the form:\n"
+			"//       - bk_idx: source index (in table 'S')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - bkp: A list of the places referencing this media, in the form:\n"
+			"//       - bk_idx: place index (in table 'P')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"M = ")
+		jdatas = []
 		media_list = list(self.obj_dict[MediaObject])
 		if (not self.inc_gallery): media_list = []
 		media_list.sort(key = lambda x: self.obj_dict[MediaObject][x][OBJDICT_INDEX])
 		for media_handle in media_list:
 			media = self.database.get_object_from_handle(media_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[MediaObject][media_handle][OBJDICT_GID] + "\",")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[MediaObject][media_handle][OBJDICT_GID]
 			title = media.get_description() or ""
-			sw.write("\"" + script_escape(html_escape(title)) + "\",\n")
-			sw.write("\"" + script_escape(media.get_path()) + "\",\n")
+			jdata['title'] = html_escape(title)
+			jdata['gramps_path'] = media.get_path()
 			path = self.get_media_web_path(media)
-			sw.write("\"" + script_escape(path) + "\",\n")
-			sw.write("\"" + script_escape(media.get_mime_type()) + "\",\n")
+			jdata['path'] = path
+			jdata['mime'] = media.get_mime_type()
 			# Get media date
 			date = format_date(media.get_date_object()) or ""
-			sw.write("\"" + date + "\",\n")
+			jdata['date'] = date
 			date = format_date(media.get_date_object(), True) or ""
-			sw.write("\"" + date + "\",\n")
+			jdata['date_iso'] = date
 			# Get media notes
-			sw.write("\"" + script_escape(self.get_notes_text(media)) + "\",\n")
+			jdata['note'] = self.get_notes_text(media)
 			# Get media sources
-			sw.write(self._data_source_citation_index(media))
-			sw.write(",\n")
+			jdata['cita'] = self._data_source_citation_index(media)
 			# Get media attributes
-			sw.write(self._data_attributes(media))
-			sw.write(",\n")
+			jdata['attr'] = self._data_attributes(media)
 			# Get media thumbnail
-			sw.write("\"" + self.copy_thumbnail(media, (0,0,100,100)) + "\",\n")
+			jdata['thumb'] = self.copy_thumbnail(media, (0,0,100,100))
 			# Get media references
-			sw.write(self._data_media_backref_index(media, Person))
-			sw.write(",\n")
-			sw.write(self._data_media_backref_index(media, Family))
-			sw.write(",\n")
-			sw.write(self._data_media_backref_index(media, Source))
-			sw.write(",\n")
-			sw.write(self._data_media_backref_index(media, Place))
-			sw.write("\n")
-			sw.write("]")
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdata['bki'] = self._data_media_backref_index(media, Person)
+			jdata['bkf'] = self._data_media_backref_index(media, Family)
+			jdata['bks'] = self._data_media_backref_index(media, Source)
+			jdata['bkp'] = self._data_media_backref_index(media, Place)
+			#
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_media.js", sw.getvalue())
 
 
@@ -1384,34 +1354,38 @@ class DynamicWebReport(Report):
 			"// This file is generated\n\n"
 			"// 'P' is sorted by place name\n"
 			"// 'P' gives for each media object:\n"
-			"//   - Gramps ID\n"
-			"//   - The place name\n"
-			"//   - The place locations parts for the main and alternate names, in the form:\n"
+			"//   - gid: Gramps ID\n"
+			"//   - name: The place name\n"
+			"//   - locations: The place locations parts for the main and alternate names, in the form:\n"
 			"//       (index 0 is main name, others are for alternate names)\n"
 			"//       [street, locality, parish, city, state, county, zip, country]\n"
-			"//   - The coordinates [latitude, longitude]\n\n"
-			"//   - The place notes\n"
-			"//   - A list of the place source citations index (in table 'C')\n"
-			"//   - The list of the place URL in the form:\n"
+			"//   - coords: The coordinates [latitude, longitude]\n\n"
+			"//   - note: The place notes\n"
+			"//   - media: A list of the place media references, in the form:\n"
+			"//       - m_idx: media index (in table 'M')\n"
+			"//       - thumb: media thumbnail path\n"
+			"//       - rect: [x1, y1, x2, y2] of the media reference\n"
+			"//       - note: notes of the media reference\n"
+			"//       - cita: list of the media reference source citations index (in table 'C')\n"
+			"//   - cita: A list of the place source citations index (in table 'C')\n"
+			"//   - urls: The list of the place URL in the form:\n"
 			"//       [type, url, description]\n"
-			"//   - A list of the person index (in table 'I') for events referencing this place\n"
+			"//   - bki: A list of the person index (in table 'I') for events referencing this place\n"
 			"//     (including the persons directly referencing this place)\n"
-			"//   - A list of the family index (in table 'F') for events referencing this place\n"
-			"P=[")
-		sep = "\n"
+			"//   - bkf: A list of the family index (in table 'F') for events referencing this place\n"
+			"P = ")
+		jdatas = []
 		place_list = list(self.obj_dict[Place])
 		place_list.sort(key = lambda x: self.obj_dict[Place][x][OBJDICT_INDEX])
 		for place_handle in place_list:
 			place = self.database.get_place_from_handle(place_handle)
-			sw.write(sep)
-			sw.write("[\"" + self.obj_dict[Place][place_handle][OBJDICT_GID] + "\",")
+			jdata = {}
+			jdata['gid'] = self.obj_dict[Place][place_handle][OBJDICT_GID]
 			place_name = report_utils.place_name(self.database, place_handle)
-			sw.write("\"" + script_escape(place_name) + "\"")
+			jdata['name'] = place_name
 			if (not self.inc_places):
-				sw.write("]")
-				sep = ",\n"
+				jdatas.append(jdata)
 				continue
-			sw.write(",\n")
 			locations = []
 			if (DWR_VERSION_410):
 				ml = get_main_location(self.database, place)
@@ -1446,34 +1420,29 @@ class DynamicWebReport(Report):
 					loc.country,
 				]
 				loctab = [(data or "") for data in loctab]
-				loctab = ["\"" + script_escape(data) + "\"" for data in loctab]
-				loctabs.append("[" + ",".join(loctab) + "]")
-			sw.write("[" + ",".join(loctabs) + "],\n")
+				loctabs.append(loctab)
+			jdata['locations'] = loctabs
 			latitude = place.get_latitude()
 			longitude = place.get_longitude()
 			if (latitude and longitude):
 				coords = conv_lat_lon(latitude, longitude, "D.D8")
 			else:
 				coords = ("", "")
-			sw.write("[\"" + "\",\"".join(coords) + "\"]\n,")
+			jdata['coords'] = coords
 			# Get place notes
-			sw.write("\"" + script_escape(self.get_notes_text(place)) + "\",\n")
+			jdata['note'] = self.get_notes_text(place)
 			# Get place media
-			sw.write(self._data_media_reference_index(place))
-			sw.write(",\n")
+			jdata['media'] = self._data_media_reference_index(place)
 			# Get place sources
-			sw.write(self._data_source_citation_index(place))
-			sw.write(",\n")
+			jdata['cita'] = self._data_source_citation_index(place)
 			# Get place URL
-			sw.write(self._data_url_list(place))
-			sw.write(",\n")
+			jdata['urls'] = self._data_url_list(place)
 			# Get back references
-			sw.write(self._data_bkref_index(Place, place_handle, Person))
-			sw.write(",\n")
-			sw.write(self._data_bkref_index(Place, place_handle, Family))
-			sw.write("\n]")
-			sep = ",\n"
-		sw.write("\n];\n")
+			jdata['bki'] = self._data_bkref_index(Place, place_handle, Person)
+			jdata['bkf'] = self._data_bkref_index(Place, place_handle, Family)
+			#
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
 		self.update_file("dwr_db_place.js", sw.getvalue())
 
 
@@ -1605,41 +1574,34 @@ class DynamicWebReport(Report):
 		List sources citations indexes of the L{citationlist} in a string representing a Javascript Array
 		@return: citations indexes as a string representing a Javascript Array
 		"""
-		if (not self.inc_sources): return("[]")
-		if not citationlist: return("[]")
-		sep = ""
-		txt = "["
+		if (not self.inc_sources): return([])
+		if not citationlist: return([])
+		jdatas = []
 		for citation_handle in citationlist:
-			if (not txt): txt = Html("div")
 			citation = self.database.get_citation_from_handle(citation_handle)
 			if (citation is not None and (citation_handle in self.obj_dict[Citation])):
 				source_handle = citation.get_reference_handle()
 				source = self.database.get_source_from_handle(source_handle)
 				if (source is not None and (source_handle in self.obj_dict[Source])):
-					title = source.get_title()
-					if (not title): title = source.get_gramps_id()
-					txt += sep + str(self.obj_dict[Citation][citation_handle][OBJDICT_INDEX])
-					sep = ","
-		txt += "]"
-		return(txt)
+					jdatas.append(self.obj_dict[Citation][citation_handle][OBJDICT_INDEX])
+		jdatas.sort()
+		return(jdatas)
 
 
 	def _data_repo_reference_index(self, object):
 		"""
 		Build a list of the repositories references index, in the form given by L{_data_repo_ref}
 		"""
-		if (not self.inc_repositories): return("[]")
+		if (not self.inc_repositories): return([])
 		refs = object.get_reporef_list()
-		if (not refs): return("[]")
-		sep = "\n"
-		txt = "["
+		if (not refs): return([])
+		jdatas = []
 		for ref in refs:
 			repo_handle = ref.get_reference_handle()
 			if (repo_handle in self.obj_dict[Repository]):
-				txt += sep + "\t" + self._data_repo_ref(ref, self.obj_dict[Repository][repo_handle][OBJDICT_INDEX])
-				sep = ",\n"
-		txt += "]"
-		return(txt)
+				jdatas.append(self._data_repo_ref(ref, self.obj_dict[Repository][repo_handle][OBJDICT_INDEX]))
+		jdatas.sort(key = lambda x: x['r_idx'])
+		return(jdatas)
 
 	def _data_repo_ref(self, ref, index):
 		"""
@@ -1651,59 +1613,52 @@ class DynamicWebReport(Report):
 		"""
 		repo_handle = ref.get_reference_handle()
 		repo = self.database.get_repository_from_handle(repo_handle)
-		txt = "["
-		txt += str(index) + ","
-		txt += "\"" + script_escape(str(ref.get_media_type())) + "\","
-		txt += "\"" + script_escape(ref.get_call_number()) + "\","
-		txt += "\"" + script_escape(self.get_notes_text(ref)) + "\""
-		txt += "]"
-		return(txt)
+		jdata = {}
+		jdata['r_idx'] = index
+		jdata['media_type'] = str(ref.get_media_type())
+		jdata['call_number'] = ref.get_call_number()
+		jdata['note'] = self.get_notes_text(ref)
+		return(jdata)
 
 
 	def _data_media_reference_index(self, object):
 		"""
 		Build a list of the media references index, in the form given by L{_data_media_ref}
 		"""
-		if (not self.inc_gallery): return("[]")
+		if (not self.inc_gallery): return([])
 		refs = object.get_media_list()
-		if (not refs): return("[]")
-		sep = "\n"
-		txt = "["
+		if (not refs): return([])
+		jdatas = []
 		for ref in refs:
 			media_handle = ref.get_reference_handle()
 			if (media_handle in self.obj_dict[MediaObject]):
-				txt += sep + "\t" + self._data_media_ref(ref, self.obj_dict[MediaObject][media_handle][OBJDICT_INDEX])
-				sep = ",\n"
-		txt += "]"
-		return(txt)
+				jdatas.append(self._data_media_ref(ref, self.obj_dict[MediaObject][media_handle][OBJDICT_INDEX]))
+		jdatas.sort(key = lambda x: x['m_idx'])
+		return(jdatas)
 
 	def _data_media_ref(self, ref, index):
 		"""
 		Build a media reference, in the form:
-		 - media index (in table 'M')
-		 - media thumbnail path
-		 - [x1, y1, x2, y2] of the media reference
-		 - notes of the media reference
-		 - list of the media reference source citations index (in table 'C')
+		 - m_idx: media index (in table 'M')
+		 - thumb: media thumbnail path
+		 - rect: [x1, y1, x2, y2] of the media reference
+		 - note: notes of the media reference
+		 - cita: list of the media reference source citations index (in table 'C')
 		"""
 		media_handle = ref.get_reference_handle()
 		media = self.database.get_object_from_handle(media_handle)
-		txt = "["
-		txt += str(index)
-		txt += ",\""
-		txt += self.copy_thumbnail(media, ref.get_rectangle())
-		txt += "\",["
+		jdata = {}
+		jdata['m_idx'] = index
+		jdata['thumb'] = self.copy_thumbnail(media, ref.get_rectangle())
 		rect = ref.get_rectangle() or (0,0,100,100)
-		txt += ",".join(str(x) for x in rect)
-		txt += "],"
+		jdata['rect'] = list(rect)
 		attrlist = ref.get_attribute_list()
-		txt += "\"" + script_escape(self.get_notes_attributes_text(ref.get_note_list(), attrlist)) + "\","
+		jdata['note'] = self.get_notes_attributes_text(ref.get_note_list(), attrlist)
 		citationlist = ref.get_citation_list()
 		for attr in attrlist: citationlist.extend(attr.get_citation_list())
 		# BUG: it seems that attribute references are given by both ref.get_citation_list and attr.get_citation_list
-		txt += self._data_source_citation_index_from_list(citationlist)
-		txt += "]"
-		return(txt)
+		jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
+		return(jdata)
 
 
 	def get_media_web_path(self, media):
@@ -1769,20 +1724,18 @@ class DynamicWebReport(Report):
 		  [attribute, value, note, list of citations]
 		"""
 		attrlist = object.get_attribute_list()
-		txt = "["
-		sep = ""
+		jdatas = []
 		for attr in attrlist:
-			txt += sep + "["
-			txt += "\"" + script_escape(str(attr.get_type())) + "\","
-			txt += "\"" + script_escape(str(attr.get_value())) + "\","
+			jdata = {}
+			jdata['type'] = str(attr.get_type())
+			jdata['value'] = str(attr.get_value())
 			# Get attribute notes
-			txt += "\"" + script_escape(self.get_notes_text(attr)) + "\","
+			jdata['note'] = self.get_notes_text(attr)
 			# Get attribute sources
-			txt += self._data_source_citation_index(attr)
-			txt += "]"
-			sep = ","
-		txt += "]"
-		return(txt)
+			jdata['cita'] = self._data_source_citation_index(attr)
+			#
+			jdatas.append(jdata)
+		return(jdatas)
 
 	def _data_attributes_src(self, source):
 		"""
@@ -1790,20 +1743,18 @@ class DynamicWebReport(Report):
 		  [attribute, value, "", []]
 		"""
 		attrlist = source.get_attribute_list()
-		txt = "["
-		sep = ""
+		jdatas = []
 		for attr in attrlist:
-			txt += sep + "["
-			txt += "\"" + script_escape(str(attr.get_type())) + "\","
-			txt += "\"" + script_escape(str(attr.get_value())) + "\","
-			# There aren't any attribute notes
-			txt += "\"\","
-			# There aren't any attribute sources
-			txt += "[]"
-			txt += "]"
-			sep = ","
-		txt += "]"
-		return(txt)
+			jdata = {}
+			jdata['type'] = str(attr.get_type())
+			jdata['value'] = str(attr.get_value())
+			# Get attribute notes
+			jdata['note'] = ""
+			# Get attribute sources
+			jdata['cita'] = []
+			#
+			jdatas.append(jdata)
+		return(jdatas)
 
 	def _data_url_list(self, object):
 		"""
@@ -1811,12 +1762,14 @@ class DynamicWebReport(Report):
 		  [type, url, description]
 		"""
 		urllist = object.get_url_list()
-		txt = "["
-		sep = ""
+		jdatas = []
 		for url in urllist:
+			jdata = {}
 			_type = url.get_type()
-			uri = url.get_path()
+			jdata['type'] = str(_type)
 			descr = url.get_description()
+			jdata['descr'] = descr
+			uri = url.get_path()
 			# Email address
 			if _type == UrlType.EMAIL:
 				if not uri.startswith("mailto:"):
@@ -1829,14 +1782,9 @@ class DynamicWebReport(Report):
 			elif _type == UrlType.WEB_FTP:
 				if not (uri.startswith("ftp://") or uri.startswith("ftps://")):
 					uri = "ftp://%(ftpsite)s" % { "ftpsite" : uri }
-			txt += sep + "["
-			txt += "\"" + str(_type) + "\","
-			txt += "\"" + script_escape(uri) + "\","
-			txt += "\"" + script_escape(descr) + "\""
-			txt += "]"
-			sep = ","
-		txt += "]"
-		return(txt)
+			jdata['uri'] = uri
+			jdatas.append(jdata)
+		return(jdatas)
 
 
 	def _export_surnames(self):
@@ -1858,30 +1806,33 @@ class DynamicWebReport(Report):
 			# Treat people who have no name with those whose name is just 'whitespace'
 			if (surname is None or surname.isspace()):
 				surname = ""
-			sortnames[person_handle] = _nd.sort_string(primary_name)
+			sortnames[person_handle] = _nd.sort_string(primary_name) + " " + str(person_handle)
 			surnames[surname].append(person_handle)
 		# Sort surnames
 		surns_keys = list(surnames.keys())
 		surns_keys.sort(key = SORT_KEY)
 		# Generate the file
-		sw1 = StringIO()
-		sw1.write(
+		sw = StringIO()
+		sw.write(
 			"// This file is generated\n\n"
 			"// 'SN' is sorted by surname\n"
 			"// 'SN' gives for each surname:\n"
-			"//  - the surname\n"
-			"//  - the surname first letter\n"
-			"//  - the list of persion index (in table 'I') with this surname\n"
-			"\nSN = [")
-		sep = "\n"
+			"//  - surname: the surname\n"
+			"//  - letter: the surname first letter\n"
+			"//  - persons: the list of persion index (in table 'I') with this surname\n"
+			"\nSN = ")
+		jdatas = []
 		for s in surns_keys:
 			# Sort persons
+			jdata = {}
+			jdata['surname'] = s
+			jdata['letter'] = first_letter(s).strip()
 			surnames[s].sort(key = lambda x: sortnames[x])
-			tab = ",".join([str(self.obj_dict[Person][x][OBJDICT_INDEX]) for x in surnames[s]])
-			sw1.write(sep + "[\"" + script_escape(s) + "\", \"" + first_letter(s).strip() + "\", [" + tab + "]]")
-			sep = ",\n"
-		sw1.write("\n];\n")
-		self.update_file("dwr_db_surns.js", sw1.getvalue())
+			tab = [self.obj_dict[Person][x][OBJDICT_INDEX] for x in surnames[s]]
+			jdata['persons'] = tab
+			jdatas.append(jdata)
+		json.dump(jdatas, sw, sort_keys = True, indent = 4)
+		self.update_file("dwr_db_surns.js", sw.getvalue())
 
 
 	def _data_families_index(self, person):
@@ -1889,10 +1840,7 @@ class DynamicWebReport(Report):
 		family_list = person.get_family_handle_list()
 		if (family_list):
 			fams = [self.obj_dict[Family][family_handle][OBJDICT_INDEX] for family_handle in family_list if (family_handle in self.obj_dict[Family])]
-		return(
-			"[" +
-			",".join([str(i) for i in fams]) +
-			"]")
+		return(fams)
 
 	def _data_partners_index(self, family):
 		indis = []
@@ -1902,10 +1850,7 @@ class DynamicWebReport(Report):
 		person_handle = family.get_mother_handle()
 		if (person_handle and (person_handle in self.obj_dict[Person])):
 			indis.append(self.obj_dict[Person][person_handle][OBJDICT_INDEX])
-		return(
-			"[" +
-			",".join([str(i) for i in indis]) +
-			"]")
+		return(indis)
 
 	def _data_parents_families_index(self, person):
 		links = []
@@ -1922,7 +1867,7 @@ class DynamicWebReport(Report):
 				if (len(child_refs) >= 1):
 					index = self.obj_dict[Family][family_handle][OBJDICT_INDEX]
 					links.append(self._data_child_ref(index, child_refs[0]))
-		return("[" + ",".join(links) + "]")
+		return(links)
 
 	def _data_children_index(self, family):
 		links = [
@@ -1930,38 +1875,37 @@ class DynamicWebReport(Report):
 			for child_ref in family.get_child_ref_list()
 			if (child_ref.ref in self.obj_dict[Person])
 		]
-		return("[" + ",".join(links) + "]")
+		return(links)
 
 	def _data_child_ref(self, index, child_ref):
 		#  Child reference in the form:
 		#    [index, relation to father, relation to mother, notes, list of citations]
-		txt = "["
-		txt += str(index) + ","
-		txt += "\"" + script_escape(str(child_ref.get_father_relation())) + "\","
-		txt += "\"" + script_escape(str(child_ref.get_mother_relation())) + "\","
+		jdata = {}
+		jdata['index'] = index
+		jdata['to_father'] = str(child_ref.get_father_relation())
+		jdata['to_mother'] = str(child_ref.get_mother_relation())
 		# Get child reference notes
-		txt += "\"" + script_escape(self.get_notes_text(child_ref)) + "\","
+		jdata['note'] = self.get_notes_text(child_ref)
 		# Get child reference sources
-		txt += self._data_source_citation_index(child_ref)
-		txt += "]"
-		return(txt)
+		jdata['cita'] = self._data_source_citation_index(child_ref)
+		return(jdata)
 
 
 	def _data_associations(self, person):
 		assoclist = person.get_person_ref_list()
-		rels = []
+		jdatas = []
 		for person_ref in assoclist:
-			txt = "["
 			if (person_ref.ref not in self.obj_dict[Person]): continue
-			txt += "%i," % self.obj_dict[Person][person_ref.ref][OBJDICT_INDEX]
-			txt += "\"" + script_escape(str(person_ref.get_relation())) + "\","
+			jdata = {}
+			jdata['person'] = self.obj_dict[Person][person_ref.ref][OBJDICT_INDEX]
+			jdata['relationship'] = str(person_ref.get_relation())
 			# Get association notes
-			txt += "\"" + script_escape(self.get_notes_text(person_ref)) + "\","
+			jdata['note'] = self.get_notes_text(person_ref)
 			# Get association sources
-			txt += self._data_source_citation_index(person_ref)
-			txt += "]"
-			rels.append(txt)
-		return("[" + ",".join(rels) + "]")
+			jdata['cita'] = self._data_source_citation_index(person_ref)
+			#
+			jdatas.append(jdata)
+		return(jdatas)
 
 
 	def get_birth_year(self, person):
@@ -2774,7 +2718,7 @@ class DynamicWebReport(Report):
 		@return: String representing the Javascript Array of the object indexes (of class L{ref_class}) referencing a given object (L{obj_class}, L{obj_handle})
 		"""
 		bkref_list = self.bkref_dict[obj_class][obj_handle]
-		if (not bkref_list): return ("[]")
+		if (not bkref_list): return ([])
 		# Sort by referenced object
 		bkref_list = sorted(bkref_list, key = lambda bkref: self.obj_dict[bkref[BKREF_CLASS]][bkref[BKREF_HANDLE]][OBJDICT_NAME])
 		# Filter bkref_list (keep only ref_class) and remove duplicates
@@ -2782,63 +2726,65 @@ class DynamicWebReport(Report):
 		bkref_list = [bkref_handle
 			for (bkref_class, bkref_handle, media_ref) in bkref_list
 			if (bkref_class == ref_class and not (bkref_handle in seen or seen.add(bkref_handle)))]
-		return("[" +
-			",".join([str(self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]) for bkref_handle in bkref_list]) +
-			"]")
+		bkref_index = [self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX] for bkref_handle in bkref_list]
+		bkref_index.sort()
+		return(bkref_index)
 
 
 	def _data_repo_backref_index(self, repo, ref_class):
 		"""
-		Build a list of object referencing a given repository, in the form:
-		 - object index (in table 'I', 'F', 'S')
-		 - media type
-		 - call number
-		 - notes of the repository reference
+		Build a list of sources referencing a given repository, in the form:
+		 - s_idx: source index (in table 'S')
+		 - media_type: media type
+		 - call_number: call number
+		 - note: notes of the repository reference
 		@param repo: Referenced repository
 		@param ref_class: Class of the refencing objects
 		@return: String representing the Javascript Array of the references to L{repo}
 		"""
 		repo_handle = repo.get_handle()
-		if (repo_handle not in self.obj_dict[Repository]): return("[]")
+		if (repo_handle not in self.obj_dict[Repository]): return([])
 		bkref_list = self.bkref_dict[Repository][repo_handle]
-		if (not bkref_list): return ("[]")
-		sep = ""
-		txt = "["
+		if (not bkref_list): return ([])
+		jdatas = []
 		for (bkref_class, bkref_handle, repo_ref) in bkref_list:
 			if (ref_class != bkref_class): continue
 			i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
 			object = self.get_object_from_handle(bkref_class, bkref_handle)
-			txt += sep + self._data_repo_ref(repo_ref, i)
-			sep = ","
-		txt += "]"
-		return(txt)
+			jdata = self._data_repo_ref(repo_ref, i)
+			jdata['s_idx'] = jdata['r_idx']
+			del jdata['r_idx']
+			jdatas.append(jdata)
+		jdatas.sort(key = lambda x: x['s_idx'])
+		return(jdatas)
 
 	def _data_media_backref_index(self, media, ref_class):
 		"""
 		Build a list of object referencing a given media, in the form:
-		 - object index (in table 'I', 'F', 'S')
-		 - media thumbnail path
-		 - [x1, y1, x2, y2] of the media reference
-		 - notes of the media reference
-		 - list of the media reference source citations index (in table 'C')
+		 - bk_idx: object index (in table 'I', 'F', 'S')
+		 - thumb: media thumbnail path
+		 - rect: [x1, y1, x2, y2] of the media reference
+		 - note: notes of the media reference
+		 - cita: list of the media reference source citations index (in table 'C')
 		@param media: Referenced repository
 		@param ref_class: Class of the refencing objects
 		@return: String representing the Javascript Array of the references to L{media}
 		"""
 		media_handle = media.get_handle()
-		if (media_handle not in self.obj_dict[MediaObject]): return("[]")
+		if (media_handle not in self.obj_dict[MediaObject]): return([])
 		bkref_list = self.bkref_dict[MediaObject][media_handle]
-		if (not bkref_list): return ("[]")
-		sep = ""
-		txt = "["
+		if (not bkref_list): return ([])
+		jdatas = []
 		for (bkref_class, bkref_handle, media_ref) in bkref_list:
 			if (ref_class != bkref_class): continue
 			i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
 			object = self.get_object_from_handle(bkref_class, bkref_handle)
-			txt += sep + self._data_media_ref(media_ref, i)
-			sep = ","
-		txt += "]"
-		return(txt)
+			jdata = self._data_media_ref(media_ref, i)
+			jdata['bk_idx'] = jdata['m_idx']
+			del jdata['m_idx']
+			jdatas.append(jdata)
+		jdatas.sort(key = lambda x: x['bk_idx'])
+		return(jdatas)
 
 
 	def get_object_from_handle(self, class_, handle):
@@ -2867,10 +2813,12 @@ class DynamicWebReport(Report):
 	################################################################################## GENDEX data
 	##############################################################################################
 
-	def build_gendex(self, ind_list):
+	def build_gendex(self):
 		if (not self.inc_gendex): return
 		fp_gendex = StringIO()
-		for person_handle in ind_list:
+		person_list = list(self.obj_dict[Person].keys())
+		person_list.sort(key = lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
+		for person_handle in person_list:
 			self.write_gendex(fp_gendex, person_handle)
 		self.update_file("gendex.txt", fp_gendex.getvalue())
 
@@ -3293,7 +3241,7 @@ class DynamicWebReport(Report):
 		if (media_handle in self.obj_dict[MediaObject]): return
 		# Add media in the dictionaries of objects
 		media = self.database.get_object_from_handle(media_handle)
-		media_name = "Media"
+		media_name = media.get_description() or media.get_path() or ""
 		self.obj_dict[MediaObject][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[MediaObject])]
 		# Citations for media, media attributes
 		citation_list = media.get_citation_list()
@@ -3349,7 +3297,7 @@ class DynamicWebReport(Report):
 		sortkeys = {}
 		objs = list(self.obj_dict[Person].keys())
 		for handle in objs:
-			sortkeys[handle] = self.get_person_name_sort_key(handle)
+			sortkeys[handle] = self.get_person_name_sort_key(handle) + SORT_KEY(" " + str(handle))
 		objs.sort(key = lambda x: sortkeys[x])
 		for (i, x) in enumerate(objs):
 			self.obj_dict[Person][x][OBJDICT_INDEX] = i
@@ -3358,7 +3306,7 @@ class DynamicWebReport(Report):
 		sortkeys = {}
 		objs = list(self.obj_dict[Family].keys())
 		for handle in objs:
-			sortkeys[handle] = self.get_family_name_sort_key(handle)
+			sortkeys[handle] = self.get_family_name_sort_key(handle) + SORT_KEY(" " + str(handle))
 		objs.sort(key = lambda x: sortkeys[x])
 		for (i, x) in enumerate(objs):
 			self.obj_dict[Family][x][OBJDICT_INDEX] = i
@@ -3368,7 +3316,7 @@ class DynamicWebReport(Report):
 			objs = list(self.obj_dict[cls].keys())
 			sortkeys = {}
 			for handle in objs:
-				sortkeys[handle] = SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME])
+				sortkeys[handle] = SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME] + " " + str(handle))
 			objs.sort(key = lambda x: sortkeys[x])
 			for (i, x) in enumerate(objs):
 				self.obj_dict[cls][x][OBJDICT_INDEX] = i

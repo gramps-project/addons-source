@@ -311,7 +311,7 @@ function m_list_from_mr(mr_list)
 	
 	var m_list = [];
 	for (var j = 0; j < mr_list.length; j++)
-		m_list[j] = mr_list[j][MR_M_IDX];
+		m_list[j] = mr_list[j].m_idx;
 	return(m_list);
 }
 
@@ -453,11 +453,11 @@ function searchDuplicateAsc(idx, lev, found)
 	}
 	found.push(idx);
 	if (lev <= 0) return;
-	for (var x_fam = 0; x_fam < I[idx][I_FAMC].length; x_fam++)
+	for (var x_fam = 0; x_fam < I[idx].famc.length; x_fam++)
 	{
-		var fam = F[I[idx][I_FAMC][x_fam][FC_INDEX]];
-		for (var x_spou = 0; x_spou < fam[F_SPOU].length; x_spou++)
-			searchDuplicateAsc(fam[F_SPOU][x_spou], lev - 1, found);
+		var fam = F[I[idx].famc[x_fam].index];
+		for (var x_spou = 0; x_spou < fam.spou.length; x_spou++)
+			searchDuplicateAsc(fam.spou[x_spou], lev - 1, found);
 	}
 }
 
@@ -474,15 +474,15 @@ function searchDuplicateDsc(idx, lev, found)
 	}
 	found.push(idx);
 	if (lev <= 0) return;
-	for (var x_fam = 0; x_fam < I[idx][I_FAMS].length; x_fam++)
+	for (var x_fam = 0; x_fam < I[idx].fams.length; x_fam++)
 	{
-		var fam = F[I[idx][I_FAMS][x_fam]];
+		var fam = F[I[idx].fams[x_fam]];
 		if (!isDuplicate(idx))
-			for (var x_chil = 0; x_chil < fam[F_CHIL].length; x_chil++)
-				searchDuplicateDsc(fam[F_CHIL][x_chil][FC_INDEX], lev - 1, found);
-		for (var x_spou = 0; x_spou < fam[F_CHIL].length; x_spou++)
-			if (idx != fam[F_SPOU][x_spou])
-				searchDuplicateDsc(fam[F_SPOU][x_spou], -1, found);
+			for (var x_chil = 0; x_chil < fam.chil.length; x_chil++)
+				searchDuplicateDsc(fam.chil[x_chil].index, lev - 1, found);
+		for (var x_spou = 0; x_spou < fam.chil.length; x_spou++)
+			if (idx != fam.spou[x_spou])
+				searchDuplicateDsc(fam.spou[x_spou], -1, found);
 	}
 }
 
@@ -499,15 +499,15 @@ function isDuplicate(idx)
 
 function indiShortLinked(idx)
 {
-	return('<a href="' + indiHref(idx) + '">' + I[idx][I_SHORT_NAME] + '</a>');
+	return('<a href="' + indiHref(idx) + '">' + I[idx].short_name + '</a>');
 }
 
 
 function indiLinked(idx, citations)
 {
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
-	var txt = I[idx][I_NAME] + ' (' + I[idx][I_BIRTH_YEAR] + '-' + I[idx][I_DEATH_YEAR] + ')';
-	if (citations) txt += ' ' + citaLinks(I[idx][I_CITA]);
+	var txt = I[idx].name + ' (' + I[idx].birth_year + '-' + I[idx].death_year + ')';
+	if (citations) txt += ' ' + citaLinks(I[idx].cita);
 	if (idx != search.Idx || PageContents != PAGE_INDI)
 		txt = '<a href="' + indiHref(idx) + '">' + txt + '</a>';
 	return(txt);
@@ -525,20 +525,20 @@ function indiDetails(i)
 	var x_name;
 	txt += '<table class="table table-condensed table-bordered dwr-table-flat">';
 	// txt += '<table class="dt-table dwr-table-flat">';
-	for (x_name = 0; x_name < i[I_NAMES].length; x_name++)
+	for (x_name = 0; x_name < i.names.length; x_name++)
 	{
-		var name = i[I_NAMES][x_name];
-		var name_full = name[N_FULL];
-		if (name[N_DATE] != '') name_full += ' (' + name[N_DATE] + ')';
-		if (name[N_CITA].length > 0) name_full += ' ' + citaLinks(name[N_CITA]);
-		txt += '<tr><td><p class="dwr-attr-title">' + name[N_TYPE] + '</p></td><td colspan="2"><p class="dwr-attr-value">' + name_full + '</p></td></tr>';
-		if (name[N_NICK] != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name[N_NICK] + '</p></td></tr>';
-		if (name[N_CALL] != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Call Name') + '</p></td><td><p class="dwr-attr-value">' + name[N_CALL] + '</p></td></tr>';
-		if (name[N_FAM_NICK] != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Family Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name[N_FAM_NICK] + '</p></td></tr>';
-		if (name[N_NOTE] != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Notes') + '</p></td><td>' + notePara(name[N_NOTE], '<p class="dwr-attr-value">') + '</td></tr>';
+		var name = i.names[x_name];
+		var name_full = name.full;
+		if (name.date != '') name_full += ' (' + name.date + ')';
+		if (name.cita.length > 0) name_full += ' ' + citaLinks(name.cita);
+		txt += '<tr><td><p class="dwr-attr-title">' + name.type + '</p></td><td colspan="2"><p class="dwr-attr-value">' + name_full + '</p></td></tr>';
+		if (name.nick != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name.nick + '</p></td></tr>';
+		if (name.call != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Call Name') + '</p></td><td><p class="dwr-attr-value">' + name.call + '</p></td></tr>';
+		if (name.fam_nick != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Family Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name.fam_nick + '</p></td></tr>';
+		if (name.note != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Notes') + '</p></td><td>' + notePara(name.note, '<p class="dwr-attr-value">') + '</td></tr>';
 	}
-	txt += '<tr><td><p class="dwr-attr-title">' + _('Gender') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + genders[i[I_GENDER]] + '</p></td></tr>';
-	if (i[I_DEATH_AGE] != '') txt += '<tr><td><p class="dwr-attr-title">' + _('Age at Death') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + i[I_DEATH_AGE] + '</p></td></tr>';
+	txt += '<tr><td><p class="dwr-attr-title">' + _('Gender') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + genders[i.gender] + '</p></td></tr>';
+	if (i.death_age != '') txt += '<tr><td><p class="dwr-attr-title">' + _('Age at Death') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + i.death_age + '</p></td></tr>';
 	txt += '</table>';
 	return(txt);
 }
@@ -547,8 +547,8 @@ function indiDetails(i)
 function famLinked(fdx, citations)
 {
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
-	var txt =F[fdx][F_NAME];
-	if (citations) txt += ' ' + citaLinks(F[fdx][F_CITA]);
+	var txt =F[fdx].name;
+	if (citations) txt += ' ' + citaLinks(F[fdx].cita);
 	if (INC_FAMILIES && (fdx != search.Fdx || PageContents != PAGE_FAM))
 		txt = '<a href="' + famHref(fdx) + '">' + txt + '</a>';
 	return(txt);
@@ -606,13 +606,13 @@ function eventTable(events, idx, fdx)
 		{
 			var e = events[j];
 			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-title">' + e[E_TYPE] + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + e[E_DATE] + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + placeLink(e[E_PLACE], idx, fdx, e) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + e[E_DESCR] + '</p></td>';
-			txt += '<td>' + notePara(e[E_TEXT], '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + mediaLinks(e[E_MEDIA]) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(e[E_CITA]) + '</p></td>';
+			txt += '<td><p class="dwr-attr-title">' + e.type + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + e.date + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + e.descr + '</p></td>';
+			txt += '<td>' + notePara(e.text, '<p class="dwr-attr-value">') + '</td>';
+			txt += '<td><p class="dwr-attr-value">' + mediaLinks(e.media) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + citaLinks(e.cita) + '</p></td>';
 			txt += '</tr>';
 		}
 		txt += '</tbody></table>';
@@ -651,10 +651,10 @@ function addrsTable(addrs)
 		{
 			var addr = addrs[x_addr];
 			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value">' + locationString(addr[AD_LOCATION]) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + addr[AD_DATE] + '</p></td>';
-			txt += '<td>' + notePara(addr[AD_NOTE], '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(addr[AD_CITA]) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + locationString(addr.location) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + addr.date + '</p></td>';
+			txt += '<td>' + notePara(addr.note, '<p class="dwr-attr-value">') + '</td>';
+			txt += '<td><p class="dwr-attr-value">' + citaLinks(addr.cita) + '</p></td>';
 			txt += '</tr>';
 		}
 		txt += '</tbody></table>';
@@ -684,10 +684,10 @@ function attrsTable(attrs)
 		{
 			var a = attrs[x_attr];
 			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-title">' + a[A_TYPE] + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + a[A_VALUE] + '</p></td>';
-			txt += '<td>' + notePara(a[A_NOTE], '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(a[A_CITA]) + '</p></td>';
+			txt += '<td><p class="dwr-attr-title">' + a.type + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + a.value + '</p></td>';
+			txt += '<td>' + notePara(a.note, '<p class="dwr-attr-value">') + '</td>';
+			txt += '<td><p class="dwr-attr-value">' + citaLinks(a.cita) + '</p></td>';
 			txt += '</tr>';
 		}
 		txt += '</tbody></table>';
@@ -715,8 +715,8 @@ function urlsTable(urls)
 		{
 			var url = urls[x_url];
 			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value"><a href="' + url[U_URI] + '">' + url[U_URI] + '</a></p></td>';
-			txt += '<td><p class="dwr-attr-value">' + url[U_DESCR] + '</p></td>';
+			txt += '<td><p class="dwr-attr-value"><a href="' + url.uri + '">' + url.uri + '</a></p></td>';
+			txt += '<td><p class="dwr-attr-value">' + url.descr + '</p></td>';
 			txt += '</tr>';
 		}
 		txt += '</tbody></table>';
@@ -746,10 +746,10 @@ function assocsTable(assocs)
 		{
 			var assoc = assocs[x_assoc];
 			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value">' + indiLinked(assoc[AC_PERSON], false) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + assoc[AC_RELATIONSHIP] + '</p></td>';
-			txt += '<td>' + notePara(assoc[AC_NOTE], '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(assoc[AC_CITA]) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</p></td>';
+			txt += '<td><p class="dwr-attr-value">' + assoc.relationship + '</p></td>';
+			txt += '<td>' + notePara(assoc.note, '<p class="dwr-attr-value">') + '</td>';
+			txt += '<td><p class="dwr-attr-value">' + citaLinks(assoc.cita) + '</p></td>';
 			txt += '</tr>';
 		}
 		txt += '</tbody></table>';
@@ -777,8 +777,8 @@ function citaLinks(cita)
 	for (j = 0; j < cita.length; j++)
 	{
 		var c = C[cita[j]];
-		var sdx = c[C_SOURCE];
-		var title = S[sdx][S_TITLE];
+		var sdx = c.source;
+		var title = S[sdx].title;
 		if (title != '') title=' title="' + title + '"';
 		// Check if source is already referenced
 		var x1 = $.inArray(sdx, pageSources);
@@ -790,13 +790,13 @@ function citaLinks(cita)
 		}
 		var x2 = pageCitations[x1].length;
 		// Check if citation already exists
-		var c_m = mediaLinks(c[C_MEDIA])
+		var c_m = mediaLinks(c.media)
 		for (k = 0; k < pageCitations[x1].length; k++)
 		{
 			var c2 = C[pageCitations[x1][k]];
-			var c2_m = mediaLinks(c2[C_MEDIA])
-			if (c2[C_TEXT] == c[C_TEXT] &&
-				c2[C_NOTE] == c[C_NOTE] &&
+			var c2_m = mediaLinks(c2.media)
+			if (c2.text == c.text &&
+				c2.note == c.note &&
 				c2_m == c_m)
 			{
 				x2 = k;
@@ -828,7 +828,7 @@ function printCitations()
 		{
 			var cdx = pageCitations[j][k];
 			var c = C[cdx];
-			var txtc = c[C_TEXT] + c[C_NOTE] + mediaLinks(c[C_MEDIA])
+			var txtc = c.text + c.note + mediaLinks(c.media)
 			if (txtc != '')
 			{
 				txts += '<li>' + txtc + '</li>';
@@ -876,7 +876,7 @@ function citationBullet(x2)
 
 function sourName(sdx)
 {
-	if (S[sdx][S_TITLE] != '') return(S[sdx][S_TITLE]);
+	if (S[sdx].title != '') return(S[sdx].title);
 	return(_('Source') + ' ' + sdx);
 }
 
@@ -885,16 +885,16 @@ function mediaName(mdx)
 {
 	var txt = '';
 	var m = M[mdx];
-	if (m[M_TITLE] != '') return(m[M_TITLE]);
-	return(m[M_GRAMPS_PATH]);
+	if (m.title != '') return(m.title);
+	return(m.gramps_path);
 }
 
 
 // List of places referenced in the page with for each one:
-//    - the place index in table "P"
-//    - the referencing person index in table "I", -1 if none
-//    - the referencing family index in table "F", -1 if none
-//    - the referencing event, if any
+//    - pdx: the place index in table "P"
+//    - idx: the referencing person index in table "I", -1 if none
+//    - fdx: the referencing family index in table "F", -1 if none
+//    - event: the referencing event, if any
 var pagePlaces = [];
 PP_PDX = 0;
 PP_IDX = 1;
@@ -908,18 +908,18 @@ function placeLink(pdx, idx, fdx, event)
 	if (typeof(fdx) == 'undefined') fdx = -1;
 	if (typeof(event) == 'undefined') event = null;
 	if (pdx == -1) return('');
-	pagePlaces.push([pdx, idx, fdx, event]);
-	if (!INC_PLACES) return(P[pdx][P_NAME]);
-	if (PageContents == PAGE_PLACE && pdx == search.Pdx) return(P[pdx][P_NAME]);
-	return('<a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a>');
+	pagePlaces.push({pdx: pdx, idx: idx, fdx: fdx, event: event});
+	if (!INC_PLACES) return(P[pdx].name);
+	if (PageContents == PAGE_PLACE && pdx == search.Pdx) return(P[pdx].name);
+	return('<a href="' + placeHref(pdx) + '">' + P[pdx].name + '</a>');
 }
 
 
 function repoLink(rdx)
 {
 	if (rdx == -1) return('');
-	if (PageContents == PAGE_REPO && rdx == search.Rdx) return(R[rdx][R_NAME]);
-	return('<a href="' + repoHref(rdx) + '">' + R[rdx][R_NAME] + '</a>');
+	if (PageContents == PAGE_REPO && rdx == search.Rdx) return(R[rdx].name);
+	return('<a href="' + repoHref(rdx) + '">' + R[rdx].name + '</a>');
 }
 
 
@@ -1003,28 +1003,28 @@ function printIndi(idx)
 {
 	var j, k;
 	var html = '';
-	html += '<h2 class="page-header">' + I[idx][I_NAME] + ' ' + citaLinks(I[idx][I_CITA]) + '</h2>';
+	html += '<h2 class="page-header">' + I[idx].name + ' ' + citaLinks(I[idx].cita) + '</h2>';
 	html += indiDetails(I[idx]);
-	html += eventTable(I[idx][I_EVENTS], idx, -1);
-	html += addrsTable(I[idx][I_ADDRS]);
-	html += attrsTable(I[idx][I_ATTR]);
-	html += urlsTable(I[idx][I_URLS]);
-	html += assocsTable(I[idx][I_ASSOC]);
-	html += mediaSection(I[idx][I_MEDIA]);
-	html += noteSection(I[idx][I_NOTE]);
+	html += eventTable(I[idx].events, idx, -1);
+	html += addrsTable(I[idx].addrs);
+	html += attrsTable(I[idx].attr);
+	html += urlsTable(I[idx].urls);
+	html += assocsTable(I[idx].assoc);
+	html += mediaSection(I[idx].media);
+	html += noteSection(I[idx].note);
 	html += printTitle(4, _('Ancestors') + ':');
-	var famc_list = $.map(I[idx][I_FAMC], function (fc) {return(fc[FC_INDEX]);});
+	var famc_list = $.map(I[idx].famc, function (fc) {return(fc.index);});
 	if (INDEX_SHOW_ALL_SIBLINGS)
 	{
-		for (j = 0; j < I[idx][I_FAMC].length; j++)
+		for (j = 0; j < I[idx].famc.length; j++)
 		{
-			var fdx = I[idx][I_FAMC][j][FC_INDEX];
-			for (k = 0; k < F[fdx][F_SPOU].length; k++)
+			var fdx = I[idx].famc[j].index;
+			for (k = 0; k < F[fdx].spou.length; k++)
 			{
-				var spou = I[F[fdx][F_SPOU][k]];
-				for (var x_fams = 0; x_fams < spou[I_FAMS].length; x_fams++)
+				var spou = I[F[fdx].spou[k]];
+				for (var x_fams = 0; x_fams < spou.fams.length; x_fams++)
 				{
-					var fams = spou[I_FAMS][x_fams];
+					var fams = spou.fams[x_fams];
 					if ($.inArray(fams, famc_list) < 0) famc_list.push(fams);
 				}
 			}
@@ -1034,21 +1034,21 @@ function printIndi(idx)
 	{
 		var fdx = famc_list[j];
 		html += printTitle(5, _('Parents') + ': ' + famLinked(fdx));
-		for (k = 0; k < F[fdx][F_SPOU].length; k++)
+		for (k = 0; k < F[fdx].spou.length; k++)
 		{
-			html += '<p class="dwr-ref">' + indiLinked(F[fdx][F_SPOU][k]) + '</p>';
+			html += '<p class="dwr-ref">' + indiLinked(F[fdx].spou[k]) + '</p>';
 		}
-		if (F[fdx][F_SPOU].length == 0) html += ('<p class="dwr-ref">' + _('None.'));
+		if (F[fdx].spou.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
 		html += printTitleEnd();
 
 		html += printTitle(5, _('Siblings') + ':');
-		if (F[fdx][F_CHIL].length > 0)
+		if (F[fdx].chil.length > 0)
 		{
 			html += '<ol class="dwr-ref">';
-			for (k = 0; k < F[fdx][F_CHIL].length; k++)
+			for (k = 0; k < F[fdx].chil.length; k++)
 			{
 				html += '<li class="dwr-ref">';
-				html += printChildRef(F[fdx][F_CHIL][k]);
+				html += printChildRef(F[fdx].chil[k]);
 				html += '</li>';
 			}
 			html += '</ol>';
@@ -1062,14 +1062,14 @@ function printIndi(idx)
 	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
 	html += printTitleEnd();
 	html += printTitle(4, _('Descendants') + ':');
-	for (j = 0; j < I[idx][I_FAMS].length; j++)
+	for (j = 0; j < I[idx].fams.length; j++)
 	{
-		var fdx = I[idx][I_FAMS][j];
+		var fdx = I[idx].fams[j];
 		var spouses = [];
 		var sep = '';
-		for (k = 0; k < F[fdx][F_SPOU].length; k++)
+		for (k = 0; k < F[fdx].spou.length; k++)
 		{
-			var spou = F[fdx][F_SPOU][k]
+			var spou = F[fdx].spou[k]
 			if (spou != idx)
 			{
 				spouses.push(spou);
@@ -1081,24 +1081,24 @@ function printIndi(idx)
 		{
 			html += '<p class="dwr-ref">' + indiLinked(spouses[k]) + '</p>';
 		}
-		html += eventTable(F[fdx][F_EVENTS], -1, fdx);
-		html += attrsTable(F[fdx][F_ATTR]);
-		html += mediaSection(F[fdx][F_MEDIA]);
-		html += noteSection(F[fdx][F_NOTE]);
+		html += eventTable(F[fdx].events, -1, fdx);
+		html += attrsTable(F[fdx].attr);
+		html += mediaSection(F[fdx].media);
+		html += noteSection(F[fdx].note);
 		html += printTitle(5, _('Children') + ':');
 		html += '<ol class="dwr-ref">';
-		for (k = 0; k < F[fdx][F_CHIL].length; k++)
+		for (k = 0; k < F[fdx].chil.length; k++)
 		{
 			html += '<li class="dwr-ref">';
-			html += printChildRef(F[fdx][F_CHIL][k]);
+			html += printChildRef(F[fdx].chil[k]);
 			html += '</li>';
 		}
 		html += '</ol>';
-		if (F[fdx][F_CHIL].length == 0) html += '<p class="dwr-ref">' + _('None.') + '</p>';
+		if (F[fdx].chil.length == 0) html += '<p class="dwr-ref">' + _('None.') + '</p>';
 		html += printTitleEnd();
 		html += printTitleEnd();
 	}
-	if (I[idx][I_FAMS].length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
 	html += printTitleEnd();
 	// Citations and source references
 	var ctxt = printCitations();
@@ -1115,13 +1115,13 @@ function printIndi(idx)
 function printChildRef(fc)
 {
 	var txt = '';
-	txt += indiLinked(fc[FC_INDEX]);
-	txt += ' ' + citaLinks(fc[FC_CITA]);
-	if (fc[FC_NOTE] != '') txt += '<p><b>' + _('Notes') + ':</b></p>' + notePara(fc[FC_NOTE], '</p>');
-	rel = fc[FC_TO_FATHER];
+	txt += indiLinked(fc.index);
+	txt += ' ' + citaLinks(fc.cita);
+	if (fc.note != '') txt += '<p><b>' + _('Notes') + ':</b></p>' + notePara(fc.note, '</p>');
+	rel = fc.to_father;
 	title = _('Relationship to Father');
 	if (rel != '' && rel != _('Birth')) txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + title + ': </span>' + rel + '</p>';
-	rel = fc[FC_TO_MOTHER];
+	rel = fc.to_mother;
 	title = _('Relationship to Mother');
 	if (rel != '' && rel != _('Birth')) txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + title + ': </span>' + rel + '</p>';
 	return(txt);
@@ -1137,39 +1137,39 @@ function printFam(fdx)
 	var j, k;
 	var html = '';
 	html += '<h2 class="page-header">' + famLinked(fdx) + '</h2>';
-	html += eventTable(F[fdx][F_EVENTS], -1, fdx);
-	html += attrsTable(F[fdx][F_ATTR]);
-	html += mediaSection(F[fdx][F_MEDIA]);
-	html += noteSection(F[fdx][F_NOTE]);
-	var spouses = F[fdx][F_SPOU];
+	html += eventTable(F[fdx].events, -1, fdx);
+	html += attrsTable(F[fdx].attr);
+	html += mediaSection(F[fdx].media);
+	html += noteSection(F[fdx].note);
+	var spouses = F[fdx].spou;
 	html += printTitle(4, _('Parents') + ':');
 	for (k = 0; k < spouses.length; k++)
 	{
 		var idx = spouses[k];
 		html += '<h4 class="dwr-ref-detailed">' + indiLinked(idx) + '</a></h4>';
 		html += indiDetails(I[idx]);
-		html += eventTable(I[idx][I_EVENTS], idx, -1);
-		// html += attrsTable(I[idx][I_ATTR]);
-		html += mediaSection(I[idx][I_MEDIA]);
-		// html += noteSection(I[idx][I_NOTE]);
+		html += eventTable(I[idx].events, idx, -1);
+		// html += attrsTable(I[idx].attr);
+		html += mediaSection(I[idx].media);
+		// html += noteSection(I[idx].note);
 	}
 	if (spouses.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
 	html += printTitleEnd();
 	html += printTitle(4, _('Children') + ':');
 	html += '<ol class="dwr-ref-detailed">';
-	for (k = 0; k < F[fdx][F_CHIL].length; k++)
+	for (k = 0; k < F[fdx].chil.length; k++)
 	{
-		var fc = F[fdx][F_CHIL][k];
-		var idx = F[fdx][F_CHIL][k][FC_INDEX];
-		html += '<li class="dwr-ref-detailed">' + printChildRef(F[fdx][F_CHIL][k])
+		var fc = F[fdx].chil[k];
+		var idx = F[fdx].chil[k].index;
+		html += '<li class="dwr-ref-detailed">' + printChildRef(F[fdx].chil[k])
 		html += indiDetails(I[idx]);
-		html += eventTable(I[idx][I_EVENTS], idx, -1);
-		// html += attrsTable(I[idx][I_ATTR]);
-		html += mediaSection(I[idx][I_MEDIA]);
-		// html += noteSection(I[idx][I_NOTE]);
+		html += eventTable(I[idx].events, idx, -1);
+		// html += attrsTable(I[idx].attr);
+		html += mediaSection(I[idx].media);
+		// html += noteSection(I[idx].note);
 		html += '</li>';
 	}
-	if (F[fdx][F_CHIL].length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+	if (F[fdx].chil.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
 	html += '</ol>';
 	html += printTitleEnd();
 	// Map
@@ -1198,13 +1198,13 @@ function mediaLinks(media)
 	for (j = 0; j < media.length; j++)
 	{
 		var mr = media[j];
-		var m = M[mr[MR_M_IDX]];
-		var alt = m[M_TITLE];
-		if (alt == '') alt = m[M_TITLE];
-		if (alt == '') alt = m[M_GRAMPS_PATH];
-		if (alt == '') alt = _('Media') + ' ' + mr[MR_M_IDX];
-		txt += ' <a title="' + alt + '" class="thumbnail" href="' + mediaHref(mr[MR_M_IDX], m_list_from_mr(media)) + '">';
-		txt += '<img src="' + mr[MR_THUMB] + '" alt="' + alt + '"></a> ';
+		var m = M[mr.m_idx];
+		var alt = m.title;
+		if (alt == '') alt = m.title;
+		if (alt == '') alt = m.gramps_path;
+		if (alt == '') alt = _('Media') + ' ' + mr.m_idx;
+		txt += ' <a title="' + alt + '" class="thumbnail" href="' + mediaHref(mr.m_idx, m_list_from_mr(media)) + '">';
+		txt += '<img src="' + mr.thumb + '" alt="' + alt + '"></a> ';
 	}
 	return(txt);
 }
@@ -1221,9 +1221,9 @@ function printMedia(mdx)
 {
 	var html = '';
 	var m = M[mdx];
-	var title = m[M_TITLE];
-	if (title == '') title = m[M_GRAMPS_PATH];
-	html += '<h2 class="page-header">' + title + ' ' + citaLinks(m[M_CITA]) + '</h2>';
+	var title = m.title;
+	if (title == '') title = m.gramps_path;
+	html += '<h2 class="page-header">' + title + ' ' + citaLinks(m.cita) + '</h2>';
 	
 	// Pagination buttons
 	if (search.ImgList.length > 1)
@@ -1284,10 +1284,10 @@ function printMedia(mdx)
 	}
 
 	// Image or link (if media is not an image)
-	if (m[M_MIME].indexOf('image') == 0)
+	if (m.mime.indexOf('image') == 0)
 	{
 		html += '<div class="dwr-centered"><div id="img-div">';
-		html += '<img id="dwr-image" src="' + m[M_PATH] + '" usemap="#imgmap">';
+		html += '<img id="dwr-image" src="' + m.path + '" usemap="#imgmap">';
 		html += printMediaMap(mdx);
 		
 		// Expand button
@@ -1309,18 +1309,18 @@ function printMedia(mdx)
 	}
 	else
 	{
-		var name = m[M_GRAMPS_PATH];
+		var name = m.gramps_path;
 		name = name.replace(/.*[\\\/]/, '');
-		html += '<p class="dwr-centered"><a href="' + m[M_PATH] + '">' + name + '</a></p>';
+		html += '<p class="dwr-centered"><a href="' + m.path + '">' + name + '</a></p>';
 	}
 	
 	// Media description
-	if (m[M_DATE] != '') html += '<p><b>' + _('Date') + ': </b>' + m[M_DATE] + '</p>';
-	html += noteSection(m[M_NOTE]);
-	html += attrsTable(m[M_ATTR]);
+	if (m.date != '') html += '<p><b>' + _('Date') + ': </b>' + m.date + '</p>';
+	html += noteSection(m.note);
+	html += attrsTable(m.attr);
 
 	// Back references
-	var bk_txt = printBackRefs(BKREF_TYPE_MEDIA, m[M_BKI], m[M_BKF], m[M_BKS], [], m[M_BKP], []);
+	var bk_txt = printBackRefs(BKREF_TYPE_MEDIA, m.bki, m.bkf, m.bks, [], m.bkp, []);
 	if (bk_txt != '')
 	{
 		html += printTitle(5, _('References') + ':');
@@ -1358,7 +1358,7 @@ function mediaButtonPageClick(page_delta, page)
 
 function mediaButtonMaxClick()
 {
-	window.location.href = M[search.Mdx][M_PATH];
+	window.location.href = M[search.Mdx].path;
 	return(false);
 }
 
@@ -1388,13 +1388,13 @@ function printMediaMap(mdx)
 	var j, k;
 	var m = M[mdx];
 	html += '<map name="imgmap">';
-	html += printMediaRefArea(m[M_BKI], indiHref, function(ref) {return(I[ref][I_NAME]);});
+	html += printMediaRefArea(m.bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
-		html += printMediaRefArea(m[M_BKF], famHref, function(ref) {return(F[ref][F_NAME]);});
+		html += printMediaRefArea(m.bkf, famHref, function(ref) {return(F[ref].name);});
 	if (INC_SOURCES)
-		html += printMediaRefArea(m[M_BKS], sourceHref, sourName);
+		html += printMediaRefArea(m.bks, sourceHref, sourName);
 	if (INC_PLACES)
-		html += printMediaRefArea(m[M_BKP], placeHref, function(ref) {return(P[ref][P_NAME]);});
+		html += printMediaRefArea(m.bkp, placeHref, function(ref) {return(P[ref].name);});
 	html += '</map>';
 	return(html);
 }
@@ -1406,11 +1406,11 @@ function printMediaRefArea(bk_table, fref, fname)
 	for (j = 0; j < bk_table.length; j++)
 	{
 		var ref = bk_table[j];
-		idx = ref[MR_BK_IDX];
+		idx = ref.bk_idx;
 		var rect = [];
 		for (k = 0; k < 4; k++)
 		{
-			rect[k] = parseInt(ref[MR_RECT][k]);
+			rect[k] = parseInt(ref.rect[k]);
 			rect[k] = Math.round(rect[k] * 100);
 		}
 		if (!isNaN(rect[0]) && rect.join(',') != '0,0,10000,10000')
@@ -1432,32 +1432,32 @@ function printSource(sdx)
 {
 	var html = '';
 	var s = S[sdx];
-	if (s[S_TITLE] != '') html += '<h2 class="page-header">' + s[S_TITLE] + '</h2>';
-	if (s[S_TEXT] != '') html += s[S_TEXT];
-	html += attrsTable(s[S_ATTR]);
-	html += mediaSection(s[S_MEDIA]);
-	html += noteSection(s[S_NOTE]);
+	if (s.title != '') html += '<h2 class="page-header">' + s.title + '</h2>';
+	if (s.text != '') html += s.text;
+	html += attrsTable(s.attr);
+	html += mediaSection(s.media);
+	html += noteSection(s.note);
 	// Repositories for this source
-	if (S[sdx][S_REPO].length > 0)
+	if (S[sdx].repo.length > 0)
 		html += printTitle(5, _('Repositories') + ':');
-		html += printBackRefs(BKREF_TYPE_REPO, [], [], [], [], [], S[sdx][S_REPO]);
+		html += printBackRefs(BKREF_TYPE_REPO, [], [], [], [], [], S[sdx].repo);
 		html += printTitleEnd();
 	// Citations referencing this source
 	html += printTitle(5, _('Citations') + ':');
-	if (s[S_BKC].length > 0)
+	if (s.bkc.length > 0)
 	{
 		html += '<ul class="dwr-citations">';
 		var j;
-		for (j = 0; j < s[S_BKC].length; j++)
+		for (j = 0; j < s.bkc.length; j++)
 		{
-			c = C[s[S_BKC][j]]
+			c = C[s.bkc[j]]
 			// html += '<li>' + _('Citation') + ': ';
 			html += '<li>';
-			if (c[C_TEXT] != '') html += notePara(c[C_TEXT], '<p>');
-			if (c[C_NOTE] != '') html += '<p><b>' + _('Notes') + ':</b></p>' + notePara(c[C_NOTE], '<p>');
-			if (c[C_MEDIA].length > 0) html += '<p>' + _('Media') + ': ' + mediaLinks(c[C_MEDIA]) + '</p>';
+			if (c.text != '') html += notePara(c.text, '<p>');
+			if (c.note != '') html += '<p><b>' + _('Notes') + ':</b></p>' + notePara(c.note, '<p>');
+			if (c.media.length > 0) html += '<p>' + _('Media') + ': ' + mediaLinks(c.media) + '</p>';
 			// Back references
-			html += printBackRefs(BKREF_TYPE_INDEX, c[C_BKI], c[C_BKF], [], c[C_BKM], c[C_BKP], c[C_BKR]);
+			html += printBackRefs(BKREF_TYPE_INDEX, c.bki, c.bkf, [], c.bkm, c.bkp, c.bkr);
 			html += '</li>';
 		}
 		html += '</ul>';
@@ -1492,20 +1492,20 @@ function printPlace(pdx)
 		_('Longitude')
 	];
 	placeLink(pdx);
-	var name = p[P_NAME];
-	if (name == '') name = locationString(p[P_LOCATIONS]);
-	html += '<h2 class="page-header">' + name + ' ' + citaLinks(p[P_CITA]) + '</h2>';
+	var name = p.name;
+	if (name == '') name = locationString(p.locations);
+	html += '<h2 class="page-header">' + name + ' ' + citaLinks(p.cita) + '</h2>';
 	var j, k;
-	for (j = 0; j < p[P_LOCATIONS].length; j++)
+	for (j = 0; j < p.locations.length; j++)
 	{
-		if (p[P_LOCATIONS].length > 1)
+		if (p.locations.length > 1)
 		{
 			if (j == 0) html += '<p>' + _('Location') + ': </p>';
 			else html += '<p>' + _('Alternate Name') + ' ' + j + ': </p>';
 		}
-		var loc = p[P_LOCATIONS][j];
-		loc[8] = p[P_COORDS][0];
-		loc[9] = p[P_COORDS][1];
+		var loc = p.locations[j];
+		loc[8] = p.coords[0];
+		loc[9] = p.coords[1];
 		html += '<table class="table table-condensed table-bordered dwr-table-flat">';
 		for (k = 0; k < parts.length / 2; k ++)
 		{
@@ -1516,9 +1516,9 @@ function printPlace(pdx)
 		}
 		html += '</table>';
 	}
-	html += urlsTable(p[P_URLS]);
-	html += mediaSection(p[P_MEDIA]);
-	html += noteSection(p[P_NOTE]);
+	html += urlsTable(p.urls);
+	html += mediaSection(p.media);
+	html += noteSection(p.note);
 	// Map
 	if (MAP_PLACE)
 		html += printMap();
@@ -1529,7 +1529,7 @@ function printPlace(pdx)
 		html += ctxt;
 		html += printTitleEnd();
 	// Back references
-	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p[P_BKI], p[P_BKF], [], [], [], []);
+	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], [], []);
 	if (bk_txt != '')
 	{
 		html += printTitle(5, _('References') + ':');
@@ -1548,15 +1548,15 @@ function printRepo(rdx)
 {
 	var r = R[rdx]
 	var html = '';
-	html += '<h2 class="page-header">' + r[R_NAME] + '</h2>';
+	html += '<h2 class="page-header">' + r.name + '</h2>';
 	html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Type') + ': </span>'
-	html += r[R_TYPE] + '</p>';
-	html += addrsTable(r[R_ADDRS]);
-	html += urlsTable(r[R_URLS]);
-	html += noteSection(r[R_NOTE]);
+	html += r.type + '</p>';
+	html += addrsTable(r.addrs);
+	html += urlsTable(r.urls);
+	html += noteSection(r.note);
 	// Back references
 	html += printTitle(5, _('References') + ':');
-	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], r[R_BKS], [], [], []);
+	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], r.bks, [], [], []);
 	if (bk_txt == '') bk_txt = _('None.');
 	html += bk_txt;
 	html += printTitleEnd();
@@ -1758,35 +1758,35 @@ function htmlPersonsIndex(data)
 	}
 	var columns = [{
 		title: _('Name'),
-		ftext: function(x, col) {return(I[data[x]][I_NAME]);},
+		ftext: function(x, col) {return(I[data[x]].name);},
 		fhref: function(x) {return(indiHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Gender'),
-		ftext: function(x, col) {return(I[data[x]][I_GENDER]);}
+		ftext: function(x, col) {return(I[data[x]].gender);}
 	}];
 	if (INDEX_SHOW_BIRTH) columns.push({
 		title: _('Birth'),
-		ftext: function(x, col) {return(I[data[x]][I_BIRTH_YEAR]);}
+		ftext: function(x, col) {return(I[data[x]].birth_year);}
 	});
 	if (INDEX_SHOW_DEATH) columns.push({
 		title: _('Death'),
-		ftext: function(x, col) {return(I[data[x]][I_DEATH_YEAR]);}
+		ftext: function(x, col) {return(I[data[x]].death_year);}
 	});
 	if (INDEX_SHOW_PARTNER) columns.push({
 		title: _('Spouses'),
 		ftext: function(x, col) {
 			var txt = '';
 			var sep = '';
-			for (var x_fams = 0; x_fams < I[data[x]][I_FAMS].length; x_fams++)
+			for (var x_fams = 0; x_fams < I[data[x]].fams.length; x_fams++)
 			{
-				var spouses = F[I[data[x]][I_FAMS][x_fams]][F_SPOU];
+				var spouses = F[I[data[x]].fams[x_fams]].spou;
 				for (var x_spou = 0; x_spou < spouses.length; x_spou++)
 				{
 					if (spouses[x_spou] !== data[x])
 					{
 						txt += sep + '<a class="dwr-index" href="' + indiHref(spouses[x_spou]) + '">';
-						txt += I[spouses[x_spou]][I_NAME] + '</a>';
+						txt += I[spouses[x_spou]].name + '</a>';
 						sep = '<br>';
 					}
 				}
@@ -1800,15 +1800,15 @@ function htmlPersonsIndex(data)
 		ftext: function(x, col) {
 			var txt = '';
 			var sep = '';
-			for (var x_famc = 0; x_famc < I[data[x]][I_FAMC].length; x_famc++)
+			for (var x_famc = 0; x_famc < I[data[x]].famc.length; x_famc++)
 			{
-				var parents = F[I[data[x]][I_FAMC][x_famc][FC_INDEX]][F_SPOU];
+				var parents = F[I[data[x]].famc[x_famc].index].spou;
 				for (var x_spou = 0; x_spou < parents.length; x_spou++)
 				{
 					if (parents[x_spou] !== data[x])
 					{
 						txt += sep + '<a class="dwr-index" href="' + indiHref(parents[x_spou]) + '">';
-						txt += I[parents[x_spou]][I_NAME] + '</a>';
+						txt += I[parents[x_spou]].name + '</a>';
 						sep = '<br>';
 					}
 				}
@@ -1825,17 +1825,17 @@ function htmlPersonsIndex(data)
 function printIndexSpouseText(fdx, col)
 {
 	var gender = (col == 0)? 'M' : 'F';
-	for (var j = 0; j < F[fdx][F_SPOU].length; j++)
-		if (I[F[fdx][F_SPOU][j]][I_GENDER] == gender)
-			return(I[F[fdx][F_SPOU][j]][I_NAME]);
+	for (var j = 0; j < F[fdx].spou.length; j++)
+		if (I[F[fdx].spou[j]].gender == gender)
+			return(I[F[fdx].spou[j]].name);
 	return('');
 }
 function printIndexSpouseIdx(fdx, col)
 {
 	var gender = (col == 0)? 'M' : 'F';
-	for (var j = 0; j < F[fdx][F_SPOU].length; j++)
-		if (I[F[fdx][F_SPOU][j]][I_GENDER] == gender)
-			return(F[fdx][F_SPOU][j]);
+	for (var j = 0; j < F[fdx].spou.length; j++)
+		if (I[F[fdx].spou[j]].gender == gender)
+			return(F[fdx].spou[j]);
 	return(-1);
 }
 
@@ -1860,14 +1860,14 @@ function htmlFamiliesIndex()
 	}];
 	if (INDEX_SHOW_MARRIAGE) columns.push({
 		title: _('Marriage'),
-		ftext: function(fdx, col) {return(F[fdx][F_MARR_YEAR]);}
+		ftext: function(fdx, col) {return(F[fdx].marr_year);}
 	});
 	html += printIndex(F, [0, 'asc'], columns);
 	return(html);
 }
 
 
-function indexBkrefName(type, referenced_object, bk_field, objects, name_index)
+function indexBkrefName(type, referenced_object, bk_field, objects, name_prop)
 {
 	var ref = (function () {return("#")});
 	if (objects === I) ref = indiHref;
@@ -1880,9 +1880,9 @@ function indexBkrefName(type, referenced_object, bk_field, objects, name_index)
 	{
 		// Extract the list of object referencing the citations referencing the source
 		var bk_table = [];
-		for (var x_cita = 0; x_cita < referenced_object[S_BKC].length; x_cita++)
+		for (var x_cita = 0; x_cita < referenced_object.bkc.length; x_cita++)
 		{
-			var citation = C[referenced_object[S_BKC][x_cita]];
+			var citation = C[referenced_object.bkc[x_cita]];
 			for (var x_bk = 0; x_bk < citation[bk_field].length; x_bk++) bk_table.push(citation[bk_field][x_bk]);
 		}
 	}
@@ -1897,17 +1897,17 @@ function indexBkrefName(type, referenced_object, bk_field, objects, name_index)
 	{
 		var x_object;
 		if (type == BKREF_TYPE_INDEX) x_object = bk_table[x_bk];
-		if (type == BKREF_TYPE_MEDIA) x_object = bk_table[x_bk][MR_BK_IDX];
+		if (type == BKREF_TYPE_MEDIA) x_object = bk_table[x_bk].bk_idx;
 		if (type == BKREF_TYPE_SOURCE) x_object = bk_table[x_bk];
-		if (type == BKREF_TYPE_REPO) x_object = bk_table[x_bk][RR_S_IDX];
+		if (type == BKREF_TYPE_REPO) x_object = bk_table[x_bk].s_idx;
 		if ($.inArray(x_object, already_found) == -1)
 		{
 			already_found.push(x_object);
-			var name = objects[x_object][name_index];
+			var name = objects[x_object][name_prop];
 			if (name != '')
 			{
 				txt += sep + '<a class="dwr-index" href="' + ref(x_object) + '">';
-				txt += objects[x_object][name_index] + '</a>';
+				txt += objects[x_object][name_prop] + '</a>';
 				sep = '<br>';
 			}
 		}
@@ -1933,41 +1933,41 @@ function htmlMediaIndex(data)
 		title: '',
 		ftext: function(x, col) {return(
 			'<a class="thumbnail" href="' + mediaHref(data[x], []) + '">' +
-			'<img src="' + M[data[x]][M_THUMB] + '"></a>'
+			'<img src="' + M[data[x]].thumb + '"></a>'
 		);},
 		fsort: false
 	}, {
 		title: _('Title'),
-		ftext: function(x, col) {return(M[data[x]][M_TITLE]);},
+		ftext: function(x, col) {return(M[data[x]].title);},
 		fhref: function(x) {return(mediaHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Path'),
-		ftext: function(x, col) {return(M[data[x]][M_GRAMPS_PATH]);},
-		fhref: function(x) {return((M[data[x]][M_TITLE] == '') ? mediaHref(data[x]) : '');}
+		ftext: function(x, col) {return(M[data[x]].gramps_path);},
+		fhref: function(x) {return((M[data[x]].title == '') ? mediaHref(data[x]) : '');}
 	}, {
 		title: _('Date'),
-		ftext: function(x, col) {return(M[data[x]][M_DATE]);},
-		fsort: function(x, col) {return(M[data[x]][M_DATE_ISO]);}
+		ftext: function(x, col) {return(M[data[x]].date);},
+		fsort: function(x, col) {return(M[data[x]].date_iso);}
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKI, I, I_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKF, F, F_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bkf', F, 'name'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKS, S, S_TITLE));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bks', S, 'title'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], M_BKP, P, P_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bkp', P, 'name'));},
 		fsort: false
 	});
 	html += printIndex(data, [1, 'asc'], columns);
@@ -1996,22 +1996,22 @@ function htmlSourcesIndex(data)
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKI, I, I_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKF, F, F_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkf', F, 'name'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_MEDIA) columns.push({
 		title: _('Used for media'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKM, M, M_TITLE));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkm', M, 'title'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], C_BKP, P, P_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkp', P, 'name'));},
 		fsort: false
 	});
 	html += printIndex(data, [0, 'asc'], columns);
@@ -2022,13 +2022,13 @@ function htmlSourcesIndex(data)
 function printPlacesIndexColText(data, x, col)
 {
 	var pdx = data[x];
-	if (P[pdx][P_LOCATIONS].length == 0) return('');
-	return(P[pdx][P_LOCATIONS][0][8 - col]);
+	if (P[pdx].locations.length == 0) return('');
+	return(P[pdx].locations[0][8 - col]);
 }
 
 function printPlacesIndexColCoord(pdx, col)
 {
-	var c = P[pdx][P_COORDS][col - 9];
+	var c = P[pdx].coords[col - 9];
 	if (c == '') return('');
 	c = Number(c);
 	var txt = '000' + Math.abs(c).toFixed(4);
@@ -2052,7 +2052,7 @@ function htmlPlacesIndex(data)
 	}
 	var columns = [{
 		title: _('Name'),
-		ftext: function(x, col) {return(P[data[x]][P_NAME]);},
+		ftext: function(x, col) {return(P[data[x]].name);},
 		fhref: function(x) {return(placeHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
@@ -2082,24 +2082,24 @@ function htmlPlacesIndex(data)
 	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
-			if (P[data[x]][P_COORDS][0] == '') return('');
-			return(Number(P[data[x]][P_COORDS][0]));
+			if (P[data[x]].coords[0] == '') return('');
+			return(Number(P[data[x]].coords[0]));
 		}
 	}, {
 		title: _('Longitude'),
 		ftext: function(x, col) {
-			if (P[data[x]][P_COORDS][1] == '') return('');
-			return(Number(P[data[x]][P_COORDS][1]));
+			if (P[data[x]].coords[1] == '') return('');
+			return(Number(P[data[x]].coords[1]));
 		}
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKI, I, I_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
 	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], P_BKF, F, F_NAME));},
+		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], 'bkf', F, 'name'));},
 		fsort: false
 	});
 	html += printIndex(data, [0, 'asc'], columns);
@@ -2117,21 +2117,21 @@ function htmlAddressesIndex()
 	// Build addresses table
 	var adtable = [];
 	var empty_loc = [];
-	var empty_url = ['', ''];
+	var empty_url = {type: '', uri: '', descr: ''};
 	for (var x_i = 0; x_i < I.length; x_i++)
 	{
 		var i = I[x_i];
-		for (var x_ad = 0; x_ad < i[I_ADDRS].length; x_ad++)
-			adtable.push([x_i, i[I_ADDRS][x_ad][AD_LOCATION], empty_url])
-		for (var x_url = 0; x_url < i[I_URLS].length; x_url++)
-			adtable.push([x_i, empty_loc, i[I_URLS][x_url]])
+		for (var x_ad = 0; x_ad < i.addrs.length; x_ad++)
+			adtable.push([x_i, i.addrs[x_ad].location, empty_url])
+		for (var x_url = 0; x_url < i.urls.length; x_url++)
+			adtable.push([x_i, empty_loc, i.urls[x_url]])
 	}
 	// Print table
 	var html = '';
 	html += '<h2 class="page-header">' + _('Addresses') + '</h2>';
 	var columns = [{
 		title: _('Person'),
-		ftext: function(x_ad, col) {return(I[adtable[x_ad][0]][I_NAME]);},
+		ftext: function(x_ad, col) {return(I[adtable[x_ad][0]].name);},
 		fhref: function(x_ad) {return(indiHref(adtable[x_ad][0]));},
 		fsort: function(x, col) {return(adtable[x_ad][0]);}
 	}, {
@@ -2139,8 +2139,8 @@ function htmlAddressesIndex()
 		ftext: function(x_ad, col) {return(locationString(adtable[x_ad][1]));},
 	}, {
 		title: _('Web Link'),
-		ftext: function(x_ad, col) {return(adtable[x_ad][2][2] || adtable[x_ad][2][1]);},
-		fhref: function(x_ad) {return(adtable[x_ad][2][1]);}
+		ftext: function(x_ad, col) {return(adtable[x_ad][2].descr || adtable[x_ad][2].uri);},
+		fhref: function(x_ad) {return(adtable[x_ad][2].uri);}
 	}];
 	html += printIndex(adtable, [0, 'asc'], columns);
 	return(html);
@@ -2158,28 +2158,28 @@ function htmlReposIndex()
 	html += '<h2 class="page-header">' + _('Repositories') + '</h2>';
 	var columns = [{
 		title: _('Repository'),
-		ftext: function(rdx, col) {return(R[rdx][R_NAME]);},
+		ftext: function(rdx, col) {return(R[rdx].name);},
 		fhref: repoHref,
 		fsort: function(rdx, col) {return(rdx);}
 	}, {
 		title: _('Type'),
-		ftext: function(rdx, col) {return(R[rdx][R_TYPE]);},
+		ftext: function(rdx, col) {return(R[rdx].type);},
 	}, {
 		title: _('Addresses'),
 		ftext: function(rdx, col) {
-			return(($.map(R[rdx][R_ADDRS], locationString)).join('<br>'));
+			return(($.map(R[rdx].addrs, locationString)).join('<br>'));
 		},
 	}, {
 		title: _('Web Links'),
 		ftext: function(rdx, col) {
-			return(($.map(R[rdx][R_URLS], function(url) {
-				return('<a class="dwr-index" href="' + url[1] + '">' + (url[2] || url[1]) + '</a>');
+			return(($.map(R[rdx].urls, function(url) {
+				return('<a class="dwr-index" href="' + url.uri + '">' + (url.descr || url.uri) + '</a>');
 			})).join('<br>'));
 		},
 	}];
 	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(rdx, col) {return(indexBkrefName(BKREF_TYPE_REPO, R[rdx], R_BKS, S, S_TITLE));},
+		ftext: function(rdx, col) {return(indexBkrefName(BKREF_TYPE_REPO, R[rdx], 'bks', S, 'title'));},
 		fsort: false
 	});
 	html += printIndex(R, [0, 'asc'], columns);
@@ -2198,23 +2198,23 @@ function printSurnameIndex()
 	
 	if (search.SNdx >= 0)
 	{
-		if (SN[search.SNdx][SN_PERSONS].length == 0)
+		if (SN[search.SNdx].persons.length == 0)
 		{
 			document.write('<p>' + _('No matching surname.') + '</p>');
 		}
-		else if (SN[search.SNdx][1].length == 1)
+		else if (SN[search.SNdx].letter.length == 1)
 		{
-			window.location.replace(indiHref(SN[search.SNdx][SN_PERSONS][0]));
+			window.location.replace(indiHref(SN[search.SNdx].persons[0]));
 		}
 		else
 		{
 			document.write(
 				'<h2 class="page-header">',
-				(SN[search.SNdx][SN_SURNAME].length > 0) ?
-					SN[search.SNdx][SN_SURNAME] :
+				(SN[search.SNdx].surname.length > 0) ?
+					SN[search.SNdx].surname :
 					'<i>' + _('Without surname') + '</i>',
 				'</h2>');
-			document.write(htmlPersonsIndex(SN[search.SNdx][SN_PERSONS]));
+			document.write(htmlPersonsIndex(SN[search.SNdx].persons));
 		}
 	}
 	else
@@ -2249,22 +2249,22 @@ function printSurnamesIndex()
 	var texts = [];
 	for (i = 0; i < SN.length; i++)
 	{
-		if (SN[i][SN_SURNAME].length > 0)
+		if (SN[i].surname.length > 0)
 		{
-			var letter = SN[i][SN_LETTER];
+			var letter = SN[i].letter;
 			if ($.inArray(letter, titles) == -1)
 			{
 				// New initial for the surname
 				titles.push(letter);
 				texts[letter] = '';
 			}
-			texts[letter] += surnameString(i, SN[i][SN_SURNAME], SN[i][SN_PERSONS].length);
+			texts[letter] += surnameString(i, SN[i].surname, SN[i].persons.length);
 		}
 		else
 		{
 			// Empty surname
 			titles.push('');
-			texts[''] = surnameString(i, SN[i][SN_SURNAME], SN[i][SN_PERSONS].length);
+			texts[''] = surnameString(i, SN[i].surname, SN[i].persons.length);
 		}
 	}
 	// Print surnames as bootstrap collapsible panels
@@ -2315,8 +2315,8 @@ function printSurnamesIndex2()
 	for (i = 0; i < SN.length; i++)
 	{
 		surnames.push({
-			number: SN[i][SN_PERSONS].length,
-			name: SN[i][SN_SURNAME],
+			number: SN[i].persons.length,
+			name: SN[i].surname,
 			sndx: i
 		});
 	}
@@ -2343,17 +2343,17 @@ BKREF_TYPE_REPO = 3;
 function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 {
 	var html = '';
-	html += printBackRef(type, bki, indiHref, function(ref) {return(I[ref][I_NAME]);});
+	html += printBackRef(type, bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
-		html += printBackRef(type, bkf, famHref, function(ref) {return(F[ref][F_NAME]);});
+		html += printBackRef(type, bkf, famHref, function(ref) {return(F[ref].name);});
 	if (INC_SOURCES)
 		html += printBackRef(type, bks, sourceHref, sourName);
 	if (INC_MEDIA)
 		html += printBackRef(type, bkm, mediaHref, mediaName);
 	if (INC_PLACES)
-		html += printBackRef(type, bkp, placeHref, function(ref) {return(P[ref][P_NAME]);});
+		html += printBackRef(type, bkp, placeHref, function(ref) {return(P[ref].name);});
 	if (INC_REPOSITORIES)
-		html += printBackRef(type, bkr, repoHref, function(ref) {return(R[ref][R_NAME]);});
+		html += printBackRef(type, bkr, repoHref, function(ref) {return(R[ref].name);});
 	if (html == '') return('');
 	return('<ul class="dwr-backrefs">' + html + '</ul>');
 }
@@ -2374,27 +2374,27 @@ function printBackRef(type, bk_table, fref, fname)
 		else if (type == BKREF_TYPE_MEDIA)
 		{
 			// This is a media back reference
-			txt = '<a href="' + fref(ref[MR_BK_IDX]) + '">' + fname(ref[MR_BK_IDX]) + '</a>';
-			txt += ' ' + citaLinks(ref[MR_CITA]);
-			if (ref[MR_NOTE] != '')
+			txt = '<a href="' + fref(ref.bk_idx) + '">' + fname(ref.bk_idx) + '</a>';
+			txt += ' ' + citaLinks(ref.cita);
+			if (ref.note != '')
 			{
 				txt = '<div>' + txt;
-				txt += notePara(ref[MR_NOTE], '<p>');
+				txt += notePara(ref.note, '<p>');
 				txt += '</div>';
 			}
 		}
 		else if (type == BKREF_TYPE_REPO)
 		{
 			// This is a media back reference
-			txt = '<a href="' + fref(ref[RR_R_IDX]) + '">' + fname(ref[RR_R_IDX]) + '</a>';
-			if (ref[RR_MEDIA_TYPE] != '')
-				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Media Type') + ': </span>' + ref[RR_MEDIA_TYPE] + '</p>';
-			if (ref[RR_CALL_NUMBER] != '')
-				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Call Number') + ': </span>' + ref[RR_CALL_NUMBER] + '</p>';
-			if (ref[RR_NOTE] != '')
+			txt = '<a href="' + fref(ref.r_idx) + '">' + fname(ref.r_idx) + '</a>';
+			if (ref.media_type != '')
+				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Media Type') + ': </span>' + ref.media_type + '</p>';
+			if (ref.call_number != '')
+				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Call Number') + ': </span>' + ref.call_number + '</p>';
+			if (ref.note != '')
 			{
 				txt = '<div>' + txt;
-				txt += notePara(ref[RR_NOTE], '<p>');
+				txt += notePara(ref.note, '<p>');
 				txt += '</div>';
 			}
 		}
@@ -2418,8 +2418,8 @@ function printMap()
 	var found = false;
 	for (var j = 0; j < pagePlaces.length; j++)
 	{
-		var pdx = pagePlaces[j][PP_PDX];
-		if (P[pdx][P_COORDS].join('') != '') found = true;
+		var pdx = pagePlaces[j].pdx;
+		if (P[pdx].coords.join('') != '') found = true;
 	}
 	if (!found) return('');
 	// Schedule the differed update of the map
@@ -2467,10 +2467,10 @@ function mapUpdate()
 	var osmToProj = 'EPSG:3857';
 	for (var x_place = 0; x_place < pagePlaces.length; x_place++)
 	{
-		var pdx = pagePlaces[x_place][PP_PDX];
-		var lat = Number(P[pdx][P_COORDS][0]);
-		var lon = Number(P[pdx][P_COORDS][1]);
-		var sc = P[pdx][P_COORDS].join('');
+		var pdx = pagePlaces[x_place].pdx;
+		var lat = Number(P[pdx].coords[0]);
+		var lon = Number(P[pdx].coords[1]);
+		var sc = P[pdx].coords.join('');
 		// Check if coordinates are valid
 		if (sc != '')
 		{
@@ -2594,7 +2594,7 @@ function mapUpdate()
 	{
 		// Sort markerPaces by name
 		markerPaces[x_marker].sort(function(a, b) {
-			return(P[pagePlaces[a][PP_PDX]][P_NAME].localeCompare(P[pagePlaces[b][PP_PDX]][P_NAME]));
+			return(P[pagePlaces[a].pdx].name.localeCompare(P[pagePlaces[b].pdx].name));
 		});
 		// Build markers data
 		var point = {
@@ -2610,36 +2610,36 @@ function mapUpdate()
 		for (var x_place = 0; x_place < markerPaces[x_marker].length; x_place++)
 		{
 			var pp = pagePlaces[markerPaces[x_marker][x_place]];
-			var pdx = pp[PP_PDX];
+			var pdx = pp.pdx;
 			if (pdx != previous_pdx)
 			{
 				if (point.mapName) point.mapName += '\n';
-				point.mapName += P[pdx][P_NAME];
+				point.mapName += P[pdx].name;
 				if (previous_ul) point.mapInfo += '</ul>';
-				point.mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx][P_NAME] + '</a></p>';
+				point.mapInfo += '<p class="dwr-mapinfo"><a href="' + placeHref(pdx) + '">' + P[pdx].name + '</a></p>';
 				previous_pdx = pdx;
 				previous_ul = false;
 			}
 			var txt = '';
-			if (pp[PP_IDX] >= 0)
+			if (pp.idx >= 0)
 			{
-				txt += indiLinked(pp[PP_IDX], false);
+				txt += indiLinked(pp.idx, false);
 			}
-			if (pp[PP_FDX] >= 0)
+			if (pp.fdx >= 0)
 			{
-				txt += famLinked(pp[PP_FDX], false);
+				txt += famLinked(pp.fdx, false);
 			}
-			if (pp[PP_EVENT]) txt += ' (' + (pp[PP_EVENT][E_TYPE] || pp[PP_EVENT][E_DESCR]) + ')';
+			if (pp.event) txt += ' (' + (pp.event.type || pp.event.descr) + ')';
 			if (txt)
 			{
 				if (!previous_ul) point.mapInfo += '<ul class="dwr-mapinfo">';
 				previous_ul = true;
 				point.mapInfo += '<li class="dwr-mapinfo">' + txt + '</li>';
-				if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_BIRTH) >= 0)
+				if ($.inArray(pp.event.type, EVENTS_BIRTH) >= 0)
 					point.nb_birth += 1;
-				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_MARR) >= 0)
+				else if ($.inArray(pp.event.type, EVENTS_MARR) >= 0)
 					point.nb_marr += 1;
-				else if ($.inArray(pp[PP_EVENT][E_TYPE], EVENTS_DEATH) >= 0)
+				else if ($.inArray(pp.event.type, EVENTS_DEATH) >= 0)
 					point.nb_death += 1;
 				else
 					point.nb_other += 1;
@@ -2865,7 +2865,7 @@ function SearchObjects()
 		{
 			data: I,
 			fextract: function(idx) {
-				return(I[idx][I_NAME] + ' ' + I[idx][I_BIRTH_YEAR] + ' ' + I[idx][I_DEATH_YEAR]);
+				return(I[idx].name + ' ' + I[idx].birth_year + ' ' + I[idx].death_year);
 			},
 			text: _('Persons found:'),
 			findex: htmlPersonsIndex,
@@ -2873,21 +2873,21 @@ function SearchObjects()
 		},
 		{
 			data: M,
-			fextract: function(mdx) {return(M[mdx][M_TITLE] + ' ' + M[mdx][M_PATH]);},
+			fextract: function(mdx) {return(M[mdx].title + ' ' + M[mdx].path);},
 			text: _('Media found:'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
 		},
 		{
 			data: S,
-			fextract: function(sdx) {return(S[sdx][S_TITLE]);},
+			fextract: function(sdx) {return(S[sdx].title);},
 			text: _('Sources found:'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
 		},
 		{
 			data: P,
-			fextract: function(pdx) {return(P[pdx][P_NAME]);},
+			fextract: function(pdx) {return(P[pdx].name);},
 			text: _('Places found:'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
@@ -2950,12 +2950,12 @@ function SearchObjects()
 function ManageSearchStringGids()
 {
 	// Select between index in table or GID (mutually exclusive)
-	if (search.Idx < 0) search.Idx = GitToIndex(search.Igid, I, I_GID);
-	if (search.Fdx < 0) search.Fdx = GitToIndex(search.Fgid, F, F_GID);
-	if (search.Mdx < 0) search.Mdx = GitToIndex(search.Mgid, M, M_GID);
-	if (search.Sdx < 0) search.Sdx = GitToIndex(search.Sgid, S, S_GID);
-	if (search.Pdx < 0) search.Pdx = GitToIndex(search.Pgid, P, P_GID);
-	if (search.Rdx < 0) search.Rdx = GitToIndex(search.Rgid, R, R_GID);
+	if (search.Idx < 0) search.Idx = GidToIndex(search.Igid, I);
+	if (search.Fdx < 0) search.Fdx = GidToIndex(search.Fgid, F);
+	if (search.Mdx < 0) search.Mdx = GidToIndex(search.Mgid, M);
+	if (search.Sdx < 0) search.Sdx = GidToIndex(search.Sgid, S);
+	if (search.Pdx < 0) search.Pdx = GidToIndex(search.Pgid, P);
+	if (search.Rdx < 0) search.Rdx = GidToIndex(search.Rgid, R);
 	
 	search.Igid = '';
 	search.Fgid = '';
@@ -2965,13 +2965,13 @@ function ManageSearchStringGids()
 	search.Rgid = '';
 }
 
-function GitToIndex(gid, table, field)
+function GidToIndex(gid, table)
 {
 	// Change GID into index in table
 	if (gid == '') return(-1);
 	for(var i = 0; i < table.length; i++)
 	{
-		if (table[i][field] == gid) return(i);
+		if (table[i].gid == gid) return(i);
 	}
 	return(-1);
 }
