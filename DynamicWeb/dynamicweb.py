@@ -214,7 +214,7 @@ from gramps.gen.relationship import get_relationship_calculator
 if (DWR_VERSION_410):
     from gramps.gen.utils.location import get_main_location
 
-from gramps.gui.widgets.fanchart import (
+from gramps.gen.const import (
     GENCOLOR,
     GRADIENTSCALE,
     BACKGROUND_SCHEME1,
