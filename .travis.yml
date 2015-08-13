@@ -23,6 +23,7 @@ install:
     - cd ..
     - git clone --depth=50 --branch=master git://github.com/gramps-project/addons-source.git addons-source
     - cd addons-source
+    - python3 -m compileall *
 
 #before_script:
 #    - sudo Xvfb :99 -ac &
@@ -30,4 +31,5 @@ install:
 
 script:
     -  mkdir -p /home/travis/.gramps/grampsdb/
+    -  ln -s /home/travis/gramps-project/addons-source /home/travis/.gramps/gramps50/plugins
     -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 -vv
