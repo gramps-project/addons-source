@@ -698,10 +698,10 @@ function SvgSetStyle(p, text, x_elt, lev)
 	if (search.SvgBackground == 0) // BACKGROUND_GENDER
 	{
 		var g = 'unknown';
-		if (I[elt[SVGELT_IDX]][I_GENDER] == 'M') g = 'male';
-		if (I[elt[SVGELT_IDX]][I_GENDER] == 'F') g = 'female';
+		if (I[elt[SVGELT_IDX]].gender == 'M') g = 'male';
+		if (I[elt[SVGELT_IDX]].gender == 'F') g = 'female';
 		var d = 'alive';
-		if (I[elt[SVGELT_IDX]][I_DEATH_YEAR] != "") d = 'death';
+		if (I[elt[SVGELT_IDX]].death_year != "") d = 'death';
 		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
 	}
 	if (typeof(lev) != 'undefined' && search.SvgBackground == 1) // BACKGROUND_GRAD_GEN
@@ -713,8 +713,8 @@ function SvgSetStyle(p, text, x_elt, lev)
 		(search.SvgBackground == 2) ||
 		(search.SvgBackground == 4))
 	{
-		var b = parseInt(I[elt[SVGELT_IDX]][I_BIRTH_YEAR]);
-		var d = parseInt(I[elt[SVGELT_IDX]][I_DEATH_YEAR]);
+		var b = parseInt(I[elt[SVGELT_IDX]].birth_year);
+		var d = parseInt(I[elt[SVGELT_IDX]].death_year);
 		var x;
 		var m;
 		if ((search.SvgBackground == 2) && !isNaN(b) && !isNaN(d))
@@ -755,7 +755,7 @@ function SvgSetStyle(p, text, x_elt, lev)
 	{
 		fill = SVG_TREE_COLOR_DUP;
 	}
-	if ((elt[SVGELT_IDX] < 0) || (I[elt[SVGELT_IDX]][I_GENDER] == 'F')) dark = 1.0;
+	if ((elt[SVGELT_IDX] < 0) || (I[elt[SVGELT_IDX]].gender == 'F')) dark = 1.0;
 	var fill_hsb = Raphael.rgb2hsb(Raphael.getRGB(fill));
 	var fill_rgb = Raphael.hsb2rgb({
 		h: fill_hsb.h,
@@ -1145,18 +1145,18 @@ function SvgPopupShow(elt, event)
 	$('#svg-popup').show();
 	if (idx != svgPopupIdx)
 	{
-		var html = '<p>' + I[idx][I_NAME];
-		html += '<br>* ' + I[idx][I_BIRTH_YEAR];
-		if (I[idx][I_BIRTH_PLACE] != "") html += ' (' + I[idx][I_BIRTH_PLACE] + ')';
+		var html = '<p>' + I[idx].name;
+		html += '<br>* ' + I[idx].birth_year;
+		if (I[idx].birth_place != "") html += ' (' + I[idx].birth_place + ')';
 		if (fdx >= 0)
 		{
-			html += '<br>x ' + F[fdx][F_MARR_YEAR];
-			if (F[fdx][F_MARR_PLACE] != "") html += ' (' + F[fdx][F_MARR_PLACE] + ')';
+			html += '<br>x ' + F[fdx].marr_year;
+			if (F[fdx].marr_place != "") html += ' (' + F[fdx].marr_place + ')';
 		}
-		if (I[idx][I_DEATH_YEAR] != "")
+		if (I[idx].death_year != "")
 		{
-			html += '<br>+ ' + I[idx][I_DEATH_YEAR];
-			if (I[idx][I_DEATH_PLACE] != "") html += ' (' + I[idx][I_DEATH_PLACE] + ')';
+			html += '<br>+ ' + I[idx].death_year;
+			if (I[idx].death_place != "") html += ' (' + I[idx].death_place + ')';
 		}
 		html += '</p>';
 		$('#svg-popup').html(html);
@@ -1196,21 +1196,21 @@ function SvgContextBefore($menu, event)
 		{
 			// Person menu items
 			data = data.concat([
-				{text: I[idx][I_NAME], href: svgHref(idx)},
+				{text: I[idx].name, href: svgHref(idx)},
 				{text: _('Person page'), href: indiHref(idx)}
 			]);
 			var j, k, subm;
 			// Spouses menu items
 			subm = [];
-			for (j = 0; j < I[idx][I_FAMS].length; j++)
+			for (j = 0; j < I[idx].fams.length; j++)
 			{
-				var fdx = I[idx][I_FAMS][j];
-				for (k = 0; k < F[fdx][F_SPOU].length; k++)
+				var fdx = I[idx].fams[j];
+				for (k = 0; k < F[fdx].spou.length; k++)
 				{
-					if (F[fdx][F_SPOU][k] == idx) continue;
+					if (F[fdx].spou[k] == idx) continue;
 					subm.push({
-						text: I[F[fdx][F_SPOU][k]][I_NAME],
-						href: svgHref(F[fdx][F_SPOU][k])
+						text: I[F[fdx].spou[k]].name,
+						href: svgHref(F[fdx].spou[k])
 					});
 				}
 			}
@@ -1220,15 +1220,15 @@ function SvgContextBefore($menu, event)
 			});
 			// Siblings menu items
 			subm = [];
-			for (j = 0; j < I[idx][I_FAMC].length; j++)
+			for (j = 0; j < I[idx].famc.length; j++)
 			{
-				var fdx = I[idx][I_FAMC][j][FC_INDEX];
-				for (k = 0; k < F[fdx][F_CHIL].length; k++)
+				var fdx = I[idx].famc[j].index;
+				for (k = 0; k < F[fdx].chil.length; k++)
 				{
-					if (F[fdx][F_CHIL][k][FC_INDEX] == idx) continue;
+					if (F[fdx].chil[k].index == idx) continue;
 					subm.push({
-						text: I[F[fdx][F_CHIL][k][FC_INDEX]][I_NAME],
-						href: svgHref(F[fdx][F_CHIL][k][FC_INDEX])
+						text: I[F[fdx].chil[k].index].name,
+						href: svgHref(F[fdx].chil[k].index)
 					});
 				}
 			}
@@ -1238,14 +1238,14 @@ function SvgContextBefore($menu, event)
 			});
 			// Children menu items
 			subm = [];
-			for (j = 0; j < I[idx][I_FAMS].length; j++)
+			for (j = 0; j < I[idx].fams.length; j++)
 			{
-				var fdx = I[idx][I_FAMS][j];
-				for (k = 0; k < F[fdx][F_CHIL].length; k++)
+				var fdx = I[idx].fams[j];
+				for (k = 0; k < F[fdx].chil.length; k++)
 				{
 					subm.push({
-						text: I[F[fdx][F_CHIL][k][FC_INDEX]][I_NAME],
-						href: svgHref(F[fdx][F_CHIL][k][FC_INDEX])
+						text: I[F[fdx].chil[k].index].name,
+						href: svgHref(F[fdx].chil[k].index)
 					});
 				}
 			}
@@ -1255,14 +1255,14 @@ function SvgContextBefore($menu, event)
 			});
 			// Parents menu items
 			subm = [];
-			for (j = 0; j < I[idx][I_FAMC].length; j++)
+			for (j = 0; j < I[idx].famc.length; j++)
 			{
-				var fdx = I[idx][I_FAMC][j][FC_INDEX];
-				for (k = 0; k < F[fdx][F_SPOU].length; k++)
+				var fdx = I[idx].famc[j].index;
+				for (k = 0; k < F[fdx].spou.length; k++)
 				{
 					subm.push({
-						text: I[F[fdx][F_SPOU][k]][I_NAME],
-						href: svgHref(F[fdx][F_SPOU][k])
+						text: I[F[fdx].spou[k]].name,
+						href: svgHref(F[fdx].spou[k])
 					});
 				}
 			}
@@ -1287,18 +1287,18 @@ function SvgContextBefore($menu, event)
 
 function getFams(idx)
 {
-	return(I[idx][I_FAMS]);
+	return(I[idx].fams);
 }
 function getFamc(idx)
 {
 	indexes = [];
-	for (var x = 0; x < I[idx][I_FAMC].length; x++)
-		indexes.push(I[idx][I_FAMC][x][FC_INDEX]);
+	for (var x = 0; x < I[idx].famc.length; x++)
+		indexes.push(I[idx].famc[x].index);
 	return(indexes);
 }
 function getSpou(fdx)
 {
-	var indexes = F[fdx][F_SPOU];
+	var indexes = F[fdx].spou;
 	for (var x = 0; x < indexes.length; x++)
 	{
 		var idx = indexes[x];
@@ -1309,9 +1309,9 @@ function getSpou(fdx)
 function getChil(fdx)
 {
 	indexes = [];
-	for (var x = 0; x < F[fdx][F_CHIL].length; x++)
+	for (var x = 0; x < F[fdx].chil.length; x++)
 	{
-		var idx = F[fdx][F_CHIL][x][FC_INDEX];
+		var idx = F[fdx].chil[x].index;
 		UpdateDates(idx);
 		indexes.push(idx);
 	}
@@ -1320,8 +1320,8 @@ function getChil(fdx)
 
 function UpdateDates(idx)
 {
-	var b = parseInt(I[idx][I_BIRTH_YEAR]);
-	var d = parseInt(I[idx][I_DEATH_YEAR]);
+	var b = parseInt(I[idx].birth_year);
+	var d = parseInt(I[idx].death_year);
 	var a = d - b;
 	if (!isNaN(a)) maxAge = Math.max(maxAge, a);
 	if (!isNaN(b)) minPeriod = Math.min(minPeriod, b);
@@ -1743,7 +1743,7 @@ function buildAscSub0(x_elt, lev, a, b, num)
 	for (var i = 0; i < n; i++)
 	{
 		var x_next = svgElts[x_elt][SVGELT_NEXT][i];
-		var sex = I[svgElts[x_next][SVGELT_IDX]][I_GENDER];
+		var sex = I[svgElts[x_next][SVGELT_IDX]].gender;
 		buildAscSub(x_next, lev+1,
 			a + (b - a) / n * i,
 			a + (b - a) / n * (i + 1),
@@ -1827,7 +1827,7 @@ function buildAscPropSub0(x_elt, lev, a, b, num)
 	for (var i = 0; i < svgElts[x_elt][SVGELT_NEXT].length; i++)
 	{
 		var x_next = svgElts[x_elt][SVGELT_NEXT][i];
-		var sex = I[svgElts[x_next][SVGELT_IDX]][I_GENDER];
+		var sex = I[svgElts[x_next][SVGELT_IDX]].gender;
 		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
 		buildAscPropSub(x_next, lev + 1, c, c+da, (sex == 'F') ? num * 2 + 1 : num * 2);
 		c += da;
@@ -2159,7 +2159,7 @@ function buildAscTreeHSub(x_elt, a, b, num, nb_gens, offsetx, child_x, child_y)
 		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
 		if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
 		{
-			var sex = I[svgElts[x_next][SVGELT_IDX]][I_GENDER];
+			var sex = I[svgElts[x_next][SVGELT_IDX]].gender;
 			buildAscTreeHSub(x_next, c, c + da, (sex == 'F') ? num * 2 + 1 : num * 2, nb_gens, offsetx, x + box_width, y);
 		}
 		c += da;
@@ -2418,7 +2418,7 @@ function buildAscTreeVSub(x_elt, a, b, num, nb_gens, offsety, child_x, child_y)
 		var da = 1.0 * (b - a) * svgElts[x_next][SVGELT_NB] / svgElts[x_elt][SVGELT_NB];
 		if (svgElts[x_next][SVGELT_IDX] != SVGIDX_SEPARATOR)
 		{
-			var sex = I[svgElts[x_next][SVGELT_IDX]][I_GENDER];
+			var sex = I[svgElts[x_next][SVGELT_IDX]].gender;
 			buildAscTreeVSub(x_next, c, c + da, (sex == 'F') ? num * 2 + 1 : num * 2, nb_gens, offsety, x, y);
 		}
 		c += da;
@@ -2940,5 +2940,5 @@ function textRect(x1, y1, x2, y2, x_elt)
 function GetTextI(idx)
 {
 	if (idx < 0) return('?');
-	return(I[idx][I_SHORT_NAME]);
+	return(I[idx].short_name);
 }
