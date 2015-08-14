@@ -7,7 +7,6 @@ language: c
 #    - 3.4
 
 install:
-    - cd /home/travis/build
     - git clone --depth=50 --branch=master git://github.com/gramps-project/gramps.git gramps-project/gramps
     - cd gramps-project/gramps
     - time sudo apt-get update
@@ -25,13 +24,13 @@ install:
     - git clone --depth=50 --branch=master git://github.com/gramps-project/addons-source.git addons-source
     - cd addons-source
     - python3 -m compileall *
+    - mkdir -p /home/travis/.gramps/grampsdb/
+    - mkdir -p /home/travis/.gramps/gramps50/plugins
+    - cp -r * /home/travis/.gramps/gramps50/plugins/
 
 #before_script:
 #    - export DISPLAY=:0
 #    - sudo Xvfb :0 -ac -screen 0 1024x768x24 &
 
 script:
-    -  mkdir -p /home/travis/.gramps/grampsdb/
-    -  mkdir -p /home/travis/.gramps/gramps50/
-    -  ln -s /home/travis/build/gramps-project/addons-source /home/travis/.gramps/gramps50/plugins
     -  GRAMPS_RESOURCES=../gramps PYTHONPATH=../gramps nosetests3 -vv
