@@ -24,6 +24,7 @@
 #
 #------------------------------------------------------------------------
 import sys
+import io
 
 #------------------------------------------------------------------------
 #
@@ -31,7 +32,6 @@ import sys
 #
 #------------------------------------------------------------------------
 from gramps.gui.plug.export import WriterOptionBox
-from gramps.gen.plug.utils import OpenFileOrStdout
 from gramps.gen.lib import (Note, Person, Event, Family, 
                             Repository, Place, MediaObject, 
                             Source, Tag, Citation)
@@ -41,8 +41,7 @@ def exportData(database, filename,
     if not callable(callback): 
         callback = lambda percent: None # dummy
 
-    with OpenFileOrStdout(filename, encoding="utf-8") as fp:
-
+    with io.open(filename, 'w', encoding="utf8") as fp:
         total = (len(database.note_map) + 
                  len(database.person_map) +
                  len(database.event_map) + 
