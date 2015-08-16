@@ -103,6 +103,8 @@ from substkw import SubstKeywords2		# Modified version of portions of libsubstke
 from gramps.gen.lib.eventtype import EventType      # for selecting event types 
 from gramps.gen.lib.eventroletype import EventRoleType	# for role in events = PRIMARY
 from gramps.gen.lib.date import NextYear    # for sorting events with unknown dates
+from gramps.gen.filters import GenericFilterFactory, rules
+
 #-------------------------------------------------------------------------
 #
 # Set up Logging
@@ -387,9 +389,29 @@ class DescendantsLinesReport(Report):
         
         # Generates a tree of person records and the family linkages for the chart:
         p = load_gramps(pid)
-          
+
         # traverses tree and generates the chart with "person" boxes and the "family" relationship lines.
-        draw_file(p, self.output_fn, PNGWriter())   
+        draw_file(p, self.output_fn, PNGWriter())
+
+        # Matches all that is used currently, families might be collected later
+        filter_class = GenericFilterFactory('Person')
+        filter = filter_class()
+        filter.add_rule(rules.person.IsDescendantFamilyOf([pid, 1]))
+
+        plist = self.database.get_person_handles()
+        ind_list = filter.apply(self.database, plist)
+
+        # writes textual informations on secondary output file
+        people = []
+        for person_handle in ind_list:
+            person = self.database.get_person_from_handle(person_handle)
+            #log.debug(person_handle)
+            name = person.get_primary_name()
+            people.append((name.get_surname(), name.get_first_name()))
+        for individual in sorted(people):
+            self.doc.start_paragraph("DL-name")
+            self.doc.write_text(str(individual))
+            self.doc.end_paragraph()
         
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
