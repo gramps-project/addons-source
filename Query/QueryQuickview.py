@@ -25,7 +25,7 @@ Run a query on the tables
 
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 try:
-    quack
+    #quack
     from gramps.gui.plug.quick import QuickTable
 except:
     # For testing framework
@@ -292,6 +292,7 @@ class DBI(object):
                 self.where = lex[self.index]
             elif symbol.upper() == "UPDATE":
                 # update table set x=1, y=2 where condition;
+                # UPDATE gramps_id set tag_list = Tag("Betty") from person where  "Betty" in primary_name.first_name 
                 self.columns = ["gramps_id"]
                 self.action = "UPDATE"
                 if self.index < len(lex):
@@ -411,7 +412,7 @@ class DBI(object):
             tag = gramps.gen.lib.Tag()
             tag.set_name(name)
             trans_class = self.database.get_transaction_class()
-            with trans_class("QueryQuickview new Tag", self.database, batch=True) as trans:
+            with trans_class("QueryQuickview new Tag", self.database, batch=False) as trans:
                 self.database.add_tag(tag, trans)
         return Handle("Tag", tag.handle)
 
@@ -547,7 +548,7 @@ class DBI(object):
                         elif self.action == "DELETE":
                             table.row(*self.clean(row, self.columns))
                             self.select += 1
-                            self.database.remove_from_database(item, trans)
+                            self.database.remove_instance(item, trans)
                         else:
                             raise AttributeError("unknown command: '%s'", self.action)
                     ROWNUM += 1
