@@ -1,6 +1,5 @@
 from gramps.gen.dbstate import DbState
 from gramps.plugins.importer.importxml import importData as importXML
-from gramps.plugins.export.exportxml import export_data as exportXML
 from gramps.cli.user import User
 
 from ..ImportSql import importData as importSQL
