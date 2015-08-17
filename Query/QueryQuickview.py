@@ -305,7 +305,7 @@ class DBI(object):
             elif symbol.upper() == "RAW":
                 self.raw = True
             elif symbol.upper() == "NORAW":
-                self.flat = False
+                self.raw = False
             else:
                 raise AttributeError("invalid SQL expression: '... %s ...'" % symbol)
             self.index += 1
