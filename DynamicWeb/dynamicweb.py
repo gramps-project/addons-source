@@ -58,8 +58,7 @@ The generated pages use lots of Javascript:
       - dwr.js: Main script
       - dwr_body.js: Script for formating the pages appearance
       - dwr_svg.js: Script for building the SVG graph
-      - dwr_styles.css: Base CSS stylesheet
-      - dwr_template.css: Template CSS stylesheet, for style that overwrtie the base styles in "dwr_styles.css"
+      - dwr_styles.css: CSS stylesheet
 
 During the pages generation, the template files are copied into the destination directory.
 The files in the destination directory are overwritten, unless the destination files are more recent than the template files.
@@ -177,7 +176,6 @@ from gramps.gen.plug.report import (Report, Bibliography)
 from gramps.gen.plug.report import utils as report_utils
 from gramps.gen.plug.report import MenuReportOptions
 
-from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.config import get_researcher
 from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
@@ -189,6 +187,10 @@ if (sys.version_info[0] < 3):
 else:
     UNITYPE = str
 from gramps.gen.config import config
+if (DWR_VERSION_500):
+    from gramps.gen.utils.thumbnails import get_thumbnail_path
+else:
+    from gramps.gui.thumbnails import get_thumbnail_path
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
@@ -214,18 +216,33 @@ from gramps.gen.relationship import get_relationship_calculator
 if (DWR_VERSION_410):
     from gramps.gen.utils.location import get_main_location
 
-from gramps.gen.const import (
-    GENCOLOR,
-    GRADIENTSCALE,
-    BACKGROUND_SCHEME1,
-    BACKGROUND_SCHEME2,
-    BACKGROUND_GENDER,
-    BACKGROUND_WHITE,
-    BACKGROUND_GRAD_GEN,
-    BACKGROUND_GRAD_AGE,
-    BACKGROUND_SINGLE_COLOR,
-    BACKGROUND_GRAD_PERIOD,
-)
+
+if (DWR_VERSION_500):
+    from gramps.gen.const import (
+        GENCOLOR,
+        GRADIENTSCALE,
+        BACKGROUND_SCHEME1,
+        BACKGROUND_SCHEME2,
+        BACKGROUND_GENDER,
+        BACKGROUND_WHITE,
+        BACKGROUND_GRAD_GEN,
+        BACKGROUND_GRAD_AGE,
+        BACKGROUND_SINGLE_COLOR,
+        BACKGROUND_GRAD_PERIOD,
+    )
+else:
+    from gramps.gui.widgets.fanchart import (
+        GENCOLOR,
+        GRADIENTSCALE,
+        BACKGROUND_SCHEME1,
+        BACKGROUND_SCHEME2,
+        BACKGROUND_GENDER,
+        BACKGROUND_WHITE,
+        BACKGROUND_GRAD_GEN,
+        BACKGROUND_GRAD_AGE,
+        BACKGROUND_SINGLE_COLOR,
+        BACKGROUND_GRAD_PERIOD,
+    )
 from gramps.gui.utils import hex_to_rgb
 
 SORT_KEY = glocale.sort_key
@@ -341,6 +358,19 @@ WEB_TEMPLATE_LIST = (
     ("dwr_default", _("Default")),
     ("dwr_mainz", _("Mainz")),
 )
+
+# Files not copied from the template directory to the website
+# (as regex)
+WEB_TEMPLATE_EXCLUDED = [
+    r'\.less',
+    r'bootstrap[/\\]CNAME',
+    r'bootstrap[/\\]fonts',
+    r'bootstrap[/\\]grunt',
+    r'bootstrap[/\\]less',
+    r'bootstrap[/\\]node_modules',
+    r'bootstrap[/\\]js',
+    r'bootstrap[/\\]\w*\.\w*',
+]
 
 
 INCLUDE_LIVING_VALUE = 99 #: Arbitrary number
@@ -538,7 +568,8 @@ class DynamicWebReport(Report):
             self.author = self.author.replace(',,,', '')
 
         # The following data are local copies of the options. Refer to the L{DynamicWebOptions} class for more details.
-        self.inc_events = self.options['inc_events']
+        # self.inc_events = self.options['inc_events']
+        self.inc_events = False
         self.inc_places = self.options['inc_places']
         self.inc_families = self.options['inc_families']
         self.inc_gallery = self.options['inc_gallery']
@@ -1114,7 +1145,7 @@ class DynamicWebReport(Report):
                 (_("Publication information"), source.get_publication_info())]:
                 if value:
                     html = Html("p") + Html("b", label + ": ") + value
-                    jdata['text'] += script_escape(html_text(html))
+                    jdata['text'] += html_text(html)
             # Get source notes
             jdata['note'] = self.get_notes_text(source)
             # Get source media
@@ -1993,16 +2024,16 @@ class DynamicWebReport(Report):
 
         #: List of page to generate: index in L{PAGES_NAMES}, Javascript code for generating the page
         parts = {
-            PAGE_PERSON: (dbscripts, "DwrMain(PAGE_INDI);"),
-            PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();"),
-            PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();"),
-            PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();"),
-            PAGE_SOURCE_INDEX: (dbscripts, "printSourcesIndex();"),
-            PAGE_MEDIA_INDEX: (dbscripts, "printMediaIndex();"),
-            PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();"),
-            PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();"),
-            PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();"),
-            PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);"),
+            PAGE_PERSON: (dbscripts + mapscripts, "DwrMain(PAGE_INDI);", mapstyles),
+            PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();", []),
+            PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();", []),
+            PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();", []),
+            PAGE_SOURCE_INDEX: (dbscripts, "printSourcesIndex();", []),
+            PAGE_MEDIA_INDEX: (dbscripts, "printMediaIndex();", []),
+            PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();", []),
+            PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();", []),
+            PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();", []),
+            PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);", []),
         }
 
         # Export the HTML pages listed in L{PAGES_NAMES}
@@ -2012,8 +2043,8 @@ class DynamicWebReport(Report):
             title = self.page_name[pc]
             if (pc in parts):
                 # The page is not a custom page
-                (scripts, cmd) = parts[pc]
-                self._export_html_page(filename, title, cmd, True, scripts)
+                (scripts, cmd, styles) = parts[pc]
+                self._export_html_page(filename, title, cmd, True, scripts, styles)
             else:
                 # The page is a custom page
                 i_cst = pc - PAGE_CUSTOM
@@ -2021,14 +2052,14 @@ class DynamicWebReport(Report):
 
         # The person page is required
         if (PAGE_PERSON not in self.page_content):
-            self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts)
+            self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts + mapscripts, mapstyles)
 
         # The search results page is required
         self._export_html_page("search.html", _("Search results"), "DwrMain(PAGE_SEARCH);", True, dbscripts)
 
         # Page for printing a family (if needed)
         if (self.inc_families):
-            self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts , mapstyles)
+            self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts, mapstyles)
 
         # Generate page surnames pages (if surnames page is used)
         if (PAGE_SURNAMES in self.page_content):
@@ -2047,7 +2078,7 @@ class DynamicWebReport(Report):
 
         # Page for a single place (if needed)
         if (self.inc_places):
-            self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts , mapstyles)
+            self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts, mapstyles)
 
         # Page for a single repository (if needed)
         if (self.inc_repositories):
@@ -2131,6 +2162,7 @@ class DynamicWebReport(Report):
             + "];\n")
         sw.write("FOOTER=\"" + script_escape(self.get_header_footer_notes("footernote")) + "\";\n")
         sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
+        sw.write("BRAND_TITLE=\"" + script_escape(self.get_header_footer_notes("brandnote")) + "\";\n")
         sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
         sw.write("INDEX_SHOW_BIRTH=" + ("true" if (self.options['showbirth']) else "false") + ";\n")
         sw.write("INDEX_SHOW_DEATH=" + ("true" if (self.options['showdeath']) else "false") + ";\n")
@@ -2151,6 +2183,7 @@ class DynamicWebReport(Report):
         sw.write("MAP_PLACE=" + ("true" if (self.options['placemappages']) else "false") + ";\n")
         sw.write("MAP_FAMILY=" + ("true" if (self.options['familymappages']) else "false") + ";\n")
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
+        sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
@@ -2194,6 +2227,7 @@ class DynamicWebReport(Report):
             ("File ready", _("File ready")),
             ("Gender", _("Gender")),
             ("Graph help", _("Graph help")),
+            ("Indexes", _("Indexes")),
             ("Latitude", _("Latitude")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
@@ -2367,7 +2401,7 @@ class DynamicWebReport(Report):
     def get_header_footer_notes(self, item):
         """
         Give the header/footer note converted to an HTML string
-        @param item: Option giving the note. See options "footernote" and "headernote"
+        @param item: Option giving the note. See options "footernote", "headernote", "brandnote"
         @return: text of the note
         @rtype: L{String}
         """
@@ -2571,6 +2605,15 @@ class DynamicWebReport(Report):
         """
         for (root, dirnames, files) in os.walk(tmpl_path):
             dst_path = root.replace(tmpl_path, self.target_path, 1)
+            # Exclude unwanted files
+            def _in_exclude(root, d):
+                d = os.path.normpath(os.path.abspath(os.path.join(root, d)))
+                for e in WEB_TEMPLATE_EXCLUDED:
+                    if (re.search(e, d)):
+                        return(True)
+                return(False)
+            dirnames[:] = [d for d in dirnames if not _in_exclude(root, d)]
+            files[:] = [d for d in files if not _in_exclude(root, d)]
             # Create sub-directories
             for dirname in dirnames:
                 # Remove files that have the same name as directories
@@ -3311,7 +3354,7 @@ class DynamicWebReport(Report):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
 
         # Sort others
-        for cls in (Source, Repository, MediaObject, Place):
+        for cls in (Citation, Source, Repository, MediaObject, Place):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:
@@ -3579,8 +3622,7 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("placemappages", self.__placemappages)
 
         self.__familymappages = BooleanOption(_(
-            "Include Family Map Pages with "
-            "all places shown on the map"), False)
+            "Include individuals and family map pages with all places shown on the map"), False)
         self.__familymappages.set_help(_(
             "Whether or not to add an individual page map "
             "showing all the places on this page. "
@@ -3617,10 +3659,14 @@ class DynamicWebOptions(MenuReportOptions):
         inc_families.set_help(_("Whether or not to include family pages"))
         addopt("inc_families", inc_families)
 
-        inc_events = BooleanOption(_('Include event pages'), False)
-        inc_events.set_help(_('Add a complete events list and relevant pages or not'))
-        addopt("inc_events", inc_events)
-        inc_events.set_available(False)
+        # inc_events = BooleanOption(_('Include event pages'), False)
+        # inc_events.set_help(_('Add a complete events list and relevant pages or not'))
+        # addopt("inc_events", inc_events)
+        # inc_events.set_available(False)
+
+        tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
+        tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
+        addopt("tabbed_panels", tabbed_panels)
 
         showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
         showbirth.set_help(_('Whether to include a birth column'))
@@ -3729,6 +3775,10 @@ class DynamicWebOptions(MenuReportOptions):
         headernote = NoteOption(_('HTML user header'))
         headernote.set_help( _("A note to be used as the page header"))
         addopt("headernote", headernote)
+
+        brandnote = NoteOption(_('HTML user brand name / icon'))
+        brandnote.set_help( _("A note to be used as the brand name or image in the menu"))
+        addopt("brandnote", brandnote)
 
         footernote = NoteOption(_('HTML user footer'))
         footernote.set_help( _("A note to be used as the page footer"))

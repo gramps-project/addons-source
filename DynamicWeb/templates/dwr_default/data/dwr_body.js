@@ -11,20 +11,20 @@
 //
 // This script performs the following treatments:
 //
-//  - Build the document body structure:
-//    The body contains the following sections (div):!
-//       header: the header note given as parameter in GRAMPS
-//       menu: The page menu
-//          This menu contains a form for: search input, number of generations inputs
-//          This menu is optional (depends on the body class "dwr-menuless")
-//       body-page: The contents of the page
-//          the body-page could contain a search form
-//       footer: the footer note given as parameter in GRAMPS
+//	- Build the document body structure:
+//	  The body contains the following sections (div):!
+//		 header: the header note given as parameter in GRAMPS
+//		 menu: The page menu
+//			This menu contains a form for: search input, number of generations inputs
+//			This menu is optional (depends on the body class "dwr-menuless")
+//		 body-page: The contents of the page
+//			the body-page could contain a search form
+//		 footer: the footer note given as parameter in GRAMPS
 //
-//  - Manage the URL search string:
-//    The URL search string is used to pass parameters to the page
+//	- Manage the URL search string:
+//	  The URL search string is used to pass parameters to the page
 //
-//  - Manage the menu form, and the search form embedded form
+//	- Manage the menu form, and the search form embedded form
 
 
 //=================================================================
@@ -345,24 +345,7 @@ function BuildMenu()
 	var i;
 	
 	// Get current menu item
-	menu_fallback = {
-		'person.html': 'persons.html',
-		'persons.html': 'person.html',
-		'families.html': 'family.html',
-		'family.html': 'families.html',
-		'sources.html': 'source.html',
-		'source.html': 'sources.html',
-		'medias.html': 'media.html',
-		'media.html': 'medias.html',
-		'places.html': 'place.html',
-		'place.html': 'places.html',
-		'repositories.html': 'repository.html',
-		'repository.html': 'repositories.html',
-		'surnames.html': 'surname.html',
-		'surname.html': 'surnames.html'
-	}
 	var i_current = -1;
-	var i_current_fallback = -1;
 	for (i=0; i<PAGES_TITLE.length; i++)
 	{
 		if (PAGES_FILE[i].indexOf(ad) >= 0)
@@ -370,52 +353,78 @@ function BuildMenu()
 			// This menu item is the current page
 			i_current = i;
 		}
-		if (menu_fallback[PAGES_FILE[i]] && menu_fallback[PAGES_FILE[i]].indexOf(ad) >= 0)
-		{
-			// This menu item could be the current page
-			i_current_fallback = i;
-		}
 	}
-	if (i_current == -1) i_current = i_current_fallback;
 	
 	// Text for the form
 	var txt_form1 = '';
-	txt_form1 += '<form class="navbar-form navbar-right" role="search" onsubmit="return FsearchExec(0)">';
-	txt_form1 += '<div id="nav_form_search" class="input-group">';
+	txt_form1 += '<div class="pull-right">';
+	txt_form1 += '<form class="navbar-form" role="search" onsubmit="return FsearchExec(0)">';
+	txt_form1 += '<div class="input-group">';
 	txt_form1 += '<input id="dwr-search-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
 	txt_form1 += '<div class="input-group-btn">';
 	txt_form1 += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	txt_form1 += '</div>';
 	txt_form1 += '</div>';
-	txt_form1 += '</form> ';
+	txt_form1 += '</form>';
+	txt_form1 += '</div>';
 	
 	// Text for the menu
 	var txt_menu = '';
-	txt_menu += '<nav id="dwr-menu" class="navbar navbar-default">';
+	txt_menu += '<nav id="dwr-menu" class="navbar navbar-default" role="navigation">';
 	txt_menu += '<div class="container-fluid">';
 	
 	txt_menu += '<div class="navbar-header">';
-	txt_menu += '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">';
+	txt_menu += '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dwr-navbar-collapse">';
 	txt_menu += '<span class="sr-only">Toggle navigation</span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '</button>';
-	txt_menu += txt_form1;
+	if (BRAND_TITLE)
+		txt_menu += '<a class="navbar-brand" href="index.html">' + BRAND_TITLE + '</a>';
+	else
+		txt_menu += '<a class="navbar-brand" href="https://gramps-project.org/"><img src="data/Gramps_Logo.png"></a>';
 	txt_menu += '</div>';
 	
-	txt_menu += '<div class="collapse navbar-collapse" id="navbar-collapse">';
+	txt_menu += '<div id="dwr-navbar-collapse" class="collapse navbar-collapse">';
 	txt_menu += '<ul class="nav navbar-nav">';
+	var in_index = false;
 	for (i=0; i<PAGES_TITLE.length; i++)
 	{
+		if ($.inArray(PAGES_FILE[i], [
+			'surnames.html',
+			'persons.html',
+			'families.html',
+			'places.html',
+			'sources.html',
+			'repositories.html',
+			'medias.html',
+			'address.html']) >= 0)
+		{
+			if (!in_index)
+			{
+				txt_menu += '<li class="dropdown">';
+				txt_menu += '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' + _('Indexes') +' <b class="caret"></b></a>';
+				txt_menu += '<ul class="dropdown-menu">';
+			}
+			in_index = true;
+		}
+		else
+		{
+			if (in_index)
+			{
+				txt_menu += '</ul></li>';
+			}
+			in_index = false;
+		}
 		var addclass = '';
 		if (i == i_current) addclass = ' class="active"';
 		txt_menu += '<li' + addclass + '><a href="' + toRoot + PAGES_FILE[i] + '?' +  BuildSearchString() + '">' + PAGES_TITLE[i] + '</a></li>';
 	}
 	txt_menu += '</ul>';
-	txt_menu += '</div><!-- /.navbar-collapse -->';
-	
-	txt_menu += '</div><!-- /.container-fluid -->';
+	txt_menu += txt_form1;
+	txt_menu += '</div>'; // .navbar-collapse
+	txt_menu += '</div>'; // .container-fluid
 	txt_menu += '</nav>';
 
 	$('body').prepend(txt_menu);

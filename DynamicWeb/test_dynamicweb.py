@@ -31,237 +31,12 @@ from .dynamicweb import *
 from .dynamicweb import _
 
 
-#-------------------------------------------------------------------------
-#
-# Test sets
-#
-#-------------------------------------------------------------------------
+# Check if plugin exists
+user_plugin_path = os.path.join(USER_PLUGINS, "DynamicWeb")
+assert os.path.exists(user_plugin_path), "%s does not exist" % user_plugin_path
+sys.path.append(user_plugin_path)
 
-
-default_options = {
-    'name' : "DynamicWeb",
-    'archive': True,
-    'archive_file': "archive.zip",
-    # "filter", self.__filter)
-    # "pid", self.__pid)
-    # 'name_format': 0,
-    # 'short_name_format': 0,
-    'template': 0,
-    'copyright': 0,
-    'incpriv': True,
-    'inc_notes': True,
-    'inc_sources': True,
-    'inc_addresses': True,
-    'living': INCLUDE_LIVING_VALUE,
-    'yearsafterdeath': 30,
-    'inc_repositories': True,
-    'inc_gallery': True,
-    'copy_media': True,
-    'print_notes_type': True,
-    'inc_places': True,
-    'placemappages': True,
-    'familymappages': True,
-    'mapservice': "Google",
-    'encoding': "UTF-8",
-    'inc_families': True,
-    'inc_events': True,
-    'showbirth': True,
-    'showdeath': True,
-    'showmarriage': True,
-    'showpartner': True,
-    'showparents': True,
-    'showallsiblings': True,
-    # 'birthorder': False,
-    'bkref_type': True,
-    'inc_gendex': True,
-    'graphgens': 10,
-    'svg_tree_type': DEFAULT_SVG_TREE_TYPE,
-    'svg_tree_shape': DEFAULT_SVG_TREE_SHAPE,
-    'svg_tree_color1': "#EF2929",
-    'svg_tree_color2': "#3D37E9",
-    'svg_tree_color_dup': "#888A85",
-    'headernote': "_header1",
-    'footernote': "_footer1",
-    'custom_note_0': "_custom1",
-    'custom_menu_0': False,
-    'pages_number': len(PAGES_NAMES) - NB_CUSTOM_PAGES + 1,
-}
-default_options.update({
-    ('page_name_%i' % i): p[1]
-    for (i, p) in enumerate(PAGES_NAMES)
-})
-default_options.update({
-    ('page_content_%i' % i): i
-    for i in range(len(PAGES_NAMES) - NB_CUSTOM_PAGES + 1)
-})
-
-
-report_list = [
-{
-    'title': "Example using template '%s'" % WEB_TEMPLATE_LIST[0][1],
-    'link': "person.html?igid=I0044",
-    'environ': {
-        'LANGUAGE': "en_US",
-        'LANG': "en_US.UTF-8",
-    },
-    'options': {
-        'template': 0,
-    },
-    'procedures': [
-        {
-            'what': "General test",
-            'path': "person.html?igid=I0044",
-        },
-        {
-            'what': "Links, images, and search input in custom page",
-            'path': "custom_1.html",
-        },
-        {
-            'what': "All possible citations are referenced",
-            'path': "source.html?sgid=S0001",
-        },
-        {
-            'what': "GENDEX file",
-            'path': "gendex.txt",
-        },
-        {
-            'what': "Contents ZIP of archive",
-            'path': "archive.zip",
-        },
-    ]
-},
-{
-    'title':  "Example using template '%s'" % WEB_TEMPLATE_LIST[1][1],
-    'link': "person.html?igid=I0044",
-    'environ': {
-        'LANGUAGE': "en_US",
-        'LANG': "en_US.UTF-8",
-    },
-    'options': {
-        'template': 1,
-        'archive_file': "archive.tgz",
-    },
-    'procedures': [
-        {
-            'what': "General test (Mainz template)",
-            'path': "person.html?igid=I0044",
-        },
-        {
-            'what': "Contents of TGZ archive",
-            'path': "archive.tgz",
-        },
-    ]
-},
-{
-    'title':  "Example using template '%s', french translation and OpenStreetMap" % WEB_TEMPLATE_LIST[0][1],
-    'link': "person.html?igid=I0044",
-    'environ': {
-        'LANGUAGE': "fr_FR",
-        'LANG': "fr_FR.UTF-8",
-    },
-    'options': {
-        'template': 0,
-        'mapservice': "OpenStreetMap",
-    },
-    'procedures': [
-        {
-            'what': "French translation test",
-            'path': "person.html?igid=I0044",
-        },
-        {
-            'what': "OpenStreetMap test",
-            'path': "place.html?pgid=P1678",
-        },
-        {
-            'what': "OpenStreetMap test in families",
-            'path': "family.html?fgid=F0017",
-        },
-    ]
-},
-{
-    'title': "Example using template '%s', without media copy, without note types" % WEB_TEMPLATE_LIST[0][1],
-    'link': "person.html?igid=I0044",
-    'environ': {
-        'LANGUAGE': "en_US",
-        'LANG': "en_US.UTF-8",
-    },
-    'options': {
-        'template': 0,
-        'copy_media': False,
-        'print_notes_type': False,
-        'custom_menu_0': True,
-    },
-    'procedures': [
-        {
-            'what': "No media copy",
-            'path': "media.html?mgid=O0010",
-        },
-        {
-            'what': "Notes type are not printed",
-            'path': "person.html?igid=I0044",
-        },
-        {
-            'what': "Search works both in menu and in page",
-            'path': "custom_1.html",
-        },
-    ]
-},
-{
-    'title':  "Example with minimal features (without private data, notes, sources, addresses, gallery, places, families, events)",
-    'link': "person.html?igid=I0044",
-    'environ': {
-        'LANGUAGE': "en_US",
-        'LANG': "en_US.UTF-8",
-    },
-    'options': {
-        'template': 0,
-        'incpriv': False,
-        'inc_notes': False,
-        'inc_sources': False,
-        'inc_addresses': False,
-        'inc_repositories': False,
-        'inc_gallery': False,
-        'inc_places': False,
-        'inc_families': False,
-        'inc_events': False,
-        'pages_number': 5,
-        'page_content_0': PAGE_PERSON,
-        'page_name_0': PAGES_NAMES[PAGE_PERSON][1],
-        'page_content_1': PAGE_SURNAMES,
-        'page_name_1': PAGES_NAMES[PAGE_SURNAMES][1],
-        'page_content_2': PAGE_PERSON_INDEX,
-        'page_name_2': PAGES_NAMES[PAGE_PERSON_INDEX][1],
-        'page_content_3': PAGE_FAMILY_INDEX,
-        'page_name_3': PAGES_NAMES[PAGE_FAMILY_INDEX][1],
-        'page_content_4': PAGE_CUSTOM,
-        'page_name_4': PAGES_NAMES[PAGE_CUSTOM][1],
-    },
-    'procedures': [
-        {
-            'what': "Test with minimal features (without private data, notes, sources, repositories, addresses, gallery, places, families, events)",
-            'path': "person.html?igid=I0044",
-        },
-        {
-            'what': "Test that addresses are not printed",
-            'path': "person.html?igid=I0044",
-        },
-    ]
-},
-]
-
-test_list = [
-{
-    'environ': {
-        'LANGUAGE': "en_US",
-        'LANG': "en_US.UTF-8",
-    },
-    'options': {
-        'title': 'Basic test',
-        "filter": 3, # Ancestors
-        "pid": "I0044", # Lewis Anderson Zieliński
-    },
-},
-]
+from .report_sets import *
 
 
 #-------------------------------------------------------------------------
@@ -277,56 +52,35 @@ class DynamicWebTests(unittest.TestCase):
         # Get paths
         self.gramps_path = os.path.join(ROOT_DIR, "..")
         self.assertTrue(os.path.exists(self.gramps_path), "%s does not exist" % self.gramps_path)
-        self.plugin_path = os.path.dirname(__file__)
         # Create results directory
-        self.results_path = os.path.join(self.plugin_path, "reports")
+        self.results_path = os.path.join(user_plugin_path, "reports")
         self.results_path = os.path.abspath(self.results_path)
         if (not os.path.isdir(self.results_path)): os.mkdir(self.results_path)
         # Get plugin version
-        self.plugvers = self.plugin_version()
-
-        # Check if plugin exists
-        user_plugin_path = os.path.join(USER_PLUGINS, "DynamicWeb")
-        self.assertTrue(os.path.exists(user_plugin_path), "%s does not exist" % user_plugin_path)
+        self.plugvers = plugin_version(user_plugin_path)
 
         # Check if dynamicweb_example database needs to be imported
-        process = subprocess.Popen(
-            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-l"],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        result_str, err_str = process.communicate("")
-        result_str = result_str.decode()
-        err_str = err_str.decode()
-        self.assertFalse("Traceback (most recent call last):" in err_str, err_str)
+        (result_str, err_str) = self.call([sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-l"])
         if (re.search(r'with name "dynamicweb_example"', result_str)):
             # dynamicweb_example already imported
             return
-        # Change the mediapath in the example database
-        ex_path_orig = os.path.join(self.gramps_path, "example", "gramps", "example.gramps")
-        ex_path_orig = os.path.abspath(ex_path_orig)
-        media_path = os.path.join(self.gramps_path, "example", "gramps")
-        media_path = os.path.abspath(media_path)
-        ex_path = os.path.join(self.plugin_path, "reports", "example.gramps")
-        ex_path = os.path.abspath(ex_path)
-        f_in = codecs.open(ex_path_orig, "r", encoding = "UTF-8")
-        f_out = codecs.open(ex_path, "w", encoding = "UTF-8")
-        for line in f_in:
-            line = re.sub(
-                r"<mediapath>.*</mediapath>",
-                r"<mediapath>%s</mediapath>" % media_path,
-                line)
-            f_out.write(line)
-        f_in.close()
-        f_out.close()
         # Import example database
-        os.chdir(self.gramps_path)
-        process = subprocess.Popen(
-            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-y", "-C", "dynamicweb_example", "-i", ex_path],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        ex_path = os.path.join(self.gramps_path, "example", "gramps", "example.gramps")
+        (result_str, err_str) = self.call(
+            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-y", "-C", "dynamicweb_example", "-i", ex_path])
+
+
+    def call(self, cmd):
+        print(" ".join(cmd))
+        process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         result_str, err_str = process.communicate("")
         result_str = result_str.decode()
         err_str = err_str.decode()
-        # self.assertFalse("Traceback (most recent call last):" in err_str, err_str)
+        print(result_str)
+        print(sys.stderr, err_str)
+        # self.assertFalse("Traceback (most recent call last):" in err_str)
         # (commented out because PIL not installed in Travis environment)
+        return(result_str, err_str)
 
 
     def do_export(self, report_num, report_set):
@@ -362,15 +116,9 @@ class DynamicWebTests(unittest.TestCase):
         if (sys.version_info[0] < 3):
             param = param.encode()
         os.chdir(self.gramps_path)
-        process = subprocess.Popen(
-            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        result_str, err_str = process.communicate("")
-        result_str = result_str.decode()
-        err_str = err_str.decode()
-        # self.assertFalse("Traceback (most recent call last):" in err_str, err_str)
-        # (commented out because PIL not installed in Travis environment)
-        self.assertFalse("Unknown report name." in err_str, err_str)
+        (result_str, err_str) = self.call(
+            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
+        self.assertFalse("Unknown report name." in err_str)
 
         # Update index pages
         if (report_set['link']):
@@ -407,33 +155,10 @@ class DynamicWebTests(unittest.TestCase):
         if (sys.version_info[0] < 3):
             param = param.encode()
         os.chdir(self.gramps_path)
-        process = subprocess.Popen(
-            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        result_str, err_str = process.communicate("")
-        result_str = result_str.decode()
-        err_str = err_str.decode()
-        # self.assertFalse("Traceback (most recent call last):" in err_str, err_str)
-        # (commented out because PIL not installed in Travis environment)
-        self.assertFalse("Unknown report name." in err_str, err_str)
+        (result_str, err_str) = self.call(
+            [sys.executable, os.path.join(self.gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
+        self.assertFalse("Unknown report name." in err_str)
 
-
-    def plugin_version(self):
-        # Get the plugin version
-        filenames = glob.glob(os.path.join(self.plugin_path, "*gpr.py"))
-        self.plugvers = "?"
-        if (len(filenames) != 1): return()
-        filename = filenames[0]
-        fp = open(filename, "r")
-        for line in fp:
-            if ((line.lstrip().startswith("version")) and ("=" in line)):
-                line, stuff = line.rsplit(",", 1)
-                line = line.rstrip()
-                pos = line.index("version")
-                var, gtv = line[pos:].split('=', 1)
-                self.plugvers = gtv.strip()[1:-1]
-                break
-        fp.close()
 
 
     #-------------------------------------------------------------------------
@@ -442,6 +167,7 @@ class DynamicWebTests(unittest.TestCase):
     # This test is slow (several minutes)
     # In order to exclude it, run nosetests with options: -a '!slow'
     @nose.plugins.attrib.attr('slow')
+    @nose.plugins.attrib.attr('report')
     def test_export(self):
         index = os.path.join(self.results_path, "index.html")
         procedures = os.path.join(self.results_path, "procedures.html")
