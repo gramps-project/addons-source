@@ -3622,7 +3622,7 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("placemappages", self.__placemappages)
 
         self.__familymappages = BooleanOption(_(
-            "Include individuals and family map pages with all places shown on the map"), False)
+            "Include a map in the individuals and family pages"), False)
         self.__familymappages.set_help(_(
             "Whether or not to add an individual page map "
             "showing all the places on this page. "
