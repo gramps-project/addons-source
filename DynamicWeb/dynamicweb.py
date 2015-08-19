@@ -58,12 +58,11 @@ The generated pages use lots of Javascript:
       - dwr.js: Main script
       - dwr_body.js: Script for formating the pages appearance
       - dwr_svg.js: Script for building the SVG graph
-      - dwr_styles.css: Base CSS stylesheet
-      - dwr_template.css: Template CSS stylesheet, for style that overwrtie the base styles in "dwr_styles.css"
-      
+      - dwr_styles.css: CSS stylesheet
+
 During the pages generation, the template files are copied into the destination directory.
 The files in the destination directory are overwritten, unless the destination files are more recent than the template files.
-      
+
 The pages format and layout is documented in "dwr_body.js"
 The pages dynamic generation is documented in "dwr.js"
 The pages graph generation is documented in "dwr_svg.js"
@@ -177,7 +176,6 @@ from gramps.gen.plug.report import (Report, Bibliography)
 from gramps.gen.plug.report import utils as report_utils
 from gramps.gen.plug.report import MenuReportOptions
 
-from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.config import get_researcher
 from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
@@ -189,6 +187,10 @@ if (sys.version_info[0] < 3):
 else:
     UNITYPE = str
 from gramps.gen.config import config
+if (DWR_VERSION_500):
+    from gramps.gen.utils.thumbnails import get_thumbnail_path
+else:
+    from gramps.gui.thumbnails import get_thumbnail_path
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
@@ -214,18 +216,33 @@ from gramps.gen.relationship import get_relationship_calculator
 if (DWR_VERSION_410):
     from gramps.gen.utils.location import get_main_location
 
-from gramps.gen.const import (
-    GENCOLOR,
-    GRADIENTSCALE,
-    BACKGROUND_SCHEME1,
-    BACKGROUND_SCHEME2,
-    BACKGROUND_GENDER,
-    BACKGROUND_WHITE,
-    BACKGROUND_GRAD_GEN,
-    BACKGROUND_GRAD_AGE,
-    BACKGROUND_SINGLE_COLOR,
-    BACKGROUND_GRAD_PERIOD,
-)
+
+if (DWR_VERSION_500):
+    from gramps.gen.const import (
+        GENCOLOR,
+        GRADIENTSCALE,
+        BACKGROUND_SCHEME1,
+        BACKGROUND_SCHEME2,
+        BACKGROUND_GENDER,
+        BACKGROUND_WHITE,
+        BACKGROUND_GRAD_GEN,
+        BACKGROUND_GRAD_AGE,
+        BACKGROUND_SINGLE_COLOR,
+        BACKGROUND_GRAD_PERIOD,
+    )
+else:
+    from gramps.gui.widgets.fanchart import (
+        GENCOLOR,
+        GRADIENTSCALE,
+        BACKGROUND_SCHEME1,
+        BACKGROUND_SCHEME2,
+        BACKGROUND_GENDER,
+        BACKGROUND_WHITE,
+        BACKGROUND_GRAD_GEN,
+        BACKGROUND_GRAD_AGE,
+        BACKGROUND_SINGLE_COLOR,
+        BACKGROUND_GRAD_PERIOD,
+    )
 from gramps.gui.utils import hex_to_rgb
 
 SORT_KEY = glocale.sort_key
@@ -342,6 +359,19 @@ WEB_TEMPLATE_LIST = (
     ("dwr_mainz", _("Mainz")),
 )
 
+# Files not copied from the template directory to the website
+# (as regex)
+WEB_TEMPLATE_EXCLUDED = [
+    r'\.less',
+    r'bootstrap[/\\]CNAME',
+    r'bootstrap[/\\]fonts',
+    r'bootstrap[/\\]grunt',
+    r'bootstrap[/\\]less',
+    r'bootstrap[/\\]node_modules',
+    r'bootstrap[/\\]js',
+    r'bootstrap[/\\]\w*\.\w*',
+]
+
 
 INCLUDE_LIVING_VALUE = 99 #: Arbitrary number
 
@@ -405,15 +435,15 @@ def format_date(date, gedcom = False, iso = False):
     @type iso: Boolean
     """
     if (not date): return("")
-    
+
     val = ""
-    
+
     if (iso):
         # TODO: export ISO dates
         # if (iso): val = DateDisplay.display(date) or ""
         # else: val = _dd.display(date) or ""
         pass
-        
+
     elif (gedcom):
         start = date.get_start_date()
         if start != Date.EMPTY:
@@ -427,20 +457,20 @@ def format_date(date, gedcom = False, iso = False):
             if mod == Date.MOD_SPAN:
                 val = "%sFROM %s TO %s" % (
                     qual_text,
-                    make_gedcom_date(start, cal, mod, None), 
+                    make_gedcom_date(start, cal, mod, None),
                     make_gedcom_date(date.get_stop_date(), cal, mod, None))
             elif mod == Date.MOD_RANGE:
                 val = "%sBET %s AND %s" % (
                     qual_text,
-                    make_gedcom_date(start, cal, mod, None), 
+                    make_gedcom_date(start, cal, mod, None),
                     make_gedcom_date(date.get_stop_date(), cal, mod, None))
             else:
                 val = make_gedcom_date(start, cal, mod, quality)
-                
+
     else:
         # Regular Gramps place displayer
         val = _dd.display(date) or ""
-    
+
     return(val)
 
 
@@ -463,15 +493,15 @@ def rmtree_fix(dirname):
 class DynamicWebReport(Report):
     """
     Class DynamicWebReport
-    
+
     Extracts information from the database and exports the data into Javascript and HTML files
-    
+
     The database extraction is performed by the method L{_build_obj_dict}. It recursively calls the methods "_add_***".
-    
+
     The database extraction builds:
      - indexes of the objects selected for the report as dictionaries,
      - for each object (of the report), references to the objects calling this object.
-     
+
     The indexes of the objects selected are stored as dictionaries "obj_dict[class][handle]",
     indexed by the object class,
     indexed by the database handle,
@@ -482,7 +512,7 @@ class DynamicWebReport(Report):
      - object index, starting from 0,
        only counting the objects selected,
        each object type is counted separately.
-    
+
     The references to objects are stored as dictionaries "bkref_dict[class][handle]",
     indexed by the object class,
     indexed by the database handle,
@@ -490,7 +520,7 @@ class DynamicWebReport(Report):
      - class of the object referencing it,
      - handle of the object referencing it,
      - reference object (MediaRef, EventRef) if any.
-     
+
     The report is generated by L{write_report}
     """
 
@@ -538,7 +568,8 @@ class DynamicWebReport(Report):
             self.author = self.author.replace(',,,', '')
 
         # The following data are local copies of the options. Refer to the L{DynamicWebOptions} class for more details.
-        self.inc_events = self.options['inc_events']
+        # self.inc_events = self.options['inc_events']
+        self.inc_events = False
         self.inc_places = self.options['inc_places']
         self.inc_families = self.options['inc_families']
         self.inc_gallery = self.options['inc_gallery']
@@ -591,14 +622,14 @@ class DynamicWebReport(Report):
         """
         Report generation
         """
-        
+
         # Initialize the logger
         # This initialization shall be performed after Gramps has start-up
         # import importlib
         # logging = importlib.reload(logging)
         # global log
         # log = logging.getLogger(".DynamicWeb")
-        
+
         # Create directory
         dir_name = self.target_path
         if dir_name is None:
@@ -643,7 +674,7 @@ class DynamicWebReport(Report):
 
         #################################################
         # Pass 2 Generate the web pages
-        
+
         with self.user.progress(_("Dynamic Web Site Report"), _("Exporting family tree data ..."), 10) as step:
             self.created_files = []
             # Create directories
@@ -1114,7 +1145,7 @@ class DynamicWebReport(Report):
                 (_("Publication information"), source.get_publication_info())]:
                 if value:
                     html = Html("p") + Html("b", label + ": ") + value
-                    jdata['text'] += script_escape(html_text(html))
+                    jdata['text'] += html_text(html)
             # Get source notes
             jdata['note'] = self.get_notes_text(source)
             # Get source media
@@ -1964,16 +1995,16 @@ class DynamicWebReport(Report):
         """
         Generate the HTML pages
         """
-        
+
         # Check pages configuration (in the options)
         pcset = set(self.page_content)
         if (len(pcset) != len(self.page_content)):
             log.error(_("The pages configuration is not valid: several pages have the same content"))
             return
-            
+
         # Export the script containing the web  pages configuration
         self._export_script_configuration()
-        
+
         # List of the scripts and CSS stylesheets used in the HTML pages
         # Note: other scripts and stylesheets are dynamically loaded in "dwr_start.js"
         # "dwr_start.js" is loaded in all pages uncontitionally (see L{write_header})
@@ -1990,21 +2021,21 @@ class DynamicWebReport(Report):
                 # mapstyles = ["ol.css"]
                 # mapscripts = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"]
                 # mapstyles = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"]
-                
+
         #: List of page to generate: index in L{PAGES_NAMES}, Javascript code for generating the page
         parts = {
-            PAGE_PERSON: (dbscripts, "DwrMain(PAGE_INDI);"),
-            PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();"),
-            PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();"),
-            PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();"),
-            PAGE_SOURCE_INDEX: (dbscripts, "printSourcesIndex();"),
-            PAGE_MEDIA_INDEX: (dbscripts, "printMediaIndex();"),
-            PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();"),
-            PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();"),
-            PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();"),
-            PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);"),
+            PAGE_PERSON: (dbscripts + mapscripts, "DwrMain(PAGE_INDI);", mapstyles),
+            PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();", []),
+            PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();", []),
+            PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();", []),
+            PAGE_SOURCE_INDEX: (dbscripts, "printSourcesIndex();", []),
+            PAGE_MEDIA_INDEX: (dbscripts, "printMediaIndex();", []),
+            PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();", []),
+            PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();", []),
+            PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();", []),
+            PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);", []),
         }
-        
+
         # Export the HTML pages listed in L{PAGES_NAMES}
         for i in range(self.pages_number):
             pc = self.page_content[i] # Get the page i contents defined in the options
@@ -2012,8 +2043,8 @@ class DynamicWebReport(Report):
             title = self.page_name[pc]
             if (pc in parts):
                 # The page is not a custom page
-                (scripts, cmd) = parts[pc]
-                self._export_html_page(filename, title, cmd, True, scripts)
+                (scripts, cmd, styles) = parts[pc]
+                self._export_html_page(filename, title, cmd, True, scripts, styles)
             else:
                 # The page is a custom page
                 i_cst = pc - PAGE_CUSTOM
@@ -2021,15 +2052,15 @@ class DynamicWebReport(Report):
 
         # The person page is required
         if (PAGE_PERSON not in self.page_content):
-            self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts)
+            self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts + mapscripts, mapstyles)
 
         # The search results page is required
         self._export_html_page("search.html", _("Search results"), "DwrMain(PAGE_SEARCH);", True, dbscripts)
 
         # Page for printing a family (if needed)
         if (self.inc_families):
-            self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts , mapstyles)
-        
+            self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts, mapstyles)
+
         # Generate page surnames pages (if surnames page is used)
         if (PAGE_SURNAMES in self.page_content):
             # Page for persons with a given surname
@@ -2047,7 +2078,7 @@ class DynamicWebReport(Report):
 
         # Page for a single place (if needed)
         if (self.inc_places):
-            self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts , mapstyles)
+            self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts, mapstyles)
 
         # Page for a single repository (if needed)
         if (self.inc_repositories):
@@ -2131,6 +2162,7 @@ class DynamicWebReport(Report):
             + "];\n")
         sw.write("FOOTER=\"" + script_escape(self.get_header_footer_notes("footernote")) + "\";\n")
         sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
+        sw.write("BRAND_TITLE=\"" + script_escape(self.get_header_footer_notes("brandnote")) + "\";\n")
         sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
         sw.write("INDEX_SHOW_BIRTH=" + ("true" if (self.options['showbirth']) else "false") + ";\n")
         sw.write("INDEX_SHOW_DEATH=" + ("true" if (self.options['showdeath']) else "false") + ";\n")
@@ -2151,6 +2183,7 @@ class DynamicWebReport(Report):
         sw.write("MAP_PLACE=" + ("true" if (self.options['placemappages']) else "false") + ";\n")
         sw.write("MAP_FAMILY=" + ("true" if (self.options['familymappages']) else "false") + ";\n")
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
+        sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
@@ -2194,6 +2227,7 @@ class DynamicWebReport(Report):
             ("File ready", _("File ready")),
             ("Gender", _("Gender")),
             ("Graph help", _("Graph help")),
+            ("Indexes", _("Indexes")),
             ("Latitude", _("Latitude")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
@@ -2367,7 +2401,7 @@ class DynamicWebReport(Report):
     def get_header_footer_notes(self, item):
         """
         Give the header/footer note converted to an HTML string
-        @param item: Option giving the note. See options "footernote" and "headernote"
+        @param item: Option giving the note. See options "footernote", "headernote", "brandnote"
         @return: text of the note
         @rtype: L{String}
         """
@@ -2444,7 +2478,7 @@ class DynamicWebReport(Report):
             # text = text.replace("__HOME_PERSON_URL__", person_url)
         return(text)
 
-        
+
     def get_copyright_license(self):
         """
         will return either the text or image of the copyright license
@@ -2466,10 +2500,10 @@ class DynamicWebReport(Report):
     def update_file(self, fout, txt, encoding = None):
         """
         Write a string in a file.
-        The file is not overwritten if the file exists and already contains the string 
+        The file is not overwritten if the file exists and already contains the string
         @param fout: output file name
         @param txt: file contents
-        @param encoding: encoding as passed to Python function codecs.open 
+        @param encoding: encoding as passed to Python function codecs.open
         """
         if (encoding is None): encoding = self.encoding
         f = os.path.join(self.target_path, fout)
@@ -2499,7 +2533,7 @@ class DynamicWebReport(Report):
 
         'to_dir' is the relative path name in the destination root. It will
         be prepended before 'to_fname'.
-        
+
         The file is not copied if the contents of 'from_fname' 'to_fname' are identical
         """
         # log.debug("copying '%s' to '%s/%s'" % (from_fname, to_dir, to_fname))
@@ -2546,7 +2580,7 @@ class DynamicWebReport(Report):
     def copy_template_files(self):
         """
         Copy the template files to the target directory
-        
+
         The template files are:
          - The files contained in the chosen template directory,
          - The files contained in the default template directory, unless they are also present in the chosen template directory
@@ -2562,7 +2596,7 @@ class DynamicWebReport(Report):
         except:
             log.error(_("Unable to copy web site template files from \"%(path)s\"") % {"path": tmpl_path})
             raise
-            
+
     def copy_template_files_sub(self, tmpl_path):
         """
         Copy the template files from L{tmpl_path} to the target directory
@@ -2571,6 +2605,15 @@ class DynamicWebReport(Report):
         """
         for (root, dirnames, files) in os.walk(tmpl_path):
             dst_path = root.replace(tmpl_path, self.target_path, 1)
+            # Exclude unwanted files
+            def _in_exclude(root, d):
+                d = os.path.normpath(os.path.abspath(os.path.join(root, d)))
+                for e in WEB_TEMPLATE_EXCLUDED:
+                    if (re.search(e, d)):
+                        return(True)
+                return(False)
+            dirnames[:] = [d for d in dirnames if not _in_exclude(root, d)]
+            files[:] = [d for d in files if not _in_exclude(root, d)]
             # Create sub-directories
             for dirname in dirnames:
                 # Remove files that have the same name as directories
@@ -2607,22 +2650,22 @@ class DynamicWebReport(Report):
         Create an archive of the whole web site
         """
         if (not self.options['archive']): return
-        
+
         # Get archive path and type
         arch_path = self.options['archive_file']
         ext = os.path.splitext(arch_path)[1].lower()
         if (ext not in [".zip", ".tgz"]):
             arch_path += ".zip"
             ext = ".zip"
-        
+
         if (os.path.isdir(arch_path)):
             log.error(_('Invalid file name'))
             log.error(_('The archive file must be a file, not a directory'))
             return
-            
+
         # Get base path for the files inside the archive
         basepath = os.path.splitext(os.path.basename(arch_path))[0]
-        
+
         if (ext == ".zip"):
             try:
                 fzip = zipfile.ZipFile(arch_path, "w", zipfile.ZIP_DEFLATED, True)
@@ -2660,7 +2703,7 @@ class DynamicWebReport(Report):
     def build_link(self, prop, handle, obj_class):
         """
         Build a link to an item.
-        
+
         This function is used when converting a Gramps note with hyperlinks into an HTML string
         """
         if prop == "gramps_id":
@@ -2830,17 +2873,17 @@ class DynamicWebReport(Report):
         * field 4: date of birth or christening (optional)
         * field 5: place of birth or christening (optional)
         * field 6: date of death or burial (optional)
-        * field 7: place of death or burial (optional) 
+        * field 7: place of death or burial (optional)
         """
         if (not(person_handle and (person_handle in self.obj_dict[Person]))): return
         person = self.database.get_person_from_handle(person_handle)
         url = "person.html?idx=%i" % self.obj_dict[Person][person_handle][OBJDICT_INDEX]
         surname = person.get_primary_name().get_surname()
         fullname = person.get_primary_name().get_gedcom_name()
-        
+
         # get birth info:
         (dob, pob) = self.get_gendex_data(person.get_birth_ref())
-        
+
         # get death info:
         (dod, pod) = self.get_gendex_data(person.get_death_ref())
         fp.write(
@@ -2867,7 +2910,7 @@ class DynamicWebReport(Report):
                             else:
                                 poe = place.get_title()
         return(doe, poe)
-        
+
 
     ##############################################################################################
     ##############################################################################################
@@ -2895,7 +2938,7 @@ class DynamicWebReport(Report):
          - the reference object:
             - None in most cases
             - for media it is a MediaRef object
-        
+
         This method recursively calls the methods "_add_***"
         """
         _obj_class_list = (Person, Family, Event, Place, Source, Citation,
@@ -2945,7 +2988,7 @@ class DynamicWebReport(Report):
             # ):
                 # for handle in handles_func():
                     # add_func(handle)
-        
+
         # Debug output
         log.debug("final object dictionary \n" +
                   "".join(("%s: %s\n" % item) for item in self.obj_dict.items()))
@@ -3153,7 +3196,7 @@ class DynamicWebReport(Report):
         place = self.database.get_place_from_handle(place_handle)
         if (DWR_VERSION_412):
             place_name = _pd.display(self.database, place)
-            
+
         else:
             place_name = place.get_title()
         self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
@@ -3275,7 +3318,7 @@ class DynamicWebReport(Report):
             for citation_handle in addr.get_citation_list():
                 self._add_citation(citation_handle, Repository, repo_handle)
 
-                
+
     ##############################################################################################
     ##############################################################################################
     #
@@ -3291,7 +3334,7 @@ class DynamicWebReport(Report):
         The dictionaries are sorted by name.
         The sorting is performed by modifying the index of the objects.
         """
-        
+
         # Sort persons
         sortkeys = {}
         objs = list(self.obj_dict[Person].keys())
@@ -3300,7 +3343,7 @@ class DynamicWebReport(Report):
         objs.sort(key = lambda x: sortkeys[x])
         for (i, x) in enumerate(objs):
             self.obj_dict[Person][x][OBJDICT_INDEX] = i
-            
+
         # Sort families
         sortkeys = {}
         objs = list(self.obj_dict[Family].keys())
@@ -3311,7 +3354,7 @@ class DynamicWebReport(Report):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
 
         # Sort others
-        for cls in (Source, Repository, MediaObject, Place):
+        for cls in (Citation, Source, Repository, MediaObject, Place):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:
@@ -3319,7 +3362,7 @@ class DynamicWebReport(Report):
             objs.sort(key = lambda x: sortkeys[x])
             for (i, x) in enumerate(objs):
                 self.obj_dict[cls][x][OBJDICT_INDEX] = i
-        
+
 
     def get_person_name_sort_key(self, handle):
         """
@@ -3329,8 +3372,8 @@ class DynamicWebReport(Report):
         primary_name = person.get_primary_name()
         sort_str = _nd.sort_string(primary_name)
         return(SORT_KEY(sort_str))
-        
-        
+
+
     def get_family_name_sort_key(self, handle):
         """
         Return a sort key for a family
@@ -3352,10 +3395,10 @@ class DynamicWebReport(Report):
             sort_key = SORT_KEY("")
 
         return(sort_key)
-        
-        
-        
-        
+
+
+
+
 ##################################################################################################
 ##################################################################################################
 #
@@ -3368,22 +3411,22 @@ class DynamicWebOptions(MenuReportOptions):
     """
     Creates the DynamicWebReport Menu Options
     Defines options and provides handling interface.
-    
+
     Methods:
     - add_menu_options: called by Gramps to generate the options menu. It calls all the other methods "__add_***_options"
     - __add_***_options: One method for each tab of the options menu.
     - __***_changed: methods called when an option impacts other options
     """
     def __init__(self, name, dbase):
-    
+
         self.__db = dbase #: Gramps database
-        
+
         # The data below are used when some options change the behavior of other options. For example: a boolean option enables/disables another option. These data are used in the methods "__***_changed".
         self.__pid = None
         self.__filter = None
         self.__living = None
         self.__yearsafterdeath = None
-        
+
         #: This help explains how Gramps note are modified in order to generate custom pages
         self.note_help = _(
             "In this note, the following special words are processed:\n"
@@ -3400,14 +3443,14 @@ class DynamicWebOptions(MenuReportOptions):
             "__GRAMPS_VERSION__ is replaced by the GRAMPS version.\n"
             "__GRAMPS_HOMEPAGE__ is replaced by the GRAMPS homepage link.\n"
             "URL starting with \"relative://relative.<link>\" are replaced by the relative URL \"<link>\".\n")
-            
+
         MenuReportOptions.__init__(self, name, dbase)
 
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the web site.
-        
+
         It calls all the other methods "__add_***_options" (one method for each tab of the options menu).
         """
         self.__add_report_options(menu)
@@ -3419,7 +3462,7 @@ class DynamicWebOptions(MenuReportOptions):
         self.__add_custom_pages_options(menu)
         self.__add_select_pages_options(menu)
 
-        
+
     def __add_report_options(self, menu):
         """
         Options on the "Report" tab.
@@ -3483,7 +3526,7 @@ class DynamicWebOptions(MenuReportOptions):
             short_name_format.add_item(num, name)
         short_name_format.set_help(_("Select the format to display a shorter version of the names"))
         addopt("short_name_format", short_name_format)
-        
+
         template = EnumeratedListOption(_("Web site template"), 0)
         for (i, (directory, name)) in enumerate(WEB_TEMPLATE_LIST):
             template.add_item(i, name)
@@ -3579,8 +3622,7 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("placemappages", self.__placemappages)
 
         self.__familymappages = BooleanOption(_(
-            "Include Family Map Pages with "
-            "all places shown on the map"), False)
+            "Include a map in the individuals and family pages"), False)
         self.__familymappages.set_help(_(
             "Whether or not to add an individual page map "
             "showing all the places on this page. "
@@ -3617,10 +3659,14 @@ class DynamicWebOptions(MenuReportOptions):
         inc_families.set_help(_("Whether or not to include family pages"))
         addopt("inc_families", inc_families)
 
-        inc_events = BooleanOption(_('Include event pages'), False)
-        inc_events.set_help(_('Add a complete events list and relevant pages or not'))
-        addopt("inc_events", inc_events)
-        inc_events.set_available(False)
+        # inc_events = BooleanOption(_('Include event pages'), False)
+        # inc_events.set_help(_('Add a complete events list and relevant pages or not'))
+        # addopt("inc_events", inc_events)
+        # inc_events.set_available(False)
+
+        tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
+        tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
+        addopt("tabbed_panels", tabbed_panels)
 
         showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
         showbirth.set_help(_('Whether to include a birth column'))
@@ -3682,25 +3728,25 @@ class DynamicWebOptions(MenuReportOptions):
             svg_tree_type.add_item(str(i), opt)
         svg_tree_type.set_help(_("Choose the default SVG tree graph type"))
         addopt("svg_tree_type", svg_tree_type)
-        
+
         svg_tree_shape = EnumeratedListOption(_("SVG tree graph shape"), str(DEFAULT_SVG_TREE_SHAPE))
         for (i, opt) in enumerate(SVG_TREE_SHAPES):
             svg_tree_shape.add_item(str(i), opt)
         svg_tree_shape.set_help(_("Choose the default SVG tree graph shape"))
         addopt("svg_tree_shape", svg_tree_shape)
-        
+
         svg_tree_distrib_asc = EnumeratedListOption(_("SVG tree parents distribution"), str(DEFAULT_SVG_TREE_DISTRIB))
         for (i, opt) in enumerate(SVG_TREE_DISTRIB_ASC):
             svg_tree_distrib_asc.add_item(str(i), opt)
         svg_tree_distrib_asc.set_help(_("Choose the default SVG tree parents distribution (for fan charts only)"))
         addopt("svg_tree_distrib_asc", svg_tree_distrib_asc)
-        
+
         svg_tree_distrib_dsc = EnumeratedListOption(_("SVG tree children distribution"), str(DEFAULT_SVG_TREE_DISTRIB))
         for (i, opt) in enumerate(SVG_TREE_DISTRIB_DSC):
             svg_tree_distrib_dsc.add_item(str(i), opt)
         svg_tree_distrib_dsc.set_help(_("Choose the default SVG tree children distribution (for fan charts only)"))
         addopt("svg_tree_distrib_dsc", svg_tree_distrib_dsc)
-        
+
         svg_tree_background = EnumeratedListOption(_("Background"), str(DEFAULT_SVG_TREE_BACKGROUND))
         for (i, opt) in enumerate(SVG_TREE_BACKGROUNDS):
             svg_tree_background.add_item(str(i), opt)
@@ -3717,7 +3763,7 @@ class DynamicWebOptions(MenuReportOptions):
         self.__svg_tree_dup.set_help(_("Whether to use a special color for the persons that appear several times in the SVG tree"))
         self.__svg_tree_dup.connect("value-changed", self.__svg_tree_dup_changed)
         addopt("svg_tree_dup", self.__svg_tree_dup)
-        
+
         self.__svg_tree_color_dup = ColorOption(_("Color for duplicates"), "#888A85")
         addopt("svg_tree_color_dup", self.__svg_tree_color_dup)
 
@@ -3729,6 +3775,10 @@ class DynamicWebOptions(MenuReportOptions):
         headernote = NoteOption(_('HTML user header'))
         headernote.set_help( _("A note to be used as the page header"))
         addopt("headernote", headernote)
+
+        brandnote = NoteOption(_('HTML user brand name / icon'))
+        brandnote.set_help( _("A note to be used as the brand name or image in the menu"))
+        addopt("brandnote", brandnote)
 
         footernote = NoteOption(_('HTML user footer'))
         footernote.set_help( _("A note to be used as the page footer"))
@@ -3812,7 +3862,7 @@ class DynamicWebOptions(MenuReportOptions):
 
     def __archive_changed(self):
         """
-        Disable the archive file when archive is disabled 
+        Disable the archive file when archive is disabled
         """
         enable = self.__archive.get_value()
         self.__archive_file.set_available(enable)

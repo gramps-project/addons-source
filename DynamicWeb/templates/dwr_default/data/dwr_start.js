@@ -21,8 +21,8 @@ loadjsfile(scriptFolder + 'jquery/jquery.sizes.js');
 loadjsfile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
 
 // Load bootstrap
-loadcssfile(scriptFolder + 'bootstrap/css/bootstrap.min.css');
-loadjsfile(scriptFolder + 'bootstrap/js/bootstrap.min.js');
+loadcssfile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
+loadjsfile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
 
 // Load Raphael
 loadjsfile(scriptFolder + 'raphael/raphael-min.js');
@@ -43,7 +43,6 @@ loadjsfile(scriptFolder + 'unorm/unorm.js');
 
 // Load styles
 loadcssfile(scriptFolder + 'dwr_styles.css');
-loadcssfile(scriptFolder + 'dwr_template.css');
 
 // Load configuration and language file
 loadjsfile('dwr_conf.js');
