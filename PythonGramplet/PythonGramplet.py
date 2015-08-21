@@ -95,10 +95,15 @@ class PythonGramplet(Gramplet):
                 exp = self.previous
         else:
             exp = command.strip()
+        success = False
         try:
             _retval = eval(exp, self.env)
             self.previous = ""
+            success = True
         except:
+            success = False
+
+        if not success:
             try:
                 exec(exp, self.env)
                 self.previous = ""
