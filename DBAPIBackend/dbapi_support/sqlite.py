@@ -6,8 +6,11 @@ sqlite3.paramstyle = 'qmark'
 class Sqlite(object):
     def __init__(self, *args, **kwargs):
         self.connection = sqlite3.connect(*args, **kwargs)
+        self.queries = {}
 
     def execute(self, *args, **kwargs):
+        #if args[0] not in self.queries:
+        #    self.queries[args[0]] = args
         self.cursor = self.connection.execute(*args, **kwargs)
 
     def fetchone(self):
