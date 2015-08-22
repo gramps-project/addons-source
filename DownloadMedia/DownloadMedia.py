@@ -56,26 +56,25 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gramps.gen.db import DbTxn
 from gramps.gen.mime import get_type
 
 class DownloadMedia(tool.Tool, ManagedWindow):
     """
     Gramplet that downloads media from the internet.
     """
-    
+
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
         self.label = _('Download media')
         ManagedWindow.__init__(self, uistate, [], self.__class__)
         self.set_window(Gtk.Window(), Gtk.Label(), '')
         tool.Tool.__init__(self, dbstate, options_class, name)
-        
+
         self.num_downloads = 0
         dialog = self.display()
         response = dialog.run()
         dialog.destroy()
-        
+
         if response == Gtk.ResponseType.ACCEPT:
             self.on_ok_clicked()
             OkDialog(_('Media downloaded'),
@@ -118,18 +117,18 @@ class DownloadMedia(tool.Tool, ManagedWindow):
 #        hbox2.pack_start(label_password, False, False, 0)
 #        hbox2.pack_start(self.password_entry, True, True, 0)
 #        vbox.pack_start(hbox2, False)
-        
+
         dialog.vbox.set_spacing(10)
         dialog.vbox.pack_start(vbox, True, True, 0)
         dialog.show_all()
         return dialog
-    
+
     def on_ok_clicked(self):
         """
         Method that is run when you click the OK button.
         """
         downloaded = {}
-        
+
         # Get a directory to put the media files in. If the media path in
         # preferences is not just the user's home, then we will use that. If it
         # is the user's home, we create a new directory below that, so we don't
@@ -139,11 +138,11 @@ class DownloadMedia(tool.Tool, ManagedWindow):
             media_path = os.path.join(USER_HOME, "mediadir")
         if not os.path.isdir(media_path):
             os.makedirs(media_path)
-        
+
         # Many thanks to 'sirex' from whom I have taken the code he submitted as
         # part of bug 0003553: Import media files from GEDCOM
         file_pattern = re.compile(r'.*\.(png|jpg|jpeg|gif)$')
-        
+
         def fetch_file(url, filename):
             LOG.debug("Downloading url %s to file %s" % (url, filename))
             fr = urlopen(url)
@@ -157,9 +156,9 @@ class DownloadMedia(tool.Tool, ManagedWindow):
             _('Downloading files'), '')
         self.progress.set_pass(_('Downloading files'),
                                self.db.get_number_of_media_objects())
-        
+
         self.db.disable_signals()
-        with DbTxn('Download files', self.db) as trans:
+        with self.db.DbTxn('Download files') as trans:
             for media_handle in self.db.media_map.keys():
                 media = self.db.get_object_from_handle(media_handle)
                 url = media.get_path()
@@ -178,13 +177,13 @@ class DownloadMedia(tool.Tool, ManagedWindow):
                         media.set_path(full_path)
                         media.set_mime_type(get_type(full_path))
                         self.db.commit_media_object(media, trans)
-                
+
                 self.progress.step()
-            
+
         self.db.enable_signals()
         self.db.request_rebuild()
         self.progress.close()
-        
+
 #        self.options.handler.options_dict['name'] = name
 #        self.options.handler.options_dict['password'] = password
 #        # Save options
@@ -204,8 +203,8 @@ class DownloadMediaOptions(tool.ToolOptions):
             'password' : 2,
         }
         self.options_help = {
-            'name'   : ("=num", 
-                           "Name to login to website", 
+            'name'   : ("=num",
+                           "Name to login to website",
                            "?string?"),
             'password' : ("=num",
                            "Password to log in to website",

@@ -46,7 +46,6 @@ from gi.repository import Gdk
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter, open_file_with_default_application
-from gramps.gen.db import DbTxn
 from gramps.gen.utils.file import media_path_full, relative_path
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditMedia
@@ -81,8 +80,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
         self.dbstate = dbstate
         self.moved_files = []
-        self.titles = [_('Moved/Renamed Files'), _('Missing Files'),  
-                       _('Duplicate Files'), _('Extra Files'), 
+        self.titles = [_('Moved/Renamed Files'), _('Missing Files'),
+                       _('Duplicate Files'), _('Extra Files'),
                        _('No md5 Generated'), _('Errors')]
         self.models = []
         self.views = []
@@ -129,7 +128,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         self.show_tabs()
 
     def build_menu_names(self, obj):
-        return (_('Verify Gramps media using md5 hashes'), 
+        return (_('Verify Gramps media using md5 hashes'),
                 self.window_name)
 
     def create_tab(self, title):
@@ -192,10 +191,10 @@ class MediaVerify(tool.Tool, ManagedWindow):
         Export the results to a text file.
         """
         chooser = Gtk.FileChooserDialog(
-            _("Export results to a text file"), 
-            self.uistate.window, 
-            Gtk.FileChooserAction.SAVE, 
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, 
+            _("Export results to a text file"),
+            self.uistate.window,
+            Gtk.FileChooserAction.SAVE,
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
         chooser.set_do_overwrite_confirmation(True)
 
@@ -259,7 +258,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Generating media hashes'), length)
 
-        with DbTxn(_("Set media hashes"), self.db, batch=True) as trans:
+        with self.db.DbTxn(_("Set media hashes"), batch=True) as trans:
 
             for handle in self.db.get_media_object_handles():
                 media = self.db.get_object_from_handle(handle)
@@ -389,8 +388,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
                                  parent=self.window)
         progress.set_pass(_('Fixing file paths'), len(self.moved_files))
 
-        with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
-            
+        with self.db.DbTxn(_("Fix media paths"), batch=True) as trans:
+
             for handle, new_path in self.moved_files:
                 media = self.db.get_object_from_handle(handle)
                 media.set_path(new_path)

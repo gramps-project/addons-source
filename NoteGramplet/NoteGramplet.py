@@ -42,7 +42,6 @@ _ = _trans.gettext
 from gramps.gen.const import GLADE_FILE
 from gramps.gui.widgets import StyledTextEditor
 from gramps.gen.lib import StyledText, Note
-from gramps.gen.db import DbTxn
 from gramps.gen.errors import WindowActiveError
 
 #------------------------------------------------------------------------
@@ -228,8 +227,8 @@ class NoteGramplet(Gramplet):
     def edit_person(self, obj):
         from gramps.gui.editors import EditPerson
         try:
-            EditPerson(self.gui.dbstate, 
-                       self.gui.uistate, [], 
+            EditPerson(self.gui.dbstate,
+                       self.gui.uistate, [],
                        self._dirty_person,
                        callback=self.edit_callback)
         except WindowActiveError:
@@ -238,18 +237,18 @@ class NoteGramplet(Gramplet):
     def edit_family(self, obj):
         from gramps.gui.editors import EditFamily
         try:
-            EditFamily(self.gui.dbstate, 
-                       self.gui.uistate, [], 
+            EditFamily(self.gui.dbstate,
+                       self.gui.uistate, [],
                        self._dirty_family)
         except WindowActiveError:
             pass
-    
+
     def save_data_edit(self, obj):
         if self._dirty:
             person = self._dirty_person
             text = self.texteditor.get_text()
             self.note.set_styledtext(text)
-            with DbTxn(_("Save Note"), self.dbstate.db) as trans:
+            with self.dbstate.db.DbTxn(_("Save Note")) as trans:
                 if not self.note.get_handle():
                     self.note.set_type(_("Person Note"))
                     self.dbstate.db.add_note(self.note, trans)

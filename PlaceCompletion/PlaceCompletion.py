@@ -52,7 +52,6 @@ from gramps.gui.plug import PluginWindows
 from gramps.gui.display import display_url
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.lib import PlaceType, Location
-from gramps.gen.db import DbTxn
 from gramps.gen.filters import GenericFilterFactory, rules
 GenericPlaceFilter = GenericFilterFactory('Place')
 
@@ -79,7 +78,7 @@ else:
 
 #------------------------------------------------------------------------
 #
-# 
+#
 #
 #------------------------------------------------------------------------
 class PlaceCompletion(Tool.Tool, ManagedWindow):
@@ -104,22 +103,22 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             # This is needed to make gtk.Builder work by specifying the
             # translations directory
             locale.bindtextdomain("addon", base + "/locale")
-            
+
             self.glade = Gtk.Builder()
             self.glade.set_translation_domain("addon")
-            
+
             from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
-            
+
             self.glade.add_from_file(glade_file)
         else:
             self.glade = Glade(glade_file)
 
         window = self.glade.get_object("top")
-            
+
         self.tree = self.glade.get_object("tree1")
         self.tree.set_headers_visible(False)
-            
+
         self.glade.connect_signals({
             "destroy_passed_object" : self.close,
             "on_help_clicked"       : self.on_help_clicked,
@@ -127,19 +126,19 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             "on_apply_clicked"      : self.on_apply_clicked,
             "on_google_maps_clicked": self.on_google_clicked,
             })
-                
+
         self.set_window(window,None,self.active_name)
-            
+
         renderer = Gtk.CellRendererText()
         #following does not work with foreground (KDE issue??), so set background
         col = Gtk.TreeViewColumn('',renderer,text=0,background=3)
         self.tree.append_column(col)
-        
+
         self.tree.connect('event',self.button_press_event)
         #some colors from X11/rgb.txt
         self.colornormal = "white" #"black"
         self.coloroverwrite = "orange"
-             
+
         #widgets we need to query
         self.filter = self.glade.get_object("filter")
         self.countryfilter = self.glade.get_object("countryfilter")
@@ -156,14 +155,14 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.titleconstruct = self.glade.get_object("titleconstruct")
         self.titleconstruct_custom = self.glade.get_object("titleconstruct_custom")
         self.latlonconv = self.glade.get_object("latlonconv")
-        
+
         #load options from previous call and set up combo boxes
         filter_num = max(0,self.options.handler.options_dict['filternumber'])
         filters = self.options.get_report_filters()
         if filter_num > len(filters)-1 :
             filter_num = 0  # 0 filter will be all places
         self.placefilter = filters[filter_num]
-        self.fill_combobox_index(self.filter, 
+        self.fill_combobox_index(self.filter,
                         [fil.get_name() for fil in filters], filter_num)
         self.countryfilter.set_text(
                         self.options.handler.options_dict['countryfilter'])
@@ -185,8 +184,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                         self.options.handler.options_dict['rectheight'])
         self.fill_comboboxentry(self.latlonfind, _options.latlonfind,
                     self.options.handler.options_dict['latlonfind'])
-        if self.options.handler.options_dict['latlonfile'] not in ['', 
-                                                        None, 'None'] : 
+        if self.options.handler.options_dict['latlonfile'] not in ['',
+                                                        None, 'None'] :
             #print 'file', self.options.handler.options_dict['latlonfile'], \
                     #self.options.handler.options_dict['latlonfile'] == 'None'
             self.latlonfile.set_filename(
@@ -197,15 +196,15 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                         self.options.handler.options_dict['titleconstruct_custom'])
         self.fill_combobox(self.latlonconv,_options.latlonconv,
             self.options.handler.options_dict['latlonconv'])
-                
+
         #set up the possible checks, a check contains:
         #   check[0] the method to call on place, returns text, oldval, newval
         self.placechecklist = [self.find_latlon,
                     self.construct_title, self.convert_latlon,
                     ]
-        self.regextitlegroups = [('street'), ('city'), ('parish'), 
+        self.regextitlegroups = [('street'), ('city'), ('parish'),
                     ('county'), ('state'), ('country'), ('zip'), ('title')]
-        
+
         #some extra init of needed datafields
         self.latlonfile_datastr = None
         self.county_lookup = {}
@@ -220,9 +219,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             except:
                 continue
             label.set_text(_(label.get_text()))
-       
+
         self.show()
-        
+
     def group_get(self, place, group):
         '''
         Get the value corresponding to a group
@@ -257,12 +256,12 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 ErrorDialog(_("Error in PlaceCompletion.py"),
                             _("Non existing group used in get"))
                 return '';
-            
+
     def group_set(self, place, group, val):
         '''
         Sets the group in place with value val
         returns place
-        Allow special group #latlon, for which val[0] is lat, val[1] is lon 
+        Allow special group #latlon, for which val[0] is lat, val[1] is lon
         '''
         if not group:
             return place
@@ -281,7 +280,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             ErrorDialog(_("Error in PlaceCompletion.py"),
                         _("Non existing group used in set"))
         return place
-            
+
     def fill_combobox(self, cmb, namelistopt, default) :
         store = Gtk.ListStore(str)
         cell = Gtk.CellRendererText()
@@ -294,7 +293,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             if item[0] == default:
                 cmb.set_active(index)
             index = index + 1
-            
+
     def fill_combobox_index(self, cmb, namelistind, defaultindex) :
         store = Gtk.ListStore(str)
         cell = Gtk.CellRendererText()
@@ -303,13 +302,13 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         index = 0
         for item in namelistind:
             store.append(row=[item])
-        cmb.set_model(store)    
+        cmb.set_model(store)
         cmb.set_active(defaultindex)
         return cmb
-    
+
     def fill_comboboxentry(self, cmbe, namelistopt, default) :
         '''
-            default is the key in the combobox, or a text with what should 
+            default is the key in the combobox, or a text with what should
             be in the text field
         '''
         store = Gtk.ListStore(str,str)
@@ -318,10 +317,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         for data in namelistopt:
             if data:
                 store.append(row=[data[0], data[2]])
-                if data[0] == default : 
+                if data[0] == default :
                     indexactive=index
                 index += 1
-        
+
         cmbe.set_model(store)
         cmbe.set_entry_text_column(1)
         #completion = Gtk.EntryCompletion()
@@ -334,15 +333,15 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         else :
             if default :
                 cmbe.get_child().set_text(default)
-        
+
     def build_menu_names(self,obj):
         return (self.active_name,_("Places tool"))
-    
+
     def on_help_clicked(self,obj):
         """Display the relevant portion of GRAMPS manual"""
         display_url('http://www.gramps-project.org/wiki/index.php?title=Place_completion_tool')
         #display_help('tools-ae')
-        
+
     def on_google_clicked(self,obj):
         self.google()
 
@@ -382,17 +381,17 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             self.options.handler.options_dict['latlonfind'] = findregex
         self.options.handler.options_dict['latlonfile'] = \
                 self.latlonfile.get_filename()
-                
+
         self.options.handler.options_dict['titleconstruct'] = \
                 _options.titleconstruct[self.titleconstruct.get_active()][0]
         self.options.handler.options_dict['titleconstruct_custom'] \
                 = self.titleconstruct_custom.get_text()
         self.options.handler.options_dict['latlonconv'] = \
                 _options.latlonconv[self.latlonconv.get_active()][0]
-        
+
         # Save options
         self.options.handler.save_options()
-        
+
         # Compile Regex file search partially
         self.matchlatlon = None
         self.extrafindgroup = []  #find always finds lat/lon, what extra groups?
@@ -401,11 +400,11 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             try:
                 #compile regex aware of locale and unicode
                 self.matchlatlon = re.compile(findregex,re.U|re.L|re.M)
-                latlongroup = ['lat', 'lon'] 
+                latlongroup = ['lat', 'lon']
                 for group in latlongroup :
                     if findregex.find(r'(?P<'+group+r'>') == -1 :
                         WarningDialog(_('Missing regex groups in match lat/lon'),
-                    _('Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting') 
+                    _('Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting')
                                 % {'lat' : latlongroup[0], 'lon' : latlongroup[1]},
                             self.window)
                         return
@@ -419,15 +418,15 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     _('Non valid regular expression given to find lat/lon. Quiting.'),
                     self.window)
                 return
-        if not (self.matchlatlon and 
+        if not (self.matchlatlon and
                 self.options.handler.options_dict['latlonfile']) :
             # no need to try to lookup lat and lon
             self.matchlatlon = None
-            
-            
+
+
         #populate the tree
         self.make_new_model()
-        
+
     def make_new_model(self):
         # model contains 4 colums: text to show, place handle, action, color
         self.model = Gtk.TreeStore(str, object, object, str)
@@ -461,7 +460,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if (cof or stf or cuf or cif or paf):
             # Name, Street, Locality, City, County, State, Country, ZIP/Postal Code, Church Parish
             rule = HasPlace(['','','',cif,cuf,stf,cof,'',paf])
-            generic_filter.add_rule(rule)  
+            generic_filter.add_rule(rule)
         rclat = str(self.options.handler.options_dict['centerlat']).strip()
         rclon = str(self.options.handler.options_dict['centerlon']).strip()
         rwid = str(self.options.handler.options_dict['rectwidth']).strip()
@@ -469,9 +468,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if (rclat or rwid  or rclon or rhei):
             rule = InLatLonNeighborhood([rclat,rclon,rhei,rwid])
             generic_filter.add_rule(rule)
-            
+
         ind_list = self.db.get_place_handles(sort_handles=True)
-        
+
         self.nrplaces_in_tree = len(ind_list)
         # Populating might take a while, add a progress bar
         progress = ProgressMeter(
@@ -491,18 +490,18 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             self.load_latlon_file(filename)
             self.load_counties_file()
             progress.step()
-            
+
         #do all the checks and fill up model
         progress.set_pass(_('Examining places'),self.nrplaces_in_tree)
-        
+
         sib_id = None
         for handle in ind_list :
             progress.step()
             place = self.db.get_place_from_handle(handle)
             sib_id = self.insert_place_in_tree(sib_id, place)
-                
+
         progress.close()
-    
+
     def set_parent_model_text(self, id, place) :
         text = ''
         if place.get_title() :
@@ -528,7 +527,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         self.model.set(id, 1, place.get_handle())
         self.model.set(id, 2, '')
         self.model.set(id, 3, self.colornormal)
-        
+
     def set_child_model_text(self, id, place, action, olddata) :
         groupname = action[0]
         newval = action[1]
@@ -549,10 +548,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if olddata.strip() != '' :
             self.model.set(id, 3, self.coloroverwrite)
             overwrite = True
-        else : 
+        else :
             self.model.set(id, 3, self.colornormal)
         return overwrite
-        
+
     def insert_place_in_tree(self, prev_id, place) :
         sib_id = self.model.insert_after(None, prev_id)
         self.set_parent_model_text(sib_id, place)
@@ -562,17 +561,17 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         #  by the filter that ran before it.
         for placecheck in self.placechecklist :
             oldval, newval, action, place = placecheck(place)
-            prev_id, overwrite = self.add_check_to_tree(sib_id, 
-                        prev_id, place, 
+            prev_id, overwrite = self.add_check_to_tree(sib_id,
+                        prev_id, place,
                         oldval, newval, action )
         if overwrite :
             self.model.set(sib_id, 3, self.coloroverwrite)
         else :
             self.model.set(sib_id, 3, self.colornormal)
-        
+
         return sib_id
-            
-    def add_check_to_tree(self, parent_id, sib_id, place, 
+
+    def add_check_to_tree(self, parent_id, sib_id, place,
                                 oldval, newval, action):
         overwrite = False
         for dataold, datanew, dataaction in  \
@@ -588,7 +587,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                         self.set_child_model_text(sib_id, place
                                             ,dataaction,dataold)
         return sib_id, overwrite
-    
+
     def button_press_event(self,obj,event):
         from gramps.gui.editors import EditPlace
 
@@ -610,16 +609,16 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                         action = store.get_value(nodechild,2)
                         if action :
                             if action[1] != None :
-                                place = self.group_set(place, 
+                                place = self.group_set(place,
                                                 action[0], action[1] )
                         index += 1
-                            
+
                 try :
                     EditPlace(self.dbstate, self.uistate, self.track, place,
                            self.this_callback)
                 except WindowActiveError :
                     pass
-                        
+
         if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
                 event.keyval == Gtk.keysyms.Delete:
             selection = self.tree.get_selection()
@@ -636,14 +635,14 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     # test case for empty lists
                     if row >= 0:
                         selection.select_path((row,))
-                        
+
         if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
                 event.keyval == Gtk.keysyms.Tab:
             #call up google maps
             self.google()
-            
-                
-            
+
+
+
     def google(self):
         from gramps.gui.display import display_url
 
@@ -672,14 +671,14 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             else:
                 path = "http://maps.google.com/maps?q=%s" % '+'.join(descr.split())
             display_url(path)
-                
+
     def on_apply_clicked(self,obj):
         '''execute all the actions in the treeview
         '''
         modified = 0
         save_place = False
 
-        with DbTxn(_("Set Tag"), self.db, batch=True) as self.trans:
+        with self.db.DbTxn(_("Set Tag"), batch=True) as self.trans:
             self.db.disable_signals()
             progress = ProgressMeter(_('Doing Place changes'),'')
             #we do not know how many places in the treeview, and counting would
@@ -712,18 +711,18 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                                 place = self.group_set(place, action[0], action[1] )
                                 save_place = True
                         index += 1
-            
+
                 if save_place:
                     modified += 1
                     self.db.commit_place(place,self.trans)
                     progress.step()
                 #go to next on same level
                 node = store.iter_next(node)
-                
+
             progress.close()
             self.db.enable_signals()
             self.db.request_rebuild()
-        
+
         if modified == 0:
             msg = _("No place record was modified.")
         elif modified == 1:
@@ -731,7 +730,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         else:
             msg = _("%d place records were modified.") % modified
         OkDialog(_('Change places'),msg,self.window)
-        
+
         #populate the tree --> CHANGE !! empty the tree model instead!
         #self.make_new_model()
         self.tree.set_model(None)
@@ -752,7 +751,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             while store.iter_nth_child(node, index):
                 nodechild = store.iter_nth_child(node, index)
                 action = store.get_value(nodechild,2)
-                if action : 
+                if action :
                     dataold = self.group_get(obj, action[0])
                     #check if still something is changing or not :
                     if dataold == action[1] :
@@ -761,7 +760,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                         #go to next child, index remains the same due to deletion
                         continue
                     if action[1] == None :
-                        #remove this line, the line was text, user must do 
+                        #remove this line, the line was text, user must do
                         # find again to have the text reappear correctly
                         store.remove(nodechild)
                         #go to next child, index remains the same due to deletion
@@ -779,7 +778,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             if overwrite :
                 self.model.set(node, 3, self.coloroverwrite)
         #self.make_new_model()
-        
+
     def find_place_in_model(self, handle) :
         ''' returns a treeiter pointing at parent node corresponding to handle
             or None if not found
@@ -792,7 +791,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 return node
             node = store.iter_next(node)
         return None
-        
+
     def check_errors(self,filename):
         """
         This methods runs common error checks and returns True if any found.
@@ -802,29 +801,29 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             return True
         elif os.path.isdir(filename):
             ErrorDialog(
-                _('Cannot open file'), 
+                _('Cannot open file'),
                 _('The selected file is a directory, not a file.'))
             return True
         elif os.path.exists(filename):
             if not os.access(filename, os.R_OK):
                 ErrorDialog(
-                    _('Cannot open file'), 
+                    _('Cannot open file'),
                     _('You do not have read access to the selected file.'))
                 return True
             elif not stat.S_ISREG(os.stat(filename)[stat.ST_MODE]):
                 ErrorDialog(
-                    _('Cannot open file'), 
+                    _('Cannot open file'),
                     _('The file you want to access is not a regular file.'))
                 return True
         else :
             # file does not exist
             ErrorDialog(
-                    _('Cannot open file'), 
+                    _('Cannot open file'),
                     _('The file does not exist.'))
             return True
 
         return False
-        
+
     def load_counties_file(self):
         import codecs
         filename = os.path.join(os.path.dirname(__file__), 'counties.txt')
@@ -856,7 +855,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             infile = codecs.open(filename, 'r',"utf-8",errors='ignore')
             self.latlonfile_datastr = infile.read()
         infile.close()
-    
+
     def find_latlon(self, place) :
         valoud = []
         valnew = []
@@ -899,21 +898,21 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
         #print 'DEBUG info: pattern for search is ' , pattern
         regexll = re.compile(pattern,re.U|re.L|re.M)
-        latlongroup = ['lat', 'lon'] 
+        latlongroup = ['lat', 'lon']
         #find all occurences in the data file
         iterator = regexll.finditer(self.latlonfile_datastr)
-        for result in iterator : 
+        for result in iterator :
             lato =self.group_get(place, ('latitude'))
             lono =self.group_get(place, ('longitude'))
-                       
+
             lat = result.group(latlongroup[0])
             lon = result.group(latlongroup[1])
             if not(lat and lon):
                 continue
             if lato or lono :
                 valoud.append(lat+r'/'+ lon)
-            else : 
-                valoud.append('') 
+            else :
+                valoud.append('')
             valnew.append(lat+r'/' +lon)
             valaction.append(['#latlon',(lat,lon)])
             # do the action in memory
@@ -924,17 +923,17 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 valnew.append(result.group(groupname))
                 valaction.append([groupname, result.group(groupname)])
                 #do the action on the place in memory:
-                place = self.group_set(place, groupname, 
+                place = self.group_set(place, groupname,
                                             result.group(groupname))
         return valoud, valnew, valaction, place
-        
+
     def convert_latlon(self,place) :
         valoud = []
         valnew = []
         valaction = []
         lat = place.get_latitude()
         lon = place.get_longitude()
-        convtype = self.options.handler.options_dict['latlonconv'] 
+        convtype = self.options.handler.options_dict['latlonconv']
         if convtype == "None" :
             return valoud, valnew, valaction, place
         elif convtype == "DGtDC" :
@@ -963,7 +962,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             #do the action in memory
             place = self.group_set(place, ('latitude'),latnew)
         elif lat != '' and latnew == None :
-            valoud.append(_('invalid lat or lon value, %(lat)s, %(lon)s') 
+            valoud.append(_('invalid lat or lon value, %(lat)s, %(lon)s')
                         % {'lat' : lat, 'lon' : lon})
             valnew.append(None)
             #do nothing
@@ -975,12 +974,12 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             #do the action in memory
             place = self.group_set(place, ('longitude'),lonnew)
         elif lon != '' and lonnew == None :
-            valoud.append(_('invalid lat or lon value, %(lat)s, %(lon)s') 
+            valoud.append(_('invalid lat or lon value, %(lat)s, %(lon)s')
                         % {'lat' : lat, 'lon' : lon})
             valnew.append(None)
             valaction.append([('longitude'), None])
         return valoud, valnew, valaction, place
-    
+
     def construct_title_custom(self, place, title_format):
         loc = get_main_location(self.db, place)
         val = [('city', loc.get(PlaceType.CITY, '')),
@@ -1114,9 +1113,9 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             valaction.append([('title'),new])
             #do the action in memory
             place = self.group_set(place, ('title'),new)
-            
+
         return valoud, valnew, valaction, place
-        
+
 #------------------------------------------------------------------------
 #
 # Constant options items
@@ -1131,7 +1130,7 @@ class _options:
         ("DGtDC", "All in decimal notation", _("All in decimal notation")),
         ("-DGtDG", "Correct -50° in 50°S", _("Correct -50° in 50°S")),
     )
-    
+
     titleconstruct = (
         ("None", "No changes", _("No changes")),
         ("CS", "City[, State]", _("City[, State]")),
@@ -1139,14 +1138,14 @@ class _options:
                 _("City,PostalCode,Country")),
         ("CSLPZC", "City[(Street;Locality;Parish)],PostalCode,Country",
                 _("City[(Street;Locality;Parish)],PostalCode,Country")),
-        ("T1CS", "TitleStart [, City] [, State]", 
+        ("T1CS", "TitleStart [, City] [, State]",
                 _("TitleStart [, City] [, State]")),
-        ("T1CCSC", "TitleStart [, City] [, County] [, State] [, Country]", 
+        ("T1CCSC", "TitleStart [, City] [, County] [, State] [, Country]",
                 _("TitleStart [, City] [, County] [, State] [, Country]")),
-        ("T1CCCSC", "TitleStart [, City] [, Zip] [, County] [, State] [, Country]", 
+        ("T1CCCSC", "TitleStart [, City] [, Zip] [, County] [, State] [, Country]",
                 _("TitleStart [, City] [, Zip] [, County] [, State] [, Country]")),
     )
-    
+
     # geonames : http://download.geonames.org/export/dump/
     # geonet : ftp://ftp.nga.mil/pub/gns_data
     #lat_translated = _('lat')
@@ -1211,24 +1210,24 @@ class _options:
         #        + r'\t[^\t]*\t[^\t]*\t[^\t]*\t' +latgr + \
         #        r'[\d+-][^\t]*)\t' + \
         #        longr + r'[\d+-][^\t]*)'),
-        ("GeoNet_c", "GNS Geonet country file, city search", 
-                _("GNS Geonet country file, city search"), 
+        ("GeoNet_c", "GNS Geonet country file, city search",
+                _("GNS Geonet country file, city search"),
                 r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\tP\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*' \
                 + r'\t'+CITY_transl+r'\t'),
-        ("GeoNet_cc", "GNS Geonet country file, county/city search", 
-                _("GNS Geonet country file, county/city search"), 
+        ("GeoNet_cc", "GNS Geonet country file, county/city search",
+                _("GNS Geonet country file, county/city search"),
                 r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\tP' \
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t' + COUNTY_transl \
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*' \
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t' + CITY_transl + r'\t'),
         # Geonet fields and classes: http://de.wikipedia.org/wiki/Wikipedia:GEOnet_Names_Server
-        ("GeoNet_tb", "GNS Geonet country file, title begin search", 
+        ("GeoNet_tb", "GNS Geonet country file, title begin search",
                 _("GNS Geonet country file, title begin, general search")
-                , 
+                ,
                 r'\t'+latgr+r'[\d+-.][^\t]*)\t'+longr+r'[\d+-.][^\t]*)'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[PLSTV]\t[^\t]*\t[^\t]*'\
                 + r'\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*\t[^\t]*'\
@@ -1253,7 +1252,7 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
     if lat and lon :
         return latorig, lonorig
     lat = latorig; lon = lonorig
-    
+
     lat = lat.replace(r'\s*', r'')
     lon = lon.replace(r'\s*', r'')
     rm = re.compile(r'\s*-[^-]*$')
@@ -1269,7 +1268,7 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
         else :
             if rp.match(lat):
                 lat = lat.replace(r'+',r'')
-    else : 
+    else :
         latnotdeg = True
     #see if lon starts with - value, if so, add W
     if lon.find(r'°') != -1 :
@@ -1289,11 +1288,11 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
     if lattest and lontest :
         return lattest, lontest
     if lattest == None :
-        # if positive, try adding the N 
-        if minuslat == False : 
-            lat = lat + 'N' 
+        # if positive, try adding the N
+        if minuslat == False :
+            lat = lat + 'N'
     if lontest == None :
-        if minuslon == False : 
+        if minuslon == False :
             lon = lon + 'E'
     lat, lon = conv_lat_lon(lat,lon, text)
     if lat and lon :
@@ -1302,11 +1301,11 @@ def conv_min_deg(latorig, lonorig, text="DEG") :
     if lat==None : lat = latorig
     if lon==None : lon = lonorig
     return lat, lon
-        
-    
+
+
 #------------------------------------------------------------------------
 #
-# 
+#
 #
 #------------------------------------------------------------------------
 class PlaceCompletionOptions(Tool.ToolOptions):
@@ -1333,11 +1332,11 @@ class PlaceCompletionOptions(Tool.ToolOptions):
         from gramps.gen.filters import CustomFilters
         the_filters.extend(CustomFilters.get_filters('Place'))
         return the_filters
-        
+
     def set_new_options(self):
         # Options specific for this report
         self.options_dict = {
-            'filternumber' : 0, 
+            'filternumber' : 0,
             'countryfilter': '',
             'statefilter'  : '',
             'countyfilter'  : '',
@@ -1355,7 +1354,7 @@ class PlaceCompletionOptions(Tool.ToolOptions):
         }
         self.options_help = {
             'filternumber' : ("=int", "integer indicating which place filter to"
-                                    "use",  "integer"), 
+                                    "use",  "integer"),
             'countryfilter': ("=str","string with wich to filter places on country",
                             "string"),
             'statefilter': ("=str","string with wich to filter places on state",

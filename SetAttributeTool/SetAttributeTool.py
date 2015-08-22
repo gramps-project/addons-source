@@ -40,7 +40,6 @@ from gramps.gui.plug import MenuToolOptions, PluginWindows
 from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption, BooleanOption
 import gramps.gen.lib
-from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 import gramps.gen.plug.report.utils as ReportUtils
 
@@ -61,22 +60,22 @@ class SetAttributeOptions(MenuToolOptions):
     def __init__(self, name, person_id=None, dbstate=None):
         self.__db = dbstate.get_database()
         MenuToolOptions.__init__(self, name, person_id, dbstate)
-    
+
     def add_menu_options(self, menu):
-        
+
         """ Add the options """
         category_name = _("Options")
-        
+
         self.__filter = FilterOption(_("Person Filter"), 0)
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.__filter_changed)
-        
+
         self.__pid = PersonOption(_("Filter Person"))
         self.__pid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
-        
+
         attribute_text = StringOption(_("Attribute"), "")
         attribute_value = StringOption(_("Value"), "")
 
@@ -87,7 +86,7 @@ class SetAttributeOptions(MenuToolOptions):
         menu.add_option(category_name, "attribute_value", attribute_value)
         self.__attribute_text = attribute_text
         self.__attribute_value = attribute_value
-        
+
         remove = BooleanOption(_("Remove"), False)
         remove.set_help(_("Remove attribute type and value set"))
         menu.add_option(category_name, "remove", remove)
@@ -102,7 +101,7 @@ class SetAttributeOptions(MenuToolOptions):
         person = self.__db.get_person_from_gramps_id(gid)
         filter_list = ReportUtils.get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
-        
+
     def __filter_changed(self):
         """
         Handle filter change. If the filter is not specific to a person,
@@ -126,31 +125,31 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
     def run(self):
         self.remove = self.options.menu.get_option_by_name('remove').get_value()
         if not self.remove:
-            with DbTxn(_("Set Attribute"), self.db, batch=True) as self.trans:
+            with self.db.DbTxn(_("Set Attribute"), batch=True) as self.trans:
                 self.add_results_frame(_("Results"))
                 self.results_write(_("Processing...\n"))
                 self.db.disable_signals()
-    
+
                 self.filter_option =  self.options.menu.get_option_by_name('filter')
                 self.filter = self.filter_option.get_filter() # the actual filter
-    
+
                 # FIXME: currently uses old style for gramps31 compatible
                 #    people = self.filter.apply(self.db,
                 #                               self.db.iter_person_handles())
                 people = self.filter.apply(self.db,
                                      self.db.get_person_handles(sort_handles=False))
-    
+
                 # FIXME: currently uses old style for gramps31 compatible
                 # num_people = self.db.get_number_of_people()
                 num_people = len(people)
-                self.progress.set_pass(_('Setting attributes...'), 
+                self.progress.set_pass(_('Setting attributes...'),
                                        num_people)
                 count = 0
-                attribute_text = self.options.handler.options_dict['attribute_text'] 
+                attribute_text = self.options.handler.options_dict['attribute_text']
                 attribute_value = self.options.handler.options_dict['attribute_value']
                 specified_type = gramps.gen.lib.AttributeType()
                 specified_type.set(attribute_text)
-                self.results_write(_("Setting '%s' attributes to '%s'...\n\n" % 
+                self.results_write(_("Setting '%s' attributes to '%s'...\n\n" %
                                      (attribute_text, attribute_value)))
                 for person_handle in people:
                     count += 1
@@ -181,31 +180,31 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                     self.db.commit_person(person, self.trans)
             self.db.enable_signals()
             self.db.request_rebuild()
-            self.results_write(_("\nSet %d '%s' attributes to '%s'\n" % 
+            self.results_write(_("\nSet %d '%s' attributes to '%s'\n" %
                                  (count, attribute_text, attribute_value)))
             self.results_write(_("Done!\n"))
         else:
-            with DbTxn(_("Remove Attribute"), self.db, batch=True) as self.trans:
+            with self.db.DbTxn(_("Remove Attribute"), batch=True) as self.trans:
                 self.add_results_frame(_("Results"))
                 self.results_write(_("Processing...\n"))
                 self.db.disable_signals()
-    
+
                 self.filter_option =  self.options.menu.get_option_by_name('filter')
                 self.filter = self.filter_option.get_filter() # the actual filter
-    
+
                 # FIXME: currently uses old style for gramps31 compatible
                 #    people = self.filter.apply(self.db,
                 #                               self.db.iter_person_handles())
                 people = self.filter.apply(self.db,
                                      self.db.get_person_handles(sort_handles=False))
-    
+
                 # FIXME: currently uses old style for gramps31 compatible
                 # num_people = self.db.get_number_of_people()
                 num_people = len(people)
-                self.progress.set_pass(_('Removing attributes...'), 
+                self.progress.set_pass(_('Removing attributes...'),
                                        num_people)
                 count = 0
-                attribute_text = self.options.handler.options_dict['attribute_text'] 
+                attribute_text = self.options.handler.options_dict['attribute_text']
                 attribute_value = self.options.handler.options_dict['attribute_value']
                 specified_type = gramps.gen.lib.AttributeType()
                 specified_type.set(attribute_text)
@@ -227,7 +226,7 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                             done = True
                             break
                 if done:
-                    self.results_write(_("\nRemoving %d '%s' attributes to '%s'\n" % 
+                    self.results_write(_("\nRemoving %d '%s' attributes to '%s'\n" %
                                 (count, attribute_text, attribute_value)))
                     self.db.commit_person(person, self.trans)
             self.db.enable_signals()

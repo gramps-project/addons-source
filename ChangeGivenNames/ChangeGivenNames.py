@@ -38,7 +38,6 @@ from gi.repository import Gtk
 # gramps modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.db import DbTxn
 from gramps.gen.const import URL_MANUAL_PAGE
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.display import display_help
@@ -92,7 +91,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         self.dbstate = dbstate
         self.uistate = uistate
         self.cb = callback
-        
+
         ManagedWindow.__init__(self,uistate,[],self.__class__)
         self.set_window(Gtk.Window(),Gtk.Label(),'')
 
@@ -106,14 +105,14 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         self.progress.set_pass(_('Searching given names'),
                                len(given_name_dict.keys()))
         self.name_list = []
-        
+
         for name in given_name_dict.keys():
             if name != capitalize(name):
                 self.name_list.append((name, given_name_dict[name]))
-                    
+
             if uistate:
                 self.progress.step()
-        
+
         if self.name_list:
             self.display()
         else:
@@ -144,18 +143,18 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
             # translations directory
             base = os.path.dirname(__file__)
             locale.bindtextdomain("addon", base + "/locale")
-            
+
             self.glade = Gtk.Builder()
             self.glade.set_translation_domain("addon")
-                        
+
             path = base + "/changenames.glade"
             self.glade.add_from_file(path)
-            
+
             from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
-                        
+
             self.top = self.glade.get_object('changenames')
-            
+
             self.glade.connect_signals({
                 "destroy_passed_object" : self.close,
                 "on_ok_clicked" : self.on_ok_clicked,
@@ -163,13 +162,13 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
                 "on_edit_clicked" : self.on_edit_clicked,
                 "on_delete_event"   : self.close,
                 })
-                
+
             self.list = self.glade.get_object("list")
             self.set_window(self.top, self.glade.get_object('title'), self.label)
 
         else:
             self.top = Glade("changenames.glade")
-        
+
             window = self.top.toplevel
             self.top.connect_signals({
                 "destroy_passed_object" : self.close,
@@ -178,12 +177,12 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
                 "on_edit_clicked" : self.on_edit_clicked,
                 "on_delete_event"   : self.close,
                 })
-        
+
             self.list = self.top.get_object("list")
             self.set_window(window,self.top.get_object('title'),self.label)
 
         # selected, original name, changed, count
-        self.model = Gtk.ListStore(GObject.TYPE_BOOLEAN, GObject.TYPE_STRING, 
+        self.model = Gtk.ListStore(GObject.TYPE_BOOLEAN, GObject.TYPE_STRING,
                                    GObject.TYPE_STRING, GObject.TYPE_INT)
         self.handles = {}
 
@@ -218,7 +217,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
             self.iter_list.append(handle)
             self.progress.step()
         self.progress.close()
-            
+
         self.show()
 
     def toggled(self,cell,path_string):
@@ -241,13 +240,13 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         tpath = paths[0] if len(paths) > 0 else None
         node = store.get_iter(tpath) if tpath else None
         if node:
-            name = store.get_value(node, 1) 
+            name = store.get_value(node, 1)
             for handle in self.name_map[name]:
                 person = self.dbstate.db.get_person_from_handle(handle)
                 EditPerson(self.dbstate, self.uistate, [], person)
 
     def on_ok_clicked(self, obj):
-        with DbTxn(_("Capitalization changes"), self.db, batch=True
+        with self.db.DbTxn(_("Capitalization changes"), batch=True
                    ) as self.trans:
             self.db.disable_signals()
             changelist = set(self.model.get_value(node,1)
@@ -269,10 +268,10 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
         self.db.request_rebuild()
         self.close()
         self.cb()
-        
+
 #------------------------------------------------------------------------
 #
-# 
+#
 #
 #------------------------------------------------------------------------
 class ChangeGivenNamesOptions(tool.ToolOptions):

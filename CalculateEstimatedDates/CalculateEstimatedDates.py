@@ -42,7 +42,6 @@ from gramps.gen.plug.menu import BooleanOption, NumberOption, StringOption, \
                          FilterOption, PersonOption, EnumeratedListOption
 from gramps.gen.lib import (Date, Event, EventType, EventRef, Source,
                             Citation, Note, NoteType)
-from gramps.gen.db import DbTxn
 from gramps.gen.config import config
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug.report.utils import get_person_filters
@@ -73,25 +72,25 @@ class CalcEstDateOptions(MenuToolOptions):
 
     def get_dbstate(self):
         return self.__dbstate
-    
+
     def add_menu_options(self, menu):
-        
+
         """ Add the options """
         category_name = _("Options")
-        
+
         self.__filter = FilterOption(_("Filter"), 0)
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.__filter_changed)
-        
+
         self.__pid = PersonOption(_("Filter Person"))
         self.__pid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
-        
+
         self.__update_filters()
 
-        source_text = StringOption(_("Source text"), 
+        source_text = StringOption(_("Source text"),
                                    _("Calculated Date Estimates"))
         source_text.set_help(_("Source to remove and/or add"))
         menu.add_option(category_name, "source_text", source_text)
@@ -115,19 +114,19 @@ class CalcEstDateOptions(MenuToolOptions):
         menu.add_option(category_name, "add_death", death)
 
         # -----------------------------------------------------
-        num = NumberOption(_("Maximum age"), 
+        num = NumberOption(_("Maximum age"),
                            config.get('behavior.max-age-prob-alive'),
                            0, 200)
         num.set_help(_("Maximum age that one can live to"))
         menu.add_option(category_name, "MAX_AGE_PROB_ALIVE", num)
 
-        num = NumberOption(_("Maximum sibling age difference"), 
+        num = NumberOption(_("Maximum sibling age difference"),
                            config.get('behavior.max-sib-age-diff'),
                            0, 200)
         num.set_help(_("Maximum age difference between siblings"))
         menu.add_option(category_name, "MAX_SIB_AGE_DIFF", num)
 
-        num = NumberOption(_("Average years between generations"), 
+        num = NumberOption(_("Average years between generations"),
                            config.get('behavior.avg-generation-gap'),
                            0, 200)
         num.set_help(_("Average years between two generations"))
@@ -138,7 +137,7 @@ class CalcEstDateOptions(MenuToolOptions):
         dates.add_item(1, _("Extremes (after and before)"))
         dates.set_help( _("Dates on events are either about or after/before"))
         menu.add_option(category_name, "dates", dates)
-        
+
     def __update_filters(self):
         """
         Update the filter list based on the selected person
@@ -147,7 +146,7 @@ class CalcEstDateOptions(MenuToolOptions):
         person = self.__db.get_person_from_gramps_id(gid)
         filter_list = get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
-        
+
     def __filter_changed(self):
         """
         Handle filter change. If the filter is not specific to a person,
@@ -168,7 +167,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         PluginWindows.ToolManagedWindowBatch.__init__(self, *args, **kwargs)
         if self.fail: return
         self.help_page = self.add_page(_("Help"))
-        self.write_to_page(self.help_page, 
+        self.write_to_page(self.help_page,
                            _("The Calculate Estimated Dates Tool is used to add and remove "
                            "birth and death events for people that are missing these "
                            "events.\n\n"
@@ -231,8 +230,8 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         sdoc = SimpleDoc(document)
         stab = QuickTable(self.sdb)
         self.table = stab
-        stab.columns(_("Select"), _("Person"), _("Action"), 
-                     _("Birth Date"), _("Death Date"), 
+        stab.columns(_("Select"), _("Person"), _("Action"),
+                     _("Birth Date"), _("Death Date"),
                      _("Evidence"), _("Relative"))
         self.results_write(_("Processing...\n"))
         self.filter_option =  self.options.menu.get_option_by_name('filter')
@@ -250,10 +249,10 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         self.MAX_AGE_PROB_ALIVE = self.options.handler.options_dict['MAX_AGE_PROB_ALIVE']
         self.AVG_GENERATION_GAP = self.options.handler.options_dict['AVG_GENERATION_GAP']
         if remove_old:
-            with DbTxn("", self.db, batch=True) as self.trans:
+            with self.db.DbTxn("", batch=True) as self.trans:
                 self.db.disable_signals()
                 self.results_write(_("Removing old estimations... "))
-                self.progress.set_pass((_("Removing '%s'...") % source_text), 
+                self.progress.set_pass((_("Removing '%s'...") % source_text),
                                        num_people)
                 for person_handle in people:
                     self.progress.step()
@@ -274,7 +273,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                                     person.remove_handle_references('Event',[birth_ref.ref])
                                     # remove note
                                     note_list = birth.get_referenced_note_handles()
-                                    birth.remove_handle_references('Note', 
+                                    birth.remove_handle_references('Note',
                                       [note_handle for (obj_type, note_handle) in note_list])
                                     for (obj_type, note_handle) in note_list:
                                         self.db.remove_note(note_handle, self.trans)
@@ -297,7 +296,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                                     person.remove_handle_references('Event',[death_ref.ref])
                                     # remove note
                                     note_list = death.get_referenced_note_handles()
-                                    birth.remove_handle_references('Note', 
+                                    birth.remove_handle_references('Note',
                                       [note_handle for (obj_type, note_handle) in note_list])
                                     for (obj_type, note_handle) in note_list:
                                         self.db.remove_note(note_handle, self.trans)
@@ -314,7 +313,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                 self.db.request_rebuild()
         if add_birth or add_death:
             self.results_write(_("Selecting... \n\n"))
-            self.progress.set_pass(_('Selecting...'), 
+            self.progress.set_pass(_('Selecting...'),
                                    num_people)
             row = 0
             for person_handle in people:
@@ -348,15 +347,15 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     else:
                         date2 = Date()
                     # Describe
-                    if add_birth_event and add_death_event: 
+                    if add_birth_event and add_death_event:
                         action = _("Add birth and death events")
                     elif add_birth_event:
                         action = _("Add birth event")
-                    elif add_death_event: 
+                    elif add_death_event:
                         action = _("Add death event")
                     else:
                         continue
-                    #stab.columns(_("Select"), _("Person"), _("Action"), 
+                    #stab.columns(_("Select"), _("Person"), _("Action"),
                     # _("Birth Date"), _("Death Date"), _("Evidence"), _("Relative"))
                     if add_birth == 1 and not birth_ref: # no date
                         date1 = Date()
@@ -364,12 +363,12 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                         date2 = Date()
                     if person == other:
                         other = None
-                    stab.row("checkbox", 
-                             person, 
-                             action, 
+                    stab.row("checkbox",
+                             person,
+                             action,
                              date1,
                              date2,
-                             explain or "", 
+                             explain or "",
                              other or "")
                     if add_birth_event:
                         stab.set_cell_markup(3, row, "<b>%s</b>" % date_displayer.display(date1))
@@ -408,7 +407,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
     def select_all(self, obj):
         select_col = self.table.model_index_of_column[_("Select")]
         for row in self.table.treeview.get_model():
-            row[select_col] = True 
+            row[select_col] = True
 
     def select_none(self, obj):
         select_col = self.table.model_index_of_column[_("Select")]
@@ -424,14 +423,14 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         # Do not add birth or death event if one exists, no matter what
         if self.table.treeview.get_model() is None:
             return
-        with DbTxn("", self.db, batch=True) as self.trans:
+        with self.db.DbTxn("", batch=True) as self.trans:
             self.pre_run()
             source_text = self.options.handler.options_dict['source_text']
             select_col = self.table.model_index_of_column[_("Select")]
             source = self.get_or_create_source(source_text)
             self.db.disable_signals()
             self.results_write(_("Selecting... "))
-            self.progress.set_pass((_("Adding events '%s'...") % source_text), 
+            self.progress.set_pass((_("Adding events '%s'...") % source_text),
                                    len(self.table.treeview.get_model()))
             count = 0
             for row in self.table.treeview.get_model():
@@ -458,8 +457,8 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     else:
                         explanation = _("Added birth event based on %s") % evidence
                     modifier = self.get_modifier("birth")
-                    birth = self.create_event(_("Estimated birth date"), 
-                                              EventType.BIRTH, 
+                    birth = self.create_event(_("Estimated birth date"),
+                                              EventType.BIRTH,
                                               date1, source, explanation, modifier)
                     event_ref = EventRef()
                     event_ref.set_reference_handle(birth.get_handle())
@@ -474,8 +473,8 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     else:
                         explanation = _("Added death event based on %s") % evidence
                     modifier = self.get_modifier("death")
-                    death = self.create_event(_("Estimated death date"), 
-                                              EventType.DEATH, 
+                    death = self.create_event(_("Estimated death date"),
+                                              EventType.DEATH,
                                               date2, source, explanation, modifier)
                     event_ref = EventRef()
                     event_ref.set_reference_handle(death.get_handle())
@@ -516,8 +515,8 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         self.db.add_source(source, self.trans)
         return source
 
-    def create_event(self, description=_("Estimated date"), 
-                     type=None, date=None, source=None, 
+    def create_event(self, description=_("Estimated date"),
+                     type=None, date=None, source=None,
                      note_text="", modifier=None):
         event = Event()
         event.set_description(description)
@@ -546,6 +545,6 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
 
     def calc_estimates(self, person):
         return probably_alive_range(person, self.db,
-                         self.MAX_SIB_AGE_DIFF, 
-                         self.MAX_AGE_PROB_ALIVE, 
+                         self.MAX_SIB_AGE_DIFF,
+                         self.MAX_AGE_PROB_ALIVE,
                          self.AVG_GENERATION_GAP)
