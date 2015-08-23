@@ -1,4 +1,5 @@
-addons-source
+addons-source [![Build Status](https://travis-ci.org/gramps-project/addons-source.svg?branch=master)](https://travis-ci.org/gramps-project/addons-source)
+=============
 
 Source code for Third-party plugins for Gramps genealogy program
 
