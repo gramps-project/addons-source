@@ -1,5 +1,13 @@
-tags
+# Python
+*.py[cod]
 __pycache__
+
+# Editing
+*~
+tags
+.idea
+
+# Distutils
 AllNamesQuickview/locale/
 AncestorFill/locale/
 AttachSourceTool/locale/
@@ -64,3 +72,7 @@ TimelineQuickview/locale/
 ToDoReport/locale/
 UKWebConnectPack/locale/
 USWebConnectPack/locale/
+
+# Testing
+libwebconnect.ini
+DynamicWeb/reports/
