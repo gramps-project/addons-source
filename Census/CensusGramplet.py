@@ -44,6 +44,7 @@ from gramps.gen.datehandler import get_date, displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
                             Citation, Person, Attribute)
+from gramps.gen.db import DbTxn
 
 #------------------------------------------------------------------------
 #
@@ -87,7 +88,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
         self.callman.register_callbacks({'person-update': self.changed})
         self.callman.register_callbacks({'event-update': self.changed})
         self.callman.connect_all(keys=['person', 'event'])
-
+    
     def changed(self, handle):
         """
         Called when a registered event is updated.
@@ -113,21 +114,21 @@ class CensusGramplet(Gramplet, DbGUIElement):
         view.append_column(column)
         view.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
         view.connect("button_press_event", self.__list_clicked)
-
+        
         button_box = Gtk.HButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.START)
-
+        
         new = Gtk.Button(stock=Gtk.STOCK_NEW)
         new.connect("clicked", self.__new_census)
         button_box.add(new)
-
+                
         edit = Gtk.Button(stock=Gtk.STOCK_EDIT)
         edit.connect("clicked", self.__edit_census, view.get_selection())
         button_box.add(edit)
-
+      
         vbox.pack_start(view, expand=True, fill=True, padding=0)
         vbox.pack_end(button_box, expand=False, fill=True, padding=4)
-
+        
         return vbox
 
     def __list_clicked(self, view, event):
@@ -168,7 +169,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
         active_person = self.get_active_object("Person")
         if not active_person:
             return
-
+        
         self.callman.unregister_all()
         self.callman.register_obj(active_person)
         self.callman.register_handles({'person': [active_person.get_handle()]})
@@ -195,7 +196,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
         Called when the active person is changed.
         """
         self.update()
-
+        
     def db_changed(self):
         """
         Called when the active person is changed.
@@ -230,7 +231,7 @@ class CensusEditor(ManagedWindow):
         self.uistate = uistate
         self.track = track
         self.db = dbstate.db
-
+        
         self.event = event
         self.citation = get_census_citation(self.db, self.event)
         if self.citation is None:
@@ -256,9 +257,9 @@ class CensusEditor(ManagedWindow):
                                       self.widgets['place_share'])
 
         self.ref_field = MonitoredEntry(
-            self.widgets['ref_entry'],
-            self.citation.set_page,
-            self.citation.get_page,
+            self.widgets['ref_entry'], 
+            self.citation.set_page, 
+            self.citation.get_page, 
             self.db.readonly)
 
         if self.event.get_handle():
@@ -307,7 +308,7 @@ class CensusEditor(ManagedWindow):
         census_label.set_alignment(0.0, 0.5)
         tab.attach(census_label, 0, 1, 0, 1,
                    xoptions=Gtk.AttachOptions.FILL, xpadding=10)
-
+        
         liststore = Gtk.ListStore(str, str, str)
         for row in get_census_sources(self.db):
             liststore.append([row[0].decode(), row[1], row[2]])
@@ -322,7 +323,7 @@ class CensusEditor(ManagedWindow):
         #census_combo.add_attribute(cell, 'text', 2)
         census_combo.connect('changed', self.__census_changed)
         self.widgets['census_combo'] = census_combo
-
+        
         hbox = Gtk.HBox()
         hbox.pack_start(census_combo, False, True, 0)
         tab.attach(hbox, 1, 2, 0, 1)
@@ -331,17 +332,17 @@ class CensusEditor(ManagedWindow):
         date_label.set_alignment(0.0, 0.5)
         tab.attach(date_label, 0, 1, 1, 2,
                    xoptions=Gtk.AttachOptions.FILL, xpadding=10)
-
+        
         date_text = Gtk.Label()
         date_text.set_alignment(0.0, 0.5)
         tab.attach(date_text, 1, 2, 1, 2)
         self.widgets['date_text'] = date_text
-
+        
         ref_label = Gtk.Label(_("Reference:"))
         ref_label.set_alignment(0.0, 0.5)
         tab.attach(ref_label, 0, 1, 2, 3,
                    xoptions=Gtk.AttachOptions.FILL, xpadding=10)
-
+        
         ref_entry = Gtk.Entry()
         tab.attach(ref_entry, 1, 2, 2, 3)
         self.widgets['ref_entry'] = ref_entry
@@ -350,7 +351,7 @@ class CensusEditor(ManagedWindow):
         place_label.set_alignment(0.0, 0.5)
         tab.attach(place_label, 0, 1, 3, 4,
                    xoptions=Gtk.AttachOptions.FILL, xpadding=10)
-
+        
         place_text = Gtk.Label()
         place_text.set_alignment(0.0, 0.5)
         self.widgets['place_text'] = place_text
@@ -375,10 +376,10 @@ class CensusEditor(ManagedWindow):
         place_add.add(image)
         tab.attach(place_add, 3, 4, 3, 4, xoptions=0)
         self.widgets['place_add'] = place_add
-
+ 
         button_box = Gtk.HButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.END)
-
+        
         help_btn = Gtk.Button(stock=Gtk.STOCK_HELP)
         help_btn.connect('clicked', self.help_clicked)
         button_box.add(help_btn)
@@ -387,7 +388,7 @@ class CensusEditor(ManagedWindow):
         cancel_btn = Gtk.Button(stock=Gtk.STOCK_CANCEL)
         cancel_btn.connect('clicked', self.close)
         button_box.add(cancel_btn)
-
+        
         ok_btn = Gtk.Button(stock=Gtk.STOCK_OK)
         ok_btn.connect('clicked', self.save)
         button_box.add(ok_btn)
@@ -417,7 +418,7 @@ class CensusEditor(ManagedWindow):
         vbox.pack_start(tab, expand=False, fill=True, padding=10)
         vbox.pack_start(notebook, expand=True, fill=True, padding=0)
         vbox.pack_end(button_box, expand=False, fill=True, padding=10)
-
+        
         root.add(vbox)
         root.show_all()
 
@@ -433,7 +434,7 @@ class CensusEditor(ManagedWindow):
         for pos, row in enumerate(census_combo.get_model()):
             if row[0] == self.citation.get_reference_handle():
                 census_combo.set_active(pos)
-
+                
         date_text = self.widgets['date_text']
         date_text.set_text(get_date(event))
 
@@ -473,7 +474,7 @@ class CensusEditor(ManagedWindow):
                           'a census from the drop-down list.'))
             return
 
-        with self.db.DbTxn(self.get_menu_title()) as trans:
+        with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
 
@@ -538,7 +539,7 @@ class DetailsTab(GrampsTab):
         Builds the interface.
         """
         hbox = Gtk.HBox()
-
+        
         image = Gtk.Image()
         image.set_from_stock(Gtk.STOCK_ADD, Gtk.IconSize.BUTTON)
         add_btn = Gtk.Button()
@@ -546,7 +547,7 @@ class DetailsTab(GrampsTab):
         add_btn.add(image)
         add_btn.connect('clicked', self.__add_person)
         hbox.pack_start(add_btn, expand=False, fill=True, padding=3)
-
+        
         image = Gtk.Image()
         image.set_from_stock(Gtk.STOCK_INDEX, Gtk.IconSize.BUTTON)
         share_btn = Gtk.Button()
@@ -554,7 +555,7 @@ class DetailsTab(GrampsTab):
         share_btn.add(image)
         share_btn.connect('clicked', self.__share_person)
         hbox.pack_start(share_btn, expand=False, fill=True, padding=3)
-
+        
         image = Gtk.Image()
         image.set_from_stock(Gtk.STOCK_REMOVE, Gtk.IconSize.BUTTON)
         del_btn = Gtk.Button()
@@ -581,10 +582,10 @@ class DetailsTab(GrampsTab):
 
         self.entry_grid = EntryGrid(callback=self.change_person)
         self.track_ref_for_deletion("entry_grid")
-
+        
         scrollwin = Gtk.ScrolledWindow()
         scrollwin.add_with_viewport(self.entry_grid)
-        scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC,
+        scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC, 
                              Gtk.PolicyType.AUTOMATIC)
 
         self.pack_start(hbox, expand=False, fill=True, padding=0)
@@ -608,7 +609,7 @@ class DetailsTab(GrampsTab):
                         _('Cannot add a person to this census.  First select '
                           'a census from the drop-down list.'))
             return
-
+            
         person = Person()
         EditPerson(self.dbstate, self.uistate, self.track, person,
                    self.__person_added)
@@ -626,12 +627,12 @@ class DetailsTab(GrampsTab):
         Edit a person from selection.
         """
         model, iter_ = self.selection.get_selected()
-        if iter_:
+        if iter_: 
             handle = model.get_value(iter_, 0)
             if handle:
                 person = self.dbstate.db.get_person_from_handle(handle)
                 EditPerson(self.dbstate, self.uistate, self.track, person)
-
+        
     def __share_person(self, button):
         """
         Select an existing person and add them to the census.
@@ -663,8 +664,8 @@ class DetailsTab(GrampsTab):
     def change_person(self, iter_):
         """
         Change an existing person in the census.
-        """
-        skip_list = []
+        """                
+        skip_list = []        
         handle = self.model.get_value(iter_, 0)
 
         sel = self.SelectPerson(self.dbstate, self.uistate, self.track,
@@ -705,11 +706,11 @@ class DetailsTab(GrampsTab):
         iter_ = self.entry_grid.get_selected()
         if iter_ is None:
             return
-
+            
         row = self.model.get_path(iter_)[0]
         if direction == 'up' and row > 0:
             self.model.move_before(iter_, self.model.get_iter((row - 1,)))
-
+            
         if direction == 'down' and row < len(self.model) - 1:
             self.model.move_after(iter_, self.model.get_iter((row + 1,)))
 
@@ -729,7 +730,7 @@ class DetailsTab(GrampsTab):
         Populate the model.
         """
         person_list = []
-        for item in self.db.find_backlink_handles(event.get_handle(),
+        for item in self.db.find_backlink_handles(event.get_handle(), 
                              include_classes=['Person']):
             handle = item[1]
             self.initial_people.append(handle)
@@ -748,7 +749,7 @@ class DetailsTab(GrampsTab):
                     person_list.append([order, handle, name, attrs])
 
         person_list.sort()
-
+        
         for person_data in person_list:
             row = person_data[1:2] # handle
             for attr in self.columns:
@@ -759,13 +760,13 @@ class DetailsTab(GrampsTab):
             self.model.append(tuple(row))
 
         self._set_label()
-
+        
     def save(self, trans):
         """
         Save the census details to the database.
         """
         # Update people on the census
-        all_people = []
+        all_people = []    
         for order, row in enumerate(self.model):
             all_people.append(row[0])
             person = self.db.get_person_from_handle(row[0])
@@ -833,7 +834,7 @@ class HeadingsTab(GrampsTab):
         self.model = Gtk.ListStore(str, str)
         self.view = Gtk.TreeView(self.model)
         self.selection = self.view.get_selection()
-
+        
         renderer = Gtk.CellRendererText()
         column = Gtk.TreeViewColumn(_('Key'), renderer, text=0)
         self.view.append_column(column)
@@ -846,7 +847,7 @@ class HeadingsTab(GrampsTab):
 
         scrollwin = Gtk.ScrolledWindow()
         scrollwin.add_with_viewport(self.view)
-        scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC,
+        scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC, 
                              Gtk.PolicyType.AUTOMATIC)
 
         self.pack_start(scrollwin, expand=True, fill=True, padding=0)
@@ -892,7 +893,7 @@ class HeadingsTab(GrampsTab):
                 attr.set_value(row[1])
                 new_list.append(attr)
 
-        self.event.set_attribute_list(new_list)
+        self.event.set_attribute_list(new_list)                   
 
     def __cell_edited(self, cell, path, new_text, data):
         """
@@ -961,7 +962,7 @@ class Indicator(Gtk.DrawingArea):
     def _draw(self, widget, cr):
 
         # clip area to avoid extra work
-        #cr.rectangle(event.area.x, event.area.y,
+        #cr.rectangle(event.area.x, event.area.y, 
                      #event.area.width, event.area.height)
         #cr.clip()
 
@@ -972,7 +973,7 @@ class Indicator(Gtk.DrawingArea):
             cr.set_source_rgba(1, 0, 0, 0)
         cr.rectangle(0, 3, alloc.width, alloc.height-6)
         cr.fill()
-
+        
 
 class EntryGrid(Gtk.Table):
 
@@ -997,7 +998,7 @@ class EntryGrid(Gtk.Table):
 
         if len(self.model) > 0:
             self.selected = model.get_iter((0,))
-
+    
     def set_columns(self, columns, tooltips):
         self.headings = columns
         self.tooltips = tooltips
@@ -1007,9 +1008,9 @@ class EntryGrid(Gtk.Table):
         for child in self.get_children():
             self.remove(child)
             child.destroy()
-
+        
         self.resize(len(self.model) + 1, len(self.headings) + 2)
-
+        
         self.indicators = []
         self.widgets = []
 
@@ -1051,7 +1052,7 @@ class EntryGrid(Gtk.Table):
                 entry.connect('changed', self.changed, row, column)
                 entry.connect('focus-in-event', self.got_focus, row)
                 entry.show()
-                self.attach(entry, column + 1, column + 2, row + 1, row + 2,
+                self.attach(entry, column + 1, column + 2, row + 1, row + 2, 
                             yoptions=0)
                 entry_row.append(entry)
             self.widgets.append(entry_row)

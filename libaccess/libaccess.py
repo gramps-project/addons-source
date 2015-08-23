@@ -38,7 +38,7 @@ objects, so that developers need not know about either.
 The goals of this interface are:
 
 1. To abstract all functionality of gen.lib and the db layer
-2. To hide all uses of handles from the developer
+2. To hide all uses of handles from the developer 
 3. To put all of the "business logic" in one place
 4. To make multi-field logic easy (if person.name.surname == "Blank")
 5. To make edits easy.
@@ -49,6 +49,8 @@ Additionals goals:
   inconsistent state.
 
 """
+
+from gramps.gen.db import DbTxn
 
 import itertools
 
@@ -213,7 +215,7 @@ class Name(Object):
     def setit(self, attr, value):
         if attr == "given":
             self.instance.set_first_name(value)
-        with database.DbTxn(_("libaccess edit name"), batch=batch) as trans:
+        with DbTxn(_("libaccess edit name"), database, batch=batch) as trans:
             database.commit_person(self.fields["person"], trans)
 
     def __repr__(self):
@@ -241,7 +243,7 @@ class Person(Object):
         "name": lambda self: self.__get_primary_name(),
         "names": lambda self: self.__get_names(),
         "events": lambda self: self.__get_primary_events(),
-        "families": lambda self: ListOf(self, Family, [Family(database.get_family_from_handle(h)) for h in
+        "families": lambda self: ListOf(self, Family, [Family(database.get_family_from_handle(h)) for h in 
                                                        self.instance.get_family_handle_list()])
         }
 
@@ -255,7 +257,7 @@ class Person(Object):
             self.instance.handle = value
         elif attr == "gramps_id":
             self.instance.gramps_id = value
-        with database.DbTxn(_("libaccess edit person")) as trans:
+        with DbTxn(_("libaccess edit person"), database) as trans:
             database.commit_person(self.instance, trans)
 
     def __get_primary_events(self):
@@ -277,13 +279,13 @@ class Person(Object):
             name = self.__get_primary_name()
             if name:
                 return ListOf(self, Name,
-                              [name] + [Name(n, primary=False,
-                                             person=self.instance) for n in
+                              [name] + [Name(n, primary=False, 
+                                             person=self.instance) for n in 
                                         self.instance.get_alternate_names()],)
             else:
                 return ListOf(self, Name,
-                              [Name(n, primary=False,
-                                    person=self.instance) for n in
+                              [Name(n, primary=False, 
+                                    person=self.instance) for n in 
                                self.instance.get_alternate_names()],)
         return ListOf(self, Name, [])
 
@@ -309,7 +311,7 @@ class Person(Object):
 
     def __get_primary_name(self):
         if self.instance:
-            return Name(self.instance.get_primary_name(), primary=True,
+            return Name(self.instance.get_primary_name(), primary=True, 
                         person=self.instance)
         return NONE
 
@@ -357,6 +359,6 @@ class Family(Object):
     fields = {
         "father": lambda self: Person(database.get_person_from_handle(self.instance.get_father_handle())),
         "mother": lambda self: Person(database.get_person_from_handle(self.instance.get_mother_handle())),
-        "events": lambda self: ListOf(self, Event, [Event(database.get_event_from_handle(h))
+        "events": lambda self: ListOf(self, Event, [Event(database.get_event_from_handle(h)) 
                                                     for h in self.instance.get_event_ref_list()]),
         }

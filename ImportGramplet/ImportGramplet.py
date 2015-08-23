@@ -32,6 +32,7 @@ from xml.parsers.expat import ParserCreate
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
+from gramps.gen.db import DbTxn
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -65,7 +66,7 @@ class AtomicCSVParser(CSVParser):
                       position at the start of the file
         """
         data = self.read_csv(filehandle)
-        with self.db.DbTxn(_("CSV import"), batch=False) as self.trans:
+        with DbTxn(_("CSV import"), self.db, batch=False) as self.trans:
             self._parse_csv_data(data, step=lambda: None)
 
 #------------------------------------------------------------------------
@@ -88,7 +89,7 @@ class AtomicVCardParser(VCardParser):
                       position at the start of the file
         """
         self.person = None
-        with self.database.DbTxn(_("VCard import"), batch=False) as self.trans:
+        with DbTxn(_("VCard import"), self.database, batch=False) as self.trans:
             self._parse_vCard_file(filehandle)
 
 #------------------------------------------------------------------------
@@ -110,7 +111,7 @@ class AtomicGrampsParser(GrampsParser):
         :param ifile: must be a file handle that is already open, with position
                       at the start of the file
         """
-        with self.db.DbTxn(_("Gramps XML import"), batch=False) as self.trans:
+        with DbTxn(_("Gramps XML import"), self.db, batch=False) as self.trans:
             self.set_total(linecount)
 
             self.p = ParserCreate()
@@ -124,12 +125,12 @@ class AtomicGrampsParser(GrampsParser):
                 self.db.name_formats += self.name_formats
                 # Register new formats
                 name_displayer.set_name_format(self.db.name_formats)
-
+    
             self.db.set_researcher(self.owner)
             if self.home is not None:
                 person = self.db.get_person_from_handle(self.home)
                 self.db.set_default_person_handle(person.handle)
-
+    
             #set media path, this should really do some parsing to convert eg
             # windows path to unix ?
             if self.mediapath:
@@ -137,7 +138,7 @@ class AtomicGrampsParser(GrampsParser):
                 if not oldpath:
                     self.db.set_mediapath(self.mediapath)
                 elif not oldpath == self.mediapath:
-                    ErrorDialog(_("Could not change media path"),
+                    ErrorDialog(_("Could not change media path"), 
                         _("The opened file has media path %s, which conflicts "
                           "with the media path of the family tree you import "
                           "into. The original media path has been retained. "
@@ -163,7 +164,7 @@ class ImportGramplet(Gramplet):
     """
     def init(self):
         """
-        Constructs the GUI, consisting of a text area, and
+        Constructs the GUI, consisting of a text area, and 
         an Import and Clear buttons.
         """
         from gi.repository import Gtk

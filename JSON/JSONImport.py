@@ -42,6 +42,7 @@ LOG = logging.getLogger(".ImportJSON")
 #-------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
+from gramps.gen.db import DbTxn
 from gramps.gen.plug.utils import OpenFileOrStdin
 from gramps.gen.config import config
 from gramps.gen.merge.diff import from_struct
@@ -50,7 +51,7 @@ def importData(dbase, filename, user):
     """Function called by Gramps to import data on persons in CSV format."""
     dbase.disable_signals()
     try:
-        with dbase.DbTxn(_("JSON import"), batch=True) as trans:
+        with DbTxn(_("JSON import"), dbase, batch=True) as trans:
             with OpenFileOrStdin(filename, encoding="utf-8") as fp:
                 line = fp.readline()
                 while line:
