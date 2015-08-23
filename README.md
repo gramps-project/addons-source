@@ -1,7 +1,7 @@
 addons-source [![Build Status](https://travis-ci.org/gramps-project/addons-source.svg?branch=master)](https://travis-ci.org/gramps-project/addons-source)
 =============
 
-Source code Contributed Third-party addons for the Gramps genealogy program
+Source code of contributed Third-party addons for the Gramps genealogy program.
 
 To develop your own addon:
 
