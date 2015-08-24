@@ -73,6 +73,11 @@ except ImportError:
     raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
                     "required for this view to work")
 
+if os.sys.platform == "linux":
+    coef=0.1
+else:
+    coef=0
+
 if os.sys.platform == "win32":
     _DOT_FOUND = search_for("dot.exe")
 else:
@@ -362,7 +367,7 @@ class GraphWidget(object):
         hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
         zoom_label = Gtk.Label(label="Zoom:")
-        hbox.pack_start (zoom_label, False, False, 0)
+        hbox.pack_start (zoom_label, False, False, 1)
 
         self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         hbox.pack_start(self.scale, True, True, 0)
@@ -865,9 +870,10 @@ class GraphvizSvgParser(object):
         width = float(attrs.get('width').rstrip(string.ascii_letters))*1.6
         height = float(attrs.get('height').rstrip(string.ascii_letters))*1.6
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(attrs.get('xlink:href'))
+        # coef is a coeficient depending on system to correct a bug in displaying images
         item = GooCanvas.CanvasImage(parent = self.current_parent(),
-                                     x = pos_x - 0.1 * width,
-                                     y = pos_y - 0.1 * height,
+                                     x = pos_x - coef * width,
+                                     y = pos_y - coef * height,
                                      height = height,
                                      width = width,
                                      pixbuf = pixbuf)
