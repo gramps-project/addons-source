@@ -41,7 +41,7 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gi.repository import Gtk, Gdk, GdkPixbuf 
+from gi.repository import Gtk, Gdk, GdkPixbuf
 import string
 from subprocess import Popen, PIPE
 from io import StringIO
@@ -384,7 +384,7 @@ class GraphWidget(object):
 
         # Build the rest of the widget by parsing SVG data from Graphviz
         dot_data = dot.get_dot().encode('utf8')
-        svg_data = Popen(['dot', '-Tsvg'], 
+        svg_data = Popen(['dot', '-Tsvg'],
                     stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(svg_data)
@@ -497,7 +497,7 @@ class GraphWidget(object):
                 # active person
                 parent_handle = self.find_a_parent(handle)
                 if parent_handle:
-                    handle = parent_handle 
+                    handle = parent_handle
 
             # Redraw the graph based on the selected person
             self.view.change_active(handle)
@@ -577,21 +577,21 @@ class GraphvizSvgParser(object):
         self.func_list = []
         self.handle = None
         self.func_map = {
-            "g": (self.start_g, self.stop_g), 
-            "svg": (self.start_svg, self.stop_svg), 
-            "polygon": (self.start_polygon, self.stop_polygon), 
-            "path": (self.start_path, self.stop_path), 
-            "image": (self.start_image, self.stop_image), 
-            "text": (self.start_text, self.stop_text), 
-            "ellipse": (self.start_ellipse, self.stop_ellipse), 
-            "title": (self.start_title, self.stop_title), 
+            "g": (self.start_g, self.stop_g),
+            "svg": (self.start_svg, self.stop_svg),
+            "polygon": (self.start_polygon, self.stop_polygon),
+            "path": (self.start_path, self.stop_path),
+            "image": (self.start_image, self.stop_image),
+            "text": (self.start_text, self.stop_text),
+            "ellipse": (self.start_ellipse, self.stop_ellipse),
+            "title": (self.start_title, self.stop_title),
         }
         self.text_anchor_map = {"start" : GooCanvas.CanvasAnchorType.WEST,
                                 "middle" : GooCanvas.CanvasAnchorType.CENTER,
                                 "end" : GooCanvas.CanvasAnchorType.EAST,}
         # This list is used as a LIFO stack so that the SAX parser knows
         # which Goocanvas object to link the next object to.
-        self.item_hier = [] 
+        self.item_hier = []
 
         # This dictionary maps various specific fonts to their generic font
         # types. Will need to include any truetype fonts here.
@@ -859,7 +859,7 @@ class GraphvizSvgParser(object):
 
         # Retain the active person for other use elsewhere
         if self.handle == self.widget.active_person_handle:
-            self.active_person_item = item 
+            self.active_person_item = item
 
     def start_image(self, attrs):
         """
@@ -1019,10 +1019,10 @@ class DotGenerator(object):
         self.write( '\n'                            )
         self.write( '  edge [style=solid fontsize=%d];\n' % fontsize )
         if fontfamily:
-            self.write( '  node [style=filled fontname="%s" fontsize=%d];\n' 
+            self.write( '  node [style=filled fontname="%s" fontsize=%d];\n'
                             % ( fontfamily, fontsize ) )
         else:
-            self.write( '  node [style=filled fontsize=%d];\n' 
+            self.write( '  node [style=filled fontsize=%d];\n'
                             % fontsize )
         self.write( '\n' )
 
@@ -1110,7 +1110,7 @@ class DotGenerator(object):
             adopted = False
         if adopted:
             style = 'dotted'
-        self.add_link(family.handle, p_id, style,  
+        self.add_link(family.handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle )
 
     def add_parent_link(self, p_id, parent_handle, rel):
@@ -1154,7 +1154,7 @@ class DotGenerator(object):
         for event_ref in fam.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
             if event.type == gramps.gen.lib.EventType.MARRIAGE and \
-            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or 
+            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or
             event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY ):
                 label = self.get_event_string(event)
                 break
@@ -1174,7 +1174,7 @@ class DotGenerator(object):
         m_handle = fam.get_mother_handle()
         if f_handle:
             self.add_link(f_handle,
-                          fam_handle, "", 
+                          fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
@@ -1182,7 +1182,7 @@ class DotGenerator(object):
                 self.person_handles.append(f_handle)
         if m_handle:
             self.add_link(m_handle,
-                          fam_handle, "", 
+                          fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
@@ -1222,7 +1222,7 @@ class DotGenerator(object):
                 media_mime_type = media.get_mime_type()
                 if media_mime_type[0:5] == "image":
                     image_path = get_thumbnail_path(
-                                    media_path_full(self.database, 
+                                    media_path_full(self.database,
                                                           media.get_path()),
                                         rectangle=media_list[0].get_rectangle())
                     # test if thumbnail actually exists in thumbs
@@ -1384,7 +1384,7 @@ class DotGenerator(object):
 
         self.write('\n')
 
-    def add_node(self, node_id, label, shape="", color="", 
+    def add_node(self, node_id, label, shape="", color="",
                  style="", fillcolor="", url="", htmloutput=False):
         """
         Add a node to this graph. Nodes can be different shapes like boxes and

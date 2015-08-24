@@ -57,7 +57,7 @@ from gramps.gen.plug import Gramplet, MenuOptions
 from gramps.gen.lib import MediaRef, Person
 from gramps.gui.editors.editperson import EditPerson
 from gramps.gui.selectors import SelectorFactory
-from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
+from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption,
                                   EnumeratedListOption, FilterOption, PersonOption)
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
@@ -163,7 +163,7 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
         self.title = title
         self.options = options
 
-        PluginWindows.ToolManagedWindowBase.__init__(self, 
+        PluginWindows.ToolManagedWindowBase.__init__(self,
           dbstate, uistate, None, "SettingsDialog")
 
         self.ok.set_use_stock(True)
@@ -274,7 +274,7 @@ class PhotoTaggingGramplet(Gramplet):
                    DdTargets.PERSON_LINK.target_flags,
                    DdTargets.PERSON_LINK.app_id)
         # Can drop a LIST of HANDLES here:
-        tglist.add(DdTargets.HANDLE_LIST.atom_drag_type, 
+        tglist.add(DdTargets.HANDLE_LIST.atom_drag_type,
                    DdTargets.HANDLE_LIST.target_flags,
                    DdTargets.HANDLE_LIST.app_id)
 
@@ -326,10 +326,10 @@ class PhotoTaggingGramplet(Gramplet):
             [],
             Gdk.DragAction.COPY)
         self.treeview.drag_dest_set_target_list(tglist)
-        self.treeview.connect('drag_data_received', 
+        self.treeview.connect('drag_data_received',
                               self.drag_data_received)
         # End Drag and Drop for tree_view
-        
+
         scrolled_window2 = Gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
         scrolled_window2.set_size_request(400, -1)
@@ -343,7 +343,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         return self.top
 
-    def drag_data_received(self, widget, context, x, y, 
+    def drag_data_received(self, widget, context, x, y,
                            sel_data, info, time, on_image=None):
         """
         Receive a dropped person onto the treeview.
@@ -427,7 +427,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_button_clear.set_label(_("Clear"))
         self.context_button_clear.set_always_show_image(True)
         self.context_button_clear.connect("activate", self.clear_ref_clicked)
-       
+
         self.context_button_remove = Gtk.ImageMenuItem(Gtk.STOCK_CLEAR)
         self.context_button_remove.set_label(_("Remove"))
         self.context_button_remove.set_always_show_image(True)
@@ -682,13 +682,13 @@ class PhotoTaggingGramplet(Gramplet):
     def add_person_clicked(self, event):
         if self.selection_widget.get_current():
             person = Person()
-            EditPerson(self.dbstate, self.uistate, self.track, person, 
+            EditPerson(self.dbstate, self.uistate, self.track, person,
                        self.new_person_added)
 
     def sel_person_clicked(self, event):
         if self.selection_widget.get_current():
             SelectPerson = SelectorFactory('Person')
-            sel = SelectPerson(self.dbstate, self.uistate, self.track, 
+            sel = SelectPerson(self.dbstate, self.uistate, self.track,
                                _("Select Person"))
             person = sel.run()
             if person:
@@ -737,7 +737,7 @@ class PhotoTaggingGramplet(Gramplet):
 
     def settings_clicked(self, event):
         try:
-            SettingsDialog(self.gui.dbstate, self.gui.uistate, 
+            SettingsDialog(self.gui.dbstate, self.gui.uistate,
                            _("Settings"), PhotoTaggingOptions())
         except Errors.WindowActiveError:
             pass
@@ -782,8 +782,8 @@ class PhotoTaggingGramplet(Gramplet):
                                 count=ref_count)
                     dialog = Gtk.MessageDialog(
                                 parent=None,
-                                type=Gtk.MessageType.QUESTION, 
-                                buttons=Gtk.ButtonsType.YES_NO, 
+                                type=Gtk.MessageType.QUESTION,
+                                buttons=Gtk.ButtonsType.YES_NO,
                                 message_format=message)
                     response = dialog.run()
                     dialog.destroy()
@@ -844,7 +844,7 @@ class PhotoTaggingGramplet(Gramplet):
                 tree_iter = model.get_iter(path)
                 i = model.get_value(tree_iter, 0)
                 try:
-                    return self.regions[i - 1]   
+                    return self.regions[i - 1]
                 except:
                     return None
         return None

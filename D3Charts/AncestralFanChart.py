@@ -183,7 +183,7 @@ class AncestralFanChartReport(Report):
                     mother_handle = family.get_mother_handle()
 
         return (father_handle, mother_handle)
-    
+
 
     def calc_max_ancestor(self, person_handle, generation=1):
         """
@@ -210,7 +210,7 @@ class AncestralFanChartReport(Report):
         Generate empty entries for this person to ensure all ancestor
         levels are equal.
         """
-        
+
         gen_pad = (generation-1) * 2
         self.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         self.json_fp.write('%s"name": "",\n' %
@@ -335,7 +335,7 @@ class AncestralFanChartReport(Report):
             self.json_fp.write(',\n')
             self.json_fp.write('%s"children": [\n' %
                 (self.pad_str(gen_pad+1)))
-            
+
             if generation == 1:
                 self.fam_side = "paternal"
             if father_handle:

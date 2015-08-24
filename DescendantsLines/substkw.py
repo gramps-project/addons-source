@@ -68,7 +68,7 @@ class EventFormat2(GenericFormat):
     otherwise, parse through the format string and put in the parts
         dates and places can have their own format strings
     """
-    
+
     def __init__(self, database, _in, locale):
         self.database = database
         GenericFormat.__init__(self, _in, locale)
@@ -269,7 +269,7 @@ class VariableParse2(object):
         else:
             event_f.parse_empty()
             return
-            
+
     def __parse_an_event(self, person, attrib_parse):
         if not self.event:    # this makes it backwards compatible with __parse_event
             event = self.get_event_by_name(person, attrib_parse.get_name())
@@ -461,7 +461,7 @@ class SubstKeywords2(object):
         MAX_NOTE_LEN = max_note_len
         global PRIVACY
         PRIVACY = privacy
-    
+
         if self.person is None:
             return
 
@@ -605,7 +605,7 @@ class SubstKeywords2(object):
         return new
 
 
-# 
+#
 # if __name__ == '__main__':
 #-------------------------------------------------------------------------
 #
@@ -618,7 +618,7 @@ class SubstKeywords2(object):
 #
 #-------------------------------------------------------------------------
 # pylint: disable-msg=C0103
-# 
+#
 #     def combinations(c, r):
 #         # combinations('ABCD', 2) --> AB AC AD BC BD CD
 #         # combinations(range(4), 3) --> 012 013 023 123
@@ -638,14 +638,14 @@ class SubstKeywords2(object):
 #             for j in range(i+1, r):
 #                 indices[j] = indices[j-1] + 1
 #             yield tuple(pool[i] for i in indices)
-# 
+#
 #     def main_level_test(_in, testing_class, testing_what):
 #         """This is a mini def __main_level(self):
 #         """
 #         main = LevelParse(_in)
 #         sepa = SeparatorParse(_in)
 #         test = testing_class(_in)
-# 
+#
 #         while _in.this:
 #             if main.is_a():
 #                 main.parse_format(_in)
@@ -657,20 +657,20 @@ class SubstKeywords2(object):
 #                     test.parse_format(testing_what))
 #             else:
 #                 _in.parse_format(main)
-# 
+#
 #         main.combine_all()
-# 
+#
 #         state, line = main.get_string()
 #         if state is TXT.remove:
 #             return None
 #         else:
 #             return line
-# 
-# 
+#
+#
 #     from gramps.gen.lib.date import Date
 #     y_or_n = ()
 #     date_to_test = Date()
-# 
+#
 #     def date_set():
 #         date_to_test.set_yr_mon_day(
 #             1970 if 0 in y_or_n else 0,
@@ -678,17 +678,17 @@ class SubstKeywords2(object):
 #             3 if 2 in y_or_n else 0
 #             )
 #         #print date_to_test
-# 
+#
 #     line_in = "<Z>$(yyy) <a>$(<Z>Mm)<b>$(mm){<c>$(d)}{<d>$(yyyy)<e>}<f>$(yy)"
 #     consume_str = ConsumableString(line_in)
-# 
+#
 #     print(line_in)
 #     print("#None are known")
 #     tmp = main_level_test(consume_str, DateFormat, date_to_test)
 #     print(tmp)
 #     print("Good" if tmp == " " else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#One is known")
@@ -704,8 +704,8 @@ class SubstKeywords2(object):
 #         " a99b09",
 #         " c3"
 #         ] else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#Two are known")
@@ -721,8 +721,8 @@ class SubstKeywords2(object):
 #         "1970 c3d1970f70",
 #         " a99b09c3"
 #         ] else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#All are known")
@@ -735,18 +735,18 @@ class SubstKeywords2(object):
 #     answer.append(tmp)
 #     print("Good" if answer == ["1970 a99b09c3d1970f70"
 #         ] else "!! bad !!")
-# 
+#
 #     import sys
 #     sys.exit()
 #     print()
 #     print()
 #     print("=============")
 #     print("=============")
-# 
+#
 #     from gramps.gen.lib.name import Name
 #     y_or_n = ()
 #     name_to_test = Name()
-# 
+#
 #     def name_set():
 #         #code  = "tfcnxslg"
 #         name_to_test.set_call_name("Bob" if 0 in y_or_n else "")
@@ -756,10 +756,10 @@ class SubstKeywords2(object):
 #         name_to_test.set_suffix("IV" if 4 in y_or_n else "")
 #         #now can we put something in for the last name?
 #         name_to_test.set_family_nick_name("The Clubs" if 5 in y_or_n else "")
-# 
+#
 #     line_in = "{$(c)$(t)<1>{<2>$(f)}{<3>$(n){<0> <0>}<4>$(x)}$(s)<5>$(l)<6>$(g)<0>"
 #     consume_str = ConsumableString(line_in)
-# 
+#
 #     print()
 #     print()
 #     print(line_in)
@@ -767,8 +767,8 @@ class SubstKeywords2(object):
 #     tmp = main_level_test(consume_str, NameFormat, name_to_test)
 #     print(tmp)
 #     print("Good" if tmp == None else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#Two are known")
@@ -796,8 +796,8 @@ class SubstKeywords2(object):
 #         "BuckThe Clubs",
 #         "IV6The Clubs"
 #         ] else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#All are known")
@@ -808,17 +808,17 @@ class SubstKeywords2(object):
 #     print(answer)
 #     print("Good" if answer == "BobDr.2Billy3Buck4BobIV6The Clubs"
 #                  else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("=============")
 #     print("=============")
-# 
+#
 #     from gramps.gen.lib.place import Place
 #     y_or_n = ()
 #     place_to_test = Place()
-# 
+#
 #     def place_set():
 #         #code = "elcuspnitxy"
 #         main_loc = place_to_test.get_main_location()
@@ -855,12 +855,12 @@ class SubstKeywords2(object):
 #         place_to_test.set_latitude(
 #             "W113H18'5\"W" if 10 in y_or_n else ""
 #         )
-# 
+#
 #     #code = "txy"
 #     line_in = "$(e)<1>{<2>$(l) <3> $(c)<4><0><5>{$(s)<6>$(p)<7>" + \
 #               "{<1>$(n)<2>}<3>$(i<0>)<4>}<5>$(t)<6>$(x)<7>}<8>$(y)"
 #     consume_str = ConsumableString(line_in)
-# 
+#
 #     print()
 #     print()
 #     print(line_in)
@@ -868,8 +868,8 @@ class SubstKeywords2(object):
 #     tmp = main_level_test(consume_str, PlaceFormat, place_to_test)
 #     print(tmp)
 #     print("Good" if tmp == "" else "!! bad !!")
-# 
-# 
+#
+#
 #     print()
 #     print()
 #     print("#Three are known (string lengths only)")

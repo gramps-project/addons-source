@@ -26,7 +26,7 @@
 # libaccess
 #
 #------------------------------------------------------------------------
-register(GENERAL, 
+register(GENERAL,
 id    = 'libaccess',
 name  = "Generic DB Access lib",
 description =  _("Provides a library for generic access to "

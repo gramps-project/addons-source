@@ -28,7 +28,7 @@ register(EXPORT,
          version = '1.0.29',
          gramps_target_version= "5.0",
          status               = STABLE, # not yet tested with python 3
-         export_options_title = _('Django options'), 
+         export_options_title = _('Django options'),
          export_options       = 'NoFilenameOptions',
          export_function      = 'export_all',
          extension            = "django",

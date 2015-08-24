@@ -73,7 +73,7 @@ class PythonGramplet(Gramplet):
         import traceback
         retval = ''
         exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()
-        lines = traceback.format_exception(exceptionType, 
+        lines = traceback.format_exception(exceptionType,
                                            exceptionValue,
                                            exceptionTraceback)
         retval += "".join(lines)
@@ -128,8 +128,8 @@ class PythonGramplet(Gramplet):
         from gi.repository import Gtk
         from gi.repository import Gdk
         if (event.keyval == Gdk.keyval_from_name("Home") or
-            ((event.keyval == Gdk.keyval_from_name("a") and 
-              event.get_state() & Gdk.ModifierType.CONTROL_MASK))): 
+            ((event.keyval == Gdk.keyval_from_name("a") and
+              event.get_state() & Gdk.ModifierType.CONTROL_MASK))):
             buffer = widget.get_buffer()
             cursor_pos = buffer.get_property("cursor-position")
             iter = buffer.get_iter_at_offset(cursor_pos)
@@ -138,14 +138,14 @@ class PythonGramplet(Gramplet):
             start.forward_chars(2)
             buffer.place_cursor(start)
             return True
-        elif (event.keyval == Gdk.keyval_from_name("End") or 
-              (event.keyval == Gdk.keyval_from_name("e") and 
-               event.get_state() & Gdk.ModifierType.CONTROL_MASK)): 
+        elif (event.keyval == Gdk.keyval_from_name("End") or
+              (event.keyval == Gdk.keyval_from_name("e") and
+               event.get_state() & Gdk.ModifierType.CONTROL_MASK)):
             buffer = widget.get_buffer()
             end = buffer.get_end_iter()
             buffer.place_cursor(end)
             return True
-        elif event.keyval == Gdk.keyval_from_name("Return"): 
+        elif event.keyval == Gdk.keyval_from_name("Return"):
             echo = False
             buffer = widget.get_buffer()
             cursor_pos = buffer.get_property("cursor-position")

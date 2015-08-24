@@ -71,7 +71,7 @@ class CollectAscendants():
                 mate_handle = family.get_mother_handle()
             else:
                 mate_handle = family.get_father_handle()
-         
+
             if mate_handle:
                 mate_handles.append(mate_handle)
 
@@ -305,7 +305,7 @@ class CollectAscendants():
         people = self.database.iter_person_handles()
 
         # Apply the preferred people filter
-        self.user.begin_progress(self.title, _('Applying Filter...'), 
+        self.user.begin_progress(self.title, _('Applying Filter...'),
             self.database.get_number_of_people())
         people_handles = filter.apply(self.database, people,
             self.user.step_progress)
@@ -393,7 +393,7 @@ class CollectAscendants():
                             self.database.get_person_from_handle(person_handle)
                         for mate_handle in self.__get_mate_handles(person):
                             if mate_handle not in self.descendants:
-                                # Determine which person should be added 
+                                # Determine which person should be added
                                 # person_handle or mate_handle.
                                 # For this person check if other mates are
                                 # are in our descendants, if they are that's
@@ -429,7 +429,7 @@ class CollectAscendants():
                 if person_mother and person_mother in people_handles:
                     continue
 
-                # Person's parent does not exist in people_handles so 
+                # Person's parent does not exist in people_handles so
                 # add to ascendants if not there.
                 if person_handle not in self.ascendants:
                     self.ascendants.append(person_handle)

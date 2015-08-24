@@ -243,7 +243,7 @@ class Person(Object):
         "name": lambda self: self.__get_primary_name(),
         "names": lambda self: self.__get_names(),
         "events": lambda self: self.__get_primary_events(),
-        "families": lambda self: ListOf(self, Family, [Family(database.get_family_from_handle(h)) for h in 
+        "families": lambda self: ListOf(self, Family, [Family(database.get_family_from_handle(h)) for h in
                                                        self.instance.get_family_handle_list()])
         }
 
@@ -279,13 +279,13 @@ class Person(Object):
             name = self.__get_primary_name()
             if name:
                 return ListOf(self, Name,
-                              [name] + [Name(n, primary=False, 
-                                             person=self.instance) for n in 
+                              [name] + [Name(n, primary=False,
+                                             person=self.instance) for n in
                                         self.instance.get_alternate_names()],)
             else:
                 return ListOf(self, Name,
-                              [Name(n, primary=False, 
-                                    person=self.instance) for n in 
+                              [Name(n, primary=False,
+                                    person=self.instance) for n in
                                self.instance.get_alternate_names()],)
         return ListOf(self, Name, [])
 
@@ -311,7 +311,7 @@ class Person(Object):
 
     def __get_primary_name(self):
         if self.instance:
-            return Name(self.instance.get_primary_name(), primary=True, 
+            return Name(self.instance.get_primary_name(), primary=True,
                         person=self.instance)
         return NONE
 
@@ -359,6 +359,6 @@ class Family(Object):
     fields = {
         "father": lambda self: Person(database.get_person_from_handle(self.instance.get_father_handle())),
         "mother": lambda self: Person(database.get_person_from_handle(self.instance.get_mother_handle())),
-        "events": lambda self: ListOf(self, Event, [Event(database.get_event_from_handle(h)) 
+        "events": lambda self: ListOf(self, Event, [Event(database.get_event_from_handle(h))
                                                     for h in self.instance.get_event_ref_list()]),
         }

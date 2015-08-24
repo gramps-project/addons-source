@@ -228,8 +228,8 @@ class NoteGramplet(Gramplet):
     def edit_person(self, obj):
         from gramps.gui.editors import EditPerson
         try:
-            EditPerson(self.gui.dbstate, 
-                       self.gui.uistate, [], 
+            EditPerson(self.gui.dbstate,
+                       self.gui.uistate, [],
                        self._dirty_person,
                        callback=self.edit_callback)
         except WindowActiveError:
@@ -238,12 +238,12 @@ class NoteGramplet(Gramplet):
     def edit_family(self, obj):
         from gramps.gui.editors import EditFamily
         try:
-            EditFamily(self.gui.dbstate, 
-                       self.gui.uistate, [], 
+            EditFamily(self.gui.dbstate,
+                       self.gui.uistate, [],
                        self._dirty_family)
         except WindowActiveError:
             pass
-    
+
     def save_data_edit(self, obj):
         if self._dirty:
             person = self._dirty_person

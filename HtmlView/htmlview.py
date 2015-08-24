@@ -248,7 +248,7 @@ class RendererWebkit(Renderer):
         except: # pylint: disable-msg=W0702
             pass
         try: # needs webkit 1.1.22
-            settings.set_property("auto-resize-window", True) 
+            settings.set_property("auto-resize-window", True)
         except: # pylint: disable-msg=W0702
             pass
         try: # needs webkit 1.1.2
@@ -384,7 +384,7 @@ class HtmlView(NavigationView):
         """
         self.forward_action.set_sensitive(self.renderer.can_go_forward())
         self.back_action.set_sensitive(self.renderer.can_go_back())
-        
+
     def open(self, url):
         """
         open an url
@@ -427,7 +427,7 @@ class HtmlView(NavigationView):
         if url.find('://') == -1:
             url = 'http://'+ url
         self.open(url)
-        
+
     def build_tree(self):
         """
         Rebuilds the current display. Called from ViewManager
@@ -441,7 +441,7 @@ class HtmlView(NavigationView):
         as a stock icon.
         """
         return 'gramps-view'
-    
+
     def get_viewtype_stock(self):
         """Type of view in category
         """
@@ -479,21 +479,21 @@ class HtmlView(NavigationView):
         """
         self.back_action = Gtk.ActionGroup(name=self.title + '/Back')
         self.back_action.add_actions([
-            ('Back', Gtk.STOCK_GO_BACK, _("_Back"), 
-             "<ALT>Left", _("Go to the previous page in the history"), 
+            ('Back', Gtk.STOCK_GO_BACK, _("_Back"),
+             "<ALT>Left", _("Go to the previous page in the history"),
              self.go_back)
             ])
         self._add_action_group(self.back_action)
         # add the Forward action to handle the Forward button
         self.forward_action = Gtk.ActionGroup(name=self.title + '/Forward')
         self.forward_action.add_actions([
-            ('Forward', Gtk.STOCK_GO_FORWARD, _("_Forward"), 
-             "<ALT>Right", _("Go to the next page in the history"), 
+            ('Forward', Gtk.STOCK_GO_FORWARD, _("_Forward"),
+             "<ALT>Right", _("Go to the next page in the history"),
              self.go_forward)
             ])
         self._add_action_group(self.forward_action)
         # add the Refresh action to handle the Refresh button
-        self._add_action('Refresh', Gtk.STOCK_REFRESH, _("_Refresh"), 
+        self._add_action('Refresh', Gtk.STOCK_REFRESH, _("_Refresh"),
                           callback=self.refresh,
                           accel="<Ctl>R",
                           tip=_("Stop and reload the page."))

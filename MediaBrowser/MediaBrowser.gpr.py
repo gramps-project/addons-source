@@ -25,9 +25,9 @@
 # Register Gramplet
 #
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id="MediaBrowser", 
-         name=_("Media Browser"), 
+register(GRAMPLET,
+         id="MediaBrowser",
+         name=_("Media Browser"),
          description = _("Gramplet showing details of a person"),
          version = '1.0.20',
          gramps_target_version="5.0",

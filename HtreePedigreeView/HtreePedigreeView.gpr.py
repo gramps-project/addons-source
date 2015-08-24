@@ -29,7 +29,7 @@
 #
 #------------------------------------------------------------------------
 
-register(VIEW, 
+register(VIEW,
 id    = 'HtreePedigreeView',
 name  = _("H-Tree Pedigree"),
 category = ("Ancestry", _("Ancestry")),

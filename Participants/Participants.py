@@ -55,12 +55,12 @@ class Participants(Gramplet, DbGUIElement):
         """
         called on init of DbGUIElement, connect to db as required.
         """
-        self.callman.register_callbacks({'person-update': self.changed, 
+        self.callman.register_callbacks({'person-update': self.changed,
                                          'event-update': self.changed})
         self.callman.connect_all(keys=['person', 'event'])
         #self.dbstate.db.connect('person-update', self.update)
         self.connect_signal('Event', self.update)
-    
+
     def changed(self, handle):
         """
         Called when a registered person is updated.
@@ -82,7 +82,7 @@ class Participants(Gramplet, DbGUIElement):
                   (_('Spouses'), 4, 200)]
         self.model = ListModel(top, titles, event_func=self.edit_person)
         return top
-        
+
     def display_participants(self, active_handle):
         """
         Display the participants of an event.
@@ -204,11 +204,11 @@ class Participants(Gramplet, DbGUIElement):
         for handle in self.dbstate.db.find_backlink_handles(active_handle):
             return True
         return False
-        
+
     def update_has_data(self):
         active_handle = self.get_active('Event')
         self.set_has_data(self.get_has_data(active_handle))
-    
+
     def main(self):
         active_handle = self.get_active('Event')
         self.model.clear()

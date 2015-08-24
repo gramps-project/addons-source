@@ -63,7 +63,7 @@ class DateCalculator(Gramplet):
         self.entry1 = self.__add_text_view(_("Expression 1"))
         self.entry2 = self.__add_text_view(_("Expression 2"))
         self.result = self.__add_text_view(_("Result"))
-        
+
         bbox = Gtk.ButtonBox()
         apply_button = Gtk.Button(label=_("Calculate"))
         apply_button.connect('clicked', self.apply_clicked)
@@ -72,7 +72,7 @@ class DateCalculator(Gramplet):
         clear_button.connect('clicked', self.clear_clicked)
         bbox.pack_start(clear_button, False, False, 6)
         self.top.pack_start(bbox, False, False, 6)
-    
+
         self.top.show_all()
         self.clear_clicked(None)
         return self.top

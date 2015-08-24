@@ -64,7 +64,7 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
             try:
                 user = User()
                 MyReport = report_class(dialog.db, dialog.options, user)
-                
+
                 def do_report():
                     MyReport.doc.init()
                     MyReport.begin_report()
@@ -76,7 +76,7 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
                 if dialog.open_with_app.get_active():
                     out_file = dialog.options.get_output()
                     open_file_with_default_application(out_file)
-            
+
             except Errors.FilterError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
@@ -85,7 +85,7 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
             except Errors.ReportError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
-            except Errors.DatabaseError as msg:                
+            except Errors.DatabaseError as msg:
                 ErrorDialog(_("Report could not be created"), str(msg))
                 raise
             except:

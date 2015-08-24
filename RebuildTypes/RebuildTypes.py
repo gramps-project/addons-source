@@ -45,7 +45,7 @@ class RebuildTypes(tool.Tool):
     """
 
     def __init__(self, dbstate, uistate, options_class, name, callback=None):
-        
+
         tool.Tool.__init__(self, dbstate, options_class, name)
 
         if self.db.readonly:
@@ -65,7 +65,7 @@ class RebuildTypes(tool.Tool):
 
         self.db.individual_event_names.update(person_event_types)
         self.db.family_event_names.update(family_event_types)
-        
+
         total = len(person_event_types) + len(family_event_types)
 
         OkDialog(_("Gramps Types rebuilt"),

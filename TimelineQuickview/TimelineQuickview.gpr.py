@@ -4,7 +4,7 @@
 #
 #------------------------------------------------------------------------
 
-register(QUICKREPORT, 
+register(QUICKREPORT,
          id    = 'timelinequickview',
          name  = _("Timeline"),
          description= _("Display a person's events on a timeline"),

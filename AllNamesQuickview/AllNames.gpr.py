@@ -1,4 +1,4 @@
-register(QUICKREPORT, 
+register(QUICKREPORT,
          id    = 'allnames',
          name  = _("All Names of All People"),
          description= _("Display all names of all people"),

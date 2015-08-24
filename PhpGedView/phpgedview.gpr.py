@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-register(TOOL, 
+register(TOOL,
          id    = 'PhpGedView',
          name  = _("PhpGedView"),
          description =  _("Download a GEDCOM file from a phpGedView server."),

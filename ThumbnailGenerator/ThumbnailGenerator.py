@@ -51,7 +51,7 @@ class ThumbnailGenerator(tool.Tool):
 
         self.db = dbstate.db
         progress = ProgressMeter(_('Thumbnail Generator'), can_cancel=True)
-            
+
         length = self.db.get_number_of_media_objects()
         progress.set_pass(_('Generating media thumbnails'),
                                length)
@@ -62,7 +62,7 @@ class ThumbnailGenerator(tool.Tool):
             progress.step()
             if progress.get_cancelled():
                 break
-            
+
         length = self.db.get_number_of_people()
         progress.set_pass(_('Generating thumbnails for person references'),
                                length)

@@ -20,7 +20,7 @@
 
 # $Id$
 
-register(TOOL, 
+register(TOOL,
          id    = 'AttachSource',
          name  = _("Attach Source"),
          description =  _("Attaches a shared source to multiple objects."),

@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(DATABASE, 
+register(DATABASE,
          id    = 'dbapi',
          name  = _("DB-API 2.0 Database Backend"),
          name_accell  = _("DB-_API 2.0 Database Backend"),

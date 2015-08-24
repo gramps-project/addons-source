@@ -1,6 +1,6 @@
 # encoding: utf-8
 #
-# Gramps - a GTK+/GNOME based genealogy program 
+# Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009 Doug Blank <doug.blank@gmail.com>
 #
@@ -83,7 +83,7 @@ class DeepConnectionsGramplet(Gramplet):
         """
         retval = []
         note_list = obj.get_note_list()
-        for note_handle in note_list: 
+        for note_handle in note_list:
             note = self.dbstate.db.get_note_from_handle(note_handle)
             if note:
                 links = note.get_links()
@@ -108,7 +108,7 @@ class DeepConnectionsGramplet(Gramplet):
                 children = family.get_child_ref_list()
                 husband = family.get_father_handle()
                 wife = family.get_mother_handle()
-                retval.extend((child_ref.ref, (path, (_("child"), person_handle, 
+                retval.extend((child_ref.ref, (path, (_("child"), person_handle,
                                                       husband, wife)))
                               for child_ref in children)
                 if husband and husband != person_handle:
@@ -124,14 +124,14 @@ class DeepConnectionsGramplet(Gramplet):
                 children = family.get_child_ref_list()
                 husband = family.get_father_handle()
                 wife = family.get_mother_handle()
-                retval.extend((child_ref.ref, (path, 
+                retval.extend((child_ref.ref, (path,
                                     (_("sibling"), person_handle, husband, wife)))
                               for child_ref in children if child_ref.ref != person_handle)
                 if husband and husband != person_handle:
-                    retval += [(husband, 
+                    retval += [(husband,
                                 (path, (_("father"), person_handle, wife)))]
                 if wife and wife != person_handle:
-                    retval += [(wife, 
+                    retval += [(wife,
                                 (path, (_("mother"), person_handle, husband)))]
                 retval += self.get_links_from_notes(family, path, _("Note on Parent Family"), person_handle)
         assoc_list = person.get_person_ref_list()
@@ -154,7 +154,7 @@ class DeepConnectionsGramplet(Gramplet):
         Print a path to a person, with links.
         """
         # (path, (relation_text, handle, [p1, [p2]]))
-        more_path = path[0] 
+        more_path = path[0]
         text = path[1][0]
         handle = path[1][1]
         parents = path[1][2:]
@@ -193,8 +193,8 @@ class DeepConnectionsGramplet(Gramplet):
         if active_person == None:
             self.set_text(_("No Active Person set."))
             return
-        self.cache = set() 
-        self.queue = [(self.default_person.handle, 
+        self.cache = set()
+        self.queue = [(self.default_person.handle,
                        (None, (_("self"), self.default_person.handle, [])))]
         default_name = self.default_person.get_primary_name()
         active_name = active_person.get_primary_name()
@@ -202,14 +202,14 @@ class DeepConnectionsGramplet(Gramplet):
         self.render_text((_("Looking for relationship between\n") +
                            _("  <b>%s</b> (Home Person) and\n") +
                            _("  <b>%s</b> (Active Person)...\n")) %
-                         (name_displayer.display_name(default_name), 
+                         (name_displayer.display_name(default_name),
                           name_displayer.display_name(active_name)))
         yield True
         relationship = self.relationship_calc.get_one_relationship(
             self.dbstate.db, self.default_person, active_person)
         while self.queue:
             current_handle, current_path = self.queue.pop(0)
-            if current_handle == active_person.handle: 
+            if current_handle == active_person.handle:
                 self.total_relations_found += 1
                 self.append_text(_("Found relation #%d: \n   ") % self.total_relations_found)
 
@@ -226,14 +226,14 @@ class DeepConnectionsGramplet(Gramplet):
                     yield False
                 else:
                     break
-            elif current_handle in self.cache: 
+            elif current_handle in self.cache:
                 continue
             self.cache.add(current_handle)
             relatives = self.get_relatives(current_handle, current_path)
             for items in relatives:
                 person_handle = items[0]
-                path = items[1] 
-                if person_handle is not None: # and person_handle not in self.cache: 
+                path = items[1]
+                if person_handle is not None: # and person_handle not in self.cache:
                     self.queue.append((person_handle, path))
             yield True
         self.append_text(_("\nSearch completed. %d relations found.") % self.total_relations_found)

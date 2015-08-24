@@ -101,7 +101,7 @@ else:
             prog = os.path.join(lpath, FILE_PATH)
             if os.path.isfile(prog):
                 _GOOGLEEARTH_OK = True
-      
+
 def _combine(str1, str2):
     """
     Combines two strings to one if both are not empty

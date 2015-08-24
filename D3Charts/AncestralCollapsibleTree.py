@@ -240,7 +240,7 @@ class AncestralCollapsibleTreeReport(Report):
             self.json_fp.write(',\n')
             self.json_fp.write('%s"children": [\n' %
                 (self.pad_str(gen_pad+1)))
-            
+
             self.json_filter(father_handle, generation+1)
 
             if father_handle and mother_handle:

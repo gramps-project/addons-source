@@ -69,14 +69,14 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         Write the witnesses associated with the family event. 
         based on http://www.geneanet.org/forum/index.php?topic=432352.0&lang=fr
         """
-        super(GedcomWriterExtension, self)._process_family_event(event, 
+        super(GedcomWriterExtension, self)._process_family_event(event,
                                                                  event_ref)
         if self.include_witnesses:
             for (objclass, handle) in self.dbase.find_backlink_handles(
                 event.handle, ['Person']):
                 person = self.dbase.get_person_from_handle(handle)
                 for ref in person.get_event_ref_list():
-                    if (ref.ref == event.handle and 
+                    if (ref.ref == event.handle and
                         int(ref.get_role()) == EventRoleType.WITNESS):
                         level = 1
                         self._writeln(level, "ASSO", "@%s@" % person.get_gramps_id())
@@ -111,8 +111,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.include_witnesses_check = Gtk.CheckButton(_("Include witnesses"))
         self.include_media_check = Gtk.CheckButton(_("Include media"))
         # Set defaults:
-        self.include_witnesses_check.set_active(1) 
-        self.include_media_check.set_active(1) 
+        self.include_witnesses_check.set_active(1)
+        self.include_media_check.set_active(1)
         # Add to gui:
         option_box.pack_start(self.include_witnesses_check, False, False, 0)
         option_box.pack_start(self.include_media_check, False, False, 0)

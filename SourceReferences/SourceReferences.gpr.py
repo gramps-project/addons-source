@@ -26,9 +26,9 @@
 # Register Gramplet
 #
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id="Source References", 
-         name=_("Source References"), 
+register(GRAMPLET,
+         id="Source References",
+         name=_("Source References"),
          description = _("Gramplet showing the references for a source"),
          version = '1.0.6',
          gramps_target_version="5.0",

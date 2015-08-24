@@ -1,4 +1,4 @@
-register(VIEW, 
+register(VIEW,
          id    = 'graphview',
          name  = _("Graph View"),
          category = ("Ancestry", _("Charts")),

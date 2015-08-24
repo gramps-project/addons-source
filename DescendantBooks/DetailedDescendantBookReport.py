@@ -40,10 +40,10 @@ from functools import partial
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.errors import ReportError
 from gramps.gen.lib import FamilyRelType, Person, NoteType
-from gramps.gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
+from gramps.gen.plug.menu import (BooleanOption, NumberOption, PersonOption,
                            EnumeratedListOption, FilterOption)
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
-                             FONT_SANS_SERIF, FONT_SERIF, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                             FONT_SANS_SERIF, FONT_SERIF,
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gramps.gen.plug.report import stdoptions
 from gramps.gen.plug.report import (Report, Bibliography)
@@ -180,7 +180,7 @@ class DetailedDescendantBookReport(Report):
         locale = self.set_locale(language)
         self._locale = self.set_locale(language)
 
-        # Copy the global NameDisplay so that we don't change application 
+        # Copy the global NameDisplay so that we don't change application
         # defaults.
         self._name_display = copy.deepcopy(global_name_display)
         name_format = menu.get_option_by_name("name_format").get_value()
@@ -188,7 +188,7 @@ class DetailedDescendantBookReport(Report):
             self._name_display.set_default_format(name_format)
 
         self.__narrator = Narrator(self.database, self.verbose,
-                                   use_call, use_fulldate, 
+                                   use_call, use_fulldate,
                                    empty_date, empty_place,
                                    nlocale=self._locale,
                                    get_endnote_numbers=self.endnotes)
@@ -215,7 +215,7 @@ class DetailedDescendantBookReport(Report):
 
         if len(self.gen_keys) < cur_gen:
             self.gen_keys.append([index])
-        else: 
+        else:
             self.gen_keys[cur_gen-1].append(index)
 
         person = self.database.get_person_from_handle(person_handle)
@@ -237,7 +237,7 @@ class DetailedDescendantBookReport(Report):
 
         if len(self.gen_keys) < cur_gen:
             self.gen_keys.append([index])
-        else: 
+        else:
             self.gen_keys[cur_gen-1].append(index)
 
         person = self.database.get_person_from_handle(person_handle)
@@ -255,10 +255,10 @@ class DetailedDescendantBookReport(Report):
         if (not person_handle) or (cur_gen > self.max_generations):
             return
         self.map[index] = person_handle
-                
+
         if len(self.gen_keys) < cur_gen:
             self.gen_keys.append([index])
-        else: 
+        else:
             self.gen_keys[cur_gen-1].append(index)
 
         person = self.database.get_person_from_handle(person_handle)
@@ -347,7 +347,7 @@ class DetailedDescendantBookReport(Report):
                                  _('Generating %s report references...') % \
                                  (len(self.ascendants)), len(self.ascendants))
 
-            # Need to do two runs of generations, 
+            # Need to do two runs of generations,
             # 1st run gets references for all people/mates in report
             # 2nd run actually generates the report and includes the references
             self.report_app_ref = {}
@@ -360,7 +360,7 @@ class DetailedDescendantBookReport(Report):
                     self.user.step_progress()
                     # Add item for table of contents page
                 self.report_count += 1
-     
+
                 # in the list
                 self.__init_variables()
 
@@ -397,7 +397,7 @@ class DetailedDescendantBookReport(Report):
                                     mate_handle = family.get_mother_handle()
                                 else:
                                     mate_handle = family.get_father_handle()
-                             
+
                                 if mate_handle:
                                     self.__update_report_app_ref(mate_handle,
                                                                 person_handle)
@@ -434,7 +434,7 @@ class DetailedDescendantBookReport(Report):
             name = self._name_display.display_name(person.get_primary_name())
 
             self.doc.start_paragraph("DDR-Title")
-    
+
             self.report_count += 1
             if len(self.ascendants) > 1:
                 self.title = \
@@ -471,7 +471,7 @@ class DetailedDescendantBookReport(Report):
             # Put a page break between reports
             self.doc.page_break()
 
-      
+
 #TODO add user interface information
 
         if self.inc_index_names:
@@ -508,12 +508,12 @@ class DetailedDescendantBookReport(Report):
         self.doc.end_paragraph()
 
         sorted_places = sorted(self.index_of_places.keys())
-        for place in sorted_places:            
+        for place in sorted_places:
             self.doc.start_paragraph("DDR-IndexPlacesPlace")
             ref_str = "%s" % (place)
             self.doc.write_text_citation(ref_str)
             self.doc.end_paragraph()
-        
+
             sorted_dates = sorted(self.index_of_places[place].keys())
             for date in sorted_dates:
                 self.doc.start_paragraph("DDR-IndexPlacesEntry")
@@ -531,7 +531,7 @@ class DetailedDescendantBookReport(Report):
         self.doc.end_paragraph()
 
         sorted_year = sorted(self.index_of_dates.keys())
-        for year in sorted_year:            
+        for year in sorted_year:
             self.doc.start_paragraph("DDR-IndexDatesYear")
             ref_str = "%s" % (year)
             self.doc.write_text_citation(ref_str)
@@ -560,7 +560,7 @@ class DetailedDescendantBookReport(Report):
 
         sorted_phandles = sorted(self.report_app_ref.keys(), key=lambda k: self.report_app_ref[k][0][4])
         for person_handle in sorted_phandles:
-            
+
             first_line_done = False
             for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
                 if not first_line_done:
@@ -672,7 +672,7 @@ class DetailedDescendantBookReport(Report):
 
         if self.inc_paths:
             self.write_path(person)
-        
+
 #BOOK start
         if self.dubperson and  self.report_count > 1:
             if person_handle in self.persons_printed:
@@ -690,7 +690,7 @@ class DetailedDescendantBookReport(Report):
         if self.dubperson:
             # Check for duplicate record (result of distant cousins marrying)
             for dkey in sorted(self.map):
-                if dkey >= key: 
+                if dkey >= key:
                     break
                 if self.map[key] == self.map[dkey]:
                     self.doc.write_text(self._(
@@ -703,7 +703,7 @@ class DetailedDescendantBookReport(Report):
                     return
 
         self.doc.end_paragraph()
-       
+
         self.write_person_info(person, None) #BOOK
 
         if (self.inc_mates or self.listchildren or self.inc_notes or
@@ -743,7 +743,7 @@ class DetailedDescendantBookReport(Report):
             if (repno != self.report_count or gen != self.generation+1) or \
                 (repno == self.report_count and gen == self.generation+1 \
                 and per != dnum):
-                if mate:    
+                if mate:
                     if not header_done:
                         self.doc.start_paragraph("DDR-NoteHeader")
                         self.doc.write_text(self._("Report appearances " \
@@ -771,7 +771,7 @@ class DetailedDescendantBookReport(Report):
                     self.doc.end_paragraph()
 #BOOK end
 
-    def append_event(self, event_ref, family = False):        
+    def append_event(self, event_ref, family = False):
 
         (repno, gen, per, mate, name) = self.report_app_ref[self.phandle][0] # get first reference to the person
 
@@ -798,7 +798,7 @@ class DetailedDescendantBookReport(Report):
                             'event_name' : self._(event_name), 'name' : father_name, 'mate' : mother_name }
 
         if date and place:
-            text +=  self._('%(date)s, %(place)s') % { 
+            text +=  self._('%(date)s, %(place)s') % {
                        'date' : date, 'place' : place }
         elif date:
             text += self._('%(date)s') % {'date' : date}
@@ -812,7 +812,7 @@ class DetailedDescendantBookReport(Report):
             self.__update_index_of_dates(event.get_date_object(), text)
         if (place and self.inc_index_of_places):
             self.__update_index_of_places(place, event.get_date_object(), text)
-            
+
 
     def write_event(self, event_ref):
         text = ""
@@ -842,7 +842,7 @@ class DetailedDescendantBookReport(Report):
 #BOOK end
 
         if date and place:
-            text +=  self._('%(date)s, %(place)s') % { 
+            text +=  self._('%(date)s, %(place)s') % {
                        'date' : date, 'place' : place }
         elif date:
             text += self._('%(date)s') % {'date' : date}
@@ -853,16 +853,16 @@ class DetailedDescendantBookReport(Report):
             if text:
                 text += ". "
             text += event.get_description()
-            
+
         text += self.endnotes(event)
-        
+
         if text:
             text += ". "
-            
+
         text = self._(' %(event_text)s') % {'event_text' : text} #BOOK
-        
+
         self.doc.write_text_citation(text)
-        
+
         if self.inc_attrs:
             text = ""
             attr_list = event.get_attribute_list()
@@ -887,7 +887,7 @@ class DetailedDescendantBookReport(Report):
             notelist.extend(event_ref.get_note_list())
             for notehandle in notelist:
                 note = self.database.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
+                self.doc.write_styled_note(note.get_styledtext(),
                         note.get_format(),"DDR-EventDetails",   # BOOK
                         contains_html= note.get_type() == NoteType.HTML_CODE)
 
@@ -936,13 +936,13 @@ class DetailedDescendantBookReport(Report):
                 name = ""
             text = ""
             spouse_mark = ReportUtils.get_person_mark(self.database, spouse)
-            
+
             text = self.__narrator.get_married_string(family, is_first, self._name_display)
-            
+
             if text:
                 self.doc.write_text_citation(text, spouse_mark)
                 is_first = False
-                
+
     def __write_mate(self, person, family):
         """
         Write information about the person's spouse/mate.
@@ -951,7 +951,7 @@ class DetailedDescendantBookReport(Report):
             mate_handle = family.get_mother_handle()
         else:
             mate_handle = family.get_father_handle()
-            
+
         if mate_handle:
             mate = self.database.get_person_from_handle(mate_handle)
 
@@ -1011,7 +1011,7 @@ class DetailedDescendantBookReport(Report):
 
         self.doc.start_paragraph("DDR-ChildTitle")
         self.doc.write_text(
-                        self._("Children of %(mother_name)s and %(father_name)s") % 
+                        self._("Children of %(mother_name)s and %(father_name)s") %
                             {'father_name': father_name,
                              'mother_name': mother_name
                              } )
@@ -1055,7 +1055,7 @@ class DetailedDescendantBookReport(Report):
             self.doc.write_text_citation(self.__narrator.get_born_string() or
                                          self.__narrator.get_christened_string() or
                                          self.__narrator.get_baptised_string())
-            self.doc.write_text_citation(self.__narrator.get_died_string() or 
+            self.doc.write_text_citation(self.__narrator.get_died_string() or
                                          self.__narrator.get_buried_string())
             self.doc.end_paragraph()
 
@@ -1069,13 +1069,13 @@ class DetailedDescendantBookReport(Report):
 
             self.doc.start_paragraph("DDR-NoteHeader")
             self.doc.write_text(
-                self._('Notes for %(mother_name)s and %(father_name)s:') % { 
+                self._('Notes for %(mother_name)s and %(father_name)s:') % {
                 'mother_name' : mother_name,
                 'father_name' : father_name })
             self.doc.end_paragraph()
             for notehandle in notelist:
                 note = self.database.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
+                self.doc.write_styled_note(note.get_styledtext(),
                                            note.get_format(),"DDR-Entry")
 
     def __write_family_events(self, family):
@@ -1092,7 +1092,7 @@ class DetailedDescendantBookReport(Report):
             if first:
                 self.doc.start_paragraph('DDR-MoreHeader')
                 self.doc.write_text(
-                    self._('More about %(mother_name)s and %(father_name)s:') % { 
+                    self._('More about %(mother_name)s and %(father_name)s:') % {
                     'mother_name' : mother_name,
                     'father_name' : father_name })
                 self.doc.end_paragraph()
@@ -1115,7 +1115,7 @@ class DetailedDescendantBookReport(Report):
 
             self.doc.start_paragraph('DDR-MoreHeader')
             self.doc.write_text(
-                self._('More about %(mother_name)s and %(father_name)s:') % { 
+                self._('More about %(mother_name)s and %(father_name)s:') % {
                 'mother_name' : mother_name,
                 'father_name' : father_name })
             self.doc.end_paragraph()
@@ -1136,28 +1136,28 @@ class DetailedDescendantBookReport(Report):
                 notelist = attr.get_note_list()
                 for notehandle in notelist:
                     note = self.database.get_note_from_handle(notehandle)
-                    self.doc.write_styled_note(note.get_styledtext(), 
+                    self.doc.write_styled_note(note.get_styledtext(),
                              note.get_format(),"DDR-EventDetails")  #BOOK
 
 
     def write_person_info(self, person, main_person = None): #BOOK
         name = self._name_display.display_formal(person)
         self.__narrator.set_subject(person)
-    
+
 #BOOK start
         person_handle = person.get_handle()
         main_person_handle = "VOID"
         if main_person is not None:
             main_person_handle = main_person.get_handle()
 #BOOK end
-        
+
         plist = person.get_media_list()
         if self.addimages and len(plist) > 0:
             photo = plist[0]
             ReportUtils.insert_image(self.database, self.doc, photo, self._user)
-        
+
         self.doc.start_paragraph("DDR-Entry")
-        
+
         if not self.verbose:
             self.__write_parents(person)
 
@@ -1168,11 +1168,11 @@ class DetailedDescendantBookReport(Report):
         text = self.__narrator.get_baptised_string()
         if text:
             self.doc.write_text_citation(text)
-            
+
         text = self.__narrator.get_christened_string()
         if text:
             self.doc.write_text_citation(text)
-    
+
         text = self.__narrator.get_died_string(self.calcageflag)
         if text:
             self.doc.write_text_citation(text)
@@ -1201,7 +1201,7 @@ class DetailedDescendantBookReport(Report):
             self.doc.end_paragraph()
             for notehandle in notelist:
                 note = self.database.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
+                self.doc.write_styled_note(note.get_styledtext(),
                         note.get_format(),"DDR-Entry",
                         contains_html= note.get_type() == NoteType.HTML_CODE)
 
@@ -1210,7 +1210,7 @@ class DetailedDescendantBookReport(Report):
             for alt_name in person.get_alternate_names():
                 if first:
                     self.doc.start_paragraph('DDR-MoreHeader')
-                    self.doc.write_text(self._('More about %(person_name)s:') % { 
+                    self.doc.write_text(self._('More about %(person_name)s:') % {
                         'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
@@ -1229,26 +1229,26 @@ class DetailedDescendantBookReport(Report):
                 if self.inc_events:
                     if first:
                         self.doc.start_paragraph('DDR-MoreHeader')
-                        self.doc.write_text(self._('More about %(person_name)s:') % { 
+                        self.doc.write_text(self._('More about %(person_name)s:') % {
                             'person_name' : self._name_display.display(person) })
                         self.doc.end_paragraph()
                         first = 0
-    
+
                     self.write_event(event_ref)
-                    
+
                 if (self.inc_index_of_dates or self.inc_index_of_places):
                     self.append_event(event_ref)
-                
+
         if self.inc_addr:
             for addr in person.get_address_list():
                 if first:
                     self.doc.start_paragraph('DDR-MoreHeader')
-                    self.doc.write_text(self._('More about %(person_name)s:') % { 
+                    self.doc.write_text(self._('More about %(person_name)s:') % {
                         'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
                 self.doc.start_paragraph('DDR-MoreDetails')
-                
+
                 text = ReportUtils.get_address_str(addr)
 
                 if self.fulldate:
@@ -1262,12 +1262,12 @@ class DetailedDescendantBookReport(Report):
                 self.doc.write_text( text )
                 self.doc.write_text_citation( self.endnotes(addr) )
                 self.doc.end_paragraph()
-                
+
         if self.inc_attrs:
             attrs = person.get_attribute_list()
             if first and attrs:
                 self.doc.start_paragraph('DDR-MoreHeader')
-                self.doc.write_text(self._('More about %(person_name)s:') % { 
+                self.doc.write_text(self._('More about %(person_name)s:') % {
                     'person_name' : name })
                 self.doc.end_paragraph()
                 first = False
@@ -1292,7 +1292,7 @@ class DetailedDescendantBookReport(Report):
     def endnotes(self, obj):
         if not obj or not self.inc_sources:
             return ""
-        
+
         txt = endnotes.cite_source(self.bibli, self.database, obj)
         if txt:
             txt = '<super>' + txt + '</super>'
@@ -1313,28 +1313,28 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         self.__pid = None
         self.__filter = None
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the detailed descendant report.
         """
 
         # Report Options
-        
+
         add_option = partial(menu.add_option, _("Report Options"))
 
         self.__filter = FilterOption(_("Filter"), 0)
         self.__filter.set_help(
                _("Select filter to restrict people that appear in the report"))
         add_option("filter", self.__filter)
-        
+
         self.__pid = PersonOption(_("Center Person"))
         self.__pid.set_help(_("The center person for the report"))
         add_option("pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
 
         self.__update_filters()
-        
+
         # We must figure out the value of the first option before we can
         # create the EnumeratedListOption
         fmt_list = global_name_display.get_name_format()
@@ -1347,19 +1347,19 @@ class DetailedDescendantBookOptions(MenuReportOptions):
 
         numbering = EnumeratedListOption(_("Numbering system"), "Henry")
         numbering.set_items([
-                ("Henry",      _("Henry numbering")), 
-                ("d'Aboville", _("d'Aboville numbering")), 
-                ("Record (Modified Register)", 
+                ("Henry",      _("Henry numbering")),
+                ("d'Aboville", _("d'Aboville numbering")),
+                ("Record (Modified Register)",
                                _("Record (Modified Register) numbering"))])
         numbering.set_help(_("The numbering system to be used"))
         add_option("numbering", numbering)
-        
+
         generations = NumberOption(_("Generations"), 10, 1, 100)
         generations.set_help(
             _("The number of generations to include in the report")
             )
         add_option("gen", generations)
-        
+
         pagebbg = BooleanOption(_("Page break between generations"), False)
         pagebbg.set_help(
                      _("Whether to start a new page after each generation."))
@@ -1373,30 +1373,30 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         stdoptions.add_localization_option(menu, "Report Options")
 
         # Content
-        
+
         add_option = partial(menu.add_option, _("Content"))
 
         usecall = BooleanOption(_("Use callname for common name"), False)
         usecall.set_help(_("Whether to use the call name as the first name."))
         add_option("usecall", usecall)
-        
+
         fulldates = BooleanOption(_("Use full dates instead of only the year"),
                                   True)
         fulldates.set_help(_("Whether to use full dates instead of just year."))
         add_option("fulldates", fulldates)
-        
+
         listc = BooleanOption(_("List children"), True)
         listc.set_help(_("Whether to list children."))
         add_option("listc", listc)
-        
+
         computeage = BooleanOption(_("Compute death age"),True)
         computeage.set_help(_("Whether to compute a person's age at death."))
         add_option("computeage", computeage)
-        
+
         omitda = BooleanOption(_("Omit duplicate ancestors"), True)
         omitda.set_help(_("Whether to omit duplicate ancestors."))
         add_option("omitda", omitda)
-        
+
         verbose = BooleanOption(_("Use complete sentences"), True)
         verbose.set_help(
                  _("Whether to use complete sentences or succinct language."))
@@ -1410,7 +1410,7 @@ class DetailedDescendantBookOptions(MenuReportOptions):
 
         category_name = _("Include")
         add_option = partial(menu.add_option, _("Include"))
-        
+
         incnotes = BooleanOption(_("Include notes"), True)
         incnotes.set_help(_("Whether to include notes."))
         add_option("incnotes", incnotes)
@@ -1418,7 +1418,7 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         incattrs = BooleanOption(_("Include attributes"), False)
         incattrs.set_help(_("Whether to include attributes."))
         add_option("incattrs", incattrs)
-        
+
         incphotos = BooleanOption(_("Include Photo/Images from Gallery"), False)
         incphotos.set_help(_("Whether to include images."))
         add_option("incphotos", incphotos)
@@ -1438,7 +1438,7 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         incsources = BooleanOption(_("Include sources"), False)
         incsources.set_help(_("Whether to include source references."))
         add_option("incsources", incsources)
-        
+
         incsrcnotes = BooleanOption(_("Include sources notes"), False)
         incsrcnotes.set_help(_("Whether to include source notes in the "
             "Endnotes section. Only works if Include sources is selected."))
@@ -1481,8 +1481,8 @@ class DetailedDescendantBookOptions(MenuReportOptions):
 
 
         # Missing information
-        
-        add_option = partial(menu.add_option, _("Missing information"))      
+
+        add_option = partial(menu.add_option, _("Missing information"))
 
         repplace = BooleanOption(_("Replace missing places with ______"), False)
         repplace.set_help(_("Whether to replace missing Places with blanks."))
@@ -1568,7 +1568,7 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         para = ParagraphStyle()
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)        
+        para.set_bottom_margin(0.25)
         para.set_description(_('The style used for the first personal entry.'))
         default_style.add_paragraph_style("DDR-First-Entry", para)
 

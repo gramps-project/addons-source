@@ -80,7 +80,7 @@ class Attributes(Gramplet):
             handle = obj.get_handle()
         except AttributeError:
             handle = obj.ref
-         
+
         for attr in obj.get_attribute_list():
             self.model.add((event_date,
                             event_sort,
@@ -102,7 +102,7 @@ class Attributes(Gramplet):
             self.add_attributes(event_ref, event_date)
 
         self.set_has_data(self.model.count > 0)
-        
+
     def _display_editor(self, treeview):
         """
         Display the appropriate editor window for the attribute.
@@ -113,7 +113,7 @@ class Attributes(Gramplet):
         """
         Return True if the gramplet has data, else return False.
         """
-        if obj is None: 
+        if obj is None:
             return False
         if obj.get_attribute_list():
             return True
@@ -172,7 +172,7 @@ class ExtendedPersonAttributes(Attributes):
 
             event = self.dbstate.db.get_event_from_handle(handle)
             if event:
-                event_ref = self._get_event_ref(event) 
+                event_ref = self._get_event_ref(event)
                 try:
                     EditEventRef(self.dbstate,
                                  self.uistate,
@@ -190,7 +190,7 @@ class ExtendedPersonAttributes(Attributes):
                     EditPerson(self.dbstate, self.uistate, [], person)
                 except WindowActiveError:
                     pass
-    
+
     def main(self):
         self.model.clear()
         active = self.get_active_object('Person')
@@ -216,7 +216,7 @@ class ExtendedFamilyAttributes(Attributes):
     def update_has_data(self):
         active = self.get_active_object('Family')
         self.set_has_data(self.get_has_data(active))
-    
+
     def _object_edited(self, ref, event):
         """
         Callback method for committing changes to the active person after an
@@ -236,7 +236,7 @@ class ExtendedFamilyAttributes(Attributes):
 
             event = self.dbstate.db.get_event_from_handle(handle)
             if event:
-                event_ref = self._get_event_ref(event) 
+                event_ref = self._get_event_ref(event)
                 try:
                     EditEventRef(self.dbstate,
                                  self.uistate,
@@ -258,7 +258,7 @@ class ExtendedFamilyAttributes(Attributes):
     def main(self):
         self.model.clear()
         active = self.get_active_object('Family')
-        
+
         # Keep a pointer to the active family in case the user decides to
         # modify an event ref attribute and we need to commit the change
         self.object_for_update = active

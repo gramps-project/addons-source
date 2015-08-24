@@ -4,9 +4,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id="etree Gramplet", 
-         name=_("etree Gramplet"), 
+register(GRAMPLET,
+         id="etree Gramplet",
+         name=_("etree Gramplet"),
          description = _("Gramplet for testing etree with Gramps XML"),
          status = STABLE, # not yet tested with python 3
          version = '1.0.0',

@@ -114,7 +114,7 @@ class LastChangeReport(Report):
              self.write_media()
          if _('Sources') in self.what_types:
              self.write_sources()
-    
+
     def _table_begin(self, title, table_name):
             self.doc.start_paragraph('LCR-SecHeader')
             self.doc.write_text(title)
@@ -210,7 +210,7 @@ class LastChangeReport(Report):
         handles = sorted(self.database.get_event_handles(), key=self._getEventTimestamp)
 
         # TODO: need the event date and type to be included in the description line
-        
+
         if len(handles) > 0:
             self._table_begin(_('Events Changed'), 'EventTable')
             self._table_header(_('ID'), _('Event'), _('Changed On'))
@@ -273,7 +273,7 @@ class LastChangeReport(Report):
                                     source_obj.get_title(),
                                     self._convert_date(source_obj.change))
             self._table_end()
-            
+
 
 class LastChangeOptions(MenuReportOptions):
     def __init__(self, name, database):

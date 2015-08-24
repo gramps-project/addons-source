@@ -112,7 +112,7 @@ class CensusReport(Report):
         # Title
         name = name_displayer.display_formal(self.person)
         title = _("Census Report for %s") % name
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)        
+        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph("CEN-Title")
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -147,7 +147,7 @@ class CensusReport(Report):
         if self.pgbrk and not self.first_page:
             self.doc.page_break()
             self.first_page = False
-        
+
         # Date, Source, Place
         p_handle = event.get_place_handle()
         place = self.database.get_place_from_handle(p_handle)
@@ -165,7 +165,7 @@ class CensusReport(Report):
 
         # Date
         self.write_heading(_("Date:"), get_date(event))
-        
+
         # Source Reference
         self.write_heading(_("Citation:"), citation.get_page())
 
@@ -178,7 +178,7 @@ class CensusReport(Report):
 
         self.doc.end_table()
         self.doc.start_table("centab", "CEN-" + census_id)
-       
+
         # People
         person_list = []
         e_handle = event.get_handle()
@@ -196,9 +196,9 @@ class CensusReport(Report):
             self.doc.write_text(column)
             self.doc.end_paragraph()
             self.doc.end_cell()
-            
+
         self.doc.end_row()
-        
+
         for row in sorted(person_list):
             self.doc.start_row()
 
@@ -214,9 +214,9 @@ class CensusReport(Report):
 
                 self.doc.end_paragraph()
                 self.doc.end_cell()
-                
+
             self.doc.end_row()
-            
+
         self.doc.end_table()
 
     def write_heading(self, title, value):
@@ -272,13 +272,13 @@ class CensusOptions(MenuReportOptions):
     def __init__(self, name, database):
         self.database = database
         MenuReportOptions.__init__(self, name, database)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the ancestor report.
         """
         category_name = _("Report Options")
-        
+
         report_type = EnumeratedListOption(_('Census Selection'), TYPE_PERSON)
         report_type.add_item(TYPE_PERSON, _('By Person'))
         report_type.add_item(TYPE_SOURCE, _('By Source'))
@@ -286,7 +286,7 @@ class CensusOptions(MenuReportOptions):
         report_type.add_item(TYPE_ALL, _('All Census records'))
         report_type.set_help(_("The type of report"))
         menu.add_option(category_name, "report_type", report_type)
-        
+
         pid = PersonOption(_("Person"))
         pid.set_help(_("The selected person for the report."))
         menu.add_option(category_name, "pid", pid)
@@ -300,11 +300,11 @@ class CensusOptions(MenuReportOptions):
         for source in sources:
             src_handle.add_item(source[0], source[1])
         menu.add_option(category_name, "src_handle", src_handle)
-        
+
         pg_break = BooleanOption(_("Page break after each census."), False)
         pg_break.set_help(_("Start a new page after each census."))
         menu.add_option(category_name, "pg_break", pg_break)
-        
+
     def make_default_style(self, default_style):
         """
         Make the default output style for the Census report.
@@ -319,10 +319,10 @@ class CensusOptions(MenuReportOptions):
         para.set_header_level(1)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
-        para.set_alignment(PARA_ALIGN_CENTER)       
+        para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the page.'))
         default_style.add_paragraph_style("CEN-Title", para)
-    
+
         #
         # CEN-Heading
         #
@@ -332,10 +332,10 @@ class CensusOptions(MenuReportOptions):
         para.set_font(font)
         para.set_header_level(2)
         para.set_top_margin(0.5)
-        para.set_bottom_margin(0.125)        
+        para.set_bottom_margin(0.125)
         para.set_description(_('The style used for headings.'))
         default_style.add_paragraph_style("CEN-Heading", para)
-    
+
         #
         # CEN-Name
         #
@@ -345,7 +345,7 @@ class CensusOptions(MenuReportOptions):
         para.set_font(font)
         para.set_description(_('The style used for names.'))
         default_style.add_paragraph_style("CEN-Name", para)
-        
+
         #
         # CEN-Column
         #
@@ -355,7 +355,7 @@ class CensusOptions(MenuReportOptions):
         para.set_font(font)
         para.set_description(_('The style used for column headings.'))
         default_style.add_paragraph_style("CEN-Column", para)
-        
+
         #
         # CEN-Normal
         #
@@ -388,13 +388,13 @@ class CensusOptions(MenuReportOptions):
         tbl.set_column_width(0, 30)
         tbl.set_column_width(1, 70)
         default_style.add_table_style("CEN-HeadingTable", tbl)
-        
+
         #
         # CEN-HeadingCell
         #
         cell = TableCellStyle()
         default_style.add_cell_style("CEN-HeadingCell", cell)
-        
+
         #
         # CEN-ColumnCell
         #
@@ -402,7 +402,7 @@ class CensusOptions(MenuReportOptions):
         cell.set_left_border(1)
         cell.set_right_border(1)
         default_style.add_cell_style("CEN-ColumnCell", cell)
-        
+
         #
         # CEN-BodyCell
         #

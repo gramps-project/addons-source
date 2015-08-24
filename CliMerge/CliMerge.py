@@ -52,7 +52,7 @@ class CliMerge(tool.Tool):
 
         if not obj_type:
             id2type = {'I':'Person', 'F':'Family', 'E':'Event', 'P': 'Place',
-                       'C': 'Citation', 'S':'Source', 'R':'Repository', 
+                       'C': 'Citation', 'S':'Source', 'R':'Repository',
                        'O':'Media', 'N':'Note'}
             obj_type = id2type[primary_id[0]]
 
@@ -61,7 +61,7 @@ class CliMerge(tool.Tool):
         secondary = database.get_from_name_and_gramps_id(obj_type, secondary_id)
         if not primary or not secondary:
             raise MergeError("Can't get object from ID.")
-        
+
         if type(primary) != type(secondary):
             raise MergeError("Primary and secondary object need to be of "
                 "the same type.")

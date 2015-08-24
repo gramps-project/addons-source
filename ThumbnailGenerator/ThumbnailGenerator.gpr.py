@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id = 'thumbgen',
 name = _("Thumbnail Generator"),
 description = _("Generates thumbnails for media files"),

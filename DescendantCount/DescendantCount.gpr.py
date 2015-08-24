@@ -12,9 +12,9 @@ register(QUICKREPORT,
          gramps_target_version = "5.0",
          )
 
-register(GRAMPLET, 
-         id="Descendant Count Gramplet", 
-         name=_("Descendant Count Gramplet"), 
+register(GRAMPLET,
+         id="Descendant Count Gramplet",
+         name=_("Descendant Count Gramplet"),
          description = _("Gramplet for showing people and descendant counts"),
          status= STABLE,
          fname="DescendantCount.py",

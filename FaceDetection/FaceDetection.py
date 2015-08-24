@@ -75,7 +75,7 @@ class FaceDetection(Gramplet):
         self.connect_signal('Media', self.update)
         self.update()
 
-    def update_has_data(self): 
+    def update_has_data(self):
         active_handle = self.get_active('Media')
         active_media = self.dbstate.db.get_object_from_handle(active_handle)
         self.set_has_data(active_media is not None)
@@ -125,7 +125,7 @@ class FaceDetection(Gramplet):
                         if rect:
                             x1, y1, x2, y2 = rect
                             # make percentages
-                            rects.append((x1/100.0, y1/100.0, 
+                            rects.append((x1/100.0, y1/100.0,
                                           (x2 - x1)/100.0, (y2 - y1)/100.0))
         return rects
 
@@ -139,9 +139,9 @@ class FaceDetection(Gramplet):
         o_width, o_height = self.cv_image.width, self.cv_image.height
         cv.EqualizeHist(self.cv_image, self.cv_image)
         cascade = cv.Load(HAARCASCADE_PATH)
-        faces = cv.HaarDetectObjects(self.cv_image, cascade, 
+        faces = cv.HaarDetectObjects(self.cv_image, cascade,
                                      cv.CreateMemStorage(0),
-                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
+                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING,
                                      min_face_size)
         references = self.find_references()
         rects = []
@@ -169,19 +169,19 @@ class FaceDetection(Gramplet):
                                 x, y, width, height, "red")
         self.photo.photo.set_from_pixmap(pixmap, mask)
 
-    def draw_rectangle(self, cm, pixmap, t_width, t_height, 
+    def draw_rectangle(self, cm, pixmap, t_width, t_height,
                        x, y, width, height, color):
         cmcolor = cm.alloc_color("white")
         gc = pixmap.new_gc(foreground=cmcolor)
         pixmap.draw_rectangle(gc, False, # fill it?
-                              int(x * t_width) + 1, 
-                              int(y * t_height) + 1, 
-                              int(width * t_width), 
+                              int(x * t_width) + 1,
+                              int(y * t_height) + 1,
+                              int(width * t_width),
                               int(height * t_height))
         cmcolor = cm.alloc_color(color)
         gc = pixmap.new_gc(foreground=cmcolor)
         pixmap.draw_rectangle(gc, False, # fill it?
-                              int(x * t_width), 
-                              int(y * t_height), 
-                              int(width * t_width), 
+                              int(x * t_width),
+                              int(y * t_height),
+                              int(width * t_width),
                               int(height * t_height))

@@ -63,7 +63,7 @@ ngettext = _trans.ngettext
 try:
     from django.conf import settings
 except:
-    ErrorDialog(_('django.conf could not be found'), 
+    ErrorDialog(_('django.conf could not be found'),
                 _('Django Addons require Django 1.3 or greater'))
 import gramps.webapp.settings as default_settings
 try:
@@ -75,15 +75,15 @@ except RuntimeError:
 from gramps.webapp.libdjango import DjangoInterface
 from django.db import transaction
 
-def export_all(database, filename, error_dialog, 
+def export_all(database, filename, error_dialog,
                option_box=None, callback=None):
-    if not callable(callback): 
+    if not callable(callback):
         callback = lambda percent: None # dummy
 
     start = time.time()
-    total = (database.get_number_of_notes() + 
+    total = (database.get_number_of_notes() +
              database.get_number_of_people() +
-             database.get_number_of_events() + 
+             database.get_number_of_events() +
              database.get_number_of_families() +
              database.get_number_of_repositories() +
              database.get_number_of_places() +
@@ -183,7 +183,7 @@ def export_all(database, filename, error_dialog,
                 callback(100 * count/total)
 
             # ---------------------------------
-            # Place 
+            # Place
             # ---------------------------------
             for place_handle in database.place_map.keys():
                 data = database.place_map[place_handle]

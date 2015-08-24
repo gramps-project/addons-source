@@ -62,7 +62,7 @@ from gramps.gen.config import config as configman
 #---------------------------------------------------------------
 config = configman.register_manager("libwebconnect")
 # "leave alone", "separate", or "remove":
-config.register("behavior.middle-name", "remove") 
+config.register("behavior.middle-name", "remove")
 config.load()
 config.save()
 
@@ -90,7 +90,7 @@ def make_person_dict(dbstate, handle):
     Create a dictionary to hold values for replacing in URLs.
     """
     results = {
-        "surname": "", 
+        "surname": "",
         "given": "",
         "middle": "",
         "birth": "",
@@ -110,7 +110,7 @@ def make_person_dict(dbstate, handle):
             elif config.get("behavior.middle-name") == "leave alone":
                 pass
             else:
-                raise AttributeError("invalid middle-name setting: %s" % 
+                raise AttributeError("invalid middle-name setting: %s" %
                                      config.get("behavior.middle-name"))
         ref = person.get_birth_ref()
         if ref:

@@ -4,9 +4,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id="Query Gramplet", 
-         name=_("Query Gramplet"), 
+register(GRAMPLET,
+         id="Query Gramplet",
+         name=_("Query Gramplet"),
          description = _("Gramplet for running SQL-like queries"),
          status = UNSTABLE, # not yet tested with python 3
          version = '1.0.24',

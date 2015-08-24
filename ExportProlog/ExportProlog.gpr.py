@@ -4,7 +4,7 @@ register(EXPORT,
          description =  _('Exports data into a Prolog fact format'),
          version = '1.0.3',
          gramps_target_version = "5.0",
-         status = STABLE, 
+         status = STABLE,
          fname = 'ExportProlog.py',
          export_function = 'exportData',
          extension = "pl"

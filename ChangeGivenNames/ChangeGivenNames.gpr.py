@@ -31,7 +31,7 @@ GRAMPS registration file
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id    = 'chgivenname',
 name  = _("Fix Capitalization of Given Names"),
 description =  _("Searches the entire database and attempts to "

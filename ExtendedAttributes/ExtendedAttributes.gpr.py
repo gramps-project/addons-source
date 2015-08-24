@@ -26,9 +26,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id="Extended Person Attributes", 
-         name=_("Extended Person Attributes"), 
+register(GRAMPLET,
+         id="Extended Person Attributes",
+         name=_("Extended Person Attributes"),
          description = _("Gramplet showing the attributes of a person"),
          version = '1.0.18',
          gramps_target_version="5.0",
@@ -40,9 +40,9 @@ register(GRAMPLET,
          navtypes=["Person"],
          )
 
-register(GRAMPLET, 
-         id="Extended Family Attributes", 
-         name=_("Extended Family Attributes"), 
+register(GRAMPLET,
+         id="Extended Family Attributes",
+         name=_("Extended Family Attributes"),
          description = _("Gramplet showing the attributes of a family"),
          version = '1.0.18',
          gramps_target_version="5.0",

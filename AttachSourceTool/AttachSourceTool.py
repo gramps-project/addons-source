@@ -60,22 +60,22 @@ class AttachSourceOptions(MenuToolOptions):
     def __init__(self, name, person_id=None, dbstate=None):
         self.__db = dbstate.get_database()
         MenuToolOptions.__init__(self, name, person_id, dbstate)
-    
+
     def add_menu_options(self, menu):
-        
+
         """ Add the options """
         category_name = _("Options")
-        
+
         self.__filter = FilterOption(_("Person Filter"), 0)
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.__filter_changed)
-        
+
         self.__pid = PersonOption(_("Filter Person"))
         self.__pid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
-        
+
         self.__update_filters()
 
         source_type = EnumeratedListOption(_("Source type"), 0)
@@ -118,7 +118,7 @@ class AttachSourceOptions(MenuToolOptions):
         person = self.__db.get_person_from_gramps_id(gid)
         filter_list = ReportUtils.get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
-        
+
     def __filter_changed(self):
         """
         Handle filter change. If the filter is not specific to a person,
@@ -141,7 +141,7 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
 
     def run(self):
         self.skeys = {}
-        source_type = self.options.handler.options_dict['source_type'] 
+        source_type = self.options.handler.options_dict['source_type']
         # 0 - new, 1 - lookup
         if source_type == 0:
             source_text = self.options.handler.options_dict['source_text']
@@ -158,27 +158,27 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
             self.db.disable_signals()
             if source_type == 0:
                 source = self.create_source(source_text)
-    
+
             self.filter_option =  self.options.menu.get_option_by_name('filter')
             self.filter = self.filter_option.get_filter() # the actual filter
-    
+
             # FIXME: use old style for gramps31 compatible
             #    people = self.filter.apply(self.db,
             #                               self.db.iter_person_handles())
             people = self.filter.apply(self.db,
                                  self.db.get_person_handles(sort_handles=False))
-    
+
             # FIXME: use old style for gramps31 compatible
             # num_people = self.db.get_number_of_people()
             num_people = len(people)
             self.results_write(_("Attaching sources...\n"))
-            self.progress.set_pass(_('Attaching sources...'), 
+            self.progress.set_pass(_('Attaching sources...'),
                                    num_people)
             count = 1
             for person_handle in people:
                 self.progress.step()
                 person = self.db.get_person_from_handle(person_handle)
-                
+
                 citation = gramps.gen.lib.Citation()
                 citation.set_reference_handle(source.handle)
                 self.db.add_citation(citation, self.trans)

@@ -124,8 +124,8 @@ class PrintSimple():
             self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
-    
+
+
 #------------------------------------------------------------------------
 #
 # PrintVlliers
@@ -136,18 +136,18 @@ class PrintVilliers():
     def __init__(self):
         self.pama = 'abcdefghijklmnopqrstuvwxyz'
         self.num = {0:1}
-    
+
     def number(self, level):
         to_return = self.pama[level-1]
         if level > 1:
             to_return += str(self.num[level-1])
         to_return += "."
-        
+
         self.num[level] = 1
         self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
+
 
 #------------------------------------------------------------------------
 #
@@ -158,7 +158,7 @@ class PrintVilliers():
 class PrintdAboville():
     def __init__(self):
         self.num = {0:1}
-    
+
     def number(self, level):
         to_return = "1"
         if level > 1:
@@ -171,7 +171,7 @@ class PrintdAboville():
         self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
+
 
 #------------------------------------------------------------------------
 #
@@ -182,7 +182,7 @@ class PrintdAboville():
 class PrintHenry():
     def __init__(self):
         self.num = {0:1}
-    
+
     def number(self, level):
         to_return = "1"
         if level > 1:
@@ -195,7 +195,7 @@ class PrintHenry():
         self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
+
 #------------------------------------------------------------------------
 #
 # PrintRecord
@@ -208,11 +208,11 @@ class PrintRecord():
 
     def reset(self):
         self.num = 0
-    
+
     def number(self, level):
         self.num += 1
         return str(self.num)
-    
+
 #------------------------------------------------------------------------
 #
 # PrintMeurgey
@@ -222,7 +222,7 @@ class PrintRecord():
 class PrintMeurgey():
     def __init__(self):
         self.childnum = [""]
-    
+
     def number(self, level):
         if level == 1:
             dash = ""
@@ -230,13 +230,13 @@ class PrintMeurgey():
             dash = "-"
             if len(self.childnum) < level:
                 self.childnum.append(1)
-        
+
         to_return = (ReportUtils.roman(level) + dash +
                      str(self.childnum[level-1]) + ".")
 
         if level > 1:
             self.childnum[level-1] += 1
-        
+
         return to_return
 
 #------------------------------------------------------------------------
@@ -279,7 +279,7 @@ class Printinfo():
         self.href_excl_spouse = href_excl_spouse
         self.href_excl_center = href_excl_center
         self.center_person = center_person
- 
+
         # List of unique HREF's
         self.href_dict = {}
 
@@ -319,7 +319,7 @@ class Printinfo():
             if place_handle:
                 place = self.database.get_place_from_handle(
                     place_handle).get_title()
-                
+
                 return("%(event_abbrev)s %(date)s %(place)s" % {
                     'event_abbrev': event.type.get_abbreviation(),
                     'date' : date,
@@ -367,7 +367,7 @@ class Printinfo():
                         # resize image to a maz 3x3cm jpg
                         size = int(max(3.0, 3.0) * float(150.0/2.54))
                         resize_to_jpeg(filename, image_file, size, size, None)
-                             
+
         # Build up biography string, similar to that of detailed descendant
         # report including, born, baptized, christened, died, buried, and
         # married.
@@ -468,7 +468,7 @@ class Printinfo():
                                                               family))
             self.json_fp.write('%s"marriage": "%s",\n' %
                 (self.pad_str(gen_pad+1), str(marriage)))
-            
+
         if family and self.showdivorce:
             divorce = self.get_date_place(
                 get_divorce_or_fallback(self.database, family))
@@ -630,7 +630,7 @@ class Printinfo():
             (self.pad_str(gen_pad+1), "false"))
         self.dump_string(person, level)
         return display_num
-    
+
     def print_spouse(self, level, spouse_handle, family_handle):
         #Currently print_spouses is the same for all numbering systems.
         gen_pad = (level-1) * 2
@@ -726,7 +726,7 @@ class RecurseDown():
             ref_str = display_num
         else:
             ref_str = curdepth + " " + display_num
-    
+
         family_num = 0
         for family_handle in person.get_family_handle_list():
             family = self.database.get_family_from_handle(family_handle)
@@ -952,8 +952,8 @@ class DescendantIndentedTreeReport(Report):
 
         sort = Sort(self.database)
         self.by_birthdate = sort.by_birthdate_key
-    
-        #Initialize the Printinfo class    
+
+        #Initialize the Printinfo class
         self.dups = menu.get_option_by_name('dups').get_value()
         self.numbering = menu.get_option_by_name('numbering').get_value()
         if self.numbering == "Simple":
@@ -1876,7 +1876,7 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         self.inc_living.set_help(_("How to handle living people."))
         add_option("inc_living", self.inc_living)
         self.inc_living.connect('value-changed', self.inc_living_changed)
-        
+
         # Years from death to consider living
         self.dead_years = NumberOption(_("Years from death to consider living"),
                                        30, MIN_GEN, MAX_GEN)
@@ -1983,7 +1983,7 @@ class DescendantIndentedTreeOptions(MenuReportOptions):
         self.use_call.set_help(_("Whether to use the call name as the first "
                                  "name."))
         add_option("use_call", self.use_call)
-        
+
         self.use_fulldates = BooleanOption(_("Use full dates instead of only "
                                              "the year"),
                                            True)

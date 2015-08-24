@@ -50,7 +50,7 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
-if (("LANGUAGE" not in os.environ) or 
+if (("LANGUAGE" not in os.environ) or
     (not os.environ["LANGUAGE"].startswith("en"))):
     raise ValueError("LANGUAGE should explicitly be english; Use 'LANGUAGE=en_US.UTF-8 python make.py...' or similar")
 else:
@@ -100,7 +100,7 @@ def increment_target(filenames):
         fp = open(filename, "r", encoding="utf-8")
         newfp = open("%s.new" % filename, "w", encoding="utf-8")
         for line in fp:
-            if ((line.lstrip().startswith("version")) and 
+            if ((line.lstrip().startswith("version")) and
                 ("=" in line)):
                 #print("orig = %s" % line.rstrip())
                 line, stuff = line.rsplit(",", 1)
@@ -139,7 +139,7 @@ def version(sversion):
 
 if command == "clean":
     if len(sys.argv) == 3:
-        for addon in [name for name in os.listdir(".") 
+        for addon in [name for name in os.listdir(".")
                       if os.path.isdir(name) and not name.startswith(".")]:
             system('''rm -rf -v '''
                    '''"%(addon)s"/*~ '''
@@ -182,9 +182,9 @@ elif command == "init":
         locale = sys.argv[4]
         # make a copy for locale
         if os.path.isfile(r('''%(addon)s/po/%(locale)s-local.po''')):
-            raise ValueError(r('''%(addon)s/po/%(locale)s-local.po''') + 
+            raise ValueError(r('''%(addon)s/po/%(locale)s-local.po''') +
                              " already exists!")
-        system('''msginit --locale=%(locale)s ''' 
+        system('''msginit --locale=%(locale)s '''
                '''--input="%(addon)s/po/template.pot" '''
                '''--output="%(addon)s/po/%(locale)s-local.po"''')
         echo('''You can now edit "%(addon)s/po/%(locale)s-local.po"''')
@@ -224,7 +224,7 @@ elif command == "update":
             locale_po_files.append(po_file)
     # Concat those together:
     system('''msgcat --use-first %(list)s '''
-           '''-o "%(addon)s/po/%(locale)s-global.po"''', 
+           '''-o "%(addon)s/po/%(locale)s-global.po"''',
            list=" ".join(['''"%s"''' % name for name in locale_po_files]))
     # Merge the local and global:
     #locale_local = r("%(module)s/po/%(locale)s-local.po", module=module)
@@ -529,6 +529,6 @@ elif command == "listing":
                 fp_in.close()
                 fp_out.close()
                 shutil.move(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.new" % lang), r("../addons/%(gramps_version)s/listings/") +("addons-%s.txt" % lang))
-                    
+
 else:
     raise AttributeError("unknown command")

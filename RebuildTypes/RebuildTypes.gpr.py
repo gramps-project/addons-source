@@ -20,7 +20,7 @@
 
 # $Id: RebuildTypes.gpr.py 2374 2014-05-02 13:29:19Z romjerome $
 
-register(TOOL, 
+register(TOOL,
 id    = 'rebuild_types',
 name  = _("Rebuild Gramps Types"),
 description =  _("Rebuilds Gramps Types"),

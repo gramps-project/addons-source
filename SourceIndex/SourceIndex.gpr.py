@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-register(TOOL, 
+register(TOOL,
          id    = 'BirthIndex',
          name  = _("BirthIndex"),
          description =  _(""),
@@ -33,7 +33,7 @@ register(TOOL,
          tool_modes = [TOOL_MODE_GUI]
          )
 
-register(TOOL, 
+register(TOOL,
          id    = 'MarriageIndex',
          name  = _("MarriageIndex"),
          description =  _(""),
@@ -47,8 +47,8 @@ register(TOOL,
          optionclass = 'MarriageIndexOptions',
          tool_modes = [TOOL_MODE_GUI]
          )
-         
-register(TOOL, 
+
+register(TOOL,
          id    = 'DeathIndex',
          name  = _("DeathIndex"),
          description =  _(""),
@@ -62,8 +62,8 @@ register(TOOL,
          optionclass = 'DeathIndexOptions',
          tool_modes = [TOOL_MODE_GUI]
          )
-         
-register(TOOL, 
+
+register(TOOL,
          id    = 'CensusIndex',
          name  = _("CensusIndex"),
          description =  _(""),
@@ -77,8 +77,8 @@ register(TOOL,
          optionclass = 'CensusIndexOptions',
          tool_modes = [TOOL_MODE_GUI]
          )
-         
-register(TOOL, 
+
+register(TOOL,
          id    = 'Witness',
          name  = _("Witness"),
          description =  _(""),
@@ -93,7 +93,7 @@ register(TOOL,
          tool_modes = [TOOL_MODE_GUI]
          )
 
-register(TOOL, 
+register(TOOL,
          id    = 'Index',
          name  = _("SourceIndex"),
          description =  _(""),

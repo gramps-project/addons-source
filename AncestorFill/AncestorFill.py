@@ -44,7 +44,7 @@ from gen.lib import ChildRefType
 from gen.plug.menu import (NumberOption, PersonOption,BooleanOption,
                           EnumeratedListOption)
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
-                             FONT_SANS_SERIF, INDEX_TYPE_TOC, 
+                             FONT_SANS_SERIF, INDEX_TYPE_TOC,
                              PARA_ALIGN_CENTER)
 from gen.plug.report import Report
 from gen.plug.report import MenuReportOptions
@@ -109,7 +109,7 @@ class Translator:
         if lang == "en":
             self.__trans = None
         else:
-            # fallback=True will cause the translator to use English if 
+            # fallback=True will cause the translator to use English if
             # lang = "en" or if something goes wrong.
             self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR,
                                        [lang], fallback = True)
@@ -173,7 +173,7 @@ class AncestorFillReport(Report):
         language = menu.get_option_by_name('trans').get_value()
         translator = Translator(language)
 
-        # Copy the global NameDisplay so that we don't change application 
+        # Copy the global NameDisplay so that we don't change application
         # defaults.
         self._name_display = copy.deepcopy(global_name_display)
 
@@ -198,12 +198,12 @@ class AncestorFillReport(Report):
 
         person = self.database.get_person_from_handle(person_handle)
         grampsid = person.get_gramps_id()
-    
+
         if self.trouve.has_key(grampsid):
             return
-        
 
-        # store the person in the map based off their index number 
+
+        # store the person in the map based off their index number
         # which is passed to the routine.
         father_handle = None
         mother_handle = None
@@ -219,8 +219,8 @@ class AncestorFillReport(Report):
             if ref:
 
                 # If the father_handle is not defined and the relationship is
-                # BIRTH, then we have found the birth father. Same applies to 
-                # the birth mother. If for some reason, the we have multiple 
+                # BIRTH, then we have found the birth father. Same applies to
+                # the birth mother. If for some reason, the we have multiple
                 # people defined as the birth parents, we will select based on
                 # priority in the list
 
@@ -231,7 +231,7 @@ class AncestorFillReport(Report):
                    ref[0].get_mother_relation() == ChildRefType.BIRTH:
                     mother_handle = family.get_mother_handle()
 
-        # Recursively call the function. It is okay if the handle is None,  
+        # Recursively call the function. It is okay if the handle is None,
         # since routine handles a handle of None
 
         fatherid = False
@@ -285,7 +285,7 @@ class AncestorFillReport(Report):
             form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
         else:
             form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-            text = _( 
+            text = _(
                        form % ( gen , longueur , percent , nbhand , implexe ))
             self.doc.start_paragraph("AHN-Generation")
             self.doc.write_text(text)
@@ -300,7 +300,7 @@ class AncestorFillReport(Report):
             nbhand = 0
             msg = "GEN  " + str (nextgen)
             for hand in self.gener[nextgen].keys():
-                msg = msg + " " + str(hand) 
+                msg = msg + " " + str(hand)
                 longueur += self.gener[nextgen][hand]
                 nbhand += 1
             theor = 2 ** nextgen
@@ -318,7 +318,7 @@ class AncestorFillReport(Report):
                     form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
                 else:
                     form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-                text = _( 
+                text = _(
                        form % ( nextgen , longueur , percent , nbhand , implexe ))
                 self.doc.write_text(text)
                 self.doc.end_paragraph()
@@ -349,13 +349,13 @@ class AncestorFillOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the ancestor report.
         """
         category_name = _("Report Options")
-        
+
         pid = PersonOption(_("Center Person"))
         pid.set_help(_("The center person for the report"))
         menu.add_option(category_name, "pid", pid)
@@ -371,7 +371,7 @@ class AncestorFillOptions(MenuReportOptions):
         displayth = BooleanOption(_("Display theorical"), False)
         displayth.set_help(_("Display the theorical number of ancestor by generation"))
         menu.add_option(category_name, "Display theorical", displayth)
-        trans = EnumeratedListOption(_("Translation"),"default") 
+        trans = EnumeratedListOption(_("Translation"),"default")
         trans.add_item("default", _("English"))
         for language in get_available_translations():
             trans.add_item(language, get_language_string(language))
@@ -418,10 +418,10 @@ class AncestorFillOptions(MenuReportOptions):
         para.set_header_level(1)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
-        para.set_alignment(PARA_ALIGN_CENTER)       
+        para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the page.'))
         default_style.add_paragraph_style("AHN-Title", para)
-    
+
         #
         # AHN-Generation
         #
@@ -431,16 +431,16 @@ class AncestorFillOptions(MenuReportOptions):
         para.set_font(font)
         para.set_header_level(2)
         para.set_top_margin(0.125)
-        para.set_bottom_margin(0.125)        
+        para.set_bottom_margin(0.125)
         para.set_description(_('The style used for the generation header.'))
         default_style.add_paragraph_style("AHN-Generation", para)
-    
+
         #
         # AHN-Entry
         #
         para = ParagraphStyle()
         para.set(first_indent=-1.0, lmargin=1.0)
         para.set_top_margin(0.125)
-        para.set_bottom_margin(0.125)        
+        para.set_bottom_margin(0.125)
         para.set_description(_('The basic style used for the text display.'))
         default_style.add_paragraph_style("AHN-Entry", para)

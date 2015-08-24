@@ -287,7 +287,7 @@ class DenominoVisoReport(Report):
         #(self.options['DNMold_browser_output'], self.options['DNMfilename4old_browser']) = \
         #    self.options['DNMold_browser_output_m'].split(', ',1)
         #self.options['DNMold_browser_output'] = self.options['DNMold_browser_output'] == 'True'
-    
+
         self.options['DNMdash_child_rel'] = list_of_strings2list_of_lists(\
                 self.options['DNMdash_child_rel'])
         self.options['DNMconf_color'] = list_of_strings2list_of_lists(\
@@ -440,7 +440,7 @@ class DenominoVisoReport(Report):
             if len(relationList) > 0:
                 (mrel,frel) = relationList[0]
             else:
-                raise DatabaseError("Can't find person " + 
+                raise DatabaseError("Can't find person " +
                     person.get_gramps_id()+" in family "+family.get_gramps_id())
             father_coord = self.walk_the_tree_depth_asc(f,family.get_father_handle(),\
                     generation+1)
@@ -582,7 +582,7 @@ class DenominoVisoReport(Report):
         if not birth:
             return Date()
         return birth.get_date_object()
-    
+
     def fan_segment(self,nr_ret_attach_points,att_rad,att_phi1,att_phi2):
         """Return the svg-pathstring to draw a fan-segment which is to be
             attached to a circle with radius att_rad from angle att_ph1 to
@@ -624,7 +624,7 @@ class DenominoVisoReport(Report):
             for i in range(nr_attach_points-1,-1,-1):
                 rel_att.append((r1+i*delta_r,r1+(i+1)*delta_r,att_phi+angular_step))
         return (path_str,rel_att)
- 
+
     def matree_segment(self,x1,y1,x2,y2):
         """Mandelbrot tree segment, make a drawing to understand what's below"""
         twig_length = 5 # self.twig_length
@@ -783,7 +783,7 @@ class DenominoVisoReport(Report):
         self.person_imgs.clear()
         self.person_img_srcs = []
         person_name = self.escbacka(_nd.display(person))
-        person_txt = "{person_name:'" + person_name + "'" 
+        person_txt = "{person_name:'" + person_name + "'"
         self.search_subjects['Name'] = 'person_name'
         person_img = self.pack_person_img(person)
         if person_img:
@@ -868,7 +868,7 @@ class DenominoVisoReport(Report):
                         plist[0].get_reference_handle())
                 pJS = self.photo2JS(media_object)
                 if pJS:
-                    rv += "person_img:" + pJS 
+                    rv += "person_img:" + pJS
         return rv
 
     def pack_person_url(self,person):
@@ -1028,7 +1028,7 @@ function %(bd)s2html(person,containerDL) {
                     role != EventRoleType.PRIMARY \
                 and role != EventRoleType.FAMILY:
                 event_str += ",event_role:'" + self.escbacka(_(str(role))) + "'"
-                # add self.search_subject?           
+                # add self.search_subject?
             if ('<' + _('date') + '>') in self.event_format:
                 if date:
                     event_str += ",event_date:'" + self.escbacka(datehandler.get_date(event))+"'"
@@ -1194,10 +1194,10 @@ function %(bd)s2html(person,containerDL) {
                 if (type in [EventType.BURIAL,EventType.CREMATION] and \
                         role == EventRoleType.PRIMARY) or \
                     role == EventRoleType.WITNESS or \
-                    type in [EventType.MARRIAGE,EventType.MARR_BANNS]: 
+                    type in [EventType.MARRIAGE,EventType.MARR_BANNS]:
                     return event.get_date_object()
         return None
-                    
+
 
     def unpack_event_data(self):
         """Return a string that is a JavaScript function suitable to unpack
@@ -1374,7 +1374,7 @@ function %(bd)s2html(person,containerDL) {
             rv += "},"
         if rv:
             rv = "addresses:[" + rv[:-1] + "]"
-        return rv 
+        return rv
 
     def unpack_address_data(self):
         """Return a string that is a JavaScript function suitable to unpack
@@ -1663,8 +1663,8 @@ function %(bd)s2html(person,containerDL) {
                         rv = _nd.display(self.database.get_person_from_handle(father_handle))
                 break
         return rv
-                    
-        
+
+
     def marriage_event2parent_names(self,event_ref):
         """Return a tuple with the names of the husband and wife of a marriage
             event."""
@@ -2394,7 +2394,7 @@ function %(bd)s2html(person,containerDL) {
             infoWindow.focus()
             var bodies = doc.getElementsByTagName('body');
             return bodies[0];
-            }""" 
+            }"""
         return strng
 
     def end_page(self,f):
@@ -2489,7 +2489,7 @@ function %(bd)s2html(person,containerDL) {
         """ % (self.options['DNMtitle'],self.relpathA2B(\
                 self.options['DNMfilename4old_browser'], self.target_path))
         try:
-            f = codecs.open(self.options['DNMfilename4old_browser'], 'w', encoding='UTF-8') 
+            f = codecs.open(self.options['DNMfilename4old_browser'], 'w', encoding='UTF-8')
         except IOError as msg:
             ErrorDialog(_('Failure writing %s: %s') % (self.options['DNMfilename4old_browser'], str(msg)))
             return
@@ -3021,7 +3021,7 @@ class GuiMouseHandlerOption(Gtk.HBox):
         self.__option.set_value(int(self.r2_w.get_active()))
 
 # LinestyleOption
-# "Birth relationship linestyle:" 
+# "Birth relationship linestyle:"
 
 
 class GuiTableOption(Gtk.ScrolledWindow):

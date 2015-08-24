@@ -125,12 +125,12 @@ class AtomicGrampsParser(GrampsParser):
                 self.db.name_formats += self.name_formats
                 # Register new formats
                 name_displayer.set_name_format(self.db.name_formats)
-    
+
             self.db.set_researcher(self.owner)
             if self.home is not None:
                 person = self.db.get_person_from_handle(self.home)
                 self.db.set_default_person_handle(person.handle)
-    
+
             #set media path, this should really do some parsing to convert eg
             # windows path to unix ?
             if self.mediapath:
@@ -138,7 +138,7 @@ class AtomicGrampsParser(GrampsParser):
                 if not oldpath:
                     self.db.set_mediapath(self.mediapath)
                 elif not oldpath == self.mediapath:
-                    ErrorDialog(_("Could not change media path"), 
+                    ErrorDialog(_("Could not change media path"),
                         _("The opened file has media path %s, which conflicts "
                           "with the media path of the family tree you import "
                           "into. The original media path has been retained. "

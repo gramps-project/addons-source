@@ -292,7 +292,7 @@ class DBI(object):
                 self.where = lex[self.index]
             elif symbol.upper() == "UPDATE":
                 # update table set x=1, y=2 where condition;
-                # UPDATE gramps_id set tag_list = Tag("Betty") from person where  "Betty" in primary_name.first_name 
+                # UPDATE gramps_id set tag_list = Tag("Betty") from person where  "Betty" in primary_name.first_name
                 self.columns = ["gramps_id"]
                 self.action = "UPDATE"
                 if self.index < len(lex):
@@ -432,7 +432,7 @@ class DBI(object):
             "Tag": self.get_tag,
             })
         retval.update(__builtins__)
-        retval.update(kwargs) 
+        retval.update(kwargs)
         return retval
 
     def stringify(self, value):
@@ -477,7 +477,7 @@ class DBI(object):
         # table: a class that has .row(1, 2, 3, ...)
         with self.database.get_transaction_class()("QueryQuickview", self.database, batch=True) as trans:
             ROWNUM = 0
-            env = self.make_env() 
+            env = self.make_env()
             for item in items:
                 if item is None:
                     continue
@@ -491,7 +491,7 @@ class DBI(object):
                 env.set_struct(struct)
                 for col in self.columns:
                     try:
-                        value = eval(col, env) 
+                        value = eval(col, env)
                     except:
                         value = None
                     row.append(value)
@@ -554,7 +554,7 @@ class DBI(object):
                     ROWNUM += 1
                     if (self.limit is not None) and (ROWNUM >= self.limit[1]):
                         break
-                
+
 def run(database, document, query):
     """
     Run the query

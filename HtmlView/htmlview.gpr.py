@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 
-register(VIEW, 
+register(VIEW,
     id = 'htmlview',
     name = _("Html View"),
     description = _("A view showing html pages embedded in Gramps"),

@@ -80,8 +80,8 @@ class PrintSimple():
             self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
-    
+
+
 #------------------------------------------------------------------------
 #
 # PrintVlliers
@@ -92,18 +92,18 @@ class PrintVilliers():
     def __init__(self):
         self.pama = 'abcdefghijklmnopqrstuvwxyz'
         self.num = {0:1}
-    
+
     def number(self, level):
         to_return = self.pama[level-1]
         if level > 1:
             to_return += str(self.num[level-1])
         to_return += "."
-        
+
         self.num[level] = 1
         self.num[level-1] = self.num[level-1] + 1
 
         return to_return
-    
+
 
 #------------------------------------------------------------------------
 #
@@ -114,7 +114,7 @@ class PrintVilliers():
 class PrintMeurgey():
     def __init__(self):
         self.childnum = [""]
-    
+
     def number(self, level):
         if level == 1:
             dash = ""
@@ -122,15 +122,15 @@ class PrintMeurgey():
             dash = "-"
             if len(self.childnum) < level:
                 self.childnum.append(1)
-        
+
         to_return = (ReportUtils.roman(level) + dash +
                      str(self.childnum[level-1]) + ".")
 
         if level > 1:
             self.childnum[level-1] += 1
-        
+
         return to_return
-    
+
 
 #------------------------------------------------------------------------
 #
@@ -181,7 +181,7 @@ class Printinfo():
         if string and tmp:
             string += ", "
         string += tmp
-        
+
         if string:
             string = " (" + string + ")"
 
@@ -207,7 +207,7 @@ class Printinfo():
         self.dump_string(person)
         self.doc.end_paragraph()
         return display_num
-    
+
     def print_spouse(self, level, spouse_handle, family_handle):
         #Currently print_spouses is the same for all numbering systems.
         if spouse_handle:
@@ -273,7 +273,7 @@ class RecurseDown():
         self.showdups = showdups
         self.report_count = report_count
         self.person_printed = {}
-    
+
     def recurse(self, level, person, curdepth):
 
         person_handle = person.get_handle()
@@ -372,11 +372,11 @@ class DescendantBookReport(Report):
         self.center_person = database.get_person_from_gramps_id(pid)
         if (self.center_person == None) :
             raise ReportError(_("Person %s is not in the Database") % pid )
-        
+
         sort = Sort(self.database)
         self.by_birthdate_key = sort.by_birthdate_key
-    
-        #Initialize the Printinfo class    
+
+        #Initialize the Printinfo class
         self._showdups = menu.get_option_by_name('dups').get_value()
         numbering = menu.get_option_by_name('numbering').get_value()
         if numbering == "Simple":
@@ -496,7 +496,7 @@ class DescendantBookOptions(MenuReportOptions):
         self.__pid = None
         self.__filter = None
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         category_name = _("Report Options")
 
@@ -504,15 +504,15 @@ class DescendantBookOptions(MenuReportOptions):
         self.__filter.set_help(
                _("Select filter to restrict people that appear in the report"))
         menu.add_option(category_name, "filter", self.__filter)
-        
+
         self.__pid = PersonOption(_("Center Person"))
         self.__pid.set_help(_("The center person for the report"))
         menu.add_option(category_name, "pid", self.__pid)
         self.__pid.connect('value-changed', self.__update_filters)
 
         self.__update_filters()
-        
-        
+
+
         # We must figure out the value of the first option before we can
         # create the EnumeratedListOption
         fmt_list = global_name_display.get_name_format()
@@ -525,12 +525,12 @@ class DescendantBookOptions(MenuReportOptions):
 
         numbering = EnumeratedListOption(_("Numbering system"), "Simple")
         numbering.set_items([
-                ("Simple",      _("Simple numbering")), 
-                ("de Villiers/Pama", _("de Villiers/Pama numbering")), 
+                ("Simple",      _("Simple numbering")),
+                ("de Villiers/Pama", _("de Villiers/Pama numbering")),
                 ("Meurgey de Tupigny", _("Meurgey de Tupigny numbering"))])
         numbering.set_help(_("The numbering system to be used"))
         menu.add_option(category_name, "numbering", numbering)
-        
+
         gen = NumberOption(_("Generations"), 10, 1, 15)
         gen.set_help(_("The number of generations to include in the report"))
         menu.add_option(category_name, "gen", gen)

@@ -28,7 +28,7 @@
 #
 #------------------------------------------------------------------------
 
-register(VIEW, 
+register(VIEW,
 id    = 'TimelinePedigreeView',
 name  = _("Timeline Pedigree"),
 category = ("Ancestry", _("Ancestry")),

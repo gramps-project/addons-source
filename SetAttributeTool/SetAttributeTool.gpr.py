@@ -20,7 +20,7 @@
 
 # $Id$
 
-register(TOOL, 
+register(TOOL,
          id    = 'SetAttribute',
          name  = _("Set Attribute"),
          description =  _("Set an attribute to a given value."),

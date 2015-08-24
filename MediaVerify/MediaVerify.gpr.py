@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id = 'mediaverify',
 name = _("Media Verify"),
 description = _("Verify that media is present in the correct path"),

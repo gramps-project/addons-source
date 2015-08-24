@@ -62,7 +62,7 @@ ngettext = _trans.ngettext
 try:
     from django.conf import settings
 except:
-    ErrorDialog(_('django.conf could not be found'), 
+    ErrorDialog(_('django.conf could not be found'),
                 _('Django Addons require Django 1.3 or greater'))
 import gramps.webapp.settings as default_settings
 try:
@@ -80,7 +80,7 @@ from gramps.webapp.libdjango import DjangoInterface
 #-------------------------------------------------------------------------
 class DjangoReader(object):
     def __init__(self, db, filename, callback):
-        if not callable(callback): 
+        if not callable(callback):
             callback = lambda percent: None # dummy
         self.db = db
         self.dji = DjangoInterface()
@@ -90,8 +90,8 @@ class DjangoReader(object):
 
     def process(self):
         sql = None
-        total = (self.dji.Note.count() + 
-                 self.dji.Person.count() + 
+        total = (self.dji.Note.count() +
+                 self.dji.Person.count() +
                  self.dji.Event.count() +
                  self.dji.Family.count() +
                  self.dji.Repository.count() +

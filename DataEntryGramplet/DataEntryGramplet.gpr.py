@@ -3,9 +3,9 @@
 # Register Gramplet
 #
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id="Data Entry Gramplet", 
-         name=_("Data Entry Gramplet"), 
+register(GRAMPLET,
+         id="Data Entry Gramplet",
+         name=_("Data Entry Gramplet"),
          description = _("Gramplet for quick data entry"),
          height=375,
          expand=False,

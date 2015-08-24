@@ -61,8 +61,8 @@ def detect_faces(image_path, min_face_size):
     o_width, o_height = cv_image.width, cv_image.height
     cv.EqualizeHist(cv_image, cv_image)
     cascade = cv.Load(HAARCASCADE_PATH)
-    faces = cv.HaarDetectObjects(cv_image, cascade, 
+    faces = cv.HaarDetectObjects(cv_image, cascade,
                                  cv.CreateMemStorage(0),
-                                 1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
+                                 1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING,
                                  min_face_size)
     return faces

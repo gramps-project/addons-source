@@ -46,10 +46,10 @@ class SourceReferences(Gramplet):
         titles = [(_('Type'), 0, 100),
                   (_('Name'), 1, 100),
                   ('', 2, 1), #hidden column for the handle
-                  ('', 3, 1)] #hidden column for non-localized object type 
+                  ('', 3, 1)] #hidden column for non-localized object type
         self.model = ListModel(top, titles, event_func=self.cb_double_click)
         return top
-        
+
     def display_backlinks(self, active_handle):
         """
         Display the back references for an object.
@@ -70,7 +70,7 @@ class SourceReferences(Gramplet):
             for classname, handle in self.dbstate.db.find_backlink_handles(handle):
                 return True
         return False
-        
+
     def cb_double_click(self, treeview):
         """
         Handle double click on treeview.
@@ -79,7 +79,7 @@ class SourceReferences(Gramplet):
         if not iter_:
             return
 
-        (objclass, handle) = (model.get_value(iter_, 3), 
+        (objclass, handle) = (model.get_value(iter_, 3),
                               model.get_value(iter_, 2))
 
         edit_object(self.dbstate, self.uistate, objclass, handle)
@@ -91,7 +91,7 @@ class SourceReferences(Gramplet):
     def update_has_data(self):
         active_handle = self.get_active('Source')
         self.set_has_data(self.get_has_data(active_handle))
-    
+
     def main(self):
         active_handle = self.get_active('Source')
         self.model.clear()
@@ -145,7 +145,7 @@ def edit_object(dbstate, uistate, reftype, ref):
                              "To edit the citation, close the source "
                              "editor and open an editor for the citation "
                              "alone")
-            
+
             from QuestionDialog import WarningDialog
             WarningDialog(_("Cannot open new citation editor"),
                           blocked_text)

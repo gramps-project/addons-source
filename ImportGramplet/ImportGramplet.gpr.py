@@ -4,9 +4,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id="Import Gramplet", 
-         name=_("Import Gramplet"), 
+register(GRAMPLET,
+         id="Import Gramplet",
+         name=_("Import Gramplet"),
          description = _("Gramplet for importing text"),
          status = STABLE,
          version = '1.0.26',

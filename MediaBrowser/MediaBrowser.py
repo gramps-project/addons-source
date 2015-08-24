@@ -57,7 +57,7 @@ class MediaBrowser(Gramplet):
         top.pack_start(self.photo, True, False, 5)
         top.show_all()
         return top
-        
+
     def db_changed(self):
         self.dbstate.db.connect('person-update', self.update)
         self.update()
@@ -69,11 +69,11 @@ class MediaBrowser(Gramplet):
         active_handle = self.get_active('Person')
         active = self.dbstate.db.get_person_from_handle(active_handle)
         self.set_has_data(self.get_has_data(active))
-    
+
     def main(self):
         active_handle = self.get_active('Person')
         active = self.dbstate.db.get_person_from_handle(active_handle)
-            
+
         self.model.clear()
         self.photo.set_image(None)
         if active:

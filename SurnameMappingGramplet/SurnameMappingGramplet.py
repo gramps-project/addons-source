@@ -158,7 +158,7 @@ class SurnameMappingGramplet(Gramplet):
                 self.dbstate.db.set_name_group_mapping(unicode(surname), unicode(new_group))
             else:
                 self.dbstate.db.set_name_group_mapping(unicode(surname), None)
-                self.dbstate.db.set_name_group_mapping(unicode(new_surname), unicode(new_group)) 
+                self.dbstate.db.set_name_group_mapping(unicode(new_surname), unicode(new_group))
 
     def edit_mapping_clicked(self, event):
         (model, pathlist) = self.treeview.get_selection().get_selected_rows()

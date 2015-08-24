@@ -108,7 +108,7 @@ class HeadlineNewsGramplet(Gramplet):
         self.set_use_markup(True)
         self.set_wrap(False)
         self.set_text(_("No Family Tree loaded."))
-        self.timer = gobject.timeout_add(self.update_interval, 
+        self.timer = gobject.timeout_add(self.update_interval,
                                          self.update_by_timer)
 
     def update_by_timer(self):
@@ -194,7 +194,7 @@ class HeadlineNewsGramplet(Gramplet):
         text = decode_html(text)
         text = text.split("\n")[0]
         if len(text) > 30:
-            text = text[:30] 
+            text = text[:30]
         return text + "..."
 
     def strip_html(self, text):
@@ -240,30 +240,30 @@ class HeadlineNewsGramplet(Gramplet):
         pattern = re.compile('\[\[(.*?)\|(.*?)\]\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
-            text = text.replace("[[%s|%s]]" % (g1, g2), 
-                                ("""<A HREF="%s">%s</A>""" % 
+            text = text.replace("[[%s|%s]]" % (g1, g2),
+                                ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(g1), self.nice_title(g2))))
         ### Internal wiki URL:
         pattern = re.compile('\[\[(.*?)\]\]')
         matches = pattern.findall(text)
         for match in matches:
-            text = text.replace("[[%s]]" % match, 
-                                ("""<A HREF="%s">%s</A>""" % 
+            text = text.replace("[[%s]]" % match,
+                                ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(match), self.nice_title(match))))
         ### URL with title:
         pattern = re.compile('\[http\:\/\/(.*?) (.*?)\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
-            text = text.replace("[http://%s %s]" % (g1, g2), 
-                                ("""<A HREF="http://%s">%s</A>""" % 
+            text = text.replace("[http://%s %s]" % (g1, g2),
+                                ("""<A HREF="http://%s">%s</A>""" %
                                  (g1, g2)))
         ### URL:
         pattern = re.compile('\[http\:\/\/(.*?)\]')
         matches = pattern.findall(text)
         count = 1
         for g1 in matches:
-            text = text.replace("[http://%s]" % (g1), 
-                                ("""<A HREF="http://%s">%s</A>""" % 
+            text = text.replace("[http://%s]" % (g1),
+                                ("""<A HREF="http://%s">%s</A>""" %
                                  (g1, ("[%d]" % count))))
             count += 1
         ### Bold:

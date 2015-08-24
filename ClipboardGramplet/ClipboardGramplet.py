@@ -40,7 +40,7 @@ except ValueError:
 _ = _trans.gettext
 from gramps.gen.plug import Gramplet
 from gramps.gui.ddtargets import DdTargets
-from gramps.gui.clipboard import (MultiTreeView, ClipboardListModel, 
+from gramps.gui.clipboard import (MultiTreeView, ClipboardListModel,
                            ClipboardListView, ClipText)
 
 #-------------------------------------------------------------------------
@@ -98,8 +98,8 @@ class ClipboardGramplet(Gramplet):
     A clipboard-like gramplet.
     """
     def init(self):
-        self.object_list = ClipboardListView2(self.dbstate, 
-                 MultiTreeView(self.dbstate, self.uistate, 
+        self.object_list = ClipboardListView2(self.dbstate,
+                 MultiTreeView(self.dbstate, self.uistate,
                  lambda: _("Clipboard Gramplet: %s") % self.gui.get_title()))
         self.otree = ClipboardListModel()
         self.object_list.set_model(self.otree)
@@ -156,7 +156,7 @@ class ClipboardGramplet(Gramplet):
                     0, 0,            # x, y
                     Selection(data), # pickled data
                     None,            # info (not used)
-                    -1, title=title, value=value, dbid=dbid, 
+                    -1, title=title, value=value, dbid=dbid,
                     dbname=dbname) # time, data
 
     def on_save(self):

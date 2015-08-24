@@ -36,8 +36,8 @@ from gramps.gen.plug.report import MenuReportOptions
 import gramps.gen.plug.report.utils as ReportUtils
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
-                             FONT_SANS_SERIF, FONT_SERIF, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                             FONT_SANS_SERIF, FONT_SERIF,
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 
 try:
@@ -83,7 +83,7 @@ class RepositoryReport(Report):
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
         self.__write_all_repositories()
-        
+
     def __write_all_repositories(self):
         """
         This procedure writes out all repositories.
@@ -99,7 +99,7 @@ class RepositoryReport(Report):
         """
         repository = self.database.get_repository_from_handle(handle)
         self.doc.start_paragraph("REPO-RepositoryTitle")
-        self.doc.write_text(("%(repository)s (%(type)s)") % 
+        self.doc.write_text(("%(repository)s (%(type)s)") %
                                 {'repository' : repository.get_name(),
                                 'type' : repository.get_type()})
         self.doc.end_paragraph()
@@ -122,14 +122,14 @@ class RepositoryReport(Report):
                 if reporef.ref == repository.handle:
                     source_nbr += 1
                     self.doc.start_paragraph("REPO-Section")
-                    title = (("%(nbr)s. %(name)s (%(type)s) : %(call)s") % 
+                    title = (("%(nbr)s. %(name)s (%(type)s) : %(call)s") %
                                 {'nbr' : source_nbr,
                                  'name' : src.get_title(),
                                  'type' : str(reporef.get_media_type()),
                                  'call' : reporef.get_call_number()})
                     self.doc.write_text(title)
                     self.doc.end_paragraph()
-    
+
 #------------------------------------------------------------------------
 #
 # RepositoryOptions
@@ -143,7 +143,7 @@ class RepositoryOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the place report.
@@ -171,7 +171,7 @@ class RepositoryOptions(MenuReportOptions):
         para.set_bottom_border(1)
         para.set_top_margin(ReportUtils.pt2cm(12))
         para.set_bottom_margin(ReportUtils.pt2cm(12))
-        para.set_alignment(PARA_ALIGN_CENTER)       
+        para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the report.'))
         self.default_style.add_paragraph_style("REPO-ReportTitle", para)
 
@@ -185,7 +185,7 @@ class RepositoryOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(ReportUtils.pt2cm(10))
-        para.set_bottom_margin(ReportUtils.pt2cm(10))        
+        para.set_bottom_margin(ReportUtils.pt2cm(10))
         para.set_description(_('The style used for repository title.'))
         self.default_style.add_paragraph_style("REPO-RepositoryTitle", para)
 
@@ -199,6 +199,6 @@ class RepositoryOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(ReportUtils.pt2cm(10))
-        para.set_bottom_margin(ReportUtils.pt2cm(10))       
+        para.set_bottom_margin(ReportUtils.pt2cm(10))
         para.set_description(_('The style used for each section.'))
         self.default_style.add_paragraph_style("REPO-Section", para)

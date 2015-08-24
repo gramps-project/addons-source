@@ -55,7 +55,7 @@ import gramps
 from gramps.gen.utils.string import conf_strings, gender
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
-                            FONT_SANS_SERIF, FONT_SERIF, 
+                            FONT_SANS_SERIF, FONT_SERIF,
                             INDEX_TYPE_TOC, PARA_ALIGN_CENTER,
                             LOCAL_HYPERLINK, LOCAL_TARGET)
 from gramps.gen.plug.menu import (PersonOption, EnumeratedListOption)
@@ -106,10 +106,10 @@ class PersonEverythingReport(Report):
         self.center_person = database.get_person_from_gramps_id(pid)
         if (self.center_person == None) :
             raise ReportError(_("Person %s is not in the Database") % pid )
-        
+
         sort = Sort(self.database)
         self.by_birthdate = sort.by_birthdate_key
-    
+
 
         # Copy the global NameDisplay so that we don't change application
         # defaults
@@ -121,9 +121,9 @@ class PersonEverythingReport(Report):
     def write_report(self):
         self.bibli = Bibliography(self.database, self.doc)
         self.print_citations = False
-        
+
         level = 1
-        
+
         # ------------------------------------------------------------------
         self.doc.start_paragraph("PE-Title")
         name = self._name_display.display(self.center_person)
@@ -152,7 +152,7 @@ class PersonEverythingReport(Report):
         self.doc.end_paragraph()
         self.bibli.write_endnotes(self.print_header, self.print_object)
         # ------------------------------------------------------------------
-        
+
     def print_person_summary(self, level, person):
         display_num = "%d." % level
         self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -161,26 +161,26 @@ class PersonEverythingReport(Report):
         self.doc.write_text(self.format_person_birth_and_death(person))
         self.doc.end_paragraph()
         return display_num
-    
+
     def print_person_details(self, level, obj):
         self.print_header(level, "Person", obj.get_gramps_id(),
                           _("Gender"), gender[obj.get_gender()],
                           obj.get_privacy(), ref=obj)
-        
+
         self.print_header(level, _("Primary name")+". ",
-                          type_desc=_("Type"), 
+                          type_desc=_("Type"),
                           obj_type=str(obj.get_primary_name().get_type()),
                           privacy=obj.get_primary_name().get_privacy(),
                           ref=obj.get_primary_name())
         self.print_object(level+1, obj.get_primary_name())
         for name in obj.get_alternate_names():
             self.print_header(level, _("Alternate name")+". ",
-                              type_desc=_("Type"), 
+                              type_desc=_("Type"),
                               obj_type=str(name.get_type()),
                               privacy=name.get_privacy(),
                               ref=name)
             self.print_object(level+1, name)
-        
+
         self.print_object(1, self.center_person)
 
     def print_events(self, level, obj):
@@ -194,7 +194,7 @@ class PersonEverythingReport(Report):
             if event.get_type() == gramps.gen.lib.EventType.DEATH and \
                 self.center_person.get_death_ref() == event_ref:
                 text = " This is the primary death event."
-            self.print_header(level, _("Event reference") + "." + text, 
+            self.print_header(level, _("Event reference") + "." + text,
                               type_desc=_("Role"),
                               obj_type=str(event_ref.get_role()))
             self.print_object(level+1, event_ref)
@@ -224,12 +224,12 @@ class PersonEverythingReport(Report):
                 self.doc.write_text(str(child_ref.get_mother_relation()))
                 self.bibli.cite_sources(child_ref)
                 self.doc.end_paragraph()
-            
+
                 self.print_object(level+2, child_ref)
-                
+
             self.print_object(level+1, family)
             self.print_events(level+1, family)
-            
+
         for family_handle in obj.get_parent_family_handle_list():
             family = self.database.get_family_from_handle(family_handle)
             self.print_family_summary(level, family, _("Parent Family"))
@@ -240,14 +240,14 @@ class PersonEverythingReport(Report):
             self.doc.end_paragraph()
 
             self.print_object(level+1, family)
-        
+
     def print_family_summary(self, level, family, family_type):
         self.print_header(level, family_type, family.get_gramps_id(),
-                          _("Relationship"), 
+                          _("Relationship"),
                           str(family.get_relationship()),
                           family.get_privacy(),
                           ref=family)
-        
+
         f_h = family.get_father_handle()
         if f_h:
             father = self.database.get_person_from_handle(f_h)
@@ -258,7 +258,7 @@ class PersonEverythingReport(Report):
             self.doc.write_text("[" + father.get_gramps_id() + "] ")
             self.doc.write_text(self._name_display.display(father))
             self.doc.end_paragraph()
-        
+
         m_h = family.get_mother_handle()
         if m_h:
             mother = self.database.get_person_from_handle(m_h)
@@ -269,7 +269,7 @@ class PersonEverythingReport(Report):
             self.doc.write_text("[" + mother.get_gramps_id() + "] ")
             self.doc.write_text(self._name_display.display(mother))
             self.doc.end_paragraph()
-            
+
     def print_header(self, level, text, gid=None, type_desc='', obj_type='',
                      privacy=False, ref=""):
         self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -290,7 +290,7 @@ class PersonEverythingReport(Report):
         if ref:
             self.bibli.cite_sources(ref)
         self.doc.end_paragraph()
-        
+
 
     def print_type(self, level, obj_type):
         self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -335,7 +335,7 @@ class PersonEverythingReport(Report):
         if issubclass(o.__class__, gramps.gen.lib.citationbase.CitationBase):
             if self.print_citations:
                 self.print_header(level, "CitationBase tbd")
-    
+
                 for citation_handle in o.get_citation_list():
                     citation = self.database.get_citation_from_handle(
                                                             citation_handle)
@@ -353,7 +353,7 @@ class PersonEverythingReport(Report):
                 self.doc.write_text(conf_strings.get(o.get_confidence_level(),
                                                      _('Unknown')))
                 self.doc.end_paragraph()
-            
+
             if self.print_citations:
                 source_handle = o.get_reference_handle()
                 source = self.database.get_source_from_handle(source_handle)
@@ -376,7 +376,7 @@ class PersonEverythingReport(Report):
             self.doc.end_bold()
             self.doc.write_text(str(o.get_description()))
             self.doc.end_paragraph()
-                
+
         if issubclass(o.__class__, gramps.gen.lib.eventref.EventRef):
             # The unique information about EventRef (the EventRoleType) is
             # printed by the main write_report function
@@ -392,7 +392,7 @@ class PersonEverythingReport(Report):
             # FamilyRelType and event references) are printed by the main
             # write_report function
             pass
-            
+
         if isinstance(o, gramps.gen.lib.LdsOrd):
             # The Ordinance type is printed by LdsOrdBase
             self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -403,17 +403,17 @@ class PersonEverythingReport(Report):
                                            o.status2str()
                                    )))
             self.doc.end_paragraph()
-            
+
             f_h = o.get_family_handle()
             if f_h:
                 family = self.database.get_family_from_handle(f_h)
-                self.print_family_summary(level+1, family, 
+                self.print_family_summary(level+1, family,
                                           _("LDS Ordinance family"))
 
         if issubclass(o.__class__, gramps.gen.lib.ldsordbase.LdsOrdBase):
             for ldsord in o.get_lds_ord_list():
-                self.print_header(level, _("LDS "), 
-                                  type_desc=_("Ordinance"), 
+                self.print_header(level, _("LDS "),
+                                  type_desc=_("Ordinance"),
                                   obj_type=ldsord.type2str(),
                                   privacy=ldsord.get_privacy(),
                                   ref=ldsord)
@@ -454,12 +454,12 @@ class PersonEverythingReport(Report):
             self.doc.write_text(o.get_description() + ", ")
             path = o.get_path()
             if path:
-                mark = IndexMark("file://:" + 
-                                 media_path_full(self.database, path), 
+                mark = IndexMark("file://:" +
+                                 media_path_full(self.database, path),
                                  LOCAL_HYPERLINK)
                 self.doc.write_text(path, mark=mark)
             self.doc.end_paragraph()
-            
+
             mime_type = o.get_mime_type()
             if mime_type and mime_type.startswith("image"):
                 filename = media_path_full(self.database, o.get_path())
@@ -474,7 +474,7 @@ class PersonEverythingReport(Report):
         if isinstance(o, gramps.gen.lib.MediaRef):
             mediaobject_handle = o.get_reference_handle()
             mediaobject = self.database.get_object_from_handle(mediaobject_handle)
-            
+
             if o.get_rectangle():
                 self.doc.start_paragraph("PE-Level%d" % min(level, 32))
                 self.doc.start_bold()
@@ -482,7 +482,7 @@ class PersonEverythingReport(Report):
                 self.doc.end_bold()
                 self.doc.write_text(", ".join((("%d" % i) for i in o.get_rectangle())))
                 self.doc.end_paragraph()
-                
+
                 mime_type = mediaobject.get_mime_type()
                 if mime_type and mime_type.startswith("image"):
                     filename = media_path_full(self.database,
@@ -499,7 +499,7 @@ class PersonEverythingReport(Report):
                 desc = _("unknown")
             self.print_header(level, _("Media Object"),
                               mediaobject.get_gramps_id(),
-                              _("Mime type"), 
+                              _("Mime type"),
                               desc,
                               mediaobject.get_privacy(),
                               ref=mediaobject)
@@ -525,8 +525,8 @@ class PersonEverythingReport(Report):
         if isinstance(o, gramps.gen.lib.Note):
             # The NoteType is printed by NoteBase. Whether the note is flowed or
             # not is not printed, but affects the way the note appears
-            self.doc.write_styled_note(o.get_styledtext(), 
-                                       o.get_format(), 
+            self.doc.write_styled_note(o.get_styledtext(),
+                                       o.get_format(),
                                        "PE-Level%d" % min(level, 32),
                                        contains_html = o.get_type()
                                         == gramps.gen.lib.notetype.NoteType.HTML_CODE
@@ -539,7 +539,7 @@ class PersonEverythingReport(Report):
                                   _("Note type"), str(note.get_type()),
                                   note.get_privacy())
                 self.print_object(level+1, note)
-        
+
         if issubclass(o.__class__, gramps.gen.lib.Person):
             # This is printed by the main write-report function
             pass
@@ -549,21 +549,21 @@ class PersonEverythingReport(Report):
             for placeref in o.get_placeref_list():
                 self.print_header(level, _("Parent Place"))
                 self.print_object(level+1, placeref)
-                
+
 #            location = o.get_main_location()
 #            if location.get_parish():
-#                self.print_header(level, _("Main Location"), 
-#                                  type_desc=_("Parish"), 
+#                self.print_header(level, _("Main Location"),
+#                                  type_desc=_("Parish"),
 #                                  obj_type=location.get_parish())
 #            else:
 #                self.print_header(level, _("Main Location"))
-#                
+#
 #            self.print_object(level+1, location)
-#            
+#
             for location in o.get_alternate_locations():
                 if location.get_parish():
-                    self.print_header(level, _("Alternate Location"), 
-                                      type_desc=_("Parish"), 
+                    self.print_header(level, _("Alternate Location"),
+                                      type_desc=_("Parish"),
                                       obj_type=location.get_parish())
                 else:
                     self.print_header(level, _("Alternate Location"))
@@ -623,7 +623,7 @@ class PersonEverythingReport(Report):
         if issubclass(o.__class__, gramps.gen.lib.privacybase.PrivacyBase):
             # The privacy is printed by the enclosing object
             pass
-            
+
         if isinstance(o, gramps.gen.lib.RepoRef):
             # The media type is printed by source
             self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -681,12 +681,12 @@ class PersonEverythingReport(Report):
             if o.get_primary():
                 self.doc.write_text(" " + _("{This is the primary surname}"))
             self.doc.end_paragraph()
-            
+
         if isinstance(o, gramps.gen.lib.surnamebase.SurnameBase):
             surname_list = o.get_surname_list()
             for surname in surname_list:
                 self.print_object(level, surname)
-                
+
         if issubclass(o.__class__, gramps.gen.lib.tagbase.TagBase):
             for tag_handle in o.get_tag_list():
                 tag = self.database.get_tag_from_handle(tag_handle)
@@ -697,7 +697,7 @@ class PersonEverythingReport(Report):
                 self.doc.write_text(tag.get_name())
                 self.doc.end_paragraph()
                 self.print_object(level+1, tag)
-                
+
         if issubclass(o.__class__, gramps.gen.lib.Tag):
             # The tag name is printed by TagBase
             if o.get_color() != "#000000000000" or o.get_priority() != 0:
@@ -705,10 +705,10 @@ class PersonEverythingReport(Report):
                 self.doc.start_bold()
                 self.doc.write_text(_("Tag colour and priority") + " : ")
                 self.doc.end_bold()
-                self.doc.write_text(o.get_color() + ", " + 
+                self.doc.write_text(o.get_color() + ", " +
                                     "%d" % o.get_priority())
                 self.doc.end_paragraph()
-                
+
         if issubclass(o.__class__, gramps.gen.lib.urlbase.UrlBase):
             for url in o.get_url_list():
                 self.print_header(level, _("URL"),
@@ -759,7 +759,7 @@ class PersonEverythingReport(Report):
         if text and tmp:
             text += ", "
         text += tmp
-        
+
         if text:
             text = " (" + text + ")"
 
@@ -779,7 +779,7 @@ class Bibliography:
         self.database = database
         self.doc = doc
         self.cindex = 0
-        
+
     def cite_sources(self, obj):
         """
         Cite any sources for the object and add them to the bibliography.
@@ -806,7 +806,7 @@ class Bibliography:
                 self.doc.write_text(text, mark=mark)
             self.doc.end_superscript()
         return txt
-        
+
     def write_endnotes(self, print_header, print_object):
         """
         Write all the entries in the bibliography as endnotes.
@@ -825,20 +825,20 @@ class Bibliography:
         """
         if len(self.citation_list) == 0:
             return
-    
+
         already_printed = []
         source_dict = {}
         previous_source_handle = None
-        
+
         cindex = 0
         for citation_handle in self.citation_list:
             cindex += 1
             citation = self.database.get_citation_from_handle(citation_handle)
             source_handle = citation.get_reference_handle()
             source = self.database.get_source_from_handle(source_handle)
-            
+
             source_short_form = _format_source_text(source, short=True)
-            
+
             op_cit = ""
             sub = ""
             sub_count = 0
@@ -853,7 +853,7 @@ class Bibliography:
                 sub_count += 1
                 if sub_count > len(string.ascii_lowercase):
                     break
-            
+
             self.doc.start_paragraph('Endnotes-Source', "%d." % cindex)
             mark = IndexMark("endnote%d" % cindex, LOCAL_TARGET)
             self.doc.write_text("", mark=mark)
@@ -872,8 +872,8 @@ class Bibliography:
                         # (b) ibid can also refer to a different page.
                         self.doc.write_text(citation_text)
                 else:
-                    self.doc.write_text(source_short_form + 
-                                        (" " if sub != "" else "") + 
+                    self.doc.write_text(source_short_form +
+                                        (" " if sub != "" else "") +
                                         sub + ", ")
                     if source_dict[source_short_form+sub][1] == citation_handle:
                         # loc. cit. (loco citato, meaning in the place cited)
@@ -899,13 +899,13 @@ class Bibliography:
                     print_header(level, _("Source"), source.get_gramps_id(),
                                  privacy=source.get_privacy())
                     print_object(level+1, source)
-                
+
             if citation_handle not in already_printed and \
                     _citation_has_details(citation):
                 print_header(level, _("Citation"), citation.get_gramps_id(),
                              privacy=citation.get_privacy())
                 print_object(level+1, citation)
-                
+
             previous_source_handle = source_handle
             already_printed += [source_handle, citation_handle]
 
@@ -924,56 +924,56 @@ def _format_source_text(source, short=False, sub=""):
         return ""
 
     src_txt = ""
-    
+
     if source.get_author():
         src_txt += source.get_author()
     if short and src_txt != "":
         return src_txt
-    
+
     if source.get_title():
         if src_txt:
             src_txt += ", "
         src_txt += '"%s"' % source.get_title()
     if short and src_txt != "":
         return src_txt
-        
+
     if source.get_abbreviation():
         # short title used for sorting, filing, and retrieving source records
         src_txt += "(%s)" % source.get_abbreviation()
-        
+
     if source.get_publication_info():
         if src_txt:
             src_txt += ", "
         src_txt += source.get_publication_info()
     if short and src_txt != "":
         return src_txt
-        
+
     if short:
         # and we haven't already exited
         return _("No source information found")
-    
+
     # If we got here then we must have been asked for a long form
     src_txt += " " + sub
-    src_txt +=" [" + source.get_gramps_id() + "]" 
+    src_txt +=" [" + source.get_gramps_id() + "]"
     if source.get_privacy():
         src_txt += " {" + _("Private") + "}"
-    
+
     return src_txt
 
 def _format_citation_text(ref):
     if not ref:
         return ""
-    
+
     ref_txt = ", "
-    
+
     if ref.get_page() != "":
         ref_txt += ref.get_page() + " "
-        
+
     ref_txt += "[" + ref.get_gramps_id() + "]"
-    
+
     if ref.get_privacy():
         ref_txt += " {" + _("Private") + "}"
-   
+
     return ref_txt
 
 #------------------------------------------------------------------------
@@ -989,14 +989,14 @@ class PersonEverthingOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         category_name = _("Report Options")
-        
+
         pid = PersonOption(_("Center Person"))
         pid.set_help(_("The center person for the report"))
         menu.add_option(category_name, "pid", pid)
-        
+
         # We must figure out the value of the first option before we can
         # create the EnumeratedListOption
         fmt_list = global_name_display.get_name_format()
@@ -1032,7 +1032,7 @@ class PersonEverthingOptions(MenuReportOptions):
             para.set_description(_("The style used for the "
                                 "level %d display.") % i)
             default_style.add_paragraph_style("PE-Level%d" % min(i, 32), para)
-            
+
         add_endnote_styles(default_style)
 
 def add_endnote_styles(style_sheet):

@@ -699,7 +699,7 @@ def compilation_all(ADDON):
     """
     Compile all translations
     """
-    
+
     for addon in ADDONS:
         if addon == 'ALL':
             continue
@@ -710,7 +710,7 @@ def build(addon):
     """
     Build ../download/{ADDON}.addon.tgz
     """
-    
+
     compilation(addon)
     versioning(addon)
     files = []
@@ -732,12 +732,12 @@ def build_all(ADDON):
     """
     Build all ../download/*.addon.tgz
     """
-    
+
     for addon in ADDONS:
         if addon == 'ALL':
             continue
         build(addon)
-        
+
 
 def is_listing(LANG):
     """
@@ -772,9 +772,9 @@ def is_listing(LANG):
             # Compile
 
             locale = os.path.basename(po[:-9])
-            os.system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"' 
+            os.system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"'
                           % {'addon': addon, 'locale': locale})
-            os.system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"' 
+            os.system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
                           % {'po': po, 'addon': addon, 'locale': locale})
 
     # Get all languages from all addons:
@@ -1016,7 +1016,7 @@ def listing_all(LANG):
     """
     Remove created files for all addons
     """
-    
+
     for lang in LINGUAS:
         if lang == 'all':
             continue
@@ -1040,7 +1040,7 @@ def clean_all(ADDON):
     """
     Remove created files for all addons
     """
-    
+
     for addon in ADDONS:
         if addon == 'ALL':
             continue

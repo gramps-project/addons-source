@@ -37,7 +37,7 @@ import gramps.plugins.lib.libgedcom as libgedcom
 # See http://phpgedview.sourceforge.net/racp.php
 #
 class PHPGedViewConnector(object):
-    
+
     TYPE_INDI   = 1
     TYPE_FAM    = 2
     TYPE_SOUR   = 3
@@ -46,14 +46,14 @@ class PHPGedViewConnector(object):
     TYPE_OBJE   = 6
     TYPE_OTHER  = 7
     TYPE_ALL    = 99
-    
+
     POS_NEW     = 1
     POS_FIRST   = 2
     POS_NEXT    = 3
     POS_PREV    = 4
     POS_LAST    = 5
     POS_ALL     = 6
-    
+
     type_trans = {
         TYPE_INDI:  "INDI",
         TYPE_FAM:   "FAM",
@@ -71,18 +71,18 @@ class PHPGedViewConnector(object):
         POS_LAST:   "last",
         POS_ALL:    "all",
         }
-    
+
     def __init__(self,url,progressbar_cb=None):
         self.url = url
         self.sessionname = None
         self.sessionid = None
         self.connected = False
         self.progressbar_cb = progressbar_cb
-    
+
     def update_progressbar(self,text=None,pos=0,max=0):
         if self.progressbar_cb:
             self.progressbar_cb(text,pos,max)
-            
+
     def get_version(self):
         response = self.fetch_url_to_array( [("action","version",),])
         if response and response[0] == "SUCCESS":
@@ -100,8 +100,8 @@ class PHPGedViewConnector(object):
                 gedcoms.append(response[i].split("\t"))
             return gedcoms
         return None
-    
-    
+
+
     def connect_to_gedcom(self, filename=None, username=None, password=None):
         self.gedname = None
         params = []
@@ -112,7 +112,7 @@ class PHPGedViewConnector(object):
             params.append( ("username",username,))
         if password:
             params.append( ("password",password,))
-        
+
         response = self.fetch_url_to_array( params)
         if response and response[0] == "SUCCESS":
             session = response[1].split("\t")
@@ -151,11 +151,11 @@ class PHPGedViewConnector(object):
                     else:
                         break
         return result
-    
+
     def get_records(self, xref):
         if not xref or len(xref) == 0:
             return None
-        
+
         # merge xref list to a semicolon separated string
         xref_str = ""
         try:
@@ -163,7 +163,7 @@ class PHPGedViewConnector(object):
                 xref_str += x+";"
         except TypeError:
             xref_str = xref
-        
+
         result = []
         request = []
         request.append( ("action", "get"))
@@ -189,7 +189,7 @@ class PHPGedViewConnector(object):
         else:
             outfilename = outfile.name
         print(outfile)
-        
+
         outfile.write("0 HEAD\n")
         outfile.write("1 SOUR phpGedView\n")
         outfile.write("2 VERS %s\n" % self.get_version())
@@ -200,7 +200,7 @@ class PHPGedViewConnector(object):
         outfile.write("2 VERS 5.5\n")
         outfile.write("2 FORM LINEAGE-LINKED\n")
         outfile.write("1 NOTE Dowloaded using GRAMPS PHPGedViewConnector\n")
-        
+
         self.update_progressbar(_("Fetching index list..."))
         steps = (   self.TYPE_INDI,
                     self.TYPE_FAM,
@@ -279,7 +279,7 @@ class phpGedViewImporter(object):
         self.db = database
         self.url = None
         self.connector = None
-        
+
         top = Glade("phpgedview.glade")
         self.url_entry = top.get_object('url_entry')
         self.version_label = top.get_object('version_label')
@@ -313,11 +313,11 @@ class phpGedViewImporter(object):
             self.progressbar.set_fraction( 0.0)
         while Gtk.events_pending():
             Gtk.main_iteration()
-        
+
     def on_next_pressed_cb(self, widget, event=None, data=None):
         if event:
             print(event.type)
-        
+
         if not self.url or self.url != self.url_entry.get_text():
             # url entered the first time or url changed
             self.url = self.filter_url( self.url_entry.get_text())
@@ -328,20 +328,20 @@ class phpGedViewImporter(object):
             if self.connector.connect_to_gedcom(self.file_combo.get_active_text(), self.username_entry.get_text(), self.password_entry.get_text()):
 
                 self.update_progressbar( _("Fetching GEDCOM..."))
-                
+
                 fn = self.connector.fetch_full_gedcom()
-                
+
                 self.update_progressbar( _("Importing GEDCOM..."))
 
                 libgedcom.GedcomParser.importData(self.db, fn)
                 # done. bye.
                 self.dialog.destroy()
-                
+
             else:
                 self.version_label.set_text(_("Error: login failed"))
         self.update_progressbar( _("done."))
         return 1
-        
+
     def validate_server(self):
         try:
             self.update_progressbar(_("Connecting..."))
@@ -360,7 +360,7 @@ class phpGedViewImporter(object):
                 self.username_entry.show()
                 self.password_entry.show()
                 return True
-            
+
         except (ValueError, URLError, hcl.InvalidURL) as e:
             print(e)
             self.version_label.set_text(_("Error: Invalid URL"))
@@ -393,7 +393,7 @@ def filter_url( url):
 ##             print "%s: %d%%" % (text,percent)
 ##         else:
 ##             print text
-    
+
 ##     try:
 ##         f = open("/tmp/sites.txt")
 ##         l = f.readline()
@@ -422,7 +422,7 @@ def filter_url( url):
 ##     #-------------------------------------------------------------------------
 ##     def phpGedViewImporterCaller(database,active_person,callback,parent=None):
 ##         phpGedViewImporter(database)
-    
+
 ##     register_tool(
 ##         phpGedViewImporterCaller,
 ##         _("Import the gedcom from a phpGedView driven website"),

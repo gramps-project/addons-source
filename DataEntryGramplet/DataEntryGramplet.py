@@ -29,8 +29,8 @@ from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.datehandler import get_date, parser
 from gramps.gen.errors import WindowActiveError
-from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place, 
-                            Event, EventType, EventRef, Source, Citation, 
+from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place,
+                            Event, EventType, EventRef, Source, Citation,
                             Name, NameType, Surname)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
@@ -67,16 +67,16 @@ class DataEntryGramplet(Gramplet):
         self._dirty_person = None
         self._dirty_family = None
         self.de_widgets = {}
-        for items in [("Active person", _("Active person"), None, True, 
-                       [("Edit person", "", "button", self.edit_person), 
+        for items in [("Active person", _("Active person"), None, True,
+                       [("Edit person", "", "button", self.edit_person),
                         ("Edit family", _("Family:"), "button", self.edit_family),
-                        ("Show sources", _("Sources?"), "checkbox", self.toggle_sources)], 
-                       False, 0, None), 
+                        ("Show sources", _("Sources?"), "checkbox", self.toggle_sources)],
+                       False, 0, None),
                       ("APName", _("Surname, Given"), None, False, [], True, 0, None),
-                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown"), _("other")], 
-                       False, [], True, 2, (_("Source"), 
-                                            "APSource")), 
-                      ("APBirth", _("Birth"), None, False, [], True, 0, (_("Source"), "APBirthSource")), 
+                      ("APGender", _("Gender"), [_("female"), _("male"), _("unknown"), _("other")],
+                       False, [], True, 2, (_("Source"),
+                                            "APSource")),
+                      ("APBirth", _("Birth"), None, False, [], True, 0, (_("Source"), "APBirthSource")),
                       ("APDeath", _("Death"), None, False, [], True, 0, (_("Source"), "APDeathSource"))
                      ]:
             pos, text, choices, readonly, callback, dirty, default, source = items
@@ -93,22 +93,22 @@ class DataEntryGramplet(Gramplet):
         row.pack_start(button, True, True, 0)
         rows.pack_start(row, False, False, 0)
 
-        for items in [("New person", _("New person"), None, True, 0, None), 
-                      ("NPRelation", _("Add relation"), 
+        for items in [("New person", _("New person"), None, True, 0, None),
+                      ("NPRelation", _("Add relation"),
                        [_("No relation to active person"),
-                        _("Add as a Parent"), 
-                        _("Add as a Mother"), 
-                        _("Add as a Father"), 
-                        _("Add as a Spouse"), 
-                        _("Add as a Wife"), 
-                        _("Add as a Husband"), 
-                        _("Add as a Sibling"), 
+                        _("Add as a Parent"),
+                        _("Add as a Mother"),
+                        _("Add as a Father"),
+                        _("Add as a Spouse"),
+                        _("Add as a Wife"),
+                        _("Add as a Husband"),
+                        _("Add as a Sibling"),
                         _("Add as a Child")],
                        False, 0, None),
                       ("NPName", _("Surname, Given"), None, False, 0, None),
-                      ("NPGender", _("Gender"), 
-                       [_("female"), _("male"), _("unknown"), _("other")], False, 2, (_("Source"), "NPSource")), 
-                      ("NPBirth", _("Birth"), None, False, 0, (_("Source"), "NPBirthSource")), 
+                      ("NPGender", _("Gender"),
+                       [_("female"), _("male"), _("unknown"), _("other")], False, 2, (_("Source"), "NPSource")),
+                      ("NPBirth", _("Birth"), None, False, 0, (_("Source"), "NPBirthSource")),
                       ("NPDeath", _("Death"), None, False, 0, (_("Source"), "NPDeathSource"))
                      ]:
             pos, text, choices, readonly, default, source = items
@@ -223,7 +223,7 @@ class DataEntryGramplet(Gramplet):
         else:
             label.set_text("%s: " % text)
             label.set_width_chars(self.de_column_width)
-            label.set_alignment(1.0, 0.5) 
+            label.set_alignment(1.0, 0.5)
             if choices == None:
                 self.de_widgets[pos] = Gtk.Entry()
                 if mark_dirty:
@@ -236,7 +236,7 @@ class DataEntryGramplet(Gramplet):
                 eventBox.add(self.de_widgets[pos])
                 for add_type in choices:
                     self.de_widgets[pos].append_text(add_type)
-                self.de_widgets[pos].set_active(default) 
+                self.de_widgets[pos].set_active(default)
                 if mark_dirty:
                     self.de_widgets[pos].connect("changed", self.mark_dirty)
                 row.pack_start(label, False, False, 0)
@@ -245,7 +245,7 @@ class DataEntryGramplet(Gramplet):
                 label = Gtk.Label()
                 label.set_text("%s: " % source[0])
                 label.set_width_chars(self.de_source_width)
-                label.set_alignment(1.0, 0.5) 
+                label.set_alignment(1.0, 0.5)
                 self.de_widgets[source[1] + ":Label"] = label
                 self.de_widgets[source[1]] = Gtk.Entry()
                 if mark_dirty:
@@ -294,8 +294,8 @@ class DataEntryGramplet(Gramplet):
         if self._dirty_person:
             from gramps.gui.editors import EditPerson
             try:
-                EditPerson(self.gui.dbstate, 
-                           self.gui.uistate, [], 
+                EditPerson(self.gui.dbstate,
+                           self.gui.uistate, [],
                            self._dirty_person,
                            callback=self.edit_callback)
             except WindowActiveError:
@@ -307,14 +307,14 @@ class DataEntryGramplet(Gramplet):
         if self._dirty_family:
             from gramps.gui.editors import EditFamily
             try:
-                EditFamily(self.gui.dbstate, 
-                           self.gui.uistate, [], 
+                EditFamily(self.gui.dbstate,
+                           self.gui.uistate, [],
                            self._dirty_family)
             except WindowActiveError:
                 pass
         else:
             return
-    
+
     def process_dateplace(self, text):
         if text == "": return None, None
         prep_in = _("in") # word or phrase that separates date from place
@@ -543,7 +543,7 @@ class DataEntryGramplet(Gramplet):
             if current_person == None:
                 ErrorDialog(_("Please set an active person."), _("Can't add new person as a spouse."))
                 return
-            elif (gender == Person.UNKNOWN and 
+            elif (gender == Person.UNKNOWN and
                   current_person.get_gender() == Person.UNKNOWN): # both genders unknown
                 ErrorDialog(_("Please set the new person's gender."), _("Can't add new person as a spouse."))
                 return
@@ -763,11 +763,11 @@ class DataEntryGramplet(Gramplet):
                 else:
                     if person.get_gender() == Person.UNKNOWN:
                         if current_person is None:
-                            ErrorDialog(_("Please set Active person."), 
+                            ErrorDialog(_("Please set Active person."),
                                         _("Can't add new person as a spouse to no one."))
                             return
                         elif current_person.get_gender() == Person.UNKNOWN:
-                            ErrorDialog(_("Please set gender on Active or new person."), 
+                            ErrorDialog(_("Please set gender on Active or new person."),
                                         _("Can't add new person as a spouse."))
                             return
                         elif current_person.get_gender() == Person.MALE:
@@ -804,7 +804,7 @@ class DataEntryGramplet(Gramplet):
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
                         elif current_person.get_gender() == Person.MALE:
-                            ErrorDialog(_("Same genders on Active and new person."), 
+                            ErrorDialog(_("Same genders on Active and new person."),
                                         _("Can't add new person as a spouse."))
                             return
                         elif current_person.get_gender() == Person.FEMALE:
@@ -837,7 +837,7 @@ class DataEntryGramplet(Gramplet):
                             current_person.add_family_handle(family.get_handle())
                             self.dbstate.db.commit_family(family, self.trans)
                         elif current_person.get_gender() == Person.FEMALE:
-                            ErrorDialog(_("Same genders on Active and new person."), 
+                            ErrorDialog(_("Same genders on Active and new person."),
                                         _("Can't add new person as a spouse."))
                             return
             elif self.de_widgets["NPRelation"].get_active() == self.AS_WIFE:
@@ -937,7 +937,7 @@ class DataEntryGramplet(Gramplet):
                     self.dbstate.db.commit_family(family, self.trans)
                 else:
                     if current_person.get_gender() == Person.UNKNOWN:
-                        ErrorDialog(_("Please set gender on Active person."), 
+                        ErrorDialog(_("Please set gender on Active person."),
                                     _("Can't add new person as a child."))
                         return
                     else:
@@ -981,7 +981,7 @@ class DataEntryGramplet(Gramplet):
         self.de_widgets["APName"].set_text("")
         self.de_widgets["APBirth"].set_text("")
         self.de_widgets["APDeath"].set_text("")
-        self.de_widgets["APGender"].set_active(Person.UNKNOWN) 
+        self.de_widgets["APGender"].set_active(Person.UNKNOWN)
         self.de_widgets["APSource"].set_text("")
         self.de_widgets["APBirthSource"].set_text("")
         self.de_widgets["APDeathSource"].set_text("")
@@ -990,8 +990,8 @@ class DataEntryGramplet(Gramplet):
         self.de_widgets["NPName"].set_text("")
         self.de_widgets["NPBirth"].set_text("")
         self.de_widgets["NPDeath"].set_text("")
-        self.de_widgets["NPRelation"].set_active(self.NO_REL) 
-        self.de_widgets["NPGender"].set_active(Person.UNKNOWN) 
+        self.de_widgets["NPRelation"].set_active(self.NO_REL)
+        self.de_widgets["NPGender"].set_active(Person.UNKNOWN)
         self.de_widgets["NPSource"].set_text("")
         self.de_widgets["NPBirthSource"].set_text("")
         self.de_widgets["NPDeathSource"].set_text("")

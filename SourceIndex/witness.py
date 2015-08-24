@@ -51,24 +51,24 @@ class GtkHandlers:
     def on_quit_clicked(event):
         print('quit')
         Gtk.main_quit()
-        
+
     def on_ok_clicked(event):
         print('save')
         Gtk.main_save()
-        
+
 
 class Witness(tool.Tool, ManagedWindow):
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
-        
+
         self.label = _('Sources Index')
         self.base = os.path.dirname(__file__)
-        
+
         ManagedWindow.__init__(self, uistate,[], self.__class__)
         self.set_window(Gtk.Window(),Gtk.Label(),'')
-        
+
         tool.Tool.__init__(self, dbstate, options_class, name)
-        
+
         glade_file = os.path.join(USER_PLUGINS, "SourceIndex", "witness.glade")
 
         if gramps.gen.constfunc.lin():
@@ -77,37 +77,37 @@ class Witness(tool.Tool, ManagedWindow):
             # This is needed to make gtk.Builder work by specifying the
             # translations directory
             locale.bindtextdomain("addon", self.base + "/locale")
-            
+
             self.glade = Gtk.Builder()
             self.glade.set_translation_domain("addon")
-                        
+
             self.glade.add_from_file(glade_file)
-            
+
             from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
-                      
+
             window = self.glade.get_object('witness_editor')
-                            
+
             self.set_window(window, self.glade.get_object('title'), self.label)
-            
+
             self.ok_button = self.glade.get_object('ok')
             self.quit_button = self.glade.get_object('cancel')
-            
+
         else:
-            
+
             # Glade class from gui/glade.py and gui/managedwindow.py
             self.top = Glade()
             window = self.top.toplevel
             self.set_window(window, None, glade_file)
-        
+
             self.ok_button = self.top.get_object('ok')
             self.quit_button = self.top.get_object('cancel')
-        
+
         self.ok_button.connect('clicked', self.close)
         self.quit_button.connect('clicked', self.close)
-               
+
         self.window.show()
-                                
+
     def __getitem__(self, key):
         return self.glade.get_widget(key)
 
@@ -117,21 +117,21 @@ class Witness(tool.Tool, ManagedWindow):
         /!\ some attributes are translated keys
         see data_item keys and eventref types of attribute
         '''
-        
+
         #/database/people/person/name/surname/surname/text()
         self.wname   = MonitoredEntry(
             self.top.get_object("wname"),
             self.obj.set_wname,
             self.obj.get_wname,
             self.db.readonly)
-        
+
         #/database/people/person/name/first/text()
         self.wfname  = MonitoredEntry(
             self.top.get_object("wfname"),
             self.obj.set_wfname,
             self.obj.get_wfname,
             self.db.readonly)
-        
+
         #/database/people/person/eventref/attribute/@type
         #/database/people/person/eventref/attribute/@value
         self.wage  = MonitoredEntry(
@@ -139,7 +139,7 @@ class Witness(tool.Tool, ManagedWindow):
             self.obj.set_wage,
             self.obj.get_wage,
             self.db.readonly)
-        
+
         #/database/people/person/eventref/@hlink
         #/database/events/event/place/@hlink
         #/database/places/placeobj/ptitle/text()
@@ -148,7 +148,7 @@ class Witness(tool.Tool, ManagedWindow):
             self.obj.set_worig,
             self.obj.get_worig,
             self.db.readonly)
-        
+
         #/database/people/person/eventref/@hlink
         #/database/events/event/description/text()
         self.woccu  = MonitoredEntry(
@@ -156,7 +156,7 @@ class Witness(tool.Tool, ManagedWindow):
             self.obj.set_woccu,
             self.obj.get_woccu,
             self.db.readonly)
-        
+
         #/database/people/person/eventref/@hlink
         #/database/events/event/dateval/@val
         #/database/events/event/description/text()
@@ -165,7 +165,7 @@ class Witness(tool.Tool, ManagedWindow):
             self.obj.set_wlive,
             self.obj.get_wlive,
             self.db.readonly)
-        
+
         #/database/people/person/personref/@hlink
         #/database/people/person/@handle
         #/database/people/person/personref/@rel
@@ -174,7 +174,7 @@ class Witness(tool.Tool, ManagedWindow):
             self.obj.set_wrelation,
             self.obj.get_wrelation,
             self.db.readonly)
-        
+
 
 class WitnessOptions(tool.ToolOptions):
     """

@@ -25,9 +25,9 @@
 # Register Gramplet
 #
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id="Participants", 
-         name=_("Participants"), 
+register(GRAMPLET,
+         id="Participants",
+         name=_("Participants"),
          description = _("Gramplet showing the participants in an event"),
          version = '1.0.7',
          gramps_target_version="5.0",

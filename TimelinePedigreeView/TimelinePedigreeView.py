@@ -50,7 +50,7 @@ from gramps.gui.views.navigationview import NavigationView
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.file import media_path_full
-from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback, 
+from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                           find_children, find_parents, find_witnessed_people)
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
@@ -331,7 +331,7 @@ class TimelinePedigreeView(NavigationView):
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Timeline pedigree'),
-                                      pdata, dbstate, uistate, 
+                                      pdata, dbstate, uistate,
                                       PersonBookmarks,
                                       nav_group)
 
@@ -351,7 +351,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Tree Dimensions
         self.generations_in_tree = [3, 4]
-        
+
         # Define configuration settings
         self.cman = config.register_manager("timelinepedigreeview")
         self.cman.register("interface.show-images", False)
@@ -361,7 +361,7 @@ class TimelinePedigreeView(NavigationView):
         self.cman.register("interface.scroll-direction", True)
         self.cman.register("interface.ancestor-size", 4)
         self.cman.register("interface.descendant-size", 3)
-        
+
         self.cman.register("interface.tree-size", 5)
         self.cman.register("interface.layout", 0)
         self.cman.register("interface.tree-direction", 0)
@@ -384,7 +384,7 @@ class TimelinePedigreeView(NavigationView):
         self.generations_in_tree[0] = self.cman.get('interface.descendant-size')
 
         # Automatic resize
-        self.force_size = self.cman.get('interface.tree-size') 
+        self.force_size = self.cman.get('interface.tree-size')
         # Nice tree
         self.tree_style = self.cman.get('interface.layout')
         # Tree draw direction
@@ -392,9 +392,9 @@ class TimelinePedigreeView(NavigationView):
         # Show on not unknown peoples.
         # Default - not show, for mo fast display hight tree
         self.show_unknown_peoples = self.cman.get('interface.show-unknown-people')
-        
+
         self.format_helper = FormattingHelper(self.dbstate)
-        
+
         # Depth of tree.
         self._depth = 1
         # Variables for drag and scroll
@@ -424,7 +424,7 @@ class TimelinePedigreeView(NavigationView):
         The category stock icon
         """
         return 'gramps-pedigree'
-    
+
     def get_viewtype_stock(self):
         """Type of view in category
         """
@@ -447,7 +447,7 @@ class TimelinePedigreeView(NavigationView):
         self.gtklayout.add_events(Gdk.EventMask.BUTTON_PRESS_MASK
                              | Gdk.EventMask.BUTTON_RELEASE_MASK
                              | Gdk.EventMask.BUTTON1_MOTION_MASK)
-        
+
         self.gtklayout.connect("draw", self.gtklayout_draw)
         self.gtklayout.connect("button-press-event", self.bg_button_press_cb)
         self.gtklayout.connect("button-release-event", self.bg_button_release_cb)
@@ -506,15 +506,15 @@ class TimelinePedigreeView(NavigationView):
         at the beginning of the history.
         """
         NavigationView.define_actions(self)
-        
-        self._add_action('FilterEdit',  None, _('Person Filter Editor'), 
+
+        self._add_action('FilterEdit',  None, _('Person Filter Editor'),
                         callback=self.filter_editor)
 
     def filter_editor(self, obj):
         from FilterEditor import FilterEditor
 
         try:
-            FilterEditor('Person', CUSTOM_FILTERS, 
+            FilterEditor('Person', CUSTOM_FILTERS,
                          self.dbstate, self.uistate)
         except WindowActiveError:
             return
@@ -577,7 +577,7 @@ class TimelinePedigreeView(NavigationView):
         Build and draw full tree from the database with root person_handle
         Called from many fuctions, when need a full redraw of the tree.
         """
-        
+
         self.dirty = False
 
         person = None
@@ -587,49 +587,49 @@ class TimelinePedigreeView(NavigationView):
                 person = self.dbstate.db.get_person_from_handle(person_handle)
         if person is None:
             return
-        
+
         layout_widget = self.gtklayout
-        
+
         generations = self.generations_in_tree       # Descendant and Ancestor generations
-        
+
         # Purge current view content
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         for child in layout_widget.get_children():
             child.destroy()
-        
+
         layout_widget.set_size(600, 600)        # set it to a dummy size
-        
+
         # Create PersonBoxes, do calculations later needed for positioning
         LstDescendants = self.Tree_Find_Relatives(layout_widget, person, 0, generations[0], 1)
         LstAncestors   = self.Tree_Find_Relatives(layout_widget, person, 0, generations[1], -1, LstDescendants[1])
         # print ("LstDescendants[0] is " + name_displayer.display(LstDescendants[0]))
-        
+
         TimeLineHeight = 0
         if self.use_timeline:
             TimeLineHeight = 40
-        
+
         ActivePersonX = 10 + max(LstAncestors[2][2], LstDescendants[2][0]) + 10
         ActivePersonY = TimeLineHeight + max( LstAncestors[2][4], LstDescendants[2][4])
         A_Top = ActivePersonY - LstAncestors[2][4]
         D_Top = ActivePersonY - LstDescendants[2][4]
-        
+
         RequiredHeight = max(A_Top+LstAncestors[2][1], D_Top+LstDescendants[2][1])
         RequiredWidth  = 10 + LstAncestors[2][0] + ActivePersonX
-        
+
         # The required size is known now
         layout_widget.set_size(RequiredWidth, RequiredHeight)
-        
+
         if True:    # Draw Border of the layout for debugging
             self.gtklayout_lines.append([1,1,1, RequiredHeight-1])
             self.gtklayout_lines.append([1,1, RequiredWidth-1, 1])
             self.gtklayout_lines.append([RequiredWidth-1,RequiredHeight-1, RequiredWidth-1, 1])
             self.gtklayout_lines.append([RequiredWidth-1,RequiredHeight-1, 1, RequiredHeight-1])
-        
+
         # Move boxes to their desired position, draw connection lines, etc.
         self.Tree_MoveBranchBoxes(layout_widget, LstAncestors,   ActivePersonX, A_Top, -1, 0)
         self.Tree_MoveBranchBoxes(layout_widget, LstDescendants, ActivePersonX, D_Top, 1, 0)
-        
+
         # Draw time line at top
         # FIXME see bug #5148
         # hardcoded gregorian calendar
@@ -644,7 +644,7 @@ class TimelinePedigreeView(NavigationView):
                 for i in range(1,9):
                     Ticks.append( [None, Pos50 - ((k-1)*50 + i*10) * 11 ] )      # 10 year - tick
                     Ticks.append( [None, Pos50 + ((k-1)*50 + i*10) * 11 ] )
-                
+
             for Tick in Ticks:
                 if Tick[1] > 0 and Tick[1] < RequiredWidth:
                     self.gtklayout_lines.append([Tick[1], int(5*TimeLineHeight/8), Tick[1], int(7*TimeLineHeight/8), 1])
@@ -653,11 +653,11 @@ class TimelinePedigreeView(NavigationView):
                         label.set_justify(Gtk.Justification.CENTER)
                         label.show()
                         layout_widget.put(label, int(Tick[1]-label.get_preferred_size()[0].width/2), 1*TimeLineHeight/4)
-            
-        
+
+
         layout_widget.show_all()
         layout_widget.queue_draw()      # widget needs redraw for connection lines
-        
+
     def Tree_MoveBranchBoxes(self, layout_widget, BranchData, BoxRight, BranchTop, Direction, genDepth):
         """ 
             Recursively move all person boxes in a branch to its destination
@@ -671,7 +671,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Move personbox to its required position
         pbwSize = BranchData[1].get_preferred_size()[0]
-        
+
         xBox = BoxRight - pbwSize.width
         yBox = BranchTop + BranchData[2][4]
         layout_widget.move(BranchData[1], int(xBox), int(yBox))
@@ -684,19 +684,19 @@ class TimelinePedigreeView(NavigationView):
             except AttributeError:
                 color = (211/256.0, 215/256.0, 207/256.0)[:3] + (0.7,)
             self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize.width, yBox, xBox + 5, yBox+pbwSize.height, color])   # +5 for overlapping with the box
-        
+
         # Calculate position of connection point of this box
         yBoxConnection = yBox + BranchData[1].get_preferred_size()[0].height/2
         xBoxConnection = BoxRight
         if Direction > 0:
             xBoxConnection -= pbwSize.width
-        
+
         # calculate x-position of vertical line
         xvline = xBoxConnection - Direction * DistX/2           # default for descendants and if date of marriage not known
         if self.use_timeline and Direction<0 and BranchData[0]:
             family_handle = BranchData[0].get_main_parents_family_handle()
             family = self.dbstate.db.get_family_from_handle(family_handle)
-            if family: 
+            if family:
                 marriagedate = self.get_date_marriage(family)
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
@@ -704,7 +704,7 @@ class TimelinePedigreeView(NavigationView):
                     if bDate is not None and mDate is not None:
                         timespan = bDate.to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
                         xvline = xBoxConnection - Direction * 11 * timespan
-                    
+
         # Move all relatives in this branch
         ChildBranchTop = BranchTop + BranchData[2][5]
         yChildBoxConnection = [ yBoxConnection ]
@@ -715,12 +715,12 @@ class TimelinePedigreeView(NavigationView):
             yChildBoxConnection.append( ChildBoxConnection[1] )
         # Draw connection lines
             self.gtklayout_lines.append([ xvline, ChildBoxConnection[1], ChildBoxConnection[0],ChildBoxConnection[1] ])
-        
+
         if len(BranchData[3])>0:    # There are relatives, so Connection lines must be drawn
             self.gtklayout_lines.append([ xvline, min(yChildBoxConnection), xvline, max(yChildBoxConnection) ])
             self.gtklayout_lines.append([ xBoxConnection, yBoxConnection, xvline, yBoxConnection ])
-        
-        # Direction<0 -> Drawing ancestors: Show Marriage Info    
+
+        # Direction<0 -> Drawing ancestors: Show Marriage Info
         if Direction<0 and len(BranchData[3])>0 and self.show_marriage_data and BoxSizes[4] > 0:
             text = " "
             family_handle = None
@@ -738,16 +738,16 @@ class TimelinePedigreeView(NavigationView):
                 label.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
                 label.connect("button-press-event", self.family_button_press_cb, family_handle)
             label.show()
-            
+
             layout_widget.put(label, xvline + 5, int(yBoxConnection-label.get_preferred_size()[0].height/2))
-        
+
         return [xBoxConnection, yBoxConnection]
-        
+
     def get_date_marriage(self, family):
         for event_ref in family.get_event_ref_list():
             event = self.dbstate.db.get_event_from_handle(event_ref.ref)
             if event and event.get_type() == gramps.gen.lib.EventType.MARRIAGE and \
-            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or 
+            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or
             event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY ):
                 return event
         return None
@@ -760,19 +760,19 @@ class TimelinePedigreeView(NavigationView):
         DistY = 14
         MarriageLines = 3
         BoxMaxLines = 5
-        
+
         if genDepth > 1:
             MarriageLines = 1
-            
-        if genDepth > 2:            
+
+        if genDepth > 2:
             BoxMaxLines = 3
-        
+
         if genDepth > 3:
             BoxHeight = 10
             BoxMaxLines = 1
-        
+
         return [BoxHeight, BoxWidth, DistX, DistY, MarriageLines, BoxMaxLines]
-    
+
     def Tree_Create_PersonBox( self, layout_widget, person, x, y, maxlines, Relative):
         # Get foto
         image = None
@@ -818,7 +818,7 @@ class TimelinePedigreeView(NavigationView):
         pbw.show()
 
         return pbw
-    
+
     def Tree_Find_Relatives(self, layout_widget, person, genDepth, genMax, Direction, Widget = None, CalledFromPerson = None):
         """ 
             Recursively find descendants or ancestors
@@ -852,28 +852,28 @@ class TimelinePedigreeView(NavigationView):
                     if mother_handle is not None:
                         RelPersons.append(self.dbstate.db.get_person_from_handle(mother_handle))
                     else:
-                        RelPersons.append(None) 
+                        RelPersons.append(None)
                 else:
                     RelPersons.append(None)
                     RelPersons.append(None)
-        
+
         BoxSizes = self.GetBoxSizes(genDepth)
         DistX = BoxSizes[2]
         DistY = BoxSizes[3]
         BoxMaxLines = BoxSizes[5]
-        
+
         if Widget:
             pbw = Widget
         else:
             pbw = self.Tree_Create_PersonBox( layout_widget, person, 100, 100, BoxMaxLines, CalledFromPerson)
-        
+
         pbwSize = pbw.get_preferred_size()[0]
-        
+
         birthyear = None
         birthdate = self.Tree_EstimateBirth(person)
         if birthdate:
             birthyear = birthdate.to_calendar("gregorian").get_year()
-            
+
         # Calculate lifespan
         lifespan = 0
         if self.show_lifespan and person:
@@ -881,13 +881,13 @@ class TimelinePedigreeView(NavigationView):
             if death:
                 deathdate = death.get_date_object()
                 lifespan = deathdate.to_calendar("gregorian").get_year() - birthdate.to_calendar("gregorian").get_year()
-        
+
         negWidth = 11 * lifespan
-        
+
         Branch_Width = 0
         if Direction > 0:
             Branch_Width = pbwSize.width
-               
+
         Child_Branch_Height = 0
         RelLst = []
         MaxRelWidth = 0
@@ -904,9 +904,9 @@ class TimelinePedigreeView(NavigationView):
             negWidth = max(negWidth, Ret[2][2] - DeltaX)
             Ret[4] = DeltaX
             RelLst.append(Ret);
-            
+
             MaxRelWidth = max(MaxRelWidth, Ret[1].get_preferred_size()[0].width)
-            
+
             yRelConnect.append( yRelBranchTop + Ret[2][4] + Ret[1].get_preferred_size()[0].height/2 )
             yRelBranchTop = yRelBranchTop + Ret[2][1]
 
@@ -922,15 +922,15 @@ class TimelinePedigreeView(NavigationView):
                 DeltaX = DistX + pbwSize.width
             else:
                 DeltaX = DistX + MaxRelWidth
-            
+
             Branch_Width = 0
             if Direction > 0:
                 Branch_Width = pbwSize.width
-            
+
             for Ret in RelLst:
                 Branch_Width = max(Branch_Width, Ret[2][0] + DeltaX)
                 Ret[4] = DeltaX
-                
+
         Branch_Height = Child_Branch_Height
         yChildBranchTop = 0
         if yPersonBoxTop < DistY/2:
@@ -938,22 +938,22 @@ class TimelinePedigreeView(NavigationView):
             yPersonBoxTop = DistY/2
             yChildBranchTop = DeltaY
             Branch_Height += DeltaY
-        
-        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize.height + DistY/2) 
-        
+
+        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize.height + DistY/2)
+
         return [ person, pbw, (Branch_Width, Branch_Height, negWidth, Child_Branch_Height, yPersonBoxTop, yChildBranchTop), RelLst, birthyear, lifespan ]
-    
+
     def Tree_EstimateBirth(self, person, callerHandles = []):
         if not person:
             # print ("Estimate Birth called with no person")
             return None
-        
+
         if person.handle in self._birth_cache:
             return self._birth_cache[person.handle]
-        
+
         callerHandleList = callerHandles[:]             # Create a copy of the list
         callerHandleList.append(person.handle)
-        
+
         birthdate = None
         birth = get_birth_or_fallback(self.dbstate.db, person)
         if birth:
@@ -995,18 +995,18 @@ class TimelinePedigreeView(NavigationView):
                             ParentDates.append( ParentDate )
                 if len(ParentDates) > 0:
                     birthdate = min( ParentDates ) + 25
-        
+
         if len(callerHandleList) == 1 and birthdate is None:
             print ("Cannot estimate birth of " + name_displayer.display(person))
-        
+
         if len(callerHandleList) == 1:
             self._birth_cache[person.handle] = birthdate
-                
+
         #elif callerHandle == 0:
         #    print ("Estimate for " + name_displayer.display(person) + " is", birthdate)
-        
+
         return birthdate
-                    
+
     def gtklayout_draw(self, layout, cr):
         cr.save()
 
@@ -1024,7 +1024,7 @@ class TimelinePedigreeView(NavigationView):
             cr.move_to(int(line[0]), int(line[1]))
             cr.line_to(int(line[2]), int(line[3]))
             cr.stroke()
-      
+
         cr.restore()
 
     def home(self, menuitem):
@@ -1166,7 +1166,7 @@ class TimelinePedigreeView(NavigationView):
             elif event.direction == Gdk.ScrollDirection.DOWN or delta > 0:
                 event.direction = Gdk.ScrollDirection.RIGHT
         return False
-        
+
     def family_button_press_cb(self, obj, event, family_handle):
         """
         Call edit family function for mouse left button double click on family
@@ -1185,7 +1185,7 @@ class TimelinePedigreeView(NavigationView):
                     pass
 
         return True
-        
+
     def person_button_press_cb(self, obj, event, person_handle, family_handle):
         """
         Call edit person function for mouse left button double click on person
@@ -1283,14 +1283,14 @@ class TimelinePedigreeView(NavigationView):
                 self.cman.set('interface.descendant-size', data)
             self.dirty = True
             self.Tree_Rebuild()
-    
+
     def change_show_lifespan_cb(self, menuitem):
         """Change show lifespan option."""
         self.show_lifespan = not self.show_lifespan
         self.cman.set('interface.show-lifespan', self.show_lifespan)
         self.dirty = True
         self.Tree_Rebuild()
-        
+
     def change_use_timeline_cb(self, menuitem):
         """Change use timeline option."""
         self.use_timeline = not self.use_timeline
@@ -1324,7 +1324,7 @@ class TimelinePedigreeView(NavigationView):
     def change_show_unknown_peoples_cb(self, event):
         """Change show_unknown_peoples option."""
         self.show_unknown_peoples = not self.show_unknown_peoples
-        self.cman.set('interface.show-unknown-people', 
+        self.cman.set('interface.show-unknown-people',
                     self.show_unknown_peoples)
         self.dirty = True
         self.Tree_Rebuild()
@@ -1397,11 +1397,11 @@ class TimelinePedigreeView(NavigationView):
         """
 
         menu.append(self.create_menu_item(_("Show images"), self.show_images, self.change_show_images_cb) )
-        
+
         menu.append(self.create_menu_item(_("Show marriage data"), self.show_marriage_data, self.change_show_marriage_cb) )
-        
+
         menu.append(self.create_menu_item(_("Order by timeline"), self.use_timeline, self.change_use_timeline_cb) )
-        
+
         menu.append(self.create_menu_item(_("Show lifespan"), self.show_lifespan, self.change_show_lifespan_cb) )
 
         item = Gtk.MenuItem(_("Mouse scroll direction"))
@@ -1430,7 +1430,7 @@ class TimelinePedigreeView(NavigationView):
         item.show()
         menu.append(item)
 
-        
+
         item = Gtk.MenuItem(_("Descendant Generations"))
         item.set_submenu(Gtk.Menu())
         DescendantSize_menu = item.get_submenu()
@@ -1449,7 +1449,7 @@ class TimelinePedigreeView(NavigationView):
         DescendantSize_menu.show()
         item.show()
         menu.append(item)
-        
+
         item = Gtk.MenuItem(_("Ancestor Generations"))
         item.set_submenu(Gtk.Menu())
         AncestorSize_menu = item.get_submenu()
@@ -1465,7 +1465,7 @@ class TimelinePedigreeView(NavigationView):
             entry.connect("activate", self.change_generations_in_tree_cb, 1, num)
             entry.show()
             AncestorSize_menu.append(entry)
-            
+
         AncestorSize_menu.show()
         item.show()
         menu.append(item)

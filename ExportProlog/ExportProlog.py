@@ -30,16 +30,16 @@ from gramps.gen.lib import Person, Family
 def escape(text):
     return text.replace("'", "\\'")
 
-def exportData(database, filename, 
+def exportData(database, filename,
                error_dialog=None, option_box=None, callback=None):
-    if not callable(callback): 
+    if not callable(callback):
         callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename) as fp:
 
-        total = (len(database.note_map) + 
+        total = (len(database.note_map) +
                  len(database.person_map) +
-                 len(database.event_map) + 
+                 len(database.event_map) +
                  len(database.family_map) +
                  len(database.repository_map) +
                  len(database.place_map) +
@@ -128,7 +128,7 @@ def exportData(database, filename,
             callback(100 * count/total)
 
         # ---------------------------------
-        # Place 
+        # Place
         # ---------------------------------
         for place_handle in database.place_map.keys():
             place = database.place_map[place_handle]

@@ -30,7 +30,7 @@ GRAMPS registration file
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id    = 'downloadmedia',
 name  = _("Download media files from the internet"),
 description =  _("This tool downloads media files form the internet"),

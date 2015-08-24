@@ -232,7 +232,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             father = None
         if father:
-            if kekule: 
+            if kekule:
                 father_text = [('FTR-name', StyledText(str(kekule) + " ") + self.__person_get_display_name(father))] + [('FTR-data', p) for p in self.__person_get_display_data(father)]
             else:
                 father_text = [('FTR-name', self.__person_get_display_name(father))] + [('FTR-data', p) for p in self.__person_get_display_data(father)]
@@ -251,7 +251,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             mother = None
         if mother:
-            if kekule > 1: 
+            if kekule > 1:
                 mother_text = [('FTR-name', StyledText(str(kekule+1) + " ") + self.__person_get_display_name(mother))] + [('FTR-data', p) for p in self.__person_get_display_data(mother)]
             else:
                 mother_text = [('FTR-name', self.__person_get_display_name(mother))] + [('FTR-data', p) for p in self.__person_get_display_data(mother)]
@@ -431,7 +431,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
                     spouse_number = StyledText("")
                 if spouse_handle is not None:
                     spouse = self.database.get_person_from_handle(spouse_handle)
-                    
+
                     family_node['text'] += [('FTR-name', spouse_number + self.__person_get_display_name(spouse))] + [('FTR-data', p) for p in self.__person_get_display_data(spouse)]
                 elif spouse_number:
                     family_node['text'] += [('FTR-name', spouse_number)]
@@ -545,7 +545,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
                     self.__draw_box(family_node['text'], family_node['color'], self.descendant_max_color + 1, generation, self.yoffset_d + family_node['top'], family_node['height'])
                     if family_node['child_list']:
                         self.__print_descendants_tree(
-                                family_node['child_list'], 
+                                family_node['child_list'],
                                 self.yoffset_d + family_node['top'] + family_node['height'] / 2,
                                 generation + 1)
             else:
@@ -820,7 +820,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
         # cut "," from end of the string and limit length of note to 50 characters
         note_len = len(note)
         if note_len > 50:
-            note = note[:48] 
+            note = note[:48]
             note += "..."
         else:
             note_len -= 2
@@ -1057,7 +1057,7 @@ class FamilyTreeOptions(gramps.gen.plug.report.MenuReportOptions):
         kekule_start_number = gramps.gen.plug.menu.NumberOption(_("Kekule number of husband"), 0, 0, 16384)
         kekule_start_number.set_help(_("The Kekule number of the husband (central family). Set 0 to not show Kekule numbers"))
         menu.add_option(category_name, "kekule_start_number", kekule_start_number)
-        
+
         fit_on_page = gramps.gen.plug.menu.BooleanOption(_("Scale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
         menu.add_option(category_name, 'fit_on_page', fit_on_page)

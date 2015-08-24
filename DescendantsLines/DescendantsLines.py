@@ -77,7 +77,7 @@ import re
 #-------------------------------------------------------------------------
 
 import gramps.gen.datehandler
-from gramps.gen.plug.menu import (TextOption, NumberOption, PersonOption, FilterOption, 
+from gramps.gen.plug.menu import (TextOption, NumberOption, PersonOption, FilterOption,
 		DestinationOption, BooleanOption, EnumeratedListOption, StringOption)
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
@@ -90,8 +90,8 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
-                             FONT_SANS_SERIF, FONT_SERIF, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                             FONT_SANS_SERIF, FONT_SERIF,
                              INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.const import USER_HOME, USER_PLUGINS
@@ -100,7 +100,7 @@ from gramps.plugins.lib.libtreebase import *    # for CalcLines
 from gramps.plugins.lib.libsubstkeyword import (SubstKeywords, EventFormat, NameFormat,
                         ConsumableString, VarString)  # for name/event/date/place string formatting
 from substkw import SubstKeywords2		# Modified version of portions of libsubstkeywords.py
-from gramps.gen.lib.eventtype import EventType      # for selecting event types 
+from gramps.gen.lib.eventtype import EventType      # for selecting event types
 from gramps.gen.lib.eventroletype import EventRoleType	# for role in events = PRIMARY
 from gramps.gen.lib.date import NextYear    # for sorting events with unknown dates
 from gramps.gen.filters import GenericFilterFactory, rules
@@ -177,7 +177,7 @@ def find_event(database, handle):
         obj = database.get_event_from_handle(handle)
         _event_cache[handle] = obj
     return obj
-    
+
 def event_type(event_name):
     """ returns the event types number if it matches the event_name string """
     for i in range(0, len(EventType._DATAMAP)):
@@ -256,12 +256,12 @@ class DescendantsLinesReport(Report):
         Report.__init__(self, database, options_class, user)
         self.options = {}
         menu = options_class.menu
-        
+
         self.database = database
         global GRAMPS_DB
         GRAMPS_DB = database
         #log.debug('dB= %s', GRAMPS_DB)
-        
+
         for name in menu.get_all_option_names():
             self.options[name] = menu.get_option_by_name(name).get_value()
 
@@ -316,7 +316,7 @@ class DescendantsLinesReport(Report):
         MAX_NOTE_LEN = self.options['max_note_len']
 
         INC_DNUM = self.inc_dnum
-        
+
         global INC_IMAGE
         global MAX_IMAGE_H
         global MAX_IMAGE_W
@@ -327,20 +327,20 @@ class DescendantsLinesReport(Report):
         MAX_IMAGE_W = float(self.options['image_w'])
         IMAGE_LOC = self.options['image_loc']
         REPLACEMENT_LIST = self.options['replace_list']
-        
+
         global DESCEND_ALPHA
         global SPOUSE_ALPHA
         DESCEND_ALPHA = self.options['descend_alpha']
         SPOUSE_ALPHA = self.options['spouse_alpha']
         #LINE_ALPHA = constant for now (see above)
-        
+
         global PROTECT_PRIVATE
         PROTECT_PRIVATE = self.options['protect_private']
         global PRIVATE_TEXT
         PRIVATE_TEXT = self.options['private_text']
         global NAME_FORMAT
         NAME_FORMAT = self.options['name_disp']
-        
+
         global OR_SIMILAR_EVENTS
         OR_SIMILAR_EVENTS = {EventType.BIRTH: (EventType.BIRTH, EventType.BAPTISM, EventType.CHRISTEN),
             EventType.DEATH: (EventType.DEATH, EventType.BURIAL, EventType.CREMATION, EventType.PROBATE),
@@ -357,24 +357,24 @@ class DescendantsLinesReport(Report):
         # used in sorting to move events with unknown dates to end (not used for birth related events)
         global FUTUREDATE
         FUTUREDATE = NextYear()
-        
-        global DESCEND_DISP 
+
+        global DESCEND_DISP
         DESCEND_DISP = []
         for line in self.options['descend_disp']:
             #log.debug('ReportInit: Descendant Line=%s', line)
             DESCEND_DISP.append(parse_event_disp(line))
         log.debug('ReportInit: DESCEND_DISP=%s', DESCEND_DISP)
-        
+
         global SPOUSE_DISP
         SPOUSE_DISP = []
         for line in self.options['spouse_disp']:
             #log.debug('ReportInit: Spouse Line=%s', line)
             SPOUSE_DISP.append(parse_event_disp(line))
         log.debug('ReportInit: SPOUSE_DISP=%s', SPOUSE_DISP)
-        
+
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
-            TEXT_PAD += RECTANGLE_TEXT_PAD	
+            TEXT_PAD += RECTANGLE_TEXT_PAD
 
     def write_report(self):
         """
@@ -383,10 +383,10 @@ class DescendantsLinesReport(Report):
         """
         pid = self.options_class.menu.get_option_by_name('pid').get_value()
         log.debug('Top PID=%s', pid)
-        
+
         # Creates dummy drawing context for image sizing during creation of tree:
-        init_file(self.output_fn, PNGWriter()) 
-        
+        init_file(self.output_fn, PNGWriter())
+
         # Generates a tree of person records and the family linkages for the chart:
         p = load_gramps(pid)
 
@@ -412,7 +412,7 @@ class DescendantsLinesReport(Report):
             self.doc.start_paragraph("DL-name")
             self.doc.write_text(str(individual))
             self.doc.end_paragraph()
-        
+
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
@@ -496,7 +496,7 @@ def size_image(image_path):
         ih = cairo.ImageSurface.get_height(image)
     log.debug('Image Size (unscaled): height=%d width=%d', ih, iw)
     dctx.restore()
-    return (iw, ih) 
+    return (iw, ih)
 
 def draw_image(image_path, ix, iy, iw, ih, scale_factor):
 #     log.debug('Draw Image at x=%d y=%d, w=%d, h=%d, to be scaled by %d', ix, iy, iw, ih, scale_factor)
@@ -549,7 +549,7 @@ def get_image(phandle):
         else:
             log.debug('get_image: No Media found for: %s', p.primary_name.get_regular_name())
     return(imagePath)
-        
+
 class Person_Block:
     """
     This class holds information to be displayed about a person (text, image
@@ -566,7 +566,7 @@ class Person_Block:
         self.boxh = 0.0   #Box Height
         self.ipath = None   #Path to (thumbnail) image
         self.iscale = 1.0    #Scaling factor to use on thumbnail image
-        
+
         (self.tw, self.th) = size_text(self.text, dctx)
         if (INC_IMAGE and (phandle != None)):
             self.ipath = get_image(self.phandle)
@@ -594,9 +594,9 @@ class Person_Block:
     def __str__(self):
         return (self.text[0] + '_PBlk')
 
-    
+
 mem_depth = 0
-    
+
 class Memorised:
 
     def get(self, name):
@@ -659,7 +659,7 @@ class Person(Memorised):
         iyo = 0.0    #image Y blockoffset
         txo = 0.0     #text X blockoffset
         tyo = 0.0     #text Y blockoffset
-        
+
         if INC_IMAGE == True:
             if IMAGE_LOC == 'Above Text':
                 ixo = (self.boxw - self.iw)/2
@@ -667,14 +667,14 @@ class Person(Memorised):
                 txo = (self.boxw - self.tw)/2
                 tyo = self.ih
             elif IMAGE_LOC == 'Left of Text':
-                #ixo = 0 
+                #ixo = 0
                 iyo = (self.boxh - self.ih)/2
                 txo = self.iw
                 tyo = (self.boxh - self.th)/2
             else:
                 log.warning('PD: Image location not valid: %s', IMAGE_LOC)
-                
-        log.debug('PD: Draw descendant %s Gen:%d', self.text[0][2], self.generation) 
+
+        log.debug('PD: Draw descendant %s Gen:%d', self.text[0][2], self.generation)
 #       log.debug('PD: bw=%d, get.bw=%d, tw=%d, iw=%d, x=%d, ixo=%d, txo=%d, get.tx=%d', self.boxw, self.get('bw'), self.tw, self.iw, self.get('x'), ixo, txo, self.get('tx'))
 #       log.debug('PD: bh=%d, get.bh=%d, th=%d, ih=%d, y=%d, ixo=%d, txo=%d', self.boxh, self.get('bh'), self.th, self.ih, self.get('y'), iyo, tyo)
 
@@ -692,12 +692,12 @@ class Person(Memorised):
             ctx.fill()
 
         draw_text(self.text, self.get('tx')+ txo, self.get('y')+ tyo, self.tw, top_centered_lines=1)
-        
+
         if self.ipath != None:
 #           log.debug('PD: imagePath: %s', self.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
             draw_image(self.ipath, self.get('tx')+ ixo, self.get('y')+ iyo, self.iw, self.ih, self.iscale)
-                
-            
+
+
         for f in self.families:
             f.draw()
 
@@ -811,7 +811,7 @@ class Family(Memorised):
         iyo = 0     #image Y blockoffset from box
         txo = 0     #text X blockoffset from box
         tyo = 0     #text Y blockoffset from box
-        
+
         if INC_IMAGE == True:
             if IMAGE_LOC == 'Above Text':
                 ixo = (self.spouse.boxw - self.spouse.iw)/2
@@ -819,14 +819,14 @@ class Family(Memorised):
                 txo = (self.spouse.boxw - self.spouse.tw)/2
                 tyo = self.spouse.ih
             elif IMAGE_LOC == 'Left of Text':
-                #ixo = 0 
+                #ixo = 0
                 iyo = (self.spouse.boxh - self.spouse.ih)/2
                 txo = self.spouse.iw
                 tyo = (self.spouse.boxh - self.spouse.th)/2
             else:
                 log.warning('FD: Image location not valid: %s', IMAGE_LOC)
-    
-        log.debug('FD: Draw Fam/Sp %s Gen:%d', self.spouse.text[0][2], self.generation) 
+
+        log.debug('FD: Draw Fam/Sp %s Gen:%d', self.spouse.text[0][2], self.generation)
 #       log.debug('FD: bw=%d, get.bw=%d, tw=%d, iw=%d, spx=%d, ixo=%d, txo=%d', self.spouse.boxw, self.spouse.get('bw'), self.spouse.tw, self.spouse.iw, self.get('spx'), ixo, txo)
 #       log.debug('FD: bh=%d, get.bh=%d, th=%d, ih=%d, spy=%d, ixo=%d, txo=%d', self.spouse.boxh, self.spouse.get('bh'), self.spouse.th, self.spouse.ih, self.get('spy'), iyo, tyo)
 #       log.debug('FD: glx=%d, gly=%d, glh=%d, flw=%d', self.get('glx'), self.get('gly'), self.get('glh'), self.get('flw'))
@@ -844,12 +844,12 @@ class Family(Memorised):
             ctx.fill()
 
         draw_text(self.spouse.text, self.get('spx')+ txo, self.get('spy')+ tyo, self.spouse.tw, top_centered_lines=1)
-        
+
         if self.spouse.ipath != None:
 #           log.debug('FD: imagePath: %s', self.spouse.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
             draw_image(self.spouse.ipath, self.get('spx')+ ixo, self.get('spy')+ iyo, self.spouse.iw, self.spouse.ih, self.spouse.iscale)
-    
-    
+
+
         if self.children != []:
             set_line_style(ctx)
             ctx.new_path()
@@ -994,7 +994,7 @@ def load_gramps(start):
                     else:
                         ev.append([et, event.get_date_object().sortval],)
         return ev
-        
+
     def format_event_or_similar(event_ref_list, event_type_list, event_format, p_hdl):
         """ 
         returns a formated string of the person's event that matchs one on the event_list
@@ -1046,7 +1046,7 @@ def load_gramps(start):
                     if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
                         ev=(format_event_or_similar(person.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
                     else:
-                        ev=(format_event(person.get_event_ref_list(), etype, event_format, person.handle))        
+                        ev=(format_event(person.get_event_ref_list(), etype, event_format, person.handle))
                 if ev:
                     elist.extend(ev)
                     #log.debug('Add Event=%s', ev)
@@ -1061,7 +1061,7 @@ def load_gramps(start):
                 for (etxt, esort) in elist:
                     estrings.append(etxt)
         return estrings
-    
+
     def get_person_text(person, display_format, f, dnum=None):
         """
         assembles all the text for a person
@@ -1092,7 +1092,7 @@ def load_gramps(start):
                 elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
                     n_col = (1, 0, 0) # Red
                 else:
-                    n_col = (0, 0.5, 0) # Green             
+                    n_col = (0, 0.5, 0) # Green
             else:
                 n_col = (0, 0, 0) # Black
 
@@ -1120,7 +1120,7 @@ def load_gramps(start):
                         line = line.replace(repl[0], repl[1])
                 s2.append((size, color, line))
         return s2
-        
+
     def do_person(p_id, dnum="1."):
         """
         This routine creates a tree of "Person" and Family" records,
@@ -1132,7 +1132,7 @@ def load_gramps(start):
         global HIGH_GENERATION
         HIGH_GENERATION = max(HIGH_GENERATION, CUR_GENERATION)
         UNKNOWN_PERSON_TXT = [(1.0, (0,0,0), 'Unknown'),]
-        
+
         descendant = GRAMPS_DB.get_person_from_gramps_id(p_id)
         log.debug('Do_Person: Descendant %s, DB ID:%s', descendant.primary_name.get_regular_name(), p_id)
         blk_txt = get_person_text(descendant, DESCEND_DISP, None, dnum)  # assembles array of text tuples(size, colour, txt-str)
@@ -1273,7 +1273,7 @@ def draw_file(p, fn, writer):
     draw_tree(p)
     ctx.show_page()
     writer.finish()
- 
+
 
 #------------------------------------------------------------------------
 #
@@ -1320,7 +1320,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_gen.set_help(_("The number of generations to include in the chart." \
                 " (0 for unlimited)"))
         menu.add_option(category_name, "max_gen", max_gen)
-                
+
         stroke_rectangle = BooleanOption(_("Box around Person's block"), False)
         stroke_rectangle.set_help(_('Draw a thin black box around each person\' text block.'))
         menu.add_option(category_name, 'stroke_rectangle', stroke_rectangle)
@@ -1332,11 +1332,11 @@ class DescendantsLinesOptions(MenuReportOptions):
         d_alpha = NumberOption(_("Descend block colour intensity"), 64, 0, 255)
         d_alpha.set_help(_("Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense colour"))
         menu.add_option(category_name, "descend_alpha", d_alpha)
-        
+
         s_alpha = NumberOption(_("Spouse block colour intensity"), 32, 0, 255)
         s_alpha.set_help(_("Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"))
         menu.add_option(category_name, "spouse_alpha", s_alpha)
-                
+
         inc_image = BooleanOption(_('Include an image'), True)
         inc_image.set_help(_('Whether to include an image if one is available.'))
         menu.add_option(category_name, 'inc_image', inc_image)
@@ -1344,7 +1344,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         image_h = NumberOption(_("Max Image height"), 0, 0, 250)
         image_h.set_help(_("Maximum image height in pixels, 0=don't scale for height."))
         menu.add_option(category_name, "image_h", image_h)
-        
+
         image_w = NumberOption(_("Max Image width"), 0, 0, 250)
         image_w.set_help(_("Maximum image width in pixels, 0=don't scale for width."))
         menu.add_option(category_name, "image_w", image_w)
@@ -1358,19 +1358,19 @@ class DescendantsLinesOptions(MenuReportOptions):
 
       ##################
         category_name = _("Display")
-        
-        namedisp = StringOption(_("Name Display Format"), "$n(f L){ \($n(n)\)}") 
+
+        namedisp = StringOption(_("Name Display Format"), "$n(f L){ \($n(n)\)}")
         namedisp.set_help(_("f=first & middle names, l=surname, n=nickname,\nc=commonly used given name, t=title, s=suffix, g=family nick name\nSee Wiki Manual > Reports > part 2"))
         menu.add_option(category_name, "name_disp", namedisp)
 
         inc_dnum = BooleanOption(_("Use d'Aboville descendant numbering system"), False)
         inc_dnum.set_help(_("Prepend name with d'Aboville descendant number in the chart."))
         menu.add_option(category_name, 'inc_dnum', inc_dnum)
-        
+
         gender_colors = BooleanOption(_('Colour Name by Gender'), False)
         gender_colors.set_help(_('Color the name to indicate a person\'s gender in the chart.'))
         menu.add_option(category_name, 'gender_colors', gender_colors)
-                
+
         disp = TextOption(_("Descendant\nDisplay Format"),
                            ["[ BIRTH   ]$e(t d(yyyy)< @ >D(t))",
                            "[ Occupation, Degree, Education ]$e(t d(o yyyy/mm/dd)< >n< at >D(t))",
@@ -1394,7 +1394,7 @@ class DescendantsLinesOptions(MenuReportOptions):
                            "[ Death ]$e(t d(yyyy)< @ >D(t))"])
         sdisp.set_help(_("[event, list]$e(formating)\nSee Wiki Manual > Reports > part 2\nformating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"))
         menu.add_option(category_name, "spouse_disp", sdisp)
-        
+
         or_similar_events = BooleanOption(_('Use alternate events, if Primary event is not found'), False)
         or_similar_events.set_help(_("For Birth (baptism, christen)\n   Marriage (marr_lic, engagement)\n   Divorce (annulment, div_filing),\n   Death (burial, cremation, probate)."))
         menu.add_option(category_name, "or_similar_events", or_similar_events)
@@ -1406,8 +1406,8 @@ class DescendantsLinesOptions(MenuReportOptions):
         protect_private = BooleanOption(_("Protect People, Images or Events that are marked Private"), True)
         protect_private.set_help(_("The Privacy setting of only these types of Gramps objects are checked"))
         menu.add_option(category_name, 'protect_private', protect_private)
-   
-        private_text = StringOption(_("Privacy text"), 'Private') 
+
+        private_text = StringOption(_("Privacy text"), 'Private')
         private_text.set_help(_("Text to display in block, when a Person is marked private"))
         menu.add_option(category_name, "private_text", private_text)
 
@@ -1421,7 +1421,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_note_len = NumberOption(_("Max Note Length"), 0, 0, 250)
         max_note_len.set_help(_("Maximum length of an event's note field in a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
-        
+
        ##################
         category_name = _("Replace")
 
@@ -1433,67 +1433,67 @@ class DescendantsLinesOptions(MenuReportOptions):
 
        ##################
         category_name = _('S  &amp; F Options')
-       
+
         s_down = NumberOption(_("S_DOWN"), 20, 0, 50)
         s_down.set_help(_("The length of the vertical edge from descendant to spouse-bar."))
         menu.add_option(category_name, "S_DOWN", s_down)
-        
+
         s_up = NumberOption(_("S_UP"), 10, 0, 50)
         s_up.set_help(_("The length of the vertical edge from spouse-bar to spouse."))
         menu.add_option(category_name, "S_UP", s_up)
-        
+
         s_vpad = NumberOption(_("S_VPAD"), 10, 0, 50)
         s_vpad.set_help(_("The number of ??? vpad"))
         menu.add_option(category_name, "S_VPAD", s_vpad)
-        
+
         sp_pad = NumberOption(_("SP_PAD"), 10, 0, 50)
         sp_pad.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "SP_PAD", sp_pad)
-        
+
 #         category_name = _('Options F')
-        
+
         f_pad = NumberOption(_("F_PAD"), 20, 0, 50)
         f_pad.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "F_PAD", f_pad)
-        
+
         fl_pad = NumberOption(_("FL_PAD"), 20, 0, 50)
         fl_pad.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "FL_PAD", fl_pad)
-        
+
         category_name = _('O, C &amp; Text Options')
-        
+
         ol_pad = NumberOption(_("OL_PAD"), 10, 0, 50)
         ol_pad.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "OL_PAD", ol_pad)
-        
+
         o_down = NumberOption(_("O_DOWN"), 30, 0, 50)
         o_down.set_help(_("The length of the vertical edge from spouse-bar to child-bar."))
         menu.add_option(category_name, "O_DOWN", o_down)
-        
+
 #         category_name = _('Options C')
-        
+
         c_pad = NumberOption(_("C_PAD"), 10, 0, 50)
         c_pad.set_help(_("The number of ??? pad"))
         menu.add_option(category_name, "C_PAD", c_pad)
-    
+
         c_up = NumberOption(_("C_UP"), 15, 0, 50)
         c_up.set_help(_("The length of the vertical edge from child to child-bar."))
         menu.add_option(category_name, "C_UP", c_up)
-        
+
         min_c_width = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
         min_c_width.set_help(_("The number of ??? min width"))
         menu.add_option(category_name, "MIN_C_WIDTH", min_c_width)
-        
+
 #         category_name = _('Options Text')
-        
+
         text_pad = NumberOption(_("TEXT_PAD"), 2, 0, 50)
         text_pad.set_help(_("The number of text pad ???"))
         menu.add_option(category_name, "TEXT_PAD", text_pad)
-        
+
         text_line_pad = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
         text_line_pad.set_help(_("The number of text line pad ??? "))
         menu.add_option(category_name, "TEXT_LINE_PAD", text_line_pad)
-        
+
     def make_default_style(self, default_style):
         """Make the default output style"""
 

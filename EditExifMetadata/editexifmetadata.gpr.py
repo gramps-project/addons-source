@@ -24,9 +24,9 @@
 #------------------------------------------------------------------------
 # Edit Image Exif Metadata class
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id                    = "Edit Image Exif Metadata", 
-         name                  = _("Edit Image Exif Metadata"), 
+register(GRAMPLET,
+         id                    = "Edit Image Exif Metadata",
+         name                  = _("Edit Image Exif Metadata"),
          description           = _("Gramplet to view, edit, and save image Exif metadata"),
          height                = 450,
          expand                = False,

@@ -66,7 +66,7 @@ def get_events(person, sa, all=False):
     if all:
         return sa.events(person)
     else:
-        return [get_birth_or_fallback(sa.dbase, person), 
+        return [get_birth_or_fallback(sa.dbase, person),
                 get_death_or_fallback(sa.dbase, person)]
 
 def process(database, sa, event_list, handled, center_person, inlaw, person, level=0, maxlevel=1):
@@ -91,7 +91,7 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
         handled[family.handle] = family
         for event in sa.events(family):
             etype = sa.event_type(event)
-            if person.handle in [obj.handle for obj in [mother, father] 
+            if person.handle in [obj.handle for obj in [mother, father]
                                  if obj is not None]:
                 desc = rel_calc.get_one_relationship(database, center_person, person).title()
                 if desc == "":
@@ -103,14 +103,14 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
             event_list += [(event, family, desc)]
         # get details of spouse
         if father:
-            process(database, sa, event_list, handled, center_person, 
+            process(database, sa, event_list, handled, center_person,
                     person.handle != father.handle, father, level=level+1)
         if mother:
-            process(database, sa, event_list, handled, center_person, 
+            process(database, sa, event_list, handled, center_person,
                     person.handle != mother.handle, mother, level=level+1)
         # get details of children
         for handle in family.get_child_ref_list():
-            child = database.get_person_from_handle(handle.ref) 
+            child = database.get_person_from_handle(handle.ref)
             if child is not None and child.handle not in handled:
                 handled[child.handle] = child
                 relation = rel_calc.get_one_relationship(database, center_person, child).title()
@@ -126,8 +126,8 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
             if family.handle not in handled:
                 handled[family.handle] = family
                 relation = levelname(inlaw, level + 1)
-                event_list += [(event, family, "%s, %s" % 
-                                (relation, sa.event_type(event))) 
+                event_list += [(event, family, "%s, %s" %
+                                (relation, sa.event_type(event)))
                                for event in sa.events(family)]
                 if level+1 <= maxlevel:
                     father = sa.father(family)
@@ -137,7 +137,7 @@ def process(database, sa, event_list, handled, center_person, inlaw, person, lev
                     process(database, sa, event_list, handled, center_person, False, mother, level=level+1)
             # get details of siblings
             for handle in family.get_child_ref_list():
-                child = database.get_person_from_handle(handle.ref) 
+                child = database.get_person_from_handle(handle.ref)
                 if child.handle not in handled:
                     handled[child.handle] = child
                     relation = rel_calc.get_one_relationship(database, center_person, child).title()
@@ -156,10 +156,10 @@ def run(database, document, person):
     sd.title(_("Timeline for %s") % sa.name(person))
     sd.paragraph("")
     stab = QuickTable(sa)
-    stab.columns(_("Date"), 
-                 _("Event"), 
-                 _("Age"), 
-                 _("Place"), 
+    stab.columns(_("Date"),
+                 _("Event"),
+                 _("Age"),
+                 _("Place"),
                  _("People involved"))
     stab.set_link_col(4)
 

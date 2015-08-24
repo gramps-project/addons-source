@@ -130,15 +130,15 @@ class Census():
     def get_census_ids(self):
         """ Return a list of census ids for all census definitions. """
         return self.__dates.keys()
-        
+
     def get_date(self, census_id):
         """ Return a textual census date for a given census id. """
         return self.__dates[census_id]
-        
+
     def get_columns(self, census_id):
         """ Return a list of column definitions for a given census id. """
         return self.__columns[census_id]
-        
+
     def get_headings(self, census_id):
         """ Return a list of heading definitions for a given census id. """
         return self.__headings[census_id]
@@ -161,19 +161,19 @@ def get_census_date(census_id):
     Return the date for a given census.
     """
     return parser.parse(CENSUS.get_date(census_id))
-        
+
 def get_census_columns(census_id):
     """
     Return a list of columns for a given census.
     """
     return [x[0] for x in CENSUS.get_columns(census_id)]
-    
+
 def get_census_headings(census_id):
     """
     Return a list of headings for a given census.
     """
     return CENSUS.get_headings(census_id)
-    
+
 def get_report_columns(census_id):
     """
     Return a list of column definitions for a given census.  These will be used
@@ -190,7 +190,7 @@ def get_census_id(source):
         if str(attr.get_type()) == CENSUS_TAG:
             return attr.get_value()
     return None
-            
+
 def get_census_citation(db, event):
     """
     Return the citation for this census event.  If there is more
@@ -204,7 +204,7 @@ def get_census_citation(db, event):
         if census_id in get_census_ids():
             return citation
     return None
-        
+
 def get_census_sources(db):
     """
     Return a list of census sources.  Each item in the list is a list

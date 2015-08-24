@@ -37,8 +37,8 @@ class ParseTest(unittest.TestCase):
             self.assertTrue(getattr(p, kw) == kwargs[kw],
                             "QUERY: '%s' checking '%s', %s != %s" % (
                                 p.query,
-                                kw, 
-                                getattr(p, kw), 
+                                kw,
+                                getattr(p, kw),
                                 kwargs[kw]))
     def test_parser1(self):
         self.do_query(
@@ -69,7 +69,7 @@ class ParseTest(unittest.TestCase):
             values=[],
             where=None,
         )
-        
+
     def test_parser4(self):
         self.do_query(
             "select * from family where x == 1;",
@@ -78,7 +78,7 @@ class ParseTest(unittest.TestCase):
             where="x == 1",
             action="SELECT",
         )
-        
+
     def test_parser5(self):
         self.do_query(
             "select a, b, c from table;",
@@ -86,7 +86,7 @@ class ParseTest(unittest.TestCase):
             columns=["a", "b", "c"],
             action="SELECT",
         )
-        
+
     def test_parser6(self):
         self.do_query(
             "from table select a, b, c;",
@@ -94,7 +94,7 @@ class ParseTest(unittest.TestCase):
             columns=["a", "b", "c"],
             action="SELECT",
         )
-        
+
     def test_parser7(self):
         self.do_query(
             "select a.x.y[0], b.f[5], c[0] from table;",
@@ -102,7 +102,7 @@ class ParseTest(unittest.TestCase):
             columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
-        
+
     def test_parser8(self):
         self.do_query(
             "select a.x.y[0] as X, b.f[5] as apple, c[0] from table;",
@@ -111,7 +111,7 @@ class ParseTest(unittest.TestCase):
             columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
-        
+
     def test_parser9(self):
         self.do_query(
             "from table select a.x.y[0] as X, b.f[5] as apple, c[0];",
@@ -120,7 +120,7 @@ class ParseTest(unittest.TestCase):
             columns=["a.x.y[0]", "b.f[5]", "c[0]"],
             action="SELECT",
         )
-        
+
     def test_parser10(self):
         self.do_query(
             "delete from table where test in col[0];",
@@ -128,7 +128,7 @@ class ParseTest(unittest.TestCase):
             where="test in col[0]",
             action ="DELETE",
         )
-        
+
     def test_parser11(self):
         self.do_query(
             "delete from table where ',' in a.b.c;",
@@ -136,7 +136,7 @@ class ParseTest(unittest.TestCase):
             where="',' in a.b.c",
             action ="DELETE",
         )
-        
+
     def test_parser12(self):
         self.do_query(
             "update table set a=1, b=2 where test is in col[0];",
@@ -146,7 +146,7 @@ class ParseTest(unittest.TestCase):
             values=["1", "2"],
             action="UPDATE",
         )
-        
+
     def test_parser13(self):
         self.do_query(
             "select gramps_id, primary_name.first_name, primary_name.surname_list[0].surname from person;",
@@ -155,7 +155,7 @@ class ParseTest(unittest.TestCase):
             columns=["gramps_id", "primary_name.first_name", "primary_name.surname_list[0].surname"],
             action="SELECT",
         )
-        
+
     def test_parser14(self):
         self.do_query(
             "from person select gramps_id, primary_name.first_name, primary_name.surname_list[0].surname;",
@@ -193,14 +193,14 @@ class ParseTest(unittest.TestCase):
             values=["12"],
             action="UPDATE",
         )
-        
+
     def test_parser18(self):
         self.do_query(
             "UPDATE person SET private = (False or True) "
             "from person "
-            "where primary_name.first_name == 'XXX';", 
+            "where primary_name.first_name == 'XXX';",
             table="person",
-            where="primary_name.first_name == 'XXX'", 
+            where="primary_name.first_name == 'XXX'",
             setcolumns=["private"],
             values=["(False or True)"],
         )
@@ -227,9 +227,9 @@ class ParseTest(unittest.TestCase):
         self.do_query(
             "UPDATE person SET private = (False or False) "
             "from person "
-            "where primary_name.first_name == 'XXX';", 
+            "where primary_name.first_name == 'XXX';",
             table="person",
-            where="primary_name.first_name == 'XXX'", 
+            where="primary_name.first_name == 'XXX'",
             setcolumns=["private"],
             values=["(False or False)"],
         )
@@ -266,7 +266,7 @@ class StructTest(unittest.TestCase):
         to_struct = person_with_parents.to_struct()
         struct = Struct(to_struct, StructTest.DB)
         self.assertTrue(len(struct.parent_family_list) > 0,
-                        "Size not correct: %s is not > than %s" % (len(struct.parent_family_list), 
+                        "Size not correct: %s is not > than %s" % (len(struct.parent_family_list),
                                                                    0))
 
         self.assertTrue(struct.parent_family_list[0].private == False,
@@ -283,7 +283,7 @@ class StructTest(unittest.TestCase):
         to_struct = person_with_events.to_struct()
         struct = Struct(to_struct, StructTest.DB)
         self.assertTrue(len(struct.event_ref_list) > 0,
-                        "Size not correct: %s is not > than %s" % (len(struct.event_ref_list), 
+                        "Size not correct: %s is not > than %s" % (len(struct.event_ref_list),
                                                                    0))
 
         self.assertTrue(struct.event_ref_list[0] is not None,
@@ -310,7 +310,7 @@ class SelectTest(unittest.TestCase):
                 if name and "John" in name.first_name:
                     self.john_count += 1
         unittest.TestCase.__init__(self, *args, **kwargs)
-    
+
     def runTest(self): # for python -i
         pass
 
@@ -329,54 +329,54 @@ class SelectTest(unittest.TestCase):
     def test_select2(self):
         self.do_query(2, "select primary_name.first_name "
                      "from person "
-                     "where 'John' in primary_name.first_name;", 
+                     "where 'John' in primary_name.first_name;",
                      self.john_count)
 
     def test_select3(self):
         self.do_query(3, "update person SET primary_name.first_name='XXX' "
-                     "where 'John' in primary_name.first_name;", 
+                     "where 'John' in primary_name.first_name;",
                      self.john_count)
 
     def test_select4(self):
         self.do_query(4, "select primary_name.first_name "
                      "from person "
-                     "where primary_name.first_name == 'XXX';", 
+                     "where primary_name.first_name == 'XXX';",
                      self.john_count)
 
     def test_select5(self):
         self.do_query(5, "UPDATE person SET private = (False or False) "
                      "from person "
-                     "where primary_name.first_name == 'XXX';", 
+                     "where primary_name.first_name == 'XXX';",
                      self.john_count)
 
     def test_select6(self):
         self.do_query(6, "select private, primary_name "
                      "from person "
-                     "where primary_name.first_name == 'XXX' and private;", 
+                     "where primary_name.first_name == 'XXX' and private;",
                      0)
 
     def test_select7(self):
         self.do_query(7, "SELECT private, primary_name "
                      "FROM person "
-                     "where primary_name.first_name == 'XXX' and not private;", 
+                     "where primary_name.first_name == 'XXX' and not private;",
                      self.john_count)
 
     def test_select8(self):
         self.do_query(8, "UPDATE person SET private = (False or True) "
                      "from person "
-                     "where primary_name.first_name == 'XXX';", 
+                     "where primary_name.first_name == 'XXX';",
                      self.john_count)
 
     def test_select9(self):
         self.do_query(9, "select private, primary_name "
                      "from person "
-                     "where primary_name.first_name == 'XXX' and private;", 
+                     "where primary_name.first_name == 'XXX' and private;",
                      self.john_count)
 
     def test_select10(self):
         self.do_query(10, "select private, primary_name "
                      "from person "
-                     "where primary_name.first_name == 'XXX' and not private;", 
+                     "where primary_name.first_name == 'XXX' and not private;",
                      0)
 
     def test_select11(self):
@@ -388,7 +388,7 @@ class SelectTest(unittest.TestCase):
         self.do_query(12,
             "SELECT * from person LIMIT 5",
             5)
-        
+
     def test_select13(self):
         self.do_query(13,
             "SELECT ROWNUM, random.random() from person LIMIT 5",
@@ -414,7 +414,7 @@ class SelectTest(unittest.TestCase):
         self.assertTrue(table.data[0][0] == "I0004", "First row, first col is %s, should be %s" % (table.data[0][0], "I0004"))
 
         table = self.do_query(17.2, "SELECT gramps_id, father_handle.primary_name.first_name "
-                                   "FROM family WHERE father_handle.primary_name.first_name;", 23) 
+                                   "FROM family WHERE father_handle.primary_name.first_name;", 23)
         table.data = sorted(table.data)
         self.assertTrue(table.data[0][0] == "F0000", "First row, first col is %s, should be %s" % (table.data[0][0], "F0000"))
         self.assertTrue(table.data[0][1] == "Martin", "First row, second col is %s, should be %s" % (table.data[0][1], "Martin"))
@@ -424,13 +424,13 @@ class SelectTest(unittest.TestCase):
         self.assertTrue(table.data[0][0] == "F0005", "First row, first col is %s, should be %s" % (table.data[0][0], "F0005"))
 
         table = self.do_query(17.4, "SELECT gramps_id, father_handle.primary_name.first_name, father_handle.gramps_id "
-                                   "FROM family WHERE gramps_id == 'F0005';", 1) 
+                                   "FROM family WHERE gramps_id == 'F0005';", 1)
         self.assertTrue(table.data[0][0] == "F0005", "1 First row, first col is %s, should be %s" % (table.data[0][0], "F0005"))
         self.assertTrue(table.data[0][1] == "Father", "1 First row, second col is %s, should be %s" % (table.data[0][1], "Father"))
         self.assertTrue(table.data[0][2] == "I0012", "1 First row, third col is %s, should be %s" % (table.data[0][2], "I0012"))
 
         table = self.do_query(17.5, "SELECT gramps_id, primary_name.first_name "
-                                   "FROM person WHERE gramps_id == 'I0012';", 1) 
+                                   "FROM person WHERE gramps_id == 'I0012';", 1)
         self.assertTrue(table.data[0][0] == "I0012", "First row, first col is %s, should be %s" % (table.data[0][0], "I0012"))
         self.assertTrue(table.data[0][1] == "Father", "First row, second col is %s, should be %s" % (table.data[0][1], "Father"))
 

@@ -49,10 +49,10 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
-                             FONT_SANS_SERIF, FONT_SERIF, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                             FONT_SANS_SERIF, FONT_SERIF,
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
-                             
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -97,13 +97,13 @@ class RepositoryReportAlt(Report):
         """
 
         Report.__init__(self, database, options, user)
-        
+
         self.user = user
 
         menu = options.menu
         get_option_by_name = menu.get_option_by_name
         get_value = lambda name: get_option_by_name(name).get_value()
-        
+
         self.inc_intern = get_value('incintern')
         self.inc_addres = get_value('incaddres')
         self.inc_author = get_value('incauthor')
@@ -114,7 +114,7 @@ class RepositoryReportAlt(Report):
         self.incl_media = get_value('inclmedia')
         self.incl_citat = get_value('inclcitat')
         self.inc_privat = get_value('incprivat')
-        
+
         language = get_value('trans')
         locale = self.set_locale(language)
 
@@ -136,7 +136,7 @@ class RepositoryReportAlt(Report):
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
         self.__write_all_repositories()
-        
+
     def __write_all_repositories(self):
         """
         This procedure writes out all repositories.
@@ -156,7 +156,7 @@ class RepositoryReportAlt(Report):
 
         self.doc.start_paragraph('REPO-RepositoryTitle')
 
-        self.doc.write_text(('%(repository)s (%(type)s)') % 
+        self.doc.write_text(('%(repository)s (%(type)s)') %
                                 {'repository' : repository.get_name(),
                                 'type' : repository.get_type()})
         self.doc.end_paragraph()
@@ -169,7 +169,7 @@ class RepositoryReportAlt(Report):
 
                 # on tuple : [0] = classname ; [1] = handle
 
-                note_handle = note_handle[1] 
+                note_handle = note_handle[1]
                 self.__write_referenced_notes(note_handle)
 
         # additional repository informations
@@ -188,7 +188,7 @@ class RepositoryReportAlt(Report):
                 if self.inc_addres:
                     self.doc.write_text(self._('Address:'))
                     self.doc.write_text(address)
-                    
+
                 self.doc.end_paragraph()
 
     def __write_referenced_sources(self, handle):
@@ -213,7 +213,7 @@ class RepositoryReportAlt(Report):
                     source_nbr += 1
                     self.doc.start_paragraph('REPO-Section')
 
-                    title = (('%(nbr)s. %(name)s (%(type)s) : %(call)s') % 
+                    title = (('%(nbr)s. %(name)s (%(type)s) : %(call)s') %
                                     {'nbr' : source_nbr,
                                      'name' : src.get_title(),
                                      'type' : str(reporef.get_media_type()),
@@ -230,13 +230,13 @@ class RepositoryReportAlt(Report):
                     # keys and values into a list []
 
                     data = ' '
-                    
+
                     if len(src.serialize()[9]) > 1:
                         for i in range(len(src.serialize()[9])):
                             key = str(src.serialize()[9][i][1][1])
                             value = str(src.serialize()[9][i][2])
                             data += " " + key + " = " + value + ", "
-                    
+
                     if len(src.serialize()[9]) == 1:
                         key = str(src.serialize()[9][0][1][1])
                         value = str(src.serialize()[9][0][2])
@@ -274,7 +274,7 @@ class RepositoryReportAlt(Report):
 
                             # on tuple : [0] = classname ; [1] = handle
 
-                            note_handle = note_handle[1] 
+                            note_handle = note_handle[1]
                             self.__write_referenced_notes(note_handle)
 
                     if src.get_citation_child_list() and self.incl_media:
@@ -282,7 +282,7 @@ class RepositoryReportAlt(Report):
                         for media_handle in medialist:
                             photo = src.get_media_list()
                             self.__write_referenced_media(photo, media_handle)
-                            
+
             for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
                 if self.incl_citat:
                     self.__write_referenced_citations(citationref)
@@ -303,7 +303,7 @@ class RepositoryReportAlt(Report):
         """
 
         for image in photo:
-            
+
             # check if not multiple references (citations) ???
             # TOFIX
 
@@ -355,7 +355,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the place report.
@@ -396,7 +396,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         inclmedia = BooleanOption(_('Include media'), False)
         inclmedia.set_help(_('Whether to include media on sources.'))
         addopt('inclmedia', inclmedia)
-        
+
         inclcitat = BooleanOption(_('Include citations'), False)
         inclcitat.set_help(_('Whether to include citations on sources.'))
         addopt('inclcitat', inclcitat)

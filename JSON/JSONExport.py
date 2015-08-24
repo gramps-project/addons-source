@@ -32,20 +32,20 @@ import sys
 #------------------------------------------------------------------------
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
-from gramps.gen.lib import (Note, Person, Event, Family, 
-                            Repository, Place, MediaObject, 
+from gramps.gen.lib import (Note, Person, Event, Family,
+                            Repository, Place, MediaObject,
                             Source, Tag, Citation)
 
-def exportData(database, filename, 
+def exportData(database, filename,
                error_dialog=None, option_box=None, callback=None):
-    if not callable(callback): 
+    if not callable(callback):
         callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename, encoding="utf-8") as fp:
 
-        total = (len(database.note_map) + 
+        total = (len(database.note_map) +
                  len(database.person_map) +
-                 len(database.event_map) + 
+                 len(database.event_map) +
                  len(database.family_map) +
                  len(database.repository_map) +
                  len(database.place_map) +
@@ -101,7 +101,7 @@ def exportData(database, filename,
             callback(100 * count/total)
 
         # ---------------------------------
-        # Place 
+        # Place
         # ---------------------------------
         for handle in database.place_map.keys():
             serial = database.place_map[handle]

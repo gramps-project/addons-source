@@ -4,7 +4,7 @@ register(IMPORT,
          description =  _('SQLite is a common local database format'),
          version = '1.0.28',
          gramps_target_version = "5.0",
-         status = STABLE, # tested with python 3, need to review unicode usage 
+         status = STABLE, # tested with python 3, need to review unicode usage
          fname = 'ImportSql.py',
          import_function = 'importData',
          extension = "sql"

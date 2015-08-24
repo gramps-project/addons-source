@@ -1,7 +1,7 @@
 register(
-    GRAMPLET, 
-    id= "Wordle Gramplet", 
-    name=_("Wordle Gramplet"), 
+    GRAMPLET,
+    id= "Wordle Gramplet",
+    name=_("Wordle Gramplet"),
     status = UNSTABLE,
     include_in_listing = False,
     fname="WordleGramplet.py",

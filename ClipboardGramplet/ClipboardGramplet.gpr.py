@@ -4,9 +4,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id="Clipboard Gramplet", 
-         name=_("Clipboard Gramplet"), 
+register(GRAMPLET,
+         id="Clipboard Gramplet",
+         name=_("Clipboard Gramplet"),
          description = _("Gramplet for grouping items"),
          status = STABLE, # not yet tested with python 3
          version = '1.0.26',

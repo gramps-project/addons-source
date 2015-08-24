@@ -37,7 +37,7 @@ from gramps.gen.plug.menu import FilterOption, PlaceListOption, EnumeratedListOp
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
-                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF, 
+                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF,
                             INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
 import gramps.gen.datehandler
@@ -97,7 +97,7 @@ class ListeEclairReport(Report):
         # identified as a major category if this is included in a Book report.
 
         title = _("Liste Eclair")
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)        
+        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph("Eclair-ReportTitle")
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -132,12 +132,12 @@ class ListeEclairReport(Report):
         """
         place = self.database.get_place_from_handle(handle)
         location = place.get_main_location()
-        
+
         city = location.get_city()
-        
+
         if city == '' and place.get_title():
             city = place.get_title()
-            
+
         return city
 
     def __write_referenced_events(self, handle , city):
@@ -181,7 +181,7 @@ class ListeEclairReport(Report):
                 person = self.database.get_person_from_handle(p_handle)
                 if person:
                     people = person.get_primary_name().get_surname()
-                    
+
             if not self.debut[city][people]:
                 self.debut[city][people] = year
                 self.fin[city][people] = year
@@ -201,7 +201,7 @@ class ListeEclairReport(Report):
                     else:
                         msg = city + ":" + people + ":" + str(self.debut[city][people]) + ":" + str(self.fin[city][people])
                 else:
-                    msg = people + ":" + city 
+                    msg = people + ":" + city
                 if msg:
                     self.result.append(str(msg))
 
@@ -210,7 +210,7 @@ class ListeEclairReport(Report):
         """
         This procedure converts a string of place GIDs to a list of handles
         """
-        place_handles = [] 
+        place_handles = []
         for place_gid in places.split():
             place = self.database.get_place_from_gramps_id(place_gid)
             if place is not None:
@@ -218,8 +218,8 @@ class ListeEclairReport(Report):
                 place_handles.append(place.get_handle())
 
         return place_handles
-        
-    
+
+
 #------------------------------------------------------------------------
 #
 # ListeEclairOptions
@@ -233,7 +233,7 @@ class ListeEclairOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
-        
+
     def add_menu_options(self, menu):
         """
         Add options to the menu for the place report.
@@ -292,6 +292,6 @@ class ListeEclairOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.75)
-        para.set_bottom_margin(0.25)        
+        para.set_bottom_margin(0.25)
         para.set_description(_('The style used for place title.'))
         default_style.add_paragraph_style("Eclair-ReportTitle", para)

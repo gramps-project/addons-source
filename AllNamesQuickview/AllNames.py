@@ -56,12 +56,12 @@ def run(database, document, *args, **kwargs):
     for person in database.iter_people():
         primary_name = person.get_primary_name()
         if primary_name:
-            names += [(nd.display_name(primary_name), 
-                       person, 
+            names += [(nd.display_name(primary_name),
+                       person,
                        str(primary_name.get_type()))]
-        names += [(nd.display_name(name), 
-                   person, 
-                   str(name.get_type())) for name in  
+        names += [(nd.display_name(name),
+                   person,
+                   str(name.get_type())) for name in
                   person.get_alternate_names()]
 
     matches = 0

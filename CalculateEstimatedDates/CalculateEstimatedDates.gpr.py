@@ -4,7 +4,7 @@
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id    = 'calculateestimateddates',
 name  = _("Calculate Estimated Dates"),
 description =  _("Calculates estimated dates for birth and death."),

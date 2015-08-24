@@ -95,9 +95,9 @@ from gen.plug.report import MenuReportOptions
 from gen.plug.report import utils as ReportUtils
 
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
-                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF, 
-                            INDEX_TYPE_TOC, INDEX_TYPE_ALP, PARA_ALIGN_CENTER)                    
-                    
+                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF,
+                            INDEX_TYPE_TOC, INDEX_TYPE_ALP, PARA_ALIGN_CENTER)
+
 from Utils import media_path_full
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -133,14 +133,14 @@ class SourcesCitationsReport(Report):
 
         Report.__init__(self, database, options, user)
         self.__db = database
-       
+
         menu = options.menu
         self.title_string = menu.get_option_by_name('title').get_value()
         self.subtitle_string = menu.get_option_by_name('subtitle').get_value()
         self.footer_string = menu.get_option_by_name('footer').get_value()
         self.showperson = menu.get_option_by_name('showperson').get_value()
 
-        
+
         filter_option = menu.get_option_by_name('filter')
         self.filter = filter_option.get_filter()
 #        self.sort = Sort.Sort(self.database)
@@ -158,58 +158,58 @@ class SourcesCitationsReport(Report):
         """
         self.doc.start_paragraph("SRC-ReportTitle")
         title = self.title_string
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)  
+        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
-        
+
         self.doc.start_paragraph("SRC-ReportTitle")
         title = self.subtitle_string
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)  
+        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
-        
+
         self.listeventref()
-        
-        
+
+
     def _formatlocal_source_text(self, source):
         if not source: return
-    
+
         src_txt = ""
-        
+
         if source.get_author():
             src_txt += source.get_author()
-        
+
         if source.get_title():
             if src_txt:
                 src_txt += ", "
             src_txt += '"%s"' % source.get_title()
-            
+
         if source.get_publication_info():
             if src_txt:
                 src_txt += ", "
             src_txt += source.get_publication_info()
-            
+
         if source.get_abbreviation():
             if src_txt:
                 src_txt += ", "
             src_txt += "(%s)" % source.get_abbreviation()
-            
+
         return src_txt
-        
+
     def listeventref(self):
-    
+
         sc = {'source': 'S_ID',
               'citalist': 'C_ID' }
-        stc = {}      
+        stc = {}
         citation_without_notes = 0
         EMPTY = " "
 
         def toYear(date):
             yeartext = date.get_year()
             return yeartext
- 
-     # build citasource dictionary  and cl list 
-        
+
+     # build citasource dictionary  and cl list
+
         sc = defaultdict(list)
         cl = []
         i=1
@@ -219,11 +219,11 @@ class SourcesCitationsReport(Report):
                 cl.append(ci.handle)
 
         # build citations - event dic                       xy
-        #(a,b): set([('Citation', 'c4a8c46041e08799b17')]) 
+        #(a,b): set([('Citation', 'c4a8c46041e08799b17')])
         # event: c4a8c4f95b01e38564a event: Taufe
         ci = defaultdict(list)
         for ev in self.__db.iter_events():
-            refhandlelist = ev.get_referenced_handles()   
+            refhandlelist = ev.get_referenced_handles()
             for (a,b) in refhandlelist:
                 if a == 'Citation':
                     if b in cl:                    #!
@@ -255,37 +255,37 @@ class SourcesCitationsReport(Report):
         #source
         skeys = sc.keys()
         skeys.sort(key=str.lower)
-        
+
         for s in skeys:
             self.doc.start_paragraph("SRC-SourceTitle")
             self.doc.write_text(self._formatlocal_source_text(self.__db.get_source_from_handle(s)))
-            self.doc.end_paragraph()       
-            
+            self.doc.end_paragraph()
+
             self.doc.start_paragraph("SRC-SourceDetails")
             self.doc.write_text(_("   key: %s") %
-                                self.__db.get_source_from_handle(s).gramps_id) 
-            self.doc.end_paragraph()  
-    
+                                self.__db.get_source_from_handle(s).gramps_id)
+            self.doc.end_paragraph()
+
             i = 1
             ckeys = sc[s]
             ckeys.sort(key=lambda x:self.__db.get_citation_from_handle(x).page)
-            for c in ckeys:                                     
+            for c in ckeys:
                        # c contains citationhandles
                 self.doc.start_paragraph("SRC-CitationTitle")
                 self.doc.write_text(_("%d") %
-                                    i)  
+                                    i)
                 self.doc.write_text(_("  %s") %
                                     self.__db.get_citation_from_handle(c).page)
                 self.doc.write_text(_("   Anno %s - ") %
-                                    toYear(self.__db.get_citation_from_handle(c).date))  
+                                    toYear(self.__db.get_citation_from_handle(c).date))
                 self.doc.end_paragraph()
                 # note
                 for notehandle in self.__db.get_citation_from_handle(c).get_note_list():
                     self.doc.start_paragraph("SRC-SourceDetails")
                     self.doc.write_text(_("   Type: %s") %
-                                        self.__db.get_note_from_handle(notehandle).type) 
+                                        self.__db.get_note_from_handle(notehandle).type)
                     self.doc.write_text(_("   N-ID: %s") %
-                                        self.__db.get_note_from_handle(notehandle).gramps_id) 
+                                        self.__db.get_note_from_handle(notehandle).gramps_id)
                     self.doc.end_paragraph()
 
                     self.doc.start_paragraph("SRC-SourceDetails")
@@ -293,7 +293,7 @@ class SourcesCitationsReport(Report):
 
                     self.doc.start_paragraph("SRC-SourceDetails")
                     self.doc.write_text(_("   %s") %
-                                        self.__db.get_note_from_handle(notehandle).text) 
+                                        self.__db.get_note_from_handle(notehandle).text)
                     self.doc.end_paragraph()
 
                     # event as table
@@ -302,7 +302,7 @@ class SourcesCitationsReport(Report):
                         self.doc.end_paragraph()
 
                        # if it is a familyevent
-                        for k in fedic.keys():                         
+                        for k in fedic.keys():
                             if e == k:
                                 for (a,b,c) in fedic[k]:
                                     self.doc.start_paragraph("SRC-SourceDetails")
@@ -311,29 +311,29 @@ class SourcesCitationsReport(Report):
                                     self.doc.write_text(_("   ( %s )") %
                                                         self.__db.get_event_from_handle(e).gramps_id)
 
-                                    self.doc.write_text(_("   Eheleute: %s ") %  
-                                                        self.__db.get_person_from_handle(b).primary_name.get_name()) 
-                                    self.doc.write_text(_("and %s ") % 
+                                    self.doc.write_text(_("   Eheleute: %s ") %
+                                                        self.__db.get_person_from_handle(b).primary_name.get_name())
+                                    self.doc.write_text(_("and %s ") %
                                                         self.__db.get_person_from_handle(a).primary_name.get_name())
                                     self.doc.end_paragraph()
 
                         for (a,b) in pedic[e]:
-                            if a.is_primary():   
+                            if a.is_primary():
                                 self.doc.start_paragraph("SRC-SourceDetails")
                                 self.doc.write_text(_("%s") %
                                               self.__db.get_event_from_handle(e).get_type())
                                 self.doc.write_text(_("   ( %s )") %
                                               self.__db.get_event_from_handle(e).gramps_id)
                                 self.doc.write_text(_(" %s") %
-                                                self.__db.get_person_from_handle(b).primary_name.get_name()) 
+                                                self.__db.get_person_from_handle(b).primary_name.get_name())
                                 self.doc.end_paragraph()
-                        
+
                         if self.showperson:
-                            liste = pedic[e].copy() 
+                            liste = pedic[e].copy()
                             if len(liste)>0:
                                 self.doc.start_table("EventTable", "SRC-EventTable")
                                 column_titles = [_("Person"), _("ID"),
-                                                 _("Role")] 
+                                                 _("Role")]
                                 self.doc.start_row()
                                 for title in column_titles:
                                     self.doc.start_cell("SRC-TableColumn")
@@ -341,8 +341,8 @@ class SourcesCitationsReport(Report):
                                     self.doc.write_text(title)
                                     self.doc.end_paragraph()
                                     self.doc.end_cell()
-                                self.doc.end_row()                 
-                      
+                                self.doc.end_row()
+
                                 for (a,b) in liste:
                                      self.doc.start_row()
                                      self.doc.start_cell("SRC-Cell")
@@ -361,12 +361,12 @@ class SourcesCitationsReport(Report):
                                      self.doc.start_paragraph("SRC-SourceDetails")
                                      self.doc.write_text(_("%s") %
                                                          a)
-                                     self.doc.end_paragraph()  
+                                     self.doc.end_paragraph()
                                      self.doc.end_cell()
                                      self.doc.end_row()
                                 self.doc.end_table()
                 i+=1
-                
+
 
 #------------------------------------------------------------------------
 #
@@ -381,30 +381,30 @@ class SourcesCitationsOptions(MenuReportOptions):
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
 
-        
-     
+
+
     def add_menu_options(self, menu):
         """ Add the options for this report """
         category_name = _("Report Options")
-        
+
         title = StringOption(_('book|Title'), _('Title of the Book') )
         title.set_help(_("Title string for the book."))
         menu.add_option(category_name, "title", title)
-        
+
         subtitle = StringOption(_('Subtitle'), _('Subtitle of the Book') )
         subtitle.set_help(_("Subtitle string for the book."))
         menu.add_option(category_name, "subtitle", subtitle)
-        
+
         dateinfo = time.localtime(time.time())
         #rname = self.__db.get_researcher().get_name()
         rname = "researcher name"
- 
+
         footer_string = _('Copyright %(year)d %(name)s') % {
             'year' : dateinfo[0], 'name' : rname }
         footer = StringOption(_('Footer'), footer_string )
         footer.set_help(_("Footer string for the page."))
         menu.add_option(category_name, "footer", footer)
-        
+
         # Reload filters to pick any new ones
         CustomFilters = None
         from Filters import CustomFilters, GenericFilter
@@ -416,7 +416,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         filter_list.extend(CustomFilters.get_filters('Source'))
         opt.set_filters(filter_list)
         menu.add_option(category_name, "filter", opt)
-        
+
         showperson = BooleanOption(_("Show persons"), True)
         showperson.set_help(_("Whether to show events and persons mentioned in the note"))
         menu.add_option(category_name, "showperson", showperson)
@@ -448,7 +448,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set_header_level(1)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
-        para.set_alignment(PARA_ALIGN_CENTER)       
+        para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the report.'))
         self.default_style.add_paragraph_style("SRC-ReportTitle", para)
 
@@ -463,10 +463,10 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set_header_level(2)
         para.set(first_indent=0.0, lmargin=0.0)
         para.set_top_margin(0.75)
-        para.set_bottom_margin(0.25)        
+        para.set_bottom_margin(0.25)
         para.set_description(_('The style used for source title.'))
         self.default_style.add_paragraph_style("SRC-SourceTitle", para)
-        
+
     def __citation_title_style(self):
         """
         Define the style used for the citation title
@@ -478,7 +478,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set_header_level(3)
         para.set(first_indent=0.0, lmargin=0.0)
         para.set_top_margin(0.75)
-        para.set_bottom_margin(0.0)        
+        para.set_bottom_margin(0.0)
         para.set_description(_('The style used for citation title.'))
         self.default_style.add_paragraph_style("SRC-CitationTitle", para)
 
@@ -518,7 +518,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set(first_indent=0.0, lmargin=0.0)
 
         para.set_top_margin(0.5)
-        para.set_bottom_margin(0.25)        
+        para.set_bottom_margin(0.25)
         para.set_description(_('The style used for each section.'))
         self.default_style.add_paragraph_style("SRC-Section", para)
 
@@ -568,4 +568,4 @@ class SourcesCitationsOptions(MenuReportOptions):
         cell.set_bottom_border(1)
         self.default_style.add_cell_style('SRC-TableColumn', cell)
 
-      
+

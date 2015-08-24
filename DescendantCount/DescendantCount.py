@@ -44,8 +44,8 @@ cache = {}
 #------------------------------------------------------------------------
 class DescendantCountGramplet(Gramplet):
     def main(self):
-        run_quick_report_by_name(self.gui.dbstate, 
-                                 self.gui.uistate, 
+        run_quick_report_by_name(self.gui.dbstate,
+                                 self.gui.uistate,
                                  "Descendant Count Quickview",
                                  "None", # dummy handle value
                                  container=self.gui.textview)
@@ -94,4 +94,4 @@ def run(database, document, person):
         matches += 1
     sdoc.paragraph(_("There are %d people.\n") % matches)
     stab.write(sdoc)
-                    
+

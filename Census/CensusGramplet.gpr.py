@@ -26,9 +26,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id = "Census Gramplet", 
-         name = _("Census Gramplet"), 
+register(GRAMPLET,
+         id = "Census Gramplet",
+         name = _("Census Gramplet"),
          description = _("Gramplet interface for census data"),
          status = STABLE, # not yet tested with python 3
          version = '1.0.31',
