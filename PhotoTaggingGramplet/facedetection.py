@@ -36,7 +36,7 @@ import os
 #-------------------------------------------------------------------------
 
 try:
-    import cv
+    import cv2 as cv
     computer_vision_available = True
 except ImportError:
     computer_vision_available = False
