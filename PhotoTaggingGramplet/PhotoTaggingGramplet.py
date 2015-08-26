@@ -126,9 +126,9 @@ class PhotoTaggingOptions(MenuOptions):
 
         category_name = _("Face detection")
         width, height = MIN_FACE_SIZE
-        self.min_face_width = NumberOption(_("Minimum face width"), width,
+        self.min_face_width = NumberOption(_("Minimum face width (px)"), width,
                                            1, 1000, 1)
-        self.min_face_height = NumberOption(_("Minimum face height"), height,
+        self.min_face_height = NumberOption(_("Minimum face height (px)"), height,
                                             1, 1000, 1)
         self.detect_inside_existing_boxes = BooleanOption(
           _("Detect faces inside existing boxes"), DETECT_INSIDE_EXISTING_BOXES)
@@ -251,7 +251,7 @@ class PhotoTaggingGramplet(Gramplet):
         if facedetection.computer_vision_available:
             self.button_detect.set_tooltip_text(_("Detect faces"))
         else:
-            self.button_detect.set_tooltip_text(_("Detect faces (cv module required)"))
+            self.button_detect.set_tooltip_text(_("Detect faces (OpenCV module required)"))
 
         self.button_settings.set_tooltip_text(_("Settings"))
 
