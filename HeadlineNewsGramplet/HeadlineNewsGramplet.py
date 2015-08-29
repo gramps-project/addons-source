@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 import re
-from gi.repository import GObject as gobject
+from gi.repository import GLib
 try:
     import urllib.request as urllib2
 except ImportError:
@@ -101,14 +101,15 @@ class HeadlineNewsGramplet(Gramplet):
             ("Gramps Blog Posts",    "rss", "http://blog.gramps-project.org/?feed=rss", None),
             ("Gramps Wiki Changes",  "rss", "http://www.gramps-project.org/wiki/index.php?title=Special:RecentChanges&feed=rss", None),
             ("Gramps Bugtracker Issues", "rss", "http://www.gramps-project.org/bugs/issues_rss.php?key=ece7d21451d76337acf776c9a4384773", None),
-            ("Gramps Git Commits",   "rss", "http://sourceforge.net/p/gramps/source/feed", None),
+            ("Github Gramps Git Commits",   "rss", "https://github.com/gramps-project/gramps/commits/master.atom", None),
+            ("Sourceforge Gramps Git Commits",   "rss", "http://sourceforge.net/p/gramps/source/feed", None),
             ]
         self.set_tooltip(_("Read Gramps headline news"))
         self.update_interval = 3600 * 1000 # in miliseconds (1 hour)
         self.set_use_markup(True)
         self.set_wrap(False)
         self.set_text(_("No Family Tree loaded."))
-        self.timer = gobject.timeout_add(self.update_interval,
+        self.timer = Glib.timeout_add(self.update_interval,
                                          self.update_by_timer)
 
     def update_by_timer(self):
@@ -124,7 +125,7 @@ class HeadlineNewsGramplet(Gramplet):
         yield True
         for (feed_description, feed_type, feed_url, pretty_url) in self.feeds:
             try:
-                fp = urllib2.urlopen(feed_url, timeout=5)
+                fp = urllib2.urlopen(feed_url, timeout=5, cafile=sys.prefix + "/ssl/certs/ca-bundle.trust.crt")
             except:
                 continue
             if feed_type == "wiki":
