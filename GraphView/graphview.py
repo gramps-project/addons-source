@@ -62,6 +62,10 @@ from gramps.gui.editors import EditPerson, EditFamily
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.constfunc import win
+
+if win():
+    DETACHED_PROCESS = 8
 
 try:
     import cairo
@@ -385,8 +389,15 @@ class GraphWidget(object):
 
         # Build the rest of the widget by parsing SVG data from Graphviz
         dot_data = dot.get_dot().encode('utf8')
-        svg_data = Popen(['dot', '-Tsvg'],
-                    stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
+        if win():
+            svg_data = Popen(['dot', '-Tsvg'],
+                             creationflags=DETACHED_PROCESS,
+                             stdin=PIPE,
+                             stdout=PIPE,
+                             stderr=PIPE).communicate(input=dot_data)[0]
+        else:
+            svg_data = Popen(['dot', '-Tsvg'], 
+                        stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(svg_data)
         window = self.canvas.get_parent()
