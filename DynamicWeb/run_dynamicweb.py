@@ -79,11 +79,7 @@ def main(report_nums):
         if (report_num not in report_nums): continue
         report_name = "report_%03i" % report_num
         # Build the report title and path
-        title = ",".join([
-            (key + "=" + (str(report_set['options'][key]) if isinstance(report_set['options'][key], (int, bool)) else report_set['options'][key]))
-            for key in sorted(report_set['options'].keys())
-        ])
-        title = re.sub("[^a-zA-Z_0-9]", ".", title)
+        title = report_set['title']
         print("=" * 80)
         print("%s:" % report_name)
         print("Exporting with options: %s" % title)

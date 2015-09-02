@@ -78,19 +78,17 @@ Classes:
  """
 
 #TODO: User documentation (wiki?)
-#TODO: Other bootstrap templates, use LESS for css generation
-#TODO: years in gregorian calendar (get_***_year) ?
-#TODO: Export all the database when the filter=0, not only records linked to people
-#TODO: Export places hierarchy
+#TODO: Other bootstrap templates
+#TODO: export ISO dates, years in gregorian calendar (get_***_year) ?
+#TODO: Export places hierarchy, and date dependent automatically generated place string
+#TODO: add option to show sources author besides with source title on every source reference (see issue #8048)
+#TODO: For pictures, the original narrative web page had little boxes around the peoples faces to click on. I find this quite nice so people see that there actually is something. While clicking still works, one has to know that without the boxes...
+#TODO:  to find out the main participants of an event. This is useful for events where a person is e.g. a witness. This is indicated on the person's page but one cannot find out what he/she actually witnessed. (see #7740)
+#TODO: Export tags
 #TODO: LDS stuff
-#TODO: Show siblings
-#TODO: Connection to other Gramps web reports. Connect it with Gramps HtmlView ?
-#TODO: export ISO dates
-#TODO: approximative search
-#TODO: export *.gramps file or *.pkgfile
-
-#TODO: Calendar page (see web calendar and calendar report)
 #TODO: Statistic charts, + database summary
+#TODO: Calendar page (see web calendar and calendar report)
+#TODO: approximate search
 
 # For the SVG graph:
 #TODO: Refactor: the scaling should be performed by SVG transform
@@ -252,38 +250,32 @@ SORT_KEY = glocale.sort_key
 #------------------------------------------------
 
 #: Maximum number of pages containing custom text
-NB_CUSTOM_PAGES = 5
-#: Maximum number of pages =
-NB_TOTAL_PAGES_MAX = 15
-#: Liste of the pages (description, title, file name)
+NB_CUSTOM_PAGES = 3
+#: Menu items
 PAGES_NAMES = [
-    (_("Person page"), _("Person"), "person.html"),
-    (_("Surnames index page"), _("Surnames"), "surnames.html"),
-    (_("Individuals index page"), _("Individuals"), "persons.html"),
-    (_("Families index page"), _("Families"), "families.html"),
-    (_("Sources index page"), _("Sources"), "sources.html"),
-    (_("Media index page"), _("Media"), "medias.html"),
-    (_("Places index page"), _("Places"), "places.html"),
-    (_("Addresses page"), _("Addresses"), "address.html"),
-    (_("Repositories index page"), _("Repositories"), "repositories.html"),
-    (_("SVG graphical tree"), _("Tree"), "tree_svg.html"),
-] + [
-    (_("Custom page %(index)i") % {"index": i + 1}, _("Custom"), "custom_%i.html" % (i + 1))
+    _("Home page"),
+    _("SVG graphical tree"),
+    # _("Statistics page"),
+    # _("Calendar"),
+    _("Indexes pages"),
+]
+#: Custom pages names
+CUSTOM_PAGES_NAMES = [
+    _("Custom page %(index)i") % {"index": i + 1}
     for i in range(NB_CUSTOM_PAGES)
 ]
+#: Maximum number of pages
+NB_TOTAL_PAGES_MAX = len(PAGES_NAMES) + NB_CUSTOM_PAGES
 
 # Constants used as indexes in L{PAGES_NAMES}
-(PAGE_PERSON,
-PAGE_SURNAMES,
-PAGE_PERSON_INDEX,
-PAGE_FAMILY_INDEX,
-PAGE_SOURCE_INDEX,
-PAGE_MEDIA_INDEX,
-PAGE_PLACE_INDEX,
-PAGE_ADDRESS_INDEX,
-PAGE_REPOSITORY_INDEX,
-PAGE_SVG_TREE,
-PAGE_CUSTOM) = range(11)
+(
+    PAGE_HOME,
+    PAGE_SVG_TREE,
+    # PAGE_STATISTICS,
+    # PAGE_CALENDAR,
+    PAGE_INDEX,
+    PAGE_CUSTOM
+) = range(len(PAGES_NAMES) + 1)
 
 # List of the descriptions of the tree graphs types
 SVG_TREE_TYPES = [
@@ -293,11 +285,13 @@ SVG_TREE_TYPES = [
     _("Ascending and descending tree"),
     _("Ascending and descending tree with spouses"),
 ]
-(SVG_TREE_TYPE_ASCENDING,
-SVG_TREE_TYPE_DESCENDING,
-SVG_TREE_TYPE_DESCENDING_SPOUSES,
-SVG_TREE_TYPE_ASCDESC,
-SVG_TREE_TYPE_ASCDESC_SPOUSES) = range(len(SVG_TREE_TYPES))
+(
+    SVG_TREE_TYPE_ASCENDING,
+    SVG_TREE_TYPE_DESCENDING,
+    SVG_TREE_TYPE_DESCENDING_SPOUSES,
+    SVG_TREE_TYPE_ASCDESC,
+    SVG_TREE_TYPE_ASCDESC_SPOUSES
+) = range(len(SVG_TREE_TYPES))
 DEFAULT_SVG_TREE_TYPE = SVG_TREE_TYPE_ASCDESC
 
 SVG_TREE_SHAPES = [
@@ -340,15 +334,34 @@ SVG_TREE_BACKGROUNDS = [
     _('Color scheme classic report'),
     _('Color scheme classic view'),
 ]
-(SVG_TREE_BACKGROUND_GENDER,
-SVG_TREE_BACKGROUND_GENERATION,
-SVG_TREE_BACKGROUND_AGE,
-SVG_TREE_BACKGROUND_SINGLE,
-SVG_TREE_BACKGROUND_PERIOD,
-SVG_TREE_BACKGROUND_WHITE,
-SVG_TREE_BACKGROUND_SCHEME1,
-SVG_TREE_BACKGROUND_SCHEME2) = range(len(SVG_TREE_BACKGROUNDS))
+(
+    SVG_TREE_BACKGROUND_GENDER,
+    SVG_TREE_BACKGROUND_GENERATION,
+    SVG_TREE_BACKGROUND_AGE,
+    SVG_TREE_BACKGROUND_SINGLE,
+    SVG_TREE_BACKGROUND_PERIOD,
+    SVG_TREE_BACKGROUND_WHITE,
+    SVG_TREE_BACKGROUND_SCHEME1,
+    SVG_TREE_BACKGROUND_SCHEME2,
+) = range(len(SVG_TREE_BACKGROUNDS))
 DEFAULT_SVG_TREE_BACKGROUND = SVG_TREE_BACKGROUND_GENERATION
+
+CHART_BACKGROUNDS = [
+    _('Single main (filter) color'),
+    _('Gender colors'),
+    _('Gradient'),
+    _('Color scheme classic report'),
+    _('Color scheme classic view'),
+    _('White'),
+]
+(
+    CHART_BACKGROUND_SINGLE,
+    CHART_BACKGROUND_GENDER,
+    CHART_BACKGROUND_GRADIENT,
+    CHART_BACKGROUND_SCHEME1,
+    CHART_BACKGROUND_SCHEME2,
+    CHART_BACKGROUND_WHITE,
+) = range(len(CHART_BACKGROUNDS))
 
 #: Templates for the website, in the form: [directory, name]
 #  First template is the default one:
@@ -592,9 +605,9 @@ class DynamicWebReport(Report):
             self.options['page_content_%i' %i]
             for i in range(self.pages_number)
         ]
-        self.page_name = [
-            self.options['page_name_%i' %i]
-            for i in range(len(PAGES_NAMES))
+        self.custom_page_name = [
+            self.options['custom_page_name_%i' %i]
+            for i in range(NB_CUSTOM_PAGES)
         ]
         self.custom_menu = [
             self.options['custom_menu_%i' %i]
@@ -604,16 +617,6 @@ class DynamicWebReport(Report):
             self.options['custom_note_%i' %i]
             for i in range(NB_CUSTOM_PAGES)
         ]
-        # Filter pages that cannot be exported due to other options
-        self.page_content = [pc for pc in self.page_content if (not(
-            (pc == PAGE_FAMILY_INDEX and not self.inc_families) or
-            (pc == PAGE_MEDIA_INDEX and not self.inc_gallery) or
-            (pc == PAGE_SOURCE_INDEX and not self.inc_sources) or
-            (pc == PAGE_REPOSITORY_INDEX and not self.inc_repositories) or
-            (pc == PAGE_PLACE_INDEX and not self.inc_places)
-        ))]
-        self.pages_number = len(self.page_content)
-
         self._backend = HtmlBackend()
         self._backend.build_link = self.build_link
 
@@ -675,7 +678,7 @@ class DynamicWebReport(Report):
         #################################################
         # Pass 2 Generate the web pages
 
-        with self.user.progress(_("Dynamic Web Site Report"), _("Exporting family tree data ..."), 10) as step:
+        with self.user.progress(_("Dynamic Web Site Report"), _("Exporting family tree data ..."), 11) as step:
             self.created_files = []
             # Create directories
             for dirname in ["thumb"] + (["image"] if (self.copy_media) else []):
@@ -698,6 +701,8 @@ class DynamicWebReport(Report):
             self._export_media()
             step()
             self._export_surnames()
+            step()
+            # self._export_statistics()
             step()
             # Generate HTML files
             self._export_pages()
@@ -2001,14 +2006,16 @@ class DynamicWebReport(Report):
         if (len(pcset) != len(self.page_content)):
             log.error(_("The pages configuration is not valid: several pages have the same content"))
             return
-
-        # Export the script containing the web  pages configuration
-        self._export_script_configuration()
-
+            
         # List of the scripts and CSS stylesheets used in the HTML pages
         # Note: other scripts and stylesheets are dynamically loaded in "dwr_start.js"
         # "dwr_start.js" is loaded in all pages uncontitionally (see L{write_header})
         dbscripts = ["dwr_db_indi.js", "dwr_db_fam.js", "dwr_db_sour.js", "dwr_db_cita.js", "dwr_db_media.js", "dwr_db_place.js", "dwr_db_repo.js", "dwr_db_surns.js"] #: list of the scripts to embed in the HTML
+        chartscripts = [
+            "data/highcharts/highcharts.js",
+            "data/highcharts/highcharts-more.js",
+            "http://code.highcharts.com/modules/exporting.js",
+        ]
         mapscripts = [] #: list of the scripts to embed in the HTML pages that show a map
         mapstyles = [] #: list of the CSS stylesheets to embed in the HTML pages that show a map
         if (self.options['placemappages'] or self.options['familymappages']):
@@ -2022,73 +2029,98 @@ class DynamicWebReport(Report):
                 # mapscripts = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"]
                 # mapstyles = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"]
 
-        #: List of page to generate: index in L{PAGES_NAMES}, Javascript code for generating the page
-        parts = {
-            PAGE_PERSON: (dbscripts + mapscripts, "DwrMain(PAGE_INDI);", mapstyles),
-            PAGE_SURNAMES: (dbscripts, "printSurnamesIndex();", []),
-            PAGE_PERSON_INDEX: (dbscripts, "printPersonsIndex();", []),
-            PAGE_FAMILY_INDEX: (dbscripts, "printFamiliesIndex();", []),
-            PAGE_SOURCE_INDEX: (dbscripts, "printSourcesIndex();", []),
-            PAGE_MEDIA_INDEX: (dbscripts, "printMediaIndex();", []),
-            PAGE_PLACE_INDEX: (dbscripts, "printPlacesIndex();", []),
-            PAGE_ADDRESS_INDEX: (dbscripts, "printAddressesIndex();", []),
-            PAGE_REPOSITORY_INDEX: (dbscripts, "printReposIndex();", []),
-            PAGE_SVG_TREE: (dbscripts, "DwrMain(PAGE_SVG_TREE);", []),
-        }
+        # List of page to generate:
+        #  - Page file name
+        #  - Page title
+        #  - Condition for generating the page,
+        #  - With menu ?
+        #  - Script files
+        #  - Style files
+        #  - Javascript code for generating the page
+        self.page_list = [
+            # Menu pages
+            ("index.html", _("Home"), PAGE_HOME in self.page_content, True, dbscripts, [], "HomePage();"),
+            ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, dbscripts, [], "DwrMain(PAGE_SVG_TREE);"),
+            ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
+            # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
+            # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, dbscripts, [], "printCalendar();"),
+            # Objects pages
+            ("person.html", _("Person"), True, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
+            ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
+            ("source.html", _("Source"), self.inc_sources, True, dbscripts, [], "DwrMain(PAGE_SOURCE);"),
+            ("media.html", _("Media"), self.inc_gallery, True, dbscripts, [], "DwrMain(PAGE_MEDIA);"),
+            ("place.html", _("Place"), self.inc_places, True, dbscripts, [], "DwrMain(PAGE_PLACE);"),
+            ("repository.html", _("Repository"), self.inc_repositories, True, dbscripts, [], "DwrMain(PAGE_REPO);"),
+            ("search.html", _("Search results"), True, True, dbscripts, [], "DwrMain(PAGE_SEARCH);"),
+            ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, dbscripts, [], "DwrMain(PAGE_SVG_TREE_FULL);"),
+            ("tree_svg_conf.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, dbscripts, [], "DwrMain(PAGE_SVG_TREE_CONF);"),
+            ("tree_svg_save.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, dbscripts, [], "DwrMain(PAGE_SVG_TREE_SAVE);"),
+            ("statistics.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatistics();"),
+            ("statistics_full.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsExpand();"),
+            ("statistics_link.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsLinks();"),
+            # ("statistics.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatistics();"),
+            # ("statistics_full.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsExpand();"),
+            # ("statistics_link.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsLinks();"),
+            # Index pages
+            ("surnames.html", _("Surnames"), True, True, dbscripts, [], "printSurnamesIndex();"),
+            ("surnames2.html", _("Surnames"), True, True, dbscripts, [], "printSurnamesIndex2();"),
+            ("persons.html", _("Individuals"), True, True, dbscripts, [], "printPersonsIndex();"),
+            ("families.html", _("Families"), False, True, dbscripts, [], "printFamiliesIndex();"),
+            ("sources.html", _("Sources"), False, True, dbscripts, [], "printSourcesIndex();"),
+            ("medias.html", _("Media"), False, True, dbscripts, [], "printMediaIndex();"),
+            ("places.html", _("Places"), False, True, dbscripts, [], "printPlacesIndex();"),
+            ("address.html", _("Addresses"), False, True, dbscripts, [], "printAddressesIndex();"),
+            ("repositories.html", _("Repositories"), False, True, dbscripts, [], "printReposIndex();"),
+        ]
 
-        # Export the HTML pages listed in L{PAGES_NAMES}
-        for i in range(self.pages_number):
-            pc = self.page_content[i] # Get the page i contents defined in the options
-            filename = PAGES_NAMES[pc][2]
-            title = self.page_name[pc]
-            if (pc in parts):
-                # The page is not a custom page
-                (scripts, cmd, styles) = parts[pc]
-                self._export_html_page(filename, title, cmd, True, scripts, styles)
+        # Build the list of index pages
+        self.index_pages = [
+            "surnames.html",
+            "persons.html",
+            "families.html",
+            "sources.html",
+            "medias.html",
+            "places.html",
+            "repositories.html",
+            "address.html",
+        ]
+        self.index_pages = [p for p in  self.index_pages if (
+            (p != "families.html" or self.inc_families) and
+            (p != "sources.html" or self.inc_sources) and
+            (p != "medias.html" or self.inc_gallery) and
+            (p != "places.html" or self.inc_places) and
+            (p != "repositories.html" or self.inc_repositories) and
+            (p != "address.html" or self.inc_addresses)
+        )]
+
+        # Export the HTML pages (not custom)
+        for (filename, title, test, menu, scripts, styles, code) in self.page_list:
+            if not test and filename not in self.index_pages: continue
+            self._export_html_page(filename, title, code, menu, scripts, styles)
+
+        # Build the list of pages in the correct order
+        self.pages_menu = []
+        for pc in self.page_content:
+            if (pc == PAGE_INDEX):
+                self.pages_menu.append(['', _('Indexes')])
+            elif (pc < PAGE_INDEX):
+                self.pages_menu.append(self.page_list[pc][0:2])
             else:
-                # The page is a custom page
-                i_cst = pc - PAGE_CUSTOM
-                self._export_custom_page(filename, title, self.custom_menu[i_cst], self.custom_note[i_cst])
-
-        # The person page is required
-        if (PAGE_PERSON not in self.page_content):
-            self._export_html_page("person.html", self.page_name[PAGE_PERSON], "DwrMain(PAGE_INDI);", True, dbscripts + mapscripts, mapstyles)
-
-        # The search results page is required
-        self._export_html_page("search.html", _("Search results"), "DwrMain(PAGE_SEARCH);", True, dbscripts)
-
-        # Page for printing a family (if needed)
-        if (self.inc_families):
-            self._export_html_page("family.html", self.page_name[PAGE_FAMILY_INDEX], "DwrMain(PAGE_FAM);", True, dbscripts + mapscripts, mapstyles)
-
-        # Generate page surnames pages (if surnames page is used)
-        if (PAGE_SURNAMES in self.page_content):
-            # Page for persons with a given surname
-            self._export_html_page("surname.html", self.page_name[PAGE_SURNAMES], "printSurnameIndex();", True, dbscripts)
-            # Page for surnames sorted by quantity
-            self._export_html_page("surnames2.html", self.page_name[PAGE_SURNAMES], "printSurnamesIndex2();", True, dbscripts)
-
-        # Page for a single family (if needed)
-        if (self.inc_sources):
-            self._export_html_page("source.html", self.page_name[PAGE_SOURCE_INDEX], "DwrMain(PAGE_SOURCE);", True, dbscripts)
-
-        # Page for a single media (if needed)
-        if (self.inc_gallery):
-            self._export_html_page("media.html", self.page_name[PAGE_MEDIA_INDEX], "DwrMain(PAGE_MEDIA);", True, dbscripts)
-
-        # Page for a single place (if needed)
-        if (self.inc_places):
-            self._export_html_page("place.html", self.page_name[PAGE_PLACE_INDEX], "DwrMain(PAGE_PLACE);", True, dbscripts + mapscripts, mapstyles)
-
-        # Page for a single repository (if needed)
-        if (self.inc_repositories):
-            self._export_html_page("repository.html", self.page_name[PAGE_REPOSITORY_INDEX], "DwrMain(PAGE_REPO);", True, dbscripts)
-
-        # Page for full-screen SVG graph (if SVG graph is used)
-        if (PAGE_SVG_TREE in self.page_content):
-            self._export_html_page("tree_svg_full.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_FULL);", False, dbscripts)
-            self._export_html_page("tree_svg_conf.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_CONF);", True, dbscripts)
-            self._export_html_page("tree_svg_save.html", self.page_name[PAGE_SVG_TREE], "DwrMain(PAGE_SVG_TREE_SAVE);", True, dbscripts)
+                i = pc - PAGE_CUSTOM
+                filename = "custom_%i.html" % (i + 1)
+                self.pages_menu.append([
+                    filename,
+                    self.custom_page_name[i]
+                ])
+                # Export the custom HTML pages
+                self._export_custom_page(filename, self.custom_page_name[i], self.custom_menu[i], self.custom_note[i])
+        self.pages_menu_index = [
+            [filename, next(p[1] for p in self.page_list if p[0] == filename)]
+            for filename in self.index_pages
+        ]
+        
+        # Export the script containing the web  pages configuration
+        self._export_script_configuration()
 
 
     def _export_script_configuration(self):
@@ -2100,16 +2132,27 @@ class DynamicWebReport(Report):
         """
         sw = StringIO()
         sw.write("// This file is generated\n\n")
+        sw.write("TITLE = \"%s\";\n" % script_escape(self.title))
         sw.write("NB_GENERATIONS_MAX = %i;\n" % int(self.options["graphgens"]))
-        sw.write("PAGES_TITLE = [")
-        sw.write(", ".join([
-            ("\"" + script_escape(self.page_name[self.page_content[i]]).replace(" ", "&nbsp;") + "\"")
-            for i in range(self.pages_number)]))
-        sw.write("];\n")
         sw.write("PAGES_FILE = [")
         sw.write(", ".join([
-            ("\"" + script_escape(PAGES_NAMES[self.page_content[i]][2]) + "\"")
-            for i in range(self.pages_number)]))
+            ("\"" + script_escape(page_menu[0]) + "\"")
+            for page_menu in self.pages_menu]))
+        sw.write("];\n")
+        sw.write("PAGES_TITLE = [")
+        sw.write(", ".join([
+            ("\"" + script_escape(page_menu[1]) + "\"")
+            for page_menu in self.pages_menu]))
+        sw.write("];\n")
+        sw.write("PAGES_FILE_INDEX = [")
+        sw.write(", ".join([
+            ("\"" + script_escape(page_menu[0]) + "\"")
+            for page_menu in self.pages_menu_index]))
+        sw.write("];\n")
+        sw.write("PAGES_TITLE_INDEX = [")
+        sw.write(", ".join([
+            ("\"" + script_escape(page_menu[1]) + "\"")
+            for page_menu in self.pages_menu_index]))
         sw.write("];\n")
         sw.write("SVG_TREE_TYPES_NAMES = [")
         sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_TYPES]))
@@ -2126,6 +2169,14 @@ class DynamicWebReport(Report):
         sw.write("SVG_TREE_BACKGROUND_NAMES = [")
         sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_BACKGROUNDS]))
         sw.write("];\n")
+        sw.write("SVG_TREE_BACKGROUND_GENDER = %i;\n" % SVG_TREE_BACKGROUND_GENDER)
+        sw.write("SVG_TREE_BACKGROUND_GENERATION = %i;\n" % SVG_TREE_BACKGROUND_GENERATION)
+        sw.write("SVG_TREE_BACKGROUND_AGE = %i;\n" % SVG_TREE_BACKGROUND_AGE)
+        sw.write("SVG_TREE_BACKGROUND_SINGLE = %i;\n" % SVG_TREE_BACKGROUND_SINGLE)
+        sw.write("SVG_TREE_BACKGROUND_PERIOD = %i;\n" % SVG_TREE_BACKGROUND_PERIOD)
+        sw.write("SVG_TREE_BACKGROUND_WHITE = %i;\n" % SVG_TREE_BACKGROUND_WHITE)
+        sw.write("SVG_TREE_BACKGROUND_SCHEME1 = %i;\n" % SVG_TREE_BACKGROUND_SCHEME1)
+        sw.write("SVG_TREE_BACKGROUND_SCHEME2 = %i;\n" % SVG_TREE_BACKGROUND_SCHEME2)
         sw.write("SVG_TREE_TYPE = %s;\n" % self.options['svg_tree_type'])
         sw.write("SVG_TREE_SHAPE = %s;\n" % self.options['svg_tree_shape'])
         sw.write("SVG_TREE_DISTRIB_ASC = %s;\n" % self.options['svg_tree_distrib_asc'])
@@ -2135,6 +2186,15 @@ class DynamicWebReport(Report):
         sw.write("SVG_TREE_COLOR2 = \"%s\";\n" % self.options['svg_tree_color2'])
         sw.write("SVG_TREE_SHOW_DUP = " + ("true" if (self.options['svg_tree_dup']) else "false") + ";\n")
         sw.write("SVG_TREE_COLOR_DUP = \"%s\";\n" % self.options['svg_tree_color_dup'])
+        sw.write("CHART_BACKGROUND_NAMES = [")
+        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in CHART_BACKGROUNDS]))
+        sw.write("];\n")
+        sw.write("CHART_BACKGROUND_GENDER = %i;\n" % CHART_BACKGROUND_GENDER)
+        sw.write("CHART_BACKGROUND_GRADIENT = %i;\n" % CHART_BACKGROUND_GRADIENT)
+        sw.write("CHART_BACKGROUND_SINGLE = %i;\n" % CHART_BACKGROUND_SINGLE)
+        sw.write("CHART_BACKGROUND_WHITE = %i;\n" % CHART_BACKGROUND_WHITE)
+        sw.write("CHART_BACKGROUND_SCHEME1 = %i;\n" % CHART_BACKGROUND_SCHEME1)
+        sw.write("CHART_BACKGROUND_SCHEME2 = %i;\n" % CHART_BACKGROUND_SCHEME2)
         sw.write("GRAMPS_PREFERENCES = [];\n")
         for pref in [
             'bordercolor-gender-female-alive',
@@ -2169,9 +2229,8 @@ class DynamicWebReport(Report):
         sw.write("INDEX_SHOW_MARRIAGE=" + ("true" if (self.options['showmarriage']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARTNER=" + ("true" if (self.options['showpartner']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARENTS=" + ("true" if (self.options['showparents']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_ALL_SIBLINGS=" + ("true" if (self.options['birthorder']) else "false") + ";\n")
         sw.write("INDEX_SHOW_BKREF_TYPE=" + ("true" if (self.options['bkref_type']) else "false") + ";\n")
-        sw.write("SORT_CHILDREN=" + ("true" if (self.options['showallsiblings']) else "false") + ";\n")
+        sw.write("SHOW_ALL_SIBLINGS=" + ("true" if (self.options['showallsiblings']) else "false") + ";\n")
         sw.write("INC_EVENTS=" + ("true" if (self.inc_events) else "false") + ";\n")
         sw.write("INC_FAMILIES=" + ("true" if (self.inc_families) else "false") + ";\n")
         sw.write("INC_SOURCES=" + ("true" if (self.inc_sources) else "false") + ";\n")
@@ -2196,39 +2255,73 @@ class DynamicWebReport(Report):
             ("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>", _("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>")),
             ("Address", _("Address")),
             ("Addresses", _("Addresses")),
-            ("Age at Death", _("Age at Death")),
+            ("Age at death and number of deaths depending on place", _("Age at death and number of deaths depending on place")),
+            ("Age at death", _("Age at death")),
+            ("Age at marriage", _("Age at marriage")),
+            ("Alternate Marriage", _("Alternate Marriage")),
             ("Alternate Name", _("Alternate Name")),
             ("Ancestors", _("Ancestors")),
             ("Associations", _("Associations")),
             ("Attribute", _("Attribute")),
             ("Attributes", _("Attributes")),
+            ("Average", _("Average")),
             ("Background", _("Background")),
+            ("Baptism", _("Baptism")),
+            ("Bar chart", _("Bar chart")),
+            ("Birth date", _("Birth date")),
+            ("Birth day in year", _("Birth day in year")),
+            ("Birth place", _("Birth place")),
+            ("Birth", _("Birth")),
+            ("Bubble chart", _("Bubble chart")),
+            ("Burial", _("Burial")),
             ("Call Name", _("Call Name")),
             ("Call Number", _("Call Number")),
+            ("Cause Of Death", _("Cause Of Death")),
+            ("Chart type", _("Chart type")),
             ("Children", _("Children")),
+            ("Christening", _("Christening")),
             ("Church Parish", _("Church Parish")),
             ("Citation", _("Citation")),
             ("Citations", _("Citations")),
             ("City", _("City")),
             ("Click on the map to show it full-screen", _("Click on the map to show it full-screen")),
             ("Configuration", _("Configuration")),
+            ("Configure", _("Configure")),
+            ("Count", _("Count")),
             ("Country", _("Country")),
             ("County", _("County")),
+            ("Cremation", _("Cremation")),
+            ("Data used to split into series", _("Data used to split into series")),
+            ("Data used", _("Data used")),
             ("Date", _("Date")),
+            ("Death date", _("Death date")),
+            ("Death day in year", _("Death day in year")),
+            ("Death place", _("Death place")),
+            ("Death", _("Death")),
             ("Descendants", _("Descendants")),
             ("Description", _("Description")),
+            ("Donut chart", _("Donut chart")),
+            ("Enable click on chart", _("Enable click on chart")),
+            ("Engagement", _("Engagement")),
             ("Event", _("Event")),
             ("Events", _("Events")),
-            ("Expand", _("Expand")),
+            ("Examples", _("Examples")),
             ("Families Index", _("Families Index")),
+            ("Families", _("Families")),
             ("Family Nick Name", _("Family Nick Name")),
             ("Father", _("Father")),
+            ("Father's age at marriage", _("Father's age at marriage")),
             ("Female", _("Female")),
             ("File ready", _("File ready")),
+            ("Filter", _("Filter")),
             ("Gender", _("Gender")),
+            ("GRAMPS ID", _("GRAMPS ID")),
+            ("Chart coloring", _("Chart coloring")),
             ("Graph help", _("Graph help")),
             ("Indexes", _("Indexes")),
+            ("Individuals", _("Individuals")),
             ("Latitude", _("Latitude")),
+            ("Line chart", _("Line chart")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
             ("Locality", _("Locality")),
@@ -2236,31 +2329,45 @@ class DynamicWebReport(Report):
             ("Longitude", _("Longitude")),
             ("Male", _("Male")),
             ("Map", _("Map")),
+            ("Marriage date", _("Marriage date")),
+            ("Marriage day in year", _("Marriage day in year")),
+            ("Marriage place", _("Marriage place")),
+            ("Marriage", _("Marriage")),
             ("Maximize", _("Maximize")),
-            ("Media found:", _("Media found:")),
+            ("Maximum", _("Maximum")),
             ("Media Index", _("Media Index")),
             ("Media Type", _("Media Type")),
             ("Media", _("Media")),
+            ("Minimum", _("Minimum")),
             ("Mother", _("Mother")),
+            ("Mother's age at marriage", _("Mother's age at marriage")),
             ("Name", _("Name")),
             ("Nick Name", _("Nick Name")),
             ("No data available in table", _("No data available in table")),
+            ("No matches found", _("No matches found")),
+            ("No matching data", _("No matching data")),
             ("No matching records found", _("No matching records found")),
             ("No matching surname.", _("No matching surname.")),
-            ("None.", _("None.")),
+            ("None", _("None")),
             ("Notes", _("Notes")),
+            ("Number of children depending on parents age at marriage", _("Number of children depending on parents age at marriage")),
+            ("Number of children per family", _("Number of children per family")),
+            ("Number of children", _("Number of children")),
             ("OK", _("OK")),
+            ("Opacity", _("Opacity")),
+            ("Parent for how many families", _("Parent for how many families")),
             ("Parents", _("Parents")),
             ("Path", _("Path")),
             ("Person page", _("Person page")),
             ("Person to search for", _("Person to search for")),
             ("Person", _("Person")),
-            ("Persons found:", _("Persons found:")),
             ("Persons Index", _("Persons Index")),
+            ("Persons", _("Persons")),
             ("Phone", _("Phone")),
+            ("Pie chart", _("Pie chart")),
             ("Place", _("Place")),
-            ("Places found:", _("Places found:")),
             ("Places Index", _("Places Index")),
+            ("Places", _("Places")),
             ("Postal Code", _("Postal Code")),
             ("Preparing file ...", _("Preparing file ...")),
             ("Processing...", _("Processing...")),
@@ -2272,7 +2379,9 @@ class DynamicWebReport(Report):
             ("Repository", _("Repository")),
             ("Restore", _("Restore")),
             ("Save tree as file", _("Save tree as file")),
+            ("Scatter chart", _("Scatter chart")),
             ("Search:", _("Search:")),
+            ("See chart", _("See chart")),
             ("Select the background color scheme", _("Select the background color scheme")),
             ("Select the children distribution (fan charts only)", _("Select the children distribution (fan charts only)")),
             ("Select the number of ascending generations", _("Select the number of ascending generations")),
@@ -2287,18 +2396,22 @@ class DynamicWebReport(Report):
             ("Showing _START_ to _END_ of _TOTAL_ entries", _("Showing _START_ to _END_ of _TOTAL_ entries")),
             ("Siblings", _("Siblings")),
             ("Source", _("Source")),
-            ("Sources found:", _("Sources found:")),
             ("Sources Index", _("Sources Index")),
             ("Sources", _("Sources")),
+            ("Spouses age at marriage", _("Spouses age at marriage")),
+            ("Spouses surnames", _("Spouses surnames")),
             ("Spouses", _("Spouses")),
             ("State/ Province", _("State/ Province")),
+            ("Statistics Charts", _("Statistics Charts")),
             ("Street", _("Street")),
+            ("Sum", _("Sum")),
+            ("Surname", _("Surname")),
             ("Surnames Index", _("Surnames Index")),
+            ("Surnames", _("Surnames")),
             ("SVG tree children distribution", _("SVG tree children distribution")),
             ("SVG tree graph shape", _("SVG tree graph shape")),
             ("SVG tree graph type", _("SVG tree graph type")),
             ("SVG tree parents distribution", _("SVG tree parents distribution")),
-            ("There is no matching name.", _("There is no matching name.")),
             ("Title", _("Title")),
             ("Type", _("Type")),
             ("Unknown", _("Unknown")),
@@ -2313,9 +2426,15 @@ class DynamicWebReport(Report):
             ("Web Links", _("Web Links")),
             ("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
             ("Without surname", _("Without surname")),
+            ("X-axis data", _("X-axis data")),
+            ("X-axis function", _("X-axis function")),
+            ("Y-axis data", _("Y-axis data")),
+            ("Y-axis function", _("Y-axis function")),
+            ("Z-axis data", _("Z-axis data")),
+            ("Z-axis function", _("Z-axis function")),
             ("Zoom in", _("Zoom in")),
             ("Zoom out", _("Zoom out")),
-            ):
+        ):
             sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
             sep = ",\n"
         for (code, translated, s) in EventType._DATAMAP:
@@ -2695,7 +2814,7 @@ class DynamicWebReport(Report):
                 try:
                     tgz.add(file, arc_rel_path)
                 except:
-                    log.error(_("Unable to add file \"%(file)s\" to archive \"%(archive)s\"") % {"file": path, "archive": arch_path})
+                    log.error(_("Unable to add file \"%(file)s\" to archive \"%(archive)s\"") % {"file": arc_rel_path, "archive": arch_path})
                     raise
             tgz.close()
 
@@ -2849,7 +2968,7 @@ class DynamicWebReport(Report):
         elif (class_ == Repository):
             object = self.database.get_repository_from_handle(handle)
         return(object)
-
+        
 
     ##############################################################################################
     ################################################################################## GENDEX data
@@ -3692,10 +3811,6 @@ class DynamicWebOptions(MenuReportOptions):
         showallsiblings.set_help(_( "Whether to include half and/ or step-siblings with the parents and siblings"))
         addopt('showallsiblings', showallsiblings)
 
-        birthorder = BooleanOption(_('Sort all children in birth order'), False)
-        birthorder.set_help(_('Whether to display children in birth order or in entry order?'))
-        addopt("birthorder", birthorder)
-
         bkref_type = BooleanOption(_('Include references in indexes'), False)
         bkref_type.set_help(_('Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media.'))
         addopt("bkref_type", bkref_type)
@@ -3709,17 +3824,7 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Trees")
         addopt = partial(menu.add_option, category_name)
 
-        page_defs = [
-            PAGE_SVG_TREE,
-        ]
-        for page_def in page_defs:
-            name = PAGES_NAMES[page_def][0]
-            title = PAGES_NAMES[page_def][1]
-            page_name = StringOption(_("Title for the tree \"%(name)s\"") % {"name": name}, title)
-            page_name.set_help(_("Name for the page that shows the tree \"%(name)s\"") % {"name": name})
-            addopt("page_name_%i" % page_def, page_name)
-
-        graphgens = NumberOption(_("Maximum number of  generations"), 10, 3, 30)
+        graphgens = NumberOption(_("Maximum number of generations"), 10, 3, 30)
         graphgens.set_help(_("The maximum number of generations to include in the ancestor and descendant trees and graphs"))
         addopt("graphgens", graphgens)
 
@@ -3784,74 +3889,49 @@ class DynamicWebOptions(MenuReportOptions):
         footernote.set_help( _("A note to be used as the page footer"))
         addopt("footernote", footernote)
 
-        page_defs = [
-            PAGE_PERSON,
-            PAGE_SURNAMES,
-            PAGE_PERSON_INDEX,
-            PAGE_FAMILY_INDEX,
-            PAGE_SOURCE_INDEX,
-            PAGE_MEDIA_INDEX,
-            PAGE_PLACE_INDEX,
-            PAGE_ADDRESS_INDEX,
-            PAGE_REPOSITORY_INDEX,
-        ]
-        for page_def in page_defs:
-            name = PAGES_NAMES[page_def][0]
-            title = PAGES_NAMES[page_def][1]
-            page_name = StringOption(_("Title for the page \"%(name)s\"") % {"name": name}, title)
-            page_name.set_help(_("Name for the page \"%(name)s\"") % {"name": name})
-            addopt("page_name_%i" % page_def, page_name)
-
 
     def __add_custom_pages_options(self, menu):
         category_name = _("Custom pages")
         addopt = partial(menu.add_option, category_name)
 
-        for i in range(NB_CUSTOM_PAGES):
-            page_def = PAGE_CUSTOM + i
-            page_name = StringOption(_("Title for the custom page %(index)i") % {"index": i + 1}, _("Custom page %(index)i") % {"index": i + 1})
-            page_name.set_help(_("Name for the custom page %(index)i") % {"index": i + 1})
-            addopt("page_name_%i" % page_def, page_name)
+        for page_def in range(NB_CUSTOM_PAGES):
+            page_name = StringOption(_("Title for the custom page %(index)i") % {"index": page_def + 1}, _("Custom page %(index)i") % {"index": page_def + 1})
+            page_name.set_help(_("Name for the custom page %(index)i") % {"index": page_def + 1})
+            addopt("custom_page_name_%i" % page_def, page_name)
 
-            custom_note = NoteOption(_("Note for custom page %(index)i") % {"index": i + 1})
+            custom_note = NoteOption(_("Note for custom page %(index)i") % {"index": page_def + 1})
             custom_note.set_help(_("A note to be used for the custom page content.\n") + self.note_help)
-            addopt("custom_note_%i" % i, custom_note)
+            addopt("custom_note_%i" % page_def, custom_note)
 
-            custom_menu = BooleanOption(_("Menu for the custom page %(index)i") % {"index": i + 1}, True)
+            custom_menu = BooleanOption(_("Menu for the custom page %(index)i") % {"index": page_def + 1}, True)
             custom_menu.set_help(_("Whether to print a menu for the custom page"))
-            addopt("custom_menu_%i" % i, custom_menu)
+            addopt("custom_menu_%i" % page_def, custom_menu)
 
 
     def __add_select_pages_options(self, menu):
         category_name = _("Pages selection")
         addopt = partial(menu.add_option, category_name)
 
-        self.__pages_number = NumberOption(_("Number of pages"), 11, 1, NB_TOTAL_PAGES_MAX)
-        self.__pages_number.set_help(_("Number pages in the web site."))
+        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES) + 1, 1, NB_TOTAL_PAGES_MAX)
+        self.__pages_number.set_help(_("Number pages in the web site menu."))
         addopt("pages_number", self.__pages_number)
         self.__pages_number.connect("value-changed", self.__pages_contents_changed)
 
         page_defs = [
-            PAGE_CUSTOM,
-            PAGE_SURNAMES,
-            PAGE_PERSON,
-            PAGE_PERSON_INDEX,
-            PAGE_FAMILY_INDEX,
-            PAGE_SOURCE_INDEX,
-            PAGE_MEDIA_INDEX,
-            PAGE_PLACE_INDEX,
-            PAGE_ADDRESS_INDEX,
-            PAGE_REPOSITORY_INDEX,
+            PAGE_HOME,
+            PAGE_INDEX,
             PAGE_SVG_TREE,
-        ] + [PAGE_CUSTOM + i for i in range (1, NB_CUSTOM_PAGES)
+            # PAGE_CALENDAR,
+            # PAGE_STATISTICS,
+        ] + [PAGE_CUSTOM + i for i in range (NB_CUSTOM_PAGES)
         ] + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
 
         self.__page_content = []
         for i in range(NB_TOTAL_PAGES_MAX):
             page_def = page_defs[i]
             page_content = EnumeratedListOption(_("Contents of page %(index)i") % {"index": i + 1}, page_def)
-            for (j, pname) in enumerate(PAGES_NAMES):
-                page_content.add_item(j, pname[0])
+            for (j, pname) in enumerate(PAGES_NAMES + CUSTOM_PAGES_NAMES):
+                page_content.add_item(j, pname)
             page_content.set_help(_("Contents of the page"))
             addopt("page_content_%i" % i, page_content)
             self.__page_content.append(page_content)

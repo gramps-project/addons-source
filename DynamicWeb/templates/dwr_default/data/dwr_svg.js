@@ -227,8 +227,8 @@ function SvgCreate()
 	// Buttons div
 	html += '<div id="svg-buttons">';
 	html += '<div class="btn-group-vertical" role="group">';
-	html += '<button id="svg-expand" type="button" class="btn btn-default" title="' + (search.SvgExpanded ? _('Restore') : _('Expand')) + '">';
-	html += '<span class="glyphicon ' + (search.SvgExpanded ? 'glyphicon-resize-small' : 'glyphicon-resize-full') + '"></span>';
+	html += '<button id="svg-expand" type="button" class="btn btn-default" title="' + (search.SvgExpanded ? _('Restore') : _('Maximize')) + '">';
+	html += '<span class="glyphicon glyphicon-fullscreen"></span>';
 	html += '</button>';
 	html += '<button id="svg-zoom-in" type="button" class="btn btn-default" title="' + _('Zoom in') + '">';
 	html += '<span class="glyphicon glyphicon-zoom-in"></span>';
@@ -307,7 +307,7 @@ function SvgInit()
 	});
 	svgContextMenuItems = [
 		// {
-			// text: (search.SvgExpanded) ? _('Restore') : _('Expand'),
+			// text: (search.SvgExpanded) ? _('Restore') : _('Maximize'),
 			// href: svgHref(search.Idx, !search.SvgExpanded)
 		// },
 		// {text: _('Zoom in'), href: 'javascript:SvgZoomIn();'},
@@ -695,7 +695,7 @@ function SvgSetStyle(p, text, x_elt, lev)
 	var fill = "#FFFFFF";
 	var stroke = "#000000";
 	var dark = 1.0;
-	if (search.SvgBackground == 0) // BACKGROUND_GENDER
+	if (search.SvgBackground == SVG_TREE_BACKGROUND_GENDER)
 	{
 		var g = 'unknown';
 		if (I[elt[SVGELT_IDX]].gender == 'M') g = 'male';
@@ -704,14 +704,14 @@ function SvgSetStyle(p, text, x_elt, lev)
 		if (I[elt[SVGELT_IDX]].death_year != "") d = 'death';
 		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
 	}
-	if (typeof(lev) != 'undefined' && search.SvgBackground == 1) // BACKGROUND_GRAD_GEN
+	if (typeof(lev) != 'undefined' && search.SvgBackground == SVG_TREE_BACKGROUND_GENERATION)
 	{
 		fill = SvgColorGrad(0, Math.max(nbGenAscFound, nbGenDscFound) - 1, lev);
 		dark = SVG_GENDER_K;
 	}
-	if ( // BACKGROUND_GRAD_AGE, BACKGROUND_GRAD_PERIOD
-		(search.SvgBackground == 2) ||
-		(search.SvgBackground == 4))
+	if (
+		(search.SvgBackground == SVG_TREE_BACKGROUND_AGE) ||
+		(search.SvgBackground == SVG_TREE_BACKGROUND_PERIOD))
 	{
 		var b = parseInt(I[elt[SVGELT_IDX]].birth_year);
 		var d = parseInt(I[elt[SVGELT_IDX]].death_year);
@@ -732,21 +732,21 @@ function SvgSetStyle(p, text, x_elt, lev)
 		}
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == 3) // BACKGROUND_SINGLE_COLOR
+	if (search.SvgBackground == SVG_TREE_BACKGROUND_SINGLE)
 	{
 		fill = SVG_TREE_COLOR1;
 	}
-	if (search.SvgBackground == 5) // BACKGROUND_WHITE
+	if (search.SvgBackground == SVG_TREE_BACKGROUND_WHITE)
 	{
 		fill = SVG_TREE_COLOR_SCHEME0[lev % SVG_TREE_COLOR_SCHEME0.length];
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == 6) // BACKGROUND_SCHEME1
+	if (search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME1)
 	{
 		fill = SVG_TREE_COLOR_SCHEME1[lev % SVG_TREE_COLOR_SCHEME1.length];
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == 7) // BACKGROUND_SCHEME2
+	if (search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME2)
 	{
 		fill = SVG_TREE_COLOR_SCHEME2[lev % SVG_TREE_COLOR_SCHEME2.length];
 		dark = SVG_GENDER_K;

@@ -79,16 +79,8 @@ default_options = {
     'footernote': "_footer1",
     'custom_note_0': "_custom1",
     'custom_menu_0': False,
-    'pages_number': len(PAGES_NAMES) - NB_CUSTOM_PAGES + 1,
+    'pages_number': len(PAGES_NAMES) + 1,
 }
-default_options.update({
-    ('page_name_%i' % i): p[1]
-    for (i, p) in enumerate(PAGES_NAMES)
-})
-default_options.update({
-    ('page_content_%i' % i): i
-    for i in range(len(PAGES_NAMES) - NB_CUSTOM_PAGES + 1)
-})
 
 
 report_list = [
@@ -221,17 +213,6 @@ report_list = [
         'inc_places': False,
         'inc_families': False,
         # 'inc_events': False,
-        'pages_number': 5,
-        'page_content_0': PAGE_PERSON,
-        'page_name_0': PAGES_NAMES[PAGE_PERSON][1],
-        'page_content_1': PAGE_SURNAMES,
-        'page_name_1': PAGES_NAMES[PAGE_SURNAMES][1],
-        'page_content_2': PAGE_PERSON_INDEX,
-        'page_name_2': PAGES_NAMES[PAGE_PERSON_INDEX][1],
-        'page_content_3': PAGE_FAMILY_INDEX,
-        'page_name_3': PAGES_NAMES[PAGE_FAMILY_INDEX][1],
-        'page_content_4': PAGE_CUSTOM,
-        'page_name_4': PAGES_NAMES[PAGE_CUSTOM][1],
     },
     'procedures': [
         {
