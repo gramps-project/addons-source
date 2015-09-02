@@ -39,7 +39,7 @@ WEBSITES = [
     ["Person", "SSDI-Rootsweb", "Social Security Death Index", "http://ssdi.rootsweb.ancestry.com/cgi-bin/newssdi?sn=%(surname)s&fn=%(given)s&nt=exact"],
     ["Person", "CaliforniaDeathIndex", "California Death Index", "http://vitals.rootsweb.ancestry.com/ca/death/search.cgi?surname=%(surname)s&given=%(given)s"],
     ["Person", "SiteSearch", _("Free Rootsweb Site Search"), '''http://sitesearch.rootsweb.ancestry.com/cgi-bin/search?words="%(surname)s+%(given)s"'''],
-    ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby=], # Australian
+    ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby="], # Australian
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
     ["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"], # French
     ["Person", "Roglo", "Roglo", "http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN"],
