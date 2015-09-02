@@ -2064,6 +2064,7 @@ class DynamicWebReport(Report):
             # Index pages
             ("surnames.html", _("Surnames"), True, True, dbscripts, [], "printSurnamesIndex();"),
             ("surnames2.html", _("Surnames"), True, True, dbscripts, [], "printSurnamesIndex2();"),
+            ("surname.html", _("Surnames"), True, True, dbscripts, [], "printSurnameIndex();"),
             ("persons.html", _("Individuals"), True, True, dbscripts, [], "printPersonsIndex();"),
             ("families.html", _("Families"), False, True, dbscripts, [], "printFamiliesIndex();"),
             ("sources.html", _("Sources"), False, True, dbscripts, [], "printSourcesIndex();"),
