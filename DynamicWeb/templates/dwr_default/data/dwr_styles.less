@@ -13,16 +13,19 @@ You should have received a copy of the GNU General Public License along with thi
 
 /*===================================================== Body */
 
-.dwr-fullscreen {
+.dwr-fullscreen
+{
 	width: auto;
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
 }
-.dwr-centered {
+.dwr-centered
+{
 	text-align: center;
 }
-.dwr-nowrap {
+.dwr-nowrap
+{
 	white-space: nowrap;
 }
 
@@ -31,49 +34,68 @@ li p
 	margin: 0px;
 }
 
-.panel-title>.label {
+.panel-title>.label
+{
 	color: @label-color;
 }
 
 
 /*===================================================== Main divs */
 
-@media (max-width:@screen-xs-max) {
-	#body-page {
+@media (max-width:@screen-xs-max)
+{
+	#body-page
+	{
 		padding-right: 5px;
 		padding-left: 5px;
 	}
-	.container {
+	.container
+	{
 		min-width: 450px;
 	}
-	.dwr-panel-table {
+	.dwr-panel-table
+	{
 		overflow-x: auto;
 	}
 }
-#dwr-header, #dwr-footer {
+#dwr-header, #dwr-footer
+{
     display: none;
 }
-#dwr-footer {
+#dwr-footer
+{
 	font-size: @font-size-small;
 }
-@media screen and (min-width:@screen-sm-min) {
-	#dwr-header, #dwr-footer {
+@media screen and (min-width:@screen-sm-min)
+{
+	#dwr-header, #dwr-footer
+	{
 		display: inherit;
 		padding: 0px 10px;
 		overflow-y: hidden;
 	}
-	#dwr-footer {
+	#dwr-footer
+	{
 		font-size: @font-size-small;
 	}
-	#dwr-footer p {
+	#dwr-footer p
+	{
 		margin: 0px;
 	}
+}
+.dwr-expanded
+{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 }
 
 
 /*===================================================== Menu */
 
-.navbar-brand  img {
+.navbar-brand  img
+{
 	max-width:100%;
 	max-height:100%;
 }
@@ -81,7 +103,8 @@ li p
 
 /*===================================================== Panels */
 
-.dwr-collapsible {
+.dwr-collapsible
+{
 	cursor: pointer;
 }
 .dwr-collapsible h1:after,
@@ -89,7 +112,8 @@ li p
 .dwr-collapsible h3:after,
 .dwr-collapsible h4:after,
 .dwr-collapsible h5:after,
-.dwr-collapsible h6:after  {
+.dwr-collapsible h6:after
+{
 	font-family: 'Glyphicons Halflings';
 	content: "\e114"; /* glyphicon-chevron-down */
 	float: right;
@@ -99,19 +123,24 @@ li p
 .dwr-collapsible.collapsed h3:after,
 .dwr-collapsible.collapsed h4:after,
 .dwr-collapsible.collapsed h5:after,
-.dwr-collapsible.collapsed h6:after  {
+.dwr-collapsible.collapsed h6:after
+{
 	content: "\e113";  /* glyphicon-chevron-up */
 }
 
-.dwr-panel-media .panel-body {
+.dwr-panel-media .panel-body
+{
 }
-.dwr-panel-map .panel-body {
+.dwr-panel-map .panel-body
+{
 	padding: 0px;
 }
-.dwr-panel-tree .panel-body {
+.dwr-panel-tree .panel-body
+{
 	padding: 0px;
 }
-.dwr-panel-tree {
+.dwr-panel-tree
+{
 	overflow: hidden;
 }
 
@@ -124,11 +153,13 @@ li p
 	border-top-right-radius: 0px;
 }
 
-.tab-pane.dwr-panel-map {
+.tab-pane.dwr-panel-map
+{
 	margin: -15px;
 }
 
-.tab-pane.dwr-panel-table {
+.tab-pane.dwr-panel-table
+{
 	margin: -15px;
 }
 
@@ -143,41 +174,52 @@ li p
 
 /*===================================================== Media */
 
-#dwr-image {
+#dwr-image
+{
 	/*margin: 10px;*/
 	max-width: 740px;
 }
-@media (min-width:768px) {
-	#dwr-image {
+@media (min-width:768px)
+{
+	#dwr-image
+	{
 		max-width: 720px;
 	}
 }
-@media (min-width:992px) {
-	#dwr-image {
+@media (min-width:992px)
+{
+	#dwr-image
+	{
 		max-width: 940px;
 	}
 }
-@media (min-width: 1200px) {
-	#dwr-image {
+@media (min-width: 1200px)
+{
+	#dwr-image
+	{
 		max-width: 1140px;
 	}
 }
 
-#dwr-img-btns {
+#dwr-img-btns
+{
 	margin: 10px;
 	text-align: center;
 }
 
-#dwr-img-btns .btn-group {
+#dwr-img-btns .btn-group
+{
 	float: initial;
 }
 
-#img-div {
+#img-div
+{
 	display: inline-block;
 	position: relative;
 	margin-bottom: 20px;
 }
-#media-buttons {
+#media-buttons
+{
 	margin: 5px;
 	opacity: 0.5;
 	font-size: @font-size-small;
@@ -186,26 +228,32 @@ li p
 	top: 0;
 	left: 0;
 }
-#img-div:hover  #media-buttons {
+#img-div:hover  #media-buttons
+{
 	display: block;
 }
-#img-div  #media-buttons {
+#img-div  #media-buttons
+{
 	display: none;
 }
 
 
 /*===================================================== Page contents */
 
-.dwr-attr-title {
+.dwr-attr-title
+{
 	font-weight: bold;
 }
-.dwr-attr-value {
+.dwr-attr-value
+{
 }
-.dwr-attr-header {
+.dwr-attr-header
+{
 	font-style: italic;
 	font-size: @font-size-small;
 }
-.dwr-ref .dwr-ref-detailed {
+.dwr-ref .dwr-ref-detailed
+{
 	font-weight: bold;
 }
 .dwr-citation, .dwr-citation:visited
@@ -214,20 +262,25 @@ li p
 	font-style: italic;
 }
 
-.panel-collapse>.table-bordered {
+.panel-collapse>.table-bordered
+{
 	border: none;
 }
-.dwr-table-flat {
+.dwr-table-flat
+{
 	-webkit-margin-before: 1em;
 	-webkit-margin-after: 1em;
 }
-.dwr-table-panel {
+.dwr-table-panel
+{
 	-webkit-margin-before: 0px;
 	-webkit-margin-after: 0px;
 }
-.dwr-index-title {
+.dwr-index-title
+{
 }
-.dwr-index {
+.dwr-index
+{
 	vertical-align: middle;
 }
 
@@ -236,11 +289,13 @@ li p
 	list-style-type: none;
 }
 
-.thumbnail {
+.thumbnail
+{
 	margin: 0px;
 	display: inline-block !important;
 }
-.thumbnail>img {
+.thumbnail>img
+{
 	max-width: initial;
 }
 
@@ -250,23 +305,24 @@ li p
 {
 	height: 330px;
 }
-@media (min-width: @screen-md-min) {
-	#gmap_canvas {
+@media (min-width: @screen-md-min)
+{
+	#gmap_canvas
+	{
 	height: 446px;
 	}
 }
-@media (min-width: @screen-lg-min) {
-	#gmap_canvas {
+@media (min-width: @screen-lg-min)
+{
+	#gmap_canvas
+	{
 	height: 600px;
 	}
 }
-#gmap_canvas img {
+#gmap_canvas img
+{
 	max-width:none !important;
 	background:none !important;
-}
-.dwr-map-expanded
-{
-	overflow: hidden;
 }
 .dwr-mapinfo
 {
@@ -302,7 +358,8 @@ li p
 {
 	display: block;
 }
-#svg-buttons {
+#svg-buttons
+{
 	position: absolute;
 	float: right;
 	top: 5px;
@@ -310,7 +367,8 @@ li p
 	opacity: 0.9;
 	font-size: @font-size-small;
 }
-#svg-help-popover {
+#svg-help-popover
+{
 	position: absolute;
 	float: right;
 	top: 5px;
@@ -342,11 +400,13 @@ li p
 
 /*===================================================== Tree configuration page */
 
-#svg-type {
+#svg-type
+{
 	/*max-width: 200px;*/
 }
 
-#svg-type, #svg-asc, #svg-dsc {
+#svg-type, #svg-asc, #svg-dsc
+{
 	/*width: auto;
 	display: inline-block;*/
 }
@@ -354,7 +414,8 @@ li p
 
 /*===================================================== Tree save-as page */
 
-#svg-loader {
+#svg-loader
+{
 	z-index: 999;
 	display: block;
 	position: absolute;
@@ -367,7 +428,8 @@ li p
 	opacity: 0.9;
 }
 
-body.svg-save-text {
+body.svg-save-text
+{
 	white-space: pre;
 	font-size: @font-size-small;
 	font-family: courier;
@@ -384,7 +446,8 @@ body.svg-save-text {
 	overflow: hidden;
 }
 
-.svg-tree-hover {
+.svg-tree-hover
+{
 	cursor: pointer;
 	opacity: 0.7;
 	/* stroke-width is computed */
@@ -396,7 +459,8 @@ body.svg-save-text {
 	fill: #000000;
 	pointer-events: none;
 }
-.svg-text-hover {
+.svg-text-hover
+{
 	cursor: pointer;
 }
 
@@ -405,4 +469,26 @@ body.svg-save-text {
 	stroke: #000000;
 	stroke-linecap: round;
 	/* stroke-width is computed */
+}
+
+
+/*===================================================== Statistics */
+
+#dwr-chart-container
+{
+	position: relative;
+	overflow: hidden;
+}
+#dwr-chart-buttons
+{
+	position: absolute;
+	float: left;
+	top: 5px;
+	left: 5px;
+	opacity: 0.9;
+	font-size: @font-size-small;
+}
+#dwr-chart-opacity
+{
+	text-align: right;
 }

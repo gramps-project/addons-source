@@ -1,6 +1,6 @@
-// Gramps - a GTK+/GNOME based genealogy program
+ï»¿// Gramps - a GTK+/GNOME based genealogy program
 //
-// Copyright (C) 2014 Pierre Bélissent
+// Copyright (C) 2014 Pierre BÃ©lissent
 //
 // This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
@@ -46,6 +46,7 @@ PAGE_SVG_TREE = 10;
 PAGE_SVG_TREE_FULL = 11;
 PAGE_SVG_TREE_CONF = 12;
 PAGE_SVG_TREE_SAVE = 13;
+PAGE_STATISTICS = 14;
 
 
 //=================================================================
@@ -91,6 +92,14 @@ function famHref(fdx)
 		Fdx: fdx,
 		MapExpanded: false // Reset map
 	}));
+}
+
+function famRef(fdx)
+{
+	// Go to the Family page
+	
+	window.location.href = famHref(fdx);
+	return(false);
 }
 
 function mediaHref(mdx, m_list)
@@ -328,13 +337,19 @@ function indiLinked(idx, citations)
 }
 
 
+GENDERS_TEXT = {
+	'M': _('Male'),
+	'F': _('Female'),
+	'U': _('Unknown')
+};
+GENDERS_TEXT_ORDER = [
+	GENDERS_TEXT['M'],
+	GENDERS_TEXT['F'],
+	GENDERS_TEXT['U']
+];
+
 function indiDetails(i)
 {
-	var genders = {
-		'M': _('Male'),
-		'F': _('Female'),
-		'U': _('Unknown')
-	};
 	var txt = '';
 	var x_name;
 	txt += '<table class="table table-condensed table-bordered dwr-table-flat">';
@@ -351,8 +366,8 @@ function indiDetails(i)
 		if (name.fam_nick != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Family Nick Name') + '</td><td class="dwr-attr-value">' + name.fam_nick + '</td></tr>';
 		if (name.note != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Notes') + '</td><td class="dwr-attr-value">' + notePara(name.note, '<p class="dwr-attr-value">') + '</td></tr>';
 	}
-	txt += '<tr><td class="dwr-attr-title">' + _('Gender') + '</td><td colspan="2" class="dwr-attr-value">' + genders[i.gender] + '</td></tr>';
-	if (i.death_age != '') txt += '<tr><td class="dwr-attr-title">' + _('Age at Death') + '</td><td colspan="2" class="dwr-attr-value">' + i.death_age + '</td></tr>';
+	txt += '<tr><td class="dwr-attr-title">' + _('Gender') + '</td><td colspan="2" class="dwr-attr-value">' + GENDERS_TEXT[i.gender] + '</td></tr>';
+	if (i.death_age != '') txt += '<tr><td class="dwr-attr-title">' + _('Age at death') + '</td><td colspan="2" class="dwr-attr-value">' + i.death_age + '</td></tr>';
 	txt += '</table>';
 	return(txt);
 }
@@ -861,6 +876,13 @@ function printIndi(idx)
 	html += '<h2 class="page-header">' + I[idx].name + ' ' + citaLinks(I[idx].cita) + '</h2>';
 	html += indiDetails(I[idx]);
 	html += printTitle(3, [].concat(
+		eventTable(I[idx].events, idx, -1),
+		addrsTable(I[idx].addrs),
+		attrsTable(I[idx].attr),
+		urlsTable(I[idx].urls),
+		assocsTable(I[idx].assoc),
+		mediaSection(I[idx].media),
+		noteSection(I[idx].note),
 		[{
 			title: _('Ancestors'),
 			text: printIndiAncestors(idx)
@@ -869,13 +891,6 @@ function printIndi(idx)
 			title: _('Descendants'),
 			text: printIndiDescendants(idx)
 		}],
-		eventTable(I[idx].events, idx, -1),
-		addrsTable(I[idx].addrs),
-		attrsTable(I[idx].attr),
-		urlsTable(I[idx].urls),
-		assocsTable(I[idx].assoc),
-		mediaSection(I[idx].media),
-		noteSection(I[idx].note),
 		printMap(MAP_FAMILY),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -887,7 +902,7 @@ function printIndiAncestors(idx)
 {
 	var html = "";
 	var famc_list = $.map(I[idx].famc, function (fc) {return(fc.index);});
-	if (INDEX_SHOW_ALL_SIBLINGS)
+	if (SHOW_ALL_SIBLINGS)
 	{
 		for (j = 0; j < I[idx].famc.length; j++)
 		{
@@ -916,7 +931,7 @@ function printIndiAncestors(idx)
 				text: printIndiSiblings(fdx)
 			}]);
 	}
-	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
+	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None'));
 	return(html);
 }
 
@@ -926,7 +941,7 @@ function printIndiParents(fdx)
 	var html = '';
 	if (F[fdx].spou.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	else
 	{
@@ -955,7 +970,7 @@ function printIndiSiblings(fdx)
 	}
 	else
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	return(html);
 }
@@ -974,7 +989,7 @@ function printIndiDescendants(idx)
 			}],
 			I[idx].fams.length > 1 /*collapsible*/);
 	}
-	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None') + '</p>');
 	return(html);
 }
 
@@ -1006,7 +1021,7 @@ function printIndiChildren(fdx)
 	var html = '';
 	if (F[fdx].chil.length == 0)
 	{
-		html += '<p class="dwr-ref">' + _('None.') + '</p>';
+		html += '<p class="dwr-ref">' + _('None') + '</p>';
 	}
 	else
 	{
@@ -1048,6 +1063,10 @@ function printFam(fdx)
 	var html = '';
 	html += '<h2 class="page-header">' + famLinked(fdx) + '</h2>';
 	html += printTitle(3, [].concat(
+		eventTable(F[fdx].events, -1, fdx),
+		attrsTable(F[fdx].attr),
+		mediaSection(F[fdx].media),
+		noteSection(F[fdx].note),
 		[{
 			title: _('Parents'),
 			text: printFamParents(fdx)
@@ -1056,10 +1075,6 @@ function printFam(fdx)
 			title: _('Children'),
 			text: printFamChildren(fdx)
 		}],
-		eventTable(F[fdx].events, -1, fdx),
-		attrsTable(F[fdx].attr),
-		mediaSection(F[fdx].media),
-		noteSection(F[fdx].note),
 		printMap(MAP_FAMILY),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -1071,7 +1086,7 @@ function printFamParents(fdx)
 	var html = '';
 	if (F[fdx].spou.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	else
 	{
@@ -1102,7 +1117,7 @@ function printFamChildren(fdx)
 	var html = '';
 	if (F[fdx].chil.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+		html += ('<p class="dwr-ref">' + _('None') + '</p>');
 	}
 	else
 	{
@@ -1243,7 +1258,7 @@ function printMedia(mdx)
 		html += '</div>';
 
 		html += '</div></div>';
-		
+
 		// Expand button events
 		$(window).load(function()
 		{
@@ -1274,7 +1289,7 @@ function printMedia(mdx)
 		mediaMapCoords();
 		$('#dwr-image').load(mediaMapCoords);
 	});
-	
+
 	return(html);
 }
 
@@ -1408,7 +1423,7 @@ function printSourceCitations(s)
 	}
 	else
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 	}
 	return(html);
 }
@@ -1489,7 +1504,7 @@ function printRepo(rdx)
 	
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], r.bks, [], [], []);
-	if (bk_txt == '') bk_txt = _('None.');
+	if (bk_txt == '') bk_txt = _('None');
 
 	html += printTitle(3, [].concat(
 		addrsTable(r.addrs),
@@ -1610,7 +1625,7 @@ function printIndex(data, defaultsort, columns)
 	var html = '';
 	if (data_copy.length == 0)
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 		return(html);
 	}
 	html += '<table id="dwr-index-' + indexCounter + '" class="table table-condensed table-bordered dt-table dt-responsive dwr-table-flat" width="100%">';
@@ -2134,7 +2149,7 @@ function printSurnameIndex()
 		{
 			document.write('<p>' + _('No matching surname.') + '</p>');
 		}
-		else if (SN[search.SNdx].letter.length == 1)
+		else if (SN[search.SNdx].persons.length == 1)
 		{
 			window.location.replace(indiHref(SN[search.SNdx].persons[0]));
 		}
@@ -2347,7 +2362,7 @@ var mapObject;
 
 function printMap(enabled)
 {
-	if (!enabled) return([]);
+	if (!enabled || !INC_PLACES) return([]);
 	// Check if there is at least 1 place with coordinates defined
 	var found = false;
 	for (var j = 0; j < pagePlaces.length; j++)
@@ -2390,7 +2405,7 @@ function printMap(enabled)
 	if (search.MapExpanded)
 	{
 		$('body').toggleClass('dwr-fullscreen');
-		$('body > div').css('display', 'none');
+		$('body').children().css('display', 'none');
 	}
 	return([contents]);
 }
@@ -2409,8 +2424,8 @@ function mapUpdate()
 	if (search.MapExpanded)
 	{
 		$('body').prepend($('#gmap_canvas'));
-		$('#gmap_canvas').addClass('dwr-map-expanded');
-		mapResizeDivs();
+		$('#gmap_canvas').addClass('dwr-expanded');
+		mapResize();
 		$(window).resize(mapResize);
 	}
 	// Get all the coordinates, SW and NE coordinates
@@ -2503,7 +2518,7 @@ function mapUpdate()
 		// map = L.map('gmap_canvas');
 		// map.setView(centerCoord, zoom);
 		// L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            // attribution: "© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
+            // attribution: "Â© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
 		// }).addTo(map);
 		var centerCoord = ol.proj.transform([(west + east) / 2, (south + north) / 2], osmFromProj, osmToProj);
 		mapObject = new ol.Map({
@@ -2710,22 +2725,18 @@ function mapExpand()
 }
 
 
-function mapResizeDivs()
-{
-	var w = $(window).width();
-	var h = $(window).height();
-	$('#gmap_canvas').width(w);
-	$('#gmap_canvas').height(h);
-}
-
-
 function mapResize()
 {
-	if (!search.MapExpanded) return(true);
-	mapResizeDivs();
+	var div = $('.dwr-expanded');
+	if (div.length != 1) return(true);
+	var w = $(window).width();
+	var h = $(window).height();
+	div.width(w);
+	div.height(h);
 	mapObject.checkResize();
 	return(true);
 }
+
 
 function OsmClick(event)
 {
@@ -2825,28 +2836,28 @@ function SearchObjects()
 			fextract: function(idx) {
 				return(I[idx].name + ' ' + I[idx].birth_year + ' ' + I[idx].death_year);
 			},
-			text: _('Persons found:'),
+			text: _('Persons'),
 			findex: htmlPersonsIndex,
 			fref: indiHref
 		},
 		{
 			data: M,
 			fextract: function(mdx) {return(M[mdx].title + ' ' + M[mdx].path);},
-			text: _('Media found:'),
+			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
 		},
 		{
 			data: S,
 			fextract: function(sdx) {return(S[sdx].title);},
-			text: _('Sources found:'),
+			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
 		},
 		{
 			data: P,
 			fextract: function(pdx) {return(P[pdx].name);},
-			text: _('Places found:'),
+			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
 		}
@@ -2891,7 +2902,7 @@ function SearchObjects()
 		html = '';
 		if (search.Txt != '')
 		{
-			html += '<p>' + _('There is no matching name.') + '</p>';
+			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
 		}
 		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their maiden name.') + '</p>';
@@ -2935,6 +2946,54 @@ function GidToIndex(gid, table)
 		if (table[i].gid == gid) return(i);
 	}
 	return(-1);
+}
+
+
+
+//=================================================================
+//======================================================== Calendar
+//=================================================================
+
+function printCalendar()
+{
+	var html = '';
+	html += 'printCalendar not implemented';
+	document.write(html);
+}
+
+
+
+//=================================================================
+//============================================================ Home
+//=================================================================
+
+function HomePage()
+{
+	var html = '';
+	html += '<h1>' + TITLE + '</h1>';
+	html += '<p>';
+	var tables = [
+		[SN, "surnames.html"],
+        [I, "persons.html"],
+        [F, "families.html"],
+        [S, "sources.html"],
+        [M, "medias.html"],
+        [P, "places.html"],
+        [R, "repositories.html"]
+	];
+	var sep = '';
+	for (var i = 0; i < tables.length; i += 1)
+	{
+		var j = $.inArray(tables[i][1], PAGES_FILE_INDEX);
+		if (j == -1) continue;
+		html += sep
+		html +=	'<a href="' + tables[i][1] + '">';
+		html +=	PAGES_TITLE_INDEX[j] + ': ' + tables[i][0].length;
+		html +=	'</a>';
+		sep = '<br>';
+	}
+	html += '<br> <p>' + embedSearchText() + '<p>';
+	document.write(html);
 }
 
 
