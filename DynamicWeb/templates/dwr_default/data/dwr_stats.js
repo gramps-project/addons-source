@@ -100,52 +100,133 @@ function extractorDateField(table, name, field, fsort)
 	// });
 }
 
+var STATISTICS_DATA;
+var STATISTICS_CHART_TYPES;
+var STATISTICS_FUNCTIONS;
 
-STATISTICS_DATA = [
-	{
-		name: _('Individuals'),
-		table: I,
-		fref: indiRef,
-		extractors: [
-			extractorStringField(I, _('Name'), 'name'),
-			extractorStringField(I, _('Surname'), 'chart_surnames'),
-			extractorStringField(I, _('GRAMPS ID'), 'gid'),
-			extractorStringField(I, _('Gender'), 'chart_gender', function(a, b) {
-				var k1 = $.inArray(a, GENDERS_TEXT_ORDER);
-				var k2 = $.inArray(b, GENDERS_TEXT_ORDER);
-				return(k1 - k2);
-			}),
-			extractorNumberField(I, _('Birth date'), 'birth_year'),
-			extractorNumberField(I, _('Birth day in year'), 'birth_year_day'),
-			extractorNumberField(I, _('Death date'), 'death_year'),
-			extractorNumberField(I, _('Death day in year'), 'death_year_day'),
-			extractorNumberField(I, _('Age at death'), 'chart_age_death'),
-			extractorListField(I, _('Age at marriage'), 'chart_age_marr', true),
-			extractorNumberField(I, _('Number of children'), 'chart_nb_child'),
-			extractorNumberField(I, _('Parent for how many families'), 'chart_nb_fams'),
-			extractorListField(I, _('Number of children per family'), 'chart_nb_child_fams', true),
-			extractorStringField(I, _('Birth place'), 'birth_place', placeSort),
-			extractorStringField(I, _('Death place'), 'death_place', placeSort)
-		]
-	},
-	{
-		name: _('Families'),
-		table: F,
-		fref: famRef,
-		extractors: [
-			extractorStringField(F, _('Name'), 'name'),
-			extractorStringField(F, _('Spouses surnames'), 'chart_surnames'),
-			extractorStringField(F, _('GRAMPS ID'), 'gid'),
-			extractorNumberField(F, _('Marriage date'), 'marr_year'),
-			extractorNumberField(F, _('Marriage day in year'), 'marr_year_day'),
-			extractorNumberField(F, _('Number of children'), 'chart_nb_child'),
-			extractorStringField(F, _('Marriage place'), 'marr_place', placeSort),
-			extractorListField(F, _('Spouses age at marriage'), 'chart_spou_age_marr', true),
-			extractorNumberField(F, _('Father\'s age at marriage'), 'chart_spou1_age_marr'),
-			extractorNumberField(F, _('Mother\'s age at marriage'), 'chart_spou2_age_marr')
-		]
-	}
-];
+function initStatistics()
+{
+	STATISTICS_DATA = [
+		{
+			name: _('Individuals'),
+			table: I,
+			fref: indiRef,
+			extractors: [
+				extractorStringField(I, _('Name'), 'name'),
+				extractorStringField(I, _('Surname'), 'chart_surnames'),
+				extractorStringField(I, _('GRAMPS ID'), 'gid'),
+				extractorStringField(I, _('Gender'), 'chart_gender', function(a, b) {
+					var k1 = $.inArray(a, GENDERS_TEXT_ORDER);
+					var k2 = $.inArray(b, GENDERS_TEXT_ORDER);
+					return(k1 - k2);
+				}),
+				extractorNumberField(I, _('Birth date'), 'birth_year'),
+				extractorNumberField(I, _('Birth day in year'), 'birth_year_day'),
+				extractorNumberField(I, _('Death date'), 'death_year'),
+				extractorNumberField(I, _('Death day in year'), 'death_year_day'),
+				extractorNumberField(I, _('Age at death'), 'chart_age_death'),
+				extractorListField(I, _('Age at marriage'), 'chart_age_marr', true),
+				extractorNumberField(I, _('Number of children'), 'chart_nb_child'),
+				extractorNumberField(I, _('Parent for how many families'), 'chart_nb_fams'),
+				extractorListField(I, _('Number of children per family'), 'chart_nb_child_fams', true),
+				extractorStringField(I, _('Birth place'), 'birth_place', placeSort),
+				extractorStringField(I, _('Death place'), 'death_place', placeSort)
+			]
+		},
+		{
+			name: _('Families'),
+			table: F,
+			fref: famRef,
+			extractors: [
+				extractorStringField(F, _('Name'), 'name'),
+				extractorStringField(F, _('Spouses surnames'), 'chart_surnames'),
+				extractorStringField(F, _('GRAMPS ID'), 'gid'),
+				extractorNumberField(F, _('Marriage date'), 'marr_year'),
+				extractorNumberField(F, _('Marriage day in year'), 'marr_year_day'),
+				extractorNumberField(F, _('Number of children'), 'chart_nb_child'),
+				extractorStringField(F, _('Marriage place'), 'marr_place', placeSort),
+				extractorListField(F, _('Spouses age at marriage'), 'chart_spou_age_marr', true),
+				extractorNumberField(F, _('Father\'s age at marriage'), 'chart_spou1_age_marr'),
+				extractorNumberField(F, _('Mother\'s age at marriage'), 'chart_spou2_age_marr')
+			]
+		}
+	];
+
+	STATISTICS_FUNCTIONS = [
+		{
+			name: _('None'),
+			needs_numeric: false,
+			numeric: false,
+			compute: chartFunctionNone
+		},
+		{
+			name: _('Count'),
+			needs_numeric: false,
+			numeric: true,
+			compute: chartFunctionCount
+		},
+		{
+			name: _('Sum'),
+			needs_numeric: true,
+			numeric: true,
+			compute: chartFunctionNumericWrapper(function(values) {
+				var sum = 0;
+				for (var i = 0; i < values.length; i += 1) sum += values[i];
+				return(sum);
+			})
+		},
+		{
+			name: _('Average'),
+			needs_numeric: true,
+			numeric: true,
+			compute: chartFunctionNumericWrapper(function(values) {
+				var sum = 0;
+				for (var i = 0; i < values.length; i += 1) sum += values[i];
+				return(1.0 * sum / values.length);
+			})
+		}
+	];
+
+	STATISTICS_CHART_TYPES = [
+		{
+			name: _('Pie chart'),
+			fbuild: printStatisticsPie,
+			enabled: {w: false, x: true, y: false, z: false},
+			needed: {w: false, x: true, y: false, z: false}
+		},
+		{
+			name: _('Donut chart'),
+			fbuild: printStatisticsDonut,
+			enabled: {w: false, x: true, y: false, z: false},
+			needed: {w: false, x: true, y: false, z: false}
+		},
+		{
+			name: _('Bar chart'),
+			fbuild: printStatisticsBar,
+			enabled: {w: true, x: true, y: false, z: false},
+			needed: {w: false, x: true, y: false, z: false}
+		},
+		{
+			name: _('Line chart'),
+			fbuild: printStatisticsLine,
+			enabled: {w: true, x: true, y: false, z: false},
+			needed: {w: false, x: true, y: false, z: false}
+		},
+		{
+			name: _('Scatter chart'),
+			fbuild: printStatisticsScatter,
+			enabled: {w: true, x: true, y: true, z: false},
+			needed: {w: false, x: true, y: true, z: false}
+		},
+		{
+			name: _('Bubble chart'),
+			fbuild: printStatisticsBubble,
+			enabled: {w: true, x: true, y: true, z: true},
+			needed: {w: false, x: true, y: true, z: true}
+		}
+	];
+}
+
 // Indexes for tables in above structure
 TABLE_I = 0;
 TABLE_F = 1;
@@ -177,86 +258,12 @@ EXTRACTOR_F_SPOU_AGE_MARR = 7;
 EXTRACTOR_F_SPOU1_AGE_MARR = 8;
 EXTRACTOR_F_SPOU2_AGE_MARR = 9;
 
-
-STATISTICS_FUNCTIONS = [
-	{
-		name: _('None'),
-		needs_numeric: false,
-		numeric: false,
-		compute: chartFunctionNone
-	},
-	{
-		name: _('Count'),
-		needs_numeric: false,
-		numeric: true,
-		compute: chartFunctionCount
-	},
-	{
-		name: _('Sum'),
-		needs_numeric: true,
-		numeric: true,
-		compute: chartFunctionNumericWrapper(function(values) {
-			var sum = 0;
-			for (var i = 0; i < values.length; i += 1) sum += values[i];
-			return(sum);
-		})
-	},
-	{
-		name: _('Average'),
-		needs_numeric: true,
-		numeric: true,
-		compute: chartFunctionNumericWrapper(function(values) {
-			var sum = 0;
-			for (var i = 0; i < values.length; i += 1) sum += values[i];
-			return(1.0 * sum / values.length);
-		})
-	}
-];
 // Indexes for functions in above structure
 FUNCTION_NONE = 0;
 FUNCTION_COUNT = 1;
 FUNCTION_SUM = 2;
 FUNCTION_AVERAGE = 3;
 
-
-STATISTICS_CHART_TYPES = [
-	{
-		name: _('Pie chart'),
-		fbuild: printStatisticsPie,
-		enabled: {w: false, x: true, y: false, z: false},
-		needed: {w: false, x: true, y: false, z: false}
-	},
-	{
-		name: _('Donut chart'),
-		fbuild: printStatisticsDonut,
-		enabled: {w: false, x: true, y: false, z: false},
-		needed: {w: false, x: true, y: false, z: false}
-	},
-	{
-		name: _('Bar chart'),
-		fbuild: printStatisticsBar,
-		enabled: {w: true, x: true, y: false, z: false},
-		needed: {w: false, x: true, y: false, z: false}
-	},
-	{
-		name: _('Line chart'),
-		fbuild: printStatisticsLine,
-		enabled: {w: true, x: true, y: false, z: false},
-		needed: {w: false, x: true, y: false, z: false}
-	},
-	{
-		name: _('Scatter chart'),
-		fbuild: printStatisticsScatter,
-		enabled: {w: true, x: true, y: true, z: false},
-		needed: {w: false, x: true, y: true, z: false}
-	},
-	{
-		name: _('Bubble chart'),
-		fbuild: printStatisticsBubble,
-		enabled: {w: true, x: true, y: true, z: true},
-		needed: {w: false, x: true, y: true, z: true}
-	}
-];
 // Indexes for chart types in above structure
 CHART_TYPE_PIE = 0;
 CHART_TYPE_DONUT = 1;
@@ -440,6 +447,7 @@ var D;
 
 function getStatisticsData()
 {
+	initStatistics();
 	computeStatisticsData();
 
 	D = {};
@@ -1093,7 +1101,7 @@ function printStatisticsConfInput(label, id)
 function printStatisticsConf()
 {
 	ParseSearchString();
-	// D = getStatisticsData();
+	initStatistics();
 	var html = '';
 	// Chart type selector floating div
 	html += '<h1>' + _('Statistics Charts') + '</h1>';
