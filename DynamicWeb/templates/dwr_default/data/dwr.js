@@ -417,22 +417,21 @@ function eventTable(events, idx, fdx)
 	txt += '<th class="dwr-attr-header">' + _('Event') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Place') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Description') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Media') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var j = 0; j < events.length; j++)
 	{
 		var e = events[j];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + e.type + '</td>';
+		txt += '<td class="dwr-attr-title">' + e.type + ' ' + citaLinks(e.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + e.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</td>';
-		txt += '<td class="dwr-attr-value">' + e.descr + '</td>';
-		txt += '<td class="dwr-attr-value">' + notePara(e.text, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + mediaLinks(e.media) + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(e.cita) + '</td>';
+		var notes = [];
+		if (e.descr != '') notes.push('<span class="dwr-attr-header">' + _('Description') + '</span>:<br>' + e.descr);
+		if (e.text != '') notes.push('<span class="dwr-attr-header">' + _('Notes') + '</span>:<br>' + notePara(e.text, '<p>'));
+		var mlinks = mediaLinks(e.media);
+		if (mlinks != '') notes.push('<span class="dwr-attr-header">' + _('Media') + '</span>:<br>' + mlinks);
+		txt += '<td class="dwr-attr-value">' + notes.join('<p>') + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -462,16 +461,14 @@ function addrsTable(addrs)
 	txt += '<th class="dwr-attr-header">' + _('Address') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_addr = 0; x_addr < addrs.length; x_addr++)
 	{
 		var addr = addrs[x_addr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + '</td>';
+		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + ' ' + citaLinks(addr.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + addr.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(addr.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(addr.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -492,16 +489,14 @@ function attrsTable(attrs)
 	txt += '<th class="dwr-attr-header">' + _('Attribute') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Value') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_attr = 0; x_attr < attrs.length; x_attr++)
 	{
 		var a = attrs[x_attr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + a.type + '</td>';
+		txt += '<td class="dwr-attr-title">' + a.type + ' ' + citaLinks(a.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + a.value + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(a.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(a.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -548,16 +543,14 @@ function assocsTable(assocs)
 	txt += '<th class="dwr-attr-header">' + _('Person') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Relationship') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_assoc = 0; x_assoc < assocs.length; x_assoc++)
 	{
 		var assoc = assocs[x_assoc];
 		txt += '<tr>';
 		txt += '<td class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</td>';
-		txt += '<td class="dwr-attr-value">' + assoc.relationship + '</td>';
+		txt += '<td class="dwr-attr-value">' + assoc.relationship + ' ' + citaLinks(assoc.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(assoc.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(assoc.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -585,7 +578,7 @@ function citaLinks(cita)
 	{
 		var c = C[cita[j]];
 		var sdx = c.source;
-		var title = S[sdx].title;
+		var title = sourName(sdx);
 		if (title != '') title=' title="' + title + '"';
 		// Check if source is already referenced
 		var x1 = $.inArray(sdx, pageSources);
@@ -699,9 +692,16 @@ function citationBullet(x2)
 }
 
 function sourName(sdx)
-{
-	if (S[sdx].title != '') return(S[sdx].title);
-	return(_('Source') + ' ' + sdx);
+{	
+	var title = '';
+	if (SOURCE_AUTHOR_IN_TITLE && S[sdx].author != '') title = S[sdx].author;
+	if (S[sdx].title != '')
+	{
+		if (title != '') title += ': ';
+		title += S[sdx].title;
+	}
+	if (title != '') return(title);
+	return(_('Source') + ' ' + S[sdx].gid);
 }
 
 
@@ -1244,17 +1244,15 @@ function printMedia(mdx)
 	// Image or link (if media is not an image)
 	if (m.mime.indexOf('image') == 0)
 	{
-		html += '<div class="dwr-centered"><div id="img-div">';
-		html += '<img id="dwr-image" src="' + m.path + '" usemap="#imgmap">';
+		html += '<div class="dwr-centered"><div id="dwr-img-div">';
+		html += '<img id="dwr-image" src="' + m.path + '">';
 		html += printMediaMap(mdx);
 		
 		// Expand button
 		html += '<div id="media-buttons">';
-		html += '<div class="btn-group-vertical" role="group">';
 		html += '<button id="media-button-max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
 		html += '<span class="glyphicon glyphicon-fullscreen"></span>';
 		html += '</button>';
-		html += '</div>';
 		html += '</div>';
 
 		html += '</div></div>';
@@ -1284,12 +1282,6 @@ function printMedia(mdx)
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 
-	// Compute map coordinates from image size
-	$(window).load(function() {
-		mediaMapCoords();
-		$('#dwr-image').load(mediaMapCoords);
-	});
-
 	return(html);
 }
 
@@ -1304,39 +1296,18 @@ function mediaButtonPageClick(page_delta, page)
 	return(false);
 }
 
-
 function mediaButtonMaxClick()
 {
 	window.location.href = M[search.Mdx].path;
 	return(false);
 }
 
-
-function mediaMapCoords()
-{
-	var img = $('#dwr-image');
-	var img_w0 = img.width();
-	var img_h0 = img.height();
-	$('area').each(function(j) {
-		c = $(this).attr('coords');
-		rect = c.split(',');
-		rect_img = [img_w0, img_h0, img_w0, img_h0];
-		for (var k = 0; k < 4; k++)
-		{
-			rect[k] = parseInt(rect[k]);
-			rect[k] = Math.round(rect[k] * rect_img[k] / 10000.0);
-		}
-		$(this).attr('coords', rect.join(','));
-	});
-}
-
-
 function printMediaMap(mdx)
 {
 	var html = '';
 	var j, k;
+//	html += '<ul id="imgmap">';
 	var m = M[mdx];
-	html += '<map name="imgmap">';
 	html += printMediaRefArea(m.bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
 		html += printMediaRefArea(m.bkf, famHref, function(ref) {return(F[ref].name);});
@@ -1344,7 +1315,7 @@ function printMediaMap(mdx)
 		html += printMediaRefArea(m.bks, sourceHref, sourName);
 	if (INC_PLACES)
 		html += printMediaRefArea(m.bkp, placeHref, function(ref) {return(P[ref].name);});
-	html += '</map>';
+//	html += '</ul>';
 	return(html);
 }
 
@@ -1359,14 +1330,20 @@ function printMediaRefArea(bk_table, fref, fname)
 		var rect = [];
 		for (k = 0; k < 4; k++)
 		{
-			rect[k] = parseInt(ref.rect[k]);
-			rect[k] = Math.round(rect[k] * 100);
+			rect[k] = parseFloat(ref.rect[k]);
+//			rect[k] = Math.round(rect[k] * 100);
 		}
-		if (!isNaN(rect[0]) && rect.join(',') != '0,0,10000,10000')
+		if (!isNaN(rect[0]) && rect.join(',') != '0,0,100,100')
 		{
-			html += '<area shape="rect" coords="' + rect.join(',') + '"';
-			html += ' href="' + fref(idx) + '"';
+		
+			html += '<a href="' + fref(idx) + '"';
 			html += ' title="' + fname(idx) + '">';
+			html += '<span class="dwr-imgmap" style="';
+			html += 'left: ' + rect[0] + '%;';
+			html += 'top: ' + rect[1] + '%;';
+			html += 'width: ' + (rect[2] - rect[0]) + '%;';
+			html += 'height: ' + (rect[3] - rect[1]) + '%;">';
+			html += '</span></a>';
 		}
 	}
 	return(html);
@@ -1937,7 +1914,22 @@ function htmlSourcesIndex(data)
 	}
 	var columns = [{
 		title: _('Title'),
-		ftext: function(x, col) {return(sourName(data[x]));},
+		ftext: function(x, col) {return(S[data[x]].title);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Author'),
+		ftext: function(x, col) {return(S[data[x]].author);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Abbreviation'),
+		ftext: function(x, col) {return(S[data[x]].abbrev);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Publication information'),
+		ftext: function(x, col) {return(S[data[x]].publ);},
 		fhref: function(x) {return(sourceHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}];
@@ -2849,7 +2841,7 @@ function SearchObjects()
 		},
 		{
 			data: S,
-			fextract: function(sdx) {return(S[sdx].title);},
+			fextract: function(sdx) {return(S[sdx].title + ' ' + S[sdx].author + ' ' + S[sdx].abbrev + ' ' + S[sdx].publ);},
 			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
