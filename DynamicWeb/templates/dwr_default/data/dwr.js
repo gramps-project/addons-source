@@ -1331,19 +1331,17 @@ function printMediaRefArea(bk_table, fref, fname)
 		for (k = 0; k < 4; k++)
 		{
 			rect[k] = parseFloat(ref.rect[k]);
-//			rect[k] = Math.round(rect[k] * 100);
 		}
 		if (!isNaN(rect[0]) && rect.join(',') != '0,0,100,100')
 		{
 		
 			html += '<a href="' + fref(idx) + '"';
-			html += ' title="' + fname(idx) + '">';
-			html += '<span class="dwr-imgmap" style="';
+			html += ' title="' + fname(idx) + '" class="dwr-imgmap" style="';
 			html += 'left: ' + rect[0] + '%;';
 			html += 'top: ' + rect[1] + '%;';
 			html += 'width: ' + (rect[2] - rect[0]) + '%;';
 			html += 'height: ' + (rect[3] - rect[1]) + '%;">';
-			html += '</span></a>';
+			html += '</a>';
 		}
 	}
 	return(html);
