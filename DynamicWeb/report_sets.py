@@ -178,6 +178,7 @@ report_list = [
         'template': 0,
         'copy_media': False,
         'print_notes_type': False,
+        'sourceauthor': True,
         'custom_menu_0': True,
     },
     'procedures': [
