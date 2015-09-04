@@ -37,7 +37,7 @@ default_target:
 	@echo '    make clean_dist: Removes useles files (generated during the build process).'
 	@echo ''
 
-.PHONY: all clean_dist css bootstrap clean_css clean_bootstrap
+.PHONY: all clean_dist css bootstrap clean_css clean_bootstrap force
 
 all: bootstrap css
 
@@ -67,5 +67,7 @@ clean_css:
 	@#Nothing to do
 	@#rm -f $(patsubst %.less,%.css,$(wildcard $(TEMPLATES_PATH)/*/data/*.less))
 
-%.css: %.less
+%.css: %.less force
 	lessc $< $@
+
+force:
