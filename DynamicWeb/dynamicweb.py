@@ -86,7 +86,6 @@ Classes:
 #TODO: Other bootstrap templates
 #TODO: export ISO dates, years in gregorian calendar (get_***_year) ?
 #TODO: Export places hierarchy, and date dependent automatically generated place string
-#TODO:  to find out the main participants of an event. This is useful for events where a person is e.g. a witness. This is indicated on the person's page but one cannot find out what he/she actually witnessed. (see #7740)
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
@@ -2077,7 +2076,7 @@ class DynamicWebReport(Report):
             ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
             ("source.html", _("Source"), self.inc_sources, True, dbscripts, [], "DwrMain(PAGE_SOURCE);"),
             ("media.html", _("Media"), self.inc_gallery, True, dbscripts, [], "DwrMain(PAGE_MEDIA);"),
-            ("place.html", _("Place"), self.inc_places, True, dbscripts, [], "DwrMain(PAGE_PLACE);"),
+            ("place.html", _("Place"), self.inc_places, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_PLACE);"),
             ("repository.html", _("Repository"), self.inc_repositories, True, dbscripts, [], "DwrMain(PAGE_REPO);"),
             ("search.html", _("Search results"), True, True, dbscripts, [], "DwrMain(PAGE_SEARCH);"),
             ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, dbscripts, [], "DwrMain(PAGE_SVG_TREE_FULL);"),

@@ -245,7 +245,7 @@ function SvgCreate()
 	html += '</div>';
 	html += '</div>';
 	// Floating popup div
-	html += '<div id="svg-popup" class="svg-popup">';
+	html += '<div id="svg-popup" class="popover svg-popup">';
 	html += '</div>';
 	html += '</div>'; // svg-drawing
 	if (!search.SvgExpanded)
@@ -1145,8 +1145,9 @@ function SvgPopupShow(elt, event)
 	$('#svg-popup').show();
 	if (idx != svgPopupIdx)
 	{
-		var html = '<p>' + I[idx].name;
-		html += '<br>* ' + I[idx].birth_year;
+		var html = '<div class="popover-title">' + I[idx].name + '</div>';
+		html += '<div class="popover-content">';
+		html += '* ' + I[idx].birth_year;
 		if (I[idx].birth_place != "") html += ' (' + I[idx].birth_place + ')';
 		if (fdx >= 0)
 		{
@@ -1158,7 +1159,7 @@ function SvgPopupShow(elt, event)
 			html += '<br>+ ' + I[idx].death_year;
 			if (I[idx].death_place != "") html += ' (' + I[idx].death_place + ')';
 		}
-		html += '</p>';
+		html += '</div>';
 		$('#svg-popup').html(html);
 		svgPopupIdx = idx;
 	}
@@ -1196,7 +1197,7 @@ function SvgContextBefore($menu, event)
 		{
 			// Person menu items
 			data = data.concat([
-				{text: I[idx].name, href: svgHref(idx)},
+				{header: I[idx].name, href: svgHref(idx)},
 				{text: _('Person page'), href: indiHref(idx)}
 			]);
 			var j, k, subm;

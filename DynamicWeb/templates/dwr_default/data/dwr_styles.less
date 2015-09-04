@@ -9,6 +9,9 @@ You should have received a copy of the GNU General Public License along with thi
 
 
 @import "bootstrap/less/variables.less";
+@import "bootstrap/less/mixins/size.less";
+@import "bootstrap/less/mixins/opacity.less";
+@import "bootstrap/less/mixins/center-block.less";
 
 
 /*===================================================== Body */
@@ -85,9 +88,8 @@ li p
 }
 .dwr-expanded
 {
+	.size(100%; 100%);
 	overflow: hidden;
-	width: 100%;
-	height: 100%;
 	margin: 0 auto;
 }
 
@@ -222,7 +224,7 @@ li p
 	display: none;
 	position: absolute;
 	background: @body-bg;
-	opacity: @carousel-control-opacity;
+	.opacity(@carousel-control-opacity);
 	border-radius: @border-radius-base;
 	border-width: 3px;
 	border-color: @link-color;
@@ -234,7 +236,7 @@ li p
 #media-buttons
 {
 	margin: 5px;
-	opacity: @tooltip-opacity;
+	.opacity(@tooltip-opacity);
 	font-size: @font-size-small;
 	position: absolute;
 	float: right;
@@ -355,13 +357,13 @@ li p
 
 .svg-drawing
 {
-	background: #FFFFFF;
+	background: @body-bg;
 	position: relative;
 	overflow: hidden;
 }
 .svg-drawing-expand
 {
-	background: #FFFFFF;
+	background: @body-bg;
 	position: relative;
 	overflow: hidden;
 	margin: 0px;
@@ -377,34 +379,19 @@ li p
 	float: right;
 	top: 5px;
 	right: 5px;
-	opacity: @tooltip-opacity;
+	.opacity(@tooltip-opacity);
 	font-size: @font-size-small;
-}
-#svg-help-popover
-{
-	position: absolute;
-	float: right;
-	top: 5px;
-	right: 5px;
-	width: 90%;
-	display: block;
-	max-width: initial;
-	left: initial;
 }
 .svg-popup
 {
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	opacity: @tooltip-opacity;
-	background: #FFFFFF;
-	border-radius: 5px;
-	border-width: 1px;
-	border-color: #000000;
-	border-style: solid;
-	padding: 5px;
+	max-width: initial;
+	.opacity(@tooltip-opacity);
 }
-.svg-popup p
+.svg-popup div
+{
+	font-size: @font-size-small;
+}
+.totosvg-popup p
 {
 	margin: 0px;
 	/* text-align: center; */
@@ -435,10 +422,9 @@ li p
 	top: 0;
 	left: 0;
 	z-index: 100;
-	width: 100vw;
-	height: 100vh;
+	.size(100vw; 100vh);
 	background-color: #FFFFFF;
-	opacity: @tooltip-opacity;
+	.opacity(@tooltip-opacity);
 }
 
 body.svg-save-text
@@ -462,7 +448,7 @@ body.svg-save-text
 .svg-tree-hover
 {
 	cursor: pointer;
-	opacity: 0.7;
+	.opacity(@carousel-control-opacity);
 	/* stroke-width is computed */
 }
 
@@ -498,7 +484,7 @@ body.svg-save-text
 	float: left;
 	top: 5px;
 	left: 5px;
-	opacity: @tooltip-opacity;
+	.opacity(@tooltip-opacity);
 	font-size: @font-size-small;
 }
 #dwr-chart-opacity

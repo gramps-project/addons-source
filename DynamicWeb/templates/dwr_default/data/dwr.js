@@ -431,6 +431,20 @@ function eventTable(events, idx, fdx)
 		if (e.text != '') notes.push('<span class="dwr-attr-header">' + _('Notes') + '</span>:<br>' + notePara(e.text, '<p>'));
 		var mlinks = mediaLinks(e.media);
 		if (mlinks != '') notes.push('<span class="dwr-attr-header">' + _('Media') + '</span>:<br>' + mlinks);
+		// Get participants
+		participants = '';
+		for (var i = 0; i < e.part_person.length; i += 1)
+		{
+			var p_idx = e.part_person[i];
+			if (p_idx != idx) participants += '<br>' + indiLinked(p_idx, false);
+		}
+		for (var i = 0; i < e.part_family.length; i += 1)
+		{
+			var p_fdx = e.part_family[i];
+			if (p_fdx != fdx) participants += '<br>' + indiLinked(p_fdx, false);
+		}
+		if (participants != '') notes.push('<span class="dwr-attr-header">' + _('Other participants') + '</span>:' + participants);
+		// Build notes from notes + description + media + participants + etc.
 		txt += '<td class="dwr-attr-value">' + notes.join('<p>') + '</td>';
 		txt += '</tr>';
 	}
@@ -2366,7 +2380,7 @@ function printMap(enabled)
 	}
 	if (!found) return([]);
 	// Schedule the differed update of the map
-	if (TABBED_PANELS)
+	if (TABBED_PANELS && !search.MapExpanded)
 		$(window).load(function () {
 			if ($(".tab-pane.active.dwr-panel-map").length > 0)
 			{
@@ -2727,7 +2741,7 @@ function mapResize()
 	var h = $(window).height();
 	div.width(w);
 	div.height(h);
-	mapObject.checkResize();
+	if (mapObject) mapObject.checkResize();
 	return(true);
 }
 
