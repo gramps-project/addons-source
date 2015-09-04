@@ -2447,7 +2447,7 @@ class DynamicWebReport(Report):
             ("Title", _("Title")),
             ("Type", _("Type")),
             ("Unknown", _("Unknown")),
-            ("Use the search box above in order to find a person.<br>Women are listed with their maiden name.", _("Use the search box above in order to find a person.<br>Women are listed with their maiden name.")),
+            ("Use the search box above in order to find a person.<br>Women are listed with their birth name.", _("Use the search box above in order to find a person.<br>Women are listed with their birth name.")),
             ("Used for family", _("Used for family")),
             ("Used for media", _("Used for media")),
             ("Used for person", _("Used for person")),
