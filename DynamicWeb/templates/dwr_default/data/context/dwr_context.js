@@ -1,15 +1,15 @@
-/* 
+/*
  * Context.js
  * Copyright Jacob Kelley
  * MIT License
- 
+
  Modified for Gramps (a GTK+/GNOME based genealogy program) by:
  Copyright (C) 2014 Pierre Bélissent
 
  */
 
 var context = context || (function () {
-    
+
 	var options = {
 		fadeSpeed: 100,
 		filter: function ($obj) {
@@ -23,10 +23,12 @@ var context = context || (function () {
 		compress: false
 	};
 
+	var menu_id = {};
+
 	function initialize(opts) {
-		
+
 		options = $.extend({}, options, opts);
-		
+
 		$(document).on('click', 'html', function () {
 			$('.dropdown-context').fadeOut(options.fadeSpeed, function(){
 				$('.dropdown-context').css({display:''}).find('.drop-left').removeClass('drop-left');
@@ -46,7 +48,7 @@ var context = context || (function () {
 				$sub.addClass('drop-left');
 			}
 		});
-		
+
 	}
 
 	function updateOptions(opts){
@@ -71,7 +73,7 @@ var context = context || (function () {
 					linkTarget = ' target="'+data[i].target+'"';
 				}
 				if (typeof data[i].subMenu !== 'undefined') {
-					$sub = ('<li class="dropdown-submenu"><a tabindex="-1" href="' + data[i].href + '">' + data[i].text + '</a></li>');
+					$sub = $('<li class="dropdown-submenu"><a tabindex="-1" href="' + data[i].href + '">' + data[i].text + '</a></li>');
 				} else {
 					$sub = $('<li><a tabindex="-1" href="' + data[i].href + '"'+linkTarget+'>' + data[i].text + '</a></li>');
 				}
@@ -97,8 +99,8 @@ var context = context || (function () {
 	}
 
 	function rebuildMenu(selector, data) {
-		var $menu = $("ul.dropdown-menu");
-		var id = $menu.attr('id').replace("dropdown-", "");
+		var id = menu_id[selector];
+		var $menu = $("#dropdown-" + id);
 		var $menu2 = buildMenu(data, id);
 		$menu.children().remove();
 		$menu2.children().appendTo($menu);
@@ -106,27 +108,29 @@ var context = context || (function () {
 	}
 
 	function addContext(selector, data) {
-		
+
 		var d = new Date(),
 			id = d.getTime(),
 			$menu = buildMenu(data, id);
-			
+
+		menu_id[selector] = id;
+
 		$('body').append($menu);
-		
+
 		$(document).on('contextmenu', selector, function (e) {
 			e.preventDefault();
 			e.stopPropagation();
-			
+
 			var discard = false;
-			
+
 			$dd = $('#dropdown-' + id);
 			if (typeof options.before == 'function') {
 				if (options.before($dd, e)) discard = true;
 			}
 			if (discard) return;
-			
+
 			$('.dropdown-context:not(.dropdown-context-sub)').hide();
-			
+
 			if (typeof options.above == 'boolean' && options.above) {
 				$dd.addClass('dropdown-context-up').css({
 					top: e.pageY - 20 - $('#dropdown-' + id).height(),
@@ -149,11 +153,11 @@ var context = context || (function () {
 			}
 		});
 	}
-	
+
 	function destroyContext(selector) {
 		$(document).off('contextmenu', selector).off('click', '.context-event');
 	}
-	
+
 	return {
 		init: initialize,
 		settings: updateOptions,

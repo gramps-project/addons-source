@@ -1,0 +1,578 @@
+/* Gramps - a GTK+/GNOME based genealogy program
+
+Copyright (C) 2014 Pierre Bélissent
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+/* Gramps - a GTK+/GNOME based genealogy program
+
+Copyright (C) 2014 Pierre Bélissent
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
+/*===================================================== Body */
+.dwr-fullscreen {
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.dwr-centered {
+  text-align: center;
+}
+.dwr-nowrap {
+  white-space: nowrap;
+}
+li p {
+  margin: 0px;
+}
+.panel-title > .label {
+  color: #ffffff;
+}
+/*===================================================== Main divs */
+@media (max-width: 767px) {
+  #body-page {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .container {
+    min-width: 450px;
+  }
+  .dwr-panel-table {
+    overflow-x: auto;
+  }
+}
+#dwr-header,
+#dwr-footer {
+  display: none;
+}
+#dwr-footer {
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  #dwr-header,
+  #dwr-footer {
+    display: inherit;
+    padding: 0px 10px;
+    overflow-y: hidden;
+  }
+  #dwr-footer {
+    font-size: 12px;
+  }
+  #dwr-footer p {
+    margin: 0px;
+  }
+}
+.dwr-expanded {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/*===================================================== Menu */
+.navbar-brand img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/*===================================================== Panels */
+.dwr-collapsible {
+  cursor: pointer;
+}
+.dwr-collapsible h1:after,
+.dwr-collapsible h2:after,
+.dwr-collapsible h3:after,
+.dwr-collapsible h4:after,
+.dwr-collapsible h5:after,
+.dwr-collapsible h6:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\e114";
+  /* glyphicon-chevron-down */
+  float: right;
+}
+.dwr-collapsible.collapsed h1:after,
+.dwr-collapsible.collapsed h2:after,
+.dwr-collapsible.collapsed h3:after,
+.dwr-collapsible.collapsed h4:after,
+.dwr-collapsible.collapsed h5:after,
+.dwr-collapsible.collapsed h6:after {
+  content: "\e113";
+  /* glyphicon-chevron-up */
+}
+.dwr-panel-map .panel-body {
+  padding: 0px;
+}
+.dwr-panel-tree .panel-body {
+  padding: 0px;
+}
+.dwr-panel-tree {
+  overflow: hidden;
+}
+/*===================================================== Tabs */
+.dwr-tab-panel {
+  border-top: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.tab-pane.dwr-panel-map {
+  margin: -15px;
+}
+.tab-pane.dwr-panel-table {
+  margin: -15px;
+}
+/* Bootstrap nav tabs styles are overriden, in order to have panes of same height
+.tab-content>.tab-pane{
+	display:block;
+	visibility:hidden;
+}
+.tab-content>.active{
+	visibility:visible;
+} */
+/*===================================================== Media */
+#dwr-image {
+  /*margin: 10px;*/
+  max-width: 740px;
+}
+@media (min-width: 768px) {
+  #dwr-image {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  #dwr-image {
+    max-width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  #dwr-image {
+    max-width: 1140px;
+  }
+}
+#dwr-img-btns {
+  margin: 10px;
+  text-align: center;
+}
+#dwr-img-btns .btn-group {
+  float: initial;
+}
+#dwr-img-div {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+.dwr-imgmap {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  border-radius: 4px;
+  border-width: 3px;
+  border-color: #788026;
+  border-style: solid;
+}
+#dwr-img-div:hover .dwr-imgmap {
+  display: block;
+}
+#media-buttons {
+  margin: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
+  position: absolute;
+  float: right;
+  top: 0;
+  left: 0;
+}
+#dwr-img-div:hover #media-buttons {
+  display: block;
+}
+#dwr-img-div #media-buttons {
+  display: none;
+}
+/*===================================================== Page contents */
+.dwr-attr-title {
+  font-weight: bold;
+}
+.dwr-attr-header {
+  font-style: italic;
+  font-size: 12px;
+}
+.dwr-ref .dwr-ref-detailed {
+  font-weight: bold;
+}
+.dwr-citation,
+.dwr-citation:visited {
+  vertical-align: super;
+  font-style: italic;
+}
+.panel-collapse > .table-bordered {
+  border: none;
+}
+.dwr-table-flat {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+.dwr-table-panel {
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+.dwr-index {
+  vertical-align: middle;
+}
+.dwr-citations .dwr-backrefs {
+  list-style-type: none;
+}
+.thumbnail {
+  margin: 0px;
+  display: inline-block !important;
+}
+.thumbnail > img {
+  max-width: initial;
+}
+/*===================================================== Map */
+#gmap_canvas {
+  height: 330px;
+}
+@media (min-width: 992px) {
+  #gmap_canvas {
+    height: 446px;
+  }
+}
+@media (min-width: 1200px) {
+  #gmap_canvas {
+    height: 600px;
+  }
+}
+#gmap_canvas img {
+  max-width: none !important;
+  background: none !important;
+}
+.dwr-mapinfo {
+  font-size: 12px;
+  margin: 0px;
+  white-space: nowrap;
+}
+#gmap_canvas .popover-content {
+  /*
+    max-width: none;
+	min-width: 300px;*/
+  overflow-x: auto;
+}
+/*===================================================== Tree page */
+.svg-drawing {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.svg-drawing-expand {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  width: auto;
+}
+.svg-drawing svg {
+  display: block;
+}
+#svg-buttons {
+  position: absolute;
+  float: right;
+  top: 5px;
+  right: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
+}
+.svg-popup {
+  max-width: initial;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.svg-popup div {
+  font-size: 12px;
+}
+.totosvg-popup p {
+  margin: 0px;
+  /* text-align: center; */
+}
+/*===================================================== Tree configuration page */
+#svg-type {
+  /*max-width: 200px;*/
+}
+#svg-type,
+#svg-asc,
+#svg-dsc {
+  /*width: auto;
+	display: inline-block;*/
+}
+/*===================================================== Tree save-as page */
+#svg-loader {
+  z-index: 999;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+body.svg-save-text {
+  white-space: pre;
+  font-size: 12px;
+  font-family: courier;
+}
+/*===================================================== SVG graph */
+.svg-tree {
+  stroke: #000000;
+  /* border-radius: 40px; */
+  /* stroke-width is computed */
+  overflow: hidden;
+}
+.svg-tree-hover {
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  /* stroke-width is computed */
+}
+.svg-text {
+  stroke: none;
+  fill: #000000;
+  pointer-events: none;
+}
+.svg-text-hover {
+  cursor: pointer;
+}
+.svg-line {
+  stroke: #000000;
+  stroke-linecap: round;
+  /* stroke-width is computed */
+}
+/*===================================================== Statistics */
+#dwr-chart-container {
+  position: relative;
+  overflow: hidden;
+}
+#dwr-chart-buttons {
+  position: absolute;
+  float: left;
+  top: 5px;
+  left: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
+}
+#dwr-chart-opacity {
+  text-align: right;
+}
+/*===================================================== Body */
+body {
+  background: url(Web_Mainz_Bkgd.png) #5b411a repeat;
+}
+body > div {
+  background: url(Web_Mainz_Mid.png) #cd9b52 repeat;
+}
+/*===================================================== Main divs */
+#body-page {
+  padding-top: 15px;
+}
+#dwr-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 10px;
+  padding-top: 5em;
+  overflow-y: hidden;
+}
+#dwr-footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+  border-top: dashed 1px #aa7931;
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+  font-family: sans-serif;
+  font-size: 12px;
+  overflow-y: hidden;
+}
+#dwr-footer p {
+  margin: 0px;
+}
+@media screen and (max-width: 767px) {
+  #dwr-header,
+  #dwr-footer {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 750px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_750.png) repeat-x top left;
+  }
+}
+@media screen and (min-width: 992px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 970px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_970.png) repeat-x top left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #dwr-header,
+  #dwr-footer {
+    width: 1170px;
+  }
+  #dwr-header {
+    background: url(Web_Mainz_Header_1170.png) repeat-x top left;
+  }
+}
+/*===================================================== Menu */
+.navbar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  border-radius: initial;
+  border: 0;
+  font-size: 18px;
+}
+.navbar-default {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+}
+.navbar-nav > li:hover {
+  background-color: #ffffff;
+}
+.navbar-nav > .active > a {
+  background-image: url(Web_Mainz_Mid.png);
+  font-weight: bold;
+  font-style: italic;
+  border-style: dashed;
+  border-width: 1px 1px 0px 1px;
+  border-color: #aa7931;
+}
+@media (min-width: 768px) {
+  .navbar {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar {
+    width: 1170px;
+  }
+}
+/*===================================================== Panels */
+.panel {
+  background: transparent;
+}
+.panel-default > .panel-heading {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+.panel-default {
+  border-color: #aa7931;
+}
+/*===================================================== Tabs */
+.nav-tabs {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+.nav-tabs > li > a:hover {
+  background-color: #ffffff;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: none;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-image: url(Web_Mainz_Mid.png);
+  font-weight: bold;
+  font-style: italic;
+  border-style: dashed;
+  border-color: #aa7931;
+  border-bottom: 1px solid transparent;
+}
+/*===================================================== Page contents */
+.page-header {
+  font-size: xx-large;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  border-bottom: double 4px #755322;
+  padding-bottom: 1ex;
+  margin: 0.5em 0px 0.5em 0px;
+}
+.dwr-attr-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.dwr-attr-value {
+  font-size: 14px;
+  font-weight: normal;
+}
+.dwr-attr-header {
+  color: #261b0b;
+  font-size: 12px;
+  font-style: italic;
+}
+.dwr-ref {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.dwr-ref-detailed {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.table-bordered {
+  border-color: #cd9b52;
+}
+.table-bordered th,
+.table-bordered td {
+  border-color: #cd9b52 !important;
+}
+.dwr-index {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+.thumbnail {
+  background: transparent;
+  border: 1px solid #aa7931;
+}
+.thumbnail:hover {
+  background-color: #ffffff;
+}
+.popover-title {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+  border-bottom: 1px solid #aa7931;
+}
+/*===================================================== Map */
+/*===================================================== Tree page */
+.svg-drawing {
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+}
+.svg-drawing-expand {
+  background: url(Web_Mainz_MidLight.png) #cd9b52;
+}
+/*===================================================== SVG graph */

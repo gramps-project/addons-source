@@ -6,398 +6,360 @@ This program is free software; you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
-
 /*===================================================== Body */
-
 .dwr-fullscreen {
-	width: auto;
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden;
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
 }
 .dwr-centered {
-	text-align: center;
+  text-align: center;
 }
 .dwr-nowrap {
-	white-space: nowrap;
+  white-space: nowrap;
 }
-
-li p
-{
-	margin: 0px;
+li p {
+  margin: 0px;
 }
-
-.label {
-	font-size: medium;
-	font-weight: bold;
+.panel-title > .label {
+  color: #ffffff;
 }
-.panel-title>.label {
-	color: #FFF;
-}
-
-
 /*===================================================== Main divs */
-
-@media (max-width:767px) {
-	#body-page {
-		padding-right: 5px;
-		padding-left: 5px;
-	}
-	.container {
-		min-width: 450px;
-	}
-	.dwr-panel-table {
-		overflow-x: auto;
-	}
+@media (max-width: 767px) {
+  #body-page {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .container {
+    min-width: 450px;
+  }
+  .dwr-panel-table {
+    overflow-x: auto;
+  }
 }
-#dwr-header, #dwr-footer {
-    display: none;
+#dwr-header,
+#dwr-footer {
+  display: none;
 }
-@media screen and (min-width:768px) {
-	#dwr-header, #dwr-footer {
-		display: inherit;
-		padding: 0px 10px;
-		overflow-y: hidden;
-	}
-	#dwr-footer {
-		font-size: small;
-	}
-	#dwr-footer p {
-		margin: 0px;
-	}
+#dwr-footer {
+  font-size: 12px;
 }
-
-
+@media screen and (min-width: 768px) {
+  #dwr-header,
+  #dwr-footer {
+    display: inherit;
+    padding: 0px 10px;
+    overflow-y: hidden;
+  }
+  #dwr-footer {
+    font-size: 12px;
+  }
+  #dwr-footer p {
+    margin: 0px;
+  }
+}
+.dwr-expanded {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
 /*===================================================== Menu */
-
-.navbar .navbar-form {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.navbar-brand img {
+  max-width: 100%;
+  max-height: 100%;
 }
-@media(max-width:767px) {
-    .navbar .navbar-form {
-        padding-left:0;
-        padding-right:0;
-    }
-}
-
-
-/*===================================================== Pannels */
-
+/*===================================================== Panels */
 .dwr-collapsible {
-	cursor: pointer;
+  cursor: pointer;
 }
 .dwr-collapsible h1:after,
 .dwr-collapsible h2:after,
 .dwr-collapsible h3:after,
 .dwr-collapsible h4:after,
 .dwr-collapsible h5:after,
-.dwr-collapsible h6:after  {
-	font-family: 'Glyphicons Halflings';
-	content: "\e114"; /* glyphicon-chevron-down */
-	float: right;
+.dwr-collapsible h6:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\e114";
+  /* glyphicon-chevron-down */
+  float: right;
 }
 .dwr-collapsible.collapsed h1:after,
 .dwr-collapsible.collapsed h2:after,
 .dwr-collapsible.collapsed h3:after,
 .dwr-collapsible.collapsed h4:after,
 .dwr-collapsible.collapsed h5:after,
-.dwr-collapsible.collapsed h6:after  {
-	content: "\e113";  /* glyphicon-chevron-up */
-}
-
-.dwr-panel-media .panel-body {
+.dwr-collapsible.collapsed h6:after {
+  content: "\e113";
+  /* glyphicon-chevron-up */
 }
 .dwr-panel-map .panel-body {
-	padding: 0px;
+  padding: 0px;
 }
 .dwr-panel-tree .panel-body {
-	padding: 0px;
+  padding: 0px;
 }
 .dwr-panel-tree {
-	overflow: hidden;
+  overflow: hidden;
 }
-
-
+/*===================================================== Tabs */
+.dwr-tab-panel {
+  border-top: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.tab-pane.dwr-panel-map {
+  margin: -15px;
+}
+.tab-pane.dwr-panel-table {
+  margin: -15px;
+}
+/* Bootstrap nav tabs styles are overriden, in order to have panes of same height
+.tab-content>.tab-pane{
+	display:block;
+	visibility:hidden;
+}
+.tab-content>.active{
+	visibility:visible;
+} */
 /*===================================================== Media */
-
 #dwr-image {
-	/*margin: 10px;*/
-	max-width: 740px;
+  /*margin: 10px;*/
+  max-width: 740px;
 }
-@media (min-width:768px) {
-	#dwr-image {
-		max-width: 720px;
-	}
-}
-@media (min-width:992px) {
-	#dwr-image {
-		max-width: 940px;
-	}
-}
-@media (min-width: 1200px) {
-	#dwr-image {
-		max-width: 1140px;
-	}
-}
-
-#dwr-img-btns {
-	margin: 10px;
-	text-align: center;
-}
-
-#dwr-img-btns .btn-group {
-	float: initial;
-}
-
-#img-div {
-	display: inline-block;
-	position: relative;
-	margin-bottom: 20px;
-}
-#media-buttons {
-	margin: 5px;
-	opacity: 0.5;
-	font-size: small;
-	position: absolute;
-	float: right;
-	top: 0;
-	left: 0;
-}
-#img-div:hover  #media-buttons {
-	display: block;
-}
-#img-div  #media-buttons {
-	display: none;
-}
-
-
-/*===================================================== Page contents */
-
-.dwr-attr-title {
-	font-weight: bold;
-	font-style: normal;
-	margin: 0px;
-}
-.dwr-attr-value {
-	font-weight: normal;
-	font-style: normal;
-	margin: 0px;
-}
-.dwr-attr-header {
-	font-weight: normal;
-	font-style: italic;
-	font-size: small;
-	margin: 0px;
-}
-.dwr-ref .dwr-ref-detailed {
-	font-weight: bold;
-}
-.dwr-citation, .dwr-citation:visited
-{
-	vertical-align: super;
-	font-style: italic;
-}
-
-.panel-collapse>.table-bordered {
-	border: none;
-}
-.dwr-table-flat {
-	-webkit-margin-before: 1em;
-	-webkit-margin-after: 1em;
-}
-.dwr-table-panel {
-	-webkit-margin-before: 0px;
-	-webkit-margin-after: 0px;
-}
-.dwr-index-title {
-}
-.dwr-index {
-	vertical-align: middle;
-}
-
-.dwr-citations .dwr-backrefs
-{
-	list-style-type: none;
-}
-
-.thumbnail {
-	margin: 0px;
-	display: inline-block !important;
-}
-.thumbnail>img {
-	max-width: initial;
-}
-
-
-/*===================================================== Map */
-#gmap_canvas
-{
-	height: 330px;
+@media (min-width: 768px) {
+  #dwr-image {
+    max-width: 720px;
+  }
 }
 @media (min-width: 992px) {
-	#gmap_canvas {
-	height: 446px;
-	}
+  #dwr-image {
+    max-width: 940px;
+  }
 }
 @media (min-width: 1200px) {
-	#gmap_canvas {
-	height: 600px;
-	}
+  #dwr-image {
+    max-width: 1140px;
+  }
+}
+#dwr-img-btns {
+  margin: 10px;
+  text-align: center;
+}
+#dwr-img-btns .btn-group {
+  float: initial;
+}
+#dwr-img-div {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+.dwr-imgmap {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  border-radius: 4px;
+  border-width: 3px;
+  border-color: #337ab7;
+  border-style: solid;
+}
+#dwr-img-div:hover .dwr-imgmap {
+  display: block;
+}
+#media-buttons {
+  margin: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
+  position: absolute;
+  float: right;
+  top: 0;
+  left: 0;
+}
+#dwr-img-div:hover #media-buttons {
+  display: block;
+}
+#dwr-img-div #media-buttons {
+  display: none;
+}
+/*===================================================== Page contents */
+.dwr-attr-title {
+  font-weight: bold;
+}
+.dwr-attr-header {
+  font-style: italic;
+  font-size: 12px;
+}
+.dwr-ref .dwr-ref-detailed {
+  font-weight: bold;
+}
+.dwr-citation,
+.dwr-citation:visited {
+  vertical-align: super;
+  font-style: italic;
+}
+.panel-collapse > .table-bordered {
+  border: none;
+}
+.dwr-table-flat {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+.dwr-table-panel {
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+.dwr-index {
+  vertical-align: middle;
+}
+.dwr-citations .dwr-backrefs {
+  list-style-type: none;
+}
+.thumbnail {
+  margin: 0px;
+  display: inline-block !important;
+}
+.thumbnail > img {
+  max-width: initial;
+}
+/*===================================================== Map */
+#gmap_canvas {
+  height: 330px;
+}
+@media (min-width: 992px) {
+  #gmap_canvas {
+    height: 446px;
+  }
+}
+@media (min-width: 1200px) {
+  #gmap_canvas {
+    height: 600px;
+  }
 }
 #gmap_canvas img {
-	max-width:none !important;
-	background:none !important;
+  max-width: none !important;
+  background: none !important;
 }
-.dwr-map-expanded
-{
-	overflow: hidden;
+.dwr-mapinfo {
+  font-size: 12px;
+  margin: 0px;
+  white-space: nowrap;
 }
-.dwr-mapinfo
-{
-	font-size: small;
-	margin: 0px;
-	white-space: nowrap;
-}
-#gmap_canvas .popover-content
-{/*
+#gmap_canvas .popover-content {
+  /*
     max-width: none;
 	min-width: 300px;*/
-	overflow-x: auto;
+  overflow-x: auto;
 }
-
-
 /*===================================================== Tree page */
-
-.svg-drawing
-{
-	background: #FFFFFF;
-	position: relative;
-	overflow: hidden;
+.svg-drawing {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
-.svg-drawing-expand
-{
-	background: #FFFFFF;
-	position: relative;
-	overflow: hidden;
-	margin: 0px;
-	width: auto;
+.svg-drawing-expand {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  width: auto;
 }
-.svg-drawing svg
-{
-	display: block;
+.svg-drawing svg {
+  display: block;
 }
 #svg-buttons {
-	position: absolute;
-	float: right;
-	top: 5px;
-	right: 5px;
-	opacity: 0.9;
-	font-size: small;
+  position: absolute;
+  float: right;
+  top: 5px;
+  right: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
 }
-#svg-help-popover {
-	position: absolute;
-	float: right;
-	top: 5px;
-	right: 5px;
-	width: 90%;
-	display: block;
-	max-width: initial;
-	left: initial;
+.svg-popup {
+  max-width: initial;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
-.svg-popup
-{
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	opacity: 0.9;
-	background: #FFFFFF;
-	border-radius: 5px;
-	border-width: 1px;
-	border-color: #000000;
-	border-style: solid;
-	padding: 5px;
+.svg-popup div {
+  font-size: 12px;
 }
-.svg-popup p
-{
-	margin: 0px;
-	/* text-align: center; */
+.totosvg-popup p {
+  margin: 0px;
+  /* text-align: center; */
 }
-
-
 /*===================================================== Tree configuration page */
-
-.svg-drawing-type
-{
-	font-size: small;
-}
-
 #svg-type {
-	/*max-width: 200px;*/
+  /*max-width: 200px;*/
 }
-
-#svg-type, #svg-asc, #svg-dsc {
-	/*width: auto;
+#svg-type,
+#svg-asc,
+#svg-dsc {
+  /*width: auto;
 	display: inline-block;*/
 }
-
-
 /*===================================================== Tree save-as page */
-
 #svg-loader {
-	z-index: 999;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 100;
-	width: 100vw;
-	height: 100vh;
-	background-color: #FFFFFF;
-	opacity: 0.9;
+  z-index: 999;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
-
 body.svg-save-text {
-	white-space: pre;
-	font-size: small;
-	font-family: courier;
+  white-space: pre;
+  font-size: 12px;
+  font-family: courier;
 }
-
-
 /*===================================================== SVG graph */
-
-.svg-tree
-{
-	stroke: #000000;
-	/* border-radius: 40px; */
-	/* stroke-width is computed */
-	overflow: hidden;
+.svg-tree {
+  stroke: #000000;
+  /* border-radius: 40px; */
+  /* stroke-width is computed */
+  overflow: hidden;
 }
-
 .svg-tree-hover {
-	cursor: pointer;
-	opacity: 0.7;
-	/* stroke-width is computed */
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  /* stroke-width is computed */
 }
-
-.svg-text
-{
-	stroke: none;
-	fill: #000000;
-	pointer-events: none;
+.svg-text {
+  stroke: none;
+  fill: #000000;
+  pointer-events: none;
 }
 .svg-text-hover {
-	cursor: pointer;
+  cursor: pointer;
 }
-
-.svg-line
-{
-	stroke: #000000;
-	stroke-linecap: round;
-	/* stroke-width is computed */
+.svg-line {
+  stroke: #000000;
+  stroke-linecap: round;
+  /* stroke-width is computed */
+}
+/*===================================================== Statistics */
+#dwr-chart-container {
+  position: relative;
+  overflow: hidden;
+}
+#dwr-chart-buttons {
+  position: absolute;
+  float: left;
+  top: 5px;
+  left: 5px;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  font-size: 12px;
+}
+#dwr-chart-opacity {
+  text-align: right;
 }

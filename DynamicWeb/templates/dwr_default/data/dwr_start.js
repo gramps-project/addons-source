@@ -21,8 +21,8 @@ loadjsfile(scriptFolder + 'jquery/jquery.sizes.js');
 loadjsfile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
 
 // Load bootstrap
-loadcssfile(scriptFolder + 'bootstrap/css/bootstrap.min.css');
-loadjsfile(scriptFolder + 'bootstrap/js/bootstrap.min.js');
+loadcssfile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
+loadjsfile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
 
 // Load Raphael
 loadjsfile(scriptFolder + 'raphael/raphael-min.js');
@@ -34,7 +34,7 @@ loadjsfile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
 loadjsfile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.js');
 loadjsfile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
 
-// Load context menu lugin
+// Load context menu plugin
 loadcssfile(scriptFolder + 'context/context.css');
 loadjsfile(scriptFolder + 'context/dwr_context.js');
 
@@ -43,7 +43,6 @@ loadjsfile(scriptFolder + 'unorm/unorm.js');
 
 // Load styles
 loadcssfile(scriptFolder + 'dwr_styles.css');
-loadcssfile(scriptFolder + 'dwr_template.css');
 
 // Load configuration and language file
 loadjsfile('dwr_conf.js');
@@ -52,6 +51,7 @@ loadjsfile('dwr_conf.js');
 loadjsfile(scriptFolder + 'dwr.js');
 loadjsfile(scriptFolder + 'dwr_svg.js');
 loadjsfile(scriptFolder + 'dwr_body.js');
+loadjsfile(scriptFolder + 'dwr_stats.js');
 
 
 //============================================

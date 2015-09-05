@@ -1,6 +1,6 @@
-// Gramps - a GTK+/GNOME based genealogy program
+ï»¿// Gramps - a GTK+/GNOME based genealogy program
 //
-// Copyright (C) 2014 Pierre Bélissent
+// Copyright (C) 2014 Pierre BÃ©lissent
 //
 // This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
@@ -8,194 +8,8 @@
 
 
 //=================================================================
-//====== Indexes of the fields in the database exported from Gramps
+//=================================== Database exported from Gramps
 //=================================================================
-
-// The Gramps database is exported as Javascript Arrays
-// The following indexes are indexes in these Arrays
-
-// I: Individual
-I_GID = 0;
-I_NAME = 1;
-I_SHORT_NAME = 2;
-I_NAMES = 3;
-I_GENDER = 4;
-I_BIRTH_YEAR = 5;
-I_BIRTH_PLACE = 6;
-I_DEATH_YEAR = 7;
-I_DEATH_PLACE = 8;
-I_DEATH_AGE = 9;
-I_EVENTS = 10;
-I_ADDRS = 11;
-I_NOTE = 12;
-I_MEDIA = 13;
-I_CITA = 14;
-I_ATTR = 15;
-I_URLS = 16;
-I_FAMS = 17;
-I_FAMC = 18;
-I_ASSOC = 19;
-
-// N: Name
-N_FULL = 0;
-N_TYPE = 1;
-N_TITLE = 2;
-N_NICK = 3;
-N_CALL = 4;
-N_GIVEN = 5;
-N_SUFFIX = 6;
-N_SURNAMES = 7;
-N_FAM_NICK = 8
-N_DATE = 9;
-N_NOTE = 10;
-N_CITA = 11;
-
-// A: Attribute
-A_TYPE = 0;
-A_VALUE = 1;
-A_NOTE = 2;
-A_CITA = 3;
-
-// F: Family
-F_GID = 0;
-F_NAME = 1;
-F_TYPE = 2;
-F_MARR_YEAR = 3;
-F_MARR_PLACE = 4;
-F_EVENTS = 5;
-F_NOTE = 6;
-F_MEDIA = 7;
-F_CITA = 8;
-F_ATTR = 9;
-F_SPOU = 10;
-F_CHIL = 11;
-
-// FC: Child relationship
-FC_INDEX = 0;
-FC_TO_FATHER = 1;
-FC_TO_MOTHER = 2;
-FC_NOTE = 3;
-FC_CITA = 4;
-
-// E: Event
-E_GID = 0;
-E_TYPE = 1;
-E_DATE = 2;
-E_DATE_ISO = 3;
-E_PLACE = 4;
-E_DESCR = 5;
-E_TEXT = 6;
-E_MEDIA = 7;
-E_CITA = 8;
-
-// S: Source
-S_GID = 0;
-S_TITLE = 1;
-S_TEXT = 2;
-S_NOTE = 3;
-S_MEDIA = 4;
-S_BKC = 5;
-S_REPO = 6;
-S_ATTR = 7;
-
-// C: Citation
-C_GID = 0;
-C_SOURCE = 1;
-C_TEXT = 2;
-C_NOTE = 3;
-C_MEDIA = 4;
-C_BKI = 5;
-C_BKF = 6;
-C_BKM = 7;
-C_BKP = 8;
-C_BKR = 9;
-
-// R: Repository
-R_GID = 0;
-R_NAME = 1;
-R_TYPE = 2;
-R_ADDRS = 3;
-R_NOTE = 4;
-R_URLS = 5;
-R_BKS = 6;
-
-// M: Media
-M_GID = 0;
-M_TITLE = 1;
-M_GRAMPS_PATH = 2;
-M_PATH = 3;
-M_MIME = 4;
-M_DATE = 5;
-M_DATE_ISO = 6;
-M_NOTE = 7;
-M_CITA = 8;
-M_ATTR = 9;
-M_THUMB = 10;
-M_BKI = 11;
-M_BKF = 12;
-M_BKS = 13;
-M_BKP = 14;
-
-// P: Place
-P_GID = 0;
-P_NAME = 1;
-P_LOCATIONS = 2;
-P_COORDS = 3;
-P_NOTE = 4;
-P_MEDIA = 5;
-P_CITA = 6;
-P_URLS = 7;
-P_BKI = 8;
-P_BKF = 9;
-
-// MR: Media reference
-MR_M_IDX = 0;
-MR_BK_IDX = 0;
-MR_THUMB = 1;
-MR_RECT = 2;
-MR_NOTE = 3;
-MR_CITA = 4;
-
-// RR: Repository reference
-RR_R_IDX = 0;
-RR_S_IDX = 0;
-RR_MEDIA_TYPE = 1;
-RR_CALL_NUMBER = 2;
-RR_NOTE = 3;
-
-// U: URL
-U_TYPE = 0;
-U_URI = 1;
-U_DESCR = 2;
-
-// AC: Association
-AC_PERSON = 0;
-AC_RELATIONSHIP = 1;
-AC_NOTE = 2;
-AC_CITA = 3;
-
-// AD: Address
-AD_DATE = 0;
-AD_DATE_ISO = 1;
-AD_LOCATION = 2;
-AD_NOTE = 3;
-AD_CITA = 4;
-
-// LOC: Location (for places and addresses)
-LOC_STREET = 0;
-LOC_LOCALITY = 1;
-LOC_PARISH = 2;
-LOC_CITY = 3;
-LOC_STATE = 4;
-LOC_COUNTY = 5;
-LOC_ZIP = 6;
-LOC_COUNTRY = 7;
-LOC_PHONE = 8;
-
-// SN: Surname
-SN_SURNAME = 0;
-SN_LETTER = 1;
-SN_PERSONS = 2;
 
 // Initialize empty arrays by default
 // Depending on generation options, not all the lists are generated
@@ -232,6 +46,7 @@ PAGE_SVG_TREE = 10;
 PAGE_SVG_TREE_FULL = 11;
 PAGE_SVG_TREE_CONF = 12;
 PAGE_SVG_TREE_SAVE = 13;
+PAGE_STATISTICS = 14;
 
 
 //=================================================================
@@ -277,6 +92,14 @@ function famHref(fdx)
 		Fdx: fdx,
 		MapExpanded: false // Reset map
 	}));
+}
+
+function famRef(fdx)
+{
+	// Go to the Family page
+	
+	window.location.href = famHref(fdx);
+	return(false);
 }
 
 function mediaHref(mdx, m_list)
@@ -514,13 +337,19 @@ function indiLinked(idx, citations)
 }
 
 
+GENDERS_TEXT = {
+	'M': _('Male'),
+	'F': _('Female'),
+	'U': _('Unknown')
+};
+GENDERS_TEXT_ORDER = [
+	GENDERS_TEXT['M'],
+	GENDERS_TEXT['F'],
+	GENDERS_TEXT['U']
+];
+
 function indiDetails(i)
 {
-	var genders = {
-		'M': _('Male'),
-		'F': _('Female'),
-		'U': _('Unknown')
-	};
 	var txt = '';
 	var x_name;
 	txt += '<table class="table table-condensed table-bordered dwr-table-flat">';
@@ -531,14 +360,14 @@ function indiDetails(i)
 		var name_full = name.full;
 		if (name.date != '') name_full += ' (' + name.date + ')';
 		if (name.cita.length > 0) name_full += ' ' + citaLinks(name.cita);
-		txt += '<tr><td><p class="dwr-attr-title">' + name.type + '</p></td><td colspan="2"><p class="dwr-attr-value">' + name_full + '</p></td></tr>';
-		if (name.nick != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name.nick + '</p></td></tr>';
-		if (name.call != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Call Name') + '</p></td><td><p class="dwr-attr-value">' + name.call + '</p></td></tr>';
-		if (name.fam_nick != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Family Nick Name') + '</p></td><td><p class="dwr-attr-value">' + name.fam_nick + '</p></td></tr>';
-		if (name.note != '') txt += '<tr><td class="empty"></td><td><p class="dwr-attr-title">' + _('Notes') + '</p></td><td>' + notePara(name.note, '<p class="dwr-attr-value">') + '</td></tr>';
+		txt += '<tr><td class="dwr-attr-title">' + name.type + '</td><td colspan="2" class="dwr-attr-value">' + name_full + '</td></tr>';
+		if (name.nick != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Nick Name') + '</td><td class="dwr-attr-value">' + name.nick + '</td></tr>';
+		if (name.call != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Call Name') + '</td><td class="dwr-attr-value">' + name.call + '</td></tr>';
+		if (name.fam_nick != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Family Nick Name') + '</td><td class="dwr-attr-value">' + name.fam_nick + '</td></tr>';
+		if (name.note != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Notes') + '</td><td class="dwr-attr-value">' + notePara(name.note, '<p class="dwr-attr-value">') + '</td></tr>';
 	}
-	txt += '<tr><td><p class="dwr-attr-title">' + _('Gender') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + genders[i.gender] + '</p></td></tr>';
-	if (i.death_age != '') txt += '<tr><td><p class="dwr-attr-title">' + _('Age at Death') + '</p></td><td colspan="2"><p class="dwr-attr-value">' + i.death_age + '</p></td></tr>';
+	txt += '<tr><td class="dwr-attr-title">' + _('Gender') + '</td><td colspan="2" class="dwr-attr-value">' + GENDERS_TEXT[i.gender] + '</td></tr>';
+	if (i.death_age != '') txt += '<tr><td class="dwr-attr-title">' + _('Age at death') + '</td><td colspan="2" class="dwr-attr-value">' + i.death_age + '</td></tr>';
 	txt += '</table>';
 	return(txt);
 }
@@ -555,70 +384,73 @@ function famLinked(fdx, citations)
 }
 
 
-function noteSection(note, level)
+function noteSection(note)
 {
-	level = (typeof(level) !== 'undefined') ? level : 5;
-	var txt = '';
-	if (note != '')
-	{
-		txt += printTitle(level, _('Notes') + ':');
-		txt += notePara(note, '<p>');
-		txt += printTitleEnd();
-	}
-	return(txt);
+	if (note == '') return([]);
+	return([{
+		title: _('Notes'),
+		text: notePara(note, '<p>')
+	}]);
 }
 
 
-function mediaSection(media, level)
+function mediaSection(media)
 {
-	level = (typeof(level) !== 'undefined') ? level : 5;
-	var txt = '';
-	if (media.length > 0)
-	{
-		txt += printTitle(level, _('Media') + ':', 'dwr-panel-media');
-		txt += mediaLinks(media);
-		txt += printTitleEnd();
-	}
-	return(txt);
+	if (media.length == 0) return([]);
+	return([{
+		title: _('Media'),
+		text: mediaLinks(media),
+		panelclass: 'dwr-panel-media'
+	}]);
 }
 
 
 function eventTable(events, idx, fdx)
 {
-	var j;
+	if (events.length == 0) return([]);
+	var contents = {};
+	contents.title = _('Events');
 	var txt = '';
-	if (events.length > 0)
+	txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
+	// txt += '<table class="dt-table events">';
+	txt += '<thead><tr>';
+	txt += '<th class="dwr-attr-header">' + _('Event') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Place') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
+	txt += '</tr></thead><tbody>';
+	for (var j = 0; j < events.length; j++)
 	{
-		txt += printTitle(5, _('Events'), '', true);
-		txt += printTitleTable();
-		txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
-		// txt += '<table class="dt-table events">';
-		txt += '<thead><tr>';
-		txt += '<th><p class="dwr-attr-header">' + _('Event') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Date') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Place') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Description') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Notes') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Media') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Sources') + '</p></th>';
-		txt += '</tr></thead><tbody>';
-		for (j = 0; j < events.length; j++)
+		var e = events[j];
+		txt += '<tr>';
+		txt += '<td class="dwr-attr-title">' + e.type + ' ' + citaLinks(e.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + e.date + '</td>';
+		txt += '<td class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</td>';
+		var notes = [];
+		if (e.descr != '') notes.push('<span class="dwr-attr-header">' + _('Description') + '</span>:<br>' + e.descr);
+		if (e.text != '') notes.push('<span class="dwr-attr-header">' + _('Notes') + '</span>:<br>' + notePara(e.text, '<p>'));
+		var mlinks = mediaLinks(e.media);
+		if (mlinks != '') notes.push('<span class="dwr-attr-header">' + _('Media') + '</span>:<br>' + mlinks);
+		// Get participants
+		participants = '';
+		for (var i = 0; i < e.part_person.length; i += 1)
 		{
-			var e = events[j];
-			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-title">' + e.type + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + e.date + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + e.descr + '</p></td>';
-			txt += '<td>' + notePara(e.text, '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + mediaLinks(e.media) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(e.cita) + '</p></td>';
-			txt += '</tr>';
+			var p_idx = e.part_person[i];
+			if (p_idx != idx) participants += '<br>' + indiLinked(p_idx, false);
 		}
-		txt += '</tbody></table>';
-		txt += printTitleEnd();
+		for (var i = 0; i < e.part_family.length; i += 1)
+		{
+			var p_fdx = e.part_family[i];
+			if (p_fdx != fdx) participants += '<br>' + indiLinked(p_fdx, false);
+		}
+		if (participants != '') notes.push('<span class="dwr-attr-header">' + _('Other participants') + '</span>:' + participants);
+		// Build notes from notes + description + media + participants + etc.
+		txt += '<td class="dwr-attr-value">' + notes.join('<p>') + '</td>';
+		txt += '</tr>';
 	}
-	return(txt);
+	txt += '</tbody></table>';
+	contents.text = txt;
+	return([contents]);
 }
 
 
@@ -633,129 +465,111 @@ function locationString(loc)
 
 function addrsTable(addrs)
 {
-	var x_addr;
+	if (addrs.length == 0) return([]);
+	var contents = {};
+	contents.title = _('Addresses');
 	var txt = '';
-	if (addrs.length > 0)
+	txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
+	// txt += '<table class="dt-table addrs">';
+	txt += '<thead><tr>';
+	txt += '<th class="dwr-attr-header">' + _('Address') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
+	txt += '</tr></thead><tbody>';
+	for (var x_addr = 0; x_addr < addrs.length; x_addr++)
 	{
-		txt += printTitle(5, _('Addresses'), '', true);
-		txt += printTitleTable();
-		txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
-		// txt += '<table class="dt-table addrs">';
-		txt += '<thead><tr>';
-		txt += '<th><p class="dwr-attr-header">' + _('Address') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Date') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Notes') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Sources') + '</p></th>';
-		txt += '</tr></thead><tbody>';
-		for (x_addr = 0; x_addr < addrs.length; x_addr++)
-		{
-			var addr = addrs[x_addr];
-			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value">' + locationString(addr.location) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + addr.date + '</p></td>';
-			txt += '<td>' + notePara(addr.note, '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(addr.cita) + '</p></td>';
-			txt += '</tr>';
-		}
-		txt += '</tbody></table>';
-		txt += printTitleEnd();
+		var addr = addrs[x_addr];
+		txt += '<tr>';
+		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + ' ' + citaLinks(addr.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + addr.date + '</td>';
+		txt += '<td class="dwr-attr-value">' + notePara(addr.note, '<p>') + '</td>';
+		txt += '</tr>';
 	}
-	return(txt);
+	txt += '</tbody></table>';
+	contents.text = txt;
+	return([contents]);
 }
 
 
 function attrsTable(attrs)
 {
-	var x_attr;
+	if (attrs.length == 0) return([]);
+	var contents = {};
+	contents.title = _('Attributes');
 	var txt = '';
-	if (attrs.length > 0)
+	txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
+	// txt += '<table class="dt-table attrs">';
+	txt += '<thead><tr>';
+	txt += '<th class="dwr-attr-header">' + _('Attribute') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Value') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
+	txt += '</tr></thead><tbody>';
+	for (var x_attr = 0; x_attr < attrs.length; x_attr++)
 	{
-		txt += printTitle(5, _('Attributes'), '', true);
-		txt += printTitleTable();
-		txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
-		// txt += '<table class="dt-table attrs">';
-		txt += '<thead><tr>';
-		txt += '<th><p class="dwr-attr-header">' + _('Attribute') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Value') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Notes') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Sources') + '</p></th>';
-		txt += '</tr></thead><tbody>';
-		for (x_attr = 0; x_attr < attrs.length; x_attr++)
-		{
-			var a = attrs[x_attr];
-			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-title">' + a.type + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + a.value + '</p></td>';
-			txt += '<td>' + notePara(a.note, '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(a.cita) + '</p></td>';
-			txt += '</tr>';
-		}
-		txt += '</tbody></table>';
-		txt += printTitleEnd();
+		var a = attrs[x_attr];
+		txt += '<tr>';
+		txt += '<td class="dwr-attr-title">' + a.type + ' ' + citaLinks(a.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + a.value + '</td>';
+		txt += '<td class="dwr-attr-value">' + notePara(a.note, '<p>') + '</td>';
+		txt += '</tr>';
 	}
-	return(txt);
+	txt += '</tbody></table>';
+	contents.text = txt;
+	return([contents]);
 }
 
 
 function urlsTable(urls)
 {
-	var x_url;
+	if (urls.length == 0) return([]);
+	var contents = {};
+	contents.title = _('Web Links');
 	var txt = '';
-	if (urls.length > 0)
+	txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
+	// txt += '<table class="dt-table urls">';
+	txt += '<thead><tr>';
+	txt += '<th class="dwr-attr-header">' + _('Link') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Description') + '</th>';
+	txt += '</tr></thead><tbody>';
+	for (var x_url = 0; x_url < urls.length; x_url++)
 	{
-		txt += printTitle(5, _('Web Links'), '', true);
-		txt += printTitleTable();
-		txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
-		// txt += '<table class="dt-table urls">';
-		txt += '<thead><tr>';
-		txt += '<th><p class="dwr-attr-header">' + _('Link') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Description') + '</p></th>';
-		txt += '</tr></thead><tbody>';
-		for (x_url = 0; x_url < urls.length; x_url++)
-		{
-			var url = urls[x_url];
-			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value"><a href="' + url.uri + '">' + url.uri + '</a></p></td>';
-			txt += '<td><p class="dwr-attr-value">' + url.descr + '</p></td>';
-			txt += '</tr>';
-		}
-		txt += '</tbody></table>';
-		txt += printTitleEnd();
+		var url = urls[x_url];
+		txt += '<tr>';
+		txt += '<td class="dwr-attr-value"><a href="' + url.uri + '">' + url.uri + '</a></td>';
+		txt += '<td class="dwr-attr-value">' + url.descr + '</td>';
+		txt += '</tr>';
 	}
-	return(txt);
+	txt += '</tbody></table>';
+	contents.text = txt;
+	return([contents]);
 }
 
 
 function assocsTable(assocs)
 {
-	var x_assoc;
+	if (assocs.length == 0) return([]);
+	var contents = {};
+	contents.title = _('Associations');
 	var txt = '';
-	if (assocs.length > 0)
+	txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
+	// txt += '<table class="dt-table assocs">';
+	txt += '<thead><tr>';
+	txt += '<th class="dwr-attr-header">' + _('Person') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Relationship') + '</th>';
+	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
+	txt += '</tr></thead><tbody>';
+	for (var x_assoc = 0; x_assoc < assocs.length; x_assoc++)
 	{
-		txt += printTitle(5, _('Associations'), '', true);
-		txt += printTitleTable();
-		txt += '<table class="table table-condensed table-bordered dwr-table-panel">';
-		// txt += '<table class="dt-table assocs">';
-		txt += '<thead><tr>';
-		txt += '<th><p class="dwr-attr-header">' + _('Person') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Relationship') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Notes') + '</p></th>';
-		txt += '<th><p class="dwr-attr-header">' + _('Sources') + '</p></th>';
-		txt += '</tr></thead><tbody>';
-		for (x_assoc = 0; x_assoc < assocs.length; x_assoc++)
-		{
-			var assoc = assocs[x_assoc];
-			txt += '<tr>';
-			txt += '<td><p class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</p></td>';
-			txt += '<td><p class="dwr-attr-value">' + assoc.relationship + '</p></td>';
-			txt += '<td>' + notePara(assoc.note, '<p class="dwr-attr-value">') + '</td>';
-			txt += '<td><p class="dwr-attr-value">' + citaLinks(assoc.cita) + '</p></td>';
-			txt += '</tr>';
-		}
-		txt += '</tbody></table>';
-		txt += printTitleEnd();
+		var assoc = assocs[x_assoc];
+		txt += '<tr>';
+		txt += '<td class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</td>';
+		txt += '<td class="dwr-attr-value">' + assoc.relationship + ' ' + citaLinks(assoc.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + notePara(assoc.note, '<p>') + '</td>';
+		txt += '</tr>';
 	}
-	return(txt);
+	txt += '</tbody></table>';
+	contents.text = txt;
+	return([contents]);
 }
 
 
@@ -778,7 +592,7 @@ function citaLinks(cita)
 	{
 		var c = C[cita[j]];
 		var sdx = c.source;
-		var title = S[sdx].title;
+		var title = sourName(sdx);
 		if (title != '') title=' title="' + title + '"';
 		// Check if source is already referenced
 		var x1 = $.inArray(sdx, pageSources);
@@ -808,6 +622,18 @@ function citaLinks(cita)
 		txt += ' <a class="dwr-citation label label-primary" href="#cita_' + sdx + '"' + title + '>' + x1 + ',' + x2 + '</a> ';
 	}
 	return(txt);
+}
+
+function sourceSection()
+{
+	// Citations and source references
+	var ctxt = printCitations();
+	if (ctxt == '') return([]);
+	return([{
+		title: _('Sources'),
+		text: ctxt,
+		panelclass: 'dwr-sources-panel'
+	}]);
 }
 
 function printCitations()
@@ -854,6 +680,11 @@ function handleCitations()
 		var x = txt.split(',');
 		$(this).text(pageCitationsBullets[x[0]][x[1]]);
 	});
+	// Show Source tabbed pane upon click
+	
+	$('.dwr-citation').click(function(e) {
+		$('a.dwr-sources-panel[role=tab]').tab('show');
+	});
 }
 
 function citationBullet(x2)
@@ -875,9 +706,16 @@ function citationBullet(x2)
 }
 
 function sourName(sdx)
-{
-	if (S[sdx].title != '') return(S[sdx].title);
-	return(_('Source') + ' ' + sdx);
+{	
+	var title = '';
+	if (SOURCE_AUTHOR_IN_TITLE && S[sdx].author != '') title = S[sdx].author;
+	if (S[sdx].title != '')
+	{
+		if (title != '') title += ': ';
+		title += S[sdx].title;
+	}
+	if (title != '') return(title);
+	return(_('Source') + ' ' + S[sdx].gid);
 }
 
 
@@ -923,6 +761,16 @@ function repoLink(rdx)
 }
 
 
+function strToContents(title, txt)
+{
+	if (txt == '') return([]);
+	return([{
+		title: title,
+		text: txt
+	}]);
+}
+
+
 //=================================================================
 //========================================================== Titles
 //=================================================================
@@ -932,56 +780,81 @@ var titlesTable = []; // Stack of titles property: is the title containing a tab
 var titlesNumber = 0;
 
 
-function printTitle(level, title, panelclass, table, collapsible)
+function printTitle(level, contents, collapsible, is_tabbeb)
 {
-	if (typeof(table) == 'undefined') table = false;
-	if (typeof(panelclass) == 'undefined') panelclass = '';
+	if (contents.length == 0) return('');
+	if (typeof(is_tabbeb) == 'undefined') is_tabbeb = false;
 	if (typeof(collapsible) == 'undefined') collapsible = (level >= 1);
-	table = table && collapsible;
+	is_tabbeb = is_tabbeb && collapsible && TABBED_PANELS;
 	var html = '';
-	titlesNumber += 1;
-	var id = 'section_' + titlesNumber;
-	titlesCollapsible.push(collapsible);
-	titlesTable.push(table);
-	if (collapsible)
+	if (is_tabbeb)
 	{
-		html += '<div class="panel panel-default ' + panelclass + '">';
-		html += '<div class="panel-heading dwr-collapsible" data-toggle="collapse" data-target="#' + id + '">';
-		html += '<h' + level + ' class="panel-title">' + title + '</h' + level + '>';
-		html += '</div>';
-		html += '<div id="' + id + '" class="panel-collapse collapse in ' + (table ? 'dwr-panel-table' : 'dwr-panel') + '">';
-		if (!table) html += '<div class="panel-body">';
+		//  Generate nav tabs
+		html += '<ul class="nav nav-tabs" role="tablist">';
+		for (var i = 0; i < contents.length; i += 1)
+		{
+			if (typeof(contents[i].panelclass) == 'undefined') contents[i].panelclass = '';
+			html += '<li role="presentation"' + ((i == 0) ? ' class="active"' : '') +
+				'><a href="#section_' + (titlesNumber + i) + '" role="tab" data-toggle="tab" class="' + contents[i].panelclass + '">' +
+				'<h' + level + ' class="panel-title">' +
+				contents[i].title +
+				'</h' + level + '>' +
+				'</a></li>';
+		}
+		html += '</ul>';
+		html += '<div class="panel panel-default dwr-tab-panel"><div class="tab-content panel-body">';
 	}
-	else
+	for (var i = 0; i < contents.length; i += 1)
 	{
-		html += '<h' + level + '>' + title + '</h' + level + '>';
+		var id = 'section_' + titlesNumber;
+		titlesNumber += 1;
+		is_table = (contents[i].text.indexOf('<table') == 0);
+		is_table = is_table && collapsible;
+		if (is_tabbeb)
+		{
+			html += '<div id="' + id + '" role="tabpanel" class="tab-pane' +
+				(is_table ? ' dwr-panel-table' : '') +
+				((i == 0) ? ' active ' : ' ') + contents[i].panelclass + '">';
+			html += contents[i].text;
+			html += '</div>';
+		}
+		else if (collapsible)
+		{
+			html += '<div class="panel panel-default ' + contents[i].panelclass + '">';
+			html += '<div class="panel-heading dwr-collapsible" data-toggle="collapse" data-target="#' + id + '">';
+			html += '<h' + level + ' class="panel-title">' + contents[i].title + '</h' + level + '>';
+			html += '</div>';
+			html += '<div id="' + id + '" class="panel-collapse collapse in ' + (is_table ? 'dwr-panel-table' : 'dwr-panel') + '">';
+			if (is_table)
+			{
+				html += contents[i].text;
+				html += '</div></div>';
+			}
+			else
+			{
+				html += '<div class="panel-body">';
+				html += contents[i].text;
+				html += '</div></div></div>';
+			}
+			
+		}
+		else
+		{
+			html += '<h' + level + '>' + contents[i].title + '</h' + level + '>';
+			html += contents[i].text;
+		}
+	}
+	if (is_tabbeb)
+	{
+		html += '</div></div>';
 	}
 	return(html);
 }
 
 
-function printTitleTable()
-{
-	var table = titlesTable[titlesTable.length - 1];
-	titlesTable[titlesTable.length - 1] = true;
-	return(table ? '' : '</div>');
-}
-
-
-function printTitleEnd()
-{
-	collapsible = titlesCollapsible.pop();
-	table = titlesTable.pop();
-	var txt = '';
-	if (collapsible) txt = '</div></div></div>';
-	if (table) txt = '</div></div>';
-	return(txt);
-}
-
-
 function handleTitles()
 {
-	// Enable Bootstrap tooltips and popovers
+	// Handle collapsible panels
 	$('.panel-heading').click(function(event) {
 		// Prevent title collapse when the click is not on the title
 		var target = $(event.target);
@@ -990,8 +863,20 @@ function handleTitles()
 			event.stopImmediatePropagation();
 		}
 	});
+	
+	// Handle Bootstrap nav tabs
+	$('.nav-tabs>li>a').click(function (event) {
+		var target = $(event.target);
+		if (target.attr('role') != 'tab' && !target.is('.panel-title'))
+		{
+			event.stopImmediatePropagation();
+		}
+	});
+
+	// Enable Bootstrap tooltips and popovers
 	$('[data-toggle=tooltip]').tooltip();
 	$('[data-toggle=popover]').popover();
+	
 }
 
 
@@ -1001,20 +886,37 @@ function handleTitles()
 
 function printIndi(idx)
 {
-	var j, k;
 	var html = '';
 	html += '<h2 class="page-header">' + I[idx].name + ' ' + citaLinks(I[idx].cita) + '</h2>';
 	html += indiDetails(I[idx]);
-	html += eventTable(I[idx].events, idx, -1);
-	html += addrsTable(I[idx].addrs);
-	html += attrsTable(I[idx].attr);
-	html += urlsTable(I[idx].urls);
-	html += assocsTable(I[idx].assoc);
-	html += mediaSection(I[idx].media);
-	html += noteSection(I[idx].note);
-	html += printTitle(4, _('Ancestors') + ':');
+	html += printTitle(3, [].concat(
+		eventTable(I[idx].events, idx, -1),
+		addrsTable(I[idx].addrs),
+		attrsTable(I[idx].attr),
+		urlsTable(I[idx].urls),
+		assocsTable(I[idx].assoc),
+		mediaSection(I[idx].media),
+		noteSection(I[idx].note),
+		[{
+			title: _('Ancestors'),
+			text: printIndiAncestors(idx)
+		},
+		{
+			title: _('Descendants'),
+			text: printIndiDescendants(idx)
+		}],
+		printMap(MAP_FAMILY),
+		sourceSection()),
+		true /*collapsible*/, true /*is_tabbeb*/);
+	return(html);
+}
+
+
+function printIndiAncestors(idx)
+{
+	var html = "";
 	var famc_list = $.map(I[idx].famc, function (fc) {return(fc.index);});
-	if (INDEX_SHOW_ALL_SIBLINGS)
+	if (SHOW_ALL_SIBLINGS)
 	{
 		for (j = 0; j < I[idx].famc.length; j++)
 		{
@@ -1033,59 +935,44 @@ function printIndi(idx)
 	for (j = 0; j < famc_list.length; j++)
 	{
 		var fdx = famc_list[j];
-		html += printTitle(5, _('Parents') + ': ' + famLinked(fdx));
-		for (k = 0; k < F[fdx].spou.length; k++)
+		html += printTitle(4,
+			[{
+				title: _('Parents') + ': ' + famLinked(fdx),
+				text: printIndiParents(fdx)
+			},
+			{
+				title: _('Siblings'),
+				text: printIndiSiblings(fdx)
+			}]);
+	}
+	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None'));
+	return(html);
+}
+
+
+function printIndiParents(fdx)
+{
+	var html = '';
+	if (F[fdx].spou.length == 0)
+	{
+		html += ('<p class="dwr-ref">' + _('None'));
+	}
+	else
+	{
+		for (var k = 0; k < F[fdx].spou.length; k++)
 		{
 			html += '<p class="dwr-ref">' + indiLinked(F[fdx].spou[k]) + '</p>';
 		}
-		if (F[fdx].spou.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
-		html += printTitleEnd();
-
-		html += printTitle(5, _('Siblings') + ':');
-		if (F[fdx].chil.length > 0)
-		{
-			html += '<ol class="dwr-ref">';
-			for (k = 0; k < F[fdx].chil.length; k++)
-			{
-				html += '<li class="dwr-ref">';
-				html += printChildRef(F[fdx].chil[k]);
-				html += '</li>';
-			}
-			html += '</ol>';
-		}
-		else
-		{
-			html += ('<p class="dwr-ref">' + _('None.'));
-		}
-		html += printTitleEnd();
 	}
-	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
-	html += printTitleEnd();
-	html += printTitle(4, _('Descendants') + ':');
-	for (j = 0; j < I[idx].fams.length; j++)
+	return(html);
+}
+
+
+function printIndiSiblings(fdx)
+{
+	var html = '';
+	if (F[fdx].chil.length > 0)
 	{
-		var fdx = I[idx].fams[j];
-		var spouses = [];
-		var sep = '';
-		for (k = 0; k < F[fdx].spou.length; k++)
-		{
-			var spou = F[fdx].spou[k]
-			if (spou != idx)
-			{
-				spouses.push(spou);
-				sep = ', ';
-			}
-		}
-		html += printTitle(5, famLinked(fdx));
-		for (k = 0; k < spouses.length; k++)
-		{
-			html += '<p class="dwr-ref">' + indiLinked(spouses[k]) + '</p>';
-		}
-		html += eventTable(F[fdx].events, -1, fdx);
-		html += attrsTable(F[fdx].attr);
-		html += mediaSection(F[fdx].media);
-		html += noteSection(F[fdx].note);
-		html += printTitle(5, _('Children') + ':');
 		html += '<ol class="dwr-ref">';
 		for (k = 0; k < F[fdx].chil.length; k++)
 		{
@@ -1094,19 +981,72 @@ function printIndi(idx)
 			html += '</li>';
 		}
 		html += '</ol>';
-		if (F[fdx].chil.length == 0) html += '<p class="dwr-ref">' + _('None.') + '</p>';
-		html += printTitleEnd();
-		html += printTitleEnd();
 	}
-	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
-	html += printTitleEnd();
-	// Citations and source references
-	var ctxt = printCitations();
-	if (ctxt != '')
+	else
 	{
-		html += printTitle(5, _('Sources') + ':');
-		html += ctxt;
-		html += printTitleEnd();
+		html += ('<p class="dwr-ref">' + _('None'));
+	}
+	return(html);
+}
+
+		
+function printIndiDescendants(idx)
+{
+	var html = '';
+	for (var j = 0; j < I[idx].fams.length; j++)
+	{
+		var fdx = I[idx].fams[j];
+		html += printTitle(4,
+			[{
+				title: famLinked(fdx),
+				text: printIndiSpouses(fdx, idx)
+			}],
+			I[idx].fams.length > 1 /*collapsible*/);
+	}
+	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None') + '</p>');
+	return(html);
+}
+
+
+function printIndiSpouses(fdx, idx)
+{
+	var html = '';
+	var spouses = $(F[fdx].spou).not([idx]).get();
+	for (var k = 0; k < spouses.length; k++)
+	{
+		html += '<p class="dwr-ref">' + indiLinked(spouses[k]) + '</p>';
+	}
+	html += printTitle(4, [].concat(
+		[{
+			title: _('Children'),
+			text: printIndiChildren(fdx)
+		}],
+		eventTable(F[fdx].events, -1, fdx),
+		attrsTable(F[fdx].attr),
+		mediaSection(F[fdx].media),
+		noteSection(F[fdx].note)),
+		true /*collapsible*/, true /*is_tabbeb*/);
+	return(html);
+}
+
+
+function printIndiChildren(fdx)
+{
+	var html = '';
+	if (F[fdx].chil.length == 0)
+	{
+		html += '<p class="dwr-ref">' + _('None') + '</p>';
+	}
+	else
+	{
+		html += '<ol class="dwr-ref">';
+		for (var k = 0; k < F[fdx].chil.length; k++)
+		{
+			html += '<li class="dwr-ref">';
+			html += printChildRef(F[fdx].chil[k]);
+			html += '</li>';
+		}
+		html += '</ol>';
 	}
 	return(html);
 }
@@ -1134,54 +1074,86 @@ function printChildRef(fc)
 
 function printFam(fdx)
 {
-	var j, k;
 	var html = '';
 	html += '<h2 class="page-header">' + famLinked(fdx) + '</h2>';
-	html += eventTable(F[fdx].events, -1, fdx);
-	html += attrsTable(F[fdx].attr);
-	html += mediaSection(F[fdx].media);
-	html += noteSection(F[fdx].note);
-	var spouses = F[fdx].spou;
-	html += printTitle(4, _('Parents') + ':');
-	for (k = 0; k < spouses.length; k++)
+	html += printTitle(3, [].concat(
+		eventTable(F[fdx].events, -1, fdx),
+		attrsTable(F[fdx].attr),
+		mediaSection(F[fdx].media),
+		noteSection(F[fdx].note),
+		[{
+			title: _('Parents'),
+			text: printFamParents(fdx)
+		},
+		{
+			title: _('Children'),
+			text: printFamChildren(fdx)
+		}],
+		printMap(MAP_FAMILY),
+		sourceSection()),
+		true /*collapsible*/, true /*is_tabbeb*/);
+	return(html);
+}
+		
+function printFamParents(fdx)
+{
+	var html = '';
+	if (F[fdx].spou.length == 0)
 	{
-		var idx = spouses[k];
-		html += '<h4 class="dwr-ref-detailed">' + indiLinked(idx) + '</a></h4>';
-		html += indiDetails(I[idx]);
-		html += eventTable(I[idx].events, idx, -1);
-		// html += attrsTable(I[idx].attr);
-		html += mediaSection(I[idx].media);
-		// html += noteSection(I[idx].note);
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
-	if (spouses.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
-	html += printTitleEnd();
-	html += printTitle(4, _('Children') + ':');
-	html += '<ol class="dwr-ref-detailed">';
-	for (k = 0; k < F[fdx].chil.length; k++)
+	else
 	{
-		var fc = F[fdx].chil[k];
-		var idx = F[fdx].chil[k].index;
-		html += '<li class="dwr-ref-detailed">' + printChildRef(F[fdx].chil[k])
-		html += indiDetails(I[idx]);
-		html += eventTable(I[idx].events, idx, -1);
-		// html += attrsTable(I[idx].attr);
-		html += mediaSection(I[idx].media);
-		// html += noteSection(I[idx].note);
-		html += '</li>';
+		html += '<ul class="dwr-ref-detailed">';
+		for (var k = 0; k < F[fdx].spou.length; k++)
+		{
+			var idx = F[fdx].spou[k];
+			html += '<li class="dwr-ref-detailed">' + indiLinked(idx);
+			html += indiDetails(I[idx]);
+			html += printTitle(4, [].concat(
+				eventTable(I[idx].events, idx, -1),
+				// addrsTable(I[idx].addrs),
+				// attrsTable(I[idx].attr),
+				// urlsTable(I[idx].urls),
+				// assocsTable(I[idx].assoc),
+				mediaSection(I[idx].media)),
+				// noteSection(I[idx].note),
+				true /*collapsible*/, true /*is_tabbeb*/);
+			html += '</li>';
+		}
 	}
-	if (F[fdx].chil.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
-	html += '</ol>';
-	html += printTitleEnd();
-	// Map
-	if (MAP_FAMILY)
-		html += printMap();
-	// Citations and source references
-	var ctxt = printCitations();
-	if (ctxt != '')
+	return(html);
+}
+
+
+function printFamChildren(fdx)
+{
+	var html = '';
+	if (F[fdx].chil.length == 0)
 	{
-		html += printTitle(5, _('Sources') + ':');
-		html += ctxt;
-		html += printTitleEnd();
+		html += ('<p class="dwr-ref">' + _('None') + '</p>');
+	}
+	else
+	{
+		html += '<ol class="dwr-ref-detailed">';
+		for (var k = 0; k < F[fdx].chil.length; k++)
+		{
+			var fc = F[fdx].chil[k];
+			var idx = F[fdx].chil[k].index;
+			html += '<li class="dwr-ref-detailed">' + printChildRef(F[fdx].chil[k])
+			html += indiDetails(I[idx]);
+			html += printTitle(4, [].concat(
+				eventTable(I[idx].events, idx, -1),
+				// addrsTable(I[idx].addrs),
+				// attrsTable(I[idx].attr),
+				// urlsTable(I[idx].urls),
+				// assocsTable(I[idx].assoc),
+				mediaSection(I[idx].media)),
+				// noteSection(I[idx].note),
+				true /*collapsible*/, true /*is_tabbeb*/);
+			html += '</li>';
+		}
+		html += '</ol>';
 	}
 	return(html);
 }
@@ -1286,21 +1258,19 @@ function printMedia(mdx)
 	// Image or link (if media is not an image)
 	if (m.mime.indexOf('image') == 0)
 	{
-		html += '<div class="dwr-centered"><div id="img-div">';
-		html += '<img id="dwr-image" src="' + m.path + '" usemap="#imgmap">';
+		html += '<div class="dwr-centered"><div id="dwr-img-div">';
+		html += '<img id="dwr-image" src="' + m.path + '">';
 		html += printMediaMap(mdx);
 		
 		// Expand button
 		html += '<div id="media-buttons">';
-		html += '<div class="btn-group-vertical" role="group">';
 		html += '<button id="media-button-max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
 		html += '<span class="glyphicon glyphicon-fullscreen"></span>';
 		html += '</button>';
 		html += '</div>';
-		html += '</div>';
 
 		html += '</div></div>';
-		
+
 		// Expand button events
 		$(window).load(function()
 		{
@@ -1313,34 +1283,19 @@ function printMedia(mdx)
 		name = name.replace(/.*[\\\/]/, '');
 		html += '<p class="dwr-centered"><a href="' + m.path + '">' + name + '</a></p>';
 	}
-	
-	// Media description
-	if (m.date != '') html += '<p><b>' + _('Date') + ': </b>' + m.date + '</p>';
-	html += noteSection(m.note);
-	html += attrsTable(m.attr);
 
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_MEDIA, m.bki, m.bkf, m.bks, [], m.bkp, []);
-	if (bk_txt != '')
-	{
-		html += printTitle(5, _('References') + ':');
-		html += bk_txt;
-		html += printTitleEnd();
-	}
+	
+	// Media description
+	if (m.date != '') html += '<p><b>' + _('Date') + ': </b>' + m.date + '</p>';
+	html += printTitle(3, [].concat(
+		noteSection(m.note),
+		attrsTable(m.attr),
+		strToContents(_('References'), bk_txt),
+		sourceSection()),
+		true /*collapsible*/, true /*is_tabbeb*/);
 
-	// Citations and source references
-	var ctxt = printCitations();
-	if (ctxt != '')
-		html += printTitle(5, _('Sources') + ':');
-		html += ctxt;
-		html += printTitleEnd();
-	
-	// Compute map coordinates from image size
-	$(window).load(function() {
-		mediaMapCoords();
-		$('#dwr-image').load(mediaMapCoords);
-	});
-	
 	return(html);
 }
 
@@ -1355,39 +1310,18 @@ function mediaButtonPageClick(page_delta, page)
 	return(false);
 }
 
-
 function mediaButtonMaxClick()
 {
 	window.location.href = M[search.Mdx].path;
 	return(false);
 }
 
-
-function mediaMapCoords()
-{
-	var img = $('#dwr-image');
-	var img_w0 = img.width();
-	var img_h0 = img.height();
-	$('area').each(function(j) {
-		c = $(this).attr('coords');
-		rect = c.split(',');
-		rect_img = [img_w0, img_h0, img_w0, img_h0];
-		for (var k = 0; k < 4; k++)
-		{
-			rect[k] = parseInt(rect[k]);
-			rect[k] = Math.round(rect[k] * rect_img[k] / 10000.0);
-		}
-		$(this).attr('coords', rect.join(','));
-	});
-}
-
-
 function printMediaMap(mdx)
 {
 	var html = '';
 	var j, k;
+//	html += '<ul id="imgmap">';
 	var m = M[mdx];
-	html += '<map name="imgmap">';
 	html += printMediaRefArea(m.bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
 		html += printMediaRefArea(m.bkf, famHref, function(ref) {return(F[ref].name);});
@@ -1395,7 +1329,7 @@ function printMediaMap(mdx)
 		html += printMediaRefArea(m.bks, sourceHref, sourName);
 	if (INC_PLACES)
 		html += printMediaRefArea(m.bkp, placeHref, function(ref) {return(P[ref].name);});
-	html += '</map>';
+//	html += '</ul>';
 	return(html);
 }
 
@@ -1410,14 +1344,17 @@ function printMediaRefArea(bk_table, fref, fname)
 		var rect = [];
 		for (k = 0; k < 4; k++)
 		{
-			rect[k] = parseInt(ref.rect[k]);
-			rect[k] = Math.round(rect[k] * 100);
+			rect[k] = parseFloat(ref.rect[k]);
 		}
-		if (!isNaN(rect[0]) && rect.join(',') != '0,0,10000,10000')
+		if (!isNaN(rect[0]) && rect.join(',') != '0,0,100,100')
 		{
-			html += '<area shape="rect" coords="' + rect.join(',') + '"';
-			html += ' href="' + fref(idx) + '"';
-			html += ' title="' + fname(idx) + '">';
+			html += '<a href="' + fref(idx) + '"';
+			html += ' title="' + fname(idx) + '" class="dwr-imgmap" style="';
+			html += 'left: ' + rect[0] + '%;';
+			html += 'top: ' + rect[1] + '%;';
+			html += 'width: ' + (rect[2] - rect[0]) + '%;';
+			html += 'height: ' + (rect[3] - rect[1]) + '%;">';
+			html += '</a>';
 		}
 	}
 	return(html);
@@ -1434,23 +1371,33 @@ function printSource(sdx)
 	var s = S[sdx];
 	if (s.title != '') html += '<h2 class="page-header">' + s.title + '</h2>';
 	if (s.text != '') html += s.text;
-	html += attrsTable(s.attr);
-	html += mediaSection(s.media);
-	html += noteSection(s.note);
+
 	// Repositories for this source
-	if (S[sdx].repo.length > 0)
-		html += printTitle(5, _('Repositories') + ':');
-		html += printBackRefs(BKREF_TYPE_REPO, [], [], [], [], [], S[sdx].repo);
-		html += printTitleEnd();
-	// Citations referencing this source
-	html += printTitle(5, _('Citations') + ':');
+	var bk_txt = printBackRefs(BKREF_TYPE_REPOREF, [], [], [], [], [], S[sdx].repo);
+
+	html += printTitle(3, [].concat(
+		attrsTable(s.attr),
+		mediaSection(s.media),
+		noteSection(s.note),
+		strToContents(_('Repositories'), bk_txt),
+		[{
+			title: _('Citations'),
+			text: printSourceCitations(s)
+		}]),
+		true /*collapsible*/, true /*is_tabbeb*/);
+	return(html);
+}
+
+function printSourceCitations(s)
+{
+	var html = '';
 	if (s.bkc.length > 0)
 	{
 		html += '<ul class="dwr-citations">';
 		var j;
-		for (j = 0; j < s.bkc.length; j++)
+		for (var j = 0; j < s.bkc.length; j++)
 		{
-			c = C[s.bkc[j]]
+			var c = C[s.bkc[j]]
 			// html += '<li>' + _('Citation') + ': ';
 			html += '<li>';
 			if (c.text != '') html += notePara(c.text, '<p>');
@@ -1464,9 +1411,8 @@ function printSource(sdx)
 	}
 	else
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 	}
-	html += printTitleEnd();
 	return(html);
 }
 
@@ -1509,33 +1455,25 @@ function printPlace(pdx)
 		html += '<table class="table table-condensed table-bordered dwr-table-flat">';
 		for (k = 0; k < parts.length / 2; k ++)
 		{
-			html += '<tr><th><p class="dwr-attr-header">' + parts[k] + '</p></th>';
-			html += '<td><p class="dwr-attr-value">' + loc[k] + '</p></td>';
-			html += '<th><p class="dwr-attr-header">' + parts[k + parts.length / 2] + '</p></th>';
-			html += '<td><p class="dwr-attr-value">' + loc[k + parts.length / 2] + '</p></td></tr>';
+			html += '<tr><th class="dwr-attr-header">' + parts[k] + '</th>';
+			html += '<td class="dwr-attr-value">' + loc[k] + '</td>';
+			html += '<th class="dwr-attr-header">' + parts[k + parts.length / 2] + '</th>';
+			html += '<td class="dwr-attr-value">' + loc[k + parts.length / 2] + '</td></tr>';
 		}
 		html += '</table>';
 	}
-	html += urlsTable(p.urls);
-	html += mediaSection(p.media);
-	html += noteSection(p.note);
-	// Map
-	if (MAP_PLACE)
-		html += printMap();
-	// Citations and source references
-	var ctxt = printCitations();
-	if (ctxt != '')
-		html += printTitle(5, _('Sources') + ':');
-		html += ctxt;
-		html += printTitleEnd();
+
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], [], []);
-	if (bk_txt != '')
-	{
-		html += printTitle(5, _('References') + ':');
-		html += bk_txt;
-		html += printTitleEnd();
-	}
+
+	html += printTitle(3, [].concat(
+		urlsTable(p.urls),
+		mediaSection(p.media),
+		noteSection(p.note),
+		printMap(MAP_PLACE),
+		sourceSection(),
+		strToContents(_('References'), bk_txt)),
+		true /*collapsible*/, true /*is_tabbeb*/);
 	return(html);
 }
 
@@ -1551,21 +1489,18 @@ function printRepo(rdx)
 	html += '<h2 class="page-header">' + r.name + '</h2>';
 	html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Type') + ': </span>'
 	html += r.type + '</p>';
-	html += addrsTable(r.addrs);
-	html += urlsTable(r.urls);
-	html += noteSection(r.note);
+	
 	// Back references
-	html += printTitle(5, _('References') + ':');
 	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], r.bks, [], [], []);
-	if (bk_txt == '') bk_txt = _('None.');
-	html += bk_txt;
-	html += printTitleEnd();
-	// Citations and source references
-	var ctxt = printCitations();
-	if (ctxt != '')
-		html += printTitle(5, _('Sources') + ':');
-		html += ctxt;
-		html += printTitleEnd();
+	if (bk_txt == '') bk_txt = _('None');
+
+	html += printTitle(3, [].concat(
+		addrsTable(r.addrs),
+		urlsTable(r.urls),
+		noteSection(r.note),
+		strToContents(_('References'), bk_txt),
+		sourceSection()),
+		true /*collapsible*/, true /*is_tabbeb*/);
 	return(html);
 }
 
@@ -1678,7 +1613,7 @@ function printIndex(data, defaultsort, columns)
 	var html = '';
 	if (data_copy.length == 0)
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 		return(html);
 	}
 	html += '<table id="dwr-index-' + indexCounter + '" class="table table-condensed table-bordered dt-table dt-responsive dwr-table-flat" width="100%">';
@@ -1843,26 +1778,31 @@ function printFamiliesIndex()
 {
 	document.write(htmlFamiliesIndex());
 }
-function htmlFamiliesIndex()
+function htmlFamiliesIndex(data)
 {
 	var html = '';
-	html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
+	if (typeof(data) == 'undefined')
+	{
+		html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
+		data = [];
+		for (var x = 0; x < F.length; x++) data.push(x);
+	}
 	var columns = [{
 		title: _('Father'),
-		ftext: printIndexSpouseText,
-		fhref: famHref,
-		fsort: printIndexSpouseIdx
+		ftext: function(x, col) {return(printIndexSpouseText(data[x], col));},
+		fhref: function(x) {return(famHref(data[x]));},
+		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col));}
 	}, {
 		title: _('Mother'),
-		ftext: printIndexSpouseText,
-		fhref: famHref,
-		fsort: printIndexSpouseIdx
+		ftext: function(x, col) {return(printIndexSpouseText(data[x], col));},
+		fhref: function(x) {return(famHref(data[x]));},
+		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col));}
 	}];
 	if (INDEX_SHOW_MARRIAGE) columns.push({
 		title: _('Marriage'),
-		ftext: function(fdx, col) {return(F[fdx].marr_year);}
+		ftext: function(x, col) {return(F[data[x]].marr_year);}
 	});
-	html += printIndex(F, [0, 'asc'], columns);
+	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
 }
 
@@ -1990,7 +1930,22 @@ function htmlSourcesIndex(data)
 	}
 	var columns = [{
 		title: _('Title'),
-		ftext: function(x, col) {return(sourName(data[x]));},
+		ftext: function(x, col) {return(S[data[x]].title);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Author'),
+		ftext: function(x, col) {return(S[data[x]].author);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Abbreviation'),
+		ftext: function(x, col) {return(S[data[x]].abbrev);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Publication information'),
+		ftext: function(x, col) {return(S[data[x]].publ);},
 		fhref: function(x) {return(sourceHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}];
@@ -2202,7 +2157,7 @@ function printSurnameIndex()
 		{
 			document.write('<p>' + _('No matching surname.') + '</p>');
 		}
-		else if (SN[search.SNdx].letter.length == 1)
+		else if (SN[search.SNdx].persons.length == 1)
 		{
 			window.location.replace(indiHref(SN[search.SNdx].persons[0]));
 		}
@@ -2339,6 +2294,7 @@ BKREF_TYPE_INDEX = 0;
 BKREF_TYPE_MEDIA = 1;
 BKREF_TYPE_SOURCE = 2;
 BKREF_TYPE_REPO = 3;
+BKREF_TYPE_REPOREF = 4;
 
 function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 {
@@ -2383,10 +2339,11 @@ function printBackRef(type, bk_table, fref, fname)
 				txt += '</div>';
 			}
 		}
-		else if (type == BKREF_TYPE_REPO)
+		else if (type == BKREF_TYPE_REPO || type == BKREF_TYPE_REPOREF)
 		{
-			// This is a media back reference
-			txt = '<a href="' + fref(ref.r_idx) + '">' + fname(ref.r_idx) + '</a>';
+			var idx = (type == BKREF_TYPE_REPO) ? ref.s_idx : ref.r_idx;
+			// This is a repository back reference
+			txt = '<a href="' + fref(idx) + '">' + fname(idx) + '</a>';
 			if (ref.media_type != '')
 				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Media Type') + ': </span>' + ref.media_type + '</p>';
 			if (ref.call_number != '')
@@ -2411,9 +2368,9 @@ function printBackRef(type, bk_table, fref, fname)
 var mapObject;
 
 
-function printMap()
+function printMap(enabled)
 {
-	var html = '';
+	if (!enabled || !INC_PLACES) return([]);
 	// Check if there is at least 1 place with coordinates defined
 	var found = false;
 	for (var j = 0; j < pagePlaces.length; j++)
@@ -2421,29 +2378,53 @@ function printMap()
 		var pdx = pagePlaces[j].pdx;
 		if (P[pdx].coords.join('') != '') found = true;
 	}
-	if (!found) return('');
+	if (!found) return([]);
 	// Schedule the differed update of the map
-	$(window).load(mapUpdate)
+	if (TABBED_PANELS && !search.MapExpanded)
+		$(window).load(function () {
+			if ($(".tab-pane.active.dwr-panel-map").length > 0)
+			{
+				// The map is already the active tab
+				mapUpdate();
+			}
+			else
+			{
+				// Waiting for the map to be the active tab
+				$('a.dwr-panel-map').on('shown.bs.tab', mapUpdate);
+			}
+		});
+	else
+	{
+		$(window).load(mapUpdate);
+	}
 	// Build HTML
-	html += printTitle(5, _('Map') +
-		' <a tabindex="0" data-toggle="popover" data-placement="bottom" title="" data-trigger="focus" data-content="' +
-		_('Click on the map to show it full-screen') +
-		'"><span class="glyphicon glyphicon-question-sign"></span></a>',
-		'dwr-panel-map');
-	html += '<div id="gmap_canvas">';
-	html += '</div>';
-	html += printTitleEnd();
+	
+	 // +
+			// ' <a tabindex="0" data-toggle="popover" data-placement="bottom" title="" data-trigger="focus" data-content="' +
+			// _('Click on the map to show it full-screen') +
+			// '"><span class="glyphicon glyphicon-question-sign"></span></a>'
+			
+			
+	var contents = {
+		title: _('Map'),
+		text:'<div id="gmap_canvas"></div>',
+		panelclass: 'dwr-panel-map'
+	};
 	if (search.MapExpanded)
 	{
 		$('body').toggleClass('dwr-fullscreen');
-		$('body > div').css('display', 'none');
+		$('body').children().css('display', 'none');
 	}
-	return(html);
+	return([contents]);
 }
 
 
+mapUpdated = false;
+
 function mapUpdate()
 {
+	if (mapUpdated) return;
+	mapUpdated = true;
 	// Check if online
 	if (MAP_SERVICE == 'Google' && typeof(google) == 'undefined') return;
 	if (MAP_SERVICE == 'OpenStreetMap' && typeof(ol) == 'undefined') return;
@@ -2451,8 +2432,8 @@ function mapUpdate()
 	if (search.MapExpanded)
 	{
 		$('body').prepend($('#gmap_canvas'));
-		$('#gmap_canvas').addClass('dwr-map-expanded');
-		mapResizeDivs();
+		$('#gmap_canvas').addClass('dwr-expanded');
+		mapResize();
 		$(window).resize(mapResize);
 	}
 	// Get all the coordinates, SW and NE coordinates
@@ -2545,7 +2526,7 @@ function mapUpdate()
 		// map = L.map('gmap_canvas');
 		// map.setView(centerCoord, zoom);
 		// L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            // attribution: "© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
+            // attribution: "Â© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
 		// }).addTo(map);
 		var centerCoord = ol.proj.transform([(west + east) / 2, (south + north) / 2], osmFromProj, osmToProj);
 		mapObject = new ol.Map({
@@ -2752,22 +2733,18 @@ function mapExpand()
 }
 
 
-function mapResizeDivs()
-{
-	var w = $(window).width();
-	var h = $(window).height();
-	$('#gmap_canvas').width(w);
-	$('#gmap_canvas').height(h);
-}
-
-
 function mapResize()
 {
-	if (!search.MapExpanded) return(true);
-	mapResizeDivs();
-	mapObject.checkResize();
+	var div = $('.dwr-expanded');
+	if (div.length != 1) return(true);
+	var w = $(window).width();
+	var h = $(window).height();
+	div.width(w);
+	div.height(h);
+	if (mapObject) mapObject.checkResize();
 	return(true);
 }
+
 
 function OsmClick(event)
 {
@@ -2867,28 +2844,28 @@ function SearchObjects()
 			fextract: function(idx) {
 				return(I[idx].name + ' ' + I[idx].birth_year + ' ' + I[idx].death_year);
 			},
-			text: _('Persons found:'),
+			text: _('Persons'),
 			findex: htmlPersonsIndex,
 			fref: indiHref
 		},
 		{
 			data: M,
 			fextract: function(mdx) {return(M[mdx].title + ' ' + M[mdx].path);},
-			text: _('Media found:'),
+			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
 		},
 		{
 			data: S,
-			fextract: function(sdx) {return(S[sdx].title);},
-			text: _('Sources found:'),
+			fextract: function(sdx) {return(S[sdx].title + ' ' + S[sdx].author + ' ' + S[sdx].abbrev + ' ' + S[sdx].publ);},
+			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
 		},
 		{
 			data: P,
 			fextract: function(pdx) {return(P[pdx].name);},
-			text: _('Places found:'),
+			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
 		}
@@ -2898,6 +2875,7 @@ function SearchObjects()
 	var fref;
 	var index;
 	var html = '';
+	var contents = [];
 	for (x = 0; x < types.length; x++)
 	{
 		var results;
@@ -2915,11 +2893,13 @@ function SearchObjects()
 		{
 			fref = type.fref;
 			index = results[0];
-			html += printTitle(4, type.text + ' ' + results.length, '', true);
-			html += type.findex(results);
-			html += printTitleEnd();
+			contents.push({
+				title: type.text + ' ' + results.length,
+				text: type.findex(results)
+			});
 		}
 	}
+	html += printTitle(3, contents)
 	if (nb_found == 1)
 	{
 		window.location.replace(fref(index));
@@ -2930,10 +2910,10 @@ function SearchObjects()
 		html = '';
 		if (search.Txt != '')
 		{
-			html += '<p>' + _('There is no matching name.') + '</p>';
+			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
 		}
-		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their maiden name.') + '</p>';
+		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their birth name.') + '</p>';
 	}
 	else
 	{
@@ -2974,6 +2954,54 @@ function GidToIndex(gid, table)
 		if (table[i].gid == gid) return(i);
 	}
 	return(-1);
+}
+
+
+
+//=================================================================
+//======================================================== Calendar
+//=================================================================
+
+function printCalendar()
+{
+	var html = '';
+	html += 'printCalendar not implemented';
+	document.write(html);
+}
+
+
+
+//=================================================================
+//============================================================ Home
+//=================================================================
+
+function HomePage()
+{
+	var html = '';
+	html += '<h1>' + TITLE + '</h1>';
+	html += '<p>';
+	var tables = [
+		[SN, "surnames.html"],
+        [I, "persons.html"],
+        [F, "families.html"],
+        [S, "sources.html"],
+        [M, "medias.html"],
+        [P, "places.html"],
+        [R, "repositories.html"]
+	];
+	var sep = '';
+	for (var i = 0; i < tables.length; i += 1)
+	{
+		var j = $.inArray(tables[i][1], PAGES_FILE_INDEX);
+		if (j == -1) continue;
+		html += sep
+		html +=	'<a href="' + tables[i][1] + '">';
+		html +=	PAGES_TITLE_INDEX[j] + ': ' + tables[i][0].length;
+		html +=	'</a>';
+		sep = '<br>';
+	}
+	html += '<br> <p>' + embedSearchText() + '<p>';
+	document.write(html);
 }
 
 

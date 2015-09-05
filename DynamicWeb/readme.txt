@@ -12,10 +12,10 @@ GRAMPS branches 4.0, 4.1, 4.2, 5.0 (master) are supported, previous branches are
 
 
 
-Instructions for generating report examples (GRAMPS version 5.0 only):
+Instructions for generating report examples (GRAMPS version 5.0):
 
 - See .travis.yml in the addons-source repository, which lists the installations to be performed first.
-- Run nosetests -vv -a 'slow'
+- Run nosetests -vv -a 'report'
 - Results are in the directory DynamicWeb/reports
 
 

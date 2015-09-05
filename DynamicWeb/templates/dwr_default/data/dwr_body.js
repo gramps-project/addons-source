@@ -11,20 +11,20 @@
 //
 // This script performs the following treatments:
 //
-//  - Build the document body structure:
-//    The body contains the following sections (div):!
-//       header: the header note given as parameter in GRAMPS
-//       menu: The page menu
-//          This menu contains a form for: search input, number of generations inputs
-//          This menu is optional (depends on the body class "dwr-menuless")
-//       body-page: The contents of the page
-//          the body-page could contain a search form
-//       footer: the footer note given as parameter in GRAMPS
+//	- Build the document body structure:
+//	  The body contains the following sections (div):!
+//		 header: the header note given as parameter in GRAMPS
+//		 menu: The page menu
+//			This menu contains a form for: search input, number of generations inputs
+//			This menu is optional (depends on the body class "dwr-menuless")
+//		 body-page: The contents of the page
+//			the body-page could contain a search form
+//		 footer: the footer note given as parameter in GRAMPS
 //
-//  - Manage the URL search string:
-//    The URL search string is used to pass parameters to the page
+//	- Manage the URL search string:
+//	  The URL search string is used to pass parameters to the page
 //
-//  - Manage the menu form, and the search form embedded form
+//	- Manage the menu form, and the search form embedded form
 
 
 //=================================================================
@@ -76,7 +76,22 @@ function BodyDecorate()
 		'<div id="dwr-footer" class="panel-footer">' +
 		FOOTER + COPYRIGHT +
 		'</div>');
+		
+	// Bootstrap responsive design detection
+	// $('body').append(
+		// '<div class="device-xs visible-xs-block"></div>' +
+		// '<div class="device-sm visible-sm-block"></div>' +
+		// '<div class="device-md visible-md-block"></div>' +
+		// '<div class="device-lg visible-lg-block"></div>'
+	// );
 }
+
+
+// function isBreakpoint(alias)
+// {
+	// Bootstrap responsive design detection
+	// return $('.device-' + alias).is(':visible');
+// }
 
 
 function BodyContentsMaxSize()
@@ -148,6 +163,30 @@ var search = {
 	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
 	//ImgList; // List of media index (in table "M") for the slideshow
 	//MapExpanded; // Whether the map should be expanded to full screen
+	//ChartTable; // Data table for the statistics chart
+	//ChartType; // Type of statistics chart
+	//ChartDataW; // Data extractor, Series
+	//ChartDataX; // Data extractor, X axis
+	//ChartDataY; // Data extractor, Y axis
+	//ChartDataZ; // Data extractor, Z axis
+	//ChartFunctionX; // Data function, X axis
+	//ChartFunctionY; // Data function, Y axis
+	//ChartFunctionZ; // Data function, Z axis
+	//ChartFilter1; // Data filter 1
+	//ChartFilter2; // Data filter 2
+	//ChartFilter3; // Data filter 3
+	//ChartFilter1Min; // Data filter range lower bound
+	//ChartFilter2Min; // Data filter range lower bound
+	//ChartFilter3Min; // Data filter range lower bound
+	//ChartFilter1Max; // Data filter range upper bound
+	//ChartFilter2Max; // Data filter range upper bound
+	//ChartFilter3Max; // Data filter range upper bound
+	//ChartOpacity; // Chart point opacity
+	//ChartBackground; // Chart point color theme
+	//ChartValW; // Data value clicked, Series
+	//ChartValX; // Data value clicked, X axis
+	//ChartValY; // Data value clicked, Y axis
+	//ChartValZ; // Data value clicked, Z axis
 };
 
 
@@ -189,6 +228,30 @@ function ParseSearchString()
 	search.ImgList = GetURLParameter('simg', []);
 	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
 	search.MapExpanded = GetURLParameter('mexp', false);
+	search.ChartTable = GetURLParameter('charttable', 0);
+	search.ChartType = GetURLParameter('charttype', 0);
+	search.ChartDataW = GetURLParameter('chartw', EXTRACTOR_DISABLED);
+	search.ChartDataX = GetURLParameter('chartx', EXTRACTOR_DISABLED);
+	search.ChartDataY = GetURLParameter('charty', EXTRACTOR_DISABLED);
+	search.ChartDataZ = GetURLParameter('chartz', EXTRACTOR_DISABLED);
+	search.ChartFunctionX = GetURLParameter('chartfx', FUNCTION_NONE);
+	search.ChartFunctionY = GetURLParameter('chartfy', FUNCTION_NONE);
+	search.ChartFunctionZ = GetURLParameter('chartfz', FUNCTION_NONE);
+	search.ChartFilter1 = GetURLParameter('chartfr1', EXTRACTOR_DISABLED);
+	search.ChartFilter2 = GetURLParameter('chartfr2', EXTRACTOR_DISABLED);
+	search.ChartFilter3 = GetURLParameter('chartfr3', EXTRACTOR_DISABLED);
+	search.ChartFilter1Min = GetURLParameter('chartfr1i', "");
+	search.ChartFilter2Min = GetURLParameter('chartfr2i', "");
+	search.ChartFilter3Min = GetURLParameter('chartfr3i', "");
+	search.ChartFilter1Max = GetURLParameter('chartfr1a', "");
+	search.ChartFilter2Max = GetURLParameter('chartfr2a', "");
+	search.ChartFilter3Max = GetURLParameter('chartfr3a', "");
+	search.ChartOpacity = GetURLParameter('chartopa', STATISTICS_CHART_OPACITY);
+	search.ChartBackground = GetURLParameter('chartbk', CHART_BACKGROUND_GRADIENT);
+	search.ChartValW = GetURLParameter('chartvw', "");
+	search.ChartValX = GetURLParameter('chartvx', "");
+	search.ChartValY = GetURLParameter('chartvy', "");
+	search.ChartValZ = GetURLParameter('chartvz', "");
 }
 
 function GetURLParameter(sParam, def)
@@ -256,6 +319,30 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'svgx', params.SvgExpanded, search.SvgExpanded, false);
 	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
 	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
+	s = SetURLParameter(s, 'charttable', params.ChartTable, search.ChartTable, 0);
+	s = SetURLParameter(s, 'charttype', params.ChartType, search.ChartType, 0);
+	s = SetURLParameter(s, 'chartw', params.ChartDataW, search.ChartDataW, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartx', params.ChartDataX, search.ChartDataX, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'charty', params.ChartDataY, search.ChartDataY, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartz', params.ChartDataZ, search.ChartDataZ, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartfx', params.ChartFunctionX, search.ChartFunctionX, FUNCTION_NONE);
+	s = SetURLParameter(s, 'chartfy', params.ChartFunctionY, search.ChartFunctionY, FUNCTION_NONE);
+	s = SetURLParameter(s, 'chartfz', params.ChartFunctionZ, search.ChartFunctionZ, FUNCTION_NONE);
+	s = SetURLParameter(s, 'chartfr1', params.ChartFilter1, search.ChartFilter1, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartfr2', params.ChartFilter2, search.ChartFilter2, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartfr3', params.ChartFilter3, search.ChartFilter3, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartfr1i', params.ChartFilter1Min, search.ChartFilter1Min, "");
+	s = SetURLParameter(s, 'chartfr2i', params.ChartFilter2Min, search.ChartFilter2Min, "");
+	s = SetURLParameter(s, 'chartfr3i', params.ChartFilter3Min, search.ChartFilter3Min, "");
+	s = SetURLParameter(s, 'chartfr1a', params.ChartFilter1Max, search.ChartFilter1Max, "");
+	s = SetURLParameter(s, 'chartfr2a', params.ChartFilter2Max, search.ChartFilter2Max, "");
+	s = SetURLParameter(s, 'chartfr3a', params.ChartFilter3Max, search.ChartFilter3Max, "");
+	s = SetURLParameter(s, 'chartopa', params.ChartOpacity, search.ChartOpacity, STATISTICS_CHART_OPACITY);
+	s = SetURLParameter(s, 'chartbk', params.ChartBackground, search.ChartBackground, CHART_BACKGROUND_GRADIENT);
+	s = SetURLParameter(s, 'chartvw', params.ChartDataW, search.ChartValW, "");
+	s = SetURLParameter(s, 'chartvx', params.ChartDataX, search.ChartValX, "");
+	s = SetURLParameter(s, 'chartvy', params.ChartDataY, search.ChartValY, "");
+	s = SetURLParameter(s, 'chartvz', params.ChartDataZ, search.ChartValZ, "");
 	return(s);
 }
 
@@ -315,7 +402,7 @@ function Redirect(url)
 
 
 //=================================================================
-//============================================================ Form
+//=================================================== Form and menu
 //=================================================================
 
 function FsearchExec(n)
@@ -345,24 +432,7 @@ function BuildMenu()
 	var i;
 	
 	// Get current menu item
-	menu_fallback = {
-		'person.html': 'persons.html',
-		'persons.html': 'person.html',
-		'families.html': 'family.html',
-		'family.html': 'families.html',
-		'sources.html': 'source.html',
-		'source.html': 'sources.html',
-		'medias.html': 'media.html',
-		'media.html': 'medias.html',
-		'places.html': 'place.html',
-		'place.html': 'places.html',
-		'repositories.html': 'repository.html',
-		'repository.html': 'repositories.html',
-		'surnames.html': 'surname.html',
-		'surname.html': 'surnames.html'
-	}
 	var i_current = -1;
-	var i_current_fallback = -1;
 	for (i=0; i<PAGES_TITLE.length; i++)
 	{
 		if (PAGES_FILE[i].indexOf(ad) >= 0)
@@ -370,52 +440,65 @@ function BuildMenu()
 			// This menu item is the current page
 			i_current = i;
 		}
-		if (menu_fallback[PAGES_FILE[i]] && menu_fallback[PAGES_FILE[i]].indexOf(ad) >= 0)
-		{
-			// This menu item could be the current page
-			i_current_fallback = i;
-		}
 	}
-	if (i_current == -1) i_current = i_current_fallback;
 	
 	// Text for the form
 	var txt_form1 = '';
-	txt_form1 += '<form class="navbar-form navbar-right" role="search" onsubmit="return FsearchExec(0)">';
-	txt_form1 += '<div id="nav_form_search" class="input-group">';
+	txt_form1 += '<div class="pull-right">';
+	txt_form1 += '<form class="navbar-form" role="search" onsubmit="return FsearchExec(0)">';
+	txt_form1 += '<div class="input-group">';
 	txt_form1 += '<input id="dwr-search-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
 	txt_form1 += '<div class="input-group-btn">';
 	txt_form1 += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	txt_form1 += '</div>';
 	txt_form1 += '</div>';
-	txt_form1 += '</form> ';
+	txt_form1 += '</form>';
+	txt_form1 += '</div>';
 	
 	// Text for the menu
 	var txt_menu = '';
-	txt_menu += '<nav id="dwr-menu" class="navbar navbar-default">';
+	txt_menu += '<nav id="dwr-menu" class="navbar navbar-default" role="navigation">';
 	txt_menu += '<div class="container-fluid">';
 	
 	txt_menu += '<div class="navbar-header">';
-	txt_menu += '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">';
+	txt_menu += '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dwr-navbar-collapse">';
 	txt_menu += '<span class="sr-only">Toggle navigation</span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '<span class="icon-bar"></span>';
 	txt_menu += '</button>';
-	txt_menu += txt_form1;
+	if (BRAND_TITLE)
+		txt_menu += '<a class="navbar-brand" href="index.html">' + BRAND_TITLE + '</a>';
+	else
+		txt_menu += '<a class="navbar-brand" href="https://gramps-project.org/"><img src="data/Gramps_Logo.png"></a>';
 	txt_menu += '</div>';
 	
-	txt_menu += '<div class="collapse navbar-collapse" id="navbar-collapse">';
+	txt_menu += '<div id="dwr-navbar-collapse" class="collapse navbar-collapse">';
 	txt_menu += '<ul class="nav navbar-nav">';
 	for (i=0; i<PAGES_TITLE.length; i++)
 	{
 		var addclass = '';
 		if (i == i_current) addclass = ' class="active"';
-		txt_menu += '<li' + addclass + '><a href="' + toRoot + PAGES_FILE[i] + '?' +  BuildSearchString() + '">' + PAGES_TITLE[i] + '</a></li>';
+		if (PAGES_FILE[i] == "")
+		{
+			txt_menu += '<li class="dropdown">';
+			txt_menu += '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' + _('Indexes') +' <b class="caret"></b></a>';
+			txt_menu += '<ul class="dropdown-menu">';
+			for (var j = 0; j < PAGES_TITLE_INDEX.length; j += 1)
+			{
+				txt_menu += '<li' + addclass + '><a href="' + toRoot + PAGES_FILE_INDEX[j] + '?' +  BuildSearchString() + '">' + PAGES_TITLE_INDEX[j] + '</a></li>';
+			}
+			txt_menu += '</ul></li>';
+		}
+		else
+		{
+			txt_menu += '<li' + addclass + '><a href="' + toRoot + PAGES_FILE[i] + '?' +  BuildSearchString() + '">' + PAGES_TITLE[i] + '</a></li>';
+		}
 	}
 	txt_menu += '</ul>';
-	txt_menu += '</div><!-- /.navbar-collapse -->';
-	
-	txt_menu += '</div><!-- /.container-fluid -->';
+	txt_menu += txt_form1;
+	txt_menu += '</div>'; // .navbar-collapse
+	txt_menu += '</div>'; // .container-fluid
 	txt_menu += '</nav>';
 
 	$('body').prepend(txt_menu);
@@ -423,6 +506,11 @@ function BuildMenu()
 
 
 function embedSearch()
+{
+	// Build the embedded search input form
+	document.write(embedSearchText());
+}
+function embedSearchText()
 {
 	// Build the embedded search input form
 	var txt_form = '';
@@ -434,6 +522,6 @@ function embedSearch()
 	txt_form += '</div>';
 	txt_form += '</div>';
 	txt_form += '</form>';
-	document.write(txt_form);
 	searchEmbedded = true;
+	return(txt_form);
 }
