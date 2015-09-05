@@ -86,11 +86,7 @@ class DynamicWebTests(unittest.TestCase):
     def do_export(self, report_num, report_set):
         report_name = "report_%03i" % report_num
         # Build the test title and path
-        title = ",".join([
-            (key + "=" + (str(report_set['options'][key]) if isinstance(report_set['options'][key], (int, bool)) else report_set['options'][key]))
-            for key in sorted(report_set['options'].keys())
-        ])
-        title = re.sub("[^a-zA-Z_0-9]", ".", title)
+        title = report_set['title']
         target = os.path.join(self.results_path, report_name)
 
         # Clean-up reports and tests files

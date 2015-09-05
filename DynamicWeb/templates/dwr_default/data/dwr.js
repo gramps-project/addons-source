@@ -1,6 +1,6 @@
-// Gramps - a GTK+/GNOME based genealogy program
+ï»¿// Gramps - a GTK+/GNOME based genealogy program
 //
-// Copyright (C) 2014 Pierre Bélissent
+// Copyright (C) 2014 Pierre BÃ©lissent
 //
 // This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
@@ -46,6 +46,7 @@ PAGE_SVG_TREE = 10;
 PAGE_SVG_TREE_FULL = 11;
 PAGE_SVG_TREE_CONF = 12;
 PAGE_SVG_TREE_SAVE = 13;
+PAGE_STATISTICS = 14;
 
 
 //=================================================================
@@ -91,6 +92,14 @@ function famHref(fdx)
 		Fdx: fdx,
 		MapExpanded: false // Reset map
 	}));
+}
+
+function famRef(fdx)
+{
+	// Go to the Family page
+	
+	window.location.href = famHref(fdx);
+	return(false);
 }
 
 function mediaHref(mdx, m_list)
@@ -328,13 +337,19 @@ function indiLinked(idx, citations)
 }
 
 
+GENDERS_TEXT = {
+	'M': _('Male'),
+	'F': _('Female'),
+	'U': _('Unknown')
+};
+GENDERS_TEXT_ORDER = [
+	GENDERS_TEXT['M'],
+	GENDERS_TEXT['F'],
+	GENDERS_TEXT['U']
+];
+
 function indiDetails(i)
 {
-	var genders = {
-		'M': _('Male'),
-		'F': _('Female'),
-		'U': _('Unknown')
-	};
 	var txt = '';
 	var x_name;
 	txt += '<table class="table table-condensed table-bordered dwr-table-flat">';
@@ -351,8 +366,8 @@ function indiDetails(i)
 		if (name.fam_nick != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Family Nick Name') + '</td><td class="dwr-attr-value">' + name.fam_nick + '</td></tr>';
 		if (name.note != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Notes') + '</td><td class="dwr-attr-value">' + notePara(name.note, '<p class="dwr-attr-value">') + '</td></tr>';
 	}
-	txt += '<tr><td class="dwr-attr-title">' + _('Gender') + '</td><td colspan="2" class="dwr-attr-value">' + genders[i.gender] + '</td></tr>';
-	if (i.death_age != '') txt += '<tr><td class="dwr-attr-title">' + _('Age at Death') + '</td><td colspan="2" class="dwr-attr-value">' + i.death_age + '</td></tr>';
+	txt += '<tr><td class="dwr-attr-title">' + _('Gender') + '</td><td colspan="2" class="dwr-attr-value">' + GENDERS_TEXT[i.gender] + '</td></tr>';
+	if (i.death_age != '') txt += '<tr><td class="dwr-attr-title">' + _('Age at death') + '</td><td colspan="2" class="dwr-attr-value">' + i.death_age + '</td></tr>';
 	txt += '</table>';
 	return(txt);
 }
@@ -402,22 +417,35 @@ function eventTable(events, idx, fdx)
 	txt += '<th class="dwr-attr-header">' + _('Event') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Place') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Description') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Media') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var j = 0; j < events.length; j++)
 	{
 		var e = events[j];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + e.type + '</td>';
+		txt += '<td class="dwr-attr-title">' + e.type + ' ' + citaLinks(e.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + e.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</td>';
-		txt += '<td class="dwr-attr-value">' + e.descr + '</td>';
-		txt += '<td class="dwr-attr-value">' + notePara(e.text, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + mediaLinks(e.media) + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(e.cita) + '</td>';
+		var notes = [];
+		if (e.descr != '') notes.push('<span class="dwr-attr-header">' + _('Description') + '</span>:<br>' + e.descr);
+		if (e.text != '') notes.push('<span class="dwr-attr-header">' + _('Notes') + '</span>:<br>' + notePara(e.text, '<p>'));
+		var mlinks = mediaLinks(e.media);
+		if (mlinks != '') notes.push('<span class="dwr-attr-header">' + _('Media') + '</span>:<br>' + mlinks);
+		// Get participants
+		participants = '';
+		for (var i = 0; i < e.part_person.length; i += 1)
+		{
+			var p_idx = e.part_person[i];
+			if (p_idx != idx) participants += '<br>' + indiLinked(p_idx, false);
+		}
+		for (var i = 0; i < e.part_family.length; i += 1)
+		{
+			var p_fdx = e.part_family[i];
+			if (p_fdx != fdx) participants += '<br>' + indiLinked(p_fdx, false);
+		}
+		if (participants != '') notes.push('<span class="dwr-attr-header">' + _('Other participants') + '</span>:' + participants);
+		// Build notes from notes + description + media + participants + etc.
+		txt += '<td class="dwr-attr-value">' + notes.join('<p>') + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -447,16 +475,14 @@ function addrsTable(addrs)
 	txt += '<th class="dwr-attr-header">' + _('Address') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Date') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_addr = 0; x_addr < addrs.length; x_addr++)
 	{
 		var addr = addrs[x_addr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + '</td>';
+		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + ' ' + citaLinks(addr.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + addr.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(addr.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(addr.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -477,16 +503,14 @@ function attrsTable(attrs)
 	txt += '<th class="dwr-attr-header">' + _('Attribute') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Value') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_attr = 0; x_attr < attrs.length; x_attr++)
 	{
 		var a = attrs[x_attr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + a.type + '</td>';
+		txt += '<td class="dwr-attr-title">' + a.type + ' ' + citaLinks(a.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + a.value + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(a.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(a.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -533,16 +557,14 @@ function assocsTable(assocs)
 	txt += '<th class="dwr-attr-header">' + _('Person') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Relationship') + '</th>';
 	txt += '<th class="dwr-attr-header">' + _('Notes') + '</th>';
-	txt += '<th class="dwr-attr-header">' + _('Sources') + '</th>';
 	txt += '</tr></thead><tbody>';
 	for (var x_assoc = 0; x_assoc < assocs.length; x_assoc++)
 	{
 		var assoc = assocs[x_assoc];
 		txt += '<tr>';
 		txt += '<td class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</td>';
-		txt += '<td class="dwr-attr-value">' + assoc.relationship + '</td>';
+		txt += '<td class="dwr-attr-value">' + assoc.relationship + ' ' + citaLinks(assoc.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(assoc.note, '<p>') + '</td>';
-		txt += '<td class="dwr-attr-value">' + citaLinks(assoc.cita) + '</td>';
 		txt += '</tr>';
 	}
 	txt += '</tbody></table>';
@@ -570,7 +592,7 @@ function citaLinks(cita)
 	{
 		var c = C[cita[j]];
 		var sdx = c.source;
-		var title = S[sdx].title;
+		var title = sourName(sdx);
 		if (title != '') title=' title="' + title + '"';
 		// Check if source is already referenced
 		var x1 = $.inArray(sdx, pageSources);
@@ -684,9 +706,16 @@ function citationBullet(x2)
 }
 
 function sourName(sdx)
-{
-	if (S[sdx].title != '') return(S[sdx].title);
-	return(_('Source') + ' ' + sdx);
+{	
+	var title = '';
+	if (SOURCE_AUTHOR_IN_TITLE && S[sdx].author != '') title = S[sdx].author;
+	if (S[sdx].title != '')
+	{
+		if (title != '') title += ': ';
+		title += S[sdx].title;
+	}
+	if (title != '') return(title);
+	return(_('Source') + ' ' + S[sdx].gid);
 }
 
 
@@ -861,6 +890,13 @@ function printIndi(idx)
 	html += '<h2 class="page-header">' + I[idx].name + ' ' + citaLinks(I[idx].cita) + '</h2>';
 	html += indiDetails(I[idx]);
 	html += printTitle(3, [].concat(
+		eventTable(I[idx].events, idx, -1),
+		addrsTable(I[idx].addrs),
+		attrsTable(I[idx].attr),
+		urlsTable(I[idx].urls),
+		assocsTable(I[idx].assoc),
+		mediaSection(I[idx].media),
+		noteSection(I[idx].note),
 		[{
 			title: _('Ancestors'),
 			text: printIndiAncestors(idx)
@@ -869,13 +905,6 @@ function printIndi(idx)
 			title: _('Descendants'),
 			text: printIndiDescendants(idx)
 		}],
-		eventTable(I[idx].events, idx, -1),
-		addrsTable(I[idx].addrs),
-		attrsTable(I[idx].attr),
-		urlsTable(I[idx].urls),
-		assocsTable(I[idx].assoc),
-		mediaSection(I[idx].media),
-		noteSection(I[idx].note),
 		printMap(MAP_FAMILY),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -887,7 +916,7 @@ function printIndiAncestors(idx)
 {
 	var html = "";
 	var famc_list = $.map(I[idx].famc, function (fc) {return(fc.index);});
-	if (INDEX_SHOW_ALL_SIBLINGS)
+	if (SHOW_ALL_SIBLINGS)
 	{
 		for (j = 0; j < I[idx].famc.length; j++)
 		{
@@ -916,7 +945,7 @@ function printIndiAncestors(idx)
 				text: printIndiSiblings(fdx)
 			}]);
 	}
-	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None.'));
+	if (famc_list.length == 0) html += ('<p class="dwr-ref">' + _('None'));
 	return(html);
 }
 
@@ -926,7 +955,7 @@ function printIndiParents(fdx)
 	var html = '';
 	if (F[fdx].spou.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	else
 	{
@@ -955,7 +984,7 @@ function printIndiSiblings(fdx)
 	}
 	else
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	return(html);
 }
@@ -974,7 +1003,7 @@ function printIndiDescendants(idx)
 			}],
 			I[idx].fams.length > 1 /*collapsible*/);
 	}
-	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+	if (I[idx].fams.length == 0) html += ('<p class="dwr-ref">' + _('None') + '</p>');
 	return(html);
 }
 
@@ -1006,7 +1035,7 @@ function printIndiChildren(fdx)
 	var html = '';
 	if (F[fdx].chil.length == 0)
 	{
-		html += '<p class="dwr-ref">' + _('None.') + '</p>';
+		html += '<p class="dwr-ref">' + _('None') + '</p>';
 	}
 	else
 	{
@@ -1048,6 +1077,10 @@ function printFam(fdx)
 	var html = '';
 	html += '<h2 class="page-header">' + famLinked(fdx) + '</h2>';
 	html += printTitle(3, [].concat(
+		eventTable(F[fdx].events, -1, fdx),
+		attrsTable(F[fdx].attr),
+		mediaSection(F[fdx].media),
+		noteSection(F[fdx].note),
 		[{
 			title: _('Parents'),
 			text: printFamParents(fdx)
@@ -1056,10 +1089,6 @@ function printFam(fdx)
 			title: _('Children'),
 			text: printFamChildren(fdx)
 		}],
-		eventTable(F[fdx].events, -1, fdx),
-		attrsTable(F[fdx].attr),
-		mediaSection(F[fdx].media),
-		noteSection(F[fdx].note),
 		printMap(MAP_FAMILY),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -1071,7 +1100,7 @@ function printFamParents(fdx)
 	var html = '';
 	if (F[fdx].spou.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.'));
+		html += ('<p class="dwr-ref">' + _('None'));
 	}
 	else
 	{
@@ -1102,7 +1131,7 @@ function printFamChildren(fdx)
 	var html = '';
 	if (F[fdx].chil.length == 0)
 	{
-		html += ('<p class="dwr-ref">' + _('None.') + '</p>');
+		html += ('<p class="dwr-ref">' + _('None') + '</p>');
 	}
 	else
 	{
@@ -1229,21 +1258,19 @@ function printMedia(mdx)
 	// Image or link (if media is not an image)
 	if (m.mime.indexOf('image') == 0)
 	{
-		html += '<div class="dwr-centered"><div id="img-div">';
-		html += '<img id="dwr-image" src="' + m.path + '" usemap="#imgmap">';
+		html += '<div class="dwr-centered"><div id="dwr-img-div">';
+		html += '<img id="dwr-image" src="' + m.path + '">';
 		html += printMediaMap(mdx);
 		
 		// Expand button
 		html += '<div id="media-buttons">';
-		html += '<div class="btn-group-vertical" role="group">';
 		html += '<button id="media-button-max" type="button" class="btn btn-default" title=' + _('Maximize') + '>';
 		html += '<span class="glyphicon glyphicon-fullscreen"></span>';
 		html += '</button>';
 		html += '</div>';
-		html += '</div>';
 
 		html += '</div></div>';
-		
+
 		// Expand button events
 		$(window).load(function()
 		{
@@ -1269,12 +1296,6 @@ function printMedia(mdx)
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 
-	// Compute map coordinates from image size
-	$(window).load(function() {
-		mediaMapCoords();
-		$('#dwr-image').load(mediaMapCoords);
-	});
-	
 	return(html);
 }
 
@@ -1289,39 +1310,18 @@ function mediaButtonPageClick(page_delta, page)
 	return(false);
 }
 
-
 function mediaButtonMaxClick()
 {
 	window.location.href = M[search.Mdx].path;
 	return(false);
 }
 
-
-function mediaMapCoords()
-{
-	var img = $('#dwr-image');
-	var img_w0 = img.width();
-	var img_h0 = img.height();
-	$('area').each(function(j) {
-		c = $(this).attr('coords');
-		rect = c.split(',');
-		rect_img = [img_w0, img_h0, img_w0, img_h0];
-		for (var k = 0; k < 4; k++)
-		{
-			rect[k] = parseInt(rect[k]);
-			rect[k] = Math.round(rect[k] * rect_img[k] / 10000.0);
-		}
-		$(this).attr('coords', rect.join(','));
-	});
-}
-
-
 function printMediaMap(mdx)
 {
 	var html = '';
 	var j, k;
+//	html += '<ul id="imgmap">';
 	var m = M[mdx];
-	html += '<map name="imgmap">';
 	html += printMediaRefArea(m.bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
 		html += printMediaRefArea(m.bkf, famHref, function(ref) {return(F[ref].name);});
@@ -1329,7 +1329,7 @@ function printMediaMap(mdx)
 		html += printMediaRefArea(m.bks, sourceHref, sourName);
 	if (INC_PLACES)
 		html += printMediaRefArea(m.bkp, placeHref, function(ref) {return(P[ref].name);});
-	html += '</map>';
+//	html += '</ul>';
 	return(html);
 }
 
@@ -1344,14 +1344,17 @@ function printMediaRefArea(bk_table, fref, fname)
 		var rect = [];
 		for (k = 0; k < 4; k++)
 		{
-			rect[k] = parseInt(ref.rect[k]);
-			rect[k] = Math.round(rect[k] * 100);
+			rect[k] = parseFloat(ref.rect[k]);
 		}
-		if (!isNaN(rect[0]) && rect.join(',') != '0,0,10000,10000')
+		if (!isNaN(rect[0]) && rect.join(',') != '0,0,100,100')
 		{
-			html += '<area shape="rect" coords="' + rect.join(',') + '"';
-			html += ' href="' + fref(idx) + '"';
-			html += ' title="' + fname(idx) + '">';
+			html += '<a href="' + fref(idx) + '"';
+			html += ' title="' + fname(idx) + '" class="dwr-imgmap" style="';
+			html += 'left: ' + rect[0] + '%;';
+			html += 'top: ' + rect[1] + '%;';
+			html += 'width: ' + (rect[2] - rect[0]) + '%;';
+			html += 'height: ' + (rect[3] - rect[1]) + '%;">';
+			html += '</a>';
 		}
 	}
 	return(html);
@@ -1408,7 +1411,7 @@ function printSourceCitations(s)
 	}
 	else
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 	}
 	return(html);
 }
@@ -1489,7 +1492,7 @@ function printRepo(rdx)
 	
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], r.bks, [], [], []);
-	if (bk_txt == '') bk_txt = _('None.');
+	if (bk_txt == '') bk_txt = _('None');
 
 	html += printTitle(3, [].concat(
 		addrsTable(r.addrs),
@@ -1610,7 +1613,7 @@ function printIndex(data, defaultsort, columns)
 	var html = '';
 	if (data_copy.length == 0)
 	{
-		html += '<p>' + _('None.') + '</p>';
+		html += '<p>' + _('None') + '</p>';
 		return(html);
 	}
 	html += '<table id="dwr-index-' + indexCounter + '" class="table table-condensed table-bordered dt-table dt-responsive dwr-table-flat" width="100%">';
@@ -1775,26 +1778,31 @@ function printFamiliesIndex()
 {
 	document.write(htmlFamiliesIndex());
 }
-function htmlFamiliesIndex()
+function htmlFamiliesIndex(data)
 {
 	var html = '';
-	html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
+	if (typeof(data) == 'undefined')
+	{
+		html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
+		data = [];
+		for (var x = 0; x < F.length; x++) data.push(x);
+	}
 	var columns = [{
 		title: _('Father'),
-		ftext: printIndexSpouseText,
-		fhref: famHref,
-		fsort: printIndexSpouseIdx
+		ftext: function(x, col) {return(printIndexSpouseText(data[x], col));},
+		fhref: function(x) {return(famHref(data[x]));},
+		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col));}
 	}, {
 		title: _('Mother'),
-		ftext: printIndexSpouseText,
-		fhref: famHref,
-		fsort: printIndexSpouseIdx
+		ftext: function(x, col) {return(printIndexSpouseText(data[x], col));},
+		fhref: function(x) {return(famHref(data[x]));},
+		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col));}
 	}];
 	if (INDEX_SHOW_MARRIAGE) columns.push({
 		title: _('Marriage'),
-		ftext: function(fdx, col) {return(F[fdx].marr_year);}
+		ftext: function(x, col) {return(F[data[x]].marr_year);}
 	});
-	html += printIndex(F, [0, 'asc'], columns);
+	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
 }
 
@@ -1922,7 +1930,22 @@ function htmlSourcesIndex(data)
 	}
 	var columns = [{
 		title: _('Title'),
-		ftext: function(x, col) {return(sourName(data[x]));},
+		ftext: function(x, col) {return(S[data[x]].title);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Author'),
+		ftext: function(x, col) {return(S[data[x]].author);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Abbreviation'),
+		ftext: function(x, col) {return(S[data[x]].abbrev);},
+		fhref: function(x) {return(sourceHref(data[x]));},
+		fsort: function(x, col) {return(data[x]);}
+	}, {
+		title: _('Publication information'),
+		ftext: function(x, col) {return(S[data[x]].publ);},
 		fhref: function(x) {return(sourceHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}];
@@ -2134,7 +2157,7 @@ function printSurnameIndex()
 		{
 			document.write('<p>' + _('No matching surname.') + '</p>');
 		}
-		else if (SN[search.SNdx].letter.length == 1)
+		else if (SN[search.SNdx].persons.length == 1)
 		{
 			window.location.replace(indiHref(SN[search.SNdx].persons[0]));
 		}
@@ -2347,7 +2370,7 @@ var mapObject;
 
 function printMap(enabled)
 {
-	if (!enabled) return([]);
+	if (!enabled || !INC_PLACES) return([]);
 	// Check if there is at least 1 place with coordinates defined
 	var found = false;
 	for (var j = 0; j < pagePlaces.length; j++)
@@ -2357,7 +2380,7 @@ function printMap(enabled)
 	}
 	if (!found) return([]);
 	// Schedule the differed update of the map
-	if (TABBED_PANELS)
+	if (TABBED_PANELS && !search.MapExpanded)
 		$(window).load(function () {
 			if ($(".tab-pane.active.dwr-panel-map").length > 0)
 			{
@@ -2390,7 +2413,7 @@ function printMap(enabled)
 	if (search.MapExpanded)
 	{
 		$('body').toggleClass('dwr-fullscreen');
-		$('body > div').css('display', 'none');
+		$('body').children().css('display', 'none');
 	}
 	return([contents]);
 }
@@ -2409,8 +2432,8 @@ function mapUpdate()
 	if (search.MapExpanded)
 	{
 		$('body').prepend($('#gmap_canvas'));
-		$('#gmap_canvas').addClass('dwr-map-expanded');
-		mapResizeDivs();
+		$('#gmap_canvas').addClass('dwr-expanded');
+		mapResize();
 		$(window).resize(mapResize);
 	}
 	// Get all the coordinates, SW and NE coordinates
@@ -2503,7 +2526,7 @@ function mapUpdate()
 		// map = L.map('gmap_canvas');
 		// map.setView(centerCoord, zoom);
 		// L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            // attribution: "© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
+            // attribution: "Â© <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
 		// }).addTo(map);
 		var centerCoord = ol.proj.transform([(west + east) / 2, (south + north) / 2], osmFromProj, osmToProj);
 		mapObject = new ol.Map({
@@ -2710,22 +2733,18 @@ function mapExpand()
 }
 
 
-function mapResizeDivs()
-{
-	var w = $(window).width();
-	var h = $(window).height();
-	$('#gmap_canvas').width(w);
-	$('#gmap_canvas').height(h);
-}
-
-
 function mapResize()
 {
-	if (!search.MapExpanded) return(true);
-	mapResizeDivs();
-	mapObject.checkResize();
+	var div = $('.dwr-expanded');
+	if (div.length != 1) return(true);
+	var w = $(window).width();
+	var h = $(window).height();
+	div.width(w);
+	div.height(h);
+	if (mapObject) mapObject.checkResize();
 	return(true);
 }
+
 
 function OsmClick(event)
 {
@@ -2825,28 +2844,28 @@ function SearchObjects()
 			fextract: function(idx) {
 				return(I[idx].name + ' ' + I[idx].birth_year + ' ' + I[idx].death_year);
 			},
-			text: _('Persons found:'),
+			text: _('Persons'),
 			findex: htmlPersonsIndex,
 			fref: indiHref
 		},
 		{
 			data: M,
 			fextract: function(mdx) {return(M[mdx].title + ' ' + M[mdx].path);},
-			text: _('Media found:'),
+			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
 		},
 		{
 			data: S,
-			fextract: function(sdx) {return(S[sdx].title);},
-			text: _('Sources found:'),
+			fextract: function(sdx) {return(S[sdx].title + ' ' + S[sdx].author + ' ' + S[sdx].abbrev + ' ' + S[sdx].publ);},
+			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
 		},
 		{
 			data: P,
 			fextract: function(pdx) {return(P[pdx].name);},
-			text: _('Places found:'),
+			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
 		}
@@ -2891,10 +2910,10 @@ function SearchObjects()
 		html = '';
 		if (search.Txt != '')
 		{
-			html += '<p>' + _('There is no matching name.') + '</p>';
+			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
 		}
-		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their maiden name.') + '</p>';
+		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their birth name.') + '</p>';
 	}
 	else
 	{
@@ -2935,6 +2954,54 @@ function GidToIndex(gid, table)
 		if (table[i].gid == gid) return(i);
 	}
 	return(-1);
+}
+
+
+
+//=================================================================
+//======================================================== Calendar
+//=================================================================
+
+function printCalendar()
+{
+	var html = '';
+	html += 'printCalendar not implemented';
+	document.write(html);
+}
+
+
+
+//=================================================================
+//============================================================ Home
+//=================================================================
+
+function HomePage()
+{
+	var html = '';
+	html += '<h1>' + TITLE + '</h1>';
+	html += '<p>';
+	var tables = [
+		[SN, "surnames.html"],
+        [I, "persons.html"],
+        [F, "families.html"],
+        [S, "sources.html"],
+        [M, "medias.html"],
+        [P, "places.html"],
+        [R, "repositories.html"]
+	];
+	var sep = '';
+	for (var i = 0; i < tables.length; i += 1)
+	{
+		var j = $.inArray(tables[i][1], PAGES_FILE_INDEX);
+		if (j == -1) continue;
+		html += sep
+		html +=	'<a href="' + tables[i][1] + '">';
+		html +=	PAGES_TITLE_INDEX[j] + ': ' + tables[i][0].length;
+		html +=	'</a>';
+		sep = '<br>';
+	}
+	html += '<br> <p>' + embedSearchText() + '<p>';
+	document.write(html);
 }
 
 
