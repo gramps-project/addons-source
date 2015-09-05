@@ -455,8 +455,7 @@ def format_date(date, gedcom = False, iso = False):
 
     if (iso):
         # TODO: export ISO dates
-        # if (iso): val = DateDisplay.display(date) or ""
-        # else: val = _dd.display(date) or ""
+        val = _dd.display_iso(date) or ""
         pass
 
     elif (gedcom):
@@ -736,15 +735,17 @@ class DynamicWebReport(Report):
             "//        notes, list of the name source citations index (in table 'C')]\n"
             "//   - gender: The gender\n"
             "//   - birth_year: The birth year in the form '1700', '?' (date unknown)\n"
+            "//   - birth_sdn: The birth serial date number (-1 if not known)\n"
             "//   - birth_place: The birth place\n"
             "//   - death_year: The death year in the form '1700', '?' (date unknown), '' (not dead)\n"
+            "//   - death_sdn: The death serial date number (-1 if not known)\n"
             "//   - death_place: The death place\n"
             "//   - death_age: The death age\n"
             "//   - events: A list of events, with for each event:\n"
             "//       - gid: The event GID\n"
             "//       - type: The event name\n"
             "//       - date: The event date\n"
-            "//       - date_iso: The event date in ISO format (sortable)\n"
+            "//       - date_sdn: The event serial date number\n"
             "//       - place: The event place index (in table 'P'), -1 if none\n"
             "//       - descr: The event description\n"
             "//       - text: The event text and notes (including event reference notes)\n"
@@ -757,7 +758,7 @@ class DynamicWebReport(Report):
             "//       - cita: A list of the event source citations index (in table 'C')\n"
             "//   - addrs: A list of addresses, with for each address:\n"
             "//       - date: The address date\n"
-            "//       - date_iso: The address date in ISO format (sortable)\n"
+            "//       - date_sdn: The address serial date number\n"
             "//       - location: The address place in the form:\n"
             "//           [street, locality, parish, city, state, county, zip, country]\n"
             "//       - note: The address notes\n"
@@ -939,7 +940,7 @@ class DynamicWebReport(Report):
             "//       - gid: The event GID\n"
             "//       - type: The event name\n"
             "//       - date: The event date\n"
-            "//       - date_iso: The event date in ISO format (sortable)\n"
+            "//       - date_sdn: The event serial date number\n"
             "//       - place: The event place index (in table 'P'), -1 if none\n"
             "//       - descr: The event description\n"
             "//       - text: The event text and notes (including event reference notes)\n"
@@ -1008,7 +1009,7 @@ class DynamicWebReport(Report):
         #  - gid: Gramps ID\n"
         #  - type: The event name
         #  - date: The event date
-        #  - date_iso: The event date in ISO format (sortable)
+        #  - date_sdn: The event serial date number
         #  - place: The event place index (in table 'P'), -1 if none
         #  - descr: The event description
         #  - text: The event text and notes (including event reference notes)
@@ -1042,8 +1043,7 @@ class DynamicWebReport(Report):
             jdata['type'] = html_escape(evt_type)
             evt_date = format_date(event.get_date_object())
             jdata['date'] = html_escape(evt_date)
-            evt_date = format_date(event.get_date_object(), True)
-            jdata['date_iso'] = html_escape(evt_date)
+            jdata['date_sdn'] = event.get_date_object().get_sort_value()
             jdata['place'] = place_index
             if (evt_desc is None): evt_desc = ""
             jdata['descr'] = html_escape(evt_desc)
@@ -1089,7 +1089,7 @@ class DynamicWebReport(Report):
         """
         # Builds an address list that gives for each address:
         #  - date: The address date\n"
-        #  - date_iso: The address date in ISO format (sortable)\n"
+        #  - date_sdn: The address serial date number (sortable)\n"
         #  - location: The address place in the form:\n"
         #      [street, locality, parish, city, state, county, zip, country]\n"\n"
         #  - note: The address notes\n"
@@ -1102,8 +1102,7 @@ class DynamicWebReport(Report):
             jdata = {}
             addr_date = format_date(addr.get_date_object())
             jdata['date'] = html_escape(addr_date)
-            addr_date = format_date(addr.get_date_object(), True)
-            jdata['date_iso'] = html_escape(addr_date)
+            jdata['date_sdn'] = addr.get_date_object().get_sort_value()
             addr_data = [
                 addr.get_street(),
                 addr.get_locality(),
@@ -1281,7 +1280,7 @@ class DynamicWebReport(Report):
             "//   - type: The repository type\n"
             "//   - addrs: A list of addresses, with for each address:\n"
             "//       - date: The address date\n"
-            "//       - date_iso: The address date in ISO format (sortable)\n"
+            "//       - date_sdn: The address serial date number\n"
             "//       - location: The address place in the form:\n"
             "//           [street, locality, parish, city, state, county, zip, country]\n"
             "//       - note: The address notes\n"
@@ -1337,7 +1336,7 @@ class DynamicWebReport(Report):
             "//   - path: The media path were the media is really located\n"
             "//   - mime: The media MIME type\n"
             "//   - date: The media date\n"
-            "//   - date_iso: The media date in ISO format (sortable)\n"
+            "//   - date_sdn: The media serial date number\n"
             "//   - note: The media notes\n"
             "//   - cita: A list of the media source citations index (in table 'C')\n"
             "//   - attr: The list of the media attributes in the form:\n"
@@ -1383,10 +1382,9 @@ class DynamicWebReport(Report):
             jdata['path'] = path
             jdata['mime'] = media.get_mime_type()
             # Get media date
-            date = format_date(media.get_date_object()) or ""
+            date = format_date(media.get_date_object())
             jdata['date'] = date
-            date = format_date(media.get_date_object(), True) or ""
-            jdata['date_iso'] = date
+            jdata['date_sdn'] = media.get_date_object().get_sort_value()
             # Get media notes
             jdata['note'] = self.get_notes_text(media)
             # Get media sources

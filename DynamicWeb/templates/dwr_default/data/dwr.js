@@ -1888,7 +1888,7 @@ function htmlMediaIndex(data)
 	}, {
 		title: _('Date'),
 		ftext: function(x, col) {return(M[data[x]].date);},
-		fsort: function(x, col) {return(M[data[x]].date_iso);}
+		fsort: function(x, col) {return(M[data[x]].date_sdn);}
 	}];
 	if (INDEX_SHOW_BKREF_TYPE) columns.push({
 		title: _('Used for person'),
