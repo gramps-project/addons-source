@@ -33,9 +33,8 @@ function invalidData(d)
 	return(d == null || (typeof(d) != 'string' && isNaN(d)) || typeof(d) == 'undefined' || d == '');
 }
 
-function extractorNumberField(table, name, field, fsort)
+function extractorNumberField(table, name, field)
 {
-	if (typeof(fsort) == 'undefined') fsort = chartSort;
 	return({
 		name: name,
 		numeric: true,
@@ -44,10 +43,9 @@ function extractorNumberField(table, name, field, fsort)
 			if (invalidData(val)) return([]);
 			return([val]);
 		},
-		fsort: fsort
+		fsort: chartSort
 	});
 }
-
 
 function extractorStringField(table, name, field, fsort)
 {
@@ -64,10 +62,8 @@ function extractorStringField(table, name, field, fsort)
 	});
 }
 
-
-function extractorListField(table, name, field, numeric, fsort)
+function extractorListField(table, name, field, numeric, age)
 {
-	if (typeof(fsort) == 'undefined') fsort = chartSort;
 	return({
 		name: name,
 		numeric: numeric,
@@ -76,28 +72,68 @@ function extractorListField(table, name, field, numeric, fsort)
 			for (var i = 0; i < table[idx][field].length; i += 1)
 			{
 				var val = table[idx][field][i];
-				if (!invalidData(val)) vals.push(val);
+				if (!invalidData(val) && (!age || val != 0)) vals.push(val);
 			}
 			return(vals);
 		},
-		fsort: fsort
+		fsort: chartSort
 	});
 }
 
-
-function extractorDateField(table, name, field, fsort)
+function extractorDateField(table, name, field)
 {
-	return extractorNumberField(table, name, field);
-	// return({
-		// name: name,
-		// numeric: false,
-		// fval: function(idx) {return(idx);},
-		// fsort: function (a, b) {
-			// var k1 = F[a][field];
-			// var k2 = F[b][field];
-			// return((k1 > k2) ? 1 : ((k2 > k1) ? -1 : 0 ));
-		// }
-	// });
+	return({
+		name: name,
+		numeric: true,
+		fval: function(idx) {
+			var val = parseFloat(table[idx][field]);
+			if (invalidData(val) || val == 0) return([]);
+			return([val]);
+		},
+		fsort: chartSort
+	});
+}
+
+function extractorAgeField(table, name, field)
+{
+	return({
+		name: name,
+		numeric: true,
+		fval: function(idx) {
+			var val = parseFloat(table[idx][field]);
+			if (invalidData(val)) return([]);
+			return([val]);
+		},
+		fsort: chartSort
+	});
+}
+
+function extractorDayofyearField(table, name, field)
+{
+	return({
+		name: name,
+		numeric: true,
+		fval: function(idx) {
+			var val = parseFloat(table[idx][field]);
+			if (invalidData(val)) return([]);
+			return([val]);
+		},
+		fsort: chartSort
+	});
+}
+
+function extractorMonthField(table, name, field)
+{
+	return({
+		name: name,
+		numeric: true,
+		fval: function(idx) {
+			var val = parseInt(table[idx][field]);
+			if (invalidData(val)) return([]);
+			return([val]);
+		},
+		fsort: chartSort
+	});
 }
 
 var STATISTICS_DATA;
@@ -120,15 +156,19 @@ function initStatistics()
 					var k2 = $.inArray(b, GENDERS_TEXT_ORDER);
 					return(k1 - k2);
 				}),
-				extractorNumberField(I, _('Birth date'), 'birth_year'),
-				extractorNumberField(I, _('Birth day in year'), 'birth_year_day'),
-				extractorNumberField(I, _('Death date'), 'death_year'),
-				extractorNumberField(I, _('Death day in year'), 'death_year_day'),
-				extractorNumberField(I, _('Age at death'), 'chart_age_death'),
-				extractorListField(I, _('Age at marriage'), 'chart_age_marr', true),
+				extractorDateField(I, _('Birth date'), 'birth_sdn'),
+				extractorMonthField(I, _('Birth month'), 'birth_month'),
+				extractorDayofyearField(I, _('Birth day of year'), 'birth_dayofyear'),
+				extractorDateField(I, _('Death date'), 'death_sdn'),
+				extractorMonthField(I, _('Death month'), 'death_month'),
+				extractorDayofyearField(I, _('Death day of year'), 'death_dayofyear'),
+				extractorAgeField(I, _('Age at death'), 'chart_age_death'),
+				extractorListField(I, _('Age at marriage'), 'chart_age_marr', false, true),
+				extractorAgeField(I, _('Age when first child born'), 'chart_age_child_first'),
+				extractorAgeField(I, _('Age when last child born'), 'chart_age_child_last'),
 				extractorNumberField(I, _('Number of children'), 'chart_nb_child'),
-				extractorNumberField(I, _('Parent for how many families'), 'chart_nb_fams'),
-				extractorListField(I, _('Number of children per family'), 'chart_nb_child_fams', true),
+				extractorNumberField(I, _('Number of relationships'), 'chart_nb_fams'),
+				extractorListField(I, _('Number of children per family'), 'chart_nb_child_fams', true, false),
 				extractorStringField(I, _('Birth place'), 'birth_place', placeSort),
 				extractorStringField(I, _('Death place'), 'death_place', placeSort)
 			]
@@ -141,13 +181,14 @@ function initStatistics()
 				extractorStringField(F, _('Name'), 'name'),
 				extractorStringField(F, _('Spouses surnames'), 'chart_surnames'),
 				extractorStringField(F, _('GRAMPS ID'), 'gid'),
-				extractorNumberField(F, _('Marriage date'), 'marr_year'),
-				extractorNumberField(F, _('Marriage day in year'), 'marr_year_day'),
+				extractorDateField(F, _('Marriage date'), 'marr_sdn'),
+				extractorMonthField(F, _('Marriage month'), 'marr_month'),
+				extractorDayofyearField(F, _('Marriage day of year'), 'marr_dayofyear'),
 				extractorNumberField(F, _('Number of children'), 'chart_nb_child'),
 				extractorStringField(F, _('Marriage place'), 'marr_place', placeSort),
-				extractorListField(F, _('Spouses age at marriage'), 'chart_spou_age_marr', true),
-				extractorNumberField(F, _('Father\'s age at marriage'), 'chart_spou1_age_marr'),
-				extractorNumberField(F, _('Mother\'s age at marriage'), 'chart_spou2_age_marr')
+				extractorListField(F, _('Spouses age at marriage'), 'chart_spou_age_marr', false, true),
+				extractorAgeField(F, _('Father\'s age at marriage'), 'chart_spou1_age_marr'),
+				extractorAgeField(F, _('Mother\'s age at marriage'), 'chart_spou2_age_marr')
 			]
 		}
 	];
@@ -231,54 +272,110 @@ function initStatistics()
 TABLE_I = 0;
 TABLE_F = 1;
 // Indexes for extractors in above structure
+var i = 0;
 EXTRACTOR_DISABLED = -1;
-EXTRACTOR_I_NAME = 0;
-EXTRACTOR_I_SURNAME = 1;
-EXTRACTOR_I_GID = 2;
-EXTRACTOR_I_GENDER = 3;
-EXTRACTOR_I_BIRTH_DATE = 4;
-EXTRACTOR_I_BIRTH_DAY = 5;
-EXTRACTOR_I_DEATH_DATE = 6;
-EXTRACTOR_I_DEATH_DAY = 7;
-EXTRACTOR_I_AGE_DEATH = 8;
-EXTRACTOR_I_AGE_MARR = 9;
-EXTRACTOR_I_NB_CHILD = 10;
-EXTRACTOR_I_NB_FAMS = 11;
-EXTRACTOR_I_NB_CHILD_FAMS = 12;
-EXTRACTOR_I_BIRTH_PLACE = 13;
-EXTRACTOR_I_DEATH_PLACE = 14;
-EXTRACTOR_F_NAME = 0;
-EXTRACTOR_F_SURNAME = 1;
-EXTRACTOR_F_GID = 2;
-EXTRACTOR_F_MARR_DATE = 3;
-EXTRACTOR_F_MARR_DAY = 4;
-EXTRACTOR_F_NB_CHILD = 5;
-EXTRACTOR_F_MARR_PLACE = 6;
-EXTRACTOR_F_SPOU_AGE_MARR = 7;
-EXTRACTOR_F_SPOU1_AGE_MARR = 8;
-EXTRACTOR_F_SPOU2_AGE_MARR = 9;
+EXTRACTOR_I_NAME = i++;
+EXTRACTOR_I_SURNAME = i++;
+EXTRACTOR_I_GID = i++;
+EXTRACTOR_I_GENDER = i++;
+EXTRACTOR_I_BIRTH_DATE = i++;
+EXTRACTOR_I_BIRTH_MONTH = i++;
+EXTRACTOR_I_BIRTH_DAYOFYEAR = i++;
+EXTRACTOR_I_DEATH_DATE = i++;
+EXTRACTOR_I_DEATH_DAY = i++;
+EXTRACTOR_I_DEATH_DAYOFYEAR = i++;
+EXTRACTOR_I_AGE_DEATH = i++;
+EXTRACTOR_I_AGE_MARR = i++;
+EXTRACTOR_I_AGE_CHILD_FIRST = i++;
+EXTRACTOR_I_AGE_CHILD_LAST = i++;
+EXTRACTOR_I_NB_CHILD = i++;
+EXTRACTOR_I_NB_FAMS = i++;
+EXTRACTOR_I_NB_CHILD_FAMS = i++;
+EXTRACTOR_I_BIRTH_PLACE = i++;
+EXTRACTOR_I_DEATH_PLACE = i++;
+var i = 0;
+EXTRACTOR_F_NAME = i++;
+EXTRACTOR_F_SURNAME = i++;
+EXTRACTOR_F_GID = i++;
+EXTRACTOR_F_MARR_DATE = i++;
+EXTRACTOR_F_MARR_MONTH = i++;
+EXTRACTOR_F_MARR_DAY = i++;
+EXTRACTOR_F_NB_CHILD = i++;
+EXTRACTOR_F_MARR_PLACE = i++;
+EXTRACTOR_F_SPOU_AGE_MARR = i++;
+EXTRACTOR_F_SPOU1_AGE_MARR = i++;
+EXTRACTOR_F_SPOU2_AGE_MARR = i++;
 
 // Indexes for functions in above structure
-FUNCTION_NONE = 0;
-FUNCTION_COUNT = 1;
-FUNCTION_SUM = 2;
-FUNCTION_AVERAGE = 3;
+var i = 0;
+FUNCTION_NONE = i++;
+FUNCTION_COUNT = i++;
+FUNCTION_SUM = i++;
+FUNCTION_AVERAGE = i++;
 
 // Indexes for chart types in above structure
-CHART_TYPE_PIE = 0;
-CHART_TYPE_DONUT = 1;
-CHART_TYPE_BAR = 2;
-CHART_TYPE_LINE = 3;
-CHART_TYPE_SCATTER = 4;
-CHART_TYPE_BUBBLE = 5;
+var i = 0;
+CHART_TYPE_PIE = i++;
+CHART_TYPE_DONUT = i++;
+CHART_TYPE_BAR = i++;
+CHART_TYPE_LINE = i++;
+CHART_TYPE_SCATTER = i++;
+CHART_TYPE_BUBBLE = i++;
 
 
 STATISTICS_CHART_OPACITY = 70;
 
+DAYS_PER_YEAR = 365.242190517;
 
 var turboThreshold = 1000;
 var turboThresholdOverflow = false;
 
+
+function gregorian_ymd(sdn)
+{
+	if (sdn == 0)
+		return({year: NaN, month: NaN, day: NaN, dayofyear: NaN})
+
+	var _GRG_SDN_OFFSET = 32045;
+	var _GRG_DAYS_PER_5_MONTHS  = 153;
+	var _GRG_DAYS_PER_4_YEARS   = 1461;
+	var _GRG_DAYS_PER_400_YEARS = 146097;
+
+	var temp = (_GRG_SDN_OFFSET + sdn) * 4 - 1
+
+	// Calculate the century (year/100)
+	var century = Math.floor(temp / _GRG_DAYS_PER_400_YEARS);
+
+	// Calculate the year and day of year (1 <= day_of_year <= 366)
+	temp = Math.floor((temp % _GRG_DAYS_PER_400_YEARS) / 4) * 4 + 3;
+	year = (century * 100) + Math.floor(temp / _GRG_DAYS_PER_4_YEARS);
+	dayofyear = Math.floor((temp % _GRG_DAYS_PER_4_YEARS) / 4) + 1;
+
+	// Calculate the month and day of month
+	temp = dayofyear * 5 - 3;
+	month = Math.floor(temp / _GRG_DAYS_PER_5_MONTHS);
+	day = Math.floor((temp % _GRG_DAYS_PER_5_MONTHS) / 5) + 1;
+
+	// Convert to the normal beginning of the year
+	if (month < 10) month += 3;
+	else
+	{
+		year += 1;
+		month -= 9;
+	}
+
+	// Adjust to the B.C./A.D. type numbering
+	year -= 4800;
+	if (year <= 0) year -= 1;
+	return({year: year, month: month, day: day, dayofyear: dayofyear})
+}
+
+function age(d1, d2)
+{
+	if (d1 == 0) return(NaN);
+	if (d2 == 0) return(NaN);
+	return((d2 - d1) / DAYS_PER_YEAR);
+}
 
 function computeStatisticsData()
 {
@@ -290,7 +387,11 @@ function computeStatisticsData()
 		indi.chart_surnames = [];
 		for (var n = 0; n < indi.names.length; n += 1)
 			indi.chart_surnames = $.extend([], indi.names[n].surnames);
-		indi.chart_age_death = parseFloat(indi.death_year) - parseFloat(indi.birth_year);
+		indi.birth_month = gregorian_ymd(indi.birth_sdn).month;
+		indi.death_month = gregorian_ymd(indi.death_sdn).month;
+		indi.birth_dayofyear = gregorian_ymd(indi.birth_sdn).dayofyear;
+		indi.death_dayofyear = gregorian_ymd(indi.death_sdn).dayofyear;
+		indi.chart_age_death = age(indi.birth_sdn, indi.death_sdn);
 		indi.chart_age_marr = [];
 		indi.chart_nb_child = 0;
 		indi.chart_nb_fams = indi.fams.length;
@@ -298,22 +399,33 @@ function computeStatisticsData()
 		for (var i = 0; i < indi.fams.length; i += 1)
 		{
 			var fam = F[indi.fams[i]];
-			indi.chart_age_marr.push(parseFloat(fam.marr_year) - parseFloat(indi.birth_year));
+			indi.chart_age_marr.push(age(indi.birth_sdn, fam.marr_sdn));
 			indi.chart_nb_child += F[I[idx].fams[i]].chil.length;
 			indi.chart_nb_child_fams.push(F[indi.fams[i]].chil.length);
+		}
+		if (indi.fams.length > 0)
+		{
+			var fam0 = F[indi.fams[0]];
+			if (fam0.chil.length > 0)
+				indi.chart_age_child_first = age(indi.birth_sdn, fam0.chil[0].birth_sdn);
+			var fam1 = F[indi.fams[indi.fams.length - 1]];
+			if (fam1.chil.length > 0)
+				indi.chart_age_child_last = age(indi.birth_sdn, fam1.chil[fam1.chil.length - 1].birth_sdn);
 		}
 	}
 	for (var fdx = 0; fdx < F.length && search.ChartTable == TABLE_F; fdx += 1)
 	{
 		var fam = F[fdx];
 		fam.chart_surnames = [];
+		fam.marr_month =gregorian_ymd(fam.marr_sdn).month;
+		fam.marr_dayofyear = gregorian_ymd(fam.marr_sdn).dayofyear;
 		fam.chart_spou_age_marr = [];
 		for (var i = 0; i < fam.spou.length; i += 1)
 		{
 			var indi = I[fam.spou[i]];
 			for (var n = 0; n < indi.names.length; n += 1)
 				fam.chart_surnames = $.extend(fam.chart_surnames, indi.names[n].surnames);
-			fam.chart_spou_age_marr.push(parseFloat(fam.marr_year) - parseFloat(indi.birth_year));
+			fam.chart_spou_age_marr.push(age(indi.birth_sdn, fam.marr_sdn));
 			if (i == 0) fam.chart_spou1_age_marr = fam.chart_spou_age_marr[i];
 			if (i == 1) fam.chart_spou2_age_marr = fam.chart_spou_age_marr[i];
 		}
@@ -695,12 +807,20 @@ function printStatistics()
 	getStatisticsData();
 	if (D.series.length > 100)
 	{
-		document.write('<div class="alert alert-danger" role="alert">Error in the chart configuration</div>');
+		document.write('<div class="alert alert-danger" role="alert"><p>Error in the chart configuration' +
+			'<p class="dwr-centered"><a href="statistics_conf.html?' + BuildSearchString() + '">' +
+			'<button type="button" class="btn btn-default">' +
+			_('Configure') + '</button></a>' +
+			'</div>');
 		return;
 	}
 	if (D.series.length == 0)
 	{
-		document.write('<div class="alert alert-danger" role="alert">' + _('No matching data') + '</div>');
+		document.write('<div class="alert alert-danger" role="alert"><p>' + _('No matching data') +
+			'<p class="dwr-centered"><a href="statistics_conf.html?' + BuildSearchString() + '">' +
+			'<button type="button" class="btn btn-default">' +
+			_('Configure') + '</button></a>' +
+			'</div>');
 		return;
 	}
 
@@ -798,7 +918,7 @@ function printStatisticsDefaultChart()
 		},
 		series: []
 	}
-	if (turboThresholdOverflow) tooltip.enabled = false;
+	if (turboThresholdOverflow) chart.tooltip.enabled = false;
 	return(chart);
 }
 

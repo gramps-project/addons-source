@@ -168,6 +168,7 @@ from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
 if (DWR_VERSION_410):
     from gramps.gen.lib import PlaceType
 from gramps.gen.lib.date import Today
+from gramps.gen.lib.gcalendar import gregorian_ymd
 from gramps.gen.const import PROGRAM_NAME, URL_HOMEPAGE
 from gramps.gen.plug.menu import (PersonOption, NumberOption, StringOption,
     BooleanOption, EnumeratedListOption, FilterOption,
@@ -255,7 +256,7 @@ SORT_KEY = glocale.sort_key
 NB_CUSTOM_PAGES = 3
 #: Menu items
 PAGES_NAMES = [
-    _("Home page"),
+    _("Home Page"),
     _("SVG graphical tree"),
     # _("Statistics page"),
     # _("Calendar"),
@@ -456,7 +457,6 @@ def format_date(date, gedcom = False, iso = False):
     if (iso):
         # TODO: export ISO dates
         val = _dd.display_iso(date) or ""
-        pass
 
     elif (gedcom):
         start = date.get_start_date()
@@ -603,10 +603,15 @@ class DynamicWebReport(Report):
         self.sourceauthor = self.options['sourceauthor']
         self.template = self.options['template']
         self.pages_number = self.options['pages_number']
+        # Validate pages number in proper range
+        self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
         self.page_content = [
             self.options['page_content_%i' %i]
             for i in range(self.pages_number)
         ]
+        # Remove duplicates in self.page_content
+        seen = set()
+        self.page_content = [x for x in self.page_content if not (x in seen or seen.add(x))]
         self.custom_page_name = [
             self.options['custom_page_name_%i' %i]
             for i in range(NB_CUSTOM_PAGES)
@@ -735,10 +740,10 @@ class DynamicWebReport(Report):
             "//        notes, list of the name source citations index (in table 'C')]\n"
             "//   - gender: The gender\n"
             "//   - birth_year: The birth year in the form '1700', '?' (date unknown)\n"
-            "//   - birth_sdn: The birth serial date number (-1 if not known)\n"
+            "//   - birth_sdn: The birth serial date number (0 if not known)\n"
             "//   - birth_place: The birth place\n"
             "//   - death_year: The death year in the form '1700', '?' (date unknown), '' (not dead)\n"
-            "//   - death_sdn: The death serial date number (-1 if not known)\n"
+            "//   - death_sdn: The death serial date number (0 if not known)\n"
             "//   - death_place: The death place\n"
             "//   - death_age: The death age\n"
             "//   - events: A list of events, with for each event:\n"
@@ -802,8 +807,10 @@ class DynamicWebReport(Report):
             jdata['gender'] = gender
             # Years
             jdata['birth_year'] = self.get_birth_year(person)
+            jdata['birth_sdn'] = self.get_birth_sdn(person)
             jdata['birth_place'] = self.get_birth_place(person)
             jdata['death_year'] = self.get_death_year(person)
+            jdata['death_sdn'] = self.get_death_sdn(person)
             jdata['death_place'] = self.get_death_place(person)
             # Age at death
             jdata['death_age'] = self.get_death_age(person)
@@ -935,6 +942,7 @@ class DynamicWebReport(Report):
             "//   - name: The family full name\n"
             "//   - type: The family union type\n"
             "//   - marr_year: The marriage year in the form '1700', '?' (unknown), or '' (not married)\n"
+            "//   - marr_sdn: The marriage serial date number (0 if not known)\n"
             "//   - marr_place: The marriage place"
             "//   - events: A list of events, with for each event:\n"
             "//       - gid: The event GID\n"
@@ -978,6 +986,7 @@ class DynamicWebReport(Report):
             jdata['type'] = str(family.get_relationship())
             # Years
             jdata['marr_year'] = self.get_marriage_year(family)
+            jdata['marr_sdn'] = self.get_marriage_sdn(family)
             jdata['marr_place'] = self.get_marriage_place(family)
             # Events
             jdata['events'] = self._data_events(family)
@@ -1971,22 +1980,37 @@ class DynamicWebReport(Report):
     def get_birth_year(self, person):
         ev = get_birth_or_fallback(self.database, person)
         return(self._get_year_text(ev) or "?")
+    def get_birth_sdn(self, person):
+        ev = get_birth_or_fallback(self.database, person)
+        return(self._get_sdn(ev))
     def get_death_year(self, person):
         ev = get_death_or_fallback(self.database, person)
         return(self._get_year_text(ev))
+    def get_death_sdn(self, person):
+        ev = get_death_or_fallback(self.database, person)
+        return(self._get_sdn(ev))
     def get_marriage_year(self, family):
         ev = get_marriage_or_fallback(self.database, family)
         return(self._get_year_text(ev))
+    def get_marriage_sdn(self, family):
+        ev = get_marriage_or_fallback(self.database, family)
+        return(self._get_sdn(ev))
+
     def _get_year_text(self, event):
         y = ""
         if (event):
             y = "?"
-            date = event.get_date_object()
-            mod = date.get_modifier()
-            start = date.get_start_date()
-            if (mod == Date.MOD_NONE and start != Date.EMPTY):
-                y = str(start[2])
-        return(y)
+            sdn = self._get_sdn(event)
+            if sdn != 0:
+                (year, month, day) = gregorian_ymd(sdn)
+                y = "%i" % year
+        return y
+
+    def _get_sdn(self, event):
+        sdn = 0
+        if (event):
+            sdn = event.get_date_object().get_sort_value()
+        return sdn
 
     def get_birth_place(self, person):
         ev = get_birth_or_fallback(self.database, person)
@@ -2064,7 +2088,7 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("Home"), PAGE_HOME in self.page_content, True, dbscripts, [], "HomePage();"),
+            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, dbscripts, [], "HomePage();"),
             ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, dbscripts, [], "DwrMain(PAGE_SVG_TREE);"),
             ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
