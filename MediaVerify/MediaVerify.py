@@ -361,7 +361,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                                 self.models[0].append((text, handle))
             elif md5sum is None:
                 text = '[%s] %s' % (media.get_gramps_id(), gramps_path)
-                self.models[4].append((text, handle))
+                self.models[4].append((text, str(handle)))
             else:
                 self.models[1].append((gramps_path, handle))
 
