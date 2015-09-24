@@ -36,7 +36,7 @@ import os
 #-------------------------------------------------------------------------
 
 try:
-    import cv2 as cv
+    import cv2
     computer_vision_available = True
 except ImportError:
     computer_vision_available = False
@@ -57,12 +57,13 @@ HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 #-------------------------------------------------------------------------
 
 def detect_faces(image_path, min_face_size):
-    cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
-    o_width, o_height = cv_image.width, cv_image.height
-    cv.EqualizeHist(cv_image, cv_image)
-    cascade = cv.Load(HAARCASCADE_PATH)
-    faces = cv.HaarDetectObjects(cv_image, cascade,
-                                 cv.CreateMemStorage(0),
-                                 1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING,
+    cv_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    o_width, o_height = cv_image.shape[0], cv_image.shape[1]
+    cv2.equalizeHist(cv_image, cv_image)
+    cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
+    # ???
+    faces = cv2.HaarDetectObjects(cv_image, cascade,
+                                 cv2.CreateMemStorage(0),
+                                 1.2, 2, cv2.CV_HAAR_DO_CANNY_PRUNING,
                                  min_face_size)
     return faces
