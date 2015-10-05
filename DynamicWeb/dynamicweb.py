@@ -168,6 +168,7 @@ from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
 if (DWR_VERSION_410):
     from gramps.gen.lib import PlaceType
 from gramps.gen.lib.date import Today
+from gramps.gen.lib.gcalendar import gregorian_ymd
 from gramps.gen.const import PROGRAM_NAME, URL_HOMEPAGE
 from gramps.gen.plug.menu import (PersonOption, NumberOption, StringOption,
     BooleanOption, EnumeratedListOption, FilterOption,
@@ -255,7 +256,7 @@ SORT_KEY = glocale.sort_key
 NB_CUSTOM_PAGES = 3
 #: Menu items
 PAGES_NAMES = [
-    _("Home page"),
+    _("Home Page"),
     _("SVG graphical tree"),
     # _("Statistics page"),
     # _("Calendar"),
@@ -455,9 +456,7 @@ def format_date(date, gedcom = False, iso = False):
 
     if (iso):
         # TODO: export ISO dates
-        # if (iso): val = DateDisplay.display(date) or ""
-        # else: val = _dd.display(date) or ""
-        pass
+        val = _dd.display_iso(date) or ""
 
     elif (gedcom):
         start = date.get_start_date()
@@ -604,10 +603,15 @@ class DynamicWebReport(Report):
         self.sourceauthor = self.options['sourceauthor']
         self.template = self.options['template']
         self.pages_number = self.options['pages_number']
+        # Validate pages number in proper range
+        self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
         self.page_content = [
             self.options['page_content_%i' %i]
             for i in range(self.pages_number)
         ]
+        # Remove duplicates in self.page_content
+        seen = set()
+        self.page_content = [x for x in self.page_content if not (x in seen or seen.add(x))]
         self.custom_page_name = [
             self.options['custom_page_name_%i' %i]
             for i in range(NB_CUSTOM_PAGES)
@@ -736,15 +740,17 @@ class DynamicWebReport(Report):
             "//        notes, list of the name source citations index (in table 'C')]\n"
             "//   - gender: The gender\n"
             "//   - birth_year: The birth year in the form '1700', '?' (date unknown)\n"
+            "//   - birth_sdn: The birth serial date number (0 if not known)\n"
             "//   - birth_place: The birth place\n"
             "//   - death_year: The death year in the form '1700', '?' (date unknown), '' (not dead)\n"
+            "//   - death_sdn: The death serial date number (0 if not known)\n"
             "//   - death_place: The death place\n"
             "//   - death_age: The death age\n"
             "//   - events: A list of events, with for each event:\n"
             "//       - gid: The event GID\n"
             "//       - type: The event name\n"
             "//       - date: The event date\n"
-            "//       - date_iso: The event date in ISO format (sortable)\n"
+            "//       - date_sdn: The event serial date number\n"
             "//       - place: The event place index (in table 'P'), -1 if none\n"
             "//       - descr: The event description\n"
             "//       - text: The event text and notes (including event reference notes)\n"
@@ -757,7 +763,7 @@ class DynamicWebReport(Report):
             "//       - cita: A list of the event source citations index (in table 'C')\n"
             "//   - addrs: A list of addresses, with for each address:\n"
             "//       - date: The address date\n"
-            "//       - date_iso: The address date in ISO format (sortable)\n"
+            "//       - date_sdn: The address serial date number\n"
             "//       - location: The address place in the form:\n"
             "//           [street, locality, parish, city, state, county, zip, country]\n"
             "//       - note: The address notes\n"
@@ -801,8 +807,10 @@ class DynamicWebReport(Report):
             jdata['gender'] = gender
             # Years
             jdata['birth_year'] = self.get_birth_year(person)
+            jdata['birth_sdn'] = self.get_birth_sdn(person)
             jdata['birth_place'] = self.get_birth_place(person)
             jdata['death_year'] = self.get_death_year(person)
+            jdata['death_sdn'] = self.get_death_sdn(person)
             jdata['death_place'] = self.get_death_place(person)
             # Age at death
             jdata['death_age'] = self.get_death_age(person)
@@ -934,12 +942,13 @@ class DynamicWebReport(Report):
             "//   - name: The family full name\n"
             "//   - type: The family union type\n"
             "//   - marr_year: The marriage year in the form '1700', '?' (unknown), or '' (not married)\n"
+            "//   - marr_sdn: The marriage serial date number (0 if not known)\n"
             "//   - marr_place: The marriage place"
             "//   - events: A list of events, with for each event:\n"
             "//       - gid: The event GID\n"
             "//       - type: The event name\n"
             "//       - date: The event date\n"
-            "//       - date_iso: The event date in ISO format (sortable)\n"
+            "//       - date_sdn: The event serial date number\n"
             "//       - place: The event place index (in table 'P'), -1 if none\n"
             "//       - descr: The event description\n"
             "//       - text: The event text and notes (including event reference notes)\n"
@@ -977,6 +986,7 @@ class DynamicWebReport(Report):
             jdata['type'] = str(family.get_relationship())
             # Years
             jdata['marr_year'] = self.get_marriage_year(family)
+            jdata['marr_sdn'] = self.get_marriage_sdn(family)
             jdata['marr_place'] = self.get_marriage_place(family)
             # Events
             jdata['events'] = self._data_events(family)
@@ -1008,7 +1018,7 @@ class DynamicWebReport(Report):
         #  - gid: Gramps ID\n"
         #  - type: The event name
         #  - date: The event date
-        #  - date_iso: The event date in ISO format (sortable)
+        #  - date_sdn: The event serial date number
         #  - place: The event place index (in table 'P'), -1 if none
         #  - descr: The event description
         #  - text: The event text and notes (including event reference notes)
@@ -1042,8 +1052,7 @@ class DynamicWebReport(Report):
             jdata['type'] = html_escape(evt_type)
             evt_date = format_date(event.get_date_object())
             jdata['date'] = html_escape(evt_date)
-            evt_date = format_date(event.get_date_object(), True)
-            jdata['date_iso'] = html_escape(evt_date)
+            jdata['date_sdn'] = event.get_date_object().get_sort_value()
             jdata['place'] = place_index
             if (evt_desc is None): evt_desc = ""
             jdata['descr'] = html_escape(evt_desc)
@@ -1089,7 +1098,7 @@ class DynamicWebReport(Report):
         """
         # Builds an address list that gives for each address:
         #  - date: The address date\n"
-        #  - date_iso: The address date in ISO format (sortable)\n"
+        #  - date_sdn: The address serial date number (sortable)\n"
         #  - location: The address place in the form:\n"
         #      [street, locality, parish, city, state, county, zip, country]\n"\n"
         #  - note: The address notes\n"
@@ -1102,8 +1111,7 @@ class DynamicWebReport(Report):
             jdata = {}
             addr_date = format_date(addr.get_date_object())
             jdata['date'] = html_escape(addr_date)
-            addr_date = format_date(addr.get_date_object(), True)
-            jdata['date_iso'] = html_escape(addr_date)
+            jdata['date_sdn'] = addr.get_date_object().get_sort_value()
             addr_data = [
                 addr.get_street(),
                 addr.get_locality(),
@@ -1281,7 +1289,7 @@ class DynamicWebReport(Report):
             "//   - type: The repository type\n"
             "//   - addrs: A list of addresses, with for each address:\n"
             "//       - date: The address date\n"
-            "//       - date_iso: The address date in ISO format (sortable)\n"
+            "//       - date_sdn: The address serial date number\n"
             "//       - location: The address place in the form:\n"
             "//           [street, locality, parish, city, state, county, zip, country]\n"
             "//       - note: The address notes\n"
@@ -1337,7 +1345,7 @@ class DynamicWebReport(Report):
             "//   - path: The media path were the media is really located\n"
             "//   - mime: The media MIME type\n"
             "//   - date: The media date\n"
-            "//   - date_iso: The media date in ISO format (sortable)\n"
+            "//   - date_sdn: The media serial date number\n"
             "//   - note: The media notes\n"
             "//   - cita: A list of the media source citations index (in table 'C')\n"
             "//   - attr: The list of the media attributes in the form:\n"
@@ -1383,10 +1391,9 @@ class DynamicWebReport(Report):
             jdata['path'] = path
             jdata['mime'] = media.get_mime_type()
             # Get media date
-            date = format_date(media.get_date_object()) or ""
+            date = format_date(media.get_date_object())
             jdata['date'] = date
-            date = format_date(media.get_date_object(), True) or ""
-            jdata['date_iso'] = date
+            jdata['date_sdn'] = media.get_date_object().get_sort_value()
             # Get media notes
             jdata['note'] = self.get_notes_text(media)
             # Get media sources
@@ -1973,22 +1980,37 @@ class DynamicWebReport(Report):
     def get_birth_year(self, person):
         ev = get_birth_or_fallback(self.database, person)
         return(self._get_year_text(ev) or "?")
+    def get_birth_sdn(self, person):
+        ev = get_birth_or_fallback(self.database, person)
+        return(self._get_sdn(ev))
     def get_death_year(self, person):
         ev = get_death_or_fallback(self.database, person)
         return(self._get_year_text(ev))
+    def get_death_sdn(self, person):
+        ev = get_death_or_fallback(self.database, person)
+        return(self._get_sdn(ev))
     def get_marriage_year(self, family):
         ev = get_marriage_or_fallback(self.database, family)
         return(self._get_year_text(ev))
+    def get_marriage_sdn(self, family):
+        ev = get_marriage_or_fallback(self.database, family)
+        return(self._get_sdn(ev))
+
     def _get_year_text(self, event):
         y = ""
         if (event):
             y = "?"
-            date = event.get_date_object()
-            mod = date.get_modifier()
-            start = date.get_start_date()
-            if (mod == Date.MOD_NONE and start != Date.EMPTY):
-                y = str(start[2])
-        return(y)
+            sdn = self._get_sdn(event)
+            if sdn != 0:
+                (year, month, day) = gregorian_ymd(sdn)
+                y = "%i" % year
+        return y
+
+    def _get_sdn(self, event):
+        sdn = 0
+        if (event):
+            sdn = event.get_date_object().get_sort_value()
+        return sdn
 
     def get_birth_place(self, person):
         ev = get_birth_or_fallback(self.database, person)
@@ -2066,7 +2088,7 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("Home"), PAGE_HOME in self.page_content, True, dbscripts, [], "HomePage();"),
+            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, dbscripts, [], "HomePage();"),
             ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, dbscripts, [], "DwrMain(PAGE_SVG_TREE);"),
             ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),

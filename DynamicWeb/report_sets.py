@@ -141,7 +141,7 @@ report_list = [
     ]
 },
 {
-    'title':  "Example using template '%s', french translation and OpenStreetMap" % WEB_TEMPLATE_LIST[0][1],
+    'title':  "Example using template '%s' French translation and OpenStreetMap" % WEB_TEMPLATE_LIST[0][1],
     'link': "person.html?igid=I0044",
     'environ': {
         'LANGUAGE': "fr_FR",
@@ -168,7 +168,7 @@ report_list = [
     ]
 },
 {
-    'title': "Example using template '%s', without media copy, without note types" % WEB_TEMPLATE_LIST[0][1],
+    'title': "Example using template '%s' without media copy without note types" % WEB_TEMPLATE_LIST[0][1],
     'link': "person.html?igid=I0044",
     'environ': {
         'LANGUAGE': "en_US",
@@ -197,7 +197,7 @@ report_list = [
     ]
 },
 {
-    'title':  "Example with minimal features (without private data, notes, sources, addresses, gallery, places, families, events)",
+    'title':  "Example with minimal features (without private data notes sources addresses gallery places families events)",
     'link': "person.html?igid=I0044",
     'environ': {
         'LANGUAGE': "en_US",
