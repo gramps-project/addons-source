@@ -3972,7 +3972,7 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Pages selection")
         addopt = partial(menu.add_option, category_name)
 
-        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES) + 1, 1, NB_TOTAL_PAGES_MAX)
+        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES), 1, NB_TOTAL_PAGES_MAX)
         self.__pages_number.set_help(_("Number pages in the web site menu."))
         addopt("pages_number", self.__pages_number)
         self.__pages_number.connect("value-changed", self.__pages_contents_changed)
