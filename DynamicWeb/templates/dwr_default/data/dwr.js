@@ -2913,7 +2913,7 @@ function SearchObjects()
 			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
 		}
-		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their birth name.') + '</p>';
+		html += '<p>' + _('Use the search box above in order to find a person.') + '</p>';
 	}
 	else
 	{

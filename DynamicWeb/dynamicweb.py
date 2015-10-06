@@ -90,9 +90,10 @@ Classes:
 #TODO: LDS stuff
 #TODO: Statistic charts
 #TODO: Calendar page (see web calendar and calendar report)
-#TODO: approximate search, which includes all the fields (attributes, notes, etc.) and not only titles and names
+#TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
 
 # For the SVG graph:
+#TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
 #TODO: Refactor: the scaling should be performed by SVG transform
 #TODO: very small texts not printed properly
 #TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
@@ -2302,7 +2303,6 @@ class DynamicWebReport(Report):
             ("(sort by quantity)", _("(sort by quantity)")),
             (": activate to sort column ascending", _(": activate to sort column ascending")),
             (": activate to sort column descending", _(": activate to sort column descending")),
-            ("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.", _("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.")),
             ("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>", _("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>")),
             ("Abbreviation", _("Abbreviation")),
             ("Address", _("Address")),
@@ -2370,7 +2370,6 @@ class DynamicWebReport(Report):
             ("Gender", _("Gender")),
             ("GRAMPS ID", _("GRAMPS ID")),
             ("Chart coloring", _("Chart coloring")),
-            ("Graph help", _("Graph help")),
             ("Indexes", _("Indexes")),
             ("Individuals", _("Individuals")),
             ("Latitude", _("Latitude")),
@@ -2469,7 +2468,7 @@ class DynamicWebReport(Report):
             ("Title", _("Title")),
             ("Type", _("Type")),
             ("Unknown", _("Unknown")),
-            ("Use the search box above in order to find a person.<br>Women are listed with their birth name.", _("Use the search box above in order to find a person.<br>Women are listed with their birth name.")),
+            ("Use the search box above in order to find a person.", _("Use the search box above in order to find a person.")),
             ("Used for family", _("Used for family")),
             ("Used for media", _("Used for media")),
             ("Used for person", _("Used for person")),
