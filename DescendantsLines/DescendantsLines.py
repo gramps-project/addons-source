@@ -1131,7 +1131,7 @@ def load_gramps(start):
         CUR_GENERATION += 1
         global HIGH_GENERATION
         HIGH_GENERATION = max(HIGH_GENERATION, CUR_GENERATION)
-        UNKNOWN_PERSON_TXT = [(1.0, (0,0,0), 'Unknown'),]
+        UNKNOWN_PERSON_TXT = [(1.0, (0,0,0), _('Unknown')),]
 
         descendant = GRAMPS_DB.get_person_from_gramps_id(p_id)
         log.debug('Do_Person: Descendant %s, DB ID:%s', descendant.primary_name.get_regular_name(), p_id)
