@@ -22,7 +22,7 @@
 # $Id: $
 
 """
-GRAMPS registration file
+Gramps registration file
 """
 
 #------------------------------------------------------------------------
@@ -36,9 +36,9 @@ id    = 'chgivenname',
 name  = _("Fix Capitalization of Given Names"),
 description =  _("Searches the entire database and attempts to "
                     "fix capitalization of the given names."),
-version = '1.0.23',
+version = '1.0.24',
 gramps_target_version = '4.2',
-status = STABLE, # not yet tested with python 3
+status = STABLE,
 fname = 'ChangeGivenNames.py',
 authors = ["Donald N. Allingham", "Doug Blank"],
 authors_email = ["don@gramps-project.org", "doug.blank@gmail.com"],
