@@ -40,15 +40,15 @@ msgstr ""
 #: Form/editform.py:146
 #, python-format
 msgid "Form: %s"
-msgstr ""
+msgstr "Formulaire : %s"
 
 #: Form/editform.py:148
 msgid "New Form"
-msgstr ""
+msgstr "Nouveau formulaire"
 
 #: Form/editform.py:155
 msgid "Edit Form"
-msgstr ""
+msgstr "Éditer le formulaire"
 
 # trunk
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
@@ -85,7 +85,7 @@ msgstr "_Valider"
 
 #: Form/editform.py:370
 msgid "Headings"
-msgstr ""
+msgstr "En-têtes"
 
 #: Form/editform.py:391
 msgid "Key"
@@ -127,15 +127,15 @@ msgstr "Fiancée"
 
 #: Form/formgramplet.gpr.py:30
 msgid "Form Gramplet"
-msgstr ""
+msgstr "Gramplet formulaire"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Gramplet interface for Forms"
-msgstr ""
+msgstr "Interface gramplet pour les formulaires"
 
 #: Form/formgramplet.gpr.py:41
 msgid "Forms"
-msgstr ""
+msgstr "Formulaires"
 
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
 # /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
@@ -172,23 +172,23 @@ msgstr "%(title)s - Gramps"
 
 #: Form/selectform.py:71 Form/selectform.py:78
 msgid "Select Form"
-msgstr ""
+msgstr "Sélectionner le formulaire"
 
 #: Form/form.xml.h:1
 msgid "Certificate Number"
-msgstr ""
+msgstr "Numéro de certificat"
 
 #: Form/form.xml.h:2
 msgid "Entry Number"
-msgstr ""
+msgstr "Numéro d'entrée"
 
 #: Form/form.xml.h:3
 msgid "Date Registered"
-msgstr ""
+msgstr "Date enregistrée"
 
 #: Form/form.xml.h:4
 msgid "Registrar"
-msgstr ""
+msgstr "Registre"
 
 #: Form/form.xml.h:6
 msgid "Sex"
@@ -200,7 +200,7 @@ msgstr "Profession"
 
 #: Form/form.xml.h:8
 msgid "Maiden Surname"
-msgstr ""
+msgstr "Nom de jeune fille"
 
 #: Form/form.xml.h:9
 msgid "Description"
@@ -212,7 +212,7 @@ msgstr "Résidence"
 
 #: Form/form.xml.h:11
 msgid "Banns/Licence"
-msgstr ""
+msgstr "Bans/Autorisation"
 
 #: Form/form.xml.h:12
 msgid "Age"
@@ -224,7 +224,7 @@ msgstr "Statut familial"
 
 #: Form/form.xml.h:14
 msgid "Cause of Death"
-msgstr ""
+msgstr "Cause du décès"
 
 #: Form/form.xml.h:15
 msgid "City or Borough"
