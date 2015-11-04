@@ -127,7 +127,7 @@ msgstr "Fiancée"
 
 #: Form/formgramplet.gpr.py:30
 msgid "Form Gramplet"
-msgstr "Gramplet formulaire"
+msgstr "Gramplet formulaires"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Gramplet interface for Forms"
