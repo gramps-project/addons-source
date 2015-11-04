@@ -1373,8 +1373,8 @@ class DescendantsLinesOptions(MenuReportOptions):
                 
         disp = TextOption(_("Descendant\nDisplay Format"),
                            ["[ BIRTH   ]$e(t d(yyyy)< @ >D(t))",
-                           "[ Occupation, Degree, Education ]$e(t d(o yyyy/mm/dd)< >n< at >D(t))",
-                           "[ census,RESIDENCE,Property]$e(t d(dd-MMM-yy)){ Position: Lat=$e(D(x)), Long=$e(D(y))}",
+                           "[ Occupation, Degree, Education ]$e(t d(o yyyy/mm/dd)< >n< @ >D(t))",
+                           "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D(t))",
                            "[Death]$e(t d(o yyyy)< @ >D(e<, >l<, >c<, >u<, >s<, >p<, >n))"])
         disp.set_help(_("[event, list]$e(formating)\nSee Wiki Manual > Reports > part 2\nformating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"))
         menu.add_option(category_name, "descend_disp", disp)
