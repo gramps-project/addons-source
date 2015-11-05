@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: 4.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-04 15:53+0100\n"
-"PO-Revision-Date: 2015-10-10 15:27+0100\n"
+"PO-Revision-Date: 2015-11-05 12:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -115,7 +115,7 @@ msgstr "Rang"
 
 #: Form/form.py:63
 msgid "Form"
-msgstr ""
+msgstr "Formulaire"
 
 #: Form/form.py:66
 msgid "Groom"
@@ -399,7 +399,7 @@ msgstr "Langue"
 
 #: Form/form.xml.h:57
 msgid "Language Spoken"
-msgstr ""
+msgstr "Langue parlée"
 
 # comté (Canada)
 #: Form/form.xml.h:58
@@ -440,7 +440,7 @@ msgstr ""
 
 #: Form/form.xml.h:67
 msgid "Irish Language"
-msgstr ""
+msgstr "Langue irlandaise"
 
 #: Form/form.xml.h:68
 msgid ""
@@ -485,11 +485,11 @@ msgstr "Petite ville ou village"
 
 #: Form/form.xml.h:77
 msgid "Head of Family"
-msgstr ""
+msgstr "Chef de famille"
 
 #: Form/form.xml.h:78
 msgid "Total Children"
-msgstr ""
+msgstr "Nombre d'enfants"
 
 #: Form/form.xml.h:79
 msgid "Children born alive to present Marriage"
@@ -606,9 +606,8 @@ msgid "Free white males 16-18"
 msgstr "Hommes libres blancs 16-18"
 
 #: Form/form.xml.h:107
-#, fuzzy
 msgid "Foreigners not naturalized"
-msgstr "Naturalisé(e) ou étranger(ère)"
+msgstr "Étranger(ère) non-naturalisé(e)"
 
 #: Form/form.xml.h:108
 msgid "Persons engaged in Agriculture"
@@ -1136,7 +1135,7 @@ msgstr "Simple d'esprit"
 
 #: Form/form.xml.h:237
 msgid "Idiotic"
-msgstr ""
+msgstr "Idiot"
 
 #: Form/form.xml.h:238
 msgid "Insane"
@@ -1303,16 +1302,15 @@ msgstr "Sans emploi"
 
 #: Form/form.xml.h:277
 msgid "Weeks out of work in 1909"
-msgstr ""
+msgstr "Semaines sans-emploi en 1909"
 
 #: Form/form.xml.h:278
 msgid "Attended school since Sept. 1, 1909"
 msgstr "École fréquentée depuis le 1er sept. 1909"
 
 #: Form/form.xml.h:279
-#, fuzzy
 msgid "Civil War veteran"
-msgstr "Paroisse civile ou canton"
+msgstr "Vétéran de la guerre civile"
 
 #: Form/form.xml.h:280
 msgid "If owned, free or mortgaged"
@@ -1331,9 +1329,8 @@ msgid "Mother tongue"
 msgstr "Langue maternelle"
 
 #: Form/form.xml.h:284
-#, fuzzy
 msgid "Father's mother tongue"
-msgstr "Âge du mari / compagnon"
+msgstr "Langue maternelle du père"
 
 #: Form/form.xml.h:285
 msgid "Mother's mother tongue"
@@ -1365,9 +1362,8 @@ msgid "Marital condition"
 msgstr "Condition maritale"
 
 #: Form/form.xml.h:292
-#, fuzzy
 msgid "Age at first marriage"
-msgstr "Âge au mariage"
+msgstr "Âge au premier mariage"
 
 #: Form/form.xml.h:293
 msgid "Attended school since Sept. 1, 1929"
@@ -1417,11 +1413,11 @@ msgstr ""
 
 #: Form/form.xml.h:304
 msgid "Age at Last Birthday"
-msgstr ""
+msgstr "Âge au dernier anniversaire"
 
 #: Form/form.xml.h:305
 msgid "Marital Status"
-msgstr ""
+msgstr "Statut marital"
 
 #: Form/form.xml.h:306
 msgid "Attended school/college since March 1, 1940"
@@ -1445,7 +1441,7 @@ msgstr ""
 
 #: Form/form.xml.h:311
 msgid "On a Farm (Y/N)"
-msgstr ""
+msgstr "À la ferme (O/N)"
 
 #: Form/form.xml.h:312
 msgid "At Work during week March 24-30"
@@ -1461,7 +1457,7 @@ msgstr ""
 
 #: Form/form.xml.h:315
 msgid "Have a Job?"
-msgstr ""
+msgstr "A un métier ?"
 
 #: Form/form.xml.h:316
 msgid "housework (H), school (S), unable to work (U) or other (Ot)"
@@ -1469,15 +1465,15 @@ msgstr ""
 
 #: Form/form.xml.h:317
 msgid "# hours worked during week March 24-30, 1940"
-msgstr ""
+msgstr "# heures travaillées durant la semaine du 24-30 mars 1940"
 
 #: Form/form.xml.h:318
 msgid "Weeks unemployed up to March 30, 1940"
-msgstr ""
+msgstr "Semaines sans-emploi jusqu'au 30 mars 1940"
 
 #: Form/form.xml.h:319
 msgid "# weeks worked in 1939"
-msgstr ""
+msgstr "# semaines travaillées en 1939"
 
 #: Form/form.xml.h:320
 msgid "Amount of money, wages, salary in 1939"
@@ -1493,7 +1489,7 @@ msgstr ""
 
 #: Form/form.xml.h:323
 msgid "Veteran?"
-msgstr ""
+msgstr "Vétéran ?"
 
 #: Form/form.xml.h:324
 msgid "If child, veteran-father dead?"
@@ -1517,7 +1513,7 @@ msgstr ""
 
 #: Form/form.xml.h:329
 msgid "Usual Occupation"
-msgstr ""
+msgstr "Profession habituelle"
 
 #: Form/form.xml.h:330
 msgid "Usual Industry"
