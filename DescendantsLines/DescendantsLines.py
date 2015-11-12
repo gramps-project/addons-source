@@ -92,7 +92,7 @@ except ValueError:
 _ = _trans.gettext
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
-                             INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
+                             IndexMark, INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.const import USER_HOME, USER_PLUGINS
 import gramps.gen.lib
@@ -398,21 +398,34 @@ class DescendantsLinesReport(Report):
         filter = filter_class()
         filter.add_rule(rules.person.IsDescendantFamilyOf([pid, 1]))
 
-        plist = self.database.get_person_handles()
+        plist = self.database.get_person_handles(sort_handles=True)
+
+        if PROTECT_PRIVATE:
+            import gramps.gen.proxy
+            self.database = gramps.gen.proxy.PrivateProxyDb(self.database)
+
         ind_list = filter.apply(self.database, plist)
 
         # writes textual informations on secondary output file
-        people = []
         for person_handle in ind_list:
             person = self.database.get_person_from_handle(person_handle)
             #log.debug(person_handle)
-            name = person.get_primary_name()
-            people.append((name.get_surname(), name.get_first_name()))
-        for individual in sorted(people):
             self.doc.start_paragraph("DL-name")
-            self.doc.write_text(str(individual))
+            if person:
+                mark = ReportUtils.get_person_mark(self.database, person)
+                name = person.get_primary_name()
+                surname = name.get_surname()
+                firstname = name.get_first_name()
+                self.doc.write_text(surname + ' ' + firstname, mark)
+            else:
+                from gramps.gen.config import config
+                PRIVATE_RECORD_TEXT = config.get('preferences.private-record-text')
+                self.doc.write_text(PRIVATE_TEXT + PRIVATE_RECORD_TEXT)
             self.doc.end_paragraph()
-        
+        self.doc.start_paragraph("DL-name")
+        self.doc.write_text('%s people' % len(ind_list))
+        self.doc.end_paragraph()
+
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
