@@ -389,7 +389,7 @@ class PhotoTaggingGramplet(Gramplet):
                     if person:
                         people.append(person)
                 else:
-                    LOG.warn("Can't handle this type of of drop: '%s'" % sel_data.get_data_type())
+                    LOG.warn("Can't handle this type of drop: '%s'" % sel_data.get_data_type())
                     return
             for person in people:
                 if on_image: # drop on image
