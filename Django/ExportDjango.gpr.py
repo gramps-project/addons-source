@@ -58,7 +58,7 @@ if available:
              name                 = _('Django Export'),
              description          = _('Django is a web framework working on a '
                                       'configured database'),
-             version = '1.0.29',
+             version = '1.0.30',
              gramps_target_version= '5.0',
              status               = STABLE,
              export_options_title = _('Django options'),
