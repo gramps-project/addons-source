@@ -20,16 +20,65 @@
 # $Id$
 #
 
-register(IMPORT,
-         id                   = "import_django",
-         name                 = _('Django Import'),
-         description          = _('Django is a web framework working on a '
-                                  'configured database'),
-         version = '1.0.28',
-         gramps_target_version = '4.2',
-         status               = STABLE, # not yet tested with python 3
-         import_function      = 'import_data',
-         extension            = "django",
-         fname                = "ImportDjango.py",
-         )
+#------------------------------------------------------------------------
+#
+# Set up logging
+#
+#------------------------------------------------------------------------
+import logging
+LOG = logging.getLogger(".ImportDjango")
+
+#------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#------------------------------------------------------------------------
+
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.sgettext
+
+#------------------------------------------------------------------------
+#
+# Register Addon if prerequisite is present.
+#
+#------------------------------------------------------------------------
+
+available = False
+
+try:
+    from django.conf import settings
+    available = True
+except ImportError:
+    pass
+
+if available:
+    # Load the Addon only if the prerequisite is present.
+    register(IMPORT,
+             id                   = "import_django",
+             name                 = _('Django Import'),
+             description          = _('Django is a web framework working on a '
+                                      'configured database'),
+             version = '1.0.29',
+             gramps_target_version= '4.2',
+             status               = STABLE,
+             import_function      = 'import_data',
+             extension            = "django",
+             fname                = "ImportDjango.py",
+             )
+    LOG.info("ImportDjango Addon loaded successfully")
+else:
+    LOG.warn("Prerequiste: Django not installed. ImportDjango function disabled")
+    from gramps.gen.config import config
+    if not config.is_set('importdjango.ignore-django'):
+        from gramps.gen.constfunc import has_display
+        if has_display():
+            from gramps.gui.dialog import MessageHideDialog
+            title = _("django.conf could not be found")
+            message = _("Django Import Addon requires Django 1.7 or greater")
+            #MessageHideDialog(title, message, 'importdjango.ignore-django') # fails with
+            ####################### AttributeError: No such config section name: 'importdjango'
+            ##########################################################
+            from gramps.gui.dialog import ErrorDialog
+            #ErrorDialog(_(title),
+            #            _(message))
 
