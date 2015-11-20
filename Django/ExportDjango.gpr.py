@@ -20,18 +20,67 @@
 # $Id$
 #
 
-register(EXPORT,
-         id                   = "export_django",
-         name                 = _('Django Export'),
-         description          = _('Django is a web framework working on a '
-                                  'configured database'),
-         version = '1.0.29',
-         gramps_target_version= "5.0",
-         status               = STABLE, # not yet tested with python 3
-         export_options_title = _('Django options'),
-         export_options       = 'NoFilenameOptions',
-         export_function      = 'export_all',
-         extension            = "django",
-         fname                = "ExportDjango.py",
-         )
+#------------------------------------------------------------------------
+#
+# Set up logging
+#
+#------------------------------------------------------------------------
+import logging
+LOG = logging.getLogger(".ExportDjango")
+
+#------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#------------------------------------------------------------------------
+
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.sgettext
+
+#------------------------------------------------------------------------
+#
+# Register Addon if prerequisite is present.
+#
+#------------------------------------------------------------------------
+
+available = False
+
+try:
+    from django.conf import settings
+    available = True
+except ImportError:
+    pass
+
+if available:
+    # Load the Addon only if the prerequisite is present.
+    register(EXPORT,
+             id                   = "export_django",
+             name                 = _('Django Export'),
+             description          = _('Django is a web framework working on a '
+                                      'configured database'),
+             version = '1.0.29',
+             gramps_target_version= '5.0',
+             status               = STABLE,
+             export_options_title = _('Django options'),
+             export_options       = 'NoFilenameOptions',
+             export_function      = 'export_all',
+             extension            = "django",
+             fname                = "ExportDjango.py",
+             )
+    LOG.info("ExportDjango Addon loaded successfully")
+else:
+    LOG.warn("Prerequiste: Django not installed. ExportDjango function disabled")
+    from gramps.gen.config import config
+    if not config.is_set('exportdjango.ignore-django'):
+        from gramps.gen.constfunc import has_display
+        if has_display():
+            from gramps.gui.dialog import MessageHideDialog
+            title = _("django.conf could not be found")
+            message = _("Django Export Addon requires Django 1.7 or greater")
+            #MessageHideDialog(title, message, 'exportdjango.ignore-django') # fails with
+            ####################### AttributeError: No such config section name: 'importdjango'
+            ##########################################################
+            from gramps.gui.dialog import ErrorDialog
+            #ErrorDialog(_(title),
+            #            _(message))
 

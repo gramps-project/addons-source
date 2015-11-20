@@ -62,8 +62,8 @@ ngettext = _trans.ngettext
 try:
     from django.conf import settings
 except:
-    ErrorDialog(_('django.conf could not be found'),
-                _('Django Addons require Django 1.3 or greater'))
+    ErrorDialog(_('django.conf could not be found'), 
+                _('Django Addons require Django 1.7 or greater'))
 import gramps.webapp.settings as default_settings
 try:
     settings.configure(default_settings)
