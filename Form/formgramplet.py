@@ -181,23 +181,29 @@ class FormGramplet(Gramplet, DbGUIElement):
         self.callman.register_obj(active_person)
         self.callman.register_handles({'person': [active_person.get_handle()]})
 
-        db = self.dbstate.db
         for event_ref in active_person.get_event_ref_list():
-            if event_ref:
-                event = db.get_event_from_handle(event_ref.ref)
-                if event:
-                    role_text = str(event_ref.role)
-                    place_text = place_displayer.display_event(db, event)
-                    citation = get_form_citation(db, event)
-                    if citation:
-                        source_handle = citation.get_reference_handle()
-                        source = db.get_source_from_handle(source_handle)
-                        source_text = source.get_title()
-                        self.model.append((citation,
-                                          source_text,
-                                          role_text,
-                                          get_date(event),
-                                          place_text))
+            self.add_event_ref(event_ref)
+        for family_handle in active_person.get_family_handle_list():
+            family = self.dbstate.db.get_family_from_handle(family_handle)
+            for event_ref in family.get_event_ref_list():
+                self.add_event_ref(event_ref)
+
+    def add_event_ref(self, event_ref):
+        db = self.dbstate.db
+        event = db.get_event_from_handle(event_ref.ref)
+        if event:
+            role_text = str(event_ref.role)
+            place_text = place_displayer.display_event(db, event)
+            citation = get_form_citation(db, event)
+            if citation:
+                source_handle = citation.get_reference_handle()
+                source = db.get_source_from_handle(source_handle)
+                source_text = source.get_title()
+                self.model.append((citation,
+                                  source_text,
+                                  role_text,
+                                  get_date(event),
+                                  place_text))
 
     def active_changed(self, handle):
         """
