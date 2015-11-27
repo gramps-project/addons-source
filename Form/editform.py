@@ -85,11 +85,7 @@ class EditForm(ManagedWindow):
         self.db = dbstate.db
 
         self.citation = citation
-        items = list(self.db.find_backlink_handles(citation.handle, ['Event']))
-        if items:
-            self.event = self.db.get_event_from_handle(items[0][1])
-        else:
-            self.event = Event()
+        self.event = find_form_event(self.db, self.citation)
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
@@ -1177,3 +1173,18 @@ def set_attribute(citation, event_ref, name, value):
         elif attr.get_value() != value:
             # Update
             attr.set_value(value)
+
+def find_form_event(db, citation):
+    """
+    Given a citation for a form source, find the corresponding event.
+    """
+    handle = citation.get_reference_handle()
+    source = db.get_source_from_handle(handle)
+    form_type = get_form_type(get_form_id(source))
+
+    for item in db.find_backlink_handles(citation.handle, ['Event']):
+        event = db.get_event_from_handle(item[1])
+        if event.get_type().xml_str() == form_type:
+            return event
+
+    return Event()
