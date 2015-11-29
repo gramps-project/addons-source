@@ -278,7 +278,8 @@ def get_form_citation(db, event):
         source_handle = citation.get_reference_handle()
         source = db.get_source_from_handle(source_handle)
         form_id = get_form_id(source)
-        if form_id in get_form_ids():
+        if (form_id in get_form_ids() and
+                event.get_type().xml_str() == get_form_type(form_id)):
             return citation
     return None
         
