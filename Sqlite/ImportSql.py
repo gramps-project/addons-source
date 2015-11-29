@@ -254,7 +254,7 @@ class SQLReader(object):
         return [self.pack_media_ref(sql, result) for result in results]
 
     def get_surname_list(self, sql, handle):
-        results = sql.query("""select * from surname where handle = ?;""", handle)
+        results = sql.query("""select s.* from surname s inner join link l ON l.to_handle = s.handle where l.from_handle = ?;""", handle)
         return [self.pack_surnames(sql, result) for result in results]
 
     def get_note_list(self, sql, from_type, from_handle):
