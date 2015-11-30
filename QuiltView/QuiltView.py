@@ -355,7 +355,9 @@ class QuiltView(NavigationView):
         if handle not in self.people.keys():
             self.rebuild()
         else:
-            self.set_path_lines(self.people[handle])
+            obj = self.people[handle]
+            if obj.x is not None: # not totaly initialized.
+                self.set_path_lines(self.people[handle])
 
         node = self.people[handle]
         if node.x and node.y:        
@@ -438,8 +440,9 @@ class QuiltView(NavigationView):
         Rebuild.
         """
         active = self.get_active()
-        self.people, self.families, self.layers = self.read_data(active)
-        self.canvas.queue_draw()
+        if active != "":
+            self.people, self.families, self.layers = self.read_data(active)
+            self.canvas.queue_draw()
 
     def on_draw(self, canvas, cr):
         """ 
