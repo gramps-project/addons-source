@@ -330,7 +330,7 @@ class QuiltView(NavigationView):
         db.connect('family-add', self.person_rebuild)
         db.connect('family-delete', self.person_rebuild)
         db.connect('family-rebuild', self.person_rebuild)
-        self.bookmarks.update_bookmarks(self.dbstate.db.get_bookmarks())
+        self.bookmarks.update_bookmarks()
         if self.active:
             self.bookmarks.redraw()
         self.build_tree()
@@ -338,9 +338,24 @@ class QuiltView(NavigationView):
     def navigation_type(self):
         return 'Person'
 
+    def add_bookmark(self, handle):
+        if handle:
+            self.uistate.set_active(handle, self.navigation_type())
+            self.bookmarks.add(handle)
+            self.bookmarks.redraw()
+        else:
+            from gramps.gui.dialog import WarningDialog
+            # The following message is already translated
+            WarningDialog(
+                _("Could Not Set a Bookmark"),
+                _("A bookmark could not be set because "
+                  "no one was selected."))
+
     def goto_handle(self, handle=None):
-        if handle not in self.people:
+        if handle not in self.people.keys():
             self.rebuild()
+        else:
+            self.set_path_lines(self.people[handle])
 
         node = self.people[handle]
         if node.x and node.y:        
@@ -616,10 +631,11 @@ class QuiltView(NavigationView):
             if obj:
                 if isinstance(obj, PersonNode):
                     #print("Clicked for", obj.name, "in", obj.x, obj.y)
-                    self.set_path_lines(widget, obj)
+                    self.add_bookmark(obj.handle)
+                    self.set_path_lines(obj)
                 else:
                     #print ('Clicked family')
-                    self.set_path_lines(widget, obj)
+                    self.set_path_lines(obj)
             else:
                 cursor = Gdk.Cursor.new(Gdk.CursorType.FLEUR)
                 self.canvas.get_window().set_cursor(cursor)
@@ -682,7 +698,7 @@ class QuiltView(NavigationView):
         self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
                            obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
 
-    def set_path_lines(self, widget, obj):
+    def set_path_lines(self, obj):
         """
         obj : either a person or a family
         """
