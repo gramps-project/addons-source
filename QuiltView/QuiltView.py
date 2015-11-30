@@ -85,7 +85,7 @@ class Node(object):
 
     def is_at(self, x, y):
         return (self.x < x < self.x + self.width and
-                self.y < y < self.y + self.height)        
+                self.y < y < self.y + self.height)
 
     def draw(self, canvas, cr):
         pass
@@ -137,7 +137,6 @@ class PersonNode(Node):
         cr.move_to(self.x, self.y)
         PangoCairo.show_layout(cr, layout)
 
-
 class FamilyNode(Node):
     def __init__(self, handle, layer, rel_type):
         Node.__init__(self, handle, layer)
@@ -181,7 +180,7 @@ class QuiltView(NavigationView):
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Quilt chart'),
-                                      pdata, dbstate, uistate, 
+                                      pdata, dbstate, uistate,
                                       PersonBookmarks,
                                       nav_group)
 
@@ -291,14 +290,14 @@ class QuiltView(NavigationView):
         at the beginning of the history.
         """
         NavigationView.define_actions(self)
-        
-        self._add_action('FilterEdit',  None, _('Person Filter Editor'), 
+
+        self._add_action('FilterEdit', None, _('Person Filter Editor'),
                         callback=self.filter_editor)
 
     def filter_editor(self, obj):
         from gramps.gui.editors import FilterEditor
         try:
-            FilterEditor('Person', CUSTOM_FILTERS, 
+            FilterEditor('Person', CUSTOM_FILTERS,
                          self.dbstate, self.uistate)
         except WindowActiveError:
             return
@@ -351,6 +350,17 @@ class QuiltView(NavigationView):
                 _("A bookmark could not be set because "
                   "no one was selected."))
 
+    def center_on_node(self, handle):
+        if handle in self.people.keys():
+            node = self.people[handle]
+            if node.x and node.y:
+                hadjustment = self.scrolledwindow.get_hadjustment()
+                vadjustment = self.scrolledwindow.get_vadjustment()
+                hadj = ((node.x - 10 * math.log(node.y) ) * self.scale)
+                vadj = ((node.y - 10 * math.log(node.x) ) * self.scale)
+                self.update_scrollbar_positions(vadjustment, vadj)
+                self.update_scrollbar_positions(hadjustment, hadj)
+
     def goto_handle(self, handle=None):
         if handle not in self.people.keys():
             self.rebuild()
@@ -358,14 +368,6 @@ class QuiltView(NavigationView):
             obj = self.people[handle]
             if obj.x is not None: # not totaly initialized.
                 self.set_path_lines(self.people[handle])
-
-        node = self.people[handle]
-        if node.x and node.y:        
-            hadjustment = self.scrolledwindow.get_hadjustment()
-            vadjustment = self.scrolledwindow.get_vadjustment()
-            hadjustment.set_value(node.x * self.scale)
-            vadjustment.set_value(node.y * self.scale)
-
         self.uistate.modify_statusbar(self.dbstate)
 
     def person_rebuild_bm(self, dummy=None):
@@ -377,12 +379,12 @@ class QuiltView(NavigationView):
         self.rebuild()
 
     def read_data(self, handle):
-        
+
         c = clock()
         people = {}
         families = {}
         layers = {}
-        
+
         todo = [(handle, 0)]
         while todo:
             handle, layer = todo.pop()
@@ -401,12 +403,12 @@ class QuiltView(NavigationView):
                     name = "???"
                     sex = Person.UNKNOWN
                 people[handle] = PersonNode(handle, layer, name, sex)
-                
+
                 for fhandle in person.get_family_handle_list():
                     people[handle].add_main_family(fhandle)
                     if fhandle not in families:
                         todo.append((fhandle, layer + 1))
-        
+
                 for fhandle in person.get_parent_family_handle_list():
                     people[handle].add_family(fhandle)
                     if fhandle not in families:
@@ -434,18 +436,19 @@ class QuiltView(NavigationView):
                         todo.append((parent, layer - 1))
 
         return people, families, layers
-        
+
     def rebuild(self):
-        """ 
+        """
         Rebuild.
         """
         active = self.get_active()
         if active != "":
             self.people, self.families, self.layers = self.read_data(active)
             self.canvas.queue_draw()
+            self.center_on_node(active)
 
     def on_draw(self, canvas, cr):
-        """ 
+        """
         Draw.
         """
         if self.layers is None:
@@ -453,7 +456,7 @@ class QuiltView(NavigationView):
         #c = clock()
 
         cr.scale(self.scale, self.scale)
-        
+
         x = BORDER
         y = BORDER
         # Draw person and family nodes
@@ -519,7 +522,7 @@ class QuiltView(NavigationView):
                 cr.move_to(x2, miny)
                 cr.line_to(x2, family.y)
                 cr.stroke()
- 
+
             maxy = None
             for phandle in family.children:
                 child = self.people[phandle]
@@ -595,10 +598,10 @@ class QuiltView(NavigationView):
     def set_preview_position(self):
         hadj = self.scrolledwindow.get_hadjustment()
         vadj = self.scrolledwindow.get_vadjustment()
-        
+
         x_start = hadj.get_value() / self.scale
         y_start = vadj.get_value() / self.scale
-        
+
         alloc = self.canvas.get_allocation()
         width = alloc.width / self.scale
         height = alloc.height / self.scale
@@ -612,6 +615,8 @@ class QuiltView(NavigationView):
         elif event.direction == Gdk.ScrollDirection.DOWN:
             self.scale /= 1.1
         self.canvas.queue_draw()
+        active = self.get_active()
+        self.center_on_node(active)
         return True
 
     def resized_cb(self, widget, size):
@@ -658,7 +663,7 @@ class QuiltView(NavigationView):
         return False
 
     def release_cb(self, widget, event):
-        if (event.get_button()[1] == 1 and 
+        if (event.get_button()[1] == 1 and
             event.type == Gdk.EventType.BUTTON_RELEASE):
             self.motion_notify_cb(widget, event)
             self.canvas.get_window().set_cursor(None)
@@ -738,3 +743,4 @@ class QuiltView(NavigationView):
             self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
                                obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
             self.canvas.queue_draw()
+            self.center_on_node(obj.handle)
