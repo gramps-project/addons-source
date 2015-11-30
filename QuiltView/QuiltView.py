@@ -646,6 +646,15 @@ class QuiltView(NavigationView):
                 self._last_y = event.y
                 self._in_move = True
                 return True
+        if (event.get_button()[1] == 3 and
+            event.type == Gdk.EventType.BUTTON_PRESS):
+            obj = self.get_object_at(event.x / self.scale,
+                                     event.y / self.scale)
+            if obj:
+                if isinstance(obj, PersonNode):
+                    self.edit_person_cb(event, obj.handle)
+                else:
+                    self.edit_family_cb(event, obj.handle)
         return False
 
     def release_cb(self, widget, event):
