@@ -69,6 +69,7 @@ default_options = {
     # 'birthorder': False,
     'bkref_type': True,
     'inc_gendex': True,
+    'inc_pageconf': True,
     'graphgens': 10,
     'svg_tree_type': DEFAULT_SVG_TREE_TYPE,
     'svg_tree_shape': DEFAULT_SVG_TREE_SHAPE,
@@ -214,6 +215,7 @@ report_list = [
         'inc_places': False,
         'inc_families': False,
         # 'inc_events': False,
+        'inc_pageconf': False,
     },
     'procedures': [
         {

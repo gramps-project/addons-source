@@ -84,13 +84,14 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates
-#TODO: export ISO dates, years in gregorian calendar (get_***_year) ?
 #TODO: Export places hierarchy, and date dependent automatically generated place string
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
+#TODO: configuration page for configuring: number of entries shown in tables, tab/sections, show GID, etc.
+
 
 # For the SVG graph:
 #TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
@@ -603,6 +604,7 @@ class DynamicWebReport(Report):
         self.inc_gendex = self.options['inc_gendex']
         self.sourceauthor = self.options['sourceauthor']
         self.template = self.options['template']
+        self.inc_pageconf = self.options['inc_pageconf']
         self.pages_number = self.options['pages_number']
         # Validate pages number in proper range
         self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
@@ -2070,7 +2072,7 @@ class DynamicWebReport(Report):
         mapstyles = [] #: list of the CSS stylesheets to embed in the HTML pages that show a map
         if (self.options['placemappages'] or self.options['familymappages']):
             if (self.options['mapservice'] == "Google"):
-                mapscripts = ["http://maps.googleapis.com/maps/api/js?sensor=false"]
+                mapscripts = ["http://maps.googleapis.com/maps/api/js"]
             else:
                 mapscripts = ["http://openlayers.org/en/v3.0.0/build/ol.js"]
                 mapstyles = ["http://openlayers.org/en/v3.0.0/css/ol.css"]
@@ -2094,6 +2096,7 @@ class DynamicWebReport(Report):
             ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, dbscripts, [], "printCalendar();"),
+            ("conf.html", _("Configuration"), self.inc_pageconf, True, dbscripts, [], "DwrMain(PAGE_CONF);"),
             # Objects pages
             ("person.html", _("Person"), True, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
             ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
@@ -2295,6 +2298,8 @@ class DynamicWebReport(Report):
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
+        sw.write("HIDE_GID=true;\n")
+        sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
@@ -3879,6 +3884,10 @@ class DynamicWebOptions(MenuReportOptions):
         inc_gendex.set_help(_('Whether to include a GENDEX file or not'))
         addopt("inc_gendex", inc_gendex)
 
+        inc_pageconf = BooleanOption(_("Enable page configuration"), False)
+        inc_pageconf.set_help(_( "Whether to enable page configuration"))
+        addopt('inc_pageconf', inc_pageconf)
+
 
     def __add_trees_options(self, menu):
         category_name = _("Trees")
@@ -3981,8 +3990,8 @@ class DynamicWebOptions(MenuReportOptions):
             PAGE_HOME,
             PAGE_INDEX,
             PAGE_SVG_TREE,
-            # PAGE_CALENDAR,
             # PAGE_STATISTICS,
+            # PAGE_CALENDAR,
         ] + [PAGE_CUSTOM + i for i in range (NB_CUSTOM_PAGES)
         ] + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
 
