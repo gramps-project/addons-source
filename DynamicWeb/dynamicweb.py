@@ -84,15 +84,14 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates
-#TODO: export ISO dates, years in gregorian calendar (get_***_year) ?
-#TODO: Export places hierarchy, and date dependent automatically generated place string
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
 #TODO: Calendar page (see web calendar and calendar report)
-#TODO: approximate search, which includes all the fields (attributes, notes, etc.) and not only titles and names
+#TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
 
 # For the SVG graph:
+#TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
 #TODO: Refactor: the scaling should be performed by SVG transform
 #TODO: very small texts not printed properly
 #TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
@@ -209,7 +208,10 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.narrativeweb import first_letter
+from gramps.plugins.webreport.narrativeweb import (
+    first_letter,
+    STREET, LOCALITY, CITY, PARISH, COUNTY, STATE, POSTAL, COUNTRY, PHONE,
+)
 
 from gramps.gen.utils.place import conv_lat_lon
 
@@ -602,6 +604,7 @@ class DynamicWebReport(Report):
         self.inc_gendex = self.options['inc_gendex']
         self.sourceauthor = self.options['sourceauthor']
         self.template = self.options['template']
+        self.inc_pageconf = self.options['inc_pageconf']
         self.pages_number = self.options['pages_number']
         # Validate pages number in proper range
         self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
@@ -1424,11 +1427,21 @@ class DynamicWebReport(Report):
             "// 'P' is sorted by place name\n"
             "// 'P' gives for each media object:\n"
             "//   - gid: Gramps ID\n"
-            "//   - name: The place name\n"
-            "//   - locations: The place locations parts for the main and alternate names, in the form:\n"
-            "//       (index 0 is main name, others are for alternate names)\n"
-            "//       [street, locality, parish, city, state, county, zip, country]\n"
-            "//   - coords: The coordinates [latitude, longitude]\n\n"
+            "//   - name: The place long name\n"
+            "//   - names: list of place names in the form {name, date, date_sdn} (empty for version 4.0 and below)\n"
+            "//   - type: The place type ('' for version 4.0 and below)\n"
+            "//   - locations: The place locations parts for the main and alternate names (empty for version 4.1 and above), in the form:\n"
+            "//         [{\n"
+            "//         type: type as a string ('street', 'locality', 'parish', 'city', 'state', 'county', etc.)\n"
+            "//         name: name as a string\n"
+            "//         }]\n"
+            "//   - enclosed_by: List of places enclosing this place (empty for version 4.0 and below), in the form:\n"
+            "//         {\n"
+            "//         pdx: place index (in table 'P')\n"
+            "//         date, date_sdn\n"
+            "//         }\n"
+            "//   - coords: The coordinates [latitude, longitude]\n"
+            "//   - code: The place code\n"
             "//   - note: The place notes\n"
             "//   - media: A list of the place media references, in the form:\n"
             "//       - m_idx: media index (in table 'M')\n"
@@ -1442,6 +1455,7 @@ class DynamicWebReport(Report):
             "//   - bki: A list of the person index (in table 'I') for events referencing this place\n"
             "//     (including the persons directly referencing this place)\n"
             "//   - bkf: A list of the family index (in table 'F') for events referencing this place\n"
+            "//   - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)\n"
             "P = ")
         jdatas = []
         place_list = list(self.obj_dict[Place])
@@ -1455,42 +1469,65 @@ class DynamicWebReport(Report):
             if (not self.inc_places):
                 jdatas.append(jdata)
                 continue
-            locations = []
-            if (DWR_VERSION_410):
-                ml = get_main_location(self.database, place)
-                loc = Location()
-                loc.street = ml.get(PlaceType.STREET, '')
-                loc.locality = ml.get(PlaceType.LOCALITY, '')
-                loc.city = ml.get(PlaceType.CITY, '')
-                loc.parish = ml.get(PlaceType.PARISH, '')
-                loc.county = ml.get(PlaceType.COUNTY, '')
-                loc.state = ml.get(PlaceType.STATE, '')
-                loc.postal = place.get_code()
-                loc.country = ml.get(PlaceType.COUNTRY, '')
-                locations.append(loc)
+            if DWR_VERSION_410:
+                jdata['type'] = str(place.get_type())
             else:
+                jdata['type'] = ''
+            jdata['names'] = []
+            if DWR_VERSION_410:
+                pref_lang = config.get('preferences.place-lang')
+                for pn in place.get_all_names():
+                    lang = pn.get_language()
+                    if lang != '' and pref_lang!= '' and lang != pref_lang: continue
+                    date = format_date(pn.get_date_object())
+                    date_sdn = pn.get_date_object().get_sort_value()
+                    jdata['names'].append({
+                        'name': pn.get_value(),
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    })
+            jdata['locations'] = []
+            if not DWR_VERSION_410:
+                locations = []
                 if (place.main_loc):
                     ml = place.get_main_location()
                     if (ml and not ml.is_empty()): locations.append(ml)
-            altloc = place.get_alternate_locations()
-            if (altloc):
-                altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
-                locations += altloc
-            loctabs = []
-            for loc in locations:
-                loctab = [
-                    loc.street,
-                    loc.locality,
-                    loc.city,
-                    loc.parish,
-                    loc.county,
-                    loc.state,
-                    loc.postal,
-                    loc.country,
-                ]
-                loctab = [(data or "") for data in loctab]
-                loctabs.append(loctab)
-            jdata['locations'] = loctabs
+                altloc = place.get_alternate_locations()
+                if (altloc):
+                    altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
+                    locations += altloc
+                for loc in locations:
+                    jdataloc = []
+                    for (label, data) in [
+                        (STREET, loc.street),
+                        (LOCALITY, loc.locality), 
+                        (CITY, loc.city),
+                        (PARISH, loc.parish),
+                        (COUNTY, loc.county),
+                        (STATE, loc.state),
+                        (POSTAL, loc.postal),
+                        (COUNTRY, loc.country),
+                        (PHONE, loc.phone)
+                    ]:  
+                        if not data or data == '': continue
+                        jdataloc.append({
+                            'type': label,
+                            'name': data,
+                        })
+                    jdata['locations'].append(jdataloc)
+            jdata['enclosed_by'] = []
+            if DWR_VERSION_410:
+                for ref in place.get_placeref_list():
+                    placeref_handle = ref.get_reference_handle()
+                    if placeref_handle not in self.obj_dict[Place]: continue
+                    date = format_date(ref.get_date_object())
+                    date_sdn = ref.get_date_object().get_sort_value()
+                    enc = {
+                        'pdx': self.obj_dict[Place][placeref_handle][OBJDICT_INDEX],
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    }
+                    jdata['enclosed_by'].append(enc)
             latitude = place.get_latitude()
             longitude = place.get_longitude()
             if (latitude and longitude):
@@ -1498,6 +1535,7 @@ class DynamicWebReport(Report):
             else:
                 coords = ("", "")
             jdata['coords'] = coords
+            jdata['code'] = place.get_code()
             # Get place notes
             jdata['note'] = self.get_notes_text(place)
             # Get place media
@@ -1509,6 +1547,10 @@ class DynamicWebReport(Report):
             # Get back references
             jdata['bki'] = self._data_bkref_index(Place, place_handle, Person)
             jdata['bkf'] = self._data_bkref_index(Place, place_handle, Family)
+            if DWR_VERSION_410:
+                jdata['bkp'] = self._data_bkref_index(Place, place_handle, Place)
+            else:
+                jdata['bkp'] = []
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -2069,7 +2111,7 @@ class DynamicWebReport(Report):
         mapstyles = [] #: list of the CSS stylesheets to embed in the HTML pages that show a map
         if (self.options['placemappages'] or self.options['familymappages']):
             if (self.options['mapservice'] == "Google"):
-                mapscripts = ["http://maps.googleapis.com/maps/api/js?sensor=false"]
+                mapscripts = ["http://maps.googleapis.com/maps/api/js"]
             else:
                 mapscripts = ["http://openlayers.org/en/v3.0.0/build/ol.js"]
                 mapstyles = ["http://openlayers.org/en/v3.0.0/css/ol.css"]
@@ -2093,6 +2135,7 @@ class DynamicWebReport(Report):
             ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, dbscripts, [], "printCalendar();"),
+            ("conf.html", _("Configuration"), self.inc_pageconf, True, dbscripts, [], "DwrMain(PAGE_CONF);"),
             # Objects pages
             ("person.html", _("Person"), True, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
             ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
@@ -2182,6 +2225,10 @@ class DynamicWebReport(Report):
         """
         sw = StringIO()
         sw.write("// This file is generated\n\n")
+        sw.write("DWR_VERSION_410 = " + ("true" if (DWR_VERSION_410) else "false") + ";\n")
+        sw.write("DWR_VERSION_412 = " + ("true" if (DWR_VERSION_412) else "false") + ";\n")
+        sw.write("DWR_VERSION_420 = " + ("true" if (DWR_VERSION_420) else "false") + ";\n")
+        sw.write("DWR_VERSION_500 = " + ("true" if (DWR_VERSION_500) else "false") + ";\n")
         sw.write("TITLE = \"%s\";\n" % script_escape(self.title))
         sw.write("NB_GENERATIONS_MAX = %i;\n" % int(self.options["graphgens"]))
         sw.write("PAGES_FILE = [")
@@ -2294,6 +2341,8 @@ class DynamicWebReport(Report):
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
+        sw.write("HIDE_GID=true;\n")
+        sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
@@ -2302,14 +2351,11 @@ class DynamicWebReport(Report):
             ("(sort by quantity)", _("(sort by quantity)")),
             (": activate to sort column ascending", _(": activate to sort column ascending")),
             (": activate to sort column descending", _(": activate to sort column descending")),
-            ("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.", _("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.")),
             ("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>", _("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>")),
             ("Abbreviation", _("Abbreviation")),
             ("Address", _("Address")),
             ("Addresses", _("Addresses")),
-            ("Age at death and number of deaths depending on place", _("Age at death and number of deaths depending on place")),
             ("Age at death", _("Age at death")),
-            ("Age at marriage", _("Age at marriage")),
             ("Alternate Marriage", _("Alternate Marriage")),
             ("Alternate Name", _("Alternate Name")),
             ("Ancestors", _("Ancestors")),
@@ -2317,44 +2363,28 @@ class DynamicWebReport(Report):
             ("Attribute", _("Attribute")),
             ("Attributes", _("Attributes")),
             ("Author", _("Author")),
-            ("Average", _("Average")),
             ("Background", _("Background")),
             ("Baptism", _("Baptism")),
-            ("Bar chart", _("Bar chart")),
-            ("Birth date", _("Birth date")),
-            ("Birth day in year", _("Birth day in year")),
-            ("Birth place", _("Birth place")),
             ("Birth", _("Birth")),
-            ("Bubble chart", _("Bubble chart")),
             ("Burial", _("Burial")),
             ("Call Name", _("Call Name")),
             ("Call Number", _("Call Number")),
             ("Cause Of Death", _("Cause Of Death")),
-            ("Chart type", _("Chart type")),
             ("Children", _("Children")),
             ("Christening", _("Christening")),
-            ("Church Parish", _("Church Parish")),
             ("Citation", _("Citation")),
             ("Citations", _("Citations")),
-            ("City", _("City")),
             ("Click on the map to show it full-screen", _("Click on the map to show it full-screen")),
+            ("Code", _("Code")),
             ("Configuration", _("Configuration")),
             ("Configure", _("Configure")),
             ("Count", _("Count")),
-            ("Country", _("Country")),
-            ("County", _("County")),
             ("Cremation", _("Cremation")),
-            ("Data used to split into series", _("Data used to split into series")),
-            ("Data used", _("Data used")),
             ("Date", _("Date")),
-            ("Death date", _("Death date")),
-            ("Death day in year", _("Death day in year")),
-            ("Death place", _("Death place")),
             ("Death", _("Death")),
             ("Descendants", _("Descendants")),
             ("Description", _("Description")),
-            ("Donut chart", _("Donut chart")),
-            ("Enable click on chart", _("Enable click on chart")),
+            ("Enclosed By", _("Enclosed By")),
             ("Engagement", _("Engagement")),
             ("Event", _("Event")),
             ("Events", _("Events")),
@@ -2363,52 +2393,45 @@ class DynamicWebReport(Report):
             ("Families", _("Families")),
             ("Family Nick Name", _("Family Nick Name")),
             ("Father", _("Father")),
-            ("Father's age at marriage", _("Father's age at marriage")),
             ("Female", _("Female")),
             ("File ready", _("File ready")),
-            ("Filter", _("Filter")),
             ("Gender", _("Gender")),
-            ("GRAMPS ID", _("GRAMPS ID")),
-            ("Chart coloring", _("Chart coloring")),
-            ("Graph help", _("Graph help")),
+            ("Include Place map on Place Pages", _("Include Place map on Place Pages")),
+            ("Include a column for birth dates on the index pages", _("Include a column for birth dates on the index pages")),
+            ("Include a column for death dates on the index pages", _("Include a column for death dates on the index pages")),
+            ("Include a column for marriage dates on the index pages", _("Include a column for marriage dates on the index pages")),
+            ("Include a column for parents on the index pages", _("Include a column for parents on the index pages")),
+            ("Include a column for partners on the index pages", _("Include a column for partners on the index pages")),
+            ("Include a map in the individuals and family pages", _("Include a map in the individuals and family pages")),
+            ("Include half and/ or step-siblings on the individual pages", _("Include half and/ or step-siblings on the individual pages")),
+            ("Include references in indexes", _("Include references in indexes")),
             ("Indexes", _("Indexes")),
             ("Individuals", _("Individuals")),
+            ("Insert sources author in the sources title", _("Insert sources author in the sources title")),
             ("Latitude", _("Latitude")),
-            ("Line chart", _("Line chart")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
-            ("Locality", _("Locality")),
             ("Location", _("Location")),
             ("Longitude", _("Longitude")),
             ("Male", _("Male")),
             ("Map", _("Map")),
-            ("Marriage date", _("Marriage date")),
-            ("Marriage day in year", _("Marriage day in year")),
-            ("Marriage place", _("Marriage place")),
             ("Marriage", _("Marriage")),
             ("Maximize", _("Maximize")),
-            ("Maximum", _("Maximum")),
             ("Media Index", _("Media Index")),
             ("Media Type", _("Media Type")),
             ("Media", _("Media")),
-            ("Minimum", _("Minimum")),
             ("Mother", _("Mother")),
-            ("Mother's age at marriage", _("Mother's age at marriage")),
             ("Name", _("Name")),
             ("Nick Name", _("Nick Name")),
             ("No data available in table", _("No data available in table")),
             ("No matches found", _("No matches found")),
-            ("No matching data", _("No matching data")),
             ("No matching records found", _("No matching records found")),
             ("No matching surname.", _("No matching surname.")),
             ("None", _("None")),
             ("Notes", _("Notes")),
-            ("Number of children depending on parents age at marriage", _("Number of children depending on parents age at marriage")),
-            ("Number of children per family", _("Number of children per family")),
-            ("Number of children", _("Number of children")),
+            ("Number of entries in the tables", _("Number of entries in the tables")),
             ("OK", _("OK")),
-            ("Opacity", _("Opacity")),
-            ("Parent for how many families", _("Parent for how many families")),
+            ("Other participants", _("Other participants")),
             ("Parents", _("Parents")),
             ("Path", _("Path")),
             ("Person page", _("Person page")),
@@ -2416,12 +2439,9 @@ class DynamicWebReport(Report):
             ("Person", _("Person")),
             ("Persons Index", _("Persons Index")),
             ("Persons", _("Persons")),
-            ("Phone", _("Phone")),
-            ("Pie chart", _("Pie chart")),
             ("Place", _("Place")),
             ("Places Index", _("Places Index")),
             ("Places", _("Places")),
-            ("Postal Code", _("Postal Code")),
             ("Preparing file ...", _("Preparing file ...")),
             ("Processing...", _("Processing...")),
             ("Publication information", _("Publication information")),
@@ -2432,10 +2452,12 @@ class DynamicWebReport(Report):
             ("Repositories", _("Repositories")),
             ("Repository", _("Repository")),
             ("Restore", _("Restore")),
+            ("SVG tree children distribution", _("SVG tree children distribution")),
+            ("SVG tree graph shape", _("SVG tree graph shape")),
+            ("SVG tree graph type", _("SVG tree graph type")),
+            ("SVG tree parents distribution", _("SVG tree parents distribution")),
             ("Save tree as file", _("Save tree as file")),
-            ("Scatter chart", _("Scatter chart")),
             ("Search:", _("Search:")),
-            ("See chart", _("See chart")),
             ("Select the background color scheme", _("Select the background color scheme")),
             ("Select the children distribution (fan charts only)", _("Select the children distribution (fan charts only)")),
             ("Select the number of ascending generations", _("Select the number of ascending generations")),
@@ -2452,24 +2474,16 @@ class DynamicWebReport(Report):
             ("Source", _("Source")),
             ("Sources Index", _("Sources Index")),
             ("Sources", _("Sources")),
-            ("Spouses age at marriage", _("Spouses age at marriage")),
-            ("Spouses surnames", _("Spouses surnames")),
             ("Spouses", _("Spouses")),
-            ("State/ Province", _("State/ Province")),
-            ("Statistics Charts", _("Statistics Charts")),
-            ("Street", _("Street")),
-            ("Sum", _("Sum")),
+            ("Suppress Gramps ID", _("Suppress Gramps ID")),
             ("Surname", _("Surname")),
             ("Surnames Index", _("Surnames Index")),
             ("Surnames", _("Surnames")),
-            ("SVG tree children distribution", _("SVG tree children distribution")),
-            ("SVG tree graph shape", _("SVG tree graph shape")),
-            ("SVG tree graph type", _("SVG tree graph type")),
-            ("SVG tree parents distribution", _("SVG tree parents distribution")),
             ("Title", _("Title")),
             ("Type", _("Type")),
             ("Unknown", _("Unknown")),
-            ("Use the search box above in order to find a person.<br>Women are listed with their birth name.", _("Use the search box above in order to find a person.<br>Women are listed with their birth name.")),
+            ("Use tabbed panels instead of sections", _("Use tabbed panels instead of sections")),
+            ("Use the search box above in order to find a person.", _("Use the search box above in order to find a person.")),
             ("Used for family", _("Used for family")),
             ("Used for media", _("Used for media")),
             ("Used for person", _("Used for person")),
@@ -2480,14 +2494,9 @@ class DynamicWebReport(Report):
             ("Web Links", _("Web Links")),
             ("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
             ("Without surname", _("Without surname")),
-            ("X-axis data", _("X-axis data")),
-            ("X-axis function", _("X-axis function")),
-            ("Y-axis data", _("Y-axis data")),
-            ("Y-axis function", _("Y-axis function")),
-            ("Z-axis data", _("Z-axis data")),
-            ("Z-axis function", _("Z-axis function")),
             ("Zoom in", _("Zoom in")),
             ("Zoom out", _("Zoom out")),
+            ("all", _("all")),
         ):
             sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
             sep = ",\n"
@@ -2502,6 +2511,10 @@ class DynamicWebReport(Report):
             ("URLTYPE_WEB_HOME = %i;\n" % UrlType.WEB_HOME) +
             ("URLTYPE_WEB_SEARCH = %i;\n" % UrlType.WEB_SEARCH) +
             ("URLTYPE_WEB_FTP = %i;\n" % UrlType.WEB_FTP))
+        for placetype in (
+            'STREET', 'LOCALITY', 'CITY', 'PARISH', 'COUNTY', 'STATE', 'POSTAL', 'COUNTRY', 'PHONE',
+        ):
+            sw.write("%s = \"%s\";" % (placetype, globals()[placetype]))
         self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
 
@@ -3311,7 +3324,6 @@ class DynamicWebReport(Report):
         Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
         # Check if event reference already added
-        refs = []
         if (event_handle in self.bkref_dict[Event]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Event][event_handle]]
             # The event reference is already recorded
@@ -3356,25 +3368,33 @@ class DynamicWebReport(Report):
             self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
 
-    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None):
+    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None, place_ref = None):
         """
         Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
+        # Check if place reference already added
+        if (place_handle in self.bkref_dict[Place]):
+            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
+            # The place reference is already recorded
+            if (place_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
-            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
+            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
         # Check if the place is already added
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
         place = self.database.get_place_from_handle(place_handle)
         if (DWR_VERSION_412):
             place_name = _pd.display(self.database, place)
-
         else:
             place_name = place.get_title()
         self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
-
         if (self.inc_places):
+            # Enclosing places
+            if DWR_VERSION_410:
+                for place_ref2 in place.get_placeref_list():
+                    place_handle2 = place_ref2.get_reference_handle()
+                    self._add_place(place_handle2, Place, place_handle, place_ref2)
             # Place citations
             for citation_handle in place.get_citation_list():
                 self._add_citation(citation_handle, Place, place_handle)
@@ -3441,7 +3461,6 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_gallery): return
         # Check if media reference already added
-        refs = []
         if (media_handle in self.bkref_dict[MediaObject]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[MediaObject][media_handle]]
             # The media reference is already recorded
@@ -3475,7 +3494,6 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_repositories): return
         # Check if repository reference already added
-        refs = []
         if (repo_handle in self.bkref_dict[Repository]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Repository][repo_handle]]
             # The repository reference is already recorded
@@ -3880,6 +3898,10 @@ class DynamicWebOptions(MenuReportOptions):
         inc_gendex.set_help(_('Whether to include a GENDEX file or not'))
         addopt("inc_gendex", inc_gendex)
 
+        inc_pageconf = BooleanOption(_("Enable page configuration"), False)
+        inc_pageconf.set_help(_( "Whether to enable page configuration"))
+        addopt('inc_pageconf', inc_pageconf)
+
 
     def __add_trees_options(self, menu):
         category_name = _("Trees")
@@ -3973,7 +3995,7 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Pages selection")
         addopt = partial(menu.add_option, category_name)
 
-        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES) + 1, 1, NB_TOTAL_PAGES_MAX)
+        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES), 1, NB_TOTAL_PAGES_MAX)
         self.__pages_number.set_help(_("Number pages in the web site menu."))
         addopt("pages_number", self.__pages_number)
         self.__pages_number.connect("value-changed", self.__pages_contents_changed)
@@ -3982,8 +4004,8 @@ class DynamicWebOptions(MenuReportOptions):
             PAGE_HOME,
             PAGE_INDEX,
             PAGE_SVG_TREE,
-            # PAGE_CALENDAR,
             # PAGE_STATISTICS,
+            # PAGE_CALENDAR,
         ] + [PAGE_CUSTOM + i for i in range (NB_CUSTOM_PAGES)
         ] + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
 

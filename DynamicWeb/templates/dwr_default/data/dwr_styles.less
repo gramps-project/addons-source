@@ -96,10 +96,24 @@ li p
 
 /*===================================================== Menu */
 
-.navbar-brand  img
+.navbar-brand img
 {
 	max-width:100%;
 	max-height:100%;
+}
+
+.dwr-navbar-toggle-enabled
+{
+	@media (max-width: @grid-float-breakpoint-max) {
+		display: none !important;
+	}
+}
+
+.dwr-navbar-toggle-disabled
+{
+	@media (min-width: @grid-float-breakpoint) {
+		display: none !important;
+	}
 }
 
 
