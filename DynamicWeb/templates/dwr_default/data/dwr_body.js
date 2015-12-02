@@ -347,6 +347,7 @@ function BuildSearchString(params)
 	params = (typeof(params) !== 'undefined') ? params : {};
 	var s = '';
 	page = window.location.href.replace(/\?.*/, '').replace(toRoot, '£££').replace(/.*£££/, '');
+	if (page == 'conf.html') page = search.P;
 	s = SetURLParameter(s, 'p', params.P, page, '');
 
 	s = SetURLParameter(s, 'stxt', params.Txt, search.Txt, '');
