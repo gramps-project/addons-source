@@ -1430,50 +1430,81 @@ function printSourceCitations(s)
 //========================================================== Places
 //=================================================================
 
+function placeNames(pdx)
+{
+	var p = P[pdx]
+	if (p.names.length == 0) return('');
+	var names = []
+	for (var j = 0; j < p.names.length; j++)
+	{
+		var txt = p.names[j].name;
+		if (p.names[j].date != '') txt += ' (' + p.names[j].date + ')';
+		names.push(txt);
+	}
+	return(names.join(', '));
+}
+
+function placeHierarchy(enclosed_by, visited)
+{
+	if (enclosed_by.length == 0) return('');
+	var txt = '<ul>';
+	for (var j = 0; j < enclosed_by.length; j++)
+	{
+		var pdx = enclosed_by[j].pdx;
+		if ($.inArray(pdx, visited) != -1) continue;
+		txt += '<li class="dwr-attr-value">';
+		txt += '<a href="' + placeHref(pdx) + '">'
+		txt += placeNames(pdx);
+		txt += '</a>';
+		if (enclosed_by[j].date != '') txt += ' (' + enclosed_by[j].date + ')';
+		txt += placeHierarchy(P[pdx].enclosed_by, $.merge($.merge([], visited), [pdx]))
+		txt += '</li>';
+	}
+	txt += '</ul>';
+	return(txt);
+}
+
 function printPlace(pdx)
 {
 	var p = P[pdx]
 	var html = '';
-	var parts = [
-		_('Street'),
-		_('Locality'),
-		_('City'),
-		_('Church Parish'),
-		_('County'),
-		_('State/ Province'),
-		_('Postal Code'),
-		_('Country'),
-		_('Latitude'),
-		_('Longitude')
-	];
 	placeLink(pdx);
 	var name = p.name;
 	if (name == '') name = locationString(p.locations);
 	html += '<h2 class="page-header">' + name + gidBadge(P[pdx]) + citaLinks(p.cita) + '</h2>';
-	var j, k;
-	for (j = 0; j < p.locations.length; j++)
+	if (p.names.length > 0)
 	{
-		if (p.locations.length > 1)
-		{
-			if (j == 0) html += '<p>' + _('Location') + ': </p>';
-			else html += '<p>' + _('Alternate Name') + ' ' + j + ': </p>';
-		}
+		html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Name') + ':</span> ';
+		html += placeNames(pdx);
+		html += '</p>';
+	}
+	if (p.type != '') html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Type') + ':</span> ' + p.type + '</p>';
+	if (p.code != '') html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Code') + ':</span> ' + p.code + '</p>';
+	if (p.coords[0] != '' && p.coords[1] != '')
+		html +=
+			'<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Latitude') + ':</span> ' + p.coords[0] + '</p>' +
+			'<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Longitude') + ':</span> ' + p.coords[1] + '</p>';
+	for (var j = 0; j < p.locations.length; j++)
+	{
+		html += '<p class="dwr-attr-title">';
+		if (j == 0) html += _('Location');
+		else html += _('Alternate Name') + ' ' + j;
+		html += ': </p><ul>';
 		var loc = p.locations[j];
-		loc[8] = p.coords[0];
-		loc[9] = p.coords[1];
-		html += '<table class="table table-condensed table-bordered dwr-table-flat">';
-		for (k = 0; k < parts.length / 2; k ++)
+		for (var k = 0; k < loc.length; k ++)
 		{
-			html += '<tr><th class="dwr-attr-header">' + parts[k] + '</th>';
-			html += '<td class="dwr-attr-value">' + loc[k] + '</td>';
-			html += '<th class="dwr-attr-header">' + parts[k + parts.length / 2] + '</th>';
-			html += '<td class="dwr-attr-value">' + loc[k + parts.length / 2] + '</td></tr>';
+			html += '<li class="dwr-attr-value"><span class="dwr-attr-title">' + loc.type + ':</span> ' + loc.name + '</li>';
 		}
-		html += '</table>';
+		html += '</ul>';
+	}
+	if (p.enclosed_by.length > 0)
+	{
+		html += '<p class="dwr-attr-title">' + _('Enclosed By') + ':</p';
+		html += placeHierarchy(p.enclosed_by, [pdx]);
 	}
 
 	// Back references
-	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], [], []);
+	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], p.bkp, []);
 
 	html += printTitle(3, [].concat(
 		urlsTable(p.urls),
@@ -1991,11 +2022,13 @@ function htmlSourcesIndex(data)
 }
 
 
-function printPlacesIndexColText(data, x, col)
+function printPlacesIndexColText(data, x, field)
 {
 	var pdx = data[x];
 	if (P[pdx].locations.length == 0) return('');
-	return(P[pdx].locations[0][8 - col]);
+	P[pdx].locations[0]
+	if (typeof(P[pdx].locations[0][field]) == 'undefined') return('');
+	return(P[pdx].locations[0][field]);
 }
 
 function printPlacesIndexColCoord(pdx, col)
@@ -2030,30 +2063,6 @@ function htmlPlacesIndex(data)
 		fhref: function(x) {return(placeHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
-		title: _('Country'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('Postal Code'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('State/ Province'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('County'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Church Parish'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('City'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Locality'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Street'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
 			if (P[data[x]].coords[0] == '') return('');
@@ -2065,7 +2074,28 @@ function htmlPlacesIndex(data)
 			if (P[data[x]].coords[1] == '') return('');
 			return(Number(P[data[x]].coords[1]));
 		}
+	}, {
+		title: _('Type'),
+		ftext: function(x, col) {return(P[data[x]].type);}
+	}, {
+		title: _('Code'),
+		ftext: function(x, col) {return(P[data[x]].code);}
+	}, {
+		title: STATE,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, STATE));}
+	}, {
+		title: COUNTRY,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, COUNTRY));}
+	}, {
+		title: POSTAL,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, POSTAL));}
 	}];
+	if (search.IndexShowBkrefType) columns.push({
+		title: _('Enclosed By'),
+		ftext: function(x, col) {
+			return(($.map(P[data[x]].enclosed_by, function(enc) {return(placeNames(enc.pdx));})).join('<br>'));
+			}
+	});
 	if (search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], 'bki', I, 'name'));},

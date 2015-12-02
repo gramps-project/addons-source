@@ -84,14 +84,11 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates
-#TODO: Export places hierarchy, and date dependent automatically generated place string
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
 #TODO: Calendar page (see web calendar and calendar report)
 #TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
-#TODO: configuration page for configuring: number of entries shown in tables, tab/sections, show GID, etc.
-
 
 # For the SVG graph:
 #TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
@@ -211,7 +208,10 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.narrativeweb import first_letter
+from gramps.plugins.webreport.narrativeweb import (
+    first_letter,
+    STREET, LOCALITY, CITY, PARISH, COUNTY, STATE, POSTAL, COUNTRY, PHONE,
+)
 
 from gramps.gen.utils.place import conv_lat_lon
 
@@ -1427,11 +1427,21 @@ class DynamicWebReport(Report):
             "// 'P' is sorted by place name\n"
             "// 'P' gives for each media object:\n"
             "//   - gid: Gramps ID\n"
-            "//   - name: The place name\n"
-            "//   - locations: The place locations parts for the main and alternate names, in the form:\n"
-            "//       (index 0 is main name, others are for alternate names)\n"
-            "//       [street, locality, parish, city, state, county, zip, country]\n"
-            "//   - coords: The coordinates [latitude, longitude]\n\n"
+            "//   - name: The place long name\n"
+            "//   - names: list of place names in the form {name, date, date_sdn} (empty for version 4.0 and below)\n"
+            "//   - type: The place type ('' for version 4.0 and below)\n"
+            "//   - locations: The place locations parts for the main and alternate names (empty for version 4.1 and above), in the form:\n"
+            "//         [{\n"
+            "//         type: type as a string ('street', 'locality', 'parish', 'city', 'state', 'county', etc.)\n"
+            "//         name: name as a string\n"
+            "//         }]\n"
+            "//   - enclosed_by: List of places enclosing this place (empty for version 4.0 and below), in the form:\n"
+            "//         {\n"
+            "//         pdx: place index (in table 'P')\n"
+            "//         date, date_sdn\n"
+            "//         }\n"
+            "//   - coords: The coordinates [latitude, longitude]\n"
+            "//   - code: The place code\n"
             "//   - note: The place notes\n"
             "//   - media: A list of the place media references, in the form:\n"
             "//       - m_idx: media index (in table 'M')\n"
@@ -1445,6 +1455,7 @@ class DynamicWebReport(Report):
             "//   - bki: A list of the person index (in table 'I') for events referencing this place\n"
             "//     (including the persons directly referencing this place)\n"
             "//   - bkf: A list of the family index (in table 'F') for events referencing this place\n"
+            "//   - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)\n"
             "P = ")
         jdatas = []
         place_list = list(self.obj_dict[Place])
@@ -1458,42 +1469,65 @@ class DynamicWebReport(Report):
             if (not self.inc_places):
                 jdatas.append(jdata)
                 continue
-            locations = []
-            if (DWR_VERSION_410):
-                ml = get_main_location(self.database, place)
-                loc = Location()
-                loc.street = ml.get(PlaceType.STREET, '')
-                loc.locality = ml.get(PlaceType.LOCALITY, '')
-                loc.city = ml.get(PlaceType.CITY, '')
-                loc.parish = ml.get(PlaceType.PARISH, '')
-                loc.county = ml.get(PlaceType.COUNTY, '')
-                loc.state = ml.get(PlaceType.STATE, '')
-                loc.postal = place.get_code()
-                loc.country = ml.get(PlaceType.COUNTRY, '')
-                locations.append(loc)
+            if DWR_VERSION_410:
+                jdata['type'] = str(place.get_type())
             else:
+                jdata['type'] = ''
+            jdata['names'] = []
+            if DWR_VERSION_410:
+                pref_lang = config.get('preferences.place-lang')
+                for pn in place.get_all_names():
+                    lang = pn.get_language()
+                    if lang != '' and pref_lang!= '' and lang != pref_lang: continue
+                    date = format_date(pn.get_date_object())
+                    date_sdn = pn.get_date_object().get_sort_value()
+                    jdata['names'].append({
+                        'name': pn.get_value(),
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    })
+            jdata['locations'] = []
+            if not DWR_VERSION_410:
+                locations = []
                 if (place.main_loc):
                     ml = place.get_main_location()
                     if (ml and not ml.is_empty()): locations.append(ml)
-            altloc = place.get_alternate_locations()
-            if (altloc):
-                altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
-                locations += altloc
-            loctabs = []
-            for loc in locations:
-                loctab = [
-                    loc.street,
-                    loc.locality,
-                    loc.city,
-                    loc.parish,
-                    loc.county,
-                    loc.state,
-                    loc.postal,
-                    loc.country,
-                ]
-                loctab = [(data or "") for data in loctab]
-                loctabs.append(loctab)
-            jdata['locations'] = loctabs
+                altloc = place.get_alternate_locations()
+                if (altloc):
+                    altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
+                    locations += altloc
+                for loc in locations:
+                    jdataloc = []
+                    for (label, data) in [
+                        (STREET, loc.street),
+                        (LOCALITY, loc.locality), 
+                        (CITY, loc.city),
+                        (PARISH, loc.parish),
+                        (COUNTY, loc.county),
+                        (STATE, loc.state),
+                        (POSTAL, loc.postal),
+                        (COUNTRY, loc.country),
+                        (PHONE, loc.phone)
+                    ]:  
+                        if not data or data == '': continue
+                        jdataloc.append({
+                            'type': label,
+                            'name': data,
+                        })
+                    jdata['locations'].append(jdataloc)
+            jdata['enclosed_by'] = []
+            if DWR_VERSION_410:
+                for ref in place.get_placeref_list():
+                    placeref_handle = ref.get_reference_handle()
+                    if placeref_handle not in self.obj_dict[Place]: continue
+                    date = format_date(ref.get_date_object())
+                    date_sdn = ref.get_date_object().get_sort_value()
+                    enc = {
+                        'pdx': self.obj_dict[Place][placeref_handle][OBJDICT_INDEX],
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    }
+                    jdata['enclosed_by'].append(enc)
             latitude = place.get_latitude()
             longitude = place.get_longitude()
             if (latitude and longitude):
@@ -1501,6 +1535,7 @@ class DynamicWebReport(Report):
             else:
                 coords = ("", "")
             jdata['coords'] = coords
+            jdata['code'] = place.get_code()
             # Get place notes
             jdata['note'] = self.get_notes_text(place)
             # Get place media
@@ -1512,6 +1547,10 @@ class DynamicWebReport(Report):
             # Get back references
             jdata['bki'] = self._data_bkref_index(Place, place_handle, Person)
             jdata['bkf'] = self._data_bkref_index(Place, place_handle, Family)
+            if DWR_VERSION_410:
+                jdata['bkp'] = self._data_bkref_index(Place, place_handle, Place)
+            else:
+                jdata['bkp'] = []
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -2186,6 +2225,10 @@ class DynamicWebReport(Report):
         """
         sw = StringIO()
         sw.write("// This file is generated\n\n")
+        sw.write("DWR_VERSION_410 = " + ("true" if (DWR_VERSION_410) else "false") + ";\n")
+        sw.write("DWR_VERSION_412 = " + ("true" if (DWR_VERSION_412) else "false") + ";\n")
+        sw.write("DWR_VERSION_420 = " + ("true" if (DWR_VERSION_420) else "false") + ";\n")
+        sw.write("DWR_VERSION_500 = " + ("true" if (DWR_VERSION_500) else "false") + ";\n")
         sw.write("TITLE = \"%s\";\n" % script_escape(self.title))
         sw.write("NB_GENERATIONS_MAX = %i;\n" % int(self.options["graphgens"]))
         sw.write("PAGES_FILE = [")
@@ -2461,7 +2504,6 @@ class DynamicWebReport(Report):
             ("Spouses", _("Spouses")),
             ("State/ Province", _("State/ Province")),
             ("Statistics Charts", _("Statistics Charts")),
-            ("Street", _("Street")),
             ("Sum", _("Sum")),
             ("Surname", _("Surname")),
             ("Surnames Index", _("Surnames Index")),
@@ -2506,6 +2548,10 @@ class DynamicWebReport(Report):
             ("URLTYPE_WEB_HOME = %i;\n" % UrlType.WEB_HOME) +
             ("URLTYPE_WEB_SEARCH = %i;\n" % UrlType.WEB_SEARCH) +
             ("URLTYPE_WEB_FTP = %i;\n" % UrlType.WEB_FTP))
+        for placetype in (
+            'STREET', 'LOCALITY', 'CITY', 'PARISH', 'COUNTY', 'STATE', 'POSTAL', 'COUNTRY', 'PHONE',
+        ):
+            sw.write("%s = \"%s\";" % (placetype, globals()[placetype]))
         self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
 
@@ -3315,7 +3361,6 @@ class DynamicWebReport(Report):
         Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
         # Check if event reference already added
-        refs = []
         if (event_handle in self.bkref_dict[Event]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Event][event_handle]]
             # The event reference is already recorded
@@ -3360,25 +3405,33 @@ class DynamicWebReport(Report):
             self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
 
-    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None):
+    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None, place_ref = None):
         """
         Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
+        # Check if place reference already added
+        if (place_handle in self.bkref_dict[Place]):
+            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
+            # The place reference is already recorded
+            if (place_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
-            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
+            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
         # Check if the place is already added
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
         place = self.database.get_place_from_handle(place_handle)
         if (DWR_VERSION_412):
             place_name = _pd.display(self.database, place)
-
         else:
             place_name = place.get_title()
         self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
-
         if (self.inc_places):
+            # Enclosing places
+            if DWR_VERSION_410:
+                for place_ref2 in place.get_placeref_list():
+                    place_handle2 = place_ref2.get_reference_handle()
+                    self._add_place(place_handle2, Place, place_handle, place_ref2)
             # Place citations
             for citation_handle in place.get_citation_list():
                 self._add_citation(citation_handle, Place, place_handle)
@@ -3445,7 +3498,6 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_gallery): return
         # Check if media reference already added
-        refs = []
         if (media_handle in self.bkref_dict[MediaObject]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[MediaObject][media_handle]]
             # The media reference is already recorded
@@ -3479,7 +3531,6 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_repositories): return
         # Check if repository reference already added
-        refs = []
         if (repo_handle in self.bkref_dict[Repository]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Repository][repo_handle]]
             # The repository reference is already recorded
