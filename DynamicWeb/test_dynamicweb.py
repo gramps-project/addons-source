@@ -268,7 +268,7 @@ class DynamicWebTests(unittest.TestCase):
             ("dwr_db_sour.js", r"S *= *", 4),
             ("dwr_db_media.js", r"M *= *", 4),
             ("dwr_db_repo.js", r"R *= *", 3),
-            ("dwr_db_place.js", r"P *= *", 16),
+            ("dwr_db_place.js", r"P *= *", 37),
         ]:
             path = os.path.join(self.results_path, "test_000", filename)
             jf = codecs.open(path, "r", encoding = "UTF-8")
