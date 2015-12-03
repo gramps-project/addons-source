@@ -429,16 +429,6 @@ function SvgConfPage()
 	html += '</div>'; // panel-body
 	html += '</div>'; // svg-drawing-type
 
-	// Help panel
-	html += '<div class="panel panel-default">';
-	html += '<div class="panel-heading">';
-	html += '<span class="glyphicon glyphicon-question-sign"></span> ' + _('Graph help');
-	html += '</div>'; // panel-heading
-	html += '<div class="panel-body">';
-	html += _('<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.');
-	html += '</div>'; // panel-body
-	html += '</div>'; // panel
-
 	// Events
 	$(window).load(function() {
 		$('#svg-config-ok').click(SvgConfSubmit);

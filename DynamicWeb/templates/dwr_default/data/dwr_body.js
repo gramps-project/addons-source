@@ -138,6 +138,8 @@ function innerDivNetSize(size, div)
 // The BuildSearchString function builds the URL search string from the variables below
 
 var search = {
+	//P; // Previous page
+	//=========================================== Data
 	//Txt; // Test of the search input form (in the navbar or embedded in the page)
 	//Idx; // Index of the current person (in table "I")
 	//Fdx; // Index of the current family (in table "F")
@@ -152,6 +154,9 @@ var search = {
 	//Sgid; // Gramps ID of the current source
 	//Pgid; // Gramps ID of the current place
 	//Rgid; // Gramps ID of the current repository
+	//ImgList; // List of media index (in table "M") for the slideshow
+	//MapExpanded; // Whether the map should be expanded to full screen
+	//=========================================== SVG tree
 	//SvgType; // Type of SVG graph used
 	//SvgShape; // The SVG graph shape
 	//Asc; // Number of ascending generations
@@ -161,8 +166,29 @@ var search = {
 	//SvgBackground; // The SVG graph color scheme
 	//SvgDup; // Show duplicates in SVG graph
 	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
-	//ImgList; // List of media index (in table "M") for the slideshow
-	//MapExpanded; // Whether the map should be expanded to full screen
+	//=========================================== Configuration parameters
+	//IndexShowBirth;
+	//IndexShowDeath;
+	//IndexShowMarriage;
+	//IndexShowPartner;
+	//IndexShowParents;
+	//IndexShowBkrefType;
+	//ShowAllSiblings;
+	//IncEvents;
+	//IncFamilies;
+	//IncSources;
+	//IncMedia;
+	//IncPlaces;
+	//IncRepositories;
+	//IncNotes;
+	//IncAddresses;
+	//MapPlace;
+	//MapFamily;
+	//SourceAuthorInTitle;
+	//TabbedPanels;
+	//HideGid;
+	//NbEntries;
+	//=========================================== Chart
 	//ChartTable; // Data table for the statistics chart
 	//ChartType; // Type of statistics chart
 	//ChartDataW; // Data extractor, Series
@@ -202,6 +228,8 @@ function ParseSearchString()
 	// Parse the URL search string
 	if (searchInitialized) return;
 	searchInitialized = true;
+	search.P = GetURLParameter('p', '');
+
 	search.Txt = GetURLParameter('stxt', '');
 	search.Idx = GetURLParameter('idx', -1);
 	search.Fdx = GetURLParameter('fdx', -1);
@@ -216,6 +244,10 @@ function ParseSearchString()
 	search.Sgid = GetURLParameter('sgid', '');
 	search.Pgid = GetURLParameter('pgid', '');
 	search.Rgid = GetURLParameter('rgid', '');
+	search.ImgList = GetURLParameter('simg', []);
+	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
+	search.MapExpanded = GetURLParameter('mexp', false);
+
 	search.Asc = GetURLParameter('sasc', 4);
 	search.Dsc = GetURLParameter('sdsc', 4);
 	search.SvgType = GetURLParameter('svgtype', SVG_TREE_TYPE);
@@ -225,9 +257,29 @@ function ParseSearchString()
 	search.SvgBackground = GetURLParameter('svgbk', SVG_TREE_BACKGROUND);
 	search.SvgDup = GetURLParameter('svgdup', SVG_TREE_SHOW_DUP);
 	search.SvgExpanded = GetURLParameter('svgx', false);
-	search.ImgList = GetURLParameter('simg', []);
-	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
-	search.MapExpanded = GetURLParameter('mexp', false);
+
+	search.IndexShowBirth = GetURLParameter('cii', INDEX_SHOW_BIRTH);
+	search.IndexShowDeath = GetURLParameter('cid', INDEX_SHOW_DEATH);
+	search.IndexShowMarriage = GetURLParameter('cim', INDEX_SHOW_MARRIAGE);
+	search.IndexShowPartner = GetURLParameter('cis', INDEX_SHOW_PARTNER);
+	search.IndexShowParents = GetURLParameter('cip', INDEX_SHOW_PARENTS);
+	search.IndexShowBkrefType = GetURLParameter('cib', INDEX_SHOW_BKREF_TYPE);
+	search.ShowAllSiblings = GetURLParameter('csib', SHOW_ALL_SIBLINGS);
+	search.IncEvents = GetURLParameter('ce', INC_EVENTS);
+	search.IncFamilies = GetURLParameter('cf', INC_FAMILIES);
+	search.IncSources = GetURLParameter('cs', INC_SOURCES);
+	search.IncMedia = GetURLParameter('cm', INC_MEDIA);
+	search.IncPlaces = GetURLParameter('cp', INC_PLACES);
+	search.IncRepositories = GetURLParameter('cr', INC_REPOSITORIES);
+	search.IncNotes = GetURLParameter('cn', INC_NOTES);
+	search.IncAddresses = GetURLParameter('ca', INC_ADDRESSES);
+	search.MapPlace = GetURLParameter('cmp', MAP_PLACE);
+	search.MapFamily = GetURLParameter('cmf', MAP_FAMILY);
+	search.SourceAuthorInTitle = GetURLParameter('csa', SOURCE_AUTHOR_IN_TITLE);
+	search.TabbedPanels = GetURLParameter('ctp', TABBED_PANELS);
+	search.HideGid = GetURLParameter('cg', HIDE_GID);
+	search.NbEntries = GetURLParameter('cne', 0);
+
 	search.ChartTable = GetURLParameter('charttable', 0);
 	search.ChartType = GetURLParameter('charttype', 0);
 	search.ChartDataW = GetURLParameter('chartw', EXTRACTOR_DISABLED);
@@ -294,6 +346,10 @@ function BuildSearchString(params)
 	// "params" has the same structure as "search"
 	params = (typeof(params) !== 'undefined') ? params : {};
 	var s = '';
+	page = window.location.href.replace(/\?.*/, '').replace(toRoot, '£££').replace(/.*£££/, '');
+	if (page == 'conf.html') page = search.P;
+	s = SetURLParameter(s, 'p', params.P, page, '');
+
 	s = SetURLParameter(s, 'stxt', params.Txt, search.Txt, '');
 	s = SetURLParameter(s, 'idx', params.Idx, search.Idx, -1);
 	s = SetURLParameter(s, 'fdx', params.Fdx, search.Fdx, -1);
@@ -308,6 +364,9 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'sgid', params.Sgid, search.Sgid, '');
 	s = SetURLParameter(s, 'pgid', params.Pgid, search.Pgid, '');
 	s = SetURLParameter(s, 'rgid', params.Rgid, search.Rgid, '');
+	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
+	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
+
 	s = SetURLParameter(s, 'sasc', params.Asc, search.Asc, 4);
 	s = SetURLParameter(s, 'sdsc', params.Dsc, search.Dsc, 4);
 	s = SetURLParameter(s, 'svgtype', params.SvgType, search.SvgType, SVG_TREE_TYPE);
@@ -317,8 +376,29 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'svgbk', params.SvgBackground, search.SvgBackground, SVG_TREE_BACKGROUND);
 	s = SetURLParameter(s, 'svgdup', params.SvgDup, search.SvgDup, SVG_TREE_SHOW_DUP);
 	s = SetURLParameter(s, 'svgx', params.SvgExpanded, search.SvgExpanded, false);
-	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
-	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
+
+	s = SetURLParameter(s, 'cii', params.IndexShowBirth, search.IndexShowBirth, INDEX_SHOW_BIRTH);
+	s = SetURLParameter(s, 'cid', params.IndexShowDeath, search.IndexShowDeath, INDEX_SHOW_DEATH);
+	s = SetURLParameter(s, 'cim', params.IndexShowMarriage, search.IndexShowMarriage, INDEX_SHOW_MARRIAGE);
+	s = SetURLParameter(s, 'cis', params.IndexShowPartner, search.IndexShowPartner, INDEX_SHOW_PARTNER);
+	s = SetURLParameter(s, 'cip', params.IndexShowParents, search.IndexShowParents, INDEX_SHOW_PARENTS);
+	s = SetURLParameter(s, 'cib', params.IndexShowBkrefType, search.IndexShowBkrefType, INDEX_SHOW_BKREF_TYPE);
+	s = SetURLParameter(s, 'csib', params.ShowAllSiblings, search.ShowAllSiblings, SHOW_ALL_SIBLINGS);
+	s = SetURLParameter(s, 'ce', params.IncEvents, search.IncEvents, INC_EVENTS);
+	s = SetURLParameter(s, 'cf', params.IncFamilies, search.IncFamilies, INC_FAMILIES);
+	s = SetURLParameter(s, 'cs', params.IncSources, search.IncSources, INC_SOURCES);
+	s = SetURLParameter(s, 'cm', params.IncMedia, search.IncMedia, INC_MEDIA);
+	s = SetURLParameter(s, 'cp', params.IncPlaces, search.IncPlaces, INC_PLACES);
+	s = SetURLParameter(s, 'cr', params.IncRepositories, search.IncRepositories, INC_REPOSITORIES);
+	s = SetURLParameter(s, 'cn', params.IncNotes, search.IncNotes, INC_NOTES);
+	s = SetURLParameter(s, 'ca', params.IncAddresses, search.IncAddresses, INC_ADDRESSES);
+	s = SetURLParameter(s, 'cmp', params.MapPlace, search.MapPlace, MAP_PLACE);
+	s = SetURLParameter(s, 'cmf', params.MapFamily, search.MapFamily, MAP_FAMILY);
+	s = SetURLParameter(s, 'csa', params.SourceAuthorInTitle, search.SourceAuthorInTitle, SOURCE_AUTHOR_IN_TITLE);
+	s = SetURLParameter(s, 'ctp', params.TabbedPanels, search.TabbedPanels, TABBED_PANELS);
+	s = SetURLParameter(s, 'cg', params.HideGid, search.HideGid, HIDE_GID);
+	s = SetURLParameter(s, 'cne', params.NbEntries, search.NbEntries, 0);
+
 	s = SetURLParameter(s, 'charttable', params.ChartTable, search.ChartTable, 0);
 	s = SetURLParameter(s, 'charttype', params.ChartType, search.ChartType, 0);
 	s = SetURLParameter(s, 'chartw', params.ChartDataW, search.ChartDataW, EXTRACTOR_DISABLED);
@@ -452,6 +532,10 @@ function BuildMenu()
 	txt_form1 += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	txt_form1 += '</div>';
 	txt_form1 += '</div>';
+	if (INC_PAGECONF)
+	{
+		txt_form1 += ' <button type="button" id="dwr-conf" class="btn btn-default dwr-navbar-toggle-enabled" onclick="window.location.href=\'' + (toRoot + 'conf.html?' + BuildSearchString()) + '\';"><span class="glyphicon glyphicon-cog"></span></button>';
+	}
 	txt_form1 += '</form>';
 	txt_form1 += '</div>';
 	
@@ -494,6 +578,10 @@ function BuildMenu()
 		{
 			txt_menu += '<li' + addclass + '><a href="' + toRoot + PAGES_FILE[i] + '?' +  BuildSearchString() + '">' + PAGES_TITLE[i] + '</a></li>';
 		}
+	}
+	if (INC_PAGECONF)
+	{
+		txt_menu += '<li class="dwr-navbar-toggle-disabled"><a href="' + toRoot + 'conf.html' + '?' +  BuildSearchString() + '">' + _('Configuration') + '</a></li>';
 	}
 	txt_menu += '</ul>';
 	txt_menu += txt_form1;

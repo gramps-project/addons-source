@@ -30,23 +30,29 @@ EVENTS_MARR = [_('Marriage'), _('Engagement'), _('Alternate Marriage')];
 EVENTS_DEATH = [_('Death'), _('Burial'), _('Cremation'), _('Cause Of Death')];
 
 
+// Number of entries in the tables
+A_LENGTH_MENU = [[10, 50, 100, 500, 1000, -1], [10, 50, 100, 500, 1000, _('all')]]
+
+
 //=================================================================
 //======================================================= Constants
 //=================================================================
 
 // Type of the page
-PAGE_INDI = 1;
-PAGE_FAM = 2;
-PAGE_SOURCE = 3;
-PAGE_MEDIA = 4;
-PAGE_PLACE = 5;
-PAGE_REPO = 6;
-PAGE_SEARCH = 7;
-PAGE_SVG_TREE = 10;
-PAGE_SVG_TREE_FULL = 11;
-PAGE_SVG_TREE_CONF = 12;
-PAGE_SVG_TREE_SAVE = 13;
-PAGE_STATISTICS = 14;
+var i = 1;
+PAGE_INDI = i++;
+PAGE_FAM = i++;
+PAGE_SOURCE = i++;
+PAGE_MEDIA = i++;
+PAGE_PLACE = i++;
+PAGE_REPO = i++;
+PAGE_SEARCH = i++;
+PAGE_CONF = i++;
+PAGE_SVG_TREE = i++;
+PAGE_SVG_TREE_FULL = i++;
+PAGE_SVG_TREE_CONF = i++;
+PAGE_SVG_TREE_SAVE = i++;
+PAGE_STATISTICS = i++;
 
 
 //=================================================================
@@ -320,22 +326,23 @@ function isDuplicate(idx)
 //================================= Text for individuals / families
 //=================================================================
 
-function indiShortLinked(idx)
-{
-	return('<a href="' + indiHref(idx) + '">' + I[idx].short_name + '</a>');
-}
-
-
 function indiLinked(idx, citations)
 {
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
 	var txt = I[idx].name + ' (' + I[idx].birth_year + '-' + I[idx].death_year + ')';
-	if (citations) txt += ' ' + citaLinks(I[idx].cita);
+	txt += gidBadge(I[idx]);
+	if (citations) txt += citaLinks(I[idx].cita);
 	if (idx != search.Idx || PageContents != PAGE_INDI)
 		txt = '<a href="' + indiHref(idx) + '">' + txt + '</a>';
 	return(txt);
 }
 
+function gidBadge(o)
+{
+	var txt = '';
+	if (!search.HideGid) txt = ' <span class="dwr-gid badge">' + o.gid + '</span>';
+	return(txt);
+}
 
 GENDERS_TEXT = {
 	'M': _('Male'),
@@ -359,7 +366,7 @@ function indiDetails(i)
 		var name = i.names[x_name];
 		var name_full = name.full;
 		if (name.date != '') name_full += ' (' + name.date + ')';
-		if (name.cita.length > 0) name_full += ' ' + citaLinks(name.cita);
+		if (name.cita.length > 0) name_full += citaLinks(name.cita);
 		txt += '<tr><td class="dwr-attr-title">' + name.type + '</td><td colspan="2" class="dwr-attr-value">' + name_full + '</td></tr>';
 		if (name.nick != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Nick Name') + '</td><td class="dwr-attr-value">' + name.nick + '</td></tr>';
 		if (name.call != '') txt += '<tr><td class="empty"></td><td class="dwr-attr-title">' + _('Call Name') + '</td><td class="dwr-attr-value">' + name.call + '</td></tr>';
@@ -377,7 +384,8 @@ function famLinked(fdx, citations)
 {
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
 	var txt =F[fdx].name;
-	if (citations) txt += ' ' + citaLinks(F[fdx].cita);
+	txt += gidBadge(F[fdx]);
+	if (citations) txt += citaLinks(F[fdx].cita);
 	if (INC_FAMILIES && (fdx != search.Fdx || PageContents != PAGE_FAM))
 		txt = '<a href="' + famHref(fdx) + '">' + txt + '</a>';
 	return(txt);
@@ -423,7 +431,7 @@ function eventTable(events, idx, fdx)
 	{
 		var e = events[j];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + e.type + ' ' + citaLinks(e.cita) + '</td>';
+		txt += '<td class="dwr-attr-title">' + e.type + citaLinks(e.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + e.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + placeLink(e.place, idx, fdx, e) + '</td>';
 		var notes = [];
@@ -480,7 +488,7 @@ function addrsTable(addrs)
 	{
 		var addr = addrs[x_addr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + ' ' + citaLinks(addr.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + locationString(addr.location) + citaLinks(addr.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + addr.date + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(addr.note, '<p>') + '</td>';
 		txt += '</tr>';
@@ -508,7 +516,7 @@ function attrsTable(attrs)
 	{
 		var a = attrs[x_attr];
 		txt += '<tr>';
-		txt += '<td class="dwr-attr-title">' + a.type + ' ' + citaLinks(a.cita) + '</td>';
+		txt += '<td class="dwr-attr-title">' + a.type + citaLinks(a.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + a.value + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(a.note, '<p>') + '</td>';
 		txt += '</tr>';
@@ -563,7 +571,7 @@ function assocsTable(assocs)
 		var assoc = assocs[x_assoc];
 		txt += '<tr>';
 		txt += '<td class="dwr-attr-value">' + indiLinked(assoc.person, false) + '</td>';
-		txt += '<td class="dwr-attr-value">' + assoc.relationship + ' ' + citaLinks(assoc.cita) + '</td>';
+		txt += '<td class="dwr-attr-value">' + assoc.relationship + citaLinks(assoc.cita) + '</td>';
 		txt += '<td class="dwr-attr-value">' + notePara(assoc.note, '<p>') + '</td>';
 		txt += '</tr>';
 	}
@@ -708,7 +716,7 @@ function citationBullet(x2)
 function sourName(sdx)
 {	
 	var title = '';
-	if (SOURCE_AUTHOR_IN_TITLE && S[sdx].author != '') title = S[sdx].author;
+	if (search.SourceAuthorInTitle && S[sdx].author != '') title = S[sdx].author;
 	if (S[sdx].title != '')
 	{
 		if (title != '') title += ': ';
@@ -785,7 +793,7 @@ function printTitle(level, contents, collapsible, is_tabbeb)
 	if (contents.length == 0) return('');
 	if (typeof(is_tabbeb) == 'undefined') is_tabbeb = false;
 	if (typeof(collapsible) == 'undefined') collapsible = (level >= 1);
-	is_tabbeb = is_tabbeb && collapsible && TABBED_PANELS;
+	is_tabbeb = is_tabbeb && collapsible && search.TabbedPanels;
 	var html = '';
 	if (is_tabbeb)
 	{
@@ -887,7 +895,8 @@ function handleTitles()
 function printIndi(idx)
 {
 	var html = '';
-	html += '<h2 class="page-header">' + I[idx].name + ' ' + citaLinks(I[idx].cita) + '</h2>';
+	html += '<h2 class="page-header">' + I[idx].name + gidBadge(I[idx]) + citaLinks(I[idx].cita) + '</h2>';
+
 	html += indiDetails(I[idx]);
 	html += printTitle(3, [].concat(
 		eventTable(I[idx].events, idx, -1),
@@ -905,7 +914,7 @@ function printIndi(idx)
 			title: _('Descendants'),
 			text: printIndiDescendants(idx)
 		}],
-		printMap(MAP_FAMILY),
+		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 	return(html);
@@ -1056,7 +1065,7 @@ function printChildRef(fc)
 {
 	var txt = '';
 	txt += indiLinked(fc.index);
-	txt += ' ' + citaLinks(fc.cita);
+	txt += citaLinks(fc.cita);
 	if (fc.note != '') txt += '<p><b>' + _('Notes') + ':</b></p>' + notePara(fc.note, '</p>');
 	rel = fc.to_father;
 	title = _('Relationship to Father');
@@ -1075,7 +1084,7 @@ function printChildRef(fc)
 function printFam(fdx)
 {
 	var html = '';
-	html += '<h2 class="page-header">' + famLinked(fdx) + '</h2>';
+	html += '<h2 class="page-header">' + F[fdx].name + gidBadge(F[fdx]) + citaLinks(F[fdx].cita) + '</h2>';
 	html += printTitle(3, [].concat(
 		eventTable(F[fdx].events, -1, fdx),
 		attrsTable(F[fdx].attr),
@@ -1089,7 +1098,7 @@ function printFam(fdx)
 			title: _('Children'),
 			text: printFamChildren(fdx)
 		}],
-		printMap(MAP_FAMILY),
+		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 	return(html);
@@ -1195,7 +1204,7 @@ function printMedia(mdx)
 	var m = M[mdx];
 	var title = m.title;
 	if (title == '') title = m.gramps_path;
-	html += '<h2 class="page-header">' + title + ' ' + citaLinks(m.cita) + '</h2>';
+	html += '<h2 class="page-header">' + title + gidBadge(M[mdx]) + citaLinks(m.cita) + '</h2>';
 	
 	// Pagination buttons
 	if (search.ImgList.length > 1)
@@ -1369,7 +1378,7 @@ function printSource(sdx)
 {
 	var html = '';
 	var s = S[sdx];
-	if (s.title != '') html += '<h2 class="page-header">' + s.title + '</h2>';
+	if (s.title != '') html += '<h2 class="page-header">' + s.title + gidBadge(S[sdx]) + '</h2>';
 	if (s.text != '') html += s.text;
 
 	// Repositories for this source
@@ -1421,56 +1430,87 @@ function printSourceCitations(s)
 //========================================================== Places
 //=================================================================
 
+function placeNames(pdx)
+{
+	var p = P[pdx]
+	if (p.names.length == 0) return('');
+	var names = []
+	for (var j = 0; j < p.names.length; j++)
+	{
+		var txt = p.names[j].name;
+		if (p.names[j].date != '') txt += ' (' + p.names[j].date + ')';
+		names.push(txt);
+	}
+	return(names.join(', '));
+}
+
+function placeHierarchy(enclosed_by, visited)
+{
+	if (enclosed_by.length == 0) return('');
+	var txt = '<ul>';
+	for (var j = 0; j < enclosed_by.length; j++)
+	{
+		var pdx = enclosed_by[j].pdx;
+		if ($.inArray(pdx, visited) != -1) continue;
+		txt += '<li class="dwr-attr-value">';
+		txt += '<a href="' + placeHref(pdx) + '">'
+		txt += placeNames(pdx);
+		txt += '</a>';
+		if (enclosed_by[j].date != '') txt += ' (' + enclosed_by[j].date + ')';
+		txt += placeHierarchy(P[pdx].enclosed_by, $.merge($.merge([], visited), [pdx]))
+		txt += '</li>';
+	}
+	txt += '</ul>';
+	return(txt);
+}
+
 function printPlace(pdx)
 {
 	var p = P[pdx]
 	var html = '';
-	var parts = [
-		_('Street'),
-		_('Locality'),
-		_('City'),
-		_('Church Parish'),
-		_('County'),
-		_('State/ Province'),
-		_('Postal Code'),
-		_('Country'),
-		_('Latitude'),
-		_('Longitude')
-	];
 	placeLink(pdx);
 	var name = p.name;
 	if (name == '') name = locationString(p.locations);
-	html += '<h2 class="page-header">' + name + ' ' + citaLinks(p.cita) + '</h2>';
-	var j, k;
-	for (j = 0; j < p.locations.length; j++)
+	html += '<h2 class="page-header">' + name + gidBadge(P[pdx]) + citaLinks(p.cita) + '</h2>';
+	if (p.names.length > 0)
 	{
-		if (p.locations.length > 1)
-		{
-			if (j == 0) html += '<p>' + _('Location') + ': </p>';
-			else html += '<p>' + _('Alternate Name') + ' ' + j + ': </p>';
-		}
+		html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Name') + ':</span> ';
+		html += placeNames(pdx);
+		html += '</p>';
+	}
+	if (p.type != '') html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Type') + ':</span> ' + p.type + '</p>';
+	if (p.code != '') html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Code') + ':</span> ' + p.code + '</p>';
+	if (p.coords[0] != '' && p.coords[1] != '')
+		html +=
+			'<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Latitude') + ':</span> ' + p.coords[0] + '</p>' +
+			'<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Longitude') + ':</span> ' + p.coords[1] + '</p>';
+	for (var j = 0; j < p.locations.length; j++)
+	{
+		html += '<p class="dwr-attr-title">';
+		if (j == 0) html += _('Location');
+		else html += _('Alternate Name') + ' ' + j;
+		html += ': </p><ul>';
 		var loc = p.locations[j];
-		loc[8] = p.coords[0];
-		loc[9] = p.coords[1];
-		html += '<table class="table table-condensed table-bordered dwr-table-flat">';
-		for (k = 0; k < parts.length / 2; k ++)
+		for (var k = 0; k < loc.length; k ++)
 		{
-			html += '<tr><th class="dwr-attr-header">' + parts[k] + '</th>';
-			html += '<td class="dwr-attr-value">' + loc[k] + '</td>';
-			html += '<th class="dwr-attr-header">' + parts[k + parts.length / 2] + '</th>';
-			html += '<td class="dwr-attr-value">' + loc[k + parts.length / 2] + '</td></tr>';
+			html += '<li class="dwr-attr-value"><span class="dwr-attr-title">' + loc.type + ':</span> ' + loc.name + '</li>';
 		}
-		html += '</table>';
+		html += '</ul>';
+	}
+	if (p.enclosed_by.length > 0)
+	{
+		html += '<p class="dwr-attr-title">' + _('Enclosed By') + ':</p';
+		html += placeHierarchy(p.enclosed_by, [pdx]);
 	}
 
 	// Back references
-	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], [], []);
+	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, p.bki, p.bkf, [], [], p.bkp, []);
 
 	html += printTitle(3, [].concat(
 		urlsTable(p.urls),
 		mediaSection(p.media),
 		noteSection(p.note),
-		printMap(MAP_PLACE),
+		printMap(search.MapPlace),
 		sourceSection(),
 		strToContents(_('References'), bk_txt)),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -1486,7 +1526,7 @@ function printRepo(rdx)
 {
 	var r = R[rdx]
 	var html = '';
-	html += '<h2 class="page-header">' + r.name + '</h2>';
+	html += '<h2 class="page-header">' + r.name + gidBadge(R[rdx]) + '</h2>';
 	html += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Type') + ': </span>'
 	html += r.type + '</p>';
 	
@@ -1515,8 +1555,6 @@ function printIndex(data, defaultsort, columns)
 {
 	// var time = Date.now();
 	var j, k;
-	ParseSearchString();
-	ManageSearchStringGids();
 	
 	// Compute data
 	// (optimization: copy data in another array in order to call functions ftext, fsort, fhref only once)
@@ -1637,6 +1675,8 @@ function printIndex(data, defaultsort, columns)
 				'order': defaultsort,
 				'info': false,
 				'responsive': true,
+				'iDisplayLength': A_LENGTH_MENU[0][search.NbEntries],
+				'aLengthMenu': A_LENGTH_MENU,
 				'columns': colDefs,
 				'data': data_copy,
 				'dom':
@@ -1680,6 +1720,8 @@ function printIndex(data, defaultsort, columns)
 
 function printPersonsIndex(data)
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlPersonsIndex(data));
 }
 function htmlPersonsIndex(data)
@@ -1700,15 +1742,15 @@ function htmlPersonsIndex(data)
 		title: _('Gender'),
 		ftext: function(x, col) {return(I[data[x]].gender);}
 	}];
-	if (INDEX_SHOW_BIRTH) columns.push({
+	if (search.IndexShowBirth) columns.push({
 		title: _('Birth'),
 		ftext: function(x, col) {return(I[data[x]].birth_year);}
 	});
-	if (INDEX_SHOW_DEATH) columns.push({
+	if (search.IndexShowDeath) columns.push({
 		title: _('Death'),
 		ftext: function(x, col) {return(I[data[x]].death_year);}
 	});
-	if (INDEX_SHOW_PARTNER) columns.push({
+	if (search.IndexShowPartner) columns.push({
 		title: _('Spouses'),
 		ftext: function(x, col) {
 			var txt = '';
@@ -1730,7 +1772,7 @@ function htmlPersonsIndex(data)
 		},
 		fsort: false
 	});
-	if (INDEX_SHOW_PARENTS) columns.push({
+	if (search.IndexShowParents) columns.push({
 		title: _('Parents'),
 		ftext: function(x, col) {
 			var txt = '';
@@ -1776,6 +1818,8 @@ function printIndexSpouseIdx(fdx, col)
 
 function printFamiliesIndex()
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlFamiliesIndex());
 }
 function htmlFamiliesIndex(data)
@@ -1798,7 +1842,7 @@ function htmlFamiliesIndex(data)
 		fhref: function(x) {return(famHref(data[x]));},
 		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col));}
 	}];
-	if (INDEX_SHOW_MARRIAGE) columns.push({
+	if (search.IndexShowMarriage) columns.push({
 		title: _('Marriage'),
 		ftext: function(x, col) {return(F[data[x]].marr_year);}
 	});
@@ -1858,6 +1902,8 @@ function indexBkrefName(type, referenced_object, bk_field, objects, name_prop)
 
 function printMediaIndex(data)
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlMediaIndex(data));
 }
 function htmlMediaIndex(data)
@@ -1890,22 +1936,22 @@ function htmlMediaIndex(data)
 		ftext: function(x, col) {return(M[data[x]].date);},
 		fsort: function(x, col) {return(M[data[x]].date_sdn);}
 	}];
-	if (INDEX_SHOW_BKREF_TYPE) columns.push({
+	if (search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
+	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bkf', F, 'name'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
+	if (search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bks', S, 'title'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
+	if (search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, M[data[x]], 'bkp', P, 'name'));},
 		fsort: false
@@ -1917,6 +1963,8 @@ function htmlMediaIndex(data)
 
 function printSourcesIndex(data)
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlSourcesIndex(data));
 }
 function htmlSourcesIndex(data)
@@ -1949,22 +1997,22 @@ function htmlSourcesIndex(data)
 		fhref: function(x) {return(sourceHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}];
-	if (INDEX_SHOW_BKREF_TYPE) columns.push({
+	if (search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
+	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkf', F, 'name'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_MEDIA) columns.push({
+	if (search.IndexShowBkrefType && INC_MEDIA) columns.push({
 		title: _('Used for media'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkm', M, 'title'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_PLACES) columns.push({
+	if (search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, S[data[x]], 'bkp', P, 'name'));},
 		fsort: false
@@ -1974,11 +2022,13 @@ function htmlSourcesIndex(data)
 }
 
 
-function printPlacesIndexColText(data, x, col)
+function printPlacesIndexColText(data, x, field)
 {
 	var pdx = data[x];
 	if (P[pdx].locations.length == 0) return('');
-	return(P[pdx].locations[0][8 - col]);
+	P[pdx].locations[0]
+	if (typeof(P[pdx].locations[0][field]) == 'undefined') return('');
+	return(P[pdx].locations[0][field]);
 }
 
 function printPlacesIndexColCoord(pdx, col)
@@ -1994,6 +2044,8 @@ function printPlacesIndexColCoord(pdx, col)
 
 function printPlacesIndex(data)
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlPlacesIndex(data));
 }
 function htmlPlacesIndex(data)
@@ -2011,30 +2063,6 @@ function htmlPlacesIndex(data)
 		fhref: function(x) {return(placeHref(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
-		title: _('Country'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('Postal Code'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('State/ Province'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('County'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Church Parish'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
-		title: _('City'),
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Locality'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	// }, {
-		// title: _('Street'),
-		// ftext: function(x, col) {return(printPlacesIndexColText(data, x, col));}
-	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
 			if (P[data[x]].coords[0] == '') return('');
@@ -2046,13 +2074,34 @@ function htmlPlacesIndex(data)
 			if (P[data[x]].coords[1] == '') return('');
 			return(Number(P[data[x]].coords[1]));
 		}
+	}, {
+		title: _('Type'),
+		ftext: function(x, col) {return(P[data[x]].type);}
+	}, {
+		title: _('Code'),
+		ftext: function(x, col) {return(P[data[x]].code);}
+	}, {
+		title: STATE,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, STATE));}
+	}, {
+		title: COUNTRY,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, COUNTRY));}
+	}, {
+		title: POSTAL,
+		ftext: function(x, col) {return(printPlacesIndexColText(data, x, POSTAL));}
 	}];
-	if (INDEX_SHOW_BKREF_TYPE) columns.push({
+	if (search.IndexShowBkrefType) columns.push({
+		title: _('Enclosed By'),
+		ftext: function(x, col) {
+			return(($.map(P[data[x]].enclosed_by, function(enc) {return(placeNames(enc.pdx));})).join('<br>'));
+			}
+	});
+	if (search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], 'bki', I, 'name'));},
 		fsort: false
 	});
-	if (INDEX_SHOW_BKREF_TYPE && INC_FAMILIES) columns.push({
+	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, P[data[x]], 'bkf', F, 'name'));},
 		fsort: false
@@ -2065,6 +2114,8 @@ function htmlPlacesIndex(data)
 
 function printAddressesIndex()
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlAddressesIndex());
 }
 function htmlAddressesIndex()
@@ -2105,6 +2156,8 @@ function htmlAddressesIndex()
 
 function printReposIndex()
 {
+	ParseSearchString();
+	ManageSearchStringGids();
 	document.write(htmlReposIndex());
 }
 function htmlReposIndex()
@@ -2132,7 +2185,7 @@ function htmlReposIndex()
 			})).join('<br>'));
 		},
 	}];
-	if (INDEX_SHOW_BKREF_TYPE && INC_SOURCES) columns.push({
+	if (search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
 		ftext: function(rdx, col) {return(indexBkrefName(BKREF_TYPE_REPO, R[rdx], 'bks', S, 'title'));},
 		fsort: false
@@ -2331,7 +2384,7 @@ function printBackRef(type, bk_table, fref, fname)
 		{
 			// This is a media back reference
 			txt = '<a href="' + fref(ref.bk_idx) + '">' + fname(ref.bk_idx) + '</a>';
-			txt += ' ' + citaLinks(ref.cita);
+			txt += citaLinks(ref.cita);
 			if (ref.note != '')
 			{
 				txt = '<div>' + txt;
@@ -2380,7 +2433,7 @@ function printMap(enabled)
 	}
 	if (!found) return([]);
 	// Schedule the differed update of the map
-	if (TABBED_PANELS && !search.MapExpanded)
+	if (search.TabbedPanels && !search.MapExpanded)
 		$(window).load(function () {
 			if ($(".tab-pane.active.dwr-panel-map").length > 0)
 			{
@@ -2913,7 +2966,7 @@ function SearchObjects()
 			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
 		}
-		html += '<p>' + _('Use the search box above in order to find a person.<br>Women are listed with their birth name.') + '</p>';
+		html += '<p>' + _('Use the search box above in order to find a person.') + '</p>';
 	}
 	else
 	{
@@ -2977,6 +3030,9 @@ function printCalendar()
 
 function HomePage()
 {
+	ParseSearchString();
+	ManageSearchStringGids();
+
 	var html = '';
 	html += '<h1>' + TITLE + '</h1>';
 	html += '<p>';
@@ -2995,13 +3051,106 @@ function HomePage()
 		var j = $.inArray(tables[i][1], PAGES_FILE_INDEX);
 		if (j == -1) continue;
 		html += sep
-		html +=	'<a href="' + tables[i][1] + '">';
+		html +=	'<a href="' + tables[i][1] + '?' + BuildSearchString() + '">';
 		html +=	PAGES_TITLE_INDEX[j] + ': ' + tables[i][0].length;
 		html +=	'</a>';
 		sep = '<br>';
 	}
 	html += '<br> <p>' + embedSearchText() + '<p>';
 	document.write(html);
+}
+
+
+
+//=================================================================
+//========================================================== Config
+//=================================================================
+
+function ConfigPage()
+{
+	var html = '';
+	html += '<h1>' + _('Configuration') + '</h1>';
+	html += '<div class="panel panel-default">';
+	html += '<div class="panel-body">';
+	html += '<form id="dwr-chart-form" role="form" class="form-horizontal">';
+
+	var configsCheck = [
+//		['IncFamilies', _('Show family pages'), ''],
+//		['IncSources', _('Show sources'), ''],
+//		['IncMedia', _('Show images and media objects'), ''],
+//		['IncPlaces', _('Show place pages'), ''],
+//		['IncRepositories', _('Show repository pages'), ''],
+//		['IncNotes', _('Show notes'), ''],
+//		['IncAddresses', _('Show addresses'), '</div><hr><div class="row">'],
+		['IndexShowBirth', _('Include a column for birth dates on the index pages'), ''],
+		['IndexShowDeath', _('Include a column for death dates on the index pages'), ''],
+		['IndexShowMarriage', _('Include a column for marriage dates on the index pages'), ''],
+		['IndexShowPartner', _('Include a column for partners on the index pages'), ''],
+		['IndexShowParents', _('Include a column for parents on the index pages'), ''],
+		['IndexShowBkrefType', _('Include references in indexes'), '</div><hr><div class="row">'],
+		['MapPlace', _('Include Place map on Place Pages'), ''],
+		['MapFamily', _('Include a map in the individuals and family pages'), '</div><hr><div class="row">'],
+		['ShowAllSiblings', _('Include half and/ or step-siblings on the individual pages'), '</div><div class="row">'],
+		['SourceAuthorInTitle', _('Insert sources author in the sources title'), '</div><div class="row">'],
+		['TabbedPanels', _('Use tabbed panels instead of sections'), '</div><div class="row">'],
+		['HideGid', _('Suppress Gramps ID'), '']
+	];
+	html += '<div class="row">';
+	for (var i = 0; i < configsCheck.length; i += 1)
+	{
+		var opt = configsCheck[i][0];
+		html += '<div class="checkbox col-xs-12 col-md-6"><label>';
+		html += '<input type="checkbox" id="dwr-cfg-' + opt + '"' + (search[opt] ? ' checked' : '') + '>';
+		html += configsCheck[i][1] + '</label></div>';
+		html += configsCheck[i][2];
+	}
+	html += '</div><hr>';
+	var configsSelect = [
+		['NbEntries', _('Number of entries in the tables'), A_LENGTH_MENU[1]]
+	];
+	html += '<div class="row">';
+	for (var i = 0; i < configsSelect.length; i += 1)
+	{
+		var opt = configsSelect[i][0];
+		var txts = configsSelect[i][2];
+		html += '<label for="dwr-cfg-' + opt + '" class="control-label col-xs-8 col-md-4">' + configsSelect[i][1] + '</label>';
+		html += '<div class="col-xs-4 col-md-2">';
+		html += '<select name="dwr-cfg-' + opt + '" id="dwr-cfg-' + opt + '" class="form-control" size="1">';
+		for (var j = 0; j < txts.length; j += 1)
+		{
+			html += '<option value="' + j + '"' + ((search[opt]== j) ? ' selected' : '') + '>' + txts[j] + '</option>';
+		}
+		html += '</select></div>';
+	}
+	html += '</div>'; //row
+	html += '<hr>';
+	html += '<div class="text-center">';
+	html += '<button id="dwr-config-ok" type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-ok"></span> ' + _('OK') + ' </button>';
+	html += '</div>';
+
+	html += '</form>';
+	html += '</div>'; // panel-body
+	html += '</div>'; // panel
+
+	// Events
+	$(window).load(function() {
+		$('#dwr-config-ok').click(function() {
+			for (var i = 0; i < configsCheck.length; i++)
+			{
+				var opt = configsCheck[i][0];
+				search[opt] = $('#dwr-cfg-' + opt)[0].checked ? true : false;
+			}
+			for (var i = 0; i < configsSelect.length; i++)
+			{
+				var opt = configsSelect[i][0];
+				search[opt] = $('#dwr-cfg-' + opt).val();
+			}
+			window.location.href = search.P + '?' + BuildSearchString();
+			return(false);
+		});
+	});
+
+	return(html);
 }
 
 
@@ -3085,6 +3234,11 @@ function DwrMainRdy()
 	{		
 		// Print search by name results
 		html = SearchObjects();
+	}
+	else if (PageContents == PAGE_CONF)
+	{
+		// Print configuration page
+		html = ConfigPage();
 	}
 	else
 	{
