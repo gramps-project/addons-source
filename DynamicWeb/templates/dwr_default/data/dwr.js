@@ -2355,6 +2355,8 @@ function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 	html += printBackRef(type, bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
 		html += printBackRef(type, bkf, famHref, function(ref) {return(F[ref].name);});
+	else
+		html += printBackRef(type, bkf, null, function(ref) {return(F[ref].name);});
 	if (INC_SOURCES)
 		html += printBackRef(type, bks, sourceHref, sourName);
 	if (INC_MEDIA)
@@ -2369,6 +2371,10 @@ function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 
 function printBackRef(type, bk_table, fref, fname)
 {
+	my_fref = function(ref, txt) {
+		if (fref == null) return(txt);
+		return('<a href="' + fref(ref) + '">' + txt + '</a>');
+	};
 	var html = '';
 	var j;
 	for (j = 0; j < bk_table.length; j++)
@@ -2378,12 +2384,12 @@ function printBackRef(type, bk_table, fref, fname)
 		if (type == BKREF_TYPE_INDEX)
 		{
 			// This is a citation, person or family back reference
-			txt = '<a href="' + fref(ref) + '">' + fname(ref) + '</a>';
+			txt = my_fref(ref, fname(ref));
 		}
 		else if (type == BKREF_TYPE_MEDIA)
 		{
 			// This is a media back reference
-			txt = '<a href="' + fref(ref.bk_idx) + '">' + fname(ref.bk_idx) + '</a>';
+			txt = my_fref(ref.bk_idx, fname(ref.bk_idx));
 			txt += citaLinks(ref.cita);
 			if (ref.note != '')
 			{
@@ -2396,7 +2402,7 @@ function printBackRef(type, bk_table, fref, fname)
 		{
 			var idx = (type == BKREF_TYPE_REPO) ? ref.s_idx : ref.r_idx;
 			// This is a repository back reference
-			txt = '<a href="' + fref(idx) + '">' + fname(idx) + '</a>';
+			txt = my_fref(idx, fname(idx));
 			if (ref.media_type != '')
 				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Media Type') + ': </span>' + ref.media_type + '</p>';
 			if (ref.call_number != '')

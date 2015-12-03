@@ -181,6 +181,8 @@ report_list = [
         'print_notes_type': False,
         'sourceauthor': True,
         'custom_menu_0': True,
+        'inc_families': False,
+        'living': LivingProxyDb.MODE_EXCLUDE_ALL,
     },
     'procedures': [
         {
@@ -215,6 +217,7 @@ report_list = [
         'inc_places': False,
         'inc_families': False,
         # 'inc_events': False,
+        'living': LivingProxyDb.MODE_EXCLUDE_ALL,
         'inc_pageconf': False,
     },
     'procedures': [
