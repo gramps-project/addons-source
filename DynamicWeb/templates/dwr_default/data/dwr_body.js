@@ -72,9 +72,11 @@ function BodyDecorate()
 		'</div>');
 		
 	// Text for the footer
+	var ct = '';
+	if (search.IncChangeTime) ct = '<p id="dwr-change-time" class="dwr-change-time">';
 	if ((FOOTER + COPYRIGHT) != '') $('body').append(
 		'<div id="dwr-footer" class="panel-footer">' +
-		FOOTER + COPYRIGHT +
+		FOOTER + COPYRIGHT + ct +
 		'</div>');
 		
 	// Bootstrap responsive design detection
@@ -186,6 +188,7 @@ var search = {
 	//MapFamily;
 	//SourceAuthorInTitle;
 	//TabbedPanels;
+	//IncChangeTime;
 	//HideGid;
 	//NbEntries;
 	//=========================================== Chart
@@ -277,6 +280,7 @@ function ParseSearchString()
 	search.MapFamily = GetURLParameter('cmf', MAP_FAMILY);
 	search.SourceAuthorInTitle = GetURLParameter('csa', SOURCE_AUTHOR_IN_TITLE);
 	search.TabbedPanels = GetURLParameter('ctp', TABBED_PANELS);
+	search.IncChangeTime = GetURLParameter('cct', INC_CHANGE_TIME);
 	search.HideGid = GetURLParameter('cg', HIDE_GID);
 	search.NbEntries = GetURLParameter('cne', 0);
 
@@ -396,6 +400,7 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'cmf', params.MapFamily, search.MapFamily, MAP_FAMILY);
 	s = SetURLParameter(s, 'csa', params.SourceAuthorInTitle, search.SourceAuthorInTitle, SOURCE_AUTHOR_IN_TITLE);
 	s = SetURLParameter(s, 'ctp', params.TabbedPanels, search.TabbedPanels, TABBED_PANELS);
+	s = SetURLParameter(s, 'cct', params.IncChangeTime, search.IncChangeTime, INC_CHANGE_TIME);
 	s = SetURLParameter(s, 'cg', params.HideGid, search.HideGid, HIDE_GID);
 	s = SetURLParameter(s, 'cne', params.NbEntries, search.NbEntries, 0);
 

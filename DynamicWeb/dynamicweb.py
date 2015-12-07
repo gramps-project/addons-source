@@ -84,6 +84,7 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates
+#TODO: export change times (get_change_time) for events (or other referenced objects ?) into person or family pages
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
@@ -108,7 +109,7 @@ import os
 import sys
 import re
 import copy
-import time
+import time, datetime
 import shutil
 import codecs
 import tarfile
@@ -489,7 +490,16 @@ def format_date(date, gedcom = False, iso = False):
 
     return(val)
 
+    
+def format_time(t):
+    """
+    Returns a Date object set to the time t (in the time.time format).
+    """
+    date = Date()
+    date.set_yr_mon_day(*time.localtime(t)[0:3])
+    return format_date(date) + datetime.datetime.fromtimestamp(t).strftime(' %H:%M:%S')
 
+    
 def rmtree_fix(dirname):
     """Windows fix: Python shutil.rmtree does not work properly on Windows.
     Unfortunately this fix is not completely working. Don't know why.
@@ -788,6 +798,7 @@ class DynamicWebReport(Report):
             "//       [index (in table 'F'), relation to father, relation to mother, notes, list of citations]\n"
             "//   - assoc: A list of associations in the form:\n"
             "//       [person index (in table 'I'), relationship, notes, list of citations (in table 'C')]\n"
+            "//   - change_time: last record modification date\n"
             "I = ")
         jdatas = []
         person_list = list(self.obj_dict[Person].keys())
@@ -837,6 +848,8 @@ class DynamicWebReport(Report):
             jdata['famc'] = self._data_parents_families_index(person)
             # Associations
             jdata['assoc'] = self._data_associations(person)
+            # Last change date
+            jdata['change_time'] = format_time(person.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -975,6 +988,7 @@ class DynamicWebReport(Report):
             "//   - spou: A list of spouses index (in table 'I')\n"
             "//   - chil: A list of child in the form:\n"
             "//       [index (in table 'I'), relation to father, relation to mother, notes, list of citations]\n"
+            "//   - change_time: last record modification date\n"
             "F = ")
         jdatas = []
         family_list = list(self.obj_dict[Family].keys())
@@ -1005,6 +1019,8 @@ class DynamicWebReport(Report):
             jdata['spou'] = self._data_partners_index(family)
             # Children
             jdata['chil'] = self._data_children_index(family)
+            # Last change date
+            jdata['change_time'] = format_time(family.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1167,6 +1183,7 @@ class DynamicWebReport(Report):
             "//       - note: notes of the repository reference\n"
             "//   - attr: The list of the sources attributes in the form:\n"
             "//       [attribute, value, note, list of citations]\n"
+            "//   - change_time: last record modification date\n"
             "S = ")
         jdatas = []
         source_list = list(self.obj_dict[Source])
@@ -1202,6 +1219,8 @@ class DynamicWebReport(Report):
                 jdata['attr'] = self._data_attributes_src(source)
             else:
                 jdata['attr'] = []
+            # Last change date
+            jdata['change_time'] = format_time(source.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1236,6 +1255,7 @@ class DynamicWebReport(Report):
             "//   - bkp: A list of the place index (in table 'P') referencing this citation\n"
             "//     (including the media references referencing this citation)\n"
             "//   - bkr: A list of the repository index (in table 'R') referencing this citation\n"
+            "//   - change_time: last record modification date\n"
             "C = ")
         jdatas = []
         citation_list = list(self.obj_dict[Citation])
@@ -1271,6 +1291,8 @@ class DynamicWebReport(Report):
             jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, MediaObject)
             jdata['bkp'] = self._data_bkref_index(Citation, citation_handle, Place)
             jdata['bkr'] = self._data_bkref_index(Citation, citation_handle, Repository)
+            # Last change date
+            jdata['change_time'] = format_time(citation.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1305,6 +1327,7 @@ class DynamicWebReport(Report):
             "//       - media_type: media type\n"
             "//       - call_number: call number\n"
             "//       - note: notes of the repository reference\n"
+            "//   - change_time: last record modification date\n"
             "R = ")
         jdatas = []
         repo_list = list(self.obj_dict[Repository])
@@ -1326,6 +1349,8 @@ class DynamicWebReport(Report):
             jdata['urls'] = self._data_url_list(repo)
             # Get source references
             jdata['bks'] = self._data_repo_backref_index(repo, Source)
+            # Last change date
+            jdata['change_time'] = format_time(repo.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1378,6 +1403,7 @@ class DynamicWebReport(Report):
             "//       - rect: [x1, y1, x2, y2] of the media reference\n"
             "//       - note: notes of the media reference\n"
             "//       - cita: list of the media reference source citations index (in table 'C')\n"
+            "//   - change_time: last record modification date\n"
             "M = ")
         jdatas = []
         media_list = list(self.obj_dict[MediaObject])
@@ -1410,6 +1436,8 @@ class DynamicWebReport(Report):
             jdata['bkf'] = self._data_media_backref_index(media, Family)
             jdata['bks'] = self._data_media_backref_index(media, Source)
             jdata['bkp'] = self._data_media_backref_index(media, Place)
+            # Last change date
+            jdata['change_time'] = format_time(media.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1456,6 +1484,7 @@ class DynamicWebReport(Report):
             "//     (including the persons directly referencing this place)\n"
             "//   - bkf: A list of the family index (in table 'F') for events referencing this place\n"
             "//   - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)\n"
+            "//   - change_time: last record modification date\n"
             "P = ")
         jdatas = []
         place_list = list(self.obj_dict[Place])
@@ -1551,6 +1580,8 @@ class DynamicWebReport(Report):
                 jdata['bkp'] = self._data_bkref_index(Place, place_handle, Place)
             else:
                 jdata['bkp'] = []
+            # Last change date
+            jdata['change_time'] = format_time(place.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -2341,6 +2372,7 @@ class DynamicWebReport(Report):
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
+        sw.write("INC_CHANGE_TIME=" + ("true" if (self.options['inc_change_time']) else "false") + ";\n")
         sw.write("HIDE_GID=true;\n")
         sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
         sw.write("__ = {")
@@ -2408,6 +2440,7 @@ class DynamicWebReport(Report):
             ("Indexes", _("Indexes")),
             ("Individuals", _("Individuals")),
             ("Insert sources author in the sources title", _("Insert sources author in the sources title")),
+            ("Last Modified", _("Last Modified")),
             ("Latitude", _("Latitude")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
@@ -2452,6 +2485,7 @@ class DynamicWebReport(Report):
             ("Repositories", _("Repositories")),
             ("Repository", _("Repository")),
             ("Restore", _("Restore")),
+            ("Show last modification time", _("Show last modification time")),
             ("SVG tree children distribution", _("SVG tree children distribution")),
             ("SVG tree graph shape", _("SVG tree graph shape")),
             ("SVG tree graph type", _("SVG tree graph type")),
@@ -2746,6 +2780,8 @@ class DynamicWebReport(Report):
                         return
                     os.remove(dest)
                 os.rename(dest_temp, dest)
+                mtime = os.stat(from_fname).st_mtime
+                os.utime(dest, (mtime, mtime))
                 log.info("File \"%s\" generated" % dest)
             except:
                 log.warning(_("Copying error: %(error)s") % {"error": sys.exc_info()[1]})
@@ -3861,6 +3897,10 @@ class DynamicWebOptions(MenuReportOptions):
         tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
         tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
         addopt("tabbed_panels", tabbed_panels)
+
+        inc_change_time = BooleanOption(_("Show last modification time"), False)
+        inc_change_time.set_help(_( "Whether to show the last modification time in the pages footer"))
+        addopt('inc_change_time', inc_change_time)
 
         showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
         showbirth.set_help(_('Whether to include a birth column'))

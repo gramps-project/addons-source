@@ -888,6 +888,12 @@ function handleTitles()
 }
 
 
+function printChangeTime(record)
+{
+	$('#dwr-change-time').html(_('Last Modified') + ': ' + record.change_time);
+	return('');
+}
+
 //=================================================================
 //====================================================== Individual
 //=================================================================
@@ -917,6 +923,7 @@ function printIndi(idx)
 		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(I[idx]);
 	return(html);
 }
 
@@ -1101,6 +1108,7 @@ function printFam(fdx)
 		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(F[fdx]);
 	return(html);
 }
 		
@@ -1305,6 +1313,7 @@ function printMedia(mdx)
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 
+	html += printChangeTime(m);
 	return(html);
 }
 
@@ -1394,6 +1403,7 @@ function printSource(sdx)
 			text: printSourceCitations(s)
 		}]),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(s);
 	return(html);
 }
 
@@ -1514,6 +1524,8 @@ function printPlace(pdx)
 		sourceSection(),
 		strToContents(_('References'), bk_txt)),
 		true /*collapsible*/, true /*is_tabbeb*/);
+		
+	html += printChangeTime(p);
 	return(html);
 }
 
@@ -1541,6 +1553,7 @@ function printRepo(rdx)
 		strToContents(_('References'), bk_txt),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(r);
 	return(html);
 }
 
@@ -3098,8 +3111,9 @@ function ConfigPage()
 		['MapFamily', _('Include a map in the individuals and family pages'), '</div><hr><div class="row">'],
 		['ShowAllSiblings', _('Include half and/ or step-siblings on the individual pages'), '</div><div class="row">'],
 		['SourceAuthorInTitle', _('Insert sources author in the sources title'), '</div><div class="row">'],
-		['TabbedPanels', _('Use tabbed panels instead of sections'), '</div><div class="row">'],
-		['HideGid', _('Suppress Gramps ID'), '']
+		['TabbedPanels', _('Use tabbed panels instead of sections'), ''],
+		['HideGid', _('Suppress Gramps ID'), ''],
+		['IncChangeTime', _('Show last modification time'), '']
 	];
 	html += '<div class="row">';
 	for (var i = 0; i < configsCheck.length; i += 1)
