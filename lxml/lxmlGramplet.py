@@ -743,7 +743,7 @@ class lxmlGramplet(Gramplet):
 
         LOG.info('Looking at gallery')
 
-        from gramps.gen.utils.thumbnails import get_thumbnail_path
+        from gramps.gui.thumbnails import get_thumbnail_path
 
         # full clear line for proper styling
 
