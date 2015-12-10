@@ -427,6 +427,9 @@ class lxmlGramplet(Gramplet):
 
                     if three.tag == NAMESPACE + 'pname':
                         text = str(items)
+                        text = text.replace("[('value',", "")
+                        text = text.replace(")]", "")
+                        text = text.replace("[]", "None")
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
