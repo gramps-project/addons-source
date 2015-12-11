@@ -116,6 +116,39 @@ def main(report_nums):
             p = report_name + "/" + procedure['path']
             html_procedures += "<li>%s<br><a href='%s'>%s</a></li>" % (procedure['what'], p, p)
 
+    for (test_num, test_set) in enumerate(test_list):
+        if ((test_num + len(report_list)) not in report_nums): continue
+        test_name = "test_%03i" % test_num
+        # Build the test title and path
+        title = test_set['title']
+        print("=" * 80)
+        print("%s:" % test_name)
+        print("Exporting with options: %s" % title)
+        print("=" * 80)
+        target = os.path.join(results_path, test_name)
+        
+        # Build the test options form the default options + the test set options
+        o = copy.deepcopy(default_options)
+        o.update(test_set['options'])
+        o.update({
+            'title': title,
+            'target': target,
+            'archive_file': os.path.join(target, os.path.basename(o['archive_file'])),
+        })
+        param = ",".join([
+            (key + "=" + (str(value) if isinstance(value, (int, bool)) else value))
+            for (key, value) in o.items()
+        ])
+
+        # Setup environment variables
+        os.environ.update(test_set['environ'])
+
+        # Call GRAMPS CLI
+        if (sys.version_info[0] < 3):
+            param = param.encode("UTF-8")
+        os.chdir(gramps_path)
+        subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
+            
     # Generate index pages
     html_index += html_index_1 % (default_options['name'], plugvers, VERSION)
     f = codecs.open(os.path.join(results_path, "index.html"), "w", encoding = "UTF-8", errors="xmlcharrefreplace")
@@ -155,7 +188,7 @@ if __name__ == '__main__':
             import_data()
             sys.exit(0);
         # Reports numbers arguments
-        report_nums = range(len(report_list))
+        report_nums = range(len(report_list) + len(test_list))
         if (len(sys.argv) > 1):
             report_nums = [
                 int(sys.argv[i])

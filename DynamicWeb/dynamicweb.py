@@ -3329,26 +3329,28 @@ class DynamicWebReport(Report):
         Return a string containing the name of the family (e.g. 'Family of John Doe and Jane Doe')
         @param: family -- family object from database
         """
-        husband_handle = family.get_father_handle()
-        spouse_handle = family.get_mother_handle()
+        father_handle = family.get_father_handle()
+        mother_handle = family.get_mother_handle()
 
-        husband = self.database.get_person_from_handle(husband_handle)
-        spouse = self.database.get_person_from_handle(spouse_handle)
+        father = None
+        mother = None
+        if father_handle: father = self.database.get_person_from_handle(father_handle)
+        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
 
-        if husband and spouse:
-            husband_name = self.get_person_name(husband)
-            spouse_name = self.get_person_name(spouse)
+        if father and mother:
+            father_name = self.get_person_name(father)
+            mother_name = self.get_person_name(mother)
             title_str = _("Family of %(husband)s and %(spouse)s") % {
-                "husband": husband_name,
-                "spouse": spouse_name}
-        elif husband:
-            husband_name = self.get_person_name(husband)
-            # Only the name of the husband is known
-            title_str = _("Family of %(father)s") % {"father": husband_name}
-        elif spouse:
-            spouse_name = self.get_person_name(spouse)
+                "husband": father_name,
+                "spouse": mother_name}
+        elif father:
+            father_name = self.get_person_name(father)
+            # Only the name of the father is known
+            title_str = _("Family of %(father)s") % {"father": father_name}
+        elif mother:
+            mother_name = self.get_person_name(mother)
             # Only the name of the wife is known
-            title_str = _("Family of %(mother)s") % {"mother": spouse_name}
+            title_str = _("Family of %(mother)s") % {"mother": mother_name}
         else:
             title_str = ""
 
@@ -3609,18 +3611,20 @@ class DynamicWebReport(Report):
         Return a sort key for a family
         """
         family = self.database.get_family_from_handle(handle)
-        husband_handle = family.get_father_handle()
-        spouse_handle = family.get_mother_handle()
+        father_handle = family.get_father_handle()
+        mother_handle = family.get_mother_handle()
 
-        husband = self.database.get_person_from_handle(husband_handle)
-        spouse = self.database.get_person_from_handle(spouse_handle)
+        father = None
+        mother = None
+        if father_handle: father = self.database.get_person_from_handle(father_handle)
+        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
 
-        if husband and spouse:
-            sort_key = self.get_person_name_sort_key(husband_handle) + SORT_KEY(" ") + self.get_person_name_sort_key(spouse_handle)
-        elif husband:
-            sort_key = self.get_person_name_sort_key(husband_handle)
-        elif spouse:
-            sort_key = self.get_person_name_sort_key(spouse_handle)
+        if father and mother:
+            sort_key = self.get_person_name_sort_key(father_handle) + SORT_KEY(" ") + self.get_person_name_sort_key(mother_handle)
+        elif father:
+            sort_key = self.get_person_name_sort_key(father_handle)
+        elif mother:
+            sort_key = self.get_person_name_sort_key(mother_handle)
         else:
             sort_key = SORT_KEY("")
 

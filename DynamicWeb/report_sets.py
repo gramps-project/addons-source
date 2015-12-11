@@ -200,7 +200,7 @@ report_list = [
     ]
 },
 {
-    'title':  "Example with minimal features (without private data notes sources addresses gallery places families events)",
+    'title': "Example with minimal features (without private data notes sources addresses gallery places families events)",
     'link': "person.html?igid=I0044",
     'environ': {
         'LANGUAGE': "en_US",
@@ -235,12 +235,12 @@ report_list = [
 
 test_list = [
 {
+    'title': 'Basic test',
     'environ': {
         'LANGUAGE': "en_US",
         'LANG': "en_US.UTF-8",
     },
     'options': {
-        'title': 'Basic test',
         "filter": 3, # Ancestors
         "pid": "I0044", # Lewis Anderson Zieliński
     },
