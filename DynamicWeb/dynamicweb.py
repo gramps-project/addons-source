@@ -181,7 +181,7 @@ from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_source_and_citation_referents, get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
-from gramps.gen.constfunc import win, conv_to_unicode, get_curr_dir
+from gramps.gen.constfunc import win, get_curr_dir
 if (sys.version_info[0] < 3):
     from gramps.gen.constfunc import UNITYPE
 else:
