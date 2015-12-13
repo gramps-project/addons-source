@@ -181,6 +181,8 @@ report_list = [
         'print_notes_type': False,
         'sourceauthor': True,
         'custom_menu_0': True,
+        'inc_families': False,
+        'living': LivingProxyDb.MODE_EXCLUDE_ALL,
     },
     'procedures': [
         {
@@ -198,7 +200,7 @@ report_list = [
     ]
 },
 {
-    'title':  "Example with minimal features (without private data notes sources addresses gallery places families events)",
+    'title': "Example with minimal features (without private data notes sources addresses gallery places families events)",
     'link': "person.html?igid=I0044",
     'environ': {
         'LANGUAGE': "en_US",
@@ -215,6 +217,7 @@ report_list = [
         'inc_places': False,
         'inc_families': False,
         # 'inc_events': False,
+        'living': LivingProxyDb.MODE_EXCLUDE_ALL,
         'inc_pageconf': False,
     },
     'procedures': [
@@ -232,12 +235,12 @@ report_list = [
 
 test_list = [
 {
+    'title': 'Basic test',
     'environ': {
         'LANGUAGE': "en_US",
         'LANG': "en_US.UTF-8",
     },
     'options': {
-        'title': 'Basic test',
         "filter": 3, # Ancestors
         "pid": "I0044", # Lewis Anderson Zieliński
     },

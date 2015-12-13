@@ -1984,6 +1984,8 @@ function buildDscSpouSub0(x_elt, lev, a, b)
 
 function buildDscSpouSub1(x_elt, lev, a, b)
 {
+	var idx = svgElts[x_elt][SVGELT_IDX];
+	if (idx < 0) return;
 	// Print spouse
 	svgElts[x_elt][SVGELT_CMD].push('secteur(' + [a, b, rayons[lev], (rayons[lev+1]+rayons[lev])/2, x_elt, lev].join(',') + ');');
 }
@@ -2264,7 +2266,7 @@ function buildDscTreeHSpouSub(x_elt, a, b, nb_gens, offsetx, print_center, paren
 	var c_spou = a;
 	var i_chil = 0;
 	var x_spou = x - box_width * (1.0 + linkRatio);
-	var box_height_spou = Math.min(box_width / txtRatioMin, minSizeDsc[lev + 1] * box_width / txtRatioMax);
+	var box_height_spou = Math.min(box_width / txtRatioMin, minSizeDsc[lev] * box_width / txtRatioMax);
 	for (var i_spou = 0; i_spou < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i_spou++)
 	{
 		var x_next_spou = svgElts[x_elt][SVGELT_NEXT_SPOU][i_spou];
@@ -2534,7 +2536,7 @@ function buildDscTreeVSpouSub(x_elt, a, b, nb_gens, offsety, print_center, paren
 	var c_spou = a;
 	var i_chil = 0;
 	var y_spou = y + box_height * (1.0 + linkRatio) + box_height;
-	var box_width_spou = Math.min(box_height * txtRatioMax, minSizeDsc[lev + 1] * box_height * txtRatioMin);
+	var box_width_spou = Math.min(box_height * txtRatioMax, minSizeDsc[lev] * box_height * txtRatioMin);
 	for (var i_spou = 0; i_spou < svgElts[x_elt][SVGELT_NEXT_SPOU].length; i_spou++)
 	{
 		var x_next_spou = svgElts[x_elt][SVGELT_NEXT_SPOU][i_spou];

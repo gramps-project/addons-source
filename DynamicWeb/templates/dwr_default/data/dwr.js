@@ -888,6 +888,12 @@ function handleTitles()
 }
 
 
+function printChangeTime(record)
+{
+	$('#dwr-change-time').html(_('Last Modified') + ': ' + record.change_time);
+	return('');
+}
+
 //=================================================================
 //====================================================== Individual
 //=================================================================
@@ -917,6 +923,7 @@ function printIndi(idx)
 		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(I[idx]);
 	return(html);
 }
 
@@ -1101,6 +1108,7 @@ function printFam(fdx)
 		printMap(search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(F[fdx]);
 	return(html);
 }
 		
@@ -1305,6 +1313,7 @@ function printMedia(mdx)
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 
+	html += printChangeTime(m);
 	return(html);
 }
 
@@ -1394,6 +1403,7 @@ function printSource(sdx)
 			text: printSourceCitations(s)
 		}]),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(s);
 	return(html);
 }
 
@@ -1514,6 +1524,8 @@ function printPlace(pdx)
 		sourceSection(),
 		strToContents(_('References'), bk_txt)),
 		true /*collapsible*/, true /*is_tabbeb*/);
+		
+	html += printChangeTime(p);
 	return(html);
 }
 
@@ -1541,6 +1553,7 @@ function printRepo(rdx)
 		strToContents(_('References'), bk_txt),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
+	html += printChangeTime(r);
 	return(html);
 }
 
@@ -2355,6 +2368,8 @@ function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 	html += printBackRef(type, bki, indiHref, function(ref) {return(I[ref].name);});
 	if (INC_FAMILIES)
 		html += printBackRef(type, bkf, famHref, function(ref) {return(F[ref].name);});
+	else
+		html += printBackRef(type, bkf, null, function(ref) {return(F[ref].name);});
 	if (INC_SOURCES)
 		html += printBackRef(type, bks, sourceHref, sourName);
 	if (INC_MEDIA)
@@ -2369,6 +2384,10 @@ function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 
 function printBackRef(type, bk_table, fref, fname)
 {
+	my_fref = function(ref, txt) {
+		if (fref == null) return(txt);
+		return('<a href="' + fref(ref) + '">' + txt + '</a>');
+	};
 	var html = '';
 	var j;
 	for (j = 0; j < bk_table.length; j++)
@@ -2378,12 +2397,12 @@ function printBackRef(type, bk_table, fref, fname)
 		if (type == BKREF_TYPE_INDEX)
 		{
 			// This is a citation, person or family back reference
-			txt = '<a href="' + fref(ref) + '">' + fname(ref) + '</a>';
+			txt = my_fref(ref, fname(ref));
 		}
 		else if (type == BKREF_TYPE_MEDIA)
 		{
 			// This is a media back reference
-			txt = '<a href="' + fref(ref.bk_idx) + '">' + fname(ref.bk_idx) + '</a>';
+			txt = my_fref(ref.bk_idx, fname(ref.bk_idx));
 			txt += citaLinks(ref.cita);
 			if (ref.note != '')
 			{
@@ -2396,7 +2415,7 @@ function printBackRef(type, bk_table, fref, fname)
 		{
 			var idx = (type == BKREF_TYPE_REPO) ? ref.s_idx : ref.r_idx;
 			// This is a repository back reference
-			txt = '<a href="' + fref(idx) + '">' + fname(idx) + '</a>';
+			txt = my_fref(idx, fname(idx));
 			if (ref.media_type != '')
 				txt += '<p class="dwr-attr-value"><span class="dwr-attr-title">' + _('Media Type') + ': </span>' + ref.media_type + '</p>';
 			if (ref.call_number != '')
@@ -3092,8 +3111,9 @@ function ConfigPage()
 		['MapFamily', _('Include a map in the individuals and family pages'), '</div><hr><div class="row">'],
 		['ShowAllSiblings', _('Include half and/ or step-siblings on the individual pages'), '</div><div class="row">'],
 		['SourceAuthorInTitle', _('Insert sources author in the sources title'), '</div><div class="row">'],
-		['TabbedPanels', _('Use tabbed panels instead of sections'), '</div><div class="row">'],
-		['HideGid', _('Suppress Gramps ID'), '']
+		['TabbedPanels', _('Use tabbed panels instead of sections'), ''],
+		['HideGid', _('Suppress Gramps ID'), ''],
+		['IncChangeTime', _('Show last modification time'), '']
 	];
 	html += '<div class="row">';
 	for (var i = 0; i < configsCheck.length; i += 1)
