@@ -2622,7 +2622,7 @@ class DenominoVisoOptions(MenuReportOptions):
         menu.add_option(category_name, "DNMinc_witness_note", inc_witnessnote)
 
         #inc_attributes = BooleanOption(_("Include Attributes"), False)
-        inc_attributes = IncAttributeOption(_("Include Attributes"), "True,")
+        inc_attributes = IncAttributeOption(_("Include Attributes"), "True, ")
         inc_attributes.set_help(_("Whether to include a person's attributes"))
         menu.add_option(category_name, "DNMinc_attributes_m", inc_attributes)
 
@@ -2758,8 +2758,9 @@ class DenominoVisoOptions(MenuReportOptions):
         Handle chart_mode change.
         """
         chart_mode = self.__chart_mode.get_value()
-        self.__chart_type.set_value(_cnsts.REGULAR)
         if chart_mode == _cnsts.DESCENDANT:
+            if self.__chart_mode.get_value() not in _cnsts.chart_type[0:2]:
+                self.__chart_type.set_value(_cnsts.REGULAR)
             self.__chart_type.set_items(_cnsts.chart_type[0:2])
         else:
             self.__chart_type.set_items(_cnsts.chart_type)
