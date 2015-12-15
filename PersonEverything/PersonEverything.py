@@ -576,46 +576,47 @@ class PersonEverythingReport(Report):
                 place_handle = o.get_place_handle()
             else:
                 place_handle = o.get_reference_handle()
-            place = self.database.get_place_from_handle(place_handle)
-            if place:
-                place_title = place_displayer.display(self.database, place)
-                self.print_header(level, _("Place"), place.get_gramps_id(),
-                                  _("Place Title"), place_title,
-                                  privacy=place.get_privacy(),
-                                  ref=place)
-                self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
-                self.doc.start_bold()
-                self.doc.write_text(_("Name") + " : ")
-                self.doc.end_bold()
-                self.doc.write_text(place.get_name().value)
-                self.doc.start_bold()
-                self.doc.write_text(" " + _("Type") + " : ")
-                self.doc.end_bold()
-                self.doc.write_text(str(place.get_type()))
-                self.doc.start_bold()
-                self.doc.write_text(" " + _("Code") + " : ")
-                self.doc.end_bold()
-                self.doc.write_text(place.get_code())
-                self.doc.end_paragraph()
-
-                for name in place.get_alternative_names():
+            if place_handle:
+                place = self.database.get_place_from_handle(place_handle)
+                if place:
+                    place_title = place_displayer.display(self.database, place)
+                    self.print_header(level, _("Place"), place.get_gramps_id(),
+                                      _("Place Title"), place_title,
+                                      privacy=place.get_privacy(),
+                                      ref=place)
                     self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
                     self.doc.start_bold()
-                    self.doc.write_text(_("Alternative Name") + " : ")
+                    self.doc.write_text(_("Name") + " : ")
                     self.doc.end_bold()
-                    self.doc.write_text(name)
-                    self.doc.end_paragraph()
-
-                if place.get_longitude() or place.get_latitude():
-                    self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
+                    self.doc.write_text(place.get_name().value)
                     self.doc.start_bold()
-                    self.doc.write_text(_("Latitude, Longitude") + " : ")
+                    self.doc.write_text(" " + _("Type") + " : ")
                     self.doc.end_bold()
-                    self.doc.write_text(", ".join((place.get_longitude(),
-                                                   place.get_latitude())))
+                    self.doc.write_text(str(place.get_type()))
+                    self.doc.start_bold()
+                    self.doc.write_text(" " + _("Code") + " : ")
+                    self.doc.end_bold()
+                    self.doc.write_text(place.get_code())
                     self.doc.end_paragraph()
 
-                self.print_object(level+1, place)
+                    for name in place.get_alternative_names():
+                        self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
+                        self.doc.start_bold()
+                        self.doc.write_text(_("Alternative Name") + " : ")
+                        self.doc.end_bold()
+                        self.doc.write_text(name)
+                        self.doc.end_paragraph()
+
+                    if place.get_longitude() or place.get_latitude():
+                        self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
+                        self.doc.start_bold()
+                        self.doc.write_text(_("Latitude, Longitude") + " : ")
+                        self.doc.end_bold()
+                        self.doc.write_text(", ".join((place.get_longitude(),
+                                                       place.get_latitude())))
+                        self.doc.end_paragraph()
+
+                    self.print_object(level+1, place)
 
         if issubclass(o.__class__, gramps.gen.lib.primaryobj.BasicPrimaryObject):
             # The Gramps ID is printed by the enclosing object

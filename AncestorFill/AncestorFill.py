@@ -37,9 +37,9 @@ import gettext
 # gramps modules
 #
 #------------------------------------------------------------------------
-import const
+from gramps.gen.const import USER_PLUGINS
 from gen.display.name import displayer as global_name_display
-from Errors import ReportError
+from gramps.gen.errors import ReportError
 from gen.lib import ChildRefType
 from gen.plug.menu import (NumberOption, PersonOption,BooleanOption,
                           EnumeratedListOption)
@@ -56,7 +56,7 @@ import logging
 
 _ = get_addon_translator().ugettext
 
-LOCALEDIR = os.path.join(const.USER_PLUGINS, 'AncestorFill', 'locale')
+LOCALEDIR = os.path.join(USER_PLUGINS, 'AncestorFill', 'locale')
 LOCALEDOMAIN = 'addon'
 
 # see TransUtils.py
