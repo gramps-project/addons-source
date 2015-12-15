@@ -44,7 +44,7 @@ import sys
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale, conv_to_unicode
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -106,18 +106,13 @@ class AncestralFanChartReport(Report):
         self.max_gen = menu.get_option_by_name('maxgen').get_value()
         self.pat_bg = menu.get_option_by_name('pat_bg').get_value()
         self.mat_bg = menu.get_option_by_name('mat_bg').get_value()
-        self.dest_path = conv_to_unicode(
-            menu.get_option_by_name('dest_path').get_value(), 'utf8')
-        self.dest_file = conv_to_unicode(
-            menu.get_option_by_name('dest_file').get_value(), 'utf8')
+        self.dest_path = menu.get_option_by_name('dest_path').get_value()
+        self.dest_file = menu.get_option_by_name('dest_file').get_value()
         self.destprefix, self.destext = \
             os.path.splitext(os.path.basename(self.dest_file))
-        self.destjson = conv_to_unicode(
-            os.path.join(self.dest_path, "json", "%s.json" % (self.destprefix)))
-        self.destjs = conv_to_unicode(
-            os.path.join(self.dest_path, "js", "%s.js" % (self.destprefix)))
-        self.desthtml = conv_to_unicode(
-            os.path.join(self.dest_path, os.path.basename(self.dest_file)))
+        self.destjson = os.path.join(self.dest_path, "json", "%s.json" % (self.destprefix))
+        self.destjs = os.path.join(self.dest_path, "js", "%s.js" % (self.destprefix))
+        self.desthtml = os.path.join(self.dest_path, os.path.basename(self.dest_file))
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)

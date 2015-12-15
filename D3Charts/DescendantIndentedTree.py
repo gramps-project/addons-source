@@ -49,7 +49,7 @@ import unicodedata
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale, conv_to_unicode
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -416,11 +416,12 @@ class Printinfo():
         for family_handle in person.get_family_handle_list():
             family = self.database.get_family_from_handle(family_handle)
             spouse_handle = ReportUtils.find_spouse(person, family)
-            spouse = self.database.get_person_from_handle(spouse_handle)
-            if spouse:
-                name = self._name_display.display_formal(spouse)
-            else:
-                name = ""
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+                if spouse:
+                    name = self._name_display.display_formal(spouse)
+                else:
+                    name = ""
             text = ""
             text = self.narrator.get_married_string(family, is_first,
                                                       self._name_display)
@@ -585,20 +586,19 @@ class Printinfo():
             delim = "_"
 
         name_str = name.replace(" ", delim).lower()
-        name_out = unicodedata.normalize('NFKD',
-            conv_to_unicode(name_str)).encode('ascii', 'ignore')
-        name_out = ''.join(c for c in conv_to_unicode(name_out) \
+        name_out = unicodedata.normalize('NFKD', name_str).encode('ascii', 'ignore')
+        name_out = ''.join(c for c in name_out \
             if c in valid_filename_chars)
 
         # Ensure HREF does not already exist
         if name_out in self.href_dict:
             self.href_dict[name_out] = self.href_dict[name_out] + 1
-            name_out = conv_to_unicode(name_out) + delim + \
+            name_out = name_out + delim + \
                 str(self.href_dict[name_out])
             self.href_dict[name_out] = 1
         else:
             self.href_dict[name_out] = 1
-            name_out = conv_to_unicode(name_out) + delim + \
+            name_out = name_out + delim + \
                 str(self.href_dict[name_out])
             self.href_dict[name_out] = 1
 
@@ -928,23 +928,17 @@ class DescendantIndentedTreeReport(Report):
         self.parent_bg = menu.get_option_by_name('parent_bg').get_value()
         self.more_bg = menu.get_option_by_name('more_bg').get_value()
         self.no_more_bg = menu.get_option_by_name('no_more_bg').get_value()
-        self.dest_path = conv_to_unicode(
-            menu.get_option_by_name('dest_path').get_value(), 'utf8')
-        self.dest_file = conv_to_unicode(
-            menu.get_option_by_name('dest_file').get_value(), 'utf8')
+        self.dest_path = menu.get_option_by_name('dest_path').get_value()
+        self.dest_file = menu.get_option_by_name('dest_file').get_value()
         self.destprefix, self.destext = \
             os.path.splitext(os.path.basename(self.dest_file))
-        self.destcss = conv_to_unicode(os.path.join(
-            self.dest_path, "css", "indentedtree-%s.css" % (self.destprefix)))
-        self.destjson = conv_to_unicode(os.path.join(
-            self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix)))
-        self.destjs = conv_to_unicode(os.path.join(
-            self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix)))
-        self.destexpandedjs = conv_to_unicode(os.path.join(
+        self.destcss = os.path.join(self.dest_path, "css", "indentedtree-%s.css" % (self.destprefix))
+        self.destjson = os.path.join(self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix))
+        self.destjs = os.path.join(self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix))
+        self.destexpandedjs = os.path.join(
             self.dest_path, "js", "indentedtree-%s-expanded.js" %
-            (self.destprefix)))
-        self.desthtml = conv_to_unicode(
-            os.path.join(self.dest_path, os.path.basename(self.dest_file)))
+            (self.destprefix))
+        self.desthtml = os.path.join(self.dest_path, os.path.basename(self.dest_file))
         self.arrows = menu.get_option_by_name('arrows').get_value()
         self.showbio = menu.get_option_by_name('showbio').get_value()
         self.barheight = int(self.font_size) * 2

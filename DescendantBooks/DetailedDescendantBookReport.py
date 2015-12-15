@@ -929,11 +929,12 @@ class DetailedDescendantBookReport(Report):
         for family_handle in person.get_family_handle_list():
             family = self.database.get_family_from_handle(family_handle)
             spouse_handle = ReportUtils.find_spouse(person, family)
-            spouse = self.database.get_person_from_handle(spouse_handle)
-            if spouse:
-                name = self._name_display.display_formal(spouse)
-            else:
-                name = ""
+            name = ""
+            spouse = None
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+                if spouse:
+                    name = self._name_display.display_formal(spouse)
             text = ""
             spouse_mark = ReportUtils.get_person_mark(self.database, spouse)
 
