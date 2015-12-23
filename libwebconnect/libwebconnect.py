@@ -46,7 +46,6 @@ Read the following code from bottom to top.
 # Gramps modules
 #
 #---------------------------------------------------------------
-from gramps.gui.display import display_url
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -139,6 +138,7 @@ class Search(object):
         self.pattern = pattern
 
     def callback(self, widget):
+        from gramps.gui.display import display_url
         results = make_person_dict(self.dbstate, self.handle)
         display_url(self.pattern % results, self.uistate)
 
