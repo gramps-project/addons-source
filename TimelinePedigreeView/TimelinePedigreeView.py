@@ -695,7 +695,9 @@ class TimelinePedigreeView(NavigationView):
         xvline = xBoxConnection - Direction * DistX/2           # default for descendants and if date of marriage not known
         if self.use_timeline and Direction<0 and BranchData[0]:
             family_handle = BranchData[0].get_main_parents_family_handle()
-            family = self.dbstate.db.get_family_from_handle(family_handle)
+            family = None
+            if family_handle:
+             family = self.dbstate.db.get_family_from_handle(family_handle)
             if family:
                 marriagedate = self.get_date_marriage(family)
                 if marriagedate:
@@ -841,7 +843,9 @@ class TimelinePedigreeView(NavigationView):
         elif genMax-genDepth > 0 and Direction < 0:     # find ancestors
             if person:
                 family_handle = person.get_main_parents_family_handle()
-                family = self.dbstate.db.get_family_from_handle(family_handle)
+                family = None
+                if family_handle:
+                 family = self.dbstate.db.get_family_from_handle(family_handle)
                 if family is not None:
                     father_handle = family.get_father_handle()
                     if father_handle is not None:
@@ -980,7 +984,9 @@ class TimelinePedigreeView(NavigationView):
                 #print ("Estimate birthdate by looking at parents of " + name_displayer.display(person))
                 ParentDates = []
                 family_handle = person.get_main_parents_family_handle()
-                family = self.dbstate.db.get_family_from_handle(family_handle)
+                family = None
+                if family_handle:
+                 family = self.dbstate.db.get_family_from_handle(family_handle)
                 # pdb.set_trace()
                 if family is not None:
                     father_handle = family.get_father_handle()
