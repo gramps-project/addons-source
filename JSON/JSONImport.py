@@ -45,7 +45,7 @@ _ = glocale.translation.sgettext
 from gramps.gen.db import DbTxn
 from gramps.gen.plug.utils import OpenFileOrStdin
 from gramps.gen.config import config
-from gramps.gen.merge.diff import from_struct
+from gramps.gen.lib.struct import Struct
 
 def importData(dbase, filename, user):
     """Function called by Gramps to import data on persons in CSV format."""
@@ -56,7 +56,7 @@ def importData(dbase, filename, user):
                 line = fp.readline()
                 while line:
                     json = ast.literal_eval(line)
-                    obj = from_struct(json)
+                    obj = Struct.from_struct(json)
                     if json["_class"] == "Person":
                         dbase.add_person(obj, trans)
                     elif json["_class"] == "Family":
