@@ -44,7 +44,6 @@ log = logging.getLogger(".ImportSql")
 #-------------------------------------------------------------------------
 import gramps.gen.lib
 from gramps.gen.db import DbTxn
-from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.id import create_id
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -125,6 +124,10 @@ class SQLReader(object):
         self.debug = 0
 
     def openSQL(self):
+        try:
+            from gramps.gui.dialog import ErrorDialog
+        except:
+            ErrorDialog = print
         sql = None
         try:
             sql = Database(self.filename)

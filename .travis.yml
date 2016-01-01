@@ -34,4 +34,4 @@ install:
 #    - sudo Xvfb :0 -ac -screen 0 1024x768x24 &
 
 script:
-    -  GRAMPS_RESOURCES=$TRAVIS_BUILD_DIR/../gramps PYTHONPATH=$TRAVIS_BUILD_DIR/../gramps nosetests3 -vv
+    -  GRAMPS_RESOURCES=$TRAVIS_BUILD_DIR/../gramps PYTHONPATH=$TRAVIS_BUILD_DIR/../gramps nosetests3 --exclude=DynamicWeb -vv

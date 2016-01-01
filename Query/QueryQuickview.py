@@ -53,7 +53,7 @@ import gramps.gen.datehandler
 import gramps.gen.lib
 from gramps.gen.lib.handle import Handle
 from gramps.gen.lib.primaryobj import PrimaryObject
-from gramps.gen.merge.diff import Struct
+from gramps.gen.lib.struct import Struct
 
 import random
 import re
