@@ -1104,13 +1104,13 @@ class DotGenerator(object):
                 if spouse_handle and spouse_handle not in self.person_handles:
                     self.person_handles.append(spouse_handle)
 
-    def find_ascendants(self, active_person):
+    def find_ancestors(self, active_person):
         "Spider the database from the active person"
         person = self.database.get_person_from_handle(active_person)
-        self.add_ascendant(person)
+        self.add_ancestor(person)
 
-    def add_ascendant(self, person):
-        "Include an ascendant in the list of people to graph"
+    def add_ancestor(self, person):
+        "Include an ancestor in the list of people to graph"
         if not person:
             return
 
@@ -1122,8 +1122,8 @@ class DotGenerator(object):
                 family = self.database.get_family_from_handle(family_handle)
 
                 # Add every parent recursively
-                self.add_ascendant(self.database.get_person_from_handle(family.get_father_handle()))
-                self.add_ascendant(self.database.get_person_from_handle(family.get_mother_handle()))
+                self.add_ancestor(self.database.get_person_from_handle(family.get_father_handle()))
+                self.add_ancestor(self.database.get_person_from_handle(family.get_mother_handle()))
 
     def add_child_links_to_families(self):
         "returns string of GraphViz edges linking parents to families or \
