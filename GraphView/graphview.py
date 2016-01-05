@@ -1065,22 +1065,22 @@ class DotGenerator(object):
         if person.handle not in self.person_handles:
             self.person_handles.append(person.handle)
 
-        for family_handle in person.get_family_handle_list():
-            family = self.database.get_family_from_handle(family_handle)
+            for family_handle in person.get_family_handle_list():
+                family = self.database.get_family_from_handle(family_handle)
 
-            # Add every child recursively
-            for child_ref in family.get_child_ref_list():
-                self.add_descendant(
-                    self.database.get_person_from_handle(child_ref.ref))
+                # Add every child recursively
+                for child_ref in family.get_child_ref_list():
+                    self.add_descendant(
+                        self.database.get_person_from_handle(child_ref.ref))
 
-            # Add spouse
-            if person.handle == family.get_father_handle():
-                spouse_handle = family.get_mother_handle()
-            else:
-                spouse_handle = family.get_father_handle()
+                # Add spouse
+                if person.handle == family.get_father_handle():
+                    spouse_handle = family.get_mother_handle()
+                else:
+                    spouse_handle = family.get_father_handle()
 
-            if spouse_handle and spouse_handle not in self.person_handles:
-                self.person_handles.append(spouse_handle)
+                if spouse_handle and spouse_handle not in self.person_handles:
+                    self.person_handles.append(spouse_handle)
 
     def find_ascendants(self, active_person):
         "Spider the database from the active person"
@@ -1096,12 +1096,12 @@ class DotGenerator(object):
         if person.handle not in self.person_handles:
             self.person_handles.append(person.handle)
 
-        for family_handle in person.get_parent_family_handle_list():
-            family = self.database.get_family_from_handle(family_handle)
+            for family_handle in person.get_parent_family_handle_list():
+                family = self.database.get_family_from_handle(family_handle)
 
-            # Add every parent recursively
-            self.add_ascendant(self.database.get_person_from_handle(family.get_father_handle()))
-            self.add_ascendant(self.database.get_person_from_handle(family.get_mother_handle()))
+                # Add every parent recursively
+                self.add_ascendant(self.database.get_person_from_handle(family.get_father_handle()))
+                self.add_ascendant(self.database.get_person_from_handle(family.get_mother_handle()))
 
     def add_child_links_to_families(self):
         "returns string of GraphViz edges linking parents to families or \
