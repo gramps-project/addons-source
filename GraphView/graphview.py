@@ -111,6 +111,7 @@ class GraphView(NavigationView):
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
         ('interface.graphview-descendant-generations', 10),
+        ('interface.graphview-ancestor-generations', 0),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -127,6 +128,8 @@ class GraphView(NavigationView):
                                  'interface.graphview-home-person-color')
         self.descendant_generations = self._config.get(
                                   'interface.graphview-descendant-generations')
+        self.ancestor_generations = self._config.get(
+                                  'interface.graphview-ancestor-generations')
 
         self.dbstate = dbstate
         self.graph_widget = None
@@ -281,6 +284,14 @@ class GraphView(NavigationView):
         self.descendant_generations = entry
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_ancestor_generations(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the ancestor generation
+        count setting.
+        """
+        self.ancestor_generations = entry
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -299,6 +310,8 @@ class GraphView(NavigationView):
                           self.cb_update_home_person_color)
         self._config.connect('interface.graphview-descendant-generations',
                           self.cb_update_descendant_generations)
+        self._config.connect('interface.graphview-ancestor-generations',
+                          self.cb_update_ancestor_generations)
 
     def _get_configure_page_funcs(self):
         """
@@ -334,6 +347,9 @@ class GraphView(NavigationView):
         configdialog.add_spinner(grid,
                 _('Descendant generations'),
                 4, 'interface.graphview-descendant-generations', (0, 50))
+        configdialog.add_spinner(grid,
+                _('Ancestor generations'),
+                5, 'interface.graphview-ancestor-generations', (0, 50))
 
         return _('Layout'), grid
 
@@ -998,6 +1014,8 @@ class DotGenerator(object):
                                     'interface.graphview-show-places')
         self.descendant_generations = self.view._config.get(
                                     'interface.graphview-descendant-generations')
+        self.ancestor_generations = self.view._config.get(
+                                    'interface.graphview-ancestor-generations')
 
         self.colors = {
             'male_fill'      : '#b9cfe7',
@@ -1059,8 +1077,9 @@ class DotGenerator(object):
     def build_graph(self, active_person):
         "Builds a GraphViz descendant tree based on the active person"
         if active_person:
-            self.person_handles = []
-            self.find_descendants(active_person)
+            self.person_handles = set()
+            self.person_handles.update(self.find_descendants(active_person))
+            self.person_handles.update(self.find_ancestors(active_person))
 
             if len(self.person_handles) > 0:
                 self.add_persons_and_families()
@@ -1072,9 +1091,11 @@ class DotGenerator(object):
     def find_descendants(self, active_person):
         "Spider the database from the active person"
         person = self.database.get_person_from_handle(active_person)
-        self.add_descendant(person, self.descendant_generations)
+        person_handles = []
+        self.add_descendant(person, self.descendant_generations, person_handles)
+        return person_handles
 
-    def add_descendant(self, person, num_generations):
+    def add_descendant(self, person, num_generations, person_handles):
         "Include a descendant in the list of people to graph"
         if not person:
             return
@@ -1083,8 +1104,8 @@ class DotGenerator(object):
             return
 
         # Add self
-        if person.handle not in self.person_handles:
-            self.person_handles.append(person.handle)
+        if person.handle not in person_handles:
+            person_handles.append(person.handle)
 
             for family_handle in person.get_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
@@ -1093,7 +1114,8 @@ class DotGenerator(object):
                 for child_ref in family.get_child_ref_list():
                     self.add_descendant(
                         self.database.get_person_from_handle(child_ref.ref),
-                        num_generations - 1)
+                        num_generations - 1,
+                        person_handles)
 
                 # Add spouse
                 if person.handle == family.get_father_handle():
@@ -1101,29 +1123,40 @@ class DotGenerator(object):
                 else:
                     spouse_handle = family.get_father_handle()
 
-                if spouse_handle and spouse_handle not in self.person_handles:
-                    self.person_handles.append(spouse_handle)
+                if spouse_handle and spouse_handle not in person_handles:
+                    person_handles.append(spouse_handle)
 
     def find_ancestors(self, active_person):
         "Spider the database from the active person"
         person = self.database.get_person_from_handle(active_person)
-        self.add_ancestor(person)
+        person_handles = []
+        self.add_ancestor(person, self.ancestor_generations, person_handles)
+        return person_handles
 
-    def add_ancestor(self, person):
+    def add_ancestor(self, person, num_generations, person_handles):
         "Include an ancestor in the list of people to graph"
         if not person:
             return
 
+        if num_generations <= 0:
+            return
+
         # Add self
-        if person.handle not in self.person_handles:
-            self.person_handles.append(person.handle)
+        if person.handle not in person_handles:
+            person_handles.append(person.handle)
 
             for family_handle in person.get_parent_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
 
                 # Add every parent recursively
-                self.add_ancestor(self.database.get_person_from_handle(family.get_father_handle()))
-                self.add_ancestor(self.database.get_person_from_handle(family.get_mother_handle()))
+                self.add_ancestor(
+                        self.database.get_person_from_handle(family.get_father_handle()),
+                        num_generations - 1,
+                        person_handles)
+                self.add_ancestor(
+                        self.database.get_person_from_handle(family.get_mother_handle()),
+                        num_generations - 1,
+                        person_handles)
 
     def add_child_links_to_families(self):
         "returns string of GraphViz edges linking parents to families or \
