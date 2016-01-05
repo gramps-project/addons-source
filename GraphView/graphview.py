@@ -110,6 +110,7 @@ class GraphView(NavigationView):
         ('interface.graphview-show-places', False),
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
+        ('interface.graphview-descendant-generations', 10),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -124,6 +125,8 @@ class GraphView(NavigationView):
                                   'interface.graphview-highlight-home-person')
         self.home_person_color = self._config.get(
                                  'interface.graphview-home-person-color')
+        self.descendant_generations = self._config.get(
+                                  'interface.graphview-descendant-generations')
 
         self.dbstate = dbstate
         self.graph_widget = None
@@ -265,9 +268,17 @@ class GraphView(NavigationView):
 
     def cb_update_home_person_color(self, client, cnxn_id, entry, data):
         """
-        Called when the configuration menu changes the home person color. 
+        Called when the configuration menu changes the home person color.
         """
         self.home_person_color = entry
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_descendant_generations(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the descendant generation
+        count setting.
+        """
+        self.descendant_generations = entry
         self.graph_widget.populate(self.get_active())
 
     def config_connect(self):
@@ -286,6 +297,8 @@ class GraphView(NavigationView):
                           self.cb_update_highlight_home_person)
         self._config.connect('interface.graphview-home-person-color',
                           self.cb_update_home_person_color)
+        self._config.connect('interface.graphview-descendant-generations',
+                          self.cb_update_descendant_generations)
 
     def _get_configure_page_funcs(self):
         """
@@ -318,6 +331,9 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                 _('Show places'),
                 3, 'interface.graphview-show-places')
+        configdialog.add_spinner(grid,
+                _('Descendant generations'),
+                4, 'interface.graphview-descendant-generations', (0, 50))
 
         return _('Layout'), grid
 
@@ -980,6 +996,8 @@ class DotGenerator(object):
                                     'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
                                     'interface.graphview-show-places')
+        self.descendant_generations = self.view._config.get(
+                                    'interface.graphview-descendant-generations')
 
         self.colors = {
             'male_fill'      : '#b9cfe7',
@@ -1054,11 +1072,14 @@ class DotGenerator(object):
     def find_descendants(self, active_person):
         "Spider the database from the active person"
         person = self.database.get_person_from_handle(active_person)
-        self.add_descendant(person)
+        self.add_descendant(person, self.descendant_generations)
 
-    def add_descendant(self, person):
+    def add_descendant(self, person, num_generations):
         "Include a descendant in the list of people to graph"
         if not person:
+            return
+
+        if num_generations <= 0:
             return
 
         # Add self
@@ -1071,7 +1092,8 @@ class DotGenerator(object):
                 # Add every child recursively
                 for child_ref in family.get_child_ref_list():
                     self.add_descendant(
-                        self.database.get_person_from_handle(child_ref.ref))
+                        self.database.get_person_from_handle(child_ref.ref),
+                        num_generations - 1)
 
                 # Add spouse
                 if person.handle == family.get_father_handle():
