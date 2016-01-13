@@ -1266,16 +1266,14 @@ class DotGenerator(object):
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
-            if f_handle not in self.person_handles:
-                self.person_handles.append(f_handle)
+            self.person_handles.add(f_handle)
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
-            if m_handle not in self.person_handles:
-                self.person_handles.append(m_handle)
+            self.person_handles.add(m_handle)
         self.end_subgraph()
 
     def get_gender_style(self, person):
