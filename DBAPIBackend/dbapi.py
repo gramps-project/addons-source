@@ -1031,7 +1031,7 @@ class DBAPI(DbGeneric):
 
     def iter_items(self, order_by, class_):
         if order_by is None:
-            for item in super().iter_items():
+            for item in super().iter_items(order_by, class_):
                 yield item
         else:
             order_phrases = ["%s %s" % (self._hash_name(class_.__name__, class_.get_field_alias(field)), direction) 
@@ -1642,6 +1642,7 @@ class DBAPI(DbGeneric):
         where_clause, args = self.build_where_clause(table, filter)
         order_clause = self.build_order_clause(table, order_by)
         #select_clause = self.build_select_clause(table, fields)
+        # Get the total count:
         self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause), args)
         total = self.dbapi.fetchone()[0]
         class Result(list):
@@ -1653,13 +1654,14 @@ class DBAPI(DbGeneric):
             time = 0.0
         result = Result()
         if start:
-            self.dbapi.execute("SELECT blob_data FROM %s %s %s LIMIT %s, %s;" % (
+            query = "SELECT blob_data FROM %s %s %s LIMIT %s, %s;" % (
                 table, where_clause, order_clause, start, limit
-            ), args)
+            )
         else:
-            self.dbapi.execute("SELECT blob_data FROM %s %s %s LIMIT %s;" % (
+            query = "SELECT blob_data FROM %s %s %s LIMIT %s;" % (
                 table, where_clause, order_clause, limit
-            ), args)
+            )
+        self.dbapi.execute(query, args)
         rows = self.dbapi.fetchall()
         for row in rows:
             data = {}
