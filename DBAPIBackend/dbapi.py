@@ -1575,9 +1575,11 @@ class DBAPI(DbGeneric):
         Given a Python value, turn it into a SQL value.
         """
         if value is True:
-            return 1
+            return "1"
         elif value is False:
-            return 0
+            return "0"
+        elif isinstance(value, list):
+            return repr(tuple(value))
         else:
             return repr(value)
 
