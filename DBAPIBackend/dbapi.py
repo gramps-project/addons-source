@@ -29,6 +29,9 @@ _ = glocale.translation.gettext
 
 import dbapi_support
 
+import time
+import pickle
+
 class DBAPI(DbGeneric):
     """
     Database backends class for DB-API 2.0 databases
@@ -252,6 +255,7 @@ class DBAPI(DbGeneric):
         self.dbapi.try_execute("""CREATE INDEX
                                   person_surname ON person(surname);
         """)
+        self.rebuild_secondary_fields()
 
     def close_backend(self):
         self.dbapi.close()
@@ -1025,6 +1029,18 @@ class DBAPI(DbGeneric):
         if row:
             return self.get_person_from_handle(row[0])
 
+    def iter_items(self, order_by, class_):
+        if order_by is None:
+            for item in super().iter_items(order_by, class_):
+                yield item
+        else:
+            order_phrases = ["%s %s" % (self._hash_name(class_.__name__, class_.get_field_alias(field)), direction) 
+                             for (field, direction) in order_by]
+            self.dbapi.execute("SELECT blob_data FROM %s ORDER BY %s;" % (class_.__name__, ", ".join(order_phrases)))
+            rows = self.dbapi.fetchall()
+            for row in rows:
+                yield class_.create(pickle.loads(row[0]))
+
     def iter_person_handles(self):
         self.dbapi.execute("SELECT handle FROM person;")
         rows = self.dbapi.fetchall()
@@ -1477,6 +1493,7 @@ class DBAPI(DbGeneric):
         """
         Add secondary fields, update, and create indexes.
         """
+        any_altered = False
         for table in self._tables.keys():
             altered = False
             if not hasattr(self._tables[table]["class_func"], "get_secondary_fields"):
@@ -1492,10 +1509,12 @@ class DBAPI(DbGeneric):
                     # if not, let's add it
                     self.dbapi.execute("ALTER TABLE %s ADD COLUMN %s %s;" % (table, field, sql_type))
                     altered = True
+                    any_altered = True
             if altered:
                 self.dbapi.commit()
         # Update values:
-        self.update_secondary_values_all()
+        if any_altered:
+            self.update_secondary_values_all()
         # Build indexes:
         self.create_secondary_indexes()
 
@@ -1517,16 +1536,25 @@ class DBAPI(DbGeneric):
         field values.
         """
         for table in self._tables.keys():
-            if not hasattr(self._tables[table]["class_func"], "get_secondary_fields"):
-                continue
-            for item in self._tables[table]["iter_func"]():
-                self.update_secondary_values(item)
-            self.dbapi.commit()
+            self.update_secondary_values_table(table)
+
+    def update_secondary_values_table(self, table):
+        """
+        Go through all items in a table, and update their secondary
+        field values.
+        table - "Person", "Place", "Media", etc.
+        Commits changes.
+        """
+        if not hasattr(self._tables[table]["class_func"], "get_secondary_fields"):
+            return
+        for item in self._tables[table]["iter_func"]():
+            self.update_secondary_values(item)
+        self.dbapi.commit()
 
     def update_secondary_values(self, item):
         """
-        Given a primary object and list of field names,
-        update their values in the database.
+        Given a primary object update its secondary field values in the database.
+        Does not commit.
         """
         table = item.__class__.__name__
         fields = self._tables[table]["class_func"].get_secondary_fields()
@@ -1534,10 +1562,126 @@ class DBAPI(DbGeneric):
         sets = []
         values = []
         for field in fields:
-            value = item.get_field(field)
+            value = item.get_field(field, self, ignore_errors=True)
             field = self._hash_name(item.__class__.__name__, field)
             sets.append("%s = ?" % field)
             values.append(value)
         if len(values) > 0:
             self.dbapi.execute("UPDATE %s SET %s where handle = ?;" % (table, ", ".join(sets)),
                                values + [item.handle])
+
+    def sql_repr(self, value):
+        """
+        Given a Python value, turn it into a SQL value.
+        """
+        if value is True:
+            return "1"
+        elif value is False:
+            return "0"
+        elif isinstance(value, list):
+            return repr(tuple(value))
+        else:
+            return repr(value)
+
+    def build_where_clause_recursive(self, table, filter):
+        """
+        filter - (field, op, value)
+               - ["NOT", filter]
+               - ["AND", (filter, ...)]
+               - ["OR", (filter, ...)]
+        """
+        if filter is None:
+            return ""
+        elif len(filter) == 3:
+            field, op, value = filter
+            return "(%s %s %s)" % (self._hash_name(table, field), op, self.sql_repr(value))
+        else:
+            if filter[0] in ["AND", "OR"]:
+                parts = [self.build_where_clause_recursive(table, part)
+                         for part in filter[1]]
+                return "(%s)" % ((" %s " % filter[0]).join(parts))
+            else:
+                return "(NOT %s)" % self.build_where_clause_recursive(table, filter[1])
+
+    def build_where_clause(self, table, filter):
+        """
+        filter - a list in filter format
+        return - "WHERE conditions..."
+        """
+        parts = self.build_where_clause_recursive(table, filter)
+        if parts:
+            return ("WHERE " + parts)
+        else:
+            return ""
+
+    def build_order_clause(self, table, order_by):
+        """
+        order_by - [(field, "ASC" | "DESC"), ...]
+        """
+        if order_by:
+            order_clause = ", ".join(["%s %s" % (self._hash_name(table, field), dir) 
+                                     for (field, dir) in order_by])
+            return "ORDER BY " + order_clause
+        else:
+            return ""
+
+    def build_select_clause(self, table, fields):
+        """
+        fields - [field, ...]
+        return: "field, field, field"
+        """
+        select_clause = [self._hash_name(table, field) for field in fields]
+        return ", ".join(select_clause)
+
+    def select(self, table, fields=None, start=0, limit=50,
+               filter=None, order_by=None):
+        """
+        Default implementation of a select for those databases
+        that don't support SQL. Returns a list of dicts, total,
+        and time.
+
+        table - Person, Family, etc.
+        fields - used by object.get_field()
+        start - position to start
+        limit - count to get; -1 for all
+        filter - (field, SQL string_operator, value) |
+                 ["AND", [filter, filter, ...]]      |
+                 ["OR",  [filter, filter, ...]]      |
+                 ["NOT",  filter]
+        order_by - [[fieldname, "ASC" | "DESC"], ...]
+        """
+        start_time = time.time()
+        where_clause = self.build_where_clause(table, filter)
+        order_clause = self.build_order_clause(table, order_by)
+        #select_clause = self.build_select_clause(table, fields)
+        # Get the total count:
+        self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause))
+        total = self.dbapi.fetchone()[0]
+        class Result(list):
+            """
+            A list rows of just matching for this page, with total = all,
+            and time = time to select.
+            """
+            total = 0
+            time = 0.0
+        result = Result()
+        if start:
+            query = "SELECT blob_data FROM %s %s %s LIMIT %s, %s;" % (
+                table, where_clause, order_clause, start, limit
+            )
+        else:
+            query = "SELECT blob_data FROM %s %s %s LIMIT %s;" % (
+                table, where_clause, order_clause, limit
+            )
+        print("query: %s" % query)
+        self.dbapi.execute(query)
+        rows = self.dbapi.fetchall()
+        for row in rows:
+            data = {}
+            for field in fields:
+                obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
+                data[field] = obj.get_field(field, self, ignore_errors=True)
+            result.append(data)
+        result.total = total
+        result.time = time.time() - start_time
+        return result
