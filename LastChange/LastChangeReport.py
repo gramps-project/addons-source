@@ -245,7 +245,7 @@ class LastChangeReport(Report):
             self._table_end()
 
     def write_media(self):
-        handles = sorted(self.database.get_media_object_handles(), key=self._getMediaTimestamp)
+        handles = sorted(self.database.get_media_handles(), key=self._getMediaTimestamp)
 
         if len(handles) > 0:
             self._table_begin(_("Media Changed"), "MediaTable")

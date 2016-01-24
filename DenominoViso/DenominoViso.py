@@ -864,9 +864,9 @@ class DenominoVisoReport(Report):
         if self.options['DNMinc_img']:
             plist = [x for x in person.get_media_list() if self.privacy_filter(x)]
             if (len(plist) > 0):
-                media_object = self.database.get_media_from_handle(\
+                media = self.database.get_media_from_handle(\
                         plist[0].get_reference_handle())
-                pJS = self.photo2JS(media_object)
+                pJS = self.photo2JS(media)
                 if pJS:
                     rv += "person_img:" + pJS
         return rv
@@ -1074,9 +1074,9 @@ function %(bd)s2html(person,containerDL) {
                 psJS = ''
                 # use maximum nr of images
                 for photo in plist:
-                    media_object = self.database.get_media_from_handle(\
+                    media = self.database.get_media_from_handle(\
                             photo.get_reference_handle())
-                    pJS = self.photo2JS(media_object)
+                    pJS = self.photo2JS(media)
                     if pJS:
                         psJS += pJS + ','
                 if psJS:
@@ -1788,7 +1788,7 @@ function %(bd)s2html(person,containerDL) {
                         'event_' + attr_type.replace(' ','_')
         return rv
 
-    def photo2JS(self,media_object):
+    def photo2JS(self, media):
         """Return the JavaScript that describes a photo e.g.:
             {img_path:'...',img_ref:'...'}
 
@@ -1800,14 +1800,14 @@ function %(bd)s2html(person,containerDL) {
         can be stored in a special image attribute.
         """
         rv = ""
-        mime_type = media_object.get_mime_type()
+        mime_type = media.get_mime_type()
         if not mime_type.startswith("image/"):
             return rv
-        media_path = media_path_full(self.database,media_object.get_path())
-        if self.options['DNMexl_private'] and media_object.get_privacy():
+        media_path = media_path_full(self.database,media.get_path())
+        if self.options['DNMexl_private'] and media.get_privacy():
             return rv
         if self.options['DNMimg_attr4inex'].strip() != '':
-            attr_list = [x for x in media_object.get_attribute_list() if self.img_attr_check(x)]
+            attr_list = [x for x in media.get_attribute_list() if self.img_attr_check(x)]
             if (self.options['DNMinexclude_img'] and len(attr_list) > 0) or \
                 (not self.options['DNMinexclude_img'] and len(attr_list) <=0): \
                 return rv
@@ -1817,7 +1817,7 @@ function %(bd)s2html(person,containerDL) {
             if media_path in self.copied_imgs:
                 media_path = self.copied_imgs[media_path]
             else:
-                dest = self.get_copied_photo_name(media_object,media_path)
+                dest = self.get_copied_photo_name(media,media_path)
                 shutil.copyfile(media_path,dest)
                 self.copied_imgs[media_path] = self.relpathA2B(self.target_path,dest)
                 media_path = self.copied_imgs[media_path]
@@ -1826,7 +1826,7 @@ function %(bd)s2html(person,containerDL) {
             self.person_imgs.add(media_path)
             if self.options['DNMimg_src_ref_str'].strip() != "":
                 source_refs = [x.get_value() \
-                    for x in media_object.get_attribute_list() \
+                    for x in media.get_attribute_list() \
                     if x.get_type() == self.options['DNMimg_src_ref_str']]
                 if len(source_refs) > 0:
                     source_ref_str = ", ".join(source_refs)
@@ -1837,7 +1837,7 @@ function %(bd)s2html(person,containerDL) {
                         source_idx = len(self.person_img_srcs)
                     return rv + ",img_ref:'" + str(source_idx) + "'}"
             if self.options['DNMinc_img_src_ref']:
-                media_citation_list = media_object.get_citation_list()
+                media_citation_list = media.get_citation_list()
                 source_refs = ""
                 for citation_handle in media_citation_list:
                     citation = self.database.get_citation_from_handle(citation_handle)

@@ -917,7 +917,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
              len(database.get_family_handles()) +
              len(database.get_repository_handles()) +
              len(database.get_place_handles()) +
-             len(database.get_media_object_handles()) +
+             len(database.get_media_handles()) +
              len(database.get_tag_handles()) +
              len(database.get_citation_handles()) +
              len(database.get_source_handles()))
@@ -1177,7 +1177,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # ---------------------------------
     # Media
     # ---------------------------------
-    for media_handle in database.iter_media_object_handles():
+    for media_handle in database.iter_media_handles():
         media = database.get_media_from_handle(media_handle)
         if media is None:
             continue

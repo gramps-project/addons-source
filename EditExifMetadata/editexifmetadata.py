@@ -875,7 +875,7 @@ class EditExifMetadata(Gramplet):
             with DbTxn(_("Media Path Update"), db) as trans:
                 self.orig_image.set_path(newfilepath)
 
-                db.commit_media_object(self.orig_image, trans)
+                db.commit_media(self.orig_image, trans)
                 db.request_rebuild()
         else:
             self.exif_widgets["MessageArea"].set_text(_("There has been an "
@@ -1321,7 +1321,7 @@ class EditExifMetadata(Gramplet):
                         with DbTxn(_("Media Title Update"), db) as trans:
                             self.orig_image.set_description(mediatitle)
 
-                            db.commit_media_object(self.orig_image, trans)
+                            db.commit_media(self.orig_image, trans)
                             db.request_rebuild()
 
                 # original date of image...
@@ -1347,7 +1347,7 @@ class EditExifMetadata(Gramplet):
                                     with DbTxn(_("Media Object Date Created"), db) as trans:
                                         self.orig_image.set_date_object(objdate_)
 
-                                        db.commit_media_object(self.orig_image, trans)
+                                        db.commit_media(self.orig_image, trans)
                                         db.request_rebuild()
 
                 # Latitude Reference, Latitude, Longitude Reference, and Longitude...

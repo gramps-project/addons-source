@@ -466,7 +466,7 @@ class PersonEverythingReport(Report):
                 filename = media_path_full(self.database, o.get_path())
                 if os.path.exists(filename):
                     self.doc.start_paragraph("PE-Level%d" % min(level, 32))
-                    self.doc.add_media_object(filename, "single", 4.0, 4.0)
+                    self.doc.add_media(filename, "single", 4.0, 4.0)
                     self.doc.end_paragraph()
                 else:
                     self._user.warn(_("Could not add photo to page"),
@@ -490,7 +490,7 @@ class PersonEverythingReport(Report):
                                                media.get_path())
                     if os.path.exists(filename):
                         self.doc.start_paragraph("PE-Level%d" % min(level, 32))
-                        self.doc.add_media_object(filename, "single", 4.0, 4.0,
+                        self.doc.add_media(filename, "single", 4.0, 4.0,
                                                   crop=o.get_rectangle()
                                                   )
                         self.doc.end_paragraph()

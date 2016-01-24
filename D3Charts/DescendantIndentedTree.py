@@ -342,12 +342,12 @@ class Printinfo():
                 photo = media_list[0]
 
                 object_handle = photo.get_reference_handle()
-                media_object = self.database.get_media_from_handle(
+                media = self.database.get_media_from_handle(
                     object_handle)
-                mime_type = media_object.get_mime_type()
+                mime_type = media.get_mime_type()
                 if mime_type and mime_type.startswith("image"):
                     filename = media_path_full(self.database,
-                                               media_object.get_path())
+                                               media.get_path())
                     if os.path.exists(filename):
                         image_path = os.path.join(self.dest_path, "images",
                                                   self.dest_prefix)
