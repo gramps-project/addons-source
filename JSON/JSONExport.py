@@ -33,7 +33,7 @@ import sys
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
 from gramps.gen.lib import (Note, Person, Event, Family,
-                            Repository, Place, MediaObject,
+                            Repository, Place, Media,
                             Source, Tag, Citation)
 
 def exportData(database, filename,
@@ -132,7 +132,7 @@ def exportData(database, filename,
         # ---------------------------------
         for handle in database.media_map.keys():
             serial = database.media_map[handle]
-            write_line(fp, MediaObject.create(serial))
+            write_line(fp, Media.create(serial))
             count += 1
             callback(100 * count/total)
 

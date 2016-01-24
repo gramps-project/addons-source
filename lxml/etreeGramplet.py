@@ -315,7 +315,7 @@ class etreeGramplet(Gramplet):
         print('sources', self.dbstate.db.get_number_of_sources())
         print('citations', self.dbstate.db.get_number_of_citations())
         print('places', self.dbstate.db.get_number_of_places())
-        print('objects', self.dbstate.db.get_number_of_media_objects())
+        print('objects', self.dbstate.db.get_number_of_media())
         print('repositories', self.dbstate.db.get_number_of_repositories())
         print('notes', self.dbstate.db.get_number_of_notes())
 
@@ -506,7 +506,7 @@ class etreeGramplet(Gramplet):
         source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
         citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
         place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
-        media_object = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media_objects())
+        media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
         repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
         note = _('Number of notes : \n\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
 
@@ -518,7 +518,7 @@ class etreeGramplet(Gramplet):
         nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
 
         preview = time + total + tag + event + person + family + source + citation + \
-        place + media_object + repository + note + nb + other
+        place + media + repository + note + nb + other
 
         self.text.set_text(preview)
 

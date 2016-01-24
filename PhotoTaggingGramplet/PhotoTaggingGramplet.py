@@ -489,7 +489,7 @@ class PhotoTaggingGramplet(Gramplet):
                     referenced_handles = mediaref.get_referenced_handles()
                     if len(referenced_handles) == 1:
                         handle_type, handle = referenced_handles[0]
-                        if handle_type == "MediaObject" and handle == self.get_current_handle():
+                        if handle_type == "Media" and handle == self.get_current_handle():
                             rect = mediaref.get_rectangle()
                             if rect is None:
                                 rect = (0, 0, 100, 100)
@@ -543,7 +543,7 @@ class PhotoTaggingGramplet(Gramplet):
         return self.get_active('Media')
 
     def get_current_object(self):
-        return self.dbstate.db.get_object_from_handle(self.get_current_handle())
+        return self.dbstate.db.get_media_from_handle(self.get_current_handle())
 
     # ======================================================
     # helpers for updating database objects

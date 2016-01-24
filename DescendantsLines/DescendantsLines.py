@@ -542,7 +542,7 @@ def get_image(phandle):
             mediaList = p.get_media_list()
             for media_item in mediaList:
                 mediaHandle = media_item.get_reference_handle()
-                media = GRAMPS_DB.get_object_from_handle(mediaHandle)
+                media = GRAMPS_DB.get_media_from_handle(mediaHandle)
                 if not (PROTECT_PRIVATE and media.private):
                     mediaMimeType = media.get_mime_type()
                     if mediaMimeType[0:5] == "image":

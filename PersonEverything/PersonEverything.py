@@ -446,7 +446,7 @@ class PersonEverythingReport(Report):
                 self.print_header(level, _("Media Reference"), ref=mediaref)
                 self.print_object(level+1, mediaref)
 
-        if isinstance(o, gramps.gen.lib.MediaObject):
+        if isinstance(o, gramps.gen.lib.Media):
             # thumb is not printed. The mime type is printed by MediaRef
             self.doc.start_paragraph("PE-Level%d" % min(level, 32))
             self.doc.start_bold()
@@ -466,15 +466,15 @@ class PersonEverythingReport(Report):
                 filename = media_path_full(self.database, o.get_path())
                 if os.path.exists(filename):
                     self.doc.start_paragraph("PE-Level%d" % min(level, 32))
-                    self.doc.add_media_object(filename, "single", 4.0, 4.0)
+                    self.doc.add_media(filename, "single", 4.0, 4.0)
                     self.doc.end_paragraph()
                 else:
                     self._user.warn(_("Could not add photo to page"),
                           "%s: %s" % (filename, _('File does not exist')))
 
         if isinstance(o, gramps.gen.lib.MediaRef):
-            mediaobject_handle = o.get_reference_handle()
-            mediaobject = self.database.get_object_from_handle(mediaobject_handle)
+            media_handle = o.get_reference_handle()
+            media = self.database.get_media_from_handle(media_handle)
 
             if o.get_rectangle():
                 self.doc.start_paragraph("PE-Level%d" % min(level, 32))
@@ -484,27 +484,27 @@ class PersonEverythingReport(Report):
                 self.doc.write_text(", ".join((("%d" % i) for i in o.get_rectangle())))
                 self.doc.end_paragraph()
 
-                mime_type = mediaobject.get_mime_type()
+                mime_type = media.get_mime_type()
                 if mime_type and mime_type.startswith("image"):
                     filename = media_path_full(self.database,
-                                               mediaobject.get_path())
+                                               media.get_path())
                     if os.path.exists(filename):
                         self.doc.start_paragraph("PE-Level%d" % min(level, 32))
-                        self.doc.add_media_object(filename, "single", 4.0, 4.0,
+                        self.doc.add_media(filename, "single", 4.0, 4.0,
                                                   crop=o.get_rectangle()
                                                   )
                         self.doc.end_paragraph()
 
-            desc = get_description(mediaobject.get_mime_type())
+            desc = get_description(media.get_mime_type())
             if not desc:
                 desc = _("unknown")
             self.print_header(level, _("Media Object"),
-                              mediaobject.get_gramps_id(),
+                              media.get_gramps_id(),
                               _("Mime type"),
                               desc,
-                              mediaobject.get_privacy(),
-                              ref=mediaobject)
-            self.print_object(level+1, mediaobject)
+                              media.get_privacy(),
+                              ref=media)
+            self.print_object(level+1, media)
 
         if isinstance(o, gramps.gen.lib.Name):
             # group_as, sort_as and display_as are not printed. NameType is

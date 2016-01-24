@@ -163,7 +163,7 @@ DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
                             NameType, Person, UrlType, NoteType,
                             EventRoleType, Family, Event, Place, Source,
-                            Citation, MediaObject, Repository, Note, Tag,
+                            Citation, Media, Repository, Note, Tag,
                             MediaRef, Location)
 if (DWR_VERSION_410):
     from gramps.gen.lib import PlaceType
@@ -1288,7 +1288,7 @@ class DynamicWebReport(Report):
             # Get references
             jdata['bki'] = self._data_bkref_index(Citation, citation_handle, Person)
             jdata['bkf'] = self._data_bkref_index(Citation, citation_handle, Family)
-            jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, MediaObject)
+            jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, Media)
             jdata['bkp'] = self._data_bkref_index(Citation, citation_handle, Place)
             jdata['bkr'] = self._data_bkref_index(Citation, citation_handle, Repository)
             # Last change date
@@ -1406,13 +1406,13 @@ class DynamicWebReport(Report):
             "//   - change_time: last record modification date\n"
             "M = ")
         jdatas = []
-        media_list = list(self.obj_dict[MediaObject])
+        media_list = list(self.obj_dict[Media])
         if (not self.inc_gallery): media_list = []
-        media_list.sort(key = lambda x: self.obj_dict[MediaObject][x][OBJDICT_INDEX])
+        media_list.sort(key = lambda x: self.obj_dict[Media][x][OBJDICT_INDEX])
         for media_handle in media_list:
-            media = self.database.get_object_from_handle(media_handle)
+            media = self.database.get_media_from_handle(media_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[MediaObject][media_handle][OBJDICT_GID]
+            jdata['gid'] = self.obj_dict[Media][media_handle][OBJDICT_GID]
             title = media.get_description() or ""
             jdata['title'] = html_escape(title)
             jdata['gramps_path'] = media.get_path()
@@ -1773,8 +1773,8 @@ class DynamicWebReport(Report):
         jdatas = []
         for ref in refs:
             media_handle = ref.get_reference_handle()
-            if (media_handle in self.obj_dict[MediaObject]):
-                jdatas.append(self._data_media_ref(ref, self.obj_dict[MediaObject][media_handle][OBJDICT_INDEX]))
+            if (media_handle in self.obj_dict[Media]):
+                jdatas.append(self._data_media_ref(ref, self.obj_dict[Media][media_handle][OBJDICT_INDEX]))
         jdatas.sort(key = lambda x: x['m_idx'])
         return(jdatas)
 
@@ -1788,7 +1788,7 @@ class DynamicWebReport(Report):
          - cita: list of the media reference source citations index (in table 'C')
         """
         media_handle = ref.get_reference_handle()
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.database.get_media_from_handle(media_handle)
         jdata = {}
         jdata['m_idx'] = index
         jdata['thumb'] = self.copy_thumbnail(media, ref.get_rectangle())
@@ -2655,7 +2655,7 @@ class DynamicWebReport(Report):
         # __NB_PLACES__ is replaced by the number of places
         text = text.replace("__NB_INDIVIDUALS__", str(len(self.obj_dict[Person])))
         text = text.replace("__NB_FAMILIES__", str(len(self.obj_dict[Family])))
-        text = text.replace("__NB_MEDIA__", str(len(self.obj_dict[MediaObject])))
+        text = text.replace("__NB_MEDIA__", str(len(self.obj_dict[Media])))
         text = text.replace("__NB_SOURCES__", str(len(self.obj_dict[Source])))
         text = text.replace("__NB_REPOSITORIES__", str(len(self.obj_dict[Repository])))
         text = text.replace("__NB_PLACES__", str(len(self.obj_dict[Place])))
@@ -2664,7 +2664,7 @@ class DynamicWebReport(Report):
         text2 = text
         for mo in re.finditer(r"__(MEDIA|THUMB)_(.*?)__", text):
             gid = mo.group(2)
-            media = self.database.get_object_from_gramps_id(gid)
+            media = self.database.get_media_from_gramps_id(gid)
             if (not media): continue
             tm = mo.group(1)
             if (tm == "THUMB"):
@@ -2962,8 +2962,8 @@ class DynamicWebReport(Report):
                 href = "%s?rdx=%i" % (href, self.obj_dict[Repository][handle][OBJDICT_INDEX])
         elif (obj_class == "Media"):
             href = "media.html"
-            if (handle in self.obj_dict[MediaObject]):
-                href = "%s?mdx=%i" % (href, self.obj_dict[MediaObject][handle][OBJDICT_INDEX])
+            if (handle in self.obj_dict[Media]):
+                href = "%s?mdx=%i" % (href, self.obj_dict[Media][handle][OBJDICT_INDEX])
         elif (obj_class == "Place"):
             href = "place.html"
             if (handle in self.obj_dict[Place]):
@@ -3014,7 +3014,7 @@ class DynamicWebReport(Report):
         for (bkref_class, bkref_handle, repo_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_media_from_handle(bkref_class, bkref_handle)
             jdata = self._data_repo_ref(repo_ref, i)
             jdata['s_idx'] = jdata['r_idx']
             del jdata['r_idx']
@@ -3035,14 +3035,14 @@ class DynamicWebReport(Report):
         @return: String representing the Javascript Array of the references to L{media}
         """
         media_handle = media.get_handle()
-        if (media_handle not in self.obj_dict[MediaObject]): return([])
-        bkref_list = self.bkref_dict[MediaObject][media_handle]
+        if (media_handle not in self.obj_dict[Media]): return([])
+        bkref_list = self.bkref_dict[Media][media_handle]
         if (not bkref_list): return ([])
         jdatas = []
         for (bkref_class, bkref_handle, media_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_media_from_handle(bkref_class, bkref_handle)
             jdata = self._data_media_ref(media_ref, i)
             jdata['bk_idx'] = jdata['m_idx']
             del jdata['m_idx']
@@ -3051,7 +3051,7 @@ class DynamicWebReport(Report):
         return(jdatas)
 
 
-    def get_object_from_handle(self, class_, handle):
+    def get_media_from_handle(self, class_, handle):
         """
         Get an object from its handle and class
         """
@@ -3164,7 +3164,7 @@ class DynamicWebReport(Report):
         This method recursively calls the methods "_add_***"
         """
         _obj_class_list = (Person, Family, Event, Place, Source, Citation,
-                           MediaObject, Repository, Note, Tag)
+                           Media, Repository, Note, Tag)
 
         # setup a dictionary of the required structure
         self.obj_dict = defaultdict(lambda: defaultdict(set))
@@ -3499,31 +3499,31 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_gallery): return
         # Check if media reference already added
-        if (media_handle in self.bkref_dict[MediaObject]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[MediaObject][media_handle]]
+        if (media_handle in self.bkref_dict[Media]):
+            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Media][media_handle]]
             # The media reference is already recorded
             if (media_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
-            self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
+            self.bkref_dict[Media][media_handle].add((bkref_class, bkref_handle, media_ref))
             # Citations for media reference, media reference attributes
             citation_list = media_ref.get_citation_list()
             for attr in media_ref.get_attribute_list():
                 citation_list.extend(attr.get_citation_list())
             for citation_handle in citation_list:
-                self._add_citation(citation_handle, MediaObject, media_handle)
+                self._add_citation(citation_handle, Media, media_handle)
         # Check if the media is already added
-        if (media_handle in self.obj_dict[MediaObject]): return
+        if (media_handle in self.obj_dict[Media]): return
         # Add media in the dictionaries of objects
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.database.get_media_from_handle(media_handle)
         media_name = media.get_description() or media.get_path() or ""
-        self.obj_dict[MediaObject][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[MediaObject])]
+        self.obj_dict[Media][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[Media])]
         # Citations for media, media attributes
         citation_list = media.get_citation_list()
         for attr in media.get_attribute_list():
             citation_list.extend(attr.get_citation_list())
         for citation_handle in citation_list:
-            self._add_citation(citation_handle, MediaObject, media_handle)
+            self._add_citation(citation_handle, Media, media_handle)
 
 
     def _add_repository(self, repo_handle, bkref_class = None, bkref_handle = None, repo_ref = None):
@@ -3586,7 +3586,7 @@ class DynamicWebReport(Report):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
 
         # Sort others
-        for cls in (Citation, Source, Repository, MediaObject, Place):
+        for cls in (Citation, Source, Repository, Media, Place):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:

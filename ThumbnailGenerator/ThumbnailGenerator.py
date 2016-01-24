@@ -52,10 +52,10 @@ class ThumbnailGenerator(tool.Tool):
         self.db = dbstate.db
         progress = ProgressMeter(_('Thumbnail Generator'), can_cancel=True)
 
-        length = self.db.get_number_of_media_objects()
+        length = self.db.get_number_of_media()
         progress.set_pass(_('Generating media thumbnails'),
                                length)
-        for media in dbstate.db.iter_media_objects():
+        for media in dbstate.db.iter_media():
             full_path = media_path_full(dbstate.db, media.get_path())
             mime_type = media.get_mime_type()
             generate_thumbnail(full_path, mime_type)
@@ -116,7 +116,7 @@ class ThumbnailGenerator(tool.Tool):
         """
         for media_ref in obj.get_media_list():
             handle = media_ref.get_reference_handle()
-            media = self.db.get_object_from_handle(handle)
+            media = self.db.get_media_from_handle(handle)
             full_path = media_path_full(self.db, media.get_path())
             mime_type = media.get_mime_type()
             rectangle = media_ref.get_rectangle()

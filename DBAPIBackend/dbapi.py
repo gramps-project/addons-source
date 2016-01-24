@@ -322,6 +322,8 @@ class DBAPI(DbGeneric):
             return key
 
     def get_person_handles(self, sort_handles=False):
+        """
+        """
         if sort_handles:
             self.dbapi.execute("SELECT handle FROM person ORDER BY order_by;")
         else:
@@ -368,7 +370,7 @@ class DBAPI(DbGeneric):
         rows = self.dbapi.fetchall()
         return [row[0] for row in rows]
 
-    def get_media_object_handles(self, sort_handles=False):
+    def get_media_handles(self, sort_handles=False):
         if sort_handles:
             self.dbapi.execute("SELECT handle FROM media ORDER BY order_by;")
         else:
@@ -437,7 +439,7 @@ class DBAPI(DbGeneric):
         row = self.dbapi.fetchone()
         return row[0]
 
-    def get_number_of_media_objects(self):
+    def get_number_of_media(self):
         self.dbapi.execute("SELECT count(1) FROM media;")
         row = self.dbapi.fetchone()
         return row[0]
@@ -512,6 +514,7 @@ class DBAPI(DbGeneric):
                                 person.gramps_id,
                                 pickle.dumps(person.serialize()),
                                 given_name, surname, gender_type])
+        self.update_secondary_values(person)
         if not trans.batch:
             self.update_backlinks(person)
             self.dbapi.commit()
@@ -573,6 +576,7 @@ class DBAPI(DbGeneric):
                     VALUES(?, ?, ?);""",
                                [family.handle, family.gramps_id,
                                 pickle.dumps(family.serialize())])
+        self.update_secondary_values(family)
         if not trans.batch:
             self.update_backlinks(family)
             self.dbapi.commit()
@@ -633,6 +637,7 @@ class DBAPI(DbGeneric):
                         self._order_by_citation_key(citation),
                         citation.gramps_id,
                         pickle.dumps(citation.serialize())])
+        self.update_secondary_values(citation)
         if not trans.batch:
             self.update_backlinks(citation)
             self.dbapi.commit()
@@ -678,6 +683,7 @@ class DBAPI(DbGeneric):
                         self._order_by_source_key(source),
                         source.gramps_id,
                         pickle.dumps(source.serialize())])
+        self.update_secondary_values(source)
         if not trans.batch:
             self.update_backlinks(source)
             self.dbapi.commit()
@@ -720,6 +726,7 @@ class DBAPI(DbGeneric):
             self.dbapi.execute("""INSERT INTO repository (handle, gramps_id, blob_data)
                      VALUES(?, ?, ?);""",
                        [repository.handle, repository.gramps_id, pickle.dumps(repository.serialize())])
+        self.update_secondary_values(repository)
         if not trans.batch:
             self.update_backlinks(repository)
             self.dbapi.commit()
@@ -755,6 +762,7 @@ class DBAPI(DbGeneric):
             self.dbapi.execute("""INSERT INTO note (handle, gramps_id, blob_data)
                      VALUES(?, ?, ?);""",
                        [note.handle, note.gramps_id, pickle.dumps(note.serialize())])
+        self.update_secondary_values(note)
         if not trans.batch:
             self.update_backlinks(note)
             self.dbapi.commit()
@@ -792,6 +800,7 @@ class DBAPI(DbGeneric):
                         self._order_by_place_key(place),
                         place.gramps_id,
                         pickle.dumps(place.serialize())])
+        self.update_secondary_values(place)
         if not trans.batch:
             self.update_backlinks(place)
             self.dbapi.commit()
@@ -835,6 +844,7 @@ class DBAPI(DbGeneric):
                        [event.handle,
                         event.gramps_id,
                         pickle.dumps(event.serialize())])
+        self.update_secondary_values(event)
         if not trans.batch:
             self.update_backlinks(event)
             self.dbapi.commit()
@@ -883,12 +893,12 @@ class DBAPI(DbGeneric):
             self.emit(emit, ([tag.handle],))
         self.has_changed = True
 
-    def commit_media_object(self, media, trans, change_time=None):
+    def commit_media(self, media, trans, change_time=None):
         emit = None
         old_media = None
         if media.handle in self.media_map:
             emit = "media-update"
-            old_media = self.get_object_from_handle(media.handle).serialize()
+            old_media = self.get_media_from_handle(media.handle).serialize()
             self.dbapi.execute("""UPDATE media SET gramps_id = ?,
                                                    order_by = ?,
                                                    blob_data = ?
@@ -905,6 +915,7 @@ class DBAPI(DbGeneric):
                         self._order_by_media_key(media),
                         media.gramps_id,
                         pickle.dumps(media.serialize())])
+        self.update_secondary_values(media)
         if not trans.batch:
             self.update_backlinks(media)
             self.dbapi.commit()
@@ -1038,7 +1049,7 @@ class DBAPI(DbGeneric):
         for row in rows:
             yield row[0]
 
-    def iter_media_object_handles(self):
+    def iter_media_handles(self):
         self.dbapi.execute("SELECT handle FROM media;")
         rows = self.dbapi.fetchall()
         for row in rows:
@@ -1084,7 +1095,7 @@ class DBAPI(DbGeneric):
             (self.get_place_cursor, Place),
             (self.get_source_cursor, Source),
             (self.get_citation_cursor, Citation),
-            (self.get_media_cursor, MediaObject),
+            (self.get_media_cursor, Media),
             (self.get_repository_cursor, Repository),
             (self.get_note_cursor, Note),
             (self.get_tag_cursor, Tag),
@@ -1444,3 +1455,89 @@ class DBAPI(DbGeneric):
         self.dbapi.try_execute("""DROP TABLE  name_group;""")
         self.dbapi.try_execute("""DROP TABLE  metadata;""")
         self.dbapi.try_execute("""DROP TABLE  gender_stats;""")
+
+    def _sql_type(self, python_type):
+        """
+        Given a schema type, return the SQL type for
+        a new column.
+        """
+        from gramps.gen.lib.handle import HandleClass
+        if isinstance(python_type, HandleClass):
+            raise Exception("should not make new handle columns")
+        elif python_type == str:
+            return "TEXT"
+        elif python_type in [bool, int]:
+            return "INTEGER"
+        elif python_type in [float]:
+            return "REAL"
+        else:
+            return "BLOB"
+
+    def rebuild_secondary_fields(self):
+        """
+        Add secondary fields, update, and create indexes.
+        """
+        for table in self._tables.keys():
+            altered = False
+            if not hasattr(self._tables[table]["class_func"], "get_secondary_fields"):
+                continue
+            for field_pair in self._tables[table]["class_func"].get_secondary_fields():
+                field, python_type = field_pair
+                field = self._hash_name(table, field)
+                sql_type = self._sql_type(python_type)
+                try:
+                    # test to see if it exists:
+                    self.dbapi.execute("SELECT %s FROM %s LIMIT 1;" % (field, table))
+                except:
+                    # if not, let's add it
+                    self.dbapi.execute("ALTER TABLE %s ADD COLUMN %s %s;" % (table, field, sql_type))
+                    altered = True
+            if altered:
+                self.dbapi.commit()
+        # Update values:
+        self.update_secondary_values_all()
+        # Build indexes:
+        self.create_secondary_indexes()
+
+    def create_secondary_indexes(self):
+        """
+        Create the indexes for the secondary fields.
+        """
+        for table in self._tables.keys():
+            if not hasattr(self._tables[table]["class_func"], "get_index_fields"):
+                continue
+            for fields in self._tables[table]["class_func"].get_index_fields():
+                for field in fields:
+                    field = self._hash_name(table, field)
+                    self.dbapi.try_execute("CREATE INDEX %s ON %s(%s);" % (field, table, field))
+
+    def update_secondary_values_all(self):
+        """
+        Go through all items in all tables, and update their secondary
+        field values.
+        """
+        for table in self._tables.keys():
+            if not hasattr(self._tables[table]["class_func"], "get_secondary_fields"):
+                continue
+            for item in self._tables[table]["iter_func"]():
+                self.update_secondary_values(item)
+            self.dbapi.commit()
+
+    def update_secondary_values(self, item):
+        """
+        Given a primary object and list of field names,
+        update their values in the database.
+        """
+        table = item.__class__.__name__
+        fields = self._tables[table]["class_func"].get_secondary_fields()
+        fields = [field for (field, direction) in fields]
+        sets = []
+        values = []
+        for field in fields:
+            value = item.get_field(field)
+            field = self._hash_name(item.__class__.__name__, field)
+            sets.append("%s = ?" % field)
+            values.append(value)
+        if len(values) > 0:
+            self.dbapi.execute("UPDATE %s SET %s where handle = ?;" % (table, ", ".join(sets)),
+                               values + [item.handle])

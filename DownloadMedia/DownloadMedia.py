@@ -156,12 +156,12 @@ class DownloadMedia(tool.Tool, ManagedWindow):
         self.progress = ProgressMeter(
             _('Downloading files'), '')
         self.progress.set_pass(_('Downloading files'),
-                               self.db.get_number_of_media_objects())
+                               self.db.get_number_of_media())
 
         self.db.disable_signals()
         with DbTxn('Download files', self.db) as trans:
             for media_handle in self.db.media_map.keys():
-                media = self.db.get_object_from_handle(media_handle)
+                media = self.db.get_media_from_handle(media_handle)
                 url = media.get_path()
                 res = urlparse(url)
                 LOG.debug(res)
@@ -177,7 +177,7 @@ class DownloadMedia(tool.Tool, ManagedWindow):
                             self.num_downloads += 1
                         media.set_path(full_path)
                         media.set_mime_type(get_type(full_path))
-                        self.db.commit_media_object(media, trans)
+                        self.db.commit_media(media, trans)
 
                 self.progress.step()
 
