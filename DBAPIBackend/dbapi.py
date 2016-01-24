@@ -1562,7 +1562,7 @@ class DBAPI(DbGeneric):
         sets = []
         values = []
         for field in fields:
-            value = item.get_field(field)
+            value = item.get_field(field, self, ignore_errors=True)
             field = self._hash_name(item.__class__.__name__, field)
             sets.append("%s = ?" % field)
             values.append(value)
@@ -1578,7 +1578,7 @@ class DBAPI(DbGeneric):
                - ["OR", (filter, ...)]
         """
         if filter is None:
-            return ""
+            return "", args
         elif len(filter) == 3:
             field, op, value = filter
             args.append(value)
@@ -1587,9 +1587,9 @@ class DBAPI(DbGeneric):
             if filter[0] in ["AND", "OR"]:
                 parts = [self.build_where_clause_recursive(table, part, args)[0]
                          for part in filter[1]]
-                return filter[0].join(parts), args
+                return (" %s " % filter[0]).join(parts), args
             else:
-                return ("(NOT %s)" % self.build_where_clause_recursive(table, filter[1], args)), args
+                return ("(NOT %s)" % self.build_where_clause_recursive(table, filter[1], args))[0], args
 
     def build_where_clause(self, table, filter):
         """
@@ -1607,7 +1607,7 @@ class DBAPI(DbGeneric):
         order_by - [(field, "ASC" | "DESC"), ...]
         """
         if order_by:
-            order_clause = " ".join(["%s %s" % (self._hash_name(table, field), dir) 
+            order_clause = ", ".join(["%s %s" % (self._hash_name(table, field), dir) 
                                      for (field, dir) in order_by])
             return "ORDER BY " + order_clause
         else:
@@ -1641,7 +1641,7 @@ class DBAPI(DbGeneric):
         start_time = time.time()
         where_clause, args = self.build_where_clause(table, filter)
         order_clause = self.build_order_clause(table, order_by)
-        select_clause = self.build_select_clause(table, fields)
+        #select_clause = self.build_select_clause(table, fields)
         self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause), args)
         total = self.dbapi.fetchone()[0]
         class Result(list):
@@ -1653,19 +1653,19 @@ class DBAPI(DbGeneric):
             time = 0.0
         result = Result()
         if start:
-            self.dbapi.execute("SELECT %s, blob_data FROM %s %s %s LIMIT %s, %s;" % (
-                select_clause, table, where_clause, order_clause, start, limit
+            self.dbapi.execute("SELECT blob_data FROM %s %s %s LIMIT %s, %s;" % (
+                table, where_clause, order_clause, start, limit
             ), args)
         else:
-            self.dbapi.execute("SELECT %s, blob_data FROM %s %s %s LIMIT %s;" % (
-                select_clause, table, where_clause, order_clause, limit
+            self.dbapi.execute("SELECT blob_data FROM %s %s %s LIMIT %s;" % (
+                table, where_clause, order_clause, limit
             ), args)
         rows = self.dbapi.fetchall()
         for row in rows:
             data = {}
             for field in fields:
-                obj = self._tables[table]["class_func"].create(pickle.loads(row[-1]))
-                data[field] = obj.get_field(field)
+                obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
+                data[field] = obj.get_field(field, self, ignore_errors=True)
             result.append(data)
         result.total = total
         result.time = time.time() - start_time
