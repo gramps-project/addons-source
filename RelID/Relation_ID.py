@@ -64,7 +64,7 @@ class IDGramplet(Gramplet):
         for handle in plist:
             person = self.dbstate.db.get_person_from_handle(handle)
             name = name_displayer.display(person)
-            if person:
+            if person and person != default_person:
                 #rank, handle person,rel_str_orig,rel_fam_orig,rel_str_other,rel_fam_str
                 dist = relationship.get_relationship_distance_new(
                       self.dbstate.db, default_person, person, only_birth=True)
@@ -76,7 +76,8 @@ class IDGramplet(Gramplet):
                 #kekule = ID._get(person, default_person, 'rel', Ga, Gb, rel_a, rel_b)
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
                 value = name
-                value = value + " -----> " + kekule
+                #pseudo rel IDs
+                value = value + "[%s]: " % kekule + "[%s]" % Ga + kekule + "[%s]" % Gb
                 count += 1
                 # title, handletype, handle
                 self.link(str(value) , 'Person', handle)
