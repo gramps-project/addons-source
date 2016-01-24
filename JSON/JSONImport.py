@@ -63,7 +63,7 @@ def importData(dbase, filename, user):
                         dbase.add_family(obj, trans)
                     elif json["_class"] == "Event":
                         dbase.add_event(obj, trans)
-                    elif json["_class"] == "MediaObject":
+                    elif json["_class"] == "Media":
                         dbase.add_object(obj, trans)
                     elif json["_class"] == "Repository":
                         dbase.add_repository(obj, trans)

@@ -1178,7 +1178,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     # Media
     # ---------------------------------
     for media_handle in database.iter_media_object_handles():
-        media = database.get_object_from_handle(media_handle)
+        media = database.get_media_from_handle(media_handle)
         if media is None:
             continue
         (handle, gid, path, mime, desc,

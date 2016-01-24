@@ -77,12 +77,12 @@ class FaceDetection(Gramplet):
 
     def update_has_data(self):
         active_handle = self.get_active('Media')
-        active_media = self.dbstate.db.get_object_from_handle(active_handle)
+        active_media = self.dbstate.db.get_media_from_handle(active_handle)
         self.set_has_data(active_media is not None)
 
     def main(self):
         active_handle = self.get_active('Media')
-        media = self.dbstate.db.get_object_from_handle(active_handle)
+        media = self.dbstate.db.get_media_from_handle(active_handle)
         self.top.hide()
         if media:
             self.detect_button.set_sensitive(True)
@@ -132,7 +132,7 @@ class FaceDetection(Gramplet):
     def detect(self, obj, event):
         # First, reset image, in case of previous detections:
         active_handle = self.get_active('Media')
-        media = self.dbstate.db.get_object_from_handle(active_handle)
+        media = self.dbstate.db.get_media_from_handle(active_handle)
         self.load_image(media)
         min_face_size = (50,50) # FIXME: get from setting
         self.cv_image = cv.LoadImage(self.full_path, cv.CV_LOAD_IMAGE_GRAYSCALE)

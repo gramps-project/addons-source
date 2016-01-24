@@ -401,7 +401,7 @@ class EditExifMetadata(Gramplet):
             return
 
         # get image from database
-        self.orig_image = db.get_object_from_handle(active_handle)
+        self.orig_image = db.get_media_from_handle(active_handle)
         if not self.orig_image:
             self.set_has_data(False)
             return
@@ -574,7 +574,7 @@ class EditExifMetadata(Gramplet):
             highlighted tab if there is any data to show...
         """
         active_handle = self.get_active('Media')
-        active = self.dbstate.db.get_object_from_handle(active_handle)
+        active = self.dbstate.db.get_media_from_handle(active_handle)
         self.set_has_data(self.get_has_data(active))
 
     def get_has_data(self, media):
@@ -1246,9 +1246,9 @@ class EditExifMetadata(Gramplet):
 
         # no Exif metadata, but there is a media object date available
         else:
-            mediaobj_date = self.orig_image.get_date_object()
-            if mediaobj_date:
-                self.exif_widgets["Original"].set_text(_dd.display(mediaobj_date))
+            media_date = self.orig_image.get_date_object()
+            if media_date:
+                self.exif_widgets["Original"].set_text(_dd.display(media_date))
 
         # Media Object Title...
         self.media_title = self.orig_image.get_description()
@@ -1328,8 +1328,8 @@ class EditExifMetadata(Gramplet):
                 elif widgetname == "Original":
                     objdate_ = False
                     if original:
-                        mediaobj_date = self.orig_image.get_date_object()
-                        if mediaobj_date.is_empty():
+                        media_date = self.orig_image.get_date_object()
+                        if media_date.is_empty():
                             objdate_ = Date()
 
                         if objdate_:

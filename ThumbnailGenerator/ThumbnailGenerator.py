@@ -116,7 +116,7 @@ class ThumbnailGenerator(tool.Tool):
         """
         for media_ref in obj.get_media_list():
             handle = media_ref.get_reference_handle()
-            media = self.db.get_object_from_handle(handle)
+            media = self.db.get_media_from_handle(handle)
             full_path = media_path_full(self.db, media.get_path())
             mime_type = media.get_mime_type()
             rectangle = media_ref.get_rectangle()

@@ -888,7 +888,7 @@ class DBAPI(DbGeneric):
         old_media = None
         if media.handle in self.media_map:
             emit = "media-update"
-            old_media = self.get_object_from_handle(media.handle).serialize()
+            old_media = self.get_media_from_handle(media.handle).serialize()
             self.dbapi.execute("""UPDATE media SET gramps_id = ?,
                                                    order_by = ?,
                                                    blob_data = ?
@@ -1084,7 +1084,7 @@ class DBAPI(DbGeneric):
             (self.get_place_cursor, Place),
             (self.get_source_cursor, Source),
             (self.get_citation_cursor, Citation),
-            (self.get_media_cursor, MediaObject),
+            (self.get_media_cursor, Media),
             (self.get_repository_cursor, Repository),
             (self.get_note_cursor, Note),
             (self.get_tag_cursor, Tag),

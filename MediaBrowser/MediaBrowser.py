@@ -140,7 +140,7 @@ class MediaBrowser(Gramplet):
         """
         Display an image from the given media reference.
         """
-        media = self.dbstate.db.get_object_from_handle(media_ref.ref)
+        media = self.dbstate.db.get_media_from_handle(media_ref.ref)
         full_path = media_path_full(self.dbstate.db, media.get_path())
         mime_type = media.get_mime_type()
         rectangle = media_ref.get_rectangle()

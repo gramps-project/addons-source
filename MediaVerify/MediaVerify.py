@@ -174,7 +174,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         """
         Edit the media object with the given handle.
         """
-        media = self.db.get_object_from_handle(handle)
+        media = self.db.get_media_from_handle(handle)
         try:
             EditMedia(self.dbstate, self.uistate, [], media)
         except WindowActiveError:
@@ -262,7 +262,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         with DbTxn(_("Set media hashes"), self.db, batch=True) as trans:
 
             for handle in self.db.get_media_object_handles():
-                media = self.db.get_object_from_handle(handle)
+                media = self.db.get_media_from_handle(handle)
 
                 full_path = media_path_full(self.db, media.get_path())
                 try:
@@ -338,7 +338,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         in_gramps = []
         for handle in self.db.get_media_object_handles():
             handle = handle.decode('utf-8')
-            media = self.db.get_object_from_handle(handle)
+            media = self.db.get_media_from_handle(handle)
 
             md5sum = media.get_checksum()
             in_gramps.append(md5sum)
@@ -392,7 +392,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
 
             for handle, new_path in self.moved_files:
-                media = self.db.get_object_from_handle(handle)
+                media = self.db.get_media_from_handle(handle)
                 media.set_path(new_path)
                 self.db.commit_media_object(media, trans)
 

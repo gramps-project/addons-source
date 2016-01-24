@@ -161,7 +161,7 @@ class DownloadMedia(tool.Tool, ManagedWindow):
         self.db.disable_signals()
         with DbTxn('Download files', self.db) as trans:
             for media_handle in self.db.media_map.keys():
-                media = self.db.get_object_from_handle(media_handle)
+                media = self.db.get_media_from_handle(media_handle)
                 url = media.get_path()
                 res = urlparse(url)
                 LOG.debug(res)

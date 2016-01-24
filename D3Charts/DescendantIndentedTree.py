@@ -342,7 +342,7 @@ class Printinfo():
                 photo = media_list[0]
 
                 object_handle = photo.get_reference_handle()
-                media_object = self.database.get_object_from_handle(
+                media_object = self.database.get_media_from_handle(
                     object_handle)
                 mime_type = media_object.get_mime_type()
                 if mime_type and mime_type.startswith("image"):

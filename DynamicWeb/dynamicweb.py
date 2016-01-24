@@ -163,7 +163,7 @@ DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
                             NameType, Person, UrlType, NoteType,
                             EventRoleType, Family, Event, Place, Source,
-                            Citation, MediaObject, Repository, Note, Tag,
+                            Citation, Media, Repository, Note, Tag,
                             MediaRef, Location)
 if (DWR_VERSION_410):
     from gramps.gen.lib import PlaceType
@@ -1410,7 +1410,7 @@ class DynamicWebReport(Report):
         if (not self.inc_gallery): media_list = []
         media_list.sort(key = lambda x: self.obj_dict[MediaObject][x][OBJDICT_INDEX])
         for media_handle in media_list:
-            media = self.database.get_object_from_handle(media_handle)
+            media = self.database.get_media_from_handle(media_handle)
             jdata = {}
             jdata['gid'] = self.obj_dict[MediaObject][media_handle][OBJDICT_GID]
             title = media.get_description() or ""
@@ -1788,7 +1788,7 @@ class DynamicWebReport(Report):
          - cita: list of the media reference source citations index (in table 'C')
         """
         media_handle = ref.get_reference_handle()
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.database.get_media_from_handle(media_handle)
         jdata = {}
         jdata['m_idx'] = index
         jdata['thumb'] = self.copy_thumbnail(media, ref.get_rectangle())
@@ -2664,7 +2664,7 @@ class DynamicWebReport(Report):
         text2 = text
         for mo in re.finditer(r"__(MEDIA|THUMB)_(.*?)__", text):
             gid = mo.group(2)
-            media = self.database.get_object_from_gramps_id(gid)
+            media = self.database.get_media_from_gramps_id(gid)
             if (not media): continue
             tm = mo.group(1)
             if (tm == "THUMB"):
@@ -3014,7 +3014,7 @@ class DynamicWebReport(Report):
         for (bkref_class, bkref_handle, repo_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_media_from_handle(bkref_class, bkref_handle)
             jdata = self._data_repo_ref(repo_ref, i)
             jdata['s_idx'] = jdata['r_idx']
             del jdata['r_idx']
@@ -3042,7 +3042,7 @@ class DynamicWebReport(Report):
         for (bkref_class, bkref_handle, media_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_media_from_handle(bkref_class, bkref_handle)
             jdata = self._data_media_ref(media_ref, i)
             jdata['bk_idx'] = jdata['m_idx']
             del jdata['m_idx']
@@ -3051,7 +3051,7 @@ class DynamicWebReport(Report):
         return(jdatas)
 
 
-    def get_object_from_handle(self, class_, handle):
+    def get_media_from_handle(self, class_, handle):
         """
         Get an object from its handle and class
         """
@@ -3515,7 +3515,7 @@ class DynamicWebReport(Report):
         # Check if the media is already added
         if (media_handle in self.obj_dict[MediaObject]): return
         # Add media in the dictionaries of objects
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.database.get_media_from_handle(media_handle)
         media_name = media.get_description() or media.get_path() or ""
         self.obj_dict[MediaObject][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[MediaObject])]
         # Citations for media, media attributes

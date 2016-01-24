@@ -864,7 +864,7 @@ class DenominoVisoReport(Report):
         if self.options['DNMinc_img']:
             plist = [x for x in person.get_media_list() if self.privacy_filter(x)]
             if (len(plist) > 0):
-                media_object = self.database.get_object_from_handle(\
+                media_object = self.database.get_media_from_handle(\
                         plist[0].get_reference_handle())
                 pJS = self.photo2JS(media_object)
                 if pJS:
@@ -1064,7 +1064,7 @@ function %(bd)s2html(person,containerDL) {
 #            if self.options['DNMinc_img']:
 #                plist = event.get_media_list()
 #                if len(plist) > 0:
-#                    media_object = self.database.get_object_from_handle(\
+#                    media_object = self.database.get_media_from_handle(\
 #                            plist[0].get_reference_handle())
 #                    pJS = self.photo2JS(media_object)
 #                    if pJS:
@@ -1074,7 +1074,7 @@ function %(bd)s2html(person,containerDL) {
                 psJS = ''
                 # use maximum nr of images
                 for photo in plist:
-                    media_object = self.database.get_object_from_handle(\
+                    media_object = self.database.get_media_from_handle(\
                             photo.get_reference_handle())
                     pJS = self.photo2JS(media_object)
                     if pJS:

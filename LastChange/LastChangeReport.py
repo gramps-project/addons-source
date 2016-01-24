@@ -91,7 +91,7 @@ class LastChangeReport(Report):
         return timestamp
 
     def _getMediaTimestamp(self, media_handle):
-        timestamp = self.database.get_object_from_handle(media_handle).change
+        timestamp = self.database.get_media_from_handle(media_handle).change
         return timestamp
 
     def _getSourceTimestamp(self, source_handle):
@@ -252,7 +252,7 @@ class LastChangeReport(Report):
             self._table_header(_('ID'), _('Path'), _('Changed On'))
 
             for handle in reversed(handles[-10:]):
-                media = self.database.get_object_from_handle(handle)
+                media = self.database.get_media_from_handle(handle)
                 if media is not None:
                     self._table_row(media.gramps_id,
                                     media.get_description(),
