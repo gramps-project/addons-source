@@ -1570,7 +1570,18 @@ class DBAPI(DbGeneric):
             self.dbapi.execute("UPDATE %s SET %s where handle = ?;" % (table, ", ".join(sets)),
                                values + [item.handle])
 
-    def build_where_clause_recursive(self, table, filter, args):
+    def sql_repr(self, value):
+        """
+        Given a Python value, turn it into a SQL value.
+        """
+        if value is True:
+            return 1
+        elif value is False:
+            return 0
+        else:
+            return repr(value)
+
+    def build_where_clause_recursive(self, table, filter):
         """
         filter - (field, op, value)
                - ["NOT", filter]
@@ -1578,29 +1589,28 @@ class DBAPI(DbGeneric):
                - ["OR", (filter, ...)]
         """
         if filter is None:
-            return "", args
+            return ""
         elif len(filter) == 3:
             field, op, value = filter
-            args.append(value)
-            return ("%s %s ?" % (self._hash_name(table, field), op)), args
+            return "(%s %s %s)" % (self._hash_name(table, field), op, self.sql_repr(value))
         else:
             if filter[0] in ["AND", "OR"]:
-                parts = [self.build_where_clause_recursive(table, part, args)[0]
+                parts = [self.build_where_clause_recursive(table, part)
                          for part in filter[1]]
-                return (" %s " % filter[0]).join(parts), args
+                return "(%s)" % ((" %s " % filter[0]).join(parts))
             else:
-                return ("(NOT %s)" % self.build_where_clause_recursive(table, filter[1], args))[0], args
+                return "(NOT %s)" % self.build_where_clause_recursive(table, filter[1])
 
     def build_where_clause(self, table, filter):
         """
         filter - a list in filter format
         return - "WHERE conditions..."
         """
-        parts, args = self.build_where_clause_recursive(table, filter, [])
+        parts = self.build_where_clause_recursive(table, filter)
         if parts:
-            return ("WHERE " + parts), args
+            return ("WHERE " + parts)
         else:
-            return "", []
+            return ""
 
     def build_order_clause(self, table, order_by):
         """
@@ -1639,11 +1649,11 @@ class DBAPI(DbGeneric):
         order_by - [[fieldname, "ASC" | "DESC"], ...]
         """
         start_time = time.time()
-        where_clause, args = self.build_where_clause(table, filter)
+        where_clause = self.build_where_clause(table, filter)
         order_clause = self.build_order_clause(table, order_by)
         #select_clause = self.build_select_clause(table, fields)
         # Get the total count:
-        self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause), args)
+        self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause))
         total = self.dbapi.fetchone()[0]
         class Result(list):
             """
@@ -1661,7 +1671,8 @@ class DBAPI(DbGeneric):
             query = "SELECT blob_data FROM %s %s %s LIMIT %s;" % (
                 table, where_clause, order_clause, limit
             )
-        self.dbapi.execute(query, args)
+        print("query: %s" % query)
+        self.dbapi.execute(query)
         rows = self.dbapi.fetchall()
         for row in rows:
             data = {}
