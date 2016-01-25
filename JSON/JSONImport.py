@@ -64,7 +64,7 @@ def importData(dbase, filename, user):
                     elif json["_class"] == "Event":
                         dbase.add_event(obj, trans)
                     elif json["_class"] == "Media":
-                        dbase.add_object(obj, trans)
+                        dbase.add_media(obj, trans)
                     elif json["_class"] == "Repository":
                         dbase.add_repository(obj, trans)
                     elif json["_class"] == "Tag":
