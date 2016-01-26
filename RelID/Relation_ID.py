@@ -52,10 +52,13 @@ class IDGramplet(Gramplet):
         self.set_text("Person objects" + "\n")
         count = 0
         default_person = self.dbstate.db.get_default_person()
-        #home = name_displayer.display(default_person)
         plist = self.dbstate.db.get_person_handles(sort_handles=True)
-        #default_str = "Default:" + str(home) + "\n"
-        #self.set_text(default_str)
+        total = len(plist)
+        home = name_displayer.display(default_person)
+        if home:
+            count += 1
+            root_str = str(home) + "\n"
+            self.set_text(root_str)
         
         #now determine the relation
         relationship = get_relationship_calculator()
@@ -64,8 +67,9 @@ class IDGramplet(Gramplet):
         for handle in plist:
             person = self.dbstate.db.get_person_from_handle(handle)
             name = name_displayer.display(person)
+            self.set_text("%s/%s\n" % (count + 1, total))
             if person and person != default_person:
-                #rank, handle person,rel_str_orig,rel_fam_orig,rel_str_other,rel_fam_str
+                #rank, handle person, rel_str_orig, rel_fam_orig, rel_str_other, rel_fam_str
                 dist = relationship.get_relationship_distance_new(
                       self.dbstate.db, default_person, person, only_birth=True)
                 rel_a = dist[0][2]
@@ -73,15 +77,43 @@ class IDGramplet(Gramplet):
                 rel_b = dist[0][4]
                 Gb = len(rel_b)
                 yield True
-                #kekule = ID._get(person, default_person, 'rel', Ga, Gb, rel_a, rel_b)
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
                 value = name
-                #pseudo rel IDs
-                value = value + "[%s]: " % kekule + "[%s]" % Ga + kekule + "[%s]" % Gb
+                if kekule == "2":
+                    value = "Father n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule == "3":
+                    value = "Mother n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule == "4":
+                    value = "G-Father (Father side) n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule == "5":
+                    value = "G-Mother (Father side) n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule == "6":
+                    value = "G-Father (Mother side) n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule == "7":
+                    value = "G-Mother (Mother side) n°: %s" % count
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                if kekule.startswith('-'):
+                    value = "Descendant[%s] on level[%s] n°: %s" % (kekule, Gb, count)
+                    self.link(str(value) , 'Person', handle)
+                    yield False
+                ## pseudo rel IDs
+                #value = value + "[%s]: " % kekule + "[%s]" % Ga + kekule + "[%s]" % Gb
                 count += 1
-                # title, handletype, handle
-                self.link(str(value) , 'Person', handle)
-                self.append_text("\n")
+                ## title, handletype, handle
+                #self.link(str(value) , 'Person', handle)
+                #self.append_text("\n")
                 self.append_text("", scroll_to='begin')
-            if count == 25:
+            if count == int(total/6):
+                self.set_text("Too large database for such test")
                 yield False
