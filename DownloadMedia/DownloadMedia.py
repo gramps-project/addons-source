@@ -30,8 +30,8 @@
 import os
 import logging
 LOG = logging.getLogger(".downloadmedia")
-from urllib import urlopen
-from urlparse import urlparse
+from urllib.request import urlopen
+from urllib.parse import urlparse
 import re
 
 #-------------------------------------------------------------------------
