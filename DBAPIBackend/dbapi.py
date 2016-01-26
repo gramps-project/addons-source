@@ -1635,6 +1635,13 @@ class DBAPI(DbGeneric):
         else:
             return ["blob_data"] # nope, we'll have to expand blob to get all fields
 
+    def check_where_fields(self, table, where, secondary_fields):
+        """
+        Check to make sure all where fields are defined. If not, then
+        we need to do the Python-based select.
+        """
+        return True
+
     def select(self, table, fields=None, start=0, limit=-1,
                where=None, order_by=None):
         """
@@ -1656,6 +1663,8 @@ class DBAPI(DbGeneric):
         secondary_fields = ([self._hash_name(table, field) for (field, ptype) in 
                              self._tables[table]["class_func"].get_secondary_fields()] + 
                             ["handle"]) # handle is a sql field, but not listed in secondaries
+        if not self.check_where_fields(table, where, secondary_fields):
+            return super().select(table, fields, start, limit, where, order_by)
         start_time = time.time()
         where_clause = self.build_where_clause(table, where)
         order_clause = self.build_order_clause(table, order_by)
@@ -1702,7 +1711,8 @@ class DBAPI(DbGeneric):
                         expanded = True
                     # get the field, even if we need to do a join:
                     # FIXME: possible optimize: do a join in select for this if needed:
-                    data[field.replace("__", ".")] = obj.get_field(field, self, ignore_errors=True)
+                    field = field.replace("__", ".")
+                    data[field] = obj.get_field(field, self, ignore_errors=True)
             result.append(data)
         result.total = total
         result.time = time.time() - start_time
