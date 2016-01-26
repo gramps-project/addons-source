@@ -1583,32 +1583,31 @@ class DBAPI(DbGeneric):
         else:
             return repr(value)
 
-    def build_where_clause_recursive(self, table, filter):
+    def build_where_clause_recursive(self, table, where):
         """
-        filter - (field, op, value)
-               - ["NOT", filter]
-               - ["AND", (filter, ...)]
-               - ["OR", (filter, ...)]
+        where - (field, op, value)
+               - ["NOT", where]
+               - ["AND", (where, ...)]
+               - ["OR", (where, ...)]
         """
-        if filter is None:
+        if where is None:
             return ""
-        elif len(filter) == 3:
-            field, op, value = filter
+        elif len(where) == 3:
+            field, op, value = where
             return "(%s %s %s)" % (self._hash_name(table, field), op, self.sql_repr(value))
+        elif where[0] in ["AND", "OR"]:
+            parts = [self.build_where_clause_recursive(table, part)
+                     for part in where[1]]
+            return "(%s)" % ((" %s " % where[0]).join(parts))
         else:
-            if filter[0] in ["AND", "OR"]:
-                parts = [self.build_where_clause_recursive(table, part)
-                         for part in filter[1]]
-                return "(%s)" % ((" %s " % filter[0]).join(parts))
-            else:
-                return "(NOT %s)" % self.build_where_clause_recursive(table, filter[1])
+            return "(NOT %s)" % self.build_where_clause_recursive(table, where[1])
 
-    def build_where_clause(self, table, filter):
+    def build_where_clause(self, table, where):
         """
-        filter - a list in filter format
+        where - a list in where format
         return - "WHERE conditions..."
         """
-        parts = self.build_where_clause_recursive(table, filter)
+        parts = self.build_where_clause_recursive(table, where)
         if parts:
             return ("WHERE " + parts)
         else:
@@ -1625,16 +1624,19 @@ class DBAPI(DbGeneric):
         else:
             return ""
 
-    def build_select_clause(self, table, fields):
+    def build_select_fields(self, table, select_fields, secondary_fields):
         """
         fields - [field, ...]
         return: "field, field, field"
         """
-        select_clause = [self._hash_name(table, field) for field in fields]
-        return ", ".join(select_clause)
+        all_available = all([(field in secondary_fields) for field in select_fields])
+        if all_available: # we can get them without expanding
+            return select_fields
+        else:
+            return ["blob_data"] # nope, we'll have to expand blob to get all fields
 
-    def select(self, table, fields=None, start=0, limit=50,
-               filter=None, order_by=None):
+    def select(self, table, fields=None, start=0, limit=-1,
+               where=None, order_by=None):
         """
         Default implementation of a select for those databases
         that don't support SQL. Returns a list of dicts, total,
@@ -1644,44 +1646,66 @@ class DBAPI(DbGeneric):
         fields - used by object.get_field()
         start - position to start
         limit - count to get; -1 for all
-        filter - (field, SQL string_operator, value) |
-                 ["AND", [filter, filter, ...]]      |
-                 ["OR",  [filter, filter, ...]]      |
-                 ["NOT",  filter]
+        where - (field, SQL string_operator, value) |
+                 ["AND", [where, where, ...]]      |
+                 ["OR",  [where, where, ...]]      |
+                 ["NOT",  where]
         order_by - [[fieldname, "ASC" | "DESC"], ...]
         """
+        fields = [self._hash_name(table, field) for field in fields]
+        secondary_fields = ([self._hash_name(table, field) for (field, ptype) in 
+                             self._tables[table]["class_func"].get_secondary_fields()] + 
+                            ["handle"]) # handle is a sql field, but not listed in secondaries
         start_time = time.time()
-        where_clause = self.build_where_clause(table, filter)
+        where_clause = self.build_where_clause(table, where)
         order_clause = self.build_order_clause(table, order_by)
-        #select_clause = self.build_select_clause(table, fields)
+        select_fields = self.build_select_fields(table, fields, secondary_fields)
         # Get the total count:
-        self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause))
-        total = self.dbapi.fetchone()[0]
+        if limit != -1 or start != 0: # get the total that would match:
+            self.dbapi.execute("select count(1) from %s %s;" % (table, where_clause))
+            total = self.dbapi.fetchone()[0]
+        else:
+            total = None # need to get later
         class Result(list):
             """
             A list rows of just matching for this page, with total = all,
-            and time = time to select.
+            time = time to select, query = the SQL query, and expanded
+            if unpickled.
             """
             total = 0
             time = 0.0
+            query = None
+            expanded = False
         result = Result()
         if start:
-            query = "SELECT blob_data FROM %s %s %s LIMIT %s, %s;" % (
-                table, where_clause, order_clause, start, limit
+            query = "SELECT %s FROM %s %s %s LIMIT %s, %s;" % (
+                ", ".join(select_fields), table, where_clause, order_clause, start, limit
             )
         else:
-            query = "SELECT blob_data FROM %s %s %s LIMIT %s;" % (
-                table, where_clause, order_clause, limit
+            query = "SELECT %s FROM %s %s %s LIMIT %s;" % (
+                ", ".join(select_fields), table, where_clause, order_clause, limit
             )
-        print("query: %s" % query)
         self.dbapi.execute(query)
         rows = self.dbapi.fetchall()
+        if total is None:
+            total = len(rows)
+        expanded = False
         for row in rows:
-            obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
+            obj = None # don't build it if you don't need it
             data = {}
             for field in fields:
-                data[field] = obj.get_field(field, self, ignore_errors=True)
+                if field in select_fields:
+                    data[field.replace("__", ".")] = row[select_fields.index(field)]
+                else:
+                    if obj is None:  # we need it! create it and cache it:
+                        obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
+                        expanded = True
+                    # get the field, even if we need to do a join:
+                    # FIXME: possible optimize: do a join in select for this if needed:
+                    data[field.replace("__", ".")] = obj.get_field(field, self, ignore_errors=True)
             result.append(data)
         result.total = total
         result.time = time.time() - start_time
+        result.query = query
+        result.expanded = expanded
         return result
