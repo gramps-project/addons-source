@@ -1031,15 +1031,15 @@ class DBAPI(DbGeneric):
 
     def iter_items(self, order_by, class_):
         if order_by is None:
-            for item in super().iter_items(order_by, class_):
-                yield item
+            query = "SELECT blob_data FROM %s;" % class_.__name__
         else:
             order_phrases = ["%s %s" % (self._hash_name(class_.__name__, class_.get_field_alias(field)), direction) 
                              for (field, direction) in order_by]
-            self.dbapi.execute("SELECT blob_data FROM %s ORDER BY %s;" % (class_.__name__, ", ".join(order_phrases)))
-            rows = self.dbapi.fetchall()
-            for row in rows:
-                yield class_.create(pickle.loads(row[0]))
+            query = "SELECT blob_data FROM %s ORDER BY %s;" % (class_.__name__, ", ".join(order_phrases))
+        self.dbapi.execute(query)
+        rows = self.dbapi.fetchall()
+        for row in rows:
+            yield class_.create(pickle.loads(row[0]))
 
     def iter_person_handles(self):
         self.dbapi.execute("SELECT handle FROM person;")
@@ -1677,9 +1677,9 @@ class DBAPI(DbGeneric):
         self.dbapi.execute(query)
         rows = self.dbapi.fetchall()
         for row in rows:
+            obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
             data = {}
             for field in fields:
-                obj = self._tables[table]["class_func"].create(pickle.loads(row[0]))
                 data[field] = obj.get_field(field, self, ignore_errors=True)
             result.append(data)
         result.total = total
