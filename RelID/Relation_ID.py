@@ -26,6 +26,7 @@ Display person objects
 #
 #-------------------------------------------------------------------------
 
+from gramps.gen.lib import Person
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from gramps.gen.relationship import get_relationship_calculator
@@ -67,8 +68,8 @@ class IDGramplet(Gramplet):
         for handle in plist:
             person = self.dbstate.db.get_person_from_handle(handle)
             name = name_displayer.display(person)
-            self.set_text("%s/%s\n" % (count + 1, total))
-            if person and person != default_person:
+            #self.set_text("%s/%s\n" % (count + 1, total))
+            if person and person != default_person and person.gender == Person.FEMALE:
                 #rank, handle person, rel_str_orig, rel_fam_orig, rel_str_other, rel_fam_str
                 dist = relationship.get_relationship_distance_new(
                       self.dbstate.db, default_person, person, only_birth=True)
@@ -79,41 +80,33 @@ class IDGramplet(Gramplet):
                 yield True
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
                 value = name
-                if kekule == "2":
-                    value = "Father n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
-                if kekule == "3":
-                    value = "Mother n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
-                if kekule == "4":
-                    value = "G-Father (Father side) n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
-                if kekule == "5":
-                    value = "G-Mother (Father side) n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
-                if kekule == "6":
-                    value = "G-Father (Mother side) n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
-                if kekule == "7":
-                    value = "G-Mother (Mother side) n°: %s" % count
-                    self.link(str(value) , 'Person', handle)
-                    yield False
+
+                mothers = []
+                mothers.append((kekule, value, Ga))
+                n = 3 # starting key (mother value on sosa/kekule)
+                max_level = 4 # number of generations
+                # sequence = from n to wall
+                wall = n * (max_level + 1) - 1 # max key
+                for (key, value, level) in mothers:
+                    if key != "u" and key != "0":
+                        for i in range(1, max_level):
+                            if level == i:
+                                self.append_text("\nAncestor: ")
+                                self.link(str(value) + key, 'Person', handle)
+                    if key == "0": # cousines
+                        self.append_text("\nAunt or Cousine: ")
+                        self.link(str(value) + key , 'Person', handle)
                 if kekule.startswith('-'):
-                    value = "Descendant[%s] on level[%s] n°: %s" % (kekule, Gb, count)
+                    self.append_text("\n")
+                    value = "Descendant[%s] on level[%s] index n°: %s" % (kekule, Gb, count)
                     self.link(str(value) , 'Person', handle)
-                    yield False
+                    #yield False
                 ## pseudo rel IDs
                 #value = value + "[%s]: " % kekule + "[%s]" % Ga + kekule + "[%s]" % Gb
                 count += 1
                 ## title, handletype, handle
                 #self.link(str(value) , 'Person', handle)
-                #self.append_text("\n")
                 self.append_text("", scroll_to='begin')
-            if count == int(total/6):
-                self.set_text("Too large database for such test")
-                yield False
+                if count == int(total/max_level):
+                    #self.set_text("Too large database for such test")
+                    yield False
