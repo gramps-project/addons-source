@@ -55,8 +55,8 @@ class IDGramplet(Gramplet):
         default_person = self.dbstate.db.get_default_person()
         plist = self.dbstate.db.get_person_handles(sort_handles=True)
         total = len(plist)
-        home = name_displayer.display(default_person)
-        if home:
+        if default_person:
+            home = name_displayer.display(default_person)
             count += 1
             root_str = str(home) + "\n"
             self.set_text(root_str)
@@ -95,7 +95,7 @@ class IDGramplet(Gramplet):
                                 gen = Ga * "_"
                                 self.append_text("\n")
                                 self.link(key + ". " + gen + str(value), 'Person', handle)
-                    if key == "0" and Ga <= max_level: # cousines
+                    if key == "0" and Ga <= max_level: # cousin(e)s
                         gen = Ga * "|"
                         down = Gb * "\t"
                         self.append_text("\n%s%s" % (down, gen))
