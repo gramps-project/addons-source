@@ -403,7 +403,7 @@ class GraphWidget(object):
         self.vbox.set_border_width (4)
         hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
-        zoom_label = Gtk.Label(label="Zoom:")
+        zoom_label = Gtk.Label(label=_("Zoom:"))
         hbox.pack_start (zoom_label, False, False, 1)
 
         self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
