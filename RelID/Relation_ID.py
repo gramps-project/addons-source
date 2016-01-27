@@ -68,8 +68,9 @@ class IDGramplet(Gramplet):
         for handle in plist:
             person = self.dbstate.db.get_person_from_handle(handle)
             name = name_displayer.display(person)
-            #self.set_text("%s/%s\n" % (count + 1, total))
-            if person and person != default_person and person.gender == Person.FEMALE:
+            #if person and person != default_person and person.gender == Person.FEMALE:
+            if person and person != default_person:
+                #self.set_text("%s/%s\n" % (count + 1, total))
                 #rank, handle person, rel_str_orig, rel_fam_orig, rel_str_other, rel_fam_str
                 dist = relationship.get_relationship_distance_new(
                       self.dbstate.db, default_person, person, only_birth=True)
@@ -84,25 +85,26 @@ class IDGramplet(Gramplet):
                 mothers = []
                 mothers.append((kekule, value, Ga))
                 n = 3 # starting key (mother value on sosa/kekule)
-                max_level = 4 # number of generations
+                max_level = 6 # number of generations
                 # sequence = from n to wall
                 wall = n * (max_level + 1) - 1 # max key
                 for (key, value, level) in mothers:
                     if key != "u" and key != "0":
                         for i in range(1, max_level):
                             if level == i:
-                                self.append_text("\nAncestor: ")
-                                self.link(str(value) + key, 'Person', handle)
-                    if key == "0": # cousines
-                        self.append_text("\nAunt or Cousine: ")
-                        self.link(str(value) + key , 'Person', handle)
+                                gen = Ga * "_"
+                                self.append_text("\n")
+                                self.link(key + ". " + gen + str(value), 'Person', handle)
+                    if key == "0" and Ga <= max_level: # cousines
+                        gen = Ga * "|"
+                        down = Gb * "\t"
+                        self.append_text("\n%s%s" % (down, gen))
+                        self.link(str(value) + str(Ga) , 'Person', handle)
                 if kekule.startswith('-'):
                     self.append_text("\n")
-                    value = "Descendant[%s] on level[%s] index n°: %s" % (kekule, Gb, count)
+                    value = "%s. %s on level[%s]" % (value, kekule, Gb)
                     self.link(str(value) , 'Person', handle)
                     #yield False
-                ## pseudo rel IDs
-                #value = value + "[%s]: " % kekule + "[%s]" % Ga + kekule + "[%s]" % Gb
                 count += 1
                 ## title, handletype, handle
                 #self.link(str(value) , 'Person', handle)

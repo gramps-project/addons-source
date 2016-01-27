@@ -69,9 +69,9 @@ def get_number_down(rel_b): #experimental sosa miror
     for i in range(0, len(rel_b)):
         c = rel_b[i]
         if c=='f':
-            rel_num = rel_num - 1
-        elif c=='m':
             rel_num = rel_num / 2
+        elif c=='m':
+            rel_num = rel_num
         else:   # we do not care about non-birth relationship (or we forgot to capture one character above)
             rel_num = "nb"
     return rel_num
