@@ -51,10 +51,13 @@ class IDGramplet(Gramplet):
         self.set_text("Processing..." + "\n")
         yield True
         self.set_text("Person objects" + "\n")
+
+        ancestors = {}
         count = 0
         default_person = self.dbstate.db.get_default_person()
         plist = self.dbstate.db.get_person_handles(sort_handles=True)
         total = len(plist)
+
         if default_person:
             home = name_displayer.display(default_person)
             count += 1
@@ -66,6 +69,7 @@ class IDGramplet(Gramplet):
         relationship.connect_db_signals(self.dbstate)
         
         for handle in plist:
+
             person = self.dbstate.db.get_person_from_handle(handle)
             name = name_displayer.display(person)
             #if person and person != default_person and person.gender == Person.FEMALE:
@@ -78,16 +82,26 @@ class IDGramplet(Gramplet):
                 Ga = len(rel_a)
                 rel_b = dist[0][4]
                 Gb = len(rel_b)
+                mra = 1
+                for letter in rel_a:
+                    if letter == 'f':
+                        mra = mra * 2
+                    if letter == 'm':
+                        mra = mra * 2 + 1
                 yield True
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
                 value = name
 
                 mothers = []
                 mothers.append((kekule, value, Ga))
+
                 n = 3 # starting key (mother value on sosa/kekule)
                 max_level = 6 # number of generations
                 # sequence = from n to wall
                 wall = n * (max_level + 1) - 1 # max key
+
+                ancestors[kekule] = handle
+
                 for (key, value, level) in mothers:
                     if key != "u" and key != "0":
                         for i in range(1, max_level):
@@ -100,10 +114,20 @@ class IDGramplet(Gramplet):
                         down = Gb * "\t"
                         self.append_text("\n%s%s" % (down, gen))
                         self.link(str(value) + str(Ga) , 'Person', handle)
+                        if str(mra) in ancestors:
+                            self.append_text(" via: ")
+                            self.link(str(mra) , 'Person', ancestors.get(str(mra)))
+                        else:
+                            self.append_text(" via %s." % mra)
                 if kekule.startswith('-'):
                     self.append_text("\n")
                     value = "%s. %s on level[%s]" % (value, kekule, Gb)
                     self.link(str(value) , 'Person', handle)
+                    if str(mra) in ancestors:
+                        self.append_text(" via: ")
+                        self.link(str(mra) , 'Person', ancestors.get(str(mra)))
+                    else:
+                        self.append_text(" via %s." % mra)
                     #yield False
                 count += 1
                 ## title, handletype, handle
