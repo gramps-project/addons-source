@@ -35,6 +35,7 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:24
+#: DescendantCount/DescendantCount.py:91
 msgid "Descendant Count"
 msgstr "Calcul des descendants"
 
@@ -49,10 +50,6 @@ msgstr "Gramplet Calcul de descendants"
 #: DescendantCount/DescendantCount.gpr.py:18
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet pour afficher les individus et le nombre de leurs descendants"
-
-#: DescendantCount/DescendantCount.py:78
-msgid "Descendent Count"
-msgstr "Calcul des descendants"
 
 #: DescendantCount/DescendantCount.py:80
 msgid "Person"
