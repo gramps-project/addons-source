@@ -83,6 +83,11 @@ class IDGramplet(Gramplet):
                 rel_b = dist[0][4]
                 Gb = len(rel_b)
                 mra = 1
+                rank = dist[0][0]
+
+                if rank == -1: # not related people
+                    continue
+
                 for letter in rel_a:
                     if letter == 'f':
                         mra = mra * 2
@@ -98,17 +103,20 @@ class IDGramplet(Gramplet):
                 n = 3 # starting key (mother value on sosa/kekule)
                 max_level = 6 # number of generations
                 # sequence = from n to wall
-                wall = n * (max_level + 1) - 1 # max key
 
                 ancestors[kekule] = handle
 
                 for (key, value, level) in mothers:
-                    if key != "u" and key != "0":
+                    if key != "0" and (rank / 2) <= max_level:
+                        if rank == 2 and Ga == 1: # same relations
+                            self.append_text("\nSibling: %s" % value)
+                            continue
                         for i in range(1, max_level):
                             if level == i:
                                 gen = Ga * "_"
+                                down = Gb * "\t"
                                 self.append_text("\n")
-                                self.link(key + ". " + gen + str(value), 'Person', handle)
+                                self.link(down + key + ". " + gen + str(value), 'Person', handle)
                     if key == "0" and Ga <= max_level: # cousin(e)s
                         gen = Ga * "|"
                         down = Gb * "\t"
