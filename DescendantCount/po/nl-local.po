@@ -53,6 +53,7 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:24
+#: DescendantCount/DescendantCount.py:91
 msgid "Descendant Count"
 msgstr "Afstammelingen tellen"
 
@@ -67,10 +68,6 @@ msgstr "'Afstammelingen telling'-gramplet"
 #: DescendantCount/DescendantCount.gpr.py:18
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet om personen en afstammelingentelling te tonen"
-
-#: DescendantCount/DescendantCount.py:78
-msgid "Descendent Count"
-msgstr "Afstammelingen tellen"
 
 #: DescendantCount/DescendantCount.py:80
 msgid "Person"

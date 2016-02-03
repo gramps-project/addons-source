@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009  Douglas S. Blank <doug.blank@gmail.com>
+# Copyright (C) 2016  Serge Noiraud <serge.noiraud@free.fr>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,8 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-
-# $Id$
 
 import sys
 
@@ -34,6 +33,7 @@ except ValueError:
 _ = _trans.gettext
 from gramps.gui.plug.quick import QuickTable, run_quick_report_by_name
 from gramps.gen.simple import SimpleAccess, SimpleDoc
+from gramps.gen.constfunc import handle2internal
 
 cache = {}
 
@@ -50,24 +50,31 @@ class DescendantCountGramplet(Gramplet):
                                  "None", # dummy handle value
                                  container=self.gui.textview)
 
+    def db_changed(self):
+        self.dbstate.db.connect('person-add', self.update)
+        self.dbstate.db.connect('person-delete', self.update)
+
+    def active_changed(self, handle):
+        self.update()
+
 #------------------------------------------------------------------------
 #
 # Functions
 #
 #------------------------------------------------------------------------
-def countem(db, person_handle, count):
-    global cache
-    if person_handle not in cache:
-        total = count
-        person = db.get_person_from_handle(person_handle)
-        for fam_handle in person.get_family_handle_list():
-            fam = db.get_family_from_handle(fam_handle)
-            for child_ref in fam.get_child_ref_list():
-                total += countem(db, child_ref.ref, 1)
-        cache[person_handle] = total
-    else:
-        total = cache[person_handle]
-    return total
+def countem(db, person_handle):
+    local_list = []
+    person = db.get_person_from_handle(person_handle)
+    for fam_handle in person.get_family_handle_list():
+        fam = db.get_family_from_handle(fam_handle)
+        for child_ref in fam.get_child_ref_list():
+            if child_ref.ref not in local_list:
+                local_list.append(child_ref.ref)
+            new_list = countem(db, child_ref.ref)
+            for elem in new_list:
+                if elem not in local_list:
+                    local_list.append(elem)
+    return local_list
 
 def run(database, document, person):
     """
@@ -81,16 +88,17 @@ def run(database, document, person):
     sdoc = SimpleDoc(document)
     stab = QuickTable(sdb)
     # display the title
-    sdoc.title(_("Descendent Count"))
+    sdoc.title(_("Descendant Count"))
     sdoc.paragraph("")
     stab.columns(_("Person"), _("Number of Descendants"))
-    people = database.get_person_handles(sort_handles=False)
+    people = database.get_person_handles(sort_handles=True)
     for person_handle in people:
-        countem(database, person_handle, 1)
+        result = countem(database, handle2internal(person_handle))
+        cache[person_handle] = len(result)
     matches = 0
     for person_handle in cache:
         person = database.get_person_from_handle(person_handle)
-        stab.row(person, cache[person_handle] - 1) # remove self
+        stab.row(person, cache[person_handle])
         matches += 1
     sdoc.paragraph(_("There are %d people.\n") % matches)
     stab.write(sdoc)

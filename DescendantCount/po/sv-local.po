@@ -21,6 +21,7 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:23
+#: DescendantCount/DescendantCount.py:91
 msgid "Descendant Count"
 msgstr "Ättlingsräknare"
 
@@ -86,10 +87,6 @@ msgstr "Stabil"
 #: DescendantCount/descendant_count.py:202
 msgid "Displays the number of a person's descendants"
 msgstr "Visar antalet av en persons ättlingar"
-
-#: DescendantCount/DescendantCount.py:78
-msgid "Descendent Count"
-msgstr "Ättlingsräknare"
 
 #: DescendantCount/DescendantCount.py:80
 msgid "Person"
