@@ -127,7 +127,7 @@ class IDGramplet(Gramplet):
                             self.link(str(mra) , 'Person', ancestors.get(str(mra)))
                         else:
                             self.append_text(" via %s." % mra)
-                if kekule.startswith('0.'):
+                if kekule.startswith('0.') or kekule.startswith('1'):
                     self.append_text("\n")
                     value = "%s. %s on level[%s]" % (value, kekule, Gb)
                     self.link(str(value) , 'Person', handle)
