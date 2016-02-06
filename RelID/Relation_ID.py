@@ -54,6 +54,13 @@ class IDGramplet(Gramplet):
 
         ancestors = {}
         count = 0
+
+        key = 0
+        ids = []
+        plus = []
+        minus = []
+        position = []
+
         default_person = self.dbstate.db.get_default_person()
         plist = self.dbstate.db.get_person_handles(sort_handles=True)
         total = len(plist)
@@ -93,7 +100,9 @@ class IDGramplet(Gramplet):
                         mra = mra * 2
                     if letter == 'm':
                         mra = mra * 2 + 1
+
                 yield True
+
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
                 value = name
 
@@ -107,6 +116,10 @@ class IDGramplet(Gramplet):
                 ancestors[kekule] = handle
 
                 for (key, value, level) in mothers:
+                    if key == "u": # cousin(e)s need a key
+                        key = str(mra)
+                    if key == "nb": # non-birth
+                        key = "-1"
                     if key != "0" and (rank / 2) <= max_level:
                         if rank == 2 and Ga == 1: # same relations
                             self.append_text("\nSibling: %s" % value)
@@ -136,11 +149,20 @@ class IDGramplet(Gramplet):
                         self.link(str(mra) , 'Person', ancestors.get(str(mra)))
                     else:
                         self.append_text(" via %s." % mra)
+                    key = str(mra)
                     #yield False
                 count += 1
                 ## title, handletype, handle
                 #self.link(str(value) , 'Person', handle)
                 self.append_text("", scroll_to='begin')
+
+                # arrays
+                ids.append(int(key))
+                plus.append(Ga)
+                minus.append(Gb)
+                position.append(rank)
+
                 if count == int(total/max_level):
+                    print(ids, plus, minus, position)
                     #self.set_text("Too large database for such test")
                     yield False
