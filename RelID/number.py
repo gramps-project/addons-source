@@ -43,7 +43,7 @@ Utilities to number identifiers
 def get_number(Ga, Gb, rel_a, rel_b):
     number = 0
     if Ga<0 or Gb<0:
-        number = get_number_down(rel_a, rel_b)
+        number = get_number_down(rel_b)
     elif Ga==Gb:
         number = search_number(Ga)
     elif Ga==0: # the other_person (B) is a direct descendant of A
