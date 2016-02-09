@@ -391,8 +391,8 @@ class etreeGramplet(Gramplet):
                 if tag == NAMESPACE + 'note':
                     notes.append(two)
                     
-                if tag == NAMESPACE + 'name':
-                    print('NAME', two, item)
+                #if tag == NAMESPACE + 'name':
+                    #print('NAME', two, item)
 
         root.clear()
                                     
