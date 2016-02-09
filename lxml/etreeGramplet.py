@@ -329,26 +329,6 @@ class etreeGramplet(Gramplet):
         print('rmap', self.dbstate.db.rmap_index)
         print('nmap', self.dbstate.db.nmap_index)
 
-        # nkeys and tables ???
-        # What does it mean?
-        # 3: Tag
-        # 4: Note
-        # 5: [Event, Place]
-        # 6: [Person, Family, Source, Object]
-        # 8: Citation
-        # 10: Repository
-
-        print("Nb records('Tag):", self.dbstate.db.get_number_of_records("Tag"))
-        print("Nb records('Event):", self.dbstate.db.get_number_of_records("Event"))
-        print("Nb records('Person):", self.dbstate.db.get_number_of_records("Person"))
-        print("Nb records('Family):", self.dbstate.db.get_number_of_records("Family"))
-        print("Nb records('Source):", self.dbstate.db.get_number_of_records("Source"))
-        print("Nb records('Citation):", self.dbstate.db.get_number_of_records("Citation"))
-        print("Nb records('Place):", self.dbstate.db.get_number_of_records("Place"))
-        print("Nb records('Object):", self.dbstate.db.get_number_of_records("Object"))
-        print("Nb records('Repository):", self.dbstate.db.get_number_of_records("Repository"))
-        print("Nb records('Note):", self.dbstate.db.get_number_of_records("Note"))
-
         #print(self.dbstate.db.surname_list)
 
         # XML
