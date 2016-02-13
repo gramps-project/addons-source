@@ -30,6 +30,7 @@ from gramps.gen.lib import Person
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.config import config
 import number
 
 #------------------------------------------------------------------------
@@ -110,7 +111,7 @@ class IDGramplet(Gramplet):
                 mothers.append((kekule, value, Ga))
 
                 n = 3 # starting key (mother value on sosa/kekule)
-                max_level = 6 # number of generations
+                max_level = config.get('behavior.generation-depth')
                 # sequence = from n to wall
 
                 ancestors[kekule] = handle
@@ -162,7 +163,7 @@ class IDGramplet(Gramplet):
                 minus.append(Gb)
                 position.append(rank)
 
-                if count == int(total/max_level):
+                if count == int(total/6): # timing
                     print(ids, plus, minus, position)
                     #self.set_text("Too large database for such test")
                     yield False
