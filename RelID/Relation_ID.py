@@ -27,6 +27,7 @@ Display person objects
 #-------------------------------------------------------------------------
 
 from gramps.gen.lib import Person
+from gramps.gen.utils.db import find_parents
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from gramps.gen.relationship import get_relationship_calculator
@@ -55,6 +56,7 @@ class IDGramplet(Gramplet):
 
         ancestors = {}
         count = 0
+        parents_list = []
 
         key = 0
         ids = []
@@ -95,6 +97,19 @@ class IDGramplet(Gramplet):
 
                 if rank == -1: # not related people
                     continue
+                else:
+                    parents = find_parents(self.dbstate.db, person)
+                    if not parents:
+                        continue
+                    elif parents[0] and parents[0] not in parents_list:
+                        parents_list.append(parents[0])
+                    # in theory, p1 could be p2 too (other family)
+                    elif parents[1] and parents[1] not in parents_list:
+                        parents_list.append(parents[1])
+
+                is_parent = False
+                if handle.decode('utf8') in parents_list:
+                    is_parent = True
 
                 for letter in rel_a:
                     if letter == 'f':
@@ -141,6 +156,8 @@ class IDGramplet(Gramplet):
                             self.link(str(mra) , 'Person', ancestors.get(str(mra)))
                         else:
                             self.append_text(" via %s." % mra)
+                    if is_parent:
+                        self.append_text("*")
                 if kekule.startswith('0.') or kekule == '1': # 1: related to root mother
                     self.append_text("\n")
                     value = "%s. %s on level[%s]" % (value, kekule, Gb)
