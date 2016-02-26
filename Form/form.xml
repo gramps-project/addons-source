@@ -579,6 +579,47 @@
             </column>
         </section>
     </form>
+    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='29 Sep 1939'>
+        <heading>
+            <_attribute>E.D. Letter Code</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Borough, U.D. or R.D.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration District and Sub-district</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>OVSPI</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Birth Date</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Instructions</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
     <form id='CY1891' type='Census' title='1891 Wales Census' date='5 Apr 1891'>
         <heading>
             <_attribute>Civil Parish</_attribute>
