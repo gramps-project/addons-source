@@ -62,8 +62,7 @@ _ = _trans.gettext
 LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
 
-
-
+space = " "
 
 class RepositoryReportAlt(Report):
     """
@@ -186,7 +185,7 @@ class RepositoryReportAlt(Report):
                     #self.doc.write_text(self._('Internet:'))
                     #self.doc.write_text(internet)
                 if self.inc_addres:
-                    self.doc.write_text(self._('Address:'))
+                    self.doc.write_text(self._('Address:') + space)
                     self.doc.write_text(address)
                     
                 self.doc.end_paragraph()
@@ -247,22 +246,22 @@ class RepositoryReportAlt(Report):
                     if self.inc_author or self.inc_abbrev or self.inc_public or self.inc_datamp:
                         if self.inc_author:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(self._('Author:'))
+                            self.doc.write_text(self._('Author:') + space)
                             self.doc.write_text(author)
                             self.doc.end_paragraph()
                         if self.inc_abbrev:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(self._('Abbreviation:'))
+                            self.doc.write_text(self._('Abbreviation:') + space)
                             self.doc.write_text(abbrev)
                             self.doc.end_paragraph()
                         if self.inc_public:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(self._('Publication information:'))
+                            self.doc.write_text(self._('Publication information:') + space)
                             self.doc.write_text(public)
                             self.doc.end_paragraph()
                         if self.inc_datamp:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(self._('Data:'))
+                            self.doc.write_text(self._('Data:') + space)
                             self.doc.write_text(data)
                             self.doc.end_paragraph()
 
@@ -324,7 +323,7 @@ class RepositoryReportAlt(Report):
 
         if date:
             self.doc.start_paragraph('REPO-Section2')
-            self.doc.write_text(self._('Date:'))
+            self.doc.write_text(self._('Date:') + space)
             self.doc.write_text(date[4])
             self.doc.end_paragraph()
 
@@ -332,12 +331,12 @@ class RepositoryReportAlt(Report):
         quay = citation.get_confidence_level()
 
         self.doc.start_paragraph('REPO-Section2')
-        self.doc.write_text(self._('Page:'))
+        self.doc.write_text(self._('Page:') + space)
         self.doc.write_text(page)
         self.doc.end_paragraph()
 
         self.doc.start_paragraph('REPO-Section2')
-        self.doc.write_text(self._('Confidence level:'))
+        self.doc.write_text(self._('Confidence level:') + space)
         self.doc.write_text(str(quay))
         self.doc.end_paragraph()
 
