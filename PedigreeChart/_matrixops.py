@@ -123,17 +123,17 @@ def test():
     C = matrix([[1, 3], [1, 0], [1, 2]])
     D = matrix([[0, 0], [7, 5], [2, 1]])
     E = matrix([3, 4])
-    print "A"
-    print A
-    print "B"
-    print B
-    print "A * B"
-    print A * B
-    print "A + E"
-    print A + E
-    print "C + D"
-    print C + D
-    print "__getitem__(0)[1] =", A[0][1]
+    print("A")
+    print(A)
+    print("B")
+    print(B)
+    print("A * B")
+    print(A * B)
+    print("A + E")
+    print(A + E)
+    print("C + D")
+    print(C + D)
+    print("__getitem__(0)[1] =", A[0][1])
 
 if __name__ == '__main__':
     test()
