@@ -728,9 +728,10 @@ class TimelinePedigreeView(NavigationView):
             family_handle = None
             if BranchData[0]:
                 family_handle = BranchData[0].get_main_parents_family_handle()
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family:
-                    text = self.format_helper.format_relation( family, BoxSizes[4])
+                if family_handle:
+                    family = self.dbstate.db.get_family_from_handle(family_handle)
+                    if family:
+                        text = self.format_helper.format_relation( family, BoxSizes[4])
             label = Gtk.Label(text)
             label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
@@ -1551,6 +1552,8 @@ class TimelinePedigreeView(NavigationView):
                 sp_id = family.get_mother_handle()
             else:
                 sp_id = family.get_father_handle()
+            if not sp_id:
+                continue
             spouse = self.dbstate.db.get_person_from_handle(sp_id)
             if not spouse:
                 continue
@@ -1666,6 +1669,8 @@ class TimelinePedigreeView(NavigationView):
         no_parents = 1
         par_list = find_parents(self.dbstate.db, person)
         for par_id in par_list:
+            if not par_id:
+                continue
             par = self.dbstate.db.get_person_from_handle(par_id)
             if not par:
                 continue
