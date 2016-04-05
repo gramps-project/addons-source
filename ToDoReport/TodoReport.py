@@ -119,7 +119,7 @@ class TodoReport(Report):
             try:
                 # grouping by the first reference
                 (class_name, r_handle) = list(refs)[0]
-                if note_groups.has_key(class_name):
+                if class_name in note_groups:
                     note_groups[class_name].append((r_handle, note_handle))
                 else:
                     note_groups[class_name] = [(r_handle, note_handle)]
