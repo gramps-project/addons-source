@@ -128,17 +128,6 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.show()
         progress.close()
 
-        for handle in plist:
-            person = dbstate.db.get_person_from_handle(handle)
-            name1 = name_displayer.display(person)
-            refs = person.get_person_ref_list()
-            if refs:
-                for ref in person.serialize()[-1]:
-                    (a, b, c, two, value) = ref
-                    person2 = dbstate.db.get_person_from_handle(two)
-                    name2 = name_displayer.display(person2)
-                    #stats_list.append((name1, value, name2))
-
     def build_menu_names(self, obj):
         return (self.label,None)
 
