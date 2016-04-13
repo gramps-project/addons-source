@@ -31,7 +31,6 @@ from gramps.gui.utils import ProgressMeter
 
 from gramps.gui.plug import tool
 from gen.display.name import displayer as name_displayer
-#from gramps.gen.lib.handle import Handle
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.config import config
 import number
@@ -80,10 +79,13 @@ class RelationTab(tool.Tool, ManagedWindow):
                                  parent=window)
             if progress.get_cancelled():
                 return
+            count = 0
             length = len(plist)
-            progress.set_pass(_('Generating Relation tab'), length)
+            progress.set_pass(_('Generating relation map...'), length)
             for handle in plist:
+                count += 1
                 progress.step()
+                progress.set_message("%s of %s" % (count, length))
                 person = dbstate.db.get_person_from_handle(handle)
                 rel = relationship.get_one_relationship(
                                             dbstate.db, default_person, person)

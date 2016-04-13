@@ -26,14 +26,14 @@ MODULE_VERSION="4.2"
 
 #------------------------------------------------------------------------
 #
-# Association State
+# Map relations with home person
 #
 #------------------------------------------------------------------------
 
 register(TOOL,
 id    = 'relationtab',
-name  = "Display Relation with home person",
-description =  ("Will display relational informations with the home person"),
+name  = _("Display relations and distances with the home person"),
+description =  _("Will display relational informations with the home person"),
 version = '1.0',
 gramps_target_version = MODULE_VERSION,
 status = STABLE,
