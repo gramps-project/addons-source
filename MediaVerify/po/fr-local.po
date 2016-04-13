@@ -1,5 +1,5 @@
 # French translation for gramps
-# Copyright (C) 2001-2013 Free Software Foundation, Inc.
+# Copyright (C) 2001-2016 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
 #  ancestor : ascendant
@@ -79,7 +79,7 @@ msgstr "Vérification des media et chemins manquants, dupliqués ainsi que fichi
 
 #: MediaVerify/MediaVerify.py:102
 msgid "Fix"
-msgstr "Corrigé"
+msgstr "Corriger"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Fix media paths of moved and renamed files"
