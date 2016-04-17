@@ -19,19 +19,19 @@ msgstr ""
 
 #: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:397
 msgid "Note Cleanup"
-msgstr "Remarque Nettoyage"
+msgstr "Nettoyage de note"
 
 #: NoteCleanup/NoteCleanup.gpr.py:31
 msgid "Clean up Notes that contain HTML markup"
-msgstr "Nettoyer Remarques qui contiennent des balises HTML"
+msgstr "Nettoyer les notes qui contiennent des balises HTML"
 
 #: NoteCleanup/NoteCleanup.py:91
 msgid "Note Cleanup Tool"
-msgstr "Remarque outil de nettoyage"
+msgstr "Outil de nettoyage de la note"
 
 #: NoteCleanup/NoteCleanup.py:97
 msgid "Cleaned Notes"
-msgstr "Remarques nettoyé"
+msgstr "Notes nettoyées"
 
 #: NoteCleanup/NoteCleanup.py:97
 msgid "Links Only"
@@ -47,11 +47,11 @@ msgstr "Fermer"
 
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
-msgstr "Fermez l'outil Remarque Nettoyage"
+msgstr "Fermez l'outil Nettoyage de note"
 
 #: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
-msgstr "Sauver tous"
+msgstr "Enregistrer tous"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
@@ -63,11 +63,11 @@ msgstr "Chercher"
 
 #: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
-msgstr "Recherche de notes désordonnées"
+msgstr "Recherche de notes non-conformes"
 
 #: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
-msgstr "Générer Notes de test"
+msgstr "Générer des notes de test"
 
 #: NoteCleanup/NoteCleanup.py:131
 msgid ""
@@ -76,7 +76,7 @@ msgid ""
 "database or delete them later."
 msgstr ""
 "Générer des notes d'essai dans la gamme N99996-N99999.\n"
-"Ceux-ci sont ajoutés à votre base de données, de sorte que vous devriez "
+"Celles-ci seront ajoutées à votre base de données, de sorte que vous devrez "
 "travailler avec une base de données de test ou les supprimer plus tard."
 
 #: NoteCleanup/NoteCleanup.py:135
@@ -99,24 +99,24 @@ msgstr ""
 "S'il vous plaît sauvegarder votre base de données avant d'exécuter cet "
 "outil.\n"
 "\n"
-"Commencez l'outil en appuyant sur le bouton 'Chercher', puis examiner les "
+"Démarrez l'outil en appuyant sur le bouton 'Chercher', puis examiner les "
 "résultats. \n"
-"Lorsque vous êtes satisfait du résultat, appuyez sur le bouton 'Sauver tous' "
+"Lorsque vous êtes satisfait(e) du résultat, appuyez sur le bouton 'Sauver tous' "
 "pour enregistrer votre travail.\n"
 "Vous peut exporter un résumé liste des notes qui ont été trouvés en "
 "utilisant le bouton 'Exporter'."
 
 #: NoteCleanup/NoteCleanup.py:183
 msgid "Clean up Notes"
-msgstr "Nettoyer Remarques"
+msgstr "Nettoyer les notes"
 
 #: NoteCleanup/NoteCleanup.py:194
 msgid "Notes"
-msgstr "Remarques"
+msgstr "Notes"
 
 #: NoteCleanup/NoteCleanup.py:278
 msgid "Cleanup Test Notes"
-msgstr "Nettoyage Remarques test"
+msgstr "Nettoyage des notes test"
 
 #: NoteCleanup/NoteCleanup.py:300 NoteCleanup/NoteCleanup.py:305
 msgid "Add Test Note"
@@ -139,7 +139,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Remarques sélectionnés sur le volet de gauche sont représentés Avant le "
+"Les notes sélectionnées sur le volet de gauche sont représentées avant le "
 "nettoyage dans cette case."
 
 #: NoteCleanup/NoteCleanup.py:375
@@ -152,19 +152,19 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Remarques sélectionnés sur le volet de gauche sont affichés Après le "
-"nettoyage dans cette case. \n"
+"Les notes sélectionnées sur le volet de gauche sont affichées après le "
+"nettoyage dans cette case.\n"
 "Si vous souhaitez apporter des modifications, vous pouvez les faire ici et "
-"utiliser les commandes de style dans la barre d'outils ci-dessus."
+"utiliser les commandes dans la barre d'outils ci-dessus."
 
 #: NoteCleanup/NoteCleanup.py:390
 msgid "Saving Notes"
-msgstr "Remarques Saving"
+msgstr "Enregistrement des notes"
 
 #: NoteCleanup/NoteCleanup.py:392
 msgid "Saving Cleaned Notes"
-msgstr "Enregistrement Remarques Nettoyé"
+msgstr "Enregistrement des notes nettoyées"
 
 #: NoteCleanup/NoteCleanup.py:417
 msgid "Scanning Notes"
-msgstr "Remarques d'analyse"
+msgstr "Analyse des notes"
