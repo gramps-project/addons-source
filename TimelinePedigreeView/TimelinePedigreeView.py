@@ -546,7 +546,7 @@ class TimelinePedigreeView(NavigationView):
         db.connect('family-add', self.person_rebuild)
         db.connect('family-delete', self.person_rebuild)
         db.connect('family-rebuild', self.person_rebuild)
-        self.bookmarks.update_bookmarks(self.dbstate.db.get_bookmarks())
+        self.bookmarks.update_bookmarks()
         if self.active:
             self.bookmarks.redraw()
         self.build_tree()
