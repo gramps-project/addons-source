@@ -32,7 +32,7 @@ MODULE_VERSION="4.2"
 
 register(TOOL,
 id    = 'associationstool',
-name  = "Check Associations data",
+name  = _("Check Associations data"),
 description =  _("Will check the data on Association for people."),
 version = '1.0.1',
 gramps_target_version = MODULE_VERSION,

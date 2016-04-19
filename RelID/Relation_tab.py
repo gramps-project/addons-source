@@ -23,7 +23,11 @@ Relations tab.
 
 """
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from gi.repository import Gtk
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
