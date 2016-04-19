@@ -3,9 +3,10 @@
 #
 # Copyright (C) 2006-2007  Alex Roitman
 # Copyright (C) 2008-2009  Gary Burton
-# Copyright (C) 2007-2011  Jerome Rapinat
+# Copyright (C) 2007-2016  Jerome Rapinat
 # Copyright (C) 2009  Brian G. Matherly
 # Copyright (C) 2010  Douglas S. Blank
+# Copyright (C) 2016 Paul Franklin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -49,7 +50,8 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                             TableStyle, TableCellStyle,
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
                              
@@ -151,6 +153,7 @@ class RepositoryReportAlt(Report):
         This procedure writes out the details of a single repository.
         """
 
+        self.black_list = []
         repository = self.database.get_repository_from_handle(handle)
 
         self.doc.start_paragraph('REPO-RepositoryTitle')
@@ -279,9 +282,11 @@ class RepositoryReportAlt(Report):
                     if src.get_citation_child_list() and self.incl_media:
                         medialist = src.get_citation_child_list()
                         for media_handle in medialist:
-                            photo = src.get_media_list()
-                            self.__write_referenced_media(photo, media_handle)
-                            
+                            if media_handle not in self.black_list:
+                                photos = src.get_media_list()
+                                self.__write_referenced_media(photos, media_handle)
+                            self.black_list.append(media_handle)
+
             for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
                 if self.incl_citat:
                     self.__write_referenced_citations(citationref)
@@ -296,17 +301,34 @@ class RepositoryReportAlt(Report):
             self.doc.write_styled_note(note.get_styledtext(),
                                        note.get_format(), 'REPO-Note')
 
-    def __write_referenced_media(self, photo, media_handle):
+    def __write_referenced_media(self, photos, media_handle):
         """
         This procedure writes out each of the media related to the source.
         """
 
-        for image in photo:
-            
+        # see indivcomplete textual report
+
+        self.doc.start_table("images", 'REPO-MediaTab')
+        cells = 3 # the GalleryTable has 3 cells
+        self.doc.start_row()
+
+        count = 0
+        total = len(photos)
+
+        for image in photos[0:3]: # only one line
+            count += 1
+
             # check if not multiple references (citations) ???
             # TOFIX
 
-            ReportUtils.insert_image(self.database, self.doc, image, self.user)
+            self.doc.start_cell('REPO-MediaCell')
+            if image not in self.black_list:
+                ReportUtils.insert_image(self.database, self.doc, image, self.user)
+                self.black_list.append(image)
+            self.doc.end_cell()
+
+        self.doc.end_row()
+        self.doc.end_table()
 
     def __write_referenced_citations(self, handle):
         """
@@ -339,6 +361,14 @@ class RepositoryReportAlt(Report):
         self.doc.write_text(self._('Confidence level:') + space)
         self.doc.write_text(str(quay))
         self.doc.end_paragraph()
+
+        if citation.get_citation_child_list() and self.incl_media:
+            medialist = citation.get_citation_child_list()
+            for media_handle in medialist:
+                if media_handle not in self.black_list:
+                    photos = citation.get_media_list()
+                    self.__write_referenced_media(photos, media_handle)
+                self.black_list.append(media_handle)
 
 #------------------------------------------------------------------------
 #
@@ -417,6 +447,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         self.__section_style()
         self.__child_section_style()
         self.__note_style()
+        self.__media_style()
 
     def __report_title_style(self):
         """
@@ -491,3 +522,20 @@ class RepositoryOptionsAlt(MenuReportOptions):
         para.set_description(_('The basic style used for the note display.'))
         self.default_style.add_paragraph_style("REPO-Note", para)
 
+    def __media_style(self):
+        """
+        Define the style used for media
+        """
+
+        tbl = TableStyle()
+        tbl.set_width(100)
+        tbl.set_columns(3)
+        tbl.set_column_width(0, 33)
+        tbl.set_column_width(1, 33)
+        tbl.set_column_width(2, 34)
+        self.default_style.add_table_style('REPO-MediaTab', tbl)
+
+        cell = TableCellStyle()
+        cell.set_top_border(1)
+        cell.set_bottom_border(1)
+        self.default_style.add_cell_style("REPO-MediaCell", cell)
