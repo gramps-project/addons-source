@@ -1,0 +1,95 @@
+# French translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2015 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2014.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.2.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-19 11:54+0200\n"
+"PO-Revision-Date: 2016-03-28 09:37+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: RelID/Relation_ID.gpr.py:23
+msgid "Relation ID"
+msgstr "Identifiant de relation"
+
+#: RelID/Relation_ID.gpr.py:24
+msgid "Shows person's relation, id, locator"
+msgstr "Affiche la relation; l'identifiant, l'emplacement"
+
+#: RelID/Relation_ID.gpr.py:33
+msgid "Who, What, Where on tree"
+msgstr "Qui, quoi et où dans l'arbre"
+
+#: RelID/Relation_tab.gpr.py:35
+msgid "Display relations and distances with the home person"
+msgstr "Afficher les relations et distances avec l'individu central"
+
+#: RelID/Relation_tab.gpr.py:36
+msgid "Will display relational informations with the home person"
+msgstr "Affichera les informations relationnelles avec la personne centrale"
+
+#: RelID/Relation_tab.py:47
+msgid "Relation and distances with root"
+msgstr "Relation et distances avec la racine"
+
+#: RelID/Relation_tab.py:53
+msgid "Rel_id"
+msgstr "Id_Rel"
+
+#: RelID/Relation_tab.py:54
+msgid "Relation"
+msgstr "Relation"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+#: RelID/Relation_tab.py:55
+msgid "Name"
+msgstr "Nom "
+
+#: RelID/Relation_tab.py:56
+msgid "up"
+msgstr "haut"
+
+#: RelID/Relation_tab.py:57
+msgid "down"
+msgstr "bas"
+
+#: RelID/Relation_tab.py:58
+msgid "Common MRA"
+msgstr "n° Anc."
+
+#: RelID/Relation_tab.py:59
+msgid "Rank"
+msgstr "Rang"
+
+#: RelID/Relation_tab.py:84
+msgid "Generating relation map..."
+msgstr "Génération de la table de relation..."
