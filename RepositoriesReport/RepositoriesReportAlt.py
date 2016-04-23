@@ -249,22 +249,22 @@ class RepositoryReportAlt(Report):
                     # if need, generates child section
 
                     if self.inc_author or self.inc_abbrev or self.inc_public or self.inc_datamp:
-                        if self.inc_author or self.incl_empty:
+                        if self.inc_author and author != "" or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Author:') + space)
                             self.doc.write_text(author)
                             self.doc.end_paragraph()
-                        if self.inc_abbrev or self.incl_empty:
+                        if self.inc_abbrev and abbrev != "" or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Abbreviation:') + space)
                             self.doc.write_text(abbrev)
                             self.doc.end_paragraph()
-                        if self.inc_public or self.incl_empty:
+                        if self.inc_public and public != "" or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Publication information:') + space)
                             self.doc.write_text(public)
                             self.doc.end_paragraph()
-                        if self.inc_datamp or self.incl_empty:
+                        if self.inc_datamp and data != "" or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Data:') + space)
                             self.doc.write_text(data)
@@ -360,10 +360,14 @@ class RepositoryReportAlt(Report):
             self.doc.write_text(page)
             self.doc.end_paragraph()
 
-        if quay != "" or self.incl_empty:
+        if quay != 2 or self.incl_empty:
             self.doc.start_paragraph('REPO-Section2')
             self.doc.write_text(self._('Confidence level:') + space)
             self.doc.write_text(str(quay))
+            self.doc.end_paragraph()
+        else:
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Citation:') + space)
             self.doc.end_paragraph()
 
         if citation.get_citation_child_list() and self.incl_media:
