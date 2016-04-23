@@ -6,7 +6,7 @@
 # Copyright (C) 2007-2016  Jerome Rapinat
 # Copyright (C) 2009  Brian G. Matherly
 # Copyright (C) 2010  Douglas S. Blank
-# Copyright (C) 2016 Paul Franklin
+# Copyright (C) 2016  Paul Franklin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -93,6 +93,7 @@ class RepositoryReportAlt(Report):
         inclmedia    - Whether to include media of source.
         inclcitat    - Whether to include citations of source.
         incprivat    - Whether to include private records.
+        incempty     - Whether to include empty lines with keys for filling.
         trans        - Select translation
 
         """
@@ -115,6 +116,7 @@ class RepositoryReportAlt(Report):
         self.incl_media = get_value('inclmedia')
         self.incl_citat = get_value('inclcitat')
         self.inc_privat = get_value('incprivat')
+        self.incl_empty = get_value('incempty')
         
         language = get_value('trans')
         locale = self.set_locale(language)
@@ -187,7 +189,7 @@ class RepositoryReportAlt(Report):
                 #if self.inc_intern:
                     #self.doc.write_text(self._('Internet:'))
                     #self.doc.write_text(internet)
-                if self.inc_addres:
+                if self.inc_addres or self.incl_empty:
                     self.doc.write_text(self._('Address:') + space)
                     self.doc.write_text(address)
                     
@@ -247,22 +249,22 @@ class RepositoryReportAlt(Report):
                     # if need, generates child section
 
                     if self.inc_author or self.inc_abbrev or self.inc_public or self.inc_datamp:
-                        if self.inc_author:
+                        if self.inc_author or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Author:') + space)
                             self.doc.write_text(author)
                             self.doc.end_paragraph()
-                        if self.inc_abbrev:
+                        if self.inc_abbrev or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Abbreviation:') + space)
                             self.doc.write_text(abbrev)
                             self.doc.end_paragraph()
-                        if self.inc_public:
+                        if self.inc_public or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Publication information:') + space)
                             self.doc.write_text(public)
                             self.doc.end_paragraph()
-                        if self.inc_datamp:
+                        if self.inc_datamp or self.incl_empty:
                             self.doc.start_paragraph('REPO-Section2')
                             self.doc.write_text(self._('Data:') + space)
                             self.doc.write_text(data)
@@ -336,7 +338,6 @@ class RepositoryReportAlt(Report):
         """
 
         self.doc.start_paragraph('REPO-Section')
-        self.doc.write_text(self._('Citations'))
         self.doc.end_paragraph()
 
         citation = self.database.get_citation_from_handle(handle)
@@ -344,23 +345,26 @@ class RepositoryReportAlt(Report):
         date = citation.serialize()[2]
 
         if date:
-            self.doc.start_paragraph('REPO-Section2')
-            self.doc.write_text(self._('Date:') + space)
-            self.doc.write_text(date[4])
-            self.doc.end_paragraph()
+            if date[4] != "" or self.incl_empty:
+                self.doc.start_paragraph('REPO-Section2')
+                self.doc.write_text(self._('Date:') + space)
+                self.doc.write_text(date[4])
+                self.doc.end_paragraph()
 
         page = citation.get_page()
         quay = citation.get_confidence_level()
 
-        self.doc.start_paragraph('REPO-Section2')
-        self.doc.write_text(self._('Page:') + space)
-        self.doc.write_text(page)
-        self.doc.end_paragraph()
+        if page != "" or self.incl_empty:
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Page:') + space)
+            self.doc.write_text(page)
+            self.doc.end_paragraph()
 
-        self.doc.start_paragraph('REPO-Section2')
-        self.doc.write_text(self._('Confidence level:') + space)
-        self.doc.write_text(str(quay))
-        self.doc.end_paragraph()
+        if quay != "" or self.incl_empty:
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Confidence level:') + space)
+            self.doc.write_text(str(quay))
+            self.doc.end_paragraph()
 
         if citation.get_citation_child_list() and self.incl_media:
             medialist = citation.get_citation_child_list()
@@ -433,6 +437,11 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incprivat = BooleanOption(_('Include private records'), False)
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
         addopt('incprivat', incprivat)
+
+        incempty = BooleanOption(_('Display empty values'), False)
+        incempty.set_help(_('Whether to include key records with empty values.'))
+        addopt('incempty', incempty)
+
 
         stdoptions.add_localization_option(menu, category_name)
 
@@ -530,12 +539,15 @@ class RepositoryOptionsAlt(MenuReportOptions):
         tbl = TableStyle()
         tbl.set_width(100)
         tbl.set_columns(3)
-        tbl.set_column_width(0, 33)
-        tbl.set_column_width(1, 33)
-        tbl.set_column_width(2, 34)
+        tbl.set_column_width(0, 32.3)
+        tbl.set_column_width(1, 32.3)
+        tbl.set_column_width(2, 32.3)
         self.default_style.add_table_style('REPO-MediaTab', tbl)
 
         cell = TableCellStyle()
+        cell.set_padding(0.5)
         cell.set_top_border(1)
         cell.set_bottom_border(1)
+        cell.set_right_border(0.5)
+        cell.set_left_border(0.5)
         self.default_style.add_cell_style("REPO-MediaCell", cell)
