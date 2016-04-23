@@ -6,7 +6,7 @@
 # Copyright (C) 2007-2016  Jerome Rapinat
 # Copyright (C) 2009  Brian G. Matherly
 # Copyright (C) 2010  Douglas S. Blank
-# Copyright (C) 2016 Paul Franklin
+# Copyright (C) 2016  Paul Franklin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -336,7 +336,6 @@ class RepositoryReportAlt(Report):
         """
 
         self.doc.start_paragraph('REPO-Section')
-        self.doc.write_text(self._('Citations'))
         self.doc.end_paragraph()
 
         citation = self.database.get_citation_from_handle(handle)
@@ -530,12 +529,15 @@ class RepositoryOptionsAlt(MenuReportOptions):
         tbl = TableStyle()
         tbl.set_width(100)
         tbl.set_columns(3)
-        tbl.set_column_width(0, 33)
-        tbl.set_column_width(1, 33)
-        tbl.set_column_width(2, 34)
+        tbl.set_column_width(0, 32.3)
+        tbl.set_column_width(1, 32.3)
+        tbl.set_column_width(2, 32.3)
         self.default_style.add_table_style('REPO-MediaTab', tbl)
 
         cell = TableCellStyle()
+        cell.set_padding(0.5)
         cell.set_top_border(1)
         cell.set_bottom_border(1)
+        cell.set_right_border(0.5)
+        cell.set_left_border(0.5)
         self.default_style.add_cell_style("REPO-MediaCell", cell)
