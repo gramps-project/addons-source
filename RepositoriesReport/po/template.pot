@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 11:24+0200\n"
+"POT-Creation-Date: 2016-04-23 13:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,151 +28,159 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
 #: RepositoriesReport/RepositoriesReport.py:80
-#: RepositoriesReport/RepositoriesReportAlt.py:134
+#: RepositoriesReport/RepositoriesReportAlt.py:136
 msgid "Repositories Report"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:151
-#: RepositoriesReport/RepositoriesReportAlt.py:393
-#: RepositoriesReport/RepositoriesReportAlt.py:395
+#: RepositoriesReport/RepositoriesReportAlt.py:401
+#: RepositoriesReport/RepositoriesReportAlt.py:403
 msgid "Report Options"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:466
+#: RepositoriesReport/RepositoriesReportAlt.py:479
 msgid "The style used for the title of the report."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:189
-#: RepositoriesReport/RepositoriesReportAlt.py:480
+#: RepositoriesReport/RepositoriesReportAlt.py:493
 msgid "The style used for repository title."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:203
-#: RepositoriesReport/RepositoriesReportAlt.py:495
+#: RepositoriesReport/RepositoriesReportAlt.py:508
 msgid "The style used for each section."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:191
+#: RepositoriesReport/RepositoriesReportAlt.py:193
 msgid "Address:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:252
+#: RepositoriesReport/RepositoriesReportAlt.py:254
 msgid "Author:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:257
+#: RepositoriesReport/RepositoriesReportAlt.py:259
 msgid "Abbreviation:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:262
+#: RepositoriesReport/RepositoriesReportAlt.py:264
 msgid "Publication information:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:267
+#: RepositoriesReport/RepositoriesReportAlt.py:269
 msgid "Data:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:339
-msgid "Citations"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:348
+#: RepositoriesReport/RepositoriesReportAlt.py:350
 msgid "Date:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:359
 msgid "Page:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:361
+#: RepositoriesReport/RepositoriesReportAlt.py:365
 msgid "Confidence level:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:397
-msgid "Include repository's urls"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:398
-msgid "Whether to include urls on repository."
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:401
-msgid "Include repository's address"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:402
-msgid "Whether to include addresses on repository."
+#: RepositoriesReport/RepositoriesReportAlt.py:370
+msgid "Citation:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:405
-msgid "Include source's author"
+msgid "Include repository's urls"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:406
-msgid "Whether to include author."
+msgid "Whether to include urls on repository."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:409
-msgid "Include source's abbreviation"
+msgid "Include repository's address"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:410
-msgid "Whether to include abbreviation."
+msgid "Whether to include addresses on repository."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:413
-msgid "Include source's publication information"
+msgid "Include source's author"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:414
-msgid "Whether to include publication information."
+msgid "Whether to include author."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:417
-msgid "Include source's data"
+msgid "Include source's abbreviation"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:418
-msgid "Whether to include keys and values."
+msgid "Whether to include abbreviation."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:421
-msgid "Include notes"
+msgid "Include source's publication information"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:422
-msgid "Whether to include notes on repositories and sources."
+msgid "Whether to include publication information."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:425
-msgid "Include media"
+msgid "Include source's data"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:426
-msgid "Whether to include media on sources."
+msgid "Whether to include keys and values."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:429
-msgid "Include citations"
+msgid "Include notes"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:430
-msgid "Whether to include citations on sources."
+msgid "Whether to include notes on repositories and sources."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:433
-msgid "Include private records"
+msgid "Include media"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:434
+msgid "Whether to include media on sources."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:437
+msgid "Include citations"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:438
+msgid "Whether to include citations on sources."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:441
+msgid "Include private records"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:442
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:510
+#: RepositoriesReport/RepositoriesReportAlt.py:445
+msgid "Display empty values"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:446
+msgid "Whether to include key records with empty values."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:523
 msgid "The style used for child section."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:522
+#: RepositoriesReport/RepositoriesReportAlt.py:535
 msgid "The basic style used for the note display."
 msgstr ""
