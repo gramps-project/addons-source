@@ -342,7 +342,19 @@ class RepositoryReportAlt(Report):
 
         citation = self.database.get_citation_from_handle(handle)
 
+        page = citation.get_page()
+        quay = citation.get_confidence_level()
         date = citation.serialize()[2]
+
+        if quay != 2 or self.incl_empty: # default quality = 2
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Confidence level:') + space)
+            self.doc.write_text(str(quay))
+            self.doc.end_paragraph()
+        else:
+            self.doc.start_paragraph('REPO-Section2')
+            self.doc.write_text(self._('Citation:') + space)
+            self.doc.end_paragraph()
 
         if date:
             if date[4] != "" or self.incl_empty:
@@ -351,23 +363,10 @@ class RepositoryReportAlt(Report):
                 self.doc.write_text(date[4])
                 self.doc.end_paragraph()
 
-        page = citation.get_page()
-        quay = citation.get_confidence_level()
-
         if page != "" or self.incl_empty:
             self.doc.start_paragraph('REPO-Section2')
             self.doc.write_text(self._('Page:') + space)
             self.doc.write_text(page)
-            self.doc.end_paragraph()
-
-        if quay != 2 or self.incl_empty:
-            self.doc.start_paragraph('REPO-Section2')
-            self.doc.write_text(self._('Confidence level:') + space)
-            self.doc.write_text(str(quay))
-            self.doc.end_paragraph()
-        else:
-            self.doc.start_paragraph('REPO-Section2')
-            self.doc.write_text(self._('Citation:') + space)
             self.doc.end_paragraph()
 
         if citation.get_citation_child_list() and self.incl_media:
