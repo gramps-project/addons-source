@@ -43,7 +43,7 @@ import gettext
 #-------------------------------------------------------------------------
 
 from gramps.gen.const import USER_PLUGINS
-from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
+from gramps.gen.plug.menu import FilterOption, BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
@@ -117,9 +117,12 @@ class RepositoryReportAlt(Report):
         self.incl_citat = get_value('inclcitat')
         self.inc_privat = get_value('incprivat')
         self.incl_empty = get_value('incempty')
-        
+
         language = get_value('trans')
         locale = self.set_locale(language)
+
+        filter_option = get_option_by_name('filter')
+        self.filter = filter_option.get_filter()
 
     def write_report(self):
         """
@@ -145,7 +148,13 @@ class RepositoryReportAlt(Report):
         This procedure writes out all repositories.
         """
 
-        rlist = self.database.get_repository_handles()
+        if self.filter.get_name() != '':
+            # Use the selected filter to provide a list of repository handles
+            repofilterlist = self.database.iter_repository_handles()
+            rlist = self.filter.apply(self.database, repofilterlist)
+        else:
+            rlist = self.database.get_repository_handles()
+
         for handle in rlist:
             self.__write_repository(handle)
             self.__write_referenced_sources(handle)
@@ -397,45 +406,62 @@ class RepositoryOptionsAlt(MenuReportOptions):
         Add options to the menu for the place report.
         """
 
-        category_name = _('Report Options')
+        common_name = _('Report Options')
+        repository_name = _('Repositories')
+        source_name = _('Sources')
+
+        # Reload filters to pick any new ones
+        CustomFilters = None
+        from gramps.gen.filters import CustomFilters, GenericFilter
+
+        opt = FilterOption(_("Select using filter"), 0)
+        opt.set_help(_("Selection with a filter"))
+        filter_list = []
+        filter_list.append(GenericFilter())
+        filter_list.extend(CustomFilters.get_filters('Repository'))
+        opt.set_filters(filter_list)
+        menu.add_option(repository_name, "filter", opt)
+
         from functools import partial
-        addopt = partial(menu.add_option, _("Report Options"))
+        addopt = partial(menu.add_option, common_name)
+        raddopt = partial(menu.add_option, repository_name)
+        saddopt = partial(menu.add_option, source_name)
 
         incintern = BooleanOption(_("Include repository's urls"), False)
         incintern.set_help(_('Whether to include urls on repository.'))
-        addopt('incintern', incintern)
+        raddopt('incintern', incintern)
 
         incaddres = BooleanOption(_("Include repository's address"), False)
         incaddres.set_help(_('Whether to include addresses on repository.'))
-        addopt('incaddres', incaddres)
+        raddopt('incaddres', incaddres)
 
         incauthor = BooleanOption(_("Include source's author"), False)
         incauthor.set_help(_('Whether to include author.'))
-        addopt('incauthor', incauthor)
+        saddopt('incauthor', incauthor)
 
         incabbrev = BooleanOption(_("Include source's abbreviation"), False)
         incabbrev.set_help(_('Whether to include abbreviation.'))
-        addopt('incabbrev', incabbrev)
+        saddopt('incabbrev', incabbrev)
 
         incpublic = BooleanOption(_("Include source's publication information"), False)
         incpublic.set_help(_('Whether to include publication information.'))
-        addopt('incpublic', incpublic)
+        saddopt('incpublic', incpublic)
 
         incdatamp = BooleanOption(_("Include source's data"), False)
         incdatamp.set_help(_('Whether to include keys and values.'))
-        addopt('incdatamp', incdatamp)
+        saddopt('incdatamp', incdatamp)
 
         inclunote = BooleanOption(_('Include notes'), False)
         inclunote.set_help(_('Whether to include notes on repositories and sources.'))
         addopt('inclunote', inclunote)
 
         inclmedia = BooleanOption(_('Include media'), False)
-        inclmedia.set_help(_('Whether to include media on sources.'))
+        inclmedia.set_help(_('Whether to include media.'))
         addopt('inclmedia', inclmedia)
         
         inclcitat = BooleanOption(_('Include citations'), False)
         inclcitat.set_help(_('Whether to include citations on sources.'))
-        addopt('inclcitat', inclcitat)
+        saddopt('inclcitat', inclcitat)
 
         incprivat = BooleanOption(_('Include private records'), False)
         incprivat.set_help(_('Whether to include repositories and sources marked as private.'))
@@ -445,8 +471,7 @@ class RepositoryOptionsAlt(MenuReportOptions):
         incempty.set_help(_('Whether to include key records with empty values.'))
         addopt('incempty', incempty)
 
-
-        stdoptions.add_localization_option(menu, category_name)
+        stdoptions.add_localization_option(menu, common_name)
 
     def make_default_style(self, default_style):
         """
