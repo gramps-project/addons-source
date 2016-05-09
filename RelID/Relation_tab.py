@@ -126,13 +126,13 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 stats_list.append((int(kekule), rel, name, int(Ga), 
                                     int(Gb), int(mra), int(rank)))
+            progress.close()
 
         for entry in stats_list:
             model.add(entry, entry[0])
         window.show_all()
         self.set_window(window, None, self.label)
         self.show()
-        progress.close()
 
     def build_menu_names(self, obj):
         return (self.label,None)
