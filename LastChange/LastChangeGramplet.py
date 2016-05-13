@@ -64,7 +64,7 @@ class LastChangeGramplet(Gramplet):
         for handle in reversed(handles[-10:]):
             person = self.dbstate.db.get_person_from_handle(handle)
             self.append_text(" %d. " % (counter + 1, ))
-            self.link(person.get_primary_name().get_name(), 'Person', handle)
+            self.link(person.get_primary_name().get_name(), 'Person', person.handle)
             change_date = Date()
             change_date.set_yr_mon_day(*time.localtime(person.change)[0:3])
             self.append_text(" (%s %s)" % (_('changed on'), gramps.gen.datehandler.displayer.display(change_date)))
