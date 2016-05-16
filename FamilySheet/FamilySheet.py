@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2008,2009,2010 Reinhard Mueller
 # Copyright (C) 2010 Jakim Friant
+# Copyright (C) 2016 Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -785,7 +786,8 @@ def _Event_get_place_text(event, database, placeholder=False):
     place_handle = event.get_place_handle()
 
     if place_handle:
-        place_title = place_displayer.display_event(database, event)
+        place = database.get_place_from_handle(place_handle)
+        place_title = place_displayer.display(database, place)
         text = _("in %(place)s") % {'place': place_title}
     elif placeholder and event.get_type() in _Event_needs_date_place:
         text = _("in %(place)s") % {'place': "__________"}
