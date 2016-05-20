@@ -1117,14 +1117,22 @@ class DotGenerator(object):
                         num_generations - 1,
                         person_handles)
 
-                # Add spouse
+                # Add spouses
                 if person.handle == family.get_father_handle():
                     spouse_handle = family.get_mother_handle()
                 else:
                     spouse_handle = family.get_father_handle()
 
+                # add spouse itself
                 if spouse_handle and spouse_handle not in person_handles:
-                    person_handles.append(spouse_handle)
+                   person_handles.append(spouse_handle)
+                # add all his spouses
+                sp_person = self.database.get_person_from_handle(spouse_handle)
+                if sp_person:
+                  for sp_family_handle in sp_person.get_family_handle_list():
+                     sp_family = self.database.get_family_from_handle(sp_family_handle)
+                     if sp_family.get_mother_handle() and sp_family.get_mother_handle() not in person_handles:
+                       person_handles.append(sp_family.get_mother_handle())
 
     def find_ancestors(self, active_person):
         "Spider the database from the active person"
@@ -1265,15 +1273,11 @@ class DotGenerator(object):
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(f_handle)
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(m_handle)
         self.end_subgraph()
 
     def get_gender_style(self, person):
