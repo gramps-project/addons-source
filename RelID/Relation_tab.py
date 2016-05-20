@@ -29,6 +29,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gi.repository import Gtk
+import time
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
@@ -81,29 +82,39 @@ class RelationTab(tool.Tool, ManagedWindow):
             relationship = get_relationship_calculator()
             progress = ProgressMeter(self.label, can_cancel=True,
                                  parent=window)
-            if progress.get_cancelled():
-                return
             count = 0
             length = len(plist)
             progress.set_pass(_('Generating relation map...'), length)
+            step_one = time.clock()
             for handle in plist:
+                if progress.get_cancelled():
+                    progress.close()
+                    return
                 count += 1
                 progress.step()
-                progress.set_message("%s of %s" % (count, length))
+                step_two = time.clock()
+                wait = ((step_two - step_one)/count) * length
+                #if count > 99:
+                    #progress.set_message(_("%s/%s. Estimated time: %s seconds") % (count, length, wait))
                 person = dbstate.db.get_person_from_handle(handle)
-                rel = relationship.get_one_relationship(
-                                            dbstate.db, default_person, person)
+                timeout_one = time.clock()
                 dist = relationship.get_relationship_distance_new(
                           dbstate.db, default_person, person, only_birth=True)
+                timeout_two = time.clock()
+                limit = timeout_two - timeout_one
+                if limit > 0.035:
+                    #progress.set_message("Sorry! '%s' needs %s second" % (handle, limit))
+                    continue
+                rel = relationship.get_one_relationship(
+                                            dbstate.db, default_person, person)
+                rank = dist[0][0]
+                if rank == -1: # not related people
+                    continue
                 rel_a = dist[0][2]
                 Ga = len(rel_a)
                 rel_b = dist[0][4]
                 Gb = len(rel_b)
                 mra = 1
-                rank = dist[0][0]
-
-                if rank == -1: # not related people
-                    continue
 
                 for letter in rel_a:
                     if letter == 'f':
@@ -124,7 +135,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 except: # 1: related to mother; 0.x : no more girls lineage
                    kekule = 1
 
-                stats_list.append((int(kekule), rel, name, int(Ga), 
+                stats_list.append((int(kekule), rel, name, int(Ga),
                                     int(Gb), int(mra), int(rank)))
             progress.close()
 
