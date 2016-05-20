@@ -74,16 +74,22 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         stats_list = []
         max_level = config.get('behavior.generation-depth')
+        if max_level >= 15:
+            var = max_level * 0.002
+        elif 10 <= max_level < 15:
+            var = max_level * 0.003
+        else:
+            var = max_level * 0.004
 
         default_person = dbstate.db.get_default_person()
 
         if default_person:
-            plist = dbstate.db.get_person_handles(sort_handles=True)
+            plist = dbstate.db.iter_person_handles()
             relationship = get_relationship_calculator()
             progress = ProgressMeter(self.label, can_cancel=True,
                                  parent=window)
             count = 0
-            length = len(plist)
+            length = dbstate.db.get_number_of_people()
             progress.set_pass(_('Generating relation map...'), length)
             step_one = time.clock()
             for handle in plist:
@@ -93,7 +99,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 count += 1
                 progress.step()
                 step_two = time.clock()
-                wait = ((step_two - step_one)/count) * length
+                #wait = ((step_two - step_one)/count) * length
                 #if count > 99:
                     #progress.set_message(_("%s/%s. Estimated time: %s seconds") % (count, length, wait))
                 person = dbstate.db.get_person_from_handle(handle)
@@ -102,7 +108,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                           dbstate.db, default_person, person, only_birth=True)
                 timeout_two = time.clock()
                 limit = timeout_two - timeout_one
-                if limit > 0.035:
+                if limit > var:
                     #progress.set_message("Sorry! '%s' needs %s second" % (handle, limit))
                     continue
                 rel = relationship.get_one_relationship(
