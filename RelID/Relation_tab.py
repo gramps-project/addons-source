@@ -107,15 +107,15 @@ class RelationTab(tool.Tool, ManagedWindow):
                 dist = relationship.get_relationship_distance_new(
                           dbstate.db, default_person, person, only_birth=True)
                 timeout_two = time.clock()
+                rank = dist[0][0]
+                if rank == -1: # not related people
+                    continue
                 limit = timeout_two - timeout_one
                 if limit > var:
                     #progress.set_message("Sorry! '%s' needs %s second" % (handle, limit))
                     continue
                 rel = relationship.get_one_relationship(
                                             dbstate.db, default_person, person)
-                rank = dist[0][0]
-                if rank == -1: # not related people
-                    continue
                 rel_a = dist[0][2]
                 Ga = len(rel_a)
                 rel_b = dist[0][4]
