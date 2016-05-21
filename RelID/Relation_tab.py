@@ -99,8 +99,8 @@ class RelationTab(tool.Tool, ManagedWindow):
                 count += 1
                 progress.step()
                 step_two = time.clock()
-                #wait = ((step_two - step_one)/count) * length
                 #if count > 99:
+                    #wait = ((step_two - step_one)/count) * length
                     #progress.set_message(_("%s/%s. Estimated time: %s seconds") % (count, length, wait))
                 person = dbstate.db.get_person_from_handle(handle)
                 timeout_one = time.clock()
