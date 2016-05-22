@@ -1141,7 +1141,7 @@ class DotGenerator(object):
                         self.add_descendant(
                           self.database.get_person_from_handle(sp_family.get_father_handle()),
                           1,
-                          person_handles))
+                          person_handles)
 
     def find_ancestors(self, active_person):
         "Spider the database from the active person"
