@@ -1134,14 +1134,14 @@ class DotGenerator(object):
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
                      if sp_family.get_mother_handle() and sp_family.get_mother_handle() not in person_handles:
                         self.add_descendant(
-                        self.database.get_person_from_handle(sp_family.get_mother_handle()),
-                        1,    # only spouse
-                        person_handles)
+                          self.database.get_person_from_handle(sp_family.get_mother_handle()),
+                          1,
+                          person_handles)
                      if sp_family.get_father_handle() and sp_family.get_father_handle() not in person_handles:
                         self.add_descendant(
-                        self.database.get_person_from_handle(sp_family.get_father_handle()),
-                        1,    # only spouse
-                        person_handles))
+                          self.database.get_person_from_handle(sp_family.get_father_handle()),
+                          1,
+                          person_handles))
 
     def find_ancestors(self, active_person):
         "Spider the database from the active person"
