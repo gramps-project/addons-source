@@ -108,7 +108,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                           dbstate.db, default_person, person, only_birth=True)
                 timeout_two = time.clock()
                 rank = dist[0][0]
-                if rank == -1: # not related people
+                if rank == -1 or rank > max_level: # not related and ignored people
                     continue
                 limit = timeout_two - timeout_one
                 if limit > var:
