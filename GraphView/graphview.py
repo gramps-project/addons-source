@@ -1166,14 +1166,18 @@ class DotGenerator(object):
                 family = self.database.get_family_from_handle(family_handle)
 
                 # Add every parent recursively
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_father_handle()),
-                        num_generations - 1,
-                        person_handles)
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_mother_handle()),
-                        num_generations - 1,
-                        person_handles)
+                father_handle = family.get_father_handle()
+                if father_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(father_handle),
+                            num_generations - 1,
+                            person_handles)
+                mother_handle = family.get_mother_handle()
+                if mother_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(mother_handle),
+                            num_generations - 1,
+                            person_handles)
 
     def add_child_links_to_families(self):
         "returns string of GraphViz edges linking parents to families or \
