@@ -99,21 +99,25 @@ class RelationTab(tool.Tool, ManagedWindow):
             relationship = get_relationship_calculator()
             progress = ProgressMeter(self.label, can_cancel=True,
                                  parent=window)
-            #count = 0
+            count = 0
             length = dbstate.db.get_number_of_people()
             progress.set_pass(_('Generating relation map...'), length)
-            #step_one = time.clock()
+            step_one = time.clock()
             for handle in plist:
                 if progress.get_cancelled():
                     progress.close()
                     return
-                #count += 1
+                nb = len(stats_list)
+                count += 1
                 progress.step()
-                #step_two = time.clock()
-                #if count > 99:
-                    #wait = ((step_two - step_one)/count) * length
-                    #progress.set_message(_("%s/%s. Estimated time: %s seconds") % (count, length, wait))
-
+                step_two = time.clock()
+                start = 99
+                if count > start:
+                    need = (step_two - step_one) / count
+                    wait = need * length
+                    remain = int(wait) - int(step_two - step_one)
+                    header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f/%f" % (count, length, remain, int(wait), nb, length, float(need), float(var)))
+                    progress.set_header(header)
                 person = dbstate.db.get_person_from_handle(handle)
                 timeout_one = time.clock()
                 dist = relationship.get_relationship_distance_new(
@@ -127,7 +131,8 @@ class RelationTab(tool.Tool, ManagedWindow):
                 limit = timeout_two - timeout_one
                 expect = (limit - var) / max_level
                 if limit > var:
-                    _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (handle, limit, expect))
+                    n = name_displayer.display(person)
+                    _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (n, limit, expect))
                     continue
                 else:
                     _LOG.debug("variation = '%s')" % expect)
@@ -162,7 +167,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                                         int(Gb), int(mra), int(rank)))
             progress.close()
 
-        _LOG.debug("total: %s" % len(stats_list))
+        _LOG.debug("total: %s" % nb)
         for entry in stats_list:
             model.add(entry, entry[0])
         window.show_all()
