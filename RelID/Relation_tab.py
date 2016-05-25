@@ -116,7 +116,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     need = (step_two - step_one) / count
                     wait = need * length
                     remain = int(wait) - int(step_two - step_one)
-                    header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f/%f" % (count, length, remain, int(wait), nb, length, float(need), float(var)))
+                    header = _("%d/%d \t %d/%d seconds \n %d/%d \n%f|\t%f" % (count, length, remain, int(wait), nb, length, float(need), float(var)))
                     progress.set_header(header)
                 person = dbstate.db.get_person_from_handle(handle)
                 timeout_one = time.clock()
