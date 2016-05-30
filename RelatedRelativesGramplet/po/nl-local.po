@@ -61,7 +61,7 @@ msgstr "Gramplet toont de verwanten in een relatie"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
 msgid "Related Relatives"
-msgstr "Verwanten"
+msgstr "Verwante partners"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:49
 msgid "No Family Tree loaded."
