@@ -37,6 +37,7 @@ from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
 from gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gen.config import config
 import number
 
@@ -58,6 +59,10 @@ class RelationTab(tool.Tool, ManagedWindow):
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
         self.label = _("Relation and distances with root")
+        self.dbstate = dbstate
+        FilterClass = GenericFilterFactory('Person')
+        filter = FilterClass()
+
         tool.Tool.__init__(self, dbstate, options_class, name)
         if uistate:
             ManagedWindow.__init__(self,uistate,[],
@@ -92,80 +97,98 @@ class RelationTab(tool.Tool, ManagedWindow):
         else:
             var = max_level * 0.025
 
-        default_person = dbstate.db.get_default_person()
+        plist = self.dbstate.db.iter_person_handles()
+        length = self.dbstate.db.get_number_of_people()
+        default_person = self.dbstate.db.get_default_person()
+        self.progress = ProgressMeter(self.label, can_cancel=True,
+                                 parent=window)
 
         if default_person:
-            plist = dbstate.db.iter_person_handles()
+            root_id = default_person.get_gramps_id()
+            ancestors = rules.person.IsAncestorOf([str(root_id), True])
+            descendants = rules.person.IsDescendantOf([str(root_id), True])
+            related = rules.person.IsRelatedWith([str(root_id)])
+
+            filter.add_rule(related)
+            filtered_list = filter.apply(self.dbstate.db, plist)
+
             relationship = get_relationship_calculator()
-            progress = ProgressMeter(self.label, can_cancel=True,
-                                 parent=window)
-            count = 0
-            length = dbstate.db.get_number_of_people()
-            progress.set_pass(_('Generating relation map...'), length)
-            step_one = time.clock()
-            for handle in plist:
-                if progress.get_cancelled():
-                    progress.close()
+
+        count = 0
+        filtered_people = len(filtered_list)
+        self.progress.set_pass(_('Generating relation map...'), filtered_people)
+        if self.progress.get_cancelled():
+            self.progress.close()
+            return
+        step_one = time.clock()
+        for handle in filtered_list:
+            nb = len(stats_list)
+            count += 1
+            self.progress.step()
+            step_two = time.clock()
+            start = 99
+            if count > start:
+                need = (step_two - step_one) / count
+                wait = need * filtered_people
+                remain = int(wait) - int(step_two - step_one)
+                header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f" % (count, filtered_people, remain, int(wait), nb, length, float(need), float(var)))
+                self.progress.set_header(header)
+                if self.progress.get_cancelled():
+                    self.progress.close()
                     return
-                nb = len(stats_list)
-                count += 1
-                progress.step()
-                step_two = time.clock()
-                start = 99
-                if count > start:
-                    need = (step_two - step_one) / count
-                    wait = need * length
-                    remain = int(wait) - int(step_two - step_one)
-                    header = _("%d/%d \t %d/%d seconds \n %d/%d \n%f|\t%f" % (count, length, remain, int(wait), nb, length, float(need), float(var)))
-                    progress.set_header(header)
-                person = dbstate.db.get_person_from_handle(handle)
-                timeout_one = time.clock()
-                dist = relationship.get_relationship_distance_new(
-                          dbstate.db, default_person, person, only_birth=True)
-                timeout_two = time.clock()
+            person = dbstate.db.get_person_from_handle(handle)
+            timeout_one = time.clock()
+            dist = relationship.get_relationship_distance_new(
+                        dbstate.db, default_person, person, only_birth=True)
+            timeout_two = time.clock()
 
-                rank = dist[0][0]
-                if rank == -1 or rank > max_level: # not related and ignored people
-                    continue
+            rank = dist[0][0]
+            if rank == -1 or rank > max_level: # not related and ignored people
+                continue
 
-                limit = timeout_two - timeout_one
-                expect = (limit - var) / max_level
-                if limit > var:
-                    n = name_displayer.display(person)
-                    _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (n, limit, expect))
-                    continue
-                else:
-                    _LOG.debug("variation = '%s')" % expect)
-                    rel = relationship.get_one_relationship(
-                                                dbstate.db, default_person, person)
-                    rel_a = dist[0][2]
-                    Ga = len(rel_a)
-                    rel_b = dist[0][4]
-                    Gb = len(rel_b)
-                    mra = 1
+            limit = timeout_two - timeout_one
+            expect = (limit - var) / max_level
+            if limit > var:
+                n = name_displayer.display(person)
+                _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (n, limit, expect))
+                continue
+            else:
+                _LOG.debug("variation = '%s')" % limit)
+                rel = relationship.get_one_relationship(
+                                            dbstate.db, default_person, person)
+                rel_a = dist[0][2]
+                Ga = len(rel_a)
+                rel_b = dist[0][4]
+                Gb = len(rel_b)
+                mra = 1
 
+                # m: mother; f: father
+                if Ga > 0:
                     for letter in rel_a:
-                        if letter == 'f':
-                            mra = mra * 2
                         if letter == 'm':
                             mra = mra * 2 + 1
+                        if letter == 'f':
+                            mra = mra * 2
+                    # design: mra gender will be often female (m: mother)
+                    if rel_a[-1] == "f" and Gb != 0: # male gender, look at spouse
+                        mra = mra + 1
 
-                    name = name_displayer.display(person)
-                    kekule = number.get_number(Ga, Gb, rel_a, rel_b)
+                name = name_displayer.display(person)
+                kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
-                    # work-around
-                    if kekule == "u": # cousin(e)s need a key
-                       kekule = 0
-                    if kekule == "nb": # non-birth
-                       kekule = -1
-                    try:
-                       test = int(kekule)
-                    except: # 1: related to mother; 0.x : no more girls lineage
-                       kekule = 1
+                # work-around
+                if kekule == "u": # cousin(e)s need a key
+                    kekule = 0
+                if kekule == "nb": # non-birth
+                    kekule = -1
+                try:
+                    test = int(kekule)
+                except: # 1: related to mother; 0.x : no more girls lineage
+                    kekule = 1
 
-                    stats_list.append((int(kekule), rel, name, int(Ga),
-                                        int(Gb), int(mra), int(rank)))
-            progress.close()
+                stats_list.append((int(kekule), rel, name, int(Ga),
+                                    int(Gb), int(mra), int(rank)))
+        self.progress.close()
 
         _LOG.debug("total: %s" % nb)
         for entry in stats_list:
