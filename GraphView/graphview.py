@@ -1179,6 +1179,38 @@ class DotGenerator(object):
                             num_generations - 1,
                             person_handles)
 
+                # add all his spouses recursively
+                sp_person = self.database.get_person_from_handle(father_handle)
+                if sp_person:
+                  for sp_family_handle in sp_person.get_family_handle_list():
+                     sp_family = self.database.get_family_from_handle(sp_family_handle)
+                     if sp_family.get_mother_handle() and sp_family.get_mother_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_mother_handle()),
+                          1,
+                          person_handles)
+                     if sp_family.get_father_handle() and sp_family.get_father_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_father_handle()),
+                          1,
+                          person_handles)
+
+                # add all her spouses recursively
+                sp_person = self.database.get_person_from_handle(mother_handle)
+                if sp_person:
+                  for sp_family_handle in sp_person.get_family_handle_list():
+                     sp_family = self.database.get_family_from_handle(sp_family_handle)
+                     if sp_family.get_mother_handle() and sp_family.get_mother_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_mother_handle()),
+                          1,
+                          person_handles)
+                     if sp_family.get_father_handle() and sp_family.get_father_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_father_handle()),
+                          1,
+                          person_handles)
+
     def add_child_links_to_families(self):
         "returns string of GraphViz edges linking parents to families or \
          children"
