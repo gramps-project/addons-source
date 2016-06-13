@@ -318,9 +318,10 @@ class DetailedDescendantReportI(Report):
             if self.pgbrkenotes:
                 self.doc.page_break()
             # it ignores language set for Note type (use locale)
-            endnotes.write_endnotes(self.bibli, self.db, self.doc,
-                                    printnotes=self.inc_srcnotes,
-                                    elocale=self._locale)
+            #endnotes.write_endnotes(self.bibli, self.db, self.doc,
+            #                        printnotes=self.inc_srcnotes,
+            #                        elocale=self._locale)
+            self.write_endnotes_with_media()
 
     def write_path(self, person):
         path = []
@@ -978,6 +979,85 @@ class DetailedDescendantReportI(Report):
         self.doc.start_paragraph('DDRI-NoteHeader')
         self.doc.end_paragraph()
 
+ 
+    def write_endnotes_with_media(self):
+        """
+        Write all the entries in the bibliography as endnotes with the media.
+        This is copied from endnotes.py and modified to include media.
+        
+        If elocale is passed in (a :class:`.GrampsLocale`), then (insofar as
+        possible) the translated values will be returned instead.
+        :param bibliography: The bibliography that contains the citations.
+        :type bibliography: :class:`.Bibliography`
+        :param database: The database that the sources come from.
+        :type database: DbBase
+        :param doc: The document to write the endnotes into.
+        :type doc: :class:`~.docgen.TextDoc`
+        :param printnotes: Indicate if the notes attached to a source must be
+                written too.
+        :type printnotes: bool
+        :param links: Indicate if URL links should be makde 'clickable'.
+        :type links: bool
+        :param elocale: allow deferred translation of dates and strings
+        :type elocale: a :class:`.GrampsLocale` instance
+        """
+        bibliography = self.bibli
+        database = self.database
+        doc = self.doc
+        printnotes= self.inc_srcnotes
+        links=False
+        elocale=self._locale
+        
+        if bibliography.get_citation_count() == 0:
+            return
+
+        trans_text = elocale.translation.gettext
+        # trans_text is a defined keyword (see po/update_po.py, po/genpot.sh)
+
+        doc.start_paragraph('Endnotes-Header')
+        doc.write_text(trans_text('Endnotes'))
+        doc.end_paragraph()
+
+        cindex = 0
+        for citation in bibliography.get_citation_list():
+            cindex += 1
+            source = database.get_source_from_handle(citation.get_source_handle())
+            first = True
+
+            doc.start_paragraph('Endnotes-Source', "%d." % cindex)
+            doc.write_text(endnotes._format_source_text(source, elocale), links=links)
+            doc.end_paragraph()
+
+            if printnotes:                
+                endnotes._print_notes(source, database, doc,
+                                      'Endnotes-Source-Notes', links)
+                citation_plist = source.get_media_list()
+                if self.addimages and len(citation_plist) > 0:
+                    for photo in citation_plist:
+                        doc.start_paragraph('Endnotes-Source-Notes')
+                        doc.write_text("Source Image")
+                        doc.end_paragraph()
+                        ReportUtils.insert_image(self.database, self.doc, photo, self._user)
+                
+
+            for key, ref in citation.get_ref_list():
+                # translators: needed for French, ignore otherwise
+                doc.start_paragraph('Endnotes-Ref', trans_text('%s:') % key)
+                doc.write_text(endnotes._format_ref_text(ref, key, elocale), links=links)
+                doc.end_paragraph()
+
+                if printnotes:
+                    endnotes._print_notes(ref, database, doc,
+                                          'Endnotes-Ref-Notes', links)
+                    ref_plist = ref.get_media_list()
+                    if self.addimages and len(ref_plist) > 0:
+                        for photo in ref_plist:
+                            doc.start_paragraph('Endnotes-Ref-Notes')
+                            doc.write_text("Image")
+                            doc.end_paragraph()
+                            ReportUtils.insert_image(self.database, self.doc, photo, self._user)
+                    
+        
 #------------------------------------------------------------------------
 #
 # DetDescendantOptions
