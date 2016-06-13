@@ -49,7 +49,8 @@ from gramps.gen.errors import ReportError
 from gramps.gen.lib import FamilyRelType, Person, NoteType
 from gramps.gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
                                   EnumeratedListOption)
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                                    TableStyle, TableCellStyle,
                                     FONT_SANS_SERIF, FONT_SERIF, 
                                     INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
 from gramps.gen.plug.report import Report, Bibliography
@@ -284,7 +285,7 @@ class DetailedDescendantReportI(Report):
         if not name:
             name = self._("Unknown")
 
-        self.doc.start_paragraph("DDR-Title")
+        self.doc.start_paragraph("DDRI-Title")
 
         # feature request 2356: avoid genitive form
         title = self._("Descendant Report for %(person_name)s") % {
@@ -299,7 +300,7 @@ class DetailedDescendantReportI(Report):
         for generation in range(len(self.gen_keys)):
             if self.pgbrk and generation > 0:
                 self.doc.page_break()
-            self.doc.start_paragraph("DDR-Generation")
+            self.doc.start_paragraph("DDRI-Generation")
             text = self._("Generation %d") % (generation+1)
             mark = IndexMark(text, INDEX_TYPE_TOC, 2)
             self.doc.write_text(text, mark)
@@ -371,7 +372,7 @@ class DetailedDescendantReportI(Report):
         else:
             self.numbers_printed.append(val)
 
-        self.doc.start_paragraph("DDR-First-Entry","%s." % val)
+        self.doc.start_paragraph("DDRI-First-Entry","%s." % val)
 
         name = self._name_display.display(person)
         if not name:
@@ -435,7 +436,7 @@ class DetailedDescendantReportI(Report):
 
         place = place_displayer.display_event(self.db, event)
 
-        self.doc.start_paragraph('DDR-MoreDetails')
+        self.doc.start_paragraph('DDRI-MoreDetails')
         event_name = self._get_type(event.get_type())
         if date and place:
             text +=  self._('%(date)s, %(place)s') % { 
@@ -484,7 +485,7 @@ class DetailedDescendantReportI(Report):
             # get the text and format it correctly
             notelist = event.get_note_list()
             notelist.extend(event_ref.get_note_list())
-            self.write_notes(notelist, "DDR-MoreDetails")
+            self.write_notes(notelist, "DDRI-MoreDetails")
 
     def __write_parents(self, person):
         family_handle = person.get_main_parents_family_handle()
@@ -549,7 +550,7 @@ class DetailedDescendantReportI(Report):
         if mate_handle:
             mate = self.db.get_person_from_handle(mate_handle)
 
-            self.doc.start_paragraph("DDR-MoreHeader")
+            self.doc.start_paragraph("DDRI-MoreHeader")
             name = self._name_display.display(mate)
             if not name:
                 name = self._("Unknown")
@@ -570,7 +571,7 @@ class DetailedDescendantReportI(Report):
             else:
                 # Check to see if we've married a cousin
                 if mate_handle in self.dnumber:
-                    self.doc.start_paragraph('DDR-MoreDetails')
+                    self.doc.start_paragraph('DDRI-MoreDetails')
                     self.doc.write_text_citation(
                         self._("Ref: %(number)s. %(name)s") %
                                     {'number': self.dnumber[mate_handle],
@@ -610,7 +611,7 @@ class DetailedDescendantReportI(Report):
 
         mother_name, father_name = self.__get_mate_names(family)
 
-        self.doc.start_paragraph("DDR-ChildTitle")
+        self.doc.start_paragraph("DDRI-ChildTitle")
         self.doc.write_text(
             self._("Children of %(mother_name)s and %(father_name)s") % 
                             {'father_name': father_name,
@@ -641,14 +642,14 @@ class DetailedDescendantReportI(Report):
                 prefix = ""
 
             if child_handle in self.dnumber:
-                self.doc.start_paragraph("DDR-ChildList",
+                self.doc.start_paragraph("DDRI-ChildList",
                         prefix
                         + str(self.dnumber[child_handle])
                         + " "
                         + ReportUtils.roman(cnt).lower()
                         + ".")
             else:
-                self.doc.start_paragraph("DDR-ChildList",
+                self.doc.start_paragraph("DDRI-ChildList",
                               prefix + ReportUtils.roman(cnt).lower() + ".")
             cnt += 1
 
@@ -671,13 +672,13 @@ class DetailedDescendantReportI(Report):
         if len(notelist) > 0:
             mother_name, father_name = self.__get_mate_names(family)
 
-            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.start_paragraph("DDRI-NoteHeader")
             self.doc.write_text(
                 self._('Notes for %(mother_name)s and %(father_name)s:') % { 
                             'mother_name' : mother_name,
                             'father_name' : father_name })
             self.doc.end_paragraph()
-            self.write_notes(notelist, "DDR-Entry")
+            self.write_notes(notelist, "DDRI-Entry")
 
     def __write_family_events(self, family):
         """ 
@@ -691,7 +692,7 @@ class DetailedDescendantReportI(Report):
         first = True
         for event_ref in family.get_event_ref_list():
             if first:
-                self.doc.start_paragraph('DDR-MoreHeader')
+                self.doc.start_paragraph('DDRI-MoreHeader')
                 self.doc.write_text(
                     self._('More about %(mother_name)s and %(father_name)s:')
                                 % {'mother_name' : mother_name,
@@ -710,7 +711,7 @@ class DetailedDescendantReportI(Report):
         if first and attrs:
             mother_name, father_name = self.__get_mate_names(family)
 
-            self.doc.start_paragraph('DDR-MoreHeader')
+            self.doc.start_paragraph('DDRI-MoreHeader')
             self.doc.write_text(
                 self._('More about %(mother_name)s and %(father_name)s:')
                             % {'mother_name' : mother_name,
@@ -718,7 +719,7 @@ class DetailedDescendantReportI(Report):
             self.doc.end_paragraph()
 
         for attr in attrs:
-            self.doc.start_paragraph('DDR-MoreDetails')
+            self.doc.start_paragraph('DDRI-MoreDetails')
             attrName = self._get_type(attr.get_type())
             text = self._("%(type)s: %(value)s%(endnotes)s") % {
                                 'type'     : self._(attrName),
@@ -731,7 +732,7 @@ class DetailedDescendantReportI(Report):
                 # if the attr or attr reference has a note attached to it,
                 # get the text and format it correctly
                 notelist = attr.get_note_list()
-                self.write_notes(notelist, "DDR-MoreDetails")
+                self.write_notes(notelist, "DDRI-MoreDetails")
 
 
     def write_person_info(self, person):
@@ -740,12 +741,10 @@ class DetailedDescendantReportI(Report):
             name = self._("Unknown")
         self.__narrator.set_subject(person)
         
-        plist = person.get_media_list()
-        if self.addimages and len(plist) > 0:
-            photo = plist[0]
-            ReportUtils.insert_image(self.db, self.doc, photo, self._user)
+        if self.addimages:
+            self.write_images(person.get_media_list())
         
-        self.doc.start_paragraph("DDR-Entry")
+        self.doc.start_paragraph("DDRI-Entry")
         
         if not self.verbose:
             self.__write_parents(person)
@@ -777,22 +776,22 @@ class DetailedDescendantReportI(Report):
 
         notelist = person.get_note_list()
         if len(notelist) > 0 and self.inc_notes:
-            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.start_paragraph("DDRI-NoteHeader")
             # feature request 2356: avoid genitive form
             self.doc.write_text(self._("Notes for %s") % name)
             self.doc.end_paragraph()
-            self.write_notes(notelist, "DDR-Entry")
+            self.write_notes(notelist, "DDRI-Entry")
 
         first = True
         if self.inc_names:
             for alt_name in person.get_alternate_names():
                 if first:
-                    self.doc.start_paragraph('DDR-MoreHeader')
+                    self.doc.start_paragraph('DDRI-MoreHeader')
                     self.doc.write_text(self._('More about %(person_name)s:')
                                                     % {'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
-                self.doc.start_paragraph('DDR-MoreDetails')
+                self.doc.start_paragraph('DDRI-MoreDetails')
                 atype = self._get_type(alt_name.get_type())
                 aname = alt_name.get_regular_name()
                 self.doc.write_text_citation(
@@ -806,7 +805,7 @@ class DetailedDescendantReportI(Report):
         if self.inc_events:
             for event_ref in person.get_primary_event_ref_list():
                 if first:
-                    self.doc.start_paragraph('DDR-MoreHeader')
+                    self.doc.start_paragraph('DDRI-MoreHeader')
                     self.doc.write_text(self._('More about %(person_name)s:')
                                                     % {'person_name' : name })
                     self.doc.end_paragraph()
@@ -817,12 +816,12 @@ class DetailedDescendantReportI(Report):
         if self.inc_addr:
             for addr in person.get_address_list():
                 if first:
-                    self.doc.start_paragraph('DDR-MoreHeader')
+                    self.doc.start_paragraph('DDRI-MoreHeader')
                     self.doc.write_text(self._('More about %(person_name)s:')
                                                     % {'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
-                self.doc.start_paragraph('DDR-MoreDetails')
+                self.doc.start_paragraph('DDRI-MoreDetails')
                 
                 text = ReportUtils.get_address_str(addr)
 
@@ -842,14 +841,14 @@ class DetailedDescendantReportI(Report):
         if self.inc_attrs:
             attrs = person.get_attribute_list()
             if first and attrs:
-                self.doc.start_paragraph('DDR-MoreHeader')
+                self.doc.start_paragraph('DDRI-MoreHeader')
                 self.doc.write_text(self._('More about %(person_name)s:') % { 
                     'person_name' : name })
                 self.doc.end_paragraph()
                 first = False
 
             for attr in attrs:
-                self.doc.start_paragraph('DDR-MoreDetails')
+                self.doc.start_paragraph('DDRI-MoreDetails')
                 attrName = self._get_type(attr.get_type())
                 text = self._("%(type)s: %(value)s%(endnotes)s") % {
                                     'type'     : self._(attrName),
@@ -889,7 +888,7 @@ class DetailedDescendantReportI(Report):
                                        note.get_format(),style_name)
         # output todo notes under separate header
         if self.inc_todo and len(todo) > 0:
-            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.start_paragraph("DDRI-NoteHeader")
             self.doc.write_text("TODO Notes:")
             self.doc.end_paragraph()
             for notehandle in todo:
@@ -897,7 +896,87 @@ class DetailedDescendantReportI(Report):
                 self.doc.write_styled_note(note.get_styledtext(), 
                                            note.get_format(),style_name)
         
+    def write_paragraph(self, text,
+                        endnotes=None, mark=None, style='DDRI-NoteHeader'):
+        self.doc.start_paragraph(style)
+        self.doc.write_text(text, mark)
+        if endnotes:
+            self.doc.start_superscript()
+            self.doc.write_text(endnotes)
+            self.doc.end_superscript()
+        self.doc.end_paragraph()
 
+    def do_attributes(self, attr_list):
+        for attr in attr_list:
+            attr_type = attr.get_type().type2base()
+            # translators: needed for French, ignore otherwise
+            text = self._("%(type)s: %(value)s") % {
+                                'type'  : self._(attr_type),
+                                'value' : attr.get_value() }
+            endnotes = self._cite_endnote(attr)
+            self.write_paragraph(text, endnotes)
+
+    def write_images(self, media_list):
+        """
+        Write out all images in media_list as a table.
+        This is based on the code from the individual report.
+        
+        @param media_list result of get_media_list from an object
+        """
+        
+        i_total = 0
+        for media_ref in media_list:
+            media_handle = media_ref.get_reference_handle()
+            if media_handle:
+                # 5.0 media = self.database.get_media_from_handle(media_handle)
+                media = self.database.get_object_from_handle(media_handle)
+                if media and media.get_mime_type():
+                    if media.get_mime_type().startswith("image"):
+                        i_total += 1
+        if i_total == 0:
+            return
+        
+        self.doc.start_table("images","DDRI-GalleryTable")
+        cells = 3 # the GalleryTable has 3 cells
+        self.doc.start_row()
+        self.doc.start_cell("DDRI-TableHead", cells)
+        self.write_paragraph(self._('Images'), style='DDRI-TableTitle')
+        self.doc.end_cell()
+        self.doc.end_row()
+        media_count = 0
+        image_count = 0
+        while ( media_count < len(media_list) ):
+            media_ref = media_list[media_count]
+            media_handle = media_ref.get_reference_handle()
+            # 5.0 media = self.database.get_media_from_handle(media_handle)
+            media = self.database.get_object_from_handle(media_handle)
+            if media is None:
+                from gramps.gui.dialog import RunDatabaseRepair
+                RunDatabaseRepair(_('Non existing media found in the Gallery'))
+                return
+            mime_type = media.get_mime_type()
+            if not mime_type or not mime_type.startswith("image"):
+                media_count += 1
+                continue
+            description = media.get_description()
+            if image_count % cells == 0:
+                self.doc.start_row()
+            self.doc.start_cell('DDRI-NormalCell')
+            self.write_paragraph(description, style='DDRI-ImageCaptionCenter')
+            ReportUtils.insert_image(self.database, self.doc, media_ref, self._user,
+                                     align='center', w_cm=5.0, h_cm=5.0)
+            self.do_attributes(media.get_attribute_list() +
+                               media_ref.get_attribute_list() )
+            self.doc.end_cell()
+            if image_count % cells == cells - 1:
+                self.doc.end_row()
+            media_count += 1
+            image_count += 1
+        if image_count % cells != 0:
+            self.doc.end_row()
+        self.doc.end_table()
+        self.doc.start_paragraph('DDRI-NoteHeader')
+        self.doc.end_paragraph()
 
 #------------------------------------------------------------------------
 #
@@ -1076,7 +1155,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the page.'))
-        default_style.add_paragraph_style("DDR-Title", para)
+        default_style.add_paragraph_style("DDRI-Title", para)
 
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=14, italic=1)
@@ -1086,7 +1165,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for the generation header.'))
-        default_style.add_paragraph_style("DDR-Generation", para)
+        default_style.add_paragraph_style("DDRI-Generation", para)
 
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=1)
@@ -1096,7 +1175,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for the children list title.'))
-        default_style.add_paragraph_style("DDR-ChildTitle", para)
+        default_style.add_paragraph_style("DDRI-ChildTitle", para)
 
         font = FontStyle()
         font.set(size=10)
@@ -1106,7 +1185,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_top_margin(0.125)
         para.set_bottom_margin(0.125)
         para.set_description(_('The style used for the children list.'))
-        default_style.add_paragraph_style("DDR-ChildList", para)
+        default_style.add_paragraph_style("DDRI-ChildList", para)
 
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=1)
@@ -1115,21 +1194,21 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set(first_indent=0.0, lmargin=1.5)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
-        default_style.add_paragraph_style("DDR-NoteHeader", para)
+        default_style.add_paragraph_style("DDRI-NoteHeader", para)
 
         para = ParagraphStyle()
         para.set(lmargin=1.5)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_('The basic style used for the text display.'))
-        default_style.add_paragraph_style("DDR-Entry", para)
+        default_style.add_paragraph_style("DDRI-Entry", para)
 
         para = ParagraphStyle()
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)        
         para.set_description(_('The style used for the first personal entry.'))
-        default_style.add_paragraph_style("DDR-First-Entry", para)
+        default_style.add_paragraph_style("DDRI-First-Entry", para)
 
         font = FontStyle()
         font.set(size=10, face=FONT_SANS_SERIF, bold=1)
@@ -1140,7 +1219,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for the More About header and '
             'for headers of mates.'))
-        default_style.add_paragraph_style("DDR-MoreHeader", para)
+        default_style.add_paragraph_style("DDRI-MoreHeader", para)
 
         font = FontStyle()
         font.set(face=FONT_SERIF, size=10)
@@ -1150,6 +1229,44 @@ class DetailedDescendantIOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for additional detail data.'))
-        default_style.add_paragraph_style("DDR-MoreDetails", para)
+        default_style.add_paragraph_style("DDRI-MoreDetails", para)
 
+        tbl = TableStyle()
+        tbl.set_width(100)
+        tbl.set_columns(3)
+        tbl.set_column_width(0, 33)
+        tbl.set_column_width(1, 33)
+        tbl.set_column_width(2, 34)
+        default_style.add_table_style("DDRI-GalleryTable", tbl)
+        
+        cell = TableCellStyle()
+        cell.set_top_border(1)
+        cell.set_bottom_border(1)
+        default_style.add_cell_style("DDRI-TableHead", cell)
+        
+        font = FontStyle()
+        font.set_bold(1)
+        font.set_type_face(FONT_SANS_SERIF)
+        font.set_size(12)
+        font.set_italic(1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_top_margin(ReportUtils.pt2cm(3))
+        para.set_bottom_margin(ReportUtils.pt2cm(3))
+        para.set_description(_("The style used for image labels."))
+        default_style.add_paragraph_style("DDRI-TableTitle", para)
+        
+        cell = TableCellStyle()
+        default_style.add_cell_style("DDRI-NormalCell", cell)
+        
+        font = FontStyle()
+        font.set_size(8)
+        para = ParagraphStyle()
+        para.set_alignment(PARA_ALIGN_CENTER)
+        para.set_font(font)
+        para.set_top_margin(ReportUtils.pt2cm(3))
+        para.set_bottom_margin(ReportUtils.pt2cm(3))
+        para.set_description(_('A style used for image captions.'))
+        default_style.add_paragraph_style("DDRI-ImageCaptionCenter", para)
+        
         endnotes.add_endnote_styles(default_style)
