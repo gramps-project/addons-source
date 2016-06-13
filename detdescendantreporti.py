@@ -1032,13 +1032,8 @@ class DetailedDescendantReportI(Report):
                 endnotes._print_notes(source, database, doc,
                                       'Endnotes-Source-Notes', links)
                 citation_plist = source.get_media_list()
-                if self.addimages and len(citation_plist) > 0:
-                    for photo in citation_plist:
-                        doc.start_paragraph('Endnotes-Source-Notes')
-                        doc.write_text("Source Image")
-                        doc.end_paragraph()
-                        ReportUtils.insert_image(self.database, self.doc, photo, self._user)
-                
+                if self.addimages:
+                    self.write_images(citation_plist)
 
             for key, ref in citation.get_ref_list():
                 # translators: needed for French, ignore otherwise
@@ -1050,12 +1045,8 @@ class DetailedDescendantReportI(Report):
                     endnotes._print_notes(ref, database, doc,
                                           'Endnotes-Ref-Notes', links)
                     ref_plist = ref.get_media_list()
-                    if self.addimages and len(ref_plist) > 0:
-                        for photo in ref_plist:
-                            doc.start_paragraph('Endnotes-Ref-Notes')
-                            doc.write_text("Image")
-                            doc.end_paragraph()
-                            ReportUtils.insert_image(self.database, self.doc, photo, self._user)
+                    if self.addimages:
+                        self.write_images(citation_plist)
                     
         
 #------------------------------------------------------------------------
