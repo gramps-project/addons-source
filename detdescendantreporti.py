@@ -94,6 +94,7 @@ class DetailedDescendantReportI(Report):
         fulldates     - Whether to use full dates instead of just year.
         listc         - Whether to list children.
         incnotes      - Whether to include notes.
+        inctodo       - Whether to include todo notes.
         usecall       - Whether to use the call name as the first name.
         repplace      - Whether to replace missing Places with ___________.
         repdate       - Whether to replace missing Dates with ___________.
@@ -140,6 +141,7 @@ class DetailedDescendantReportI(Report):
         use_fulldate     = self.fulldate
         self.listchildren  = get_value('listc')
         self.inc_notes     = get_value('incnotes')
+        self.inc_todo      = get_value('inctodo')
         use_call           = get_value('usecall')
         blankplace         = get_value('repplace')
         blankdate          = get_value('repdate')
@@ -482,11 +484,7 @@ class DetailedDescendantReportI(Report):
             # get the text and format it correctly
             notelist = event.get_note_list()
             notelist.extend(event_ref.get_note_list())
-            for notehandle in notelist:
-                note = self.db.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
-                        note.get_format(),"DDR-MoreDetails",
-                        contains_html= note.get_type() == NoteType.HTML_CODE)
+            self.write_notes(notelist, "DDR-MoreDetails")
 
     def __write_parents(self, person):
         family_handle = person.get_main_parents_family_handle()
@@ -679,10 +677,7 @@ class DetailedDescendantReportI(Report):
                             'mother_name' : mother_name,
                             'father_name' : father_name })
             self.doc.end_paragraph()
-            for notehandle in notelist:
-                note = self.db.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
-                                           note.get_format(),"DDR-Entry")
+            self.write_notes(notelist, "DDR-Entry")
 
     def __write_family_events(self, family):
         """ 
@@ -736,11 +731,7 @@ class DetailedDescendantReportI(Report):
                 # if the attr or attr reference has a note attached to it,
                 # get the text and format it correctly
                 notelist = attr.get_note_list()
-                for notehandle in notelist:
-                    note = self.db.get_note_from_handle(notehandle)
-                    self.doc.write_styled_note(note.get_styledtext(), 
-                                               note.get_format(),
-                                               "DDR-MoreDetails")
+                self.write_notes(notelist, "DDR-MoreDetails")
 
 
     def write_person_info(self, person):
@@ -790,11 +781,7 @@ class DetailedDescendantReportI(Report):
             # feature request 2356: avoid genitive form
             self.doc.write_text(self._("Notes for %s") % name)
             self.doc.end_paragraph()
-            for notehandle in notelist:
-                note = self.db.get_note_from_handle(notehandle)
-                self.doc.write_styled_note(note.get_styledtext(), 
-                        note.get_format(),"DDR-Entry",
-                        contains_html= note.get_type() == NoteType.HTML_CODE)
+            self.write_notes(notelist, "DDR-Entry")
 
         first = True
         if self.inc_names:
@@ -879,6 +866,38 @@ class DetailedDescendantReportI(Report):
         if txt:
             txt = '<super>' + txt + '</super>'
         return txt
+
+    def write_notes(self, notelist, style_name):
+        """
+        Write out the notes section
+        """
+
+        # partition the list
+        non_todo = []
+        todo = []
+        for notehandle in notelist:
+            note = self.database.get_note_from_handle(notehandle)
+            if NoteType.TODO == note.get_type():
+                todo.append(notehandle)
+            else:
+                non_todo.append(notehandle)
+                
+        # output regular notes first
+        for notehandle in non_todo:
+            note = self.database.get_note_from_handle(notehandle)
+            self.doc.write_styled_note(note.get_styledtext(), 
+                                       note.get_format(),style_name)
+        # output todo notes under separate header
+        if self.inc_todo and len(todo) > 0:
+            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.write_text("TODO Notes:")
+            self.doc.end_paragraph()
+            for notehandle in todo:
+                note = self.database.get_note_from_handle(notehandle)
+                self.doc.write_styled_note(note.get_styledtext(), 
+                                           note.get_format(),style_name)
+        
+
 
 #------------------------------------------------------------------------
 #
@@ -980,6 +999,10 @@ class DetailedDescendantIOptions(MenuReportOptions):
         incnotes = BooleanOption(_("Include notes"), True)
         incnotes.set_help(_("Whether to include notes."))
         add_option("incnotes", incnotes)
+
+        inctodo = BooleanOption(_("Include TODO notes"), True)
+        inctodo.set_help(_("Whether to include TODO notes."))
+        add_option("inctodo", inctodo)
 
         incattrs = BooleanOption(_("Include attributes"), False)
         incattrs.set_help(_("Whether to include attributes."))
