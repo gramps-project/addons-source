@@ -73,7 +73,7 @@ HENRY = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 #
 #
 #------------------------------------------------------------------------
-class DetDescendantReport(Report):
+class DetailedDescendantReportI(Report):
 
     def __init__(self, database, options, user):
         """
@@ -885,7 +885,7 @@ class DetDescendantReport(Report):
 # DetDescendantOptions
 #
 #------------------------------------------------------------------------
-class DetDescendantOptions(MenuReportOptions):
+class DetailedDescendantIOptions(MenuReportOptions):
 
     """
     Defines options and provides handling interface.
