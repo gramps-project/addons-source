@@ -121,10 +121,12 @@ class PersonNode(Node):
         width, height = layout.get_size()
         self.width = width / 1024
 
+        # Set the name background depending on the sex
         cr.set_source_rgb(*bg_color)
         cr.rectangle(self.x + 1, self.y + 1, self.width - 2, self.height - 2)
         cr.fill()
 
+        # Set the name border
         cr.set_source_rgb(0.50, 0.50, 0.50)
         cr.move_to(self.x, self.y)
         cr.line_to(self.x + self.width, self.y)
@@ -697,11 +699,14 @@ class QuiltView(NavigationView):
                 for parent in self.families[fam].parents:
                     self.get_ascendants(self.people[parent])
                     # prepare to draw the vertical bar
-                    self.paths.append((self.families[fam].x+HEIGHT, obj.y,
-                                       self.families[fam].x+HEIGHT, self.people[parent].y))
+                    self.paths.append((self.families[fam].x+HEIGHT,
+                                       obj.y+HEIGHT/2,
+                                       self.families[fam].x+HEIGHT,
+                                       self.people[parent].y-HEIGHT/2))
         # prepare to hightligt the name
-        self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
-                           obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
+        (x1, x2) = self.calculate_segment_length(obj)
+        self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
+                           x2+HEIGHT, obj.y-HEIGHT/2))
 
     def get_descendants(self, obj):
         for fam in obj.parents:
@@ -709,38 +714,71 @@ class QuiltView(NavigationView):
                 for child in self.families[fam].children:
                     self.get_descendants(self.people[child])
                     # prepare to draw the vertical bar
-                    self.paths.append((self.families[fam].x+HEIGHT, obj.y,
-                                       self.families[fam].x+HEIGHT, self.people[child].y))
+                    self.paths.append((self.families[fam].x+HEIGHT,
+                                       obj.y+HEIGHT/2,
+                                       self.families[fam].x+HEIGHT,
+                                       self.people[child].y-HEIGHT/2))
         # prepare to hightligt the name
-        self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
-                           obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
+        (x1, x2) = self.calculate_segment_length(obj)
+        self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
+                           x2+HEIGHT, obj.y-HEIGHT/2))
 
     def set_path_lines(self, obj):
         """
         obj : either a person or a family
         """
         self.paths = []
-        # Draw linking path for descendant
         if isinstance(obj, PersonNode):
+            (x1, x2) = self.calculate_segment_length(obj)
+            self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
+                               x2+HEIGHT, obj.y-HEIGHT/2))
+            # Draw linking path for descendant
             for fam in obj.parents:
                 if fam in self.families:
                     for child in self.families[fam].children:
                         self.get_descendants(self.people[child])
                         self.paths.append((self.families[fam].x+HEIGHT,
-                                           obj.y,
+                                           obj.y+HEIGHT/4,
                                            self.families[fam].x+HEIGHT,
-                                           self.people[child].y))
-            self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
-                               obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
+                                           self.people[child].y-HEIGHT/4))
+            # Draw linking path for ascendant
             for fam in obj.children:
                 if fam in self.families:
                     for parent in self.families[fam].parents:
                         self.get_ascendants(self.people[parent])
                         self.paths.append((self.families[fam].x+HEIGHT,
-                                           obj.y,
+                                           obj.y+HEIGHT/4,
                                            self.families[fam].x+HEIGHT,
-                                           self.people[parent].y))
-            self.paths.append((obj.x+HEIGHT/2, obj.y+HEIGHT/2,
-                               obj.x+obj.get_width()+HEIGHT/2, obj.y-HEIGHT/2))
+                                           self.people[parent].y-HEIGHT+HEIGHT/4
+                                          ))
             self.canvas.queue_draw()
             self.center_on_node(obj.handle)
+
+    def calculate_segment_length(self, obj):
+        """
+        We need to know the coordinates for the name to display
+        These coordinates include the name,
+        the segment for the parents and the segment for the children
+        """
+        if isinstance(obj, PersonNode):
+            x1 = obj.x
+            x2 = obj.x + obj.width
+        else:
+            obj = self.people[obj]
+            x1 = obj.x
+            x2 = obj.x + obj.width
+        if len(obj.parents) > 0:
+            par1 = obj.parents[0]
+            if par1 in self.families:
+                fam1 = self.families[par1]
+                x1 = fam1.x
+        else:
+            x1 += obj.width
+        if len(obj.children) > 0:
+            par2 = obj.children[0]
+            if par2 in self.families:
+                fam2 = self.families[par2]
+                x2 = fam2.x
+        else:
+            x2 -= obj.width
+        return(x1, x2)
