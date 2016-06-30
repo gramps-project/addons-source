@@ -79,6 +79,7 @@ class DetId(tool.Tool, ManagedWindow):
         WarningDialog(self.window_name,
               _("The ID and handles now start at 0x00000000, and increment by 0x100000001"),
                 self.window)
+        self.close()
 #------------------------------------------------------------------------
 #
 # My own widow class (to provide a source for dbstate)
