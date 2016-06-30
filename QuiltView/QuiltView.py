@@ -63,6 +63,7 @@ from gramps.gen.config import config
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
+from gramps.gui.utils import ProgressMeter
 
 BORDER = 10
 HEIGHT = 18
@@ -274,6 +275,7 @@ class QuiltView(NavigationView):
               <toolitem action="Back"/>
               <toolitem action="Forward"/>
               <toolitem action="HomePerson"/>
+              <toolitem action="Print"/>
             </placeholder>
           </toolbar>
         </ui>'''
@@ -295,6 +297,8 @@ class QuiltView(NavigationView):
 
         self._add_action('FilterEdit', None, _('Person Filter Editor'),
                         callback=self.filter_editor)
+        self._add_action('Print', Gtk.STOCK_PRINT, _('Print the entire tree'),
+                        callback=self.on_print)
 
     def filter_editor(self, obj):
         from gramps.gui.editors import FilterEditor
@@ -782,3 +786,69 @@ class QuiltView(NavigationView):
         else:
             x2 -= obj.width
         return(x1, x2)
+
+    ##################################################################
+    #
+    # Print this tree in a multipages way.
+    #
+    ##################################################################
+    print_zoom = 1.0
+    print_settings = None
+
+    def on_print(self, action=None):
+        self.print_op = Gtk.PrintOperation()
+        self.print_op.connect("begin_print", self.begin_print)
+        self.print_op.connect("draw_page", self.draw_page)
+
+        page_setup = Gtk.PageSetup()
+        if self.print_settings is None:
+            self.print_settings = Gtk.PrintSettings()
+        page_setup = Gtk.print_run_page_setup_dialog(None, page_setup, self.print_settings)
+        paper_size_used = page_setup.get_paper_size()
+        self.format = paper_size_used.get_name()
+        self.print_settings.set_paper_size(paper_size_used)
+        self.print_settings.set_orientation(page_setup.get_orientation())
+        self.print_op.set_print_settings(self.print_settings)
+        if page_setup.get_orientation() == Gtk.PageOrientation.PORTRAIT:
+            self.height_used = int(paper_size_used.get_height(Gtk.Unit.POINTS))
+            self.width_used = int(paper_size_used.get_width(Gtk.Unit.POINTS))
+        else:
+            self.height_used = int(paper_size_used.get_width(Gtk.Unit.POINTS))
+            self.width_used = int(paper_size_used.get_height(Gtk.Unit.POINTS))
+
+        res = self.print_op.run(Gtk.PrintOperationAction.PREVIEW,
+                           self.uistate.window)
+
+    def begin_print(self, operation, context):
+        rect = self.canvas.get_allocation()
+        self.pages_per_row = int(int(rect.width)*self.print_zoom/self.width_used + 1)
+        self.nb_pages = int(self.pages_per_row * int(int(rect.height)*self.print_zoom/self.height_used + 1))
+        operation.set_n_pages(self.nb_pages)
+        return True
+
+    def draw_page(self, operation, context, page_nr):
+        if page_nr == 0:
+            self.progress = ProgressMeter(_("Printing the tree"),
+                                          can_cancel=True,
+                                          cancel_callback=self.cancel_print,
+                                          parent=self.uistate.window)
+            message = _('Need to print %(pages)s pages (%(format)s format)')
+            self.progress.set_pass(message % { 'pages' : self.nb_pages,
+                                               'format' : self.format },
+                                   self.nb_pages)
+        cr = context.get_cairo_context()
+        x = y = 0
+        x = ((page_nr % self.pages_per_row ) * self.width_used) if page_nr > 0 else 0
+        y = (int(page_nr / self.pages_per_row) * self.height_used)
+        cr.save()
+        cr.translate(-x, -y)
+        cr.scale(self.print_zoom, self.print_zoom)
+        self.canvas.draw(cr)
+        cr.restore()
+        if page_nr == self.nb_pages-1:
+            self.progress.close()
+        self.progress.step()
+
+    def cancel_print(self, arg1):
+        self.progress.close()
+        self.print_op.cancel()
