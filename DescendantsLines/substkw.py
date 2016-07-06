@@ -24,7 +24,7 @@
 
 """
 Provide the SubstKeywords2 class that will replace keywords in a passed
-string with information about the person/marriage/spouse. 
+string with information about the person/marriage/spouse.
 The modifications to the SubstKeywords class in SubstKeywords.py are:
 The event is passed in instead of finding the first one for the person/family
    this allows reporting all occurrences of an event, instead of just the first one
@@ -33,7 +33,7 @@ Added a new event formating operator "t" = abbreviation of the Event's Type (loc
     this allows correct type labeling where "OrSimilar" or "fallbacks" are used. $e(t)
 Added an optional Maximum Note Length, to limit the length when using $e(n) variable
     note that "..." will be added to any truncated note (an Event's Description field)
-    
+
 For example:
 
 foo = SubstKeywords(database, person_handle)
@@ -107,9 +107,12 @@ class EventFormat2(GenericFormat):
 
         def format_place():
             """ start formatting a place in this event """
-            place_format = PlaceFormat(self, self.string_in)
-            place = place_format.get_place(self.database, event)
-            return place_format.parse_format(self.database, place)
+            # TO_FIX: bug 9562
+            #place_format = PlaceFormat(self, self.string_in)
+            #place = place_format.get_place(self.database, event)
+            #return place_format.parse_format(self.database, place)
+            place = place_displayer.display_event(self.database, event)
+            return place
 
         def format_attrib():
             """ Get the name and then get the attributes value """
