@@ -107,9 +107,12 @@ class EventFormat2(GenericFormat):
 
         def format_place():
             """ start formatting a place in this event """
-            place_format = PlaceFormat(self, self.string_in)
-            place = place_format.get_place(self.database, event)
-            return place_format.parse_format(self.database, place)
+            # TO_FIX: bug 9562
+            #place_format = PlaceFormat(self, self.string_in)
+            #place = place_format.get_place(self.database, event)
+            #return place_format.parse_format(self.database, place)
+            place = place_displayer.display_event(self.database, event)
+            return place
 
         def format_attrib():
             """ Get the name and then get the attributes value """
