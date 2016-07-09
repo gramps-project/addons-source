@@ -199,6 +199,7 @@ class QuiltView(NavigationView):
         self.scale = 1.0
         self._in_move = False
         self.layers = None
+        self.people = []
         self.paths = []
 
     def get_stock(self):
@@ -629,6 +630,8 @@ class QuiltView(NavigationView):
         self.set_preview_position()
 
     def get_object_at(self, x, y):
+        if len(self.people) == 0:
+            return None
         for p in self.people.values():
             if p.is_at(x, y):
                 return p
