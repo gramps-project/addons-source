@@ -99,7 +99,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
         if not self.title:
             name = self.__family_get_display_name(self.center_family)
-            self.title = StyledText(_("Family Tree for %s")) % name
+            try:
+                self.title = StyledText(_("Family Tree for %s")) % name
+            except TypeError:
+                self.title = _("Family Tree for %s") % name
 
         style_sheet = self.doc.get_style_sheet()
         self.line_width = pt2cm(style_sheet.get_draw_style("FTR-box").get_line_width())
@@ -672,9 +675,13 @@ class FamilyTree(gramps.gen.plug.report.Report):
         else:
             mother_name = _("Unknown")
 
-        return StyledText(_("%(father)s and %(mother)s")) % {
+        try:
+            string = StyledText(_("%(father)s and %(mother)s")) % {
                 'father': father_name,
                 'mother': mother_name}
+        except TypeError:
+            string = _("%(father)s and %(mother)s")
+        return string
 
 
     def __person_get_display_name(self, person):
@@ -945,7 +952,7 @@ class FamilyTree(gramps.gen.plug.report.Report):
             if place.private and self.protect_private:
                 place_text = ""
             else:
-                place_text = place_displayer.display(self.database, place)
+                place_text = place_displayer.display_event(self.database, event)
         elif self.missinginfo:
             place_text = "____________"
         else:
