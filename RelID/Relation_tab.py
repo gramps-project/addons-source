@@ -117,6 +117,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             filtered_list = filter.apply(self.dbstate.db, plist)
 
             relationship = get_relationship_calculator()
+        else:
+            from gramps.gen.errors import ReportError
+            raise ReportError("No default_person")
 
         count = 0
         filtered_people = len(filtered_list)
