@@ -1080,6 +1080,7 @@ class DotGenerator(object):
             self.person_handles = set()
             self.person_handles.update(self.find_descendants(active_person))
             self.person_handles.update(self.find_ancestors(active_person))
+            self.person_handles.update(self.find_families())
 
             if len(self.person_handles) > 0:
                 self.add_persons_and_families()
@@ -1149,14 +1150,38 @@ class DotGenerator(object):
                 family = self.database.get_family_from_handle(family_handle)
 
                 # Add every parent recursively
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_father_handle()),
-                        num_generations - 1,
-                        person_handles)
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_mother_handle()),
-                        num_generations - 1,
-                        person_handles)
+                father_handle = family.get_father_handle()
+                if father_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(father_handle),
+                            num_generations - 1,
+                            person_handles)
+                mother_handle = family.get_mother_handle()
+                if mother_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(mother_handle),
+                            num_generations - 1,
+                            person_handles)
+
+    def find_families(self):
+        person_handles = set()
+        families_done = {}
+        for person_handle in self.person_handles:
+            person = self.database.get_person_from_handle(person_handle)
+            family_list = person.get_family_handle_list()
+            for fam_handle in family_list:
+                if fam_handle not in families_done:
+                    families_done[fam_handle] = 1
+                    fam = self.database.get_family_from_handle(fam_handle)
+                    f_handle = fam.get_father_handle()
+                    m_handle = fam.get_mother_handle()
+                    if f_handle:
+                        # Include spouses from other marriage not selected by filter
+                        person_handles.add(f_handle)
+                    if m_handle:
+                        # Include spouses from other marriage not selected by filter
+                        person_handles.add(m_handle)
+        return person_handles
 
                 # add all his spouses recursively
                 sp_person = self.database.get_person_from_handle(father_handle)
@@ -1297,15 +1322,11 @@ class DotGenerator(object):
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(f_handle)
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(m_handle)
         self.end_subgraph()
 
     def get_gender_style(self, person):
