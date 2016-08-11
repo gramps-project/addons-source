@@ -2142,7 +2142,11 @@ class DynamicWebReport(Report):
         mapstyles = [] #: list of the CSS stylesheets to embed in the HTML pages that show a map
         if (self.options['placemappages'] or self.options['familymappages']):
             if (self.options['mapservice'] == "Google"):
-                mapscripts = ["http://maps.googleapis.com/maps/api/js"]
+                googlemapurl = "https://maps.googleapis.com/maps/api/js"
+                googlemapkey = self.options['googlemapkey']
+                if (googlemapkey):
+                    googlemapurl = googlemapurl + "?key=" + googlemapkey
+                mapscripts = [googlemapurl]
             else:
                 mapscripts = ["http://openlayers.org/en/v3.0.0/build/ol.js"]
                 mapstyles = ["http://openlayers.org/en/v3.0.0/css/ol.css"]
@@ -2370,6 +2374,7 @@ class DynamicWebReport(Report):
         sw.write("MAP_PLACE=" + ("true" if (self.options['placemappages']) else "false") + ";\n")
         sw.write("MAP_FAMILY=" + ("true" if (self.options['familymappages']) else "false") + ";\n")
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
+        sw.write("GOOGLE_MAP_KEY=\"" + script_escape(self.options['googlemapkey']) + "\";\n")
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
         sw.write("INC_CHANGE_TIME=" + ("true" if (self.options['inc_change_time']) else "false") + ";\n")
@@ -3876,6 +3881,10 @@ class DynamicWebOptions(MenuReportOptions):
         self.__mapservice.connect("value-changed", self.__placemap_options_changed)
         addopt("mapservice", self.__mapservice)
 
+        self.__googlemapkey = StringOption(_("Google map API key"),"")
+        self.__googlemapkey.set_help(_("The API key used for the Google map"))
+        addopt("googlemapkey", self.__googlemapkey)
+
         self.__placemap_options_changed()
 
 
@@ -4134,6 +4143,11 @@ class DynamicWebOptions(MenuReportOptions):
             self.__mapservice.set_available(True)
         else:
             self.__mapservice.set_available(False)
+
+        if ((place_map_active or family_active) and mapservice_opts == "Google"):
+             self.__googlemapkey.set_available(True)
+        else:
+             self.__googlemapkey.set_available(False)
 
         # if (family_active and mapservice_opts == "Google"):
             # self.__googleopts.set_available(True)
