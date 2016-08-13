@@ -848,10 +848,10 @@ class GraphvizSvgParser(object):
             # http://www.gramps-project.org/bugs/view.php?id=6816
             # Consider reverting back to dashed lines when CanvasLineDash()
             # is working with introspection
-            #item = GooCanvas.CanvasPath(parent = self.current_parent(),
-            #                            data = p_data,
-            #                            stroke_color = 'Red',
-            #                            line_width = 1)
+#            item = GooCanvas.CanvasPath(parent = self.current_parent(),
+#                                        data = p_data,
+#                                        stroke_color = 'Red',
+#                                        line_width = 1)
         else:
             item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
@@ -1117,14 +1117,31 @@ class DotGenerator(object):
                         num_generations - 1,
                         person_handles)
 
-                # Add spouse
+                # Add spouses
                 if person.handle == family.get_father_handle():
                     spouse_handle = family.get_mother_handle()
                 else:
                     spouse_handle = family.get_father_handle()
 
+                # add spouse itself
                 if spouse_handle and spouse_handle not in person_handles:
-                    person_handles.append(spouse_handle)
+                   person_handles.append(spouse_handle)
+                   
+                # add all his(her) spouses recursively
+                sp_person = self.database.get_person_from_handle(spouse_handle)
+                if sp_person:
+                  for sp_family_handle in sp_person.get_family_handle_list():
+                     sp_family = self.database.get_family_from_handle(sp_family_handle)
+                     if sp_family.get_mother_handle() and sp_family.get_mother_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_mother_handle()),
+                          1,
+                          person_handles)
+                     if sp_family.get_father_handle() and sp_family.get_father_handle() not in person_handles:
+                        self.add_descendant(
+                          self.database.get_person_from_handle(sp_family.get_father_handle()),
+                          1,
+                          person_handles)
 
     def find_ancestors(self, active_person):
         "Spider the database from the active person"
@@ -1149,14 +1166,18 @@ class DotGenerator(object):
                 family = self.database.get_family_from_handle(family_handle)
 
                 # Add every parent recursively
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_father_handle()),
-                        num_generations - 1,
-                        person_handles)
-                self.add_ancestor(
-                        self.database.get_person_from_handle(family.get_mother_handle()),
-                        num_generations - 1,
-                        person_handles)
+                father_handle = family.get_father_handle()
+                if father_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(father_handle),
+                            num_generations - 1,
+                            person_handles)
+                mother_handle = family.get_mother_handle()
+                if mother_handle:
+                    self.add_ancestor(
+                            self.database.get_person_from_handle(mother_handle),
+                            num_generations - 1,
+                            person_handles)
 
                 # add all his spouses recursively
                 sp_person = self.database.get_person_from_handle(father_handle)
@@ -1297,15 +1318,11 @@ class DotGenerator(object):
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(f_handle)
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
-            # Include spouses from other marriage not selected by filter
-            self.person_handles.add(m_handle)
         self.end_subgraph()
 
     def get_gender_style(self, person):
