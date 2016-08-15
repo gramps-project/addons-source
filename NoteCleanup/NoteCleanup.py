@@ -52,7 +52,6 @@ from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditNote
 from gramps.gen.lib import Note
 from gramps.gen.errors import WindowActiveError
-from gramps.gen.constfunc import conv_to_unicode
 from gramps.gen.lib import (StyledText, StyledTextTag, StyledTextTagType)
 from gramps.gui.widgets.styledtexteditor import StyledTextEditor
 
@@ -321,7 +320,6 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         while True:
             value = chooser.run()
             filename = chooser.get_filename()
-            filename = conv_to_unicode(filename)
             if value == Gtk.ResponseType.OK:
                 if filename:
                     chooser.destroy()
