@@ -2073,10 +2073,13 @@ class DynamicWebReport(Report):
         y = ""
         if (event):
             y = "?"
-            sdn = self._get_sdn(event)
-            if sdn != 0:
-                (year, month, day) = gregorian_ymd(sdn)
-                y = "%i" % year
+            date = event.get_date_object()
+            if date and not date.is_empty():
+                mod = date.get_modifier()
+                # BEFORE, AFTER, SPAN, TEXTONLY and RANGE wider than a year do not allow us to calculate
+                # one single year (even approximate) of event for the table view
+                if mod == Date.MOD_NONE or mod == Date.MOD_ABOUT or (mod == Date.MOD_RANGE and date.get_start_date()[2] == date.get_stop_date()[2]):
+                    y = "%i" % date.get_year_calendar("Gregorian")
         return y
 
     def _get_sdn(self, event):
