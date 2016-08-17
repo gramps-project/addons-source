@@ -1126,9 +1126,13 @@ class DotGenerator(object):
                 # add spouse itself
                 if spouse_handle and spouse_handle not in person_handles:
                    person_handles.append(spouse_handle)
-                   
+
                 # add all his(her) spouses recursively
-                sp_person = self.database.get_person_from_handle(spouse_handle)
+                if spouse_handle: 
+                   sp_person = self.database.get_person_from_handle(spouse_handle)
+                else:
+                   return
+                
                 if sp_person:
                   for sp_family_handle in sp_person.get_family_handle_list():
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
