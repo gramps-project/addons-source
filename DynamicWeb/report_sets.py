@@ -56,6 +56,7 @@ default_options = {
     'placemappages': True,
     'familymappages': True,
     'mapservice': "Google",
+    'googlemapkey': "",
     'tabbed_panels': False,
     'encoding': "UTF-8",
     'inc_families': True,
