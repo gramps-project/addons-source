@@ -92,7 +92,6 @@ if not _DOT_FOUND:
     raise Exception("GraphViz (http://www.graphviz.org) is "
                     "required for this view to work")
 
-
 #-------------------------------------------------------------------------
 #
 # GraphView
@@ -430,6 +429,7 @@ class GraphWidget(object):
         else:
             svg_data = Popen(['dot', '-Tsvg'], 
                         stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
+
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(svg_data)
         window = self.canvas.get_parent()
@@ -510,10 +510,14 @@ class GraphWidget(object):
         """Function for motion notify events for drag and scroll mode."""
         if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
            event.type == Gdk.EventType.BUTTON_RELEASE):
-            new_x = self.hadjustment.get_value() - (event.x_root - self._last_x)
-            self.hadjustment.set_value(new_x)
+            # choose coef for prevent flicking
+            if self.canvas.get_scale()<=0.5: fl_coef=0.5
+            else: fl_coef=1.0
+            if self.canvas.get_scale()<=0.2: fl_coef=0.3
 
-            new_y = self.vadjustment.get_value() - (event.y_root - self._last_y)
+            new_x = self.hadjustment.get_value() - (event.x_root - self._last_x)*fl_coef
+            self.hadjustment.set_value(new_x)
+            new_y = self.vadjustment.get_value() - (event.y_root - self._last_y)*fl_coef
             self.vadjustment.set_value(new_y)
             return True
         return False
@@ -748,6 +752,7 @@ class GraphvizSvgParser(object):
             coord_y = float(coord[1])
             points.set_point(n, coord_x, coord_y)
             n += 1
+
         style = attrs.get('style')
 
         if style:
@@ -1027,6 +1032,7 @@ class DotGenerator(object):
             'family_fill'    : '#ffffe0',
             'family_border'  : '#000000',
         }
+
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
 
@@ -1048,8 +1054,8 @@ class DotGenerator(object):
         self.write( 'digraph GRAMPS_graph\n'        )
         self.write( '{\n'                           )
         self.write( '  bgcolor=white;\n'            )
-        self.write( '  center="false"; \n'           )
-        self.write( '  charset="utf8";\n'     )
+        self.write( '  center="false"; \n'          )
+        self.write( '  charset="utf8";\n'           )
         self.write( '  concentrate="false";\n'      )
         self.write( '  dpi="%d";\n'                 % dpi          )
         self.write( '  graph [fontsize=%d];\n'      % fontsize     )
@@ -1062,7 +1068,7 @@ class DotGenerator(object):
         self.write( '  ranksep="%.2f";\n'           % ranksep      )
         self.write( '  ratio="%s";\n'               % ratio        )
         self.write( '  searchsize="100";\n'         )
-        self.write( '  size="%3.2f,%3.2f"; \n'      % (sizew, sizeh)    )
+        self.write( '  size="%3.2f,%3.2f"; \n'      % (sizew, sizeh) )
         self.write( '  splines="true";\n'           )
         self.write( '\n'                            )
         self.write( '  edge [style=solid fontsize=%d];\n' % fontsize )
@@ -1126,9 +1132,13 @@ class DotGenerator(object):
                 # add spouse itself
                 if spouse_handle and spouse_handle not in person_handles:
                    person_handles.append(spouse_handle)
-                   
+
                 # add all his(her) spouses recursively
-                sp_person = self.database.get_person_from_handle(spouse_handle)
+                if spouse_handle: 
+                   sp_person = self.database.get_person_from_handle(spouse_handle)
+                else:
+                   return
+                
                 if sp_person:
                   for sp_family_handle in sp_person.get_family_handle_list():
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
@@ -1550,6 +1560,7 @@ class DotGenerator(object):
             text += ' URL="%s"'         % url
 
         text += " ]"
+
         self.write('  _%s %s;\n' % (node_id, text))
 
     def start_subgraph(self, graph_id):
