@@ -149,7 +149,7 @@ class GraphView(NavigationView):
         Set up callback for changes to the database
         """
         self._change_db(db)
-        self.graph_view.change_max_zoom()
+        self.graph_widget.change_max_zoom()
         if self.active:
             self.graph_widget.clear()
             if self.get_active() != "":
@@ -1128,7 +1128,9 @@ class DotGenerator(object):
                    person_handles.append(spouse_handle)
                    
                 # add all his(her) spouses recursively
-                sp_person = self.database.get_person_from_handle(spouse_handle)
+                sp_person = None
+                if spouse_handle:
+                    sp_person = self.database.get_person_from_handle(spouse_handle)
                 if sp_person:
                   for sp_family_handle in sp_person.get_family_handle_list():
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
@@ -1180,7 +1182,9 @@ class DotGenerator(object):
                             person_handles)
 
                 # add all his spouses recursively
-                sp_person = self.database.get_person_from_handle(father_handle)
+                sp_person = None
+                if father_handle:
+                    sp_person = self.database.get_person_from_handle(father_handle)
                 if sp_person:
                   for sp_family_handle in sp_person.get_family_handle_list():
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
