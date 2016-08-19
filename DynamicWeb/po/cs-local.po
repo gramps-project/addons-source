@@ -428,7 +428,7 @@ msgstr "Popis"
 
 #: DynamicWeb/dynamicweb.py:2427
 msgid "Enclosed By"
-msgstr "Uzavřel"
+msgstr "Ohraničeno"
 
 #: DynamicWeb/dynamicweb.py:2428
 msgid "Engagement"
@@ -448,7 +448,7 @@ msgstr "Příklady"
 
 #: DynamicWeb/dynamicweb.py:2432
 msgid "F"
-msgstr ""
+msgstr "Ž"
 
 #: DynamicWeb/dynamicweb.py:2433
 msgid "Families Index"
@@ -541,7 +541,7 @@ msgstr "Zeměpisná délka"
 
 #: DynamicWeb/dynamicweb.py:2458
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: DynamicWeb/dynamicweb.py:2459
 msgid "Male"
@@ -781,7 +781,7 @@ msgstr "Typ"
 
 #: DynamicWeb/dynamicweb.py:2528
 msgid "U"
-msgstr ""
+msgstr "N"
 
 #: DynamicWeb/dynamicweb.py:2529
 msgid "Unknown"
