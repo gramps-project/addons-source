@@ -1730,6 +1730,11 @@ function printIndex(data, defaultsort, columns)
 }
 
 
+GENDERS_ABBREVIATION = {
+	'M': _('M'),
+	'F': _('F'),
+	'U': _('U')
+};
 
 function printPersonsIndex(data)
 {
@@ -1737,6 +1742,7 @@ function printPersonsIndex(data)
 	ManageSearchStringGids();
 	document.write(htmlPersonsIndex(data));
 }
+
 function htmlPersonsIndex(data)
 {
 	var html = '';
@@ -1753,7 +1759,7 @@ function htmlPersonsIndex(data)
 		fsort: function(x, col) {return(data[x]);}
 	}, {
 		title: _('Gender'),
-		ftext: function(x, col) {return(I[data[x]].gender);}
+		ftext: function(x, col) {return(GENDERS_ABBREVIATION[I[data[x]].gender])}
 	}];
 	if (search.IndexShowBirth) columns.push({
 		title: _('Birth'),
@@ -1810,7 +1816,6 @@ function htmlPersonsIndex(data)
 	html += printIndex(data, [0, 'asc'], columns);
 	return(html);
 }
-
 
 function printIndexSpouseText(fdx, col)
 {
