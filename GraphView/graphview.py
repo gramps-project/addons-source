@@ -401,20 +401,24 @@ class GraphView(NavigationView):
         Save the dot file for a later printing with an appropriate tool.
         """
         # Ask for the dot file name
-        filter = Gtk.FileFilter()
-        filter.add_pattern("*.gv")
+        filter1 = Gtk.FileFilter()
+        filter1.set_name("dot files")
+        filter1.add_pattern("*.gv")
         dot = Gtk.FileChooserDialog(
             _("Select a dot file name"),
-            action=Gtk.FileChooserAction.OPEN,
+            action=Gtk.FileChooserAction.SAVE,
             buttons=(_('_Cancel'), Gtk.ResponseType.CANCEL,
                      _('_Apply'), Gtk.ResponseType.OK))
         mpath = config.get('paths.report-directory')
         dot.set_current_folder(os.path.dirname(mpath))
-        dot.set_filter(filter)
+        dot.set_filter(filter1)
+        dot.set_current_name("Graphview.gv")
 
         status = dot.run()
         if status == Gtk.ResponseType.OK:
             val = dot.get_filename()
+            (spath, ext) = os.path.splitext(val)
+            val = spath + ".gv" # used to avoid filename without extension
             # selected path is an existing file and we need a file
             if os.path.isfile(val):
                 aaa = OptionDialog(_('File already exists'), # parent-OK
@@ -428,7 +432,7 @@ class GraphView(NavigationView):
                     dot.destroy()
                     self.printview(obj)
                     return
-            svg = val.replace('.gv', '.svg')
+            svg = spath + ".svg"
             if val:
                 with open(val,'w') as g,\
                      open(svg,'w') as s:
