@@ -84,15 +84,15 @@ Classes:
 
 #TODO: User documentation (wiki?)
 #TODO: Other bootstrap templates
-#TODO: export ISO dates, years in gregorian calendar (get_***_year) ?
-#TODO: Export places hierarchy, and date dependent automatically generated place string
+#TODO: export change times (get_change_time) for events (or other referenced objects ?) into person or family pages
 #TODO: Export tags
 #TODO: LDS stuff
 #TODO: Statistic charts
 #TODO: Calendar page (see web calendar and calendar report)
-#TODO: approximate search, which includes all the fields (attributes, notes, etc.) and not only titles and names
+#TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
 
 # For the SVG graph:
+#TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
 #TODO: Refactor: the scaling should be performed by SVG transform
 #TODO: very small texts not printed properly
 #TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
@@ -109,7 +109,7 @@ import os
 import sys
 import re
 import copy
-import time
+import time, datetime
 import shutil
 import codecs
 import tarfile
@@ -163,8 +163,12 @@ DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
                             NameType, Person, UrlType, NoteType,
                             EventRoleType, Family, Event, Place, Source,
-                            Citation, MediaObject, Repository, Note, Tag,
+                            Citation, Repository, Note, Tag,
                             MediaRef, Location)
+if (DWR_VERSION_500):
+    from gramps.gen.lib import Media as _Media
+else:
+    from gramps.gen.lib import MediaObject as _Media
 if (DWR_VERSION_410):
     from gramps.gen.lib import PlaceType
 from gramps.gen.lib.date import Today
@@ -182,7 +186,7 @@ from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_source_and_citation_referents, get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
-from gramps.gen.constfunc import win, conv_to_unicode, get_curr_dir
+from gramps.gen.constfunc import win, get_curr_dir
 if (sys.version_info[0] < 3):
     from gramps.gen.constfunc import UNITYPE
 else:
@@ -209,7 +213,10 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.narrativeweb import first_letter
+from gramps.plugins.webreport.narrativeweb import (
+    first_letter,
+    STREET, LOCALITY, CITY, PARISH, COUNTY, STATE, POSTAL, COUNTRY, PHONE,
+)
 
 from gramps.gen.utils.place import conv_lat_lon
 
@@ -487,7 +494,16 @@ def format_date(date, gedcom = False, iso = False):
 
     return(val)
 
+    
+def format_time(t):
+    """
+    Returns a Date object set to the time t (in the time.time format).
+    """
+    date = Date()
+    date.set_yr_mon_day(*time.localtime(t)[0:3])
+    return format_date(date) + datetime.datetime.fromtimestamp(t).strftime(' %H:%M:%S')
 
+    
 def rmtree_fix(dirname):
     """Windows fix: Python shutil.rmtree does not work properly on Windows.
     Unfortunately this fix is not completely working. Don't know why.
@@ -503,6 +519,10 @@ def rmtree_fix(dirname):
         time.sleep(0.1)
 
 
+
+#------------------------------------------------
+#
+#------------------------------------------------
 
 class DynamicWebReport(Report):
     """
@@ -602,6 +622,7 @@ class DynamicWebReport(Report):
         self.inc_gendex = self.options['inc_gendex']
         self.sourceauthor = self.options['sourceauthor']
         self.template = self.options['template']
+        self.inc_pageconf = self.options['inc_pageconf']
         self.pages_number = self.options['pages_number']
         # Validate pages number in proper range
         self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
@@ -785,6 +806,7 @@ class DynamicWebReport(Report):
             "//       [index (in table 'F'), relation to father, relation to mother, notes, list of citations]\n"
             "//   - assoc: A list of associations in the form:\n"
             "//       [person index (in table 'I'), relationship, notes, list of citations (in table 'C')]\n"
+            "//   - change_time: last record modification date\n"
             "I = ")
         jdatas = []
         person_list = list(self.obj_dict[Person].keys())
@@ -834,6 +856,8 @@ class DynamicWebReport(Report):
             jdata['famc'] = self._data_parents_families_index(person)
             # Associations
             jdata['assoc'] = self._data_associations(person)
+            # Last change date
+            jdata['change_time'] = format_time(person.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -972,6 +996,7 @@ class DynamicWebReport(Report):
             "//   - spou: A list of spouses index (in table 'I')\n"
             "//   - chil: A list of child in the form:\n"
             "//       [index (in table 'I'), relation to father, relation to mother, notes, list of citations]\n"
+            "//   - change_time: last record modification date\n"
             "F = ")
         jdatas = []
         family_list = list(self.obj_dict[Family].keys())
@@ -1002,6 +1027,8 @@ class DynamicWebReport(Report):
             jdata['spou'] = self._data_partners_index(family)
             # Children
             jdata['chil'] = self._data_children_index(family)
+            # Last change date
+            jdata['change_time'] = format_time(family.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1164,6 +1191,7 @@ class DynamicWebReport(Report):
             "//       - note: notes of the repository reference\n"
             "//   - attr: The list of the sources attributes in the form:\n"
             "//       [attribute, value, note, list of citations]\n"
+            "//   - change_time: last record modification date\n"
             "S = ")
         jdatas = []
         source_list = list(self.obj_dict[Source])
@@ -1199,6 +1227,8 @@ class DynamicWebReport(Report):
                 jdata['attr'] = self._data_attributes_src(source)
             else:
                 jdata['attr'] = []
+            # Last change date
+            jdata['change_time'] = format_time(source.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1233,6 +1263,7 @@ class DynamicWebReport(Report):
             "//   - bkp: A list of the place index (in table 'P') referencing this citation\n"
             "//     (including the media references referencing this citation)\n"
             "//   - bkr: A list of the repository index (in table 'R') referencing this citation\n"
+            "//   - change_time: last record modification date\n"
             "C = ")
         jdatas = []
         citation_list = list(self.obj_dict[Citation])
@@ -1265,9 +1296,11 @@ class DynamicWebReport(Report):
             # Get references
             jdata['bki'] = self._data_bkref_index(Citation, citation_handle, Person)
             jdata['bkf'] = self._data_bkref_index(Citation, citation_handle, Family)
-            jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, MediaObject)
+            jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, _Media)
             jdata['bkp'] = self._data_bkref_index(Citation, citation_handle, Place)
             jdata['bkr'] = self._data_bkref_index(Citation, citation_handle, Repository)
+            # Last change date
+            jdata['change_time'] = format_time(citation.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1302,6 +1335,7 @@ class DynamicWebReport(Report):
             "//       - media_type: media type\n"
             "//       - call_number: call number\n"
             "//       - note: notes of the repository reference\n"
+            "//   - change_time: last record modification date\n"
             "R = ")
         jdatas = []
         repo_list = list(self.obj_dict[Repository])
@@ -1323,6 +1357,8 @@ class DynamicWebReport(Report):
             jdata['urls'] = self._data_url_list(repo)
             # Get source references
             jdata['bks'] = self._data_repo_backref_index(repo, Source)
+            # Last change date
+            jdata['change_time'] = format_time(repo.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1375,15 +1411,16 @@ class DynamicWebReport(Report):
             "//       - rect: [x1, y1, x2, y2] of the media reference\n"
             "//       - note: notes of the media reference\n"
             "//       - cita: list of the media reference source citations index (in table 'C')\n"
+            "//   - change_time: last record modification date\n"
             "M = ")
         jdatas = []
-        media_list = list(self.obj_dict[MediaObject])
+        media_list = list(self.obj_dict[_Media])
         if (not self.inc_gallery): media_list = []
-        media_list.sort(key = lambda x: self.obj_dict[MediaObject][x][OBJDICT_INDEX])
+        media_list.sort(key = lambda x: self.obj_dict[_Media][x][OBJDICT_INDEX])
         for media_handle in media_list:
-            media = self.database.get_object_from_handle(media_handle)
+            media = self.get_from_handle(_Media, media_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[MediaObject][media_handle][OBJDICT_GID]
+            jdata['gid'] = self.obj_dict[_Media][media_handle][OBJDICT_GID]
             title = media.get_description() or ""
             jdata['title'] = html_escape(title)
             jdata['gramps_path'] = media.get_path()
@@ -1407,6 +1444,8 @@ class DynamicWebReport(Report):
             jdata['bkf'] = self._data_media_backref_index(media, Family)
             jdata['bks'] = self._data_media_backref_index(media, Source)
             jdata['bkp'] = self._data_media_backref_index(media, Place)
+            # Last change date
+            jdata['change_time'] = format_time(media.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1424,11 +1463,21 @@ class DynamicWebReport(Report):
             "// 'P' is sorted by place name\n"
             "// 'P' gives for each media object:\n"
             "//   - gid: Gramps ID\n"
-            "//   - name: The place name\n"
-            "//   - locations: The place locations parts for the main and alternate names, in the form:\n"
-            "//       (index 0 is main name, others are for alternate names)\n"
-            "//       [street, locality, parish, city, state, county, zip, country]\n"
-            "//   - coords: The coordinates [latitude, longitude]\n\n"
+            "//   - name: The place long name\n"
+            "//   - names: list of place names in the form {name, date, date_sdn} (empty for version 4.0 and below)\n"
+            "//   - type: The place type ('' for version 4.0 and below)\n"
+            "//   - locations: The place locations parts for the main and alternate names (empty for version 4.1 and above), in the form:\n"
+            "//         [{\n"
+            "//         type: type as a string ('street', 'locality', 'parish', 'city', 'state', 'county', etc.)\n"
+            "//         name: name as a string\n"
+            "//         }]\n"
+            "//   - enclosed_by: List of places enclosing this place (empty for version 4.0 and below), in the form:\n"
+            "//         {\n"
+            "//         pdx: place index (in table 'P')\n"
+            "//         date, date_sdn\n"
+            "//         }\n"
+            "//   - coords: The coordinates [latitude, longitude]\n"
+            "//   - code: The place code\n"
             "//   - note: The place notes\n"
             "//   - media: A list of the place media references, in the form:\n"
             "//       - m_idx: media index (in table 'M')\n"
@@ -1442,6 +1491,8 @@ class DynamicWebReport(Report):
             "//   - bki: A list of the person index (in table 'I') for events referencing this place\n"
             "//     (including the persons directly referencing this place)\n"
             "//   - bkf: A list of the family index (in table 'F') for events referencing this place\n"
+            "//   - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)\n"
+            "//   - change_time: last record modification date\n"
             "P = ")
         jdatas = []
         place_list = list(self.obj_dict[Place])
@@ -1455,42 +1506,65 @@ class DynamicWebReport(Report):
             if (not self.inc_places):
                 jdatas.append(jdata)
                 continue
-            locations = []
-            if (DWR_VERSION_410):
-                ml = get_main_location(self.database, place)
-                loc = Location()
-                loc.street = ml.get(PlaceType.STREET, '')
-                loc.locality = ml.get(PlaceType.LOCALITY, '')
-                loc.city = ml.get(PlaceType.CITY, '')
-                loc.parish = ml.get(PlaceType.PARISH, '')
-                loc.county = ml.get(PlaceType.COUNTY, '')
-                loc.state = ml.get(PlaceType.STATE, '')
-                loc.postal = place.get_code()
-                loc.country = ml.get(PlaceType.COUNTRY, '')
-                locations.append(loc)
+            if DWR_VERSION_410:
+                jdata['type'] = str(place.get_type())
             else:
+                jdata['type'] = ''
+            jdata['names'] = []
+            if DWR_VERSION_410:
+                pref_lang = config.get('preferences.place-lang')
+                for pn in place.get_all_names():
+                    lang = pn.get_language()
+                    if lang != '' and pref_lang!= '' and lang != pref_lang: continue
+                    date = format_date(pn.get_date_object())
+                    date_sdn = pn.get_date_object().get_sort_value()
+                    jdata['names'].append({
+                        'name': pn.get_value(),
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    })
+            jdata['locations'] = []
+            if not DWR_VERSION_410:
+                locations = []
                 if (place.main_loc):
                     ml = place.get_main_location()
                     if (ml and not ml.is_empty()): locations.append(ml)
-            altloc = place.get_alternate_locations()
-            if (altloc):
-                altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
-                locations += altloc
-            loctabs = []
-            for loc in locations:
-                loctab = [
-                    loc.street,
-                    loc.locality,
-                    loc.city,
-                    loc.parish,
-                    loc.county,
-                    loc.state,
-                    loc.postal,
-                    loc.country,
-                ]
-                loctab = [(data or "") for data in loctab]
-                loctabs.append(loctab)
-            jdata['locations'] = loctabs
+                altloc = place.get_alternate_locations()
+                if (altloc):
+                    altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
+                    locations += altloc
+                for loc in locations:
+                    jdataloc = []
+                    for (label, data) in [
+                        (STREET, loc.street),
+                        (LOCALITY, loc.locality), 
+                        (CITY, loc.city),
+                        (PARISH, loc.parish),
+                        (COUNTY, loc.county),
+                        (STATE, loc.state),
+                        (POSTAL, loc.postal),
+                        (COUNTRY, loc.country),
+                        (PHONE, loc.phone)
+                    ]:  
+                        if not data or data == '': continue
+                        jdataloc.append({
+                            'type': label,
+                            'name': data,
+                        })
+                    jdata['locations'].append(jdataloc)
+            jdata['enclosed_by'] = []
+            if DWR_VERSION_410:
+                for ref in place.get_placeref_list():
+                    placeref_handle = ref.get_reference_handle()
+                    if placeref_handle not in self.obj_dict[Place]: continue
+                    date = format_date(ref.get_date_object())
+                    date_sdn = ref.get_date_object().get_sort_value()
+                    enc = {
+                        'pdx': self.obj_dict[Place][placeref_handle][OBJDICT_INDEX],
+                        'date': date,
+                        'date_sdn': date_sdn,
+                    }
+                    jdata['enclosed_by'].append(enc)
             latitude = place.get_latitude()
             longitude = place.get_longitude()
             if (latitude and longitude):
@@ -1498,6 +1572,7 @@ class DynamicWebReport(Report):
             else:
                 coords = ("", "")
             jdata['coords'] = coords
+            jdata['code'] = place.get_code()
             # Get place notes
             jdata['note'] = self.get_notes_text(place)
             # Get place media
@@ -1509,6 +1584,12 @@ class DynamicWebReport(Report):
             # Get back references
             jdata['bki'] = self._data_bkref_index(Place, place_handle, Person)
             jdata['bkf'] = self._data_bkref_index(Place, place_handle, Family)
+            if DWR_VERSION_410:
+                jdata['bkp'] = self._data_bkref_index(Place, place_handle, Place)
+            else:
+                jdata['bkp'] = []
+            # Last change date
+            jdata['change_time'] = format_time(place.get_change_time())
             #
             jdatas.append(jdata)
         json.dump(jdatas, sw, sort_keys = True, indent = 4)
@@ -1700,8 +1781,8 @@ class DynamicWebReport(Report):
         jdatas = []
         for ref in refs:
             media_handle = ref.get_reference_handle()
-            if (media_handle in self.obj_dict[MediaObject]):
-                jdatas.append(self._data_media_ref(ref, self.obj_dict[MediaObject][media_handle][OBJDICT_INDEX]))
+            if (media_handle in self.obj_dict[_Media]):
+                jdatas.append(self._data_media_ref(ref, self.obj_dict[_Media][media_handle][OBJDICT_INDEX]))
         jdatas.sort(key = lambda x: x['m_idx'])
         return(jdatas)
 
@@ -1715,7 +1796,7 @@ class DynamicWebReport(Report):
          - cita: list of the media reference source citations index (in table 'C')
         """
         media_handle = ref.get_reference_handle()
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.get_from_handle(_Media, media_handle)
         jdata = {}
         jdata['m_idx'] = index
         jdata['thumb'] = self.copy_thumbnail(media, ref.get_rectangle())
@@ -2000,10 +2081,13 @@ class DynamicWebReport(Report):
         y = ""
         if (event):
             y = "?"
-            sdn = self._get_sdn(event)
-            if sdn != 0:
-                (year, month, day) = gregorian_ymd(sdn)
-                y = "%i" % year
+            date = event.get_date_object()
+            if date and not date.is_empty():
+                mod = date.get_modifier()
+                # BEFORE, AFTER, SPAN, TEXTONLY and RANGE wider than a year do not allow us to calculate
+                # one single year (even approximate) of event for the table view
+                if mod == Date.MOD_NONE or mod == Date.MOD_ABOUT or (mod == Date.MOD_RANGE and date.get_start_date()[2] == date.get_stop_date()[2]):
+                    y = "%i" % date.get_year_calendar("Gregorian")
         return y
 
     def _get_sdn(self, event):
@@ -2069,7 +2153,11 @@ class DynamicWebReport(Report):
         mapstyles = [] #: list of the CSS stylesheets to embed in the HTML pages that show a map
         if (self.options['placemappages'] or self.options['familymappages']):
             if (self.options['mapservice'] == "Google"):
-                mapscripts = ["http://maps.googleapis.com/maps/api/js?sensor=false"]
+                googlemapurl = "https://maps.googleapis.com/maps/api/js"
+                googlemapkey = self.options['googlemapkey']
+                if (googlemapkey):
+                    googlemapurl = googlemapurl + "?key=" + googlemapkey
+                mapscripts = [googlemapurl]
             else:
                 mapscripts = ["http://openlayers.org/en/v3.0.0/build/ol.js"]
                 mapstyles = ["http://openlayers.org/en/v3.0.0/css/ol.css"]
@@ -2093,6 +2181,7 @@ class DynamicWebReport(Report):
             ("statistics_conf.html", _("Statistics"), True, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, dbscripts + chartscripts, [], "printStatisticsConf();"),
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, dbscripts, [], "printCalendar();"),
+            ("conf.html", _("Configuration"), self.inc_pageconf, True, dbscripts, [], "DwrMain(PAGE_CONF);"),
             # Objects pages
             ("person.html", _("Person"), True, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
             ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
@@ -2182,6 +2271,10 @@ class DynamicWebReport(Report):
         """
         sw = StringIO()
         sw.write("// This file is generated\n\n")
+        sw.write("DWR_VERSION_410 = " + ("true" if (DWR_VERSION_410) else "false") + ";\n")
+        sw.write("DWR_VERSION_412 = " + ("true" if (DWR_VERSION_412) else "false") + ";\n")
+        sw.write("DWR_VERSION_420 = " + ("true" if (DWR_VERSION_420) else "false") + ";\n")
+        sw.write("DWR_VERSION_500 = " + ("true" if (DWR_VERSION_500) else "false") + ";\n")
         sw.write("TITLE = \"%s\";\n" % script_escape(self.title))
         sw.write("NB_GENERATIONS_MAX = %i;\n" % int(self.options["graphgens"]))
         sw.write("PAGES_FILE = [")
@@ -2292,8 +2385,12 @@ class DynamicWebReport(Report):
         sw.write("MAP_PLACE=" + ("true" if (self.options['placemappages']) else "false") + ";\n")
         sw.write("MAP_FAMILY=" + ("true" if (self.options['familymappages']) else "false") + ";\n")
         sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
+        sw.write("GOOGLE_MAP_KEY=\"" + script_escape(self.options['googlemapkey']) + "\";\n")
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
+        sw.write("INC_CHANGE_TIME=" + ("true" if (self.options['inc_change_time']) else "false") + ";\n")
+        sw.write("HIDE_GID=true;\n")
+        sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
@@ -2302,14 +2399,11 @@ class DynamicWebReport(Report):
             ("(sort by quantity)", _("(sort by quantity)")),
             (": activate to sort column ascending", _(": activate to sort column ascending")),
             (": activate to sort column descending", _(": activate to sort column descending")),
-            ("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.", _("<p>Click on a person to center the graph on this person.<br>When clicking on the center person, the person page is shown.<p>The type of graph could be selected in the list (on the top left side of the graph)<p>The number of ascending end descending generations could also be adjusted.<p>Use the mouse wheel or the buttons to zoom in and out.<p>The graph could also be shown full-screen.")),
             ("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>", _("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>")),
             ("Abbreviation", _("Abbreviation")),
             ("Address", _("Address")),
             ("Addresses", _("Addresses")),
-            ("Age at death and number of deaths depending on place", _("Age at death and number of deaths depending on place")),
             ("Age at death", _("Age at death")),
-            ("Age at marriage", _("Age at marriage")),
             ("Alternate Marriage", _("Alternate Marriage")),
             ("Alternate Name", _("Alternate Name")),
             ("Ancestors", _("Ancestors")),
@@ -2317,98 +2411,78 @@ class DynamicWebReport(Report):
             ("Attribute", _("Attribute")),
             ("Attributes", _("Attributes")),
             ("Author", _("Author")),
-            ("Average", _("Average")),
             ("Background", _("Background")),
             ("Baptism", _("Baptism")),
-            ("Bar chart", _("Bar chart")),
-            ("Birth date", _("Birth date")),
-            ("Birth day in year", _("Birth day in year")),
-            ("Birth place", _("Birth place")),
             ("Birth", _("Birth")),
-            ("Bubble chart", _("Bubble chart")),
             ("Burial", _("Burial")),
             ("Call Name", _("Call Name")),
             ("Call Number", _("Call Number")),
             ("Cause Of Death", _("Cause Of Death")),
-            ("Chart type", _("Chart type")),
             ("Children", _("Children")),
             ("Christening", _("Christening")),
-            ("Church Parish", _("Church Parish")),
             ("Citation", _("Citation")),
             ("Citations", _("Citations")),
-            ("City", _("City")),
             ("Click on the map to show it full-screen", _("Click on the map to show it full-screen")),
+            ("Code", _("Code")),
             ("Configuration", _("Configuration")),
             ("Configure", _("Configure")),
             ("Count", _("Count")),
-            ("Country", _("Country")),
-            ("County", _("County")),
             ("Cremation", _("Cremation")),
-            ("Data used to split into series", _("Data used to split into series")),
-            ("Data used", _("Data used")),
             ("Date", _("Date")),
-            ("Death date", _("Death date")),
-            ("Death day in year", _("Death day in year")),
-            ("Death place", _("Death place")),
             ("Death", _("Death")),
             ("Descendants", _("Descendants")),
             ("Description", _("Description")),
-            ("Donut chart", _("Donut chart")),
-            ("Enable click on chart", _("Enable click on chart")),
+            ("Enclosed By", _("Enclosed By")),
             ("Engagement", _("Engagement")),
             ("Event", _("Event")),
             ("Events", _("Events")),
             ("Examples", _("Examples")),
+            ("F", _("F")),
             ("Families Index", _("Families Index")),
             ("Families", _("Families")),
             ("Family Nick Name", _("Family Nick Name")),
             ("Father", _("Father")),
-            ("Father's age at marriage", _("Father's age at marriage")),
             ("Female", _("Female")),
             ("File ready", _("File ready")),
-            ("Filter", _("Filter")),
             ("Gender", _("Gender")),
-            ("GRAMPS ID", _("GRAMPS ID")),
-            ("Chart coloring", _("Chart coloring")),
-            ("Graph help", _("Graph help")),
+            ("Include Place map on Place Pages", _("Include Place map on Place Pages")),
+            ("Include a column for birth dates on the index pages", _("Include a column for birth dates on the index pages")),
+            ("Include a column for death dates on the index pages", _("Include a column for death dates on the index pages")),
+            ("Include a column for marriage dates on the index pages", _("Include a column for marriage dates on the index pages")),
+            ("Include a column for parents on the index pages", _("Include a column for parents on the index pages")),
+            ("Include a column for partners on the index pages", _("Include a column for partners on the index pages")),
+            ("Include a map in the individuals and family pages", _("Include a map in the individuals and family pages")),
+            ("Include half and/ or step-siblings on the individual pages", _("Include half and/ or step-siblings on the individual pages")),
+            ("Include references in indexes", _("Include references in indexes")),
             ("Indexes", _("Indexes")),
             ("Individuals", _("Individuals")),
+            ("Insert sources author in the sources title", _("Insert sources author in the sources title")),
+            ("Last Modified", _("Last Modified")),
             ("Latitude", _("Latitude")),
-            ("Line chart", _("Line chart")),
             ("Link", _("Link")),
             ("Loading...", _("Loading...")),
-            ("Locality", _("Locality")),
             ("Location", _("Location")),
             ("Longitude", _("Longitude")),
+            ("M", _("M")),
             ("Male", _("Male")),
             ("Map", _("Map")),
-            ("Marriage date", _("Marriage date")),
-            ("Marriage day in year", _("Marriage day in year")),
-            ("Marriage place", _("Marriage place")),
             ("Marriage", _("Marriage")),
             ("Maximize", _("Maximize")),
-            ("Maximum", _("Maximum")),
             ("Media Index", _("Media Index")),
             ("Media Type", _("Media Type")),
             ("Media", _("Media")),
-            ("Minimum", _("Minimum")),
             ("Mother", _("Mother")),
-            ("Mother's age at marriage", _("Mother's age at marriage")),
             ("Name", _("Name")),
             ("Nick Name", _("Nick Name")),
             ("No data available in table", _("No data available in table")),
             ("No matches found", _("No matches found")),
-            ("No matching data", _("No matching data")),
             ("No matching records found", _("No matching records found")),
             ("No matching surname.", _("No matching surname.")),
             ("None", _("None")),
             ("Notes", _("Notes")),
-            ("Number of children depending on parents age at marriage", _("Number of children depending on parents age at marriage")),
-            ("Number of children per family", _("Number of children per family")),
-            ("Number of children", _("Number of children")),
+            ("Number of entries in the tables", _("Number of entries in the tables")),
             ("OK", _("OK")),
-            ("Opacity", _("Opacity")),
-            ("Parent for how many families", _("Parent for how many families")),
+            ("Other participants", _("Other participants")),
             ("Parents", _("Parents")),
             ("Path", _("Path")),
             ("Person page", _("Person page")),
@@ -2416,12 +2490,9 @@ class DynamicWebReport(Report):
             ("Person", _("Person")),
             ("Persons Index", _("Persons Index")),
             ("Persons", _("Persons")),
-            ("Phone", _("Phone")),
-            ("Pie chart", _("Pie chart")),
             ("Place", _("Place")),
             ("Places Index", _("Places Index")),
             ("Places", _("Places")),
-            ("Postal Code", _("Postal Code")),
             ("Preparing file ...", _("Preparing file ...")),
             ("Processing...", _("Processing...")),
             ("Publication information", _("Publication information")),
@@ -2432,10 +2503,13 @@ class DynamicWebReport(Report):
             ("Repositories", _("Repositories")),
             ("Repository", _("Repository")),
             ("Restore", _("Restore")),
+            ("Show last modification time", _("Show last modification time")),
+            ("SVG tree children distribution", _("SVG tree children distribution")),
+            ("SVG tree graph shape", _("SVG tree graph shape")),
+            ("SVG tree graph type", _("SVG tree graph type")),
+            ("SVG tree parents distribution", _("SVG tree parents distribution")),
             ("Save tree as file", _("Save tree as file")),
-            ("Scatter chart", _("Scatter chart")),
             ("Search:", _("Search:")),
-            ("See chart", _("See chart")),
             ("Select the background color scheme", _("Select the background color scheme")),
             ("Select the children distribution (fan charts only)", _("Select the children distribution (fan charts only)")),
             ("Select the number of ascending generations", _("Select the number of ascending generations")),
@@ -2452,24 +2526,17 @@ class DynamicWebReport(Report):
             ("Source", _("Source")),
             ("Sources Index", _("Sources Index")),
             ("Sources", _("Sources")),
-            ("Spouses age at marriage", _("Spouses age at marriage")),
-            ("Spouses surnames", _("Spouses surnames")),
             ("Spouses", _("Spouses")),
-            ("State/ Province", _("State/ Province")),
-            ("Statistics Charts", _("Statistics Charts")),
-            ("Street", _("Street")),
-            ("Sum", _("Sum")),
+            ("Suppress Gramps ID", _("Suppress Gramps ID")),
             ("Surname", _("Surname")),
             ("Surnames Index", _("Surnames Index")),
             ("Surnames", _("Surnames")),
-            ("SVG tree children distribution", _("SVG tree children distribution")),
-            ("SVG tree graph shape", _("SVG tree graph shape")),
-            ("SVG tree graph type", _("SVG tree graph type")),
-            ("SVG tree parents distribution", _("SVG tree parents distribution")),
             ("Title", _("Title")),
             ("Type", _("Type")),
+            ("U", _("U")),
             ("Unknown", _("Unknown")),
-            ("Use the search box above in order to find a person.<br>Women are listed with their birth name.", _("Use the search box above in order to find a person.<br>Women are listed with their birth name.")),
+            ("Use tabbed panels instead of sections", _("Use tabbed panels instead of sections")),
+            ("Use the search box above in order to find a person.", _("Use the search box above in order to find a person.")),
             ("Used for family", _("Used for family")),
             ("Used for media", _("Used for media")),
             ("Used for person", _("Used for person")),
@@ -2480,14 +2547,9 @@ class DynamicWebReport(Report):
             ("Web Links", _("Web Links")),
             ("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
             ("Without surname", _("Without surname")),
-            ("X-axis data", _("X-axis data")),
-            ("X-axis function", _("X-axis function")),
-            ("Y-axis data", _("Y-axis data")),
-            ("Y-axis function", _("Y-axis function")),
-            ("Z-axis data", _("Z-axis data")),
-            ("Z-axis function", _("Z-axis function")),
             ("Zoom in", _("Zoom in")),
             ("Zoom out", _("Zoom out")),
+            ("all", _("all")),
         ):
             sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
             sep = ",\n"
@@ -2502,6 +2564,10 @@ class DynamicWebReport(Report):
             ("URLTYPE_WEB_HOME = %i;\n" % UrlType.WEB_HOME) +
             ("URLTYPE_WEB_SEARCH = %i;\n" % UrlType.WEB_SEARCH) +
             ("URLTYPE_WEB_FTP = %i;\n" % UrlType.WEB_FTP))
+        for placetype in (
+            'STREET', 'LOCALITY', 'CITY', 'PARISH', 'COUNTY', 'STATE', 'POSTAL', 'COUNTRY', 'PHONE',
+        ):
+            sw.write("%s = \"%s\";\n" % (placetype, globals()[placetype]))
         self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
 
@@ -2608,7 +2674,7 @@ class DynamicWebReport(Report):
         # __NB_PLACES__ is replaced by the number of places
         text = text.replace("__NB_INDIVIDUALS__", str(len(self.obj_dict[Person])))
         text = text.replace("__NB_FAMILIES__", str(len(self.obj_dict[Family])))
-        text = text.replace("__NB_MEDIA__", str(len(self.obj_dict[MediaObject])))
+        text = text.replace("__NB_MEDIA__", str(len(self.obj_dict[_Media])))
         text = text.replace("__NB_SOURCES__", str(len(self.obj_dict[Source])))
         text = text.replace("__NB_REPOSITORIES__", str(len(self.obj_dict[Repository])))
         text = text.replace("__NB_PLACES__", str(len(self.obj_dict[Place])))
@@ -2617,7 +2683,7 @@ class DynamicWebReport(Report):
         text2 = text
         for mo in re.finditer(r"__(MEDIA|THUMB)_(.*?)__", text):
             gid = mo.group(2)
-            media = self.database.get_object_from_gramps_id(gid)
+            media = self.get_from_gramps_id(_Media, gid)
             if (not media): continue
             tm = mo.group(1)
             if (tm == "THUMB"):
@@ -2733,6 +2799,8 @@ class DynamicWebReport(Report):
                         return
                     os.remove(dest)
                 os.rename(dest_temp, dest)
+                mtime = os.stat(from_fname).st_mtime
+                os.utime(dest, (mtime, mtime))
                 log.info("File \"%s\" generated" % dest)
             except:
                 log.warning(_("Copying error: %(error)s") % {"error": sys.exc_info()[1]})
@@ -2913,8 +2981,8 @@ class DynamicWebReport(Report):
                 href = "%s?rdx=%i" % (href, self.obj_dict[Repository][handle][OBJDICT_INDEX])
         elif (obj_class == "Media"):
             href = "media.html"
-            if (handle in self.obj_dict[MediaObject]):
-                href = "%s?mdx=%i" % (href, self.obj_dict[MediaObject][handle][OBJDICT_INDEX])
+            if (handle in self.obj_dict[_Media]):
+                href = "%s?mdx=%i" % (href, self.obj_dict[_Media][handle][OBJDICT_INDEX])
         elif (obj_class == "Place"):
             href = "place.html"
             if (handle in self.obj_dict[Place]):
@@ -2965,7 +3033,7 @@ class DynamicWebReport(Report):
         for (bkref_class, bkref_handle, repo_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_from_handle(bkref_class, bkref_handle)
             jdata = self._data_repo_ref(repo_ref, i)
             jdata['s_idx'] = jdata['r_idx']
             del jdata['r_idx']
@@ -2986,14 +3054,14 @@ class DynamicWebReport(Report):
         @return: String representing the Javascript Array of the references to L{media}
         """
         media_handle = media.get_handle()
-        if (media_handle not in self.obj_dict[MediaObject]): return([])
-        bkref_list = self.bkref_dict[MediaObject][media_handle]
+        if (media_handle not in self.obj_dict[_Media]): return([])
+        bkref_list = self.bkref_dict[_Media][media_handle]
         if (not bkref_list): return ([])
         jdatas = []
         for (bkref_class, bkref_handle, media_ref) in bkref_list:
             if (ref_class != bkref_class): continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
-            object = self.get_object_from_handle(bkref_class, bkref_handle)
+            object = self.get_from_handle(bkref_class, bkref_handle)
             jdata = self._data_media_ref(media_ref, i)
             jdata['bk_idx'] = jdata['m_idx']
             del jdata['m_idx']
@@ -3002,7 +3070,7 @@ class DynamicWebReport(Report):
         return(jdatas)
 
 
-    def get_object_from_handle(self, class_, handle):
+    def get_from_handle(self, class_, handle):
         """
         Get an object from its handle and class
         """
@@ -3021,6 +3089,38 @@ class DynamicWebReport(Report):
             object = self.database.get_place_from_handle(handle)
         elif (class_ == Repository):
             object = self.database.get_repository_from_handle(handle)
+        elif (class_ == _Media):
+            if (DWR_VERSION_500):
+                object = self.database.get_media_from_handle(handle)
+            else:
+                object = self.database.get_object_from_handle(handle)
+        return(object)
+
+
+    def get_from_gramps_id(self, class_, gid):
+        """
+        Get an object from its Gramps ID and class
+        """
+        object = None
+        if (class_ == Person):
+            object = self.database.get_person_from_gramps_id(gid)
+        elif (class_ == Family):
+            object = self.database.get_family_from_gramps_id(gid)
+        elif (class_ == Event):
+            object = self.database.get_event_from_gramps_id(gid)
+        elif (class_ == Source):
+            object = self.database.get_source_from_gramps_id(gid)
+        elif (class_ == Citation):
+            object = self.database.get_citation_from_gramps_id(gid)
+        elif (class_ == Place):
+            object = self.database.get_place_from_gramps_id(gid)
+        elif (class_ == Repository):
+            object = self.database.get_repository_from_gramps_id(gid)
+        elif (class_ == _Media):
+            if (DWR_VERSION_500):
+                object = self.database.get_media_from_gramps_id(gid)
+            else:
+                object = self.database.get_object_from_gramps_id(gid)
         return(object)
         
 
@@ -3115,7 +3215,7 @@ class DynamicWebReport(Report):
         This method recursively calls the methods "_add_***"
         """
         _obj_class_list = (Person, Family, Event, Place, Source, Citation,
-                           MediaObject, Repository, Note, Tag)
+                           _Media, Repository, Note, Tag)
 
         # setup a dictionary of the required structure
         self.obj_dict = defaultdict(lambda: defaultdict(set))
@@ -3280,26 +3380,28 @@ class DynamicWebReport(Report):
         Return a string containing the name of the family (e.g. 'Family of John Doe and Jane Doe')
         @param: family -- family object from database
         """
-        husband_handle = family.get_father_handle()
-        spouse_handle = family.get_mother_handle()
+        father_handle = family.get_father_handle()
+        mother_handle = family.get_mother_handle()
 
-        husband = self.database.get_person_from_handle(husband_handle)
-        spouse = self.database.get_person_from_handle(spouse_handle)
+        father = None
+        mother = None
+        if father_handle: father = self.database.get_person_from_handle(father_handle)
+        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
 
-        if husband and spouse:
-            husband_name = self.get_person_name(husband)
-            spouse_name = self.get_person_name(spouse)
+        if father and mother:
+            father_name = self.get_person_name(father)
+            mother_name = self.get_person_name(mother)
             title_str = _("Family of %(husband)s and %(spouse)s") % {
-                "husband": husband_name,
-                "spouse": spouse_name}
-        elif husband:
-            husband_name = self.get_person_name(husband)
-            # Only the name of the husband is known
-            title_str = _("Family of %(father)s") % {"father": husband_name}
-        elif spouse:
-            spouse_name = self.get_person_name(spouse)
+                "husband": father_name,
+                "spouse": mother_name}
+        elif father:
+            father_name = self.get_person_name(father)
+            # Only the name of the father is known
+            title_str = _("Family of %(father)s") % {"father": father_name}
+        elif mother:
+            mother_name = self.get_person_name(mother)
             # Only the name of the wife is known
-            title_str = _("Family of %(mother)s") % {"mother": spouse_name}
+            title_str = _("Family of %(mother)s") % {"mother": mother_name}
         else:
             title_str = ""
 
@@ -3311,7 +3413,6 @@ class DynamicWebReport(Report):
         Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
         # Check if event reference already added
-        refs = []
         if (event_handle in self.bkref_dict[Event]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Event][event_handle]]
             # The event reference is already recorded
@@ -3356,25 +3457,33 @@ class DynamicWebReport(Report):
             self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
 
-    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None):
+    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None, place_ref = None):
         """
         Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
         """
+        # Check if place reference already added
+        if (place_handle in self.bkref_dict[Place]):
+            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
+            # The place reference is already recorded
+            if (place_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
-            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, None))
+            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
         # Check if the place is already added
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
         place = self.database.get_place_from_handle(place_handle)
         if (DWR_VERSION_412):
             place_name = _pd.display(self.database, place)
-
         else:
             place_name = place.get_title()
         self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
-
         if (self.inc_places):
+            # Enclosing places
+            if DWR_VERSION_410:
+                for place_ref2 in place.get_placeref_list():
+                    place_handle2 = place_ref2.get_reference_handle()
+                    self._add_place(place_handle2, Place, place_handle, place_ref2)
             # Place citations
             for citation_handle in place.get_citation_list():
                 self._add_citation(citation_handle, Place, place_handle)
@@ -3441,32 +3550,31 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_gallery): return
         # Check if media reference already added
-        refs = []
-        if (media_handle in self.bkref_dict[MediaObject]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[MediaObject][media_handle]]
+        if (media_handle in self.bkref_dict[_Media]):
+            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[_Media][media_handle]]
             # The media reference is already recorded
             if (media_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
-            self.bkref_dict[MediaObject][media_handle].add((bkref_class, bkref_handle, media_ref))
+            self.bkref_dict[_Media][media_handle].add((bkref_class, bkref_handle, media_ref))
             # Citations for media reference, media reference attributes
             citation_list = media_ref.get_citation_list()
             for attr in media_ref.get_attribute_list():
                 citation_list.extend(attr.get_citation_list())
             for citation_handle in citation_list:
-                self._add_citation(citation_handle, MediaObject, media_handle)
+                self._add_citation(citation_handle, _Media, media_handle)
         # Check if the media is already added
-        if (media_handle in self.obj_dict[MediaObject]): return
+        if (media_handle in self.obj_dict[_Media]): return
         # Add media in the dictionaries of objects
-        media = self.database.get_object_from_handle(media_handle)
+        media = self.get_from_handle(_Media, media_handle)
         media_name = media.get_description() or media.get_path() or ""
-        self.obj_dict[MediaObject][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[MediaObject])]
+        self.obj_dict[_Media][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[_Media])]
         # Citations for media, media attributes
         citation_list = media.get_citation_list()
         for attr in media.get_attribute_list():
             citation_list.extend(attr.get_citation_list())
         for citation_handle in citation_list:
-            self._add_citation(citation_handle, MediaObject, media_handle)
+            self._add_citation(citation_handle, _Media, media_handle)
 
 
     def _add_repository(self, repo_handle, bkref_class = None, bkref_handle = None, repo_ref = None):
@@ -3475,7 +3583,6 @@ class DynamicWebReport(Report):
         """
         if (not self.inc_repositories): return
         # Check if repository reference already added
-        refs = []
         if (repo_handle in self.bkref_dict[Repository]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Repository][repo_handle]]
             # The repository reference is already recorded
@@ -3530,7 +3637,7 @@ class DynamicWebReport(Report):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
 
         # Sort others
-        for cls in (Citation, Source, Repository, MediaObject, Place):
+        for cls in (Citation, Source, Repository, _Media, Place):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:
@@ -3555,18 +3662,20 @@ class DynamicWebReport(Report):
         Return a sort key for a family
         """
         family = self.database.get_family_from_handle(handle)
-        husband_handle = family.get_father_handle()
-        spouse_handle = family.get_mother_handle()
+        father_handle = family.get_father_handle()
+        mother_handle = family.get_mother_handle()
 
-        husband = self.database.get_person_from_handle(husband_handle)
-        spouse = self.database.get_person_from_handle(spouse_handle)
+        father = None
+        mother = None
+        if father_handle: father = self.database.get_person_from_handle(father_handle)
+        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
 
-        if husband and spouse:
-            sort_key = self.get_person_name_sort_key(husband_handle) + SORT_KEY(" ") + self.get_person_name_sort_key(spouse_handle)
-        elif husband:
-            sort_key = self.get_person_name_sort_key(husband_handle)
-        elif spouse:
-            sort_key = self.get_person_name_sort_key(spouse_handle)
+        if father and mother:
+            sort_key = self.get_person_name_sort_key(father_handle) + SORT_KEY(" ") + self.get_person_name_sort_key(mother_handle)
+        elif father:
+            sort_key = self.get_person_name_sort_key(father_handle)
+        elif mother:
+            sort_key = self.get_person_name_sort_key(mother_handle)
         else:
             sort_key = SORT_KEY("")
 
@@ -3818,6 +3927,10 @@ class DynamicWebOptions(MenuReportOptions):
         self.__mapservice.connect("value-changed", self.__placemap_options_changed)
         addopt("mapservice", self.__mapservice)
 
+        self.__googlemapkey = StringOption(_("Google map API key"),"")
+        self.__googlemapkey.set_help(_("The API key used for the Google map"))
+        addopt("googlemapkey", self.__googlemapkey)
+
         self.__placemap_options_changed()
 
 
@@ -3843,6 +3956,10 @@ class DynamicWebOptions(MenuReportOptions):
         tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
         tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
         addopt("tabbed_panels", tabbed_panels)
+
+        inc_change_time = BooleanOption(_("Show last modification time"), False)
+        inc_change_time.set_help(_( "Whether to show the last modification time in the pages footer"))
+        addopt('inc_change_time', inc_change_time)
 
         showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
         showbirth.set_help(_('Whether to include a birth column'))
@@ -3879,6 +3996,10 @@ class DynamicWebOptions(MenuReportOptions):
         inc_gendex = BooleanOption(_('Include GENDEX file (/gendex.txt)'), False)
         inc_gendex.set_help(_('Whether to include a GENDEX file or not'))
         addopt("inc_gendex", inc_gendex)
+
+        inc_pageconf = BooleanOption(_("Enable page configuration"), False)
+        inc_pageconf.set_help(_( "Whether to enable page configuration"))
+        addopt('inc_pageconf', inc_pageconf)
 
 
     def __add_trees_options(self, menu):
@@ -3973,7 +4094,7 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Pages selection")
         addopt = partial(menu.add_option, category_name)
 
-        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES) + 1, 1, NB_TOTAL_PAGES_MAX)
+        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES), 1, NB_TOTAL_PAGES_MAX)
         self.__pages_number.set_help(_("Number pages in the web site menu."))
         addopt("pages_number", self.__pages_number)
         self.__pages_number.connect("value-changed", self.__pages_contents_changed)
@@ -3982,8 +4103,8 @@ class DynamicWebOptions(MenuReportOptions):
             PAGE_HOME,
             PAGE_INDEX,
             PAGE_SVG_TREE,
-            # PAGE_CALENDAR,
             # PAGE_STATISTICS,
+            # PAGE_CALENDAR,
         ] + [PAGE_CUSTOM + i for i in range (NB_CUSTOM_PAGES)
         ] + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
 
@@ -4068,6 +4189,11 @@ class DynamicWebOptions(MenuReportOptions):
             self.__mapservice.set_available(True)
         else:
             self.__mapservice.set_available(False)
+
+        if ((place_map_active or family_active) and mapservice_opts == "Google"):
+             self.__googlemapkey.set_available(True)
+        else:
+             self.__googlemapkey.set_available(False)
 
         # if (family_active and mapservice_opts == "Google"):
             # self.__googleopts.set_available(True)
