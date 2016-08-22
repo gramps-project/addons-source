@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: 4.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-22 16:38+0200\n"
-"PO-Revision-Date: 2015-10-08 09:59+0200\n"
+"PO-Revision-Date: 2016-08-22 16:46+0200\n"
 "Last-Translator: Sebastian Schubert <schubert.seb@gmail.com>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -410,7 +410,7 @@ msgstr "Klicke auf die Karte um sie auf dem ganzen Bildschirm zu zeigen"
 
 #: DynamicWeb/dynamicweb.py:2426
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: DynamicWeb/dynamicweb.py:2428
 msgid "Configure"
@@ -438,7 +438,7 @@ msgstr "Beschreibung"
 
 #: DynamicWeb/dynamicweb.py:2435
 msgid "Enclosed By"
-msgstr ""
+msgstr "Beinhaltet von"
 
 #: DynamicWeb/dynamicweb.py:2436
 msgid "Engagement"
@@ -458,7 +458,7 @@ msgstr "Beispiele"
 
 #: DynamicWeb/dynamicweb.py:2440
 msgid "F"
-msgstr ""
+msgstr "W"
 
 #: DynamicWeb/dynamicweb.py:2441
 msgid "Families Index"
@@ -526,7 +526,7 @@ msgstr "Autor der Quellen in den Quelltitel einfügen"
 
 #: DynamicWeb/dynamicweb.py:2460
 msgid "Last Modified"
-msgstr ""
+msgstr "Zulätzt geändert am"
 
 #: DynamicWeb/dynamicweb.py:2461
 msgid "Latitude"
@@ -550,7 +550,7 @@ msgstr "Längengrad"
 
 #: DynamicWeb/dynamicweb.py:2466
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: DynamicWeb/dynamicweb.py:2467
 msgid "Male"
@@ -614,7 +614,7 @@ msgstr "Notizen"
 
 #: DynamicWeb/dynamicweb.py:2483
 msgid "Number of entries in the tables"
-msgstr ""
+msgstr "Anzahl der Einträge in den Tabellen"
 
 #: DynamicWeb/dynamicweb.py:2484
 msgid "OK"
@@ -622,7 +622,7 @@ msgstr "OK"
 
 #: DynamicWeb/dynamicweb.py:2485
 msgid "Other participants"
-msgstr ""
+msgstr "Andere Beteiligte"
 
 #: DynamicWeb/dynamicweb.py:2486
 msgid "Parents"
@@ -682,7 +682,7 @@ msgstr "Wiederherstellen"
 
 #: DynamicWeb/dynamicweb.py:2506 DynamicWeb/dynamicweb.py:3960
 msgid "Show last modification time"
-msgstr ""
+msgstr "Zeige den Zeitpunkt der letzten Änderung"
 
 #: DynamicWeb/dynamicweb.py:2507 DynamicWeb/dynamicweb.py:4031
 msgid "SVG tree children distribution"
@@ -772,7 +772,7 @@ msgstr "(Ehe-)Partner"
 
 #: DynamicWeb/dynamicweb.py:2530
 msgid "Suppress Gramps ID"
-msgstr ""
+msgstr "Unterdrücke die Gramps ID"
 
 #: DynamicWeb/dynamicweb.py:2531
 msgid "Surname"
@@ -792,7 +792,7 @@ msgstr "Art"
 
 #: DynamicWeb/dynamicweb.py:2536
 msgid "U"
-msgstr ""
+msgstr "U"
 
 #: DynamicWeb/dynamicweb.py:2537
 msgid "Unknown"
@@ -804,7 +804,7 @@ msgstr "Verwende Registerkarten anstatt Abschnitte"
 
 #: DynamicWeb/dynamicweb.py:2539
 msgid "Use the search box above in order to find a person."
-msgstr ""
+msgstr "Benutze die obrige Suchbox um eine Person zu finden."
 
 #: DynamicWeb/dynamicweb.py:2540
 msgid "Used for family"
@@ -860,7 +860,7 @@ msgstr "Herauszoomen"
 
 #: DynamicWeb/dynamicweb.py:2552
 msgid "all"
-msgstr ""
+msgstr "alle"
 
 #: DynamicWeb/dynamicweb.py:2806
 #, python-format
@@ -1235,11 +1235,11 @@ msgstr "Wähle einen Kartendienst zur Erstellung der Ortskartenseiten"
 
 #: DynamicWeb/dynamicweb.py:3930
 msgid "Google map API key"
-msgstr ""
+msgstr "Google map API-Schlüssel"
 
 #: DynamicWeb/dynamicweb.py:3931
 msgid "The API key used for the Google map"
-msgstr ""
+msgstr "Der für Google map verwendete API-Schlüssel"
 
 #: DynamicWeb/dynamicweb.py:3938
 msgid "Advanced"
@@ -1269,7 +1269,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3961
 msgid "Whether to show the last modification time in the pages footer"
-msgstr ""
+msgstr "Ob der Zeitpunkt der letzten Änderung in der Füßzeile angezeigt wird"
 
 #: DynamicWeb/dynamicweb.py:3965
 msgid "Whether to include a birth column"
@@ -1322,11 +1322,11 @@ msgstr "Legt fest, ob eine GENDEX-Datei aufgenommen wird."
 
 #: DynamicWeb/dynamicweb.py:4000
 msgid "Enable page configuration"
-msgstr ""
+msgstr "Erlaube Seitenkonfiguration"
 
 #: DynamicWeb/dynamicweb.py:4001
 msgid "Whether to enable page configuration"
-msgstr ""
+msgstr "Ob eine Seitenkonfiguration erlaubt wird"
 
 #: DynamicWeb/dynamicweb.py:4006
 msgid "Trees"
