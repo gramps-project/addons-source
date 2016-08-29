@@ -2166,6 +2166,9 @@ class DynamicWebReport(Report):
                 # mapscripts = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"]
                 # mapstyles = ["http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"]
 
+        place_mapscripts = mapscripts if self.options['placemappages'] else []
+        family_mapscripts = mapscripts if self.options['familymappages'] else []
+
         # List of page to generate:
         #  - Page file name
         #  - Page title
@@ -2183,11 +2186,11 @@ class DynamicWebReport(Report):
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, dbscripts, [], "printCalendar();"),
             ("conf.html", _("Configuration"), self.inc_pageconf, True, dbscripts, [], "DwrMain(PAGE_CONF);"),
             # Objects pages
-            ("person.html", _("Person"), True, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
-            ("family.html", _("Family"), self.inc_families, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
+            ("person.html", _("Person"), True, True, dbscripts + family_mapscripts, mapstyles, "DwrMain(PAGE_INDI);"),
+            ("family.html", _("Family"), self.inc_families, True, dbscripts + family_mapscripts, mapstyles, "DwrMain(PAGE_FAM);"),
             ("source.html", _("Source"), self.inc_sources, True, dbscripts, [], "DwrMain(PAGE_SOURCE);"),
             ("media.html", _("Media"), self.inc_gallery, True, dbscripts, [], "DwrMain(PAGE_MEDIA);"),
-            ("place.html", _("Place"), self.inc_places, True, dbscripts + mapscripts, mapstyles, "DwrMain(PAGE_PLACE);"),
+            ("place.html", _("Place"), self.inc_places, True, dbscripts + place_mapscripts, mapstyles, "DwrMain(PAGE_PLACE);"),
             ("repository.html", _("Repository"), self.inc_repositories, True, dbscripts, [], "DwrMain(PAGE_REPO);"),
             ("search.html", _("Search results"), True, True, dbscripts, [], "DwrMain(PAGE_SEARCH);"),
             ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, dbscripts, [], "DwrMain(PAGE_SVG_TREE_FULL);"),
