@@ -112,6 +112,7 @@ class GraphView(NavigationView):
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-show-lines', 1),
+        ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
         ('interface.graphview-descendant-generations', 10),
@@ -126,6 +127,7 @@ class GraphView(NavigationView):
         self.show_full_dates = self._config.get(
                                'interface.graphview-show-full-dates')
         self.show_places = self._config.get('interface.graphview-show-places')
+        self.show_tag_color = self._config.get('interface.graphview-show-tags')
         self.highlight_home_person = self._config.get(
                                   'interface.graphview-highlight-home-person')
         self.home_person_color = self._config.get(
@@ -405,6 +407,9 @@ class GraphView(NavigationView):
         configdialog.add_color(grid,
                 _('Home person color'),
                 0, 'interface.graphview-home-person-color')
+        configdialog.add_checkbox(grid,
+                _('Show tags'),
+                1, 'interface.graphview-show-tags')
 
         return _('Colors'), grid
 
@@ -1115,6 +1120,8 @@ class DotGenerator(object):
                                     'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
                                     'interface.graphview-show-places')
+        self.show_tag_color = self.view._config.get(
+                                    'interface.graphview-show-tags')
         spline = self.view._config.get(
                                     'interface.graphview-show-lines')
         self.spline = SPLINE.get(int(spline))
@@ -1415,7 +1422,13 @@ class DotGenerator(object):
             # Output the person's node
             label = self.get_person_label(person)
             (shape, style, color, fill) = self.get_gender_style(person)
-
+            if self.show_tag_color:
+                for tag_handle in person.get_tag_list():
+                    # For the complete tag, don't modify the default color
+                    # which is black (#000000000000)
+                    tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                    if tag.get_color() != "#000000000000":
+                        fill = tag.get_color() # only if the color is not black
             self.add_node(person_handle, label, shape, color, style, fill, url)
 
             # Output families where person is a parent
