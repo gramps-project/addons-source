@@ -3286,7 +3286,12 @@ function SearchObjects()
 			NameSplitScripts('S', 'author'),
 			NameSplitScripts('S', 'abbrev'),
 			NameSplitScripts('S', 'publ'),
-			NameSplitScripts('P', 'name')]),
+			NameSplitScripts('P', 'name'),
+			(!Dwr.search.HideGid ? ([].concat.apply([], [
+				NameSplitScripts('I', 'gid'),
+				NameSplitScripts('M', 'gid'),
+				NameSplitScripts('S', 'gid'),
+				NameSplitScripts('P', 'gid')])) : [])]),
 			false);
 		htmlPersonsIndex();
 		htmlMediaIndex();
@@ -3306,12 +3311,19 @@ function SearchObjects()
 	buildDataArray('S', 'abbrev');
 	buildDataArray('S', 'publ');
 	buildDataArray('P', 'name');
+	if (!Dwr.search.HideGid)
+	{
+		buildDataArray('I', 'gid');
+		buildDataArray('M', 'gid');
+		buildDataArray('S', 'gid');
+		buildDataArray('P', 'gid');
+	}
 
 	var types = [
 		{
 			data: 'I',
-			fextract: function(idx) {
-				return(I_name[idx] + ' ' + I_birth_year[idx] + ' ' + I_death_year[idx]);
+			fextract: function(idx) {return(I_name[idx] + ' ' + I_birth_year[idx] + ' ' + I_death_year[idx] +
+					(Dwr.search.HideGid ? '' : ' ' + I_gid[idx]));
 			},
 			text: _('Persons'),
 			findex: htmlPersonsIndex,
@@ -3319,21 +3331,24 @@ function SearchObjects()
 		},
 		{
 			data: 'M',
-			fextract: function(mdx) {return(M_title[mdx] + ' ' + M_path[mdx]);},
+			fextract: function(mdx) {return(M_title[mdx] + ' ' + M_path[mdx] +
+					(Dwr.search.HideGid ? '' : ' ' + M_gid[idx]));},
 			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
 		},
 		{
 			data: 'S',
-			fextract: function(sdx) {return(S_title[sdx] + ' ' + S_author[sdx] + ' ' + S_abbrev[sdx] + ' ' + S_publ[sdx]);},
+			fextract: function(sdx) {return(S_title[sdx] + ' ' + S_author[sdx] + ' ' + S_abbrev[sdx] + ' ' + S_publ[sdx] +
+					(Dwr.search.HideGid ? '' : ' ' + S_gid[idx]));},
 			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
 		},
 		{
 			data: 'P',
-			fextract: function(pdx) {return(P_name[pdx]);},
+			fextract: function(pdx) {return(P_name[pdx] +
+					(Dwr.search.HideGid ? '' : ' ' + P_gid[idx]));},
 			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
