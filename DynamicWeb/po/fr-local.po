@@ -513,6 +513,10 @@ msgid "File ready"
 msgstr "Fichier prêt"
 
 #: DynamicWeb/dynamicweb.py:2447
+msgid "Help"
+msgstr "Aide"
+
+#: DynamicWeb/dynamicweb.py:2447
 msgid "Gender"
 msgstr "Genre"
 
@@ -713,6 +717,10 @@ msgstr "Relation "
 #: DynamicWeb/dynamicweb.py:2505
 msgid "Restore"
 msgstr "Restaurer"
+
+#: DynamicWeb/dynamicweb.py:2505
+msgid "Restore default settings"
+msgstr "Restaurer les paramètres par défaut"
 
 #: DynamicWeb/dynamicweb.py:2506 DynamicWeb/dynamicweb.py:3960
 msgid "Show last modification time"
@@ -1370,6 +1378,14 @@ msgstr "Activer la configuration des pages"
 #: DynamicWeb/dynamicweb.py:4001
 msgid "Whether to enable page configuration"
 msgstr "Activer ou non la configuration des pages"
+
+#: DynamicWeb/dynamicweb.py:4001
+msgid "Default number of entries in the indexes"
+msgstr "Nombre de lignes par défaut dans les index"
+
+#: DynamicWeb/dynamicweb.py:4001
+msgid "The default number of entries shown in one index page"
+msgstr "Nombre par défaut de lignes affichées dans les index"
 
 #: DynamicWeb/dynamicweb.py:4006
 msgid "Trees"

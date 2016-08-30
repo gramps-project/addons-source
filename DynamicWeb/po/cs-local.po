@@ -470,6 +470,10 @@ msgstr "Žena"
 msgid "File ready"
 msgstr "Soubor připraven"
 
+#: DynamicWeb/dynamicweb.py:2447
+msgid "Help"
+msgstr "Nápověda"
+
 #: DynamicWeb/dynamicweb.py:2439
 msgid "Gender"
 msgstr "Pohlaví"
@@ -670,6 +674,10 @@ msgstr "Vztah"
 #: DynamicWeb/dynamicweb.py:2497
 msgid "Restore"
 msgstr "Obnovit"
+
+#: DynamicWeb/dynamicweb.py:2505
+msgid "Restore default settings"
+msgstr "Obnovit výchozí nastavení"
 
 #: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:3920
 msgid "Show last modification time"
