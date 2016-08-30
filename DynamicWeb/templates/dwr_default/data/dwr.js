@@ -6,6 +6,7 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
+(function(window, undefined) {
 "use strict";
 
 
@@ -18,6 +19,7 @@ function _(text)
 	if (__[text]) return(__[text]);
 	return(text);
 }
+window._ = _;
 
 
 //=================================================================
@@ -34,6 +36,15 @@ function R(x, field) {return GetDb("R", x, field)}
 function M(x, field) {return GetDb("M", x, field)}
 function P(x, field) {return GetDb("P", x, field)}
 function N(x, field) {return GetDb("N", x, field)}
+
+DwrClass.prototype.I = I;
+DwrClass.prototype.F = F;
+DwrClass.prototype.S = S;
+DwrClass.prototype.C = C;
+DwrClass.prototype.R = R;
+DwrClass.prototype.M = M;
+DwrClass.prototype.P = P;
+DwrClass.prototype.N = N;
 
 // Exception for abort and wait for script loading
 function WaitScriptLoad() {}
@@ -53,6 +64,7 @@ function GetDb(name, x, field)
 	}
 	return(window[partial][x % SPLIT]);
 }
+DwrClass.prototype.GetDb = GetDb;
 
 function NameSplitScripts(name, field)
 {
@@ -67,6 +79,7 @@ function NameSplitScripts(name, field)
 	}
 	return scripts;
 }
+DwrClass.prototype.NameSplitScripts = NameSplitScripts;
 
 function NameFieldScripts(name, x, fields)
 {
@@ -81,6 +94,7 @@ function NameFieldScripts(name, x, fields)
 	}
 	return scripts;
 }
+DwrClass.prototype.NameFieldScripts = NameFieldScripts;
 
 function PreloadScripts(scripts, rebuildPage)
 {
@@ -99,7 +113,7 @@ function PreloadScripts(scripts, rebuildPage)
 	// Load scripts in the stream of the document (works with both file:// and http:// protocols)
 	for (var j = 0; j < uniques.length; j += 1)
 	{
-		loadjsfile(uniques[j]);
+		Dwr.LoadJsFile(uniques[j]);
 	}
 	// Re-compute the page once the script is downloaded
 	if (rebuildPage)
@@ -108,15 +122,16 @@ function PreloadScripts(scripts, rebuildPage)
 		throw new WaitScriptLoad();
 	}
 }
+DwrClass.prototype.PreloadScripts = PreloadScripts;
 
-function scriptLoaded(file)
+DwrClass.prototype.ScriptLoaded = function(file)
 {
 	console.log("Loaded " + file);
 	nbScriptsToLoad -= 1;
 	if (nbScriptsToLoad == 0 && rebuildPageAfterScriptLoad)
 	{
 		rebuildPageAfterScriptLoad = false;
-		DwrMainRun();
+		MainRun();
 	}
 }
 
@@ -155,30 +170,30 @@ var EVENTS_DEATH = [_('Death'), _('Burial'), _('Cremation'), _('Cause Of Death')
 
 // Type of the page
 var i = 1;
-var PAGE_HOME = i++;
-var PAGE_INDI = i++;
-var PAGE_FAM = i++;
-var PAGE_SOURCE = i++;
-var PAGE_MEDIA = i++;
-var PAGE_PLACE = i++;
-var PAGE_REPO = i++;
-var PAGE_SEARCH = i++;
-var PAGE_CONF = i++;
-var PAGE_SVG_TREE = i++;
-var PAGE_SVG_TREE_FULL = i++;
-var PAGE_SVG_TREE_CONF = i++;
-var PAGE_SVG_TREE_SAVE = i++;
-var PAGE_STATISTICS = i++;
-var PAGE_SURNAMES_INDEX = i++;
-var PAGE_SURNAMES_INDEX2 = i++;
-var PAGE_SURNAME_INDEX = i++;
-var PAGE_PERSONS_INDEX = i++;
-var PAGE_FAMILIES_INDEX = i++;
-var PAGE_SOURCES_INDEX = i++;
-var PAGE_MEDIA_INDEX = i++;
-var PAGE_PLACES_INDEX = i++;
-var PAGE_ADDRESSES_INDEX = i++;
-var PAGE_REPOS_INDEX = i++;
+DwrClass.prototype.PAGE_HOME = i++;
+DwrClass.prototype.PAGE_INDI = i++;
+DwrClass.prototype.PAGE_FAM = i++;
+DwrClass.prototype.PAGE_SOURCE = i++;
+DwrClass.prototype.PAGE_MEDIA = i++;
+DwrClass.prototype.PAGE_PLACE = i++;
+DwrClass.prototype.PAGE_REPO = i++;
+DwrClass.prototype.PAGE_SEARCH = i++;
+DwrClass.prototype.PAGE_CONF = i++;
+DwrClass.prototype.PAGE_SVG_TREE = i++;
+DwrClass.prototype.PAGE_SVG_TREE_FULL = i++;
+DwrClass.prototype.PAGE_SVG_TREE_CONF = i++;
+DwrClass.prototype.PAGE_SVG_TREE_SAVE = i++;
+DwrClass.prototype.PAGE_STATISTICS = i++;
+DwrClass.prototype.PAGE_SURNAMES_INDEX = i++;
+DwrClass.prototype.PAGE_SURNAMES_INDEX2 = i++;
+DwrClass.prototype.PAGE_SURNAME_INDEX = i++;
+DwrClass.prototype.PAGE_PERSONS_INDEX = i++;
+DwrClass.prototype.PAGE_FAMILIES_INDEX = i++;
+DwrClass.prototype.PAGE_SOURCES_INDEX = i++;
+DwrClass.prototype.PAGE_MEDIA_INDEX = i++;
+DwrClass.prototype.PAGE_PLACES_INDEX = i++;
+DwrClass.prototype.PAGE_ADDRESSES_INDEX = i++;
+DwrClass.prototype.PAGE_REPOS_INDEX = i++;
 
 
 //=================================================================
@@ -220,17 +235,17 @@ function hrefFunction(table)
 	// Returns a function that gives the address of URL for a given element of the <table>
 	return function(dx, m_list) {
 		m_list = (typeof(m_list) !== 'undefined') ? m_list : [];
-		if (search.Mdx >= 0 && PageContents == PAGE_MEDIA)
+		if (Dwr.search.Mdx >= 0 && PageContents == Dwr.PAGE_MEDIA)
 		{
-			m_list = search.ImgList;
+			m_list = Dwr.search.ImgList;
 		}
 		var searchStringArgs = {
 			MapExpanded: false,
 			ImgList: m_list
 		};
-		dx = (typeof(dx) !== 'undefined') ? dx : search[SearchStringField[table]];
+		dx = (typeof(dx) !== 'undefined') ? dx : Dwr.search[SearchStringField[table]];
 		searchStringArgs[SearchStringField[table]] = dx;
-		var url = PageFile[table] + '?' + BuildSearchString(searchStringArgs);
+		var url = PageFile[table] + '?' + Dwr.BuildSearchString(searchStringArgs);
 		return(url);
 	}
 }
@@ -255,7 +270,7 @@ function optimizedHrefFunction(table)
 		MapExpanded: false // Reset map
 	};
 	searchStringArgs[SearchStringField[table]] = -1;
-	var url = PageFile[table] + '?' + BuildSearchString(searchStringArgs) + '&' + UrlField[table] + '=';
+	var url = PageFile[table] + '?' + Dwr.BuildSearchString(searchStringArgs) + '&' + UrlField[table] + '=';
 	return function(dx) {
 		return(url + dx);
 	}
@@ -275,6 +290,21 @@ var repoHref = hrefFunction('R');
 var repoRef = refFunction('R');
 var surnameHref = hrefFunction('R');
 var surnameRef = refFunction('R');
+
+DwrClass.prototype.indiHref = indiHref;
+DwrClass.prototype.indiRef = indiRef;
+DwrClass.prototype.famHref = famHref;
+DwrClass.prototype.famRef = famRef;
+DwrClass.prototype.mediaHref = mediaHref;
+DwrClass.prototype.mediaRef = mediaRef;
+DwrClass.prototype.sourceHref = sourceHref;
+DwrClass.prototype.sourceRef = sourceRef;
+DwrClass.prototype.placeHref = placeHref;
+DwrClass.prototype.placeRef = placeRef;
+DwrClass.prototype.repoHref = repoHref;
+DwrClass.prototype.repoRef = repoRef;
+DwrClass.prototype.surnameHref = surnameHref;
+DwrClass.prototype.surnameRef = surnameRef;
 
 var indiHrefOptimized = optimizedHrefFunction('I')
 var famHrefOptimized = optimizedHrefFunction('F');
@@ -297,14 +327,15 @@ function m_list_from_mr(mr_list)
 function searchHref()
 {
 	// Get the search page address
-	return('search.html?' + BuildSearchString());
+	return('search.html?' + Dwr.BuildSearchString());
 }
+DwrClass.prototype.searchHref = searchHref;
 
-function svgHref(idx, expand)
+DwrClass.prototype.svgHref = function(idx, expand)
 {
 	// Get the SVG tree page
-	if (typeof(idx) == 'undefined') idx = search.Idx;
-	if (typeof(expand) == 'undefined') expand = search.SvgExpanded;
+	if (typeof(idx) === 'undefined') idx = Dwr.search.Idx;
+	if (typeof(expand) === 'undefined') expand = Dwr.search.SvgExpanded;
 	var page;
 	if (expand)
 	{
@@ -314,34 +345,34 @@ function svgHref(idx, expand)
 	{
 		page = 'tree_svg.html';
 	}
-	return(page + '?' + BuildSearchString({
+	return(page + '?' + Dwr.BuildSearchString({
 		Idx: idx,
 		SvgExpanded: expand,
 	}));
 }
 
-function svgRef(idx, expand)
+DwrClass.prototype.svgRef = function(idx, expand)
 {
 	// Go to the SVG tree page
-	window.location.href = svgHref(idx, expand);
+	window.location.href = Dwr.svgHref(idx, expand);
 	return(false);
 }
 
-function svgConfRef()
+DwrClass.prototype.svgConfRef = function()
 {
 	// Go to the SVG tree configuration page
-	window.location.href = 'tree_svg_conf.html?' + BuildSearchString();
+	window.location.href = 'tree_svg_conf.html?' + Dwr.BuildSearchString();
 	return(false);
 }
 
-function svgSaveRef()
+DwrClass.prototype.svgSaveRef = function()
 {
 	// Go to the SVG tree save-as page
-	window.location.href = 'tree_svg_save.html?' + BuildSearchString();
+	window.location.href = 'tree_svg_save.html?' + Dwr.BuildSearchString();
 	return(false);
 }
 
-function svgHelpRef()
+DwrClass.prototype.svgHelpRef = function()
 {
 	// Go to the SVG tree help page
 	window.location.href = 'https://gramps-project.org/wiki/index.php?title=DynamicWeb_report#Help';
@@ -360,11 +391,11 @@ var duplicates = [];
 function searchDuplicate(idx)
 {
 	// Recursively search for duplicates in ancestors and descendants of person 'idx'
-	// The search is limited to search.Asc ascending generations and search.Dsc descending generations
+	// The search is limited to Dwr.search.Asc ascending generations and Dwr.search.Dsc descending generations
 
 	duplicates = [];
-	searchDuplicateAsc(idx, search.Asc, []);
-	searchDuplicateDsc(idx, search.Dsc, []);
+	searchDuplicateAsc(idx, Dwr.search.Asc, []);
+	searchDuplicateDsc(idx, Dwr.search.Dsc, []);
 }
 
 
@@ -421,6 +452,7 @@ function isDuplicate(idx)
 {
 	return($.inArray(idx, duplicates) >= 0);
 }
+DwrClass.prototype.isDuplicate = isDuplicate;
 
 
 //=================================================================
@@ -434,7 +466,7 @@ function indiLinked(idx, citations)
 	var txt = I(idx, 'name') + ' (' + I(idx, 'birth_year') + '-' + I(idx, 'death_year') + ')';
 	txt += gidBadge(I(idx, 'gid'));
 	if (citations) txt += citaLinks(I(idx, 'cita'));
-	if (idx != search.Idx || PageContents != PAGE_INDI)
+	if (idx != Dwr.search.Idx || PageContents != Dwr.PAGE_INDI)
 		txt = '<a href="' + indiHref(idx) + '">' + txt + '</a>';
 	return(txt);
 }
@@ -442,7 +474,7 @@ function indiLinked(idx, citations)
 function gidBadge(gid)
 {
 	var txt = '';
-	if (!search.HideGid) txt = ' <span class="dwr-gid badge">' + gid + '</span>';
+	if (!Dwr.search.HideGid) txt = ' <span class="dwr-gid badge">' + gid + '</span>';
 	return(txt);
 }
 
@@ -490,7 +522,7 @@ function famLinked(fdx, citations)
 	var txt =F(fdx, 'name');
 	txt += gidBadge(F(fdx, 'gid'));
 	if (citations) txt += citaLinks(F(fdx, 'cita'));
-	if (INC_FAMILIES && (fdx != search.Fdx || PageContents != PAGE_FAM))
+	if (INC_FAMILIES && (fdx != Dwr.search.Fdx || PageContents != Dwr.PAGE_FAM))
 		txt = '<a href="' + famHref(fdx) + '">' + txt + '</a>';
 	return(txt);
 }
@@ -823,7 +855,7 @@ function citationBullet(x2)
 function sourName(sdx)
 {
 	var title = '';
-	if (search.SourceAuthorInTitle && S(sdx, 'author') != '') title = S(sdx, 'author');
+	if (Dwr.search.SourceAuthorInTitle && S(sdx, 'author') != '') title = S(sdx, 'author');
 	if (S(sdx, 'title') != '')
 	{
 		if (title != '') title += ': ';
@@ -856,13 +888,13 @@ var PP_EVENT = 3;
 
 function placeLink(pdx, idx, fdx, event)
 {
-	if (typeof(idx) == 'undefined') idx = -1;
-	if (typeof(fdx) == 'undefined') fdx = -1;
-	if (typeof(event) == 'undefined') event = null;
+	if (typeof(idx) === 'undefined') idx = -1;
+	if (typeof(fdx) === 'undefined') fdx = -1;
+	if (typeof(event) === 'undefined') event = null;
 	if (pdx == -1) return('');
 	pagePlaces.push({pdx: pdx, idx: idx, fdx: fdx, event: event});
 	if (!INC_PLACES) return(P(pdx, 'name'));
-	if (PageContents == PAGE_PLACE && pdx == search.Pdx) return(P(pdx, 'name'));
+	if (PageContents == Dwr.PAGE_PLACE && pdx == Dwr.search.Pdx) return(P(pdx, 'name'));
 	return('<a href="' + placeHref(pdx) + '">' + P(pdx, 'name') + '</a>');
 }
 
@@ -870,7 +902,7 @@ function placeLink(pdx, idx, fdx, event)
 function repoLink(rdx)
 {
 	if (rdx == -1) return('');
-	if (PageContents == PAGE_REPO && rdx == search.Rdx) return(R(rdx, 'name'));
+	if (PageContents == Dwr.PAGE_REPO && rdx == Dwr.search.Rdx) return(R(rdx, 'name'));
 	return('<a href="' + repoHref(rdx) + '">' + R(rdx, 'name') + '</a>');
 }
 
@@ -897,9 +929,9 @@ var titlesNumber = 0;
 function printTitle(level, contents, collapsible, is_tabbeb)
 {
 	if (contents.length == 0) return('');
-	if (typeof(is_tabbeb) == 'undefined') is_tabbeb = false;
-	if (typeof(collapsible) == 'undefined') collapsible = (level >= 1);
-	is_tabbeb = is_tabbeb && collapsible && search.TabbedPanels;
+	if (typeof(is_tabbeb) === 'undefined') is_tabbeb = false;
+	if (typeof(collapsible) === 'undefined') collapsible = (level >= 1);
+	is_tabbeb = is_tabbeb && collapsible && Dwr.search.TabbedPanels;
 	var html = '';
 	if (is_tabbeb)
 	{
@@ -907,7 +939,7 @@ function printTitle(level, contents, collapsible, is_tabbeb)
 		html += '<ul class="nav nav-tabs" role="tablist">';
 		for (var i = 0; i < contents.length; i += 1)
 		{
-			if (typeof(contents[i].panelclass) == 'undefined') contents[i].panelclass = '';
+			if (typeof(contents[i].panelclass) === 'undefined') contents[i].panelclass = '';
 			html += '<li role="presentation"' + ((i == 0) ? ' class="active"' : '') +
 				'><a href="#section_' + (titlesNumber + i) + '" role="tab" data-toggle="tab" class="' + contents[i].panelclass + '">' +
 				'<h' + level + ' class="panel-title">' +
@@ -1027,7 +1059,7 @@ function printIndi(idx)
 			title: _('Descendants'),
 			text: printIndiDescendants(idx)
 		}],
-		printMap(search.MapFamily),
+		printMap(Dwr.search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 	html += printChangeTime(I(idx, 'change_time'));
@@ -1215,7 +1247,7 @@ function printFam(fdx)
 			title: _('Children'),
 			text: printFamChildren(fdx)
 		}],
-		printMap(search.MapFamily),
+		printMap(Dwr.search.MapFamily),
 		sourceSection()),
 		true /*collapsible*/, true /*is_tabbeb*/);
 	html += printChangeTime(F(fdx, 'change_time'));
@@ -1330,18 +1362,18 @@ function printMedia(mdx)
 	html += '<h2 class="page-header">' + title + gidBadge(M(mdx, 'gid')) + citaLinks(M(mdx, 'cita')) + '</h2>';
 
 	// Pagination buttons
-	if (search.ImgList.length > 1)
+	if (Dwr.search.ImgList.length > 1)
 	{
-		var imgI = search.ImgList.indexOf(mdx);
+		var imgI = Dwr.search.ImgList.indexOf(mdx);
 		html += '<ul id="dwr-img-btns" class="pagination">';
 		// 'Previous' button
 		html += mediaPaginationButtonHtml('media_button_prev', (imgI == 0) ? 'disabled' : '',
 			'<span class="glyphicon glyphicon-chevron-left"></span>');
 		// First item button
 		html += mediaPaginationButtonHtml('media_button_0', (imgI == 0) ? 'active' : '', '1');
-		var first_but = Math.min(imgI - 1, search.ImgList.length - 4);
+		var first_but = Math.min(imgI - 1, Dwr.search.ImgList.length - 4);
 		first_but = Math.max(1, first_but);
-		var last_but = Math.min(first_but + 2, search.ImgList.length - 2);
+		var last_but = Math.min(first_but + 2, Dwr.search.ImgList.length - 2);
 		if (first_but > 1)
 		{
 			// Separator between first item and current item buttons
@@ -1352,19 +1384,19 @@ function printMedia(mdx)
 		{
 			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
-		if (last_but < search.ImgList.length - 2)
+		if (last_but < Dwr.search.ImgList.length - 2)
 		{
 			// Separator between current item buttons and last item
 			html += mediaPaginationButtonHtml('media_button_hellip', 'disabled', '&hellip;');
 		}
-		if (search.ImgList.length > 1)
+		if (Dwr.search.ImgList.length > 1)
 		{
 			// Last item button
-			var i = search.ImgList.length - 1;
+			var i = Dwr.search.ImgList.length - 1;
 			html += mediaPaginationButtonHtml('media_button_' + i, (imgI == i) ? 'active' : '', i + 1);
 		}
 		// 'Next' button
-		html += mediaPaginationButtonHtml('media_button_next', (imgI == search.ImgList.length - 1) ? 'disabled' : '',
+		html += mediaPaginationButtonHtml('media_button_next', (imgI == Dwr.search.ImgList.length - 1) ? 'disabled' : '',
 			'<span class="glyphicon glyphicon-chevron-right"></span>');
 		html += '</ul>';
 		// Pagination events
@@ -1376,7 +1408,7 @@ function printMedia(mdx)
 			$('#media_button_prev:not(.disabled)').click(function() {return mediaButtonPageClick(-1);});
 			$('#media_button_next:not(.disabled)').click(function() {return mediaButtonPageClick(1);});
 			$('#media_button_0:not(.active)').click(function() {return mediaButtonPageClick(0, 0);});
-			$('#media_button_' + (search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, search.ImgList.length - 1);});
+			$('#media_button_' + (Dwr.search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, Dwr.search.ImgList.length - 1);});
 			for (var i = first_but; i <= last_but; i++)
 			{
 				(function(){ // This is used to create instances of local variables
@@ -1435,17 +1467,17 @@ function printMedia(mdx)
 
 function mediaButtonPageClick(page_delta, page)
 {
-	var imgI = search.ImgList.indexOf(search.Mdx);
-	if (typeof(page) == 'undefined') page = imgI;
+	var imgI = Dwr.search.ImgList.indexOf(Dwr.search.Mdx);
+	if (typeof(page) === 'undefined') page = imgI;
 	var i = page + page_delta;
-	i = (i + search.ImgList.length) % search.ImgList.length;
-	window.location.href = mediaHref(search.ImgList[i]);
+	i = (i + Dwr.search.ImgList.length) % Dwr.search.ImgList.length;
+	window.location.href = mediaHref(Dwr.search.ImgList[i]);
 	return(false);
 }
 
 function mediaButtonMaxClick()
 {
-	window.location.href = M(search.Mdx).path;
+	window.location.href = M(Dwr.search.Mdx).path;
 	return(false);
 }
 
@@ -1633,7 +1665,7 @@ function printPlace(pdx)
 		urlsTable(P(pdx, 'urls')),
 		mediaSection(P(pdx, 'media')),
 		noteSection(P(pdx, 'note')),
-		printMap(search.MapPlace),
+		printMap(Dwr.search.MapPlace),
 		sourceSection(),
 		strToContents(_('References'), bk_txt)),
 		true /*collapsible*/, true /*is_tabbeb*/);
@@ -1711,7 +1743,7 @@ function printIndex(id, data, defaultsort, columns)
 		for (k = 0; k < nb_cols; k++)
 		{
 			var text = columns[k].ftext(j, k);
-			if (typeof(text) == 'undefined') text = '';
+			if (typeof(text) === 'undefined') text = '';
 			text = text.toString();
 			var text_sort = text.replace(/<[^>]*>/g, '');
 			// var text_filt = text_sort + " " + unorm.nfkc(text_sort);  // nfkc removed for optimization (too much time-consuming)
@@ -1728,7 +1760,7 @@ function printIndex(id, data, defaultsort, columns)
 			if (columns[k].fsort)
 			{
 				text_sort = columns[k].fsort(j, k);
-				if (typeof(text_sort) == 'undefined') text_sort = '';
+				if (typeof(text_sort) === 'undefined') text_sort = '';
 				if (typeof(text_sort) == 'number')
 				{
 					text_sort = '000000' + text_sort;
@@ -1873,12 +1905,12 @@ function htmlPersonsIndex(data)
 		PreloadScripts([].concat.apply([], [
 			NameSplitScripts('I', 'name'),
 			NameSplitScripts('I', 'gender'),
-			(search.IndexShowBirth ? NameSplitScripts('I', 'birth_year') : []),
-			(search.IndexShowDeath ? NameSplitScripts('I', 'death_year') : []),
-			(search.IndexShowPartner ? ([].concat.apply([], [
+			(Dwr.search.IndexShowBirth ? NameSplitScripts('I', 'birth_year') : []),
+			(Dwr.search.IndexShowDeath ? NameSplitScripts('I', 'death_year') : []),
+			(Dwr.search.IndexShowPartner ? ([].concat.apply([], [
 				NameSplitScripts('I', 'fams'),
 				NameSplitScripts('F', 'spou')])) : []),
-			(search.IndexShowParents ? ([].concat.apply([], [
+			(Dwr.search.IndexShowParents ? ([].concat.apply([], [
 				NameSplitScripts('I', 'famc'),
 				NameSplitScripts('F', 'spou')])) : [])]),
 			false);
@@ -1888,14 +1920,14 @@ function htmlPersonsIndex(data)
 	// Merge preloaded data into optimized arrays
 	buildDataArray('I', 'name');
 	buildDataArray('I', 'gender');
-	if (search.IndexShowBirth) buildDataArray('I', 'birth_year');
-	if (search.IndexShowDeath) buildDataArray('I', 'death_year');
-	if (search.IndexShowPartner)
+	if (Dwr.search.IndexShowBirth) buildDataArray('I', 'birth_year');
+	if (Dwr.search.IndexShowDeath) buildDataArray('I', 'death_year');
+	if (Dwr.search.IndexShowPartner)
 	{
 		buildDataArray('I', 'fams');
 		buildDataArray('F', 'spou');
 	}
-	if (search.IndexShowParents)
+	if (Dwr.search.IndexShowParents)
 	{
 		buildDataArray('I', 'famc');
 		buildDataArray('F', 'spou');
@@ -1903,7 +1935,7 @@ function htmlPersonsIndex(data)
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Persons Index') + '</h2>';
 		data = new Array(DB_SIZES['I']);
@@ -1918,15 +1950,15 @@ function htmlPersonsIndex(data)
 		title: _('Gender'),
 		ftext: function(x, col) {return _(I_gender[data[x]])}
 	}];
-	if (search.IndexShowBirth) columns.push({
+	if (Dwr.search.IndexShowBirth) columns.push({
 		title: _('Birth'),
 		ftext: function(x, col) {return I_birth_year[data[x]];}
 	});
-	if (search.IndexShowDeath) columns.push({
+	if (Dwr.search.IndexShowDeath) columns.push({
 		title: _('Death'),
 		ftext: function(x, col) {return I_death_year[data[x]];}
 	});
-	if (search.IndexShowPartner) columns.push({
+	if (Dwr.search.IndexShowPartner) columns.push({
 		title: _('Spouses'),
 		ftext: function(x, col) {
 			var txt = '';
@@ -1948,7 +1980,7 @@ function htmlPersonsIndex(data)
 		},
 		fsort: false
 	});
-	if (search.IndexShowParents) columns.push({
+	if (Dwr.search.IndexShowParents) columns.push({
 		title: _('Parents'),
 		ftext: function(x, col) {
 			var txt = '';
@@ -2000,7 +2032,7 @@ function htmlFamiliesIndex(data)
 			NameSplitScripts('I', 'name'),
 			NameSplitScripts('I', 'gender'),
 			NameSplitScripts('F', 'spou'),
-			(search.IndexShowMarriage ? NameSplitScripts('F', 'marr_year') : [])]),
+			(Dwr.search.IndexShowMarriage ? NameSplitScripts('F', 'marr_year') : [])]),
 			false);
 		return;
 	}
@@ -2009,11 +2041,11 @@ function htmlFamiliesIndex(data)
 	buildDataArray('I', 'name');
 	buildDataArray('I', 'gender');
 	buildDataArray('F', 'spou');
-	if (search.IndexShowMarriage) buildDataArray('F', 'marr_year');
+	if (Dwr.search.IndexShowMarriage) buildDataArray('F', 'marr_year');
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
 		data = new Array(DB_SIZES['F']);
@@ -2030,7 +2062,7 @@ function htmlFamiliesIndex(data)
 		fhref: function(x) {return(famHrefOptimized(data[x]))},
 		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col))}
 	}];
-	if (search.IndexShowMarriage) columns.push({
+	if (Dwr.search.IndexShowMarriage) columns.push({
 		title: _('Marriage'),
 		ftext: function(x, col) {return(F_marr_year[data[x]])}
 	});
@@ -2096,7 +2128,7 @@ function htmlMediaIndex(data)
 			NameSplitScripts('M', 'gramps_path'),
 			NameSplitScripts('M', 'date'),
 			NameSplitScripts('M', 'date_sdn'),
-			(search.IndexShowBkrefType ? ([].concat.apply([], [
+			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
 				NameSplitScripts('M', 'bki'),
 				NameSplitScripts('M', 'bkf'),
 				NameSplitScripts('M', 'bks'),
@@ -2115,7 +2147,7 @@ function htmlMediaIndex(data)
 	buildDataArray('M', 'gramps_path');
 	buildDataArray('M', 'date');
 	buildDataArray('M', 'date_sdn');
-	if (search.IndexShowBkrefType)
+	if (Dwr.search.IndexShowBkrefType)
 	{
 		buildDataArray('M', 'bki');
 		buildDataArray('M', 'bkf');
@@ -2129,7 +2161,7 @@ function htmlMediaIndex(data)
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Media Index') + '</h2>';
 		data = new Array(DB_SIZES['M']);
@@ -2156,22 +2188,22 @@ function htmlMediaIndex(data)
 		ftext: function(x, col) {return(M_date[data[x]]);},
 		fsort: function(x, col) {return(M_date_sdn[data[x]]);}
 	}];
-	if (search.IndexShowBkrefType) columns.push({
+	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_SOURCES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bks', 'S', 'title', sourceHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_PLACES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
 		fsort: false
@@ -2190,7 +2222,7 @@ function htmlSourcesIndex(data)
 			NameSplitScripts('S', 'author'),
 			NameSplitScripts('S', 'abbrev'),
 			NameSplitScripts('S', 'publ'),
-			(search.IndexShowBkrefType ? ([].concat.apply([], [
+			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
 				NameSplitScripts('S', 'bkc'),
 				NameSplitScripts('C', 'bki'),
 				NameSplitScripts('C', 'bkf'),
@@ -2209,7 +2241,7 @@ function htmlSourcesIndex(data)
 	buildDataArray('S', 'author');
 	buildDataArray('S', 'abbrev');
 	buildDataArray('S', 'publ');
-	if (search.IndexShowBkrefType)
+	if (Dwr.search.IndexShowBkrefType)
 	{
 		buildDataArray('S', 'bkc');
 		buildDataArray('C', 'bki');
@@ -2224,7 +2256,7 @@ function htmlSourcesIndex(data)
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Sources Index') + '</h2>';
 		data = new Array(DB_SIZES['S']);
@@ -2251,22 +2283,22 @@ function htmlSourcesIndex(data)
 		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}];
-	if (search.IndexShowBkrefType) columns.push({
+	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_MEDIA) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_MEDIA) columns.push({
 		title: _('Used for media'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkm', 'M', 'title', mediaHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_PLACES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
 		fsort: false
@@ -2281,7 +2313,7 @@ function printPlacesIndexColText(data, x, field)
 	var pdx = data[x];
 	if (P(pdx, 'locations').length == 0) return('');
 	P(pdx, 'locations')[0]
-	if (typeof(P(pdx, 'locations')[0][field]) == 'undefined') return('');
+	if (typeof(P(pdx, 'locations')[0][field]) === 'undefined') return('');
 	return(P(pdx, 'locations')[0][field]);
 }
 
@@ -2307,7 +2339,7 @@ function htmlPlacesIndex(data)
 			NameSplitScripts('P', 'type'),
 			NameSplitScripts('P', 'code'),
 			NameSplitScripts('P', 'locations'),
-			(search.IndexShowBkrefType ? ([].concat.apply([], [
+			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
 				NameSplitScripts('P', 'enclosed_by'),
 				NameSplitScripts('P', 'bki'),
 				NameSplitScripts('P', 'bkf'),
@@ -2323,7 +2355,7 @@ function htmlPlacesIndex(data)
 	buildDataArray('P', 'type');
 	buildDataArray('P', 'code');
 	buildDataArray('P', 'locations');
-	if (search.IndexShowBkrefType)
+	if (Dwr.search.IndexShowBkrefType)
 	{
 		buildDataArray('P', 'enclosed_by');
 		buildDataArray('P', 'bki');
@@ -2334,7 +2366,7 @@ function htmlPlacesIndex(data)
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Places Index') + '</h2>';
 		data = new Array(DB_SIZES['P']);
@@ -2373,18 +2405,18 @@ function htmlPlacesIndex(data)
 		title: POSTAL,
 		ftext: function(x, col) {return(printPlacesIndexColText(data, x, POSTAL));}
 	}];
-	if (search.IndexShowBkrefType) columns.push({
+	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Enclosed By'),
 		ftext: function(x, col) {
 			return(($.map(P_enclosed_by[data[x]], function(enc) {return(P_name[enc.pdx]);})).join('<br>'));
 			}
 	});
-	if (search.IndexShowBkrefType) columns.push({
+	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
 		fsort: false
 	});
-	if (search.IndexShowBkrefType && INC_FAMILIES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
 		fsort: false
@@ -2412,7 +2444,7 @@ function htmlAddressesIndex()
 	buildDataArray('I', 'urls');
 
 	// Optimize indiHref calls
-	var searchString = BuildSearchString({
+	var searchString = Dwr.BuildSearchString({
 		Idx: -1,
 		MapExpanded: false
 	});
@@ -2461,7 +2493,7 @@ function htmlReposIndex(data)
 			NameSplitScripts('R', 'type'),
 			NameSplitScripts('R', 'addrs'),
 			NameSplitScripts('R', 'urls'),
-			(search.IndexShowBkrefType ? ([].concat.apply([], [
+			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
 				NameSplitScripts('R', 'bks'),
 				NameSplitScripts('S', 'title')])) : [])]),
 			false);
@@ -2473,7 +2505,7 @@ function htmlReposIndex(data)
 	buildDataArray('R', 'type');
 	buildDataArray('R', 'addrs');
 	buildDataArray('R', 'urls');
-	if (search.IndexShowBkrefType)
+	if (Dwr.search.IndexShowBkrefType)
 	{
 		buildDataArray('R', 'bks');
 		buildDataArray('S', 'title');
@@ -2481,7 +2513,7 @@ function htmlReposIndex(data)
 
 	// Build index
 	var html = '';
-	if (typeof(data) == 'undefined')
+	if (typeof(data) === 'undefined')
 	{
 		html += '<h2 class="page-header">' + _('Repositories') + '</h2>';
 		data = new Array(DB_SIZES['R']);
@@ -2508,7 +2540,7 @@ function htmlReposIndex(data)
 			})).join('<br>'));
 		},
 	}];
-	if (search.IndexShowBkrefType && INC_SOURCES) columns.push({
+	if (Dwr.search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_REPO, 'R', data[x], 'bks', 'S', 'title', sourceHrefOptimized));},
 		fsort: false
@@ -2524,24 +2556,24 @@ function htmlReposIndex(data)
 
 function printSurnameIndex()
 {
-	if (search.Ndx >= 0)
+	if (Dwr.search.Ndx >= 0)
 	{
 		var html = '';
-		if (N(search.Ndx, 'persons').length == 0)
+		if (N(Dwr.search.Ndx, 'persons').length == 0)
 		{
 			html += '<p>' + _('No matching surname.') + '</p>';
 		}
-		else if (N(search.Ndx, 'persons').length == 1)
+		else if (N(Dwr.search.Ndx, 'persons').length == 1)
 		{
-			window.location.replace(indiHref(N(search.Ndx, 'persons')[0]));
+			window.location.replace(indiHref(N(Dwr.search.Ndx, 'persons')[0]));
 		}
 		else
 		{
-			var txt = htmlPersonsIndex(N(search.Ndx, 'persons'));
+			var txt = htmlPersonsIndex(N(Dwr.search.Ndx, 'persons'));
 			html +=
 				'<h2 class="page-header">' +
-				((N(search.Ndx, 'surname').length > 0) ?
-					N(search.Ndx, 'surname') :
+				((N(Dwr.search.Ndx, 'surname').length > 0) ?
+					N(Dwr.search.Ndx, 'surname') :
 					'<i>' + _('Without surname') + '</i>') +
 				'</h2>' +
 				txt;
@@ -2559,11 +2591,11 @@ function surnameString(ndx, surname, number, optimize)
 	if (surname == '') surname = _('Without surname');
 	if (optimize)
 		return(
-			' &nbsp;<a href="surname.html?' + BuildSearchString({Ndx: ndx}) + '">' +
+			' &nbsp;<a href="surname.html?' + Dwr.BuildSearchString({Ndx: ndx}) + '">' +
 			surname + '</a>&nbsp;<b>(' + number + ')</b>&nbsp; ');
 	else
 		return(
-			'<span class="dwr-nowrap"><a href="surname.html?' + BuildSearchString({Ndx: ndx}) + '">' +
+			'<span class="dwr-nowrap"><a href="surname.html?' + Dwr.BuildSearchString({Ndx: ndx}) + '">' +
 			surname + '</a> <span class="badge">' + number + '</span></span> ');
 }
 
@@ -2642,7 +2674,7 @@ function printSurnamesIndex()
 	return(
 		'<h2 class="page-header">' +
 		_('Surnames Index') +
-		' <small><a href="surnames2.html?' + BuildSearchString() + '">' +
+		' <small><a href="surnames2.html?' + Dwr.BuildSearchString() + '">' +
 		_('(sort by quantity)') +
 		'</a></small>' +
 		'</h2>' +
@@ -2670,7 +2702,7 @@ function printSurnamesIndex2()
 	var html =
 		'<h2 class="page-header">' +
 		_('Surnames Index') +
-		' <small><a href="surnames.html?' + BuildSearchString() + '">' +
+		' <small><a href="surnames.html?' + Dwr.BuildSearchString() + '">' +
 		_('(sort by name)') +
 		'</a></small>' +
 		'</h2>';
@@ -2797,7 +2829,7 @@ function printMap(enabled)
 	}
 	if (!found) return([]);
 	// Schedule the differed update of the map
-	if (search.TabbedPanels && !search.MapExpanded)
+	if (Dwr.search.TabbedPanels && !Dwr.search.MapExpanded)
 		$(window).load(function () {
 			if ($(".tab-pane.active.dwr-panel-map").length > 0)
 			{
@@ -2820,7 +2852,7 @@ function printMap(enabled)
 		text:'<div id="gmap_canvas"></div>',
 		panelclass: 'dwr-panel-map'
 	};
-	if (search.MapExpanded)
+	if (Dwr.search.MapExpanded)
 	{
 		$('body').toggleClass('dwr-fullscreen');
 		$('body').children().css('display', 'none');
@@ -2836,10 +2868,10 @@ function mapUpdate()
 	if (mapUpdated) return;
 	mapUpdated = true;
 	// Check if online
-	if (MAP_SERVICE == 'Google' && typeof(google) == 'undefined') return;
-	if (MAP_SERVICE == 'OpenStreetMap' && typeof(ol) == 'undefined') return;
+	if (MAP_SERVICE == 'Google' && typeof(google) === 'undefined') return;
+	if (MAP_SERVICE == 'OpenStreetMap' && typeof(ol) === 'undefined') return;
 	// Expand map if required
-	if (search.MapExpanded)
+	if (Dwr.search.MapExpanded)
 	{
 		$('body').prepend($('#gmap_canvas'));
 		$('#gmap_canvas').addClass('dwr-expanded');
@@ -3131,7 +3163,7 @@ var inhibitMapExpand = false;
 function mapExpand()
 {
 	if (inhibitMapExpand) return(false);
-	search.MapExpanded = !($('body').hasClass('dwr-fullscreen'));
+	Dwr.search.MapExpanded = !($('body').hasClass('dwr-fullscreen'));
 	Redirect();
 	return(false);
 }
@@ -3317,7 +3349,7 @@ function SearchObjects()
 	{
 		var results;
 		var type = types[x];
-		results = SearchFromString(search.Txt, type.data, type.fextract);
+		results = SearchFromString(Dwr.search.Txt, type.data, type.fextract);
 		nb_found += results.length;
 		if (results.length == 1 && x == 0)
 		{
@@ -3345,7 +3377,7 @@ function SearchObjects()
 	else if (nb_found == 0)
 	{
 		html = '';
-		if (search.Txt != '')
+		if (Dwr.search.Txt != '')
 		{
 			html += '<p>' + _('No matches found') + '</p>';
 			$('#dwr-search-txt').focus();
@@ -3381,7 +3413,7 @@ function ManageSearchStringGids()
 		var gid = gidTable[i][0];
 		var dx = gidTable[i][1];
 		var table = gidTable[i][2];
-		if (search[gid] != '' && search[dx] < 0)
+		if (Dwr.search[gid] != '' && Dwr.search[dx] < 0)
 		{
 			var xgid = window[table + '_xgid'];
 			if (typeof(xgid) === 'undefined')
@@ -3389,12 +3421,12 @@ function ManageSearchStringGids()
 				PreloadScripts(['dwr_db_' + table + '_xgid.js'], true);
 				return;
 			}
-			if (xgid[search[gid]])
+			if (xgid[Dwr.search[gid]])
 			{
-				search[dx] = xgid[search[gid]];
+				Dwr.search[dx] = xgid[Dwr.search[gid]];
 			}
 		}
-		search[gid] = '';
+		Dwr.search[gid] = '';
 	}
 }
 
@@ -3436,12 +3468,12 @@ function HomePage()
 		var j = $.inArray(tables[i][1], PAGES_FILE_INDEX);
 		if (j == -1) continue;
 		html += sep
-		html +=	'<a href="' + tables[i][1] + '?' + BuildSearchString() + '">';
+		html +=	'<a href="' + tables[i][1] + '?' + Dwr.BuildSearchString() + '">';
 		html +=	PAGES_TITLE_INDEX[j] + ': ' + DB_SIZES[tables[i][0]];
 		html +=	'</a>';
 		sep = '<br>';
 	}
-	html += '<br> <p>' + embedSearchText() + '<p>';
+	html += '<br> <p>' + Dwr.embedSearchText() + '<p>';
 	return html;
 }
 
@@ -3486,7 +3518,7 @@ function ConfigPage()
 	{
 		var opt = configsCheck[i][0];
 		html += '<div class="checkbox col-xs-12 col-md-6"><label>';
-		html += '<input type="checkbox" id="dwr-cfg-' + opt + '"' + (search[opt] ? ' checked' : '') + '>';
+		html += '<input type="checkbox" id="dwr-cfg-' + opt + '"' + (Dwr.search[opt] ? ' checked' : '') + '>';
 		html += configsCheck[i][1] + '</label></div>';
 		html += configsCheck[i][2];
 	}
@@ -3507,16 +3539,16 @@ function ConfigPage()
 			for (var i = 0; i < configsCheck.length; i++)
 			{
 				var opt = configsCheck[i][0];
-				search[opt] = $('#dwr-cfg-' + opt)[0].checked ? true : false;
+				Dwr.search[opt] = $('#dwr-cfg-' + opt)[0].checked ? true : false;
 			}
-			window.location.href = search.P + '?' + BuildSearchString();
+			window.location.href = Dwr.search.P + '?' + Dwr.BuildSearchString();
 			return(false);
 		});
 		$('#dwr-config-restore').click(function() {
 			for (var i = 0; i < configsCheck.length; i++)
 			{
 				var opt = configsCheck[i][0];
-				$('#dwr-cfg-' + opt)[0].checked = defaultSearchString[opt];
+				$('#dwr-cfg-' + opt)[0].checked = Dwr.defaultSearchString[opt];
 			}
 			// Clear local storage where Datatables stores the user preferences
 			$.each(localStorage, function(key, val) {
@@ -3538,19 +3570,19 @@ function ConfigPage()
 var PageContents;
 var preloadMode;
 
-function DwrMain(page)
+DwrClass.prototype.Main = function(page)
 {
 	PageContents = page;
-	ParseSearchString();
+	Dwr.ParseSearchString();
 	preloadMode = true;
-	DwrMainRun();
+	MainRun();
 	$(document).ready(function(){
 		preloadMode = false;
-		DwrMainRun();
+		MainRun();
 	});
 }
 
-function DwrMainRun()
+function MainRun()
 {
 	//This function is executed in 2 phases: preload and normal
 	// When preload is true:
@@ -3561,7 +3593,7 @@ function DwrMainRun()
 	//   The document is printed
 	//
 	// During the preload phase, PreloadScripts raises exception after every script loading
-	// So, during preload phase, DwrMainRun is executed again and again until no more script needs to be loaded.
+	// So, during preload phase, MainRun is executed again and again until no more script needs to be loaded.
 
 	if (ScriptIsLoading())
 	{
@@ -3573,98 +3605,98 @@ function DwrMainRun()
 	{
 		if (preloadMode) ManageSearchStringGids();
 
-		if ($.inArray(PageContents, [PAGE_SVG_TREE_FULL, PAGE_SVG_TREE_SAVE, PAGE_SVG_TREE_CONF]) < 0) search.SvgExpanded = false;
-		if (PageContents == PAGE_HOME)
+		if ($.inArray(PageContents, [Dwr.PAGE_SVG_TREE_FULL, Dwr.PAGE_SVG_TREE_SAVE, Dwr.PAGE_SVG_TREE_CONF]) < 0) Dwr.search.SvgExpanded = false;
+		if (PageContents == Dwr.PAGE_HOME)
 		{
 			html = HomePage();
 		}
-		else if (search.Idx >= 0 && ($.inArray(PageContents, [PAGE_SVG_TREE, PAGE_SVG_TREE_FULL, PAGE_SVG_TREE_SAVE]) >= 0))
+		else if (Dwr.search.Idx >= 0 && ($.inArray(PageContents, [Dwr.PAGE_SVG_TREE, Dwr.PAGE_SVG_TREE_FULL, Dwr.PAGE_SVG_TREE_SAVE]) >= 0))
 		{
-			if (PageContents == PAGE_SVG_TREE_FULL) search.SvgExpanded = true;
+			if (PageContents == Dwr.PAGE_SVG_TREE_FULL) Dwr.search.SvgExpanded = true;
 			if (preloadMode)
 			{
-				searchDuplicate(search.Idx);
-				SvgPreload();
+				searchDuplicate(Dwr.search.Idx);
+				DwrSvg.Preload();
 			}
 			else
 			{
-				if (PageContents == PAGE_SVG_TREE_SAVE) html = SvgSavePage();
-				else html = SvgCreate();
+				if (PageContents == Dwr.PAGE_SVG_TREE_SAVE) html = DwrSvg.SavePage();
+				else html = DwrSvg.Create();
 			}
 		}
-		else if (PageContents == PAGE_SVG_TREE_CONF)
+		else if (PageContents == Dwr.PAGE_SVG_TREE_CONF)
 		{
-			html = SvgConfPage();
+			html = DwrSvg.ConfPage();
 		}
-		else if (search.Sdx >= 0 && PageContents == PAGE_SOURCE)
+		else if (Dwr.search.Sdx >= 0 && PageContents == Dwr.PAGE_SOURCE)
 		{
-			html = printSource(search.Sdx);
+			html = printSource(Dwr.search.Sdx);
 		}
-		else if (search.Mdx >= 0 && PageContents == PAGE_MEDIA)
+		else if (Dwr.search.Mdx >= 0 && PageContents == Dwr.PAGE_MEDIA)
 		{
-			html = printMedia(search.Mdx);
+			html = printMedia(Dwr.search.Mdx);
 		}
-		else if (search.Idx >= 0 && PageContents == PAGE_INDI)
+		else if (Dwr.search.Idx >= 0 && PageContents == Dwr.PAGE_INDI)
 		{
-			html = printIndi(search.Idx);
+			html = printIndi(Dwr.search.Idx);
 		}
-		else if (search.Fdx >= 0 && PageContents == PAGE_FAM)
+		else if (Dwr.search.Fdx >= 0 && PageContents == Dwr.PAGE_FAM)
 		{
-			html = printFam(search.Fdx);
+			html = printFam(Dwr.search.Fdx);
 		}
-		else if (search.Pdx >= 0 && PageContents == PAGE_PLACE && INC_PLACES)
+		else if (Dwr.search.Pdx >= 0 && PageContents == Dwr.PAGE_PLACE && INC_PLACES)
 		{
-			html = printPlace(search.Pdx);
+			html = printPlace(Dwr.search.Pdx);
 		}
-		else if (search.Rdx >= 0 && PageContents == PAGE_REPO)
+		else if (Dwr.search.Rdx >= 0 && PageContents == Dwr.PAGE_REPO)
 		{
-			html = printRepo(search.Rdx);
+			html = printRepo(Dwr.search.Rdx);
 		}
-		else if (PageContents == PAGE_SEARCH)
+		else if (PageContents == Dwr.PAGE_SEARCH)
 		{
 			html = SearchObjects();
 		}
-		else if (PageContents == PAGE_CONF)
+		else if (PageContents == Dwr.PAGE_CONF)
 		{
 			html = ConfigPage();
 		}
-		else if (PageContents == PAGE_SURNAMES_INDEX)
+		else if (PageContents == Dwr.PAGE_SURNAMES_INDEX)
 		{
 			html = printSurnamesIndex();
 		}
-		else if (PageContents == PAGE_SURNAMES_INDEX2)
+		else if (PageContents == Dwr.PAGE_SURNAMES_INDEX2)
 		{
 			html = printSurnamesIndex2();
 		}
-		else if (PageContents == PAGE_SURNAME_INDEX)
+		else if (PageContents == Dwr.PAGE_SURNAME_INDEX)
 		{
 			html = printSurnameIndex();
 		}
-		else if (PageContents == PAGE_PERSONS_INDEX)
+		else if (PageContents == Dwr.PAGE_PERSONS_INDEX)
 		{
 			html = htmlPersonsIndex();
 		}
-		else if (PageContents == PAGE_FAMILIES_INDEX)
+		else if (PageContents == Dwr.PAGE_FAMILIES_INDEX)
 		{
 			html = htmlFamiliesIndex();
 		}
-		else if (PageContents == PAGE_SOURCES_INDEX)
+		else if (PageContents == Dwr.PAGE_SOURCES_INDEX)
 		{
 			html = htmlSourcesIndex();
 		}
-		else if (PageContents == PAGE_MEDIA_INDEX)
+		else if (PageContents == Dwr.PAGE_MEDIA_INDEX)
 		{
 			html = htmlMediaIndex();
 		}
-		else if (PageContents == PAGE_PLACES_INDEX)
+		else if (PageContents == Dwr.PAGE_PLACES_INDEX)
 		{
 			html = htmlPlacesIndex();
 		}
-		else if (PageContents == PAGE_ADDRESSES_INDEX)
+		else if (PageContents == Dwr.PAGE_ADDRESSES_INDEX)
 		{
 			html = htmlAddressesIndex();
 		}
-		else if (PageContents == PAGE_REPOS_INDEX)
+		else if (PageContents == Dwr.PAGE_REPOS_INDEX)
 		{
 			html = htmlReposIndex();
 		}
@@ -3676,7 +3708,7 @@ function DwrMainRun()
 	}
 	catch(e)
 	{
-		// return and wait for next DwrMainRun call
+		// return and wait for next MainRun call
 		if (!(e instanceof WaitScriptLoad) || !preloadMode)
 		{
 			throw e;
@@ -3684,16 +3716,16 @@ function DwrMainRun()
 	}
 	if (!preloadMode)
 	{
-		if (PageContents == PAGE_SVG_TREE_FULL)
+		if (PageContents == Dwr.PAGE_SVG_TREE_FULL)
 		{
 			$('body').html(html).toggleClass('dwr-fullscreen');
 		}
-		else if (PageContents == PAGE_SVG_TREE_SAVE)
+		else if (PageContents == Dwr.PAGE_SVG_TREE_SAVE)
 		{
-			if (search.SvgExpanded) $('body').html(html);
+			if (Dwr.search.SvgExpanded) $('body').html(html);
 			else $('#body-page').html(html);
 		}
-		else if ($.inArray(PageContents, [PAGE_SOURCE, PAGE_MEDIA, PAGE_INDI, PAGE_FAM, PAGE_PLACE, PAGE_REPO]) >= 0)
+		else if ($.inArray(PageContents, [Dwr.PAGE_SOURCE, Dwr.PAGE_MEDIA, Dwr.PAGE_INDI, Dwr.PAGE_FAM, Dwr.PAGE_PLACE, Dwr.PAGE_REPO]) >= 0)
 		{
 			$('#body-page').html(html);
 			handleCitations();
@@ -3705,3 +3737,6 @@ function DwrMainRun()
 		}
 	}
 }
+
+
+})(this);

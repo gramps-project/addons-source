@@ -2135,23 +2135,23 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, "DwrMain(PAGE_HOME);"),
-            ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "DwrMain(PAGE_SVG_TREE);"),
+            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
+            ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE);"),
             ("statistics_conf.html", _("Statistics"), True, True, "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsConf();"),
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, "printCalendar();"),
-            ("conf.html", _("Configuration"), self.inc_pageconf, True, "DwrMain(PAGE_CONF);"),
+            ("conf.html", _("Configuration"), self.inc_pageconf, True, "Dwr.Main(Dwr.PAGE_CONF);"),
             # Objects pages
-            ("person.html", _("Person"), True, True, "DwrMain(PAGE_INDI);"),
-            ("family.html", _("Family"), self.inc_families, True, "DwrMain(PAGE_FAM);"),
-            ("source.html", _("Source"), self.inc_sources, True, "DwrMain(PAGE_SOURCE);"),
-            ("media.html", _("Media"), self.inc_gallery, True, "DwrMain(PAGE_MEDIA);"),
-            ("place.html", _("Place"), self.inc_places, True, "DwrMain(PAGE_PLACE);"),
-            ("repository.html", _("Repository"), self.inc_repositories, True, "DwrMain(PAGE_REPO);"),
-            ("search.html", _("Search results"), True, True, "DwrMain(PAGE_SEARCH);"),
-            ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, "DwrMain(PAGE_SVG_TREE_FULL);"),
-            ("tree_svg_conf.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "DwrMain(PAGE_SVG_TREE_CONF);"),
-            ("tree_svg_save.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "DwrMain(PAGE_SVG_TREE_SAVE);"),
+            ("person.html", _("Person"), True, True, "Dwr.Main(Dwr.PAGE_INDI);"),
+            ("family.html", _("Family"), self.inc_families, True, "Dwr.Main(Dwr.PAGE_FAM);"),
+            ("source.html", _("Source"), self.inc_sources, True, "Dwr.Main(Dwr.PAGE_SOURCE);"),
+            ("media.html", _("Media"), self.inc_gallery, True, "Dwr.Main(Dwr.PAGE_MEDIA);"),
+            ("place.html", _("Place"), self.inc_places, True, "Dwr.Main(Dwr.PAGE_PLACE);"),
+            ("repository.html", _("Repository"), self.inc_repositories, True, "Dwr.Main(Dwr.PAGE_REPO);"),
+            ("search.html", _("Search results"), True, True, "Dwr.Main(Dwr.PAGE_SEARCH);"),
+            ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, "Dwr.Main(Dwr.PAGE_SVG_TREE_FULL);"),
+            ("tree_svg_conf.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE_CONF);"),
+            ("tree_svg_save.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE_SAVE);"),
             ("statistics.html", _("Statistics"), True, True, "printStatistics();"),
             ("statistics_full.html", _("Statistics"), True, True, "printStatisticsExpand();"),
             ("statistics_link.html", _("Statistics"), True, True, "printStatisticsLinks();"),
@@ -2159,16 +2159,16 @@ class DynamicWebReport(Report):
             # ("statistics_full.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsExpand();"),
             # ("statistics_link.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsLinks();"),
             # Index pages
-            ("surnames.html", _("Surnames"), True, True, "DwrMain(PAGE_SURNAMES_INDEX);"),
-            ("surnames2.html", _("Surnames"), True, True, "DwrMain(PAGE_SURNAMES_INDEX2);"),
-            ("surname.html", _("Surnames"), True, True, "DwrMain(PAGE_SURNAME_INDEX);"),
-            ("persons.html", _("Individuals"), True, True, "DwrMain(PAGE_PERSONS_INDEX);"),
-            ("families.html", _("Families"), False, True, "DwrMain(PAGE_FAMILIES_INDEX);"),
-            ("sources.html", _("Sources"), False, True, "DwrMain(PAGE_SOURCES_INDEX);"),
-            ("medias.html", _("Media"), False, True, "DwrMain(PAGE_MEDIA_INDEX);"),
-            ("places.html", _("Places"), False, True, "DwrMain(PAGE_PLACES_INDEX);"),
-            ("address.html", _("Addresses"), False, True, "DwrMain(PAGE_ADDRESSES_INDEX);"),
-            ("repositories.html", _("Repositories"), False, True, "DwrMain(PAGE_REPOS_INDEX);"),
+            ("surnames.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX);"),
+            ("surnames2.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX2);"),
+            ("surname.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAME_INDEX);"),
+            ("persons.html", _("Individuals"), True, True, "Dwr.Main(Dwr.PAGE_PERSONS_INDEX);"),
+            ("families.html", _("Families"), False, True, "Dwr.Main(Dwr.PAGE_FAMILIES_INDEX);"),
+            ("sources.html", _("Sources"), False, True, "Dwr.Main(Dwr.PAGE_SOURCES_INDEX);"),
+            ("medias.html", _("Media"), False, True, "Dwr.Main(Dwr.PAGE_MEDIA_INDEX);"),
+            ("places.html", _("Places"), False, True, "Dwr.Main(Dwr.PAGE_PLACES_INDEX);"),
+            ("address.html", _("Addresses"), False, True, "Dwr.Main(Dwr.PAGE_ADDRESSES_INDEX);"),
+            ("repositories.html", _("Repositories"), False, True, "Dwr.Main(Dwr.PAGE_REPOS_INDEX);"),
         ]
 
         # Build the list of index pages
@@ -2665,7 +2665,7 @@ class DynamicWebReport(Report):
         text = text.replace("__SEARCH_FORM__",
             "<script language='javascript'>\n"
             "<!--\n"
-            "embedSearch();\n"
+            "Dwr.embedSearch();\n"
             "//-->\n"
             "</script>\n")
         # __NB_INDIVIDUALS__ is replaced by the number of persons
@@ -2766,7 +2766,8 @@ class DynamicWebReport(Report):
                     "// This file is generated\n\n"
                     "%s_%s_%i = " % (name, k, i))
                 json.dump(partial, sw, sort_keys = True, indent = 4)
-                sw.write("\nscriptLoaded('dwr_db_%s_%s_%i.js');\n" % (name, k, i))
+                sw.write("\n"
+                    "Dwr.ScriptLoaded('dwr_db_%s_%s_%i.js');\n" % (name, k, i))
                 self.update_file("dwr_db_%s_%s_%i.js" % (name, k, i), sw.getvalue())
         if name in ["I", "F", "S", "M", "P", "R",]:
             self.update_gid_xref_file(name, jdatas)

@@ -7,8 +7,13 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
+(function(window, undefined) {
 "use strict";
+function DwrSvgClass() {}
+window.DwrSvg = new DwrSvgClass();
 
+var I = Dwr.I;
+var F = Dwr.F;
 
 var nbGenAsc; // Number of ancestry generations to print
 var nbGenDsc; // Number of descedants generations to print
@@ -221,29 +226,29 @@ var graphsBuild =
 var svgPaper, svgRoot;
 
 
-function SvgPreload()
+DwrSvgClass.prototype.Preload = function()
 {
-	nbGenAsc = search.Asc + 1;
-	nbGenDsc = search.Dsc + 1;
+	nbGenAsc = Dwr.search.Asc + 1;
+	nbGenDsc = Dwr.search.Dsc + 1;
 	nbGenAscFound = 0;
 	nbGenDscFound = 0;
 	maxAge = 0;
 	minPeriod = 1e10;
 	maxPeriod = -1e10;
-	graphsPreload[search.SvgType]();
+	graphsPreload[Dwr.search.SvgType]();
 }
 
 
-function SvgCreate()
+DwrSvgClass.prototype.Create = function()
 {
 	var html = '';
-	if (!search.SvgExpanded)
+	if (!Dwr.search.SvgExpanded)
 		html += '<div id="svg-panel" class="panel panel-default dwr-panel-tree"><div class="panel-body">';
-	html += '<div id="svg-drawing" class="' + (search.SvgExpanded ? 'svg-drawing-expand' : 'svg-drawing') + '">';
+	html += '<div id="svg-drawing" class="' + (Dwr.search.SvgExpanded ? 'svg-drawing-expand' : 'svg-drawing') + '">';
 	// Buttons div
 	html += '<div id="svg-buttons">';
 	html += '<div class="btn-group-vertical" role="group">';
-	html += '<button id="svg-expand" type="button" class="btn btn-default" title="' + (search.SvgExpanded ? _('Restore') : _('Maximize')) + '">';
+	html += '<button id="svg-expand" type="button" class="btn btn-default" title="' + (Dwr.search.SvgExpanded ? _('Restore') : _('Maximize')) + '">';
 	html += '<span class="glyphicon glyphicon-fullscreen"></span>';
 	html += '</button>';
 	html += '<button id="svg-zoom-in" type="button" class="btn btn-default" title="' + _('Zoom in') + '">';
@@ -267,7 +272,7 @@ function SvgCreate()
 	html += '<div id="svg-popup" class="popover svg-popup">';
 	html += '</div>';
 	html += '</div>'; // svg-drawing
-	if (!search.SvgExpanded)
+	if (!Dwr.search.SvgExpanded)
 		html += '</div></div>'; // panel
 	$(window).load(SvgInit);
 	// $(document).ready(SvgInit);
@@ -279,7 +284,7 @@ function SvgInit()
 {
 	// Initialize graph dimensions
 	CalcBoundingBox();
-	graphsInitialize[search.SvgType][search.SvgShape]();
+	graphsInitialize[Dwr.search.SvgType][Dwr.search.SvgShape]();
 	CalcViewBox();
 	svgPaper = new Raphael('svg-drawing', DimX, DimY);
 	$(svgPaper.canvas).attr('xmlns:xlink', "http://www.w3.org/1999/xlink");
@@ -302,9 +307,9 @@ function SvgInit()
 	$('#svg-zoom-in').click(SvgZoomIn);
 	$('#svg-zoom-out').click(SvgZoomOut);
 	$('#svg-expand').click(SvgToggleExpand);
-	$('#svg-config').click(svgConfRef);
-	$('#svg-saveas').click(svgSaveRef);
-	$('#svg-help').click(svgHelpRef);
+	$('#svg-config').click(Dwr.svgConfRef);
+	$('#svg-saveas').click(Dwr.svgSaveRef);
+	$('#svg-help').click(Dwr.svgHelpRef);
 	// Setup event handlers
 	$(window).mouseup(SvgMouseUpWindow)
 		.mousedown(SvgMouseDownWindow)
@@ -321,7 +326,7 @@ function SvgInit()
 		.keydown(SvgKeyDown)
 		.keyup(SvgKeyUp);
 	// Build the graph
-	graphsBuild[search.SvgType][search.SvgShape]();
+	graphsBuild[Dwr.search.SvgType][Dwr.search.SvgShape]();
 	SvgCreateElts(0);
 	// Context menu
 	context.init({
@@ -331,8 +336,8 @@ function SvgInit()
 	});
 	var svgContextMenuItems = [
 		// {
-			// text: (search.SvgExpanded) ? _('Restore') : _('Maximize'),
-			// href: svgHref(search.Idx, !search.SvgExpanded)
+			// text: (Dwr.search.SvgExpanded) ? _('Restore') : _('Maximize'),
+			// href: Dwr.svgHref(Dwr.search.Idx, !Dwr.search.SvgExpanded)
 		// },
 		// {text: _('Zoom in'), href: 'javascript:SvgZoomIn();'},
 		// {text: _('Zoom out'), href: 'javascript:SvgZoomOut();'}
@@ -347,7 +352,7 @@ function SvgInit()
 //==============================================================================
 //==============================================================================
 
-function SvgConfPage()
+DwrSvgClass.prototype.ConfPage = function()
 {
 	var html = '';
 	// Graph type selector floating div
@@ -359,9 +364,9 @@ function SvgConfPage()
 	html += '<div class="form-group">';
 	html += '<label for="svg-type">' + _('SVG tree graph type') + '</label>';
 	html += '<select name="svg-type" id="svg-type" class="form-control" size="1" title="' + _('Select the type of graph') + '">';
-	for (i = 0; i < SVG_TREE_TYPES_NAMES.length; i++)
+	for (var i = 0; i < SVG_TREE_TYPES_NAMES.length; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.SvgType == i) ? ' selected' : '') + '>' + SVG_TREE_TYPES_NAMES[i] + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.SvgType == i) ? ' selected' : '') + '>' + SVG_TREE_TYPES_NAMES[i] + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -372,7 +377,7 @@ function SvgConfPage()
 	html += '<select name="svg-shape" id="svg-shape" class="form-control" size="1" title="' + _('Select the shape of graph') + '">';
 	for (i = 0; i < SVG_TREE_SHAPES_NAMES.length; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.SvgShape == i) ? ' selected' : '') + '>' + SVG_TREE_SHAPES_NAMES[i] + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.SvgShape == i) ? ' selected' : '') + '>' + SVG_TREE_SHAPES_NAMES[i] + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -385,7 +390,7 @@ function SvgConfPage()
 	html += '<select name="svg-distrib-asc" id="svg-distrib-asc" class="form-control" size="1" title="' + _('Select the parents distribution (fan charts only)') + '">';
 	for (i = 0; i < SVG_TREE_DISTRIB_ASC_NAMES.length; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.SvgDistribAsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_ASC_NAMES[i] + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.SvgDistribAsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_ASC_NAMES[i] + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -396,7 +401,7 @@ function SvgConfPage()
 	html += '<select name="svg-distrib-dsc" id="svg-distrib-dsc" class="form-control" size="1" title="' + _('Select the children distribution (fan charts only)') + '">';
 	for (i = 0; i < SVG_TREE_DISTRIB_DSC_NAMES.length; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.SvgDistribDsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_DSC_NAMES[i] + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.SvgDistribDsc == i) ? ' selected' : '') + '>' + SVG_TREE_DISTRIB_DSC_NAMES[i] + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -409,7 +414,7 @@ function SvgConfPage()
 	html += '<select name="svg-background" id="svg-background" class="form-control" size="1" title="' + _('Select the background color scheme') + '">';
 	for (i = 0; i < SVG_TREE_BACKGROUND_NAMES.length; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.SvgBackground == i) ? ' selected' : '') + '>' + SVG_TREE_BACKGROUND_NAMES[i] + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.SvgBackground == i) ? ' selected' : '') + '>' + SVG_TREE_BACKGROUND_NAMES[i] + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -420,7 +425,7 @@ function SvgConfPage()
 	html += '<select id="svg-asc" class="form-control svg-gens" size="1" title="' + _('Select the number of ascending generations') + '">';
 	for (i = 0; i < NB_GENERATIONS_MAX; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.Asc == i) ? ' selected' : '') + '>' + i + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.Asc == i) ? ' selected' : '') + '>' + i + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -431,7 +436,7 @@ function SvgConfPage()
 	html += '<select id="svg-dsc" class="form-control svg-gens" size="1" title="' + _('Select the number of descending generations') + '">';
 	for (i = 0; i < NB_GENERATIONS_MAX; i++)
 	{
-		html += '<option value="' + i + '"' + ((search.Dsc == i) ? ' selected' : '') + '>' + i + '</option>';
+		html += '<option value="' + i + '"' + ((Dwr.search.Dsc == i) ? ' selected' : '') + '>' + i + '</option>';
 	}
 	html += '</select>';
 	html += '</div>'; // form-group
@@ -441,7 +446,7 @@ function SvgConfPage()
 	html += '<div class="col-xs-6 col-sm-4">';
 	html += '<div class="checkbox">';
 	html += '<label>';
-	html += '<input type="checkbox" name="svg-dup" id="svg-dup" ' + (search.SvgDup ? 'checked' : '') + ' title="' + _('Whether to use a special color for the persons that appear several times in the SVG tree') + '"/>';
+	html += '<input type="checkbox" name="svg-dup" id="svg-dup" ' + (Dwr.search.SvgDup ? 'checked' : '') + ' title="' + _('Whether to use a special color for the persons that appear several times in the SVG tree') + '"/>';
 	html += _('Show duplicates') + '</label>';
 	html += '</div>'; // checkbox
 	html += '</div>'; // col-xs-*
@@ -465,27 +470,27 @@ function SvgConfPage()
 
 function SvgConfSubmit()
 {
-	search.SvgType = $('#svg-type').val();
-	search.SvgShape = $('#svg-shape').val();
-	search.SvgDistribAsc = $('#svg-distrib-asc').val();
-	search.SvgDistribDsc = $('#svg-distrib-dsc').val();
-	search.SvgBackground = $('#svg-background').val();
-	search.Asc = $('#svg-asc').val();
-	search.Dsc = $('#svg-dsc').val();
-	search.SvgDup = $('#svg-dup').is(':checked');
-	return(svgRef());
+	Dwr.search.SvgType = $('#svg-type').val();
+	Dwr.search.SvgShape = $('#svg-shape').val();
+	Dwr.search.SvgDistribAsc = $('#svg-distrib-asc').val();
+	Dwr.search.SvgDistribDsc = $('#svg-distrib-dsc').val();
+	Dwr.search.SvgBackground = $('#svg-background').val();
+	Dwr.search.Asc = $('#svg-asc').val();
+	Dwr.search.Dsc = $('#svg-dsc').val();
+	Dwr.search.SvgDup = $('#svg-dup').is(':checked');
+	return(Dwr.svgRef());
 }
 
 function SvgConfRestore()
 {
-	$('#svg-type').val(defaultSearchString.SvgType);
-	$('#svg-shape').val(defaultSearchString.SvgShape);
-	$('#svg-distrib-asc').val(defaultSearchString.SvgDistribAsc);
-	$('#svg-distrib-dsc').val(defaultSearchString.SvgDistribDsc);
-	$('#svg-background').val(defaultSearchString.SvgBackground);
-	$('#svg-asc').val(defaultSearchString.Asc);
-	$('#svg-dsc').val(defaultSearchString.Dsc);
-	$('#svg-dup')[0].checked = defaultSearchString.SvgDup;
+	$('#svg-type').val(Dwr.defaultSearchString.SvgType);
+	$('#svg-shape').val(Dwr.defaultSearchString.SvgShape);
+	$('#svg-distrib-asc').val(Dwr.defaultSearchString.SvgDistribAsc);
+	$('#svg-distrib-dsc').val(Dwr.defaultSearchString.SvgDistribDsc);
+	$('#svg-background').val(Dwr.defaultSearchString.SvgBackground);
+	$('#svg-asc').val(Dwr.defaultSearchString.Asc);
+	$('#svg-dsc').val(Dwr.defaultSearchString.Dsc);
+	$('#svg-dup')[0].checked = Dwr.defaultSearchString.SvgDup;
 	return(false);
 }
 
@@ -496,14 +501,14 @@ function SvgConfRestore()
 //==============================================================================
 //==============================================================================
 
-function SvgSavePage()
+DwrSvgClass.prototype.SavePage = function()
 {
 	var html = '';
 	html +=
 		'<div id="svg-loader" class="text-center">' +
 		'<h1>' + _('Preparing file ...') + '</h1>' +
 		'</div>';
-	html += SvgCreate();
+	html += DwrSvg.Create();
 
 	$(window).load(function() {
 		$('body').css('overflow', 'hidden');
@@ -542,7 +547,7 @@ function SvgSaveOk()
 	xml += ']]>\n';
 	xml += '</style>\n';
 	var svgHtml;
-	if (browser_msie())
+	if (Dwr.BrowserMSIE())
 		svgHtml = $('svg')[0].innerHTML;
 	else
 		svgHtml = $('svg').html();
@@ -666,8 +671,8 @@ function CalcBoundingBox()
 	{
 		var w = $('#svg-drawing').innerWidth();
 		var h = $('#svg-drawing').innerHeight();
-		var dim = innerDivNetSize(BodyContentsMaxSize(), $('#svg-panel'));
-		dim = innerDivNetSize(dim, $('#svg-drawing'));
+		var dim = Dwr.InnerDivNetSize(Dwr.BodyContentsMaxSize(), $('#svg-panel'));
+		dim = Dwr.InnerDivNetSize(dim, $('#svg-drawing'));
 		if (!w || w < svgDivMinHeight) w = dim.width;
 		DimX = Math.max(svgDivMinHeight, w);
 		DimY = Math.max(svgDivMinHeight, h, dim.height);
@@ -729,7 +734,7 @@ function SvgSetStyle(p, text, x_elt, lev)
 	var fill = "#FFFFFF";
 	var stroke = "#000000";
 	var dark = 1.0;
-	if (search.SvgBackground == SVG_TREE_BACKGROUND_GENDER)
+	if (Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_GENDER)
 	{
 		var g = 'unknown';
 		if (I(elt[SVGELT_IDX], 'gender') == 'M') g = 'male';
@@ -738,24 +743,24 @@ function SvgSetStyle(p, text, x_elt, lev)
 		if (I(elt[SVGELT_IDX], 'death_year') != "") d = 'death';
 		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
 	}
-	if (typeof(lev) != 'undefined' && search.SvgBackground == SVG_TREE_BACKGROUND_GENERATION)
+	if (typeof(lev) !== 'undefined' && Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_GENERATION)
 	{
 		fill = SvgColorGrad(0, Math.max(nbGenAscFound, nbGenDscFound) - 1, lev);
 		dark = SVG_GENDER_K;
 	}
 	if (
-		(search.SvgBackground == SVG_TREE_BACKGROUND_AGE) ||
-		(search.SvgBackground == SVG_TREE_BACKGROUND_PERIOD))
+		(Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_AGE) ||
+		(Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_PERIOD))
 	{
 		var b = parseInt(I(elt[SVGELT_IDX], 'birth_year'));
 		var d = parseInt(I(elt[SVGELT_IDX], 'death_year'));
 		var x;
 		var m;
-		if ((search.SvgBackground == 2) && !isNaN(b) && !isNaN(d))
+		if ((Dwr.search.SvgBackground == 2) && !isNaN(b) && !isNaN(d))
 		{
 			fill = SvgColorGrad(0, maxAge, d - b);
 		}
-		if ((search.SvgBackground == 4) && (minPeriod <= maxPeriod))
+		if ((Dwr.search.SvgBackground == 4) && (minPeriod <= maxPeriod))
 		{
 			if (!isNaN(b) && !isNaN(d))
 				fill = SvgColorGrad(minPeriod, maxPeriod, (d + b) / 2.0);
@@ -766,26 +771,26 @@ function SvgSetStyle(p, text, x_elt, lev)
 		}
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == SVG_TREE_BACKGROUND_SINGLE)
+	if (Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_SINGLE)
 	{
 		fill = SVG_TREE_COLOR1;
 	}
-	if (search.SvgBackground == SVG_TREE_BACKGROUND_WHITE)
+	if (Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_WHITE)
 	{
 		fill = SVG_TREE_COLOR_SCHEME0[lev % SVG_TREE_COLOR_SCHEME0.length];
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME1)
+	if (Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME1)
 	{
 		fill = SVG_TREE_COLOR_SCHEME1[lev % SVG_TREE_COLOR_SCHEME1.length];
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME2)
+	if (Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_SCHEME2)
 	{
 		fill = SVG_TREE_COLOR_SCHEME2[lev % SVG_TREE_COLOR_SCHEME2.length];
 		dark = SVG_GENDER_K;
 	}
-	if (search.SvgDup && isDuplicate(elt[SVGELT_IDX]))
+	if (Dwr.search.SvgDup && Dwr.isDuplicate(elt[SVGELT_IDX]))
 	{
 		fill = SVG_TREE_COLOR_DUP;
 	}
@@ -798,7 +803,7 @@ function SvgSetStyle(p, text, x_elt, lev)
 	});
 	fill = Raphael.rgb(fill_rgb.r, fill_rgb.g, fill_rgb.b);
 	// Get hyperlink address
-	var href = svgHref(elt[SVGELT_IDX]);
+	var href = Dwr.svgHref(elt[SVGELT_IDX]);
 	// Set box attributes
 	p.node.setAttribute('class', 'svg-tree');
 	p.node.setAttribute('fill', fill);
@@ -896,12 +901,12 @@ function SvgMouseUpWindow(event)
 				if (shiftPressed)
 				{
 					// Go to clicked person page
-					indiRef(svgElts[hoverBox][SVGELT_IDX]);
+					Dwr.indiRef(svgElts[hoverBox][SVGELT_IDX]);
 				}
 				else
 				{
 					// Center graph on clicked person
-					svgRef(svgElts[hoverBox][SVGELT_IDX]);
+					Dwr.svgRef(svgElts[hoverBox][SVGELT_IDX]);
 				}
 				return(false);
 			}
@@ -915,8 +920,8 @@ function SvgMouseUpWindow(event)
 
 function SvgToggleExpand(elt)
 {
-	search.SvgExpanded = !($('#svg-drawing').hasClass('svg-drawing-expand'));
-	svgRef();
+	Dwr.search.SvgExpanded = !($('#svg-drawing').hasClass('svg-drawing-expand'));
+	Dwr.svgRef();
 }
 
 function SvgMouseMoveWindow(event)
@@ -1027,7 +1032,7 @@ function SvgMouseWheel(event)
 function SvgZoom(delta, p)
 {
 	// Use center if p not defined
-	if (typeof(p) == 'undefined')
+	if (typeof(p) === 'undefined')
 	{
 		p = svgRoot.createSVGPoint();
 		p.x = DimX / 2;
@@ -1198,7 +1203,7 @@ function SvgPopupShow(elt, event)
 		SvgPopupHide();
 		return;
 	}
-	var fdx = (typeof(svgElts[elt][SVGELT_FDX]) == 'undefined') ? -1 : svgElts[elt][SVGELT_FDX];
+	var fdx = (typeof(svgElts[elt][SVGELT_FDX]) === 'undefined') ? -1 : svgElts[elt][SVGELT_FDX];
 	$('#svg-popup').show();
 	if (idx != svgPopupIdx)
 	{
@@ -1254,8 +1259,8 @@ function SvgContextBefore($menu, event)
 		{
 			// Person menu items
 			data = data.concat([
-				{header: I(idx, 'name'), href: svgHref(idx)},
-				{text: _('Person page'), href: indiHref(idx)}
+				{header: I(idx, 'name'), href: Dwr.svgHref(idx)},
+				{text: _('Person page'), href: Dwr.indiHref(idx)}
 			]);
 			var j, k, subm;
 			// Spouses menu items
@@ -1268,7 +1273,7 @@ function SvgContextBefore($menu, event)
 					if (F(fdx, 'spou')[k] == idx) continue;
 					subm.push({
 						text: I(F(fdx, 'spou')[k], 'name'),
-						href: svgHref(F(fdx, 'spou')[k])
+						href: Dwr.svgHref(F(fdx, 'spou')[k])
 					});
 				}
 			}
@@ -1286,7 +1291,7 @@ function SvgContextBefore($menu, event)
 					if (F(fdx, 'chil')[k].index == idx) continue;
 					subm.push({
 						text: I(F(fdx, 'chil')[k].index, 'name'),
-						href: svgHref(F(fdx, 'chil')[k].index)
+						href: Dwr.svgHref(F(fdx, 'chil')[k].index)
 					});
 				}
 			}
@@ -1303,7 +1308,7 @@ function SvgContextBefore($menu, event)
 				{
 					subm.push({
 						text: I(F(fdx, 'chil')[k].index, 'name'),
-						href: svgHref(F(fdx, 'chil')[k].index)
+						href: Dwr.svgHref(F(fdx, 'chil')[k].index)
 					});
 				}
 			}
@@ -1320,7 +1325,7 @@ function SvgContextBefore($menu, event)
 				{
 					subm.push({
 						text: I(F(fdx, 'spou')[k], 'name'),
-						href: svgHref(F(fdx, 'spou')[k])
+						href: Dwr.svgHref(F(fdx, 'spou')[k])
 					});
 				}
 			}
@@ -1395,36 +1400,36 @@ function UpdateDates(idx)
 
 function preloadAsc()
 {
-	calcAsc(search.Idx, 0);
+	calcAsc(Dwr.search.Idx, 0);
 }
 
 function preloadDsc()
 {
-	calcDsc(search.Idx, 0, false);
+	calcDsc(Dwr.search.Idx, 0, false);
 }
 
 function preloadDscSpou()
 {
-	calcDsc(search.Idx, 0, true);
+	calcDsc(Dwr.search.Idx, 0, true);
 }
 
 function preloadBoth()
 {
-	calcAsc(search.Idx, 0);
-	calcDsc(search.Idx, 0, false);
+	calcAsc(Dwr.search.Idx, 0);
+	calcDsc(Dwr.search.Idx, 0, false);
 }
 
 function preloadBothSpou()
 {
-	calcAsc(search.Idx, 0);
-	calcDsc(search.Idx, 0, true);
+	calcAsc(Dwr.search.Idx, 0);
+	calcDsc(Dwr.search.Idx, 0, true);
 }
 
 function preloadI(idx, launch)
 {
 	if (idx < 0) return;
 	if (typeof(launch) === 'undefined') launch = true
-	var scripts = NameFieldScripts('I', idx, ['name', 'short_name', 'gender', 'birth_year', 'birth_place', 'death_year', 'death_place', 'famc', 'fams']);
+	var scripts = Dwr.NameFieldScripts('I', idx, ['name', 'short_name', 'gender', 'birth_year', 'birth_place', 'death_year', 'death_place', 'famc', 'fams']);
 	if (!launch) return scripts;
 	for (var j = 0; j < I(idx, 'fams').length; j++)
 	{
@@ -1434,14 +1439,14 @@ function preloadI(idx, launch)
 	{
 		$.merge(scripts, preloadF(I(idx, 'famc')[j].index, false));
 	}
-	PreloadScripts(scripts, true);
+	Dwr.PreloadScripts(scripts, true);
 }
 
 function preloadF(fdx, launch)
 {
 	if (fdx < 0) return;
 	if (typeof(launch) === 'undefined') launch = true
-	var scripts = NameFieldScripts('F', fdx, ['marr_year', 'marr_place', 'spou', 'chil']);
+	var scripts = Dwr.NameFieldScripts('F', fdx, ['marr_year', 'marr_place', 'spou', 'chil']);
 	for (var j = 0; j < F(fdx, 'spou').length; j++)
 	{
 		$.merge(scripts, preloadI(F(fdx, 'spou')[j], false));
@@ -1451,7 +1456,7 @@ function preloadF(fdx, launch)
 		$.merge(scripts, preloadI(F(fdx, 'chil')[j].index, false));
 	}
 	if (!launch) return scripts;
-	PreloadScripts(scripts, true);
+	Dwr.PreloadScripts(scripts, true);
 }
 
 
@@ -1517,7 +1522,7 @@ function svgAddSeparatorAsc(root)
 function svgAddSeparator(elts, nbTable, root)
 {
 	// Check the type of the tree (circles don't have separators)
-	if ($.inArray(search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) >= 0) return;
+	if ($.inArray(Dwr.search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) >= 0) return;
 	// Check if 'root' has at least 2 generations below it
 	var needSep = false;
 	for (var i = 0; i < root[SVGELT_NEXT].length; i++)
@@ -1574,7 +1579,7 @@ function calcDsc(idx, lev, print_spouses)
 	}
 	svgChildren = [];
 	// nbFams = [];
-	if (search.SvgDistribDsc == 0 || $.inArray(search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) < 0)
+	if (Dwr.search.SvgDistribDsc == 0 || $.inArray(Dwr.search.SvgShape, [SVG_SHAPE_FULL_CIRCLE, SVG_SHAPE_HALF_CIRCLE, SVG_SHAPE_QUADRANT]) < 0)
 		return calcDscPropSub(idx, lev, print_spouses);
 	else
 		return calcDscSub(idx, lev, 1.0, print_spouses);
@@ -1810,7 +1815,7 @@ function calcRayonsPropBoth(idx, print_spouses)
 function calcRayonsPropSub(center_elt, nb_people, nb_gen, print_spouses)
 {
 	var ofst = 0;
-	if (search.SvgShape == SVG_SHAPE_QUADRANT)
+	if (Dwr.search.SvgShape == SVG_SHAPE_QUADRANT)
 	{
 		nb_gen += 1;
 		nb_people[-1] = 1;
@@ -1850,7 +1855,7 @@ function initAsc()
 
 function buildAsc()
 {
-	if (search.SvgDistribAsc == 0) return buildAscProp();
+	if (Dwr.search.SvgDistribAsc == 0) return buildAscProp();
 	calcRayons(nbGenAscFound);
 	svgElts = svgParents;
 	calcCircleStrokeWidthAsc(2*Math.PI);
@@ -1901,7 +1906,7 @@ function initAscHemi()
 
 function buildAscHemi()
 {
-	if (search.SvgDistribAsc == 0) return buildAscHemiProp();
+	if (Dwr.search.SvgDistribAsc == 0) return buildAscHemiProp();
 	calcRayons(nbGenAscFound);
 	svgElts = svgParents;
 	calcCircleStrokeWidthAsc(Math.PI + 2 * hemiA);
@@ -1923,7 +1928,7 @@ function initAscQadr()
 
 function buildAscQadr()
 {
-	if (search.SvgDistribAsc == 0) return buildAscQadrProp();
+	if (Dwr.search.SvgDistribAsc == 0) return buildAscQadrProp();
 	calcRayons(nbGenAscFound + 1);
 	maxTextWidth = coordX * rayons[0] * 2;
 	for (var i = 0; i < rayons.length; i++) rayons[i - 1] = rayons[i];
@@ -2004,7 +2009,7 @@ function initDsc()
 
 function buildDsc()
 {
-	calcRayonsDsc(search.Idx, false);
+	calcRayonsDsc(Dwr.search.Idx, false);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(2*Math.PI);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2048,7 +2053,7 @@ function initDscHemi()
 
 function buildDscHemi()
 {
-	calcRayonsDsc(search.Idx, false);
+	calcRayonsDsc(Dwr.search.Idx, false);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(Math.PI + 2 * hemiA);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2064,7 +2069,7 @@ function initDscQadr()
 
 function buildDscQadr()
 {
-	calcRayonsDsc(search.Idx, false);
+	calcRayonsDsc(Dwr.search.Idx, false);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(Math.PI / 2 + 2 * hemiA);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2086,7 +2091,7 @@ function initDscSpou()
 
 function buildDscSpou()
 {
-	calcRayonsDsc(search.Idx, true);
+	calcRayonsDsc(Dwr.search.Idx, true);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(2*Math.PI);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2138,7 +2143,7 @@ function initDscHemiSpou()
 
 function buildDscHemiSpou()
 {
-	calcRayonsDsc(search.Idx, true);
+	calcRayonsDsc(Dwr.search.Idx, true);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(Math.PI + 2 * hemiA);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2155,7 +2160,7 @@ function initDscQadrSpou()
 
 function buildDscQadrSpou()
 {
-	calcRayonsDsc(search.Idx, true);
+	calcRayonsDsc(Dwr.search.Idx, true);
 	svgElts = svgChildren;
 	calcCircleStrokeWidthDsc(Math.PI / 2 + 2 * hemiA);
 	maxTextWidth = coordX * rayons[0] * 2;
@@ -2173,7 +2178,7 @@ function buildDscQadrSpou()
 
 function buildBothSub(print_spouses)
 {
-	calcRayonsPropBoth(search.Idx, print_spouses);
+	calcRayonsPropBoth(Dwr.search.Idx, print_spouses);
 	mergeSVGelts();
 	var center1 = svgParents[0];
 	var center2 = svgChildren[0];
@@ -2182,7 +2187,7 @@ function buildBothSub(print_spouses)
 	maxTextWidth = coordX * rayonsAsc[0] * 2;
 	rayons = rayonsAsc;
 	calcCircleStrokeWidthAsc(Math.PI);
-	if (search.SvgDistribAsc == 0) buildAscPropSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
+	if (Dwr.search.SvgDistribAsc == 0) buildAscPropSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
 	else buildAscSub0(0, 0, -Math.PI/2, Math.PI/2, depNum);
 	// Descendants
 	svgElts[0] = center2;
@@ -2288,7 +2293,7 @@ function buildAscTreeHSub(x_elt, a, b, num, nb_gens, offsetx, child_x, child_y)
 
 function buildTreeHRect(x, y, w, h, x_elt, lev)
 {
-	if (search.SvgShape != 3)
+	if (Dwr.search.SvgShape != 3)
 	{
 		x = w0 - 2.0 * margeX - x - w;
 	}
@@ -2297,7 +2302,7 @@ function buildTreeHRect(x, y, w, h, x_elt, lev)
 
 function buildTreeHLine(x1, y1, x2, y2)
 {
-	if (search.SvgShape != 3)
+	if (Dwr.search.SvgShape != 3)
 	{
 		x1 = w0 - 2.0 * margeX - x1;
 		x2 = w0 - 2.0 * margeX - x2;
@@ -2543,7 +2548,7 @@ function buildAscTreeVSub(x_elt, a, b, num, nb_gens, offsety, child_x, child_y)
 
 function buildTreeVRect(x, y, w, h, x_elt, lev)
 {
-	if (search.SvgShape == 1)
+	if (Dwr.search.SvgShape == 1)
 	{
 		y = h0 - 2.0 * margeY - y - h;
 	}
@@ -2552,7 +2557,7 @@ function buildTreeVRect(x, y, w, h, x_elt, lev)
 
 function buildTreeVLine(x1, y1, x2, y2)
 {
-	if (search.SvgShape == 1)
+	if (Dwr.search.SvgShape == 1)
 	{
 		y1 = h0 - 2.0 * margeY - y1;
 		y2 = h0 - 2.0 * margeY - y2;
@@ -2830,7 +2835,7 @@ function calcTextTab(tab, n)
 	var i, j, l = tab.length;
 	if (l <= n)
 	{
-		var t = arrayCopy(tab);
+		var t = $.extend(true, [], tab); // Deep copy
 		for (i=l; i<n; i++) t[i] = '';
 		return(t);
 	}
@@ -3058,3 +3063,5 @@ function GetTextI(idx)
 	if (idx < 0) return('?');
 	return(I(idx, 'short_name'));
 }
+
+})(this);

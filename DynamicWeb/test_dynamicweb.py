@@ -275,7 +275,7 @@ class DynamicWebTests(unittest.TestCase):
             s = jf.read()
             s = re.sub(r"^\s*//.*$", "", s, flags = re.MULTILINE) # remove JS comments
             s = re.sub(prefix, "", s)
-            s = re.sub(r"^.*scriptLoaded.*$", "", s, flags = re.MULTILINE)
+            s = re.sub(r"^.*ScriptLoaded.*$", "", s, flags = re.MULTILINE)
             jdata = json.loads(s)
             self.assertEqual(len(jdata), expected_size,
                 "%s JSON data does not have the expected size (%i instead of %i)" % (path, len(jdata), expected_size))

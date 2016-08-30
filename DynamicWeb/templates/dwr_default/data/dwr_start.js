@@ -6,87 +6,15 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
+(function(window, undefined) {
 "use strict";
-
-// Get current path
-var scriptEls = document.getElementsByTagName('script');
-var thisScriptEl = scriptEls[scriptEls.length - 1];
-var scriptPath = thisScriptEl.src;
-var scriptFolder = scriptPath.substr(0, scriptPath.lastIndexOf('/'));
-var toRoot = scriptFolder.substr(0, scriptFolder.lastIndexOf('/') + 1);
-scriptFolder += '/';
-
-// Load jQuery
-loadjsfile(scriptFolder + 'jquery/jquery.min.js');
-loadjsfile(scriptFolder + 'jquery/jquery.sizes.js');
-loadjsfile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
-
-// Load bootstrap
-loadcssfile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
-loadjsfile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
-
-// Load Data Tables
-loadcssfile(scriptFolder + 'datatables/media/css/dataTables.bootstrap.min.css');
-loadcssfile(scriptFolder + 'datatables/media/css/responsive.bootstrap.min.css');
-loadjsfile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
-loadjsfile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.min.js');
-loadjsfile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
-loadjsfile(scriptFolder + 'datatables/media/js/responsive.bootstrap.min.js');
-
-// Load context menu plugin
-loadcssfile(scriptFolder + 'context/context.css');
-loadjsfile(scriptFolder + 'context/dwr_context.js');
-
-// Load internationalization
-loadjsfile(scriptFolder + 'unorm/unorm.js');
-
-// Load styles
-loadcssfile(scriptFolder + 'dwr_styles.css');
-
-// Load configuration and language file
-loadjsfile('dwr_conf.js');
-
-// Load base scripts
-loadjsfile(scriptFolder + 'dwr_body.js');
-loadjsfile(scriptFolder + 'dwr.js');
-
-// Load SVG tree scripts
-if (LOAD_SVG_SCRIPTS)
-{
-	// Load Raphael
-	loadjsfile(scriptFolder + 'raphael/raphael.min.js');
-	if (browser_msie()) loadjsfile(scriptFolder + 'innersvg-polyfill/innersvg.js');
-	loadjsfile(scriptFolder + 'dwr_svg.js');
-}
-
-// Load statistics scripts
-if (LOAD_STATS_SCRIPTS)
-{
-	loadjsfile(scriptFolder + 'dwr_stats.js');
-}
-
-// Load map scripts
-if (LOAD_GOOGLEMAP_SCRIPTS)
-{
-	var googlemapurl = 'https://maps.googleapis.com/maps/api/js';
-	if (GOOGLEMAPKEY)
-	{
-		googlemapurl = googlemapurl + "?key=" + GOOGLEMAPKEY
-	}
-	loadjsfile(googlemapurl)
-}
-if (LOAD_OSM_SCRIPTS)
-{
-	loadjsfile('http://openlayers.org/en/v3.0.0/build/ol.js');
-	loadcssfile('http://openlayers.org/en/v3.0.0/css/ol.css');
-}
+window.DwrClass = function () {}
+window.Dwr = new DwrClass();
 
 
 //============================================
 
-//var finished = false;
-
-function loadjsfile(filename)
+function LoadJsFile(filename)
 {
 	// There are many ways to include Javascript files dynamically
 	// (e.g. document.write, Dynamically change the <script> src property value, Dynamically create <script> element, jQuery getScript, etc.)
@@ -94,26 +22,107 @@ function loadjsfile(filename)
 	// The document.write shall be done in the page loading stream (not after the </html>)
 	document.write('<script language="javascript" src="' + filename + '" charset="UTF-8"></script>');
 }
+DwrClass.prototype.LoadJsFile = LoadJsFile;
 
-function loadcssfile(filename)
+function LoadCssFile(filename)
 {
 	var fileref = document.createElement('link');
 	fileref.setAttribute('rel', 'stylesheet');
 	fileref.setAttribute('type', 'text/css');
 	fileref.setAttribute('href', filename);
-	if (typeof fileref!='undefined')
+	if (typeof(fileref) !== 'undefined')
 		document.getElementsByTagName('head')[0].appendChild(fileref);
+}
+DwrClass.prototype.LoadCssFile = LoadCssFile;
+
+//============================================
+
+// Get current path
+var scriptEls = document.getElementsByTagName('script');
+var thisScriptEl = scriptEls[scriptEls.length - 1];
+var scriptPath = thisScriptEl.src;
+var scriptFolder = scriptPath.substr(0, scriptPath.lastIndexOf('/'));
+DwrClass.prototype.toRoot = scriptFolder.substr(0, scriptFolder.lastIndexOf('/') + 1);
+scriptFolder += '/';
+
+// Load jQuery
+LoadJsFile(scriptFolder + 'jquery/jquery.min.js');
+LoadJsFile(scriptFolder + 'jquery/jquery.sizes.js');
+LoadJsFile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
+
+// Load bootstrap
+LoadCssFile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
+LoadJsFile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
+
+// Load Data Tables
+LoadCssFile(scriptFolder + 'datatables/media/css/dataTables.bootstrap.min.css');
+LoadCssFile(scriptFolder + 'datatables/media/css/responsive.bootstrap.min.css');
+LoadJsFile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
+LoadJsFile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.min.js');
+LoadJsFile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
+LoadJsFile(scriptFolder + 'datatables/media/js/responsive.bootstrap.min.js');
+
+// Load context menu plugin
+LoadCssFile(scriptFolder + 'context/context.css');
+LoadJsFile(scriptFolder + 'context/dwr_context.js');
+
+// Load internationalization
+LoadJsFile(scriptFolder + 'unorm/unorm.js');
+
+// Load styles
+LoadCssFile(scriptFolder + 'dwr_styles.css');
+
+// Load configuration and language file
+LoadJsFile('dwr_conf.js');
+
+// Load base scripts
+LoadJsFile(scriptFolder + 'dwr_body.js');
+LoadJsFile(scriptFolder + 'dwr.js');
+
+// Load SVG tree scripts
+if (LOAD_SVG_SCRIPTS)
+{
+	// Load Raphael
+	LoadJsFile(scriptFolder + 'raphael/raphael.min.js');
+	if (BrowserMSIE()) LoadJsFile(scriptFolder + 'innersvg-polyfill/innersvg.js');
+	LoadJsFile(scriptFolder + 'dwr_svg.js');
+}
+
+// Load statistics scripts
+if (!("LOAD_STATS_SCRIPTS" in window)) LOAD_STATS_SCRIPTS = false;
+if (LOAD_STATS_SCRIPTS)
+{
+	LoadJsFile(scriptFolder + 'dwr_stats.js');
+}
+
+// Load map scripts
+if (!("LOAD_GOOGLEMAP_SCRIPTS" in window)) LOAD_GOOGLEMAP_SCRIPTS = false;
+if (LOAD_GOOGLEMAP_SCRIPTS)
+{
+	var googlemapurl = 'https://maps.googleapis.com/maps/api/js';
+	if (GOOGLEMAPKEY)
+	{
+		googlemapurl = googlemapurl + "?key=" + GOOGLEMAPKEY
+	}
+	LoadJsFile(googlemapurl)
+}
+if (!("LOAD_OSM_SCRIPTS" in window)) LOAD_OSM_SCRIPTS = false;
+if (LOAD_OSM_SCRIPTS)
+{
+	LoadJsFile('http://openlayers.org/en/v3.0.0/build/ol.js');
+	LoadCssFile('http://openlayers.org/en/v3.0.0/css/ol.css');
 }
 
 
 //============================================ Multi-browser
 
-function browser_msie()
+function BrowserMSIE()
 {
 	// This is required despite jQuery
 	// For example $(<any SVG element>).html does not work in MSIE
 	return (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i))
 }
+DwrClass.prototype.BrowserMSIE = BrowserMSIE;
 
 
 //============================================ Simple functions
@@ -155,110 +164,105 @@ if (!Array.prototype.indexOf)
 	};
 }
 
-function arrayCopy(a)
+if (!Array.prototype.shuttleSort)
 {
-	if (typeof(a) == 'object' && a != null)
+	Array.prototype.shuttleSort = function(from, to, low, high)
 	{
-		var b=new Array(), i;
-		for (i=0; i<a.length; i++) b[i] = arrayCopy(a[i]);
-		return(b);
-	}
-	return(a);
-}
+		if (high - low < 2) return;
 
-function shuttlesort(from, to, low, high)
-{
-	if (high - low < 2) return;
+		var middle = Math.floor((low + high)/2);
+		shuttleSort(to, from, low, middle);
+		shuttleSort(to, from, middle, high);
+		var p = low;
+		var q = middle;
+		var i;
 
-	var middle = Math.floor((low + high)/2);
-	shuttlesort(to, from, low, middle);
-	shuttlesort(to, from, middle, high);
-	var p = low;
-	var q = middle;
-	var i;
+		if (high - low >= 4 && compare(from[middle-1], from[middle]) <= 0)
+		{
+			for (i = low; i < high; i++)
+			{
+				to[i] = from[i];
+			}
+			return;
+		}
 
-	if (high - low >= 4 && compare(from[middle-1], from[middle]) <= 0)
-	{
 		for (i = low; i < high; i++)
 		{
-			to[i] = from[i];
-		}
-		return;
-	}
-
-	for (i = low; i < high; i++)
-	{
-		if (q >= high || (p < middle && compare(from[p], from[q]) <= 0))
-		{
-			to[i] = from[p++];
-		}
-		else
-		{
-			to[i] = from[q++];
+			if (q >= high || (p < middle && compare(from[p], from[q]) <= 0))
+			{
+				to[i] = from[p++];
+			}
+			else
+			{
+				to[i] = from[q++];
+			}
 		}
 	}
 }
 
-function invertMatrix(D)
+if (!Array.prototype.invertMatrix)
 {
-	var n = D.length;
-	var alpha, beta;
-	var i, ii, j, k;
-	var R = [];
-	var avail = [];
-
-	// init the reduction matrix
-	for (i=0; i<n; i++)
+	Array.prototype.invertMatrix = function()
 	{
-		R[i] = [];
-		for (j=0; j<n; j++)
-		{
-			R[i][j] = 0.0;
-		}
-		R[i][i] = 1.0;
-		avail[i] = true;
-	}
+		var n = this.length;
+		var alpha, beta;
+		var i, ii, j, k;
+		var R = [];
+		var avail = [];
 
-	// perform the reductions
-	for (i=0; i<n; i++)
-	{
-		alpha = 0.0;
-		for (k=0; k<n; k++)
+		// init the reduction matrix
+		for (i=0; i<n; i++)
 		{
-			if (Math.abs(D[k][k]) > Math.abs(alpha) && avail[k])
-			{
-				alpha = D[k][k];
-				ii = k;
-			}
-		}
-		if (alpha == 0.0)
-		{
-			// error - singular matrix
-			return([]);
-		}
-		else
-		{
+			R[i] = [];
 			for (j=0; j<n; j++)
 			{
-				D[ii][j] /= alpha;
-				R[ii][j] /= alpha;
+				R[i][j] = 0.0;
 			}
+			R[i][i] = 1.0;
+			avail[i] = true;
+		}
+
+		// perform the reductions
+		for (i=0; i<n; i++)
+		{
+			alpha = 0.0;
 			for (k=0; k<n; k++)
 			{
-				if (k != ii)
+				if (Math.abs(this[k][k]) > Math.abs(alpha) && avail[k])
 				{
-					beta = D[k][ii];
-					for (j=0; j<n; j++)
+					alpha = this[k][k];
+					ii = k;
+				}
+			}
+			if (alpha == 0.0)
+			{
+				// error - singular matrix
+				return([]);
+			}
+			else
+			{
+				for (j=0; j<n; j++)
+				{
+					this[ii][j] /= alpha;
+					R[ii][j] /= alpha;
+				}
+				for (k=0; k<n; k++)
+				{
+					if (k != ii)
 					{
-						D[k][j] -= beta * D[ii][j];
-						R[k][j] -= beta * R[ii][j];
+						beta = this[k][ii];
+						for (j=0; j<n; j++)
+						{
+							this[k][j] -= beta * this[ii][j];
+							R[k][j] -= beta * R[ii][j];
+						}
 					}
 				}
 			}
+			avail[ii] = false;
 		}
-		avail[ii] = false;
+		return(R);
 	}
-	return(R);
 }
 
 
@@ -277,3 +281,5 @@ String.prototype.latinize = function() {
 String.prototype.isLatin = function() {
 	return(this==this.latinize());
 };
+
+})(this);
