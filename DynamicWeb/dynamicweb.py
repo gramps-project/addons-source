@@ -2373,7 +2373,7 @@ class DynamicWebReport(Report):
         sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
         sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
         sw.write("INC_CHANGE_TIME=" + ("true" if (self.options['inc_change_time']) else "false") + ";\n")
-        sw.write("HIDE_GID=true;\n")
+        sw.write("HIDE_GID=" + ("true" if (self.options['hide_gid']) else "false") + ";\n")
         sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
         sw.write("__ = {")
         sep = "\n"
@@ -4005,21 +4005,9 @@ class DynamicWebOptions(MenuReportOptions):
         # addopt("inc_events", inc_events)
         # inc_events.set_available(False)
 
-        tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
-        tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
-        addopt("tabbed_panels", tabbed_panels)
-
-        inc_change_time = BooleanOption(_("Show last modification time"), False)
-        inc_change_time.set_help(_( "Whether to show the last modification time in the pages footer"))
-        addopt('inc_change_time', inc_change_time)
-
         showallsiblings = BooleanOption(_("Include half and/ or step-siblings on the individual pages"), False)
         showallsiblings.set_help(_( "Whether to include half and/ or step-siblings with the parents and siblings"))
         addopt('showallsiblings', showallsiblings)
-
-        sourceauthor = BooleanOption(_("Insert sources author in the sources title"), False)
-        sourceauthor.set_help(_( "Whether to insert sources author in the sources title"))
-        addopt('sourceauthor', sourceauthor)
 
         inc_gendex = BooleanOption(_('Include GENDEX file (/gendex.txt)'), False)
         inc_gendex.set_help(_('Whether to include a GENDEX file or not'))
@@ -4028,6 +4016,22 @@ class DynamicWebOptions(MenuReportOptions):
         inc_pageconf = BooleanOption(_("Enable page configuration"), True)
         inc_pageconf.set_help(_( "Whether to enable page configuration"))
         addopt('inc_pageconf', inc_pageconf)
+
+        tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
+        tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
+        addopt("tabbed_panels", tabbed_panels)
+
+        inc_change_time = BooleanOption(_("Show last modification time"), False)
+        inc_change_time.set_help(_( "Whether to show the last modification time in the pages footer"))
+        addopt('inc_change_time', inc_change_time)
+
+        sourceauthor = BooleanOption(_("Insert sources author in the sources title"), False)
+        sourceauthor.set_help(_( "Whether to insert sources author in the sources title"))
+        addopt('sourceauthor', sourceauthor)
+
+        hide_gid = BooleanOption(_("Suppress Gramps ID"), True)
+        hide_gid.set_help(_( "Whether to hide the Gramps ID"))
+        addopt('hide_gid', hide_gid)
 
 
     def __add_pages_indexes_options(self, menu):

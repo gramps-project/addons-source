@@ -72,6 +72,7 @@ default_options = {
     'entries_shown': "1",
     'inc_gendex': True,
     'inc_pageconf': True,
+    'hide_gid': True,
     'graphgens': 10,
     'svg_tree_type': DEFAULT_SVG_TREE_TYPE,
     'svg_tree_shape': DEFAULT_SVG_TREE_SHAPE,
@@ -131,6 +132,7 @@ report_list = [
         'template': 1,
         'archive_file': "archive.tgz",
         'tabbed_panels': True,
+        'hide_gid': False,
     },
     'procedures': [
         {
