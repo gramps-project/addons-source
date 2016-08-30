@@ -1707,7 +1707,7 @@ function printRepo(rdx)
 //=========================================================== Index
 //=================================================================
 
-var TABLE_OPTIMIZATION_LIMIT = 1000; // Fancy features are disabled above this limit
+var TABLE_OPTIMIZATION_LIMIT = 3000; // Fancy features are disabled above this limit
 
 function printIndex(id, data, defaultsort, columns)
 // id: table ID
@@ -1912,7 +1912,8 @@ function htmlPersonsIndex(data)
 				NameSplitScripts('F', 'spou')])) : []),
 			(Dwr.search.IndexShowParents ? ([].concat.apply([], [
 				NameSplitScripts('I', 'famc'),
-				NameSplitScripts('F', 'spou')])) : [])]),
+				NameSplitScripts('F', 'spou')])) : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('I', 'gid'))]),
 			false);
 		return;
 	}
@@ -1932,6 +1933,7 @@ function htmlPersonsIndex(data)
 		buildDataArray('I', 'famc');
 		buildDataArray('F', 'spou');
 	}
+	if (!Dwr.search.HideGid) buildDataArray('I', 'gid');
 
 	// Build index
 	var html = '';
@@ -2002,7 +2004,11 @@ function htmlPersonsIndex(data)
 		},
 		fsort: false
 	});
-	html += printIndex('I', data, [[0, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return I_gid[data[x]]}
+	});
+	html += printIndex('I', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 	return(html);
 }
 
@@ -2032,7 +2038,8 @@ function htmlFamiliesIndex(data)
 			NameSplitScripts('I', 'name'),
 			NameSplitScripts('I', 'gender'),
 			NameSplitScripts('F', 'spou'),
-			(Dwr.search.IndexShowMarriage ? NameSplitScripts('F', 'marr_year') : [])]),
+			(Dwr.search.IndexShowMarriage ? NameSplitScripts('F', 'marr_year') : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('F', 'gid'))]),
 			false);
 		return;
 	}
@@ -2042,6 +2049,7 @@ function htmlFamiliesIndex(data)
 	buildDataArray('I', 'gender');
 	buildDataArray('F', 'spou');
 	if (Dwr.search.IndexShowMarriage) buildDataArray('F', 'marr_year');
+	if (!Dwr.search.HideGid) buildDataArray('F', 'gid');
 
 	// Build index
 	var html = '';
@@ -2066,7 +2074,11 @@ function htmlFamiliesIndex(data)
 		title: _('Marriage'),
 		ftext: function(x, col) {return(F_marr_year[data[x]])}
 	});
-	html += printIndex('F', data, [[0, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return F_gid[data[x]]}
+	});
+	html += printIndex('F', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 	return(html);
 }
 
@@ -2136,7 +2148,8 @@ function htmlMediaIndex(data)
 				NameSplitScripts('I', 'name'),
 				NameSplitScripts('F', 'name'),
 				NameSplitScripts('S', 'title'),
-				NameSplitScripts('P', 'name')])) : [])]),
+				NameSplitScripts('P', 'name')])) : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('M', 'gid'))]),
 			false);
 		return;
 	}
@@ -2158,6 +2171,7 @@ function htmlMediaIndex(data)
 		buildDataArray('S', 'title');
 		buildDataArray('P', 'name');
 	}
+	if (!Dwr.search.HideGid) buildDataArray('M', 'gid');
 
 	// Build index
 	var html = '';
@@ -2208,7 +2222,11 @@ function htmlMediaIndex(data)
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
 		fsort: false
 	});
-	html += printIndex('M', data, [[1, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return M_gid[data[x]]}
+	});
+	html += printIndex('M', data, [[(Dwr.search.HideGid ? 1 : 2), 'asc']], columns);
 	return(html);
 }
 
@@ -2231,7 +2249,8 @@ function htmlSourcesIndex(data)
 				NameSplitScripts('I', 'name'),
 				NameSplitScripts('F', 'name'),
 				NameSplitScripts('M', 'title'),
-				NameSplitScripts('P', 'name')])) : [])]),
+				NameSplitScripts('P', 'name')])) : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('S', 'gid'))]),
 			false);
 		return;
 	}
@@ -2253,6 +2272,7 @@ function htmlSourcesIndex(data)
 		buildDataArray('M', 'title');
 		buildDataArray('P', 'name');
 	}
+	if (!Dwr.search.HideGid) buildDataArray('S', 'gid');
 
 	// Build index
 	var html = '';
@@ -2303,7 +2323,11 @@ function htmlSourcesIndex(data)
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
 		fsort: false
 	});
-	html += printIndex('S', data, [[0, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return S_gid[data[x]]}
+	});
+	html += printIndex('S', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 	return(html);
 }
 
@@ -2344,7 +2368,8 @@ function htmlPlacesIndex(data)
 				NameSplitScripts('P', 'bki'),
 				NameSplitScripts('P', 'bkf'),
 				NameSplitScripts('I', 'name'),
-				NameSplitScripts('F', 'name')])) : [])]),
+				NameSplitScripts('F', 'name')])) : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('P', 'gid'))]),
 			false);
 		return;
 	}
@@ -2363,6 +2388,7 @@ function htmlPlacesIndex(data)
 		buildDataArray('I', 'name');
 		buildDataArray('F', 'name');
 	}
+	if (!Dwr.search.HideGid) buildDataArray('P', 'gid');
 
 	// Build index
 	var html = '';
@@ -2421,7 +2447,11 @@ function htmlPlacesIndex(data)
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
 		fsort: false
 	});
-	html += printIndex('P', data, [[0, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return P_gid[data[x]]}
+	});
+	html += printIndex('P', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 	return(html);
 }
 
@@ -2495,7 +2525,8 @@ function htmlReposIndex(data)
 			NameSplitScripts('R', 'urls'),
 			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
 				NameSplitScripts('R', 'bks'),
-				NameSplitScripts('S', 'title')])) : [])]),
+				NameSplitScripts('S', 'title')])) : []),
+			(Dwr.search.HideGid ? [] : NameSplitScripts('R', 'gid'))]),
 			false);
 		return;
 	}
@@ -2510,6 +2541,7 @@ function htmlReposIndex(data)
 		buildDataArray('R', 'bks');
 		buildDataArray('S', 'title');
 	}
+	if (!Dwr.search.HideGid) buildDataArray('R', 'gid');
 
 	// Build index
 	var html = '';
@@ -2545,7 +2577,11 @@ function htmlReposIndex(data)
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_REPO, 'R', data[x], 'bks', 'S', 'title', sourceHrefOptimized));},
 		fsort: false
 	});
-	html += printIndex('R', data, [[0, 'asc']], columns);
+	if (!Dwr.search.HideGid) columns.unshift({
+		title: _('ID'),
+		ftext: function(x, col) {return R_gid[data[x]]}
+	});
+	html += printIndex('R', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 	return(html);
 }
 
@@ -3287,11 +3323,11 @@ function SearchObjects()
 			NameSplitScripts('S', 'abbrev'),
 			NameSplitScripts('S', 'publ'),
 			NameSplitScripts('P', 'name'),
-			(!Dwr.search.HideGid ? ([].concat.apply([], [
+			(Dwr.search.HideGid ? [] : ([].concat.apply([], [
 				NameSplitScripts('I', 'gid'),
 				NameSplitScripts('M', 'gid'),
 				NameSplitScripts('S', 'gid'),
-				NameSplitScripts('P', 'gid')])) : [])]),
+				NameSplitScripts('P', 'gid')])))]),
 			false);
 		htmlPersonsIndex();
 		htmlMediaIndex();
