@@ -6,6 +6,7 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
+"use strict";
 
 // Get current path
 var scriptEls = document.getElementsByTagName('script');
@@ -24,15 +25,13 @@ loadjsfile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
 loadcssfile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
 loadjsfile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
 
-// Load Raphael
-loadjsfile(scriptFolder + 'raphael/raphael-min.js');
-
 // Load Data Tables
-loadcssfile(scriptFolder + 'datatables/media/css/dataTables.bootstrap.css');
-loadcssfile(scriptFolder + 'datatables/media/css/dataTables.responsive.css');
+loadcssfile(scriptFolder + 'datatables/media/css/dataTables.bootstrap.min.css');
+loadcssfile(scriptFolder + 'datatables/media/css/responsive.bootstrap.min.css');
 loadjsfile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
-loadjsfile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.js');
+loadjsfile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.min.js');
 loadjsfile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
+loadjsfile(scriptFolder + 'datatables/media/js/responsive.bootstrap.min.js');
 
 // Load context menu plugin
 loadcssfile(scriptFolder + 'context/context.css');
@@ -47,11 +46,40 @@ loadcssfile(scriptFolder + 'dwr_styles.css');
 // Load configuration and language file
 loadjsfile('dwr_conf.js');
 
-// Load tree scripts
-loadjsfile(scriptFolder + 'dwr.js');
-loadjsfile(scriptFolder + 'dwr_svg.js');
+// Load base scripts
 loadjsfile(scriptFolder + 'dwr_body.js');
-loadjsfile(scriptFolder + 'dwr_stats.js');
+loadjsfile(scriptFolder + 'dwr.js');
+
+// Load SVG tree scripts
+if (LOAD_SVG_SCRIPTS)
+{
+	// Load Raphael
+	loadjsfile(scriptFolder + 'raphael/raphael.min.js');
+	if (browser_msie()) loadjsfile(scriptFolder + 'innersvg-polyfill/innersvg.js');
+	loadjsfile(scriptFolder + 'dwr_svg.js');
+}
+
+// Load statistics scripts
+if (LOAD_STATS_SCRIPTS)
+{
+	loadjsfile(scriptFolder + 'dwr_stats.js');
+}
+
+// Load map scripts
+if (LOAD_GOOGLEMAP_SCRIPTS)
+{
+	var googlemapurl = 'https://maps.googleapis.com/maps/api/js';
+	if (GOOGLEMAPKEY)
+	{
+		googlemapurl = googlemapurl + "?key=" + GOOGLEMAPKEY
+	}
+	loadjsfile(googlemapurl)
+}
+if (LOAD_OSM_SCRIPTS)
+{
+	loadjsfile('http://openlayers.org/en/v3.0.0/build/ol.js');
+	loadcssfile('http://openlayers.org/en/v3.0.0/css/ol.css');
+}
 
 
 //============================================
@@ -60,22 +88,11 @@ loadjsfile(scriptFolder + 'dwr_stats.js');
 
 function loadjsfile(filename)
 {
-/*
-	var fileref = document.createElement('script');
-	fileref.setAttribute('type','text/javascript');
-	fileref.setAttribute('src', filename);
-	if (typeof fileref!='undefined')
-		document.getElementsByTagName('head')[0].appendChild(fileref);
-*/
+	// There are many ways to include Javascript files dynamically
+	// (e.g. document.write, Dynamically change the <script> src property value, Dynamically create <script> element, jQuery getScript, etc.)
+	// Only the document.write method works when viewing the files locally (with file:// protocol)
+	// The document.write shall be done in the page loading stream (not after the </html>)
 	document.write('<script language="javascript" src="' + filename + '" charset="UTF-8"></script>');
-/*
-	finished = false;
-	$.getScript(filename, function(data, textStatus, jqxhr)
-	{
-		finished = true;
-	});
-	while(!finished);
-*/
 }
 
 function loadcssfile(filename)
@@ -89,7 +106,17 @@ function loadcssfile(filename)
 }
 
 
-//============================================ tableaux
+//============================================ Multi-browser
+
+function browser_msie()
+{
+	// This is required despite jQuery
+	// For example $(<any SVG element>).html does not work in MSIE
+	return (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i))
+}
+
+
+//============================================ Simple functions
 
 function cmp(a, b)
 {
@@ -98,8 +125,14 @@ function cmp(a, b)
 	return 0;
 }
 
+function sign(x)
+{
+	// Math.sign not supported by IE
+	return typeof x === 'number' ? x ? x < 0 ? -1 : 1 : x === x ? 0 : NaN : NaN;
+}
 
-//============================================ tableaux
+
+//============================================ Arrays
 
 if (!Array.prototype.indexOf)
 {

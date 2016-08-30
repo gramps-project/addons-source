@@ -69,6 +69,7 @@ default_options = {
     'showallsiblings': True,
     # 'birthorder': False,
     'bkref_type': True,
+    'entries_shown': "1",
     'inc_gendex': True,
     'inc_pageconf': True,
     'graphgens': 10,

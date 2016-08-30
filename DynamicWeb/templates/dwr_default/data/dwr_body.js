@@ -26,6 +26,7 @@
 //
 //	- Manage the menu form, and the search form embedded form
 
+"use strict";
 
 //=================================================================
 //============================================================ Body
@@ -149,7 +150,7 @@ var search = {
 	//Sdx; // Index of the current source (in table "S")
 	//Pdx; // Index of the current place (in table "P")
 	//Rdx; // Index of the current repository (in table "R")
-	//SNdx; // Index of the current surname (in table "SN")
+	//Ndx; // Index of the current surname (in table "N")
 	//Igid; // Gramps ID of the current person
 	//Fgid; // Gramps ID of the current family
 	//Mgid; // Gramps ID of the current media object
@@ -190,7 +191,6 @@ var search = {
 	//TabbedPanels;
 	//IncChangeTime;
 	//HideGid;
-	//NbEntries;
 	//=========================================== Chart
 	//ChartTable; // Data table for the statistics chart
 	//ChartType; // Type of statistics chart
@@ -225,6 +225,83 @@ var searchEmbedded = false;
 // Was the URL search string parsed ?
 var searchInitialized = false;
 
+var defaultSearchString = {
+	P: '',
+
+	Txt: '',
+	Idx: -1,
+	Fdx: -1,
+	Mdx: -1,
+	Sdx: -1,
+	Pdx: -1,
+	Rdx: -1,
+	Ndx: -1,
+	Igid: '',
+	Fgid: '',
+	Mgid: '',
+	Sgid: '',
+	Pgid: '',
+	Rgid: '',
+	ImgList: [],
+	MapExpanded: false,
+	
+	Asc: 4,
+	Dsc: 4,
+	SvgType: SVG_TREE_TYPE,
+	SvgShape: SVG_TREE_SHAPE,
+	SvgDistribAsc: SVG_TREE_DISTRIB_ASC,
+	SvgDistribDsc: SVG_TREE_DISTRIB_DSC,
+	SvgBackground: SVG_TREE_BACKGROUND,
+	SvgDup: SVG_TREE_SHOW_DUP,
+	SvgExpanded: false,
+
+	IndexShowBirth: INDEX_SHOW_BIRTH,
+	IndexShowDeath: INDEX_SHOW_DEATH,
+	IndexShowMarriage: INDEX_SHOW_MARRIAGE,
+	IndexShowPartner: INDEX_SHOW_PARTNER,
+	IndexShowParents: INDEX_SHOW_PARENTS,
+	IndexShowBkrefType: INDEX_SHOW_BKREF_TYPE,
+	ShowAllSiblings: SHOW_ALL_SIBLINGS,
+	IncEvents: INC_EVENTS,
+	IncFamilies: INC_FAMILIES,
+	IncSources: INC_SOURCES,
+	IncMedia: INC_MEDIA,
+	IncPlaces: INC_PLACES,
+	IncRepositories: INC_REPOSITORIES,
+	IncNotes: INC_NOTES,
+	IncAddresses: INC_ADDRESSES,
+	MapPlace: MAP_PLACE,
+	MapFamily: MAP_FAMILY,
+	SourceAuthorInTitle: SOURCE_AUTHOR_IN_TITLE,
+	TabbedPanels: TABBED_PANELS,
+	IncChangeTime: INC_CHANGE_TIME,
+	HideGid: HIDE_GID,
+
+	ChartTable: 0,
+	ChartType: 0,
+	ChartDataW: -1,
+	ChartDataX: -1,
+	ChartDataY: -1,
+	ChartDataZ: -1,
+	ChartFunctionX: 0,
+	ChartFunctionY: 0,
+	ChartFunctionZ: 0,
+	ChartFilter1: -1,
+	ChartFilter2: -1,
+	ChartFilter3: -1,
+	ChartFilter1Min: "",
+	ChartFilter2Min: "",
+	ChartFilter3Min: "",
+	ChartFilter1Max: "",
+	ChartFilter2Max: "",
+	ChartFilter3Max: "",
+	ChartOpacity: STATISTICS_CHART_OPACITY,
+	ChartBackground: CHART_BACKGROUND_GRADIENT,
+	ChartValW: "",
+	ChartValX: "",
+	ChartValY: "",
+	ChartValZ: ""
+};
 
 function ParseSearchString()
 {
@@ -240,7 +317,7 @@ function ParseSearchString()
 	search.Sdx = GetURLParameter('sdx', -1);
 	search.Pdx = GetURLParameter('pdx', -1);
 	search.Rdx = GetURLParameter('rdx', -1);
-	search.SNdx = GetURLParameter('sndx', -1);
+	search.Ndx = GetURLParameter('ndx', -1);
 	search.Igid = GetURLParameter('igid', '');
 	search.Fgid = GetURLParameter('fgid', '');
 	search.Mgid = GetURLParameter('mgid', '');
@@ -282,20 +359,19 @@ function ParseSearchString()
 	search.TabbedPanels = GetURLParameter('ctp', TABBED_PANELS);
 	search.IncChangeTime = GetURLParameter('cct', INC_CHANGE_TIME);
 	search.HideGid = GetURLParameter('cg', HIDE_GID);
-	search.NbEntries = GetURLParameter('cne', 0);
 
 	search.ChartTable = GetURLParameter('charttable', 0);
 	search.ChartType = GetURLParameter('charttype', 0);
-	search.ChartDataW = GetURLParameter('chartw', EXTRACTOR_DISABLED);
-	search.ChartDataX = GetURLParameter('chartx', EXTRACTOR_DISABLED);
-	search.ChartDataY = GetURLParameter('charty', EXTRACTOR_DISABLED);
-	search.ChartDataZ = GetURLParameter('chartz', EXTRACTOR_DISABLED);
-	search.ChartFunctionX = GetURLParameter('chartfx', FUNCTION_NONE);
-	search.ChartFunctionY = GetURLParameter('chartfy', FUNCTION_NONE);
-	search.ChartFunctionZ = GetURLParameter('chartfz', FUNCTION_NONE);
-	search.ChartFilter1 = GetURLParameter('chartfr1', EXTRACTOR_DISABLED);
-	search.ChartFilter2 = GetURLParameter('chartfr2', EXTRACTOR_DISABLED);
-	search.ChartFilter3 = GetURLParameter('chartfr3', EXTRACTOR_DISABLED);
+	search.ChartDataW = GetURLParameter('chartw', -1);
+	search.ChartDataX = GetURLParameter('chartx', -1);
+	search.ChartDataY = GetURLParameter('charty', -1);
+	search.ChartDataZ = GetURLParameter('chartz', -1);
+	search.ChartFunctionX = GetURLParameter('chartfx', 0);
+	search.ChartFunctionY = GetURLParameter('chartfy', 0);
+	search.ChartFunctionZ = GetURLParameter('chartfz', 0);
+	search.ChartFilter1 = GetURLParameter('chartfr1', -1);
+	search.ChartFilter2 = GetURLParameter('chartfr2', -1);
+	search.ChartFilter3 = GetURLParameter('chartfr3', -1);
 	search.ChartFilter1Min = GetURLParameter('chartfr1i', "");
 	search.ChartFilter2Min = GetURLParameter('chartfr2i', "");
 	search.ChartFilter3Min = GetURLParameter('chartfr3i', "");
@@ -350,7 +426,7 @@ function BuildSearchString(params)
 	// "params" has the same structure as "search"
 	params = (typeof(params) !== 'undefined') ? params : {};
 	var s = '';
-	page = window.location.href.replace(/\?.*/, '').replace(toRoot, '£££').replace(/.*£££/, '');
+	var page = window.location.href.replace(/\?.*/, '').replace(toRoot, '£££').replace(/.*£££/, '');
 	if (page == 'conf.html') page = search.P;
 	s = SetURLParameter(s, 'p', params.P, page, '');
 
@@ -361,7 +437,7 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'sdx', params.Sdx, search.Sdx, -1);
 	s = SetURLParameter(s, 'pdx', params.Pdx, search.Pdx, -1);
 	s = SetURLParameter(s, 'rdx', params.Rdx, search.Rdx, -1);
-	s = SetURLParameter(s, 'sndx', params.SNdx, search.SNdx, -1);
+	s = SetURLParameter(s, 'ndx', params.Ndx, search.Ndx, -1);
 	s = SetURLParameter(s, 'igid', params.Igid, search.Igid, '');
 	s = SetURLParameter(s, 'fgid', params.Fgid, search.Fgid, '');
 	s = SetURLParameter(s, 'mgid', params.Mgid, search.Mgid, '');
@@ -402,20 +478,19 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'ctp', params.TabbedPanels, search.TabbedPanels, TABBED_PANELS);
 	s = SetURLParameter(s, 'cct', params.IncChangeTime, search.IncChangeTime, INC_CHANGE_TIME);
 	s = SetURLParameter(s, 'cg', params.HideGid, search.HideGid, HIDE_GID);
-	s = SetURLParameter(s, 'cne', params.NbEntries, search.NbEntries, 0);
 
 	s = SetURLParameter(s, 'charttable', params.ChartTable, search.ChartTable, 0);
 	s = SetURLParameter(s, 'charttype', params.ChartType, search.ChartType, 0);
-	s = SetURLParameter(s, 'chartw', params.ChartDataW, search.ChartDataW, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'chartx', params.ChartDataX, search.ChartDataX, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'charty', params.ChartDataY, search.ChartDataY, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'chartz', params.ChartDataZ, search.ChartDataZ, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'chartfx', params.ChartFunctionX, search.ChartFunctionX, FUNCTION_NONE);
-	s = SetURLParameter(s, 'chartfy', params.ChartFunctionY, search.ChartFunctionY, FUNCTION_NONE);
-	s = SetURLParameter(s, 'chartfz', params.ChartFunctionZ, search.ChartFunctionZ, FUNCTION_NONE);
-	s = SetURLParameter(s, 'chartfr1', params.ChartFilter1, search.ChartFilter1, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'chartfr2', params.ChartFilter2, search.ChartFilter2, EXTRACTOR_DISABLED);
-	s = SetURLParameter(s, 'chartfr3', params.ChartFilter3, search.ChartFilter3, EXTRACTOR_DISABLED);
+	s = SetURLParameter(s, 'chartw', params.ChartDataW, search.ChartDataW, -1);
+	s = SetURLParameter(s, 'chartx', params.ChartDataX, search.ChartDataX, -1);
+	s = SetURLParameter(s, 'charty', params.ChartDataY, search.ChartDataY, -1);
+	s = SetURLParameter(s, 'chartz', params.ChartDataZ, search.ChartDataZ, -1);
+	s = SetURLParameter(s, 'chartfx', params.ChartFunctionX, search.ChartFunctionX, 0);
+	s = SetURLParameter(s, 'chartfy', params.ChartFunctionY, search.ChartFunctionY, 0);
+	s = SetURLParameter(s, 'chartfz', params.ChartFunctionZ, search.ChartFunctionZ, 0);
+	s = SetURLParameter(s, 'chartfr1', params.ChartFilter1, search.ChartFilter1, -1);
+	s = SetURLParameter(s, 'chartfr2', params.ChartFilter2, search.ChartFilter2, -1);
+	s = SetURLParameter(s, 'chartfr3', params.ChartFilter3, search.ChartFilter3, -1);
 	s = SetURLParameter(s, 'chartfr1i', params.ChartFilter1Min, search.ChartFilter1Min, "");
 	s = SetURLParameter(s, 'chartfr2i', params.ChartFilter2Min, search.ChartFilter2Min, "");
 	s = SetURLParameter(s, 'chartfr3i', params.ChartFilter3Min, search.ChartFilter3Min, "");
