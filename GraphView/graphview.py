@@ -8,7 +8,7 @@
 #                          report.
 #                          Mouse panning is derived from the pedigree view
 # Copyright (C) 2012       Mathieu MD
-# Copyright (C) 2015       Serge Noiraud
+# Copyright (C) 2015-      Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -925,6 +925,10 @@ class GraphvizSvgParser(object):
         when a child has a non-birth relationship to a parent.
         """
         p_data = attrs.get('d')
+        line_width = attrs.get('stroke-width')
+        if line_width == None:
+            line_width = 1
+        line_width = float(line_width)
         style = attrs.get('style')
 
         if style:
@@ -942,7 +946,7 @@ class GraphvizSvgParser(object):
              item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
                                         stroke_color = stroke_color,
-                                        line_width = 1,
+                                        line_width = line_width,
                                         line_dash = GooCanvas.CanvasLineDash.newv([5.0, 5.0]))
             # http://www.gramps-project.org/bugs/view.php?id=6816
             # Consider reverting back to dashed lines when CanvasLineDash()
@@ -950,12 +954,12 @@ class GraphvizSvgParser(object):
 #            item = GooCanvas.CanvasPath(parent = self.current_parent(),
 #                                        data = p_data,
 #                                        stroke_color = 'Red',
-#                                        line_width = 1)
+#                                        line_width = line_width)
         else:
             item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
                                         stroke_color = stroke_color,
-                                        line_width = 1)
+                                        line_width = line_width)
 
         self.item_hier.append(item)
 
@@ -1131,6 +1135,8 @@ class DotGenerator(object):
         }
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
+        self.current_list = list()
+        self.home_person = None
 
         dpi        = 72
         fontfamily = ""
@@ -1180,6 +1186,9 @@ class DotGenerator(object):
         "Builds a GraphViz descendant tree based on the active person"
         if active_person:
             self.person_handles = set()
+            self.home_person = self.dbstate.db.get_default_person()
+            self.current_list = list()
+            self.set_current_list(active_person)
             self.person_handles.update(self.find_descendants(active_person))
             self.person_handles.update(self.find_ancestors(active_person))
 
@@ -1189,6 +1198,25 @@ class DotGenerator(object):
 
         # Close the graphviz dot code with a brace.
         self.write('}\n')
+
+    def set_current_list(self, active_person):
+        """ We get the path from the active person to the home person. """
+        if not active_person:
+            return False
+        person = self.database.get_person_from_handle(active_person)
+        if person == self.home_person:
+            self.current_list.append(active_person)
+            return True
+        else:
+            for fam_handle in person.get_parent_family_handle_list():
+                family = self.database.get_family_from_handle(fam_handle)
+                if self.set_current_list(family.get_father_handle()) == True:
+                    self.current_list.append(active_person)
+                    return True
+                if self.set_current_list(family.get_mother_handle()) == True:
+                    self.current_list.append(active_person)
+                    return True
+        return False
 
     def find_descendants(self, active_person):
         "Spider the database from the active person"
@@ -1360,7 +1388,8 @@ class DotGenerator(object):
         if adopted:
             style = 'dotted'
         self.add_link(family.handle, p_id, style,
-                      self.arrowheadstyle, self.arrowtailstyle )
+                      self.arrowheadstyle, self.arrowtailstyle,
+                      bold=self.is_in_path_to_home(p_id) )
 
     def add_parent_link(self, p_id, parent_handle, rel):
         "Links the child to a parent"
@@ -1368,7 +1397,8 @@ class DotGenerator(object):
         if (int(rel) != gramps.gen.lib.ChildRefType.BIRTH):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
-                      self.arrowheadstyle, self.arrowtailstyle )
+                      self.arrowheadstyle, self.arrowtailstyle,
+                      bold=self.is_in_path_to_home(p_id))
 
     def add_persons_and_families(self):
         "adds nodes for persons and their families"
@@ -1394,6 +1424,12 @@ class DotGenerator(object):
                 if fam_handle not in families_done:
                     families_done[fam_handle] = 1
                     self.__add_family(fam_handle)
+
+    def is_in_path_to_home(self, f_handle):
+        """Is the current person in the path to the home person ?"""
+        if f_handle in self.current_list:
+            return True
+        return False
 
     def __add_family(self, fam_handle):
         """Add a node for a family and optionally link the spouses to it"""
@@ -1425,12 +1461,14 @@ class DotGenerator(object):
             self.add_link(f_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
-                          self.arrowtailstyle)
+                          self.arrowtailstyle,
+                          bold=self.is_in_path_to_home(f_handle))
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
-                          self.arrowtailstyle)
+                          self.arrowtailstyle,
+                          bold=self.is_in_path_to_home(m_handle))
         self.end_subgraph()
 
     def get_gender_style(self, person):
@@ -1597,7 +1635,8 @@ class DotGenerator(object):
                     return place_title
         return ''
 
-    def add_link(self, id1, id2, style="", head="", tail="", comment=""):
+    def add_link(self, id1, id2, style="", head="", tail="", comment="",
+                 bold=False):
         """
         Add a link between two nodes. Gramps handles are used as nodes but need
         to be prefixed with an underscore because Graphviz does not like IDs
@@ -1605,7 +1644,7 @@ class DotGenerator(object):
         """
         self.write('  _%s -> _%s' % (id1, id2))
 
-        if style or head or tail:
+        if style or head or tail or bold:
             self.write(' [')
 
             if style:
@@ -1614,6 +1653,8 @@ class DotGenerator(object):
                 self.write(' arrowhead=%s' % head)
             if tail:
                 self.write(' arrowtail=%s' % tail)
+            if bold:
+                self.write(' penwidth=%d' % 5)
 
             self.write(' ]')
 
