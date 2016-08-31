@@ -1196,6 +1196,7 @@ class DotGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.current_list = list()
             self.set_current_list(active_person)
+            self.set_current_list_desc(active_person)
             self.person_handles.update(self.find_descendants(active_person))
             self.person_handles.update(self.find_ancestors(active_person))
 
@@ -1207,7 +1208,9 @@ class DotGenerator(object):
         self.write('}\n')
 
     def set_current_list(self, active_person):
-        """ We get the path from the active person to the home person. """
+        """ We get the path from the active person to the home person.
+            Select ancestors.
+        """
         if not active_person:
             return False
         person = self.database.get_person_from_handle(active_person)
@@ -1223,6 +1226,25 @@ class DotGenerator(object):
                 if self.set_current_list(family.get_mother_handle()) == True:
                     self.current_list.append(active_person)
                     return True
+        return False
+
+    def set_current_list_desc(self, active_person):
+        """ We get the path from the active person to the home person.
+            Select children.
+        """
+        if not active_person:
+            return False
+        person = self.database.get_person_from_handle(active_person)
+        if person == self.home_person:
+            self.current_list.append(active_person)
+            return True
+        else:
+            for fam_handle in person.get_family_handle_list():
+                family = self.database.get_family_from_handle(fam_handle)
+                for child in family.get_child_ref_list():
+                    if self.set_current_list_desc(child.ref) == True:
+                        self.current_list.append(active_person)
+                        return True
         return False
 
     def find_descendants(self, active_person):
