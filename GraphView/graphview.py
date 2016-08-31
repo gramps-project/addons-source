@@ -1222,9 +1222,11 @@ class DotGenerator(object):
                 family = self.database.get_family_from_handle(fam_handle)
                 if self.set_current_list(family.get_father_handle()) == True:
                     self.current_list.append(active_person)
+                    self.current_list.append(fam_handle)
                     return True
                 if self.set_current_list(family.get_mother_handle()) == True:
                     self.current_list.append(active_person)
+                    self.current_list.append(fam_handle)
                     return True
         return False
 
@@ -1244,6 +1246,7 @@ class DotGenerator(object):
                 for child in family.get_child_ref_list():
                     if self.set_current_list_desc(child.ref) == True:
                         self.current_list.append(active_person)
+                        self.current_list.append(fam_handle)
                         return True
         return False
 
@@ -1679,6 +1682,10 @@ class DotGenerator(object):
         """
         self.write('  _%s -> _%s' % (id1, id2))
 
+        boldok = False
+        if id1 in self.current_list:
+            if id2 in self.current_list:
+                boldok = True
         if style or head or tail or bold:
             self.write(' [')
 
@@ -1688,7 +1695,7 @@ class DotGenerator(object):
                 self.write(' arrowhead=%s' % head)
             if tail:
                 self.write(' arrowtail=%s' % tail)
-            if bold:
+            if bold and boldok:
                 self.write(' penwidth=%d' % 5)
 
             self.write(' ]')
@@ -1737,7 +1744,8 @@ class DotGenerator(object):
         self.write('  _%s %s;\n' % (node_id, text))
 
     def start_subgraph(self, graph_id):
-        """ Opens a subgraph which is used to keep together related nodes on the graph """
+        """ Opens a subgraph which is used to keep together related nodes
+            on the graph """
         self.write('  subgraph cluster_%s\n' % graph_id)
         self.write('  {\n')
         self.write('  style="invis";\n') # no border around subgraph (#0002176)
