@@ -235,6 +235,10 @@ li p {
 .thumbnail > img {
   max-width: initial;
 }
+.dwr-empty {
+  font-style: italic;
+  font-size: smaller;
+}
 /*===================================================== Map */
 #gmap_canvas {
   height: 330px;

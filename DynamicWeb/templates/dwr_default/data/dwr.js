@@ -495,6 +495,11 @@ DwrClass.prototype.isDuplicate = isDuplicate;
 //================================= Text for individuals / families
 //=================================================================
 
+function empty(txt)
+{
+	return '<span class="dwr-empty">' + txt + '</span>';
+}
+
 function indiLinked(idx, citations)
 {
 	PreloadScripts(NameFieldScripts('I', idx, ['name', 'birth_year', 'death_year', 'gid', 'cita']), true);
@@ -1851,15 +1856,26 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 		if (col_empty[k])
 		{
 			nb_cols_suppr += 1;
+			// Remove useless columns in defaultsort
+			var newds = [];
+			for (l = 0; l < defaultsort.length; l += 1)
+			{
+				if (defaultsort[l][0] < k)
+				{
+					newds.push(defaultsort[l]);
+				}
+				else if (defaultsort[l][0] > k)
+				{
+					defaultsort[l][0] -= 1;
+					newds.push(defaultsort[l]);
+				}
+			}
+			defaultsort = newds;
 		}
 		else if (nb_cols_suppr > 0)
 		{
 			columns[k - nb_cols_suppr] = columns[k];
 			col_num[k - nb_cols_suppr] = col_num[k];
-			for (l = 0; l < defaultsort.length; l += 1)
-			{
-				if (defaultsort[l][0] == k) defaultsort[l][0] = k - nb_cols_suppr;
-			}
 			for (j = 0; j < data_copy.length; j++)
 			{
 				data_copy[j][k - nb_cols_suppr] = data_copy[j][k];
@@ -2133,7 +2149,7 @@ function htmlPersonsIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
-		ftext: function(x, col) {return I_name[data[x]]},
+		ftext: function(x, col) {return I_name[data[x]] || empty(_('Without name'))},
 		fhref: function(x) {return indiHrefOptimized(data[x])},
 		fsort: function(x, col) {return data[x]}
 	}, {
@@ -2194,7 +2210,8 @@ function htmlPersonsIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return I_gid[data[x]]}
+		ftext: function(x, col) {return I_gid[data[x]]},
+		fhref: function(x) {return indiHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('I', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
@@ -2217,7 +2234,8 @@ function htmlPersonsIndexList(header, data)
 	var fText = function(x)
 	{
 		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">' +
-			I_name[data[x]] + ' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
+			(I_name[data[x]] || empty(_('Without name'))) +
+			' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
 			(Dwr.search.HideGid ? '' : gidBadge(I_gid[data[x]])) +
 			'</a></span>';
 		return txt;
@@ -2226,7 +2244,8 @@ function htmlPersonsIndexList(header, data)
 		return(
 			'<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) +'">' +
 			(Dwr.search.HideGid ? '' : I_gid[data[x]] + ': ') +
-			I_name[data[x]] + ' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
+			(I_name[data[x]] || empty(_('Without name'))) +
+			' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
 			'</a></span>');
 	};
 	var sortingAttributes = [
@@ -2258,27 +2277,29 @@ function htmlPersonsIndexList(header, data)
 	return printIndexList('I', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
+
+//=========================================================================================
+//========================================================================== Families Index
+//=========================================================================================
+
 function printIndexSpouseText(fdx, col)
 {
-	var gender = (col == 0)? 'M' : 'F';
+	var gender = (col == (Dwr.search.HideGid ? 0 : 1))? 'M' : 'F';
 	for (var j = 0; j < F_spou[fdx].length; j++)
+	{
 		if (I_gender[F_spou[fdx][j]] == gender)
-			return(I_name[F_spou[fdx][j]]);
+			return I_name[F_spou[fdx][j]] || empty(_('Without name'));
+	}
 	return('');
 }
 function printIndexSpouseIdx(fdx, col)
 {
-	var gender = (col == 0)? 'M' : 'F';
+	var gender = (col == (Dwr.search.HideGid ? 0 : 1))? 'M' : 'F';
 	for (var j = 0; j < F_spou[fdx].length; j++)
 		if (I_gender[F_spou[fdx][j]] == gender)
 			return(F_spou[fdx][j]);
 	return(-1);
 }
-
-
-//=========================================================================================
-//========================================================================== Families Index
-//=========================================================================================
 
 function htmlFamiliesIndex(data)
 {
@@ -2315,7 +2336,8 @@ function htmlFamiliesIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return F_gid[data[x]]}
+		ftext: function(x, col) {return F_gid[data[x]]},
+		fhref: function(x) {return famHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('F', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
@@ -2499,7 +2521,8 @@ function htmlMediaIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return M_gid[data[x]]}
+		ftext: function(x, col) {return M_gid[data[x]]},
+		fhref: function(x) {return mediaHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('M', header, data, [[(Dwr.search.HideGid ? 1 : 2), 'asc']], columns);
 }
@@ -2540,7 +2563,7 @@ function htmlSourcesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Title'),
-		ftext: function(x, col) {return(S_title[data[x]]);},
+		ftext: function(x, col) {return S_title[data[x]] || empty(_('Without title'));},
 		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
@@ -2581,7 +2604,8 @@ function htmlSourcesIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return S_gid[data[x]]}
+		ftext: function(x, col) {return S_gid[data[x]]},
+		fhref: function(x) {return sourceHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('S', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
@@ -2601,7 +2625,7 @@ function htmlSourcesIndexList(header, data)
 	var fText = function(x)
 	{
 		var txt = '<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) + '">' +
-			S_title[data[x]] +
+			(S_title[data[x]] || empty(_('Without title'))) +
 			(Dwr.search.HideGid ? '' : gidBadge(S_gid[data[x]])) +
 			' (' + S_author[data[x]] + ')' +
 			'</a></span>';
@@ -2611,7 +2635,8 @@ function htmlSourcesIndexList(header, data)
 		return(
 			'<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) +'">' +
 			(Dwr.search.HideGid ? '' : S_gid[data[x]] + ': ') +
-			S_title[data[x]] + ' (' + S_author[data[x]] + ')' +
+			(S_title[data[x]] || empty(_('Without title'))) +
+			' (' + S_author[data[x]] + ')' +
 			'</a></span>');
 	};
 	var sortingAttributes = [
@@ -2691,7 +2716,7 @@ function htmlPlacesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
-		ftext: function(x, col) {return(P_name[data[x]]);},
+		ftext: function(x, col) {return P_name[data[x]] || empty(_('Without name'));},
 		fhref: function(x) {return(placeHrefOptimized(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
@@ -2740,7 +2765,8 @@ function htmlPlacesIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return P_gid[data[x]]}
+		ftext: function(x, col) {return P_gid[data[x]]},
+		fhref: function(x) {return placeHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('P', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
@@ -2774,7 +2800,7 @@ function htmlAddressesIndex()
 	// Print table
 	var columns = [{
 		title: _('Person'),
-		ftext: function(x_ad, col) {return(I(adtable[x_ad][0], 'name'));},
+		ftext: function(x_ad, col) {return I_name[adtable[x_ad][0]] || empty(_('Without name'))},
 		fhref: function(x_ad) {return(indiHrefOptimized(adtable[x_ad][0]));},
 		fsort: function(x, col) {return(adtable[x_ad][0]);}
 	}, {
@@ -2817,7 +2843,7 @@ function htmlReposIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Repository'),
-		ftext: function(x, col) {return(R_name[data[x]]);},
+		ftext: function(x, col) {return R_name[data[x]] || empty(_('Without name'))},
 		fhref: repoHrefOptimized,
 		fsort: function(x, col) {return(data[x]);}
 	}, {
@@ -2843,7 +2869,8 @@ function htmlReposIndexTable(header, data)
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
-		ftext: function(x, col) {return R_gid[data[x]]}
+		ftext: function(x, col) {return R_gid[data[x]]},
+		fhref: function(x) {return repoHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('R', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
@@ -2871,9 +2898,7 @@ function printSurnameIndex()
 			var txt = htmlPersonsIndex(N(Dwr.search.Ndx, 'persons'));
 			html +=
 				'<h2 class="page-header">' +
-				((N(Dwr.search.Ndx, 'surname').length > 0) ?
-					N(Dwr.search.Ndx, 'surname') :
-					'<i>' + _('Without surname') + '</i>') +
+				(N(Dwr.search.Ndx, 'surname') || empty(_('Without surname'))) +
 				'</h2>' +
 				txt;
 		}
@@ -2904,16 +2929,14 @@ function htmlSurnamesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Surname'),
-		ftext: function(x, col) {return N_surname[data[x]]},
+		ftext: function(x, col) {return N_surname[data[x]] || empty(_('Without surname'))},
 		fhref: function(x) {return(surnameHrefOptimized(data[x]))},
-		fsort: function(x, col) {return data[x]},
-		empty: _('Without surname'),
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Number'),
 		ftext: function(x, col) {return "" + N_persons[data[x]].length},	
 		fhref: false,
-		fsort: function(x, col) {return N_persons[data[x]].length},
-		empty: 0,
+		fsort: function(x, col) {return N_persons[data[x]].length}
 	}];
 	return PrintIndexTable('N', header, data, [[0, 'asc']], columns);
 }
@@ -2930,18 +2953,16 @@ function htmlSurnamesIndexList(header, data)
 	if (preloadMode) return;
 
 	var fText = function(x) {
-		var surname = N_surname[data[x]];
-		if (surname == '') surname = _('Without surname');
 		return(
 			' &nbsp;<span class="dwr-nowrap"><a href="' + surnameHrefOptimized(data[x]) + '">' +
-			surname + '</a>&nbsp;<span class="badge">' + N_persons[data[x]].length + '</span></span>&nbsp; ');
+			(N_surname[data[x]] || empty(_('Without surname'))) +
+			'</a>&nbsp;<span class="badge">' + N_persons[data[x]].length + '</span></span>&nbsp; ');
 	};
 	var fTextOptimized = function(x) {
-		var surname = N_surname[data[x]];
-		if (surname == '') surname = _('Without surname');
 		return(
 			' &nbsp;<a href="' + surnameHrefOptimized(data[x]) + '">' +
-			surname + '</a>&nbsp;<b>(' + N_persons[data[x]].length + ')</b>&nbsp; ');
+			(N_surname[data[x]] || empty(_('Without surname'))) +
+			'</a>&nbsp;<b>(' + N_persons[data[x]].length + ')</b>&nbsp; ');
 	};
 	var sortingAttributes = [
 		{
