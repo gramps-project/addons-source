@@ -203,6 +203,9 @@ li p {
 #dwr-img-div #media-buttons {
   display: none;
 }
+.note_media {
+  max-width: 100%;
+}
 /*===================================================== Page contents */
 .dwr-attr-title {
   font-weight: bold;
@@ -242,6 +245,10 @@ li p {
 }
 .thumbnail > img {
   max-width: initial;
+}
+.dwr-empty {
+  font-style: italic;
+  font-size: smaller;
 }
 /*===================================================== Map */
 #gmap_canvas {
@@ -306,8 +313,7 @@ li p {
 .svg-popup div {
   font-size: 12px;
 }
-.dropdown-menu
-{
+.dropdown-menu {
   z-index: 222;
 }
 /*===================================================== Tree configuration page */

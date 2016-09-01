@@ -252,7 +252,6 @@ class DynamicWebTests(unittest.TestCase):
             "source.html",
             "sources.html",
             "surname.html",
-            "surnames2.html",
             "surnames.html",
             "tree_svg_conf.html",
             "tree_svg_full.html",

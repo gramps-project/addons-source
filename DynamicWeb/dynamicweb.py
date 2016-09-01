@@ -1381,7 +1381,7 @@ class DynamicWebReport(Report):
         Export media data in Javascript file
         The media data is stored in the Javascript Array "M"
         'M' is sorted by media title
-        'M' gives for each media object:
+        'M' gives for each media:
           - gid: Gramps ID
           - title: The media title
           - gramps_path: The media path in Gramps
@@ -1463,7 +1463,7 @@ class DynamicWebReport(Report):
         Export places data in Javascript file
         The places data is stored in the Javascript Array "P"
         'P' is sorted by place name
-        'P' gives for each media object:
+        'P' gives for each place:
           - gid: Gramps ID
           - name: The place long name
           - names: list of place names in the form {name, date, date_sdn} (empty for version 4.0 and below)
@@ -2718,7 +2718,7 @@ class DynamicWebReport(Report):
         text = text.replace("__SEARCH_FORM__", "<div class='embed-search'></div>\n")
         # __NB_INDIVIDUALS__ is replaced by the number of persons
         # __NB_FAMILIES__ is replaced by the number of families
-        # __NB_MEDIA__ is replaced by the number of media objects
+        # __NB_MEDIA__ is replaced by the number of media
         # __NB_SOURCES__ is replaced by the number of sources
         # __NB_REPOSITORIES__ is replaced by the number of repositories
         # __NB_PLACES__ is replaced by the number of places
@@ -3817,7 +3817,7 @@ class DynamicWebOptions(MenuReportOptions):
             "__SEARCH_FORM__ is replaced by a search form.\n"
             "__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
             "__NB_FAMILIES__ is replaced by the number of families.\n"
-            "__NB_MEDIA__ is replaced by the number of media objects.\n"
+            "__NB_MEDIA__ is replaced by the number of media.\n"
             "__NB_SOURCES__ is replaced by the number of sources.\n"
             "__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
             "__NB_PLACES__ is replaced by the number of places.\n"
@@ -3981,19 +3981,19 @@ class DynamicWebOptions(MenuReportOptions):
         inc_repositories.set_help(_('Whether or not to include the Repository Pages.'))
         addopt("inc_repositories", inc_repositories)
 
-        inc_gallery = BooleanOption(_("Include images and media objects"), True)
-        inc_gallery.set_help(_("Whether to include a media objects in the web pages"))
+        inc_gallery = BooleanOption(_("Include images and media"), True)
+        inc_gallery.set_help(_("Whether to include images and media in the web pages"))
         addopt("inc_gallery", inc_gallery)
 
         copy_media_opts = [
-            [_("Copy, rename with a unique Gramps identifier"), COPY_MEDIA_RENAME],
+            [_("Copy, rename files with a internal Gramps identifier"), COPY_MEDIA_RENAME],
             [_("Copy, keep file names unchanged"), COPY_MEDIA_UNCHANGED],
             [_("Do not copy, reference existing files"), REFERENCE_MEDIA],
         ]
-        copy_media = EnumeratedListOption(_("Images and media objects"), str(copy_media_opts[0][1]))
+        copy_media = EnumeratedListOption(_("Images and media"), str(copy_media_opts[0][1]))
         for trans, opt in copy_media_opts:
             copy_media.add_item(str(opt), trans)
-        copy_media.set_help(_("Whether to make a copy of the media objects."))
+        copy_media.set_help(_("Whether to make a copy of the media"))
         addopt("copy_media", copy_media)
 
         print_notes_type = BooleanOption(_("Print the notes type"), True)
