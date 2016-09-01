@@ -61,13 +61,6 @@ function BodyDecorate()
 		BuildMenu();
 	}
 	
-	// Manage search form events if any
-	if (!menuless || searchEmbedded)
-	{
-		$('#dwr-search-txt').val(Dwr.search.Txt);
-		$('#dwr-search2-txt').val(Dwr.search.Txt);
-	}
-	
 	// Text for the header
 	if (HEADER != '') $('body').prepend(
 		'<div id="dwr-header">' +
@@ -81,6 +74,16 @@ function BodyDecorate()
 		'<div id="dwr-footer" class="panel-footer">' +
 		FOOTER + COPYRIGHT + ct +
 		'</div>');
+		
+	// Create embedded search forms
+	var esf = $('.embed-search');
+	for (var i = 0; i < esf.length; i += 1) $(esf).html(embedSearchText());
+	
+	// Set search form defaut value
+	for (var i = 0; i < nbSearchForms; i += 1)
+	{
+		// $('#dwr-search-' + nbSearchForms + '-txt').val(Dwr.search.Txt); does not work completely, and is counter-intuitive.
+	}
 		
 	// Bootstrap responsive design detection
 	// $('body').append(
@@ -594,8 +597,7 @@ function FsearchExec(n)
 {
 	// Search input submission
 	// n: 0 = search input in the navbar, 1 = search input embedded in page
-	if (n == 0) Dwr.search.Txt = $('#dwr-search-txt').val();
-	if (n == 1) Dwr.search.Txt = $('#dwr-search2-txt').val();
+	Dwr.search.Txt = $('#dwr-search-' + n + '-txt').val();
 	Dwr.search.Idx = -1;
 	Dwr.search.Fdx = -1;
 	Dwr.search.Mdx = -1;
@@ -608,6 +610,8 @@ function FsearchExec(n)
 }
 DwrClass.prototype.FsearchExec = FsearchExec;
 
+
+var nbSearchForms = 0;
 
 function BuildMenu()
 {
@@ -631,11 +635,12 @@ function BuildMenu()
 	// Text for the form
 	var txt_form1 = '';
 	txt_form1 += '<div class="pull-right">';
-	txt_form1 += '<form class="navbar-form" role="search" onsubmit="return Dwr.FsearchExec(0)">';
+	txt_form1 += '<form class="navbar-form" role="search" onsubmit="return Dwr.FsearchExec(' + nbSearchForms + ')">';
 	txt_form1 += '<div class="input-group">';
-	txt_form1 += '<input id="dwr-search-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
+	txt_form1 += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
 	txt_form1 += '<div class="input-group-btn">';
 	txt_form1 += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
+	nbSearchForms += 1;
 	txt_form1 += '</div>';
 	txt_form1 += '</div>';
 	if (INC_PAGECONF)
@@ -699,25 +704,22 @@ function BuildMenu()
 }
 
 
-DwrClass.prototype.embedSearch = function()
-{
-	// Build the embedded search input form
-	document.write(Dwr.embedSearchText());
-}
-DwrClass.prototype.embedSearchText = function()
+function embedSearchText()
 {
 	// Build the embedded search input form
 	var txt_form = '';
-	txt_form += '<form id="embed_form_search" class="form-inline role="search" onsubmit="return Dwr.FsearchExec(1)">';
+	txt_form += '<form class="form-inline role="search" onsubmit="return Dwr.FsearchExec(' + nbSearchForms + ')">';
 	txt_form += '<div class="input-group">';
-	txt_form += '<input id="dwr-search2-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
+	txt_form += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
 	txt_form += '<div class="input-group-btn">';
 	txt_form += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	txt_form += '</div>';
 	txt_form += '</div>';
 	txt_form += '</form>';
+	nbSearchForms += 1;
 	searchEmbedded = true;
 	return(txt_form);
 }
+DwrClass.prototype.embedSearchText = embedSearchText;
 
 })(this);

@@ -299,7 +299,7 @@ li p {
 }
 .svg-popup {
   max-width: initial;
-  z-index: 1;
+  z-index: 111;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
@@ -308,7 +308,7 @@ li p {
 }
 .dropdown-menu
 {
-  z-index: 2;
+  z-index: 222;
 }
 /*===================================================== Tree configuration page */
 #svg-type {
@@ -327,7 +327,6 @@ li p {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100vw;
   height: 100vh;
   background-color: #FFFFFF;

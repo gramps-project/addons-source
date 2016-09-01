@@ -2713,12 +2713,7 @@ class DynamicWebReport(Report):
         '''
         text = html_text(html)
         # __SEARCH_FORM__ is replaced by a search form
-        text = text.replace("__SEARCH_FORM__",
-            "<script language='javascript'>\n"
-            "<!--\n"
-            "Dwr.embedSearch();\n"
-            "//-->\n"
-            "</script>\n")
+        text = text.replace("__SEARCH_FORM__", "<div class='embed-search'></div>\n")
         # __NB_INDIVIDUALS__ is replaced by the number of persons
         # __NB_FAMILIES__ is replaced by the number of families
         # __NB_MEDIA__ is replaced by the number of media objects

@@ -3612,7 +3612,7 @@ function SearchObjects()
 		if (Dwr.search.Txt != '')
 		{
 			html += '<p>' + _('No matches found') + '</p>';
-			$('#dwr-search-txt').focus();
+			$('#dwr-search-0-txt').focus();
 		}
 		html += '<p>' + _('Use the search box above in order to find a person.') + '</p>';
 	}
