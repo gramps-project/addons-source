@@ -157,6 +157,30 @@ function buildDataArray(table, field)
 	window[table + '_' + field] = data;
 }
 
+function PrepareFieldSplitScripts(names_fields)
+{
+	var scripts = [];
+	for (var i = 0; i < names_fields.length; i += 1)
+	{
+		var name = names_fields[i][0];
+		var field = names_fields[i][1];
+		if (preloadMode)
+		{
+			// First pass: preload  data
+			scripts = scripts.concat(NameSplitScripts(name, field));
+		}
+		else
+		{
+			// Second pass: Merge preloaded data into optimized arrays
+			buildDataArray(name, field);
+		}
+	}
+	// Preload data
+	if (preloadMode) PreloadScripts(scripts, false);
+}
+DwrClass.prototype.PrepareFieldSplitScripts = PrepareFieldSplitScripts;
+
+
 //=================================================================
 //======================================================= Constants
 //=================================================================
@@ -185,7 +209,6 @@ DwrClass.prototype.PAGE_SVG_TREE_CONF = i++;
 DwrClass.prototype.PAGE_SVG_TREE_SAVE = i++;
 DwrClass.prototype.PAGE_STATISTICS = i++;
 DwrClass.prototype.PAGE_SURNAMES_INDEX = i++;
-DwrClass.prototype.PAGE_SURNAMES_INDEX2 = i++;
 DwrClass.prototype.PAGE_SURNAME_INDEX = i++;
 DwrClass.prototype.PAGE_PERSONS_INDEX = i++;
 DwrClass.prototype.PAGE_FAMILIES_INDEX = i++;
@@ -269,8 +292,10 @@ function optimizedHrefFunction(table)
 	var searchStringArgs = {
 		MapExpanded: false // Reset map
 	};
-	searchStringArgs[SearchStringField[table]] = -1;
+	var old_dx = Dwr.search[SearchStringField[table]];
+	Dwr.search[SearchStringField[table]] = -1;
 	var url = PageFile[table] + '?' + Dwr.BuildSearchString(searchStringArgs) + '&' + UrlField[table] + '=';
+	Dwr.search[SearchStringField[table]] = old_dx;
 	return function(dx) {
 		return(url + dx);
 	}
@@ -288,8 +313,8 @@ var placeHref = hrefFunction('P');
 var placeRef = refFunction('P');
 var repoHref = hrefFunction('R');
 var repoRef = refFunction('R');
-var surnameHref = hrefFunction('R');
-var surnameRef = refFunction('R');
+var surnameHref = hrefFunction('N');
+var surnameRef = refFunction('N');
 
 DwrClass.prototype.indiHref = indiHref;
 DwrClass.prototype.indiRef = indiRef;
@@ -306,13 +331,24 @@ DwrClass.prototype.repoRef = repoRef;
 DwrClass.prototype.surnameHref = surnameHref;
 DwrClass.prototype.surnameRef = surnameRef;
 
-var indiHrefOptimized = optimizedHrefFunction('I')
-var famHrefOptimized = optimizedHrefFunction('F');
-var mediaHrefOptimized = optimizedHrefFunction('M');
-var sourceHrefOptimized = optimizedHrefFunction('S');
-var placeHrefOptimized = optimizedHrefFunction('P');
-var repoHrefOptimized = optimizedHrefFunction('R');
-var surnameHrefOptimized = optimizedHrefFunction('R');
+var indiHrefOptimized;
+var famHrefOptimized;
+var mediaHrefOptimized;
+var sourceHrefOptimized;
+var placeHrefOptimized;
+var repoHrefOptimized;
+var surnameHrefOptimized;
+
+function computeOptimizedHref()
+{
+	indiHrefOptimized = optimizedHrefFunction('I');
+	famHrefOptimized = optimizedHrefFunction('F');
+	mediaHrefOptimized = optimizedHrefFunction('M');
+	sourceHrefOptimized = optimizedHrefFunction('S');
+	placeHrefOptimized = optimizedHrefFunction('P');
+	repoHrefOptimized = optimizedHrefFunction('R');
+	surnameHrefOptimized = optimizedHrefFunction('N');
+}
 
 function m_list_from_mr(mr_list)
 {
@@ -1477,7 +1513,7 @@ function mediaButtonPageClick(page_delta, page)
 
 function mediaButtonMaxClick()
 {
-	window.location.href = M(Dwr.search.Mdx).path;
+	window.location.href = M(Dwr.search.Mdx, 'path');
 	return(false);
 }
 
@@ -1703,14 +1739,44 @@ function printRepo(rdx)
 }
 
 
-//=================================================================
-//=========================================================== Index
-//=================================================================
+//=========================================================================================
+//=========================================================================================
+//=========================================================================================
+//=================================================================================== Index
+//=========================================================================================
+//=========================================================================================
+//=========================================================================================
 
-var TABLE_OPTIMIZATION_LIMIT = 3000; // Fancy features are disabled above this limit
+var TABLE_OPTIMIZATION_LIMIT = 3000; // Fancy features are disabled above this limit (for indexes shown as as tables)
+var LIST_OPTIMIZATION_LIMIT = 1000; // Fancy features are disabled above this limit (for indexes shown as lists)
 
-function printIndex(id, data, defaultsort, columns)
+function PrintIndex(id, header, type, fTable, fList, data)
+{
+	if (preloadMode)
+	{
+		if (type) fTable(data);
+		else fList(data);
+		return;
+	}
+	
+	// Get all data if not specified
+	if (typeof(data) !== 'undefined')
+	{
+		header = '';
+	}
+	else
+	{
+		data = new Array(DB_SIZES[id]);
+		for (var x = 0; x < DB_SIZES[id]; x++) data[x] = x;
+	}
+	
+	if (type) return fTable(header, data);
+	return fList(header, data);
+}
+
+function PrintIndexTable(id, header, data, defaultsort, columns)
 // id: table ID
+// header: Page header
 // data: Array of data to be indexed, it is a 2D array
 // defaultsort: Default ordering (sorting), corresponding to the Datatables 'order' option
 // columns: Array of columns descriptions:
@@ -1820,9 +1886,17 @@ function printIndex(id, data, defaultsort, columns)
 			'orderable': (columns[k].fsort !== false) && (data_copy.length <= TABLE_OPTIMIZATION_LIMIT)
 		});
 	}
+	
+	// Print title
+	var html = '';
+	if (header != '')
+	{
+		html += '<h2 class="page-header">' + header + '</h2>';
+		data = new Array(DB_SIZES['I']);
+		for (var x = 0; x < DB_SIZES['I']; x++) data[x] = x;
+	}
 
 	// Print table
-	var html = '';
 	if (data_copy.length == 0)
 	{
 		html += '<p>' + _('None') + '</p>';
@@ -1896,53 +1970,167 @@ function printIndex(id, data, defaultsort, columns)
 
 	return(html);
 }
+	
+function printIndexList(header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
+// header: Page header
+// data: Array of data to be indexed
+// fText, fTextOptimized, fLetter: function taking a <data> row as parameter.
+// fText, fTextOptimized: gives the text to print for the row (fTextOptimized is used above LIST_OPTIMIZATION_LIMIT elements)
+// separator: separator printed between items
+// sortingAttributes: Array describing for each way of sorting the data
+//    title: name for the sorting way
+//    attr: attribute name identifying the sorting way
+//    fSort: sorting function
+//    fLetter: Section header for the row (None if no sections)
+{
+	// Optimization
+	if (data.length > LIST_OPTIMIZATION_LIMIT)
+	{
+		console.log('Too many data (' + data.length + '). Disabling fancy features.');
+		fText = fTextOptimized;
+	}
+	
+	// Get saved state
+	var lsName = window.location.pathname + ' ' + header + ' sorting';
+	var sort_way = localStorage.getItem(lsName);
+	var sort_k = defaultSort;
+	for (var i = 0; i < sortingAttributes.length; i += 1)
+	{
+		if (sortingAttributes[i].attr == sort_way) sort_k = i;
+	}
+	
+	// Print header and sorting way selector
+	var html = '';
+	if (header != '')
+	{
+		if (sortingAttributes.length < 2)
+		{
+			html += '<h2 class="page-header">' + header + '</h2>';	
+		}
+		else
+		{
+			html += '<div class="row">';
+			html += '<div class="col-xs-12 col-sm-6"><h2 class="page-header">' + header + '</h2></div>';	
+			html += '<form class="form-horizontal col-xs-12 col-sm-6 dwr-form-sort-by"><div class="form-group">';
+			html += '<label class="control-label col-xs-4" for="dwr-input-sort-by">' + _('Sort by:') + '</label>';
+			html += '<div class="col-xs-8"><select id="dwr-input-sort-by" class="form-control">';
+			for (var i = 0; i < sortingAttributes.length; i += 1)
+			{
+				html += '<option value="' + sortingAttributes[i].attr + '"' + (i == sort_k ? ' selected' : '') + '>';
+				html += sortingAttributes[i].title + '</option>';
+			}
+			html += '</select></div></div></form></div>';
+		}
+	}
+	$(window).load(function() {
+		$('#dwr-input-sort-by').change(function() {
+			localStorage.setItem(lsName, $(this).val());
+			window.location.replace(window.location.href);
+			return(false);
+		});
+	});
+	
+	// Sort data
+	if (sortingAttributes.length > 0) data.sort(sortingAttributes[sort_k].fSort);
+	
+	// Split data into several sections if fLetter is provided
+	var titles = [];
+	var texts = [];
+	if (sortingAttributes.length > 0 && sortingAttributes[sort_k].fLetter)
+	{
+		// The data can be grouped by sections
+		// Build the titles and texts
+		var titles = [];
+		var texts = [];
+		for (var x = 0; x < data.length; x++)
+		{
+			var letter = sortingAttributes[sort_k].fLetter(x);
+			if ($.inArray(letter, titles) == -1)
+			{
+				// New letter section
+				titles.push(letter);
+				texts[letter] = fText(x);
+			}
+			else
+			{
+				texts[letter] += separator + fText(x);
+			}
+		}
+	}
+	if (titles.length > 1)
+	{
+		// Print list into several sections, each with a letter as header, if there are more than 1 section
+		for (i = 0; i < titles.length; i++)
+		{
+			var letter = titles[i];
+			html += '<div class="panel panel-default">';
+			if (letter != '')
+			{
+				html += '<div class="panel-heading dwr-collapsible collapsed" data-toggle="collapse" data-target="#panel_index_' + i + '">';
+				html += '<h5 class="panel-title">' + letter + '</h5>';
+				html += '</div>';
+				html += '<div id="panel_index_' + i + '" class="panel-collapse collapse">';
+				html += '<div class="panel-body">';
+				html += texts[letter];
+				html += '</div>';
+				html += '</div>';
+			}
+			else
+			{
+				html += '<div id="panel_index_' + i + '" class="panel-collapse collapse in">';
+				html += '<div class="panel-body">';
+				html += texts[letter];
+				html += '</div>';
+				html += '</div>';
+			}
+			html += '</div>';
+		}
+	}
+	else
+	{
+		// The data is not split into sections (or less than 2 sections)
+		for (x = 0; x < data.length; x++)
+		{
+			if (x > 0) html += separator;
+			html += fText(x);
+		}
+		html += '<p>&nbsp;</p>';
+	}
 
+	// When no data
+	if (data.length == 0)
+	{
+		html += '<p>' + _('None') + '</p>';
+	}
+
+	return(html);
+}
+
+
+//=========================================================================================
+//=========================================================================== Persons Index
+//=========================================================================================
 
 function htmlPersonsIndex(data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('I', 'name'),
-			NameSplitScripts('I', 'gender'),
-			(Dwr.search.IndexShowBirth ? NameSplitScripts('I', 'birth_year') : []),
-			(Dwr.search.IndexShowDeath ? NameSplitScripts('I', 'death_year') : []),
-			(Dwr.search.IndexShowPartner ? ([].concat.apply([], [
-				NameSplitScripts('I', 'fams'),
-				NameSplitScripts('F', 'spou')])) : []),
-			(Dwr.search.IndexShowParents ? ([].concat.apply([], [
-				NameSplitScripts('I', 'famc'),
-				NameSplitScripts('F', 'spou')])) : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('I', 'gid'))]),
-			false);
-		return;
-	}
+	return PrintIndex('I', _('Persons Index'), Dwr.search.IndexTypeI, htmlPersonsIndexTable, htmlPersonsIndexList, data);
+}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('I', 'name');
-	buildDataArray('I', 'gender');
-	if (Dwr.search.IndexShowBirth) buildDataArray('I', 'birth_year');
-	if (Dwr.search.IndexShowDeath) buildDataArray('I', 'death_year');
-	if (Dwr.search.IndexShowPartner)
-	{
-		buildDataArray('I', 'fams');
-		buildDataArray('F', 'spou');
-	}
-	if (Dwr.search.IndexShowParents)
-	{
-		buildDataArray('I', 'famc');
-		buildDataArray('F', 'spou');
-	}
-	if (!Dwr.search.HideGid) buildDataArray('I', 'gid');
-
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Persons Index') + '</h2>';
-		data = new Array(DB_SIZES['I']);
-		for (var x = 0; x < DB_SIZES['I']; x++) data[x] = x;
-	}
+function htmlPersonsIndexTable(header, data)
+{
+	var scripts = [
+		['I', 'name'],
+		['I', 'gender']
+	];
+	if (Dwr.search.IndexShowBirth) scripts.push(['I', 'birth_year']);
+	if (Dwr.search.IndexShowDeath) scripts.push(['I', 'death_year']);
+	if (Dwr.search.IndexShowPartner) scripts.push(['I', 'fams'], ['F', 'spou']);
+	if (Dwr.search.IndexShowParents) scripts.push(['I', 'famc'], ['F', 'spou']);
+	if (!Dwr.search.HideGid) scripts.push(['I', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
+	
+	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
 		ftext: function(x, col) {return I_name[data[x]]},
@@ -2008,8 +2196,66 @@ function htmlPersonsIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return I_gid[data[x]]}
 	});
-	html += printIndex('I', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('I', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
+}
+
+
+function htmlPersonsIndexList(header, data)
+{
+	var scripts = [
+		['I', 'name'],
+		['I', 'letter'],
+		['I', 'birth_year'],
+		['I', 'death_year'],
+		['I', 'birth_sdn'],
+		['I', 'death_sdn']
+	];
+	if (!Dwr.search.HideGid) scripts.push(['I', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
+
+	var fText = function(x)
+	{
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">' +
+			I_name[data[x]] + ' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
+			(Dwr.search.HideGid ? '' : gidBadge(I_gid[data[x]])) +
+			'</a></span>';
+		return txt;
+	};
+	var fTextOptimized = function(x) {
+		return(
+			'<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) +'">' +
+			(Dwr.search.HideGid ? '' : I_gid[data[x]] + ': ') +
+			I_name[data[x]] + ' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
+			'</a></span>');
+	};
+	var sortingAttributes = [
+		{
+			title: _('Name'),
+			attr: 'I.name',
+			fSort: function(a, b) {return(a - b)},
+			fLetter: function(x) {return I_letter[data[x]];}
+		},
+		{
+			title: _('Birth date'),
+			attr: 'I.birth_date',
+			fSort: function(a, b) {return(I_birth_sdn[b] - I_birth_sdn[a])},
+			fLetter: false
+		},
+		{
+			title: _('Death date'),
+			attr: 'I.death_date',
+			fSort: function(a, b) {return(I_death_sdn[b] - I_death_sdn[a])},
+			fLetter: false
+		}
+	];
+	if (!Dwr.search.HideGid) sortingAttributes.push({
+		title: _('ID'),
+		attr: 'I.gid',
+		fSort: function(a, b) {return cmp(I_gid[a], I_gid[b])},
+		fLetter: false
+	});
+	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 function printIndexSpouseText(fdx, col)
@@ -2030,35 +2276,28 @@ function printIndexSpouseIdx(fdx, col)
 }
 
 
+//=========================================================================================
+//========================================================================== Families Index
+//=========================================================================================
+
 function htmlFamiliesIndex(data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('I', 'name'),
-			NameSplitScripts('I', 'gender'),
-			NameSplitScripts('F', 'spou'),
-			(Dwr.search.IndexShowMarriage ? NameSplitScripts('F', 'marr_year') : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('F', 'gid'))]),
-			false);
-		return;
-	}
+	return PrintIndex('F', _('Families Index'), Dwr.search.IndexTypeF, htmlFamiliesIndexTable, htmlFamiliesIndexList, data);
+}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('I', 'name');
-	buildDataArray('I', 'gender');
-	buildDataArray('F', 'spou');
-	if (Dwr.search.IndexShowMarriage) buildDataArray('F', 'marr_year');
-	if (!Dwr.search.HideGid) buildDataArray('F', 'gid');
+function htmlFamiliesIndexTable(header, data)
+{
+	var scripts = [
+		['I', 'name'],
+		['I', 'gender'],
+		['F', 'spou']
+	];
+	if (Dwr.search.IndexShowMarriage) scripts.push(['F', 'marr_year']);
+	if (!Dwr.search.HideGid) scripts.push(['F', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Families Index') + '</h2>';
-		data = new Array(DB_SIZES['F']);
-		for (var x = 0; x < DB_SIZES['F']; x++) data[x] = x;
-	}
+	// Define columns and build table
 	var columns = [{
 		title: _('Father'),
 		ftext: function(x, col) {return(printIndexSpouseText(data[x], col))},
@@ -2078,10 +2317,63 @@ function htmlFamiliesIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return F_gid[data[x]]}
 	});
-	html += printIndex('F', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('F', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
 
+
+function htmlFamiliesIndexList(header, data)
+{
+	var scripts = [
+		['F', 'name'],
+		['F', 'marr_year'],
+		['F', 'marr_sdn']
+	];
+	if (!Dwr.search.HideGid) scripts.push(['F', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
+
+	var fText = function(x)
+	{
+		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">' +
+			F_name[data[x]] + ' (' + F_marr_year[data[x]] + ')' +
+			(Dwr.search.HideGid ? '' : gidBadge(F_gid[data[x]])) +
+			'</a></span>';
+		return txt;
+	};
+	var fTextOptimized = function(x) {
+		return(
+			'<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) +'">' +
+			(Dwr.search.HideGid ? '' : F_gid[data[x]] + ': ') +
+			F_name[data[x]] + ' (' + F_marr_year[data[x]] + ')' +
+			'</a></span>');
+	};
+	var sortingAttributes = [
+		{
+			title: _('Name'),
+			attr: 'F.name',
+			fSort: function(a, b) {return(a - b)},
+			fLetter: false
+		},
+		{
+			title: _('Marriage date'),
+			attr: 'F.marr_date',
+			fSort: function(a, b) {return(F_marr_sdn[b] - F_marr_sdn[a])},
+			fLetter: false
+		}
+	];
+	if (!Dwr.search.HideGid) sortingAttributes.push({
+		title: _('ID'),
+		attr: 'F.gid',
+		fSort: function(a, b) {return cmp(F_gid[a], F_gid[b])},
+		fLetter: false
+	});
+	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+}
+
+
+//=========================================================================================
+//==================================================================== Index back reference
+//=========================================================================================
 
 function indexBkrefName(type, referencedType, referencedDx, bk_field, objects, name_prop, ref)
 {
@@ -2130,57 +2422,39 @@ function indexBkrefName(type, referencedType, referencedDx, bk_field, objects, n
 }
 
 
+//=========================================================================================
+//============================================================================= Media Index
+//=========================================================================================
+
 function htmlMediaIndex(data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('M', 'thumb'),
-			NameSplitScripts('M', 'title'),
-			NameSplitScripts('M', 'gramps_path'),
-			NameSplitScripts('M', 'date'),
-			NameSplitScripts('M', 'date_sdn'),
-			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
-				NameSplitScripts('M', 'bki'),
-				NameSplitScripts('M', 'bkf'),
-				NameSplitScripts('M', 'bks'),
-				NameSplitScripts('M', 'bkp'),
-				NameSplitScripts('I', 'name'),
-				NameSplitScripts('F', 'name'),
-				NameSplitScripts('S', 'title'),
-				NameSplitScripts('P', 'name')])) : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('M', 'gid'))]),
-			false);
-		return;
-	}
+	return PrintIndex('M', _('Media Index'), true, htmlMediaIndexTable, null, data);
+}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('M', 'thumb');
-	buildDataArray('M', 'title');
-	buildDataArray('M', 'gramps_path');
-	buildDataArray('M', 'date');
-	buildDataArray('M', 'date_sdn');
-	if (Dwr.search.IndexShowBkrefType)
-	{
-		buildDataArray('M', 'bki');
-		buildDataArray('M', 'bkf');
-		buildDataArray('M', 'bks');
-		buildDataArray('M', 'bkp');
-		buildDataArray('I', 'name');
-		buildDataArray('F', 'name');
-		buildDataArray('S', 'title');
-		buildDataArray('P', 'name');
-	}
-	if (!Dwr.search.HideGid) buildDataArray('M', 'gid');
+function htmlMediaIndexTable(header, data)
+{
+	var scripts = [
+		['M', 'thumb'],
+		['M', 'title'],
+		['M', 'gramps_path'],
+		['M', 'date'],
+		['M', 'date_sdn']
+	];
+	if (Dwr.search.IndexShowBkrefType) scripts.push(
+		['M', 'bki'],
+		['M', 'bkf'],
+		['M', 'bks'],
+		['M', 'bkp'],
+		['I', 'name'],
+		['F', 'name'],
+		['S', 'title'],
+		['P', 'name']
+	);
+	if (!Dwr.search.HideGid) scripts.push(['M', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Media Index') + '</h2>';
-		data = new Array(DB_SIZES['M']);
-		for (var x = 0; x < DB_SIZES['M']; x++) data[x] = x;
-	}
+	// Define columns and build table
 	var columns = [{
 		title: '',
 		ftext: function(x, col) {return(
@@ -2226,62 +2500,43 @@ function htmlMediaIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return M_gid[data[x]]}
 	});
-	html += printIndex('M', data, [[(Dwr.search.HideGid ? 1 : 2), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('M', header, data, [[(Dwr.search.HideGid ? 1 : 2), 'asc']], columns);
 }
 
 
+//=========================================================================================
+//=========================================================================== Sources Index
+//=========================================================================================
+
 function htmlSourcesIndex(data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('S', 'title'),
-			NameSplitScripts('S', 'author'),
-			NameSplitScripts('S', 'abbrev'),
-			NameSplitScripts('S', 'publ'),
-			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
-				NameSplitScripts('S', 'bkc'),
-				NameSplitScripts('C', 'bki'),
-				NameSplitScripts('C', 'bkf'),
-				NameSplitScripts('C', 'bkm'),
-				NameSplitScripts('C', 'bkp'),
-				NameSplitScripts('I', 'name'),
-				NameSplitScripts('F', 'name'),
-				NameSplitScripts('M', 'title'),
-				NameSplitScripts('P', 'name')])) : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('S', 'gid'))]),
-			false);
-		return;
-	}
+	return PrintIndex('S', _('Sources Index'), Dwr.search.IndexTypeS, htmlSourcesIndexTable, htmlSourcesIndexList, data);
+}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('S', 'title');
-	buildDataArray('S', 'author');
-	buildDataArray('S', 'abbrev');
-	buildDataArray('S', 'publ');
-	if (Dwr.search.IndexShowBkrefType)
-	{
-		buildDataArray('S', 'bkc');
-		buildDataArray('C', 'bki');
-		buildDataArray('C', 'bkf');
-		buildDataArray('C', 'bkm');
-		buildDataArray('C', 'bkp');
-		buildDataArray('I', 'name');
-		buildDataArray('F', 'name');
-		buildDataArray('M', 'title');
-		buildDataArray('P', 'name');
-	}
-	if (!Dwr.search.HideGid) buildDataArray('S', 'gid');
+function htmlSourcesIndexTable(header, data)
+{
+	var scripts = [
+		['S', 'title'],
+		['S', 'author'],
+		['S', 'abbrev'],
+		['S', 'publ']
+	];
+	if (Dwr.search.IndexShowBkrefType) scripts.push(
+		['S', 'bkc'],
+		['C', 'bki'],
+		['C', 'bkf'],
+		['C', 'bkm'],
+		['C', 'bkp'],
+		['I', 'name'],
+		['F', 'name'],
+		['M', 'title'],
+		['P', 'name']
+	);
+	if (!Dwr.search.HideGid) scripts.push(['S', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Sources Index') + '</h2>';
-		data = new Array(DB_SIZES['S']);
-		for (var x = 0; x < DB_SIZES['S']; x++) data[x] = x;
-	}
+	// Define columns and build table
 	var columns = [{
 		title: _('Title'),
 		ftext: function(x, col) {return(S_title[data[x]]);},
@@ -2327,8 +2582,68 @@ function htmlSourcesIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return S_gid[data[x]]}
 	});
-	html += printIndex('S', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('S', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
+}
+
+
+function htmlSourcesIndexList(header, data)
+{
+	var scripts = [
+		['S', 'title'],
+		['S', 'letter'],
+		['S', 'author']
+	];
+	if (!Dwr.search.HideGid) scripts.push(['S', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
+
+	var fText = function(x)
+	{
+		var txt = '<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) + '">' +
+			S_title[data[x]] +
+			(Dwr.search.HideGid ? '' : gidBadge(S_gid[data[x]])) +
+			' (' + S_author[data[x]] + ')' +
+			'</a></span>';
+		return txt;
+	};
+	var fTextOptimized = function(x) {
+		return(
+			'<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) +'">' +
+			(Dwr.search.HideGid ? '' : S_gid[data[x]] + ': ') +
+			S_title[data[x]] + ' (' + S_author[data[x]] + ')' +
+			'</a></span>');
+	};
+	var sortingAttributes = [
+		{
+			title: _('Title'),
+			attr: 'S.title',
+			fSort: function(a, b) {return(a - b)},
+			fLetter: function(x) {return S_letter[data[x]];}
+		},
+		{
+			title: _('Author'),
+			attr: 'S.author',
+			fSort: function(a, b) {return cmp(S_author[a], S_author[b])},
+			fLetter: false
+		}
+	];
+	if (!Dwr.search.HideGid) sortingAttributes.push({
+		title: _('ID'),
+		attr: 'S.gid',
+		fSort: function(a, b) {return cmp(S_gid[a], S_gid[b])},
+		fLetter: false
+	});
+	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+}
+
+
+//=========================================================================================
+//============================================================================ Places Index
+//=========================================================================================
+
+function htmlPlacesIndex(data)
+{
+	return PrintIndex('P', _('Places Index'), true, htmlPlacesIndexTable, null, data);
 }
 
 
@@ -2352,52 +2667,27 @@ function printPlacesIndexColCoord(pdx, col)
 	return(txt);
 }
 
-
-function htmlPlacesIndex(data)
+function htmlPlacesIndexTable(header, data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('P', 'name'),
-			NameSplitScripts('P', 'coords'),
-			NameSplitScripts('P', 'type'),
-			NameSplitScripts('P', 'code'),
-			NameSplitScripts('P', 'locations'),
-			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
-				NameSplitScripts('P', 'enclosed_by'),
-				NameSplitScripts('P', 'bki'),
-				NameSplitScripts('P', 'bkf'),
-				NameSplitScripts('I', 'name'),
-				NameSplitScripts('F', 'name')])) : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('P', 'gid'))]),
-			false);
-		return;
-	}
+	var scripts = [
+		['P', 'name'],
+		['P', 'coords'],
+		['P', 'type'],
+		['P', 'code'],
+		['P', 'locations']
+	];
+	if (Dwr.search.IndexShowBkrefType) scripts.push(
+		['P', 'enclosed_by'],
+		['P', 'bki'],
+		['P', 'bkf'],
+		['I', 'name'],
+		['F', 'name']
+	);
+	if (!Dwr.search.HideGid) scripts.push(['P', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('P', 'name');
-	buildDataArray('P', 'coords');
-	buildDataArray('P', 'type');
-	buildDataArray('P', 'code');
-	buildDataArray('P', 'locations');
-	if (Dwr.search.IndexShowBkrefType)
-	{
-		buildDataArray('P', 'enclosed_by');
-		buildDataArray('P', 'bki');
-		buildDataArray('P', 'bkf');
-		buildDataArray('I', 'name');
-		buildDataArray('F', 'name');
-	}
-	if (!Dwr.search.HideGid) buildDataArray('P', 'gid');
-
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Places Index') + '</h2>';
-		data = new Array(DB_SIZES['P']);
-		for (var x = 0; x < DB_SIZES['P']; x++) data[x] = x;
-	}
+	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
 		ftext: function(x, col) {return(P_name[data[x]]);},
@@ -2451,36 +2741,23 @@ function htmlPlacesIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return P_gid[data[x]]}
 	});
-	html += printIndex('P', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('P', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
 
 
+//=========================================================================================
+//========================================================================= Addresses Index
+//=========================================================================================
+
 function htmlAddressesIndex()
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('I', 'name'),
-			NameSplitScripts('I', 'addrs'),
-			NameSplitScripts('I', 'urls')]),
-			false);
-		return;
-	}
-
-	// Merge preloaded data into optimized arrays
-	buildDataArray('I', 'name');
-	buildDataArray('I', 'addrs');
-	buildDataArray('I', 'urls');
-
-	// Optimize indiHref calls
-	var searchString = Dwr.BuildSearchString({
-		Idx: -1,
-		MapExpanded: false
-	});
-	var indiHrefOptimized = function(idx) {
-		return('person.html?' + searchString + '&idx=' + idx);
-	};
+	var scripts = [
+		['I', 'name'],
+		['I', 'addrs'],
+		['I', 'urls']
+	];
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
 	// Build addresses table
 	var adtable = [];
@@ -2494,8 +2771,6 @@ function htmlAddressesIndex()
 			adtable.push([x_i, empty_loc, I(x_i, 'urls')[x_url]])
 	}
 	// Print table
-	var html = '';
-	html += '<h2 class="page-header">' + _('Addresses') + '</h2>';
 	var columns = [{
 		title: _('Person'),
 		ftext: function(x_ad, col) {return(I(adtable[x_ad][0], 'name'));},
@@ -2509,48 +2784,36 @@ function htmlAddressesIndex()
 		ftext: function(x_ad, col) {return(adtable[x_ad][2].descr || adtable[x_ad][2].uri);},
 		fhref: function(x_ad) {return(adtable[x_ad][2].uri);}
 	}];
-	html += printIndex('addr', adtable, [[0, 'asc']], columns);
-	return(html);
+	return PrintIndexTable('addr', _('Addresses'), adtable, [[0, 'asc']], columns);
 }
 
 
+//=========================================================================================
+//====================================================================== Repositories Index
+//=========================================================================================
+
 function htmlReposIndex(data)
 {
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('R', 'name'),
-			NameSplitScripts('R', 'type'),
-			NameSplitScripts('R', 'addrs'),
-			NameSplitScripts('R', 'urls'),
-			(Dwr.search.IndexShowBkrefType ? ([].concat.apply([], [
-				NameSplitScripts('R', 'bks'),
-				NameSplitScripts('S', 'title')])) : []),
-			(Dwr.search.HideGid ? [] : NameSplitScripts('R', 'gid'))]),
-			false);
-		return;
-	}
+	return PrintIndex('R', _('Repositories Index'), true, htmlReposIndexTable, null, data);
+}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('R', 'name');
-	buildDataArray('R', 'type');
-	buildDataArray('R', 'addrs');
-	buildDataArray('R', 'urls');
-	if (Dwr.search.IndexShowBkrefType)
-	{
-		buildDataArray('R', 'bks');
-		buildDataArray('S', 'title');
-	}
-	if (!Dwr.search.HideGid) buildDataArray('R', 'gid');
+function htmlReposIndexTable(header, data)
+{
+	var scripts = [
+		['R', 'name'],
+		['R', 'type'],
+		['R', 'addrs'],
+		['R', 'urls']
+	];
+	if (Dwr.search.IndexShowBkrefType) scripts.push(
+		['R', 'bks'],
+		['S', 'title']
+	);
+	if (!Dwr.search.HideGid) scripts.push(['R', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Build index
-	var html = '';
-	if (typeof(data) === 'undefined')
-	{
-		html += '<h2 class="page-header">' + _('Repositories') + '</h2>';
-		data = new Array(DB_SIZES['R']);
-		for (var x = 0; x < DB_SIZES['R']; x++) data[x] = x;
-	}
+	// Define columns and build table
 	var columns = [{
 		title: _('Repository'),
 		ftext: function(x, col) {return(R_name[data[x]]);},
@@ -2581,14 +2844,13 @@ function htmlReposIndex(data)
 		title: _('ID'),
 		ftext: function(x, col) {return R_gid[data[x]]}
 	});
-	html += printIndex('R', data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
-	return(html);
+	return PrintIndexTable('R', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
 
 
-//=================================================================
-//================================================== Surnames index
-//=================================================================
+//=========================================================================================
+//========================================================================== Surnames index
+//=========================================================================================
 
 function printSurnameIndex()
 {
@@ -2622,146 +2884,78 @@ function printSurnameIndex()
 	}
 }
 
-function surnameString(ndx, surname, number, optimize)
+
+function htmlSurnamesIndex(data)
 {
-	if (surname == '') surname = _('Without surname');
-	if (optimize)
-		return(
-			' &nbsp;<a href="surname.html?' + Dwr.BuildSearchString({Ndx: ndx}) + '">' +
-			surname + '</a>&nbsp;<b>(' + number + ')</b>&nbsp; ');
-	else
-		return(
-			'<span class="dwr-nowrap"><a href="surname.html?' + Dwr.BuildSearchString({Ndx: ndx}) + '">' +
-			surname + '</a> <span class="badge">' + number + '</span></span> ');
+	return PrintIndex('N', _('Surnames Index'), Dwr.search.IndexTypeN, htmlSurnamesIndexTable, htmlSurnamesIndexList, data);
 }
 
-var SURNAMES_OPTIMIZATION_LIMIT = 1000; // Fancy features are disabled above this limit
 
-function printSurnamesIndex()
+function htmlSurnamesIndexTable(header, data)
 {
-	// Page for all surnames sorted alphabetically
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('N', 'surname'),
-			NameSplitScripts('N', 'letter'),
-			NameSplitScripts('N', 'persons')]),
-			false);
-		return;
-	}
-
-	// Merge preloaded data into optimized arrays
-	buildDataArray('N', 'surname');
-	buildDataArray('N', 'letter');
-	buildDataArray('N', 'persons');
-
-	if (DB_SIZES['N'] > SURNAMES_OPTIMIZATION_LIMIT) console.log('Too many surnames (' + DB_SIZES['N'] + '). Disabling fancy features.');
+	var scripts = [
+		['N', 'surname'],
+		['N', 'persons']
+	];
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 	
-	// Build the surnames titles and texts
-	var titles = [];
-	var texts = [];
-	for (i = 0; i < DB_SIZES['N']; i++)
-	{
-		if (N_surname[i].length > 0)
-		{
-			var letter = N_letter[i];
-			if ($.inArray(letter, titles) == -1)
-			{
-				// New initial for the surname
-				titles.push(letter);
-				texts[letter] = '';
-			}
-			texts[letter] += surnameString(i, N_surname[i], N_persons[i].length, DB_SIZES['N'] > SURNAMES_OPTIMIZATION_LIMIT);
-		}
-		else
-		{
-			// Empty surname
-			titles.push('');
-			texts[''] = surnameString(i, N_surname[i], N_persons[i].length, DB_SIZES['N'] > SURNAMES_OPTIMIZATION_LIMIT);
-		}
-	}
-	// Print surnames as bootstrap collapsible panels
-	var txt = '';
-	for (i = 0; i < titles.length; i++)
-	{
-		var letter = titles[i];
-		txt += '<div class="panel panel-default">';
-		if (letter != '')
-		{
-			txt += '<div class="panel-heading dwr-collapsible collapsed" data-toggle="collapse" data-target="#panel_surname_' + i + '">';
-			txt += '<h5 class="panel-title">' + letter + '</h5>';
-			txt += '</div>';
-			txt += '<div id="panel_surname_' + i + '" class="panel-collapse collapse">';
-			txt += '<div class="panel-body">';
-			txt += texts[letter];
-			txt += '</div>';
-			txt += '</div>';
-		}
-		else
-		{
-			txt += '<div id="panel_surname_' + i + '" class="panel-collapse collapse in">';
-			txt += '<div class="panel-body">';
-			txt += texts[letter];
-			txt += '</div>';
-			txt += '</div>';
-		}
-		txt += '</div>';
-	}
-	return(
-		'<h2 class="page-header">' +
-		_('Surnames Index') +
-		' <small><a href="surnames2.html?' + Dwr.BuildSearchString() + '">' +
-		_('(sort by quantity)') +
-		'</a></small>' +
-		'</h2>' +
-		txt);
+	// Define columns and build table
+	var columns = [{
+		title: _('Surname'),
+		ftext: function(x, col) {return N_surname[data[x]]},
+		fhref: function(x) {return(surnameHrefOptimized(data[x]))},
+		fsort: function(x, col) {return data[x]},
+		empty: _('Without surname'),
+	}, {
+		title: _('Number'),
+		ftext: function(x, col) {return "" + N_persons[data[x]].length},	
+		fhref: false,
+		fsort: function(x, col) {return N_persons[data[x]].length},
+		empty: 0,
+	}];
+	return PrintIndexTable('N', header, data, [[0, 'asc']], columns);
 }
 
-function printSurnamesIndex2()
+
+function htmlSurnamesIndexList(header, data)
 {
-	// Page for all surnames sorted by number
-	if (preloadMode)
-	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('N', 'surname'),
-			NameSplitScripts('N', 'persons')]),
-			false);
-		return;
-	}
+	var scripts = [
+		['N', 'surname'],
+		['N', 'letter'],
+		['N', 'persons']
+	];
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('N', 'surname');
-	buildDataArray('N', 'persons');
-	
-	if (DB_SIZES['N'] > SURNAMES_OPTIMIZATION_LIMIT) console.log('Too many surnames (' + DB_SIZES['N'] + '). Disabling fancy features.');
-
-	var html =
-		'<h2 class="page-header">' +
-		_('Surnames Index') +
-		' <small><a href="surnames.html?' + Dwr.BuildSearchString() + '">' +
-		_('(sort by name)') +
-		'</a></small>' +
-		'</h2>';
-
-	// Build the surnames data
-	var surnames = new Array(DB_SIZES['N']);
-	for (i = 0; i < DB_SIZES['N']; i++)
-	{
-		surnames[i] = {
-			number: N_persons[i].length,
-			name: N_surname[i],
-			ndx: i
-		};
-	}
-	surnames.sort(function(a, b) {return(b.number - a.number)});
-
-	// Print surnames as bootstrap collapsible panels
-	for (i = 0; i < surnames.length; i++)
-	{
-		var surname = surnames[i];
-		html += surnameString(surname.ndx, surname.name, surname.number, DB_SIZES['N'] > SURNAMES_OPTIMIZATION_LIMIT);
-	}
-	return html;
+	var fText = function(x) {
+		var surname = N_surname[data[x]];
+		if (surname == '') surname = _('Without surname');
+		return(
+			' &nbsp;<span class="dwr-nowrap"><a href="' + surnameHrefOptimized(data[x]) + '">' +
+			surname + '</a>&nbsp;<span class="badge">' + N_persons[data[x]].length + '</span></span>&nbsp; ');
+	};
+	var fTextOptimized = function(x) {
+		var surname = N_surname[data[x]];
+		if (surname == '') surname = _('Without surname');
+		return(
+			' &nbsp;<a href="' + surnameHrefOptimized(data[x]) + '">' +
+			surname + '</a>&nbsp;<b>(' + N_persons[data[x]].length + ')</b>&nbsp; ');
+	};
+	var sortingAttributes = [
+		{
+			title: _('Surname'),
+			attr: 'N.surname',
+			fSort: function(a, b) {return(a - b)},
+			fLetter: function(x) {return N_letter[data[x]];}
+		},
+		{
+			title: _('Number'),
+			attr: 'N.number',
+			fSort: function(a, b) {return cmp(N_persons[b].length, N_persons[a].length)}
+		}
+	];
+	return printIndexList(header, data, fText, fTextOptimized, '', sortingAttributes, 0);
 }
 
 
@@ -3550,6 +3744,11 @@ function ConfigPage()
 //		['IncRepositories', _('Show repository pages'), ''],
 //		['IncNotes', _('Show notes'), ''],
 //		['IncAddresses', _('Show addresses'), '</div><hr><div class="row">'],
+		['IndexTypeN', _('Use a table format for the surnames index'), ''],
+		['IndexTypeI', _('Use a table format for the persons index'), ''],
+		['IndexTypeF', _('Use a table format for the families index'), ''],
+		['IndexTypeS', _('Use a table format for the sources index'), '</div><hr><div class="row">'],
+		// ['IndexTypeP', _('Use a table format for the places index'), '</div><hr><div class="row">'],
 		['IndexShowBirth', _('Include a column for birth dates on the index pages'), ''],
 		['IndexShowDeath', _('Include a column for death dates on the index pages'), ''],
 		['IndexShowMarriage', _('Include a column for marriage dates on the index pages'), ''],
@@ -3625,6 +3824,7 @@ DwrClass.prototype.Main = function(page)
 {
 	PageContents = page;
 	Dwr.ParseSearchString();
+	computeOptimizedHref();
 	preloadMode = true;
 	MainRun();
 	$(document).ready(function(){
@@ -3713,11 +3913,7 @@ function MainRun()
 		}
 		else if (PageContents == Dwr.PAGE_SURNAMES_INDEX)
 		{
-			html = printSurnamesIndex();
-		}
-		else if (PageContents == Dwr.PAGE_SURNAMES_INDEX2)
-		{
-			html = printSurnamesIndex2();
+			html = htmlSurnamesIndex();
 		}
 		else if (PageContents == Dwr.PAGE_SURNAME_INDEX)
 		{

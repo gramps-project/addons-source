@@ -35,6 +35,16 @@ function LoadCssFile(filename)
 }
 DwrClass.prototype.LoadCssFile = LoadCssFile;
 
+//============================================ Multi-browser
+
+function BrowserMSIE()
+{
+	// This is required despite jQuery
+	// For example $(<any SVG element>).html does not work in MSIE
+	return (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i))
+}
+DwrClass.prototype.BrowserMSIE = BrowserMSIE;
+
 //============================================
 
 // Get current path
@@ -80,6 +90,7 @@ LoadJsFile(scriptFolder + 'dwr_body.js');
 LoadJsFile(scriptFolder + 'dwr.js');
 
 // Load SVG tree scripts
+if (!("LOAD_SVG_SCRIPTS" in window)) window.LOAD_SVG_SCRIPTS = false;
 if (LOAD_SVG_SCRIPTS)
 {
 	// Load Raphael
@@ -89,14 +100,14 @@ if (LOAD_SVG_SCRIPTS)
 }
 
 // Load statistics scripts
-if (!("LOAD_STATS_SCRIPTS" in window)) LOAD_STATS_SCRIPTS = false;
+if (!("LOAD_STATS_SCRIPTS" in window)) window.LOAD_STATS_SCRIPTS = false;
 if (LOAD_STATS_SCRIPTS)
 {
 	LoadJsFile(scriptFolder + 'dwr_stats.js');
 }
 
 // Load map scripts
-if (!("LOAD_GOOGLEMAP_SCRIPTS" in window)) LOAD_GOOGLEMAP_SCRIPTS = false;
+if (!("LOAD_GOOGLEMAP_SCRIPTS" in window)) window.LOAD_GOOGLEMAP_SCRIPTS = false;
 if (LOAD_GOOGLEMAP_SCRIPTS)
 {
 	var googlemapurl = 'https://maps.googleapis.com/maps/api/js';
@@ -106,23 +117,12 @@ if (LOAD_GOOGLEMAP_SCRIPTS)
 	}
 	LoadJsFile(googlemapurl)
 }
-if (!("LOAD_OSM_SCRIPTS" in window)) LOAD_OSM_SCRIPTS = false;
+if (!("LOAD_OSM_SCRIPTS" in window)) window.LOAD_OSM_SCRIPTS = false;
 if (LOAD_OSM_SCRIPTS)
 {
 	LoadJsFile('http://openlayers.org/en/v3.0.0/build/ol.js');
 	LoadCssFile('http://openlayers.org/en/v3.0.0/css/ol.css');
 }
-
-
-//============================================ Multi-browser
-
-function BrowserMSIE()
-{
-	// This is required despite jQuery
-	// For example $(<any SVG element>).html does not work in MSIE
-	return (navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i))
-}
-DwrClass.prototype.BrowserMSIE = BrowserMSIE;
 
 
 //============================================ Simple functions
@@ -133,12 +133,14 @@ function cmp(a, b)
 	if (a > b) return(1);
 	return 0;
 }
+window.cmp = cmp;
 
 function sign(x)
 {
 	// Math.sign not supported by IE
 	return typeof x === 'number' ? x ? x < 0 ? -1 : 1 : x === x ? 0 : NaN : NaN;
 }
+window.sign = sign;
 
 
 //============================================ Arrays

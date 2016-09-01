@@ -133,7 +133,7 @@ from xml.sax.saxutils import escape
 if (sys.version_info[0] < 3):
     import urlparse, urllib
 else:
-    import urllib, urllib.parse as urlparse
+    import urllib.parse as urlparse, urllib.request as urllib
 import zipfile
 import json
 
@@ -404,6 +404,10 @@ WEB_TEMPLATE_EXCLUDED = [
 
 INCLUDE_LIVING_VALUE = 99 #: Arbitrary number
 
+COPY_MEDIA_RENAME = 0
+COPY_MEDIA_UNCHANGED = 1
+REFERENCE_MEDIA = 2
+
 # Indexes in the L{DynamicWebReport.obj_dict} and L{DynamicWebReport.bkref_dict} elements
 OBJDICT_NAME = 0
 OBJDICT_GID = 1
@@ -620,7 +624,7 @@ class DynamicWebReport(Report):
         self.inc_places = self.options['inc_places']
         self.inc_families = self.options['inc_families']
         self.inc_gallery = self.options['inc_gallery']
-        self.copy_media = self.options['copy_media']
+        self.copy_media = int(self.options['copy_media'])
         self.inc_notes = self.options['inc_notes']
         self.print_notes_type = self.options['print_notes_type']
         self.inc_sources = self.options['inc_sources']
@@ -717,10 +721,11 @@ class DynamicWebReport(Report):
         # self.rel_class = get_relationship_calculator()
 
         #: List of images already copied
-        self.images_copied = set()
+        self.images_copied = {}
+        self.media_paths = {}
 
         #: List of thumbnails already created
-        self.thumbnail_created = set()
+        self.thumbnail_created = {}
 
         #################################################
         # Pass 1 Build the lists of objects to be output
@@ -734,7 +739,7 @@ class DynamicWebReport(Report):
         with self.user.progress(_("Dynamic Web Site Report"), _("Exporting family tree data ..."), 11) as step:
             self.created_files = []
             # Create directories
-            for dirname in ["thumb"] + (["image"] if (self.copy_media) else []):
+            for dirname in ["thumb"] + (["image"] if (self.copy_media in [COPY_MEDIA_RENAME, COPY_MEDIA_UNCHANGED]) else []):
                 dirpath = os.path.join(self.target_path, dirname)
                 if (not os.path.isdir(dirpath)): os.mkdir(dirpath)
             # Copy web site files
@@ -776,6 +781,7 @@ class DynamicWebReport(Report):
         'I' gives for individual:
           - gid: Gramps ID
           - name: The complete name
+          - letter: the name first letter
           - short_name: The short name
           - names: The names as a list of:
               [full name, type, title, nick, call, given, suffix, list of surnames, family nickname,
@@ -842,6 +848,7 @@ class DynamicWebReport(Report):
             name = self.get_short_name(person) or ""
             jdata['short_name'] = name
             jdata['names'] = self.get_name_data(person)
+            jdata['letter'] = first_letter(name).strip()
             # Gender
             gender = ""
             if (person.get_gender() == Person.MALE): gender = "M"
@@ -980,6 +987,7 @@ class DynamicWebReport(Report):
         'F' gives for each family:
           - gid: Gramps ID
           - name: The family full name
+          - letter: the name first letter
           - type: The family union type
           - marr_year: The marriage year in the form '1700', '?' (unknown), or '' (not married)
           - marr_sdn: The marriage serial date number (0 if not known)
@@ -1183,6 +1191,7 @@ class DynamicWebReport(Report):
         'S' gives for each source:
           - gid: Gramps ID
           - title: The source title
+          - letter: the title first letter
           - text: The source text (author, etc.)
           - author: The source author
           - abbrev: The source abbreviation
@@ -1214,6 +1223,7 @@ class DynamicWebReport(Report):
             jdata['gid'] = self.obj_dict[Source][source_handle][OBJDICT_GID]
             title = source.get_title() or ""
             jdata['title'] = html_escape(title)
+            jdata['letter'] = first_letter(title).strip()
             jdata['text'] = ""
             for (field, label, value) in [
                 ('author', _("Author"), source.get_author()),
@@ -1805,27 +1815,48 @@ class DynamicWebReport(Report):
         '''
         Return the path of the media from the web pages
         This function could be called several times for the same media
-        This function copies the media to the web pages directories if necessary
+        This function copies the media to the web pages directories if necessary.
+        If media is copied, then 1 or 2 levels of subdirectory are inserted.
+        Each directory is limited to 256 subdirectories or files.
+        The reason is to prevent directories with too many entries.
         '''
         media_path = media.get_path()
         if (media_path):
             norm_path = media_path_full(self.database, media_path)
             if (os.path.isfile(norm_path)):
-                if (self.copy_media):
-                    ext = os.path.splitext(norm_path)[1]
-                    iname = str(media.get_handle()) + ext
-                    iname = iname.lower()
-                    if (iname not in self.images_copied):
-                        self.copy_file(norm_path, iname, "image")
-                        self.images_copied.add(iname)
-                    web_path = "image/" + iname
-                else:
+                if (self.copy_media == COPY_MEDIA_RENAME):
+                    handle = media.get_handle()
+                    if (handle not in self.images_copied):
+                        subdir = str(len(self.images_copied) >> 8)
+                        ext = os.path.splitext(norm_path)[1]
+                        iname = str(handle) + ext
+                        iname = iname.lower()
+                        self.copy_file(norm_path, iname, os.path.join("image", subdir))
+                        web_path = "image/" + subdir + "/" + iname
+                        self.images_copied[handle] = web_path
+                    else:
+                        web_path = self.images_copied[handle]
+                elif (self.copy_media == COPY_MEDIA_UNCHANGED):
+                    handle = media.get_handle()
+                    if (handle not in self.images_copied):
+                        dir = os.path.dirname(norm_path)
+                        filename = os.path.basename(norm_path)
+                        if dir not in self.media_paths:
+                            subdir1 = str(len(self.media_paths) >> 8)
+                            subdir2 = str(len(self.media_paths) & 0xFF)
+                            self.media_paths[dir] = os.path.join("image", subdir1, subdir2)
+                        self.copy_file(norm_path, filename, self.media_paths[dir])
+                        web_path = self.media_paths[dir].replace('\\', '/') + '/' + filename
+                        self.images_copied[handle] = web_path
+                    else:
+                        web_path = self.images_copied[handle]
+                else: # self.copy_media == REFERENCE_MEDIA
                     try:
                         web_path = os.path.relpath(norm_path, self.target_path)
                         web_path = web_path.replace("\\", "/")
                     except:
-                        web_path = urlparse.urljoin('file:', urllib.pathname2url(norm_path))
                         log.warning(_("Impossible to convert \"%(path)s\" to a relative path.") % {"path": norm_path})
+                        web_path = urlparse.urljoin('file:', urllib.pathname2url(norm_path))
                 return(web_path)
         log.warning("Warning: File not found \"%(path)s\"" % {"path": str(media_path)})
         return(media_path)
@@ -1837,24 +1868,31 @@ class DynamicWebReport(Report):
         up-to-date cache of a thumbnail, and call copy_file
         to copy the cached thumbnail to the website.
         Return the new path to the image.
+        1 level of subdirectory is inserted.
+        Each directory is limited to 256 subdirectories or files.
+        The reason is to prevent directories with too many entries.
         '''
         if (region and region[0] == 0 and region[1] == 0 and region[2] == 100 and region[3] == 100):
             region = None
         handle = media.get_handle()
         tname = handle + (("-%d,%d-%d,%d.png" % region) if region else ".png")
-        if (media.get_mime_type()):
-            from_path = get_thumbnail_path(
-                media_path_full(self.database, media.get_path()),
-                media.get_mime_type(),
-                region)
-            if not os.path.isfile(from_path):
-                from_path = os.path.join(IMAGE_DIR, "document.png")
-        else:
-            from_path = os.path.join(IMAGE_DIR, "document.png")
+        tname = tname.lower()
         if (tname not in self.thumbnail_created):
-            self.copy_file(from_path, tname, "thumb")
-            self.thumbnail_created.add(tname)
-        web_path = "thumb/" + tname
+            if (media.get_mime_type()):
+                from_path = get_thumbnail_path(
+                    media_path_full(self.database, media.get_path()),
+                    media.get_mime_type(),
+                    region)
+                if not os.path.isfile(from_path):
+                    from_path = os.path.join(IMAGE_DIR, "document.png")
+            else:
+                from_path = os.path.join(IMAGE_DIR, "document.png")
+            subdir = str(len(self.thumbnail_created) >> 8)
+            self.copy_file(from_path, tname, os.path.join("thumb", subdir))
+            web_path = "thumb/" + subdir + '/' + tname
+            self.thumbnail_created[tname] = web_path
+        else:
+            web_path = self.thumbnail_created[tname]
         return(web_path)
 
 
@@ -2160,7 +2198,6 @@ class DynamicWebReport(Report):
             # ("statistics_link.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsLinks();"),
             # Index pages
             ("surnames.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX);"),
-            ("surnames2.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX2);"),
             ("surname.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAME_INDEX);"),
             ("persons.html", _("Individuals"), True, True, "Dwr.Main(Dwr.PAGE_PERSONS_INDEX);"),
             ("families.html", _("Families"), False, True, "Dwr.Main(Dwr.PAGE_FAMILIES_INDEX);"),
@@ -2350,6 +2387,11 @@ class DynamicWebReport(Report):
         sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
         sw.write("BRAND_TITLE=\"" + script_escape(self.get_header_footer_notes("brandnote")) + "\";\n")
         sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
+        sw.write("INDEX_SURNAMES_TYPE=" + ("true" if (int(self.options['index_surnames_type'])) else "false") + ";\n")
+        sw.write("INDEX_PERSONS_TYPE=" + ("true" if (int(self.options['index_persons_type'])) else "false") + ";\n")
+        sw.write("INDEX_FAMILIES_TYPE=" + ("true" if (int(self.options['index_families_type'])) else "false") + ";\n")
+        sw.write("INDEX_SOURCES_TYPE=" + ("true" if (int(self.options['index_sources_type'])) else "false") + ";\n")
+        # sw.write("INDEX_PLACES_TYPE=" + ("true" if (int(self.options['index_places_type'])) else "false") + ";\n")
         sw.write("INDEX_SHOW_BIRTH=" + ("true" if (self.options['showbirth']) else "false") + ";\n")
         sw.write("INDEX_SHOW_DEATH=" + ("true" if (self.options['showdeath']) else "false") + ";\n")
         sw.write("INDEX_SHOW_MARRIAGE=" + ("true" if (self.options['showmarriage']) else "false") + ";\n")
@@ -3938,9 +3980,15 @@ class DynamicWebOptions(MenuReportOptions):
         inc_gallery.set_help(_("Whether to include a media objects in the web pages"))
         addopt("inc_gallery", inc_gallery)
 
-        copy_media = BooleanOption(_("Copy images and media objects"), True)
-        copy_media.set_help(_("Whether to make a copy of the media objects."
-            " When the objects are not copied, they are referenced by their relative path name"))
+        copy_media_opts = [
+            [_("Copy, rename with a unique Gramps identifier"), COPY_MEDIA_RENAME],
+            [_("Copy, keep file names unchanged"), COPY_MEDIA_UNCHANGED],
+            [_("Do not copy, reference existing files"), REFERENCE_MEDIA],
+        ]
+        copy_media = EnumeratedListOption(_("Images and media objects"), str(copy_media_opts[0][1]))
+        for trans, opt in copy_media_opts:
+            copy_media.add_item(str(opt), trans)
+        copy_media.set_help(_("Whether to make a copy of the media objects."))
         addopt("copy_media", copy_media)
 
         print_notes_type = BooleanOption(_("Print the notes type"), True)
@@ -4038,6 +4086,23 @@ class DynamicWebOptions(MenuReportOptions):
     def __add_pages_indexes_options(self, menu):
         category_name = _("Indexes")
         addopt = partial(menu.add_option, category_name)
+
+        index_types = [
+            _("List"),
+            _("Table"),
+        ]        
+        for (index, default, option_text, option_help) in [
+            ["surnames", "0", _("Default format for the surnames index"), _("The default format for the surnames index")],
+            ["persons", "1", _("Default format for the persons index"), _("The default format for the persons index")],
+            ["families", "1", _("Default format for the families index"), _("The default format for the families index")],
+            ["sources", "1", _("Default format for the sources index"), _("The default format for the sources index")],
+            # ["places", "1", _("Default format for the places index"), _("The default format for the places index")],
+        ]:
+            index_type = EnumeratedListOption(option_text, default)
+            for (i, eopt) in enumerate(index_types):
+                index_type.add_item(str(i), eopt)
+            index_type.set_help(option_help)
+            addopt("index_" + index + "_type", index_type)
 
         showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
         showbirth.set_help(_('Whether to include a birth column'))

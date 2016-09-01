@@ -193,6 +193,11 @@ DwrClass.prototype.search = {
 	//TabbedPanels;
 	//IncChangeTime;
 	//HideGid;
+	//IndexTypeN;
+	//IndexTypeI;
+	//IndexTypeF;
+	//IndexTypeS;
+	//IndexTypeP;
 	//=========================================== Chart
 	//ChartTable; // Data table for the statistics chart
 	//ChartType; // Type of statistics chart
@@ -278,6 +283,11 @@ DwrClass.prototype.defaultSearchString = {
 	TabbedPanels: TABBED_PANELS,
 	IncChangeTime: INC_CHANGE_TIME,
 	HideGid: HIDE_GID,
+	IndexTypeN: INDEX_SURNAMES_TYPE,
+	IndexTypeI: INDEX_PERSONS_TYPE,
+	IndexTypeF: INDEX_FAMILIES_TYPE,
+	IndexTypeS: INDEX_SOURCES_TYPE,
+	// IndexTypeP: INDEX_PLACES_TYPE,
 
 	ChartTable: 0,
 	ChartType: 0,
@@ -361,6 +371,11 @@ DwrClass.prototype.ParseSearchString = function()
 	Dwr.search.TabbedPanels = GetURLParameter('ctp', TABBED_PANELS);
 	Dwr.search.IncChangeTime = GetURLParameter('cct', INC_CHANGE_TIME);
 	Dwr.search.HideGid = GetURLParameter('cg', HIDE_GID);
+	Dwr.search.IndexTypeN = GetURLParameter('citn', INDEX_SURNAMES_TYPE);
+	Dwr.search.IndexTypeI = GetURLParameter('citi', INDEX_PERSONS_TYPE);
+	Dwr.search.IndexTypeF = GetURLParameter('citf', INDEX_FAMILIES_TYPE);
+	Dwr.search.IndexTypeS = GetURLParameter('cits', INDEX_SOURCES_TYPE);
+	// Dwr.search.IndexTypeP = GetURLParameter('citp', INDEX_PLACES_TYPE);
 
 	Dwr.search.ChartTable = GetURLParameter('charttable', 0);
 	Dwr.search.ChartType = GetURLParameter('charttype', 0);
@@ -480,6 +495,11 @@ DwrClass.prototype.BuildSearchString = function(params)
 	s = SetURLParameter(s, 'ctp', params.TabbedPanels, Dwr.search.TabbedPanels, TABBED_PANELS);
 	s = SetURLParameter(s, 'cct', params.IncChangeTime, Dwr.search.IncChangeTime, INC_CHANGE_TIME);
 	s = SetURLParameter(s, 'cg', params.HideGid, Dwr.search.HideGid, HIDE_GID);
+	s = SetURLParameter(s, 'citn', Dwr.search.IndexTypeN, Dwr.search.IndexTypeN, INDEX_SURNAMES_TYPE);
+	s = SetURLParameter(s, 'citi', Dwr.search.IndexTypeI, Dwr.search.IndexTypeI, INDEX_PERSONS_TYPE);
+	s = SetURLParameter(s, 'citf', Dwr.search.IndexTypeF, Dwr.search.IndexTypeF, INDEX_FAMILIES_TYPE);
+	s = SetURLParameter(s, 'cits', Dwr.search.IndexTypeS, Dwr.search.IndexTypeS, INDEX_SOURCES_TYPE);
+	// s = SetURLParameter(s, 'citp', Dwr.search.IndexTypeP, Dwr.search.IndexTypeP, INDEX_PLACES_TYPE);
 
 	s = SetURLParameter(s, 'charttable', params.ChartTable, Dwr.search.ChartTable, 0);
 	s = SetURLParameter(s, 'charttype', params.ChartType, Dwr.search.ChartType, 0);
