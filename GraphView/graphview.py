@@ -115,6 +115,7 @@ class GraphView(NavigationView):
         ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
+        ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
         )
@@ -132,6 +133,8 @@ class GraphView(NavigationView):
                                   'interface.graphview-highlight-home-person')
         self.home_person_color = self._config.get(
                                  'interface.graphview-home-person-color')
+        self.home_path_color = self._config.get(
+                                 'interface.graphview-home-path-color')
         self.descendant_generations = self._config.get(
                                   'interface.graphview-descendant-generations')
         self.ancestor_generations = self._config.get(
@@ -309,6 +312,13 @@ class GraphView(NavigationView):
         self.home_person_color = entry
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_home_path_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the path person color.
+        """
+        self.home_path_color = entry
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_descendant_generations(self, client, cnxd_id, entry, data):
         """
         Called when the configuration menu changes the descendant generation
@@ -343,6 +353,8 @@ class GraphView(NavigationView):
                           self.cb_update_highlight_home_person)
         self._config.connect('interface.graphview-home-person-color',
                           self.cb_update_home_person_color)
+        self._config.connect('interface.graphview-home-path-color',
+                          self.cb_update_home_path_color)
         self._config.connect('interface.graphview-descendant-generations',
                           self.cb_update_descendant_generations)
         self._config.connect('interface.graphview-ancestor-generations',
@@ -407,9 +419,12 @@ class GraphView(NavigationView):
         configdialog.add_color(grid,
                 _('Home person color'),
                 0, 'interface.graphview-home-person-color')
+        configdialog.add_color(grid,
+                _('Path color'),
+                1, 'interface.graphview-home-path-color')
         configdialog.add_checkbox(grid,
                 _('Show tags'),
-                1, 'interface.graphview-show-tags')
+                2, 'interface.graphview-show-tags')
 
         return _('Colors'), grid
 
@@ -720,6 +735,8 @@ class GraphvizSvgParser(object):
                                    'interface.graphview-highlight-home-person')
         self.home_person_color = self.view._config.get(
                                  'interface.graphview-home-person-color')
+        self.home_path_color = self.view._config.get(
+                                 'interface.graphview-home-path-color')
         self.tlist = []
         self.text_attrs = None
         self.func_list = []
@@ -1122,6 +1139,8 @@ class DotGenerator(object):
                                     'interface.graphview-show-places')
         self.show_tag_color = self.view._config.get(
                                     'interface.graphview-show-tags')
+        self.home_path_color = self.view._config.get(
+                                 'interface.graphview-home-path-color')
         spline = self.view._config.get(
                                     'interface.graphview-show-lines')
         self.spline = SPLINE.get(int(spline))
@@ -1421,6 +1440,7 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(family.handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle,
+                      color=self.home_path_color,
                       bold=self.is_in_path_to_home(p_id) )
 
     def add_parent_link(self, p_id, parent_handle, rel):
@@ -1430,6 +1450,7 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle,
+                      color=self.home_path_color,
                       bold=self.is_in_path_to_home(p_id))
 
     def add_persons_and_families(self):
@@ -1500,12 +1521,14 @@ class DotGenerator(object):
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle,
+                          color=self.home_path_color,
                           bold=self.is_in_path_to_home(f_handle))
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle,
+                          color=self.home_path_color,
                           bold=self.is_in_path_to_home(m_handle))
         self.end_subgraph()
 
@@ -1674,7 +1697,7 @@ class DotGenerator(object):
         return ''
 
     def add_link(self, id1, id2, style="", head="", tail="", comment="",
-                 bold=False):
+                 bold=False, color=""):
         """
         Add a link between two nodes. Gramps handles are used as nodes but need
         to be prefixed with an underscore because Graphviz does not like IDs
@@ -1697,6 +1720,8 @@ class DotGenerator(object):
                 self.write(' arrowtail=%s' % tail)
             if bold and boldok:
                 self.write(' penwidth=%d' % 5)
+                if color:
+                    self.write(' color="%s"' % color)
 
             self.write(' ]')
 
