@@ -2997,8 +2997,16 @@ function secteur(a1, a2, r1, r2, x_elt, lev)
 {
 	var idx = svgElts[x_elt][SVGELT_IDX];
 	// Create sector
-	while (a1 < 0) {a1 += 2*Math.PI; a2 += 2*Math.PI;}
-	while (a1 > 2*Math.PI) {a1 -= 2*Math.PI; a2 -= 2*Math.PI;}
+	while (a1 < 0)
+	{
+		a1 += 2 * Math.PI;
+		a2 += 2 * Math.PI;
+	}
+	while (a1 > 2 * Math.PI)
+	{
+		a1 -= 2 * Math.PI;
+		a2 -= 2 * Math.PI;
+	}
 	var ap1 = (coordX * r1 * Math.sin(a1)) + ',' + (-coordY * r1 * Math.cos(a1));
 	var ap2 = (coordX * r1 * Math.sin(a2)) + ',' + (-coordY * r1 * Math.cos(a2));
 	var ap3 = (coordX * r2 * Math.sin(a1)) + ',' + (-coordY * r2 * Math.cos(a1));

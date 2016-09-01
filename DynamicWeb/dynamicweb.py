@@ -405,9 +405,11 @@ WEB_TEMPLATE_EXCLUDED = [
 
 INCLUDE_LIVING_VALUE = 99 #: Arbitrary number
 
-COPY_MEDIA_RENAME = 0
-COPY_MEDIA_UNCHANGED = 1
-REFERENCE_MEDIA = 2
+(
+    COPY_MEDIA_RENAME,
+    COPY_MEDIA_UNCHANGED,
+    REFERENCE_MEDIA,
+) = range (3)
 
 # Indexes in the L{DynamicWebReport.obj_dict} and L{DynamicWebReport.bkref_dict} elements
 OBJDICT_NAME = 0
@@ -2813,7 +2815,7 @@ class DynamicWebReport(Report):
                 sw.write(
                     "// This file is generated\n\n"
                     "%s_%s_%i = " % (name, k, i))
-                json.dump(partial, sw, sort_keys = True, indent = 4)
+                json.dump(partial, sw, sort_keys = True, indent = 0)
                 sw.write("\n"
                     "Dwr.ScriptLoaded('dwr_db_%s_%s_%i.js');\n" % (name, k, i))
                 self.update_file("dwr_db_%s_%s_%i.js" % (name, k, i), sw.getvalue())
@@ -2831,7 +2833,7 @@ class DynamicWebReport(Report):
         sw.write(
             "// This file is generated\n\n"
             "%s_xgid = " % name)
-        json.dump(gids, sw, sort_keys = True, indent = 4)
+        json.dump(gids, sw, sort_keys = True, indent = 0)
         self.update_file("dwr_db_%s_xgid.js" % name, sw.getvalue())
 
 

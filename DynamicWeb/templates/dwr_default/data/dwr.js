@@ -1111,7 +1111,7 @@ function printIndi(idx)
 function printIndiAncestors(idx)
 {
 	var html = "";
-	var famc_list = $.map(I(idx, 'famc'), function (fc) {return(fc.index);});
+	var famc_list = $.map(I(idx, 'famc'), function (fc) {return fc.index});
 	if (SHOW_ALL_SIBLINGS)
 	{
 		for (var j = 0; j < I(idx, 'famc').length; j++)
@@ -1444,17 +1444,17 @@ function printMedia(mdx)
 		$(window).load(function()
 		{
 			// Disable <a> anchors for disabled buttons
-			$('.pagination .disabled a, .pagination .active a').on('click', function(e) {e.preventDefault();});
+			$('.pagination .disabled a, .pagination .active a').on('click', function(e) {e.preventDefault()});
 			// Connect click events
-			$('#media_button_prev:not(.disabled)').click(function() {return mediaButtonPageClick(-1);});
-			$('#media_button_next:not(.disabled)').click(function() {return mediaButtonPageClick(1);});
-			$('#media_button_0:not(.active)').click(function() {return mediaButtonPageClick(0, 0);});
-			$('#media_button_' + (Dwr.search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, Dwr.search.ImgList.length - 1);});
+			$('#media_button_prev:not(.disabled)').click(function() {return mediaButtonPageClick(-1)});
+			$('#media_button_next:not(.disabled)').click(function() {return mediaButtonPageClick(1)});
+			$('#media_button_0:not(.active)').click(function() {return mediaButtonPageClick(0, 0)});
+			$('#media_button_' + (Dwr.search.ImgList.length - 1) + ':not(.active)').click(function() {return mediaButtonPageClick(0, Dwr.search.ImgList.length - 1)});
 			for (var i = first_but; i <= last_but; i++)
 			{
 				(function(){ // This is used to create instances of local variables
 					var icopy = i;
-					$('#media_button_' + i + ':not(.active)').click(function() {return mediaButtonPageClick(0, icopy);});
+					$('#media_button_' + i + ':not(.active)').click(function() {return mediaButtonPageClick(0, icopy)});
 				})();
 			}
 		});
@@ -1479,7 +1479,7 @@ function printMedia(mdx)
 		// Expand button events
 		$(window).load(function()
 		{
-			$('#media-button-max').click(function() {return mediaButtonMaxClick();});
+			$('#media-button-max').click(function() {return mediaButtonMaxClick()});
 		});
 	}
 	else
@@ -1527,13 +1527,13 @@ function printMediaMap(mdx)
 	var html = '';
 	var j, k;
 //	html += '<ul id="imgmap">';
-	html += printMediaRefArea(M(mdx, 'bki'), indiHref, function(ref) {return(I(ref, 'name'));});
+	html += printMediaRefArea(M(mdx, 'bki'), indiHref, function(ref) {return I(ref, 'name')});
 	if (INC_FAMILIES)
-		html += printMediaRefArea(M(mdx, 'bkf'), famHref, function(ref) {return(F(ref, 'name'));});
+		html += printMediaRefArea(M(mdx, 'bkf'), famHref, function(ref) {return F(ref, 'name')});
 	if (INC_SOURCES)
 		html += printMediaRefArea(M(mdx, 'bks'), sourceHref, sourName);
 	if (INC_PLACES)
-		html += printMediaRefArea(M(mdx, 'bkp'), placeHref, function(ref) {return(P(ref, 'name'));});
+		html += printMediaRefArea(M(mdx, 'bkp'), placeHref, function(ref) {return P(ref, 'name')});
 //	html += '</ul>';
 	return(html);
 }
@@ -2138,8 +2138,8 @@ function htmlPersonsIndexTable(header, data)
 		['I', 'name'],
 		['I', 'gender']
 	];
-	if (Dwr.search.IndexShowBirth) scripts.push(['I', 'birth_year']);
-	if (Dwr.search.IndexShowDeath) scripts.push(['I', 'death_year']);
+	if (Dwr.search.IndexShowBirth) scripts.push(['I', 'birth_year'], ['I', 'birth_sdn']);
+	if (Dwr.search.IndexShowDeath) scripts.push(['I', 'death_year'], ['I', 'death_sdn']);
 	if (Dwr.search.IndexShowPartner) scripts.push(['I', 'fams'], ['F', 'spou']);
 	if (Dwr.search.IndexShowParents) scripts.push(['I', 'famc'], ['F', 'spou']);
 	if (!Dwr.search.HideGid) scripts.push(['I', 'gid']);
@@ -2158,11 +2158,13 @@ function htmlPersonsIndexTable(header, data)
 	}];
 	if (Dwr.search.IndexShowBirth) columns.push({
 		title: _('Birth'),
-		ftext: function(x, col) {return I_birth_year[data[x]];}
+		ftext: function(x, col) {return I_birth_year[data[x]]},
+		fsort: function(x, col) {return I_birth_sdn[data[x]]}
 	});
 	if (Dwr.search.IndexShowDeath) columns.push({
 		title: _('Death'),
-		ftext: function(x, col) {return I_death_year[data[x]];}
+		ftext: function(x, col) {return I_death_year[data[x]]},
+		fsort: function(x, col) {return I_death_sdn[data[x]]}
 	});
 	if (Dwr.search.IndexShowPartner) columns.push({
 		title: _('Spouses'),
@@ -2253,7 +2255,7 @@ function htmlPersonsIndexList(header, data)
 			title: _('Name'),
 			attr: 'I.name',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return I_letter[data[x]];}
+			fLetter: function(x) {return I_letter[data[x]]}
 		},
 		{
 			title: _('Birth date'),
@@ -2313,7 +2315,7 @@ function htmlFamiliesIndexTable(header, data)
 		['I', 'gender'],
 		['F', 'spou']
 	];
-	if (Dwr.search.IndexShowMarriage) scripts.push(['F', 'marr_year']);
+	if (Dwr.search.IndexShowMarriage) scripts.push(['F', 'marr_year'], ['F', 'marr_sdn']);
 	if (!Dwr.search.HideGid) scripts.push(['F', 'gid']);
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
@@ -2321,18 +2323,19 @@ function htmlFamiliesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Father'),
-		ftext: function(x, col) {return(printIndexSpouseText(data[x], col))},
-		fhref: function(x) {return(famHrefOptimized(data[x]))},
-		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col))}
+		ftext: function(x, col) {return printIndexSpouseText(data[x], col)},
+		fhref: function(x) {return famHrefOptimized(data[x])},
+		fsort: function(x, col) {return printIndexSpouseIdx(data[x], col)}
 	}, {
 		title: _('Mother'),
-		ftext: function(x, col) {return(printIndexSpouseText(data[x], col))},
-		fhref: function(x) {return(famHrefOptimized(data[x]))},
-		fsort: function(x, col) {return(printIndexSpouseIdx(data[x], col))}
+		ftext: function(x, col) {return printIndexSpouseText(data[x], col)},
+		fhref: function(x) {return famHrefOptimized(data[x])},
+		fsort: function(x, col) {return printIndexSpouseIdx(data[x], col)}
 	}];
 	if (Dwr.search.IndexShowMarriage) columns.push({
 		title: _('Marriage'),
-		ftext: function(x, col) {return(F_marr_year[data[x]])}
+		ftext: function(x, col) {return F_marr_year[data[x]]},
+		fsort: function(x, col) {return F_marr_sdn[data[x]]}
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
 		title: _('ID'),
@@ -2482,41 +2485,41 @@ function htmlMediaIndexTable(header, data)
 		ftext: function(x, col) {return(
 			'<a class="thumbnail" href="' + mediaHrefOptimized(data[x]) + '">' +
 			'<img src="' + M_thumb[data[x]] + '"></a>'
-		);},
+		)},
 		fsort: false
 	}, {
 		title: _('Title'),
-		ftext: function(x, col) {return(M_title[data[x]]);},
-		fhref: function(x) {return(mediaHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return M_title[data[x]]},
+		fhref: function(x) {return mediaHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Date'),
-		ftext: function(x, col) {return(M_date[data[x]]);},
-		fsort: function(x, col) {return(M_date_sdn[data[x]]);}
+		ftext: function(x, col) {return M_date[data[x]]},
+		fsort: function(x, col) {return M_date_sdn[data[x]]}
 	}];
 	if (Dwr.search.IndexShowPath) columns.push({
 		title: _('Path'),
-		ftext: function(x, col) {return(M_gramps_path[data[x]]);},
-		fhref: function(x) {return((M_title[data[x]] == '') ? mediaHrefOptimized(data[x]) : '');}
+		ftext: function(x, col) {return M_gramps_path[data[x]]},
+		fhref: function(x) {return((M_title[data[x]] == '') ? mediaHrefOptimized(data[x]) : '')}
 	});
 	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bki', 'I', 'name', indiHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkf', 'F', 'name', famHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bks', 'S', 'title', sourceHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bks', 'S', 'title', sourceHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bkp', 'P', 'name', placeHrefOptimized)},
 		fsort: false
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
@@ -2563,43 +2566,43 @@ function htmlSourcesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Title'),
-		ftext: function(x, col) {return S_title[data[x]] || empty(_('Without title'));},
-		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return S_title[data[x]] || empty(_('Without title'))},
+		fhref: function(x) {return sourceHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Author'),
-		ftext: function(x, col) {return(S_author[data[x]]);},
-		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return S_author[data[x]]},
+		fhref: function(x) {return sourceHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Abbreviation'),
-		ftext: function(x, col) {return(S_abbrev[data[x]]);},
-		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return S_abbrev[data[x]]},
+		fhref: function(x) {return sourceHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Publication information'),
-		ftext: function(x, col) {return(S_publ[data[x]]);},
-		fhref: function(x) {return(sourceHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return S_publ[data[x]]},
+		fhref: function(x) {return sourceHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}];
 	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bki', 'I', 'name', indiHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkf', 'F', 'name', famHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_MEDIA) columns.push({
 		title: _('Used for media'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkm', 'M', 'title', mediaHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkm', 'M', 'title', mediaHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_PLACES) columns.push({
 		title: _('Used for place'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkp', 'P', 'name', placeHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_SOURCE, 'S', data[x], 'bkp', 'P', 'name', placeHrefOptimized)},
 		fsort: false
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
@@ -2644,7 +2647,7 @@ function htmlSourcesIndexList(header, data)
 			title: _('Title'),
 			attr: 'S.title',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return S_letter[data[x]];}
+			fLetter: function(x) {return S_letter[data[x]]}
 		},
 		{
 			title: _('Author'),
@@ -2676,15 +2679,14 @@ function htmlPlacesIndex(data)
 function printPlacesIndexColText(data, x, field)
 {
 	var pdx = data[x];
-	if (P(pdx, 'locations').length == 0) return('');
-	P(pdx, 'locations')[0]
-	if (typeof(P(pdx, 'locations')[0][field]) === 'undefined') return('');
-	return(P(pdx, 'locations')[0][field]);
+	if (P_locations[pdx].length == 0) return('');
+	if (typeof(P_locations[pdx][0][field]) === 'undefined') return('');
+	return(P_locations[pdx][0][field]);
 }
 
 function printPlacesIndexColCoord(pdx, col)
 {
-	var c = P(pdx, 'coords')[col - 9];
+	var c = P_coords[pdx][col - 9];
 	if (c == '') return('');
 	c = Number(c);
 	var txt = '000' + Math.abs(c).toFixed(4);
@@ -2716,9 +2718,9 @@ function htmlPlacesIndexTable(header, data)
 	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
-		ftext: function(x, col) {return P_name[data[x]] || empty(_('Without name'));},
-		fhref: function(x) {return(placeHrefOptimized(data[x]));},
-		fsort: function(x, col) {return(data[x]);}
+		ftext: function(x, col) {return P_name[data[x]] || empty(_('Without name'))},
+		fhref: function(x) {return placeHrefOptimized(data[x])},
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Latitude'),
 		ftext: function(x, col) {
@@ -2733,34 +2735,34 @@ function htmlPlacesIndexTable(header, data)
 		}
 	}, {
 		title: _('Type'),
-		ftext: function(x, col) {return(P_type[data[x]]);}
+		ftext: function(x, col) {return P_type[data[x]]}
 	}, {
 		title: _('Code'),
-		ftext: function(x, col) {return(P_code[data[x]]);}
+		ftext: function(x, col) {return P_code[data[x]]}
 	}, {
 		title: STATE,
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, STATE));}
+		ftext: function(x, col) {return printPlacesIndexColText(data, x, STATE)}
 	}, {
 		title: COUNTRY,
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, COUNTRY));}
+		ftext: function(x, col) {return printPlacesIndexColText(data, x, COUNTRY)}
 	}, {
 		title: POSTAL,
-		ftext: function(x, col) {return(printPlacesIndexColText(data, x, POSTAL));}
+		ftext: function(x, col) {return printPlacesIndexColText(data, x, POSTAL)}
 	}];
 	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Enclosed By'),
 		ftext: function(x, col) {
-			return(($.map(P_enclosed_by[data[x]], function(enc) {return(P_name[enc.pdx]);})).join('<br>'));
+			return(($.map(P_enclosed_by[data[x]], function(enc) {return P_name[enc.pdx]})).join('<br>'));
 			}
 	});
 	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bki', 'I', 'name', indiHrefOptimized)},
 		fsort: false
 	});
 	if (Dwr.search.IndexShowBkrefType && INC_FAMILIES) columns.push({
 		title: _('Used for family'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bkf', 'F', 'name', famHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_INDEX, 'P', data[x], 'bkf', 'F', 'name', famHrefOptimized)},
 		fsort: false
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
@@ -2801,15 +2803,15 @@ function htmlAddressesIndex()
 	var columns = [{
 		title: _('Person'),
 		ftext: function(x_ad, col) {return I_name[adtable[x_ad][0]] || empty(_('Without name'))},
-		fhref: function(x_ad) {return(indiHrefOptimized(adtable[x_ad][0]));},
-		fsort: function(x, col) {return(adtable[x_ad][0]);}
+		fhref: function(x_ad) {return indiHrefOptimized(adtable[x_ad][0])},
+		fsort: function(x, col) {return adtable[x_ad][0]}
 	}, {
 		title: _('Address'),
-		ftext: function(x_ad, col) {return(locationString(adtable[x_ad][1]));},
+		ftext: function(x_ad, col) {return locationString(adtable[x_ad][1])},
 	}, {
 		title: _('Web Link'),
-		ftext: function(x_ad, col) {return(adtable[x_ad][2].descr || adtable[x_ad][2].uri);},
-		fhref: function(x_ad) {return(adtable[x_ad][2].uri);}
+		ftext: function(x_ad, col) {return(adtable[x_ad][2].descr || adtable[x_ad][2].uri)},
+		fhref: function(x_ad) {return adtable[x_ad][2].uri}
 	}];
 	return PrintIndexTable('addr', _('Addresses'), adtable, [[0, 'asc']], columns);
 }
@@ -2845,10 +2847,10 @@ function htmlReposIndexTable(header, data)
 		title: _('Repository'),
 		ftext: function(x, col) {return R_name[data[x]] || empty(_('Without name'))},
 		fhref: repoHrefOptimized,
-		fsort: function(x, col) {return(data[x]);}
+		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Type'),
-		ftext: function(x, col) {return(R_type[data[x]]);},
+		ftext: function(x, col) {return R_type[data[x]]},
 	}, {
 		title: _('Addresses'),
 		ftext: function(x, col) {
@@ -2864,7 +2866,7 @@ function htmlReposIndexTable(header, data)
 	}];
 	if (Dwr.search.IndexShowBkrefType && INC_SOURCES) columns.push({
 		title: _('Used for source'),
-		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_REPO, 'R', data[x], 'bks', 'S', 'title', sourceHrefOptimized));},
+		ftext: function(x, col) {return indexBkrefName(BKREF_TYPE_REPO, 'R', data[x], 'bks', 'S', 'title', sourceHrefOptimized)},
 		fsort: false
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
@@ -2930,7 +2932,7 @@ function htmlSurnamesIndexTable(header, data)
 	var columns = [{
 		title: _('Surname'),
 		ftext: function(x, col) {return N_surname[data[x]] || empty(_('Without surname'))},
-		fhref: function(x) {return(surnameHrefOptimized(data[x]))},
+		fhref: function(x) {return surnameHrefOptimized(data[x])},
 		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Number'),
@@ -2969,7 +2971,7 @@ function htmlSurnamesIndexList(header, data)
 			title: _('Surname'),
 			attr: 'N.surname',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return N_letter[data[x]];}
+			fLetter: function(x) {return N_letter[data[x]]}
 		},
 		{
 			title: _('Number'),
@@ -2994,19 +2996,19 @@ var BKREF_TYPE_REPOREF = 4;
 function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 {
 	var html = '';
-	html += printBackRef(type, bki, indiHref, function(ref) {return(I(ref, 'name'));});
+	html += printBackRef(type, bki, indiHref, function(ref) {return I(ref, 'name')});
 	if (INC_FAMILIES)
-		html += printBackRef(type, bkf, famHref, function(ref) {return(F(ref, 'name'));});
+		html += printBackRef(type, bkf, famHref, function(ref) {return F(ref, 'name')});
 	else
-		html += printBackRef(type, bkf, null, function(ref) {return(F(ref, 'name'));});
+		html += printBackRef(type, bkf, null, function(ref) {return F(ref, 'name')});
 	if (INC_SOURCES)
 		html += printBackRef(type, bks, sourceHref, sourName);
 	if (INC_MEDIA)
 		html += printBackRef(type, bkm, mediaHref, mediaName);
 	if (INC_PLACES)
-		html += printBackRef(type, bkp, placeHref, function(ref) {return(P(ref, 'name'));});
+		html += printBackRef(type, bkp, placeHref, function(ref) {return P(ref, 'name')});
 	if (INC_REPOSITORIES)
-		html += printBackRef(type, bkr, repoHref, function(ref) {return(R(ref, 'name'));});
+		html += printBackRef(type, bkr, repoHref, function(ref) {return R(ref, 'name')});
 	if (html == '') return('');
 	return('<ul class="dwr-backrefs">' + html + '</ul>');
 }
@@ -3569,7 +3571,7 @@ function SearchObjects()
 		{
 			data: 'M',
 			fextract: function(mdx) {return(M_title[mdx] + ' ' + M_path[mdx] +
-					(Dwr.search.HideGid ? '' : ' ' + M_gid[mdx]));},
+					(Dwr.search.HideGid ? '' : ' ' + M_gid[mdx]))},
 			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
@@ -3577,7 +3579,7 @@ function SearchObjects()
 		{
 			data: 'S',
 			fextract: function(sdx) {return(S_title[sdx] + ' ' + S_author[sdx] + ' ' + S_abbrev[sdx] + ' ' + S_publ[sdx] +
-					(Dwr.search.HideGid ? '' : ' ' + S_gid[sdx]));},
+					(Dwr.search.HideGid ? '' : ' ' + S_gid[sdx]))},
 			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
@@ -3585,7 +3587,7 @@ function SearchObjects()
 		{
 			data: 'P',
 			fextract: function(pdx) {return(P_name[pdx] +
-					(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]));},
+					(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]))},
 			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
