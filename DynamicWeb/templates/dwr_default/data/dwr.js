@@ -1971,7 +1971,7 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 	return(html);
 }
 	
-function printIndexList(header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
+function printIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
 // header: Page header
 // data: Array of data to be indexed
 // fText, fTextOptimized, fLetter: function taking a <data> row as parameter.
@@ -2066,10 +2066,10 @@ function printIndexList(header, data, fText, fTextOptimized, separator, sortingA
 			html += '<div class="panel panel-default">';
 			if (letter != '')
 			{
-				html += '<div class="panel-heading dwr-collapsible collapsed" data-toggle="collapse" data-target="#panel_index_' + i + '">';
+				html += '<div class="panel-heading dwr-collapsible collapsed" data-toggle="collapse" data-target="#panel_index_' + id + i + '">';
 				html += '<h5 class="panel-title">' + letter + '</h5>';
 				html += '</div>';
-				html += '<div id="panel_index_' + i + '" class="panel-collapse collapse">';
+				html += '<div id="panel_index_' + id + i + '" class="panel-collapse collapse">';
 				html += '<div class="panel-body">';
 				html += texts[letter];
 				html += '</div>';
@@ -2077,7 +2077,7 @@ function printIndexList(header, data, fText, fTextOptimized, separator, sortingA
 			}
 			else
 			{
-				html += '<div id="panel_index_' + i + '" class="panel-collapse collapse in">';
+				html += '<div id="panel_index_' + id + i + '" class="panel-collapse collapse in">';
 				html += '<div class="panel-body">';
 				html += texts[letter];
 				html += '</div>';
@@ -2255,7 +2255,7 @@ function htmlPersonsIndexList(header, data)
 		fSort: function(a, b) {return cmp(I_gid[a], I_gid[b])},
 		fLetter: false
 	});
-	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return printIndexList('I', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 function printIndexSpouseText(fdx, col)
@@ -2367,7 +2367,7 @@ function htmlFamiliesIndexList(header, data)
 		fSort: function(a, b) {return cmp(F_gid[a], F_gid[b])},
 		fLetter: false
 	});
-	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return printIndexList('F', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 
@@ -2436,10 +2436,10 @@ function htmlMediaIndexTable(header, data)
 	var scripts = [
 		['M', 'thumb'],
 		['M', 'title'],
-		['M', 'gramps_path'],
 		['M', 'date'],
 		['M', 'date_sdn']
 	];
+	if (Dwr.search.IndexShowPath) scripts.push(['M', 'gramps_path']);
 	if (Dwr.search.IndexShowBkrefType) scripts.push(
 		['M', 'bki'],
 		['M', 'bkf'],
@@ -2468,14 +2468,15 @@ function htmlMediaIndexTable(header, data)
 		fhref: function(x) {return(mediaHrefOptimized(data[x]));},
 		fsort: function(x, col) {return(data[x]);}
 	}, {
-		title: _('Path'),
-		ftext: function(x, col) {return(M_gramps_path[data[x]]);},
-		fhref: function(x) {return((M_title[data[x]] == '') ? mediaHrefOptimized(data[x]) : '');}
-	}, {
 		title: _('Date'),
 		ftext: function(x, col) {return(M_date[data[x]]);},
 		fsort: function(x, col) {return(M_date_sdn[data[x]]);}
 	}];
+	if (Dwr.search.IndexShowPath) columns.push({
+		title: _('Path'),
+		ftext: function(x, col) {return(M_gramps_path[data[x]]);},
+		fhref: function(x) {return((M_title[data[x]] == '') ? mediaHrefOptimized(data[x]) : '');}
+	});
 	if (Dwr.search.IndexShowBkrefType) columns.push({
 		title: _('Used for person'),
 		ftext: function(x, col) {return(indexBkrefName(BKREF_TYPE_MEDIA, 'M', data[x], 'bki', 'I', 'name', indiHrefOptimized));},
@@ -2633,7 +2634,7 @@ function htmlSourcesIndexList(header, data)
 		fSort: function(a, b) {return cmp(S_gid[a], S_gid[b])},
 		fLetter: false
 	});
-	return printIndexList(header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return printIndexList('S', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 
@@ -2955,7 +2956,7 @@ function htmlSurnamesIndexList(header, data)
 			fSort: function(a, b) {return cmp(N_persons[b].length, N_persons[a].length)}
 		}
 	];
-	return printIndexList(header, data, fText, fTextOptimized, '', sortingAttributes, 0);
+	return printIndexList('N', header, data, fText, fTextOptimized, '', sortingAttributes, 0);
 }
 
 
@@ -3504,25 +3505,28 @@ function SearchFromString(ss, data, fextract)
 
 function SearchObjects()
 {
+	var scripts = [
+		['I', 'name'],
+		['I', 'birth_year'],
+		['I', 'death_year'],
+		['M', 'title'],
+		['M', 'path'],
+		['S', 'title'],
+		['S', 'author'],
+		['S', 'abbrev'],
+		['S', 'publ'],
+		['P', 'name']
+	];
+	if (!Dwr.search.HideGid) scripts.push(
+		['I', 'gid'],
+		['M', 'gid'],
+		['S', 'gid'],
+		['P', 'gid']
+	);
+	PrepareFieldSplitScripts(scripts);
 	if (preloadMode)
 	{
-		PreloadScripts([].concat.apply([], [
-			NameSplitScripts('I', 'name'),
-			NameSplitScripts('I', 'birth_year'),
-			NameSplitScripts('I', 'death_year'),
-			NameSplitScripts('M', 'title'),
-			NameSplitScripts('M', 'path'),
-			NameSplitScripts('S', 'title'),
-			NameSplitScripts('S', 'author'),
-			NameSplitScripts('S', 'abbrev'),
-			NameSplitScripts('S', 'publ'),
-			NameSplitScripts('P', 'name'),
-			(Dwr.search.HideGid ? [] : ([].concat.apply([], [
-				NameSplitScripts('I', 'gid'),
-				NameSplitScripts('M', 'gid'),
-				NameSplitScripts('S', 'gid'),
-				NameSplitScripts('P', 'gid')])))]),
-			false);
+		// Preload data for indexes also
 		htmlPersonsIndex();
 		htmlMediaIndex();
 		htmlSourcesIndex();
@@ -3530,25 +3534,7 @@ function SearchObjects()
 		return;
 	}
 
-	// Merge preloaded data into optimized arrays
-	buildDataArray('I', 'name');
-	buildDataArray('I', 'birth_year');
-	buildDataArray('I', 'death_year');
-	buildDataArray('M', 'title');
-	buildDataArray('M', 'path');
-	buildDataArray('S', 'title');
-	buildDataArray('S', 'author');
-	buildDataArray('S', 'abbrev');
-	buildDataArray('S', 'publ');
-	buildDataArray('P', 'name');
-	if (!Dwr.search.HideGid)
-	{
-		buildDataArray('I', 'gid');
-		buildDataArray('M', 'gid');
-		buildDataArray('S', 'gid');
-		buildDataArray('P', 'gid');
-	}
-
+	// Describe where to search
 	var types = [
 		{
 			data: 'I',
@@ -3562,7 +3548,7 @@ function SearchObjects()
 		{
 			data: 'M',
 			fextract: function(mdx) {return(M_title[mdx] + ' ' + M_path[mdx] +
-					(Dwr.search.HideGid ? '' : ' ' + M_gid[idx]));},
+					(Dwr.search.HideGid ? '' : ' ' + M_gid[mdx]));},
 			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
@@ -3570,7 +3556,7 @@ function SearchObjects()
 		{
 			data: 'S',
 			fextract: function(sdx) {return(S_title[sdx] + ' ' + S_author[sdx] + ' ' + S_abbrev[sdx] + ' ' + S_publ[sdx] +
-					(Dwr.search.HideGid ? '' : ' ' + S_gid[idx]));},
+					(Dwr.search.HideGid ? '' : ' ' + S_gid[sdx]));},
 			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
@@ -3578,12 +3564,13 @@ function SearchObjects()
 		{
 			data: 'P',
 			fextract: function(pdx) {return(P_name[pdx] +
-					(Dwr.search.HideGid ? '' : ' ' + P_gid[idx]));},
+					(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]));},
 			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
 		}
 	];
+	// Search
 	var x;
 	var nb_found = 0;
 	var fref;
@@ -3754,6 +3741,7 @@ function ConfigPage()
 		['IndexShowMarriage', _('Include a column for marriage dates on the index pages'), ''],
 		['IndexShowPartner', _('Include a column for partners on the index pages'), ''],
 		['IndexShowParents', _('Include a column for parents on the index pages'), ''],
+		['IndexShowPath', _('Include a column for media path on the index pages'), ''],
 		['IndexShowBkrefType', _('Include references in indexes'), '</div><hr><div class="row">'],
 		['MapPlace', _('Include Place map on Place Pages'), ''],
 		['MapFamily', _('Include a map in the individuals and family pages'), '</div><hr><div class="row">'],

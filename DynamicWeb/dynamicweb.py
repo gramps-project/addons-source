@@ -136,6 +136,7 @@ else:
     import urllib.parse as urlparse, urllib.request as urllib
 import zipfile
 import json
+from hashlib import md5
 
 from operator import itemgetter
 from decimal import Decimal, getcontext
@@ -1816,8 +1817,10 @@ class DynamicWebReport(Report):
         Return the path of the media from the web pages
         This function could be called several times for the same media
         This function copies the media to the web pages directories if necessary.
-        If media is copied, then 1 or 2 levels of subdirectory are inserted.
-        Each directory is limited to 256 subdirectories or files.
+        If media is copied, then 2 levels of subdirectory are inserted.
+        These subdrectories names are invariant atevery report generation:
+         - extracted from the media handle (for COPY_MEDIA_RENAME),
+         - or, hash from media origin directory (for COPY_MEDIA_UNCHANGED)
         The reason is to prevent directories with too many entries.
         '''
         media_path = media.get_path()
@@ -1827,12 +1830,13 @@ class DynamicWebReport(Report):
                 if (self.copy_media == COPY_MEDIA_RENAME):
                     handle = media.get_handle()
                     if (handle not in self.images_copied):
-                        subdir = str(len(self.images_copied) >> 8)
                         ext = os.path.splitext(norm_path)[1]
-                        iname = str(handle) + ext
-                        iname = iname.lower()
-                        self.copy_file(norm_path, iname, os.path.join("image", subdir))
-                        web_path = "image/" + subdir + "/" + iname
+                        iname = str(handle).lower()
+                        subdir1 = iname[-1]
+                        subdir2 = iname[-2]
+                        iname += ext.lower()
+                        self.copy_file(norm_path, iname, os.path.join("image", subdir1, subdir2))
+                        web_path = "image/" + subdir1 + '/' + subdir2 + '/' + iname
                         self.images_copied[handle] = web_path
                     else:
                         web_path = self.images_copied[handle]
@@ -1842,8 +1846,9 @@ class DynamicWebReport(Report):
                         dir = os.path.dirname(norm_path)
                         filename = os.path.basename(norm_path)
                         if dir not in self.media_paths:
-                            subdir1 = str(len(self.media_paths) >> 8)
-                            subdir2 = str(len(self.media_paths) & 0xFF)
+                            hash = md5(dir.encode('utf-8')).hexdigest().lower()
+                            subdir1 = hash[0 : 1]
+                            subdir2 = hash[2 : 10]
                             self.media_paths[dir] = os.path.join("image", subdir1, subdir2)
                         self.copy_file(norm_path, filename, self.media_paths[dir])
                         web_path = self.media_paths[dir].replace('\\', '/') + '/' + filename
@@ -1868,15 +1873,17 @@ class DynamicWebReport(Report):
         up-to-date cache of a thumbnail, and call copy_file
         to copy the cached thumbnail to the website.
         Return the new path to the image.
-        1 level of subdirectory is inserted.
-        Each directory is limited to 256 subdirectories or files.
+        2 levels of subdirectory are inserted.
+        These subdrectories names are extracted from the media handle, in order to always have the same path when exporting
         The reason is to prevent directories with too many entries.
         '''
         if (region and region[0] == 0 and region[1] == 0 and region[2] == 100 and region[3] == 100):
             region = None
         handle = media.get_handle()
-        tname = handle + (("-%d,%d-%d,%d.png" % region) if region else ".png")
-        tname = tname.lower()
+        tname = str(handle).lower()
+        subdir1 = tname[-1]
+        subdir2 = tname[-2]
+        tname = tname + (("-%d,%d-%d,%d.png" % region) if region else ".png")
         if (tname not in self.thumbnail_created):
             if (media.get_mime_type()):
                 from_path = get_thumbnail_path(
@@ -1887,9 +1894,8 @@ class DynamicWebReport(Report):
                     from_path = os.path.join(IMAGE_DIR, "document.png")
             else:
                 from_path = os.path.join(IMAGE_DIR, "document.png")
-            subdir = str(len(self.thumbnail_created) >> 8)
-            self.copy_file(from_path, tname, os.path.join("thumb", subdir))
-            web_path = "thumb/" + subdir + '/' + tname
+            self.copy_file(from_path, tname, os.path.join("thumb", subdir1, subdir2))
+            web_path = "thumb/" + subdir1 + '/' + subdir2 + '/' + tname
             self.thumbnail_created[tname] = web_path
         else:
             web_path = self.thumbnail_created[tname]
@@ -2397,6 +2403,7 @@ class DynamicWebReport(Report):
         sw.write("INDEX_SHOW_MARRIAGE=" + ("true" if (self.options['showmarriage']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARTNER=" + ("true" if (self.options['showpartner']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARENTS=" + ("true" if (self.options['showparents']) else "false") + ";\n")
+        sw.write("INDEX_SHOW_PATH=" + ("true" if (self.options['showpath']) else "false") + ";\n")
         sw.write("INDEX_SHOW_BKREF_TYPE=" + ("true" if (self.options['bkref_type']) else "false") + ";\n")
         sw.write("INDEX_DEFAULT_SIZE = %s;\n" % self.options['entries_shown'])
         sw.write("INDEXES_SIZES = %s;\n" % repr(INDEXES_SIZES))
@@ -2478,6 +2485,7 @@ class DynamicWebReport(Report):
             ("Include a column for death dates on the index pages", _("Include a column for death dates on the index pages")),
             ("Include a column for marriage dates on the index pages", _("Include a column for marriage dates on the index pages")),
             ("Include a column for parents on the index pages", _("Include a column for parents on the index pages")),
+            ("Include a column for media path on the index pages", _("Include a column for media path on the index pages")),
             ("Include a column for partners on the index pages", _("Include a column for partners on the index pages")),
             ("Include a map in the individuals and family pages", _("Include a map in the individuals and family pages")),
             ("Include half and/ or step-siblings on the individual pages", _("Include half and/ or step-siblings on the individual pages")),
@@ -4123,6 +4131,10 @@ class DynamicWebOptions(MenuReportOptions):
         showparents = BooleanOption(_("Include a column for parents on the index pages"), False)
         showparents.set_help(_('Whether to include a parents column'))
         addopt("showparents", showparents)
+
+        showpath = BooleanOption(_("Include a column for media path on the index pages"), False)
+        showpath.set_help(_('Whether to include a column showing the media path'))
+        addopt("showpath", showpath)
 
         bkref_type = BooleanOption(_('Include references in indexes'), False)
         bkref_type.set_help(_('Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media.'))

@@ -267,6 +267,7 @@ DwrClass.prototype.defaultSearchString = {
 	IndexShowMarriage: INDEX_SHOW_MARRIAGE,
 	IndexShowPartner: INDEX_SHOW_PARTNER,
 	IndexShowParents: INDEX_SHOW_PARENTS,
+	IndexShowPath: INDEX_SHOW_PATH,
 	IndexShowBkrefType: INDEX_SHOW_BKREF_TYPE,
 	ShowAllSiblings: SHOW_ALL_SIBLINGS,
 	IncEvents: INC_EVENTS,
@@ -355,6 +356,7 @@ DwrClass.prototype.ParseSearchString = function()
 	Dwr.search.IndexShowMarriage = GetURLParameter('cim', INDEX_SHOW_MARRIAGE);
 	Dwr.search.IndexShowPartner = GetURLParameter('cis', INDEX_SHOW_PARTNER);
 	Dwr.search.IndexShowParents = GetURLParameter('cip', INDEX_SHOW_PARENTS);
+	Dwr.search.IndexShowPath = GetURLParameter('cia', INDEX_SHOW_PATH);
 	Dwr.search.IndexShowBkrefType = GetURLParameter('cib', INDEX_SHOW_BKREF_TYPE);
 	Dwr.search.ShowAllSiblings = GetURLParameter('csib', SHOW_ALL_SIBLINGS);
 	Dwr.search.IncEvents = GetURLParameter('ce', INC_EVENTS);
@@ -479,6 +481,7 @@ DwrClass.prototype.BuildSearchString = function(params)
 	s = SetURLParameter(s, 'cim', params.IndexShowMarriage, Dwr.search.IndexShowMarriage, INDEX_SHOW_MARRIAGE);
 	s = SetURLParameter(s, 'cis', params.IndexShowPartner, Dwr.search.IndexShowPartner, INDEX_SHOW_PARTNER);
 	s = SetURLParameter(s, 'cip', params.IndexShowParents, Dwr.search.IndexShowParents, INDEX_SHOW_PARENTS);
+	s = SetURLParameter(s, 'cia', params.IndexShowPath, Dwr.search.IndexShowPath, INDEX_SHOW_PATH);
 	s = SetURLParameter(s, 'cib', params.IndexShowBkrefType, Dwr.search.IndexShowBkrefType, INDEX_SHOW_BKREF_TYPE);
 	s = SetURLParameter(s, 'csib', params.ShowAllSiblings, Dwr.search.ShowAllSiblings, SHOW_ALL_SIBLINGS);
 	s = SetURLParameter(s, 'ce', params.IncEvents, Dwr.search.IncEvents, INC_EVENTS);
