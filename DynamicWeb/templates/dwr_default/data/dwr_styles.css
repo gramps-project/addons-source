@@ -23,7 +23,7 @@ li p {
   margin: 0px;
 }
 .panel-title > .label {
-  color: #ffffff;
+  color: #fff;
 }
 /*===================================================== Main divs */
 @media (max-width: 767px) {
@@ -168,7 +168,7 @@ li p {
 .dwr-imgmap {
   display: none;
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   opacity: 0.5;
   filter: alpha(opacity=50);
   border-radius: 4px;
@@ -266,12 +266,12 @@ li p {
 }
 /*===================================================== Tree page */
 .svg-drawing {
-  background: #ffffff;
+  background: #fff;
   position: relative;
   overflow: hidden;
 }
 .svg-drawing-expand {
-  background: #ffffff;
+  background: #fff;
   position: relative;
   overflow: hidden;
   margin: 0px;
