@@ -150,7 +150,7 @@ function initStatistics()
 			extractors: [
 				extractorStringField(I, _('Name'), 'name'),
 				extractorStringField(I, _('Surname'), 'chart_surnames'),
-				extractorStringField(I, _('GRAMPS ID'), 'gid'),
+				extractorStringField(I, _('Gramps ID'), 'gid'),
 				extractorStringField(I, _('Gender'), 'chart_gender', function(a, b) {
 					var k1 = $.inArray(a, GENDERS_TEXT_ORDER);
 					var k2 = $.inArray(b, GENDERS_TEXT_ORDER);
@@ -180,7 +180,7 @@ function initStatistics()
 			extractors: [
 				extractorStringField(F, _('Name'), 'name'),
 				extractorStringField(F, _('Spouses surnames'), 'chart_surnames'),
-				extractorStringField(F, _('GRAMPS ID'), 'gid'),
+				extractorStringField(F, _('Gramps ID'), 'gid'),
 				extractorDateField(F, _('Marriage date'), 'marr_sdn'),
 				extractorMonthField(F, _('Marriage month'), 'marr_month'),
 				extractorDayofyearField(F, _('Marriage day of year'), 'marr_dayofyear'),

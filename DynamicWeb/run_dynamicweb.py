@@ -102,7 +102,7 @@ def main(report_nums):
         # Setup environment variables
         os.environ.update(report_set['environ'])
 
-        # Call GRAMPS CLI
+        # Call Gramps CLI
         if (sys.version_info[0] < 3):
             param = param.encode("UTF-8")
         os.chdir(gramps_path)
@@ -143,7 +143,7 @@ def main(report_nums):
         # Setup environment variables
         os.environ.update(test_set['environ'])
 
-        # Call GRAMPS CLI
+        # Call Gramps CLI
         if (sys.version_info[0] < 3):
             param = param.encode("UTF-8")
         os.chdir(gramps_path)
