@@ -235,6 +235,9 @@ li p {
 .thumbnail > img {
   max-width: initial;
 }
+input[id^='dwr-search-'] {
+  height: auto;
+}
 /*===================================================== Map */
 #gmap_canvas {
   height: 330px;
