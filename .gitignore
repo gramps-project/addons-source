@@ -75,4 +75,12 @@ USWebConnectPack/locale/
 
 # Testing
 libwebconnect.ini
+
+# DynamicWeb
 DynamicWeb/reports/
+DynamicWeb/templates/*/data/bootstrap/dist/css/*.map
+DynamicWeb/templates/*/data/bootstrap/dist/css/bootstrap.css
+DynamicWeb/templates/*/data/bootstrap/dist/css/bootstrap-theme.css
+DynamicWeb/templates/*/data/bootstrap/dist/js/bootstrap.js
+DynamicWeb/templates/*/data/bootstrap/dist/js/npm.js
+DynamicWeb/templates/*/data/bootstrap/node_modules
