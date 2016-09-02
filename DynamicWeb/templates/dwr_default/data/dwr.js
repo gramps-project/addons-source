@@ -1767,8 +1767,10 @@ function printRepo(rdx)
 //=========================================================================================
 //=========================================================================================
 
-var TABLE_OPTIMIZATION_LIMIT = 3000; // Fancy features are disabled above this limit (for indexes shown as as tables)
-var LIST_OPTIMIZATION_LIMIT = 1000; // Fancy features are disabled above this limit (for indexes shown as lists)
+// Fancy features are disabled above the limits below
+var TABLE_OPTIMIZATION_LIMIT = 3000; 
+var LIST_OPTIMIZATION_LIMIT = 1000;
+var TREE_OPTIMIZATION_LIMIT = 1000;
 
 function PrintIndex(id, header, type, fTable, fList, data)
 {
@@ -1923,8 +1925,8 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 	if (header != '')
 	{
 		html += '<h2 class="page-header">' + header + '</h2>';
-		data = new Array(DB_SIZES['I']);
-		for (var x = 0; x < DB_SIZES['I']; x++) data[x] = x;
+		data = new Array(DB_SIZES[id]);
+		for (var x = 0; x < DB_SIZES[id]; x++) data[x] = x;
 	}
 
 	// Print table
@@ -2003,6 +2005,7 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 }
 	
 function printIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
+// id: Data type
 // header: Page header
 // data: Array of data to be indexed
 // fText, fTextOptimized, fLetter: function taking a <data> row as parameter.
@@ -2699,7 +2702,7 @@ function htmlSourcesIndexList(header, data)
 
 function htmlPlacesIndex(data)
 {
-	return PrintIndex('P', _('Places Index'), true, htmlPlacesIndexTable, null, data);
+	return PrintIndex('P', _('Places Index'), Dwr.search.IndexTypeP, htmlPlacesIndexTable, htmlPlacesIndexTree, data);
 }
 
 
@@ -2798,6 +2801,123 @@ function htmlPlacesIndexTable(header, data)
 		fhref: function(x) {return placeHrefOptimized(data[x])}
 	});
 	return PrintIndexTable('P', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
+}
+	
+function htmlPlacesIndexTree(header, data)
+{
+	var scripts = [
+		['P', 'names'],
+		['P', 'type'],
+		['P', 'enclosed_by'],
+		['P', 'bkp']
+	];
+	if (!Dwr.search.HideGid) scripts.push(['P', 'gid']);
+	PrepareFieldSplitScripts(scripts);
+	if (preloadMode) return;
+	
+	// Print title
+	var html = '';
+	if (header != '')
+	{
+		html += '<h2 class="page-header">' + header + '</h2>';
+		data = new Array(DB_SIZES['P']);
+		for (var x = 0; x < DB_SIZES['P']; x++) data[x] = x;
+	}
+
+	var fText = function(pdx)
+	{
+		var txt = '<span class="dwr-nowrap"><a href="' + placeHrefOptimized(pdx) + '">';
+		txt += placeNames(P_names[pdx]);
+		txt += ' (' + P_type[pdx] + ')';
+		if (!Dwr.search.HideGid) txt += gidBadge(P_gid[pdx]);
+		txt += '</a></span>';
+		return txt;
+	};
+	var fTextOptimized = function(pdx) {
+		var txt = '<span class="dwr-nowrap"><a href="' + placeHrefOptimized(pdx) + '">';
+		if (!Dwr.search.HideGid) txt += P_gid[pdx] + ': ';
+		txt += placeNames(P_names[pdx]);
+		txt += ' (' + P_type[pdx] + ')';
+		txt += '</a></span>';
+		return txt;
+	};
+	
+	// Optimization
+	if (data.length > TREE_OPTIMIZATION_LIMIT)
+	{
+		console.log('Too many data (' + data.length + '). Disabling fancy features.');
+		fText = fTextOptimized;
+	}
+	
+	// When no data
+	if (data.length == 0) return html + '<p>' + _('None') + '</p>';
+	
+	if (header == '')
+	{
+		// No header = in the search results page, show data as list 
+		var sortingAttributes = [
+			{
+				title: '',
+				attr: '',
+				fSort: function(a, b) {return(a - b)},
+				fLetter: false
+			}
+		];
+		return printIndexList('P', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	}
+	else
+	{
+		// Header = in the place index page, show data as tree
+		
+		// Build tree data
+		var treedata = [];
+		for (var x = 0; x < data.length; x += 1)
+		{
+			var pdx = data[x];
+			if (P_enclosed_by[pdx].length > 0) continue; // Place is not a top-level place in the hierarchy
+			treedata.push(ComputePlaceHierarchy(pdx, fText));
+		}
+
+		(function(){ // This is used to create instances of local variables
+			$(document).ready(function() {
+				$('#treeview').treeview({
+					data: treedata,
+					enableLinks: true,
+					// collapseIcon: "glyphicon glyphicon-chevron-down",
+					// expandIcon: "glyphicon glyphicon-chevron-up",
+					highlightSearchResults: false,
+					highlightSelected: false,
+					levels: 1,
+					showBorder: false,
+					showTags: data.length <= TREE_OPTIMIZATION_LIMIT ||1
+				});
+				// $('.node-treeview').click(function(event) {
+					// console.log("sel");
+					// return false;
+				// });
+			});
+		})();
+		return html + '<div id="treeview"></div>';
+	}
+}
+
+function ComputePlaceHierarchy(top, fText)
+{
+	var node = {
+		text: fText(top),
+		selectable: false
+	};
+	var nodes = [];
+	for (var i = 0; i < P_bkp[top].length; i += 1)
+	{
+		nodes.push(ComputePlaceHierarchy(P_bkp[top][i], fText));
+	}
+	if (nodes.length > 0)
+	{
+		node.nodes = nodes;
+		node.tags = ['' + nodes.length];
+	}
+	return node;
 }
 
 
@@ -3783,8 +3903,8 @@ function ConfigPage()
 		['IndexTypeN', _('Use a table format for the surnames index'), ''],
 		['IndexTypeI', _('Use a table format for the persons index'), ''],
 		['IndexTypeF', _('Use a table format for the families index'), ''],
-		['IndexTypeS', _('Use a table format for the sources index'), '</div><hr><div class="row">'],
-		// ['IndexTypeP', _('Use a table format for the places index'), '</div><hr><div class="row">'],
+		['IndexTypeS', _('Use a table format for the sources index'), ''],
+		['IndexTypeP', _('Use a table format for the places index'), '</div><hr><div class="row">'],
 		['IndexShowDates', _('Include dates columns on the index pages'), ''],
 		['IndexShowPartner', _('Include a column for partners on the index pages'), ''],
 		['IndexShowParents', _('Include a column for parents on the index pages'), ''],

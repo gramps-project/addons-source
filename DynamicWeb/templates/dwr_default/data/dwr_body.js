@@ -6,20 +6,20 @@
 // This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-// This script is part of the GRAMPS dynamic web report
+// This script is part of the Gramps dynamic web report
 // See 'dynamicweb.py'
 //
 // This script performs the following treatments:
 //
 //	- Build the document body structure:
 //	  The body contains the following sections (div):!
-//		 header: the header note given as parameter in GRAMPS
+//		 header: the header note given as parameter in Gramps
 //		 menu: The page menu
 //			This menu contains a form for: search input, number of generations inputs
 //			This menu is optional (depends on the body class "dwr-menuless")
 //		 body-page: The contents of the page
 //			the body-page could contain a search form
-//		 footer: the footer note given as parameter in GRAMPS
+//		 footer: the footer note given as parameter in Gramps
 //
 //	- Manage the URL search string:
 //	  The URL search string is used to pass parameters to the page
@@ -287,7 +287,7 @@ DwrClass.prototype.defaultSearchString = {
 	IndexTypeI: INDEX_PERSONS_TYPE,
 	IndexTypeF: INDEX_FAMILIES_TYPE,
 	IndexTypeS: INDEX_SOURCES_TYPE,
-	// IndexTypeP: INDEX_PLACES_TYPE,
+	IndexTypeP: INDEX_PLACES_TYPE,
 
 	ChartTable: 0,
 	ChartType: 0,
@@ -374,7 +374,7 @@ DwrClass.prototype.ParseSearchString = function()
 	Dwr.search.IndexTypeI = GetURLParameter('citi', INDEX_PERSONS_TYPE);
 	Dwr.search.IndexTypeF = GetURLParameter('citf', INDEX_FAMILIES_TYPE);
 	Dwr.search.IndexTypeS = GetURLParameter('cits', INDEX_SOURCES_TYPE);
-	// Dwr.search.IndexTypeP = GetURLParameter('citp', INDEX_PLACES_TYPE);
+	Dwr.search.IndexTypeP = GetURLParameter('citp', INDEX_PLACES_TYPE);
 
 	Dwr.search.ChartTable = GetURLParameter('charttable', 0);
 	Dwr.search.ChartType = GetURLParameter('charttype', 0);
@@ -497,7 +497,7 @@ DwrClass.prototype.BuildSearchString = function(params)
 	s = SetURLParameter(s, 'citi', Dwr.search.IndexTypeI, Dwr.search.IndexTypeI, INDEX_PERSONS_TYPE);
 	s = SetURLParameter(s, 'citf', Dwr.search.IndexTypeF, Dwr.search.IndexTypeF, INDEX_FAMILIES_TYPE);
 	s = SetURLParameter(s, 'cits', Dwr.search.IndexTypeS, Dwr.search.IndexTypeS, INDEX_SOURCES_TYPE);
-	// s = SetURLParameter(s, 'citp', Dwr.search.IndexTypeP, Dwr.search.IndexTypeP, INDEX_PLACES_TYPE);
+	s = SetURLParameter(s, 'citp', Dwr.search.IndexTypeP, Dwr.search.IndexTypeP, INDEX_PLACES_TYPE);
 
 	s = SetURLParameter(s, 'charttable', params.ChartTable, Dwr.search.ChartTable, 0);
 	s = SetURLParameter(s, 'charttype', params.ChartType, Dwr.search.ChartType, 0);

@@ -64,13 +64,17 @@ LoadJsFile(scriptFolder + 'jquery/jquery.mousewheel.min.js');
 LoadCssFile(scriptFolder + 'bootstrap/dist/css/bootstrap.min.css');
 LoadJsFile(scriptFolder + 'bootstrap/dist/js/bootstrap.min.js');
 
-// Load Data Tables
+// Load DataTables
 LoadCssFile(scriptFolder + 'datatables/media/css/dataTables.bootstrap.min.css');
 LoadCssFile(scriptFolder + 'datatables/media/css/responsive.bootstrap.min.css');
 LoadJsFile(scriptFolder + 'datatables/media/js/jquery.dataTables.min.js');
 LoadJsFile(scriptFolder + 'datatables/media/js/dataTables.bootstrap.min.js');
 LoadJsFile(scriptFolder + 'datatables/media/js/dataTables.responsive.min.js');
 LoadJsFile(scriptFolder + 'datatables/media/js/responsive.bootstrap.min.js');
+
+// Load Tree View
+LoadCssFile(scriptFolder + 'bootstrap-treeview/bootstrap-treeview.min.css');
+LoadJsFile(scriptFolder + 'bootstrap-treeview/bootstrap-treeview.min.js');
 
 // Load context menu plugin
 LoadCssFile(scriptFolder + 'context/context.css');

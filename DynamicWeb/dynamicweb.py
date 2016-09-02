@@ -2399,7 +2399,7 @@ class DynamicWebReport(Report):
         sw.write("INDEX_PERSONS_TYPE=" + ("true" if (int(self.options['index_persons_type'])) else "false") + ";\n")
         sw.write("INDEX_FAMILIES_TYPE=" + ("true" if (int(self.options['index_families_type'])) else "false") + ";\n")
         sw.write("INDEX_SOURCES_TYPE=" + ("true" if (int(self.options['index_sources_type'])) else "false") + ";\n")
-        # sw.write("INDEX_PLACES_TYPE=" + ("true" if (int(self.options['index_places_type'])) else "false") + ";\n")
+        sw.write("INDEX_PLACES_TYPE=" + ("true" if (int(self.options['index_places_type'])) else "false") + ";\n")
         sw.write("INDEX_SHOW_DATES=" + ("true" if (self.options['showdates']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARTNER=" + ("true" if (self.options['showpartner']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARENTS=" + ("true" if (self.options['showparents']) else "false") + ";\n")
@@ -2730,8 +2730,8 @@ class DynamicWebReport(Report):
         text = text.replace("__NB_SOURCES__", str(len(self.obj_dict[Source])))
         text = text.replace("__NB_REPOSITORIES__", str(len(self.obj_dict[Repository])))
         text = text.replace("__NB_PLACES__", str(len(self.obj_dict[Place])))
-        # __MEDIA_<gid>__ is replaced by the media with gramps ID <gid>
-        # __THUMB_<gid>__ is replaced by the thumbnail of the media with gramps ID <gid>
+        # __MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>
+        # __THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID <gid>
         text2 = text
         for mo in re.finditer(r"__(MEDIA|THUMB)_(.*?)__", text):
             gid = mo.group(2)
@@ -3823,11 +3823,11 @@ class DynamicWebOptions(MenuReportOptions):
             "__NB_SOURCES__ is replaced by the number of sources.\n"
             "__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
             "__NB_PLACES__ is replaced by the number of places.\n"
-            "__MEDIA_<gid>__ is replaced by the media with gramps ID <gid>.\n"
-            "__THUMB_<gid>__ is replaced by the thumbnail of the media with gramps ID <gid>.\n"
+            "__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+            "__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID <gid>.\n"
             "__EXPORT_DATE__ is replaced by the current date.\n"
-            "__GRAMPS_VERSION__ is replaced by the GRAMPS version.\n"
-            "__GRAMPS_HOMEPAGE__ is replaced by the GRAMPS homepage link.\n"
+            "__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+            "__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
             "URL starting with \"relative://relative.<link>\" are replaced by the relative URL \"<link>\".\n")
 
         MenuReportOptions.__init__(self, name, dbase)
@@ -4103,7 +4103,7 @@ class DynamicWebOptions(MenuReportOptions):
             ["persons", "1", _("Default format for the persons index"), _("The default format for the persons index")],
             ["families", "1", _("Default format for the families index"), _("The default format for the families index")],
             ["sources", "1", _("Default format for the sources index"), _("The default format for the sources index")],
-            # ["places", "1", _("Default format for the places index"), _("The default format for the places index")],
+            ["places", "1", _("Default format for the places index"), _("The default format for the places index")],
         ]:
             index_type = EnumeratedListOption(option_text, default)
             for (i, eopt) in enumerate(index_types):
