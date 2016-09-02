@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: 4.2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-04 15:53+0100\n"
-"PO-Revision-Date: 2016-09-02 15:34+0100\n"
+"PO-Revision-Date: 2016-09-02 15:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -436,7 +436,7 @@ msgstr "Niveau d'instruction"
 
 #: Form/form.xml.h:66
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
-msgstr ""
+msgstr "\"Sait lire et écrire\", \"Lit\" or \"Ne lit pas\""
 
 #: Form/form.xml.h:67
 msgid "Irish Language"
@@ -446,6 +446,8 @@ msgstr "Langue irlandaise"
 msgid ""
 "\"Irish\" or \"Irish &amp; English\", in other cases no entry should be made"
 msgstr ""
+"\"Irlandais\" or \"Irlandais &amp; Anglais\", dans les autres cas, aucune "
+"entrée ne doit être créée"
 
 #: Form/form.xml.h:69
 msgid ""
@@ -459,7 +461,7 @@ msgstr ""
 
 #: Form/form.xml.h:71
 msgid "Barony"
-msgstr ""
+msgstr "Baronnie"
 
 #: Form/form.xml.h:72
 msgid "Parish"
@@ -477,7 +479,7 @@ msgstr "Arrondissement"
 
 #: Form/form.xml.h:75
 msgid "Urban District"
-msgstr ""
+msgstr "Arrondissement urbain"
 
 #: Form/form.xml.h:76
 msgid "Town or Village"
@@ -493,7 +495,7 @@ msgstr "Nombre d'enfants"
 
 #: Form/form.xml.h:79
 msgid "Children born alive to present Marriage"
-msgstr ""
+msgstr "Enfants nés vivants au mariage actuel"
 
 #: Form/form.xml.h:80
 msgid "Date of birth"
@@ -553,9 +555,8 @@ msgid "Free white females"
 msgstr "Femme libre blanche"
 
 #: Form/form.xml.h:94
-#, fuzzy
 msgid "All other free persons"
-msgstr "Couleur des individus féminins:"
+msgstr "Toutes les autres personnes libres"
 
 #: Form/form.xml.h:95
 msgid "Slaves"
@@ -1054,13 +1055,12 @@ msgid "Value of personal estate"
 msgstr "Sélectionner un individu en tant que père"
 
 #: Form/form.xml.h:218
-#, fuzzy
 msgid "Father of foreign birth"
-msgstr "Décès avant la naissance"
+msgstr "Père né à l'étranger"
 
 #: Form/form.xml.h:219
 msgid "Mother of foreign birth"
-msgstr ""
+msgstr "Mère née à l'étranger"
 
 #: Form/form.xml.h:220
 msgid "Month, if born within the year"
@@ -1525,11 +1525,11 @@ msgstr ""
 
 #: Form/form.xml.h:332
 msgid "If woman, married more than once?"
-msgstr ""
+msgstr "Si une femme, mariée plusieurs fois ?"
 
 #: Form/form.xml.h:333
 msgid "Number of children ever born"
-msgstr ""
+msgstr "Nombre d'enfants déjà nés"
 
 #: Form/form.xml.h:334
 msgid "Schedule"
@@ -1999,9 +1999,8 @@ msgid "RyeBsh"
 msgstr ""
 
 #: Form/form.xml.h:445
-#, fuzzy
 msgid "15. Rye: Produce Bsh."
-msgstr "11. Blé: produit Bsh."
+msgstr "15. Seigle : produit Bsh."
 
 #: Form/form.xml.h:446
 msgid "PeasAcres"
@@ -2278,19 +2277,19 @@ msgstr ""
 
 #: Form/form.xml.h:510
 msgid "Horses"
-msgstr ""
+msgstr "Chevaux"
 
 #: Form/form.xml.h:511
 msgid "48. Horses of all ages"
-msgstr ""
+msgstr "48. Chevaux de tous âges"
 
 #: Form/form.xml.h:512
 msgid "Sheep"
-msgstr ""
+msgstr "Mouton"
 
 #: Form/form.xml.h:513
 msgid "49. Sheep"
-msgstr ""
+msgstr "49. Mouton"
 
 #: Form/form.xml.h:514
 msgid "Pigs"
@@ -2326,7 +2325,7 @@ msgstr ""
 
 #: Form/form.xml.h:522
 msgid "Pork"
-msgstr ""
+msgstr "Porc"
 
 #: Form/form.xml.h:523
 msgid "54. Pork - Barrels or Cwts."
@@ -2798,18 +2797,16 @@ msgid "12. FrenchCanadian"
 msgstr "12. CanadienFrancophone"
 
 #: Form/form.xml.h:639
-#, fuzzy
 msgid "BirthPlaceFather"
-msgstr "Lieu de naissance"
+msgstr "Lieu_de_naissance_Père"
 
 #: Form/form.xml.h:640
 msgid "13. Birth Place of Father"
 msgstr "13. Lieu de naissance du père"
 
 #: Form/form.xml.h:641
-#, fuzzy
 msgid "BirthPlaceMother"
-msgstr "Lieu de naissance"
+msgstr "Lieu_de_naissance_Mère"
 
 #: Form/form.xml.h:642
 msgid "14. Birth Place of Mother"
