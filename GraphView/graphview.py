@@ -81,7 +81,7 @@ except ImportError:
                     "required for this view to work")
 
 if os.sys.platform == "linux":
-    coef=0.1
+    coef=0
 else:
     coef=0
 
@@ -1012,11 +1012,11 @@ class GraphvizSvgParser(object):
                 font_family = self.font_family_map[p_style['font-family']]
             except KeyError:
                 font_family = p_style['font-family']
-            text_font = font_family + " " + p_style['font-size']
+            text_font = font_family + " " + p_style['font-size'] + 'px'
         else:
             font_family = self.font_family_map[self.text_attrs.get('font-family')]
             font_size = self.text_attrs.get('font-size')
-            text_font = font_family + " " + font_size
+            text_font = font_family + " " + font_size + 'px'
 
         item = GooCanvas.CanvasText(parent = self.current_parent(),
                                     text = tag,
@@ -1036,8 +1036,8 @@ class GraphvizSvgParser(object):
         """
         pos_x = float(attrs.get('x'))
         pos_y = float(attrs.get('y'))
-        width = float(attrs.get('width').rstrip(string.ascii_letters))*1.6
-        height = float(attrs.get('height').rstrip(string.ascii_letters))*1.6
+        width = float(attrs.get('width').rstrip(string.ascii_letters))
+        height = float(attrs.get('height').rstrip(string.ascii_letters))
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(attrs.get('xlink:href'))
         # coef is a coeficient depending on system to correct a bug in displaying images
         item = GooCanvas.CanvasImage(parent = self.current_parent(),
@@ -1166,7 +1166,7 @@ class DotGenerator(object):
 
         dpi        = 72
         fontfamily = ""
-        fontsize   = 9
+        fontsize   = 14
         nodesep    = 0.20
         pagedir    = "BL"
         rankdir    = "TB"
@@ -1600,11 +1600,9 @@ class DotGenerator(object):
         # Need to pad the label because of a bug in the SVG output of Graphviz
         # which causes the width of the text to exceed the bounding box.
         if self.is_html_output :
-            name = name.ljust(int(len(name)*1.6))
             # avoid < and > in the name, as this is html text
             label += name.replace('<', '&#60;').replace('>', '&#62;')
         else :
-            name = name.center(int(len(name)*2))
             label += name
 
         label += line_delimiter
@@ -1619,10 +1617,6 @@ class DotGenerator(object):
             if birth:
                 txt= _('b. %s') % birth # Short for "born" (could be "*")
             # Line separator required only if we have both birth and death
-                if self.is_html_output :
-                    txt = txt.ljust(int(len(txt)*1.6))
-                else :
-                    txt = txt.center(int(len(txt)*2))
                 label += txt
             if birth and death:
                 label += line_delimiter
@@ -1631,17 +1625,9 @@ class DotGenerator(object):
                 txt= _('d. %s') % death # Short for "died" (could be "+")
         # 2) simple and on one line:
         #       (1890 - 1960)
-                if self.is_html_output :
-                    txt = txt.ljust(int(len(txt)*1.6))
-                else :
-                    txt = txt.center(int(len(txt)*2))
                 label += txt
         else:
             txt= '(%s - %s)' % (birth, death)
-            if self.is_html_output :
-                txt = txt.ljust(int(len(txt)*1.6))
-            else :
-                txt = txt.center(int(len(txt)*2))
             label += txt
 
         # see if we have a table that needs to be terminated
