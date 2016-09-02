@@ -2957,9 +2957,9 @@ function textLine(x, y, a, txt, w, h, x_elt)
 	text.attr('font-size', '' + fs0);
 	var bbox = text.getBBox();
 	var fs = Math.min(w / bbox.width, h / bbox.height);
-	text.scale(fs , fs);
 	text = chromeBugBBox(text);
 	if (a != 0) text.transform('r' + a * 180 / Math.PI);
+	text.scale(fs , fs);
 	return(text);
 }
 
