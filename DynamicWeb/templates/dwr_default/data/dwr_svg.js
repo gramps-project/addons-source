@@ -39,7 +39,7 @@ var coordX = 10000.0, coordY = 10000.0;
 var margeX = 200.0, margeY = 200.0;
 var svgStroke = 1e10; // Width of the box strokes
 var svgStrokeRatio = 10.0; // Minimal ratio box size / stroke
-var svgDivMinHeight = 200; // Minimal graph height
+var svgDivMinHeight = 250; // Minimal graph height
 var maxAge = 0;
 var minPeriod = 1e10;
 var maxPeriod = -1e10;
