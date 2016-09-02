@@ -252,7 +252,6 @@ class DynamicWebTests(unittest.TestCase):
             "source.html",
             "sources.html",
             "surname.html",
-            "surnames2.html",
             "surnames.html",
             "tree_svg_conf.html",
             "tree_svg_full.html",
@@ -263,18 +262,19 @@ class DynamicWebTests(unittest.TestCase):
 
         # Check size of exported JSON files
         for (filename, prefix, expected_size) in [
-            ("dwr_db_indi.js", r"I *= *", 7),
-            ("dwr_db_fam.js", r"F *= *", 5),
-            ("dwr_db_sour.js", r"S *= *", 4),
-            ("dwr_db_media.js", r"M *= *", 4),
-            ("dwr_db_repo.js", r"R *= *", 3),
-            ("dwr_db_place.js", r"P *= *", 37),
+            ("dwr_db_I_gid_0.js", r"I_gid_0 *= *", 7),
+            ("dwr_db_F_gid_0.js", r"F_gid_0 *= *", 5),
+            ("dwr_db_S_gid_0.js", r"S_gid_0 *= *", 4),
+            ("dwr_db_M_gid_0.js", r"M_gid_0 *= *", 4),
+            ("dwr_db_R_gid_0.js", r"R_gid_0 *= *", 3),
+            ("dwr_db_P_gid_0.js", r"P_gid_0 *= *", 37),
         ]:
             path = os.path.join(self.results_path, "test_000", filename)
             jf = codecs.open(path, "r", encoding = "UTF-8")
             s = jf.read()
             s = re.sub(r"^\s*//.*$", "", s, flags = re.MULTILINE) # remove JS comments
             s = re.sub(prefix, "", s)
+            s = re.sub(r"^.*ScriptLoaded.*$", "", s, flags = re.MULTILINE)
             jdata = json.loads(s)
             self.assertEqual(len(jdata), expected_size,
                 "%s JSON data does not have the expected size (%i instead of %i)" % (path, len(jdata), expected_size))

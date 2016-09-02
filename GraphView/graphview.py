@@ -8,7 +8,7 @@
 #                          report.
 #                          Mouse panning is derived from the pedigree view
 # Copyright (C) 2012       Mathieu MD
-# Copyright (C) 2015       Serge Noiraud
+# Copyright (C) 2015-      Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -94,6 +94,7 @@ if not _DOT_FOUND:
     raise Exception("GraphViz (http://www.graphviz.org) is "
                     "required for this view to work")
 
+SPLINE = {0 : 'false', 1 : 'true', 2 : 'ortho'}
 
 #-------------------------------------------------------------------------
 #
@@ -110,8 +111,11 @@ class GraphView(NavigationView):
         ('interface.graphview-show-images', True),
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
+        ('interface.graphview-show-lines', 1),
+        ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
+        ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
         )
@@ -124,10 +128,13 @@ class GraphView(NavigationView):
         self.show_full_dates = self._config.get(
                                'interface.graphview-show-full-dates')
         self.show_places = self._config.get('interface.graphview-show-places')
+        self.show_tag_color = self._config.get('interface.graphview-show-tags')
         self.highlight_home_person = self._config.get(
                                   'interface.graphview-highlight-home-person')
         self.home_person_color = self._config.get(
                                  'interface.graphview-home-person-color')
+        self.home_path_color = self._config.get(
+                                 'interface.graphview-home-path-color')
         self.descendant_generations = self._config.get(
                                   'interface.graphview-descendant-generations')
         self.ancestor_generations = self._config.get(
@@ -246,7 +253,7 @@ class GraphView(NavigationView):
 
     def can_configure(self):
         """
-        See :class:`~gui.views.pageview.PageView 
+        See :class:`~gui.views.pageview.PageView
         :return: bool
         """
         return True
@@ -281,6 +288,12 @@ class GraphView(NavigationView):
             self.show_places = False
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_lines(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the line setting.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_highlight_home_person(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the highlight home
@@ -297,6 +310,13 @@ class GraphView(NavigationView):
         Called when the configuration menu changes the home person color.
         """
         self.home_person_color = entry
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_home_path_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the path person color.
+        """
+        self.home_path_color = entry
         self.graph_widget.populate(self.get_active())
 
     def cb_update_descendant_generations(self, client, cnxd_id, entry, data):
@@ -327,10 +347,14 @@ class GraphView(NavigationView):
                           self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
                           self.cb_update_show_places)
+        self._config.connect('interface.graphview-show-lines',
+                          self.cb_update_show_lines)
         self._config.connect('interface.graphview-highlight-home-person',
                           self.cb_update_highlight_home_person)
         self._config.connect('interface.graphview-home-person-color',
                           self.cb_update_home_person_color)
+        self._config.connect('interface.graphview-home-path-color',
+                          self.cb_update_home_path_color)
         self._config.connect('interface.graphview-descendant-generations',
                           self.cb_update_descendant_generations)
         self._config.connect('interface.graphview-ancestor-generations',
@@ -338,7 +362,7 @@ class GraphView(NavigationView):
 
     def _get_configure_page_funcs(self):
         """
-        Return a list of functions that create gtk elements to use in the 
+        Return a list of functions that create gtk elements to use in the
         notebook pages of the Configure dialog
 
         :return: list of functions
@@ -373,6 +397,13 @@ class GraphView(NavigationView):
         configdialog.add_spinner(grid,
                 _('Ancestor generations'),
                 5, 'interface.graphview-ancestor-generations', (0, 50))
+        configdialog.add_combo(grid,
+                _('Show lines'),
+                6, 'interface.graphview-show-lines',
+                ((0, _('none')),
+                 (1, _('curves')),
+                 (2, _('ortho'))),
+                callback=self.cb_update_form)
 
         return _('Layout'), grid
 
@@ -388,8 +419,19 @@ class GraphView(NavigationView):
         configdialog.add_color(grid,
                 _('Home person color'),
                 0, 'interface.graphview-home-person-color')
+        configdialog.add_color(grid,
+                _('Path color'),
+                1, 'interface.graphview-home-path-color')
+        configdialog.add_checkbox(grid,
+                _('Show tags'),
+                2, 'interface.graphview-show-tags')
 
         return _('Colors'), grid
+
+    def cb_update_form(self, obj, constant):
+        entry = obj.get_active()
+        self._config.set(constant, entry)
+        self.spline = SPLINE.get(int(entry))
 
     #-------------------------------------------------------------------------
     #
@@ -439,6 +481,11 @@ class GraphView(NavigationView):
                         g.write(self.graph_widget.dot_data.decode('utf-8'))
                         s.write(self.graph_widget.svg_data.decode('utf-8'))
         dot.destroy()
+
+    def cb_update_form(self, obj, constant):
+        entry = obj.get_active()
+        self._config.set(constant, entry)
+        self.spline = SPLINE.get(int(entry))
 
 #-------------------------------------------------------------------------
 #
@@ -500,7 +547,7 @@ class GraphWidget(object):
                              stdout=PIPE,
                              stderr=PIPE).communicate(input=self.dot_data)[0]
         else:
-            self.svg_data = Popen(['dot', '-Tsvg'], 
+            self.svg_data = Popen(['dot', '-Tsvg'],
                         stdin=PIPE, stdout=PIPE).communicate(input=self.dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
@@ -650,7 +697,7 @@ class GraphWidget(object):
         """
         Locate a parent from the first family that the selected person is a
         child of. Try and find the father first, then the mother. Either will
-        be OK. 
+        be OK.
         """
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
@@ -688,6 +735,8 @@ class GraphvizSvgParser(object):
                                    'interface.graphview-highlight-home-person')
         self.home_person_color = self.view._config.get(
                                  'interface.graphview-home-person-color')
+        self.home_path_color = self.view._config.get(
+                                 'interface.graphview-home-path-color')
         self.tlist = []
         self.text_attrs = None
         self.func_list = []
@@ -898,6 +947,10 @@ class GraphvizSvgParser(object):
         when a child has a non-birth relationship to a parent.
         """
         p_data = attrs.get('d')
+        line_width = attrs.get('stroke-width')
+        if line_width == None:
+            line_width = 1
+        line_width = float(line_width)
         style = attrs.get('style')
 
         if style:
@@ -915,7 +968,7 @@ class GraphvizSvgParser(object):
              item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
                                         stroke_color = stroke_color,
-                                        line_width = 1,
+                                        line_width = line_width,
                                         line_dash = GooCanvas.CanvasLineDash.newv([5.0, 5.0]))
             # http://www.gramps-project.org/bugs/view.php?id=6816
             # Consider reverting back to dashed lines when CanvasLineDash()
@@ -923,12 +976,12 @@ class GraphvizSvgParser(object):
 #            item = GooCanvas.CanvasPath(parent = self.current_parent(),
 #                                        data = p_data,
 #                                        stroke_color = 'Red',
-#                                        line_width = 1)
+#                                        line_width = line_width)
         else:
             item = GooCanvas.CanvasPath(parent = self.current_parent(),
                                         data = p_data,
                                         stroke_color = stroke_color,
-                                        line_width = 1)
+                                        line_width = line_width)
 
         self.item_hier.append(item)
 
@@ -1084,6 +1137,13 @@ class DotGenerator(object):
                                     'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
                                     'interface.graphview-show-places')
+        self.show_tag_color = self.view._config.get(
+                                    'interface.graphview-show-tags')
+        self.home_path_color = self.view._config.get(
+                                 'interface.graphview-home-path-color')
+        spline = self.view._config.get(
+                                    'interface.graphview-show-lines')
+        self.spline = SPLINE.get(int(spline))
         self.descendant_generations = self.view._config.get(
                                     'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
@@ -1101,6 +1161,8 @@ class DotGenerator(object):
         }
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
+        self.current_list = list()
+        self.home_person = None
 
         dpi        = 72
         fontfamily = ""
@@ -1135,7 +1197,7 @@ class DotGenerator(object):
         self.write( '  ratio="%s";\n'               % ratio        )
         self.write( '  searchsize="100";\n'         )
         self.write( '  size="%3.2f,%3.2f"; \n'      % (sizew, sizeh)    )
-        self.write( '  splines="true";\n'           )
+        self.write( '  splines=%s;\n'               % self.spline       )
         self.write( '\n'                            )
         self.write( '  edge [style=solid fontsize=%d];\n' % fontsize )
         if fontfamily:
@@ -1150,6 +1212,10 @@ class DotGenerator(object):
         "Builds a GraphViz descendant tree based on the active person"
         if active_person:
             self.person_handles = set()
+            self.home_person = self.dbstate.db.get_default_person()
+            self.current_list = list()
+            self.set_current_list(active_person)
+            self.set_current_list_desc(active_person)
             self.person_handles.update(self.find_descendants(active_person))
             self.person_handles.update(self.find_ancestors(active_person))
 
@@ -1159,6 +1225,49 @@ class DotGenerator(object):
 
         # Close the graphviz dot code with a brace.
         self.write('}\n')
+
+    def set_current_list(self, active_person):
+        """ We get the path from the active person to the home person.
+            Select ancestors.
+        """
+        if not active_person:
+            return False
+        person = self.database.get_person_from_handle(active_person)
+        if person == self.home_person:
+            self.current_list.append(active_person)
+            return True
+        else:
+            for fam_handle in person.get_parent_family_handle_list():
+                family = self.database.get_family_from_handle(fam_handle)
+                if self.set_current_list(family.get_father_handle()) == True:
+                    self.current_list.append(active_person)
+                    self.current_list.append(fam_handle)
+                    return True
+                if self.set_current_list(family.get_mother_handle()) == True:
+                    self.current_list.append(active_person)
+                    self.current_list.append(fam_handle)
+                    return True
+        return False
+
+    def set_current_list_desc(self, active_person):
+        """ We get the path from the active person to the home person.
+            Select children.
+        """
+        if not active_person:
+            return False
+        person = self.database.get_person_from_handle(active_person)
+        if person == self.home_person:
+            self.current_list.append(active_person)
+            return True
+        else:
+            for fam_handle in person.get_family_handle_list():
+                family = self.database.get_family_from_handle(fam_handle)
+                for child in family.get_child_ref_list():
+                    if self.set_current_list_desc(child.ref) == True:
+                        self.current_list.append(active_person)
+                        self.current_list.append(fam_handle)
+                        return True
+        return False
 
     def find_descendants(self, active_person):
         "Spider the database from the active person"
@@ -1198,7 +1307,7 @@ class DotGenerator(object):
                 # add spouse itself
                 if spouse_handle and spouse_handle not in person_handles:
                    person_handles.append(spouse_handle)
-                   
+
                 # add all his(her) spouses recursively
                 sp_person = None
                 if spouse_handle:
@@ -1272,7 +1381,9 @@ class DotGenerator(object):
                           person_handles)
 
                 # add all her spouses recursively
-                sp_person = self.database.get_person_from_handle(mother_handle)
+                sp_person = None
+                if mother_handle:
+                    sp_person = self.database.get_person_from_handle(mother_handle)
                 if sp_person:
                   for sp_family_handle in sp_person.get_family_handle_list():
                      sp_family = self.database.get_family_from_handle(sp_family_handle)
@@ -1328,7 +1439,9 @@ class DotGenerator(object):
         if adopted:
             style = 'dotted'
         self.add_link(family.handle, p_id, style,
-                      self.arrowheadstyle, self.arrowtailstyle )
+                      self.arrowheadstyle, self.arrowtailstyle,
+                      color=self.home_path_color,
+                      bold=self.is_in_path_to_home(p_id) )
 
     def add_parent_link(self, p_id, parent_handle, rel):
         "Links the child to a parent"
@@ -1336,7 +1449,9 @@ class DotGenerator(object):
         if (int(rel) != gramps.gen.lib.ChildRefType.BIRTH):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
-                      self.arrowheadstyle, self.arrowtailstyle )
+                      self.arrowheadstyle, self.arrowtailstyle,
+                      color=self.home_path_color,
+                      bold=self.is_in_path_to_home(p_id))
 
     def add_persons_and_families(self):
         "adds nodes for persons and their families"
@@ -1353,7 +1468,13 @@ class DotGenerator(object):
             # Output the person's node
             label = self.get_person_label(person)
             (shape, style, color, fill) = self.get_gender_style(person)
-
+            if self.show_tag_color:
+                for tag_handle in person.get_tag_list():
+                    # For the complete tag, don't modify the default color
+                    # which is black (#000000000000)
+                    tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                    if tag.get_color() != "#000000000000":
+                        fill = tag.get_color() # only if the color is not black
             self.add_node(person_handle, label, shape, color, style, fill, url)
 
             # Output families where person is a parent
@@ -1362,6 +1483,12 @@ class DotGenerator(object):
                 if fam_handle not in families_done:
                     families_done[fam_handle] = 1
                     self.__add_family(fam_handle)
+
+    def is_in_path_to_home(self, f_handle):
+        """Is the current person in the path to the home person ?"""
+        if f_handle in self.current_list:
+            return True
+        return False
 
     def __add_family(self, fam_handle):
         """Add a node for a family and optionally link the spouses to it"""
@@ -1393,12 +1520,16 @@ class DotGenerator(object):
             self.add_link(f_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
-                          self.arrowtailstyle)
+                          self.arrowtailstyle,
+                          color=self.home_path_color,
+                          bold=self.is_in_path_to_home(f_handle))
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
-                          self.arrowtailstyle)
+                          self.arrowtailstyle,
+                          color=self.home_path_color,
+                          bold=self.is_in_path_to_home(m_handle))
         self.end_subgraph()
 
     def get_gender_style(self, person):
@@ -1565,7 +1696,8 @@ class DotGenerator(object):
                     return place_title
         return ''
 
-    def add_link(self, id1, id2, style="", head="", tail="", comment=""):
+    def add_link(self, id1, id2, style="", head="", tail="", comment="",
+                 bold=False, color=""):
         """
         Add a link between two nodes. Gramps handles are used as nodes but need
         to be prefixed with an underscore because Graphviz does not like IDs
@@ -1573,7 +1705,11 @@ class DotGenerator(object):
         """
         self.write('  _%s -> _%s' % (id1, id2))
 
-        if style or head or tail:
+        boldok = False
+        if id1 in self.current_list:
+            if id2 in self.current_list:
+                boldok = True
+        if style or head or tail or bold:
             self.write(' [')
 
             if style:
@@ -1582,6 +1718,10 @@ class DotGenerator(object):
                 self.write(' arrowhead=%s' % head)
             if tail:
                 self.write(' arrowtail=%s' % tail)
+            if bold and boldok:
+                self.write(' penwidth=%d' % 5)
+                if color:
+                    self.write(' color="%s"' % color)
 
             self.write(' ]')
 
@@ -1629,7 +1769,8 @@ class DotGenerator(object):
         self.write('  _%s %s;\n' % (node_id, text))
 
     def start_subgraph(self, graph_id):
-        """ Opens a subgraph which is used to keep together related nodes on the graph """
+        """ Opens a subgraph which is used to keep together related nodes
+            on the graph """
         self.write('  subgraph cluster_%s\n' % graph_id)
         self.write('  {\n')
         self.write('  style="invis";\n') # no border around subgraph (#0002176)

@@ -203,6 +203,9 @@ li p {
 #dwr-img-div #media-buttons {
   display: none;
 }
+.note_media {
+  max-width: 100%;
+}
 /*===================================================== Page contents */
 .dwr-attr-title {
   font-weight: bold;
@@ -242,6 +245,10 @@ li p {
 }
 .thumbnail > img {
   max-width: initial;
+}
+.dwr-empty {
+  font-style: italic;
+  font-size: smaller;
 }
 input[id^='dwr-search-'] {
   height: auto;
@@ -302,15 +309,15 @@ input[id^='dwr-search-'] {
 }
 .svg-popup {
   max-width: initial;
+  z-index: 111;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 .svg-popup div {
   font-size: 12px;
 }
-.totosvg-popup p {
-  margin: 0px;
-  /* text-align: center; */
+.dropdown-menu {
+  z-index: 222;
 }
 /*===================================================== Tree configuration page */
 #svg-type {
@@ -329,7 +336,6 @@ input[id^='dwr-search-'] {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100vw;
   height: 100vh;
   background-color: #FFFFFF;

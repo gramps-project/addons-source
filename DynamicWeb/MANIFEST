@@ -8,6 +8,8 @@ DynamicWeb/templates/dwr_default/data/datatables/*
 DynamicWeb/templates/dwr_default/data/datatables/media/css/*
 DynamicWeb/templates/dwr_default/data/datatables/media/images/*
 DynamicWeb/templates/dwr_default/data/datatables/media/js/*
+DynamicWeb/templates/dwr_default/data/highcharts/*
+DynamicWeb/templates/dwr_default/data/innersvg-polyfill/*
 DynamicWeb/templates/dwr_default/data/jquery/*
 DynamicWeb/templates/dwr_default/data/raphael/*
 DynamicWeb/templates/dwr_default/data/unorm/*

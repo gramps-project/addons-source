@@ -481,6 +481,10 @@ msgid "File ready"
 msgstr "Datei fertig"
 
 #: DynamicWeb/dynamicweb.py:2447
+msgid "Help"
+msgstr "Hilfe"
+
+#: DynamicWeb/dynamicweb.py:2447
 msgid "Gender"
 msgstr "Geschlecht"
 
@@ -679,6 +683,10 @@ msgstr "Beziehung"
 #: DynamicWeb/dynamicweb.py:2505
 msgid "Restore"
 msgstr "Wiederherstellen"
+
+#: DynamicWeb/dynamicweb.py:2505
+msgid "Restore default settings"
+msgstr "Standardeinstellungen wiederherstellen"
 
 #: DynamicWeb/dynamicweb.py:2506 DynamicWeb/dynamicweb.py:3960
 msgid "Show last modification time"
