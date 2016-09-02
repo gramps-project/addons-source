@@ -24,10 +24,10 @@
 # Mathieu MD <mathieu.md@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.0\n"
+"Project-Id-Version: 4.2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-04 15:53+0100\n"
-"PO-Revision-Date: 2015-11-05 12:28+0100\n"
+"PO-Revision-Date: 2016-09-02 15:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -224,7 +224,7 @@ msgstr "Statut familial"
 
 #: Form/form.xml.h:14
 msgid "Cause of Death"
-msgstr "Cause du décès"
+msgstr "Cause de décès"
 
 #: Form/form.xml.h:15
 msgid "City or Borough"
@@ -3690,9 +3690,8 @@ msgid "2. Family"
 msgstr "2. Famille"
 
 #: Form/form.xml.h:852
-#, fuzzy
 msgid "Family or household"
-msgstr "Couleur de la famille"
+msgstr "Famille ou chef de ménage"
 
 #: Form/form.xml.h:853
 msgid "3. Name"
@@ -3872,7 +3871,7 @@ msgstr "14. Profession ou métier"
 
 #: Form/form.xml.h:894
 msgid "Employment"
-msgstr "Sans emploi"
+msgstr "Emploi"
 
 #: Form/form.xml.h:895
 #, fuzzy
@@ -3924,9 +3923,8 @@ msgid "Relation to Head"
 msgstr "Relation avec le chef"
 
 #: Form/form.xml.h:906
-#, fuzzy
 msgid "Blind, or Deaf and Dumb"
-msgstr "%(father)s et %(mother)s"
+msgstr ""
 
 #: Form/form.xml.h:907
 msgid "Enumeration District"
@@ -3954,9 +3952,8 @@ msgid "Rank, Profession, or Occupation"
 msgstr "Rang, profession, ou métier"
 
 #: Form/form.xml.h:913
-#, fuzzy
 msgid "Disabled"
-msgstr "Instable"
+msgstr "Non-actif"
 
 #: Form/form.xml.h:914
 msgid "Whether Blind, or Deaf and Dumb"
@@ -4020,9 +4017,8 @@ msgid "Parish Ward"
 msgstr "Paroisse"
 
 #: Form/form.xml.h:928
-#, fuzzy
 msgid "Condition as to Marriage"
-msgstr "Le mariage le plus long"
+msgstr "Condition au mariage"
 
 #: Form/form.xml.h:929
 msgid "Profession or Occupation"
