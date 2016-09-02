@@ -3807,7 +3807,7 @@ function ConfigPage()
 		html += configsCheck[i][1] + '</label></div>';
 		html += configsCheck[i][2];
 	}
-	html += '</div><hr>';
+	html += '</div>';
 	html += '<hr>';
 	html += '<div class="text-center">';
 	html += ' <button id="dwr-config-ok" type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-ok"></span> ' + _('OK') + ' </button> ';
