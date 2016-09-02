@@ -242,6 +242,9 @@ li p {
   font-style: italic;
   font-size: smaller;
 }
+.dwr-fallback {
+  font-style: italic;
+}
 /*===================================================== Map */
 #gmap_canvas {
   height: 330px;

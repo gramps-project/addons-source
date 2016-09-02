@@ -208,7 +208,7 @@ from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
-from gramps.gen.datehandler import get_date_formats, displayer as _dd
+from gramps.gen.datehandler import get_date, get_date_formats, displayer as _dd
 from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
 from gramps.plugins.lib.libhtmlconst import _CHARACTER_SETS, _CC, _COPY_OPTIONS
 
@@ -790,10 +790,10 @@ class DynamicWebReport(Report):
               [full name, type, title, nick, call, given, suffix, list of surnames, family nickname,
                notes, list of the name source citations index (in table 'C')]
           - gender: The gender
-          - birth_year: The birth year in the form '1700', '?' (date unknown)
+          - birth_date: The birth year in the form '1700', '?' (date unknown)
           - birth_sdn: The birth serial date number (0 if not known)
           - birth_place: The birth place
-          - death_year: The death year in the form '1700', '?' (date unknown), '' (not dead)
+          - death_date: The death year in the form '1700', '?' (date unknown), '' (not dead)
           - death_sdn: The death serial date number (0 if not known)
           - death_place: The death place
           - death_age: The death age
@@ -859,10 +859,10 @@ class DynamicWebReport(Report):
             if (person.get_gender() == Person.UNKNOWN): gender = "U"
             jdata['gender'] = gender
             # Years
-            jdata['birth_year'] = self.get_birth_year(person)
+            jdata['birth_date'] = self.get_birth_date(person)
             jdata['birth_sdn'] = self.get_birth_sdn(person)
             jdata['birth_place'] = self.get_birth_place(person)
-            jdata['death_year'] = self.get_death_year(person)
+            jdata['death_date'] = self.get_death_date(person)
             jdata['death_sdn'] = self.get_death_sdn(person)
             jdata['death_place'] = self.get_death_place(person)
             # Age at death
@@ -992,7 +992,7 @@ class DynamicWebReport(Report):
           - name: The family full name
           - letter: the name first letter
           - type: The family union type
-          - marr_year: The marriage year in the form '1700', '?' (unknown), or '' (not married)
+          - marr_date: The marriage year in the form '1700', '?' (unknown), or '' (not married)
           - marr_sdn: The marriage serial date number (0 if not known)
           - marr_place: The marriage pla
           - events: A list of events, with for each event:
@@ -1037,7 +1037,7 @@ class DynamicWebReport(Report):
             jdata['name'] = name
             jdata['type'] = str(family.get_relationship())
             # Years
-            jdata['marr_year'] = self.get_marriage_year(family)
+            jdata['marr_date'] = self.get_marriage_date(family)
             jdata['marr_sdn'] = self.get_marriage_sdn(family)
             jdata['marr_place'] = self.get_marriage_place(family)
             # Events
@@ -2089,37 +2089,37 @@ class DynamicWebReport(Report):
         return(jdatas)
 
 
-    def get_birth_year(self, person):
+    def get_birth_date(self, person):
         ev = get_birth_or_fallback(self.database, person)
-        return(self._get_year_text(ev) or "?")
+        return(self._get_date_text(ev) or "?")
     def get_birth_sdn(self, person):
         ev = get_birth_or_fallback(self.database, person)
         return(self._get_sdn(ev))
-    def get_death_year(self, person):
+    def get_death_date(self, person):
         ev = get_death_or_fallback(self.database, person)
-        return(self._get_year_text(ev))
+        return(self._get_date_text(ev))
     def get_death_sdn(self, person):
         ev = get_death_or_fallback(self.database, person)
         return(self._get_sdn(ev))
-    def get_marriage_year(self, family):
+    def get_marriage_date(self, family):
         ev = get_marriage_or_fallback(self.database, family)
-        return(self._get_year_text(ev))
+        return(self._get_date_text(ev))
     def get_marriage_sdn(self, family):
         ev = get_marriage_or_fallback(self.database, family)
         return(self._get_sdn(ev))
 
-    def _get_year_text(self, event):
-        y = ""
+    def _get_date_text(self, event):
+        '''Get a data as string
+        This data is used in indexes, or when linking to a person page
+        This code is inspired from PedigreeGramplet.info_string
+        '''
+        txt = ""
         if (event):
-            y = "?"
-            date = event.get_date_object()
-            if date and not date.is_empty():
-                mod = date.get_modifier()
-                # BEFORE, AFTER, SPAN, TEXTONLY and RANGE wider than a year do not allow us to calculate
-                # one single year (even approximate) of event for the table view
-                if mod == Date.MOD_NONE or mod == Date.MOD_ABOUT or (mod == Date.MOD_RANGE and date.get_start_date()[2] == date.get_stop_date()[2]):
-                    y = "%i" % date.get_year_calendar("Gregorian")
-        return y
+            txt = escape(get_date(event))
+            if txt != '' and event.get_type() not in (EventType.BIRTH, EventType.DEATH, EventType.MARRIAGE):
+                # The date comes from a fallback event
+                txt = "<span class='dwr-fallback'>%s</span>" % txt
+        return txt
 
     def _get_sdn(self, event):
         sdn = 0
@@ -2400,9 +2400,7 @@ class DynamicWebReport(Report):
         sw.write("INDEX_FAMILIES_TYPE=" + ("true" if (int(self.options['index_families_type'])) else "false") + ";\n")
         sw.write("INDEX_SOURCES_TYPE=" + ("true" if (int(self.options['index_sources_type'])) else "false") + ";\n")
         # sw.write("INDEX_PLACES_TYPE=" + ("true" if (int(self.options['index_places_type'])) else "false") + ";\n")
-        sw.write("INDEX_SHOW_BIRTH=" + ("true" if (self.options['showbirth']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_DEATH=" + ("true" if (self.options['showdeath']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_MARRIAGE=" + ("true" if (self.options['showmarriage']) else "false") + ";\n")
+        sw.write("INDEX_SHOW_DATES=" + ("true" if (self.options['showdates']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARTNER=" + ("true" if (self.options['showpartner']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PARENTS=" + ("true" if (self.options['showparents']) else "false") + ";\n")
         sw.write("INDEX_SHOW_PATH=" + ("true" if (self.options['showpath']) else "false") + ";\n")
@@ -2429,7 +2427,11 @@ class DynamicWebReport(Report):
         sw.write("__ = {")
         sep = "\n"
         for (s, translated) in (
+            ("(b. %(birthdate)s, d. %(deathdate)s)", _("(b. %(birthdate)s, d. %(deathdate)s)")),
+            ("(b. %s)", _("(b. %s)")),
+            ("(d. %s)", _("(d. %s)")),
             ("(filtered from _MAX_ total entries)", _("(filtered from _MAX_ total entries)")),
+            ("(m. %s)", _("(m. %s)")),
             ("(sort by name)", _("(sort by name)")),
             ("(sort by quantity)", _("(sort by quantity)")),
             (": activate to sort column ascending", _(": activate to sort column ascending")),
@@ -2483,9 +2485,7 @@ class DynamicWebReport(Report):
             ("Help", _("Help")),
             ("ID", _("ID")),
             ("Include Place map on Place Pages", _("Include Place map on Place Pages")),
-            ("Include a column for birth dates on the index pages", _("Include a column for birth dates on the index pages")),
-            ("Include a column for death dates on the index pages", _("Include a column for death dates on the index pages")),
-            ("Include a column for marriage dates on the index pages", _("Include a column for marriage dates on the index pages")),
+            ("Include dates columns on the index pages", _("Include dates columns on the index pages")),
             ("Include a column for parents on the index pages", _("Include a column for parents on the index pages")),
             ("Include a column for media path on the index pages", _("Include a column for media path on the index pages")),
             ("Include a column for partners on the index pages", _("Include a column for partners on the index pages")),
@@ -4111,17 +4111,9 @@ class DynamicWebOptions(MenuReportOptions):
             index_type.set_help(option_help)
             addopt("index_" + index + "_type", index_type)
 
-        showbirth = BooleanOption(_("Include a column for birth dates on the index pages"), True)
-        showbirth.set_help(_('Whether to include a birth column'))
-        addopt("showbirth", showbirth)
-
-        showdeath = BooleanOption(_("Include a column for death dates on the index pages"), False)
-        showdeath.set_help(_('Whether to include a death column'))
-        addopt("showdeath", showdeath)
-
-        showmarriage = BooleanOption(_("Include a column for marriage dates on the index pages"), False)
-        showmarriage.set_help(_('Whether to include a marriage column'))
-        addopt("showmarriage", showmarriage)
+        showdates = BooleanOption(_("Include dates columns on the index pages"), True)
+        showdates.set_help(_('Whether to include dates columns (birth, death, marriage) on the index pages'))
+        addopt("showdates", showdates)
 
         showpartner = BooleanOption(_("Include a column for partners on the index pages"), False)
         showpartner.set_help(_('Whether to include a partners column'))

@@ -502,14 +502,23 @@ function empty(txt)
 
 function indiLinked(idx, citations)
 {
-	PreloadScripts(NameFieldScripts('I', idx, ['name', 'birth_year', 'death_year', 'gid', 'cita']), true);
+	PreloadScripts(NameFieldScripts('I', idx, ['name', 'birth_date', 'death_date', 'gid', 'cita']), true);
 	citations = (typeof(citations) !== 'undefined') ? citations : true;
-	var txt = I(idx, 'name') + ' (' + I(idx, 'birth_year') + '-' + I(idx, 'death_year') + ')';
+	var txt = I(idx, 'name')
+	txt += indiDates(I(idx, 'birth_date'), I(idx, 'death_date'));
 	txt += gidBadge(I(idx, 'gid'));
 	if (citations) txt += citaLinks(I(idx, 'cita'));
 	if (idx != Dwr.search.Idx || PageContents != Dwr.PAGE_INDI)
 		txt = '<a href="' + indiHref(idx) + '">' + txt + '</a>';
 	return(txt);
+}
+
+function indiDates(bdate, ddate)
+{
+	if (bdate && ddate) return " " + _('(b. %(birthdate)s, d. %(deathdate)s)').replace('%(birthdate)s', bdate).replace('%(deathdate)s', ddate);
+	if (bdate) return " " + _('(b. %s)').replace('%s', bdate);
+	if (ddate) return " " + _('(d. %s)').replace('%s', ddate);
+	return '';
 }
 
 function gidBadge(gid)
@@ -566,6 +575,12 @@ function famLinked(fdx, citations)
 	if (INC_FAMILIES && (fdx != Dwr.search.Fdx || PageContents != Dwr.PAGE_FAM))
 		txt = '<a href="' + famHref(fdx) + '">' + txt + '</a>';
 	return(txt);
+}
+
+function famDates(mdate)
+{
+	if (mdate) return " " + _('(m. %s)').replace('%s', mdate);
+	return '';
 }
 
 
@@ -2138,8 +2153,9 @@ function htmlPersonsIndexTable(header, data)
 		['I', 'name'],
 		['I', 'gender']
 	];
-	if (Dwr.search.IndexShowBirth) scripts.push(['I', 'birth_year'], ['I', 'birth_sdn']);
-	if (Dwr.search.IndexShowDeath) scripts.push(['I', 'death_year'], ['I', 'death_sdn']);
+	if (Dwr.search.IndexShowDates) scripts.push(
+		['I', 'birth_date'], ['I', 'birth_sdn'],
+		['I', 'death_date'], ['I', 'death_sdn']);
 	if (Dwr.search.IndexShowPartner) scripts.push(['I', 'fams'], ['F', 'spou']);
 	if (Dwr.search.IndexShowParents) scripts.push(['I', 'famc'], ['F', 'spou']);
 	if (!Dwr.search.HideGid) scripts.push(['I', 'gid']);
@@ -2156,14 +2172,14 @@ function htmlPersonsIndexTable(header, data)
 		title: _('Gender'),
 		ftext: function(x, col) {return _(I_gender[data[x]])}
 	}];
-	if (Dwr.search.IndexShowBirth) columns.push({
+	if (Dwr.search.IndexShowDates) columns.push({
 		title: _('Birth'),
-		ftext: function(x, col) {return I_birth_year[data[x]]},
+		ftext: function(x, col) {return I_birth_date[data[x]]},
 		fsort: function(x, col) {return I_birth_sdn[data[x]]}
 	});
-	if (Dwr.search.IndexShowDeath) columns.push({
+	if (Dwr.search.IndexShowDates) columns.push({
 		title: _('Death'),
-		ftext: function(x, col) {return I_death_year[data[x]]},
+		ftext: function(x, col) {return I_death_date[data[x]]},
 		fsort: function(x, col) {return I_death_sdn[data[x]]}
 	});
 	if (Dwr.search.IndexShowPartner) columns.push({
@@ -2224,8 +2240,8 @@ function htmlPersonsIndexList(header, data)
 	var scripts = [
 		['I', 'name'],
 		['I', 'letter'],
-		['I', 'birth_year'],
-		['I', 'death_year'],
+		['I', 'birth_date'],
+		['I', 'death_date'],
 		['I', 'birth_sdn'],
 		['I', 'death_sdn']
 	];
@@ -2235,20 +2251,20 @@ function htmlPersonsIndexList(header, data)
 
 	var fText = function(x)
 	{
-		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">' +
-			(I_name[data[x]] || empty(_('Without name'))) +
-			' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
-			(Dwr.search.HideGid ? '' : gidBadge(I_gid[data[x]])) +
-			'</a></span>';
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
+		txt += I_name[data[x]] || empty(_('Without name'));
+		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
+		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[data[x]]);
+		txt += '</a></span>';
 		return txt;
 	};
 	var fTextOptimized = function(x) {
-		return(
-			'<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) +'">' +
-			(Dwr.search.HideGid ? '' : I_gid[data[x]] + ': ') +
-			(I_name[data[x]] || empty(_('Without name'))) +
-			' (' + I_birth_year[data[x]] + '-' + I_death_year[data[x]] + ')' +
-			'</a></span>');
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
+		if (!Dwr.search.HideGid) txt += I_gid[data[x]] + ': ';
+		txt += I_name[data[x]] || empty(_('Without name'));
+		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
+		txt += '</a></span>';
+		return txt;
 	};
 	var sortingAttributes = [
 		{
@@ -2315,7 +2331,7 @@ function htmlFamiliesIndexTable(header, data)
 		['I', 'gender'],
 		['F', 'spou']
 	];
-	if (Dwr.search.IndexShowMarriage) scripts.push(['F', 'marr_year'], ['F', 'marr_sdn']);
+	if (Dwr.search.IndexShowDates) scripts.push(['F', 'marr_date'], ['F', 'marr_sdn']);
 	if (!Dwr.search.HideGid) scripts.push(['F', 'gid']);
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
@@ -2332,9 +2348,9 @@ function htmlFamiliesIndexTable(header, data)
 		fhref: function(x) {return famHrefOptimized(data[x])},
 		fsort: function(x, col) {return printIndexSpouseIdx(data[x], col)}
 	}];
-	if (Dwr.search.IndexShowMarriage) columns.push({
+	if (Dwr.search.IndexShowDates) columns.push({
 		title: _('Marriage'),
-		ftext: function(x, col) {return F_marr_year[data[x]]},
+		ftext: function(x, col) {return F_marr_date[data[x]]},
 		fsort: function(x, col) {return F_marr_sdn[data[x]]}
 	});
 	if (!Dwr.search.HideGid) columns.unshift({
@@ -2350,7 +2366,7 @@ function htmlFamiliesIndexList(header, data)
 {
 	var scripts = [
 		['F', 'name'],
-		['F', 'marr_year'],
+		['F', 'marr_date'],
 		['F', 'marr_sdn']
 	];
 	if (!Dwr.search.HideGid) scripts.push(['F', 'gid']);
@@ -2359,18 +2375,29 @@ function htmlFamiliesIndexList(header, data)
 
 	var fText = function(x)
 	{
-		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">' +
-			F_name[data[x]] + ' (' + F_marr_year[data[x]] + ')' +
-			(Dwr.search.HideGid ? '' : gidBadge(F_gid[data[x]])) +
-			'</a></span>';
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
+		txt += I_name[data[x]] || empty(_('Without name'));
+		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
+		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[data[x]]);
+		txt += '</a></span>';
+		return txt;
+	};
+	var fText = function(x)
+	{
+		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">';
+		txt += F_name[data[x]];
+		txt += famDates(F_marr_date[data[x]]);
+		if (!Dwr.search.HideGid) txt += gidBadge(F_gid[data[x]]);
+		txt += '</a></span>';
 		return txt;
 	};
 	var fTextOptimized = function(x) {
-		return(
-			'<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) +'">' +
-			(Dwr.search.HideGid ? '' : F_gid[data[x]] + ': ') +
-			F_name[data[x]] + ' (' + F_marr_year[data[x]] + ')' +
-			'</a></span>');
+		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">';
+		if (!Dwr.search.HideGid) txt += F_gid[data[x]] + ': ';
+		txt += F_name[data[x]];
+		txt += famDates(F_marr_date[data[x]]);
+		txt += '</a></span>';
+		return txt;
 	};
 	var sortingAttributes = [
 		{
@@ -3530,16 +3557,14 @@ function SearchObjects()
 {
 	var scripts = [
 		['I', 'name'],
-		['I', 'birth_year'],
-		['I', 'death_year'],
 		['M', 'title'],
-		['M', 'path'],
 		['S', 'title'],
 		['S', 'author'],
 		['S', 'abbrev'],
 		['S', 'publ'],
 		['P', 'name']
 	];
+	if (Dwr.search.IndexShowPath) scripts.push(['M', 'gramps_path']);
 	if (!Dwr.search.HideGid) scripts.push(
 		['I', 'gid'],
 		['M', 'gid'],
@@ -3561,8 +3586,8 @@ function SearchObjects()
 	var types = [
 		{
 			data: 'I',
-			fextract: function(idx) {return(I_name[idx] + ' ' + I_birth_year[idx] + ' ' + I_death_year[idx] +
-					(Dwr.search.HideGid ? '' : ' ' + I_gid[idx]));
+			fextract: function(idx) {return(I_name[idx] +
+				(Dwr.search.HideGid ? '' : ' ' + I_gid[idx]));
 			},
 			text: _('Persons'),
 			findex: htmlPersonsIndex,
@@ -3570,8 +3595,9 @@ function SearchObjects()
 		},
 		{
 			data: 'M',
-			fextract: function(mdx) {return(M_title[mdx] + ' ' + M_path[mdx] +
-					(Dwr.search.HideGid ? '' : ' ' + M_gid[mdx]))},
+			fextract: function(mdx) {return(M_title[mdx] +
+				(Dwr.search.IndexShowPath ? ' ' + M_gramps_path[mdx] : '') +
+				(Dwr.search.HideGid ? '' : ' ' + M_gid[mdx]))},
 			text: _('Media'),
 			findex: htmlMediaIndex,
 			fref: mediaHref
@@ -3579,7 +3605,7 @@ function SearchObjects()
 		{
 			data: 'S',
 			fextract: function(sdx) {return(S_title[sdx] + ' ' + S_author[sdx] + ' ' + S_abbrev[sdx] + ' ' + S_publ[sdx] +
-					(Dwr.search.HideGid ? '' : ' ' + S_gid[sdx]))},
+				(Dwr.search.HideGid ? '' : ' ' + S_gid[sdx]))},
 			text: _('Sources'),
 			findex: htmlSourcesIndex,
 			fref: sourceHref
@@ -3587,7 +3613,7 @@ function SearchObjects()
 		{
 			data: 'P',
 			fextract: function(pdx) {return(P_name[pdx] +
-					(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]))},
+				(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]))},
 			text: _('Places'),
 			findex: htmlPlacesIndex,
 			fref: placeHref
@@ -3759,9 +3785,7 @@ function ConfigPage()
 		['IndexTypeF', _('Use a table format for the families index'), ''],
 		['IndexTypeS', _('Use a table format for the sources index'), '</div><hr><div class="row">'],
 		// ['IndexTypeP', _('Use a table format for the places index'), '</div><hr><div class="row">'],
-		['IndexShowBirth', _('Include a column for birth dates on the index pages'), ''],
-		['IndexShowDeath', _('Include a column for death dates on the index pages'), ''],
-		['IndexShowMarriage', _('Include a column for marriage dates on the index pages'), ''],
+		['IndexShowDates', _('Include dates columns on the index pages'), ''],
 		['IndexShowPartner', _('Include a column for partners on the index pages'), ''],
 		['IndexShowParents', _('Include a column for parents on the index pages'), ''],
 		['IndexShowPath', _('Include a column for media path on the index pages'), ''],

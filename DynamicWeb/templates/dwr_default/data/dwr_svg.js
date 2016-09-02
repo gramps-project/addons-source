@@ -740,7 +740,7 @@ function SvgSetStyle(p, text, x_elt, lev)
 		if (I(elt[SVGELT_IDX], 'gender') == 'M') g = 'male';
 		if (I(elt[SVGELT_IDX], 'gender') == 'F') g = 'female';
 		var d = 'alive';
-		if (I(elt[SVGELT_IDX], 'death_year') != "") d = 'death';
+		if (I(elt[SVGELT_IDX], 'death_date') != "") d = 'death';
 		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
 	}
 	if (typeof(lev) !== 'undefined' && Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_GENERATION)
@@ -752,21 +752,21 @@ function SvgSetStyle(p, text, x_elt, lev)
 		(Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_AGE) ||
 		(Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_PERIOD))
 	{
-		var b = parseInt(I(elt[SVGELT_IDX], 'birth_year'));
-		var d = parseInt(I(elt[SVGELT_IDX], 'death_year'));
+		var b = parseInt(I(elt[SVGELT_IDX], 'birth_sdn'));
+		var d = parseInt(I(elt[SVGELT_IDX], 'death_sdn'));
 		var x;
 		var m;
-		if ((Dwr.search.SvgBackground == 2) && !isNaN(b) && !isNaN(d))
+		if ((Dwr.search.SvgBackground == 2) && (b > 0) && (d > 0))
 		{
 			fill = SvgColorGrad(0, maxAge, d - b);
 		}
 		if ((Dwr.search.SvgBackground == 4) && (minPeriod <= maxPeriod))
 		{
-			if (!isNaN(b) && !isNaN(d))
+			if ((b > 0) && (d > 0))
 				fill = SvgColorGrad(minPeriod, maxPeriod, (d + b) / 2.0);
-			else if (!isNaN(b))
+			else if (b > 0)
 				fill = SvgColorGrad(minPeriod, maxPeriod, b);
-			else if (!isNaN(d))
+			else if (d > 0)
 				fill = SvgColorGrad(minPeriod, maxPeriod, d);
 		}
 		dark = SVG_GENDER_K;
@@ -1209,16 +1209,16 @@ function SvgPopupShow(elt, event)
 	{
 		var html = '<div class="popover-title">' + I(idx, 'name') + '</div>';
 		html += '<div class="popover-content">';
-		html += '* ' + I(idx, 'birth_year');
+		html += '* ' + I(idx, 'birth_date');
 		if (I(idx, 'birth_place') != "") html += ' (' + I(idx, 'birth_place') + ')';
 		if (fdx >= 0)
 		{
-			html += '<br>x ' + F(fdx, 'marr_year');
+			html += '<br>x ' + F(fdx, 'marr_date');
 			if (F(fdx, 'marr_place') != "") html += ' (' + F(fdx, 'marr_place') + ')';
 		}
-		if (I(idx, 'death_year') != "")
+		if (I(idx, 'death_date') != "")
 		{
-			html += '<br>+ ' + I(idx, 'death_year');
+			html += '<br>+ ' + I(idx, 'death_date');
 			if (I(idx, 'death_place') != "") html += ' (' + I(idx, 'death_place') + ')';
 		}
 		html += '</div>';
@@ -1383,12 +1383,12 @@ function getChil(fdx)
 
 function UpdateDates(idx)
 {
-	var b = parseInt(I(idx, 'birth_year'));
-	var d = parseInt(I(idx, 'death_year'));
+	var b = parseInt(I(idx, 'birth_sdn'));
+	var d = parseInt(I(idx, 'death_sdn'));
 	var a = d - b;
-	if (!isNaN(a)) maxAge = Math.max(maxAge, a);
-	if (!isNaN(b)) minPeriod = Math.min(minPeriod, b);
-	if (!isNaN(d)) maxPeriod = Math.max(maxPeriod, d);
+	if (a > 0) maxAge = Math.max(maxAge, a);
+	if (b > 0) minPeriod = Math.min(minPeriod, b);
+	if (d > 0) maxPeriod = Math.max(maxPeriod, d);
 }
 
 
@@ -1429,7 +1429,7 @@ function preloadI(idx, launch)
 {
 	if (idx < 0) return;
 	if (typeof(launch) === 'undefined') launch = true
-	var scripts = Dwr.NameFieldScripts('I', idx, ['name', 'short_name', 'gender', 'birth_year', 'birth_place', 'death_year', 'death_place', 'famc', 'fams']);
+	var scripts = Dwr.NameFieldScripts('I', idx, ['name', 'short_name', 'gender', 'birth_date', 'birth_sdn', 'birth_place', 'death_date', 'death_sdn', 'death_place', 'famc', 'fams']);
 	if (!launch) return scripts;
 	for (var j = 0; j < I(idx, 'fams').length; j++)
 	{
@@ -1446,7 +1446,7 @@ function preloadF(fdx, launch)
 {
 	if (fdx < 0) return;
 	if (typeof(launch) === 'undefined') launch = true
-	var scripts = Dwr.NameFieldScripts('F', fdx, ['marr_year', 'marr_place', 'spou', 'chil']);
+	var scripts = Dwr.NameFieldScripts('F', fdx, ['marr_date', 'marr_place', 'spou', 'chil']);
 	for (var j = 0; j < F(fdx, 'spou').length; j++)
 	{
 		$.merge(scripts, preloadI(F(fdx, 'spou')[j], false));
@@ -2957,7 +2957,7 @@ function textLine(x, y, a, txt, w, h, x_elt)
 	text.attr('font-size', '' + fs0);
 	var bbox = text.getBBox();
 	var fs = Math.min(w / bbox.width, h / bbox.height);
-	text.attr('font-size', fs0 * fs);
+	text.scale(fs , fs);
 	text = chromeBugBBox(text);
 	if (a != 0) text.transform('r' + a * 180 / Math.PI);
 	return(text);

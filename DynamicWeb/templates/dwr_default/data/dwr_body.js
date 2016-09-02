@@ -175,9 +175,7 @@ DwrClass.prototype.search = {
 	//SvgDup; // Show duplicates in SVG graph
 	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
 	//=========================================== Configuration parameters
-	//IndexShowBirth;
-	//IndexShowDeath;
-	//IndexShowMarriage;
+	//IndexShowDates;
 	//IndexShowPartner;
 	//IndexShowParents;
 	//IndexShowBkrefType;
@@ -265,9 +263,7 @@ DwrClass.prototype.defaultSearchString = {
 	SvgDup: SVG_TREE_SHOW_DUP,
 	SvgExpanded: false,
 
-	IndexShowBirth: INDEX_SHOW_BIRTH,
-	IndexShowDeath: INDEX_SHOW_DEATH,
-	IndexShowMarriage: INDEX_SHOW_MARRIAGE,
+	IndexShowDates: INDEX_SHOW_DATES,
 	IndexShowPartner: INDEX_SHOW_PARTNER,
 	IndexShowParents: INDEX_SHOW_PARENTS,
 	IndexShowPath: INDEX_SHOW_PATH,
@@ -354,9 +350,7 @@ DwrClass.prototype.ParseSearchString = function()
 	Dwr.search.SvgDup = GetURLParameter('svgdup', SVG_TREE_SHOW_DUP);
 	Dwr.search.SvgExpanded = GetURLParameter('svgx', false);
 
-	Dwr.search.IndexShowBirth = GetURLParameter('cii', INDEX_SHOW_BIRTH);
-	Dwr.search.IndexShowDeath = GetURLParameter('cid', INDEX_SHOW_DEATH);
-	Dwr.search.IndexShowMarriage = GetURLParameter('cim', INDEX_SHOW_MARRIAGE);
+	Dwr.search.IndexShowDates = GetURLParameter('cid', INDEX_SHOW_DATES);
 	Dwr.search.IndexShowPartner = GetURLParameter('cis', INDEX_SHOW_PARTNER);
 	Dwr.search.IndexShowParents = GetURLParameter('cip', INDEX_SHOW_PARENTS);
 	Dwr.search.IndexShowPath = GetURLParameter('cia', INDEX_SHOW_PATH);
@@ -479,9 +473,7 @@ DwrClass.prototype.BuildSearchString = function(params)
 	s = SetURLParameter(s, 'svgdup', params.SvgDup, Dwr.search.SvgDup, SVG_TREE_SHOW_DUP);
 	s = SetURLParameter(s, 'svgx', params.SvgExpanded, Dwr.search.SvgExpanded, false);
 
-	s = SetURLParameter(s, 'cii', params.IndexShowBirth, Dwr.search.IndexShowBirth, INDEX_SHOW_BIRTH);
-	s = SetURLParameter(s, 'cid', params.IndexShowDeath, Dwr.search.IndexShowDeath, INDEX_SHOW_DEATH);
-	s = SetURLParameter(s, 'cim', params.IndexShowMarriage, Dwr.search.IndexShowMarriage, INDEX_SHOW_MARRIAGE);
+	s = SetURLParameter(s, 'cid', params.IndexShowDates, Dwr.search.IndexShowDates, INDEX_SHOW_DATES);
 	s = SetURLParameter(s, 'cis', params.IndexShowPartner, Dwr.search.IndexShowPartner, INDEX_SHOW_PARTNER);
 	s = SetURLParameter(s, 'cip', params.IndexShowParents, Dwr.search.IndexShowParents, INDEX_SHOW_PARENTS);
 	s = SetURLParameter(s, 'cia', params.IndexShowPath, Dwr.search.IndexShowPath, INDEX_SHOW_PATH);
