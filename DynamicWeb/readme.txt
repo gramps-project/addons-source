@@ -5,12 +5,10 @@ For license, see file 'dynamicweb.py'
 This add-on for GRAMPS is an alternative to the Narrative Web Report.
 It exports the database as web pages.
 
-See http://belissent.github.io/GrampsDynamicWebReport/ for more information and reports examples.
+See https://gramps-project.org/wiki/index.php?title=DynamicWeb_report for more information.
+See http://belissent.github.io/GrampsDynamicWebReport/ for reports examples.
 
-
-GRAMPS branches 4.0, 4.1, 4.2, 5.0 (master) are supported, previous branches are not supported.
-
-
+GRAMPS branches 4.2, 5.0 (master) are supported, previous branches are not supported.
 
 Instructions for generating report examples (GRAMPS version 5.0):
 
@@ -19,8 +17,7 @@ Instructions for generating report examples (GRAMPS version 5.0):
 - Results are in the directory DynamicWeb/reports
 
 
-
-Instructions for generating report examples (GRAMPS versions 4.0, 4.1, 4.2):
+Instructions for generating report examples (GRAMPS version 4.2):
 
 - Import example database:
   In the directory DynamicWeb
@@ -33,4 +30,3 @@ Instructions for generating report examples (GRAMPS versions 4.0, 4.1, 4.2):
   python run_dynamicweb.py
 
 - Results are in the directory DynamicWeb/reports
-

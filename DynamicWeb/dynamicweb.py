@@ -2836,6 +2836,8 @@ class DynamicWebReport(Report):
             "// This file is generated\n\n"
             "%s_xgid = " % name)
         json.dump(gids, sw, sort_keys = True, indent = 0)
+        sw.write("\n"
+            "Dwr.ScriptLoaded('dwr_db_%s_xgid.js');\n" % (name))
         self.update_file("dwr_db_%s_xgid.js" % name, sw.getvalue())
 
 
