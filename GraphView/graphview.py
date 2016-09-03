@@ -75,6 +75,8 @@ except ImportError:
     raise Exception("Cairo (http://www.cairographics.org) is required "
                     "for this view to work")
 try:
+    import gi
+    gi.require_version('GooCanvas', '2.0')
     from gi.repository import GooCanvas
 except ImportError:
     raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
