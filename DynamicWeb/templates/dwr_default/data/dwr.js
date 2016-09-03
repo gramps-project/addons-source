@@ -2805,7 +2805,9 @@ function htmlPlacesIndexTable(header, data)
 	});
 	return PrintIndexTable('P', header, data, [[(Dwr.search.HideGid ? 0 : 1), 'asc']], columns);
 }
-	
+
+var max_nb_tree_subnodes = 0;
+
 function htmlPlacesIndexTree(header, data)
 {
 	var scripts = [
@@ -2836,15 +2838,18 @@ function htmlPlacesIndexTree(header, data)
 		txt += '</a>';
 		return txt;
 	};
-	
-	// Optimization
-	if (data.length > TREE_OPTIMIZATION_LIMIT)
+		
+	// Build tree data (first pass to get max_nb_tree_subnodes)
+	var treedata = [];
+	for (var x = 0; x < data.length; x += 1)
 	{
-		console.log('Too many data (' + data.length + '). Disabling fancy features.');
-		fText = fTextOptimized;
+		var pdx = data[x];
+		if (P_enclosed_by[pdx].length > 0) continue; // Place is not a top-level place in the hierarchy
+		treedata.push(ComputePlaceHierarchy(pdx, fText, null));
 	}
+	max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, treedata.length);
 	
-	if (header == '')
+	if (header == '' || max_nb_tree_subnodes > TREE_OPTIMIZATION_LIMIT)
 	{
 		// No header = in the search results page, show data as list 
 		var sortingAttributes = [
@@ -2855,16 +2860,18 @@ function htmlPlacesIndexTree(header, data)
 				fLetter: function(pdx) {return P_letter[pdx]}
 			}
 		];
-		console.log(data);
 		return printIndexList('P', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 	}
 	else
 	{
 		// Header = in the place index page, show data as tree
-		
-		// Build data for all places
-		data = new Array(DB_SIZES['P']);
-		for (var x = 0; x < DB_SIZES['P']; x++) data[x] = x;
+	
+		// Optimization
+		if (data.length > TREE_OPTIMIZATION_LIMIT)
+		{
+			console.log('Too many data (' + data.length + '). Disabling fancy features.');
+			fText = fTextOptimized;
+		}
 		
 		// Print title
 		var sortingAttributes = [
@@ -2883,7 +2890,7 @@ function htmlPlacesIndexTree(header, data)
 		var html = lts.html;
 		var sorting_way = lts.sorting_way;
 		
-		// Build tree data
+		// Build tree data (second pass)
 		var treedata = [];
 		for (var x = 0; x < data.length; x += 1)
 		{
@@ -2892,6 +2899,7 @@ function htmlPlacesIndexTree(header, data)
 			treedata.push(ComputePlaceHierarchy(pdx, fText, sortingAttributes[sorting_way].fSort));
 		}
 		treedata.sort(sortingAttributes[sorting_way].fSort);
+		max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, treedata.length);
 		
 		// When no data
 		if (data.length == 0) return html + '<p>' + _('None') + '</p>';
@@ -2937,9 +2945,10 @@ function ComputePlaceHierarchy(top, fText, fSort)
 	}
 	if (nodes.length > 0)
 	{
-		nodes.sort(fSort)
+		if (fSort) nodes.sort(fSort);
 		node.nodes = nodes;
 		node.tags = ['' + node.nb];
+		max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, nodes.length);
 	}
 	return node;
 }
