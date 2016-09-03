@@ -1468,6 +1468,7 @@ class DynamicWebReport(Report):
         'P' gives for each place:
           - gid: Gramps ID
           - name: The place long name
+          - letter: the name first letter
           - names: list of place names in the form {name, date, date_sdn} (empty for version 4.0 and below)
           - type: The place type ('' for version 4.0 and below)
           - locations: The place locations parts for the main and alternate names (empty for version 4.1 and above), in the form:
@@ -1507,6 +1508,7 @@ class DynamicWebReport(Report):
             jdata['gid'] = self.obj_dict[Place][place_handle][OBJDICT_GID]
             place_name = report_utils.place_name(self.database, place_handle)
             jdata['name'] = place_name
+            jdata['letter'] = first_letter(place_name).strip()
             if (not self.inc_places):
                 jdatas.append(jdata)
                 continue

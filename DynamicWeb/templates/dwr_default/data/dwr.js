@@ -2003,34 +2003,16 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 
 	return(html);
 }
-	
-function printIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
-// id: Data type
-// header: Page header
-// data: Array of data to be indexed
-// fText, fTextOptimized, fLetter: function taking a <data> row as parameter.
-// fText, fTextOptimized: gives the text to print for the row (fTextOptimized is used above LIST_OPTIMIZATION_LIMIT elements)
-// separator: separator printed between items
-// sortingAttributes: Array describing for each way of sorting the data
-//    title: name for the sorting way
-//    attr: attribute name identifying the sorting way
-//    fSort: sorting function
-//    fLetter: Section header for the row (None if no sections)
+
+function printIndexListTitle(header, data, sortingAttributes, defaultSort)
 {
-	// Optimization
-	if (data.length > LIST_OPTIMIZATION_LIMIT)
-	{
-		console.log('Too many data (' + data.length + '). Disabling fancy features.');
-		fText = fTextOptimized;
-	}
-	
 	// Get saved state
 	var lsName = window.location.pathname + ' ' + header + ' sorting';
-	var sort_way = localStorage.getItem(lsName);
-	var sort_k = defaultSort;
+	var saved_sorting_way = localStorage.getItem(lsName);
+	var sorting_way = defaultSort;
 	for (var i = 0; i < sortingAttributes.length; i += 1)
 	{
-		if (sortingAttributes[i].attr == sort_way) sort_k = i;
+		if (sortingAttributes[i].id == saved_sorting_way) sorting_way = i;
 	}
 	
 	// Print header and sorting way selector
@@ -2050,27 +2032,57 @@ function printIndexList(id, header, data, fText, fTextOptimized, separator, sort
 			html += '<div class="col-xs-8"><select id="dwr-input-sort-by" class="form-control">';
 			for (var i = 0; i < sortingAttributes.length; i += 1)
 			{
-				html += '<option value="' + sortingAttributes[i].attr + '"' + (i == sort_k ? ' selected' : '') + '>';
+				html += '<option value="' + sortingAttributes[i].id + '"' + (i == sorting_way ? ' selected' : '') + '>';
 				html += sortingAttributes[i].title + '</option>';
 			}
 			html += '</select></div></div></form></div>';
+			$(window).load(function() {
+				$('#dwr-input-sort-by').change(function() {
+					localStorage.setItem(lsName, $(this).val());
+					window.location.replace(window.location.href);
+					return(false);
+				});
+			});
 		}
 	}
-	$(window).load(function() {
-		$('#dwr-input-sort-by').change(function() {
-			localStorage.setItem(lsName, $(this).val());
-			window.location.replace(window.location.href);
-			return(false);
-		});
-	});
+	
+	return {
+		html: html,
+		sorting_way: sorting_way
+	};
+}
+	
+function printIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
+// id: Data type
+// header: Page header
+// data: Array of data to be indexed
+// fText, fTextOptimized, fLetter: function taking a <data> row as parameter.
+// fText, fTextOptimized: gives the text to print for the row (fTextOptimized is used above LIST_OPTIMIZATION_LIMIT elements)
+// separator: separator printed between items
+// sortingAttributes: Array describing for each way of sorting the data
+//    title: name for the sorting way
+//    id: unique identifier for the sorting way
+//    fSort: sorting function
+//    fLetter: Section header for the row (None if no sections)
+{
+	// Optimization
+	if (data.length > LIST_OPTIMIZATION_LIMIT)
+	{
+		console.log('Too many data (' + data.length + '). Disabling fancy features.');
+		fText = fTextOptimized;
+	}
+	
+	var lts = printIndexListTitle(header, data, sortingAttributes, defaultSort);
+	var html = lts.html;
+	var sorting_way = lts.sorting_way;
 	
 	// Sort data
-	if (sortingAttributes.length > 0) data.sort(sortingAttributes[sort_k].fSort);
+	if (sortingAttributes.length > 0) data.sort(sortingAttributes[sorting_way].fSort);
 	
 	// Split data into several sections if fLetter is provided
 	var titles = [];
 	var texts = [];
-	if (sortingAttributes.length > 0 && sortingAttributes[sort_k].fLetter)
+	if (sortingAttributes.length > 0 && sortingAttributes[sorting_way].fLetter)
 	{
 		// The data can be grouped by sections
 		// Build the titles and texts
@@ -2078,16 +2090,16 @@ function printIndexList(id, header, data, fText, fTextOptimized, separator, sort
 		var texts = [];
 		for (var x = 0; x < data.length; x++)
 		{
-			var letter = sortingAttributes[sort_k].fLetter(x);
+			var letter = sortingAttributes[sorting_way].fLetter(data[x]);
 			if ($.inArray(letter, titles) == -1)
 			{
 				// New letter section
 				titles.push(letter);
-				texts[letter] = fText(x);
+				texts[letter] = fText(data[x]);
 			}
 			else
 			{
-				texts[letter] += separator + fText(x);
+				texts[letter] += separator + fText(data[x]);
 			}
 		}
 	}
@@ -2126,9 +2138,10 @@ function printIndexList(id, header, data, fText, fTextOptimized, separator, sort
 		for (x = 0; x < data.length; x++)
 		{
 			if (x > 0) html += separator;
-			html += fText(x);
+			html += fText(data[x]);
 		}
-		html += '<p>&nbsp;</p>';
+		// Add extra space after list index when not in a panel
+		if (header) html += '<p>&nbsp;</p>';
 	}
 
 	// When no data
@@ -2252,46 +2265,46 @@ function htmlPersonsIndexList(header, data)
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
 
-	var fText = function(x)
+	var fText = function(idx)
 	{
-		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
-		txt += I_name[data[x]] || empty(_('Without name'));
-		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
-		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[data[x]]);
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(idx) + '">';
+		txt += I_name[idx] || empty(_('Without name'));
+		txt += indiDates(I_birth_date[idx], I_death_date[idx]);
+		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[idx]);
 		txt += '</a></span>';
 		return txt;
 	};
-	var fTextOptimized = function(x) {
-		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
-		if (!Dwr.search.HideGid) txt += I_gid[data[x]] + ': ';
-		txt += I_name[data[x]] || empty(_('Without name'));
-		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
+	var fTextOptimized = function(idx) {
+		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(idx) + '">';
+		if (!Dwr.search.HideGid) txt += I_gid[idx] + ': ';
+		txt += I_name[idx] || empty(_('Without name'));
+		txt += indiDates(I_birth_date[idx], I_death_date[idx]);
 		txt += '</a></span>';
 		return txt;
 	};
 	var sortingAttributes = [
 		{
 			title: _('Name'),
-			attr: 'I.name',
+			id: 'I.name',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return I_letter[data[x]]}
+			fLetter: function(idx) {return I_letter[idx]}
 		},
 		{
 			title: _('Birth date'),
-			attr: 'I.birth_date',
+			id: 'I.birth_date',
 			fSort: function(a, b) {return(I_birth_sdn[b] - I_birth_sdn[a])},
 			fLetter: false
 		},
 		{
 			title: _('Death date'),
-			attr: 'I.death_date',
+			id: 'I.death_date',
 			fSort: function(a, b) {return(I_death_sdn[b] - I_death_sdn[a])},
 			fLetter: false
 		}
 	];
 	if (!Dwr.search.HideGid) sortingAttributes.push({
 		title: _('ID'),
-		attr: 'I.gid',
+		id: 'I.gid',
 		fSort: function(a, b) {return cmp(I_gid[a], I_gid[b])},
 		fLetter: false
 	});
@@ -2376,49 +2389,40 @@ function htmlFamiliesIndexList(header, data)
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
 
-	var fText = function(x)
+	var fText = function(fdx)
 	{
-		var txt = '<span class="dwr-nowrap"><a href="' + indiHrefOptimized(data[x]) + '">';
-		txt += I_name[data[x]] || empty(_('Without name'));
-		txt += indiDates(I_birth_date[data[x]], I_death_date[data[x]]);
-		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[data[x]]);
+		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(fdx) + '">';
+		txt += F_name[fdx];
+		txt += famDates(F_marr_date[fdx]);
+		if (!Dwr.search.HideGid) txt += gidBadge(F_gid[fdx]);
 		txt += '</a></span>';
 		return txt;
 	};
-	var fText = function(x)
-	{
-		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">';
-		txt += F_name[data[x]];
-		txt += famDates(F_marr_date[data[x]]);
-		if (!Dwr.search.HideGid) txt += gidBadge(F_gid[data[x]]);
-		txt += '</a></span>';
-		return txt;
-	};
-	var fTextOptimized = function(x) {
-		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(data[x]) + '">';
-		if (!Dwr.search.HideGid) txt += F_gid[data[x]] + ': ';
-		txt += F_name[data[x]];
-		txt += famDates(F_marr_date[data[x]]);
+	var fTextOptimized = function(fdx) {
+		var txt = '<span class="dwr-nowrap"><a href="' + famHrefOptimized(fdx) + '">';
+		if (!Dwr.search.HideGid) txt += F_gid[fdx] + ': ';
+		txt += F_name[fdx];
+		txt += famDates(F_marr_date[fdx]);
 		txt += '</a></span>';
 		return txt;
 	};
 	var sortingAttributes = [
 		{
 			title: _('Name'),
-			attr: 'F.name',
+			id: 'F.name',
 			fSort: function(a, b) {return(a - b)},
 			fLetter: false
 		},
 		{
 			title: _('Marriage date'),
-			attr: 'F.marr_date',
+			id: 'F.marr_date',
 			fSort: function(a, b) {return(F_marr_sdn[b] - F_marr_sdn[a])},
 			fLetter: false
 		}
 	];
 	if (!Dwr.search.HideGid) sortingAttributes.push({
 		title: _('ID'),
-		attr: 'F.gid',
+		id: 'F.gid',
 		fSort: function(a, b) {return cmp(F_gid[a], F_gid[b])},
 		fLetter: false
 	});
@@ -2655,40 +2659,40 @@ function htmlSourcesIndexList(header, data)
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
 
-	var fText = function(x)
+	var fText = function(sdx)
 	{
-		var txt = '<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) + '">' +
-			(S_title[data[x]] || empty(_('Without title'))) +
-			(Dwr.search.HideGid ? '' : gidBadge(S_gid[data[x]])) +
-			' (' + S_author[data[x]] + ')' +
+		var txt = '<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(sdx) + '">' +
+			(S_title[sdx] || empty(_('Without title'))) +
+			(Dwr.search.HideGid ? '' : gidBadge(S_gid[sdx])) +
+			' (' + S_author[sdx] + ')' +
 			'</a></span>';
 		return txt;
 	};
 	var fTextOptimized = function(x) {
 		return(
-			'<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(data[x]) +'">' +
-			(Dwr.search.HideGid ? '' : S_gid[data[x]] + ': ') +
-			(S_title[data[x]] || empty(_('Without title'))) +
-			' (' + S_author[data[x]] + ')' +
+			'<span class="dwr-nowrap"><a href="' + sourceHrefOptimized(sdx) +'">' +
+			(Dwr.search.HideGid ? '' : S_gid[sdx] + ': ') +
+			(S_title[sdx] || empty(_('Without title'))) +
+			' (' + S_author[sdx] + ')' +
 			'</a></span>');
 	};
 	var sortingAttributes = [
 		{
 			title: _('Title'),
-			attr: 'S.title',
+			id: 'S.title',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return S_letter[data[x]]}
+			fLetter: function(sdx) {return S_letter[sdx]}
 		},
 		{
 			title: _('Author'),
-			attr: 'S.author',
+			id: 'S.author',
 			fSort: function(a, b) {return cmp(S_author[a], S_author[b])},
 			fLetter: false
 		}
 	];
 	if (!Dwr.search.HideGid) sortingAttributes.push({
 		title: _('ID'),
-		attr: 'S.gid',
+		id: 'S.gid',
 		fSort: function(a, b) {return cmp(S_gid[a], S_gid[b])},
 		fLetter: false
 	});
@@ -2807,6 +2811,7 @@ function htmlPlacesIndexTree(header, data)
 {
 	var scripts = [
 		['P', 'names'],
+		['P', 'letter'],
 		['P', 'type'],
 		['P', 'enclosed_by'],
 		['P', 'bkp']
@@ -2814,15 +2819,6 @@ function htmlPlacesIndexTree(header, data)
 	if (!Dwr.search.HideGid) scripts.push(['P', 'gid']);
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
-	
-	// Print title
-	var html = '';
-	if (header != '')
-	{
-		html += '<h2 class="page-header">' + header + '</h2>';
-		data = new Array(DB_SIZES['P']);
-		for (var x = 0; x < DB_SIZES['P']; x++) data[x] = x;
-	}
 
 	var fText = function(pdx)
 	{
@@ -2849,25 +2845,44 @@ function htmlPlacesIndexTree(header, data)
 		fText = fTextOptimized;
 	}
 	
-	// When no data
-	if (data.length == 0) return html + '<p>' + _('None') + '</p>';
-	
 	if (header == '')
 	{
 		// No header = in the search results page, show data as list 
 		var sortingAttributes = [
 			{
-				title: '',
-				attr: '',
+				title: _('Name'),
+				id: 'P.list.name',
 				fSort: function(a, b) {return(a - b)},
-				fLetter: false
+				fLetter: function(pdx) {return P_letter[pdx]}
 			}
 		];
+		console.log(data);
 		return printIndexList('P', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 	}
 	else
 	{
 		// Header = in the place index page, show data as tree
+		
+		// Build data for all places
+		data = new Array(DB_SIZES['P']);
+		for (var x = 0; x < DB_SIZES['P']; x++) data[x] = x;
+		
+		// Print title
+		var sortingAttributes = [
+			{
+				title: _('Name'),
+				id: 'P.tree.name',
+				fSort: function(a, b) {return(a.pdx - b.pdx)}
+			},
+			{
+				title: _('Number'),
+				id: 'P.tree.number',
+				fSort: function(a, b) {return(b.nb - a.nb)}
+			}
+		];
+		var lts = printIndexListTitle(header, data, sortingAttributes, 0);
+		var html = lts.html;
+		var sorting_way = lts.sorting_way;
 		
 		// Build tree data
 		var treedata = [];
@@ -2875,8 +2890,12 @@ function htmlPlacesIndexTree(header, data)
 		{
 			var pdx = data[x];
 			if (P_enclosed_by[pdx].length > 0) continue; // Place is not a top-level place in the hierarchy
-			treedata.push(ComputePlaceHierarchy(pdx, fText));
+			treedata.push(ComputePlaceHierarchy(pdx, fText, sortingAttributes[sorting_way].fSort));
 		}
+		treedata.sort(sortingAttributes[sorting_way].fSort);
+		
+		// When no data
+		if (data.length == 0) return html + '<p>' + _('None') + '</p>';
 
 		(function(){ // This is used to create instances of local variables
 			$(document).ready(function() {
@@ -2901,21 +2920,27 @@ function htmlPlacesIndexTree(header, data)
 	}
 }
 
-function ComputePlaceHierarchy(top, fText)
+function ComputePlaceHierarchy(top, fText, fSort)
 {
 	var node = {
+		pdx: top,
+		nb: 0,
 		text: fText(top),
 		selectable: false
 	};
 	var nodes = [];
 	for (var i = 0; i < P_bkp[top].length; i += 1)
 	{
-		nodes.push(ComputePlaceHierarchy(P_bkp[top][i], fText));
+		var subnode = ComputePlaceHierarchy(P_bkp[top][i], fText, fSort);
+		nodes.push(subnode);
+		node.nb += 1;
+		if (typeof(subnode.nodes) !== 'undefined') node.nb += parseInt(subnode.tags[0]);
 	}
 	if (nodes.length > 0)
 	{
+		nodes.sort(fSort)
 		node.nodes = nodes;
-		node.tags = ['' + nodes.length];
+		node.tags = ['' + node.nb];
 	}
 	return node;
 }
@@ -3101,28 +3126,28 @@ function htmlSurnamesIndexList(header, data)
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
 
-	var fText = function(x) {
+	var fText = function(ndx) {
 		return(
-			' &nbsp;<span class="dwr-nowrap"><a href="' + surnameHrefOptimized(data[x]) + '">' +
-			(N_surname[data[x]] || empty(_('Without surname'))) +
-			'</a>&nbsp;<span class="badge">' + N_persons[data[x]].length + '</span></span>&nbsp; ');
+			' &nbsp;<span class="dwr-nowrap"><a href="' + surnameHrefOptimized(ndx) + '">' +
+			(N_surname[ndx] || empty(_('Without surname'))) +
+			'</a>&nbsp;<span class="badge">' + N_persons[ndx].length + '</span></span>&nbsp; ');
 	};
-	var fTextOptimized = function(x) {
+	var fTextOptimized = function(ndx) {
 		return(
-			' &nbsp;<a href="' + surnameHrefOptimized(data[x]) + '">' +
-			(N_surname[data[x]] || empty(_('Without surname'))) +
-			'</a>&nbsp;<b>(' + N_persons[data[x]].length + ')</b>&nbsp; ');
+			' &nbsp;<a href="' + surnameHrefOptimized(ndx) + '">' +
+			(N_surname[ndx] || empty(_('Without surname'))) +
+			'</a>&nbsp;<b>(' + N_persons[ndx].length + ')</b>&nbsp; ');
 	};
 	var sortingAttributes = [
 		{
 			title: _('Surname'),
-			attr: 'N.surname',
+			id: 'N.surname',
 			fSort: function(a, b) {return(a - b)},
-			fLetter: function(x) {return N_letter[data[x]]}
+			fLetter: function(ndx) {return N_letter[ndx]}
 		},
 		{
 			title: _('Number'),
-			attr: 'N.number',
+			id: 'N.number',
 			fSort: function(a, b) {return cmp(N_persons[b].length, N_persons[a].length)}
 		}
 	];
@@ -3682,7 +3707,7 @@ function SearchObjects()
 		['S', 'author'],
 		['S', 'abbrev'],
 		['S', 'publ'],
-		['P', 'name']
+		['P', 'names']
 	];
 	if (Dwr.search.IndexShowPath) scripts.push(['M', 'gramps_path']);
 	if (!Dwr.search.HideGid) scripts.push(
@@ -3732,7 +3757,8 @@ function SearchObjects()
 		},
 		{
 			data: 'P',
-			fextract: function(pdx) {return(P_name[pdx] +
+			fextract: function(pdx) {return(
+				P_names[pdx].map(function(v, i, a) {return v.name}).join(' ') +
 				(Dwr.search.HideGid ? '' : ' ' + P_gid[pdx]))},
 			text: _('Places'),
 			findex: htmlPlacesIndex,
