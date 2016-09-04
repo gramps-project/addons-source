@@ -3992,7 +3992,7 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("inc_gallery", inc_gallery)
 
         copy_media_opts = [
-            [_("Copy, rename files with a internal Gramps identifier"), COPY_MEDIA_RENAME],
+            [_("Copy, rename files with an internal Gramps identifier"), COPY_MEDIA_RENAME],
             [_("Copy, keep file names unchanged"), COPY_MEDIA_UNCHANGED],
             [_("Do not copy, reference existing files"), REFERENCE_MEDIA],
         ]

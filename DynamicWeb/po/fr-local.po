@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-03 18:16+0000\n"
-"PO-Revision-Date: 2016-09-03 18:17-0000\n"
+"POT-Creation-Date: 2016-09-04 06:37+0000\n"
+"PO-Revision-Date: 2016-09-04 06:38-0000\n"
 "Last-Translator: Pierre Bélissent <pierre.belissent@gmail.com>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -1246,7 +1246,7 @@ msgid "Whether to include images and media in the web pages"
 msgstr "Inclure ou non les images et media dans les pages web"
 
 #: DynamicWeb/dynamicweb.py:3995
-msgid "Copy, rename files with a internal Gramps identifier"
+msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Copie, renomme les fichiers avec un identifiant interne Gramps"
 
 #: DynamicWeb/dynamicweb.py:3996
