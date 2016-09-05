@@ -646,10 +646,16 @@ class GraphWidget(object):
         """Function for motion notify events for drag and scroll mode."""
         if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
            event.type == Gdk.EventType.BUTTON_RELEASE):
-            new_x = self.hadjustment.get_value() - (event.x_root - self._last_x)
+
+            # scale coefficient for prevent flicking when drag
+            scale_coef = self.canvas.get_scale()
+
+            new_x = (self.hadjustment.get_value() -
+                    (event.x_root - self._last_x)*scale_coef)
             self.hadjustment.set_value(new_x)
 
-            new_y = self.vadjustment.get_value() - (event.y_root - self._last_y)
+            new_y = (self.vadjustment.get_value() -
+                    (event.y_root - self._last_y)*scale_coef)
             self.vadjustment.set_value(new_y)
             return True
         return False
