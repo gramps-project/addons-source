@@ -23,6 +23,7 @@ import glob, os.path
 # (this file is included in several environments)
 from dynamicweb import *
 from dynamicweb import _
+from gramps.gen.proxy import LivingProxyDb
 
 
 #-------------------------------------------------------------------------
@@ -42,12 +43,12 @@ default_options = {
     # 'short_name_format': 0,
     'template': 0,
     'copyright': 0,
-    'incpriv': True,
+    'incl_private': True,
     'inc_notes': True,
     'inc_sources': True,
     'inc_addresses': True,
-    'living': INCLUDE_LIVING_VALUE,
-    'yearsafterdeath': 30,
+    'living_people': INCLUDE_LIVING_VALUE,
+    'years_past_death': 30,
     'inc_repositories': True,
     'inc_gallery': True,
     'copy_media': True,

@@ -2767,14 +2767,25 @@ class DynamicWebReport(Report):
         text = text.replace("__GRAMPS_HOMEPAGE__", "<a href='" + URL_HOMEPAGE + "' class='gramps_homepage'>Gramps</a>")
         # Relative URL are managed
         text = text.replace("relative://relative.", "")
-        # __HOME_PERSON_NAME__ is replaced by the home person name
-        # __HOME_PERSON_URL__ is replaced by the home person page URL
-        # center_person = self.database.get_person_from_gramps_id(self.options['pid'])
-        # if (center_person and (center_person.handle in self.obj_dict[Person])):
-            # person_name = self.get_name(center_person)
-            # person_url = "person.html?idx=%i" % self.obj_dict[Person][center_person.handle][OBJDICT_INDEX]
-            # text = text.replace("__HOME_PERSON_NAME__", person_name)
-            # text = text.replace("__HOME_PERSON_URL__", person_url)
+        # __HOME_PERSON__ is replaced by the center person name, or the default person name, and links to its page
+        center_person = self.database.get_person_from_gramps_id(self.options['pid'])
+        filt_number = self.options['filter']
+        home_person_txt = ''
+        if center_person and center_person.handle in self.obj_dict[Person] and filt_number > 0 and  filt_number < 5:
+            home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
+                self.obj_dict[Person][center_person.handle][OBJDICT_INDEX],
+                self.filter.get_name()
+            )
+        else:
+            default_person = self.database.get_default_person()
+            if default_person.handle in self.obj_dict[Person]:
+                home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
+                    self.obj_dict[Person][default_person.handle][OBJDICT_INDEX],
+                    self.get_name(default_person)
+                )
+            else:
+                home_person_txt = self.get_name(default_person)
+        text = text.replace("__HOME_PERSON__", home_person_txt)
         return(text)
 
 
