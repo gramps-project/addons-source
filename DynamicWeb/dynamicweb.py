@@ -626,6 +626,7 @@ class DynamicWebReport(Report):
         self.inc_events = False
         self.inc_places = self.options['inc_places']
         self.inc_families = self.options['inc_families']
+        self.inc_families_index = self.options['inc_families_index']
         self.inc_gallery = self.options['inc_gallery']
         self.copy_media = int(self.options['copy_media'])
         self.inc_notes = self.options['inc_notes']
@@ -2176,10 +2177,8 @@ class DynamicWebReport(Report):
         # List of page to generate:
         #  - Page file name
         #  - Page title
-        #  - Condition for generating the page,
+        #  - Condition for generating the page
         #  - With menu ?
-        #  - Script files
-        #  - Style files
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
@@ -2230,7 +2229,7 @@ class DynamicWebReport(Report):
             "address.html",
         ]
         self.index_pages = [p for p in  self.index_pages if (
-            (p != "families.html" or self.inc_families) and
+            (p != "families.html" or (self.inc_families and self.inc_families_index)) and
             (p != "sources.html" or self.inc_sources) and
             (p != "medias.html" or self.inc_gallery) and
             (p != "places.html" or self.inc_places) and
@@ -4069,9 +4068,10 @@ class DynamicWebOptions(MenuReportOptions):
         encoding.set_help(_("The encoding to be used for the web files"))
         addopt("encoding", encoding)
 
-        inc_families = BooleanOption(_("Include family pages"), False)
-        inc_families.set_help(_("Whether or not to include family pages"))
-        addopt("inc_families", inc_families)
+        self.__inc_families = BooleanOption(_("Include family pages"), False)
+        self.__inc_families.set_help(_("Whether or not to include family pages"))
+        self.self.__inc_families.connect("value-changed", self.self.__inc_families_changed)
+        addopt("inc_families", self.__inc_families)
 
         # inc_events = BooleanOption(_('Include event pages'), False)
         # inc_events.set_help(_('Add a complete events list and relevant pages or not'))
@@ -4139,6 +4139,10 @@ class DynamicWebOptions(MenuReportOptions):
         showparents = BooleanOption(_("Include a column for parents on the index pages"), False)
         showparents.set_help(_('Whether to include a parents column'))
         addopt("showparents", showparents)
+
+        self.__inc_families_index = BooleanOption(_("Generate a families index page"), False)
+        self.__inc_families_index.set_help(_('Whether to generate an index page for families'))
+        addopt("inc_families_index", self.__inc_families_index)
 
         showpath = BooleanOption(_("Include a column for media path on the index pages"), False)
         showpath.set_help(_('Whether to include a column showing the media path'))
@@ -4358,6 +4362,10 @@ class DynamicWebOptions(MenuReportOptions):
             self.__familymappages.set_available(False)
             self.__mapservice.set_available(False)
             # self.__googleopts.set_available(False)
+
+    def __inc_families_changed(self):
+        enable = self.__inc_families.get_value()
+        self.__inc_families_index.set_available(enable)
 
     def __svg_tree_dup_changed(self):
         '''
