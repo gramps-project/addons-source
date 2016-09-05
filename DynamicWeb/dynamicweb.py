@@ -18,6 +18,7 @@
 # Copyright (C) 2010       Serge Noiraud
 # Copyright (C) 2011       Tim G L Lyons
 # Copyright (C) 2013       Benny Malengier
+# Copyright (C) 2016       Allen Crider
 #
 # This program embeds some ideas from "fanchart.py" included in Gramps
 # Copyrights for "fanchart.py":
@@ -187,6 +188,7 @@ from gramps.gen.plug.menu import (PersonOption, NumberOption, StringOption,
 from gramps.gen.plug.report import (Report, Bibliography)
 from gramps.gen.plug.report import utils as report_utils
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import stdoptions
 
 from gramps.gen.utils.config import get_researcher
 from gramps.gen.utils.string import conf_strings
@@ -3739,7 +3741,7 @@ class DynamicWebReport(Report):
         sortkeys = {}
         objs = list(self.obj_dict[Person].keys())
         for handle in objs:
-            sortkeys[handle] = self.get_person_name_sort_key(handle) + SORT_KEY(" " + str(handle))
+            sortkeys[handle] = (self.get_person_name_sort_key(handle), self.obj_dict[Person][handle][OBJDICT_GID], SORT_KEY(" " + str(handle)))
         objs.sort(key = lambda x: sortkeys[x])
         for (i, x) in enumerate(objs):
             self.obj_dict[Person][x][OBJDICT_INDEX] = i
@@ -3748,7 +3750,7 @@ class DynamicWebReport(Report):
         sortkeys = {}
         objs = list(self.obj_dict[Family].keys())
         for handle in objs:
-            sortkeys[handle] = self.get_family_name_sort_key(handle) + SORT_KEY(" " + str(handle))
+            sortkeys[handle] = (self.get_family_name_sort_key(handle), self.obj_dict[Family][handle][OBJDICT_GID], SORT_KEY(str(handle)))
         objs.sort(key = lambda x: sortkeys[x])
         for (i, x) in enumerate(objs):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
@@ -3758,7 +3760,7 @@ class DynamicWebReport(Report):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:
-                sortkeys[handle] = SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME] + " " + str(handle))
+                sortkeys[handle] = (SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME]), self.obj_dict[cls][handle][OBJDICT_GID], SORT_KEY(str(handle)))
             objs.sort(key = lambda x: sortkeys[x])
             for (i, x) in enumerate(objs):
                 self.obj_dict[cls][x][OBJDICT_INDEX] = i
@@ -3950,9 +3952,8 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Privacy")
         addopt = partial(menu.add_option, category_name)
 
-        incpriv = BooleanOption(_("Include records marked private"), False)
-        incpriv.set_help(_("Whether to include private objects"))
-        addopt("incpriv", incpriv)
+        stdoptions.add_living_people_option(menu, category_name)
+        stdoptions.add_private_data_option(menu, category_name, default=False)
 
         inc_notes = BooleanOption(_("Export notes"), True)
         inc_notes.set_help(_("Whether to export notes in the web pages"))
@@ -3965,30 +3966,6 @@ class DynamicWebOptions(MenuReportOptions):
         inc_addresses = BooleanOption(_("Export addresses"), True)
         inc_addresses.set_help(_("Whether to export addresses in the web pages"))
         addopt("inc_addresses", inc_addresses)
-
-        self.__living = EnumeratedListOption(_("Living People"),
-                                             LivingProxyDb.MODE_EXCLUDE_ALL)
-        self.__living.add_item(LivingProxyDb.MODE_EXCLUDE_ALL,
-                               _("Exclude"))
-        self.__living.add_item(LivingProxyDb.MODE_INCLUDE_LAST_NAME_ONLY,
-                               _("Include Last Name Only"))
-        self.__living.add_item(LivingProxyDb.MODE_INCLUDE_FULL_NAME_ONLY,
-                               _("Include Full Name Only"))
-        self.__living.add_item(INCLUDE_LIVING_VALUE,
-                               _("Include"))
-        self.__living.set_help(_("How to handle living people"))
-        addopt("living", self.__living)
-        self.__living.connect("value-changed", self.__living_changed)
-
-        self.__yearsafterdeath = NumberOption(_("Years from death to consider "
-                                                 "living"), 30, 0, 100)
-        self.__yearsafterdeath.set_help(_("This allows you to restrict "
-                                          "information on people who have not "
-                                          "been dead for very long"))
-
-        addopt("yearsafterdeath", self.__yearsafterdeath)
-
-        self.__living_changed()
 
 
     def __add_options_options(self, menu):
@@ -4070,7 +4047,7 @@ class DynamicWebOptions(MenuReportOptions):
 
         self.__inc_families = BooleanOption(_("Include family pages"), False)
         self.__inc_families.set_help(_("Whether or not to include family pages"))
-        self.self.__inc_families.connect("value-changed", self.self.__inc_families_changed)
+        self.__inc_families.connect("value-changed", self.__inc_families_changed)
         addopt("inc_families", self.__inc_families)
 
         # inc_events = BooleanOption(_('Include event pages'), False)
