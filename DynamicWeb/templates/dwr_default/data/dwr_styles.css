@@ -242,6 +242,17 @@ li p {
 .dwr-fallback {
   font-style: italic;
 }
+.dwr-gid
+{
+	font-size: 60%;
+	font-family: monospace;
+	color: #A7A7A7;
+}
+.dwr-number
+{
+	font-weight: bold;
+	color: black;
+}
 /*===================================================== Map */
 #gmap_canvas {
   height: 330px;

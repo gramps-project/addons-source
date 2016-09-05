@@ -2,9 +2,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2014 Pierre Bélissent
+# Copyright (C) 2014-2016 Pierre Bélissent
 #
-# This program is based on "narrativeweb.py" included in Gramps
+# This program is heavily based on "narrativeweb.py" included in Gramps
 # Copyrights for "narrativeweb.py":
 # Copyright (C) 2000-2007  Donald N. Allingham
 # Copyright (C) 2007       Johan Gonqvist <johan.gronqvist@gmail.com>
@@ -15,7 +15,7 @@
 # Copyright (C) 2008-2011  Rob G. Healey <robhealey1@gmail.com>
 # Copyright (C) 2010       Doug Blank <doug.blank@gmail.com>
 # Copyright (C) 2010       Jakim Friant
-# Copyright (C) 2010       Serge Noiraud
+# Copyright (C) 2010-2016  Serge Noiraud
 # Copyright (C) 2011       Tim G L Lyons
 # Copyright (C) 2013       Benny Malengier
 # Copyright (C) 2016       Allen Crider
@@ -211,7 +211,7 @@ from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
 from gramps.gen.datehandler import get_date, get_date_formats, displayer as _dd
-from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
+from gramps.gen.proxy import CacheProxyDb
 from gramps.plugins.lib.libhtmlconst import _CHARACTER_SETS, _CC, _COPY_OPTIONS
 
 # import HTML Class from src/plugins/lib/libhtml.py
@@ -601,20 +601,12 @@ class DynamicWebReport(Report):
             menuopt = menu.get_option_by_name(optname)
             self.options[optname] = menuopt.get_value()
 
-        if not self.options['incpriv']:
-            self.database = PrivateProxyDb(database)
-        else:
-            self.database = database
-
-        livinginfo = self.options['living']
-        yearsafterdeath = self.options['yearsafterdeath']
-
-        if livinginfo != INCLUDE_LIVING_VALUE:
-            self.database = LivingProxyDb(self.database, livinginfo, None, yearsafterdeath)
+        stdoptions.run_private_data_option(self, menu)
+        stdoptions.run_living_people_option(self, menu)
+        self.database = CacheProxyDb(self.database)
 
         filters_option = menu.get_option_by_name('filter')
         self.filter = filters_option.get_filter()
-        self.filter_index = filters_option.get_value()
 
         self.target_path = self.options['target'] #: Destination directory
         self.title = self.options['title'] #: Web site title. Web pages title are in the form "title of the page - title of the site"
@@ -3363,23 +3355,6 @@ class DynamicWebReport(Report):
                     handle = handle.decode("UTF-8")
                 step()
                 self._add_person(handle)
-
-        # When all database is exported:
-        # Add all media_objects, places, sources, citations
-        # even when not connected to any person
-        # if (self.filter_index == 0):
-            # for (handles_func, add_func) in (
-                # (self.database.get_person_handles, self._add_person),
-                # (self.database.get_family_handles, self._add_family),
-                # (self.database.get_event_handles, self._add_event),
-                # (self.database.get_place_handles, self._add_place),
-                # (self.database.get_source_handles, self._add_source),
-                # (self.database.get_citation_handles, self._add_citation),
-                # (self.database.get_media_object_handles, self._add_media),
-                # (self.database.get_repository_handles, self._add_repository),
-            # ):
-                # for handle in handles_func():
-                    # add_func(handle)
 
         # Debug output
         log.debug("final object dictionary \n" +
