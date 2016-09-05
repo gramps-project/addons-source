@@ -2733,6 +2733,18 @@ class DynamicWebReport(Report):
         text = text.replace("__NB_SOURCES__", str(len(self.obj_dict[Source])))
         text = text.replace("__NB_REPOSITORIES__", str(len(self.obj_dict[Repository])))
         text = text.replace("__NB_PLACES__", str(len(self.obj_dict[Place])))
+        # __NB_TOTAL_INDIVIDUALS__ is replaced by the number of persons in the whole database
+        # __NB_TOTAL_FAMILIES__ is replaced by the number of families in the whole database
+        # __NB_TOTAL_MEDIA__ is replaced by the number of media in the whole database
+        # __NB_TOTAL_SOURCES__ is replaced by the number of sources in the whole database
+        # __NB_TOTAL_REPOSITORIES__ is replaced by the number of repositories in the whole database
+        # __NB_TOTAL_PLACES__ is replaced by the number of places in the whole database
+        text = text.replace("__NB_TOTAL_INDIVIDUALS__", str(self.database.get_number_of_people()))
+        text = text.replace("__NB_TOTAL_FAMILIES__", str(self.database.get_number_of_families()))
+        text = text.replace("__NB_TOTAL_MEDIA__", str(self.database.get_number_of_media()))
+        text = text.replace("__NB_TOTAL_SOURCES__", str(self.database.get_number_of_sources()))
+        text = text.replace("__NB_TOTAL_REPOSITORIES__", str(self.database.get_number_of_repositories()))
+        text = text.replace("__NB_TOTAL_PLACES__", str(self.database.get_number_of_places()))
         # __MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>
         # __THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID <gid>
         text2 = text
