@@ -356,6 +356,7 @@ DwrSvgClass.prototype.ConfPage = function()
 {
 	var html = '';
 	// Graph type selector floating div
+	html += '<h1>' + _('SVG tree configuration') + '</h1>';
 	html += '<div id="svg-drawing-type" class="panel panel-default svg-drawing-type">';
 	html += '<div class="panel-body">';
 	html += '<form role="form">';

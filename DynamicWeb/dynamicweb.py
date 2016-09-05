@@ -2545,6 +2545,7 @@ class DynamicWebReport(Report):
             ("Restore default settings", _("Restore default settings")),
             ("Show last modification time", _("Show last modification time")),
             ("SVG tree children distribution", _("SVG tree children distribution")),
+            ("SVG tree configuration", _("SVG tree configuration")),
             ("SVG tree graph shape", _("SVG tree graph shape")),
             ("SVG tree graph type", _("SVG tree graph type")),
             ("SVG tree parents distribution", _("SVG tree parents distribution")),

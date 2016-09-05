@@ -982,11 +982,12 @@ var titlesTable = []; // Stack of titles property: is the title containing a tab
 var titlesNumber = 0;
 
 
-function printTitle(level, contents, collapsible, is_tabbeb)
+function PrintTitle(level, contents, collapsible, is_tabbeb, collapsed)
 {
 	if (contents.length == 0) return('');
 	if (typeof(is_tabbeb) === 'undefined') is_tabbeb = false;
 	if (typeof(collapsible) === 'undefined') collapsible = (level >= 1);
+	if (typeof(collapsed) === 'undefined') collapsed = false;
 	is_tabbeb = is_tabbeb && collapsible && Dwr.search.TabbedPanels;
 	var html = '';
 	if (is_tabbeb)
@@ -1026,7 +1027,9 @@ function printTitle(level, contents, collapsible, is_tabbeb)
 			html += '<div class="panel-heading dwr-collapsible" data-toggle="collapse" data-target="#' + id + '">';
 			html += '<h' + level + ' class="panel-title">' + contents[i].title + '</h' + level + '>';
 			html += '</div>';
-			html += '<div id="' + id + '" class="panel-collapse collapse in ' + (is_table ? 'dwr-panel-table' : 'dwr-panel') + '">';
+			html += '<div id="' + id + '" class="panel-collapse collapse ' +
+				(collapsed ? ' ' : 'in ') +
+				(is_table ? 'dwr-panel-table' : 'dwr-panel') + '">';
 			if (is_table)
 			{
 				html += contents[i].text;
@@ -1099,7 +1102,7 @@ function printIndi(idx)
 	html += '<h2 class="page-header">' + I(idx, 'name') + gidBadge(I(idx, 'gid')) + citaLinks(I(idx, 'cita')) + '</h2>';
 
 	html += indiDetails(idx);
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		eventTable(I(idx, 'events'), idx, -1),
 		addrsTable(I(idx, 'addrs')),
 		attrsTable(I(idx, 'attr')),
@@ -1146,7 +1149,7 @@ function printIndiAncestors(idx)
 	for (var j = 0; j < famc_list.length; j++)
 	{
 		var fdx = famc_list[j];
-		html += printTitle(4,
+		html += PrintTitle(4,
 			[{
 				title: _('Parents') + ': ' + famLinked(fdx),
 				text: printIndiParents(fdx)
@@ -1207,7 +1210,7 @@ function printIndiDescendants(idx)
 	for (var j = 0; j < I(idx, 'fams').length; j++)
 	{
 		var fdx = I(idx, 'fams')[j];
-		html += printTitle(4,
+		html += PrintTitle(4,
 			[{
 				title: famLinked(fdx),
 				text: printIndiSpouses(fdx, idx)
@@ -1228,7 +1231,7 @@ function printIndiSpouses(fdx, idx)
 	{
 		html += '<p class="dwr-ref">' + indiLinked(spouses[k]) + '</p>';
 	}
-	html += printTitle(4, [].concat(
+	html += PrintTitle(4, [].concat(
 		[{
 			title: _('Children'),
 			text: printIndiChildren(fdx)
@@ -1290,7 +1293,7 @@ function printFam(fdx)
 	PreloadScripts(NameFieldScripts('F', fdx, ['name', 'gid', 'cita', 'events', 'attr', 'media', 'note', 'change_time', 'spou', 'chil']), true);
 	var html = '';
 	html += '<h2 class="page-header">' + F(fdx, 'name') + gidBadge(F(fdx, 'gid')) + citaLinks(F(fdx, 'cita')) + '</h2>';
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		eventTable(F(fdx, 'events'), -1, fdx),
 		attrsTable(F(fdx, 'attr')),
 		mediaSection(F(fdx, 'media')),
@@ -1325,7 +1328,7 @@ function printFamParents(fdx)
 			var idx = F(fdx, 'spou')[k];
 			html += '<li class="dwr-ref-detailed">' + indiLinked(idx);
 			html += indiDetails(idx);
-			html += printTitle(4, [].concat(
+			html += PrintTitle(4, [].concat(
 				eventTable(I(idx, 'events'), idx, -1),
 				// addrsTable(I(idx, 'addrs')),
 				// attrsTable(I(idx, 'attr')),
@@ -1357,7 +1360,7 @@ function printFamChildren(fdx)
 			var idx = F(fdx, 'chil')[k].index;
 			html += '<li class="dwr-ref-detailed">' + printChildRef(F(fdx, 'chil')[k])
 			html += indiDetails(idx);
-			html += printTitle(4, [].concat(
+			html += PrintTitle(4, [].concat(
 				eventTable(I(idx, 'events'), idx, -1),
 				// addrsTable(I(idx, 'addrs')),
 				// attrsTable(I(idx, 'attr')),
@@ -1509,7 +1512,7 @@ function printMedia(mdx)
 
 	// Media description
 	if (M(mdx, 'date') != '') html += '<p><b>' + _('Date') + ': </b>' + M(mdx, 'date') + '</p>';
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		noteSection(M(mdx, 'note')),
 		attrsTable(M(mdx, 'attr')),
 		strToContents(_('References'), bk_txt),
@@ -1594,7 +1597,7 @@ function printSource(sdx)
 	// Repositories for this source
 	var bk_txt = printBackRefs(BKREF_TYPE_REPOREF, [], [], [], [], [], S(sdx, 'repo'));
 
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		attrsTable(S(sdx, 'attr')),
 		mediaSection(S(sdx, 'media')),
 		noteSection(S(sdx, 'note')),
@@ -1717,7 +1720,7 @@ function printPlace(pdx)
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, P(pdx, 'bki'), P(pdx, 'bkf'), [], [], P(pdx, 'bkp'), []);
 
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		urlsTable(P(pdx, 'urls')),
 		mediaSection(P(pdx, 'media')),
 		noteSection(P(pdx, 'note')),
@@ -1747,7 +1750,7 @@ function printRepo(rdx)
 	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], R(rdx, 'bks'), [], [], []);
 	if (bk_txt == '') bk_txt = _('None');
 
-	html += printTitle(3, [].concat(
+	html += PrintTitle(3, [].concat(
 		addrsTable(R(rdx, 'addrs')),
 		urlsTable(R(rdx, 'urls')),
 		noteSection(R(rdx, 'note')),
@@ -2006,7 +2009,7 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 	return(html);
 }
 
-function printIndexListTitle(header, data, sortingAttributes, defaultSort)
+function PrintIndexListTitle(header, data, sortingAttributes, defaultSort)
 {
 	// Get saved state
 	var lsName = window.location.pathname + ' ' + header + ' sorting';
@@ -2054,7 +2057,7 @@ function printIndexListTitle(header, data, sortingAttributes, defaultSort)
 	};
 }
 	
-function printIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
+function PrintIndexList(id, header, data, fText, fTextOptimized, separator, sortingAttributes, defaultSort)
 // id: Data type
 // header: Page header
 // data: Array of data to be indexed
@@ -2074,7 +2077,7 @@ function printIndexList(id, header, data, fText, fTextOptimized, separator, sort
 		fText = fTextOptimized;
 	}
 	
-	var lts = printIndexListTitle(header, data, sortingAttributes, defaultSort);
+	var lts = PrintIndexListTitle(header, data, sortingAttributes, defaultSort);
 	var html = lts.html;
 	var sorting_way = lts.sorting_way;
 	
@@ -2105,31 +2108,15 @@ function printIndexList(id, header, data, fText, fTextOptimized, separator, sort
 	if (titles.length > 1 && data.length > ENABLE_LIST_SECTIONS)
 	{
 		// Print list into several sections, each with a letter as header, if there are more than 1 section
+		var sections = []
 		for (i = 0; i < titles.length; i++)
 		{
-			var letter = titles[i];
-			html += '<div class="panel panel-default">';
-			if (texts[letter].length > LIST_ITEMS_PER_SECTION)
-			{
-				html += '<div class="panel-heading dwr-collapsible collapsed" data-toggle="collapse" data-target="#panel_index_' + id + i + '">';
-				html += '<h5 class="panel-title">' + (letter || '&nbsp;') + '</h5>';
-				html += '</div>';
-				html += '<div id="panel_index_' + id + i + '" class="panel-collapse collapse">';
-				html += '<div class="panel-body">';
-				html += texts[letter].join(separator);
-				html += '</div>';
-				html += '</div>';
-			}
-			else
-			{
-				html += '<div id="panel_index_' + id + i + '" class="panel-collapse collapse in">';
-				html += '<div class="panel-body">';
-				html += texts[letter].join(separator);
-				html += '</div>';
-				html += '</div>';
-			}
-			html += '</div>';
+			sections.push({
+				title: _(titles[i] || '&nbsp;'),
+				text: texts[titles[i]].join(separator)
+			});
 		}
+		html += PrintTitle(3, sections, true /*collapsible*/, true /*is_tabbeb*/, true /*collapsed*/);
 	}
 	else
 	{
@@ -2307,7 +2294,7 @@ function htmlPersonsIndexList(header, data)
 		fSort: function(a, b) {return cmp(I_gid[a], I_gid[b])},
 		fLetter: false
 	});
-	return printIndexList('I', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return PrintIndexList('I', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 
@@ -2425,7 +2412,7 @@ function htmlFamiliesIndexList(header, data)
 		fSort: function(a, b) {return cmp(F_gid[a], F_gid[b])},
 		fLetter: false
 	});
-	return printIndexList('F', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return PrintIndexList('F', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 
@@ -2695,7 +2682,7 @@ function htmlSourcesIndexList(header, data)
 		fSort: function(a, b) {return cmp(S_gid[a], S_gid[b])},
 		fLetter: false
 	});
-	return printIndexList('S', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+	return PrintIndexList('S', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 }
 
 
@@ -2860,7 +2847,7 @@ function htmlPlacesIndexTree(header, data)
 				fLetter: function(pdx) {return P_letter[pdx]}
 			}
 		];
-		return printIndexList('P', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
+		return PrintIndexList('P', header, data, fText, fTextOptimized, '<br>', sortingAttributes, 0);
 	}
 	else
 	{
@@ -2886,7 +2873,7 @@ function htmlPlacesIndexTree(header, data)
 				fSort: function(a, b) {return(b.nb - a.nb)}
 			}
 		];
-		var lts = printIndexListTitle(header, data, sortingAttributes, 0);
+		var lts = PrintIndexListTitle(header, data, sortingAttributes, 0);
 		var html = lts.html;
 		var sorting_way = lts.sorting_way;
 		
@@ -3159,7 +3146,7 @@ function htmlSurnamesIndexList(header, data)
 			fSort: function(a, b) {return cmp(N_persons[b].length, N_persons[a].length)}
 		}
 	];
-	return printIndexList('N', header, data, fText, fTextOptimized, ' ', sortingAttributes, 0);
+	return PrintIndexList('N', header, data, fText, fTextOptimized, ' ', sortingAttributes, 0);
 }
 
 
@@ -3803,7 +3790,7 @@ function SearchObjects()
 			});
 		}
 	}
-	html += printTitle(3, contents)
+	html += PrintTitle(3, contents)
 	if (nb_found == 1)
 	{
 		window.location.replace(fref(index));

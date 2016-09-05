@@ -337,6 +337,8 @@ body.svg-save-text {
   white-space: pre;
   font-size: 12px;
   font-family: courier;
+  background: white;
+  color: black;
 }
 /*===================================================== SVG graph */
 .svg-tree {

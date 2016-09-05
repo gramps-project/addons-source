@@ -345,6 +345,8 @@ body.svg-save-text {
   white-space: pre;
   font-size: 12px;
   font-family: courier;
+  background: white;
+  color: black;
 }
 /*===================================================== SVG graph */
 .svg-tree {
@@ -585,7 +587,6 @@ body > div {
   background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
   border-bottom: 1px solid #aa7931;
 }
-/*===================================================== Map */
 /*===================================================== Tree page */
 .svg-drawing {
   background: url(Web_Mainz_MidLight.png) #cd9b52;
@@ -593,4 +594,3 @@ body > div {
 .svg-drawing-expand {
   background: url(Web_Mainz_MidLight.png) #cd9b52;
 }
-/*===================================================== SVG graph */
