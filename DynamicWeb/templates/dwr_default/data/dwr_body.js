@@ -45,28 +45,28 @@ function BodyDecorate()
 
 	// Parse the URL search string
 	Dwr.ParseSearchString();
-	
+
 	// Check if the current page needs a menu
 	var menuless = false;
 	if ($('.dwr-menuless').length > 0) menuless = true;
 	if (Dwr.search.SvgExpanded) menuless = true;
 	if (Dwr.search.MapExpanded) menuless = true;
-	
+
 	// Build the div for the body content
 	$('body').wrapInner('<div id="body-page" class="container"></div>');
-	
+
 	// Build menu if any
 	if (!menuless)
 	{
 		BuildMenu();
 	}
-	
+
 	// Text for the header
 	if (HEADER != '') $('body').prepend(
 		'<div id="dwr-header">' +
 		HEADER +
 		'</div>');
-		
+
 	// Text for the footer
 	var ct = '';
 	if (Dwr.search.IncChangeTime) ct = '<p id="dwr-change-time" class="dwr-change-time">';
@@ -74,17 +74,17 @@ function BodyDecorate()
 		'<div id="dwr-footer" class="panel-footer">' +
 		FOOTER + COPYRIGHT + ct +
 		'</div>');
-		
+
 	// Create embedded search forms
 	var esf = $('.embed-search');
 	for (var i = 0; i < esf.length; i += 1) $(esf).html(embedSearchText());
-	
+
 	// Set search form defaut value
 	for (var i = 0; i < nbSearchForms; i += 1)
 	{
 		// $('#dwr-search-' + nbSearchForms + '-txt').val(Dwr.search.Txt); does not work completely, and is counter-intuitive.
 	}
-		
+
 	// Bootstrap responsive design detection
 	// $('body').append(
 		// '<div class="device-xs visible-xs-block"></div>' +
@@ -252,7 +252,7 @@ DwrClass.prototype.defaultSearchString = {
 	Rgid: '',
 	ImgList: [],
 	MapExpanded: false,
-	
+
 	Asc: 4,
 	Dsc: 4,
 	SvgType: SVG_TREE_TYPE,
@@ -532,7 +532,7 @@ function SetURLParameter(sString, sParam, new_val, val, def)
 	// new_val is the new parameter value, if any
 	// val is the current parameter value, if any
 	// val is the default parameter value, of type: number, boolean, Array, string
-	
+
 	// Manage when values are not provided
 	val = (val == null || typeof(val) === 'undefined') ? def : val;
 	val = (new_val == null || typeof(new_val) === 'undefined' || new_val == def) ? val : new_val;
@@ -568,7 +568,7 @@ function SetURLParameter(sString, sParam, new_val, val, def)
 function Redirect(url)
 {
 	// Redirects to a given url
-	
+
 	var change_page = false;
 	// Get the current page URL
 	this_url = window.location.href;
@@ -612,7 +612,7 @@ function BuildMenu()
 	ad = ad.replace(/\?.*/, '');
 	ad = ad.replace(/.*\//, '');
 	var i;
-	
+
 	// Get current menu item
 	var i_current = -1;
 	for (i=0; i<PAGES_TITLE.length; i++)
@@ -623,7 +623,7 @@ function BuildMenu()
 			i_current = i;
 		}
 	}
-	
+
 	// Text for the form
 	var txt_form1 = '';
 	txt_form1 += '<div class="pull-right">';
@@ -641,12 +641,12 @@ function BuildMenu()
 	}
 	txt_form1 += '</form>';
 	txt_form1 += '</div>';
-	
+
 	// Text for the menu
 	var txt_menu = '';
 	txt_menu += '<nav id="dwr-menu" class="navbar navbar-default" role="navigation">';
 	txt_menu += '<div class="container-fluid">';
-	
+
 	txt_menu += '<div class="navbar-header">';
 	txt_menu += '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dwr-navbar-collapse">';
 	txt_menu += '<span class="sr-only">Toggle navigation</span>';
@@ -659,7 +659,7 @@ function BuildMenu()
 	else
 		txt_menu += '<a class="navbar-brand" href="https://gramps-project.org/"><img src="data/Gramps_Logo.png"></a>';
 	txt_menu += '</div>';
-	
+
 	txt_menu += '<div id="dwr-navbar-collapse" class="collapse navbar-collapse">';
 	txt_menu += '<ul class="nav navbar-nav">';
 	for (i=0; i<PAGES_TITLE.length; i++)

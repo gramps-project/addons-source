@@ -459,7 +459,7 @@ DwrSvgClass.prototype.ConfPage = function()
 	html += '</form>';
 	html += '</div>'; // panel-body
 	html += '</div>'; // svg-drawing-type
-	
+
 	// Events
 	$(window).load(function() {
 		$('#svg-config-ok').click(SvgConfSubmit);
@@ -1166,7 +1166,7 @@ var shiftPressed = false;
 
 function SvgKeyDown(event)
 {
-	
+
     if (event.which == '17') ctrlPressed = true;
     if (event.which == '16') shiftPressed = true;
 	console.log(""+shiftPressed)

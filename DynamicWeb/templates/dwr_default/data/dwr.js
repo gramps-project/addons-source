@@ -875,7 +875,7 @@ function printCitations()
 	return(txt);
 }
 
-function handleCitations()
+function HandleCitations()
 {
 	// Replace references text by the list index
 	$('.dwr-citation').each(function(i, e) {
@@ -979,26 +979,30 @@ function strToContents(title, txt)
 
 var titlesCollapsible = []; // Stack of titles property: is the title collapsible ?
 var titlesTable = []; // Stack of titles property: is the title containing a table ?
-var titlesNumber = 0;
 
 
-function PrintTitle(level, contents, collapsible, is_tabbeb, collapsed)
+function PrintTitle(section_id, level, contents, collapsible, is_tabbeb, collapsed)
 {
 	if (contents.length == 0) return('');
 	if (typeof(is_tabbeb) === 'undefined') is_tabbeb = false;
 	if (typeof(collapsible) === 'undefined') collapsible = (level >= 1);
 	if (typeof(collapsed) === 'undefined') collapsed = false;
 	is_tabbeb = is_tabbeb && collapsible && Dwr.search.TabbedPanels;
+	var lsName = 'lastTab:' + window.location.pathname + ':' + section_id;
+    var lastTab = parseInt(sessionStorage.getItem(lsName));
+	if (isNaN(lastTab)) lastTab = 0;
+	if (lastTab >= contents.length) lastTab = contents.length - 1;
 	var html = '';
 	if (is_tabbeb)
 	{
 		//  Generate nav tabs
-		html += '<ul class="nav nav-tabs" role="tablist">';
+		html += '<ul id="' + section_id + '"class="nav nav-tabs" role="tablist">';
 		for (var i = 0; i < contents.length; i += 1)
 		{
+			var id = 'section_' + section_id + '_' + i;
 			if (typeof(contents[i].panelclass) === 'undefined') contents[i].panelclass = '';
-			html += '<li role="presentation"' + ((i == 0) ? ' class="active"' : '') +
-				'><a href="#section_' + (titlesNumber + i) + '" role="tab" data-toggle="tab" class="' + contents[i].panelclass + '">' +
+			html += '<li role="presentation"' + ((i == lastTab) ? ' class="active"' : '') +
+				'><a href="#' + id + '" role="tab" data-toggle="tab" class="' + contents[i].panelclass + '">' +
 				'<h' + level + ' class="panel-title">' +
 				contents[i].title +
 				'</h' + level + '>' +
@@ -1009,27 +1013,33 @@ function PrintTitle(level, contents, collapsible, is_tabbeb, collapsed)
 	}
 	for (var i = 0; i < contents.length; i += 1)
 	{
-		var id = 'section_' + titlesNumber;
-		titlesNumber += 1;
+		var id = 'section_' + section_id + '_' + i;
 		var is_table = (contents[i].text.indexOf('<table') == 0);
 		is_table = is_table && collapsible;
 		if (is_tabbeb)
 		{
 			html += '<div id="' + id + '" role="tabpanel" class="tab-pane' +
 				(is_table ? ' dwr-panel-table' : '') +
-				((i == 0) ? ' active ' : ' ') + contents[i].panelclass + '">';
+				((i == lastTab) ? ' active ' : ' ') + contents[i].panelclass + '">';
 			html += contents[i].text;
 			html += '</div>';
 		}
 		else if (collapsible)
 		{
+			var lsName = 'wasCollapsed:' + window.location.pathname + ':' + id;
+			var wasCollapsed = parseInt(sessionStorage.getItem(lsName));
+			var collapse = collapsed;
+			if (!isNaN(wasCollapsed)) collapse = wasCollapsed;
 			html += '<div class="panel panel-default ' + contents[i].panelclass + '">';
-			html += '<div class="panel-heading dwr-collapsible" data-toggle="collapse" data-target="#' + id + '">';
+			html += '<div class="panel-heading dwr-collapsible' +
+				(collapse ? ' collapsed' : '') +
+				'" data-toggle="collapse" data-target="#' + id + '">';
 			html += '<h' + level + ' class="panel-title">' + contents[i].title + '</h' + level + '>';
 			html += '</div>';
-			html += '<div id="' + id + '" class="panel-collapse collapse ' +
-				(collapsed ? ' ' : 'in ') +
-				(is_table ? 'dwr-panel-table' : 'dwr-panel') + '">';
+			html += '<div id="' + id + '" class="panel-collapse collapse' +
+				(collapse ? '' : ' in') +
+				(is_table ? ' dwr-panel-table' : ' dwr-panel') +
+				'">';
 			if (is_table)
 			{
 				html += contents[i].text;
@@ -1057,31 +1067,54 @@ function PrintTitle(level, contents, collapsible, is_tabbeb, collapsed)
 }
 
 
-function handleTitles()
+function HandleTitles()
 {
 	// Handle collapsible panels
 	$('.panel-heading').click(function(event) {
-		// Prevent title collapse when the click is not on the title
+		// Prevent title collapse when the click is not on the title (on text hyperlink for example)
 		var target = $(event.target);
 		if (!target.is('.panel-heading') && !target.is('.panel-title'))
 		{
 			event.stopImmediatePropagation();
 		}
 	});
+	
 
 	// Handle Bootstrap nav tabs
 	$('.nav-tabs>li>a').click(function (event) {
+		// Prevent title collapse when the click is not on the title (on text hyperlink for example)
 		var target = $(event.target);
 		if (target.attr('role') != 'tab' && !target.is('.panel-title'))
 		{
 			event.stopImmediatePropagation();
 		}
 	});
+	
+	// Collapsed section memorization
+    // $('div[data-toggle="collapse"]')
+    $('.panel-collapse.collapse')
+		.on('hidden.bs.collapse', function (event) {
+			var lsName = 'wasCollapsed:' + window.location.pathname + ':' + $(this).attr('id');
+			sessionStorage.setItem(lsName, "1")
+			event.stopPropagation();
+		})
+		.on('shown.bs.collapse', function (event) {
+			var lsName = 'wasCollapsed:' + window.location.pathname + ':' + $(this).attr('id');
+			sessionStorage.setItem(lsName, "0");
+			event.stopPropagation();
+		});
+
+	// Selected tab memorization
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (event) {
+		var section_id = $(this).parent().parent().attr('id');
+		var lsName = 'lastTab:' + window.location.pathname + ':' + section_id;
+        sessionStorage.setItem(lsName, $(this).attr('href').replace('#section_' + section_id + '_', ''));
+		event.stopPropagation();
+    });
 
 	// Enable Bootstrap tooltips and popovers
 	$('[data-toggle=tooltip]').tooltip();
 	$('[data-toggle=popover]').popover();
-
 }
 
 
@@ -1102,7 +1135,7 @@ function printIndi(idx)
 	html += '<h2 class="page-header">' + I(idx, 'name') + gidBadge(I(idx, 'gid')) + citaLinks(I(idx, 'cita')) + '</h2>';
 
 	html += indiDetails(idx);
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('I' + idx, 3, [].concat(
 		eventTable(I(idx, 'events'), idx, -1),
 		addrsTable(I(idx, 'addrs')),
 		attrsTable(I(idx, 'attr')),
@@ -1149,7 +1182,7 @@ function printIndiAncestors(idx)
 	for (var j = 0; j < famc_list.length; j++)
 	{
 		var fdx = famc_list[j];
-		html += PrintTitle(4,
+		html += PrintTitle('Idsc' + idx, 4,
 			[{
 				title: _('Parents') + ': ' + famLinked(fdx),
 				text: printIndiParents(fdx)
@@ -1210,7 +1243,7 @@ function printIndiDescendants(idx)
 	for (var j = 0; j < I(idx, 'fams').length; j++)
 	{
 		var fdx = I(idx, 'fams')[j];
-		html += PrintTitle(4,
+		html += PrintTitle('Iasc' + idx, 4,
 			[{
 				title: famLinked(fdx),
 				text: printIndiSpouses(fdx, idx)
@@ -1231,7 +1264,7 @@ function printIndiSpouses(fdx, idx)
 	{
 		html += '<p class="dwr-ref">' + indiLinked(spouses[k]) + '</p>';
 	}
-	html += PrintTitle(4, [].concat(
+	html += PrintTitle('Ispouses' + idx, 4, [].concat(
 		[{
 			title: _('Children'),
 			text: printIndiChildren(fdx)
@@ -1293,7 +1326,7 @@ function printFam(fdx)
 	PreloadScripts(NameFieldScripts('F', fdx, ['name', 'gid', 'cita', 'events', 'attr', 'media', 'note', 'change_time', 'spou', 'chil']), true);
 	var html = '';
 	html += '<h2 class="page-header">' + F(fdx, 'name') + gidBadge(F(fdx, 'gid')) + citaLinks(F(fdx, 'cita')) + '</h2>';
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('F' + fdx, 3, [].concat(
 		eventTable(F(fdx, 'events'), -1, fdx),
 		attrsTable(F(fdx, 'attr')),
 		mediaSection(F(fdx, 'media')),
@@ -1328,7 +1361,7 @@ function printFamParents(fdx)
 			var idx = F(fdx, 'spou')[k];
 			html += '<li class="dwr-ref-detailed">' + indiLinked(idx);
 			html += indiDetails(idx);
-			html += PrintTitle(4, [].concat(
+			html += PrintTitle('Fparents' + fdx, 4, [].concat(
 				eventTable(I(idx, 'events'), idx, -1),
 				// addrsTable(I(idx, 'addrs')),
 				// attrsTable(I(idx, 'attr')),
@@ -1360,7 +1393,7 @@ function printFamChildren(fdx)
 			var idx = F(fdx, 'chil')[k].index;
 			html += '<li class="dwr-ref-detailed">' + printChildRef(F(fdx, 'chil')[k])
 			html += indiDetails(idx);
-			html += PrintTitle(4, [].concat(
+			html += PrintTitle('Fchildren' + fdx, 4, [].concat(
 				eventTable(I(idx, 'events'), idx, -1),
 				// addrsTable(I(idx, 'addrs')),
 				// attrsTable(I(idx, 'attr')),
@@ -1512,7 +1545,7 @@ function printMedia(mdx)
 
 	// Media description
 	if (M(mdx, 'date') != '') html += '<p><b>' + _('Date') + ': </b>' + M(mdx, 'date') + '</p>';
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('M' + mdx, 3, [].concat(
 		noteSection(M(mdx, 'note')),
 		attrsTable(M(mdx, 'attr')),
 		strToContents(_('References'), bk_txt),
@@ -1597,7 +1630,7 @@ function printSource(sdx)
 	// Repositories for this source
 	var bk_txt = printBackRefs(BKREF_TYPE_REPOREF, [], [], [], [], [], S(sdx, 'repo'));
 
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('S' + sdx, 3, [].concat(
 		attrsTable(S(sdx, 'attr')),
 		mediaSection(S(sdx, 'media')),
 		noteSection(S(sdx, 'note')),
@@ -1720,7 +1753,7 @@ function printPlace(pdx)
 	// Back references
 	var bk_txt = printBackRefs(BKREF_TYPE_INDEX, P(pdx, 'bki'), P(pdx, 'bkf'), [], [], P(pdx, 'bkp'), []);
 
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('P' + pdx, 3, [].concat(
 		urlsTable(P(pdx, 'urls')),
 		mediaSection(P(pdx, 'media')),
 		noteSection(P(pdx, 'note')),
@@ -1750,7 +1783,7 @@ function printRepo(rdx)
 	var bk_txt = printBackRefs(BKREF_TYPE_REPO, [], [], R(rdx, 'bks'), [], [], []);
 	if (bk_txt == '') bk_txt = _('None');
 
-	html += PrintTitle(3, [].concat(
+	html += PrintTitle('R' + rdx, 3, [].concat(
 		addrsTable(R(rdx, 'addrs')),
 		urlsTable(R(rdx, 'urls')),
 		noteSection(R(rdx, 'note')),
@@ -1771,7 +1804,7 @@ function printRepo(rdx)
 //=========================================================================================
 
 // Fancy features are disabled above the limits below
-var TABLE_OPTIMIZATION_LIMIT = 3000; 
+var TABLE_OPTIMIZATION_LIMIT = 3000;
 var LIST_OPTIMIZATION_LIMIT = 1000;
 var TREE_OPTIMIZATION_LIMIT = 1000;
 var LIST_ITEMS_PER_SECTION = 1;
@@ -1785,7 +1818,7 @@ function PrintIndex(id, header, type, fTable, fList, data)
 		else fList(data);
 		return;
 	}
-	
+
 	// Get all data if not specified
 	if (typeof(data) !== 'undefined')
 	{
@@ -1796,7 +1829,7 @@ function PrintIndex(id, header, type, fTable, fList, data)
 		data = new Array(DB_SIZES[id]);
 		for (var x = 0; x < DB_SIZES[id]; x++) data[x] = x;
 	}
-	
+
 	if (type) return fTable(header, data);
 	return fList(header, data);
 }
@@ -1907,7 +1940,7 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 	nb_cols -= nb_cols_suppr;
 
 	if (data_copy.length > TABLE_OPTIMIZATION_LIMIT) console.log('Table has too many rows (' + data_copy.length + '). Disabling fancy features.');
-	
+
 	// Prepare columns definition for DataTables plugin
 	var colDefs = []
 	for (k = 0; k < nb_cols; k += 1)
@@ -1924,7 +1957,7 @@ function PrintIndexTable(id, header, data, defaultsort, columns)
 			'orderable': (columns[k].fsort !== false) && (data_copy.length <= TABLE_OPTIMIZATION_LIMIT)
 		});
 	}
-	
+
 	// Print title
 	var html = '';
 	if (header != '')
@@ -2013,25 +2046,25 @@ function PrintIndexListTitle(header, data, sortingAttributes, defaultSort)
 {
 	// Get saved state
 	var lsName = window.location.pathname + ' ' + header + ' sorting';
-	var saved_sorting_way = localStorage.getItem(lsName);
+	var saved_sorting_way = sessionStorage.getItem(lsName);
 	var sorting_way = defaultSort;
 	for (var i = 0; i < sortingAttributes.length; i += 1)
 	{
 		if (sortingAttributes[i].id == saved_sorting_way) sorting_way = i;
 	}
-	
+
 	// Print header and sorting way selector
 	var html = '';
 	if (header != '')
 	{
 		if (sortingAttributes.length < 2)
 		{
-			html += '<h2 class="page-header">' + header + '</h2>';	
+			html += '<h2 class="page-header">' + header + '</h2>';
 		}
 		else
 		{
 			html += '<div class="row">';
-			html += '<div class="col-xs-12 col-sm-6"><h2 class="page-header">' + header + '</h2></div>';	
+			html += '<div class="col-xs-12 col-sm-6"><h2 class="page-header">' + header + '</h2></div>';
 			html += '<form class="form-horizontal col-xs-12 col-sm-6 dwr-form-sort-by"><div class="form-group">';
 			html += '<label class="control-label col-xs-4" for="dwr-input-sort-by">' + _('Sort by:') + '</label>';
 			html += '<div class="col-xs-8"><select id="dwr-input-sort-by" class="form-control">';
@@ -2043,20 +2076,20 @@ function PrintIndexListTitle(header, data, sortingAttributes, defaultSort)
 			html += '</select></div></div></form></div>';
 			$(window).load(function() {
 				$('#dwr-input-sort-by').change(function() {
-					localStorage.setItem(lsName, $(this).val());
+					sessionStorage.setItem(lsName, $(this).val());
 					window.location.replace(window.location.href);
 					return(false);
 				});
 			});
 		}
 	}
-	
+
 	return {
 		html: html,
 		sorting_way: sorting_way
 	};
 }
-	
+
 function PrintIndexList(id, header, data, fText, before, after, separator, sortingAttributes, defaultSort)
 // id: Data type
 // header: Page header
@@ -2069,14 +2102,14 @@ function PrintIndexList(id, header, data, fText, before, after, separator, sorti
 //    id: unique identifier for the sorting way
 //    fSort: sorting function
 //    fLetter: Section header for the row (None if no sections)
-{	
+{
 	var lts = PrintIndexListTitle(header, data, sortingAttributes, defaultSort);
 	var html = lts.html;
 	var sorting_way = lts.sorting_way;
-	
+
 	// Sort data
 	if (sortingAttributes.length > 0) data.sort(sortingAttributes[sorting_way].fSort);
-	
+
 	// Split data into several sections if fLetter is provided
 	var titles = [];
 	var texts = [];
@@ -2109,7 +2142,7 @@ function PrintIndexList(id, header, data, fText, before, after, separator, sorti
 				text: texts[titles[i]].join(separator)
 			});
 		}
-		html += PrintTitle(3, sections, true /*collapsible*/, true /*is_tabbeb*/, true /*collapsed*/);
+		html += PrintTitle(id + 'index', 3, sections, true /*collapsible*/, true /*is_tabbeb*/, true /*collapsed*/);
 	}
 	else
 	{
@@ -2156,7 +2189,7 @@ function htmlPersonsIndexTable(header, data)
 	if (!Dwr.search.HideGid) scripts.push(['I', 'gid']);
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
-	
+
 	// Define columns and build table
 	var columns = [{
 		title: _('Name'),
@@ -2362,7 +2395,7 @@ function htmlFamiliesIndexList(header, data)
 	if (!Dwr.search.HideGid) scripts.push(['I', 'gid'], ['F', 'gid']);
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
-	
+
 	// build data for each spouse of each family
 	var data2 = [];
 	for (var x = 0; x < data.length; x += 1)
@@ -2814,7 +2847,7 @@ function htmlPlacesIndexTree(header, data)
 		txt += '</a>';
 		return txt;
 	};
-		
+
 	// Build tree data (first pass to get max_nb_tree_subnodes)
 	var treedata = [];
 	for (var x = 0; x < data.length; x += 1)
@@ -2824,10 +2857,10 @@ function htmlPlacesIndexTree(header, data)
 		treedata.push(ComputePlaceHierarchy(pdx, fText, null));
 	}
 	max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, treedata.length);
-	
+
 	if (header == '' || max_nb_tree_subnodes > TREE_OPTIMIZATION_LIMIT)
 	{
-		// No header = in the search results page, show data as list 
+		// No header = in the search results page, show data as list
 		var sortingAttributes = [
 			{
 				title: _('Name'),
@@ -2841,13 +2874,13 @@ function htmlPlacesIndexTree(header, data)
 	else
 	{
 		// Header = in the place index page, show data as tree
-	
+
 		// Optimization
 		if (data.length > TREE_OPTIMIZATION_LIMIT)
 		{
 			console.log('Too many data (' + data.length + '). Disabling fancy features.');
 		}
-		
+
 		// Print title
 		var sortingAttributes = [
 			{
@@ -2864,7 +2897,7 @@ function htmlPlacesIndexTree(header, data)
 		var lts = PrintIndexListTitle(header, data, sortingAttributes, 0);
 		var html = lts.html;
 		var sorting_way = lts.sorting_way;
-		
+
 		// Build tree data (second pass)
 		var treedata = [];
 		for (var x = 0; x < data.length; x += 1)
@@ -2875,7 +2908,7 @@ function htmlPlacesIndexTree(header, data)
 		}
 		treedata.sort(sortingAttributes[sorting_way].fSort);
 		max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, treedata.length);
-		
+
 		// When no data
 		if (data.length == 0) return html + '<p>' + _('None') + '</p>';
 
@@ -2890,12 +2923,16 @@ function htmlPlacesIndexTree(header, data)
 					highlightSelected: false,
 					levels: 1,
 					showBorder: false,
-					showTags: data.length <= TREE_OPTIMIZATION_LIMIT ||1
+					showTags: true, // data.length <= TREE_OPTIMIZATION_LIMIT
+					onNodeCollapsed: function(event, data) {
+						var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + data.pdx;
+						sessionStorage.setItem(lsName, "0");
+					},
+					onNodeExpanded: function(event, data) {
+						var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + data.pdx;
+						sessionStorage.setItem(lsName, "1");
+					}
 				});
-				// $('.node-treeview').click(function(event) {
-					// console.log("sel");
-					// return false;
-				// });
 			});
 		})();
 		return html + '<div id="treeview"></div>';
@@ -2908,7 +2945,10 @@ function ComputePlaceHierarchy(top, fText, fSort)
 		pdx: top,
 		nb: 0,
 		text: fText(top),
-		selectable: false
+		selectable: false,
+		state: {
+			expanded: false
+		}
 	};
 	var nodes = [];
 	for (var i = 0; i < P_bkp[top].length; i += 1)
@@ -2924,6 +2964,13 @@ function ComputePlaceHierarchy(top, fText, fSort)
 		node.nodes = nodes;
 		node.tags = ['' + node.nb];
 		max_nb_tree_subnodes = Math.max(max_nb_tree_subnodes, nodes.length);
+	}
+	// Get memorized state
+	var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + top;
+	var expd = sessionStorage.getItem(lsName);
+	if (expd !== null && parseInt(expd))
+	{
+		node.state.expanded = true;
 	}
 	return node;
 }
@@ -3082,7 +3129,7 @@ function htmlSurnamesIndexTable(header, data)
 	];
 	PrepareFieldSplitScripts(scripts);
 	if (preloadMode) return;
-	
+
 	// Define columns and build table
 	var columns = [{
 		title: _('Surname'),
@@ -3091,7 +3138,7 @@ function htmlSurnamesIndexTable(header, data)
 		fsort: function(x, col) {return data[x]}
 	}, {
 		title: _('Number'),
-		ftext: function(x, col) {return "" + N_persons[data[x]].length},	
+		ftext: function(x, col) {return "" + N_persons[data[x]].length},
 		fhref: false,
 		fsort: function(x, col) {return N_persons[data[x]].length}
 	}];
@@ -3773,7 +3820,7 @@ function SearchObjects()
 			});
 		}
 	}
-	html += PrintTitle(3, contents)
+	html += PrintTitle('Search', 3, contents)
 	if (nb_found == 1)
 	{
 		window.location.replace(fref(index));
@@ -3960,8 +4007,8 @@ function ConfigPage()
 				$('#dwr-cfg-' + opt)[0].checked = Dwr.defaultSearchString[opt];
 			}
 			// Clear local storage where Datatables stores the user preferences
-			$.each(localStorage, function(key, val) {
-				localStorage.removeItem(key);
+			$.each(sessionStorage, function(key, val) {
+				sessionStorage.removeItem(key);
 			});
 			return(false);
 		});
@@ -4131,11 +4178,14 @@ function MainRun()
 			if (Dwr.search.SvgExpanded) $('body').html(html);
 			else $('#body-page').html(html);
 		}
-		else if ($.inArray(PageContents, [Dwr.PAGE_SOURCE, Dwr.PAGE_MEDIA, Dwr.PAGE_INDI, Dwr.PAGE_FAM, Dwr.PAGE_PLACE, Dwr.PAGE_REPO]) >= 0)
+		else if ($.inArray(PageContents, [
+			Dwr.PAGE_SOURCE, Dwr.PAGE_MEDIA, Dwr.PAGE_INDI, Dwr.PAGE_FAM, Dwr.PAGE_PLACE, Dwr.PAGE_REPO,
+			Dwr.PAGE_SURNAMES_INDEX, Dwr.PAGE_SURNAME_INDEX, Dwr.PAGE_PERSONS_INDEX, Dwr.PAGE_FAMILIES_INDEX, Dwr.PAGE_SOURCES_INDEX, Dwr.PAGE_MEDIA_INDEX, Dwr.PAGE_PLACES_INDEX, Dwr.PAGE_ADDRESSES_INDEX, Dwr.PAGE_REPOS_INDEX
+		]) >= 0)
 		{
 			$('#body-page').html(html);
-			handleCitations();
-			handleTitles();
+			HandleCitations();
+			HandleTitles();
 		}
 		else
 		{

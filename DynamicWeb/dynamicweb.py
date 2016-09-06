@@ -4077,7 +4077,7 @@ class DynamicWebOptions(MenuReportOptions):
         index_types = [
             _("List"),
             _("Table"),
-        ]        
+        ]
         for (index, default, option_text, option_help) in [
             ["surnames", "0", _("Default format for the surnames index"), _("The default format for the surnames index")],
             ["persons", "1", _("Default format for the persons index"), _("The default format for the persons index")],
