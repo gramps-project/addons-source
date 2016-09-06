@@ -186,7 +186,7 @@ from gramps.gen.plug.menu import (PersonOption, NumberOption, StringOption,
     BooleanOption, EnumeratedListOption, FilterOption,
     NoteOption, MediaOption, DestinationOption, ColorOption)
 from gramps.gen.plug.report import (Report, Bibliography)
-from gramps.gen.plug.report import utils as report_utils
+from gramps.gen.plug.report import utils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
 
@@ -1501,7 +1501,7 @@ class DynamicWebReport(Report):
             place = self.database.get_place_from_handle(place_handle)
             jdata = {}
             jdata['gid'] = self.obj_dict[Place][place_handle][OBJDICT_GID]
-            place_name = report_utils.place_name(self.database, place_handle)
+            place_name = utils.place_name(self.database, place_handle)
             jdata['name'] = place_name
             jdata['letter'] = first_letter(place_name).strip()
             if (not self.inc_places):
@@ -2138,7 +2138,7 @@ class DynamicWebReport(Report):
         if (event):
             place_handle = event.get_place_handle()
             if (place_handle and (place_handle in self.obj_dict[Place])):
-                place_name = report_utils.place_name(self.database, place_handle)
+                place_name = utils.place_name(self.database, place_handle)
         return(place_name)
 
     def get_death_age(self, person):
@@ -4255,7 +4255,7 @@ class DynamicWebOptions(MenuReportOptions):
         '''
         gid = self.__pid.get_value()
         person = self.__db.get_person_from_gramps_id(gid)
-        filter_list = report_utils.get_person_filters(person, False)
+        filter_list = utils.get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
 
     def __filter_changed(self):
