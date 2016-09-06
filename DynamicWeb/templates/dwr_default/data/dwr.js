@@ -2914,6 +2914,15 @@ function htmlPlacesIndexTree(header, data)
 
 		(function(){ // This is used to create instances of local variables
 			$(document).ready(function() {
+				// Prevent title collapse when the click is not on the title (on text hyperlink for example)
+				$('#treeview').click(function (event) {
+					var target = $(event.target);
+					if ((target.is('a') && target.attr('href').indexOf('#') != 0) ||
+						(target.parent().is('a') && target.parent().attr('href').indexOf('#') != 0))
+					{
+						event.stopImmediatePropagation();
+					}
+				});
 				$('#treeview').treeview({
 					data: treedata,
 					enableLinks: true,
@@ -2925,39 +2934,18 @@ function htmlPlacesIndexTree(header, data)
 					onNodeCollapsed: function(event, data) {return TreeNodeClick(event, data, false)},
 					onNodeExpanded: function(event, data) {return TreeNodeClick(event, data, true)}
 				});
-				// Prevent title collapse when the click is not on the title (on text hyperlink for example)
-				$('#treeview').click(AfterTreeClick);
 			});
 		})();
 		return html + '<div id="treeview"></div>';
 	}
 }
 
-var clickedTreeNode = null;
-
 function TreeNodeClick(event, data, expand)
 {
-	clickedTreeNode = {
-		data: data,
-		expand: expand
-	}
+	// Memorize tree state
+	var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + data.pdx;
+	sessionStorage.setItem(lsName, expand ? "1" : "0");
 }
-
-function AfterTreeClick(event)
-{
-	if (clickedTreeNode === null) return;
-	// Do nothing the click is not on the title (on text hyperlink for example)
-	var target = $(event.target);
-	if (!(target.is('a') && target.attr('href').indexOf('#') != 0) &&
-		!(target.parent().is('a') && target.parent().attr('href').indexOf('#') != 0))
-	{
-		// Memorize tree state
-		var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + clickedTreeNode.data.pdx;
-		sessionStorage.setItem(lsName, clickedTreeNode.expand ? "1" : "0");
-	}
-	clickedTreeNode = null;
-}
-
 
 function ComputePlaceHierarchy(top, fText, fSort)
 {
