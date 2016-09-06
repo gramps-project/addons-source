@@ -211,7 +211,10 @@ from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
 from gramps.gen.datehandler import get_date, get_date_formats, displayer as _dd
-from gramps.gen.proxy import CacheProxyDb
+if DWR_VERSION_500:
+    from gramps.gen.proxy import CacheProxyDb
+else:
+    from gramps.gen.proxy import PrivateProxyDb, LivingProxyDb
 from gramps.plugins.lib.libhtmlconst import _CHARACTER_SETS, _CC, _COPY_OPTIONS
 
 # import HTML Class from src/plugins/lib/libhtml.py
@@ -601,10 +604,20 @@ class DynamicWebReport(Report):
             menuopt = menu.get_option_by_name(optname)
             self.options[optname] = menuopt.get_value()
 
-        stdoptions.run_private_data_option(self, menu)
-        stdoptions.run_living_people_option(self, menu)
-        self.database = CacheProxyDb(self.database)
-
+        if DWR_VERSION_500:
+            stdoptions.run_private_data_option(self, menu)
+            stdoptions.run_living_people_option(self, menu)
+            self.database = CacheProxyDb(self.database)
+        else:
+            if not self.options['incl_private']:
+                self.database = PrivateProxyDb(database)
+            else:
+                self.database = database
+            livinginfo = self.options['living_people']
+            yearsafterdeath = self.options['years_past_death']
+            if livinginfo != INCLUDE_LIVING_VALUE:
+                self.database = LivingProxyDb(self.database, livinginfo, None, yearsafterdeath)
+            
         filters_option = menu.get_option_by_name('filter')
         self.filter = filters_option.get_filter()
 
@@ -2734,7 +2747,8 @@ class DynamicWebReport(Report):
         # __NB_TOTAL_PLACES__ is replaced by the number of places in the whole database
         text = text.replace("__NB_TOTAL_INDIVIDUALS__", str(self.database.get_number_of_people()))
         text = text.replace("__NB_TOTAL_FAMILIES__", str(self.database.get_number_of_families()))
-        text = text.replace("__NB_TOTAL_MEDIA__", str(self.database.get_number_of_media()))
+        text = text.replace("__NB_TOTAL_MEDIA__", str(
+            self.database.get_number_of_media() if DWR_VERSION_500 else self.database.get_number_of_media_objects()))
         text = text.replace("__NB_TOTAL_SOURCES__", str(self.database.get_number_of_sources()))
         text = text.replace("__NB_TOTAL_REPOSITORIES__", str(self.database.get_number_of_repositories()))
         text = text.replace("__NB_TOTAL_PLACES__", str(self.database.get_number_of_places()))
@@ -3924,11 +3938,11 @@ class DynamicWebOptions(MenuReportOptions):
         template.set_help(_("Select the template of the web site"))
         addopt("template", template)
 
-        cpright = EnumeratedListOption(_("Copyright"), 0)
+        cright = EnumeratedListOption(_('Copyright'), 0)
         for index, copt in enumerate(_COPY_OPTIONS):
-            cpright.add_item(index, copt)
-        cpright.set_help( _("The copyright to be used for the web files"))
-        addopt("copyright", cpright)
+            cright.add_item(index, copt)
+        cright.set_help(_("The copyright to be used for the web files"))
+        addopt("copyright", cright)
 
 
     def __add_privacy_options(self, menu):
@@ -3938,8 +3952,26 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Privacy")
         addopt = partial(menu.add_option, category_name)
 
-        stdoptions.add_living_people_option(menu, category_name)
-        stdoptions.add_private_data_option(menu, category_name, default=False)
+        if DWR_VERSION_500:
+            stdoptions.add_living_people_option(menu, category_name)
+            stdoptions.add_private_data_option(menu, category_name, default=False)
+            
+        else:
+            incl_private = BooleanOption(_("Include records marked private"), False)
+            incl_private.set_help(_("Whether to include private objects"))
+            addopt("incl_private", incl_private)
+            self.__living = EnumeratedListOption(_("Living People"), LivingProxyDb.MODE_EXCLUDE_ALL)
+            self.__living.add_item(LivingProxyDb.MODE_EXCLUDE_ALL, _("Exclude"))
+            self.__living.add_item(LivingProxyDb.MODE_INCLUDE_LAST_NAME_ONLY, _("Include Last Name Only"))
+            self.__living.add_item(LivingProxyDb.MODE_INCLUDE_FULL_NAME_ONLY, _("Include Full Name Only"))
+            self.__living.add_item(INCLUDE_LIVING_VALUE, _("Include"))
+            self.__living.set_help(_("How to handle living people"))
+            addopt("living_people", self.__living)
+            self.__living.connect("value-changed", self.__living_changed)
+            self.__yearsafterdeath = NumberOption(_("Years from death to consider living"), 30, 0, 100)
+            self.__yearsafterdeath.set_help(_("This allows you to restrict information on people who have not been dead for very long"))
+            addopt("years_past_death", self.__yearsafterdeath)
+            self.__living_changed()
 
         inc_notes = BooleanOption(_("Export notes"), True)
         inc_notes.set_help(_("Whether to export notes in the web pages"))
@@ -3971,9 +4003,9 @@ class DynamicWebOptions(MenuReportOptions):
             [_("Copy, keep file names unchanged"), COPY_MEDIA_UNCHANGED],
             [_("Do not copy, reference existing files"), REFERENCE_MEDIA],
         ]
-        copy_media = EnumeratedListOption(_("Images and media"), str(copy_media_opts[0][1]))
+        copy_media = EnumeratedListOption(_("Images and media"), copy_media_opts[0][1])
         for trans, opt in copy_media_opts:
-            copy_media.add_item(str(opt), trans)
+            copy_media.add_item(opt, trans)
         copy_media.set_help(_("Whether to make a copy of the media"))
         addopt("copy_media", copy_media)
 
@@ -4079,15 +4111,15 @@ class DynamicWebOptions(MenuReportOptions):
             _("Table"),
         ]
         for (index, default, option_text, option_help) in [
-            ["surnames", "0", _("Default format for the surnames index"), _("The default format for the surnames index")],
-            ["persons", "1", _("Default format for the persons index"), _("The default format for the persons index")],
-            ["families", "1", _("Default format for the families index"), _("The default format for the families index")],
-            ["sources", "1", _("Default format for the sources index"), _("The default format for the sources index")],
-            ["places", "1", _("Default format for the places index"), _("The default format for the places index")],
+            ["surnames", 0, _("Default format for the surnames index"), _("The default format for the surnames index")],
+            ["persons", 1, _("Default format for the persons index"), _("The default format for the persons index")],
+            ["families", 1, _("Default format for the families index"), _("The default format for the families index")],
+            ["sources", 1, _("Default format for the sources index"), _("The default format for the sources index")],
+            ["places", 1, _("Default format for the places index"), _("The default format for the places index")],
         ]:
             index_type = EnumeratedListOption(option_text, default)
             for (i, eopt) in enumerate(index_types):
-                index_type.add_item(str(i), eopt)
+                index_type.add_item(i, eopt)
             index_type.set_help(option_help)
             addopt("index_" + index + "_type", index_type)
 
@@ -4115,9 +4147,9 @@ class DynamicWebOptions(MenuReportOptions):
         bkref_type.set_help(_('Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media.'))
         addopt("bkref_type", bkref_type)
 
-        entries_shown = EnumeratedListOption(_('Default number of entries in the indexes'), "0")
+        entries_shown = EnumeratedListOption(_('Default number of entries in the indexes'), 0)
         for (i, eopt) in enumerate(INDEXES_SIZES[1]):
-            entries_shown.add_item(str(i), eopt)
+            entries_shown.add_item(i, eopt)
         entries_shown.set_help(_("The default number of entries shown in one index page"))
         addopt("entries_shown", entries_shown)
 
@@ -4130,33 +4162,33 @@ class DynamicWebOptions(MenuReportOptions):
         graphgens.set_help(_("The maximum number of generations to include in the ancestor and descendant trees and graphs"))
         addopt("graphgens", graphgens)
 
-        svg_tree_type = EnumeratedListOption(_("SVG tree graph type"), str(DEFAULT_SVG_TREE_TYPE))
+        svg_tree_type = EnumeratedListOption(_("SVG tree graph type"), DEFAULT_SVG_TREE_TYPE)
         for (i, opt) in enumerate(SVG_TREE_TYPES):
-            svg_tree_type.add_item(str(i), opt)
+            svg_tree_type.add_item(i, opt)
         svg_tree_type.set_help(_("Choose the default SVG tree graph type"))
         addopt("svg_tree_type", svg_tree_type)
 
-        svg_tree_shape = EnumeratedListOption(_("SVG tree graph shape"), str(DEFAULT_SVG_TREE_SHAPE))
+        svg_tree_shape = EnumeratedListOption(_("SVG tree graph shape"), DEFAULT_SVG_TREE_SHAPE)
         for (i, opt) in enumerate(SVG_TREE_SHAPES):
-            svg_tree_shape.add_item(str(i), opt)
+            svg_tree_shape.add_item(i, opt)
         svg_tree_shape.set_help(_("Choose the default SVG tree graph shape"))
         addopt("svg_tree_shape", svg_tree_shape)
 
-        svg_tree_distrib_asc = EnumeratedListOption(_("SVG tree parents distribution"), str(DEFAULT_SVG_TREE_DISTRIB))
+        svg_tree_distrib_asc = EnumeratedListOption(_("SVG tree parents distribution"), DEFAULT_SVG_TREE_DISTRIB)
         for (i, opt) in enumerate(SVG_TREE_DISTRIB_ASC):
-            svg_tree_distrib_asc.add_item(str(i), opt)
+            svg_tree_distrib_asc.add_item(i, opt)
         svg_tree_distrib_asc.set_help(_("Choose the default SVG tree parents distribution (for fan charts only)"))
         addopt("svg_tree_distrib_asc", svg_tree_distrib_asc)
 
-        svg_tree_distrib_dsc = EnumeratedListOption(_("SVG tree children distribution"), str(DEFAULT_SVG_TREE_DISTRIB))
+        svg_tree_distrib_dsc = EnumeratedListOption(_("SVG tree children distribution"), DEFAULT_SVG_TREE_DISTRIB)
         for (i, opt) in enumerate(SVG_TREE_DISTRIB_DSC):
-            svg_tree_distrib_dsc.add_item(str(i), opt)
+            svg_tree_distrib_dsc.add_item(i, opt)
         svg_tree_distrib_dsc.set_help(_("Choose the default SVG tree children distribution (for fan charts only)"))
         addopt("svg_tree_distrib_dsc", svg_tree_distrib_dsc)
 
-        svg_tree_background = EnumeratedListOption(_("Background"), str(DEFAULT_SVG_TREE_BACKGROUND))
+        svg_tree_background = EnumeratedListOption(_("Background"), DEFAULT_SVG_TREE_BACKGROUND)
         for (i, opt) in enumerate(SVG_TREE_BACKGROUNDS):
-            svg_tree_background.add_item(str(i), opt)
+            svg_tree_background.add_item(i, opt)
         svg_tree_background.set_help(_("Choose the background color scheme for the persons in the SVG tree graph"))
         addopt("svg_tree_background", svg_tree_background)
 
