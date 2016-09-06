@@ -2917,27 +2917,47 @@ function htmlPlacesIndexTree(header, data)
 				$('#treeview').treeview({
 					data: treedata,
 					enableLinks: true,
-					// collapseIcon: "glyphicon glyphicon-chevron-down",
-					// expandIcon: "glyphicon glyphicon-chevron-up",
 					highlightSearchResults: false,
 					highlightSelected: false,
 					levels: 1,
 					showBorder: false,
 					showTags: true, // data.length <= TREE_OPTIMIZATION_LIMIT
-					onNodeCollapsed: function(event, data) {
-						var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + data.pdx;
-						sessionStorage.setItem(lsName, "0");
-					},
-					onNodeExpanded: function(event, data) {
-						var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + data.pdx;
-						sessionStorage.setItem(lsName, "1");
-					}
+					onNodeCollapsed: function(event, data) {return TreeNodeClick(event, data, false)},
+					onNodeExpanded: function(event, data) {return TreeNodeClick(event, data, true)}
 				});
+				// Prevent title collapse when the click is not on the title (on text hyperlink for example)
+				$('#treeview').click(AfterTreeClick);
 			});
 		})();
 		return html + '<div id="treeview"></div>';
 	}
 }
+
+var clickedTreeNode = null;
+
+function TreeNodeClick(event, data, expand)
+{
+	clickedTreeNode = {
+		data: data,
+		expand: expand
+	}
+}
+
+function AfterTreeClick(event)
+{
+	if (clickedTreeNode === null) return;
+	// Do nothing the click is not on the title (on text hyperlink for example)
+	var target = $(event.target);
+	if (!(target.is('a') && target.attr('href').indexOf('#') != 0) &&
+		!(target.parent().is('a') && target.parent().attr('href').indexOf('#') != 0))
+	{
+		// Memorize tree state
+		var lsName = 'Expanded:' + window.location.pathname + ':Ptree:' + clickedTreeNode.data.pdx;
+		sessionStorage.setItem(lsName, clickedTreeNode.expand ? "1" : "0");
+	}
+	clickedTreeNode = null;
+}
+
 
 function ComputePlaceHierarchy(top, fText, fSort)
 {
