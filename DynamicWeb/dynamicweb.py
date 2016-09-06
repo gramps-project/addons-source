@@ -3300,7 +3300,7 @@ class DynamicWebReport(Report):
                     if (place_handle):
                         place = self.database.get_place_from_handle(place_handle)
                         if (place):
-                            if (DWR_VERSION_412):
+                            if DWR_VERSION_412 and config.get('preferences.place-auto'):
                                 poe = _pd.display(self.database, place)
                             else:
                                 poe = place.get_title()
@@ -3578,7 +3578,7 @@ class DynamicWebReport(Report):
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
         place = self.database.get_place_from_handle(place_handle)
-        if (DWR_VERSION_412):
+        if DWR_VERSION_412 and config.get('preferences.place-auto'):
             place_name = _pd.display(self.database, place)
         else:
             place_name = place.get_title()
