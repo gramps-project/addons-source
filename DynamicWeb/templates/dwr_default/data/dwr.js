@@ -411,7 +411,7 @@ DwrClass.prototype.svgSaveRef = function()
 DwrClass.prototype.svgHelpRef = function()
 {
 	// Go to the SVG tree help page
-	window.location.href = 'https://gramps-project.org/wiki/index.php?title=DynamicWeb_report#Help';
+	window.location.href = 'https://gramps-project.org/wiki/index.php?title=' + _('DynamicWeb_report#Help');
 	return(false);
 }
 
