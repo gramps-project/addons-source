@@ -629,7 +629,7 @@ function BuildMenu()
 	txt_form1 += '<div class="pull-right">';
 	txt_form1 += '<form class="navbar-form" role="search" onsubmit="return Dwr.FsearchExec(' + nbSearchForms + ')">';
 	txt_form1 += '<div class="input-group">';
-	txt_form1 += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
+	txt_form1 += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control dwr-search" placeholder="' + _('Person to search for') + '">';
 	txt_form1 += '<div class="input-group-btn">';
 	txt_form1 += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	nbSearchForms += 1;
@@ -702,7 +702,7 @@ function embedSearchText()
 	var txt_form = '';
 	txt_form += '<form class="form-inline role="search" onsubmit="return Dwr.FsearchExec(' + nbSearchForms + ')">';
 	txt_form += '<div class="input-group">';
-	txt_form += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control" placeholder="' + _('Person to search for') + '">';
+	txt_form += '<input id="dwr-search-' + nbSearchForms + '-txt" type="text" class="form-control dwr-search" placeholder="' + _('Person to search for') + '">';
 	txt_form += '<div class="input-group-btn">';
 	txt_form += '<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>';
 	txt_form += '</div>';

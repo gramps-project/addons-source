@@ -2477,6 +2477,7 @@ class DynamicWebReport(Report):
             ("Death", _("Death")),
             ("Descendants", _("Descendants")),
             ("Description", _("Description")),
+            ("DynamicWeb_report#Help", _("DynamicWeb_report#Help")),
             ("Enclosed By", _("Enclosed By")),
             ("Engagement", _("Engagement")),
             ("Event", _("Event")),
