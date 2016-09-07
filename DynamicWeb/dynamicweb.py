@@ -127,7 +127,6 @@ if sys.version_info[0] < 3:
 else:
     from io import StringIO
     string_types = str
-from textwrap import TextWrapper
 from unicodedata import normalize
 from collections import defaultdict, OrderedDict
 from xml.sax.saxutils import escape
@@ -194,7 +193,7 @@ from gramps.gen.utils.config import get_researcher
 from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
-from gramps.gen.utils.db import get_source_and_citation_referents, get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
 from gramps.gen.constfunc import win, get_curr_dir
 if (sys.version_info[0] < 3):
     from gramps.gen.constfunc import UNITYPE
@@ -206,7 +205,6 @@ if (DWR_VERSION_500):
 else:
     from gramps.gui.thumbnails import get_thumbnail_path
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
-from gramps.gen.mime import get_description
 from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
@@ -3914,24 +3912,33 @@ class DynamicWebOptions(MenuReportOptions):
 
         self.__pid_changed()
 
-        # We must figure out the value of the first option before we can create the EnumeratedListOption
-        fmt_list = _nd.get_name_format()
-        defaultnum = _nd.get_default_format()
-        default = 0
-        for ind, val in enumerate(fmt_list):
-            if val[0] == defaultnum:
-                default = ind
-                break
-        name_format = EnumeratedListOption(_("Name format"), fmt_list[default][0])
-        for num, name, fmt_str, act in fmt_list:
-            name_format.add_item(num, name)
-        name_format.set_help(_("Select the format to display the complete names"))
-        addopt("name_format", name_format)
-        short_name_format = EnumeratedListOption(_("Name format (short)"), fmt_list[default][0])
-        for num, name, fmt_str, act in fmt_list:
-            short_name_format.add_item(num, name)
-        short_name_format.set_help(_("Select the format to display a shorter version of the names"))
-        addopt("short_name_format", short_name_format)
+        if DWR_VERSION_500:
+            name_format = stdoptions.add_name_format_option(menu, category_name)
+            short_name_format = EnumeratedListOption(_("Name format (short)"), 0)
+            short_name_format.set_help(_("Select the format to display a shorter version of the names"))
+            for value, description in name_format.get_items():
+                short_name_format.add_item(value, description)
+            short_name_format.set_value(name_format.get_value())
+            addopt("short_name_format", short_name_format)
+        else:
+            # We must figure out the value of the first option before we can create the EnumeratedListOption
+            fmt_list = _nd.get_name_format()
+            defaultnum = _nd.get_default_format()
+            default = 0
+            for ind, val in enumerate(fmt_list):
+                if val[0] == defaultnum:
+                    default = ind
+                    break
+            name_format = EnumeratedListOption(_("Name format"), fmt_list[default][0])
+            for num, name, fmt_str, act in fmt_list:
+                name_format.add_item(num, name)
+            name_format.set_help(_("Select the format to display names"))
+            addopt("name_format", name_format)
+            short_name_format = EnumeratedListOption(_("Name format (short)"), fmt_list[default][0])
+            for num, name, fmt_str, act in fmt_list:
+                short_name_format.add_item(num, name)
+            short_name_format.set_help(_("Select the format to display a shorter version of the names"))
+            addopt("short_name_format", short_name_format)
 
         template = EnumeratedListOption(_("Web site template"), 0)
         for (i, (directory, name)) in enumerate(WEB_TEMPLATE_LIST):
