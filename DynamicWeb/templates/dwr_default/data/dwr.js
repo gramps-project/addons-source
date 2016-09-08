@@ -1807,7 +1807,6 @@ function printRepo(rdx)
 var TABLE_OPTIMIZATION_LIMIT = 3000;
 var LIST_OPTIMIZATION_LIMIT = 1000;
 var TREE_OPTIMIZATION_LIMIT = 1000;
-var LIST_ITEMS_PER_SECTION = 1;
 var ENABLE_LIST_SECTIONS = 50;
 
 function PrintIndex(id, header, type, fTable, fList, data)
