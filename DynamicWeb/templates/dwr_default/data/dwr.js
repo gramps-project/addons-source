@@ -1078,7 +1078,7 @@ function HandleTitles()
 			event.stopImmediatePropagation();
 		}
 	});
-	
+
 
 	// Handle Bootstrap nav tabs
 	$('.nav-tabs>li>a').click(function (event) {
@@ -1089,7 +1089,7 @@ function HandleTitles()
 			event.stopImmediatePropagation();
 		}
 	});
-	
+
 	// Collapsed section memorization
     // $('div[data-toggle="collapse"]')
     $('.panel-collapse.collapse')
@@ -4038,10 +4038,19 @@ DwrClass.prototype.Main = function(page)
 	PageContents = page;
 	Dwr.ParseSearchString();
 	computeOptimizedHref();
+	// First pass preload data, eventually interrupted by exception WaitScriptLoad
 	preloadMode = true;
 	MainRun();
 	$(document).ready(function(){
+		// All data is preloaded, reinitialize and print for good
 		preloadMode = false;
+		duplicates = [];
+		pageSources = [];
+		pageCitations = [];
+		pageCitationsBullets = [];
+		pagePlaces = [];
+		titlesCollapsible = [];
+		titlesTable = [];
 		MainRun();
 	});
 }
