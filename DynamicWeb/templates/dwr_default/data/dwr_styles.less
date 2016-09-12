@@ -27,10 +27,6 @@ You should have received a copy of the GNU General Public License along with thi
 {
 	text-align: center;
 }
-.dwr-nowrap
-{
-	white-space: nowrap;
-}
 
 li p
 {
@@ -266,6 +262,9 @@ li p
 	display: none;
 }
 
+.note_media {
+    max-width: 100%;
+}
 
 /*===================================================== Page contents */
 
@@ -327,6 +326,31 @@ li p
 {
 	max-width: initial;
 }
+.dwr-empty
+{
+	font-style: italic;
+	font-size: smaller;
+}
+.dwr-fallback
+{
+	font-style: italic;
+}
+.dwr-gid
+{
+	font-size: 60%;
+	font-family: monospace;
+	color: #A7A7A7;
+}
+.dwr-number
+{
+	font-weight: bold;
+	color: black;
+}
+
+.dwr-search
+{
+	height: auto;
+}
 
 
 /*===================================================== Map */
@@ -374,6 +398,7 @@ li p
 	background: @body-bg;
 	position: relative;
 	overflow: hidden;
+	text-rendering: geometricPrecision;
 }
 .svg-drawing-expand
 {
@@ -382,6 +407,7 @@ li p
 	overflow: hidden;
 	margin: 0px;
 	width: auto;
+	text-rendering: geometricPrecision;
 }
 .svg-drawing svg
 {
@@ -399,18 +425,17 @@ li p
 .svg-popup
 {
 	max-width: initial;
+	z-index: 111;
 	.opacity(@tooltip-opacity);
 }
 .svg-popup div
 {
 	font-size: @font-size-small;
 }
-.totosvg-popup p
+.dropdown-menu
 {
-	margin: 0px;
-	/* text-align: center; */
+	z-index: 222;
 }
-
 
 /*===================================================== Tree configuration page */
 
@@ -435,7 +460,6 @@ li p
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 100;
 	.size(100vw; 100vh);
 	background-color: #FFFFFF;
 	.opacity(@tooltip-opacity);
@@ -446,6 +470,8 @@ body.svg-save-text
 	white-space: pre;
 	font-size: @font-size-small;
 	font-family: courier;
+	background: white;
+	color: black;
 }
 
 

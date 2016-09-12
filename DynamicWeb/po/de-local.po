@@ -481,6 +481,10 @@ msgid "File ready"
 msgstr "Datei fertig"
 
 #: DynamicWeb/dynamicweb.py:2447
+msgid "Help"
+msgstr "Hilfe"
+
+#: DynamicWeb/dynamicweb.py:2447
 msgid "Gender"
 msgstr "Geschlecht"
 
@@ -679,6 +683,10 @@ msgstr "Beziehung"
 #: DynamicWeb/dynamicweb.py:2505
 msgid "Restore"
 msgstr "Wiederherstellen"
+
+#: DynamicWeb/dynamicweb.py:2505
+msgid "Restore default settings"
+msgstr "Standardeinstellungen wiederherstellen"
 
 #: DynamicWeb/dynamicweb.py:2506 DynamicWeb/dynamicweb.py:3960
 msgid "Show last modification time"
@@ -959,12 +967,12 @@ msgid ""
 "__NB_SOURCES__ is replaced by the number of sources.\n"
 "__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
 "__NB_PLACES__ is replaced by the number of places.\n"
-"__MEDIA_<gid>__ is replaced by the media with gramps ID <gid>.\n"
-"__THUMB_<gid>__ is replaced by the thumbnail of the media with gramps ID "
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
 "<gid>.\n"
 "__EXPORT_DATE__ is replaced by the current date.\n"
-"__GRAMPS_VERSION__ is replaced by the GRAMPS version.\n"
-"__GRAMPS_HOMEPAGE__ is replaced by the GRAMPS homepage link.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 msgstr ""
@@ -976,12 +984,12 @@ msgstr ""
 "__NB_SOURCES__ wird durch die Anzahl der Quellen ersetzt.\n"
 "__NB_REPOSITORIES__ wird durch die Anzahl der Aufbewahrungsorte ersetzt.\n"
 "__NB_PLACES__ wird durch die Anzahl der Orte ersetzt.\n"
-"__MEDIA_<gid>__ wird durch das Medium mit gramps ID <gid> ersetzt.\n"
-"__THUMB_<gid>__ wird durch durch das Miniaturbild des Mediums mit der gramps "
+"__MEDIA_<gid>__ wird durch das Medium mit Gramps ID <gid> ersetzt.\n"
+"__THUMB_<gid>__ wird durch durch das Miniaturbild des Mediums mit der Gramps "
 "ID <gid> ersetzt.\n"
 "__EXPORT_DATE__ wird mit dem aktuellen Datum ersetzt.\n"
-"__GRAMPS_VERSION__ wird mit der GRAMPS-Version ersetzt.\n"
-"__GRAMPS_HOMEPAGE__ wird mit dem Link zur GRAMPS-Homepage ersetzt.\n"
+"__GRAMPS_VERSION__ wird mit der Gramps-Version ersetzt.\n"
+"__GRAMPS_HOMEPAGE__ wird mit dem Link zur Gramps-Homepage ersetzt.\n"
 "Eine URL beginnend mit \"relative://relative.<link>\" wird durch eine "
 "relative URL \"<link>\" ersetzt.\n"
 
@@ -1544,8 +1552,8 @@ msgstr "Inhalt der Seite"
 #~ msgid "Father's age at marriage"
 #~ msgstr "Alter des Vaters bei der Hochzeit"
 
-#~ msgid "GRAMPS ID"
-#~ msgstr "GRAMPS ID"
+#~ msgid "Gramps ID"
+#~ msgstr "Gramps ID"
 
 #~ msgid "Chart coloring"
 #~ msgstr "Diagrammfarben"

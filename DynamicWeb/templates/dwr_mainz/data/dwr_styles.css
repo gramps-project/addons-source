@@ -24,14 +24,11 @@ You should have received a copy of the GNU General Public License along with thi
 .dwr-centered {
   text-align: center;
 }
-.dwr-nowrap {
-  white-space: nowrap;
-}
 li p {
   margin: 0px;
 }
 .panel-title > .label {
-  color: #ffffff;
+  color: #fff;
 }
 /*===================================================== Main divs */
 @media (max-width: 767px) {
@@ -176,7 +173,7 @@ li p {
 .dwr-imgmap {
   display: none;
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   opacity: 0.5;
   filter: alpha(opacity=50);
   border-radius: 4px;
@@ -202,6 +199,9 @@ li p {
 }
 #dwr-img-div #media-buttons {
   display: none;
+}
+.note_media {
+  max-width: 100%;
 }
 /*===================================================== Page contents */
 .dwr-attr-title {
@@ -243,6 +243,25 @@ li p {
 .thumbnail > img {
   max-width: initial;
 }
+.dwr-empty {
+  font-style: italic;
+  font-size: smaller;
+}
+.dwr-fallback {
+  font-style: italic;
+}
+.dwr-gid {
+  font-size: 60%;
+  font-family: monospace;
+  color: #A7A7A7;
+}
+.dwr-number {
+  font-weight: bold;
+  color: black;
+}
+.dwr-search {
+  height: auto;
+}
 /*===================================================== Map */
 #gmap_canvas {
   height: 330px;
@@ -274,16 +293,18 @@ li p {
 }
 /*===================================================== Tree page */
 .svg-drawing {
-  background: #ffffff;
+  background: #fff;
   position: relative;
   overflow: hidden;
+  text-rendering: geometricPrecision;
 }
 .svg-drawing-expand {
-  background: #ffffff;
+  background: #fff;
   position: relative;
   overflow: hidden;
   margin: 0px;
   width: auto;
+  text-rendering: geometricPrecision;
 }
 .svg-drawing svg {
   display: block;
@@ -299,15 +320,15 @@ li p {
 }
 .svg-popup {
   max-width: initial;
+  z-index: 111;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 .svg-popup div {
   font-size: 12px;
 }
-.totosvg-popup p {
-  margin: 0px;
-  /* text-align: center; */
+.dropdown-menu {
+  z-index: 222;
 }
 /*===================================================== Tree configuration page */
 #svg-type {
@@ -326,7 +347,6 @@ li p {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100vw;
   height: 100vh;
   background-color: #FFFFFF;
@@ -337,6 +357,8 @@ body.svg-save-text {
   white-space: pre;
   font-size: 12px;
   font-family: courier;
+  background: white;
+  color: black;
 }
 /*===================================================== SVG graph */
 .svg-tree {
@@ -519,6 +541,14 @@ body > div {
   border-color: #aa7931;
   border-bottom: 1px solid transparent;
 }
+/*===================================================== Tree view */
+.node-treeview {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+}
+.node-treeview:not(.node-disabled):hover {
+  background-color: #ffffff;
+  background-image: initial;
+}
 /*===================================================== Page contents */
 .page-header {
   font-size: xx-large;
@@ -577,7 +607,6 @@ body > div {
   background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
   border-bottom: 1px solid #aa7931;
 }
-/*===================================================== Map */
 /*===================================================== Tree page */
 .svg-drawing {
   background: url(Web_Mainz_MidLight.png) #cd9b52;
@@ -585,4 +614,3 @@ body > div {
 .svg-drawing-expand {
   background: url(Web_Mainz_MidLight.png) #cd9b52;
 }
-/*===================================================== SVG graph */

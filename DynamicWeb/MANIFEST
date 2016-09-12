@@ -3,11 +3,14 @@ DynamicWeb/templates/dwr_default/data/bootstrap/*
 DynamicWeb/templates/dwr_default/data/bootstrap/dist/css/*
 DynamicWeb/templates/dwr_default/data/bootstrap/dist/fonts/*
 DynamicWeb/templates/dwr_default/data/bootstrap/dist/js/*
+DynamicWeb/templates/dwr_default/data/bootstrap-treeview/*
 DynamicWeb/templates/dwr_default/data/context/*
 DynamicWeb/templates/dwr_default/data/datatables/*
 DynamicWeb/templates/dwr_default/data/datatables/media/css/*
 DynamicWeb/templates/dwr_default/data/datatables/media/images/*
 DynamicWeb/templates/dwr_default/data/datatables/media/js/*
+DynamicWeb/templates/dwr_default/data/highcharts/*
+DynamicWeb/templates/dwr_default/data/innersvg-polyfill/*
 DynamicWeb/templates/dwr_default/data/jquery/*
 DynamicWeb/templates/dwr_default/data/raphael/*
 DynamicWeb/templates/dwr_default/data/unorm/*
