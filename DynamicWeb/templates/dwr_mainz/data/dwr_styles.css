@@ -541,6 +541,14 @@ body > div {
   border-color: #aa7931;
   border-bottom: 1px solid transparent;
 }
+/*===================================================== Tree view */
+.node-treeview {
+  background: url(Web_Mainz_MidLight.png) #cd9b52 repeat;
+}
+.node-treeview:not(.node-disabled):hover {
+  background-color: #ffffff;
+  background-image: initial;
+}
 /*===================================================== Page contents */
 .page-header {
   font-size: xx-large;
