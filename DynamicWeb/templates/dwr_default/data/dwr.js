@@ -2280,7 +2280,7 @@ function htmlPersonsIndexList(header, data)
 	{
 		var txt = '<a href="' + indiHrefOptimized(idx) + '">';
 		txt += I_name[idx] || empty(_('Without name'));
-		txt += gidBadge(I_gid[idx]);
+		if (!Dwr.search.HideGid) txt += gidBadge(I_gid[idx]);
 		txt += indiDates(I_birth_date[idx], I_death_date[idx]);
 		txt += '</a>';
 		return txt;
@@ -2419,12 +2419,12 @@ function htmlFamiliesIndexList(header, data)
 		{
 			txt += '<a href="' + indiHrefOptimized(idx) + '">';
 			txt += I_name[idx];
-			txt += gidBadge(I_gid[idx]);
+			if (!Dwr.search.HideGid) txt += gidBadge(I_gid[idx]);
 			txt += '</a> : ';
 		}
 		txt += '<a href="' + famHrefOptimized(fdx) + '">';
 		txt += F_name[fdx];
-		txt += gidBadge(F_gid[fdx]);
+		if (!Dwr.search.HideGid) txt += gidBadge(F_gid[fdx]);
 		txt += '</a>';
 		txt += famDates(F_marr_date[fdx]);
 		return txt;
@@ -2684,11 +2684,11 @@ function htmlSourcesIndexList(header, data)
 
 	var fText = function(sdx)
 	{
-		var txt = '<a href="' + sourceHrefOptimized(sdx) + '">' +
-			(S_title[sdx] || empty(_('Without title'))) +
-			gidBadge(S_gid[sdx]) +
-			(S_author[sdx] ? ' (' + S_author[sdx] + ')' : '') +
-			'</a>';
+		var txt = '<a href="' + sourceHrefOptimized(sdx) + '">';
+		txt += S_title[sdx] || empty(_('Without title'));
+		if (!Dwr.search.HideGid) txt += gidBadge(S_gid[sdx]);
+		if (S_author[sdx]) txt += ' (' + S_author[sdx] + ')';
+		txt += '</a>';
 		return txt;
 	};
 	var sortingAttributes = [
@@ -2841,7 +2841,7 @@ function htmlPlacesIndexTree(header, data)
 	{
 		var txt = '<a href="' + placeHrefOptimized(pdx) + '">';
 		txt += placeNames(P_names[pdx]);
-		txt += gidBadge(P_gid[pdx]);
+		if (!Dwr.search.HideGid) txt += gidBadge(P_gid[pdx]);
 		txt += ' (' + P_type[pdx] + ')';
 		txt += '</a>';
 		return txt;
