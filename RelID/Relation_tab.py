@@ -224,7 +224,37 @@ class RelationTab(tool.Tool, ManagedWindow):
         window.show()
         self.set_window(window, None, self.label)
         self.show()
-        print("filename :", filechooserbutton.get_filename())
+
+        #status = button_clicked # signal
+
+        #if status == ... :
+        if window.show(): # work in progress (temp)
+            name = filechooserbutton.get_filename()
+            doc = ODSTab(len(stats_list))
+            doc.creator(self.db.get_researcher().get_name())
+
+            spreadsheet = TableReport(name, doc)
+
+            new_titles = []
+            skip_columns = []
+            index = 0
+            for title in titles:
+                if title == 'sort':
+                    skip_columns.append(index)
+                else:
+                    new_titles.append(title)
+                index += 1
+            spreadsheet.initialize(len(new_titles))
+
+            spreadsheet.write_table_head(new_titles)
+
+            index = 0
+            for top in stats_list:
+                spreadsheet.set_row(index%2)
+                index += 1
+                spreadsheet.write_table_data(top, skip_columns)
+
+            spreadsheet.finalize()
 
     def build_menu_names(self, obj):
         return (self.label,None)
