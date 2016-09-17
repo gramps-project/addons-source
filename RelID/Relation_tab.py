@@ -228,6 +228,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         #status = button_clicked # signal
 
         #if status == ... :
+        button.hide()
         if window.show(): # work in progress (temp)
             name = filechooserbutton.get_filename()
             doc = ODSTab(len(stats_list))
