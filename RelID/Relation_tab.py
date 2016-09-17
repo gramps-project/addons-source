@@ -85,7 +85,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             buttonbox.set_spacing(2)
             box.pack_start(buttonbox, False, True, 0)
 
-            filechooserbutton = Gtk.FileChooserButton(title="FileChooserButton")
+            filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SAVE, title="FileChooserButton")
             buttonbox.add(filechooserbutton)
 
             ManagedWindow.__init__(self,uistate,[],
@@ -105,6 +105,10 @@ class RelationTab(tool.Tool, ManagedWindow):
             s = Gtk.ScrolledWindow()
             s.add(treeview)
             box.pack_start(s, True, True, 0)
+
+            button = Gtk.Button(label="Save")
+            #button.connect("clicked", button_clicked)
+            box.pack_end(button, False, True, 0)
 
         stats_list = []
 
@@ -220,6 +224,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         window.show()
         self.set_window(window, None, self.label)
         self.show()
+        print("filename :", filechooserbutton.get_filename())
 
     def build_menu_names(self, obj):
         return (self.label,None)
