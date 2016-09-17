@@ -2,6 +2,9 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2000-2006  Donald N. Allingham
+# Copyright (C) 2008       Brian G. Matherly
+# Copyright (C) 2010       Jakim Friant
+# Copyright (C) 2012       Doug Blank
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,12 +36,12 @@ import time
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
-
 from gramps.gui.plug import tool
 from gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gen.config import config
+from gramps.gen.utils.docgen import ODSTab
 import number
 
 import logging
@@ -69,6 +72,22 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         tool.Tool.__init__(self, dbstate, options_class, name)
         if uistate:
+
+            window = Gtk.Window()
+            window.set_default_size(880, 600)
+
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+            window.add(box)
+
+            # dirty workaround for Gtk.HeaderBar()
+
+            buttonbox = Gtk.ButtonBox(orientation=Gtk.Orientation.HORIZONTAL)
+            buttonbox.set_spacing(2)
+            box.pack_start(buttonbox, False, True, 0)
+
+            filechooserbutton = Gtk.FileChooserButton(title="FileChooserButton")
+            buttonbox.add(filechooserbutton)
+
             ManagedWindow.__init__(self,uistate,[],
                                                  self.__class__)
             titles = [
@@ -83,11 +102,9 @@ class RelationTab(tool.Tool, ManagedWindow):
 
             treeview = Gtk.TreeView()
             model = ListModel(treeview, titles)
-            window = Gtk.Window()
-            window.set_default_size(880, 600)
             s = Gtk.ScrolledWindow()
             s.add(treeview)
-            window.add(s)
+            box.pack_start(s, True, True, 0)
 
         stats_list = []
 
@@ -200,12 +217,47 @@ class RelationTab(tool.Tool, ManagedWindow):
         _LOG.debug("total: %s" % nb)
         for entry in stats_list:
             model.add(entry, entry[0])
-        window.show_all()
+        window.show()
         self.set_window(window, None, self.label)
         self.show()
 
     def build_menu_names(self, obj):
         return (self.label,None)
+
+class TableReport:
+    """
+    This class provides an interface for the spreadsheet table
+    used to save the data into the file.
+    """
+
+    def __init__(self, filename, doc):
+        self.filename = filename
+        self.doc = doc
+
+    def initialize(self, cols):
+        self.doc.open(self.filename)
+        self.doc.start_page()
+
+    def finalize(self):
+        self.doc.end_page()
+        self.doc.close()
+
+    def write_table_data(self, data, skip_columns=[]):
+        self.doc.start_row()
+        index = -1
+        for item in data:
+            index += 1
+            if index not in skip_columns:
+                self.doc.write_cell(item)
+        self.doc.end_row()
+
+    def set_row(self,val):
+        self.row = val + 2
+
+    def write_table_head(self, data):
+        self.doc.start_row()
+        list(map(self.doc.write_cell, data))
+        self.doc.end_row()
 
 #------------------------------------------------------------------------
 #
