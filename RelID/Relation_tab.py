@@ -299,13 +299,12 @@ class TableReport:
         self.row = val + 2
 
     def write_table_head(self, data):
-        # TO_POLISH and TO_FIX
         head = []
         for column in data:
             (header, ID, length, TYPE) = column
             head.append(header)
         self.doc.start_row()
-        self.doc.write_cell(str(head))
+        list(map(self.doc.write_cell, head))
         self.doc.end_row()
 
 #------------------------------------------------------------------------
