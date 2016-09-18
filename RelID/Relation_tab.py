@@ -68,6 +68,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
         FilterClass = GenericFilterFactory('Person')
+        self.path = '.'
         filter = FilterClass()
 
         tool.Tool.__init__(self, dbstate, options_class, name)
@@ -86,14 +87,15 @@ class RelationTab(tool.Tool, ManagedWindow):
             box.pack_start(buttonbox, False, True, 0)
 
             filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SAVE, title="FileChooserButton")
+            filechooserbutton.connect("file-set", self.path_changed)
             buttonbox.add(filechooserbutton)
 
             ManagedWindow.__init__(self,uistate,[],
                                                  self.__class__)
-            titles = [
+            self.titles = [
                 (_('Rel_id'), 0, 75, INTEGER), # would be INTEGER
-                (_('Relation'), 1, 300),
-                (_('Name'), 2, 200),
+                (_('Relation'), 1, 300, str),
+                (_('Name'), 2, 200, str),
                 (_('up'), 3, 35, INTEGER),
                 (_('down'), 4, 35, INTEGER),
                 (_('Common MRA'), 5, 75, INTEGER),
@@ -101,16 +103,16 @@ class RelationTab(tool.Tool, ManagedWindow):
                 ]
 
             treeview = Gtk.TreeView()
-            model = ListModel(treeview, titles)
+            model = ListModel(treeview, self.titles)
             s = Gtk.ScrolledWindow()
             s.add(treeview)
             box.pack_start(s, True, True, 0)
 
             button = Gtk.Button(label="Save")
-            #button.connect("clicked", button_clicked)
+            button.connect("clicked", self.button_clicked)
             box.pack_end(button, False, True, 0)
 
-        stats_list = []
+        self.stats_list = []
 
         max_level = config.get('behavior.generation-depth')
         # compact and interlinked tree
@@ -135,6 +137,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             related = rules.person.IsRelatedWith([str(root_id)])
 
             filter.add_rule(related)
+            self.progress.set_pass(_('Please wait, filtering...'))
             filtered_list = filter.apply(self.dbstate.db, plist)
 
             relationship = get_relationship_calculator()
@@ -150,7 +153,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             return
         step_one = time.clock()
         for handle in filtered_list:
-            nb = len(stats_list)
+            nb = len(self.stats_list)
             count += 1
             self.progress.step()
             step_two = time.clock()
@@ -214,51 +217,56 @@ class RelationTab(tool.Tool, ManagedWindow):
                 except: # 1: related to mother; 0.x : no more girls lineage
                     kekule = 1
 
-                stats_list.append((int(kekule), rel, name, int(Ga),
+                self.stats_list.append((int(kekule), rel, name, int(Ga),
                                     int(Gb), int(mra), int(rank)))
         self.progress.close()
 
         _LOG.debug("total: %s" % nb)
-        for entry in stats_list:
+        for entry in self.stats_list:
             model.add(entry, entry[0])
         window.show()
         self.set_window(window, None, self.label)
         self.show()
 
-        #status = button_clicked # signal
+    def save(self):
+        doc = ODSTab(len(self.stats_list))
+        doc.creator(self.db.get_researcher().get_name())
+        if self.path == '.':
+            name = self.dbstate.db.get_default_person().get_handle() + '.ods'
+        else:
+            name = self.path + '.ods'
+        spreadsheet = TableReport(name, doc)
 
-        #if status == ... :
-        button.hide()
-        if window.show(): # work in progress (temp)
-            name = filechooserbutton.get_filename()
-            doc = ODSTab(len(stats_list))
-            doc.creator(self.db.get_researcher().get_name())
+        new_titles = []
+        skip_columns = []
+        index = 0
+        for title in self.titles:
+            if title == 'sort':
+                skip_columns.append(index)
+            else:
+                new_titles.append(title)
+            index += 1
+        spreadsheet.initialize(len(new_titles))
 
-            spreadsheet = TableReport(name, doc)
+        spreadsheet.write_table_head(new_titles)
 
-            new_titles = []
-            skip_columns = []
-            index = 0
-            for title in titles:
-                if title == 'sort':
-                    skip_columns.append(index)
-                else:
-                    new_titles.append(title)
-                index += 1
-            spreadsheet.initialize(len(new_titles))
+        index = 0
+        for top in self.stats_list:
+            spreadsheet.set_row(index%2)
+            index += 1
+            spreadsheet.write_table_data(top, skip_columns)
 
-            spreadsheet.write_table_head(new_titles)
-
-            index = 0
-            for top in stats_list:
-                spreadsheet.set_row(index%2)
-                index += 1
-                spreadsheet.write_table_data(top, skip_columns)
-
-            spreadsheet.finalize()
+        spreadsheet.finalize()
 
     def build_menu_names(self, obj):
-        return (self.label,None)
+        return (self.label, None)
+
+    def button_clicked(self, button):
+        self.save()
+
+    def path_changed(self, widget):
+        self.path = widget.get_filename()
+        return self.path
 
 class TableReport:
     """
@@ -284,15 +292,20 @@ class TableReport:
         for item in data:
             index += 1
             if index not in skip_columns:
-                self.doc.write_cell(item)
+                self.doc.write_cell(str(item))
         self.doc.end_row()
 
     def set_row(self,val):
         self.row = val + 2
 
     def write_table_head(self, data):
+        # TO_POLISH and TO_FIX
+        head = []
+        for column in data:
+            (header, ID, length, TYPE) = column
+            head.append(header)
         self.doc.start_row()
-        list(map(self.doc.write_cell, data))
+        self.doc.write_cell(str(head))
         self.doc.end_row()
 
 #------------------------------------------------------------------------
