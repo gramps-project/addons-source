@@ -12,8 +12,15 @@ Usage
 
 Use `make.py` for Gramps addons.
 
+Clone both this repository and the addon repository if you intend to rebuild the addon
+
+https://github.com/gramps-project/addons
+
+Once you use the comands below the version number will be incremented and the resulting
+files will be in the second addon repository to be commited.
+
 Examples:
-* Creates the initial directories for the addon.
+* Creates the initial addon-source directories for the addon.
 ```
 python make.py gramps42 init AddonDirectory
 ```
@@ -33,7 +40,7 @@ python make.py gramps42 update AddonDirectory fr
 python make.py gramps42 build AddonDirectory
 ```
 
-* Create or update the lising entry for your addon
+* Create or update the listing entry for your addon
 ```
 python make.py gramps42 listing AddonDirectory
 ```
