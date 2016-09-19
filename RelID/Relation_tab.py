@@ -49,7 +49,7 @@ import logging
 _LOG = logging.getLogger('.Reltab')
 import platform, os
 _LOG.info(platform.uname())
-_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
+#_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
 _LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
 #try:
     #_LOG.info(os.system('lscpu'))
