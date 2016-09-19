@@ -79,11 +79,11 @@ class IDGramplet(Gramplet):
             count += 1
             root_str = str(home) + "\n"
             self.set_text(root_str)
-        
+
         #now determine the relation
         relationship = get_relationship_calculator()
         relationship.connect_db_signals(self.dbstate)
-        
+
         for handle in plist:
 
             person = self.dbstate.db.get_person_from_handle(handle)
@@ -181,7 +181,10 @@ class IDGramplet(Gramplet):
                 self.append_text("", scroll_to='begin')
 
                 # arrays
-                ids.append(int(key))
+                try:
+                    ids.append(int(key))
+                except:
+                    ids.append(int(float(key)))
                 plus.append(Ga)
                 minus.append(Gb)
                 position.append(rank)
