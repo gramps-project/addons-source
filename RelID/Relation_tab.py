@@ -50,7 +50,7 @@ _LOG = logging.getLogger('.Reltab')
 import platform, os
 _LOG.info(platform.uname())
 #_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
-_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
+#_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
 #try:
     #_LOG.info(os.system('lscpu'))
 #except:
@@ -86,7 +86,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             buttonbox.set_spacing(2)
             box.pack_start(buttonbox, False, True, 0)
 
-            filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SAVE, title="FileChooserButton")
+            filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SELECT_FOLDER, title="FileChooserButton")
             filechooserbutton.connect("file-set", self.path_changed)
             buttonbox.add(filechooserbutton)
 
@@ -231,10 +231,9 @@ class RelationTab(tool.Tool, ManagedWindow):
     def save(self):
         doc = ODSTab(len(self.stats_list))
         doc.creator(self.db.get_researcher().get_name())
-        if self.path == '.':
-            name = self.dbstate.db.get_default_person().get_handle() + '.ods'
-        else:
-            name = self.path + '.ods'
+        name = self.dbstate.db.get_default_person().get_handle() + '.ods'
+        if self.path != '.':
+            name = self.path + name
         spreadsheet = TableReport(name, doc)
 
         new_titles = []
