@@ -233,7 +233,15 @@ class RelationTab(tool.Tool, ManagedWindow):
         doc.creator(self.db.get_researcher().get_name())
         name = self.dbstate.db.get_default_person().get_handle() + '.ods'
         if self.path != '.':
-            name = self.path + name
+            name = os.path.join(self.path, name)
+        try:
+            import io
+            io.open(name, "w", encoding='utf8')
+        except PermissionError:
+            from gramps.gen.errors import ReportError
+            raise ReportError(_("You do not have write rights on this folder"))
+            return
+
         spreadsheet = TableReport(name, doc)
 
         new_titles = []
@@ -261,11 +269,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         return (self.label, None)
 
     def button_clicked(self, button):
-        try:
-            self.save()
-        except PermissionError:
-            ReportError(_("You do not have write rights")) # temp warning
-
+        self.save()
 
     def path_changed(self, widget):
         self.path = widget.get_current_folder()
