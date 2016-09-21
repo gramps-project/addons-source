@@ -37,6 +37,7 @@ from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
+from gramps.gui.dialog import WarningDialog
 from gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.filters import GenericFilterFactory, rules
@@ -142,8 +143,8 @@ class RelationTab(tool.Tool, ManagedWindow):
 
             relationship = get_relationship_calculator()
         else:
-            from gramps.gen.errors import ReportError
-            raise ReportError("No default_person")
+            WarningDialog(_("No default_person"))
+            return
 
         count = 0
         filtered_people = len(filtered_list)
@@ -238,8 +239,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             import io
             io.open(name, "w", encoding='utf8')
         except PermissionError:
-            from gramps.gen.errors import ReportError
-            raise ReportError(_("You do not have write rights on this folder"))
+            WarningDialog(_("You do not have write rights on this folder"))
             return
 
         spreadsheet = TableReport(name, doc)
