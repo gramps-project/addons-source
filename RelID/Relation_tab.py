@@ -261,7 +261,11 @@ class RelationTab(tool.Tool, ManagedWindow):
         return (self.label, None)
 
     def button_clicked(self, button):
-        self.save()
+        try:
+            self.save()
+        except PermissionError:
+            ReportError("You do not have write rights)") # temp warning
+
 
     def path_changed(self, widget):
         self.path = widget.get_filename()
