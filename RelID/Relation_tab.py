@@ -87,7 +87,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             box.pack_start(buttonbox, False, True, 0)
 
             filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SELECT_FOLDER, title="FileChooserButton")
-            filechooserbutton.connect("file-set", self.path_changed)
+            filechooserbutton.connect("current-folder-changed", self.path_changed)
             buttonbox.add(filechooserbutton)
 
             ManagedWindow.__init__(self,uistate,[],
