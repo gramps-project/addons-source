@@ -268,7 +268,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
 
     def path_changed(self, widget):
-        self.path = widget.get_filename()
+        self.path = widget.get_current_folder()
         return self.path
 
 class TableReport:
