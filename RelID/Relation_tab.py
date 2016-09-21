@@ -264,7 +264,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         try:
             self.save()
         except PermissionError:
-            ReportError("You do not have write rights)") # temp warning
+            ReportError(_("You do not have write rights")) # temp warning
 
 
     def path_changed(self, widget):
