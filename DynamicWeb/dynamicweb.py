@@ -223,10 +223,7 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.narrativeweb import (
-    first_letter,
-    STREET, LOCALITY, CITY, PARISH, COUNTY, STATE, POSTAL, COUNTRY, PHONE,
-)
+from gramps.plugins.webreport.narrativeweb import first_letter
 
 from gramps.gen.utils.place import conv_lat_lon
 
@@ -268,6 +265,16 @@ SORT_KEY = glocale.sort_key
 #------------------------------------------------
 # constants
 #------------------------------------------------
+
+STREET = _("Street")
+LOCALITY = _("Locality")
+CITY = _("City")
+PARISH = _("Church Parish")
+COUNTY = _("County")
+STATE = _("State/ Province")
+POSTAL = _("Postal Code")
+COUNTRY = _("Country")
+PHONE = _("Phone")
 
 #: Maximum number of pages containing custom text
 NB_CUSTOM_PAGES = 3
