@@ -23,7 +23,12 @@ Documentation
 
 * Tool
 
-* Save and export
+**TOCHECK**
+
+Tool: **step descendants** may have a mistake on '*most recent mother*'
+number if they are direct descendants of the '*father*'.
+
+**Save and export**
 
 Both gramplet and tool can export the content after calculations.
 Either via the context menu (*right_clic*) on gramplet or via file
