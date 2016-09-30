@@ -17,7 +17,6 @@ Design
 
 Documentation
 -------------
-**TODO**
 
 * Gramplet
 
@@ -27,6 +26,12 @@ Documentation
 
 Tool: **step descendants** may have a mistake on '*most recent mother*'
 number if they are direct descendants of the '*father*'.
+
+**TODO**
+
+Tool: Fix FileChosser for properly selecting a folder
+
+Use __gramps.plugins.lib.librecurse__ module
 
 **Save and export**
 
