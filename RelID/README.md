@@ -31,7 +31,7 @@ number if they are direct descendants of the '*father*'.
 
 Tool: Fix FileChosser for properly selecting a folder
 
-Use __gramps.plugins.lib.librecurse__ module
+Use *gramps.plugins.lib.librecurse* module
 
 **Save and export**
 
