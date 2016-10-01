@@ -29,8 +29,6 @@ number if they are direct descendants of the '*father*'.
 
 **TODO**
 
-Tool: Fix FileChosser for properly selecting a folder
-
 Use *gramps.plugins.lib.librecurse* module
 
 **Save and export**

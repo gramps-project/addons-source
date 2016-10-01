@@ -81,18 +81,24 @@ class RelationTab(tool.Tool, ManagedWindow):
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
 
-            # dirty workaround for Gtk.HeaderBar()
+            # dirty work-around for Gtk.HeaderBar() and FolderChooser
 
-            buttonbox = Gtk.ButtonBox(orientation=Gtk.Orientation.HORIZONTAL)
-            buttonbox.set_spacing(2)
-            box.pack_start(buttonbox, False, True, 0)
+            chooser = Gtk.FileChooserDialog(_("Folder Chooser"),
+                                  parent = uistate.window,
+                                  action = Gtk.FileChooserAction.SELECT_FOLDER,
+                                  buttons = (_('_Cancel'),
+                                           Gtk.ResponseType.CANCEL,
+                                          _('_Select'),
+                                          Gtk.ResponseType.OK))
+            chooser.set_tooltip_text(_("Please, select a folder"))
+            status = chooser.run()
+            if status == Gtk.ResponseType.OK:
+                # work-around 'IsADirectoryError' with self()
+                # TypeError: invalid file: gi.FunctionInfo()
+                self.path = chooser.get_current_folder()
+            chooser.destroy()
 
-            filechooserbutton = Gtk.FileChooserButton(Gtk.FileChooserAction.SELECT_FOLDER, title="FileChooserButton")
-            filechooserbutton.set_width_chars(75)
-            filechooserbutton.connect("current-folder-changed", self.path_changed)
-            buttonbox.add(filechooserbutton)
-
-            ManagedWindow.__init__(self,uistate,[],
+            ManagedWindow.__init__(self, uistate, [],
                                                  self.__class__)
             self.titles = [
                 (_('Rel_id'), 0, 75, INTEGER), # would be INTEGER
@@ -239,7 +245,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         try:
             import io
             io.open(name, "w", encoding='utf8')
-        except PermissionError:
+        except PermissionError or IsADirectoryError:
             WarningDialog(_("You do not have write rights on this folder"))
             return
 
@@ -271,10 +277,6 @@ class RelationTab(tool.Tool, ManagedWindow):
 
     def button_clicked(self, button):
         self.save()
-
-    def path_changed(self, widget):
-        self.path = widget.get_current_folder()
-        return self.path
 
 class TableReport:
     """
