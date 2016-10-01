@@ -112,6 +112,27 @@ class ClipboardGramplet(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.object_list._widget)
         self.object_list._widget.show()
+        self.save_data = []
+
+    def db_changed(self):
+        if self.dbstate.is_open():
+            self.gui.data = self.save_data
+            model = self.object_list._widget.get_model()
+            if model:
+                for o in model:
+                    if isinstance(o[1], ClipText):
+                        # type, timestamp, text, preview
+                        data = pickle.dumps(("TEXT", escape(o[1]._obj)))
+                    else:
+                        # pickled: type, timestamp, handle, value
+                        data = o[1]._pickle
+                    if not escape(o[1]._value) in self.gui.data:
+                        self.gui.data.append(escape(data))
+                        self.gui.data.append(escape(o[1]._title))
+                        self.gui.data.append(escape(o[1]._value))
+                        self.gui.data.append(escape(o[1]._dbid))
+                        self.gui.data.append(escape(o[1]._dbname))
+            self.on_load()
 
     def on_load(self):
         if len(self.gui.data) % 5 != 0:
@@ -143,30 +164,41 @@ class ClipboardGramplet(Gramplet):
             class Context(object):
                 targets = [drag_type]
                 action = 1
-            if drag_type == "TEXT":
-                text = tuple_data[1]
-                # it could be bytes
-                if isinstance(text, bytes):
-                    text = str(text, "utf-8")
-                o_list = self.object_list.object_drag_data_received(
-                    self.object_list._widget, # widget
-                    Context(),       # drag type and action
-                    0, 0,            # x, y
-                    Selection(text), # text
-                    None,            # info (not used)
-                    -1)              # time
-            else:
-                o_list = self.object_list.object_drag_data_received(
-                    self.object_list._widget, # widget
-                    Context(),       # drag type and action
-                    0, 0,            # x, y
-                    Selection(data), # pickled data
-                    None,            # info (not used)
-                    -1, title=title, value=value, dbid=dbid,
-                    dbname=dbname) # time, data
+            if self.dbstate.is_open():
+                if drag_type == "TEXT":
+                    text = tuple_data[1]
+                    # it could be bytes
+                    if isinstance(text, bytes):
+                        text = str(text, "utf-8")
+                    o_list = self.object_list.object_drag_data_received(
+                        self.object_list._widget, # widget
+                        Context(),       # drag type and action
+                        0, 0,            # x, y
+                        Selection(text), # text
+                        None,            # info (not used)
+                        -1)              # time
+                else:
+                    try:
+                        o_list = self.object_list.object_drag_data_received(
+                            self.object_list._widget, # widget
+                            Context(),       # drag type and action
+                            0, 0,            # x, y
+                            Selection(data), # pickled data
+                            None,            # info (not used)
+                            -1, title=title, value=value, dbid=dbid,
+                            ) # time, data
+                    except:
+                        pass
+        if not self.dbstate.is_open():
+            self.save_data = self.gui.data
+            self.gui.data = []
+            return
 
     def on_save(self):
-        self.gui.data = [] # clear out old data: data, title, value
+        if not self.dbstate.is_open():
+            self.gui.data = self.save_data
+        else:
+            self.gui.data = [] # clear out old data: data, title, value
         model = self.object_list._widget.get_model()
         if model:
             for o in model:
@@ -181,8 +213,9 @@ class ClipboardGramplet(Gramplet):
                 else:
                     # pickled: type, timestamp, handle, value
                     data = o[1]._pickle
-                self.gui.data.append(escape(data))
-                self.gui.data.append(escape(o[1]._title))
-                self.gui.data.append(escape(o[1]._value))
-                self.gui.data.append(escape(o[1]._dbid))
-                self.gui.data.append(escape(o[1]._dbname))
+                if not escape(o[1]._value) in self.gui.data:
+                    self.gui.data.append(escape(data))
+                    self.gui.data.append(escape(o[1]._title))
+                    self.gui.data.append(escape(o[1]._value))
+                    self.gui.data.append(escape(o[1]._dbid))
+                    self.gui.data.append(escape(o[1]._dbname))
