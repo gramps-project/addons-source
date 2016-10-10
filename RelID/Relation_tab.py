@@ -213,6 +213,11 @@ class RelationTab(tool.Tool, ManagedWindow):
                         mra = mra + 1
 
                 name = name_displayer.display(person)
+                # pseudo privacy; DNA stuff
+                import hashlib
+                no_name = hashlib.sha384(name.encode()).hexdigest()
+                name = name + ' (%s)' % no_name
+
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
                 # work-around
