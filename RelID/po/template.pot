@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 11:54+0200\n"
+"POT-Creation-Date: 2016-10-11 11:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,38 +37,75 @@ msgstr ""
 msgid "Will display relational informations with the home person"
 msgstr ""
 
-#: RelID/Relation_tab.py:47
+#: RelID/Relation_tab.py:69
 msgid "Relation and distances with root"
 msgstr ""
 
-#: RelID/Relation_tab.py:53
+#: RelID/Relation_tab.py:86
+msgid "Folder Chooser"
+msgstr ""
+
+#: RelID/Relation_tab.py:89
+msgid "_Cancel"
+msgstr ""
+
+#: RelID/Relation_tab.py:91
+msgid "_Select"
+msgstr ""
+
+#: RelID/Relation_tab.py:93
+msgid "Please, select a folder"
+msgstr ""
+
+#: RelID/Relation_tab.py:104
 msgid "Rel_id"
 msgstr ""
 
-#: RelID/Relation_tab.py:54
+#: RelID/Relation_tab.py:105
 msgid "Relation"
 msgstr ""
 
-#: RelID/Relation_tab.py:55
+#: RelID/Relation_tab.py:106
 msgid "Name"
 msgstr ""
 
-#: RelID/Relation_tab.py:56
+#: RelID/Relation_tab.py:107
 msgid "up"
 msgstr ""
 
-#: RelID/Relation_tab.py:57
+#: RelID/Relation_tab.py:108
 msgid "down"
 msgstr ""
 
-#: RelID/Relation_tab.py:58
+#: RelID/Relation_tab.py:109
 msgid "Common MRA"
 msgstr ""
 
-#: RelID/Relation_tab.py:59
+#: RelID/Relation_tab.py:110
 msgid "Rank"
 msgstr ""
 
-#: RelID/Relation_tab.py:84
+#: RelID/Relation_tab.py:148
+msgid "Please wait, filtering..."
+msgstr ""
+
+#: RelID/Relation_tab.py:153
+msgid "No default_person"
+msgstr ""
+
+#: RelID/Relation_tab.py:158
 msgid "Generating relation map..."
+msgstr ""
+
+#: RelID/Relation_tab.py:173
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+
+#: RelID/Relation_tab.py:254
+msgid "You do not have write rights on this folder"
 msgstr ""

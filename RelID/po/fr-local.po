@@ -1,7 +1,6 @@
 # French translation for Gramps
-# $Id$
 # This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2001-2015 Free Software Foundation, Inc.
+# Copyright (C) 2001-2016 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
 #  ancestor : ascendant
@@ -24,10 +23,10 @@
 # Mathieu MD <mathieu.md@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.2\n"
+"Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 11:54+0200\n"
-"PO-Revision-Date: 2016-03-28 09:37+0100\n"
+"POT-Creation-Date: 2016-10-11 11:06+0200\n"
+"PO-Revision-Date: 2016-10-11 11:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -57,39 +56,81 @@ msgstr "Afficher les relations et distances avec l'individu central"
 msgid "Will display relational informations with the home person"
 msgstr "Affichera les informations relationnelles avec la personne centrale"
 
-#: RelID/Relation_tab.py:47
+#: RelID/Relation_tab.py:69
 msgid "Relation and distances with root"
 msgstr "Relation et distances avec la racine"
 
-#: RelID/Relation_tab.py:53
+#: RelID/Relation_tab.py:86
+msgid "Folder Chooser"
+msgstr "Sélection d'un répertoire"
+
+# master
+#: RelID/Relation_tab.py:89
+msgid "_Cancel"
+msgstr "_Annuler"
+
+#: RelID/Relation_tab.py:91
+msgid "_Select"
+msgstr "_Sélectionner"
+
+#: RelID/Relation_tab.py:93
+msgid "Please, select a folder"
+msgstr "S'il vous plaît, sélectionnez un répertoire"
+
+#: RelID/Relation_tab.py:104
 msgid "Rel_id"
 msgstr "Id_Rel"
 
-#: RelID/Relation_tab.py:54
+#: RelID/Relation_tab.py:105
 msgid "Relation"
 msgstr "Relation"
 
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
-#: RelID/Relation_tab.py:55
+#: RelID/Relation_tab.py:106
 msgid "Name"
 msgstr "Nom "
 
-#: RelID/Relation_tab.py:56
+#: RelID/Relation_tab.py:107
 msgid "up"
 msgstr "haut"
 
-#: RelID/Relation_tab.py:57
+#: RelID/Relation_tab.py:108
 msgid "down"
 msgstr "bas"
 
-#: RelID/Relation_tab.py:58
+#: RelID/Relation_tab.py:109
 msgid "Common MRA"
 msgstr "n° Anc."
 
-#: RelID/Relation_tab.py:59
+#: RelID/Relation_tab.py:110
 msgid "Rank"
 msgstr "Rang"
 
-#: RelID/Relation_tab.py:84
+#: RelID/Relation_tab.py:148
+msgid "Please wait, filtering..."
+msgstr "Attendez, s'il vous plaît ..."
+
+#: RelID/Relation_tab.py:153
+msgid "No default_person"
+msgstr "Pas de personne de départ (défaut)"
+
+#: RelID/Relation_tab.py:158
 msgid "Generating relation map..."
 msgstr "Génération de la table de relation..."
+
+#: RelID/Relation_tab.py:173
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+"%d/%d \n"
+" %d/%d secondes \n"
+" %d/%d \n"
+"%f|\t%f"
+
+#: RelID/Relation_tab.py:254
+msgid "You do not have write rights on this folder"
+msgstr "Vous n'avez pas les droits en écriture sur ce répertoire"
