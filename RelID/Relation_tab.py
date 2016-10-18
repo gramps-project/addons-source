@@ -227,9 +227,9 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
-                # work-around - possible unique ID and common numbers
-                uuid = str(uuid4())
-                _LOG.info("Random UUID: %s" % str(uuid))
+                # workaround - possible unique ID and common numbers
+                uuid = str(uuid4().int)
+                _LOG.info("Random UUID: %s" % uuid)
 
                 if kekule == "u": # TODO: cousin(e)s need a key
                     kekule = 0
