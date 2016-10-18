@@ -25,30 +25,31 @@
 Relations tab.
 
 """
+from gi.repository import Gtk
+import time
+from uuid import uuid4
+import logging
+import platform, os
+
+from gramps.gui.listmodel import ListModel, INTEGER
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.utils import ProgressMeter
+from gramps.gui.plug import tool
+from gramps.gui.dialog import WarningDialog
+from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.relationship import get_relationship_calculator
+from gramps.gen.filters import GenericFilterFactory, rules
+from gramps.gen.config import config
+from gramps.gen.utils.docgen import ODSTab
+import number
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gi.repository import Gtk
-import time
-from gramps.gui.listmodel import ListModel, INTEGER
-from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.utils import ProgressMeter
-from gramps.gui.plug import tool
-from gramps.gui.dialog import WarningDialog
-from gen.display.name import displayer as name_displayer
-from gramps.gen.relationship import get_relationship_calculator
-from gramps.gen.filters import GenericFilterFactory, rules
-from gramps.gen.config import config
-from gramps.gen.utils.docgen import ODSTab
-import number
-
-import logging
 
 _LOG = logging.getLogger('.Reltab')
-import platform, os
 _LOG.info(platform.uname())
 #_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
 #_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
@@ -122,6 +123,8 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         self.stats_list = []
 
+        # behavior can be different according to CPU and generation depth
+
         max_level = config.get('behavior.generation-depth')
         # compact and interlinked tree
         # single core 2.80 Ghz needs +/- 0.1 second per person
@@ -138,18 +141,22 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.progress = ProgressMeter(self.label, can_cancel=True,
                                  parent=window)
 
-        if default_person:
+        if default_person: # rather designed for run via GUI...
             root_id = default_person.get_gramps_id()
             ancestors = rules.person.IsAncestorOf([str(root_id), True])
             descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
+
+            # filtering people can be useful on some large data set
+            # counter on filtering pass was not efficient
+            # Not the proper solution, but a lazy one providing expected message
 
             filter.add_rule(related)
             self.progress.set_pass(_('Please wait, filtering...'))
             filtered_list = filter.apply(self.dbstate.db, plist)
 
             relationship = get_relationship_calculator()
-        else:
+        else: # TODO: provide selection widget for CLI and GUI
             WarningDialog(_("No default_person"))
             return
 
@@ -159,14 +166,14 @@ class RelationTab(tool.Tool, ManagedWindow):
         if self.progress.get_cancelled():
             self.progress.close()
             return
-        step_one = time.clock()
+        step_one = time.clock() # init for counters
         for handle in filtered_list:
             nb = len(self.stats_list)
             count += 1
             self.progress.step()
             step_two = time.clock()
             start = 99
-            if count > start:
+            if count > start: # provide a basic interface for counters
                 need = (step_two - step_one) / count
                 wait = need * filtered_people
                 remain = int(wait) - int(step_two - step_one)
@@ -176,7 +183,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     self.progress.close()
                     return
             person = dbstate.db.get_person_from_handle(handle)
-            timeout_one = time.clock()
+            timeout_one = time.clock() # for delta and timeout estimations
             dist = relationship.get_relationship_distance_new(
                         dbstate.db, default_person, person, only_birth=True)
             timeout_two = time.clock()
@@ -192,7 +199,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (n, limit, expect))
                 continue
             else:
-                _LOG.debug("variation = '%s')" % limit)
+                _LOG.debug("variation = '%s')" % limit) # delta, see above max_level 'wall' section
                 rel = relationship.get_one_relationship(
                                             dbstate.db, default_person, person)
                 rel_a = dist[0][2]
@@ -213,15 +220,18 @@ class RelationTab(tool.Tool, ManagedWindow):
                         mra = mra + 1
 
                 name = name_displayer.display(person)
-                # pseudo privacy; DNA stuff
+                # pseudo privacy; sample for DNA stuff and mapping
                 import hashlib
                 no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                name = name + ' (%s)' % no_name
+                _LOG.info(no_name) # own internal password via handle
 
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
-                # work-around
-                if kekule == "u": # cousin(e)s need a key
+                # work-around - possible unique ID and common numbers
+                uuid = str(uuid4())
+                _LOG.info("Random UUID: %s" % str(uuid))
+
+                if kekule == "u": # TODO: cousin(e)s need a key
                     kekule = 0
                 if kekule == "nb": # non-birth
                     kekule = -1
