@@ -138,8 +138,11 @@ class RelationTab(tool.Tool, ManagedWindow):
         plist = self.dbstate.db.iter_person_handles()
         length = self.dbstate.db.get_number_of_people()
         default_person = self.dbstate.db.get_default_person()
-        self.progress = ProgressMeter(self.label, can_cancel=True,
-                                 parent=window)
+        if uistate:
+            self.progress = ProgressMeter(self.label, can_cancel=True,
+                                     parent=window)
+        else:
+            self.progress = ProgressMeter(self.label)
 
         if default_person: # rather designed for run via GUI...
             root_id = default_person.get_gramps_id()
@@ -246,10 +249,14 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         _LOG.debug("total: %s" % nb)
         for entry in self.stats_list:
-            model.add(entry, entry[0])
-        window.show()
-        self.set_window(window, None, self.label)
-        self.show()
+            if uistate:
+                model.add(entry, entry[0])
+            else:
+                print(entry)
+        if uistate:
+            window.show()
+            self.set_window(window, None, self.label)
+            self.show()
 
     def save(self):
         doc = ODSTab(len(self.stats_list))
