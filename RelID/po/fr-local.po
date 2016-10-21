@@ -106,6 +106,10 @@ msgstr "n° Anc."
 msgid "Rank"
 msgstr "Rang"
 
+#: RelID/Relation_tab.py:120
+msgid "Save"
+msgstr "Enregistrer"
+
 #: RelID/Relation_tab.py:148
 msgid "Please wait, filtering..."
 msgstr "Attendez, s'il vous plaît ..."

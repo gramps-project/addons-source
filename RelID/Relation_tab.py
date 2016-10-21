@@ -117,7 +117,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             s.add(treeview)
             box.pack_start(s, True, True, 0)
 
-            button = Gtk.Button(label="Save")
+            button = Gtk.Button(label=_("Save"))
             button.connect("clicked", self.button_clicked)
             box.pack_end(button, False, True, 0)
 
@@ -224,9 +224,10 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 name = name_displayer.display(person)
                 # pseudo privacy; sample for DNA stuff and mapping
+                # own internal password via handle
                 import hashlib
                 no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                _LOG.info(no_name) # own internal password via handle
+                _LOG.info(no_name)
 
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
