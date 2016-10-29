@@ -116,6 +116,8 @@ user_pref("general.useragent.locale, %(lang)s);
 TOOLKIT = NOWEB
 
 try:
+    import gi
+    gi.require_version('WebKit', '3.0')
     from gi.repository import WebKit as webkit
     TOOLKIT = WEBKIT
 except:
