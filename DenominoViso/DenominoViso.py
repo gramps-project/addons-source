@@ -1073,7 +1073,8 @@ function %(bd)s2html(person,containerDL) {
                 plist = event.get_media_list()
                 psJS = ''
                 # use maximum nr of images
-                for photo in plist:
+                photos = [x for x in plist if self.privacy_filter(x)]
+                for photo in photos:
                     media = self.database.get_media_from_handle(\
                             photo.get_reference_handle())
                     pJS = self.photo2JS(media)
