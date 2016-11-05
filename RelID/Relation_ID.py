@@ -153,7 +153,7 @@ class IDGramplet(Gramplet):
                                 self.append_text("\n")
                                 self.link(down + key + ". " + gen + str(value), 'Person', handle)
                     if key == "0" and Ga <= max_level: # cousin(e)s
-                        gen = Ga * "|"
+                        gen = Ga * "^"
                         down = Gb * "\t"
                         self.append_text("\n%s%s" % (down, gen))
                         self.link(str(value) + str(Ga) , 'Person', handle)
