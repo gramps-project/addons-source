@@ -226,10 +226,10 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                             self.results_write(" from '%s'\n" % attr.get_value())
                             done = True
                             break
-                if done:
-                    self.results_write(_("\nRemoving %d '%s' attributes to '%s'\n" %
-                                (count, attribute_text, attribute_value)))
-                    self.db.commit_person(person, self.trans)
+                    if done:
+                        self.results_write(_("\nRemoving %d '%s' attributes to '%s'\n" %
+                                    (count, attribute_text, attribute_value)))
+                        self.db.commit_person(person, self.trans)
             self.db.enable_signals()
             self.db.request_rebuild()
             self.results_write(_("Done!\n"))
