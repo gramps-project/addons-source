@@ -216,7 +216,7 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
                     done = False
                     for attr in person.get_attribute_list():
                         if attr.get_type() == specified_type and \
-                            attr.get_value() == attribute_value:
+                            (attribute_value == '' or attr.get_value() == attribute_value):
                             person.remove_attribute(attr)
                             # Update global attribute list:
                             self.db.individual_attributes.update([str(attr.type)])
