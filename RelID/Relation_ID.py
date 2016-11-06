@@ -109,6 +109,9 @@ class IDGramplet(Gramplet):
                         continue
                     elif parents[0] and parents[0] not in parents_list:
                         parents_list.append(parents[0])
+                    elif len(parents) == 1:
+                        print("'%s' has a set of fake parents" % name)
+                        continue
                     # in theory, p1 could be p2 too (other family)
                     elif parents[1] and parents[1] not in parents_list:
                         parents_list.append(parents[1])
