@@ -33,7 +33,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gen.lib import Person
-from gramps.gen.utils.db import find_parents
+from gramps.gen.utils.db import find_parents, find_children, get_timeperiod
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
 from gramps.gen.relationship import get_relationship_calculator
@@ -150,8 +150,9 @@ class IDGramplet(Gramplet):
                             if level == i:
                                 gen = Ga * "_"
                                 down = Gb * "\t"
+                                period = get_timeperiod(self.dbstate.db, handle.decode('utf8'))
                                 self.append_text("\n")
-                                self.link(down + key + ". " + gen + str(value), 'Person', handle)
+                                self.link(str(period) + "|-" + down + key + ". " + gen + str(value), 'Person', handle)
                     if key == "0" and Ga <= max_level: # cousin(e)s
                         gen = Ga * "^"
                         down = Gb * "\t"
@@ -163,7 +164,9 @@ class IDGramplet(Gramplet):
                         else:
                             self.append_text(" via %s." % mra)
                     if is_parent:
-                        self.append_text("*")
+                        children_list = find_children(self.dbstate.db, person)
+                        for child in children_list:
+                            self.link(" * ", 'Person', child)
                 if kekule.startswith('0.') or kekule == '1': # 1: related to root mother
                     self.append_text("\n")
                     value = "%s. %s on level[%s]" % (value, kekule, Gb)
