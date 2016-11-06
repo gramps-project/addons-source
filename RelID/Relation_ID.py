@@ -148,14 +148,14 @@ class IDGramplet(Gramplet):
                             continue
                         for i in range(1, max_level):
                             if level == i:
-                                gen = Ga * "_"
+                                gen = Ga * "\t~"
                                 down = Gb * "\t"
                                 period = get_timeperiod(self.dbstate.db, handle.decode('utf8'))
                                 self.append_text("\n")
-                                self.link(str(period) + "|-" + down + key + ". " + gen + str(value), 'Person', handle)
+                                self.link("{" + str(period) + "} " + down + key + ". " + gen + str(value), 'Person', handle)
                     if key == "0" and Ga <= max_level: # cousin(e)s
-                        gen = Ga * "^"
-                        down = Gb * "\t"
+                        gen = Ga * "\t~"
+                        down = Gb * "}"
                         self.append_text("\n%s%s" % (down, gen))
                         self.link(str(value) + str(Ga) , 'Person', handle)
                         if str(mra) in ancestors:
