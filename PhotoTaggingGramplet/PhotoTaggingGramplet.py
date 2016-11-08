@@ -412,25 +412,18 @@ class PhotoTaggingGramplet(Gramplet):
 
     def build_context_menu(self):
         self.context_menu = Gtk.Menu()
+        self.context_menu.set_reserve_toggle_size(False)
 
-        self.context_button_select = Gtk.ImageMenuItem(Gtk.STOCK_INDEX)
-        self.context_button_select.set_label(_("Select"))
-        self.context_button_select.set_always_show_image(True)
+        self.context_button_select = Gtk.MenuItem.new_with_mnemonic(_("_Select"))
         self.context_button_select.connect("activate", self.sel_person_clicked)
 
-        self.context_button_add = Gtk.ImageMenuItem(Gtk.STOCK_ADD)
-        self.context_button_add.set_label(_("Add"))
-        self.context_button_add.set_always_show_image(True)
+        self.context_button_add = Gtk.MenuItem.new_with_mnemonic(_("_Add"))
         self.context_button_add.connect("activate", self.add_person_clicked)
 
-        self.context_button_clear = Gtk.ImageMenuItem(Gtk.STOCK_REMOVE)
-        self.context_button_clear.set_label(_("Clear"))
-        self.context_button_clear.set_always_show_image(True)
+        self.context_button_clear = Gtk.MenuItem.new_with_mnemonic(_("_Clear"))
         self.context_button_clear.connect("activate", self.clear_ref_clicked)
 
-        self.context_button_remove = Gtk.ImageMenuItem(Gtk.STOCK_CLEAR)
-        self.context_button_remove.set_label(_("Remove"))
-        self.context_button_remove.set_always_show_image(True)
+        self.context_button_remove = Gtk.MenuItem.new_with_mnemonic(_("_Remove"))
         self.context_button_remove.connect("activate", self.del_region_clicked)
 
         self.context_menu.append(self.context_button_select)
@@ -543,7 +536,10 @@ class PhotoTaggingGramplet(Gramplet):
         return self.get_active('Media')
 
     def get_current_object(self):
-        return self.dbstate.db.get_media_from_handle(self.get_current_handle())
+        try:
+            return self.dbstate.db.get_media_from_handle(self.get_current_handle())
+        except:
+            return None
 
     # ======================================================
     # helpers for updating database objects
