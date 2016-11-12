@@ -64,6 +64,8 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import ProgressMeter
+from gramps.gen.plug import MenuOptions
+from gramps.gen.constfunc import win
 
 BORDER = 10
 HEIGHT = 18
@@ -85,17 +87,21 @@ class Node(object):
         return self.width
 
     def is_at(self, x, y):
-        return (self.x < x < self.x + self.width and
-                self.y < y < self.y + self.height)
+        result = False
+        if self.x and self.y:
+            result = (self.x < x < self.x + self.width and
+                      self.y < y < self.y + self.height)
+        return result
 
     def draw(self, canvas, cr):
         pass
 
 class PersonNode(Node):
-    def __init__(self, handle, layer, name, sex):
+    def __init__(self, handle, layer, name, sex, ident):
         Node.__init__(self, handle, layer)
         self.name = name
         self.sex = sex
+        self.ident = ident
         self.parents = []
         self.children = []
 
@@ -141,9 +147,10 @@ class PersonNode(Node):
         PangoCairo.show_layout(cr, layout)
 
 class FamilyNode(Node):
-    def __init__(self, handle, layer, rel_type):
+    def __init__(self, handle, layer, rel_type, ident):
         Node.__init__(self, handle, layer)
         self.rel_type = rel_type
+        self.ident = ident
         self.parents = []
         self.children = []
 
@@ -180,6 +187,11 @@ class QuiltView(NavigationView):
     """
     Displays a quilt chart visualisation of a family tree.
     """
+    CONFIGSETTINGS = (
+                      ('interface.quiltview-center', True),
+                      ('interface.quiltview-color-path', 'red'),
+                      ('interface.quiltview-color-selected', 'blue'),
+                      )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Quilt chart'),
@@ -231,7 +243,6 @@ class QuiltView(NavigationView):
         self.canvas.connect("button-release-event", self.release_cb)
         self.canvas.connect("motion-notify-event", self.motion_notify_cb)
         self.canvas.connect("scroll-event", self.scrolled_cb)
-        #self.canvas.connect("size-allocate", self.resized_cb)
 
         self.canvas.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
                                Gdk.EventMask.BUTTON_RELEASE_MASK |
@@ -358,6 +369,8 @@ class QuiltView(NavigationView):
                   "no one was selected."))
 
     def center_on_node(self, handle):
+        if not self._config.get('interface.quiltview-center'):
+            return
         if handle in self.people.keys():
             node = self.people[handle]
             if node.x and node.y:
@@ -406,10 +419,12 @@ class QuiltView(NavigationView):
                 if person is not None:
                     name = name_displayer.display(person)
                     sex = person.get_gender()
+                    ident = person.get_gramps_id()
                 else:
                     name = "???"
                     sex = Person.UNKNOWN
-                people[handle] = PersonNode(handle, layer, name, sex)
+                    ident = None
+                people[handle] = PersonNode(handle, layer, name, sex, ident)
 
                 for fhandle in person.get_family_handle_list():
                     people[handle].add_main_family(fhandle)
@@ -425,7 +440,8 @@ class QuiltView(NavigationView):
                 # family
                 family = self.dbstate.db.get_family_from_handle(handle)
                 rel_type = family.get_relationship()
-                families[handle] = FamilyNode(handle, layer, rel_type)
+                ident = family.get_gramps_id()
+                families[handle] = FamilyNode(handle, layer, rel_type, ident)
 
                 for child_ref in family.get_child_ref_list():
                     families[handle].add_child(child_ref.ref)
@@ -452,6 +468,7 @@ class QuiltView(NavigationView):
         if active != "":
             self.people, self.families, self.layers = self.read_data(active)
             self.canvas.queue_draw()
+            self.canvas.grab_focus()
             self.center_on_node(active)
 
     def on_draw(self, canvas, cr):
@@ -565,8 +582,15 @@ class QuiltView(NavigationView):
                 cr.stroke()
 
         for path in self.paths:
-            x1, y1, x2, y2 = path
-            cr.set_source_rgba(0.90, 0.20, 0.20, 0.6)
+            x1, y1, x2, y2, color_name = path
+            if color_name is not None:
+                color = Gdk.color_parse(color_name)
+                cr.set_source_rgba(float(color.red / 65535.0),
+                                   float(color.green / 65535.0),
+                                   float(color.blue / 65535.0),
+                                   0.6) # transparency
+            else:
+                cr.set_source_rgba(0.90, 0.20, 0.20, 0.6)
             cr.set_line_width(HEIGHT/2)
             cr.move_to(x1 - HEIGHT/2, y1)
             cr.line_to(x2 - HEIGHT/2, y2+HEIGHT)
@@ -698,66 +722,83 @@ class QuiltView(NavigationView):
             self.update_scrollbar_positions(hadjustment,
                 hadjustment.get_value() - (event.x - self._last_x))
             return True
+        else:
+            if self._config.get('interface.quiltview-center'):
+                return False
+            obj = self.get_object_at(event.x / self.scale,
+                                     event.y / self.scale)
+            if obj:
+                if isinstance(obj, PersonNode):
+                    self.set_path_lines(obj)
         return False
 
-    def get_ascendants(self, obj):
+    def get_ascendants(self, obj, color):
         for fam in obj.children:
             if fam in self.families:
                 for parent in self.families[fam].parents:
-                    self.get_ascendants(self.people[parent])
+                    self.get_ascendants(self.people[parent], color)
                     # prepare to draw the vertical bar
                     self.paths.append((self.families[fam].x+HEIGHT,
                                        obj.y+HEIGHT/2,
                                        self.families[fam].x+HEIGHT,
-                                       self.people[parent].y-HEIGHT/2))
+                                       self.people[parent].y-HEIGHT/2,
+                                       color))
         # prepare to hightligt the name
         (x1, x2) = self.calculate_segment_length(obj)
         self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
-                           x2+HEIGHT, obj.y-HEIGHT/2))
+                           x2+HEIGHT, obj.y-HEIGHT/2,
+                           color))
 
-    def get_descendants(self, obj):
+    def get_descendants(self, obj, color):
         for fam in obj.parents:
             if fam in self.families:
                 for child in self.families[fam].children:
-                    self.get_descendants(self.people[child])
+                    self.get_descendants(self.people[child], color)
                     # prepare to draw the vertical bar
                     self.paths.append((self.families[fam].x+HEIGHT,
                                        obj.y+HEIGHT/2,
                                        self.families[fam].x+HEIGHT,
-                                       self.people[child].y-HEIGHT/2))
+                                       self.people[child].y-HEIGHT/2,
+                                       color))
         # prepare to hightligt the name
         (x1, x2) = self.calculate_segment_length(obj)
         self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
-                           x2+HEIGHT, obj.y-HEIGHT/2))
+                           x2+HEIGHT, obj.y-HEIGHT/2,
+                           color))
 
     def set_path_lines(self, obj):
         """
         obj : either a person or a family
         """
         self.paths = []
+        _col = self._config.get
+        color_path = _col('interface.quiltview-color-path')
+        color_selected = _col('interface.quiltview-color-selected')
         if isinstance(obj, PersonNode):
             (x1, x2) = self.calculate_segment_length(obj)
             self.paths.append((x1+HEIGHT, obj.y+HEIGHT/2,
-                               x2+HEIGHT, obj.y-HEIGHT/2))
+                               x2+HEIGHT, obj.y-HEIGHT/2,
+                               color_selected))
             # Draw linking path for descendant
             for fam in obj.parents:
                 if fam in self.families:
                     for child in self.families[fam].children:
-                        self.get_descendants(self.people[child])
+                        self.get_descendants(self.people[child], color_path)
                         self.paths.append((self.families[fam].x+HEIGHT,
                                            obj.y+HEIGHT/4,
                                            self.families[fam].x+HEIGHT,
-                                           self.people[child].y-HEIGHT/4))
+                                           self.people[child].y-HEIGHT/4,
+                                           color_path))
             # Draw linking path for ascendant
             for fam in obj.children:
                 if fam in self.families:
                     for parent in self.families[fam].parents:
-                        self.get_ascendants(self.people[parent])
+                        self.get_ascendants(self.people[parent], color_path)
                         self.paths.append((self.families[fam].x+HEIGHT,
                                            obj.y+HEIGHT/4,
                                            self.families[fam].x+HEIGHT,
-                                           self.people[parent].y-HEIGHT+HEIGHT/4
-                                          ))
+                                           self.people[parent].y-HEIGHT+HEIGHT/4,
+                                           color_path))
             self.canvas.queue_draw()
             self.center_on_node(obj.handle)
 
@@ -806,7 +847,8 @@ class QuiltView(NavigationView):
         page_setup = Gtk.PageSetup()
         if self.print_settings is None:
             self.print_settings = Gtk.PrintSettings()
-        page_setup = Gtk.print_run_page_setup_dialog(None, page_setup, self.print_settings)
+        page_setup = Gtk.print_run_page_setup_dialog(None, page_setup,
+                                                     self.print_settings)
         paper_size_used = page_setup.get_paper_size()
         self.format = paper_size_used.get_name()
         self.print_settings.set_paper_size(paper_size_used)
@@ -819,13 +861,20 @@ class QuiltView(NavigationView):
             self.height_used = int(paper_size_used.get_width(Gtk.Unit.POINTS))
             self.width_used = int(paper_size_used.get_height(Gtk.Unit.POINTS))
 
-        res = self.print_op.run(Gtk.PrintOperationAction.PREVIEW,
-                           self.uistate.window)
+        if win():
+            res = self.print_op.run(Gtk.PrintOperationAction.PRINT_DIALOG,
+                                    self.uistate.window)
+        else:
+            res = self.print_op.run(Gtk.PrintOperationAction.PREVIEW,
+                                    self.uistate.window)
 
     def begin_print(self, operation, context):
         rect = self.canvas.get_allocation()
-        self.pages_per_row = int(int(rect.width)*self.print_zoom/self.width_used + 1)
-        self.nb_pages = int(self.pages_per_row * int(int(rect.height)*self.print_zoom/self.height_used + 1))
+        self.pages_per_row = int(int(rect.width) *
+                                 self.print_zoom / self.width_used + 1)
+        self.nb_pages = int(self.pages_per_row *
+                            int(int(rect.height) *
+                                self.print_zoom / self.height_used + 1))
         operation.set_n_pages(self.nb_pages)
         return True
 
@@ -841,7 +890,8 @@ class QuiltView(NavigationView):
                                    self.nb_pages)
         cr = context.get_cairo_context()
         x = y = 0
-        x = ((page_nr % self.pages_per_row ) * self.width_used) if page_nr > 0 else 0
+        x = ((page_nr % self.pages_per_row )
+              * self.width_used) if page_nr > 0 else 0
         y = (int(page_nr / self.pages_per_row) * self.height_used)
         cr.save()
         cr.translate(-x, -y)
@@ -855,3 +905,45 @@ class QuiltView(NavigationView):
     def cancel_print(self, arg1):
         self.progress.close()
         self.print_op.cancel()
+
+    def can_configure(self):
+        """
+        See :class:`~gui.views.pageview.PageView
+        :return: bool
+        """
+        return True
+
+    #-------------------------------------------------------------------------
+    #
+    # QuiltView preferences
+    #
+    #-------------------------------------------------------------------------
+
+    def _get_configure_page_funcs(self):
+        """
+        The function which is used to create the configuration window.
+        """
+        return [self.general_options]
+
+    def general_options(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog
+        for the general options.
+        """
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
+        self.path_entry = Gtk.Entry()
+        configdialog.add_checkbox(grid,
+                _('Center on the selected person.\nThe new position of the '
+                  'person will be near the top left corner.'
+                  ),
+                0, 'interface.quiltview-center')
+        configdialog.add_color(grid,
+                _("Path color"),
+                1, 'interface.quiltview-color-path')
+        configdialog.add_color(grid,
+                _("Selected person color"),
+                2, 'interface.quiltview-color-selected')
+        return _('General options'), grid
