@@ -1046,7 +1046,7 @@ class DetailedDescendantReportI(Report):
                                           'Endnotes-Ref-Notes', links)
                     ref_plist = ref.get_media_list()
                     if self.addimages:
-                        self.write_images(citation_plist)
+                        self.write_images(ref_plist)
                     
         
 #------------------------------------------------------------------------
