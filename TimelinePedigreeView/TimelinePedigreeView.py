@@ -28,7 +28,7 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-from cgi import escape
+from html import escape
 import pickle
 
 #-------------------------------------------------------------------------
@@ -61,6 +61,7 @@ from gramps.gen.config import config
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
+from gramps.gui.utils import is_right_click
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -78,7 +79,7 @@ _PERSON = "p"
 _BORN = _('short for born|b.')
 _DIED = _('short for died|d.')
 _BAPT = _('short for baptized|bap.')
-_CHRI = _('short for chistianized|chr.')
+_CHRI = _('short for christened|chr.')
 _BURI = _('short for buried|bur.')
 _CREM = _('short for cremated|crem.')
 
@@ -436,7 +437,7 @@ class TimelinePedigreeView(NavigationView):
         contains the interface. This containter will be inserted into
         a Gtk.ScrolledWindow page.
         """
-        self.scrolledwindow = Gtk.ScrolledWindow(None, None)
+        self.scrolledwindow = Gtk.ScrolledWindow(hadjustment=None, vadjustment=None)
         self.scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC,
                                        Gtk.PolicyType.AUTOMATIC)
         self.scrolledwindow.add_events(Gdk.EventMask.SCROLL_MASK)
@@ -649,7 +650,7 @@ class TimelinePedigreeView(NavigationView):
                 if Tick[1] > 0 and Tick[1] < RequiredWidth:
                     self.gtklayout_lines.append([Tick[1], int(5*TimeLineHeight/8), Tick[1], int(7*TimeLineHeight/8), 1])
                     if Tick[0]:
-                        label = Gtk.Label(Tick[0])
+                        label = Gtk.Label(label=Tick[0])
                         label.set_justify(Gtk.Justification.CENTER)
                         label.show()
                         layout_widget.put(label, int(Tick[1]-label.get_preferred_size()[0].width/2), 1*TimeLineHeight/4)
@@ -732,7 +733,7 @@ class TimelinePedigreeView(NavigationView):
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
                         text = self.format_helper.format_relation( family, BoxSizes[4])
-            label = Gtk.Label(text)
+            label = Gtk.Label(label=text)
             label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
@@ -1109,6 +1110,7 @@ class TimelinePedigreeView(NavigationView):
     def on_show_option_menu_cb(self, obj, event, data=None):
         """Right click option menu."""
         self.menu = Gtk.Menu()
+        # need to leave space for toggle items
         self.add_nav_portion_to_menu(self.menu)
         self.add_settings_to_menu(self.menu)
         self.menu.popup(None, None, None, None, 0, event.time)
@@ -1125,7 +1127,7 @@ class TimelinePedigreeView(NavigationView):
             self._last_y = event.y
             self._in_move = True
             return True
-        elif event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
+        elif is_right_click(event):
             self.on_show_option_menu_cb(widget, event)
             return True
         return False
@@ -1199,7 +1201,7 @@ class TimelinePedigreeView(NavigationView):
         or submenu for person for mouse right click.
         And setup plug for button press on person widget.
         """
-        if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
+        if is_right_click(event):
             self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
         elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             self.edit_person_cb(obj, person_handle)
@@ -1211,7 +1213,7 @@ class TimelinePedigreeView(NavigationView):
         on family line or call full submenu for mouse right click.
         And setup plug for button press on family line.
         """
-        if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
+        if is_right_click(event):
             self.build_relation_nav_menu_cb(obj, event, family_handle)
             return True
         elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
@@ -1228,7 +1230,7 @@ class TimelinePedigreeView(NavigationView):
         if event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             self.add_parents_cb(obj, person_handle, family_handle)
             return True
-        elif event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
+        elif is_right_click(event):
             self.build_missing_parent_nav_menu_cb(obj, event, person_handle,
                                                   family_handle)
             return True
@@ -1247,28 +1249,25 @@ class TimelinePedigreeView(NavigationView):
                 if child:
                     self.change_active(child)
             elif len(childlist) > 1:
-                self.myMenu = Gtk.Menu()
+                self.my_menu = Gtk.Menu()
+                self.my_menu.set_reserve_toggle_size(False)
                 for child_handle in childlist:
                     child = self.dbstate.db.get_person_from_handle(child_handle)
                     cname = escape(name_displayer.display(child))
                     if find_children(self.dbstate.db, child):
-                        label = Gtk.Label('<b><i>%s</i></b>' % cname)
+                        label = Gtk.Label(label='<b><i>%s</i></b>' % cname)
                     else:
-                        label = Gtk.Label(cname)
+                        label = Gtk.Label(label=cname)
                     label.set_use_markup(True)
                     label.show()
-                    label.set_alignment(0, 0)
-                    menuitem = Gtk.ImageMenuItem(None)
-                    go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                        Gtk.IconSize.MENU)
-                    go_image.show()
-                    menuitem.set_image(go_image)
+                    label.set_halign(Gtk.Align.START)
+                    menuitem = Gtk.MenuItem()
                     menuitem.add(label)
-                    self.myMenu.append(menuitem)
+                    self.my_menu.append(menuitem)
                     menuitem.connect("activate", self.on_childmenu_changed,
                                      child_handle)
                     menuitem.show()
-                self.myMenu.popup(None, None, None, 0, 0)
+                self.my_menu.popup(None, None, None, None, 0, 0)
             return 1
         return 0
 
@@ -1383,12 +1382,12 @@ class TimelinePedigreeView(NavigationView):
         entries = [
         #    (Gtk.STOCK_GO_BACK, self.back_clicked, not hobj.at_front()),
         #    (Gtk.STOCK_GO_FORWARD, self.fwd_clicked, not hobj.at_end()),
-            (Gtk.STOCK_HOME, self.home, 1),
+            (_("_Home"), self.home, 1),
             #(None, None, 0)
         ]
 
-        for stock_id, callback, sensitivity in entries:
-            item = Gtk.ImageMenuItem.new_from_stock(stock_id, None)
+        for label, callback, sensitivity in entries:
+            item = Gtk.MenuItem.new_with_mnemonic(label)
             item.set_sensitive(sensitivity)
             if callback:
                 item.connect("activate", callback)
@@ -1411,25 +1410,22 @@ class TimelinePedigreeView(NavigationView):
 
         menu.append(self.create_menu_item(_("Show lifespan"), self.show_lifespan, self.change_show_lifespan_cb) )
 
-        item = Gtk.MenuItem(_("Mouse scroll direction"))
+
+        item = Gtk.MenuItem(label=_("Mouse scroll direction"))
         item.set_submenu(Gtk.Menu())
         scroll_direction_menu = item.get_submenu()
 
-        scroll_direction_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
-                                                          Gtk.IconSize.MENU)
-        scroll_direction_image.show()
-
-        entry = Gtk.ImageMenuItem(_("Top <-> Bottom"))
+        entry = Gtk.RadioMenuItem(label=_("Top <-> Bottom"))
         entry.connect("activate", self.change_scroll_direction_cb, False)
         if self.scroll_direction == False:
-            entry.set_image(scroll_direction_image)
+            entry.set_active(True)
         entry.show()
         scroll_direction_menu.append(entry)
 
-        entry = Gtk.ImageMenuItem(_("Left <-> Right"))
+        entry = Gtk.RadioMenuItem(label=_("Left <-> Right"))
         entry.connect("activate", self.change_scroll_direction_cb, True)
         if self.scroll_direction == True:
-            entry.set_image(scroll_direction_image)
+            entry.set_active(True)
         entry.show()
         scroll_direction_menu.append(entry)
 
@@ -1438,18 +1434,15 @@ class TimelinePedigreeView(NavigationView):
         menu.append(item)
 
 
-        item = Gtk.MenuItem(_("Descendant Generations"))
+        item = Gtk.MenuItem(label=_("Descendant Generations"))
         item.set_submenu(Gtk.Menu())
         DescendantSize_menu = item.get_submenu()
 
-        current_size_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
-                                                      Gtk.IconSize.MENU)
-        current_size_image.show()
-
         for num in range(0, 10):
-            entry = Gtk.ImageMenuItem(ngettext("%d generation", "%d generations", num) %num)
+            entry = Gtk.RadioMenuItem(label=ngettext("%d generation",
+                                      "%d generations", num) %num)
             if self.generations_in_tree[0] == num:
-                entry.set_image(current_size_image)
+                entry.set_active(True)
             entry.connect("activate", self.change_generations_in_tree_cb, 0, num)
             entry.show()
             DescendantSize_menu.append(entry)
@@ -1457,18 +1450,15 @@ class TimelinePedigreeView(NavigationView):
         item.show()
         menu.append(item)
 
-        item = Gtk.MenuItem(_("Ancestor Generations"))
+        item = Gtk.MenuItem(label=_("Ancestor Generations"))
         item.set_submenu(Gtk.Menu())
         AncestorSize_menu = item.get_submenu()
 
-        current_size_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
-                                                      Gtk.IconSize.MENU)
-        current_size_image.show()
-
         for num in range(0, 10):
-            entry = Gtk.ImageMenuItem(ngettext("%d generation", "%d generations", num) %num)
+            entry = Gtk.RadioMenuItem(label=ngettext("%d generation",
+                                      "%d generations", num) %num)
             if self.generations_in_tree[1] == num:
-                entry.set_image(current_size_image)
+                entry.set_active(True)
             entry.connect("activate", self.change_generations_in_tree_cb, 1, num)
             entry.show()
             AncestorSize_menu.append(entry)
@@ -1478,12 +1468,9 @@ class TimelinePedigreeView(NavigationView):
         menu.append(item)
 
     def create_menu_item(self, text, currValue, callback):
-        entry = Gtk.ImageMenuItem(text)
+        entry = Gtk.RadioMenuItem(label=text)
         if currValue:
-            current_image = Gtk.Image.new_from_stock(Gtk.STOCK_APPLY,
-                                                     Gtk.IconSize.MENU)
-            current_image.show()
-            entry.set_image(current_image)
+            entry.set_active(True)
         entry.connect("activate", callback)
         entry.show()
         return entry
@@ -1492,9 +1479,9 @@ class TimelinePedigreeView(NavigationView):
                                          person_handle, family_handle):
         """Builds the menu for a missing parent."""
         menu = Gtk.Menu()
-        menu.set_title(_('People Menu'))
+        # need to leave space for toggle items
 
-        add_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_ADD, None)
+        add_item = Gtk.MenuItem.new_with_mnemonic(_("_Add"))
         add_item.connect("activate", self.add_parents_cb, person_handle,
                          family_handle)
         add_item.show()
@@ -1513,27 +1500,23 @@ class TimelinePedigreeView(NavigationView):
         """
 
         self.menu = Gtk.Menu()
-        self.menu.set_title(_('People Menu'))
+        # need to leave space for toggle items
 
         person = self.dbstate.db.get_person_from_handle(person_handle)
         if not person:
             return 0
 
-        go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                            Gtk.IconSize.MENU)
-        go_image.show()
-        go_item = Gtk.ImageMenuItem(name_displayer.display(person))
-        go_item.set_image(go_image)
+        go_item = Gtk.MenuItem(label=name_displayer.display(person))
         go_item.connect("activate", self.on_childmenu_changed, person_handle)
         go_item.show()
         self.menu.append(go_item)
 
-        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
+        edit_item = Gtk.MenuItem.new_with_mnemonic(_('_Edit'))
         edit_item.connect("activate", self.edit_person_cb, person_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
+        clipboard_item = Gtk.MenuItem.new_with_mnemonic(_('_Copy'))
         clipboard_item.connect("activate", self.copy_person_to_clipboard_cb,
                                person_handle)
         clipboard_item.show()
@@ -1543,7 +1526,7 @@ class TimelinePedigreeView(NavigationView):
         linked_persons = []
 
         # Go over spouses and build their menu
-        item = Gtk.MenuItem(_("Spouses"))
+        item = Gtk.MenuItem(label=_("Spouses"))
         fam_list = person.get_family_handle_list()
         no_spouses = 1
         for fam_id in fam_list:
@@ -1562,12 +1545,8 @@ class TimelinePedigreeView(NavigationView):
                 no_spouses = 0
                 item.set_submenu(Gtk.Menu())
                 sp_menu = item.get_submenu()
-
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
-            go_image.show()
-            sp_item = Gtk.ImageMenuItem(name_displayer.display(spouse))
-            sp_item.set_image(go_image)
+                sp_menu.set_reserve_toggle_size(False)
+            sp_item = Gtk.MenuItem(label=name_displayer.display(spouse))
             linked_persons.append(sp_id)
             sp_item.connect("activate", self.on_childmenu_changed, sp_id)
             sp_item.show()
@@ -1580,7 +1559,7 @@ class TimelinePedigreeView(NavigationView):
         self.menu.append(item)
 
         # Go over siblings and build their menu
-        item = Gtk.MenuItem(_("Siblings"))
+        item = Gtk.MenuItem(label=_("Siblings"))
         pfam_list = person.get_parent_family_handle_list()
         no_siblings = 1
         for pfam in pfam_list:
@@ -1598,21 +1577,18 @@ class TimelinePedigreeView(NavigationView):
                     no_siblings = 0
                     item.set_submenu(Gtk.Menu())
                     sib_menu = item.get_submenu()
+                    sib_menu.set_reserve_toggle_size(False)
 
                 if find_children(self.dbstate.db, sib):
-                    label = Gtk.Label('<b><i>%s</i></b>' % \
+                    label = Gtk.Label(label='<b><i>%s</i></b>' % \
                         escape(name_displayer.display(sib)))
                 else:
-                    label = Gtk.Label(escape(name_displayer.display(sib)))
+                    label = Gtk.Label(label=escape(name_displayer.display(sib)))
 
-                go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                    Gtk.IconSize.MENU)
-                go_image.show()
-                sib_item = Gtk.ImageMenuItem(None)
-                sib_item.set_image(go_image)
+                sib_item = Gtk.MenuItem()
                 label.set_use_markup(True)
                 label.show()
-                label.set_alignment(0, 0)
+                label.set_halign(Gtk.Align.START)
                 sib_item.add(label)
                 linked_persons.append(sib_id)
                 sib_item.connect("activate", self.on_childmenu_changed, sib_id)
@@ -1625,7 +1601,7 @@ class TimelinePedigreeView(NavigationView):
         self.menu.append(item)
 
         # Go over children and build their menu
-        item = Gtk.MenuItem(_("Children"))
+        item = Gtk.MenuItem(label=_("Children"))
         no_children = 1
         childlist = find_children(self.dbstate.db, person)
         for child_handle in childlist:
@@ -1637,21 +1613,18 @@ class TimelinePedigreeView(NavigationView):
                 no_children = 0
                 item.set_submenu(Gtk.Menu())
                 child_menu = item.get_submenu()
+                child_menu.set_reserve_toggle_size(False)
 
             if find_children(self.dbstate.db, child):
-                label = Gtk.Label('<b><i>%s</i></b>' % \
+                label = Gtk.Label(label='<b><i>%s</i></b>' % \
                     escape(name_displayer.display(child)))
             else:
-                label = Gtk.Label(escape(name_displayer.display(child)))
+                label = Gtk.Label(label=escape(name_displayer.display(child)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
-            go_image.show()
-            child_item = Gtk.ImageMenuItem(None)
-            child_item.set_image(go_image)
+            child_item = Gtk.MenuItem()
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             child_item.add(label)
             linked_persons.append(child_handle)
             child_item.connect("activate", self.on_childmenu_changed,
@@ -1665,7 +1638,7 @@ class TimelinePedigreeView(NavigationView):
         self.menu.append(item)
 
         # Go over parents and build their menu
-        item = Gtk.MenuItem(_("Parents"))
+        item = Gtk.MenuItem(label=_("Parents"))
         no_parents = 1
         par_list = find_parents(self.dbstate.db, person)
         for par_id in par_list:
@@ -1679,21 +1652,18 @@ class TimelinePedigreeView(NavigationView):
                 no_parents = 0
                 item.set_submenu(Gtk.Menu())
                 par_menu = item.get_submenu()
+                par_menu.set_reserve_toggle_size(False)
 
             if find_parents(self.dbstate.db, par):
-                label = Gtk.Label('<b><i>%s</i></b>' % \
+                label = Gtk.Label(label='<b><i>%s</i></b>' % \
                     escape(name_displayer.display(par)))
             else:
-                label = Gtk.Label(escape(name_displayer.display(par)))
+                label = Gtk.Label(label=escape(name_displayer.display(par)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
-            go_image.show()
-            par_item = Gtk.ImageMenuItem(None)
-            par_item.set_image(go_image)
+            par_item = Gtk.MenuItem()
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             par_item.add(label)
             linked_persons.append(par_id)
             par_item.connect("activate", self.on_childmenu_changed, par_id)
@@ -1701,21 +1671,24 @@ class TimelinePedigreeView(NavigationView):
             par_menu.append(par_item)
 
         if no_parents:
-            if self.tree_style == 2 and not self.show_unknown_peoples:
-                item.set_submenu(Gtk.Menu())
-                par_menu = item.get_submenu()
-                par_item = Gtk.ImageMenuItem(_("Add New Parents..."))
-                par_item.connect("activate", self.add_parents_cb, person_handle,
-                         family_handle)
-                par_item.show()
-                par_menu.append(par_item)
-            else:
-                item.set_sensitive(0)
+            # the following code is never executed since the two options are
+            # not settable
+            # if self.tree_style == 2 and not self.show_unknown_peoples:
+                # item.set_submenu(Gtk.Menu())
+                # par_menu = item.get_submenu()
+                # par_menu.set_reserve_toggle_size(False)
+                # par_item = Gtk.MenuItem(label=_("Add New Parents..."))
+                # par_item.connect("activate", self.add_parents_cb, person_handle,
+                         # family_handle)
+                # par_item.show()
+                # par_menu.append(par_item)
+            # else:
+            item.set_sensitive(0)
         item.show()
         self.menu.append(item)
 
         # Go over parents and build their menu
-        item = Gtk.MenuItem(_("Related"))
+        item = Gtk.MenuItem(label=_("Related"))
         no_related = 1
         for p_id in find_witnessed_people(self.dbstate.db, person):
             #if p_id in linked_persons:
@@ -1729,17 +1702,14 @@ class TimelinePedigreeView(NavigationView):
                 no_related = 0
                 item.set_submenu(Gtk.Menu())
                 per_menu = item.get_submenu()
+                per_menu.set_reserve_toggle_size(False)
 
-            label = Gtk.Label(escape(name_displayer.display(per)))
+            label = Gtk.Label(label=escape(name_displayer.display(per)))
 
-            go_image = Gtk.Image.new_from_stock(Gtk.STOCK_JUMP_TO,
-                                                Gtk.IconSize.MENU)
-            go_image.show()
-            per_item = Gtk.ImageMenuItem(None)
-            per_item.set_image(go_image)
+            per_item = Gtk.MenuItem()
             label.set_use_markup(True)
             label.show()
-            label.set_alignment(0, 0)
+            label.set_halign(Gtk.Align.START)
             per_item.add(label)
             per_item.connect("activate", self.on_childmenu_changed, p_id)
             per_item.show()
@@ -1751,7 +1721,7 @@ class TimelinePedigreeView(NavigationView):
         self.menu.append(item)
 
         # Add separator
-        item = Gtk.MenuItem(None)
+        item = Gtk.SeparatorMenuItem()
         item.show()
         self.menu.append(item)
 
@@ -1764,25 +1734,25 @@ class TimelinePedigreeView(NavigationView):
     def build_relation_nav_menu_cb(self, obj, event, family_handle):
         """Builds the menu for a parents-child relation line."""
         self.menu = Gtk.Menu()
-        self.menu.set_title(_('Family Menu'))
+        # Need to leave space for toggle items
 
         family = self.dbstate.db.get_family_from_handle(family_handle)
         if not family:
             return 0
 
-        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
+        edit_item = Gtk.MenuItem.new_with_mnemonic(_('_Edit'))
         edit_item.connect("activate", self.edit_family_cb, family_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
+        clipboard_item = Gtk.MenuItem.new_with_mnemonic(_('_Copy'))
         clipboard_item.connect("activate", self.copy_family_to_clipboard_cb,
                                family_handle)
         clipboard_item.show()
         self.menu.append(clipboard_item)
 
         # Add separator
-        item = Gtk.MenuItem(None)
+        item = Gtk.SeparatorMenuItem()
         item.show()
         self.menu.append(item)
 
