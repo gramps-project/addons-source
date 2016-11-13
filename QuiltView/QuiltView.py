@@ -191,6 +191,7 @@ class QuiltView(NavigationView):
                       ('interface.quiltview-center', True),
                       ('interface.quiltview-color-path', 'red'),
                       ('interface.quiltview-color-selected', 'blue'),
+                      ('interface.quiltview-path-transparency', 6),
                       )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -477,6 +478,8 @@ class QuiltView(NavigationView):
         """
         if self.layers is None:
             return
+        transparency = self._config.get('interface.quiltview-path-transparency')
+        transparency = transparency / 10
         #c = clock()
 
         cr.scale(self.scale, self.scale)
@@ -588,9 +591,9 @@ class QuiltView(NavigationView):
                 cr.set_source_rgba(float(color.red / 65535.0),
                                    float(color.green / 65535.0),
                                    float(color.blue / 65535.0),
-                                   0.6) # transparency
+                                   transparency)
             else:
-                cr.set_source_rgba(0.90, 0.20, 0.20, 0.6)
+                cr.set_source_rgba(0.90, 0.20, 0.20, transparency)
             cr.set_line_width(HEIGHT/2)
             cr.move_to(x1 - HEIGHT/2, y1)
             cr.line_to(x2 - HEIGHT/2, y2+HEIGHT)
@@ -940,10 +943,18 @@ class QuiltView(NavigationView):
                   'person will be near the top left corner.'
                   ),
                 0, 'interface.quiltview-center')
-        configdialog.add_color(grid,
-                _("Path color"),
-                1, 'interface.quiltview-color-path')
-        configdialog.add_color(grid,
-                _("Selected person color"),
-                2, 'interface.quiltview-color-selected')
+        configdialog.add_text(grid,
+                _('The path color'),
+                1, line_wrap=False)
+        configdialog.add_color(grid, "",
+                2, 'interface.quiltview-color-path')
+        configdialog.add_text(grid,
+                _('The selected person color'),
+                3, line_wrap=False)
+        configdialog.add_color(grid, "",
+                4, 'interface.quiltview-color-selected')
+        configdialog.add_slider(grid,
+                _('The path transparency'),
+                5, 'interface.quiltview-path-transparency',
+                (1, 9))
         return _('General options'), grid
