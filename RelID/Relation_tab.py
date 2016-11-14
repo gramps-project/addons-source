@@ -41,6 +41,7 @@ from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gen.config import config
 from gramps.gen.utils.docgen import ODSTab
+from gramps.gen.utils.db import get_timeperiod
 import number
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -102,13 +103,14 @@ class RelationTab(tool.Tool, ManagedWindow):
             ManagedWindow.__init__(self, uistate, [],
                                                  self.__class__)
             self.titles = [
-                (_('Rel_id'), 0, 75, INTEGER), # would be INTEGER
+                (_('Rel_id'), 0, 40, INTEGER), # would be INTEGER
                 (_('Relation'), 1, 300, str),
                 (_('Name'), 2, 200, str),
                 (_('up'), 3, 35, INTEGER),
                 (_('down'), 4, 35, INTEGER),
-                (_('Common MRA'), 5, 75, INTEGER),
-                (_('Rank'), 6, 75, INTEGER),
+                (_('Common MRA'), 5, 40, INTEGER),
+                (_('Rank'), 6, 40, INTEGER),
+                (_('Period'), 7, 40, str),
                 ]
 
             treeview = Gtk.TreeView()
@@ -244,8 +246,10 @@ class RelationTab(tool.Tool, ManagedWindow):
                 except: # 1: related to mother; 0.x : no more girls lineage
                     kekule = 1
 
+                period = get_timeperiod(self.dbstate.db, handle)
+
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
-                                    int(Gb), int(mra), int(rank)))
+                                    int(Gb), int(mra), int(rank), str(period)))
         self.progress.close()
 
         _LOG.debug("total: %s" % nb)
