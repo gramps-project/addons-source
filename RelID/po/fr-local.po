@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-11 11:06+0200\n"
-"PO-Revision-Date: 2016-10-11 11:13+0100\n"
+"POT-Creation-Date: 2016-11-14 22:07+0100\n"
+"PO-Revision-Date: 2016-11-14 22:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -56,73 +56,77 @@ msgstr "Afficher les relations et distances avec l'individu central"
 msgid "Will display relational informations with the home person"
 msgstr "Affichera les informations relationnelles avec la personne centrale"
 
-#: RelID/Relation_tab.py:69
+#: RelID/Relation_tab.py:71
 msgid "Relation and distances with root"
 msgstr "Relation et distances avec la racine"
 
-#: RelID/Relation_tab.py:86
+#: RelID/Relation_tab.py:88
 msgid "Folder Chooser"
 msgstr "Sélection d'un répertoire"
 
 # master
-#: RelID/Relation_tab.py:89
+#: RelID/Relation_tab.py:91
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: RelID/Relation_tab.py:91
+#: RelID/Relation_tab.py:93
 msgid "_Select"
 msgstr "_Sélectionner"
 
-#: RelID/Relation_tab.py:93
+#: RelID/Relation_tab.py:95
 msgid "Please, select a folder"
 msgstr "S'il vous plaît, sélectionnez un répertoire"
 
-#: RelID/Relation_tab.py:104
+#: RelID/Relation_tab.py:106
 msgid "Rel_id"
 msgstr "Id_Rel"
 
-#: RelID/Relation_tab.py:105
+#: RelID/Relation_tab.py:107
 msgid "Relation"
 msgstr "Relation"
 
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
-#: RelID/Relation_tab.py:106
+#: RelID/Relation_tab.py:108
 msgid "Name"
 msgstr "Nom "
 
-#: RelID/Relation_tab.py:107
+#: RelID/Relation_tab.py:109
 msgid "up"
 msgstr "haut"
 
-#: RelID/Relation_tab.py:108
+#: RelID/Relation_tab.py:110
 msgid "down"
 msgstr "bas"
 
-#: RelID/Relation_tab.py:109
+#: RelID/Relation_tab.py:111
 msgid "Common MRA"
 msgstr "n° Anc."
 
-#: RelID/Relation_tab.py:110
+#: RelID/Relation_tab.py:112
 msgid "Rank"
 msgstr "Rang"
 
-#: RelID/Relation_tab.py:120
+#: RelID/Relation_tab.py:113
+msgid "Period"
+msgstr "Période"
+
+#: RelID/Relation_tab.py:122
 msgid "Save"
 msgstr "Enregistrer"
 
-#: RelID/Relation_tab.py:148
+#: RelID/Relation_tab.py:160
 msgid "Please wait, filtering..."
 msgstr "Attendez, s'il vous plaît ..."
 
-#: RelID/Relation_tab.py:153
+#: RelID/Relation_tab.py:165
 msgid "No default_person"
 msgstr "Pas de personne de départ (défaut)"
 
-#: RelID/Relation_tab.py:158
+#: RelID/Relation_tab.py:170
 msgid "Generating relation map..."
 msgstr "Génération de la table de relation..."
 
-#: RelID/Relation_tab.py:173
+#: RelID/Relation_tab.py:185
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -135,6 +139,6 @@ msgstr ""
 " %d/%d \n"
 "%f|\t%f"
 
-#: RelID/Relation_tab.py:254
+#: RelID/Relation_tab.py:276
 msgid "You do not have write rights on this folder"
 msgstr "Vous n'avez pas les droits en écriture sur ce répertoire"

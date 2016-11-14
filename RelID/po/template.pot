@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-21 12:12+0200\n"
+"POT-Creation-Date: 2016-11-14 22:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,71 +37,75 @@ msgstr ""
 msgid "Will display relational informations with the home person"
 msgstr ""
 
-#: RelID/Relation_tab.py:70
+#: RelID/Relation_tab.py:71
 msgid "Relation and distances with root"
 msgstr ""
 
-#: RelID/Relation_tab.py:87
+#: RelID/Relation_tab.py:88
 msgid "Folder Chooser"
 msgstr ""
 
-#: RelID/Relation_tab.py:90
+#: RelID/Relation_tab.py:91
 msgid "_Cancel"
 msgstr ""
 
-#: RelID/Relation_tab.py:92
+#: RelID/Relation_tab.py:93
 msgid "_Select"
 msgstr ""
 
-#: RelID/Relation_tab.py:94
+#: RelID/Relation_tab.py:95
 msgid "Please, select a folder"
 msgstr ""
 
-#: RelID/Relation_tab.py:105
+#: RelID/Relation_tab.py:106
 msgid "Rel_id"
 msgstr ""
 
-#: RelID/Relation_tab.py:106
+#: RelID/Relation_tab.py:107
 msgid "Relation"
 msgstr ""
 
-#: RelID/Relation_tab.py:107
+#: RelID/Relation_tab.py:108
 msgid "Name"
 msgstr ""
 
-#: RelID/Relation_tab.py:108
+#: RelID/Relation_tab.py:109
 msgid "up"
 msgstr ""
 
-#: RelID/Relation_tab.py:109
+#: RelID/Relation_tab.py:110
 msgid "down"
 msgstr ""
 
-#: RelID/Relation_tab.py:110
+#: RelID/Relation_tab.py:111
 msgid "Common MRA"
 msgstr ""
 
-#: RelID/Relation_tab.py:111
+#: RelID/Relation_tab.py:112
 msgid "Rank"
 msgstr ""
 
-#: RelID/Relation_tab.py:120
+#: RelID/Relation_tab.py:113
+msgid "Period"
+msgstr ""
+
+#: RelID/Relation_tab.py:122
 msgid "Save"
 msgstr ""
 
-#: RelID/Relation_tab.py:158
+#: RelID/Relation_tab.py:160
 msgid "Please wait, filtering..."
 msgstr ""
 
-#: RelID/Relation_tab.py:163
+#: RelID/Relation_tab.py:165
 msgid "No default_person"
 msgstr ""
 
-#: RelID/Relation_tab.py:168
+#: RelID/Relation_tab.py:170
 msgid "Generating relation map..."
 msgstr ""
 
-#: RelID/Relation_tab.py:183
+#: RelID/Relation_tab.py:185
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -110,6 +114,6 @@ msgid ""
 "%f|\t%f"
 msgstr ""
 
-#: RelID/Relation_tab.py:272
+#: RelID/Relation_tab.py:276
 msgid "You do not have write rights on this folder"
 msgstr ""
