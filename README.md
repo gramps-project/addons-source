@@ -44,3 +44,28 @@ python make.py gramps42 build AddonDirectory
 ```
 python make.py gramps42 listing AddonDirectory
 ```
+
+Valid command summary
+=====================
+
+* **clean** - Removes all of the strings(template.pot/ locale etc) from the addon
+
+* **init** - Get all of the strings from the addon and create template.po
+
+* **update** - Updates the template.po file
+
+* **compile** [subcomand: **all**] - Compiles the template.po file into 
+
+* **build**  [subcomand: **all**] - Builds the addon for release
+
+* **manifest-check** - Checks if all files are correct in addon release file?
+
+* **unlist** - Unlist the addon from the listing
+
+* **fix**  - If the listing shows a repeated addon entry, fix it
+
+* **check** - Checks if the addon listing matches the addon download version or if missing from the listing
+
+* **listing** [subcomand: **all**] - Builds/Creates a listing for the addon in each supported language
+
+
