@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-register(GRAMPLET, 
+register(GRAMPLET,
 id    = 'Relid',
 name  = _("Relation ID"),
 description =  _("Shows person's relation, id, locator"),
@@ -30,5 +30,5 @@ fname = 'Relation_ID.py',
 gramplet = 'IDGramplet',
 height = 230,
 expand = True,
-gramplet_title = _("Who, What, Where on tree")
+gramplet_title = _("Who, What, Where, When on tree")
   )
