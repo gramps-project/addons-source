@@ -56,7 +56,7 @@ def importData(dbase, filename, user):
                 line = fp.readline()
                 while line:
                     json = ast.literal_eval(line)
-                    obj = Struct.instance_from_struct(json)
+                    obj = Struct.from_struct(json)
                     if json["_class"] == "Person":
                         dbase.add_person(obj, trans)
                     elif json["_class"] == "Family":
