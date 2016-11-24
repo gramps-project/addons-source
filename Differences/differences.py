@@ -46,7 +46,8 @@ from gramps.gen.plug.menu import (BooleanOption, DestinationOption, StringOption
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gen.merge.diff import diff_dbs, import_as_dict
+from gramps.gen.merge.diff import diff_dbs
+from gramps.gen.db.utils import import_as_dict
 from gramps.gen.simple import SimpleAccess
 
 #------------------------------------------------------------------------

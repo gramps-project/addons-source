@@ -1,4 +1,4 @@
-from gramps.gen.dbstate import DbState
+from gramps.gen.db.utils import make_database
 from gramps.plugins.importer.importxml import importData as importXML
 from gramps.cli.user import User
 
@@ -8,13 +8,12 @@ from ..ExportSql import exportData as exportSQL
 import unittest
 import os
 
-dbstate = DbState()
 gramps_path = os.environ["GRAMPS_RESOURCES"]
 
 class ExportSQLTestCase (unittest.TestCase):
 
     def setUp(self):
-        self.database1 = dbstate.make_database("bsddb")
+        self.database1 = make_database("bsddb")
         try:
             os.mkdir("/tmp/bsddb_exportsql_1")
         except:
@@ -25,7 +24,7 @@ class ExportSQLTestCase (unittest.TestCase):
         importXML(self.database1, gramps_path + "/example/gramps/example.gramps", User())
         exportSQL(self.database1, "/tmp/exported1.sql")
 
-        self.database2 = dbstate.make_database("bsddb")
+        self.database2 = make_database("bsddb")
         try:
             os.mkdir("/tmp/bsddb_exportsql_2")
         except:
