@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2013       Doug Blank <doug.blank@gmail.com>
+# Copyright (C) 2016       Nick Hall
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,125 +24,113 @@
 # Python modules
 #
 #------------------------------------------------------------------------
-import sys
+import json
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
-from gramps.gen.lib import (Note, Person, Event, Family,
-                            Repository, Place, Media,
-                            Source, Tag, Citation)
+from gramps.gen.lib import (Note, Person, Event, Family, Repository, Place,
+                            Media, Source, Tag, Citation)
 
-def exportData(database, filename,
+def exportData(db, filename,
                error_dialog=None, option_box=None, callback=None):
     if not callable(callback):
         callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename, encoding="utf-8") as fp:
 
-        total = (len(database.note_map) +
-                 len(database.person_map) +
-                 len(database.event_map) +
-                 len(database.family_map) +
-                 len(database.repository_map) +
-                 len(database.place_map) +
-                 len(database.media_map) +
-                 len(database.citation_map) +
-                 len(database.source_map) +
-                 len(database.tag_map))
+        total = (db.get_number_of_notes() +
+                 db.get_number_of_people() +
+                 db.get_number_of_events() +
+                 db.get_number_of_families() +
+                 db.get_number_of_repositories() +
+                 db.get_number_of_places() +
+                 db.get_number_of_media() +
+                 db.get_number_of_citations() +
+                 db.get_number_of_sources() +
+                 db.get_number_of_tags())
         count = 0.0
 
         # ---------------------------------
         # Notes
         # ---------------------------------
-        for handle in database.note_map.keys():
-            serial = database.note_map[handle]
-            write_line(fp, Note.create(serial))
+        for obj in db.iter_notes():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Event
         # ---------------------------------
-        for handle in database.event_map.keys():
-            serial = database.event_map[handle]
-            write_line(fp, Event.create(serial))
+        for obj in db.iter_events():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Person
         # ---------------------------------
-        for handle in database.person_map.keys():
-            serial = database.person_map[handle]
-            write_line(fp, Person.create(serial))
+        for obj in db.iter_people():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Family
         # ---------------------------------
-        for handle in database.family_map.keys():
-            serial = database.family_map[handle]
-            write_line(fp, Family.create(serial))
+        for obj in db.iter_families():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Repository
         # ---------------------------------
-        for handle in database.repository_map.keys():
-            serial = database.repository_map[handle]
-            write_line(fp, Repository.create(serial))
+        for obj in db.iter_repositories():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Place
         # ---------------------------------
-        for handle in database.place_map.keys():
-            serial = database.place_map[handle]
-            write_line(fp, Place.create(serial))
+        for obj in db.iter_places():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Source
         # ---------------------------------
-        for handle in database.source_map.keys():
-            serial = database.source_map[handle]
-            write_line(fp, Source.create(serial))
+        for obj in db.iter_sources():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Citation
         # ---------------------------------
-        for handle in database.citation_map.keys():
-            serial = database.citation_map[handle]
-            write_line(fp, Citation.create(serial))
+        for obj in db.iter_citations():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Media
         # ---------------------------------
-        for handle in database.media_map.keys():
-            serial = database.media_map[handle]
-            write_line(fp, Media.create(serial))
+        for obj in db.iter_media():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Tag
         # ---------------------------------
-        for handle in database.tag_map.keys():
-            serial = database.tag_map[handle]
-            write_line(fp, Tag.create(serial))
+        for obj in db.iter_tags():
+            write_line(fp, obj)
             count += 1
             callback(100 * count/total)
 
@@ -151,4 +140,4 @@ def write_line(fp, obj):
     """
     Write a single object to the file.
     """
-    fp.write(str(obj.to_struct()) + "\n")
+    fp.write(json.dumps(obj.to_struct()) + "\n")
