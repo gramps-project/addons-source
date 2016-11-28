@@ -112,7 +112,7 @@ class ThumbnailGenerator(tool.Tool):
 
     def generate_thumbnails(self, obj):
         """
-        Generate thumbnails for media references of a given object. 
+        Generate thumbnails for media references of a given object.
         """
         for media_ref in obj.get_media_list():
             handle = media_ref.get_reference_handle()

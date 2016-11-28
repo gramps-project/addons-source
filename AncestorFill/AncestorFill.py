@@ -67,7 +67,7 @@ def get_available_translations():
 
     :returns: A list of translation languages.
     :rtype: unicode[]
-    
+
     """
     languages = []
 
@@ -97,14 +97,14 @@ class Translator:
 
     def __init__(self, lang="en"):
         """
-        :param lang: The language to translate to. 
+        :param lang: The language to translate to.
             The language can be:
                * The name of any installed .mo file
                * "en" to use the message strings in the code
                * "default" to use the default translation being used by gettext.
         :type lang: string
         :return: nothing
-        
+
         """
         if lang == "en":
             self.__trans = None
@@ -117,12 +117,12 @@ class Translator:
     def gettext(self, message):
         """
         Return the unicode translated string.
-        
+
         :param message: The message to be translated.
         :type message: string
         :returns: The translated message
         :rtype: unicode
-        
+
         """
         if self.__trans:
             return self.__trans.gettext(message)
@@ -141,7 +141,7 @@ class AncestorFillReport(Report):
     def __init__(self, database, options, user):
         """
         Create the AncestorFillReport object that produces the AncestorFill report.
-        
+
         The arguments are:
 
         database        - the GRAMPS database instance
@@ -150,7 +150,7 @@ class AncestorFillReport(Report):
 
         This report needs the following parameters (class variables)
         that come in the options class.
-        
+
         gen       - Maximum number of generations to include.
         name_format   - Preferred format to display names
         Filleddigit     - Number of decimal for the fill percentage
@@ -400,7 +400,7 @@ class AncestorFillOptions(MenuReportOptions):
                         14pt
             Paragraph : Second level header
                         0.125cm top and bottom margins
-                        
+
         AHN - Normal text display for each entry
 
             Font      : default

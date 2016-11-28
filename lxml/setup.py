@@ -294,7 +294,7 @@ def version(sversion):
 
 def init(args):
     """
-    Creates the initial empty po/x-local.po file and generates the 
+    Creates the initial empty po/x-local.po file and generates the
     template.pot for the lxml addon.
     """
 
@@ -372,9 +372,9 @@ def xml():
                 <_attribute>Age</_attribute>
                 <size>5</size>
             </column>
-        
+
     char *s = N_("City or Borough");
-    
+
     template.pot:
     msgid "City or Borough"
     '''

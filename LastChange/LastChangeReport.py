@@ -57,11 +57,11 @@ class LastChangeReport(Report):
     Generate a list of the last records to be changed in the current database.
 
     The arguments are:
-    
+
         database        - the GRAMPS database instance
         options_class   - instance of the Options class for this report
         user            - a gen.user.User() instance
-    
+
     """
 
     def __init__(self, database, options_class, user):

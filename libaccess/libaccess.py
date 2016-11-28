@@ -38,7 +38,7 @@ objects, so that developers need not know about either.
 The goals of this interface are:
 
 1. To abstract all functionality of gen.lib and the db layer
-2. To hide all uses of handles from the developer 
+2. To hide all uses of handles from the developer
 3. To put all of the "business logic" in one place
 4. To make multi-field logic easy (if person.name.surname == "Blank")
 5. To make edits easy.

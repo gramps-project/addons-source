@@ -257,9 +257,9 @@ class Printinfo():
 class RecurseDown():
     """
     A simple object to recurse from a person down through their descendants
-    
+
     The arguments are:
-    
+
     max_generations: The max number of generations
     database:  The database object
     objPrint:  A Printinfo derived class that prints person
@@ -346,7 +346,7 @@ class DescendantBookReport(Report):
     def __init__(self, database, options, user):
         """
         Create the DescendantBook object that produces the report.
-        
+
         The arguments are:
 
         database        - the GRAMPS database instance
@@ -355,7 +355,7 @@ class DescendantBookReport(Report):
 
         This report needs the following parameters (class variables)
         that come in the options class.
-        
+
         gen       - Maximum number of generations to include.
         name_format   - Preferred format to display names
         dups    - Whether to include duplicate descendant trees

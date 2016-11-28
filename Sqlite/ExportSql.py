@@ -122,79 +122,79 @@ def makeDB(db):
     db.query("""CREATE TABLE name (
                   handle CHARACTER(25) PRIMARY KEY,
                   primary_name BOOLEAN,
-                  private BOOLEAN, 
-                  first_name TEXT, 
-                  suffix TEXT, 
-                  title TEXT, 
-                  name_type0 INTEGER, 
-                  name_type1 TEXT, 
-                  group_as TEXT, 
+                  private BOOLEAN,
+                  first_name TEXT,
+                  suffix TEXT,
+                  title TEXT,
+                  name_type0 INTEGER,
+                  name_type1 TEXT,
+                  group_as TEXT,
                   sort_as INTEGER,
-                  display_as INTEGER, 
+                  display_as INTEGER,
                   call TEXT,
                   nick TEXT,
                   famnick TEXT);""")
 
     db.query("""CREATE TABLE surname (
                   handle CHARACTER(25),
-                  surname TEXT, 
-                  prefix TEXT, 
-                  primary_surname BOOLEAN, 
+                  surname TEXT,
+                  prefix TEXT,
+                  primary_surname BOOLEAN,
                   origin_type0 INTEGER,
                   origin_type1 TEXT,
                   connector TEXT);""")
 
-    db.query("""CREATE INDEX idx_surname_handle ON 
+    db.query("""CREATE INDEX idx_surname_handle ON
                   surname(handle);""")
 
     db.query("""CREATE TABLE date (
                   handle CHARACTER(25) PRIMARY KEY,
-                  calendar INTEGER, 
-                  modifier INTEGER, 
+                  calendar INTEGER,
+                  modifier INTEGER,
                   quality INTEGER,
-                  day1 INTEGER, 
-                  month1 INTEGER, 
-                  year1 INTEGER, 
+                  day1 INTEGER,
+                  month1 INTEGER,
+                  year1 INTEGER,
                   slash1 BOOLEAN,
-                  day2 INTEGER, 
-                  month2 INTEGER, 
-                  year2 INTEGER, 
+                  day2 INTEGER,
+                  month2 INTEGER,
+                  year2 INTEGER,
                   slash2 BOOLEAN,
-                  text TEXT, 
-                  sortval INTEGER, 
+                  text TEXT,
+                  sortval INTEGER,
                   newyear INTEGER);""")
 
     db.query("""CREATE TABLE person (
                   handle CHARACTER(25) PRIMARY KEY,
-                  gid CHARACTER(25), 
-                  gender INTEGER, 
-                  death_ref_handle TEXT, 
-                  birth_ref_handle TEXT, 
-                  change INTEGER, 
+                  gid CHARACTER(25),
+                  gender INTEGER,
+                  death_ref_handle TEXT,
+                  birth_ref_handle TEXT,
+                  change INTEGER,
                   private BOOLEAN);""")
 
     db.query("""CREATE TABLE family (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 father_handle CHARACTER(25), 
-                 mother_handle CHARACTER(25), 
-                 the_type0 INTEGER, 
-                 the_type1 TEXT, 
-                 change INTEGER, 
+                 gid CHARACTER(25),
+                 father_handle CHARACTER(25),
+                 mother_handle CHARACTER(25),
+                 the_type0 INTEGER,
+                 the_type1 TEXT,
+                 change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE place (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 title TEXT, 
-                 value TEXT, 
+                 gid CHARACTER(25),
+                 title TEXT,
+                 value TEXT,
                  the_type0 INTEGER,
                  the_type1 TEXT,
                  code TEXT,
-                 long TEXT, 
-                 lat TEXT, 
-                 lang TEXT, 
-                 change INTEGER, 
+                 long TEXT,
+                 lat TEXT,
+                 lang TEXT,
+                 change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE place_ref (
@@ -210,16 +210,16 @@ def makeDB(db):
 
     db.query("""CREATE TABLE event (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 the_type0 INTEGER, 
-                 the_type1 TEXT, 
-                 description TEXT, 
-                 change INTEGER, 
+                 gid CHARACTER(25),
+                 the_type0 INTEGER,
+                 the_type1 TEXT,
+                 description TEXT,
+                 change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE citation (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
+                 gid CHARACTER(25),
                  confidence INTEGER,
                  page CHARACTER(25),
                  source_handle CHARACTER(25),
@@ -228,63 +228,63 @@ def makeDB(db):
 
     db.query("""CREATE TABLE source (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 title TEXT, 
-                 author TEXT, 
-                 pubinfo TEXT, 
-                 abbrev TEXT, 
+                 gid CHARACTER(25),
+                 title TEXT,
+                 author TEXT,
+                 pubinfo TEXT,
+                 abbrev TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE media (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 path TEXT, 
-                 mime TEXT, 
+                 gid CHARACTER(25),
+                 path TEXT,
+                 mime TEXT,
                  desc TEXT,
                  checksum INTEGER,
-                 change INTEGER, 
+                 change INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE repository_ref (
                  handle CHARACTER(25) PRIMARY KEY,
-                 ref CHARACTER(25), 
-                 call_number TEXT, 
+                 ref CHARACTER(25),
+                 call_number TEXT,
                  source_media_type0 INTEGER,
                  source_media_type1 TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE repository (
                  handle CHARACTER(25) PRIMARY KEY,
-                 gid CHARACTER(25), 
-                 the_type0 INTEGER, 
+                 gid CHARACTER(25),
+                 the_type0 INTEGER,
                  the_type1 TEXT,
-                 name TEXT, 
-                 change INTEGER, 
+                 name TEXT,
+                 change INTEGER,
                  private BOOLEAN);""")
 
     # One link to link them all
     db.query("""CREATE TABLE link (
-                 from_type CHARACTER(25), 
-                 from_handle CHARACTER(25), 
-                 to_type CHARACTER(25), 
+                 from_type CHARACTER(25),
+                 from_handle CHARACTER(25),
+                 to_type CHARACTER(25),
                  to_handle CHARACTER(25));""")
 
-    db.query("""CREATE INDEX idx_link_to ON 
+    db.query("""CREATE INDEX idx_link_to ON
                   link(from_type, from_handle, to_type);""")
 
     db.query("""CREATE TABLE markup (
                  handle CHARACTER(25) PRIMARY KEY,
-                 markup0 INTEGER, 
-                 markup1 TEXT, 
-                 value INTEGER, 
+                 markup0 INTEGER,
+                 markup1 TEXT,
+                 value INTEGER,
                  start_stop_list TEXT);""")
 
     db.query("""CREATE TABLE event_ref (
                  handle CHARACTER(25) PRIMARY KEY,
-                 ref CHARACTER(25), 
-                 role0 INTEGER, 
-                 role1 TEXT, 
+                 ref CHARACTER(25),
+                 role0 INTEGER,
+                 role1 TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE person_ref (
@@ -294,7 +294,7 @@ def makeDB(db):
 
     db.query("""CREATE TABLE child_ref (
                  handle CHARACTER(25) PRIMARY KEY,
-                 ref CHARACTER(25), 
+                 ref CHARACTER(25),
                  frel0 INTEGER,
                  frel1 CHARACTER(25),
                  mrel0 INTEGER,
@@ -303,11 +303,11 @@ def makeDB(db):
 
     db.query("""CREATE TABLE lds (
                  handle CHARACTER(25) PRIMARY KEY,
-                 type INTEGER, 
-                 place CHARACTER(25), 
-                 famc CHARACTER(25), 
-                 temple TEXT, 
-                 status INTEGER, 
+                 type INTEGER,
+                 place CHARACTER(25),
+                 famc CHARACTER(25),
+                 temple TEXT,
+                 status INTEGER,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE media_ref (
@@ -325,29 +325,29 @@ def makeDB(db):
 
     db.query("""CREATE TABLE location (
                  handle CHARACTER(25) PRIMARY KEY,
-                 street TEXT, 
+                 street TEXT,
                  locality TEXT,
-                 city TEXT, 
-                 county TEXT, 
-                 state TEXT, 
-                 country TEXT, 
-                 postal TEXT, 
+                 city TEXT,
+                 county TEXT,
+                 state TEXT,
+                 country TEXT,
+                 postal TEXT,
                  phone TEXT,
                  parish TEXT);""")
 
     db.query("""CREATE TABLE attribute (
                  handle CHARACTER(25) PRIMARY KEY,
-                 the_type0 INTEGER, 
-                 the_type1 TEXT, 
-                 value TEXT, 
+                 the_type0 INTEGER,
+                 the_type1 TEXT,
+                 value TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE url (
                  handle CHARACTER(25) PRIMARY KEY,
-                 path TEXT, 
-                 desc TXT, 
+                 path TEXT,
+                 desc TXT,
                  type0 INTEGER,
-                 type1 TEXT,                  
+                 type1 TEXT,
                  private BOOLEAN);
                  """)
 
@@ -410,7 +410,7 @@ def export_place_name(db, handle, place_name):
     # alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
     (value, date, lang) = place_name
     ref_handle = create_id()
-    db.query("""insert into place_name (handle, from_handle, value, lang) 
+    db.query("""insert into place_name (handle, from_handle, value, lang)
                    VALUES (?, ?, ?, ?)
     ;""", ref_handle, handle, value, lang)
     export_date(db, "place_name", ref_handle, date)
@@ -423,7 +423,7 @@ def export_place_ref_list(db, handle, place_ref_list):
 def export_place_ref(db, handle, place_ref):
     (to_place_handle, date) = place_ref
     ref_handle = create_id()
-    db.query("""insert into place_ref (handle, from_place_handle, to_place_handle) 
+    db.query("""insert into place_ref (handle, from_place_handle, to_place_handle)
                    VALUES (?, ?, ?)
     ;""", ref_handle, handle, to_place_handle)
     export_date(db, "place_ref", ref_handle, date)
@@ -439,10 +439,10 @@ def export_url_list(db, from_type, from_handle, urls):
         handle = create_id()
         db.query("""insert INTO url (
                  handle,
-                 path, 
-                 desc, 
-                 type0,                  
-                 type1,                  
+                 path,
+                 desc,
+                 type0,
+                 type1,
                  private) VALUES (?, ?, ?, ?, ?, ?);
                  """,
                  handle,
@@ -478,7 +478,7 @@ def export_lds(db, from_type, from_handle, data):
     (lcitation_list, lnote_list, date, type, place,
      famc, temple, status, private) = data
     lds_handle = create_id()
-    db.query("""INSERT into lds (handle, type, place, famc, temple, status, private) 
+    db.query("""INSERT into lds (handle, type, place, famc, temple, status, private)
              VALUES (?,?,?,?,?,?,?);""",
              lds_handle, type, place, famc, temple, status, private)
     export_link(db, "lds", lds_handle, "place", place)
@@ -494,12 +494,12 @@ def export_citation_ref(db, from_type, from_handle, citation_handle):
 def export_source(db, handle, gid, title, author, pubinfo, abbrev, change,
                   private):
     db.query("""INSERT into source (
-             handle, 
-             gid, 
-             title, 
-             author, 
-             pubinfo, 
-             abbrev, 
+             handle,
+             gid,
+             title,
+             author,
+             pubinfo,
+             abbrev,
              change,
              private
              ) VALUES (?,?,?,?,?,?,?,?);""",
@@ -538,10 +538,10 @@ def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value
                   start_stop_list):
     markup_handle = create_id()
     db.query("""INSERT INTO markup (
-                 handle, 
-                 markup0, 
-                 markup1, 
-                 value, 
+                 handle,
+                 markup0,
+                 markup1,
+                 value,
                  start_stop_list) VALUES (?,?,?,?,?);""",
              markup_handle, markup_code0, markup_code1, value,
              start_stop_list)
@@ -553,12 +553,12 @@ def export_event(db, data):
      citation_list, note_list, media_list, attribute_list,
      change, tag_list, private) = data
     db.query("""INSERT INTO event (
-                 handle, 
-                 gid, 
-                 the_type0, 
-                 the_type1, 
-                 description, 
-                 change, 
+                 handle,
+                 gid,
+                 the_type0,
+                 the_type1,
+                 description,
+                 change,
                  private) VALUES (?,?,?,?,?,?,?);""",
              handle,
              gid,
@@ -579,10 +579,10 @@ def export_event_ref(db, from_type, from_handle, event_ref):
     (private, note_list, attribute_list, ref, role) = event_ref
     handle = create_id()
     db.query("""insert INTO event_ref (
-                 handle, 
-                 ref, 
-                 role0, 
-                 role1, 
+                 handle,
+                 ref,
+                 role0,
+                 role1,
                  private) VALUES (?,?,?,?,?);""",
              handle,
              ref,
@@ -618,12 +618,12 @@ def export_person(db, person):
      person_ref_list,    # 20
      ) = person
     db.query("""INSERT INTO person (
-                  handle, 
-                  gid, 
-                  gender, 
-                  death_ref_handle, 
-                  birth_ref_handle, 
-                  change, 
+                  handle,
+                  gid,
+                  gender,
+                  death_ref_handle,
+                  birth_ref_handle,
+                  change,
                   private) values (?, ?, ?, ?, ?, ?, ?);""",
              handle,
              gid,
@@ -678,20 +678,20 @@ def export_date(db, from_type, from_handle, data):
     date_handle = create_id()
     db.query("""INSERT INTO date (
                   handle,
-                  calendar, 
-                  modifier, 
+                  calendar,
+                  modifier,
                   quality,
-                  day1, 
-                  month1, 
-                  year1, 
+                  day1,
+                  month1,
+                  year1,
                   slash1,
-                  day2, 
-                  month2, 
-                  year2, 
+                  day2,
+                  month2,
+                  year2,
                   slash2,
-                  text, 
-                  sortval, 
-                  newyear) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 
+                  text,
+                  sortval,
+                  newyear) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,
                                    ?, ?, ?, ?, ?, ?);""",
              date_handle, calendar, modifier, quality,
              day1, month1, year1, slash1,
@@ -704,9 +704,9 @@ def export_surname(db, handle, surname_list):
         (surname, prefix, primary, origin_type, connector) = data
         db.query("""INSERT INTO surname (
                   handle,
-                  surname, 
-                  prefix, 
-                  primary_surname, 
+                  surname,
+                  prefix,
+                  primary_surname,
                   origin_type0,
                   origin_type1,
                   connector) VALUES (?,?,?,?,?,?,?);""",
@@ -724,19 +724,19 @@ def export_name(db, from_type, from_handle, primary, data):
         db.query("""INSERT into name (
                   handle,
                   primary_name,
-                  private, 
-                  first_name, 
-                  suffix, 
-                  title, 
-                  name_type0, 
-                  name_type1, 
-                  group_as, 
+                  private,
+                  first_name,
+                  suffix,
+                  title,
+                  name_type0,
+                  name_type1,
+                  group_as,
                   sort_as,
-                  display_as, 
+                  display_as,
                   call,
                   nick,
                   famnick
-                    ) values (?, ?, ?, ?, ?, ?, ?,  
+                    ) values (?, ?, ?, ?, ?, ?, ?,
                               ?, ?, ?, ?, ?, ?, ?);""",
                  handle, primary, private, first_name, suffix, title,
                  name_type[0], name_type[1], group_as,
@@ -753,9 +753,9 @@ def export_attribute(db, from_type, from_handle, attribute):
     handle = create_id()
     db.query("""INSERT INTO attribute (
                  handle,
-                 the_type0, 
-                 the_type1, 
-                 value, 
+                 the_type0,
+                 the_type1,
+                 value,
                  private) VALUES (?,?,?,?,?);""",
              handle, the_type[0], the_type[1], value, private)
     export_citation_list(db, "attribute", handle, citation_list)
@@ -803,7 +803,7 @@ def export_child_ref_list(db, from_type, from_handle, to_type, ref_list):
         # (False, [], [], u'b305e96e39652d8f08c', (1, u''), (1, u''))
         (private, citation_list, note_list, ref, frel, mrel) = child_ref
         handle = create_id()
-        db.query("""INSERT INTO child_ref (handle, 
+        db.query("""INSERT INTO child_ref (handle,
                      ref, frel0, frel1, mrel0, mrel1, private)
                         VALUES (?, ?, ?, ?, ?, ?, ?);""",
                  handle, ref, frel[0], frel[1],
@@ -820,9 +820,9 @@ def export_list(db, from_type, from_handle, to_type, handle_list):
 def export_link(db, from_type, from_handle, to_type, to_handle):
     if to_handle:
         db.query("""insert into link (
-                   from_type, 
-                   from_handle, 
-                   to_type, 
+                   from_type,
+                   from_handle,
+                   to_type,
                    to_handle) values (?, ?, ?, ?)""",
                  from_type, from_handle, to_type, to_handle)
 
@@ -863,13 +863,13 @@ def export_location(db, from_type, from_handle, location):
     handle = create_id()
     db.query("""INSERT INTO location (
                  handle,
-                 street, 
+                 street,
                  locality,
-                 city, 
-                 county, 
-                 state, 
-                 country, 
-                 postal, 
+                 city,
+                 county,
+                 state,
+                 country,
+                 postal,
                  phone,
                  parish) VALUES (?,?,?,?,?,?,?,?,?,?);""",
              handle, street, locality, city, county, state, country, postal, phone, parish)
@@ -885,9 +885,9 @@ def export_repository_ref_list(db, from_type, from_handle, reporef_list):
          private) = repo
         handle = create_id()
         db.query("""insert INTO repository_ref (
-                     handle, 
-                     ref, 
-                     call_number, 
+                     handle,
+                     ref,
+                     call_number,
                      source_media_type0,
                      source_media_type1,
                      private) VALUES (?,?,?,?,?,?);""",
@@ -973,13 +973,13 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          change, tag_list, private) = family.serialize()
         # father_handle and/or mother_handle can be None
         db.query("""INSERT INTO family (
-                 handle, 
-                 gid, 
-                 father_handle, 
+                 handle,
+                 gid,
+                 father_handle,
                  mother_handle,
-                 the_type0, 
-                 the_type1, 
-                 change, 
+                 the_type0,
+                 the_type1,
+                 change,
                  private) values (?,?,?,?,?,?,?,?);""",
                  handle, gid, father_handle, mother_handle,
                  the_type[0], the_type[1], change,
@@ -1016,12 +1016,12 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          address_list, urls, change, tag_list, private) = repository.serialize()
 
         db.query("""INSERT INTO repository (
-                 handle, 
-                 gid, 
-                 the_type0, 
+                 handle,
+                 gid,
+                 the_type0,
                  the_type1,
-                 name, 
-                 change, 
+                 name,
+                 change,
                  private) VALUES (?,?,?,?,?,?,?);""",
                  handle, gid, the_type[0], the_type[1],
                  name, change, private)
@@ -1059,17 +1059,17 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         value, date, lang = place_name
 
         db.query("""INSERT INTO place (
-                 handle, 
-                 gid, 
-                 title, 
+                 handle,
+                 gid,
+                 title,
                  value,
                  the_type0,
                  the_type1,
                  code,
-                 long, 
-                 lat, 
+                 long,
+                 lat,
                  lang,
-                 change, 
+                 change,
                  private) values (?,?,?,?,?,?,?,?,?,?,?,?);""",
                  handle, gid, title, value,
                  place_type[0], place_type[1],
@@ -1125,8 +1125,8 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          tag_list,
          private) = citation.serialize()
         db.query("""INSERT into citation (
-                 handle, 
-                 gid, 
+                 handle,
+                 gid,
                  confidence,
                  page,
                  source_handle,
@@ -1192,13 +1192,13 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          private) = media.serialize()
 
         db.query("""INSERT INTO media (
-            handle, 
-            gid, 
-            path, 
-            mime, 
+            handle,
+            gid,
+            path,
+            mime,
             desc,
             checksum,
-            change, 
+            change,
             private) VALUES (?,?,?,?,?,?,?,?);""",
                  handle, gid, path, mime, desc, checksum,
                  change, private)
@@ -1219,7 +1219,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         (handle, name, color, priority, change) = tag_object.serialize()
         db.query("""INSERT INTO tag (
-            handle, 
+            handle,
             name,
             color,
             priority,

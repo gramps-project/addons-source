@@ -21,7 +21,7 @@
 
 # $Id: $
 
-""" 
+"""
 Extends GedcomWriter to include common non-compliant GEDCOM additions.
 """
 #------------------------------------------------------------------------
@@ -66,7 +66,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
 
     def _process_family_event(self, event, event_ref):
         """
-        Write the witnesses associated with the family event. 
+        Write the witnesses associated with the family event.
         based on http://www.geneanet.org/forum/index.php?topic=432352.0&lang=fr
         """
         super(GedcomWriterExtension, self)._process_family_event(event,
@@ -99,8 +99,8 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
 class GedcomWriterOptionBox(WriterOptionBox):
     """
     Create a VBox with the option widgets and define methods to retrieve
-    the options. 
-    
+    the options.
+
     """
     def __init__(self, person, dbstate, uistate):
         """

@@ -126,7 +126,7 @@ def main(report_nums):
         print("Exporting with options: %s" % title)
         print("=" * 80)
         target = os.path.join(results_path, test_name)
-        
+
         # Build the test options form the default options + the test set options
         o = copy.deepcopy(default_options)
         o.update(test_set['options'])
@@ -148,7 +148,7 @@ def main(report_nums):
             param = param.encode("UTF-8")
         os.chdir(gramps_path)
         subprocess.call([sys.executable, os.path.join(gramps_path, "Gramps.py"), "-q", "-O", "dynamicweb_example", "-a", "report", "-p", param])
-            
+
     # Generate index pages
     html_index += html_index_1 % (default_options['name'], plugvers, VERSION)
     f = codecs.open(os.path.join(results_path, "index.html"), "w", encoding = "UTF-8", errors="xmlcharrefreplace")

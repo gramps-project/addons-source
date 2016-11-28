@@ -3,7 +3,7 @@
 """
 make.py for Gramps addons.
 
-Examples: 
+Examples:
    python make.py gramps42 init AddonDirectory
 
       Creates the initial directories for the addon.

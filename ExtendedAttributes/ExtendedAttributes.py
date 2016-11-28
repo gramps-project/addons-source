@@ -125,7 +125,7 @@ class Attributes(Gramplet):
     def _get_event_ref(self, event):
         """
         Return the event reference belonging to the active person or
-        family for the given event. 
+        family for the given event.
         """
         for event_ref in self.object_for_update.get_event_ref_list():
             if event_ref.ref == event.get_handle():

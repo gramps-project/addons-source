@@ -30,19 +30,19 @@ Developed for gramps 3.4.2.1 under win 7 64bit
 
 This is my first contribution to gramps, as well as my first python module,
 so the programming style may in some way be unusual. Thanks to Enno Borgsteede
-and Tim Lyons as well as other members of gramps dev for help 
+and Tim Lyons as well as other members of gramps dev for help
 
 PLEASE FEEL FREE TO CORRECT AND TEST.
 
-This report lists all the citations and their notes in the database. so it 
-is possible to have all the copies made from e.g. parish books together grouped 
+This report lists all the citations and their notes in the database. so it
+is possible to have all the copies made from e.g. parish books together grouped
 by source and ordered by citation.page.
 
 I needed such a report after I changed recording notes and media with the
 citations and no longer with the sources.
 
 works well in pdf, text and odf Format. The latter contains TOC which are also
-accepted by ms office 2012 
+accepted by ms office 2012
 
 Changelog:
 
@@ -55,20 +55,20 @@ Version 2.5:
 Version 3.3:
 - constructing dic directly
 - or function
-- sorting direct 
+- sorting direct
 - Stylesheet in Options
 
 Version 3.4:
 - added .lower to sortfunctions to sources and to citation
 
-Version 3.5: 
+Version 3.5:
 - get translation work
 - include Persons names and gramps_id cited in the notes.
 
 next steps:
 
-- have an index on Persons  
-- have footer        
+- have an index on Persons
+- have footer
 
 """
 
@@ -118,7 +118,7 @@ class SourcesCitationsReport(Report):
     def __init__(self, database, options, user):
         """
         Create the SourceReport object that produces the report.
-        
+
         The arguments are:
 
         database        - the GRAMPS database instance
@@ -127,7 +127,7 @@ class SourcesCitationsReport(Report):
 
         This report needs the following parameters (class variables)
         that come in the options class.
-        
+
         Sources          - List of places to report on.
         """
 
@@ -375,7 +375,7 @@ class SourcesCitationsReport(Report):
 #------------------------------------------------------------------------
 class SourcesCitationsOptions(MenuReportOptions):
     """
-    SourcesCitationsAndPersonsOptions provides the options 
+    SourcesCitationsAndPersonsOptions provides the options
     for the SourcesCitationsAndPersonsReport.
     """
     def __init__(self, name, dbase):

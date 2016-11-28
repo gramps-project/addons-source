@@ -214,7 +214,7 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         requisition.height =  max(ymin, 25)
 
     def do_get_preferred_width(self):
-        """ GTK3 uses width for height sizing model. This method will 
+        """ GTK3 uses width for height sizing model. This method will
             override the virtual method
         """
         req = Gtk.Requisition()
@@ -222,7 +222,7 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         return req.width, req.width
 
     def do_get_preferred_height(self):
-        """ GTK3 uses width for height sizing model. This method will 
+        """ GTK3 uses width for height sizing model. This method will
             override the virtual method
         """
         req = Gtk.Requisition()
@@ -574,7 +574,7 @@ class TimelinePedigreeView(NavigationView):
         self.Tree_Rebuild()
 
     def Tree_Rebuild(self):
-        """ 
+        """
         Build and draw full tree from the database with root person_handle
         Called from many fuctions, when need a full redraw of the tree.
         """
@@ -660,7 +660,7 @@ class TimelinePedigreeView(NavigationView):
         layout_widget.queue_draw()      # widget needs redraw for connection lines
 
     def Tree_MoveBranchBoxes(self, layout_widget, BranchData, BoxRight, BranchTop, Direction, genDepth):
-        """ 
+        """
             Recursively move all person boxes in a branch to its destination
         """
         BoxSizes = self.GetBoxSizes(genDepth)
@@ -824,7 +824,7 @@ class TimelinePedigreeView(NavigationView):
         return pbw
 
     def Tree_Find_Relatives(self, layout_widget, person, genDepth, genMax, Direction, Widget = None, CalledFromPerson = None):
-        """ 
+        """
             Recursively find descendants or ancestors
             Create PersonBox-Widget
             Calculate height of each tree branch

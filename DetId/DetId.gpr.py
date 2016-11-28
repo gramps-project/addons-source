@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id = 'deterministicid',
 name = _("Deterministic ID"),
 description = _("Set/reset Gramps to use a Deterministic ID"),

@@ -140,7 +140,7 @@ def get_toolkits():
 #class Renderer(object):
 class Renderer():
     """
-    Renderer renders the webpage. Several backend implementations are 
+    Renderer renders the webpage. Several backend implementations are
     possible
     """
     def __init__(self):
@@ -270,7 +270,7 @@ class RendererWebkit(Renderer):
     def page_loaded(self, *args):
         """
         We just loaded one page in the browser.
-        Set the button sensitivity 
+        Set the button sensitivity
         """
         self.set_button_sensitivity()
 
@@ -439,7 +439,7 @@ class HtmlView(NavigationView):
     def get_stock(self):
         """
         Returns the name of the stock icon to use for the display.
-        This assumes that this icon has already been registered 
+        This assumes that this icon has already been registered
         as a stock icon.
         """
         return 'gramps-view'
@@ -457,8 +457,8 @@ class HtmlView(NavigationView):
         return '''<ui>
           <toolbar name="ToolBar">
             <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>  
-              <toolitem action="Forward"/>  
+              <toolitem action="Back"/>
+              <toolitem action="Forward"/>
               <toolitem action="Refresh"/>
             </placeholder>
           </toolbar>
@@ -467,7 +467,7 @@ class HtmlView(NavigationView):
     def define_actions(self):
         """
         Required define_actions function for NavigationView. Builds the action
-        group information required. 
+        group information required.
         """
         NavigationView.define_actions(self)
         HtmlView._define_actions_fw_bw(self)

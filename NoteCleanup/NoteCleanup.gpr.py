@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 
-register(TOOL, 
+register(TOOL,
 id = 'notecleanup',
 name = _("Note Cleanup"),
 description = _("Clean up Notes that contain HTML markup"),

@@ -81,7 +81,7 @@ class DetailedDescendantBookReport(Report):
     def __init__(self, database, options, user):
         """
         Create the DetailedDescendantBook object that produces the report.
-        
+
         The arguments are:
 
         database        - the GRAMPS database instance
@@ -91,7 +91,7 @@ class DetailedDescendantBookReport(Report):
 
         This report needs the following parameters (class variables)
         that come in the options class.
-        
+
         gen           - Maximum number of generations to include.
         pagebgg       - Whether to include page breaks between generations.
         pageben       - Whether to include page break before End Notes.
@@ -922,7 +922,7 @@ class DetailedDescendantBookReport(Report):
                     self.doc.write_text("", mother_mark)
 
     def write_marriage(self, person):
-        """ 
+        """
         Output marriage sentence.
         """
         is_first = True
@@ -1002,7 +1002,7 @@ class DetailedDescendantBookReport(Report):
         return mother_name, father_name
 
     def __write_children(self, family):
-        """ 
+        """
         List the children for the given family.
         """
         if not family.get_child_ref_list():
@@ -1061,7 +1061,7 @@ class DetailedDescendantBookReport(Report):
             self.doc.end_paragraph()
 
     def __write_family_notes(self, family):
-        """ 
+        """
         Write the notes for the given family.
         """
         notelist = family.get_note_list()
@@ -1080,7 +1080,7 @@ class DetailedDescendantBookReport(Report):
                                            note.get_format(),"DDR-Entry")
 
     def __write_family_events(self, family):
-        """ 
+        """
         List the events for the given family.
         """
         if not family.get_event_ref_list():
@@ -1106,7 +1106,7 @@ class DetailedDescendantBookReport(Report):
         return first
 
     def __write_family_attrs(self, family, first):
-        """ 
+        """
         List the attributes for the given family.
         """
         attrs = family.get_attribute_list()

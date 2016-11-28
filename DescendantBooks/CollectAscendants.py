@@ -281,7 +281,7 @@ class CollectAscendants():
 
     def __get_preferred_handle(self, person_handle, mate_handle):
         """
-        Look at this persons mates, and for all 
+        Look at this persons mates, and for all
         """
         person = self.database.get_person_from_handle(person_handle)
 

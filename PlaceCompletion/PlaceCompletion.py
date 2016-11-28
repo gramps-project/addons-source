@@ -263,7 +263,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         '''
         Sets the group in place with value val
         returns place
-        Allow special group #latlon, for which val[0] is lat, val[1] is lon 
+        Allow special group #latlon, for which val[0] is lat, val[1] is lon
         '''
         if not group:
             return place
@@ -310,7 +310,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
 
     def fill_comboboxentry(self, cmbe, namelistopt, default) :
         '''
-            default is the key in the combobox, or a text with what should 
+            default is the key in the combobox, or a text with what should
             be in the text field
         '''
         store = Gtk.ListStore(str,str)

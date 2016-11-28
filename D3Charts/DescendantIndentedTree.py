@@ -687,9 +687,9 @@ class Printinfo():
 class RecurseDown():
     """
     A simple object to recurse from a person down through their descendants
-    
+
     The arguments are:
-    
+
     max_generations: The max number of generations
     database:  The database object
     objPrint:  A Printinfo derived class that prints person

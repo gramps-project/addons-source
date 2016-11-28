@@ -1429,7 +1429,7 @@ class EditExifMetadata(Gramplet):
         writes the Exif metadata to the image.
 
         OLD_API -- prior to pyexiv2-0.2.0
-                      -- pyexiv2-0.2.0 and above... 
+                      -- pyexiv2-0.2.0 and above...
         """
         if OLD_API:
             plugininstance.writeMetadata()

@@ -23,7 +23,7 @@
 """
 setup.py for Gramps addons.
 
-Examples: 
+Examples:
    python setup.py -i or --init AddonDirectory
 
       Creates the initial directories for the addon.
@@ -475,7 +475,7 @@ def version(sversion):
 
 def init(ADDON, LANG):
     """
-    Creates the initial empty po/x-local.po file and generates the 
+    Creates the initial empty po/x-local.po file and generates the
     template.pot for the addon.
     """
 

@@ -131,7 +131,7 @@ class lxmlGramplet(Gramplet):
 
     def init(self):
         """
-        Constructs the GUI, consisting of an entry, a text view and 
+        Constructs the GUI, consisting of an entry, a text view and
         a Run button.
         """
 
@@ -210,7 +210,7 @@ class lxmlGramplet(Gramplet):
 
 
     def set_filename(self, path):
-        """ 
+        """
         Set the currently selected dialog.
         """
 

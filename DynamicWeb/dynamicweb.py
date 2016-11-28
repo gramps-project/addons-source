@@ -622,7 +622,7 @@ class DynamicWebReport(Report):
             yearsafterdeath = self.options['years_past_death']
             if livinginfo != INCLUDE_LIVING_VALUE:
                 self.database = LivingProxyDb(self.database, livinginfo, None, yearsafterdeath)
-            
+
         filters_option = menu.get_option_by_name('filter')
         self.filter = filters_option.get_filter()
 
@@ -3970,7 +3970,7 @@ class DynamicWebOptions(MenuReportOptions):
         if DWR_VERSION_500:
             stdoptions.add_living_people_option(menu, category_name)
             stdoptions.add_private_data_option(menu, category_name, default=False)
-            
+
         else:
             incl_private = BooleanOption(_("Include records marked private"), False)
             incl_private.set_help(_("Whether to include private objects"))

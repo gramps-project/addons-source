@@ -82,7 +82,7 @@ class PersonEverythingReport(Report):
     def __init__(self, database, options, user):
         """
         Create the PersonEverythingReport object that produces the report.
-        
+
         The arguments are:
 
         database        - the GRAMPS database instance
@@ -91,7 +91,7 @@ class PersonEverythingReport(Report):
 
         This report needs the following parameters (class variables)
         that come in the options class.
-        
+
         pid           - The centre person about whom the report is to be
                         produced
         gen           - Maximum number of generations to include.
@@ -770,7 +770,7 @@ class Bibliography:
     """
     This constructs endnotes in the Humanities style of the Chicago manual of
     style.
-    
+
     The style of report is based on:
     http://www.deakin.edu.au/current-students/study-support/study-skills/handouts/oxford-docnote.php
 
@@ -784,7 +784,7 @@ class Bibliography:
     def cite_sources(self, obj):
         """
         Cite any sources for the object and add them to the bibliography.
-        
+
         @param bibliography: The bibliography to contain the citations.
         @type bibliography: L{Bibliography}
         @param obj: An object with source references.
@@ -811,7 +811,7 @@ class Bibliography:
     def write_endnotes(self, print_header, print_object):
         """
         Write all the entries in the bibliography as endnotes.
-        
+
         @param bibliography: The bibliography that contains the citations.
         @type bibliography: L{Bibliography}
         @param database: The database that the sources come from.
@@ -1039,7 +1039,7 @@ class PersonEverthingOptions(MenuReportOptions):
 def add_endnote_styles(style_sheet):
     """
     Add paragraph styles to a style sheet to be used for displaying endnotes.
-    
+
     @param style_sheet: Style sheet
     @type style_sheet: L{docgen.StyleSheet}
     """

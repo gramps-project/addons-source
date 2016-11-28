@@ -93,7 +93,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         self.dbstate = dbstate
         self.trans = None
         self.moved_files = []
-        self.titles = [_('Cleaned Notes'), _('Links Only'),  
+        self.titles = [_('Cleaned Notes'), _('Links Only'),
                        _('Issues')]
         self.models = []
         self.views = []
@@ -179,7 +179,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
 
 
     def build_menu_names(self, obj):
-        return (_('Clean up Notes'), 
+        return (_('Clean up Notes'),
                 self.window_name)
 
     def create_tab(self, title):
@@ -228,7 +228,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         if iter_:
             value = model.get_value(iter_, 1)
             self.showit(value)
-    
+
     def pagesw(self, notebook, page, pagenum):
         """
         called when we switch tabs in the notebook
@@ -238,7 +238,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         if iter_:
             value = model.get_value(iter_, 1)
             self.showit(value)
-    
+
 
     def edit(self,indx):
         """
@@ -269,7 +269,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 x=(self.changelist[self.indx][0],\
                     self.changelist[self.indx][1], y)
                 self.changelist[self.indx] = x
-             
+
     def gentest(self, button):
         """
         Create some test notes.
@@ -310,10 +310,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         Export the results to a text file.
         """
         chooser = Gtk.FileChooserDialog(
-            _("Export results to a text file"), 
-            self.uistate.window, 
-            Gtk.FileChooserAction.SAVE, 
-            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, 
+            _("Export results to a text file"),
+            self.uistate.window,
+            Gtk.FileChooserAction.SAVE,
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_SAVE, Gtk.ResponseType.OK))
         chooser.set_do_overwrite_confirmation(True)
 
@@ -375,7 +375,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             ' box.\n'
             'If you wish to make changes, you can make them here and'
             ' use the style controls in the toolbar above.')))
-        
+
     def saveit(self, button):
         """
         Commit the changes to the database
@@ -451,7 +451,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
 
         self.show_tabs()
         progress.close()
-    
+
     def preview(self, stext, g_id):
         prev = " ".join(str(stext).split())
         if len(prev) > 80:
@@ -466,10 +466,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         tags into StyledText and removes the rest of the tags.  Notes of this
         type occur in data from FTM and ancestry.com.  Result is a much
         cleaner note.
-        
+
         @param data: a string of text possibly containg html
-        @type data: str 
-        
+        @type data: str
+
         """
         token_specification = [
             # Italics: must not be nested, any tag terminates
@@ -491,7 +491,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             # Href start to end
             ('HREF',    r'<+a .*?href=["\' ]*(?P<HREFL>.*?)'\
                         r'["\' ].*?>(?P<HREFT>.*?)</a>+'),
-            # HTTP start to end (have to rstrip(' .:') for link)  
+            # HTTP start to end (have to rstrip(' .:') for link)
             ('HTTP',    r'https?:.*?(\s|$)'),
             # Paragraph end
             ('PARAEND', r'</p>|</li>|<tr>|<br>'),
@@ -502,7 +502,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             ('UNKNWN',  r'<.*?>'),
             ]
         tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
-        
+
         prev = 0
         chunkpos = 0
         chunks = []
@@ -595,10 +595,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                     chunkpos = newpos
                 print('Unexpected or unimplemented HTML tag', st_txt)
             else: print("shouldn't get here")
-        
+
             prev = in_end
         chunks.append(data[prev:])
-                 
+
         result = ''.join(chunks)
         tags = []
         for link in links:
@@ -624,7 +624,7 @@ class MyWindow(Gtk.Window):
         self.uistate = uistate
         self.track = track
         Gtk.Window.__init__(self)
- 
+
 
 #------------------------------------------------------------------------
 #

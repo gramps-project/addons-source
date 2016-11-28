@@ -29,7 +29,7 @@ The WebConnect API works as follows:
    plugindata. It returns a generate function (#3).
 
 3) The generate function takes a nav_type (eg, 'Person') and
-   returns a list of search-constructor functions (#4). 
+   returns a list of search-constructor functions (#4).
 
 4) Each search constructor function takes a dbstate, uistate,
    nav_type, and handle, and returns a callback (#5). A search
@@ -129,7 +129,7 @@ def make_person_dict(dbstate, handle):
 class Search(object):
     """
     Necessary because Python scoping rules don't allow otherwise.
-    Keeps track of pattern, key, name, and other values as it 
+    Keeps track of pattern, key, name, and other values as it
     is registered and then called.
     """
     def __init__(self, key, name, pattern):

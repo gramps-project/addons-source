@@ -414,10 +414,10 @@ class Index(tool.Tool, ManagedWindow):
     def indexes(self):
         """
         Indexes could be an addition of XML files.
-        We can imagine ('birth.xml' + 'death.xml' + 'marriage.xml' 
-        + census.xml), 'witness.xml' could be an other table/file 
+        We can imagine ('birth.xml' + 'death.xml' + 'marriage.xml'
+        + census.xml), 'witness.xml' could be an other table/file
         (relation) or content could be included into above files!
-        
+
         'Load indexes' means to load ordered tables, search environment
         """
 

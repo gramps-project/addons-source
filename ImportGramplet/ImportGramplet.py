@@ -164,7 +164,7 @@ class ImportGramplet(Gramplet):
     """
     def init(self):
         """
-        Constructs the GUI, consisting of a text area, and 
+        Constructs the GUI, consisting of a text area, and
         an Import and Clear buttons.
         """
         from gi.repository import Gtk

@@ -2275,7 +2275,7 @@ function %(bd)s2html(person,containerDL) {
                         endIndex = personObj.indexOf("'",endIndex+1);
                     }
                     subjVal = personObj.substring(startIndex,endIndex);
-                    if (strng == strng.toLowerCase()) { 
+                    if (strng == strng.toLowerCase()) {
                         if (strng != "" && subjVal.toLowerCase().indexOf(strng) != -1) {
                             if (! found) {
                                 rects[i].setAttribute('class',class_ + " searched");
@@ -2331,7 +2331,7 @@ function %(bd)s2html(person,containerDL) {
                     window.setTimeout(self.halo,100,x,y,radius,r_min);
                     break;
                 }
-            } 
+            }
         }
         function halo(cx,cy,r,r_min) {
             var h = document.getElementById('halo');
@@ -2365,7 +2365,7 @@ function %(bd)s2html(person,containerDL) {
             // about a missing root of the xml-document.
             // Opera is OK with about:blank while Firefox seems to use some
             // onload handler to whipe the content clean after (sic) the data to
-            // be displayed is shown. 
+            // be displayed is shown.
             // Why isn't the title set and fails focus in Firefox?
             if (infoWindow == undefined || infoWindow.closed) {
                 infoWindow = window.open("about:blank","","dependent=yes,titlebar=yes,scrollbars=yes,width=500");
@@ -2440,7 +2440,7 @@ function %(bd)s2html(person,containerDL) {
         return
 
     def get_html_search_options(self):
-        """The generated webpage contains a search-form, this function 
+        """The generated webpage contains a search-form, this function
         returns a string of html-JS to fill the select-element with options.
 
         Since the available options are only known after the svg was created,
