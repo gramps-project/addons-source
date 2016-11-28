@@ -25,26 +25,25 @@
 from gramps.gen.plug.utils import OpenFileOrStdout
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.alive import probably_alive
-from gramps.gen.lib import Person, Family
 
 def escape(text):
     return text.replace("'", "\\'")
 
-def exportData(database, filename,
+def exportData(db, filename,
                error_dialog=None, option_box=None, callback=None):
     if not callable(callback):
         callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename) as fp:
 
-        total = (len(database.note_map) +
-                 len(database.person_map) +
-                 len(database.event_map) +
-                 len(database.family_map) +
-                 len(database.repository_map) +
-                 len(database.place_map) +
-                 len(database.media_map) +
-                 len(database.source_map))
+        total = (db.get_number_of_notes() +
+                 db.get_number_of_people() +
+                 db.get_number_of_events() +
+                 db.get_number_of_families() +
+                 db.get_number_of_repositories() +
+                 db.get_number_of_places() +
+                 db.get_number_of_media() +
+                 db.get_number_of_sources())
         count = 0.0
 
         # GProlog ISO directives:
@@ -62,27 +61,23 @@ def exportData(database, filename,
         # ---------------------------------
         # Notes
         # ---------------------------------
-        for note_handle in database.note_map.keys():
-            note = database.note_map[note_handle]
-            #write_line(fp, "note_details(%s, %s)" % (note_handle, note))
+        for note in db.iter_notes():
+            #write_line(fp, "note_details(%s, %s)" % (note.handle, note))
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Event
         # ---------------------------------
-        for event_handle in database.event_map.keys():
-            event = database.event_map[event_handle]
-            #write_line(fp, "event:", event_handle, event)
+        for event in db.iter_events():
+            #write_line(fp, "event:", event.handle, event)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Person
         # ---------------------------------
-        for person_handle in database.person_map.keys():
-            data = database.person_map[person_handle]
-            person = Person.create(data)
+        for person in db.iter_people():
             gid = person.gramps_id.lower()
             fp.write("data(%s, '%s').\n" % (gid, escape(name_displayer.display(person))))
             fp.write("is_alive(%s, '%s').\n" % (gid, probably_alive(person, database)))
@@ -92,9 +87,7 @@ def exportData(database, filename,
         # ---------------------------------
         # Family
         # ---------------------------------
-        for family_handle in database.family_map.keys():
-            data = database.family_map[family_handle]
-            family = Family.create(data)
+        for family in db.iter_families():
             father_handle = family.get_father_handle()
             mother_handle = family.get_mother_handle()
             parents = []
@@ -121,36 +114,32 @@ def exportData(database, filename,
         # ---------------------------------
         # Repository
         # ---------------------------------
-        for repository_handle in database.repository_map.keys():
-            repository = database.repository_map[repository_handle]
-            #write_line(fp, "repository:", repository_handle, repository)
+        for repository in db.iter_repositories():
+            #write_line(fp, "repository:", repository.handle, repository)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Place
         # ---------------------------------
-        for place_handle in database.place_map.keys():
-            place = database.place_map[place_handle]
-            #write_line(fp, "place:", place_handle, place)
+        for place in db.iter_places():
+            #write_line(fp, "place:", place.handle, place)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Source
         # ---------------------------------
-        for source_handle in database.source_map.keys():
-            source = database.source_map[source_handle]
-            #write_line(fp, "source:", source_handle, source)
+        for source in db.iter_sources():
+            #write_line(fp, "source:", source.handle, source)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Media
         # ---------------------------------
-        for media_handle in database.media_map.keys():
-            media = database.media_map[media_handle]
-            #write_line(fp, "media:", media_handle, media)
+        for media in db.iter_media():
+            #write_line(fp, "media:", media.handle, media)
             count += 1
             callback(100 * count/total)
 

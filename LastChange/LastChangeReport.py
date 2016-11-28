@@ -75,7 +75,7 @@ class LastChangeReport(Report):
 
 
     def _getTimestamp(self, person_handle):
-        timestamp = self.database.person_map.get(person_handle)[17]
+        timestamp = self.database.get_person_from_handle(person_handle).change
         return timestamp
 
     def _getFamilyTimestamp(self, family_handle):

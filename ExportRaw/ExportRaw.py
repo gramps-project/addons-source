@@ -27,92 +27,102 @@
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
 
-def exportData(database, filename,
+def exportData(db, filename,
                error_dialog=None, option_box=None, callback=None):
     if not callable(callback):
         callback = lambda percent: None # dummy
 
     with OpenFileOrStdout(filename) as fp:
 
-        total = (len(database.note_map) +
-                 len(database.person_map) +
-                 len(database.event_map) +
-                 len(database.family_map) +
-                 len(database.repository_map) +
-                 len(database.place_map) +
-                 len(database.media_map) +
-                 len(database.source_map))
+        total = (db.get_number_of_notes() +
+                 db.get_number_of_people() +
+                 db.get_number_of_events() +
+                 db.get_number_of_families() +
+                 db.get_number_of_repositories() +
+                 db.get_number_of_places() +
+                 db.get_number_of_media() +
+                 db.get_number_of_citations() +
+                 db.get_number_of_sources() +
+                 db.get_number_of_tags())
         count = 0.0
 
         # ---------------------------------
         # Notes
         # ---------------------------------
-        for note_handle in database.note_map.keys():
-            note = database.note_map[note_handle]
-            write_line(fp, "note:", note_handle, note)
+        for note in db.iter_notes():
+            write_line(fp, "note:", note.handle, note)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Event
         # ---------------------------------
-        for event_handle in database.event_map.keys():
-            event = database.event_map[event_handle]
-            write_line(fp, "event:", event_handle, event)
+        for event in db.iter_events():
+            write_line(fp, "event:", event.handle, event)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Person
         # ---------------------------------
-        for person_handle in database.person_map.keys():
-            person = database.person_map[person_handle]
-            write_line(fp, "person:", person_handle, person)
+        for person in db.iter_people():
+            write_line(fp, "person:", person.handle, person)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Family
         # ---------------------------------
-        for family_handle in database.family_map.keys():
-            family = database.family_map[family_handle]
-            write_line(fp, "family:", family_handle, family)
+        for family in db.iter_families():
+            write_line(fp, "family:", family.handle, family)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Repository
         # ---------------------------------
-        for repository_handle in database.repository_map.keys():
-            repository = database.repository_map[repository_handle]
-            write_line(fp, "repository:", repository_handle, repository)
+        for repository in db.iter_repositories():
+            write_line(fp, "repository:", repository.handle, repository)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Place
         # ---------------------------------
-        for place_handle in database.place_map.keys():
-            place = database.place_map[place_handle]
-            write_line(fp, "place:", place_handle, place)
+        for place in db.iter_places():
+            write_line(fp, "place:", place.handle, place)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Source
         # ---------------------------------
-        for source_handle in database.source_map.keys():
-            source = database.source_map[source_handle]
-            write_line(fp, "source:", source_handle, source)
+        for source in db.iter_sources():
+            write_line(fp, "source:", source.handle, source)
             count += 1
             callback(100 * count/total)
 
         # ---------------------------------
         # Media
         # ---------------------------------
-        for media_handle in database.media_map.keys():
-            media = database.media_map[media_handle]
-            write_line(fp, "media:", media_handle, media)
+        for media in db.iter_media():
+            write_line(fp, "media:", media.handle, media)
+            count += 1
+            callback(100 * count/total)
+
+        # ---------------------------------
+        # Citation
+        # ---------------------------------
+        for citation in db.iter_citations():
+            write_line(fp, "citation:", citation.handle, citation)
+            count += 1
+            callback(100 * count/total)
+
+        # ---------------------------------
+        # Tag
+        # ---------------------------------
+        for tag in db.iter_tags():
+            write_line(fp, "tag:", tag.handle, tag)
             count += 1
             callback(100 * count/total)
 

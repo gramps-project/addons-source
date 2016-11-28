@@ -453,8 +453,6 @@ class etreeGramplet(Gramplet):
         except IndexError:
             pass
 
-        # person object; alternate method via person_map, see LastChange addon
-
         handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)
 
         print('DB: Last %s persons edited:' % int(self.last))
@@ -464,7 +462,7 @@ class etreeGramplet(Gramplet):
 
 
     def _getPersonTimestamp(self, person_handle):
-        timestamp = self.dbstate.db.person_map.get(person_handle)[17]
+        timestamp = self.dbstate.db.get_person_from_handle(person_handle).change
         return timestamp
 
 
