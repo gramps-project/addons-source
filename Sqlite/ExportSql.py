@@ -699,8 +699,9 @@ def export_date(db, from_type, from_handle, data):
              text, sortval, newyear)
     export_link(db, from_type, from_handle, "date", date_handle)
 
-def export_surname(db, handle, surname_list):
+def export_surname(db, name_handle, surname_list):
     for data in surname_list:
+        surname_handle = create_id()
         (surname, prefix, primary, origin_type, connector) = data
         db.query("""INSERT INTO surname (
                   handle,
@@ -710,8 +711,9 @@ def export_surname(db, handle, surname_list):
                   origin_type0,
                   origin_type1,
                   connector) VALUES (?,?,?,?,?,?,?);""",
-                 handle, surname, prefix, primary, origin_type[0],
+                 surname_handle, surname, prefix, primary, origin_type[0],
                  origin_type[1], connector)
+        export_link(db, "name", name_handle, "surname", surname_handle)
 
 def export_name(db, from_type, from_handle, primary, data):
     if data:
