@@ -72,7 +72,7 @@ class FormGramplet(Gramplet, DbGUIElement):
     def __init__(self, gui, nav_group=0):
         Gramplet.__init__(self, gui, nav_group)
         DbGUIElement.__init__(self, self.dbstate.db)
-        
+
     def init(self):
         """
         Initialise the gramplet.

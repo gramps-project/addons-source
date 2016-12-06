@@ -25,9 +25,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id = "Form Gramplet", 
-         name = _("Form Gramplet"), 
+register(GRAMPLET,
+         id = "Form Gramplet",
+         name = _("Form Gramplet"),
          description = _("Gramplet interface for Forms"),
          status = STABLE,
          version = '2.0.3',

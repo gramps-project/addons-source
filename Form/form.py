@@ -161,19 +161,19 @@ class Form():
     def get_form_ids(self):
         """ Return a list of ids for all form definitions. """
         return self.__dates.keys()
-        
+
     def get_title(self, form_id):
         """ Return the title for a given form. """
         return self.__names[form_id]
-        
+
     def get_date(self, form_id):
         """ Return a textual date for a given form. """
         return self.__dates[form_id]
-        
+
     def get_type(self, form_id):
         """ Return a textual event type for a given form. """
         return self.__types[form_id]
-        
+
     def get_headings(self, form_id):
         """ Return a list of headings for a given form. """
         return self.__headings[form_id]
@@ -185,14 +185,14 @@ class Form():
     def get_section_title(self, form_id, section):
         """ Return the title for a given section. """
         return self.__titles[form_id][section]
-        
+
     def get_section_type(self, form_id, section):
         """ Return the section type for a given section. """
         return self.__section_types[form_id][section]
 
     def get_section_columns(self, form_id, section):
         """ Return a list of column definitions for a given section. """
-        return self.__columns[form_id][section]        
+        return self.__columns[form_id][section]
 
 #------------------------------------------------------------------------
 #
@@ -212,7 +212,7 @@ def get_form_title(form_id):
     Return the title for a given form.
     """
     return FORM.get_title(form_id)
-    
+
 def get_form_date(form_id):
     """
     Return the date for a given form.
@@ -222,13 +222,13 @@ def get_form_date(form_id):
         return parser.parse(date_str)
     else:
         return None
-        
+
 def get_form_type(form_id):
     """
     Return the type for a given form.
     """
     return FORM.get_type(form_id)
-    
+
 def get_form_headings(form_id):
     """
     Return a list of headings for a given form.
@@ -240,13 +240,13 @@ def get_form_sections(form_id):
     Return a list of sections for a given form.
     """
     return FORM.get_sections(form_id)
-    
+
 def get_section_title(form_id, section):
     """
     Return the title for a given section.
     """
     return FORM.get_section_title(form_id, section)
-    
+
 def get_section_type(form_id, section):
     """
     Return the type for a given section.
@@ -267,7 +267,7 @@ def get_form_id(source):
         if str(attr.get_type()) == DEFINITION_KEY:
             return attr.get_value()
     return None
-            
+
 def get_form_citation(db, event):
     """
     Return the citation for this form event.  If there is more
@@ -282,7 +282,7 @@ def get_form_citation(db, event):
                 event.get_type().xml_str() == get_form_type(form_id)):
             return citation
     return None
-        
+
 def get_form_sources(db):
     """
     Return a list of form sources.  Each item in the list is a list

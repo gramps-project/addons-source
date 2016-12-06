@@ -80,7 +80,7 @@ class SelectForm(object):
         top.vbox.pack_start(label, 0, 0, 5)
         box = Gtk.Box()
         top.vbox.pack_start(box, 1, 1, 5)
-        
+
         self.model = Gtk.TreeStore(str, str)
 
         self.tree = Gtk.TreeView(model=self.model)

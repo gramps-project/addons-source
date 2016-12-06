@@ -493,7 +493,7 @@ class DetailsTab(GrampsTab):
             else:
                 section = FamilySection(self.dbstate, self.uistate, self.track,
                                         self.event, self.citation, self.form_id,
-                                        role)                
+                                        role)
             vbox.pack_start(section, False, False, 0)
             self.sections[role] = section
         scrollwin = Gtk.ScrolledWindow()
@@ -903,12 +903,12 @@ class PersonSection(Gtk.Box):
             for event_ref in obj.get_event_ref_list():
                 if (event_ref.ref == self.event.get_handle() and
                     event_ref.get_role() == self.role):
-                        
+
                     attrs = {}
                     for attr in event_ref.get_attribute_list():
                         attr_type = str(attr.get_type())
                         attrs[attr_type] = attr.get_value()
-                        
+
                     self.__populate(obj, attrs)
 
     def __populate(self, obj, attrs):
@@ -1068,12 +1068,12 @@ class FamilySection(Gtk.Box):
             for event_ref in obj.get_event_ref_list():
                 if (event_ref.ref == self.event.get_handle() and
                     event_ref.get_role() == self.role):
-                        
+
                     attrs = {}
                     for attr in event_ref.get_attribute_list():
                         attr_type = str(attr.get_type())
                         attrs[attr_type] = attr.get_value()
-                        
+
                     self.__populate(obj, attrs)
 
     def __populate(self, obj, attrs):
@@ -1108,7 +1108,7 @@ class FamilySection(Gtk.Box):
             ref_list = [event_ref for event_ref in obj.get_event_ref_list()
                                 if event_ref.ref != self.event.handle]
             family.set_event_ref_list(ref_list)
-            self.db.commit_family(family, trans)                
+            self.db.commit_family(family, trans)
 
 #------------------------------------------------------------------------
 #
