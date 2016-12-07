@@ -263,6 +263,8 @@ class AncestralCollapsibleTreeReport(Report):
                     '<html>\n' + \
                     '  <head>\n' + \
                     '    <title>' + title + '</title>\n' + \
+                    '    <meta http-equiv="X-UA-Compatible" ' + \
+                    'content="IE=Edge" />\n' + \
                     '    <meta http-equiv="Content-Type" ' + \
                     'content="text/html;charset=utf-8"/>\n' + \
                     '    <script type="text/javascript" ' + \
