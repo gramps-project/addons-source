@@ -32,6 +32,6 @@ register(REPORT,
                     'representation of ancestors (SVG) '
                     'represented as a Fan Chart from the D3.js '
                     'JavaScript library.'),
-    version = '1.0.18',
+    version = '1.0.19',
     gramps_target_version = "5.0",
 )
