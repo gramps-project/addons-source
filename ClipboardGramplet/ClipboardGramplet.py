@@ -52,7 +52,7 @@ def escape(data):
     """
     Remove newlines from text.
     """
-    if isinstance(data, "bytes"):
+    if isinstance(data, bytes):
         data = data.replace(b"0x0a", b"\\n")
     elif data:
         data = data.replace(chr(10), "\\n")
@@ -62,7 +62,7 @@ def unescape(data):
     """
     Replace newlines with \n text.
     """
-    if isinstance(data, "bytes"):
+    if isinstance(data, bytes):
         data = data.replace(b"\\n", b"0x0a")
     elif data:
         data = data.replace("\\n", "\\x0a")
