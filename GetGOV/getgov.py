@@ -620,11 +620,11 @@ class GetGOV(Gramplet):
                 place.set_name(place_name)
             else:
                 place.add_alternative_name(place_name)
-#       If there is a single name (no alternates) and lang is not blank or preference language, 
+#       If there is a single name (no alternates) and lang is not blank or preference language,
 #        then add a fake alternate name with preferences language as language. This makes Titles work better.
         curr_lang = config.get('preferences.place-lang')
         if count == 1 and len(curr_lang) == 2 :
-            
+
             if place_name.get_language() != None and place_name.get_language() != curr_lang :
                 curr_lang_place_name = self.__get_hasname(element)
                 curr_lang_place_name.set_language(curr_lang)

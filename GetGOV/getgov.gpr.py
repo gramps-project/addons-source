@@ -25,9 +25,9 @@
 #
 #------------------------------------------------------------------------
 
-register(GRAMPLET, 
-         id = "GetGOV Gramplet", 
-         name = _("GetGOV Gramplet"), 
+register(GRAMPLET,
+         id = "GetGOV Gramplet",
+         name = _("GetGOV Gramplet"),
          description = _("Gramplet to get places from the GOV database"),
          status = STABLE,
          version = '1.0.0',
@@ -40,5 +40,5 @@ register(GRAMPLET,
          expand = True,
          gramplet_title = _("GetGOV"),
          help_url="GetGOV Gramplet",
-         include_in_listing = False,
+         include_in_listing = True,
         )
