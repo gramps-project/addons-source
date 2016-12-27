@@ -88,7 +88,7 @@ msgstr "il %(ym_date)s"
 #: FamilyTree/FamilyTree.py:930
 #, python-format
 msgid "in %(y_date)s"
-msgstr "il %(y_date)s"
+msgstr "nel %(y_date)s"
 
 #: FamilyTree/FamilyTree.py:934
 #, python-format
@@ -146,7 +146,7 @@ msgstr "Numero Kekule di mariti"
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
-msgstr "Il numero Kekule del marito (famiglia principale). Scegli 0 per non mostrare il Kekule "
+msgstr "Il numero Kekule del marito (famiglia principale). Scegli 0 per non mostrarlo "
 "numbers"
 
 #: FamilyTree/FamilyTree.py:1061
@@ -199,7 +199,7 @@ msgstr "Mischia i colori"
 
 #: FamilyTree/FamilyTree.py:1078
 msgid "Whether to shuffle colors or order them in rainbow fashion."
-msgstr "Se migliare i colori o ordinarli a mo di arcobaleno"
+msgstr "Se mischiare i colori o ordinarli a mo di arcobaleno"
 
 #: FamilyTree/FamilyTree.py:1081
 msgid "Content"
@@ -267,7 +267,7 @@ msgstr "Usa sepoltura o cremazione se manca l'evento morte"
 
 #: FamilyTree/FamilyTree.py:1124
 msgid "Protect private items"
-msgstr "Progetti gli elementi privati"
+msgstr "Proteggi gli elementi privati"
 
 #: FamilyTree/FamilyTree.py:1129
 msgid "Print fields for missing information"
