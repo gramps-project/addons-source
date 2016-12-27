@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vincenzo Alfano <vinc.alfano@gmail.com>, YEAR.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 #
 #, fuzzy
 msgid ""
@@ -19,7 +19,7 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.gpr.py:3
 msgid "Family Tree"
-msgstr "Albero Genealogico"
+msgstr "Albero genealogico"
 
 #: FamilyTree/FamilyTree.gpr.py:4
 msgid "Produces a graphical family tree."
@@ -28,7 +28,7 @@ msgstr "Genera un albero genealogico grafico"
 #: FamilyTree/FamilyTree.py:102
 #, python-format
 msgid "Family Tree for %s"
-msgstr "Albero Genealogico per %s"
+msgstr "Albero genealogico per %s"
 
 #: FamilyTree/FamilyTree.py:668 FamilyTree/FamilyTree.py:673
 msgid "Unknown"
@@ -37,7 +37,7 @@ msgstr "Sconosciuto"
 #: FamilyTree/FamilyTree.py:675
 #, python-format
 msgid "%(father)s and %(mother)s"
-msgstr "%(padre)s e %(madre)s"
+msgstr "%(father)s e %(mother)s"
 
 #: FamilyTree/FamilyTree.py:682
 msgid "Anonymous"
@@ -53,7 +53,7 @@ msgstr "battezzato"
 
 #: FamilyTree/FamilyTree.py:909
 msgid "died"
-msgstr "morto"
+msgstr "deceduto"
 
 #: FamilyTree/FamilyTree.py:911
 msgid "buried"
@@ -116,7 +116,7 @@ msgstr "Opzioni per l'albero"
 
 #: FamilyTree/FamilyTree.py:1045
 msgid "Center Family"
-msgstr "Famiglia Principale"
+msgstr "Famiglia principale"
 
 #: FamilyTree/FamilyTree.py:1046
 msgid "The center family for the tree"
@@ -124,7 +124,7 @@ msgstr "La famiglia principale dell'albero"
 
 #: FamilyTree/FamilyTree.py:1049
 msgid "Ancestor Generations"
-msgstr "Generazioni Ascendenti"
+msgstr "Generazioni ascendenti"
 
 #: FamilyTree/FamilyTree.py:1050
 msgid "The number of ancestor generations to include in the tree"
@@ -132,7 +132,7 @@ msgstr "Il numero di generazioni di antenati da includere nell'albero"
 
 #: FamilyTree/FamilyTree.py:1053
 msgid "Descendant Generations"
-msgstr "Generazioni Discendenti"
+msgstr "Generazioni discendenti"
 
 #: FamilyTree/FamilyTree.py:1054
 msgid "The number of descendant generations to include in the tree"
@@ -140,7 +140,7 @@ msgstr "Il numero di generazioni di discendenti da includere nell'albero"
 
 #: FamilyTree/FamilyTree.py:1057
 msgid "Kekule number of husband"
-msgstr "Numero kekule di mariti"
+msgstr "Numero Kekule di mariti"
 
 #: FamilyTree/FamilyTree.py:1058
 msgid ""
@@ -207,31 +207,31 @@ msgstr "Contenuto"
 
 #: FamilyTree/FamilyTree.py:1083
 msgid "Use call name"
-msgstr "Usa soprannomi"
+msgstr "Usa pseudonimo"
 
 #: FamilyTree/FamilyTree.py:1085
 msgid "Don't use call name"
-msgstr "Non usare soprannomi"
+msgstr "Non usare pseudonimi"
 
 #: FamilyTree/FamilyTree.py:1086
 msgid "Replace first name with call name"
-msgstr "Sostituisci il nome con il soprannome"
+msgstr "Sostituisci il nome con lo pseudonimo"
 
 #: FamilyTree/FamilyTree.py:1087
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Sottolinea il soprannome nel nome / aggiungi il soprannome al nome"
+msgstr "Sottolinea lo pseudonimo nel nome / aggiungi lo pseudonimo al nome"
 
 #: FamilyTree/FamilyTree.py:1093
 msgid "Include Occupation"
-msgstr "Includi Occupazione"
+msgstr "Includi occupazione"
 
 #: FamilyTree/FamilyTree.py:1096
 msgid "Include Notes"
-msgstr "Includi Note"
+msgstr "Includi note"
 
 #: FamilyTree/FamilyTree.py:1099
 msgid "Include Residence"
-msgstr "Includi Residenza"
+msgstr "Includi residenza"
 
 #: FamilyTree/FamilyTree.py:1102
 msgid "Print event data (dead person)"
@@ -267,7 +267,7 @@ msgstr "Usa sepoltura o cremazione se manca l'evento morte"
 
 #: FamilyTree/FamilyTree.py:1124
 msgid "Protect private items"
-msgstr "Progetti gli item privati"
+msgstr "Progetti gli elementi privati"
 
 #: FamilyTree/FamilyTree.py:1129
 msgid "Print fields for missing information"
@@ -283,7 +283,7 @@ msgstr "Includi descrizione dell'evento"
 
 #: FamilyTree/FamilyTree.py:1136
 msgid "Text Options"
-msgstr "Opzioni di Testo"
+msgstr "Opzioni di testo"
 
 #: FamilyTree/FamilyTree.py:1138
 msgid "Title text"
