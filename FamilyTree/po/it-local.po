@@ -146,8 +146,7 @@ msgstr "Numero Kekule di mariti"
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
-msgstr "Il numero Kekule del marito (famiglia principale). Scegli 0 per non mostrarlo "
-"numbers"
+msgstr "Il numero Kekule del marito (famiglia principale). Scegli 0 per non mostrarlo"
 
 #: FamilyTree/FamilyTree.py:1061
 msgid "Scale to fit on a single page"
