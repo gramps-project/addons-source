@@ -184,7 +184,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         Display the given file.
         """
         full_path = media_path_full(self.db, path)
-        open_file_with_default_application(full_path)
+        open_file_with_default_application(full_path, self.uistate)
 
     def export_results(self, button):
         """
