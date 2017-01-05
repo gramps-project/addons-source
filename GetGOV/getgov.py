@@ -330,7 +330,6 @@ class GetGOV(Gramplet):
         visited = {}
 
         type_dic = dict()
-        
         type_url = 'http://gov.genealogy.net/types.owl/'
         response = urlopen(type_url)
         data = response.read()
@@ -440,7 +439,7 @@ class GetGOV(Gramplet):
                 elif tuple([type_code, 'de']) in type_dic:
                     place_type.set_from_xml_str(type_dic.get(tuple([type_code,'de']),'No Type'))
                 elif tuple([type_code, 'en']) in type_dic:
-                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'en']),'No Type'))          
+                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'en']),'No Type'))
         return place_type
 
     def __get_position(self, element):
