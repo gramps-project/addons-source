@@ -65,257 +65,6 @@ _ = _trans.gettext
 # Constants
 #
 #------------------------------------------------------------------------
-TYPES = {"1": "Amt",
-"2": "Amtsbezirk",
-"3": "Magistrates' Court",
-"4": "Bauerschaft",
-"5": "Bezirk",
-"6": "Bistum",
-"7": "federal state",
-"8": "castle",
-"9": "deanery",
-"10": "Departement",
-"11": "diocese",
-"12": "Dompfarrei",
-"13": "Filiale",
-"14": "Flecken",
-"15": "field name",
-"16": "free state",
-"17": "building",
-"18": "municipality",
-"19": "Gerichtsbezirk",
-"20": "Grafschaft",
-"21": "manor (building)",
-"22": "dominion",
-"23": "duchy",
-"24": "Farm",
-"25": "canton",
-"26": "church",
-"27": "Kirchenkreis",
-"28": "Kirchenprovinz",
-"29": "parish",
-"30": "monastery (building)",
-"31": "kingdom",
-"32": "county (generic)",
-"33": "Kurfürstentum",
-"34": "Land",
-"35": "Landeskirche",
-"36": "rural county (rural)",
-"37": "Oberamt",
-"38": "oblast",
-"39": "Ort",
-"40": "Ortsteil",
-"41": "Pfarr-Rektorat",
-"42": "Pfarrei",
-"43": "Pfarrkuratie",
-"44": "Pfarrverband",
-"45": "province",
-"46": "administrative district",
-"47": "historical region",
-"48": "Samtgemeinde",
-"49": "Sprengel",
-"50": "country",
-"51": "town",
-"52": "Stadtbezirk",
-"53": "urban county (city)",
-"54": "Stadtteil",
-"55": "village",
-"56": "republic",
-"57": "Amt",
-"58": "union republic",
-"59": "voivodship",
-"60": "principality",
-"61": "grand duchy",
-"62": "margravate",
-"63": "Rayon",
-"64": "Vorwerk",
-"65": "Pfarrdorf",
-"66": "Kirchdorf",
-"67": "solitude",
-"68": "Hauptort",
-"69": "hamlet",
-"70": "bailiwick",
-"71": "Staatenbund",
-"72": "people's republic",
-"73": "Landdrostei",
-"74": "deprecated",
-"75": "Güterdistrikt",
-"76": "Adeliges Gut",
-"77": "Reichskreis",
-"78": "Amt (administrative division)",
-"79": "hundred",
-"80": "Landschaft",
-"81": "Kloster",
-"82": "Domkapitel",
-"83": "Hanseatic city",
-"84": "Kirchspielvogtei",
-"85": "Landgemeinde",
-"86": "Teilprovinz",
-"87": "mill",
-"88": "Judet",
-"89": "cemetery",
-"90": "abandoned place",
-"91": "Bistumsregion",
-"92": "Kirchengemeinde",
-"93": "Reichsstadt",
-"94": "Verwaltungsgemeinschaft",
-"95": "county-level city",
-"96": "archbishopric",
-"97": "Bürgermeisterei",
-"98": "veraltet",
-"99": "captaincy",
-"100": "Kreishauptmannschaft",
-"101": "Kreisdirektion",
-"102": "forester's house",
-"103": "civil registry",
-"104": "veraltet",
-"105": "Landgericht",
-"107": "island",
-"108": "Gutsbezirk",
-"109": "Forstgutsbezirk",
-"110": "district office",
-"111": "Schloss",
-"112": "Gespanschaft",
-"113": "comitatus",
-"114": "Vest",
-"115": "girininkija",
-"116": "Oberförsterei",
-"117": "Unterförsterei",
-"118": "train station",
-"119": "Haltestelle",
-"120": "settlement",
-"121": "colony",
-"122": "Verbandsgemeinde",
-"124": "Abbey",
-"125": "imperial abbey",
-"126": "Syssel",
-"127": "Verwaltungsverband",
-"128": "Landgrafschaft",
-"129": "settlement",
-"130": "state",
-"131": "Weichbild",
-"133": "Region",
-"134": "arrondissement",
-"135": "canton",
-"136": "commune",
-"137": "Region",
-"138": "Oberlandratsbezirk",
-"139": "Einschicht",
-"140": "Einheitsgemeinde",
-"142": "Reichsgau",
-"143": "kommune",
-"144": "Ortschaft",
-"145": "Markt",
-"146": "Bezirkshauptmannschaft/Politischer Bezirk",
-"147": "veraltet",
-"148": "Erfüllende Gemeinde",
-"149": "Landratsamt",
-"150": "Stadt",
-"151": "Oberlandesgericht",
-"152": "Landbürgermeisterei",
-"153": "Kommissariat",
-"154": "Honschaft",
-"155": "Region",
-"156": "Gemeindebezirk",
-"157": "Guberniya",
-"158": "Gemeindeteil",
-"159": "Khutor",
-"160": "Sowjetrepublik",
-"161": "Verwaltungsbezirk",
-"162": "Stadt- und Landgemeinde",
-"163": "Ortsgemeinde",
-"164": "Ortsbezirk",
-"165": "Gnotschaft",
-"166": "ruins",
-"167": "mandate territory",
-"168": "Provinz",
-"169": "Gemeinde",
-"170": "Distrikt",
-"171": "Stadthauptmannschaft",
-"172": "Katastralgemeinde",
-"173": "Райхскомісаріат",
-"174": "Генеральбецірк",
-"175": "Kreisgebiet",
-"176": "protectorate",
-"177": "Reichsritterschaft",
-"178": "Ritterkanton",
-"179": "Ritterkreis",
-"180": "Marktgemeinde",
-"181": "Rotte",
-"182": "Erzstift",
-"183": "Hochstift",
-"184": "Kammerschreiberei",
-"185": "Klosteramt",
-"186": "Rentkammer",
-"187": "zu überprüfen",
-"188": "Ritterorden",
-"189": "Großpriorat",
-"190": "Ballei",
-"191": "Kommende",
-"192": "zone of occupation",
-"193": "Alm",
-"194": "Distrikts-Amt",
-"195": "veraltet",
-"196": "veraltet",
-"197": "veraltet",
-"198": "veraltet (früher: Bundesverwaltungsgericht)",
-"199": "veraltet (früher: Landesverwaltungsgericht)",
-"200": "veraltet (früher: Verwaltungsgericht)",
-"201": "Landeskommissarbezirk",
-"202": "Amtsgerichtsbezirk",
-"203": "Domanialamt",
-"204": "Ritterschaftliches Amt",
-"205": "selsoviet",
-"206": "Regionalkirchenamt",
-"207": "Oberamtsbezirk",
-"210": "Kirchenbund",
-"211": "Landgebiet",
-"212": "Landherrenschaft",
-"213": "gorsoviet",
-"214": "realm",
-"215": "Reichshälfte",
-"216": "Landesteil",
-"217": "Direktionsbezirk",
-"218": "Stadt",
-"219": "Expositur",
-"221": "Fylke",
-"222": "Kreis",
-"223": "Landgericht",
-"224": "Pfleggericht",
-"225": "Rentamt",
-"226": "Obmannschaft",
-"227": "Kirchspiellandgemeinde",
-"228": "Gerichtsamt",
-"229": "Häusergruppe",
-"230": "scattered settlement",
-"231": "Höfe",
-"232": "Randort",
-"233": "Flecken",
-"234": "borough",
-"235": "unitary authority",
-"236": "Häuser",
-"237": "селищна рада",
-"238": "селище міського типу",
-"239": "Verwaltungsamt",
-"240": "uyezd",
-"241": "Volost",
-"242": "Katasteramt",
-"243": "Propstei",
-"244": "Nebenkirche",
-"245": "chapel",
-"246": "Gromada",
-"247": "Ortsteil",
-"248": "Schulzenamt",
-"249": "unbenutzt (4)",
-"250": "unbenutzt (5)",
-"251": "autonome Gemeinschaft",
-"252": "local government",
-"253": "unbenutzt (6)",
-"254": "Окръг",
-"255": "Stadtgut",
-"256": "Landesbezirk",
-"257": "Landgemeinde PL",
-"258": "Stadtgemeinde"}
 
 ISO_CODE_LOOKUP = {
 "aar": "aa",
@@ -522,6 +271,7 @@ ISO_CODE_LOOKUP = {
 "zha": "za",
 "zho": "zh",
 "zul": "zu"}
+
 #------------------------------------------------------------------------
 #
 # GetGOV class
@@ -547,7 +297,7 @@ class GetGOV(Gramplet):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         vbox.set_spacing(4)
 
-        label = Gtk.Label(_('Enter GOV id:'))
+        label = Gtk.Label(_('Enter GOV-id:'))
         label.set_halign(Gtk.Align.START)
 
         self.entry = Gtk.Entry()
@@ -574,16 +324,34 @@ class GetGOV(Gramplet):
     def __get_places(self, obj):
         gov_id = self.entry.get_text()
         to_do = [gov_id]
+        preferred_lang = config.get('preferences.place-lang')
+        if len(preferred_lang) != 2:
+            preferred_lang = 'de'
         visited = {}
 
-        with DbTxn(_('Add GOV place %s') % gov_id, self.dbstate.db) as trans:
+        type_dic = dict()
+        type_url = 'http://gov.genealogy.net/types.owl/'
+        response = urlopen(type_url)
+        data = response.read()
+        dom = parseString(data)
+        for group in dom.getElementsByTagName('owl:Class') :
+            url_value = group.attributes['rdf:about'].value
+            group_number = 'j.0:' + url_value.split('#')[1]
+            for element in dom.getElementsByTagName(group_number):
+                type_number = element.attributes['rdf:about'].value.split('#')[1]
+                for pname in element.getElementsByTagName('rdfs:label'):
+                    type_lang = pname.attributes['xml:lang'].value
+                    type_text = pname.childNodes[0].data
+                    type_dic[type_number,type_lang] = type_text
+
+        with DbTxn(_('Add GOV-id place %s') % gov_id, self.dbstate.db) as trans:
             while to_do:
                 gov_id = to_do.pop()
                 place = self.dbstate.db.get_place_from_gramps_id(gov_id)
                 if place is not None:
                     visited[gov_id] = (place, [])
                 else:
-                    place, ref_list = self.__get_place(gov_id)
+                    place, ref_list = self.__get_place(gov_id, type_dic, preferred_lang)
                     self.dbstate.db.add_place(place, trans)
                     visited[gov_id] = (place, ref_list)
                     for ref, date in ref_list:
@@ -600,7 +368,7 @@ class GetGOV(Gramplet):
                         place.add_placeref(place_ref)
                     self.dbstate.db.commit_place(place, trans)
 
-    def __get_place(self, gov_id):
+    def __get_place(self, gov_id, type_dic, preferred_lang):
         gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + gov_id
 
         response = urlopen(gov_url)
@@ -619,19 +387,14 @@ class GetGOV(Gramplet):
             if count == 1:
                 place.set_name(place_name)
             else:
-                place.add_alternative_name(place_name)
-#       If there is a single name (no alternates) and lang is not blank or preference language,
-#        then add a fake alternate name with preferences language as language. This makes Titles work better.
-        curr_lang = config.get('preferences.place-lang')
-        if count == 1 and len(curr_lang) == 2 :
-
-            if place_name.get_language() != None and place_name.get_language() != curr_lang :
-                curr_lang_place_name = self.__get_hasname(element)
-                curr_lang_place_name.set_language(curr_lang)
-                place.add_alternative_name(curr_lang_place_name)
-#
+                if place_name.lang == preferred_lang:
+                    place.add_alternative_name(place.get_name())
+                    place.set_name(place_name)
+                else:
+                    place.add_alternative_name(place_name)
         for element in top[0].getElementsByTagName('gov:hasType'):
-            place_type = self.__get_hastype(element)
+            curr_lang = place.get_name().get_language()
+            place_type = self.__get_hastype(element,curr_lang, type_dic, preferred_lang)
             place.set_type(place_type)
         for element in top[0].getElementsByTagName('gov:position'):
             latitude, longitude = self.__get_position(element)
@@ -656,13 +419,12 @@ class GetGOV(Gramplet):
                  name.set_value(value[0].childNodes[0].data)
             language = pname[0].getElementsByTagName('gov:language')
             if len(language):
-                name.set_language(ISO_CODE_LOOKUP.get(language[0].childNodes[0].data))
-#                name.set_language(language[0].childNodes[0].data)
+                 name.set_language(ISO_CODE_LOOKUP.get(language[0].childNodes[0].data))
             date = self.__get_date_range(pname[0])
             name.set_date_object(date)
         return name
 
-    def __get_hastype(self, element):
+    def __get_hastype(self, element, curr_lang, type_dic, preferred_lang):
         place_type = PlaceType()
         ptype = element.getElementsByTagName('gov:PropertyType')
         if len(ptype):
@@ -670,7 +432,14 @@ class GetGOV(Gramplet):
             if len(value):
                 type_url = value[0].attributes['rdf:resource'].value
                 type_code = type_url.split('#')[1]
-                place_type.set_from_xml_str(TYPES.get(type_code, 'Unknown'))
+                if tuple([type_code, curr_lang]) in type_dic:
+                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,curr_lang]),'No Type'))
+                elif tuple([type_code, preferred_lang]) in type_dic:
+                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,preferred_lang]),'No Type'))
+                elif tuple([type_code, 'de']) in type_dic:
+                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'de']),'No Type'))
+                elif tuple([type_code, 'en']) in type_dic:
+                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'en']),'No Type'))
         return place_type
 
     def __get_position(self, element):
