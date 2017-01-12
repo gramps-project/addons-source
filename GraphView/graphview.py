@@ -63,6 +63,8 @@ from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
+from gramps.gen.config import config
+from gramps.gui.dialog import OptionDialog
 
 if win():
     DETACHED_PROCESS = 8
@@ -128,10 +130,24 @@ class GraphView(NavigationView):
                                  'interface.graphview-home-person-color')
 
         self.dbstate = dbstate
+        self.uistate = uistate
         self.graph_widget = None
         self.dbstate.connect('database-changed', self.change_db)
 
         self.additional_uis.append(self.additional_ui())
+
+        self.define_print_actions()
+
+    def define_print_actions(self):
+        """
+        Associate the print button to the PrintView action.
+        """
+        self._add_action('PrintView', 'document-print', _("_Print..."),
+                         accel="<PRIMARY>P",
+                         tip=_("Save the dot file for a later print.\n"
+                               "This will save a .gv file and a svg file.\n"
+                               "You must select a .gv file"),
+                         callback=self.printview)
 
     def _connect_db_signals(self):
         """
@@ -194,12 +210,20 @@ class GraphView(NavigationView):
                 <separator/>
               </placeholder>
             </menu>
+            <menu action="EditMenu">
+              <placeholder name="CommonEdit">
+                <menuitem action="PrintView"/>
+              </placeholder>
+            </menu>
           </menubar>
           <toolbar name="ToolBar">
             <placeholder name="CommonNavigation">
               <toolitem action="Back"/>
               <toolitem action="Forward"/>
               <toolitem action="HomePerson"/>
+            </placeholder>
+            <placeholder name="CommonEdit">
+              <toolitem action="PrintView"/>
             </placeholder>
           </toolbar>
         </ui>'''
@@ -337,6 +361,50 @@ class GraphView(NavigationView):
                 0, 'interface.graphview-home-person-color')
 
         return _('Colors'), grid
+#-------------------------------------------------------------------------
+#
+# Printing functionalities
+#
+#-------------------------------------------------------------------------
+    def printview(self, obj):
+        """
+        Save the dot file for a later printing with an appropriate tool.
+        """
+        # Ask for the dot file name
+        filter = Gtk.FileFilter()
+        filter.add_pattern("*.gv")
+        dot = Gtk.FileChooserDialog(
+            _("Select a dot file name"),
+            action=Gtk.FileChooserAction.SAVE,
+            buttons=(_('_Cancel'), Gtk.ResponseType.CANCEL,
+                     _('_Apply'), Gtk.ResponseType.OK))
+        mpath = config.get('paths.report-directory')
+        dot.set_current_folder(os.path.dirname(mpath))
+        dot.set_filter(filter)
+
+        status = dot.run()
+        if status == Gtk.ResponseType.OK:
+            val = dot.get_filename()
+            # selected path is an existing file and we need a file
+            if os.path.isfile(val):
+                aaa = OptionDialog(_('File already exists'), # parent-OK
+                                   _('You can choose to either overwrite the '
+                                     'file, or change the selected filename.'),
+                                   _('_Overwrite'), None,
+                                   _('_Change filename'), None,
+                                   parent=self.uistate.window)
+
+                if aaa.get_response() == Gtk.ResponseType.YES:
+                    dot.destroy()
+                    self.printview(obj)
+                    return
+            svg = val.replace('.gv', '.svg')
+            if val:
+                with open(val,'w') as g,\
+                     open(svg,'w') as s:
+                        g.write(self.graph_widget.dot_data.decode('utf-8'))
+                        s.write(self.graph_widget.svg_data.decode('utf-8'))
+        dot.destroy()
 
 #-------------------------------------------------------------------------
 #
@@ -390,18 +458,18 @@ class GraphWidget(object):
         dot.build_graph(active_person)
 
         # Build the rest of the widget by parsing SVG data from Graphviz
-        dot_data = dot.get_dot().encode('utf8')
+        self.dot_data = dot.get_dot().encode('utf8')
         if win():
-            svg_data = Popen(['dot', '-Tsvg'],
+            self.svg_data = Popen(['dot', '-Tsvg'],
                              creationflags=DETACHED_PROCESS,
                              stdin=PIPE,
                              stdout=PIPE,
-                             stderr=PIPE).communicate(input=dot_data)[0]
+                             stderr=PIPE).communicate(input=self.dot_data)[0]
         else:
-            svg_data = Popen(['dot', '-Tsvg'], 
-                        stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
+            self.svg_data = Popen(['dot', '-Tsvg'],
+                        stdin=PIPE, stdout=PIPE).communicate(input=self.dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
-        parser.parse(svg_data)
+        parser.parse(self.svg_data)
         window = self.canvas.get_parent()
 
         # The scroll_to method will try and put the active person in the top
