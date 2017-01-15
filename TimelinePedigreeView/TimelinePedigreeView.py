@@ -1082,8 +1082,8 @@ class TimelinePedigreeView(NavigationView):
         """
         person = self.dbstate.db.get_person_from_handle(person_handle)
         if person:
-            clipboard = Gtk.clipboard_get(Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_person(person, 11))
+            clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+            clipboard.set_text(self.format_helper.format_person(person, 11), -1)
             return True
         return False
 
@@ -1094,8 +1094,8 @@ class TimelinePedigreeView(NavigationView):
         """
         family = self.dbstate.db.get_family_from_handle(family_handle)
         if family:
-            clipboard = Gtk.clipboard_get(Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_relation(family, 11))
+            clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+            clipboard.set_text(self.format_helper.format_relation(family, 11), -1)
             return True
         return False
 
