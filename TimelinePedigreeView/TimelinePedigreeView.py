@@ -21,8 +21,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id: TimelinePedigreeView.py 13881 2009-12-21 13:43:50Z flix007 $
-
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -1090,8 +1088,8 @@ class TimelinePedigreeView(NavigationView):
         """
         person = self.dbstate.db.get_person_from_handle(person_handle)
         if person:
-            clipboard = Gtk.clipboard_get(Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_person(person, 11))
+            clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+            clipboard.set_text(self.format_helper.format_person(person, 11), -1)
             return True
         return False
 
@@ -1102,8 +1100,8 @@ class TimelinePedigreeView(NavigationView):
         """
         family = self.dbstate.db.get_family_from_handle(family_handle)
         if family:
-            clipboard = Gtk.clipboard_get(Gdk.SELECTION_CLIPBOARD)
-            clipboard.set_text(self.format_helper.format_relation(family, 11))
+            clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+            clipboard.set_text(self.format_helper.format_relation(family, 11), -1)
             return True
         return False
 
