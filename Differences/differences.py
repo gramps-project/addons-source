@@ -46,7 +46,7 @@ from gramps.gen.plug.menu import (BooleanOption, DestinationOption, StringOption
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gen.merge.diff import diff_dbs
+from gramps.gen.merge.diff import diff_dbs, to_struct
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.simple import SimpleAccess
 
@@ -142,7 +142,7 @@ class DifferencesReport(Report):
                     else:
                         self.start_list(self.doc, "%s: %s" % (obj_type, item1.get_name()),
                                         "Database", "File")
-                    self.report_diff(obj_type, item1.to_struct(), item2.to_struct(), self.doc)
+                    self.report_diff(obj_type, to_struct(item1), to_struct(item2), self.doc)
                 self.doc.end_table()
             else:
                 self.doc.start_table('DiffTable','DIFF-Table3')

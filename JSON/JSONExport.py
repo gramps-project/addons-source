@@ -1,7 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2013       Doug Blank <doug.blank@gmail.com>
-# Copyright (C) 2016       Nick Hall
+# Copyright (C) 2016-2017  Nick Hall
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,19 +21,11 @@
 
 #------------------------------------------------------------------------
 #
-# Python modules
-#
-#------------------------------------------------------------------------
-import json
-
-#------------------------------------------------------------------------
-#
 # Gramps modules
 #
 #------------------------------------------------------------------------
 from gramps.gen.plug.utils import OpenFileOrStdout
-from gramps.gen.lib import (Note, Person, Event, Family, Repository, Place,
-                            Media, Source, Tag, Citation)
+from gramps.gen.lib.serialize import to_json
 
 def exportData(db, filename,
                error_dialog=None, option_box=None, callback=None):
@@ -140,4 +132,4 @@ def write_line(fp, obj):
     """
     Write a single object to the file.
     """
-    fp.write(json.dumps(obj.to_struct()) + "\n")
+    fp.write(to_json(obj) + "\n")
