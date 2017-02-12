@@ -23,20 +23,10 @@
 
 #-------------------------------------------------------------------------
 #
-# python modules
-#
-#-------------------------------------------------------------------------
-import re
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
-
-#-------------------------------------------------------------------------
-#
 # gnome/gtk
 #
 #-------------------------------------------------------------------------
 from gi.repository import Gtk
-from gi.repository import GObject
 
 #-------------------------------------------------------------------------
 #
@@ -47,11 +37,9 @@ from gramps.gen.db import DbTxn
 from gramps.gen.const import URL_MANUAL_PAGE
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.display import display_help
-from gramps.plugins.lib.libplaceimport import PlaceImport
-from gramps.gen.utils.location import get_main_location
 from gramps.gen.display.place import displayer as place_displayer
-from gramps.gen.lib import (PlaceType, PlaceName, Note, NoteType, StyledText,
-StyledTextTag, StyledTextTagType, Tag)
+from gramps.gen.lib import (Note, NoteType, StyledText, StyledTextTag,
+                            StyledTextTagType, Tag)
 
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
@@ -59,6 +47,8 @@ from gramps.gui.utils import ProgressMeter
 from gramps.gui.listmodel import ListModel
 from gramps.gui.glade import Glade
 
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.translation.gettext
 
 WIKI_HELP_PAGE = '%s_-_Tools' % URL_MANUAL_PAGE
 WIKI_HELP_SEC = _('manual|Check_place_titles')
@@ -89,23 +79,22 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         #clean = self.options.handler.options_dict['clean']
 
         self.db = dbstate.db
-        self.selection = None
-        self.total = self.db.get_number_of_places()
 
+        self.total = self.db.get_number_of_places()
         self.progress = ProgressMeter(_('Checking Place Titles'), '')
         self.progress.set_pass(_('Looking for place fields'),
                                self.total)
 
         self.name_list = []
-        plist = self.db.get_place_handles(True)
 
-        for handle in plist:
-            title = self.db.get_raw_place_data(handle)[2]
+        for handle in self.db.get_place_handles(True):
             self.progress.step()
             place = self.db.get_place_from_handle(handle)
+            title = place.title
             descr = place_displayer.display(self.db, place)
-            if title != (descr and ""):
-                self.name_list.append((title, descr))
+            if title != "":
+                self.name_list.append((handle.decode('utf8'), title, descr))
+
         self.progress.close()
 
         if self.name_list:
@@ -139,7 +128,6 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         self.copy_button = top_dialog.get_object('checkbutton2')
         self.tag_button = top_dialog.get_object('checkbutton3')
 
-        #GObject.TYPE_BOOLEAN, GObject.TYPE_STRING, GObject.TYPE_STRING
         self.treeview = top_dialog.get_object("list")
 
         self.r = Gtk.CellRendererToggle()
@@ -147,42 +135,34 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         self.r.set_property('radio', True)
         self.r.connect('toggled', self.toggled)
 
-        c = Gtk.TreeViewColumn(_('Select'), self.r, active=0)
+        c = Gtk.TreeViewColumn(_('Select'), self.r, active=1)
         self.treeview.append_column(c)
 
         c = Gtk.TreeViewColumn(_('Database'),
-                               Gtk.CellRendererText(),text=1)
+                               Gtk.CellRendererText(),text=2)
         self.treeview.append_column(c)
 
         c = Gtk.TreeViewColumn(_('Display'),
-                               Gtk.CellRendererText(),text=2)
+                               Gtk.CellRendererText(),text=3)
         self.treeview.append_column(c)
 
         self.selection = self.treeview.get_selection()
 
-        self.model = Gtk.ListStore(GObject.TYPE_BOOLEAN, GObject.TYPE_STRING,
-                                   GObject.TYPE_STRING)
+        self.model = Gtk.ListStore(str, bool, str, str)
 
         self.treeview.set_model(self.model)
 
-        self.iter_list = []
         self.progress.set_pass(_('Building display'), len(self.name_list))
 
-        for name in self.name_list:
-            handle = self.model.append()
-            self.model.set_value(handle,0,True)
-            self.model.set_value(handle,1, str(name[0]))
-            self.model.set_value(handle,2, str(name[1]))
-            self.iter_list.append(handle)
+        for handle, title, descr in self.name_list:
+            self.model.append([handle, title == descr, title, descr])
             self.progress.step()
         self.progress.close()
 
         self.show()
 
-    def toggled(self, cell, path_string):
-        path = tuple(map(int, path_string.split(':')))
-        row = self.model[path] #pylint: Value 'self.model' is unsubscriptable
-        row[0] = not row[0]
+    def toggled(self, cell, path):
+        self.model[path][1] = not self.model[path][1]
 
     def build_menu_names(self, obj):
         return (self.label, None)
@@ -196,6 +176,8 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         clean = self.clear_button.get_active()
         copy = self.copy_button.get_active()
         tag = self.tag_button.get_active()
+        if not (copy or clean or tag):
+            return
 
         if copy:
             my_data = _("Places checking\n")
