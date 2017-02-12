@@ -94,7 +94,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
             place = self.db.get_place_from_handle(handle)
             title = place.title
             descr = place_displayer.display(self.db, place)
-            if title == ("" or descr):
+            if title != (descr and ""):
                 count += 1
             if title != "":
                 self.name_list.append((handle.decode('utf8'), title, descr))
