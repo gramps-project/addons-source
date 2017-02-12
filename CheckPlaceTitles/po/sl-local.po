@@ -1,0 +1,123 @@
+# Slovenian translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (c) 2007 gramps-project
+# Bernard Banko <beernarrd (at) gmail.com>, 2007-2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 10:24+0100\n"
+"PO-Revision-Date: 2016-02-27 23:28+0200\n"
+"Last-Translator: Bernard Banko <beernarrd (at) gmail.com>\n"
+"Language-Team: lugos\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:64
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:79
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:95
+msgid "Checking Place Titles"
+msgstr "Preverjanje nazivov krajev"
+
+#: CheckPlaceTitles/checkplacetitles.py:96
+msgid "Looking for place fields"
+msgstr "Iskanje polj za kraje"
+
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:119
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:120
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:150
+msgid "Select"
+msgstr "Izberi"
+
+#: CheckPlaceTitles/checkplacetitles.py:153
+#, fuzzy
+msgid "Database"
+msgstr "Pot do zbirke podatkov"
+
+#: CheckPlaceTitles/checkplacetitles.py:157
+msgid "Display"
+msgstr "Prikaži"
+
+#: CheckPlaceTitles/checkplacetitles.py:169
+msgid "Building display"
+msgstr "Izdelava prikaza"
+
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Places checking\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:206
+#, python-format
+msgid "'%(current)s' was '%(was)s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:209
+#, python-format
+msgid "Clean up '%s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:213
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:227
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:250
+msgid "Create a copy via a new Note"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:257
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Označi"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "_Uveljavi spremembe in zapri"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""

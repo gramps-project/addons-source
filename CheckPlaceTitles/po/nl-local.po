@@ -1,0 +1,158 @@
+# Dutch translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010 , 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013
+#
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             merkpunt
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        beginpersoon : (EDR)
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt
+# count		     aantal maal
+# lineage	     lijn
+# locality	     plaats
+# u gebruiken
+# telkens werkwoord achteraan plaatsen
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 10:11+0100\n"
+"PO-Revision-Date: 2017-01-08 20:02+0100\n"
+"Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
+"Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:64
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:79
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:95
+msgid "Checking Place Titles"
+msgstr "Nakijken locatienamen"
+
+#: CheckPlaceTitles/checkplacetitles.py:96
+msgid "Looking for place fields"
+msgstr "Naar locatievelden zoeken"
+
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:119
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:120
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:150
+msgid "Select"
+msgstr "Selecteren"
+
+#: CheckPlaceTitles/checkplacetitles.py:153
+msgid "Database"
+msgstr "Gegevensbestand"
+
+# De weergave van Datums en kalenders, werkbalk en statusbalk.
+#: CheckPlaceTitles/checkplacetitles.py:157
+msgid "Display"
+msgstr "Weergave"
+
+#: CheckPlaceTitles/checkplacetitles.py:169
+msgid "Building display"
+msgstr "Opbouwen weergave"
+
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Places checking\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:206
+#, python-format
+msgid "'%(current)s' was '%(was)s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:209
+#, python-format
+msgid "Clean up '%s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:213
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:227
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:250
+msgid "Create a copy via a new Note"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:257
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Markeren"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "Wijzigingen _accepteren en sluiten"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""

@@ -1,0 +1,141 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2016 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2014.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 10:24+0100\n"
+"PO-Revision-Date: 2017-01-24 17:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr "Vérification du titre des lieux"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr "Vérification des titres pour les lieux"
+
+#: CheckPlaceTitles/checkplacetitles.py:64
+msgid "manual|Check_place_titles"
+msgstr "Vérifier_les_titres_des_lieux"
+
+#: CheckPlaceTitles/checkplacetitles.py:79
+msgid "Check Place title"
+msgstr "Vérifie le titre du lieu"
+
+#: CheckPlaceTitles/checkplacetitles.py:95
+msgid "Checking Place Titles"
+msgstr "Vérification des titres des lieux"
+
+#: CheckPlaceTitles/checkplacetitles.py:96
+msgid "Looking for place fields"
+msgstr "Vérification des champs du lieu"
+
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "Differences"
+msgstr "Différences"
+
+#: CheckPlaceTitles/checkplacetitles.py:119
+msgid "No need modifications"
+msgstr "Aucune modification nécessaire"
+
+#: CheckPlaceTitles/checkplacetitles.py:120
+msgid "No changes need."
+msgstr "Aucun changement proposé."
+
+#: CheckPlaceTitles/checkplacetitles.py:150
+msgid "Select"
+msgstr "Sélectionner"
+
+# master
+#: CheckPlaceTitles/checkplacetitles.py:153
+msgid "Database"
+msgstr "Base de données"
+
+#: CheckPlaceTitles/checkplacetitles.py:157
+msgid "Display"
+msgstr "Affichage"
+
+# Substantif (GNOME fr)
+#: CheckPlaceTitles/checkplacetitles.py:169
+msgid "Building display"
+msgstr "Chargement en cours"
+
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Places checking\n"
+msgstr "Vérification du lieu\n"
+
+#: CheckPlaceTitles/checkplacetitles.py:206
+#, python-format
+msgid "'%(current)s' was '%(was)s'\n"
+msgstr "'%(current)s' était '%(was)s'\n"
+
+#: CheckPlaceTitles/checkplacetitles.py:209
+#, python-format
+msgid "Clean up '%s'\n"
+msgstr "Nettoyage pour '%s'\n"
+
+#: CheckPlaceTitles/checkplacetitles.py:213
+msgid "Legacy place"
+msgstr "Lieu migré"
+
+#: CheckPlaceTitles/checkplacetitles.py:227
+msgid "Modify Place titles"
+msgstr "Modification des titres des lieux"
+
+#: CheckPlaceTitles/checkplacetitles.py:250
+msgid "Create a copy via a new Note"
+msgstr "Création d'une copie sur une note"
+
+#: CheckPlaceTitles/checkplacetitles.py:257
+msgid "Place titles"
+msgstr "Titres de lieu"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr "Enlever le contenu du titre de lieu si il ne correspond pas."
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr "Copier le contenu du titre du lieu vers une note."
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Marquer"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "_Accepter les modifications et fermer la fenêtre"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr "colonne"

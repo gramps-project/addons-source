@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 10:38+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:64
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:79
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:95
+msgid "Checking Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:96
+msgid "Looking for place fields"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:119
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:120
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:150
+msgid "Select"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:153
+msgid "Database"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:157
+msgid "Display"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:169
+msgid "Building display"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Places checking\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:206
+#, python-format
+msgid "'%(current)s' was '%(was)s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:209
+#, python-format
+msgid "Clean up '%s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:213
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:227
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:250
+msgid "Create a copy via a new Note"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:257
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""

@@ -1,0 +1,128 @@
+# Polish translation for Gramps
+# $Id: pl.po 22700 2013-07-21 06:57:33Z vassilii $
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
+#
+# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
+# Piotr Czubaszek <piotrek@gmail.com>, 2007.
+# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008,2009
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 10:11+0100\n"
+"PO-Revision-Date: 2014-06-04 01:28+0100\n"
+"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.6\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:64
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:79
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:95
+msgid "Checking Place Titles"
+msgstr "Sprawdzanie nazw miejsc"
+
+#: CheckPlaceTitles/checkplacetitles.py:96
+msgid "Looking for place fields"
+msgstr "Wyszukiwanie pól miejsc"
+
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:119
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:120
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:150
+msgid "Select"
+msgstr "Wybierz"
+
+#: CheckPlaceTitles/checkplacetitles.py:153
+#, fuzzy
+msgid "Database"
+msgstr "Ścieżka bazy danych"
+
+#: CheckPlaceTitles/checkplacetitles.py:157
+msgid "Display"
+msgstr "Wyświetlanie"
+
+#: CheckPlaceTitles/checkplacetitles.py:169
+msgid "Building display"
+msgstr "Budowanie widoku"
+
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Places checking\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:206
+#, python-format
+msgid "'%(current)s' was '%(was)s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:209
+#, python-format
+msgid "Clean up '%s'\n"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:213
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:227
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:250
+msgid "Create a copy via a new Note"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:257
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Oznacz"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "Zaakceptuj zmiany i zamknij"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""
