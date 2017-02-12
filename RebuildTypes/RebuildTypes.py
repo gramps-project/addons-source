@@ -31,8 +31,12 @@
 from gui.plug import tool
 from QuestionDialog import OkDialog
 
-from TransUtils import get_addon_translator
-_ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #

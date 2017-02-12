@@ -49,12 +49,15 @@ from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
 from gen.plug.report import Report
 from gen.plug.report import MenuReportOptions
 from libtranslate import get_language_string
-from TransUtils import get_addon_translator
 from libtranslate import Translator, get_language_string
 from collections import defaultdict
 import logging
 
-_ = get_addon_translator().ugettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 LOCALEDIR = os.path.join(USER_PLUGINS, 'AncestorFill', 'locale')
 LOCALEDOMAIN = 'addon'
