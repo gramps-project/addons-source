@@ -45,8 +45,10 @@ from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.listmodel import ListModel
 from gramps.gui.glade import Glade
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+#from gramps.gen.const import GRAMPS_LOCALE as glocale
+#_ = glocale.translation.gettext
+from TransUtils import get_addon_translator
+_ = get_addon_translator().ugettext
 
 WIKI_HELP_PAGE = '%s_-_Tools' % URL_MANUAL_PAGE
 WIKI_HELP_SEC = _('manual|Check_place_titles')
