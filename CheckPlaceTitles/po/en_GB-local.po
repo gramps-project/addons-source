@@ -1,0 +1,134 @@
+# English (United Kingdom) translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2012-2014 The Gramps Project
+# Nick Hall, 2012-2014.
+#
+# analyzing -> analysing
+# baptized -> baptised
+# canceled -> cancelled
+# canceling -> cancelling
+# capitalization -> capitalisation
+# center -> centre
+# centered -> centred
+# centering -> centring
+# color -> colour
+# colored -> coloured
+# coloring -> colouring
+# dialog (for computer terminology don't use dialogue)
+# maximized -> maximised
+# neighborhood -> neighbourhood
+# organize -> organise
+# organized -> organised
+# unrecognized -> unrecognised
+# indexes (use indexes rather than indices)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 11:53+0100\n"
+"PO-Revision-Date: 2012-05-10 21:26+0100\n"
+"Last-Translator: Nick Hall\n"
+"Language-Team: English (British)\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr "Check Place Titles"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr "Check place titles"
+
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
+msgid "manual|Check_place_titles"
+msgstr "manual|Check_place_titles"
+
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
+msgid "Check Place title"
+msgstr "Check Place title"
+
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
+msgid "Checking Place Titles"
+msgstr "Checking Place Titles"
+
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
+msgid "Looking for place fields"
+msgstr "Looking for place fields"
+
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
+msgid "Differences"
+msgstr "Differences"
+
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
+msgid "No need modifications"
+msgstr "No need modifications"
+
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
+msgid "No changes need."
+msgstr "No changes need."
+
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
+msgid "Select"
+msgstr "Select"
+
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
+msgid "Database"
+msgstr "Database"
+
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
+msgid "Display"
+msgstr "Display"
+
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
+msgid "Building display"
+msgstr "Building display"
+
+#: CheckPlaceTitles/checkplacetitles.py:181
+msgid "Legacy place"
+msgstr "Legacy place"
+
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
+msgid "Modify Place titles"
+msgstr "Modify Place titles"
+
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
+msgid "Place titles"
+msgstr "Place titles"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr "Remove content of place title field if it does not match"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr "Copy content of place title field to a new note."
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Mark"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "_Accept changes and close"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr "column"

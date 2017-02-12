@@ -1,0 +1,155 @@
+# Danish translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Dansk oversættelse til GRAMPS
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016.
+# *** Vedr. ordstilling: ***
+# Ofte vil det lyde mere naturligt at ændre en ordstilling ved at
+# bytte om på hoved- og ledsætning, som f.eks.
+#   
+#   "Før reparationen udføres, forvis dig om at databasen virkelig
+#   "ikke længere kan åbnes"
+# til
+#   
+#   "forvis dig om at databasen virkelig ikke kan åbnes før du
+#   "udfører reparationen."
+#   
+# Jeg har dog i mange tilfælde valgt at bevare den oprindelige
+# ordstilling, da der ligger en opmærksomhedsskabende værdi i denne. Her
+# bliver man f.eks. som det første i sætningen gjort opmærksom på at man
+# IKKE skal udføre reparationen FØR .. -MBJ
+# *** Oversættelser af visse ord/vendinger: ***
+# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
+# home person: proband
+# ancestor: ane
+# given name: fornavn
+# preferences: indstillinger
+# link: forbindelse
+# family tree: slægtsbog (men se nedenfor)
+# First Communion: Førstekommunion
+# probate: skifte
+# record: optegnelse
+#
+# Anvendt af Lars Kr. Lundin:
+# citation: citering (fremfor f.eks. 'kildehenvisning')
+#      citering er i 2016 blevet ændret til kildehenvisning af Kaj Mikkelsen
+# database: database (fremfor det tidligere 'slægtsbog')
+# matches: matcher (fremfor det tidligere 'passer med')
+# locale: landestandard (i mangel af bedre)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 11:53+0100\n"
+"PO-Revision-Date: 2016-07-19 19:49+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
+msgid "Checking Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
+msgid "Looking for place fields"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
+msgid "Select"
+msgstr "Vælg"
+
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
+msgid "Database"
+msgstr "Hele databasen"
+
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
+msgid "Display"
+msgstr "Vis"
+
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
+msgid "Building display"
+msgstr "Opdaterer skærmbillede"
+
+#: CheckPlaceTitles/checkplacetitles.py:181
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+# mærke?
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Markér"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "_Accepter ændringer og afslut"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""
