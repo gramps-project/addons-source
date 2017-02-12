@@ -1,0 +1,119 @@
+# Norwegian (Nynorsk) translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2008
+#
+# Sigmund Lorentsen <siglorent@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: nn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 12:03+0100\n"
+"PO-Revision-Date: 2014-12-22 21:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
+msgid "Checking Place Titles"
+msgstr "Kontrollerer stadnamn"
+
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
+msgid "Looking for place fields"
+msgstr "Ser etter felt for stad"
+
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
+msgid "Select"
+msgstr "Vel"
+
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
+#, fuzzy
+msgid "Database"
+msgstr "Heile databasen"
+
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
+msgid "Display"
+msgstr "Vis"
+
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
+msgid "Building display"
+msgstr "Oppdaterer visninga"
+
+#: CheckPlaceTitles/checkplacetitles.py:181
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Marker"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "Godt_a endringane og lukk"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""

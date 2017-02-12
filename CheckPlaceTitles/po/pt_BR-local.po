@@ -1,0 +1,120 @@
+# Portuguese (Brazil) translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2002-2016 Free Software Foundation, Inc.
+#
+# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002-2006.
+# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007-2007.
+# lcc <lcc@6zap.com>, 2009-2009.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
+# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 12:03+0100\n"
+"PO-Revision-Date: 2016-11-14 07:36-0200\n"
+"Last-Translator: Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
+msgid "Checking Place Titles"
+msgstr "Verificando os nomes dos locais"
+
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
+msgid "Looking for place fields"
+msgstr "Procurando os campos dos locais"
+
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
+msgid "Select"
+msgstr "Selecionar"
+
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
+msgid "Database"
+msgstr "Base de dados"
+
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
+msgid "Display"
+msgstr "Exibição"
+
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
+msgid "Building display"
+msgstr "Construindo a tela"
+
+#: CheckPlaceTitles/checkplacetitles.py:181
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "Marca"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr "_Aceitar as alterações e fechar"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""

@@ -1,0 +1,121 @@
+# Japanese translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Keiichiro Yamamoto <k.yanmar@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-12 12:03+0100\n"
+"PO-Revision-Date: 2011-08-13 23:35+0900\n"
+"Last-Translator: Keiichiro Yamamoto <k.yanmar@gmail.com>\n"
+"Language-Team: Japanese <k.yanmar@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
+msgid "manual|Check_place_titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
+msgid "Checking Place Titles"
+msgstr "場所のタイトルをチェック"
+
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
+msgid "Looking for place fields"
+msgstr "場所フィールドを検索"
+
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
+msgid "Select"
+msgstr "選択"
+
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
+#, fuzzy
+msgid "Database"
+msgstr "データベース全体"
+
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
+msgid "Display"
+msgstr "表示"
+
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
+msgid "Building display"
+msgstr "ディスプレイの構築"
+
+#: CheckPlaceTitles/checkplacetitles.py:181
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:3
+msgid "Mark"
+msgstr "マーク"
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "_Accept changes and close"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
+msgid "column"
+msgstr ""
