@@ -88,11 +88,14 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
                                self.total)
 
         self.name_list = []
+        count = 0
         for handle in self.db.get_place_handles(True):
             self.progress.step()
             place = self.db.get_place_from_handle(handle)
             title = place.title
             descr = place_displayer.display(self.db, place)
+            if title == ("" or descr):
+                count += 1
             if title != "":
                 self.name_list.append((handle.decode('utf8'), title, descr))
 
@@ -101,7 +104,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         if self.name_list:
             self.display()
             OkDialog(_('Differences'),
-                     '%s/%s' % (len(self.name_list), self.total),
+                     '%s/%s' % (count, self.total),
                      parent=uistate.window)
         else:
             self.progress.close()
