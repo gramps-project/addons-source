@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.0.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 10:24+0100\n"
+"POT-Creation-Date: 2017-02-12 11:48+0100\n"
 "PO-Revision-Date: 2014-04-20 11:10+0100\n"
 "Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
 "Language-Team: \n"
@@ -29,78 +29,73 @@ msgstr ""
 msgid "Check place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:64
+#: CheckPlaceTitles/checkplacetitles.py:52
+#: CheckPlaceTitles/checkplacetitles2.py:52
 msgid "manual|Check_place_titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:79
+#: CheckPlaceTitles/checkplacetitles.py:67
+#: CheckPlaceTitles/checkplacetitles2.py:67
 msgid "Check Place title"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:95
+#: CheckPlaceTitles/checkplacetitles.py:82
+#: CheckPlaceTitles/checkplacetitles2.py:82
 msgid "Checking Place Titles"
 msgstr "Comprobando los nombres de los sitios"
 
-#: CheckPlaceTitles/checkplacetitles.py:96
+#: CheckPlaceTitles/checkplacetitles.py:83
+#: CheckPlaceTitles/checkplacetitles2.py:83
 msgid "Looking for place fields"
 msgstr "Buscando los campos de los sitios"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
+#: CheckPlaceTitles/checkplacetitles.py:99
+#: CheckPlaceTitles/checkplacetitles2.py:99
 msgid "Differences"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:119
+#: CheckPlaceTitles/checkplacetitles.py:105
+#: CheckPlaceTitles/checkplacetitles2.py:105
 msgid "No need modifications"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:120
+#: CheckPlaceTitles/checkplacetitles.py:106
+#: CheckPlaceTitles/checkplacetitles2.py:106
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:150
+#: CheckPlaceTitles/checkplacetitles.py:135
+#: CheckPlaceTitles/checkplacetitles2.py:134
 msgid "Select"
 msgstr "Seleccionar"
 
-#: CheckPlaceTitles/checkplacetitles.py:153
+#: CheckPlaceTitles/checkplacetitles.py:138
+#: CheckPlaceTitles/checkplacetitles2.py:137
 #, fuzzy
 msgid "Database"
 msgstr "Toda la base de datos"
 
-#: CheckPlaceTitles/checkplacetitles.py:157
+#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles2.py:141
 msgid "Display"
 msgstr "Mostrar"
 
-#: CheckPlaceTitles/checkplacetitles.py:169
+#: CheckPlaceTitles/checkplacetitles.py:152
+#: CheckPlaceTitles/checkplacetitles2.py:151
 msgid "Building display"
 msgstr "Preparando la presentación"
 
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Places checking\n"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:206
-#, python-format
-msgid "'%(current)s' was '%(was)s'\n"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:209
-#, python-format
-msgid "Clean up '%s'\n"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:213
+#: CheckPlaceTitles/checkplacetitles.py:181
 msgid "Legacy place"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:227
+#: CheckPlaceTitles/checkplacetitles.py:195
+#: CheckPlaceTitles/checkplacetitles2.py:178
 msgid "Modify Place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:250
-msgid "Create a copy via a new Note"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:257
+#: CheckPlaceTitles/checkplacetitles.py:218
+#: CheckPlaceTitles/checkplacetitles2.py:199
 msgid "Place titles"
 msgstr ""
 
