@@ -40,13 +40,11 @@ from gramps.gui.display import display_help
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import (Note, NoteType, StyledText, StyledTextTag,
                             StyledTextTagType, Tag)
-
 from gramps.gui.dialog import OkDialog
 from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.listmodel import ListModel
 from gramps.gui.glade import Glade
-
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
@@ -86,7 +84,6 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
                                self.total)
 
         self.name_list = []
-
         for handle in self.db.get_place_handles(True):
             self.progress.step()
             place = self.db.get_place_from_handle(handle)
@@ -153,7 +150,6 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         self.treeview.set_model(self.model)
 
         self.progress.set_pass(_('Building display'), len(self.name_list))
-
         for handle, title, descr in self.name_list:
             self.model.append([handle, title == descr, title, descr])
             self.progress.step()
@@ -179,17 +175,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         if not (copy or clean or tag):
             return
 
-        if copy:
-            my_data = _("Places checking\n")
-            for pair in self.name_list:
-                was = pair[0]
-                current = pair[1]
-                if current != was:
-                    my_data += _("'%(current)s' was '%(was)s'\n" %
-                            {"was": was, "current": current})
-                else:
-                    my_data += _("Clean up '%s'\n" % current)
-            self.create_note(my_data)
+        self.db.disable_signals()
 
         if tag:
             tag_name = _('Legacy place')
@@ -206,40 +192,33 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
                 else:
                     tag_handle = mark.get_handle()
 
-        with DbTxn(_("Modify Place titles"), self.db, batch=True) as self.trans:
-            self.db.disable_signals()
-            changelist = set(self.model.get_value(node, 1)
-                            for node in self.iter_list
-                                if self.model.get_value(node, 0))
-
-            count = 0
-            for handle in self.db.get_place_handles(False):
-                place = self.db.get_place_from_handle(handle)
-                ptitle = self.db.get_raw_place_data(handle)[2]
-                if str(ptitle) in changelist:
-                    if tag:
-                        place.add_tag(tag_handle)
-                        self.db.commit_place(place, self.trans)
+        with DbTxn(_("Modify Place titles"), self.db, batch=True) as trans:
+            for row in self.model:
+                if row[1] == True:
+                    place = self.db.get_place_from_handle(row[0])
+                    if copy:
+                        self.create_note(place, row[2], trans)
                     if clean:
                         place.set_title("")
-                        self.db.commit_place(place, self.trans)
+                    if tag:
+                        place.add_tag(tag_handle)
+                    self.db.commit_place(place, trans)
 
         self.db.enable_signals()
         self.db.request_rebuild()
         self.close()
 
-    def create_note(self, data):
-        with DbTxn(_("Create a copy via a new Note"), self.db, batch=True) as self.note_trans:
-            new_note = Note()
-            tag = StyledTextTag(StyledTextTagType.FONTFACE, 'Monospace',
-                                [(0, len(data))])
-            text = StyledText(data, [tag])
-            new_note.set_styledtext(text)
-            note_type = NoteType()
-            note_type.set((NoteType.CUSTOM, _("Place titles")))
-            new_note.set_type(note_type)
-            self.db.add_note(new_note, self.note_trans)
-            #place.add_note(new_note.get_handle())
+    def create_note(self, place, data, trans):
+        new_note = Note()
+        tag = StyledTextTag(StyledTextTagType.FONTFACE, 'Monospace',
+                            [(0, len(data))])
+        text = StyledText(data, [tag])
+        new_note.set_styledtext(text)
+        note_type = NoteType()
+        note_type.set((NoteType.CUSTOM, _("Place titles")))
+        new_note.set_type(note_type)
+        handle = self.db.add_note(new_note, trans)
+        place.add_note(handle)
 
 #------------------------------------------------------------------------
 #
