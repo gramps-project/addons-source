@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 12:03+0100\n"
+"POT-Creation-Date: 2017-02-12 14:42+0100\n"
 "PO-Revision-Date: 2014-03-24 20:15+0300\n"
 "Last-Translator: Igal Shapira <igal.shapira@gmail.com>\n"
 "Language-Team: he <igal.shapira@gmail.com>\n"
@@ -26,73 +26,60 @@ msgstr ""
 msgid "Check place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:52
-#: CheckPlaceTitles/checkplacetitles2.py:52
+#: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:67
-#: CheckPlaceTitles/checkplacetitles2.py:67
+#: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:82
-#: CheckPlaceTitles/checkplacetitles2.py:82
+#: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:83
-#: CheckPlaceTitles/checkplacetitles2.py:83
+#: CheckPlaceTitles/checkplacetitles.py:87
 msgid "Looking for place fields"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:99
-#: CheckPlaceTitles/checkplacetitles2.py:99
+#: CheckPlaceTitles/checkplacetitles.py:103
 msgid "Differences"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:105
-#: CheckPlaceTitles/checkplacetitles2.py:105
+#: CheckPlaceTitles/checkplacetitles.py:109
 msgid "No need modifications"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:106
-#: CheckPlaceTitles/checkplacetitles2.py:106
+#: CheckPlaceTitles/checkplacetitles.py:110
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:135
-#: CheckPlaceTitles/checkplacetitles2.py:134
+#: CheckPlaceTitles/checkplacetitles.py:139
 msgid "Select"
 msgstr "בחרי"
 
-#: CheckPlaceTitles/checkplacetitles.py:138
-#: CheckPlaceTitles/checkplacetitles2.py:137
+#: CheckPlaceTitles/checkplacetitles.py:142
 #, fuzzy
 msgid "Database"
 msgstr "כל מסד הנתונים"
 
-#: CheckPlaceTitles/checkplacetitles.py:142
-#: CheckPlaceTitles/checkplacetitles2.py:141
+#: CheckPlaceTitles/checkplacetitles.py:146
 msgid "Display"
 msgstr "תצוגה"
 
-#: CheckPlaceTitles/checkplacetitles.py:152
-#: CheckPlaceTitles/checkplacetitles2.py:151
+#: CheckPlaceTitles/checkplacetitles.py:156
 msgid "Building display"
 msgstr "בונה תצוגה"
 
-#: CheckPlaceTitles/checkplacetitles.py:181
+#: CheckPlaceTitles/checkplacetitles.py:185
 msgid "Legacy place"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:195
-#: CheckPlaceTitles/checkplacetitles2.py:178
+#: CheckPlaceTitles/checkplacetitles.py:199
 msgid "Modify Place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:218
-#: CheckPlaceTitles/checkplacetitles2.py:199
+#: CheckPlaceTitles/checkplacetitles.py:222
 msgid "Place titles"
 msgstr ""
 
@@ -109,9 +96,13 @@ msgid "Mark"
 msgstr "סמן"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:5
 msgid "_Accept changes and close"
 msgstr "_קבל שינויים וסגור"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
 msgid "column"
 msgstr ""
