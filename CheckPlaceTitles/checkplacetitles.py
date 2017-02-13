@@ -83,7 +83,8 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         self.db = dbstate.db
 
         self.total = self.db.get_number_of_places()
-        self.progress = ProgressMeter(_('Checking Place Titles'), '')
+        self.progress = ProgressMeter(_('Checking Place Titles'), '',
+                                      parent=uistate.window)
         self.progress.set_pass(_('Looking for place fields'),
                                self.total)
 
