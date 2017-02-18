@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-18 15:17-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: BirthOrder/birthorder.gpr.py:38 BirthOrder/birthorder.py:55
+msgid "Sort Children in Birth order"
+msgstr ""
+
+#: BirthOrder/birthorder.gpr.py:39
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+
+#: BirthOrder/birthorder.py:125
+msgid "No families need sorting"
+msgstr ""
+
+#: BirthOrder/birthorder.py:126
+msgid "No children were out of birth order."
+msgstr ""
+
+#: BirthOrder/birthorder.py:143
+msgid "Edit Family"
+msgstr ""
+
+#: BirthOrder/birthorder.py:159
+msgid "Processing..."
+msgstr ""
+
+#: BirthOrder/birthorder.py:160
+msgid "Edit Families"
+msgstr ""
+
+#: BirthOrder/birthorder.py:230
+msgid "Looking for children birth order"
+msgstr ""
+
+#: BirthOrder/birthorder.py:234
+msgid "Pass 1: Building preliminary lists"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:1
+msgid "Select the family you wish to examine."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:2
+msgid "Help"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:3
+msgid "Accept All"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:4
+msgid "This button will sort all of the families listed."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:5
+msgid "Accept All *"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:6
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:7
+msgid "Accept"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:8
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:9
+msgid "Done"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:10
+msgid "This button will exit, with remaining families unchanged."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:11
+msgid "Current sort"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:12
+msgid "Proposed sort"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:13
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
