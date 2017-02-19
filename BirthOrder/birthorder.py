@@ -99,7 +99,7 @@ class BirthOrder(tool.Tool, ManagedWindow):
         )
         window = top.toplevel
         self.set_window(window, None, TITLE)
-        self.setup_configs('interface.birthordertool', 750, 520)
+        # self.setup_configs('interface.birthordertool', 750, 520)
 
         top.connect_signals({
             "on_close"              : self.close,
