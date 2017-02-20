@@ -82,14 +82,14 @@ class BirthOrder(tool.Tool, ManagedWindow):
         self.fam_h = self.fam_iter = self.family = self.progress = None
         self.update = callback
 
-        top = Glade()
+        self.top = Glade()
 
-        self.fam_liststore = top.get_object("fam_liststore")
-        self.ch_liststore = top.get_object("ch_liststore")
-        self.ch_liststore_s = top.get_object("ch_liststore_s")
-        self.fam_view = top.get_object("Families_treeview")
-        self.ch_view = top.get_object("children_treeview")
-        self.ch_view_s = top.get_object("children_treeview_s")
+        self.fam_liststore = self.top.get_object("fam_liststore")
+        self.ch_liststore = self.top.get_object("ch_liststore")
+        self.ch_liststore_s = self.top.get_object("ch_liststore_s")
+        self.fam_view = self.top.get_object("Families_treeview")
+        self.ch_view = self.top.get_object("children_treeview")
+        self.ch_view_s = self.top.get_object("children_treeview_s")
         chs_style_cntx = self.ch_view.get_style_context()
         style_provider = Gtk.CssProvider()
         style_provider.load_from_data(CSS.encode('utf8'))
@@ -97,11 +97,11 @@ class BirthOrder(tool.Tool, ManagedWindow):
             style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
-        window = top.toplevel
+        window = self.top.toplevel
         self.set_window(window, None, TITLE)
         # self.setup_configs('interface.birthordertool', 750, 520)
 
-        top.connect_signals({
+        self.top.connect_signals({
             "on_close"              : self.close,
             "on_help_clicked"       : self.on_help_clicked,
             "on_delete_event"       : self.close,
@@ -114,13 +114,12 @@ class BirthOrder(tool.Tool, ManagedWindow):
         self.fam_sel = self.fam_view.get_selection()
         self.fam_sel.connect('changed', self.on_fam_row_changed)
         self.ch_s_sel = self.ch_view_s.get_selection()
-        #self.fam_view.connect('button-press-event', self._button_press)
-        #self.fam_view.connect('key-press-event', self._key_press)
         self.show()
 
         self.find_potentials()
 
         if len(self.fam_liststore) == 0:
+            self.kill_buttons()
             OkDialog(
                 _("No families need sorting"),
                 _("No children were out of birth order."),
@@ -128,6 +127,13 @@ class BirthOrder(tool.Tool, ManagedWindow):
 
     def build_menu_names(self, obj):
         return (TITLE, TITLE)
+
+    def kill_buttons(self):
+        self.top.get_object("AcceptAll").set_sensitive(False)
+        self.top.get_object("AcceptAllEasy").set_sensitive(False)
+        self.top.get_object("accept").set_sensitive(False)
+        self.top.get_object("up_btn").set_sensitive(False)
+        self.top.get_object("down_btn").set_sensitive(False)
 
     def on_help_clicked(self, dummy):
         """ Button: Display the relevant portion of GRAMPS manual"""
@@ -144,6 +150,7 @@ class BirthOrder(tool.Tool, ManagedWindow):
             self.db.commit_family(self.family, trans)
         self.fam_liststore.remove(self.fam_iter)
         if len(self.fam_liststore) == 0:
+            self.kill_buttons()
             self.ch_liststore.clear()
             self.ch_liststore_s.clear()
         else:
@@ -174,6 +181,7 @@ class BirthOrder(tool.Tool, ManagedWindow):
         spath = Gtk.TreePath.new_first()
         self.fam_sel.select_path(spath)
         if len(self.fam_liststore) == 0:
+            self.kill_buttons()
             self.ch_liststore.clear()
             self.ch_liststore_s.clear()
 
