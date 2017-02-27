@@ -132,4 +132,4 @@ def write_line(fp, heading, handle, obj):
     """
     Write a single object to the file.
     """
-    fp.write("%s %s %s\n" % (heading, handle.decode(), obj))
+    fp.write("%s %s %s\n" % (heading, handle, obj.serialize()))
