@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.1
+# version 0.0.2
 #-------------------------------------------------------------------------
 import importlib
 module = importlib.find_loader("networkx")
@@ -34,7 +34,7 @@ if module is not None:
         authors = ['Mark B.'],
         authors_email = ['familynetworkchart@gmail.com'],
         description = _('Generates a family network chart.'),
-        version = '0.0.1',
+        version = '0.0.2',
         gramps_target_version = '4.2',
         include_in_listing = False,
     )

@@ -38,7 +38,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.1
+# version 0.0.2
 """
 Family NetworkChart - Web Report plugin for GRAMPS
 
@@ -56,7 +56,7 @@ from operator import itemgetter
 import itertools
 import networkx as nx
 from networkx import dfs_edges
-import os, copy #import shutil, sys, io
+import os, copy
 
 #------------------------------------------------------------------------
 #
@@ -76,9 +76,11 @@ _ = _trans.gettext
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as global_name_display
-#from gramps.gen.errors import ReportError
+from gramps.gen.datehandler import displayer as global_date_display
+from gramps.gen import datehandler
 #from gramps.gui.dialog import ErrorDialog
-from gramps.gen.plug.menu import (ColorOption, NumberOption, # PersonOption,
+from gramps.gen.lib.person import Person
+from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
                                   EnumeratedListOption, DestinationOption,
                                   PersonListOption, StringOption,
                                   BooleanOption)
@@ -89,8 +91,7 @@ from gramps.gui.dialog import QuestionDialog2
 
 # TODO
 # --- For Future Versions ---
-# Respect Family & Event Privacy settings.  Already respect Individual.
-# Add warning for large databases on Ortho splines (use curves instead)
+# Respect Family & Event Privacy settings. Already respect Individual
 # Non-blocking run in thread
 
 #------------------------------------------------------------------------
@@ -155,10 +156,15 @@ class NetworkChartReport(Report):
         self.b_trim_parents = menu.get_option_by_name('b_trim_parents').get_value()
         self.trim_list_parents = menu.get_option_by_name('trim_list_parents').get_value()
         self.b_trim_groups = menu.get_option_by_name('b_trim_groups').get_value()
+        self.trim_groups_size = menu.get_option_by_name('trim_groups_size').get_value()
 
         self.path_start_end = menu.get_option_by_name('path_start_end').get_value()
         self.show_highlight = menu.get_option_by_name('show_highlight').get_value()
         self.show_path = menu.get_option_by_name('show_path').get_value()
+        self.center_person = menu.get_option_by_name('center_person').get_value()
+        self.b_center_person = menu.get_option_by_name('b_center_person').get_value()
+        self.center_radius = menu.get_option_by_name('center_radius').get_value()
+        self.b_highlight_center = menu.get_option_by_name('b_highlight_center').get_value()
 
         self.b_confirm_overwrite = menu.get_option_by_name('b_confirm_overwrite').get_value()
         self.file_type = menu.get_option_by_name('file_type').get_value()
@@ -177,11 +183,15 @@ class NetworkChartReport(Report):
         if name_format != 0:
             self._name_display.set_default_format(name_format)
 
+        self._datedisplay = copy.deepcopy(global_date_display)
+        date_format = menu.get_option_by_name("date_format").get_value()
+        if date_format != 0:
+            self._datedisplay.set_format(date_format)
+
     def get_network(self):
         """
         Get person, family, and child data to build network.
         """
-        const_gender = ['female', 'male', 'unknown']
         person = []
         edge_marriage = []
         edge_child = []
@@ -202,10 +212,10 @@ class NetworkChartReport(Report):
         for entry in self.database.get_person_cursor():
             handle = entry[0] # individual = entry[1]
             p_person = self.database.get_person_from_handle(handle)
-            person_gref = str(p_person.get_gramps_id())
+            person_gref = p_person.get_gramps_id()
             p_privacy = p_person.get_privacy()
             if p_person.urls:
-                p_url = p_person.urls[0].to_struct()['path']
+                p_url = p_person.urls[0].get_path()
             else:
                 p_url = ""
 
@@ -215,18 +225,23 @@ class NetworkChartReport(Report):
             dday_index = p_person.death_ref_index
 
             if bday_index > -1:
-                bday_handle = p_person.get_event_ref_list()[bday_index].to_struct()['ref']
-                h_event = self.database.get_from_name_and_handle("Event", bday_handle)
-                if h_event.get_type() == "Birth":
+                bday_handle = p_person.get_event_ref_list()[bday_index].ref
+                h_event = self.database.get_event_from_handle(bday_handle)
+                fmt_bdate = self._datedisplay.display_formatted(h_event.get_date_object())
+                if len(fmt_bdate.strip()) < 1:
+                    fmt_bdate = _('unk')
+                if fmt_bdate.strip() == '0000-00-00':
+                    fmt_bdate = _('unk')
+                if h_event.get_type().is_birth():
                     try:
                         if self.b_round_bday:
                             year = h_event.get_date_object().get_year()
                             if year > i_round_year:
                                 bday = _('b.')+str(year)[0:3]+"0's"
                             else:
-                                bday = _('b.')+str(h_event.get_date_object())
+                                bday = _('b.') + fmt_bdate
                         else:
-                            bday = _('b.')+str(h_event.get_date_object())
+                            bday = _('b.') + fmt_bdate
                         if self.b_middle_initials:
                             year = h_event.get_date_object().get_year()
                             if year > i_middle_initials:
@@ -236,31 +251,32 @@ class NetworkChartReport(Report):
                                     for i in given_names[1::]:
                                         name = name.replace(i.strip(), i[0]+'.', 1)
                     except NameError:
-                        bday = _('b.unk')
-                if bday == _('b.0000-00-00'):
-                    bday = _('b.unk')
+                        bday = _('b.') + _('unk')
             else:
-                bday = _('b.unk')
+                bday = _('b.') + _('unk')
 
             if dday_index > -1:
-                dday_handle = p_person.get_event_ref_list()[dday_index].to_struct()['ref']
-                h_event = self.database.get_from_name_and_handle("Event", dday_handle)
-                if h_event.get_type() == "Death":
+                dday_handle = p_person.get_event_ref_list()[dday_index].ref
+                h_event = self.database.get_event_from_handle(dday_handle)
+                fmt_ddate = self._datedisplay.display_formatted(h_event.get_date_object())
+                if len(fmt_ddate.strip()) < 1:
+                    fmt_ddate = _('unk')
+                if fmt_ddate.strip() == '0000-00-00':
+                    fmt_ddate = _('unk')
+                if h_event.get_type().is_death():
                     try:
-                        dday = _('d.')+str(h_event.get_date_object())
+                        dday = _('d.') + fmt_ddate
                     except NameError:
-                        dday = _('d.unk')
-                if dday == _('d.0000-00-00'):
-                    dday = _('d.unk')
+                        dday = _('d.') + _('unk')
             else:
-                dday = _('d.unk')
+                dday = _('d.') + _('unk')
 
-            gender = const_gender[p_person.get_gender()]
+            gender = p_person.get_gender()
             person = person + [[person_gref, name, bday, dday, gender, p_privacy, p_url]]
 
         for handle, family in self.database.get_family_cursor():
             family_gref = str(family[1])
-            f_family = self.database.get_from_name_and_handle("Family", handle)
+            f_family = self.database.get_family_from_handle(handle)
 
             hfather = self.database.get_person_from_handle(
                 f_family.get_father_handle())
@@ -284,28 +300,30 @@ class NetworkChartReport(Report):
             h_events = f_family.get_event_list() #get_event_ref_list()
             if len(h_events) > 0:
                 for handle in h_events:
-                    i_event = self.database.get_from_name_and_handle(
-                        "Event", handle)
-                    if i_event.get_type() == "Marriage":
+                    i_event = self.database.get_event_from_handle(handle)
+                    fmt_mdate = self._datedisplay.display_formatted(i_event.get_date_object())
+                    if len(fmt_mdate.strip()) < 1:
+                        fmt_mdate = _('unk')
+                    if fmt_mdate.strip() == '0000-00-00':
+                        fmt_mdate = _('unk')
+                    if i_event.get_type().is_marriage():
                         try:
                             if self.b_round_marr:
                                 year = i_event.get_date_object().get_year()
                                 if year > i_round_marr:
                                     marriage_date = _('m.')+str(year)[0:3]+"0's"
                                 else:
-                                    marriage_date = _('m.')+str(i_event.get_date_object())
+                                    marriage_date = _('m.') + fmt_mdate
                             else:
-                                marriage_date = _('m.')+str(i_event.get_date_object())
+                                marriage_date = _('m.') + fmt_mdate
                         except NameError:
-                            marriage_date = _('m.unk')
-                        if marriage_date == _('m.0000-00-00'):
-                            marriage_date = _('m.unk')
+                            marriage_date = _('m.') + _('unk')
                         edge_marriage = edge_marriage + [[family_gref,
                                                           father_gref,
                                                           mother_gref,
                                                           marriage_date]]
             else:
-                marriage_date = _('m.unk')
+                marriage_date = _('m.') + _('unk')
                 edge_marriage = edge_marriage + [[family_gref,
                                                   father_gref,
                                                   mother_gref,
@@ -349,14 +367,30 @@ class NetworkChartReport(Report):
         top_title = self.top_title
         rank_dir = self.rank_dir
         include_urls = self.include_urls
+        center_person = self.center_person.strip()
+
+        try:
+            center_radius = int(self.center_radius)
+            if center_radius < 1:
+                center_radius = 1
+        except ValueError:
+            center_radius = 1
+
         try:
             rank_sep = float(self.rank_sep)
             if rank_sep > 5.0:
                 rank_sep = 5.0
             if rank_sep < 0.1:
                 rank_sep = 0.1
-        except Exception:
-            raise
+        except ValueError:
+            rank_sep = 0.6
+
+        try:
+            trim_groups_size = int(self.trim_groups_size)
+            if trim_groups_size < 2:
+                trim_groups_size = 2
+        except ValueError:
+            trim_groups_size = 2
 
         try:
             url_prefix = self.url_prefix_suffix.split(',')[0]
@@ -388,7 +422,7 @@ class NetworkChartReport(Report):
                 pass
 
         for i in person:
-            if i[4] == "male":
+            if i[4] == Person.MALE:
                 node_edge_color = cedge_male
                 node_fill_color = cfill_male
                 node_edge_thickness = 2.0
@@ -402,7 +436,7 @@ class NetworkChartReport(Report):
                         node_style = "rounded"
                     else:
                         node_style = "filled"
-            elif i[4] == "female":
+            elif i[4] == Person.FEMALE:
                 node_edge_color = cedge_female
                 node_fill_color = cfill_female
                 node_edge_thickness = 2.0
@@ -502,7 +536,6 @@ class NetworkChartReport(Report):
 
         for i in edge_marriage:
             if i[1] and i[2]:
-                A.add_subgraph([i[1], i[2]])
                 A.add_edge([i[1], i[2]], arrowsize=0.0,
                            color=cline_marriage, penwidth=2.0,
                            style='dashed', headlabel=i[3],
@@ -516,6 +549,33 @@ class NetworkChartReport(Report):
                 G.add_edge(i[1], i[2]) # make G and A the same
             except Exception:
                 raise
+
+        if self.b_highlight_center:
+            A.get_node(center_person).attr['fillcolor'] = '#FFFD6BFF'
+            G.node[center_person]['fillcolor'] = '#FFFD6BFF'
+
+        if self.b_trim_groups:
+            groups_gen = nx.connected_components(G.to_undirected())
+            groups = list(groups_gen)
+            main_branch = max(groups, key=len)
+            main_branch_len = len(main_branch)
+            if trim_groups_size > main_branch_len:
+                trim_groups_size = main_branch_len
+            for selected_group in groups:
+                if len(selected_group) < trim_groups_size:
+                    A.remove_nodes_from(selected_group)
+                    G.remove_nodes_from(selected_group)
+
+        if self.b_center_person:
+            too_far = []
+            in_circle = nx.ego_graph(G, center_person, radius=center_radius, center=True,
+                                     undirected=True, distance=None)
+            for inode in G.nodes():
+                if inode not in in_circle:
+                    too_far.append(inode)
+            if len(too_far) > 0:
+                A.remove_nodes_from(too_far)
+                G.remove_nodes_from(too_far)
 
         trim_children = [] # This only works because we used networkx DiGraph type
         if self.b_trim_children:
@@ -543,16 +603,6 @@ class NetworkChartReport(Report):
             trim_parents = sorted(set(trim_parents))[::-1]
             A.remove_nodes_from(trim_parents)
             G.remove_nodes_from(trim_parents)
-
-        if self.b_trim_groups:
-            groups_gen = nx.connected_components(G.to_undirected())
-            groups = list(groups_gen)
-            main_branch = max(groups, key=len)
-            main_branch_len = len(main_branch)
-            for selected_group in groups:
-                if len(selected_group) < main_branch_len:
-                    A.remove_nodes_from(selected_group)
-                    G.remove_nodes_from(selected_group)
 
         if self.show_highlight == "Direct":
             path_list = [
@@ -659,9 +709,6 @@ class NetworkChartReport(Report):
                             G.remove_node(i)
                             A.remove_node(i)
 
-        #if A.number_of_nodes() > 1500:
-        #    warn = 1  # Warn if splines = ortho
-
         A.node_attr.update(fontname=font)
         A.node_attr.update(fontsize=12)
         A.node_attr.update(colorscheme="RGBA")
@@ -680,17 +727,13 @@ class NetworkChartReport(Report):
         A.graph_attr.update(colorscheme="RGBA")
         A.graph_attr.update(fontname=font)
         A.graph_attr.update(fontnames="svg")
-        A.graph_attr.update(fontsize=20) #20
+        A.graph_attr.update(fontsize=20)
         A.graph_attr.update(label=top_title)
         A.graph_attr.update(labelloc="top")
-        A.graph_attr.update(concentrate=False) #True
+        A.graph_attr.update(concentrate=False)
         A.graph_attr.update(ratio="compress")
         A.graph_attr.update(splines=self.graph_splines)
-        #A.graph_attr.update(page="8.5, 11")
-        #A.graph_attr.update(size="20, 15")
-        #A.graph_attr.update(viewport="[0, 0, 2500, 1500]")
-        #A.graph_attr.update(scale=1.0)
-        A.graph_attr.update(comment="Via Family NetworkChart by Zorkmark.")
+        A.graph_attr.update(comment="Gramps via NetworkChart plugin by Mark B.")
         A.graph_attr.update(dpi=72)
         A.graph_attr.update(overlap=0)
         A.graph_attr.update(rankdir=rank_dir)
@@ -714,7 +757,8 @@ class NetworkChartOptions(MenuReportOptions):
         self.inifile.load()
         #------- initialize inifile -------
         self._dbase = dbase
-        self.cancel = None
+        self.center_radius = self.trim_groups_size = self.b_highlight_center = None
+        self.cancel = self.b_center_person = self.center_person = self.highlight_center = None
         self.menu = self.path_start_end = self.show_path = self.show_highlight = None
         self.b_trim_parents = self.s_dbname = self.b_trim_groups = self.dest_path = None
         self.trim_list_parents = self.trim_list_children = self.dest_file = self.top_title = None
@@ -726,11 +770,6 @@ class NetworkChartOptions(MenuReportOptions):
         Generic method to add user options to the menu. Doesn't seem to be called.
         But needed for the options to be saved.
         """
-        #for category in self.menu.get_categories():
-        #    for name in self.menu.get_option_names(category):
-        #        option = self.menu.get_option(category, name)
-        #        if name in self.options_dict: # override option default with xml-saved value:
-        #            option.set_value(self.options_dict[name])
 
     def parse_user_options(self):
         """
@@ -764,8 +803,14 @@ class NetworkChartOptions(MenuReportOptions):
         self.inifile.set(dbname + ".path_start_end", self.path_start_end.get_value())
         self.inifile.set(dbname + ".b_trim_children", str(int(self.b_trim_children.get_value())))
         self.inifile.set(dbname + ".b_trim_parents", str(int(self.b_trim_parents.get_value())))
+        self.inifile.set(dbname + ".b_trim_groups", str(int(self.b_trim_groups.get_value())))
+        self.inifile.set(dbname + ".trim_groups_size", self.trim_groups_size.get_value())
         self.inifile.set(dbname + ".show_path", self.show_path.get_value())
         self.inifile.set(dbname + ".show_highlight", self.show_highlight.get_value())
+        self.inifile.set(dbname + ".b_center_person", str(int(self.b_center_person.get_value())))
+        self.inifile.set(dbname + ".b_highlight_center", str(int(self.b_highlight_center.get_value())))
+        self.inifile.set(dbname + ".center_person", self.center_person.get_value())
+        self.inifile.set(dbname + ".center_radius", self.center_radius.get_value())
 
         ini_sections = self.inifile.get_sections()
         for section in ini_sections:
@@ -787,10 +832,17 @@ class NetworkChartOptions(MenuReportOptions):
         fmt_list = global_name_display.get_name_format()
         name_format = EnumeratedListOption(_("Name format"), 2)
         name_format.add_item(2, _("Default (Given Surname Suffix)"))
-        for entry in fmt_list: #num, name, fmt_str, act
+        for entry in fmt_list:
             name_format.add_item(entry[0], entry[1])
         name_format.set_help(_("Select the format to display names"))
         menu.add_option(category_name, "name_format", name_format)
+
+        dt_fmt_list = datehandler.get_date_formats()
+        date_format = EnumeratedListOption(_("Date format"), 0)
+        for index, entry in enumerate(dt_fmt_list):
+            date_format.add_item(index, entry)
+        date_format.set_help(_("Select the format to display dates"))
+        menu.add_option(category_name, "date_format", date_format)
 
         graph_splines = EnumeratedListOption(_("Graph Style"), "ortho")
         splines_options = ["ortho", "polyline", "spline"]
@@ -854,7 +906,7 @@ class NetworkChartOptions(MenuReportOptions):
         menu.add_option(category_name, "dest_path", self.dest_path)
 
         s_namebase = _("network")
-        fname = self._dbase.get_dbname() + "_" + s_namebase # + ".svg"
+        fname = self._dbase.get_dbname() + "_" + s_namebase
 
         self.dest_file = DestinationOption(_("Filename"), fname)
         self.dest_file.set_help(_("The filename for the generated svg network chart."))
@@ -991,18 +1043,21 @@ class NetworkChartOptions(MenuReportOptions):
                                           "individuals will not be shown."))
         menu.add_option(category_name, "trim_list_parents", self.trim_list_parents)
 
-        self.b_trim_parents = BooleanOption(_("Enables trimming of ancestors."), False)
-        self.b_trim_parents.set_help(_("Enables trimming of ancestors from tree."))
+        self.b_trim_parents = BooleanOption(_("Enable trimming of ancestors."), False)
+        self.b_trim_parents.set_help(_("Enable trimming of ancestors from tree."))
         menu.add_option(category_name, "b_trim_parents", self.b_trim_parents)
         self.b_trim_parents.connect('value-changed', self.cb_b_trim_parents)
 
-        self.b_trim_groups = BooleanOption(_("Trim groups disconnected from the main tree."), False)
-        self.b_trim_groups.set_help(_("Removes all groups and individuals disconnected from the\n"
-                                      "largest tree.  Automatic for databases with more than\n"
-                                      "1500 individuals.  To display the next smallest tree trim\n"
-                                      "most of the individuals in the tree currently displayed."))
+        self.b_trim_groups = BooleanOption(_("Enable trim groups."), False)
+        self.b_trim_groups.set_help(_("Remove groups less than Min Group Size.  Automatic\n"
+                                      "for databases with more than 1500 individuals."))
         menu.add_option(category_name, "b_trim_groups", self.b_trim_groups)
         self.b_trim_groups.connect('value-changed', self.cb_b_trim_groups)
+
+        self.trim_groups_size = StringOption(_("Min Group Size"), "2")
+        self.trim_groups_size.set_help(_("Enter the minimum size group to display.\n"
+                                         "Value may be 2 or greater."))
+        menu.add_option(category_name, "trim_groups_size", self.trim_groups_size)
 
         category_name = " " + _("Highlight") + " "
 
@@ -1032,6 +1087,23 @@ class NetworkChartOptions(MenuReportOptions):
                                   "Direct - Show only direct descendant/ancestor paths.\n"
                                   "Any - Show only path(s) direct or indirect."))
         menu.add_option(category_name, "show_path", self.show_path)
+
+        self.center_person = PersonOption(_("Center Person"))
+        self.center_person.set_help(_("Select person at center of selection radius in graph."))
+        menu.add_option(category_name, "center_person", self.center_person)
+
+        self.center_radius = StringOption(_("Max connections\nfrom center"), "5")
+        self.center_radius.set_help(_("Enter the maximum number of connections allowed from\n"
+                                      "the center person.  Value may be 1 or greater."))
+        menu.add_option(category_name, "center_radius", self.center_radius)
+
+        self.b_center_person = BooleanOption(_("Limit graph to max connections from center."), False)
+        self.b_center_person.set_help(_("Display up to max connections from central person."))
+        menu.add_option(category_name, "b_center_person", self.b_center_person)
+
+        self.b_highlight_center = BooleanOption(_("Highlight central person in graph."), False)
+        self.b_highlight_center.set_help(_("Add yellow color background to central person."))
+        menu.add_option(category_name, "b_highlight_center", self.b_highlight_center)
 
         category_name = " " + _("Config") + " "
 
@@ -1128,6 +1200,18 @@ class NetworkChartOptions(MenuReportOptions):
             self.inifile.register(dbname + ".b_trim_parents", "")
             self.inifile.set(dbname + ".b_trim_parents", str(int(self.b_trim_parents.get_value())))
 
+        if "b_trim_groups" in db_settings:
+            self.b_trim_groups.set_value(bool(int(self.inifile.get(dbname + ".b_trim_groups"))))
+        else:
+            self.inifile.register(dbname + ".b_trim_groups", "")
+            self.inifile.set(dbname + ".b_trim_groups", str(int(self.b_trim_groups.get_value())))
+
+        if "trim_groups_size" in db_settings:
+            self.trim_groups_size.set_value(self.inifile.get(dbname + ".trim_groups_size"))
+        else:
+            self.inifile.register(dbname + ".trim_groups_size", "")
+            self.inifile.set(dbname + ".trim_groups_size", self.trim_groups_size.get_value())
+
         if "show_path" in db_settings:
             self.show_path.set_value(self.inifile.get(dbname + ".show_path"))
         else:
@@ -1139,6 +1223,31 @@ class NetworkChartOptions(MenuReportOptions):
         else:
             self.inifile.register(dbname + ".show_highlight", "")
             self.inifile.set(dbname + ".show_highlight", self.show_highlight.get_value())
+
+        if "b_center_person" in db_settings:
+            self.b_center_person.set_value(bool(int(self.inifile.get(dbname + ".b_center_person"))))
+        else:
+            self.inifile.register(dbname + ".b_center_person", "")
+            self.inifile.set(dbname + ".b_center_person", str(int(self.b_center_person.get_value())))
+
+        if "b_highlight_center" in db_settings:
+            self.b_highlight_center.set_value(bool(int(self.inifile.get(dbname + ".b_highlight_center"))))
+        else:
+            self.inifile.register(dbname + ".b_highlight_center", "")
+            self.inifile.set(dbname + ".b_highlight_center", str(int(self.b_highlight_center.get_value())))
+
+        if "center_person" in db_settings:
+            self.center_person.set_value(self.inifile.get(dbname + ".center_person"))
+        else:
+            self.inifile.register(dbname + ".center_person", "")
+            self.inifile.set(dbname + ".center_person", self.center_person.get_value())
+
+        if "center_radius" in db_settings:
+            self.center_radius.set_value(self.inifile.get(dbname + ".center_radius"))
+        else:
+            self.inifile.register(dbname + ".center_radius", "")
+            self.inifile.set(dbname + ".center_radius", self.center_radius.get_value())
+
         #------- start inifile -------
         return
 
