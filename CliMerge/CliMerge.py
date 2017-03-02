@@ -43,66 +43,69 @@ class CliMerge(tool.Tool):
         self.run_tool()
 
     def run_tool(self):
-        obj_type = self.options.handler.options_dict['type']
-        primary_id = self.options.handler.options_dict['primary']
-        secondary_id = self.options.handler.options_dict['secondary']
-        if not primary_id or not secondary_id:
-            raise MergeError("Both primary and secondary object IDs need to "
-                "be specified.")
+        try:
+            obj_type = self.options.handler.options_dict['type']
+            primary_id = self.options.handler.options_dict['primary']
+            secondary_id = self.options.handler.options_dict['secondary']
+            if not primary_id or not secondary_id:
+                raise MergeError("Both primary and secondary object IDs need to "
+                    "be specified.")
 
-        if not obj_type:
-            id2type = {'I':'Person', 'F':'Family', 'E':'Event', 'P': 'Place',
-                       'C': 'Citation', 'S':'Source', 'R':'Repository',
-                       'O':'Media', 'N':'Note'}
-            obj_type = id2type[primary_id[0]]
+            if not obj_type:
+                id2type = {'I':'Person', 'F':'Family', 'E':'Event', 'P': 'Place',
+                           'C': 'Citation', 'S':'Source', 'R':'Repository',
+                           'O':'Media', 'N':'Note'}
+                obj_type = id2type[primary_id[0]]
 
-        database = self.dbstate.db
-        primary = database.get_from_name_and_gramps_id(obj_type, primary_id)
-        secondary = database.get_from_name_and_gramps_id(obj_type, secondary_id)
-        if not primary or not secondary:
-            raise MergeError("Can't get object from ID.")
+            database = self.dbstate.db
+            primary = database.get_from_name_and_gramps_id(obj_type, primary_id)
+            secondary = database.get_from_name_and_gramps_id(obj_type, secondary_id)
+            if not primary or not secondary:
+                raise MergeError("Can't get object from ID.")
 
-        if type(primary) != type(secondary):
-            raise MergeError("Primary and secondary object need to be of "
-                "the same type.")
+            if type(primary) != type(secondary):
+                raise MergeError("Primary and secondary object need to be of "
+                    "the same type.")
 
 
-        if obj_type == 'Person':
-            from gramps.gen.merge import MergePersonQuery
-            query = MergePersonQuery(database, primary, secondary)
-        elif obj_type == 'Family':
-            # TODO make sure father_handle is in phoenix or titanic
-            father_handle = self.options.handler.options_dict['father_h']
-            mother_handle = self.options.handler.options_dict['mother_h']
-            from gramps.gen.merge import MergeFamilyQuery
-            query = MergeFamilyQuery(database, primary, secondary,
-                                     father_handle, mother_handle)
-        elif obj_type == 'Event':
-            from gramps.gen.merge import MergeEventQuery
-            query = MergeEventQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Place':
-            from gramps.gen.merge import MergePlaceQuery
-            query = MergePlaceQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Citation':
-            from gramps.gen.merge import MergeCitationQuery
-            query = MergeCitationQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Source':
-            from gramps.gen.merge import MergeSourceQuery
-            query = MergeSourceQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Repository':
-            from gramps.gen.merge import MergeRepositoryQuery
-            query = MergeRepositoryQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Media':
-            from gramps.gen.merge import MergeMediaQuery
-            query = MergeMediaQuery(self.dbstate, primary, secondary)
-        elif obj_type == 'Note':
-            from gramps.gen.merge import MergeNoteQuery
-            query = MergeNoteQuery(self.dbstate, primary, secondary)
-        else:
-            raise MergeError(("Merge for %s not implemented.") % \
-                    str(type(primary)))
+            if obj_type == 'Person':
+                from gramps.gen.merge import MergePersonQuery
+                query = MergePersonQuery(database, primary, secondary)
+            elif obj_type == 'Family':
+                # TODO make sure father_handle is in phoenix or titanic
+                father_handle = self.options.handler.options_dict['father_h']
+                mother_handle = self.options.handler.options_dict['mother_h']
+                from gramps.gen.merge import MergeFamilyQuery
+                query = MergeFamilyQuery(database, primary, secondary,
+                                         father_handle, mother_handle)
+            elif obj_type == 'Event':
+                from gramps.gen.merge import MergeEventQuery
+                query = MergeEventQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Place':
+                from gramps.gen.merge import MergePlaceQuery
+                query = MergePlaceQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Citation':
+                from gramps.gen.merge import MergeCitationQuery
+                query = MergeCitationQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Source':
+                from gramps.gen.merge import MergeSourceQuery
+                query = MergeSourceQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Repository':
+                from gramps.gen.merge import MergeRepositoryQuery
+                query = MergeRepositoryQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Media':
+                from gramps.gen.merge import MergeMediaQuery
+                query = MergeMediaQuery(self.dbstate, primary, secondary)
+            elif obj_type == 'Note':
+                from gramps.gen.merge import MergeNoteQuery
+                query = MergeNoteQuery(self.dbstate, primary, secondary)
+            else:
+                raise MergeError(("Merge for %s not implemented.") % \
+                        str(type(primary)))
 
-        query.execute()
+            query.execute()
+        except MergeError as err:
+            print(err, file=sys.stderr)
 
 #------------------------------------------------------------------------
 #
