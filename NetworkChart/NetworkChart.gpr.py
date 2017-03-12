@@ -36,7 +36,7 @@ if module is not None:
         description = _('Generates a family network chart.'),
         version = '0.0.2',
         gramps_target_version = '4.2',
-        include_in_listing = False,
+        include_in_listing = True,
     )
 else:
     from gramps.gen.config import logging
