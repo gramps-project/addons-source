@@ -17,11 +17,13 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.2
+# version 0.0.3
 #-------------------------------------------------------------------------
 import importlib
-module = importlib.find_loader("networkx")
-if module is not None:
+from gramps.gen.const import URL_WIKISTRING
+module1 = importlib.find_loader("networkx")
+module2 = importlib.find_loader("pygraphviz")
+if module1 is not None and module2 is not None:
     register(REPORT,
         id = 'networkchart',
         name = _('Network Chart'),
@@ -33,12 +35,13 @@ if module is not None:
         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
         authors = ['Mark B.'],
         authors_email = ['familynetworkchart@gmail.com'],
+        #help_url = URL_WIKISTRING+'NetworkChart',
         description = _('Generates a family network chart.'),
-        version = '0.0.2',
+        version = '0.0.3',
         gramps_target_version = '4.2',
         include_in_listing = True,
     )
 else:
     from gramps.gen.config import logging
-    warn_msg = _("Failure to load Family NetworkChart.  Networkx python module not found.")
+    warn_msg = _("Failure to load Family NetworkChart.  Python networkx or pygraphviz module(s) not found.")
     logging.log(logging.WARNING, warn_msg)
