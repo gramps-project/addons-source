@@ -30,6 +30,7 @@ number if they are direct descendants of the '*father*'.
 **TODO**
 
 Use *gramps.plugins.lib.librecurse* module
+or advanced lib like [pypedal]( https://github.com/wintermind/pypedal ).
 
 **Save and export**
 
