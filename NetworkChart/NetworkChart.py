@@ -38,7 +38,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.2
+# version 0.0.3
 """
 Family NetworkChart - Web Report plugin for GRAMPS
 
@@ -77,8 +77,8 @@ _ = _trans.gettext
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.datehandler import displayer as global_date_display
-from gramps.gen import datehandler
 #from gramps.gui.dialog import ErrorDialog
+from gramps.gen import datehandler
 from gramps.gen.lib.person import Person
 from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
                                   EnumeratedListOption, DestinationOption,
@@ -148,8 +148,8 @@ class NetworkChartReport(Report):
         self.i_round_year = menu.get_option_by_name('i_round_year').get_value()
         self.b_round_marr = menu.get_option_by_name('b_round_marr').get_value()
         self.i_round_marr = menu.get_option_by_name('i_round_marr').get_value()
-        self.b_middle_initials = menu.get_option_by_name('b_middle_initials').get_value()
-        self.i_middle_initials = menu.get_option_by_name('i_middle_initials').get_value()
+        self.b_middle_names = menu.get_option_by_name('b_middle_names').get_value()
+        self.i_middle_names = menu.get_option_by_name('i_middle_names').get_value()
 
         self.b_trim_children = menu.get_option_by_name('b_trim_children').get_value()
         self.trim_list_children = menu.get_option_by_name('trim_list_children').get_value()
@@ -205,9 +205,9 @@ class NetworkChartReport(Report):
         except ValueError:
             i_round_marr = 9999
         try:
-            i_middle_initials = int(float(self.i_middle_initials))
+            i_middle_names = int(float(self.i_middle_names))
         except ValueError:
-            i_middle_initials = 9999
+            i_middle_names = 9999
 
         for entry in self.database.get_person_cursor():
             handle = entry[0] # individual = entry[1]
@@ -237,19 +237,17 @@ class NetworkChartReport(Report):
                         if self.b_round_bday:
                             year = h_event.get_date_object().get_year()
                             if year > i_round_year:
-                                bday = _('b.')+str(year)[0:3]+"0's"
+                                bday = _('b.')+str(year)
                             else:
                                 bday = _('b.') + fmt_bdate
                         else:
                             bday = _('b.') + fmt_bdate
-                        if self.b_middle_initials:
+                        if self.b_middle_names:
                             year = h_event.get_date_object().get_year()
-                            if year > i_middle_initials:
+                            if year > i_middle_names:
                                 pfns = p_person.get_primary_name().get_first_name()
                                 given_names = pfns.split(' ')
-                                if len(given_names) > 1:
-                                    for i in given_names[1::]:
-                                        name = name.replace(i.strip(), i[0]+'.', 1)
+                                name = given_names[0] + ' ' + p_person.get_primary_name().get_surname()
                     except NameError:
                         bday = _('b.') + _('unk')
             else:
@@ -311,7 +309,7 @@ class NetworkChartReport(Report):
                             if self.b_round_marr:
                                 year = i_event.get_date_object().get_year()
                                 if year > i_round_marr:
-                                    marriage_date = _('m.')+str(year)[0:3]+"0's"
+                                    marriage_date = _('m.')+str(year)
                                 else:
                                     marriage_date = _('m.') + fmt_mdate
                             else:
@@ -554,28 +552,17 @@ class NetworkChartReport(Report):
             A.get_node(center_person).attr['fillcolor'] = '#FFFD6BFF'
             G.node[center_person]['fillcolor'] = '#FFFD6BFF'
 
-        if self.b_trim_groups:
-            groups_gen = nx.connected_components(G.to_undirected())
-            groups = list(groups_gen)
-            main_branch = max(groups, key=len)
-            main_branch_len = len(main_branch)
-            if trim_groups_size > main_branch_len:
-                trim_groups_size = main_branch_len
-            for selected_group in groups:
-                if len(selected_group) < trim_groups_size:
-                    A.remove_nodes_from(selected_group)
-                    G.remove_nodes_from(selected_group)
-
         if self.b_center_person:
-            too_far = []
-            in_circle = nx.ego_graph(G, center_person, radius=center_radius, center=True,
-                                     undirected=True, distance=None)
-            for inode in G.nodes():
-                if inode not in in_circle:
-                    too_far.append(inode)
-            if len(too_far) > 0:
-                A.remove_nodes_from(too_far)
-                G.remove_nodes_from(too_far)
+            if G.has_node(center_person):
+                too_far = []
+                in_circle = nx.ego_graph(G, center_person, radius=center_radius, center=True,
+                                         undirected=True, distance=None)
+                for inode in G.nodes():
+                    if inode not in in_circle:
+                        too_far.append(inode)
+                if len(too_far) > 0:
+                    A.remove_nodes_from(too_far)
+                    G.remove_nodes_from(too_far)
 
         trim_children = [] # This only works because we used networkx DiGraph type
         if self.b_trim_children:
@@ -603,6 +590,18 @@ class NetworkChartReport(Report):
             trim_parents = sorted(set(trim_parents))[::-1]
             A.remove_nodes_from(trim_parents)
             G.remove_nodes_from(trim_parents)
+
+        if self.b_trim_groups:
+            groups_gen = nx.connected_components(G.to_undirected())
+            groups = list(groups_gen)
+            main_branch = max(groups, key=len)
+            main_branch_len = len(main_branch)
+            if trim_groups_size > main_branch_len:
+                trim_groups_size = main_branch_len
+            for selected_group in groups:
+                if len(selected_group) < trim_groups_size:
+                    A.remove_nodes_from(selected_group)
+                    G.remove_nodes_from(selected_group)
 
         if self.show_highlight == "Direct":
             path_list = [
@@ -722,7 +721,7 @@ class NetworkChartReport(Report):
         A.edge_attr.update(labelfloat=1)
 
         A.graph_attr.update(bgcolor="transparent")
-        A.graph_attr.update(URL=top_title)
+        A.graph_attr.update(URL='#'+top_title) #modified to local to be wiki security compliant
         A.graph_attr.update(ranksep=rank_sep)
         A.graph_attr.update(colorscheme="RGBA")
         A.graph_attr.update(fontname=font)
@@ -757,8 +756,9 @@ class NetworkChartOptions(MenuReportOptions):
         self.inifile.load()
         #------- initialize inifile -------
         self._dbase = dbase
+        self.graph_splines = self.rank_dir = self.rank_sep = None
         self.center_radius = self.trim_groups_size = self.b_highlight_center = None
-        self.cancel = self.b_center_person = self.center_person = self.highlight_center = None
+        self.cancel = self.b_center_person = self.center_person = None
         self.menu = self.path_start_end = self.show_path = self.show_highlight = None
         self.b_trim_parents = self.s_dbname = self.b_trim_groups = self.dest_path = None
         self.trim_list_parents = self.trim_list_children = self.dest_file = self.top_title = None
@@ -844,27 +844,27 @@ class NetworkChartOptions(MenuReportOptions):
         date_format.set_help(_("Select the format to display dates"))
         menu.add_option(category_name, "date_format", date_format)
 
-        graph_splines = EnumeratedListOption(_("Graph Style"), "ortho")
+        self.graph_splines = EnumeratedListOption(_("Graph Style"), "ortho")
         splines_options = ["ortho", "polyline", "spline"]
         s_graph_splines_names = [_("Orthogonal (right angles in connectors)"),
                                  _("Straight (no right angles in connectors)"),
                                  _("Curved (curved and straight connectors)")]
-        graph_splines.add_item(splines_options[0], _("Default (Orthogonal)"))
+        self.graph_splines.add_item(splines_options[0], _("Default (Orthogonal)"))
         for i in range(0, len(splines_options)):
-            graph_splines.add_item(splines_options[i],
-                                   s_graph_splines_names[i])
-        graph_splines.set_help(_("Select the graph line connector format."))
-        menu.add_option(category_name, "graph_splines", graph_splines)
+            self.graph_splines.add_item(splines_options[i],
+                                        s_graph_splines_names[i])
+        self.graph_splines.set_help(_("Select the graph line connector format."))
+        menu.add_option(category_name, "graph_splines", self.graph_splines)
 
-        rank_dir = EnumeratedListOption(_("Graph Direction"), "TB")
+        self.rank_dir = EnumeratedListOption(_("Graph Direction"), "TB")
         rank_dir_options = ["TB", "LR", "BT", "RL"]
         s_rank_dir_names = [_("Top to Bottom"), _("Left to Right"),
                             _("Bottom to Top"), _("Right to Left")]
-        rank_dir.add_item(rank_dir_options[0], _("Default (Top to Bottom)"))
+        self.rank_dir.add_item(rank_dir_options[0], _("Default (Top to Bottom)"))
         for i in range(0, len(rank_dir_options)):
-            rank_dir.add_item(rank_dir_options[i], s_rank_dir_names[i])
-        rank_dir.set_help(_("Select the graph direction."))
-        menu.add_option(category_name, "rank_dir", rank_dir)
+            self.rank_dir.add_item(rank_dir_options[i], s_rank_dir_names[i])
+        self.rank_dir.set_help(_("Select the graph direction."))
+        menu.add_option(category_name, "rank_dir", self.rank_dir)
 
         include_urls = EnumeratedListOption(_("URL Style"), "include")
         urls_options = ["include", "dynamic", "static", "dontinclude"]
@@ -891,10 +891,10 @@ class NetworkChartOptions(MenuReportOptions):
                               "https://www.fontsquirrel.com/fonts/white-rabbit"))
         menu.add_option(category_name, "font_chart", font_chart)
 
-        rank_sep = StringOption(_("Spacing (inch)"), "0.5")
-        rank_sep.set_help(_('Enter the seperation distance between '
-                            '"Generations" in inches (0.1-5.0).'))
-        menu.add_option(category_name, "rank_sep", rank_sep)
+        self.rank_sep = StringOption(_("Spacing (inch)"), "0.5")
+        self.rank_sep.set_help(_('Enter the seperation distance between '
+                                 '"Generations" in inches (0.1-5.0).'))
+        menu.add_option(category_name, "rank_sep", self.rank_sep)
 
         self.top_title = StringOption(_("Enter Chart Title"), self._dbase.get_dbname())
         self.top_title.set_help(_("Set the title of the chart."))
@@ -981,42 +981,40 @@ class NetworkChartOptions(MenuReportOptions):
         category_name = " " + _("Privacy") + " "
 
         i_round_year = StringOption(_("Enter year to start\n"
-                                      "replacing birthday\nby decade"), '')
-        i_round_year.set_help(_("Birthdays after this year represented by "
-                                "decade only.\n"
-                                "Invalid entries will be ignored."))
+                                      "rounding birthday\nto year only"), '')
+        i_round_year.set_help(_("Birthdays after this year are represented by "
+                                "the year only.  Invalid entries will be ignored."))
         menu.add_option(category_name, "i_round_year", i_round_year)
 
-        b_round_bday = BooleanOption(_("Round birthday to show only decade after"
-                                       " given year (above)."), False)
-        b_round_bday.set_help(_("Represent birthday by decade only."))
+        b_round_bday = BooleanOption(_("Round birthday to year after"
+                                       " year entered (above)."), False)
+        b_round_bday.set_help(_("Represent birthday by year only."))
         menu.add_option(category_name, "b_round_bday", b_round_bday)
 
         i_round_marr = StringOption(_("Enter year to start\n"
-                                      "replacing marriage\ndate by decade"), '')
+                                      "rounding marriage\ndate to year only"), '')
         i_round_marr.set_help(_("Marriages after this year are represented by"
-                                "decade only. Invalid entries will be "
+                                "the year only. Invalid entries will be "
                                 "ignored."))
         menu.add_option(category_name, "i_round_marr", i_round_marr)
 
-        b_round_marr = BooleanOption(_("Round marriage to show only decade after"
-                                       " given year (above)."), False)
-        b_round_marr.set_help(_("Represent marriage by decade only."))
+        b_round_marr = BooleanOption(_("Round marriage to year after"
+                                       " year entered (above)."), False)
+        b_round_marr.set_help(_("Represent marriage by year only."))
         menu.add_option(category_name, "b_round_marr", b_round_marr)
 
-        i_middle_initials = StringOption("Enter year to start\n"
-                                         "replacing middle\n"
-                                         "names by initials", '')
-        i_middle_initials.set_help(_("Attempts to replace middle names by "
-                                     "initials only.  Only works for entries "
-                                     "with birth year in the record."))
-        menu.add_option(category_name, "i_middle_initials", i_middle_initials)
+        i_middle_names = StringOption("Enter year to start\n"
+                                      "removing middle names", '')
+        i_middle_names.set_help(_("Attempts to remove middle "
+                                  "names.  Only works for entries "
+                                  "with birth year in the record."))
+        menu.add_option(category_name, "i_middle_names", i_middle_names)
 
-        b_middle_initials = BooleanOption("Replace middle names with "
-                                          "initials after given year (above).",
-                                          False)
-        b_middle_initials.set_help(_("Replace middle names with initials."))
-        menu.add_option(category_name, "b_middle_initials", b_middle_initials)
+        b_middle_names = BooleanOption("Remove middle names "
+                                       "after given year (above).",
+                                       False)
+        b_middle_names.set_help(_("Remove middle names."))
+        menu.add_option(category_name, "b_middle_names", b_middle_names)
 
         b_show_private_records = BooleanOption("Include private records.",
                                                False)
@@ -1097,11 +1095,11 @@ class NetworkChartOptions(MenuReportOptions):
                                       "the center person.  Value may be 1 or greater."))
         menu.add_option(category_name, "center_radius", self.center_radius)
 
-        self.b_center_person = BooleanOption(_("Limit graph to max connections from center."), False)
+        self.b_center_person = BooleanOption(_("Limit graph to max connections from center."), True)
         self.b_center_person.set_help(_("Display up to max connections from central person."))
         menu.add_option(category_name, "b_center_person", self.b_center_person)
 
-        self.b_highlight_center = BooleanOption(_("Highlight central person in graph."), False)
+        self.b_highlight_center = BooleanOption(_("Highlight central person in graph."), True)
         self.b_highlight_center.set_help(_("Add yellow color background to central person."))
         menu.add_option(category_name, "b_highlight_center", self.b_highlight_center)
 
@@ -1138,6 +1136,9 @@ class NetworkChartOptions(MenuReportOptions):
         if self._dbase.get_number_of_people() > 1500:
             self.b_trim_groups.set_value(True)
             self.b_trim_groups.set_available(False)
+            self.graph_splines.set_value('spline')
+            self.rank_dir.set_value('LR')
+            self.rank_sep.set_value('3')
         else:
             self.b_trim_groups.set_available(True)
         return
@@ -1168,6 +1169,12 @@ class NetworkChartOptions(MenuReportOptions):
         if dbname not in db_sections:
             self.inifile.register(dbname+".s_dbname", "")
             self.inifile.set(dbname+".s_dbname", dbname)
+            if self._dbase.get_number_of_people() > 5000:
+                self.b_center_person.set_value(True)
+                self.b_highlight_center.set_value(True)
+                self.center_radius.set_value("10")
+                first_person = str(self._dbase.find_initial_person().get_gramps_id())
+                self.center_person.set_value(first_person)
 
         db_settings = self.inifile.get_section_settings(dbname)
         if "trim_list_children" in db_settings:
@@ -1247,7 +1254,6 @@ class NetworkChartOptions(MenuReportOptions):
         else:
             self.inifile.register(dbname + ".center_radius", "")
             self.inifile.set(dbname + ".center_radius", self.center_radius.get_value())
-
         #------- start inifile -------
         return
 
@@ -1268,8 +1274,12 @@ class NetworkChartOptions(MenuReportOptions):
                 self.b_trim_children.set_value(False)
                 return
             for ind in trim_list_children:
-                gid = self._dbase.get_person_from_gramps_id(ind)
-                if gid is None:
+                try:
+                    gid = self._dbase.get_person_from_gramps_id(ind)
+                    if gid is None:
+                        self.b_trim_children.set_value(False)
+                        return
+                except:
                     self.b_trim_children.set_value(False)
                     return
         return
@@ -1291,8 +1301,12 @@ class NetworkChartOptions(MenuReportOptions):
                 self.b_trim_parents.set_value(False)
                 return
             for ind in trim_list_parents:
-                gid = self._dbase.get_person_from_gramps_id(ind)
-                if gid is None:
+                try:
+                    gid = self._dbase.get_person_from_gramps_id(ind)
+                    if gid is None:
+                        self.b_trim_parents.set_value(False)
+                        return
+                except:
                     self.b_trim_parents.set_value(False)
                     return
         return
