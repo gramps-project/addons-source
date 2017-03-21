@@ -28,8 +28,8 @@ Relations tab.
 import time
 import logging
 import platform, os
-from gi.repository import Gtk
 from uuid import uuid4
+from gi.repository import Gtk
 
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
@@ -51,8 +51,9 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-_LOG = logging.getLogger('.Reltab')
+_LOG = logging.getLogger('.reltab')
 _LOG.info(platform.uname())
+logging.basicConfig(filename='debug.log',level=logging.DEBUG)
 #_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
 #_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
 #try:
@@ -183,7 +184,11 @@ class RelationTab(tool.Tool, ManagedWindow):
                 need = (step_two - step_one) / count
                 wait = need * filtered_people
                 remain = int(wait) - int(step_two - step_one)
-                header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f" % (count, filtered_people, remain, int(wait), nb, length, float(need), float(var)))
+                # sorry, lazy
+                header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
+                           % (count, filtered_people, remain, int(wait),
+                              nb, length, float(need), float(var))
+                          )
                 self.progress.set_header(header)
                 if self.progress.get_cancelled():
                     self.progress.close()
@@ -203,10 +208,15 @@ class RelationTab(tool.Tool, ManagedWindow):
             expect = (limit - var) / max_level
             if limit > var:
                 n = name_displayer.display(person)
-                _LOG.debug("Sorry! '%s' needs %s second, variation = '%s')" % (n, limit, expect))
+                _LOG.debug("Sorry! '{0}' needs {1} second, \
+                            variation = '{2}'".format(n,
+                                                      limit,
+                                                      expect
+                                                     )
+                          )
                 continue
             else:
-                _LOG.debug("variation = '%s')" % limit) # delta, see above max_level 'wall' section
+                _LOG.debug("variation = '{0}'".format(limit)) # delta, see above max_level 'wall' section
                 rel = relationship.get_one_relationship(
                     dbstate.db, default_person, person)
                 rel_a = dist[0][2]
@@ -235,8 +245,8 @@ class RelationTab(tool.Tool, ManagedWindow):
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
                 # workaround - possible unique ID and common numbers
-                uuid = str(uuid4().int)
-                _LOG.info("Random UUID: %s" % uuid)
+                uuid = str(uuid4())
+                _LOG.info("Random UUID: {0}".format(uuid))
 
                 if kekule == "u": # TODO: cousin(e)s need a key
                     kekule = 0
@@ -253,7 +263,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                                         int(Gb), int(mra), int(rank), str(period)))
         self.progress.close()
 
-        _LOG.debug("total: %s" % nb)
+        _LOG.debug("total: {0}".format(nb))
         for entry in self.stats_list:
             if uistate:
                 model.add(entry, entry[0])
@@ -265,6 +275,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.show()
 
     def save(self):
+        """
+        save action
+        """
         doc = ODSTab(len(self.stats_list))
         doc.creator(self.db.get_researcher().get_name())
         name = self.dbstate.db.get_default_person().get_handle() + '.ods'
@@ -313,6 +326,9 @@ class TableReport:
     """
 
     def __init__(self, filename, doc):
+        """
+        init
+        """
         self.filename = filename
         self.doc = doc
 
@@ -321,10 +337,16 @@ class TableReport:
         self.doc.start_page()
 
     def finalize(self):
+        """
+        close
+        """
         self.doc.end_page()
         self.doc.close()
 
     def write_table_data(self, data, skip_columns=[]):
+        """
+        write data for table
+        """
         self.doc.start_row()
         index = -1
         for item in data:
@@ -334,9 +356,15 @@ class TableReport:
         self.doc.end_row()
 
     def set_row(self, val):
+        """
+        the row
+        """
         self.row = val + 2
 
     def write_table_head(self, data):
+        """
+        the header
+        """
         head = []
         for column in data:
             (header, ID, length, TYPE) = column
