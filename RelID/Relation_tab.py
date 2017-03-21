@@ -25,11 +25,11 @@
 Relations tab.
 
 """
-from gi.repository import Gtk
 import time
-from uuid import uuid4
 import logging
 import platform, os
+from gi.repository import Gtk
+from uuid import uuid4
 
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
@@ -42,6 +42,7 @@ from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gen.config import config
 from gramps.gen.utils.docgen import ODSTab
 from gramps.gen.utils.db import get_timeperiod
+#from gramps.plugins.lib.librecurse import AscendPerson
 import number
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -86,12 +87,12 @@ class RelationTab(tool.Tool, ManagedWindow):
             # dirty work-around for Gtk.HeaderBar() and FolderChooser
 
             chooser = Gtk.FileChooserDialog(_("Folder Chooser"),
-                                  parent = uistate.window,
-                                  action = Gtk.FileChooserAction.SELECT_FOLDER,
-                                  buttons = (_('_Cancel'),
-                                           Gtk.ResponseType.CANCEL,
-                                          _('_Select'),
-                                          Gtk.ResponseType.OK))
+                                            parent=uistate.window,
+                                            action=Gtk.FileChooserAction.SELECT_FOLDER,
+                                            buttons=(_('_Cancel'),
+                                                     Gtk.ResponseType.CANCEL,
+                                                     _('_Select'),
+                                                     Gtk.ResponseType.OK))
             chooser.set_tooltip_text(_("Please, select a folder"))
             status = chooser.run()
             if status == Gtk.ResponseType.OK:
@@ -101,7 +102,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             chooser.destroy()
 
             ManagedWindow.__init__(self, uistate, [],
-                                                 self.__class__)
+                                   self.__class__)
             self.titles = [
                 (_('Rel_id'), 0, 40, INTEGER), # would be INTEGER
                 (_('Relation'), 1, 300, str),
@@ -142,7 +143,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         default_person = self.dbstate.db.get_default_person()
         if uistate:
             self.progress = ProgressMeter(self.label, can_cancel=True,
-                                     parent=window)
+                                          parent=window)
         else:
             self.progress = ProgressMeter(self.label)
 
@@ -188,9 +189,10 @@ class RelationTab(tool.Tool, ManagedWindow):
                     self.progress.close()
                     return
             person = dbstate.db.get_person_from_handle(handle)
+
             timeout_one = time.clock() # for delta and timeout estimations
             dist = relationship.get_relationship_distance_new(
-                        dbstate.db, default_person, person, only_birth=True)
+                dbstate.db, default_person, person, only_birth=True)
             timeout_two = time.clock()
 
             rank = dist[0][0]
@@ -206,7 +208,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             else:
                 _LOG.debug("variation = '%s')" % limit) # delta, see above max_level 'wall' section
                 rel = relationship.get_one_relationship(
-                                            dbstate.db, default_person, person)
+                    dbstate.db, default_person, person)
                 rel_a = dist[0][2]
                 Ga = len(rel_a)
                 rel_b = dist[0][4]
@@ -226,10 +228,9 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 name = name_displayer.display(person)
                 # pseudo privacy; sample for DNA stuff and mapping
-                # own internal password via handle
                 import hashlib
                 no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                _LOG.info(no_name)
+                _LOG.info(no_name) # own internal password via handle
 
                 kekule = number.get_number(Ga, Gb, rel_a, rel_b)
 
@@ -249,7 +250,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 period = get_timeperiod(self.dbstate.db, handle)
 
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
-                                    int(Gb), int(mra), int(rank), str(period)))
+                                        int(Gb), int(mra), int(rank), str(period)))
         self.progress.close()
 
         _LOG.debug("total: %s" % nb)
@@ -332,7 +333,7 @@ class TableReport:
                 self.doc.write_cell(str(item))
         self.doc.end_row()
 
-    def set_row(self,val):
+    def set_row(self, val):
         self.row = val + 2
 
     def write_table_head(self, data):
