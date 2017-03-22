@@ -29,6 +29,7 @@ import time
 import logging
 import platform
 import os
+from array import array
 from uuid import uuid4
 from gi.repository import Gtk
 
@@ -259,6 +260,14 @@ class RelationTab(tool.Tool, ManagedWindow):
                     kekule = 1
 
                 period = get_timeperiod(self.dbstate.db, handle)
+
+                # sometimes 'iterator' (generator) is more faster
+                #handle_list = map(handle, filtered_list)
+                iterator = (handle for handle in filtered_list)
+
+                # experimentations; not used
+                new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
+                line = (iterator, array('b', new_list))
 
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
                                         int(Gb), int(mra), int(rank), str(period)))
