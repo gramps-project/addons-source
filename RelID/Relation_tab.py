@@ -53,7 +53,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-_LOG = logging.getLogger('.reltab')
+_LOG = logging.getLogger(__name__)
 _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 #_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
@@ -272,6 +272,10 @@ class RelationTab(tool.Tool, ManagedWindow):
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
                                         int(Gb), int(mra), int(rank), str(period)))
         self.progress.close()
+
+        from itertools import groupby
+        for group in groupby(self.stats_list, lambda x: x[0]):
+            _LOG.info(group)
 
         _LOG.debug("total: {}".format(nb))
         for entry in self.stats_list:
