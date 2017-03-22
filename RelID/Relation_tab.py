@@ -27,7 +27,8 @@ Relations tab.
 """
 import time
 import logging
-import platform, os
+import platform
+import os
 from uuid import uuid4
 from gi.repository import Gtk
 
@@ -53,7 +54,7 @@ _ = _trans.gettext
 
 _LOG = logging.getLogger('.reltab')
 _LOG.info(platform.uname())
-logging.basicConfig(filename='debug.log',level=logging.DEBUG)
+logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 #_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
 #_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
 #try:
@@ -216,7 +217,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                           )
                 continue
             else:
-                _LOG.debug("variation = '{0}'".format(limit)) # delta, see above max_level 'wall' section
+                _LOG.debug("variation = '{}'".format(limit)) # delta, see above max_level 'wall' section
                 rel = relationship.get_one_relationship(
                     dbstate.db, default_person, person)
                 rel_a = dist[0][2]
@@ -246,7 +247,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 # workaround - possible unique ID and common numbers
                 uuid = str(uuid4())
-                _LOG.info("Random UUID: {0}".format(uuid))
+                _LOG.info("Random UUID: {}".format(uuid))
 
                 if kekule == "u": # TODO: cousin(e)s need a key
                     kekule = 0
@@ -263,7 +264,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                                         int(Gb), int(mra), int(rank), str(period)))
         self.progress.close()
 
-        _LOG.debug("total: {0}".format(nb))
+        _LOG.debug("total: {}".format(nb))
         for entry in self.stats_list:
             if uistate:
                 model.add(entry, entry[0])
@@ -343,10 +344,11 @@ class TableReport:
         self.doc.end_page()
         self.doc.close()
 
-    def write_table_data(self, data, skip_columns=[]):
+    def write_table_data(self, data, skip_columns=None):
         """
         write data for table
         """
+        skip_columns = []
         self.doc.start_row()
         index = -1
         for item in data:
