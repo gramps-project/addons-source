@@ -18,10 +18,6 @@ Design
 Documentation
 -------------
 
-* Gramplet
-
-* Tool
-
 **TOCHECK**
 
 Tool: **step descendants** may have a mistake on '*most recent mother*'
@@ -38,5 +34,5 @@ or advanced lib like [pypedal]( https://github.com/wintermind/pypedal ).
 
 **Save and export**
 
-The tool can export the content after calculations.
+The tool can export the content after calculations
 via file generation to OpenDocument Spreadsheet (.ods) format.
