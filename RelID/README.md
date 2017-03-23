@@ -34,10 +34,9 @@ or advanced lib like [pypedal]( https://github.com/wintermind/pypedal ).
 
 **Run via CLI and debug statements**
 
- $ python3 Gramps.py -O 'example' -a tool -p name=relationtab -d "relation_tab"
+    $ python3 Gramps.py -O 'example' -a tool -p name=relationtab -d "relation_tab"
 
 **Save and export**
 
-Both gramplet and tool can export the content after calculations.
-Either via the context menu (*right_clic*) on gramplet or via file
-generation to OpenDocument Spreadsheet (.ods) format on tool.
+The tool can export the content after calculations.
+via file generation to OpenDocument Spreadsheet (.ods) format.
