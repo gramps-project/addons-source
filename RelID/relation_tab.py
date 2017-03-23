@@ -266,7 +266,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 iterator = (handle for handle in filtered_list)
 
                 # experimentations; not used yet
-                new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
+                new_list = [int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
                 line = (iterator, array('b', new_list))
 
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
