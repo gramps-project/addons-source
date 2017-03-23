@@ -265,7 +265,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 #handle_list = map(handle, filtered_list)
                 iterator = (handle for handle in filtered_list)
 
-                # experimentations; not used
+                # experimentations; not used yet
                 new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
                 line = (iterator, array('b', new_list))
 
@@ -274,8 +274,9 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.progress.close()
 
         from itertools import groupby
-        for group in groupby(self.stats_list, lambda x: x[0]):
-            _LOG.info(group)
+        for key, items in groupby(self.stats_list, lambda x: x[0]):
+            for subitem in items:
+                _LOG.info(subitem)
 
         _LOG.debug("total: {}".format(nb))
         for entry in self.stats_list:
