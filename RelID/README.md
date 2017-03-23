@@ -32,6 +32,10 @@ number if they are direct descendants of the '*father*'.
 Use *gramps.plugins.lib.librecurse* module
 or advanced lib like [pypedal]( https://github.com/wintermind/pypedal ).
 
+**Run via CLI and debug statements**
+
+ $ python3 Gramps.py -O 'example' -a tool -p name=relationtab -d "relation_tab"
+
 **Save and export**
 
 Both gramplet and tool can export the content after calculations.
