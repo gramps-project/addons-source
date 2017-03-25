@@ -379,6 +379,8 @@ class GetGOV(Gramplet):
 
         place = Place()
         place.gramps_id = gov_id
+        if not len(top) :
+            return place, []
 
         count = 0
         for element in top[0].getElementsByTagName('gov:hasName'):
