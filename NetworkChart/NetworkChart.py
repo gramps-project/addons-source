@@ -1,25 +1,14 @@
 #
-# NetworkChart - is a plugin for GRAMPS that uses graphviz (via
-#       pygraphviz) and networkx. NetworkChart uses the dot layout
-#       to generate a tight family network graph.  Networkx is used
-#       to trim the graph and generate individual to individual
-#       highlighted paths.
+# NetworkChart - is a plugin for GRAMPS that uses networkx to drive
+#       the dot layout engine (via dot, dot.exe, pydot, pydotplus,
+#       or pygraphviz) to generate a readable family network graph.
+#       Networkx is used to trim the graph and generate individual
+#       to individual highlighted paths.
 #
-#       Due to the memory allocation method in graphviz the dot
-#       layout engine is non-deterministic.  This means that the
-#       graphs generated will change slightly from run to run. A
-#       small price for an extremely readable network graph that
-#       shows connectivity well.
-#
-#       There is an issue with pygraphviz release version 1.3rc2
-#       see - #https://github.com/pygraphviz/pygraphviz/issues/94
-#       A temporary fix can be used per the following website
-#       see - https://github.com/pygraphviz/pygraphviz/issues/62
-#       Add .decode() to line 1332 in agraph.py
-#       warnings.warn(b"".join(errors).decode(), RuntimeWarning)
-#
-#       example path
-#       /usr/lib64/python3.4/site-packages/pygraphviz/agraph.py
+#       The memory allocation method in the dot layout engine is
+#       non-deterministic.  This means that the graphs generated
+#       will change slightly from run to run. A small price for an
+#       extremely readable network graph that shows connectivity well.
 #
 # Copyright (C) 2017 Mark B. <familynetworkchart@gmail.com>
 #
@@ -38,12 +27,12 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.4
+# version 0.0.6
 """
 Family NetworkChart - Web Report plugin for GRAMPS
 
-Generates a Family Network Chart Using pygraphviz dot layout engine.
-Uses networkx python module to calculate paths and trim tree.
+Generates a Family Network Chart using the dot layout engine
+and networkx python module to calculate paths and trim trees.
 
 """
 
@@ -52,12 +41,51 @@ Uses networkx python module to calculate paths and trim tree.
 # python modules
 #
 #------------------------------------------------------------------------
-from gramps.gui.dialog import ErrorDialog
+#from gramps.gui.dialog import ErrorDialog
+from gramps.gen.utils.file import search_for
+from subprocess import Popen, PIPE
 from operator import itemgetter
+from datetime import datetime
+import configparser
 import itertools
 import os, copy
 import networkx as nx
 from networkx import dfs_edges
+try:
+    import pydotplus
+    PYDOT = True
+except:
+    PYDOT = False
+
+if not PYDOT:
+    try:
+        import pydot
+        PYDOT = True
+    except:
+        PYDOT = False
+
+if not PYDOT:
+    try:
+        import pygraphviz
+        PYGRAPHVIZ = True
+    except:
+        PYGRAPHVIZ = False
+else:
+    PYGRAPHVIZ = False
+
+if not (PYDOT or PYGRAPHVIZ):
+    if search_for('dot'):
+        CLI_DOT = True
+    else:
+        CLI_DOT = False
+
+    if search_for('dot.exe'):
+        CLI_DOT_EXE = True
+    else:
+        CLI_DOT_EXE = False
+else:
+    CLI_DOT = False
+    CLI_DOT_EXE = False
 #------------------------------------------------------------------------
 #
 # Internationalisation
@@ -77,6 +105,7 @@ _ = _trans.gettext
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.datehandler import displayer as global_date_display
+from gramps.gen.constfunc import win
 from gramps.gen import datehandler
 from gramps.gen.lib.person import Person
 from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
@@ -117,6 +146,7 @@ class NetworkChartReport(Report):
         Report.__init__(self, database, options, user)
         self.map = {}
         self.database = database
+
         menu = options.menu
 
         self.font_chart = menu.get_option_by_name('font_chart').get_value()
@@ -246,7 +276,8 @@ class NetworkChartReport(Report):
                             if year > i_middle_names:
                                 pfns = p_person.get_primary_name().get_first_name()
                                 given_names = pfns.split(' ')
-                                name = given_names[0] + ' ' + p_person.get_primary_name().get_surname()
+                                name = (given_names[0] + ' '
+                                        + p_person.get_primary_name().get_surname())
                     except NameError:
                         bday = _('b.') + _('unk')
             else:
@@ -500,7 +531,10 @@ class NetworkChartReport(Report):
                             G.node[i[0]]['URL'] = ""
                         if fillnode:
                             G.node[i[0]]['fillcolor'] = node_fill_color
-                        G.node[i[0]]['style'] = node_style
+                        if PYDOT or CLI_DOT or CLI_DOT_EXE: #PYDOT OR PYDOTPLUS or dot or dot.exe
+                            G.node[i[0]]['style'] = '"' + node_style + '"' #For PYDOTPLUS
+                        else: #PYGRAPHVIZ
+                            G.node[i[0]]['style'] = node_style #For PYGRAPHVIZ
                     else:
                         if fillnode:
                             G.add_node(i[0], color=node_edge_color,
@@ -522,34 +556,28 @@ class NetworkChartReport(Report):
                             G.node[i[0]]['URL'] = url_prefix
                         else:
                             G.node[i[0]]['URL'] = ""
-                        G.node[i[0]]['style'] = node_style
+                        if PYDOT or CLI_DOT or CLI_DOT_EXE: #PYDOT OR PYDOTPLUS or dot or dot.exe
+                            G.node[i[0]]['style'] = '"' + node_style + '"' #For PYDOTPLUS
+                        else: #PYGRAPHVIZ
+                            G.node[i[0]]['style'] = node_style #For PYGRAPHVIZ
             except Exception:
                 raise
 
-        A = nx.drawing.nx_agraph.to_agraph(G)
-        A.node_attr['shape'] = 'Mrecord'
-        A.node_attr['width'] = '0.5'
-        A.node_attr['height'] = '0.5'
-
         for i in edge_marriage:
             if i[1] and i[2]:
-                A.add_edge([i[1], i[2]], arrowsize=0.0,
+                G.add_edge(i[1], i[2], arrowsize=0.0,
                            color=cline_marriage, penwidth=2.0,
                            style='dashed', headlabel=i[3],
                            fontsize=6, fontname=font)
-                G.add_edge(i[1], i[2], headlabel=i[3]) # make G and A the same
-
         for i in edge_child:
             try:
-                A.add_edge([i[1], i[2]], arrowsize=0.7,
+                G.add_edge(i[1], i[2], arrowsize=0.7,
                            color=cline_connector)
-                G.add_edge(i[1], i[2]) # make G and A the same
             except Exception:
                 raise
 
         if self.b_highlight_center:
             if G.has_node(center_person):
-                A.get_node(center_person).attr['fillcolor'] = '#FFFD6BFF'
                 G.node[center_person]['fillcolor'] = '#FFFD6BFF'
 
         if self.b_center_person:
@@ -561,7 +589,6 @@ class NetworkChartReport(Report):
                     if inode not in in_circle:
                         too_far.append(inode)
                 if len(too_far) > 0:
-                    A.remove_nodes_from(too_far)
                     G.remove_nodes_from(too_far)
 
         trim_children = [] # This only works because we used networkx DiGraph type
@@ -574,7 +601,6 @@ class NetworkChartReport(Report):
                         if edge[1] not in trim_list_children:
                             trim_children.append(edge[1])
             trim_children = sorted(set(trim_children))[::-1]
-            A.remove_nodes_from(trim_children)
             G.remove_nodes_from(trim_children)
 
         trim_parents = []
@@ -588,7 +614,6 @@ class NetworkChartReport(Report):
                         if edge[1] not in trim_list_parents:
                             trim_parents.append(edge[1])
             trim_parents = sorted(set(trim_parents))[::-1]
-            A.remove_nodes_from(trim_parents)
             G.remove_nodes_from(trim_parents)
 
         if self.b_trim_groups:
@@ -600,7 +625,6 @@ class NetworkChartReport(Report):
                 trim_groups_size = main_branch_len
             for selected_group in groups:
                 if len(selected_group) < trim_groups_size:
-                    A.remove_nodes_from(selected_group)
                     G.remove_nodes_from(selected_group)
 
         if self.show_highlight == "Direct":
@@ -615,16 +639,14 @@ class NetworkChartReport(Report):
                         all_paths = nx.all_simple_paths(G, start_path, end_path)
                         for highlighted_path in all_paths:
                             for i in zip(highlighted_path, highlighted_path[1::]):
-                                A.add_edge([i[0], i[1]], arrowsize=0.0, penwidth=5.0,
+                                G.add_edge(i[0], i[1], arrowsize=0.0, penwidth=5.0,
                                            color=cline_highlight)
-                                G.add_edge(i[0], i[1]) # make G and A the same
                     elif nx.has_path(G, end_path, start_path):
                         all_paths = nx.all_simple_paths(G, end_path, start_path)
                         for highlighted_path in all_paths:
                             for i in zip(highlighted_path, highlighted_path[1::]):
-                                A.add_edge([i[0], i[1]], arrowsize=0.0, penwidth=5.0,
+                                G.add_edge(i[0], i[1], arrowsize=0.0, penwidth=5.0,
                                            color=cline_highlight)
-                                G.add_edge(i[0], i[1]) # make G and A the same
                     else:
                         pass # NO Path Found Don't highlight anything
         elif self.show_highlight == "Any":
@@ -642,15 +664,11 @@ class NetworkChartReport(Report):
                         for highlighted_path in all_paths:
                             for i in zip(highlighted_path, highlighted_path[1::]):
                                 if G.has_edge(i[0], i[1]):
-                                    A.add_edge([i[0], i[1]], arrowsize=0.0,
-                                               penwidth=5.0,
-                                               color=cline_highlight)
-                                    G.add_edge(i[0], i[1]) # make G and A the same
+                                    G.add_edge(i[0], i[1], arrowsize=0.0,
+                                               penwidth=5.0, color=cline_highlight)
                                 elif G.has_edge(i[1], i[0]):
-                                    A.add_edge([i[1], i[0]], arrowsize=0.0,
-                                               penwidth=5.0,
-                                               color=cline_highlight)
-                                    G.add_edge(i[1], i[0]) # make G and A the same
+                                    G.add_edge(i[1], i[0], arrowsize=0.0,
+                                               penwidth=5.0, color=cline_highlight)
                                 else:
                                     pass
                     else:
@@ -681,11 +699,9 @@ class NetworkChartReport(Report):
                         for i in G.nodes():
                             if i not in short_list:
                                 G.remove_node(i)
-                                A.remove_node(i)
                     else: # NO PATH FOUND
                         for i in G.nodes():
                             G.remove_node(i)
-                            A.remove_node(i)
         elif self.show_path == "Any":
             path_list = [
                 str(i.strip()) for i in str(self.path_start_end).split(' ')
@@ -702,44 +718,53 @@ class NetworkChartReport(Report):
                         for i in G.nodes():
                             if i not in short_list:
                                 G.remove_node(i)
-                                A.remove_node(i)
                     else: # NO PATH FOUND
                         for i in G.nodes():
                             G.remove_node(i)
-                            A.remove_node(i)
 
-        A.node_attr.update(fontname=font)
-        A.node_attr.update(fontsize=12)
-        A.node_attr.update(colorscheme="RGBA")
+        node_dict = {'shape':'Mrecord', 'width':'0.5', 'height':'0.5'}
+        node_dict.update({'fontname':font, 'fontsize':'12', 'colorscheme':'RGBA'})
         if fillnode:
-            A.node_attr.update(style="filled")
+            node_dict.update({'style':'filled'})
+        G.graph['node'] = node_dict
 
-        A.edge_attr.update(colorscheme="RGBA")
-        A.edge_attr.update(fontname=font)
-        A.edge_attr.update(fontsize=6)
-        A.edge_attr.update(labelfontcolor=cline_marriage)
-        A.edge_attr.update(labelfloat=1)
+        edge_dict = {'fontname':font, 'fontsize':'6', 'colorscheme':'RGBA'}
+        edge_dict.update({'labelfontcolor':cline_marriage, 'labelfloat':'1'})
+        G.graph['edge'] = edge_dict
 
-        A.graph_attr.update(bgcolor="transparent")
-        A.graph_attr.update(URL='#'+top_title) #modified to local to be wiki security compliant
-        A.graph_attr.update(ranksep=rank_sep)
-        A.graph_attr.update(colorscheme="RGBA")
-        A.graph_attr.update(fontname=font)
-        A.graph_attr.update(fontnames="svg")
-        A.graph_attr.update(fontsize=20)
-        A.graph_attr.update(label=top_title)
-        A.graph_attr.update(labelloc="top")
-        A.graph_attr.update(concentrate=False)
-        A.graph_attr.update(ratio="compress")
-        A.graph_attr.update(splines=self.graph_splines)
-        A.graph_attr.update(comment="Gramps via NetworkChart plugin by Mark B.")
-        A.graph_attr.update(dpi=72)
-        A.graph_attr.update(overlap=0)
-        A.graph_attr.update(rankdir=rank_dir)
+        graph_dict = {'URL':'#'+top_title, 'label':top_title, 'labelloc':'top'}
+        graph_dict.update({'colorscheme':"RGBA", 'bgcolor':'transparent'})
+        graph_dict.update({'ranksep':str(rank_sep), 'rankdir':str(rank_dir)})
+        graph_dict.update({'fontname':font, 'fontnames':'svg', 'fontsize':'20'})
+        graph_dict.update({'concentrate':False, 'ratio':'compress'})
+        graph_dict.update({'splines':self.graph_splines, 'dpi':'72', 'overlap':'0'})
+        graph_dict.update({'comment':'Gramps via NetworkChart plugin by Mark B.'})
+        G.graph['graph'] = graph_dict
 
         if not self.cancel:
-            A.draw(self.fpath_output, prog="dot", format=self.file_type)
-
+            if PYDOT: #PYDOTPLUS or PYDOT
+                D = nx.nx_pydot.to_pydot(G)
+                D.write_svg(self.fpath_output)
+            elif PYGRAPHVIZ: #PYGRAPHVIZ
+                A = nx.drawing.nx_agraph.to_agraph(G)
+                A.draw(self.fpath_output, prog="dot", format=self.file_type)
+            elif CLI_DOT: #Command line dot package
+                dot_data = str(nx.nx_pydot.to_pydot(G).to_string()).encode('utf-8')
+                svg_data = Popen(['dot', '-Tsvg'],
+                                 stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
+                with open(self.fpath_output, 'w', encoding='utf8') as svg_file:
+                    svg_file.write(svg_data.decode('utf-8'))
+            elif CLI_DOT_EXE: #Command line dot.exe pacakge
+                dot_data = str(nx.nx_pydot.to_pydot(G).to_string()).encode('utf-8')
+                svg_data = Popen(['dot', '-Tsvg'],
+                                 creationflags=8, #DETACHED_PROCESS
+                                 stdin=PIPE,
+                                 stdout=PIPE,
+                                 stderr=PIPE).communicate(input=dot_data)[0]
+                with open(self.fpath_output, 'w', encoding='utf8') as svg_file:
+                    svg_file.write(svg_data.decode('utf-8'))
+            else: #None found! Should never happen.
+                pass
 #------------------------------------------------------------------------
 #
 # NetworkChartOptions
@@ -752,8 +777,11 @@ class NetworkChartOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         #------- initialize inifile -------
-        self.inifile = config.register_manager("NetworkChart")
-        self.inifile.load()
+        self.ini = configparser.ConfigParser()
+        self.inipath = config.config_path + '/NetworkChart.ini'
+        if os.path.isfile(self.inipath):
+            self.ini.read(self.inipath)
+            self.ini.read_file(open(self.inipath))
         #------- initialize inifile -------
         self._dbase = dbase
         self.graph_splines = self.rank_dir = self.rank_sep = None
@@ -763,6 +791,7 @@ class NetworkChartOptions(MenuReportOptions):
         self.b_trim_parents = self.s_dbname = self.b_trim_groups = self.dest_path = None
         self.trim_list_parents = self.trim_list_children = self.dest_file = self.top_title = None
         self.b_confirm_overwrite = self.b_trim_children = self.file_type = None
+
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_user_options(self):
@@ -797,30 +826,33 @@ class NetworkChartOptions(MenuReportOptions):
         else: # Filename good and not overwriting
             self.menu.cancel = False
         #------- stop inifile -------
-        dbname = self.s_dbname.get_value().lower()
-        self.inifile.set(dbname + ".trim_list_children", self.trim_list_children.get_value())
-        self.inifile.set(dbname + ".trim_list_parents", self.trim_list_parents.get_value())
-        self.inifile.set(dbname + ".path_start_end", self.path_start_end.get_value())
-        self.inifile.set(dbname + ".b_trim_children", str(int(self.b_trim_children.get_value())))
-        self.inifile.set(dbname + ".b_trim_parents", str(int(self.b_trim_parents.get_value())))
-        self.inifile.set(dbname + ".b_trim_groups", str(int(self.b_trim_groups.get_value())))
-        self.inifile.set(dbname + ".trim_groups_size", self.trim_groups_size.get_value())
-        self.inifile.set(dbname + ".show_path", self.show_path.get_value())
-        self.inifile.set(dbname + ".show_highlight", self.show_highlight.get_value())
-        self.inifile.set(dbname + ".b_center_person", str(int(self.b_center_person.get_value())))
-        self.inifile.set(dbname + ".b_highlight_center", str(int(self.b_highlight_center.get_value())))
-        self.inifile.set(dbname + ".center_person", self.center_person.get_value())
-        self.inifile.set(dbname + ".center_radius", self.center_radius.get_value())
+        dbname = self.s_dbname.get_value()
 
-        ini_sections = self.inifile.get_sections()
-        for section in ini_sections:
-            ini_settings = self.inifile.get_section_settings(section)
-            for setting in ini_settings:
-                ikey = section + "." + setting
-                self.inifile.register(ikey, "")
-                self.inifile.set(ikey, self.inifile.get(ikey))
+        self.ini.set(dbname, "trim_list_children", self.trim_list_children.get_value())
+        self.ini.set(dbname, "trim_list_parents", self.trim_list_parents.get_value())
+        self.ini.set(dbname, "path_start_end", self.path_start_end.get_value())
+        self.ini.set(dbname, "b_trim_children", str(int(self.b_trim_children.get_value())))
+        self.ini.set(dbname, "b_trim_parents", str(int(self.b_trim_parents.get_value())))
+        self.ini.set(dbname, "b_trim_groups", str(int(self.b_trim_groups.get_value())))
+        self.ini.set(dbname, "trim_groups_size", self.trim_groups_size.get_value())
+        self.ini.set(dbname, "show_path", self.show_path.get_value())
+        self.ini.set(dbname, "show_highlight", self.show_highlight.get_value())
+        self.ini.set(dbname, "b_center_person", str(int(self.b_center_person.get_value())))
+        self.ini.set(dbname, "b_highlight_center", str(int(self.b_highlight_center.get_value())))
+        self.ini.set(dbname, "center_person", self.center_person.get_value())
+        self.ini.set(dbname, "center_radius", self.center_radius.get_value())
 
-        self.inifile.save()
+        if 'NetworkChart' not in self.ini.sections():
+            localtime = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+            self.ini.add_section('NetworkChart')
+            self.ini.set('NetworkChart', _('created'), localtime)
+            self.ini.set('NetworkChart', _('last_written'), localtime)
+        else:
+            localtime = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+            self.ini.set('NetworkChart', _('last_written'), localtime)
+
+        with open(self.inipath, 'w') as configfile:
+            self.ini.write(configfile)
         #------- stop inifile -------
 
     def add_menu_options(self, menu):
@@ -1129,16 +1161,19 @@ class NetworkChartOptions(MenuReportOptions):
         self.b_confirm_overwrite.set_help(_("Enable/disable confirmation of file overwrite."))
         menu.add_option(category_name, "b_confirm_overwrite", self.b_confirm_overwrite)
 
-    def cb_b_trim_groups(self): # Callback gets called multiple times before displayed
+    def cb_b_trim_groups(self):
         """
         Callback to force b_trim_groups when database > 1500 people.
         """
         if self._dbase.get_number_of_people() > 1500:
+            self.b_trim_groups.disable_signals()
             self.b_trim_groups.set_value(True)
             self.b_trim_groups.set_available(False)
             self.graph_splines.set_value('spline')
             self.rank_dir.set_value('LR')
-            self.rank_sep.set_value('3')
+            self.rank_sep.set_value('2')
+            self.b_trim_groups.emit('value-changed')
+            self.b_trim_groups.enable_signals()
         else:
             self.b_trim_groups.set_available(True)
         return
@@ -1151,24 +1186,30 @@ class NetworkChartOptions(MenuReportOptions):
         old_dbname = self.s_dbname.get_value()
 
         if current_dbname != old_dbname:
+            self.s_dbname.disable_signals()
             self.s_dbname.set_value(current_dbname)
+            self.s_dbname.enable_signals()
+
             s_namebase = _("network")
             fname = current_dbname + "_" + s_namebase
+
             self.dest_file.set_value(fname)
+
             s_title = current_dbname[0].upper() + current_dbname[1::]
             self.top_title.set_value(s_title)
-            self.b_trim_children.set_value(False)
         elif self.dest_file.get_value() == '':
             s_namebase = _("network")
             fname = current_dbname + "_" + s_namebase
+
             self.dest_file.set_value(fname)
+
         old_dbname = self.s_dbname.get_value()
         #------- start inifile -------
-        dbname = current_dbname.lower()
-        db_sections = self.inifile.get_sections()
+        dbname = current_dbname
+        db_sections = self.ini.sections()
         if dbname not in db_sections:
-            self.inifile.register(dbname+".s_dbname", "")
-            self.inifile.set(dbname+".s_dbname", dbname)
+            self.ini.add_section(dbname)
+            self.ini.set(dbname, "s_dbname", dbname)
             if self._dbase.get_number_of_people() > 5000:
                 self.b_center_person.set_value(True)
                 self.b_highlight_center.set_value(True)
@@ -1176,137 +1217,117 @@ class NetworkChartOptions(MenuReportOptions):
                 first_person = str(self._dbase.find_initial_person().get_gramps_id())
                 self.center_person.set_value(first_person)
 
-        db_settings = self.inifile.get_section_settings(dbname)
+        db_settings = self.ini.options(dbname)
         if "trim_list_children" in db_settings:
-            self.trim_list_children.set_value(self.inifile.get(dbname + ".trim_list_children"))
+            self.trim_list_children.set_value(self.ini.get(dbname, "trim_list_children"))
         else:
-            self.inifile.register(dbname + ".trim_list_children", "")
-            self.inifile.set(dbname + ".trim_list_children", self.trim_list_children.get_value())
+            self.ini.set(dbname, "trim_list_children", self.trim_list_children.get_value())
 
         if "trim_list_parents" in db_settings:
-            self.trim_list_parents.set_value(self.inifile.get(dbname + ".trim_list_parents"))
+            self.trim_list_parents.set_value(self.ini.get(dbname, "trim_list_parents"))
         else:
-            self.inifile.register(dbname + ".trim_list_parents", "")
-            self.inifile.set(dbname + ".trim_list_parents", self.trim_list_parents.get_value())
+            self.ini.set(dbname, "trim_list_parents", self.trim_list_parents.get_value())
 
         if "path_start_end" in db_settings:
-            self.path_start_end.set_value(self.inifile.get(dbname + ".path_start_end"))
+            self.path_start_end.set_value(self.ini.get(dbname, "path_start_end"))
         else:
-            self.inifile.register(dbname + ".path_start_end", "")
-            self.inifile.set(dbname + ".path_start_end", self.path_start_end.get_value())
+            self.ini.set(dbname, "path_start_end", self.path_start_end.get_value())
 
         if "b_trim_children" in db_settings:
-            self.b_trim_children.set_value(bool(int(self.inifile.get(dbname + ".b_trim_children"))))
+            self.b_trim_children.set_value(bool(int(self.ini.get(dbname, "b_trim_children"))))
         else:
-            self.inifile.register(dbname + ".b_trim_children", "")
-            self.inifile.set(dbname + ".b_trim_children", str(int(self.b_trim_children.get_value())))
+            self.ini.set(dbname, "b_trim_children", str(int(self.b_trim_children.get_value())))
 
         if "b_trim_parents" in db_settings:
-            self.b_trim_parents.set_value(bool(int(self.inifile.get(dbname + ".b_trim_parents"))))
+            self.b_trim_parents.set_value(bool(int(self.ini.get(dbname, "b_trim_parents"))))
         else:
-            self.inifile.register(dbname + ".b_trim_parents", "")
-            self.inifile.set(dbname + ".b_trim_parents", str(int(self.b_trim_parents.get_value())))
+            self.ini.set(dbname, "b_trim_parents", str(int(self.b_trim_parents.get_value())))
 
         if "b_trim_groups" in db_settings:
-            self.b_trim_groups.set_value(bool(int(self.inifile.get(dbname + ".b_trim_groups"))))
+            self.b_trim_groups.set_value(bool(int(self.ini.get(dbname, "b_trim_groups"))))
         else:
-            self.inifile.register(dbname + ".b_trim_groups", "")
-            self.inifile.set(dbname + ".b_trim_groups", str(int(self.b_trim_groups.get_value())))
+            self.ini.set(dbname, "b_trim_groups", str(int(self.b_trim_groups.get_value())))
 
         if "trim_groups_size" in db_settings:
-            self.trim_groups_size.set_value(self.inifile.get(dbname + ".trim_groups_size"))
+            self.trim_groups_size.set_value(self.ini.get(dbname, "trim_groups_size"))
         else:
-            self.inifile.register(dbname + ".trim_groups_size", "")
-            self.inifile.set(dbname + ".trim_groups_size", self.trim_groups_size.get_value())
+            self.ini.set(dbname, "trim_groups_size", self.trim_groups_size.get_value())
 
         if "show_path" in db_settings:
-            self.show_path.set_value(self.inifile.get(dbname + ".show_path"))
+            self.show_path.set_value(self.ini.get(dbname, "show_path"))
         else:
-            self.inifile.register(dbname + ".show_path", "")
-            self.inifile.set(dbname + ".show_path", self.show_path.get_value())
+            self.ini.set(dbname, "show_path", self.show_path.get_value())
 
         if "show_highlight" in db_settings:
-            self.show_highlight.set_value(self.inifile.get(dbname + ".show_highlight"))
+            self.show_highlight.set_value(self.ini.get(dbname, "show_highlight"))
         else:
-            self.inifile.register(dbname + ".show_highlight", "")
-            self.inifile.set(dbname + ".show_highlight", self.show_highlight.get_value())
+            self.ini.set(dbname, "show_highlight", self.show_highlight.get_value())
 
         if "b_center_person" in db_settings:
-            self.b_center_person.set_value(bool(int(self.inifile.get(dbname + ".b_center_person"))))
+            self.b_center_person.set_value(bool(int(self.ini.get(dbname, "b_center_person"))))
         else:
-            self.inifile.register(dbname + ".b_center_person", "")
-            self.inifile.set(dbname + ".b_center_person", str(int(self.b_center_person.get_value())))
+            self.ini.set(dbname, "b_center_person", str(int(self.b_center_person.get_value())))
 
         if "b_highlight_center" in db_settings:
-            self.b_highlight_center.set_value(bool(int(self.inifile.get(dbname + ".b_highlight_center"))))
+            self.b_highlight_center.set_value(bool(int(self.ini.get(dbname, "b_highlight_center"))))
         else:
-            self.inifile.register(dbname + ".b_highlight_center", "")
-            self.inifile.set(dbname + ".b_highlight_center", str(int(self.b_highlight_center.get_value())))
+            self.ini.set(dbname, "b_highlight_center", str(int(self.b_highlight_center.get_value())))
 
         if "center_person" in db_settings:
-            self.center_person.set_value(self.inifile.get(dbname + ".center_person"))
+            cptmp = self.ini.get(dbname, "center_person").strip()
+            if len(cptmp) < 1:
+                first_person = str(self._dbase.find_initial_person().get_gramps_id())
+                self.center_person.set_value(first_person)
+            else:
+                if self._dbase.get_person_from_gramps_id(cptmp) is not None:
+                    self.center_person.set_value(cptmp)
+                else:
+                    first_person = str(self._dbase.find_initial_person().get_gramps_id())
+                    self.center_person.set_value(first_person)
         else:
-            self.inifile.register(dbname + ".center_person", "")
-            self.inifile.set(dbname + ".center_person", self.center_person.get_value())
+            self.ini.set(dbname, "center_person", self.center_person.get_value())
 
         if "center_radius" in db_settings:
-            self.center_radius.set_value(self.inifile.get(dbname + ".center_radius"))
+            self.center_radius.set_value(self.ini.get(dbname, "center_radius"))
         else:
-            self.inifile.register(dbname + ".center_radius", "")
-            self.inifile.set(dbname + ".center_radius", self.center_radius.get_value())
+            self.ini.set(dbname, "center_radius", self.center_radius.get_value())
         #------- start inifile -------
         return
 
-    def cb_b_trim_children(self): # Callback gets called multiple times before displayed
+    def cb_b_trim_children(self):
         """
         Callback to prevent trim children/descendants on non-existing Gramps IDs.
         """
-        current_dbname = self._dbase.get_dbname()
-        old_dbname = self.s_dbname.get_value()
-        if current_dbname != old_dbname:
-            self.b_trim_children.set_value(False)
-
         if self.b_trim_children.get_value():
             trim_list_children = [str(i.strip()) for i in
                                   str(self.trim_list_children.get_value()).split(' ')
                                   if len(i) > 0]
-            if len(trim_list_children) < 1:
-                self.b_trim_children.set_value(False)
-                return
+            trim_list_children_verified = []
             for ind in trim_list_children:
-                try:
-                    gid = self._dbase.get_person_from_gramps_id(ind)
-                    if gid is None:
-                        self.b_trim_children.set_value(False)
-                        return
-                except:
-                    self.b_trim_children.set_value(False)
-                    return
+                if self._dbase.get_person_from_gramps_id(ind) is not None:
+                    trim_list_children_verified.append(ind)
+            self.trim_list_children.set_value(str(' '.join(trim_list_children_verified)))
+            if len(trim_list_children_verified) < 1:
+                self.b_trim_children.disable_signals()
+                self.b_trim_children.set_value(False)
+                self.b_trim_children.enable_signals()
         return
 
-    def cb_b_trim_parents(self): # Callback gets called multiple times before displayed
+    def cb_b_trim_parents(self):
         """
         Callback to prevent trim parents/ancestors on non-existing Gramps IDs.
         """
-        current_dbname = self._dbase.get_dbname()
-        old_dbname = self.s_dbname.get_value()
-        if current_dbname != old_dbname:
-            self.b_trim_parents.set_value(False)
-
         if self.b_trim_parents.get_value():
             trim_list_parents = [str(i.strip()) for i in
                                  str(self.trim_list_parents.get_value()).split(' ')
                                  if len(i) > 0]
-            if len(trim_list_parents) < 1:
-                self.b_trim_parents.set_value(False)
-                return
+            trim_list_parents_verified = []
             for ind in trim_list_parents:
-                try:
-                    gid = self._dbase.get_person_from_gramps_id(ind)
-                    if gid is None:
-                        self.b_trim_parents.set_value(False)
-                        return
-                except:
-                    self.b_trim_parents.set_value(False)
-                    return
+                if self._dbase.get_person_from_gramps_id(ind) is not None:
+                    trim_list_parents_verified.append(ind)
+            self.trim_list_parents.set_value(str(' '.join(trim_list_parents_verified)))
+            if len(trim_list_parents_verified) < 1:
+                self.b_trim_parents.disable_signals()
+                self.b_trim_parents.set_value(False)
+                self.b_trim_parents.enable_signals()
         return
