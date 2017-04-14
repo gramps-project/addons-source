@@ -1,6 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <forms>
 <!--
+    Definitions by:
+    Nick Hall
+    Ben Pritchard
+    Allen Crider
+    Kurt Caulley
+    David McMurray
+-->
+<!--
  U.S. Decennial Census
 -->
     <form id='US1790' type='Census' title='1790 US Census' date='1790-08-02'>
@@ -1678,6 +1686,9 @@
             <_attribute>Ward of city</_attribute>
         </heading>
         <heading>
+            <_attribute>Street Address</_attribute>
+        </heading>
+        <heading>
             <_attribute>Enumeration Date</_attribute>
         </heading>
         <section role='Primary' type='multi'>
@@ -2341,7 +2352,9 @@
 <!--
  U.S. States
  -->
-    <!-- Colorado Census -->
+<!--
+ Colorado Census
+-->
     <form id='USCO1885' type='Census' title='1885 Colorado Census' date='1885-06-01'>
         <heading>
             <_attribute>Page No.</_attribute>
@@ -2427,7 +2440,282 @@
                </column>
         </section>
     </form>
-    <!-- Iowa Census -->
+<!--
+ Alabama Confederate Soldiers Census 1907 - 1927
+ https://familysearch.org/search/collection/2487274
+-->
+    <form id='USAL1907' type='Census' title='1907 Alabama Confederate Soldiers Census' date='1907-08-09'>
+        <heading>
+            <_attribute>County</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>File No.</_attribute>
+        </heading>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Post Office Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Entered service as (rank)</_attribute>
+            </column>
+            <column>
+                <_attribute>Date Entered</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Enlistment</_attribute>
+            </column>
+            <column>
+                <_attribute>Name, Letter of Co., Number of Regiment</_attribute>
+            </column>
+            <column>
+                <_attribute>Continued until</_attribute>
+            </column>
+            <column>
+                <_attribute>Re-enlisted as</_attribute>
+            </column>
+            <column>
+                <_attribute>On date</_attribute>
+            </column>
+            <column>
+                <_attribute>Place</_attribute>
+            </column>
+            <column>
+                <_attribute>and continued until</_attribute>
+            </column>
+            <column>
+                <_attribute>3rd enlistment</_attribute>
+            </column>
+            <column>
+                <_attribute>Enlisted on</_attribute>
+            </column>
+            <column>
+                <_attribute>Enlistment Place</_attribute>
+            </column>
+            <column>
+                <_attribute>in the command of</_attribute>
+            </column>
+            <column>
+                <_attribute>Until</_attribute>
+            </column>
+            <column>
+                <_attribute>Other service, if any</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='USAL1921' type='Census' title='1921 Alabama Confederate Soldiers Census'>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Post Office Address</_attribute>
+            </column>
+            <column>
+                <_attribute>No. on pension roll</_attribute>
+            </column>
+            <column>
+                <_attribute>County lived in when first placed on roll</_attribute>
+            </column>
+            <column>
+                <_attribute>Other states lived in and when</_attribute>
+            </column>
+            <column>
+                <_attribute>Moved to Alabama</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Enlistment</_attribute>
+            </column>
+            <column>
+                <_attribute>Date Enlisted</_attribute>
+            </column>
+            <column>
+                <_attribute>Branch of service</_attribute>
+            </column>
+            <column>
+                <_attribute>Rank</_attribute>
+            </column>
+            <column>
+                <_attribute>Letter of Company</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Regiment</_attribute>
+            </column>
+            <column>
+                <_attribute>Was it an Alabama Regiment</_attribute>
+            </column>
+            <column>
+                <_attribute>If not, give name of state</_attribute>
+            </column>
+            <column>
+                <_attribute>Name of your Captain</_attribute>
+            </column>
+            <column>
+                <_attribute>Name of your Colonel</_attribute>
+            </column>
+            <column>
+                <_attribute>By what other name was your Company called</_attribute>
+            </column>
+            <column>
+                <_attribute>By what other name was your Regiment called</_attribute>
+            </column>
+            <column>
+                <_attribute>Battles in which you took part</_attribute>
+            </column>
+            <column>
+                <_attribute>Ever wounded</_attribute>
+            </column>
+            <column>
+                <_attribute>When wounded</_attribute>
+            </column>
+            <column>
+                <_attribute>In what battles</_attribute>
+            </column>
+            <column>
+                <_attribute>Were you captured</_attribute>
+            </column>
+            <column>
+                <_attribute>When captured</_attribute>
+            </column>
+            <column>
+                <_attribute>Where captured</_attribute>
+            </column>
+            <column>
+                <_attribute>Were you imprisoned</_attribute>
+            </column>
+            <column>
+                <_attribute>When imprisoned</_attribute>
+            </column>
+            <column>
+                <_attribute>Were imprisoned</_attribute>
+            </column>
+            <column>
+                <_attribute>How were you discharged</_attribute>
+            </column>
+            <column>
+                <_attribute>Did you transfer to another Company or Command</_attribute>
+            </column>
+            <column>
+                <_attribute>If so, give Company and Regiment</_attribute>
+            </column>
+            <column>
+                <_attribute>What branch of service and date of transfer</_attribute>
+            </column>
+            <column>
+                <_attribute>Captains name</_attribute>
+            </column>
+            <column>
+                <_attribute>Colonels name</_attribute>
+            </column>
+            <column>
+                <_attribute>Length of service</_attribute>
+            </column>
+            <column>
+                <_attribute>Are you married</_attribute>
+            </column>
+            <column>
+                <_attribute>Age of wife</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace of wife</_attribute>
+            </column>
+            <column>
+                <_attribute>Date married</_attribute>
+            </column>
+            <column>
+                <_attribute>Place married</_attribute>
+            </column>
+            <column>
+                <_attribute>When, where and circumstances you quit the service</_attribute>
+            </column>
+            <column>
+                <_attribute>Paroled at close of war</_attribute>
+            </column>
+            <column>
+                <_attribute>If so, when</_attribute>
+            </column>
+            <column>
+                <_attribute>and where</_attribute>
+            </column>
+            <column>
+                <_attribute>Have you your parole</_attribute>
+            </column>
+            <column>
+                <_attribute>Voting Precinct and County</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>With whom are you living</_attribute>
+            </column>
+            <column>
+                <_attribute>Regularly received your pension warrant</_attribute>
+            </column>
+            <column>
+                <_attribute>If No give information regarding the same</_attribute>
+            </column>
+            <column>
+                <_attribute>Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+            <column>
+                <_attribute>Witness name and P.O Address</_attribute>
+            </column>
+        </section>
+        <section role='Children' type='multi' title='Children'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Post Office Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='USAL1927' type='Census' title='1927 Alabama Widows of Confederate Soldiers Census'>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Widow of</_attribute>
+            </column>
+            <column>
+                <_attribute>Her age</_attribute>
+            </column>
+            <column>
+                <_attribute>Her date of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of marriage</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+ Iowa Census
+-->
     <form id='USIA1844' type='Census' title='1844 Iowa Census' date='1844-05-01'>
         <section role='Primary' type='multi'>
             <column>
@@ -3256,7 +3544,9 @@
             </column>
         </section>
     </form>
-    <!-- Kansas Census -->
+<!--
+Kansas Census
+-->
     <form id='USKS1865' type='Census' title='1865 Kansas Census' date='1865-05-01'>
         <heading>
             <_attribute>Free Inhabitants in</_attribute>
@@ -3711,7 +4001,9 @@
             </column>
         </section>
     </form>
-    <!-- Minnesota Census -->
+<!--
+ Minnesota Census
+-->
     <form id='USMN1875' type='Census' title='1875 Minnesota Census' date='1875-05-01'>
         <heading>
             <_attribute>County of</_attribute>
@@ -3953,7 +4245,9 @@
             </column>
         </section>
     </form>
-    <!-- Missouri Census -->
+<!--
+ Missouri Census
+-->
     <form id='USMO1868' type='Census' title='1868 Missouri Census' date='1868-01-01'>
         <section role='Primary' type='multi'>
             <column>
@@ -4400,7 +4694,9 @@
             </column>
         </section>
     </form>
-    <!-- New York State Census -->
+<!--
+ New York State Census
+-->
     <form id='USNY1855' type='Census' title='1855 New York State Census' date='1855-06-01'>
         <heading>
             <_attribute>Town of</_attribute>
@@ -4855,7 +5151,9 @@
             </column>
         </section>
     </form>
-    <!-- North Carolina Census -->
+<!--
+ North Carolina Census
+-->
     <form id='USNC1784' type='Census' title='North Carolina 1784-1787 Census' date='1784-01-01'>
         <heading>
             <_attribute>County</_attribute>
@@ -4881,7 +5179,9 @@
             </column>
         </section>
     </form>
-    <!-- South Dakota Census -->
+<!--
+ South Dakota Census
+-->
     <form id='USSD1905' type='Census' title='1905 South Dakota Census' date='1905-6-1'>
         <section role='Primary' type='person'>
             <column>
@@ -5469,7 +5769,9 @@
             </column>
         </section>
     </form>
-    <!-- Wisconsin Census -->
+<!--
+ Wisconsin Census
+-->
     <form id='USWI1836' type='Census' title='1836 Wisconsin Territorial Census' date='1836-09-09'>
         <heading>
             <_attribute>County</_attribute>
@@ -5854,6 +6156,864 @@
             </column>
             <column>
                 <_attribute>Farm/House</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+Birth, Death, Marriage
+-->
+    <form id='USBirth' type='Birth' title='US Birth Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Registered</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registrar</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Child'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Twin, triplet or other</_attribute>
+            </column>
+            <column>
+                <_attribute>No. in order of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Legitimate</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+        </section>
+        <section role='Father' type='person' title='Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+              <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Mother' type='person' title='Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Description</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+     Birth records before Birth Certificates
+    -->
+    <form id='USBrthRcrd' type='Birth' title='Early Birth Record'>
+        <heading>
+            <_attribute>Place of Record</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Book/Volume</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Child'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Race/Color</_attribute>
+            </column>
+            <column>
+            <_attribute>Illegitimate</_attribute>
+            </column>
+            <column>
+                <_attribute>Father</_attribute>
+                <_longname>STOP! If you want this record to be attached to the Parents move to Father.</_longname>
+            </column>
+            <column>
+                <_attribute>Mother (Maiden Name)</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence of Parents</_attribute>
+            </column>
+            <column>
+                <_attribute>By Whom Reported</_attribute>
+            </column>
+            <column>
+                <_attribute>Date Recorded</_attribute>
+            </column>
+        </section>
+        <section role='Father' type='person' title='Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Mother' type='person' title='Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+     Marriage Records
+    -->
+    <form id='USMrgRcrd' type='Marriage' title='Early Marriage Record'>
+        <heading>
+            <_attribute>Place of Record</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Book/Volume</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page</_attribute>
+        </heading>
+        <heading>
+            <_attribute>License No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date of Marriage</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Married by</_attribute>
+        </heading>
+        <section role='Family' type='family' title='Groom/Bride'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Marriage</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Consent given by</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='USMarriage' type='Marriage' title='US Marriage Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Bond/Licence</_attribute>
+        </heading>
+        <section role='Family' type='family' title='Groom/Bride'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+        </section>
+        <section role='Groom Father' type='person' title='Groom&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Groom Mother' type='person' title='Groom&apos;s Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Bride Father' type='person' title='Bride&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            </section>
+        <section role='Bride Mother' type='person' title='Bride&apos;s Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Witness' type='multi' title='Witnesses'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+     Death Record
+    -->
+    <form id='USDthCrt' type='Death' title='US Death Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Registered</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registrar</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Deceased'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Length of Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Served in U.S. Military</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Marital Status</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birth date of deceased</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Industry or Business</_attribute>
+            </column>
+            <column>
+                <_attribute>Name of employer</_attribute>
+            </column>
+            <column>
+                <_attribute>Date last worked</_attribute>
+            </column>
+            <column>
+                <_attribute>Years in this occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Education Level</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Father&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Father&apos;s Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother&apos;s Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Social Security No.</_attribute>
+            </column>
+            <column>
+                <_attribute>Informant</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Cause of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Burial</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Burial</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+     Used with FamilySearch Index file
+    -->
+    <form id='DthNdx' type='Death' title='Death Index'>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Place</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Birth Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Marital Status</_attribute>
+            </column>
+            <column>
+                <_attribute>Father&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Father&apos;s Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother&apos;s Birthplace</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Social Security Number</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence Place</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Burial Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Burial Place</_attribute>
+            </column>
+            <column>
+                <_attribute>Cemetery</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='USDthRcd' type='Death' title='Early Death Record'>
+        <heading>
+            <_attribute>Place of Record</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Book/Volume</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Marital Status</_attribute>
+            </column>
+            <column>
+                <_attribute>Race/Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Cause of Death</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Father&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Remarks</_attribute>
+            </column>
+            <column>
+                <_attribute>Date Recorded</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+ Miscellaneous Records
+-->
+    <!--
+    Union Army Draft Registration
+    -->
+    <form id='USUADR' type='Military Registration' title='U.S. Union Army Draft Registration'>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Congressional District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>in the Counties of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>State of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>in the month of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Registrant'>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Age 1 July 1863</_attribute>
+            </column>
+            <column>
+                <_attribute>White or Colored</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Former Military Service</_attribute>
+            </column>
+            <column>
+                <_attribute>Remarks</_attribute>
+            </column>
+            <column>
+                <_attribute>Station Headquarters</_attribute>
+            </column>
+            <column>
+                <_attribute>Congr. Dist. of</_attribute>
+            </column>
+            <column>
+                <_attribute>Date</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+    WWI Draft Registration
+    https://familysearch.org/search/collection/1968530
+    -->
+    <form id='USWWIDRC' type='Military Registration' title='World War I Draft Registration Card'>
+        <heading>
+            <_attribute>Card (A, B, or C)</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Serial No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Order No.</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Registrant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Age in yrs.</_attribute>
+            </column>
+            <column>
+                <_attribute>Home Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Citizenship</_attribute>
+                <_longname>Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian</_longname>
+            </column>
+            <column>
+                <_attribute>If not a citizen, of what nation are you a citizen or subject?</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Employer&apos;s Name &amp; address</_attribute>
+            </column>
+            <column>
+                <_attribute>Nearest Relative</_attribute>
+            </column>
+            <column>
+                <_attribute>Dependants &amp; Address</_attribute>
+                <_longname>Have you a father, mother, wife, child under 12, or a sister or brother under 12, solely dependent on your support (specify which)?</_longname>
+            </column>
+            <column>
+                <_attribute>Marital status</_attribute>
+            </column>
+            <column>
+                <_attribute>What military service have you had? (Branch, Years, Nation or State)</_attribute>
+            </column>
+            <column>
+                <_attribute>Do you claim exemption from draft (specify grounds)</_attribute>
+            </column>
+            <column>
+                <_attribute>Race </_attribute>
+            </column>
+            <column>
+                <_attribute>Height</_attribute>
+            </column>
+            <column>
+                <_attribute>Build / Weight</_attribute>
+            </column>
+            <column>
+                <_attribute>Eye Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Hair Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Bald</_attribute>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Registration</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Registration</_attribute>
+            </column>
+        </section>
+    <!--
+    WWII Draft Registration
+    https://familysearch.org/search/collection/1861144
+    -->
+    </form>
+    <form id='USWWIIDRC' type='Military Registration' title='World War II Draft Registration Card' date='1942-04-27'>
+        <heading>
+            <_attribute>Serial Number</_attribute>
+        </heading><heading>
+            <_attribute>Order Number</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Registrant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Residence</_attribute>
+            </column>
+            <column>
+                <_attribute>Mailing Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Telephone</_attribute>
+            </column>
+            <column>
+                <_attribute>Age in years</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Who will always know your address (Name &amp; Address)</_attribute>
+            </column>
+            <column>
+                <_attribute>Employer&apos;s Name &amp; address</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of employment or business</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Height</_attribute>
+            </column>
+            <column>
+                <_attribute>Weight</_attribute>
+            </column>
+            <column>
+                <_attribute>Complexion</_attribute>
+            </column>
+            <column>
+                <_attribute>Eyes</_attribute>
+            </column>
+            <column>
+                <_attribute>Hair</_attribute>
+            </column>
+            <column>
+                <_attribute>Other characteristics</_attribute>
+            </column>
+            <column>
+                <_attribute>Date of Registration</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Registration</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+    Military Service
+    https://familysearch.org/search/collection/1880762
+    -->
+    <form id='MilSer' type='Military Service' title='Military Service'>
+        <heading>
+            <_attribute>Place of Record</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Book/Volume</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page</_attribute>
+        </heading>
+        <section role='Primary' type='person'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Date entered</_attribute>
+            </column>
+            <column>
+                <_attribute>Place entered</_attribute>
+            </column>
+            <column>
+                <_attribute>Term of enlistment</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Eye color</_attribute>
+            </column>
+            <column>
+                <_attribute>Hair color</_attribute>
+            </column>
+            <column>
+                <_attribute>Complexion</_attribute>
+            </column>
+            <column>
+                <_attribute>Height</_attribute>
+            </column>
+            <column>
+                <_attribute>Rank in</_attribute>
+            </column>
+            <column>
+                <_attribute>Branch</_attribute>
+            </column>
+            <column>
+                <_attribute>Regiment/Unit/Ship</_attribute>
+            </column>
+            <column>
+                <_attribute>Company</_attribute>
+            </column>
+            <column>
+                <_attribute>Service Number</_attribute>
+            </column>
+            <column>
+                <_attribute>No. of enlistment</_attribute>
+            </column>
+            <column>
+                <_attribute>Date discharged</_attribute>
+            </column>
+            <column>
+                <_attribute>Place discharged</_attribute>
+            </column>
+            <column>
+                <_attribute>Rank out</_attribute>
+            </column>
+            <column>
+                <_attribute>Remarks</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='USCtyDrct' type='Residence' title='US City Directory'>
+        <section role='Primary' type='multi'>
+        <heading>
+            <_attribute>Street Address</_attribute>
+        </heading>
+             <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Industry/Employer</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse</_attribute>
+            </column>
+            <column>
+                <_attribute>Widow of</_attribute>
+            </column>
+             <column>
+                <_attribute>Residents Status</_attribute>
             </column>
         </section>
     </form>
