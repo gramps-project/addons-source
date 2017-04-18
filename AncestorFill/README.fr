@@ -1,0 +1,27 @@
+le principe
+
+on parcourt l'arbre de fa√on r√cursive.
+pour chaque individu on cherche si il a des parents.
+on va d'abord sur le pere puis sur la mere.
+
+self.trouve contient un tableau indexe par les grampsid. Il est a un pour chaque gid trouv√©. quand on arrive sur un individu on sait donc si il a deja √©t√© parcouru et on ne recommence pas le parcours.
+
+self.index contient pour chaque individu le grampsid de ses parents
+c'est un tableau indexe par le grampsid de l individu et qui contient une liste
+en valeur.
+
+self.gener est un tableau a double indice. 
+le premier indice est la generation le deuxieme est le grampsid de l individu et la valeur est le nombre ou ve grampsid apparait dans l 'arbre a la generation donn√e.
+
+On construit l'arbre de proche en proche en parcourant les generations. 
+pour chaque individu a une generation donn√e on note le nombre de presence dans l'arbre de cette individus. on rajoute alors ce nombre au nombre de presences de ses parents a la generation superieure. 
+cela se fait en parcourant le tableau self.gener.
+
+au debut ce tableau ne contient que les parents de la souche de l'arbre present une seule fois a la generation 1. 
+au fur et ‡ mesure qu'on rajoute les parents celui ci se remplit.
+si on arrive au meme parent dans la meme generation par deux enfants differents la valeur du tableau pour ce parent a la genration donnÈe sera de deux. 
+et donc pour le parent de cette personne a la generation suivante on rajoutera non pas un mais deux. 
+
+Quand on a fini de parcourir une generation on se retrouve  dans ce tableau avec un nombre d elements correspondant a la generation donnÈe et la somme des valeurs de chaque elements.
+si les individus sont tous differents a cette generation ces deux valeurs sont egales et l'implexe est a zero.
+Sinon on peut facilement calculer l implexe.
