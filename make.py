@@ -167,7 +167,8 @@ elif command == "init":
         mkdir(r("%(addon)s/po"))
         mkdir("%(addon)s/locale")
         system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
-        system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
+        for xml in glob.glob(r('''%(addon)s/*xml''')):
+            system('''intltool-extract --type=gettext/xml "%(xml)s"''')
         system('''xgettext --language=Python --keyword=_ --keyword=N_'''
                ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
         system('''xgettext -j --keyword=_ --keyword=N_'''
