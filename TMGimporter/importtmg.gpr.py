@@ -21,7 +21,7 @@
 #
 
 '''
-Import from an Whollygenes - The Master Genealogist (TMG) Project backup file 
+Import from an Whollygenes - The Master Genealogist (TMG) Project backup file
 (*.SQZ)
 '''
 

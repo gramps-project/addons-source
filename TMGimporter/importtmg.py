@@ -21,7 +21,7 @@
 #
 
 '''
-Import from an Whollygenes - The Master Genealogist (TMG) Project backup file 
+Import from an Whollygenes - The Master Genealogist (TMG) Project backup file
 (*.SQZ)
 '''
 
@@ -50,7 +50,7 @@ from lib import libtmg
 
 #-------------------------------------------------------------------------
 #
-# importData (based on importgpkg.py) 
+# importData (based on importgpkg.py)
 #
 #-------------------------------------------------------------------------
 def importSqzData(database, filename, user):

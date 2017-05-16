@@ -139,16 +139,16 @@ Fields:
  3 - dstype    : 1                 # Import type
  4 - dslocked  : False             # Is DataSet Locked
  5 - dsenabled : True              # Is DataSet Enabled
- 6 - property  : u''               # 
- 7 - dsp       : u''               # 
- 8 - dsp2      : u''               # 
+ 6 - property  : u''               #
+ 7 - dsp       : u''               #
+ 8 - dsp2      : u''               #
  9 - dcomment  : u'A comment here' # DataSet Comment
-10 - host      : u''               # 
-11 - namestyle : 0                 # Default name style for this dataset 
+10 - host      : u''               #
+11 - namestyle : 0                 # Default name style for this dataset
                                      Relates to st.styleid(ST.DBF).
-12 - placestyle: 0                 # Default place style for this dataset 
+12 - placestyle: 0                 # Default place style for this dataset
                                      Relates to st.styleid(ST.DBF).
-13 - tt        : u' '              # 
+13 - tt        : u' '              #
 -----------------------------
 '''
 def d_dbf():
