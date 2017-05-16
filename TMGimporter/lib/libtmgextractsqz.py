@@ -59,7 +59,7 @@ def TmgExtractSQZ(tmgsqzfilename):  #TODO split into separate functions
     """
     print("Filename:", tmgsqzfilename)
 
-    # Open the TMG SQZ file as readonly 
+    # Open the TMG SQZ file as readonly
     try:
         # Test sqz file is a valid zipfile
         if zipfile.is_zipfile(tmgsqzfilename):
@@ -135,12 +135,12 @@ def TmgExtractSQZ(tmgsqzfilename):  #TODO split into separate functions
                 # GUI(importtmg.glade)
 
                 # Present a drop down box to select only one of the TMG "Data Sets" to be imported.
-                # (I believe Gramps can only have one family tree open at a time, 
+                # (I believe Gramps can only have one family tree open at a time,
                 #  and muliple dataset can not be shown in the list views eglike tmgs 1:23, 2:13)
 
                 # Test the TMG SQZ for Internal exhibits
                 # http://tmg.reigelridge.com/exhibits.htm
-                # Mention that: John Cardinal's TMG Utility will 
+                # Mention that: John Cardinal's TMG Utility will
                 # convert internal exhibits to external...see http://www.johncardinal.com/tmgutil/
                 # In TMG Utility, try the Other->Export Data option and select Exhibit Log;
                 # after you've chosen where to save it, you'll be prompted;
