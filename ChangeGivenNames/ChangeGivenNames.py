@@ -102,7 +102,8 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
         given_name_dict = self.get_given_name_dict()
 
-        self.progress = ProgressMeter(_('Checking Given Names'),'')
+        self.progress = ProgressMeter(_('Checking Given Names'),'',
+                                      parent=uistate.window)
         self.progress.set_pass(_('Searching given names'),
                                len(given_name_dict.keys()))
         self.name_list = []
@@ -151,7 +152,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
             path = base + "/changenames.glade"
             self.glade.add_from_file(path)
 
-            from gi.repository import GObject
+            #from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
 
             self.top = self.glade.get_object('changenames')
