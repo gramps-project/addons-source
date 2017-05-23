@@ -33,5 +33,5 @@ register(REPORT,
                     'represented as a Fan Chart from the D3.js '
                     'JavaScript library.'),
     version = '1.0.21',
-    gramps_target_version = "5.0",
+    gramps_target_version = "5.1",
 )

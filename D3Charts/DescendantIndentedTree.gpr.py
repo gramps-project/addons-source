@@ -33,5 +33,5 @@ register(REPORT,
                     'as a Collapsible Indented Tree Layout from the D3.js '
                     'JavaScript library.'),
     version = '1.0.21',
-    gramps_target_version = "5.0",
+    gramps_target_version = "5.1",
 )
