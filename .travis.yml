@@ -74,9 +74,9 @@ before_script:
 # Create the Gramps database directory.
  - mkdir -p $HOME/.gramps/grampsdb/
 # Create the Gramps Addons directory.
- - mkdir -p $HOME/.gramps/gramps50/plugins
+ - mkdir -p $HOME/.gramps/gramps51/plugins
 # Copy Addons to Gramps Addons directory
- - cp -r * $HOME/.gramps/gramps50/plugins/
+ - cp -r * $HOME/.gramps/gramps51/plugins/
 # Create css directory used by webstuff
  - mkdir -p $HOME/.gramps/css
 
