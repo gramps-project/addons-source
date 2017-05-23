@@ -22,7 +22,7 @@ register(TOOL,
          id    = 'PhpGedView',
          name  = _("PhpGedView"),
          description =  _("Download a GEDCOM file from a phpGedView server."),
-         version = '0.0.2',
+         version = '0.0.3',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = UNSTABLE, # not yet tested with python 3

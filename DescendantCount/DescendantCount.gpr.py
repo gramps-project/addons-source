@@ -8,7 +8,7 @@ register(QUICKREPORT,
          fname="DescendantCount.py",
          authors=["Douglas S. Blank"],
          authors_email=["doug.blank@gmail.com"],
-         version = '1.0.24',
+         version = '1.0.25',
          gramps_target_version = "5.1",
          )
 
@@ -24,7 +24,7 @@ register(GRAMPLET,
          gramplet_title=_("Descendant Count"),
          detached_width = 600,
          detached_height = 400,
-         version = '1.0.25',
+         version = '1.0.26',
          gramps_target_version = "5.1",
          help_url="Descendant_Count_Gramplet",
          )
