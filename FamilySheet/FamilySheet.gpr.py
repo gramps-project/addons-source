@@ -4,7 +4,7 @@ register(REPORT,
     description = _("Produces a family sheet showing full information "
                     "about a person and his/her partners and children."),
     version = '3.4.29',
-    gramps_target_version = "5.0",
+    gramps_target_version = "5.1",
     status = STABLE,
     fname = 'FamilySheet.py',
     authors = ["Reinhard Mueller"],

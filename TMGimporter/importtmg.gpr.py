@@ -49,7 +49,7 @@ _ = glocale.translation.sgettext
 #------------------------------------------------------------------------
 dbfavailable = False
 addonversion = '0.0.63'
-grampsversion = "5.0"
+grampsversion = "5.1"
 
 try:
     # External Library: dbf.pypi

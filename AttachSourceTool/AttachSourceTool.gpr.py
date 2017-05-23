@@ -25,7 +25,7 @@ register(TOOL,
          name  = _("Attach Source"),
          description =  _("Attaches a shared source to multiple objects."),
          version = '0.0.26',
-         gramps_target_version = "5.0",
+         gramps_target_version = "5.1",
          status = STABLE, # not yet tested with python 3
          fname = 'AttachSourceTool.py',
          authors = ["Douglas S. Blank"],

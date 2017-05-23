@@ -31,7 +31,7 @@ register(REPORT,
         name  = _("PersonEverything Report"),
         description =  _("Produces a report containing everything about the active person"),
         version = '1.0.5',
-        gramps_target_version = "5.0",
+        gramps_target_version = "5.1",
         status = STABLE, # not yet tested with python 3
         fname = 'PersonEverything.py',
         category = CATEGORY_TEXT,

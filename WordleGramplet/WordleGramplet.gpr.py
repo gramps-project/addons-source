@@ -8,7 +8,7 @@ register(
     height=230,
     gramplet = 'WordleGramplet',
     gramplet_title=_("Wordle"),
-    gramps_target_version = "5.0",
+    gramps_target_version = "5.1",
     version = '1.0.10',
     description = "Gramplet used to make word clouds with wordle.net",
     authors = ["Douglas Blank"],

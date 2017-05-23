@@ -11,6 +11,6 @@ register(GRAMPLET,
          detached_width = 500,
          detached_height = 400,
          version = '1.0.24',
-         gramps_target_version="5.0",
+         gramps_target_version="5.1",
          help_url = "NoteGramplet",
          )
