@@ -264,7 +264,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
                         fname = capitalize(name.first_name)
                         name.set_first_name(fname)
                 if change:
-                    self.db.commit_person(person, transaction=self.trans)
+                    self.db.commit_person(person, self.trans)
 
         self.db.enable_signals()
         self.db.request_rebuild()
