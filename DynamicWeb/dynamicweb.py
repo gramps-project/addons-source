@@ -195,10 +195,6 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
 from gramps.gen.constfunc import win, get_curr_dir
-if (sys.version_info[0] < 3):
-    from gramps.gen.constfunc import UNITYPE
-else:
-    UNITYPE = str
 from gramps.gen.config import config
 if (DWR_VERSION_500):
     from gramps.gen.utils.thumbnails import get_thumbnail_path
@@ -3376,10 +3372,6 @@ class DynamicWebReport(Report):
                                   _("Constructing list of other objects..."),
                                   sum(1 for _ in ind_list)) as step:
             for handle in ind_list:
-                # FIXME work around bug that self.database.iter under python 3
-                # returns (binary) data rather than text
-                if (not isinstance(handle, UNITYPE)):
-                    handle = handle.decode("UTF-8")
                 step()
                 self._add_person(handle)
 
