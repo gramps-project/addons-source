@@ -20,12 +20,8 @@
 # $Id$
 #
 
-import sys
-
 from gramps.gui.listmodel import ListModel, NOSORT
-from gramps.gui.plug.quick import run_quick_report_by_name
 from gramps.gen.plug import Gramplet
-import gramps.gen.lib
 import gramps.gen.datehandler
 from gi.repository import Gtk
 from gramps.gui.editors import EditPerson, EditFamily, EditEventRef
@@ -39,6 +35,7 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
 
 class Attributes(Gramplet):
     """
@@ -62,8 +59,7 @@ class Attributes(Gramplet):
                   ('', 1, 100),
                   (_('Key'), 2, 100),
                   (_('Value'), 3, 100),
-                  ('', NOSORT, 50,)
-                 ]
+                  ('', NOSORT, 50,)]
         self.model = ListModel(top, titles, event_func=self._display_editor)
         return top
 
@@ -135,6 +131,7 @@ class Attributes(Gramplet):
     def _object_edited(self, ref, event):
         pass
 
+
 class ExtendedPersonAttributes(Attributes):
     """
     Displays the attributes of a person.
@@ -158,7 +155,7 @@ class ExtendedPersonAttributes(Attributes):
         with DbTxn('', self.dbstate.db) as trans:
             self.dbstate.db.commit_person(self.object_for_update, trans)
             msg = _("Edit Person (%s)") % \
-                    name_displayer.display(self.object_for_update)
+                name_displayer.display(self.object_for_update)
             trans.set_description(msg)
 
     def _display_editor(self, treeview):
@@ -169,9 +166,8 @@ class ExtendedPersonAttributes(Attributes):
         model, iter_ = treeview.get_selection().get_selected()
         if iter_:
             handle = model.get_value(iter_, 4)
-
-            event = self.dbstate.db.get_event_from_handle(handle)
-            if event:
+            if self.dbstate.db.has_event_handle(handle):
+                event = self.dbstate.db.get_event_from_handle(handle)
                 event_ref = self._get_event_ref(event)
                 try:
                     EditEventRef(self.dbstate,
@@ -204,6 +200,7 @@ class ExtendedPersonAttributes(Attributes):
         else:
             self.set_has_data(False)
 
+
 class ExtendedFamilyAttributes(Attributes):
     """
     Displays the attributes of an event.
@@ -233,9 +230,8 @@ class ExtendedFamilyAttributes(Attributes):
         model, iter_ = treeview.get_selection().get_selected()
         if iter_:
             handle = model.get_value(iter_, 4)
-
-            event = self.dbstate.db.get_event_from_handle(handle)
-            if event:
+            if self.dbstate.db.has_event_handle(handle):
+                event = self.dbstate.db.get_event_from_handle(handle)
                 event_ref = self._get_event_ref(event)
                 try:
                     EditEventRef(self.dbstate,
