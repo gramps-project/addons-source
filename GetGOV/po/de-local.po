@@ -1,0 +1,45 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-12 19:47+0200\n"
+"PO-Revision-Date: 2017-06-12 20:07+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: GetGOV/getgov.gpr.py:30
+msgid "GetGOV Gramplet"
+msgstr "GetGOV Gramplet"
+
+#: GetGOV/getgov.gpr.py:31
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet um Orte aus der GOV Datenbank zu holen"
+
+#: GetGOV/getgov.gpr.py:41
+msgid "GetGOV"
+msgstr "GetGOV"
+
+#: GetGOV/getgov.py:300
+msgid "Enter GOV-id:"
+msgstr "GOV-ID eingeben:"
+
+#: GetGOV/getgov.py:308
+msgid "Get Place"
+msgstr "Hole Ort"
+
+#: GetGOV/getgov.py:347
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "GOV-ID hinzufügen Ort %s"
+
