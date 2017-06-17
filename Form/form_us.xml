@@ -7,6 +7,7 @@
     Allen Crider
     Kurt Caulley
     David McMurray
+    17 Jun 2017
 -->
 <!--
  U.S. Decennial Census
@@ -1269,6 +1270,64 @@
             </column>
         </section>
     </form>
+    <form id='US1860-M' type='Census' title='1860 Mortality Schedule' date='1860-06-01'>
+        <heading>
+            <_attribute>NARA publication</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Roll No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Persons who Died during the Year ending 1 June 1860 in</_attribute>
+        </heading>
+        <heading>
+            <_attribute>in the County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>State of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Free or slave</_attribute>
+            </column>
+            <column>
+                <_attribute>Married or widowed</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Month in which person died</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Cause of death</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of days ill</_attribute>
+            </column>
+        </section>
+    </form>
     <form id='US1870' type='Census' title='1870 US Census' date='1870-06-01'>
         <heading>
             <_attribute>NARA publication</_attribute>
@@ -1469,6 +1528,346 @@
             </column>
             <column>
                 <_attribute>Place of birth of mother</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='US1880-A' type='Census' title='1880 Agricultural Schedule' date='1880-06-01'>
+        <heading>
+            <_attribute>NARA publication</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Roll No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Sheet No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Supervisor&apos;s Dist. No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Dist. No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Minor Civil Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>State of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Date</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Owner</_attribute>
+            </column>
+            <column>
+                <_attribute>Rents for fixed money</_attribute>
+            </column>
+            <column>
+                <_attribute>Rents for share of products</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Tilled</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Permanent Meadows, Pastures, Orchards, Vineyards</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Woodland and forest</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Other unimproved land</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Farm</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Implements and Machinery</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Live Stock</_attribute>
+            </column>
+            <column>
+                <_attribute>Cost of building and repairing fences in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cost of Fertilizers purchased in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Farm Labor Hiring 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Weeks hired labor in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Estimated value of all farm productions for 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acreage Grass Lands Mown in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acreage Grass Lands Not Mown in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Tons Hay Harvested in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Clover Seed Harvested in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Grass Seed Harvested in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Horses on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Mules and Asses on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Working Oxen on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Milch Cows on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Other Cattle on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Calves Dropped in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cattle Purchased in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cattle Sold living in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cattle Slaughtered in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cattle Died, strayed, or stolen in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Gallons Milk Sold or sent to butter or cheese factories in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Butter made on farm in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Cheese made on farm in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Lambs Dropped in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Purchased in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Sold living in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Slaughtered in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Killed by dogs in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Died of Disease in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Sheep and Lambs Died of stress or weather in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Fleece, Spring 1880</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Wool, Spring 1880</_attribute>
+            </column>
+            <column>
+                <_attribute>Swine on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Barnyard Poultry on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Other Poultry on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Dozen eggs produced in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Barnyard Poultry on hand</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Barley in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Barley in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Buckwheat in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Buckwheat in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Indian Corn in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Indian Corn in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Oats in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Oats in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Rye in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Rye in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Wheat in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Wheat in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Canadian Peas in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Beans in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Flax in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Flax Sued in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Tons Flax Straw in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Flax Fiber in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Hemp in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Tons Hemp in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Sorghum in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Sorghum Sugar in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Gallons Sorghum Molasses in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Maple Sugar in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Gallons Maple Molasses in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Broom Corn in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Broom Corn in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Hops in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Hops in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Potatoes (Irish) in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Potatoes (Irish) in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Potatoes (Sweet) in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Potatoes (Sweet) in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Tobacco in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Tobacco in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Apple Orchards in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Bearing Apple Trees in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Apples in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Peach Orchards in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Bearing Peach Trees in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Bushels Peaches in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Total value of Orchard Products Sold or Consumed in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Nurseries</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Nursery Products Sold</_attribute>
+            </column>
+            <column>
+                <_attribute>Acres Vineyards</_attribute>
+            </column>
+            <column>
+                <_attribute>Grapes sold in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Wine made in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Market Garden Produce Sold in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Honey in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds Beeswax in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Cords of Wood cut in 1879</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of forest products sold or consumed in 1879</_attribute>
             </column>
         </section>
     </form>
@@ -2353,91 +2752,35 @@
  U.S. States
  -->
 <!--
- Colorado Census
+    Alabama Census
 -->
-    <form id='USCO1885' type='Census' title='1885 Colorado Census' date='1885-06-01'>
+    <!--
+    1786, 1787 & 1789 Spanish Censuses
+    http://vidas.rootsweb.ancestry.com/spanish.html?cj=1&netid=cj&o_xid=0001231185&o_lid=0001231185&o_sch=Affiliate+External
+    -->
+    <form id="USAL1786-89" type='Census' title="1786/1787/1789 Spanish Censuses">
         <heading>
-            <_attribute>Page No.</_attribute>
+            <_attribute>Census Date</_attribute>
         </heading>
         <heading>
-            <_attribute>County of</_attribute>
-        </heading>
-        <heading>
-            <_attribute>State of</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Enumeration District No.</_attribute>
+            <_attribute>District of</_attribute>
         </heading>
         <section role='Primary' type='multi'>
-            <column>
-                <_attribute>Street Address</_attribute>
-            </column>
             <column>
                 <_attribute>Name</_attribute>
             </column>
             <column>
-                   <_attribute>Color</_attribute>
+                <_attribute>Age</_attribute>
             </column>
             <column>
-                   <_attribute>Sex</_attribute>
-               </column>
-               <column>
-                   <_attribute>Age</_attribute>
-               </column>
-            <column>
-                   <_attribute>Born within census year</_attribute>
-               </column>
-               <column>
-                   <_attribute>Relationship to head</_attribute>
-               </column>
-               <column>
-                   <_attribute>Single, married, widowed or divorced</_attribute>
-               </column>
-               <column>
-                   <_attribute>Married during census year</_attribute>
-               </column>
-               <column>
-                   <_attribute>Occupation</_attribute>
+                <_attribute>Married Y/N</_attribute>
             </column>
-               <column>
-                   <_attribute>Months unemployed during census year</_attribute>
-               </column>
-               <column>
-                   <_attribute>(Day of the Enumerator’s visit) sick or temporarily disabled</_attribute>
-               </column>
-               <column>
-                   <_attribute>Blind</_attribute>
-               </column>
-               <column>
-                   <_attribute>Deaf and Dumb</_attribute>
-               </column>
-              <column>
-                   <_attribute>Idiotic</_attribute>
-               </column>
-               <column>
-                   <_attribute>Insane</_attribute>
-               </column>
-               <column>
-                   <_attribute>Maimed, Crippled, Bedridden, or otherwise disabled.</_attribute>
-               </column>
-               <column>
-                   <_attribute>Attended school</_attribute>
-               </column>
-               <column>
-                   <_attribute>Can not read</_attribute>
-               </column>
-               <column>
-                   <_attribute>Can not write</_attribute>
-               </column>
-               <column>
-                   <_attribute>Place of birth</_attribute>
-               </column>
-               <column>
-                   <_attribute>Place of birth of father</_attribute>
-               </column>
-               <column>
-                   <_attribute>Place of birth of mother</_attribute>
-               </column>
+            <column>
+                <_attribute>Spouses Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
         </section>
     </form>
 <!--
@@ -2714,8 +3057,436 @@
         </section>
     </form>
 <!--
+ Colorado Census
+-->
+    <form id='USCO1885' type='Census' title='1885 Colorado Census' date='1885-06-01'>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>State of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Street Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                   <_attribute>Color</_attribute>
+            </column>
+            <column>
+                   <_attribute>Sex</_attribute>
+               </column>
+               <column>
+                   <_attribute>Age</_attribute>
+               </column>
+            <column>
+                   <_attribute>Born within census year</_attribute>
+               </column>
+               <column>
+                   <_attribute>Relationship to head</_attribute>
+               </column>
+               <column>
+                   <_attribute>Single, married, widowed or divorced</_attribute>
+               </column>
+               <column>
+                   <_attribute>Married during census year</_attribute>
+               </column>
+               <column>
+                   <_attribute>Occupation</_attribute>
+            </column>
+               <column>
+                   <_attribute>Months unemployed during census year</_attribute>
+               </column>
+               <column>
+                   <_attribute>(Day of the Enumerator’s visit) sick or temporarily disabled</_attribute>
+               </column>
+               <column>
+                   <_attribute>Blind</_attribute>
+               </column>
+               <column>
+                   <_attribute>Deaf and Dumb</_attribute>
+               </column>
+              <column>
+                   <_attribute>Idiotic</_attribute>
+               </column>
+               <column>
+                   <_attribute>Insane</_attribute>
+               </column>
+               <column>
+                   <_attribute>Maimed, Crippled, Bedridden, or otherwise disabled.</_attribute>
+               </column>
+               <column>
+                   <_attribute>Attended school</_attribute>
+               </column>
+               <column>
+                   <_attribute>Can not read</_attribute>
+               </column>
+               <column>
+                   <_attribute>Can not write</_attribute>
+               </column>
+               <column>
+                   <_attribute>Place of birth</_attribute>
+               </column>
+               <column>
+                   <_attribute>Place of birth of father</_attribute>
+               </column>
+               <column>
+                   <_attribute>Place of birth of mother</_attribute>
+               </column>
+        </section>
+    </form>
+<!--
+    Florida Census
+-->
+    <!--
+    1885 Florida Census
+    https://familysearch.org/search/collection/1457854
+    -->
+    <form id='USFL1885' type='Census' title='1885 Florida Census' date='1885-06-01'>
+        <heading>
+            <_attribute>NARA publication</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Roll No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Sheet No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Supervisor&apos;s Dist. No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Dist. No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Minor Civil Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>State of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Date</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street Name</_attribute>
+        </heading>
+        <heading>
+            <_attribute>House No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Family No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Month, if born within the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Relationship to head</_attribute>
+            </column>
+            <column>
+                <_attribute>Single</_attribute>
+            </column>
+            <column>
+                <_attribute>Married</_attribute>
+            </column>
+            <column>
+                <_attribute>Widowed, divorced</_attribute>
+            </column>
+            <column>
+                <_attribute>Married during the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of months unemployed during the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Illness on day of enumeration</_attribute>
+            </column>
+            <column>
+                <_attribute>Blind</_attribute>
+            </column>
+            <column>
+                <_attribute>Deaf and dumb</_attribute>
+            </column>
+            <column>
+                <_attribute>Idiotic</_attribute>
+            </column>
+            <column>
+                <_attribute>Insane</_attribute>
+            </column>
+            <column>
+                <_attribute>Maimed, crippled, bedridden, or otherwise disabled</_attribute>
+            </column>
+            <column>
+                <_attribute>Attended school within the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Cannot read</_attribute>
+            </column>
+            <column>
+                <_attribute>Cannot write</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth of father</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth of mother</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+        1935 Florida Census
+        https://familysearch.org/search/collection/1457856
+    -->
+    <form id='USFL1935' type='Census' title='1935 Florida Census' date='1935'>
+        <heading>
+            <_attribute>Precinct No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+            </column>
+            <column>
+                <_attribute>Inside or Outside City Limits</_attribute>
+            </column>
+            <column>
+                <_attribute>Age Male</_attribute>
+            </column>
+            <column>
+                <_attribute>Age Female</_attribute>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+            </column>
+            <column>
+                <_attribute>Relation to Family</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Degree of Education</_attribute>
+            </column>
+            <column>
+                <_attribute>Owner or Renter</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+    </form>
+    <!--
+        1945 Florida Census
+        https://familysearch.org/search/collection/1457855
+    -->
+    <form id='USFL1945' type='Census' title='1945 Florida Census' date='1945'>
+        <heading>
+            <_attribute>Precinct No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Race</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+            </column>
+            <column>
+                <_attribute>In or Out</_attribute>
+            </column>
+            <column>
+                <_attribute>Age Male</_attribute>
+            </column>
+            <column>
+                <_attribute>Age Female</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Degree of Education</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+ Illinois Census
+-->
+    <form id="USIL1855" type='Census' title="1855 Illinois Census" date="1855-01-01">
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males Under 10</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 10 to 20</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 20 to 30</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 30 to 40</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 40 to 50</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 50 to 60</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 60 to 70</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 70 to 80</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males 80 to 90</_attribute>
+            </column>
+            <column>
+                <_attribute>White Males Over 90</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females Under 10</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 10 to 20</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 20 to 30</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 30 to 40</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 40 to 50</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 50 to 60</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 60 to 70</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 70 to 80</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females 80 to 90</_attribute>
+            </column>
+            <column>
+                <_attribute>White Females Over 90</_attribute>
+            </column>
+            <column>
+                <_attribute>Male Negroes and Mulattoes</_attribute>
+            </column>
+            <column>
+                <_attribute>Female Negroes and Mulattoes</_attribute>
+            </column>
+            <column>
+                <_attribute>Total</_attribute>
+            </column>
+            <column>
+                <_attribute>Militia</_attribute>
+            </column>
+            <column>
+                <_attribute>Manufactories of All Kinds</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of products of manufactories</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of products of Coal Mines</_attribute>
+            </column>
+            <column>
+                <_attribute>Value of Live Stock</_attribute>
+            </column>
+            <column>
+                <_attribute>Pounds of Wool</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Colleges</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Pupils</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Common Schools</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of Pupils</_attribute>
+            </column>
+            <column>
+                <_attribute>Remarks</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
  Iowa Census
 -->
+    <!--
+    1844 Iowa State Census
+    -->
     <form id='USIA1844' type='Census' title='1844 Iowa Census' date='1844-05-01'>
         <section role='Primary' type='multi'>
             <column>
@@ -2735,6 +3506,9 @@
             </column>
         </section>
     </form>
+    <!--
+    1851 Iowa State Census
+    -->
     <form id='USIA1851' type='Census' title='1851 Iowa Census' date='1851-08-01'>
         <section role='Primary' type='multi'>
         <column>
@@ -2745,6 +3519,9 @@
         </column>
         </section>
     </form>
+    <!--
+    1856 Iowa State Census
+    -->
     <form id='USIA1856' type='Census' title='1856 Iowa Census' date='1856-03-03'>
         <section role='Primary' type='multi'>
             <column>
@@ -2881,6 +3658,10 @@
             </column>
         </section>
     </form>
+    <!--
+    1885 Iowa State Census
+    https://familysearch.org/search/collection/1803643
+    -->
     <form id='USIA1885' type='Census' title='1885 Iowa Census' date='1885-01-01'>
         <heading>
             <_attribute>Ward</_attribute>
@@ -2969,6 +3750,10 @@
             </column>
         </section>
     </form>
+    <!--
+    1895 Iowa State Census
+    https://familysearch.org/search/collection/1803957
+    -->
     <form id='USIA1895' type='Census' title='1895 Iowa Census' date='1895-01-01'>
         <heading>
             <_attribute>Ward</_attribute>
@@ -3084,6 +3869,10 @@
             </column>
         </section>
     </form>
+    <!--
+    1905 Iowa State Census
+    https://familysearch.org/search/collection/2126961
+    -->
     <form id='USIA1905' type='Census' title='1905 Iowa Census' date='1905-01-01'>
         <heading>
             <_attribute>Card No.</_attribute>
@@ -3227,6 +4016,10 @@
             </column>
         </section>
     </form>
+    <!--
+    1915 Iowa State Census
+    https://familysearch.org/search/collection/2240483
+    -->
     <form id='USIA1915' type='Census' title='1915 Iowa Census' date='1915-06-01'>
         <heading>
             <_attribute>Card No.</_attribute>
@@ -3375,6 +4168,10 @@
             </column>
         </section>
     </form>
+    <!--
+    1925 Iowa State Census
+    https://familysearch.org/search/collection/2224537
+    -->
     <form id='USIA1925' type='Census' title='1925 Iowa Census' date='1925-06-01'>
         <section role='Primary' type='multi'>
             <column>
@@ -3547,6 +4344,9 @@
 <!--
 Kansas Census
 -->
+    <!--
+    1865 Kansas Census
+    -->
     <form id='USKS1865' type='Census' title='1865 Kansas Census' date='1865-05-01'>
         <heading>
             <_attribute>Free Inhabitants in</_attribute>
@@ -4639,7 +5439,7 @@ Kansas Census
                 <_attribute>Live Stock Jacks</_attribute>
             </column>
             <column>
-                <_attribute>Live Stock Jennets</_attribute>
+                <_attribute>Live Stock Jennies</_attribute>
             </column>
             <column>
                 <_attribute>Live Stock Cattle</_attribute>
@@ -4691,6 +5491,107 @@ Kansas Census
             </column>
             <column>
                 <_attribute>Total Population</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+Nebraska Census
+-->
+    <form id='USNE1885' type='Census' title='1885 Nebraska Census' date='1885-06-01'>
+        <!-- https://familysearch.org/search/collection/1810728 -->
+        <heading>
+            <_attribute>Page No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Dist. No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Minor Civil Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County of</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Date</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Line No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Family No.</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Color</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Month, if born within the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Relationship to head</_attribute>
+            </column>
+            <column>
+                <_attribute>Single</_attribute>
+            </column>
+            <column>
+                <_attribute>Married</_attribute>
+            </column>
+            <column>
+                <_attribute>Widowed, divorced</_attribute>
+            </column>
+            <column>
+                <_attribute>Married during the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Number of months unemployed during the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Illness on day of enumeration</_attribute>
+            </column>
+            <column>
+                <_attribute>Blind</_attribute>
+            </column>
+            <column>
+                <_attribute>Deaf and dumb</_attribute>
+            </column>
+            <column>
+                <_attribute>Idiotic</_attribute>
+            </column>
+            <column>
+                <_attribute>Insane</_attribute>
+            </column>
+            <column>
+                <_attribute>Maimed, crippled, bedridden, or otherwise disabled</_attribute>
+            </column>
+            <column>
+                <_attribute>Attended school within the census year</_attribute>
+            </column>
+            <column>
+                <_attribute>Cannot read</_attribute>
+            </column>
+            <column>
+                <_attribute>Cannot write</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth of father</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of birth of mother</_attribute>
             </column>
         </section>
     </form>
@@ -5176,6 +6077,59 @@ Kansas Census
             </column>
             <column>
                 <_attribute>Blacks under 12 above 50</_attribute>
+            </column>
+        </section>
+    </form>
+<!--
+North Dakota Census
+-->
+    <form id="USND1915" type='Census' title="1915 North Dakota Census" date="1915-04-01">
+        <!-- https://familysearch.org/search/collection/2346284 -->
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Native White Males</_attribute>
+            </column>
+            <column>
+                <_attribute>Native White Females</_attribute>
+            </column>
+            <column>
+                <_attribute>Native Colored Males</_attribute>
+            </column>
+            <column>
+                <_attribute>Native Colored Females</_attribute>
+            </column>
+            <column>
+                <_attribute>Foreign Males</_attribute>
+            </column>
+            <column>
+                <_attribute>Foreign Females</_attribute>
+            </column>
+            <column>
+                <_attribute>Male Children 5 and Under</_attribute>
+            </column>
+            <column>
+                <_attribute>Female Children 5 and Under</_attribute>
+            </column>
+            <column>
+                <_attribute>Males 5 to 20 Years of Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Females 5 to 20 Years of Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Males 20 to 60 Years of Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Females 20 to 60 Years of Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Males Over 60 Years of Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Females Over 60 Years of Age</_attribute>
             </column>
         </section>
     </form>
@@ -6563,6 +7517,18 @@ Birth, Death, Marriage
      Used with FamilySearch Index file
     -->
     <form id='DthNdx' type='Death' title='Death Index'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Registered</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registrar</_attribute>
+        </heading>
         <section role='Primary' type='person'>
             <column>
                 <_attribute>Name</_attribute>
