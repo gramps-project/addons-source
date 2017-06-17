@@ -225,10 +225,6 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
 
-    def post_init(self):
-        self.disconnect("active-changed")
-
-
     def run(self, obj):
         """
         Method that is run when you click the Run button.

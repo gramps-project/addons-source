@@ -89,7 +89,7 @@ class SourceReferences(Gramplet):
         edit_object(self.dbstate, self.uistate, objclass, handle)
 
     def db_changed(self):
-        self.dbstate.db.connect('source-update', self.update)
+        self.connect(self.dbstate.db, 'source-update', self.update)
         self.connect_signal('Source', self.update)
 
     def update_has_data(self):

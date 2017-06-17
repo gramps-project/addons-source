@@ -41,14 +41,10 @@ class BirthdaysGramplet(Gramplet):
         self.set_text(_("No Family Tree loaded."))
         self.max_age = config.get('behavior.max-age-prob-alive')
 
-    def post_init(self):
-        self.disconnect("active-changed")
-
     def db_changed(self):
-        self.dbstate.db.connect('person-add', self.update)
-        self.dbstate.db.connect('person-delete', self.update)
-        self.dbstate.db.connect('person-update', self.update)
-        self.update
+        self.connect(self.dbstate.db, 'person-add', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
+        self.connect(self.dbstate.db, 'person-update', self.update)
 
     def main(self):
         self.set_text(_("Processing..."))

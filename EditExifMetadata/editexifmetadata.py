@@ -246,9 +246,6 @@ class EditExifMetadata(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
 
-        self.dbstate.db.connect('media-update', self.update)
-        self.connect_signal('Media', self.update)
-
     def active_changed(self, handle):
         """
         handles when a media object has changed
@@ -259,10 +256,10 @@ class EditExifMetadata(Gramplet):
         """
         connects the media signals to self.update; which updates the display...
         """
-        self.dbstate.db.connect('media-add', self.update)
-        self.dbstate.db.connect('media-edit', self.update)
-        self.dbstate.db.connect('media-delete', self.update)
-        self.dbstate.db.connect('media-rebuild', self.update)
+        self.connect(self.dbstate.db, 'media-add', self.update)
+        self.connect(self.dbstate.db, 'media-update', self.update)
+        self.connect(self.dbstate.db, 'media-delete', self.update)
+        self.connect(self.dbstate.db, 'media-rebuild', self.update)
 
         self.connect_signal('Media', self.update)
 
@@ -1470,12 +1467,6 @@ class EditExifMetadata(Gramplet):
             else:
                 self.exif_widgets["MessageArea"].set_text(_("There was an error "
                     "in stripping the Exif metadata from this image..."))
-
-    def post_init(self):
-        """
-        disconnects the active signal upon closing
-        """
-        self.disconnect("active-changed")
 
 def string_to_rational(coordinate):
     """

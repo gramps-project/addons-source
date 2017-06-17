@@ -13,4 +13,5 @@ register(GRAMPLET,
          version = '1.0.24',
          gramps_target_version="5.0",
          help_url = "NoteGramplet",
+         navtypes=["Person"],
          )

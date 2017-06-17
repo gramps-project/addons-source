@@ -200,10 +200,6 @@ class etreeGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
 
-    def post_init(self):
-        self.disconnect("active-changed")
-
-
     def build_options(self):
         from gramps.gen.plug.menu import NumberOption
         self.add_option(NumberOption(_("Number of editions back"),
