@@ -60,7 +60,7 @@ install:
 # The working directory is set to /home/travis/build/gramps-project/addons-source
 # by the automatic git checkout.
 
- - git clone --depth=50 --branch=maintenance/gramps50 git://github.com/gramps-project/gramps.git $TRAVIS_BUILD_DIR/../gramps
+ - git clone --depth=50 --branch=master git://github.com/gramps-project/gramps.git $TRAVIS_BUILD_DIR/../gramps
  - cd $TRAVIS_BUILD_DIR/../gramps
 
 # Build Gramps package. This seems to copy everything to
