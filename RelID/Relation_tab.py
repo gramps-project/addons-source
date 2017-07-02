@@ -267,7 +267,10 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 # experimentations; not used yet
                 new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
-                line = (iterator, array('b', new_list))
+                if max_level > 7:
+                    line = (iterator, array('l', new_list))
+                else:
+                    line = (iterator, array('b', new_list))
 
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
                                         int(Gb), int(mra), int(rank), str(period)))
