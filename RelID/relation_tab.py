@@ -266,8 +266,11 @@ class RelationTab(tool.Tool, ManagedWindow):
                 iterator = (handle for handle in filtered_list)
 
                 # experimentations; not used yet
-                new_list = [int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
-                line = (iterator, array('b', new_list))
+                new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
+                if max_level > 7:
+                    line = (iterator, array('l', new_list))
+                else:
+                    line = (iterator, array('b', new_list))
 
                 self.stats_list.append((int(kekule), rel, name, int(Ga),
                                         int(Gb), int(mra), int(rank), str(period)))
