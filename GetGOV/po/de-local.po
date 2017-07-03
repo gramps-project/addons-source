@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-12 19:47+0200\n"
-"PO-Revision-Date: 2017-06-12 20:07+0100\n"
+"POT-Creation-Date: 2017-06-22 21:33+0200\n"
+"PO-Revision-Date: 2017-06-22 21:39+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -41,5 +41,19 @@ msgstr "Hole Ort"
 #: GetGOV/getgov.py:347
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr "GOV-ID hinzufügen Ort %s"
+msgstr ""
 
+#: GetGOV/getgov.py:495
+#, python-format
+msgid "from %s to %s"
+msgstr "von %s bis %s"
+
+#: GetGOV/getgov.py:497
+#, python-format
+msgid "after %s"
+msgstr "nach %s"
+
+#: GetGOV/getgov.py:499
+#, python-format
+msgid "before %s"
+msgstr "vor %s"
