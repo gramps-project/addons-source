@@ -48,7 +48,12 @@ msgstr "Hole Ort"
 #: GetGOV/getgov.py:347
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr "GOV-ID hinzufügen Ort %s"
+msgstr ""
+
+#: GetGOV/getgov.py:495
+#, python-format
+msgid "from %s to %s"
+msgstr "von %s bis %s"
 
 #: GetGOV/getgov.py:496
 #, python-format
