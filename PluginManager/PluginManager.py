@@ -82,7 +82,7 @@ ngettext = glocale.translation.ngettext  # else "nearby" comments are ignored
 
 LOG = logging.getLogger(".gui.plug")
 
-WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Plugin_Manager_Plugin'
+WIKI_PAGE = 'Plugin_Manager_Plugin'
 TITLE = _("Plugin Manager - Enhanced")
 # some static data, available across instantiations
 static = sys.modules[__name__]
