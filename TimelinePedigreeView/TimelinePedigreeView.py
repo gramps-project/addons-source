@@ -881,7 +881,9 @@ class TimelinePedigreeView(NavigationView):
             if death:
                 deathdate = death.get_date_object()
                 lifespan = deathdate.to_calendar("gregorian").get_year() - birthdate.to_calendar("gregorian").get_year()
-        
+                if lifespan < 0 or lifespan > config.get('behavior.max-age-prob-alive'):
+                    lifespan = 0
+
         negWidth = 11 * lifespan
         
         Branch_Width = 0
