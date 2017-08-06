@@ -202,9 +202,6 @@ class ImportGramplet(Gramplet):
         # show
         vbox.show_all()
 
-    def post_init(self):
-        self.disconnect("active-changed")
-
     def run(self, obj):
         """
         Method that is run when you click the Run button.

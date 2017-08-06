@@ -13,6 +13,7 @@ register(GRAMPLET,
          version = '1.0.27',
          gramps_target_version = "5.1",
          help_url="Deep_Connections_Gramplet",
+         navtypes=["Person"],
          )
 
 

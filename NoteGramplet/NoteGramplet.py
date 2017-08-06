@@ -205,6 +205,8 @@ class NoteGramplet(Gramplet):
         If person or family changes, the relatives of active person might have
         changed
         """
+        self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'note-update', self.update)
         self._dirty = False
         self._dirty_person = None
         self.clear_data_entry(None)

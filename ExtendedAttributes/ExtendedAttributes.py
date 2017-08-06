@@ -140,8 +140,7 @@ class ExtendedPersonAttributes(Attributes):
     Displays the attributes of a person.
     """
     def db_changed(self):
-        self.dbstate.db.connect('person-update', self.update)
-        self.update()
+        self.connect(self.dbstate.db, 'person-update', self.update)
 
     def active_changed(self, handle):
         self.update()
@@ -209,9 +208,8 @@ class ExtendedFamilyAttributes(Attributes):
     Displays the attributes of an event.
     """
     def db_changed(self):
-        self.dbstate.db.connect('family-update', self.update)
+        self.connect(self.dbstate.db, 'family-update', self.update)
         self.connect_signal('Family', self.update)
-        self.update()
 
     def update_has_data(self):
         active = self.get_active_object('Family')

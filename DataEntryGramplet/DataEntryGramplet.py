@@ -997,13 +997,13 @@ class DataEntryGramplet(Gramplet):
         If person or family changes, the relatives of active person might have
         changed
         """
-        self.dbstate.db.connect('person-add', self.update)
-        self.dbstate.db.connect('person-delete', self.update)
-        self.dbstate.db.connect('person-edit', self.update)
-        self.dbstate.db.connect('family-add', self.update)
-        self.dbstate.db.connect('family-delete', self.update)
-        self.dbstate.db.connect('person-rebuild', self.update)
-        self.dbstate.db.connect('family-rebuild', self.update)
+        self.connect(self.dbstate.db, 'person-add', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
+        self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'family-add', self.update)
+        self.connect(self.dbstate.db, 'family-delete', self.update)
+        self.connect(self.dbstate.db, 'person-rebuild', self.update)
+        self.connect(self.dbstate.db, 'family-rebuild', self.update)
         self._dirty = False
         self._dirty_person = None
         self.clear_data_entry(None)
