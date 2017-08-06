@@ -66,9 +66,6 @@ class PythonGramplet(Gramplet):
         self.set_text("Python %s\n%s " % (sys.version, self.prompt))
         self.gui.textview.connect('key-press-event', self.on_key_press)
 
-    def post_init(self):
-        self.disconnect("active-changed")
-
     def format_exception(self, max_tb_level=10):
         import traceback
         retval = ''

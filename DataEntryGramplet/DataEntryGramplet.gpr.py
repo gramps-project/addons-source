@@ -18,6 +18,7 @@ register(GRAMPLET,
          status=STABLE, # not yet tested with python 3
          fname="DataEntryGramplet.py",
          help_url="Data Entry Gramplet",
+         navtypes=["Person"],
          )
 
 

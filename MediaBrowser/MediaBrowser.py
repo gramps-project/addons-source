@@ -59,8 +59,7 @@ class MediaBrowser(Gramplet):
         return top
 
     def db_changed(self):
-        self.dbstate.db.connect('person-update', self.update)
-        self.update()
+        self.connect(self.dbstate.db, 'person-update', self.update)
 
     def active_changed(self, handle):
         self.update()

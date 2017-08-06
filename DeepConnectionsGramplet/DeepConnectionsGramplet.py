@@ -77,6 +77,20 @@ class DeepConnectionsGramplet(Gramplet):
         self.gui.get_container_widget().add_with_viewport(vbox)
         vbox.show_all()
 
+    def db_changed(self):
+        """
+        If person or family changes, the relatives of active person might have
+        changed
+        """
+        self.connect(self.dbstate.db, 'home-person-changed', self.update)
+        self.connect(self.dbstate.db, 'person-add', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
+        self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'family-add', self.update)
+        self.connect(self.dbstate.db, 'family-delete', self.update)
+        self.connect(self.dbstate.db, 'person-rebuild', self.update)
+        self.connect(self.dbstate.db, 'family-rebuild', self.update)
+
     def get_links_from_notes(self, obj, path, relation, person_handle):
         """
         Get anyone mentioned in any note attached to this object.

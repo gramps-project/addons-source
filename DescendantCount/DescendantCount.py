@@ -51,8 +51,8 @@ class DescendantCountGramplet(Gramplet):
                                  container=self.gui.textview)
 
     def db_changed(self):
-        self.dbstate.db.connect('person-add', self.update)
-        self.dbstate.db.connect('person-delete', self.update)
+        self.connect(self.dbstate.db, 'person-add', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
 
     def active_changed(self, handle):
         self.update()
