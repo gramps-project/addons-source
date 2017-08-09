@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<forms>
+<!--
+    Definition by:
+    Tom Cuchta (http://tomcuchta.com)
+    13 July 2017
+
+    For: Poland, Lublin Roman Catholic Church Books, 1784-1964 (accessed from familysearch.org)
+-->
+    <form id='PLRCCB1784-1964' type='Church Records' title='Poland, Lublin Roman Catholic Church Books, 1784-1964'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Type</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Place</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Place (Original)</_attribute>
+            </column>
+            <column>
+                <_attribute>Gender</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Birth Year (Estimated)</_attribute>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Gender</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Birth Year (Estimated)</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Mother's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Page</_attribute>
+            </column>
+            <column>
+                <_attribute>Record Number</_attribute>
+            </column>
+            <column>
+                <_attribute>Volume</_attribute>
+            </column>
+        </section>
+    </form>
+
+<!--
+    Definition by:
+    Tom Cuchta (http://tomcuchta.com)
+    14 July 2017
+
+    For: Poland, Tarnow Roman Catholic Diocese Church Books, 1612-1900 (accessed from familysearch.org)
+-->
+    <form id='PTRCDCB1612-1900' type='Church Records' title='Poland, Tarnow Roman Catholic Diocese Church Books, 1612-1900'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Type</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Place</_attribute>
+            </column>
+            <column>
+                <_attribute>House Number</_attribute>
+            </column>
+            <column>
+                <_attribute>Gender</_attribute>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Volume Beginning Year</_attribute>
+            </column>
+            <column>
+                <_attribute>Volume Ending Year</_attribute>
+            </column>
+        </section>
+    </form>
+
+<!--
+    Definition by:
+    Tom Cuchta (http://tomcuchta.com)
+    14 July 2017
+
+    For: Poland, Radom Roman Catholic Church Books, 1587-1966 (accessed from familysearch.org)
+-->
+    <form id='PRRCCB1587-1966' type='Church Records' title='Poland, Radom Roman Catholic Church Books, 1587-1966'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Type</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Date</_attribute>
+            </column>
+            <column>
+                <_attribute>Event Place</_attribute>
+            </column>
+            <column>
+                <_attribute>Gender</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Birth Year (Estimated)</_attribute>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Gender</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Birth Year (Estimated)</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Spouse's Mother's Name</_attribute>
+            </column>
+        </section>
+    </form>
+
+</forms>

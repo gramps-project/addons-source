@@ -67,8 +67,9 @@ GROOM = _('Groom')
 BRIDE = _('Bride')
 
 # Files which may contain form definitions
-definition_files = ['form_be.xml', 'form_ca.xml', 'form_fr.xml', 'form_gb.xml',
-                    'form_us.xml', 'test.xml', 'custom.xml']
+definition_files = ['form_be.xml', 'form_ca.xml', 'form_dk.xml', 'form_fr.xml',
+                    'form_gb.xml', 'form_pl.xml', 'form_us.xml',
+                    'test.xml', 'custom.xml']
 
 #------------------------------------------------------------------------
 #
