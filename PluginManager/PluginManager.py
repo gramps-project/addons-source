@@ -77,8 +77,12 @@ from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
 # set up translation, logging and constants
 #
 #-------------------------------------------------------------------------
-_ = glocale.translation.gettext
-ngettext = glocale.translation.ngettext  # else "nearby" comments are ignored
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+ngettext = _trans.ngettext  # else "nearby" comments are ignored
 
 LOG = logging.getLogger(".gui.plug")
 
@@ -620,7 +624,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
                 if hidden:
                     status_str = "<s>%s</s>" % status_str
                     status |= HIDDEN
-                row = [plugin_dict["t"], status_str, plugin_dict["n"],
+                row = [_(plugin_dict["t"]), status_str, plugin_dict["n"],
                        plugin_dict["d"], plugin_dict["i"], status]
                 addons.append(row)
 
