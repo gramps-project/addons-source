@@ -12,7 +12,7 @@ description =  _("Looks through families, looking for children that are not "
                  "correct, edit the birth order manually, accept all those "
                  "families that have all children with proper birth dates, or "
                  "accept all."),
-version = '0.0.2',
+version = '0.0.4',
 gramps_target_version = '4.2',
 status = STABLE,
 fname = 'birthorder.py',
