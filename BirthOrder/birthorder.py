@@ -25,6 +25,9 @@
 # GNOME libraries
 #
 #-------------------------------------------------------------------------
+import locale
+import ctypes
+import os
 from gi.repository import Gtk
 
 #-------------------------------------------------------------------------
@@ -41,9 +44,13 @@ from gramps.gen.datehandler import displayer
 from gramps.gui.dialog import OkDialog
 from gramps.gui.display import display_url
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.glade import Glade
+from gramps.gen.constfunc import win
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #
@@ -82,7 +89,37 @@ class BirthOrder(tool.Tool, ManagedWindow):
         self.fam_h = self.fam_iter = self.family = self.progress = None
         self.update = callback
 
-        self.top = Glade()
+        self.top = Gtk.Builder()
+        # Found out that Glade does not support translations for plugins, so
+        # have to do it manually.
+        base = os.path.dirname(__file__)
+        glade_file = base + os.sep + "birthorder.glade"
+        # This is needed to make gtk.Builder work by specifying the
+        # translations directory in a separate 'domain'
+        try:
+            localedomain = "addon"
+            localepath = base + os.sep + "locale"
+            if hasattr(locale, 'bindtextdomain'):
+                libintl = locale
+            elif win():  # apparently wants strings in bytes
+                localedomain = localedomain.encode('utf-8')
+                localepath = localepath.encode('utf-8')
+                libintl = ctypes.cdll.LoadLibrary('libintl-8.dll')
+            else:  # mac, No way for author to test this
+                libintl = ctypes.cdll.LoadLibrary('libintl.dylib')
+
+            libintl.bindtextdomain(localedomain, localepath)
+            libintl.textdomain(localedomain)
+            libintl.bind_textdomain_codeset(localedomain, "UTF-8")
+            # and finally, tell Gtk Builder to use that domain
+            self.top.set_translation_domain("addon")
+        except (OSError, AttributeError):
+            # Will leave it in English
+            print("Localization of BirthOrder failed!")
+
+        # start with a file name dialog
+        self.top.add_from_file(glade_file)
+        # self.top = Glade()
 
         self.fam_liststore = self.top.get_object("fam_liststore")
         self.ch_liststore = self.top.get_object("ch_liststore")
@@ -97,7 +134,7 @@ class BirthOrder(tool.Tool, ManagedWindow):
             style_provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
-        window = self.top.toplevel
+        window = self.top.get_object("main")
         self.set_window(window, None, TITLE)
         # self.setup_configs('interface.birthordertool', 750, 520)
 
