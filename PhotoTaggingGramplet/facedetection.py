@@ -62,8 +62,6 @@ def detect_faces(image_path, min_face_size):
     cv2.equalizeHist(cv_image, cv_image)
     cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
     # ???
-    faces = cv2.HaarDetectObjects(cv_image, cascade,
-                                 cv2.CreateMemStorage(0),
-                                 1.2, 2, cv2.CV_HAAR_DO_CANNY_PRUNING,
-                                 min_face_size)
+    faces = cascade.detectMultiScale(cv_image)
+
     return faces
