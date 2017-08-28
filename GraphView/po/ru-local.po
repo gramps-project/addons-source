@@ -1,14 +1,14 @@
 # Russian translations for Gramps GraphView addon.
 #
-# vantu5z <vantu5z@mail.ru>, 2016.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2016,2017.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
+"Project-Id-Version: gramps42\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-15 12:01+0300\n"
-"PO-Revision-Date: 2016-01-15 11:51+0300\n"
-"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2017-08-28 10:24+0300\n"
+"PO-Revision-Date: 2017-08-28 10:32+0300\n"
+"Last-Translator: Komaritsyn Ivan <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:118
+#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:120
 msgid "Graph View"
 msgstr "Граф отношений"
 
@@ -28,6 +28,20 @@ msgstr "Диаграммы"
 #: GraphView/graphview.gpr.py:5
 msgid "Dynamic graph of relations"
 msgstr "Динамический граф отношений"
+
+#: GraphView/graphview.py:145
+msgid "_Print..."
+msgstr "_Печать..."
+
+#: GraphView/graphview.py:147
+msgid ""
+"Save the dot file for a later print.\n"
+"This will save a .gv file and a svg file.\n"
+"You must select a .gv file"
+msgstr ""
+"Сохранить dot файл, чтобы напечатать позднее.\n"
+"Будут сохранены .gv и .svg файлы.\n"
+"Необходимо выбрать .gv файл"
 
 #: GraphView/graphview.py:336
 msgid "Show images"
@@ -46,35 +60,80 @@ msgid "Show places"
 msgstr "Показывать места"
 
 #: GraphView/graphview.py:348
-msgid "Descendant generations"
-msgstr "Поколения потомков"
-
-#: GraphView/graphview.py:351
-msgid "Ancestor generations"
-msgstr "Поколения предков"
-
-#: GraphView/graphview.py:354
 msgid "Layout"
 msgstr "Вывод"
 
-#: GraphView/graphview.py:366
+#: GraphView/graphview.py:360
 msgid "Home person color"
 msgstr "Цвет базового лица"
 
-#: GraphView/graphview.py:369
+#: GraphView/graphview.py:363
 msgid "Colors"
 msgstr "Цвета"
 
-#: GraphView/graphview.py:406
+#: GraphView/graphview.py:377
+msgid "Select a dot file name"
+msgstr "Выбор dot файла"
+
+#: GraphView/graphview.py:379
+msgid "_Cancel"
+msgstr "_Отмена"
+
+#: GraphView/graphview.py:380
+msgid "_Apply"
+msgstr "_Применить"
+
+#: GraphView/graphview.py:390
+msgid "File already exists"
+msgstr "Файл уже существует"
+
+#: GraphView/graphview.py:391
+msgid ""
+"You can choose to either overwrite the file, or change the selected filename."
+msgstr "Перезаписать или изменить имя файла."
+
+#: GraphView/graphview.py:393
+msgid "_Overwrite"
+msgstr "_Перезаписать"
+
+#: GraphView/graphview.py:394
+msgid "_Change filename"
+msgstr "_Изменить имя файла"
+
+#: GraphView/graphview.py:444
 msgid "Zoom:"
 msgstr "Масштаб:"
 
-#: GraphView/graphview.py:1366
+#: GraphView/graphview.py:1360
 #, python-format
 msgid "b. %s"
 msgstr "р. %s"
 
-#: GraphView/graphview.py:1377
+#: GraphView/graphview.py:1371
 #, python-format
 msgid "d. %s"
 msgstr "у. %s"
+
+#~ msgid "Descendant generations"
+#~ msgstr "Поколения потомков"
+
+#~ msgid "Ancestor generations"
+#~ msgstr "Поколения предков"
+
+#~ msgid "Show lines"
+#~ msgstr "Показывать линии"
+
+#~ msgid "none"
+#~ msgstr "нет"
+
+#~ msgid "curves"
+#~ msgstr "дуги"
+
+#~ msgid "ortho"
+#~ msgstr "прямые"
+
+#~ msgid "Path color"
+#~ msgstr "Цвет пути"
+
+#~ msgid "Show tags"
+#~ msgstr "Показывать теги"
