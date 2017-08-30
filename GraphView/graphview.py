@@ -887,7 +887,9 @@ class GraphvizSvgParser(object):
             line_width = 1  # Thin box
 
         # Highlight the home person
-        if self.highlight_home_person:
+        # stroke_color = 'transparent' when tags are drawing
+        # maybe this is not good solution to check for tags but it works
+        if self.highlight_home_person and stroke_color != 'transparent':
             home_person = self.widget.dbstate.db.get_default_person()
             if home_person and home_person.handle == self.handle:
                 fill_color = self.home_person_color
@@ -899,7 +901,6 @@ class GraphvizSvgParser(object):
                                         line_width = line_width,
                                         stroke_color = stroke_color)
         self.item_hier.append(item)
-
 
     def stop_polygon(self, tag):
         """
