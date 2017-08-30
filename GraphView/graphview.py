@@ -1470,13 +1470,6 @@ class DotGenerator(object):
             # Output the person's node
             label = self.get_person_label(person)
             (shape, style, color, fill) = self.get_gender_style(person)
-            if self.show_tag_color:
-                for tag_handle in person.get_tag_list():
-                    # For the complete tag, don't modify the default color
-                    # which is black (#000000000000)
-                    tag = self.dbstate.db.get_tag_from_handle(tag_handle)
-                    if tag.get_color() != "#000000000000":
-                        fill = tag.get_color() # only if the color is not black
             self.add_node(person_handle, label, shape, color, style, fill, url)
 
             # Output families where person is a parent
@@ -1596,6 +1589,29 @@ class DotGenerator(object):
             #no need for html label with this person
             self.is_html_output = False
 
+        # get all tags for the person and prepare html table
+        # it will be added after dates (on the bottom)
+        tag_table = ''
+        if self.show_tag_color:
+            tags = []
+            for tag_handle in person.get_tag_list():
+                tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+
+            # prepare html table of tags
+            if len(tags)>0:
+                tag_table = '</TD></TR><TR><TD>'
+                tag_table += '<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="5"><TR>'
+                for tag in tags:
+                    tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                tag_table += '</TR></TABLE>'
+
+                # open html table for adding text (name and dates) if it not exist.
+                # we need that to add tags table
+                if self.is_html_output == False:
+                    line_delimiter = '<BR/>'
+                    label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD>'
+                    self.is_html_output = True
+
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
 
@@ -1631,6 +1647,9 @@ class DotGenerator(object):
         else:
             txt= '(%s - %s)' % (birth, death)
             label += txt
+
+        # add html tags table
+        label += tag_table
 
         # see if we have a table that needs to be terminated
         if self.is_html_output:
