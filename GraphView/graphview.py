@@ -290,6 +290,16 @@ class GraphView(NavigationView):
             self.show_places = False
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_tag_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the show tags setting.
+        """
+        if entry == 'True':
+            self.show_tag_color = True
+        else:
+            self.show_tag_color = False
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_lines(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the line setting.
@@ -349,6 +359,8 @@ class GraphView(NavigationView):
                           self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
                           self.cb_update_show_places)
+        self._config.connect('interface.graphview-show-tags',
+                          self.cb_update_show_tag_color)
         self._config.connect('interface.graphview-show-lines',
                           self.cb_update_show_lines)
         self._config.connect('interface.graphview-highlight-home-person',
