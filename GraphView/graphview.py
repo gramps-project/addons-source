@@ -594,13 +594,13 @@ class GraphWidget(object):
             self.scale1.destroy() # destroy the Scale if it exists.
         except:                   # we can't change the max value
             pass                  # then recreate a new scale
-        nb_persons = int(self.dbstate.db.get_number_of_people()+5)
-        zoom = log(nb_persons,10)*log(nb_persons,5)
-        max_zoom = 5.0 if zoom < 5.0 else zoom
-        adj = Gtk.Adjustment (1.00, 0.05, float(max_zoom), 0.05, 0.50, 0.50)
+        # (value, lower, upper, step_increment, page_increment, page_size)
+        adj = Gtk.Adjustment(1.00, 0.01, 2.00, 0.01, 0.05, 0)
         adj.set_value(1.0)
-        self.scale1 = Gtk.Scale(adjustment=adj, orientation=Gtk.Orientation.HORIZONTAL)
+        self.scale1 = Gtk.Scale(adjustment=adj,
+                                orientation=Gtk.Orientation.HORIZONTAL)
         self.scale1.show()
+        self.scale1.set_digits(2)
         adj.connect("value_changed", self.zoom_changed)
         self.scale.pack_start(self.scale1, True, True, 0)
 
