@@ -1762,6 +1762,35 @@ class DotGenerator(object):
         if style:
             text += ' style="%s"'       % style
 
+        # get all tags for the family and prepare html table
+        # it will be added after dates (on the bottom of node)
+        if self.show_tag_color:
+            tags = []
+            try:
+                # We need to do the following only if the node id is a
+                # family handle, so we try to get family from handle we have
+                fam = self.database.get_family_from_handle(node_id)
+                for tag_handle in fam.get_tag_list():
+                    tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+
+                # Convert plain text label to html and inset it in the main table
+                label_new  = '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+                label_new += '<TR><TD>%s'  % label.replace('\\n', '<BR/>')
+
+                # prepare html table of tags
+                tag_table = ''
+                if len(tags)>0:
+                    tag_table = '</TD></TR><TR><TD><TABLE BORDER="0" '
+                    tag_table += 'CELLBORDER="0" CELLPADDING="5"><TR>'
+                    for tag in tags:
+                        tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                    tag_table += '</TR></TABLE>'
+
+                # Combine new label for family node and close the main table
+                label = label_new + tag_table + '</TD></TR></TABLE>'
+            except:
+                pass
+
         # note that we always output a label -- even if an empty string --
         # otherwise GraphViz uses the node ID as the label which is unlikely
         # to be what the user wants to see in the graph
