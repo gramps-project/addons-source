@@ -622,24 +622,30 @@ class GraphWidget(object):
         or call option menu.
         """
         button = event.get_button()[1]
-        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
+        if (button == 1 or button == 2) \
+            and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
             and item == self.canvas.get_root_item():
-            window = self.canvas.get_parent().get_window()
-            window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
-            self._last_x = event.x_root
-            self._last_y = event.y_root
-            self._in_move = True
-            return False
+
+              window = self.canvas.get_parent().get_window()
+              window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
+              self._last_x = event.x_root
+              self._last_y = event.y_root
+              self._in_move = True
+              return False
         return False
 
     def button_release(self, item, target, event):
-        """Exit from scroll mode when button release."""
+        """
+        Exit from scroll mode when button release.
+        """
         button = event.get_button()[1]
-        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
-            self.motion_notify_event(item, target, event)
-            self.canvas.get_parent().get_window().set_cursor(None)
-            self._in_move = False
-            return True
+        if (button == 1 or button == 2) \
+            and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
+
+              self.motion_notify_event(item, target, event)
+              self.canvas.get_parent().get_window().set_cursor(None)
+              self._in_move = False
+              return True
         return False
 
     def motion_notify_event(self, item, target, event):
@@ -663,6 +669,7 @@ class GraphWidget(object):
     def select_node(self, item, target, event):
         """
         Perform actions when a node is clicked.
+        If middle mouse was clicked then try to set scroll mode.
         """
         handle = item.title
         node_class = item.description
@@ -670,6 +677,7 @@ class GraphWidget(object):
 
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
+
         if button == 1 and node_class == 'node': # Left mouse
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
@@ -681,12 +689,16 @@ class GraphWidget(object):
 
             # Redraw the graph based on the selected person
             self.view.change_active(handle)
-        elif button == 3 and node_class == 'node': # Right mouse
+        elif button == 3 and node_class == 'node':       # Right mouse
             if handle:
                 self.edit_person(handle)
         elif button == 3 and node_class == 'familynode': # Right mouse
             if handle:
                 self.edit_family(handle)
+        elif button == 2:                                # Middle mouse
+            # try to enter in scroll mode (we should change "item")
+            item = self.canvas.get_root_item()
+            self.button_press(item, target, event)
 
         return True
 
