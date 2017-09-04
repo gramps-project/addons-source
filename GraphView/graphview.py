@@ -147,6 +147,9 @@ class GraphView(NavigationView):
         self.graph_widget = None
         self.dbstate.connect('database-changed', self.change_db)
 
+        # dict {handle, tooltip_str} of tooltips in markup format
+        self.tags_tooltips = {}
+
         self.additional_uis.append(self.additional_ui())
         self.define_print_actions()
 
@@ -898,6 +901,8 @@ class GraphvizSvgParser(object):
         else:
             line_width = 1  # Thin box
 
+        tooltip = self.view.tags_tooltips.get(self.handle)
+
         # Highlight the home person
         # stroke_color is not '#...' when tags are drawing, so we check this
         # maybe this is not good solution to check for tags but it works
@@ -905,13 +910,20 @@ class GraphvizSvgParser(object):
             home_person = self.widget.dbstate.db.get_default_person()
             if home_person and home_person.handle == self.handle:
                 fill_color = self.home_person_color
+                tooltip = None
 
         item = GooCanvas.CanvasPolyline(parent = self.current_parent(),
                                         points = points,
                                         close_path = True,
                                         fill_color = fill_color,
                                         line_width = line_width,
-                                        stroke_color = stroke_color)
+                                        stroke_color = stroke_color,
+                                        tooltip = tooltip)
+        # turn on tooltip show if have it
+        if tooltip:
+            item_canvas = item.get_canvas()
+            item_canvas.set_has_tooltip(True)
+
         self.item_hier.append(item)
 
     def stop_polygon(self, tag):
@@ -938,6 +950,8 @@ class GraphvizSvgParser(object):
             stroke_color = attrs.get('stroke')
             fill_color = attrs.get('fill')
 
+        tooltip = self.view.tags_tooltips.get(self.handle)
+
         item = GooCanvas.CanvasEllipse(parent = self.current_parent(),
                                        center_x = center_x,
                                        center_y = center_y,
@@ -945,7 +959,12 @@ class GraphvizSvgParser(object):
                                        radius_y = radius_y,
                                        fill_color = fill_color,
                                        stroke_color = stroke_color,
-                                       line_width = 1)
+                                       line_width = 1,
+                                       tooltip = tooltip)
+        if tooltip:
+            item_canvas = item.get_canvas()
+            item_canvas.set_has_tooltip(True)
+
         self.current_parent().description = 'familynode'
         self.item_hier.append(item)
 
@@ -1624,6 +1643,7 @@ class DotGenerator(object):
                     line_delimiter = '<BR/>'
                     label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD>'
                     self.is_html_output = True
+                self.add_tags_tooltip(person.handle, tags)
 
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
@@ -1797,6 +1817,7 @@ class DotGenerator(object):
                     for tag in tags:
                         tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
                     tag_table += '</TR></TABLE>'
+                    self.add_tags_tooltip(node_id, tags)
 
                 # Combine new label for family node and close the main table
                 label = label_new + tag_table + '</TD></TR></TABLE>'
@@ -1816,6 +1837,15 @@ class DotGenerator(object):
 
         text += " ]"
         self.write('  _%s %s;\n' % (node_id, text))
+
+    def add_tags_tooltip(self, handle, tag_list):
+        """
+        Add tooltip to dict {handle, tooltip}
+        """
+        tooltip_str = _('<b>Tags:</b>')
+        for tag in tag_list:
+            tooltip_str += '\n<span background="%s">  </span> - %s' % (tag.get_color(), tag.get_name() )
+        self.view.tags_tooltips[handle] = tooltip_str
 
     def start_subgraph(self, graph_id):
         """ Opens a subgraph which is used to keep together related nodes
