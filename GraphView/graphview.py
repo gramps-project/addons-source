@@ -539,6 +539,13 @@ class GraphWidget(object):
         self.vbox.set_border_width (4)
         hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
+
+        # add best fit button
+        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best', Gtk.IconSize.MENU)
+        self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
+        hbox.pack_start(self.fit_btn, False, False, 1)
+        self.fit_btn.connect("clicked", self.fit_to_page)
+
         zoom_label = Gtk.Label(label=_("Zoom:"))
         hbox.pack_start (zoom_label, False, False, 1)
 
@@ -585,6 +592,33 @@ class GraphWidget(object):
 
         # Update the status bar
         self.view.change_page()
+
+    def fit_to_page(self, button):
+        """
+        Calculate scale and fit tree to page
+        """
+        # get the canvas size
+        bounds = self.canvas.get_root_item().get_bounds()
+        height_canvas = bounds.y2 - bounds.y1
+        width_canvas  = bounds.x2 - bounds.x1
+
+        # get scroll window size
+        width = self.hadjustment.get_page_size()
+        height = self.vadjustment.get_page_size()
+
+        # calculate minimum scale
+        scale_h = (height / height_canvas)
+        scale_w = (width / width_canvas)
+        if scale_h > scale_w:
+            scale = scale_w
+        else:
+            scale = scale_h
+
+        # set scale if it needed, else restore it to default
+        if scale < 1:
+            self.scale1.set_value(scale)
+        else:
+            self.scale1.set_value(1)
 
     def change_max_zoom(self):
         """
