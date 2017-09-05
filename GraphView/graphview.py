@@ -147,6 +147,9 @@ class GraphView(NavigationView):
         self.graph_widget = None
         self.dbstate.connect('database-changed', self.change_db)
 
+        # dict {handle, tooltip_str} of tooltips in markup format
+        self.tags_tooltips = {}
+
         self.additional_uis.append(self.additional_ui())
         self.define_print_actions()
 
@@ -290,6 +293,16 @@ class GraphView(NavigationView):
             self.show_places = False
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_tag_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the show tags setting.
+        """
+        if entry == 'True':
+            self.show_tag_color = True
+        else:
+            self.show_tag_color = False
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_lines(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the line setting.
@@ -349,6 +362,8 @@ class GraphView(NavigationView):
                           self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
                           self.cb_update_show_places)
+        self._config.connect('interface.graphview-show-tags',
+                          self.cb_update_show_tag_color)
         self._config.connect('interface.graphview-show-lines',
                           self.cb_update_show_lines)
         self._config.connect('interface.graphview-highlight-home-person',
@@ -886,20 +901,30 @@ class GraphvizSvgParser(object):
         else:
             line_width = 1  # Thin box
 
+        tooltip = self.view.tags_tooltips.get(self.handle)
+
         # Highlight the home person
-        if self.highlight_home_person:
+        # stroke_color is not '#...' when tags are drawing, so we check this
+        # maybe this is not good solution to check for tags but it works
+        if self.highlight_home_person and stroke_color[:1] == '#':
             home_person = self.widget.dbstate.db.get_default_person()
             if home_person and home_person.handle == self.handle:
                 fill_color = self.home_person_color
+                tooltip = None
 
         item = GooCanvas.CanvasPolyline(parent = self.current_parent(),
                                         points = points,
                                         close_path = True,
                                         fill_color = fill_color,
                                         line_width = line_width,
-                                        stroke_color = stroke_color)
-        self.item_hier.append(item)
+                                        stroke_color = stroke_color,
+                                        tooltip = tooltip)
+        # turn on tooltip show if have it
+        if tooltip:
+            item_canvas = item.get_canvas()
+            item_canvas.set_has_tooltip(True)
 
+        self.item_hier.append(item)
 
     def stop_polygon(self, tag):
         """
@@ -925,6 +950,8 @@ class GraphvizSvgParser(object):
             stroke_color = attrs.get('stroke')
             fill_color = attrs.get('fill')
 
+        tooltip = self.view.tags_tooltips.get(self.handle)
+
         item = GooCanvas.CanvasEllipse(parent = self.current_parent(),
                                        center_x = center_x,
                                        center_y = center_y,
@@ -932,7 +959,12 @@ class GraphvizSvgParser(object):
                                        radius_y = radius_y,
                                        fill_color = fill_color,
                                        stroke_color = stroke_color,
-                                       line_width = 1)
+                                       line_width = 1,
+                                       tooltip = tooltip)
+        if tooltip:
+            item_canvas = item.get_canvas()
+            item_canvas.set_has_tooltip(True)
+
         self.current_parent().description = 'familynode'
         self.item_hier.append(item)
 
@@ -1470,13 +1502,6 @@ class DotGenerator(object):
             # Output the person's node
             label = self.get_person_label(person)
             (shape, style, color, fill) = self.get_gender_style(person)
-            if self.show_tag_color:
-                for tag_handle in person.get_tag_list():
-                    # For the complete tag, don't modify the default color
-                    # which is black (#000000000000)
-                    tag = self.dbstate.db.get_tag_from_handle(tag_handle)
-                    if tag.get_color() != "#000000000000":
-                        fill = tag.get_color() # only if the color is not black
             self.add_node(person_handle, label, shape, color, style, fill, url)
 
             # Output families where person is a parent
@@ -1596,6 +1621,30 @@ class DotGenerator(object):
             #no need for html label with this person
             self.is_html_output = False
 
+        # get all tags for the person and prepare html table
+        # it will be added after dates (on the bottom)
+        tag_table = ''
+        if self.show_tag_color:
+            tags = []
+            for tag_handle in person.get_tag_list():
+                tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+
+            # prepare html table of tags
+            if len(tags)>0:
+                tag_table = '</TD></TR><TR><TD>'
+                tag_table += '<TABLE BORDER="0" CELLBORDER="0" CELLPADDING="5"><TR>'
+                for tag in tags:
+                    tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                tag_table += '</TR></TABLE>'
+
+                # open html table for adding text (name and dates) if it not exist.
+                # we need that to add tags table
+                if self.is_html_output == False:
+                    line_delimiter = '<BR/>'
+                    label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD>'
+                    self.is_html_output = True
+                self.add_tags_tooltip(person.handle, tags)
+
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
 
@@ -1631,6 +1680,9 @@ class DotGenerator(object):
         else:
             txt= '(%s - %s)' % (birth, death)
             label += txt
+
+        # add html tags table
+        label += tag_table
 
         # see if we have a table that needs to be terminated
         if self.is_html_output:
@@ -1742,6 +1794,36 @@ class DotGenerator(object):
         if style:
             text += ' style="%s"'       % style
 
+        # get all tags for the family and prepare html table
+        # it will be added after dates (on the bottom of node)
+        if self.show_tag_color:
+            tags = []
+            try:
+                # We need to do the following only if the node id is a
+                # family handle, so we try to get family from handle we have
+                fam = self.database.get_family_from_handle(node_id)
+                for tag_handle in fam.get_tag_list():
+                    tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+
+                # Convert plain text label to html and inset it in the main table
+                label_new  = '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+                label_new += '<TR><TD>%s'  % label.replace('\\n', '<BR/>')
+
+                # prepare html table of tags
+                tag_table = ''
+                if len(tags)>0:
+                    tag_table = '</TD></TR><TR><TD><TABLE BORDER="0" '
+                    tag_table += 'CELLBORDER="0" CELLPADDING="5"><TR>'
+                    for tag in tags:
+                        tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                    tag_table += '</TR></TABLE>'
+                    self.add_tags_tooltip(node_id, tags)
+
+                # Combine new label for family node and close the main table
+                label = label_new + tag_table + '</TD></TR></TABLE>'
+            except:
+                pass
+
         # note that we always output a label -- even if an empty string --
         # otherwise GraphViz uses the node ID as the label which is unlikely
         # to be what the user wants to see in the graph
@@ -1755,6 +1837,15 @@ class DotGenerator(object):
 
         text += " ]"
         self.write('  _%s %s;\n' % (node_id, text))
+
+    def add_tags_tooltip(self, handle, tag_list):
+        """
+        Add tooltip to dict {handle, tooltip}
+        """
+        tooltip_str = _('<b>Tags:</b>')
+        for tag in tag_list:
+            tooltip_str += '\n<span background="%s">  </span> - %s' % (tag.get_color(), tag.get_name() )
+        self.view.tags_tooltips[handle] = tooltip_str
 
     def start_subgraph(self, graph_id):
         """ Opens a subgraph which is used to keep together related nodes
