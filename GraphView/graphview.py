@@ -588,7 +588,7 @@ class GraphWidget(object):
         v_offset = v_offset / self.canvas.get_scale()
 
         # Get the canvas size to convert Y position of person
-        # because get_active_person_y() returns negativ distance 
+        # because get_active_person_y() returns negativ distance
         # from bottom of canvas
         bounds = self.canvas.get_root_item().get_bounds()
         height_canvas = bounds.y2 - bounds.y1
