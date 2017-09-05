@@ -581,14 +581,22 @@ class GraphWidget(object):
         # left part of the screen. We want it in the middle, so make an offset
         # half the width of the scrolled window size.
         h_offset = self.hadjustment.get_page_size() / 2
+        v_offset = self.vadjustment.get_page_size() / 3
 
         # Apply the scaling factor so the offset is adjusted to the scale
         h_offset = h_offset / self.canvas.get_scale()
+        v_offset = v_offset / self.canvas.get_scale()
+
+        # Get the canvas size to convert Y position of person
+        # because get_active_person_y() returns negativ distance 
+        # from bottom of canvas
+        bounds = self.canvas.get_root_item().get_bounds()
+        height_canvas = bounds.y2 - bounds.y1
 
         # Now try and centre the active person
         if parser.active_person_item:
             self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
-                                  parser.get_active_person_y())
+                       height_canvas + parser.get_active_person_y() - v_offset)
 
         # Update the status bar
         self.view.change_page()
