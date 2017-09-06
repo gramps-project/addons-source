@@ -529,6 +529,7 @@ class GraphWidget(object):
         self.vadjustment = scrolled_win.get_vadjustment()
 
         self.canvas = GooCanvas.Canvas()
+        self.canvas.connect("scroll-event", self.scroll_mouse)
         self.canvas.props.units = Gtk.Unit.POINTS
         self.canvas.props.resolution_x = 72
         self.canvas.props.resolution_y = 72
@@ -553,6 +554,24 @@ class GraphWidget(object):
         hbox.pack_start(self.scale, True, True, 0)
         self.vbox.pack_start(scrolled_win, True, True, 0)
         self.change_max_zoom()
+
+    def scroll_mouse(self, canvas, event):
+        """
+        Try to zoom with mouse wheel.
+        """
+        scale_coef = self.canvas.get_scale()
+        if scale_coef < 2:
+            step = 0.1
+        else:
+            step = 1
+        if event.direction == Gdk.ScrollDirection.UP:
+            scale_coef += step
+            self.canvas.set_scale(scale_coef)
+        elif event.direction == Gdk.ScrollDirection.DOWN:
+            scale_coef -= step
+            if scale_coef < 0.2:
+                scale_coef = 0.1
+            self.canvas.set_scale(scale_coef)
 
     def populate(self, active_person):
         """
