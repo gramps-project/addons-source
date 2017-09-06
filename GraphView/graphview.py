@@ -553,25 +553,32 @@ class GraphWidget(object):
         self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         hbox.pack_start(self.scale, True, True, 0)
         self.vbox.pack_start(scrolled_win, True, True, 0)
+        # if we have graph lager than graphviz paper size
+        # this coef is needed
+        self.transform_scale = 1
+
         self.change_max_zoom()
 
     def scroll_mouse(self, canvas, event):
         """
         Try to zoom with mouse wheel.
         """
-        scale_coef = self.canvas.get_scale()
-        if scale_coef < 2:
-            step = 0.1
+        scale_coef = self.scale1.get_value()
+        if scale_coef < 0.1:
+            step = 0.01
+        elif scale_coef < 0.3:
+            step = 0.03
+        elif scale_coef < 1:
+            step = 0.05
         else:
-            step = 1
+            step = 0.1
         if event.direction == Gdk.ScrollDirection.UP:
             scale_coef += step
-            self.canvas.set_scale(scale_coef)
         elif event.direction == Gdk.ScrollDirection.DOWN:
             scale_coef -= step
-            if scale_coef < 0.2:
-                scale_coef = 0.1
-            self.canvas.set_scale(scale_coef)
+            if scale_coef < 0.02:
+                scale_coef = 0.01
+        self.set_zoom(scale_coef)
 
     def populate(self, active_person):
         """
@@ -594,6 +601,8 @@ class GraphWidget(object):
                         stdin=PIPE, stdout=PIPE).communicate(input=self.dot_data)[0]
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
+        self.transform_scale = parser.transform_scale
+        self.set_zoom(self.scale1.get_value())
         window = self.canvas.get_parent()
 
         # The scroll_to method will try and put the active person in the top
@@ -615,7 +624,7 @@ class GraphWidget(object):
         # Now try and centre the active person
         if parser.active_person_item:
             self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
-                       height_canvas + parser.get_active_person_y() - v_offset)
+                  height_canvas + parser.get_active_person_y() - v_offset)
 
         # Update the status bar
         self.view.change_page()
@@ -641,6 +650,8 @@ class GraphWidget(object):
         else:
             scale = scale_h
 
+        scale = scale * self.transform_scale
+
         # set scale if it needed, else restore it to default
         if scale < 1:
             self.scale1.set_value(scale)
@@ -655,11 +666,8 @@ class GraphWidget(object):
             self.scale1.destroy() # destroy the Scale if it exists.
         except:                   # we can't change the max value
             pass                  # then recreate a new scale
-        nb_persons = int(self.dbstate.db.get_number_of_people()+5)
-        zoom = log(nb_persons,10)*log(nb_persons,5)
-        max_zoom = 2.0 if zoom < 2.0 else zoom
         # (value, lower, upper, step_increment, page_increment, page_size)
-        adj = Gtk.Adjustment(1.00, 0.01, float(max_zoom), 0.01, 0.05, 0)
+        adj = Gtk.Adjustment(1.00, 0.01, 2, 0.01, 0.05, 0)
         adj.set_value(1.0)
         self.scale1 = Gtk.Scale(adjustment=adj,
                                 orientation=Gtk.Orientation.HORIZONTAL)
@@ -724,11 +732,18 @@ class GraphWidget(object):
             return True
         return False
 
+    def set_zoom(self, value):
+        """
+        Set value for zoom of the canvas widget and apply it
+        """
+        self.scale1.set_value(value)
+        self.canvas.set_scale(value / self.transform_scale)
+
     def zoom_changed(self, adj):
         """
         Zoom the canvas widget
         """
-        self.canvas.set_scale(adj.get_value())
+        self.canvas.set_scale(adj.get_value() / self.transform_scale)
 
     def select_node(self, item, target, event):
         """
@@ -854,6 +869,8 @@ class GraphvizSvgParser(object):
                                 "Arial"                   : "Helvetica"}
         self.active_person_item = None
 
+        self.transform_scale = 1
+
     def parse(self, ifile):
         """
         Parse an SVG file produced by Graphviz
@@ -887,6 +904,9 @@ class GraphvizSvgParser(object):
             scale = transform_list[0].split()
             scale_x = float(scale[0].lstrip('scale('))
             scale_y = float(scale[1])
+            self.transform_scale = scale_x
+            if scale_x > scale_y:
+                self.transform_scale = scale_y
             item.set_simple_transform(self.bounds[1],
                                       self.bounds[3],
                                       scale_x,
@@ -1207,14 +1227,14 @@ class GraphvizSvgParser(object):
         Find the position of the centre of the active person in the horizontal
         dimension
         """
-        return self.active_person_item.props.x
+        return self.active_person_item.props.x * self.transform_scale
 
     def get_active_person_y(self):
         """
         Find the position of the centre of the active person in the vertical
         dimension
         """
-        return self.active_person_item.props.y
+        return self.active_person_item.props.y * self.transform_scale
 
 #------------------------------------------------------------------------
 #
