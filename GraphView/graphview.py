@@ -614,6 +614,10 @@ class GraphWidget(object):
                 scale_coef = 0.01
         self.set_zoom(scale_coef)
 
+        # stop the signal of scroll emission
+        # to prevent window scrolling
+        return True
+
     def populate(self, active_person):
         """
         Populate the graph with widgets derived from Graphviz
