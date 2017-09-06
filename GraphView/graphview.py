@@ -522,6 +522,8 @@ class GraphWidget(object):
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_person_handle = None
+        self.active_person_x = 0
+        self.active_person_y = 0
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -542,10 +544,18 @@ class GraphWidget(object):
         self.vbox.pack_start(hbox, False, False, 0)
 
         # add best fit button
-        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best', Gtk.IconSize.MENU)
+        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
+                                                     Gtk.IconSize.MENU)
         self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
         hbox.pack_start(self.fit_btn, False, False, 1)
         self.fit_btn.connect("clicked", self.fit_to_page)
+
+        # add 'go to active person' button
+        self.goto_active_btn = Gtk.Button.new_from_icon_name('go-jump',
+                                                             Gtk.IconSize.MENU)
+        self.goto_active_btn.set_tooltip_text(_('Go to active person'))
+        hbox.pack_start(self.goto_active_btn, False, False, 1)
+        self.goto_active_btn.connect("clicked", self.goto_active)
 
         zoom_label = Gtk.Label(label=_("Zoom:"))
         hbox.pack_start (zoom_label, False, False, 1)
@@ -558,6 +568,30 @@ class GraphWidget(object):
         self.transform_scale = 1
 
         self.change_max_zoom()
+
+    def goto_active(self, button):
+        """
+        Go to active person
+        """
+        # The scroll_to method will try and put the active person in the top
+        # left part of the screen. We want it in the middle, so make an offset
+        # half the width of the scrolled window size.
+        h_offset = self.hadjustment.get_page_size() / 2
+        v_offset = self.vadjustment.get_page_size() / 3
+
+        # Apply the scaling factor so the offset is adjusted to the scale
+        h_offset = h_offset / self.canvas.get_scale()
+        v_offset = v_offset / self.canvas.get_scale()
+
+        # Get the canvas size to convert Y position of person
+        # because get_active_person_y() returns negativ distance
+        # from bottom of canvas
+        bounds = self.canvas.get_root_item().get_bounds()
+        height_canvas = bounds.y2 - bounds.y1
+
+        # Centre the active person
+        self.canvas.scroll_to(self.active_person_x - h_offset,
+                              height_canvas + self.active_person_y - v_offset)
 
     def scroll_mouse(self, canvas, event):
         """
@@ -599,32 +633,19 @@ class GraphWidget(object):
         else:
             self.svg_data = Popen(['dot', '-Tsvg'],
                         stdin=PIPE, stdout=PIPE).communicate(input=self.dot_data)[0]
+
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
+        # save transform scale
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale1.get_value())
-        window = self.canvas.get_parent()
 
-        # The scroll_to method will try and put the active person in the top
-        # left part of the screen. We want it in the middle, so make an offset
-        # half the width of the scrolled window size.
-        h_offset = self.hadjustment.get_page_size() / 2
-        v_offset = self.vadjustment.get_page_size() / 3
-
-        # Apply the scaling factor so the offset is adjusted to the scale
-        h_offset = h_offset / self.canvas.get_scale()
-        v_offset = v_offset / self.canvas.get_scale()
-
-        # Get the canvas size to convert Y position of person
-        # because get_active_person_y() returns negativ distance
-        # from bottom of canvas
-        bounds = self.canvas.get_root_item().get_bounds()
-        height_canvas = bounds.y2 - bounds.y1
-
-        # Now try and centre the active person
+        # Save position of the active person
         if parser.active_person_item:
-            self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
-                  height_canvas + parser.get_active_person_y() - v_offset)
+            self.active_person_x = parser.get_active_person_x()
+            self.active_person_y = parser.get_active_person_y()
+
+        self.goto_active(None)
 
         # Update the status bar
         self.view.change_page()
