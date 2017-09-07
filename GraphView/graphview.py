@@ -33,7 +33,6 @@
 #
 #-------------------------------------------------------------------------
 import os
-from math import log
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -176,7 +175,7 @@ class GraphView(NavigationView):
         Set up callback for changes to the database
         """
         self._change_db(db)
-        self.graph_widget.change_max_zoom()
+        self.scale = 1
         if self.active:
             self.graph_widget.clear()
             if self.get_active() != "":
@@ -557,17 +556,11 @@ class GraphWidget(object):
         hbox.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
-        zoom_label = Gtk.Label(label=_("Zoom:"))
-        hbox.pack_start (zoom_label, False, False, 1)
-
-        self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
-        hbox.pack_start(self.scale, True, True, 0)
         self.vbox.pack_start(scrolled_win, True, True, 0)
         # if we have graph lager than graphviz paper size
         # this coef is needed
         self.transform_scale = 1
-
-        self.change_max_zoom()
+        self.scale = 1
 
     def goto_active(self, button):
         """
@@ -597,13 +590,15 @@ class GraphWidget(object):
         """
         Try to zoom with mouse wheel.
         """
-        scale_coef = self.scale1.get_value()
+        scale_coef = self.scale
         if scale_coef < 0.1:
             step = 0.01
         elif scale_coef < 0.3:
             step = 0.03
         elif scale_coef < 1:
             step = 0.05
+        elif scale_coef > 2:
+            step = 0.5
         else:
             step = 0.1
         if event.direction == Gdk.ScrollDirection.UP:
@@ -642,7 +637,7 @@ class GraphWidget(object):
         parser.parse(self.svg_data)
         # save transform scale
         self.transform_scale = parser.transform_scale
-        self.set_zoom(self.scale1.get_value())
+        self.set_zoom(self.scale)
 
         # Save position of the active person
         if parser.active_person_item:
@@ -679,27 +674,9 @@ class GraphWidget(object):
 
         # set scale if it needed, else restore it to default
         if scale < 1:
-            self.scale1.set_value(scale)
+            self.set_zoom(scale)
         else:
-            self.scale1.set_value(1)
-
-    def change_max_zoom(self):
-        """
-        Change the maximum value of the zoom.
-        """
-        try:
-            self.scale1.destroy() # destroy the Scale if it exists.
-        except:                   # we can't change the max value
-            pass                  # then recreate a new scale
-        # (value, lower, upper, step_increment, page_increment, page_size)
-        adj = Gtk.Adjustment(1.00, 0.01, 2, 0.01, 0.05, 0)
-        adj.set_value(1.0)
-        self.scale1 = Gtk.Scale(adjustment=adj,
-                                orientation=Gtk.Orientation.HORIZONTAL)
-        self.scale1.show()
-        self.scale1.set_digits(2)
-        adj.connect("value_changed", self.zoom_changed)
-        self.scale.pack_start(self.scale1, True, True, 0)
+            self.set_zoom(1)
 
     def clear(self):
         """
@@ -767,7 +744,7 @@ class GraphWidget(object):
         """
         Set value for zoom of the canvas widget and apply it
         """
-        self.scale1.set_value(value)
+        self.scale = value
         self.canvas.set_scale(value / self.transform_scale)
 
     def zoom_changed(self, adj):
