@@ -747,12 +747,6 @@ class GraphWidget(object):
         self.scale = value
         self.canvas.set_scale(value / self.transform_scale)
 
-    def zoom_changed(self, adj):
-        """
-        Zoom the canvas widget
-        """
-        self.canvas.set_scale(adj.get_value() / self.transform_scale)
-
     def select_node(self, item, target, event):
         """
         Perform actions when a node is clicked.
