@@ -33,7 +33,6 @@
 #
 #-------------------------------------------------------------------------
 import os
-from math import log
 from xml.parsers.expat import ExpatError, ParserCreate
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -176,7 +175,7 @@ class GraphView(NavigationView):
         Set up callback for changes to the database
         """
         self._change_db(db)
-        self.graph_widget.change_max_zoom()
+        self.scale = 1
         if self.active:
             self.graph_widget.clear()
             if self.get_active() != "":
@@ -522,6 +521,8 @@ class GraphWidget(object):
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_person_handle = None
+        self.active_person_x = 0
+        self.active_person_y = 0
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -529,6 +530,7 @@ class GraphWidget(object):
         self.vadjustment = scrolled_win.get_vadjustment()
 
         self.canvas = GooCanvas.Canvas()
+        self.canvas.connect("scroll-event", self.scroll_mouse)
         self.canvas.props.units = Gtk.Unit.POINTS
         self.canvas.props.resolution_x = 72
         self.canvas.props.resolution_y = 72
@@ -539,13 +541,84 @@ class GraphWidget(object):
         self.vbox.set_border_width (4)
         hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
-        zoom_label = Gtk.Label(label=_("Zoom:"))
-        hbox.pack_start (zoom_label, False, False, 1)
 
-        self.scale = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
-        hbox.pack_start(self.scale, True, True, 0)
+        # add zoom-in button
+        self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
+                                                     Gtk.IconSize.MENU)
+        self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
+        hbox.pack_start(self.zoom_in_btn, False, False, 1)
+        self.zoom_in_btn.connect("clicked", self.zoom_in)
+
+        # add zoom-out button
+        self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
+                                                     Gtk.IconSize.MENU)
+        self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
+        hbox.pack_start(self.zoom_out_btn, False, False, 1)
+        self.zoom_out_btn.connect("clicked", self.zoom_out)
+
+        # add original zoom button
+        self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
+                                                     Gtk.IconSize.MENU)
+        self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
+        hbox.pack_start(self.orig_zoom_btn, False, False, 1)
+        self.orig_zoom_btn.connect("clicked", self.set_original_zoom)
+
+        # add best fit button
+        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
+                                                     Gtk.IconSize.MENU)
+        self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
+        hbox.pack_start(self.fit_btn, False, False, 1)
+        self.fit_btn.connect("clicked", self.fit_to_page)
+
+        # add 'go to active person' button
+        self.goto_active_btn = Gtk.Button.new_from_icon_name('go-jump',
+                                                             Gtk.IconSize.MENU)
+        self.goto_active_btn.set_tooltip_text(_('Go to active person'))
+        hbox.pack_start(self.goto_active_btn, False, False, 1)
+        self.goto_active_btn.connect("clicked", self.goto_active)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
-        self.change_max_zoom()
+        # if we have graph lager than graphviz paper size
+        # this coef is needed
+        self.transform_scale = 1
+        self.scale = 1
+
+    def goto_active(self, button):
+        """
+        Go to active person
+        """
+        # The scroll_to method will try and put the active person in the top
+        # left part of the screen. We want it in the middle, so make an offset
+        # half the width of the scrolled window size.
+        h_offset = self.hadjustment.get_page_size() / 2
+        v_offset = self.vadjustment.get_page_size() / 3
+
+        # Apply the scaling factor so the offset is adjusted to the scale
+        h_offset = h_offset / self.canvas.get_scale()
+        v_offset = v_offset / self.canvas.get_scale()
+
+        # Get the canvas size to convert Y position of person
+        # because get_active_person_y() returns negativ distance
+        # from bottom of canvas
+        bounds = self.canvas.get_root_item().get_bounds()
+        height_canvas = bounds.y2 - bounds.y1
+
+        # Centre the active person
+        self.canvas.scroll_to(self.active_person_x - h_offset,
+                              height_canvas + self.active_person_y - v_offset)
+
+    def scroll_mouse(self, canvas, event):
+        """
+        Try to zoom with mouse wheel.
+        """
+        if event.direction == Gdk.ScrollDirection.UP:
+            self.zoom_in(None)
+        elif event.direction == Gdk.ScrollDirection.DOWN:
+            self.zoom_out(None)
+
+        # stop the signal of scroll emission
+        # to prevent window scrolling
+        return True
 
     def populate(self, active_person):
         """
@@ -566,43 +639,97 @@ class GraphWidget(object):
         else:
             self.svg_data = Popen(['dot', '-Tsvg'],
                         stdin=PIPE, stdout=PIPE).communicate(input=self.dot_data)[0]
+
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
-        window = self.canvas.get_parent()
+        # save transform scale
+        self.transform_scale = parser.transform_scale
+        self.set_zoom(self.scale)
 
-        # The scroll_to method will try and put the active person in the top
-        # left part of the screen. We want it in the middle, so make an offset
-        # half the width of the scrolled window size.
-        h_offset = self.hadjustment.get_page_size() / 2
-
-        # Apply the scaling factor so the offset is adjusted to the scale
-        h_offset = h_offset / self.canvas.get_scale()
-
-        # Now try and centre the active person
+        # Save position of the active person
         if parser.active_person_item:
-            self.canvas.scroll_to(parser.get_active_person_x() - h_offset,
-                                  parser.get_active_person_y())
+            self.active_person_x = parser.get_active_person_x()
+            self.active_person_y = parser.get_active_person_y()
+
+        self.goto_active(None)
 
         # Update the status bar
         self.view.change_page()
 
-    def change_max_zoom(self):
+    def zoom_in(self, button):
         """
-        Change the maximum value of the zoom.
+        Increase zoom scale.
         """
-        try:
-            self.scale1.destroy() # destroy the Scale if it exists.
-        except:                   # we can't change the max value
-            pass                  # then recreate a new scale
-        nb_persons = int(self.dbstate.db.get_number_of_people()+5)
-        zoom = log(nb_persons,10)*log(nb_persons,5)
-        max_zoom = 5.0 if zoom < 5.0 else zoom
-        adj = Gtk.Adjustment (1.00, 0.05, float(max_zoom), 0.05, 0.50, 0.50)
-        adj.set_value(1.0)
-        self.scale1 = Gtk.Scale(adjustment=adj, orientation=Gtk.Orientation.HORIZONTAL)
-        self.scale1.show()
-        adj.connect("value_changed", self.zoom_changed)
-        self.scale.pack_start(self.scale1, True, True, 0)
+        scale_coef = self.scale
+        if scale_coef < 0.1:
+            step = 0.01
+        elif scale_coef < 0.3:
+            step = 0.03
+        elif scale_coef < 1:
+            step = 0.05
+        elif scale_coef > 2:
+            step = 0.5
+        else:
+            step = 0.1
+
+        scale_coef += step
+        self.set_zoom(scale_coef)
+
+    def zoom_out(self, button):
+        """
+        Decrease zoom scale.
+        """
+        scale_coef = self.scale
+        if scale_coef < 0.1:
+            step = 0.01
+        elif scale_coef < 0.3:
+            step = 0.03
+        elif scale_coef < 1:
+            step = 0.05
+        elif scale_coef > 2:
+            step = 0.5
+        else:
+            step = 0.1
+
+        scale_coef -= step
+        if scale_coef < 0.02:
+            scale_coef = 0.01
+        self.set_zoom(scale_coef)
+
+    def set_original_zoom(self, button):
+        """
+        Set original zoom scale = 1.
+        """
+        self.set_zoom(1)
+
+    def fit_to_page(self, button):
+        """
+        Calculate scale and fit tree to page
+        """
+        # get the canvas size
+        bounds = self.canvas.get_root_item().get_bounds()
+        height_canvas = bounds.y2 - bounds.y1
+        width_canvas  = bounds.x2 - bounds.x1
+
+        # get scroll window size
+        width = self.hadjustment.get_page_size()
+        height = self.vadjustment.get_page_size()
+
+        # calculate minimum scale
+        scale_h = (height / height_canvas)
+        scale_w = (width / width_canvas)
+        if scale_h > scale_w:
+            scale = scale_w
+        else:
+            scale = scale_h
+
+        scale = scale * self.transform_scale
+
+        # set scale if it needed, else restore it to default
+        if scale < 1:
+            self.set_zoom(scale)
+        else:
+            self.set_zoom(1)
 
     def clear(self):
         """
@@ -622,47 +749,61 @@ class GraphWidget(object):
         or call option menu.
         """
         button = event.get_button()[1]
-        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
+        if (button == 1 or button == 2) \
+            and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
             and item == self.canvas.get_root_item():
-            window = self.canvas.get_parent().get_window()
-            window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
-            self._last_x = event.x_root
-            self._last_y = event.y_root
-            self._in_move = True
-            return False
+
+              window = self.canvas.get_parent().get_window()
+              window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
+              self._last_x = event.x_root
+              self._last_y = event.y_root
+              self._in_move = True
+              return False
         return False
 
     def button_release(self, item, target, event):
-        """Exit from scroll mode when button release."""
+        """
+        Exit from scroll mode when button release.
+        """
         button = event.get_button()[1]
-        if button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
-            self.motion_notify_event(item, target, event)
-            self.canvas.get_parent().get_window().set_cursor(None)
-            self._in_move = False
-            return True
+        if (button == 1 or button == 2) \
+            and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
+
+              self.motion_notify_event(item, target, event)
+              self.canvas.get_parent().get_window().set_cursor(None)
+              self._in_move = False
+              return True
         return False
 
     def motion_notify_event(self, item, target, event):
         """Function for motion notify events for drag and scroll mode."""
         if self._in_move and (event.type == Gdk.EventType.MOTION_NOTIFY or \
            event.type == Gdk.EventType.BUTTON_RELEASE):
-            new_x = self.hadjustment.get_value() - (event.x_root - self._last_x)
+
+            # scale coefficient for prevent flicking when drag
+            scale_coef = self.canvas.get_scale()
+
+            new_x = (self.hadjustment.get_value() -
+                    (event.x_root - self._last_x)*scale_coef)
             self.hadjustment.set_value(new_x)
 
-            new_y = self.vadjustment.get_value() - (event.y_root - self._last_y)
+            new_y = (self.vadjustment.get_value() -
+                    (event.y_root - self._last_y)*scale_coef)
             self.vadjustment.set_value(new_y)
             return True
         return False
 
-    def zoom_changed(self, adj):
+    def set_zoom(self, value):
         """
-        Zoom the canvas widget
+        Set value for zoom of the canvas widget and apply it
         """
-        self.canvas.set_scale(adj.get_value())
+        self.scale = value
+        self.canvas.set_scale(value / self.transform_scale)
 
     def select_node(self, item, target, event):
         """
         Perform actions when a node is clicked.
+        If middle mouse was clicked then try to set scroll mode.
         """
         handle = item.title
         node_class = item.description
@@ -670,6 +811,7 @@ class GraphWidget(object):
 
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
+
         if button == 1 and node_class == 'node': # Left mouse
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
@@ -681,12 +823,16 @@ class GraphWidget(object):
 
             # Redraw the graph based on the selected person
             self.view.change_active(handle)
-        elif button == 3 and node_class == 'node': # Right mouse
+        elif button == 3 and node_class == 'node':       # Right mouse
             if handle:
                 self.edit_person(handle)
         elif button == 3 and node_class == 'familynode': # Right mouse
             if handle:
                 self.edit_family(handle)
+        elif button == 2:                                # Middle mouse
+            # try to enter in scroll mode (we should change "item")
+            item = self.canvas.get_root_item()
+            self.button_press(item, target, event)
 
         return True
 
@@ -784,6 +930,8 @@ class GraphvizSvgParser(object):
                                 "Arial"                   : "Helvetica"}
         self.active_person_item = None
 
+        self.transform_scale = 1
+
     def parse(self, ifile):
         """
         Parse an SVG file produced by Graphviz
@@ -817,6 +965,9 @@ class GraphvizSvgParser(object):
             scale = transform_list[0].split()
             scale_x = float(scale[0].lstrip('scale('))
             scale_y = float(scale[1])
+            self.transform_scale = scale_x
+            if scale_x > scale_y:
+                self.transform_scale = scale_y
             item.set_simple_transform(self.bounds[1],
                                       self.bounds[3],
                                       scale_x,
@@ -1137,14 +1288,14 @@ class GraphvizSvgParser(object):
         Find the position of the centre of the active person in the horizontal
         dimension
         """
-        return self.active_person_item.props.x
+        return self.active_person_item.props.x * self.transform_scale
 
     def get_active_person_y(self):
         """
         Find the position of the centre of the active person in the vertical
         dimension
         """
-        return self.active_person_item.props.y
+        return self.active_person_item.props.y * self.transform_scale
 
 #------------------------------------------------------------------------
 #
