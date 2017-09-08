@@ -542,6 +542,27 @@ class GraphWidget(object):
         hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
 
+        # add zoom-in button
+        self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
+                                                     Gtk.IconSize.MENU)
+        self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
+        hbox.pack_start(self.zoom_in_btn, False, False, 1)
+        self.zoom_in_btn.connect("clicked", self.zoom_in)
+
+        # add zoom-out button
+        self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
+                                                     Gtk.IconSize.MENU)
+        self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
+        hbox.pack_start(self.zoom_out_btn, False, False, 1)
+        self.zoom_out_btn.connect("clicked", self.zoom_out)
+
+        # add original zoom button
+        self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
+                                                     Gtk.IconSize.MENU)
+        self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
+        hbox.pack_start(self.orig_zoom_btn, False, False, 1)
+        self.orig_zoom_btn.connect("clicked", self.set_original_zoom)
+
         # add best fit button
         self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
                                                      Gtk.IconSize.MENU)
@@ -590,24 +611,10 @@ class GraphWidget(object):
         """
         Try to zoom with mouse wheel.
         """
-        scale_coef = self.scale
-        if scale_coef < 0.1:
-            step = 0.01
-        elif scale_coef < 0.3:
-            step = 0.03
-        elif scale_coef < 1:
-            step = 0.05
-        elif scale_coef > 2:
-            step = 0.5
-        else:
-            step = 0.1
         if event.direction == Gdk.ScrollDirection.UP:
-            scale_coef += step
+            self.zoom_in(None)
         elif event.direction == Gdk.ScrollDirection.DOWN:
-            scale_coef -= step
-            if scale_coef < 0.02:
-                scale_coef = 0.01
-        self.set_zoom(scale_coef)
+            self.zoom_out(None)
 
         # stop the signal of scroll emission
         # to prevent window scrolling
@@ -648,6 +655,52 @@ class GraphWidget(object):
 
         # Update the status bar
         self.view.change_page()
+
+    def zoom_in(self, button):
+        """
+        Increase zoom scale.
+        """
+        scale_coef = self.scale
+        if scale_coef < 0.1:
+            step = 0.01
+        elif scale_coef < 0.3:
+            step = 0.03
+        elif scale_coef < 1:
+            step = 0.05
+        elif scale_coef > 2:
+            step = 0.5
+        else:
+            step = 0.1
+
+        scale_coef += step
+        self.set_zoom(scale_coef)
+
+    def zoom_out(self, button):
+        """
+        Decrease zoom scale.
+        """
+        scale_coef = self.scale
+        if scale_coef < 0.1:
+            step = 0.01
+        elif scale_coef < 0.3:
+            step = 0.03
+        elif scale_coef < 1:
+            step = 0.05
+        elif scale_coef > 2:
+            step = 0.5
+        else:
+            step = 0.1
+
+        scale_coef -= step
+        if scale_coef < 0.02:
+            scale_coef = 0.01
+        self.set_zoom(scale_coef)
+
+    def set_original_zoom(self, button):
+        """
+        Set original zoom scale = 1.
+        """
+        self.set_zoom(1)
 
     def fit_to_page(self, button):
         """
