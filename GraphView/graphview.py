@@ -40,10 +40,12 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gi.repository import Gtk, Gdk, GdkPixbuf
+from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
 import string
 from subprocess import Popen, PIPE
 from io import StringIO
+from threading import Thread
+from math import sqrt, pow
 
 #-------------------------------------------------------------------------
 #
@@ -2015,3 +2017,134 @@ class DotGenerator(object):
 
     def get_dot(self):
         return self.dot.getvalue()
+
+#-------------------------------------------------------------------------
+#
+# CanvasAnimation
+#
+#-------------------------------------------------------------------------
+class CanvasAnimation(object):
+    """
+    Produce animation for operations with canvas.
+    """
+    def __init__(self, canvas, scroll_window, transform_scale):
+        """
+        We need canvas and window in witch it placed.
+        And we need transform_scale of canvas that graphviz applied.
+        """
+        self.canvas = canvas
+        self.hadjustment = scroll_window.get_hadjustment()
+        self.vadjustment = scroll_window.get_vadjustment()
+        self.items_list = None
+        self.transform_scale = transform_scale
+        # delay between steps in microseconds
+        self.speed = 5000
+        # length of step
+        self.step_len = 10
+
+        self.update_items(transform_scale)
+
+    def update_items(self, transform_scale):
+        """
+        Get list of items from canvas.
+        And update transform_scale.
+        """
+        root_item = self.canvas.get_root_item()
+        self.transform_scale = transform_scale
+        self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
+                                                        True, True, True)
+
+    def get_item_by_title(self, handle):
+        """
+        Find item by title.
+        """
+        if handle and self.items_list:
+            for item in self.items_list:
+                # exclude items that don't have title
+                try:
+                    if item.title == handle:
+                        return item
+                except:
+                    pass
+        return None
+
+    def move_to_person(self, handle, animated):
+        """
+        Move graph to specified person by handle.
+        """
+        item = self.get_item_by_title(handle)
+        if item:
+            bounds = item.get_bounds()
+            # calculate middle of node coord
+            x = (bounds.x2 - (bounds.x2-bounds.x1)/2) * self.transform_scale
+            y = (bounds.y1 - (bounds.y1-bounds.y2)/2) * self.transform_scale
+            self.move_to((x, y), animated)
+
+    def get_trace_to(self, destination):
+        """
+        Prepare set of points to destination from current position.
+        """
+        points = []
+        # get current position (left-top corner) with scale
+        start_x = self.hadjustment.get_value() / self.canvas.get_scale()
+        start_y = self.vadjustment.get_value() / self.canvas.get_scale()
+
+        x_delta = destination[0] - start_x
+        y_delta = destination[1] - start_y
+
+        # calculate step count depending on length of the trace
+        trace_len = sqrt(pow(x_delta,2) + pow(y_delta,2))
+        steps_count = int(trace_len/self.step_len)
+
+        # prevent division by 0
+        if steps_count > 0:
+            x_step = x_delta / steps_count
+            y_step = y_delta / steps_count
+
+            # add points to trace
+            for i in range(1, steps_count+1):
+                points.append([start_x + (x_step * i),
+                               start_y + (y_step * i)])
+        else:
+            points.append(destination)
+        return points
+
+    def scroll_canvas(self, point):
+        """
+        Scroll window to point on canvas.
+        """
+        self.canvas.scroll_to(point[0], point[1])
+
+    def animation(self, destination):
+        """
+        Animate scrolling to destination point in thread.
+        """
+        points = self.get_trace_to(destination)
+        for point in points:
+            GLib.idle_add(self.scroll_canvas, point)
+            GLib.usleep(self.speed)
+
+
+    def move_to(self, destination, animated):
+        """
+        Move graph to specified position.
+        If 'animated' is True then movement will be animated.
+        It works with 'canvas.scroll_to' in thread.
+        """
+        # Correct destination to screen center
+        h_offset = self.hadjustment.get_page_size() / 2
+        v_offset = self.vadjustment.get_page_size() / 3
+
+        # Apply the scaling factor so the offset is adjusted to the scale
+        h_offset = h_offset / self.canvas.get_scale()
+        v_offset = v_offset / self.canvas.get_scale()
+
+        destination = (destination[0]-h_offset, destination[1]-v_offset)
+
+        # if animated is True than run thread with animation
+        # else - just scroll_to immediately
+        if animated:
+            thread = Thread(target=self.animation, args=[destination])
+            thread.start()
+        else:
+            self.scroll_canvas(destination)
