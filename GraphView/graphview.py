@@ -585,6 +585,9 @@ class GraphWidget(object):
         self.transform_scale = 1
         self.scale = 1
 
+        self.animation = CanvasAnimation(self.canvas, scrolled_win,
+                                         self.transform_scale)
+
     def goto_active(self, button):
         """
         Go to active person
@@ -605,9 +608,13 @@ class GraphWidget(object):
         bounds = self.canvas.get_root_item().get_bounds()
         height_canvas = bounds.y2 - bounds.y1
 
-        # Centre the active person
-        self.canvas.scroll_to(self.active_person_x - h_offset,
-                              height_canvas + self.active_person_y - v_offset)
+        # check if animation is needed
+        if button:
+            animation = True
+        else:
+            animation = False
+
+        self.animation.move_to_person(self.active_person_handle, animation)
 
     def scroll_mouse(self, canvas, event):
         """
@@ -647,6 +654,8 @@ class GraphWidget(object):
         # save transform scale
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale)
+
+        self.animation.update_items(self.transform_scale)
 
         # Save position of the active person
         if parser.active_person_item:
