@@ -184,6 +184,7 @@ class GraphView(NavigationView):
                 self.graph_widget.populate(self.get_active())
         else:
             self.dirty = True
+        self.graph_widget.load_bookmarks()
 
     def get_stock(self):
         """
@@ -579,6 +580,17 @@ class GraphWidget(object):
         hbox.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
+        # add 'go to bookmark' button
+        self.store = Gtk.ListStore(str, str)
+        self.goto_other_btn = Gtk.ComboBox(model=self.store)
+        cell = Gtk.CellRendererText()
+        self.goto_other_btn.pack_start(cell, True)
+        self.goto_other_btn.add_attribute(cell, 'text', 1)
+        self.goto_other_btn.set_tooltip_text(_('Go to bookmark'))
+        self.goto_other_btn.connect("changed", self.goto_other)
+        hbox.pack_start(self.goto_other_btn, False, False, 1)
+        self.load_bookmarks()
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
         # if we have graph lager than graphviz paper size
         # this coef is needed
@@ -587,6 +599,17 @@ class GraphWidget(object):
 
         self.animation = CanvasAnimation(self.canvas, scrolled_win,
                                          self.transform_scale)
+
+    def load_bookmarks(self):
+        bookmarks = self.dbstate.db.get_bookmarks().bookmarks
+        self.store.clear()
+        for bkmark in bookmarks:
+            person = self.dbstate.db.get_person_from_handle(bkmark)
+            if person:
+                name = displayer.display_name(person.get_primary_name())
+                val_to_display = "[%s] %s" % (person.gramps_id, name)
+                self.store.append((bkmark, val_to_display))
+        self.goto_other_btn.set_active(-1)
 
     def goto_active(self, button):
         """
@@ -615,6 +638,15 @@ class GraphWidget(object):
             animation = False
 
         self.animation.move_to_person(self.active_person_handle, animation)
+
+    def goto_other(self, obj):
+        """
+        Go to other person.
+        if not present in the graphview tree, ignore it.
+        """
+        if obj.get_active() > -1 :
+            other = self.store[obj.get_active()][0]
+            self.animation.move_to_person(other, True)
 
     def scroll_mouse(self, canvas, event):
         """
