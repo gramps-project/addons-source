@@ -184,7 +184,9 @@ class GraphView(NavigationView):
                 self.graph_widget.populate(self.get_active())
         else:
             self.dirty = True
+        # update combobox with bookmarks on db changes
         self.graph_widget.load_bookmarks()
+        self.dbstate.connect('active-changed', self.graph_widget.load_bookmarks)
 
     def get_stock(self):
         """
@@ -601,6 +603,9 @@ class GraphWidget(object):
                                          self.transform_scale)
 
     def load_bookmarks(self):
+        """
+        Load bookmarks in ComboBox (goto_other_btn).
+        """
         bookmarks = self.dbstate.db.get_bookmarks().bookmarks
         self.store.clear()
         for bkmark in bookmarks:
