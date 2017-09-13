@@ -2141,7 +2141,7 @@ class CanvasAnimation(object):
             # calculate middle of node coord
             x = (bounds.x2 - (bounds.x2-bounds.x1)/2) * self.transform_scale
             y = (bounds.y1 - (bounds.y1-bounds.y2)/2) * self.transform_scale
-            self.move_to((x, y), animated)
+            self.move_to(item, (x, y), animated)
 
     def get_trace_to(self, destination):
         """
