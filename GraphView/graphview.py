@@ -2088,6 +2088,11 @@ class CanvasAnimation(object):
         # length of step
         self.step_len = 10
 
+        # separated counter and direction of shaking
+        # for each item that in shake procedure
+        self.counter = {}
+        self.shake = {}
+
         self.update_items(transform_scale)
 
     def update_items(self, transform_scale):
@@ -2102,14 +2107,20 @@ class CanvasAnimation(object):
 
     def stop_shake_animation(self, item, stoped):
         """
-        Stop shaking item.
+        Processing of 'animation-finished' signal.
+        Stop or keep shaking item depending on counter for item.
         """
-        if (self.counter < 4) and (not stoped):
-            self.shake = (-1)*self.shake
-            self.counter += 1
-            item.animate(0, self.shake, 1, 0, False, 100, 10, 0)
+        if (self.counter[item.title] < 4) and (not stoped):
+            self.shake[item.title] = (-1)*self.shake[item.title]
+            self.counter[item.title] += 1
+            item.animate(0, self.shake[item.title], 1, 0, False, 100, 10, 0)
         else:
             item.disconnect_by_func(self.stop_shake_animation)
+            try:
+                self.counter.pop(item.title)
+                self.shake.pop(item.title)
+            except:
+                pass
 
     def shake_item(self, item):
         """
@@ -2117,10 +2128,11 @@ class CanvasAnimation(object):
         Use build-in function of CanvasItem.
         """
         if item:
-            self.counter = 1
-            self.shake = 10
-            item.connect('animation-finished', self.stop_shake_animation)
-            item.animate(0, self.shake, 1, 0, False, 100, 10, 0)
+            if not self.counter.get(item.title):
+                self.counter[item.title] = 1
+                self.shake[item.title] = 10
+                item.connect('animation-finished', self.stop_shake_animation)
+                item.animate(0, self.shake[item.title], 1, 0, False, 100, 10, 0)
 
     def get_item_by_title(self, handle):
         """
