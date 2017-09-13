@@ -2063,6 +2063,28 @@ class CanvasAnimation(object):
         self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
                                                         True, True, True)
 
+    def stop_shake_animation(self, item, stoped):
+        """
+        Stop shaking item.
+        """
+        if (self.counter < 4) and (not stoped):
+            self.shake = (-1)*self.shake
+            self.counter += 1
+            item.animate(0, self.shake, 1, 0, False, 100, 10, 0)
+        else:
+            item.disconnect_by_func(self.stop_shake_animation)
+
+    def shake_item(self, item):
+        """
+        Shake item to help to see it.
+        Use build-in function of CanvasItem.
+        """
+        if item:
+            self.counter = 1
+            self.shake = 10
+            item.connect('animation-finished', self.stop_shake_animation)
+            item.animate(0, self.shake, 1, 0, False, 100, 10, 0)
+
     def get_item_by_title(self, handle):
         """
         Find item by title.
@@ -2124,7 +2146,7 @@ class CanvasAnimation(object):
         """
         self.canvas.scroll_to(point[0], point[1])
 
-    def animation(self, destination):
+    def animation(self, item, destination):
         """
         Animate scrolling to destination point in thread.
         """
@@ -2132,9 +2154,10 @@ class CanvasAnimation(object):
         for point in points:
             GLib.idle_add(self.scroll_canvas, point)
             GLib.usleep(self.speed)
+        # shake item after scroll to it
+        self.shake_item(item)
 
-
-    def move_to(self, destination, animated):
+    def move_to(self, item, destination, animated):
         """
         Move graph to specified position.
         If 'animated' is True then movement will be animated.
@@ -2153,7 +2176,7 @@ class CanvasAnimation(object):
         # if animated is True than run thread with animation
         # else - just scroll_to immediately
         if animated:
-            thread = Thread(target=self.animation, args=[destination])
+            thread = Thread(target=self.animation, args=[item, destination])
             thread.start()
         else:
             self.scroll_canvas(destination)
