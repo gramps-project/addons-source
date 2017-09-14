@@ -599,8 +599,7 @@ class GraphWidget(object):
         self.transform_scale = 1
         self.scale = 1
 
-        self.animation = CanvasAnimation(self.canvas, scrolled_win,
-                                         self.transform_scale)
+        self.animation = CanvasAnimation(self.canvas, scrolled_win)
 
     def load_bookmarks(self):
         """
@@ -618,24 +617,8 @@ class GraphWidget(object):
 
     def goto_active(self, button):
         """
-        Go to active person
+        Go to active person.
         """
-        # The scroll_to method will try and put the active person in the top
-        # left part of the screen. We want it in the middle, so make an offset
-        # half the width of the scrolled window size.
-        h_offset = self.hadjustment.get_page_size() / 2
-        v_offset = self.vadjustment.get_page_size() / 3
-
-        # Apply the scaling factor so the offset is adjusted to the scale
-        h_offset = h_offset / self.canvas.get_scale()
-        v_offset = v_offset / self.canvas.get_scale()
-
-        # Get the canvas size to convert Y position of person
-        # because get_active_person_y() returns negativ distance
-        # from bottom of canvas
-        bounds = self.canvas.get_root_item().get_bounds()
-        height_canvas = bounds.y2 - bounds.y1
-
         # check if animation is needed
         if button:
             animation = True
@@ -692,7 +675,7 @@ class GraphWidget(object):
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale)
 
-        self.animation.update_items(self.transform_scale)
+        self.animation.update_items()
 
         # Save position of the active person
         if parser.active_person_item:
@@ -2073,16 +2056,14 @@ class CanvasAnimation(object):
     """
     Produce animation for operations with canvas.
     """
-    def __init__(self, canvas, scroll_window, transform_scale):
+    def __init__(self, canvas, scroll_window):
         """
         We need canvas and window in witch it placed.
-        And we need transform_scale of canvas that graphviz applied.
         """
         self.canvas = canvas
         self.hadjustment = scroll_window.get_hadjustment()
         self.vadjustment = scroll_window.get_vadjustment()
         self.items_list = None
-        self.transform_scale = transform_scale
         # delay between steps in microseconds
         self.speed = 5000
         # length of step
@@ -2093,15 +2074,14 @@ class CanvasAnimation(object):
         self.counter = {}
         self.shake = {}
 
-        self.update_items(transform_scale)
+        self.update_items()
 
-    def update_items(self, transform_scale):
+    def update_items(self):
         """
         Get list of items from canvas.
         And update transform_scale.
         """
         root_item = self.canvas.get_root_item()
-        self.transform_scale = transform_scale
         self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
                                                         True, True, True)
 
@@ -2156,8 +2136,8 @@ class CanvasAnimation(object):
         if item:
             bounds = item.get_bounds()
             # calculate middle of node coord
-            x = (bounds.x2 - (bounds.x2-bounds.x1)/2) * self.transform_scale
-            y = (bounds.y1 - (bounds.y1-bounds.y2)/2) * self.transform_scale
+            x = (bounds.x2 - (bounds.x2-bounds.x1)/2)
+            y = (bounds.y1 - (bounds.y1-bounds.y2)/2)
             self.move_to(item, (x, y), animated)
 
     def get_trace_to(self, destination):
