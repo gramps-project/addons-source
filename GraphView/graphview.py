@@ -2064,6 +2064,8 @@ class CanvasAnimation(object):
         self.hadjustment = scroll_window.get_hadjustment()
         self.vadjustment = scroll_window.get_vadjustment()
         self.items_list = None
+        self.in_motion = False
+
         # delay between steps in microseconds
         self.speed = 5000
         # length of step
@@ -2084,6 +2086,17 @@ class CanvasAnimation(object):
         root_item = self.canvas.get_root_item()
         self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
                                                         True, True, True)
+
+    def stop_animation(self):
+        """
+        Stop move_to animation.
+        And wait while thread is finished.
+        """
+        self.in_motion = False
+        try:
+            self.thread.join()
+        except:
+            pass
 
     def stop_shake_animation(self, item, stoped):
         """
@@ -2132,6 +2145,7 @@ class CanvasAnimation(object):
         """
         Move graph to specified person by handle.
         """
+        self.stop_animation()
         item = self.get_item_by_title(handle)
         if item:
             bounds = item.get_bounds()
@@ -2142,9 +2156,8 @@ class CanvasAnimation(object):
 
     def get_trace_to(self, destination):
         """
-        Prepare set of points to destination from current position.
+        Return next point to destination from current position.
         """
-        points = []
         # get current position (left-top corner) with scale
         start_x = self.hadjustment.get_value() / self.canvas.get_scale()
         start_y = self.vadjustment.get_value() / self.canvas.get_scale()
@@ -2161,13 +2174,11 @@ class CanvasAnimation(object):
             x_step = x_delta / steps_count
             y_step = y_delta / steps_count
 
-            # add points to trace
-            for i in range(1, steps_count+1):
-                points.append([start_x + (x_step * i),
-                               start_y + (y_step * i)])
+            point =(start_x + x_step,
+                    start_y + y_step)
         else:
-            points.append(destination)
-        return points
+            point = destination
+        return point
 
     def scroll_canvas(self, point):
         """
@@ -2178,11 +2189,49 @@ class CanvasAnimation(object):
     def animation(self, item, destination):
         """
         Animate scrolling to destination point in thread.
+        Dynamically get points to destination one by one
+        and try to scroll to them.
         """
-        points = self.get_trace_to(destination)
-        for point in points:
+        self.in_motion = True
+        while self.in_motion:
+            # Correct destination to window centre
+            h_offset = self.hadjustment.get_page_size() / 2
+            v_offset = self.vadjustment.get_page_size() / 3
+            # Apply the scaling factor so the offset is adjusted to the scale
+            h_offset = h_offset / self.canvas.get_scale()
+            v_offset = v_offset / self.canvas.get_scale()
+
+            dest = (destination[0] - h_offset,
+                    destination[1] - v_offset)
+
+            # get maximum scroll of window
+            max_scroll_x = (self.hadjustment.get_upper() -
+                            self.hadjustment.get_page_size()) / self.canvas.get_scale()
+            max_scroll_y = (self.vadjustment.get_upper() -
+                            self.vadjustment.get_page_size()) / self.canvas.get_scale()
+
+            # fix destination to fit in max scroll
+            if dest[0]> max_scroll_x: dest = (max_scroll_x, dest[1])
+            if dest[0]< 0: dest = (0, dest[1])
+            if dest[1]> max_scroll_y: dest = (dest[0], max_scroll_y)
+            if dest[1]< 0: dest = (dest[0], 0)
+
+            cur_pos = (self.hadjustment.get_value() / self.canvas.get_scale(),
+                       self.vadjustment.get_value() / self.canvas.get_scale())
+
+            # finish if we already at destination
+            if dest == cur_pos: break
+
+            # get next point to destination
+            point = self.get_trace_to(dest)
+
             GLib.idle_add(self.scroll_canvas, point)
             GLib.usleep(self.speed)
+
+            # finish if we try to goto destination point
+            if point == dest: break
+
+        self.in_motion = False
         # shake item after scroll to it
         self.shake_item(item)
 
@@ -2192,20 +2241,21 @@ class CanvasAnimation(object):
         If 'animated' is True then movement will be animated.
         It works with 'canvas.scroll_to' in thread.
         """
-        # Correct destination to screen center
-        h_offset = self.hadjustment.get_page_size() / 2
-        v_offset = self.vadjustment.get_page_size() / 3
-
-        # Apply the scaling factor so the offset is adjusted to the scale
-        h_offset = h_offset / self.canvas.get_scale()
-        v_offset = v_offset / self.canvas.get_scale()
-
-        destination = (destination[0]-h_offset, destination[1]-v_offset)
-
         # if animated is True than run thread with animation
         # else - just scroll_to immediately
         if animated:
-            thread = Thread(target=self.animation, args=[item, destination])
-            thread.start()
+            self.thread = Thread(target=self.animation,
+                                 args=[item, destination])
+            self.thread.start()
         else:
+            # Correct destination to screen centre
+            h_offset = self.hadjustment.get_page_size() / 2
+            v_offset = self.vadjustment.get_page_size() / 3
+
+            # Apply the scaling factor so the offset is adjusted to the scale
+            h_offset = h_offset / self.canvas.get_scale()
+            v_offset = v_offset / self.canvas.get_scale()
+
+            destination = (destination[0]-h_offset,
+                           destination[1]-v_offset)
             self.scroll_canvas(destination)
