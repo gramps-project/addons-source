@@ -786,6 +786,7 @@ class GraphWidget(object):
               self._last_x = event.x_root
               self._last_y = event.y_root
               self._in_move = True
+              self.animation.stop_animation()
               return False
         return False
 
