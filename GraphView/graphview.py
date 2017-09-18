@@ -2212,7 +2212,7 @@ class CanvasAnimation(object):
 
         # calculate step count depending on length of the trace
         trace_len = sqrt(pow(x_delta,2) + pow(y_delta,2))
-        steps_count = int(trace_len/self.step_len)
+        steps_count = int(trace_len/self.step_len * self.canvas.get_scale())
 
         # prevent division by 0
         if steps_count > 0:
