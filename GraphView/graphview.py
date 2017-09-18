@@ -204,6 +204,7 @@ class GraphView(NavigationView):
         Builds the canvas along with a zoom control
         """
         self.graph_widget = GraphWidget(self, self.dbstate, self.uistate)
+        self.graph_widget.load_bookmarks()
         return self.graph_widget.get_widget()
 
     def build_tree(self):
@@ -257,6 +258,7 @@ class GraphView(NavigationView):
             if self.get_active() != "":
                 self.graph_widget.clear()
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.load_bookmarks()
         else:
             self.dirty = True
 
@@ -591,7 +593,6 @@ class GraphWidget(object):
         self.goto_other_btn.set_tooltip_text(_('Go to bookmark'))
         self.goto_other_btn.connect("changed", self.goto_other)
         hbox.pack_start(self.goto_other_btn, False, False, 1)
-        self.load_bookmarks()
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
         # if we have graph lager than graphviz paper size
@@ -612,7 +613,9 @@ class GraphWidget(object):
             if person:
                 name = displayer.display_name(person.get_primary_name())
                 val_to_display = "[%s] %s" % (person.gramps_id, name)
-                self.store.append((bkmark, val_to_display))
+                present = self.animation.get_item_by_title(bkmark)
+                if present is not None:
+                    self.store.append((bkmark, val_to_display))
         self.goto_other_btn.set_active(-1)
 
     def goto_active(self, button):
@@ -635,6 +638,7 @@ class GraphWidget(object):
         if obj.get_active() > -1 :
             other = self.store[obj.get_active()][0]
             self.animation.move_to_person(other, True)
+            obj.set_active(-1)
 
     def scroll_mouse(self, canvas, event):
         """
