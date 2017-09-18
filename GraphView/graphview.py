@@ -186,7 +186,6 @@ class GraphView(NavigationView):
             self.dirty = True
         # update combobox with bookmarks on db changes
         self.graph_widget.load_bookmarks()
-        self.dbstate.connect('active-changed', self.graph_widget.load_bookmarks)
 
     def get_stock(self):
         """
@@ -528,8 +527,6 @@ class GraphWidget(object):
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_person_handle = None
-        self.active_person_x = 0
-        self.active_person_y = 0
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -681,11 +678,7 @@ class GraphWidget(object):
 
         self.animation.update_items()
 
-        # Save position of the active person
-        if parser.active_person_item:
-            self.active_person_x = parser.get_active_person_x()
-            self.active_person_y = parser.get_active_person_y()
-
+        # Scroll to activ person without animation
         self.goto_active(None)
 
         # Update the status bar
@@ -2085,7 +2078,6 @@ class CanvasAnimation(object):
     def update_items(self):
         """
         Get list of items from canvas.
-        And update transform_scale.
         """
         root_item = self.canvas.get_root_item()
         self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
