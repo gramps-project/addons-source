@@ -121,6 +121,8 @@ class GraphView(NavigationView):
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
+        ('interface.graphview-show-animation', True),
+        ('interface.graphview-animation-speed', 15),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -355,6 +357,23 @@ class GraphView(NavigationView):
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_animation(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the show animation
+        setting.
+        """
+        if entry == 'True':
+            self.graph_widget.animation.show_animation = True
+        else:
+            self.graph_widget.animation.show_animation = False
+
+    def cb_update_animation_speed(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the animation speed
+        setting.
+        """
+        self.graph_widget.animation.speed = 21000 - 1000*int(entry)
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -381,6 +400,10 @@ class GraphView(NavigationView):
                           self.cb_update_descendant_generations)
         self._config.connect('interface.graphview-ancestor-generations',
                           self.cb_update_ancestor_generations)
+        self._config.connect('interface.graphview-show-animation',
+                          self.cb_update_show_animation)
+        self._config.connect('interface.graphview-animation-speed',
+                          self.cb_update_animation_speed)
 
     def _get_configure_page_funcs(self):
         """
@@ -390,7 +413,8 @@ class GraphView(NavigationView):
         :return: list of functions
         """
         return [self.layout_config_panel,
-                self.color_config_panel]
+                self.color_config_panel,
+                self.animation_config_panel]
 
     def layout_config_panel(self, configdialog):
         """
@@ -449,6 +473,24 @@ class GraphView(NavigationView):
                 2, 'interface.graphview-show-tags')
 
         return _('Colors'), grid
+
+    def animation_config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog.
+        """
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
+
+        configdialog.add_checkbox(grid,
+                _('Show animation'),
+                0, 'interface.graphview-show-animation')
+        configdialog.add_spinner(grid,
+                _('Animation speed (1..20)'),
+                1, 'interface.graphview-animation-speed', (1, 20))
+
+        return _('Animation'), grid
 
     def cb_update_form(self, obj, constant):
         entry = obj.get_active()
@@ -597,7 +639,7 @@ class GraphWidget(object):
         self.transform_scale = 1
         self.scale = 1
 
-        self.animation = CanvasAnimation(self.canvas, scrolled_win)
+        self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
 
     def load_bookmarks(self):
         """
@@ -2054,18 +2096,24 @@ class CanvasAnimation(object):
     """
     Produce animation for operations with canvas.
     """
-    def __init__(self, canvas, scroll_window):
+    def __init__(self, view, canvas, scroll_window):
         """
         We need canvas and window in witch it placed.
+        And view to get config.
         """
+        self.view = view
         self.canvas = canvas
         self.hadjustment = scroll_window.get_hadjustment()
         self.vadjustment = scroll_window.get_vadjustment()
         self.items_list = None
         self.in_motion = False
 
+        self.show_animation = self.view._config.get(
+                                           'interface.graphview-show-animation')
+
         # delay between steps in microseconds
-        self.speed = 5000
+        self.speed = self.view._config.get('interface.graphview-animation-speed')
+        self.speed = 21000 - 1000*int(self.speed)
         # length of step
         self.step_len = 10
 
@@ -2240,7 +2288,7 @@ class CanvasAnimation(object):
         """
         # if animated is True than run thread with animation
         # else - just scroll_to immediately
-        if animated:
+        if animated and self.show_animation:
             self.thread = Thread(target=self.animation,
                                  args=[item, destination])
             self.thread.start()
