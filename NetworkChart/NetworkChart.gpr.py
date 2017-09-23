@@ -67,7 +67,7 @@ else:
     sects = inifile.get_sections()
     if 'networkchartwarn' not in sects:
         yes_no = QuestionDialog2(_("NetworkChart Failed to Load"),
-            _("\n\nNetworkChart is missing python modules or programs.  Networkx AND at\n" 
+            _("\n\nNetworkChart is missing python modules or programs.  Networkx AND at\n"
               "least one of (pydotplus OR pydot OR pygraphviz OR dot OR dot.exe) must be\n"
               "installed.  For now, it may be possible to install the files manually. See\n\n"
               "https://gramps-project.org/wiki/index.php?title=NetworkChart \n\n"
