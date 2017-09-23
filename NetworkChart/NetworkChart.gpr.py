@@ -44,7 +44,7 @@ if conditions_met:
         #help_url = URL_WIKISTRING+'NetworkChart',
         description = _('Generates a family network chart.'),
         version = '0.0.7',
-        gramps_target_version = '4.2',
+        gramps_target_version = '5.0',
         include_in_listing = True,
     )
 else:

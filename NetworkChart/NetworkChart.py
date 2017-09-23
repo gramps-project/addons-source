@@ -91,7 +91,7 @@ else:
 # Internationalisation
 #
 #------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale, conv_to_unicode
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -199,12 +199,12 @@ class NetworkChartReport(Report):
         self.file_type = menu.get_option_by_name('file_type').get_value()
         self.b_use_handle = menu.get_option_by_name('b_use_handle').get_value()
 
-        self.dest_path = conv_to_unicode(menu.get_option_by_name('dest_path').get_value(), 'utf8')
-        self.dest_file = conv_to_unicode(menu.get_option_by_name('dest_file').get_value(), 'utf8')
+        self.dest_path = menu.get_option_by_name('dest_path').get_value()
+        self.dest_file = menu.get_option_by_name('dest_file').get_value()
         self.destprefix, self.destext = os.path.splitext(os.path.basename(self.dest_file))
         file_ext = str("%s."+self.file_type)
-        self.fpath_output = conv_to_unicode(os.path.join(self.dest_path, "",
-                                                         file_ext % (self.destprefix)))
+        self.fpath_output = os.path.join(self.dest_path, "",
+                                                         file_ext % (self.destprefix))
         self.cancel = menu.cancel
 
         self._name_display = copy.deepcopy(global_name_display)
