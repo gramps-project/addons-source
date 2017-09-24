@@ -934,7 +934,9 @@ def trial_people(database, tmg_dataset):
         # see gramps/gen/db/txn.py  (DbTxn )
         data = {"primary_name": {"first_name": firstname,
                 "surname_list": [{"surname": surname}]}, }
-        person = Person.create(Person.from_struct(data))  ##<<  from_struct is gone!
+        #person = Person.create(Person.from_struct(data))  ##<<  from_struct is gone!
+        #print(Person.unserialize())
+        person = Person.create(data) # ValueError: not enough values to unpack (expected 21, got 1)
         with DbTxn("Add Person", database) as tran:
             database.add_person(person, tran)
 
@@ -1172,12 +1174,11 @@ def trial_events(database, tmg_dataset):
 def importData(database, sqzfilename, user):
 
     ######Check if Gramps Family Tree is empty if not stop import
-    db_empty = database.is_empty()
-    if not db_empty:
-        #TODO pop up warning
-        print("Create a New Family Tree to import your TMG Backup into. As current Family Tree", db_empty)
+    if not database.get_total() == 0:
+        #TODO pop up GUI warning for tmg import, or just exit silently?
+        print("Create a New Family Tree to import your TMG Backup into. As current Family Tree has ", database.get_total(), "People")
         return
-    print("Current Family Tree is empty. Excellent!! db_empty", db_empty)
+    print("Current Family Tree is empty. Excellent!! database.get_total() = ", database.get_total())
 
     sqzfilename = os.path.normpath(sqzfilename)
     basefiledir = os.path.dirname(sqzfilename)
