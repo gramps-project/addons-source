@@ -27,13 +27,15 @@ Provide the SubstKeywords2 class that will replace keywords in a passed
 string with information about the person/marriage/spouse. 
 The modifications to the SubstKeywords class in SubstKeywords.py are:
 The event is passed in instead of finding the first one for the person/family
-   this allows reporting all occurrences of an event, instead of just the first one
-   also this allows sorting by date
-Added a new event formating operator "t" = abbreviation of the Event's Type (localized)
-    this allows correct type labeling where "OrSimilar" or "fallbacks" are used. $e(t)
-Added an optional Maximum Note Length, to limit the length when using $e(n) variable
-    note that "..." will be added to any truncated note (an Event's Description field)
-    
+   this allows reporting all occurrences of an event, instead of just the first
+   one also this allows sorting by date
+Added a new event formating operator "t" = abbreviation of the Event's Type
+    (localized) this allows correct type labeling where "OrSimilar" or
+    "fallbacks" are used. $e(t)
+Added an optional Maximum Note Length, to limit the length when using $e(n)
+    variable note that "..." will be added to any truncated note (an Event's
+    Description field)
+
 For example:
 
 foo = SubstKeywords(database, person_handle)
@@ -49,7 +51,7 @@ Will return a value such as:
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.display.name import NameDisplay
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import EventType, PlaceType, Location
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.utils.location import get_main_location
@@ -58,6 +60,7 @@ from gramps.plugins.lib.libsubstkeyword import *
 
 import logging
 log = logging.getLogger("DescendantsLines")
+
 
 #------------------------------------------------------------------------
 # Event Format strings
@@ -161,7 +164,8 @@ class EventFormat2(GenericFormat):
 class VariableParse2(object):
     """ Parse the individual variables """
 
-    def __init__(self, friend, database, consumer_in, locale, name_displayer, event=None):
+    def __init__(self, friend, database, consumer_in, locale, name_displayer,
+                 event=None):
         self.friend = friend
         self.database = database
         self._in = consumer_in
@@ -172,7 +176,7 @@ class VariableParse2(object):
     def is_a(self):
         """ check """
         return self._in.this == "$" and self._in.next is not None and \
-                              "nsijbBdDmMvVauetTpPG".find(self._in.next) != -1
+            "nsijbBdDmMvVauetTpPG".find(self._in.next) != -1
 
     def get_event_by_type(self, marriage, e_type):
         """ get an event from a type """
@@ -202,7 +206,7 @@ class VariableParse2(object):
         """ get all matching events from a name. """
         if not person:
             return None
-        el= []
+        el = []
         for e_ref in person.get_event_ref_list():
             event = self.friend.database.get_event_from_handle(e_ref.ref)
             if event.get_type().is_type(event_name):
@@ -274,8 +278,10 @@ class VariableParse2(object):
             return
             
     def __parse_an_event(self, person, attrib_parse):
-        if not self.event:    # this makes it backwards compatible with __parse_event
-            event = self.get_event_by_name(person, attrib_parse.get_name())
+        if not self.event:
+            # this makes it backwards compatible with __parse_event
+            self.event = self.get_event_by_name(person,
+                                                attrib_parse.get_name())
         event_f = EventFormat2(self.database, self._in, self._locale)
         if self.event:
             return event_f.parse_format(self.event)
@@ -313,7 +319,9 @@ class VariableParse2(object):
         next_char = self._in.next
         self._in.step2()
 
-        if PRIVACY:        # only parse Events as the other standard parsers do NOT check privacy
+        if PRIVACY:
+            # only parse Events as the other standard parsers do NOT check
+            # privacy
             if next_char == "e":
                 #person event
                 return self.__parse_an_event(self.friend.person, attrib_parse)
@@ -341,13 +349,15 @@ class VariableParse2(object):
                 if self.empty_item(self.friend.person):
                     return
                 return self.__parse_date(
-                    get_birth_or_fallback(self.friend.database, self.friend.person))
+                    get_birth_or_fallback(self.friend.database,
+                                          self.friend.person))
             elif next_char == "d":
                 #Person's Death date
                 if self.empty_item(self.friend.person):
                     return
                 return self.__parse_date(
-                    get_death_or_fallback(self.friend.database, self.friend.person))
+                    get_death_or_fallback(self.friend.database,
+                                          self.friend.person))
             elif next_char == "m":
                 #Marriage date
                 if self.empty_item(self.friend.family):
@@ -376,13 +386,15 @@ class VariableParse2(object):
                 if self.empty_item(self.friend.person):
                     return
                 return self.__parse_place(
-                    get_birth_or_fallback(self.friend.database, self.friend.person))
+                    get_birth_or_fallback(self.friend.database,
+                                          self.friend.person))
             elif next_char == "D":
                 #Person's death place
                 if self.empty_item(self.friend.person):
                     return
                 return self.__parse_place(
-                    get_death_or_fallback(self.friend.database, self.friend.person))
+                    get_death_or_fallback(self.friend.database,
+                                          self.friend.person))
             elif next_char == "M":
                 #Marriage place
                 if self.empty_item(self.friend.family):
@@ -403,13 +415,13 @@ class VariableParse2(object):
                 if self.empty_attribute(self.friend.person):
                     return
                 return attrib_parse.parse_format(
-                                          self.friend.person.get_attribute_list())
+                    self.friend.person.get_attribute_list())
             elif next_char == "u":
                 #Marriage Atribute
                 if self.empty_attribute(self.friend.family):
                     return
                 return attrib_parse.parse_format(
-                                          self.friend.family.get_attribute_list())
+                    self.friend.family.get_attribute_list())
 
             elif next_char == "e":
                 #person event
@@ -449,7 +461,8 @@ class SubstKeywords2(object):
             this will specify the specific family/spouse to work with.
             If none given, then the first/preferred family/spouse is used
     """
-    def __init__(self, database, locale, name_displayer, person_handle, family_handle=None, max_note_len=0, privacy=None):
+    def __init__(self, database, locale, name_displayer, person_handle,
+                 family_handle=None, max_note_len=0, privacy=None):
         """get the person and find the family/spouse to use for this display"""
 
         self.database = database
@@ -487,10 +500,12 @@ class SubstKeywords2(object):
             self.spouse = None
             if father_handle == person_handle:
                 if mother_handle:
-                    self.spouse = database.get_person_from_handle(mother_handle)
+                    self.spouse = database.get_person_from_handle(
+                        mother_handle)
             else:
                 if father_handle:
-                    self.spouse = database.get_person_from_handle(father_handle)
+                    self.spouse = database.get_person_from_handle(
+                        father_handle)
 
     def __parse_line(self):
         """parse each line of text and return the new displayable line
@@ -507,7 +522,8 @@ class SubstKeywords2(object):
         #First we are going take care of all variables/groups
         #break down all {} (groups) and $ (vars) into either
         #(TXT.text, resulting_string) or (TXT.remove, '')
-        variable = VariableParse2(self, self.database, self.line, self._locale, self._nd, event=self.event)  # $
+        variable = VariableParse2(self, self.database, self.line, self._locale,
+                                  self._nd, event=self.event)  # $
 
         while self.line.this:
             if self.line.this == "{":
@@ -519,7 +535,8 @@ class SubstKeywords2(object):
                 #step
                 self.line.step()
 
-            elif self.line.this == "}" and len(stack_var) > 0: #End of a group
+            elif self.line.this == "}" and len(stack_var) > 0:
+                # End of a group
                 #add curr to what is on the (top) stack and pop into current
                 #or pop the stack into current and add TXT.remove
                 direction = curr_var.state
@@ -549,7 +566,7 @@ class SubstKeywords2(object):
                 self.line.step()
                 curr_var.add_separator(self.line.text_to_next(">"))
 
-            else:  #regular text
+            else:  # regular text
                 curr_var.add_text(self.line.parse_format())
 
         #the stack is for groups/subgroup and may contain items
