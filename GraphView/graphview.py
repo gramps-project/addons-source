@@ -715,6 +715,10 @@ class GraphWidget(object):
         width = self.hadjustment.get_page_size()
         height = self.vadjustment.get_page_size()
 
+        # prevent division by zero
+        if height_canvas == 0: height_canvas = 1
+        if width_canvas == 0: width_canvas = 1
+
         # calculate minimum scale
         scale_h = (height / height_canvas)
         scale_w = (width / width_canvas)
