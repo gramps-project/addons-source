@@ -27,7 +27,7 @@ GetGOV Gramplet.
 # Python modules
 #
 #------------------------------------------------------------------------
-from urllib.request import urlopen
+from urllib.request import urlopen, quote
 from xml.dom.minidom import parseString
 
 #------------------------------------------------------------------------
@@ -352,11 +352,12 @@ class GetGOV(Gramplet):
                     visited[gov_id] = (place, [])
                 else:
                     place, ref_list = self.__get_place(gov_id, type_dic, preferred_lang)
-                    self.dbstate.db.add_place(place, trans)
-                    visited[gov_id] = (place, ref_list)
-                    for ref, date in ref_list:
-                        if (ref not in to_do) and (ref not in visited):
-                            to_do.append(ref)
+                    if place.get_name().get_value() is not '':
+                        self.dbstate.db.add_place(place, trans)
+                        visited[gov_id] = (place, ref_list)
+                        for ref, date in ref_list:
+                            if (ref not in to_do) and (ref not in visited):
+                                to_do.append(ref)
 
             for place, ref_list in visited.values():
                 if len(ref_list) > 0:
@@ -369,7 +370,7 @@ class GetGOV(Gramplet):
                     self.dbstate.db.commit_place(place, trans)
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
-        gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + gov_id
+        gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
 
         response = urlopen(gov_url)
         data = response.read()
