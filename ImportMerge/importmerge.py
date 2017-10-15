@@ -325,10 +325,10 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                                 self.db1.get_total() + self.db2.get_total())
         for sort, obj_type in enumerate(OBJ_LST):
 
-            hndls_func1 = self.db1.get_table_metadata(obj_type)["handles_func"]
-            hndls_func2 = self.db2.get_table_metadata(obj_type)["handles_func"]
-            handle_func1 = self.db1.get_table_metadata(obj_type)["handle_func"]
-            handle_func2 = self.db2.get_table_metadata(obj_type)["handle_func"]
+            hndls_func1 = self.db1.method('get_%s_handles', obj_type)
+            hndls_func2 = self.db2.method('get_%s_handles', obj_type)
+            handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+            handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
 
             handles1 = sorted([handle for handle in hndls_func1()])
             handles2 = sorted([handle for handle in hndls_func2()])
@@ -428,7 +428,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
             return
         obj_type = self.item1_hndls.get(desc1)
         if obj_type:
-            hndl_func = self.db1.get_table_metadata(obj_type)["handle_func"]
+            hndl_func = self.db1.method('get_%s_from_handle', obj_type)
             gname = self.sa[0].describe(hndl_func(desc1))
             text = _("your tree ")
             desc1 = "%s%s: [%s] %s" % (text, _(obj_type), gname[0], gname[1])
@@ -440,7 +440,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 text = _("imported ")
             else:
                 text = _("your tree ")
-            hndl_func = self.db2.get_table_metadata(obj_type)["handle_func"]
+            hndl_func = self.db2.method('get_%s_from_handle', obj_type)
             gname = self.sa[1].describe(hndl_func(desc2))
             desc2 = "%s%s: [%s] %s" % (text, _(obj_type), gname[0], gname[1])
         if self.item2_hndls.get(desc3):
@@ -448,7 +448,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 text = _("imported ")
             else:
                 text = _("your tree ")
-            hndl_func = self.db2.get_table_metadata(obj_type)["handle_func"]
+            hndl_func = self.db2.method('get_%s_from_handle', obj_type)
             gname = self.sa[1].describe(hndl_func(desc3))
             desc3 = "%s%s: [%s] %s" % (text, _(obj_type), gname[0], gname[1])
         elif self.item1_hndls.get(desc3):
@@ -456,7 +456,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 text = _("imported ")
             else:
                 text = _("your tree ")
-            hndl_func = self.db1.get_table_metadata(obj_type)["handle_func"]
+            hndl_func = self.db1.method('get_%s_from_handle', obj_type)
             gname = self.sa[0].describe(hndl_func(desc3))
             desc3 = "%s%s: [%s] %s" % (text, _(obj_type), gname[0], gname[1])
         path = self.format_struct_path(path)
@@ -1187,8 +1187,9 @@ class MySa(SimpleAccess):
         Given a object, return a string describing the object.
         '''
         if prop and value:
-            if self.dbase.get_table_metadata(obj):
-                obj = self.dbase.get_table_metadata(obj)[prop + "_func"](value)
+            func = self.dbase.method('get_%s_from_%s', obj, prop)
+            if func:
+                obj = func(value)
         if isinstance(obj, Person):
             return (self.gid(obj), trunc(self.name(obj)))
         elif isinstance(obj, Event):

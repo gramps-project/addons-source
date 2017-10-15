@@ -3086,8 +3086,9 @@ class DynamicWebReport(Report):
         This function is used when converting a Gramps note with hyperlinks into an HTML string
         '''
         if prop == "gramps_id":
-            if obj_class in self.database.get_table_names():
-                obj = self.database.get_table_metadata(obj_class)["gramps_id_func"](handle)
+            func = self.database.method('get_%s_from_gramps_id', obj_class)
+            if func:
+                obj = func(handle)
                 if obj:
                     handle = obj.get_handle()
                 else:
