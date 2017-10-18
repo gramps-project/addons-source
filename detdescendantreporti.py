@@ -13,6 +13,7 @@
 # Copyright (C) 2011      Matt Keenan <matt.keenan@gmail.com>
 # Copyright (C) 2011      Tim G L Lyons
 # Copyright (C) 2013-2014 Paul Franklin
+# Copyright (C) 2017      Jon Schewe <jpschewe@mtu.net> - modifications to add all images
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
