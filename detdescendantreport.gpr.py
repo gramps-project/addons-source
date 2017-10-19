@@ -1,5 +1,5 @@
 register(REPORT,
-    id   = 'det_descendant_report',
+    id   = 'det_descendant_report_i',
     name = _('Detailed Descendant Report With All Images'),
     description = _("Produces a detailed descendant report with all images."),
     version = '1.0',
