@@ -784,10 +784,11 @@ def _Event_get_place_text(event, database, placeholder=False):
     """
 
     place_handle = event.get_place_handle()
+    date = event.get_date_object()
 
     if place_handle:
         place = database.get_place_from_handle(place_handle)
-        place_title = place_displayer.display(database, place)
+        place_title = place_displayer.display(database, place, date)
         text = _("in %(place)s") % {'place': place_title}
     elif placeholder and event.get_type() in _Event_needs_date_place:
         text = _("in %(place)s") % {'place': "__________"}
