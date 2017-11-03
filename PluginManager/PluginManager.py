@@ -799,23 +799,6 @@ def available_updates():
     LOG.debug("Done checking!")
 
     return addon_update_list
-
-
-def load_on_reg(dbstate, uistate, plugin):
-    """
-    Runs when plugin is registered.
-    """
-    if uistate:
-        # Monkey patch my version of available_updates into the system
-        import gramps.gen.plug.utils
-        gramps.gen.plug.utils.__dict__['available_updates'] = available_updates
-        import gramps.gui.configure
-        gramps.gui.configure.__dict__['available_updates'] = available_updates
-        import gramps.gui.utils
-        gramps.gui.utils.__dict__['available_updates'] = available_updates
-        import gramps.gui.viewmanager
-        gramps.gui.viewmanager.__dict__[
-            'PluginWindows'].PluginStatus = PluginStatus
 #------------------------------------------------------------------------
 #
 #

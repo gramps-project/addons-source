@@ -31,7 +31,7 @@ description =  _("An Addon/Plugin Manager with several additional "
                  "capabilities"),
 version = '1.0.4',
 gramps_target_version = '5.0',
-fname = "PluginManager.py",
+fname = "PluginManagerLoad.py",
 authors = ["Paul Culley"],
 authors_email = ["paulr2787@gmail.com"],
 category = TOOL_UTILS,
