@@ -38,7 +38,6 @@ LOG = logging.getLogger(".TMGImport")
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gui.dialog import ErrorDialog
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 

@@ -47,7 +47,7 @@ if conditions_met:
         gramps_target_version = '5.0',
         include_in_listing = True,
     )
-else:
+elif uistate:  # don't start GUI if in CLI mode, just ignore
     from gramps.gen.config import config
     from gramps.gui.dialog import QuestionDialog2
     from gramps.gen.config import logging
@@ -73,7 +73,7 @@ else:
               "https://gramps-project.org/wiki/index.php?title=NetworkChart \n\n"
               "To dismiss all future NetworkChart warnings click Dismiss."),
             _(" Dismiss "),
-            _("Continue"))
+            _("Continue"), parent=uistate.window)
         prompt = yes_no.run()
         if prompt is True:
             inifile.register('networkchartwarn.MissingModules', "")
