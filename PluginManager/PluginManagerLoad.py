@@ -20,6 +20,7 @@
 """ Help/Plugin Manager
 This module implements the enhanced Plugin manager load patches.
 """
+import sys, os
 
 def load_on_reg(dbstate, uistate, plugin):
     """
@@ -28,7 +29,8 @@ def load_on_reg(dbstate, uistate, plugin):
     if uistate:
         # It is necessary to avoid load GUI elements when run under CLI mode.
         # So we just don't load it at all.
-        from PluginManager.PluginManager import available_updates, PluginStatus
+        sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+        from PluginManager import available_updates, PluginStatus
         # Monkey patch my version of available_updates into the system
         import gramps.gen.plug.utils
         gramps.gen.plug.utils.__dict__['available_updates'] = available_updates
