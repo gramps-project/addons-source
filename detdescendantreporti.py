@@ -15,6 +15,11 @@
 # Copyright (C) 2013-2014 Paul Franklin
 # Copyright (C) 2017      Jon Schewe <jpschewe@mtu.net> - modifications to add all images
 #
+# This report is a modification of the detailed descendant report. It has
+# been modified to include as many images as possible. This is useful for
+# creating a report showing all pictures of people as well as sources and
+# citations.
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
