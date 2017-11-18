@@ -913,6 +913,20 @@ class DetailedDescendantReportI(Report):
             self.doc.end_superscript()
         self.doc.end_paragraph()
 
+    def _cite_endnote(self, obj, prior=''):
+        if not self.inc_sources:
+            return ""
+        if not obj:
+            return prior
+        
+        txt = endnotes.cite_source(self.bibli, self.db, obj, self._locale)
+        if not txt:
+            return prior
+        if prior:
+            # translators: needed for Arabic, ignore otherwise
+            txt = self._('%(str1)s, %(str2)s') % {'str1':prior, 'str2':txt}
+        return txt
+        
     def do_attributes(self, attr_list):
         for attr in attr_list:
             attr_type = attr.get_type().type2base()
