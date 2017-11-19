@@ -18,7 +18,8 @@
 # This report is a modification of the detailed descendant report. It has
 # been modified to include as many images as possible. This is useful for
 # creating a report showing all pictures of people as well as sources and
-# citations.
+# citations. There is also an option to display TODO notes as a separate
+# list for each individual.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

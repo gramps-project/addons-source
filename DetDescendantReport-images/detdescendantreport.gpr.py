@@ -1,7 +1,7 @@
 register(REPORT,
     id   = 'det_descendant_report_i',
     name = _('Detailed Descendant Report With All Images'),
-    description = _("Produces a detailed descendant report with all images."),
+    description = _("Produces a detailed descendant report with all images and optional todo list."),
     version = '1.0',
     gramps_target_version = '4.2',
     status = STABLE,
