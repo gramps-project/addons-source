@@ -1179,7 +1179,7 @@ class DetailedDescendantIOptions(MenuReportOptions):
         incattrs.set_help(_("Whether to include attributes."))
         add_option("incattrs", incattrs)
         
-        incphotos = BooleanOption(_("Include Photo/Images from Gallery"), False)
+        incphotos = BooleanOption(_("Include Photo/Images from Gallery"), True)
         incphotos.set_help(_("Whether to include images."))
         add_option("incphotos", incphotos)
 
