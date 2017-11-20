@@ -1,213 +1,195 @@
-# Swedish translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# -*- coding: utf-8 -*-
-# Svenska meddelanden i Gramps.
-# Copyright (C) 2001-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-# Några tips i översättningen:#
-# Svenska datatermgruppen: http://www.nada.kth.se/dataterm/
-# Svensk-engelskt lexikon: http://lexin.nada.kth.se/sve-eng.shtml#
-# Några tveksamma eller inte helt uppenbara översättningar:#
-# city                stad/kommun
-# county              landskap
-# location            lokalisering
-# media object        medieobjekt
-# place               plats
-# plugin              insticksmodul
-# repository          arkivinstitution
-# state               län/delstat
-# undo history        redigeringshistorik#
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002-2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: sv\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-20 09:20-0600\n"
-"PO-Revision-Date: 2017-01-21 14:20+0100\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
-"Language: sv\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: LastChange/LastChange.gpr.py:24
 msgid "Last Change Gramplet"
-msgstr "Gramplet med de senaste ändringarna"
+msgstr ""
 
 #: LastChange/LastChange.gpr.py:25
 msgid "List the last ten person records that have been changed"
-msgstr "Lista de tio personposterna, som har ändrats"
+msgstr ""
 
 #: LastChange/LastChange.gpr.py:34
 msgid "Latest Changes"
-msgstr "Senaste ändringar"
+msgstr ""
 
 #: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
-msgstr "Rapport över senaste ändringar"
+msgstr ""
 
 #: LastChange/LastChange.gpr.py:41
 msgid "Report of the last records that have been changed"
-msgstr "Rapport över de poster, som har ändrats senast"
+msgstr ""
 
 #: LastChange/LastChangeGramplet.py:55
 msgid "Double-click name for details"
-msgstr "Dubbelklicka på namn för detaljer"
+msgstr ""
 
 #: LastChange/LastChangeGramplet.py:56
 msgid "No Family Tree loaded."
-msgstr "Inget släktträd laddat."
+msgstr ""
 
 #: LastChange/LastChangeGramplet.py:60
 msgid "Processing..."
-msgstr "Arbetar..."
+msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
-msgstr "ändrat det"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:53
 msgid "<Unknown>"
-msgstr "<Okänd>"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr "Du måste välja minst en typ av post."
+msgstr ""
 
 #: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
 msgid "People"
-msgstr "Personer"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:118 LastChange/LastChangeReport.py:346
 msgid "Families"
-msgstr "Familjer"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
 msgid "Events"
-msgstr "Händelser"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
 msgid "Places"
-msgstr "Platser"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:124 LastChange/LastChangeReport.py:349
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:126 LastChange/LastChangeReport.py:350
 msgid "Sources"
-msgstr "Källor"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
 msgid "Notes"
-msgstr "Notiser"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
 msgid "Citations"
-msgstr "Citeringar"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
-msgstr "Ändrade personer"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:181
 msgid "Person"
-msgstr "Person"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
-msgstr "Ändrat det"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
-msgstr "Ändrade familjer"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
-msgstr "Familjenamn"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
-msgstr "%s och %s"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
-msgstr "Ändrade händelser"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:229
 msgid "Event"
-msgstr "Händelse"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
-msgstr "Ändrade platser"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:252
 msgid "Place"
-msgstr "Plats"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
-msgstr "Ändrade media"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:270
 msgid "Path"
-msgstr "Sökväg"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
-msgstr "Ändrade Källor"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
 #: LastChange/LastChangeReport.py:322
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
-msgstr "Ändrade anteckningar"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr "Ändrade Citeringar"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:343
 msgid "Report Options"
-msgstr "Rapportalternativ"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
-msgstr "Välj från"
+msgstr ""
 
 #: LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
-msgstr "Mall som används för sidans titel."
+msgstr ""
 
 #: LastChange/LastChangeReport.py:393
 msgid "The style used for the section headers."
-msgstr "Mall som används för sektionsrubriken."
+msgstr ""
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr "Mall för normal text."
+msgstr ""
 
 #: LastChange/LastChangeReport.py:415
 msgid "The basic style used for table headings."
-msgstr "Grundläggande mall som används för tabellrubriker."
+msgstr ""

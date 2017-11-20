@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2010      Jakim Friant
+# Copyright (C) 2017      Paul Culley
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,14 +28,13 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
-import time
 
 #------------------------------------------------------------------------
 #
 # gramps modules
 #
 #------------------------------------------------------------------------
-import gramps.gen.datehandler
+from gramps.gen.datehandler import format_time, get_date
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import ReportError
 from gramps.gen.plug import docgen
@@ -42,15 +42,16 @@ from gramps.gen.plug.menu import BooleanListOption
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report._options import ReportOptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gramps.gen.lib import Date
 
-_UNKNOWN_FAMILY = "*unknown*"
+_UNKNOWN_FAMILY = _("<Unknown>")
+
 
 class LastChangeReport(Report):
     """
@@ -66,63 +67,76 @@ class LastChangeReport(Report):
 
     def __init__(self, database, options_class, user):
         Report.__init__(self, database, options_class, user)
+        self.counter = 0
         menu_option = options_class.menu.get_option_by_name('what_types')
         self.what_types = menu_option.get_selected()
-        # TODO: handle an empty selection of what_types
-        if len(self.what_types) == 0:
+        if not self.what_types:
             raise ReportError(_('Last Change Report'),
-                              _('You must select at least one type of record.'))
+                              _('You must select at least one type of'
+                                ' record.'))
 
-
-    def _getTimestamp(self, person_handle):
-        timestamp = self.database.get_person_from_handle(person_handle).change
+    def _get_timestamp(self, person_handle):
+        timestamp = self.database.get_raw_person_data(person_handle)[17]
         return timestamp
 
-    def _getFamilyTimestamp(self, family_handle):
-        timestamp = self.database.get_family_from_handle(family_handle).change
+    def _get_family_timestamp(self, family_handle):
+        timestamp = self.database.get_raw_family_data(family_handle)[12]
         return timestamp
 
-    def _getEventTimestamp(self, event_handle):
-        timestamp = self.database.get_event_from_handle(event_handle).change
+    def _get_event_timestamp(self, event_handle):
+        timestamp = self.database.get_raw_event_data(event_handle)[10]
         return timestamp
 
-    def _getPlaceTimestamp(self, place_handle):
-        timestamp = self.database.get_place_from_handle(place_handle).change
+    def _get_place_timestamp(self, place_handle):
+        timestamp = self.database.get_raw_place_data(place_handle)[15]
         return timestamp
 
-    def _getMediaTimestamp(self, media_handle):
-        timestamp = self.database.get_media_from_handle(media_handle).change
+    def _get_media_timestamp(self, media_handle):
+        timestamp = self.database.get_raw_media_data(media_handle)[9]
         return timestamp
 
-    def _getSourceTimestamp(self, source_handle):
-        timestamp = self.database.get_source_from_handle(source_handle).change
+    def _get_source_timestamp(self, source_handle):
+        timestamp = self.database.get_raw_source_data(source_handle)[8]
+        return timestamp
+
+    def _get_note_timestamp(self, note_handle):
+        timestamp = self.database.get_raw_note_data(note_handle)[5]
+        return timestamp
+
+    def _get_citation_timestamp(self, citation_handle):
+        timestamp = self.database.get_raw_citation_data(citation_handle)[9]
         return timestamp
 
     def write_report(self):
-         self.doc.start_paragraph("LCR-Title")
-         self.doc.write_text(_("Last Change Report"))
-         self.doc.end_paragraph()
+        """ Write the report """
+        self.doc.start_paragraph("LCR-Title")
+        self.doc.write_text(_("Last Change Report"))
+        self.doc.end_paragraph()
 
-         if _('People') in self.what_types:
-             self.write_person()
-         if _('Families') in self.what_types:
-             self.write_family()
-         if _('Events') in self.what_types:
-             self.write_event()
-         if _('Places') in self.what_types:
-             self.write_place()
-         if _('Media') in self.what_types:
-             self.write_media()
-         if _('Sources') in self.what_types:
-             self.write_sources()
+        if _('People') in self.what_types:
+            self.write_person()
+        if _('Families') in self.what_types:
+            self.write_family()
+        if _('Events') in self.what_types:
+            self.write_event()
+        if _('Places') in self.what_types:
+            self.write_place()
+        if _('Media') in self.what_types:
+            self.write_media()
+        if _('Sources') in self.what_types:
+            self.write_sources()
+        if _('Notes') in self.what_types:
+            self.write_notes()
+        if _('Citations') in self.what_types:
+            self.write_citations()
 
     def _table_begin(self, title, table_name):
-            self.doc.start_paragraph('LCR-SecHeader')
-            self.doc.write_text(title)
-            self.doc.end_paragraph()
+        self.doc.start_paragraph('LCR-SecHeader')
+        self.doc.write_text(title)
+        self.doc.end_paragraph()
 
-            self.doc.start_table(table_name, 'LCR-Table')
-            self.counter = 0
+        self.doc.start_table(table_name, 'LCR-Table')
+        self.counter = 0
 
     def _table_header(self, *args):
         """Create a header row with a column for each string argument."""
@@ -157,16 +171,12 @@ class LastChangeReport(Report):
         """For now this simply closes the table"""
         self.doc.end_table()
 
-    def _convert_date(self, date_in):
-        """Convert the change date to the preferred date format and return a string"""
-        change_date = Date()
-        change_date.set_yr_mon_day(*time.localtime(date_in)[0:3])
-        return gramps.gen.datehandler.displayer.display(change_date)
-
     def write_person(self):
-        handles = sorted(self.database.get_person_handles(), key=self._getTimestamp)
+        """ Find and write Persons """
+        handles = sorted(self.database.get_person_handles(),
+                         key=self._get_timestamp)
 
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_('People Changed'), 'PersonTable')
             self._table_header(_('ID'), _('Person'), _('Changed On'))
 
@@ -175,64 +185,69 @@ class LastChangeReport(Report):
                 if person is not None:
                     self._table_row("%s" % person.gramps_id,
                                     person.get_primary_name().get_name(),
-                                    self._convert_date(person.change))
+                                    format_time(person.change))
             self._table_end()
 
     def write_family(self):
-        handles = sorted(self.database.get_family_handles(), key=self._getFamilyTimestamp)
+        """ Find and write Families """
+        handles = sorted(self.database.get_family_handles(),
+                         key=self._get_family_timestamp)
 
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_('Families Changed'), 'FamilyTable')
             self._table_header(_('ID'), _('Family Surname'), _('Changed On'))
 
             for handle in reversed(handles[-10:]):
                 family = self.database.get_family_from_handle(handle)
                 if family is not None:
-                    father_handle = family.get_father_handle()
-                    if father_handle is not None:
-                        father = self.database.get_person_from_handle(father_handle)
-                        father_surname = father.get_primary_name().get_surname()
+                    f_handle = family.get_father_handle()
+                    if f_handle is not None:
+                        father = self.database.get_person_from_handle(f_handle)
+                        f_surname = father.get_primary_name().get_surname()
                     else:
-                        father_surname = _UNKNOWN_FAMILY
-                    mother_handle = family.get_mother_handle()
-                    if mother_handle is not None:
-                        mother = self.database.get_person_from_handle(mother_handle)
-                        mother_surname = mother.get_primary_name().get_surname()
+                        f_surname = _UNKNOWN_FAMILY
+                    m_handle = family.get_mother_handle()
+                    if m_handle is not None:
+                        mother = self.database.get_person_from_handle(m_handle)
+                        m_surname = mother.get_primary_name().get_surname()
                     else:
-                        mother_surname = _UNKNOWN_FAMILY
-                    family_name = _("%s and %s") % (father_surname, mother_surname)
+                        m_surname = _UNKNOWN_FAMILY
+                    family_name = _("%s and %s") % (f_surname, m_surname)
 
                     self._table_row(family.gramps_id,
                                     family_name,
-                                    self._convert_date(family.change))
+                                    format_time(family.change))
             self._table_end()
 
     def write_event(self):
-        handles = sorted(self.database.get_event_handles(), key=self._getEventTimestamp)
+        """ Find and write Events """
+        handles = sorted(self.database.get_event_handles(),
+                         key=self._get_event_timestamp)
 
-        # TODO: need the event date and type to be included in the description line
-
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_('Events Changed'), 'EventTable')
             self._table_header(_('ID'), _('Event'), _('Changed On'))
 
             for handle in reversed(handles[-10:]):
                 event = self.database.get_event_from_handle(handle)
                 if event is not None:
-                    evt_type = event.get_type()
+                    desc_out = str(event.get_type())
                     if event.description != "":
-                        desc_out = "%s, %s" % (evt_type, event.description)
-                    else:
-                        desc_out = str(evt_type)
+                        desc_out += ", %s" % event.description
+                    date = get_date(event)
+                    if date:
+                        desc_out += ", %s" % date
                     self._table_row(event.gramps_id,
                                     desc_out,
-                                    self._convert_date(event.change))
+                                    format_time(event.change))
             self._table_end()
 
     def write_place(self):
-        handles = sorted(self.database.get_place_handles(), key=self._getPlaceTimestamp)
+        """ Find and write Places """
+        handles = sorted(self.database.get_place_handles(),
+                         key=self._get_place_timestamp)
 
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_("Places Changed"), "PlaceTable")
             self._table_header(_('ID'), _('Place'), _('Changed On'))
 
@@ -240,14 +255,17 @@ class LastChangeReport(Report):
                 place = self.database.get_place_from_handle(handle)
                 if place is not None:
                     self._table_row(place.gramps_id,
-                                    place_displayer.display(self.database, place),
-                                    self._convert_date(place.change))
+                                    place_displayer.display(self.database,
+                                                            place),
+                                    format_time(place.change))
             self._table_end()
 
     def write_media(self):
-        handles = sorted(self.database.get_media_handles(), key=self._getMediaTimestamp)
+        """ Find and write media """
+        handles = sorted(self.database.get_media_handles(),
+                         key=self._get_media_timestamp)
 
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_("Media Changed"), "MediaTable")
             self._table_header(_('ID'), _('Path'), _('Changed On'))
 
@@ -257,13 +275,15 @@ class LastChangeReport(Report):
                     self._table_row(media.gramps_id,
                                     media.get_description(),
                                     #media.get_path(),
-                                    self._convert_date(media.change))
+                                    format_time(media.change))
             self._table_end()
 
     def write_sources(self):
-        handles = sorted(self.database.get_source_handles(), key=self._getSourceTimestamp)
+        """ Find and write Sources """
+        handles = sorted(self.database.get_source_handles(),
+                         key=self._get_source_timestamp)
 
-        if len(handles) > 0:
+        if handles:
             self._table_begin(_("Sources Changed"), "SourcesTable")
             self._table_header(_('ID'), _('Title'), _('Changed On'))
 
@@ -272,11 +292,46 @@ class LastChangeReport(Report):
                 if source_obj is not None:
                     self._table_row(source_obj.gramps_id,
                                     source_obj.get_title(),
-                                    self._convert_date(source_obj.change))
+                                    format_time(source_obj.change))
+            self._table_end()
+
+    def write_notes(self):
+        """ Find and write Notes """
+        handles = sorted(self.database.get_note_handles(),
+                         key=self._get_note_timestamp)
+
+        if handles:
+            self._table_begin(_("Notes Changed"), "NotesTable")
+            self._table_header(_('ID'), _('Title'), _('Changed On'))
+
+            for handle in reversed(handles[-10:]):
+                note_obj = self.database.get_note_from_handle(handle)
+                if note_obj is not None:
+                    self._table_row(note_obj.gramps_id,
+                                    trunc(note_obj.get()),
+                                    format_time(note_obj.change))
+            self._table_end()
+
+    def write_citations(self):
+        """ Find and write Citations """
+        handles = sorted(self.database.get_citation_handles(),
+                         key=self._get_citation_timestamp)
+
+        if handles:
+            self._table_begin(_("Citations Changed"), "CitationsTable")
+            self._table_header(_('ID'), _('Title'), _('Changed On'))
+
+            for handle in reversed(handles[-10:]):
+                citation_obj = self.database.get_citation_from_handle(handle)
+                if citation_obj is not None:
+                    self._table_row(citation_obj.gramps_id,
+                                    trunc(citation_obj.page),
+                                    format_time(citation_obj.change))
             self._table_end()
 
 
 class LastChangeOptions(MenuReportOptions):
+    """ Define the options for this report """
     def __init__(self, name, database):
         """Initialize the parent class"""
         MenuReportOptions.__init__(self, name, database)
@@ -293,9 +348,21 @@ class LastChangeOptions(MenuReportOptions):
         what_types.add_button(_('Events'), False)
         what_types.add_button(_('Media'), False)
         what_types.add_button(_('Sources'), False)
+        what_types.add_button(_('Notes'), False)
+        what_types.add_button(_('Citations'), False)
         menu.add_option(category_name, "what_types", what_types)
 
+    def load_previous_values(self):
+        """
+        This allows the upgrade from earlier version with only six values
+        """
+        ReportOptions.load_previous_values(self)
+        if len(self.options_dict['what_types'].split(',')) != 8:
+            self.options_dict['what_types'] = \
+                'True, False, False, False, False, False, False, False'
+
     def make_default_style(self, default_style):
+        """ Set up styles """
         # this is for the page header
         font = docgen.FontStyle()
         font.set_size(18)
@@ -310,7 +377,7 @@ class LastChangeOptions(MenuReportOptions):
         para.set_font(font)
         para.set_description(_('The style used for the title of the page.'))
 
-        default_style.add_paragraph_style('LCR-Title',para)
+        default_style.add_paragraph_style('LCR-Title', para)
 
         # this is for the section headers
         font = docgen.FontStyle()
@@ -325,7 +392,7 @@ class LastChangeOptions(MenuReportOptions):
         para.set_font(font)
         para.set_description(_('The style used for the section headers.'))
 
-        default_style.add_paragraph_style('LCR-SecHeader',para)
+        default_style.add_paragraph_style('LCR-SecHeader', para)
 
         font = docgen.FontStyle()
         font.set_size(12)
@@ -335,7 +402,7 @@ class LastChangeOptions(MenuReportOptions):
         para.set_font(font)
         para.set_description(_('The style used for normal text'))
 
-        default_style.add_paragraph_style('LCR-Normal',para)
+        default_style.add_paragraph_style('LCR-Normal', para)
 
         font = docgen.FontStyle()
         font.set_size(12)
@@ -364,3 +431,12 @@ class LastChangeOptions(MenuReportOptions):
         table.set_column_width(2, 50)
         table.set_column_width(3, 30)
         default_style.add_table_style('LCR-Table', table)
+
+
+def trunc(content):
+    ''' A simple truncation to make for shorter name/description '''
+    length = 50
+    content = ' '.join(content.split())
+    if len(content) <= length:
+        return content
+    return content[:length - 3] + '...'
