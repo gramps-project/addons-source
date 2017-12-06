@@ -41,7 +41,6 @@ and networkx python module to calculate paths and trim trees.
 # python modules
 #
 #------------------------------------------------------------------------
-#from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.file import search_for
 from subprocess import Popen, PIPE
 from operator import itemgetter
@@ -51,18 +50,12 @@ import itertools
 import os, copy
 import networkx as nx
 from networkx import dfs_edges
+# pydotplus is needed for nx_pydot
 try:
     import pydotplus
     PYDOT = True
 except:
     PYDOT = False
-
-if not PYDOT:
-    try:
-        import pydot
-        PYDOT = True
-    except:
-        PYDOT = False
 
 if not PYDOT:
     try:
@@ -73,19 +66,6 @@ if not PYDOT:
 else:
     PYGRAPHVIZ = False
 
-if not (PYDOT or PYGRAPHVIZ):
-    if search_for('dot'):
-        CLI_DOT = True
-    else:
-        CLI_DOT = False
-
-    if search_for('dot.exe'):
-        CLI_DOT_EXE = True
-    else:
-        CLI_DOT_EXE = False
-else:
-    CLI_DOT = False
-    CLI_DOT_EXE = False
 #------------------------------------------------------------------------
 #
 # Internationalisation
@@ -104,7 +84,6 @@ _ = _trans.gettext
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as global_name_display
-from gramps.gen.datehandler import displayer as global_date_display
 from gramps.gen.constfunc import win
 from gramps.gen import datehandler
 from gramps.gen.lib.person import Person
@@ -116,6 +95,15 @@ from gramps.gen.config import config
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gui.dialog import QuestionDialog2
+from gramps.gen.datehandler._datehandler import (LANG, LANG_SHORT,
+                                                 LANG_TO_DISPLAY)
+try:
+    if LANG in LANG_TO_DISPLAY:
+        _datedisplay = LANG_TO_DISPLAY[LANG](blocale=glocale)
+    else:
+        _datedisplay = LANG_TO_DISPLAY[LANG_SHORT](blocale=glocale)
+except:
+    _datedisplay = LANG_TO_DISPLAY["C"](blocale=glocale)
 
 # TODO
 # --- For Future Versions ---
@@ -212,10 +200,8 @@ class NetworkChartReport(Report):
         if name_format != 0:
             self._name_display.set_default_format(name_format)
 
-        self._datedisplay = copy.deepcopy(global_date_display)
         date_format = menu.get_option_by_name("date_format").get_value()
-        if date_format != 0:
-            self._datedisplay.set_format(date_format)
+        _datedisplay.set_format(format=date_format)
 
     def get_network(self):
         """
@@ -250,13 +236,12 @@ class NetworkChartReport(Report):
 
             name = self._name_display.display(p_person)
 
-            bday_index = p_person.birth_ref_index
-            dday_index = p_person.death_ref_index
+            bday_ref = p_person.get_birth_ref()
+            dday_ref = p_person.get_death_ref()
 
-            if bday_index > -1:
-                bday_handle = p_person.get_event_ref_list()[bday_index].ref
-                h_event = self.database.get_event_from_handle(bday_handle)
-                fmt_bdate = self._datedisplay.display_formatted(h_event.get_date_object())
+            if bday_ref:
+                h_event = self.database.get_event_from_handle(bday_ref.ref)
+                fmt_bdate = _datedisplay.display_formatted(h_event.get_date_object())
                 if len(fmt_bdate.strip()) < 1:
                     fmt_bdate = _('unk')
                 if fmt_bdate.strip() == '0000-00-00':
@@ -283,10 +268,9 @@ class NetworkChartReport(Report):
             else:
                 bday = _('b.') + _('unk')
 
-            if dday_index > -1:
-                dday_handle = p_person.get_event_ref_list()[dday_index].ref
-                h_event = self.database.get_event_from_handle(dday_handle)
-                fmt_ddate = self._datedisplay.display_formatted(h_event.get_date_object())
+            if dday_ref:
+                h_event = self.database.get_event_from_handle(dday_ref.ref)
+                fmt_ddate = _datedisplay.display_formatted(h_event.get_date_object())
                 if len(fmt_ddate.strip()) < 1:
                     fmt_ddate = _('unk')
                 if fmt_ddate.strip() == '0000-00-00':
@@ -306,30 +290,30 @@ class NetworkChartReport(Report):
             family_gref = str(family[1])
             f_family = self.database.get_family_from_handle(handle)
 
-            hfather = self.database.get_person_from_handle(
-                f_family.get_father_handle())
-            if hfather is not None:
-                father_gref = str(
-                    self.database.get_person_from_handle(
-                        f_family.get_father_handle()).get_gramps_id())
-            else:
-                father_gref = ''
+            f_hndl = f_family.get_father_handle()
+            father_gref = ''
+            if f_hndl:
+                hfather = self.database.get_person_from_handle(f_hndl)
+                if hfather:
+                    father_gref = str(
+                        self.database.get_person_from_handle(
+                            f_family.get_father_handle()).get_gramps_id())
 
-            hmother = self.database.get_person_from_handle(
-                f_family.get_mother_handle())
-            if hmother is not None:
-                mother_gref = str(
-                    self.database.get_person_from_handle(
-                        f_family.get_mother_handle()).get_gramps_id())
-            else:
-                mother_gref = ''
+            mother_gref = ''
+            m_hndl = f_family.get_mother_handle()
+            if m_hndl:
+                hmother = self.database.get_person_from_handle(m_hndl)
+                if hmother is not None:
+                    mother_gref = str(
+                        self.database.get_person_from_handle(
+                            f_family.get_mother_handle()).get_gramps_id())
 
             # Get edge_marriage
             h_events = f_family.get_event_list() #get_event_ref_list()
             if len(h_events) > 0:
                 for handle in h_events:
                     i_event = self.database.get_event_from_handle(handle)
-                    fmt_mdate = self._datedisplay.display_formatted(i_event.get_date_object())
+                    fmt_mdate = _datedisplay.display_formatted(i_event.get_date_object())
                     if len(fmt_mdate.strip()) < 1:
                         fmt_mdate = _('unk')
                     if fmt_mdate.strip() == '0000-00-00':
@@ -531,7 +515,7 @@ class NetworkChartReport(Report):
                             G.node[i[0]]['URL'] = ""
                         if fillnode:
                             G.node[i[0]]['fillcolor'] = node_fill_color
-                        if PYDOT or CLI_DOT or CLI_DOT_EXE: #PYDOT OR PYDOTPLUS or dot or dot.exe
+                        if PYDOT:  #PYDOTPLUS
                             G.node[i[0]]['style'] = '"' + node_style + '"' #For PYDOTPLUS
                         else: #PYGRAPHVIZ
                             G.node[i[0]]['style'] = node_style #For PYGRAPHVIZ
@@ -556,7 +540,7 @@ class NetworkChartReport(Report):
                             G.node[i[0]]['URL'] = url_prefix
                         else:
                             G.node[i[0]]['URL'] = ""
-                        if PYDOT or CLI_DOT or CLI_DOT_EXE: #PYDOT OR PYDOTPLUS or dot or dot.exe
+                        if PYDOT:  # PYDOTPLUS
                             G.node[i[0]]['style'] = '"' + node_style + '"' #For PYDOTPLUS
                         else: #PYGRAPHVIZ
                             G.node[i[0]]['style'] = node_style #For PYGRAPHVIZ
@@ -690,7 +674,7 @@ class NetworkChartReport(Report):
                         for i in G.nodes():
                             if i not in short_list:
                                 G.remove_node(i)
-                                A.remove_node(i)
+                                #  A.remove_node(i)
                     elif nx.has_path(G, end_path, start_path):
                         all_paths = nx.all_simple_paths(G,
                                                         end_path,
@@ -748,21 +732,6 @@ class NetworkChartReport(Report):
             elif PYGRAPHVIZ: #PYGRAPHVIZ
                 A = nx.drawing.nx_agraph.to_agraph(G)
                 A.draw(self.fpath_output, prog="dot", format=self.file_type)
-            elif CLI_DOT: #Command line dot package
-                dot_data = str(nx.nx_pydot.to_pydot(G).to_string()).encode('utf-8')
-                svg_data = Popen(['dot', '-Tsvg'],
-                                 stdin=PIPE, stdout=PIPE).communicate(input=dot_data)[0]
-                with open(self.fpath_output, 'w', encoding='utf8') as svg_file:
-                    svg_file.write(svg_data.decode('utf-8'))
-            elif CLI_DOT_EXE: #Command line dot.exe pacakge
-                dot_data = str(nx.nx_pydot.to_pydot(G).to_string()).encode('utf-8')
-                svg_data = Popen(['dot', '-Tsvg'],
-                                 creationflags=8, #DETACHED_PROCESS
-                                 stdin=PIPE,
-                                 stdout=PIPE,
-                                 stderr=PIPE).communicate(input=dot_data)[0]
-                with open(self.fpath_output, 'w', encoding='utf8') as svg_file:
-                    svg_file.write(svg_data.decode('utf-8'))
             else: #None found! Should never happen.
                 pass
 #------------------------------------------------------------------------
