@@ -59,8 +59,10 @@ class CliMerge(tool.Tool):
                 obj_type = id2type[primary_id[0]]
 
             database = self.dbstate.db
-            primary = database.get_from_name_and_gramps_id(obj_type, primary_id)
-            secondary = database.get_from_name_and_gramps_id(obj_type, secondary_id)
+            id_func = getattr(database,
+                      'get_%s_from_gramps_id' % obj_type.lower())
+            primary = id_func(primary_id)
+            secondary = id_func(secondary_id)
             if not primary or not secondary:
                 raise MergeError("Can't get object from ID.")
 
