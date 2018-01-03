@@ -996,7 +996,10 @@ def load_gramps(start):
         if event_ref_list:
             for event_ref in event_ref_list:
                 event = find_event(GRAMPS_DB, event_ref.ref)
-                if (event.type == etype) and not (PROTECT_PRIVATE and event.private):
+                if ((event.type == etype) and not
+                    (PROTECT_PRIVATE and event.private) and
+                    (event_ref.get_role() in [EventRoleType.PRIMARY,
+                                              EventRoleType.FAMILY])):
                     log.debug('Format Event: type=%s, and sortdate=%s', event.type, event.get_date_object().sortval)
                     et = format_event_txt(event, event_format, p_hdl)
                     if event.get_date_object().sortval == 0: # sortval = days since 1-Jan-4713 BC
