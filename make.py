@@ -291,7 +291,7 @@ elif command == "build":
             files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
             mkdir(r("../addons/%(gramps_version)s/download"))
             increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-            system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s''',
+            system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s --owner=gramps --group=gramps''',
                    files=files_str, gramps_version=gramps_version)
     else:
         if os.path.isfile(r('''%(addon)s/MANIFEST''')):
@@ -312,7 +312,7 @@ elif command == "build":
         files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
         mkdir(r("../addons/%(gramps_version)s/download"))
         increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-        system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s''',
+        system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s --owner=gramps --group=gramps''',
                files=files_str, gramps_version=gramps_version)
 elif command == "manifest-check":
     import tarfile
