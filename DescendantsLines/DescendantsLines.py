@@ -385,7 +385,7 @@ class DescendantsLinesReport(Report):
         log.debug('Top PID=%s', pid)
 
         # Creates dummy drawing context for image sizing during creation of tree:
-        init_file(self.output_fn, PNGWriter())
+        init_file(None, PNGWriter())
 
         # Generates a tree of person records and the family linkages for the chart:
         p = load_gramps(pid)
@@ -1243,17 +1243,17 @@ class PNGWriter:
 
     def start(self, fn, w, h,):
         self.fn = fn
-        if OUTPUT_FMT == 'PNG':
+        if OUTPUT_FMT == 'PNG' or not fn:
             self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, int(w
                      + 1), int(h + 1))
         elif OUTPUT_FMT == 'SVG':
-            self.surface = cairo.SVGSurface(OUTPUT_FN, int(w
+            self.surface = cairo.SVGSurface(self.fn, int(w
                  + 1), int(h + 1))
         elif OUTPUT_FMT == 'PDF':
-            self.surface = cairo.PDFSurface(OUTPUT_FN, int(w
+            self.surface = cairo.PDFSurface(self.fn, int(w
                  + 1), int(h + 1))
         elif OUTPUT_FMT == 'PS':
-            self.surface = cairo.PSSurface(OUTPUT_FN, int(w
+            self.surface = cairo.PSSurface(self.fn, int(w
                  + 1), int(h + 1))
         else:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
@@ -1278,7 +1278,7 @@ def draw_file(p, fn, writer):
     """
     global ctx
 
-    surface = writer.start(fn, 10, 10) # 1st pass is just to get size of chart
+    surface = writer.start(None, 10, 10) # 1st pass is just to get size of chart
     ctx = cairo.Context(surface)
     draw_tree(p)
     (w, h) = (p.get('w'), p.get('h'))
