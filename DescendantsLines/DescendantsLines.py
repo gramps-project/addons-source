@@ -294,6 +294,8 @@ class DescendantsLinesReport(Report):
 
         self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
+        self.output_fn = '%s.%s' % (os.path.splitext(self.output_fn)[0],
+                                    self.output_fmt.lower())
         self.max_gen = self.options['max_gen']
         self.gender_colors = self.options['gender_colors']
         self.inc_dnum = self.options['inc_dnum']
