@@ -407,6 +407,10 @@ class DescendantsLinesReport(Report):
         ind_list = filter.apply(self.database, plist)
 
         # writes textual informations on secondary output file
+        if self.options_class.handler.format_name == 'svg':
+            self._user.warn(_("Using SVG type for supplemental document is"
+                              " not supported!"))
+            return
         for person_handle in ind_list:
             person = self.database.get_person_from_handle(person_handle)
             #log.debug(person_handle)
