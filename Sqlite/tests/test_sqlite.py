@@ -18,7 +18,6 @@ class ExportSQLTestCase (unittest.TestCase):
             os.mkdir("/tmp/bsddb_exportsql_1")
         except:
             pass
-        self.database1.write_version("/tmp/bsddb_exportsql_1")
         self.database1.load("/tmp/bsddb_exportsql_1")
 
         importXML(self.database1, gramps_path + "/example/gramps/example.gramps", User())
@@ -29,7 +28,6 @@ class ExportSQLTestCase (unittest.TestCase):
             os.mkdir("/tmp/bsddb_exportsql_2")
         except:
             pass
-        self.database2.write_version("/tmp/bsddb_exportsql_2")
 
         self.database2.load("/tmp/bsddb_exportsql_2")
 
