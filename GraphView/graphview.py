@@ -401,11 +401,13 @@ class GraphView(NavigationView):
                     self.printview(obj)
                     return
             svg = val.replace('.gv', '.svg')
+            # both dot_data and svg_data are bytes, already utf-8 encoded
+            # Just write them as binary
             try:
-                with open(val,'w') as g,\
-                     open(svg,'w') as s:
-                        g.write(self.graph_widget.dot_data.decode('utf-8'))
-                        s.write(self.graph_widget.svg_data.decode('utf-8'))
+                with open(val,'wb') as g,\
+                     open(svg,'wb') as s:
+                        g.write(self.graph_widget.dot_data)
+                        s.write(self.graph_widget.svg_data)
             except IOError as msg:
                 msg2 = _("Could not create %s") % (val + ', ' + svg)
                 ErrorDialog(msg2, str(msg), parent=dot)
