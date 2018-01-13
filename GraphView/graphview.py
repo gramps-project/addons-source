@@ -377,7 +377,8 @@ class GraphView(NavigationView):
             _("Select a dot file name"),
             action=Gtk.FileChooserAction.SAVE,
             buttons=(_('_Cancel'), Gtk.ResponseType.CANCEL,
-                     _('_Apply'), Gtk.ResponseType.OK))
+                     _('_Apply'), Gtk.ResponseType.OK),
+            parent=self.uistate.window)
         mpath = config.get('paths.report-directory')
         dot.set_current_folder(os.path.dirname(mpath))
         dot.set_filter(filter)
@@ -394,7 +395,7 @@ class GraphView(NavigationView):
                                      'file, or change the selected filename.'),
                                    _('_Overwrite'), None,
                                    _('_Change filename'), None,
-                                   parent=self.uistate.window)
+                                   parent=dot)
 
                 if aaa.get_response() == Gtk.ResponseType.YES:
                     dot.destroy()
