@@ -64,7 +64,7 @@ import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
-from gramps.gui.dialog import OptionDialog
+from gramps.gui.dialog import OptionDialog, ErrorDialog
 
 if win():
     DETACHED_PROCESS = 8
@@ -385,6 +385,8 @@ class GraphView(NavigationView):
         status = dot.run()
         if status == Gtk.ResponseType.OK:
             val = dot.get_filename()
+            (spath, ext) = os.path.splitext(val)
+            val = spath + ".gv" # used to avoid filename without extension
             # selected path is an existing file and we need a file
             if os.path.isfile(val):
                 aaa = OptionDialog(_('File already exists'), # parent-OK
@@ -399,11 +401,14 @@ class GraphView(NavigationView):
                     self.printview(obj)
                     return
             svg = val.replace('.gv', '.svg')
-            if val:
+            try:
                 with open(val,'w') as g,\
                      open(svg,'w') as s:
                         g.write(self.graph_widget.dot_data.decode('utf-8'))
                         s.write(self.graph_widget.svg_data.decode('utf-8'))
+            except IOError as msg:
+                msg2 = _("Could not create %s") % (val + ', ' + svg)
+                ErrorDialog(msg2, str(msg), parent=dot)
         dot.destroy()
 
 #-------------------------------------------------------------------------
