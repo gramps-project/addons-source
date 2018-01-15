@@ -2147,6 +2147,9 @@ class CanvasAnimation(object):
         root_item = self.canvas.get_root_item()
         self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
                                                         True, True, True)
+        # clear counters and shakes - items not exists anymore
+        self.counter = {}
+        self.shake = {}
 
     def stop_animation(self):
         """
