@@ -122,7 +122,8 @@ class GraphView(NavigationView):
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
         ('interface.graphview-show-animation', True),
-        ('interface.graphview-animation-speed', 15),
+        ('interface.graphview-animation-speed', 3),
+        ('interface.graphview-animation-count', 4),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -367,12 +368,19 @@ class GraphView(NavigationView):
         else:
             self.graph_widget.animation.show_animation = False
 
+    def cb_update_animation_count(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the animation count
+        setting.
+        """
+        self.graph_widget.animation.max_count = int(entry)*2
+
     def cb_update_animation_speed(self, client, cnxd_id, entry, data):
         """
         Called when the configuration menu changes the animation speed
         setting.
         """
-        self.graph_widget.animation.speed = 21000 - 1000*int(entry)
+        self.graph_widget.animation.speed = 50*int(entry)
 
     def config_connect(self):
         """
@@ -404,6 +412,8 @@ class GraphView(NavigationView):
                           self.cb_update_show_animation)
         self._config.connect('interface.graphview-animation-speed',
                           self.cb_update_animation_speed)
+        self._config.connect('interface.graphview-animation-count',
+                          self.cb_update_animation_count)
 
     def _get_configure_page_funcs(self):
         """
@@ -487,8 +497,11 @@ class GraphView(NavigationView):
                 _('Show animation'),
                 0, 'interface.graphview-show-animation')
         configdialog.add_spinner(grid,
-                _('Animation speed (1..20)'),
-                1, 'interface.graphview-animation-speed', (1, 20))
+                _('Animation speed (1..5 and 5 is the slower)'),
+                1, 'interface.graphview-animation-speed', (1, 5))
+        configdialog.add_spinner(grid,
+                _('Animation count (1..8)'),
+                2, 'interface.graphview-animation-count', (1, 8))
 
         return _('Animation'), grid
 
@@ -2107,13 +2120,16 @@ class CanvasAnimation(object):
         self.vadjustment = scroll_window.get_vadjustment()
         self.items_list = None
         self.in_motion = False
+        self.max_count = self.view._config.get(
+                                           'interface.graphview-animation-count')
+        self.max_count = self.max_count * 2 # must be modulo 2
 
         self.show_animation = self.view._config.get(
                                            'interface.graphview-show-animation')
 
         # delay between steps in microseconds
         self.speed = self.view._config.get('interface.graphview-animation-speed')
-        self.speed = 21000 - 1000*int(self.speed)
+        self.speed = 50*int(self.speed)
         # length of step
         self.step_len = 10
 
@@ -2148,10 +2164,11 @@ class CanvasAnimation(object):
         Processing of 'animation-finished' signal.
         Stop or keep shaking item depending on counter for item.
         """
-        if (self.counter[item.title] < 4) and (not stoped):
+        if (self.counter[item.title] < self.max_count) and (not stoped):
             self.shake[item.title] = (-1)*self.shake[item.title]
             self.counter[item.title] += 1
-            item.animate(0, self.shake[item.title], 1, 0, False, 100, 10, 0)
+            item.animate(0, self.shake[item.title], 1, 0, False,
+                         self.speed, 10, 0)
         else:
             item.disconnect_by_func(self.stop_shake_animation)
             try:
@@ -2170,7 +2187,8 @@ class CanvasAnimation(object):
                 self.counter[item.title] = 1
                 self.shake[item.title] = 10
                 item.connect('animation-finished', self.stop_shake_animation)
-                item.animate(0, self.shake[item.title], 1, 0, False, 100, 10, 0)
+                item.animate(0, self.shake[item.title], 1, 0, False,
+                             self.speed, 10, 0)
 
     def get_item_by_title(self, handle):
         """
@@ -2271,7 +2289,7 @@ class CanvasAnimation(object):
             point = self.get_trace_to(dest)
 
             GLib.idle_add(self.scroll_canvas, point)
-            GLib.usleep(self.speed)
+            GLib.usleep(20 * self.speed)
 
             # finish if we try to goto destination point
             if point == dest: break
