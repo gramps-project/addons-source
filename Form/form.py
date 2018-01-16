@@ -79,6 +79,9 @@ definition_files = ['form_be.xml', 'form_ca.xml', 'form_dk.xml', 'form_fr.xml',
 CONFIG = config.register_manager('form')
 CONFIG.register('interface.form-width', 600)
 CONFIG.register('interface.form-height', 400)
+CONFIG.register('interface.form-horiz-position', -1)
+CONFIG.register('interface.form-vert-position', -1)
+
 CONFIG.init()
 
 #------------------------------------------------------------------------

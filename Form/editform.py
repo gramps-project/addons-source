@@ -121,6 +121,10 @@ class EditForm(ManagedWindow):
         width = self._config.get('interface.form-width')
         height = self._config.get('interface.form-height')
         self.window.resize(width, height)
+        horiz_position = self._config.get('interface.form-horiz-position')
+        vert_position = self._config.get('interface.form-vert-position')
+        if horiz_position != -1:
+            self.window.move(horiz_position, vert_position)
 
     def _add_tab(self, notebook, page):
         notebook.insert_page(page, page.get_tab_widget(), -1)
@@ -156,6 +160,8 @@ class EditForm(ManagedWindow):
         """
         root = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
         root.set_transient_for(self.uistate.window)
+        # Initial position for first run
+        root.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         vbox.set_margin_left(2)
@@ -343,6 +349,9 @@ class EditForm(ManagedWindow):
         (width, height) = self.window.get_size()
         self._config.set('interface.form-width', width)
         self._config.set('interface.form-height', height)
+        (width, height) = self.window.get_position()
+        self._config.set('interface.form-horiz-position', width)
+        self._config.set('interface.form-vert-position', height)
         self._config.save()
         self.gallery_list.clean_up()
         ManagedWindow.close(self)
