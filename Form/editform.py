@@ -77,7 +77,7 @@ class EditForm(ManagedWindow):
     """
     Form Editor.
     """
-    def __init__(self, dbstate, uistate, track, citation):
+    def __init__(self, dbstate, uistate, track, citation, callback):
 
         self.dbstate = dbstate
         self.uistate = uistate
@@ -86,6 +86,7 @@ class EditForm(ManagedWindow):
 
         self.citation = citation
         self.event = find_form_event(self.db, self.citation)
+        self.callback = callback
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
@@ -341,6 +342,7 @@ class EditForm(ManagedWindow):
 
             self.db.commit_event(self.event, trans)
         self.close()
+        self.callback()
 
     def close(self, *args):
         """

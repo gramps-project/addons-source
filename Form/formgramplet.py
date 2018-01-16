@@ -152,7 +152,8 @@ class FormGramplet(Gramplet, DbGUIElement):
             citation = Citation()
             citation.set_reference_handle(source_handle)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], citation)
+                EditForm(self.gui.dbstate, self.gui.uistate, [], citation,
+                         self.update)
             except WindowActiveError:
                 pass
 
@@ -164,7 +165,8 @@ class FormGramplet(Gramplet, DbGUIElement):
         if iter_:
             citation = model.get_value(iter_, 0)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], citation)
+                EditForm(self.gui.dbstate, self.gui.uistate, [], citation,
+                         self.update)
             except WindowActiveError:
                 pass
 
