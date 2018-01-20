@@ -118,14 +118,12 @@ class GraphView(NavigationView):
         ('interface.graphview-show-lines', 1),
         ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
-        ('interface.graphview-home-person-color', '#bbe68a'),
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
         ('interface.graphview-show-animation', True),
         ('interface.graphview-animation-speed', 3),
         ('interface.graphview-animation-count', 4),
-        ('interface.graphview-family-color', '#eeeeee'),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -139,16 +137,12 @@ class GraphView(NavigationView):
         self.show_tag_color = self._config.get('interface.graphview-show-tags')
         self.highlight_home_person = self._config.get(
                                   'interface.graphview-highlight-home-person')
-        self.home_person_color = self._config.get(
-                                 'interface.graphview-home-person-color')
         self.home_path_color = self._config.get(
                                  'interface.graphview-home-path-color')
         self.descendant_generations = self._config.get(
                                   'interface.graphview-descendant-generations')
         self.ancestor_generations = self._config.get(
                                   'interface.graphview-ancestor-generations')
-        self.family_color = self._config.get(
-                                  'interface.graphview-family-color')
 
         self.dbstate = dbstate
         self.uistate = uistate
@@ -332,13 +326,6 @@ class GraphView(NavigationView):
             self.highlight_home_person = False
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_home_person_color(self, client, cnxn_id, entry, data):
-        """
-        Called when the configuration menu changes the home person color.
-        """
-        self.home_person_color = entry
-        self.graph_widget.populate(self.get_active())
-
     def cb_update_home_path_color(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the path person color.
@@ -411,8 +398,6 @@ class GraphView(NavigationView):
                           self.cb_update_show_lines)
         self._config.connect('interface.graphview-highlight-home-person',
                           self.cb_update_highlight_home_person)
-        self._config.connect('interface.graphview-home-person-color',
-                          self.cb_update_home_person_color)
         self._config.connect('interface.graphview-home-path-color',
                           self.cb_update_home_path_color)
         self._config.connect('interface.graphview-descendant-generations',
@@ -425,8 +410,6 @@ class GraphView(NavigationView):
                           self.cb_update_animation_speed)
         self._config.connect('interface.graphview-animation-count',
                           self.cb_update_animation_count)
-        self._config.connect('interface.graphview-family-color',
-                          self.cb_update_family_color)
 
     def _get_configure_page_funcs(self):
         """
@@ -489,14 +472,8 @@ class GraphView(NavigationView):
         grid.set_row_spacing(6)
 
         configdialog.add_color(grid,
-                _('Home person color'),
-                0, 'interface.graphview-home-person-color')
-        configdialog.add_color(grid,
                 _('Path color'),
-                1, 'interface.graphview-home-path-color')
-        configdialog.add_color(grid,
-                _('Family node color'),
-                2, 'interface.graphview-family-color')
+                0, 'interface.graphview-home-path-color')
 
         return _('Colors'), grid
 
@@ -1006,8 +983,8 @@ class GraphvizSvgParser(object):
         self.view = view
         self.highlight_home_person = self.view._config.get(
                                    'interface.graphview-highlight-home-person')
-        self.home_person_color = self.view._config.get(
-                                   'interface.graphview-home-person-color')
+        self.home_person_color = config.get(
+                                   'preferences.color-home-person')
 
         self.tlist = []
         self.text_attrs = None
@@ -1461,16 +1438,16 @@ class DotGenerator(object):
             font_color = rgb_to_hex(fc_rgb)
         else: font_color = '#000000'
 
-        # get colors from graphview config
+        # get colors from config
         home_path_color = self.view._config.get(
-                                    'interface.graphview-home-path-color')
-        family_fill = self.view._config.get(
-                                    'interface.graphview-family-color')
+                                   'interface.graphview-home-path-color')
+        family_fill = config.get('preferences.color-family-node')
+        family_border = config.get('preferences.bordercolor-family-node')
 
-        # colors that we can't get from gramps preferences
+        # set of colors
         self.colors = {
                         'family_fill'         : family_fill,
-                        'family_border'       : font_color,
+                        'family_border'       : family_border,
                         'link_color'          : font_color,
                         'home_path_color'     : home_path_color
                       }
