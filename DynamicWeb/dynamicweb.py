@@ -204,7 +204,7 @@ from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
-from gramps.gen.datehandler import get_date, get_date_formats, displayer as _dd
+from gramps.gen.datehandler import get_date, format_time, displayer as _dd
 if DWR_VERSION_500:
     from gramps.gen.proxy import CacheProxyDb
 else:
@@ -519,15 +519,6 @@ def format_date(date, gedcom = False, iso = False):
         val = _dd.display(date) or ""
 
     return(val)
-
-
-def format_time(t):
-    '''
-    Returns a Date object set to the time t (in the time.time format).
-    '''
-    date = Date()
-    date.set_yr_mon_day(*time.localtime(t)[0:3])
-    return format_date(date) + datetime.datetime.fromtimestamp(t).strftime(' %H:%M:%S')
 
 
 def rmtree_fix(dirname):
