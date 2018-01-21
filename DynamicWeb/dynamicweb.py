@@ -3570,7 +3570,7 @@ class DynamicWebReport(Report):
         if (place_handle in self.bkref_dict[Place]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
             # The place reference is already recorded
-            if (place_ref in refs): return
+            if place_ref and (place_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
             self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
