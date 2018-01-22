@@ -40,7 +40,7 @@ if conditions_met:
         authors_email = ['familynetworkchart@gmail.com'],
         #help_url = URL_WIKISTRING+'NetworkChart',
         description = _('Generates a family network chart.'),
-        version = '0.0.7',
+        version = '0.0.8',
         gramps_target_version = '4.2',
         include_in_listing = True,
     )
