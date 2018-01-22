@@ -3581,6 +3581,8 @@ class DynamicWebReport(Report):
         # Check if the place is already added
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
+        if not self.database.has_place_handle(place_handle):
+            return
         place = self.database.get_place_from_handle(place_handle)
         if DWR_VERSION_412 and config.get('preferences.place-auto'):
             place_name = _pd.display(self.database, place)
