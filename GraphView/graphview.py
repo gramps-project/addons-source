@@ -65,7 +65,7 @@ import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
-from gramps.gui.dialog import OptionDialog
+from gramps.gui.dialog import OptionDialog, ErrorDialog
 
 if win():
     DETACHED_PROCESS = 8
@@ -527,7 +527,8 @@ class GraphView(NavigationView):
             _("Select a dot file name"),
             action=Gtk.FileChooserAction.SAVE,
             buttons=(_('_Cancel'), Gtk.ResponseType.CANCEL,
-                     _('_Apply'), Gtk.ResponseType.OK))
+                     _('_Apply'), Gtk.ResponseType.OK),
+            parent=self.uistate.window)
         mpath = config.get('paths.report-directory')
         dot.set_current_folder(os.path.dirname(mpath))
         dot.set_filter(filter1)
@@ -545,18 +546,23 @@ class GraphView(NavigationView):
                                      'file, or change the selected filename.'),
                                    _('_Overwrite'), None,
                                    _('_Change filename'), None,
-                                   parent=self.uistate.window)
+                                   parent=dot)
 
                 if aaa.get_response() == Gtk.ResponseType.YES:
                     dot.destroy()
                     self.printview(obj)
                     return
-            svg = spath + ".svg"
-            if val:
-                with open(val,'w') as g,\
-                     open(svg,'w') as s:
-                        g.write(self.graph_widget.dot_data.decode('utf-8'))
-                        s.write(self.graph_widget.svg_data.decode('utf-8'))
+            svg = val.replace('.gv', '.svg')
+            # both dot_data and svg_data are bytes, already utf-8 encoded
+            # Just write them as binary
+            try:
+                with open(val,'wb') as g,\
+                     open(svg,'wb') as s:
+                        g.write(self.graph_widget.dot_data)
+                        s.write(self.graph_widget.svg_data)
+            except IOError as msg:
+                msg2 = _("Could not create %s") % (val + ', ' + svg)
+                ErrorDialog(msg2, str(msg), parent=dot)
         dot.destroy()
 
     def cb_update_form(self, obj, constant):
