@@ -1443,13 +1443,19 @@ class DotGenerator(object):
                                    'interface.graphview-home-path-color')
         family_fill = config.get('preferences.color-family-node')
         family_border = config.get('preferences.bordercolor-family-node')
+        divorced_family_fill = config.get(
+                                   'preferences.color-family-node-divorced')
+        divorced_family_border = config.get(
+                                   'preferences.bordercolor-family-node-divorced')
 
         # set of colors
         self.colors = {
-                        'family_fill'         : family_fill,
-                        'family_border'       : family_border,
-                        'link_color'          : font_color,
-                        'home_path_color'     : home_path_color
+                        'family_fill'            : family_fill,
+                        'family_border'          : family_border,
+                        'link_color'             : font_color,
+                        'home_path_color'        : home_path_color,
+                        'divorced_family_fill'   : divorced_family_fill,
+                        'divorced_family_border' : divorced_family_border,
                       }
 
         self.arrowheadstyle = 'none'
@@ -1791,6 +1797,14 @@ class DotGenerator(object):
         color = self.colors['family_border']
         fill = self.colors['family_fill']
         style = "filled"
+        # change colors for divorced family node
+        for event_ref in fam.get_event_ref_list():
+            event = self.database.get_event_from_handle(event_ref.ref)
+            if event.type == gramps.gen.lib.EventType.DIVORCE and \
+            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or
+            event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY):
+                color = self.colors['divorced_family_border']
+                fill = self.colors['divorced_family_fill']
         label=label.center(int(len(label)*2))
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
 
