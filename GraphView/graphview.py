@@ -40,10 +40,12 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gi.repository import Gtk, Gdk, GdkPixbuf
+from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
 import string
 from subprocess import Popen, PIPE
 from io import StringIO
+from threading import Thread
+from math import sqrt, pow
 
 #-------------------------------------------------------------------------
 #
@@ -119,6 +121,9 @@ class GraphView(NavigationView):
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
+        ('interface.graphview-show-animation', True),
+        ('interface.graphview-animation-speed', 3),
+        ('interface.graphview-animation-count', 4),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -182,6 +187,8 @@ class GraphView(NavigationView):
                 self.graph_widget.populate(self.get_active())
         else:
             self.dirty = True
+        # update combobox with bookmarks on db changes
+        self.graph_widget.load_bookmarks()
 
     def get_stock(self):
         """
@@ -199,6 +206,7 @@ class GraphView(NavigationView):
         Builds the canvas along with a zoom control
         """
         self.graph_widget = GraphWidget(self, self.dbstate, self.uistate)
+        self.graph_widget.load_bookmarks()
         return self.graph_widget.get_widget()
 
     def build_tree(self):
@@ -252,6 +260,7 @@ class GraphView(NavigationView):
             if self.get_active() != "":
                 self.graph_widget.clear()
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.load_bookmarks()
         else:
             self.dirty = True
 
@@ -349,6 +358,30 @@ class GraphView(NavigationView):
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_animation(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the show animation
+        setting.
+        """
+        if entry == 'True':
+            self.graph_widget.animation.show_animation = True
+        else:
+            self.graph_widget.animation.show_animation = False
+
+    def cb_update_animation_count(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the animation count
+        setting.
+        """
+        self.graph_widget.animation.max_count = int(entry)*2
+
+    def cb_update_animation_speed(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the animation speed
+        setting.
+        """
+        self.graph_widget.animation.speed = 50*int(entry)
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -375,6 +408,12 @@ class GraphView(NavigationView):
                           self.cb_update_descendant_generations)
         self._config.connect('interface.graphview-ancestor-generations',
                           self.cb_update_ancestor_generations)
+        self._config.connect('interface.graphview-show-animation',
+                          self.cb_update_show_animation)
+        self._config.connect('interface.graphview-animation-speed',
+                          self.cb_update_animation_speed)
+        self._config.connect('interface.graphview-animation-count',
+                          self.cb_update_animation_count)
 
     def _get_configure_page_funcs(self):
         """
@@ -384,7 +423,8 @@ class GraphView(NavigationView):
         :return: list of functions
         """
         return [self.layout_config_panel,
-                self.color_config_panel]
+                self.color_config_panel,
+                self.animation_config_panel]
 
     def layout_config_panel(self, configdialog):
         """
@@ -443,6 +483,27 @@ class GraphView(NavigationView):
                 2, 'interface.graphview-show-tags')
 
         return _('Colors'), grid
+
+    def animation_config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog.
+        """
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
+
+        configdialog.add_checkbox(grid,
+                _('Show animation'),
+                0, 'interface.graphview-show-animation')
+        configdialog.add_spinner(grid,
+                _('Animation speed (1..5 and 5 is the slower)'),
+                1, 'interface.graphview-animation-speed', (1, 5))
+        configdialog.add_spinner(grid,
+                _('Animation count (1..8)'),
+                2, 'interface.graphview-animation-count', (1, 8))
+
+        return _('Animation'), grid
 
     def cb_update_form(self, obj, constant):
         entry = obj.get_active()
@@ -527,8 +588,6 @@ class GraphWidget(object):
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_person_handle = None
-        self.active_person_x = 0
-        self.active_person_y = 0
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -583,35 +642,61 @@ class GraphWidget(object):
         hbox.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
+        # add 'go to bookmark' button
+        self.store = Gtk.ListStore(str, str)
+        self.goto_other_btn = Gtk.ComboBox(model=self.store)
+        cell = Gtk.CellRendererText()
+        self.goto_other_btn.pack_start(cell, True)
+        self.goto_other_btn.add_attribute(cell, 'text', 1)
+        self.goto_other_btn.set_tooltip_text(_('Go to bookmark'))
+        self.goto_other_btn.connect("changed", self.goto_other)
+        hbox.pack_start(self.goto_other_btn, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
         # if we have graph lager than graphviz paper size
         # this coef is needed
         self.transform_scale = 1
         self.scale = 1
 
+        self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
+
+    def load_bookmarks(self):
+        """
+        Load bookmarks in ComboBox (goto_other_btn).
+        """
+        bookmarks = self.dbstate.db.get_bookmarks().bookmarks
+        self.store.clear()
+        for bkmark in bookmarks:
+            person = self.dbstate.db.get_person_from_handle(bkmark)
+            if person:
+                name = displayer.display_name(person.get_primary_name())
+                val_to_display = "[%s] %s" % (person.gramps_id, name)
+                present = self.animation.get_item_by_title(bkmark)
+                if present is not None:
+                    self.store.append((bkmark, val_to_display))
+        self.goto_other_btn.set_active(-1)
+
     def goto_active(self, button):
         """
-        Go to active person
+        Go to active person.
         """
-        # The scroll_to method will try and put the active person in the top
-        # left part of the screen. We want it in the middle, so make an offset
-        # half the width of the scrolled window size.
-        h_offset = self.hadjustment.get_page_size() / 2
-        v_offset = self.vadjustment.get_page_size() / 3
+        # check if animation is needed
+        if button:
+            animation = True
+        else:
+            animation = False
 
-        # Apply the scaling factor so the offset is adjusted to the scale
-        h_offset = h_offset / self.canvas.get_scale()
-        v_offset = v_offset / self.canvas.get_scale()
+        self.animation.move_to_person(self.active_person_handle, animation)
 
-        # Get the canvas size to convert Y position of person
-        # because get_active_person_y() returns negativ distance
-        # from bottom of canvas
-        bounds = self.canvas.get_root_item().get_bounds()
-        height_canvas = bounds.y2 - bounds.y1
-
-        # Centre the active person
-        self.canvas.scroll_to(self.active_person_x - h_offset,
-                              height_canvas + self.active_person_y - v_offset)
+    def goto_other(self, obj):
+        """
+        Go to other person.
+        if not present in the graphview tree, ignore it.
+        """
+        if obj.get_active() > -1 :
+            other = self.store[obj.get_active()][0]
+            self.animation.move_to_person(other, True)
+            obj.set_active(-1)
 
     def scroll_mouse(self, canvas, event):
         """
@@ -652,11 +737,9 @@ class GraphWidget(object):
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale)
 
-        # Save position of the active person
-        if parser.active_person_item:
-            self.active_person_x = parser.get_active_person_x()
-            self.active_person_y = parser.get_active_person_y()
+        self.animation.update_items()
 
+        # Scroll to activ person without animation
         self.goto_active(None)
 
         # Update the status bar
@@ -768,6 +851,7 @@ class GraphWidget(object):
               self._last_x = event.x_root
               self._last_y = event.y_root
               self._in_move = True
+              self.animation.stop_animation()
               return False
         return False
 
@@ -2025,3 +2109,229 @@ class DotGenerator(object):
 
     def get_dot(self):
         return self.dot.getvalue()
+
+#-------------------------------------------------------------------------
+#
+# CanvasAnimation
+#
+#-------------------------------------------------------------------------
+class CanvasAnimation(object):
+    """
+    Produce animation for operations with canvas.
+    """
+    def __init__(self, view, canvas, scroll_window):
+        """
+        We need canvas and window in witch it placed.
+        And view to get config.
+        """
+        self.view = view
+        self.canvas = canvas
+        self.hadjustment = scroll_window.get_hadjustment()
+        self.vadjustment = scroll_window.get_vadjustment()
+        self.items_list = None
+        self.in_motion = False
+        self.max_count = self.view._config.get(
+                                           'interface.graphview-animation-count')
+        self.max_count = self.max_count * 2 # must be modulo 2
+
+        self.show_animation = self.view._config.get(
+                                           'interface.graphview-show-animation')
+
+        # delay between steps in microseconds
+        self.speed = self.view._config.get('interface.graphview-animation-speed')
+        self.speed = 50*int(self.speed)
+        # length of step
+        self.step_len = 10
+
+        # separated counter and direction of shaking
+        # for each item that in shake procedure
+        self.counter = {}
+        self.shake = {}
+
+        self.update_items()
+
+    def update_items(self):
+        """
+        Get list of items from canvas.
+        """
+        root_item = self.canvas.get_root_item()
+        self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
+                                                        True, True, True)
+        # clear counters and shakes - items not exists anymore
+        self.counter = {}
+        self.shake = {}
+
+    def stop_animation(self):
+        """
+        Stop move_to animation.
+        And wait while thread is finished.
+        """
+        self.in_motion = False
+        try:
+            self.thread.join()
+        except:
+            pass
+
+    def stop_shake_animation(self, item, stoped):
+        """
+        Processing of 'animation-finished' signal.
+        Stop or keep shaking item depending on counter for item.
+        """
+        if (self.counter[item.title] < self.max_count) and (not stoped):
+            self.shake[item.title] = (-1)*self.shake[item.title]
+            self.counter[item.title] += 1
+            item.animate(0, self.shake[item.title], 1, 0, False,
+                         self.speed, 10, 0)
+        else:
+            item.disconnect_by_func(self.stop_shake_animation)
+            try:
+                self.counter.pop(item.title)
+                self.shake.pop(item.title)
+            except:
+                pass
+
+    def shake_item(self, item):
+        """
+        Shake item to help to see it.
+        Use build-in function of CanvasItem.
+        """
+        if item:
+            if not self.counter.get(item.title):
+                self.counter[item.title] = 1
+                self.shake[item.title] = 10
+                item.connect('animation-finished', self.stop_shake_animation)
+                item.animate(0, self.shake[item.title], 1, 0, False,
+                             self.speed, 10, 0)
+
+    def get_item_by_title(self, handle):
+        """
+        Find item by title.
+        """
+        if handle and self.items_list:
+            for item in self.items_list:
+                # exclude items that don't have title
+                try:
+                    if item.title == handle:
+                        return item
+                except:
+                    pass
+        return None
+
+    def move_to_person(self, handle, animated):
+        """
+        Move graph to specified person by handle.
+        """
+        self.stop_animation()
+        item = self.get_item_by_title(handle)
+        if item:
+            bounds = item.get_bounds()
+            # calculate middle of node coord
+            x = (bounds.x2 - (bounds.x2-bounds.x1)/2)
+            y = (bounds.y1 - (bounds.y1-bounds.y2)/2)
+            self.move_to(item, (x, y), animated)
+
+    def get_trace_to(self, destination):
+        """
+        Return next point to destination from current position.
+        """
+        # get current position (left-top corner) with scale
+        start_x = self.hadjustment.get_value() / self.canvas.get_scale()
+        start_y = self.vadjustment.get_value() / self.canvas.get_scale()
+
+        x_delta = destination[0] - start_x
+        y_delta = destination[1] - start_y
+
+        # calculate step count depending on length of the trace
+        trace_len = sqrt(pow(x_delta,2) + pow(y_delta,2))
+        steps_count = int(trace_len/self.step_len * self.canvas.get_scale())
+
+        # prevent division by 0
+        if steps_count > 0:
+            x_step = x_delta / steps_count
+            y_step = y_delta / steps_count
+
+            point =(start_x + x_step,
+                    start_y + y_step)
+        else:
+            point = destination
+        return point
+
+    def scroll_canvas(self, point):
+        """
+        Scroll window to point on canvas.
+        """
+        self.canvas.scroll_to(point[0], point[1])
+
+    def animation(self, item, destination):
+        """
+        Animate scrolling to destination point in thread.
+        Dynamically get points to destination one by one
+        and try to scroll to them.
+        """
+        self.in_motion = True
+        while self.in_motion:
+            # Correct destination to window centre
+            h_offset = self.hadjustment.get_page_size() / 2
+            v_offset = self.vadjustment.get_page_size() / 3
+            # Apply the scaling factor so the offset is adjusted to the scale
+            h_offset = h_offset / self.canvas.get_scale()
+            v_offset = v_offset / self.canvas.get_scale()
+
+            dest = (destination[0] - h_offset,
+                    destination[1] - v_offset)
+
+            # get maximum scroll of window
+            max_scroll_x = (self.hadjustment.get_upper() -
+                            self.hadjustment.get_page_size()) / self.canvas.get_scale()
+            max_scroll_y = (self.vadjustment.get_upper() -
+                            self.vadjustment.get_page_size()) / self.canvas.get_scale()
+
+            # fix destination to fit in max scroll
+            if dest[0]> max_scroll_x: dest = (max_scroll_x, dest[1])
+            if dest[0]< 0: dest = (0, dest[1])
+            if dest[1]> max_scroll_y: dest = (dest[0], max_scroll_y)
+            if dest[1]< 0: dest = (dest[0], 0)
+
+            cur_pos = (self.hadjustment.get_value() / self.canvas.get_scale(),
+                       self.vadjustment.get_value() / self.canvas.get_scale())
+
+            # finish if we already at destination
+            if dest == cur_pos: break
+
+            # get next point to destination
+            point = self.get_trace_to(dest)
+
+            GLib.idle_add(self.scroll_canvas, point)
+            GLib.usleep(20 * self.speed)
+
+            # finish if we try to goto destination point
+            if point == dest: break
+
+        self.in_motion = False
+        # shake item after scroll to it
+        self.shake_item(item)
+
+    def move_to(self, item, destination, animated):
+        """
+        Move graph to specified position.
+        If 'animated' is True then movement will be animated.
+        It works with 'canvas.scroll_to' in thread.
+        """
+        # if animated is True than run thread with animation
+        # else - just scroll_to immediately
+        if animated and self.show_animation:
+            self.thread = Thread(target=self.animation,
+                                 args=[item, destination])
+            self.thread.start()
+        else:
+            # Correct destination to screen centre
+            h_offset = self.hadjustment.get_page_size() / 2
+            v_offset = self.vadjustment.get_page_size() / 3
+
+            # Apply the scaling factor so the offset is adjusted to the scale
+            h_offset = h_offset / self.canvas.get_scale()
+            v_offset = v_offset / self.canvas.get_scale()
+
+            destination = (destination[0]-h_offset,
+                           destination[1]-v_offset)
+            self.scroll_canvas(destination)
