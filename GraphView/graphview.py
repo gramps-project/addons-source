@@ -984,7 +984,7 @@ class GraphvizSvgParser(object):
         self.highlight_home_person = self.view._config.get(
                                    'interface.graphview-highlight-home-person')
         self.home_person_color = config.get(
-                                   'preferences.color-home-person')
+                                   'colors.home-person')
 
         self.tlist = []
         self.text_attrs = None
@@ -1441,12 +1441,12 @@ class DotGenerator(object):
         # get colors from config
         home_path_color = self.view._config.get(
                                    'interface.graphview-home-path-color')
-        family_fill = config.get('preferences.color-family-node')
-        family_border = config.get('preferences.bordercolor-family-node')
+        family_fill = config.get('colors.family')
+        family_border = config.get('colors.border-family')
         divorced_family_fill = config.get(
-                                   'preferences.color-family-node-divorced')
+                                   'colors.family-divorced')
         divorced_family_border = config.get(
-                                   'preferences.bordercolor-family-node-divorced')
+                                   'colors.border-family-divorced')
 
         # set of colors
         self.colors = {
