@@ -66,7 +66,7 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
 from gramps.gui.dialog import OptionDialog, ErrorDialog
-from gramps.gui.utils import color_graph_box, rgb_to_hex
+from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
 
 if win():
     DETACHED_PROCESS = 8
@@ -1441,21 +1441,11 @@ class DotGenerator(object):
         # get colors from config
         home_path_color = self.view._config.get(
                                    'interface.graphview-home-path-color')
-        family_fill = config.get('colors.family')
-        family_border = config.get('colors.border-family')
-        divorced_family_fill = config.get(
-                                   'colors.family-divorced')
-        divorced_family_border = config.get(
-                                   'colors.border-family-divorced')
 
         # set of colors
         self.colors = {
-                        'family_fill'            : family_fill,
-                        'family_border'          : family_border,
                         'link_color'             : font_color,
                         'home_path_color'        : home_path_color,
-                        'divorced_family_fill'   : divorced_family_fill,
-                        'divorced_family_border' : divorced_family_border,
                       }
 
         self.arrowheadstyle = 'none'
@@ -1794,17 +1784,8 @@ class DotGenerator(object):
             event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY ):
                 label = self.get_event_string(event)
                 break
-        color = self.colors['family_border']
-        fill = self.colors['family_fill']
+        fill, color = color_graph_family(fam, self.dbstate)
         style = "filled"
-        # change colors for divorced family node
-        for event_ref in fam.get_event_ref_list():
-            event = self.database.get_event_from_handle(event_ref.ref)
-            if event.type == gramps.gen.lib.EventType.DIVORCE and \
-            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or
-            event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY):
-                color = self.colors['divorced_family_border']
-                fill = self.colors['divorced_family_fill']
         label=label.center(int(len(label)*2))
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
 
