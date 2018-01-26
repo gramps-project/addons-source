@@ -983,8 +983,8 @@ class GraphvizSvgParser(object):
         self.view = view
         self.highlight_home_person = self.view._config.get(
                                    'interface.graphview-highlight-home-person')
-        self.home_person_color = config.get(
-                                   'colors.home-person')
+        scheme = config.get('colors.scheme')
+        self.home_person_color = config.get('colors.home-person')[scheme]
 
         self.tlist = []
         self.text_attrs = None
