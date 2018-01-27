@@ -66,6 +66,7 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
 from gramps.gui.dialog import OptionDialog, ErrorDialog
+from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
 
 if win():
     DETACHED_PROCESS = 8
@@ -117,7 +118,6 @@ class GraphView(NavigationView):
         ('interface.graphview-show-lines', 1),
         ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
-        ('interface.graphview-home-person-color', '#bbe68a'),
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 0),
@@ -137,8 +137,6 @@ class GraphView(NavigationView):
         self.show_tag_color = self._config.get('interface.graphview-show-tags')
         self.highlight_home_person = self._config.get(
                                   'interface.graphview-highlight-home-person')
-        self.home_person_color = self._config.get(
-                                 'interface.graphview-home-person-color')
         self.home_path_color = self._config.get(
                                  'interface.graphview-home-path-color')
         self.descendant_generations = self._config.get(
@@ -328,18 +326,18 @@ class GraphView(NavigationView):
             self.highlight_home_person = False
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_home_person_color(self, client, cnxn_id, entry, data):
-        """
-        Called when the configuration menu changes the home person color.
-        """
-        self.home_person_color = entry
-        self.graph_widget.populate(self.get_active())
-
     def cb_update_home_path_color(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the path person color.
         """
         self.home_path_color = entry
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_family_color(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes family color.
+        """
+        self.family_color = entry
         self.graph_widget.populate(self.get_active())
 
     def cb_update_descendant_generations(self, client, cnxd_id, entry, data):
@@ -400,8 +398,6 @@ class GraphView(NavigationView):
                           self.cb_update_show_lines)
         self._config.connect('interface.graphview-highlight-home-person',
                           self.cb_update_highlight_home_person)
-        self._config.connect('interface.graphview-home-person-color',
-                          self.cb_update_home_person_color)
         self._config.connect('interface.graphview-home-path-color',
                           self.cb_update_home_path_color)
         self._config.connect('interface.graphview-descendant-generations',
@@ -447,15 +443,18 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                 _('Show places'),
                 3, 'interface.graphview-show-places')
+        configdialog.add_checkbox(grid,
+                _('Show tags'),
+                4, 'interface.graphview-show-tags')
         configdialog.add_spinner(grid,
                 _('Descendant generations'),
-                4, 'interface.graphview-descendant-generations', (0, 50))
+                5, 'interface.graphview-descendant-generations', (0, 50))
         configdialog.add_spinner(grid,
                 _('Ancestor generations'),
-                5, 'interface.graphview-ancestor-generations', (0, 50))
+                6, 'interface.graphview-ancestor-generations', (0, 50))
         configdialog.add_combo(grid,
                 _('Show lines'),
-                6, 'interface.graphview-show-lines',
+                7, 'interface.graphview-show-lines',
                 ((0, _('none')),
                  (1, _('curves')),
                  (2, _('ortho'))),
@@ -473,14 +472,8 @@ class GraphView(NavigationView):
         grid.set_row_spacing(6)
 
         configdialog.add_color(grid,
-                _('Home person color'),
-                0, 'interface.graphview-home-person-color')
-        configdialog.add_color(grid,
                 _('Path color'),
-                1, 'interface.graphview-home-path-color')
-        configdialog.add_checkbox(grid,
-                _('Show tags'),
-                2, 'interface.graphview-show-tags')
+                0, 'interface.graphview-home-path-color')
 
         return _('Colors'), grid
 
@@ -990,10 +983,9 @@ class GraphvizSvgParser(object):
         self.view = view
         self.highlight_home_person = self.view._config.get(
                                    'interface.graphview-highlight-home-person')
-        self.home_person_color = self.view._config.get(
-                                 'interface.graphview-home-person-color')
-        self.home_path_color = self.view._config.get(
-                                 'interface.graphview-home-path-color')
+        scheme = config.get('colors.scheme')
+        self.home_person_color = config.get('colors.home-person')[scheme]
+
         self.tlist = []
         self.text_attrs = None
         self.func_list = []
@@ -1297,13 +1289,17 @@ class GraphvizSvgParser(object):
             font_size = self.text_attrs.get('font-size')
             text_font = font_family + " " + font_size + 'px'
 
+        # text color
+        fill_color = self.text_attrs.get('fill')
+
         item = GooCanvas.CanvasText(parent = self.current_parent(),
                                     text = tag,
                                     x = pos_x,
                                     y = pos_y,
                                     anchor = self.text_anchor_map[anchor],
                                     use_markup = True,
-                                    font = text_font)
+                                    font = text_font,
+                                    fill_color = fill_color)
 
         # Retain the active person for other use elsewhere
         if self.handle == self.widget.active_person_handle:
@@ -1418,8 +1414,6 @@ class DotGenerator(object):
                                     'interface.graphview-show-places')
         self.show_tag_color = self.view._config.get(
                                     'interface.graphview-show-tags')
-        self.home_path_color = self.view._config.get(
-                                 'interface.graphview-home-path-color')
         spline = self.view._config.get(
                                     'interface.graphview-show-lines')
         self.spline = SPLINE.get(int(spline))
@@ -1428,16 +1422,32 @@ class DotGenerator(object):
         self.ancestor_generations = self.view._config.get(
                                     'interface.graphview-ancestor-generations')
 
+        # get background color from gtk theme and convert it to hex
+        # else use white background
+        bg_color = Gtk.StyleContext().lookup_color('theme_bg_color')
+        if bg_color[0]:
+            bg_rgb = (bg_color[1].red, bg_color[1].green, bg_color[1].blue)
+            bg_color = rgb_to_hex(bg_rgb)
+        else: bg_color = '#ffffff'
+
+        # get font color from gtk theme and convert it to hex
+        # else use black font
+        font_color = Gtk.StyleContext().lookup_color('theme_fg_color')
+        if font_color[0]:
+            fc_rgb = (font_color[1].red, font_color[1].green, font_color[1].blue)
+            font_color = rgb_to_hex(fc_rgb)
+        else: font_color = '#000000'
+
+        # get colors from config
+        home_path_color = self.view._config.get(
+                                   'interface.graphview-home-path-color')
+
+        # set of colors
         self.colors = {
-            'male_fill'      : '#b9cfe7',
-            'male_border'    : '#204a87',
-            'female_fill'    : '#ffcdf1',
-            'female_border'  : '#87206a',
-            'unknown_fill'   : '#f4dcb7',
-            'unknown_border' : '#000000',
-            'family_fill'    : '#ffffe0',
-            'family_border'  : '#000000',
-        }
+                        'link_color'             : font_color,
+                        'home_path_color'        : home_path_color,
+                      }
+
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
         self.current_list = list()
@@ -1460,9 +1470,9 @@ class DotGenerator(object):
 
         self.write( 'digraph GRAMPS_graph\n'        )
         self.write( '{\n'                           )
-        self.write( '  bgcolor=white;\n'            )
-        self.write( '  center="false"; \n'           )
-        self.write( '  charset="utf8";\n'     )
+        self.write( '  bgcolor="%s";\n'             % bg_color     )
+        self.write( '  center="false"; \n'          )
+        self.write( '  charset="utf8";\n'           )
         self.write( '  concentrate="false";\n'      )
         self.write( '  dpi="%d";\n'                 % dpi          )
         self.write( '  graph [fontsize=%d];\n'      % fontsize     )
@@ -1480,11 +1490,11 @@ class DotGenerator(object):
         self.write( '\n'                            )
         self.write( '  edge [style=solid fontsize=%d];\n' % fontsize )
         if fontfamily:
-            self.write( '  node [style=filled fontname="%s" fontsize=%d];\n'
-                            % ( fontfamily, fontsize ) )
+            self.write('node [style=filled fontname="%s" fontsize=%d fontcolor="%s"];\n'
+                            % ( fontfamily, fontsize, font_color ) )
         else:
-            self.write( '  node [style=filled fontsize=%d];\n'
-                            % fontsize )
+            self.write('node [style=filled fontsize=%d fontcolor="%s"];\n'
+                            % ( fontsize, font_color ) )
         self.write( '\n' )
 
     def build_graph(self, active_person):
@@ -1719,7 +1729,7 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(family.handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle,
-                      color=self.home_path_color,
+                      color=self.colors['home_path_color'],
                       bold=self.is_in_path_to_home(p_id) )
 
     def add_parent_link(self, p_id, parent_handle, rel):
@@ -1729,7 +1739,7 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle,
-                      color=self.home_path_color,
+                      color=self.colors['home_path_color'],
                       bold=self.is_in_path_to_home(p_id))
 
     def add_persons_and_families(self):
@@ -1774,8 +1784,7 @@ class DotGenerator(object):
             event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY ):
                 label = self.get_event_string(event)
                 break
-        color = ""
-        fill = self.colors['family_fill']
+        fill, color = color_graph_family(fam, self.dbstate)
         style = "filled"
         label=label.center(int(len(label)*2))
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
@@ -1793,14 +1802,14 @@ class DotGenerator(object):
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle,
-                          color=self.home_path_color,
+                          color=self.colors['home_path_color'],
                           bold=self.is_in_path_to_home(f_handle))
         if m_handle:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle,
-                          color=self.home_path_color,
+                          color=self.colors['home_path_color'],
                           bold=self.is_in_path_to_home(m_handle))
         self.end_subgraph()
 
@@ -1808,20 +1817,18 @@ class DotGenerator(object):
         "return gender specific person style"
         gender = person.get_gender()
         shape = "box"
-        style = "solid"
+        style = "solid, filled"
         color = ""
         fill = ""
 
-        style += ",filled"
-        if gender == person.MALE:
-            fill = self.colors['male_fill']
-            color = self.colors['male_border']
-        elif gender == person.FEMALE:
-            fill = self.colors['female_fill']
-            color = self.colors['female_border']
+        # get alive status of person to get box color
+        death_event = get_death_or_fallback(self.database, person)
+        if death_event:
+            alive = False
         else:
-            fill = self.colors['unknown_fill']
-            color = self.colors['unknown_border']
+            alive = True
+
+        fill, color = color_graph_box(alive, gender)
         return(shape, style, color, fill)
 
     def get_person_label(self, person):
@@ -1994,21 +2001,24 @@ class DotGenerator(object):
         if id1 in self.current_list:
             if id2 in self.current_list:
                 boldok = True
-        if style or head or tail or bold:
-            self.write(' [')
 
-            if style:
-                self.write(' style=%s' % style)
-            if head:
-                self.write(' arrowhead=%s' % head)
-            if tail:
-                self.write(' arrowtail=%s' % tail)
-            if bold and boldok:
-                self.write(' penwidth=%d' % 5)
-                if color:
-                    self.write(' color="%s"' % color)
+        self.write(' [')
 
-            self.write(' ]')
+        if style:
+            self.write(' style=%s' % style)
+        if head:
+            self.write(' arrowhead=%s' % head)
+        if tail:
+            self.write(' arrowtail=%s' % tail)
+        if bold and boldok:
+            self.write(' penwidth=%d' % 5)
+            if color:
+                self.write(' color="%s"' % color)
+        else:
+            # if not path to home than set default color of link
+            self.write(' color="%s"' % self.colors['link_color'])
+
+        self.write(' ]')
 
         self.write(';')
 
