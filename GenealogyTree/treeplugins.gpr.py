@@ -24,21 +24,21 @@
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id = 'ancestor_tree'
-plg.name  = _("Ancestor Tree")
-plg.description =  _("Ancestor tree using LaTeX genealogytree")
-plg.version = '1.0.0'
-plg.gramps_target_version = '5.0'
-plg.status = STABLE
-plg.fname = 'ancestor.py'
-plg.ptype = REPORT
-plg.authors = ["Nick Hall"]
-plg.authors_email = ["nick-h@gramps-project.org"]
-plg.category = CATEGORY_TREE
-plg.reportclass = 'AncestorTree'
-plg.optionclass = 'AncestorTreeOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+register(REPORT,
+         id = 'ancestor_tree',
+         name  = _("Ancestor Tree"),
+         description =  _("Ancestor tree using LaTeX genealogytree"),
+         version = '1.0.1',
+         gramps_target_version = '5.0',
+         status = STABLE,
+         fname = 'ancestor.py',
+         authors = ["Nick Hall"],
+         authors_email = ["nick-h@gramps-project.org"],
+         category = CATEGORY_TREE,
+         reportclass = 'AncestorTree',
+         optionclass = 'AncestorTreeOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+        )
 
 #------------------------------------------------------------------------
 #
@@ -46,21 +46,21 @@ plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id = 'descendant_tree'
-plg.name  = _("Descendant Tree")
-plg.description =  _("Descendant tree using LaTeX genealogytree")
-plg.version = '1.0.0'
-plg.gramps_target_version = '5.0'
-plg.status = STABLE
-plg.fname = 'descendant.py'
-plg.ptype = REPORT
-plg.authors = ["Nick Hall"]
-plg.authors_email = ["nick-h@gramps-project.org"]
-plg.category = CATEGORY_TREE
-plg.reportclass = 'DescendantTree'
-plg.optionclass = 'DescendantTreeOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+register(REPORT,
+         id = 'descendant_tree',
+         name  = _("Descendant Tree"),
+         description =  _("Descendant tree using LaTeX genealogytree"),
+         version = '1.0.1',
+         gramps_target_version = '5.0',
+         status = STABLE,
+         fname = 'descendant.py',
+         authors = ["Nick Hall"],
+         authors_email = ["nick-h@gramps-project.org"],
+         category = CATEGORY_TREE,
+         reportclass = 'DescendantTree',
+         optionclass = 'DescendantTreeOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+        )
 
 #------------------------------------------------------------------------
 #
@@ -68,21 +68,21 @@ plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id = 'grandparent_tree'
-plg.name  = _("Grandparent Tree")
-plg.description =  _("Grandparent tree using LaTeX genealogytree")
-plg.version = '1.0.0'
-plg.gramps_target_version = '5.0'
-plg.status = STABLE
-plg.fname = 'grandparent.py'
-plg.ptype = REPORT
-plg.authors = ["Nick Hall"]
-plg.authors_email = ["nick-h@gramps-project.org"]
-plg.category = CATEGORY_TREE
-plg.reportclass = 'GrandparentTree'
-plg.optionclass = 'GrandparentTreeOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+register(REPORT,
+         id = 'grandparent_tree',
+         name  = _("Grandparent Tree"),
+         description =  _("Grandparent tree using LaTeX genealogytree"),
+         version = '1.0.1',
+         gramps_target_version = '5.0',
+         status = STABLE,
+         fname = 'grandparent.py',
+         authors = ["Nick Hall"],
+         authors_email = ["nick-h@gramps-project.org"],
+         category = CATEGORY_TREE,
+         reportclass = 'GrandparentTree',
+         optionclass = 'GrandparentTreeOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+        )
 
 #------------------------------------------------------------------------
 #
@@ -90,18 +90,18 @@ plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id = 'sandclock_tree'
-plg.name  = _("Sandclock Tree")
-plg.description =  _("Sandclock tree using LaTeX genealogytree")
-plg.version = '1.0.0'
-plg.gramps_target_version = '5.0'
-plg.status = STABLE
-plg.fname = 'sandclock.py'
-plg.ptype = REPORT
-plg.authors = ["Nick Hall"]
-plg.authors_email = ["nick-h@gramps-project.org"]
-plg.category = CATEGORY_TREE
-plg.reportclass = 'SandclockTree'
-plg.optionclass = 'SandclockTreeOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+register(REPORT,
+         id = 'sandclock_tree',
+         name  = _("Sandclock Tree"),
+         description =  _("Sandclock tree using LaTeX genealogytree"),
+         version = '1.0.1',
+         gramps_target_version = '5.0',
+         status = STABLE,
+         fname = 'sandclock.py',
+         authors = ["Nick Hall"],
+         authors_email = ["nick-h@gramps-project.org"],
+         category = CATEGORY_TREE,
+         reportclass = 'SandclockTree',
+         optionclass = 'SandclockTreeOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+        )
