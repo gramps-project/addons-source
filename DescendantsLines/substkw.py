@@ -103,19 +103,18 @@ class EventFormat2(GenericFormat):
             """ start formatting a date in this event """
             date_format = DateFormat(self.string_in, self._locale)
             try:
-                date_format.parse_format(date_format.get_date(event))
+                return date_format.parse_format(date_format.get_date(event))
             except AttributeError:
                 return ''
-            return date_format.parse_format(date_format.get_date(event))
 
         def format_place():
             """ start formatting a place in this event """
-            # TO_FIX: bug 9562
-            #place_format = PlaceFormat(self, self.string_in)
-            #place = place_format.get_place(self.database, event)
-            #return place_format.parse_format(self.database, place)
-            place = place_displayer.display_event(self.database, event)
-            return place
+            place_format = PlaceFormat(self.database, self.string_in)
+            try:
+                place = place_format.get_place(self.database, event)
+                return place_format.parse_format(self.database, place)
+            except AttributeError:
+                return
 
         def format_attrib():
             """ Get the name and then get the attributes value """
@@ -251,7 +250,7 @@ class VariableParse2(object):
         """ sub to process a date
         Given an event, get the place object, process the format,
         return the result """
-        place_f = PlaceFormat(self._in)
+        place_f = PlaceFormat(self.database, self._in)
         place = place_f.get_place(self.database, event)
         if self.empty_item(place):
             return
