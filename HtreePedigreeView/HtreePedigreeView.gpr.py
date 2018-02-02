@@ -25,16 +25,16 @@
 
 #------------------------------------------------------------------------
 #
-# default views of Gramps
+# H-tree view for Gramps
 #
 #------------------------------------------------------------------------
 
 register(VIEW,
 id    = 'HtreePedigreeView',
 name  = _("H-Tree Pedigree"),
-category = ("Ancestry", _("Ancestry")),
+category = ("Ancestry", _("Charts")),
 description =  _("The view shows a space-efficient pedigree with ancestors of the selected person"),
-version = '0.0.13',
+version = '0.0.14',
 gramps_target_version = "5.0",
 status = STABLE,
 fname = 'HtreePedigreeView.py',

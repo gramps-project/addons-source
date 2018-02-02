@@ -6,6 +6,7 @@
 # Copyright (C) 2001-2007  Donald N. Allingham, Martin Hawlisch
 # Copyright (C) 2009       Yevgeny Zegzda <ezegjda@ya.ru>
 # Copyright (C) 2010       Nick Hall
+# Copyright (C) 2013       Pat Lefebre
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +22,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
+# H-tree Pedigree View by Pat Lefebre (Based on Pedigree view)
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -37,7 +38,6 @@ import pickle
 # GTK/Gnome modules
 #
 #-------------------------------------------------------------------------
-from gi.repository import GObject
 from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GdkPixbuf
@@ -92,7 +92,7 @@ class _PersonWidgetBase(Gtk.DrawingArea):
     """
 
     def __init__(self, view, format_helper, person):
-        GObject.GObject.__init__(self)
+        Gtk.DrawingArea.__init__(self)
         self.view = view
         self.format_helper = format_helper
         self.person = person
@@ -175,7 +175,7 @@ class _PersonWidgetBase(Gtk.DrawingArea):
 class PersonBoxWidgetCairo(_PersonWidgetBase):
     """Draw person box using cairo library"""
     def __init__(self, view, format_helper, dbstate, person, alive, maxlines,
-                image=None):
+                image=None, tags=False):
         _PersonWidgetBase.__init__(self, view, format_helper, person)
         self.set_size_request(120, 25)
         # Required for tooltip and mouse-over
@@ -194,6 +194,13 @@ class PersonBoxWidgetCairo(_PersonWidgetBase):
         else:
             gender = None
         self.bgcolor, self.bordercolor = color_graph_box(alive, gender)
+        if tags and person:
+            for tag_handle in person.get_tag_list():
+                # For the complete tag, don't modify the default color
+                # which is black (#000000000000)
+                tag = dbstate.db.get_tag_from_handle(tag_handle)
+                if tag.get_color() != "#000000000000": # only if the color
+                    self.bgcolor = tag.get_color()     # is not black
         self.bgcolor = hex_to_rgb_float(self.bgcolor)
         self.bordercolor = hex_to_rgb_float(self.bordercolor)
 
@@ -254,7 +261,11 @@ class PersonBoxWidgetCairo(_PersonWidgetBase):
         alh = self.get_allocated_height()
         if not self.textlayout:
             self.textlayout = PangoCairo.create_layout(context)
-            self.textlayout.set_font_description(self.get_style().font_desc)
+            # The following seems like it Should work, but it doesn't
+            # font_desc = self.get_style_context().get_property(
+            #     "font", Gtk.StateFlags.NORMAL)
+            font_desc = self.get_style_context().get_font(Gtk.StateFlags.NORMAL)
+            self.textlayout.set_font_description(font_desc)
             self.textlayout.set_markup(self.text, -1)
         size = self.textlayout.get_pixel_size()
         xmin = size[0] + 12
@@ -336,7 +347,7 @@ class LineWidget(Gtk.DrawingArea):
     Draw lines linking Person boxes - Types A and C.
     """
     def __init__(self, child, father, frel, mother, mrel, direction):
-        GObject.GObject.__init__(self)
+        Gtk.DrawingArea.__init__(self)
 
         self.child_box = child
         self.father_box = father
@@ -428,7 +439,7 @@ class LineWidget2(Gtk.DrawingArea):
     Draw lines linking Person boxes - Type B.
     """
     def __init__(self, male, rela, direction):
-        GObject.GObject.__init__(self)
+        Gtk.DrawingArea.__init__(self)
 
         self.male = male
         self.rela = rela
@@ -505,6 +516,7 @@ class HtreePedigreeView(NavigationView):
         ('interface.pedview-layout', 1),
         ('interface.pedview-show-images', True),
         ('interface.pedview-show-marriage', True),
+        ('interface.pedview-show-tags', False),
         ('interface.pedview-tree-direction', 2),
         ('interface.pedview-show-unknown-people', True),
         )
@@ -514,7 +526,7 @@ class HtreePedigreeView(NavigationView):
 
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        NavigationView.__init__(self, _('Pedigree'), pdata, dbstate, uistate,
+        NavigationView.__init__(self, _('H-tree Pedigree View'), pdata, dbstate, uistate,
                                 PersonBookmarks, nav_group)
 
         self.func_list.update({
@@ -550,6 +562,8 @@ class HtreePedigreeView(NavigationView):
         # Hide marriage data by default
         self.show_marriage_data = self._config.get(
                                 'interface.pedview-show-marriage')
+        # Show person with tag color
+        self.show_tag_color = self._config.get('interface.pedview-show-tags')
         # Tree draw direction
         self.tree_direction = self._config.get('interface.pedview-tree-direction')
         self.cb_change_scroll_direction(None, self.tree_direction < 2)
@@ -557,6 +571,20 @@ class HtreePedigreeView(NavigationView):
         # Default - not show, for mo fast display hight tree
         self.show_unknown_people = self._config.get(
                                 'interface.pedview-show-unknown-people')
+
+        self.func_list.update({
+            '<PRIMARY>J' : self.jump,
+            })
+
+    def get_handle_from_gramps_id(self, gid):
+        """
+        returns the handle of the specified object
+        """
+        obj = self.dbstate.db.get_person_from_gramps_id(gid)
+        if obj:
+            return obj.get_handle()
+        else:
+            return None
 
     def change_page(self):
         """Called when the page changes."""
@@ -692,6 +720,7 @@ class HtreePedigreeView(NavigationView):
         except AttributeError as msg:
             RunDatabaseRepair(str(msg),
                               parent=self.uistate.window)
+
     def _connect_db_signals(self):
         """
         Connect database signals.
@@ -778,7 +807,7 @@ class HtreePedigreeView(NavigationView):
         if self.tree_style == 1 and (
            self.force_size > 6 or self.force_size == 0):
             self.force_size = 6
-        ############ Replaced all tuples with H-tree tuples and added 6 gen level (by PL) ########
+        ############ Replaced all tuples with H-tree tuples and added 6 gen level (by Patsyblefebre) ########
         # A position definition is a tuple of nodes.
         # Each node consists of a tuple of:
         #     (person box rectangle, connection, marriage box rectangle)
@@ -994,7 +1023,8 @@ class HtreePedigreeView(NavigationView):
                 # No person -> show empty box
                 #
                 pbw = PersonBoxWidgetCairo(self, self.format_helper,
-                        self.dbstate, None, False, 0, None)
+                        self.dbstate, None, False, 0, None,
+                        tags=self.show_tag_color)
 
                 if i > 0 and lst[((i+1) // 2) - 1]:
                     fam_h = None
@@ -1017,7 +1047,8 @@ class HtreePedigreeView(NavigationView):
                     image = True
 
                 pbw = PersonBoxWidgetCairo(self, self.format_helper,
-                        self.dbstate, lst[i][0], lst[i][3], height, image)
+                        self.dbstate, lst[i][0], lst[i][3], height, image,
+                        tags=self.show_tag_color)
                 lst[i][4] = pbw
                 if height < 7:
                     pbw.set_tooltip_text(self.format_helper.format_person(
@@ -1050,7 +1081,7 @@ class HtreePedigreeView(NavigationView):
                     rela = lst[2*i+1][1]
                 line = LineWidget2(1, rela, self.tree_direction)
 
-                if lst[((i+1) // 2) - 1] and lst[((i+1) // 2) - 1][2]:
+                if lst[i] and lst[i][2]:
                     # Required for popup menu
                     line.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
                     line.connect("button-press-event",
@@ -1101,7 +1132,7 @@ class HtreePedigreeView(NavigationView):
                                       pbw, mrela,
                                       self.tree_direction)
 
-                    if lst[i] and lst[i][2]:
+                    if lst[((i+1) // 2) - 1] and lst[((i+1) // 2) - 1][2]:
                         # Required for popup menu
                         line.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
                         line.connect("button-press-event",
@@ -1656,9 +1687,9 @@ class HtreePedigreeView(NavigationView):
                 sp_id = family.get_mother_handle()
             else:
                 sp_id = family.get_father_handle()
-            if not sp_id:
-                continue
-            spouse = self.dbstate.db.get_person_from_handle(sp_id)
+            spouse = None
+            if sp_id:
+                spouse = self.dbstate.db.get_person_from_handle(sp_id)
             if not spouse:
                 continue
 
@@ -1667,6 +1698,7 @@ class HtreePedigreeView(NavigationView):
                 item.set_submenu(Gtk.Menu())
                 sp_menu = item.get_submenu()
                 sp_menu.set_reserve_toggle_size(False)
+
             sp_item = Gtk.MenuItem(label=name_displayer.display(spouse))
             linked_persons.append(sp_id)
             sp_item.connect("activate", self.cb_childmenu_changed, sp_id)
@@ -1763,7 +1795,9 @@ class HtreePedigreeView(NavigationView):
         no_parents = 1
         par_list = find_parents(self.dbstate.db, person)
         for par_id in par_list:
-            par = self.dbstate.db.get_person_from_handle(par_id)
+            par = None
+            if par_id:
+                par = self.dbstate.db.get_person_from_handle(par_id)
             if not par:
                 continue
 
@@ -1879,6 +1913,16 @@ class HtreePedigreeView(NavigationView):
         self.menu.popup(None, None, None, None, 0, event.time)
         return 1
 
+    def cb_update_show_tags(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the tags setting.
+        """
+        if entry == 'True':
+            self.show_tag_color = True
+        else:
+            self.show_tag_color = False
+        self.rebuild_trees(self.get_active())
+
     def cb_update_show_images(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the images setting.
@@ -1951,6 +1995,8 @@ class HtreePedigreeView(NavigationView):
                           self.cb_update_show_images)
         self._config.connect('interface.pedview-show-marriage',
                           self.cb_update_show_marriage)
+        self._config.connect('interface.pedview-show-tags',
+                          self.cb_update_show_tags)
         self._config.connect('interface.pedview-show-unknown-people',
                           self.cb_update_show_unknown_people)
         self._config.connect('interface.pedview-tree-direction',
@@ -1979,15 +2025,32 @@ class HtreePedigreeView(NavigationView):
         configdialog.add_checkbox(grid,
                 _('Show images'),
                 0, 'interface.pedview-show-images')
+        #configdialog.add_checkbox(grid,
+        #        _('Show marriage data'),
+        #        1, 'interface.pedview-show-marriage')
+        #configdialog.add_checkbox(grid,
+        #        _('Show unknown people'),
+        #        2, 'interface.pedview-show-unknown-people')
         configdialog.add_checkbox(grid,
-                _('Show marriage data'),
-                1, 'interface.pedview-show-marriage')
-        configdialog.add_checkbox(grid,
-                _('Show unknown people'),
-                2, 'interface.pedview-show-unknown-people')
+                _('Show tags'),
+                1, 'interface.pedview-show-tags')
+        #configdialog.add_combo(grid,
+        #        _('Tree style'),
+        #        4, 'interface.pedview-layout',
+        #        ((0, _('Standard')),
+        #        (1, _('Compact')),
+        #        (2, _('Expanded'))),
+        #        callback=self.cb_update_layout)
+        #configdialog.add_combo(grid,
+        #        _('Tree direction'),
+        #        5, 'interface.pedview-tree-direction',
+        #        ((0, _('Vertical (↓)')),
+        #        (1, _('Vertical (↑)')),
+        #        (2, _('Horizontal (→)')),
+        #        (3, _('Horizontal (←)'))))
         self.config_size_slider = configdialog.add_slider(grid,
                 _('Tree size'),
-                3, 'interface.pedview-tree-size',
+                2, 'interface.pedview-tree-size',
                 (2, 9), width=6)
 
         return _('Layout'), grid
