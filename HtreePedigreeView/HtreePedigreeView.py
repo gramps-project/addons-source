@@ -2051,6 +2051,6 @@ class HtreePedigreeView(NavigationView):
         self.config_size_slider = configdialog.add_slider(grid,
                 _('Tree size'),
                 2, 'interface.pedview-tree-size',
-                (2, 9), width=6)
+                (2, 6), width=10)
 
         return _('Layout'), grid
