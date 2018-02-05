@@ -52,6 +52,7 @@ import cairo
 from gramps.gen.lib import ChildRef, ChildRefType, Family
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.editors import FilterEditor
+from gramps.gui.display import display_url
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.file import media_path_full
@@ -77,6 +78,7 @@ _ = glocale.translation.sgettext
 #
 #-------------------------------------------------------------------------
 
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Addon:HtreePedigreeView'
 _PERSON = "p"
 _BORN = _('short for born|b.')
 _DIED = _('short for died|d.')
@@ -764,6 +766,10 @@ class HtreePedigreeView(NavigationView):
     def on_delete(self):
         self._config.save()
         NavigationView.on_delete(self)
+
+    def on_help_clicked(self, dummy):
+        """ Button: Display the relevant portion of Gramps manual"""
+        display_url(WIKI_PAGE)
 
     def goto_handle(self, handle=None):
         """
@@ -1619,6 +1625,18 @@ class HtreePedigreeView(NavigationView):
         scroll_direction_menu.append(entry)
 
         scroll_direction_menu.show()
+        item.show()
+        menu.append(item)
+
+        # Separator.
+        item = Gtk.SeparatorMenuItem()
+        item.show()
+        menu.append(item)
+
+        # Help menu entry
+        menu.append(item)
+        item = Gtk.MenuItem(label=_("About H-Tree"))
+        item.connect("activate", self.on_help_clicked)
         item.show()
         menu.append(item)
 
