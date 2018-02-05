@@ -44,14 +44,14 @@ if conditions_met:
         gramps_target_version = '4.2',
         include_in_listing = True,
     )
-elif locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
+else:
     from gramps.gen.config import config
     from gramps.gui.dialog import QuestionDialog2
     from gramps.gen.config import logging
     if not module1:
         warn_msg = _("NetworkChart Warning:  Python networkx module not found.")
         logging.log(logging.WARNING, warn_msg)
-    if not (module2 or module3 or module4 or module5 or module6):
+    if not (module2 or module3):
         warn_msg = _("NetworkChart Warning:  NetworkChart needs one of the following to work: \n"
                      "     Python module  pydotplus            OR\n"
                      "     Python module  pygraphviz           OR\n")
