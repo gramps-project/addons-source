@@ -1,0 +1,187 @@
+# Russian translations for Gramps GraphView addon.
+#
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2016-2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-27 15:59+0900\n"
+"PO-Revision-Date: 2018-01-31 18:52+0200\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: suomi\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:130
+msgid "Graph View"
+msgstr "Kaavionäkymä"
+
+#: GraphView/graphview.gpr.py:4
+msgid "Charts"
+msgstr "Kaaviot"
+
+#: GraphView/graphview.gpr.py:5
+msgid "Dynamic graph of relations"
+msgstr "Dynaaminen kaavio suhteista"
+
+#: GraphView/graphview.py:162
+msgid "_Print..."
+msgstr "_Tulosta..."
+
+#: GraphView/graphview.py:164
+msgid ""
+"Save the dot file for a later print.\n"
+"This will save a .gv file and a svg file.\n"
+"You must select a .gv file"
+msgstr ""
+"Tallenna pistetiedosto myöhempää tulostusta varten.\n"
+"Tallentaa .gv-tiedoston ja svg-tiedoston.\n"
+"Valitse .gv-tiedosto"
+
+#: GraphView/graphview.py:435
+msgid "Show images"
+msgstr "Näytä kuvat"
+
+#: GraphView/graphview.py:438
+msgid "Highlight the home person"
+msgstr "Korosta kotihenkilö"
+
+#: GraphView/graphview.py:441
+msgid "Show full dates"
+msgstr "Näytä täydelliset päivämäärät"
+
+#: GraphView/graphview.py:444
+msgid "Show places"
+msgstr "Näytä paikat"
+
+#: GraphView/graphview.py:447
+msgid "Show tags"
+msgstr "Näytä tagit"
+
+#: GraphView/graphview.py:450
+msgid "Descendant generations"
+msgstr "Jälkeläissukupolvien enimmäismäärä"
+
+#: GraphView/graphview.py:453
+msgid "Ancestor generations"
+msgstr "Esivanhempien sukupolvien enimmäismäärä"
+
+#: GraphView/graphview.py:456
+msgid "Show lines"
+msgstr "Näytä viivat"
+
+#: GraphView/graphview.py:458
+msgid "none"
+msgstr "ei mitään"
+
+#: GraphView/graphview.py:459
+msgid "curves"
+msgstr "käyrät"
+
+#: GraphView/graphview.py:460
+msgid "ortho"
+msgstr "suora"
+
+#: GraphView/graphview.py:463
+msgid "Layout"
+msgstr "Asetelma"
+
+#: GraphView/graphview.py:475
+msgid "Path color"
+msgstr "Polun väri"
+
+#: GraphView/graphview.py:478
+msgid "Colors"
+msgstr "Värit"
+
+#: GraphView/graphview.py:490
+msgid "Show animation"
+msgstr "Näytä animaatio"
+
+#: GraphView/graphview.py:493
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Animaationopeus (1..5 ja 5 on hitaampi)"
+
+#: GraphView/graphview.py:496
+msgid "Animation count (1..8)"
+msgstr "Animaation määrä (1..8)"
+
+#: GraphView/graphview.py:499
+msgid "Animation"
+msgstr "Animaatio"
+
+#: GraphView/graphview.py:520
+msgid "Select a dot file name"
+msgstr "Valitse pistetiedoston nimi"
+
+#: GraphView/graphview.py:522
+msgid "_Cancel"
+msgstr "_Peruuta"
+
+#: GraphView/graphview.py:523
+msgid "_Apply"
+msgstr "_Käytä"
+
+#: GraphView/graphview.py:537
+msgid "File already exists"
+msgstr "Tiedosto on jo olemassa"
+
+#: GraphView/graphview.py:538
+msgid "You can choose to either overwrite the file, or change the selected filename."
+msgstr "Voit joko ylikirjoittaa tiedoston tai vaihtaa valitun tiedoston nimen."
+
+#: GraphView/graphview.py:540
+msgid "_Overwrite"
+msgstr "_Ylikirjoita"
+
+#: GraphView/graphview.py:541
+msgid "_Change filename"
+msgstr "_Vaihda tiedoston nimeä"
+
+#: GraphView/graphview.py:557
+#, python-format
+msgid "Could not create %s"
+msgstr "Ei voitu luoda %s"
+
+#: GraphView/graphview.py:606
+msgid "Zoom in"
+msgstr "Suurentaa sivua"
+
+#: GraphView/graphview.py:613
+msgid "Zoom out"
+msgstr "Pienentää sivua"
+
+#: GraphView/graphview.py:620
+msgid "Zoom to original"
+msgstr "Alkuperäinen koko"
+
+#: GraphView/graphview.py:627
+msgid "Zoom to best fit"
+msgstr "Ikkunaan sopivaksi"
+
+#: GraphView/graphview.py:634
+msgid "Go to active person"
+msgstr "Siirry aktiivihenkilöön"
+
+#: GraphView/graphview.py:644
+msgid "Go to bookmark"
+msgstr "Siirry kirjanmerkkiin"
+
+#: GraphView/graphview.py:1921
+#, python-format
+msgid "b. %s"
+msgstr "s. %s"
+
+#: GraphView/graphview.py:1928
+#, python-format
+msgid "d. %s"
+msgstr "k. %s"
+
+#: GraphView/graphview.py:2100
+msgid "<b>Tags:</b>"
+msgstr "<b>Tagit:</b>"
