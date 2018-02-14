@@ -73,6 +73,8 @@ class GrandparentTree(Report):
         self.max_generations = menu.get_option_by_name('maxgen').get_value()
         self.shift = menu.get_option_by_name('shift').get_value()
         self.include_images = menu.get_option_by_name('images').get_value()
+        self.g1_handle = None
+        self.g2_handle = None
 
     def write_report(self):
         """
@@ -89,7 +91,8 @@ class GrandparentTree(Report):
                 handle1 = father.get_main_parents_family_handle()
                 if handle1:
                     family1 = self._db.get_family_from_handle(handle1)
-                    self.f1_handle = family1.get_father_handle()
+                    self.g1_handle = (family1.get_father_handle() or
+                                      family1.get_mother_handle())
 
             self.m_handle = family.get_mother_handle()
             if self.m_handle:
@@ -97,7 +100,12 @@ class GrandparentTree(Report):
                 handle2 = mother.get_main_parents_family_handle()
                 if handle2:
                     family2 = self._db.get_family_from_handle(handle2)
-                    self.f2_handle = family2.get_father_handle()
+                    self.g2_handle = (family2.get_father_handle() or
+                                      family2.get_mother_handle())
+
+        if self.g1_handle is None or self.g2_handle is None:
+            raise ReportError(_('Person %s does not have both a paternal '
+                                'and a maternal grandparent') % self._pid)
 
         if self.include_images:
             images = ('if image defined={'
@@ -119,7 +127,7 @@ class GrandparentTree(Report):
                    'id suffix=@a']
 
         self.doc.start_tree(options)
-        self.write_subgraph(0, 'child', [handle1], self.f1_handle)
+        self.write_subgraph(0, 'child', [handle1], self.g1_handle)
         self.doc.end_tree()
 
         link = 'set position=%s@b at %s@a' % (father.gramps_id,
@@ -132,16 +140,16 @@ class GrandparentTree(Report):
                    'id suffix=@b',
                    link]
         self.doc.start_tree(options)
-        self.write_subgraph(0, 'child', [handle2], self.f2_handle)
+        self.write_subgraph(0, 'child', [handle2], self.g2_handle)
         self.doc.end_tree()
 
     def write_subgraph(self, level, subgraph_type, family_handles, ghandle):
         if level >= self.max_generations:
             return
         family = self._db.get_family_from_handle(family_handles[0])
-        if ghandle == self.f1_handle:
+        if ghandle == self.g1_handle:
             options = ['pivot shift=%smm' % self.shift]
-        elif ghandle == self.f2_handle:
+        elif ghandle == self.g2_handle:
             options = ['pivot shift=%smm' % -self.shift]
         else:
             options = None
