@@ -32,22 +32,22 @@ GoogleEarth  kml or kmz file format.
 #-------------------------------------------------------------------------
 import os
 import codecs
+
+#-------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#-------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-
-#-------------------------------------------------------------------------
-#
-# GRAMPS modules
-#
-#-------------------------------------------------------------------------
 from gramps.gui.dialog import ErrorDialog, QuestionDialog2
 from gramps.plugins.lib.libmapservice import MapService
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gen.utils.file import search_for, conv_to_unicode
+from gramps.gen.utils.file import search_for
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.lib import PlaceType
 from gramps.gen.display.place import displayer as place_displayer
@@ -164,7 +164,7 @@ class GoogleEarthService(MapService):
 
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
-        home_dir = conv_to_unicode(home_dir) #get_unicode_path_from_env_var(home_dir)
+        home_dir = home_dir #get_unicode_path_from_env_var(home_dir)
         # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(
@@ -194,9 +194,9 @@ class GoogleEarthService(MapService):
         # Run GoogleEarth if on system, else keep created file
         if _GOOGLEEARTH_OK:
             if _ZIP_OK:
-                open_file_with_default_application(zip_filename)
+                open_file_with_default_application(zip_filename, self.uistate)
             else:
-                open_file_with_default_application(full_filename)
+                open_file_with_default_application(full_filename, self.uistate)
         # Remove the unzipped file.
         if _ZIP_OK:
             os.remove(full_filename)
