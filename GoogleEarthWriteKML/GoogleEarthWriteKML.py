@@ -32,6 +32,8 @@ GoogleEarth  kml or kmz file format.
 #-------------------------------------------------------------------------
 import os
 import codecs
+import logging
+LOG = logging.getLogger(".GoogleEarthWriteKML")
 
 #-------------------------------------------------------------------------
 #
@@ -224,6 +226,9 @@ class GoogleEarthService(MapService):
         for place, descr in self._all_places():
             latitude, longitude = self._lat_lon(place)
             if latitude == None or longitude == None:
+                location = get_main_location(self.database, place)
+                LOG.warning(" %s : Missing coordinates(latitude/longitude): \
+                             Skipping entry: " % (location))
                 continue
             if not descr:
                 descr = place_displayer.display(self.database, place)
