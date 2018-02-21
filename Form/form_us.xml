@@ -3107,7 +3107,7 @@
                    <_attribute>Months unemployed during census year</_attribute>
                </column>
                <column>
-                   <_attribute>(Day of the Enumerator’s visit) sick or temporarily disabled</_attribute>
+                   <_attribute>(Day of the Enumerator&apos;s visit) sick or temporarily disabled</_attribute>
                </column>
                <column>
                    <_attribute>Blind</_attribute>
@@ -6232,7 +6232,7 @@ North Dakota Census
                 <_attribute>Can Read</_attribute>
             </column>
             <column>
-                <_attribute>Can't Read</_attribute>
+                <_attribute>Can&apos;t Read</_attribute>
             </column>
             <column>
                 <_attribute>Can Write</_attribute>
