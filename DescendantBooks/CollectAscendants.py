@@ -305,11 +305,7 @@ class CollectAscendants():
         people = self.database.iter_person_handles()
 
         # Apply the preferred people filter
-        self.user.begin_progress(self.title, _('Applying Filter...'),
-            self.database.get_number_of_people())
-        people_handles = filter.apply(self.database, people,
-            self.user.step_progress)
-        self.user.end_progress()
+        people_handles = filter.apply(self.database, people, user=self.user)
 
         entire_database = False
 
