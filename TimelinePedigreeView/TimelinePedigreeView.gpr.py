@@ -27,6 +27,19 @@
 # default views of Gramps
 #
 #------------------------------------------------------------------------
+try:
+    from gi.repository import Gtk, GdkPixbuf
+    import os
+    from gramps.gen.const import USER_PLUGINS
+    fname = os.path.join(USER_PLUGINS, 'TimelinePedigreeView',
+                         'gramps-timelinepedigree.svg')
+    factory = Gtk.IconFactory()
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
+    iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
+    factory.add('gramps-timelinepedigree', iconset)
+    factory.add_default()
+except:
+    pass
 
 register(VIEW, 
 id    = 'TimelinePedigreeView',
@@ -40,4 +53,5 @@ fname = 'TimelinePedigreeView.py',
 authors = ["Felix Heß"],
 authors_email = ["xilef@nurfuerspam.de"],
 viewclass = 'TimelinePedigreeView',
+stock_icon = 'gramps-timelinepedigree',
   )
