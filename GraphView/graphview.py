@@ -1227,7 +1227,7 @@ class GraphvizSvgParser(object):
         if style:
             p_style = self.parse_style(style)
             stroke_color = p_style['stroke']
-            is_dashed = p_style.has_key('stroke-dasharray')
+            is_dashed = 'stroke-dasharray' in p_style
         else:
             stroke_color = attrs.get('stroke')
             if attrs.get('stroke-dasharray'):
