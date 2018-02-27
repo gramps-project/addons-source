@@ -27,7 +27,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.6
 """
 Family NetworkChart - Web Report plugin for GRAMPS
 
@@ -41,13 +40,11 @@ and networkx python module to calculate paths and trim trees.
 # python modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.utils.file import search_for
-from subprocess import Popen, PIPE
 from operator import itemgetter
 from datetime import datetime
 import configparser
 import itertools
-import os, copy
+import os
 import networkx as nx
 from networkx import dfs_edges
 # pydotplus is needed for nx_pydot
@@ -83,9 +80,6 @@ _ = _trans.gettext
 # gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.display.name import displayer as global_name_display
-from gramps.gen.constfunc import win
-from gramps.gen import datehandler
 from gramps.gen.lib.person import Person
 from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
                                   EnumeratedListOption, DestinationOption,
@@ -94,16 +88,8 @@ from gramps.gen.plug.menu import (ColorOption, NumberOption, PersonOption,
 from gramps.gen.config import config
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import stdoptions
 from gramps.gui.dialog import QuestionDialog2
-from gramps.gen.datehandler._datehandler import (LANG, LANG_SHORT,
-                                                 LANG_TO_DISPLAY)
-try:
-    if LANG in LANG_TO_DISPLAY:
-        _datedisplay = LANG_TO_DISPLAY[LANG](blocale=glocale)
-    else:
-        _datedisplay = LANG_TO_DISPLAY[LANG_SHORT](blocale=glocale)
-except:
-    _datedisplay = LANG_TO_DISPLAY["C"](blocale=glocale)
 
 # TODO
 # --- For Future Versions ---
@@ -136,6 +122,17 @@ class NetworkChartReport(Report):
         self.database = database
 
         menu = options.menu
+
+        self.set_locale(menu.get_option_by_name('trans').get_value())
+
+        stdoptions.run_date_format_option(self, menu)
+
+        stdoptions.run_name_format_option(self, menu)
+
+        self._born = self._("birth abbreviation|b.") + ' '
+        self._died = self._("death abbreviation|d.") + ' '
+        self._marr = self._("marriage abbreviation|m.") + ' '
+        self._unk = self._('Unknown')
 
         self.font_chart = menu.get_option_by_name('font_chart').get_value()
         self.rank_sep = menu.get_option_by_name('rank_sep').get_value()
@@ -195,14 +192,6 @@ class NetworkChartReport(Report):
                                                          file_ext % (self.destprefix))
         self.cancel = menu.cancel
 
-        self._name_display = copy.deepcopy(global_name_display)
-        name_format = menu.get_option_by_name("name_format").get_value()
-        if name_format != 0:
-            self._name_display.set_default_format(name_format)
-
-        date_format = menu.get_option_by_name("date_format").get_value()
-        _datedisplay.set_format(format=date_format)
-
     def get_network(self):
         """
         Get person, family, and child data to build network.
@@ -241,21 +230,21 @@ class NetworkChartReport(Report):
 
             if bday_ref:
                 h_event = self.database.get_event_from_handle(bday_ref.ref)
-                fmt_bdate = _datedisplay.display_formatted(h_event.get_date_object())
+                fmt_bdate = self._get_date(h_event.get_date_object())
                 if len(fmt_bdate.strip()) < 1:
-                    fmt_bdate = _('unk')
+                    fmt_bdate = self._unk
                 if fmt_bdate.strip() == '0000-00-00':
-                    fmt_bdate = _('unk')
+                    fmt_bdate = self._unk
                 if h_event.get_type().is_birth():
                     try:
                         if self.b_round_bday:
                             year = h_event.get_date_object().get_year()
                             if year > i_round_year:
-                                bday = _('b.')+str(year)
+                                bday = self._born + str(year)
                             else:
-                                bday = _('b.') + fmt_bdate
+                                bday = self._born + fmt_bdate
                         else:
-                            bday = _('b.') + fmt_bdate
+                            bday = self._born + fmt_bdate
                         if self.b_middle_names:
                             year = h_event.get_date_object().get_year()
                             if year > i_middle_names:
@@ -264,24 +253,24 @@ class NetworkChartReport(Report):
                                 name = (given_names[0] + ' '
                                         + p_person.get_primary_name().get_surname())
                     except NameError:
-                        bday = _('b.') + _('unk')
+                        bday = self._born + self._unk
             else:
-                bday = _('b.') + _('unk')
+                bday = self._born + self._unk
 
             if dday_ref:
                 h_event = self.database.get_event_from_handle(dday_ref.ref)
-                fmt_ddate = _datedisplay.display_formatted(h_event.get_date_object())
+                fmt_ddate = self._get_date(h_event.get_date_object())
                 if len(fmt_ddate.strip()) < 1:
-                    fmt_ddate = _('unk')
+                    fmt_ddate = self._unk
                 if fmt_ddate.strip() == '0000-00-00':
-                    fmt_ddate = _('unk')
+                    fmt_ddate = self._unk
                 if h_event.get_type().is_death():
                     try:
-                        dday = _('d.') + fmt_ddate
+                        dday = self._died + fmt_ddate
                     except NameError:
-                        dday = _('d.') + _('unk')
+                        dday = self._died + self._unk
             else:
-                dday = _('d.') + _('unk')
+                dday = self._died + self._unk
 
             gender = p_person.get_gender()
             person = person + [[person_gref, name, bday, dday, gender, p_privacy, p_url]]
@@ -313,29 +302,29 @@ class NetworkChartReport(Report):
             if len(h_events) > 0:
                 for handle in h_events:
                     i_event = self.database.get_event_from_handle(handle)
-                    fmt_mdate = _datedisplay.display_formatted(i_event.get_date_object())
+                    fmt_mdate = self._get_date(i_event.get_date_object())
                     if len(fmt_mdate.strip()) < 1:
-                        fmt_mdate = _('unk')
+                        fmt_mdate = self._unk
                     if fmt_mdate.strip() == '0000-00-00':
-                        fmt_mdate = _('unk')
+                        fmt_mdate = self._unk
                     if i_event.get_type().is_marriage():
                         try:
                             if self.b_round_marr:
                                 year = i_event.get_date_object().get_year()
                                 if year > i_round_marr:
-                                    marriage_date = _('m.')+str(year)
+                                    marriage_date = self._marr + str(year)
                                 else:
-                                    marriage_date = _('m.') + fmt_mdate
+                                    marriage_date = self._marr + fmt_mdate
                             else:
-                                marriage_date = _('m.') + fmt_mdate
+                                marriage_date = self._marr + fmt_mdate
                         except NameError:
-                            marriage_date = _('m.') + _('unk')
+                            marriage_date = self._marr + self._unk
                         edge_marriage = edge_marriage + [[family_gref,
                                                           father_gref,
                                                           mother_gref,
                                                           marriage_date]]
             else:
-                marriage_date = _('m.') + _('unk')
+                marriage_date = self._marr + self._unk
                 edge_marriage = edge_marriage + [[family_gref,
                                                   father_gref,
                                                   mother_gref,
@@ -830,21 +819,6 @@ class NetworkChartOptions(MenuReportOptions):
         """
         category_name = " " + _("Main") + " "
 
-        fmt_list = global_name_display.get_name_format()
-        name_format = EnumeratedListOption(_("Name format"), 2)
-        name_format.add_item(2, _("Default (Given Surname Suffix)"))
-        for entry in fmt_list:
-            name_format.add_item(entry[0], entry[1])
-        name_format.set_help(_("Select the format to display names"))
-        menu.add_option(category_name, "name_format", name_format)
-
-        dt_fmt_list = datehandler.get_date_formats()
-        date_format = EnumeratedListOption(_("Date format"), 0)
-        for index, entry in enumerate(dt_fmt_list):
-            date_format.add_item(index, entry)
-        date_format.set_help(_("Select the format to display dates"))
-        menu.add_option(category_name, "date_format", date_format)
-
         self.graph_splines = EnumeratedListOption(_("Graph Style"), "ortho")
         splines_options = ["ortho", "polyline", "spline"]
         s_graph_splines_names = [_("Orthogonal (right angles in connectors)"),
@@ -1106,6 +1080,8 @@ class NetworkChartOptions(MenuReportOptions):
 
         category_name = " " + _("Config") + " "
 
+        stdoptions.add_name_format_option(menu, category_name)
+
         self.s_dbname = StringOption(_("Database"), "")
         menu.add_option(category_name, "s_dbname", self.s_dbname)
         self.s_dbname.set_value(self._dbase.get_dbname())
@@ -1129,6 +1105,10 @@ class NetworkChartOptions(MenuReportOptions):
         self.b_confirm_overwrite = BooleanOption(_("Confirm overwrite file."), True)
         self.b_confirm_overwrite.set_help(_("Enable/disable confirmation of file overwrite."))
         menu.add_option(category_name, "b_confirm_overwrite", self.b_confirm_overwrite)
+
+        locale_opt = stdoptions.add_localization_option(menu, category_name)
+
+        stdoptions.add_date_format_option(menu, category_name, locale_opt)
 
     def cb_b_trim_groups(self):
         """

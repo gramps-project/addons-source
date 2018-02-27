@@ -17,7 +17,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-# version 0.0.6
 #-------------------------------------------------------------------------
 import importlib
 from gramps.gen.const import URL_WIKISTRING
