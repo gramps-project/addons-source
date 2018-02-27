@@ -726,7 +726,7 @@ class GraphWidget(object):
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale)
 
-        self.animation.update_items()
+        self.animation.update_items(parser.items_list)
 
         # scroll to active person without animation
         self.goto_active()
@@ -1007,6 +1007,9 @@ class GraphvizSvgParser(object):
         # which Goocanvas object to link the next object to.
         self.item_hier = []
 
+        # list of persons items, used for animation class
+        self.items_list = []
+
         # This dictionary maps various specific fonts to their generic font
         # types. Will need to include any truetype fonts here.
         self.font_family_map = {
@@ -1044,6 +1047,7 @@ class GraphvizSvgParser(object):
         # The class attribute defines the group type. There should be one
         # graph type <g> tag which defines the transform for the whole graph.
         if attrs.get('class') == 'graph':
+            self.items_list.clear()
             transform = attrs.get('transform')
             item = self.canvas.get_root_item()
             transform_list = transform.split(') ')
@@ -1063,6 +1067,8 @@ class GraphvizSvgParser(object):
         else:
             item = GooCanvas.CanvasGroup(parent=self.current_parent())
             item.connect("button-press-event", self.widget.select_node)
+            self.items_list.append(item)
+
         item.description = attrs.get('class')
         self.item_hier.append(item)
 
@@ -2140,7 +2146,7 @@ class CanvasAnimation(object):
         self.canvas = canvas
         self.hadjustment = scroll_window.get_hadjustment()
         self.vadjustment = scroll_window.get_vadjustment()
-        self.items_list = None
+        self.items_list = []
         self.in_motion = False
         self.max_count = self.view._config.get(
                                            'interface.graphview-animation-count')
@@ -2160,15 +2166,12 @@ class CanvasAnimation(object):
         self.counter = {}
         self.shake = {}
 
-        self.update_items()
+    def update_items(self, items_list):
+        """
+        Update list of items for current graph.
+        """
+        self.items_list = items_list
 
-    def update_items(self):
-        """
-        Get list of items from canvas.
-        """
-        root_item = self.canvas.get_root_item()
-        self.items_list = self.canvas.get_items_in_area(root_item.get_bounds(),
-                                                        True, True, True)
         # clear counters and shakes - items not exists anymore
         self.counter = {}
         self.shake = {}
@@ -2219,14 +2222,10 @@ class CanvasAnimation(object):
         """
         Find item by title.
         """
-        if handle and self.items_list:
+        if handle:
             for item in self.items_list:
-                # exclude items that don't have title
-                try:
-                    if item.title == handle:
-                        return item
-                except:
-                    pass
+                if item.title == handle:
+                    return item
         return None
 
     def move_to_person(self, handle, animated):
