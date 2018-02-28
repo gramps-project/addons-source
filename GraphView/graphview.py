@@ -451,7 +451,7 @@ class GraphView(NavigationView):
         configdialog.add_spinner(grid,
                             _('Descendant generations'),
                             5, 'interface.graphview-descendant-generations',
-                            (0, 50))
+                            (1, 50))
         configdialog.add_spinner(grid,
                             _('Ancestor generations'),
                             6, 'interface.graphview-ancestor-generations',
@@ -639,6 +639,23 @@ class GraphWidget(object):
         self.goto_other_btn.connect("changed", self.goto_other)
         hbox.pack_start(self.goto_other_btn, False, False, 1)
 
+        # add spinners for quick generations change
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        box.pack_start(Gtk.Label('↑'), False, False, 1)
+        self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
+        self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
+        self.ancestors_spinner.connect("value-changed",
+                                       self.set_ancestors_generations)
+        box.pack_start(self.ancestors_spinner, False, False, 1)
+
+        box.pack_start(Gtk.Label('↓'), False, False, 1)
+        self.descendants_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
+        self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
+        self.descendants_spinner.connect("value-changed",
+                                         self.set_descendants_generations)
+        box.pack_start(self.descendants_spinner, False, False, 1)
+        hbox.pack_start(box, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
         # if we have graph lager than graphviz paper size
         # this coef is needed
@@ -646,6 +663,22 @@ class GraphWidget(object):
         self.scale = 1
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
+
+    def set_ancestors_generations(self, widget):
+        """
+        Set count of ancestors generations to show.
+        """
+        value = int(widget.get_value())
+        self.view._config.set('interface.graphview-ancestor-generations',
+                              value)
+
+    def set_descendants_generations(self, widget):
+        """
+        Set count of descendants generations to show.
+        """
+        value = int(widget.get_value())
+        self.view._config.set('interface.graphview-descendant-generations',
+                              value)
 
     def load_bookmarks(self):
         """
@@ -733,6 +766,12 @@ class GraphWidget(object):
 
         # update the status bar
         self.view.change_page()
+
+        # update generations spinners
+        self.ancestors_spinner.set_value(
+           self.view._config.get('interface.graphview-ancestor-generations'))
+        self.descendants_spinner.set_value(
+           self.view._config.get('interface.graphview-descendant-generations'))
 
     def zoom_in(self, button=None):
         """
