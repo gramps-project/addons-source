@@ -134,7 +134,7 @@ class ClipboardGramplet(Gramplet):
             return
         i = 0
         while i < len(self.gui.data):
-            data = unescape(self.gui.data[i])
+            data = str(unescape(self.gui.data[i]))
             i += 1
             title = unescape(self.gui.data[i])
             i += 1
