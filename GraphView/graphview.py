@@ -116,7 +116,7 @@ class GraphView(NavigationView):
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
-        ('interface.graphview-ancestor-generations', 0),
+        ('interface.graphview-ancestor-generations', 3),
         ('interface.graphview-show-animation', True),
         ('interface.graphview-animation-speed', 3),
         ('interface.graphview-animation-count', 4),
@@ -1605,6 +1605,8 @@ class DotGenerator(object):
         # add all his(her) spouses recursively
         if spouse_handle:
             sp_person = self.database.get_person_from_handle(spouse_handle)
+        else:
+            sp_person = None
 
         if sp_person:
             for family_handle in sp_person.get_family_handle_list():
