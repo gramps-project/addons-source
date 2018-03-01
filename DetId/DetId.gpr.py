@@ -38,5 +38,6 @@ authors_email = ["paulr2787@gmail.com"],
 category = TOOL_UTILS,
 toolclass = 'DetId',
 optionclass = 'DetIdOptions',
+include_in_listing = False,
 tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
   )
