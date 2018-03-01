@@ -972,7 +972,7 @@ class GraphWidget(object):
                 menu_item.connect("activate", self.edit_person, handle)
                 menu.add(menu_item)
 
-                menu_item = Gtk.MenuItem(_('Add spouse'))
+                menu_item = Gtk.MenuItem(_('Add new partner'))
                 menu_item.connect("activate", self.add_spouse, handle)
                 menu.add(menu_item)
 
@@ -981,7 +981,10 @@ class GraphWidget(object):
                 menu.add(menu_item)
 
                 menu.show_all()
-                menu.popup(None, None, None, None, event.button, event.time)
+                # new from gtk 3.22:
+                # menu.popup_at_pointer(event)
+                menu.popup(None, None, None, None,
+                           event.get_button()[1], event.time)
 
         elif node_class == 'familynode':
             if handle:
