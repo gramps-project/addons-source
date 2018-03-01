@@ -81,7 +81,7 @@ try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
-_ = _trans.gettext
+_ = _trans.sgettext
 ngettext = _trans.ngettext  # else "nearby" comments are ignored
 
 LOG = logging.getLogger(".gui.plug")
