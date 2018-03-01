@@ -68,6 +68,7 @@ from gramps.gen.constfunc import win
 from gramps.gen.config import config
 from gramps.gui.dialog import OptionDialog, ErrorDialog
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
+from gramps.gen.lib import Person, Family
 
 if win():
     DETACHED_PROCESS = 8
@@ -866,13 +867,13 @@ class GraphWidget(object):
 
     def button_press(self, item, target, event):
         """
-        Enter in scroll mode when mouse button pressed in background
-        or call option menu.
+        Enter in scroll mode when left or middle mouse button pressed
+        on background.
         """
         button = event.get_button()[1]
         if (button == 1 or button == 2) \
-            and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
-            and item == self.canvas.get_root_item():
+           and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
+           and item == self.canvas.get_root_item():
 
                 window = self.canvas.get_parent().get_window()
                 window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
@@ -889,7 +890,7 @@ class GraphWidget(object):
         """
         button = event.get_button()[1]
         if (button == 1 or button == 2) \
-            and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
+           and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
 
                 self.motion_notify_event(item, target, event)
                 self.canvas.get_parent().get_window().set_cursor(None)
@@ -947,20 +948,63 @@ class GraphWidget(object):
 
             # redraw the graph based on the selected person
             self.view.change_active(handle)
-        elif button == 3 and node_class == 'node':          # right mouse
-            if handle:
-                self.edit_person(handle)
-        elif button == 3 and node_class == 'familynode':    # right mouse
-            if handle:
-                self.edit_family(handle)
+
+        elif button == 3 and node_class:                    # right mouse
+            self.node_menu(node_class, handle, event)
+
         elif button == 2:                                   # middle mouse
-            # try to enter in scroll mode (we should change "item")
+            # to enter in scroll mode (we should change "item")
             item = self.canvas.get_root_item()
             self.button_press(item, target, event)
 
         return True
 
-    def edit_person(self, handle):
+    def node_menu(self, node_class, handle, event):
+        """
+        Popup menu for node (person or family).
+        """
+        menu = Gtk.Menu()
+
+        if node_class == 'node':
+            if handle:
+                menu_item = Gtk.MenuItem(_('Edit'))
+                menu_item.connect("activate", self.edit_person, handle)
+                menu.add(menu_item)
+
+                menu_item = Gtk.MenuItem(_('Add spouse'))
+                menu_item.connect("activate",
+                                  self.add_spouse, handle)
+                menu.add(menu_item)
+
+                menu.show_all()
+                menu.popup(None, None, None, None, event.button, event.time)
+
+        elif node_class == 'familynode':
+            if handle:
+                self.edit_family(handle)
+
+    def add_spouse(self, widget, handle):
+        """
+        Add spouse to person (create new family to person).
+        See: gramps/plugins/view/relview.py (add_spouse)
+        """
+        family = Family()
+        person = self.dbstate.db.get_person_from_handle(handle)
+
+        if not person:
+            return
+
+        if person.gender == Person.MALE:
+            family.set_father_handle(person.handle)
+        else:
+            family.set_mother_handle(person.handle)
+
+        try:
+            EditFamily(self.dbstate, self.uistate, [], family)
+        except WindowActiveError:
+            pass
+
+    def edit_person(self, widget, handle):
         """
         Start a person editor for the selected person.
         """
