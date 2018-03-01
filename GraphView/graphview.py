@@ -665,6 +665,9 @@ class GraphWidget(object):
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
 
+        # person that will focus (once) after graph rebuilding
+        self.person_to_focus = None
+
     def set_ancestors_generations(self, widget):
         """
         Set count of ancestors generations to show.
@@ -762,8 +765,13 @@ class GraphWidget(object):
 
         self.animation.update_items(parser.items_list)
 
-        # scroll to active person without animation
-        self.goto_active()
+        if self.person_to_focus:
+            if not self.animation.move_to_person(self.person_to_focus, False):
+                self.goto_active()
+            self.person_to_focus = None
+        else:
+            # scroll to active person without animation
+            self.goto_active()
 
         # update the status bar
         self.view.change_page()
@@ -934,6 +942,8 @@ class GraphWidget(object):
         node_class = item.description
         button = event.get_button()[1]
 
+        self.person_to_focus = None
+
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
@@ -1019,6 +1029,8 @@ class GraphWidget(object):
             EditFamily(self.dbstate, self.uistate, [], family)
         except WindowActiveError:
             pass
+        # set edited person to scroll on it after rebuilding graph
+        self.person_to_focus = handle
 
     def edit_person(self, menuitem, handle):
         """
@@ -1029,6 +1041,8 @@ class GraphWidget(object):
             EditPerson(self.dbstate, self.uistate, [], person)
         except WindowActiveError:
             pass
+        # set edited person to scroll on it after rebuilding graph
+        self.person_to_focus = handle
 
     def edit_family(self, handle):
         """
@@ -1039,6 +1053,15 @@ class GraphWidget(object):
             EditFamily(self.dbstate, self.uistate, [], family)
         except WindowActiveError:
             pass
+
+        # set edited family person to scroll on it after rebuilding graph
+        f_handle = family.get_father_handle()
+        if f_handle:
+            self.person_to_focus = f_handle
+        else:
+            m_handle = family.get_mother_handle()
+            if m_handle:
+                self.person_to_focus = m_handle
 
     def find_a_parent(self, handle):
         """
@@ -2341,6 +2364,8 @@ class CanvasAnimation(object):
             x = (bounds.x2 - (bounds.x2-bounds.x1)/2)
             y = (bounds.y1 - (bounds.y1-bounds.y2)/2)
             self.move_to(item, (x, y), animated)
+            return True
+        return False
 
     def get_trace_to(self, destination):
         """
