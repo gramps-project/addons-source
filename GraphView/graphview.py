@@ -964,6 +964,7 @@ class GraphWidget(object):
         Popup menu for node (person or family).
         """
         menu = Gtk.Menu()
+        menu.set_reserve_toggle_size(False)
 
         if node_class == 'node':
             if handle:
@@ -972,8 +973,11 @@ class GraphWidget(object):
                 menu.add(menu_item)
 
                 menu_item = Gtk.MenuItem(_('Add spouse'))
-                menu_item.connect("activate",
-                                  self.add_spouse, handle)
+                menu_item.connect("activate", self.add_spouse, handle)
+                menu.add(menu_item)
+
+                menu_item = Gtk.MenuItem(_('Set as home person'))
+                menu_item.connect("activate", self.set_home_person, handle)
                 menu.add(menu_item)
 
                 menu.show_all()
@@ -983,7 +987,16 @@ class GraphWidget(object):
             if handle:
                 self.edit_family(handle)
 
-    def add_spouse(self, widget, handle):
+    def set_home_person(self, menuitem, handle):
+        """
+        Set the home person for database and make it active.
+        """
+        person = self.dbstate.db.get_person_from_handle(handle)
+        if person:
+            self.dbstate.db.set_default_person_handle(handle)
+            self.populate(handle)
+
+    def add_spouse(self, menuitem, handle):
         """
         Add spouse to person (create new family to person).
         See: gramps/plugins/view/relview.py (add_spouse)
@@ -1004,7 +1017,7 @@ class GraphWidget(object):
         except WindowActiveError:
             pass
 
-    def edit_person(self, widget, handle):
+    def edit_person(self, menuitem, handle):
         """
         Start a person editor for the selected person.
         """
