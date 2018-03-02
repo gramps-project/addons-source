@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-02 11:12+0200\n"
-"PO-Revision-Date: 2018-03-02 12:41+0200\n"
+"PO-Revision-Date: 2018-03-02 19:28+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr "Parannettu laajennusten hallinta"
 
 #: PluginManager.gpr.py:30
 msgid "An Addon/Plugin Manager with several additional capabilities"
-msgstr "Lisäosien/Laajennusten hallinta jolla on useita lisäominaisuuksia"
+msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
 
 #: PluginManager.py:90
 msgid "Plugin Manager - Enhanced"
@@ -36,7 +36,7 @@ msgstr "_Ohje"
 
 #: PluginManager.py:150
 msgid "Check for updated addons now"
-msgstr "Tarkista päivitetyt lisäosat nyt"
+msgstr "Tarkista päivitetyt laajennukset nyt"
 
 #: PluginManager.py:158
 msgid "Reload"
@@ -54,8 +54,8 @@ msgstr "Käynnistää uudelleen..."
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
-"Käynnistä Gramps uudelleen, jotta lisäosien muutokset voidaan turvallisesti "
-"suorittaa."
+"Käynnistä Gramps uudelleen, jotta laajennusten muutokset voidaan "
+"turvallisesti suorittaa."
 
 #: PluginManager.py:261
 msgid "Id"
@@ -115,7 +115,7 @@ msgstr "Asennusvirheet"
 
 #: PluginManager.py:368
 msgid "The following addons had errors: "
-msgstr "Seuraavissa lisäosissa oli virheitä: "
+msgstr "Seuraavissa laajennuksissa oli virheitä: "
 
 #: PluginManager.py:390
 msgid "Error"
@@ -174,7 +174,7 @@ msgstr "Näytä sisäänrakennetut kohteet"
 
 #: PluginManager.py:492
 msgid "* indicates 3rd party addon"
-msgstr "* ilmaisee 3. osapuolen lisäosat"
+msgstr "* ilmaisee 3. osapuolen laajennukset"
 
 #: PluginManager.py:497
 msgid "Plugins"
@@ -186,19 +186,19 @@ msgstr "Poista asennus"
 
 #: PluginManager.py:561
 msgid "Checking Addons Failed"
-msgstr "Lisäosien tarkistus epäonnistui"
+msgstr "Laajennusten tarkistus epäonnistui"
 
 #: PluginManager.py:562
 msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr "Lisäosahakemisto ei ole käytettävissä. Yritä uudelleen myöhemmin."
+msgstr "Laajennushakemisto ei ole käytettävissä. Yritä uudelleen myöhemmin."
 
 #: PluginManager.py:576
 msgid ""
 "3rd party addons are not shown until the addons update list is downloaded.  "
 "Would you like to check for updated addons now?"
 msgstr ""
-"Kolmannen osapuolen lisäosat eivät näy, ennen kuin lisäosien päivityslista "
-"on ladattu. Haluatko tarkistaa päivitetyt lisäosat nyt?"
+"Kolmannen osapuolen laajennukset eivät näy, ennen kuin lisäosien "
+"päivityslista on ladattu. Haluatko tarkistaa päivitetyt laajennukset nyt?"
 
 #: PluginManager.py:579
 msgid "Yes"
