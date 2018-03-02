@@ -69,6 +69,7 @@ from gramps.gen.config import config
 from gramps.gui.dialog import OptionDialog, ErrorDialog
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
 from gramps.gen.lib import Person, Family
+from gramps.gui.widgets.menuitem import add_menuitem
 
 if win():
     DETACHED_PROCESS = 8
@@ -979,19 +980,15 @@ class GraphWidget(object):
 
         if node_class == 'node':
             if handle:
-                menu_item = Gtk.MenuItem(_('Edit'))
-                menu_item.connect("activate", self.edit_person, handle)
-                menu.add(menu_item)
+                add_menuitem(menu, _('Edit'),
+                             handle, self.edit_person)
 
-                menu_item = Gtk.MenuItem(_('Add new partner'))
-                menu_item.connect("activate", self.add_spouse, handle)
-                menu.add(menu_item)
+                add_menuitem(menu, _('Add new partner'),
+                             handle, self.add_spouse)
 
-                menu_item = Gtk.MenuItem(_('Set as home person'))
-                menu_item.connect("activate", self.set_home_person, handle)
-                menu.add(menu_item)
+                add_menuitem(menu, _('Set as home person'),
+                             handle, self.set_home_person)
 
-                menu.show_all()
                 # new from gtk 3.22:
                 # menu.popup_at_pointer(event)
                 menu.popup(None, None, None, None,
@@ -1001,20 +998,22 @@ class GraphWidget(object):
             if handle:
                 self.edit_family(handle)
 
-    def set_home_person(self, menuitem, handle):
+    def set_home_person(self, obj):
         """
         Set the home person for database and make it active.
         """
+        handle = obj.get_data()
         person = self.dbstate.db.get_person_from_handle(handle)
         if person:
             self.dbstate.db.set_default_person_handle(handle)
             self.populate(handle)
 
-    def add_spouse(self, menuitem, handle):
+    def add_spouse(self, obj):
         """
         Add spouse to person (create new family to person).
         See: gramps/plugins/view/relview.py (add_spouse)
         """
+        handle = obj.get_data()
         family = Family()
         person = self.dbstate.db.get_person_from_handle(handle)
 
@@ -1033,10 +1032,11 @@ class GraphWidget(object):
         # set edited person to scroll on it after rebuilding graph
         self.person_to_focus = handle
 
-    def edit_person(self, menuitem, handle):
+    def edit_person(self, obj):
         """
         Start a person editor for the selected person.
         """
+        handle = obj.get_data()
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
             EditPerson(self.dbstate, self.uistate, [], person)
