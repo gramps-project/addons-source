@@ -169,6 +169,7 @@ class GraphView(NavigationView):
         """
         self.callman.add_db_signal('person-update', self.goto_handle)
         self.callman.add_db_signal('family-update', self.goto_handle)
+        self.callman.add_db_signal('event-update', self.goto_handle)
 
     def change_db(self, db):
         """
