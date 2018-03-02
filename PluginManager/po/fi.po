@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-02 11:12+0200\n"
+"PO-Revision-Date: 2018-03-02 12:41+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi_FI\n"
+
+#: PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Parannettu laajennusten hallinta"
+
+#: PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Lisäosien/Laajennusten hallinta jolla on useita lisäominaisuuksia"
+
+#: PluginManager.py:90
+msgid "Plugin Manager - Enhanced"
+msgstr "Laajennusten hallinta - parannettu"
+
+#: PluginManager.py:147
+msgid "_Help"
+msgstr "_Ohje"
+
+#: PluginManager.py:150
+msgid "Check for updated addons now"
+msgstr "Tarkista päivitetyt lisäosat nyt"
+
+#: PluginManager.py:158
+msgid "Reload"
+msgstr "Lataa uudelleen"
+
+#: PluginManager.py:160 PluginManager.py:683
+msgid "_Close"
+msgstr "_Sulje"
+
+#: PluginManager.py:184
+msgid "Restart..."
+msgstr "Käynnistää uudelleen..."
+
+#: PluginManager.py:185
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Käynnistä Gramps uudelleen, jotta lisäosien muutokset voidaan turvallisesti "
+"suorittaa."
+
+#: PluginManager.py:261
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager.py:262
+msgid "Plugin name"
+msgstr "Laajennuksen nimi"
+
+#: PluginManager.py:263 PluginManager.py:441
+msgid "Description"
+msgstr "Kuvaus"
+
+#: PluginManager.py:264
+msgid "Version"
+msgstr "Versio"
+
+#: PluginManager.py:265
+msgid "Authors"
+msgstr "Tekijät"
+
+#: PluginManager.py:266
+msgid "Email"
+msgstr "Sähköposti"
+
+#: PluginManager.py:267
+msgid "Filename"
+msgstr "Tiedostonimi"
+
+#: PluginManager.py:268
+msgid "Location"
+msgstr "Sijainti"
+
+#: PluginManager.py:273
+msgid "Loaded"
+msgstr "Ladattu"
+
+#: PluginManager.py:276
+msgid "Hidden"
+msgstr "Piilotettu"
+
+#: PluginManager.py:281 PluginManager.py:647
+msgid "Failed"
+msgstr "Epäonnistunut"
+
+#: PluginManager.py:305 PluginManager.py:458 PluginManager.py:534
+msgid "Hide"
+msgstr "Piilota"
+
+#: PluginManager.py:315 PluginManager.py:532
+msgid "Unhide"
+msgstr "Näytä"
+
+#: PluginManager.py:367
+msgid "Installation Errors"
+msgstr "Asennusvirheet"
+
+#: PluginManager.py:368
+msgid "The following addons had errors: "
+msgstr "Seuraavissa lisäosissa oli virheitä: "
+
+#: PluginManager.py:390
+msgid "Error"
+msgstr "Virhe"
+
+#: PluginManager.py:391
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Virhe poistettaessa '% s' -hakemistoa, asennuksen poisto voi olla "
+"epäonnistunut"
+
+#: PluginManager.py:413
+msgid "Type"
+msgstr "Tyyppi"
+
+#: PluginManager.py:422
+msgid "Status"
+msgstr "Tila"
+
+#: PluginManager.py:425
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' kohteita toimittavat 3. osapuolen kirjoittajat,\n"
+"<s>yliviivatut</s> kohteet on piilotettu"
+
+#: PluginManager.py:433
+msgid "Name"
+msgstr "Nimi"
+
+#: PluginManager.py:455
+msgid "Info"
+msgstr "Tiedot"
+
+#: PluginManager.py:461 PluginManager.py:548
+msgid "Install"
+msgstr "Asenna"
+
+#: PluginManager.py:464
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: PluginManager.py:466
+msgid "Load"
+msgstr "Lataa"
+
+#: PluginManager.py:477
+msgid "Show hidden items"
+msgstr "Näytä piilotetut kohteet"
+
+#: PluginManager.py:485
+msgid "Show Built-in items"
+msgstr "Näytä sisäänrakennetut kohteet"
+
+#: PluginManager.py:492
+msgid "* indicates 3rd party addon"
+msgstr "* ilmaisee 3. osapuolen lisäosat"
+
+#: PluginManager.py:497
+msgid "Plugins"
+msgstr "Laajennukset"
+
+#: PluginManager.py:551
+msgid "Uninstall"
+msgstr "Poista asennus"
+
+#: PluginManager.py:561
+msgid "Checking Addons Failed"
+msgstr "Lisäosien tarkistus epäonnistui"
+
+#: PluginManager.py:562
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "Lisäosahakemisto ei ole käytettävissä. Yritä uudelleen myöhemmin."
+
+#: PluginManager.py:576
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"Kolmannen osapuolen lisäosat eivät näy, ennen kuin lisäosien päivityslista "
+"on ladattu. Haluatko tarkistaa päivitetyt lisäosat nyt?"
+
+#: PluginManager.py:579
+msgid "Yes"
+msgstr "Kyllä"
+
+#: PluginManager.py:579
+msgid "No"
+msgstr "Ei"
+
+#: PluginManager.py:622
+msgid "*Available"
+msgstr "*Saatavissa"
+
+#: PluginManager.py:636
+msgid "Built-in"
+msgstr "Sisäänrakennettu"
+
+#: PluginManager.py:641
+msgid "*Installed"
+msgstr "*Asennettu"
+
+#: PluginManager.py:650
+msgid "Update Available"
+msgstr "Päivitys saatavilla"
+
+#: PluginManager.py:677
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager.py:677
+msgid "Detailed Info"
+msgstr "Lisätietoja"
+
+#: PluginManager.py:776
+msgid "Updated"
+msgstr "Päivitetty"
+
+#: PluginManager.py:787
+msgid "updates|New"
+msgstr "Uusi"
