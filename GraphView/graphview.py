@@ -975,23 +975,23 @@ class GraphWidget(object):
         """
         Popup menu for node (person or family).
         """
-        menu = Gtk.Menu()
-        menu.set_reserve_toggle_size(False)
+        self.menu = Gtk.Menu()
+        self.menu.set_reserve_toggle_size(False)
 
         if node_class == 'node':
             if handle:
-                add_menuitem(menu, _('Edit'),
+                add_menuitem(self.menu, _('Edit'),
                              handle, self.edit_person)
 
-                add_menuitem(menu, _('Add new partner'),
+                add_menuitem(self.menu, _('Add new partner'),
                              handle, self.add_spouse)
 
-                add_menuitem(menu, _('Set as home person'),
+                add_menuitem(self.menu, _('Set as home person'),
                              handle, self.set_home_person)
 
                 # new from gtk 3.22:
-                # menu.popup_at_pointer(event)
-                menu.popup(None, None, None, None,
+                # self.menu.popup_at_pointer(event)
+                self.menu.popup(None, None, None, None,
                            event.get_button()[1], event.time)
 
         elif node_class == 'familynode':
