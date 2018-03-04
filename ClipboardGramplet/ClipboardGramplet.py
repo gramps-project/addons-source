@@ -26,7 +26,7 @@
 #
 #-------------------------------------------------------------------------
 import pickle
-
+from binascii import hexlify, unhexlify
 #-------------------------------------------------------------------------
 #
 # Gramps modules
@@ -39,9 +39,8 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gen.plug import Gramplet
-from gramps.gui.ddtargets import DdTargets
 from gramps.gui.clipboard import (MultiTreeView, ClipboardListModel,
-                           ClipboardListView, ClipText)
+                                  ClipboardListView, ClipText)
 
 #-------------------------------------------------------------------------
 #
@@ -68,25 +67,6 @@ def unescape(data):
         data = data.replace("\\n", "\\x0a")
     return data
 
-#-------------------------------------------------------------------------
-#
-# ClipboardListView2 class
-#
-#-------------------------------------------------------------------------
-class ClipboardListView2(ClipboardListView):
-    """
-    Subclass ClipboardListView to override refresh_objects.
-    """
-    def refresh_objects(self, dummy=None):
-        def update_rows(model, path, iter, user_data):
-            """
-            Update the rows of a model.
-            """
-            model.row_changed(path, iter)
-        # force refresh of each row:
-        model = self._widget.get_model()
-        if model:
-            model.foreach(update_rows, None)
 
 #-------------------------------------------------------------------------
 #
@@ -98,7 +78,7 @@ class ClipboardGramplet(Gramplet):
     A clipboard-like gramplet.
     """
     def init(self):
-        self.object_list = ClipboardListView2(self.dbstate,
+        self.object_list = ClipboardListView(self.dbstate,
                  MultiTreeView(self.dbstate, self.uistate,
                  lambda: _("Clipboard Gramplet: %s") % self.gui.get_title()))
         self.otree = ClipboardListModel()
@@ -121,7 +101,7 @@ class ClipboardGramplet(Gramplet):
                         # pickled: type, timestamp, handle, value
                         data = o[1]._pickle
                     if not escape(o[1]._value) in self.gui.data:
-                        self.gui.data.append(escape(data))
+                        self.gui.data.append(hexlify(data).decode("ascii"))
                         self.gui.data.append(escape(o[1]._title))
                         self.gui.data.append(escape(o[1]._value))
                         self.gui.data.append(escape(o[1]._dbid))
@@ -129,60 +109,63 @@ class ClipboardGramplet(Gramplet):
             self.on_load()
 
     def on_load(self):
-        if len(self.gui.data) % 5 != 0:
+        try:
+            i = 0
+            while i < len(self.gui.data):
+                data = unhexlify(self.gui.data[i])
+                i += 1
+                title = unescape(self.gui.data[i])
+                i += 1
+                value = unescape(self.gui.data[i])
+                i += 1
+                dbid = unescape(self.gui.data[i])
+                i += 1
+                dbname = unescape(self.gui.data[i])
+                i += 1
+                try:
+                    # pickled bytes?
+                    tuple_data = pickle.loads(data)
+                    #data = eval(data)
+                except:
+                    tuple_data = ("TEXT", data)
+                drag_type = tuple_data[0]
+                # model = self.object_list._widget.get_model()
+                class Selection(object):
+                    def __init__(self, data):
+                        self.data = data
+                class Context(object):
+                    targets = [drag_type]
+                    action = 1
+                if self.dbstate.is_open():
+                    if drag_type == "TEXT":
+                        text = tuple_data[1]
+                        # it could be bytes
+                        if isinstance(text, bytes):
+                            text = str(text, "utf-8")
+                        self.object_list.object_drag_data_received(
+                            self.object_list._widget,  # widget
+                            Context(),        # drag type and action
+                            0, 0,             # x, y
+                            Selection(text),  # text
+                            None,             # info (not used)
+                            -1,               # time
+                            dbname=dbname, dbid=dbid)
+                    else:
+                        try:
+                            self.object_list.object_drag_data_received(
+                                self.object_list._widget,  # widget
+                                Context(),        # drag type and action
+                                0, 0,             # x, y
+                                Selection(data),  # pickled data
+                                None,             # info (not used)
+                                -1, title=title, value=value, dbid=dbid,
+                                dbname=dbname
+                                )  # time, data
+                        except:
+                            pass
+        except:
             print("Invalid Clipboard Gramplet data on load; skipping...")
             return
-        i = 0
-        while i < len(self.gui.data):
-            data = str(unescape(self.gui.data[i]))
-            i += 1
-            title = unescape(self.gui.data[i])
-            i += 1
-            value = unescape(self.gui.data[i])
-            i += 1
-            dbid = unescape(self.gui.data[i])
-            i += 1
-            dbname = unescape(self.gui.data[i])
-            i += 1
-            try:
-                # pickled bytes?
-                tuple_data = pickle.loads(eval(data))
-                data = eval(data)
-            except:
-                tuple_data = ("TEXT", data)
-            drag_type = tuple_data[0]
-            model = self.object_list._widget.get_model()
-            class Selection(object):
-                def __init__(self, data):
-                    self.data = data
-            class Context(object):
-                targets = [drag_type]
-                action = 1
-            if self.dbstate.is_open():
-                if drag_type == "TEXT":
-                    text = tuple_data[1]
-                    # it could be bytes
-                    if isinstance(text, bytes):
-                        text = str(text, "utf-8")
-                    o_list = self.object_list.object_drag_data_received(
-                        self.object_list._widget, # widget
-                        Context(),       # drag type and action
-                        0, 0,            # x, y
-                        Selection(text), # text
-                        None,            # info (not used)
-                        -1)              # time
-                else:
-                    try:
-                        o_list = self.object_list.object_drag_data_received(
-                            self.object_list._widget, # widget
-                            Context(),       # drag type and action
-                            0, 0,            # x, y
-                            Selection(data), # pickled data
-                            None,            # info (not used)
-                            -1, title=title, value=value, dbid=dbid,
-                            ) # time, data
-                    except:
-                        pass
         if not self.dbstate.is_open():
             self.save_data = self.gui.data
             self.gui.data = []
@@ -192,7 +175,7 @@ class ClipboardGramplet(Gramplet):
         if not self.dbstate.is_open():
             self.gui.data = self.save_data
         else:
-            self.gui.data = [] # clear out old data: data, title, value
+            self.gui.data = []  # clear out old data: data, title, value
         model = self.object_list._widget.get_model()
         if model:
             for o in model:
@@ -208,7 +191,7 @@ class ClipboardGramplet(Gramplet):
                     # pickled: type, timestamp, handle, value
                     data = o[1]._pickle
                 if not escape(o[1]._value) in self.gui.data:
-                    self.gui.data.append(escape(data))
+                    self.gui.data.append(hexlify(data).decode("ascii"))
                     self.gui.data.append(escape(o[1]._title))
                     self.gui.data.append(escape(o[1]._value))
                     self.gui.data.append(escape(o[1]._dbid))
