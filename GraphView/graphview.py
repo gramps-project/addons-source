@@ -451,17 +451,9 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                             _('Show tags'),
                             4, 'interface.graphview-show-tags')
-        configdialog.add_spinner(grid,
-                            _('Descendant generations'),
-                            5, 'interface.graphview-descendant-generations',
-                            (1, 50))
-        configdialog.add_spinner(grid,
-                            _('Ancestor generations'),
-                            6, 'interface.graphview-ancestor-generations',
-                            (0, 50))
         configdialog.add_combo(grid,
                             _('Show lines'),
-                            7, 'interface.graphview-show-lines',
+                            5, 'interface.graphview-show-lines',
                             ((0, _('none')),
                              (1, _('curves')),
                              (2, _('ortho'))),
@@ -647,6 +639,8 @@ class GraphWidget(object):
         box.pack_start(Gtk.Label('↑'), False, False, 1)
         self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
+        self.ancestors_spinner.set_value(
+             self.view._config.get('interface.graphview-ancestor-generations'))
         self.ancestors_spinner.connect("value-changed",
                                        self.set_ancestors_generations)
         box.pack_start(self.ancestors_spinner, False, False, 1)
@@ -654,6 +648,8 @@ class GraphWidget(object):
         box.pack_start(Gtk.Label('↓'), False, False, 1)
         self.descendants_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
+        self.descendants_spinner.set_value(
+           self.view._config.get('interface.graphview-descendant-generations'))
         self.descendants_spinner.connect("value-changed",
                                          self.set_descendants_generations)
         box.pack_start(self.descendants_spinner, False, False, 1)
@@ -777,12 +773,6 @@ class GraphWidget(object):
 
         # update the status bar
         self.view.change_page()
-
-        # update generations spinners
-        self.ancestors_spinner.set_value(
-           self.view._config.get('interface.graphview-ancestor-generations'))
-        self.descendants_spinner.set_value(
-           self.view._config.get('interface.graphview-descendant-generations'))
 
     def zoom_in(self, button=None):
         """
