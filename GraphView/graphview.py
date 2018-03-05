@@ -377,14 +377,6 @@ class GraphView(NavigationView):
         """
         self.graph_widget.animation.speed = 50*int(entry)
 
-    def cb_update_form(self, obj, constant):
-        """
-        Called when the configuration menu changes the lines type setting.
-        """
-        entry = obj.get_active()
-        self._config.set(constant, entry)
-        self.spline = SPLINE.get(int(entry))
-
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -451,13 +443,6 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                             _('Show tags'),
                             4, 'interface.graphview-show-tags')
-        configdialog.add_combo(grid,
-                            _('Show lines'),
-                            5, 'interface.graphview-show-lines',
-                            ((0, _('none')),
-                             (1, _('curves')),
-                             (2, _('ortho'))),
-                            callback=self.cb_update_form)
 
         return _('Layout'), grid
 
@@ -870,18 +855,24 @@ class GraphWidget(object):
         Enter in scroll mode when left or middle mouse button pressed
         on background.
         """
-        button = event.get_button()[1]
-        if (button == 1 or button == 2) \
-           and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
-           and item == self.canvas.get_root_item():
+        if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS")
+                and item == self.canvas.get_root_item()):
+                    return False
 
-                window = self.canvas.get_parent().get_window()
-                window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
-                self._last_x = event.x_root
-                self._last_y = event.y_root
-                self._in_move = True
-                self.animation.stop_animation()
-                return False
+        button = event.get_button()[1]
+        if button == 1 or button == 2:
+            window = self.canvas.get_parent().get_window()
+            window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
+            self._last_x = event.x_root
+            self._last_y = event.y_root
+            self._in_move = True
+            self.animation.stop_animation()
+            return False
+
+        if button == 3:
+            self.background_menu(event)
+            return True
+
         return False
 
     def button_release(self, item, target, event):
@@ -960,6 +951,50 @@ class GraphWidget(object):
             self.button_press(item, target, event)
 
         return True
+
+    def background_menu(self, event):
+        """
+        Popup menu on background.
+        """
+        self.menu = Gtk.Menu()
+        self.menu.set_reserve_toggle_size(False)
+
+        menu_item = Gtk.MenuItem(_('Lines type'))
+        menu_item.set_submenu(Gtk.Menu())
+        sub_menu = menu_item.get_submenu()
+
+        spline = self.view._config.get('interface.graphview-show-lines')
+
+        entry = Gtk.RadioMenuItem(label=_('Direct'))
+        entry.connect("activate", self.update_lines_type,
+                      0, 'interface.graphview-show-lines')
+        if spline == 0:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        entry = Gtk.RadioMenuItem(label=_('Curves'))
+        entry.connect("activate", self.update_lines_type,
+                      1, 'interface.graphview-show-lines')
+        if spline == 1:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        entry = Gtk.RadioMenuItem(label=_('Ortho'))
+        entry.connect("activate", self.update_lines_type,
+                      2, 'interface.graphview-show-lines')
+        if spline == 2:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        sub_menu.show()
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        self.menu.popup(None, None, None, None,
+                        event.get_button()[1], event.time)
 
     def node_menu(self, node_class, handle, event):
         """
@@ -1073,6 +1108,12 @@ class GraphWidget(object):
             handle = None
 
         return handle
+
+    def update_lines_type(self, menu_item, type, constant):
+        """
+        Save the lines type setting.
+        """
+        self.view._config.set(constant, type)
 
 #-------------------------------------------------------------------------
 #
