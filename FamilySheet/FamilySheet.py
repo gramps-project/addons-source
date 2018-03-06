@@ -184,7 +184,10 @@ class FamilySheet(Report):
             spouse_index += 1
 
             spouse_handle = utils.find_spouse(person, family)
-            spouse = self.database.get_person_from_handle(spouse_handle)
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+            else:
+                spouse = None
 
             # Determine relationship between the center person and the spouse.
             # If the spouse has a closer blood relationship than the current
