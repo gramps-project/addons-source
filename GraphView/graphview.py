@@ -1011,7 +1011,7 @@ class GraphWidget(object):
                              handle, self.edit_person)
 
                 add_menuitem(self.menu, _('Edit tags'),
-                             handle, self.edit_tag_list)
+                             [handle, 'person'], self.edit_tag_list)
 
                 add_menuitem(self.menu, _('Add new partner'),
                              handle, self.add_spouse)
@@ -1019,25 +1019,44 @@ class GraphWidget(object):
                 add_menuitem(self.menu, _('Set as home person'),
                              handle, self.set_home_person)
 
-                # new from gtk 3.22:
-                # self.menu.popup_at_pointer(event)
-                self.menu.popup(None, None, None, None,
-                                event.get_button()[1], event.time)
-
         elif node_class == 'familynode':
             if handle:
-                self.edit_family(handle)
+                add_menuitem(self.menu, _('Edit'),
+                             handle, self.edit_family)
+
+                add_menuitem(self.menu, _('Edit tags'),
+                             [handle, 'family'], self.edit_tag_list)
+        else:
+            return False
+
+        # new from gtk 3.22:
+        # self.menu.popup_at_pointer(event)
+        self.menu.popup(None, None, None, None,
+                        event.get_button()[1], event.time)
 
     def edit_tag_list(self, obj):
         """
-        Edit tag list for node.
+        Edit tag list for person or family.
         """
-        handle = obj.get_data()
+        handle, type = obj.get_data()
+        if type == 'person':
+            target = self.dbstate.db.get_person_from_handle(handle)
+            self.person_to_focus = handle
+        elif type == 'family':
+            target = self.dbstate.db.get_family_from_handle(handle)
+            f_handle = target.get_father_handle()
+            if f_handle:
+                self.person_to_focus = f_handle
+            else:
+                m_handle = target.get_mother_handle()
+                if m_handle:
+                    self.person_to_focus = m_handle
+        else:
+            return False
 
-        person = self.dbstate.db.get_person_from_handle(handle)
-        if person:
+        if target:
             tag_list = []
-            for tag_handle in person.get_tag_list():
+            for tag_handle in target.get_tag_list():
                 tag = self.dbstate.db.get_tag_from_handle(tag_handle)
                 if tag:
                     tag_list.append((tag_handle, tag.get_name()))
@@ -1051,8 +1070,7 @@ class GraphWidget(object):
                 editor = EditTagList(tag_list, all_tags, self.uistate, [])
                 if editor.return_list is not None:
                     tag_list = editor.return_list
-                    # save tags to person
-                    view = self.uistate.viewmanager.active_page
+                    # Save tags to target object.
                     # Make the dialog modal so that the user can't start
                     # another database transaction while the one setting
                     # tags is still running.
@@ -1064,11 +1082,17 @@ class GraphWidget(object):
                                                       total_steps=1,
                                                       interval=1 // 20)
                     pmon.add_op(status)
-                    person.set_tag_list([item[0] for item in tag_list])
-                    msg = _('Adding Tags to person (%s)') % handle
-                    with DbTxn(msg, self.dbstate.db) as trans:
-                        self.dbstate.db.commit_person(person, trans)
-                        status.heartbeat()
+                    target.set_tag_list([item[0] for item in tag_list])
+                    if type == 'person':
+                        msg = _('Adding Tags to person (%s)') % handle
+                        with DbTxn(msg, self.dbstate.db) as trans:
+                            self.dbstate.db.commit_person(target, trans)
+                            status.heartbeat()
+                    else:
+                        msg = _('Adding Tags to family (%s)') % handle
+                        with DbTxn(msg, self.dbstate.db) as trans:
+                            self.dbstate.db.commit_family(target, trans)
+                            status.heartbeat()
                     status.end()
             except WindowActiveError:
                 pass
@@ -1120,10 +1144,11 @@ class GraphWidget(object):
         # set edited person to scroll on it after rebuilding graph
         self.person_to_focus = handle
 
-    def edit_family(self, handle):
+    def edit_family(self, obj):
         """
         Start a family editor for the selected family.
         """
+        handle = obj.get_data()
         family = self.dbstate.db.get_family_from_handle(handle)
         try:
             EditFamily(self.dbstate, self.uistate, [], family)
