@@ -53,6 +53,7 @@ from math import sqrt, pow
 # Gramps Modules
 #
 #-------------------------------------------------------------------------
+from gramps.gen.db import DbTxn
 import gramps.gen.lib
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
@@ -60,7 +61,7 @@ from gramps.gen.display.name import displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.file import search_for, media_path_full, find_file
-from gramps.gui.editors import EditPerson, EditFamily
+from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
@@ -70,6 +71,7 @@ from gramps.gui.dialog import OptionDialog, ErrorDialog
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
 from gramps.gen.lib import Person, Family
 from gramps.gui.widgets.menuitem import add_menuitem
+import gramps.gui.widgets.progressdialog as progressdlg
 
 if win():
     DETACHED_PROCESS = 8
@@ -1008,6 +1010,9 @@ class GraphWidget(object):
                 add_menuitem(self.menu, _('Edit'),
                              handle, self.edit_person)
 
+                add_menuitem(self.menu, _('Edit tags'),
+                             handle, self.edit_tag_list)
+
                 add_menuitem(self.menu, _('Add new partner'),
                              handle, self.add_spouse)
 
@@ -1017,11 +1022,56 @@ class GraphWidget(object):
                 # new from gtk 3.22:
                 # self.menu.popup_at_pointer(event)
                 self.menu.popup(None, None, None, None,
-                           event.get_button()[1], event.time)
+                                event.get_button()[1], event.time)
 
         elif node_class == 'familynode':
             if handle:
                 self.edit_family(handle)
+
+    def edit_tag_list(self, obj):
+        """
+        Edit tag list for node.
+        """
+        handle = obj.get_data()
+
+        person = self.dbstate.db.get_person_from_handle(handle)
+        if person:
+            tag_list = []
+            for tag_handle in person.get_tag_list():
+                tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                if tag:
+                    tag_list.append((tag_handle, tag.get_name()))
+
+            all_tags = []
+            for tag_handle in self.dbstate.db.get_tag_handles(sort_handles=True):
+                tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                all_tags.append((tag.get_handle(), tag.get_name()))
+
+            try:
+                editor = EditTagList(tag_list, all_tags, self.uistate, [])
+                if editor.return_list is not None:
+                    tag_list = editor.return_list
+                    # save tags to person
+                    view = self.uistate.viewmanager.active_page
+                    # Make the dialog modal so that the user can't start
+                    # another database transaction while the one setting
+                    # tags is still running.
+                    pmon = progressdlg.ProgressMonitor(
+                              progressdlg.GtkProgressDialog,
+                              ("", self.uistate.window, Gtk.DialogFlags.MODAL),
+                              popup_time=2)
+                    status = progressdlg.LongOpStatus(msg=_("Adding Tags"),
+                                                      total_steps=1,
+                                                      interval=1 // 20)
+                    pmon.add_op(status)
+                    person.set_tag_list([item[0] for item in tag_list])
+                    msg = _('Adding Tags to person (%s)') % handle
+                    with DbTxn(msg, self.dbstate.db) as trans:
+                        self.dbstate.db.commit_person(person, trans)
+                        status.heartbeat()
+                    status.end()
+            except WindowActiveError:
+                pass
 
     def set_home_person(self, obj):
         """
