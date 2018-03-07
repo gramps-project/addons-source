@@ -60,7 +60,7 @@ from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
-                                 find_children, find_parents,
+                                 find_children, find_parents, preset_name,
                                  find_witnessed_people)
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.file import search_for, media_path_full, find_file
@@ -72,7 +72,7 @@ from gramps.gen.constfunc import win
 from gramps.gen.config import config
 from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
-from gramps.gen.lib import Person, Family, ChildRef
+from gramps.gen.lib import Person, Family, ChildRef, Name, Surname
 from gramps.gui.widgets.menuitem import add_menuitem
 import gramps.gui.widgets.progressdialog as progressdlg
 from gramps.gen.utils.libformatting import FormattingHelper
@@ -1087,9 +1087,6 @@ class GraphWidget(object):
                 menu_separator.show()
                 self.menu.append(menu_separator)
 
-                # collect all spouses, parents and children
-                linked_persons = []
-
                 # go over spouses and build their menu
                 item = Gtk.MenuItem(label=_("Spouses"))
                 item.set_submenu(Gtk.Menu())
@@ -1112,7 +1109,6 @@ class GraphWidget(object):
                         continue
 
                     sp_item = Gtk.MenuItem(label=displayer.display(spouse))
-                    linked_persons.append(sp_id)
                     sp_item.connect("activate", self.move_to_person,
                                     sp_id, True)
                     sp_item.show()
@@ -1121,7 +1117,7 @@ class GraphWidget(object):
                 item.show()
                 self.menu.append(item)
 
-                # Go over siblings and build their menu
+                # go over siblings and build their menu
                 item = Gtk.MenuItem(label=_("Siblings"))
                 pfam_list = person.get_parent_family_handle_list()
                 siblings = []
@@ -1134,7 +1130,7 @@ class GraphWidget(object):
                         if sib_id == person.get_handle():
                             continue
                         siblings.append(sib_id)
-                    # Collect a list of per-step-family step-siblings
+                    # collect a list of per-step-family step-siblings
                     for parent_h in [fam.get_father_handle(),
                                      fam.get_mother_handle()]:
                         if not parent_h:
@@ -1154,7 +1150,7 @@ class GraphWidget(object):
                             if fam_stepsiblings:
                                 step_siblings.append(fam_stepsiblings)
 
-                # Add siblings sub-menu with a bar between each siblings group
+                # add siblings sub-menu with a bar between each siblings group
                 if siblings or step_siblings:
                     item.set_submenu(Gtk.Menu())
                     sib_menu = item.get_submenu()
@@ -1177,7 +1173,6 @@ class GraphWidget(object):
                             label.show()
                             label.set_alignment(0, 0)
                             sib_item.add(label)
-                            linked_persons.append(sib_id)
                             sib_item.connect("activate",
                                              self.move_to_person, sib_id, True)
                             sib_item.show()
@@ -1191,42 +1186,7 @@ class GraphWidget(object):
                 item.show()
                 self.menu.append(item)
 
-                # Go over children and build their menu
-                item = Gtk.MenuItem(label=_("Children"))
-                item.set_submenu(Gtk.Menu())
-                child_menu = item.get_submenu()
-                child_menu.set_reserve_toggle_size(False)
-                no_children = 1
-                childlist = find_children(self.dbstate.db, person)
-                for child_handle in childlist:
-                    child = self.dbstate.db.get_person_from_handle(child_handle)
-                    if not child:
-                        continue
-
-                    if no_children:
-                        no_children = 0
-
-                    if find_children(self.dbstate.db, child):
-                        label = Gtk.Label(label='<b><i>%s</i></b>'
-                                          % escape(displayer.display(child)))
-                    else:
-                        label = Gtk.Label(label=escape(displayer.display(child)))
-
-                    child_item = Gtk.MenuItem()
-                    label.set_use_markup(True)
-                    label.show()
-                    label.set_halign(Gtk.Align.START)
-                    child_item.add(label)
-                    linked_persons.append(child_handle)
-                    child_item.connect("activate", self.move_to_person,
-                                       child_handle, True)
-                    child_item.show()
-                    child_menu.append(child_item)
-
-                if no_children:
-                    item.set_sensitive(0)
-                item.show()
-                self.menu.append(item)
+                self.add_childen_submenu(self.menu, person)
 
                 # Go over parents and build their menu
                 item = Gtk.MenuItem(label=_("Parents"))
@@ -1256,7 +1216,6 @@ class GraphWidget(object):
                     label.show()
                     label.set_halign(Gtk.Align.START)
                     par_item.add(label)
-                    linked_persons.append(par_id)
                     par_item.connect("activate", self.move_to_person,
                                      par_id, True)
                     par_item.show()
@@ -1273,9 +1232,6 @@ class GraphWidget(object):
                 item = Gtk.MenuItem(label=_("Related"))
                 no_related = 1
                 for p_id in find_witnessed_people(self.dbstate.db, person):
-                    # if p_id in linked_persons:
-                    #    continue    # skip already listed family members
-
                     per = self.dbstate.db.get_person_from_handle(p_id)
                     if not per:
                         continue
@@ -1311,12 +1267,14 @@ class GraphWidget(object):
                              handle, self.set_home_person)
 
         elif node_class == 'familynode':
-            if handle:
+            family = self.dbstate.db.get_family_from_handle(handle)
+            if handle and family:
                 add_menuitem(self.menu, _('Edit'),
                              handle, self.edit_family)
 
                 add_menuitem(self.menu, _('Edit tags'),
                              [handle, 'family'], self.edit_tag_list)
+                self.add_childen_submenu(self.menu, None, family)
         else:
             return False
 
@@ -1324,6 +1282,93 @@ class GraphWidget(object):
         # self.menu.popup_at_pointer(event)
         self.menu.popup(None, None, None, None,
                         event.get_button()[1], event.time)
+
+    def add_childen_submenu(self, menu, person, family=None):
+        """
+        Go over children and build their menu.
+        """
+        item = Gtk.MenuItem(label=_("Children"))
+        item.set_submenu(Gtk.Menu())
+        child_menu = item.get_submenu()
+        child_menu.set_reserve_toggle_size(False)
+
+        if family:
+            childlist = []
+            for child_ref in family.get_child_ref_list():
+                childlist.append(child_ref.ref)
+            # allow to add a child to this family
+            add_child_item = Gtk.MenuItem()
+            add_child_item.set_label(_("Add child to family"))
+            add_child_item.connect("activate", self.add_child_to_family,
+                                   family.get_handle())
+            add_child_item.show()
+            child_menu.append(add_child_item)
+        else:
+            childlist = find_children(self.dbstate.db, person)
+
+        for child_handle in childlist:
+            child = self.dbstate.db.get_person_from_handle(child_handle)
+            if not child:
+                continue
+
+            if find_children(self.dbstate.db, child):
+                label = Gtk.Label(label='<b><i>%s</i></b>'
+                                  % escape(displayer.display(child)))
+            else:
+                label = Gtk.Label(label=escape(displayer.display(child)))
+
+            child_item = Gtk.MenuItem()
+            label.set_use_markup(True)
+            label.show()
+            label.set_halign(Gtk.Align.START)
+            child_item.add(label)
+            child_item.connect("activate", self.move_to_person,
+                               child_handle, True)
+            child_item.show()
+            child_menu.append(child_item)
+
+        item.show()
+        menu.append(item)
+
+    def add_child_to_family(self, obj, family_handle):
+        """
+        Open edit to add child to family.
+        """
+        callback = lambda x: self.callback_add_child(x, family_handle)
+        person = Person()
+        name = Name()
+        #the editor requires a surname
+        name.add_surname(Surname())
+        name.set_primary_surname(0)
+        family = self.dbstate.db.get_family_from_handle(family_handle)
+        father = self.dbstate.db.get_person_from_handle(
+                                    family.get_father_handle())
+        if father:
+            preset_name(father, name)
+        person.set_primary_name(name)
+        try:
+            EditPerson(self.dbstate, self.uistate, [], person,
+                       callback=callback)
+        except WindowActiveError:
+            pass
+
+    def callback_add_child(self, person, family_handle):
+        """
+        Write data to db.
+        Callback from self.add_child_to_family().
+        """
+        ref = ChildRef()
+        ref.ref = person.get_handle()
+        family = self.dbstate.db.get_family_from_handle(family_handle)
+        family.add_child_ref(ref)
+
+        with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
+            #add parentref to child
+            person.add_parent_family_handle(family_handle)
+            #default relationship is used
+            self.dbstate.db.commit_person(person, trans)
+            #add child to family
+            self.dbstate.db.commit_family(family, trans)
 
     def add_parents_to_person(self, obj):
 
