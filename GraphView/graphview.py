@@ -70,7 +70,7 @@ import gramps.gen.datehandler
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
-from gramps.gui.dialog import OptionDialog, ErrorDialog
+from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
 from gramps.gen.lib import Person, Family, ChildRef
 from gramps.gui.widgets.menuitem import add_menuitem
@@ -272,13 +272,12 @@ class GraphView(NavigationView):
         else:
             self.dirty = True
 
-    def change_active_person(self, menuitem=None, handle=''):
+    def change_active_person(self, menuitem=None, person_handle=''):
         """
         Change active person.
-        :param handle: person handle
         """
-        if handle:
-            self.change_active(handle)
+        if person_handle:
+            self.change_active(person_handle)
 
     def can_configure(self):
         """
@@ -730,9 +729,23 @@ class GraphWidget(object):
     def move_to_person(self, menuitem, handle, animate=False):
         """
         Move to specified person (by handle).
-        If person not present in the current graphview tree, ignore it.
+        If person not present in the current graphview tree,
+        show dialog to change active person.
         """
-        self.animation.move_to_person(handle, animate)
+        if self.animation.get_item_by_title(handle):
+            self.animation.move_to_person(handle, animate)
+        else:
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if not person:
+                return False
+            question = ('Person <b><i>%s</i></b> is not in the current view.\n'
+                        'Do you want to set it active and rebuild view?'
+                        % escape(displayer.display(person)))
+            dialog = QuestionDialog2("Change active person?", question,
+                                     "Yes", "No",
+                                     self.uistate.window,)
+            if dialog.run():
+                self.view.change_active(handle)
 
     def scroll_mouse(self, canvas, event):
         """
