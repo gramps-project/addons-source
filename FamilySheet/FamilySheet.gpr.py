@@ -12,6 +12,6 @@ register(REPORT,
     category = CATEGORY_TEXT,
     reportclass = 'FamilySheet',
     optionclass = 'FamilySheetOptions',
-    report_modes = [REPORT_MODE_GUI],
+    report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI, REPORT_MODE_BKI],
     require_active = True
     )

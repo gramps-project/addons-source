@@ -33,7 +33,7 @@ import string
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer
@@ -816,8 +816,15 @@ class FamilySheetOptions(MenuReportOptions):
     RECURSE_ALL = 2
 
     def __init__(self, name, dbase):
+        self.__db = dbase
+        self.__pid = None
         MenuReportOptions.__init__(self, name, dbase)
 
+    def get_subject(self):
+        """ Return a string that describes the subject of the report. """
+        gid = self.__pid.get_value()
+        person = self.__db.get_person_from_gramps_id(gid)
+        return displayer.display(person)
 
     def add_menu_options(self, menu):
 
@@ -825,15 +832,17 @@ class FamilySheetOptions(MenuReportOptions):
         category_name = _("Report Options")
         ##########################
 
-        pid = PersonOption(_("Center person"))
-        pid.set_help(_("The person whose partners and children are printed"))
-        menu.add_option(category_name, "pid", pid)
+        self.__pid = PersonOption(_("Center person"))
+        self.__pid.set_help(
+            _("The person whose partners and children are printed"))
+        menu.add_option(category_name, "pid", self.__pid)
 
         recurse = EnumeratedListOption(_("Print sheets for"), self.RECURSE_NONE)
         recurse.set_items([
             (self.RECURSE_NONE, _("Center person only")),
             (self.RECURSE_SIDE, _("Center person and descendants in side branches")),
             (self.RECURSE_ALL,  _("Center person and all descendants"))])
+        recurse.set_help(_("Whether to include descendants, and which ones."))
         menu.add_option(category_name, "recurse", recurse)
 
         callname = EnumeratedListOption(_("Use call name"), _Name_CALLNAME_DONTUSE)
@@ -841,15 +850,20 @@ class FamilySheetOptions(MenuReportOptions):
             (_Name_CALLNAME_DONTUSE, _("Don't use call name")),
             (_Name_CALLNAME_REPLACE, _("Replace first name with call name")),
             (_Name_CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
+        callname.set_help(_("Whether to include call name, and how."))
         menu.add_option(category_name, "callname", callname)
 
         placeholder = BooleanOption( _("Print placeholders for missing information"), True)
+        placeholder.set_help(
+            _("Whether to include fields for missing information."))
         menu.add_option(category_name, "placeholder", placeholder)
 
         incl_sources = BooleanOption( _("Include sources"), True)
+        incl_sources.set_help(_("Whether to include source references."))
         menu.add_option(category_name, "incl_sources", incl_sources)
 
         incl_notes = BooleanOption( _("Include notes"), True)
+        incl_notes.set_help(_("Whether to include notes."))
         menu.add_option(category_name, "incl_notes", incl_notes)
 
 
