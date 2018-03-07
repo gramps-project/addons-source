@@ -2729,6 +2729,7 @@ class CanvasAnimation(object):
         # for each item that in shake procedure
         self.counter = {}
         self.shake = {}
+        self.in_shake = []
 
     def update_items(self, items_list):
         """
@@ -2736,9 +2737,15 @@ class CanvasAnimation(object):
         """
         self.items_list = items_list
 
+        for item in self.in_shake:
+            try:
+                item.disconnect_by_func(self.stop_shake_animation)
+            except:
+                pass
+        self.in_shake.clear()
         # clear counters and shakes - items not exists anymore
-        self.counter = {}
-        self.shake = {}
+        self.counter.clear()
+        self.shake.clear()
 
     def stop_animation(self):
         """
@@ -2756,7 +2763,9 @@ class CanvasAnimation(object):
         Processing of 'animation-finished' signal.
         Stop or keep shaking item depending on counter for item.
         """
-        if (self.counter[item.title] < self.max_count) and (not stoped):
+        counter = self.counter.get(item.title)
+        shake = self.shake.get(item.title)
+        if (not stoped) and counter and shake and counter < self.max_count:
             self.shake[item.title] = (-1)*self.shake[item.title]
             self.counter[item.title] += 1
             item.animate(0, self.shake[item.title], 1, 0, False,
@@ -2785,6 +2794,7 @@ class CanvasAnimation(object):
         """
         if item:
             if not self.counter.get(item.title):
+                self.in_shake.append(item)
                 self.counter[item.title] = 1
                 self.shake[item.title] = 10
                 item.connect('animation-finished', self.stop_shake_animation)
