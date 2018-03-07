@@ -670,6 +670,9 @@ class GraphWidget(object):
 
         self.format_helper = FormattingHelper(self.dbstate)
 
+        # for detecting double click
+        self.click_events = []
+
     def set_ancestors_generations(self, widget):
         """
         Set count of ancestors generations to show.
@@ -956,6 +959,20 @@ class GraphWidget(object):
 
         self.person_to_focus = None
 
+        # perfom double click on node by left mouse button
+        if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
+            # Remove all single click events
+            for item in self.click_events:
+                if not item.is_destroyed():
+                    GLib.source_remove(item.get_id())
+            self.click_events.clear()
+            if button == 1 and node_class == 'node':
+                GLib.idle_add(self.edit_person, None, handle)
+                return True
+            elif button == 1 and node_class == 'familynode':
+                GLib.idle_add(self.edit_family, None, handle)
+                return True
+
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
@@ -969,7 +986,12 @@ class GraphWidget(object):
                     handle = parent_handle
 
             # redraw the graph based on the selected person
-            self.view.change_active(handle)
+            # schedule after because double click can occur
+            click_event_id = GLib.timeout_add(200, self.view.change_active,
+                                              handle)
+            # add single click events to list, it will removed if necessary
+            context = GLib.main_context_default()
+            self.click_events.append(context.find_source_by_id(click_event_id))
 
         elif button == 3 and node_class:                    # right mouse
             self.node_menu(node_class, handle, event)
@@ -1415,11 +1437,18 @@ class GraphWidget(object):
         # set edited person to scroll on it after rebuilding graph
         self.person_to_focus = handle
 
-    def edit_person(self, obj):
+    def edit_person(self, obj, person_handle=None):
         """
         Start a person editor for the selected person.
         """
-        handle = obj.get_data()
+        if not (obj or person_handle):
+            return False
+
+        if person_handle:
+            handle = person_handle
+        else:
+            handle = obj.get_data()
+
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
             EditPerson(self.dbstate, self.uistate, [], person)
@@ -1428,11 +1457,18 @@ class GraphWidget(object):
         # set edited person to scroll on it after rebuilding graph
         self.person_to_focus = handle
 
-    def edit_family(self, obj):
+    def edit_family(self, obj, family_handle=None):
         """
         Start a family editor for the selected family.
         """
-        handle = obj.get_data()
+        if not (obj or family_handle):
+            return False
+
+        if family_handle:
+            handle = family_handle
+        else:
+            handle = obj.get_data()
+
         family = self.dbstate.db.get_family_from_handle(handle)
         try:
             EditFamily(self.dbstate, self.uistate, [], family)
