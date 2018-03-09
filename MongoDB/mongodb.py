@@ -126,7 +126,7 @@ class MongoDB(DbGeneric):
         We use the existence of the person collection as a proxy for the
         database being new.
         """
-        return "person" in self.db.list_collection_names()
+        return "person" in self.db.collection_names()
 
     def _create_schema(self):
         """
