@@ -96,7 +96,7 @@ class MongoDB(DbGeneric):
             name_file = os.path.join(directory, 'name.txt')
             with open(name_file, 'r', encoding='utf8') as file:
                 dbname = file.readline().strip()
-            config_mgr.set('database.dbname', dbname)
+            config_mgr.set('database.dbname', dbname.replace(' ', '_'))
             config_mgr.set('database.host', config.get('database.host'))
             config_mgr.set('database.port', config.get('database.port'))
             config_mgr.save()
