@@ -6,7 +6,7 @@
 
 register(GRAMPLET,
          id="Clipboard Gramplet",
-         name=_("Clipboard Gramplet"),
+         name=_("Collections Clipboard Gramplet"),
          description = _("Gramplet for grouping items"),
          status = STABLE,
          version = '1.0.31',
