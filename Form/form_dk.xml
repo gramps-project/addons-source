@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+	<form id='DK1787' type='Census' title='1787 Denmark Census' date='1787-07-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <_longname>Titel, Embed, Forretning, Håndværk</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1801' type='Census' title='1801 Denmark Census' date='1801-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <_longname>Stilling, embede eller erhverv</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1834' type='Census' title='1834 Denmark Census' date='1834-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1840' type='Census' title='1840 Denmark Census' date='1840-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1845' type='Census' title='1845 Denmark Census' date='1845-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+   </form>
+	<form id='DK1850' type='Census' title='1850 Denmark Census' date='1850-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1855' type='Census' title='1855 Denmark Census' date='1855-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <_longname>Erhverv</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1860' type='Census' title='1860 Denmark Census' date='1860-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <_longname>Erhverv</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1865' type='Census' title='1865 Denmark Census' date='1865-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1870' type='Census' title='1870 Denmark Census' date='1870-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Place</_attribute>
+                <_longname>Sted</_longname>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1870' type='Census' title='1870 Denmark Census' date='1870-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Place</_attribute>
+                <_longname>Sted</_longname>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1880' type='Census' title='1880 Denmark Census' date='1880-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1890' type='Census' title='1890 Denmark Census' date='1890-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <_longname>Alder</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1901' type='Census' title='1901 Denmark Census' date='1901-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Years at current residence</_attribute>
+                <_longname>År tilflyttet</_longname>
+                <size>4</size>
+            </column>
+	    <column>
+                <_attribute>Previous residence</_attribute>
+                <_longname>Tilflyttet fra</_longname>
+                <size>16</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Year married</_attribute>
+                <_longname>År gift</_longname>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Children Living</_attribute>
+                <_longname>Levende børn</_longname>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Children Dead</_attribute>
+                <_longname>Døde børn</_longname>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1906' type='Census' title='1906 Denmark Census' date='1906-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Køn</_attribute>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>Gift</_longname>
+                <size>1</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+	    <column>
+                <_attribute>Years at current residence</_attribute>
+                <_longname>År tilflyttet</_longname>
+                <size>4</size>
+            </column>
+	    <column>
+                <_attribute>Previous residence</_attribute>
+                <_longname>Tilflyttet fra</_longname>
+                <size>16</size>
+            </column>
+	    <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkninger</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1911' type='Census' title='1911 Denmark Census' date='1911-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Religion</_attribute>
+                <_longname>Trossamfund</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Year stayed in parish</_attribute>
+                <_longname>Hvilket aar taget ophold i sognet</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Previous Residence</_attribute>
+                <_longname>Sidste bopæl inden tilflytning</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1916' type='Census' title='1916 Denmark Census' date='1916-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkning</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Income</_attribute>
+                <_longname>Indkomst</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Assets</_attribute>
+                <_longname>Formue</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>State Tax</_attribute>
+                <_longname>Statsskat</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Council</_attribute>
+                <_longname>Kommuneskat</_longname>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1921' type='Census' title='1921 Denmark Census' date='1921-02-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>10</size>
+            </column>
+	    <column>
+                <_attribute>Years at current residence</_attribute>
+                <_longname>År tilflyttet</_longname>
+                <size>4</size>
+            </column>
+	    <column>
+                <_attribute>Previous residence</_attribute>
+                <_longname>Tilflyttet fra</_longname>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkning</_longname>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1925' type='Census' title='1925 Denmark Census' date='1925-11-05'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Residence on 5 Nov 1924</_attribute>
+                <_longname>Bopæl 5 nov 1924</_longname>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Comments</_attribute>
+                <_longname>Bemærkning</_longname>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1930' type='Census' title='1930 Denmark Census' date='1930-11-01'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_longname>Stay on 5 Nov 1929</_longname>
+                <_attribute>Ophold 5 nov 1929</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+	<form id='DK1940' type='Census' title='1940 Denmark Census' date='1940-11-05'>
+        <heading>
+            <_attribute>County</_attribute>
+            <_longname>Amt</_longname>
+        </heading>
+        <heading>
+            <_attribute>Town or City</_attribute>
+            <_longname>Herred eller By</_longname>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+            <_longname>Sogn</_longname>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+            <_longname>Gade</_longname>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>Fødselsdato</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <_longname>Fødested</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Date Married</_attribute>
+                <_longname>Dato gift</_longname>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <_longname>Stilling i familien</_longname>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <_longname>Arbejdssted</_longname>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+</forms>
