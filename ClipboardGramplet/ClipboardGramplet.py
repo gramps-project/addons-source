@@ -75,7 +75,7 @@ def unescape(data):
 #-------------------------------------------------------------------------
 class ClipboardGramplet(Gramplet):
     """
-    A clipboard-like gramplet.
+    A clipboard-like gramplet, that support group collections for data entry
     """
     def init(self):
         self.object_list = ClipboardListView(self.dbstate,
@@ -164,7 +164,7 @@ class ClipboardGramplet(Gramplet):
                         except:
                             pass
         except:
-            print("Invalid Clipboard Gramplet data on load; skipping...")
+            print("Invalid Collections Clipboard Gramplet data on load; skipping...")
             return
         if not self.dbstate.is_open():
             self.save_data = self.gui.data
