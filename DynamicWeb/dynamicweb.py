@@ -1499,6 +1499,12 @@ class DynamicWebReport(Report):
           - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)
           - change_time: last record modification date
         '''
+        if DWR_VERSION_500:
+            fmt = config.get('preferences.place-format')
+            pf = _pd.get_formats()[fmt]
+            pref_lang = pf.language
+        else:
+            pref_lang = config.get('preferences.place-lang')
         jdatas = []
         place_list = list(self.obj_dict[Place])
         place_list.sort(key = lambda x: self.obj_dict[Place][x][OBJDICT_INDEX])
@@ -1518,7 +1524,6 @@ class DynamicWebReport(Report):
                 jdata['type'] = ''
             jdata['names'] = []
             if DWR_VERSION_410:
-                pref_lang = config.get('preferences.place-lang')
                 for pn in place.get_all_names():
                     lang = pn.get_language()
                     if lang != '' and pref_lang!= '' and lang != pref_lang: continue
@@ -2368,20 +2373,21 @@ class DynamicWebReport(Report):
         sw.write("STATISTICS_CHART_OPACITY = 70;\n")
         sw.write("GRAMPS_PREFERENCES = [];\n")
         for pref in [
-            'bordercolor-gender-female-alive',
-            'bordercolor-gender-female-death',
-            'bordercolor-gender-male-alive',
-            'bordercolor-gender-male-death',
-            'bordercolor-gender-unknown-alive',
-            'bordercolor-gender-unknown-death',
-            'color-gender-female-alive',
-            'color-gender-female-death',
-            'color-gender-male-alive',
-            'color-gender-male-death',
-            'color-gender-unknown-alive',
-            'color-gender-unknown-death',
+            'border-female-alive',
+            'border-female-dead',
+            'border-male-alive',
+            'border-male-dead',
+            'border-unknown-alive',
+            'border-unknown-dead',
+            'female-alive',
+            'female-dead',
+            'male-alive',
+            'male-dead',
+            'unknown-alive',
+            'unknown-dead',
             ]:
-            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, config.get('preferences.%s' % pref)))
+            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" %
+                     (pref, config.get('colors.%s' % pref)))
         sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
             [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
             + "];\n")
