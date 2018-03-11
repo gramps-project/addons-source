@@ -469,7 +469,7 @@ class GraphView(NavigationView):
         grid.set_row_spacing(6)
 
         configdialog.add_color(grid,
-                               _('Path color'),
+                               _('Path color to home person'),
                                0, 'interface.graphview-home-path-color')
 
         return _('Colors'), grid
