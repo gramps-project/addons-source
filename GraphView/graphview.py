@@ -1023,6 +1023,59 @@ class GraphWidget(object):
         self.menu = Gtk.Menu()
         self.menu.set_reserve_toggle_size(False)
 
+        menu_item = Gtk.CheckMenuItem(_('Show images'))
+        menu_item.set_active(self.view._config.get(
+                                            'interface.graphview-show-images'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-images')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Highlight the home person'))
+        menu_item.set_active(self.view._config.get(
+                                  'interface.graphview-highlight-home-person'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-highlight-home-person')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show full dates'))
+        menu_item.set_active(self.view._config.get(
+                                        'interface.graphview-show-full-dates'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-full-dates')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show places'))
+        menu_item.set_active(self.view._config.get(
+                                            'interface.graphview-show-places'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-places')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show tags'))
+        menu_item.set_active(self.view._config.get(
+                                              'interface.graphview-show-tags'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-tags')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.SeparatorMenuItem()
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show animation'))
+        menu_item.set_active(self.view._config.get(
+                                         'interface.graphview-show-animation'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-animation')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        # add sub menu for line type setting
         menu_item = Gtk.MenuItem(_('Lines type'))
         menu_item.set_submenu(Gtk.Menu())
         sub_menu = menu_item.get_submenu()
@@ -1567,6 +1620,13 @@ class GraphWidget(object):
         Save the lines type setting.
         """
         self.view._config.set(constant, type)
+
+    def update_setting(self, menu_item, constant):
+        """
+        Save the changed setting.
+        """
+        self.view._config.set(constant, menu_item.get_active())
+
 
 #-------------------------------------------------------------------------
 #
