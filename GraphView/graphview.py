@@ -67,6 +67,7 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
+from gramps.gui.display import display_url
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
@@ -103,6 +104,8 @@ if not _DOT_FOUND:
                     "required for this view to work")
 
 SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
+
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
 #-------------------------------------------------------------------------
 #
@@ -1110,8 +1113,21 @@ class GraphWidget(object):
         menu_item.show()
         self.menu.append(menu_item)
 
+        menu_item = Gtk.SeparatorMenuItem()
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        self.append_help_menu_entry(self.menu)
+
         self.menu.popup(None, None, None, None,
                         event.get_button()[1], event.time)
+
+    def append_help_menu_entry(self, menu):
+        # Help menu entry
+        item = Gtk.MenuItem(label=_("About Graph View"))
+        item.connect("activate", self.on_help_clicked)
+        item.show()
+        menu.append(item)
 
     def node_menu(self, node_class, handle, event):
         """
@@ -1319,6 +1335,12 @@ class GraphWidget(object):
                 add_menuitem(self.menu, _('Set as home person'),
                              handle, self.set_home_person)
 
+                menu_item = Gtk.SeparatorMenuItem()
+                menu_item.show()
+                self.menu.append(menu_item)
+
+                self.append_help_menu_entry(self.menu)
+
         elif node_class == 'familynode':
             family = self.dbstate.db.get_family_from_handle(handle)
             if handle and family:
@@ -1328,6 +1350,12 @@ class GraphWidget(object):
                 add_menuitem(self.menu, _('Edit tags'),
                              [handle, 'family'], self.edit_tag_list)
                 self.add_childen_submenu(self.menu, None, family)
+
+                menu_item = Gtk.SeparatorMenuItem()
+                menu_item.show()
+                self.menu.append(menu_item)
+
+                self.append_help_menu_entry(self.menu)
         else:
             return False
 
@@ -1382,6 +1410,12 @@ class GraphWidget(object):
 
         item.show()
         menu.append(item)
+
+    def on_help_clicked(self, widget):
+        """
+        Display the relevant portion of Gramps manual.
+        """
+        display_url(WIKI_PAGE)
 
     def add_child_to_family(self, obj, family_handle):
         """
