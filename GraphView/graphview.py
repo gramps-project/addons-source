@@ -1066,9 +1066,7 @@ class GraphWidget(object):
         menu_item.show()
         self.menu.append(menu_item)
 
-        menu_item = Gtk.SeparatorMenuItem()
-        menu_item.show()
-        self.menu.append(menu_item)
+        self.add_menu_separator(self.menu)
 
         menu_item = Gtk.CheckMenuItem(_('Show animation'))
         menu_item.set_active(self.view._config.get(
@@ -1113,14 +1111,20 @@ class GraphWidget(object):
         menu_item.show()
         self.menu.append(menu_item)
 
-        menu_item = Gtk.SeparatorMenuItem()
-        menu_item.show()
-        self.menu.append(menu_item)
+        self.add_menu_separator(self.menu)
 
         self.append_help_menu_entry(self.menu)
 
         self.menu.popup(None, None, None, None,
                         event.get_button()[1], event.time)
+
+    def add_menu_separator(self, menu):
+        """
+        Adds separator to menu.
+        """
+        menu_item = Gtk.SeparatorMenuItem()
+        menu_item.show()
+        menu.append(menu_item)
 
     def append_help_menu_entry(self, menu):
         # Help menu entry
@@ -1152,9 +1156,7 @@ class GraphWidget(object):
                 clipboard_item.show()
                 self.menu.append(clipboard_item)
 
-                menu_separator = Gtk.SeparatorMenuItem()
-                menu_separator.show()
-                self.menu.append(menu_separator)
+                self.add_menu_separator(self.menu)
 
                 # go over spouses and build their menu
                 item = Gtk.MenuItem(label=_("Spouses"))
@@ -1247,15 +1249,13 @@ class GraphWidget(object):
                             sib_item.show()
                             sib_menu.append(sib_item)
                         if sibs.index(sib_group) < len(sibs) - 1:
-                            sep = Gtk.SeparatorMenuItem.new()
-                            sep.show()
-                            sib_menu.append(sep)
+                            self.add_menu_separator(sib_menu)
                 else:
                     item.set_sensitive(0)
                 item.show()
                 self.menu.append(item)
 
-                self.add_childen_submenu(self.menu, person)
+                self.add_children_submenu(self.menu, person)
 
                 # Go over parents and build their menu
                 item = Gtk.MenuItem(label=_("Parents"))
@@ -1328,17 +1328,12 @@ class GraphWidget(object):
                 item.show()
                 self.menu.append(item)
 
-                menu_separator = Gtk.SeparatorMenuItem()
-                menu_separator.show()
-                self.menu.append(menu_separator)
+                self.add_menu_separator(self.menu)
 
                 add_menuitem(self.menu, _('Set as home person'),
                              handle, self.set_home_person)
 
-                menu_item = Gtk.SeparatorMenuItem()
-                menu_item.show()
-                self.menu.append(menu_item)
-
+                self.add_menu_separator(self.menu)
                 self.append_help_menu_entry(self.menu)
 
         elif node_class == 'familynode':
@@ -1349,12 +1344,9 @@ class GraphWidget(object):
 
                 add_menuitem(self.menu, _('Edit tags'),
                              [handle, 'family'], self.edit_tag_list)
-                self.add_childen_submenu(self.menu, None, family)
+                self.add_children_submenu(self.menu, None, family)
 
-                menu_item = Gtk.SeparatorMenuItem()
-                menu_item.show()
-                self.menu.append(menu_item)
-
+                self.add_menu_separator(self.menu)
                 self.append_help_menu_entry(self.menu)
         else:
             return False
@@ -1364,7 +1356,7 @@ class GraphWidget(object):
         self.menu.popup(None, None, None, None,
                         event.get_button()[1], event.time)
 
-    def add_childen_submenu(self, menu, person, family=None):
+    def add_children_submenu(self, menu, person, family=None):
         """
         Go over children and build their menu.
         """
@@ -1419,7 +1411,7 @@ class GraphWidget(object):
 
     def add_child_to_family(self, obj, family_handle):
         """
-        Open edit to add child to family.
+        Open person editor to create and add child to family.
         """
         callback = lambda x: self.callback_add_child(x, family_handle)
         person = Person()
@@ -1458,7 +1450,9 @@ class GraphWidget(object):
             self.dbstate.db.commit_family(family, trans)
 
     def add_parents_to_person(self, obj):
-
+        """
+        Open dialog to add parents to person.
+        """
         person_handle = obj.get_data()
 
         family = Family()
@@ -1657,7 +1651,8 @@ class GraphWidget(object):
 
     def update_setting(self, menu_item, constant):
         """
-        Save the changed setting.
+        Save changed setting.
+        menu_item should be Gtk.CheckMenuItem.
         """
         self.view._config.set(constant, menu_item.get_active())
 
