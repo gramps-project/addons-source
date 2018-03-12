@@ -741,11 +741,11 @@ class GraphWidget(object):
             person = self.dbstate.db.get_person_from_handle(handle)
             if not person:
                 return False
-            question = ('Person <b><i>%s</i></b> is not in the current view.\n'
-                        'Do you want to set it active and rebuild view?'
+            question = (_('Person <b><i>%s</i></b> is not in the current view.\n'
+                        'Do you want to set it active and rebuild view?')
                         % escape(displayer.display(person)))
-            dialog = QuestionDialog2("Change active person?", question,
-                                     "Yes", "No",
+            dialog = QuestionDialog2(_("Change active person?"), question,
+                                     _("Yes"), _("No"),
                                      self.uistate.window,)
             if dialog.run():
                 self.view.change_active(handle)
