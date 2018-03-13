@@ -47,27 +47,36 @@ from subprocess import Popen, PIPE
 from io import StringIO
 from threading import Thread
 from math import sqrt, pow
+from html import escape
 
 #-------------------------------------------------------------------------
 #
 # Gramps Modules
 #
 #-------------------------------------------------------------------------
+from gramps.gen.db import DbTxn
 import gramps.gen.lib
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.display.name import displayer
-from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
+from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
+                                 find_children, find_parents, preset_name,
+                                 find_witnessed_people)
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.file import search_for, media_path_full, find_file
-from gramps.gui.editors import EditPerson, EditFamily
+from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gen.errors import WindowActiveError
 import gramps.gen.datehandler
+from gramps.gui.display import display_url
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.constfunc import win
 from gramps.gen.config import config
-from gramps.gui.dialog import OptionDialog, ErrorDialog
+from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
+from gramps.gen.lib import Person, Family, ChildRef, Name, Surname
+from gramps.gui.widgets.menuitem import add_menuitem
+import gramps.gui.widgets.progressdialog as progressdlg
+from gramps.gen.utils.libformatting import FormattingHelper
 
 if win():
     DETACHED_PROCESS = 8
@@ -95,6 +104,8 @@ if not _DOT_FOUND:
                     "required for this view to work")
 
 SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
+
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
 #-------------------------------------------------------------------------
 #
@@ -168,6 +179,7 @@ class GraphView(NavigationView):
         """
         self.callman.add_db_signal('person-update', self.goto_handle)
         self.callman.add_db_signal('family-update', self.goto_handle)
+        self.callman.add_db_signal('event-update', self.goto_handle)
 
     def change_db(self, db):
         """
@@ -262,6 +274,13 @@ class GraphView(NavigationView):
                 self.graph_widget.load_bookmarks()
         else:
             self.dirty = True
+
+    def change_active_person(self, menuitem=None, person_handle=''):
+        """
+        Change active person.
+        """
+        if person_handle:
+            self.change_active(person_handle)
 
     def can_configure(self):
         """
@@ -374,14 +393,6 @@ class GraphView(NavigationView):
         """
         self.graph_widget.animation.speed = 50*int(entry)
 
-    def cb_update_form(self, obj, constant):
-        """
-        Called when the configuration menu changes the lines type setting.
-        """
-        entry = obj.get_active()
-        self._config.set(constant, entry)
-        self.spline = SPLINE.get(int(entry))
-
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -448,21 +459,6 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                             _('Show tags'),
                             4, 'interface.graphview-show-tags')
-        configdialog.add_spinner(grid,
-                            _('Descendant generations'),
-                            5, 'interface.graphview-descendant-generations',
-                            (1, 50))
-        configdialog.add_spinner(grid,
-                            _('Ancestor generations'),
-                            6, 'interface.graphview-ancestor-generations',
-                            (0, 50))
-        configdialog.add_combo(grid,
-                            _('Show lines'),
-                            7, 'interface.graphview-show-lines',
-                            ((0, _('none')),
-                             (1, _('curves')),
-                             (2, _('ortho'))),
-                            callback=self.cb_update_form)
 
         return _('Layout'), grid
 
@@ -476,7 +472,7 @@ class GraphView(NavigationView):
         grid.set_row_spacing(6)
 
         configdialog.add_color(grid,
-                               _('Path color'),
+                               _('Path color to home person'),
                                0, 'interface.graphview-home-path-color')
 
         return _('Colors'), grid
@@ -567,6 +563,9 @@ class GraphWidget(object):
     Define the canvas that displays the graph along with a zoom control.
     """
     def __init__(self, view, dbstate, uistate):
+        """
+        :type view: GraphView
+        """
         # variables for drag and scroll
         self._last_x = 0
         self._last_y = 0
@@ -644,6 +643,8 @@ class GraphWidget(object):
         box.pack_start(Gtk.Label('↑'), False, False, 1)
         self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
+        self.ancestors_spinner.set_value(
+             self.view._config.get('interface.graphview-ancestor-generations'))
         self.ancestors_spinner.connect("value-changed",
                                        self.set_ancestors_generations)
         box.pack_start(self.ancestors_spinner, False, False, 1)
@@ -651,6 +652,8 @@ class GraphWidget(object):
         box.pack_start(Gtk.Label('↓'), False, False, 1)
         self.descendants_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
+        self.descendants_spinner.set_value(
+           self.view._config.get('interface.graphview-descendant-generations'))
         self.descendants_spinner.connect("value-changed",
                                          self.set_descendants_generations)
         box.pack_start(self.descendants_spinner, False, False, 1)
@@ -663,6 +666,14 @@ class GraphWidget(object):
         self.scale = 1
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
+
+        # person that will focus (once) after graph rebuilding
+        self.person_to_focus = None
+
+        self.format_helper = FormattingHelper(self.dbstate)
+
+        # for detecting double click
+        self.click_events = []
 
     def set_ancestors_generations(self, widget):
         """
@@ -718,6 +729,27 @@ class GraphWidget(object):
             self.animation.move_to_person(other, True)
             obj.set_active(-1)
 
+    def move_to_person(self, menuitem, handle, animate=False):
+        """
+        Move to specified person (by handle).
+        If person not present in the current graphview tree,
+        show dialog to change active person.
+        """
+        if self.animation.get_item_by_title(handle):
+            self.animation.move_to_person(handle, animate)
+        else:
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if not person:
+                return False
+            question = (_('Person <b><i>%s</i></b> is not in the current view.\n'
+                        'Do you want to set it active and rebuild view?')
+                        % escape(displayer.display(person)))
+            dialog = QuestionDialog2(_("Change active person?"), question,
+                                     _("Yes"), _("No"),
+                                     self.uistate.window,)
+            if dialog.run():
+                self.view.change_active(handle)
+
     def scroll_mouse(self, canvas, event):
         """
         Zoom by mouse wheel.
@@ -761,17 +793,19 @@ class GraphWidget(object):
 
         self.animation.update_items(parser.items_list)
 
-        # scroll to active person without animation
-        self.goto_active()
+        if self.person_to_focus:
+            if not self.animation.move_to_person(self.person_to_focus, False):
+                self.goto_active()
+                self.animation.shake_person(self.active_person_handle)
+            self.animation.shake_person(self.person_to_focus)
+            self.person_to_focus = None
+        else:
+            # scroll to active person without animation
+            self.goto_active()
+            self.animation.shake_person(self.active_person_handle)
 
         # update the status bar
         self.view.change_page()
-
-        # update generations spinners
-        self.ancestors_spinner.set_value(
-           self.view._config.get('interface.graphview-ancestor-generations'))
-        self.descendants_spinner.set_value(
-           self.view._config.get('interface.graphview-descendant-generations'))
 
     def zoom_in(self, button=None):
         """
@@ -866,21 +900,27 @@ class GraphWidget(object):
 
     def button_press(self, item, target, event):
         """
-        Enter in scroll mode when mouse button pressed in background
-        or call option menu.
+        Enter in scroll mode when left or middle mouse button pressed
+        on background.
         """
-        button = event.get_button()[1]
-        if (button == 1 or button == 2) \
-            and event.type == getattr(Gdk.EventType, "BUTTON_PRESS") \
-            and item == self.canvas.get_root_item():
+        if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS")
+                and item == self.canvas.get_root_item()):
+                    return False
 
-                window = self.canvas.get_parent().get_window()
-                window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
-                self._last_x = event.x_root
-                self._last_y = event.y_root
-                self._in_move = True
-                self.animation.stop_animation()
-                return False
+        button = event.get_button()[1]
+        if button == 1 or button == 2:
+            window = self.canvas.get_parent().get_window()
+            window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
+            self._last_x = event.x_root
+            self._last_y = event.y_root
+            self._in_move = True
+            self.animation.stop_animation()
+            return False
+
+        if button == 3:
+            self.background_menu(event)
+            return True
+
         return False
 
     def button_release(self, item, target, event):
@@ -889,7 +929,7 @@ class GraphWidget(object):
         """
         button = event.get_button()[1]
         if (button == 1 or button == 2) \
-            and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
+           and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
 
                 self.motion_notify_event(item, target, event)
                 self.canvas.get_parent().get_window().set_cursor(None)
@@ -933,6 +973,22 @@ class GraphWidget(object):
         node_class = item.description
         button = event.get_button()[1]
 
+        self.person_to_focus = None
+
+        # perfom double click on node by left mouse button
+        if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
+            # Remove all single click events
+            for item in self.click_events:
+                if not item.is_destroyed():
+                    GLib.source_remove(item.get_id())
+            self.click_events.clear()
+            if button == 1 and node_class == 'node':
+                GLib.idle_add(self.edit_person, None, handle)
+                return True
+            elif button == 1 and node_class == 'familynode':
+                GLib.idle_add(self.edit_family, None, handle)
+                return True
+
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
@@ -946,39 +1002,626 @@ class GraphWidget(object):
                     handle = parent_handle
 
             # redraw the graph based on the selected person
-            self.view.change_active(handle)
-        elif button == 3 and node_class == 'node':          # right mouse
-            if handle:
-                self.edit_person(handle)
-        elif button == 3 and node_class == 'familynode':    # right mouse
-            if handle:
-                self.edit_family(handle)
+            # schedule after because double click can occur
+            click_event_id = GLib.timeout_add(200, self.view.change_active,
+                                              handle)
+            # add single click events to list, it will removed if necessary
+            context = GLib.main_context_default()
+            self.click_events.append(context.find_source_by_id(click_event_id))
+
+        elif button == 3 and node_class:                    # right mouse
+            self.node_menu(node_class, handle, event)
+
         elif button == 2:                                   # middle mouse
-            # try to enter in scroll mode (we should change "item")
+            # to enter in scroll mode (we should change "item")
             item = self.canvas.get_root_item()
             self.button_press(item, target, event)
 
         return True
 
-    def edit_person(self, handle):
+    def background_menu(self, event):
+        """
+        Popup menu on background.
+        """
+        self.menu = Gtk.Menu()
+        self.menu.set_reserve_toggle_size(False)
+
+        menu_item = Gtk.CheckMenuItem(_('Show images'))
+        menu_item.set_active(self.view._config.get(
+                                            'interface.graphview-show-images'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-images')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Highlight the home person'))
+        menu_item.set_active(self.view._config.get(
+                                  'interface.graphview-highlight-home-person'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-highlight-home-person')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show full dates'))
+        menu_item.set_active(self.view._config.get(
+                                        'interface.graphview-show-full-dates'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-full-dates')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show places'))
+        menu_item.set_active(self.view._config.get(
+                                            'interface.graphview-show-places'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-places')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        menu_item = Gtk.CheckMenuItem(_('Show tags'))
+        menu_item.set_active(self.view._config.get(
+                                              'interface.graphview-show-tags'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-tags')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        self.add_menu_separator(self.menu)
+
+        menu_item = Gtk.CheckMenuItem(_('Show animation'))
+        menu_item.set_active(self.view._config.get(
+                                         'interface.graphview-show-animation'))
+        menu_item.connect("activate", self.update_setting,
+                          'interface.graphview-show-animation')
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        # add sub menu for line type setting
+        menu_item = Gtk.MenuItem(_('Lines type'))
+        menu_item.set_submenu(Gtk.Menu())
+        sub_menu = menu_item.get_submenu()
+
+        spline = self.view._config.get('interface.graphview-show-lines')
+
+        entry = Gtk.RadioMenuItem(label=_('Direct'))
+        entry.connect("activate", self.update_lines_type,
+                      0, 'interface.graphview-show-lines')
+        if spline == 0:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        entry = Gtk.RadioMenuItem(label=_('Curves'))
+        entry.connect("activate", self.update_lines_type,
+                      1, 'interface.graphview-show-lines')
+        if spline == 1:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        entry = Gtk.RadioMenuItem(label=_('Ortho'))
+        entry.connect("activate", self.update_lines_type,
+                      2, 'interface.graphview-show-lines')
+        if spline == 2:
+            entry.set_active(True)
+        entry.show()
+        sub_menu.append(entry)
+
+        sub_menu.show()
+        menu_item.show()
+        self.menu.append(menu_item)
+
+        self.add_menu_separator(self.menu)
+
+        self.append_help_menu_entry(self.menu)
+
+        self.menu.popup(None, None, None, None,
+                        event.get_button()[1], event.time)
+
+    def add_menu_separator(self, menu):
+        """
+        Adds separator to menu.
+        """
+        menu_item = Gtk.SeparatorMenuItem()
+        menu_item.show()
+        menu.append(menu_item)
+
+    def append_help_menu_entry(self, menu):
+        # Help menu entry
+        item = Gtk.MenuItem(label=_("About Graph View"))
+        item.connect("activate", self.on_help_clicked)
+        item.show()
+        menu.append(item)
+
+    def node_menu(self, node_class, handle, event):
+        """
+        Popup menu for node (person or family).
+        """
+        self.menu = Gtk.Menu()
+        self.menu.set_reserve_toggle_size(False)
+
+        if node_class == 'node':
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if handle and person:
+                add_menuitem(self.menu, _('Edit'),
+                             handle, self.edit_person)
+
+                add_menuitem(self.menu, _('Edit tags'),
+                             [handle, 'person'], self.edit_tag_list)
+
+                clipboard_item = Gtk.MenuItem.new_with_mnemonic(_('_Copy'))
+                clipboard_item.connect("activate",
+                                       self.copy_person_to_clipboard,
+                                       handle)
+                clipboard_item.show()
+                self.menu.append(clipboard_item)
+
+                self.add_menu_separator(self.menu)
+
+                # go over spouses and build their menu
+                item = Gtk.MenuItem(label=_("Spouses"))
+                item.set_submenu(Gtk.Menu())
+                sp_menu = item.get_submenu()
+                sp_menu.set_reserve_toggle_size(False)
+
+                add_menuitem(sp_menu, _('Add'),
+                             handle, self.add_spouse)
+                fam_list = person.get_family_handle_list()
+                for fam_id in fam_list:
+                    family = self.dbstate.db.get_family_from_handle(fam_id)
+                    if family.get_father_handle() == person.get_handle():
+                        sp_id = family.get_mother_handle()
+                    else:
+                        sp_id = family.get_father_handle()
+                    if not sp_id:
+                        continue
+                    spouse = self.dbstate.db.get_person_from_handle(sp_id)
+                    if not spouse:
+                        continue
+
+                    sp_item = Gtk.MenuItem(label=displayer.display(spouse))
+                    sp_item.connect("activate", self.move_to_person,
+                                    sp_id, True)
+                    sp_item.show()
+                    sp_menu.append(sp_item)
+
+                item.show()
+                self.menu.append(item)
+
+                # go over siblings and build their menu
+                item = Gtk.MenuItem(label=_("Siblings"))
+                pfam_list = person.get_parent_family_handle_list()
+                siblings = []
+                step_siblings = []
+                for f in pfam_list:
+                    fam = self.dbstate.db.get_family_from_handle(f)
+                    sib_list = fam.get_child_ref_list()
+                    for sib_ref in sib_list:
+                        sib_id = sib_ref.ref
+                        if sib_id == person.get_handle():
+                            continue
+                        siblings.append(sib_id)
+                    # collect a list of per-step-family step-siblings
+                    for parent_h in [fam.get_father_handle(),
+                                     fam.get_mother_handle()]:
+                        if not parent_h:
+                            continue
+                        parent = self.dbstate.db.get_person_from_handle(
+                            parent_h)
+                        other_families = [
+                            self.dbstate.db.get_family_from_handle(fam_id)
+                            for fam_id in parent.get_family_handle_list()
+                            if fam_id not in pfam_list]
+                        for step_fam in other_families:
+                            fam_stepsiblings = [sib_ref.ref
+                                                for sib_ref in
+                                                step_fam.get_child_ref_list()
+                                                if not (
+                                            sib_ref.ref == person.get_handle())]
+                            if fam_stepsiblings:
+                                step_siblings.append(fam_stepsiblings)
+
+                # add siblings sub-menu with a bar between each siblings group
+                if siblings or step_siblings:
+                    item.set_submenu(Gtk.Menu())
+                    sib_menu = item.get_submenu()
+                    sib_menu.set_reserve_toggle_size(False)
+                    sibs = [siblings] + step_siblings
+                    for sib_group in sibs:
+                        for sib_id in sib_group:
+                            sib = self.dbstate.db.get_person_from_handle(sib_id)
+                            if not sib:
+                                continue
+                            if find_children(self.dbstate.db, sib):
+                                label = Gtk.Label(
+                                        label='<b><i>%s</i></b>'
+                                              % escape(displayer.display(sib)))
+                            else:
+                                label = Gtk.Label(
+                                    label=escape(displayer.display(sib)))
+                            sib_item = Gtk.MenuItem()
+                            label.set_use_markup(True)
+                            label.show()
+                            label.set_alignment(0, 0)
+                            sib_item.add(label)
+                            sib_item.connect("activate",
+                                             self.move_to_person, sib_id, True)
+                            sib_item.show()
+                            sib_menu.append(sib_item)
+                        if sibs.index(sib_group) < len(sibs) - 1:
+                            self.add_menu_separator(sib_menu)
+                else:
+                    item.set_sensitive(0)
+                item.show()
+                self.menu.append(item)
+
+                self.add_children_submenu(self.menu, person)
+
+                # Go over parents and build their menu
+                item = Gtk.MenuItem(label=_("Parents"))
+                item.set_submenu(Gtk.Menu())
+                par_menu = item.get_submenu()
+                par_menu.set_reserve_toggle_size(False)
+                no_parents = 1
+                par_list = find_parents(self.dbstate.db, person)
+                for par_id in par_list:
+                    if not par_id:
+                        continue
+                    par = self.dbstate.db.get_person_from_handle(par_id)
+                    if not par:
+                        continue
+
+                    if no_parents:
+                        no_parents = 0
+
+                    if find_parents(self.dbstate.db, par):
+                        label = Gtk.Label(label='<b><i>%s</i></b>'
+                                          % escape(displayer.display(par)))
+                    else:
+                        label = Gtk.Label(label=escape(displayer.display(par)))
+
+                    par_item = Gtk.MenuItem()
+                    label.set_use_markup(True)
+                    label.show()
+                    label.set_halign(Gtk.Align.START)
+                    par_item.add(label)
+                    par_item.connect("activate", self.move_to_person,
+                                     par_id, True)
+                    par_item.show()
+                    par_menu.append(par_item)
+
+                if no_parents:
+                    # add button to add parents
+                    add_menuitem(par_menu, _('Add'), handle,
+                                 self.add_parents_to_person)
+                item.show()
+                self.menu.append(item)
+
+                # go over related persons and build their menu
+                item = Gtk.MenuItem(label=_("Related"))
+                no_related = 1
+                for p_id in find_witnessed_people(self.dbstate.db, person):
+                    per = self.dbstate.db.get_person_from_handle(p_id)
+                    if not per:
+                        continue
+
+                    if no_related:
+                        no_related = 0
+                    item.set_submenu(Gtk.Menu())
+                    per_menu = item.get_submenu()
+                    per_menu.set_reserve_toggle_size(False)
+
+                    label = Gtk.Label(label=escape(displayer.display(per)))
+
+                    per_item = Gtk.MenuItem()
+                    label.set_use_markup(True)
+                    label.show()
+                    label.set_halign(Gtk.Align.START)
+                    per_item.add(label)
+                    per_item.connect("activate", self.move_to_person,
+                                     p_id, True)
+                    per_item.show()
+                    per_menu.append(per_item)
+
+                if no_related:
+                    item.set_sensitive(0)
+                item.show()
+                self.menu.append(item)
+
+                self.add_menu_separator(self.menu)
+
+                add_menuitem(self.menu, _('Set as home person'),
+                             handle, self.set_home_person)
+
+                self.add_menu_separator(self.menu)
+                self.append_help_menu_entry(self.menu)
+
+        elif node_class == 'familynode':
+            family = self.dbstate.db.get_family_from_handle(handle)
+            if handle and family:
+                add_menuitem(self.menu, _('Edit'),
+                             handle, self.edit_family)
+
+                add_menuitem(self.menu, _('Edit tags'),
+                             [handle, 'family'], self.edit_tag_list)
+                self.add_children_submenu(self.menu, None, family)
+
+                self.add_menu_separator(self.menu)
+                self.append_help_menu_entry(self.menu)
+        else:
+            return False
+
+        # new from gtk 3.22:
+        # self.menu.popup_at_pointer(event)
+        self.menu.popup(None, None, None, None,
+                        event.get_button()[1], event.time)
+
+    def add_children_submenu(self, menu, person, family=None):
+        """
+        Go over children and build their menu.
+        """
+        item = Gtk.MenuItem(label=_("Children"))
+        item.set_submenu(Gtk.Menu())
+        child_menu = item.get_submenu()
+        child_menu.set_reserve_toggle_size(False)
+
+        if family:
+            childlist = []
+            for child_ref in family.get_child_ref_list():
+                childlist.append(child_ref.ref)
+            # allow to add a child to this family
+            add_child_item = Gtk.MenuItem()
+            add_child_item.set_label(_("Add child to family"))
+            add_child_item.connect("activate", self.add_child_to_family,
+                                   family.get_handle())
+            add_child_item.show()
+            child_menu.append(add_child_item)
+        else:
+            childlist = find_children(self.dbstate.db, person)
+
+        for child_handle in childlist:
+            child = self.dbstate.db.get_person_from_handle(child_handle)
+            if not child:
+                continue
+
+            if find_children(self.dbstate.db, child):
+                label = Gtk.Label(label='<b><i>%s</i></b>'
+                                  % escape(displayer.display(child)))
+            else:
+                label = Gtk.Label(label=escape(displayer.display(child)))
+
+            child_item = Gtk.MenuItem()
+            label.set_use_markup(True)
+            label.show()
+            label.set_halign(Gtk.Align.START)
+            child_item.add(label)
+            child_item.connect("activate", self.move_to_person,
+                               child_handle, True)
+            child_item.show()
+            child_menu.append(child_item)
+
+        item.show()
+        menu.append(item)
+
+    def on_help_clicked(self, widget):
+        """
+        Display the relevant portion of Gramps manual.
+        """
+        display_url(WIKI_PAGE)
+
+    def add_child_to_family(self, obj, family_handle):
+        """
+        Open person editor to create and add child to family.
+        """
+        callback = lambda x: self.callback_add_child(x, family_handle)
+        person = Person()
+        name = Name()
+        #the editor requires a surname
+        name.add_surname(Surname())
+        name.set_primary_surname(0)
+        family = self.dbstate.db.get_family_from_handle(family_handle)
+        father = self.dbstate.db.get_person_from_handle(
+                                    family.get_father_handle())
+        if father:
+            preset_name(father, name)
+        person.set_primary_name(name)
+        try:
+            EditPerson(self.dbstate, self.uistate, [], person,
+                       callback=callback)
+        except WindowActiveError:
+            pass
+
+    def callback_add_child(self, person, family_handle):
+        """
+        Write data to db.
+        Callback from self.add_child_to_family().
+        """
+        ref = ChildRef()
+        ref.ref = person.get_handle()
+        family = self.dbstate.db.get_family_from_handle(family_handle)
+        family.add_child_ref(ref)
+
+        with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
+            #add parentref to child
+            person.add_parent_family_handle(family_handle)
+            #default relationship is used
+            self.dbstate.db.commit_person(person, trans)
+            #add child to family
+            self.dbstate.db.commit_family(family, trans)
+
+    def add_parents_to_person(self, obj):
+        """
+        Open dialog to add parents to person.
+        """
+        person_handle = obj.get_data()
+
+        family = Family()
+        childref = ChildRef()
+        childref.set_reference_handle(person_handle)
+        family.add_child_ref(childref)
+        try:
+            EditFamily(self.dbstate, self.uistate, [], family)
+        except WindowActiveError:
+            return
+        # set edited person to scroll on it after rebuilding graph
+        self.person_to_focus = person_handle
+
+    def copy_person_to_clipboard(self, obj, person_handle):
+        """
+        Renders the person data into some lines of text
+        and puts that into the clipboard.
+        """
+        person = self.dbstate.db.get_person_from_handle(person_handle)
+        if person:
+            cb = Gtk.Clipboard.get_for_display(Gdk.Display.get_default(),
+                                               Gdk.SELECTION_CLIPBOARD)
+            cb.set_text( self.format_helper.format_person(person, 11), -1)
+            return True
+        return False
+
+    def edit_tag_list(self, obj):
+        """
+        Edit tag list for person or family.
+        """
+        handle, type = obj.get_data()
+        if type == 'person':
+            target = self.dbstate.db.get_person_from_handle(handle)
+            self.person_to_focus = handle
+        elif type == 'family':
+            target = self.dbstate.db.get_family_from_handle(handle)
+            f_handle = target.get_father_handle()
+            if f_handle:
+                self.person_to_focus = f_handle
+            else:
+                m_handle = target.get_mother_handle()
+                if m_handle:
+                    self.person_to_focus = m_handle
+        else:
+            return False
+
+        if target:
+            tag_list = []
+            for tag_handle in target.get_tag_list():
+                tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                if tag:
+                    tag_list.append((tag_handle, tag.get_name()))
+
+            all_tags = []
+            for tag_handle in self.dbstate.db.get_tag_handles(sort_handles=True):
+                tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+                all_tags.append((tag.get_handle(), tag.get_name()))
+
+            try:
+                editor = EditTagList(tag_list, all_tags, self.uistate, [])
+                if editor.return_list is not None:
+                    tag_list = editor.return_list
+                    # Save tags to target object.
+                    # Make the dialog modal so that the user can't start
+                    # another database transaction while the one setting
+                    # tags is still running.
+                    pmon = progressdlg.ProgressMonitor(
+                              progressdlg.GtkProgressDialog,
+                              ("", self.uistate.window, Gtk.DialogFlags.MODAL),
+                              popup_time=2)
+                    status = progressdlg.LongOpStatus(msg=_("Adding Tags"),
+                                                      total_steps=1,
+                                                      interval=1 // 20)
+                    pmon.add_op(status)
+                    target.set_tag_list([item[0] for item in tag_list])
+                    if type == 'person':
+                        msg = _('Adding Tags to person (%s)') % handle
+                        with DbTxn(msg, self.dbstate.db) as trans:
+                            self.dbstate.db.commit_person(target, trans)
+                            status.heartbeat()
+                    else:
+                        msg = _('Adding Tags to family (%s)') % handle
+                        with DbTxn(msg, self.dbstate.db) as trans:
+                            self.dbstate.db.commit_family(target, trans)
+                            status.heartbeat()
+                    status.end()
+            except WindowActiveError:
+                pass
+
+    def set_home_person(self, obj):
+        """
+        Set the home person for database and make it active.
+        """
+        handle = obj.get_data()
+        person = self.dbstate.db.get_person_from_handle(handle)
+        if person:
+            self.dbstate.db.set_default_person_handle(handle)
+            self.populate(handle)
+
+    def add_spouse(self, obj):
+        """
+        Add spouse to person (create new family to person).
+        See: gramps/plugins/view/relview.py (add_spouse)
+        """
+        handle = obj.get_data()
+        family = Family()
+        person = self.dbstate.db.get_person_from_handle(handle)
+
+        if not person:
+            return
+
+        if person.gender == Person.MALE:
+            family.set_father_handle(person.handle)
+        else:
+            family.set_mother_handle(person.handle)
+
+        try:
+            EditFamily(self.dbstate, self.uistate, [], family)
+        except WindowActiveError:
+            pass
+        # set edited person to scroll on it after rebuilding graph
+        self.person_to_focus = handle
+
+    def edit_person(self, obj, person_handle=None):
         """
         Start a person editor for the selected person.
         """
+        if not (obj or person_handle):
+            return False
+
+        if person_handle:
+            handle = person_handle
+        else:
+            handle = obj.get_data()
+
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
             EditPerson(self.dbstate, self.uistate, [], person)
         except WindowActiveError:
             pass
+        # set edited person to scroll on it after rebuilding graph
+        self.person_to_focus = handle
 
-    def edit_family(self, handle):
+    def edit_family(self, obj, family_handle=None):
         """
         Start a family editor for the selected family.
         """
+        if not (obj or family_handle):
+            return False
+
+        if family_handle:
+            handle = family_handle
+        else:
+            handle = obj.get_data()
+
         family = self.dbstate.db.get_family_from_handle(handle)
         try:
             EditFamily(self.dbstate, self.uistate, [], family)
         except WindowActiveError:
             pass
+
+        # set edited family person to scroll on it after rebuilding graph
+        f_handle = family.get_father_handle()
+        if f_handle:
+            self.person_to_focus = f_handle
+        else:
+            m_handle = family.get_mother_handle()
+            if m_handle:
+                self.person_to_focus = m_handle
 
     def find_a_parent(self, handle):
         """
@@ -999,6 +1642,20 @@ class GraphWidget(object):
             handle = None
 
         return handle
+
+    def update_lines_type(self, menu_item, type, constant):
+        """
+        Save the lines type setting.
+        """
+        self.view._config.set(constant, type)
+
+    def update_setting(self, menu_item, constant):
+        """
+        Save changed setting.
+        menu_item should be Gtk.CheckMenuItem.
+        """
+        self.view._config.set(constant, menu_item.get_active())
+
 
 #-------------------------------------------------------------------------
 #
@@ -2206,6 +2863,7 @@ class CanvasAnimation(object):
         # for each item that in shake procedure
         self.counter = {}
         self.shake = {}
+        self.in_shake = []
 
     def update_items(self, items_list):
         """
@@ -2213,9 +2871,15 @@ class CanvasAnimation(object):
         """
         self.items_list = items_list
 
+        for item in self.in_shake:
+            try:
+                item.disconnect_by_func(self.stop_shake_animation)
+            except:
+                pass
+        self.in_shake.clear()
         # clear counters and shakes - items not exists anymore
-        self.counter = {}
-        self.shake = {}
+        self.counter.clear()
+        self.shake.clear()
 
     def stop_animation(self):
         """
@@ -2233,7 +2897,9 @@ class CanvasAnimation(object):
         Processing of 'animation-finished' signal.
         Stop or keep shaking item depending on counter for item.
         """
-        if (self.counter[item.title] < self.max_count) and (not stoped):
+        counter = self.counter.get(item.title)
+        shake = self.shake.get(item.title)
+        if (not stoped) and counter and shake and counter < self.max_count:
             self.shake[item.title] = (-1)*self.shake[item.title]
             self.counter[item.title] += 1
             item.animate(0, self.shake[item.title], 1, 0, False,
@@ -2246,6 +2912,15 @@ class CanvasAnimation(object):
             except:
                 pass
 
+    def shake_person(self, person_handle):
+        """
+        Shake person node to help to see it.
+        Use build-in function of CanvasItem.
+        """
+        item = self.get_item_by_title(person_handle)
+        if item:
+            self.shake_item(item)
+
     def shake_item(self, item):
         """
         Shake item to help to see it.
@@ -2253,6 +2928,7 @@ class CanvasAnimation(object):
         """
         if item:
             if not self.counter.get(item.title):
+                self.in_shake.append(item)
                 self.counter[item.title] = 1
                 self.shake[item.title] = 10
                 item.connect('animation-finished', self.stop_shake_animation)
@@ -2281,6 +2957,8 @@ class CanvasAnimation(object):
             x = (bounds.x2 - (bounds.x2-bounds.x1)/2)
             y = (bounds.y1 - (bounds.y1-bounds.y2)/2)
             self.move_to(item, (x, y), animated)
+            return True
+        return False
 
     def get_trace_to(self, destination):
         """
