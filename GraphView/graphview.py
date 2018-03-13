@@ -675,21 +675,41 @@ class GraphWidget(object):
         # for detecting double click
         self.click_events = []
 
+        # for timeout on changing generation settings
+        self.set_anc_event = False
+        self.set_des_event = False
+
     def set_ancestors_generations(self, widget):
         """
         Set count of ancestors generations to show.
+        Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
-        self.view._config.set('interface.graphview-ancestor-generations',
-                              value)
+        # try to remove planed event (changing setting)
+        if self.set_anc_event and not self.set_anc_event.is_destroyed():
+            GLib.source_remove(self.set_anc_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-ancestor-generations',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_anc_event = context.find_source_by_id(event_id)
 
     def set_descendants_generations(self, widget):
         """
         Set count of descendants generations to show.
+        Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
-        self.view._config.set('interface.graphview-descendant-generations',
-                              value)
+        # try to remove planed event (changing setting)
+        if self.set_des_event and not self.set_des_event.is_destroyed():
+            GLib.source_remove(self.set_des_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-descendant-generations',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_des_event = context.find_source_by_id(event_id)
 
     def load_bookmarks(self):
         """
