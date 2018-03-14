@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-27 15:59+0900\n"
-"PO-Revision-Date: 2018-01-31 18:52+0200\n"
+"POT-Creation-Date: 2018-03-14 07:16+0200\n"
+"PO-Revision-Date: 2018-03-14 09:24+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: suomi\n"
 "Language: fi\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:130
+#: graphview.gpr.py:15 graphview.py:137
 msgid "Graph View"
 msgstr "Kaavionäkymä"
 
-#: GraphView/graphview.gpr.py:4
+#: graphview.gpr.py:16
 msgid "Charts"
 msgstr "Kaaviot"
 
-#: GraphView/graphview.gpr.py:5
+#: graphview.gpr.py:17
 msgid "Dynamic graph of relations"
 msgstr "Dynaaminen kaavio suhteista"
 
-#: GraphView/graphview.py:162
+#: graphview.py:169
 msgid "_Print..."
 msgstr "_Tulosta..."
 
-#: GraphView/graphview.py:164
+#: graphview.py:171
 msgid ""
 "Save the dot file for a later print.\n"
 "This will save a .gv file and a svg file.\n"
@@ -43,145 +43,247 @@ msgstr ""
 "Tallentaa .gv-tiedoston ja svg-tiedoston.\n"
 "Valitse .gv-tiedosto"
 
-#: GraphView/graphview.py:435
+#: graphview.py:448 graphview.py:1029
 msgid "Show images"
 msgstr "Näytä kuvat"
 
-#: GraphView/graphview.py:438
+#: graphview.py:451 graphview.py:1037
 msgid "Highlight the home person"
 msgstr "Korosta kotihenkilö"
 
-#: GraphView/graphview.py:441
+#: graphview.py:454 graphview.py:1045
 msgid "Show full dates"
 msgstr "Näytä täydelliset päivämäärät"
 
-#: GraphView/graphview.py:444
+#: graphview.py:457 graphview.py:1053
 msgid "Show places"
 msgstr "Näytä paikat"
 
-#: GraphView/graphview.py:447
+#: graphview.py:460 graphview.py:1061
 msgid "Show tags"
 msgstr "Näytä tagit"
 
-#: GraphView/graphview.py:450
-msgid "Descendant generations"
-msgstr "Jälkeläissukupolvien enimmäismäärä"
-
-#: GraphView/graphview.py:453
-msgid "Ancestor generations"
-msgstr "Esivanhempien sukupolvien enimmäismäärä"
-
-#: GraphView/graphview.py:456
-msgid "Show lines"
-msgstr "Näytä viivat"
-
-#: GraphView/graphview.py:458
-msgid "none"
-msgstr "ei mitään"
-
-#: GraphView/graphview.py:459
-msgid "curves"
-msgstr "käyrät"
-
-#: GraphView/graphview.py:460
-msgid "ortho"
-msgstr "suora"
-
-#: GraphView/graphview.py:463
+#: graphview.py:463
 msgid "Layout"
 msgstr "Asetelma"
 
-#: GraphView/graphview.py:475
-msgid "Path color"
-msgstr "Polun väri"
+#: graphview.py:475
+msgid "Path color to home person"
+msgstr "Polun väri kotihenkilölle"
 
-#: GraphView/graphview.py:478
+#: graphview.py:478
 msgid "Colors"
 msgstr "Värit"
 
-#: GraphView/graphview.py:490
+#: graphview.py:490 graphview.py:1071
 msgid "Show animation"
 msgstr "Näytä animaatio"
 
-#: GraphView/graphview.py:493
+#: graphview.py:493
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animaationopeus (1..5 ja 5 on hitaampi)"
 
-#: GraphView/graphview.py:496
+#: graphview.py:496
 msgid "Animation count (1..8)"
 msgstr "Animaation määrä (1..8)"
 
-#: GraphView/graphview.py:499
+#: graphview.py:499
 msgid "Animation"
 msgstr "Animaatio"
 
-#: GraphView/graphview.py:520
+#: graphview.py:515
 msgid "Select a dot file name"
 msgstr "Valitse pistetiedoston nimi"
 
-#: GraphView/graphview.py:522
+#: graphview.py:517
 msgid "_Cancel"
 msgstr "_Peruuta"
 
-#: GraphView/graphview.py:523
+#: graphview.py:518
 msgid "_Apply"
 msgstr "_Käytä"
 
-#: GraphView/graphview.py:537
+#: graphview.py:532
 msgid "File already exists"
 msgstr "Tiedosto on jo olemassa"
 
-#: GraphView/graphview.py:538
+#: graphview.py:533
 msgid "You can choose to either overwrite the file, or change the selected filename."
 msgstr "Voit joko ylikirjoittaa tiedoston tai vaihtaa valitun tiedoston nimen."
 
-#: GraphView/graphview.py:540
+#: graphview.py:535
 msgid "_Overwrite"
 msgstr "_Ylikirjoita"
 
-#: GraphView/graphview.py:541
+#: graphview.py:536
 msgid "_Change filename"
 msgstr "_Vaihda tiedoston nimeä"
 
-#: GraphView/graphview.py:557
+#: graphview.py:552
 #, python-format
 msgid "Could not create %s"
 msgstr "Ei voitu luoda %s"
 
-#: GraphView/graphview.py:606
+#: graphview.py:599
 msgid "Zoom in"
 msgstr "Suurentaa sivua"
 
-#: GraphView/graphview.py:613
+#: graphview.py:606
 msgid "Zoom out"
 msgstr "Pienentää sivua"
 
-#: GraphView/graphview.py:620
+#: graphview.py:613
 msgid "Zoom to original"
 msgstr "Alkuperäinen koko"
 
-#: GraphView/graphview.py:627
+#: graphview.py:620
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
 
-#: GraphView/graphview.py:634
+#: graphview.py:627
 msgid "Go to active person"
 msgstr "Siirry aktiivihenkilöön"
 
-#: GraphView/graphview.py:644
+#: graphview.py:637
 msgid "Go to bookmark"
 msgstr "Siirry kirjanmerkkiin"
 
-#: GraphView/graphview.py:1921
+#: graphview.py:645
+msgid "Ancestor generations"
+msgstr "Esivanhempien sukupolvien enimmäismäärä"
+
+#: graphview.py:654
+msgid "Descendant generations"
+msgstr "Jälkeläissukupolvien enimmäismäärä"
+
+#: graphview.py:744
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Henkilö <b><i>%s</i></b> ei ole nykyisessä näkymässä.\n"
+"Haluatko aktivoida henkilön ja katsella uudelleen?"
+
+#: graphview.py:747
+msgid "Change active person?"
+msgstr "Vaihdetaanko aktiivihenkilö?"
+
+#: graphview.py:748
+msgid "Yes"
+msgstr "Kyllä"
+
+#: graphview.py:748
+msgid "No"
+msgstr "Ei"
+
+#: graphview.py:1080
+msgid "Lines type"
+msgstr "Viivan tyyppi"
+
+#: graphview.py:1086
+msgid "Direct"
+msgstr "Suora"
+
+#: graphview.py:1094
+msgid "Curves"
+msgstr "Kaareva"
+
+#: graphview.py:1102
+msgid "Ortho"
+msgstr "Suorakulmainen"
+
+#: graphview.py:1131
+msgid "About Graph View"
+msgstr "Tietoja kaavionäkymästä"
+
+#: graphview.py:1146 graphview.py:1342
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: graphview.py:1149 graphview.py:1345
+msgid "Edit tags"
+msgstr "Muokkaa tageja"
+
+#: graphview.py:1152
+msgid "_Copy"
+msgstr "_Kopioi"
+
+#: graphview.py:1162
+msgid "Spouses"
+msgstr "Puolisot"
+
+#: graphview.py:1167 graphview.py:1295
+msgid "Add"
+msgstr "Lisää"
+
+#: graphview.py:1192
+msgid "Siblings"
+msgstr "Sisarukset"
+
+#: graphview.py:1261
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: graphview.py:1301
+msgid "Related"
+msgstr "Sukua"
+
+#: graphview.py:1333
+msgid "Set as home person"
+msgstr "Aseta kotihenkilö"
+
+#: graphview.py:1363
+msgid "Children"
+msgstr "Lapset"
+
+#: graphview.py:1374
+msgid "Add child to family"
+msgstr "Lisää perheeseen lapsi"
+
+#: graphview.py:1444
+msgid "Add Child to Family"
+msgstr "Lisää perheeseen lapsi"
+
+#: graphview.py:1526
+msgid "Adding Tags"
+msgstr "Lisätään tageja"
+
+#: graphview.py:1532
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lisää tageja henkilölle (%s)"
+
+#: graphview.py:1537
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lisää tageja perheelle (%s)"
+
+#: graphview.py:2613
 #, python-format
 msgid "b. %s"
 msgstr "s. %s"
 
-#: GraphView/graphview.py:1928
+#: graphview.py:2620
 #, python-format
 msgid "d. %s"
 msgstr "k. %s"
 
-#: GraphView/graphview.py:2100
+#: graphview.py:2798
 msgid "<b>Tags:</b>"
 msgstr "<b>Tagit:</b>"
+
+#~ msgid "Show lines"
+#~ msgstr "Näytä viivat"
+
+#~ msgid "none"
+#~ msgstr "ei mitään"
+
+#~ msgid "curves"
+#~ msgstr "käyrät"
+
+#~ msgid "ortho"
+#~ msgstr "suorat"
+
+#~ msgid "Path color"
+#~ msgstr "Polun väri"
