@@ -1387,6 +1387,8 @@ class GraphWidget(object):
         child_menu = item.get_submenu()
         child_menu.set_reserve_toggle_size(False)
 
+        no_child = 1
+
         if family:
             childlist = []
             for child_ref in family.get_child_ref_list():
@@ -1398,6 +1400,7 @@ class GraphWidget(object):
                                    family.get_handle())
             add_child_item.show()
             child_menu.append(add_child_item)
+            no_child = 0
         else:
             childlist = find_children(self.dbstate.db, person)
 
@@ -1405,6 +1408,9 @@ class GraphWidget(object):
             child = self.dbstate.db.get_person_from_handle(child_handle)
             if not child:
                 continue
+
+            if no_child:
+                no_child = 0
 
             if find_children(self.dbstate.db, child):
                 label = Gtk.Label(label='<b><i>%s</i></b>'
@@ -1422,6 +1428,8 @@ class GraphWidget(object):
             child_item.show()
             child_menu.append(child_item)
 
+        if no_child:
+            item.set_sensitive(0)
         item.show()
         menu.append(item)
 
