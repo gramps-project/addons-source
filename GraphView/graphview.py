@@ -762,11 +762,11 @@ class GraphWidget(object):
             if not person:
                 return False
             question = (_('Person <b><i>%s</i></b> is not in the current view.\n'
-                        'Do you want to set it active and rebuild view?')
+                          'Do you want to set it active and rebuild view?')
                         % escape(displayer.display(person)))
             dialog = QuestionDialog2(_("Change active person?"), question,
                                      _("Yes"), _("No"),
-                                     self.uistate.window,)
+                                     self.uistate.window)
             if dialog.run():
                 self.view.change_active(handle)
 
@@ -995,7 +995,7 @@ class GraphWidget(object):
 
         self.person_to_focus = None
 
-        # perfom double click on node by left mouse button
+        # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
             # Remove all single click events
             for item in self.click_events:
@@ -1147,7 +1147,9 @@ class GraphWidget(object):
         menu.append(menu_item)
 
     def append_help_menu_entry(self, menu):
-        # Help menu entry
+        """
+        Adds help (about) menu entry.
+        """
         item = Gtk.MenuItem(label=_("About Graph View"))
         item.connect("activate", self.on_help_clicked)
         item.show()
@@ -1436,7 +1438,7 @@ class GraphWidget(object):
         callback = lambda x: self.callback_add_child(x, family_handle)
         person = Person()
         name = Name()
-        #the editor requires a surname
+        # the editor requires a surname
         name.add_surname(Surname())
         name.set_primary_surname(0)
         family = self.dbstate.db.get_family_from_handle(family_handle)
@@ -1462,11 +1464,11 @@ class GraphWidget(object):
         family.add_child_ref(ref)
 
         with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
-            #add parentref to child
+            # add parentref to child
             person.add_parent_family_handle(family_handle)
-            #default relationship is used
+            # default relationship is used
             self.dbstate.db.commit_person(person, trans)
-            #add child to family
+            # add child to family
             self.dbstate.db.commit_family(family, trans)
 
     def add_parents_to_person(self, obj):
