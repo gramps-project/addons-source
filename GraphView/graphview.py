@@ -675,21 +675,41 @@ class GraphWidget(object):
         # for detecting double click
         self.click_events = []
 
+        # for timeout on changing generation settings
+        self.set_anc_event = False
+        self.set_des_event = False
+
     def set_ancestors_generations(self, widget):
         """
         Set count of ancestors generations to show.
+        Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
-        self.view._config.set('interface.graphview-ancestor-generations',
-                              value)
+        # try to remove planed event (changing setting)
+        if self.set_anc_event and not self.set_anc_event.is_destroyed():
+            GLib.source_remove(self.set_anc_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-ancestor-generations',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_anc_event = context.find_source_by_id(event_id)
 
     def set_descendants_generations(self, widget):
         """
         Set count of descendants generations to show.
+        Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
-        self.view._config.set('interface.graphview-descendant-generations',
-                              value)
+        # try to remove planed event (changing setting)
+        if self.set_des_event and not self.set_des_event.is_destroyed():
+            GLib.source_remove(self.set_des_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-descendant-generations',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_des_event = context.find_source_by_id(event_id)
 
     def load_bookmarks(self):
         """
@@ -742,11 +762,11 @@ class GraphWidget(object):
             if not person:
                 return False
             question = (_('Person <b><i>%s</i></b> is not in the current view.\n'
-                        'Do you want to set it active and rebuild view?')
+                          'Do you want to set it active and rebuild view?')
                         % escape(displayer.display(person)))
             dialog = QuestionDialog2(_("Change active person?"), question,
                                      _("Yes"), _("No"),
-                                     self.uistate.window,)
+                                     self.uistate.window)
             if dialog.run():
                 self.view.change_active(handle)
 
@@ -975,7 +995,7 @@ class GraphWidget(object):
 
         self.person_to_focus = None
 
-        # perfom double click on node by left mouse button
+        # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
             # Remove all single click events
             for item in self.click_events:
@@ -1127,7 +1147,9 @@ class GraphWidget(object):
         menu.append(menu_item)
 
     def append_help_menu_entry(self, menu):
-        # Help menu entry
+        """
+        Adds help (about) menu entry.
+        """
         item = Gtk.MenuItem(label=_("About Graph View"))
         item.connect("activate", self.on_help_clicked)
         item.show()
@@ -1365,6 +1387,8 @@ class GraphWidget(object):
         child_menu = item.get_submenu()
         child_menu.set_reserve_toggle_size(False)
 
+        no_child = 1
+
         if family:
             childlist = []
             for child_ref in family.get_child_ref_list():
@@ -1376,6 +1400,7 @@ class GraphWidget(object):
                                    family.get_handle())
             add_child_item.show()
             child_menu.append(add_child_item)
+            no_child = 0
         else:
             childlist = find_children(self.dbstate.db, person)
 
@@ -1383,6 +1408,9 @@ class GraphWidget(object):
             child = self.dbstate.db.get_person_from_handle(child_handle)
             if not child:
                 continue
+
+            if no_child:
+                no_child = 0
 
             if find_children(self.dbstate.db, child):
                 label = Gtk.Label(label='<b><i>%s</i></b>'
@@ -1400,6 +1428,8 @@ class GraphWidget(object):
             child_item.show()
             child_menu.append(child_item)
 
+        if no_child:
+            item.set_sensitive(0)
         item.show()
         menu.append(item)
 
@@ -1416,7 +1446,7 @@ class GraphWidget(object):
         callback = lambda x: self.callback_add_child(x, family_handle)
         person = Person()
         name = Name()
-        #the editor requires a surname
+        # the editor requires a surname
         name.add_surname(Surname())
         name.set_primary_surname(0)
         family = self.dbstate.db.get_family_from_handle(family_handle)
@@ -1442,11 +1472,11 @@ class GraphWidget(object):
         family.add_child_ref(ref)
 
         with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
-            #add parentref to child
+            # add parentref to child
             person.add_parent_family_handle(family_handle)
-            #default relationship is used
+            # default relationship is used
             self.dbstate.db.commit_person(person, trans)
-            #add child to family
+            # add child to family
             self.dbstate.db.commit_family(family, trans)
 
     def add_parents_to_person(self, obj):
