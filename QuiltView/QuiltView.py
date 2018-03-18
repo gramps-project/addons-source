@@ -47,6 +47,7 @@ _ = _trans.gettext
 #-------------------------------------------------------------------------
 from gi.repository import Gtk
 from gi.repository import Gdk
+from gi.repository import GLib
 from gi.repository import Pango, PangoCairo
 
 #-------------------------------------------------------------------------
@@ -227,6 +228,8 @@ class QuiltView(NavigationView):
         self.format_helper = FormattingHelper(self.dbstate)
         scheme = config.get('colors.scheme')
         self.home_person_color = config.get('colors.home-person')[scheme]
+        self.timeout = None
+        self.save_tooltip = None
 
     def get_stock(self):
         """
@@ -809,23 +812,18 @@ class QuiltView(NavigationView):
 
         @param: person -- person object from database
         """
-        #name_format = self.options['name_format']
         primary_name = person.get_primary_name()
         name = Name(primary_name)
-        #name.set_display_as(name_format)
         return name_displayer.display_name(name)
 
-    def family_menu(self, handle, event):
+    def get_family_name(self, handle):
         """
-        Popup menu for node (family).
+        Create the family name
         """
         if handle:
             family = self.dbstate.db.get_family_from_handle(handle)
         else:
-            return False
-
-        self.menu = Gtk.Menu()
-        self.menu.set_reserve_toggle_size(False)
+            return ''
 
         if family:
             husband_handle = family.get_father_handle()
@@ -857,8 +855,52 @@ class QuiltView(NavigationView):
                 title_str = _("Family of %s") % spouse_name
             else:
                 title_str = ''
+        return title_str
 
-            label = Gtk.MenuItem(label=title_str)
+    def show_family_name(self, handle, event):
+        """
+        Popup menu for node (family).
+        """
+        if handle:
+            family = self.dbstate.db.get_family_from_handle(handle)
+        else:
+            return False
+
+        if family:
+            if not self.timeout:
+                self.save_tooltip = handle
+                self.scrolledwindow.set_property("has-tooltip", True)
+                tooltip = self.get_family_name(handle)
+                self.scrolledwindow.set_tooltip_text(tooltip)
+                self.timeout = GLib.timeout_add(3*1000, self.remove_tooltip)
+            elif handle != self.save_tooltip:
+                self.save_tooltip = handle
+                GLib.source_remove(self.timeout)
+                tooltip = self.get_family_name(handle)
+                self.scrolledwindow.set_tooltip_text(tooltip)
+                self.timeout = GLib.timeout_add(3*1000, self.remove_tooltip)
+
+    def remove_tooltip(self):
+        self.timeout = None
+        self.save_tooltip = None
+        self.scrolledwindow.set_property("has-tooltip", False)
+        self.scrolledwindow.set_tooltip_text("")
+        return False
+
+    def family_menu(self, handle, event):
+        """
+        Popup menu for node (family).
+        """
+        if handle:
+            family = self.dbstate.db.get_family_from_handle(handle)
+        else:
+            return False
+
+        self.menu = Gtk.Menu()
+        self.menu.set_reserve_toggle_size(False)
+
+        if family:
+            label = Gtk.MenuItem(label=self.get_family_name(handle))
             label.show()
             label.set_sensitive(False)
             self.menu.append(label)
@@ -1381,6 +1423,8 @@ class QuiltView(NavigationView):
             if obj:
                 if isinstance(obj, PersonNode):
                     self.set_path_lines(obj)
+                elif isinstance(obj, FamilyNode):
+                    self.show_family_name(obj.handle, event)
         return False
 
     def highlight_person(self, obj, color):
