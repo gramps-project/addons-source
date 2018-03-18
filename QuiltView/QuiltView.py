@@ -230,6 +230,7 @@ class QuiltView(NavigationView):
         self.home_person_color = config.get('colors.home-person')[scheme]
         self.timeout = None
         self.save_tooltip = None
+        self.plist = []
 
     def get_stock(self):
         """
@@ -271,7 +272,32 @@ class QuiltView(NavigationView):
 
         self.preview_rect = None
 
-        return self.scrolledwindow
+        self.vbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.VERTICAL)
+        self.vbox.set_border_width(4)
+        hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
+        self.vbox.pack_start(hbox, False, False, 0)
+
+        self.name_store = Gtk.ListStore(str, str)
+        self.name_combo = Gtk.ComboBox.new_with_model_and_entry(self.name_store)
+        self.name_combo.set_tooltip_text(
+                              _("Select the name for which you want to see."))
+        self.name_combo.connect('changed', self._entry_key_event)
+        self.name_combo.set_entry_text_column(0)
+        hbox.pack_start(self.name_combo, False, False, 0)
+
+        self.clear = Gtk.Button("")
+        self.clear.set_label(_("Nothing is selected"))
+        self.clear.set_tooltip_text(
+                              _("Clear the entry field in the name selection"
+                                " box. The number before the word selected "
+                                "corresponds to the maximum number of people "
+                                "visible on this tree."))
+        self.clear.connect('clicked', self._erase_name_selection)
+        hbox.pack_start(self.clear, False, False, 0)
+
+        self.vbox.pack_start(self.scrolledwindow, True, True, 0)
+
+        return self.vbox
 
     def additional_ui(self):
         """
@@ -356,6 +382,8 @@ class QuiltView(NavigationView):
         is no need to store the database, since we will get the value
         from self.state.db
         """
+        self._erase_name_selection()
+        self._clear_list_store()
         db.connect('person-add', self.person_rebuild)
         db.connect('person-update', self.person_rebuild)
         db.connect('person-delete', self.person_rebuild)
@@ -371,6 +399,42 @@ class QuiltView(NavigationView):
 
     def navigation_type(self):
         return 'Person'
+
+    def _entry_key_event(self, combobox):
+        """
+        If the user enter characters, we create the list for the combobox.
+        If the user select one field, the tree_iter is not None
+        """
+        tree_iter = combobox.get_active_iter()
+        if tree_iter is not None:
+            model = combobox.get_model()
+            name, handle = model[tree_iter][:2]
+            self.move_to_node(None, handle)
+            #print("Selected: name=%s, handle=%s" % (name, handle))
+        else:
+            self._clear_list_store()
+            entry = combobox.get_child()
+            search = entry.get_text()
+            count = 0
+            for name in self.plist:
+                if search in name[0].lower():
+                    count += 1
+                    found = name[0]
+                    self.name_store.append(name)
+            self.clear.set_label(_("%d selected for the active person, clear" % count))
+
+    def _clear_list_store(self):
+        """
+        We erase the list store
+        """
+        self.name_store = Gtk.ListStore(str, str)
+        self.name_combo.set_model(self.name_store)
+
+    def _erase_name_selection(self, arg=None):
+        """
+        We erase the name in the entrybox
+        """
+        self.name_combo.get_child().set_text("")
 
     def add_bookmark(self, handle):
         if handle:
@@ -410,6 +474,8 @@ class QuiltView(NavigationView):
                 self.set_path_lines(self.people[handle])
 
     def goto_handle(self, handle=None):
+        self._erase_name_selection()
+        self._clear_list_store()
         if handle not in self.people.keys():
             self.rebuild()
         else:
@@ -433,6 +499,7 @@ class QuiltView(NavigationView):
         people = {}
         families = {}
         layers = {}
+        self.plist.clear()
 
         todo = [(handle, 0)]
         while todo:
@@ -447,10 +514,12 @@ class QuiltView(NavigationView):
                 person = self.dbstate.db.get_person_from_handle(handle)
                 if person is not None:
                     name = name_displayer.display(person)
+                    self.plist.append([name, handle])
                     sex = person.get_gender()
                     ident = person.get_gramps_id()
                 else:
                     name = "???"
+                    self.plist.append([name, handle])
                     sex = Person.UNKNOWN
                     ident = None
                 # get alive status of person to get box color
@@ -522,9 +591,12 @@ class QuiltView(NavigationView):
         active = self.get_active()
         if active != "":
             self.people, self.families, self.layers = self.read_data(active)
+            self.name_combo.get_child().set_text(" ") # force entry change
+            self.name_combo.get_child().set_text("")
             self.canvas.queue_draw()
             self.canvas.grab_focus()
             self.center_on_node(None, active)
+            self.set_path_lines(active)
 
     def on_draw(self, canvas, cr):
         """
