@@ -500,6 +500,7 @@ class QuiltView(NavigationView):
         families = {}
         layers = {}
         self.plist.clear()
+        home_person = self.dbstate.db.get_default_person().get_handle()
 
         todo = [(handle, 0)]
         while todo:
@@ -532,10 +533,16 @@ class QuiltView(NavigationView):
                 fg_color = (float(color.red / 65535.0),
                             float(color.green / 65535.0),
                             float(color.blue / 65535.0))
-                color = Gdk.color_parse(fill)
-                bg_color = (float(color.red / 65535.0),
-                            float(color.green / 65535.0),
-                            float(color.blue / 65535.0))
+                if handle == home_person:
+                    color = Gdk.color_parse(self.home_person_color)
+                    bg_color = (float(color.red / 65535.0),
+                                float(color.green / 65535.0),
+                                float(color.blue / 65535.0))
+                else:
+                    color = Gdk.color_parse(fill)
+                    bg_color = (float(color.red / 65535.0),
+                                float(color.green / 65535.0),
+                                float(color.blue / 65535.0))
 
                 people[handle] = PersonNode(handle, layer, name,
                                             sex, ident, fg_color, bg_color)
