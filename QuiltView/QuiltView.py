@@ -232,6 +232,8 @@ class QuiltView(NavigationView):
         self.save_tooltip = None
         self.plist = []
         self.total = 0
+        self.progress = None
+        self.load = 0 # avoid to load the database twice
 
     def get_stock(self):
         """
@@ -370,6 +372,9 @@ class QuiltView(NavigationView):
         all handling of visibility is now in rebuild, see that for more
         information.
         """
+        self.load += 1 # avoid to load the database twice
+        if self.load == 1:
+            return
         try:
             self.rebuild()
         except AttributeError as msg:
@@ -385,6 +390,8 @@ class QuiltView(NavigationView):
         """
         self._erase_name_selection()
         self._clear_list_store()
+        if self.load > 1: # avoid to load the database twice
+            self.load = 0
         db.connect('person-add', self.person_rebuild)
         db.connect('person-update', self.person_rebuild)
         db.connect('person-delete', self.person_rebuild)
@@ -482,6 +489,9 @@ class QuiltView(NavigationView):
     def goto_handle(self, handle=None):
         self._erase_name_selection()
         self._clear_list_store()
+        if self.load < 3: # avoid to load the database twice
+            self.load = 3
+            self.rebuild()
         if handle not in self.people.keys():
             self.rebuild()
         else:
@@ -509,9 +519,16 @@ class QuiltView(NavigationView):
         home = self.dbstate.db.get_default_person()
         home_person = home.get_handle() if home else None
 
+        message = _('Loading individuals')
+        self.progress = ProgressMeter(_("Loading the data"),
+                                      can_cancel=False,
+                                      parent=self.uistate.window)
+        self.progress.set_pass(message, self.total)
         todo = [(handle, 0)]
+        count = 0
         while todo:
             handle, layer = todo.pop()
+            count += 1 # persons + families
             if layer not in layers:
                 layers[layer] = [(0, handle)]
             else:
@@ -595,13 +612,16 @@ class QuiltView(NavigationView):
                     families[handle].add_parent(parent)
                     if parent not in people:
                         todo.append((parent, layer - 1))
-
+            self.progress.step()
+        self.progress.close()
         return people, families, layers
 
     def rebuild(self):
         """
         Rebuild.
         """
+        if self.load < 3: # avoid to load the database twice
+            return
         active = self.get_active()
         if active != "":
             self.people, self.families, self.layers = self.read_data(active)
