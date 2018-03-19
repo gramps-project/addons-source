@@ -620,6 +620,8 @@ class QuiltView(NavigationView):
         """
         Rebuild.
         """
+        if not self.active:
+            return # Don't rebuild, we are hidden.
         if self.load < 3: # avoid to load the database twice
             return
         active = self.get_active()
