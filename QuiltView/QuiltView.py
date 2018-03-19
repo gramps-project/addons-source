@@ -776,6 +776,7 @@ class QuiltView(NavigationView):
         if not handle:
             handle = obj.get_data()
 
+        self.add_bookmark(handle)
         person = self.dbstate.db.get_person_from_handle(handle)
         if person:
             try:
@@ -858,7 +859,6 @@ class QuiltView(NavigationView):
             if obj:
                 if isinstance(obj, PersonNode):
                     self.person_menu(obj.handle, event)
-                    self.add_bookmark(obj.handle)
                     self.set_path_lines(obj)
                 elif isinstance(obj, FamilyNode):
                     self.family_menu(obj.handle, event)
