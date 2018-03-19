@@ -231,6 +231,7 @@ class QuiltView(NavigationView):
         self.timeout = None
         self.save_tooltip = None
         self.plist = []
+        self.total = 0
 
     def get_stock(self):
         """
@@ -280,20 +281,20 @@ class QuiltView(NavigationView):
         self.name_store = Gtk.ListStore(str, str)
         self.name_combo = Gtk.ComboBox.new_with_model_and_entry(self.name_store)
         self.name_combo.set_tooltip_text(
-                              _("Select the name for which you want to see."))
+            _("Select the name for which you want to see."))
         self.name_combo.connect('changed', self._entry_key_event)
         self.name_combo.set_entry_text_column(0)
         hbox.pack_start(self.name_combo, False, False, 0)
 
-        self.clear = Gtk.Button("")
-        self.clear.set_label(_("Nothing is selected"))
-        self.clear.set_tooltip_text(
-                              _("Clear the entry field in the name selection"
-                                " box. The number before the word selected "
-                                "corresponds to the maximum number of people "
-                                "visible on this tree."))
-        self.clear.connect('clicked', self._erase_name_selection)
-        hbox.pack_start(self.clear, False, False, 0)
+        clear = Gtk.Button(_("Clear"))
+        clear.set_tooltip_text(
+            _("Clear the entry field in the name selection box."))
+        clear.connect('clicked', self._erase_name_selection)
+        hbox.pack_start(clear, False, False, 0)
+
+        self.message = Gtk.Label()
+        self.message.set_label(_("Nothing is selected"))
+        hbox.pack_start(self.message, False, False, 0)
 
         self.vbox.pack_start(self.scrolledwindow, True, True, 0)
 
@@ -396,6 +397,7 @@ class QuiltView(NavigationView):
         if self.active:
             self.bookmarks.redraw()
         self.build_tree()
+        self.total = db.get_number_of_people()
 
     def navigation_type(self):
         return 'Person'
@@ -421,7 +423,11 @@ class QuiltView(NavigationView):
                     count += 1
                     found = name[0]
                     self.name_store.append(name)
-            self.clear.set_label(_("%d selected for the active person, clear" % count))
+            self.message.set_label(
+                _("You have %(count)d people selected for the active person "
+                  "and %(total)d people in your database."
+                  % {'count': count,
+                     'total': self.total}))
 
     def _clear_list_store(self):
         """
