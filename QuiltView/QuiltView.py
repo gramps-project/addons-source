@@ -76,9 +76,11 @@ from html import escape
 import gramps.gui.widgets.progressdialog as progressdlg
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.db import DbTxn
+from gramps.gui.display import display_url
 
 BORDER = 10
 HEIGHT = 18
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Quilt_Chart'
 
 class Node(object):
     def __init__(self, handle, layer):
@@ -891,6 +893,21 @@ class QuiltView(NavigationView):
         menu_item.show()
         menu.append(menu_item)
 
+    def append_help_menu_entry(self, menu):
+        """
+        Adds help (about) menu entry.
+        """
+        item = Gtk.MenuItem(label=_("About Quilt View"))
+        item.connect("activate", self.on_help_clicked)
+        item.show()
+        menu.append(item)
+
+    def on_help_clicked(self, widget):
+        """
+        Display the relevant portion of Gramps manual.
+        """
+        display_url(WIKI_PAGE)
+
     def set_home_person(self, obj):
         """
         Set the home person for database and make it active.
@@ -1023,7 +1040,7 @@ class QuiltView(NavigationView):
             self.add_children_submenu(self.menu, None, family)
 
             self.add_menu_separator(self.menu)
-            #self.append_help_menu_entry(self.menu)
+            self.append_help_menu_entry(self.menu)
 
         # new from gtk 3.22:
         # self.menu.popup_at_pointer(event)
@@ -1331,7 +1348,7 @@ class QuiltView(NavigationView):
                          handle, self.set_home_person)
 
             self.add_menu_separator(self.menu)
-            #self.append_help_menu_entry(self.menu)
+            self.append_help_menu_entry(self.menu)
 
         # new from gtk 3.22:
         # self.menu.popup_at_pointer(event)
