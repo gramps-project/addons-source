@@ -432,9 +432,11 @@ class QuiltView(NavigationView):
                     found = name[0]
                     self.name_store.append(name)
             self.message.set_label(
-                _("You have %(count)d people selected for the active person "
+                _("You have %(filter)d filtered people, "
+                  "%(count)d people shown on the tree "
                   "and %(total)d people in your database."
-                  % {'count': count,
+                  % {'filter': count if search != "" else 0,
+                     'count': len(self.plist),
                      'total': self.total}))
 
     def _clear_list_store(self):
