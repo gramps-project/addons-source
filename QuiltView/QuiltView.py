@@ -406,7 +406,6 @@ class QuiltView(NavigationView):
         if self.active:
             self.bookmarks.redraw()
         self.build_tree()
-        self.total = db.get_number_of_people()
 
     def navigation_type(self):
         return 'Person'
@@ -626,6 +625,7 @@ class QuiltView(NavigationView):
             return # Don't rebuild, we are hidden.
         if self.load < 3: # avoid to load the database twice
             return
+        self.total = self.dbstate.db.get_number_of_people()
         active = self.get_active()
         if active != "":
             self.people, self.families, self.layers = self.read_data(active)
