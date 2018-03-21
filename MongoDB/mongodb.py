@@ -685,13 +685,23 @@ class MongoDB(DbGeneric):
 
     def rebuild_secondary(self, update):
         """
-        Rebuild secondary indices
+        Reindex all collections
         """
-        # First, expand blob to individual fields:
-        self._update_secondary_values()
-        # Next, rebuild stats:
-        gstats = self.get_gender_stats()
-        self.genderStats = GenderStats(gstats)
+        self.db.person.reindex()
+        self.db.family.reindex()
+        self.db.event.reindex()
+        self.db.place.reindex()
+        self.db.repository.reindex()
+        self.db.source.reindex()
+        self.db.citation.reindex()
+        self.db.media.reindex()
+        self.db.note.reindex()
+        self.db.tag.reindex()
+
+        self.db.reference.reindex()
+        self.db.metadata.reindex()
+        self.db.name_group.reindex()
+        self.db.gender_stats.reindex()
 
     def _has_handle(self, obj_key, handle):
         table = KEY_TO_NAME_MAP[obj_key]
