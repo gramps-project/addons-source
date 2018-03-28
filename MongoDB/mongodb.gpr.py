@@ -24,9 +24,10 @@ register(DATABASE,
          description=_('MongoDB Database'),
          version = '1.0.1',
          gramps_target_version='5.0',
-         status=STABLE,
+         status=UNSTABLE,
          fname='mongodb.py',
          databaseclass='MongoDB',
          authors=['Nick Hall'],
-         authors_email=['nick-h@gramps-project.org']
+         authors_email=['nick-h@gramps-project.org'],
+         include_in_listing = False
 )
