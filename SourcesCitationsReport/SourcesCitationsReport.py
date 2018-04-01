@@ -546,7 +546,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         para = ParagraphStyle()
         para.set_font(font)
         para.set_description(_('The style used for event and person details.'))
-        self.default_style.add_paragraph_style("PLC-Details", para)
+        self.default_style.add_paragraph_style("SRC-Details", para)
 
     def __cell_style(self):
         """
