@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-06 21:50+0300\n"
-"PO-Revision-Date: 2018-04-06 21:51+0300\n"
+"PO-Revision-Date: 2018-04-07 00:58+0300\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -42,7 +42,7 @@ msgstr "GEDCOM laajennusten valinnat"
 
 #: GedcomExtensions.py:121
 msgid "Include witnesses"
-msgstr "Lisää lähteet"
+msgstr "Lisää todistajat"
 
 #: GedcomExtensions.py:122
 msgid "Include media"
