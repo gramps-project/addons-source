@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-17 19:08+0200\n"
-"PO-Revision-Date: 2018-04-17 22:20+0100\n"
+"PO-Revision-Date: 2018-04-18 21:13+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -200,6 +200,9 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
+"Erzeugt eine Webseite mit einer grafischen Darstellung von Nachkommen (SVG)"
+"dargestellt als zusammenklappbares Baum-Layout aus der D3.js"
+" JavaScript-Bibliothek."
 
 #: D3Charts/DescendantIndentedTree.py:672
 #, python-format
@@ -318,11 +321,13 @@ msgstr "Das Nummerierungssystem, das verwendet wird"
 
 #: D3Charts/DescendantIndentedTree.py:1802
 msgid "Include contraction level"
-msgstr ""
+msgstr "Kontraktionsstufe einbeziehen"
 
 #: D3Charts/DescendantIndentedTree.py:1804
 msgid "The number of descendant levels to contract on initial display."
 msgstr ""
+"Die Anzahl der Nachkommenebenen die bei der ersten Anzeige zusammengezogen"
+" sind."
 
 #: D3Charts/DescendantIndentedTree.py:1809
 msgid "Font size"
@@ -362,27 +367,27 @@ msgstr "Ob doppelte Familienbäume im Bericht angezeigt werden."
 
 #: D3Charts/DescendantIndentedTree.py:1843
 msgid "Expanded Row Background Color"
-msgstr ""
+msgstr "Expandierte Zeile Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1844
 msgid "RGB-color for expanded row background."
-msgstr ""
+msgstr "RGB-Farbe für expandierte Zeile Hintergrund."
 
 #: D3Charts/DescendantIndentedTree.py:1847
 msgid "Expandable Background Color"
-msgstr ""
+msgstr "Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1849
 msgid "RGB-color for expandable row background."
-msgstr ""
+msgstr "RGB-Farbe für expandierbare Reihe Hintergrund"
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "Non-Expandable Background Color"
-msgstr ""
+msgstr "Nicht-Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1854
 msgid "RGB-color for non-expandable row background."
-msgstr ""
+msgstr "RGB-Farbe für nicht expandierbare Reihe Hintergrund"
 
 #: D3Charts/DescendantIndentedTree.py:1858
 msgid "Include records marked private"
@@ -438,36 +443,36 @@ msgstr "Gesamter Knoten"
 
 #: D3Charts/DescendantIndentedTree.py:1893
 msgid "Arrow images at start of node."
-msgstr ""
+msgstr "Pfeilbilder am Beginn des Knoten."
 
 #: D3Charts/DescendantIndentedTree.py:1894
 msgid "Plus/Minus images at start of node."
-msgstr ""
+msgstr "Plus/Minus Bilder am Beginn des Knoten."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 #: D3Charts/DescendantIndentedTree.py:1924
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "Wo klicken um Knoten zu erweitern/verkleinern."
 
 #: D3Charts/DescendantIndentedTree.py:1899
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "HREF-Links für Knoten automatisch generieren"
 
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr ""
+msgstr "Ob HTML Links für jeden Knoten auto-erzeugt werden."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "URL prefix path."
-msgstr ""
+msgstr "URL-Präfixpfad."
 
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr ""
+msgstr "URL-Präfix für jede automatisch generierte HREF-Verknüpfung."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL file extension"
-msgstr ""
+msgstr "URL Dateierweiterung"
 
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "No file extension."
@@ -499,40 +504,43 @@ msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid "URL file name delimeter"
-msgstr ""
+msgstr "URL-Dateinamensbegrenzer"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Alle Leerzeichen entfernen."
 
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "Leerzeichen durch Bindestrich (-) ersetzen."
 
 #: D3Charts/DescendantIndentedTree.py:1933
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "Leerzeichen durch Unterstrich (_) ersetzen"
 
 #: D3Charts/DescendantIndentedTree.py:1934
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
+"Was als Dateinamen-Trennzeichen zu verwenden ist, das Leerzeichen ersetzt."
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Generations to generate HREF links"
-msgstr ""
+msgstr "Generationen zum Generieren von HREF-Links"
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "The number of generations to generate HREF links."
-msgstr ""
+msgstr "Die Anzahl von Generationen für die HREF-Links egeneriert werden."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Exclude persons who died before (years)"
-msgstr ""
+msgstr "Personen ausschließen die vor (Jahren) gestorben sind"
 
 #: D3Charts/DescendantIndentedTree.py:1950
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
+"Ob Links für Personen erstellt werden, die in der Kindheit gestorben sind. -1"
+" keinen ausschließen."
 
 #: D3Charts/DescendantIndentedTree.py:1956
 msgid "Exclude center person"
@@ -540,7 +548,7 @@ msgstr "Hauptperson ausschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1957
 msgid "Whether or not to generate links for center person."
-msgstr ""
+msgstr "Ob Links für die Hauptperson generiert werden oder nicht."
 
 #: D3Charts/DescendantIndentedTree.py:1962
 msgid "Exclude Spouses"
@@ -548,19 +556,21 @@ msgstr "Partner ausschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1963
 msgid "Whether or not to generate links for spouses."
-msgstr ""
+msgstr "Ob Links für Ehepartner generiert werden oder nicht."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Biography Content"
-msgstr ""
+msgstr "Biographie Inhalt"
 
 #: D3Charts/DescendantIndentedTree.py:1972
 msgid "Show biography tooltips"
-msgstr ""
+msgstr "Biografie Werkzeughinweise anzeigen"
 
 #: D3Charts/DescendantIndentedTree.py:1973
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
+"Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn sich der"
+" Mauszeiger über einen Knoten befindet."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Use callname for common name"
@@ -625,7 +635,7 @@ msgstr "Textfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:2019
 msgid "RGB-color for biography text."
-msgstr ""
+msgstr "RGB-Farbe für Biografietext."
 
 #: D3Charts/DescendantIndentedTree.py:2022
 msgid "Background Color"
@@ -633,15 +643,15 @@ msgstr "Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:2024
 msgid "RGB-color for biography tooltip."
-msgstr ""
+msgstr "RGB-Farbe für Biografietext-Werkzeughinweis."
 
 #: D3Charts/DescendantIndentedTree.py:2027
 msgid "Header Font size"
-msgstr ""
+msgstr "Kopfzeile Schriftgröße"
 
 #: D3Charts/DescendantIndentedTree.py:2029
 msgid "The font size in pixels for biography header text."
-msgstr ""
+msgstr "Die Textgröße in Punkten für den Kopfzeilentext."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Body Font size"
@@ -650,4 +660,5 @@ msgstr "Hauptteil Schriftgröße"
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography body text."
 msgstr "Die Textgröße in Punkten für den Biographiehaupteil Text."
+
 
