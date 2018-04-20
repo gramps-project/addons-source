@@ -134,8 +134,6 @@ class PersonNode(Node):
             label = '\u2650 ' + self.name
 
         layout = canvas.create_pango_layout(label)
-        font = Pango.FontDescription('Sans')
-        layout.set_font_description(font)
         width, height = layout.get_size()
         self.width = width / 1024
 
