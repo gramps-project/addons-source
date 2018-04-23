@@ -1,28 +1,29 @@
 # German translation for Gramps
-# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 00:16+0200\n"
-"PO-Revision-Date: 2013-09-20 22:59+0200\n"
+"POT-Creation-Date: 2018-04-23 22:45+0200\n"
+"PO-Revision-Date: 2018-04-23 22:48+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: FaceDetection/FaceDetection.gpr.py:3
 msgid "Face Detection"
@@ -36,7 +37,11 @@ msgstr "Gramplet zur Erkennung und Zuordnung von Gesichtern"
 msgid "Faces"
 msgstr "Gesichter"
 
-#: FaceDetection/FaceDetection.py:62
+#: FaceDetection/FaceDetection.py:63
+msgid "OpenCV-Python is not installed"
+msgstr "OpenCV-Python ist nicht installiert"
+
+#: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
 msgstr "Erkannte neue Gesichter"
 
@@ -14829,3 +14834,4 @@ msgstr ""
 "<left_val>0.4738228023052216</left_val> <right_val>0.6522961258888245</"
 "right_val></_></_></trees> <stage_threshold>105.7611007690429700</"
 "stage_threshold> <parent>20</parent> <next>-1</next>"
+
