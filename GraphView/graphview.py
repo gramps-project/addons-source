@@ -77,6 +77,7 @@ from gramps.gen.lib import Person, Family, ChildRef, Name, Surname
 from gramps.gui.widgets.menuitem import add_menuitem
 import gramps.gui.widgets.progressdialog as progressdlg
 from gramps.gen.utils.libformatting import FormattingHelper
+from gramps.gen.utils.symbols import Symbols
 
 if win():
     DETACHED_PROCESS = 8
@@ -161,6 +162,11 @@ class GraphView(NavigationView):
 
         self.additional_uis.append(self.additional_ui())
         self.define_print_actions()
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def font_changed(self):
+        self.graph_widget.font_changed(self.get_active())
+        #self.goto_handle(None)
 
     def define_print_actions(self):
         """
@@ -573,6 +579,7 @@ class GraphWidget(object):
         self.view = view
         self.dbstate = dbstate
         self.uistate = uistate
+        self.parser = None
         self.active_person_handle = None
 
         scrolled_win = Gtk.ScrolledWindow()
@@ -670,7 +677,7 @@ class GraphWidget(object):
         # person that will focus (once) after graph rebuilding
         self.person_to_focus = None
 
-        self.format_helper = FormattingHelper(self.dbstate)
+        self.format_helper = FormattingHelper(self.dbstate, self.uistate)
 
         # for detecting double click
         self.click_events = []
@@ -678,6 +685,12 @@ class GraphWidget(object):
         # for timeout on changing generation settings
         self.set_anc_event = False
         self.set_des_event = False
+
+    def font_changed(self, active):
+        self.font = config.get('utf8.selected-font')
+        if self.parser:
+            self.parser.font_changed()
+            self.populate(active)
 
     def set_ancestors_generations(self, widget):
         """
@@ -787,7 +800,7 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
-        dot = DotGenerator(self.dbstate, self.view)
+        dot = DotGenerator(self.dbstate, self.view, self.uistate)
         self.active_person_handle = active_person
         dot.build_graph(active_person)
 
@@ -806,6 +819,7 @@ class GraphWidget(object):
 
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
+        self.parser = parser
 
         # save transform scale
         self.transform_scale = parser.transform_scale
@@ -1743,11 +1757,16 @@ class GraphvizSvgParser(object):
                                 "Times Roman,serif":     "Times",
                                 "Times-Roman":           "Times",
                                 "Times,serif":           "Times",
-                                "Arial":                 "Helvetica",
+                                "Arial":                 "",
+                                #"Arial":                 "Helvetica",
                                }
         self.active_person_item = None
 
         self.transform_scale = 1
+        self.font_changed()
+
+    def font_changed(self):
+        self.font = config.get('utf8.selected-font')
 
     def parse(self, ifile):
         """
@@ -2003,17 +2022,7 @@ class GraphvizSvgParser(object):
         anchor = self.text_attrs.get('text-anchor')
         style = self.text_attrs.get('style')
 
-        if style:
-            p_style = self.parse_style(style)
-            try:
-                font_family = self.font_family_map[p_style['font-family']]
-            except KeyError:
-                font_family = p_style['font-family']
-            text_font = font_family + " " + p_style['font-size'] + 'px'
-        else:
-            font_family = self.font_family_map[self.text_attrs.get('font-family')]
-            font_size = self.text_attrs.get('font-size')
-            text_font = font_family + " " + font_size + 'px'
+        text_font = self.font + " " + '10px'
 
         # text color
         fill_color = self.text_attrs.get('fill')
@@ -2106,13 +2115,14 @@ class GraphvizSvgParser(object):
 #------------------------------------------------------------------------
 class DotGenerator(object):
 
-    def __init__(self, dbstate, view):
+    def __init__(self, dbstate, view, uistate):
         """
         Creates graphing instructions in dot format which is fed to Graphviz,
         so that it can layout the data in a graph and produce an SVG form
         of the graph.
         """
         self.dbstate = dbstate
+        self.uistate = uistate
         self.database = dbstate.db
         self.dot = StringIO()
 
@@ -2212,6 +2222,19 @@ class DotGenerator(object):
             self.write(' node [style=filled fontsize=%d fontcolor="%s"];\n'
                        % (fontsize, font_color))
         self.write('\n')
+        self.uistate.connect('font-changed', self.font_changed)
+        self.symbols = Symbols()
+        self.font_changed()
+
+    def font_changed(self):
+        self.font = config.get('utf8.selected-font')
+        dth_idx = self.uistate.death_symbol
+        if self.uistate.symbols:
+            self.bth = self.symbols.get_symbol_for_string(self.symbols.SYMBOL_BIRTH)
+            self.dth = self.symbols.get_death_symbol_for_char(dth_idx)
+        else:
+            self.bth = self.symbols.get_symbol_fallback(self.symbols.SYMBOL_BIRTH)
+            self.dth = self.symbols.get_death_symbol_fallback(dth_idx)
 
     def build_graph(self, active_person):
         """
@@ -2640,14 +2663,14 @@ class DotGenerator(object):
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
             if birth:
-                txt = _('b. %s') % birth  # short for "born" (could be "*")
+                txt = _('%s %s') % (self.bth, birth)
                 # line separator required only if we have both birth and death
                 label += txt
             if birth and death:
                 label += line_delimiter
 
             if death:
-                txt = _('d. %s') % death  # short for "died" (could be "+")
+                txt = _('%s %s') % (self.dth, death)
                 label += txt
         # 2) simple and on one line:
         #       (1890 - 1960)
