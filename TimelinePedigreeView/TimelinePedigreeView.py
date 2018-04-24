@@ -61,6 +61,7 @@ from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.utils.symbols import Symbols
 try:
     trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -344,6 +345,7 @@ class TimelinePedigreeView(NavigationView):
             }
 
         self.dbstate = dbstate
+        self.uistate = uistate
         self.dbstate.connect('database-changed', self.change_db)
 
         self.additional_uis.append(self.additional_ui())
@@ -392,7 +394,7 @@ class TimelinePedigreeView(NavigationView):
         # Default - not show, for mo fast display hight tree
         self.show_unknown_peoples = self.cman.get('interface.show-unknown-people')
 
-        self.format_helper = FormattingHelper(self.dbstate)
+        self.format_helper = FormattingHelper(self.dbstate, self.uistate)
 
         # Depth of tree.
         self._depth = 1
@@ -407,6 +409,11 @@ class TimelinePedigreeView(NavigationView):
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         self._birth_cache = {}
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def font_changed(self):
+        self.format_helper.reload_symbols()
+        self.person_rebuild()
 
     def on_delete(self):
         """Save the configuration settings on shutdown."""
