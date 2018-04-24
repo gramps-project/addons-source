@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-27 20:17+0300\n"
-"PO-Revision-Date: 2018-04-01 11:51+0300\n"
+"PO-Revision-Date: 2018-04-04 19:45+0300\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <niememat@gmail,com>\n"
 "Language: fi_FI\n"
@@ -504,7 +504,7 @@ msgstr "Esimerkkejä"
 
 #: dynamicweb.py:2484
 msgid "F"
-msgstr "N"
+msgstr "F"
 
 #: dynamicweb.py:2485
 msgid "Families Index"
@@ -905,7 +905,7 @@ msgstr "Ilman nimeä"
 
 #: dynamicweb.py:2596
 msgid "Without surname"
-msgstr "Ilman sukunimeä"
+msgstr "Sukunimi puuttuu"
 
 #: dynamicweb.py:2597
 msgid "Without title"
