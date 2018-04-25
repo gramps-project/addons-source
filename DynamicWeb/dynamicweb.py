@@ -1115,9 +1115,9 @@ class DynamicWebReport(Report):
             # Get event media
             jdata['media'] = self._data_media_reference_index(event)
             # Get event sources
-            citationlist = event.get_citation_list()
-            citationlist.extend(event_ref.get_citation_list())
-            for attr in attrlist: citationlist.extend(attr.get_citation_list())
+            citationlist = set(event.get_citation_list())
+            citationlist.update(event_ref.get_citation_list())
+            for attr in attrlist: citationlist.update(attr.get_citation_list())
             jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
             # Get event participants
             result_list = list(self.database.find_backlink_handles(event.handle, include_classes=['Person', 'Family']))
