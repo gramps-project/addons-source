@@ -30,12 +30,14 @@ DownloadMedia/locale/
 DynamicWeb/locale/
 EditExifMetadata/locale/
 ExportRaw/locale/
+ExportProlog/locale/
 ExtendedAttributes/locale/
 FaceDetection/locale/
 FamilySheet/locale/
 FamilyTree/locale/
 FRWebConnectPack/locale/
 GedcomExtensions/locale/
+GetGOV/locale/
 GoogleEarthWriteKML/locale/
 GraphView/locale/
 HeadlineNewsGramplet/locale/
