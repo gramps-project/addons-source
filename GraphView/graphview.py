@@ -35,12 +35,6 @@
 #-------------------------------------------------------------------------
 import os
 from xml.parsers.expat import ParserCreate
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-try:
-    _trans = glocale.get_addon_translator(__file__)
-except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
 import string
 from subprocess import Popen, PIPE
@@ -54,29 +48,37 @@ from html import escape
 # Gramps Modules
 #
 #-------------------------------------------------------------------------
+from gramps.gen import datehandler
+from gramps.gen.config import config
+from gramps.gen.constfunc import win
 from gramps.gen.db import DbTxn
-import gramps.gen.lib
-from gramps.gui.views.navigationview import NavigationView
-from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.display.name import displayer
+from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.errors import WindowActiveError
+from gramps.gen.lib import (Person, Family, ChildRef, Name, Surname,
+                            ChildRefType, EventType, EventRoleType)
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  find_children, find_parents, preset_name,
                                  find_witnessed_people)
-from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.utils.file import search_for, media_path_full, find_file
-from gramps.gui.editors import EditPerson, EditFamily, EditTagList
-from gramps.gen.errors import WindowActiveError
-import gramps.gen.datehandler
-from gramps.gui.display import display_url
-from gramps.gen.display.place import displayer as place_displayer
-from gramps.gen.constfunc import win
-from gramps.gen.config import config
-from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
-from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
-from gramps.gen.lib import Person, Family, ChildRef, Name, Surname
-from gramps.gui.widgets.menuitem import add_menuitem
-import gramps.gui.widgets.progressdialog as progressdlg
 from gramps.gen.utils.libformatting import FormattingHelper
+from gramps.gen.utils.thumbnails import get_thumbnail_path
+
+from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
+from gramps.gui.display import display_url
+from gramps.gui.editors import EditPerson, EditFamily, EditTagList
+from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
+from gramps.gui.views.navigationview import NavigationView
+from gramps.gui.views.bookmarks import PersonBookmarks
+from gramps.gui.widgets import progressdialog as progressdlg
+from gramps.gui.widgets.menuitem import add_menuitem
+
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 if win():
     DETACHED_PROCESS = 8
@@ -2428,12 +2430,12 @@ class DotGenerator(object):
         Links the child to a family.
         """
         style = 'solid'
-        adopted = ((int(frel) != gramps.gen.lib.ChildRefType.BIRTH) or
-                   (int(mrel) != gramps.gen.lib.ChildRefType.BIRTH))
+        adopted = ((int(frel) != ChildRefType.BIRTH) or
+                   (int(mrel) != ChildRefType.BIRTH))
         # if birth relation to father is NONE, meaning there is no father and
         # if birth relation to mother is BIRTH then solid line
-        if ((int(frel) == gramps.gen.lib.ChildRefType.NONE) and
-           (int(mrel) == gramps.gen.lib.ChildRefType.BIRTH)):
+        if ((int(frel) == ChildRefType.NONE) and
+           (int(mrel) == ChildRefType.BIRTH)):
             adopted = False
         if adopted:
             style = 'dotted'
@@ -2447,7 +2449,7 @@ class DotGenerator(object):
         Links the child to a parent.
         """
         style = 'solid'
-        if (int(rel) != gramps.gen.lib.ChildRefType.BIRTH):
+        if (int(rel) != ChildRefType.BIRTH):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle,
@@ -2497,11 +2499,11 @@ class DotGenerator(object):
         label = ""
         for event_ref in fam.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
-            if event.type == gramps.gen.lib.EventType.MARRIAGE and \
-            (event_ref.get_role() == gramps.gen.lib.EventRoleType.FAMILY or
-            event_ref.get_role() == gramps.gen.lib.EventRoleType.PRIMARY):
-                label = self.get_event_string(event)
-                break
+            if (event.type == EventType.MARRIAGE and
+                (event_ref.get_role() == EventRoleType.FAMILY or
+                 event_ref.get_role() == EventRoleType.PRIMARY)):
+                    label = self.get_event_string(event)
+                    break
         fill, color = color_graph_family(fam, self.dbstate)
         style = "filled"
         label = label.center(int(len(label)*2))
@@ -2699,7 +2701,7 @@ class DotGenerator(object):
             place_title = place_displayer.display_event(self.database, event)
             if event.get_date_object().get_year_valid():
                 if self.show_full_dates:
-                    rtrn = '%s' % gramps.gen.datehandler.get_date(event)
+                    rtrn = '%s' % datehandler.get_date(event)
                 else:
                     rtrn = '%i' % event.get_date_object().get_year()
                 # shall we add the place?
