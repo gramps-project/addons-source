@@ -84,11 +84,6 @@ if win():
     DETACHED_PROCESS = 8
 
 try:
-    import cairo
-except ImportError:
-    raise Exception("Cairo (http://www.cairographics.org) is required "
-                    "for this view to work")
-try:
     import gi
     gi.require_version('GooCanvas', '2.0')
     from gi.repository import GooCanvas
