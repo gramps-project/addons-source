@@ -104,6 +104,7 @@ SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
 WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
+
 #-------------------------------------------------------------------------
 #
 # GraphView
@@ -207,10 +208,9 @@ class GraphView(NavigationView):
 
     def build_widget(self):
         """
-        Builds the canvas along with a zoom control.
+        Builds the widget with canvas and controls.
         """
         self.graph_widget = GraphWidget(self, self.dbstate, self.uistate)
-        self.graph_widget.load_bookmarks()
         return self.graph_widget.get_widget()
 
     def build_tree(self):
@@ -557,7 +557,7 @@ class GraphView(NavigationView):
 #-------------------------------------------------------------------------
 class GraphWidget(object):
     """
-    Define the canvas that displays the graph along with a zoom control.
+    Define the widget with controls and canvas that displays the graph.
     """
     def __init__(self, view, dbstate, uistate):
         """
