@@ -62,6 +62,7 @@ ListeEclair/locale/
 lxml/locale/
 MediaBrowser/locale/
 MediaVerify/locale/
+MongoDB/locale/
 NetworkChart/locale/
 NoteCleanup/locale/
 NoteGramplet/locale/
