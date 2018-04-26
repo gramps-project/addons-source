@@ -159,7 +159,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check22_graphview()
         self.check23_pedigreechart()
         self.check24_networkchart()
-        self.check25_genealogytrees()
+        self.check25_genealogytree()
         self.check26_htmlview()
         self.check27_googlemapkml()
         self.check28_webconnectpacks()
@@ -1059,7 +1059,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check12_graphviz()
         self.append_text(")")
 
-    def check25_genealogytrees(self):
+    def check25_genealogytree(self):
         '''genealogytrees - requires texlive including the textlive-pictures package and  genealogytree and lualatex for pdf conversion
         
         * PILLOW
@@ -1067,11 +1067,11 @@ class PrerequisitesCheckerGramplet(Gramplet):
         #TODO need to add to readme
 
         https://github.com/gramps-project/addons-source/tree/maintenance/gramps50/GenealogyTree
-
+        https://gramps-project.org/bugs/view.php?id=10223
         https://github.com/gramps-project/gramps/blob/maintenance/gramps50/gramps/gen/plug/docgen/treedoc.py
         '''
         self.append_text("\n")
-        self.render_text("""<b>05. <a href="https://gramps-project.org/bugs/view.php?id=10223">Addon:GenealogyTrees</a> :</b> """)
+        self.render_text("""<b>05. <a href="https://gramps-project.org/wiki/index.php?title=Addon:GenealogyTree">Addon:GenealogyTree</a> :</b> """)
         # Start check
         _LATEX_RESULT = "Not found"
         if win():
