@@ -191,8 +191,6 @@ class GraphView(NavigationView):
                 self.graph_widget.populate(self.get_active())
         else:
             self.dirty = True
-        # update combobox with bookmarks on db changes
-        self.graph_widget.load_bookmarks()
 
     def get_stock(self):
         """
@@ -268,7 +266,6 @@ class GraphView(NavigationView):
             if self.get_active() != "":
                 self.graph_widget.clear()
                 self.graph_widget.populate(self.get_active())
-                self.graph_widget.load_bookmarks()
         else:
             self.dirty = True
 
@@ -820,6 +817,9 @@ class GraphWidget(object):
             # scroll to active person without animation
             self.goto_active()
             self.animation.shake_person(self.active_person_handle)
+
+        # load bookmarks to ComboBox
+        self.load_bookmarks()
 
         # update the status bar
         self.view.change_page()
