@@ -995,9 +995,9 @@ class GraphWidget(object):
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
             # Remove all single click events
-            for item in self.click_events:
-                if not item.is_destroyed():
-                    GLib.source_remove(item.get_id())
+            for click_item in self.click_events:
+                if not click_item.is_destroyed():
+                    GLib.source_remove(click_item.get_id())
             self.click_events.clear()
             if button == 1 and node_class == 'node':
                 GLib.idle_add(self.edit_person, None, handle)
