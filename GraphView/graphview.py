@@ -547,6 +547,7 @@ class GraphView(NavigationView):
                 ErrorDialog(msg2, str(msg), parent=dot)
         dot.destroy()
 
+
 #-------------------------------------------------------------------------
 #
 # GraphWidget
@@ -1022,7 +1023,7 @@ class GraphWidget(object):
             # schedule after because double click can occur
             click_event_id = GLib.timeout_add(200, self.view.change_active,
                                               handle)
-            # add single click events to list, it will removed if necessary
+            # add single click events to list, it will be removed if necessary
             context = GLib.main_context_default()
             self.click_events.append(context.find_source_by_id(click_event_id))
 
@@ -1030,7 +1031,7 @@ class GraphWidget(object):
             self.node_menu(node_class, handle, event)
 
         elif button == 2:                                   # middle mouse
-            # to enter in scroll mode (we should change "item")
+            # to enter in scroll mode (we should change "item" to root item)
             item = self.canvas.get_root_item()
             self.button_press(item, target, event)
 
