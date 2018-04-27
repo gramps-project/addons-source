@@ -1875,7 +1875,6 @@ class GraphvizSvgParser(object):
             home_person = self.widget.dbstate.db.get_default_person()
             if home_person and home_person.handle == self.handle:
                 fill_color = self.home_person_color
-                tooltip = None
 
         item = GooCanvas.CanvasPolyline(parent=self.current_parent(),
                                         points=points,
