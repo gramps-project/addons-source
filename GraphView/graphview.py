@@ -1743,7 +1743,6 @@ class GraphvizSvgParser(object):
                                 "Times,serif":           "Times",
                                 "Arial":                 "Helvetica",
                                }
-        self.active_person_item = None
 
         self.transform_scale = 1
 
@@ -2015,18 +2014,14 @@ class GraphvizSvgParser(object):
         # text color
         fill_color = self.text_attrs.get('fill')
 
-        item = GooCanvas.CanvasText(parent=self.current_parent(),
-                                    text=tag,
-                                    x=pos_x,
-                                    y=pos_y,
-                                    anchor=self.text_anchor_map[anchor],
-                                    use_markup=True,
-                                    font=text_font,
-                                    fill_color=fill_color)
-
-        # retain the active person for other use elsewhere
-        if self.handle == self.widget.active_person_handle:
-            self.active_person_item = item
+        GooCanvas.CanvasText(parent=self.current_parent(),
+                             text=tag,
+                             x=pos_x,
+                             y=pos_y,
+                             anchor=self.text_anchor_map[anchor],
+                             use_markup=True,
+                             font=text_font,
+                             fill_color=fill_color)
 
     def start_image(self, attrs):
         """
