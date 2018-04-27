@@ -1671,11 +1671,11 @@ class GraphWidget(object):
 
         return handle
 
-    def update_lines_type(self, menu_item, type, constant):
+    def update_lines_type(self, menu_item, lines_type, constant):
         """
         Save the lines type setting.
         """
-        self.view._config.set(constant, type)
+        self.view._config.set(constant, lines_type)
 
     def update_setting(self, menu_item, constant):
         """
