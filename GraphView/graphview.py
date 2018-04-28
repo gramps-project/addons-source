@@ -540,8 +540,8 @@ class GraphView(NavigationView):
             try:
                 with open(val, 'wb') as g,\
                      open(svg, 'wb') as s:
-                        g.write(self.graph_widget.dot_data)
-                        s.write(self.graph_widget.svg_data)
+                        g.write(self.graph_widget.dot.dot_data)
+                        s.write(self.graph_widget.dot.svg_data)
             except IOError as msg:
                 msg2 = _("Could not create %s") % (val + ', ' + svg)
                 ErrorDialog(msg2, str(msg), parent=dot)
@@ -569,6 +569,8 @@ class GraphWidget(object):
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_person_handle = None
+
+        self.dot = DotGenerator(self.dbstate, self.view)
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -782,25 +784,11 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
-        dot = DotGenerator(self.dbstate, self.view)
         self.active_person_handle = active_person
-        dot.build_graph(active_person)
-
-        # build the rest of the widget by parsing SVG data from Graphviz
-        self.dot_data = dot.get_dot().encode('utf8')
-        if win():
-            self.svg_data = Popen(['dot', '-Tsvg'],
-                               creationflags=DETACHED_PROCESS,
-                               stdin=PIPE,
-                               stdout=PIPE,
-                               stderr=PIPE).communicate(input=self.dot_data)[0]
-        else:
-            self.svg_data = Popen(['dot', '-Tsvg'],
-                               stdin=PIPE,
-                               stdout=PIPE).communicate(input=self.dot_data)[0]
+        self.dot.build_graph(active_person)
 
         parser = GraphvizSvgParser(self, self.view)
-        parser.parse(self.svg_data)
+        parser.parse(self.dot.svg_data)
 
         # save transform scale
         self.transform_scale = parser.transform_scale
@@ -2085,6 +2073,7 @@ class GraphvizSvgParser(object):
         style = style.rstrip(';')
         return dict([i.split(':') for i in style.split(';')])
 
+
 #------------------------------------------------------------------------
 #
 # DotGenerator
@@ -2100,9 +2089,32 @@ class DotGenerator(object):
         """
         self.dbstate = dbstate
         self.database = dbstate.db
+        self.view = view
+
         self.dot = StringIO()
 
-        self.view = view
+        self.dot_data = None
+        self.svg_data = None
+
+        self.person_handles = set()
+
+        # list of persons on path to home person
+        self.current_list = list()
+        self.home_person = None
+
+    def init_dot(self):
+        """
+        Init/reinit stream for dot file.
+        And load config data.
+        """
+        self.dot.close()
+        self.dot = StringIO()
+
+        self.dot_data = None
+        self.svg_data = None
+        self.current_list.clear()
+        self.person_handles.clear()
+
         self.show_images = self.view._config.get(
                                   'interface.graphview-show-images')
         self.show_full_dates = self.view._config.get(
@@ -2150,8 +2162,6 @@ class DotGenerator(object):
 
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
-        self.current_list = list()
-        self.home_person = None
 
         dpi        = 72
         fontfamily = ""
@@ -2203,10 +2213,11 @@ class DotGenerator(object):
         """
         Builds a GraphViz tree based on the active person.
         """
+        # reinit dot file stream (write starting graphviz dot code to file)
+        self.init_dot()
+
         if active_person:
-            self.person_handles = set()
             self.home_person = self.dbstate.db.get_default_person()
-            self.current_list = list()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
             self.person_handles.update(self.find_descendants(active_person))
@@ -2216,8 +2227,21 @@ class DotGenerator(object):
                 self.add_persons_and_families()
                 self.add_child_links_to_families()
 
-        # close the graphviz dot code with a brace.
+        # close the graphviz dot code with a brace
         self.write('}\n')
+
+        # make SVG data by Graphviz
+        self.dot_data = self.get_dot().encode('utf8')
+        if win():
+            self.svg_data = Popen(['dot', '-Tsvg'],
+                               creationflags=DETACHED_PROCESS,
+                               stdin=PIPE,
+                               stdout=PIPE,
+                               stderr=PIPE).communicate(input=self.dot_data)[0]
+        else:
+            self.svg_data = Popen(['dot', '-Tsvg'],
+                               stdin=PIPE,
+                               stdout=PIPE).communicate(input=self.dot_data)[0]
 
     def set_current_list(self, active_person):
         """
