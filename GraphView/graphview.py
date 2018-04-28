@@ -808,16 +808,10 @@ class GraphWidget(object):
 
         self.animation.update_items(parser.items_list)
 
-        if self.person_to_focus:
-            if not self.animation.move_to_person(self.person_to_focus, False):
-                self.goto_active()
-                self.animation.shake_person(self.active_person_handle)
-            self.animation.shake_person(self.person_to_focus)
-            self.person_to_focus = None
-        else:
-            # scroll to active person without animation
+        # focus on edited person if posible
+        if not self.animation.move_to_person(self.person_to_focus, False):
             self.goto_active()
-            self.animation.shake_person(self.active_person_handle)
+        self.person_to_focus = None
 
         # load bookmarks to ComboBox
         self.load_bookmarks()
@@ -3087,3 +3081,5 @@ class CanvasAnimation(object):
             destination = (destination[0] - h_offset,
                            destination[1] - v_offset)
             self.scroll_canvas(destination)
+            # shake item after scroll to it
+            self.shake_item(item)
