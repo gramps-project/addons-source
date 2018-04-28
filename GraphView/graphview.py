@@ -186,7 +186,6 @@ class GraphView(NavigationView):
         self._change_db(db)
         self.scale = 1
         if self.active:
-            self.graph_widget.clear()
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
         else:
@@ -264,7 +263,6 @@ class GraphView(NavigationView):
         """
         if self.active:
             if self.get_active() != "":
-                self.graph_widget.clear()
                 self.graph_widget.populate(self.get_active())
         else:
             self.dirty = True
@@ -784,17 +782,18 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
+        self.clear()
         self.active_person_handle = active_person
         self.dot.build_graph(active_person)
 
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.dot.svg_data)
 
+        self.animation.update_items(parser.items_list)
+
         # save transform scale
         self.transform_scale = parser.transform_scale
         self.set_zoom(self.scale)
-
-        self.animation.update_items(parser.items_list)
 
         # focus on edited person if posible
         if not self.animation.move_to_person(self.person_to_focus, False):
@@ -890,6 +889,8 @@ class GraphWidget(object):
         """
         Clear the graph by creating a new root item.
         """
+        # remove root item (with all children)
+        self.canvas.get_root_item().remove()
         self.canvas.set_root_item(GooCanvas.CanvasGroup())
 
     def get_widget(self):
@@ -2866,6 +2867,7 @@ class DotGenerator(object):
     def get_dot(self):
         return self.dot.getvalue()
 
+
 #-------------------------------------------------------------------------
 #
 # CanvasAnimation
@@ -2911,11 +2913,6 @@ class CanvasAnimation(object):
         """
         self.items_list = items_list
 
-        for item in self.in_shake:
-            try:
-                item.disconnect_by_func(self.stop_shake_animation)
-            except:
-                pass
         self.in_shake.clear()
         # clear counters and shakes - items not exists anymore
         self.counter.clear()
@@ -2939,6 +2936,7 @@ class CanvasAnimation(object):
         """
         counter = self.counter.get(item.title)
         shake = self.shake.get(item.title)
+
         if (not stoped) and counter and shake and counter < self.max_count:
             self.shake[item.title] = (-1)*self.shake[item.title]
             self.counter[item.title] += 1
