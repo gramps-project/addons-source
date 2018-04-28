@@ -2081,12 +2081,12 @@ class GraphvizSvgParser(object):
 #
 #------------------------------------------------------------------------
 class DotGenerator(object):
-
+    """
+    Generator of graphing instructions in dot format and svg data by Graphviz.
+    """
     def __init__(self, dbstate, view):
         """
-        Creates graphing instructions in dot format which is fed to Graphviz,
-        so that it can layout the data in a graph and produce an SVG form
-        of the graph.
+        Initialise the DotGenerator class.
         """
         self.dbstate = dbstate
         self.database = dbstate.db
@@ -2246,7 +2246,7 @@ class DotGenerator(object):
 
     def set_current_list(self, active_person):
         """
-        We get the path from the active person to the home person.
+        Get the path from the active person to the home person.
         Select ancestors.
         """
         if not active_person:
@@ -2270,7 +2270,7 @@ class DotGenerator(object):
 
     def set_current_list_desc(self, active_person):
         """
-        We get the path from the active person to the home person.
+        Get the path from the active person to the home person.
         Select children.
         """
         if not active_person:
