@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 01:21+0200\n"
+"POT-Creation-Date: 2018-04-29 21:28+0200\n"
 "PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -24,38 +24,38 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3
+#: NoteGramplet//NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
 msgstr "Notiz Gramplet"
 
-#: NoteGramplet/NoteGramplet.gpr.py:4
+#: NoteGramplet//NoteGramplet.gpr.py:4
 msgid "Gramplet for editing active person's notes"
 msgstr "Gramplet zum bearbeiten der Notizen der aktiven Person"
 
-#: NoteGramplet/NoteGramplet.gpr.py:10
+#: NoteGramplet//NoteGramplet.gpr.py:10
 msgid "Note"
 msgstr "Notiz"
 
-#: NoteGramplet/NoteGramplet.py:65
+#: NoteGramplet//NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktive Person"
 
-#: NoteGramplet/NoteGramplet.py:89
+#: NoteGramplet//NoteGramplet.py:89
 msgid "Family"
 msgstr "Familie"
 
-#: NoteGramplet/NoteGramplet.py:111
+#: NoteGramplet//NoteGramplet.py:111
 msgid "Save"
 msgstr "Speichern"
 
-#: NoteGramplet/NoteGramplet.py:114
+#: NoteGramplet//NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Abbrechen"
 
-#: NoteGramplet/NoteGramplet.py:173 NoteGramplet/NoteGramplet.py:254
+#: NoteGramplet//NoteGramplet.py:173 NoteGramplet//NoteGramplet.py:256
 msgid "Person Note"
 msgstr "Person Notiz"
 
-#: NoteGramplet/NoteGramplet.py:252
+#: NoteGramplet//NoteGramplet.py:254
 msgid "Save Note"
 msgstr "Notiz speichern"
