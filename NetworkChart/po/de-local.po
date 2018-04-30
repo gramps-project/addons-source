@@ -533,7 +533,7 @@ msgid ""
 msgstr ""
 "Wählen Start und\n"
 "End Person in\n"
-"angezeigtem Pfad(e).\"
+"angezeigtem Pfad(e).\n"
 "Wähle zwei aus"
 
 #: NetworkChart/NetworkChart.py:1163
