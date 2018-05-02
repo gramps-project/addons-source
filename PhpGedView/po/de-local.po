@@ -1,0 +1,112 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-02 21:08+0200\n"
+"PO-Revision-Date: 2018-05-02 21:16+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Läd eine GEDCOM Datei von einem phpGedView Server."
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr "Hole Indexliste..."
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr "Hole Datensätze..."
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr "Einloggen..."
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr "Hole GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr "Importiere GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr "Fehler: Anmeldung fehlgeschlagen"
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr "Fertig."
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr "Verbinde..."
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr "Hole Version..."
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr "Version %s"
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr "Lese Dateiliste..."
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr "Fehler: Ungültige URL"
+
+#: PhpGedView/phpgedview.glade.h:1
+msgid "- default -"
+msgstr "- Standardwert -"
+
+#: PhpGedView/phpgedview.glade.h:2
+msgid "phpGedView import"
+msgstr "phpGedView importieren"
+
+#: PhpGedView/phpgedview.glade.h:3
+msgid "http://"
+msgstr "http://"
+
+#: PhpGedView/phpgedview.glade.h:4
+msgid "File:"
+msgstr "Datei:"
+
+#: PhpGedView/phpgedview.glade.h:5
+msgid "Username:"
+msgstr "Benutzername:"
+
+#: PhpGedView/phpgedview.glade.h:6
+msgid "Password:"
+msgstr "Kennwort:"
+
+#: PhpGedView/phpgedview.glade.h:7
+msgid "URL:"
+msgstr "URL:"
+
