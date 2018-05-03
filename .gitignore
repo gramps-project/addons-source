@@ -92,10 +92,11 @@ SurnameMappingGramplet/locale/
 ThumbnailGenerator/locale/
 TimelinePedigreeView/locale/
 TimelineQuickview/locale/
+TMGimporter/locale/
 ToDoReport/locale/
 UKWebConnectPack/locale/
 USWebConnectPack/locale/
-WorldleGramplet/locale/
+WordleGramplet/locale/
 
 # Testing
 libwebconnect.ini
