@@ -1,5 +1,4 @@
 # German translation for Gramps
-# $Id$
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
 #
@@ -9,14 +8,14 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 08:50-0500\n"
-"PO-Revision-Date: 2017-05-29 19:12+0100\n"
+"POT-Creation-Date: 2018-05-03 08:54+0200\n"
+"PO-Revision-Date: 2018-04-11 19:24+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -34,217 +33,220 @@ msgstr "Zusatzmodulverwaltung Verbessert"
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Zusatzmodulverwaltung mit mehreren zusätzlichen Funktionen"
 
-#: PluginManager/PluginManager.py:86
+#: PluginManager/PluginManager.py:90
 msgid "Plugin Manager - Enhanced"
 msgstr "Zusatzmodulverwaltung Verbessert"
 
-#: PluginManager/PluginManager.py:143
+#: PluginManager/PluginManager.py:147
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: PluginManager/PluginManager.py:146
+#: PluginManager/PluginManager.py:150
 msgid "Check for updated addons now"
 msgstr "Jetzt nach Aktualisierungen für Erweiterungen suchen"
 
-#: PluginManager/PluginManager.py:154
+#: PluginManager/PluginManager.py:158
 msgid "Reload"
 msgstr "Neu laden"
 
-#: PluginManager/PluginManager.py:156 PluginManager/PluginManager.py:679
+#: PluginManager/PluginManager.py:160 PluginManager/PluginManager.py:683
 msgid "_Close"
 msgstr "_Schließen"
 
-#: PluginManager/PluginManager.py:180
+#: PluginManager/PluginManager.py:184
 msgid "Restart..."
 msgstr "Neustart..."
 
-#: PluginManager/PluginManager.py:181
+#: PluginManager/PluginManager.py:185
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
-msgstr "Bitte starten Sie Gramps neu, um sicherzustellen, dass Ihre "
-"Addonänderungen erkannt werden."
+msgstr ""
+"Bitte starten Sie Gramps neu, um sicherzustellen, dass Ihre Addonänderungen "
+"erkannt werden."
 
-#: PluginManager/PluginManager.py:257
+#: PluginManager/PluginManager.py:261
 msgid "Id"
 msgstr "ID"
 
-#: PluginManager/PluginManager.py:258
+#: PluginManager/PluginManager.py:262
 msgid "Plugin name"
 msgstr "Zusatzmodulname"
 
-#: PluginManager/PluginManager.py:259 PluginManager/PluginManager.py:437
+#: PluginManager/PluginManager.py:263 PluginManager/PluginManager.py:441
 msgid "Description"
 msgstr "Beschreibung"
 
-#: PluginManager/PluginManager.py:260
+#: PluginManager/PluginManager.py:264
 msgid "Version"
 msgstr "Version"
 
-#: PluginManager/PluginManager.py:261
+#: PluginManager/PluginManager.py:265
 msgid "Authors"
 msgstr "Autoren"
 
-#: PluginManager/PluginManager.py:262
+#: PluginManager/PluginManager.py:266
 msgid "Email"
 msgstr "E-Mail"
 
-#: PluginManager/PluginManager.py:263
+#: PluginManager/PluginManager.py:267
 msgid "Filename"
 msgstr "Dateiname"
 
-#: PluginManager/PluginManager.py:264
+#: PluginManager/PluginManager.py:268
 msgid "Location"
 msgstr "Standort"
 
-#: PluginManager/PluginManager.py:269
+#: PluginManager/PluginManager.py:273
 msgid "Loaded"
 msgstr "Geladen"
 
-#: PluginManager/PluginManager.py:272
+#: PluginManager/PluginManager.py:276
 msgid "Hidden"
 msgstr "Verdeckt"
 
-#: PluginManager/PluginManager.py:277 PluginManager/PluginManager.py:643
+#: PluginManager/PluginManager.py:281 PluginManager/PluginManager.py:647
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
-#: PluginManager/PluginManager.py:301 PluginManager/PluginManager.py:454
-#: PluginManager/PluginManager.py:530
+#: PluginManager/PluginManager.py:305 PluginManager/PluginManager.py:458
+#: PluginManager/PluginManager.py:534
 msgid "Hide"
 msgstr "Verbergen"
 
-#: PluginManager/PluginManager.py:311 PluginManager/PluginManager.py:528
+#: PluginManager/PluginManager.py:315 PluginManager/PluginManager.py:532
 msgid "Unhide"
 msgstr "Aufdecken"
 
-#: PluginManager/PluginManager.py:363
+#: PluginManager/PluginManager.py:367
 msgid "Installation Errors"
 msgstr "Installationsfehler"
 
-#: PluginManager/PluginManager.py:364
+#: PluginManager/PluginManager.py:368
 msgid "The following addons had errors: "
 msgstr "Die folgenden Erweiterungen hatten Fehler: "
 
-#: PluginManager/PluginManager.py:386
+#: PluginManager/PluginManager.py:390
 msgid "Error"
 msgstr "Fehler"
 
-#: PluginManager/PluginManager.py:387
+#: PluginManager/PluginManager.py:391
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
-msgstr "Fehler beim Entfernen des '%s' Verzeichnisses, "
-"Die Deinstallation ist möglicherweise fehlgeschlagen"
+msgstr ""
+"Fehler beim Entfernen des '%s' Verzeichnisses, Die Deinstallation ist "
+"möglicherweise fehlgeschlagen"
 
-#: PluginManager/PluginManager.py:409
+#: PluginManager/PluginManager.py:413
 msgid "Type"
 msgstr "Art"
 
-#: PluginManager/PluginManager.py:418
+#: PluginManager/PluginManager.py:422
 msgid "Status"
 msgstr "Status"
 
-#: PluginManager/PluginManager.py:421
+#: PluginManager/PluginManager.py:425
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
-msgstr "'*' Artikel werden von Drittanbietern verschickt,\n"
+msgstr ""
+"'*' Artikel werden von Drittanbietern verschickt,\n"
 "<s>strikeout</s> Artikel sind versteckt"
 
-#: PluginManager/PluginManager.py:429
+#: PluginManager/PluginManager.py:433
 msgid "Name"
 msgstr "Name"
 
-#: PluginManager/PluginManager.py:451
+#: PluginManager/PluginManager.py:455
 msgid "Info"
 msgstr "Info"
 
-#: PluginManager/PluginManager.py:457 PluginManager/PluginManager.py:544
+#: PluginManager/PluginManager.py:461 PluginManager/PluginManager.py:548
 msgid "Install"
 msgstr "Installieren"
 
-#: PluginManager/PluginManager.py:460
+#: PluginManager/PluginManager.py:464
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: PluginManager/PluginManager.py:462
+#: PluginManager/PluginManager.py:466
 msgid "Load"
 msgstr "Lade"
 
-#: PluginManager/PluginManager.py:473
+#: PluginManager/PluginManager.py:477
 msgid "Show hidden items"
 msgstr "Zeige versteckte Gegenstände"
 
-#: PluginManager/PluginManager.py:481
+#: PluginManager/PluginManager.py:485
 msgid "Show Built-in items"
 msgstr "Show Eingebaute Gegenstände"
 
-#: PluginManager/PluginManager.py:488
+#: PluginManager/PluginManager.py:492
 msgid "* indicates 3rd party addon"
 msgstr "* Die Ware wird von Dritten versendet"
 
-#: PluginManager/PluginManager.py:493
+#: PluginManager/PluginManager.py:497
 msgid "Plugins"
 msgstr "Zusatzmodul"
 
-#: PluginManager/PluginManager.py:547
+#: PluginManager/PluginManager.py:551
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: PluginManager/PluginManager.py:557
+#: PluginManager/PluginManager.py:561
 msgid "Checking Addons Failed"
 msgstr "Überprüfen der Erweiterungen fehlgeschlagen"
 
-#: PluginManager/PluginManager.py:558
+#: PluginManager/PluginManager.py:562
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr ""
 "Der Aufbewahrungsort im Internet für Zusatzmodule ist nicht erreichbar. "
 "Bitte versuche es später noch einmal."
 
-#: PluginManager/PluginManager.py:572
+#: PluginManager/PluginManager.py:576
 msgid ""
 "3rd party addons are not shown until the addons update list is downloaded.  "
 "Would you like to check for updated addons now?"
-msgstr "Drittanbieter-Addons werden nicht angezeigt, bis die "
-"Addons-Update-Liste heruntergeladen wird.  Möchten Sie jetzt nach "
-"aktualisierten Addons suchen?"
+msgstr ""
+"Drittanbieter-Addons werden nicht angezeigt, bis die Addons-Update-Liste "
+"heruntergeladen wird.  Möchten Sie jetzt nach aktualisierten Addons suchen?"
 
-#: PluginManager/PluginManager.py:575
+#: PluginManager/PluginManager.py:579
 msgid "Yes"
 msgstr "Ja"
 
-#: PluginManager/PluginManager.py:575
+#: PluginManager/PluginManager.py:579
 msgid "No"
 msgstr "Nein"
 
-#: PluginManager/PluginManager.py:618
+#: PluginManager/PluginManager.py:622
 msgid "*Available"
 msgstr "*Verfügbar"
 
-#: PluginManager/PluginManager.py:632
+#: PluginManager/PluginManager.py:636
 msgid "Built-in"
 msgstr "Eingebaut"
 
-#: PluginManager/PluginManager.py:637
+#: PluginManager/PluginManager.py:641
 msgid "*Installed"
 msgstr "*Installiert"
 
-#: PluginManager/PluginManager.py:646
+#: PluginManager/PluginManager.py:650
 msgid "Update Available"
 msgstr "Neufassung Verfügbar"
 
-#: PluginManager/PluginManager.py:673
+#: PluginManager/PluginManager.py:677
 #, python-format
 msgid "%(str1)s: %(str2)s"
 msgstr "%(str1)s: %(str2)s"
 
-#: PluginManager/PluginManager.py:673
+#: PluginManager/PluginManager.py:677
 msgid "Detailed Info"
 msgstr "Detaillierte Information"
 
-#: PluginManager/PluginManager.py:772
+#: PluginManager/PluginManager.py:776
 msgid "Updated"
 msgstr "Aktualisiert"
 
-#: PluginManager/PluginManager.py:783
+#: PluginManager/PluginManager.py:787
 msgid "updates|New"
 msgstr "Neu"
