@@ -74,6 +74,8 @@ PhotoTaggingGramplet/locale/
 PhpGedView/locale/
 PlaceCompletion/locale/
 PluginManager/locale/
+PostgreSQL/locale/
+PrerequisitesCheckerGramplet/locale/
 PythonGramplet/locale/
 Query/locale/
 QuiltView/locale/
