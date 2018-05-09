@@ -103,7 +103,7 @@ class FamilySheet(Report):
         """
         Initialize the report.
 
-        @param database: the GRAMPS database instance
+        @param database: the Gramps database instance
         @param options: instance of the Options class for this report
         @param user: a gramps.gen.user.User() instance
         """
@@ -122,6 +122,11 @@ class FamilySheet(Report):
         """
         Build the actual report.
         """
+
+        mark1 = docgen.IndexMark(_('Family Sheet'), docgen.INDEX_TYPE_TOC, 1)
+        self.doc.start_paragraph('FSR-Key')
+        self.doc.write_text('', mark1) # for use in a TOC in a book report
+        self.doc.end_paragraph()
 
         person = self.database.get_person_from_gramps_id(self.person_id)
         (rank, ahnentafel, person_key) = self.__calc_person_key(person)
@@ -164,8 +169,12 @@ class FamilySheet(Report):
 
         # --- Now let the party begin! ---
 
+        head_name = str(_Name_get_styled(person.get_primary_name(),
+                                         _Name_CALLNAME_DONTUSE))
+        mark2 = docgen.IndexMark(head_name, docgen.INDEX_TYPE_TOC, 2)
+
         self.doc.start_paragraph('FSR-Key')
-        self.doc.write_text(person_key)
+        self.doc.write_text(person_key, mark2)
         self.doc.end_paragraph()
 
         self.doc.start_table(None, 'FSR-Table')
