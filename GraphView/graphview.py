@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2010-2012  Gary Burton
 #                          GraphvizSvgParser is based on the Gramps XML import
-#                          DotGenerator is based on the relationship graph
+#                          DotSvgGenerator is based on the relationship graph
 #                          report.
 #                          Mouse panning is derived from the pedigree view
 # Copyright (C) 2012       Mathieu MD
@@ -787,7 +787,7 @@ class GraphWidget(object):
         self.active_person_handle = active_person
 
         # generate DOT and SVG data
-        dot = DotGenerator(self.dbstate, self.view)
+        dot = DotSvgGenerator(self.dbstate, self.view)
         self.dot_data, self.svg_data = dot.build_graph(active_person)
         del dot
 
@@ -2082,16 +2082,16 @@ class GraphvizSvgParser(object):
 
 #------------------------------------------------------------------------
 #
-# DotGenerator
+# DotSvgGenerator
 #
 #------------------------------------------------------------------------
-class DotGenerator(object):
+class DotSvgGenerator(object):
     """
     Generator of graphing instructions in dot format and svg data by Graphviz.
     """
     def __init__(self, dbstate, view):
         """
-        Initialise the DotGenerator class.
+        Initialise the DotSvgGenerator class.
         """
         self.dbstate = dbstate
         self.database = dbstate.db
