@@ -538,8 +538,8 @@ class GraphView(NavigationView):
             try:
                 with open(val, 'wb') as g,\
                      open(svg, 'wb') as s:
-                        g.write(self.graph_widget.dot.dot_data)
-                        s.write(self.graph_widget.dot.svg_data)
+                        g.write(self.graph_widget.dot_data)
+                        s.write(self.graph_widget.svg_data)
             except IOError as msg:
                 msg2 = _("Could not create %s") % (val + ', ' + svg)
                 ErrorDialog(msg2, str(msg), parent=dot)
@@ -568,7 +568,8 @@ class GraphWidget(object):
         self.uistate = uistate
         self.active_person_handle = None
 
-        self.dot = DotGenerator(self.dbstate, self.view)
+        self.dot_data = None
+        self.svg_data = None
 
         scrolled_win = Gtk.ScrolledWindow()
         scrolled_win.set_shadow_type(Gtk.ShadowType.IN)
@@ -784,10 +785,14 @@ class GraphWidget(object):
         """
         self.clear()
         self.active_person_handle = active_person
-        self.dot.build_graph(active_person)
+
+        # generate DOT and SVG data
+        dot = DotGenerator(self.dbstate, self.view)
+        self.dot_data, self.svg_data = dot.build_graph(active_person)
+        del dot
 
         parser = GraphvizSvgParser(self, self.view)
-        parser.parse(self.dot.svg_data)
+        parser.parse(self.svg_data)
 
         self.animation.update_items(parser.items_list)
 
@@ -2092,10 +2097,7 @@ class DotGenerator(object):
         self.database = dbstate.db
         self.view = view
 
-        self.dot = StringIO()
-
-        self.dot_data = None
-        self.svg_data = None
+        self.dot = None         # will be StringIO()
 
         self.person_handles = set()
 
@@ -2103,16 +2105,22 @@ class DotGenerator(object):
         self.current_list = list()
         self.home_person = None
 
+    def __del__(self):
+        """
+        Free stream file on destroy.
+        """
+        if self.dot:
+            self.dot.close()
+
     def init_dot(self):
         """
         Init/reinit stream for dot file.
-        And load config data.
+        Load and write config data to start of dot file.
         """
-        self.dot.close()
+        if self.dot:
+            self.dot.close()
         self.dot = StringIO()
 
-        self.dot_data = None
-        self.svg_data = None
         self.current_list.clear()
         self.person_handles.clear()
 
@@ -2231,18 +2239,27 @@ class DotGenerator(object):
         # close the graphviz dot code with a brace
         self.write('}\n')
 
-        # make SVG data by Graphviz
-        self.dot_data = self.get_dot().encode('utf8')
+        # get DOT and generate SVG data by Graphviz
+        dot_data = self.dot.getvalue().encode('utf8')
+        svg_data = self.make_svg(dot_data)
+
+        return dot_data, svg_data
+
+    def make_svg(self, dot_data):
+        """
+        Make SVG data by Graphviz.
+        """
         if win():
-            self.svg_data = Popen(['dot', '-Tsvg'],
-                               creationflags=DETACHED_PROCESS,
-                               stdin=PIPE,
-                               stdout=PIPE,
-                               stderr=PIPE).communicate(input=self.dot_data)[0]
+            svg_data = Popen(['dot', '-Tsvg'],
+                             creationflags=DETACHED_PROCESS,
+                             stdin=PIPE,
+                             stdout=PIPE,
+                             stderr=PIPE).communicate(input=dot_data)[0]
         else:
-            self.svg_data = Popen(['dot', '-Tsvg'],
-                               stdin=PIPE,
-                               stdout=PIPE).communicate(input=self.dot_data)[0]
+            svg_data = Popen(['dot', '-Tsvg'],
+                             stdin=PIPE,
+                             stdout=PIPE).communicate(input=dot_data)[0]
+        return svg_data
 
     def set_current_list(self, active_person):
         """
@@ -2862,10 +2879,8 @@ class DotGenerator(object):
         """
         Write text to the dot file.
         """
-        self.dot.write(text)
-
-    def get_dot(self):
-        return self.dot.getvalue()
+        if self.dot:
+            self.dot.write(text)
 
 
 #-------------------------------------------------------------------------
