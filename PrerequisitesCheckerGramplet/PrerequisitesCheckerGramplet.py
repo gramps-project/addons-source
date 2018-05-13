@@ -259,7 +259,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             result= check1 + py_str + messagefailed
         else:
             #print("Success")
-            messagesuccess1 = " (Successs version "
+            messagesuccess1 = " (Success version "
             messagesuccess3= " or greater installed.)\n"
 
             messagesuccess= messagesuccess1 + min_py_str + messagesuccess3
@@ -271,7 +271,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
     def check2_gtk(self):
         '''Check GTK+ version
         
-        GTK 3.10 or greater - A cross-platform widget toolkit for creating graphical user interfaces. http://www.gtk.org/
+        GTK 3.10 or greater - A cross-platform widget toolkit for creating
+        graphical user interfaces. http://www.gtk.org/
 
         min: GTK+ 3.10.0
         '''
@@ -1420,6 +1421,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         self.render_text("""<b>13. <a href="https://www.gramps-project.org/wiki/index.php?title=Lxml_Gramplet">Addon:Lxml Gramplet</a> :</b> """)
         # Start check
+        LXML_VERSION = False
 
         try:
             from lxml import etree, objectify
