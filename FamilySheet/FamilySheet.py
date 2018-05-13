@@ -372,7 +372,8 @@ class FamilySheet(Report):
             if not person.get_birth_ref():
                 self.__dump_event(empty_birth, None)
 
-            for event_ref in person.get_primary_event_ref_list():
+            person_events = self.__sort_events_by_sdate(list(person.get_primary_event_ref_list()))
+            for event_ref in person_events:
                 self.__dump_event_ref(event_ref)
 
             for addr in person.get_address_list():
@@ -390,6 +391,23 @@ class FamilySheet(Report):
                 self.__write_sources(addr)
                 self.__write_notes(addr)
                 self.doc.end_paragraph()
+
+
+    def __get_event_sort_value(self, event_ref):
+        """
+        Helper function for sorting events
+        """
+        sort_value = self.database.get_event_from_handle(event_ref.ref).date.get_sort_value()
+        if self.database.get_event_from_handle(event_ref.ref).get_type().is_birth():
+            return -1
+        return sort_value
+
+
+    def __sort_events_by_sdate(self, event_ref_list):
+        """
+        Sort event references based on start date, birth event is always first.
+        """
+        return sorted(event_ref_list, key=self.__get_event_sort_value)
 
 
     def __dump_event_ref(self, event_ref):
