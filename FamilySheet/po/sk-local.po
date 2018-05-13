@@ -1,0 +1,161 @@
+# Slovak translation for Gramps.
+# This file is distributed under the same license as the Gramps package.
+# Jozef Riha, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-13 23:26+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
+"Language-Team: Slovak <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FamilySheet.py:220 FamilySheet.py:263
+#, python-format
+msgid "\\u2192 %s"
+msgstr ""
+
+#: FamilySheet.py:384
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adresa (%(date)s): %(location)s"
+
+#: FamilySheet.py:388
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Adresa: %(location)s"
+
+#: FamilySheet.py:439
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr ""
+
+#: FamilySheet.py:527
+msgid "Source references:"
+msgstr "Odkazy na zdroje:"
+
+#: FamilySheet.py:541
+#, python-format
+msgid "%s: "
+msgstr ""
+
+#: FamilySheet.py:545
+#, python-format
+msgid ", page %s"
+msgstr ", strana %s"
+
+#: FamilySheet.py:558
+msgid "Notes:"
+msgstr "Poznámky:"
+
+#: FamilySheet.py:737
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#: FamilySheet.py:739
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "v/vo %(ym_date)s"
+
+#: FamilySheet.py:741
+#, python-format
+msgid "in %(y_date)s"
+msgstr "v/vo %(y_date)s"
+
+#: FamilySheet.py:745
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#: FamilySheet.py:747
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
+
+#: FamilySheet.py:791 FamilySheet.py:793
+#, python-format
+msgid "in %(place)s"
+msgstr "v/vo %(place)s"
+
+#: FamilySheet.py:821
+msgid "Report Options"
+msgstr "Voľby výstupu"
+
+#: FamilySheet.py:824
+msgid "Center person"
+msgstr "Ústredná osoba"
+
+#: FamilySheet.py:825
+msgid "The person whose partners and children are printed"
+msgstr ""
+
+#: FamilySheet.py:828
+msgid "Print sheets for"
+msgstr ""
+
+#: FamilySheet.py:830
+msgid "Center person only"
+msgstr "Iba ústredná osoba"
+
+#: FamilySheet.py:831
+msgid "Center person and descendants in side branches"
+msgstr "Ústredná osoba a potomkovia v bočných vetvách"
+
+#: FamilySheet.py:832
+msgid "Center person and all descendants"
+msgstr "Ústredná osoba so všetkými potomkami"
+
+#: FamilySheet.py:835
+msgid "Use call name"
+msgstr "Používať bežné meno"
+
+#: FamilySheet.py:837
+msgid "Don't use call name"
+msgstr "Nepoužívať bežné meno"
+
+#: FamilySheet.py:838
+msgid "Replace first name with call name"
+msgstr "Nahradiť krstné meno bežným menom"
+
+#: FamilySheet.py:839
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Podčiarknuť bežné meno v krstnom mene / pridať bežné meno ku krstnému menu"
+
+#: FamilySheet.py:842
+msgid "Print placeholders for missing information"
+msgstr "Zobraziť prázdne políčka pri chýbajúcich údajoch"
+
+#: FamilySheet.py:845
+msgid "Include sources"
+msgstr "Zahrnúť zdroje"
+
+#: FamilySheet.py:848
+msgid "Include notes"
+msgstr "Zahrnúť poznámky"
+
+#: FamilySheet.py:862
+msgid "The basic style used for the text display"
+msgstr ""
+
+#: FamilySheet.py:872
+msgid "The style used for the page key on the top"
+msgstr ""
+
+#: FamilySheet.py:881
+msgid "The style used for names"
+msgstr ""
+
+#: FamilySheet.py:891
+msgid "The style used for numbers"
+msgstr ""
+
+#: FamilySheet.py:901
+msgid "The style used for footnotes (notes and source references)"
+msgstr ""
