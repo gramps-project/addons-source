@@ -702,21 +702,25 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         # TODO (check what MacOS uses?) look like it uses this one.
         https://gramps-project.org/wiki/index.php?title=Download#Mac_OS_X
-        Gramps uses a different spell checker than the one provided by Mac OS X, with different spelling dictionary requirements.
+        Gramps uses a different spell checker than the one provided by Mac OS X,
+        with different spelling dictionary requirements.
 
-        Enable spell checking in the notes. Gtkspell depends on enchant. A version of gtkspell with gobject introspection is needed, so minimally version 3.0.0
+        Enable spell checking in the notes. Gtkspell depends on enchant.
+        A version of gtkspell with gobject introspection is needed,
+        so minimally version 3.0.0
 
         ---------
         # typing "import enchant"  works for the AIO but no version string
         -------------
-        #TODO list installed dictionaries (issues with win ver if they are not all installed! eg: csv imports from other languages)
+        #TODO list installed dictionaries (issues with win ver if they are not
+        all installed! eg: csv imports from other languages)
         '''
         # Start check
         GTKSPELL_MIN_VER = (3, 0)
         gtkspell_min_ver_str = str(GTKSPELL_MIN_VER[0]) + "." + str(GTKSPELL_MIN_VER[1])
         HAVE_GTKSPELL = False
         ENCHANT_MIN_VER = (0, 0)  #TODO ?
-
+        gtkspell_ver_tp = (0, 0)
         # Attempting to import gtkspell gives an error dialog if gtkspell is not
         # available so test first and log just a warning to the console instead.
         try:
@@ -737,7 +741,6 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     HAVE_GTKSPELL = True
                 except:
                     gtkspell_ver = "Not found"
-                    gtkspell_ver_tp = (0, 0)
                     HAVE_GTKSPELL = False
                     pass
             elif repository.enumerate_versions("Gtkspell"):
@@ -751,12 +754,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     HAVE_GTKSPELL = True
                 except:
                     gtkspell_ver = "Not found"
-                    gtkspell_ver_tp = (0, 0)
                     HAVE_GTKSPELL = False
                     pass
         except:
             gtkspell_ver = "Not found"
-            gtkspell_ver_tp = (0, 0)
             HAVE_GTKSPELL = False
             pass
 
