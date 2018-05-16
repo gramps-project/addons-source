@@ -132,7 +132,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check12_graphviz()
         self.check13_pyicu()
         self.check14_ghostscript()
-        #self.append_text("\n")
+        self.append_text("\n")
         #Optional
         self.render_text("""\n<u><b>Optional</b></u>\n""")
         self.append_text("The following packages are optional:\n")  # mention what they add
@@ -145,13 +145,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check19_geocodeglib()
         #self.append_text("\n")
         self.check20_ttffreefont()
-        #self.append_text("\n")
+        self.append_text("\n")
         # required developement packages #TODO only show this section if running in development mode?
         self.render_text("""\n<u><b>Development & Translation Requirements</b></u>\n""")
         self.render_text("""The following packages should be installed if you intend to translate or do any development(addons etc):\n""")
         self.gettext_version()
         self.append_text("\n* intltool_version: " + str(self.intltool_version))
         self.sphinx_check()
+        self.append_text("\n")
         #Optional packages required by Third-party Addons
         self.render_text("""\n<u><b>Optional packages required by Third-party Addons</b></u>\n""")
         self.render_text("""Prerequistes required for the following <a href="https://gramps-project.org/wiki/index.php?title=Third-party_Addons">Third-party Addons</a> to work:\n""")
@@ -970,7 +971,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
         #self.append_text("\n")
 
     def check22_graphview(self):
-        '''Graph View - Requires: PyGoocanvas and Goocanvas and graphviz (python-pygoocanvas, gir1.2-goocanvas-2.0)'''
+        '''
+        Graph View - Requires: PyGoocanvas and Goocanvas and
+        graphviz (python-pygoocanvas, gir1.2-goocanvas-2.0)
+        '''
         self.append_text("\n")
         self.render_text("""<b>02. <a href="https://gramps-project.org/wiki/index.php?title=Graph_View">Addon:Graph View</a> :</b> """)
         # Start check
@@ -1023,7 +1027,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         self.render_text("""<b>04. <a href="https://gramps-project.org/wiki/index.php?title=NetworkChart">Addon:Network Chart</a> :</b> """)
         # Start check
-        # To get "libcgraph" for pygraphviz you first need to install the development package of graphviz eg: graphviz-dev
+        # To get "libcgraph" for pygraphviz you first need to install
+        # the development package of graphviz eg: graphviz-dev
 
         try:
             import importlib
@@ -1039,7 +1044,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import importlib
             module2 = importlib.find_loader("pydotplus") is not None
             import pydotplus
-            pydotplus_ver = str(pydotplus.__version__)
+            pydotplus_ver = str(pydotplus.pyparsing_version)
             print("pydotplus version:" + pydotplus_ver)
         except:
             pydotplus_ver = "Not Installed"
@@ -1062,7 +1067,9 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text(")")
 
     def check25_genealogytree(self):
-        '''genealogytrees - requires texlive including the textlive-pictures package and  genealogytree and lualatex for pdf conversion
+        '''genealogytrees - requires texlive including the
+        textlive-pictures package and  genealogytree and
+        lualatex for pdf conversion
         
         * PILLOW
 
@@ -1112,7 +1119,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import gi
             gi.require_version('WebKit', '3.0')
             from gi.repository import WebKit as webkit
-            webkit_ver = str(webkit.__version__)
+            webkit_ver = str(webkit._version)
             #print("webkit version " + webkit_ver)
             TOOLKIT = WEBKIT
         except:
@@ -1622,5 +1629,5 @@ class PrerequisitesCheckerGramplet(Gramplet):
         https://github.com/gramps-project/gramps/blob/master/docs/update_doc.py
         '''
         
-        self.append_text("\n* Sphinx is a tool that build the Gramps development documentation and man pages  TBD")
+        self.append_text("\n* Sphinx is a tool that builds the Gramps development documentation and man pages  TBD")
         pass
