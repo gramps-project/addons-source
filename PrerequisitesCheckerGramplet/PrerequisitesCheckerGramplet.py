@@ -982,7 +982,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # check for GooCanvas
         try:
             import gi
-            gi.require_version('GooCanvas', '2.0')
+            try:
+                gi.require_version('GooCanvas', '2.0')
+            except:
+                print("Why, when same code works in Graphview")
             from gi.repository import GooCanvas
             goocanvas_ver = str(GooCanvas._version)
             #print("GooCanvas version:" + goocanvas_ver)
