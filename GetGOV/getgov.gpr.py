@@ -27,10 +27,10 @@
 
 register(GRAMPLET,
          id = "GetGOV Gramplet",
-         name = _("GetGOV Gramplet"),
+         name = _("GetGOV"),
          description = _("Gramplet to get places from the GOV database"),
          status = STABLE,
-         version = '1.0.6',
+         version = '1.0.5',
          gramps_target_version = '5.0',
          fname = "getgov.py",
          gramplet = 'GetGOV',

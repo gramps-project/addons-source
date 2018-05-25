@@ -47,6 +47,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
+from gramps.gen.display.place import displayer as _pd
 
 #------------------------------------------------------------------------
 #
@@ -324,7 +325,12 @@ class GetGOV(Gramplet):
     def __get_places(self, obj):
         gov_id = self.entry.get_text()
         to_do = [gov_id]
-        preferred_lang = config.get('preferences.place-lang')
+        try:
+            preferred_lang = config.get('preferences.place-lang')
+        except AttributeError:
+            fmt = config.get('preferences.place-format')
+            pf = _pd.get_formats()[fmt]
+            preferred_lang = pf.language
         if len(preferred_lang) != 2:
             preferred_lang = 'de'
         visited = {}
