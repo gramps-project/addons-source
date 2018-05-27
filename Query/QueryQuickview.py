@@ -102,7 +102,8 @@ class DBI(object):
         self.flat = False
         self.raw = False
         if self.database:
-            for name in self.database.get_table_names():
+            for name in ('Person', 'Family', 'Event', 'Place', 'Repository',
+                         'Source', 'Citation', 'Media', 'Note', 'Tag'):
                 d = self.database._tables[name]["class_func"]().to_struct()
                 self.data[name.lower()] = d.keys()
         # The macros:

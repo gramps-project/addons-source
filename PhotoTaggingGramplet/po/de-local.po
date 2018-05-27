@@ -1,26 +1,29 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
-# German GRAMPS Translation
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-29 14:50+0200\n"
-"PO-Revision-Date: 2013-09-26 20:57+0200\n"
+"POT-Creation-Date: 2018-05-02 19:15+0200\n"
+"PO-Revision-Date: 2018-05-02 21:06+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
@@ -31,18 +34,127 @@ msgstr "Foto markieren"
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet zum markieren von Personen auf Fotos"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:211
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:119
+msgid "Selection"
+msgstr "Auswahl"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:121
+msgid "Replace existing references to the person being assigned without asking"
+msgstr ""
+"Ersetze existierende Referenzen zu der Person die ohne Nachfragen zugeordnet"
+" wurden"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+msgid "Face detection"
+msgstr "Gesichtserkennung"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:129
+msgid "Minimum face width (px)"
+msgstr "Minimale Gesichtshöhe (Pkt)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:131
+msgid "Minimum face height (px)"
+msgstr "Minimale Gesichtshöhe (Pkt)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Detect faces inside existing boxes"
+msgstr "Erkennt Gesichter in existierenden  Kästen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:243
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:688
+msgid "Select Person"
+msgstr "Person wählen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:244
+msgid "Add Person"
+msgstr "Person hinzufügen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:245
+msgid "Clear Reference"
+msgstr "Referenz löschen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:246
+msgid "Remove Selection"
+msgstr "Auswahl entfernen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:247
+msgid "Edit referenced Person"
+msgstr "Referenzierte Person bearbeiten"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:248
+msgid "Zoom In"
+msgstr "Vergrößern"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:249
+msgid "Zoom Out"
+msgstr "Verkleinern"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:252
+msgid "Detect faces"
+msgstr "Erkannte Gesichter"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:254
+msgid "Detect faces (OpenCV module required)"
+msgstr "Entdeckt Gesichter (OpenCV Modul benötigt)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:256
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:737
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:302
+msgid "Preview"
+msgstr "Vorschau"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:303
 msgid "Person"
 msgstr "Person"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:523
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:417
+msgid "_Select"
+msgstr "_Auswählen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:420
+msgid "_Add"
+msgstr "_Hinzufügen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:423
+msgid "_Clear"
+msgstr "_Leeren"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:426
+msgid "_Remove"
+msgstr "_Entfernen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:573
 #, python-format
 msgid "Edit Person (%s)"
 msgstr "Person (%s) bearbeiten"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:549
-msgid "Select Person"
-msgstr "Person wählen"
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:628
+#, python-brace-format
+msgid "Replace {0}"
+msgstr "Ersetze {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:720
+msgid "Detecting faces..."
+msgstr "Suche nach Gesichtern..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:732
+msgid "Detection finished"
+msgstr "Erkennung abgeschlossen"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:773
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Eine andere Region dieses Bildes ist mit {name}. verknüpft. Entfernen?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:775
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"{count} andere Regionen dieses Bildes sind mit {name} verknüpft. Entfernen?"
 
 #: PhotoTaggingGramplet/haarcascade_frontalface_alt.xml.h:1
 msgid ""
@@ -14833,3 +14945,4 @@ msgstr ""
 "<left_val>0.4738228023052216</left_val> <right_val>0.6522961258888245</"
 "right_val></_></_></trees> <stage_threshold>105.7611007690429700</"
 "stage_threshold> <parent>20</parent> <next>-1</next>"
+

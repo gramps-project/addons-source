@@ -33,7 +33,7 @@ import string
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer
@@ -103,7 +103,7 @@ class FamilySheet(Report):
         """
         Initialize the report.
 
-        @param database: the GRAMPS database instance
+        @param database: the Gramps database instance
         @param options: instance of the Options class for this report
         @param user: a gramps.gen.user.User() instance
         """
@@ -122,6 +122,11 @@ class FamilySheet(Report):
         """
         Build the actual report.
         """
+
+        mark1 = docgen.IndexMark(_('Family Sheet'), docgen.INDEX_TYPE_TOC, 1)
+        self.doc.start_paragraph('FSR-Key')
+        self.doc.write_text('', mark1) # for use in a TOC in a book report
+        self.doc.end_paragraph()
 
         person = self.database.get_person_from_gramps_id(self.person_id)
         (rank, ahnentafel, person_key) = self.__calc_person_key(person)
@@ -164,8 +169,12 @@ class FamilySheet(Report):
 
         # --- Now let the party begin! ---
 
+        head_name = str(_Name_get_styled(person.get_primary_name(),
+                                         _Name_CALLNAME_DONTUSE))
+        mark2 = docgen.IndexMark(head_name, docgen.INDEX_TYPE_TOC, 2)
+
         self.doc.start_paragraph('FSR-Key')
-        self.doc.write_text(person_key)
+        self.doc.write_text(person_key, mark2)
         self.doc.end_paragraph()
 
         self.doc.start_table(None, 'FSR-Table')
@@ -184,7 +193,10 @@ class FamilySheet(Report):
             spouse_index += 1
 
             spouse_handle = utils.find_spouse(person, family)
-            spouse = self.database.get_person_from_handle(spouse_handle)
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+            else:
+                spouse = None
 
             # Determine relationship between the center person and the spouse.
             # If the spouse has a closer blood relationship than the current
@@ -784,10 +796,11 @@ def _Event_get_place_text(event, database, placeholder=False):
     """
 
     place_handle = event.get_place_handle()
+    date = event.get_date_object()
 
     if place_handle:
         place = database.get_place_from_handle(place_handle)
-        place_title = place_displayer.display(database, place)
+        place_title = place_displayer.display(database, place, date)
         text = _("in %(place)s") % {'place': place_title}
     elif placeholder and event.get_type() in _Event_needs_date_place:
         text = _("in %(place)s") % {'place': "__________"}
@@ -812,8 +825,15 @@ class FamilySheetOptions(MenuReportOptions):
     RECURSE_ALL = 2
 
     def __init__(self, name, dbase):
+        self.__db = dbase
+        self.__pid = None
         MenuReportOptions.__init__(self, name, dbase)
 
+    def get_subject(self):
+        """ Return a string that describes the subject of the report. """
+        gid = self.__pid.get_value()
+        person = self.__db.get_person_from_gramps_id(gid)
+        return displayer.display(person)
 
     def add_menu_options(self, menu):
 
@@ -821,15 +841,17 @@ class FamilySheetOptions(MenuReportOptions):
         category_name = _("Report Options")
         ##########################
 
-        pid = PersonOption(_("Center person"))
-        pid.set_help(_("The person whose partners and children are printed"))
-        menu.add_option(category_name, "pid", pid)
+        self.__pid = PersonOption(_("Center person"))
+        self.__pid.set_help(
+            _("The person whose partners and children are printed"))
+        menu.add_option(category_name, "pid", self.__pid)
 
         recurse = EnumeratedListOption(_("Print sheets for"), self.RECURSE_NONE)
         recurse.set_items([
             (self.RECURSE_NONE, _("Center person only")),
             (self.RECURSE_SIDE, _("Center person and descendants in side branches")),
             (self.RECURSE_ALL,  _("Center person and all descendants"))])
+        recurse.set_help(_("Whether to include descendants, and which ones."))
         menu.add_option(category_name, "recurse", recurse)
 
         callname = EnumeratedListOption(_("Use call name"), _Name_CALLNAME_DONTUSE)
@@ -837,15 +859,20 @@ class FamilySheetOptions(MenuReportOptions):
             (_Name_CALLNAME_DONTUSE, _("Don't use call name")),
             (_Name_CALLNAME_REPLACE, _("Replace first name with call name")),
             (_Name_CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
+        callname.set_help(_("Whether to include call name, and how."))
         menu.add_option(category_name, "callname", callname)
 
         placeholder = BooleanOption( _("Print placeholders for missing information"), True)
+        placeholder.set_help(
+            _("Whether to include fields for missing information."))
         menu.add_option(category_name, "placeholder", placeholder)
 
         incl_sources = BooleanOption( _("Include sources"), True)
+        incl_sources.set_help(_("Whether to include source references."))
         menu.add_option(category_name, "incl_sources", incl_sources)
 
         incl_notes = BooleanOption( _("Include notes"), True)
+        incl_notes.set_help(_("Whether to include notes."))
         menu.add_option(category_name, "incl_notes", incl_notes)
 
 

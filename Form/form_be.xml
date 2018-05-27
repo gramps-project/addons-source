@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='BE1846' type='Census' title='1846 Belgian Census' date='1846-10-15'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1856' type='Census' title='1856 Belgian Census' date='1856-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1866' type='Census' title='1866 Belgian Census' date='1866-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1880' type='Census' title='1880 Belgian Census' date='1880-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1890' type='Census' title='1890 Belgian Census' date='1890-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1900' type='Census' title='1900 Belgian Census' date='1900-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='BE1910' type='Census' title='1910 Belgian Census' date='1910-12-31'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+</forms>

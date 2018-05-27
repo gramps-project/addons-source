@@ -98,7 +98,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
             if title != (descr and ""):
                 count += 1
             if title != "":
-                self.name_list.append((handle.decode('utf8'), title, descr))
+                self.name_list.append((handle, title, descr))
 
         self.progress.close()
 

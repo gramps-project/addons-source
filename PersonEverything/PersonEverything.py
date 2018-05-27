@@ -604,7 +604,7 @@ class PersonEverythingReport(Report):
                         self.doc.start_bold()
                         self.doc.write_text(_("Alternative Name") + " : ")
                         self.doc.end_bold()
-                        self.doc.write_text(name)
+                        self.doc.write_text(name.value)
                         self.doc.end_paragraph()
 
                     if place.get_longitude() or place.get_latitude():

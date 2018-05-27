@@ -25,7 +25,7 @@ register(TOOL,
          version = '0.0.3',
          gramps_target_version = "5.1",
          include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3
+         status = UNSTABLE,
          fname = 'phpgedviewconnector.py',
          authors = ["Martin Hawlisch"],
          authors_email = ["martin.hawlisch@gmx.de"],

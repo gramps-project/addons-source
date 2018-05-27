@@ -70,13 +70,12 @@ class MediaBrowser(Gramplet):
         self.set_has_data(self.get_has_data(active))
 
     def main(self):
-        active_handle = self.get_active('Person')
-        active = self.dbstate.db.get_person_from_handle(active_handle)
-
         self.model.clear()
         self.photo.set_image(None)
-        if active:
-            self.display_data(active)
+        active_handle = self.get_active('Person')
+        if self.dbstate.db.has_person_handle(active_handle):
+            self.display_data(self.dbstate.db.get_person_from_handle(
+                active_handle))
         else:
             self.set_has_data(False)
 

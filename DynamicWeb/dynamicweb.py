@@ -195,10 +195,6 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
 from gramps.gen.constfunc import win, get_curr_dir
-if (sys.version_info[0] < 3):
-    from gramps.gen.constfunc import UNITYPE
-else:
-    UNITYPE = str
 from gramps.gen.config import config
 if (DWR_VERSION_500):
     from gramps.gen.utils.thumbnails import get_thumbnail_path
@@ -208,7 +204,7 @@ from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.display.name import displayer as _nd
 if (DWR_VERSION_412):
     from gramps.gen.display.place import displayer as _pd
-from gramps.gen.datehandler import get_date, get_date_formats, displayer as _dd
+from gramps.gen.datehandler import get_date, format_time, displayer as _dd
 if DWR_VERSION_500:
     from gramps.gen.proxy import CacheProxyDb
 else:
@@ -223,7 +219,7 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.narrativeweb import first_letter
+from gramps.plugins.webreport.common import first_letter
 
 from gramps.gen.utils.place import conv_lat_lon
 
@@ -523,15 +519,6 @@ def format_date(date, gedcom = False, iso = False):
         val = _dd.display(date) or ""
 
     return(val)
-
-
-def format_time(t):
-    '''
-    Returns a Date object set to the time t (in the time.time format).
-    '''
-    date = Date()
-    date.set_yr_mon_day(*time.localtime(t)[0:3])
-    return format_date(date) + datetime.datetime.fromtimestamp(t).strftime(' %H:%M:%S')
 
 
 def rmtree_fix(dirname):
@@ -1131,9 +1118,9 @@ class DynamicWebReport(Report):
             # Get event media
             jdata['media'] = self._data_media_reference_index(event)
             # Get event sources
-            citationlist = event.get_citation_list()
-            citationlist.extend(event_ref.get_citation_list())
-            for attr in attrlist: citationlist.extend(attr.get_citation_list())
+            citationlist = set(event.get_citation_list())
+            citationlist.update(event_ref.get_citation_list())
+            for attr in attrlist: citationlist.update(attr.get_citation_list())
             jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
             # Get event participants
             result_list = list(self.database.find_backlink_handles(event.handle, include_classes=['Person', 'Family']))
@@ -1512,6 +1499,12 @@ class DynamicWebReport(Report):
           - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)
           - change_time: last record modification date
         '''
+        if DWR_VERSION_500:
+            fmt = config.get('preferences.place-format')
+            pf = _pd.get_formats()[fmt]
+            pref_lang = pf.language
+        else:
+            pref_lang = config.get('preferences.place-lang')
         jdatas = []
         place_list = list(self.obj_dict[Place])
         place_list.sort(key = lambda x: self.obj_dict[Place][x][OBJDICT_INDEX])
@@ -1531,7 +1524,6 @@ class DynamicWebReport(Report):
                 jdata['type'] = ''
             jdata['names'] = []
             if DWR_VERSION_410:
-                pref_lang = config.get('preferences.place-lang')
                 for pn in place.get_all_names():
                     lang = pn.get_language()
                     if lang != '' and pref_lang!= '' and lang != pref_lang: continue
@@ -2381,20 +2373,21 @@ class DynamicWebReport(Report):
         sw.write("STATISTICS_CHART_OPACITY = 70;\n")
         sw.write("GRAMPS_PREFERENCES = [];\n")
         for pref in [
-            'bordercolor-gender-female-alive',
-            'bordercolor-gender-female-death',
-            'bordercolor-gender-male-alive',
-            'bordercolor-gender-male-death',
-            'bordercolor-gender-unknown-alive',
-            'bordercolor-gender-unknown-death',
-            'color-gender-female-alive',
-            'color-gender-female-death',
-            'color-gender-male-alive',
-            'color-gender-male-death',
-            'color-gender-unknown-alive',
-            'color-gender-unknown-death',
+            'border-female-alive',
+            'border-female-dead',
+            'border-male-alive',
+            'border-male-dead',
+            'border-unknown-alive',
+            'border-unknown-dead',
+            'female-alive',
+            'female-dead',
+            'male-alive',
+            'male-dead',
+            'unknown-alive',
+            'unknown-dead',
             ]:
-            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, config.get('preferences.%s' % pref)))
+            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" %
+                     (pref, config.get('colors.%s' % pref)))
         sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
             [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
             + "];\n")
@@ -3090,8 +3083,9 @@ class DynamicWebReport(Report):
         This function is used when converting a Gramps note with hyperlinks into an HTML string
         '''
         if prop == "gramps_id":
-            if obj_class in self.database.get_table_names():
-                obj = self.database.get_table_metadata(obj_class)["gramps_id_func"](handle)
+            func = self.database.method('get_%s_from_gramps_id', obj_class)
+            if func:
+                obj = func(handle)
                 if obj:
                     handle = obj.get_handle()
                 else:
@@ -3376,10 +3370,6 @@ class DynamicWebReport(Report):
                                   _("Constructing list of other objects..."),
                                   sum(1 for _ in ind_list)) as step:
             for handle in ind_list:
-                # FIXME work around bug that self.database.iter under python 3
-                # returns (binary) data rather than text
-                if (not isinstance(handle, UNITYPE)):
-                    handle = handle.decode("UTF-8")
                 step()
                 self._add_person(handle)
 
@@ -3586,13 +3576,15 @@ class DynamicWebReport(Report):
         if (place_handle in self.bkref_dict[Place]):
             refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
             # The place reference is already recorded
-            if (place_ref in refs): return
+            if place_ref and (place_ref in refs): return
         # Update the dictionaries of objects back references
         if (bkref_class is not None):
             self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
         # Check if the place is already added
         if (place_handle in self.obj_dict[Place]): return
         # Add place in the dictionaries of objects
+        if not self.database.has_place_handle(place_handle):
+            return
         place = self.database.get_place_from_handle(place_handle)
         if DWR_VERSION_412 and config.get('preferences.place-auto'):
             place_name = _pd.display(self.database, place)
