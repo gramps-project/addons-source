@@ -567,7 +567,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         # do markup of referenced items
         if status == S_ADD:
             # we need to check added and differs lists
-            item = handle_func2(hndl)
+            obj = handle_func2(hndl)
             # don't automark families unless user wants.
             # So get family handles we DON't want to automark
             not_list = []
@@ -910,6 +910,8 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         self.more_details = self.more_details_btn.get_active()
         status = self.diff_list[self.diff_iter][STATUS]
         obj_type = OBJ_LST[self.diff_list[self.diff_iter][SORT] & 15]
+        handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+        handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
         action = self.get_act(self.diff_iter, status)
         hndl = self.diff_list[self.diff_iter][HNDL]
         self.hint_lbl.set_text(HINTS[action])
