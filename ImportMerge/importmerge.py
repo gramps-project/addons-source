@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2017       Paul Culley <paulr2787@gmail.com>
+# Copyright (C) 2018       Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -348,7 +349,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                     p_2 += 1
                     if not diff:
                         continue  # same!
-                    item = self.db1.get_from_name_and_handle(obj_type, hndl)
+                    item = handle_func1(hndl)
                     gid, name = self.sa[0].describe(item)
                     data = (S_DIFFERS, _(obj_type), gid, name,
                             sort, hndl, "", 0)
@@ -358,7 +359,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                                                handles1[p_1] < handles2[p_2]):
                     # p_1 is missing in p_2 (missing)
                     hndl = handles1[p_1]
-                    item = self.db1.get_from_name_and_handle(obj_type, hndl)
+                    item = handle_func1(hndl)
                     gid, name = self.sa[0].describe(item)
                     data = (S_MISS, _(obj_type), gid, name,
                             S_MISS_SO + sort, hndl, "", 0)
@@ -370,7 +371,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                                                handles1[p_1] > handles2[p_2]):
                     # p_2 is missing in p_1 (added)
                     hndl = handles2[p_2]
-                    item = self.db2.get_from_name_and_handle(obj_type, hndl)
+                    item = handle_func2(hndl)
                     gid, name = self.sa[1].describe(item)
                     data = (S_ADD, _(obj_type), gid, name,
                             S_ADD_SO + sort, hndl, "", 0)
@@ -561,10 +562,12 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 override priority
         clear:  Indicates we are clearing a previous auto mark
         '''
+        handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+        handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
         # do markup of referenced items
         if status == S_ADD:
             # we need to check added and differs lists
-            obj = self.db2.get_from_name_and_handle(obj_type, hndl)
+            item = handle_func2(hndl)
             # don't automark families unless user wants.
             # So get family handles we DON't want to automark
             not_list = []
@@ -580,7 +583,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 self.mark_it(d_iter, not_list, handle, mark, old_mrk, clear)
         elif status == S_MISS:
             # we need to check missing and differs lists
-            obj = self.db1.get_from_name_and_handle(obj_type, hndl)
+            obj = handle_func1(hndl)
             # don't automark families unless user wants.
             # So get family handles we DON't want to automark
             not_list = []
@@ -745,11 +748,13 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         getattr to get the actual method and append the () to call it.
         '''
         changed = False
+        handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+        handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
         if status == S_MISS and action == A_DEL:
             getattr(self.db1, 'remove_' + obj_type.lower())(hndl, trans)
             return
         elif status == S_MISS and action != A_DEL:
-            item = self.db1.get_from_name_and_handle(obj_type, hndl)
+            item = handle_func1(hndl)
             r_hndls = item.get_referenced_handles_recursively()
             for r_objtype, r_hndl in r_hndls:
                 # now check the differences list for a match
@@ -792,7 +797,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
             if action != A_ADD:
                 return
             changed = True
-            item = self.db2.get_from_name_and_handle(obj_type, hndl)
+            item = handle_func2(hndl)
             r_hndls = item.get_referenced_handles_recursively()
             for r_objtype, r_hndl in r_hndls:
                 # check the added list for a match
@@ -918,7 +923,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                                 item2.get_referenced_handles_recursively()}
             self.report_diff(_(obj_type), item1, item2, item3)
         elif status == S_ADD:
-            item = self.db2.get_from_name_and_handle(obj_type, hndl)
+            item = handle_func2(hndl)
             self.item2_hndls = {i[1]: i[0] for i in
                                 item.get_referenced_handles_recursively()}
             if self.more_details:
@@ -939,7 +944,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                 text += "\n" + SPN_MONO + _("Result  ") + " >> " + SPN_ + desc3
             self.res_list.append((_(obj_type), text))
         else:  # status == S_MISS:
-            item = self.db1.get_from_name_and_handle(obj_type, hndl)
+            item = handle_func1(hndl)
             self.item1_hndls = {i[1]: i[0] for i in
                                 item.get_referenced_handles_recursively()}
             if self.more_details:
@@ -966,8 +971,10 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         for merges we create the merged object (use deepcopy to avoid messing
         up our source).  For ignore and replace we can refer to original
         objects. '''
-        item1 = self.db1.get_from_name_and_handle(obj_type, hndl)
-        item2 = self.db2.get_from_name_and_handle(obj_type, hndl)
+        handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+        handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
+        item1 = handle_func1(hndl)
+        item2 = handle_func2(hndl)
         item3 = None
         if action == A_REPLACE:
             item3 = item2
@@ -1022,11 +1029,11 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
             for hndl in args[2]:
                 if self.added.get(hndl) or self.diffs.get(hndl):
                     continue
-                item1 = self.db1.get_from_name_and_handle(obj_type, hndl)
-                item2 = self.db2.get_from_name_and_handle(obj_type, hndl)
+                item1 = handle_func1(hndl)
+                item2 = handle_func2(hndl)
                 diff = diff_items(obj_type, to_struct(item1), to_struct(item2))
                 if diff:
-                    item = self.db1.get_from_name_and_handle(obj_type, hndl)
+                    item = handle_func1(hndl)
                     gid, name = self.sa[0].describe(item)
                     sort = OBJ_LST.index(obj_type) + S_DIFFERS_SO
                     data = (S_DIFFERS, _(obj_type), gid, name,
@@ -1036,7 +1043,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
 
         elif args[1] == 'add':
             for hndl in args[2]:
-                item = self.db2.get_from_name_and_handle(obj_type, hndl)
+                item = handle_func2(hndl)
                 gid, name = self.sa[1].describe(item)
                 sort = OBJ_LST.index(obj_type) + S_ADD_SO
                 data = (S_ADD, _(obj_type), gid, name, sort, hndl, "", 0)
