@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 #
 # Initial creation: 2018-05-26
-# Version: 0.1.0
+# Version: 1.0.0
 #
 # Purpose: Generate short reminders of events that have occurred
 # within the current family tree.  Allow flexibility to filter
