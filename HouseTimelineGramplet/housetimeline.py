@@ -31,8 +31,9 @@ class HouseTimelineGramplet(Gramplet):
         tag.set_property("font", "Courier 8")
 
     def db_changed(self):
-        self.dbstate.db.connect('person-rebuild', self.update)
-        self.update()
+        self.connect(self.dbstate.db,'person-add', self.update)
+        self.connect(self.dbstate.db,'person-update', self.update)
+        self.connect(self.dbstate.db,'person-delete', self.update)
 
     def main(self):
         self.set_text(_("Processing...") + "\n")
