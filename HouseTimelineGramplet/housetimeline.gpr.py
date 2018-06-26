@@ -12,5 +12,5 @@ register(GRAMPLET,
          detached_height = 460,
          gramplet = 'HouseTimelineGramplet',
          gramplet_title=_("House Timeline"),
-         help_url='Gramps_4.2_Wiki_Manual_-_Gramplets#House_Timeline'
+         help_url='House_Timeline_Gramplet'
          )
