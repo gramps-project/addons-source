@@ -23,17 +23,37 @@ class HouseTimelineGramplet(Gramplet):
     def init(self):
         self.house_width = 40
         self.set_tooltip(_("Double-click name for details"))
-        # self.set_text(_("No Family Tree loaded."))
 
     def on_load(self):
         self.no_wrap()
         tag = self.gui.buffer.create_tag("fixed")
         tag.set_property("font", "Courier 8")
+        # set default house icon style.
+        if len(self.gui.data) != 1:
+            self.gui.data[:] = ["001", None]
 
     def db_changed(self):
         self.connect(self.dbstate.db,'person-add', self.update)
         self.connect(self.dbstate.db,'person-update', self.update)
         self.connect(self.dbstate.db,'person-delete', self.update)
+
+    def save_update_options(self, widget=None):
+        # saves a specific house icon style.
+        style = self.get_option(_("House Icon Style"))
+        self.gui.data[:] = [style.get_value()]
+        self.update()
+    
+    def build_options(self):
+        # builds a menu dropdown list of options.
+        from gramps.gen.plug.menu import EnumeratedListOption
+        style_list = EnumeratedListOption(_("House Icon Style"), self.gui.data[0])
+        for item in [("001", _("Standard")),
+                     ("002", _("Small")),
+                     ("003", _("Unicode")),
+                     ("004", _("None")),
+                     ]:
+            style_list.add_item(item[0], item[1])
+        self.add_option(style_list)
 
     def main(self):
         self.set_text(_("Processing...") + "\n")
@@ -92,7 +112,7 @@ class HouseTimelineGramplet(Gramplet):
 
     def build_house(self):
         """
-        Outputs sorted details from self.residents, with ASCII house.
+        Outputs sorted details from self.residents.
         """
         gl_location = _("Location")
         gl_time = _("Time In Family")
@@ -110,15 +130,13 @@ class HouseTimelineGramplet(Gramplet):
                 date = years[1]['date'][0]
                 first_year = date if date != 0 and first_year == 0 else first_year
             time_in_family = last_year - first_year if first_year != 0 else gl_unknown
-            self.append_text("=========================\n" +
-            "     ~~~\n" +
-            " __[]________\n" +
-            "/____________\ \n" +
-            ("|            | {0}: {1}\n".format(gl_location,resident[0])) +
-            ("| [)(]  [)(] | {0}: {1} years\n".format(gl_time,time_in_family)) +
-            ("|     __     | {0}: {1} - {2}\n".format(gl_first_resident,sorted_dates[0][1]['date'][0],sorted_dates[0][1]['pname'])) +
-            ("|    |  |    | {0}: {1} - {2}\n".format(gl_last_resident,sorted_dates[-1][1]['date'][0],sorted_dates[-1][1]['pname'])) +
-            ("|____|__|____| {0}: {1}\n".format(gl_total_residents,len(sorted_dates))) +
+            self.append_text("=========================\n")
+            self.render_house(self.gui.data[0])
+            self.append_text("{0}: {1}\n".format(gl_location,resident[0]) +
+            ("{0}: {1} years\n".format(gl_time,time_in_family)) +
+            ("{0}: {1} - {2}\n".format(gl_first_resident,sorted_dates[0][1]['date'][0],sorted_dates[0][1]['pname'])) +
+            ("{0}: {1} - {2}\n".format(gl_last_resident,sorted_dates[-1][1]['date'][0],sorted_dates[-1][1]['pname'])) +
+            ("{0}: {1}\n".format(gl_total_residents,len(sorted_dates))) +
             "                        \n")
             self.append_text("{0}:\n".format(gl_timeline))
             # TODO: if duplicate person handles exist, denote as time period of person.
@@ -126,3 +144,31 @@ class HouseTimelineGramplet(Gramplet):
                 self.append_text("{0} - ".format(item[1]['date'][0]))
                 self.link(item[1]['pname'],"Person",item[1]['handle'])
                 self.append_text("\n")
+
+    def render_house(self,house_type):
+        """
+        Renders various types of ASCII houses.
+        """
+        if house_type == "001":
+            self.append_text(
+                "     ~~~\n" +
+                " __[]________\n" +
+                "/____________\ \n" +
+                "|            | \n" +
+                "| [)(]  [)(] | \n" +
+                "|     __     | \n" +
+                "|    |  |    | \n" +
+                "|____|__|____| \n" +
+                "                        \n"
+            )
+        elif house_type == "002":
+            self.append_text(
+                " .___. \n" +
+                "/ \___\ \n" +
+                "|_|_#_| \n" +
+                "                        \n"
+            )
+        elif house_type == "003":
+            self.append_text(
+                "⌂ \n"
+            )
