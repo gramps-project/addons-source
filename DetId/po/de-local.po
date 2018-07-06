@@ -1,0 +1,39 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-21 23:08+0200\n"
+"PO-Revision-Date: 2018-04-21 23:14+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: DetId/DetId.gpr.py:30
+msgid "Deterministic ID"
+msgstr "Deterministische ID"
+
+#: DetId/DetId.gpr.py:31
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Setzen/Zurücksetzen Gramps, um eine Deterministische ID zu verwenden"
+
+#: DetId/DetId.py:74
+msgid "Deterministic ID Tool"
+msgstr "Deterministische ID Werkzeug"
+
+#: DetId/DetId.py:80
+msgid ""
+"The ID and handles now start at 0x00000000, and increment by 0x100000001"
+msgstr ""
+"Die ID und die Handles beginnen jetzt bei 0x00000000 und erhöhen sich um"
+" 0x100000001"
+

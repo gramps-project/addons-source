@@ -1,27 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# French translations for PACKAGE package.
+# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Paul Culley <prc@prc-virtualbox>, 2017.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-18 15:17-0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-08-11 14:30-0500\n"
+"PO-Revision-Date: 2017-08-11 14:30-0500\n"
+"Last-Translator: Paul Culley <prc@prc-virtualbox>\n"
+"Language-Team: French\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: BirthOrder/birthorder.gpr.py:38 BirthOrder/birthorder.py:55
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:55
 msgid "Sort Children in Birth order"
 msgstr ""
 
-#: BirthOrder/birthorder.gpr.py:39
+#: BirthOrder/birthorder.gpr.py:10
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -29,31 +29,31 @@ msgid ""
 "dates, or accept all."
 msgstr ""
 
-#: BirthOrder/birthorder.py:125
+#: BirthOrder/birthorder.py:124
 msgid "No families need sorting"
 msgstr ""
 
-#: BirthOrder/birthorder.py:126
+#: BirthOrder/birthorder.py:125
 msgid "No children were out of birth order."
 msgstr ""
 
-#: BirthOrder/birthorder.py:143
+#: BirthOrder/birthorder.py:149
 msgid "Edit Family"
 msgstr ""
 
-#: BirthOrder/birthorder.py:159
+#: BirthOrder/birthorder.py:166
 msgid "Processing..."
 msgstr ""
 
-#: BirthOrder/birthorder.py:160
+#: BirthOrder/birthorder.py:167
 msgid "Edit Families"
 msgstr ""
 
-#: BirthOrder/birthorder.py:230
+#: BirthOrder/birthorder.py:238
 msgid "Looking for children birth order"
 msgstr ""
 
-#: BirthOrder/birthorder.py:234
+#: BirthOrder/birthorder.py:242
 msgid "Pass 1: Building preliminary lists"
 msgstr ""
 
@@ -62,54 +62,66 @@ msgid "Select the family you wish to examine."
 msgstr ""
 
 #: BirthOrder/birthorder.glade.h:2
-msgid "Help"
+msgid "Family ID"
 msgstr ""
 
 #: BirthOrder/birthorder.glade.h:3
-msgid "Accept All"
+msgid "Father"
 msgstr ""
 
 #: BirthOrder/birthorder.glade.h:4
-msgid "This button will sort all of the families listed."
+msgid "Mother"
 msgstr ""
 
 #: BirthOrder/birthorder.glade.h:5
-msgid "Accept All *"
+msgid "Help"
 msgstr ""
 
 #: BirthOrder/birthorder.glade.h:6
+msgid "Accept All"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:7
+msgid "This button will sort all of the families listed."
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:8
+msgid "Accept All *"
+msgstr ""
+
+#: BirthOrder/birthorder.glade.h:9
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:7
+#: BirthOrder/birthorder.glade.h:10
 msgid "Accept"
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:8
+#: BirthOrder/birthorder.glade.h:11
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:9
+#: BirthOrder/birthorder.glade.h:12
 msgid "Done"
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:10
+#: BirthOrder/birthorder.glade.h:13
 msgid "This button will exit, with remaining families unchanged."
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:11
+#: BirthOrder/birthorder.glade.h:14
 msgid "Current sort"
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:12
+#: BirthOrder/birthorder.glade.h:15
 msgid "Proposed sort"
 msgstr ""
 
-#: BirthOrder/birthorder.glade.h:13
+#: BirthOrder/birthorder.glade.h:16
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

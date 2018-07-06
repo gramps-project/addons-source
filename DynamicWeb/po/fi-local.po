@@ -1,0 +1,1584 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-27 20:17+0300\n"
+"PO-Revision-Date: 2018-04-04 19:45+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <niememat@gmail,com>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dynamicweb.gpr.py:15
+msgid "Dynamic Web Report"
+msgstr "Dynaaminen-nettisivusto"
+
+#: dynamicweb.gpr.py:16
+msgid "Produces dynamic web pages for the database"
+msgstr "Tuottaa dynaamiset verkkosivut tietokannasta"
+
+#: dynamicweb.py:265
+msgid "Street"
+msgstr "Katu"
+
+#: dynamicweb.py:266
+msgid "Locality"
+msgstr "Taajama"
+
+#: dynamicweb.py:267
+msgid "City"
+msgstr "Paikkakunta"
+
+#: dynamicweb.py:268
+msgid "Church Parish"
+msgstr "Seurakunta"
+
+#: dynamicweb.py:269
+msgid "County"
+msgstr "Maakunta"
+
+#: dynamicweb.py:270
+msgid "State/ Province"
+msgstr "Lääni, Osavaltio tai Provinssi"
+
+#: dynamicweb.py:271
+msgid "Postal Code"
+msgstr "Postinumero"
+
+#: dynamicweb.py:272
+msgid "Country"
+msgstr "Valtio tai Liittovaltio"
+
+#: dynamicweb.py:273
+msgid "Phone"
+msgstr "Puhelin"
+
+#: dynamicweb.py:279
+msgid "Home Page"
+msgstr "Kotisivu"
+
+#: dynamicweb.py:280
+msgid "SVG graphical tree"
+msgstr "SVG graafinen sukupuu"
+
+#: dynamicweb.py:283
+msgid "Indexes pages"
+msgstr "Hakemistosivut"
+
+#: dynamicweb.py:287 dynamicweb.py:4235
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Mukautettu sivu %(index)i"
+
+#: dynamicweb.py:305
+msgid "Ascending tree"
+msgstr "Esivanhempien sukupuu"
+
+#: dynamicweb.py:306
+msgid "Descending tree"
+msgstr "Jälkeläisten sukupuu"
+
+#: dynamicweb.py:307
+msgid "Descending tree with spouses"
+msgstr "Jälkeläisten sukupuu puolisot mukana"
+
+#: dynamicweb.py:308
+msgid "Ascending and descending tree"
+msgstr "Jälkeläisten ja esivanhempien sukupuu"
+
+#: dynamicweb.py:309
+msgid "Ascending and descending tree with spouses"
+msgstr "Jälkeläisten ja esivanhempien sukupuu puolisoiden kanssa"
+
+#: dynamicweb.py:321
+msgid "Vertical (↓)"
+msgstr "Alaspäin (↓)"
+
+#: dynamicweb.py:322
+msgid "Vertical (↑)"
+msgstr "Ylöspäin (↑)"
+
+#: dynamicweb.py:323
+msgid "Horizontal (→)"
+msgstr "Oikealle (→)"
+
+#: dynamicweb.py:324
+msgid "Horizontal (←)"
+msgstr "Vasemmalle (←)"
+
+#: dynamicweb.py:325
+msgid "Full Circle"
+msgstr "Ympyrä"
+
+#: dynamicweb.py:326
+msgid "Half Circle"
+msgstr "Puoliympyrä"
+
+#: dynamicweb.py:327
+msgid "Quadrant"
+msgstr "Sektori"
+
+#: dynamicweb.py:339
+msgid "Size proportional to number of ancestors"
+msgstr "Koko suhteessa esivanhempien määrään"
+
+#: dynamicweb.py:340
+msgid "Homogeneous parents distribution"
+msgstr "Tasainen vanhempien jakautuma"
+
+#: dynamicweb.py:343
+msgid "Size proportional to number of descendants"
+msgstr "Koko suhteessa jälkeläisten määrään"
+
+#: dynamicweb.py:344
+msgid "Homogeneous children distribution"
+msgstr "Tasainen lasten jakautuma"
+
+#: dynamicweb.py:351 dynamicweb.py:374
+msgid "Gender colors"
+msgstr "Sukupuolivärit"
+
+#: dynamicweb.py:352
+msgid "Generation based gradient"
+msgstr "Sukupolviin perustuva liukuväri"
+
+#: dynamicweb.py:353
+msgid "Age based gradient"
+msgstr "Ikäperusteinen liukuväri (0-100)"
+
+#: dynamicweb.py:354 dynamicweb.py:373
+msgid "Single main (filter) color"
+msgstr "Yksivärinen (suodin)"
+
+#: dynamicweb.py:355
+msgid "Time period based gradient"
+msgstr "Aikaväliin perustuva liukuväri"
+
+#: dynamicweb.py:356 dynamicweb.py:378
+msgid "White"
+msgstr "Valkoinen"
+
+#: dynamicweb.py:357 dynamicweb.py:376
+msgid "Color scheme classic report"
+msgstr "Väriteema klassinen raportti"
+
+#: dynamicweb.py:358 dynamicweb.py:377
+msgid "Color scheme classic view"
+msgstr "Väriteema perinteinen näkymä"
+
+#: dynamicweb.py:375
+msgid "Gradient"
+msgstr "Liukuväri"
+
+#: dynamicweb.py:394
+msgid "Default"
+msgstr "Oletus"
+
+#: dynamicweb.py:395
+msgid "Mainz"
+msgstr "Mainz"
+
+#: dynamicweb.py:703
+#, python-format
+msgid "Neither %(current)s nor %(parent)s are directories"
+msgstr "%(current)s ja %(parent)s eivät ole hakemistoja"
+
+#: dynamicweb.py:711 dynamicweb.py:716
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "Ei voitu luoda hakemistoa: %(path)s"
+
+#: dynamicweb.py:742 dynamicweb.py:3369
+msgid "Dynamic Web Site Report"
+msgstr "Dynaaminen nettiraportti"
+
+#: dynamicweb.py:742
+msgid "Exporting family tree data ..."
+msgstr "Viedään sukupuun tietoja ..."
+
+#: dynamicweb.py:1232 dynamicweb.py:2456
+msgid "Author"
+msgstr "Tekijä"
+
+#: dynamicweb.py:1233 dynamicweb.py:2446
+msgid "Abbreviation"
+msgstr "Lyhennys"
+
+#: dynamicweb.py:1234 dynamicweb.py:2542
+msgid "Publication information"
+msgstr "Julkaisutiedot"
+
+#: dynamicweb.py:1304 dynamicweb.py:2474
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: dynamicweb.py:1305
+msgid "Page"
+msgstr "Sivu"
+
+#: dynamicweb.py:1306
+msgid "Confidence"
+msgstr "Luotettavuus"
+
+#: dynamicweb.py:1625
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#: dynamicweb.py:1872
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "Polkua \"%(path)s\" ei ole mahdollista muuntaa suhteelliseksi."
+
+#: dynamicweb.py:2178
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "Sivujen kokoonpano ei ole voimassa: useilla sivuilla on sama sisältö"
+
+#: dynamicweb.py:2189
+msgid "Html|Home"
+msgstr "Koti"
+
+#: dynamicweb.py:2190 dynamicweb.py:2203 dynamicweb.py:2204 dynamicweb.py:2205
+msgid "Tree"
+msgstr "Sukupuu"
+
+#: dynamicweb.py:2191 dynamicweb.py:2206 dynamicweb.py:2207 dynamicweb.py:2208
+msgid "Statistics"
+msgstr "Tilasto"
+
+#: dynamicweb.py:2194 dynamicweb.py:2470
+msgid "Configuration"
+msgstr "Asetukset"
+
+#: dynamicweb.py:2196 dynamicweb.py:2534
+msgid "Person"
+msgstr "Henkilö"
+
+#: dynamicweb.py:2197
+msgid "Family"
+msgstr "Perhe"
+
+#: dynamicweb.py:2198 dynamicweb.py:2572
+msgid "Source"
+msgstr "Lähde"
+
+#: dynamicweb.py:2199 dynamicweb.py:2218 dynamicweb.py:2518
+msgid "Media"
+msgstr "Media"
+
+#: dynamicweb.py:2200 dynamicweb.py:2537
+msgid "Place"
+msgstr "Paikka"
+
+#: dynamicweb.py:2201 dynamicweb.py:2548
+msgid "Repository"
+msgstr "Arkisto"
+
+#: dynamicweb.py:2202
+msgid "Search results"
+msgstr "Hakutulokset"
+
+#: dynamicweb.py:2213 dynamicweb.py:2214 dynamicweb.py:2579
+msgid "Surnames"
+msgstr "Sukunimet"
+
+#: dynamicweb.py:2215 dynamicweb.py:2503
+msgid "Individuals"
+msgstr "Yksilöt"
+
+#: dynamicweb.py:2216 dynamicweb.py:2486
+msgid "Families"
+msgstr "Perheet"
+
+#: dynamicweb.py:2217 dynamicweb.py:2574
+msgid "Sources"
+msgstr "Lähteet"
+
+#: dynamicweb.py:2219 dynamicweb.py:2539
+msgid "Places"
+msgstr "Paikat"
+
+#: dynamicweb.py:2220 dynamicweb.py:2448
+msgid "Addresses"
+msgstr "Osoitteet"
+
+#: dynamicweb.py:2221 dynamicweb.py:2547
+msgid "Repositories"
+msgstr "Arkistot"
+
+#: dynamicweb.py:2272 dynamicweb.py:2502 dynamicweb.py:4109
+msgid "Indexes"
+msgstr "Hakemistot"
+
+#: dynamicweb.py:2436
+#, python-format
+msgid "(b. %(birthdate)s, d. %(deathdate)s)"
+msgstr "(s. %(birthdate)s, k. %(deathdate)s)"
+
+#: dynamicweb.py:2437
+#, python-format
+msgid "(b. %s)"
+msgstr "(s. %s)"
+
+#: dynamicweb.py:2438
+#, python-format
+msgid "(d. %s)"
+msgstr "(k. %s)"
+
+#: dynamicweb.py:2439
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(suodatettu _MAX_ kokonaismäärästä)"
+
+#: dynamicweb.py:2440
+#, python-format
+msgid "(m. %s)"
+msgstr "(∞ %s)"
+
+#: dynamicweb.py:2441
+msgid "(sort by name)"
+msgstr "(lajittele nimen mukaan)"
+
+#: dynamicweb.py:2442
+msgid "(sort by quantity)"
+msgstr "(lajittele määrän mukaan)"
+
+#: dynamicweb.py:2443
+msgid ": activate to sort column ascending"
+msgstr ": aktivoi lajittelu sarake nousevaksi"
+
+#: dynamicweb.py:2444
+msgid ": activate to sort column descending"
+msgstr ": aktivoi lajittelu sarake laskevaksi"
+
+#: dynamicweb.py:2445
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Tämä sivu tarjoaa SVG-raakakoodin.<br>Kopioi sisältö tekstieditoriin ja "
+"tallenna se SVG-tiedostoksi.<br>Varmista, että tekstieditorin koodaus on "
+"UTF-8.</p>"
+
+#: dynamicweb.py:2447
+msgid "Address"
+msgstr "Osoite"
+
+#: dynamicweb.py:2449
+msgid "Age at death"
+msgstr "Kuolinikä"
+
+#: dynamicweb.py:2450
+msgid "Alternate Marriage"
+msgstr "Vaihtoehtoinen avioliitto"
+
+#: dynamicweb.py:2451
+msgid "Alternate Name"
+msgstr "Vaihtoehtoinen nimi"
+
+#: dynamicweb.py:2452
+msgid "Ancestors"
+msgstr "Esivanhemmat"
+
+#: dynamicweb.py:2453
+msgid "Associations"
+msgstr "Liitokset"
+
+#: dynamicweb.py:2454
+msgid "Attribute"
+msgstr "Ominaisuus"
+
+#: dynamicweb.py:2455
+msgid "Attributes"
+msgstr "Ominaisuudet"
+
+#: dynamicweb.py:2457 dynamicweb.py:4192
+msgid "Background"
+msgstr "Taustaväri"
+
+#: dynamicweb.py:2458
+msgid "Baptism"
+msgstr "Kaste"
+
+#: dynamicweb.py:2459
+msgid "Birth"
+msgstr "Syntymä"
+
+#: dynamicweb.py:2460
+msgid "Burial"
+msgstr "Hautaus"
+
+#: dynamicweb.py:2461
+msgid "Call Name"
+msgstr "Kutsumanimi"
+
+#: dynamicweb.py:2462
+msgid "Call Number"
+msgstr "Hakuavain"
+
+#: dynamicweb.py:2463
+msgid "Cause Of Death"
+msgstr "Kuolinsyy"
+
+#: dynamicweb.py:2464
+msgid "Children"
+msgstr "Lapset"
+
+#: dynamicweb.py:2465
+msgid "Christening"
+msgstr "Ristiäiset"
+
+#: dynamicweb.py:2466
+msgid "Citation"
+msgstr "Lainaus"
+
+#: dynamicweb.py:2467
+msgid "Citations"
+msgstr "Lainaukset"
+
+#: dynamicweb.py:2468
+msgid "Click on the map to show it full-screen"
+msgstr "Napsauta karttaa näyttääksesi sen koko näytöllä"
+
+#: dynamicweb.py:2469
+msgid "Code"
+msgstr "Koodi"
+
+#: dynamicweb.py:2471
+msgid "Configure"
+msgstr "Asetukset"
+
+#: dynamicweb.py:2472
+msgid "Count"
+msgstr "Lukumäärä"
+
+#: dynamicweb.py:2473
+msgid "Cremation"
+msgstr "Tuhkaus"
+
+#: dynamicweb.py:2475
+msgid "Death"
+msgstr "Kuolema"
+
+#: dynamicweb.py:2476
+msgid "Descendants"
+msgstr "Jälkeläiset"
+
+#: dynamicweb.py:2477
+msgid "Description"
+msgstr "Kuvaus"
+
+#: dynamicweb.py:2478
+msgid "DynamicWeb_report#Help"
+msgstr "Dynaaminen_nettiraportti#Ohje"
+
+#: dynamicweb.py:2479
+msgid "Enclosed By"
+msgstr "Ympärillä"
+
+#: dynamicweb.py:2480
+msgid "Engagement"
+msgstr "Kihlaus"
+
+#: dynamicweb.py:2481
+msgid "Event"
+msgstr "Tapahtuma"
+
+#: dynamicweb.py:2482
+msgid "Events"
+msgstr "Tapahtumat"
+
+#: dynamicweb.py:2483
+msgid "Examples"
+msgstr "Esimerkkejä"
+
+#: dynamicweb.py:2484
+msgid "F"
+msgstr "F"
+
+#: dynamicweb.py:2485
+msgid "Families Index"
+msgstr "Perhehakemisto"
+
+#: dynamicweb.py:2487
+msgid "Family Nick Name"
+msgstr "Perheen lempinimi"
+
+#: dynamicweb.py:2488
+msgid "Father"
+msgstr "Isä"
+
+#: dynamicweb.py:2489
+msgid "Female"
+msgstr "Nainen"
+
+#: dynamicweb.py:2490
+msgid "File ready"
+msgstr "Tiedosto valmis"
+
+#: dynamicweb.py:2491
+msgid "Gender"
+msgstr "Sukupuoli"
+
+#: dynamicweb.py:2492
+msgid "Help"
+msgstr "Ohje"
+
+#: dynamicweb.py:2493
+msgid "ID"
+msgstr "ID"
+
+#: dynamicweb.py:2494 dynamicweb.py:4024
+msgid "Include Place map on Place Pages"
+msgstr "Lisää paikkakartta paikkasivuille"
+
+#: dynamicweb.py:2495 dynamicweb.py:4129
+msgid "Include dates columns on the index pages"
+msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+
+#: dynamicweb.py:2496 dynamicweb.py:4137
+msgid "Include a column for parents on the index pages"
+msgstr "Lisää hakemistosivuille sarake vanhemmista"
+
+#: dynamicweb.py:2497 dynamicweb.py:4145
+msgid "Include a column for media path on the index pages"
+msgstr "Lisää hakemistosivuille mediapolun sarake"
+
+#: dynamicweb.py:2498 dynamicweb.py:4133
+msgid "Include a column for partners on the index pages"
+msgstr "Lisää hakemistosivuille sarake kumppaneista"
+
+#: dynamicweb.py:2499 dynamicweb.py:4032
+msgid "Include a map in the individuals and family pages"
+msgstr "Lisää kartta henkilö- ja perhesivuihin"
+
+#: dynamicweb.py:2500 dynamicweb.py:4079
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Lisää henkilösivuille sarake sisarpuolille"
+
+#: dynamicweb.py:2501 dynamicweb.py:4149
+msgid "Include references in indexes"
+msgstr "Lisää lähdeviitteet hakemistoihin"
+
+#: dynamicweb.py:2504 dynamicweb.py:4099
+msgid "Insert sources author in the sources title"
+msgstr "Lisää lähdeaineiston tekijä lähteen otsikkoon"
+
+#: dynamicweb.py:2505
+msgid "Last Modified"
+msgstr "Viimeisin muutos"
+
+#: dynamicweb.py:2506
+msgid "Latitude"
+msgstr "Leveysaste"
+
+#: dynamicweb.py:2507
+msgid "Link"
+msgstr "Linkki"
+
+#: dynamicweb.py:2508
+msgid "Loading..."
+msgstr "Ladataan..."
+
+#: dynamicweb.py:2509
+msgid "Location"
+msgstr "Sijainti"
+
+#: dynamicweb.py:2510
+msgid "Longitude"
+msgstr "Pituusaste"
+
+#: dynamicweb.py:2511
+msgid "M"
+msgstr "M"
+
+#: dynamicweb.py:2512
+msgid "Male"
+msgstr "Mies"
+
+#: dynamicweb.py:2513
+msgid "Map"
+msgstr "Kartta"
+
+#: dynamicweb.py:2514
+msgid "Marriage"
+msgstr "Avioliitto"
+
+#: dynamicweb.py:2515
+msgid "Maximize"
+msgstr "Maksimoi"
+
+#: dynamicweb.py:2516
+msgid "Media Index"
+msgstr "Mediahakemisto"
+
+#: dynamicweb.py:2517
+msgid "Media Type"
+msgstr "Mediatyyppi"
+
+#: dynamicweb.py:2519
+msgid "Mother"
+msgstr "Äiti"
+
+#: dynamicweb.py:2520
+msgid "Name"
+msgstr "Nimi"
+
+#: dynamicweb.py:2521
+msgid "Nick Name"
+msgstr "Lempinimi"
+
+#: dynamicweb.py:2522
+msgid "No data available in table"
+msgstr "Taulukon tietoja ei ole saatavilla"
+
+#: dynamicweb.py:2523
+msgid "No matches found"
+msgstr "Vastaavuuksia ei löydy"
+
+#: dynamicweb.py:2524
+msgid "No matching records found"
+msgstr "Vastaavia merkintöjä ei löydy"
+
+#: dynamicweb.py:2525
+msgid "No matching surname."
+msgstr "Vastaavia sukunimiä ei löydy"
+
+#: dynamicweb.py:2526
+msgid "None"
+msgstr "Tyhjä"
+
+#: dynamicweb.py:2527
+msgid "Notes"
+msgstr "Lisätiedot"
+
+#: dynamicweb.py:2528
+msgid "OK"
+msgstr "OK"
+
+#: dynamicweb.py:2529
+msgid "Other participants"
+msgstr "Muut osallistujat"
+
+#: dynamicweb.py:2530
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: dynamicweb.py:2531
+msgid "Path"
+msgstr "Polku"
+
+#: dynamicweb.py:2532
+msgid "Person page"
+msgstr "Henkilösivu"
+
+#: dynamicweb.py:2533
+msgid "Person to search for"
+msgstr "Henkilöhaku"
+
+#: dynamicweb.py:2535
+msgid "Persons Index"
+msgstr "Henkilöhakemisto"
+
+#: dynamicweb.py:2536
+msgid "Persons"
+msgstr "Henkilöt"
+
+#: dynamicweb.py:2538
+msgid "Places Index"
+msgstr "Paikkahakemisto"
+
+#: dynamicweb.py:2540
+msgid "Preparing file ..."
+msgstr "Tiedoston valmistelu ..."
+
+#: dynamicweb.py:2541
+msgid "Processing..."
+msgstr "Käsitellään..."
+
+#: dynamicweb.py:2543
+msgid "References"
+msgstr "Viitteet"
+
+#: dynamicweb.py:2544
+msgid "Relationship to Father"
+msgstr "Suhde isään"
+
+#: dynamicweb.py:2545
+msgid "Relationship to Mother"
+msgstr "Suhde äitiin"
+
+#: dynamicweb.py:2546
+msgid "Relationship"
+msgstr "Suhde"
+
+#: dynamicweb.py:2549
+msgid "Restore"
+msgstr "Palauta"
+
+#: dynamicweb.py:2550
+msgid "Restore default settings"
+msgstr "Palauta oletusasetukset"
+
+#: dynamicweb.py:2551 dynamicweb.py:4095
+msgid "Show last modification time"
+msgstr "Näytä viimeinen muutosaika"
+
+#: dynamicweb.py:2552 dynamicweb.py:4186
+msgid "SVG tree children distribution"
+msgstr "SVG-puun lasten jakauma"
+
+#: dynamicweb.py:2553
+msgid "SVG tree configuration"
+msgstr "SVG-puun kokoonpano"
+
+#: dynamicweb.py:2554 dynamicweb.py:4174
+msgid "SVG tree graph shape"
+msgstr "SVG-puun kaavion muoto"
+
+#: dynamicweb.py:2555 dynamicweb.py:4168
+msgid "SVG tree graph type"
+msgstr "SVG-puun kaaviotyyppi"
+
+#: dynamicweb.py:2556 dynamicweb.py:4180
+msgid "SVG tree parents distribution"
+msgstr "SVG-puun vanhempien jakauma"
+
+#: dynamicweb.py:2557
+msgid "Save tree as file"
+msgstr "Tallenna puu tiedostona"
+
+#: dynamicweb.py:2558
+msgid "Search:"
+msgstr "Etsi:"
+
+#: dynamicweb.py:2559
+msgid "Select the background color scheme"
+msgstr "Valitse taustan värijärjestelmä"
+
+#: dynamicweb.py:2560
+msgid "Select the children distribution (fan charts only)"
+msgstr "Valitse lasten jakautuma (vain viuhkamallit)"
+
+#: dynamicweb.py:2561
+msgid "Select the number of ascending generations"
+msgstr "Valitse esivanhempien sukupolvien lukumäärä"
+
+#: dynamicweb.py:2562
+msgid "Select the number of descending generations"
+msgstr "Valitse jälkeläisten sukupolvien lukumäärä"
+
+#: dynamicweb.py:2563
+msgid "Select the parents distribution (fan charts only)"
+msgstr "Valitse SVG-sukupuun vanhempien jakautuma (vain viuhkamallit)"
+
+#: dynamicweb.py:2564
+msgid "Select the shape of graph"
+msgstr "Valitse kaavion muoto"
+
+#: dynamicweb.py:2565
+msgid "Select the type of graph"
+msgstr "Valitse kaavion tyyppi"
+
+#: dynamicweb.py:2566
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"Löydetty useita.<br>Tarkenna hakuasi tai valitse alla olevista listoista."
+
+#: dynamicweb.py:2567
+msgid "Show _MENU_ entries"
+msgstr "Näytä _MENU_ merkinnät"
+
+#: dynamicweb.py:2568 dynamicweb.py:4204
+msgid "Show duplicates"
+msgstr "Näytä kaksoiskappaleet"
+
+#: dynamicweb.py:2569
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Näytetään 0-0 0 merkinnästä"
+
+#: dynamicweb.py:2570
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Näytetään _START_ - _END_ / _TOTAL_ merkinnöille"
+
+#: dynamicweb.py:2571
+msgid "Siblings"
+msgstr "Sisarukset"
+
+#: dynamicweb.py:2573
+msgid "Sources Index"
+msgstr "Lähteet valikko"
+
+#: dynamicweb.py:2575
+msgid "Spouses"
+msgstr "Puolisot"
+
+#: dynamicweb.py:2576 dynamicweb.py:4103
+msgid "Suppress Gramps ID"
+msgstr "Jätä pois Gramps ID"
+
+#: dynamicweb.py:2577
+msgid "Surname"
+msgstr "sukunimi"
+
+#: dynamicweb.py:2578
+msgid "Surnames Index"
+msgstr "Sukunimihakemisto"
+
+#: dynamicweb.py:2580
+msgid "Title"
+msgstr "Nimike"
+
+#: dynamicweb.py:2581
+msgid "Type"
+msgstr "Tyyppi"
+
+#: dynamicweb.py:2582
+msgid "U"
+msgstr "U"
+
+#: dynamicweb.py:2583
+msgid "Unknown"
+msgstr "Tuntematon"
+
+#: dynamicweb.py:2584 dynamicweb.py:4091
+msgid "Use tabbed panels instead of sections"
+msgstr "Käytä välilehtiä paneeleiden sijaan"
+
+#: dynamicweb.py:2585
+msgid "Use the search box above in order to find a person."
+msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
+
+#: dynamicweb.py:2586
+msgid "Used for family"
+msgstr "Käytetään perheelle"
+
+#: dynamicweb.py:2587
+msgid "Used for media"
+msgstr "Käytetään medialle"
+
+#: dynamicweb.py:2588
+msgid "Used for person"
+msgstr "Käytetään henkilölle"
+
+#: dynamicweb.py:2589
+msgid "Used for place"
+msgstr "Käytä paikalle"
+
+#: dynamicweb.py:2590
+msgid "Used for source"
+msgstr "Käytä lähteelle"
+
+#: dynamicweb.py:2591
+msgid "Value"
+msgstr "Arvo"
+
+#: dynamicweb.py:2592
+msgid "Web Link"
+msgstr "Nettilinkki"
+
+#: dynamicweb.py:2593
+msgid "Web Links"
+msgstr "Nettilinkit"
+
+#: dynamicweb.py:2594 dynamicweb.py:4205
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr ""
+"Käytetäänkö erityistä väriä henkilöille, jotka näkyvät useita kertoja SVG-"
+"sukupuussa"
+
+#: dynamicweb.py:2595
+msgid "Without name"
+msgstr "Ilman nimeä"
+
+#: dynamicweb.py:2596
+msgid "Without surname"
+msgstr "Sukunimi puuttuu"
+
+#: dynamicweb.py:2597
+msgid "Without title"
+msgstr "Ilman nimikettä"
+
+#: dynamicweb.py:2598
+msgid "Zoom in"
+msgstr "Lähennä"
+
+#: dynamicweb.py:2599
+msgid "Zoom out"
+msgstr "Loitonna"
+
+#: dynamicweb.py:2600
+msgid "all"
+msgstr "kaikki"
+
+#: dynamicweb.py:2941
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Kopiointivirhe: %(error)s"
+
+#: dynamicweb.py:2942
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Mahdotonta kopioida \"%(src)s\" - \"%(dst)s\""
+
+#: dynamicweb.py:2945
+msgid "Possible destination error"
+msgstr "Mahdollinen kohdevirhe"
+
+#: dynamicweb.py:2946
+msgid ""
+"You appear to have set your target directory to a directory used for data "
+"storage. This could create problems with file management. It is recommended "
+"that you consider using a different directory to store your generated web "
+"pages."
+msgstr ""
+"Olet asettanut kohdehakemistoksi hakemiston, jota käytetään tietojen "
+"säilytykseen. Tästä saattaa tulla ongelmia tiedostojenhallinnassa. On "
+"suositeltavaa, että luot nettisivusi johonkin toiseen hakemistoon."
+
+#: dynamicweb.py:2973
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "Sivustojen mallitiedostoja ei voi kopioida \"%(path)s\""
+
+#: dynamicweb.py:3017
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "Pidä \"%(dst)s\" (uudempi kuin \"%(src)s\")"
+
+#: dynamicweb.py:3020
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "Kopioidaan \"%(src)s\" - \"%(dst)s\""
+
+#: dynamicweb.py:3038
+msgid "Invalid file name"
+msgstr "Virheellinen tiedostonimi"
+
+#: dynamicweb.py:3039
+msgid "The archive file must be a file, not a directory"
+msgstr "Arkistotiedosto ei voi olla hakemisto"
+
+#: dynamicweb.py:3049 dynamicweb.py:3067
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "Arkistotiedostoa \"%(path)s\" ei voi korvata"
+
+#: dynamicweb.py:3059 dynamicweb.py:3074
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "Tiedoston \"%(file)s\" lisääminen ei onnistu arkistoon \"%(archive)s\""
+
+#: dynamicweb.py:3127
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynaaminenNettiraportti ohittaa linkki tyyppi '%(class)s'"
+
+#: dynamicweb.py:3370
+msgid "Constructing list of other objects..."
+msgstr "Kerätään muiden kohteiden listaa..."
+
+#: dynamicweb.py:3505
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "%(husband)s ja %(spouse)s muodostama perhe"
+
+#: dynamicweb.py:3511
+#, python-format
+msgid "Family of %(father)s"
+msgstr "Perhe isälle %(father)s"
+
+#: dynamicweb.py:3515
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "Perhe äidille %(mother)s"
+
+#: dynamicweb.py:3830
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"Huomautuksessa käsitellään seuraavia erikoismerkkejä:\n"
+"__SEARCH_FORM__ korvataan hakulomakkeella.\n"
+"__NB_INDIVIDUALS__ korvataan henkilöiden määrällä.\n"
+"__NB_FAMILIES__ korvataan perheiden määrällä.\n"
+"__NB_MEDIA__ korvataan median määrällä.\n"
+"__NB_SOURCES__ korvataan lähteiden määrällä.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ korvataan paikkamäärällä.\n"
+"__MEDIA_<gid>__ korvataan median Gramps ID: llä<gid>.\n"
+"__THUMB_<gid>__ korvataa median pikkukuvalla ja Gramps ID:llä<gid>.\n"
+"__EXPORT_DATE__ korvataan nykyisellä päivämäärällä.\n"
+"__GRAMPS_VERSION__ korvataan Gramps-versiolla.\n"
+"__GRAMPS_HOMEPAGE__ Korvataan Gramps kotisivun linkillä.\n"
+"URL-osoite, joka alkaa suhteessa://suhteellinen <linkki>, korvataan "
+"suhteellisella URL-osoitteella \"<linkki>\".\n"
+
+#: dynamicweb.py:3869
+msgid "Report"
+msgstr "Raportti"
+
+#: dynamicweb.py:3874
+msgid "Destination"
+msgstr "Kohde"
+
+#: dynamicweb.py:3876
+msgid "The destination directory for the web files"
+msgstr "Netti-tiedostojen kohdehakemisto"
+
+#: dynamicweb.py:3880
+msgid "Store web pages in archive"
+msgstr "Tallenna verkkosivut arkistoon"
+
+#: dynamicweb.py:3881
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Luodaanko arkistotiedosto (ZIP- tai TGZ-muodossa), joka sisältää verkkosivun"
+
+#: dynamicweb.py:3885
+msgid "Archive file"
+msgstr "Arkistotiedosto"
+
+#: dynamicweb.py:3887
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -laajennuksella)"
+
+#: dynamicweb.py:3893
+msgid "Web site title"
+msgstr "Nettisivuston otsikko"
+
+#: dynamicweb.py:3893
+msgid "My Family Tree"
+msgstr "Sukupuuni"
+
+#: dynamicweb.py:3894
+msgid "The title of the web site"
+msgstr "Sivuston otsikko"
+
+#: dynamicweb.py:3897
+msgid "Filter"
+msgstr "Suodatin"
+
+#: dynamicweb.py:3899
+msgid "Select filter to restrict people that appear on web site"
+msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
+
+#: dynamicweb.py:3903
+msgid "Filter Person"
+msgstr "Suodinhenkilö"
+
+#: dynamicweb.py:3904
+msgid "The center person for the filter"
+msgstr "Suotimen keskushenkilö"
+
+#: dynamicweb.py:3912 dynamicweb.py:3932
+msgid "Name format (short)"
+msgstr "Nimen muoto (lyhyt)"
+
+#: dynamicweb.py:3913 dynamicweb.py:3935
+msgid "Select the format to display a shorter version of the names"
+msgstr "Valitse muoto, joka näyttää lyhyemmän version nimistä"
+
+#: dynamicweb.py:3927
+msgid "Name format"
+msgstr "Nimen muoto"
+
+#: dynamicweb.py:3930
+msgid "Select the format to display names"
+msgstr "Valitse nimien näyttömuoto"
+
+#: dynamicweb.py:3938
+msgid "Web site template"
+msgstr "Sivuston mallipohja"
+
+#: dynamicweb.py:3941
+msgid "Select the template of the web site"
+msgstr "Valitse verkkosivuston malli"
+
+#: dynamicweb.py:3944
+msgid "Copyright"
+msgstr "Tekijänoikeudet"
+
+#: dynamicweb.py:3947
+msgid "The copyright to be used for the web files"
+msgstr "Nettisivujen tekijänoikeudet"
+
+#: dynamicweb.py:3955
+msgid "Privacy"
+msgstr "Yksityisyys"
+
+#: dynamicweb.py:3963
+msgid "Include records marked private"
+msgstr "Lisää yksityisiksi merkityt tiedot"
+
+#: dynamicweb.py:3964
+msgid "Whether to include private objects"
+msgstr "Lisätäänkö yksityiset tiedot"
+
+#: dynamicweb.py:3966
+msgid "Living People"
+msgstr "Elävät henkilöt"
+
+#: dynamicweb.py:3967
+msgid "Exclude"
+msgstr "Jätä pois"
+
+#: dynamicweb.py:3968
+msgid "Include Last Name Only"
+msgstr "Lisää vain sukunimi"
+
+#: dynamicweb.py:3969
+msgid "Include Full Name Only"
+msgstr "Lisää vain koko nimi"
+
+#: dynamicweb.py:3970
+msgid "Include"
+msgstr "Ota mukaan"
+
+#: dynamicweb.py:3971
+msgid "How to handle living people"
+msgstr "Miten käsitellään elossa olevat henkilöt"
+
+#: dynamicweb.py:3974
+msgid "Years from death to consider living"
+msgstr ""
+"Vuosien määrä kuolemasta, jolloin henkilöä pidetään tietosuojan kannalta "
+"elävänä"
+
+#: dynamicweb.py:3975
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr ""
+"Tällä voit rajoittaa tietoja henkilöistä, jotka eivät ole olleet kuolleina "
+"kovin pitkään"
+
+#: dynamicweb.py:3979
+msgid "Export notes"
+msgstr "Viedään lisätiedot"
+
+#: dynamicweb.py:3980
+msgid "Whether to export notes in the web pages"
+msgstr "Viedäänkö lisätiedot nettisivulle"
+
+#: dynamicweb.py:3983
+msgid "Export sources"
+msgstr "Viedään lähteet"
+
+#: dynamicweb.py:3984
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Viedäänkö lähteet ja lainaukset nettisivulle"
+
+#: dynamicweb.py:3987
+msgid "Export addresses"
+msgstr "Viedään osoitteet"
+
+#: dynamicweb.py:3988
+msgid "Whether to export addresses in the web pages"
+msgstr "Viedäänkö osoitteet nettisivulle"
+
+#: dynamicweb.py:3993
+msgid "Options"
+msgstr "Valinnat"
+
+#: dynamicweb.py:3996
+msgid "Include repository pages"
+msgstr "Lisää arkistosivut"
+
+#: dynamicweb.py:3997
+msgid "Whether or not to include the Repository Pages."
+msgstr "Lisätäänkö arkistosivut"
+
+#: dynamicweb.py:4000
+msgid "Include images and media"
+msgstr "Lisää kuvat ja muut mediatiedostot"
+
+#: dynamicweb.py:4001
+msgid "Whether to include images and media in the web pages"
+msgstr "Lisätäänkö kuvat ja media nettisivulle"
+
+#: dynamicweb.py:4005
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "Kopioi ja nimeä uudelleen tiedostot, joilla on sisäinen Gramps ID"
+
+#: dynamicweb.py:4006
+msgid "Copy, keep file names unchanged"
+msgstr "Kopioi, säilytä tiedostonimet ennallaan"
+
+#: dynamicweb.py:4007
+msgid "Do not copy, reference existing files"
+msgstr "Älä kopioi olemassa olevia tiedostoja"
+
+#: dynamicweb.py:4009
+msgid "Images and media"
+msgstr "Kuvat ja media"
+
+#: dynamicweb.py:4012
+msgid "Whether to make a copy of the media"
+msgstr "Kopioidaanko media"
+
+#: dynamicweb.py:4015
+msgid "Print the notes type"
+msgstr "Tulosta lisätiedon tyyppi"
+
+#: dynamicweb.py:4016
+msgid "Whether to print the notes type in the notes text"
+msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+
+#: dynamicweb.py:4019
+msgid "Print place pages"
+msgstr "Tulosta paikkasivut"
+
+#: dynamicweb.py:4020
+msgid "Whether to show pages for the places"
+msgstr "Näytetäänkö paikkasivut"
+
+#: dynamicweb.py:4026
+msgid ""
+"Whether to include a place map on the Place Pages, where Latitude/ Longitude "
+"are available."
+msgstr ""
+"Lisätäänkö mukaan paikkasivuille paikkakartta, jossa on leveys- ja "
+"pituuspiiritiedot."
+
+#: dynamicweb.py:4034
+msgid ""
+"Whether or not to add an individual page map showing all the places on this "
+"page. This will allow you to see how your family traveled around the country."
+msgstr ""
+"Lisätäänkö erillinen sivu karttaa varten. Siitä näkisi kuinka sukusi on "
+"liikkunut maassa ja maailmalla."
+
+#: dynamicweb.py:4042
+msgid "Google"
+msgstr "Google"
+
+#: dynamicweb.py:4043
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: dynamicweb.py:4045
+msgid "Map Service"
+msgstr "Karttapalvelu"
+
+#: dynamicweb.py:4048
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "Valitse karttapalvelu, jota haluat käyttää paikkakarttasivuilla."
+
+#: dynamicweb.py:4052
+msgid "Google map API key"
+msgstr "Google kartat API-avain"
+
+#: dynamicweb.py:4053
+msgid "The API key used for the Google map"
+msgstr "Käytetään Google kartat API-avainta"
+
+#: dynamicweb.py:4060
+msgid "Advanced"
+msgstr "Lisäasetukset"
+
+#: dynamicweb.py:4063
+msgid "Character set encoding"
+msgstr "Merkistön koodaus"
+
+#: dynamicweb.py:4066
+msgid "The encoding to be used for the web files"
+msgstr "Nettisivuilla käytettävä merkistökoodaus"
+
+#: dynamicweb.py:4069
+msgid "Include family pages"
+msgstr "Lisää perhesivut"
+
+#: dynamicweb.py:4070
+msgid "Whether or not to include family pages"
+msgstr "Lisätäänkö perhesivut."
+
+#: dynamicweb.py:4080
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Lisätäänkö hakemistosivuille sarake sisaruspuolille, vanhempineen ja "
+"sisaruksineen"
+
+#: dynamicweb.py:4083
+msgid "Include GENDEX file (/gendex.txt)"
+msgstr "Ota mukaan GENDEX tiedosto (/gendex.txt)"
+
+#: dynamicweb.py:4084
+msgid "Whether to include a GENDEX file or not"
+msgstr "Lisätäänkö GENDEX tiedosto vai ei"
+
+#: dynamicweb.py:4087
+msgid "Enable page configuration"
+msgstr "Ota sivun kokoonpano käyttöön"
+
+#: dynamicweb.py:4088
+msgid "Whether to enable page configuration"
+msgstr "Otetaanko sivun kokoonpano"
+
+#: dynamicweb.py:4092
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "Käytetäänkö välilehtipaneeleja sivujen eri osiin."
+
+#: dynamicweb.py:4096
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "Näytetäänkö muokkausaika sivun alatunnisteessa"
+
+#: dynamicweb.py:4100
+msgid "Whether to insert sources author in the sources title"
+msgstr "Lisätäänkö lähteiden tekijä lähteet otsikkoon"
+
+#: dynamicweb.py:4104
+msgid "Whether to hide the Gramps ID"
+msgstr "Piilotetaanko Gramps ID"
+
+#: dynamicweb.py:4113
+msgid "List"
+msgstr "Lista"
+
+#: dynamicweb.py:4114
+msgid "Table"
+msgstr "Taulukko"
+
+#: dynamicweb.py:4117
+msgid "Default format for the surnames index"
+msgstr "Sukunimihakemiston oletusmuoto"
+
+#: dynamicweb.py:4117
+msgid "The default format for the surnames index"
+msgstr "Sukunimihakemiston oletusmuoto"
+
+#: dynamicweb.py:4118
+msgid "Default format for the persons index"
+msgstr "Henkilöhakemiston oletusmuoto"
+
+#: dynamicweb.py:4118
+msgid "The default format for the persons index"
+msgstr "Henkilöhakemiston oletusmuoto"
+
+#: dynamicweb.py:4119
+msgid "Default format for the families index"
+msgstr "Perheluettelon oletusmuoto"
+
+#: dynamicweb.py:4119
+msgid "The default format for the families index"
+msgstr "Perheluettelon oletusmuoto"
+
+#: dynamicweb.py:4120
+msgid "Default format for the sources index"
+msgstr "Lähdeluettelon oletusmuoto"
+
+#: dynamicweb.py:4120
+msgid "The default format for the sources index"
+msgstr "Lähdeluettelon oletusmuoto"
+
+#: dynamicweb.py:4121
+msgid "Default format for the places index"
+msgstr "Paikkaluettelon oletusmuoto"
+
+#: dynamicweb.py:4121
+msgid "The default format for the places index"
+msgstr "Paikkaluettelon oletusmuoto"
+
+#: dynamicweb.py:4130
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Lisätäänkö hakemistosivuihin päivämääräsarakkeet (syntymälle, kuolemalle ja "
+"avioliitolle)"
+
+#: dynamicweb.py:4134
+msgid "Whether to include a partners column"
+msgstr "Lisätäänkö kumppanisarake"
+
+#: dynamicweb.py:4138
+msgid "Whether to include a parents column"
+msgstr "Lisätäänkö vanhempien sarake"
+
+#: dynamicweb.py:4141
+msgid "Generate a families index page"
+msgstr "Luo perheiden hakemistosivu"
+
+#: dynamicweb.py:4142
+msgid "Whether to generate an index page for families"
+msgstr "Luodaanko perheille hakemistosivu"
+
+#: dynamicweb.py:4146
+msgid "Whether to include a column showing the media path"
+msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+
+#: dynamicweb.py:4150
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Lisätäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi media-"
+"hakemistosivulla henkilöden, perheiden ja paikkojen lähteet, jotka "
+"viittaavat mediaan."
+
+#: dynamicweb.py:4153
+msgid "Default number of entries in the indexes"
+msgstr "Hakemiston merkintöjen oletusmäärä"
+
+#: dynamicweb.py:4156
+msgid "The default number of entries shown in one index page"
+msgstr "Yhdellä hakemistosivulla näkyvien merkintöjen oletusmäärä"
+
+#: dynamicweb.py:4161
+msgid "Trees"
+msgstr "Sukupuut"
+
+#: dynamicweb.py:4164
+msgid "Maximum number of generations"
+msgstr "Sukupolvien enimmäismäärä"
+
+#: dynamicweb.py:4165
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr ""
+"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
+"sukupuihin ja kaavioihin"
+
+#: dynamicweb.py:4171
+msgid "Choose the default SVG tree graph type"
+msgstr "Valitse SVG-sukupuukaavion oletustyyppi"
+
+#: dynamicweb.py:4177
+msgid "Choose the default SVG tree graph shape"
+msgstr "Valitse SVG-sukupuukaavion oletusmuoto"
+
+#: dynamicweb.py:4183
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "Valitse vanhempien oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
+
+#: dynamicweb.py:4189
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr "Valitse lasten oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
+
+#: dynamicweb.py:4195
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "Valitse henkilöiden taustaväri SVG-sukupuu kaaviolle"
+
+#: dynamicweb.py:4198
+msgid "Start gradient/Main color"
+msgstr "Väriliu'un lähtöväri"
+
+#: dynamicweb.py:4201
+msgid "End gradient/2nd color"
+msgstr "Väriliu'un pääteväri"
+
+#: dynamicweb.py:4209
+msgid "Color for duplicates"
+msgstr "Henkilökahdennusten väri"
+
+#: dynamicweb.py:4214
+msgid "Pages"
+msgstr "Sivut"
+
+#: dynamicweb.py:4217
+msgid "HTML user header"
+msgstr "HTML ylätunniste"
+
+#: dynamicweb.py:4218
+msgid "A note to be used as the page header"
+msgstr "Sivun ylätunnisteena käytettävä lisätieto"
+
+#: dynamicweb.py:4221
+msgid "HTML user brand name / icon"
+msgstr "HTML käyttäjän tuotemerkki / kuvake"
+
+#: dynamicweb.py:4222
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Merkki, jota käytetään valikossa tuotemerkkinä tai kuvana"
+
+#: dynamicweb.py:4225
+msgid "HTML user footer"
+msgstr "HTML alatunniste"
+
+#: dynamicweb.py:4226
+msgid "A note to be used as the page footer"
+msgstr "Sivun alatunnisteena käytettävä lisätieto"
+
+#: dynamicweb.py:4231
+msgid "Custom pages"
+msgstr "Mukautetut sivut"
+
+#: dynamicweb.py:4235
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "Mukautetun sivun otsikko %(index)i"
+
+#: dynamicweb.py:4236
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "Mukautetun sivun nimi %(index)i"
+
+#: dynamicweb.py:4239
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "Lisätieto mukautetulle sivulle %(index)i"
+
+#: dynamicweb.py:4240
+msgid "A note to be used for the custom page content.\n"
+msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+
+#: dynamicweb.py:4243
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "Mukautetun sivun valikko %(index)i"
+
+#: dynamicweb.py:4244
+msgid "Whether to print a menu for the custom page"
+msgstr "Tulostetaanko valikko muokatulle sivulle"
+
+#: dynamicweb.py:4249
+msgid "Pages selection"
+msgstr "Sivujen valinta"
+
+#: dynamicweb.py:4252
+msgid "Number of pages"
+msgstr "Sivujen määrä"
+
+#: dynamicweb.py:4253
+msgid "Number pages in the web site menu."
+msgstr "Sivunumerot verkkosivun valikossa."
+
+#: dynamicweb.py:4269
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "Sivun sisältö %(index)i"
+
+#: dynamicweb.py:4272
+msgid "Contents of the page"
+msgstr "Sivun sisältö"

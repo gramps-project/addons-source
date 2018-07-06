@@ -22,27 +22,27 @@ files will be in the second addon repository to be commited.
 Examples:
 * Creates the initial addon-source directories for the addon.
 ```
-python make.py gramps42 init AddonDirectory
+python make.py gramps50 init AddonDirectory
 ```
 
 * Creates the initial empty `AddonDirectory/po/fr-local.po` file for the addon.
 ```
-python make.py gramps42 init AddonDirectory fr
+python make.py gramps50 init AddonDirectory fr
 ```
 
 * Updates `AddonDirectory/po/fr-local.po` with the latest translations.
 ```
-python make.py gramps42 update AddonDirectory fr
+python make.py gramps50 update AddonDirectory fr
 ```
 
 * Build `../download/AddonDirectory.addon.tgz`
 ```
-python make.py gramps42 build AddonDirectory
+python make.py gramps50 build AddonDirectory
 ```
 
 * Create or update the listing entry for your addon
 ```
-python make.py gramps42 listing AddonDirectory
+python make.py gramps50 listing AddonDirectory
 ```
 
 Valid command summary

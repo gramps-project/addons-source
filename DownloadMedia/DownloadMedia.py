@@ -32,6 +32,7 @@ import logging
 LOG = logging.getLogger(".downloadmedia")
 from urllib.request import urlopen
 from urllib.parse import urlparse
+from urllib.error import HTTPError
 import re
 
 #-------------------------------------------------------------------------
@@ -66,6 +67,7 @@ class DownloadMedia(tool.Tool, ManagedWindow):
 
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
+        self.user = user
         self.label = _('Download media')
         ManagedWindow.__init__(self, uistate, [], self.__class__)
         self.set_window(Gtk.Window(), Gtk.Label(), '')
@@ -78,9 +80,13 @@ class DownloadMedia(tool.Tool, ManagedWindow):
 
         if response == Gtk.ResponseType.ACCEPT:
             self.on_ok_clicked()
+            if hasattr(self.user.uistate, 'window'):
+                parent_window = self.user.uistate.window
+            else:
+                parent_window = None
             OkDialog(_('Media downloaded'),
-                     _("%d media files downloaded") % self.num_downloads)
-
+                     _("%d media files downloaded") % self.num_downloads,
+                     parent=parent_window)
         self.close()
 
     def display(self):
@@ -146,12 +152,20 @@ class DownloadMedia(tool.Tool, ManagedWindow):
 
         def fetch_file(url, filename):
             LOG.debug("Downloading url %s to file %s" % (url, filename))
-            fr = urlopen(url)
-            fw = open(filename, 'wb')
+            try:
+                fr = urlopen(url)
+            except HTTPError:
+                return False
+            try:
+                fw = open(filename, 'wb')
+            except:
+                fr.close()
+                return False
             for block in fr:
                 fw.write(block)
             fw.close()
             fr.close()
+            return True
 
         self.progress = ProgressMeter(
             _('Downloading files'), '')
@@ -159,6 +173,7 @@ class DownloadMedia(tool.Tool, ManagedWindow):
                                self.db.get_number_of_media())
 
         self.db.disable_signals()
+        errors = ''
         with DbTxn('Download files', self.db) as trans:
             for media_handle in self.db.get_media_handles():
                 media = self.db.get_media_from_handle(media_handle)
@@ -172,18 +187,31 @@ class DownloadMedia(tool.Tool, ManagedWindow):
                         else:
                             filename = url.split('/')[-1]
                             full_path = os.path.join(media_path, filename)
-                            fetch_file(url, full_path)
+                            if not fetch_file(url, full_path):
+                                errors += url + '\n'
+                                continue
                             downloaded[url] = full_path
                             self.num_downloads += 1
                         media.set_path(full_path)
                         media.set_mime_type(get_type(full_path))
                         self.db.commit_media(media, trans)
+                    else:
+                        errors += url + '\n'
 
                 self.progress.step()
 
         self.db.enable_signals()
         self.db.request_rebuild()
         self.progress.close()
+        if errors:
+            message = _("Media download errors detected")
+            if hasattr(self.user.uistate, 'window'):
+                parent_window = self.user.uistate.window
+            else:
+                parent_window = None
+            self.user.info(message, errors,
+                           parent=parent_window, monospaced=True)
+
 
 #        self.options.handler.options_dict['name'] = name
 #        self.options.handler.options_dict['password'] = password

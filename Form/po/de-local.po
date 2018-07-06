@@ -1,0 +1,1544 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-24 20:59+0200\n"
+"PO-Revision-Date: 2018-04-24 21:17+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Form/editform.py:147
+#, python-format
+msgid "Form: %s"
+msgstr "Formular: %s"
+
+#: Form/editform.py:149
+msgid "New Form"
+msgstr "Neues Formular"
+
+#: Form/editform.py:156
+msgid "Edit Form"
+msgstr "Formular bearbeiten"
+
+#: Form/editform.py:179
+msgid "Source:"
+msgstr "Quelle:"
+
+#: Form/editform.py:189
+msgid "Reference:"
+msgstr "Referenz:"
+
+#: Form/editform.py:198
+msgid "Date:"
+msgstr "Datum:"
+
+#: Form/editform.py:211
+msgid "Place:"
+msgstr "Ort:"
+
+#: Form/editform.py:244
+msgid "_Help"
+msgstr "_Hilfe"
+
+#: Form/editform.py:249 Form/selectform.py:97
+msgid "_Cancel"
+msgstr "_Abbrechen"
+
+#: Form/editform.py:253 Form/selectform.py:98
+msgid "_OK"
+msgstr "_OK"
+
+#: Form/editform.py:377
+msgid "Headings"
+msgstr "Überschriften"
+
+#: Form/editform.py:398
+msgid "Key"
+msgstr "Schlüssel"
+
+#: Form/editform.py:404
+msgid "Value"
+msgstr "Wert"
+
+#: Form/editform.py:479
+msgid "Details"
+msgstr "Details"
+
+#: Form/editform.py:678 Form/editform.py:691 Form/editform.py:894
+msgid "Select Person"
+msgstr "Person wählen"
+
+#: Form/editform.py:705 Form/editform.py:707 Form/editform.py:776
+#: Form/editform.py:903 Form/editform.py:1060 Form/form_be.xml.h:1
+msgid "Name"
+msgstr "Name"
+
+#: Form/form.py:60
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: Form/form.py:63
+msgid "Form"
+msgstr "Formular"
+
+#: Form/form.py:66
+msgid "Groom"
+msgstr "Bräutigam"
+
+#: Form/form.py:67
+msgid "Bride"
+msgstr "Braut"
+
+#: Form/formgramplet.gpr.py:30
+msgid "Form Gramplet"
+msgstr "Formular Gramplet"
+
+#: Form/formgramplet.gpr.py:31
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet Schnittstelle für Formulare"
+
+#: Form/formgramplet.gpr.py:42
+msgid "Forms"
+msgstr "Formulare"
+
+#: Form/formgramplet.py:108
+msgid "Source"
+msgstr "Quelle"
+
+#: Form/formgramplet.py:111
+msgid "Role"
+msgstr "Rolle"
+
+#: Form/formgramplet.py:114
+msgid "Date"
+msgstr "Datum"
+
+#: Form/formgramplet.py:117
+msgid "Place"
+msgstr "Ort"
+
+#: Form/formgramplet.py:125
+msgid "_New"
+msgstr "_Neu"
+
+#: Form/formgramplet.py:129
+msgid "_Edit"
+msgstr "_Bearbeiten"
+
+#: Form/selectform.py:71
+#, python-format
+msgid "%(title)s - Gramps"
+msgstr "%(title)s - Gramps"
+
+#: Form/selectform.py:71 Form/selectform.py:78
+msgid "Select Form"
+msgstr "Formular wählen"
+
+#~ msgid "Sex"
+#~ msgstr "Geschlecht"
+
+#~ msgid "Occupation"
+#~ msgstr "Beruf"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Residence"
+#~ msgstr "Wohnort"
+
+#~ msgid "Age"
+#~ msgstr "Alter"
+
+#, fuzzy
+#~ msgid "Condition"
+#~ msgstr "Konfirmation/Firmung"
+
+#~ msgid "Town"
+#~ msgstr "Kleinstadt"
+
+#~ msgid "Village"
+#~ msgstr "Dorf"
+
+#~ msgid "Relation"
+#~ msgstr "Beziehung"
+
+#~ msgid "Village or Hamlet"
+#~ msgstr "Dorf oder Weiler"
+
+#, fuzzy
+#~ msgid "Civil Parish"
+#~ msgstr "Gemeinde"
+
+#, fuzzy
+#~ msgid "Neither"
+#~ msgstr "Name Vater"
+
+#, fuzzy
+#~ msgid "Rural District"
+#~ msgstr "Teilzeichenfolge:"
+
+#, fuzzy
+#~ msgid "Town or Village or Hamlet"
+#~ msgstr "Dorf oder Weiler"
+
+#~ msgid "Work Type"
+#~ msgstr "Art der Arbeit"
+
+#, fuzzy
+#~ msgid "At Home"
+#~ msgstr "Anfang"
+
+#~ msgid "Working at Home"
+#~ msgstr "Arbeitet Zuhause"
+
+#~ msgid "Years Married"
+#~ msgstr "Jahre Verheiratet"
+
+#, fuzzy
+#~ msgid "Children Total"
+#~ msgstr "Kinder"
+
+#, fuzzy
+#~ msgid "Children Living"
+#~ msgstr "Kinder fehlen"
+
+#, fuzzy
+#~ msgid "Children Died"
+#~ msgstr "Kinder"
+
+#, fuzzy
+#~ msgid "Industry"
+#~ msgstr "Vorfahren"
+
+#~ msgid "Nationality"
+#~ msgstr "Nationalität"
+
+#~ msgid "Language"
+#~ msgstr "Sprache"
+
+#, fuzzy
+#~ msgid "Language Spoken"
+#~ msgstr "Sprache"
+
+#~ msgid "County"
+#~ msgstr "Kreis"
+
+#~ msgid "Street"
+#~ msgstr "Straße"
+
+#~ msgid "Relation to Head of Family"
+#~ msgstr "Beziehung zum Kopf der Familie"
+
+#~ msgid "Religion"
+#~ msgstr "Religion"
+
+#~ msgid "Education"
+#~ msgstr "Ausbildung"
+
+#~ msgid "Parish"
+#~ msgstr "Kirchengemeinde"
+
+#~ msgid "City"
+#~ msgstr "Stadt"
+
+#~ msgid "Parliamentary Division"
+#~ msgstr "Paramilitärische Einheit"
+
+#, fuzzy
+#~ msgid "Date of birth"
+#~ msgstr "Vor der Geburt verstorben"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#, fuzzy
+#~ msgid "Comments"
+#~ msgstr "Kommentar"
+
+#, fuzzy
+#~ msgid "Can read and write"
+#~ msgstr "Fortsetzen und überschreiben"
+
+#~ msgid "Gender"
+#~ msgstr "Geschlecht"
+
+#~ msgid "Military"
+#~ msgstr "Militär"
+
+#~ msgid "Year of birth"
+#~ msgstr "Geburtsjahr"
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#, fuzzy
+#~ msgid "Type of roof"
+#~ msgstr "Diagrammart"
+
+#, fuzzy
+#~ msgid "All other free persons"
+#~ msgstr "Wähle die Referenzperson"
+
+#~ msgid "Slaves"
+#~ msgstr "Sklaven"
+
+#~ msgid "Slave males under 14"
+#~ msgstr "Sklaven Männer unter 14"
+
+#~ msgid "Slave males 14-25"
+#~ msgstr "Sklaven Männer 14-25"
+
+#~ msgid "Slave males 26-44"
+#~ msgstr "Sklaven Männer 26-44"
+
+#~ msgid "Slave males 45 and over"
+#~ msgstr "Sklaven Männer 45 und älter"
+
+#~ msgid "Slave females under 14"
+#~ msgstr "Sklaven Frauen unter 14"
+
+#~ msgid "Slave females 14-25"
+#~ msgstr "Sklaven Frauen 14-25"
+
+#~ msgid "Slave females 26-44"
+#~ msgstr "Sklaven Frauen 26-44"
+
+#~ msgid "Slave females 45 and over"
+#~ msgstr "Sklaven Frauen 45 und älter"
+
+#~ msgid "Slave males under 10"
+#~ msgstr "Sklaven Männer unter 10"
+
+#~ msgid "Slave males 10-23"
+#~ msgstr "Sklave Männer 10-23"
+
+#~ msgid "Slave males 24-35"
+#~ msgstr "Sklaven Männer 24-35"
+
+#~ msgid "Slave males 36-54"
+#~ msgstr "Sklaven Männer 36-54"
+
+#~ msgid "Slave males 55-99"
+#~ msgstr "Sklaven Männer 55-99"
+
+#~ msgid "Slave males 100 and over"
+#~ msgstr "Sklaven männlich 100 und älter"
+
+#~ msgid "Slave females under 10"
+#~ msgstr "Sklaven Frauen unter 10"
+
+#~ msgid "Slave females 10-23"
+#~ msgstr "Sklaven Frauen 10-23"
+
+#~ msgid "Slave females 24-35"
+#~ msgstr "Sklaven Frauen 24-35"
+
+#~ msgid "Slave females 36-54"
+#~ msgstr "Sklaven Frauen 36-54"
+
+#~ msgid "Slave females 55-99"
+#~ msgstr "Sklaven Frauen 55-99"
+
+#~ msgid "Slave females 100 and over"
+#~ msgstr "Sklaven Frauen 100 und älter"
+
+#~ msgid "Total"
+#~ msgstr "Gesamt"
+
+#~ msgid "White persons blind"
+#~ msgstr "Weiße Person blind"
+
+#~ msgid "Persons employed in Mining"
+#~ msgstr "Personen beschäftigt im Bergbau"
+
+#~ msgid "Persons employed in Agriculture"
+#~ msgstr "Personen beschäftigt in der Landwirtschaft"
+
+#, fuzzy
+#~ msgid "Colored persons blind"
+#~ msgstr "Farbig umrandet"
+
+#, fuzzy
+#~ msgid "Number of students"
+#~ msgstr "Anzahl der Familiennamen"
+
+#~ msgid "Color"
+#~ msgstr "Farbe"
+
+#~ msgid "Place of birth"
+#~ msgstr "Geburtsort"
+
+#, fuzzy
+#~ msgid "Married within the year"
+#~ msgstr "Familien mit der <Markierung>"
+
+#~ msgid "Remarks"
+#~ msgstr "Bemerkungen"
+
+#, fuzzy
+#~ msgid "Value of personal estate"
+#~ msgstr "Eine persönliche Notiz aufnehmen"
+
+#, fuzzy
+#~ msgid "Father of foreign birth"
+#~ msgstr "Vor der Geburt verstorben"
+
+#, fuzzy
+#~ msgid "Mother of foreign birth"
+#~ msgstr "Vor der Geburt verstorben"
+
+#, fuzzy
+#~ msgid "Cannot read"
+#~ msgstr "Kann Reiter nicht entfernen"
+
+#, fuzzy
+#~ msgid "Cannot write"
+#~ msgstr "Kann Datei nicht erstellen"
+
+#~ msgid "Male citizen 21 and over"
+#~ msgstr "Männliche Staatsbürger 21 und älter"
+
+#~ msgid "Relationship to head"
+#~ msgstr "Beziehung zum Kopf"
+
+#~ msgid "Single"
+#~ msgstr "Ledig"
+
+#~ msgid "Married"
+#~ msgstr "Verheiratet"
+
+#~ msgid "Widowed, divorced"
+#~ msgstr "Verwitwet, geschieden"
+
+#~ msgid "Married during the census year"
+#~ msgstr "Im Censusjahr geheiratet"
+
+#~ msgid "Number of months unemployed during the census year"
+#~ msgstr "Monate arbeitslos während des Censusjahr"
+
+#, fuzzy
+#~ msgid "Illness on day of enumeration"
+#~ msgstr "Zweite Generation"
+
+#~ msgid "Place of birth of father"
+#~ msgstr "Geburtsort des Vater"
+
+#~ msgid "Place of birth of mother"
+#~ msgstr "Geburtsort der Mutter"
+
+#~ msgid "Single, married, widowed or divorced"
+#~ msgstr "Ledig, verheiratet, verwitwet oder geschieden"
+
+#~ msgid "Mother of how many children and number of children living"
+#~ msgstr "Mutter wie vieler Kinder und Anzahl der lebenden Kinder"
+
+#~ msgid "Number of years in US"
+#~ msgstr "Anzahl von Jahren in US"
+
+#~ msgid "Naturalized"
+#~ msgstr "Eingebürgert"
+
+#, fuzzy
+#~ msgid "Naturalization papers taken out"
+#~ msgstr "Einbg."
+
+#, fuzzy
+#~ msgid "Able to write"
+#~ msgstr "Links nachg Rechts"
+
+#~ msgid "Relation to head"
+#~ msgstr "Beziehung zum Kopf"
+
+#~ msgid "Month of birth"
+#~ msgstr "Geburtsmonat"
+
+#, fuzzy
+#~ msgid "Years of present marriage"
+#~ msgstr "Längste beendete Ehe"
+
+#~ msgid "Mother of how many children"
+#~ msgstr "Mutter wie vieler Kinder"
+
+#~ msgid "Number of children living"
+#~ msgstr "Anzahl lebender Kinder"
+
+#~ msgid "Year of immigration"
+#~ msgstr "Jahr der Einwanderung"
+
+#~ msgid "Naturalization"
+#~ msgstr "Einbürgerung"
+
+#~ msgid "Months not employed"
+#~ msgstr "Monate arbeitslos"
+
+#, fuzzy
+#~ msgid "Home owned or rented"
+#~ msgstr "Hauptperson nicht gesetzt."
+
+#, fuzzy
+#~ msgid "Number of farm schedule"
+#~ msgstr "Familienanzahl"
+
+#~ msgid "Naturalized or alien"
+#~ msgstr "Eingebürgert oder Ausländer"
+
+#, fuzzy
+#~ msgid "Nature of industry"
+#~ msgstr "Personenzahl"
+
+#~ msgid "Out of work"
+#~ msgstr "Arbeitslos"
+
+#~ msgid "Weeks out of work in 1909"
+#~ msgstr "Wochen arbeitslos in 1909"
+
+#~ msgid "Year of naturalization"
+#~ msgstr "Jahr der Einbürgerung"
+
+#~ msgid "Mother tongue"
+#~ msgstr "Muttersprache"
+
+#, fuzzy
+#~ msgid "Father's mother tongue"
+#~ msgstr "Alter des Vaters"
+
+#~ msgid "Mother's mother tongue"
+#~ msgstr "Muttersprache der Mutter"
+
+#~ msgid "Radio set"
+#~ msgstr "Rundfunkempfänger"
+
+#, fuzzy
+#~ msgid "Marital condition"
+#~ msgstr "Endgültige Bestätigung"
+
+#, fuzzy
+#~ msgid "Age at first marriage"
+#~ msgstr "Alter bei Hochzeit"
+
+#, fuzzy
+#~ msgid "Able to read and write"
+#~ msgstr "Fortsetzen und überschreiben"
+
+#~ msgid "Veteran"
+#~ msgstr "Veteran"
+
+#, fuzzy
+#~ msgid "Home Owned/Rented"
+#~ msgstr "Hauptperson nicht gesetzt."
+
+#~ msgid "Relationship"
+#~ msgstr "Beziehung"
+
+#, fuzzy
+#~ msgid "Color/Race"
+#~ msgstr "Farbe"
+
+#, fuzzy
+#~ msgid "Age at Last Birthday"
+#~ msgstr "Alter beim Tod"
+
+#, fuzzy
+#~ msgid "Marital Status"
+#~ msgstr "Status"
+
+#, fuzzy
+#~ msgid "Citizenship if foreign born"
+#~ msgstr "Vor der Geburt verstorben"
+
+#, fuzzy
+#~ msgid "State (Territory/Country)"
+#~ msgstr "Bundesland/Kreis"
+
+#, fuzzy
+#~ msgid "# weeks worked in 1939"
+#~ msgstr "Wochen arbeitslos in 1909"
+
+#, fuzzy
+#~ msgid "Number of Farm Schedule"
+#~ msgstr "Kinderzahl"
+
+#, fuzzy
+#~ msgid "Veteran?"
+#~ msgstr "Veteran"
+
+#, fuzzy
+#~ msgid "War/Military Service"
+#~ msgstr "Militärdienst"
+
+#, fuzzy
+#~ msgid "Usual Occupation"
+#~ msgstr "Beruf"
+
+#, fuzzy
+#~ msgid "Usual Industry"
+#~ msgstr "Vorfahren"
+
+#, fuzzy
+#~ msgid "Number of children ever born"
+#~ msgstr "Kinderzahl"
+
+#~ msgid "Schedule"
+#~ msgstr "Plan"
+
+#, fuzzy
+#~ msgid "Township"
+#~ msgstr "Beziehung"
+
+#, fuzzy
+#~ msgid "Comprising"
+#~ msgstr "Ereignisse vergleichen"
+
+#, fuzzy
+#~ msgid "Enumerator"
+#~ msgstr "Generation"
+
+#~ msgid "Line"
+#~ msgstr "Linie"
+
+#~ msgid "1. Names of Inmates"
+#~ msgstr "1. Namen der Insassen"
+
+#, fuzzy
+#~ msgid "BirthPlace"
+#~ msgstr "Geburtsort"
+
+#, fuzzy
+#~ msgid "3. Place of Birth"
+#~ msgstr "Ortsliste"
+
+#, fuzzy
+#~ msgid "4. Religion"
+#~ msgstr "Religion"
+
+#~ msgid "SexMale"
+#~ msgstr "Männlich"
+
+#~ msgid "SexFemale"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "8. Sex: Female"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "MaritalStatus"
+#~ msgstr "Status"
+
+#, fuzzy
+#~ msgid "9. Married or Single"
+#~ msgstr "Häufig verheiratet"
+
+#, fuzzy
+#~ msgid "Coloured"
+#~ msgstr "Farbe"
+
+#~ msgid "10. Coloured Persons - Negroes"
+#~ msgstr "10. Farbige Person - Negroes"
+
+#, fuzzy
+#~ msgid "Indians"
+#~ msgstr "Indien"
+
+#~ msgid "11. Indians, if any"
+#~ msgstr "11. Indianer, gegebenenfalls"
+
+#~ msgid "ResidentsMale"
+#~ msgstr "BewohnerMännlich"
+
+#~ msgid "12. Residents: Members, Male"
+#~ msgstr "12. Bewohner: Angehörigen, Männlich"
+
+#~ msgid "ResidentsFemale"
+#~ msgstr "BewohnerWeiblich"
+
+#~ msgid "13. Residents: Members, Female"
+#~ msgstr "13. Bewohner: Angehörigen, Weiblich"
+
+#~ msgid "14. Residents: Not Members: Male"
+#~ msgstr "14. Bewohner: Keine Angehörigen: Männlich"
+
+#~ msgid "15. Residents: Not Members: Female"
+#~ msgstr "15. Bewohner: Keine Angehörigen: Weiblich"
+
+#~ msgid "16. Members Absent: Male"
+#~ msgstr "16. Angehörige abwesend: Männlich"
+
+#~ msgid "17. Members Absent: Female"
+#~ msgstr "17. Angehörige abwesend: Weiblich"
+
+#, fuzzy
+#~ msgid "DeafDumbFemale"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "BlindMale"
+#~ msgstr "Männlich"
+
+#, fuzzy
+#~ msgid "BlindFemale"
+#~ msgstr "Weiblich"
+
+#~ msgid "LunaticMale"
+#~ msgstr "GeisteskrankeMännlich"
+
+#~ msgid "LunaticFemale"
+#~ msgstr "GeisteskrankeWeiblich"
+
+#, fuzzy
+#~ msgid "ScholarFemale"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "Birth1851Male"
+#~ msgstr "Geburtsname"
+
+#, fuzzy
+#~ msgid "Death1851Male"
+#~ msgstr "Sterbedatum"
+
+#, fuzzy
+#~ msgid "DeathAgeCause"
+#~ msgstr "Todesursache"
+
+#, fuzzy
+#~ msgid "30. Age and Cause of Deaths"
+#~ msgstr "Todesursache"
+
+#~ msgid "Houses"
+#~ msgstr "Häuser"
+
+#, fuzzy
+#~ msgid "HousesStories"
+#~ msgstr "Aufbewahrungsorte"
+
+#, fuzzy
+#~ msgid "HousesFamilies"
+#~ msgstr "Familien"
+
+#~ msgid "PublicBuildings"
+#~ msgstr "ÖffentlicheGebäude"
+
+#~ msgid "WorshipPlaces"
+#~ msgstr "KultOrte"
+
+#~ msgid "1. Name of Occupier"
+#~ msgstr "1. Name des Besitzers"
+
+#, fuzzy
+#~ msgid "Concession"
+#~ msgstr "Verarbeitung..."
+
+#, fuzzy
+#~ msgid "Lot"
+#~ msgstr "Niedrig"
+
+#, fuzzy
+#~ msgid "AcresCultivation"
+#~ msgstr "Ziel"
+
+#, fuzzy
+#~ msgid "8. Number of Acres of Land: Gardens or Orchards"
+#~ msgstr "Anzahl der Vorfahren von %s"
+
+#~ msgid "WheatAcres"
+#~ msgstr "WeizenMorgen"
+
+#~ msgid "10. Wheat: Acres"
+#~ msgstr "10. Weizen: Morgen"
+
+#~ msgid "12. Barley: Acres"
+#~ msgstr "12. Gerste: Morgen"
+
+#~ msgid "RyeAcres"
+#~ msgstr "RoggenMorgen"
+
+#~ msgid "14. Rye: Acres"
+#~ msgstr "14- Roggen: Morgen"
+
+#~ msgid "PeasAcres"
+#~ msgstr "ErbsenMorgen"
+
+#~ msgid "16. Peas: Acres"
+#~ msgstr "16. Erbsen: Morgen"
+
+#~ msgid "OatsAcres"
+#~ msgstr "HaferMorgen"
+
+#~ msgid "PotatoesAcres"
+#~ msgstr "KartoffelnMorgen"
+
+#~ msgid "WoolLbs."
+#~ msgstr "WollePfund"
+
+#, fuzzy
+#~ msgid "Column37"
+#~ msgstr "Spalten"
+
+#, fuzzy
+#~ msgid "Column38"
+#~ msgstr "Spalten"
+
+#, fuzzy
+#~ msgid "Column39"
+#~ msgstr "Spalten"
+
+#~ msgid "MapleSugarLbs"
+#~ msgstr "Ahornzucker Pfund"
+
+#~ msgid "Milch Cows"
+#~ msgstr "Milchkühe"
+
+#~ msgid "Sheep"
+#~ msgstr "Schafe"
+
+#~ msgid "Pigs"
+#~ msgstr "Schweine"
+
+#~ msgid "Pork"
+#~ msgstr "Schwein"
+
+#, fuzzy
+#~ msgid "56. Remarks"
+#~ msgstr "Bemerkungen"
+
+#~ msgid "Page"
+#~ msgstr "Seite"
+
+#, fuzzy
+#~ msgid "Married1851"
+#~ msgstr "Verheiratet"
+
+#, fuzzy
+#~ msgid "5. Religion"
+#~ msgstr "Religion"
+
+#~ msgid "SexFemail"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "9. Sex:Female"
+#~ msgstr "Weiblich"
+
+#~ msgid "10. Married or Single"
+#~ msgstr "10. Verheiratet oder Single"
+
+#~ msgid "Widowers"
+#~ msgstr "Witwer"
+
+#~ msgid "11. Widowers"
+#~ msgstr "11. Witwer"
+
+#~ msgid "Widows"
+#~ msgstr "Witwen"
+
+#~ msgid "12. Widows"
+#~ msgstr "12. Witwen"
+
+#~ msgid "13. Coloured Persons, Mulato or Indians"
+#~ msgstr "13. Farbige Personen, Mulatten oder Indianer"
+
+#~ msgid "14. Members: Male"
+#~ msgstr "14. Angehörige: Männlich"
+
+#, fuzzy
+#~ msgid "MemberFemale"
+#~ msgstr "Weiblich"
+
+#~ msgid "15. Members: Female"
+#~ msgstr "15. Angehörige: Weiblich"
+
+#, fuzzy
+#~ msgid "NotMemberMale"
+#~ msgstr "Novembernotiz"
+
+#~ msgid "16. Not Members: Male"
+#~ msgstr "16. Nicht Angehörige: Männlich"
+
+#~ msgid "17. Not Members: Female"
+#~ msgstr "17. Keine Angehörigen: Weiblich"
+
+#~ msgid "Lunatic"
+#~ msgstr "Geisteskranke"
+
+#, fuzzy
+#~ msgid "CantReadFemale"
+#~ msgstr "Weiblich"
+
+#, fuzzy
+#~ msgid "Birth1860Male"
+#~ msgstr "Geburtsname"
+
+#, fuzzy
+#~ msgid "Death1860Male"
+#~ msgstr "Sterbedatum"
+
+#~ msgid "Province"
+#~ msgstr "Provinz"
+
+#~ msgid "District"
+#~ msgstr "Bezirk"
+
+#, fuzzy
+#~ msgid "SubDistrict"
+#~ msgstr "Teilzeichenfolge:"
+
+#, fuzzy
+#~ msgid "Vessels"
+#~ msgstr "Zeugen"
+
+#~ msgid "Shanties"
+#~ msgstr "Baracken"
+
+#~ msgid "Families"
+#~ msgstr "Familien"
+
+#, fuzzy
+#~ msgid "6.Families"
+#~ msgstr "Familien"
+
+#, fuzzy
+#~ msgid "7. Names"
+#~ msgstr "Namen"
+
+#, fuzzy
+#~ msgid "Birth1871"
+#~ msgstr "Geburt"
+
+#~ msgid "10. Born within last twelve months"
+#~ msgstr "10. Innerhalb der letzten zwölf Monaten geboren"
+
+#~ msgid "11. Country or Province of Birth"
+#~ msgstr "11. Land oder Provinz der Geburt"
+
+#~ msgid "12. Religion"
+#~ msgstr "12. Religion"
+
+#~ msgid "Origin"
+#~ msgstr "Ursprung"
+
+#~ msgid "13. Origin"
+#~ msgstr "13. Herkunft"
+
+#~ msgid "15. Married or Widowed"
+#~ msgstr "15. Verheiratet oder verwitwet"
+
+#, fuzzy
+#~ msgid "Maried1871"
+#~ msgstr "Verheiratet"
+
+#~ msgid "17. Going to school"
+#~ msgstr "17. Geht zur Schule"
+
+#, fuzzy
+#~ msgid "CantRead"
+#~ msgstr "Bereit"
+
+#, fuzzy
+#~ msgid "6. Families"
+#~ msgstr "Familien"
+
+#, fuzzy
+#~ msgid "Birth1881"
+#~ msgstr "Geburt"
+
+#~ msgid "16. Going to school"
+#~ msgstr "16. Geht zur Schule"
+
+#~ msgid "18. Blind"
+#~ msgstr "18. Blind"
+
+#, fuzzy
+#~ msgid "5. Families"
+#~ msgstr "Familien"
+
+#, fuzzy
+#~ msgid "6. Names"
+#~ msgstr "Namen"
+
+#, fuzzy
+#~ msgid "9. Married or Widowed"
+#~ msgstr "Fehlerfenster"
+
+#~ msgid "10. Relationship to Head of Family"
+#~ msgstr "10. Beziehung zum Kopf des Hauses"
+
+#~ msgid "French"
+#~ msgstr "Französisch"
+
+#~ msgid "12. FrenchCanadian"
+#~ msgstr "12. Frankokanadier(in)"
+
+#, fuzzy
+#~ msgid "BirthPlaceFather"
+#~ msgstr "Geburtsort"
+
+#~ msgid "13. Birth Place of Father"
+#~ msgstr "13. Geburtsort des Vaters"
+
+#, fuzzy
+#~ msgid "BirthPlaceMother"
+#~ msgstr "Geburtsort"
+
+#~ msgid "14. Birth Place of Mother"
+#~ msgstr "14. Geburtsort der Mutter"
+
+#~ msgid "15. Religion"
+#~ msgstr "15. Religion"
+
+#~ msgid "17. Employers"
+#~ msgstr "17. Arbeitgeber"
+
+#~ msgid "Unemployed"
+#~ msgstr "Arbeitslos"
+
+#, fuzzy
+#~ msgid "CanRead"
+#~ msgstr "Bereit"
+
+#, fuzzy
+#~ msgid "21. Instruction: Read"
+#~ msgstr "Einleitungsnotiz"
+
+#, fuzzy
+#~ msgid "22. Instruction: Write"
+#~ msgstr "Einleitungsnotiz"
+
+#, fuzzy
+#~ msgid "SubTitle"
+#~ msgstr "Untertitel"
+
+#~ msgid "Locality"
+#~ msgstr "Lokalität"
+
+#, fuzzy
+#~ msgid "House"
+#~ msgstr "Partner(in)"
+
+#~ msgid "1. Dwelling house"
+#~ msgstr "1. Wohnhaus"
+
+#~ msgid "Family"
+#~ msgstr "Familie"
+
+#, fuzzy
+#~ msgid "2. Family or household"
+#~ msgstr "Familienfarben"
+
+#~ msgid "Colour"
+#~ msgstr "Farbe"
+
+#, fuzzy
+#~ msgid "5. Colour"
+#~ msgstr "Farbe"
+
+#, fuzzy
+#~ msgid "BirthMonth"
+#~ msgstr "Geburtsmonat"
+
+#, fuzzy
+#~ msgid "BirthYear"
+#~ msgstr "Geburtsjahr"
+
+#, fuzzy
+#~ msgid "9. Year of birth"
+#~ msgstr "Jahr des Berichts"
+
+#~ msgid "10. Age at last birthday"
+#~ msgstr "10. Alter am letzten Geburtstag"
+
+#~ msgid "11. Country or place of birth"
+#~ msgstr "11. Land oder Ort der Geburt"
+
+#~ msgid "Immigration"
+#~ msgstr "Einwanderung"
+
+#~ msgid "12. Year of immigration to Canada, if an immigrant"
+#~ msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
+
+#~ msgid "13. Year of naturalization, if formerly an alien"
+#~ msgstr "13. Jahr der Einbürgerung, wenn vorher Ausländer"
+
+#~ msgid "Race"
+#~ msgstr "Rasse"
+
+#~ msgid "14. Racial or tribal origin"
+#~ msgstr "14. Herkunfts Rasse oder Stamm"
+
+#~ msgid "15. Nationality"
+#~ msgstr "15. Nationalität"
+
+#~ msgid "16. Religion"
+#~ msgstr "16. Religion"
+
+#, fuzzy
+#~ msgid "MonthsHome"
+#~ msgstr "_Monat"
+
+#, fuzzy
+#~ msgid "MonthsOther"
+#~ msgstr "Mutter"
+
+#, fuzzy
+#~ msgid "EarningsOccupation"
+#~ msgstr "Beruf"
+
+#, fuzzy
+#~ msgid "EarningsOther"
+#~ msgstr "Warnungen"
+
+#~ msgid "Read"
+#~ msgstr "Lesen"
+
+#~ msgid "Write"
+#~ msgstr "Schreiben"
+
+#~ msgid "SpeakEnglish"
+#~ msgstr "SprichtEnglisch"
+
+#~ msgid "SpeakFrench"
+#~ msgstr "SprichtFranzösisch"
+
+#, fuzzy
+#~ msgid "Infirmities"
+#~ msgstr "Konfirmation/Firmung"
+
+#, fuzzy
+#~ msgid "PageRef"
+#~ msgstr "Seite"
+
+#, fuzzy
+#~ msgid "LineRef"
+#~ msgstr "Linienart"
+
+#, fuzzy
+#~ msgid "3. Place of Habitation"
+#~ msgstr "Ortsfundstelle"
+
+#, fuzzy
+#~ msgid "Institution"
+#~ msgstr "Einleitung"
+
+#, fuzzy
+#~ msgid "Buildings"
+#~ msgstr "Erstelle Ansicht"
+
+#~ msgid "Rooms"
+#~ msgstr "Räume"
+
+#~ msgid "10. Number of rooms in house or institution for each famiy"
+#~ msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
+
+#, fuzzy
+#~ msgid "Inmates"
+#~ msgstr "Animieren"
+
+#~ msgid "11. Number of inmates in institution"
+#~ msgstr "11. Anzahl der Insassen in der Einrichtung"
+
+#~ msgid "LeasedSilos"
+#~ msgstr "GepachteteSpeicher"
+
+#, fuzzy
+#~ msgid "Denomination"
+#~ msgstr "Ziel"
+
+#, fuzzy
+#~ msgid "Communicants"
+#~ msgstr "Kommentar"
+
+#~ msgid "Seating"
+#~ msgstr "Bestuhlung"
+
+#, fuzzy
+#~ msgid "SSDenomination"
+#~ msgstr "Ziel"
+
+#, fuzzy
+#~ msgid "SSTeachers"
+#~ msgstr "Informationen zum Forscher"
+
+#~ msgid "SchoolRooms"
+#~ msgstr "Schulräume"
+
+#~ msgid "SchoolTeachers"
+#~ msgstr "Schullehrer"
+
+#, fuzzy
+#~ msgid "33. School: Number of teachers"
+#~ msgstr "Anzahl der Instanzen:"
+
+#, fuzzy
+#~ msgid "DateVisit"
+#~ msgstr "Daten"
+
+#, fuzzy
+#~ msgid "DateEnum"
+#~ msgstr "Datum"
+
+#~ msgid "1. No. of family in order of visitation"
+#~ msgstr "1. Nr. der Familie in der Reihenfolge der Besuche"
+
+#, fuzzy
+#~ msgid "2. Name of each person in the family"
+#~ msgstr "Entferne Person als Elter in dieser Familie"
+
+#, fuzzy
+#~ msgid "3.Relation to head of family"
+#~ msgstr "Entferne Vater aus der Familie"
+
+#~ msgid "PostOffice"
+#~ msgstr "Postamt"
+
+#, fuzzy
+#~ msgid "9. Post office address"
+#~ msgstr "Land für die Adresse"
+
+#~ msgid "Section"
+#~ msgstr "Abschnitt"
+
+#, fuzzy
+#~ msgid "10. Location: Section"
+#~ msgstr "Ortseditor"
+
+#~ msgid "Range"
+#~ msgstr "Zeitraum"
+
+#, fuzzy
+#~ msgid "12. Location: Range"
+#~ msgstr "Ort:"
+
+#~ msgid "Meridian"
+#~ msgstr "Meridian"
+
+#~ msgid "14. Livestock: Horses, all ages"
+#~ msgstr "14. Nutztiere: Pferde, allen Alters"
+
+#~ msgid "15. Livestock: Milch cows"
+#~ msgstr "15. Nutztiere: Milchkühe"
+
+#~ msgid "Other"
+#~ msgstr "Andere"
+
+#~ msgid "17. Sheep and lambs, all ages"
+#~ msgstr "17. Schafe und Lämmer, allen Alters"
+
+#~ msgid "18. Hogs and pigs, all ages"
+#~ msgstr "18. Ferkel und Schweine, allen Alters"
+
+#, fuzzy
+#~ msgid "4. Place of habitation"
+#~ msgstr "Ortsfundstelle"
+
+#~ msgid "11 . Country or place of birth"
+#~ msgstr "11. Land oder Ort der Geburt"
+
+#, fuzzy
+#~ msgid "WeeksOccupation"
+#~ msgstr "Beruf"
+
+#, fuzzy
+#~ msgid "WeeksOther"
+#~ msgstr "Andere"
+
+#, fuzzy
+#~ msgid "HoursOccupation"
+#~ msgstr "Beruf"
+
+#, fuzzy
+#~ msgid "HoursOther"
+#~ msgstr "Andere"
+
+#~ msgid "Wages"
+#~ msgstr "Lohn"
+
+#~ msgid "1. House"
+#~ msgstr "1. Haus"
+
+#, fuzzy
+#~ msgid "2. Family"
+#~ msgstr "Familie"
+
+#, fuzzy
+#~ msgid "Family or household"
+#~ msgstr "Familie von %s"
+
+#, fuzzy
+#~ msgid "3. Name"
+#~ msgstr "Name"
+
+#~ msgid "Name of each person in family"
+#~ msgstr "Name jeder Person in der Familie"
+
+#, fuzzy
+#~ msgid "8. Age at last birthday"
+#~ msgstr "Maximales Alter des Vaters bei der Geburt"
+
+#~ msgid "10. Racial or tribal origin"
+#~ msgstr "10. Herkunfts Rasse oder Stamm"
+
+#~ msgid "11. Religion"
+#~ msgstr "11. Religion"
+
+#~ msgid "12. Months at school in 1910"
+#~ msgstr "12. Monate in der Schule in 1910"
+
+#~ msgid "13. Can Read"
+#~ msgstr "13. Kann lesen"
+
+#~ msgid "14. Can Write"
+#~ msgstr "14. Kann schreiben"
+
+#~ msgid "15. Language commonly spoken"
+#~ msgstr "15. Gewöhnlich gesprochene Sprache"
+
+#~ msgid "1. Dwelling House"
+#~ msgstr "1. Wohnhaus"
+
+#~ msgid "MilitaryService"
+#~ msgstr "Militärdienst"
+
+#, fuzzy
+#~ msgid "4. Military Service"
+#~ msgstr "Militärdienst"
+
+#~ msgid "Municipality"
+#~ msgstr "Gemeinde"
+
+#, fuzzy
+#~ msgid "9. Relationship to head of family or household"
+#~ msgstr "Verwandtschaftsverhältnis zur Hauptperson"
+
+#~ msgid "10. Sex"
+#~ msgstr "10. Geschlecht"
+
+#~ msgid "11. Single, married, widowed, divorced or legally separated"
+#~ msgstr ""
+#~ "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
+
+#~ msgid "12. Age at last birthday"
+#~ msgstr "12. Alter am letzten Geburtstag"
+
+#~ msgid "13. Country or place of birth"
+#~ msgstr "13. Land oder Ort der Geburt"
+
+#~ msgid "14. Religion"
+#~ msgstr "14. Religion"
+
+#~ msgid "15. Year of immigration to Canada"
+#~ msgstr "15. Jahr der Einwanderung nach Kanada"
+
+#~ msgid "16. Year of naturalization"
+#~ msgstr "16. Jahr der Einbürgerung"
+
+#~ msgid "17. Nationality"
+#~ msgstr "17. Nationalität"
+
+#~ msgid "OtherLanguage"
+#~ msgstr "AndereSprache"
+
+#, fuzzy
+#~ msgid "Employment"
+#~ msgstr "Begabung"
+
+#, fuzzy
+#~ msgid "EmploymentPlace"
+#~ msgstr "Ereignisort"
+
+#, fuzzy
+#~ msgid "Born in County"
+#~ msgstr "Kreis"
+
+#, fuzzy
+#~ msgid "Parliamentary Burgh"
+#~ msgstr "Hauptquelle"
+
+#~ msgid "Relation to Head"
+#~ msgstr "Beziehung zum Kopf"
+
+#, fuzzy
+#~ msgid "Disabled"
+#~ msgstr "Instabil"
+
+#~ msgid "Children"
+#~ msgstr "Kinder"
+
+#~ msgid "No. of Children from 5 to 13 attending School"
+#~ msgstr "Anzahl der Kinder zwischen 5 und 13 die die Schule besuchen"
+
+#~ msgid "WindowRooms"
+#~ msgstr "Räume mit Fenstern"
+
+#~ msgid "No. of Rooms with one or more Windows"
+#~ msgstr "Anzahl der Räume mit einem oder mehr Fenster"
+
+#~ msgid "Island"
+#~ msgstr "Insel"
+
+#, fuzzy
+#~ msgid "Parish Ward"
+#~ msgstr "Gemeinde"
+
+#, fuzzy
+#~ msgid "Condition as to Marriage"
+#~ msgstr "Längste beendete Ehe"
+
+#, fuzzy
+#~ msgid "Profession or Occupation"
+#~ msgstr "Fortschritt Informationen"
+
+#~ msgid "Census"
+#~ msgstr "Volkszählung"
+
+#~ msgid "Census Gramplet"
+#~ msgstr "Zensus Gramplet"
+
+#~ msgid "Gramplet interface for census data"
+#~ msgstr "Gramplet Schnittstelle für Zensusdaten"
+
+#~ msgid "Census: %s"
+#~ msgstr "Volkszählung: %s"
+
+#~ msgid "New Census"
+#~ msgstr "Neue Volkszählung"
+
+#~ msgid "Edit Census"
+#~ msgstr "Volkszählung bearbeiten"
+
+#, fuzzy
+#~ msgid "Census Editor"
+#~ msgstr "Adresseditor"
+
+#, fuzzy
+#~ msgid ""
+#~ "Cannot save this census.  First select a census from the drop-down list."
+#~ msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
+
+#, fuzzy
+#~ msgid ""
+#~ "Cannot add a person to this census.  First select a census from the drop-"
+#~ "down list."
+#~ msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
+
+#~ msgid "Cannot add a person to this census."
+#~ msgstr "Kann keine Person zu diesem Zensus hinzufügen."
+
+#~ msgid "First select a census from the drop-down list."
+#~ msgstr "Wähle erst einen Zensus aus der Drop-Down-Liste."
+
+#~ msgid "Census Report"
+#~ msgstr "Zensusbericht"
+
+#~ msgid "Report of census events for a person."
+#~ msgstr "Bericht der Zensusereignise für eine Person."
+
+#~ msgid "Person %s is not in the Database"
+#~ msgstr "Person %s ist nicht in der Datenbank"
+
+#~ msgid "Census Report for %s"
+#~ msgstr "Volkszählungsbericht für %s"
+
+#, fuzzy
+#~ msgid "Citation:"
+#~ msgstr "Fundstelle"
+
+#~ msgid "Address:"
+#~ msgstr "Adresse:"
+
+#~ msgid "Report Options"
+#~ msgstr "Berichtsoptionen"
+
+#~ msgid "Census Selection"
+#~ msgstr "Zensusauswahl"
+
+#~ msgid "By Person"
+#~ msgstr "Über Person"
+
+#~ msgid "By Source"
+#~ msgstr "Über Quelle"
+
+#~ msgid "By Person and Source"
+#~ msgstr "Über Person und Quelle"
+
+#~ msgid "All Census records"
+#~ msgstr "Alle Volkszählungsdatensätze"
+
+#~ msgid "The type of report"
+#~ msgstr "Die Art des Bericht"
+
+#~ msgid "Person"
+#~ msgstr "Person"
+
+#~ msgid "The selected person for the report."
+#~ msgstr "Die ausgewählte Person für den Bericht"
+
+#~ msgid "Page break after each census."
+#~ msgstr "Seitenumbruch nach jeder Volkszählung."
+
+#~ msgid "Start a new page after each census."
+#~ msgstr "Eine neue Seite nach jeder Volkszählung beginnen."
+
+#~ msgid "The style used for the title of the page."
+#~ msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+#~ msgid "The style used for headings."
+#~ msgstr "Der Stil für Überschriften."
+
+#~ msgid "The style used for names."
+#~ msgstr "Stil für Namen"
+
+#~ msgid "The style used for column headings."
+#~ msgstr "Der Stil für Spaltenüberschriften."
+
+#~ msgid "The default text style."
+#~ msgstr "Der Standardtextstil"
+
+#, fuzzy
+#~ msgid "A: Personal Census"
+#~ msgstr "Persönliche Ereignisse"
+
+#~ msgid "of the said"
+#~ msgstr "besagte"
+
+#, fuzzy
+#~ msgid "Personal Census"
+#~ msgstr "Persönliche Ereignisse"
+
+#, fuzzy
+#~ msgid "District No."
+#~ msgstr "Begrenzt auf:"
+
+#, fuzzy
+#~ msgid "Sub District"
+#~ msgstr "Teilzeichenfolge:"
+
+#, fuzzy
+#~ msgid "A1: Population"
+#~ msgstr "Veröffentlichung"
+
+#~ msgid "Census details for: "
+#~ msgstr "Zensusdetails für."
+
+#~ msgid "No active person set."
+#~ msgstr "Keine aktive Person gesetzt."
+
+#~ msgid "Source Reference:"
+#~ msgstr "Quellenreferenz:"

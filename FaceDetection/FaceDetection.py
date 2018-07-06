@@ -25,10 +25,14 @@ from gramps.gui.widgets import Photo
 from gramps.gen.utils.file import media_path_full
 from gi.repository import Gtk
 import os
-import cv
-import Image
-import ImageDraw
-import StringIO
+try:
+    import cv2
+    computer_vision_available = True
+except ImportError:
+    computer_vision_available = False
+# import Image
+# import ImageDraw
+# import StringIO
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -39,6 +43,7 @@ _ = _trans.gettext
 
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
+
 
 class FaceDetection(Gramplet):
     """
@@ -53,9 +58,14 @@ class FaceDetection(Gramplet):
         """
         Build the GUI interface.
         """
-        self.top = Gtk.HBox()
+        self.top = Gtk.Box()
+        if not computer_vision_available:
+            vbox = Gtk.Label(_("OpenCV-Python is not installed"))
+            self.top.pack_start(vbox, False, False, 0)
+            self.top.show_all()
+            return self.top
         # first column:
-        vbox = Gtk.VBox()
+        vbox = Gtk.Box(Gtk.Orientation.VERTICAL)
         self.top.pack_start(vbox, False, False, 0)
         self.photo = Photo()
         vbox.pack_start(self.photo, False, False, 5)
@@ -63,7 +73,7 @@ class FaceDetection(Gramplet):
         self.detect_button.connect('button-press-event', self.detect)
         vbox.pack_start(self.detect_button, False, False, 0)
         # second column
-        vbox = Gtk.VBox()
+        vbox = Gtk.Box(Gtk.Orientation.VERTICAL)
         vbox.pack_start(Gtk.Label("Image:"), False, False, 0)
         self.top.pack_start(vbox, False, False, 0)
         # show and return:
@@ -76,20 +86,26 @@ class FaceDetection(Gramplet):
 
     def update_has_data(self):
         active_handle = self.get_active('Media')
-        active_media = self.dbstate.db.get_media_from_handle(active_handle)
+        if active_handle:
+            active_media = self.dbstate.db.get_media_from_handle(active_handle)
+        else:
+            active_media = None
         self.set_has_data(active_media is not None)
 
     def main(self):
-        active_handle = self.get_active('Media')
-        media = self.dbstate.db.get_media_from_handle(active_handle)
-        self.top.hide()
-        if media:
-            self.detect_button.set_sensitive(True)
-            self.load_image(media)
-            self.set_has_data(True)
+        if computer_vision_available:
+            self.top.hide()
+            active_handle = self.get_active('Media')
+            if active_handle:
+                media = self.dbstate.db.get_media_from_handle(active_handle)
+                self.detect_button.set_sensitive(True)
+                self.load_image(media)
+                self.set_has_data(True)
+            else:
+                self.detect_button.set_sensitive(False)
+                self.photo.set_image(None)
+                self.set_has_data(False)
         else:
-            self.detect_button.set_sensitive(False)
-            self.photo.set_image(None)
             self.set_has_data(False)
         self.top.show()
 
@@ -98,7 +114,7 @@ class FaceDetection(Gramplet):
         Load the primary image if it exists.
         """
         self.full_path = media_path_full(self.dbstate.db,
-                                               media.get_path())
+                                         media.get_path())
         self.mime_type = media.get_mime_type()
         self.photo.set_image(self.full_path, self.mime_type)
         # show where image parts are used by people:
@@ -119,13 +135,15 @@ class FaceDetection(Gramplet):
                     media_list = person.get_media_list()
                     for media_ref in media_list:
                         # get the rect for this image:
-                        if media_ref.ref != active_handle: continue
+                        if media_ref.ref != active_handle:
+                            continue
                         rect = media_ref.get_rectangle()
                         if rect:
                             x1, y1, x2, y2 = rect
                             # make percentages
-                            rects.append((x1/100.0, y1/100.0,
-                                          (x2 - x1)/100.0, (y2 - y1)/100.0))
+                            rects.append((x1 / 100.0, y1 / 100.0,
+                                          (x2 - x1) / 100.0,
+                                          (y2 - y1) / 100.0))
         return rects
 
     def detect(self, obj, event):
@@ -133,21 +151,24 @@ class FaceDetection(Gramplet):
         active_handle = self.get_active('Media')
         media = self.dbstate.db.get_media_from_handle(active_handle)
         self.load_image(media)
-        min_face_size = (50,50) # FIXME: get from setting
-        self.cv_image = cv.LoadImage(self.full_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
+        min_face_size = (50, 50)  # FIXME: get from setting
+        self.cv_image = cv2.LoadImage(self.full_path,
+                                      cv2.CV_LOAD_IMAGE_GRAYSCALE)
         o_width, o_height = self.cv_image.width, self.cv_image.height
-        cv.EqualizeHist(self.cv_image, self.cv_image)
-        cascade = cv.Load(HAARCASCADE_PATH)
-        faces = cv.HaarDetectObjects(self.cv_image, cascade,
-                                     cv.CreateMemStorage(0),
-                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING,
-                                     min_face_size)
+        cv2.EqualizeHist(self.cv_image, self.cv_image)
+        cascade = cv2.Load(HAARCASCADE_PATH)
+        faces = cv2.HaarDetectObjects(self.cv_image, cascade,
+                                      cv2.CreateMemStorage(0),
+                                      1.2, 2, cv2.CV_HAAR_DO_CANNY_PRUNING,
+                                      min_face_size)
         references = self.find_references()
         rects = []
-        o_width, o_height = [float(t) for t in (self.cv_image.width, self.cv_image.height)]
+        o_width, o_height = [float(t) for t in (self.cv_image.width,
+                                                self.cv_image.height)]
         for ((x, y, width, height), neighbors) in faces:
             # percentages:
-            rects.append((x/o_width, y/o_height, width/o_width, height/o_height))
+            rects.append((x / o_width, y / o_height,
+                          width / o_width, height / o_height))
         self.draw_rectangles(rects, references)
 
     def draw_rectangles(self, faces, references):
@@ -172,14 +193,14 @@ class FaceDetection(Gramplet):
                        x, y, width, height, color):
         cmcolor = cm.alloc_color("white")
         gc = pixmap.new_gc(foreground=cmcolor)
-        pixmap.draw_rectangle(gc, False, # fill it?
+        pixmap.draw_rectangle(gc, False,  # fill it?
                               int(x * t_width) + 1,
                               int(y * t_height) + 1,
                               int(width * t_width),
                               int(height * t_height))
         cmcolor = cm.alloc_color(color)
         gc = pixmap.new_gc(foreground=cmcolor)
-        pixmap.draw_rectangle(gc, False, # fill it?
+        pixmap.draw_rectangle(gc, False,  # fill it?
                               int(x * t_width),
                               int(y * t_height),
                               int(width * t_width),

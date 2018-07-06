@@ -1,38 +1,39 @@
 # German translation for Gramps
-# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-30 23:18+0200\n"
-"PO-Revision-Date: 2013-09-20 22:59+0200\n"
+"POT-Creation-Date: 2018-05-03 15:42+0200\n"
+"PO-Revision-Date: 2018-05-03 15:44+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:44
 msgid "Timeline Pedigree"
 msgstr "Zeitleistestammbaum"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:45
 msgid "Ancestry"
 msgstr "Vorfahren"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"
@@ -40,119 +41,140 @@ msgstr ""
 "Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen "
 "der gewählten Person"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:89
+#: TimelinePedigreeView/TimelinePedigreeView.py:79
 msgid "short for born|b."
 msgstr "*"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:90
+#: TimelinePedigreeView/TimelinePedigreeView.py:80
 msgid "short for died|d."
 msgstr "†"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:91
+#: TimelinePedigreeView/TimelinePedigreeView.py:81
 msgid "short for baptized|bap."
 msgstr "~"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:92
-msgid "short for chistianized|chr."
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for christened|chr."
 msgstr "~"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:93
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for buried|bur."
 msgstr "▭"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:94
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for cremated|crem."
 msgstr "⚱"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:495
+#: TimelinePedigreeView/TimelinePedigreeView.py:334
 msgid "Timeline pedigree"
 msgstr "Zeitleistenstammbaum"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:683
+#: TimelinePedigreeView/TimelinePedigreeView.py:515
 msgid "Person Filter Editor"
 msgstr "Filtereditor für Personen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:968
+#: TimelinePedigreeView/TimelinePedigreeView.py:806
 msgid "Relationship loop detected"
 msgstr "Verwandtschaftsschleife entdeckt"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:969
+#: TimelinePedigreeView/TimelinePedigreeView.py:807
 msgid "A person was found to be his/her own ancestor."
 msgstr "Es wurde eine Person gefunden, die ihr eigener Vorfahre ist."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1595
+#: TimelinePedigreeView/TimelinePedigreeView.py:1391
+msgid "_Home"
+msgstr "_Anfang"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1411
 msgid "Show images"
 msgstr "Bilder anzeigen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1597
+#: TimelinePedigreeView/TimelinePedigreeView.py:1413
 msgid "Show marriage data"
 msgstr "Heiratsdaten anzeigen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1599
+#: TimelinePedigreeView/TimelinePedigreeView.py:1415
 msgid "Order by timeline"
 msgstr "Nach Zeitlinie sortieren"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1601
+#: TimelinePedigreeView/TimelinePedigreeView.py:1417
 msgid "Show lifespan"
 msgstr "Zeige Lebensdauer"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1603
+#: TimelinePedigreeView/TimelinePedigreeView.py:1420
 msgid "Mouse scroll direction"
-msgstr "Maus scroll Richtung"
+msgstr "Maus Rollradrichtung"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1611
+#: TimelinePedigreeView/TimelinePedigreeView.py:1424
 msgid "Top <-> Bottom"
 msgstr "Oben <-> Unten"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1618
+#: TimelinePedigreeView/TimelinePedigreeView.py:1431
 msgid "Left <-> Right"
 msgstr "Links <-> Rechts"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1630
+#: TimelinePedigreeView/TimelinePedigreeView.py:1443
 msgid "Descendant Generations"
 msgstr "Nachkommengenerationen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1639
-#: TimelinePedigreeView/TimelinePedigreeView.py:1658
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+#: TimelinePedigreeView/TimelinePedigreeView.py:1464
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d Generation"
 msgstr[1] "%d Generationen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1649
+#: TimelinePedigreeView/TimelinePedigreeView.py:1459
 msgid "Ancestor Generations"
 msgstr "Vorfahrengenerationen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1683
-#: TimelinePedigreeView/TimelinePedigreeView.py:1704
-msgid "People Menu"
-msgstr "Personenmenü"
+#: TimelinePedigreeView/TimelinePedigreeView.py:1483
+msgid "About Timeline Pedigree View"
+msgstr "Über Zeitleistestammbaumansicht"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1734
+#: TimelinePedigreeView/TimelinePedigreeView.py:1502
+msgid "_Add"
+msgstr "_Hinzufügen"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1532
+#: TimelinePedigreeView/TimelinePedigreeView.py:1761
+msgid "_Edit"
+msgstr "_Bearbeiten"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1537
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Copy"
+msgstr "_Kopieren"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1547
 msgid "Spouses"
 msgstr "(Ehe-)Partner"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1769
+#: TimelinePedigreeView/TimelinePedigreeView.py:1580
 msgid "Siblings"
 msgstr "Geschwister"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1814
+#: TimelinePedigreeView/TimelinePedigreeView.py:1622
 msgid "Children"
 msgstr "Kinder"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1854
+#: TimelinePedigreeView/TimelinePedigreeView.py:1659
 msgid "Parents"
 msgstr "Eltern"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1891
-msgid "Add New Parents..."
-msgstr "Neue Eltern hinzufügen..."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:1902
+#: TimelinePedigreeView/TimelinePedigreeView.py:1709
 msgid "Related"
 msgstr "Verknüpft"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1951
-msgid "Family Menu"
-msgstr "Familienmenü"
+#~ msgid "short for chistianized|chr."
+#~ msgstr "~"
+
+#~ msgid "People Menu"
+#~ msgstr "Personenmenü"
+
+#~ msgid "Add New Parents..."
+#~ msgstr "Neue Eltern hinzufügen..."
+
+#~ msgid "Family Menu"
+#~ msgstr "Familienmenü"

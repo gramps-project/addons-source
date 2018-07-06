@@ -618,7 +618,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         # populate the context menu
         persons = self.all_referenced_persons()
-        if selected.person is not None:
+        if selected is not None and selected.person is not None:
             persons.remove(selected.person)
         if persons:
             self.additional_items.append(Gtk.SeparatorMenuItem())
@@ -721,7 +721,7 @@ class PhotoTaggingGramplet(Gramplet):
         media = self.get_current_object()
         image_path = media_path_full(self.dbstate.db, media.get_path())
         faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
-        for ((x, y, width, height), neighbors) in faces:
+        for (x, y, width, height) in faces:
             region = Region(x - DETECTED_REGION_PADDING,
                             y - DETECTED_REGION_PADDING,
                             x + width + DETECTED_REGION_PADDING,

@@ -1,20 +1,21 @@
 # German translation for Gramps
-# $Id$
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2016-12-14 22:06+0100\n"
+"POT-Creation-Date: 2018-04-16 21:42+0200\n"
+"PO-Revision-Date: 2018-04-16 21:59+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -22,79 +23,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 2.0\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Ortstitel Überprüfen"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
+msgstr "Ortstitel überprüfen"
 
 #: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
-msgstr ""
+msgstr "Ortstitel_überprüfen"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Ortstitel überprüfen"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Überprüfung von Ortstiteln"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Suche nach Ortsfeldern"
 
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
-msgstr ""
+msgstr "Unterschiede"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No need modifications"
-msgstr ""
+msgstr "Keiner benötigt Änderungen"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:114
 msgid "No changes need."
-msgstr ""
+msgstr "Keine Änderungen notwendig"
 
-#: CheckPlaceTitles/checkplacetitles.py:139
+#: CheckPlaceTitles/checkplacetitles.py:143
 msgid "Select"
 msgstr "Auswählen"
 
-#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles.py:146
 msgid "Database"
 msgstr "Datenbank"
 
-#: CheckPlaceTitles/checkplacetitles.py:146
+#: CheckPlaceTitles/checkplacetitles.py:150
 msgid "Display"
 msgstr "Anzeige"
 
-#: CheckPlaceTitles/checkplacetitles.py:156
+#: CheckPlaceTitles/checkplacetitles.py:160
 msgid "Building display"
 msgstr "Anzeige wird erstellt"
 
-#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:189
 msgid "Legacy place"
-msgstr ""
+msgstr "Veraltete Ort"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:203
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Ortstitel Ändern"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:226
 msgid "Place titles"
 msgstr "Ortetitel"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:1
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Entferne den Inhalt des Ortstitelfeld wenn er nicht passt"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:2
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopiere den Inhalt des Ortstitelfeldes in eine neue Notiz."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:3
 msgid "Mark"
@@ -102,7 +103,7 @@ msgstr "Markieren"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Füge eine Markierung ausgewählten Orten hinzu."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:5
 msgid "_Accept changes and close"
@@ -110,4 +111,5 @@ msgstr "Änderungen _akzeptieren und schließen"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:6
 msgid "column"
-msgstr ""
+msgstr "Spalte"
+

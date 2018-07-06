@@ -1,28 +1,29 @@
 # German translation for Gramps
-# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 00:39+0200\n"
-"PO-Revision-Date: 2013-09-20 22:59+0200\n"
+"POT-Creation-Date: 2018-04-24 21:20+0200\n"
+"PO-Revision-Date: 2018-04-24 21:31+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:10
 msgid "FR Web Connect Pack"
@@ -32,26 +33,31 @@ msgstr "FR Web Verknüpfungspaket"
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
 msgstr "Sammlung von Webseiten für FR (benötigt libwebconnect)"
 
-#: FRWebConnectPack/FRWebPack.py:42
+#: FRWebConnectPack/FRWebPack.py:40
 msgid "French cultural ministry"
 msgstr "Französische Kultusministerium"
 
-#: FRWebConnectPack/FRWebPack.py:43
+#: FRWebConnectPack/FRWebPack.py:41
 msgid "Genealogical bank"
-msgstr ""
+msgstr "Genealogical bank"
 
-#: FRWebConnectPack/FRWebPack.py:45
+#: FRWebConnectPack/FRWebPack.py:43
 msgid "OrigineFile (Quebec)"
-msgstr ""
+msgstr "OrigineFile (Quebec)"
 
-#: FRWebConnectPack/FRWebPack.py:50
+#: FRWebConnectPack/FRWebPack.py:47
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: FRWebConnectPack/FRWebPack.py:48
 msgid "Cyber genealogy"
-msgstr ""
+msgstr "Cyber genealogy"
 
-#: FRWebConnectPack/FRWebPack.py:56
+#: FRWebConnectPack/FRWebPack.py:54
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust Digitale Bibliothek"
 
-#: FRWebConnectPack/FRWebPack.py:57
+#: FRWebConnectPack/FRWebPack.py:55
 msgid "Open Library"
 msgstr "Die freie Bibliothek"
+

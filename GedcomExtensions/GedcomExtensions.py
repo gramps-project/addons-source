@@ -75,6 +75,8 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
             for (objclass, handle) in self.dbase.find_backlink_handles(
                 event.handle, ['Person']):
                 person = self.dbase.get_person_from_handle(handle)
+                if not person:
+                    continue
                 for ref in person.get_event_ref_list():
                     if (ref.ref == event.handle):
                         if int(ref.get_role()) in [EventRoleType.WITNESS, EventRoleType.CELEBRANT, \
@@ -102,11 +104,12 @@ class GedcomWriterOptionBox(WriterOptionBox):
     the options.
 
     """
-    def __init__(self, person, dbstate, uistate):
+    def __init__(self, person, dbstate, uistate, track=None, window=None):
         """
         Initialize the local options.
         """
-        super(GedcomWriterOptionBox, self).__init__(person, dbstate, uistate)
+        super(GedcomWriterOptionBox, self).__init__(person, dbstate, uistate,
+                                                    track=track, window=window)
         self.include_witnesses = 1
         self.include_witnesses_check = None
         self.include_media = 1

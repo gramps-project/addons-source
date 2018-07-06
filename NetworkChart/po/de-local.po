@@ -1,0 +1,680 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-26 21:10+0200\n"
+"PO-Revision-Date: 2018-04-29 17:52+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: NetworkChart/NetworkChart.gpr.py:31
+msgid "Network Chart"
+msgstr "Netzwerkgrafik"
+
+#: NetworkChart/NetworkChart.gpr.py:41
+msgid "Generates a family network chart."
+msgstr "Erstellt eine Familiennetzwerkgrafik."
+
+#: NetworkChart/NetworkChart.gpr.py:51
+msgid "NetworkChart Warning:  Python networkx module not found."
+msgstr "Netzwerkgrafik Warnung: Python networkx Modul nicht gefunden."
+
+#: NetworkChart/NetworkChart.gpr.py:54
+msgid ""
+"NetworkChart Warning:  NetworkChart needs one of the following to work: \n"
+"     Python module  pydotplus            OR\n"
+"     Python module  pygraphviz           OR\n"
+msgstr ""
+"NetworkChart Warnung:  NetworkChart benötigt folgendes um zu funktionieren: \n"
+"     Python Modul  pydotplus            und\n"
+"     Python Modul  pygraphviz           \n"
+
+#: NetworkChart/NetworkChart.gpr.py:62
+msgid "NetworkChart Failed to Load"
+msgstr "Netzwerkgrafik konnte nicht geladen werden"
+
+#: NetworkChart/NetworkChart.gpr.py:63
+msgid ""
+"\n"
+"\n"
+"NetworkChart is missing python modules or programs.  Networkx AND at\n"
+"least one of (pydotplus OR pygraphviz) must be\n"
+"installed.  For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"To dismiss all future NetworkChart warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"NetworkChart vermisst Python Module oder Programme.  Networkx UND \n"
+"pydotplus UND pygraphviz) müssen installiert sein.\n"
+"Vorläufig ist es möglich, die Dateien manuell zu installieren. Siehe\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"Um zukünftig alle NetworkChart Warnungen auszublenden, klicke Ausblenden."
+
+#: NetworkChart/NetworkChart.gpr.py:68
+msgid " Dismiss "
+msgstr "Ausblenden"
+
+#: NetworkChart/NetworkChart.gpr.py:69
+msgid "Continue"
+msgstr "Fortsetzen"
+
+#: NetworkChart/NetworkChart.py:133
+msgid "birth abbreviation|b."
+msgstr "*"
+
+#: NetworkChart/NetworkChart.py:134
+msgid "death abbreviation|d."
+msgstr "†"
+
+#: NetworkChart/NetworkChart.py:135
+msgid "marriage abbreviation|m."
+msgstr "oo"
+
+#: NetworkChart/NetworkChart.py:136
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: NetworkChart/NetworkChart.py:856
+msgid "File exists. Overwrite?"
+msgstr "Datei existiert. Überschreiben?"
+
+#: NetworkChart/NetworkChart.py:858
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: NetworkChart/NetworkChart.py:859
+msgid "Yes"
+msgstr "Ja"
+
+#: NetworkChart/NetworkChart.py:903
+msgid "created"
+msgstr "erstellt"
+
+#: NetworkChart/NetworkChart.py:904 NetworkChart/NetworkChart.py:907
+msgid "last_written"
+msgstr "zuletzt_geschrieben"
+
+#: NetworkChart/NetworkChart.py:917
+msgid "Main"
+msgstr "Haupt"
+
+#: NetworkChart/NetworkChart.py:919
+msgid "Graph Style"
+msgstr "Diagrammstil"
+
+#: NetworkChart/NetworkChart.py:921
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Orthogonal (rechte Winkel in den Verbindern)"
+
+#: NetworkChart/NetworkChart.py:922
+msgid "Straight (no right angles in connectors)"
+msgstr "Gerade (keine rechten Winkel in den Verbindern)"
+
+#: NetworkChart/NetworkChart.py:923
+msgid "Curved (curved and straight connectors)"
+msgstr "Geschwungen (gebogene und gerade Verbinder)"
+
+#: NetworkChart/NetworkChart.py:925
+msgid "Default (Orthogonal)"
+msgstr "Standard (orthogonal)"
+
+#: NetworkChart/NetworkChart.py:930
+msgid "Select the graph line connector format."
+msgstr "Wählen Sie das Diagrammlinienverbinderformat."
+
+#: NetworkChart/NetworkChart.py:933
+msgid "Graph Direction"
+msgstr "Ausrichtung der Grafik"
+
+#: NetworkChart/NetworkChart.py:935
+msgid "Top to Bottom"
+msgstr "Oben nach Unten"
+
+#: NetworkChart/NetworkChart.py:935
+msgid "Left to Right"
+msgstr "Links nach Rechts"
+
+#: NetworkChart/NetworkChart.py:936
+msgid "Bottom to Top"
+msgstr "Unten nach Oben"
+
+#: NetworkChart/NetworkChart.py:936
+msgid "Right to Left"
+msgstr "Rechts nach Links"
+
+#: NetworkChart/NetworkChart.py:938
+msgid "Default (Top to Bottom)"
+msgstr "Standard (Oben nach Unten)"
+
+#: NetworkChart/NetworkChart.py:941
+msgid "Select the graph direction."
+msgstr "Wähle die Grafikrichtung."
+
+#: NetworkChart/NetworkChart.py:944
+msgid "URL Style"
+msgstr "URL Stil"
+
+#: NetworkChart/NetworkChart.py:946
+msgid "Include URLs from database."
+msgstr "URLs aus der Datenbank einschließen."
+
+#: NetworkChart/NetworkChart.py:947
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynamische URL = Präfix + GrampID + Suffix"
+
+#: NetworkChart/NetworkChart.py:948
+msgid "Static URL = Prefix"
+msgstr "Statische URL = Präfix"
+
+#: NetworkChart/NetworkChart.py:949
+msgid "Don't include URLs"
+msgstr "Keine URLs aufnehmen"
+
+#: NetworkChart/NetworkChart.py:950
+msgid "Default (include)"
+msgstr "Standard (aufnehmen)"
+
+#: NetworkChart/NetworkChart.py:953
+msgid "Select URL style."
+msgstr "Wähle URL Stil."
+
+#: NetworkChart/NetworkChart.py:956
+msgid "URL Prefix,Suffix"
+msgstr "URL-Präfix, Suffix"
+
+#: NetworkChart/NetworkChart.py:957
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Gib das Präfix, Suffix (Komma verwenden) \n"
+"für dynamisch generierte URLs ein. \n"
+"URL = Präfix + GrampsID + Suffix."
+
+#: NetworkChart/NetworkChart.py:962
+msgid "Enter Font Name"
+msgstr "Schriftnamen eingeben"
+
+#: NetworkChart/NetworkChart.py:964
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Gib den primären Stil für das Diagramm ein.\n"
+"Muss bereits installiert sein.\n"
+"White Rabbit kann über erhalten werden\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+#: NetworkChart/NetworkChart.py:969
+msgid "Spacing (inch)"
+msgstr "Abstand (inch)"
+
+#: NetworkChart/NetworkChart.py:970
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Gib den Abstand zwischen \"Generationen\" in inch (0.1-5.0) ein."
+
+#: NetworkChart/NetworkChart.py:974
+msgid "Enter Chart Title"
+msgstr "Gib Diagrammtitel ein"
+
+#: NetworkChart/NetworkChart.py:976
+msgid "Set the title of the chart."
+msgstr "Legt den Titel des Diagramms fest."
+
+#: NetworkChart/NetworkChart.py:980
+msgid "Folder"
+msgstr "Ordner"
+
+#: NetworkChart/NetworkChart.py:982
+msgid "The destination folder for generated files."
+msgstr "Der Zielordner für generierte Dateien."
+
+#: NetworkChart/NetworkChart.py:986 NetworkChart/NetworkChart.py:1284
+#: NetworkChart/NetworkChart.py:1292
+msgid "network"
+msgstr "Netzwerk"
+
+#: NetworkChart/NetworkChart.py:989
+msgid "Filename"
+msgstr "Dateiname"
+
+#: NetworkChart/NetworkChart.py:991
+msgid "The filename for the generated svg network chart."
+msgstr "Der Dateiname für das generierte svg Netzwerkdiagramm."
+
+#: NetworkChart/NetworkChart.py:998
+msgid "Different node shapes/edges for gender."
+msgstr "Verschiedene Knotenformen/Kanten für Geschlecht."
+
+#: NetworkChart/NetworkChart.py:999
+msgid "Node differences for gender."
+msgstr "Knotenunterschiede für Geschlechter."
+
+#: NetworkChart/NetworkChart.py:1002
+msgid "Color"
+msgstr "Farbe"
+
+#: NetworkChart/NetworkChart.py:1004
+msgid "Male Background"
+msgstr "Hintergrund männlich"
+
+#: NetworkChart/NetworkChart.py:1005
+msgid "RGB-color for male box background."
+msgstr "RGB-Farbe für Hintergrund männliche Box"
+
+#: NetworkChart/NetworkChart.py:1008
+msgid "Male Background Alpha"
+msgstr "Hintergrund männlich Alpha"
+
+#: NetworkChart/NetworkChart.py:1010
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr ""
+"Alpha für Hintergrund männlichen Box (transparent=0, undurchsichtig=255)."
+
+#: NetworkChart/NetworkChart.py:1014
+msgid "Male Box Edge"
+msgstr "Umrandung männliche Box."
+
+#: NetworkChart/NetworkChart.py:1015
+msgid "RGB-color for Male box edge."
+msgstr "RGB-Farbe für Umrandung männliche Box"
+
+#: NetworkChart/NetworkChart.py:1018
+msgid "Female Background"
+msgstr "Hintergrund weiblich"
+
+#: NetworkChart/NetworkChart.py:1019 NetworkChart/NetworkChart.py:1030
+msgid "RGB-color for Female box background."
+msgstr "RGB-Farbe für Hintergrund weibliche Box"
+
+#: NetworkChart/NetworkChart.py:1024
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr ""
+"Alpha für Hintergrund weibliche Box (transparent=0, undurchsichtig=255)."
+
+#: NetworkChart/NetworkChart.py:1029
+msgid "Female Box Edge"
+msgstr "Umrandung weibliche Box."
+
+#: NetworkChart/NetworkChart.py:1033
+msgid "Other Background"
+msgstr "Anderer Hintergrund"
+
+#: NetworkChart/NetworkChart.py:1034
+msgid "RGB-color for other box background."
+msgstr "RGB-Farbe für Hintergrund andere Box"
+
+#: NetworkChart/NetworkChart.py:1037
+msgid "Other Background Alpha"
+msgstr "Anderer Hintergrund Alpha"
+
+#: NetworkChart/NetworkChart.py:1039
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Alpha für andere Box Hintergrund (transparent=0, undurchsichtig=255)."
+
+#: NetworkChart/NetworkChart.py:1043
+msgid "Family Connector Line"
+msgstr "Familieverbindungslinie"
+
+#: NetworkChart/NetworkChart.py:1044
+msgid "RGB-color for family connector line."
+msgstr "RGB-Farbe für Familieverbindungslinie"
+
+#: NetworkChart/NetworkChart.py:1047
+msgid "Marriage Connector Line"
+msgstr "Eheverbindungslinie"
+
+#: NetworkChart/NetworkChart.py:1048
+msgid "RGB-color for marriage connector line."
+msgstr "RGB-Farbe für Eheverbindungslinie"
+
+#: NetworkChart/NetworkChart.py:1051
+msgid "Highlight Connector Line"
+msgstr "Verbindungslinie Hervorheben"
+
+#: NetworkChart/NetworkChart.py:1052
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the graph."
+"inverts, reverse the order to change."
+msgstr ""
+"RGB-Farbe für den hervorgehobenen Pfad zwischen zwei Personen. Wenn das"
+" Diagramm."
+"invertiert, kehrt die Reihenfolge um, um zu ändern."
+
+#: NetworkChart/NetworkChart.py:1057
+msgid "Trim Box Edge"
+msgstr "Boxenkante kürzen"
+
+#: NetworkChart/NetworkChart.py:1058
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "RGB-Farbe für Boxkannten, die gekürzt wurden."
+
+#: NetworkChart/NetworkChart.py:1062
+msgid "Remove color background on all nodes."
+msgstr "Entfernen den farbigen Hintergrund in allen Knoten."
+
+#: NetworkChart/NetworkChart.py:1064
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Entfernt den Farbhintergrund für Personen (Knoten) im Diagramm."
+
+#: NetworkChart/NetworkChart.py:1067
+msgid "Privacy"
+msgstr "Privatsphäre"
+
+#: NetworkChart/NetworkChart.py:1069
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Gib Startjahr zum\n"
+"runden des Geburtstag\n"
+"auf nur das Jahr ein"
+
+#: NetworkChart/NetworkChart.py:1072
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Geburtstage nach diesem Jahr werden nur durch das Jahr dargestellt. Ungültige"
+" Einträge werden ignoriert."
+
+#: NetworkChart/NetworkChart.py:1076
+msgid "Round birthday to year after year entered (above)."
+msgstr "Runde Geburtstag auf Jahr nach dem eingegebenen Jahr (oberhalb)."
+
+#: NetworkChart/NetworkChart.py:1078
+msgid "Represent birthday by year only."
+msgstr "Stellt Geburtstag nur für Jahr da."
+
+#: NetworkChart/NetworkChart.py:1082
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Gib Startjahr zum\n"
+"runden des Hochzeitdatum\n"
+"auf nur das Jahr ein"
+
+#: NetworkChart/NetworkChart.py:1083
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Hochzeitsdatum  nach diesem Jahr werden nur durch das Jahr dargestellt."
+" Ungültige Einträge werden ignoriert."
+
+#: NetworkChart/NetworkChart.py:1088
+msgid "Round marriage to year after year entered (above)."
+msgstr "Runde Hochzeitstag auf Jahr nach dem eingegebenen Jahr (oberhalb)."
+
+#: NetworkChart/NetworkChart.py:1090
+msgid "Represent marriage by year only."
+msgstr "Stellt Hochzeitstage nur für Jahr da."
+
+#: NetworkChart/NetworkChart.py:1095
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Versucht, zweite Vornamen zu entfernen. Funktioniert nur für Einträge mit"
+" Geburtsjahr im Datensatz."
+
+#: NetworkChart/NetworkChart.py:1103
+msgid "Remove middle names."
+msgstr "Zweiten Vornamen entfernen."
+
+#: NetworkChart/NetworkChart.py:1108
+msgid "Allow inclusion of private records in chart."
+msgstr "Vertrauliche Datensätze in Diagramm zulassen."
+
+#: NetworkChart/NetworkChart.py:1113
+msgid "Trim"
+msgstr "Kürzen"
+
+#: NetworkChart/NetworkChart.py:1115
+msgid "Trim descendants"
+msgstr "Nachkommen kürzen"
+
+#: NetworkChart/NetworkChart.py:1117
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Alle Nachkommen (Kinder) der gewählten Personen werden nicht gezeigt."
+
+#: NetworkChart/NetworkChart.py:1123
+msgid "Enable trimming of descendants."
+msgstr "Aktiviert Kürzung von Nachkommen."
+
+#: NetworkChart/NetworkChart.py:1125
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Du must erst gültige Personen wählen\n"
+"vor dem Kürzen von Nachkommen aus dem Baum."
+
+#: NetworkChart/NetworkChart.py:1130
+msgid "Trim ancestors"
+msgstr "Vorfahren kürzen"
+
+#: NetworkChart/NetworkChart.py:1131
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Alle Vorfahren (Eltern) der gewählten Personen werden nicht gezeigt."
+
+#: NetworkChart/NetworkChart.py:1137
+msgid "Enable trimming of ancestors."
+msgstr "Aktiviert Kürzung von Vorfahren."
+
+#: NetworkChart/NetworkChart.py:1139
+msgid "Enable trimming of ancestors from tree."
+msgstr "Aktiviere Kürzung von Vorfahren aus dem Baum."
+
+#: NetworkChart/NetworkChart.py:1143
+msgid "Enable trim groups."
+msgstr "Aktiviere Kürzung von Gruppen."
+
+#: NetworkChart/NetworkChart.py:1145
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Entfernt automatisch Gruppen, die kleiner als Min. Gruppengröße\n"
+"sind für Datenbanken mit mehr als 1500 Personen."
+
+#: NetworkChart/NetworkChart.py:1150
+msgid "Min Group Size"
+msgstr "Min Gruppengröße"
+
+#: NetworkChart/NetworkChart.py:1152
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Gib die minimale Gruppengröße ein, die angezeigt werden soll.\n"
+"Der Wert kann 2 oder größer sein."
+
+#: NetworkChart/NetworkChart.py:1157
+msgid "Highlight"
+msgstr "Hervorheben"
+
+#: NetworkChart/NetworkChart.py:1160
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Wählen Start und\n"
+"End Person in\n"
+"angezeigtem Pfad(e).\n"
+"Wähle zwei aus"
+
+#: NetworkChart/NetworkChart.py:1163
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Start- und Endperson für angezeigten Pfad(e).\n"
+"Wähle zwei Leute aus"
+
+#: NetworkChart/NetworkChart.py:1167
+msgid "Highlight path(s)"
+msgstr "Pfad(e) hervorheben"
+
+#: NetworkChart/NetworkChart.py:1171
+msgid "Default (None)"
+msgstr "Vorgabe (Keine)"
+
+#: NetworkChart/NetworkChart.py:1176
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Keine - Pfade nicht hervorheben."
+"Direkt - Direkte Nachkommen- / Vorfahrenpfade hervorheben."
+"Beliebige - Einen oder mehrere Pfade, einschließlich direkt oder indirekt"
+" hervorheben."
+
+#: NetworkChart/NetworkChart.py:1181
+msgid "Show only path(s)"
+msgstr "Zeige nur Pfad(e)"
+
+#: NetworkChart/NetworkChart.py:1183
+msgid "None"
+msgstr "Ohne"
+
+#: NetworkChart/NetworkChart.py:1183
+msgid "Direct"
+msgstr "Gerade"
+
+#: NetworkChart/NetworkChart.py:1183
+msgid "Any"
+msgstr "Beliebige"
+
+#: NetworkChart/NetworkChart.py:1184
+msgid "Default (none)"
+msgstr "Vorgabe (keine)"
+
+#: NetworkChart/NetworkChart.py:1188
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Keine - Keine nur Pfade anzeigen.\n"
+"Direkt - Zeigt nur direkte Nachkommen- / Vorfahrenpfade an.\n"
+"Beliebig - Nur direkte oder indirekte Pfad(e) anzeigen."
+
+#: NetworkChart/NetworkChart.py:1193
+msgid "Center Person"
+msgstr "Hauptperson"
+
+#: NetworkChart/NetworkChart.py:1195
+msgid "Select person at center of selection radius in graph."
+msgstr "Wählen die Person in der Mitte des Auswahlradius in der Grafik aus."
+
+#: NetworkChart/NetworkChart.py:1198
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Max Verbindungen\n"
+"vom Zentrum"
+
+#: NetworkChart/NetworkChart.py:1201
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Gib die maximale Anzahl der zulässigen Verbindungen ein die von der\n"
+" zentrale Person zulässig sind. Der Wert kann 1 oder größer sein."
+
+#: NetworkChart/NetworkChart.py:1206
+msgid "Limit graph to max connections from center."
+msgstr "Den Graphen auf maximale Verbindungen von der Mitte begrenzen."
+
+#: NetworkChart/NetworkChart.py:1208
+msgid "Display up to max connections from central person."
+msgstr "Zeig bis zu den maximalen Verbindungen von der zentralen Person an."
+
+#: NetworkChart/NetworkChart.py:1212
+msgid "Highlight central person in graph."
+msgstr "Hebe Hauptperson im Diagramm hervor."
+
+#: NetworkChart/NetworkChart.py:1214
+msgid "Add yellow color background to central person."
+msgstr "Gelben Hintergrund zu Hauptperson hinzufügen."
+
+#: NetworkChart/NetworkChart.py:1218
+msgid "Config"
+msgstr "Konfigurieren"
+
+#: NetworkChart/NetworkChart.py:1222
+msgid "Database"
+msgstr "Datenbank"
+
+#: NetworkChart/NetworkChart.py:1228
+msgid "File Type"
+msgstr "Dateityp"
+
+#: NetworkChart/NetworkChart.py:1230
+msgid "Default (svg)"
+msgstr "Vorgabe (svg)"
+
+#: NetworkChart/NetworkChart.py:1233
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - Scalable Vector Graphics Datei.\n"
+"pdf - Adobe Portable Document Format.\n"
+
+#: NetworkChart/NetworkChart.py:1238
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Verwende Datenbankhandle anstelle von Gramps ID in URLs."
+
+#: NetworkChart/NetworkChart.py:1240
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Verwendet Datenbankhandle anstelle der Gramps-ID für URLs. \n"
+"Der Handle sollte sich niemals ändern, während Gramps IDs es können."
+
+#: NetworkChart/NetworkChart.py:1244
+msgid "Confirm overwrite file."
+msgstr "Datei überschreiben bestätigen."
+
+#: NetworkChart/NetworkChart.py:1247
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Aktivieren/deaktivieren der Bestätigung der Dateiüberschreibung."
+
+

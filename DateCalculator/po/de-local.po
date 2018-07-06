@@ -1,0 +1,91 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-18 22:20+0200\n"
+"PO-Revision-Date: 2018-04-18 22:36+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DateCalculator/DateCalculator.gpr.py:21
+#: DateCalculator/DateCalculator.gpr.py:31
+msgid "Date Calculator"
+msgstr "Datums Rechner"
+
+#: DateCalculator/DateCalculator.gpr.py:22
+msgid "Useful for date math calculations"
+msgstr "Nützlich für mathematische Datumsberechnungen"
+
+#: DateCalculator/DateCalculator.py:63
+msgid "Expression 1"
+msgstr "Ausdruck 1"
+
+#: DateCalculator/DateCalculator.py:64
+msgid "Expression 2"
+msgstr "Ausdruck 2"
+
+#: DateCalculator/DateCalculator.py:65
+msgid "Result"
+msgstr "Ergebnis"
+
+#: DateCalculator/DateCalculator.py:68
+msgid "Calculate"
+msgstr "Berechnen"
+
+#: DateCalculator/DateCalculator.py:71
+msgid "Clear"
+msgstr "Löschen"
+
+#: DateCalculator/DateCalculator.py:118
+msgid "Error: invalid entry for expression 1"
+msgstr "Fehler: Ungültige Eingabe für Ausdruck 1"
+
+#: DateCalculator/DateCalculator.py:128
+msgid "Error: invalid entry for expression 2"
+msgstr "Fehler: Ungültige Eingabe für Ausdruck 2"
+
+#: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
+#: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+msgid "Error: at least one expression must be a date"
+msgstr "Fehler: Mindestens ein Ausdruck muss ein Datum sein"
+
+#: DateCalculator/DateCalculator.py:171
+msgid ""
+"Enter an expression in the entries above and click Calculate.\n"
+"\n"
+"An expression can be:\n"
+"\n"
+"1. a valid Gramps date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative tuple, representing (years, months, days)\n"
+"\n"
+"Note that at least one expression must be a date."
+msgstr ""
+"Gebe einen Ausdruck in die oberen FElder ein und klicke auf Berechnen.\n"
+"\n"
+"Ein Ausdruck kann sein:\n"
+"\n"
+"1. ein gültiges Gramps Datum\n"
+"2. eine positive oder negative Zahl, die für Jahre steht\n"
+"3. ein positives oder negatives Tupel, das (Jahre, Monate, Tage) darstellt\n"
+"\n"
+"Beachte das mindestens ein Ausdruck ein Datum sein muss."
+
