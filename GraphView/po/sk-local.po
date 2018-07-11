@@ -1,0 +1,181 @@
+# Slovak translation for Gramps GraphView addon.
+
+# This file is distributed under the same license as the Gramps package.
+# Jozef Riha, jose1711@gmail.com
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 00:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Jozef Riha <jose1711@gmail.com>\n"
+"Language-Team: Slovak <LL@li.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: graphview.py:130
+msgid "Graph View"
+msgstr "Grafický pohľad"
+
+#: graphview.py:162
+msgid "_Print..."
+msgstr "_Tlačiť..."
+
+#: graphview.py:164
+msgid ""
+"Save the dot file for a later print.\n"
+"This will save a .gv file and a svg file.\n"
+"You must select a .gv file"
+msgstr ""
+"Uložiť súbor dot pre neskoršie vytlačenie.\n"
+"Táto voľba uloží súbor .gv a svg.\n"
+"Musíte zvoliť súbor .gv."
+
+#: graphview.py:435
+msgid "Show images"
+msgstr "Zobraziť obrázky"
+
+#: graphview.py:438
+msgid "Highlight the home person"
+msgstr "Zvýrazniť východziu osobu"
+
+#: graphview.py:441
+msgid "Show full dates"
+msgstr "Zobraziť celé dátumy"
+
+#: graphview.py:444
+msgid "Show places"
+msgstr "Zobraziť miesta"
+
+#: graphview.py:447
+msgid "Show tags"
+msgstr "Zobraziť značky"
+
+#: graphview.py:450
+msgid "Descendant generations"
+msgstr "Generácie potomkov"
+
+#: graphview.py:453
+msgid "Ancestor generations"
+msgstr "Generácie predkov"
+
+#: graphview.py:456
+msgid "Show lines"
+msgstr "Zobraziť čiary"
+
+#: graphview.py:458
+msgid "none"
+msgstr "žiadne"
+
+#: graphview.py:459
+msgid "curves"
+msgstr "krivky"
+
+#: graphview.py:460
+msgid "ortho"
+msgstr "rovné"
+
+#: graphview.py:463
+msgid "Layout"
+msgstr "Rozvrhnutie"
+
+#: graphview.py:475
+msgid "Path color"
+msgstr "Farba čiar"
+
+#: graphview.py:478
+msgid "Colors"
+msgstr "Farby"
+
+#: graphview.py:490
+msgid "Show animation"
+msgstr "Zobraziť animáciu"
+
+#: graphview.py:493
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
+
+#: graphview.py:496
+msgid "Animation count (1..8)"
+msgstr "Počet animácii (1..8)"
+
+#: graphview.py:499
+msgid "Animation"
+msgstr "Animácia"
+
+#: graphview.py:520
+msgid "Select a dot file name"
+msgstr "Vyberte názov dot súboru"
+
+#: graphview.py:522
+msgid "_Cancel"
+msgstr "_Zrušiť"
+
+#: graphview.py:523
+msgid "_Apply"
+msgstr "_Použiť"
+
+#: graphview.py:537
+msgid "File already exists"
+msgstr "Súbor už existuje"
+
+#: graphview.py:538
+msgid ""
+"You can choose to either overwrite the file, or change the selected filename."
+msgstr ""
+"Máte na výber medzi prepísaním súboru a zmenou momentálne vybraného názvu súboru."
+
+#: graphview.py:540
+msgid "_Overwrite"
+msgstr "P_repísať"
+
+#: graphview.py:541
+msgid "_Change filename"
+msgstr "_Premenovať"
+
+#: graphview.py:557
+#, python-format
+msgid "Could not create %s"
+msgstr "Nepodarilo sa vytvoriť %s"
+
+#: graphview.py:606
+msgid "Zoom in"
+msgstr "Priblížiť"
+
+#: graphview.py:613
+msgid "Zoom out"
+msgstr "Oddialiť"
+
+#: graphview.py:620
+msgid "Zoom to original"
+msgstr "Pôvodné priblíženie"
+
+#: graphview.py:627
+msgid "Zoom to best fit"
+msgstr "Prispôsobiť priblíženie obsahu"
+
+#: graphview.py:634
+msgid "Go to active person"
+msgstr "Prejsť na aktívnu osobu"
+
+#: graphview.py:644
+msgid "Go to bookmark"
+msgstr "Prejsť na záložku"
+
+#: graphview.py:1921
+#, python-format
+msgid "b. %s"
+msgstr "n. %s"
+
+#: graphview.py:1928
+#, python-format
+msgid "d. %s"
+msgstr "z. %s"
+
+#: graphview.py:2100
+msgid "<b>Tags:</b>"
+msgstr "<b>Značky:</b>"
