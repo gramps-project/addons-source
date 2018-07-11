@@ -40,7 +40,7 @@ if conditions_met:
         #help_url = URL_WIKISTRING+'NetworkChart',
         description = _('Generates a family network chart.'),
         version = '0.0.12',
-        gramps_target_version = '5.0',
+        gramps_target_version = '5.1',
         include_in_listing = True,
     )
 elif locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
