@@ -418,7 +418,6 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             note = self.db.get_note_from_handle(handle)
             g_id = note.gramps_id
             stext = note.get_styledtext()
-            handle = handle.decode('utf-8')
             optype = -1
             ## find the notes and do cleanup
             if not stext.tags:

@@ -134,6 +134,8 @@ class PersonNode(Node):
             label = '\u2650 ' + self.name
 
         layout = canvas.create_pango_layout(label)
+        font = Pango.FontDescription('Sans')
+        layout.set_font_description(font)
         width, height = layout.get_size()
         self.width = width / 1024
 
@@ -540,13 +542,14 @@ class QuiltView(NavigationView):
                 person = self.dbstate.db.get_person_from_handle(handle)
                 if person is not None:
                     name = name_displayer.display(person)
+                    self.plist.append([name, handle])
                     sex = person.get_gender()
                     ident = person.get_gramps_id()
                 else:
                     name = "???"
+                    self.plist.append([name, handle])
                     sex = Person.UNKNOWN
                     ident = None
-                self.plist.append([name, handle])
                 # get alive status of person to get box color
                 death_event = get_death_or_fallback(self.dbstate.db, person)
                 if death_event:

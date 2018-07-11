@@ -1,0 +1,163 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2017 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-11 14:30-0500\n"
+"PO-Revision-Date: 2017-08-01 12:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:55
+msgid "Sort Children in Birth order"
+msgstr "Trier les enfants dans l'ordre des naissances"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Regarde les familles, cherche des enfants qui ne sont pas dans l'ordre des "
+"naissances. L'utilisateur peut accepter des suggestions individuelles pour "
+"corriger, modifier l'ordre de naissance manuellement, accepter toutes les "
+"familles qui ont tous les enfants avec des dates de naissance appropriées ou "
+"accepter tout."
+
+#: BirthOrder/birthorder.py:124
+msgid "No families need sorting"
+msgstr "Aucune famille ne doit être triée"
+
+#: BirthOrder/birthorder.py:125
+msgid "No children were out of birth order."
+msgstr "Les enfants étaient tous en ordre de naissance."
+
+#: BirthOrder/birthorder.py:149
+msgid "Edit Family"
+msgstr "Éditer la famille"
+
+#: BirthOrder/birthorder.py:166
+msgid "Processing..."
+msgstr "Traitement en cours..."
+
+#: BirthOrder/birthorder.py:167
+msgid "Edit Families"
+msgstr "Modifier les familles"
+
+#: BirthOrder/birthorder.py:238
+msgid "Looking for children birth order"
+msgstr "À la recherche d'un ordre de naissance pour les enfants"
+
+# Substantif (GNOME fr)
+#: BirthOrder/birthorder.py:242
+msgid "Pass 1: Building preliminary lists"
+msgstr "Étape 1 : Construction d'une liste préliminaire"
+
+#: BirthOrder/birthorder.glade.h:1
+msgid "Select the family you wish to examine."
+msgstr "Sélectionnez la famille que vous souhaitez examiner."
+
+#: BirthOrder/birthorder.glade.h:2
+msgid "Family ID"
+msgstr "Identifiant de la famille"
+
+#: BirthOrder/birthorder.glade.h:3
+msgid "Father"
+msgstr "Père "
+
+#: BirthOrder/birthorder.glade.h:4
+msgid "Mother"
+msgstr "Mère "
+
+#: BirthOrder/birthorder.glade.h:5
+msgid "Help"
+msgstr "Aide"
+
+#: BirthOrder/birthorder.glade.h:6
+msgid "Accept All"
+msgstr "Accepter tout"
+
+#: BirthOrder/birthorder.glade.h:7
+msgid "This button will sort all of the families listed."
+msgstr "Ce bouton va trier toutes les familles répertoriées."
+
+#: BirthOrder/birthorder.glade.h:8
+msgid "Accept All *"
+msgstr "Accepter tout *"
+
+#: BirthOrder/birthorder.glade.h:9
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Ce bouton va trier toutes les familles avec '*'. Dans ces familles, tous les "
+"enfants ont des dates valides, de sorte que l'ordre de tri est pleinement "
+"déterminé."
+
+#: BirthOrder/birthorder.glade.h:10
+msgid "Accept"
+msgstr "Acceptez"
+
+#: BirthOrder/birthorder.glade.h:11
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Ce bouton n'acceptera que la famille sélectionnée et enregistrez-la comme "
+"indiqué dans le volet inférieur droit."
+
+#: BirthOrder/birthorder.glade.h:12
+msgid "Done"
+msgstr "Conclure"
+
+#: BirthOrder/birthorder.glade.h:13
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Ce bouton quittera l'outil, les familles restantes restant inchangées."
+
+#: BirthOrder/birthorder.glade.h:14
+msgid "Current sort"
+msgstr "Ordre de tri actuel"
+
+#: BirthOrder/birthorder.glade.h:15
+msgid "Proposed sort"
+msgstr "Ordre de tri proposé"
+
+#: BirthOrder/birthorder.glade.h:16
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Lorsque vous êtes satisfait de l'ordre de tri, utilisez le bouton 'Accepter' "
+"ci-dessous pour accepter les modifications. Si vous souhaitez ajuster la "
+"commande, sélectionnez l'enfant que vous souhaitez déplacer et utilisez les "
+"boutons 'Monter' ou 'Descendre' ci-dessous pour les déplacer."

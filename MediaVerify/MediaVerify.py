@@ -335,7 +335,6 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
         in_gramps = []
         for handle in self.db.get_media_handles():
-            handle = handle.decode('utf-8')
             media = self.db.get_media_from_handle(handle)
 
             md5sum = media.get_checksum()

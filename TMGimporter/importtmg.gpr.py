@@ -38,7 +38,6 @@ LOG = logging.getLogger(".TMGImport")
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gui.dialog import ErrorDialog
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 
@@ -48,7 +47,6 @@ _ = glocale.translation.sgettext
 #
 #------------------------------------------------------------------------
 dbfavailable = False
-addonversion = '0.0.63'
 grampsversion = "5.1"
 
 try:
@@ -71,7 +69,7 @@ if dbfavailable:
              id    = 'im_sqz',
              name  = _('TMG Project Backup'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.1',
+             version = '0.0.64',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = STABLE,
@@ -84,7 +82,7 @@ if dbfavailable:
              id    = 'im_pjc',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.1',
+             version = '0.0.64',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,
@@ -97,7 +95,7 @@ if dbfavailable:
              id    = 'im_tmg',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.1',
+             version = '0.0.64',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,
@@ -110,7 +108,7 @@ if dbfavailable:
              id    = 'im_ver',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.1',
+             version = '0.0.64',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,

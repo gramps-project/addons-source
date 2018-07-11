@@ -1,5 +1,6 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2017 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
 #  ancestor : ascendant
@@ -13,25 +14,27 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
+#
 # Laurent Protois <laurent.protois@free.fr>, 2001-2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
 # Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
-#
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: trunk\n"
+"Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:21+0100\n"
-"PO-Revision-Date: 2011-12-17 19:14+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-11-20 09:20-0600\n"
+"PO-Revision-Date: 2017-08-01 12:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: LastChange/LastChange.gpr.py:24
 msgid "Last Change Gramplet"
@@ -45,160 +48,176 @@ msgstr "Liste les dix derniers individus modifiés"
 msgid "Latest Changes"
 msgstr "Dernières modifications"
 
-#: LastChange/LastChange.gpr.py:39
-#: LastChange/LastChangeReport.py:68
-#: LastChange/LastChangeReport.py:98
+#: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
+#: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
 msgstr "Rapport Dernières modifications"
 
-#: LastChange/LastChange.gpr.py:40
+#: LastChange/LastChange.gpr.py:41
 msgid "Report of the last records that have been changed"
 msgstr "Rapport pour les derniers enregistrements modifiés"
 
-#: LastChange/LastChangeGramplet.py:49
+#: LastChange/LastChangeGramplet.py:55
 msgid "Double-click name for details"
 msgstr "Double cliquez sur le nom pour les détails"
 
-#: LastChange/LastChangeGramplet.py:50
+#: LastChange/LastChangeGramplet.py:56
 msgid "No Family Tree loaded."
 msgstr "Aucun Arbre Familial chargé."
 
-#: LastChange/LastChangeGramplet.py:54
+#: LastChange/LastChangeGramplet.py:60
 msgid "Processing..."
 msgstr "Traitement en cours..."
 
-#: LastChange/LastChangeGramplet.py:66
+#: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
 msgstr "changé le"
 
-#: LastChange/LastChangeReport.py:69
+#: LastChange/LastChangeReport.py:53
+msgid "<Unknown>"
+msgstr "<Inconnu>"
+
+#: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "Vous devez sélectionner au moins un type d'enregistrement."
 
 # Liste d'individus dans plugins/view/view.gpr.py:152
-#: LastChange/LastChangeReport.py:101
-#: LastChange/LastChangeReport.py:285
+#: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
 msgid "People"
 msgstr "Individus"
 
-#: LastChange/LastChangeReport.py:103
-#: LastChange/LastChangeReport.py:286
+#: LastChange/LastChangeReport.py:118 LastChange/LastChangeReport.py:346
 msgid "Families"
 msgstr "Familles"
 
-#: LastChange/LastChangeReport.py:105
-#: LastChange/LastChangeReport.py:288
+#: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
 msgid "Events"
 msgstr "Événements"
 
-#: LastChange/LastChangeReport.py:107
-#: LastChange/LastChangeReport.py:287
+#: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
 msgid "Places"
 msgstr "Lieux"
 
-#: LastChange/LastChangeReport.py:109
-#: LastChange/LastChangeReport.py:289
+#: LastChange/LastChangeReport.py:124 LastChange/LastChangeReport.py:349
 msgid "Media"
 msgstr "Media"
 
-#: LastChange/LastChangeReport.py:111
-#: LastChange/LastChangeReport.py:290
+#: LastChange/LastChangeReport.py:126 LastChange/LastChangeReport.py:350
 msgid "Sources"
 msgstr "Sources"
 
-#: LastChange/LastChangeReport.py:165
+#: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
+msgid "Notes"
+msgstr "Notes"
+
+# trunk
+#: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
+msgid "Citations"
+msgstr "Citations"
+
+#: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Individus modifiés"
 
-#: LastChange/LastChangeReport.py:166
-#: LastChange/LastChangeReport.py:181
-#: LastChange/LastChangeReport.py:212
-#: LastChange/LastChangeReport.py:232
-#: LastChange/LastChangeReport.py:247
-#: LastChange/LastChangeReport.py:263
+#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
+#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
+#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
+#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "ID"
-msgstr "Id"
+msgstr "ID"
 
-#: LastChange/LastChangeReport.py:166
-msgid "Person"
-msgstr "Individu"
-
-#: LastChange/LastChangeReport.py:166
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
 #: LastChange/LastChangeReport.py:181
-#: LastChange/LastChangeReport.py:212
-#: LastChange/LastChangeReport.py:232
-#: LastChange/LastChangeReport.py:247
-#: LastChange/LastChangeReport.py:263
+msgid "Person"
+msgstr "Individu "
+
+#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
+#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
+#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
+#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
 msgstr "Changé le"
 
-#: LastChange/LastChangeReport.py:180
+#: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
 msgstr "Familles modifiées"
 
-#: LastChange/LastChangeReport.py:181
+#: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
 msgstr "Nom de famille"
 
-#: LastChange/LastChangeReport.py:198
+#: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
 msgstr "%s et %s"
 
-#: LastChange/LastChangeReport.py:211
+#: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
 msgstr "Événements modifiés"
 
-#: LastChange/LastChangeReport.py:212
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: LastChange/LastChangeReport.py:229
 msgid "Event"
-msgstr "Événement"
+msgstr "Événement "
 
-#: LastChange/LastChangeReport.py:231
+#: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Lieux modifiés"
 
-#: LastChange/LastChangeReport.py:232
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: LastChange/LastChangeReport.py:252
 msgid "Place"
-msgstr "Lieu"
+msgstr "Lieu "
 
-#: LastChange/LastChangeReport.py:246
+#: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Media modifiés"
 
-#: LastChange/LastChangeReport.py:247
+#: LastChange/LastChangeReport.py:270
 msgid "Path"
 msgstr "Chemin"
 
 # trunk
-#: LastChange/LastChangeReport.py:262
+#: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "Sources modifiées"
 
-#: LastChange/LastChangeReport.py:263
+#: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
+#: LastChange/LastChangeReport.py:322
 msgid "Title"
 msgstr "Titre"
 
-#: LastChange/LastChangeReport.py:283
+#: LastChange/LastChangeReport.py:304
+msgid "Notes Changed"
+msgstr "Notes modifiées"
+
+#: LastChange/LastChangeReport.py:321
+msgid "Citations Changed"
+msgstr "Citations modifiées"
+
+#: LastChange/LastChangeReport.py:343
 msgid "Report Options"
 msgstr "Options du rapport"
 
-#: LastChange/LastChangeReport.py:284
+#: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Sélectionner depuis"
 
-#: LastChange/LastChangeReport.py:306
+#: LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
-#: LastChange/LastChangeReport.py:321
+#: LastChange/LastChangeReport.py:393
 msgid "The style used for the section headers."
 msgstr "Le style utilisé pour les en-têtes de section."
 
-#: LastChange/LastChangeReport.py:331
+#: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "Le style de base pour afficher du texte normal."
 
-#: LastChange/LastChangeReport.py:343
+#: LastChange/LastChangeReport.py:415
 msgid "The basic style used for table headings."
 msgstr "Le style de base pour l'en-tête du tableau."
-

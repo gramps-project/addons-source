@@ -75,7 +75,7 @@
                 <child>
                   <object class="GtkTreeViewColumn" id="fam_id">
                     <property name="resizable">True</property>
-                    <property name="title">Family ID</property>
+                    <property name="title" translatable="yes">Family ID</property>
                     <property name="expand">True</property>
                     <property name="sort_indicator">True</property>
                     <property name="sort_column_id">1</property>
@@ -90,7 +90,7 @@
                 <child>
                   <object class="GtkTreeViewColumn" id="father">
                     <property name="resizable">True</property>
-                    <property name="title">Father</property>
+                    <property name="title" translatable="yes">Father</property>
                     <property name="expand">True</property>
                     <property name="sort_indicator">True</property>
                     <property name="sort_column_id">2</property>
@@ -105,7 +105,7 @@
                 <child>
                   <object class="GtkTreeViewColumn" id="mother">
                     <property name="resizable">True</property>
-                    <property name="title">Mother</property>
+                    <property name="title" translatable="yes">Mother</property>
                     <property name="expand">True</property>
                     <property name="sort_indicator">True</property>
                     <property name="sort_column_id">2</property>

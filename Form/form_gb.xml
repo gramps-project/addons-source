@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='UKBirth' type='Birth' title='English Birth Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Registered</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registrar</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Child'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+        </section>
+        <section role='Father' type='person' title='Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Mother' type='person' title='Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Maiden Surname</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+            <column>
+                <_attribute>Description</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='UKMarriage' type='Marriage' title='English Marriage Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Banns/Licence</_attribute>
+        </heading>
+        <section role='Family' type='family' title='Groom/Bride'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+        <section role='Groom Father' type='person' title='Groom&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Deceased</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Bride Father' type='person' title='Bride&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Deceased</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+        </section>
+        <section role='Witness' type='multi' title='Witnesses'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='UKDeath' type='Death' title='English Death Certificate'>
+        <heading>
+            <_attribute>Certificate Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Registered</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registrar</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Deceased'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Cause of Death</_attribute>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+            <column>
+                <_attribute>Description</_attribute>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='UK1841' type='Census' title='1841 England and Wales Census' date='6 Jun 1841'>
+        <heading>
+            <_attribute>City or Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>5</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1851' type='Census' title='1851 England and Wales Census' date='30 Mar 1851'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1861' type='Census' title='1861 England and Wales Census' date='7 Apr 1861'>
+        <heading>
+            <_attribute>Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Hamlet or Tything</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1871' type='Census' title='1871 England and Wales Census' date='2 Apr 1871'>
+        <heading>
+            <_attribute>Civil Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Local Board or Improvement Commissioners District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical District</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1881' type='Census' title='1881 England and Wales Census' date='3 Apr 1881'>
+        <heading>
+            <_attribute>Civil Parish or Township</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City or Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>10</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1891' type='Census' title='1891 England Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Employer</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Employed</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Neither</_attribute>
+                <size>7</size>
+                <_longname>Neither Employer nor Employed</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>7</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1901' type='Census' title='1901 England Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County Borough, Municipal Borough, or Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ward of Municipal Borough or of Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town or Village or Hamlet</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Work Type</_attribute>
+                <size>12</size>
+                <_longname>Employer, Worker or Own Account</_longname>
+            </column>
+            <column>
+                <_attribute>At Home</_attribute>
+                <size>7</size>
+                <_longname>Working at Home</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>7</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1911' type='Census' title='1911 England Census' date='2 Apr 1911'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>20</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Years Married</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Children Total</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Children Living</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Children Died</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Industry</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Work Type</_attribute>
+                <size>6</size>
+                <_longname>Employer, Worker or Own Account</_longname>
+            </column>
+            <column>
+                <_attribute>At Home</_attribute>
+                <size>6</size>
+                <_longname>Working at Home</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Nationality</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>5</size>
+            </column>
+        </section>
+    </form>
+    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='29 Sep 1939'>
+        <heading>
+            <_attribute>E.D. Letter Code</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Borough, U.D. or R.D.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration District and Sub-district</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>OVSPI</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Birth Date</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Instructions</_attribute>
+                <size>25</size>
+            </column>
+        </section>
+    </form>
+    <form id='CY1891' type='Census' title='1891 Wales Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town, Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural Sanitary District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish or District</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Employer</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Employed</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Neither</_attribute>
+                <size>6</size>
+                <_longname>Neither Employer nor Employed</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Language</_attribute>
+                <size>6</size>
+                <_longname>Language Spoken</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='CY1901' type='Census' title='1901 Wales Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>County Borough, Municipal Borough, or Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ward of Municipal Borough or of Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rural District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough or Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town or Village or Hamlet</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Work Type</_attribute>
+                <size>12</size>
+                <_longname>Employer, Worker or Own Account</_longname>
+            </column>
+            <column>
+                <_attribute>At Home</_attribute>
+                <size>6</size>
+                <_longname>Working at Home</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Language</_attribute>
+                <size>6</size>
+                <_longname>Language Spoken</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='CY1911' type='Census' title='1911 Wales Census' date='2 Apr 1911'>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>15</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Years Married</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Children Total</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Children Living</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Children Died</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Industry</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Work Type</_attribute>
+                <size>5</size>
+                <_longname>Employer, Worker or Own Account</_longname>
+            </column>
+            <column>
+                <_attribute>At Home</_attribute>
+                <size>5</size>
+                <_longname>Working at Home</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Nationality</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Language</_attribute>
+                <size>5</size>
+                <_longname>Language Spoken</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='SC1841' type='Census' title='1841 SC Census' date='6 Jun 1841'>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Place</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Born in County</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Foreigner, Born England or Ireland</_attribute>
+                <size>7</size>
+            </column>
+        </section>
+    </form>
+    <form id='SC1851' type='Census' title='1851 SC Census' date='30 Mar 1851'>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town or Village</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>House Schedule No</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>Relation to Head</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Blind, or Deaf and Dumb</_attribute>
+                <size>7</size>
+            </column>
+        </section>
+    </form>
+    <form id='SC1861' type='Census' title='1861 SC Census' date='7 Apr 1861'>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>No. Of Schedule</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+                <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            </column>
+            <column>
+                <_attribute>House Inhabited</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>House U or B</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+                <_longname>Rank, Profession, or Occupation</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disabled</_attribute>
+                <size>7</size>
+                <_longname>Whether Blind, or Deaf and Dumb</_longname>
+            </column>
+            <column>
+                <_attribute>Children</_attribute>
+                <size>7</size>
+                <_longname>No. of Children from 5 to 13 attending School</_longname>
+            </column>
+            <column>
+                <_attribute>WindowRooms</_attribute>
+                <size>7</size>
+                <_longname>No. of Rooms with one or more Windows</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='SC1871' type='Census' title='1871 SC Census' date='2 Apr 1871'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>No. Of Schedule</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+                <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            </column>
+            <column>
+                <_attribute>House Inhabited</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>House U or B</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+                <_longname>Rank, Profession, or Occupation</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disabled</_attribute>
+                <size>7</size>
+                <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            </column>
+            <column>
+                <_attribute>Children</_attribute>
+                <size>7</size>
+                <_longname>No. of Children from 5 to 13 attending School</_longname>
+            </column>
+            <column>
+                <_attribute>WindowRooms</_attribute>
+                <size>7</size>
+                <_longname>No. of Rooms with one or more Windows</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='SC1881' type='Census' title='1881 SC Census' date='3 Apr 1881'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School Board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>No. Of Schedule</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+                <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            </column>
+            <column>
+                <_attribute>House Inhabited</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>House U or B</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+                <_longname>Rank, Profession, or Occupation</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Disabled</_attribute>
+                <size>7</size>
+                <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            </column>
+            <column>
+                <_attribute>Children</_attribute>
+                <size>7</size>
+                <_longname>No. of Children from 5 to 13 attending School</_longname>
+            </column>
+            <column>
+                <_attribute>WindowRooms</_attribute>
+                <size>7</size>
+                <_longname>No. of Rooms with one or more Windows</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='SC1891' type='Census' title='1891 SC Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Burgh Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Island</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>No. Of Schedule</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+                <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            </column>
+            <column>
+                <_attribute>House Inhabited</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>House U or B</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>18</size>
+                <_longname>Rank, Profession, or Occupation</_longname>
+            </column>
+            <column>
+                <_attribute>Employer</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Employed</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Neither</_attribute>
+                <size>7</size>
+                <_longname>Neither Employer nor Employed</_longname>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Gaellic or G. &amp; E.</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Disabled</_attribute>
+                <size>7</size>
+                <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            </column>
+            <column>
+                <_attribute>Children</_attribute>
+                <size>7</size>
+                <_longname>No. of Children from 5 to 13 attending School</_longname>
+            </column>
+            <column>
+                <_attribute>WindowRooms</_attribute>
+                <size>7</size>
+                <_longname>No. of Rooms with one or more Windows</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='SC1901' type='Census' title='1901 SC Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Civil Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Ecclesiastical Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Quoad Sacra Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>School board District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Royal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipal Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Police Burgh</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Burgh Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Village or Hamlet</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Island</_attribute>
+        </heading>
+        <heading>
+            <_attribute>GROS Data</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>25</size>
+            </column>
+            <column>
+                <_attribute>No. Of Schedule</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Address</_attribute>
+                <size>25</size>
+                <_longname>Road, Street, etc, and No. or Name of House</_longname>
+            </column>
+            <column>
+                <_attribute>House Inhabited</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>House U or B</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+                <_longname>Condition as to Marriage</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+            </column>
+            <column>
+                <_attribute>Profession or Occupation</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Employer, Worker or on Own Account</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Working at Home</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Gaellic or G. &amp; E.</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Disabled</_attribute>
+                <size>7</size>
+                <_longname>Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic</_longname>
+            </column>
+            <column>
+                <_attribute>Children</_attribute>
+                <size>7</size>
+                <_longname>No. of Children from 5 to 13 attending School</_longname>
+            </column>
+            <column>
+                <_attribute>WindowRooms</_attribute>
+                <size>7</size>
+                <_longname>No. of Rooms with one or more Windows</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='IE1901' type='Census' title='1901 Census of Ireland' date='31 March 1901'>
+        <heading>
+            <_attribute>County</_attribute>
+        </heading>
+        <heading>
+            <_attribute>District Electoral Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Townland</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. on Form B</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>18</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Religion</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Education</_attribute>
+                <size>10</size>
+                <_longname>"Read and Write", "Read" or "Cannot Read"</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>10</size>
+            </column>
+            <column>
+                <_attribute>Irish Language</_attribute>
+                <size>10</size>
+                <_longname>"Irish" or "Irish &amp; English", in other cases no entry should be made</_longname>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>10</size>
+                <_longname>"Deaf and Dumb", "Dumb only", "Blind", "Imbecile or Idiot", or "Lunatic"</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='IE1911' type='Census' title='1911 Census of Ireland' date='2 April 1911'>
+        <heading>
+            <_attribute>County</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Poor Law Union</_attribute>
+        </heading>
+        <heading>
+            <_attribute>District Electoral Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Barony</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parish</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Townland</_attribute>
+        </heading>
+        <heading>
+            <_attribute>City</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Parliamentary Division</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Town or Village</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Head of Family</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. on Form B</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>16</size>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relation to Head of Family</_longname>
+            </column>
+            <column>
+                <_attribute>Religion</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Education</_attribute>
+                <size>9</size>
+                <_longname>"Read and Write", "Read" or "Cannot Read"</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Years Married</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Total Children</_attribute>
+                <size>4</size>
+                <_longname>Children born alive to present Marriage</_longname>
+            </column>
+            <column>
+                <_attribute>Children Living</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Where Born</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Irish Language</_attribute>
+                <size>9</size>
+                <_longname>"Irish" or "Irish &amp; English", in other cases no entry should be made</_longname>
+            </column>
+            <column>
+                <_attribute>Disability</_attribute>
+                <size>9</size>
+                <_longname>"Deaf and Dumb", "Dumb only", "Blind", "Imbecile or Idiot", or "Lunatic"</_longname>
+            </column>
+        </section>
+    </form>
+</forms>

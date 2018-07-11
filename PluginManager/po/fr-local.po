@@ -1,0 +1,264 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2016 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2014.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-29 08:50-0500\n"
+"PO-Revision-Date: 2017-04-21 11:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Gestionnaire de greffons - Amélioré"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Gestionnaire de greffons avec plusieurs fonctionnalités supplémentaires"
+
+#: PluginManager/PluginManager.py:86
+msgid "Plugin Manager - Enhanced"
+msgstr "Gestionnaire de greffons - Amélioré"
+
+#: PluginManager/PluginManager.py:143
+msgid "_Help"
+msgstr "Aid_e"
+
+# master
+#: PluginManager/PluginManager.py:146
+msgid "Check for updated addons now"
+msgstr "Vérifier les mises à jour"
+
+#: PluginManager/PluginManager.py:154
+msgid "Reload"
+msgstr "Recharger"
+
+# trunk
+#: PluginManager/PluginManager.py:156 PluginManager/PluginManager.py:679
+msgid "_Close"
+msgstr "_Fermer"
+
+#: PluginManager/PluginManager.py:180
+msgid "Restart..."
+msgstr "Recommencer..."
+
+#: PluginManager/PluginManager.py:181
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "Redémarrez Gramps afin que vos modifications puissent être effectuées en toute sécurité."
+
+#: PluginManager/PluginManager.py:257
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:258
+msgid "Plugin name"
+msgstr "Nom du greffon"
+
+#: PluginManager/PluginManager.py:259 PluginManager/PluginManager.py:437
+msgid "Description"
+msgstr "Description"
+
+#: PluginManager/PluginManager.py:260
+msgid "Version"
+msgstr "Version"
+
+#: PluginManager/PluginManager.py:261
+msgid "Authors"
+msgstr "Auteurs"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: PluginManager/PluginManager.py:262
+msgid "Email"
+msgstr "Adresse électronique "
+
+#: PluginManager/PluginManager.py:263
+msgid "Filename"
+msgstr "Fichier "
+
+#: PluginManager/PluginManager.py:264
+msgid "Location"
+msgstr "Emplacement"
+
+#: PluginManager/PluginManager.py:269
+msgid "Loaded"
+msgstr "Chargé"
+
+#: PluginManager/PluginManager.py:272
+msgid "Hidden"
+msgstr "Caché"
+
+# master
+#: PluginManager/PluginManager.py:277 PluginManager/PluginManager.py:643
+msgid "Failed"
+msgstr "A échoué"
+
+#: PluginManager/PluginManager.py:301 PluginManager/PluginManager.py:454
+#: PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Cacher"
+
+#: PluginManager/PluginManager.py:311 PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Afficher"
+
+# master
+#: PluginManager/PluginManager.py:363
+msgid "Installation Errors"
+msgstr "Erreur d'installation"
+
+# master
+#: PluginManager/PluginManager.py:364
+msgid "The following addons had errors: "
+msgstr "Les greffons (addons) suivants ont des erreurs :"
+
+# trunk
+#: PluginManager/PluginManager.py:386
+msgid "Error"
+msgstr "Erreur"
+
+#: PluginManager/PluginManager.py:387
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+
+#: PluginManager/PluginManager.py:409
+msgid "Type"
+msgstr "Type"
+
+#: PluginManager/PluginManager.py:418
+msgid "Status"
+msgstr "Statut"
+
+#: PluginManager/PluginManager.py:421
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr "* indique que le greffon a été fourni, \nLes <s>éléments</s> sont cachés"
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+#: PluginManager/PluginManager.py:429
+msgid "Name"
+msgstr "Nom "
+
+#: PluginManager/PluginManager.py:451
+msgid "Info"
+msgstr "Info"
+
+#: PluginManager/PluginManager.py:457 PluginManager/PluginManager.py:544
+msgid "Install"
+msgstr "Installer"
+
+#: PluginManager/PluginManager.py:460
+msgid "Edit"
+msgstr "Éditer"
+
+#: PluginManager/PluginManager.py:462
+msgid "Load"
+msgstr "Charger"
+
+#: PluginManager/PluginManager.py:473
+msgid "Show hidden items"
+msgstr "Afficher des objets cachés"
+
+#: PluginManager/PluginManager.py:481
+msgid "Show Built-in items"
+msgstr "Afficher les objets standard"
+
+#: PluginManager/PluginManager.py:488
+msgid "* indicates 3rd party addon"
+msgstr "* indique que le greffon a été fourni"
+
+#: PluginManager/PluginManager.py:493
+msgid "Plugins"
+msgstr "Greffons"
+
+#: PluginManager/PluginManager.py:547
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+# Substantif (GNOME fr)
+#: PluginManager/PluginManager.py:557
+msgid "Checking Addons Failed"
+msgstr "La vérification des greffons a échoué"
+
+#: PluginManager/PluginManager.py:558
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "Le dépôt des greffons semble inaccessible. Essayez un peu plus tard."
+
+#: PluginManager/PluginManager.py:572
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr "Les plugins nouveaux et mis à jour ne s'affichent que lorsque la liste "
+"de mise à jour a été téléchargée.  Voulez-vous télécharger la liste maintenant?"
+
+#: PluginManager/PluginManager.py:575
+msgid "Yes"
+msgstr "Oui"
+
+#: PluginManager/PluginManager.py:575
+msgid "No"
+msgstr "Non"
+
+#: PluginManager/PluginManager.py:618
+msgid "*Available"
+msgstr "*Disponible"
+
+#: PluginManager/PluginManager.py:632
+msgid "Built-in"
+msgstr "Encastré"
+
+#: PluginManager/PluginManager.py:637
+msgid "*Installed"
+msgstr "*Installée"
+
+#: PluginManager/PluginManager.py:646
+msgid "Update Available"
+msgstr "Plus récent disponible"
+
+#: PluginManager/PluginManager.py:673
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s : %(str2)s"
+
+#: PluginManager/PluginManager.py:673
+msgid "Detailed Info"
+msgstr "Information détaillée"
+
+#: PluginManager/PluginManager.py:772
+msgid "Updated"
+msgstr "Mis à jour"
+
+#: PluginManager/PluginManager.py:783
+msgid "updates|New"
+msgstr "Nouveau"

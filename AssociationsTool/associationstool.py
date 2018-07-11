@@ -22,18 +22,23 @@
 
     Inherited from gedcom model
 """
+from gi.repository import Gtk
+#-------------------------------------------------------------------------
+#
+# Gramps Modules
+#
+#-------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gi.repository import Gtk
 from gramps.gui.listmodel import ListModel
 from gramps.gui.managedwindow import ManagedWindow
 
 from gramps.gui.plug import tool
-from gen.display.name import displayer as name_displayer
+from gramps.gen.display.name import displayer as name_displayer
 
 #-------------------------------------------------------------------------
 #

@@ -1,22 +1,29 @@
-# German translations for gramps package.
-# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2013.
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 34\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-09 13:58+0200\n"
-"PO-Revision-Date: 2013-09-10 11:50+0200\n"
+"POT-Creation-Date: 2018-04-16 19:16+0200\n"
+"PO-Revision-Date: 2018-04-11 19:24+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
 
 #: AncestorFill/AncestorFill.gpr.py:8
 msgid "AncestorFill"
@@ -26,73 +33,73 @@ msgstr "VorfahrenFüllung"
 msgid "Report on the filling of the tree"
 msgstr "Bericht zum Füllstand des Baumes"
 
-#: AncestorFill/AncestorFill.py:172
+#: AncestorFill/AncestorFill.py:175
 #, python-format
 msgid "Person %s is not in the Database"
-msgstr "Person %s existiert nicht in der Datenbank"
+msgstr "Person %s ist nicht in der Datenbank"
 
-#: AncestorFill/AncestorFill.py:265
+#: AncestorFill/AncestorFill.py:268
 #, python-format
 msgid "AncestorFill for %s"
 msgstr "VorfahrenFüllung für %s"
 
-#: AncestorFill/AncestorFill.py:278
+#: AncestorFill/AncestorFill.py:281
 msgid "Generation "
 msgstr "Generation "
 
-#: AncestorFill/AncestorFill.py:279
+#: AncestorFill/AncestorFill.py:282
 msgid " Number of Ancestors found "
 msgstr " Anzahl der gefundenen Vorfahren "
 
-#: AncestorFill/AncestorFill.py:280
+#: AncestorFill/AncestorFill.py:283
 msgid " percent of Ancestors found "
 msgstr " gefundene Vorfahren in Prozent "
 
-#: AncestorFill/AncestorFill.py:281
+#: AncestorFill/AncestorFill.py:284
 msgid " Number of single Ancestors found "
 msgstr " Anzahl der gefundenen einzelnen Vorfahren "
 
-#: AncestorFill/AncestorFill.py:282
+#: AncestorFill/AncestorFill.py:285
 msgid " Number of theorical Ancestors "
 msgstr " Anzahl theoretischer Vorfahren "
 
-#: AncestorFill/AncestorFill.py:283
+#: AncestorFill/AncestorFill.py:286
 msgid " Pedigree Collapse "
 msgstr " Ahnentafel einklappen "
 
-#: AncestorFill/AncestorFill.py:327
+#: AncestorFill/AncestorFill.py:330
 msgid " Total Number of Ancestors found "
 msgstr " Anzahl der gesamten gefundenen Vorfahren "
 
-#: AncestorFill/AncestorFill.py:329
+#: AncestorFill/AncestorFill.py:332
 msgid " Total Number of single Ancestors found "
 msgstr " Gesamte Anzahl der gefundenen einzelnen Vorfahren "
 
-#: AncestorFill/AncestorFill.py:357
+#: AncestorFill/AncestorFill.py:360
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: AncestorFill/AncestorFill.py:359
+#: AncestorFill/AncestorFill.py:362
 msgid "Center Person"
 msgstr "Hauptperson"
 
-#: AncestorFill/AncestorFill.py:360
+#: AncestorFill/AncestorFill.py:363
 msgid "The center person for the report"
 msgstr "Die Hauptperson für den Bericht"
 
-#: AncestorFill/AncestorFill.py:362
+#: AncestorFill/AncestorFill.py:365
 msgid "Generations"
 msgstr "Generationen"
 
-#: AncestorFill/AncestorFill.py:363
+#: AncestorFill/AncestorFill.py:366
 msgid "The number of generations to include in the report"
 msgstr "Anzahl der im Bericht enthaltenen Generationen"
 
-#: AncestorFill/AncestorFill.py:365
+#: AncestorFill/AncestorFill.py:368
 msgid "Filleddigit"
 msgstr "FüllStellen"
 
-#: AncestorFill/AncestorFill.py:366
+#: AncestorFill/AncestorFill.py:369
 msgid ""
 "The number of digit after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
@@ -101,11 +108,11 @@ msgstr ""
 "für die Prozentzahl der Vorfahren, die in einer bestimmten Generation "
 "gefunden wurden "
 
-#: AncestorFill/AncestorFill.py:368
+#: AncestorFill/AncestorFill.py:371
 msgid "Collapsedigit"
 msgstr "StellenZusammengeklappt"
 
-#: AncestorFill/AncestorFill.py:369
+#: AncestorFill/AncestorFill.py:372
 msgid ""
 "The number of digit after comma to include in the report for the pedigree "
 "Collapse"
@@ -113,36 +120,34 @@ msgstr ""
 "Die Anzahl von Nachkommastellen in dem Bericht für eine zusammengeklappte "
 "Ahnentafel "
 
-#: AncestorFill/AncestorFill.py:371
+#: AncestorFill/AncestorFill.py:374
 msgid "Display theorical"
 msgstr "Anzeige theoretisch"
 
-#: AncestorFill/AncestorFill.py:372
+#: AncestorFill/AncestorFill.py:375
 msgid "Display the theorical number of ancestor by generation"
 msgstr "Zeige die theoretische Anzahl der Vorfahren pro Generation"
 
-#: AncestorFill/AncestorFill.py:374
+#: AncestorFill/AncestorFill.py:377
 msgid "Translation"
 msgstr "Übersetzung"
 
-#: AncestorFill/AncestorFill.py:375
+#: AncestorFill/AncestorFill.py:378
 msgid "English"
 msgstr "Englisch"
 
-#: AncestorFill/AncestorFill.py:378
+#: AncestorFill/AncestorFill.py:381
 msgid "The translation to be used for the report."
 msgstr "Die Übersetzung, die für den Bericht verwendet wird."
 
-#: AncestorFill/AncestorFill.py:422
+#: AncestorFill/AncestorFill.py:425
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: AncestorFill/AncestorFill.py:435
+#: AncestorFill/AncestorFill.py:438
 msgid "The style used for the generation header."
-msgstr "Der Stil, der für die Überschriften der Generation verwendet wird."
+msgstr "Der Stil, der für die Generation Überschriften verwendet wird."
 
-#: AncestorFill/AncestorFill.py:445
+#: AncestorFill/AncestorFill.py:448
 msgid "The basic style used for the text display."
 msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
-
-

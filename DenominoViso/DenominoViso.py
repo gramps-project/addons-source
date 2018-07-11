@@ -154,6 +154,7 @@ from gramps.gui.dialog import ErrorDialog, WarningDialog
 from gramps.gui.plug.report._fileentry import FileEntry
 from gramps.gen.plug.menu import NumberOption, BooleanOption, TextOption, PersonOption, EnumeratedListOption, ColorOption, DestinationOption, StringOption
 from gramps.gen.display.name import displayer as _nd
+from gramps.gen.display.place import displayer as place_displayer
 import gramps.gen.datehandler as datehandler
 from gramps.gui.autocomp import fill_combo
 from gramps.gen.lib import EventType, EventRoleType, ChildRefType, AttributeType, Date
@@ -1038,9 +1039,11 @@ function %(bd)s2html(person,containerDL) {
             if ('<' + _('place') + '>') in self.event_format:
                 place_handle = event.get_place_handle()
                 if place_handle:
-                    place_name = self.database.get_place_from_handle(\
-                            place_handle).get_title()
-                    event_str += ",event_place:'" +self.escbacka(place_name)+"'"
+                    pl_obj = self.database.get_place_from_handle(place_handle)
+                    place_name = place_displayer.display(self.database,
+                                                         pl_obj, date)
+                    event_str += (",event_place:'" + self.escbacka(place_name)
+                                  + "'")
                     if self.options['DNMinc_events']:
                         self.search_subjects['Event Place'] = 'event_place'
 
