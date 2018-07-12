@@ -468,8 +468,12 @@ elif command == "listing":
                     code = compile(f.read(),
                                    gpr.encode("utf-8", errors="backslashreplace"),
                                    'exec')
-                    exec(code, make_environment(_=local_gettext),
-                         {"register": register})
+                    try:
+                        exec(code, make_environment(_=local_gettext),
+                             {"register": register})
+                    except:
+                        print('%s failed to register its .gpr.py file' % addon)
+                        continue
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split(os.sep, 1)[0]
                     tgz_exists = os.path.isfile(r("../addons/%(gramps_version)s/download/") + tgz_file)
