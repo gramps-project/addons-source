@@ -22,8 +22,6 @@
 Gramps registration file
 """
 
-MODULE_VERSION="5.0"
-
 #------------------------------------------------------------------------
 #
 # Diagnostic check that prerequisites have been met for the current install.
@@ -34,8 +32,8 @@ register(GRAMPLET,
          id="Prerequisites Checker Gramplet",
          name=_("Prerequisites Checker"),
          description = _("Prerequisites Checker Gramplet"),
-         version = '0.8.11',
-         gramps_target_version=MODULE_VERSION,
+         version = '0.8.12',
+         gramps_target_version='5.1',
          status = STABLE,
          fname="PrerequisitesCheckerGramplet.py",
          height = 300,
