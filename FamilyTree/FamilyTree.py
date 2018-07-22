@@ -817,6 +817,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
             noteobj = self.database.get_note_from_handle(notehandle)
             note += noteobj.get()
             note += ", "
+        # replace all new lines and carriage returns with spaces to prevent notes
+        # being written beyond the bottom edge of the drawn box or overwriting other text
+        # if they contain multiple lines
+        note = note.replace('\n', ' ').replace('\r', ' ')
         # cut "," from end of the string and limit length of note to 50 characters
         note_len = len(note)
         if note_len > 50:
