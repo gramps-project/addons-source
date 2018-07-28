@@ -17,13 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
-"""
-Gramps registration file
-"""
-
-MODULE_VERSION="5.0"
-
 #------------------------------------------------------------------------
 #
 # Diagnostic check that prerequisites have been met for the current install.
@@ -34,8 +27,8 @@ register(GRAMPLET,
          id="Prerequisites Checker Gramplet",
          name=_("Prerequisites Checker"),
          description = _("Prerequisites Checker Gramplet"),
-         version = '0.8.10',
-         gramps_target_version=MODULE_VERSION,
+         version = '0.8.11',
+         gramps_target_version="5.0",
          status = STABLE,
          fname="PrerequisitesCheckerGramplet.py",
          height = 300,

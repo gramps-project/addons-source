@@ -201,8 +201,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (4, 2, 8)
-        LATEST_GRAMPS_DATE    = "2018-02-09"
+        LATEST_GRAMPS_VERSION = (5, 0, 0)
+        LATEST_GRAMPS_DATE    = "2018-07-24"
         latest_release_message = "Gramps " + str(LATEST_GRAMPS_VERSION[0]) + "." + str(LATEST_GRAMPS_VERSION[1]) + "." + str(LATEST_GRAMPS_VERSION[2]) + "  released " + LATEST_GRAMPS_DATE + " is the most current version.\n"
 
         try:
