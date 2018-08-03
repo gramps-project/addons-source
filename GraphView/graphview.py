@@ -160,6 +160,9 @@ class GraphView(NavigationView):
         self.additional_uis.append(self.additional_ui())
         self.define_print_actions()
 
+        # for disable animation options in config dialog
+        self.ani_widgets = []
+
     def define_print_actions(self):
         """
         Associate the print button to the PrintView action.
@@ -368,8 +371,14 @@ class GraphView(NavigationView):
         """
         if entry == 'True':
             self.graph_widget.animation.show_animation = True
+            # enable animate options
+            for widget in self.ani_widgets:
+                widget.set_sensitive(True)
         else:
             self.graph_widget.animation.show_animation = False
+            # diable animate options
+            for widget in self.ani_widgets:
+                widget.set_sensitive(False)
 
     def cb_update_animation_count(self, client, cnxd_id, entry, data):
         """
@@ -481,12 +490,20 @@ class GraphView(NavigationView):
         configdialog.add_checkbox(grid,
                             _('Show animation'),
                             0, 'interface.graphview-show-animation')
-        configdialog.add_spinner(grid,
-                            _('Animation speed (1..5 and 5 is the slower)'),
-                            1, 'interface.graphview-animation-speed', (1, 5))
-        configdialog.add_spinner(grid,
-                            _('Animation count (0..8 use 0 to turn off)'),
-                            2, 'interface.graphview-animation-count', (0, 8))
+        self.ani_widgets.clear
+        widget = configdialog.add_spinner(grid,
+                              _('Animation speed (1..5 and 5 is the slower)'),
+                              1, 'interface.graphview-animation-speed', (1, 5))
+        self.ani_widgets.append(widget)
+        widget = configdialog.add_spinner(grid,
+                              _('Animation count (0..8 use 0 to turn off)'),
+                              2, 'interface.graphview-animation-count', (0, 8))
+        self.ani_widgets.append(widget)
+
+        # disable animate options if needed
+        if not self.graph_widget.animation.show_animation:
+            for widget in self.ani_widgets:
+                widget.set_sensitive(False)
 
         return _('Animation'), grid
 
