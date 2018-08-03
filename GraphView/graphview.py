@@ -485,8 +485,8 @@ class GraphView(NavigationView):
                             _('Animation speed (1..5 and 5 is the slower)'),
                             1, 'interface.graphview-animation-speed', (1, 5))
         configdialog.add_spinner(grid,
-                            _('Animation count (1..8)'),
-                            2, 'interface.graphview-animation-count', (1, 8))
+                            _('Animation count (0..8 use 0 to turn off)'),
+                            2, 'interface.graphview-animation-count', (0, 8))
 
         return _('Animation'), grid
 
@@ -2979,7 +2979,7 @@ class CanvasAnimation(object):
         Shake item to help to see it.
         Use build-in function of CanvasItem.
         """
-        if item:
+        if item and self.show_animation and self.max_count > 0:
             if not self.counter.get(item.title):
                 self.in_shake.append(item)
                 self.counter[item.title] = 1
