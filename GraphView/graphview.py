@@ -439,6 +439,7 @@ class GraphView(NavigationView):
     def layout_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog.
+        See "gramps/gui/configure.py" for details.
         """
         grid = Gtk.Grid()
         grid.set_border_width(12)
@@ -466,6 +467,7 @@ class GraphView(NavigationView):
     def color_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog.
+        See "gramps/gui/configure.py" for details.
         """
         grid = Gtk.Grid()
         grid.set_border_width(12)
@@ -481,6 +483,7 @@ class GraphView(NavigationView):
     def animation_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog.
+        See "gramps/gui/configure.py" for details.
         """
         grid = Gtk.Grid()
         grid.set_border_width(12)
