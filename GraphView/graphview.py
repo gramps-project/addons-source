@@ -695,6 +695,9 @@ class GraphWidget(object):
         self.set_anc_event = False
         self.set_des_event = False
 
+        # Gtk style context for scrollwindow to operate with theme colors
+        self.sw_style_context = scrolled_win.get_style_context()
+
     def set_ancestors_generations(self, widget):
         """
         Set count of ancestors generations to show.
@@ -2125,6 +2128,9 @@ class DotSvgGenerator(object):
         self.current_list = list()
         self.home_person = None
 
+        # Gtk style context for scrollwindow
+        self.context = self.view.graph_widget.sw_style_context
+
     def __del__(self):
         """
         Free stream file on destroy.
@@ -2162,7 +2168,7 @@ class DotSvgGenerator(object):
 
         # get background color from gtk theme and convert it to hex
         # else use white background
-        bg_color = Gtk.StyleContext().lookup_color('theme_bg_color')
+        bg_color = self.context.lookup_color('theme_bg_color')
         if bg_color[0]:
             bg_rgb = (bg_color[1].red, bg_color[1].green, bg_color[1].blue)
             bg_color = rgb_to_hex(bg_rgb)
@@ -2171,7 +2177,7 @@ class DotSvgGenerator(object):
 
         # get font color from gtk theme and convert it to hex
         # else use black font
-        font_color = Gtk.StyleContext().lookup_color('theme_fg_color')
+        font_color = self.context.lookup_color('theme_fg_color')
         if font_color[0]:
             fc_rgb = (font_color[1].red, font_color[1].green,
                       font_color[1].blue)
