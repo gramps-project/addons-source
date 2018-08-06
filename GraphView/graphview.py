@@ -666,7 +666,7 @@ class GraphWidget(object):
         box.pack_start(self.ancestors_spinner, False, False, 1)
 
         box.pack_start(Gtk.Label('↓'), False, False, 1)
-        self.descendants_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
+        self.descendants_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
         self.descendants_spinner.set_value(
            self.view._config.get('interface.graphview-descendant-generations'))
@@ -2343,7 +2343,7 @@ class DotSvgGenerator(object):
         if not person:
             return
 
-        if num_generations <= 0:
+        if num_generations < 0:
             return
 
         # add self
