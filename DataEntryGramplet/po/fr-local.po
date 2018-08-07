@@ -35,7 +35,7 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr "Gramplet Formulaire"
+msgstr "Gramplet Données saisies"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
