@@ -57,10 +57,13 @@ from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.glade import Glade
 
-CITY_STATE_ZIP = re.compile("((\w|\s)+)\s*,\s*((\w|\s)+)\s*(,\s*((\d|-)+))", re.UNICODE)
-CITY_STATE = re.compile("((?:\w|\s)+(?:-(?:\w|\s)+)*),((?:\w|\s)+)", re.UNICODE)
-CITY_LAEN =  re.compile("((?:\w|\s)+(?:-(?:\w|\s)+)*)\(((?:\w|\s)+)", re.UNICODE)
-STATE_ZIP = re.compile("(.+)\s+([\d-]+)", re.UNICODE)
+CITY_STATE_ZIP = re.compile(r"((\w|\s)+)\s*,\s*((\w|\s)+)\s*(,\s*((\d|-)+))",
+                            re.UNICODE)
+CITY_STATE = re.compile(r"((?:\w|\s)+(?:-(?:\w|\s)+)*),((?:\w|\s)+)",
+                        re.UNICODE)
+CITY_LAEN = re.compile(r"((?:\w|\s)+(?:-(?:\w|\s)+)*)\(((?:\w|\s)+)",
+                       re.UNICODE)
+STATE_ZIP = re.compile(r"(.+)\s+([\d-]+)", re.UNICODE)
 
 COUNTRY = ( _("United States of America"), _("Canada"), _("France"),_("Sweden"))
 

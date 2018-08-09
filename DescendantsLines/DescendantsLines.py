@@ -1502,7 +1502,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         category_name = _("Display")
 
         namedisp = StringOption(_("Name Display Format"),
-                                "$n(f L){ \($n(n)\)}")
+                                r"$n(f L){ \($n(n)\)}")
         namedisp.set_help(
             _("f=first & middle names, l=surname, n=nickname,"
               "\nc=commonly used given name, t=title, s=suffix,"

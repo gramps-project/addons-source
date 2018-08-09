@@ -321,11 +321,11 @@ elif command == "manifest-check":
         files = tarfile.open(tgz).getnames()
         for file in files:
             if not any([
-                    re.match(".*\.py$", file),
-                    re.match(".*\.txt$", file),
-                    re.match(".*\.glade$", file),
-                    re.match(".*\.xml$", file),
-                    re.match(".*locale/.*/LC_MESSAGES/.*.mo", file),
+                    re.match(r".*\.py$", file),
+                    re.match(r".*\.txt$", file),
+                    re.match(r".*\.glade$", file),
+                    re.match(r".*\.xml$", file),
+                    re.match(r".*locale/.*/LC_MESSAGES/.*.mo", file),
             ]
             ):
                 print("Need to add", file, "in", tgz)
