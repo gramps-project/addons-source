@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-09 15:31+0200\n"
-"PO-Revision-Date: 2017-08-01 12:12+0100\n"
+"PO-Revision-Date: 2018-08-09 16:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -59,9 +59,10 @@ msgid ""
 "Save the dot file for a later print.\n"
 "This will save a .gv file and a svg file.\n"
 "You must select a .gv file"
-msgstr "Enregistre le fichier dot pour une future impression.\n"
-"Ceci va enregistrer deux fichiers .gv et .svg".\n
-"Vous devez sélectionner un répertoire"
+msgstr ""
+"Enregistre le fichier dot pour une future impression.\n"
+"Ceci va enregistrer deux fichiers .gv et .svg.\n"
+"Vous devez sélectionner un répertoire."
 
 #: GraphView/graphview.py:450 GraphView/graphview.py:1058
 #: GraphView/graphview_j.py:359
@@ -110,7 +111,7 @@ msgstr "Vitesse de l'animation (1..5 - 5 est le plus lent)"
 
 #: GraphView/graphview.py:502
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr ""
+msgstr "Compteur de l'animation (0..8 utilisez 0 pour arrêter)"
 
 #: GraphView/graphview.py:511
 msgid "Animation"
@@ -192,6 +193,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
+"Individu <b><i>%s</i></b> n'est pas dans la vue.\n"
+"Voulez-vous le rendre actif et reconstruire la vue ?"
 
 #: GraphView/graphview.py:786
 msgid "Change active person?"
