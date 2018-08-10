@@ -2545,18 +2545,10 @@ class DotSvgGenerator(object):
         Add a node for a family and optionally link the spouses to it.
         """
         fam = self.database.get_family_from_handle(fam_handle)
-
-        label = ""
-        for event_ref in fam.get_event_ref_list():
-            event = self.database.get_event_from_handle(event_ref.ref)
-            if (event.type == EventType.MARRIAGE and
-                (event_ref.get_role() == EventRoleType.FAMILY or
-                 event_ref.get_role() == EventRoleType.PRIMARY)):
-                    label = self.get_event_string(event)
-                    break
         fill, color = color_graph_family(fam, self.dbstate)
         style = "filled"
-        label = label.center(int(len(label)*2))
+        label = self.get_family_label(fam)
+
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
 
         # If subgraphs are used then we add both spouses here and Graphviz
@@ -2603,9 +2595,29 @@ class DotSvgGenerator(object):
         fill, color = color_graph_box(alive, gender)
         return(shape, style, color, fill)
 
+    def get_tags_and_table(self, obj):
+        """
+        Return html tags table for obj (person or family).
+        """
+        tag_table = ''
+        tags = []
+
+        for tag_handle in obj.get_tag_list():
+            tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+
+        # prepare html table of tags
+        if len(tags) > 0:
+            tag_table = ('<TABLE BORDER="0" CELLBORDER="0" '
+                         'CELLPADDING="5"><TR>')
+            for tag in tags:
+                tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+            tag_table += '</TR></TABLE>'
+
+        return tags, tag_table
+
     def get_person_label(self, person):
         """
-        Return person label string.
+        Return person label string (with tags).
         """
         # see if we have an image to use for this person
         image_path = None
@@ -2637,11 +2649,10 @@ class DotSvgGenerator(object):
 
         if self.is_html_output and image_path:
             line_delimiter = '<BR/>'
-            label += ('<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" '
-                      'CELLBORDER="0"><TR><TD><IMG SRC="%s"/></TD>'
+            label += ('<TABLE BORDER="0" CELLSPACING="2" '
+                      'CELLPADDING="0" CELLBORDER="0">'
+                      '<TR><TD><IMG SRC="%s"/></TD></TR><TR><TD>'
                       % image_path)
-            # trick it into not stretching the image
-            label += '</TR><TR><TD>'
         else:
             # no need for html label with this person
             self.is_html_output = False
@@ -2650,19 +2661,9 @@ class DotSvgGenerator(object):
         # it will be added after dates (on the bottom)
         tag_table = ''
         if self.show_tag_color:
-            tags = []
-            for tag_handle in person.get_tag_list():
-                tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
+            tags, tag_table = self.get_tags_and_table(person)
 
-            # prepare html table of tags
-            if len(tags) > 0:
-                tag_table = ('</TD></TR><TR><TD>'
-                             '<TABLE BORDER="0" CELLBORDER="0" '
-                             'CELLPADDING="5"><TR>')
-                for tag in tags:
-                    tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
-                tag_table += '</TR></TABLE>'
-
+            if tag_table:
                 # open html table for adding text (name and dates)
                 # if it not exist.
                 # we need that to add tags table
@@ -2708,7 +2709,8 @@ class DotSvgGenerator(object):
             label += txt
 
         # add html tags table
-        label += tag_table
+        if tag_table:
+            label += '</TD></TR><TR><TD>' + tag_table
 
         # see if we have a table that needs to be terminated
         if self.is_html_output:
@@ -2717,6 +2719,38 @@ class DotSvgGenerator(object):
         else:
             # non html label is enclosed by "" so escape other "
             return label.replace('"', '\\\"')
+
+    def get_family_label(self, family):
+        """
+        Return family label string (with tags).
+        """
+        label = ""
+        for event_ref in family.get_event_ref_list():
+            event = self.database.get_event_from_handle(event_ref.ref)
+            if (event.type == EventType.MARRIAGE and
+                (event_ref.get_role() == EventRoleType.FAMILY or
+                 event_ref.get_role() == EventRoleType.PRIMARY)):
+                    label = self.get_event_string(event)
+                    break
+
+        if self.show_tag_color:
+            # get all tags for the family and prepare html table
+            # it will be added after dates (on the bottom of node)
+            tags, tag_table = self.get_tags_and_table(family)
+
+            if tag_table:
+                # convert plain text label to html
+                # and inset it into the main table
+                label_new = ('<TABLE BORDER="0" CELLSPACING="2" '
+                             'CELLPADDING="0" CELLBORDER="0">'
+                             '<TR><TD>%s' % label.replace('\\n', '<BR/>'))
+                label = label_new
+                # insert tags table for family and close the main table
+                label += '</TD></TR><TR><TD>' + tag_table + '</TD></TR></TABLE>'
+
+                self.add_tags_tooltip(family.handle, tags)
+
+        return label
 
     def get_date_strings(self, person):
         """
@@ -2825,39 +2859,6 @@ class DotSvgGenerator(object):
 
         if style:
             text += ' style="%s"'     % style
-
-        # get all tags for the family and prepare html table
-        # it will be added after dates (on the bottom of node)
-        if self.show_tag_color:
-            tags = []
-            try:
-                # we need to do the following only if the node id is a
-                # family handle, so we try to get family from handle we have
-                fam = self.database.get_family_from_handle(node_id)
-                for tag_handle in fam.get_tag_list():
-                    tags.append(self.dbstate.db.get_tag_from_handle(tag_handle))
-
-                # convert plain text label to html
-                # and inset it in the main table
-                label_new = ('<TABLE BORDER="0" CELLSPACING="2" '
-                             'CELLPADDING="0" CELLBORDER="0">')
-                label_new += '<TR><TD>%s' % label.replace('\\n', '<BR/>')
-
-                # prepare html table of tags
-                tag_table = ''
-                if len(tags) > 0:
-                    tag_table = ('</TD></TR><TR><TD><TABLE BORDER="0" '
-                                 'CELLBORDER="0" CELLPADDING="5"><TR>')
-                    for tag in tags:
-                        tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
-                    tag_table += '</TR></TABLE>'
-                    self.add_tags_tooltip(node_id, tags)
-
-                # combine new label for family node and close the main table
-                label = label_new + tag_table + '</TD></TR></TABLE>'
-            except:
-                # the node is not a family
-                pass
 
         # note that we always output a label -- even if an empty string --
         # otherwise GraphViz uses the node ID as the label which is unlikely
