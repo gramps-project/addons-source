@@ -28,7 +28,6 @@
 #-------------------------------------------------------------------------
 import os
 import io
-import hashlib
 
 #-------------------------------------------------------------------------
 #
@@ -47,7 +46,8 @@ from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter, open_file_with_default_application
 from gramps.gen.db import DbTxn
-from gramps.gen.utils.file import media_path_full, relative_path
+from gramps.gen.utils.file import (media_path_full, relative_path,
+                                   create_checksum)
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditMedia
 from gramps.gen.errors import WindowActiveError
@@ -122,6 +122,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
         window.add(vbox)
         window.set_size_request(500, 300)
+        window.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
         self.set_window(window, None, self.window_name)
         self.show()
 
@@ -263,11 +264,9 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 media = self.db.get_media_from_handle(handle)
 
                 full_path = media_path_full(self.db, media.get_path())
-                try:
-                    with io.open(full_path, 'rb') as media_file:
-                        md5sum = hashlib.md5(media_file.read()).hexdigest()
-                except IOError as err:
-                    error_msg = '%s: %s' % (err.strerror, full_path)
+                md5sum = create_checksum(full_path)
+                if not md5sum:
+                    error_msg = 'IOError: %s' % full_path
                     self.models[5].append((error_msg, None))
                     progress.step()
                     continue
@@ -311,11 +310,9 @@ class MediaVerify(tool.Tool, ManagedWindow):
         for root, dirs, files in os.walk(media_path):
             for file_name in files:
                 full_path = os.path.join(root, file_name)
-                try:
-                    with io.open(full_path, 'rb') as media_file:
-                        md5sum = hashlib.md5(media_file.read()).hexdigest()
-                except IOError as err:
-                    error_msg = '%s: %s' % (err.strerror, full_path)
+                md5sum = create_checksum(full_path)
+                if not md5sum:
+                    error_msg = 'IOError: %s' % full_path
                     self.models[5].append((error_msg, None))
                     progress.step()
                     continue
@@ -329,6 +326,10 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 progress.step()
                 if progress.get_cancelled():
                     break
+            # the following allows cancelling with subdirectries
+            else:           # normal exit of for file_name loop
+                continue    # just continue with outer loop
+            break           # inner loop had break, so break outer as well.
 
         length = self.db.get_number_of_media()
         progress.set_pass(_('Checking paths'), length)
