@@ -486,6 +486,7 @@ elif command == "listing":
                     else:
                         print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
+        print(listings)
         if cmd_arg == "all":
             # Replace it!
             fp = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
@@ -505,23 +506,23 @@ elif command == "listing":
                 fp_out = open(r("../addons/%(gramps_version)s/listings/") +("addons-%s.new" % lang), "w", encoding="utf-8")
                 added = False
                 for line in fp_in:
-                    if line in already_added:
-                        continue
                     dictionary = eval(line)
+                    if ("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s'}""" % dictionary) in already_added:
+                        continue
                     if cmd_arg + ".addon.tgz" in line and plugin["t"] == dictionary["t"] and not added:
                         #print("UPDATED")
                         print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
-                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin)
+                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s'}""" % plugin)
                     elif ((plugin["t"], plugin["i"]) < (dictionary["t"], dictionary["i"])) and not added:
                         #print("ADDED in middle")
                         print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
                         print(line, end="", file=fp_out)
-                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin)
+                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s'}""" % plugin)
                     else:
                         print(line, end="", file=fp_out)
-                        already_added.append(line)
+                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s'}""" % dictionary)
                 if not added:
                     if ("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin) not in already_added:
                         #print("ADDED at end")
