@@ -486,7 +486,6 @@ elif command == "listing":
                     else:
                         print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
-        print(listings)
         if cmd_arg == "all":
             # Replace it!
             fp = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
