@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-15 15:59+0300\n"
-"PO-Revision-Date: 2018-08-21 13:11+0300\n"
+"PO-Revision-Date: 2018-08-21 21:57+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "Suhteet syvemmältä Gramplet"
+msgstr "Syväsuhteet Gramplet"
 
 #: DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
@@ -28,7 +28,7 @@ msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmäl
 
 #: DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
-msgstr "Suhteet syvemmältä"
+msgstr "Syväsuhteet"
 
 #: DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
