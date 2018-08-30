@@ -126,9 +126,9 @@ class GeoName(Gramplet):
         if len(preferred_lang) != 2:
             preferred_lang = 'en'
 #
-# Get GeoName ID for the entered populated place. 
+# Get GeoName ID for the entered populated place.
 # First check if the input is a number (GeoName ID). If it is, use it. If not, then the input is the entity name
-#     Search assuming 2-letter code is a state/province ID. 
+#     Search assuming 2-letter code is a state/province ID.
 #     If that fails, then assume it is a country code
 #
         if geoNames_id.isnumeric():
@@ -141,7 +141,6 @@ class GeoName(Gramplet):
             data = response.read()
             dom = parseString(data)
             top = dom.getElementsByTagName('geonames')
-        
             value = top[0].getElementsByTagName('totalResultsCount')
             if len(value):
                 found_requests = value[0].childNodes[0].data
@@ -207,7 +206,6 @@ class GeoName(Gramplet):
         data = response.read()
         dom = parseString(data)
         element = dom.getElementsByTagName('geoname')
-        
         place = Place()
         curr_lang = "en"
         place.gramps_id = entity_id
@@ -227,11 +225,11 @@ class GeoName(Gramplet):
         geoname_fcode = value[0].childNodes[0].data
         allowed_languages = ["en","fr","de","pl","ru","da","es","fi","sw","no",preferred_lang]
 #
-# Try to deduce PlaceType:  
+# Try to deduce PlaceType:
 #   If populated place, set as City. Long description could over-ride
 #   Parse long description, looking for keyword (Region, County, ...)
-#   Top-level must be a country. 
-#   Children of USA are States. 
+#   Top-level must be a country.
+#   Children of USA are States.
 #   Children of Canada are Provinces.
 #
         level = -1
