@@ -50,11 +50,6 @@ msgstr "%d"
 msgid "  %s"
 msgstr "  %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:279
-#, python-format
-msgid "   Anno %s - "
-msgstr "   Anno %s - "
-
 #: SourcesCitationsReport/SourcesCitationsReport.py:285
 #, python-format
 msgid "   Type: %s"

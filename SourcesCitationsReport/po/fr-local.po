@@ -39,11 +39,6 @@ msgstr "%d"
 msgid "  %s"
 msgstr ""
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:278
-#, fuzzy, python-format
-msgid "   Anno %s - "
-msgstr "   Année %s - "
-
 #: SourcesCitationsReport/SourcesCitationsReport.py:284
 #, fuzzy, python-format
 msgid "   Type: %s"
