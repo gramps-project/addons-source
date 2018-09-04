@@ -24,7 +24,7 @@
 # $Id: SourcesCitationsReport.py 2012-12-30 Frink hansulrich.frink@gmail.com $
 
 """
-Reports/Text Report.
+ Reports/Text Report.
 
 Developed for gramps 5.0.0.1 under win 10 64bit
 
