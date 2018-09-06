@@ -2026,7 +2026,7 @@ class GraphvizSvgParser(object):
         fill_color = self.text_attrs.get('fill')
 
         GooCanvas.CanvasText(parent=self.current_parent(),
-                             text=tag,
+                             text=escape(tag),
                              x=pos_x,
                              y=pos_y,
                              anchor=self.text_anchor_map[anchor],
@@ -2511,14 +2511,12 @@ class DotSvgGenerator(object):
         Adds nodes for persons and their families.
         """
         # variable to communicate with get_person_label
-        self.is_html_output = False
         url = ""
 
         # The list of families for which we have output the node,
         # so we don't do it twice
         families_done = {}
         for person_handle in self.person_handles:
-            self.is_html_output = True
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
             label = self.get_person_label(person)
@@ -2619,9 +2617,22 @@ class DotSvgGenerator(object):
         """
         Return person label string (with tags).
         """
+        # Start an HTML table.
+        # Remember to close the table afterwards!
+        #
+        # This isn't a free-form HTML format here...just a few keywords that
+        # happen to be similar to keywords commonly seen in HTML.
+        # For additional information on what is allowed, see:
+        #
+        #       http://www.graphviz.org/info/shapes.html#html
+
+        label = ('<TABLE '
+                 'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
+        line_delimiter = '<BR/>'
+
         # see if we have an image to use for this person
         image_path = None
-        if self.show_images and self.is_html_output:
+        if self.show_images:
             media_list = person.get_media_list()
             if len(media_list) > 0:
                 media_handle = media_list[0].get_reference_handle()
@@ -2635,27 +2646,8 @@ class DotSvgGenerator(object):
                     # (import of data means media files might not be present
                     image_path = find_file(image_path)
 
-        label = ""
-        line_delimiter = '\\n'
-
-        # If we have an image, then start an HTML table.
-        # Remember to close the table afterwards!
-        #
-        # This isn't a free-form HTML format here...just a few keywords that
-        # happen to be similar to keywords commonly seen in HTML.
-        # For additional information on what is allowed, see:
-        #
-        #       http://www.graphviz.org/info/shapes.html#html
-
-        if self.is_html_output and image_path:
-            line_delimiter = '<BR/>'
-            label += ('<TABLE BORDER="0" CELLSPACING="2" '
-                      'CELLPADDING="0" CELLBORDER="0">'
-                      '<TR><TD><IMG SRC="%s"/></TD></TR><TR><TD>'
-                      % image_path)
-        else:
-            # no need for html label with this person
-            self.is_html_output = False
+        if image_path:
+            label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
 
         # get all tags for the person and prepare html table
         # it will be added after dates (on the bottom)
@@ -2664,28 +2656,19 @@ class DotSvgGenerator(object):
             tags, tag_table = self.get_tags_and_table(person)
 
             if tag_table:
-                # open html table for adding text (name and dates)
-                # if it not exist.
-                # we need that to add tags table
-                if not self.is_html_output:
-                    line_delimiter = '<BR/>'
-                    label += ('<TABLE BORDER="0" CELLSPACING="2" '
-                              'CELLPADDING="0" CELLBORDER="0"><TR><TD>')
-                    self.is_html_output = True
                 self.add_tags_tooltip(person.handle, tags)
 
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
 
-        if self.is_html_output:
-            # avoid < and > in the name, as this is html text
-            label += name.replace('<', '&#60;').replace('>', '&#62;')
-        else:
-            label += name
+        # avoid '&', '<', '>' in the name, as this is html text
+        label += '<TR><TD>' + escape(name)
 
         label += line_delimiter
 
         birth, death = self.get_date_strings(person)
+        birth = escape(birth)
+        death = escape(death)
 
         # There are two ways of displaying dates:
         # 1) full and on two lines:
@@ -2712,43 +2695,39 @@ class DotSvgGenerator(object):
         if tag_table:
             label += '</TD></TR><TR><TD>' + tag_table
 
-        # see if we have a table that needs to be terminated
-        if self.is_html_output:
-            label += '</TD></TR></TABLE>'
-            return label
-        else:
-            # non html label is enclosed by "" so escape other "
-            return label.replace('"', '\\\"')
+        # we should terminate the main table
+        label += '</TD></TR></TABLE>'
+        return label
 
     def get_family_label(self, family):
         """
         Return family label string (with tags).
         """
-        label = ""
+        # start main html table
+        label = ('<TABLE '
+                 'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
+
+        # add dates strtings to table
+        event_str = ''
         for event_ref in family.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
             if (event.type == EventType.MARRIAGE and
                 (event_ref.get_role() == EventRoleType.FAMILY or
                  event_ref.get_role() == EventRoleType.PRIMARY)):
-                    label = self.get_event_string(event)
+                    event_str = self.get_event_string(event)
                     break
+        label += '<TR><TD>%s</TD></TR>' % escape(event_str)
 
         if self.show_tag_color:
-            # get all tags for the family and prepare html table
-            # it will be added after dates (on the bottom of node)
             tags, tag_table = self.get_tags_and_table(family)
 
             if tag_table:
-                # convert plain text label to html
-                # and inset it into the main table
-                label_new = ('<TABLE BORDER="0" CELLSPACING="2" '
-                             'CELLPADDING="0" CELLBORDER="0">'
-                             '<TR><TD>%s' % label.replace('\\n', '<BR/>'))
-                label = label_new
-                # insert tags table for family and close the main table
-                label += '</TD></TR><TR><TD>' + tag_table + '</TD></TR></TABLE>'
-
+                # insert tags table for family and add tooltip for node
+                label += '<TR><TD>' + tag_table + '</TD></TR>'
                 self.add_tags_tooltip(family.handle, tags)
+
+        # close main table
+        label += '</TABLE>'
 
         return label
 
@@ -2839,7 +2818,7 @@ class DotSvgGenerator(object):
         self.write('\n')
 
     def add_node(self, node_id, label, shape="", color="",
-                 style="", fillcolor="", url="", htmloutput=False):
+                 style="", fillcolor="", url=""):
         """
         Add a node to this graph.
         Nodes can be different shapes like boxes and circles.
@@ -2863,10 +2842,7 @@ class DotSvgGenerator(object):
         # note that we always output a label -- even if an empty string --
         # otherwise GraphViz uses the node ID as the label which is unlikely
         # to be what the user wants to see in the graph
-        if label.startswith("<") or htmloutput:
-            text += ' label=<%s>' % label
-        else:
-            text += ' label="%s"' % label
+        text += ' label=<%s>' % label
 
         if url:
             text += ' URL="%s"'   % url
