@@ -2625,6 +2625,8 @@ class DotSvgGenerator(object):
         # For additional information on what is allowed, see:
         #
         #       http://www.graphviz.org/info/shapes.html#html
+        #
+        # Will use html.escape to avoid '&', '<', '>' in the strings.
 
         label = ('<TABLE '
                  'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
@@ -2649,22 +2651,12 @@ class DotSvgGenerator(object):
         if image_path:
             label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
 
-        # get all tags for the person and prepare html table
-        # it will be added after dates (on the bottom)
-        tag_table = ''
-        if self.show_tag_color:
-            tags, tag_table = self.get_tags_and_table(person)
+        # start adding person name and dates
+        label += '<TR><TD>'
 
-            if tag_table:
-                self.add_tags_tooltip(person.handle, tags)
-
-        # at the very least, the label must have the person's name
+        # add the person's name
         name = displayer.display_name(person.get_primary_name())
-
-        # avoid '&', '<', '>' in the name, as this is html text
-        label += '<TR><TD>' + escape(name)
-
-        label += line_delimiter
+        label += escape(name) + line_delimiter
 
         birth, death = self.get_date_strings(person)
         birth = escape(birth)
@@ -2677,26 +2669,32 @@ class DotSvgGenerator(object):
         if self.show_full_dates or self.show_places:
             if birth:
                 txt = _('b. %s') % birth  # short for "born" (could be "*")
-                # line separator required only if we have both birth and death
                 label += txt
-            if birth and death:
-                label += line_delimiter
-
             if death:
+                if birth:
+                    label += line_delimiter
                 txt = _('d. %s') % death  # short for "died" (could be "+")
                 label += txt
         # 2) simple and on one line:
         #       (1890 - 1960)
         else:
-            txt = '(%s - %s)' % (birth, death)
-            label += txt
+            if birth or death:
+                txt = '(%s - %s)' % (birth, death)
+                label += txt
 
-        # add html tags table
-        if tag_table:
-            label += '</TD></TR><TR><TD>' + tag_table
+        # ending of name and dates
+        label += '</TD></TR>'
 
-        # we should terminate the main table
-        label += '</TD></TR></TABLE>'
+        # add tags table for person and add tooltip for node
+        if self.show_tag_color:
+            tags, tag_table = self.get_tags_and_table(person)
+
+            if tag_table:
+                label += '<TR><TD>%s</TD></TR>' % tag_table
+                self.add_tags_tooltip(person.handle, tags)
+
+        # terminate the main table
+        label += '</TABLE>'
         return label
 
     def get_family_label(self, family):
@@ -2718,12 +2716,12 @@ class DotSvgGenerator(object):
                     break
         label += '<TR><TD>%s</TD></TR>' % escape(event_str)
 
+        # add tags table for family and add tooltip for node
         if self.show_tag_color:
             tags, tag_table = self.get_tags_and_table(family)
 
             if tag_table:
-                # insert tags table for family and add tooltip for node
-                label += '<TR><TD>' + tag_table + '</TD></TR>'
+                label += '<TR><TD>%s</TD></TR>' % tag_table
                 self.add_tags_tooltip(family.handle, tags)
 
         # close main table
