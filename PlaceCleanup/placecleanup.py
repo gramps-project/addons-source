@@ -1,4 +1,3 @@
-# coding: utf-8
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -490,7 +489,7 @@ class PlaceCleanup(Gramplet):
     adm_table = {
         # note the True/False in the following indicates the certainty that the
         # entry is correct.  If it is only sometimes correct, and the name
-        # might have a different type embedded in it, then use False. 
+        # might have a different type embedded in it, then use False.
         'US': {'ADM1': (PlaceType.STATE, True),
                'ADM2': (PlaceType.COUNTY, False),
                'ADM3': (PlaceType.TOWN, False)},
