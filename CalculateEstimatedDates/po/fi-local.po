@@ -8,162 +8,154 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2009-11-24 00:06+0200\n"
-"Last-Translator: Janne Kovesjärvi <janne.kovesjarvi@gmail.com>\n"
-"Language-Team:  <fi@li.org>\n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2018-10-02 03:16+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: niememat@gmail.com\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+#: CalculateEstimatedDates.gpr.py:9 CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
 msgstr "Laske arvioidut päivämäärät"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates.gpr.py:10
 msgid "Calculates estimated dates for birth and death."
-msgstr "Laskee päivämääräarvioita syntymälle ja kuolemalle."
+msgstr "Laskee syntymälle ja kuolemalle päivämääräarvioita."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
+#: CalculateEstimatedDates.py:80 CalculateEstimatedDates.py:193
 msgid "Options"
-msgstr "Asetukset"
+msgstr "Valinnat"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
+#: CalculateEstimatedDates.py:82
 msgid "Filter"
 msgstr "Suodin"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
-msgstr "Valitse henkilöiden rajoitussuodin"
+msgstr "Rajoita henkilöitä valitsemalla suodatin"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
+#: CalculateEstimatedDates.py:87
 msgid "Filter Person"
 msgstr "Suodinhenkilö"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+#: CalculateEstimatedDates.py:88
 msgid "The center person for the filter"
 msgstr "Suotimen keskushenkilö"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
+#: CalculateEstimatedDates.py:94
 msgid "Source text"
 msgstr "Lähdeteksti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+#: CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Lasketut päivämääräarviot"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+#: CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Poistettavat ja/tai lisättävät lähteet"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
-#, fuzzy
+#: CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
-msgstr "Poista aikaisemmin lisätyt päivämäärät"
+msgstr "Poista aiemmin lisätyt tapahtumat, muistiinpanot ja lähde"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+#: CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"Poista lasketut tapahtumat, muistiinpanot ja lähde; Tapahtuu välittömästi "
+"Suorita painikkeesta"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates.py:103
 msgid "Birth"
 msgstr "Syntymä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
-#, fuzzy
+#: CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
-msgstr " lisätty syntymä: %s"
+msgstr "Älä lisää syntymätapahtumia"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
-#, fuzzy
+#: CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
-msgstr "Syntymätapahtuma ilman päiväystä"
+msgstr "Lisää syntymätapahtumat ilman päivämääriä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
-#, fuzzy
+#: CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
-msgstr "Syntymätapahtuma ilman päiväystä"
+msgstr "Lisää syntymätapahtumat päivämäärillä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgstr "Lisää syntymätapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+#: CalculateEstimatedDates.py:110
 msgid "Death"
 msgstr "Kuolema"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-#, fuzzy
+#: CalculateEstimatedDates.py:111
 msgid "Do not add death events"
-msgstr " lisätty kuolema: %s"
+msgstr "Älä lisää kuolintapahtumia"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
+#: CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
-msgstr "Lisää arvioidut syntymäpäivämäärät"
+msgstr "Lisää kuolintapahtumat ilman päivämääriä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
+#: CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr "Lisää arvioidut syntymäpäivämäärät"
+msgstr "Lisää kuolintapahtumat päivämäärillä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Lisää kuolintapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+#: CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Suurin mahdollinen ikä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Suurin mahdollinen ikä jonka voi elää"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+#: CalculateEstimatedDates.py:124
 msgid "Maximum sibling age difference"
 msgstr "Suurin mahdollinen sisarusten ikäero"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+#: CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Suurin mahdollinen sisarusten välinen ikäero"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+#: CalculateEstimatedDates.py:130
 msgid "Average years between generations"
 msgstr "Keskimääräinen vuosimäärä sukupolvien välillä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+#: CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Keskimääräinen vuosimäärä kahden sukupolven välillä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
-#, fuzzy
+#: CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
-msgstr "Arvioitu päivä"
+msgstr "Arvioidut päivämäärät"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+#: CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr ""
+msgstr "Arvioitu (noin)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+#: CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
-msgstr ""
+msgstr "Ääripäät (jälkeen ja ennen)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+#: CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Tapahtumien päivämäärät ovat joko noin tai jälkeen/ennen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
-#, fuzzy
+#: CalculateEstimatedDates.py:170 CalculateEstimatedDates.py:187
 msgid "Help"
-msgstr "_Ohjeet"
+msgstr "Ohje"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+#: CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -183,200 +175,198 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+"Laske arvioidut päivämäärät työkalua käytetään lisäämään ja poistamaan "
+"syntymä- ja kuolintapahtumia ihmisille, joilla ei näitä tapahtumia ole.\n"
+"\n"
+"Käyttö:\n"
+"1. Siirry valinnat välilehteen\n"
+"2. Tarkista [ ] Poista valinta aikaisemmin lisätyt tapahtuma-arviot\n"
+"3. Valitse Lisää päivämääräasetukset tapahtumiin päivämäärien kanssa tai "
+"ilman\n"
+"4. Napsauta Suorita\n"
+"5. Valitse henkilöt, joille voit lisätä tapahtumia\n"
+"6. Napsauta 'Lisää valitut tapahtumat' painiketta luodaksesi\n"
+"\n"
+"HUOMAUTUKSET: jos päätät tehdä tapahtuman pysyväksi, poista sen lähde. "
+"Muussa tapauksessa se poistetaan, kun seuraavan kerran poistat nämä "
+"tapahtumat automaattisesti.\n"
+"\n"
+"Voit joutua käyttämään työkalua toistuvasti (poistamatta aiempia tapahtumia) "
+"lisätä kaikki mahdolliset tapahtumat."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
-#, fuzzy
+#: CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "Valitse tiedosto"
+msgstr "Valitse kaikki"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
-#, fuzzy
+#: CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "Valitse lisätieto"
+msgstr "Älä valitse mitään"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-#, fuzzy
+#: CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
-msgstr "Työkalun valinta"
+msgstr "Vaihda valinta"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
-#, fuzzy
+#: CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
-msgstr "Valitse tapahtuma"
+msgstr "Lisää valitut tapahtumat"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Poista tapahtumat, huomautukset ja lähde ja nollaa tiedot uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Haluatko varmasti poistaa aiemmat tapahtumat, muistiinpanot ja lähdekoodin "
+"sekä valita uudelleen tietoja?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
+#: CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
-msgstr "Poista valittu henkilö"
+msgstr "Poista ja suorita valinta uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
-#, fuzzy
+#: CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "Valitse isä"
+msgstr "Valitse tiedot uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
-#, fuzzy
+#: CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
-msgstr "Haluatko varmasti tyhjentää muokkaushistorian?"
+msgstr "Haluatko varmasti valita tiedot uudelleen?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
-#, fuzzy
+#: CalculateEstimatedDates.py:216
 msgid "Run Select Again"
-msgstr "Raportin valinta"
+msgstr "Suorita valinta uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
+#: CalculateEstimatedDates.py:225 CalculateEstimatedDates.py:234
+#: CalculateEstimatedDates.py:401 CalculateEstimatedDates.py:415
+#: CalculateEstimatedDates.py:420 CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates.py:436
 msgid "Select"
 msgstr "Valitse"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates.py:234
 msgid "Person"
 msgstr "Henkilö"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
+#: CalculateEstimatedDates.py:234
 msgid "Action"
 msgstr "Toiminto"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+#: CalculateEstimatedDates.py:235
 msgid "Birth Date"
 msgstr "Syntymäpäivä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
+#: CalculateEstimatedDates.py:235
 msgid "Death Date"
 msgstr "Kuolinpäivä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
+#: CalculateEstimatedDates.py:236
 msgid "Evidence"
-msgstr "Asuinpaikka"
+msgstr "Todisteet"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
+#: CalculateEstimatedDates.py:236
 msgid "Relative"
 msgstr "Sukulaiset"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Käsitellään...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+#: CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Vanhojen arvioiden poistaminen... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#: CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Poistetaan '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
-#, fuzzy
+#: CalculateEstimatedDates.py:319
 msgid "done!\n"
-msgstr "Valmis!\n"
+msgstr "valmis!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
-#, fuzzy
-msgid "Removed date estimates"
-msgstr "Poista olemassa oleva nimi"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
-#, fuzzy
+#: CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Valitse..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
-#, fuzzy
-msgid "Selecting..."
-msgstr "Valitse..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
-#, fuzzy
-msgid "Add birth and death events"
-msgstr "Lisää uusi tapahtuma"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
-#, fuzzy
-msgid "Add birth event"
-msgstr "Puuttuva syntymätapahtuma"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
-#, fuzzy
-msgid "Add death event"
-msgstr "Lisää uusi tapahtuma"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
-#, fuzzy
-msgid "No events to be added."
-msgstr "Tapahtuman kuvausta ei ole lisätty."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
-#, fuzzy
-msgid "Selecting... "
-msgstr "Valitse..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#, fuzzy, python-format
-msgid "Adding events '%s'..."
-msgstr "Lisää olemassa olevat vanhemmat..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
-#, fuzzy, python-format
-msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr " lisätty syntymä: %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
-#, fuzzy, python-format
-msgid "Added birth event based on %s"
-msgstr " lisätty syntymä: %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
-msgid "Estimated birth date"
-msgstr "Arvioitu syntymäpäivä"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
-#, fuzzy, python-format
-msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr " lisätty kuolema: %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
-#, fuzzy, python-format
-msgid "Added death event based on %s"
-msgstr " lisätty kuolema: %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
-msgid "Estimated death date"
-msgstr "Arvioitu kuolinpäivä"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
-msgid " Done! Committing..."
 msgstr ""
+"Valitaan... \n"
+"\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-#, fuzzy
-msgid "Add date estimates"
-msgstr "Laske päivämääräarviot"
+#: CalculateEstimatedDates.py:324
+msgid "Selecting..."
+msgstr "Valitaan..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
+#: CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Lisää syntymä- ja kuolintapahtuma"
+
+#: CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Lisää syntymätapahtuma"
+
+#: CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Lisää kuolintapahtuma"
+
+#: CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Ei lisättäviä tapahtumia."
+
+#: CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Valitaan... "
+
+#: CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Lisätään tapahtuma '%s'..."
+
+#: CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Lisätyn syntymä tapahtuman peruste on %(evidence)s, henklölle %(name)s"
+
+#: CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Lisätyn syntymätapahtuman peruste on %s"
+
+#: CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Arvioitu syntymäaika"
+
+#: CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr ""
+"Lisätyn kuolintapahtuman peruste on %(evidence)s, henkilölle %(person)s"
+
+#: CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Lisätyn kuolintapahtuman peruste on %s"
+
+#: CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Arvioitu kuolinaika"
+
+#: CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " Tehty! Sitoutuminen ..."
+
+#: CalculateEstimatedDates.py:499
+#, python-format
 msgid "Added %d events."
-msgstr "Lisää uusi tapahtuma"
+msgstr "Tapahtumia lisätty %d."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+#: CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Arvioitu päivä"
+
+#~ msgid "Removed date estimates"
+#~ msgstr "Poistettu päivämäärä arvioita"
+
+#~ msgid "Add date estimates"
+#~ msgstr "Lisää päivämääräarvioita"
