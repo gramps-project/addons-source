@@ -1110,9 +1110,9 @@ class DynamicWebReport(Report):
             if (evt_desc is None): evt_desc = ""
             jdata['descr'] = html_escape(evt_desc)
             # Get event notes
-            notelist = event.get_note_list()
+            notelist = event.get_note_list()[:]  # we don't want to modify cached original
             notelist.extend(event_ref.get_note_list())
-            attrlist = event.get_attribute_list()
+            attrlist = event.get_attribute_list()[:]  # we don't want to modify cached original
             attrlist.extend(event_ref.get_attribute_list())
             jdata['text'] = self.get_notes_attributes_text(notelist, attrlist)
             # Get event media
@@ -1814,7 +1814,7 @@ class DynamicWebReport(Report):
         jdata['rect'] = list(rect)
         attrlist = ref.get_attribute_list()
         jdata['note'] = self.get_notes_attributes_text(ref.get_note_list(), attrlist)
-        citationlist = ref.get_citation_list()
+        citationlist = ref.get_citation_list()[:]  # we don't want to modify cached original
         for attr in attrlist: citationlist.extend(attr.get_citation_list())
         # BUG: it seems that attribute references are given by both ref.get_citation_list and attr.get_citation_list
         jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
@@ -3671,7 +3671,7 @@ class DynamicWebReport(Report):
         if (bkref_class is not None):
             self.bkref_dict[_Media][media_handle].add((bkref_class, bkref_handle, media_ref))
             # Citations for media reference, media reference attributes
-            citation_list = media_ref.get_citation_list()
+            citation_list = media_ref.get_citation_list()[:]  # we don't want to modify cached original
             for attr in media_ref.get_attribute_list():
                 citation_list.extend(attr.get_citation_list())
             for citation_handle in citation_list:
@@ -3683,7 +3683,7 @@ class DynamicWebReport(Report):
         media_name = media.get_description() or media.get_path() or ""
         self.obj_dict[_Media][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[_Media])]
         # Citations for media, media attributes
-        citation_list = media.get_citation_list()
+        citation_list = media.get_citation_list()[:]  # we don't want to modify cached original
         for attr in media.get_attribute_list():
             citation_list.extend(attr.get_citation_list())
         for citation_handle in citation_list:
