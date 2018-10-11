@@ -13,7 +13,7 @@
 #  les médias : journaux, tv
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
-#
+#  place : lieu
 #
 # Laurent Protois <laurent.protois@free.fr>, 2001-2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
@@ -38,20 +38,20 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
 msgid "Place Cleanup"
-msgstr "Placez Nettoyage"
+msgstr "Nettoyage des lieux"
 
 #: PlaceCleanup/placecleanup.gpr.py:29
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
-msgstr "Placez Nettoyage Gramplet aide à fusionner des lieux, ainsi qu'à "
+msgstr "Le Gramplet \"Nettoyage des lieux\" aide à fusionner des lieux, ainsi qu'à "
 "compléter des emplacements à partir de la base de données Web GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade.h:65
 msgid ""
 "No\n"
 "Matches"
-msgstr "Non\nrésultats"
+msgstr "Aucun\nrésultat"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade.h:54
 msgid "Find"
@@ -94,7 +94,7 @@ msgid ""
 "%s\n"
 "GeoNames\n"
 "Matches"
-msgstr "%s\nGeoNames\nrésultats"
+msgstr "%s\nRésultats\nGeoNames"
 
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
@@ -107,8 +107,8 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr "Seulement 10 résultats sont affichées.\n"
-"Pour afficher des résultats supplémentaires, appuyez à nouveau sur le bouton de recherche.\n"
-"Ou essayons de modifier le titre avec plus de détails, comme un pays."
+"Pour afficher des résultats supplémentaires, appuyez à nouveau sur le bouton "
+"de recherche ou essayez de modifier le titre avec plus de détails, comme un pays."
 
 #: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
 #: PlaceCleanup/placecleanup.py:787
@@ -135,8 +135,8 @@ msgstr "Cycle de lieu détecté"
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
-msgstr "L'un des endroits que vous fusionnez entoure l'autre!\n"
-"Veuillez choisir un autre endroit."
+msgstr "L'un des lieux que vous fusionnez inclut l'autre!\n"
+"Veuillez choisir un autre lieu."
 
 #: PlaceCleanup/placecleanup.py:740
 #, python-format
@@ -192,14 +192,14 @@ msgstr "Ajouter Souce/Repo/Note (%s)"
 
 #: PlaceCleanup/placecleanup.py:1062
 msgid "This Place is not used!"
-msgstr "Cet endroit n'est pas utilisé!"
+msgstr "Ce lieu n'est pas utilisé!"
 
 #: PlaceCleanup/placecleanup.py:1063
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
-msgstr "Vous devez le supprimer ou, s'il contient des notes utiles ou d'autres "
-"données, utilisez la fonction de recherche pour le fusionner dans un emplacement valide."
+msgstr "Vous devriez le supprimer ou, s'il contient des notes utiles ou d'autres "
+"données, utilisez la fonction de \"Trouver\" pour le fusionner dans un emplacement valide."
 
 #: PlaceCleanup/placecleanup.glade.h:1
 msgid "City, County, State, Country"
@@ -224,7 +224,7 @@ msgstr "Le nom principal actuel."
 
 #: PlaceCleanup/placecleanup.glade.h:6
 msgid "The postal code for the place, if any."
-msgstr "Le code postal de l'endroit, le cas échéant."
+msgstr "Le code postal du lieu, le cas échéant."
 
 # trunk
 #: PlaceCleanup/placecleanup.glade.h:7
@@ -253,7 +253,7 @@ msgstr "Latitude"
 
 #: PlaceCleanup/placecleanup.glade.h:13
 msgid "Keep Original"
-msgstr "Conserver original"
+msgstr "Original"
 
 #: PlaceCleanup/placecleanup.glade.h:14
 msgid "Check this box if you want to keep the original Latitude and Longitude."
@@ -276,7 +276,8 @@ msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
 "place' status ."
-msgstr "Noms alternatifs\nSélectionnez une ou plusieurs lignes et appuyez sur"
+msgstr "Noms alternatifs\n"
+"Sélectionnez une ou plusieurs lignes et appuyez sur"
 " le bouton 'Conserver' pour faire basculer le statut 'inclure dans'."
 
 #: PlaceCleanup/placecleanup.glade.h:20
@@ -290,7 +291,7 @@ msgstr "Nom"
 
 #: PlaceCleanup/placecleanup.glade.h:22
 msgid "Lang"
-msgstr "Lang"
+msgstr "Langue"
 
 #: PlaceCleanup/placecleanup.glade.h:23
 msgid "Date"
@@ -317,7 +318,7 @@ msgstr "Sélectionnez une ligne et utilisez ce bouton pour que la ligne devienne
 
 #: PlaceCleanup/placecleanup.glade.h:28
 msgid "Discard"
-msgstr "Jeter"
+msgstr "Ignorer"
 
 #: PlaceCleanup/placecleanup.glade.h:29
 msgid ""
@@ -330,7 +331,7 @@ msgstr "Annulez l'opération, aucune modification n'est apportée à votre lieu.
 
 #: PlaceCleanup/placecleanup.glade.h:31
 msgid "Store the values in your Place."
-msgstr "Enregistrez les valeurs de votre place."
+msgstr "Enregistrez les valeurs dans votre lieu."
 
 #: PlaceCleanup/placecleanup.glade.h:32
 msgid "Ok"
@@ -342,19 +343,19 @@ msgstr "Aide"
 
 #: PlaceCleanup/placecleanup.glade.h:34
 msgid "Keep Web Links"
-msgstr "Garder des liens Web"
+msgstr "Garder les liens Web"
 
 #: PlaceCleanup/placecleanup.glade.h:35
 msgid "Puts web links (typically wikipedia) into your place."
-msgstr "Met des liens Web (généralement des Wikipédia) à votre place."
+msgstr "Ajouter des liens Web (généralement issus de Wikipédia) au lieu."
 
 #: PlaceCleanup/placecleanup.glade.h:36
 msgid "Add citation and source to Place"
-msgstr "Ajouter une citation et une source à la place"
+msgstr "Ajouter une citation et une source au lieu"
 
 #: PlaceCleanup/placecleanup.glade.h:37
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "Cela ajoute une citation à votre place, citant GeoNames."
+msgstr "Cela ajoute une citation à votre lieu, citant GeoNames."
 
 #: PlaceCleanup/placecleanup.glade.h:38
 msgid "GeoNames User ID"
@@ -366,7 +367,7 @@ msgstr "Entrez votre ID utilisateur Geonames ici."
 
 #: PlaceCleanup/placecleanup.glade.h:40
 msgid "Alternative Names Languages to keep"
-msgstr "Noms alternatifs Langues à conserver"
+msgstr "Langues à conserver pour les noms alternatifs"
 
 #: PlaceCleanup/placecleanup.glade.h:41
 msgid ""
@@ -377,13 +378,13 @@ msgid ""
 "If you often see an un-checked name in a specific language you want, add the "
 "language code here."
 msgstr "Entrez les codes à deux ou trois lettres pour les langues que vous "
-"souhaitez conserver, séparés par des espaces. \nPar exemple \"en fr ru\". \n"
+"souhaitez conserver, séparés par des espaces. \nPar exemple \"fr en ru\". \n"
 "Ces langues seront initialement cochées sur l'affichage du résultat de Noms. \n"
 "Si vous voyez souvent un nom non inclus dans une langue spécifique, ajoutez le code de langue ici."
 
 #: PlaceCleanup/placecleanup.glade.h:45
 msgid "Currently Enclosed Places"
-msgstr "Lieux actuellement inclus"
+msgstr "Hiérarchie des lieux"
 
 #: PlaceCleanup/placecleanup.glade.h:46
 msgid ""
@@ -393,19 +394,19 @@ msgid ""
 "If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
-msgstr "Lorsque vous nettoyez un endroit déjà entouré, cela affecte ce qui est fait.\n"
-"Si '<b>Conserver le inclus actuel</b>' est sélectionné, aucune modification n'est apportée à l'emplacement. \n"
-"Si '<b>Remplacer par l'inclusion fournie par GeoNames</b>' "
-"est sélectionnée, l'inclusion de lieu est remplacée par l'inclusion fournie par GeoNames. "
-"Cela peut entraîner des places inutilisées dans votre base de données."
+msgstr "Lorsque vous nettoyez un lieu faisant partie d'une hiérarchie, cela peut affecter cette dernière.\n"
+"Si '<b>Conserver la hiérarchie actuelle</b>' est sélectionné, aucune modification n'est apportée à l'emplacement. \n"
+"Si '<b>Remplacer par la hiérarchie fournie par GeoNames</b>' "
+"est sélectionné, la hiérarchie de lieu est remplacée par la hiérarchie fournie par GeoNames. "
+"Cela peut entraîner des lieux inutilisés dans votre base de données."
 
 #: PlaceCleanup/placecleanup.glade.h:49
 msgid "Keep current Enclosure"
-msgstr "Conserver l'inclusion actuelle"
+msgstr "Conserver la hiérarchie actuelle"
 
 #: PlaceCleanup/placecleanup.glade.h:50
 msgid "Replace with GeoNames Enclosure"
-msgstr "Remplacer par l'inclusion fournie par GeoNames"
+msgstr "Remplacer par la hiérarchie fournie par GeoNames"
 
 #: PlaceCleanup/placecleanup.glade.h:51
 msgid "Title"
@@ -417,7 +418,7 @@ msgid ""
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr "Titre de la position actuelle. \n"
-"Vous pouvez modifier ceci pour vous aider à trouver d’autres endroits, "
+"Vous pouvez modifier ceci pour vous aider à trouver d’autres lieux, "
 "en particulier pour réduire le nombre de résultats."
 
 #: PlaceCleanup/placecleanup.glade.h:55
@@ -447,11 +448,11 @@ msgstr "Fractionner le titre, modifier manuellement et joindre le niveau suivant
 
 #: PlaceCleanup/placecleanup.glade.h:60
 msgid "Next Place"
-msgstr "Place suivante"
+msgstr "Lieu suivant"
 
 #: PlaceCleanup/placecleanup.glade.h:61
 msgid "Find an incomplete place."
-msgstr "Trouvez un endroit incomplet."
+msgstr "Trouvez un lieu incomplet."
 
 #: PlaceCleanup/placecleanup.glade.h:62
 msgid "Set preferences"
@@ -459,7 +460,7 @@ msgstr "Définir les préférences"
 
 #: PlaceCleanup/placecleanup.glade.h:63
 msgid "Select one of these places to continue the cleanup process."
-msgstr "Sélectionnez l'un de ces endroits pour continuer le processus de nettoyage."
+msgstr "Sélectionnez l'un de ces lieux pour continuer le processus de nettoyage."
 
 #: PlaceCleanup/placecleanup.glade.h:64
 msgid "Search result places"
@@ -469,27 +470,27 @@ msgstr "Résultats de la recherche"
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
-msgstr "Vérification de la 'Peuplé' case provoque la GeoNames recherche "
-"d'inclure les 'lieux habités', lieux où les gens vivent et travaillent."
+msgstr "En cochant la case \"Habité\", la recherche GeoNames inclut les "
+"lieux habités (ville, village...)."
 
 #: PlaceCleanup/placecleanup.glade.h:68
 msgid "Populated"
-msgstr "Peuplé"
+msgstr "Habité"
 
 #: PlaceCleanup/placecleanup.glade.h:69
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
-msgstr "En cochant la case 'Admin', la recherche GeoNames inclut les "
-"subdivisions administratives dans la recherche (pays, états, comtés, etc.)."
+msgstr "En cochant la case \"Admin\", la recherche GeoNames inclut les "
+"sub-divisions administratives (pays, région, arrondissement...)."
 
 #: PlaceCleanup/placecleanup.glade.h:70
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
-msgstr "Si vous cochez la case 'Spot', la recherche GeoNames inclut une grande"
-" variété d'autres endroits dans la recherche (églises, cimetières, bâtiments, etc.)."
+msgstr "En cochant la case \"Lieu remarquable\", la recherche GeoNames inclut "
+"une variété de lieux remarquables (église, cimetière, bureau de poste...)."
 
 #: PlaceCleanup/placecleanup.glade.h:71
 msgid "Admin"
@@ -497,5 +498,5 @@ msgstr "Admin"
 
 #: PlaceCleanup/placecleanup.glade.h:72
 msgid "Spot"
-msgstr "Spot"
+msgstr "Lieu\nremarquable"
 
