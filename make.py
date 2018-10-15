@@ -168,13 +168,14 @@ elif command == "init":
         mkdir("%(addon)s/locale")
         system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
         if sys.argv[3] == "Form":
-            system('''intltool-extract --type=gettext/xml "%(addon)s/be.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/ca.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/dk.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/fr.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/gb.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/pl.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/us.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_be.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_ca.xml"''')
+            # char *s = N_("Titel, Embed, Forretning, Håndværk");
+            #system('''intltool-extract --type=gettext/xml "%(addon)s/form_dk.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_fr.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_gb.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_pl.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_us.xml"''')
         else:
             system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
         system('''xgettext --language=Python --keyword=_ --keyword=N_'''
