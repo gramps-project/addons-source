@@ -167,7 +167,16 @@ elif command == "init":
         mkdir(r("%(addon)s/po"))
         mkdir("%(addon)s/locale")
         system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
-        system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
+        if sys.argv[3] == "Form":
+            system('''intltool-extract --type=gettext/xml "%(addon)s/be.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/ca.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/dk.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/fr.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/gb.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/pl.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/pl.xml"''')
+        else:
+            system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
         system('''xgettext --language=Python --keyword=_ --keyword=N_'''
                ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
         system('''xgettext -j --keyword=_ --keyword=N_'''
