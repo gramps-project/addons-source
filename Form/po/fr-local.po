@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-15 17:07+0200\n"
+"POT-Creation-Date: 2018-10-15 17:19+0200\n"
 "PO-Revision-Date: 2017-08-01 12:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -105,8 +105,8 @@ msgstr "Sélectionner l'individu"
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
 #: Form/editform.py:705 Form/editform.py:707 Form/editform.py:776
 #: Form/editform.py:903 Form/editform.py:1060 Form/form_be.xml.h:1
-#: Form/form_ca.xml.h:9 Form/form_fr.xml.h:1 Form/form_gb.xml.h:6
-#: Form/form_pl.xml.h:1 Form/form_us.xml.h:8
+#: Form/form_ca.xml.h:9 Form/form_dk.xml.h:9 Form/form_fr.xml.h:1
+#: Form/form_gb.xml.h:6 Form/form_pl.xml.h:1 Form/form_us.xml.h:8
 msgid "Name"
 msgstr "Nom "
 
@@ -154,8 +154,8 @@ msgstr "Date "
 
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
 # /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
-#: Form/formgramplet.py:117 Form/form_ca.xml.h:404 Form/form_gb.xml.h:68
-#: Form/form_us.xml.h:488
+#: Form/formgramplet.py:117 Form/form_ca.xml.h:404 Form/form_dk.xml.h:24
+#: Form/form_gb.xml.h:68 Form/form_us.xml.h:488
 msgid "Place"
 msgstr "Lieu "
 
@@ -189,7 +189,8 @@ msgid "Township"
 msgstr "Bidonville"
 
 # comté (Canada)
-#: Form/form_ca.xml.h:4 Form/form_gb.xml.h:106 Form/form_us.xml.h:447
+#: Form/form_ca.xml.h:4 Form/form_dk.xml.h:1 Form/form_gb.xml.h:106
+#: Form/form_us.xml.h:447
 msgid "County"
 msgstr "Comté (Départ.)"
 
@@ -215,8 +216,8 @@ msgstr "Ligne"
 msgid "1. Names of Inmates"
 msgstr "1. Noms des pensionnaires"
 
-#: Form/form_ca.xml.h:11 Form/form_fr.xml.h:4 Form/form_gb.xml.h:8
-#: Form/form_us.xml.h:134
+#: Form/form_ca.xml.h:11 Form/form_dk.xml.h:16 Form/form_fr.xml.h:4
+#: Form/form_gb.xml.h:8 Form/form_us.xml.h:134
 msgid "Occupation"
 msgstr "Profession"
 
@@ -232,7 +233,8 @@ msgstr "Lieu de naissance"
 msgid "3. Place of Birth"
 msgstr "3. Lieu de naissance"
 
-#: Form/form_ca.xml.h:15 Form/form_fr.xml.h:17 Form/form_gb.xml.h:111
+#: Form/form_ca.xml.h:15 Form/form_dk.xml.h:22 Form/form_fr.xml.h:17
+#: Form/form_gb.xml.h:111
 msgid "Religion"
 msgstr "Religion"
 
@@ -248,8 +250,8 @@ msgstr "Résidence"
 msgid "5. Residence if Outside of Limits"
 msgstr "5. Résidence si hors des limites"
 
-#: Form/form_ca.xml.h:19 Form/form_fr.xml.h:9 Form/form_gb.xml.h:14
-#: Form/form_pl.xml.h:7 Form/form_us.xml.h:131
+#: Form/form_ca.xml.h:19 Form/form_dk.xml.h:12 Form/form_fr.xml.h:9
+#: Form/form_gb.xml.h:14 Form/form_pl.xml.h:7 Form/form_us.xml.h:131
 msgid "Age"
 msgstr "Âge"
 
@@ -1435,8 +1437,8 @@ msgstr "8. Âge"
 msgid "9. Married or Widowed"
 msgstr "9. Marié(e) ou veuf(ve)"
 
-#: Form/form_ca.xml.h:312 Form/form_fr.xml.h:5 Form/form_gb.xml.h:24
-#: Form/form_us.xml.h:759
+#: Form/form_ca.xml.h:312 Form/form_dk.xml.h:14 Form/form_fr.xml.h:5
+#: Form/form_gb.xml.h:24 Form/form_us.xml.h:759
 msgid "Relation"
 msgstr "Relation"
 
@@ -2560,21 +2562,230 @@ msgstr "Lieu de l'événement"
 msgid "26. State where person is employed"
 msgstr ""
 
+#: Form/form_dk.xml.h:2
+msgid "Amt"
+msgstr ""
+
+#: Form/form_dk.xml.h:3
+msgid "Town or City"
+msgstr ""
+
+#: Form/form_dk.xml.h:4
+msgid "Herred eller By"
+msgstr ""
+
+#: Form/form_dk.xml.h:5 Form/form_gb.xml.h:67
+msgid "Parish"
+msgstr "Paroisse"
+
+#: Form/form_dk.xml.h:6
+msgid "Sogn"
+msgstr ""
+
+#: Form/form_dk.xml.h:7 Form/form_gb.xml.h:109 Form/form_us.xml.h:757
+msgid "Street"
+msgstr "Rue"
+
+#: Form/form_dk.xml.h:8
+msgid "Gade"
+msgstr ""
+
+#: Form/form_dk.xml.h:10 Form/form_fr.xml.h:20 Form/form_gb.xml.h:15
+#: Form/form_us.xml.h:856
+msgid "Condition"
+msgstr "Statut familial"
+
+#: Form/form_dk.xml.h:11
+msgid "Gift"
+msgstr ""
+
+#: Form/form_dk.xml.h:13
+msgid "Alder"
+msgstr ""
+
+#: Form/form_dk.xml.h:15
+msgid "Stilling i familien"
+msgstr ""
+
+#: Form/form_dk.xml.h:17
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr ""
+
+#: Form/form_dk.xml.h:18
+msgid "Stilling, embede eller erhverv"
+msgstr ""
+
+#: Form/form_dk.xml.h:19 Form/form_fr.xml.h:3 Form/form_gb.xml.h:20
+msgid "Where Born"
+msgstr "Lieu de naissance"
+
+#: Form/form_dk.xml.h:20
+msgid "Fødested"
+msgstr ""
+
+#: Form/form_dk.xml.h:21
+msgid "Erhverv"
+msgstr ""
+
+#: Form/form_dk.xml.h:23
+msgid "Trossamfund"
+msgstr ""
+
+#: Form/form_dk.xml.h:25
+msgid "Sted"
+msgstr ""
+
+#: Form/form_dk.xml.h:26 Form/form_fr.xml.h:8
+msgid "Comments"
+msgstr "Commentaires"
+
+#: Form/form_dk.xml.h:27
+msgid "Bemærkninger"
+msgstr ""
+
+#: Form/form_dk.xml.h:28
+msgid "Place of Work"
+msgstr ""
+
+#: Form/form_dk.xml.h:29
+msgid "Arbejdssted"
+msgstr ""
+
+#: Form/form_dk.xml.h:30 Form/form_us.xml.h:479
+msgid "Date of Birth"
+msgstr ""
+
+#: Form/form_dk.xml.h:31
+msgid "Fødselsdato"
+msgstr ""
+
+#: Form/form_dk.xml.h:32
+msgid "Years at current residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:33
+msgid "År tilflyttet"
+msgstr ""
+
+#: Form/form_dk.xml.h:34
+msgid "Previous residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:35
+msgid "Tilflyttet fra"
+msgstr ""
+
+#: Form/form_dk.xml.h:36 Form/form_us.xml.h:1043
+msgid "Year married"
+msgstr ""
+
+#: Form/form_dk.xml.h:37
+msgid "År gift"
+msgstr ""
+
+#: Form/form_dk.xml.h:38 Form/form_gb.xml.h:55
+msgid "Children Living"
+msgstr "Enfants vivants"
+
+#: Form/form_dk.xml.h:39
+msgid "Levende børn"
+msgstr ""
+
+#: Form/form_dk.xml.h:40
+msgid "Children Dead"
+msgstr ""
+
+#: Form/form_dk.xml.h:41
+msgid "Døde børn"
+msgstr ""
+
+#: Form/form_dk.xml.h:42
+msgid "Køn"
+msgstr ""
+
+#: Form/form_dk.xml.h:43
+msgid "Year stayed in parish"
+msgstr ""
+
+#: Form/form_dk.xml.h:44
+msgid "Hvilket aar taget ophold i sognet"
+msgstr ""
+
+#: Form/form_dk.xml.h:45
+msgid "Previous Residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:46
+msgid "Sidste bopæl inden tilflytning"
+msgstr ""
+
+#: Form/form_dk.xml.h:47
+msgid "Bemærkning"
+msgstr ""
+
+#: Form/form_dk.xml.h:48
+msgid "Income"
+msgstr ""
+
+#: Form/form_dk.xml.h:49
+msgid "Indkomst"
+msgstr ""
+
+#: Form/form_dk.xml.h:50
+msgid "Assets"
+msgstr ""
+
+#: Form/form_dk.xml.h:51
+msgid "Formue"
+msgstr ""
+
+#: Form/form_dk.xml.h:52
+msgid "State Tax"
+msgstr ""
+
+#: Form/form_dk.xml.h:53
+msgid "Statsskat"
+msgstr ""
+
+#: Form/form_dk.xml.h:54
+msgid "Council"
+msgstr ""
+
+#: Form/form_dk.xml.h:55
+msgid "Kommuneskat"
+msgstr ""
+
+#: Form/form_dk.xml.h:56
+msgid "Residence on 5 Nov 1924"
+msgstr ""
+
+#: Form/form_dk.xml.h:57
+msgid "Bopæl 5 nov 1924"
+msgstr ""
+
+#: Form/form_dk.xml.h:58
+msgid "Stay on 5 Nov 1929"
+msgstr ""
+
+#: Form/form_dk.xml.h:59
+msgid "Ophold 5 nov 1929"
+msgstr ""
+
+#: Form/form_dk.xml.h:60
+msgid "Date Married"
+msgstr ""
+
+#: Form/form_dk.xml.h:61
+msgid "Dato gift"
+msgstr ""
+
 #: Form/form_fr.xml.h:2 Form/form_us.xml.h:1087
 msgid "Date of birth"
 msgstr "Date de naissance"
 
-#: Form/form_fr.xml.h:3 Form/form_gb.xml.h:20
-msgid "Where Born"
-msgstr "Lieu de naissance"
-
 #: Form/form_fr.xml.h:6
 msgid "Status"
 msgstr "Statut"
-
-#: Form/form_fr.xml.h:8
-msgid "Comments"
-msgstr "Commentaires"
 
 #: Form/form_fr.xml.h:10
 msgid "Can read and write"
@@ -2612,10 +2823,6 @@ msgstr "Handicap"
 #: Form/form_fr.xml.h:19
 msgid "Arrived since"
 msgstr "Arrivé depuis"
-
-#: Form/form_fr.xml.h:20 Form/form_gb.xml.h:15 Form/form_us.xml.h:856
-msgid "Condition"
-msgstr "Statut familial"
 
 #: Form/form_gb.xml.h:1 Form/form_us.xml.h:1080
 msgid "Certificate Number"
@@ -2796,10 +3003,6 @@ msgstr "Années de mariage"
 msgid "Children Total"
 msgstr "Total des enfants"
 
-#: Form/form_gb.xml.h:55
-msgid "Children Living"
-msgstr "Enfants vivants"
-
 #: Form/form_gb.xml.h:56
 msgid "Children Died"
 msgstr "Enfants décédés"
@@ -2835,10 +3038,6 @@ msgstr ""
 #: Form/form_gb.xml.h:66
 msgid "Language Spoken"
 msgstr "Langue parlée"
-
-#: Form/form_gb.xml.h:67
-msgid "Parish"
-msgstr "Paroisse"
 
 #: Form/form_gb.xml.h:69
 msgid "GROS Data"
@@ -3000,10 +3199,6 @@ msgstr ""
 #: Form/form_gb.xml.h:108
 msgid "Townland"
 msgstr ""
-
-#: Form/form_gb.xml.h:109 Form/form_us.xml.h:757
-msgid "Street"
-msgstr "Rue"
 
 #: Form/form_gb.xml.h:110
 msgid "No. on Form B"
@@ -4995,10 +5190,6 @@ msgstr ""
 
 #: Form/form_us.xml.h:478
 msgid "Post Office Address"
-msgstr ""
-
-#: Form/form_us.xml.h:479
-msgid "Date of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:480
@@ -7186,10 +7377,6 @@ msgstr "Province (Région)"
 
 #: Form/form_us.xml.h:1042
 msgid "Maiden name of wife"
-msgstr ""
-
-#: Form/form_us.xml.h:1043
-msgid "Year married"
 msgstr ""
 
 #: Form/form_us.xml.h:1044
