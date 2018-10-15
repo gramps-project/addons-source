@@ -170,8 +170,7 @@ elif command == "init":
         if sys.argv[3] == "Form":
             system('''intltool-extract --type=gettext/xml "%(addon)s/form_be.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/form_ca.xml"''')
-            # char *s = N_("Titel, Embed, Forretning, Håndværk");
-            #system('''intltool-extract --type=gettext/xml "%(addon)s/form_dk.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/form_dk.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/form_fr.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/form_gb.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/form_pl.xml"''')
@@ -184,7 +183,7 @@ elif command == "init":
                ''' -o "%(addon)s/po/template.pot" '''
                '''"%(addon)s"/*.glade.h''')
         system('''xgettext -j --keyword=_ --keyword=N_'''
-               ''' -o "%(addon)s/po/template.pot" '''
+               ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" '''
                '''"%(addon)s"/*.xml.h''')
         system('''sed -i 's/charset=CHARSET/charset=UTF-8/' '''
                '''"%(addon)s/po/template.pot"''')
