@@ -174,7 +174,7 @@ elif command == "init":
             system('''intltool-extract --type=gettext/xml "%(addon)s/fr.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/gb.xml"''')
             system('''intltool-extract --type=gettext/xml "%(addon)s/pl.xml"''')
-            system('''intltool-extract --type=gettext/xml "%(addon)s/pl.xml"''')
+            system('''intltool-extract --type=gettext/xml "%(addon)s/us.xml"''')
         else:
             system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
         system('''xgettext --language=Python --keyword=_ --keyword=N_'''
