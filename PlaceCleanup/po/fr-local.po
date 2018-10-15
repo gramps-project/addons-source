@@ -21,12 +21,13 @@
 # Frederic Chateaux, 2007-2008.
 # Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
 # Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 18:45+0200\n"
-"PO-Revision-Date: 2018-10-14 18:53+0100\n"
+"POT-Creation-Date: 2018-10-15 16:03+0200\n"
+"PO-Revision-Date: 2018-10-15 16:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -48,7 +49,7 @@ msgstr ""
 "Le Gramplet \"Nettoyage des lieux\" aide à fusionner des lieux, ainsi qu'à "
 "compléter des emplacements à partir de la base de données Web GeoNames"
 
-#: PlaceCleanup/placecleanup.py:265 PlaceCleanup/placecleanup.glade.h:65
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade.h:65
 msgid ""
 "No\n"
 "Matches"
@@ -56,11 +57,11 @@ msgstr ""
 "Aucun\n"
 "résultat"
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade.h:54
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade.h:54
 msgid "Find"
 msgstr "Trouver"
 
-#: PlaceCleanup/placecleanup.py:292
+#: PlaceCleanup/placecleanup.py:293
 #, python-format
 msgid ""
 "%s\n"
@@ -71,23 +72,23 @@ msgstr ""
 "Local\n"
 "résultats"
 
-#: PlaceCleanup/placecleanup.py:294
+#: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
 msgstr "Trouver GeoNames"
 
-#: PlaceCleanup/placecleanup.py:302
+#: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
 msgstr "Besoin de définir l'identifiant GeoNames"
 
-#: PlaceCleanup/placecleanup.py:303
+#: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
 msgstr "Utilisez le bouton Aide pour plus d'informations"
 
-#: PlaceCleanup/placecleanup.py:335
+#: PlaceCleanup/placecleanup.py:336
 msgid "No matches were found"
 msgstr "Aucune correspondance n'a été trouvée"
 
-#: PlaceCleanup/placecleanup.py:336
+#: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
@@ -95,7 +96,7 @@ msgstr ""
 "Essayez de changer le titre ou utilisez le bouton \"Modifier\" pour terminer "
 "ce niveau manuellement."
 
-#: PlaceCleanup/placecleanup.py:346
+#: PlaceCleanup/placecleanup.py:347
 #, python-format
 msgid ""
 "%s\n"
@@ -106,12 +107,12 @@ msgstr ""
 "Résultats\n"
 "GeoNames"
 
-#: PlaceCleanup/placecleanup.py:352
+#: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
 msgstr "%s résultats ont été trouvées"
 
-#: PlaceCleanup/placecleanup.py:353
+#: PlaceCleanup/placecleanup.py:354
 msgid ""
 "Only 10 matches are shown.\n"
 "To see additional results, press the search button again.\n"
@@ -122,28 +123,28 @@ msgstr ""
 "de recherche ou essayez de modifier le titre avec plus de détails, comme un "
 "pays."
 
-#: PlaceCleanup/placecleanup.py:395 PlaceCleanup/placecleanup.py:397
-#: PlaceCleanup/placecleanup.py:786
+#: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
+#: PlaceCleanup/placecleanup.py:787
 msgid ", "
 msgstr ", "
 
-#: PlaceCleanup/placecleanup.py:417 PlaceCleanup/placecleanup.py:422
+#: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
 msgid "Problem getting data from web"
 msgstr "Problème pour obtenir des données du Web"
 
-#: PlaceCleanup/placecleanup.py:423
+#: PlaceCleanup/placecleanup.py:424
 msgid "Web request Timeout, you can try again..."
 msgstr "Demande Web Timeout, vous pouvez réessayer ..."
 
-#: PlaceCleanup/placecleanup.py:431
+#: PlaceCleanup/placecleanup.py:432
 msgid "Problem getting data from GeoNames"
 msgstr "Problème pour obtenir des données de GeoNames"
 
-#: PlaceCleanup/placecleanup.py:476 PlaceCleanup/placecleanup.py:747
+#: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
 msgid "Place cycle detected"
 msgstr "Cycle de lieu détecté"
 
-#: PlaceCleanup/placecleanup.py:477
+#: PlaceCleanup/placecleanup.py:478
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
@@ -151,12 +152,12 @@ msgstr ""
 "L'un des lieux que vous fusionnez inclut l'autre!\n"
 "Veuillez choisir un autre lieu."
 
-#: PlaceCleanup/placecleanup.py:739
+#: PlaceCleanup/placecleanup.py:740
 #, python-format
 msgid "Add Place (%s)"
 msgstr "Ajouter le lieu (%s)"
 
-#: PlaceCleanup/placecleanup.py:748
+#: PlaceCleanup/placecleanup.py:749
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
@@ -165,52 +166,52 @@ msgstr ""
 "Veuillez annuler et choisir un autre lieu."
 
 # trunk
-#: PlaceCleanup/placecleanup.py:771
+#: PlaceCleanup/placecleanup.py:772
 #, python-format
 msgid "Add Citation (%s)"
 msgstr "Ajout de la citation (%s)"
 
-#: PlaceCleanup/placecleanup.py:776
+#: PlaceCleanup/placecleanup.py:777
 #, python-format
 msgid "Edit Place (%s)"
 msgstr "Éditer le lieu (%s)"
 
-#: PlaceCleanup/placecleanup.py:932
+#: PlaceCleanup/placecleanup.py:933
 msgid "GeoNames web site"
 msgstr "Le site web GeoNames"
 
-#: PlaceCleanup/placecleanup.py:937
+#: PlaceCleanup/placecleanup.py:938
 msgid "GeoNames author"
 msgstr "Auteur de GeoNames"
 
-#: PlaceCleanup/placecleanup.py:942
+#: PlaceCleanup/placecleanup.py:943
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames a été fondé par Marc Wick. Vous pouvez le joindre à "
 
-#: PlaceCleanup/placecleanup.py:945
+#: PlaceCleanup/placecleanup.py:946
 msgid ""
-"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 M&auml;"
-"nnedorf, Switzerland.\n"
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
 "GeoNames est un projet de Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
-"Switzerland.\n"
-"Ce produit est sous une licence "
+"Suisse. \n"
+"Ce travail est autorisé sous un "
 
-#: PlaceCleanup/placecleanup.py:948
+#: PlaceCleanup/placecleanup.py:949
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Licence Creative Commons Attribution 3.0"
 
-#: PlaceCleanup/placecleanup.py:960
+#: PlaceCleanup/placecleanup.py:961
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Ajouter Souce/Repo/Note (%s)"
 
-#: PlaceCleanup/placecleanup.py:1061
+#: PlaceCleanup/placecleanup.py:1062
 msgid "This Place is not used!"
 msgstr "Ce lieu n'est pas utilisé !"
 
-#: PlaceCleanup/placecleanup.py:1062
+#: PlaceCleanup/placecleanup.py:1063
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -549,10 +550,10 @@ msgstr ""
 "remarquable"
 
 #~ msgid ""
-#~ "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
-#~ "Switzerland.\n"
+#~ "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 M&auml;"
+#~ "nnedorf, Switzerland.\n"
 #~ "This work is licensed under a "
 #~ msgstr ""
 #~ "GeoNames est un projet de Unxos GmbH, Weingartenstrasse 8, 8708 "
-#~ "Männedorf, Suisse. \n"
-#~ "Ce travail est autorisé sous un "
+#~ "Männedorf, Switzerland.\n"
+#~ "Ce produit est sous une licence "

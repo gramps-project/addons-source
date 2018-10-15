@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -943,7 +944,7 @@ class PlaceCleanup(Gramplet):
         note_txt += StyledText('marc@geonames.org' + '\n')
         note_txt += StyledText(_(
             'GeoNames is a project of Unxos GmbH, Weingartenstrasse 8,'
-            ' 8708 M&auml;nnedorf, Switzerland.\nThis work is licensed under a '))
+            ' 8708 Männedorf, Switzerland.\nThis work is licensed under a '))
         note_txt += linkst(
             _('Creative Commons Attribution 3.0 License'),
             'https://creativecommons.org/licenses/by/3.0/legalcode')
