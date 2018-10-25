@@ -1459,10 +1459,13 @@ class GraphWidget(object):
         name.add_surname(Surname())
         name.set_primary_surname(0)
         family = self.dbstate.db.get_family_from_handle(family_handle)
-        father = self.dbstate.db.get_person_from_handle(
-                                    family.get_father_handle())
-        if father:
-            preset_name(father, name)
+        # try to get father
+        father_handle = family.get_father_handle()
+        if father_handle:
+            father = self.dbstate.db.get_person_from_handle(father_handle)
+            if father:
+                preset_name(father, name)
+
         person.set_primary_name(name)
         try:
             EditPerson(self.dbstate, self.uistate, [], person,
