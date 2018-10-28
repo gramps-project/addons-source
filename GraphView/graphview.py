@@ -159,19 +159,15 @@ class GraphView(NavigationView):
         # dict {handle, tooltip_str} of tooltips in markup format
         self.tags_tooltips = {}
 
-        self.additional_uis.append(self.additional_ui())
+        self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
 
     def define_print_actions(self):
         """
         Associate the print button to the PrintView action.
         """
-        self._add_action('PrintView', 'document-print', _("_Print..."),
-                         accel="<PRIMARY>P",
-                         tip=_("Save the dot file for a later print.\n"
-                               "This will save a .gv file and a svg file.\n"
-                               "You must select a .gv file"),
-                         callback=self.printview)
+        self._add_action('PrintView', self.printview, "<PRIMARY>P")
+        self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
 
     def _connect_db_signals(self):
         """
@@ -223,39 +219,96 @@ class GraphView(NavigationView):
         """
         pass
 
-    def additional_ui(self):
-        """
-        Specifies the UIManager XML code that defines the menus and buttons
-        associated with the interface.
-        """
-        return '''<ui>
-          <menubar name="MenuBar">
-            <menu action="GoMenu">
-              <placeholder name="CommonGo">
-                <menuitem action="Back"/>
-                <menuitem action="Forward"/>
-                <separator/>
-                <menuitem action="HomePerson"/>
-                <separator/>
-              </placeholder>
-            </menu>
-            <menu action="EditMenu">
-              <placeholder name="CommonEdit">
-                <menuitem action="PrintView"/>
-              </placeholder>
-            </menu>
-          </menubar>
-          <toolbar name="ToolBar">
-            <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>
-              <toolitem action="Forward"/>
-              <toolitem action="HomePerson"/>
-            </placeholder>
-            <placeholder name="CommonEdit">
-              <toolitem action="PrintView"/>
-            </placeholder>
-          </toolbar>
-        </ui>'''
+    additional_ui = [  # Defines the UI string for UIManager
+        '''
+      <placeholder id="CommonGo">
+      <section>
+        <item>
+          <attribute name="action">win.Back</attribute>
+          <attribute name="label" translatable="yes">_Back</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.Forward</attribute>
+          <attribute name="label" translatable="yes">_Forward</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="action">win.HomePerson</attribute>
+          <attribute name="label" translatable="yes">_Home</attribute>
+        </item>
+      </section>
+      </placeholder>
+''',
+        '''
+      <section id='CommonEdit' groups='RW'>
+        <item>
+          <attribute name="action">win.PrintView</attribute>
+          <attribute name="label" translatable="yes">_Print...</attribute>
+        </item>
+      </section>
+''',  # Following are the Toolbar items
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+''',
+        '''
+    <placeholder id='BarCommonEdit'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">document-print</property>
+        <property name="action-name">win.PrintView</property>
+        <property name="tooltip_text" translatable="yes">"Save the dot file '''
+        '''for a later print.\nThis will save a .gv file and a svg file.\n'''
+        '''You must select a .gv file"</property>
+        <property name="label" translatable="yes">_Print...</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+''']
 
     def navigation_type(self):
         """
@@ -503,7 +556,7 @@ class GraphView(NavigationView):
     # Printing functionalities
     #
     #-------------------------------------------------------------------------
-    def printview(self, obj):
+    def printview(self, *obj):
         """
         Save the dot file for a later printing with an appropriate tool.
         """
@@ -511,12 +564,11 @@ class GraphView(NavigationView):
         filter1 = Gtk.FileFilter()
         filter1.set_name("dot files")
         filter1.add_pattern("*.gv")
-        dot = Gtk.FileChooserDialog(
-                                _("Select a dot file name"),
-                                action=Gtk.FileChooserAction.SAVE,
-                                buttons=(_('_Cancel'), Gtk.ResponseType.CANCEL,
-                                         _('_Apply'), Gtk.ResponseType.OK),
-                                parent=self.uistate.window)
+        dot = Gtk.FileChooserDialog(title=_("Select a dot file name"),
+                                    action=Gtk.FileChooserAction.SAVE,
+                                    transient_for=self.uistate.window)
+        dot.add_button(_('_Cancel'), Gtk.ResponseType.CANCEL)
+        dot.add_button(_('_Apply'), Gtk.ResponseType.OK)
         mpath = config.get('paths.report-directory')
         dot.set_current_folder(os.path.dirname(mpath))
         dot.set_filter(filter1)
@@ -588,9 +640,11 @@ class GraphWidget(object):
 
         scrolled_win.add(self.canvas)
 
-        self.vbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.VERTICAL)
+        self.vbox = Gtk.Box(homogeneous=False, spacing=4,
+                            orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width(4)
-        hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
+        hbox = Gtk.Box(homogeneous=False, spacing=4,
+                       orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
 
         # add zoom-in button
@@ -640,7 +694,7 @@ class GraphWidget(object):
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        box.pack_start(Gtk.Label('↑'), False, False, 1)
+        box.pack_start(Gtk.Label(label='↑'), False, False, 1)
         self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
         self.ancestors_spinner.set_value(
@@ -649,7 +703,7 @@ class GraphWidget(object):
                                        self.set_ancestors_generations)
         box.pack_start(self.ancestors_spinner, False, False, 1)
 
-        box.pack_start(Gtk.Label('↓'), False, False, 1)
+        box.pack_start(Gtk.Label(label='↓'), False, False, 1)
         self.descendants_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
         self.descendants_spinner.set_value(
@@ -2573,6 +2627,7 @@ class DotGenerator(object):
 
         label = ""
         line_delimiter = '\\n'
+
 
         # If we have an image, then start an HTML table.
         # Remember to close the table afterwards!

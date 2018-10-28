@@ -531,11 +531,6 @@ class HtreePedigreeView(NavigationView):
         NavigationView.__init__(self, _('H-tree Pedigree View'), pdata, dbstate, uistate,
                                 PersonBookmarks, nav_group)
 
-        self.func_list.update({
-            'F2' : self.kb_goto_home,
-            '<PRIMARY>J' : self.jump,
-            })
-
         self.dbstate = dbstate
         self.dbstate.connect('database-changed', self.change_db)
         uistate.connect('nameformat-changed', self.person_rebuild)
@@ -553,7 +548,7 @@ class HtreePedigreeView(NavigationView):
         self.scrolledwindow = None
         self.table = None
 
-        self.additional_uis.append(self.additional_ui())
+        self.additional_uis.append(self.additional_ui)
 
         # Automatic resize
         self.force_size = self._config.get('interface.pedview-tree-size')
@@ -573,10 +568,6 @@ class HtreePedigreeView(NavigationView):
         # Default - not show, for mo fast display hight tree
         self.show_unknown_people = self._config.get(
                                 'interface.pedview-show-unknown-people')
-
-        self.func_list.update({
-            '<PRIMARY>J' : self.jump,
-            })
 
     def get_handle_from_gramps_id(self, gid):
         """
@@ -644,40 +635,91 @@ class HtreePedigreeView(NavigationView):
 
         return self.scrolledwindow
 
-    def additional_ui(self):
-        """
-        Specifies the UIManager XML code that defines the menus and buttons
-        associated with the interface.
-        """
-        return '''<ui>
-          <menubar name="MenuBar">
-            <menu action="GoMenu">
-              <placeholder name="CommonGo">
-                <menuitem action="Back"/>
-                <menuitem action="Forward"/>
-                <separator/>
-                <menuitem action="HomePerson"/>
-                <separator/>
-              </placeholder>
-            </menu>
-            <menu action="EditMenu">
-              <menuitem action="FilterEdit"/>
-            </menu>
-            <menu action="BookMenu">
-              <placeholder name="AddEditBook">
-                <menuitem action="AddBook"/>
-                <menuitem action="EditBook"/>
-              </placeholder>
-            </menu>
-          </menubar>
-          <toolbar name="ToolBar">
-            <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>
-              <toolitem action="Forward"/>
-              <toolitem action="HomePerson"/>
-            </placeholder>
-          </toolbar>
-        </ui>'''
+    additional_ui = [  # Defines the UI string for UIManager
+        '''
+      <placeholder id="CommonGo">
+      <section>
+        <item>
+          <attribute name="action">win.Back</attribute>
+          <attribute name="label" translatable="yes">_Back</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.Forward</attribute>
+          <attribute name="label" translatable="yes">_Forward</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="action">win.HomePerson</attribute>
+          <attribute name="label" translatable="yes">_Home</attribute>
+        </item>
+      </section>
+      </placeholder>
+''',
+        '''
+      <placeholder id='otheredit'>
+        <item>
+          <attribute name="action">win.FilterEdit</attribute>
+          <attribute name="label" translatable="yes">'''
+        '''Person Filter Editor</attribute>
+        </item>
+      </placeholder>
+''',
+        '''
+      <section id="AddEditBook">
+        <item>
+          <attribute name="action">win.AddBook</attribute>
+          <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.EditBook</attribute>
+          <attribute name="label" translatable="no">%s...</attribute>
+        </item>
+      </section>
+''' % _('Organize Bookmarks'),  # Following are the Toolbar items
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+    ''']
 
     def define_actions(self):
         """
@@ -694,10 +736,11 @@ class HtreePedigreeView(NavigationView):
         """
         NavigationView.define_actions(self)
 
-        self._add_action('FilterEdit',  None, _('Person Filter Editor'),
-                        callback=self.cb_filter_editor)
+        self._add_action('FilterEdit',  self.cb_filter_editor)
+        self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
+        self._add_action('F2', self.kb_goto_home, 'F2')
 
-    def cb_filter_editor(self, obj):
+    def cb_filter_editor(self, *obj):
         """
         Display the person filter editor.
         """
@@ -1521,7 +1564,7 @@ class HtreePedigreeView(NavigationView):
         else:
             self.scroll_direction = False
 
-    def kb_goto_home(self):
+    def kb_goto_home(self, *obj):
         """Goto home person from keyboard."""
         self.cb_home(None)
 
