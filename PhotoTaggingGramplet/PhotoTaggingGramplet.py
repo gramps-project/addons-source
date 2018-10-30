@@ -107,7 +107,6 @@ def save_config():
 #
 #-------------------------------------------------------------------------
 
-DETECTED_REGION_PADDING = 10
 THUMBNAIL_IMAGE_SIZE = (50, 50)
 
 class PhotoTaggingOptions(MenuOptions):
@@ -721,11 +720,12 @@ class PhotoTaggingGramplet(Gramplet):
         media = self.get_current_object()
         image_path = media_path_full(self.dbstate.db, media.get_path())
         faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
+        # verify and enlarge found faces regions
         for (x, y, width, height) in faces:
-            region = Region(x - DETECTED_REGION_PADDING,
-                            y - DETECTED_REGION_PADDING,
-                            x + width + DETECTED_REGION_PADDING,
-                            y + height + DETECTED_REGION_PADDING)
+            region = Region(x - width/5,
+                            y - height/3,
+                            x + width + width/5,
+                            y + height + height*2/5)
             if DETECT_INSIDE_EXISTING_BOXES or self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
