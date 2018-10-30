@@ -58,7 +58,6 @@ HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 
 def detect_faces(image_path, min_face_size):
     cv_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    o_width, o_height = cv_image.shape[0], cv_image.shape[1]
     cv2.equalizeHist(cv_image, cv_image)
     cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
     # ???

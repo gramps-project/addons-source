@@ -40,7 +40,6 @@ LOG = logging.getLogger(".PhotoTaggingGramplet")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
-from gi.repository import GObject
 
 #-------------------------------------------------------------------------
 #
@@ -48,7 +47,6 @@ from gi.repository import GObject
 #
 #-------------------------------------------------------------------------
 from gramps.gen.utils.file import media_path_full
-from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.config import config
 from gramps.gen.db import DbTxn
@@ -57,8 +55,7 @@ from gramps.gen.plug import Gramplet, MenuOptions
 from gramps.gen.lib import MediaRef, Person
 from gramps.gui.editors.editperson import EditPerson
 from gramps.gui.selectors import SelectorFactory
-from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption,
-                                  EnumeratedListOption, FilterOption, PersonOption)
+from gramps.gen.plug.menu import BooleanOption, NumberOption
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
 from gramps.gui.ddtargets import DdTargets
@@ -475,7 +472,6 @@ class PhotoTaggingGramplet(Gramplet):
         for (reftype, ref) in backrefs:
             if reftype == "Person":
                 person = self.dbstate.db.get_person_from_handle(ref)
-                name = person.get_primary_name()
                 gallery = person.get_media_list()
                 for mediaref in gallery:
                     referenced_handles = mediaref.get_referenced_handles()
@@ -735,7 +731,7 @@ class PhotoTaggingGramplet(Gramplet):
         try:
             SettingsDialog(self.gui.dbstate, self.gui.uistate,
                            _("Settings"), PhotoTaggingOptions())
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
 
     # ======================================================
