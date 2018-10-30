@@ -60,7 +60,8 @@ def detect_faces(image_path, min_face_size):
     cv_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     cv2.equalizeHist(cv_image, cv_image)
     cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
-    # ???
-    faces = cascade.detectMultiScale(cv_image)
+
+    # TODO: find out if we need params 'scaleFactor' and 'minNeighbors'
+    faces = cascade.detectMultiScale(cv_image, minSize=min_face_size)
 
     return faces
