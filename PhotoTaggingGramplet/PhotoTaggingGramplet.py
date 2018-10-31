@@ -84,6 +84,7 @@ GRAMPLET_CONFIG_NAME = "phototagginggramplet"
 CONFIG = config.register_manager(GRAMPLET_CONFIG_NAME)
 CONFIG.register("detection.box_size", (50, 50))
 CONFIG.register("detection.inside_existing_boxes", False)
+CONFIG.register("detection.sensitivity", 10)
 CONFIG.register("selection.replace_without_asking", False)
 CONFIG.load()
 CONFIG.save()
@@ -91,10 +92,12 @@ CONFIG.save()
 MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
 DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
+SENSITIVITY = CONFIG.get("detection.sensitivity")
 
 def save_config():
     CONFIG.set("detection.box_size", MIN_FACE_SIZE)
     CONFIG.set("detection.inside_existing_boxes", DETECT_INSIDE_EXISTING_BOXES)
+    CONFIG.set("detection.sensitivity", SENSITIVITY)
     CONFIG.set("selection.replace_without_asking", REPLACE_WITHOUT_ASKING)
     CONFIG.save()
 
@@ -123,6 +126,7 @@ class PhotoTaggingOptions(MenuOptions):
 
         category_name = _("Face detection")
         width, height = MIN_FACE_SIZE
+        sensitivity = SENSITIVITY
         self.min_face_width = NumberOption(_("Minimum face width (px)"),
                                            width, 1, 1000, 1)
         self.min_face_height = NumberOption(_("Minimum face height (px)"),
@@ -130,9 +134,12 @@ class PhotoTaggingOptions(MenuOptions):
         self.detect_inside_existing_boxes = BooleanOption(
                                        _("Detect faces inside existing boxes"),
                                        DETECT_INSIDE_EXISTING_BOXES)
+        self.sensitivity = NumberOption(_("Sensitivity (1 min .. 20 max)"),
+                                        sensitivity, 1, 20, 1)
 
         menu.add_option(category_name, "min_face_width", self.min_face_width)
         menu.add_option(category_name, "min_face_height", self.min_face_height)
+        menu.add_option(category_name, "sensitivity", self.sensitivity)
         menu.add_option(category_name, "detect_inside_existing_boxes",
                         self.detect_inside_existing_boxes)
 
@@ -140,11 +147,13 @@ class PhotoTaggingOptions(MenuOptions):
         global REPLACE_WITHOUT_ASKING
         global DETECT_INSIDE_EXISTING_BOXES
         global MIN_FACE_SIZE
+        global SENSITIVITY
         REPLACE_WITHOUT_ASKING = self.replace_without_asking.get_value()
         DETECT_INSIDE_EXISTING_BOXES = self.detect_inside_existing_boxes.get_value()
         width = self.min_face_width.get_value()
         height = self.min_face_height.get_value()
         MIN_FACE_SIZE = (width, height)
+        SENSITIVITY = self.sensitivity.get_value()
         save_config()
 
 #-------------------------------------------------------------------------
@@ -736,15 +745,27 @@ class PhotoTaggingGramplet(Gramplet):
         self.uistate.push_message(self.dbstate, _("Detecting faces..."))
         media = self.get_current_object()
         image_path = media_path_full(self.dbstate.db, media.get_path())
-        faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
+        faces, img_size = facedetection.detect_faces(image_path, MIN_FACE_SIZE,
+                                                     SENSITIVITY)
         # verify and enlarge found faces regions
         for (x, y, width, height) in faces:
-            region = Region(x - width/5,
-                            y - height/3,
-                            x + width + width/5,
-                            y + height + height*2/5)
-            if DETECT_INSIDE_EXISTING_BOXES or self.enclosing_region(region) is None:
+            # calculate enlarged region
+            new_x1 = x - width/5
+            new_y1 = y - height/3
+            new_x2 = x + width*6/5
+            new_y2 = y + height*7/5
+            # prevent overflow image size
+            new_y1 = 0 if new_y1 < 0 else new_y1
+            new_y2 = img_size[0] if img_size[0] < new_y2 else new_y2
+            new_x1 = 0 if new_x1 < 0 else new_x1
+            new_x2 = img_size[1] if img_size[1] < new_x2 else new_x2
+
+            region = Region(new_x1, new_y1, new_x2, new_y2)
+
+            if (DETECT_INSIDE_EXISTING_BOXES
+                    or self.enclosing_region(region) is None):
                 self.regions.append(region)
+
         self.refresh()
         self.uistate.push_message(self.dbstate, _("Detection finished"))
 

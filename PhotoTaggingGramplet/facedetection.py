@@ -56,12 +56,15 @@ HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 #
 #-------------------------------------------------------------------------
 
-def detect_faces(image_path, min_face_size):
+def detect_faces(image_path, min_face_size, sensitivity):
     cv_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    img_size = (cv_image.shape[0], cv_image.shape[1])
     cv2.equalizeHist(cv_image, cv_image)
     cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
+    # calculate value for sensitivity (scaleFactor)
+    sens = 1.0 + (0.21 - sensitivity/100)
+    # TODO: find out if we need param 'minNeighbors'
+    faces = cascade.detectMultiScale(cv_image, minSize=min_face_size,
+                                     scaleFactor=sens)
 
-    # TODO: find out if we need params 'scaleFactor' and 'minNeighbors'
-    faces = cascade.detectMultiScale(cv_image, minSize=min_face_size)
-
-    return faces
+    return faces, img_size
