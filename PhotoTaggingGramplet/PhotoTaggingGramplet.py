@@ -626,6 +626,16 @@ class PhotoTaggingGramplet(Gramplet):
             for item in self.additional_items:
                 self.context_menu.append(item)
 
+    def show_context_menu(self):
+        """
+        Show popup menu using different functions according to Gtk version.
+        """
+        self.context_menu.show_all()
+        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION > 22):
+            self.context_menu.popup_at_pointer(None)
+        else:
+            self.context_menu.popup(None, None, None, None, 0, 0)
+
     # ======================================================
     # selection event handlers
     # ======================================================
@@ -647,14 +657,12 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
         self.refresh_list()
         self.refresh_selection()
-        self.context_menu.popup(None, None, None, None, 0, 0)
         self.prepare_context_menu()
-        self.context_menu.show_all()
+        self.show_context_menu()
 
     def right_button_clicked(self, sender):
-        self.context_menu.popup(None, None, None, None, 0, 0)
         self.prepare_context_menu()
-        self.context_menu.show_all()
+        self.show_context_menu()
 
     def region_selected(self, sender):
         self.enable_buttons()
