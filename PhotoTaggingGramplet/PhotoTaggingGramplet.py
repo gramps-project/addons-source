@@ -224,7 +224,19 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_edit = Gtk.ToolButton(Gtk.STOCK_EDIT)
         self.button_zoom_in = Gtk.ToolButton(Gtk.STOCK_ZOOM_IN)
         self.button_zoom_out = Gtk.ToolButton(Gtk.STOCK_ZOOM_OUT)
-        self.button_detect = Gtk.ToolButton(Gtk.STOCK_EXECUTE)
+        # set custom icon for face detect button
+        self.button_detect = Gtk.ToolButton()
+        theme = Gtk.IconTheme.get_default()
+        face_detect_icon = theme.lookup_icon('gramps-face-detection', 24,
+                                             Gtk.IconLookupFlags.FORCE_SVG)
+        if face_detect_icon is not None:
+            self.button_detect.set_icon_name('gramps-face-detection')
+        else:
+            img = Gtk.Image()
+            path, filename = os.path.split(__file__)
+            face_detect_icon = os.path.join(path, 'gramps-face-detection.svg')
+            img.set_from_file(face_detect_icon)
+            self.button_detect.set_icon_widget(img)
         self.button_settings = Gtk.ToolButton(Gtk.STOCK_PREFERENCES)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
