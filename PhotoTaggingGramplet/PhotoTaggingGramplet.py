@@ -291,11 +291,12 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection_widget.connect("region-modified", self.region_modified)
         self.selection_widget.connect("region-created", self.region_created)
         self.selection_widget.connect("region-selected", self.region_selected)
-        self.selection_widget.connect("selection-cleared", self.selection_cleared)
-        self.selection_widget.connect("right-button-clicked", self.right_button_clicked)
+        self.selection_widget.connect("selection-cleared",
+                                      self.selection_cleared)
+        self.selection_widget.connect("right-button-clicked",
+                                      self.right_button_clicked)
         self.selection_widget.connect("zoomed-in", self.zoomed)
         self.selection_widget.connect("zoomed-out", self.zoomed)
-
 
         # Can drop a PERSON here:
         tglist = Gtk.TargetList.new([])
@@ -327,6 +328,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
+        self.treeview.connect("button-press-event", self.row_mouse_click)
         column1 = Gtk.TreeViewColumn(_(''))
         column2 = Gtk.TreeViewColumn(_('Preview'))
         column3 = Gtk.TreeViewColumn(_('Person'))
@@ -349,11 +351,10 @@ class PhotoTaggingGramplet(Gramplet):
         column3.set_sort_column_id(2)
 
         # Drag and Drop for tree view:
-        self.treeview.drag_dest_set(
-            Gtk.DestDefaults.MOTION |
-            Gtk.DestDefaults.DROP,
-            [],
-            Gdk.DragAction.COPY)
+        self.treeview.drag_dest_set(Gtk.DestDefaults.MOTION |
+                                    Gtk.DestDefaults.DROP,
+                                    [],
+                                    Gdk.DragAction.COPY)
         self.treeview.drag_dest_set_target_list(tglist)
         self.treeview.connect('drag_data_received',
                               self.drag_data_received)
@@ -445,6 +446,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_menu = Gtk.Menu()
         self.context_menu.set_reserve_toggle_size(False)
 
+        self.context_button_active = Gtk.MenuItem.new_with_mnemonic(
+                                                     _("Set as active person"))
+        self.context_button_active.connect("activate", self.set_active_person)
+
         self.context_button_select = Gtk.MenuItem.new_with_mnemonic(_("_Select"))
         self.context_button_select.connect("activate", self.sel_person_clicked)
 
@@ -457,6 +462,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_button_remove = Gtk.MenuItem.new_with_mnemonic(_("_Remove"))
         self.context_button_remove.connect("activate", self.del_region_clicked)
 
+        self.context_menu.append(self.context_button_active)
         self.context_menu.append(self.context_button_select)
         self.context_menu.append(self.context_button_add)
         self.context_menu.append(self.context_button_clear)
@@ -633,10 +639,12 @@ class PhotoTaggingGramplet(Gramplet):
 
     def prepare_context_menu(self):
         selected = self.selection_widget.get_current()
+        has_person = selected is not None and selected.person is not None
+
+        self.context_button_active.set_sensitive(has_person)
         self.context_button_add.set_sensitive(selected is not None)
         self.context_button_select.set_sensitive(selected is not None)
-        self.context_button_clear.set_sensitive(
-          selected is not None and selected.person is not None)
+        self.context_button_clear.set_sensitive(has_person)
         self.context_button_remove.set_sensitive(selected is not None)
 
         # clear temporary items
@@ -654,7 +662,7 @@ class PhotoTaggingGramplet(Gramplet):
             sorted_persons = sorted(list(persons), key=name_displayer.display)
             for person in sorted_persons:
                 item = Gtk.MenuItem(
-                  _("Replace {0}").format(name_displayer.display(person)))
+                    _("Replace to {0}").format(name_displayer.display(person)))
                 item.connect("activate", self.replace_reference, person)
                 self.additional_items.append(item)
             for item in self.additional_items:
@@ -664,6 +672,7 @@ class PhotoTaggingGramplet(Gramplet):
         """
         Show popup menu using different functions according to Gtk version.
         """
+        self.prepare_context_menu()
         self.context_menu.show_all()
         if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION > 22):
             self.context_menu.popup_at_pointer(None)
@@ -691,11 +700,9 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
         self.refresh_list()
         self.refresh_selection()
-        self.prepare_context_menu()
         self.show_context_menu()
 
     def right_button_clicked(self, sender):
-        self.prepare_context_menu()
         self.show_context_menu()
 
     def region_selected(self, sender):
@@ -788,6 +795,15 @@ class PhotoTaggingGramplet(Gramplet):
         except WindowActiveError:
             pass
 
+    def set_active_person(self, event):
+        """
+        Set selected person as active.
+        """
+        person = self.selection_widget.get_current().person
+        if person:
+            person_handle = person.get_handle()
+            self.set_active('Person', person_handle)
+
     # ======================================================
     # helpers for toolbar event handlers
     # ======================================================
@@ -877,6 +893,22 @@ class PhotoTaggingGramplet(Gramplet):
 
     def row_activated(self, treeview, path, view_column):
         self.edit_person_clicked(None)
+
+    def row_mouse_click(self, treeview, event):
+        """
+        Handle right mouse click on treeview.
+        Show popup menu for row.
+        """
+        button = event.get_button()[1]
+        # change cursor position to apply row selection
+        pthinfo = self.treeview.get_path_at_pos(event.x, event.y)
+        if pthinfo is not None:
+            path, col, cellx, celly = pthinfo
+            self.treeview.grab_focus()
+            self.treeview.set_cursor(path, col, 0)
+            # right mouse button
+            if button == 3:
+                self.show_context_menu()
 
     # ======================================================
     # helpers for list event handlers
