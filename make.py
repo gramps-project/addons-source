@@ -44,6 +44,7 @@ import shutil
 import glob
 import sys
 import os
+import tarfile
 
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
@@ -98,7 +99,7 @@ def mkdir(dirname):
 def increment_target(filenames):
     for filename in filenames:
         fp = open(filename, "r", encoding="utf-8")
-        newfp = open("%s.new" % filename, "w", encoding="utf-8")
+        newfp = open("%s.new" % filename, "w", encoding="utf-8", newline='')
         for line in fp:
             if ((line.lstrip().startswith("version")) and
                 ("=" in line)):
@@ -117,8 +118,8 @@ def increment_target(filenames):
                 newfp.write(line)
         fp.close()
         newfp.close()
-        system('''mv -f "%(file1)s" "%(file2)s" ''',
-               file1="%s.new" % filename, file2=filename)
+        os.remove(filename)
+        os.rename("%s.new" % filename, filename)
 
 
 def myint(s):
@@ -131,35 +132,61 @@ def myint(s):
         v = s
     return v
 
+
 def version(sversion):
     """
     Return the tuple version of a string version.
     """
     return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
 
+
+def cleanup(addon_dir):
+    """
+    An OS agnostic cleanup routine
+    """
+    patterns = ['%s/*~' % addon_dir,
+                '%s/po/*~' % addon_dir,
+                '%s/po/template.pot' % addon_dir,
+                '%s/po/*-global.po' % addon_dir,
+                '%s/po/*-temp.po' % addon_dir,
+                '%s/*.pyc' % addon_dir,
+                '%s/*.pyo' % addon_dir]
+    for pat in patterns:
+        for file_ in glob.glob(pat):
+            os.remove(file_)
+    shutil.rmtree('%s/locale' % addon_dir, ignore_errors=True)
+
+
+def do_tar(inc_files):
+    """
+    An OS agnostic tar creation that uses only Python libs
+    inc_files is a list of filenames
+    """
+    if not inc_files:
+        print("***Nothing to build! %s" % addon)
+        exit()
+
+    def tar_filt(tinfo):
+        tinfo.uname = tinfo.gname = 'gramps'
+        return tinfo
+    mkdir(r("../addons/%(gramps_version)s/download"))
+    increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
+    tar = tarfile.open(r("../addons/%(gramps_version)s/download/"
+                         "%(addon)s.addon.tgz"), mode='w:gz',
+                       encoding='utf-8')
+    for inc_fil in inc_files:
+        inc_fil = inc_fil.replace("\\", "/")
+        tar.add(inc_fil, filter=tar_filt)
+    tar.close()
+
+
 if command == "clean":
     if len(sys.argv) == 3:
         for addon in [name for name in os.listdir(".")
                       if os.path.isdir(name) and not name.startswith(".")]:
-            system('''rm -rf -v '''
-                   '''"%(addon)s"/*~ '''
-                   '''"%(addon)s"/po/*~ '''
-                   '''"%(addon)s"/po/template.pot '''
-                   '''"%(addon)s"/po/*-global.po '''
-                   '''"%(addon)s"/po/*-temp.po '''
-                   '''"%(addon)s"/locale '''
-                   '''"%(addon)s"/*.pyc '''
-                   '''"%(addon)s"/*.pyo ''')
+            cleanup(addon)
     else:
-        system('''rm -rf -v '''
-               '''"%(addon)s"/*~ '''
-               '''"%(addon)s"/po/*~ '''
-               '''"%(addon)s"/po/template.pot '''
-               '''"%(addon)s"/po/*-global.po '''
-               '''"%(addon)s"/po/*-temp.po '''
-               '''"%(addon)s"/locale '''
-               '''"%(addon)s"/*.pyc '''
-               '''"%(addon)s"/*.pyo ''')
+        cleanup(addon)
 elif command == "init":
     # # Get all of the strings from the addon and create template.po:
     # #intltool-extract --type=gettext/glade *.glade
@@ -287,44 +314,36 @@ elif command == "build":
             if os.path.isfile(r('''%(addon)s/setup.py''')):
                 system('''cd %s; python setup.py --build''' % r('''%(addon)s'''))
                 continue
+            patts = [r('''%(addon)s/*.py'''), r('''%(addon)s/*.glade'''),
+                     r('''%(addon)s/*.xml'''), r('''%(addon)s/*.txt'''),
+                     r('''%(addon)s/locale/*/LC_MESSAGES/*.mo''')]
             if os.path.isfile(r('''%(addon)s/MANIFEST''')):
-                files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
-            else:
-                files = []
-            files += glob.glob(r('''%(addon)s/*.py'''))
-            files += glob.glob(r('''%(addon)s/*.glade'''))
-            files += glob.glob(r('''%(addon)s/*.xml'''))
-            files += glob.glob(r('''%(addon)s/*.txt'''))
-            files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
-            files_str = " ".join(files)
-            files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
-            mkdir(r("../addons/%(gramps_version)s/download"))
-            increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-            system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s --owner=gramps --group=gramps''',
-                   files=files_str, gramps_version=gramps_version)
-    else:
-        if os.path.isfile(r('''%(addon)s/MANIFEST''')):
-            files = open(r('''%(addon)s/MANIFEST'''), "r").read().split()
-        else:
+                patts.extend(open(r('''%(addon)s/MANIFEST'''),
+                                  "r").read().split())
             files = []
+            for patt in patts:
+                files.extend(glob.glob(patt))
+            if not files:
+                # git doesn't remove empty folders when switching branchs
+                continue
+            do_tar(files)
+    else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
                 locale = os.path.basename(po[:-9])
                 mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
-        files += glob.glob(r('''%(addon)s/*.py'''))
-        files += glob.glob(r('''%(addon)s/*.glade'''))
-        files += glob.glob(r('''%(addon)s/*.xml'''))
-        files += glob.glob(r('''%(addon)s/*.txt'''))
-        files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
-        files_str = " ".join(files)
-        files_str = files_str.replace("\\", "/") # tar on Windows wants '/' and not '\'
-        mkdir(r("../addons/%(gramps_version)s/download"))
-        increment_target(glob.glob(r('''%(addon)s/*gpr.py''')))
-        system('''tar cfz "../addons/%(gramps_version)s/download/%(addon)s.addon.tgz" %(files)s --owner=gramps --group=gramps''',
-               files=files_str, gramps_version=gramps_version)
+        patts = [r('''%(addon)s/*.py'''), r('''%(addon)s/*.glade'''),
+                 r('''%(addon)s/*.xml'''), r('''%(addon)s/*.txt'''),
+                 r('''%(addon)s/locale/*/LC_MESSAGES/*.mo''')]
+        if os.path.isfile(r('''%(addon)s/MANIFEST''')):
+            patts.extend(open(r('''%(addon)s/MANIFEST'''),
+                              "r").read().split())
+        files = []
+        for patt in patts:
+            files.extend(glob.glob(patt))
+        do_tar(files)
 elif command == "manifest-check":
-    import tarfile
     import re
     for tgz in glob.glob(r("../addons/%(gramps_version)s/download/*.tgz")):
         files = tarfile.open(tgz).getnames()
@@ -357,7 +376,8 @@ elif command == "unlist":
             else:
                 print("unlisting", line)
         fp.close()
-        fp = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
+        fp = open(r("../addons/%(gramps_version)s/listings/") +
+                  ("addons-%s.txt" % lang), "w", encoding="utf-8", newline='')
         for line in lines:
             fp.write(line)
         fp.close()
@@ -376,11 +396,12 @@ elif command == "fix":
         for line in fp:
             dictionary = eval(line)
             if dictionary["i"] in addons:
-                print("Repeated addon ID:", dictionary["i"])
+                print(lang, "Repeated addon ID:", dictionary["i"])
             else:
                 addons[dictionary["i"]] = dictionary
         fp.close()
-        fp = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
+        fp = open(r("../addons/%(gramps_version)s/listings/") +
+                  ("addons-%s.txt" % lang), "w", encoding="utf-8", newline='')
         for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
             plugin = {"n": p["n"].replace("'", "\\'"),
                       "i": p["i"].replace("'", "\\'"),
@@ -497,12 +518,16 @@ elif command == "listing":
         # Write out new listing:
         if cmd_arg == "all":
             # Replace it!
-            fp = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
+            fp = open(r("../addons/%(gramps_version)s/listings/") +
+                      ("addons-%s.txt" % lang), "w", encoding="utf-8",
+                      newline='')
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
         elif not os.path.isfile(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang)):
-            fp_out = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "w", encoding="utf-8")
+            fp_out = open(r("../addons/%(gramps_version)s/listings/") +
+                          ("addons-%s.txt" % lang), "w", encoding="utf-8",
+                          newline='')
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
             fp_out.close()
@@ -511,7 +536,9 @@ elif command == "listing":
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 already_added = []
                 fp_in = open(r("../addons/%(gramps_version)s/listings/") + ("addons-%s.txt" % lang), "r", encoding="utf-8")
-                fp_out = open(r("../addons/%(gramps_version)s/listings/") +("addons-%s.new" % lang), "w", encoding="utf-8")
+                fp_out = open(r("../addons/%(gramps_version)s/listings/") +
+                              ("addons-%s.new" % lang), "w", encoding="utf-8",
+                              newline='')
                 added = False
                 for line in fp_in:
                     dictionary = eval(line)
