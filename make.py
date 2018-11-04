@@ -439,7 +439,7 @@ elif command == "check":
                            gpr.encode("utf-8", errors="backslashreplace"),
                            'exec')
             exec(code, make_environment(_=local_gettext),
-                 {"register": register})
+                 {"register": register, "build_script": True})
         for p in plugins:
             gpr_version = p.get("version", None)
             id = p.get("id", None)
@@ -499,7 +499,7 @@ elif command == "listing":
                                    gpr.encode("utf-8", errors="backslashreplace"),
                                    'exec')
                     exec(code, make_environment(_=local_gettext),
-                         {"register": register})
+                         {"register": register, "build_script": True})
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split(os.sep, 1)[0]
                     tgz_exists = os.path.isfile(r("../addons/%(gramps_version)s/download/") + tgz_file)
