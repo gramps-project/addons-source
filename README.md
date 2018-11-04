@@ -68,4 +68,6 @@ Valid command summary
 
 * **listing** [subcomand: **all**] - Builds/Creates a listing for the addon in each supported language
 
+* **as-needed** [no other parameters] - Builds/Lists/Cleans only out of date addons in one step
+
 

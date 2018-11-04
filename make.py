@@ -39,6 +39,10 @@ Examples:
    python make.py gramps42 dist-clean AddonDirectory
    python make.py gramps42 clean
    python make.py gramps42 clean AddonDirectory
+
+   python3 make.py gramps42 as-needed
+       Builds the tgz for only addons that have changed, then recreates
+       the listings and does cleanup
 """
 import shutil
 import glob
@@ -343,6 +347,165 @@ elif command == "build":
         for patt in patts:
             files.extend(glob.glob(patt))
         do_tar(files)
+elif command == "as-needed":
+    import tempfile
+    import difflib
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment, PTYPE_STR
+    except ImportError:
+        print("Where is Gramps: '%s'? Use "
+              "'GRAMPSPATH=path python3 make.py %s as_needed'" %
+              (os.path.abspath(GRAMPSPATH), gramps_version))
+        exit()
+
+    def register(ptype, **kwargs):
+        global plugins
+        # need to take care of translated types
+        kwargs["ptype"] = PTYPE_STR[ptype]
+        plugins.append(kwargs)
+
+    from filecmp import cmp
+    # Get all languages from all addons:
+    languages = set(['en'])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+            length = len(po)
+            locale = po[length - 11:length - 9]
+            locale_path, locale = po.rsplit(os.sep, 1)
+            languages.add(locale[:-9])
+    listings = {lang : [] for lang in languages}
+    dirs = [file for file in glob.glob("*")
+            if os.path.isdir(file) and file != '__pycache__']
+    for addon in dirs:
+        todo = False
+        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+            locale = os.path.basename(po[:-9])
+            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
+            system('''msgfmt %(po)s '''
+                   '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+        tgz = os.path.join("..", "addons", gramps_version, "download",
+                           addon + ".addon.tgz")
+        patts = [r('''%(addon)s/*.py'''), r('''%(addon)s/*.glade'''),
+                 r('''%(addon)s/*.xml'''), r('''%(addon)s/*.txt'''),
+                 r('''%(addon)s/locale/*/LC_MESSAGES/*.mo''')]
+        if os.path.isfile(r('''%(addon)s/MANIFEST''')):
+            patts.extend(open(r('''%(addon)s/MANIFEST'''), "r").read().split())
+        sfiles = []
+        for patt in patts:
+            sfiles.extend(glob.glob(patt))
+        if not sfiles:
+            # git doesn't remove empty folders when switching branchs
+            continue
+        try:
+            archive = tarfile.open(tgz)
+        except FileNotFoundError:
+            print("Missing archive: %s" % addon)
+            todo = True
+            archive = None
+        if archive:
+            files = archive.getnames()
+            tmpdir = tempfile.TemporaryDirectory()
+            tdir = tmpdir.name
+            archive.extractall(path=tdir)
+            archive.close()
+            for file in sfiles:
+                # tar on Windows wants '/' not '\'
+                _file = file.replace("\\", "/")
+                if _file not in files:
+                    print("Missing:         %s" % file)
+                    todo = True
+                    continue
+                tfile = os.path.join(tdir, file)
+                if os.path.isdir(file):
+                    continue
+                targ_diff = 0   # no difference
+                if not cmp(tfile, file, shallow=False):
+                    if ".gpr.py" in file:
+                        with open(file) as sfil:
+                            with open(tfile) as tfil:
+                                diff = list(
+                                    difflib.context_diff(sfil.readlines(),
+                                                         tfil.readlines(),
+                                                         n=0))
+                                for line in diff:
+                                    if 'gramps_target_version' in line:
+                                        print("gpr differs:     %s %s" %
+                                              (addon, line), end='')
+                                        targ_diff = 1  # Potential problem
+                                        continue
+                                    if(line.startswith('---') or
+                                       line.startswith('***') or
+                                       'version' in line.lower()):
+                                        continue
+                                    targ_diff = 2  # just different
+                    else:
+                        targ_diff = 2  # just different
+                if targ_diff == 0:
+                    continue
+                elif targ_diff == 1:
+                    res = input("If gramps_target_version doesn't match, "
+                                "something is wrong.\n"
+                                "Do you want to continue (y/n)?")
+                    if not res.lower().startswith('y'):
+                        exit()
+                print("Different:       %s" % file)
+                todo = True
+        if todo:
+            # Build it.
+            do_tar(sfiles)
+            print("***Rebuilt:      %s" % addon)
+        # Add addon to newly created listing (equivalent to 'listing all')
+        for lang in languages:
+            gpr_bad = False  # to flag a bad gpr
+            do_list = False  # to avoid multiple pass per lang if not listing
+            for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
+                # Make fallback language English (rather than current LANG)
+                local_gettext = glocale.get_addon_translator(
+                    gpr, languages=[lang, "en.UTF-8"]).gettext
+                plugins = []
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+                    code = compile(
+                        f.read(),
+                        gpr.encode("utf-8", errors="backslashreplace"),
+                        'exec')
+                    exec(code, make_environment(_=local_gettext),
+                         {"register": register, "build_script": True})
+                if not plugins:
+                    print("***Not Listable: %s  ('register' didn't work)" %
+                          gpr)
+                    gpr_bad = True
+                for p in plugins:
+                    if p.get("include_in_listing", True):
+                        do_list = True  # got at least one listable plugin
+                        plugin = {
+                            "n": p["name"].replace("'", "\\'"),
+                            "i": p["id"].replace("'", "\\'"),
+                            "t": p["ptype"].replace("'", "\\'"),
+                            "d": p["description"].replace("'", "\\'"),
+                            "v": p["version"].replace("'", "\\'"),
+                            "g": p["gramps_target_version"].replace("'",
+                                                                    "\\'"),
+                            "z": ("%s.addon.tgz" % addon)}
+                        listings[lang].append(plugin)
+                        if lang == 'en':
+                            print("Listed:          %s" % p["name"])
+                    else:
+                        print("***Not Listed:   %s" % p["name"])
+            if gpr_bad or not do_list:
+                break
+        cleanup(addon)
+    for lang in languages:
+        fp = open(r("../addons/%(gramps_version)s/listings/") +
+                  ("addons-%s.txt" % lang), "w", encoding="utf-8",
+                  newline='')
+        for plugin in sorted(listings[lang], key=lambda p: (p["t"], p["i"])):
+            print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
+                  """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
+        fp.close()
+
 elif command == "manifest-check":
     import re
     for tgz in glob.glob(r("../addons/%(gramps_version)s/download/*.tgz")):
