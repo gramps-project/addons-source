@@ -2791,13 +2791,16 @@ class DynamicWebReport(Report):
             )
         else:
             default_person = self.database.get_default_person()
-            if default_person.handle in self.obj_dict[Person]:
-                home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
-                    self.obj_dict[Person][default_person.handle][OBJDICT_INDEX],
-                    self.get_name(default_person)
-                )
+            if default_person:
+                if default_person.handle in self.obj_dict[Person]:
+                    home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
+                        self.obj_dict[Person][default_person.handle][OBJDICT_INDEX],
+                        self.get_name(default_person)
+                    )
+                else:
+                    home_person_txt = self.get_name(default_person)
             else:
-                home_person_txt = self.get_name(default_person)
+                home_person_txt = _('No Home Person')
         text = text.replace("__HOME_PERSON__", home_person_txt)
         return(text)
 
