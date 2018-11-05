@@ -110,11 +110,11 @@ class SelectForm(object):
             form_id = get_form_id(source)
             if form_id in get_form_ids():
                 form_type = get_form_type(form_id)
-                if form_type in form_types:
-                    parent = form_types[form_type]
+                if _(form_type) in form_types:
+                    parent = form_types[_(form_type)]
                 else:
-                    parent = self.model.append(None, (None, form_type))
-                    form_types[form_type] = parent
+                    parent = self.model.append(None, (None, _(form_type)))
+                    form_types[_(form_type)] = parent
                 self.model.append(parent, (source.handle, source.title))
         self.model.set_sort_column_id(1, Gtk.SortType.ASCENDING)
         self.tree.expand_all()

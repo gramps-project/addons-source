@@ -148,7 +148,7 @@ class DeathIndex(tool.Tool, ManagedWindow):
         return self.glade.get_widget(key)
 
     def _setup_fields(self):
-        '''
+        r'''
         Gramps XML storage means ability to also import/manage alone records
         /!\ some attributes are translated keys
         see data_item keys and eventref types of attribute

@@ -215,7 +215,7 @@ class DifferencesReport(Report):
             if retval:
                 retval += ", "
             if "[" in part and "]" in part:
-                part, index = re.match("(.*)\[(\d*)\]", part).groups()
+                part, index = re.match(r"(.*)\[(\d*)\]", part).groups()
                 retval += "%s #%s" % (part.replace("_", " "), int(index) + 1)
             else:
                 retval += part

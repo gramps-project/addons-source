@@ -1,0 +1,47 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-14 19:21+0200\n"
+"PO-Revision-Date: 2018-10-14 19:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: JSON/JSON.gpr.py:3
+msgid "JSON Export"
+msgstr "Exportation JSON"
+
+#: JSON/JSON.gpr.py:4
+msgid "This is a JSON export"
+msgstr "Ceci est une exportation JSON"
+
+#: JSON/JSON.gpr.py:11
+msgid "JSON options"
+msgstr "Options JSON"
+
+#: JSON/JSON.gpr.py:17
+msgid "JSON Import"
+msgstr "Importation JSON"
+
+#: JSON/JSON.gpr.py:18
+msgid "This is a JSON import"
+msgstr "Ceci est une importation JSON"
+
+#: JSON/JSONImport.py:56
+msgid "JSON import"
+msgstr "importation JSON"
+
+#: JSON/JSONImport.py:85
+#, python-format
+msgid "%s could not be opened\n"
+msgstr "%s n'a pas pu être ouvert\n"

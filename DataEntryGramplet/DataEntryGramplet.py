@@ -944,7 +944,7 @@ class DataEntryGramplet(Gramplet):
                         family.add_child_ref( childref)
                         person.add_parent_family_handle(family.get_handle())
                         current_person.add_family_handle(family.get_handle())
-                        if Person.FEMALE:
+                        if current_person.get_gender() == Person.FEMALE:
                             family.set_mother_handle(current_person.get_handle())
                         else:
                             family.set_father_handle(current_person.get_handle())

@@ -460,7 +460,7 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         (ascent, _, height, _, _) = ctx.font_extents()
         (lx, _, width, _, _, _,) = ctx.text_extents(line)
         if ((TEXT_ALIGNMENT == 'center') or (n <= top_centered_lines)):
-            ctx.move_to(x - lx + TEXT_PAD + (total_w - width + lx) / 2, y +
+            ctx.move_to(x - lx + (total_w - width + lx) / 2, y +
                         ascent + TEXT_PAD)
         elif TEXT_ALIGNMENT == 'left':
             ctx.move_to(x - lx + TEXT_PAD, y + ascent + TEXT_PAD)
@@ -1502,7 +1502,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         category_name = _("Display")
 
         namedisp = StringOption(_("Name Display Format"),
-                                "$n(f L){ \($n(n)\)}")
+                                r"$n(f L){ \($n(n)\)}")
         namedisp.set_help(
             _("f=first & middle names, l=surname, n=nickname,"
               "\nc=commonly used given name, t=title, s=suffix,"

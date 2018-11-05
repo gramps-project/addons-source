@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-10 08:27-0500\n"
-"PO-Revision-Date: 2018-06-11 14:05+0300\n"
+"PO-Revision-Date: 2018-10-02 16:18+0300\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Suomi <niememat@gmail.com>\n"
 "Language: fi\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid ""
 "A '*' indicates that the action was automarked, a '?' indicates a conflict "
@@ -26,11 +26,13 @@ msgstr "Toiminta"
 msgid "Add"
 msgstr "Liitä"
 
+# Lisää tuonti
 msgid "Add Import"
-msgstr "Lisää tuonti"
+msgstr "Lisätään tuonnista"
 
+# Jisätty
 msgid "Added"
-msgstr "Jisätty"
+msgstr "Lisätään"
 
 msgid "Automark Families"
 msgstr "Automaattisesti merkityt perheet"
@@ -114,8 +116,9 @@ msgstr "Tuotu"
 msgid "Importing data..."
 msgstr "Tuodaan tietoja ..."
 
+# Säilytä alkuperäinen
 msgid "Keep original"
-msgstr "Säilytä alkuperäinen"
+msgstr "Säilytetään alkuperäinen"
 
 msgid "Last changed"
 msgstr "Viimeksi muutettu"
@@ -129,11 +132,13 @@ msgstr "Yhdistä tuonnista"
 msgid "Merge Original"
 msgstr "Yhdistä alkuperäisestä"
 
+# Yhdistä tuontiin
 msgid "Merge into import"
-msgstr "Yhdistä tuontiin"
+msgstr "Yhdistetään tuonnista"
 
+# Yhdistä alkuperäiseen
 msgid "Merge into original"
-msgstr "Yhdistä alkuperäiseen"
+msgstr "Ydistetään alkuperäisestä"
 
 msgid "Missing"
 msgstr "Puuttuva"
@@ -295,8 +300,10 @@ msgstr "_Peruuta"
 msgid "_Save"
 msgstr "_Tallenna"
 
+# tuotu
 msgid "imported "
-msgstr "tuotu "
+msgstr "tuodaan "
 
+# sukupuusi
 msgid "your tree "
-msgstr "sukupuusi "
+msgstr "sukupuun "
