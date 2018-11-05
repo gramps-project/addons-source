@@ -1143,7 +1143,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         #self.append_text("\n")
 
     def check27_googlemapkml(self):
-        '''GoogleMapKML - Needs Google Earth Desktop Program installed to view locations
+        r'''GoogleMapKML - Needs Google Earth Desktop Program installed to view locations
 
         https://www.google.com/earth/desktop/
         [x]Google Earth Standard:
@@ -1181,7 +1181,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         _GOOGLEEARTH_OK = False
         _GOOGLEEARTH_STATUS = "Not found."
         if os.sys.platform == 'win32':
-            FILE_PATH = '"%s\Google\Google Earth\googleearth.exe"'\
+            FILE_PATH = r'"%s\Google\Google Earth\googleearth.exe"'\
                         % (os.getenv('ProgramFiles'))
             NORM_PATH = os.path.normpath(FILE_PATH)
             _GOOGLEEARTH_OK = search_for(NORM_PATH)
@@ -1189,7 +1189,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
             if not _GOOGLEEARTH_OK:
                 # For Win 7 with 32 Gramps
-                FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+                FILE_PATH = r'"%s\Google\Google Earth\client\googleearth.exe"'\
                             % (os.getenv('ProgramFiles'))
                 NORM_PATH = os.path.normpath(FILE_PATH)
                 _GOOGLEEARTH_OK = search_for(NORM_PATH)
@@ -1197,7 +1197,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
             if not _GOOGLEEARTH_OK:
                 # For Win 7 with 64 Gramps, need to find path to 32 bits programs
-                FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+                FILE_PATH = r'"%s\Google\Google Earth\client\googleearth.exe"'\
                             % (os.getenv('ProgramFiles(x86)'))
                 NORM_PATH = os.path.normpath(FILE_PATH)
                 _GOOGLEEARTH_OK = search_for(NORM_PATH)
@@ -1570,7 +1570,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         import subprocess
 
         if sys.platform == 'win32':
-            cmd = ["perl", "-e print qx(intltool-update --version) =~ m/(\d+.\d+.\d+)/;"]
+            cmd = ["perl", "-e print qx(intltool-update --version) =~ "
+                   r"m/(\d+.\d+.\d+)/;"]
             try:
                 ver, ret = subprocess.Popen(cmd ,stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE, shell=True).communicate()

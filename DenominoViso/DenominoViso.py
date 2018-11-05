@@ -2314,7 +2314,7 @@ function %(bd)s2html(person,containerDL) {
                         var x = persons[i].getAttribute('x')
                         var y = persons[i].getAttribute('y')
                     } else {
-                        /^M(-?\d+),(-?\d+)/.exec(persons[i].getAttribute('d'))
+                        /^M(-?\\d+),(-?\\d+)/.exec(persons[i].getAttribute('d'))
                         var x = RegExp.$1
                         var y = RegExp.$2
                     }

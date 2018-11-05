@@ -56,7 +56,7 @@ def exportData(db, filename,
         fp.write("grandparent(X, Y) :- parent(X, Z), parent(Z, Y).\n")
         fp.write("ancestor(X, Y) :- parent(X, Y).\n")
         fp.write("ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).\n")
-        fp.write("sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.\n")
+        fp.write("sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \\= Y.\n")
 
         # ---------------------------------
         # Notes

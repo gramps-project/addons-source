@@ -720,10 +720,11 @@ class TmgTable(object):
         return '{} Tables Mapped'.format(len(self.tmgtables_ext))
 
     def tablemap(self):
-        '''
+        r'''
          assign table names to correct tables
 
-         create tmg tables dictionary and replace entries with the file path to the table
+         create tmg tables dictionary and replace entries with the file path to
+         the table
 
          eg:call it using:
            tmgtables['tmgPeople']
