@@ -401,7 +401,7 @@ elif command == "as-needed":
     listings = {lang : [] for lang in languages}
     dirs = [file for file in glob.glob("*")
             if os.path.isdir(file) and file != '__pycache__']
-    for addon in dirs:
+    for addon in sorted(dirs):
         todo = False
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
             locale = os.path.basename(po[:-9])
