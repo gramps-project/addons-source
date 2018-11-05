@@ -6,8 +6,10 @@
 
 register(
     REPORT,
-    id    = 'SourcesCitationsReport',    name  = _("Sources and Citations Report"),    description =  _("Provides a source and Citations Report with notes"),
-    version = '3.6.0',
+    id    = 'SourcesCitationsReport',
+    name  = _("Sources and Citations Report"),
+    description =  _("Provides a source and Citations Report with notes"),
+    version = '3.6.1',
     gramps_target_version = '5.0',
     status = STABLE,
     fname = 'SourcesCitationsReport.py',
