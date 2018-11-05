@@ -4,12 +4,11 @@
 #
 #------------------------------------------------------------------------
 
-register(REPORT,
-    id    = 'SourcesCitationsReport',
-    name  = _("Sources and Citations Report"),
-    description =  _("Provides a source and Citations with notes"),
-    version = '1.0.2',
-    gramps_target_version = "5.0",
+register(
+    REPORT,
+    id    = 'SourcesCitationsReport',    name  = _("Sources and Citations Report"),    description =  _("Provides a source and Citations Report with notes"),
+    version = '3.6.0',
+    gramps_target_version = '5.0',
     status = STABLE,
     fname = 'SourcesCitationsReport.py',
     authors = ["Uli22"],
@@ -18,5 +17,4 @@ register(REPORT,
     reportclass = 'SourcesCitationsReport',
     optionclass = 'SourcesCitationsOptions',
     report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-    require_active = False
-    )
+    require_active = False)

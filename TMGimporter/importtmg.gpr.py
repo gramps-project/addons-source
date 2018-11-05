@@ -65,7 +65,8 @@ except ImportError:
     print("DBF could not be found")
     dbfavailable = False
 
-if dbfavailable:
+# Don't register if not runnable, but have to 'Make build' anyway
+if dbfavailable or locals().get('build_script'):
     register(IMPORT,
              id    = 'im_sqz',
              name  = _('TMG Project Backup'),

@@ -1,44 +1,65 @@
+# Finnish translation for addons-gramps package.
+# This file is distributed under the same license as the addons-gramps package.
+# translation of fi.po to Finnish
+# Matti Niemelä <niememat@gmail.com>, 2018
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 33\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-08 21:44+0200\n"
-"PO-Revision-Date: 2015-01-13 17:06+0200\n"
-"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
+"POT-Creation-Date: 2018-10-03 12:49+0300\n"
+"PO-Revision-Date: 2018-10-03 19:32+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.3\n"
-"Language: fi_FI\n"
+"X-Generator: Poedit 2.0.6\n"
 
-msgid "Generation"
-msgstr "Sukupolvi"
-
-msgid "Now alive"
-msgstr "Nyt elossa"
-
-msgid "Number of %s's descendants"
-msgstr "Henkilön %s jälkeläisten lukumäärä"
-
+#: NumberOfDescendantsQuickview.gpr.py:3
 msgid "Number of descendants"
 msgstr "Jälkeläisten määrä"
 
-msgid "Outlived"
-msgstr "Aikana elänyt"
-
-msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr "Aikana elänyt = jälkeläisten määrän, jotka kuolivat, kun %s on ollut vielä elossa"
-
-msgid "Seen"
-msgstr "nähnyt"
-
-msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Nähnyt = jälkeläisten määrän, jonka syntymän %s on eläessään nähnyt"
-
+#: NumberOfDescendantsQuickview.gpr.py:4
 msgid "Shows the number of descendants of the current person"
 msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
 
+#: NumberOfDescendantsQuickview.py:62
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Henkilön %s jälkeläisten lukumäärä"
+
+#: NumberOfDescendantsQuickview.py:87 NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Sukupolvi"
+
+#: NumberOfDescendantsQuickview.py:88 NumberOfDescendantsQuickview.py:95
+#: NumberOfDescendantsQuickview.py:111 NumberOfDescendantsQuickview.py:115
 msgid "Total"
 msgstr "Yhteensä"
+
+#: NumberOfDescendantsQuickview.py:89
+msgid "Seen"
+msgstr "Nähnyt"
+
+#: NumberOfDescendantsQuickview.py:90
+msgid "Outlived"
+msgstr "Kuollut"
+
+#: NumberOfDescendantsQuickview.py:91 NumberOfDescendantsQuickview.py:96
+msgid "Now alive"
+msgstr "Elossa"
+
+#: NumberOfDescendantsQuickview.py:122
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Nähnyt = jälkeläisten määrä, joiden syntymän %s on eläessään nähnyt"
+
+#: NumberOfDescendantsQuickview.py:124
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Kuollut = jälkeläisten lukumäärä, jotka kuolivat, kun %s on ollut vielä "
+"elossa"

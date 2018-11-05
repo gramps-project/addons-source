@@ -19,7 +19,8 @@
 #
 import importlib
 module1 = importlib.find_loader("psycopg2") is not None
-if module1:
+# Don't register if not runnable, but have to 'Make build' anyway
+if module1 or locals().get('build_script'):
     register(DATABASE,
              id='postgresql',
              name=_('PostgreSQL'),

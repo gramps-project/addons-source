@@ -2674,7 +2674,7 @@ class DenominoVisoOptions(MenuReportOptions):
         inc_img_src_ref.set_help(_("Whether to include references for images"))
         menu.add_option(category_name, "DNMinc_img_src_ref", inc_img_src_ref)
 
-        img_src_ref_str = EnumeratedListOption(_("Source reference attribute"),'Publishable')
+        img_src_ref_str = EnumeratedListOption(_("Source reference attribute"),'')
         img_src_ref_str.set_help(_("Image attribute that should be used as source reference"))
         for attr in self.db.get_media_attribute_types():
             img_src_ref_str.add_item(attr,attr)
@@ -2779,7 +2779,7 @@ class MyBooleanOption(PlugOption):
 class MyGuiBooleanOption(Gtk.CheckButton):
     def __init__(self, option, dbstate, uistate, track, override=False):
         self.__option = option
-        Gtk.CheckButton.__init__(self, "")
+        Gtk.CheckButton.__init__(self, label="")
         self.set_active(self.__option.get_value())
         self.connect('toggled', self.__value_changed)
         self.set_tooltip_text(self.__option.get_help())
@@ -2809,9 +2809,9 @@ class GuiIncAttributeOption(Gtk.HBox):
         value_str = self.__option.get_value()
         (attr_inc, attr_list) = value_str.split(',',1)
         attr_list = attr_list.strip()
-        self.cb_w = Gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton(label="")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = Gtk.Label(_('restricted to:'))
+        self.l_w = Gtk.Label(label=_('restricted to:'))
         self.l_w.set_sensitive(False)
         self.e_w = Gtk.Entry()
         self.e_w.set_text(attr_list)
@@ -2819,8 +2819,8 @@ class GuiIncAttributeOption(Gtk.HBox):
         self.e_w.set_sensitive(False)
         self.cb_w.set_active(attr_inc == 'True')
         self.pack_start(self.cb_w, False, True, 0)
-        self.pack_end(self.e_w, False, True, 0)
-        self.pack_end(self.l_w, False, True, 0)
+        self.pack_end(self.e_w, True, True, 0)
+        self.pack_end(self.l_w, False, True, 5)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -2849,9 +2849,9 @@ class GuiCopyImgOption(Gtk.HBox):
         self.__option = option
         value_str = self.__option.get_value()
         (copy_img, copy_dir) = value_str.split(', ',1)
-        self.cb_w = Gtk.CheckButton("")
+        self.cb_w = Gtk.CheckButton(label="")
         self.cb_w.connect('toggled', self.__value_changed)
-        self.l_w = Gtk.Label(_('to directory:'))
+        self.l_w = Gtk.Label(label=_('to directory:'))
         self.l_w.set_sensitive(False)
         self.fe_w = FileEntry(copy_dir, _('Save images in ...'))
         self.fe_w.set_directory_entry(True)
@@ -2861,8 +2861,8 @@ class GuiCopyImgOption(Gtk.HBox):
         self.fe_w.set_sensitive(False)
         self.cb_w.set_active(copy_img == 'True')
         self.pack_start(self.cb_w, False, True, 0)
-        self.pack_end(self.fe_w, False, True, 0)
-        self.pack_end(self.l_w, False, True, 0)
+        self.pack_end(self.fe_w, True, True, 0)
+        self.pack_end(self.l_w, False, True, 5)
         self.set_tooltip_text(self.__option.get_help())
 
     def __value_changed(self, obj):
@@ -2888,30 +2888,31 @@ class GuiImageIncludeAttrOption(Gtk.HBox):
         value_str = self.__option.get_value()
         (incl, attr, attr_value) = value_str.split(', ',2)
         incl = int(incl)
-        self.cbe_w = Gtk.ComboBox.new_with_entry()
+        self.cbe_w = Gtk.ComboBoxText.new_with_entry()
         image_attributes = dbstate.db.get_media_attribute_types()
         image_attributes.insert(0,' ')
-        fill_combo(self.cbe_w, image_attributes)
+        for attrib in image_attributes:
+            self.cbe_w.append_text(attrib)
         try:
             idx = image_attributes.index(attr)
             self.cbe_w.set_active(idx)
         except ValueError:
             pass
         self.cbe_w.connect('changed',self.__value_changed)
-        self.l1_w = Gtk.Label(_("equal to"))
+        self.l1_w = Gtk.Label(label=_("equal to"))
         self.e_w = Gtk.Entry()
         self.e_w.set_text(attr_value)
         self.e_w.connect('changed',self.__value_changed)
-        self.l2_w = Gtk.Label(_("should be"))
+        self.l2_w = Gtk.Label(label=_("should be"))
         self.cb2_w = Gtk.ComboBoxText()
         self.cb2_w.append_text('Included')
         self.cb2_w.append_text('Excluded')
         self.cb2_w.set_active(incl)
         self.cb2_w.connect('changed',self.__value_changed)
         self.pack_start(self.cbe_w, False, True, 0)
-        self.pack_start(self.l1_w, False, True, 0)
+        self.pack_start(self.l1_w, False, True, 5)
         self.pack_start(self.e_w, False, True, 0)
-        self.pack_start(self.l2_w, False, True, 0)
+        self.pack_start(self.l2_w, False, True, 5)
         self.pack_start(self.cb2_w, False, True, 0)
 
     def __value_changed(self, obj):
@@ -3009,13 +3010,10 @@ class MouseHandlerOption(PlugOption):
 class GuiMouseHandlerOption(Gtk.HBox):
     """Megawidget consisting of two radio buttons to chose mouse behavior"""
     def __init__(self, option, dbstate, uistate, track, override=False):
-        mousegroup = None
         Gtk.HBox.__init__(self)
         self.__option = option
-        self.r1_w = Gtk.RadioButton(mousegroup, 'onclick')
-        if not mousegroup:
-            mousegroup = self.r1_w
-        self.r2_w = Gtk.RadioButton(mousegroup, 'onmouseover')
+        self.r1_w = Gtk.RadioButton.new_with_label(None, 'onclick')
+        self.r2_w = Gtk.RadioButton.new_with_label_from_widget(self.r1_w, 'onmouseover')
         self.pack_start(self.r1_w, False, True, 0)
         self.pack_start(self.r2_w, False, True, 0)
         self.r2_w.set_active(self.__option.get_value())
@@ -3064,7 +3062,7 @@ class GuiTableOption(Gtk.ScrolledWindow):
         return lstore
 
     def create_treeview(self, lstore, list_of_lists, editable_column = None):
-        self.tv_w = Gtk.TreeView(lstore)
+        self.tv_w = Gtk.TreeView(model=lstore)
         self.tv_w.set_size_request(-1, 70)
         self.tv_w.set_rules_hint(True)
         self.tv_w.get_selection().set_mode(Gtk.SelectionMode.SINGLE)

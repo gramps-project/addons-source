@@ -20,13 +20,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-# Version 3.4
+# Version 3.6
 # $Id: SourcesCitationsReport.py 2012-12-30 Frink hansulrich.frink@gmail.com $
 
 """
 Reports/Text Report.
 
-Developed for gramps 3.4.2.1 under win 7 64bit
+Developed for gramps 5.0.0.1 under win 10 64bit
 
 This is my first contribution to gramps, as well as my first python module,
 so the programming style may in some way be unusual. Thanks to Enno Borgsteede
@@ -65,6 +65,10 @@ Version 3.5:
 - get translation work
 - include Persons names and gramps_id cited in the notes.
 
+Version 3.6:
+- improved translation
+- Date formats.
+
 next steps:
 
 - have an index on Persons
@@ -92,6 +96,7 @@ from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                                     TableStyle, TableCellStyle, FONT_SERIF,
                                     FONT_SANS_SERIF, INDEX_TYPE_TOC,
                                     PARA_ALIGN_CENTER)
+from gramps.gen.plug.report import stdoptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 try:
@@ -132,6 +137,11 @@ class SourcesCitationsReport(Report):
         self.title_string = menu.get_option_by_name('title').get_value()
         self.subtitle_string = menu.get_option_by_name('subtitle').get_value()
         self.footer_string = menu.get_option_by_name('footer').get_value()
+        
+        self.set_locale(menu.get_option_by_name('trans').get_value())
+
+        stdoptions.run_date_format_option(self, menu)
+
         self.showperson = menu.get_option_by_name('showperson').get_value()
 
 
@@ -268,8 +278,12 @@ class SourcesCitationsReport(Report):
                                     i)
                 self.doc.write_text(_("  %s") %
                                     self.__db.get_citation_from_handle(c).page)
-                self.doc.write_text(_("   Anno %s - ") %
-                                    toYear(self.__db.get_citation_from_handle(c).date))
+#                self.doc.write_text(_("   Anno %s - ") %
+#                                    self.__db.get_citation_from_handle(c).date)
+                date = self._get_date(self.__db.get_citation_from_handle(c).get_date_object())
+                #print(date)
+                self.doc.write_text(_(" - %s ") %
+                                    date)
                 self.doc.end_paragraph()
                 # note
                 for notehandle in self.__db.get_citation_from_handle(c).get_note_list():
@@ -302,11 +316,18 @@ class SourcesCitationsReport(Report):
                                     self.__db.get_event_from_handle(e).get_type())
                                     self.doc.write_text(_("   ( %s )") %
                                                         self.__db.get_event_from_handle(e).gramps_id)
-
-                                    self.doc.write_text(_("   Eheleute: %s ") %
+                                    
+                                    if b:
+                                        father = self.__db.get_person_from_handle(b)
+                                    if a:
+                                        mother = self.__db.get_person_from_handle(a)
+                                    self.doc.write_text(_("   Eheleute: "))
+                                    if father:
+                                        self.doc.write_text(_("%s ") %
                                                         self.__db.get_person_from_handle(b).primary_name.get_name())
-                                    self.doc.write_text(_("and %s ") %
-                                                        self.__db.get_person_from_handle(a).primary_name.get_name())
+                                    if mother:
+                                        self.doc.write_text(_("and %s ") %
+                                                        mother.primary_name.get_name())
                                     self.doc.end_paragraph()
 
                         for (a,b) in pedic[e]:
@@ -415,6 +436,8 @@ class SourcesCitationsOptions(MenuReportOptions):
         showperson = BooleanOption(_("Show persons"), True)
         showperson.set_help(_("Whether to show events and persons mentioned in the note"))
         menu.add_option(category_name, "showperson", showperson)
+        locale_opt = stdoptions.add_localization_option(menu, category_name)
+        stdoptions.add_date_format_option(menu, category_name, locale_opt)
 
     def make_default_style(self, default_style):
         """
@@ -562,5 +585,4 @@ class SourcesCitationsOptions(MenuReportOptions):
         cell = TableCellStyle()
         cell.set_bottom_border(1)
         self.default_style.add_cell_style('SRC-TableColumn', cell)
-
 
