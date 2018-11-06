@@ -403,7 +403,7 @@ elif command == "as-needed":
             if os.path.isdir(file) and file != '__pycache__']
     for addon in sorted(dirs):
         todo = False
-        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             locale = os.path.basename(po[:-9])
             mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
             system('''msgfmt %(po)s '''
