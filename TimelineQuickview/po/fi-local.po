@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-09 10:36+0200\n"
+"PO-Revision-Date: 2018-11-06 11:48+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi_FI\n"
+
+#: TimelineQuickview.gpr.py:9
+msgid "Timeline"
+msgstr "Aikajana"
+
+#: TimelineQuickview.gpr.py:10
+msgid "Display a person's events on a timeline"
+msgstr "Näytä henkilön tapahtumat aikajanalla"
+
+#: TimelineQuickview.py:46
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: TimelineQuickview.py:48
+msgid "Inlaw Parents"
+msgstr "Appivanhemmat"
+
+#: TimelineQuickview.py:51
+msgid "Grandparents"
+msgstr "Isovanhemmat"
+
+#: TimelineQuickview.py:53
+msgid "Inlaw Grandparents"
+msgstr "Puolison vanhemmat"
+
+#: TimelineQuickview.py:56
+msgid "Great grandparents"
+msgstr "Isoisovanhemmat"
+
+#: TimelineQuickview.py:58
+msgid "Inlaw Great grandparents"
+msgstr "Puolison isoisovanhemmat"
+
+#: TimelineQuickview.py:61
+msgid "Great, "
+msgstr "Iso, "
+
+#: TimelineQuickview.py:61 TimelineQuickview.py:63
+msgid "great, "
+msgstr "iso, "
+
+#: TimelineQuickview.py:61 TimelineQuickview.py:63
+msgid "great grandparents"
+msgstr "iso isovanhemmat"
+
+#: TimelineQuickview.py:63
+msgid "Inlaw Great, "
+msgstr "Puolison iso, "
+
+#: TimelineQuickview.py:102
+msgid "Partner's spouse"
+msgstr "Kumppanin puoliso"
+
+#: TimelineQuickview.py:156
+#, python-format
+msgid "Timeline for %s"
+msgstr "Aikajana henkilölle %s"
+
+#: TimelineQuickview.py:159
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: TimelineQuickview.py:160
+msgid "Event"
+msgstr "Tapahtuma"
+
+#: TimelineQuickview.py:161
+msgid "Age"
+msgstr "Ikä"
+
+#: TimelineQuickview.py:162
+msgid "Place"
+msgstr "Paikka"
+
+#: TimelineQuickview.py:163
+msgid "People involved"
+msgstr "Mukana olevat henkilöt"
+
+#: TimelineQuickview.py:186
+msgid "Today"
+msgstr "Tänään"
+
+#: TimelineQuickview.py:192
+msgid "Unknown"
+msgstr "Tuntematon"
