@@ -897,17 +897,17 @@ class PhotoTaggingGramplet(Gramplet):
     def row_mouse_click(self, treeview, event):
         """
         Handle right mouse click on treeview.
-        Show popup menu for row.
+        Show popup menu for row the same as for region.
         """
         button = event.get_button()[1]
-        # change cursor position to apply row selection
-        pthinfo = self.treeview.get_path_at_pos(event.x, event.y)
-        if pthinfo is not None:
-            path, col, cellx, celly = pthinfo
-            self.treeview.grab_focus()
-            self.treeview.set_cursor(path, col, 0)
-            # right mouse button
-            if button == 3:
+        # right mouse button
+        if button == 3:
+            # change cursor position to apply row selection
+            pthinfo = self.treeview.get_path_at_pos(event.x, event.y)
+            if pthinfo is not None:
+                path, col, cellx, celly = pthinfo
+                self.treeview.grab_focus()
+                self.treeview.set_cursor(path, col, 0)
                 self.show_context_menu()
 
     # ======================================================
