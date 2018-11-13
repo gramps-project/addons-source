@@ -886,7 +886,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Calculate lifespan
         lifespan = 0
-        if self.show_lifespan and person:
+        if self.show_lifespan and person and birthdate:
             death = get_death_or_fallback(self.dbstate.db, person)
             if death:
                 deathdate = death.get_date_object()
