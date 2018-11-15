@@ -29,6 +29,9 @@ msgstr ""
 msgid "Extended Person Attributes"
 msgstr "Erweiterte Person Attribute"
 
+msgid "Extended Attributes"
+msgstr "Erweiterte Attribute"
+
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Gramplet showing the attributes of a person"
 msgstr "Gramplet zeigt die Attribute einer Person"
