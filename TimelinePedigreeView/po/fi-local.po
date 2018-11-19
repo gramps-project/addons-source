@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-15 08:27+0200\n"
+"PO-Revision-Date: 2018-11-19 14:33+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language: fi_FI\n"
+
+#: TimelinePedigreeView.gpr.py:44
+msgid "Timeline Pedigree"
+msgstr "Aikajana sukupuu"
+
+#: TimelinePedigreeView.gpr.py:45
+msgid "Ancestry"
+msgstr "Esivanhemmat"
+
+#: TimelinePedigreeView.gpr.py:46
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Näkymä näyttää valitun henkilön esivanhempien ja jälkeläisten sukupuun "
+"aikajanalla"
+
+#: TimelinePedigreeView.py:79
+msgid "short for born|b."
+msgstr "s."
+
+#: TimelinePedigreeView.py:80
+msgid "short for died|d."
+msgstr "k."
+
+#: TimelinePedigreeView.py:81
+msgid "short for baptized|bap."
+msgstr "kast."
+
+#: TimelinePedigreeView.py:82
+msgid "short for christened|chr."
+msgstr "rist."
+
+#: TimelinePedigreeView.py:83
+msgid "short for buried|bur."
+msgstr "haud."
+
+#: TimelinePedigreeView.py:84
+msgid "short for cremated|crem."
+msgstr "tuhk."
+
+#: TimelinePedigreeView.py:334
+msgid "Timeline pedigree"
+msgstr "Aikajana sukupuu"
+
+#: TimelinePedigreeView.py:515
+msgid "Person Filter Editor"
+msgstr "Henkilösuodinmuokkain"
+
+#: TimelinePedigreeView.py:806
+msgid "Relationship loop detected"
+msgstr "Suhteessa havaittu silmukka"
+
+#: TimelinePedigreeView.py:807
+msgid "A person was found to be his/her own ancestor."
+msgstr "Löytyi henkilö, joka on määritelty omaksi esivanhemmakseen."
+
+#: TimelinePedigreeView.py:1391
+msgid "_Home"
+msgstr "_Koti"
+
+#: TimelinePedigreeView.py:1411
+msgid "Show images"
+msgstr "Näytä kuvat"
+
+#: TimelinePedigreeView.py:1413
+msgid "Show marriage data"
+msgstr "Näytä vihkitiedot"
+
+#: TimelinePedigreeView.py:1415
+msgid "Order by timeline"
+msgstr "Järjestys aikajanalla"
+
+#: TimelinePedigreeView.py:1417
+msgid "Show lifespan"
+msgstr "Näytä elinkaari"
+
+#: TimelinePedigreeView.py:1420
+msgid "Mouse scroll direction"
+msgstr "Hiiren rullauksen suunta"
+
+#: TimelinePedigreeView.py:1424
+msgid "Top <-> Bottom"
+msgstr "Ylös <-> Alas"
+
+#: TimelinePedigreeView.py:1431
+msgid "Left <-> Right"
+msgstr "Vasen <-> Oikea"
+
+#: TimelinePedigreeView.py:1443
+msgid "Descendant Generations"
+msgstr "Jälkeläisten sukupolvet"
+
+#: TimelinePedigreeView.py:1448 TimelinePedigreeView.py:1464
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d sukupolvi"
+msgstr[1] "%d sukupolvea"
+
+#: TimelinePedigreeView.py:1459
+msgid "Ancestor Generations"
+msgstr "Esivanhempien sukupolvet"
+
+#: TimelinePedigreeView.py:1483
+msgid "About Timeline Pedigree View"
+msgstr "Tietoja Aikajana sukupuu näkymästä"
+
+#: TimelinePedigreeView.py:1502
+msgid "_Add"
+msgstr "_Lisää"
+
+#: TimelinePedigreeView.py:1532 TimelinePedigreeView.py:1761
+msgid "_Edit"
+msgstr "_Muokkaa"
+
+#: TimelinePedigreeView.py:1537 TimelinePedigreeView.py:1766
+msgid "_Copy"
+msgstr "_Kopioi"
+
+#: TimelinePedigreeView.py:1547
+msgid "Spouses"
+msgstr "Puolisot"
+
+#: TimelinePedigreeView.py:1580
+msgid "Siblings"
+msgstr "Sisarukset"
+
+#: TimelinePedigreeView.py:1622
+msgid "Children"
+msgstr "Lapset"
+
+#: TimelinePedigreeView.py:1659
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: TimelinePedigreeView.py:1709
+msgid "Related"
+msgstr "Sukua"
