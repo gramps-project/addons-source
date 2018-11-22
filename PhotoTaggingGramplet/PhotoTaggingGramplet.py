@@ -40,7 +40,6 @@ LOG = logging.getLogger(".PhotoTaggingGramplet")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GdkPixbuf
-from gi.repository import GObject
 
 #-------------------------------------------------------------------------
 #
@@ -48,7 +47,6 @@ from gi.repository import GObject
 #
 #-------------------------------------------------------------------------
 from gramps.gen.utils.file import media_path_full
-from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.config import config
 from gramps.gen.db import DbTxn
@@ -57,8 +55,7 @@ from gramps.gen.plug import Gramplet, MenuOptions
 from gramps.gen.lib import MediaRef, Person
 from gramps.gui.editors.editperson import EditPerson
 from gramps.gui.selectors import SelectorFactory
-from gramps.gen.plug.menu import (BooleanOption, StringOption, NumberOption,
-                                  EnumeratedListOption, FilterOption, PersonOption)
+from gramps.gen.plug.menu import BooleanOption, NumberOption
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
 from gramps.gui.ddtargets import DdTargets
@@ -85,8 +82,9 @@ import facedetection
 
 GRAMPLET_CONFIG_NAME = "phototagginggramplet"
 CONFIG = config.register_manager(GRAMPLET_CONFIG_NAME)
-CONFIG.register("detection.box_size", (50,50))
+CONFIG.register("detection.box_size", (50, 50))
 CONFIG.register("detection.inside_existing_boxes", False)
+CONFIG.register("detection.sensitivity", 10)
 CONFIG.register("selection.replace_without_asking", False)
 CONFIG.load()
 CONFIG.save()
@@ -94,10 +92,12 @@ CONFIG.save()
 MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
 DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
+SENSITIVITY = CONFIG.get("detection.sensitivity")
 
 def save_config():
     CONFIG.set("detection.box_size", MIN_FACE_SIZE)
     CONFIG.set("detection.inside_existing_boxes", DETECT_INSIDE_EXISTING_BOXES)
+    CONFIG.set("detection.sensitivity", SENSITIVITY)
     CONFIG.set("selection.replace_without_asking", REPLACE_WITHOUT_ASKING)
     CONFIG.save()
 
@@ -107,7 +107,6 @@ def save_config():
 #
 #-------------------------------------------------------------------------
 
-DETECTED_REGION_PADDING = 10
 THUMBNAIL_IMAGE_SIZE = (50, 50)
 
 class PhotoTaggingOptions(MenuOptions):
@@ -118,23 +117,29 @@ class PhotoTaggingOptions(MenuOptions):
     def add_menu_options(self, menu):
         category_name = _("Selection")
         self.replace_without_asking = BooleanOption(
-          _("Replace existing references to the person being assigned without asking"),
-          REPLACE_WITHOUT_ASKING)
+                                 _("Replace existing references to the person "
+                                   "being assigned without asking"),
+                                 REPLACE_WITHOUT_ASKING)
 
         menu.add_option(category_name, "replace_without_asking",
                         self.replace_without_asking)
 
         category_name = _("Face detection")
         width, height = MIN_FACE_SIZE
-        self.min_face_width = NumberOption(_("Minimum face width (px)"), width,
-                                           1, 1000, 1)
-        self.min_face_height = NumberOption(_("Minimum face height (px)"), height,
-                                            1, 1000, 1)
+        sensitivity = SENSITIVITY
+        self.min_face_width = NumberOption(_("Minimum face width (px)"),
+                                           width, 1, 1000, 1)
+        self.min_face_height = NumberOption(_("Minimum face height (px)"),
+                                            height, 1, 1000, 1)
         self.detect_inside_existing_boxes = BooleanOption(
-          _("Detect faces inside existing boxes"), DETECT_INSIDE_EXISTING_BOXES)
+                                       _("Detect faces inside existing boxes"),
+                                       DETECT_INSIDE_EXISTING_BOXES)
+        self.sensitivity = NumberOption(_("Sensitivity (1 min .. 20 max)"),
+                                        sensitivity, 1, 20, 1)
 
         menu.add_option(category_name, "min_face_width", self.min_face_width)
         menu.add_option(category_name, "min_face_height", self.min_face_height)
+        menu.add_option(category_name, "sensitivity", self.sensitivity)
         menu.add_option(category_name, "detect_inside_existing_boxes",
                         self.detect_inside_existing_boxes)
 
@@ -142,11 +147,13 @@ class PhotoTaggingOptions(MenuOptions):
         global REPLACE_WITHOUT_ASKING
         global DETECT_INSIDE_EXISTING_BOXES
         global MIN_FACE_SIZE
+        global SENSITIVITY
         REPLACE_WITHOUT_ASKING = self.replace_without_asking.get_value()
         DETECT_INSIDE_EXISTING_BOXES = self.detect_inside_existing_boxes.get_value()
         width = self.min_face_width.get_value()
         height = self.min_face_height.get_value()
         MIN_FACE_SIZE = (width, height)
+        SENSITIVITY = self.sensitivity.get_value()
         save_config()
 
 #-------------------------------------------------------------------------
@@ -163,8 +170,8 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
         self.title = title
         self.options = options
 
-        PluginWindows.ToolManagedWindowBase.__init__(self,
-          dbstate, uistate, None, "SettingsDialog")
+        PluginWindows.ToolManagedWindowBase.__init__(self, dbstate, uistate,
+                                                     None, "SettingsDialog")
 
         self.ok.set_use_stock(True)
         self.ok.set_label("gtk-ok")
@@ -217,7 +224,19 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_edit = Gtk.ToolButton(Gtk.STOCK_EDIT)
         self.button_zoom_in = Gtk.ToolButton(Gtk.STOCK_ZOOM_IN)
         self.button_zoom_out = Gtk.ToolButton(Gtk.STOCK_ZOOM_OUT)
-        self.button_detect = Gtk.ToolButton(Gtk.STOCK_EXECUTE)
+        # set custom icon for face detect button
+        self.button_detect = Gtk.ToolButton()
+        theme = Gtk.IconTheme.get_default()
+        face_detect_icon = theme.lookup_icon('gramps-face-detection', 24,
+                                             Gtk.IconLookupFlags.FORCE_SVG)
+        if face_detect_icon is not None:
+            self.button_detect.set_icon_name('gramps-face-detection')
+        else:
+            img = Gtk.Image()
+            path, filename = os.path.split(__file__)
+            face_detect_icon = os.path.join(path, 'gramps-face-detection.svg')
+            img.set_from_file(face_detect_icon)
+            self.button_detect.set_icon_widget(img)
         self.button_settings = Gtk.ToolButton(Gtk.STOCK_PREFERENCES)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
@@ -230,15 +249,24 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_detect.connect("clicked", self.detect_faces_clicked)
         self.button_settings.connect("clicked", self.settings_clicked)
 
-        button_panel.pack_start(self.button_index, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_add, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_del, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_clear, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_edit, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_zoom_in, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_zoom_out, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_detect, expand=False, fill=False, padding=5)
-        button_panel.pack_start(self.button_settings, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_index,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_add,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_del,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_clear,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_edit,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_zoom_in,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_zoom_out,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_detect,
+                                expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_settings,
+                                expand=False, fill=False, padding=5)
 
         self.button_index.set_tooltip_text(_("Select Person"))
         self.button_add.set_tooltip_text(_("Add Person"))
@@ -249,9 +277,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_out.set_tooltip_text(_("Zoom Out"))
 
         if facedetection.computer_vision_available:
-            self.button_detect.set_tooltip_text(_("Detect faces"))
+            text = _("Detect faces")
         else:
-            self.button_detect.set_tooltip_text(_("Detect faces (OpenCV module required)"))
+            text = _("Detect faces (OpenCV module required)")
+        self.button_detect.set_tooltip_text(text)
 
         self.button_settings.set_tooltip_text(_("Settings"))
 
@@ -262,11 +291,12 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection_widget.connect("region-modified", self.region_modified)
         self.selection_widget.connect("region-created", self.region_created)
         self.selection_widget.connect("region-selected", self.region_selected)
-        self.selection_widget.connect("selection-cleared", self.selection_cleared)
-        self.selection_widget.connect("right-button-clicked", self.right_button_clicked)
+        self.selection_widget.connect("selection-cleared",
+                                      self.selection_cleared)
+        self.selection_widget.connect("right-button-clicked",
+                                      self.right_button_clicked)
         self.selection_widget.connect("zoomed-in", self.zoomed)
         self.selection_widget.connect("zoomed-out", self.zoomed)
-
 
         # Can drop a PERSON here:
         tglist = Gtk.TargetList.new([])
@@ -298,6 +328,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
+        self.treeview.connect("button-press-event", self.row_mouse_click)
         column1 = Gtk.TreeViewColumn(_(''))
         column2 = Gtk.TreeViewColumn(_('Preview'))
         column3 = Gtk.TreeViewColumn(_('Person'))
@@ -320,11 +351,10 @@ class PhotoTaggingGramplet(Gramplet):
         column3.set_sort_column_id(2)
 
         # Drag and Drop for tree view:
-        self.treeview.drag_dest_set(
-            Gtk.DestDefaults.MOTION |
-            Gtk.DestDefaults.DROP,
-            [],
-            Gdk.DragAction.COPY)
+        self.treeview.drag_dest_set(Gtk.DestDefaults.MOTION |
+                                    Gtk.DestDefaults.DROP,
+                                    [],
+                                    Gdk.DragAction.COPY)
         self.treeview.drag_dest_set_target_list(tglist)
         self.treeview.connect('drag_data_received',
                               self.drag_data_received)
@@ -333,7 +363,8 @@ class PhotoTaggingGramplet(Gramplet):
         scrolled_window2 = Gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
         scrolled_window2.set_size_request(400, -1)
-        scrolled_window2.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        scrolled_window2.set_policy(Gtk.PolicyType.AUTOMATIC,
+                                    Gtk.PolicyType.AUTOMATIC)
 
         hpaned.pack2(scrolled_window2, resize=False, shrink=False)
 
@@ -349,7 +380,7 @@ class PhotoTaggingGramplet(Gramplet):
         Receive a dropped person onto the treeview.
         """
         if sel_data:
-            pickled_data =  sel_data.get_data()
+            pickled_data = sel_data.get_data()
             if not pickled_data:
                 return
             data = pickle.loads(pickled_data)
@@ -389,7 +420,8 @@ class PhotoTaggingGramplet(Gramplet):
                     if person:
                         people.append(person)
                 else:
-                    LOG.warn("Can't handle this type of drop: '%s'" % sel_data.get_data_type())
+                    LOG.warn("Can't handle this type of drop: '%s'"
+                             % sel_data.get_data_type())
                     return
             for person in people:
                 if on_image: # drop on image
@@ -414,6 +446,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_menu = Gtk.Menu()
         self.context_menu.set_reserve_toggle_size(False)
 
+        self.context_button_active = Gtk.MenuItem.new_with_mnemonic(
+                                                     _("Set as active person"))
+        self.context_button_active.connect("activate", self.set_active_person)
+
         self.context_button_select = Gtk.MenuItem.new_with_mnemonic(_("_Select"))
         self.context_button_select.connect("activate", self.sel_person_clicked)
 
@@ -426,6 +462,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_button_remove = Gtk.MenuItem.new_with_mnemonic(_("_Remove"))
         self.context_button_remove.connect("activate", self.del_region_clicked)
 
+        self.context_menu.append(self.context_button_active)
         self.context_menu.append(self.context_button_select)
         self.context_menu.append(self.context_button_add)
         self.context_menu.append(self.context_button_clear)
@@ -476,7 +513,6 @@ class PhotoTaggingGramplet(Gramplet):
         for (reftype, ref) in backrefs:
             if reftype == "Person":
                 person = self.dbstate.db.get_person_from_handle(ref)
-                name = person.get_primary_name()
                 gallery = person.get_media_list()
                 for mediaref in gallery:
                     referenced_handles = mediaref.get_referenced_handles()
@@ -570,8 +606,7 @@ class PhotoTaggingGramplet(Gramplet):
         """
         with DbTxn('', self.dbstate.db) as trans:
             self.dbstate.db.commit_person(person, trans)
-            msg = _("Edit Person (%s)") % \
-                  name_displayer.display(person)
+            msg = _("Edit Person (%s)") % name_displayer.display(person)
             trans.set_description(msg)
 
     # ======================================================
@@ -604,10 +639,12 @@ class PhotoTaggingGramplet(Gramplet):
 
     def prepare_context_menu(self):
         selected = self.selection_widget.get_current()
+        has_person = selected is not None and selected.person is not None
+
+        self.context_button_active.set_sensitive(has_person)
         self.context_button_add.set_sensitive(selected is not None)
         self.context_button_select.set_sensitive(selected is not None)
-        self.context_button_clear.set_sensitive(
-          selected is not None and selected.person is not None)
+        self.context_button_clear.set_sensitive(has_person)
         self.context_button_remove.set_sensitive(selected is not None)
 
         # clear temporary items
@@ -625,11 +662,22 @@ class PhotoTaggingGramplet(Gramplet):
             sorted_persons = sorted(list(persons), key=name_displayer.display)
             for person in sorted_persons:
                 item = Gtk.MenuItem(
-                  _("Replace {0}").format(name_displayer.display(person)))
+                    _("Replace to {0}").format(name_displayer.display(person)))
                 item.connect("activate", self.replace_reference, person)
                 self.additional_items.append(item)
             for item in self.additional_items:
                 self.context_menu.append(item)
+
+    def show_context_menu(self):
+        """
+        Show popup menu using different functions according to Gtk version.
+        """
+        self.prepare_context_menu()
+        self.context_menu.show_all()
+        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION > 22):
+            self.context_menu.popup_at_pointer(None)
+        else:
+            self.context_menu.popup(None, None, None, None, 0, 0)
 
     # ======================================================
     # selection event handlers
@@ -652,14 +700,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
         self.refresh_list()
         self.refresh_selection()
-        self.context_menu.popup(None, None, None, None, 0, 0)
-        self.prepare_context_menu()
-        self.context_menu.show_all()
+        self.show_context_menu()
 
     def right_button_clicked(self, sender):
-        self.context_menu.popup(None, None, None, None, 0, 0)
-        self.prepare_context_menu()
-        self.context_menu.show_all()
+        self.show_context_menu()
 
     def region_selected(self, sender):
         self.enable_buttons()
@@ -720,14 +764,27 @@ class PhotoTaggingGramplet(Gramplet):
         self.uistate.push_message(self.dbstate, _("Detecting faces..."))
         media = self.get_current_object()
         image_path = media_path_full(self.dbstate.db, media.get_path())
-        faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
+        faces, img_size = facedetection.detect_faces(image_path, MIN_FACE_SIZE,
+                                                     SENSITIVITY)
+        # verify and enlarge found faces regions
         for (x, y, width, height) in faces:
-            region = Region(x - DETECTED_REGION_PADDING,
-                            y - DETECTED_REGION_PADDING,
-                            x + width + DETECTED_REGION_PADDING,
-                            y + height + DETECTED_REGION_PADDING)
-            if DETECT_INSIDE_EXISTING_BOXES or self.enclosing_region(region) is None:
+            # calculate enlarged region
+            new_x1 = x - width/5
+            new_y1 = y - height/3
+            new_x2 = x + width*6/5
+            new_y2 = y + height*7/5
+            # prevent overflow image size
+            new_y1 = 0 if new_y1 < 0 else new_y1
+            new_y2 = img_size[0] if img_size[0] < new_y2 else new_y2
+            new_x1 = 0 if new_x1 < 0 else new_x1
+            new_x2 = img_size[1] if img_size[1] < new_x2 else new_x2
+
+            region = Region(new_x1, new_y1, new_x2, new_y2)
+
+            if (DETECT_INSIDE_EXISTING_BOXES
+                    or self.enclosing_region(region) is None):
                 self.regions.append(region)
+
         self.refresh()
         self.uistate.push_message(self.dbstate, _("Detection finished"))
 
@@ -735,8 +792,17 @@ class PhotoTaggingGramplet(Gramplet):
         try:
             SettingsDialog(self.gui.dbstate, self.gui.uistate,
                            _("Settings"), PhotoTaggingOptions())
-        except Errors.WindowActiveError:
+        except WindowActiveError:
             pass
+
+    def set_active_person(self, event):
+        """
+        Set selected person as active.
+        """
+        person = self.selection_widget.get_current().person
+        if person:
+            person_handle = person.get_handle()
+            self.set_active('Person', person_handle)
 
     # ======================================================
     # helpers for toolbar event handlers
@@ -770,17 +836,17 @@ class PhotoTaggingGramplet(Gramplet):
                     self.delete_regions(other_references)
                 else:
                     if ref_count == 1:
-                        message_text = _("Another region of this image is associated with {name}. Remove it?")
+                        text = _("Another region of this image "
+                                 "is associated with {name}. Remove it?")
                     else:
-                        message_text = _("{count} other regions of this image are associated with {name}. Remove them?")
-                    message = message_text.format(
-                                name=name_displayer.display(person),
-                                count=ref_count)
-                    dialog = Gtk.MessageDialog(
-                                parent=None,
-                                type=Gtk.MessageType.QUESTION,
-                                buttons=Gtk.ButtonsType.YES_NO,
-                                message_format=message)
+                        text = _("{count} other regions of this image "
+                                 "are associated with {name}. Remove them?")
+                    message = text.format(name=name_displayer.display(person),
+                                          count=ref_count)
+                    dialog = Gtk.MessageDialog(parent=None,
+                                               type=Gtk.MessageType.QUESTION,
+                                               buttons=Gtk.ButtonsType.YES_NO,
+                                               message_format=message)
                     response = dialog.run()
                     dialog.destroy()
                     if response == Gtk.ResponseType.YES:
@@ -788,8 +854,8 @@ class PhotoTaggingGramplet(Gramplet):
             self.set_person(region, person)
 
     def set_person(self, region, person):
-        rect = self.check_and_translate_to_proportional(
-          region.mediaref, region.coords())
+        rect = self.check_and_translate_to_proportional(region.mediaref,
+                                                        region.coords())
         self.clear_ref(region)
         mediaref = self.add_reference(person, rect)
         region.person = person
@@ -828,6 +894,22 @@ class PhotoTaggingGramplet(Gramplet):
     def row_activated(self, treeview, path, view_column):
         self.edit_person_clicked(None)
 
+    def row_mouse_click(self, treeview, event):
+        """
+        Handle right mouse click on treeview.
+        Show popup menu for row the same as for region.
+        """
+        button = event.get_button()[1]
+        # right mouse button
+        if button == 3:
+            # change cursor position to apply row selection
+            pthinfo = self.treeview.get_path_at_pos(event.x, event.y)
+            if pthinfo is not None:
+                path, col, cellx, celly = pthinfo
+                self.treeview.grab_focus()
+                self.treeview.set_cursor(path, col, 0)
+                self.show_context_menu()
+
     # ======================================================
     # helpers for list event handlers
     # ======================================================
@@ -853,13 +935,14 @@ class PhotoTaggingGramplet(Gramplet):
         self.treestore.clear()
         for (i, region) in enumerate(self.regions, start=1):
             name = name_displayer.display(region.person) if region.person else ""
-            thumbnail = self.selection_widget.get_thumbnail(region, THUMBNAIL_IMAGE_SIZE)
+            thumbnail = self.selection_widget.get_thumbnail(region,
+                                                            THUMBNAIL_IMAGE_SIZE)
             self.treestore.append(None, (i, thumbnail, name))
 
     def refresh_selection(self):
         current = self.selection_widget.get_current()
+        selection = self.treeview.get_selection()
         if current and current in self.regions:
-            self.treeview.get_selection().select_path(
-                (self.regions.index(current),))
+            selection.select_path(self.regions.index(current),)
         else:
-            self.treeview.get_selection().unselect_all()
+            selection.unselect_all()
