@@ -5,7 +5,7 @@ try:
     gi.require_version('GooCanvas', '2.0')
     from gi.repository import GooCanvas
     _GOO = True
-except ImportError:
+except (ImportError, ValueError):
     _GOO = False
 if os.sys.platform == "win32":
     _DOT = search_for("dot.exe")
@@ -29,7 +29,7 @@ if _GOO and _DOT or locals().get('build_script'):
         name  = _("Graph View"),
         category = ("Ancestry", _("Charts")),
         description =  _("Dynamic graph of relations"),
-        version = '1.0.84',
+        version = '1.0.85',
         gramps_target_version = "5.0",
         status = STABLE,
         fname = 'graphview.py',
