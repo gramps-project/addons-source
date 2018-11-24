@@ -328,7 +328,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
-        self.treeview.connect("button-press-event", self.row_mouse_click)
+        self.treeview.connect("button-release-event", self.row_mouse_click)
         column1 = Gtk.TreeViewColumn(_(''))
         column2 = Gtk.TreeViewColumn(_('Preview'))
         column3 = Gtk.TreeViewColumn(_('Person'))
@@ -909,6 +909,7 @@ class PhotoTaggingGramplet(Gramplet):
                 self.treeview.grab_focus()
                 self.treeview.set_cursor(path, col, 0)
                 self.show_context_menu()
+                return True
 
     # ======================================================
     # helpers for list event handlers
