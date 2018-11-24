@@ -1580,11 +1580,11 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
         LXML_OK = False
 
+        REQ_LXML_VERSION = "3.3.3"
         try:
             from lxml import etree, objectify
             LXML_OK = True
             # current code is working with:
-            REQ_LXML_VERSION = "3.3.3"
             # LIBXML_VERSION (2, 9, 1))
             # LIBXSLT_VERSION (1, 1, 28))
             LXML_VERSION = etree.LXML_VERSION
