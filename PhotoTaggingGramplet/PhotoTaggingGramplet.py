@@ -674,7 +674,7 @@ class PhotoTaggingGramplet(Gramplet):
         """
         self.prepare_context_menu()
         self.context_menu.show_all()
-        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION > 22):
+        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION >= 22):
             self.context_menu.popup_at_pointer(None)
         else:
             self.context_menu.popup(None, None, None, None, 0, 0)
