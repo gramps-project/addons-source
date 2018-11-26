@@ -911,7 +911,7 @@ class PhotoTaggingGramplet(Gramplet):
                 self.treeview.grab_focus()
                 self.treeview.set_cursor(path, col, 0)
                 self.show_context_menu()
-                # stop signal emmision
+                # stop signal emission
                 return True
 
     # ======================================================
