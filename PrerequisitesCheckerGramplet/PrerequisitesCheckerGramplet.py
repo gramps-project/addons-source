@@ -1459,8 +1459,11 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import psycopg2
             psycopg2_ver = str(psycopg2.__version__)
             #print(dir(psycopg2))
-            libpq_ver = str(psycopg2.__libpq_version__)
             #print("psycopg2" + psycopg2_ver)
+            try:
+                libpq_ver = str(psycopg2.__libpq_version__)
+            except AttributeError:
+                libpq_ver = "Not found."
         except ImportError:
             psycopg2_ver = "Not found."
             libpq_ver = "Not found."
