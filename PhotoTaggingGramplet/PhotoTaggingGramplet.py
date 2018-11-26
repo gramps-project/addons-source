@@ -671,10 +671,12 @@ class PhotoTaggingGramplet(Gramplet):
     def show_context_menu(self):
         """
         Show popup menu using different functions according to Gtk version.
+        'Gtk.Menu.popup' is deprecated since version 3.22, see:
+        https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/Menu.html#Gtk.Menu.popup
         """
         self.prepare_context_menu()
         self.context_menu.show_all()
-        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION > 22):
+        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION >= 22):
             self.context_menu.popup_at_pointer(None)
         else:
             self.context_menu.popup(None, None, None, None, 0, 0)
@@ -909,6 +911,8 @@ class PhotoTaggingGramplet(Gramplet):
                 self.treeview.grab_focus()
                 self.treeview.set_cursor(path, col, 0)
                 self.show_context_menu()
+                # stop signal emission
+                return True
 
     # ======================================================
     # helpers for list event handlers
