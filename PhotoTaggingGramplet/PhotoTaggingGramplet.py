@@ -328,7 +328,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
-        self.treeview.connect("button-release-event", self.row_mouse_click)
+        self.treeview.connect("button-press-event", self.row_mouse_click)
         column1 = Gtk.TreeViewColumn(_(''))
         column2 = Gtk.TreeViewColumn(_('Preview'))
         column3 = Gtk.TreeViewColumn(_('Person'))
@@ -671,6 +671,8 @@ class PhotoTaggingGramplet(Gramplet):
     def show_context_menu(self):
         """
         Show popup menu using different functions according to Gtk version.
+        'Gtk.Menu.popup' is deprecated since version 3.22, see:
+        https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/Menu.html#Gtk.Menu.popup
         """
         self.prepare_context_menu()
         self.context_menu.show_all()
@@ -909,6 +911,7 @@ class PhotoTaggingGramplet(Gramplet):
                 self.treeview.grab_focus()
                 self.treeview.set_cursor(path, col, 0)
                 self.show_context_menu()
+                # stop signal emmision
                 return True
 
     # ======================================================
