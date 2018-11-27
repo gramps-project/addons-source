@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-08 15:13+0300\n"
-"PO-Revision-Date: 2018-08-8 15:16+0300\n"
+"POT-Creation-Date: 2018-11-27 11:10+0300\n"
+"PO-Revision-Date: 2018-11-27 11:26+0300\n"
 "Last-Translator: Komaritsyn Ivan <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -17,17 +17,72 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: GraphView/graphview.gpr.py:15 GraphView/graphview.py:135
+#: GraphView/graphview.gpr.py:29 GraphView/graphview.py:135
 msgid "Graph View"
 msgstr "Граф отношений"
 
-#: GraphView/graphview.gpr.py:16
+#: GraphView/graphview.gpr.py:30
 msgid "Charts"
 msgstr "Диаграммы"
 
-#: GraphView/graphview.gpr.py:17
+#: GraphView/graphview.gpr.py:31
 msgid "Dynamic graph of relations"
 msgstr "Динамический граф отношений"
+
+#: GraphView/graphview.gpr.py:48
+msgid ""
+"Graphview Warning:  Goocanvas 2 (https://wiki.gnome.org/action/show/Projects/"
+"GooCanvas) is required for this view to work"
+msgstr ""
+"Graphview ВНИМАНИЕ:  Goocanvas 2 (https://wiki.gnome.org/action/show/"
+"Projects/GooCanvas) необходим для работы этого вида"
+
+#: GraphView/graphview.gpr.py:53
+msgid ""
+"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
+"view to work"
+msgstr ""
+"Graphview ВНИМАНИЕ:  GraphViz (http://www.graphviz.org) необходим для работы "
+"этого вида"
+
+#: GraphView/graphview.gpr.py:62
+msgid "Graphview Failed to Load"
+msgstr "Ошибка при загрузке Graphview"
+
+#: GraphView/graphview.gpr.py:63
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Graphview is missing python modules or programs.\n"
+"%smust be installed.\n"
+"\n"
+"For now, it may be possible to install the files manually. See\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title="
+"\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"To dismiss all future Graphview warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"Graphview - отстутствуют библиотеки или программы python.\n"
+"%sдолжен быть установлен.\n"
+"\n"
+"На данный момент, их установку можно произвести только вручную. Смотри\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title="
+"\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"Для отключения всех последующих сообщений Graphview нажмите Отключить."
+
+#: GraphView/graphview.gpr.py:79
+msgid " Dismiss "
+msgstr " Отключить "
+
+#: GraphView/graphview.gpr.py:80
+msgid "Continue"
+msgstr "Продолжить"
 
 #: GraphView/graphview.py:170
 msgid "_Print..."
@@ -242,34 +297,34 @@ msgstr "Дети"
 msgid "Add child to family"
 msgstr "Добавить ребёнка в семью"
 
-#: GraphView/graphview.py:1483
+#: GraphView/graphview.py:1486
 msgid "Add Child to Family"
 msgstr "Добавление ребёнка в семью"
 
-#: GraphView/graphview.py:1565
+#: GraphView/graphview.py:1568
 msgid "Adding Tags"
 msgstr "Добавление меток"
 
-#: GraphView/graphview.py:1571
+#: GraphView/graphview.py:1574
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Изменение меток лица (%s)"
 
-#: GraphView/graphview.py:1576
+#: GraphView/graphview.py:1579
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Изменение меток семьи (%s)"
 
-#: GraphView/graphview.py:2695
+#: GraphView/graphview.py:2674
 #, python-format
 msgid "b. %s"
 msgstr "р. %s"
 
-#: GraphView/graphview.py:2702
+#: GraphView/graphview.py:2679
 #, python-format
 msgid "d. %s"
 msgstr "у. %s"
 
-#: GraphView/graphview.py:2880
+#: GraphView/graphview.py:2858
 msgid "<b>Tags:</b>"
 msgstr "<b>Метки:</b>"
