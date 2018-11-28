@@ -1,0 +1,132 @@
+# Russian translation for AncestorFill
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-27 16:39+0300\n"
+"PO-Revision-Date: 2018-11-09 17:39+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr ""
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "Отчёт о заполнении древа"
+
+#: AncestorFill/AncestorFill.py:105
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Лицо %s отсутствует в базе данных"
+
+#: AncestorFill/AncestorFill.py:190
+#, python-format
+msgid "AncestorFill for %s"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:206
+msgid "Generation "
+msgstr "Поколение "
+
+#: AncestorFill/AncestorFill.py:207
+msgid "Number of Ancestors found "
+msgstr "Количество найденных предков"
+
+#: AncestorFill/AncestorFill.py:208
+msgid "percent of Ancestors found "
+msgstr "процент найденных предков "
+
+#: AncestorFill/AncestorFill.py:209
+msgid "Number of single Ancestors found "
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:210
+msgid "Number of theoretical Ancestors "
+msgstr "Количество предков (теоретическое) "
+
+#: AncestorFill/AncestorFill.py:211
+msgid "Pedigree Collapse "
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:254
+msgid "Total Number of Ancestors found "
+msgstr "Общее количество найденных предков "
+
+#: AncestorFill/AncestorFill.py:256
+msgid "Total Number of single Ancestors found "
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:293
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: AncestorFill/AncestorFill.py:295
+msgid "Center Person"
+msgstr "Главное лицо"
+
+#: AncestorFill/AncestorFill.py:296
+msgid "The center person for the report"
+msgstr "Главное лицо для отчёта"
+
+#: AncestorFill/AncestorFill.py:299
+msgid "Generations"
+msgstr "Поколения"
+
+#: AncestorFill/AncestorFill.py:300
+msgid "The number of generations to include in the report"
+msgstr "Сколько поколений включать в отчёт"
+
+#: AncestorFill/AncestorFill.py:303
+msgid "Filled digit"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:304
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:307
+msgid "Collapsed digit"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:308
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:311
+msgid "Display theoretical"
+msgstr "Показывать теоретические данные"
+
+#: AncestorFill/AncestorFill.py:312
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Показывать ли теоретическое количество предков по поколениям"
+
+#: AncestorFill/AncestorFill.py:360
+msgid "The style used for the title of the page."
+msgstr "Стиль заголовка страницы."
+
+#: AncestorFill/AncestorFill.py:373
+msgid "The style used for the generation header."
+msgstr "Стиль заголовка поколений."
+
+#: AncestorFill/AncestorFill.py:383
+msgid "The basic style used for the text display."
+msgstr "Основной стиль текста."
