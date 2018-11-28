@@ -1,0 +1,649 @@
+# Russian translation for D3Charts
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-28 15:03+0300\n"
+"PO-Revision-Date: 2018-11-28 16:05+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:22
+msgid "Ancestral Collapsible Tree"
+msgstr "Древо предков (D3)"
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:31
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением предков (SVG) "
+"представленном в виде сворачиваемого древа при помощи D3.js JavaScript библиотеки."
+
+#: D3Charts/AncestralCollapsibleTree.py:124 D3Charts/AncestralFanChart.py:120
+#: D3Charts/DescendantIndentedTree.py:913
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Лицо %s отсутствует в базе данных"
+
+#: D3Charts/AncestralCollapsibleTree.py:326
+#: D3Charts/AncestralCollapsibleTree.py:768
+#: D3Charts/AncestralCollapsibleTree.py:781 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:645 D3Charts/AncestralFanChart.py:670
+#: D3Charts/DescendantIndentedTree.py:1497
+#: D3Charts/DescendantIndentedTree.py:1557
+#: D3Charts/DescendantIndentedTree.py:1563
+#: D3Charts/DescendantIndentedTree.py:1670
+#: D3Charts/DescendantIndentedTree.py:1689
+#, python-format
+msgid "Failed writing %s: %s"
+msgstr "Ошибка записи %s: %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:344 D3Charts/AncestralFanChart.py:419
+#: D3Charts/DescendantIndentedTree.py:1515
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Не удалось создать структуру каталогов : %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:366 D3Charts/AncestralFanChart.py:441
+#: D3Charts/DescendantIndentedTree.py:1550
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Не удалось скопировать веб-файлы : %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:811
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Параметры древа предков"
+
+#: D3Charts/AncestralCollapsibleTree.py:813 D3Charts/AncestralFanChart.py:704
+#: D3Charts/DescendantIndentedTree.py:1778
+msgid "Center Person"
+msgstr "Главное лицо"
+
+#: D3Charts/AncestralCollapsibleTree.py:814 D3Charts/AncestralFanChart.py:705
+#: D3Charts/DescendantIndentedTree.py:1779
+msgid "The center person for the report"
+msgstr "Главное лицо для отчёта"
+
+#: D3Charts/AncestralCollapsibleTree.py:828 D3Charts/AncestralFanChart.py:711
+msgid "Name format"
+msgstr "Формат имён"
+
+#: D3Charts/AncestralCollapsibleTree.py:829 D3Charts/AncestralFanChart.py:712
+msgid "Default"
+msgstr "По умолчанию"
+
+#: D3Charts/AncestralCollapsibleTree.py:832 D3Charts/AncestralFanChart.py:715
+msgid "Select the format to display names"
+msgstr "Выберите формат отображения имён"
+
+#: D3Charts/AncestralCollapsibleTree.py:835 D3Charts/AncestralFanChart.py:718
+#: D3Charts/DescendantIndentedTree.py:1795
+msgid "Include Generations"
+msgstr "Включать покаления"
+
+#: D3Charts/AncestralCollapsibleTree.py:836 D3Charts/AncestralFanChart.py:719
+#: D3Charts/DescendantIndentedTree.py:1797
+msgid "The number of generations to include in the report"
+msgstr "Количество поколений включаемых в отчёт"
+
+#: D3Charts/AncestralCollapsibleTree.py:841
+msgid "Male Background Color"
+msgstr "Цвет для мужчин"
+
+#: D3Charts/AncestralCollapsibleTree.py:842
+msgid "RGB-color for male box background."
+msgstr "RGB-цвет для мужского блока"
+
+#: D3Charts/AncestralCollapsibleTree.py:845
+msgid "Male Expandable Background Color"
+msgstr "Цвет для мужчин (раскрываемый)"
+
+#: D3Charts/AncestralCollapsibleTree.py:847
+msgid "RGB-color for male expandable box background."
+msgstr "RGB-цвет для мужского раскрываемого блока"
+
+#: D3Charts/AncestralCollapsibleTree.py:850
+msgid "Female Background"
+msgstr "Цвет для женщин"
+
+#: D3Charts/AncestralCollapsibleTree.py:851
+msgid "RGB-color for female box background."
+msgstr "RGB-цвет для женского блока"
+
+#: D3Charts/AncestralCollapsibleTree.py:854
+msgid "Female Expandable Background"
+msgstr "Цвет для женщин (раскрываемый)"
+
+#: D3Charts/AncestralCollapsibleTree.py:856
+msgid "RGB-color for female expandable box background."
+msgstr "RGB-цвет для женского раскрываемого блока"
+
+#: D3Charts/AncestralCollapsibleTree.py:860 D3Charts/AncestralFanChart.py:732
+#: D3Charts/DescendantIndentedTree.py:1815
+msgid "Destination"
+msgstr "Расположение"
+
+#: D3Charts/AncestralCollapsibleTree.py:862 D3Charts/AncestralFanChart.py:734
+#: D3Charts/DescendantIndentedTree.py:1817
+msgid "The destination path for generated files."
+msgstr "Путь назначения к создаваемым файлам."
+
+#: D3Charts/AncestralCollapsibleTree.py:866 D3Charts/AncestralFanChart.py:738
+#: D3Charts/DescendantIndentedTree.py:1821
+msgid "Filename"
+msgstr "Имя файла"
+
+#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
+#: D3Charts/DescendantIndentedTree.py:1822
+msgid "The destination file name for html content."
+msgstr "Имя файла для html"
+
+#: D3Charts/AncestralFanChart.gpr.py:22
+msgid "Ancestral Fan Chart"
+msgstr "Круговая диаграмма предков"
+
+#: D3Charts/AncestralFanChart.gpr.py:31
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением предков (SVG) "
+"представленном в виде круговой диаграммы при помощи D3.js JavaScript библиотеки."
+
+#: D3Charts/AncestralFanChart.py:702
+msgid "Ancestral Fan Chart Options"
+msgstr "Параметры круговой диаграммы"
+
+#: D3Charts/AncestralFanChart.py:724
+msgid "Paternal Background Color"
+msgstr "Цвет фона для отца"
+
+#: D3Charts/AncestralFanChart.py:725
+msgid "RGB-color for paternal box background."
+msgstr "RGB-цвет для фона блока отца."
+
+#: D3Charts/AncestralFanChart.py:728
+msgid "Maternal Background"
+msgstr "Цвет фона для матери"
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "RGB-color for maternal box background."
+msgstr "RGB-цвет для фона блока матери."
+
+#: D3Charts/DescendantIndentedTree.gpr.py:22
+#: D3Charts/DescendantIndentedTree.py:908
+msgid "Descendant Indented Tree"
+msgstr "Древо потомков с отступами"
+
+#: D3Charts/DescendantIndentedTree.gpr.py:31
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением потомков (SVG) "
+"представленном в виде сворачиваемого древа с отступами при помощи D3.js JavaScript библиотеки."
+
+#: D3Charts/DescendantIndentedTree.py:672
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Смотри %(reference)s : %(spouse)s"
+
+#: D3Charts/DescendantIndentedTree.py:743
+#: D3Charts/DescendantIndentedTree.py:810
+#, python-format
+msgid "%s sp."
+msgstr "%s супр."
+
+#: D3Charts/DescendantIndentedTree.py:763
+msgid "Generating report..."
+msgstr "Создание отчёта..."
+
+#: D3Charts/DescendantIndentedTree.py:1363
+msgid "Invalid Destination Directory"
+msgstr "Не верный каталог назначения"
+
+#: D3Charts/DescendantIndentedTree.py:1364
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Каталог назначения %s не существует\n"
+"Хотите создать его?"
+
+#: D3Charts/DescendantIndentedTree.py:1367
+#: D3Charts/DescendantIndentedTree.py:1391
+msgid "_Yes"
+msgstr "_Да"
+
+#: D3Charts/DescendantIndentedTree.py:1368
+#: D3Charts/DescendantIndentedTree.py:1392
+msgid "_No"
+msgstr "_Нет"
+
+#: D3Charts/DescendantIndentedTree.py:1373
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Не удалось создать %s: %s"
+
+#: D3Charts/DescendantIndentedTree.py:1380
+msgid "Permission problem"
+msgstr "Ошибка отсутствия прав"
+
+#: D3Charts/DescendantIndentedTree.py:1381
+#, python-format
+msgid ""
+"You do not have permission to write under the directory %s\n"
+"\n"
+"Please select another directory or correct the permissions."
+msgstr ""
+"Отсутствуют права на запись в каталог %s\n"
+"\n"
+"Пожалуйста, выберите другой каталог или измените права доступа."
+
+#: D3Charts/DescendantIndentedTree.py:1387
+msgid "File already exists"
+msgstr "Файл уже существует"
+
+#: D3Charts/DescendantIndentedTree.py:1388
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite."
+msgstr ""
+"Файл назначения %s уже существует.\n"
+"Хотите перезаписать его?"
+
+#: D3Charts/DescendantIndentedTree.py:1443
+msgid "Default View"
+msgstr "Вид по умолчанию"
+
+#: D3Charts/DescendantIndentedTree.py:1446
+msgid "Expand All"
+msgstr "Раскрыть все"
+
+#: D3Charts/DescendantIndentedTree.py:1775
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: D3Charts/DescendantIndentedTree.py:1784
+msgid "Numbering system"
+msgstr "Система нумерации"
+
+#: D3Charts/DescendantIndentedTree.py:1786
+msgid "Simple numbering"
+msgstr "простая нумерация"
+
+#: D3Charts/DescendantIndentedTree.py:1787
+msgid "d'Aboville numbering"
+msgstr "метод д'Абовиля"
+
+#: D3Charts/DescendantIndentedTree.py:1788
+msgid "Henry numbering"
+msgstr "Система Генри"
+
+#: D3Charts/DescendantIndentedTree.py:1789
+msgid "de Villiers/Pama numbering"
+msgstr "нумерация Вилье/Пама"
+
+#: D3Charts/DescendantIndentedTree.py:1790
+msgid "Meurgey de Tupigny numbering"
+msgstr "нумерация Тюпинье"
+
+#: D3Charts/DescendantIndentedTree.py:1791
+msgid "Record (Modified Register) numbering"
+msgstr "Модифицированная регистрационная система"
+
+#: D3Charts/DescendantIndentedTree.py:1792
+msgid "The numbering system to be used"
+msgstr "Какая система нумерации поколений и потомков будет использована"
+
+#: D3Charts/DescendantIndentedTree.py:1802
+msgid "Include contraction level"
+msgstr "Включить уровень сжатия"
+
+#: D3Charts/DescendantIndentedTree.py:1804
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Количество потомков для отображения на одном экране."
+
+#: D3Charts/DescendantIndentedTree.py:1809
+msgid "Font size"
+msgstr "Размер шрифта"
+
+#: D3Charts/DescendantIndentedTree.py:1811
+msgid "The font size in pixels for each node."
+msgstr "Размер шрифта в пикселях для каждого блока."
+
+#: D3Charts/DescendantIndentedTree.py:1828
+msgid "Content"
+msgstr "Содержание"
+
+#: D3Charts/DescendantIndentedTree.py:1830
+msgid "Show marriage info"
+msgstr "Показывать информацию о браках"
+
+#: D3Charts/DescendantIndentedTree.py:1831
+msgid "Whether to show marriage information in the report."
+msgstr "Включать или нет информацию о браке в отчёт."
+
+#: D3Charts/DescendantIndentedTree.py:1834
+msgid "Show divorce info"
+msgstr "Показывать информацию о разводах"
+
+#: D3Charts/DescendantIndentedTree.py:1835
+msgid "Whether to show divorce information in the report."
+msgstr "Включать или нет информацию о разводе в отчёт."
+
+#: D3Charts/DescendantIndentedTree.py:1838
+msgid "Show duplicate trees"
+msgstr "Показать дубликаты древ"
+
+#: D3Charts/DescendantIndentedTree.py:1839
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Включать или нет информацию о дубликатах древ."
+
+#: D3Charts/DescendantIndentedTree.py:1843
+msgid "Expanded Row Background Color"
+msgstr "Цвет фона для развёрнутой строки"
+
+#: D3Charts/DescendantIndentedTree.py:1844
+msgid "RGB-color for expanded row backgrёound."
+msgstr "RGB-цвет фона для развёрнутой строки."
+
+#: D3Charts/DescendantIndentedTree.py:1847
+msgid "Expandable Background Color"
+msgstr "Цвет фона для разворачивоемой строки"
+
+#: D3Charts/DescendantIndentedTree.py:1849
+msgid "RGB-color for expandable row background."
+msgstr "RGB-цвет фона для разворачивоемой строки."
+
+#: D3Charts/DescendantIndentedTree.py:1852
+msgid "Non-Expandable Background Color"
+msgstr "Цвет фона для неразворачивоемой строки"
+
+#: D3Charts/DescendantIndentedTree.py:1854
+msgid "RGB-color for non-expandable row background."
+msgstr "RGB-цвет фона для неразворачивоемой строки."
+
+#: D3Charts/DescendantIndentedTree.py:1858
+msgid "Include records marked private"
+msgstr "Включать записи помеченные как личные"
+
+#: D3Charts/DescendantIndentedTree.py:1860
+msgid "Whether to include private objects."
+msgstr "Включать или нет личные данные."
+
+#: D3Charts/DescendantIndentedTree.py:1863
+msgid "Living People"
+msgstr "Ныне живущие люди"
+
+#: D3Charts/DescendantIndentedTree.py:1866
+msgid "Exclude"
+msgstr "Исключить"
+
+#: D3Charts/DescendantIndentedTree.py:1868
+msgid "Include Last Name Only"
+msgstr "Включить только фамилию"
+
+#: D3Charts/DescendantIndentedTree.py:1870
+msgid "Include Full Name Only"
+msgstr "Включить полное имя"
+
+#: D3Charts/DescendantIndentedTree.py:1871
+msgid "Include"
+msgstr "Включить"
+
+#: D3Charts/DescendantIndentedTree.py:1872
+msgid "How to handle living people."
+msgstr "Как обрабатывать живых людей."
+
+#: D3Charts/DescendantIndentedTree.py:1877
+msgid "Years from death to consider living"
+msgstr "Лет от смерти, чтобы считать человека живым"
+
+#: D3Charts/DescendantIndentedTree.py:1879
+msgid "Whether or not to include people who may have recently died."
+msgstr "Включать ли лица, которые могли недавно умереть."
+
+#: D3Charts/DescendantIndentedTree.py:1887
+msgid "Navigation"
+msgstr "Навигация"
+
+#: D3Charts/DescendantIndentedTree.py:1889
+msgid "Contraction/Expansion mechanism"
+msgstr "Механизм сворачивания и открытия"
+
+#: D3Charts/DescendantIndentedTree.py:1892
+msgid "Entire node."
+msgstr "Блок полностью."
+
+#: D3Charts/DescendantIndentedTree.py:1893
+msgid "Arrow images at start of node."
+msgstr "Стрелочка в начале блока."
+
+#: D3Charts/DescendantIndentedTree.py:1894
+msgid "Plus/Minus images at start of node."
+msgstr "Плюс/минус в начале блока."
+
+#: D3Charts/DescendantIndentedTree.py:1895
+#: D3Charts/DescendantIndentedTree.py:1924
+msgid "Where to click to expand/contract nodes."
+msgstr "Где необходимо нажать для сворачивания/разворачиваия блока."
+
+#: D3Charts/DescendantIndentedTree.py:1899
+msgid "Auto-generate HREF links for nodes"
+msgstr "Автоматически создать HREF ссылки для блоков"
+
+#: D3Charts/DescendantIndentedTree.py:1901
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "Нужно ли автоматически создать HTML ссылки для каждого блока в отчёте."
+
+#: D3Charts/DescendantIndentedTree.py:1907
+msgid "URL prefix path."
+msgstr "Префикс URL пути."
+
+#: D3Charts/DescendantIndentedTree.py:1909
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "Префикс URL, применяемый для каждой автоматической HREF ссылки."
+
+#: D3Charts/DescendantIndentedTree.py:1915
+msgid "URL file extension"
+msgstr "Расширение файла URL"
+
+#: D3Charts/DescendantIndentedTree.py:1917
+msgid "No file extension."
+msgstr "Не указано расширение файла."
+
+#: D3Charts/DescendantIndentedTree.py:1918
+msgid ".html"
+msgstr ".html"
+
+#: D3Charts/DescendantIndentedTree.py:1919
+msgid ".htm"
+msgstr ".htm"
+
+#: D3Charts/DescendantIndentedTree.py:1920
+msgid ".shtml"
+msgstr ".shtml"
+
+#: D3Charts/DescendantIndentedTree.py:1921
+msgid ".php"
+msgstr ".php"
+
+#: D3Charts/DescendantIndentedTree.py:1922
+msgid ".php3"
+msgstr ".php3"
+
+#: D3Charts/DescendantIndentedTree.py:1923
+msgid ".cgi"
+msgstr ".cgi"
+
+#: D3Charts/DescendantIndentedTree.py:1929
+msgid "URL file name delimeter"
+msgstr "Разделитель для URL имени файла"
+
+#: D3Charts/DescendantIndentedTree.py:1931
+msgid "Remove all whitespace."
+msgstr "Удалить все пробелы."
+
+#: D3Charts/DescendantIndentedTree.py:1932
+msgid "Replace whitespace with dash(-)."
+msgstr "Заменить пробелы тире(-)."
+
+#: D3Charts/DescendantIndentedTree.py:1933
+msgid "Replace whitespace with underscore(_)"
+msgstr "Заменить пробелы подчеркиванием(_)"
+
+#: D3Charts/DescendantIndentedTree.py:1934
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Что будет использовано для разделителя в имени файла, вместо пробелов."
+
+#: D3Charts/DescendantIndentedTree.py:1939
+msgid "Generations to generate HREF links"
+msgstr "Поколения для создания HREF ссылок"
+
+#: D3Charts/DescendantIndentedTree.py:1941
+msgid "The number of generations to generate HREF links."
+msgstr "Количество поколений для создания HREF ссылок."
+
+#: D3Charts/DescendantIndentedTree.py:1947
+msgid "Exclude persons who died before (years)"
+msgstr "Исключить лица умершие до (года)"
+
+#: D3Charts/DescendantIndentedTree.py:1950
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Нужно ли создавать ссылки для лиц, которые умерли ранее, -1 включать всех."
+
+#: D3Charts/DescendantIndentedTree.py:1956
+msgid "Exclude center person"
+msgstr "Исключить главное лицо"
+
+#: D3Charts/DescendantIndentedTree.py:1957
+msgid "Whether or not to generate links for center person."
+msgstr "Создавать ли ссылки для гланого лица."
+
+#: D3Charts/DescendantIndentedTree.py:1962
+msgid "Exclude Spouses"
+msgstr "Исключать супругов"
+
+#: D3Charts/DescendantIndentedTree.py:1963
+msgid "Whether or not to generate links for spouses."
+msgstr "Создавать ли ссылки для супругов."
+
+#: D3Charts/DescendantIndentedTree.py:1970
+msgid "Biography Content"
+msgstr "Содержание биографии"
+
+#: D3Charts/DescendantIndentedTree.py:1972
+msgid "Show biography tooltips"
+msgstr "Показывать биографические подсказки"
+
+#: D3Charts/DescendantIndentedTree.py:1973
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Показывать биографические подсказки при наведении на блок."
+
+#: D3Charts/DescendantIndentedTree.py:1978
+msgid "Use callname for common name"
+msgstr "Использовать имя в быту как обычное имя"
+
+#: D3Charts/DescendantIndentedTree.py:1979
+msgid "Whether to use the call name as the first name."
+msgstr "Использовать ли разговорное имя в качестве основного."
+
+#: D3Charts/DescendantIndentedTree.py:1983
+msgid "Use full dates instead of only the year"
+msgstr "Использовать полные даты а не только год"
+
+#: D3Charts/DescendantIndentedTree.py:1986
+msgid "Whether to use full dates instead of just year."
+msgstr "Использовать полные даты вместо одного только года."
+
+#: D3Charts/DescendantIndentedTree.py:1990
+msgid "Compute death age"
+msgstr "Вычислять возраст смерти"
+
+#: D3Charts/DescendantIndentedTree.py:1991
+msgid "Whether to compute a person's age at death."
+msgstr "Вычислять ли в каком возрасте умер человек."
+
+#: D3Charts/DescendantIndentedTree.py:1995
+msgid "Include Photo/Images from Gallery"
+msgstr "Включать изображения из галерей"
+
+#: D3Charts/DescendantIndentedTree.py:1997
+msgid "Whether to include images."
+msgstr "Включать ли изображения."
+
+#: D3Charts/DescendantIndentedTree.py:2000
+msgid "Use complete sentences"
+msgstr "Использовать полные предложения"
+
+#: D3Charts/DescendantIndentedTree.py:2002
+msgid "Whether to use complete sentences or succinct language."
+msgstr "Использовать полные предложения или краткий язык."
+
+#: D3Charts/DescendantIndentedTree.py:2005
+msgid "Replace missing places with ______"
+msgstr "Заменять пропущенные места на ______"
+
+#: D3Charts/DescendantIndentedTree.py:2007
+msgid "Whether to replace missing Places with blanks."
+msgstr "Заменять не указанные места пропусками."
+
+#: D3Charts/DescendantIndentedTree.py:2011
+msgid "Replace missing dates with ______"
+msgstr "Заменять пропущенные даты на ______"
+
+#: D3Charts/DescendantIndentedTree.py:2013
+msgid "Whether to replace missing Dates with blanks."
+msgstr "Заменять не указанные даты пропусками."
+
+#: D3Charts/DescendantIndentedTree.py:2017
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: D3Charts/DescendantIndentedTree.py:2019
+msgid "RGB-color for biography text."
+msgstr "RGB-цвет для текста биографии."
+
+#: D3Charts/DescendantIndentedTree.py:2022
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: D3Charts/DescendantIndentedTree.py:2024
+msgid "RGB-color for biography tooltip."
+msgstr "RGB-цвет для биографических подсказок."
+
+#: D3Charts/DescendantIndentedTree.py:2027
+msgid "Header Font size"
+msgstr "Размер шрифта заголовка"
+
+#: D3Charts/DescendantIndentedTree.py:2029
+msgid "The font size in pixels for biography header text."
+msgstr "Размер шрифта в пикселях для текста заголовка биографии."
+
+#: D3Charts/DescendantIndentedTree.py:2035
+msgid "Body Font size"
+msgstr "Размер шрифта основного текста"
+
+#: D3Charts/DescendantIndentedTree.py:2037
+msgid "The font size in pixels for biography body text."
+msgstr "Размер шрифта в пикселях для основного текста биографии."
