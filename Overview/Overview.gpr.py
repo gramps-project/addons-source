@@ -23,9 +23,9 @@
 # Register Gramplet
 #
 #------------------------------------------------------------------------
-register(GRAMPLET, 
-         id="Person Overview", 
-         name=_("Person Overview"), 
+register(GRAMPLET,
+         id="Person Overview",
+         name=_("Person Overview"),
          description = _("Gramplet showing an overview of events for a person"),
          version = '1.0.5',
          gramps_target_version="5.0",
@@ -37,9 +37,9 @@ register(GRAMPLET,
          navtypes=["Person"],
          )
 
-register(GRAMPLET, 
-         id="Family Overview", 
-         name=_("Family Overview"), 
+register(GRAMPLET,
+         id="Family Overview",
+         name=_("Family Overview"),
          description = _("Gramplet showing an overview of events for a family"),
          version = '1.0.5',
          gramps_target_version="5.0",

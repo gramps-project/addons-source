@@ -81,7 +81,7 @@ class Overview(Gramplet):
                   (_('Residence'), 8, 160)]
         self.model = ListModel(top, titles, event_func=self.edit_event)
         return top
-        
+
     def add_event_ref(self, event_ref, spouse=None):
         """
         Add an event to the model.
@@ -97,8 +97,8 @@ class Overview(Gramplet):
                         values[0],
                         values[1],
                         values[2],
-                        values[3],                        
-                        values[4]                        
+                        values[3],
+                        values[4]
                         ))
 
     def get_attributes(self, event_ref):
@@ -162,7 +162,7 @@ class PersonOverview(Overview):
 
     def main(self): # return false finishes
         active_handle = self.get_active('Person')
-            
+
         self.model.clear()
         if active_handle:
             self.display_person(active_handle)
@@ -212,7 +212,7 @@ class FamilyOverview(Overview):
 
     def main(self): # return false finishes
         active_handle = self.get_active('Family')
-            
+
         self.model.clear()
         if active_handle:
             self.display_family(active_handle)

@@ -30,8 +30,8 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.datehandler import get_date, parser
 from gramps.gen.errors import WindowActiveError
-from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place, 
-                            Event, EventType, EventRef, Source, Citation, 
+from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place,
+                            Event, EventType, EventRef, Source, Citation,
                             Name, NameType, Surname, PlaceName)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
