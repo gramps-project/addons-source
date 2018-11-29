@@ -153,7 +153,7 @@ class HouseTimelineGramplet(Gramplet):
             self.append_text(
                 "     ~~~\n" +
                 " __[]________\n" +
-                "/____________\ \n" +
+                "/____________\\ \n" +
                 "|            | \n" +
                 "| [)(]  [)(] | \n" +
                 "|     __     | \n" +
@@ -164,7 +164,7 @@ class HouseTimelineGramplet(Gramplet):
         elif house_type == "002":
             self.append_text(
                 " .___. \n" +
-                "/ \___\ \n" +
+                "/ \___\\ \n" +
                 "|_|_#_| \n" +
                 "                        \n"
             )
