@@ -12,7 +12,14 @@ if os.sys.platform == "win32":
 else:
     _DOT = search_for("dot")
 
-if _GOO and _DOT or locals().get('build_script'):
+if not (_GOO and _DOT):
+    from gramps.gen.config import config
+    inifile = config.register_manager("graphviewwarn")
+    inifile.load()
+    sects = inifile.get_sections()
+
+if(_GOO and _DOT or locals().get('build_script') or
+   'graphviewwarn' not in sects):
     if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
         from gi.repository import Gtk, GdkPixbuf
         from gramps.gen.const import USER_PLUGINS
@@ -29,7 +36,7 @@ if _GOO and _DOT or locals().get('build_script'):
         name  = _("Graph View"),
         category = ("Ancestry", _("Charts")),
         description =  _("Dynamic graph of relations"),
-        version = '1.0.85',
+        version = '1.0.84',
         gramps_target_version = "5.0",
         status = STABLE,
         fname = 'graphview.py',
@@ -39,24 +46,20 @@ if _GOO and _DOT or locals().get('build_script'):
         stock_icon = 'gramps-graph',
     )
 
+from gramps.gen.config import logging
+if not _GOO:
+    warn_msg = _("Graphview Warning:  Goocanvas 2 "
+                 "(https://wiki.gnome.org/action/show/Projects/GooCanvas)"
+                 " is required for this view to work")
+    logging.log(logging.WARNING, warn_msg)
+if not _DOT:
+    warn_msg = _("Graphview Warning:  GraphViz "
+                 "(http://www.graphviz.org) is "
+                 "required for this view to work")
+    logging.log(logging.WARNING, warn_msg)
 # don't start GUI if in CLI mode, just ignore
 if not (_GOO and _DOT) and locals().get('uistate'):
-    from gramps.gen.config import config
     from gramps.gui.dialog import QuestionDialog2
-    from gramps.gen.config import logging
-    if not _GOO:
-        warn_msg = _("Graphview Warning:  Goocanvas 2 "
-                     "(https://wiki.gnome.org/action/show/Projects/GooCanvas)"
-                     " is required for this view to work")
-        logging.log(logging.WARNING, warn_msg)
-    if not _DOT:
-        warn_msg = _("Graphview Warning:  GraphViz "
-                     "(http://www.graphviz.org) is "
-                     "required for this view to work")
-        logging.log(logging.WARNING, warn_msg)
-    inifile = config.register_manager("graphviewwarn")
-    inifile.load()
-    sects = inifile.get_sections()
     if 'graphviewwarn' not in sects:
         yes_no = QuestionDialog2(
             _("Graphview Failed to Load"),
