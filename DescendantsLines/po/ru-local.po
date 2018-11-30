@@ -1,0 +1,422 @@
+# Russian translation for DescendantsLines
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-30 08:36+0300\n"
+"PO-Revision-Date: 2018-11-30 09:56+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: DescendantsLines/DescendantsLines.gpr.py:25
+msgid "Descendants Lines"
+msgstr "Линии потомков"
+
+#: DescendantsLines/DescendantsLines.gpr.py:26
+msgid "Produces descendants lines of a person"
+msgstr "Создаёт линии потомков для лица"
+
+#: DescendantsLines/DescendantsLines.py:422
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "Использование SVG для дополнительных документов не поддерживается!"
+
+#: DescendantsLines/DescendantsLines.py:1245
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: DescendantsLines/DescendantsLines.py:1436
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: DescendantsLines/DescendantsLines.py:1438
+msgid "Center Person"
+msgstr "Главное лицо"
+
+#: DescendantsLines/DescendantsLines.py:1439
+msgid "The center person for the report"
+msgstr "Главное лицо для отчёта"
+
+#: DescendantsLines/DescendantsLines.py:1442
+msgid "Output format"
+msgstr "Формат вывода"
+
+#: DescendantsLines/DescendantsLines.py:1443
+msgid "PNG format"
+msgstr "PNG формат"
+
+#: DescendantsLines/DescendantsLines.py:1444
+msgid "SVG format"
+msgstr "SVG формат"
+
+#: DescendantsLines/DescendantsLines.py:1445
+msgid "PDF format"
+msgstr "PDF формат"
+
+#: DescendantsLines/DescendantsLines.py:1446
+msgid "PS format"
+msgstr "PS формат"
+
+#: DescendantsLines/DescendantsLines.py:1447
+msgid "The output format to be used"
+msgstr "Формат, который будет использован для вывода"
+
+#: DescendantsLines/DescendantsLines.py:1451
+msgid "Destination"
+msgstr "Расположение"
+
+#: DescendantsLines/DescendantsLines.py:1452
+msgid "The destination file for the content."
+msgstr "Файл назначения для содержимого."
+
+#: DescendantsLines/DescendantsLines.py:1455
+msgid "Generations"
+msgstr "Поколения"
+
+#: DescendantsLines/DescendantsLines.py:1456
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Количество поколений для включения в график. (0 - без ограничений)"
+
+#: DescendantsLines/DescendantsLines.py:1460
+msgid "Box around Person's block"
+msgstr "Рамка вокруг блока лица"
+
+#: DescendantsLines/DescendantsLines.py:1461
+msgid "Draw a thin black box around each person' text block."
+msgstr "Рисовать черную рамку вокруг каждого текстового блока для лица."
+
+#: DescendantsLines/DescendantsLines.py:1465
+msgid "Colour blocks by Generation"
+msgstr "Цвет блоков по поколению"
+
+#: DescendantsLines/DescendantsLines.py:1466
+msgid "Colour the background of text blocks by generation."
+msgstr "Цвет фона текста по поколению."
+
+#: DescendantsLines/DescendantsLines.py:1470
+msgid "Descend block colour intensity"
+msgstr "Насыщенность цвета потомков"
+
+#: DescendantsLines/DescendantsLines.py:1471
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Насыщенность цвета фона потомков, 0 - слабая. 255 - большая"
+
+#: DescendantsLines/DescendantsLines.py:1475
+msgid "Spouse block colour intensity"
+msgstr "Насыщенность цвета супругов"
+
+#: DescendantsLines/DescendantsLines.py:1476
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Насыщенность цвета фона супругов, 0 - слабая. 255 - большая"
+
+#: DescendantsLines/DescendantsLines.py:1480
+msgid "Include an image"
+msgstr "Включать изображения"
+
+#: DescendantsLines/DescendantsLines.py:1481
+msgid "Whether to include an image if one is available."
+msgstr "Включать ли изображения, если есть."
+
+#: DescendantsLines/DescendantsLines.py:1485
+msgid "Max Image height"
+msgstr "Максимальная высота изображения"
+
+#: DescendantsLines/DescendantsLines.py:1486
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Максимальная высота изображения в пикселях, 0 - не масштабировать по высоте."
+
+#: DescendantsLines/DescendantsLines.py:1490
+msgid "Max Image width"
+msgstr "Максимальная ширина изображения"
+
+#: DescendantsLines/DescendantsLines.py:1491
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Максимальная ширина изображения, 0 - не масштабировать по ширине."
+
+#: DescendantsLines/DescendantsLines.py:1495
+msgid "Image Location"
+msgstr "Расположение изображения"
+
+#: DescendantsLines/DescendantsLines.py:1496
+msgid "Above text"
+msgstr "Над текстом"
+
+#: DescendantsLines/DescendantsLines.py:1497
+msgid "Left of text"
+msgstr "Слева от текста"
+
+#: DescendantsLines/DescendantsLines.py:1498
+msgid "Position of image relative to text"
+msgstr "Положение изображения относительно текста"
+
+#: DescendantsLines/DescendantsLines.py:1502
+msgid "Display"
+msgstr "Отображение"
+
+#: DescendantsLines/DescendantsLines.py:1504
+msgid "Name Display Format"
+msgstr "Формат отображения имени"
+
+#: DescendantsLines/DescendantsLines.py:1507
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=первое и среднее имена, l=фамилия, n=прозвище,\n"
+"c=используемое имя, t=титул, s=суффикс, g=фамильное прозвище\n"
+"Смотри Wiki Руководство > Отчёты > часть 2"
+
+#: DescendantsLines/DescendantsLines.py:1514
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Использовать систему нумерации потомков по Абовилю"
+
+#: DescendantsLines/DescendantsLines.py:1516
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Добавить номер перед именем по Абовилю в графике."
+
+#: DescendantsLines/DescendantsLines.py:1519
+msgid "Colour Name by Gender"
+msgstr "Цветовая схема по полу"
+
+#: DescendantsLines/DescendantsLines.py:1521
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Изменить цвет имени для обозначения пола лица в графике."
+
+#: DescendantsLines/DescendantsLines.py:1524
+msgid ""
+"Descendant\n"
+"Display Format"
+msgstr ""
+"Формат отображения\n"
+"для потомков"
+
+#: DescendantsLines/DescendantsLines.py:1530
+#: DescendantsLines/DescendantsLines.py:1549
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formating)\n"
+"Смотри Wiki Руководство > Отчёты > часть 2"
+"форматирование: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+
+#: DescendantsLines/DescendantsLines.py:1543
+msgid ""
+"Spousal\n"
+"Display Format"
+msgstr ""
+"Формат\n"
+"отображения\n"
+"супругов"
+
+#: DescendantsLines/DescendantsLines.py:1556
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Использовать альтернативные события, если основное событие не найдено"
+
+#: DescendantsLines/DescendantsLines.py:1557
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Для рождения (baptism, christen)\n"
+"   Брак (marr_lic, engagement)\n"
+"   Развод (annulment, div_filing),\n"
+"   Смерть (захоронение, кремация, завещание)."
+
+#: DescendantsLines/DescendantsLines.py:1563
+msgid "Sort Events by Date"
+msgstr "Сортировать события по дате"
+
+#: DescendantsLines/DescendantsLines.py:1564
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr "Сортировать события по дате (иначе используется порядок по умолчанию)"
+
+#: DescendantsLines/DescendantsLines.py:1568
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Защитить лица, изображения и события помеченные как личные"
+
+#: DescendantsLines/DescendantsLines.py:1570
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"Только в указанных типах объектов Gramps проверяется пометка о личных данных"
+
+#: DescendantsLines/DescendantsLines.py:1574
+msgid "Privacy text"
+msgstr "Текст для личных данных"
+
+#: DescendantsLines/DescendantsLines.py:1575
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Текст, который будет показан, если лицо помечено как личное"
+
+#: DescendantsLines/DescendantsLines.py:1579
+msgid "Text style"
+msgstr "Стиль текста"
+
+#: DescendantsLines/DescendantsLines.py:1580
+msgid "Center-aligned text"
+msgstr "Выравнивание по центру"
+
+#: DescendantsLines/DescendantsLines.py:1581
+msgid "Left-aligned text"
+msgstr "Выравнивание по левому краю"
+
+#: DescendantsLines/DescendantsLines.py:1582
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Выравнивание текста в блоках для всех лиц в графике"
+
+#: DescendantsLines/DescendantsLines.py:1586
+msgid "Max Note Length"
+msgstr "Максимальная длинна заметки"
+
+#: DescendantsLines/DescendantsLines.py:1587
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Максимальная длинна заметки для события, '$e(n)'\n"
+" 0 - без ограничений "
+
+#: DescendantsLines/DescendantsLines.py:1592
+msgid "Replace"
+msgstr "Заменить"
+
+#: DescendantsLines/DescendantsLines.py:1595
+msgid ""
+"Replace Display Format:\n"
+"'Replace this'/' with this'"
+msgstr ""
+"Заменить формат отображения:\n"
+"'Заменить это'/' этим'"
+
+#: DescendantsLines/DescendantsLines.py:1597
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"например\n"
+"Соединённые Штаты Америки/США"
+
+#: DescendantsLines/DescendantsLines.py:1601
+msgid "S  &amp; F Options"
+msgstr "S  &amp; F Параметры"
+
+#: DescendantsLines/DescendantsLines.py:1603
+msgid "S_DOWN"
+msgstr "S_DOWN"
+
+#: DescendantsLines/DescendantsLines.py:1604
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Длина по вертикали от потомка до супругов."
+
+#: DescendantsLines/DescendantsLines.py:1608
+msgid "S_UP"
+msgstr "S_UP"
+
+#: DescendantsLines/DescendantsLines.py:1609
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Длина по вертикали от супругов до супруга."
+
+#: DescendantsLines/DescendantsLines.py:1613
+msgid "S_VPAD"
+msgstr "S_VPAD"
+
+#: DescendantsLines/DescendantsLines.py:1614
+msgid "The number of ??? vpad"
+msgstr "Число ??? vpad"
+
+#: DescendantsLines/DescendantsLines.py:1617
+msgid "SP_PAD"
+msgstr "SP_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1624
+#: DescendantsLines/DescendantsLines.py:1628
+#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1645
+msgid "The number of ??? pad"
+msgstr "Число ??? pad"
+
+#: DescendantsLines/DescendantsLines.py:1623
+msgid "F_PAD"
+msgstr "F_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1627
+msgid "FL_PAD"
+msgstr "FL_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1631
+msgid "O, C &amp; Text Options"
+msgstr "O, C &amp; Параметры текста"
+
+#: DescendantsLines/DescendantsLines.py:1633
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1637
+msgid "O_DOWN"
+msgstr "O_DOWN"
+
+#: DescendantsLines/DescendantsLines.py:1638
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Длина по вертикали от супругов до детей."
+
+#: DescendantsLines/DescendantsLines.py:1644
+msgid "C_PAD"
+msgstr "C_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1648
+msgid "C_UP"
+msgstr "C_UP"
+
+#: DescendantsLines/DescendantsLines.py:1650
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Длина по вертикали от ребёнка до детей."
+
+#: DescendantsLines/DescendantsLines.py:1653
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+#: DescendantsLines/DescendantsLines.py:1654
+msgid "The number of ??? min width"
+msgstr "Число ??? минимальная ширина"
+
+#: DescendantsLines/DescendantsLines.py:1659
+msgid "TEXT_PAD"
+msgstr "TEXT_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1660
+msgid "The number of text pad ???"
+msgstr "Число для текста ??? pad"
+
+#: DescendantsLines/DescendantsLines.py:1663
+msgid "TEXT_LINE_PAD"
+msgstr "TEXT_LINE_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1664
+msgid "The number of text line pad ??? "
+msgstr "Число для строки текста ??? pad "
+
+#: DescendantsLines/DescendantsLines.py:1678
+msgid "The default style."
+msgstr "Стиль по умолчанию."
