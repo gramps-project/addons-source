@@ -267,7 +267,7 @@ msgstr "Сохранить копию данных в метаданные Exif 
 
 #: EditExifMetadata/editexifmetadata.py:953
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr ""Перечитать данные очищенные при редактировании.
+msgstr "Перечитать данные очищенные при редактировании."
 
 #: EditExifMetadata/editexifmetadata.py:956
 msgid "This button will clear all of the data fields shown here."
