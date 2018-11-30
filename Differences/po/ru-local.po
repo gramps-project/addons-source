@@ -1,0 +1,79 @@
+# Russian translation for Differences
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-30 10:20+0300\n"
+"PO-Revision-Date: 2018-11-30 10:26+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: Differences/differences.gpr.py:4
+msgid "Database Differences Report"
+msgstr "Отчёт об отличиях в базе данных"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Сравнивает внешнюю базу данных с текущей."
+
+#: Differences/differences.py:126
+msgid "Family Tree Differences"
+msgstr "Отличия в семейном древе"
+
+#: Differences/differences.py:127
+msgid "Processing..."
+msgstr "Обработка..."
+
+#: Differences/differences.py:294
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: Differences/differences.py:295
+msgid "Family Tree file"
+msgstr "Файл семейного древа"
+
+#: Differences/differences.py:296
+msgid "Select a .gpkg or .gramps file"
+msgstr "Выберите файл .gpkg или .gramps"
+
+#: Differences/differences.py:299
+msgid "Show items that are different"
+msgstr "Показывать отличающиеся объекты"
+
+#: Differences/differences.py:300
+msgid "Include items that are different"
+msgstr "Включать отличающиеся объекты"
+
+#: Differences/differences.py:303
+msgid "Show items missing from file"
+msgstr "Показывать отсутствующие в файле объекты"
+
+#: Differences/differences.py:304
+msgid "Include items not in file but in database"
+msgstr "Включать объекты отсутствующие в файле, но присутствующие в базе данных"
+
+#: Differences/differences.py:307
+msgid "Show items added in file"
+msgstr "Показывать новые объекты в файле"
+
+#: Differences/differences.py:308
+msgid "Include items in file but not in database"
+msgstr "Включать новые объекты из файла, отсутствующие в базе данных"
+
+#: Differences/differences.py:353 Differences/differences.py:355
+#: Differences/differences.py:358 Differences/differences.py:361
+msgid "Text"
+msgstr "Текст"
