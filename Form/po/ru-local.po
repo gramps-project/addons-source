@@ -1,0 +1,7793 @@
+# Russian translation for Form
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-30 14:13+0300\n"
+"PO-Revision-Date: 2018-11-30 15:00+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: Form/editform.py:147
+#, python-format
+msgid "Form: %s"
+msgstr "Форма: %s"
+
+#: Form/editform.py:149
+msgid "New Form"
+msgstr "Новая форма"
+
+#: Form/editform.py:156
+msgid "Edit Form"
+msgstr "Редактировать форму"
+
+#: Form/editform.py:179
+msgid "Source:"
+msgstr "Источник:"
+
+#: Form/editform.py:189
+msgid "Reference:"
+msgstr "Ссылка:"
+
+#: Form/editform.py:198
+msgid "Date:"
+msgstr "Дата:"
+
+#: Form/editform.py:211
+msgid "Place:"
+msgstr "Место:"
+
+#: Form/editform.py:244
+msgid "_Help"
+msgstr "_Справка"
+
+#: Form/editform.py:249 Form/selectform.py:97
+msgid "_Cancel"
+msgstr "_Отменить"
+
+#: Form/editform.py:253 Form/selectform.py:98
+msgid "_OK"
+msgstr "_OK"
+
+#: Form/editform.py:377
+msgid "Headings"
+msgstr "Заголовки"
+
+#: Form/editform.py:398
+msgid "Key"
+msgstr "Ключ"
+
+#: Form/editform.py:404
+msgid "Value"
+msgstr "Значение"
+
+#: Form/editform.py:479
+msgid "Details"
+msgstr "Подробности"
+
+#: Form/editform.py:678 Form/editform.py:691 Form/editform.py:894
+msgid "Select Person"
+msgstr "Выбрать лицо"
+
+#: Form/editform.py:705 Form/editform.py:707 Form/editform.py:776
+#: Form/editform.py:903 Form/editform.py:1060 Form/form_be.xml.h:1
+#: Form/form_ca.xml.h:9 Form/form_dk.xml.h:9 Form/form_fr.xml.h:1
+#: Form/form_gb.xml.h:6 Form/form_pl.xml.h:1 Form/form_us.xml.h:8
+msgid "Name"
+msgstr "Имя"
+
+#: Form/form.py:60
+msgid "Order"
+msgstr "Порядок"
+
+#: Form/form.py:63
+msgid "Form"
+msgstr "Форма"
+
+#: Form/form.py:66
+msgid "Groom"
+msgstr "Жених"
+
+#: Form/form.py:67
+msgid "Bride"
+msgstr "Невеста"
+
+#: Form/formgramplet.gpr.py:30
+msgid "Form Gramplet"
+msgstr "Формы"
+
+#: Form/formgramplet.gpr.py:31
+msgid "Gramplet interface for Forms"
+msgstr "Интерфейс для форм"
+
+#: Form/formgramplet.gpr.py:42
+msgid "Forms"
+msgstr "Формы"
+
+#: Form/formgramplet.py:108
+msgid "Source"
+msgstr "Источник"
+
+#: Form/formgramplet.py:111
+msgid "Role"
+msgstr "Роль"
+
+#: Form/formgramplet.py:114 Form/form_ca.xml.h:291 Form/form_us.xml.h:540
+msgid "Date"
+msgstr "Дата"
+
+#: Form/formgramplet.py:117 Form/form_ca.xml.h:404 Form/form_dk.xml.h:24
+#: Form/form_gb.xml.h:68 Form/form_us.xml.h:488
+msgid "Place"
+msgstr "Место"
+
+#: Form/formgramplet.py:125
+msgid "_New"
+msgstr "_Создать"
+
+#: Form/formgramplet.py:129
+msgid "_Edit"
+msgstr "_Правка"
+
+#: Form/selectform.py:71
+#, python-format
+msgid "%(title)s - Gramps"
+msgstr "%(title)s - Gramps"
+
+#: Form/selectform.py:71 Form/selectform.py:78
+msgid "Select Form"
+msgstr "Выбрать форму"
+
+#: Form/form_ca.xml.h:1 Form/form_us.xml.h:857
+msgid "Schedule"
+msgstr ""
+
+#: Form/form_ca.xml.h:2
+msgid "EnumDistrict"
+msgstr ""
+
+#: Form/form_ca.xml.h:3 Form/form_us.xml.h:633
+msgid "Township"
+msgstr "Район"
+
+#: Form/form_ca.xml.h:4 Form/form_dk.xml.h:1 Form/form_gb.xml.h:106
+#: Form/form_us.xml.h:447
+msgid "County"
+msgstr "Область/Район/Уезд"
+
+#: Form/form_ca.xml.h:5
+msgid "Comprising"
+msgstr "Содержит"
+
+#: Form/form_ca.xml.h:6
+msgid "OfTheSaid"
+msgstr ""
+
+#: Form/form_ca.xml.h:7
+msgid "Enumerator"
+msgstr ""
+
+#: Form/form_ca.xml.h:8
+msgid "Line"
+msgstr "Линия"
+
+#: Form/form_ca.xml.h:10
+msgid "1. Names of Inmates"
+msgstr "1. Имена сожителей"
+
+#: Form/form_ca.xml.h:11 Form/form_dk.xml.h:16 Form/form_fr.xml.h:4
+#: Form/form_gb.xml.h:8 Form/form_us.xml.h:134
+msgid "Occupation"
+msgstr "Профессия"
+
+#: Form/form_ca.xml.h:12
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Профессия, ремесло или род занятий"
+
+#: Form/form_ca.xml.h:13
+msgid "BirthPlace"
+msgstr "Место рождения"
+
+#: Form/form_ca.xml.h:14
+msgid "3. Place of Birth"
+msgstr "3. Место рождения"
+
+#: Form/form_ca.xml.h:15 Form/form_dk.xml.h:22 Form/form_fr.xml.h:17
+#: Form/form_gb.xml.h:111
+msgid "Religion"
+msgstr "Религия"
+
+#: Form/form_ca.xml.h:16
+msgid "4. Religion"
+msgstr "4. Религия"
+
+#: Form/form_ca.xml.h:17 Form/form_gb.xml.h:12 Form/form_us.xml.h:1088
+msgid "Residence"
+msgstr "Место жительства"
+
+#: Form/form_ca.xml.h:18
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Место жительства, если за границей"
+
+#: Form/form_ca.xml.h:19 Form/form_dk.xml.h:12 Form/form_fr.xml.h:9
+#: Form/form_gb.xml.h:14 Form/form_pl.xml.h:7 Form/form_us.xml.h:131
+msgid "Age"
+msgstr "Возраст"
+
+#: Form/form_ca.xml.h:20
+msgid "6. Age at Next Birthday"
+msgstr "6. Возраст на следующий день рождения"
+
+#: Form/form_ca.xml.h:21
+msgid "SexMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:22
+msgid "7. Sex: Male"
+msgstr "7. Пол: мужской"
+
+#: Form/form_ca.xml.h:23
+msgid "SexFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:24
+msgid "8. Sex: Female"
+msgstr "8. Пол: женский"
+
+#: Form/form_ca.xml.h:25
+msgid "MaritalStatus"
+msgstr ""
+
+#: Form/form_ca.xml.h:26
+msgid "9. Married or Single"
+msgstr "9. Состоит в браке или нет"
+
+#: Form/form_ca.xml.h:27
+msgid "Coloured"
+msgstr "Цветность"
+
+#: Form/form_ca.xml.h:28
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Цветное лицо - негр"
+
+#: Form/form_ca.xml.h:29
+msgid "Indians"
+msgstr "Индусы"
+
+#: Form/form_ca.xml.h:30
+msgid "11. Indians, if any"
+msgstr "11. Индусы, если есть"
+
+#: Form/form_ca.xml.h:31
+msgid "ResidentsMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:32
+msgid "12. Residents: Members, Male"
+msgstr "12. Место жительства: участники, мужчина"
+
+#: Form/form_ca.xml.h:33
+msgid "ResidentsFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:34
+msgid "13. Residents: Members, Female"
+msgstr "13. Место жительства: участники, женщина"
+
+#: Form/form_ca.xml.h:35
+msgid "NonMembersMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:36
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Место жительства: не участники: мужчина"
+
+#: Form/form_ca.xml.h:37
+msgid "NonMembersFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:38
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Место жительства: не участники: женщина"
+
+#: Form/form_ca.xml.h:39
+msgid "AbsentMembersMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:40
+msgid "16. Members Absent: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:41
+msgid "AbsentMembersFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:42
+msgid "17. Members Absent: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:43
+msgid "DeafDumbMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:44
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Глухой и немой: мужчина"
+
+#: Form/form_ca.xml.h:45
+msgid "DeafDumbFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:46
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Глухая и немая: женщина"
+
+#: Form/form_ca.xml.h:47
+msgid "BlindMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:48
+msgid "20. Blind: Male"
+msgstr "20. Слепой: мужчина"
+
+#: Form/form_ca.xml.h:49
+msgid "BlindFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:50
+msgid "21. Blind: Female"
+msgstr "21. Слепая: женщина"
+
+#: Form/form_ca.xml.h:51
+msgid "LunaticMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:52
+msgid "22. Lunatics: Male"
+msgstr "22. Сумасшедший: мужчина"
+
+#: Form/form_ca.xml.h:53
+msgid "LunaticFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:54
+msgid "23. Lunatics: Female"
+msgstr "23. Сумасшедший: женщина"
+
+#: Form/form_ca.xml.h:55
+msgid "ScholarMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:56
+msgid "24. Attending School: Male"
+msgstr "24. Посещение школы: мужчина"
+
+#: Form/form_ca.xml.h:57
+msgid "ScholarFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:58
+msgid "25. Attending School: Female"
+msgstr "25. Посещение школы: женщина"
+
+#: Form/form_ca.xml.h:59
+msgid "Birth1851Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:60
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Рождения в 1851 году: мужчины"
+
+#: Form/form_ca.xml.h:61
+msgid "Birth1851Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:62
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Рождения в 1851 году: женщины"
+
+#: Form/form_ca.xml.h:63
+msgid "Death1851Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:64
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Смерти в 1851 году: мужчины"
+
+#: Form/form_ca.xml.h:65
+msgid "Death1851Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:66
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Смерти в 1851 году: женщины"
+
+#: Form/form_ca.xml.h:67
+msgid "DeathAgeCause"
+msgstr ""
+
+#: Form/form_ca.xml.h:68
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Возраст и причина смерти"
+
+#: Form/form_ca.xml.h:69
+msgid "Houses"
+msgstr "Дома"
+
+#: Form/form_ca.xml.h:70
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr "31. Дома: кирпич, камень, каркас, хижина или другое место жительства"
+
+#: Form/form_ca.xml.h:71
+msgid "HousesStories"
+msgstr ""
+
+#: Form/form_ca.xml.h:72
+msgid "32. Houses: No. of Stories"
+msgstr "32. Дома: номер истории"
+
+#: Form/form_ca.xml.h:73
+msgid "HousesFamilies"
+msgstr ""
+
+#: Form/form_ca.xml.h:74
+msgid "33. No. of Families Occupying"
+msgstr ""
+
+#: Form/form_ca.xml.h:75
+msgid "HousesVacant"
+msgstr ""
+
+#: Form/form_ca.xml.h:76
+msgid "34. Houses: Vacant"
+msgstr "34. Дома: свободные"
+
+#: Form/form_ca.xml.h:77
+msgid "HousesBuilding"
+msgstr ""
+
+#: Form/form_ca.xml.h:78
+msgid "35. Houses: Building"
+msgstr "35. Дома: здания"
+
+#: Form/form_ca.xml.h:79
+msgid "Shops"
+msgstr "Магазины"
+
+#: Form/form_ca.xml.h:80
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Магазины, гостиницы, таверны и т.д."
+
+#: Form/form_ca.xml.h:81
+msgid "PublicBuildings"
+msgstr ""
+
+#: Form/form_ca.xml.h:82
+msgid "37. Public Buildings"
+msgstr "37. Общественные здания"
+
+#: Form/form_ca.xml.h:83
+msgid "WorshipPlaces"
+msgstr ""
+
+#: Form/form_ca.xml.h:84
+msgid "38. Places of Worship"
+msgstr ""
+
+#: Form/form_ca.xml.h:85
+msgid "BuisnessInfo"
+msgstr "Бизнес информация"
+
+#: Form/form_ca.xml.h:86
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Информация о заводах, фабриках и др., их стоимость, пощность, продукт и др."
+
+#: Form/form_ca.xml.h:87
+msgid "NumEmployees"
+msgstr ""
+
+#: Form/form_ca.xml.h:88
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr ""
+
+#: Form/form_ca.xml.h:89 Form/form_us.xml.h:141
+msgid "Remarks"
+msgstr "Замечания"
+
+#: Form/form_ca.xml.h:90
+msgid "41. General Remarks of the Enumerator"
+msgstr ""
+
+#: Form/form_ca.xml.h:91
+msgid "1. Name of Occupier"
+msgstr "1. Имя жильца"
+
+#: Form/form_ca.xml.h:92
+msgid "Concession"
+msgstr ""
+
+#: Form/form_ca.xml.h:93
+msgid "2. Concession or Range"
+msgstr ""
+
+#: Form/form_ca.xml.h:94
+msgid "Lot"
+msgstr ""
+
+#: Form/form_ca.xml.h:95
+msgid "3. Lot or part of Lot"
+msgstr ""
+
+#: Form/form_ca.xml.h:96
+msgid "AcresHeld"
+msgstr ""
+
+#: Form/form_ca.xml.h:97
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr ""
+
+#: Form/form_ca.xml.h:98
+msgid "AcresCultivation"
+msgstr ""
+
+#: Form/form_ca.xml.h:99
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr ""
+
+#: Form/form_ca.xml.h:100
+msgid "AcresCrops"
+msgstr ""
+
+#: Form/form_ca.xml.h:101
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr ""
+
+#: Form/form_ca.xml.h:102
+msgid "AcresPasture"
+msgstr ""
+
+#: Form/form_ca.xml.h:103
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr ""
+
+#: Form/form_ca.xml.h:104
+msgid "AcresGardens"
+msgstr ""
+
+#: Form/form_ca.xml.h:105
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr ""
+
+#: Form/form_ca.xml.h:106
+msgid "AcresWood"
+msgstr ""
+
+#: Form/form_ca.xml.h:107
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr ""
+
+#: Form/form_ca.xml.h:108
+msgid "WheatAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:109
+msgid "10. Wheat: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:110
+msgid "WheatBsh"
+msgstr ""
+
+#: Form/form_ca.xml.h:111
+msgid "11. Wheat: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:112
+msgid "BarleyAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:113
+msgid "12. Barley: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:114
+msgid "BarleyBsh"
+msgstr ""
+
+#: Form/form_ca.xml.h:115
+msgid "13. Barley: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:116
+msgid "RyeAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:117
+msgid "14. Rye: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:118
+msgid "RyeBsh"
+msgstr ""
+
+#: Form/form_ca.xml.h:119
+msgid "15. Rye: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:120
+msgid "PeasAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:121
+msgid "16. Peas: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:122
+msgid "PeasBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:123
+msgid "17. Peas: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:124
+msgid "OatsAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:125
+msgid "18. Oats: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:126
+msgid "OatsBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:127
+msgid "19. Oats: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:128
+msgid "BWheatAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:129
+msgid "20. B.Wheat: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:130
+msgid "BWheatBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:131
+msgid "21. B.Wheat: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:132
+msgid "CornAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:133
+msgid "22. Corn: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:134
+msgid "CornBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:135
+msgid "23. Corn: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:136
+msgid "PotatoesAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:137
+msgid "24. Potatoes: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:138
+msgid "PotatoesBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:139
+msgid "25. Potatoes: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:140
+msgid "TurnipsAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:141
+msgid "26. Turnips: Acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:142
+msgid "TurnipsBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:143
+msgid "27. Turnips: Produce Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:144
+msgid "CloverBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:145
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:146
+msgid "CarrotsBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:147
+msgid "29. Carrots - Bsh."
+msgstr ""
+
+#: Form/form_ca.xml.h:148
+msgid "MangleWurtzel"
+msgstr ""
+
+#: Form/form_ca.xml.h:149
+msgid "30. Mangle Wurtzel"
+msgstr ""
+
+#: Form/form_ca.xml.h:150
+msgid "BeansBush"
+msgstr ""
+
+#: Form/form_ca.xml.h:151
+msgid "31. Beans Bush"
+msgstr ""
+
+#: Form/form_ca.xml.h:152
+msgid "HopsLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:153
+msgid "32. Hops Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:154
+msgid "HayQty"
+msgstr ""
+
+#: Form/form_ca.xml.h:155
+msgid "33. Hay, Bundles or Tons"
+msgstr ""
+
+#: Form/form_ca.xml.h:156
+msgid "FlaxLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:157
+msgid "34. Flax or Hemp, Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:158
+msgid "TobaccoLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:159
+msgid "35. Tobacco Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:160
+msgid "WoolLbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:161
+msgid "36. Wool Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:162
+msgid "Column37"
+msgstr ""
+
+#: Form/form_ca.xml.h:163
+msgid "37."
+msgstr ""
+
+#: Form/form_ca.xml.h:164
+msgid "Column38"
+msgstr ""
+
+#: Form/form_ca.xml.h:165
+msgid "38."
+msgstr ""
+
+#: Form/form_ca.xml.h:166
+msgid "Column39"
+msgstr ""
+
+#: Form/form_ca.xml.h:167
+msgid "39."
+msgstr ""
+
+#: Form/form_ca.xml.h:168
+msgid "MapleSugarLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:169
+msgid "40. Maple Sugar Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:170
+msgid "CiderGalls"
+msgstr ""
+
+#: Form/form_ca.xml.h:171
+msgid "41. Cider Galls."
+msgstr ""
+
+#: Form/form_ca.xml.h:172
+msgid "ClothYards"
+msgstr ""
+
+#: Form/form_ca.xml.h:173
+msgid "42. Fulled Cloth Yards"
+msgstr ""
+
+#: Form/form_ca.xml.h:174
+msgid "LinnenYards"
+msgstr ""
+
+#: Form/form_ca.xml.h:175
+msgid "43. Linnen - Yds."
+msgstr ""
+
+#: Form/form_ca.xml.h:176
+msgid "FlannelYds"
+msgstr ""
+
+#: Form/form_ca.xml.h:177
+msgid "44. Flannel - Yds."
+msgstr ""
+
+#: Form/form_ca.xml.h:178
+msgid "Bulls"
+msgstr ""
+
+#: Form/form_ca.xml.h:179
+msgid "45. Bulls, Oxen or Steers"
+msgstr ""
+
+#: Form/form_ca.xml.h:180 Form/form_us.xml.h:151
+msgid "Milch Cows"
+msgstr ""
+
+#: Form/form_ca.xml.h:181
+msgid "46. Milch Cows"
+msgstr ""
+
+#: Form/form_ca.xml.h:182
+msgid "Calves"
+msgstr ""
+
+#: Form/form_ca.xml.h:183
+msgid "47. Calves or Heifers"
+msgstr ""
+
+#: Form/form_ca.xml.h:184 Form/form_us.xml.h:149
+msgid "Horses"
+msgstr ""
+
+#: Form/form_ca.xml.h:185
+msgid "48. Horses of all ages"
+msgstr ""
+
+#: Form/form_ca.xml.h:186 Form/form_us.xml.h:154
+msgid "Sheep"
+msgstr ""
+
+#: Form/form_ca.xml.h:187
+msgid "49. Sheep"
+msgstr ""
+
+#: Form/form_ca.xml.h:188
+msgid "Pigs"
+msgstr ""
+
+#: Form/form_ca.xml.h:189
+msgid "50. Pigs"
+msgstr ""
+
+#: Form/form_ca.xml.h:190
+msgid "ButterLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:191
+msgid "51. Butter - Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:192
+msgid "CheeseLbs"
+msgstr ""
+
+#: Form/form_ca.xml.h:193
+msgid "52. Cheese - Lbs."
+msgstr ""
+
+#: Form/form_ca.xml.h:194
+msgid "Beef"
+msgstr ""
+
+#: Form/form_ca.xml.h:195
+msgid "53. Beef - Barrels or Cwts."
+msgstr ""
+
+#: Form/form_ca.xml.h:196
+msgid "Pork"
+msgstr ""
+
+#: Form/form_ca.xml.h:197
+msgid "54. Pork - Barrels or Cwts."
+msgstr ""
+
+#: Form/form_ca.xml.h:198
+msgid "Fish"
+msgstr ""
+
+#: Form/form_ca.xml.h:199
+msgid "55. Quantity of Fish Cured"
+msgstr ""
+
+#: Form/form_ca.xml.h:200
+msgid "56. Remarks"
+msgstr ""
+
+#: Form/form_ca.xml.h:201 Form/form_pl.xml.h:17 Form/form_us.xml.h:1092
+msgid "Page"
+msgstr "Страница"
+
+#: Form/form_ca.xml.h:202
+msgid "2. Profession, trade or occupation"
+msgstr ""
+
+#: Form/form_ca.xml.h:203
+msgid "Married1851"
+msgstr ""
+
+#: Form/form_ca.xml.h:204
+msgid "4. Married during the year"
+msgstr ""
+
+#: Form/form_ca.xml.h:205
+msgid "5. Religion"
+msgstr ""
+
+#: Form/form_ca.xml.h:206
+msgid "6. Residence, if out of limits"
+msgstr ""
+
+#: Form/form_ca.xml.h:207
+msgid "7. Age next Birthday"
+msgstr ""
+
+#: Form/form_ca.xml.h:208
+msgid "8. Sex: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:209
+msgid "SexFemail"
+msgstr ""
+
+#: Form/form_ca.xml.h:210
+msgid "9. Sex:Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:211
+msgid "10. Married or Single"
+msgstr ""
+
+#: Form/form_ca.xml.h:212
+msgid "Widowers"
+msgstr ""
+
+#: Form/form_ca.xml.h:213
+msgid "11. Widowers"
+msgstr ""
+
+#: Form/form_ca.xml.h:214
+msgid "Widows"
+msgstr ""
+
+#: Form/form_ca.xml.h:215
+msgid "12. Widows"
+msgstr ""
+
+#: Form/form_ca.xml.h:216
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr ""
+
+#: Form/form_ca.xml.h:217
+msgid "MemberMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:218
+msgid "14. Members: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:219
+msgid "MemberFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:220
+msgid "15. Members: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:221
+msgid "NotMemberMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:222
+msgid "16. Not Members: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:223
+msgid "NotMemberFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:224
+msgid "17. Not Members: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:225
+msgid "MemberAbsentMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:226
+msgid "18. Members Absent: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:227
+msgid "MemberAbsentFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:228
+msgid "19. Members Absent: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:229
+msgid "DeafDumb"
+msgstr ""
+
+#: Form/form_ca.xml.h:230
+msgid "20. Deaf and Dumb"
+msgstr ""
+
+#: Form/form_ca.xml.h:231 Form/form_us.xml.h:251
+msgid "Blind"
+msgstr ""
+
+#: Form/form_ca.xml.h:232
+msgid "21. Blind"
+msgstr ""
+
+#: Form/form_ca.xml.h:233
+msgid "Lunatic"
+msgstr ""
+
+#: Form/form_ca.xml.h:234
+msgid "22. Lunatics or Idiots"
+msgstr ""
+
+#: Form/form_ca.xml.h:235
+msgid "23. Attending School within the year: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:236
+msgid "24. Attending School within the year: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:237
+msgid "CantReadMale"
+msgstr ""
+
+#: Form/form_ca.xml.h:238
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:239
+msgid "CantReadFemale"
+msgstr ""
+
+#: Form/form_ca.xml.h:240
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:241
+msgid "Birth1860Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:242
+msgid "27. Births in 1860: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:243
+msgid "Birth1860Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:244
+msgid "28. Births in 1860: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:245
+msgid "Death1860Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:246
+msgid "29. Deaths in 1860: Male"
+msgstr ""
+
+#: Form/form_ca.xml.h:247
+msgid "Death1860Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:248
+msgid "30. Deaths in 1860: Female"
+msgstr ""
+
+#: Form/form_ca.xml.h:249
+msgid "31. Age and cause of death"
+msgstr ""
+
+#: Form/form_ca.xml.h:250
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr ""
+
+#: Form/form_ca.xml.h:251
+msgid "33. Houses: No. of Stories"
+msgstr ""
+
+#: Form/form_ca.xml.h:252
+msgid "34. Houses: No. of families living in the house"
+msgstr ""
+
+#: Form/form_ca.xml.h:253
+msgid "35. Houses: Vacant"
+msgstr ""
+
+#: Form/form_ca.xml.h:254
+msgid "HouseBeingBuilt"
+msgstr ""
+
+#: Form/form_ca.xml.h:255
+msgid "36. Houses: Being built"
+msgstr ""
+
+#: Form/form_ca.xml.h:256
+msgid "Province"
+msgstr "Провинция"
+
+#: Form/form_ca.xml.h:257
+msgid "District"
+msgstr "Округ"
+
+#: Form/form_ca.xml.h:258
+msgid "SubDistrict"
+msgstr ""
+
+#: Form/form_ca.xml.h:259
+msgid "Vessels"
+msgstr ""
+
+#: Form/form_ca.xml.h:260
+msgid "1. Vessels"
+msgstr ""
+
+#: Form/form_ca.xml.h:261
+msgid "Shanties"
+msgstr ""
+
+#: Form/form_ca.xml.h:262
+msgid "2. Shanties"
+msgstr ""
+
+#: Form/form_ca.xml.h:263
+msgid "HousesBeingBuilt"
+msgstr ""
+
+#: Form/form_ca.xml.h:264
+msgid "3. Dwelling houses in construction"
+msgstr ""
+
+#: Form/form_ca.xml.h:265
+msgid "4. Dwelling houses unoccupied"
+msgstr ""
+
+#: Form/form_ca.xml.h:266
+msgid "HousesInhabited"
+msgstr ""
+
+#: Form/form_ca.xml.h:267
+msgid "5. Dwelling houses inhabited"
+msgstr ""
+
+#: Form/form_ca.xml.h:268
+msgid "Families"
+msgstr "Семьи"
+
+#: Form/form_ca.xml.h:269
+msgid "6.Families"
+msgstr "6.Семьи"
+
+#: Form/form_ca.xml.h:270
+msgid "7. Names"
+msgstr "7. Имена"
+
+#: Form/form_ca.xml.h:271 Form/form_gb.xml.h:7 Form/form_us.xml.h:132
+msgid "Sex"
+msgstr "Пол"
+
+#: Form/form_ca.xml.h:272
+msgid "8. Sex"
+msgstr "8. Пол"
+
+#: Form/form_ca.xml.h:273
+msgid "9. Age"
+msgstr "9. Возраст"
+
+#: Form/form_ca.xml.h:274
+msgid "Birth1871"
+msgstr ""
+
+#: Form/form_ca.xml.h:275
+msgid "10. Born within last twelve months"
+msgstr ""
+
+#: Form/form_ca.xml.h:276
+msgid "11. Country or Province of Birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:277
+msgid "12. Religion"
+msgstr "12. Религия"
+
+#: Form/form_ca.xml.h:278
+msgid "Origin"
+msgstr ""
+
+#: Form/form_ca.xml.h:279
+msgid "13. Origin"
+msgstr ""
+
+#: Form/form_ca.xml.h:280
+msgid "14. Profession, Occupation or Trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:281
+msgid "15. Married or Widowed"
+msgstr ""
+
+#: Form/form_ca.xml.h:282
+msgid "Maried1871"
+msgstr ""
+
+#: Form/form_ca.xml.h:283
+msgid "16. Married within last twelve months"
+msgstr ""
+
+#: Form/form_ca.xml.h:284
+msgid "Scholar"
+msgstr ""
+
+#: Form/form_ca.xml.h:285
+msgid "17. Going to school"
+msgstr ""
+
+#: Form/form_ca.xml.h:286
+msgid "CantRead"
+msgstr ""
+
+#: Form/form_ca.xml.h:287
+msgid "18. Over 20 unable to read"
+msgstr ""
+
+#: Form/form_ca.xml.h:288
+msgid "CantWrite"
+msgstr ""
+
+#: Form/form_ca.xml.h:289
+msgid "19. Over 20 unable to write"
+msgstr ""
+
+#: Form/form_ca.xml.h:290
+msgid "22. Unsound mind"
+msgstr ""
+
+#: Form/form_ca.xml.h:292
+msgid "23. Date of Operations and Remarks"
+msgstr ""
+
+#: Form/form_ca.xml.h:293
+msgid "3. Houses in construction"
+msgstr ""
+
+#: Form/form_ca.xml.h:294
+msgid "4. Houses unoccupied"
+msgstr ""
+
+#: Form/form_ca.xml.h:295
+msgid "5. Houses inhabited"
+msgstr ""
+
+#: Form/form_ca.xml.h:296
+msgid "6. Families"
+msgstr ""
+
+#: Form/form_ca.xml.h:297
+msgid "Birth1881"
+msgstr ""
+
+#: Form/form_ca.xml.h:298
+msgid "16. Going to school"
+msgstr ""
+
+#: Form/form_ca.xml.h:299
+msgid "17. Deaf and Dumb"
+msgstr ""
+
+#: Form/form_ca.xml.h:300
+msgid "18. Blind"
+msgstr ""
+
+#: Form/form_ca.xml.h:301
+msgid "19/ Unsound mind"
+msgstr ""
+
+#: Form/form_ca.xml.h:302
+msgid "20. Date of Operations and Remarks"
+msgstr ""
+
+#: Form/form_ca.xml.h:303
+msgid "1. Vessels and Shanties"
+msgstr ""
+
+#: Form/form_ca.xml.h:304
+msgid "2. Houses in construction"
+msgstr ""
+
+#: Form/form_ca.xml.h:305
+msgid "3. Houses unoccupied"
+msgstr ""
+
+#: Form/form_ca.xml.h:306
+msgid "4. Houses inhabited"
+msgstr ""
+
+#: Form/form_ca.xml.h:307
+msgid "5. Families"
+msgstr "5. Семьи"
+
+#: Form/form_ca.xml.h:308
+msgid "6. Names"
+msgstr "6. Имена"
+
+#: Form/form_ca.xml.h:309
+msgid "7. Sex"
+msgstr "7. Пол"
+
+#: Form/form_ca.xml.h:310
+msgid "8. Age"
+msgstr "8. Возраст"
+
+#: Form/form_ca.xml.h:311
+msgid "9. Married or Widowed"
+msgstr ""
+
+#: Form/form_ca.xml.h:312 Form/form_dk.xml.h:14 Form/form_fr.xml.h:5
+#: Form/form_gb.xml.h:24 Form/form_us.xml.h:759
+msgid "Relation"
+msgstr "Отношения"
+
+#: Form/form_ca.xml.h:313
+msgid "10. Relationship to Head of Family"
+msgstr ""
+
+#: Form/form_ca.xml.h:314
+msgid "French"
+msgstr "Французский"
+
+#: Form/form_ca.xml.h:315
+msgid "12. FrenchCanadian"
+msgstr ""
+
+#: Form/form_ca.xml.h:316
+msgid "BirthPlaceFather"
+msgstr ""
+
+#: Form/form_ca.xml.h:317
+msgid "13. Birth Place of Father"
+msgstr "13. Место рождения отца"
+
+#: Form/form_ca.xml.h:318
+msgid "BirthPlaceMother"
+msgstr ""
+
+#: Form/form_ca.xml.h:319
+msgid "14. Birth Place of Mother"
+msgstr "14. Место рождения матери"
+
+#: Form/form_ca.xml.h:320
+msgid "15. Religion"
+msgstr ""
+
+#: Form/form_ca.xml.h:321
+msgid "16. Profession, Occupation or Trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:322 Form/form_gb.xml.h:40
+msgid "Employer"
+msgstr ""
+
+#: Form/form_ca.xml.h:323
+msgid "17. Employers"
+msgstr ""
+
+#: Form/form_ca.xml.h:324
+msgid "Employee"
+msgstr ""
+
+#: Form/form_ca.xml.h:325
+msgid "18. Wage Earner"
+msgstr ""
+
+#: Form/form_ca.xml.h:326
+msgid "Unemployed"
+msgstr ""
+
+#: Form/form_ca.xml.h:327
+msgid "19. Unemployed during week preceding Census"
+msgstr ""
+
+#: Form/form_ca.xml.h:328
+msgid "Employees"
+msgstr ""
+
+#: Form/form_ca.xml.h:329
+msgid "20. Employer to state average number of hands employed during year"
+msgstr ""
+
+#: Form/form_ca.xml.h:330
+msgid "CanRead"
+msgstr ""
+
+#: Form/form_ca.xml.h:331
+msgid "21. Instruction: Read"
+msgstr ""
+
+#: Form/form_ca.xml.h:332
+msgid "CanWrite"
+msgstr ""
+
+#: Form/form_ca.xml.h:333
+msgid "22. Instruction: Write"
+msgstr ""
+
+#: Form/form_ca.xml.h:334
+msgid "23. Deaf and Dumb"
+msgstr ""
+
+#: Form/form_ca.xml.h:335
+msgid "24. Blind"
+msgstr "24. Слепой"
+
+#: Form/form_ca.xml.h:336
+msgid "25. Unsound mind"
+msgstr ""
+
+#: Form/form_ca.xml.h:337
+msgid "SubTitle"
+msgstr ""
+
+#: Form/form_ca.xml.h:338
+msgid "PollSub"
+msgstr ""
+
+#: Form/form_ca.xml.h:339
+msgid "Locality"
+msgstr "Местность"
+
+#: Form/form_ca.xml.h:340
+msgid "House"
+msgstr ""
+
+#: Form/form_ca.xml.h:341
+msgid "1. Dwelling house"
+msgstr ""
+
+#: Form/form_ca.xml.h:342
+msgid "Family"
+msgstr "Семья"
+
+#: Form/form_ca.xml.h:343
+msgid "2. Family or household"
+msgstr ""
+
+#: Form/form_ca.xml.h:344
+msgid "3. Name of each person in family"
+msgstr ""
+
+#: Form/form_ca.xml.h:345
+msgid "4. Sex"
+msgstr "4. Пол"
+
+#: Form/form_ca.xml.h:346
+msgid "Colour"
+msgstr "Цвет"
+
+#: Form/form_ca.xml.h:347
+msgid "5. Colour"
+msgstr ""
+
+#: Form/form_ca.xml.h:348
+msgid "6. Relation to head of family"
+msgstr ""
+
+#: Form/form_ca.xml.h:349
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr ""
+
+#: Form/form_ca.xml.h:350
+msgid "BirthMonth"
+msgstr ""
+
+#: Form/form_ca.xml.h:351
+msgid "8. Month and Date of Birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:352
+msgid "BirthYear"
+msgstr ""
+
+#: Form/form_ca.xml.h:353
+msgid "9. Year of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:354
+msgid "10. Age at last birthday"
+msgstr ""
+
+#: Form/form_ca.xml.h:355
+msgid "11. Country or place of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:356
+msgid "Immigration"
+msgstr "Иммиграция"
+
+#: Form/form_ca.xml.h:357
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr ""
+
+#: Form/form_ca.xml.h:358 Form/form_us.xml.h:394
+msgid "Naturalization"
+msgstr "Натурализация"
+
+#: Form/form_ca.xml.h:359
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr ""
+
+#: Form/form_ca.xml.h:360 Form/form_us.xml.h:476
+msgid "Race"
+msgstr ""
+
+#: Form/form_ca.xml.h:361
+msgid "14. Racial or tribal origin"
+msgstr ""
+
+#: Form/form_ca.xml.h:362 Form/form_fr.xml.h:7 Form/form_gb.xml.h:58
+msgid "Nationality"
+msgstr "Национальность"
+
+#: Form/form_ca.xml.h:363
+msgid "15. Nationality"
+msgstr "15. Национальность"
+
+#: Form/form_ca.xml.h:364
+msgid "16. Religion"
+msgstr ""
+
+#: Form/form_ca.xml.h:365
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr ""
+
+#: Form/form_ca.xml.h:366
+msgid "OwnMeans"
+msgstr ""
+
+#: Form/form_ca.xml.h:367
+msgid "18. Living on own means"
+msgstr ""
+
+#: Form/form_ca.xml.h:368
+msgid "19. Employer"
+msgstr ""
+
+#: Form/form_ca.xml.h:369
+msgid "20. Employee"
+msgstr ""
+
+#: Form/form_ca.xml.h:370
+msgid "SelfEmployed"
+msgstr ""
+
+#: Form/form_ca.xml.h:371
+msgid "21. Working on own account"
+msgstr ""
+
+#: Form/form_ca.xml.h:372
+msgid "WhereEmployed"
+msgstr ""
+
+#: Form/form_ca.xml.h:373
+msgid "22. Working at trade in factory or in home"
+msgstr ""
+
+#: Form/form_ca.xml.h:374
+msgid "MonthsFactory"
+msgstr ""
+
+#: Form/form_ca.xml.h:375
+msgid "23. Months employed at trade in factory"
+msgstr ""
+
+#: Form/form_ca.xml.h:376
+msgid "MonthsHome"
+msgstr ""
+
+#: Form/form_ca.xml.h:377
+msgid "24. Months employed at trade in home"
+msgstr ""
+
+#: Form/form_ca.xml.h:378
+msgid "MonthsOther"
+msgstr ""
+
+#: Form/form_ca.xml.h:379
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr ""
+
+#: Form/form_ca.xml.h:380
+msgid "EarningsOccupation"
+msgstr ""
+
+#: Form/form_ca.xml.h:381
+msgid "26. Earnings from occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:382
+msgid "EarningsOther"
+msgstr ""
+
+#: Form/form_ca.xml.h:383
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr ""
+
+#: Form/form_ca.xml.h:384
+msgid "SchoolMonths"
+msgstr ""
+
+#: Form/form_ca.xml.h:385
+msgid "28. Months at school in 1910"
+msgstr ""
+
+#: Form/form_ca.xml.h:386 Form/form_us.xml.h:752
+msgid "Read"
+msgstr "Чтение"
+
+#: Form/form_ca.xml.h:387
+msgid "29. Can read"
+msgstr "29. Может читать"
+
+#: Form/form_ca.xml.h:388 Form/form_us.xml.h:753
+msgid "Write"
+msgstr "Письменность"
+
+#: Form/form_ca.xml.h:389
+msgid "30. Can write"
+msgstr "30. Может писать"
+
+#: Form/form_ca.xml.h:390
+msgid "SpeakEnglish"
+msgstr ""
+
+#: Form/form_ca.xml.h:391
+msgid "31. Can speak English"
+msgstr ""
+
+#: Form/form_ca.xml.h:392
+msgid "SpeakFrench"
+msgstr ""
+
+#: Form/form_ca.xml.h:393
+msgid "32. Can speak French"
+msgstr ""
+
+#: Form/form_ca.xml.h:394 Form/form_gb.xml.h:65
+msgid "Language"
+msgstr "Язык"
+
+#: Form/form_ca.xml.h:395
+msgid "33. Mother tongue (If spoken)"
+msgstr ""
+
+#: Form/form_ca.xml.h:396
+msgid "Infirmities"
+msgstr ""
+
+#: Form/form_ca.xml.h:397
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr ""
+
+#: Form/form_ca.xml.h:398
+msgid "Name from Schedule 1"
+msgstr ""
+
+#: Form/form_ca.xml.h:399
+msgid "Line on Schedule 2"
+msgstr ""
+
+#: Form/form_ca.xml.h:400
+msgid "PageRef"
+msgstr ""
+
+#: Form/form_ca.xml.h:401
+msgid "2. Page from Schedule 1"
+msgstr ""
+
+#: Form/form_ca.xml.h:402
+msgid "LineRef"
+msgstr ""
+
+#: Form/form_ca.xml.h:403
+msgid "3. Line from Schedule 1"
+msgstr ""
+
+#: Form/form_ca.xml.h:405
+msgid "3. Place of Habitation"
+msgstr ""
+
+#: Form/form_ca.xml.h:406
+msgid "HousesConst"
+msgstr ""
+
+#: Form/form_ca.xml.h:407
+msgid "4. Houses: In construction"
+msgstr ""
+
+#: Form/form_ca.xml.h:408
+msgid "5. Houses: Vacant"
+msgstr ""
+
+#: Form/form_ca.xml.h:409
+msgid "6. Houses: Inhabited"
+msgstr ""
+
+#: Form/form_ca.xml.h:410 Form/form_us.xml.h:423
+msgid "Institution"
+msgstr ""
+
+#: Form/form_ca.xml.h:411
+msgid "7. Institution: Special or legal name"
+msgstr ""
+
+#: Form/form_ca.xml.h:412
+msgid "Buildings"
+msgstr ""
+
+#: Form/form_ca.xml.h:413
+msgid "8. Institution: Number of buildings"
+msgstr ""
+
+#: Form/form_ca.xml.h:414
+msgid "9. Number of families in house or institution"
+msgstr ""
+
+#: Form/form_ca.xml.h:415
+msgid "Rooms"
+msgstr ""
+
+#: Form/form_ca.xml.h:416
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr ""
+
+#: Form/form_ca.xml.h:417
+msgid "Inmates"
+msgstr ""
+
+#: Form/form_ca.xml.h:418
+msgid "11. Number of inmates in institution"
+msgstr ""
+
+#: Form/form_ca.xml.h:419
+msgid "OwnedAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:420
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:421
+msgid "OwnedLots"
+msgstr ""
+
+#: Form/form_ca.xml.h:422
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr ""
+
+#: Form/form_ca.xml.h:423
+msgid "OwnedHouses"
+msgstr ""
+
+#: Form/form_ca.xml.h:424
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr ""
+
+#: Form/form_ca.xml.h:425
+msgid "OwnedStores"
+msgstr ""
+
+#: Form/form_ca.xml.h:426
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr ""
+
+#: Form/form_ca.xml.h:427
+msgid "OwnedBars"
+msgstr ""
+
+#: Form/form_ca.xml.h:428
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr ""
+
+#: Form/form_ca.xml.h:429
+msgid "OwnedSilos"
+msgstr ""
+
+#: Form/form_ca.xml.h:430
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr ""
+
+#: Form/form_ca.xml.h:431
+msgid "OwnedFactories"
+msgstr ""
+
+#: Form/form_ca.xml.h:432
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr ""
+
+#: Form/form_ca.xml.h:433
+msgid "LeasedAcres"
+msgstr ""
+
+#: Form/form_ca.xml.h:434
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr ""
+
+#: Form/form_ca.xml.h:435
+msgid "LeasedLots"
+msgstr ""
+
+#: Form/form_ca.xml.h:436
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr ""
+
+#: Form/form_ca.xml.h:437
+msgid "LeasedHouses"
+msgstr ""
+
+#: Form/form_ca.xml.h:438
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr ""
+
+#: Form/form_ca.xml.h:439
+msgid "LeasedStores"
+msgstr ""
+
+#: Form/form_ca.xml.h:440
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr ""
+
+#: Form/form_ca.xml.h:441
+msgid "LeasedBarns"
+msgstr ""
+
+#: Form/form_ca.xml.h:442
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr ""
+
+#: Form/form_ca.xml.h:443
+msgid "LeasedSilos"
+msgstr ""
+
+#: Form/form_ca.xml.h:444
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr ""
+
+#: Form/form_ca.xml.h:445
+msgid "LeasedFactories"
+msgstr ""
+
+#: Form/form_ca.xml.h:446
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr ""
+
+#: Form/form_ca.xml.h:447
+msgid "Denomination"
+msgstr ""
+
+#: Form/form_ca.xml.h:448
+msgid "26. Church or place of worship: Religious denomination"
+msgstr ""
+
+#: Form/form_ca.xml.h:449
+msgid "Communicants"
+msgstr ""
+
+#: Form/form_ca.xml.h:450
+msgid "27. Church or place of worship: Number of communicants"
+msgstr ""
+
+#: Form/form_ca.xml.h:451
+msgid "Seating"
+msgstr ""
+
+#: Form/form_ca.xml.h:452
+msgid "28. Church or place of worship: Seating capacity"
+msgstr ""
+
+#: Form/form_ca.xml.h:453
+msgid "SSDenomination"
+msgstr ""
+
+#: Form/form_ca.xml.h:454
+msgid "29. Sunday School: Religious Denomination"
+msgstr ""
+
+#: Form/form_ca.xml.h:455
+msgid "SSTeachers"
+msgstr ""
+
+#: Form/form_ca.xml.h:456
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr ""
+
+#: Form/form_ca.xml.h:457
+msgid "SSScholars"
+msgstr ""
+
+#: Form/form_ca.xml.h:458
+msgid "31. Sunday School: Number of Scholars"
+msgstr ""
+
+#: Form/form_ca.xml.h:459
+msgid "SchoolRooms"
+msgstr ""
+
+#: Form/form_ca.xml.h:460
+msgid "32. School: Number of rooms"
+msgstr ""
+
+#: Form/form_ca.xml.h:461
+msgid "SchoolTeachers"
+msgstr ""
+
+#: Form/form_ca.xml.h:462
+msgid "33. School: Number of teachers"
+msgstr ""
+
+#: Form/form_ca.xml.h:463
+msgid "SchoolStudents"
+msgstr ""
+
+#: Form/form_ca.xml.h:464
+msgid "34. School: Number of Scholars"
+msgstr ""
+
+#: Form/form_ca.xml.h:465
+msgid "DateVisit"
+msgstr ""
+
+#: Form/form_ca.xml.h:466
+msgid "35. Date of visit"
+msgstr ""
+
+#: Form/form_ca.xml.h:467
+msgid "Reason"
+msgstr ""
+
+#: Form/form_ca.xml.h:468
+msgid "36. The reason, if not enumerated on first visit"
+msgstr ""
+
+#: Form/form_ca.xml.h:469
+msgid "DateEnum"
+msgstr ""
+
+#: Form/form_ca.xml.h:470
+msgid "37. Date when enumerated"
+msgstr ""
+
+#: Form/form_ca.xml.h:471
+msgid "1. No. of family in order of visitation"
+msgstr ""
+
+#: Form/form_ca.xml.h:472
+msgid "2. Name of each person in the family"
+msgstr ""
+
+#: Form/form_ca.xml.h:473
+msgid "3.Relation to head of family"
+msgstr ""
+
+#: Form/form_ca.xml.h:474
+msgid "5. Married, single, widowed or divorced"
+msgstr ""
+
+#: Form/form_ca.xml.h:475
+msgid "6. Age"
+msgstr ""
+
+#: Form/form_ca.xml.h:476
+msgid "7. Country or place of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:477
+msgid "8. Year of immigration to Canada"
+msgstr ""
+
+#: Form/form_ca.xml.h:478
+msgid "PostOffice"
+msgstr ""
+
+#: Form/form_ca.xml.h:479
+msgid "9. Post office address"
+msgstr ""
+
+#: Form/form_ca.xml.h:480 Form/form_us.xml.h:635
+msgid "Section"
+msgstr "Раздел"
+
+#: Form/form_ca.xml.h:481
+msgid "10. Location: Section"
+msgstr ""
+
+#: Form/form_ca.xml.h:482
+msgid "11. Location: Township"
+msgstr ""
+
+#: Form/form_ca.xml.h:483 Form/form_us.xml.h:634
+msgid "Range"
+msgstr "Отрезок"
+
+#: Form/form_ca.xml.h:484
+msgid "12. Location: Range"
+msgstr ""
+
+#: Form/form_ca.xml.h:485
+msgid "Meridian"
+msgstr ""
+
+#: Form/form_ca.xml.h:486
+msgid "13. Location: Meridian"
+msgstr ""
+
+#: Form/form_ca.xml.h:487
+msgid "14. Livestock: Horses, all ages"
+msgstr ""
+
+#: Form/form_ca.xml.h:488
+msgid "Cows"
+msgstr ""
+
+#: Form/form_ca.xml.h:489
+msgid "15. Livestock: Milch cows"
+msgstr ""
+
+#: Form/form_ca.xml.h:490
+msgid "Other"
+msgstr "Другое"
+
+#: Form/form_ca.xml.h:491
+msgid "16. Other horned or meat cattle, all ages"
+msgstr ""
+
+#: Form/form_ca.xml.h:492
+msgid "17. Sheep and lambs, all ages"
+msgstr ""
+
+#: Form/form_ca.xml.h:493
+msgid "18. Hogs and pigs, all ages"
+msgstr ""
+
+#: Form/form_ca.xml.h:494
+msgid "4. Place of habitation"
+msgstr ""
+
+#: Form/form_ca.xml.h:495
+msgid "5. Sex"
+msgstr ""
+
+#: Form/form_ca.xml.h:496
+msgid "8. Month of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:497
+msgid "11 . Country or place of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:498
+msgid "16. Chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:499
+msgid "OtherEmployment"
+msgstr ""
+
+#: Form/form_ca.xml.h:500
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr ""
+
+#: Form/form_ca.xml.h:501
+msgid "22. State where person employed"
+msgstr ""
+
+#: Form/form_ca.xml.h:502
+msgid "WeeksOccupation"
+msgstr ""
+
+#: Form/form_ca.xml.h:503
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:504
+msgid "WeeksOther"
+msgstr ""
+
+#: Form/form_ca.xml.h:505
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:506
+msgid "HoursOccupation"
+msgstr ""
+
+#: Form/form_ca.xml.h:507
+msgid "25. Hours of working time per week at chief occupation"
+msgstr ""
+
+#: Form/form_ca.xml.h:508
+msgid "HoursOther"
+msgstr ""
+
+#: Form/form_ca.xml.h:509
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr ""
+
+#: Form/form_ca.xml.h:510
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:511
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:512
+msgid "Wages"
+msgstr ""
+
+#: Form/form_ca.xml.h:513
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr ""
+
+#: Form/form_ca.xml.h:514
+msgid "InsuranceLife"
+msgstr ""
+
+#: Form/form_ca.xml.h:515
+msgid "30. Insurance: Upon life"
+msgstr ""
+
+#: Form/form_ca.xml.h:516
+msgid "InsuranceAccident"
+msgstr ""
+
+#: Form/form_ca.xml.h:517
+msgid "31. Insurance: Against accident or illness"
+msgstr ""
+
+#: Form/form_ca.xml.h:518
+msgid "InsuranceCost"
+msgstr ""
+
+#: Form/form_ca.xml.h:519
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr ""
+
+#: Form/form_ca.xml.h:520
+msgid "33. Months at school in 1910"
+msgstr ""
+
+#: Form/form_ca.xml.h:521
+msgid "34. Can Read"
+msgstr ""
+
+#: Form/form_ca.xml.h:522
+msgid "35. Can Write"
+msgstr ""
+
+#: Form/form_ca.xml.h:523
+msgid "36. Language commonly spoken"
+msgstr ""
+
+#: Form/form_ca.xml.h:524
+msgid "SchoolCost"
+msgstr ""
+
+#: Form/form_ca.xml.h:525
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+
+#: Form/form_ca.xml.h:526
+msgid "38. Blind"
+msgstr ""
+
+#: Form/form_ca.xml.h:527
+msgid "39. Deaf and dumb"
+msgstr ""
+
+#: Form/form_ca.xml.h:528
+msgid "40. Crazy or lunatic"
+msgstr ""
+
+#: Form/form_ca.xml.h:529 Form/form_us.xml.h:253
+msgid "Idiotic"
+msgstr ""
+
+#: Form/form_ca.xml.h:530
+msgid "41. Idiotic or silly"
+msgstr ""
+
+#: Form/form_ca.xml.h:531
+msgid "1. House"
+msgstr ""
+
+#: Form/form_ca.xml.h:532
+msgid "Dwelling house"
+msgstr ""
+
+#: Form/form_ca.xml.h:533
+msgid "2. Family"
+msgstr ""
+
+#: Form/form_ca.xml.h:534
+msgid "Family or household"
+msgstr ""
+
+#: Form/form_ca.xml.h:535
+msgid "3. Name"
+msgstr ""
+
+#: Form/form_ca.xml.h:536
+msgid "Name of each person in family"
+msgstr ""
+
+#: Form/form_ca.xml.h:537
+msgid "5. Relation to head of family"
+msgstr ""
+
+#: Form/form_ca.xml.h:538
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr ""
+
+#: Form/form_ca.xml.h:539
+msgid "7. Month of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:540
+msgid "8. Age at last birthday"
+msgstr ""
+
+#: Form/form_ca.xml.h:541
+msgid "9. Country or place of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:542
+msgid "10. Racial or tribal origin"
+msgstr ""
+
+#: Form/form_ca.xml.h:543
+msgid "11. Religion"
+msgstr ""
+
+#: Form/form_ca.xml.h:544
+msgid "12. Months at school in 1910"
+msgstr ""
+
+#: Form/form_ca.xml.h:545
+msgid "13. Can Read"
+msgstr ""
+
+#: Form/form_ca.xml.h:546
+msgid "14. Can Write"
+msgstr ""
+
+#: Form/form_ca.xml.h:547
+msgid "15. Language commonly spoken"
+msgstr ""
+
+#: Form/form_ca.xml.h:548
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+
+#: Form/form_ca.xml.h:549
+msgid "1. Dwelling House"
+msgstr ""
+
+#: Form/form_ca.xml.h:550
+msgid "2. Family, Household or Institution"
+msgstr ""
+
+#: Form/form_ca.xml.h:551
+msgid "3. Name of each person in family, household or institution"
+msgstr ""
+
+#: Form/form_ca.xml.h:552
+msgid "MilitaryService"
+msgstr ""
+
+#: Form/form_ca.xml.h:553
+msgid "4. Military Service"
+msgstr ""
+
+#: Form/form_ca.xml.h:554
+msgid "5. Place of Habitation: Township"
+msgstr ""
+
+#: Form/form_ca.xml.h:555
+msgid "6. Place of Habitation: Range"
+msgstr ""
+
+#: Form/form_ca.xml.h:556
+msgid "7. Place of Habitation: Meridian"
+msgstr ""
+
+#: Form/form_ca.xml.h:557
+msgid "Municipality"
+msgstr "Муниципальная"
+
+#: Form/form_ca.xml.h:558
+msgid "8. Place of Habitation: Municipality"
+msgstr ""
+
+#: Form/form_ca.xml.h:559
+msgid "9. Relationship to head of family or household"
+msgstr ""
+
+#: Form/form_ca.xml.h:560
+msgid "10. Sex"
+msgstr ""
+
+#: Form/form_ca.xml.h:561
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr ""
+
+#: Form/form_ca.xml.h:562
+msgid "12. Age at last birthday"
+msgstr ""
+
+#: Form/form_ca.xml.h:563
+msgid "13. Country or place of birth"
+msgstr ""
+
+#: Form/form_ca.xml.h:564
+msgid "14. Religion"
+msgstr ""
+
+#: Form/form_ca.xml.h:565
+msgid "15. Year of immigration to Canada"
+msgstr ""
+
+#: Form/form_ca.xml.h:566
+msgid "16. Year of naturalization"
+msgstr ""
+
+#: Form/form_ca.xml.h:567
+msgid "17. Nationality"
+msgstr ""
+
+#: Form/form_ca.xml.h:568
+msgid "18. Race or tribal origin"
+msgstr ""
+
+#: Form/form_ca.xml.h:569
+msgid "19. Can speak English"
+msgstr ""
+
+#: Form/form_ca.xml.h:570
+msgid "20. Can speak French"
+msgstr ""
+
+#: Form/form_ca.xml.h:571
+msgid "OtherLanguage"
+msgstr ""
+
+#: Form/form_ca.xml.h:572
+msgid "21. Other language spoken as mother tongue"
+msgstr ""
+
+#: Form/form_ca.xml.h:573
+msgid "22. Can Read"
+msgstr ""
+
+#: Form/form_ca.xml.h:574
+msgid "23. Can Write"
+msgstr ""
+
+#: Form/form_ca.xml.h:575
+msgid "24. Chief occupation or trade"
+msgstr ""
+
+#: Form/form_ca.xml.h:576
+msgid "Employment"
+msgstr "Профессия"
+
+#: Form/form_ca.xml.h:577
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr ""
+
+#: Form/form_ca.xml.h:578
+msgid "EmploymentPlace"
+msgstr ""
+
+#: Form/form_ca.xml.h:579
+msgid "26. State where person is employed"
+msgstr ""
+
+#: Form/form_dk.xml.h:2
+msgid "Amt"
+msgstr ""
+
+#: Form/form_dk.xml.h:3
+msgid "Town or City"
+msgstr ""
+
+#: Form/form_dk.xml.h:4
+msgid "Herred eller By"
+msgstr ""
+
+#: Form/form_dk.xml.h:5 Form/form_gb.xml.h:67
+msgid "Parish"
+msgstr "Приход"
+
+#: Form/form_dk.xml.h:6
+msgid "Sogn"
+msgstr ""
+
+#: Form/form_dk.xml.h:7 Form/form_gb.xml.h:109 Form/form_us.xml.h:757
+msgid "Street"
+msgstr "Улица"
+
+#: Form/form_dk.xml.h:8
+msgid "Gade"
+msgstr ""
+
+#: Form/form_dk.xml.h:10 Form/form_fr.xml.h:20 Form/form_gb.xml.h:15
+#: Form/form_us.xml.h:856
+msgid "Condition"
+msgstr ""
+
+#: Form/form_dk.xml.h:11
+msgid "Gift"
+msgstr ""
+
+#: Form/form_dk.xml.h:13
+msgid "Alder"
+msgstr ""
+
+#: Form/form_dk.xml.h:15
+msgid "Stilling i familien"
+msgstr ""
+
+#: Form/form_dk.xml.h:17
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr ""
+
+#: Form/form_dk.xml.h:18
+msgid "Stilling, embede eller erhverv"
+msgstr ""
+
+#: Form/form_dk.xml.h:19 Form/form_fr.xml.h:3 Form/form_gb.xml.h:20
+msgid "Where Born"
+msgstr ""
+
+#: Form/form_dk.xml.h:20
+msgid "Fødested"
+msgstr ""
+
+#: Form/form_dk.xml.h:21
+msgid "Erhverv"
+msgstr ""
+
+#: Form/form_dk.xml.h:23
+msgid "Trossamfund"
+msgstr ""
+
+#: Form/form_dk.xml.h:25
+msgid "Sted"
+msgstr ""
+
+#: Form/form_dk.xml.h:26 Form/form_fr.xml.h:8
+msgid "Comments"
+msgstr ""
+
+#: Form/form_dk.xml.h:27
+msgid "Bemærkninger"
+msgstr ""
+
+#: Form/form_dk.xml.h:28
+msgid "Place of Work"
+msgstr ""
+
+#: Form/form_dk.xml.h:29
+msgid "Arbejdssted"
+msgstr ""
+
+#: Form/form_dk.xml.h:30 Form/form_us.xml.h:479
+msgid "Date of Birth"
+msgstr ""
+
+#: Form/form_dk.xml.h:31
+msgid "Fødselsdato"
+msgstr ""
+
+#: Form/form_dk.xml.h:32
+msgid "Years at current residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:33
+msgid "År tilflyttet"
+msgstr ""
+
+#: Form/form_dk.xml.h:34
+msgid "Previous residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:35
+msgid "Tilflyttet fra"
+msgstr ""
+
+#: Form/form_dk.xml.h:36 Form/form_us.xml.h:1043
+msgid "Year married"
+msgstr ""
+
+#: Form/form_dk.xml.h:37
+msgid "År gift"
+msgstr ""
+
+#: Form/form_dk.xml.h:38 Form/form_gb.xml.h:55
+msgid "Children Living"
+msgstr ""
+
+#: Form/form_dk.xml.h:39
+msgid "Levende børn"
+msgstr ""
+
+#: Form/form_dk.xml.h:40
+msgid "Children Dead"
+msgstr ""
+
+#: Form/form_dk.xml.h:41
+msgid "Døde børn"
+msgstr ""
+
+#: Form/form_dk.xml.h:42
+msgid "Køn"
+msgstr ""
+
+#: Form/form_dk.xml.h:43
+msgid "Year stayed in parish"
+msgstr ""
+
+#: Form/form_dk.xml.h:44
+msgid "Hvilket aar taget ophold i sognet"
+msgstr ""
+
+#: Form/form_dk.xml.h:45
+msgid "Previous Residence"
+msgstr ""
+
+#: Form/form_dk.xml.h:46
+msgid "Sidste bopæl inden tilflytning"
+msgstr ""
+
+#: Form/form_dk.xml.h:47
+msgid "Bemærkning"
+msgstr ""
+
+#: Form/form_dk.xml.h:48
+msgid "Income"
+msgstr ""
+
+#: Form/form_dk.xml.h:49
+msgid "Indkomst"
+msgstr ""
+
+#: Form/form_dk.xml.h:50
+msgid "Assets"
+msgstr ""
+
+#: Form/form_dk.xml.h:51
+msgid "Formue"
+msgstr ""
+
+#: Form/form_dk.xml.h:52
+msgid "State Tax"
+msgstr ""
+
+#: Form/form_dk.xml.h:53
+msgid "Statsskat"
+msgstr ""
+
+#: Form/form_dk.xml.h:54
+msgid "Council"
+msgstr ""
+
+#: Form/form_dk.xml.h:55
+msgid "Kommuneskat"
+msgstr ""
+
+#: Form/form_dk.xml.h:56
+msgid "Residence on 5 Nov 1924"
+msgstr ""
+
+#: Form/form_dk.xml.h:57
+msgid "Bopæl 5 nov 1924"
+msgstr ""
+
+#: Form/form_dk.xml.h:58
+msgid "Stay on 5 Nov 1929"
+msgstr ""
+
+#: Form/form_dk.xml.h:59
+msgid "Ophold 5 nov 1929"
+msgstr ""
+
+#: Form/form_dk.xml.h:60
+msgid "Date Married"
+msgstr ""
+
+#: Form/form_dk.xml.h:61
+msgid "Dato gift"
+msgstr ""
+
+#: Form/form_fr.xml.h:2 Form/form_us.xml.h:1087
+msgid "Date of birth"
+msgstr ""
+
+#: Form/form_fr.xml.h:6
+msgid "Status"
+msgstr "Статус"
+
+#: Form/form_fr.xml.h:10
+msgid "Can read and write"
+msgstr ""
+
+#: Form/form_fr.xml.h:11 Form/form_pl.xml.h:6
+msgid "Gender"
+msgstr "Пол"
+
+#: Form/form_fr.xml.h:12
+msgid "Military"
+msgstr ""
+
+#: Form/form_fr.xml.h:13 Form/form_us.xml.h:389
+msgid "Year of birth"
+msgstr ""
+
+#: Form/form_fr.xml.h:14 Form/form_gb.xml.h:77 Form/form_us.xml.h:558
+msgid "Address"
+msgstr "Адрес"
+
+#: Form/form_fr.xml.h:15
+msgid "Taxes"
+msgstr ""
+
+#: Form/form_fr.xml.h:16
+msgid "Type of roof"
+msgstr ""
+
+#: Form/form_fr.xml.h:18 Form/form_gb.xml.h:25 Form/form_us.xml.h:1160
+msgid "Disability"
+msgstr ""
+
+#: Form/form_fr.xml.h:19
+msgid "Arrived since"
+msgstr ""
+
+#: Form/form_gb.xml.h:1 Form/form_us.xml.h:1080
+msgid "Certificate Number"
+msgstr ""
+
+#: Form/form_gb.xml.h:2 Form/form_us.xml.h:1081
+msgid "Entry Number"
+msgstr ""
+
+#: Form/form_gb.xml.h:3
+msgid "Registration District"
+msgstr ""
+
+#: Form/form_gb.xml.h:4 Form/form_us.xml.h:1082
+msgid "Date Registered"
+msgstr ""
+
+#: Form/form_gb.xml.h:5 Form/form_us.xml.h:1083
+msgid "Registrar"
+msgstr ""
+
+#: Form/form_gb.xml.h:9
+msgid "Maiden Surname"
+msgstr ""
+
+#: Form/form_gb.xml.h:10 Form/form_us.xml.h:541
+msgid "Signed"
+msgstr ""
+
+#: Form/form_gb.xml.h:11 Form/form_us.xml.h:1089
+msgid "Description"
+msgstr "Описание"
+
+#: Form/form_gb.xml.h:13
+msgid "Banns/Licence"
+msgstr ""
+
+#: Form/form_gb.xml.h:16
+msgid "Deceased"
+msgstr ""
+
+#: Form/form_gb.xml.h:17 Form/form_us.xml.h:1120
+msgid "Cause of Death"
+msgstr "Причина смерти"
+
+#: Form/form_gb.xml.h:18
+msgid "City or Borough"
+msgstr ""
+
+#: Form/form_gb.xml.h:19
+msgid "Parish or Township"
+msgstr ""
+
+#: Form/form_gb.xml.h:21
+msgid "Ecclesiastical District"
+msgstr ""
+
+#: Form/form_gb.xml.h:22 Form/form_us.xml.h:990
+msgid "Town"
+msgstr "Город (небольшой)"
+
+#: Form/form_gb.xml.h:23
+msgid "Village"
+msgstr "Посёлок"
+
+#: Form/form_gb.xml.h:26
+msgid "City or Municipal Borough"
+msgstr ""
+
+#: Form/form_gb.xml.h:27
+msgid "Municipal Ward"
+msgstr ""
+
+#: Form/form_gb.xml.h:28
+msgid "Parliamentary Borough"
+msgstr ""
+
+#: Form/form_gb.xml.h:29
+msgid "Hamlet or Tything"
+msgstr ""
+
+#: Form/form_gb.xml.h:30
+msgid "Civil Parish or Township"
+msgstr ""
+
+#: Form/form_gb.xml.h:31
+msgid "Village or Hamlet"
+msgstr ""
+
+#: Form/form_gb.xml.h:32
+msgid "Local Board or Improvement Commissioners District"
+msgstr ""
+
+#: Form/form_gb.xml.h:33
+msgid "Town, Village or Hamlet"
+msgstr ""
+
+#: Form/form_gb.xml.h:34
+msgid "Urban Sanitary District"
+msgstr ""
+
+#: Form/form_gb.xml.h:35
+msgid "Rural Sanitary District"
+msgstr ""
+
+#: Form/form_gb.xml.h:36
+msgid "Ecclesiastical Parish or District"
+msgstr ""
+
+#: Form/form_gb.xml.h:37
+msgid "Civil Parish"
+msgstr ""
+
+#: Form/form_gb.xml.h:38
+msgid "Municipal Borough"
+msgstr ""
+
+#: Form/form_gb.xml.h:39
+msgid "Parliamentary Borough or Division"
+msgstr ""
+
+#: Form/form_gb.xml.h:41 Form/form_us.xml.h:433
+msgid "Employed"
+msgstr ""
+
+#: Form/form_gb.xml.h:42
+msgid "Neither"
+msgstr ""
+
+#: Form/form_gb.xml.h:43
+msgid "Neither Employer nor Employed"
+msgstr ""
+
+#: Form/form_gb.xml.h:44
+msgid "Ecclesiastical Parish"
+msgstr ""
+
+#: Form/form_gb.xml.h:45
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr ""
+
+#: Form/form_gb.xml.h:46
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr ""
+
+#: Form/form_gb.xml.h:47
+msgid "Rural District"
+msgstr ""
+
+#: Form/form_gb.xml.h:48
+msgid "Town or Village or Hamlet"
+msgstr ""
+
+#: Form/form_gb.xml.h:49
+msgid "Work Type"
+msgstr ""
+
+#: Form/form_gb.xml.h:50
+msgid "Employer, Worker or Own Account"
+msgstr ""
+
+#: Form/form_gb.xml.h:51
+msgid "At Home"
+msgstr ""
+
+#: Form/form_gb.xml.h:52
+msgid "Working at Home"
+msgstr ""
+
+#: Form/form_gb.xml.h:53
+msgid "Years Married"
+msgstr ""
+
+#: Form/form_gb.xml.h:54
+msgid "Children Total"
+msgstr ""
+
+#: Form/form_gb.xml.h:56
+msgid "Children Died"
+msgstr ""
+
+#: Form/form_gb.xml.h:57 Form/form_us.xml.h:419
+msgid "Industry"
+msgstr ""
+
+#: Form/form_gb.xml.h:59
+msgid "E.D. Letter Code"
+msgstr ""
+
+#: Form/form_gb.xml.h:60
+msgid "Borough, U.D. or R.D."
+msgstr ""
+
+#: Form/form_gb.xml.h:61
+msgid "Registration District and Sub-district"
+msgstr ""
+
+#: Form/form_gb.xml.h:62
+msgid "OVSPI"
+msgstr ""
+
+#: Form/form_gb.xml.h:63 Form/form_us.xml.h:1125
+msgid "Birth Date"
+msgstr "Дата рождения"
+
+#: Form/form_gb.xml.h:64
+msgid "Instructions"
+msgstr ""
+
+#: Form/form_gb.xml.h:66
+msgid "Language Spoken"
+msgstr ""
+
+#: Form/form_gb.xml.h:69
+msgid "GROS Data"
+msgstr ""
+
+#: Form/form_gb.xml.h:70
+msgid "Born in County"
+msgstr ""
+
+#: Form/form_gb.xml.h:71
+msgid "Foreigner, Born England or Ireland"
+msgstr ""
+
+#: Form/form_gb.xml.h:72
+msgid "Quoad Sacra Parish"
+msgstr ""
+
+#: Form/form_gb.xml.h:73
+msgid "Parliamentary Burgh"
+msgstr ""
+
+#: Form/form_gb.xml.h:74
+msgid "Royal Burgh"
+msgstr ""
+
+#: Form/form_gb.xml.h:75
+msgid "Town or Village"
+msgstr ""
+
+#: Form/form_gb.xml.h:76
+msgid "House Schedule No"
+msgstr ""
+
+#: Form/form_gb.xml.h:78
+msgid "Relation to Head"
+msgstr ""
+
+#: Form/form_gb.xml.h:79
+msgid "Blind, or Deaf and Dumb"
+msgstr ""
+
+#: Form/form_gb.xml.h:80
+msgid "Enumeration District"
+msgstr ""
+
+#: Form/form_gb.xml.h:81
+msgid "No. Of Schedule"
+msgstr ""
+
+#: Form/form_gb.xml.h:82
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr ""
+
+#: Form/form_gb.xml.h:83
+msgid "House Inhabited"
+msgstr ""
+
+#: Form/form_gb.xml.h:84
+msgid "House U or B"
+msgstr ""
+
+#: Form/form_gb.xml.h:85
+msgid "Relation to Head of Family"
+msgstr ""
+
+#: Form/form_gb.xml.h:86
+msgid "Rank, Profession, or Occupation"
+msgstr ""
+
+#: Form/form_gb.xml.h:87 Form/form_us.xml.h:811
+msgid "Disabled"
+msgstr ""
+
+#: Form/form_gb.xml.h:88
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr ""
+
+#: Form/form_gb.xml.h:89
+msgid "Children"
+msgstr "Дети"
+
+#: Form/form_gb.xml.h:90
+msgid "No. of Children from 5 to 13 attending School"
+msgstr ""
+
+#: Form/form_gb.xml.h:91
+msgid "WindowRooms"
+msgstr ""
+
+#: Form/form_gb.xml.h:92
+msgid "No. of Rooms with one or more Windows"
+msgstr ""
+
+#: Form/form_gb.xml.h:93
+msgid "Police Burgh"
+msgstr ""
+
+#: Form/form_gb.xml.h:94
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr ""
+
+#: Form/form_gb.xml.h:95
+msgid "School Board District"
+msgstr ""
+
+#: Form/form_gb.xml.h:96
+msgid "School board District"
+msgstr ""
+
+#: Form/form_gb.xml.h:97
+msgid "Parliamentary Division"
+msgstr ""
+
+#: Form/form_gb.xml.h:98
+msgid "Municipal Burgh"
+msgstr ""
+
+#: Form/form_gb.xml.h:99
+msgid "Burgh Ward"
+msgstr ""
+
+#: Form/form_gb.xml.h:100
+msgid "Island"
+msgstr ""
+
+#: Form/form_gb.xml.h:101
+msgid "Gaellic or G. &amp; E."
+msgstr ""
+
+#: Form/form_gb.xml.h:102
+msgid "Parish Ward"
+msgstr ""
+
+#: Form/form_gb.xml.h:103
+msgid "Condition as to Marriage"
+msgstr ""
+
+#: Form/form_gb.xml.h:104
+msgid "Profession or Occupation"
+msgstr ""
+
+#: Form/form_gb.xml.h:105
+msgid "Employer, Worker or on Own Account"
+msgstr ""
+
+#: Form/form_gb.xml.h:107
+msgid "District Electoral Division"
+msgstr ""
+
+#: Form/form_gb.xml.h:108
+msgid "Townland"
+msgstr ""
+
+#: Form/form_gb.xml.h:110
+msgid "No. on Form B"
+msgstr ""
+
+#: Form/form_gb.xml.h:112
+msgid "Education"
+msgstr "Образование"
+
+#: Form/form_gb.xml.h:113
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr ""
+
+#: Form/form_gb.xml.h:114
+msgid "Irish Language"
+msgstr ""
+
+#: Form/form_gb.xml.h:115
+msgid ""
+"\"Irish\" or \"Irish &amp; English\", in other cases no entry should be made"
+msgstr ""
+
+#: Form/form_gb.xml.h:116
+msgid ""
+"\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
+"\"Lunatic\""
+msgstr ""
+
+#: Form/form_gb.xml.h:117
+msgid "Poor Law Union"
+msgstr ""
+
+#: Form/form_gb.xml.h:118
+msgid "Barony"
+msgstr ""
+
+#: Form/form_gb.xml.h:119 Form/form_us.xml.h:675
+msgid "City"
+msgstr "Город"
+
+#: Form/form_gb.xml.h:120
+msgid "Urban District"
+msgstr ""
+
+#: Form/form_gb.xml.h:121
+msgid "Head of Family"
+msgstr ""
+
+#: Form/form_gb.xml.h:122
+msgid "Total Children"
+msgstr ""
+
+#: Form/form_gb.xml.h:123
+msgid "Children born alive to present Marriage"
+msgstr ""
+
+#: Form/form_pl.xml.h:2
+msgid "Event Type"
+msgstr "Тип события"
+
+#: Form/form_pl.xml.h:3 Form/form_us.xml.h:1123
+msgid "Event Date"
+msgstr "Дата события"
+
+#: Form/form_pl.xml.h:4 Form/form_us.xml.h:1124
+msgid "Event Place"
+msgstr "Место события"
+
+#: Form/form_pl.xml.h:5
+msgid "Event Place (Original)"
+msgstr ""
+
+#: Form/form_pl.xml.h:8
+msgid "Birth Year (Estimated)"
+msgstr ""
+
+#: Form/form_pl.xml.h:9
+msgid "Father's Name"
+msgstr "Имя отца"
+
+#: Form/form_pl.xml.h:10
+msgid "Mother's Name"
+msgstr "Имя матери"
+
+#: Form/form_pl.xml.h:11
+msgid "Spouse's Name"
+msgstr "Имя супруга(и)"
+
+#: Form/form_pl.xml.h:12
+msgid "Spouse's Gender"
+msgstr ""
+
+#: Form/form_pl.xml.h:13
+msgid "Spouse's Age"
+msgstr ""
+
+#: Form/form_pl.xml.h:14
+msgid "Spouse's Birth Year (Estimated)"
+msgstr ""
+
+#: Form/form_pl.xml.h:15
+msgid "Spouse's Father's Name"
+msgstr ""
+
+#: Form/form_pl.xml.h:16
+msgid "Spouse's Mother's Name"
+msgstr ""
+
+#: Form/form_pl.xml.h:18
+msgid "Record Number"
+msgstr ""
+
+#: Form/form_pl.xml.h:19
+msgid "Volume"
+msgstr "Том"
+
+#: Form/form_pl.xml.h:20 Form/form_us.xml.h:758
+msgid "House Number"
+msgstr "Номер дома"
+
+#: Form/form_pl.xml.h:21
+msgid "Volume Beginning Year"
+msgstr ""
+
+#: Form/form_pl.xml.h:22
+msgid "Volume Ending Year"
+msgstr ""
+
+#: Form/form_us.xml.h:1
+msgid "NARA publication"
+msgstr ""
+
+#: Form/form_us.xml.h:2
+msgid "Roll No."
+msgstr ""
+
+#: Form/form_us.xml.h:3
+msgid "Page No."
+msgstr ""
+
+#: Form/form_us.xml.h:4
+msgid "Sheet No."
+msgstr ""
+
+#: Form/form_us.xml.h:5
+msgid "Minor Civil Division"
+msgstr ""
+
+#: Form/form_us.xml.h:6
+msgid "County of"
+msgstr ""
+
+#: Form/form_us.xml.h:7
+msgid "District (or Territory) of"
+msgstr ""
+
+#: Form/form_us.xml.h:9
+msgid "Free white males 16 &amp; up"
+msgstr ""
+
+#: Form/form_us.xml.h:10
+msgid "Free white males under 16"
+msgstr ""
+
+#: Form/form_us.xml.h:11
+msgid "Free white females"
+msgstr ""
+
+#: Form/form_us.xml.h:12
+msgid "All other free persons"
+msgstr ""
+
+#: Form/form_us.xml.h:13
+msgid "Slaves"
+msgstr ""
+
+#: Form/form_us.xml.h:14
+msgid "Enumeration Date"
+msgstr ""
+
+#: Form/form_us.xml.h:15
+msgid "Free white males under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:16
+msgid "Free white males 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:17
+msgid "Free white males 16-25"
+msgstr ""
+
+#: Form/form_us.xml.h:18
+msgid "Free white males 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:19
+msgid "Free white males 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:20
+msgid "Free white females under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:21
+msgid "Free white females 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:22
+msgid "Free white females 16-25"
+msgstr ""
+
+#: Form/form_us.xml.h:23
+msgid "Free white females 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:24
+msgid "Free white females 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:25
+msgid "Free white males 16-18"
+msgstr ""
+
+#: Form/form_us.xml.h:26
+msgid "Foreigners not naturalized"
+msgstr ""
+
+#: Form/form_us.xml.h:27
+msgid "Persons engaged in Agriculture"
+msgstr ""
+
+#: Form/form_us.xml.h:28
+msgid "Persons engaged in Commerce"
+msgstr ""
+
+#: Form/form_us.xml.h:29
+msgid "Persons engaged in Manufactures"
+msgstr ""
+
+#: Form/form_us.xml.h:30
+msgid "Slave males under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:31
+msgid "Slave males 14-25"
+msgstr ""
+
+#: Form/form_us.xml.h:32
+msgid "Slave males 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:33
+msgid "Slave males 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:34
+msgid "Slave females under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:35
+msgid "Slave females 14-25"
+msgstr ""
+
+#: Form/form_us.xml.h:36
+msgid "Slave females 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:37
+msgid "Slave females 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:38
+msgid "Free colored males under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:39
+msgid "Free colored males 14-25"
+msgstr ""
+
+#: Form/form_us.xml.h:40
+msgid "Free colored males 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:41
+msgid "Free colored males 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:42
+msgid "Free colored females under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:43
+msgid "Free colored females 14-25"
+msgstr ""
+
+#: Form/form_us.xml.h:44
+msgid "Free colored females 26-44"
+msgstr ""
+
+#: Form/form_us.xml.h:45
+msgid "Free colored females 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:46
+msgid "Free white males under 5"
+msgstr ""
+
+#: Form/form_us.xml.h:47
+msgid "Free white males 5-9"
+msgstr ""
+
+#: Form/form_us.xml.h:48
+msgid "Free white males 10-14"
+msgstr ""
+
+#: Form/form_us.xml.h:49
+msgid "Free white males 15-20"
+msgstr ""
+
+#: Form/form_us.xml.h:50
+msgid "Free white males 20-29"
+msgstr ""
+
+#: Form/form_us.xml.h:51
+msgid "Free white males 30-39"
+msgstr ""
+
+#: Form/form_us.xml.h:52
+msgid "Free white males 40-49"
+msgstr ""
+
+#: Form/form_us.xml.h:53
+msgid "Free white males 50-59"
+msgstr ""
+
+#: Form/form_us.xml.h:54
+msgid "Free white males 60-69"
+msgstr ""
+
+#: Form/form_us.xml.h:55
+msgid "Free white males 70-79"
+msgstr ""
+
+#: Form/form_us.xml.h:56
+msgid "Free white males 80-89"
+msgstr ""
+
+#: Form/form_us.xml.h:57
+msgid "Free white males 90-99"
+msgstr ""
+
+#: Form/form_us.xml.h:58
+msgid "Free white males 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:59
+msgid "Free white females under 5"
+msgstr ""
+
+#: Form/form_us.xml.h:60
+msgid "Free white females 5-9"
+msgstr ""
+
+#: Form/form_us.xml.h:61
+msgid "Free white females 10-14"
+msgstr ""
+
+#: Form/form_us.xml.h:62
+msgid "Free white females 15-20"
+msgstr ""
+
+#: Form/form_us.xml.h:63
+msgid "Free white females 20-29"
+msgstr ""
+
+#: Form/form_us.xml.h:64
+msgid "Free white females 30-39"
+msgstr ""
+
+#: Form/form_us.xml.h:65
+msgid "Free white females 40-49"
+msgstr ""
+
+#: Form/form_us.xml.h:66
+msgid "Free white females 50-59"
+msgstr ""
+
+#: Form/form_us.xml.h:67
+msgid "Free white females 60-69"
+msgstr ""
+
+#: Form/form_us.xml.h:68
+msgid "Free white females 70-79"
+msgstr ""
+
+#: Form/form_us.xml.h:69
+msgid "Free white females 80-89"
+msgstr ""
+
+#: Form/form_us.xml.h:70
+msgid "Free white females 90-99"
+msgstr ""
+
+#: Form/form_us.xml.h:71
+msgid "Free white females 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:72
+msgid "Slave males under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:73
+msgid "Slave males 10-23"
+msgstr ""
+
+#: Form/form_us.xml.h:74
+msgid "Slave males 24-35"
+msgstr ""
+
+#: Form/form_us.xml.h:75
+msgid "Slave males 36-54"
+msgstr ""
+
+#: Form/form_us.xml.h:76
+msgid "Slave males 55-99"
+msgstr ""
+
+#: Form/form_us.xml.h:77
+msgid "Slave males 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:78
+msgid "Slave females under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:79
+msgid "Slave females 10-23"
+msgstr ""
+
+#: Form/form_us.xml.h:80
+msgid "Slave females 24-35"
+msgstr ""
+
+#: Form/form_us.xml.h:81
+msgid "Slave females 36-54"
+msgstr ""
+
+#: Form/form_us.xml.h:82
+msgid "Slave females 55-99"
+msgstr ""
+
+#: Form/form_us.xml.h:83
+msgid "Slave females 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:84
+msgid "Free colored males under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:85
+msgid "Free colored males 10-23"
+msgstr ""
+
+#: Form/form_us.xml.h:86
+msgid "Free colored males 24-35"
+msgstr ""
+
+#: Form/form_us.xml.h:87
+msgid "Free colored males 36-54"
+msgstr ""
+
+#: Form/form_us.xml.h:88
+msgid "Free colored males 55-99"
+msgstr ""
+
+#: Form/form_us.xml.h:89
+msgid "Free colored males 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:90
+msgid "Free colored females under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:91
+msgid "Free colored females 10-23"
+msgstr ""
+
+#: Form/form_us.xml.h:92
+msgid "Free colored females 24-35"
+msgstr ""
+
+#: Form/form_us.xml.h:93
+msgid "Free colored females 36-54"
+msgstr ""
+
+#: Form/form_us.xml.h:94
+msgid "Free colored females 55-99"
+msgstr ""
+
+#: Form/form_us.xml.h:95
+msgid "Free colored females 100 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:96
+msgid "Total"
+msgstr "Всего"
+
+#: Form/form_us.xml.h:97
+msgid "White persons deaf/dumb under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:98
+msgid "White persons deaf/dumb 14-24"
+msgstr ""
+
+#: Form/form_us.xml.h:99
+msgid "White persons deaf/dumb 25 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:100
+msgid "White persons blind"
+msgstr ""
+
+#: Form/form_us.xml.h:101
+msgid "Aliens"
+msgstr ""
+
+#: Form/form_us.xml.h:102
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr ""
+
+#: Form/form_us.xml.h:103
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr ""
+
+#: Form/form_us.xml.h:104
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:105
+msgid "Slaves and colored persons blind"
+msgstr ""
+
+#: Form/form_us.xml.h:106
+msgid "Persons employed in Mining"
+msgstr ""
+
+#: Form/form_us.xml.h:107
+msgid "Persons employed in Agriculture"
+msgstr ""
+
+#: Form/form_us.xml.h:108
+msgid "Persons employed in Commerce"
+msgstr ""
+
+#: Form/form_us.xml.h:109
+msgid "Persons employed in Manufacture and trade"
+msgstr ""
+
+#: Form/form_us.xml.h:110
+msgid "Persons employed in Navigation of the ocean"
+msgstr ""
+
+#: Form/form_us.xml.h:111
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr ""
+
+#: Form/form_us.xml.h:112
+msgid "Learned professional engineers"
+msgstr ""
+
+#: Form/form_us.xml.h:113
+msgid "Names of pensioners for Revolutionary or military services"
+msgstr ""
+
+#: Form/form_us.xml.h:114
+msgid "Ages"
+msgstr ""
+
+#: Form/form_us.xml.h:115
+msgid "White persons insane and idiots at public charge"
+msgstr ""
+
+#: Form/form_us.xml.h:116
+msgid "White persons insane and idiots at private charge"
+msgstr ""
+
+#: Form/form_us.xml.h:117
+msgid "Colored persons deaf/dumb"
+msgstr ""
+
+#: Form/form_us.xml.h:118
+msgid "Colored persons blind"
+msgstr ""
+
+#: Form/form_us.xml.h:119
+msgid "Colored persons insane and idiots at private charge"
+msgstr ""
+
+#: Form/form_us.xml.h:120
+msgid "Colored persons insane and idiots at public charge"
+msgstr ""
+
+#: Form/form_us.xml.h:121
+msgid "Universities or college"
+msgstr ""
+
+#: Form/form_us.xml.h:122
+msgid "Number of students"
+msgstr ""
+
+#: Form/form_us.xml.h:123
+msgid "Academies and Grammar Schools"
+msgstr ""
+
+#: Form/form_us.xml.h:124
+msgid "No. of scholars"
+msgstr ""
+
+#: Form/form_us.xml.h:125
+msgid "Primary and Common Schools"
+msgstr ""
+
+#: Form/form_us.xml.h:126
+msgid "No. of scholars at public charge"
+msgstr ""
+
+#: Form/form_us.xml.h:127
+msgid "White persons illiterate over 20"
+msgstr ""
+
+#: Form/form_us.xml.h:128
+msgid "State of"
+msgstr ""
+
+#: Form/form_us.xml.h:129
+msgid "Line No."
+msgstr ""
+
+#: Form/form_us.xml.h:130
+msgid "Family No."
+msgstr ""
+
+#: Form/form_us.xml.h:133
+msgid "Color"
+msgstr "Цвет"
+
+#: Form/form_us.xml.h:135
+msgid "Value of real estate"
+msgstr ""
+
+#: Form/form_us.xml.h:136
+msgid "Place of birth"
+msgstr ""
+
+#: Form/form_us.xml.h:137
+msgid "Married within the year"
+msgstr ""
+
+#: Form/form_us.xml.h:138
+msgid "Attended school within the year"
+msgstr ""
+
+#: Form/form_us.xml.h:139
+msgid "Illiterate and over 20"
+msgstr ""
+
+#: Form/form_us.xml.h:140
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr ""
+
+#: Form/form_us.xml.h:142
+msgid "Production of Agriculture in"
+msgstr ""
+
+#: Form/form_us.xml.h:143
+msgid "in the County of"
+msgstr ""
+
+#: Form/form_us.xml.h:144
+msgid "Owner, Agent, or Manager"
+msgstr ""
+
+#: Form/form_us.xml.h:145
+msgid "Acres Improved"
+msgstr ""
+
+#: Form/form_us.xml.h:146
+msgid "Acres Unimproved"
+msgstr ""
+
+#: Form/form_us.xml.h:147
+msgid "Cash Value of Farm"
+msgstr ""
+
+#: Form/form_us.xml.h:148
+msgid "Value of Farming Implements and Machinery"
+msgstr ""
+
+#: Form/form_us.xml.h:150
+msgid "Asses and Mules"
+msgstr ""
+
+#: Form/form_us.xml.h:152
+msgid "Working Oxen"
+msgstr ""
+
+#: Form/form_us.xml.h:153
+msgid "Other Cattle"
+msgstr ""
+
+#: Form/form_us.xml.h:155
+msgid "Swine"
+msgstr ""
+
+#: Form/form_us.xml.h:156
+msgid "Value of Live Stock"
+msgstr ""
+
+#: Form/form_us.xml.h:157
+msgid "Wheat"
+msgstr "Пшеница"
+
+#: Form/form_us.xml.h:158
+msgid "Indian Corn"
+msgstr ""
+
+#: Form/form_us.xml.h:159
+msgid "Oats"
+msgstr ""
+
+#: Form/form_us.xml.h:160
+msgid "Rice"
+msgstr "Рис"
+
+#: Form/form_us.xml.h:161
+msgid "Tobacco"
+msgstr "Табак"
+
+#: Form/form_us.xml.h:162
+msgid "Ginned Cotton"
+msgstr ""
+
+#: Form/form_us.xml.h:163
+msgid "Wool"
+msgstr "Шерсть"
+
+#: Form/form_us.xml.h:164
+msgid "Peas and Beans"
+msgstr ""
+
+#: Form/form_us.xml.h:165
+msgid "Irish Potatoes"
+msgstr ""
+
+#: Form/form_us.xml.h:166
+msgid "Sweet Potatoes"
+msgstr ""
+
+#: Form/form_us.xml.h:167
+msgid "Barley"
+msgstr ""
+
+#: Form/form_us.xml.h:168
+msgid "Buckwheat"
+msgstr ""
+
+#: Form/form_us.xml.h:169
+msgid "Value of Orchard Products"
+msgstr ""
+
+#: Form/form_us.xml.h:170
+msgid "Wine"
+msgstr "Вино"
+
+#: Form/form_us.xml.h:171
+msgid "Value of Market Gardens"
+msgstr ""
+
+#: Form/form_us.xml.h:172
+msgid "Butter"
+msgstr ""
+
+#: Form/form_us.xml.h:173
+msgid "Cheese"
+msgstr "Сыр"
+
+#: Form/form_us.xml.h:174
+msgid "Hay"
+msgstr ""
+
+#: Form/form_us.xml.h:175
+msgid "Clover Seed"
+msgstr ""
+
+#: Form/form_us.xml.h:176
+msgid "Other Grass Seeds"
+msgstr ""
+
+#: Form/form_us.xml.h:177
+msgid "Hops"
+msgstr ""
+
+#: Form/form_us.xml.h:178
+msgid "Hemp Dew Rotted"
+msgstr ""
+
+#: Form/form_us.xml.h:179
+msgid "Hemp Water Rotted"
+msgstr ""
+
+#: Form/form_us.xml.h:180
+msgid "Flax"
+msgstr ""
+
+#: Form/form_us.xml.h:181
+msgid "Flaxseed"
+msgstr ""
+
+#: Form/form_us.xml.h:182
+msgid "Silk Cocoons"
+msgstr ""
+
+#: Form/form_us.xml.h:183
+msgid "Maple Sugar"
+msgstr ""
+
+#: Form/form_us.xml.h:184
+msgid "Cane Sugar"
+msgstr ""
+
+#: Form/form_us.xml.h:185
+msgid "Molasses"
+msgstr ""
+
+#: Form/form_us.xml.h:186
+msgid "Beeswax"
+msgstr ""
+
+#: Form/form_us.xml.h:187
+msgid "Value of Homemade Manufactures"
+msgstr ""
+
+#: Form/form_us.xml.h:188
+msgid "Value of Animals Slaughtered"
+msgstr ""
+
+#: Form/form_us.xml.h:189
+msgid "Post Office"
+msgstr ""
+
+#: Form/form_us.xml.h:190
+msgid "Value of personal estate"
+msgstr ""
+
+#: Form/form_us.xml.h:191
+msgid "Live Stock June 1, 1860"
+msgstr ""
+
+#: Form/form_us.xml.h:192
+msgid "Produce during the year ending June 1, 1860"
+msgstr ""
+
+#: Form/form_us.xml.h:193
+msgid "Wheat, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:194
+msgid "Rye, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:195
+msgid "Indian Corn, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:196
+msgid "Oats, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:197
+msgid "Rice, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:198
+msgid "Tobacco, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:199
+msgid "Ginned Cotton, bales of 400 lbs."
+msgstr ""
+
+#: Form/form_us.xml.h:200
+msgid "Wool, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:201
+msgid "Peas and Beans, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:202
+msgid "Irish Potatoes, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:203
+msgid "Sweet Potatoes, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:204
+msgid "Barley, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:205
+msgid "Buckwheat, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:206
+msgid "Value of Orchard Products in $"
+msgstr ""
+
+#: Form/form_us.xml.h:207
+msgid "Wine, gallons of"
+msgstr ""
+
+#: Form/form_us.xml.h:208
+msgid "Value of products of market gardens"
+msgstr ""
+
+#: Form/form_us.xml.h:209
+msgid "Butter, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:210
+msgid "Cheese, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:211
+msgid "Hay, tons of"
+msgstr ""
+
+#: Form/form_us.xml.h:212
+msgid "Clover Seed, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:213
+msgid "Other Grass Seeds, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:214
+msgid "Hops, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:215
+msgid "Hemp Dew Rotted, tons of"
+msgstr ""
+
+#: Form/form_us.xml.h:216
+msgid "Hemp Water Rotted, tons of"
+msgstr ""
+
+#: Form/form_us.xml.h:217
+msgid "Flax, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:218
+msgid "Flaxseed, bushels of"
+msgstr ""
+
+#: Form/form_us.xml.h:219
+msgid "Silk Cocoons, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:220
+msgid "Maple Sugar, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:221
+msgid "Cane sugar, hogshead of 1,000 pounds"
+msgstr ""
+
+#: Form/form_us.xml.h:222
+msgid "Molasses, gallons of"
+msgstr ""
+
+#: Form/form_us.xml.h:223
+msgid "Beeswax, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:224
+msgid "Honey, pounds of"
+msgstr ""
+
+#: Form/form_us.xml.h:225
+msgid "Value of home-made manufactures"
+msgstr ""
+
+#: Form/form_us.xml.h:226
+msgid "Persons who Died during the Year ending 1 June 1860 in"
+msgstr ""
+
+#: Form/form_us.xml.h:227
+msgid "Free or slave"
+msgstr ""
+
+#: Form/form_us.xml.h:228
+msgid "Married or widowed"
+msgstr ""
+
+#: Form/form_us.xml.h:229
+msgid "Month in which person died"
+msgstr ""
+
+#: Form/form_us.xml.h:230
+msgid "Cause of death"
+msgstr ""
+
+#: Form/form_us.xml.h:231
+msgid "Number of days ill"
+msgstr ""
+
+#: Form/form_us.xml.h:232
+msgid "Father of foreign birth"
+msgstr ""
+
+#: Form/form_us.xml.h:233
+msgid "Mother of foreign birth"
+msgstr ""
+
+#: Form/form_us.xml.h:234
+msgid "Month, if born within the year"
+msgstr ""
+
+#: Form/form_us.xml.h:235
+msgid "Month, if married within the year"
+msgstr ""
+
+#: Form/form_us.xml.h:236
+msgid "Cannot read"
+msgstr "Не умеет читать"
+
+#: Form/form_us.xml.h:237
+msgid "Cannot write"
+msgstr "Не умеет писать"
+
+#: Form/form_us.xml.h:238
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr ""
+
+#: Form/form_us.xml.h:239
+msgid "Male citizen 21 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:240
+msgid ""
+"Male citizen 21 and over where right to vote is denied on grounds other than "
+"rebellion or other crime"
+msgstr ""
+
+#: Form/form_us.xml.h:241
+msgid "Supervisor&apos;s Dist. No."
+msgstr ""
+
+#: Form/form_us.xml.h:242
+msgid "Enumeration Dist. No."
+msgstr ""
+
+#: Form/form_us.xml.h:243
+msgid "Month, if born within the census year"
+msgstr ""
+
+#: Form/form_us.xml.h:244
+msgid "Relationship to head"
+msgstr ""
+
+#: Form/form_us.xml.h:245
+msgid "Single"
+msgstr ""
+
+#: Form/form_us.xml.h:246
+msgid "Married"
+msgstr "Женаты"
+
+#: Form/form_us.xml.h:247
+msgid "Widowed, divorced"
+msgstr ""
+
+#: Form/form_us.xml.h:248
+msgid "Married during the census year"
+msgstr ""
+
+#: Form/form_us.xml.h:249
+msgid "Number of months unemployed during the census year"
+msgstr ""
+
+#: Form/form_us.xml.h:250
+msgid "Illness on day of enumeration"
+msgstr ""
+
+#: Form/form_us.xml.h:252
+msgid "Deaf and dumb"
+msgstr ""
+
+#: Form/form_us.xml.h:254
+msgid "Insane"
+msgstr ""
+
+#: Form/form_us.xml.h:255
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr ""
+
+#: Form/form_us.xml.h:256
+msgid "Attended school within the census year"
+msgstr ""
+
+#: Form/form_us.xml.h:257
+msgid "Place of birth of father"
+msgstr ""
+
+#: Form/form_us.xml.h:258
+msgid "Place of birth of mother"
+msgstr ""
+
+#: Form/form_us.xml.h:259
+msgid "Owner"
+msgstr "Владелец"
+
+#: Form/form_us.xml.h:260
+msgid "Rents for fixed money"
+msgstr ""
+
+#: Form/form_us.xml.h:261
+msgid "Rents for share of products"
+msgstr ""
+
+#: Form/form_us.xml.h:262
+msgid "Acres Tilled"
+msgstr ""
+
+#: Form/form_us.xml.h:263
+msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
+msgstr ""
+
+#: Form/form_us.xml.h:264
+msgid "Acres Woodland and forest"
+msgstr ""
+
+#: Form/form_us.xml.h:265
+msgid "Acres Other unimproved land"
+msgstr ""
+
+#: Form/form_us.xml.h:266
+msgid "Value of Farm"
+msgstr ""
+
+#: Form/form_us.xml.h:267
+msgid "Value of Implements and Machinery"
+msgstr ""
+
+#: Form/form_us.xml.h:268
+msgid "Cost of building and repairing fences in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:269
+msgid "Cost of Fertilizers purchased in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:270
+msgid "Farm Labor Hiring 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:271
+msgid "Weeks hired labor in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:272
+msgid "Estimated value of all farm productions for 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:273
+msgid "Acreage Grass Lands Mown in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:274
+msgid "Acreage Grass Lands Not Mown in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:275
+msgid "Tons Hay Harvested in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:276
+msgid "Bushels Clover Seed Harvested in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:277
+msgid "Bushels Grass Seed Harvested in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:278
+msgid "Horses on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:279
+msgid "Mules and Asses on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:280
+msgid "Working Oxen on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:281
+msgid "Milch Cows on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:282
+msgid "Other Cattle on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:283
+msgid "Calves Dropped in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:284
+msgid "Cattle Purchased in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:285
+msgid "Cattle Sold living in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:286
+msgid "Cattle Slaughtered in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:287
+msgid "Cattle Died, strayed, or stolen in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:288
+msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:289
+msgid "Pounds Butter made on farm in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:290
+msgid "Pounds Cheese made on farm in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:291
+msgid "Sheep on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:292
+msgid "Lambs Dropped in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:293
+msgid "Sheep and Lambs Purchased in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:294
+msgid "Sheep and Lambs Sold living in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:295
+msgid "Sheep and Lambs Slaughtered in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:296
+msgid "Sheep and Lambs Killed by dogs in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:297
+msgid "Sheep and Lambs Died of Disease in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:298
+msgid "Sheep and Lambs Died of stress or weather in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:299
+msgid "Number of Fleece, Spring 1880"
+msgstr ""
+
+#: Form/form_us.xml.h:300
+msgid "Pounds Wool, Spring 1880"
+msgstr ""
+
+#: Form/form_us.xml.h:301
+msgid "Swine on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:302
+msgid "Barnyard Poultry on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:303
+msgid "Other Poultry on hand"
+msgstr ""
+
+#: Form/form_us.xml.h:304
+msgid "Dozen eggs produced in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:305
+msgid "Acres Barley in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:306
+msgid "Bushels Barley in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:307
+msgid "Acres Buckwheat in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:308
+msgid "Bushels Buckwheat in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:309
+msgid "Acres Indian Corn in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:310
+msgid "Bushels Indian Corn in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:311
+msgid "Acres Oats in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:312
+msgid "Bushels Oats in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:313
+msgid "Acres Rye in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:314
+msgid "Bushels Rye in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:315
+msgid "Acres Wheat in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:316
+msgid "Bushels Wheat in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:317
+msgid "Bushels Canadian Peas in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:318
+msgid "Bushels Beans in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:319
+msgid "Acres Flax in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:320
+msgid "Bushels Flax Sued in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:321
+msgid "Tons Flax Straw in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:322
+msgid "Pounds Flax Fiber in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:323
+msgid "Acres Hemp in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:324
+msgid "Tons Hemp in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:325
+msgid "Acres Sorghum in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:326
+msgid "Pounds Sorghum Sugar in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:327
+msgid "Gallons Sorghum Molasses in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:328
+msgid "Pounds Maple Sugar in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:329
+msgid "Gallons Maple Molasses in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:330
+msgid "Acres Broom Corn in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:331
+msgid "Pounds Broom Corn in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:332
+msgid "Acres Hops in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:333
+msgid "Pounds Hops in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:334
+msgid "Acres Potatoes (Irish) in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:335
+msgid "Bushels Potatoes (Irish) in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:336
+msgid "Acres Potatoes (Sweet) in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:337
+msgid "Bushels Potatoes (Sweet) in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:338
+msgid "Acres Tobacco in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:339
+msgid "Pounds Tobacco in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:340
+msgid "Acres Apple Orchards in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:341
+msgid "Number of Bearing Apple Trees in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:342
+msgid "Bushels Apples in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:343
+msgid "Acres Peach Orchards in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:344
+msgid "Number of Bearing Peach Trees in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:345
+msgid "Bushels Peaches in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:346
+msgid "Total value of Orchard Products Sold or Consumed in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:347
+msgid "Acres Nurseries"
+msgstr ""
+
+#: Form/form_us.xml.h:348
+msgid "Value of Nursery Products Sold"
+msgstr ""
+
+#: Form/form_us.xml.h:349
+msgid "Acres Vineyards"
+msgstr ""
+
+#: Form/form_us.xml.h:350
+msgid "Grapes sold in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:351
+msgid "Wine made in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:352
+msgid "Value of Market Garden Produce Sold in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:353
+msgid "Pounds Honey in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:354
+msgid "Pounds Beeswax in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:355
+msgid "Cords of Wood cut in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:356
+msgid "Value of forest products sold or consumed in 1879"
+msgstr ""
+
+#: Form/form_us.xml.h:357
+msgid "Street and No."
+msgstr ""
+
+#: Form/form_us.xml.h:358
+msgid "Ward"
+msgstr ""
+
+#: Form/form_us.xml.h:359
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:360
+msgid "Single, married, widowed or divorced"
+msgstr ""
+
+#: Form/form_us.xml.h:361
+msgid "Mother of how many children and number of children living"
+msgstr ""
+
+#: Form/form_us.xml.h:362
+msgid "Number of years in US"
+msgstr ""
+
+#: Form/form_us.xml.h:363
+msgid "Naturalized"
+msgstr ""
+
+#: Form/form_us.xml.h:364
+msgid "Naturalization papers taken out"
+msgstr ""
+
+#: Form/form_us.xml.h:365
+msgid "Able to read"
+msgstr ""
+
+#: Form/form_us.xml.h:366
+msgid "Able to write"
+msgstr ""
+
+#: Form/form_us.xml.h:367
+msgid "Able to speak English; if not, the language spoken"
+msgstr ""
+
+#: Form/form_us.xml.h:368
+msgid "Suffering from disease"
+msgstr ""
+
+#: Form/form_us.xml.h:369
+msgid "Whether defective and name of defect"
+msgstr ""
+
+#: Form/form_us.xml.h:370
+msgid "Prisoner, convict, homeless child or pauper"
+msgstr ""
+
+#: Form/form_us.xml.h:371
+msgid "Supplemental schedule and page"
+msgstr ""
+
+#: Form/form_us.xml.h:372
+msgid "Supervisor&apos;s District No."
+msgstr ""
+
+#: Form/form_us.xml.h:373
+msgid "Enumeration District No."
+msgstr ""
+
+#: Form/form_us.xml.h:374
+msgid "Rank"
+msgstr ""
+
+#: Form/form_us.xml.h:375
+msgid "Company"
+msgstr ""
+
+#: Form/form_us.xml.h:376
+msgid "Regiment/Vessel"
+msgstr ""
+
+#: Form/form_us.xml.h:377
+msgid "Date Enlisted"
+msgstr ""
+
+#: Form/form_us.xml.h:378
+msgid "Date Discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:379
+msgid "Length of Service"
+msgstr ""
+
+#: Form/form_us.xml.h:380
+msgid "Disability Incurred"
+msgstr ""
+
+#: Form/form_us.xml.h:381
+msgid "State (or Territory) of"
+msgstr ""
+
+#: Form/form_us.xml.h:382
+msgid "Division of County"
+msgstr ""
+
+#: Form/form_us.xml.h:383
+msgid "Name of Institution"
+msgstr ""
+
+#: Form/form_us.xml.h:384
+msgid "City, Town, Village"
+msgstr ""
+
+#: Form/form_us.xml.h:385
+msgid "Ward of city"
+msgstr ""
+
+#: Form/form_us.xml.h:386
+msgid "Street Address"
+msgstr ""
+
+#: Form/form_us.xml.h:387
+msgid "Relation to head"
+msgstr ""
+
+#: Form/form_us.xml.h:388
+msgid "Month of birth"
+msgstr ""
+
+#: Form/form_us.xml.h:390
+msgid "Years of present marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:391
+msgid "Mother of how many children"
+msgstr ""
+
+#: Form/form_us.xml.h:392
+msgid "Number of children living"
+msgstr ""
+
+#: Form/form_us.xml.h:393
+msgid "Year of immigration"
+msgstr ""
+
+#: Form/form_us.xml.h:395
+msgid "Months not employed"
+msgstr ""
+
+#: Form/form_us.xml.h:396
+msgid "Attended school"
+msgstr ""
+
+#: Form/form_us.xml.h:397
+msgid "Can read"
+msgstr ""
+
+#: Form/form_us.xml.h:398
+msgid "Can write"
+msgstr ""
+
+#: Form/form_us.xml.h:399
+msgid "Can speak English"
+msgstr ""
+
+#: Form/form_us.xml.h:400
+msgid "Home owned or rented"
+msgstr ""
+
+#: Form/form_us.xml.h:401
+msgid "Owned free or mortgaged"
+msgstr ""
+
+#: Form/form_us.xml.h:402
+msgid "Farm or house"
+msgstr ""
+
+#: Form/form_us.xml.h:403
+msgid "Number of farm schedule"
+msgstr ""
+
+#: Form/form_us.xml.h:404
+msgid "Naturalized or alien"
+msgstr ""
+
+#: Form/form_us.xml.h:405
+msgid "Able to speak English; if not, language spoken"
+msgstr ""
+
+#: Form/form_us.xml.h:406
+msgid "Nature of industry"
+msgstr ""
+
+#: Form/form_us.xml.h:407
+msgid "Employer, employee or working on own account"
+msgstr ""
+
+#: Form/form_us.xml.h:408
+msgid "Out of work"
+msgstr ""
+
+#: Form/form_us.xml.h:409
+msgid "Weeks out of work in 1909"
+msgstr ""
+
+#: Form/form_us.xml.h:410
+msgid "Attended school since Sept. 1, 1909"
+msgstr ""
+
+#: Form/form_us.xml.h:411
+msgid "Civil War veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:412
+msgid "If owned, free or mortgaged"
+msgstr ""
+
+#: Form/form_us.xml.h:413
+msgid "Year of naturalization"
+msgstr ""
+
+#: Form/form_us.xml.h:414
+msgid "Attended school since Sept. 1, 1919"
+msgstr ""
+
+#: Form/form_us.xml.h:415
+msgid "Mother tongue"
+msgstr ""
+
+#: Form/form_us.xml.h:416
+msgid "Father mother tongue"
+msgstr ""
+
+#: Form/form_us.xml.h:417
+msgid "Mother&apos;s mother tongue"
+msgstr ""
+
+#: Form/form_us.xml.h:418
+msgid "Able to speak English"
+msgstr ""
+
+#: Form/form_us.xml.h:420
+msgid "Employer, worker or working on own account"
+msgstr ""
+
+#: Form/form_us.xml.h:421
+msgid "Incorporated place"
+msgstr ""
+
+#: Form/form_us.xml.h:422
+msgid "Unincorporated place"
+msgstr ""
+
+#: Form/form_us.xml.h:424
+msgid "Value of home or monthly rental"
+msgstr ""
+
+#: Form/form_us.xml.h:425
+msgid "Radio set"
+msgstr ""
+
+#: Form/form_us.xml.h:426
+msgid "Farm?"
+msgstr ""
+
+#: Form/form_us.xml.h:427
+msgid "Marital condition"
+msgstr ""
+
+#: Form/form_us.xml.h:428
+msgid "Age at first marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:429
+msgid "Attended school since Sept. 1, 1929"
+msgstr ""
+
+#: Form/form_us.xml.h:430
+msgid "Able to read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:431
+msgid "Language before coming to US"
+msgstr ""
+
+#: Form/form_us.xml.h:432
+msgid "Class of worker"
+msgstr ""
+
+#: Form/form_us.xml.h:434
+msgid "Line number for unemployed"
+msgstr ""
+
+#: Form/form_us.xml.h:435
+msgid "Veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:436
+msgid "What war"
+msgstr ""
+
+#: Form/form_us.xml.h:437
+msgid "Home Owned/Rented"
+msgstr ""
+
+#: Form/form_us.xml.h:438
+msgid "Home value/monthly rental"
+msgstr ""
+
+#: Form/form_us.xml.h:439
+msgid "Relationship"
+msgstr "Отношение"
+
+#: Form/form_us.xml.h:440
+msgid "Color/Race"
+msgstr ""
+
+#: Form/form_us.xml.h:441
+msgid "Age at Last Birthday"
+msgstr ""
+
+#: Form/form_us.xml.h:442
+msgid "Marital Status"
+msgstr ""
+
+#: Form/form_us.xml.h:443
+msgid "Attended school/college since March 1, 1940"
+msgstr ""
+
+#: Form/form_us.xml.h:444
+msgid "Highest grade completed"
+msgstr ""
+
+#: Form/form_us.xml.h:445
+msgid "Citizenship if foreign born"
+msgstr ""
+
+#: Form/form_us.xml.h:446
+msgid "City (April 1, 1935)"
+msgstr ""
+
+#: Form/form_us.xml.h:448
+msgid "State (Territory/Country)"
+msgstr ""
+
+#: Form/form_us.xml.h:449
+msgid "On a Farm (Y/N)"
+msgstr ""
+
+#: Form/form_us.xml.h:450
+msgid "At Work during week March 24-30"
+msgstr ""
+
+#: Form/form_us.xml.h:451
+msgid "public Emergency Work?"
+msgstr ""
+
+#: Form/form_us.xml.h:452
+msgid "Seeking work?"
+msgstr ""
+
+#: Form/form_us.xml.h:453
+msgid "Have a Job?"
+msgstr ""
+
+#: Form/form_us.xml.h:454
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr ""
+
+#: Form/form_us.xml.h:455
+msgid "# hours worked during week March 24-30, 1940"
+msgstr ""
+
+#: Form/form_us.xml.h:456
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr ""
+
+#: Form/form_us.xml.h:457
+msgid "# weeks worked in 1939"
+msgstr ""
+
+#: Form/form_us.xml.h:458
+msgid "Amount of money, wages, salary in 1939"
+msgstr ""
+
+#: Form/form_us.xml.h:459
+msgid "Income of more than $50 from other sources?"
+msgstr ""
+
+#: Form/form_us.xml.h:460
+msgid "Number of Farm Schedule"
+msgstr ""
+
+#: Form/form_us.xml.h:461
+msgid "Veteran?"
+msgstr ""
+
+#: Form/form_us.xml.h:462
+msgid "If child, veteran-father dead?"
+msgstr ""
+
+#: Form/form_us.xml.h:463
+msgid "War/Military Service"
+msgstr ""
+
+#: Form/form_us.xml.h:464
+msgid "Have Federal SSN?"
+msgstr ""
+
+#: Form/form_us.xml.h:465
+msgid "Deductions made in 1939?"
+msgstr ""
+
+#: Form/form_us.xml.h:466
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr ""
+
+#: Form/form_us.xml.h:467
+msgid "Usual Occupation"
+msgstr ""
+
+#: Form/form_us.xml.h:468
+msgid "Usual Industry"
+msgstr ""
+
+#: Form/form_us.xml.h:469
+msgid "Usual Class of Work"
+msgstr ""
+
+#: Form/form_us.xml.h:470
+msgid "If woman, married more than once?"
+msgstr ""
+
+#: Form/form_us.xml.h:471
+msgid "Number of children ever born"
+msgstr ""
+
+#: Form/form_us.xml.h:472
+msgid "Census Date"
+msgstr ""
+
+#: Form/form_us.xml.h:473
+msgid "District of"
+msgstr ""
+
+#: Form/form_us.xml.h:474
+msgid "Married Y/N"
+msgstr ""
+
+#: Form/form_us.xml.h:475
+msgid "Spouses Age"
+msgstr ""
+
+#: Form/form_us.xml.h:477
+msgid "File No."
+msgstr ""
+
+#: Form/form_us.xml.h:478
+msgid "Post Office Address"
+msgstr ""
+
+#: Form/form_us.xml.h:480
+msgid "Place of Birth"
+msgstr ""
+
+#: Form/form_us.xml.h:481
+msgid "Entered service as (rank)"
+msgstr ""
+
+#: Form/form_us.xml.h:482
+msgid "Date Entered"
+msgstr ""
+
+#: Form/form_us.xml.h:483
+msgid "Place of Enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:484
+msgid "Name, Letter of Co., Number of Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:485
+msgid "Continued until"
+msgstr ""
+
+#: Form/form_us.xml.h:486
+msgid "Re-enlisted as"
+msgstr ""
+
+#: Form/form_us.xml.h:487
+msgid "On date"
+msgstr ""
+
+#: Form/form_us.xml.h:489
+msgid "and continued until"
+msgstr ""
+
+#: Form/form_us.xml.h:490
+msgid "3rd enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:491
+msgid "Enlisted on"
+msgstr ""
+
+#: Form/form_us.xml.h:492
+msgid "Enlistment Place"
+msgstr ""
+
+#: Form/form_us.xml.h:493
+msgid "in the command of"
+msgstr ""
+
+#: Form/form_us.xml.h:494
+msgid "Until"
+msgstr "До"
+
+#: Form/form_us.xml.h:495
+msgid "Other service, if any"
+msgstr ""
+
+#: Form/form_us.xml.h:496
+msgid "No. on pension roll"
+msgstr ""
+
+#: Form/form_us.xml.h:497
+msgid "County lived in when first placed on roll"
+msgstr ""
+
+#: Form/form_us.xml.h:498
+msgid "Other states lived in and when"
+msgstr ""
+
+#: Form/form_us.xml.h:499
+msgid "Moved to Alabama"
+msgstr ""
+
+#: Form/form_us.xml.h:500
+msgid "Branch of service"
+msgstr ""
+
+#: Form/form_us.xml.h:501
+msgid "Letter of Company"
+msgstr ""
+
+#: Form/form_us.xml.h:502
+msgid "Number of Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:503
+msgid "Was it an Alabama Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:504
+msgid "If not, give name of state"
+msgstr ""
+
+#: Form/form_us.xml.h:505
+msgid "Name of your Captain"
+msgstr ""
+
+#: Form/form_us.xml.h:506
+msgid "Name of your Colonel"
+msgstr ""
+
+#: Form/form_us.xml.h:507
+msgid "By what other name was your Company called"
+msgstr ""
+
+#: Form/form_us.xml.h:508
+msgid "By what other name was your Regiment called"
+msgstr ""
+
+#: Form/form_us.xml.h:509
+msgid "Battles in which you took part"
+msgstr ""
+
+#: Form/form_us.xml.h:510
+msgid "Ever wounded"
+msgstr ""
+
+#: Form/form_us.xml.h:511
+msgid "When wounded"
+msgstr ""
+
+#: Form/form_us.xml.h:512
+msgid "In what battles"
+msgstr ""
+
+#: Form/form_us.xml.h:513
+msgid "Were you captured"
+msgstr ""
+
+#: Form/form_us.xml.h:514
+msgid "When captured"
+msgstr ""
+
+#: Form/form_us.xml.h:515
+msgid "Where captured"
+msgstr ""
+
+#: Form/form_us.xml.h:516
+msgid "Were you imprisoned"
+msgstr ""
+
+#: Form/form_us.xml.h:517
+msgid "When imprisoned"
+msgstr ""
+
+#: Form/form_us.xml.h:518
+msgid "Were imprisoned"
+msgstr ""
+
+#: Form/form_us.xml.h:519
+msgid "How were you discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:520
+msgid "Did you transfer to another Company or Command"
+msgstr ""
+
+#: Form/form_us.xml.h:521
+msgid "If so, give Company and Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:522
+msgid "What branch of service and date of transfer"
+msgstr ""
+
+#: Form/form_us.xml.h:523
+msgid "Captains name"
+msgstr ""
+
+#: Form/form_us.xml.h:524
+msgid "Colonels name"
+msgstr ""
+
+#: Form/form_us.xml.h:525
+msgid "Length of service"
+msgstr ""
+
+#: Form/form_us.xml.h:526
+msgid "Are you married"
+msgstr ""
+
+#: Form/form_us.xml.h:527
+msgid "Age of wife"
+msgstr ""
+
+#: Form/form_us.xml.h:528
+msgid "Birthplace of wife"
+msgstr ""
+
+#: Form/form_us.xml.h:529
+msgid "Date married"
+msgstr ""
+
+#: Form/form_us.xml.h:530
+msgid "Place married"
+msgstr ""
+
+#: Form/form_us.xml.h:531
+msgid "When, where and circumstances you quit the service"
+msgstr ""
+
+#: Form/form_us.xml.h:532
+msgid "Paroled at close of war"
+msgstr ""
+
+#: Form/form_us.xml.h:533
+msgid "If so, when"
+msgstr ""
+
+#: Form/form_us.xml.h:534
+msgid "and where"
+msgstr ""
+
+#: Form/form_us.xml.h:535
+msgid "Have you your parole"
+msgstr ""
+
+#: Form/form_us.xml.h:536
+msgid "Voting Precinct and County"
+msgstr ""
+
+#: Form/form_us.xml.h:537
+msgid "With whom are you living"
+msgstr ""
+
+#: Form/form_us.xml.h:538
+msgid "Regularly received your pension warrant"
+msgstr ""
+
+#: Form/form_us.xml.h:539
+msgid "If No give information regarding the same"
+msgstr ""
+
+#: Form/form_us.xml.h:542
+msgid "Witness name and P.O Address"
+msgstr ""
+
+#: Form/form_us.xml.h:543
+msgid "Widow of"
+msgstr ""
+
+#: Form/form_us.xml.h:544
+msgid "Her age"
+msgstr ""
+
+#: Form/form_us.xml.h:545
+msgid "Her date of birth"
+msgstr ""
+
+#: Form/form_us.xml.h:546
+msgid "Date of marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:547
+msgid "Born within census year"
+msgstr ""
+
+#: Form/form_us.xml.h:548
+msgid "Married during census year"
+msgstr ""
+
+#: Form/form_us.xml.h:549
+msgid "Months unemployed during census year"
+msgstr ""
+
+#: Form/form_us.xml.h:550
+msgid "(Day of the Enumerator&apos;s visit) sick or temporarily disabled"
+msgstr ""
+
+#: Form/form_us.xml.h:551
+msgid "Deaf and Dumb"
+msgstr ""
+
+#: Form/form_us.xml.h:552
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr ""
+
+#: Form/form_us.xml.h:553
+msgid "Can not read"
+msgstr ""
+
+#: Form/form_us.xml.h:554
+msgid "Can not write"
+msgstr ""
+
+#: Form/form_us.xml.h:555
+msgid "Street Name"
+msgstr ""
+
+#: Form/form_us.xml.h:556
+msgid "House No."
+msgstr ""
+
+#: Form/form_us.xml.h:557
+msgid "Precinct No."
+msgstr ""
+
+#: Form/form_us.xml.h:559
+msgid "Inside or Outside City Limits"
+msgstr ""
+
+#: Form/form_us.xml.h:560
+msgid "Age Male"
+msgstr ""
+
+#: Form/form_us.xml.h:561
+msgid "Age Female"
+msgstr ""
+
+#: Form/form_us.xml.h:562
+msgid "Relation to Family"
+msgstr ""
+
+#: Form/form_us.xml.h:563
+msgid "Degree of Education"
+msgstr ""
+
+#: Form/form_us.xml.h:564
+msgid "Owner or Renter"
+msgstr ""
+
+#: Form/form_us.xml.h:565
+msgid "In or Out"
+msgstr ""
+
+#: Form/form_us.xml.h:566
+msgid "White Males Under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:567
+msgid "White Males 10 to 20"
+msgstr ""
+
+#: Form/form_us.xml.h:568
+msgid "White Males 20 to 30"
+msgstr ""
+
+#: Form/form_us.xml.h:569
+msgid "White Males 30 to 40"
+msgstr ""
+
+#: Form/form_us.xml.h:570
+msgid "White Males 40 to 50"
+msgstr ""
+
+#: Form/form_us.xml.h:571
+msgid "White Males 50 to 60"
+msgstr ""
+
+#: Form/form_us.xml.h:572
+msgid "White Males 60 to 70"
+msgstr ""
+
+#: Form/form_us.xml.h:573
+msgid "White Males 70 to 80"
+msgstr ""
+
+#: Form/form_us.xml.h:574
+msgid "White Males 80 to 90"
+msgstr ""
+
+#: Form/form_us.xml.h:575
+msgid "White Males Over 90"
+msgstr ""
+
+#: Form/form_us.xml.h:576
+msgid "White Females Under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:577
+msgid "White Females 10 to 20"
+msgstr ""
+
+#: Form/form_us.xml.h:578
+msgid "White Females 20 to 30"
+msgstr ""
+
+#: Form/form_us.xml.h:579
+msgid "White Females 30 to 40"
+msgstr ""
+
+#: Form/form_us.xml.h:580
+msgid "White Females 40 to 50"
+msgstr ""
+
+#: Form/form_us.xml.h:581
+msgid "White Females 50 to 60"
+msgstr ""
+
+#: Form/form_us.xml.h:582
+msgid "White Females 60 to 70"
+msgstr ""
+
+#: Form/form_us.xml.h:583
+msgid "White Females 70 to 80"
+msgstr ""
+
+#: Form/form_us.xml.h:584
+msgid "White Females 80 to 90"
+msgstr ""
+
+#: Form/form_us.xml.h:585
+msgid "White Females Over 90"
+msgstr ""
+
+#: Form/form_us.xml.h:586
+msgid "Male Negroes and Mulattoes"
+msgstr ""
+
+#: Form/form_us.xml.h:587
+msgid "Female Negroes and Mulattoes"
+msgstr ""
+
+#: Form/form_us.xml.h:588
+msgid "Militia"
+msgstr ""
+
+#: Form/form_us.xml.h:589
+msgid "Manufactories of All Kinds"
+msgstr ""
+
+#: Form/form_us.xml.h:590
+msgid "Value of products of manufactories"
+msgstr ""
+
+#: Form/form_us.xml.h:591
+msgid "Value of products of Coal Mines"
+msgstr ""
+
+#: Form/form_us.xml.h:592
+msgid "Pounds of Wool"
+msgstr ""
+
+#: Form/form_us.xml.h:593
+msgid "Number of Colleges"
+msgstr ""
+
+#: Form/form_us.xml.h:594
+msgid "Number of Pupils"
+msgstr ""
+
+#: Form/form_us.xml.h:595
+msgid "Number of Common Schools"
+msgstr ""
+
+#: Form/form_us.xml.h:596
+msgid "Males over 21 years"
+msgstr ""
+
+#: Form/form_us.xml.h:597
+msgid "Males under 21 years"
+msgstr ""
+
+#: Form/form_us.xml.h:598
+msgid "Females"
+msgstr "Женщины"
+
+#: Form/form_us.xml.h:599
+msgid "Total number"
+msgstr ""
+
+#: Form/form_us.xml.h:600
+msgid "Widowed"
+msgstr ""
+
+#: Form/form_us.xml.h:601
+msgid "Years resident in the state"
+msgstr ""
+
+#: Form/form_us.xml.h:602
+msgid "Native voters"
+msgstr ""
+
+#: Form/form_us.xml.h:603
+msgid "Naturalized voters"
+msgstr ""
+
+#: Form/form_us.xml.h:604
+msgid "Owners of land"
+msgstr ""
+
+#: Form/form_us.xml.h:605
+msgid "Paupers"
+msgstr ""
+
+#: Form/form_us.xml.h:606
+msgid "Acres of improved land"
+msgstr ""
+
+#: Form/form_us.xml.h:607
+msgid "Acres of unimproved land"
+msgstr ""
+
+#: Form/form_us.xml.h:608
+msgid "Acres in meadow"
+msgstr ""
+
+#: Form/form_us.xml.h:609
+msgid "Tons of hay"
+msgstr ""
+
+#: Form/form_us.xml.h:610
+msgid "Bushels of grass seed"
+msgstr ""
+
+#: Form/form_us.xml.h:611
+msgid "Acres of spring wheat"
+msgstr ""
+
+#: Form/form_us.xml.h:612
+msgid "Bushels harvested (spring wheat)"
+msgstr ""
+
+#: Form/form_us.xml.h:613
+msgid "Acres of winter wheat"
+msgstr ""
+
+#: Form/form_us.xml.h:614
+msgid "Bushels harvested (winter wheat)"
+msgstr ""
+
+#: Form/form_us.xml.h:615
+msgid "Acres of oats"
+msgstr ""
+
+#: Form/form_us.xml.h:616
+msgid "Bushels harvested (oats)"
+msgstr ""
+
+#: Form/form_us.xml.h:617
+msgid "Acres of corn"
+msgstr ""
+
+#: Form/form_us.xml.h:618
+msgid "Bushels harvested (corn)"
+msgstr ""
+
+#: Form/form_us.xml.h:619
+msgid "Acres of potatoes"
+msgstr ""
+
+#: Form/form_us.xml.h:620
+msgid "Bushels harvested (potatoes)"
+msgstr ""
+
+#: Form/form_us.xml.h:621
+msgid "Number of hogs sold"
+msgstr ""
+
+#: Form/form_us.xml.h:622
+msgid "Value of hogs sold"
+msgstr ""
+
+#: Form/form_us.xml.h:623
+msgid "Number of cattle sold"
+msgstr ""
+
+#: Form/form_us.xml.h:624
+msgid "Value of cattle sold"
+msgstr ""
+
+#: Form/form_us.xml.h:625
+msgid "Pounds of butter manufactured"
+msgstr ""
+
+#: Form/form_us.xml.h:626
+msgid "Pounds of cheese"
+msgstr ""
+
+#: Form/form_us.xml.h:627
+msgid "Pounds of wool"
+msgstr ""
+
+#: Form/form_us.xml.h:628
+msgid "Value of domestic manufactures"
+msgstr ""
+
+#: Form/form_us.xml.h:629
+msgid "Value of general manufactures"
+msgstr ""
+
+#: Form/form_us.xml.h:630
+msgid "Town of"
+msgstr ""
+
+#: Form/form_us.xml.h:631
+msgid "City of"
+msgstr ""
+
+#: Form/form_us.xml.h:632
+msgid "Township of"
+msgstr ""
+
+#: Form/form_us.xml.h:636
+msgid "Street and Number"
+msgstr ""
+
+#: Form/form_us.xml.h:637
+msgid "Place of birth, county"
+msgstr ""
+
+#: Form/form_us.xml.h:638
+msgid "Place of birth, state or territory"
+msgstr ""
+
+#: Form/form_us.xml.h:639
+msgid "Place of birth, country"
+msgstr ""
+
+#: Form/form_us.xml.h:640
+msgid "Father (N, Native; F, Foreign)"
+msgstr ""
+
+#: Form/form_us.xml.h:641
+msgid "Mother (N, Native; F, Foreign)"
+msgstr ""
+
+#: Form/form_us.xml.h:642
+msgid "Subject to military duty"
+msgstr ""
+
+#: Form/form_us.xml.h:643
+msgid "Entitled to vote"
+msgstr ""
+
+#: Form/form_us.xml.h:644
+msgid "Alien who has taken out first papers"
+msgstr ""
+
+#: Form/form_us.xml.h:645
+msgid "Alien who has not taken out first papers"
+msgstr ""
+
+#: Form/form_us.xml.h:646
+msgid "Over 10 and cannot read or write"
+msgstr ""
+
+#: Form/form_us.xml.h:647
+msgid "Over 10 and can read but not write"
+msgstr ""
+
+#: Form/form_us.xml.h:648
+msgid "Deaf and dumb, blind, insane, or idiotic"
+msgstr ""
+
+#: Form/form_us.xml.h:649
+msgid "Age 18 or older"
+msgstr ""
+
+#: Form/form_us.xml.h:650
+msgid "Age 5 to 18"
+msgstr ""
+
+#: Form/form_us.xml.h:651
+msgid "Age under 5"
+msgstr ""
+
+#: Form/form_us.xml.h:652
+msgid "White Male"
+msgstr ""
+
+#: Form/form_us.xml.h:653
+msgid "White Female"
+msgstr ""
+
+#: Form/form_us.xml.h:654
+msgid "Colored Male"
+msgstr ""
+
+#: Form/form_us.xml.h:655
+msgid "Colored Female"
+msgstr ""
+
+#: Form/form_us.xml.h:656
+msgid "Single, Widowed, or Divorced"
+msgstr ""
+
+#: Form/form_us.xml.h:657
+msgid "Father (N,Native; F,Foreign)"
+msgstr ""
+
+#: Form/form_us.xml.h:658
+msgid "Mother (N,Native; F,Foreign)"
+msgstr ""
+
+#: Form/form_us.xml.h:659
+msgid "Religious belief"
+msgstr ""
+
+#: Form/form_us.xml.h:660
+msgid "Can read but not write, over 10 years old"
+msgstr ""
+
+#: Form/form_us.xml.h:661
+msgid "Cannot read or write, over 10 years old"
+msgstr ""
+
+#: Form/form_us.xml.h:662
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr ""
+
+#: Form/form_us.xml.h:663
+msgid "Births in 1894"
+msgstr ""
+
+#: Form/form_us.xml.h:664
+msgid "Deaths in 1894"
+msgstr ""
+
+#: Form/form_us.xml.h:665
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr ""
+
+#: Form/form_us.xml.h:666
+msgid "Blind not in State College for Blind"
+msgstr ""
+
+#: Form/form_us.xml.h:667
+msgid "Insane not in State Hospital for Insane"
+msgstr ""
+
+#: Form/form_us.xml.h:668
+msgid "Company if in Civil War"
+msgstr ""
+
+#: Form/form_us.xml.h:669
+msgid "Regiment if in Civil War"
+msgstr ""
+
+#: Form/form_us.xml.h:670
+msgid "State if in Civil War"
+msgstr ""
+
+#: Form/form_us.xml.h:671
+msgid "Arm of service and rank if in Civil War"
+msgstr ""
+
+#: Form/form_us.xml.h:672
+msgid "Regiment if in Mexican War"
+msgstr ""
+
+#: Form/form_us.xml.h:673
+msgid "State if in Mexican War"
+msgstr ""
+
+#: Form/form_us.xml.h:674
+msgid "Card No."
+msgstr ""
+
+#: Form/form_us.xml.h:676
+msgid "P.O. Address"
+msgstr ""
+
+#: Form/form_us.xml.h:677
+msgid "P. O. Address"
+msgstr ""
+
+#: Form/form_us.xml.h:678
+msgid "Can you read?"
+msgstr ""
+
+#: Form/form_us.xml.h:679
+msgid "Can you write?"
+msgstr ""
+
+#: Form/form_us.xml.h:680
+msgid "Color, White-Black-Yellow-Red"
+msgstr ""
+
+#: Form/form_us.xml.h:681
+msgid "Place of Birth-Self"
+msgstr ""
+
+#: Form/form_us.xml.h:682
+msgid "Place of birth, Self"
+msgstr ""
+
+#: Form/form_us.xml.h:683
+msgid "Place of Birth-Mother"
+msgstr ""
+
+#: Form/form_us.xml.h:684
+msgid "Place of birth, Mother"
+msgstr ""
+
+#: Form/form_us.xml.h:685
+msgid "Place of Birth-Father"
+msgstr ""
+
+#: Form/form_us.xml.h:686
+msgid "Place of birth, Father"
+msgstr ""
+
+#: Form/form_us.xml.h:687
+msgid "Own home or farm"
+msgstr ""
+
+#: Form/form_us.xml.h:688
+msgid "Do you own your home or farm?"
+msgstr ""
+
+#: Form/form_us.xml.h:689
+msgid "Value of home or farm"
+msgstr ""
+
+#: Form/form_us.xml.h:690
+msgid "Entire value of home or farm?"
+msgstr ""
+
+#: Form/form_us.xml.h:691
+msgid "How much incumberance on home or farm"
+msgstr ""
+
+#: Form/form_us.xml.h:692
+msgid "How much incumberance on your home or farm?"
+msgstr ""
+
+#: Form/form_us.xml.h:693
+msgid "If foreign born, are you naturalized"
+msgstr ""
+
+#: Form/form_us.xml.h:694
+msgid "If you are foreign born, are you naturalized?"
+msgstr ""
+
+#: Form/form_us.xml.h:695
+msgid "Years in U.S."
+msgstr ""
+
+#: Form/form_us.xml.h:696
+msgid "Years in Iowa"
+msgstr ""
+
+#: Form/form_us.xml.h:697
+msgid "Years in Iowa>"
+msgstr ""
+
+#: Form/form_us.xml.h:698
+msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
+msgstr ""
+
+#: Form/form_us.xml.h:699
+msgid "Months in school in 1904-Public"
+msgstr ""
+
+#: Form/form_us.xml.h:700
+msgid "Months in school in 1904; Public"
+msgstr ""
+
+#: Form/form_us.xml.h:701
+msgid "Months in school in 1904-High"
+msgstr ""
+
+#: Form/form_us.xml.h:702
+msgid "Months in school in 1904; High"
+msgstr ""
+
+#: Form/form_us.xml.h:703
+msgid "Months in school in 1904-Private"
+msgstr ""
+
+#: Form/form_us.xml.h:704
+msgid "Months in school in 1904; Private"
+msgstr ""
+
+#: Form/form_us.xml.h:705
+msgid "Months in school in 1904-College"
+msgstr ""
+
+#: Form/form_us.xml.h:706
+msgid "Months in school in 1904; College"
+msgstr ""
+
+#: Form/form_us.xml.h:707
+msgid "Months unemployed in 1904"
+msgstr ""
+
+#: Form/form_us.xml.h:708
+msgid "Military-Service in which war"
+msgstr ""
+
+#: Form/form_us.xml.h:709
+msgid "Military Service in; Civil War-Mexican War-Spanish War"
+msgstr ""
+
+#: Form/form_us.xml.h:710
+msgid "Military-Company"
+msgstr ""
+
+#: Form/form_us.xml.h:711
+msgid "Military Service; Company"
+msgstr ""
+
+#: Form/form_us.xml.h:712
+msgid "Military-Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:713
+msgid "Military Service; Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:714
+msgid "Military-State"
+msgstr ""
+
+#: Form/form_us.xml.h:715
+msgid "Military Service; State"
+msgstr ""
+
+#: Form/form_us.xml.h:716
+msgid "Military-Class of service"
+msgstr ""
+
+#: Form/form_us.xml.h:717
+msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
+msgstr ""
+
+#: Form/form_us.xml.h:718
+msgid "Military-Date of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:719
+msgid "Military Service; Date of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:720
+msgid "Military-Date of discharge"
+msgstr ""
+
+#: Form/form_us.xml.h:721
+msgid "Military Service; Date of discharge"
+msgstr ""
+
+#: Form/form_us.xml.h:722
+msgid "Military-Remarks"
+msgstr ""
+
+#: Form/form_us.xml.h:723
+msgid "Military Service; Remarks"
+msgstr ""
+
+#: Form/form_us.xml.h:724
+msgid "Town or Township"
+msgstr ""
+
+#: Form/form_us.xml.h:725
+msgid "Months in 1914 Unemployed"
+msgstr ""
+
+#: Form/form_us.xml.h:726
+msgid "Earnings for 1914 from occupation"
+msgstr ""
+
+#: Form/form_us.xml.h:727
+msgid "Extent of Education Common"
+msgstr ""
+
+#: Form/form_us.xml.h:728
+msgid "Extent of Education Grammar"
+msgstr ""
+
+#: Form/form_us.xml.h:729
+msgid "Extent of Education High School"
+msgstr ""
+
+#: Form/form_us.xml.h:730
+msgid "Extent of Education College"
+msgstr ""
+
+#: Form/form_us.xml.h:731
+msgid "Birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:732
+msgid "Own house or farm"
+msgstr ""
+
+#: Form/form_us.xml.h:733
+msgid "Incumbrance on farm or home"
+msgstr ""
+
+#: Form/form_us.xml.h:734
+msgid "Value of farm or home"
+msgstr ""
+
+#: Form/form_us.xml.h:735
+msgid "Military Service: Civil War"
+msgstr ""
+
+#: Form/form_us.xml.h:736
+msgid "Military Service: Mexican"
+msgstr ""
+
+#: Form/form_us.xml.h:737
+msgid "Military Service: Spanish"
+msgstr ""
+
+#: Form/form_us.xml.h:738
+msgid "Military Service: Infantry"
+msgstr ""
+
+#: Form/form_us.xml.h:739
+msgid "Military Service: Cavalry"
+msgstr ""
+
+#: Form/form_us.xml.h:740
+msgid "Military Service: Artillery"
+msgstr ""
+
+#: Form/form_us.xml.h:741
+msgid "Military Service: Navy"
+msgstr ""
+
+#: Form/form_us.xml.h:742
+msgid "Military Service: State"
+msgstr ""
+
+#: Form/form_us.xml.h:743
+msgid "Military Service: Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:744
+msgid "Military Service: Company"
+msgstr ""
+
+#: Form/form_us.xml.h:745
+msgid "Church Affiliation"
+msgstr ""
+
+#: Form/form_us.xml.h:746
+msgid "Father&apos;s Birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:747
+msgid "Mother&apos;s Birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:748
+msgid "Months in School 1914: Public"
+msgstr ""
+
+#: Form/form_us.xml.h:749
+msgid "Months in School 1914: High"
+msgstr ""
+
+#: Form/form_us.xml.h:750
+msgid "Months in School 1914: Private"
+msgstr ""
+
+#: Form/form_us.xml.h:751
+msgid "Months in School 1914: College"
+msgstr ""
+
+#: Form/form_us.xml.h:754
+msgid "Deaf"
+msgstr ""
+
+#: Form/form_us.xml.h:755
+msgid "Idiot"
+msgstr ""
+
+#: Form/form_us.xml.h:756
+msgid "Naturalized if foreign born?"
+msgstr ""
+
+#: Form/form_us.xml.h:760
+msgid "Color or Race"
+msgstr ""
+
+#: Form/form_us.xml.h:761
+msgid "Home Owned or Rented"
+msgstr ""
+
+#: Form/form_us.xml.h:762
+msgid "Home Owned Free or Mortgaged"
+msgstr ""
+
+#: Form/form_us.xml.h:763
+msgid "Home Value"
+msgstr ""
+
+#: Form/form_us.xml.h:764
+msgid "Mortgage Debt"
+msgstr ""
+
+#: Form/form_us.xml.h:765
+msgid "Monthly Rent"
+msgstr ""
+
+#: Form/form_us.xml.h:766
+msgid "Insurance on Home"
+msgstr ""
+
+#: Form/form_us.xml.h:767
+msgid "Years in US"
+msgstr ""
+
+#: Form/form_us.xml.h:768
+msgid "Attended Rural School"
+msgstr ""
+
+#: Form/form_us.xml.h:769
+msgid "Attended Grade School"
+msgstr ""
+
+#: Form/form_us.xml.h:770
+msgid "Attended High School"
+msgstr ""
+
+#: Form/form_us.xml.h:771
+msgid "Attended College"
+msgstr ""
+
+#: Form/form_us.xml.h:772
+msgid "Highest Grade Rural School"
+msgstr ""
+
+#: Form/form_us.xml.h:773
+msgid "Highest Grade Grammar School"
+msgstr ""
+
+#: Form/form_us.xml.h:774
+msgid "Highest Grade High School"
+msgstr ""
+
+#: Form/form_us.xml.h:775
+msgid "No. Years College"
+msgstr ""
+
+#: Form/form_us.xml.h:776
+msgid "Months in School 1924"
+msgstr ""
+
+#: Form/form_us.xml.h:777
+msgid "Able to Read"
+msgstr ""
+
+#: Form/form_us.xml.h:778
+msgid "Able to Write"
+msgstr ""
+
+#: Form/form_us.xml.h:779
+msgid "Father&apos;s Name"
+msgstr ""
+
+#: Form/form_us.xml.h:780
+msgid "Father&apos;s Place of Birth"
+msgstr ""
+
+#: Form/form_us.xml.h:781
+msgid "Father&apos;s Age"
+msgstr ""
+
+#: Form/form_us.xml.h:782
+msgid "Mother&apos;s Name"
+msgstr ""
+
+#: Form/form_us.xml.h:783
+msgid "Mother&apos;s Place of Birth"
+msgstr ""
+
+#: Form/form_us.xml.h:784
+msgid "Mother&apos;s Age"
+msgstr ""
+
+#: Form/form_us.xml.h:785
+msgid "Parents Place of Marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:786
+msgid "Civil War Veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:787
+msgid "Civil War Service Branch"
+msgstr ""
+
+#: Form/form_us.xml.h:788
+msgid "Civil War State"
+msgstr ""
+
+#: Form/form_us.xml.h:789
+msgid "Spanish-American War Veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:790
+msgid "Spanish-American War Service Branch"
+msgstr ""
+
+#: Form/form_us.xml.h:791
+msgid "Spanish-American War State"
+msgstr ""
+
+#: Form/form_us.xml.h:792
+msgid "World War Veteran"
+msgstr ""
+
+#: Form/form_us.xml.h:793
+msgid "World War Service Branch"
+msgstr ""
+
+#: Form/form_us.xml.h:794
+msgid "World War State"
+msgstr ""
+
+#: Form/form_us.xml.h:795
+msgid "Agricultural Pursuits"
+msgstr ""
+
+#: Form/form_us.xml.h:796
+msgid "Professional Services"
+msgstr ""
+
+#: Form/form_us.xml.h:797
+msgid "Domestic/Personal Services"
+msgstr ""
+
+#: Form/form_us.xml.h:798
+msgid "Trade and Transportation"
+msgstr ""
+
+#: Form/form_us.xml.h:799
+msgid "Manufacturing and Mechanical"
+msgstr ""
+
+#: Form/form_us.xml.h:800
+msgid "Unclassified Laborer"
+msgstr ""
+
+#: Form/form_us.xml.h:801
+msgid "Months unemployed due to illness"
+msgstr ""
+
+#: Form/form_us.xml.h:802
+msgid "Income lost due to illness"
+msgstr ""
+
+#: Form/form_us.xml.h:803
+msgid "Months unemployed"
+msgstr ""
+
+#: Form/form_us.xml.h:804
+msgid "Church"
+msgstr "Церковь"
+
+#: Form/form_us.xml.h:805
+msgid "Free Inhabitants in"
+msgstr ""
+
+#: Form/form_us.xml.h:806
+msgid "Regiment"
+msgstr ""
+
+#: Form/form_us.xml.h:807
+msgid "Real Estate"
+msgstr ""
+
+#: Form/form_us.xml.h:808
+msgid "Personal Estate"
+msgstr ""
+
+#: Form/form_us.xml.h:809
+msgid "Attended School"
+msgstr ""
+
+#: Form/form_us.xml.h:810
+msgid "Illiterate"
+msgstr ""
+
+#: Form/form_us.xml.h:812
+msgid "Personal Property"
+msgstr ""
+
+#: Form/form_us.xml.h:813
+msgid "Where From"
+msgstr ""
+
+#: Form/form_us.xml.h:814
+msgid "School"
+msgstr ""
+
+#: Form/form_us.xml.h:815
+msgid "Cannot Read 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:816
+msgid "Cannot Read 15-21"
+msgstr ""
+
+#: Form/form_us.xml.h:817
+msgid "Cannot Read 21+"
+msgstr ""
+
+#: Form/form_us.xml.h:818
+msgid "Cannot Write 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:819
+msgid "Cannot Write 15-21"
+msgstr ""
+
+#: Form/form_us.xml.h:820
+msgid "Cannot Write 21+"
+msgstr ""
+
+#: Form/form_us.xml.h:821
+msgid "Cannot Read/Write 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:822
+msgid "Cannot Read/Write 15-21"
+msgstr ""
+
+#: Form/form_us.xml.h:823
+msgid "Cannot Read/Write 21+"
+msgstr ""
+
+#: Form/form_us.xml.h:824
+msgid "Widow(er)"
+msgstr ""
+
+#: Form/form_us.xml.h:825
+msgid "Learning"
+msgstr ""
+
+#: Form/form_us.xml.h:826
+msgid "Illiteracy 10-15"
+msgstr ""
+
+#: Form/form_us.xml.h:827
+msgid "Illiteracy 15-21"
+msgstr ""
+
+#: Form/form_us.xml.h:828
+msgid "Illiteracy 21+"
+msgstr ""
+
+#: Form/form_us.xml.h:829
+msgid "Honorably discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:830
+msgid "State Enlisted"
+msgstr ""
+
+#: Form/form_us.xml.h:831
+msgid "Arm of Service"
+msgstr ""
+
+#: Form/form_us.xml.h:832
+msgid "Prison"
+msgstr ""
+
+#: Form/form_us.xml.h:833
+msgid "Where from Kansas"
+msgstr ""
+
+#: Form/form_us.xml.h:834
+msgid "Trade or profession being learned"
+msgstr ""
+
+#: Form/form_us.xml.h:835
+msgid "Illiterate and 10 to 15 years old"
+msgstr ""
+
+#: Form/form_us.xml.h:836
+msgid "Illiterate and 16 to 21 years old"
+msgstr ""
+
+#: Form/form_us.xml.h:837
+msgid "Illiterate and over 21"
+msgstr ""
+
+#: Form/form_us.xml.h:838
+msgid "Honorably discharged from military service"
+msgstr ""
+
+#: Form/form_us.xml.h:839
+msgid "State in which enlisted"
+msgstr ""
+
+#: Form/form_us.xml.h:840
+msgid "Company or command"
+msgstr ""
+
+#: Form/form_us.xml.h:841
+msgid "Regiment or other organization"
+msgstr ""
+
+#: Form/form_us.xml.h:842
+msgid "Arm of service"
+msgstr ""
+
+#: Form/form_us.xml.h:843
+msgid "Prison in which confined as a prisoner of war"
+msgstr ""
+
+#: Form/form_us.xml.h:844
+msgid "Home owned free or mortgaged"
+msgstr ""
+
+#: Form/form_us.xml.h:845
+msgid "Where from to Kansas"
+msgstr ""
+
+#: Form/form_us.xml.h:846
+msgid "Number of months unemployed"
+msgstr ""
+
+#: Form/form_us.xml.h:847
+msgid "Illiterate and 15 to 21 years old"
+msgstr ""
+
+#: Form/form_us.xml.h:848
+msgid "Number of volumes in home library"
+msgstr ""
+
+#: Form/form_us.xml.h:849
+msgid "Number of house"
+msgstr ""
+
+#: Form/form_us.xml.h:850
+msgid "Year of immigration to the United States"
+msgstr ""
+
+#: Form/form_us.xml.h:851
+msgid "Naturalized, alien or first papers"
+msgstr ""
+
+#: Form/form_us.xml.h:852
+msgid "Attended school within year"
+msgstr ""
+
+#: Form/form_us.xml.h:853
+msgid "Nativity"
+msgstr ""
+
+#: Form/form_us.xml.h:854
+msgid "Father&apos;s Nativity"
+msgstr ""
+
+#: Form/form_us.xml.h:855
+msgid "Mother&apos;s Nativity"
+msgstr ""
+
+#: Form/form_us.xml.h:858
+msgid "Inhabitants in"
+msgstr ""
+
+#: Form/form_us.xml.h:859
+msgid "Served in Federal army during rebellion"
+msgstr ""
+
+#: Form/form_us.xml.h:860
+msgid "Residence in State - Years"
+msgstr ""
+
+#: Form/form_us.xml.h:861
+msgid "Residence in State - Months"
+msgstr ""
+
+#: Form/form_us.xml.h:862
+msgid "Residence in District - Years"
+msgstr ""
+
+#: Form/form_us.xml.h:863
+msgid "Residence in District - Months"
+msgstr ""
+
+#: Form/form_us.xml.h:864
+msgid "Months Employed"
+msgstr ""
+
+#: Form/form_us.xml.h:865
+msgid "Solder/Sailor"
+msgstr ""
+
+#: Form/form_us.xml.h:866
+msgid "Foreign father"
+msgstr ""
+
+#: Form/form_us.xml.h:867
+msgid "Foreign mother"
+msgstr ""
+
+#: Form/form_us.xml.h:868
+msgid "Organized Township"
+msgstr ""
+
+#: Form/form_us.xml.h:869
+msgid "Unorganized Township"
+msgstr ""
+
+#: Form/form_us.xml.h:870
+msgid "Name of Village"
+msgstr ""
+
+#: Form/form_us.xml.h:871
+msgid "Name of City"
+msgstr ""
+
+#: Form/form_us.xml.h:872
+msgid "Sub-division"
+msgstr ""
+
+#: Form/form_us.xml.h:873
+msgid "Precincts"
+msgstr ""
+
+#: Form/form_us.xml.h:874
+msgid "Enumerated date from"
+msgstr ""
+
+#: Form/form_us.xml.h:875
+msgid "Enumerated date to"
+msgstr ""
+
+#: Form/form_us.xml.h:876
+msgid "Enumeration number"
+msgstr ""
+
+#: Form/form_us.xml.h:877
+msgid "Street Number"
+msgstr "Улица Номер"
+
+#: Form/form_us.xml.h:878
+msgid "Fathers birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:879
+msgid "Mothers birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:880
+msgid "Residence in District - years"
+msgstr ""
+
+#: Form/form_us.xml.h:881
+msgid "Residence in District - months"
+msgstr ""
+
+#: Form/form_us.xml.h:882
+msgid "Army service"
+msgstr ""
+
+#: Form/form_us.xml.h:883
+msgid "Wars"
+msgstr ""
+
+#: Form/form_us.xml.h:884
+msgid "White males under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:885
+msgid "White males 10-17"
+msgstr ""
+
+#: Form/form_us.xml.h:886
+msgid "White males 18-20"
+msgstr ""
+
+#: Form/form_us.xml.h:887
+msgid "White males 21-44"
+msgstr ""
+
+#: Form/form_us.xml.h:888
+msgid "White males 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:889
+msgid "Total White Males"
+msgstr ""
+
+#: Form/form_us.xml.h:890
+msgid "White females under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:891
+msgid "White females 10-17"
+msgstr ""
+
+#: Form/form_us.xml.h:892
+msgid "White females 18-20"
+msgstr ""
+
+#: Form/form_us.xml.h:893
+msgid "White females 21-44"
+msgstr ""
+
+#: Form/form_us.xml.h:894
+msgid "White females 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:895
+msgid "Total White Females"
+msgstr ""
+
+#: Form/form_us.xml.h:896
+msgid "Total White Population"
+msgstr ""
+
+#: Form/form_us.xml.h:897
+msgid "White persons between 6 and 18"
+msgstr ""
+
+#: Form/form_us.xml.h:898
+msgid "No. White persons who can read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:899
+msgid "Colored males under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:900
+msgid "Colored males 10-17"
+msgstr ""
+
+#: Form/form_us.xml.h:901
+msgid "Colored males 18-20"
+msgstr ""
+
+#: Form/form_us.xml.h:902
+msgid "Colored males 21-44"
+msgstr ""
+
+#: Form/form_us.xml.h:903
+msgid "Colored males 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:904
+msgid "Total Colored Males"
+msgstr ""
+
+#: Form/form_us.xml.h:905
+msgid "Colored females under 10"
+msgstr ""
+
+#: Form/form_us.xml.h:906
+msgid "Colored females 10-17"
+msgstr ""
+
+#: Form/form_us.xml.h:907
+msgid "Colored females 18-20"
+msgstr ""
+
+#: Form/form_us.xml.h:908
+msgid "Colored females 21-44"
+msgstr ""
+
+#: Form/form_us.xml.h:909
+msgid "Colored females 45 and over"
+msgstr ""
+
+#: Form/form_us.xml.h:910
+msgid "Total Colored Females"
+msgstr ""
+
+#: Form/form_us.xml.h:911
+msgid "Total Colored Population"
+msgstr ""
+
+#: Form/form_us.xml.h:912
+msgid "Colored persons between 6 and 18"
+msgstr ""
+
+#: Form/form_us.xml.h:913
+msgid "No. Colored persons who can read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:914
+msgid "Deaf and Dumb Males"
+msgstr ""
+
+#: Form/form_us.xml.h:915
+msgid "Deaf and Dumb Males Age"
+msgstr ""
+
+#: Form/form_us.xml.h:916
+msgid "Deaf and Dumb Females"
+msgstr ""
+
+#: Form/form_us.xml.h:917
+msgid "Deaf and Dumb Females Age"
+msgstr ""
+
+#: Form/form_us.xml.h:918
+msgid "Deaf and Dumb White"
+msgstr ""
+
+#: Form/form_us.xml.h:919
+msgid "Deaf and Dumb Colored"
+msgstr ""
+
+#: Form/form_us.xml.h:920
+msgid "No. Deaf and Dumb taught to read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:921
+msgid "Blind Males"
+msgstr ""
+
+#: Form/form_us.xml.h:922
+msgid "Blind Males Age"
+msgstr ""
+
+#: Form/form_us.xml.h:923
+msgid "Blind Females"
+msgstr ""
+
+#: Form/form_us.xml.h:924
+msgid "Blind Females Age"
+msgstr ""
+
+#: Form/form_us.xml.h:925
+msgid "Blind White"
+msgstr ""
+
+#: Form/form_us.xml.h:926
+msgid "Blind Colored"
+msgstr ""
+
+#: Form/form_us.xml.h:927
+msgid "No. Blind taught to read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:928
+msgid "Insane Males"
+msgstr ""
+
+#: Form/form_us.xml.h:929
+msgid "Insane Males Age"
+msgstr ""
+
+#: Form/form_us.xml.h:930
+msgid "Insane Females"
+msgstr ""
+
+#: Form/form_us.xml.h:931
+msgid "Insane Females Age"
+msgstr ""
+
+#: Form/form_us.xml.h:932
+msgid "Insane White"
+msgstr ""
+
+#: Form/form_us.xml.h:933
+msgid "Insane Colored"
+msgstr ""
+
+#: Form/form_us.xml.h:934
+msgid "No. Insane taught to read and write"
+msgstr ""
+
+#: Form/form_us.xml.h:935
+msgid "Live Stock Horses"
+msgstr ""
+
+#: Form/form_us.xml.h:936
+msgid "Live Stock Mules"
+msgstr ""
+
+#: Form/form_us.xml.h:937
+msgid "Live Stock Jacks"
+msgstr ""
+
+#: Form/form_us.xml.h:938
+msgid "Live Stock Jennies"
+msgstr ""
+
+#: Form/form_us.xml.h:939
+msgid "Live Stock Cattle"
+msgstr ""
+
+#: Form/form_us.xml.h:940
+msgid "Live Stock Sheep"
+msgstr ""
+
+#: Form/form_us.xml.h:941
+msgid "Live Stock Hogs"
+msgstr ""
+
+#: Form/form_us.xml.h:942
+msgid "Products Bushels Wheat"
+msgstr ""
+
+#: Form/form_us.xml.h:943
+msgid "Products Bushels Corn"
+msgstr ""
+
+#: Form/form_us.xml.h:944
+msgid "Products Bushels Oats"
+msgstr ""
+
+#: Form/form_us.xml.h:945
+msgid "Products Bushels Barley"
+msgstr ""
+
+#: Form/form_us.xml.h:946
+msgid "Products Bushels Rye"
+msgstr ""
+
+#: Form/form_us.xml.h:947
+msgid "Products Lbs. Tobacco"
+msgstr ""
+
+#: Form/form_us.xml.h:948
+msgid "Products Lbs. Wool"
+msgstr ""
+
+#: Form/form_us.xml.h:949
+msgid "Products Lbs. Sugar"
+msgstr ""
+
+#: Form/form_us.xml.h:950
+msgid "Products Tons Hay"
+msgstr ""
+
+#: Form/form_us.xml.h:951
+msgid "Products Tons Hemp"
+msgstr ""
+
+#: Form/form_us.xml.h:952
+msgid "Products Galls. Whiskey"
+msgstr ""
+
+#: Form/form_us.xml.h:953
+msgid "Products Galls. Wine"
+msgstr ""
+
+#: Form/form_us.xml.h:954
+msgid "Products Galls. Molasses"
+msgstr ""
+
+#: Form/form_us.xml.h:955
+msgid "Total Population"
+msgstr ""
+
+#: Form/form_us.xml.h:956
+msgid "Building Material"
+msgstr ""
+
+#: Form/form_us.xml.h:957
+msgid "Dwelling Value"
+msgstr ""
+
+#: Form/form_us.xml.h:958
+msgid "Birthplace (NY County or other)"
+msgstr ""
+
+#: Form/form_us.xml.h:959
+msgid "Years resident in this city or town"
+msgstr ""
+
+#: Form/form_us.xml.h:960
+msgid "Native Voter"
+msgstr ""
+
+#: Form/form_us.xml.h:961
+msgid "Naturalized Voter"
+msgstr ""
+
+#: Form/form_us.xml.h:962
+msgid "Alien"
+msgstr ""
+
+#: Form/form_us.xml.h:963
+msgid "Persons of color not taxed"
+msgstr ""
+
+#: Form/form_us.xml.h:964
+msgid "Over 21/Illiterate"
+msgstr ""
+
+#: Form/form_us.xml.h:965
+msgid "Landowner"
+msgstr ""
+
+#: Form/form_us.xml.h:966
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr ""
+
+#: Form/form_us.xml.h:967
+msgid "Inhabitants in the"
+msgstr ""
+
+#: Form/form_us.xml.h:968
+msgid "Parent of how many children"
+msgstr ""
+
+#: Form/form_us.xml.h:969
+msgid "Number of times married"
+msgstr ""
+
+#: Form/form_us.xml.h:970
+msgid "Place of Occupation"
+msgstr ""
+
+#: Form/form_us.xml.h:971
+msgid "Land owner"
+msgstr ""
+
+#: Form/form_us.xml.h:972
+msgid "Now in army"
+msgstr ""
+
+#: Form/form_us.xml.h:973
+msgid "Now in navy"
+msgstr ""
+
+#: Form/form_us.xml.h:974
+msgid "Formerly in army"
+msgstr ""
+
+#: Form/form_us.xml.h:975
+msgid "Formerly in navy"
+msgstr ""
+
+#: Form/form_us.xml.h:976
+msgid "Usual place of employment (if not same city/town)"
+msgstr ""
+
+#: Form/form_us.xml.h:977
+msgid "Election District of the Town of"
+msgstr ""
+
+#: Form/form_us.xml.h:978
+msgid "the County of"
+msgstr ""
+
+#: Form/form_us.xml.h:979
+msgid "Birth Country"
+msgstr ""
+
+#: Form/form_us.xml.h:980
+msgid "Citizen or Alien"
+msgstr ""
+
+#: Form/form_us.xml.h:981
+msgid "Inhabitants living in"
+msgstr ""
+
+#: Form/form_us.xml.h:982
+msgid "Election District, Ward"
+msgstr ""
+
+#: Form/form_us.xml.h:983
+msgid "Number of years in the US"
+msgstr ""
+
+#: Form/form_us.xml.h:984
+msgid "Class"
+msgstr ""
+
+#: Form/form_us.xml.h:985
+msgid "Inmate: Residence given when admitted"
+msgstr ""
+
+#: Form/form_us.xml.h:986
+msgid "Inhabitants of Block No."
+msgstr ""
+
+#: Form/form_us.xml.h:987
+msgid "Election District No."
+msgstr ""
+
+#: Form/form_us.xml.h:988
+msgid "Ward No."
+msgstr ""
+
+#: Form/form_us.xml.h:989
+msgid "City or Village"
+msgstr ""
+
+#: Form/form_us.xml.h:991
+msgid "Assembly District No."
+msgstr ""
+
+#: Form/form_us.xml.h:992
+msgid "Where and When Naturalized"
+msgstr ""
+
+#: Form/form_us.xml.h:993
+msgid "WM 21-60"
+msgstr ""
+
+#: Form/form_us.xml.h:994
+msgid "WM under 21 above 60"
+msgstr ""
+
+#: Form/form_us.xml.h:995
+msgid "WF all ages"
+msgstr ""
+
+#: Form/form_us.xml.h:996
+msgid "Blacks 12-50"
+msgstr ""
+
+#: Form/form_us.xml.h:997
+msgid "Blacks under 12 above 50"
+msgstr ""
+
+#: Form/form_us.xml.h:998
+msgid "Native White Males"
+msgstr ""
+
+#: Form/form_us.xml.h:999
+msgid "Native White Females"
+msgstr ""
+
+#: Form/form_us.xml.h:1000
+msgid "Native Colored Males"
+msgstr ""
+
+#: Form/form_us.xml.h:1001
+msgid "Native Colored Females"
+msgstr ""
+
+#: Form/form_us.xml.h:1002
+msgid "Foreign Males"
+msgstr ""
+
+#: Form/form_us.xml.h:1003
+msgid "Foreign Females"
+msgstr ""
+
+#: Form/form_us.xml.h:1004
+msgid "Male Children 5 and Under"
+msgstr ""
+
+#: Form/form_us.xml.h:1005
+msgid "Female Children 5 and Under"
+msgstr ""
+
+#: Form/form_us.xml.h:1006
+msgid "Males 5 to 20 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1007
+msgid "Females 5 to 20 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1008
+msgid "Males 20 to 60 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1009
+msgid "Females 20 to 60 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1010
+msgid "Males Over 60 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1011
+msgid "Females Over 60 Years of Age"
+msgstr ""
+
+#: Form/form_us.xml.h:1012
+msgid "P.O."
+msgstr ""
+
+#: Form/form_us.xml.h:1013
+msgid "Sec."
+msgstr ""
+
+#: Form/form_us.xml.h:1014
+msgid "T."
+msgstr ""
+
+#: Form/form_us.xml.h:1015
+msgid "R."
+msgstr ""
+
+#: Form/form_us.xml.h:1016
+msgid "No."
+msgstr ""
+
+#: Form/form_us.xml.h:1017
+msgid "St./Ave"
+msgstr ""
+
+#: Form/form_us.xml.h:1018
+msgid "Hotel or Institution"
+msgstr ""
+
+#: Form/form_us.xml.h:1019
+msgid "Years in South Dakota"
+msgstr ""
+
+#: Form/form_us.xml.h:1020
+msgid "Years in United States"
+msgstr ""
+
+#: Form/form_us.xml.h:1021
+msgid "Birthplace of Father"
+msgstr ""
+
+#: Form/form_us.xml.h:1022
+msgid "Birthplace of Mother"
+msgstr ""
+
+#: Form/form_us.xml.h:1023
+msgid "Male"
+msgstr "Мужской"
+
+#: Form/form_us.xml.h:1024
+msgid "Female"
+msgstr "Женский"
+
+#: Form/form_us.xml.h:1025
+msgid "White"
+msgstr "Белый"
+
+#: Form/form_us.xml.h:1026
+msgid "Black"
+msgstr ""
+
+#: Form/form_us.xml.h:1027
+msgid "Red"
+msgstr ""
+
+#: Form/form_us.xml.h:1028
+msgid "Yellow"
+msgstr ""
+
+#: Form/form_us.xml.h:1029
+msgid "Divorced"
+msgstr ""
+
+#: Form/form_us.xml.h:1030
+msgid "Can Read"
+msgstr ""
+
+#: Form/form_us.xml.h:1031
+msgid "Can&apos;t Read"
+msgstr ""
+
+#: Form/form_us.xml.h:1032
+msgid "Can Write"
+msgstr ""
+
+#: Form/form_us.xml.h:1033
+msgid "Can't Write"
+msgstr ""
+
+#: Form/form_us.xml.h:1034
+msgid "Do you own your home or farm"
+msgstr ""
+
+#: Form/form_us.xml.h:1035
+msgid "Ancestry"
+msgstr "Родословная"
+
+#: Form/form_us.xml.h:1036
+msgid "Father&apos;s birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:1037
+msgid "Mother&apos;s birthplace"
+msgstr ""
+
+#: Form/form_us.xml.h:1038
+msgid "Extent of Education"
+msgstr ""
+
+#: Form/form_us.xml.h:1039
+msgid "Graduate of"
+msgstr ""
+
+#: Form/form_us.xml.h:1040
+msgid "Military Service"
+msgstr "Воинская служба"
+
+#: Form/form_us.xml.h:1041
+msgid "State"
+msgstr "Республика"
+
+#: Form/form_us.xml.h:1042
+msgid "Maiden name of wife"
+msgstr ""
+
+#: Form/form_us.xml.h:1044
+msgid "Church affiliation"
+msgstr ""
+
+#: Form/form_us.xml.h:1045
+msgid "If Foreign Born, are you Naturalized"
+msgstr ""
+
+#: Form/form_us.xml.h:1046
+msgid "Years in S.D."
+msgstr ""
+
+#: Form/form_us.xml.h:1047
+msgid "Division"
+msgstr ""
+
+#: Form/form_us.xml.h:1048
+msgid "Male under 21"
+msgstr ""
+
+#: Form/form_us.xml.h:1049
+msgid "Male over 21"
+msgstr ""
+
+#: Form/form_us.xml.h:1050
+msgid "Female under 21"
+msgstr ""
+
+#: Form/form_us.xml.h:1051
+msgid "Female over 21"
+msgstr ""
+
+#: Form/form_us.xml.h:1052
+msgid "Town/City"
+msgstr ""
+
+#: Form/form_us.xml.h:1053
+msgid "Heads of Families"
+msgstr ""
+
+#: Form/form_us.xml.h:1054
+msgid "White males"
+msgstr ""
+
+#: Form/form_us.xml.h:1055
+msgid "White females"
+msgstr ""
+
+#: Form/form_us.xml.h:1056
+msgid "Colored males"
+msgstr ""
+
+#: Form/form_us.xml.h:1057
+msgid "Colored females"
+msgstr ""
+
+#: Form/form_us.xml.h:1058
+msgid "Deaf &amp; Dumb"
+msgstr ""
+
+#: Form/form_us.xml.h:1059
+msgid "Foreign Birth"
+msgstr ""
+
+#: Form/form_us.xml.h:1060
+msgid "Inhabitants of"
+msgstr ""
+
+#: Form/form_us.xml.h:1061
+msgid "in"
+msgstr "в"
+
+#: Form/form_us.xml.h:1062
+msgid "of"
+msgstr "для"
+
+#: Form/form_us.xml.h:1063
+msgid "Nativity - United States"
+msgstr ""
+
+#: Form/form_us.xml.h:1064
+msgid "Nativity - Germany"
+msgstr ""
+
+#: Form/form_us.xml.h:1065
+msgid "Nativity - Great Britain"
+msgstr ""
+
+#: Form/form_us.xml.h:1066
+msgid "Nativity - Ireland"
+msgstr ""
+
+#: Form/form_us.xml.h:1067
+msgid "Nativity - France"
+msgstr ""
+
+#: Form/form_us.xml.h:1068
+msgid "Nativity - British America"
+msgstr ""
+
+#: Form/form_us.xml.h:1069
+msgid "Nativity - Scandinavian"
+msgstr ""
+
+#: Form/form_us.xml.h:1070
+msgid "Nativity - Holland"
+msgstr ""
+
+#: Form/form_us.xml.h:1071
+msgid "Nativity - All other countries"
+msgstr ""
+
+#: Form/form_us.xml.h:1072
+msgid "Residing in the"
+msgstr ""
+
+#: Form/form_us.xml.h:1073
+msgid "Co."
+msgstr ""
+
+#: Form/form_us.xml.h:1074
+msgid "Reg&apos;t."
+msgstr ""
+
+#: Form/form_us.xml.h:1075
+msgid "State or Vessel"
+msgstr ""
+
+#: Form/form_us.xml.h:1076
+msgid "Parents place of birth"
+msgstr ""
+
+#: Form/form_us.xml.h:1077
+msgid "Owned/Rented"
+msgstr ""
+
+#: Form/form_us.xml.h:1078
+msgid "Free/Mortgaged"
+msgstr ""
+
+#: Form/form_us.xml.h:1079
+msgid "Farm/House"
+msgstr ""
+
+#: Form/form_us.xml.h:1084
+msgid "Twin, triplet or other"
+msgstr ""
+
+#: Form/form_us.xml.h:1085
+msgid "No. in order of birth"
+msgstr ""
+
+#: Form/form_us.xml.h:1086
+msgid "Legitimate"
+msgstr ""
+
+#: Form/form_us.xml.h:1090
+msgid "Place of Record"
+msgstr ""
+
+#: Form/form_us.xml.h:1091
+msgid "Book/Volume"
+msgstr ""
+
+#: Form/form_us.xml.h:1093
+msgid "Race/Color"
+msgstr ""
+
+#: Form/form_us.xml.h:1094
+msgid "Illegitimate"
+msgstr ""
+
+#: Form/form_us.xml.h:1095
+msgid "Father"
+msgstr "Отец"
+
+#: Form/form_us.xml.h:1096
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr ""
+
+#: Form/form_us.xml.h:1097
+msgid "Mother (Maiden Name)"
+msgstr ""
+
+#: Form/form_us.xml.h:1098
+msgid "Residence of Parents"
+msgstr ""
+
+#: Form/form_us.xml.h:1099
+msgid "By Whom Reported"
+msgstr ""
+
+#: Form/form_us.xml.h:1100
+msgid "Date Recorded"
+msgstr ""
+
+#: Form/form_us.xml.h:1101
+msgid "License No."
+msgstr ""
+
+#: Form/form_us.xml.h:1102
+msgid "Date of Marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:1103
+msgid "Married by"
+msgstr ""
+
+#: Form/form_us.xml.h:1104
+msgid "Place of Marriage"
+msgstr ""
+
+#: Form/form_us.xml.h:1105
+msgid "Consent given by"
+msgstr ""
+
+#: Form/form_us.xml.h:1106
+msgid "Bond/Licence"
+msgstr ""
+
+#: Form/form_us.xml.h:1107
+msgid "Place of Death"
+msgstr ""
+
+#: Form/form_us.xml.h:1108
+msgid "Length of Residence"
+msgstr ""
+
+#: Form/form_us.xml.h:1109
+msgid "Served in U.S. Military"
+msgstr ""
+
+#: Form/form_us.xml.h:1110
+msgid "Spouse&apos;s Name"
+msgstr ""
+
+#: Form/form_us.xml.h:1111
+msgid "Birth date of deceased"
+msgstr ""
+
+#: Form/form_us.xml.h:1112
+msgid "Industry or Business"
+msgstr ""
+
+#: Form/form_us.xml.h:1113
+msgid "Name of employer"
+msgstr ""
+
+#: Form/form_us.xml.h:1114
+msgid "Date last worked"
+msgstr ""
+
+#: Form/form_us.xml.h:1115
+msgid "Years in this occupation"
+msgstr ""
+
+#: Form/form_us.xml.h:1116
+msgid "Education Level"
+msgstr ""
+
+#: Form/form_us.xml.h:1117
+msgid "Social Security No."
+msgstr ""
+
+#: Form/form_us.xml.h:1118
+msgid "Informant"
+msgstr "Податель заявления"
+
+#: Form/form_us.xml.h:1119
+msgid "Date of Death"
+msgstr ""
+
+#: Form/form_us.xml.h:1121
+msgid "Place of Burial"
+msgstr ""
+
+#: Form/form_us.xml.h:1122
+msgid "Date of Burial"
+msgstr ""
+
+#: Form/form_us.xml.h:1126
+msgid "Social Security Number"
+msgstr "Номер социального страхования"
+
+#: Form/form_us.xml.h:1127
+msgid "Residence Place"
+msgstr ""
+
+#: Form/form_us.xml.h:1128
+msgid "Burial Date"
+msgstr ""
+
+#: Form/form_us.xml.h:1129
+msgid "Burial Place"
+msgstr ""
+
+#: Form/form_us.xml.h:1130
+msgid "Cemetery"
+msgstr "Кладбище"
+
+#: Form/form_us.xml.h:1131
+msgid "Congressional District"
+msgstr ""
+
+#: Form/form_us.xml.h:1132
+msgid "in the Counties of"
+msgstr ""
+
+#: Form/form_us.xml.h:1133
+msgid "in the month of"
+msgstr ""
+
+#: Form/form_us.xml.h:1134
+msgid "Age 1 July 1863"
+msgstr ""
+
+#: Form/form_us.xml.h:1135
+msgid "White or Colored"
+msgstr ""
+
+#: Form/form_us.xml.h:1136
+msgid "Former Military Service"
+msgstr ""
+
+#: Form/form_us.xml.h:1137
+msgid "Station Headquarters"
+msgstr ""
+
+#: Form/form_us.xml.h:1138
+msgid "Congr. Dist. of"
+msgstr ""
+
+#: Form/form_us.xml.h:1139
+msgid "Card (A, B, or C)"
+msgstr ""
+
+#: Form/form_us.xml.h:1140
+msgid "Serial No."
+msgstr ""
+
+#: Form/form_us.xml.h:1141
+msgid "Registration No."
+msgstr ""
+
+#: Form/form_us.xml.h:1142
+msgid "Order No."
+msgstr ""
+
+#: Form/form_us.xml.h:1143
+msgid "Age in yrs."
+msgstr ""
+
+#: Form/form_us.xml.h:1144
+msgid "Home Address"
+msgstr ""
+
+#: Form/form_us.xml.h:1145
+msgid "Citizenship"
+msgstr ""
+
+#: Form/form_us.xml.h:1146
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr ""
+
+#: Form/form_us.xml.h:1147
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr ""
+
+#: Form/form_us.xml.h:1148
+msgid "Employer&apos;s Name &amp; address"
+msgstr ""
+
+#: Form/form_us.xml.h:1149
+msgid "Nearest Relative"
+msgstr ""
+
+#: Form/form_us.xml.h:1150
+msgid "Dependants &amp; Address"
+msgstr ""
+
+#: Form/form_us.xml.h:1151
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+
+#: Form/form_us.xml.h:1152
+msgid "Marital status"
+msgstr ""
+
+#: Form/form_us.xml.h:1153
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr ""
+
+#: Form/form_us.xml.h:1154
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr ""
+
+#: Form/form_us.xml.h:1155
+msgid "Height"
+msgstr "Высота"
+
+#: Form/form_us.xml.h:1156
+msgid "Build / Weight"
+msgstr ""
+
+#: Form/form_us.xml.h:1157
+msgid "Eye Color"
+msgstr "Цвет глаз"
+
+#: Form/form_us.xml.h:1158
+msgid "Hair Color"
+msgstr "Цвет волос"
+
+#: Form/form_us.xml.h:1159
+msgid "Bald"
+msgstr ""
+
+#: Form/form_us.xml.h:1161
+msgid "Place of Registration"
+msgstr ""
+
+#: Form/form_us.xml.h:1162
+msgid "Date of Registration"
+msgstr ""
+
+#: Form/form_us.xml.h:1163
+msgid "Serial Number"
+msgstr ""
+
+#: Form/form_us.xml.h:1164
+msgid "Order Number"
+msgstr ""
+
+#: Form/form_us.xml.h:1165
+msgid "Place of Residence"
+msgstr ""
+
+#: Form/form_us.xml.h:1166
+msgid "Mailing Address"
+msgstr ""
+
+#: Form/form_us.xml.h:1167
+msgid "Telephone"
+msgstr "Телефон"
+
+#: Form/form_us.xml.h:1168
+msgid "Age in years"
+msgstr ""
+
+#: Form/form_us.xml.h:1169
+msgid "Who will always know your address (Name &amp; Address)"
+msgstr ""
+
+#: Form/form_us.xml.h:1170
+msgid "Place of employment or business"
+msgstr ""
+
+#: Form/form_us.xml.h:1171
+msgid "Weight"
+msgstr "Вес"
+
+#: Form/form_us.xml.h:1172
+msgid "Complexion"
+msgstr ""
+
+#: Form/form_us.xml.h:1173
+msgid "Eyes"
+msgstr "Глаза"
+
+#: Form/form_us.xml.h:1174
+msgid "Hair"
+msgstr "Волосы"
+
+#: Form/form_us.xml.h:1175
+msgid "Other characteristics"
+msgstr "Другие характеристики"
+
+#: Form/form_us.xml.h:1176
+msgid "Date entered"
+msgstr ""
+
+#: Form/form_us.xml.h:1177
+msgid "Place entered"
+msgstr ""
+
+#: Form/form_us.xml.h:1178
+msgid "Term of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:1179
+msgid "Eye color"
+msgstr "Цвет глаз"
+
+#: Form/form_us.xml.h:1180
+msgid "Hair color"
+msgstr ""
+
+#: Form/form_us.xml.h:1181
+msgid "Rank in"
+msgstr ""
+
+#: Form/form_us.xml.h:1182
+msgid "Branch"
+msgstr ""
+
+#: Form/form_us.xml.h:1183
+msgid "Regiment/Unit/Ship"
+msgstr ""
+
+#: Form/form_us.xml.h:1184
+msgid "Service Number"
+msgstr ""
+
+#: Form/form_us.xml.h:1185
+msgid "No. of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:1186
+msgid "Date discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:1187
+msgid "Place discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:1188
+msgid "Rank out"
+msgstr ""
+
+#: Form/form_us.xml.h:1189
+msgid "Industry/Employer"
+msgstr ""
+
+#: Form/form_us.xml.h:1190
+msgid "Spouse"
+msgstr "Супруг(а)"
+
+#: Form/form_us.xml.h:1191
+msgid "Residents Status"
+msgstr ""
