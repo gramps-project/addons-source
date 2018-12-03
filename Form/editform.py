@@ -877,6 +877,7 @@ class PersonSection(Gtk.Box):
             label.set_alignment(0.0, 0.5)
             label.show()
             entry = Gtk.Entry()
+            entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
             entry.show()
@@ -1033,6 +1034,7 @@ class FamilySection(Gtk.Box):
             label.set_alignment(0.0, 0.5)
             label.show()
             entry = Gtk.Entry()
+            entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             widgets[heading] = entry
             entry.show()
