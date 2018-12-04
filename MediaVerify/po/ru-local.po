@@ -1,0 +1,149 @@
+# Russian translation for MediaVerify
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-04 16:37+0300\n"
+"PO-Revision-Date: 2018-12-04 16:48+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "Проверка документов"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Проверяет, что документы присутствуют по указанному пути"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "Исптрумент проверки документов"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "Перемещённые/Перименованные файлы"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Отсутствующие файлы"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Дубликаты файлов"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Дополнительные файлы"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "Не создана md5"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "Ошибки"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "Закрыть"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "Закрыть инструмент проверки документов"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "Создать"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "Создать md5 хеши для документов"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "Проверить"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Проверяет ссылки на документы и сообщает об отсутствующих, "
+"дублирующих и дополнительных файлах"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Экспорт"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Экспортировать результат в текстовы файл"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "Исправить"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "Исправить пути для перемещённых и переименованных файлов"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Проверить документы используя md5 хеши"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Файлы"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Экспортировать результат в текстовы файл"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Ошибка при записи отчёта: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "Создание хешей документов"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "Добавить хеши для документов"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Путь к документам не установлен. Необходимо установить 'Базовый путь для "
+"относительно пути документов' в настройках."
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "Поиск файлов"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "Проверка путей"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "Исправление путей к файлам"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "Исправить пути к документам"
