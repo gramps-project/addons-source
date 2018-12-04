@@ -885,7 +885,7 @@ class PersonSection(Gtk.Box):
             label.set_halign(Gtk.Align.START)
             label.set_valign(Gtk.Align.CENTER)
             label.show()
-            entry = Gtk.Entry()
+            entry = MyEntry(heading)
             entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
@@ -1046,7 +1046,7 @@ class FamilySection(Gtk.Box):
             label.set_halign(Gtk.Align.START)
             label.set_valign(Gtk.Align.CENTER)
             label.show()
-            entry = Gtk.Entry()
+            entry = MyEntry(heading)
             entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             widgets[heading] = entry
@@ -1135,6 +1135,21 @@ class FamilySection(Gtk.Box):
                                 if event_ref.ref != self.event.handle]
             family.set_event_ref_list(ref_list)
             self.db.commit_family(family, trans)
+
+
+class MyEntry(Gtk.Entry):
+    """
+    A Gtk type Entry that resizes based on content
+    """
+    def __init__(self, labeltxt):
+        Gtk.Entry.__init__(self)
+        self.set_width_chars(len(labeltxt))
+        self.connect('changed', self._changed)
+
+    def _changed(self, entry):
+        layout = entry.get_layout()
+        width, height = layout.get_pixel_size()
+        entry.set_size_request(width + 18, -1)
 
 #------------------------------------------------------------------------
 #
