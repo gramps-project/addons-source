@@ -1,0 +1,51 @@
+# Russian translation for JSON
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-04 13:57+0300\n"
+"PO-Revision-Date: 2018-12-04 14:00+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: JSON/JSON.gpr.py:3
+msgid "JSON Export"
+msgstr "Экспорт JSON"
+
+#: JSON/JSON.gpr.py:4
+msgid "This is a JSON export"
+msgstr "Предоставляет экспорт в JSON"
+
+#: JSON/JSON.gpr.py:11
+msgid "JSON options"
+msgstr "Параметры JSON"
+
+#: JSON/JSON.gpr.py:17
+msgid "JSON Import"
+msgstr "Импорт JSON"
+
+#: JSON/JSON.gpr.py:18
+msgid "This is a JSON import"
+msgstr "Предоставляет импорт JSON"
+
+#: JSON/JSONImport.py:56
+msgid "JSON import"
+msgstr "Импорт JSON"
+
+#: JSON/JSONImport.py:85
+#, python-format
+msgid "%s could not be opened\n"
+msgstr "%s не может быть открыт\n"
