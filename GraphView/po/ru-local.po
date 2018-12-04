@@ -1,35 +1,36 @@
 # Russian translations for Gramps GraphView addon.
+# This file is distributed under the same license as the Gramps package.
 #
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2016-2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2016-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 11:10+0300\n"
-"PO-Revision-Date: 2018-11-27 11:26+0300\n"
-"Last-Translator: Komaritsyn Ivan <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2018-12-04 11:21+0300\n"
+"PO-Revision-Date: 2018-12-04 11:26+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: GraphView/graphview.gpr.py:29 GraphView/graphview.py:135
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.py:135
 msgid "Graph View"
 msgstr "Граф отношений"
 
-#: GraphView/graphview.gpr.py:30
+#: GraphView/graphview.gpr.py:37
 msgid "Charts"
-msgstr "Диаграммы"
+msgstr "Графики"
 
-#: GraphView/graphview.gpr.py:31
+#: GraphView/graphview.gpr.py:38
 msgid "Dynamic graph of relations"
 msgstr "Динамический граф отношений"
 
-#: GraphView/graphview.gpr.py:48
+#: GraphView/graphview.gpr.py:51
 msgid ""
 "Graphview Warning:  Goocanvas 2 (https://wiki.gnome.org/action/show/Projects/"
 "GooCanvas) is required for this view to work"
@@ -37,7 +38,7 @@ msgstr ""
 "Graphview ВНИМАНИЕ:  Goocanvas 2 (https://wiki.gnome.org/action/show/"
 "Projects/GooCanvas) необходим для работы этого вида"
 
-#: GraphView/graphview.gpr.py:53
+#: GraphView/graphview.gpr.py:56
 msgid ""
 "Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
 "view to work"
@@ -45,11 +46,11 @@ msgstr ""
 "Graphview ВНИМАНИЕ:  GraphViz (http://www.graphviz.org) необходим для работы "
 "этого вида"
 
-#: GraphView/graphview.gpr.py:62
+#: GraphView/graphview.gpr.py:65
 msgid "Graphview Failed to Load"
 msgstr "Ошибка при загрузке Graphview"
 
-#: GraphView/graphview.gpr.py:63
+#: GraphView/graphview.gpr.py:66
 #, python-format
 msgid ""
 "\n"
@@ -76,11 +77,11 @@ msgstr ""
 "\n"
 "Для отключения всех последующих сообщений Graphview нажмите Отключить."
 
-#: GraphView/graphview.gpr.py:79
+#: GraphView/graphview.gpr.py:82
 msgid " Dismiss "
 msgstr " Отключить "
 
-#: GraphView/graphview.gpr.py:80
+#: GraphView/graphview.gpr.py:83
 msgid "Continue"
 msgstr "Продолжить"
 
@@ -118,9 +119,10 @@ msgstr "Показывать места"
 msgid "Show tags"
 msgstr "Показывать метки"
 
+# может быть "Вывод"?
 #: GraphView/graphview.py:465
 msgid "Layout"
-msgstr "Вывод"
+msgstr "Представление"
 
 #: GraphView/graphview.py:478
 msgid "Path color to home person"
@@ -152,11 +154,11 @@ msgstr "Выбор dot файла"
 
 #: GraphView/graphview.py:529
 msgid "_Cancel"
-msgstr "_Отмена"
+msgstr "_Отменить"
 
 #: GraphView/graphview.py:530
 msgid "_Apply"
-msgstr "_Применить"
+msgstr "П_рименить"
 
 #: GraphView/graphview.py:544
 msgid "File already exists"
@@ -178,7 +180,7 @@ msgstr "_Изменить имя файла"
 #: GraphView/graphview.py:564
 #, python-format
 msgid "Could not create %s"
-msgstr "Не удалось создать %s"
+msgstr "Ошибка при создании %s"
 
 #: GraphView/graphview.py:615
 msgid "Zoom in"
@@ -275,7 +277,7 @@ msgstr "Добавить"
 
 #: GraphView/graphview.py:1223
 msgid "Siblings"
-msgstr "Братья/сёстры"
+msgstr "Братья/Сёстры"
 
 #: GraphView/graphview.py:1292
 msgid "Parents"
