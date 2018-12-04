@@ -1,0 +1,160 @@
+# Russian translation for HtreePedigreeView
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-04 13:13+0300\n"
+"PO-Revision-Date: 2018-12-04 13:20+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:45
+msgid "H-Tree Pedigree"
+msgstr "Древо H-Tree"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:46
+msgid "Charts"
+msgstr "Графики"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr ""
+"Показывае древо предков с соответствующими отступами для выбранного лица"
+
+#: HtreePedigreeView/HtreePedigreeView.py:83
+msgid "short for born|b."
+msgstr "р."
+
+#: HtreePedigreeView/HtreePedigreeView.py:84
+msgid "short for died|d."
+msgstr "у."
+
+#: HtreePedigreeView/HtreePedigreeView.py:85
+msgid "short for baptized|bap."
+msgstr "крещ."
+
+#: HtreePedigreeView/HtreePedigreeView.py:86
+msgid "short for christened|chr."
+msgstr "прин. хр."
+
+#: HtreePedigreeView/HtreePedigreeView.py:87
+msgid "short for buried|bur."
+msgstr "похор."
+
+#: HtreePedigreeView/HtreePedigreeView.py:88
+msgid "short for cremated|crem."
+msgstr "крем."
+
+#: HtreePedigreeView/HtreePedigreeView.py:531
+msgid "H-tree Pedigree View"
+msgstr "Вид H-Tree"
+
+#: HtreePedigreeView/HtreePedigreeView.py:697
+msgid "Person Filter Editor"
+msgstr "Редактор фильтров людей"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1540
+msgid "Relationship loop detected"
+msgstr "Обнаружена петля в отношениях"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1541
+msgid "A person was found to be his/her own ancestor."
+msgstr "Лицо является собственным предком."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1585
+msgid "Pre_vious"
+msgstr "Пр_едыдущее"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1586
+msgid "_Next"
+msgstr "_Следующее"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1587
+msgid "_Home"
+msgstr "До_мой"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1609
+msgid "Mouse scroll direction"
+msgstr "Направление прокрутки колёсика мыши"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1613
+msgid "Top <-> Bottom"
+msgstr "Вверх <-> Вниз"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1620
+msgid "Left <-> Right"
+msgstr "Влево <-> Вправо"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1638
+msgid "About H-Tree"
+msgstr "О дополнении"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1649
+msgid "_Add"
+msgstr "До_бавить"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1684
+#: HtreePedigreeView/HtreePedigreeView.py:1912
+msgid "_Edit"
+msgstr "_Правка"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1689
+#: HtreePedigreeView/HtreePedigreeView.py:1917
+msgid "_Copy"
+msgstr "_Копировать"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1699
+msgid "Spouses"
+msgstr "Супруги"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1733
+msgid "Siblings"
+msgstr "Братья/Сёстры"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1775
+msgid "Children"
+msgstr "Дети"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1812
+msgid "Parents"
+msgstr "Родители"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1849
+msgid "Add New Parents..."
+msgstr "Добавить родителей..."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1860
+msgid "Related"
+msgstr "Связанные"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2044
+msgid "Show images"
+msgstr "Показывать изображения"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2053
+msgid "Show tags"
+msgstr "Показывать метки"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2070
+msgid "Tree size"
+msgstr "Размер древа"
+
+# может быть "Вывод"?
+#: HtreePedigreeView/HtreePedigreeView.py:2074
+msgid "Layout"
+msgstr "Представление"
