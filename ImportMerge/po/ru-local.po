@@ -1,16 +1,16 @@
-# Russian translations for LastChange addon.
-#
+# Russian translation for ImportMerge addon.
 # This file is distributed under the same license as the Gramps package.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2017.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2017-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-24 10:47+0300\n"
-"PO-Revision-Date: 2017-08-24 11:33+0300\n"
+"POT-Creation-Date: 2018-12-04 13:51+0300\n"
+"PO-Revision-Date: 2018-12-04 13:56+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
-"Language-Team: русский <>\n"
+"Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,8 +19,8 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:310
-#: ImportMerge/importmerge.py:687
+#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:311
+#: ImportMerge/importmerge.py:690
 msgid "Import and Merge tool"
 msgstr "Импорт и слияние"
 
@@ -32,51 +32,51 @@ msgstr ""
 "Сравнивает базу данных (Gramps XML) с текущим древом и предоставляет "
 "возможность слияния изменений."
 
-#: ImportMerge/importmerge.py:79
+#: ImportMerge/importmerge.py:80
 msgid "Import and merge a Gramps XML"
 msgstr "Импортировать и объединить файл Gramps XML"
 
-#: ImportMerge/importmerge.py:88
+#: ImportMerge/importmerge.py:89
 msgid "Missing"
 msgstr "Отсутствует"
 
-#: ImportMerge/importmerge.py:90
+#: ImportMerge/importmerge.py:91
 msgid "Added"
 msgstr "Добавлено"
 
-#: ImportMerge/importmerge.py:92
+#: ImportMerge/importmerge.py:93
 msgid "Different"
 msgstr "Отличается"
 
-#: ImportMerge/importmerge.py:107
+#: ImportMerge/importmerge.py:108
 msgid "Delete original"
 msgstr "Удалить оригинал"
 
-#: ImportMerge/importmerge.py:108 ImportMerge/importmerge.glade.h:14
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade.h:14
 msgid "Ignore"
 msgstr "Игнорировать"
 
-#: ImportMerge/importmerge.py:109
+#: ImportMerge/importmerge.py:110
 msgid "Add Import"
 msgstr "Добавить из импорта"
 
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:111
 msgid "Merge into original"
 msgstr "Объединить с оригиналом"
 
-#: ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:112
 msgid "Merge into import"
 msgstr "Объединить с импортом"
 
-#: ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:113
 msgid "Replace with import"
 msgstr "Заменить из импорта"
 
-#: ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:114
 msgid "Keep original"
 msgstr "Оставить оригинал"
 
-#: ImportMerge/importmerge.py:114 ImportMerge/importmerge.glade.h:12
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade.h:12
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -85,7 +85,7 @@ msgstr ""
 "отличия.  Изменения не будут внесены в Ваше древо, пока не будет нажата "
 "кнопка \"Завершить\" с подтверждением действия."
 
-#: ImportMerge/importmerge.py:117
+#: ImportMerge/importmerge.py:118
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -93,7 +93,7 @@ msgstr ""
 "Этот элемент будет удалён из Вашего древа.  Все ссылки на элемент также "
 "будут удалены."
 
-#: ImportMerge/importmerge.py:119
+#: ImportMerge/importmerge.py:120
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -101,14 +101,14 @@ msgstr ""
 "Этот элемент не будет изменён в Вашем древе.  Все ссылки также будут "
 "проигнорированы."
 
-#: ImportMerge/importmerge.py:121
+#: ImportMerge/importmerge.py:122
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
 msgstr ""
 "Этот элемент будут добавлен в Ваше древо.  Ссылки также будут добавлены."
 
-#: ImportMerge/importmerge.py:123
+#: ImportMerge/importmerge.py:124
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -116,7 +116,7 @@ msgstr ""
 "Этот элемент будет объединён с сохранением данных в Вашем древе.  Ссылки "
 "также будут объединены или добавлены."
 
-#: ImportMerge/importmerge.py:125
+#: ImportMerge/importmerge.py:126
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -124,7 +124,7 @@ msgstr ""
 "Этот элемент будет объединён с использованием импортированных данных.  "
 "Ссылки также будут объединены или добавлены."
 
-#: ImportMerge/importmerge.py:127
+#: ImportMerge/importmerge.py:128
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -132,115 +132,115 @@ msgstr ""
 "Данные в Вашем древе будут полностью заменены импортированными данными.  "
 "Ссылки будут также заменены или удалены."
 
-#: ImportMerge/importmerge.py:129
+#: ImportMerge/importmerge.py:130
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
 msgstr ""
 "Этот элемент не будет изменён в Вашем древе.  Ссылки также не изменятся."
 
-#: ImportMerge/importmerge.py:144
+#: ImportMerge/importmerge.py:145
 msgid "Family"
 msgstr "Семья"
 
-#: ImportMerge/importmerge.py:144
+#: ImportMerge/importmerge.py:145
 msgid "Person"
 msgstr "Лицо"
 
-#: ImportMerge/importmerge.py:144
+#: ImportMerge/importmerge.py:145
 msgid "Citation"
 msgstr "Цитата"
 
-#: ImportMerge/importmerge.py:144
+#: ImportMerge/importmerge.py:145
 msgid "Event"
 msgstr "Событие"
 
-#: ImportMerge/importmerge.py:144
-msgid "Media"
-msgstr "Документ"
-
 #: ImportMerge/importmerge.py:145
+msgid "Media"
+msgstr "Альбом"
+
+#: ImportMerge/importmerge.py:146
 msgid "Note"
 msgstr "Заметка"
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Place"
 msgstr "Место"
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Repository"
 msgstr "Хранилище"
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Source"
 msgstr "Источник"
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Tag"
 msgstr "Метка"
 
-#: ImportMerge/importmerge.py:311
+#: ImportMerge/importmerge.py:312
 msgid "Importing data..."
 msgstr "Импорт данных..."
 
-#: ImportMerge/importmerge.py:320
+#: ImportMerge/importmerge.py:321
 msgid "Import Failure"
 msgstr "Ошибка импортирования"
 
-#: ImportMerge/importmerge.py:324
+#: ImportMerge/importmerge.py:325
 msgid "Searching..."
-msgstr "Поиск..."
+msgstr "Ведётся поиск..."
 
-#: ImportMerge/importmerge.py:388
+#: ImportMerge/importmerge.py:389
 msgid "Your Tree and import are the same."
 msgstr "Не найдено отличий в Вашем и импортируемом древе."
 
-#: ImportMerge/importmerge.py:420
+#: ImportMerge/importmerge.py:421
 msgid "Last changed"
-msgstr "Последние изменение"
+msgstr "Последнее изменение"
 
-#: ImportMerge/importmerge.py:433 ImportMerge/importmerge.py:442
-#: ImportMerge/importmerge.py:450 ImportMerge/importmerge.py:458
+#: ImportMerge/importmerge.py:434 ImportMerge/importmerge.py:443
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:459
 msgid "your tree "
 msgstr "Ваше древо "
 
-#: ImportMerge/importmerge.py:440 ImportMerge/importmerge.py:448
-#: ImportMerge/importmerge.py:456
+#: ImportMerge/importmerge.py:441 ImportMerge/importmerge.py:449
+#: ImportMerge/importmerge.py:457
 msgid "imported "
 msgstr "импортировано "
 
-#: ImportMerge/importmerge.py:463 ImportMerge/importmerge.py:936
-#: ImportMerge/importmerge.py:957
+#: ImportMerge/importmerge.py:464 ImportMerge/importmerge.py:943
+#: ImportMerge/importmerge.py:964
 msgid "Original"
 msgstr "Оригинал"
 
-#: ImportMerge/importmerge.py:464 ImportMerge/importmerge.py:937
-#: ImportMerge/importmerge.py:958
+#: ImportMerge/importmerge.py:465 ImportMerge/importmerge.py:944
+#: ImportMerge/importmerge.py:965
 msgid "Imported"
 msgstr "Импортировано"
 
-#: ImportMerge/importmerge.py:466 ImportMerge/importmerge.py:939
-#: ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:946
+#: ImportMerge/importmerge.py:967
 msgid "Result  "
 msgstr "Результат  "
 
-#: ImportMerge/importmerge.py:689
+#: ImportMerge/importmerge.py:692
 msgid "Processing..."
 msgstr "Обработка..."
 
-#: ImportMerge/importmerge.py:690
+#: ImportMerge/importmerge.py:693
 msgid "Import and Merge"
 msgstr "Импорт и слияние"
 
-#: ImportMerge/importmerge.py:888 ImportMerge/importmerge.glade.h:22
+#: ImportMerge/importmerge.py:893 ImportMerge/importmerge.glade.h:22
 msgid "Replace"
 msgstr "Заменить"
 
-#: ImportMerge/importmerge.py:893
+#: ImportMerge/importmerge.py:898
 msgid "Add"
 msgstr "Добавить"
 
-#: ImportMerge/importmerge.py:898
+#: ImportMerge/importmerge.py:903
 msgid "Delete"
 msgstr "Удалить"
 
@@ -266,7 +266,7 @@ msgstr "Выберите отличие для исследования."
 
 #: ImportMerge/importmerge.glade.h:5
 msgid "Status"
-msgstr "Состояние"
+msgstr "Статус"
 
 #: ImportMerge/importmerge.glade.h:6
 msgid "Object"
@@ -392,4 +392,4 @@ msgstr "Сохранить изменения?"
 
 #: ImportMerge/importmerge.glade.h:35
 msgid "If you close without saving, the changes you have made will be lost"
-msgstr "Если выйдете без сохранения, сделанные изменения будут потеряны"
+msgstr "Если выйти без сохранения, то сделанные изменения будут потеряны"
