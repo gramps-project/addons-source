@@ -1,0 +1,93 @@
+# Russian translation for PedigreeChart
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 13:56+0300\n"
+"PO-Revision-Date: 2018-12-05 14:02+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: PedigreeChart/PedigreeChart.gpr.py:24
+msgid "Pedigree Chart"
+msgstr "Родословная"
+
+#: PedigreeChart/PedigreeChart.gpr.py:25
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "Альтернативная версия традиционного представления родословной."
+
+#: PedigreeChart/PedigreeChart.py:372
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Лицо %s отсутствует в базе данных"
+
+#: PedigreeChart/PedigreeChart.py:375 PedigreeChart/PedigreeChart.py:523
+msgid "Mother"
+msgstr "Мать"
+
+#: PedigreeChart/PedigreeChart.py:379
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "Родословная для %s"
+
+#: PedigreeChart/PedigreeChart.py:526
+msgid "Father"
+msgstr "Отец"
+
+#: PedigreeChart/PedigreeChart.py:528
+#, python-format
+msgid "Page %d"
+msgstr "Страница %d"
+
+#: PedigreeChart/PedigreeChart.py:630
+msgid "Tree Options"
+msgstr "Параметры древа"
+
+#: PedigreeChart/PedigreeChart.py:632
+msgid "Center Person"
+msgstr "Главное лицо"
+
+#: PedigreeChart/PedigreeChart.py:633
+msgid "The center person for the tree"
+msgstr "Главное лицо для построения древа"
+
+#: PedigreeChart/PedigreeChart.py:636
+msgid "Generations"
+msgstr "Поколения"
+
+#: PedigreeChart/PedigreeChart.py:637
+msgid "The number of generations to include in the tree"
+msgstr "Число поколений для включения в древо"
+
+#: PedigreeChart/PedigreeChart.py:640
+msgid "Show Mother/Father captions"
+msgstr "Показывать пометки Мать/Отец"
+
+#: PedigreeChart/PedigreeChart.py:641
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "Показывать пометки (мать/отец) рядом с каждым узлом предка."
+
+#: PedigreeChart/PedigreeChart.py:653
+msgid "The basic style used for the text display."
+msgstr "Основной стиль текста."
+
+#: PedigreeChart/PedigreeChart.py:662
+msgid "The basic style used for the title display."
+msgstr "Основной стиль заголовков."
+
+#: PedigreeChart/PedigreeChart.py:671
+msgid "Style used for labels and captions"
+msgstr "Стиль для пометок и названий"
