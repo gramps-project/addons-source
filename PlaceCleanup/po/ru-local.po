@@ -1,21 +1,22 @@
-# Russian translations for PlaceCleanup package.
-# This file is distributed under the same license as the PlaceCleanup package.
-# vantu5z <vantu5z@mail.ru>, 2018.
+# Russian translation for PlaceCleanup
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 08:14+0300\n"
-"PO-Revision-Date: 2018-10-25 12:29+0300\n"
-"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2018-12-05 14:55+0300\n"
+"PO-Revision-Date: 2018-12-05 16:26+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
 msgid "Place Cleanup"
@@ -26,8 +27,8 @@ msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"Грамплет помогает при объединении мест, а также дополнении мест "
-"с помощью базы данных GeoNames"
+"Грамплет помогает при объединении мест, а также дополнении мест с помощью "
+"базы данных GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade.h:65
 msgid ""
@@ -66,7 +67,7 @@ msgstr "Нажмите кнопку Справка для дополнитель
 
 #: PlaceCleanup/placecleanup.py:336
 msgid "No matches were found"
-msgstr "Совпадений не найдено"
+msgstr "Соответствий не найдено"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
@@ -121,7 +122,7 @@ msgstr "Проблема в получении данных из GeoNames"
 
 #: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
 msgid "Place cycle detected"
-msgstr "Обнаружен цикл мест"
+msgstr "Обнаружена цикличность местоположений"
 
 #: PlaceCleanup/placecleanup.py:478
 msgid ""
@@ -194,8 +195,8 @@ msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
 msgstr ""
-"Необходимо удалить его. Если оно имеет полезные заметки или другую информацию, "
-"воспользуйтесь Поиском для объединения с корректным местом."
+"Необходимо удалить его. Если оно имеет полезные заметки или другую "
+"информацию, воспользуйтесь Поиском для объединения с корректным местом."
 
 #: PlaceCleanup/placecleanup.glade.h:1
 msgid "City, County, State, Country"
@@ -207,7 +208,7 @@ msgstr "Основное название"
 
 #: PlaceCleanup/placecleanup.glade.h:3
 msgid "Postal Code"
-msgstr "Почтовый индекс"
+msgstr "Индекс/Почтовый код"
 
 #: PlaceCleanup/placecleanup.glade.h:4
 msgid "Type"
@@ -272,8 +273,8 @@ msgid ""
 "place' status ."
 msgstr ""
 "Альтернативные названия\n"
-"Выберите одну или несколько строк и нажмите 'Оставить', чтобы переключить состояние "
-"'добавить в место'."
+"Выберите одну или несколько строк и нажмите 'Оставить', чтобы переключить "
+"состояние 'добавить в место'."
 
 #: PlaceCleanup/placecleanup.glade.h:20
 msgid "Inc"
@@ -309,8 +310,8 @@ msgstr "Главное"
 #: PlaceCleanup/placecleanup.glade.h:27
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
-"Выберите одну или несколько строк и нажмите эту кнопку, чтобы "
-"установить основное название."
+"Выберите одну или несколько строк и нажмите эту кнопку, чтобы установить "
+"основное название."
 
 #: PlaceCleanup/placecleanup.glade.h:28
 msgid "Discard"
@@ -380,8 +381,8 @@ msgstr ""
 "которые хотите оставить.\n"
 "Например 'en fr ru'.\n"
 "Эти языки будут отмечены на экране Названий.\n"
-"Если часто встречаются неотмеченные названия на желаемом языке, добавьте сюда "
-"код этого языка."
+"Если часто встречаются неотмеченные названия на желаемом языке, добавьте "
+"сюда код этого языка."
 
 #: PlaceCleanup/placecleanup.glade.h:45
 msgid "Currently Enclosed Places"
@@ -396,9 +397,10 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"При очистке места которое уже входит в другое, существует несколько вариантов.\n"
-"Если выбрать '<b>Оставить текущее вхождение</b>', то не будет сделано никаких "
-"изменений во входящее место.\n"
+"При очистке места которое уже входит в другое, существует несколько "
+"вариантов.\n"
+"Если выбрать '<b>Оставить текущее вхождение</b>', то не будет сделано "
+"никаких изменений во входящее место.\n"
 "Если выбрать '<b>Заменить на GeoNames вхождение</b>', то входящее место "
 "будет переведено на следующий уровень мест GeoNames. Это может привести к "
 "тому, что некоторые места в Вашей базе данных не будут использованы."
@@ -422,7 +424,8 @@ msgid ""
 "number of results."
 msgstr ""
 "Текущее название места.\n"
-"Измените это поле для поиска других мест, обычно для сокращения результатов поиска."
+"Измените это поле для поиска других мест, обычно для сокращения результатов "
+"поиска."
 
 #: PlaceCleanup/placecleanup.glade.h:55
 msgid "Search your local places and GeoNames for a match."
@@ -440,7 +443,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade.h:58
 msgid "Edit"
-msgstr "Правка"
+msgstr "Редактировать"
 
 #: PlaceCleanup/placecleanup.glade.h:59
 msgid ""
@@ -448,8 +451,9 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"Разделить название, Редактировать вручную и включить в следующий уровень иерархии. "
-"Используется, если исходное название слишком подробно для поиска в справочнике."
+"Разделить название, Редактировать вручную и включить в следующий уровень "
+"иерархии. Используется, если исходное название слишком подробно для поиска в "
+"справочнике."
 
 #: PlaceCleanup/placecleanup.glade.h:60
 msgid "Next Place"
@@ -496,8 +500,8 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"Используйте 'Разные' для поиска в GeoNames большого количества различных мест "
-"(церкви, кладбища, здания и другие)."
+"Используйте 'Разные' для поиска в GeoNames большого количества различных "
+"мест (церкви, кладбища, здания и другие)."
 
 #: PlaceCleanup/placecleanup.glade.h:71
 msgid "Admin"
