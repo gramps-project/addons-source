@@ -1,0 +1,165 @@
+# Russian translation for TimelinePedigreeView
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 13:37+0300\n"
+"PO-Revision-Date: 2018-12-06 13:43+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:44
+msgid "Timeline Pedigree"
+msgstr "Временная диаграмма"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:45
+msgid "Ancestry"
+msgstr "Родословная"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Вид представляющий временную диаграмму семейного древа с предками и "
+"потомками для выбранного лица"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:79
+msgid "short for born|b."
+msgstr "р."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:80
+msgid "short for died|d."
+msgstr "у."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:81
+msgid "short for baptized|bap."
+msgstr "крещ."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for christened|chr."
+msgstr "прин. хр."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for buried|bur."
+msgstr "похор."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for cremated|crem."
+msgstr "крем."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:334
+msgid "Timeline pedigree"
+msgstr "Временная диаграмма"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:515
+msgid "Person Filter Editor"
+msgstr "Редактор фильтров людей"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:806
+msgid "Relationship loop detected"
+msgstr "Обнаружена петля в отношениях"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:807
+msgid "A person was found to be his/her own ancestor."
+msgstr "Лицо является собственным предком."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1391
+msgid "_Home"
+msgstr "До_мой"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1411
+msgid "Show images"
+msgstr "Показывать изображения"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1413
+msgid "Show marriage data"
+msgstr "Показывать данные о браках"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1415
+msgid "Order by timeline"
+msgstr "Сортировать по времени"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1417
+msgid "Show lifespan"
+msgstr "Показывать промежуток жизни"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1420
+msgid "Mouse scroll direction"
+msgstr "Направление прокрутки колёсика мыши"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1424
+msgid "Top <-> Bottom"
+msgstr "Вверх <-> Вниз"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1431
+msgid "Left <-> Right"
+msgstr "Влево <-> Вправо"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1443
+msgid "Descendant Generations"
+msgstr "Поколения потомков"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+#: TimelinePedigreeView/TimelinePedigreeView.py:1464
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d поколение"
+msgstr[1] "%d поколения"
+msgstr[2] "%d поколений"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1459
+msgid "Ancestor Generations"
+msgstr "Поколения предков"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1483
+msgid "About Timeline Pedigree View"
+msgstr "О дополнении"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1502
+msgid "_Add"
+msgstr "До_бавить"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1532
+#: TimelinePedigreeView/TimelinePedigreeView.py:1761
+msgid "_Edit"
+msgstr "_Правка"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1537
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Copy"
+msgstr "_Копировать"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1547
+msgid "Spouses"
+msgstr "Супруги"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1580
+msgid "Siblings"
+msgstr "Братья/Сёстры"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1622
+msgid "Children"
+msgstr "Дети"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1659
+msgid "Parents"
+msgstr "Родители"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1709
+msgid "Related"
+msgstr "Связанные"
