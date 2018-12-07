@@ -139,7 +139,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self.set_window(self.window, None, TITLE, None)
         self._pmgr = GuiPluginManager.get_instance()
         self._preg = PluginRegister.get_instance()
-        #obtain hidden plugins from the pluginmanager
+        # obtain hidden plugins from the pluginmanager
         self.hidden = self._pmgr.get_hidden_plugin_ids()
         self.setup_configs('interface.pluginstatus', 750, 400)
 
@@ -157,6 +157,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
             reload_btn = self.window.add_button(  # pylint: disable=no-member
                 _("Reload"), RELOAD_RES)
             btn_box.set_child_non_homogeneous(reload_btn, True)
+
         self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
         labeltitle, widget = self.registered_plugins_panel(None)
         self.window.vbox.pack_start(widget, True, True, 0)
@@ -295,7 +296,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         status = model.get_value(node, R_STAT)
         status_str = model.get_value(node, R_STAT_S)
         if pid in self.hidden:
-            #unhide
+            # unhide
             self.hidden.remove(pid)
             self._pmgr.unhide_plugin(pid)
             status = model.get_value(node, R_STAT)
@@ -304,7 +305,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
             model.set_value(node, R_STAT, status)
             self._hide_btn.set_label(_("Hide"))
         else:
-            #hide
+            # hide
             self.hidden.add(pid)
             self._pmgr.hide_plugin(pid)
             if not self._show_hidden:
@@ -400,12 +401,18 @@ class PluginStatus(tool.Tool, ManagedWindow):
         scrolled_window_reg = Gtk.ScrolledWindow()
         self._list_reg = Gtk.TreeView()
         self._list_reg.set_grid_lines(Gtk.TreeViewGridLines.HORIZONTAL)
-        #  model: plugintype, hidden, pluginname, plugindescr, pluginid
+
+        # model: plugintype, hidden, pluginname, plugindescr, pluginid
         self._model_reg = Gtk.ListStore(
             GObject.TYPE_STRING, GObject.TYPE_STRING, GObject.TYPE_STRING,
             GObject.TYPE_STRING, GObject.TYPE_STRING, int)
         self._selection_reg = self._list_reg.get_selection()
-        self._list_reg.set_model(self._model_reg)
+        # add filter capabilities
+        self._tree_filter = self._model_reg.filter_new()
+        self._tree_filter.set_visible_func(self._apply_filter)
+
+        # set model with sorting enabled
+        self._list_reg.set_model(Gtk.TreeModelSort(self._tree_filter))
         self._list_reg.connect('button-press-event', self.button_press_reg)
         self._cursor_hndlr = self._selection_reg.connect('changed',
                                                          self._cursor_changed)
@@ -448,6 +455,22 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         scrolled_window_reg.add(self._list_reg)
         vbox_reg.pack_start(scrolled_window_reg, True, True, 0)
+
+        # filter input box
+        self.filter_entry = Gtk.Entry()
+        self.filter_entry.set_alignment(0.5)    # center text alignment
+        self.filter_entry.set_tooltip_text(
+            _("Addons filter.\n"
+              "Use it to find necessary addon.\n"
+              "Search get through all columns and include each query words.\n"
+              "Also adonns filenames included in search.\n"
+              "Words case and order is no matter."))
+        self.filter_entry.set_placeholder_text(
+                                  _("Enter some query here to filter addons."))
+        vbox_reg.pack_start(self.filter_entry, False, False, 10)
+
+        self.filter_entry.connect('changed', self.filter_str_changed)
+
         # panel button box
         hbutbox = Gtk.ButtonBox()
         hbutbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
@@ -503,6 +526,45 @@ class PluginStatus(tool.Tool, ManagedWindow):
         if event.type == Gdk.EventType._2BUTTON_PRESS and event.button == 1:
             self.__info(obj, self._list_reg)
 
+    def filter_str_changed(self, widget):
+        """
+        Called when filter string is changed.
+        """
+        self.__rebuild_reg_list()
+
+    def _apply_filter(self, model, iter, data):
+        """
+        Check if we need hide or show row acording the filter.
+        This is for "self._tree_filter.set_visible_func".
+        """
+        filter_str = self.filter_entry.get_text().lower()
+        # if no string - show the row
+        if not filter_str:
+            return True
+
+        # get addon filename
+        pdata = self._preg.get_plugin(model.get_value(iter, R_ID))
+        fname = ''
+        if pdata:
+            fname = pdata.fname
+
+        # check all row columns and hide it if some query word doesn't present
+        filter_words = filter_str.split()
+        for word in filter_words:
+            count = model.get_n_columns() - 1
+            present = False
+            for i in range(0, count, 1):
+                if word in model[iter][i].lower():
+                    present = True
+            # search at addon filename
+            if word in fname:
+                present = True
+            # if some of words not present - hide the row
+            if not present:
+                return False
+        # else - show the row
+        return True
+
     def __rebuild_reg_list(self, path=None, rescan=True):
         self._selection_reg.handler_block(self._cursor_hndlr)
         self._model_reg.clear()
@@ -514,7 +576,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         if not path or int(str(path)) >= len(self._model_reg):
             path = '0'
         self._selection_reg.select_path(path)
-        if len(self._model_reg):
+        if len(self._tree_filter):
             self._list_reg.scroll_to_cell(path, None, True, 0.5, 0)
 
     def _cursor_changed(self, obj):
