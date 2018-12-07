@@ -20,7 +20,9 @@
 """ Help/Plugin Manager
 This module implements the enhanced Plugin manager load patches.
 """
-import sys, os
+import sys
+import os
+
 
 def load_on_reg(dbstate, uistate, plugin):
     """
