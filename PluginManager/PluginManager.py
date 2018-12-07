@@ -53,7 +53,7 @@ from gi.repository import Gtk      # pylint: disable=import-error
 #from gramps.gen.plug.utils import available_updates
 from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.const import URL_MANUAL_PAGE, VERSION_DIR
+from gramps.gen.const import VERSION_DIR
 from gramps.gen.utils.configmanager import safe_eval
 from gramps.gen.plug import PluginRegister, BasePluginManager
 from gramps.gen.plug import load_addon_file, version_str_to_tup
@@ -63,15 +63,12 @@ from gramps.cli.grampscli import CLIManager
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.pluginmanager import GuiPluginManager
-from gramps.gui.listmodel import ListModel, NOSORT, TOGGLE
 from gramps.gui.display import display_help
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gui.configure import ConfigureDialog
-from gramps.gui.widgets import BasicLabel
 from gramps.gui.dialog import OkDialog, QuestionDialog2
-from gramps.gui.glade import Glade
-from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
-                                               GtkProgressDialog)
+#from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
+#                                               GtkProgressDialog)
+
 #-------------------------------------------------------------------------
 #
 # set up translation, logging and constants
