@@ -1,41 +1,40 @@
-# Swedish translations for gramps package
-# Svenska översättningar för paket gramps.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# Finnish translation for addons-gramps package.
+# This file is distributed under the same license as the addons-gramps package.
+# translation of fi.po to Finnish
+# Matti Niemelä <niememat@gmail.com>, 2018
 #
-# Peter Landgren <peter.talken@telia.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-16 10:30+0100\n"
-"PO-Revision-Date: 2018-03-14 15:24+0200\n"
+"POT-Creation-Date: 2018-03-17 05:02+0200\n"
+"PO-Revision-Date: 2018-12-09 16:29+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <niememat>\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
-"Language: fi_FI\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
+#: GoogleEarthWriteKML.gpr.py:30
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
+#: GoogleEarthWriteKML.gpr.py:35
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Luo GoogleEarth tiedostoa ja avaa sen"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
+#: GoogleEarthWriteKML.py:140
 msgid "No place description"
 msgstr "Ei paikkatietoa"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:122
+#: GoogleEarthWriteKML.py:173
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth ei ole asennettu!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:123
+#: GoogleEarthWriteKML.py:174
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -44,30 +43,28 @@ msgstr ""
 "Luodaan kmz/kml tiedosto ''%s''\n"
 "käyttäjän hakemistoon ''%s''?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:147
+#: GoogleEarthWriteKML.py:177 GoogleEarthWriteKML.py:198
 msgid "Yes"
 msgstr "Kyllä"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:148
+#: GoogleEarthWriteKML.py:178 GoogleEarthWriteKML.py:199
 msgid "No"
 msgstr "Ei"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:133
+#: GoogleEarthWriteKML.py:184
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Kirjoitus epäonnistui %s"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:134
+#: GoogleEarthWriteKML.py:185
 msgid "Directory does not exist"
 msgstr "Hakemistoa ei ole olemassa"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:143
+#: GoogleEarthWriteKML.py:194
 msgid "GoogleEarth file exists!"
 msgstr "GoogleEarth tiedosto on olemassa!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
+#: GoogleEarthWriteKML.py:195
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
