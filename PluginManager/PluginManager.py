@@ -142,20 +142,45 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         help_btn = self.window.add_button(  # pylint: disable=no-member
             _("_Help"), Gtk.ResponseType.HELP)
+        self.btn_box = help_btn.get_parent()
+        self.btn_box.set_child_non_homogeneous(help_btn, True)
+
+        # filter input box
+        self.filter_entry = Gtk.Entry()
+        self.filter_entry.set_tooltip_text(
+            _("Enter search words to filter the addons.\n"
+              "All the words must be present somewhere in the row or\n"
+              "the addon filename to be included in the search.\n"
+              "Word case and order is ignored."))
+        self.filter_entry.set_placeholder_text(_("Search"))
+        self.btn_box.pack_start(self.filter_entry, True, True, 0)
+        #self.btn_box.set_child_non_homogeneous(self.filter_entry, True)
+        self.filter_entry.connect('changed', self.filter_str_changed)
 
         update_btn = self.window.add_button(  # pylint: disable=no-member
             _("Check for updated addons now"), UPDATE_RES)
-        btn_box = help_btn.get_parent()
-        btn_box.set_child_non_homogeneous(update_btn, True)
+        self.btn_box.set_child_non_homogeneous(update_btn, True)
 
         if __debug__:
             # Only show the "Reload" button when in debug mode
             # (without -O on the command line)
             reload_btn = self.window.add_button(  # pylint: disable=no-member
                 _("Reload"), RELOAD_RES)
-            btn_box.set_child_non_homogeneous(reload_btn, True)
+            self.btn_box.set_child_non_homogeneous(reload_btn, True)
+            _w0, _wx_ = reload_btn.get_preferred_width()
+        else:
+            _w0 = 0
 
-        self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
+        cls_btn = self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
+        self.btn_box.set_child_non_homogeneous(cls_btn, True)
+
+        _w1, dummy = help_btn.get_preferred_width()
+        _w2, dummy = cls_btn.get_preferred_width()
+        _w3, dummy = update_btn.get_preferred_width()
+        _wa, dummy = self.window.get_size()
+        _we = _wa - _w0 - _w1 - _w2 - _w3 - 63
+        self.filter_entry.set_size_request(_we, -1)
+
         labeltitle, widget = self.registered_plugins_panel(None)
         self.window.vbox.pack_start(widget, True, True, 0)
         sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
@@ -409,7 +434,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self._tree_filter.set_visible_func(self._apply_filter)
 
         # set model with sorting enabled
-        self._list_reg.set_model(Gtk.TreeModelSort(self._tree_filter))
+        self._list_reg.set_model(Gtk.TreeModelSort(model=self._tree_filter))
         self._list_reg.connect('button-press-event', self.button_press_reg)
         self._cursor_hndlr = self._selection_reg.connect('changed',
                                                          self._cursor_changed)
@@ -423,7 +448,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         col1 = Gtk.TreeViewColumn(
             cell_renderer=Gtk.CellRendererText(wrap_mode=2, wrap_width=65),
             markup=R_STAT_S)
-        label = Gtk.Label(_('Status'))
+        label = Gtk.Label(label=_('Status'))
         label.show()
         label.set_tooltip_markup(
             _("'*' items are supplied by 3rd party authors,\n"
@@ -452,21 +477,6 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         scrolled_window_reg.add(self._list_reg)
         vbox_reg.pack_start(scrolled_window_reg, True, True, 0)
-
-        # filter input box
-        self.filter_entry = Gtk.Entry()
-        self.filter_entry.set_alignment(0.5)    # center text alignment
-        self.filter_entry.set_tooltip_text(
-            _("Addons filter.\n"
-              "Use it to find necessary addon.\n"
-              "Search get through all columns and include each query words.\n"
-              "Also adonns filenames included in search.\n"
-              "Words case and order is no matter."))
-        self.filter_entry.set_placeholder_text(
-                                  _("Enter some query here to filter addons."))
-        vbox_reg.pack_start(self.filter_entry, False, False, 10)
-
-        self.filter_entry.connect('changed', self.filter_str_changed)
 
         # panel button box
         hbutbox = Gtk.ButtonBox()
@@ -509,7 +519,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         _show_builtin_chk.set_active(self._show_builtins)
         _show_builtin_chk.connect('clicked', self.__show_builtins_chk)
 
-        label = Gtk.Label(_("* indicates 3rd party addon"))
+        label = Gtk.Label(label=_("* indicates 3rd party addon"))
         hbutbox.add(label)
 
         vbox_reg.pack_start(hbutbox, False, False, 0)
@@ -527,9 +537,9 @@ class PluginStatus(tool.Tool, ManagedWindow):
         """
         Called when filter string is changed.
         """
-        self.__rebuild_reg_list()
+        self.__rebuild_reg_list(rescan=False)
 
-    def _apply_filter(self, model, iter, data):
+    def _apply_filter(self, model, tr_iter, data):
         """
         Check if we need hide or show row acording the filter.
         This is for "self._tree_filter.set_visible_func".
@@ -540,24 +550,19 @@ class PluginStatus(tool.Tool, ManagedWindow):
             return True
 
         # get addon filename
-        pdata = self._preg.get_plugin(model.get_value(iter, R_ID))
-        fname = ''
+        pdata = self._preg.get_plugin(model.get_value(tr_iter, R_ID))
+        p_txt = ''
         if pdata:
-            fname = pdata.fname
+            p_txt = pdata.fname
+        for col in (R_TYPE, R_NAME, R_DESC, R_ID):
+            p_txt = p_txt + model[tr_iter][col]
 
         # check all row columns and hide it if some query word doesn't present
         filter_words = filter_str.split()
+        p_txt = p_txt.lower()
         for word in filter_words:
-            count = model.get_n_columns() - 1
-            present = False
-            for i in range(0, count, 1):
-                if word in model[iter][i].lower():
-                    present = True
-            # search at addon filename
-            if word in fname:
-                present = True
-            # if some of words not present - hide the row
-            if not present:
+            if word not in p_txt:
+                # if some of words not present - hide the row
                 return False
         # else - show the row
         return True
@@ -776,23 +781,23 @@ def available_updates():
     langs = glocale.get_language_list()
     langs.append("en")
     # now we have a list of languages to try:
-    fp = None
+    f_ptr = None
     for lang in langs:
-        URL = ("%s/listings/addons-%s.txt" %
+        url = ("%s/listings/addons-%s.txt" %
                (config.get("behavior.addons-url"), lang))
-        LOG.debug("   trying: %s", URL)
+        LOG.debug("   trying: %s", url)
         try:
-            fp = urlopen_maybe_no_check_cert(URL)
+            f_ptr = urlopen_maybe_no_check_cert(url)
         except:
             try:
-                URL = ("%s/listings/addons-%s.txt" %
+                url = ("%s/listings/addons-%s.txt" %
                        (config.get("behavior.addons-url"), lang[:2]))
-                fp = urlopen_maybe_no_check_cert(URL)
+                f_ptr = urlopen_maybe_no_check_cert(url)
             except Exception as err:  # some error
                 LOG.warning("Failed to open addon metadata for %s %s: %s",
-                            lang, URL, err)
-                fp = None
-        if fp and fp.getcode() == 200:  # ok
+                            lang, url, err)
+                f_ptr = None
+        if f_ptr and f_ptr.getcode() == 200:  # ok
             break
 
     try:
@@ -803,8 +808,8 @@ def available_updates():
 
     pmgr = BasePluginManager.get_instance()
     addon_update_list = []
-    if fp and fp.getcode() == 200:
-        lines = list(fp.readlines())
+    if f_ptr and f_ptr.getcode() == 200:
+        lines = list(f_ptr.readlines())
         count = 0
         for line in lines:
             line = line.decode('utf-8')
@@ -849,8 +854,8 @@ def available_updates():
         config.set("behavior.last-check-for-addon-updates",
                    datetime.date.today().strftime("%Y/%m/%d"))
         count += 1
-        if fp:
-            fp.close()
+        if f_ptr:
+            f_ptr.close()
         if wfp:
             wfp.close()
     else:
