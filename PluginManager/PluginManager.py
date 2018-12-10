@@ -314,30 +314,17 @@ class PluginStatus(tool.Tool, ManagedWindow):
         model, node = selection.get_selected()
         if not node:
             return
+        path = model.get_path(node)
         pid = model.get_value(node, R_ID)
-        status = model.get_value(node, R_STAT)
-        status_str = model.get_value(node, R_STAT_S)
         if pid in self.hidden:
             # unhide
             self.hidden.remove(pid)
             self._pmgr.unhide_plugin(pid)
-            status = model.get_value(node, R_STAT)
-            status_str = status_str.replace("<s>", '').replace("</s>", '')
-            status &= ~ HIDDEN
-            model.set_value(node, R_STAT, status)
-            self._hide_btn.set_label(_("Hide"))
         else:
             # hide
             self.hidden.add(pid)
             self._pmgr.hide_plugin(pid)
-            if not self._show_hidden:
-                model.remove(node)
-                return
-            status |= HIDDEN
-            status_str = "<s>%s</s>" % status_str
-            self._hide_btn.set_label(_("Unhide"))
-        model.set_value(node, R_STAT, status)
-        model.set_value(node, R_STAT_S, status_str)
+        self.__rebuild_reg_list(path, rescan=False)
 
     def __load(self, _obj, list_obj):
         """ Callback function from the "Load" button
