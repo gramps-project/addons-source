@@ -533,10 +533,11 @@ class DetailedDescendantReportI(Report):
         for family_handle in person.get_family_handle_list():
             family = self.db.get_family_from_handle(family_handle)
             spouse_handle = ReportUtils.find_spouse(person, family)
-            spouse = self.db.get_person_from_handle(spouse_handle)
-
-            text = ""
-            spouse_mark = ReportUtils.get_person_mark(self.db, spouse)
+            if spouse_handle:
+                spouse = self.db.get_person_from_handle(spouse_handle)
+                spouse_mark = ReportUtils.get_person_mark(self.db, spouse)
+            else:
+                spouse_mark = None
 
             text = self.__narrator.get_married_string(family,
                                                       is_first,
