@@ -28,6 +28,7 @@ import copy
 import datetime
 import time
 import re
+import os
 
 #------------------------------------------------------------------------
 #
@@ -49,6 +50,7 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.merge.diff import diff_dbs, to_struct
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.simple import SimpleAccess
+from gramps.gen.config import config
 
 #------------------------------------------------------------------------
 #
@@ -292,7 +294,9 @@ class DifferencesOptions(MenuReportOptions):
     def add_menu_options(self, menu):
         """ Add the options for the text differences report """
         category_name = _("Report Options")
-        filename = DestinationOption(_("Family Tree file"), "data.gramps")
+        path = config.get('paths.recent-import-dir')
+        filename = DestinationOption(_("Family Tree file"),
+                                     os.path.join(path, "data.gramps"))
         filename.set_help(_("Select a .gpkg or .gramps file"))
         menu.add_option(category_name, "filename", filename)
 
