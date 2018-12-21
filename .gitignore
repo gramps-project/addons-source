@@ -7,6 +7,10 @@ __pycache__
 tags
 .idea
 
+# Translations
+*.mo
+*.pot
+
 # Distutils
 AllNamesQuickview/locale/
 AncestorFill/locale/
