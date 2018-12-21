@@ -45,7 +45,7 @@ LOG = logging.getLogger(".Tree")
 from gramps.gen.errors import ReportError
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gen.plug.menu import PersonOption, NumberOption, BooleanOption
+from gramps.gen.plug.menu import PersonOption, FamilyOption, NumberOption, BooleanOption
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
@@ -54,6 +54,10 @@ _ = glocale.translation.gettext
 # SandclockTree
 #
 #------------------------------------------------------------------------
+
+_PERSON_RPT_NAME = 'gt_sandclock'
+_FAMILY_RPT_NAME = 'gt_sandclock_family'
+
 class SandclockTree(Report):
     """ Sandclock Tree report """
 
@@ -67,6 +71,7 @@ class SandclockTree(Report):
         get_option_by_name = menu.get_option_by_name
         get_value = lambda name: get_option_by_name(name).get_value()
 
+        self._person_report = options.name.split(",")[0] == _PERSON_RPT_NAME
         self._db = self.database
 
         self._pid = get_value('pid')
@@ -79,10 +84,16 @@ class SandclockTree(Report):
         Inherited method; called by report() in _ReportDialog.py
         """
         if self._pid:
-            person = self._db.get_person_from_gramps_id(self._pid)
-            if person is None:
-                raise ReportError(_("Person %s is not in the Database") %
-                                  self._pid)
+            if self._person_report:
+                person = self._db.get_person_from_gramps_id(self._pid)
+                if person is None:
+                    raise ReportError(_("Person %s is not in the Database") %
+                                      self._pid)
+            else:
+                family = self._db.get_family_from_gramps_id(self._pid)
+                if family is None:
+                    raise ReportError(_("Family %s is not in the Database") %
+                                      self._pid)
 
             options = ['pref code={\\underline{#1}}',
                        'list separators hang',
@@ -104,16 +115,24 @@ class SandclockTree(Report):
             options.append(box)
 
             self.doc.start_tree(options)
-            family_handle = person.get_main_parents_family_handle()
-            if family_handle:
-                self.subgraph_up(0, 'sandclock', family_handle, person.handle)
+            if self._person_report:
+                family_handle = person.get_main_parents_family_handle()
+                if family_handle:
+                    self.subgraph_up(0, 'sandclock', family_handle, person.handle)
+            else:
+                self.doc.start_subgraph(0, 'sandclock', family)
+                self.subgraph_up_parents(0, family)
+                for childref in family.get_child_ref_list():
+                    child = self._db.get_person_from_handle(childref.ref)
+                    family_handles = child.get_family_handle_list()
+                    if len(family_handles) > 0:
+                        self.subgraph_down(1, 'child', family_handles, child.handle)
+                    else:
+                        self.doc.write_node(self._db, 1, 'c', child, False)
+                self.doc.end_subgraph(0)
             self.doc.end_tree()
 
-    def subgraph_up(self, level, subgraph_type, family_handle, ghandle):
-        if level > self.max_up:
-            return
-        family = self._db.get_family_from_handle(family_handle)
-        self.doc.start_subgraph(level, subgraph_type, family)
+    def subgraph_up_parents(self, level, family):
         for handle in (family.get_father_handle(), family.get_mother_handle()):
             if handle:
                 parent = self._db.get_person_from_handle(handle)
@@ -123,6 +142,13 @@ class SandclockTree(Report):
                                      handle)
                 else:
                     self.doc.write_node(self._db, level+1, 'p', parent, True)
+
+    def subgraph_up(self, level, subgraph_type, family_handle, ghandle):
+        if level > self.max_up:
+            return
+        family = self._db.get_family_from_handle(family_handle)
+        self.doc.start_subgraph(level, subgraph_type, family)
+        self.subgraph_up_parents(level, family)
         for childref in family.get_child_ref_list():
             child = self._db.get_person_from_handle(childref.ref)
             if childref.ref == ghandle:
@@ -131,7 +157,7 @@ class SandclockTree(Report):
             else:
                 self.doc.write_node(self._db, level+1, 'c', child, False)
 
-        if subgraph_type == 'sandclock':
+        if self._person_report and subgraph_type == 'sandclock':
             person = self._db.get_person_from_handle(ghandle)
             family_handles = person.get_family_handle_list()
             if len(family_handles) > 0:
@@ -180,15 +206,21 @@ class SandclockTreeOptions(MenuReportOptions):
     """
     def __init__(self, name, dbase):
         self.__pid = None
+        self.name = name
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
 
         category_name = _("Report Options")
 
-        self.__pid = PersonOption(_("Center Person"))
-        self.__pid.set_help(_("The center person for the report"))
-        menu.add_option(category_name, "pid", self.__pid)
+        if self.name.split(",")[0] == _PERSON_RPT_NAME:
+            self.__pid = PersonOption(_("Center Person"))
+            self.__pid.set_help(_("The center person for the report"))
+            menu.add_option(category_name, "pid", self.__pid)
+        else:
+            self.__pid = FamilyOption(_("Center Family"))
+            self.__pid.set_help(_("The center family for the report"))
+            menu.add_option(category_name, "pid", self.__pid)
 
         genup = NumberOption(_("Generations up"), 10, 1, 100)
         genup.set_help(_("The number of generations to include in the tree"))

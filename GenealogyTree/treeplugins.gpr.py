@@ -105,3 +105,25 @@ register(REPORT,
          optionclass = 'SandclockTreeOptions',
          report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
         )
+
+#------------------------------------------------------------------------
+#
+# Sandclock Tree for a family
+#
+#------------------------------------------------------------------------
+
+register(REPORT,
+         id = 'gt_sandclock_family',
+         name  = _("Sandclock Tree for a Family"),
+         description =  _("Sandclock tree for a family using LaTeX genealogytree"),
+         version = '1.0.5',
+         gramps_target_version = '5.0',
+         status = STABLE,
+         fname = 'gt_sandclock.py',
+         authors = ["Jonas Hahnfeld"],
+         authors_email = ["hahnjo@hahnjo.de"],
+         category = CATEGORY_TREE,
+         reportclass = 'SandclockTree',
+         optionclass = 'SandclockTreeOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+        )
