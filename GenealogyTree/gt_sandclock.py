@@ -137,7 +137,7 @@ class SandclockTree(Report):
             if handle:
                 parent = self._db.get_person_from_handle(handle)
                 family_handle = parent.get_main_parents_family_handle()
-                if family_handle:
+                if family_handle and level < self.max_up:
                     self.subgraph_up(level+1, 'parent', family_handle,
                                      handle)
                 else:
