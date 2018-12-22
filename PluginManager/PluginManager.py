@@ -541,7 +541,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         p_txt = ''
         if pdata:
             p_txt = pdata.fname
-        for col in (R_TYPE, R_NAME, R_DESC, R_ID):
+        for col in (R_TYPE, R_STAT_S, R_NAME, R_DESC, R_ID):
             p_txt = p_txt + model[tr_iter][col]
 
         # check all row columns and hide it if some query word doesn't present
