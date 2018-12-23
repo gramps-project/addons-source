@@ -61,6 +61,7 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
+from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -292,6 +293,8 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         context.move_to(5, 4)
         context.set_source_rgb(0, 0, 0)
         textlayout = self.create_pango_layout(self.text)
+        if is_quartz():
+            PangoCairo.context_set_resolution(textlayout.get_context(), 72)
         textlayout.set_font_description(self.get_style().font_desc)
         textlayout.set_markup(self.text)
         PangoCairo.show_layout(context, textlayout)
