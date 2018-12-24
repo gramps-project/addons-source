@@ -77,6 +77,7 @@ class SandclockTree(Report):
         self._pid = get_value('pid')
         self.max_up = menu.get_option_by_name('genup').get_value()
         self.max_down = menu.get_option_by_name('gendown').get_value()
+        self.include_siblings = menu.get_option_by_name('siblings').get_value()
         self.include_images = menu.get_option_by_name('images').get_value()
 
     def write_report(self):
@@ -154,7 +155,7 @@ class SandclockTree(Report):
             if childref.ref == ghandle:
                 if subgraph_type != 'sandclock':
                     self.doc.write_node(self._db, level+1, 'g', child, True)
-            else:
+            elif self.include_siblings:
                 self.doc.write_node(self._db, level+1, 'c', child, False)
 
         if self._person_report and subgraph_type == 'sandclock':
@@ -229,6 +230,10 @@ class SandclockTreeOptions(MenuReportOptions):
         gendown = NumberOption(_("Generations down"), 10, 1, 100)
         gendown.set_help(_("The number of generations to include in the tree"))
         menu.add_option(category_name, "gendown", gendown)
+
+        siblings = BooleanOption(_("Include siblings"), True)
+        siblings.set_help(_("Include siblings of ancestors."))
+        menu.add_option(category_name, "siblings", siblings)
 
         images = BooleanOption(_("Include images"), False)
         images.set_help(_("Include images of people in the nodes."))
