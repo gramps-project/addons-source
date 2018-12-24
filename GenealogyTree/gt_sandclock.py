@@ -223,11 +223,11 @@ class SandclockTreeOptions(MenuReportOptions):
             self.__pid.set_help(_("The center family for the report"))
             menu.add_option(category_name, "pid", self.__pid)
 
-        genup = NumberOption(_("Generations up"), 10, 1, 100)
+        genup = NumberOption(_("Generations up"), 10, 0, 100)
         genup.set_help(_("The number of generations to include in the tree"))
         menu.add_option(category_name, "genup", genup)
 
-        gendown = NumberOption(_("Generations down"), 10, 1, 100)
+        gendown = NumberOption(_("Generations down"), 10, 0, 100)
         gendown.set_help(_("The number of generations to include in the tree"))
         menu.add_option(category_name, "gendown", gendown)
 
