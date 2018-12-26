@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-22 09:42+0300\n"
-"PO-Revision-Date: 2018-12-22 09:54+0300\n"
+"POT-Creation-Date: 2018-12-26 14:43+0300\n"
+"PO-Revision-Date: 2018-12-26 14:45+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -49,8 +49,8 @@ msgstr ""
 "Регистр и порядок слов неважен."
 
 #: PluginManager/PluginManager.py:155
-msgid "Search"
-msgstr "Поиск"
+msgid "Search..."
+msgstr "Поиск..."
 
 #: PluginManager/PluginManager.py:161
 msgid "Check for updated addons now"
