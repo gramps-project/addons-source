@@ -814,6 +814,8 @@ class PlaceCleanup(Gramplet):
         """ Primary button clicked.  Mark first row in selection as Primary
         name, any previous primary as keep """
         model, rows = self.alt_selection.get_selected_rows()
+        if not rows:
+            return
         # Clear prior primary
         for row in model:
             if row[0] == 'P':
