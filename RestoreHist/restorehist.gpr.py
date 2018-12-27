@@ -31,7 +31,7 @@ description =  _("This addon causes Gramps to restart on the same view and"
                  " object\nwhere Gramps was previously closed.  It adds no "
                  "new menus or\nGramplets, but allows the last six objects "
                  "visited to be found via the\n'Go' menu."),
-version = '0.0.2',
+version = '0.0.3',
 gramps_target_version = '5.0',
 fname = "restorehist.py",
 authors = ["Paul Culley"],
