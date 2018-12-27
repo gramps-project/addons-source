@@ -73,7 +73,8 @@ def __delete_pages(self):
             _fp.write(json.dumps(out, indent=2))
     except:
         print("RestoreHist addon is not working correctly.")
-    orig_delete_pages()
+    if orig_delete_pages:
+        orig_delete_pages()
 
 
 def load_on_reg(dbstate, uistate, plugin):
