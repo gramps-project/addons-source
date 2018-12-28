@@ -46,10 +46,10 @@ def clear_history(self):
             hist = json.load(_fp)
     except:
         hist = None
-    if not hist or hist['filename'] != history.dbstate.db.full_name:
         # set these once if not run before so user can unset if he wants
         config.set("behavior.autoload", True)
         config.set("preferences.use-last-view", True)
+    if not hist or hist['filename'] != history.dbstate.db.get_dbid():
         return
     for history in hist_list:
         history.mru = hist[history.nav_type]
@@ -64,15 +64,16 @@ def clear_history(self):
 
 def __delete_pages(self):
     """ save the history object pointers.  Replaces ViewManager method"""
-    out = {'filename': self.dbstate.db.full_name}
-    for history in self.uistate.history_lookup.values():
-        out[history.nav_type] = history.mru[-6:]
-    try:
-        with open(os.path.join(os.path.dirname(__file__), "hist_save.ini"),
-                  mode='w', encoding='utf-8') as _fp:
-            _fp.write(json.dumps(out, indent=2))
-    except:
-        print("RestoreHist addon is not working correctly.")
+    if self.dbstate.db.get_dbid():
+        out = {'filename': self.dbstate.db.get_dbid()}
+        for history in self.uistate.history_lookup.values():
+            out[history.nav_type] = history.mru[-6:]
+        try:
+            with open(os.path.join(os.path.dirname(__file__), "hist_save.ini"),
+                      mode='w', encoding='utf-8') as _fp:
+                _fp.write(json.dumps(out, indent=2))
+        except:
+            print("RestoreHist addon is not working correctly.")
     if orig_delete_pages:
         orig_delete_pages()
 
