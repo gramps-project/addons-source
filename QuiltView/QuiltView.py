@@ -32,6 +32,7 @@ from time import clock
 # Internationalisation
 #
 #------------------------------------------------------------------------
+from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -134,6 +135,8 @@ class PersonNode(Node):
             label = '\u2650 ' + self.name
 
         layout = canvas.create_pango_layout(label)
+        if is_quartz():
+            PangoCairo.context_set_resolution(layout.get_context(), 72)
         font = Pango.FontDescription('Sans')
         layout.set_font_description(font)
         width, height = layout.get_size()
