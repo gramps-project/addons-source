@@ -1709,7 +1709,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             #result.append(str(language))
 
         # End check
-        self.append_text(result)
+        #self.append_text(result)
 
 
     def gramps_environment_variables(self):
