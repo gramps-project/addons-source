@@ -211,6 +211,9 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         self.locale_settings()
         self.gramps_environment_variables()
+        self.render_text("\n\n<u><b>Locales available:</b>"
+                         "</u>\n")
+        self.locales_installed()
         # mention backing up
         self.append_text("\n")
         self.render_text("""\n<u><b>Back Up Your Genealogy Files.</b></u>\n""")
@@ -1680,6 +1683,34 @@ class PrerequisitesCheckerGramplet(Gramplet):
                   "\n* LC_TIME :" + lctime_str)
         # End check
         self.append_text(result)
+
+    def locales_installed(self):
+        '''
+        Test and list installed locales because of Gramps AIO!
+        
+        Used for the GUI
+        
+        Used in reports as the option called: "Translation:" The translation 
+        to be used for the report. Language selector showing all languages 
+        supported by Gramps. Defaults to the language you are using Gramps in.
+        '''
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+        self.append_text("\nInstalled Locales (On Microsoft Windows if English is only listed please re-install Gramps again making sure to select all the Translations and Dictionaries \n\n")
+        
+        result = ""
+        #TODO: Add test to count languages and compare total
+        
+        languages = glocale.get_language_dict()
+        for language in sorted(languages, key=glocale.sort_key):
+            #print(languages[language], language)
+            result = languages[language] + " : " + language + "\n"
+            self.append_text(result)
+            #result.append(str(language))
+
+        # End check
+        self.append_text(result)
+
 
     def gramps_environment_variables(self):
         '''Gramps Environment variables
