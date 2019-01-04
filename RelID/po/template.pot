@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: RelID/relation_tab.gpr.py:35
+msgid "Display relations and distances with the home person"
+msgstr ""
+
+#: RelID/relation_tab.gpr.py:36
+msgid "Will display relational informations with the home person"
+msgstr ""
+
+#: RelID/relation_tab.py:75
+msgid "Relation and distances with root"
+msgstr ""
+
+#: RelID/relation_tab.py:92
+msgid "Folder Chooser"
+msgstr ""
+
+#: RelID/relation_tab.py:95
+msgid "_Cancel"
+msgstr ""
+
+#: RelID/relation_tab.py:97
+msgid "_Select"
+msgstr ""
+
+#: RelID/relation_tab.py:99
+msgid "Please, select a folder"
+msgstr ""
+
+#: RelID/relation_tab.py:110
+msgid "Rel_id"
+msgstr ""
+
+#: RelID/relation_tab.py:111
+msgid "Relation"
+msgstr ""
+
+#: RelID/relation_tab.py:112
+msgid "Name"
+msgstr ""
+
+#: RelID/relation_tab.py:113
+msgid "up"
+msgstr ""
+
+#: RelID/relation_tab.py:114
+msgid "down"
+msgstr ""
+
+#: RelID/relation_tab.py:115
+msgid "Common MRA"
+msgstr ""
+
+#: RelID/relation_tab.py:116
+msgid "Rank"
+msgstr ""
+
+#: RelID/relation_tab.py:117
+msgid "Period"
+msgstr ""
+
+#: RelID/relation_tab.py:126
+msgid "Save"
+msgstr ""
+
+#: RelID/relation_tab.py:164
+msgid "Please wait, filtering..."
+msgstr ""
+
+#: RelID/relation_tab.py:169
+msgid "No default_person"
+msgstr ""
+
+#: RelID/relation_tab.py:174
+msgid "Generating relation map..."
+msgstr ""
+
+#: RelID/relation_tab.py:190
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+
+#: RelID/relation_tab.py:308
+msgid "You do not have write rights on this folder"
+msgstr ""

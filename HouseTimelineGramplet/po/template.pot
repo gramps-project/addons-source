@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:25
+msgid "Double-click name for details"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:42
+#: HouseTimelineGramplet/housetimeline.py:49
+msgid "House Icon Style"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:50
+msgid "Standard"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:51
+msgid "Small"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:52
+msgid "Unicode"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:53
+msgid "None"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:59
+msgid "Processing..."
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:82
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:117
+msgid "Location"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:118
+msgid "Time In Family"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:119
+msgid "First Resident"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:120
+msgid "Last Resident"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:121
+msgid "Timeline"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:122
+msgid "Unknown"
+msgstr ""
+
+#: HouseTimelineGramplet/housetimeline.py:123
+msgid "Total Known Residents"
+msgstr ""

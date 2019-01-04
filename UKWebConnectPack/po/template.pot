@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:10
+msgid "UK Web Connect Pack"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:33
+msgid "UK Google"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:34
+msgid "British, UK, and Ireland"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:35
+msgid "FamilySearch.org"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:37
+msgid "National Archives"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:38
+msgid "Hathi Trust Digital Library"
+msgstr ""
+
+#: UKWebConnectPack/UKWebPack.py:39
+msgid "Open Library"
+msgstr ""

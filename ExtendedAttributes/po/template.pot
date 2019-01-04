@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
+msgid "Extended Person Attributes"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
+msgid "Gramplet showing the attributes of a person"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:39
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:53
+msgid "Extended Attributes"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
+msgid "Extended Family Attributes"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:46
+msgid "Gramplet showing the attributes of a family"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:58
+msgid "Date"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:60
+msgid "Key"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:61
+msgid "Value"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:156
+#, python-format
+msgid "Edit Person (%s)"
+msgstr ""
+
+#: ExtendedAttributes/ExtendedAttributes.py:220
+msgid "Edit Family"
+msgstr ""

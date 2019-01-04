@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:45
+msgid "H-Tree Pedigree"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:46
+msgid "Charts"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:83
+msgid "short for born|b."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:84
+msgid "short for died|d."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:85
+msgid "short for baptized|bap."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:86
+msgid "short for christened|chr."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:87
+msgid "short for buried|bur."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:88
+msgid "short for cremated|crem."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:533
+msgid "H-tree Pedigree View"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:699
+msgid "Person Filter Editor"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1542
+msgid "Relationship loop detected"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1543
+msgid "A person was found to be his/her own ancestor."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1587
+msgid "Pre_vious"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1588
+msgid "_Next"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1589
+msgid "_Home"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1611
+msgid "Mouse scroll direction"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1615
+msgid "Top <-> Bottom"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1622
+msgid "Left <-> Right"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1640
+msgid "About H-Tree"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1651
+msgid "_Add"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1686
+#: HtreePedigreeView/HtreePedigreeView.py:1914
+msgid "_Edit"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1691
+#: HtreePedigreeView/HtreePedigreeView.py:1919
+msgid "_Copy"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1701
+msgid "Spouses"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1735
+msgid "Siblings"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1777
+msgid "Children"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1814
+msgid "Parents"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1851
+msgid "Add New Parents..."
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:1862
+msgid "Related"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:2046
+msgid "Show images"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:2055
+msgid "Show tags"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:2072
+msgid "Tree size"
+msgstr ""
+
+#: HtreePedigreeView/HtreePedigreeView.py:2076
+msgid "Layout"
+msgstr ""

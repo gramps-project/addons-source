@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+msgid "Related Relatives Gramplet"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
+msgid "Relations of related people in your database:"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "and"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
+msgid "are partners and"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
+msgid "Common ancestor"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
+msgid "No relatives in a relation found"
+msgstr ""
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
+msgid "END"
+msgstr ""

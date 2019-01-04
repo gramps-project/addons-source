@@ -20,7 +20,7 @@ Once you use the comands below the version number will be incremented and the re
 files will be in the second addon repository to be commited.
 
 Examples:
-* Creates the initial addon-source directories for the addon.
+* Creates the initial addon-source directories and .pot file for the addon.
 ```
 python3 make.py gramps50 init AddonDirectory
 ```
@@ -48,9 +48,9 @@ python3 make.py gramps50 listing AddonDirectory
 Valid command summary
 =====================
 
-* **clean** - Removes unnecessary files(template.pot/ locale etc) from the addon
+* **clean** - Removes unnecessary files(locale etc) from the addon
 
-* **init** - Get all of the strings from the addon and create template.po
+* **init** [subcomand: **all**] - Get all of the strings from the addon and create template.po
 
 * **update** - Updates the template.po file
 
