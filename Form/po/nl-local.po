@@ -450,7 +450,7 @@ msgstr ""
 
 #: Form/form.xml.h:68
 msgid ""
-"\"Irish\" or \"Irish &amp; English\", in other cases no entry should be made"
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
 
 #: Form/form.xml.h:69
@@ -550,7 +550,7 @@ msgid "Arrived since"
 msgstr "Aangekomen sinds"
 
 #: Form/form.xml.h:91
-msgid "Free white males 16 &amp; up"
+msgid "Free white males 16 & up"
 msgstr ""
 
 #: Form/form.xml.h:92
@@ -4074,7 +4074,7 @@ msgid "Island"
 msgstr "Eiland"
 
 #: Form/form.xml.h:926
-msgid "Gaellic or G. &amp; E."
+msgid "Gaellic or G. & E."
 msgstr ""
 
 # Periode/Reikweidte/Bereik

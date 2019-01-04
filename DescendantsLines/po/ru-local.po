@@ -318,8 +318,8 @@ msgstr ""
 "Соединённые Штаты Америки/США"
 
 #: DescendantsLines/DescendantsLines.py:1603
-msgid "S  &amp; F Options"
-msgstr "S  &amp; F Параметры"
+msgid "S  & F Options"
+msgstr "S  & F Параметры"
 
 #: DescendantsLines/DescendantsLines.py:1605
 msgid "S_DOWN"
@@ -366,8 +366,8 @@ msgid "FL_PAD"
 msgstr "FL_PAD"
 
 #: DescendantsLines/DescendantsLines.py:1633
-msgid "O, C &amp; Text Options"
-msgstr "O, C &amp; Параметры текста"
+msgid "O, C & Text Options"
+msgstr "O, C & Параметры текста"
 
 #: DescendantsLines/DescendantsLines.py:1635
 msgid "OL_PAD"
