@@ -2205,11 +2205,6 @@ msgstr "5. Sexe"
 msgid "8. Month of birth"
 msgstr "8. Mois de naissance"
 
-# doublon (space after dot)
-#: Form/form_ca.xml.h:497
-msgid "11 . Country or place of birth"
-msgstr "11. Pays ou lieu de naissance"
-
 #: Form/form_ca.xml.h:498
 #, fuzzy
 msgid "16. Chief occupation or trade"
