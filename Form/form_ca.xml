@@ -917,7 +917,7 @@
             <column>
                 <_attribute>HousesBeingBuilt</_attribute>
                 <size>2</size>
-                <_longname>3. Houses    in construction</_longname>
+                <_longname>3. Houses in construction</_longname>
             </column>
             <column>
                 <_attribute>HousesVacant</_attribute>
@@ -1800,7 +1800,7 @@
             <column>
                 <_attribute>BirthPlace</_attribute>
                 <size>25</size>
-                <_longname>11   . Country or place of birth</_longname>
+                <_longname>11. Country or place of birth</_longname>
             </column>
             <column>
                 <_attribute>Immigration</_attribute>
