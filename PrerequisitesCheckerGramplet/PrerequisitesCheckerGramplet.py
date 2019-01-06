@@ -1696,7 +1696,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         from gramps.gen.const import GRAMPS_LOCALE as glocale
 
-        self.append_text("\nInstalled Locales (On Microsoft Windows if English is only listed please re-install Gramps again making sure to select all the Translations and Dictionaries \n\n")
+        self.append_text("\nInstalled Locales\Translations (If only English is listed please re-install Gramps again and make sure to select all the Translations and Dictionaries)\n\n")
         
         result = ""
         #TODO: Add test to count languages and compare total
