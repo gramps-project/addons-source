@@ -124,8 +124,8 @@ if (LOAD_GOOGLEMAP_SCRIPTS)
 if (!("LOAD_OSM_SCRIPTS" in window)) window.LOAD_OSM_SCRIPTS = false;
 if (LOAD_OSM_SCRIPTS)
 {
-	LoadJsFile('http://openlayers.org/en/v3.0.0/build/ol.js');
-	LoadCssFile('http://openlayers.org/en/v3.0.0/css/ol.css');
+	LoadJsFile('http://openlayers.org/en/latest/build/ol.js');
+	LoadCssFile('http://openlayers.org/en/latest/css/ol.css');
 }
 
 
