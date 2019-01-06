@@ -146,16 +146,16 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self.btn_box.set_child_non_homogeneous(help_btn, True)
 
         # filter input box
-        self.filter_entry = Gtk.Entry()
+        self.filter_entry = Gtk.SearchEntry()
         self.filter_entry.set_tooltip_text(
             _("Enter search words to filter the addons.\n"
               "All the words must be present somewhere in the row or\n"
               "the addon filename to be included in the search.\n"
               "Word case and order is ignored."))
-        self.filter_entry.set_placeholder_text(_("Search"))
+        self.filter_entry.set_placeholder_text(_("Search..."))
         self.btn_box.pack_start(self.filter_entry, True, True, 0)
         #self.btn_box.set_child_non_homogeneous(self.filter_entry, True)
-        self.filter_entry.connect('changed', self.filter_str_changed)
+        self.filter_entry.connect('search-changed', self.filter_str_changed)
 
         update_btn = self.window.add_button(  # pylint: disable=no-member
             _("Check for updated addons now"), UPDATE_RES)
