@@ -1,14 +1,14 @@
 # Russian translation for DownloadMedia
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-30 10:27+0300\n"
-"PO-Revision-Date: 2018-11-30 10:30+0300\n"
+"PO-Revision-Date: 2019-01-09 13:32+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr "Загрузка документов из интернет"
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "This tool downloads media files form the internet"
-msgstr "Интрумент для загрузки документов из сети интернет"
+msgstr "Инcтрумент для загрузки документов из сети интернет"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -48,7 +48,7 @@ msgstr "Интрумент загрузки документов"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
-msgstr "Проверьте подключеник к интернет перед запуском этого инструмента."
+msgstr "Проверьте подключение к интернет перед запуском этого инструмента."
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
