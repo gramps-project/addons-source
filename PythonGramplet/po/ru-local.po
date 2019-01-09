@@ -1,14 +1,14 @@
 # Russian translation for PythonGramplet
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 09:29+0300\n"
-"PO-Revision-Date: 2018-12-06 09:31+0300\n"
+"PO-Revision-Date: 2019-01-09 11:51+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr "Грамплет Python"
 
 #: PythonGramplet/PythonGramplet.gpr.py:4
 msgid "Interactive Python interpreter"
-msgstr "Интарактивный интерпритатор Python"
+msgstr "Интерактивный интерпритатор Python"
 
 #: PythonGramplet/PythonGramplet.gpr.py:9
 msgid "Python Shell"
