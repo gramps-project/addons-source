@@ -436,7 +436,8 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
         Performs the actual extraction of information
         """
 
-        self.progress = ProgressMeter(_('Checking Place Titles'), '')
+        self.progress = ProgressMeter(_('Checking Place Titles'), '',
+                                      parent=self.parent_window)
         self.progress.set_pass(_('Looking for place fields'),
                                self.db.get_number_of_places())
 
@@ -516,11 +517,11 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
                     self.name_list.append(
                         (place.handle, (None, new_state[0], None,
                                   COUNTRY[new_state[1]])))
-        self.progress.close()
 
         if self.name_list:
             self.display()
         else:
+            self.progress.close()
             self.close()
             from gramps.gui.dialog import OkDialog
             OkDialog(_('No modifications made'),
