@@ -1,14 +1,14 @@
 # Russian translations for Gramps GraphView addon.
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2016-2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2016-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 11:21+0300\n"
-"PO-Revision-Date: 2018-12-04 11:26+0300\n"
+"POT-Creation-Date: 2019-01-09 11:41+0300\n"
+"PO-Revision-Date: 2019-01-09 11:43+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -27,8 +27,8 @@ msgid "Charts"
 msgstr "Графики"
 
 #: GraphView/graphview.gpr.py:38
-msgid "Dynamic graph of relations"
-msgstr "Динамический граф отношений"
+msgid "Dynamic and interactive graph of relations"
+msgstr "Динамический и интерактивный граф отношений"
 
 #: GraphView/graphview.gpr.py:51
 msgid ""
