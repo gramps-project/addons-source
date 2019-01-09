@@ -1243,8 +1243,9 @@ def importData(database, sqzfilename, user):
 ##################################################################################
             #Process TMG Project for import
             #------------------------------------------------------
-            trial_people(database, tmg_dataset)  # test import of names
-            trial_events(database, tmg_dataset)  # test import of events
+            print("Not working yet")
+            #trial_people(database, tmg_dataset)  # test import of names
+            #trial_events(database, tmg_dataset)  # test import of events
 
             ####-------Processing order----#TODO split to own file "TMGParser(dbase, user, ...)" see below
             #[1] notes
