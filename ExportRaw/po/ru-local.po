@@ -1,14 +1,14 @@
 # Russian translation for ExportRaw
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-30 11:49+0300\n"
-"PO-Revision-Date: 2018-11-30 11:55+0300\n"
+"PO-Revision-Date: 2019-01-09 13:56+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr "Экспорт в Raw"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "This is a raw python object dump"
-msgstr "Получения данных по объекту в формате python"
+msgstr "Получение данных по объекту в формате python"
 
 #: ExportRaw/ExportRaw.gpr.py:11
 msgid "Raw options"
