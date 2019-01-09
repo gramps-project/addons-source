@@ -27,7 +27,7 @@ msgstr "Набор DE Web Connect"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Колекция веб-сайтов для DE (требуется libwebconnect)"
+msgstr "Набор веб-сайтов для DE (требуется libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
