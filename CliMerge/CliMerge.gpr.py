@@ -5,7 +5,7 @@
 #-----------------------
 register(TOOL,
     id    = 'climerge',
-    name  = "Command Line Merge",
+    name  = _("Command Line Merge"),
     category = TOOL_UTILS,
     status = STABLE, # not yet tested with python 3
     fname = 'CliMerge.py',

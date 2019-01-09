@@ -1,14 +1,14 @@
 # Russian translation for CliMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-28 14:53+0300\n"
-"PO-Revision-Date: 2018-11-28 14:55+0300\n"
+"POT-Creation-Date: 2019-01-09 12:00+0300\n"
+"PO-Revision-Date: 2019-01-09 12:01+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -20,6 +20,10 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: CliMerge/CliMerge.gpr.py:8
+msgid "Command Line Merge"
+msgstr "Объединение из командной строки"
 
 #: CliMerge/CliMerge.gpr.py:17
 msgid "Merge primary objects via the command line."
