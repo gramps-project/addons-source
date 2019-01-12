@@ -2560,14 +2560,14 @@ class DotSvgGenerator(object):
         self.start_subgraph(fam_handle)
         f_handle = fam.get_father_handle()
         m_handle = fam.get_mother_handle()
-        if f_handle:
+        if f_handle in self.person_handles:
             self.add_link(f_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle,
                           color=self.colors['home_path_color'],
                           bold=self.is_in_path_to_home(f_handle))
-        if m_handle:
+        if m_handle in self.person_handles:
             self.add_link(m_handle,
                           fam_handle, "",
                           self.arrowheadstyle,
