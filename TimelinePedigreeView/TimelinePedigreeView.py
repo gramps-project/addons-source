@@ -711,8 +711,10 @@ class TimelinePedigreeView(NavigationView):
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
                     bDate = self.Tree_EstimateBirth(BranchData[0])
-                    if bDate is not None and mDate is not None:
-                        timespan = bDate.to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
+                    if(bDate is not None and not bDate.is_empty() and
+                       mDate is not None and not mDate.is_empty()):
+                        timespan = (bDate.to_calendar("gregorian").get_year() -
+                                    mDate.to_calendar("gregorian").get_year())
                         xvline = xBoxConnection - Direction * 11 * timespan
 
         # Move all relatives in this branch
@@ -740,7 +742,7 @@ class TimelinePedigreeView(NavigationView):
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
                         text = self.format_helper.format_relation( family, BoxSizes[4])
-            label = Gtk.Label(label=text)
+            label = Gtk.Label(label=text, tooltip_text=text)
             label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
