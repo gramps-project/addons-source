@@ -567,9 +567,10 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self._selection_reg.select_path(path)
         if len(self._tree_filter):
             self._list_reg.scroll_to_cell(path, None, True, 0.5, 0)
+            self._cursor_changed(None)
 
     def _cursor_changed(self, obj):
-        model, node = obj.get_selected()
+        model, node = self._selection_reg.get_selected()
         if not node:
             return
         status = model.get_value(node, R_STAT)
