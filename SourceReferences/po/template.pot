@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SourceReferences/SourceReferences.gpr.py:31
+msgid "Source References"
+msgstr ""
+
+#: SourceReferences/SourceReferences.gpr.py:32
+msgid "Gramplet showing the references for a source"
+msgstr ""
+
+#: SourceReferences/SourceReferences.gpr.py:40
+msgid "References"
+msgstr ""
+
+#: SourceReferences/SourceReferences.py:50
+msgid "Type"
+msgstr ""
+
+#: SourceReferences/SourceReferences.py:51
+msgid "Name"
+msgstr ""
+
+#: SourceReferences/SourceReferences.py:141
+msgid ""
+"Cannot open new citation editor at this time. Either the citation is already "
+"being edited, or the associated source is already being edited, and opening "
+"a citation editor (which also allows the source to be edited), would create "
+"ambiguity by opening two editors on the same source. \n"
+"\n"
+"To edit the citation, close the source editor and open an editor for the "
+"citation alone"
+msgstr ""
+
+#: SourceReferences/SourceReferences.py:154
+msgid "Cannot open new citation editor"
+msgstr ""

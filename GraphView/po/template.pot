@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.py:134
+msgid "Graph View"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:37
+msgid "Charts"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:38
+msgid "Dynamic and interactive graph of relations"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:51
+msgid ""
+"Graphview Warning:  Goocanvas 2 (https://wiki.gnome.org/action/show/Projects/"
+"GooCanvas) is required for this view to work"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:56
+msgid ""
+"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
+"view to work"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:65
+msgid "Graphview Failed to Load"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:66
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Graphview is missing python modules or programs.\n"
+"%smust be installed.\n"
+"\n"
+"For now, it may be possible to install the files manually. See\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title="
+"\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"To dismiss all future Graphview warnings click Dismiss."
+msgstr ""
+
+#: GraphView/graphview.gpr.py:82
+msgid " Dismiss "
+msgstr ""
+
+#: GraphView/graphview.gpr.py:83
+msgid "Continue"
+msgstr ""
+
+#: GraphView/graphview.py:169
+msgid "_Print..."
+msgstr ""
+
+#: GraphView/graphview.py:171
+msgid ""
+"Save the dot file for a later print.\n"
+"This will save a .gv file and a svg file.\n"
+"You must select a .gv file"
+msgstr ""
+
+#: GraphView/graphview.py:434 GraphView/graphview.py:1037
+msgid "Show images"
+msgstr ""
+
+#: GraphView/graphview.py:436 GraphView/graphview.py:1045
+msgid "Highlight the home person"
+msgstr ""
+
+#: GraphView/graphview.py:439 GraphView/graphview.py:1053
+msgid "Show full dates"
+msgstr ""
+
+#: GraphView/graphview.py:442 GraphView/graphview.py:1061
+msgid "Show places"
+msgstr ""
+
+#: GraphView/graphview.py:444 GraphView/graphview.py:1069
+msgid "Show tags"
+msgstr ""
+
+#: GraphView/graphview.py:446
+msgid "Layout"
+msgstr ""
+
+#: GraphView/graphview.py:459
+msgid "Path color to home person"
+msgstr ""
+
+#: GraphView/graphview.py:462
+msgid "Colors"
+msgstr ""
+
+#: GraphView/graphview.py:475 GraphView/graphview.py:1079
+msgid "Show animation"
+msgstr ""
+
+#: GraphView/graphview.py:479
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr ""
+
+#: GraphView/graphview.py:483
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr ""
+
+#: GraphView/graphview.py:492
+msgid "Animation"
+msgstr ""
+
+#: GraphView/graphview.py:508
+msgid "Select a dot file name"
+msgstr ""
+
+#: GraphView/graphview.py:510
+msgid "_Cancel"
+msgstr ""
+
+#: GraphView/graphview.py:511
+msgid "_Apply"
+msgstr ""
+
+#: GraphView/graphview.py:525
+msgid "File already exists"
+msgstr ""
+
+#: GraphView/graphview.py:526
+msgid ""
+"You can choose to either overwrite the file, or change the selected filename."
+msgstr ""
+
+#: GraphView/graphview.py:528
+msgid "_Overwrite"
+msgstr ""
+
+#: GraphView/graphview.py:529
+msgid "_Change filename"
+msgstr ""
+
+#: GraphView/graphview.py:544
+#, python-format
+msgid "Could not create %s"
+msgstr ""
+
+#: GraphView/graphview.py:596
+msgid "Zoom in"
+msgstr ""
+
+#: GraphView/graphview.py:603
+msgid "Zoom out"
+msgstr ""
+
+#: GraphView/graphview.py:610
+msgid "Zoom to original"
+msgstr ""
+
+#: GraphView/graphview.py:617
+msgid "Zoom to best fit"
+msgstr ""
+
+#: GraphView/graphview.py:624
+msgid "Go to active person"
+msgstr ""
+
+#: GraphView/graphview.py:634
+msgid "Go to bookmark"
+msgstr ""
+
+#: GraphView/graphview.py:642
+msgid "Ancestor generations"
+msgstr ""
+
+#: GraphView/graphview.py:651
+msgid "Descendant generations"
+msgstr ""
+
+#: GraphView/graphview.py:760
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+
+#: GraphView/graphview.py:763
+msgid "Change active person?"
+msgstr ""
+
+#: GraphView/graphview.py:764
+msgid "Yes"
+msgstr ""
+
+#: GraphView/graphview.py:764
+msgid "No"
+msgstr ""
+
+#: GraphView/graphview.py:1088
+msgid "Lines type"
+msgstr ""
+
+#: GraphView/graphview.py:1094
+msgid "Direct"
+msgstr ""
+
+#: GraphView/graphview.py:1102
+msgid "Curves"
+msgstr ""
+
+#: GraphView/graphview.py:1110
+msgid "Ortho"
+msgstr ""
+
+#: GraphView/graphview.py:1141
+msgid "About Graph View"
+msgstr ""
+
+#: GraphView/graphview.py:1156 GraphView/graphview.py:1352
+msgid "Edit"
+msgstr ""
+
+#: GraphView/graphview.py:1159 GraphView/graphview.py:1355
+msgid "Edit tags"
+msgstr ""
+
+#: GraphView/graphview.py:1162
+msgid "_Copy"
+msgstr ""
+
+#: GraphView/graphview.py:1172
+msgid "Spouses"
+msgstr ""
+
+#: GraphView/graphview.py:1177 GraphView/graphview.py:1305
+msgid "Add"
+msgstr ""
+
+#: GraphView/graphview.py:1202
+msgid "Siblings"
+msgstr ""
+
+#: GraphView/graphview.py:1271
+msgid "Parents"
+msgstr ""
+
+#: GraphView/graphview.py:1311
+msgid "Related"
+msgstr ""
+
+#: GraphView/graphview.py:1343
+msgid "Set as home person"
+msgstr ""
+
+#: GraphView/graphview.py:1373
+msgid "Children"
+msgstr ""
+
+#: GraphView/graphview.py:1386
+msgid "Add child to family"
+msgstr ""
+
+#: GraphView/graphview.py:1465
+msgid "Add Child to Family"
+msgstr ""
+
+#: GraphView/graphview.py:1548
+msgid "Adding Tags"
+msgstr ""
+
+#: GraphView/graphview.py:1554
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr ""
+
+#: GraphView/graphview.py:1559
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr ""
+
+#: GraphView/graphview.py:2631
+#, python-format
+msgid "b. %s"
+msgstr ""
+
+#: GraphView/graphview.py:2636
+#, python-format
+msgid "d. %s"
+msgstr ""
+
+#: GraphView/graphview.py:2815
+msgid "<b>Tags:</b>"
+msgstr ""

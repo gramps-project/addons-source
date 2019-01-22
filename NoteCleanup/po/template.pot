@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:395
+msgid "Note Cleanup"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.gpr.py:31
+msgid "Clean up Notes that contain HTML markup"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:90
+msgid "Note Cleanup Tool"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:96
+msgid "Cleaned Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:96
+msgid "Links Only"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:97
+msgid "Issues"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:119
+msgid "Close"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:120
+msgid "Close the Note Cleanup Tool"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:122
+msgid "Save All"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:123
+msgid "Save All Changes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:125
+msgid "Search"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:126
+msgid "Search for Untidy Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:128
+msgid "Generate Test Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:130
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:134
+msgid "Export"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:135
+msgid "Export the results to a text file"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:172
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:182
+msgid "Clean up Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:193
+msgid "Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:277
+msgid "Cleanup Test Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:299 NoteCleanup/NoteCleanup.py:304
+msgid "Add Test Note"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:313
+msgid "Export results to a text file"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:336
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:370
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:373
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:388
+msgid "Saving Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:390
+msgid "Saving Cleaned Notes"
+msgstr ""
+
+#: NoteCleanup/NoteCleanup.py:415
+msgid "Scanning Notes"
+msgstr ""

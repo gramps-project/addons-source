@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:44
+msgid "Timeline Pedigree"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:45
+msgid "Ancestry"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:80
+msgid "short for born|b."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:81
+msgid "short for died|d."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for baptized|bap."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for christened|chr."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for buried|bur."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for cremated|crem."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:337
+msgid "Timeline pedigree"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:518
+msgid "Person Filter Editor"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:811
+msgid "Relationship loop detected"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:812
+msgid "A person was found to be his/her own ancestor."
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1396
+msgid "_Home"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1416
+msgid "Show images"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1418
+msgid "Show marriage data"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1420
+msgid "Order by timeline"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1422
+msgid "Show lifespan"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1425
+msgid "Mouse scroll direction"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1429
+msgid "Top <-> Bottom"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1436
+msgid "Left <-> Right"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+msgid "Descendant Generations"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1453
+#: TimelinePedigreeView/TimelinePedigreeView.py:1469
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1464
+msgid "Ancestor Generations"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1488
+msgid "About Timeline Pedigree View"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1507
+msgid "_Add"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1537
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Edit"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1542
+#: TimelinePedigreeView/TimelinePedigreeView.py:1771
+msgid "_Copy"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1552
+msgid "Spouses"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1585
+msgid "Siblings"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1627
+msgid "Children"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1664
+msgid "Parents"
+msgstr ""
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1714
+msgid "Related"
+msgstr ""

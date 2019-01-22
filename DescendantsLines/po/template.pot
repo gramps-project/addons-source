@@ -1,0 +1,394 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DescendantsLines/DescendantsLines.gpr.py:25
+msgid "Descendants Lines"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.gpr.py:26
+msgid "Produces descendants lines of a person"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:424
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1247
+msgid "Unknown"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1438
+msgid "Report Options"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1440
+msgid "Center Person"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1441
+msgid "The center person for the report"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1444
+msgid "Output format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1445
+msgid "PNG format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1446
+msgid "SVG format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1447
+msgid "PDF format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1448
+msgid "PS format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1449
+msgid "The output format to be used"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1453
+msgid "Destination"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1454
+msgid "The destination file for the content."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1457
+msgid "Generations"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1458
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1462
+msgid "Box around Person's block"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1463
+msgid "Draw a thin black box around each person' text block."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1467
+msgid "Colour blocks by Generation"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1468
+msgid "Colour the background of text blocks by generation."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1472
+msgid "Descend block colour intensity"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1473
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1477
+msgid "Spouse block colour intensity"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1478
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1482
+msgid "Include an image"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1483
+msgid "Whether to include an image if one is available."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1487
+msgid "Max Image height"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1488
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1492
+msgid "Max Image width"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1493
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1497
+msgid "Image Location"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1498
+msgid "Above text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1499
+msgid "Left of text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1500
+msgid "Position of image relative to text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1504
+msgid "Display"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1506
+msgid "Name Display Format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1509
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1516
+msgid "Use d'Aboville descendant numbering system"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1518
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1521
+msgid "Colour Name by Gender"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1523
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1526
+msgid ""
+"Descendant\n"
+"Display Format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1551
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1545
+msgid ""
+"Spousal\n"
+"Display Format"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1558
+msgid "Use alternate events, if Primary event is not found"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1559
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1565
+msgid "Sort Events by Date"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1566
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1570
+msgid "Protect People, Images or Events that are marked Private"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1572
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1576
+msgid "Privacy text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1577
+msgid "Text to display in block, when a Person is marked private"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1581
+msgid "Text style"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1582
+msgid "Center-aligned text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1583
+msgid "Left-aligned text"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1584
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1588
+msgid "Max Note Length"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1589
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1594
+msgid "Replace"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1597
+msgid ""
+"Replace Display Format:\n"
+"'Replace this'/' with this'"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1599
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1603
+msgid "S  &amp; F Options"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1605
+msgid "S_DOWN"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1606
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1610
+msgid "S_UP"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1611
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1615
+msgid "S_VPAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1616
+msgid "The number of ??? vpad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1619
+msgid "SP_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1626
+#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1636
+#: DescendantsLines/DescendantsLines.py:1647
+msgid "The number of ??? pad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1625
+msgid "F_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1629
+msgid "FL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1633
+msgid "O, C &amp; Text Options"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1635
+msgid "OL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1639
+msgid "O_DOWN"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1640
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1646
+msgid "C_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1650
+msgid "C_UP"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1652
+msgid "The length of the vertical edge from child to child-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1655
+msgid "MIN_C_WIDTH"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1656
+msgid "The number of ??? min width"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1661
+msgid "TEXT_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1662
+msgid "The number of text pad ???"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1665
+msgid "TEXT_LINE_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1666
+msgid "The number of text line pad ??? "
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1680
+msgid "The default style."
+msgstr ""
