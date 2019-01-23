@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 # $Id$
 
@@ -32,7 +32,7 @@ from gramps.gen.datehandler import get_date, parser
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Person, FamilyRelType, Family, ChildRef, Place,
                             Event, EventType, EventRef, Source, Citation,
-                            Name, NameType, Surname)
+                            Name, NameType, Surname, PlaceName)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
 import gramps.gen.lib
@@ -342,6 +342,7 @@ class DataEntryGramplet(Gramplet):
                 return (0, place) # (old, object)
         place = Place()
         place.set_title(place_name)
+        place.set_name(PlaceName(value=place_name))
         self.dbstate.db.add_place(place,self.trans)
         return (1, place) # (new, object)
 

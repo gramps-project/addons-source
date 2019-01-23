@@ -337,8 +337,8 @@ msgstr ""
 "United States of America/USA"
 
 #: DescendantsLines/DescendantsLines.py:1601
-msgid "S  &amp; F Options"
-msgstr "S  &amp; F Optionen"
+msgid "S  & F Options"
+msgstr "S  & F Optionen"
 
 #: DescendantsLines/DescendantsLines.py:1603
 msgid "S_DOWN"
@@ -385,8 +385,8 @@ msgid "FL_PAD"
 msgstr "FL_FELD"
 
 #: DescendantsLines/DescendantsLines.py:1631
-msgid "O, C &amp; Text Options"
-msgstr "O, C &amp; Text Optionen"
+msgid "O, C & Text Options"
+msgstr "O, C & Text Optionen"
 
 #: DescendantsLines/DescendantsLines.py:1633
 msgid "OL_PAD"

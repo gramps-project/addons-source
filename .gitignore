@@ -7,16 +7,20 @@ __pycache__
 tags
 .idea
 
+# Translations
+*.mo
+
 # Distutils
 AllNamesQuickview/locale/
 AncestorFill/locale/
 AssociationsTool/locale/
 AttachSourceTool/locale/
+BiographyQuickview/locale/
 BirthdaysGramplet/locale/
 BirthOrder/locale/
 CalculateEstimatedDates/locale/
-Census/locale/
 ChangeGivenNames/locale/
+CheckPlaceTitles/locale/
 CliMerge/locale/
 ClipboardGramplet/locale/
 ClockGramplet/locale/
@@ -28,9 +32,9 @@ DenominoViso/locale/
 DescendantBooks/locale/
 DescendantCount/locale/
 DescendantsLines/locale/
+DetDescendantReport-images/locale/
 DEWebConnectPack/locale/
 Differences/locale/
-Django/locale/
 DownloadMedia/locale/
 DynamicWeb/locale/
 EditExifMetadata/locale/
@@ -44,11 +48,12 @@ FamilyTree/locale/
 Form/locale/
 FRWebConnectPack/locale/
 GedcomExtensions/locale/
-GetGOV/locale/
 GenealogyTree/locale/
+GetGOV/locale/
 GoogleEarthWriteKML/locale/
 GraphView/locale/
 HeadlineNewsGramplet/locale/
+HouseTimelineGramplet/locale/
 HtmlView/locale/
 HtreePedigreeView/locale/
 ImportGramplet/locale/
@@ -61,12 +66,14 @@ LinesOfDescendency/locale/
 ListeEclair/locale/
 lxml/locale/
 MediaBrowser/locale/
+MediaMerge/locale/
 MediaVerify/locale/
 MongoDB/locale/
 NetworkChart/locale/
 NoteCleanup/locale/
 NoteGramplet/locale/
 NumberOfDescendantsQuickview/locale/
+Overview/locale/
 Participants/locale/
 PedigreeChart/locale/
 PersonEverything/locale/

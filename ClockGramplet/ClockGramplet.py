@@ -7,6 +7,8 @@ from gi.repository import Gtk
 import math
 import time
 
+from gramps.gen.constfunc import is_quartz
+
 TEXT = 'cairo'
 BORDER_WIDTH = 10
 
@@ -21,6 +23,8 @@ class ClockWidget(Gtk.DrawingArea):
     def on_draw(self, widget, cr):
 
         layout = PangoCairo.create_layout(cr)
+        if is_quartz():
+            PangoCairo.context_set_resolution(layout.get_context(), 72)
         layout.set_font_description(self.get_style().font_desc)
         layout.set_markup(TEXT, -1)
 

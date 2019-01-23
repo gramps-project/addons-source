@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 #
 # Place Cleanup Gramplet.
@@ -814,6 +814,8 @@ class PlaceCleanup(Gramplet):
         """ Primary button clicked.  Mark first row in selection as Primary
         name, any previous primary as keep """
         model, rows = self.alt_selection.get_selected_rows()
+        if not rows:
+            return
         # Clear prior primary
         for row in model:
             if row[0] == 'P':

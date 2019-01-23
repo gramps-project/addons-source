@@ -1,0 +1,115 @@
+# Russian translation for RelID
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 10:17+0300\n"
+"PO-Revision-Date: 2018-12-06 10:23+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: RelID/relation_tab.gpr.py:35
+msgid "Display relations and distances with the home person"
+msgstr "Отображает связи с главным лицом"
+
+#: RelID/relation_tab.gpr.py:36
+msgid "Will display relational informations with the home person"
+msgstr "Будет показана информация о связи с главным лицом"
+
+#: RelID/relation_tab.py:75
+msgid "Relation and distances with root"
+msgstr "Связи с главным лицом"
+
+#: RelID/relation_tab.py:92
+msgid "Folder Chooser"
+msgstr "Выбор каталога"
+
+#: RelID/relation_tab.py:95
+msgid "_Cancel"
+msgstr "_Отменить"
+
+#: RelID/relation_tab.py:97
+msgid "_Select"
+msgstr "_Выбрать"
+
+#: RelID/relation_tab.py:99
+msgid "Please, select a folder"
+msgstr "Выберите каталог"
+
+#: RelID/relation_tab.py:110
+msgid "Rel_id"
+msgstr "Связи"
+
+#: RelID/relation_tab.py:111
+msgid "Relation"
+msgstr "Отношения"
+
+#: RelID/relation_tab.py:112
+msgid "Name"
+msgstr "Имя"
+
+#: RelID/relation_tab.py:113
+msgid "up"
+msgstr "вверх"
+
+#: RelID/relation_tab.py:114
+msgid "down"
+msgstr "вниз"
+
+#: RelID/relation_tab.py:115
+msgid "Common MRA"
+msgstr "Обычный MRA"
+
+#: RelID/relation_tab.py:116
+msgid "Rank"
+msgstr "Категория"
+
+#: RelID/relation_tab.py:117
+msgid "Period"
+msgstr "Период"
+
+#: RelID/relation_tab.py:126
+msgid "Save"
+msgstr "Сохранить"
+
+#: RelID/relation_tab.py:164
+msgid "Please wait, filtering..."
+msgstr "Подождите, применение фильтра..."
+
+#: RelID/relation_tab.py:169
+msgid "No default_person"
+msgstr "Нет лица по умолчанию"
+
+#: RelID/relation_tab.py:174
+msgid "Generating relation map..."
+msgstr "Создание карты связей"
+
+#: RelID/relation_tab.py:190
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+"%d/%d \n"
+" %d/%d сек. \n"
+" %d/%d \n"
+"%f|\t%f"
+
+#: RelID/relation_tab.py:308
+msgid "You do not have write rights on this folder"
+msgstr "У Вас нет прав на запись в этом каталоге"

@@ -2205,11 +2205,6 @@ msgstr "5. Sexe"
 msgid "8. Month of birth"
 msgstr "8. Mois de naissance"
 
-# doublon (space after dot)
-#: Form/form_ca.xml.h:497
-msgid "11 . Country or place of birth"
-msgstr "11. Pays ou lieu de naissance"
-
 #: Form/form_ca.xml.h:498
 #, fuzzy
 msgid "16. Chief occupation or trade"
@@ -3173,8 +3168,8 @@ msgid "Island"
 msgstr "Islande"
 
 #: Form/form_gb.xml.h:101
-msgid "Gaellic or G. &amp; E."
-msgstr "Gallois ou G. &amp; E."
+msgid "Gaellic or G. & E."
+msgstr "Gallois ou G. & E."
 
 #: Form/form_gb.xml.h:102
 msgid "Parish Ward"
@@ -3218,9 +3213,9 @@ msgstr "Langue irlandaise"
 
 #: Form/form_gb.xml.h:115
 msgid ""
-"\"Irish\" or \"Irish &amp; English\", in other cases no entry should be made"
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
-"\"Irlandais\" or \"Irlandais &amp; Anglais\", dans les autres cas, aucune "
+"\"Irlandais\" or \"Irlandais & Anglais\", dans les autres cas, aucune "
 "entrée ne doit être créée"
 
 #: Form/form_gb.xml.h:116
@@ -3360,8 +3355,8 @@ msgid "District (or Territory) of"
 msgstr ""
 
 #: Form/form_us.xml.h:9
-msgid "Free white males 16 &amp; up"
-msgstr "Hommes libres blancs 16 &amp; plus"
+msgid "Free white males 16 & up"
+msgstr "Hommes libres blancs 16 & plus"
 
 #: Form/form_us.xml.h:10
 msgid "Free white males under 16"
@@ -4266,7 +4261,7 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:241
-msgid "Supervisor&apos;s Dist. No."
+msgid "Supervisor's Dist. No."
 msgstr ""
 
 #: Form/form_us.xml.h:242
@@ -4786,7 +4781,7 @@ msgid "Supplemental schedule and page"
 msgstr "Arrêt et réouverture de la page."
 
 #: Form/form_us.xml.h:372
-msgid "Supervisor&apos;s District No."
+msgid "Supervisor's District No."
 msgstr ""
 
 #: Form/form_us.xml.h:373
@@ -4962,7 +4957,7 @@ msgid "Father mother tongue"
 msgstr ""
 
 #: Form/form_us.xml.h:417
-msgid "Mother&apos;s mother tongue"
+msgid "Mother's mother tongue"
 msgstr ""
 
 #: Form/form_us.xml.h:418
@@ -5462,7 +5457,7 @@ msgid "Months unemployed during census year"
 msgstr ""
 
 #: Form/form_us.xml.h:550
-msgid "(Day of the Enumerator&apos;s visit) sick or temporarily disabled"
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
 msgstr ""
 
 #: Form/form_us.xml.h:551
@@ -6226,11 +6221,11 @@ msgid "Church Affiliation"
 msgstr ""
 
 #: Form/form_us.xml.h:746
-msgid "Father&apos;s Birthplace"
+msgid "Father's Birthplace"
 msgstr ""
 
 #: Form/form_us.xml.h:747
-msgid "Mother&apos;s Birthplace"
+msgid "Mother's Birthplace"
 msgstr ""
 
 #: Form/form_us.xml.h:748
@@ -6337,28 +6332,20 @@ msgstr ""
 msgid "Able to Write"
 msgstr ""
 
-#: Form/form_us.xml.h:779
-msgid "Father&apos;s Name"
-msgstr ""
-
 #: Form/form_us.xml.h:780
-msgid "Father&apos;s Place of Birth"
+msgid "Father's Place of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:781
-msgid "Father&apos;s Age"
-msgstr ""
-
-#: Form/form_us.xml.h:782
-msgid "Mother&apos;s Name"
+msgid "Father's Age"
 msgstr ""
 
 #: Form/form_us.xml.h:783
-msgid "Mother&apos;s Place of Birth"
+msgid "Mother's Place of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:784
-msgid "Mother&apos;s Age"
+msgid "Mother's Age"
 msgstr ""
 
 #: Form/form_us.xml.h:785
@@ -6634,11 +6621,11 @@ msgid "Nativity"
 msgstr ""
 
 #: Form/form_us.xml.h:854
-msgid "Father&apos;s Nativity"
+msgid "Father's Nativity"
 msgstr ""
 
 #: Form/form_us.xml.h:855
-msgid "Mother&apos;s Nativity"
+msgid "Mother's Nativity"
 msgstr ""
 
 #: Form/form_us.xml.h:858
@@ -7330,7 +7317,7 @@ msgid "Can Read"
 msgstr ""
 
 #: Form/form_us.xml.h:1031
-msgid "Can&apos;t Read"
+msgid "Can't Read"
 msgstr ""
 
 #: Form/form_us.xml.h:1032
@@ -7351,11 +7338,11 @@ msgid "Ancestry"
 msgstr "Lignée"
 
 #: Form/form_us.xml.h:1036
-msgid "Father&apos;s birthplace"
+msgid "Father's birthplace"
 msgstr ""
 
 #: Form/form_us.xml.h:1037
-msgid "Mother&apos;s birthplace"
+msgid "Mother's birthplace"
 msgstr ""
 
 #: Form/form_us.xml.h:1038
@@ -7436,7 +7423,7 @@ msgid "Colored females"
 msgstr ""
 
 #: Form/form_us.xml.h:1058
-msgid "Deaf &amp; Dumb"
+msgid "Deaf & Dumb"
 msgstr ""
 
 #: Form/form_us.xml.h:1059
@@ -7500,7 +7487,7 @@ msgid "Co."
 msgstr ""
 
 #: Form/form_us.xml.h:1074
-msgid "Reg&apos;t."
+msgid "Reg't."
 msgstr ""
 
 #: Form/form_us.xml.h:1075
@@ -7610,10 +7597,6 @@ msgstr ""
 
 #: Form/form_us.xml.h:1109
 msgid "Served in U.S. Military"
-msgstr ""
-
-#: Form/form_us.xml.h:1110
-msgid "Spouse&apos;s Name"
 msgstr ""
 
 #: Form/form_us.xml.h:1111
@@ -7749,7 +7732,7 @@ msgid "If not a citizen, of what nation are you a citizen or subject?"
 msgstr ""
 
 #: Form/form_us.xml.h:1148
-msgid "Employer&apos;s Name &amp; address"
+msgid "Employer's Name & address"
 msgstr ""
 
 #: Form/form_us.xml.h:1149
@@ -7757,7 +7740,7 @@ msgid "Nearest Relative"
 msgstr ""
 
 #: Form/form_us.xml.h:1150
-msgid "Dependants &amp; Address"
+msgid "Dependants & Address"
 msgstr ""
 
 #: Form/form_us.xml.h:1151
@@ -7833,7 +7816,7 @@ msgid "Age in years"
 msgstr ""
 
 #: Form/form_us.xml.h:1169
-msgid "Who will always know your address (Name &amp; Address)"
+msgid "Who will always know your address (Name & Address)"
 msgstr ""
 
 #: Form/form_us.xml.h:1170
@@ -7927,9 +7910,6 @@ msgstr ""
 
 #~ msgid "Father's mother tongue"
 #~ msgstr "Langue maternelle du père"
-
-#~ msgid "Mother's mother tongue"
-#~ msgstr "Langue maternelle de la mère"
 
 #~ msgid "Census"
 #~ msgstr "Recensement"

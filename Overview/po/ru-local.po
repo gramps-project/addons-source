@@ -1,0 +1,74 @@
+# Russian translation for Overview
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 13:45+0300\n"
+"PO-Revision-Date: 2018-12-05 13:52+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: Overview/Overview.gpr.py:28
+msgid "Person Overview"
+msgstr "Обзор по лицу"
+
+#: Overview/Overview.gpr.py:29
+msgid "Gramplet showing an overview of events for a person"
+msgstr "Отображает события связаные с человеком"
+
+#: Overview/Overview.gpr.py:36 Overview/Overview.gpr.py:50
+msgid "Overview"
+msgstr "Обзор"
+
+#: Overview/Overview.gpr.py:42
+msgid "Family Overview"
+msgstr "Обзор по семье"
+
+#: Overview/Overview.gpr.py:43
+msgid "Gramplet showing an overview of events for a family"
+msgstr "Отображает события связаные с семьёй"
+
+#: Overview/Overview.py:70
+msgid "Double-click on a row to edit the selected event."
+msgstr "Щёлкните на строке дважды для правки выбранного события."
+
+#: Overview/Overview.py:74
+msgid "Type"
+msgstr "Тип"
+
+#: Overview/Overview.py:75
+msgid "Date"
+msgstr "Дата"
+
+#: Overview/Overview.py:77
+msgid "Age"
+msgstr "Возраст"
+
+#: Overview/Overview.py:78 Overview/Overview.py:112
+msgid "Where Born"
+msgstr "Где рождён"
+
+#: Overview/Overview.py:79 Overview/Overview.py:114
+msgid "Condition"
+msgstr "Достоверность"
+
+#: Overview/Overview.py:80 Overview/Overview.py:116
+msgid "Occupation"
+msgstr "Профессия"
+
+#: Overview/Overview.py:81 Overview/Overview.py:118
+msgid "Residence"
+msgstr "Место жительства"

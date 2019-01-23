@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -105,8 +105,10 @@ class EntryGrid(Gtk.Grid):
         self.widgets = []
 
         for column, heading in enumerate(self.headings):
-            label = Gtk.Label(heading)
-            label.set_alignment(0, 0.5)
+            label = Gtk.Label(label=heading)
+            label.set_halign(Gtk.Align.START)
+            label.set_valign(Gtk.Align.CENTER)
+            label.set_margin_right(8)
             label.show()
             self.attach(label, column + 2, 0, 1, 1)
 

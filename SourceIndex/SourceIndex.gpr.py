@@ -15,14 +15,14 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 register(TOOL,
          id    = 'BirthIndex',
          name  = _("BirthIndex"),
          description =  _(""),
-         version = '0.0.26',
+         version = '0.0.27',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
@@ -37,7 +37,7 @@ register(TOOL,
          id    = 'MarriageIndex',
          name  = _("MarriageIndex"),
          description =  _(""),
-         version = '0.0.24',
+         version = '0.0.25',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = STABLE, # not yet tested with python 3,
@@ -52,7 +52,7 @@ register(TOOL,
          id    = 'DeathIndex',
          name  = _("DeathIndex"),
          description =  _(""),
-         version = '0.0.24',
+         version = '0.0.25',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
@@ -67,7 +67,7 @@ register(TOOL,
          id    = 'CensusIndex',
          name  = _("CensusIndex"),
          description =  _(""),
-         version = '0.0.24',
+         version = '0.0.25',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
@@ -82,7 +82,7 @@ register(TOOL,
          id    = 'Witness',
          name  = _("Witness"),
          description =  _(""),
-         version = '0.0.24',
+         version = '0.0.25',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
@@ -97,7 +97,7 @@ register(TOOL,
          id    = 'Index',
          name  = _("SourceIndex"),
          description =  _(""),
-         version = '0.0.28',
+         version = '0.0.29',
          gramps_target_version = "5.1",
          include_in_listing = False,
          status = STABLE, # not yet tested with python 3, see feature 5552

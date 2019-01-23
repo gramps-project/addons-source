@@ -1,0 +1,51 @@
+# Finnish translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Matti Niemelä <niememat@gmail.com>, 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 06:54+0200\n"
+"PO-Revision-Date: 2018-12-06 12:31+0200\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: niememat@gmail.com\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: UKWebPack.gpr.py:10
+msgid "UK Web Connect Pack"
+msgstr "UK Web Connect Pack"
+
+#: UKWebPack.gpr.py:11
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+
+#: UKWebPack.py:33
+msgid "UK Google"
+msgstr "Google UK"
+
+#: UKWebPack.py:34
+msgid "British, UK, and Ireland"
+msgstr "Englanti, UK, ja Irlanti (RootsWeb's)"
+
+#: UKWebPack.py:35
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org UK"
+
+#: UKWebPack.py:37
+msgid "National Archives"
+msgstr "National Archives UK"
+
+#: UKWebPack.py:38
+msgid "Hathi Trust Digital Library"
+msgstr "Hathi Trust Digital kirjasto"
+
+#: UKWebPack.py:39
+msgid "Open Library"
+msgstr "Open Library UK"

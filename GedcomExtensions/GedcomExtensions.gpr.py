@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: $
@@ -31,7 +31,7 @@ register(EXPORT,
     name  = _("Export GEDCOM Extensions (GED2)"),
     name_accell  = _("GEDCOM Extensions (GED2)"),
     description =  _("Extensions to the common GEDCOM format."),
-    version = '1.0.21',
+    version = '1.0.22',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'GedcomExtensions.py',

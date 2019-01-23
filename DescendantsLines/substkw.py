@@ -19,7 +19,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -51,7 +51,7 @@ Will return a value such as:
 # Gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.display.place import displayer as _pd
 from gramps.gen.lib import EventType, PlaceType, Location
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.utils.location import get_main_location
@@ -103,19 +103,18 @@ class EventFormat2(GenericFormat):
             """ start formatting a date in this event """
             date_format = DateFormat(self.string_in, self._locale)
             try:
-                date_format.parse_format(date_format.get_date(event))
+                return date_format.parse_format(date_format.get_date(event))
             except AttributeError:
                 return ''
-            return date_format.parse_format(date_format.get_date(event))
 
         def format_place():
             """ start formatting a place in this event """
-            # TO_FIX: bug 9562
-            #place_format = PlaceFormat(self, self.string_in)
-            #place = place_format.get_place(self.database, event)
-            #return place_format.parse_format(self.database, place)
-            place = place_displayer.display_event(self.database, event)
-            return place
+            place_format = PlaceFormat(self.database, self.string_in)
+            try:
+                place = place_format.get_place(self.database, event)
+                return place_format.parse_format(self.database, place)
+            except AttributeError:
+                return
 
         def format_attrib():
             """ Get the name and then get the attributes value """
@@ -251,7 +250,7 @@ class VariableParse2(object):
         """ sub to process a date
         Given an event, get the place object, process the format,
         return the result """
-        place_f = PlaceFormat(self._in)
+        place_f = PlaceFormat(self.database, self._in)
         place = place_f.get_place(self.database, event)
         if self.empty_item(place):
             return
@@ -623,6 +622,67 @@ class SubstKeywords2(object):
         if new == []:
             new = [""]
         return new
+
+
+class PlaceFormat(GenericFormat):
+    """ The place format class.
+    If no format string, the place is displayed as per preference options
+    otherwise, parse through a format string and put the place parts in
+    """
+
+    def __init__(self, database, _in):
+        self.database = database
+        GenericFormat.__init__(self, _in)
+        self.date = None
+
+    def get_place(self, database, event):
+        """ A helper method for retrieving a place from an event """
+        if event:
+            bplace_handle = event.get_place_handle()
+            self.date = event.date
+            if bplace_handle:
+                return database.get_place_from_handle(bplace_handle)
+        return None
+
+    def _default_format(self, place):
+        return _pd.display(self.database, place, date=self.date)
+
+    def parse_format(self, database, place):
+        """ Parse the place """
+
+        if self.is_blank(place):
+            return
+
+        code = "elcuspn" + "oitxy"
+        upper = code.upper()
+
+        main_loc = get_main_location(database, place, date=self.date)
+        location = Location()
+        location.set_street(main_loc.get(PlaceType.STREET, ''))
+        location.set_locality(main_loc.get(PlaceType.LOCALITY, ''))
+        location.set_parish(main_loc.get(PlaceType.PARISH, ''))
+        location.set_city(main_loc.get(PlaceType.CITY, ''))
+        location.set_county(main_loc.get(PlaceType.COUNTY, ''))
+        location.set_state(main_loc.get(PlaceType.STATE, ''))
+        location.set_postal_code(main_loc.get(PlaceType.STREET, ''))
+        location.set_country(main_loc.get(PlaceType.COUNTRY, ''))
+
+        function = [location.get_street,
+                    location.get_locality,
+                    location.get_city,
+                    location.get_county,
+                    location.get_state,
+                    place.get_code,
+                    location.get_country,
+
+                    location.get_phone,
+                    location.get_parish,
+                    place.get_title,
+                    place.get_longitude,
+                    place.get_latitude
+                   ]
+
+        return self.generic_format(place, code, upper, function)
 
 
 #

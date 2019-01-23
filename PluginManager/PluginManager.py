@@ -53,7 +53,7 @@ from gi.repository import Gtk      # pylint: disable=import-error
 #from gramps.gen.plug.utils import available_updates
 from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.const import URL_MANUAL_PAGE, VERSION_DIR
+from gramps.gen.const import VERSION_DIR
 from gramps.gen.utils.configmanager import safe_eval
 from gramps.gen.plug import PluginRegister, BasePluginManager
 from gramps.gen.plug import load_addon_file, version_str_to_tup
@@ -63,15 +63,12 @@ from gramps.cli.grampscli import CLIManager
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.pluginmanager import GuiPluginManager
-from gramps.gui.listmodel import ListModel, NOSORT, TOGGLE
 from gramps.gui.display import display_help
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gui.configure import ConfigureDialog
-from gramps.gui.widgets import BasicLabel
 from gramps.gui.dialog import OkDialog, QuestionDialog2
-from gramps.gui.glade import Glade
-from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
-                                               GtkProgressDialog)
+#from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
+#                                               GtkProgressDialog)
+
 #-------------------------------------------------------------------------
 #
 # set up translation, logging and constants
@@ -139,25 +136,51 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self.set_window(self.window, None, TITLE, None)
         self._pmgr = GuiPluginManager.get_instance()
         self._preg = PluginRegister.get_instance()
-        #obtain hidden plugins from the pluginmanager
+        # obtain hidden plugins from the pluginmanager
         self.hidden = self._pmgr.get_hidden_plugin_ids()
         self.setup_configs('interface.pluginstatus', 750, 400)
 
         help_btn = self.window.add_button(  # pylint: disable=no-member
             _("_Help"), Gtk.ResponseType.HELP)
+        self.btn_box = help_btn.get_parent()
+        self.btn_box.set_child_non_homogeneous(help_btn, True)
+
+        # filter input box
+        self.filter_entry = Gtk.SearchEntry()
+        self.filter_entry.set_tooltip_text(
+            _("Enter search words to filter the addons.\n"
+              "All the words must be present somewhere in the row or\n"
+              "the addon filename to be included in the search.\n"
+              "Word case and order is ignored."))
+        self.filter_entry.set_placeholder_text(_("Search..."))
+        self.btn_box.pack_start(self.filter_entry, True, True, 0)
+        #self.btn_box.set_child_non_homogeneous(self.filter_entry, True)
+        self.filter_entry.connect('search-changed', self.filter_str_changed)
 
         update_btn = self.window.add_button(  # pylint: disable=no-member
             _("Check for updated addons now"), UPDATE_RES)
-        btn_box = help_btn.get_parent()
-        btn_box.set_child_non_homogeneous(update_btn, True)
+        self.btn_box.set_child_non_homogeneous(update_btn, True)
 
         if __debug__:
             # Only show the "Reload" button when in debug mode
             # (without -O on the command line)
             reload_btn = self.window.add_button(  # pylint: disable=no-member
                 _("Reload"), RELOAD_RES)
-            btn_box.set_child_non_homogeneous(reload_btn, True)
-        self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
+            self.btn_box.set_child_non_homogeneous(reload_btn, True)
+            _w0, _wx_ = reload_btn.get_preferred_width()
+        else:
+            _w0 = 0
+
+        cls_btn = self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
+        self.btn_box.set_child_non_homogeneous(cls_btn, True)
+
+        _w1, dummy = help_btn.get_preferred_width()
+        _w2, dummy = cls_btn.get_preferred_width()
+        _w3, dummy = update_btn.get_preferred_width()
+        _wa, dummy = self.window.get_size()
+        _we = _wa - _w0 - _w1 - _w2 - _w3 - 63
+        self.filter_entry.set_size_request(_we, -1)
+
         labeltitle, widget = self.registered_plugins_panel(None)
         self.window.vbox.pack_start(widget, True, True, 0)
         sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
@@ -291,30 +314,17 @@ class PluginStatus(tool.Tool, ManagedWindow):
         model, node = selection.get_selected()
         if not node:
             return
+        path = model.get_path(node)
         pid = model.get_value(node, R_ID)
-        status = model.get_value(node, R_STAT)
-        status_str = model.get_value(node, R_STAT_S)
         if pid in self.hidden:
-            #unhide
+            # unhide
             self.hidden.remove(pid)
             self._pmgr.unhide_plugin(pid)
-            status = model.get_value(node, R_STAT)
-            status_str = status_str.replace("<s>", '').replace("</s>", '')
-            status &= ~ HIDDEN
-            model.set_value(node, R_STAT, status)
-            self._hide_btn.set_label(_("Hide"))
         else:
-            #hide
+            # hide
             self.hidden.add(pid)
             self._pmgr.hide_plugin(pid)
-            if not self._show_hidden:
-                model.remove(node)
-                return
-            status |= HIDDEN
-            status_str = "<s>%s</s>" % status_str
-            self._hide_btn.set_label(_("Unhide"))
-        model.set_value(node, R_STAT, status)
-        model.set_value(node, R_STAT_S, status_str)
+        self.__rebuild_reg_list(path, rescan=False)
 
     def __load(self, _obj, list_obj):
         """ Callback function from the "Load" button
@@ -400,12 +410,18 @@ class PluginStatus(tool.Tool, ManagedWindow):
         scrolled_window_reg = Gtk.ScrolledWindow()
         self._list_reg = Gtk.TreeView()
         self._list_reg.set_grid_lines(Gtk.TreeViewGridLines.HORIZONTAL)
-        #  model: plugintype, hidden, pluginname, plugindescr, pluginid
+
+        # model: plugintype, hidden, pluginname, plugindescr, pluginid
         self._model_reg = Gtk.ListStore(
             GObject.TYPE_STRING, GObject.TYPE_STRING, GObject.TYPE_STRING,
             GObject.TYPE_STRING, GObject.TYPE_STRING, int)
         self._selection_reg = self._list_reg.get_selection()
-        self._list_reg.set_model(self._model_reg)
+        # add filter capabilities
+        self._tree_filter = self._model_reg.filter_new()
+        self._tree_filter.set_visible_func(self._apply_filter)
+
+        # set model with sorting enabled
+        self._list_reg.set_model(Gtk.TreeModelSort(model=self._tree_filter))
         self._list_reg.connect('button-press-event', self.button_press_reg)
         self._cursor_hndlr = self._selection_reg.connect('changed',
                                                          self._cursor_changed)
@@ -419,7 +435,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         col1 = Gtk.TreeViewColumn(
             cell_renderer=Gtk.CellRendererText(wrap_mode=2, wrap_width=65),
             markup=R_STAT_S)
-        label = Gtk.Label(_('Status'))
+        label = Gtk.Label(label=_('Status'))
         label.show()
         label.set_tooltip_markup(
             _("'*' items are supplied by 3rd party authors,\n"
@@ -448,6 +464,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         scrolled_window_reg.add(self._list_reg)
         vbox_reg.pack_start(scrolled_window_reg, True, True, 0)
+
         # panel button box
         hbutbox = Gtk.ButtonBox()
         hbutbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
@@ -489,7 +506,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         _show_builtin_chk.set_active(self._show_builtins)
         _show_builtin_chk.connect('clicked', self.__show_builtins_chk)
 
-        label = Gtk.Label(_("* indicates 3rd party addon"))
+        label = Gtk.Label(label=_("* indicates 3rd party addon"))
         hbutbox.add(label)
 
         vbox_reg.pack_start(hbutbox, False, False, 0)
@@ -503,6 +520,40 @@ class PluginStatus(tool.Tool, ManagedWindow):
         if event.type == Gdk.EventType._2BUTTON_PRESS and event.button == 1:
             self.__info(obj, self._list_reg)
 
+    def filter_str_changed(self, widget):
+        """
+        Called when filter string is changed.
+        """
+        self.__rebuild_reg_list(rescan=False)
+
+    def _apply_filter(self, model, tr_iter, data):
+        """
+        Check if we need hide or show row acording the filter.
+        This is for "self._tree_filter.set_visible_func".
+        """
+        filter_str = self.filter_entry.get_text().lower()
+        # if no string - show the row
+        if not filter_str:
+            return True
+
+        # get addon filename
+        pdata = self._preg.get_plugin(model.get_value(tr_iter, R_ID))
+        p_txt = ''
+        if pdata:
+            p_txt = pdata.fname
+        for col in (R_TYPE, R_STAT_S, R_NAME, R_DESC, R_ID):
+            p_txt = p_txt + model[tr_iter][col]
+
+        # check all row columns and hide it if some query word doesn't present
+        filter_words = filter_str.split()
+        p_txt = p_txt.lower()
+        for word in filter_words:
+            if word not in p_txt:
+                # if some of words not present - hide the row
+                return False
+        # else - show the row
+        return True
+
     def __rebuild_reg_list(self, path=None, rescan=True):
         self._selection_reg.handler_block(self._cursor_hndlr)
         self._model_reg.clear()
@@ -514,11 +565,12 @@ class PluginStatus(tool.Tool, ManagedWindow):
         if not path or int(str(path)) >= len(self._model_reg):
             path = '0'
         self._selection_reg.select_path(path)
-        if len(self._model_reg):
+        if len(self._tree_filter):
             self._list_reg.scroll_to_cell(path, None, True, 0.5, 0)
+            self._cursor_changed(None)
 
     def _cursor_changed(self, obj):
-        model, node = obj.get_selected()
+        model, node = self._selection_reg.get_selected()
         if not node:
             return
         status = model.get_value(node, R_STAT)
@@ -717,23 +769,23 @@ def available_updates():
     langs = glocale.get_language_list()
     langs.append("en")
     # now we have a list of languages to try:
-    fp = None
+    f_ptr = None
     for lang in langs:
-        URL = ("%s/listings/addons-%s.txt" %
+        url = ("%s/listings/addons-%s.txt" %
                (config.get("behavior.addons-url"), lang))
-        LOG.debug("   trying: %s", URL)
+        LOG.debug("   trying: %s", url)
         try:
-            fp = urlopen_maybe_no_check_cert(URL)
+            f_ptr = urlopen_maybe_no_check_cert(url)
         except:
             try:
-                URL = ("%s/listings/addons-%s.txt" %
+                url = ("%s/listings/addons-%s.txt" %
                        (config.get("behavior.addons-url"), lang[:2]))
-                fp = urlopen_maybe_no_check_cert(URL)
+                f_ptr = urlopen_maybe_no_check_cert(url)
             except Exception as err:  # some error
                 LOG.warning("Failed to open addon metadata for %s %s: %s",
-                            lang, URL, err)
-                fp = None
-        if fp and fp.getcode() == 200:  # ok
+                            lang, url, err)
+                f_ptr = None
+        if f_ptr and f_ptr.getcode() == 200:  # ok
             break
 
     try:
@@ -744,8 +796,8 @@ def available_updates():
 
     pmgr = BasePluginManager.get_instance()
     addon_update_list = []
-    if fp and fp.getcode() == 200:
-        lines = list(fp.readlines())
+    if f_ptr and f_ptr.getcode() == 200:
+        lines = list(f_ptr.readlines())
         count = 0
         for line in lines:
             line = line.decode('utf-8')
@@ -790,8 +842,8 @@ def available_updates():
         config.set("behavior.last-check-for-addon-updates",
                    datetime.date.today().strftime("%Y/%m/%d"))
         count += 1
-        if fp:
-            fp.close()
+        if f_ptr:
+            f_ptr.close()
         if wfp:
             wfp.close()
     else:

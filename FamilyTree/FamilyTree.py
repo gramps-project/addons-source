@@ -17,13 +17,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
 
 """Reports/Graphical Reports/Family Tree"""
-
+import colorsys
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -148,6 +148,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
             self.scale = min(
                     usable_height / needed_height,
                     usable_width / needed_width)
+            if self.scale < 0.4:
+                user.warn(_('Paper too small'),
+                          _('Some elements may not appear or be badly '
+                            'rendered.'))
             self.__scale_styles()
             # Convert usable size into unscaled cm
             usable_width = usable_width / self.scale
@@ -991,18 +995,10 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
     def __set_fill_color(self, style_name, number, count):
 
-        darkness = 32
         if self.shuffle_colors:
             number = int(number * (count + 1) / int(pow(count, 0.5))) % count
-        index = (count / 2.0 + number) % count
-        step = darkness * 3.0 / count
-        r = min(index, abs(index - count))
-        g = abs(index - (count / 3.0))
-        b = abs(index - (2 * count / 3.0))
-        r = 255 - (darkness - r * step)
-        g = 255 - (darkness - g * step)
-        b = 255 - (darkness - b * step) * 2
-
+        (r, g, b) = colorsys.hsv_to_rgb((number + 1) / count, .20, 1.0)
+        (r, g, b) = int(255 * r), int(255 * g), int(255 * b)
         style_sheet = self.doc.get_style_sheet()
         draw_style = style_sheet.get_draw_style(style_name)
         draw_style.set_fill_color((r, g, b))

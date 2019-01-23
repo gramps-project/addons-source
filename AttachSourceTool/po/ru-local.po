@@ -1,0 +1,105 @@
+# Russian translation for AttachSourceTool
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-28 11:06+0300\n"
+"PO-Revision-Date: 2018-11-28 11:17+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+msgid "Attach Source"
+msgstr "Указание источника"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attaches a shared source to multiple objects."
+msgstr "Указание ссылок на источники для объектов."
+
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
+msgid "Options"
+msgstr "Параметры"
+
+#: AttachSourceTool/AttachSourceTool.py:69
+msgid "Person Filter"
+msgstr "Фильтр лиц"
+
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Выбор фильтра для ограничения лиц"
+
+#: AttachSourceTool/AttachSourceTool.py:74
+msgid "Filter Person"
+msgstr "Фильтр по лицу"
+
+#: AttachSourceTool/AttachSourceTool.py:75
+msgid "The center person for the filter"
+msgstr "Главное лицо для фильтра"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr "Тип источника"
+
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Новый источник"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr "Существующий источник"
+
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr "Укажите тип источника"
+
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr "Название нового источника"
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Текст из источника"
+
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr "Номер (ID) существующего источника"
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr "Номер (ID) источника"
+
+#: AttachSourceTool/AttachSourceTool.py:156
+msgid "Results"
+msgstr "Результаты"
+
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Processing...\n"
+msgstr "Обработка...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources...\n"
+msgstr "Указание источников...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:175
+msgid "Attaching sources..."
+msgstr "Указание источников..."
+
+#: AttachSourceTool/AttachSourceTool.py:197
+msgid "Done!\n"
+msgstr "Завершено!\n"

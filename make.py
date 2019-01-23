@@ -157,7 +157,7 @@ def cleanup(addon_dir):
     """
     patterns = ['%s/*~' % addon_dir,
                 '%s/po/*~' % addon_dir,
-                '%s/po/template.pot' % addon_dir,
+                #'%s/po/template.pot' % addon_dir,
                 '%s/po/*-global.po' % addon_dir,
                 '%s/po/*-temp.po' % addon_dir,
                 '%s/*.pyc' % addon_dir,
@@ -202,38 +202,78 @@ if command == "clean":
 
 elif command == "init":
     # # Get all of the strings from the addon and create template.po:
-    # #intltool-extract --type=gettext/glade *.glade
+    if addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+    else:
+        dirs = [addon]
     if len(sys.argv) == 4:
-        mkdir(r("%(addon)s/po"))
-        mkdir("%(addon)s/locale")
-        system('''intltool-extract --type=gettext/glade "%(addon)s"/*.glade''')
-        if sys.argv[3] == "Form":
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_be.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_ca.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_dk.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_fr.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_gb.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_pl.xml"')
-            system('intltool-extract --type=gettext/xml'
-                   ' "%(addon)s/form_us.xml"')
-        else:
-            system('''intltool-extract --type=gettext/xml "%(addon)s"/*.xml''')
-        system('''xgettext --language=Python --keyword=_ --keyword=N_'''
-               ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
-        system('''xgettext -j --keyword=_ --keyword=N_'''
-               ''' -o "%(addon)s/po/template.pot" '''
-               '''"%(addon)s"/*.glade.h''')
-        system('''xgettext -j --keyword=_ --keyword=N_'''
-               ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" '''
-               '''"%(addon)s"/*.xml.h''')
-        system('''sed -i 's/charset=CHARSET/charset=UTF-8/' '''
-               '''"%(addon)s/po/template.pot"''')
+        from gramps.gen.plug import make_environment, PTYPE_STR
+        from xml.etree import ElementTree
+
+        def register(ptype, **kwargs):
+            global plugins
+            # need to take care of translated types
+            kwargs["ptype"] = PTYPE_STR[ptype]
+            plugins.append(kwargs)
+
+        for addon in dirs:
+            fnames = glob.glob("%s/*.py" % addon)
+            if not fnames:
+                continue
+            # check if we need to initialize based on listing
+            listed = False
+            for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
+                plugins = []
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+                    code = compile(
+                        f.read(),
+                        gpr.encode("utf-8", errors="backslashreplace"),
+                        'exec')
+                    exec(code, make_environment(_=lambda x: x),
+                         {"register": register, "build_script": True})
+                for p in plugins:
+                    if p.get("include_in_listing", True):
+                        listed = True  # got at least one listable plugin
+            if not listed:
+                continue  # skip this one if not listed
+
+            mkdir(r("%(addon)s/po"))
+            mkdir("%(addon)s/locale")
+            system('''xgettext --language=Python --keyword=_ --keyword=N_'''
+                   ''' --from-code=UTF-8'''
+                   ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
+            fnames = glob.glob("%s/*.glade" % addon)
+            if fnames:
+                system('''xgettext -j --add-comments -L Glade '''
+                       '''--from-code=UTF-8 -o "%(addon)s/po/template.pot" '''
+                       '''"%(addon)s"/*.glade''')
+
+            # scan for xml files and get translation text where the tag
+            # starts with an '_'.  Create a .h file with the text strings
+            fnames = glob.glob("%s/*.xml" % addon)
+            for filename in fnames:
+                tree = ElementTree.parse(filename)
+                root = tree.getroot()
+                with open(filename + '.h', 'w', encoding='utf-8') as head:
+                    for key in root.iter():
+                        if key.tag.startswith('_') and len(key.tag) > 1:
+                            msg = key.text.replace('"', '\\"')
+                            txl = '_("%s")\n' % msg
+                            head.write(txl)
+                root.clear()
+                # now append XML text to the pot
+                system('''xgettext -j --keyword=_ --from-code=UTF-8 '''
+                       '''--language=Python -o "%(addon)s/po/template.pot" '''
+                       '''"%(filename)s.h"''')
+                os.remove(filename + '.h')
+            # fix up the charset setting in the pot
+            with open("%s/po/template.pot" % addon, 'r',
+                      encoding='utf-8', newline='\n') as file:
+                contents = file.read()
+            contents = contents.replace('charset=CHARSET', 'charset=UTF-8')
+            with open("%s/po/template.pot" % addon, 'w',
+                      encoding='utf-8', newline='\n') as file:
+                file.write(contents)
     elif len(sys.argv) > 4:
         locale = sys.argv[4]
         # make a copy for locale
@@ -403,7 +443,7 @@ elif command == "as-needed":
             if os.path.isdir(file) and file != '__pycache__']
     for addon in sorted(dirs):
         todo = False
-        for po in glob.glob(r('''%(addon)s/po/*.po''')):
+        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
             locale = os.path.basename(po[:-9])
             mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
             system('''msgfmt %(po)s '''

@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # This program is based on the program located at
 # http://offog.org/darcs/misccode/familytree. The license for that
@@ -278,6 +278,7 @@ class DescendantsLinesReport(Report):
         global MIN_C_WIDTH
         global TEXT_PAD
         global TEXT_LINE_PAD
+        global _event_cache
         S_DOWN = self.options["S_DOWN"]
         S_UP = self.options["S_UP"]
         S_VPAD = self.options["S_VPAD"]
@@ -291,6 +292,7 @@ class DescendantsLinesReport(Report):
         MIN_C_WIDTH = self.options["MIN_C_WIDTH"]
         TEXT_PAD = self.options["TEXT_PAD"]
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
+        _event_cache = {}
 
         self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
@@ -1522,11 +1524,11 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, 'gender_colors', gender_colors)
 
         disp = TextOption(_("Descendant\nDisplay Format"), [
-            "[ BIRTH   ]$e(t d(yyyy)< @ >D(t))",
+            "[ BIRTH   ]$e(t d(yyyy)< @ >D)",
             "[ Occupation, Degree, Education ]"
-            "$e(t d(o yyyy/mm/dd)< >n< @ >D(t))",
-            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D(t))",
-            "[Death]$e(t d(o yyyy)< @ >D(e<, >l<, >c<, >u<, >s<, >p<, >n))"])
+            "$e(t d(o yyyy/mm/dd)< >n< @ >D)",
+            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D)",
+            "[Death]$e(t d(o yyyy)< @ >D)"])
         disp.set_help(_("[event, list]$e(formating)\n"
                         "See Wiki Manual > Reports > part 2\n"
                         "formating: dates=d(ymdMo) places=D(elcuspnoitxy)"
@@ -1541,10 +1543,10 @@ class DescendantsLinesOptions(MenuReportOptions):
         #menu.add_option(category_name, "diffspouse", diffspouse)
 
         sdisp = TextOption(_("Spousal\nDisplay Format"), [
-            "[ Birth ]$e(t d(yyyy)< @ >D(t))",
-            "[ Occupation, Degree, Education ]$e(t d(yyyy)<, >n< @ >D(t))",
-            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D(t))",
-            "[ Marriage, Divorce ]$e(t d(yyyy)< @ >D(t))",
+            "[ Birth ]$e(t d(yyyy)< @ >D)",
+            "[ Occupation, Degree, Education ]$e(t d(yyyy)<, >n< @ >D)",
+            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D)",
+            "[ Marriage, Divorce ]$e(t d(yyyy)< @ >D)",
             "[ Death ]$e(t d(yyyy)< @ >D(t))"])
         sdisp.set_help(_("[event, list]$e(formating)\n"
                          "See Wiki Manual > Reports > part 2\n"

@@ -450,7 +450,7 @@ msgstr ""
 
 #: Form/form.xml.h:68
 msgid ""
-"\"Irish\" or \"Irish &amp; English\", in other cases no entry should be made"
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
 
 #: Form/form.xml.h:69
@@ -550,7 +550,7 @@ msgid "Arrived since"
 msgstr "Aangekomen sinds"
 
 #: Form/form.xml.h:91
-msgid "Free white males 16 &amp; up"
+msgid "Free white males 16 & up"
 msgstr ""
 
 #: Form/form.xml.h:92
@@ -3599,10 +3599,6 @@ msgstr ""
 msgid "8. Month of birth"
 msgstr "Geboortedatum"
 
-#: Form/form.xml.h:816
-msgid "11 . Country or place of birth"
-msgstr ""
-
 #: Form/form.xml.h:817
 msgid "16. Chief occupation or trade"
 msgstr ""
@@ -4074,7 +4070,7 @@ msgid "Island"
 msgstr "Eiland"
 
 #: Form/form.xml.h:926
-msgid "Gaellic or G. &amp; E."
+msgid "Gaellic or G. & E."
 msgstr ""
 
 # Periode/Reikweidte/Bereik

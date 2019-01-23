@@ -1,0 +1,107 @@
+# Russian translation for PhpGedView
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 14:49+0300\n"
+"PO-Revision-Date: 2018-12-05 14:54+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Загружает GEDCOM файл с сервера phpGedView."
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr "Получение списка..."
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr "Получение записей..."
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr "Авторизация..."
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr "Получение GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr "Импорт GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr "Ошибка: неверный логин"
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr "завершено."
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr "Соединение..."
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr "Получение версии..."
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr "Версия %s"
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr "Чтение списка..."
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr "Ошибка: неверный URL"
+
+#: PhpGedView/phpgedview.glade.h:1
+msgid "- default -"
+msgstr "- по умолчанию -"
+
+#: PhpGedView/phpgedview.glade.h:2
+msgid "phpGedView import"
+msgstr "Импорт phpGedView"
+
+#: PhpGedView/phpgedview.glade.h:3
+msgid "http://"
+msgstr "http://"
+
+#: PhpGedView/phpgedview.glade.h:4
+msgid "File:"
+msgstr "Файл:"
+
+#: PhpGedView/phpgedview.glade.h:5
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: PhpGedView/phpgedview.glade.h:6
+msgid "Password:"
+msgstr "Пароль:"
+
+#: PhpGedView/phpgedview.glade.h:7
+msgid "URL:"
+msgstr "URL:"

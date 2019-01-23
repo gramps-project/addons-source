@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 11:38+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: AssociationsTool/associationstool.gpr.py:35
+msgid "Check Associations data"
+msgstr ""
+
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Will check the data on Association for people."
 msgstr ""
 
-#: AssociationsTool/associationstool.py:43
+#: AssociationsTool/associationstool.py:52
 msgid "Associations state tool"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:66
+#: AssociationsTool/associationstool.py:75
 msgid "Name"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:67
+#: AssociationsTool/associationstool.py:76
 msgid "Type of link"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:68
+#: AssociationsTool/associationstool.py:77
 msgid "Of"
 msgstr ""

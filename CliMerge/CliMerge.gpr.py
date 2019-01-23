@@ -5,7 +5,7 @@
 #-----------------------
 register(TOOL,
     id    = 'climerge',
-    name  = "Command Line Merge",
+    name  = _("Command Line Merge"),
     category = TOOL_UTILS,
     status = STABLE, # not yet tested with python 3
     fname = 'CliMerge.py',
@@ -15,6 +15,6 @@ register(TOOL,
     authors = ["M.D. Nauta"],
     authors_email = ["m.d.nauta@hetnet.nl"],
     description  = _("Merge primary objects via the command line."),
-    version = '1.0.26',
+    version = '1.0.28',
     gramps_target_version = "5.1",
 )

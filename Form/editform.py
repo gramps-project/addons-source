@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -176,18 +176,21 @@ class EditForm(ManagedWindow):
         grid.set_row_spacing(6)
         grid.set_column_spacing(6)
 
-        source_label = Gtk.Label(_("Source:"))
-        source_label.set_alignment(0.0, 0.5)
+        source_label = Gtk.Label(label=_("Source:"))
+        source_label.set_halign(Gtk.Align.START)
+        source_label.set_valign(Gtk.Align.CENTER)
         grid.attach(source_label, 0, 0, 1, 1)
 
         source_text = Gtk.Label()
         source_text.set_hexpand(True)
-        source_text.set_alignment(0.0, 0.5)
+        source_text.set_halign(Gtk.Align.START)
+        source_text.set_valign(Gtk.Align.CENTER)
         self.widgets['source_text'] = source_text
         grid.attach(source_text, 1, 0, 1, 1)
 
-        ref_label = Gtk.Label(_("Reference:"))
-        ref_label.set_alignment(0.0, 0.5)
+        ref_label = Gtk.Label(label=_("Reference:"))
+        ref_label.set_halign(Gtk.Align.START)
+        ref_label.set_valign(Gtk.Align.CENTER)
         grid.attach(ref_label, 0, 1, 1, 1)
 
         ref_entry = Gtk.Entry()
@@ -195,8 +198,9 @@ class EditForm(ManagedWindow):
         grid.attach(ref_entry, 1, 1, 1, 1)
         self.widgets['ref_entry'] = ref_entry
 
-        date_label = Gtk.Label(_("Date:"))
-        date_label.set_alignment(0.0, 0.5)
+        date_label = Gtk.Label(label=_("Date:"))
+        date_label.set_halign(Gtk.Align.START)
+        date_label.set_valign(Gtk.Align.CENTER)
         grid.attach(date_label, 0, 2, 1, 1)
 
         date_text = ValidatableMaskedEntry()
@@ -208,13 +212,15 @@ class EditForm(ManagedWindow):
         grid.attach(date_button, 2, 2, 1, 1)
         self.widgets['date_button'] = date_button
 
-        place_label = Gtk.Label(_("Place:"))
-        place_label.set_alignment(0.0, 0.5)
+        place_label = Gtk.Label(label=_("Place:"))
+        place_label.set_halign(Gtk.Align.START)
+        place_label.set_valign(Gtk.Align.CENTER)
         grid.attach(place_label, 0, 3, 1, 1)
 
         place_text = Gtk.Label()
         place_text.set_hexpand(True)
-        place_text.set_alignment(0.0, 0.5)
+        place_text.set_halign(Gtk.Align.START)
+        place_text.set_valign(Gtk.Align.CENTER)
         self.widgets['place_text'] = place_text
 
         place_event_box = Gtk.EventBox()
@@ -391,7 +397,7 @@ class HeadingsTab(GrampsTab):
         Builds the interface.
         """
         self.model = Gtk.ListStore(str, str)
-        self.view = Gtk.TreeView(self.model)
+        self.view = Gtk.TreeView(model=self.model)
         self.selection = self.view.get_selection()
 
         renderer = Gtk.CellRendererText()
@@ -405,7 +411,7 @@ class HeadingsTab(GrampsTab):
         self.view.append_column(column)
 
         scrollwin = Gtk.ScrolledWindow()
-        scrollwin.add_with_viewport(self.view)
+        scrollwin.add(self.view)
         scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC,
                              Gtk.PolicyType.AUTOMATIC)
 
@@ -508,7 +514,7 @@ class DetailsTab(GrampsTab):
             vbox.pack_start(section, False, False, 0)
             self.sections[role] = section
         scrollwin = Gtk.ScrolledWindow()
-        scrollwin.add_with_viewport(vbox)
+        scrollwin.add(vbox)
         scrollwin.set_policy(Gtk.PolicyType.AUTOMATIC,
                              Gtk.PolicyType.AUTOMATIC)
 
@@ -573,9 +579,10 @@ class MultiSection(Gtk.Box):
 
         title = get_section_title(form_id, section)
         if title:
-            label = Gtk.Label('<b>%s</b>' % title)
+            label = Gtk.Label(label='<b>%s</b>' % title)
             label.set_use_markup(True)
-            label.set_alignment(0, 0.5)
+            label.set_halign(Gtk.Align.START)
+            label.set_valign(Gtk.Align.CENTER)
             label.set_margin_left(6)
             hbox.pack_start(label, expand=False, fill=False, padding=0)
 
@@ -836,9 +843,10 @@ class PersonSection(Gtk.Box):
         hbox = Gtk.Box()
 
         title = get_section_title(form_id, section)
-        label = Gtk.Label('<b>%s</b>' % title)
+        label = Gtk.Label(label='<b>%s</b>' % title)
         label.set_use_markup(True)
-        label.set_alignment(0, 0.5)
+        label.set_halign(Gtk.Align.START)
+        label.set_valign(Gtk.Align.CENTER)
         hbox.pack_start(label, expand=False, fill=False, padding=3)
 
         image = Gtk.Image()
@@ -873,10 +881,12 @@ class PersonSection(Gtk.Box):
         self.tooltips = [column[1] for column in columns]
 
         for col, heading in enumerate(self.headings):
-            label = Gtk.Label(heading)
-            label.set_alignment(0.0, 0.5)
+            label = Gtk.Label(label=heading)
+            label.set_halign(Gtk.Align.START)
+            label.set_valign(Gtk.Align.CENTER)
             label.show()
-            entry = Gtk.Entry()
+            entry = MyEntry(heading)
+            entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
             entry.show()
@@ -949,6 +959,7 @@ class PersonSection(Gtk.Box):
             person.set_event_ref_list(ref_list)
             self.db.commit_person(person, trans)
 
+
 #------------------------------------------------------------------------
 #
 # Family Section
@@ -983,9 +994,10 @@ class FamilySection(Gtk.Box):
         title = get_section_title(form_id, section)
         title1, title2 = title.split('/')
 
-        label = Gtk.Label('<b>%s</b>' % title1)
+        label = Gtk.Label(label='<b>%s</b>' % title1)
         label.set_use_markup(True)
-        label.set_alignment(0, 0.5)
+        label.set_halign(Gtk.Align.START)
+        label.set_valign(Gtk.Align.CENTER)
         hbox.pack_start(label, expand=False, fill=False, padding=3)
 
         image = Gtk.Image()
@@ -1008,9 +1020,10 @@ class FamilySection(Gtk.Box):
         self.grid = Gtk.Grid()
         self.pack_start(self.grid, False, False, 0)
 
-        label = Gtk.Label('<b>%s</b>' % title2)
+        label = Gtk.Label(label='<b>%s</b>' % title2)
         label.set_use_markup(True)
-        label.set_alignment(0, 0.5)
+        label.set_halign(Gtk.Align.START)
+        label.set_valign(Gtk.Align.CENTER)
         self.pack_start(label, expand=False, fill=False, padding=3)
 
         self.grid2 = Gtk.Grid()
@@ -1029,10 +1042,12 @@ class FamilySection(Gtk.Box):
 
     def set_columns(self, widgets, grid):
         for col, heading in enumerate(self.headings):
-            label = Gtk.Label(heading)
-            label.set_alignment(0.0, 0.5)
+            label = Gtk.Label(label=heading)
+            label.set_halign(Gtk.Align.START)
+            label.set_valign(Gtk.Align.CENTER)
             label.show()
-            entry = Gtk.Entry()
+            entry = MyEntry(heading)
+            entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             widgets[heading] = entry
             entry.show()
@@ -1120,6 +1135,21 @@ class FamilySection(Gtk.Box):
                                 if event_ref.ref != self.event.handle]
             family.set_event_ref_list(ref_list)
             self.db.commit_family(family, trans)
+
+
+class MyEntry(Gtk.Entry):
+    """
+    A Gtk type Entry that resizes based on content
+    """
+    def __init__(self, labeltxt):
+        Gtk.Entry.__init__(self)
+        self.set_width_chars(len(labeltxt))
+        self.connect('changed', self._changed)
+
+    def _changed(self, entry):
+        layout = entry.get_layout()
+        width, height = layout.get_pixel_size()
+        entry.set_size_request(width + 18, -1)
 
 #------------------------------------------------------------------------
 #

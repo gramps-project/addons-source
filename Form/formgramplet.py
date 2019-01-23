@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -79,7 +79,7 @@ class FormGramplet(Gramplet, DbGUIElement):
         """
         root = self.__create_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(root)
+        self.gui.get_container_widget().add(root)
         root.show_all()
 
     def _connect_db_signals(self):
@@ -103,7 +103,7 @@ class FormGramplet(Gramplet, DbGUIElement):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         self.model = Gtk.ListStore(object, str, str, str, str)
-        view = Gtk.TreeView(self.model)
+        view = Gtk.TreeView(model=self.model)
         renderer = Gtk.CellRendererText()
         column = Gtk.TreeViewColumn(_("Source"), renderer, text=1)
         view.append_column(column)

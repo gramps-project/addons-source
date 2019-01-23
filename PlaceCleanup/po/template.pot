@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
+msgid "Place Cleanup"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.gpr.py:29
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1020
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:827
+msgid "Find"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:293
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:295
+msgid "Find GeoNames"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:303
+msgid "Need to set GeoNames ID"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:304
+msgid "Use the Help button for more information"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:336
+msgid "No matches were found"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:337
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:347
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:353
+#, python-format
+msgid "%s matches were found"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:354
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
+#: PlaceCleanup/placecleanup.py:787
+msgid ", "
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
+msgid "Problem getting data from web"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:424
+msgid "Web request Timeout, you can try again..."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:432
+msgid "Problem getting data from GeoNames"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
+msgid "Place cycle detected"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:478
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:740
+#, python-format
+msgid "Add Place (%s)"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:749
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:772
+#, python-format
+msgid "Add Citation (%s)"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:777
+#, python-format
+msgid "Edit Place (%s)"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:935
+msgid "GeoNames web site"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:940
+msgid "GeoNames author"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:945
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:948
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:951
+msgid "Creative Commons Attribution 3.0 License"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:963
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:1064
+msgid "This Place is not used!"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.py:1065
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:27
+msgid "City, County, State, Country"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:48
+msgid "Primary Name"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:63
+msgid "Postal Code"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:77 PlaceCleanup/placecleanup.glade:987
+msgid "Type"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:88
+msgid "The current Primary name."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:102
+msgid "The postal code for the place, if any."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:115
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:132 PlaceCleanup/placecleanup.glade:150
+#: PlaceCleanup/placecleanup.glade:281
+msgid "Orig"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:136
+msgid "Check this box if you want to keep the original Postal code."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:154
+msgid "Check this box if you want to keep the original Place Type."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:196
+msgid "Longitude"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:222
+msgid "Latitude"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:232
+msgid "Keep Original"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:236
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:254
+msgid "The Gramps ID.."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:272
+msgid "ID"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:285
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:315
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:330
+msgid "Inc"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:350
+msgid "Name"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:370
+msgid "Lang"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:389
+msgid "Date"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:440
+msgid "Keep"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:444
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:456
+msgid "Primary"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:460
+msgid "Select one row and use this button to make the row the primary name."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:472
+msgid "Discard"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:476
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:504
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:520
+msgid "Store the values in your Place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:566
+msgid "Ok"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:581
+msgid "Help"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:605
+msgid "Keep Web Links"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:609
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:622
+msgid "Add citation and source to Place"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:626
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:641
+msgid "GeoNames User ID"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:653
+msgid "Enter you Geonames user ID here."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:665
+msgid "Alternative Names Languages to keep"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:677
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:693
+msgid "Currently Enclosed Places"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:705
+msgid ""
+"When cleaning a place that is already enclosed, this affects what is done.\n"
+"If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
+"place is made.\n"
+"If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
+"is changed to the next level GeoNames place.  This may result in some unused "
+"places remaining in your database."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:710
+msgid "Keep current Enclosure"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:726
+msgid "Replace with GeoNames Enclosure"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:771
+msgid "Title"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:782
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:831
+msgid "Search your local places and GeoNames for a match."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:843
+msgid "Select"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:847
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:860
+msgid "Edit"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:864
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:890
+msgid "Next Place"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:894
+msgid "Find an incomplete place."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:917
+msgid "Set preferences"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:940
+msgid "Select one of these places to continue the cleanup process."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:967
+msgid "Search result places"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1034
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1053
+msgid "Populated"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1065
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1084
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1101
+msgid "Admin"
+msgstr ""
+
+#: PlaceCleanup/placecleanup.glade:1112
+msgid "Spot"
+msgstr ""

@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 #-------------------------------------------------------------------------
@@ -62,6 +62,7 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
+from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -293,6 +294,8 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         context.move_to(5, 4)
         context.set_source_rgb(0, 0, 0)
         textlayout = self.create_pango_layout(self.text)
+        if is_quartz():
+            PangoCairo.context_set_resolution(textlayout.get_context(), 72)
         textlayout.set_font_description(self.get_style().font_desc)
         textlayout.set_markup(self.text)
         PangoCairo.show_layout(context, textlayout)
@@ -754,8 +757,10 @@ class TimelinePedigreeView(NavigationView):
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
                     bDate = self.Tree_EstimateBirth(BranchData[0])
-                    if bDate is not None and mDate is not None:
-                        timespan = bDate.to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
+                    if(bDate is not None and not bDate.is_empty() and
+                       mDate is not None and not mDate.is_empty()):
+                        timespan = (bDate.to_calendar("gregorian").get_year() -
+                                    mDate.to_calendar("gregorian").get_year())
                         xvline = xBoxConnection - Direction * 11 * timespan
 
         # Move all relatives in this branch
@@ -783,7 +788,7 @@ class TimelinePedigreeView(NavigationView):
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
                         text = self.format_helper.format_relation( family, BoxSizes[4])
-            label = Gtk.Label(label=text)
+            label = Gtk.Label(label=text, tooltip_text=text)
             label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
@@ -932,7 +937,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Calculate lifespan
         lifespan = 0
-        if self.show_lifespan and person:
+        if self.show_lifespan and person and birthdate:
             death = get_death_or_fallback(self.dbstate.db, person)
             if death:
                 deathdate = death.get_date_object()

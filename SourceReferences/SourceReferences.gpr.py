@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: SourceReferences.gpr.py 2374 2014-05-02 13:29:19Z romjerome $
@@ -30,7 +30,7 @@ register(GRAMPLET,
          id="Source References",
          name=_("Source References"),
          description = _("Gramplet showing the references for a source"),
-         version = '1.0.10',
+         version = '1.0.11',
          gramps_target_version="5.1",
          include_in_listing = False,
          status = UNSTABLE,

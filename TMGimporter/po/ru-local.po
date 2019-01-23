@@ -1,0 +1,104 @@
+# Russian translation for TMGimporter
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 11:53+0300\n"
+"PO-Revision-Date: 2018-12-06 13:32+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: TMGimporter/importtmg.gpr.py:72
+msgid "TMG Project Backup"
+msgstr "Резервная копия проекта TMG"
+
+#: TMGimporter/importtmg.gpr.py:73 TMGimporter/importtmg.gpr.py:86
+#: TMGimporter/importtmg.gpr.py:99 TMGimporter/importtmg.gpr.py:112
+msgid "Import TMG project files"
+msgstr "Импорт файлов проекта TMG"
+
+#: TMGimporter/importtmg.gpr.py:85 TMGimporter/importtmg.gpr.py:98
+#: TMGimporter/importtmg.gpr.py:111
+msgid "TMG Unsupported"
+msgstr "TMG не поддерживается"
+
+#: TMGimporter/importtmgunsupported.py:55
+#: TMGimporter/importtmgunsupported.py:76
+#: TMGimporter/importtmgunsupported.py:97
+#, python-format
+msgid "%s could not be opened"
+msgstr "%s не удалось открыть"
+
+#: TMGimporter/importtmgunsupported.py:56
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of the TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
+"\n"
+"Please refer to:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Непосредственный импорт TMG файлов не поддерживается\n"
+"данным дополнением.\n"
+"\n"
+"Необходимо использовать резервную копию проекта TMG (*.sqz)\n"
+"\n"
+"Убедитесь, что проект TMG был создан:\n"
+"TMG версии 5.x или последующими.\n"
+"\n"
+"Ваш файл:\n"
+"*.PJC - файл конфигурации проекта для TMG 5.0 - TMG 9.05\n"
+"\n"
+"Дополнительная информация:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmgunsupported.py:77
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Непосредственный импорт TMG файлов не поддерживается данным дополнением."
+"Необходимо использовать резервную копию проекта TMG (*.sqz). Убедитесь, что "
+"проект TMG был создан: TMG версии 5.x или последующими. Ваш файл: *.TMG - "
+"файл контроля версии для TMG 2.0 - TMG 4.0. Дополнительная информация: "
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmgunsupported.py:98
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Непосредственный импорт TMG файлов не поддерживается данным дополнением."
+"Необходимо использовать резервную копию проекта TMG (*.sqz). Убедитесь, что "
+"проект TMG был создан: TMG версии 5.x или последующими. Ваш файл: *.VER - "
+"файл контроля версии для TMG 1.2 и последующих. Дополнительная информация: "
+"%(gramps_wiki_import_pjc_direct_url)s"

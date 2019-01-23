@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:10
+msgid "Sources and Citations Report"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:11
+msgid "Provides a source and Citations Report with notes"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:267
+#, python-format
+msgid "   key: %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:277
+#, python-format
+msgid "%d"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:279
+#, python-format
+msgid "  %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:285
+#, python-format
+msgid " - %s "
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:291
+#, python-format
+msgid "   Type: %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:293
+#, python-format
+msgid "   N-ID: %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:301
+#, python-format
+msgid "   %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:315
+#: SourcesCitationsReport/SourcesCitationsReport.py:336
+#: SourcesCitationsReport/SourcesCitationsReport.py:363
+#: SourcesCitationsReport/SourcesCitationsReport.py:369
+#: SourcesCitationsReport/SourcesCitationsReport.py:375
+#, python-format
+msgid "%s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:317
+#: SourcesCitationsReport/SourcesCitationsReport.py:338
+#, python-format
+msgid "   ( %s )"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:324
+msgid "   Eheleute: "
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:326
+#, python-format
+msgid "%s "
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:329
+#, python-format
+msgid "and %s "
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:340
+#, python-format
+msgid " %s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:348
+msgid "Person"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:348
+msgid "ID"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:349
+msgid "Role"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:404
+msgid "Report Options"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:406
+msgid "Report Title"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:406
+msgid "Title of the Report"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:407
+msgid "Title string for the report."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:410
+msgid "Subtitle"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:410
+msgid "Subtitle of the Report"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:411
+msgid "Subtitle string for the report."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:418
+#, python-format
+msgid "Copyright %(year)d %(name)s"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:420
+msgid "Footer"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:421
+msgid "Footer string for the page."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:428
+msgid "Select using filter"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:429
+msgid "Select sources using a filter"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:436
+msgid "Show persons"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:437
+msgid "Whether to show events and persons mentioned in the note"
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:470
+msgid "The style used for the title of the report."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:485
+msgid "The style used for source title."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:500
+msgid "The style used for citation title."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:512
+msgid "The style used for Source details."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:524
+msgid "The style used for a column title."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:540
+msgid "The style used for each section."
+msgstr ""
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:571
+msgid "The style used for event and person details."
+msgstr ""

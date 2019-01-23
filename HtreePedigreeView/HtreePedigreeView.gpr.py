@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Created by
 #authors = ["Pat Lefebre"],
@@ -46,7 +46,7 @@ register(VIEW,
     category = ("Ancestry", _("Charts")),
     description =  _("The view shows a space-efficient pedigree with "
                      "ancestors of the selected person"),
-    version = '0.0.20',
+    version = '0.0.22',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'HtreePedigreeView.py',

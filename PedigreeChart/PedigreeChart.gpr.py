@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # $Id$
 #
@@ -24,7 +24,7 @@ register(REPORT,
          name=_("Pedigree Chart"),
          description=_("Alternate version of the traditional pedigree chart."),
          status = STABLE,
-         version = '1.0.30',
+         version = '1.0.31',
          fname="PedigreeChart.py",
          gramps_target_version="5.1",
          authors=['Jakim Friant'],

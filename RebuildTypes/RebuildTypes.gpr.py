@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: RebuildTypes.gpr.py 2374 2014-05-02 13:29:19Z romjerome $
@@ -24,7 +24,7 @@ register(TOOL,
 id    = 'rebuild_types',
 name  = _("Rebuild Gramps Types"),
 description =  _("Rebuilds Gramps Types"),
-version = '1.0.9',
+version = '1.0.10',
 gramps_target_version = "5.1",
 include_in_listing = False,
 status = UNSTABLE,

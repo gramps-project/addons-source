@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: HtmlView/htmlview.gpr.py:30
+msgid "Html View"
+msgstr ""
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "A view showing html pages embedded in Gramps"
+msgstr ""
+
+#: HtmlView/htmlview.gpr.py:39
+msgid "Web"
+msgstr ""
+
+#: HtmlView/htmlview.py:318
+msgid "HtmlView"
+msgstr ""
+
+#: HtmlView/htmlview.py:484
+msgid "_Back"
+msgstr ""
+
+#: HtmlView/htmlview.py:485
+msgid "Go to the previous page in the history"
+msgstr ""
+
+#: HtmlView/htmlview.py:492
+msgid "_Forward"
+msgstr ""
+
+#: HtmlView/htmlview.py:493
+msgid "Go to the next page in the history"
+msgstr ""
+
+#: HtmlView/htmlview.py:498
+msgid "_Refresh"
+msgstr ""
+
+#: HtmlView/htmlview.py:501
+msgid "Stop and reload the page."
+msgstr ""
+
+#: HtmlView/htmlview.py:545
+msgid "Start page for the Html View"
+msgstr ""
+
+#: HtmlView/htmlview.py:546
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""

@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: GoogleEarthWriteKML.py.py 11946 2009-02-13 06:06:14Z ldnp $
@@ -28,7 +28,7 @@
 register(MAPSERVICE,
     id = 'GoogleEarth',
     name = _('GoogleEarth'),
-    version = '1.0.41',
+    version = '1.0.43',
     gramps_target_version="5.1",
     status = STABLE,
     fname = 'GoogleEarthWriteKML.py',

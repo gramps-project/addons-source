@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr ""
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr ""
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:12
+msgid "- default -"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
+msgid "phpGedView import"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:103
+msgid "http://"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:158
+msgid "File:"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr ""
+
+#: PhpGedView/phpgedview.glade:206
+msgid "URL:"
+msgstr ""

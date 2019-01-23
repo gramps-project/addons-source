@@ -1,0 +1,261 @@
+# Russian translation for SourceIndex
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 11:17+0300\n"
+"PO-Revision-Date: 2018-12-06 11:32+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: SourceIndex/SourceIndex.gpr.py:23
+msgid "BirthIndex"
+msgstr "Список рождений"
+
+#: SourceIndex/SourceIndex.gpr.py:38
+msgid "MarriageIndex"
+msgstr "Список браков"
+
+#: SourceIndex/SourceIndex.gpr.py:53
+msgid "DeathIndex"
+msgstr "Список смертей"
+
+#: SourceIndex/SourceIndex.gpr.py:68
+msgid "CensusIndex"
+msgstr "Список крещений"
+
+#: SourceIndex/SourceIndex.gpr.py:83
+msgid "Witness"
+msgstr "Свидетель"
+
+#: SourceIndex/SourceIndex.gpr.py:98
+msgid "SourceIndex"
+msgstr "Список источников"
+
+#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
+#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+msgid "Sources Index"
+msgstr "Список источников"
+
+#: SourceIndex/index.py:407
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Ошибка: необходимо установить ElementTree или lxml"
+
+#: SourceIndex/index.py:409
+msgid "must install either ElementTree or lxml"
+msgstr "необходимо установить ElementTree или lxml"
+
+#: SourceIndex/birth.glade.h:1
+msgid "birth"
+msgstr "рождение"
+
+#: SourceIndex/birth.glade.h:2
+msgid "Date:"
+msgstr "Дата:"
+
+#: SourceIndex/birth.glade.h:3
+msgid "Info:"
+msgstr "Информация:"
+
+#: SourceIndex/birth.glade.h:4
+msgid "Birth act:"
+msgstr "Рождение (сертификат):"
+
+#: SourceIndex/birth.glade.h:5
+msgid "Reference:"
+msgstr "Ссылка:"
+
+#: SourceIndex/birth.glade.h:6
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Том\n"
+"    Страница:"
+
+#: SourceIndex/birth.glade.h:8
+msgid "The source title"
+msgstr "Название источника"
+
+#: SourceIndex/birth.glade.h:9
+msgid "The volume or page of this source"
+msgstr "Том или страница этого источника"
+
+#: SourceIndex/birth.glade.h:10
+msgid "Names:"
+msgstr "Имена:"
+
+#: SourceIndex/birth.glade.h:11
+msgid "select the gender/sex"
+msgstr "выберите пол"
+
+#: SourceIndex/birth.glade.h:12
+msgid "Gender:"
+msgstr "Пол:"
+
+#: SourceIndex/birth.glade.h:13
+msgid "The names of the main person written into the source"
+msgstr "Имена основного лица записанного в источник"
+
+#: SourceIndex/birth.glade.h:14
+msgid "The first names of the main person written into the source"
+msgstr "Имена основного лица записанного в источник"
+
+#: SourceIndex/birth.glade.h:15
+msgid "First names:"
+msgstr "Имена:"
+
+#: SourceIndex/birth.glade.h:16
+msgid "Other:"
+msgstr "Другое:"
+
+#: SourceIndex/birth.glade.h:17
+msgid "Repository title"
+msgstr "Название хранилища"
+
+#: SourceIndex/birth.glade.h:18
+msgid "<b>Image</b>"
+msgstr "<b>Изображение</b>"
+
+#: SourceIndex/birth.glade.h:19
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Хранилище</i></b>"
+
+#: SourceIndex/birth.glade.h:20
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Имена\n"
+"супругов:"
+
+#: SourceIndex/birth.glade.h:22
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Дата\n"
+"брака:"
+
+#: SourceIndex/birth.glade.h:24
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Дата\n"
+"смерти:"
+
+#: SourceIndex/birth.glade.h:26
+msgid "Age:"
+msgstr "Возраст:"
+
+#: SourceIndex/birth.glade.h:27
+msgid "Occupation:"
+msgstr "Место жительства:"
+
+#: SourceIndex/birth.glade.h:28
+msgid "Live:"
+msgstr "Живой:"
+
+#: SourceIndex/birth.glade.h:29
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Свидетель\n"
+"Крёстный отец\n"
+"Крёстная мать:</b>"
+
+#: SourceIndex/birth.glade.h:32
+msgid "Call number:"
+msgstr "Номер телефона:"
+
+#: SourceIndex/birth.glade.h:33
+msgid "The call number into the repository"
+msgstr "Номер телефона в хранилище"
+
+#: SourceIndex/birth.glade.h:34
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Данные лица</i></b>"
+
+#: SourceIndex/birth.glade.h:35
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Данные брака</i></b>"
+
+#: SourceIndex/birth.glade.h:36
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Данные отца</i></b>"
+
+#: SourceIndex/birth.glade.h:37
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Данные матери</i></b>"
+
+#: SourceIndex/birth.glade.h:38
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"свидетель1, имя, возраст, проживание;\n"
+"свидетель2, имя, возраст, проживание;\n"
+"крёстный отец, имя, возраст, проживание;\n"
+"и др..."
+
+#: SourceIndex/birth.glade.h:42
+msgid "Cancel"
+msgstr "Отменить"
+
+#: SourceIndex/birth.glade.h:43
+msgid "OK"
+msgstr "OK"
+
+#: SourceIndex/birth.glade.h:44
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Место\n"
+"брака:"
+
+#: SourceIndex/birth.glade.h:46
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Место\n"
+"смерти:"
+
+#: SourceIndex/birth.glade.h:48
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Место\n"
+"рождения:"
+
+#: SourceIndex/birth.glade.h:50
+msgid "Origine:"
+msgstr ""
+
+#: SourceIndex/birth.glade.h:51
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Цитата</i></b>"
+
+#: SourceIndex/birth.glade.h:52
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Источник</i></b>"

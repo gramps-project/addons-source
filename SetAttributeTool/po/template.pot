@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:121
+#: SetAttributeTool/SetAttributeTool.py:129
+msgid "Set Attribute"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:124
+msgid "Options"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:70
+msgid "Person Filter"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:75
+msgid "Filter Person"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "The center person for the filter"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:80
+msgid "Attribute"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:81
+msgid "Value"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:91
+msgid "Remove"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:92
+msgid "Remove attribute type and value set"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:130
+#: SetAttributeTool/SetAttributeTool.py:189
+msgid "Results"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:131
+#: SetAttributeTool/SetAttributeTool.py:190
+msgid "Processing...\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:146
+msgid "Setting attributes..."
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:153
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:184
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:186
+#: SetAttributeTool/SetAttributeTool.py:235
+msgid "Done!\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:188
+msgid "Remove Attribute"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:205
+msgid "Removing attributes..."
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:230
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
